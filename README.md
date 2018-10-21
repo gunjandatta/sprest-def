@@ -3,5 +3,12 @@ This library generates the TypeScript definition files from the $metadata REST e
 
 ## Example
 ```
-import { SP } from "gd-sprest-def";
+import { 
+    MS,
+    Microsoft,
+    OBA,
+    PS,
+    SP,
+    SPO
+ } from "gd-sprest-def";
 ```
