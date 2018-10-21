@@ -1,0 +1,10 @@
+
+
+/*********************************************
+* SPAppPrincipalInfo
+**********************************************/
+export interface SPAppPrincipalInfo {
+	Flag?: number;
+	Name?: string;
+	Title?: string;
+}
