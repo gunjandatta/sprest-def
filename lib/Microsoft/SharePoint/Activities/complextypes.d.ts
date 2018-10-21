@@ -22,6 +22,20 @@ export interface ActionFacet {
 }
 
 /*********************************************
+* CheckinFacet
+**********************************************/
+export interface CheckinFacet {
+
+}
+
+/*********************************************
+* CheckoutFacet
+**********************************************/
+export interface CheckoutFacet {
+
+}
+
+/*********************************************
 * GetCommentFacet
 **********************************************/
 export interface GetCommentFacet {
@@ -53,10 +67,31 @@ export interface ActivityIdentityItem {
 }
 
 /*********************************************
+* CreateFacet
+**********************************************/
+export interface CreateFacet {
+
+}
+
+/*********************************************
 * DeleteFacet
 **********************************************/
 export interface DeleteFacet {
 	name?: string;
+}
+
+/*********************************************
+* DiscardCheckoutFacet
+**********************************************/
+export interface DiscardCheckoutFacet {
+
+}
+
+/*********************************************
+* EditFacet
+**********************************************/
+export interface EditFacet {
+
 }
 
 /*********************************************
@@ -86,6 +121,13 @@ export interface PointInTimeRestoreFacet {
 **********************************************/
 export interface RenameFacet {
 	oldName?: string;
+}
+
+/*********************************************
+* RestoreFacet
+**********************************************/
+export interface RestoreFacet {
+
 }
 
 /*********************************************
@@ -120,6 +162,13 @@ export interface ActivityTimeFacet {
 	lastRecordedTime?: string;
 	observedTime?: string;
 	recordedTime?: string;
+}
+
+/*********************************************
+* CoalescedFacet
+**********************************************/
+export interface CoalescedFacet {
+
 }
 
 /*********************************************

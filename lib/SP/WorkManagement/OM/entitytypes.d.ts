@@ -122,6 +122,20 @@ export interface Task {
 }
 
 /*********************************************
+* LocationOrientedSortableSession
+**********************************************/
+export interface LocationOrientedSortableSession {
+
+}
+
+/*********************************************
+* LocationOrientedUserOrderedSession
+**********************************************/
+export interface LocationOrientedUserOrderedSession {
+
+}
+
+/*********************************************
 * LocationUpdateResult
 **********************************************/
 export interface LocationUpdateResult {
@@ -235,6 +249,13 @@ export interface SortableSessionManager {
 }
 
 /*********************************************
+* SortableSession
+**********************************************/
+export interface SortableSession {
+
+}
+
+/*********************************************
 * SortableTaskQuery
 **********************************************/
 export interface SortableTaskQuery {
@@ -295,6 +316,13 @@ export interface TaskWriteResult {
 **********************************************/
 export interface UserOrderedSessionManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* UserOrderedSession
+**********************************************/
+export interface UserOrderedSession {
+
 }
 
 /*********************************************

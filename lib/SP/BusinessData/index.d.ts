@@ -3,3 +3,4 @@ export { Infrastructure }
 import * as Runtime from "./Runtime";
 export { Runtime }
 export * from "./entitytypes";
+export * from "./associations";

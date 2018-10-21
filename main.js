@@ -117,12 +117,12 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                         // Validate the collection
                         let name = interface.$ ? interface.$.Name : null;
-                        let properties = interface.Property;
-                        if (name && properties && properties.length > 0) {
+                        if (name) {
                             // Add the interface
                             directories[ns][collection][name] = directories[ns][collection][name] || {};
 
                             // Parse the properties
+                            let properties = interface.Property || [];
                             for (let k = 0; k < properties.length; k++) {
                                 let property = properties[k];
 
@@ -186,57 +186,57 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     let interface = directories[dirName][filename][name];
                     let variables = [];
 
+                    if (dirName == "Microsoft.SharePoint.Activities") {
+                        let i = 0;
+                    }
+                    if (name.indexOf("Facet") > 0) {
+                        let i = 0;
+                    }
                     // Parse the properties
                     for (let propName in interface) {
                         let prop = interface[propName];
+                        let type = prop.Type || "any";
 
-                        // Ensure a type exists
-                        let type = prop.Type;
-                        if (type) {
-                            // Update the type
-                            type = type
-                                .replace(/Edm\.Boolean/, 'boolean')
-                                .replace(/Edm\.Binary/, 'any')
-                                .replace(/Edm\.Byte/, 'any')
-                                .replace(/Edm\.DateTime/, 'any')
-                                .replace(/Edm\.Decimal/, 'number')
-                                .replace(/Edm\.Double/, 'number')
-                                .replace(/Edm\.Guid/, 'any')
-                                .replace(/Edm\.Int16/, 'number')
-                                .replace(/Edm\.Int32/, 'number')
-                                .replace(/Edm\.Int64/, 'number')
-                                .replace(/Edm\.String/, 'string')
-                                .replace(/Edm\.Time/, 'any')
-                                .replace(/^Collection\(/, 'Array<')
-                                .replace(/\)$/, '>');
+                        // Update the type
+                        type = type
+                            .replace(/Edm\.Boolean/, 'boolean')
+                            .replace(/Edm\.Binary/, 'any')
+                            .replace(/Edm\.Byte/, 'any')
+                            .replace(/Edm\.DateTime/, 'any')
+                            .replace(/Edm\.Decimal/, 'number')
+                            .replace(/Edm\.Double/, 'number')
+                            .replace(/Edm\.Guid/, 'any')
+                            .replace(/Edm\.Int16/, 'number')
+                            .replace(/Edm\.Int32/, 'number')
+                            .replace(/Edm\.Int64/, 'number')
+                            .replace(/Edm\.String/, 'string')
+                            .replace(/Edm\.Time/, 'any')
+                            .replace(/^Collection\(/, 'Array<')
+                            .replace(/\)$/, '>');
 
-                            // See if the type requires an import
-                            if (type.indexOf('.') > 0) {
-                                // Get the last index of it
-                                let refType = type.replace(/^Array\<|\>$/g, '');
-                                refType = refType.substr(0, refType.lastIndexOf('.'));
+                        // See if the type requires an import
+                        if (type.indexOf('.') > 0) {
+                            // Get the last index of it
+                            let refType = type.replace(/^Array\<|\>$/g, '');
+                            refType = refType.substr(0, refType.lastIndexOf('.'));
 
-                                // Set the root namespace
-                                let root = refType.split('.')[0];
+                            // Set the root namespace
+                            let root = refType.split('.')[0];
 
-                                // Build the reference to the lib folder
-                                let refPath = "";
-                                for (let j = 0; j < dirName.split('.').length; j++) { refPath += "../"; }
+                            // Build the reference to the lib folder
+                            let refPath = "";
+                            for (let j = 0; j < dirName.split('.').length; j++) { refPath += "../"; }
 
-                                // Add the import
-                                fileImports.push('import { ' + root + ' } from "' + refPath + '";');
-                            }
-
-                            // Add the variable
-                            variables.push('\t' + propName + '?: ' + type + ';');
+                            // Add the import
+                            fileImports.push('import { ' + root + ' } from "' + refPath + '";');
                         }
+
+                        // Add the variable
+                        variables.push('\t' + propName + '?: ' + type + ';');
                     }
 
-                    // Ensure variables exist
-                    if (variables.length > 0) {
-                        // Add the content
-                        content.push(create.interface(name, variables.join('\n')));
-                    }
+                    // Add the content
+                    content.push(create.interface(name, variables.join('\n')));
                 }
 
                 // Ensure content exists

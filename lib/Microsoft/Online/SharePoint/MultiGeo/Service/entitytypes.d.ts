@@ -11,6 +11,13 @@ export interface AllowedDataLocationEntityData {
 }
 
 /*********************************************
+* AllowedDataLocation
+**********************************************/
+export interface AllowedDataLocation {
+
+}
+
+/*********************************************
 * ContentDbSchemaVersion
 **********************************************/
 export interface ContentDbSchemaVersion {
@@ -200,6 +207,13 @@ export interface GeoTenantInstanceInformationEntityData {
 	RegularSiteCount?: number;
 	RootSiteDomain?: string;
 	TenantAdminDomain?: string;
+}
+
+/*********************************************
+* GeoTenantInstanceInformation
+**********************************************/
+export interface GeoTenantInstanceInformation {
+
 }
 
 /*********************************************

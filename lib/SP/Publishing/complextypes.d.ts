@@ -266,6 +266,13 @@ export interface SitePageFieldsData {
 }
 
 /*********************************************
+* RepostPageFieldsData
+**********************************************/
+export interface RepostPageFieldsData {
+
+}
+
+/*********************************************
 * SharePagePreviewByEmailFieldsData
 **********************************************/
 export interface SharePagePreviewByEmailFieldsData {

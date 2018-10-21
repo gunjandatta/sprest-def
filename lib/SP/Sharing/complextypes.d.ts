@@ -205,6 +205,13 @@ export interface SharingLinkExpirationAbilityStatus {
 }
 
 /*********************************************
+* SharingLinkPasswordAbilityStatus
+**********************************************/
+export interface SharingLinkPasswordAbilityStatus {
+
+}
+
+/*********************************************
 * SharingInformationRequest
 **********************************************/
 export interface SharingInformationRequest {

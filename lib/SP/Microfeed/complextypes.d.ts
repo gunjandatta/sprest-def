@@ -164,6 +164,13 @@ export interface MicrofeedPost {
 }
 
 /*********************************************
+* MicrofeedPostDefinitionNames
+**********************************************/
+export interface MicrofeedPostDefinitionNames {
+
+}
+
+/*********************************************
 * MicrofeedPostDefinitionNameCollection
 **********************************************/
 export interface MicrofeedPostDefinitionNameCollection {

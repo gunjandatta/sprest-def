@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {},
+    "include": [
+        "lib/**/*.d.ts"
+    ]
+}

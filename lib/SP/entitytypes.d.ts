@@ -1325,6 +1325,13 @@ export interface ChangeList {
 }
 
 /*********************************************
+* ChangeSite
+**********************************************/
+export interface ChangeSite {
+
+}
+
+/*********************************************
 * ChangeUser
 **********************************************/
 export interface ChangeUser {
@@ -1454,6 +1461,20 @@ export interface FieldDateTime {
 }
 
 /*********************************************
+* FieldGeolocation
+**********************************************/
+export interface FieldGeolocation {
+
+}
+
+/*********************************************
+* FieldGuid
+**********************************************/
+export interface FieldGuid {
+
+}
+
+/*********************************************
 * FieldMultiLineText
 **********************************************/
 export interface FieldMultiLineText {
@@ -1464,6 +1485,13 @@ export interface FieldMultiLineText {
 	RichText?: boolean;
 	UnlimitedLengthInDocumentLibrary?: boolean;
 	WikiLinking?: boolean;
+}
+
+/*********************************************
+* FieldLocation
+**********************************************/
+export interface FieldLocation {
+
 }
 
 /*********************************************

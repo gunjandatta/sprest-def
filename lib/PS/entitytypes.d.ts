@@ -158,6 +158,13 @@ export interface Calendar {
 }
 
 /*********************************************
+* BaseCalendarException
+**********************************************/
+export interface BaseCalendarException {
+
+}
+
+/*********************************************
 * DraftAssignment
 **********************************************/
 export interface DraftAssignment {
@@ -1201,6 +1208,20 @@ export interface PlanAssignmentInterval {
 }
 
 /*********************************************
+* ProjectEngagementComment
+**********************************************/
+export interface ProjectEngagementComment {
+
+}
+
+/*********************************************
+* ProjectEngagementTimephasedPeriod
+**********************************************/
+export interface ProjectEngagementTimephasedPeriod {
+
+}
+
+/*********************************************
 * ProjectServerData
 **********************************************/
 export interface ProjectServerData {
@@ -1334,6 +1355,27 @@ export interface WorkflowDesignerField {
 	IsLookupField?: boolean;
 	IsReadOnly?: boolean;
 	SPFieldType?: number;
+}
+
+/*********************************************
+* ResourceCalendarException
+**********************************************/
+export interface ResourceCalendarException {
+
+}
+
+/*********************************************
+* ResourceEngagementComment
+**********************************************/
+export interface ResourceEngagementComment {
+
+}
+
+/*********************************************
+* ResourceEngagementTimephasedPeriod
+**********************************************/
+export interface ResourceEngagementTimephasedPeriod {
+
 }
 
 /*********************************************

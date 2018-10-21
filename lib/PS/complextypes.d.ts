@@ -1,6 +1,13 @@
 import { PS } from "../";
 
 /*********************************************
+* EngagementSaveConflictException
+**********************************************/
+export interface EngagementSaveConflictException {
+
+}
+
+/*********************************************
 * AssignmentCreationInformation
 **********************************************/
 export interface AssignmentCreationInformation {
@@ -258,6 +265,13 @@ export interface ProjectCreationInformation {
 	Name?: string;
 	Start?: any;
 	WebId?: any;
+}
+
+/*********************************************
+* ProjectEngagementCreationInformation
+**********************************************/
+export interface ProjectEngagementCreationInformation {
+
 }
 
 /*********************************************

@@ -55,3 +55,10 @@ export interface SPWorkflow {
 export interface SPWorkflowManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
+
+/*********************************************
+* SPWorkflowTask
+**********************************************/
+export interface SPWorkflowTask {
+
+}
