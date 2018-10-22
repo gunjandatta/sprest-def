@@ -139,9 +139,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         let name = interface.$ ? interface.$.Name : null;
                         if (name) {
                             // Add the interface
-                            directories[ns][collection][name] = {
-                                _BaseType: interface.$.BaseType
-                            };
+                            directories[ns][collection][name] = {};
+
+                            // See if the base type exists and doesn't reference itself
+                            if (interface.$.BaseType && !interface.$.BaseType.endsWith(name)) {
+                                // Set the base type
+                                directories[ns][collection][name]._BaseType = interface.$.BaseType;
+                            }
 
                             // Parse the properties
                             let properties = interface.Property || [];

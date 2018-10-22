@@ -64,7 +64,7 @@ export interface GroupMoveJobEntityData extends Microsoft.Online.SharePoint.Mult
 /*********************************************
 * CrossFarmGroupMoveJob
 **********************************************/
-export interface CrossFarmGroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob {
+export interface CrossFarmGroupMoveJob {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
