@@ -76,6 +76,26 @@ function generateIndexFiles(path) {
     }
 };
 
+// Method to update the references
+function updateReferences(fileImports, dirName, type) {
+    // See if the type requires an import
+    if (type && type.indexOf('.') > 0) {
+        // Get the last index of it
+        let refType = type.replace(/^Array\<|\>$/g, '');
+        refType = refType.substr(0, refType.lastIndexOf('.'));
+
+        // Set the root namespace
+        let root = refType.split('.')[0];
+
+        // Build the reference to the lib folder
+        let refPath = "";
+        for (let j = 0; j < dirName.split('.').length; j++) { refPath += "../"; }
+
+        // Add the import
+        fileImports.push('import { ' + root + ' } from "' + refPath + '";');
+    }
+}
+
 // Read the file
 fs.readFile("metadata.xml", "utf8", (err, xml) => {
     let counter = 0;
@@ -193,7 +213,11 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         let prop = interface[propName];
 
                         // Skip the base type
-                        if (propName == "_BaseType") { continue; }
+                        if (propName == "_BaseType") {
+                            // Update the references
+                            updateReferences(fileImports, dirName, prop);
+                            continue;
+                        }
 
                         // Update the type
                         let type = prop.Type || "any";
@@ -213,22 +237,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             .replace(/^Collection\(/, 'Array<')
                             .replace(/\)$/, '>');
 
-                        // See if the type requires an import
-                        if (type.indexOf('.') > 0) {
-                            // Get the last index of it
-                            let refType = type.replace(/^Array\<|\>$/g, '');
-                            refType = refType.substr(0, refType.lastIndexOf('.'));
-
-                            // Set the root namespace
-                            let root = refType.split('.')[0];
-
-                            // Build the reference to the lib folder
-                            let refPath = "";
-                            for (let j = 0; j < dirName.split('.').length; j++) { refPath += "../"; }
-
-                            // Add the import
-                            fileImports.push('import { ' + root + ' } from "' + refPath + '";');
-                        }
+                        // Update the references
+                        updateReferences(fileImports, dirName, type);
 
                         // Add the variable
                         variables.push('\t' + propName + '?: ' + type + ';');
