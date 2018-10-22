@@ -13,7 +13,7 @@ export interface AllowedDataLocationEntityData {
 /*********************************************
 * AllowedDataLocation
 **********************************************/
-export interface AllowedDataLocation {
+export interface AllowedDataLocation extends Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationEntityData {
 
 }
 
@@ -34,7 +34,7 @@ export interface JobEntityData {
 /*********************************************
 * MoveJobEntityData
 **********************************************/
-export interface MoveJobEntityData {
+export interface MoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData {
 	ApiVersion?: string;
 	CancelTriggeredBy?: string;
 	DestinationDataLocation?: string;
@@ -57,14 +57,14 @@ export interface MoveJobEntityData {
 /*********************************************
 * GroupMoveJobEntityData
 **********************************************/
-export interface GroupMoveJobEntityData {
+export interface GroupMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
 	GroupName?: string;
 }
 
 /*********************************************
 * CrossFarmGroupMoveJob
 **********************************************/
-export interface CrossFarmGroupMoveJob {
+export interface CrossFarmGroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -74,7 +74,7 @@ export interface CrossFarmGroupMoveJob {
 /*********************************************
 * SiteMoveJobEntityData
 **********************************************/
-export interface SiteMoveJobEntityData {
+export interface SiteMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
 	SourceSiteUrl?: string;
 	TargetSiteUrl?: string;
 }
@@ -82,7 +82,7 @@ export interface SiteMoveJobEntityData {
 /*********************************************
 * CrossFarmSiteMoveJobEntityData
 **********************************************/
-export interface CrossFarmSiteMoveJobEntityData {
+export interface CrossFarmSiteMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData {
 	TextPayload?: string;
 	WorkflowData?: string;
 }
@@ -90,7 +90,7 @@ export interface CrossFarmSiteMoveJobEntityData {
 /*********************************************
 * CrossFarmSiteMoveJob
 **********************************************/
-export interface CrossFarmSiteMoveJob {
+export interface CrossFarmSiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobEntityData {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -100,7 +100,7 @@ export interface CrossFarmSiteMoveJob {
 /*********************************************
 * UserMoveJobEntityData
 **********************************************/
-export interface UserMoveJobEntityData {
+export interface UserMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
 	HasOdbInSourceDataLocation?: boolean;
 	UserPrincipalName?: string;
 	ValidationResult?: number;
@@ -109,7 +109,7 @@ export interface UserMoveJobEntityData {
 /*********************************************
 * CrossFarmUserMoveJobEntityData
 **********************************************/
-export interface CrossFarmUserMoveJobEntityData {
+export interface CrossFarmUserMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobEntityData {
 	TextPayload?: string;
 	WorkflowData?: string;
 }
@@ -117,7 +117,7 @@ export interface CrossFarmUserMoveJobEntityData {
 /*********************************************
 * CrossFarmUserMoveJob
 **********************************************/
-export interface CrossFarmUserMoveJob {
+export interface CrossFarmUserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobEntityData {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -153,7 +153,7 @@ export interface CrossGeoTenantPropertyEntityData {
 /*********************************************
 * CrossGeoTenantProperty
 **********************************************/
-export interface CrossGeoTenantProperty {
+export interface CrossGeoTenantProperty extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityData {
 	LastModifiedTimeInUtc?: any;
 }
 
@@ -212,7 +212,7 @@ export interface GeoTenantInstanceInformationEntityData {
 /*********************************************
 * GeoTenantInstanceInformation
 **********************************************/
-export interface GeoTenantInstanceInformation {
+export interface GeoTenantInstanceInformation extends Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformationEntityData {
 
 }
 
@@ -226,7 +226,7 @@ export interface GlobalAdminCheck {
 /*********************************************
 * GroupMoveJob
 **********************************************/
-export interface GroupMoveJob {
+export interface GroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobEntityData {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -236,7 +236,7 @@ export interface GroupMoveJob {
 /*********************************************
 * MoveJob
 **********************************************/
-export interface MoveJob {
+export interface MoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -261,7 +261,7 @@ export interface MultiGeoServicesBeta {
 /*********************************************
 * SiteMoveJob
 **********************************************/
-export interface SiteMoveJob {
+export interface SiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -271,7 +271,7 @@ export interface SiteMoveJob {
 /*********************************************
 * SiteRenameJobEntityData
 **********************************************/
-export interface SiteRenameJobEntityData {
+export interface SiteRenameJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData {
 	Reserved?: string;
 	SourceSiteUrl?: string;
 	TargetSiteUrl?: string;
@@ -280,7 +280,7 @@ export interface SiteRenameJobEntityData {
 /*********************************************
 * SiteRenameJob
 **********************************************/
-export interface SiteRenameJob {
+export interface SiteRenameJob extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobEntityData {
 	JobId?: any;
 	JobState?: string;
 	SiteId?: any;
@@ -323,7 +323,7 @@ export interface TenantInformation {
 /*********************************************
 * TenantRenameJobEntityData
 **********************************************/
-export interface TenantRenameJobEntityData {
+export interface TenantRenameJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData {
 	SourceAdminSiteUrl?: string;
 	SourceMySiteHostUrl?: string;
 	SourceRootSiteUrl?: string;
@@ -335,7 +335,7 @@ export interface TenantRenameJobEntityData {
 /*********************************************
 * TenantRenameJob
 **********************************************/
-export interface TenantRenameJob {
+export interface TenantRenameJob extends Microsoft.Online.SharePoint.MultiGeo.Service.TenantRenameJobEntityData {
 	JobId?: any;
 	JobState?: string;
 	TriggeredBy?: string;
@@ -356,7 +356,7 @@ export interface UnifiedGroup {
 /*********************************************
 * UserMoveJob
 **********************************************/
-export interface UserMoveJob {
+export interface UserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobEntityData {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;

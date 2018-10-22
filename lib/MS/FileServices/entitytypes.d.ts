@@ -18,7 +18,7 @@ export interface FileSystemItem {
 /*********************************************
 * File
 **********************************************/
-export interface File {
+export interface File extends MS.FileServices.FileSystemItem {
 
 }
 
@@ -32,7 +32,7 @@ export interface FileService {
 /*********************************************
 * Folder
 **********************************************/
-export interface Folder {
+export interface Folder extends MS.FileServices.FileSystemItem {
 	ChildrenCount?: number;
 }
 

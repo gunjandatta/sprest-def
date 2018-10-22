@@ -270,7 +270,7 @@ export interface ProjectCreationInformation {
 /*********************************************
 * ProjectEngagementCreationInformation
 **********************************************/
-export interface ProjectEngagementCreationInformation {
+export interface ProjectEngagementCreationInformation extends PS.EngagementCreationInformation {
 
 }
 

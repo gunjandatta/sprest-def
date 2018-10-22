@@ -3,12 +3,12 @@ let parser = require("xml2js").parseString;
 let rmDir = require("rimraf");
 
 let create = {
-    interface: function (name, variables) {
+    interface: function (name, baseType, variables) {
         return [
             '/*********************************************',
             '* ' + name,
             '**********************************************/',
-            'export interface ' + name + ' {',
+            'export interface ' + name + (baseType ? " extends " + baseType : "") + ' {',
             variables,
             '}',
             ''
@@ -119,7 +119,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         let name = interface.$ ? interface.$.Name : null;
                         if (name) {
                             // Add the interface
-                            directories[ns][collection][name] = directories[ns][collection][name] || {};
+                            directories[ns][collection][name] = {
+                                _BaseType: interface.$.BaseType
+                            };
 
                             // Parse the properties
                             let properties = interface.Property || [];
@@ -186,18 +188,15 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     let interface = directories[dirName][filename][name];
                     let variables = [];
 
-                    if (dirName == "Microsoft.SharePoint.Activities") {
-                        let i = 0;
-                    }
-                    if (name.indexOf("Facet") > 0) {
-                        let i = 0;
-                    }
                     // Parse the properties
                     for (let propName in interface) {
                         let prop = interface[propName];
-                        let type = prop.Type || "any";
+
+                        // Skip the base type
+                        if (propName == "_BaseType") { continue; }
 
                         // Update the type
+                        let type = prop.Type || "any";
                         type = type
                             .replace(/Edm\.Boolean/, 'boolean')
                             .replace(/Edm\.Binary/, 'any')
@@ -236,7 +235,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     }
 
                     // Add the content
-                    content.push(create.interface(name, variables.join('\n')));
+                    content.push(create.interface(name, interface._BaseType, variables.join('\n')));
                 }
 
                 // Ensure content exists

@@ -59,6 +59,6 @@ export interface SPWorkflowManager {
 /*********************************************
 * SPWorkflowTask
 **********************************************/
-export interface SPWorkflowTask {
+export interface SPWorkflowTask extends SP.ListItem {
 
 }

@@ -124,14 +124,14 @@ export interface Task {
 /*********************************************
 * LocationOrientedSortableSession
 **********************************************/
-export interface LocationOrientedSortableSession {
+export interface LocationOrientedSortableSession extends SP.WorkManagement.OM.BaseSession {
 
 }
 
 /*********************************************
 * LocationOrientedUserOrderedSession
 **********************************************/
-export interface LocationOrientedUserOrderedSession {
+export interface LocationOrientedUserOrderedSession extends SP.WorkManagement.OM.BaseSession {
 
 }
 
@@ -251,7 +251,7 @@ export interface SortableSessionManager {
 /*********************************************
 * SortableSession
 **********************************************/
-export interface SortableSession {
+export interface SortableSession extends SP.WorkManagement.OM.BaseSession {
 
 }
 
@@ -321,7 +321,7 @@ export interface UserOrderedSessionManager {
 /*********************************************
 * UserOrderedSession
 **********************************************/
-export interface UserOrderedSession {
+export interface UserOrderedSession extends SP.WorkManagement.OM.BaseSession {
 
 }
 

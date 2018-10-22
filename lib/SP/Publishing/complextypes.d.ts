@@ -22,7 +22,7 @@ export interface ProfileDateTime {
 /*********************************************
 * DateTimeCustomProperty
 **********************************************/
-export interface DateTimeCustomProperty {
+export interface DateTimeCustomProperty extends SP.Publishing.ProfileDateTime {
 	CustomPropertyName?: string;
 }
 
@@ -37,7 +37,7 @@ export interface ViewData {
 /*********************************************
 * ItemViewsAnalyticsData
 **********************************************/
-export interface ItemViewsAnalyticsData {
+export interface ItemViewsAnalyticsData extends SP.Publishing.ViewData {
 	Days?: Array<SP.Publishing.TimeFrameStatistics>;
 	Months?: Array<SP.Publishing.TimeFrameStatistics>;
 }
@@ -45,7 +45,7 @@ export interface ItemViewsAnalyticsData {
 /*********************************************
 * TimeFrameStatistics
 **********************************************/
-export interface TimeFrameStatistics {
+export interface TimeFrameStatistics extends SP.Publishing.ViewData {
 	Date?: any;
 }
 
@@ -61,7 +61,7 @@ export interface PersonCore {
 /*********************************************
 * PersonCustomProperty
 **********************************************/
-export interface PersonCustomProperty {
+export interface PersonCustomProperty extends SP.Publishing.PersonCore {
 	CustomPropertyName?: string;
 }
 
@@ -141,7 +141,7 @@ export interface PersonMagazineUserProfile {
 /*********************************************
 * PersonMagazineUserProfileData
 **********************************************/
-export interface PersonMagazineUserProfileData {
+export interface PersonMagazineUserProfileData extends SP.Publishing.PersonMagazineUserProfileDirectsData {
 	ManagerChain?: Array<SP.Publishing.PersonMagazineUserProfile>;
 	Primary?: SP.Publishing.PersonMagazineUserProfile;
 }
@@ -149,7 +149,7 @@ export interface PersonMagazineUserProfileData {
 /*********************************************
 * ProfileCoreProperties
 **********************************************/
-export interface ProfileCoreProperties {
+export interface ProfileCoreProperties extends SP.Publishing.PersonIdentity {
 	PictureUrl?: string;
 	Title?: string;
 }
@@ -164,7 +164,7 @@ export interface ProfileDirectsData {
 /*********************************************
 * ProfileData
 **********************************************/
-export interface ProfileData {
+export interface ProfileData extends SP.Publishing.ProfileDirectsData {
 	ManagerChain?: Array<SP.Publishing.ProfileCoreProperties>;
 	Primary?: SP.Publishing.PersonMagazineUserProfile;
 }
@@ -172,7 +172,7 @@ export interface ProfileData {
 /*********************************************
 * ProfileFullProperties
 **********************************************/
-export interface ProfileFullProperties {
+export interface ProfileFullProperties extends SP.Publishing.ProfileCoreProperties {
 	AboutMe?: string;
 	AboutMeTruncated?: string;
 	Assistant?: SP.Publishing.PersonIdentity;
@@ -268,7 +268,7 @@ export interface SitePageFieldsData {
 /*********************************************
 * RepostPageFieldsData
 **********************************************/
-export interface RepostPageFieldsData {
+export interface RepostPageFieldsData extends SP.Publishing.SitePageFieldsData {
 
 }
 
@@ -339,7 +339,7 @@ export interface TextValueWithLanguage {
 /*********************************************
 * ViewProgressAnalyticsData
 **********************************************/
-export interface ViewProgressAnalyticsData {
+export interface ViewProgressAnalyticsData extends SP.Publishing.ViewData {
 	PercentageViewed?: number;
 }
 

@@ -3,7 +3,7 @@ import { SP } from "../../";
 /*********************************************
 * AppPackagesListItem
 **********************************************/
-export interface AppPackagesListItem {
+export interface AppPackagesListItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -74,7 +74,7 @@ export interface AppPackagesListItem {
 /*********************************************
 * UserInfoItem
 **********************************************/
-export interface UserInfoItem {
+export interface UserInfoItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -179,7 +179,7 @@ export interface UserInfoItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_appdataItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appdataItem {
+export interface OData__x005f_catalogs_x002f_appdataItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -236,7 +236,7 @@ export interface OData__x005f_catalogs_x002f_appdataItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_appfilesItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appfilesItem {
+export interface OData__x005f_catalogs_x002f_appfilesItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -297,7 +297,7 @@ export interface OData__x005f_catalogs_x002f_appfilesItem {
 /*********************************************
 * DraftAppsListItem
 **********************************************/
-export interface DraftAppsListItem {
+export interface DraftAppsListItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -361,7 +361,7 @@ export interface DraftAppsListItem {
 /*********************************************
 * BinsListItem
 **********************************************/
-export interface BinsListItem {
+export interface BinsListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -424,7 +424,7 @@ export interface BinsListItem {
 /*********************************************
 * Cache_x0020_ProfilesItem
 **********************************************/
-export interface Cache_x0020_ProfilesItem {
+export interface Cache_x0020_ProfilesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -494,7 +494,7 @@ export interface Cache_x0020_ProfilesItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_designItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_designItem {
+export interface OData__x005f_catalogs_x002f_designItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -557,7 +557,7 @@ export interface OData__x005f_catalogs_x002f_designItem {
 /*********************************************
 * Reports_x0020_ListItem
 **********************************************/
-export interface Reports_x0020_ListItem {
+export interface Reports_x0020_ListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -619,7 +619,7 @@ export interface Reports_x0020_ListItem {
 /*********************************************
 * ContentTypeSyncLogListItem
 **********************************************/
-export interface ContentTypeSyncLogListItem {
+export interface ContentTypeSyncLogListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -680,7 +680,7 @@ export interface ContentTypeSyncLogListItem {
 /*********************************************
 * IWConvertedFormsItem
 **********************************************/
-export interface IWConvertedFormsItem {
+export interface IWConvertedFormsItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -744,7 +744,7 @@ export interface IWConvertedFormsItem {
 /*********************************************
 * CTDemoListItem
 **********************************************/
-export interface CTDemoListItem {
+export interface CTDemoListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -808,7 +808,7 @@ export interface CTDemoListItem {
 /*********************************************
 * DevListItem
 **********************************************/
-export interface DevListItem {
+export interface DevListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -870,7 +870,7 @@ export interface DevListItem {
 /*********************************************
 * DeviceChannelsItem
 **********************************************/
-export interface DeviceChannelsItem {
+export interface DeviceChannelsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -932,7 +932,7 @@ export interface DeviceChannelsItem {
 /*********************************************
 * DocSetItem
 **********************************************/
-export interface DocSetItem {
+export interface DocSetItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1004,7 +1004,7 @@ export interface DocSetItem {
 /*********************************************
 * Shared_x0020_DocumentsItem
 **********************************************/
-export interface Shared_x0020_DocumentsItem {
+export interface Shared_x0020_DocumentsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1081,7 +1081,7 @@ export interface Shared_x0020_DocumentsItem {
 /*********************************************
 * Event_x0020_CalloutListItem
 **********************************************/
-export interface Event_x0020_CalloutListItem {
+export interface Event_x0020_CalloutListItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1164,7 +1164,7 @@ export interface Event_x0020_CalloutListItem {
 /*********************************************
 * FormServerTemplatesItem
 **********************************************/
-export interface FormServerTemplatesItem {
+export interface FormServerTemplatesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1244,7 +1244,7 @@ export interface FormServerTemplatesItem {
 /*********************************************
 * GettingStartedListItem
 **********************************************/
-export interface GettingStartedListItem {
+export interface GettingStartedListItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1308,7 +1308,7 @@ export interface GettingStartedListItem {
 /*********************************************
 * LargeListListItem
 **********************************************/
-export interface LargeListListItem {
+export interface LargeListListItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1365,7 +1365,7 @@ export interface LargeListListItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_ltItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_ltItem {
+export interface OData__x005f_catalogs_x002f_ltItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -1437,7 +1437,7 @@ export interface OData__x005f_catalogs_x002f_ltItem {
 /*********************************************
 * Long_x0020_Running_x0020_Operation_x0020_StatusItem
 **********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem {
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1514,7 +1514,7 @@ export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_MaintenanceLogsItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem {
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -1575,7 +1575,7 @@ export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem {
 /*********************************************
 * MapListItem
 **********************************************/
-export interface MapListItem {
+export interface MapListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1633,7 +1633,7 @@ export interface MapListItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_masterpageItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_masterpageItem {
+export interface OData__x005f_catalogs_x002f_masterpageItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1728,7 +1728,7 @@ export interface OData__x005f_catalogs_x002f_masterpageItem {
 /*********************************************
 * PublishedFeedListItem
 **********************************************/
-export interface PublishedFeedListItem {
+export interface PublishedFeedListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1827,7 +1827,7 @@ export interface PublishedFeedListItem {
 /*********************************************
 * TaxonomyHiddenListListItem
 **********************************************/
-export interface TaxonomyHiddenListListItem {
+export interface TaxonomyHiddenListListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1993,7 +1993,7 @@ export interface TaxonomyHiddenListListItem {
 /*********************************************
 * MyContactsListItem
 **********************************************/
-export interface MyContactsListItem {
+export interface MyContactsListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2051,7 +2051,7 @@ export interface MyContactsListItem {
 /*********************************************
 * MyListListItem
 **********************************************/
-export interface MyListListItem {
+export interface MyListListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2113,7 +2113,7 @@ export interface MyListListItem {
 /*********************************************
 * My_x0020_Lists_x0020_InfoListItem
 **********************************************/
-export interface My_x0020_Lists_x0020_InfoListItem {
+export interface My_x0020_Lists_x0020_InfoListItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -2170,7 +2170,7 @@ export interface My_x0020_Lists_x0020_InfoListItem {
 /*********************************************
 * Notification_x0020_PagesItem
 **********************************************/
-export interface Notification_x0020_PagesItem {
+export interface Notification_x0020_PagesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2229,7 +2229,7 @@ export interface Notification_x0020_PagesItem {
 /*********************************************
 * ProjectPolicyItemListItem
 **********************************************/
-export interface ProjectPolicyItemListItem {
+export interface ProjectPolicyItemListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2297,7 +2297,7 @@ export interface ProjectPolicyItemListItem {
 /*********************************************
 * Quick_x0020_Deploy_x0020_ItemsItem
 **********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItem {
+export interface Quick_x0020_Deploy_x0020_ItemsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2357,7 +2357,7 @@ export interface Quick_x0020_Deploy_x0020_ItemsItem {
 /*********************************************
 * Relationships_x0020_ListItem
 **********************************************/
-export interface Relationships_x0020_ListItem {
+export interface Relationships_x0020_ListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2422,7 +2422,7 @@ export interface Relationships_x0020_ListItem {
 /*********************************************
 * ReusableContentItem
 **********************************************/
-export interface ReusableContentItem {
+export interface ReusableContentItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2485,7 +2485,7 @@ export interface ReusableContentItem {
 /*********************************************
 * Sharing_x0020_LinksItem
 **********************************************/
-export interface Sharing_x0020_LinksItem {
+export interface Sharing_x0020_LinksItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2545,7 +2545,7 @@ export interface Sharing_x0020_LinksItem {
 /*********************************************
 * SiteAssetsItem
 **********************************************/
-export interface SiteAssetsItem {
+export interface SiteAssetsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2618,7 +2618,7 @@ export interface SiteAssetsItem {
 /*********************************************
 * SiteCollectionDocumentsItem
 **********************************************/
-export interface SiteCollectionDocumentsItem {
+export interface SiteCollectionDocumentsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2691,7 +2691,7 @@ export interface SiteCollectionDocumentsItem {
 /*********************************************
 * SiteCollectionImagesItem
 **********************************************/
-export interface SiteCollectionImagesItem {
+export interface SiteCollectionImagesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2791,7 +2791,7 @@ export interface SiteCollectionImagesItem {
 /*********************************************
 * SitePagesItem
 **********************************************/
-export interface SitePagesItem {
+export interface SitePagesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2874,7 +2874,7 @@ export interface SitePagesItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_solutionsItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_solutionsItem {
+export interface OData__x005f_catalogs_x002f_solutionsItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -2941,7 +2941,7 @@ export interface OData__x005f_catalogs_x002f_solutionsItem {
 /*********************************************
 * SPReactListItem
 **********************************************/
-export interface SPReactListItem {
+export interface SPReactListItem extends SP.ListItem {
 	Calculated_x0020_Title?: string;
 	Title?: string;
 	TestBoolean?: boolean;
@@ -3020,7 +3020,7 @@ export interface SPReactListItem {
 /*********************************************
 * SPRESTListDemoListItem
 **********************************************/
-export interface SPRESTListDemoListItem {
+export interface SPRESTListDemoListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3085,7 +3085,7 @@ export interface SPRESTListDemoListItem {
 /*********************************************
 * Style_x0020_LibraryItem
 **********************************************/
-export interface Style_x0020_LibraryItem {
+export interface Style_x0020_LibraryItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3156,7 +3156,7 @@ export interface Style_x0020_LibraryItem {
 /*********************************************
 * PublishedLinksItem
 **********************************************/
-export interface PublishedLinksItem {
+export interface PublishedLinksItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3215,7 +3215,7 @@ export interface PublishedLinksItem {
 /*********************************************
 * TeamMembersListItem
 **********************************************/
-export interface TeamMembersListItem {
+export interface TeamMembersListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3277,7 +3277,7 @@ export interface TeamMembersListItem {
 /*********************************************
 * TestProjectListItem
 **********************************************/
-export interface TestProjectListItem {
+export interface TestProjectListItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3336,7 +3336,7 @@ export interface TestProjectListItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_themeItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_themeItem {
+export interface OData__x005f_catalogs_x002f_themeItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3399,7 +3399,7 @@ export interface OData__x005f_catalogs_x002f_themeItem {
 /*********************************************
 * Translation_x0020_PackagesItem
 **********************************************/
-export interface Translation_x0020_PackagesItem {
+export interface Translation_x0020_PackagesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3473,7 +3473,7 @@ export interface Translation_x0020_PackagesItem {
 /*********************************************
 * Translation_x0020_StatusItem
 **********************************************/
-export interface Translation_x0020_StatusItem {
+export interface Translation_x0020_StatusItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3555,7 +3555,7 @@ export interface Translation_x0020_StatusItem {
 /*********************************************
 * Variation_x0020_LabelsItem
 **********************************************/
-export interface Variation_x0020_LabelsItem {
+export interface Variation_x0020_LabelsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3625,7 +3625,7 @@ export interface Variation_x0020_LabelsItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_wpItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wpItem {
+export interface OData__x005f_catalogs_x002f_wpItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3695,7 +3695,7 @@ export interface OData__x005f_catalogs_x002f_wpItem {
 /*********************************************
 * OData__x005f_catalogs_x002f_wfpubItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wfpubItem {
+export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3763,7 +3763,7 @@ export interface OData__x005f_catalogs_x002f_wfpubItem {
 /*********************************************
 * WorkflowTasksItem
 **********************************************/
-export interface WorkflowTasksItem {
+export interface WorkflowTasksItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;

@@ -77,21 +77,21 @@ export interface SchemaData {
 /*********************************************
 * ExtendedAttributeData
 **********************************************/
-export interface ExtendedAttributeData {
+export interface ExtendedAttributeData extends SP.Directory.Provider.SchemaData {
 	Value?: any;
 }
 
 /*********************************************
 * PropertyCollectionData
 **********************************************/
-export interface PropertyCollectionData {
+export interface PropertyCollectionData extends SP.Directory.Provider.SchemaData {
 	TotalCount?: number;
 }
 
 /*********************************************
 * PropertyData
 **********************************************/
-export interface PropertyData {
+export interface PropertyData extends SP.Directory.Provider.SchemaData {
 	Value?: any;
 }
 
@@ -109,14 +109,14 @@ export interface RelationData {
 /*********************************************
 * RelationSetData
 **********************************************/
-export interface RelationSetData {
+export interface RelationSetData extends SP.Directory.Provider.SchemaData {
 	TotalCount?: number;
 }
 
 /*********************************************
 * ResourceData
 **********************************************/
-export interface ResourceData {
+export interface ResourceData extends SP.Directory.Provider.SchemaData {
 	ErrorCode?: number;
 	ErrorMessage?: string;
 	ResourceAction?: number;

@@ -70,7 +70,7 @@ export interface FieldLookupValue {
 /*********************************************
 * FieldUserValue
 **********************************************/
-export interface FieldUserValue {
+export interface FieldUserValue extends SP.FieldLookupValue {
 	Email?: string;
 }
 

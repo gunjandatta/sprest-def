@@ -128,7 +128,7 @@ export interface Principal {
 /*********************************************
 * User
 **********************************************/
-export interface User {
+export interface User extends SP.Principal {
 	AadObjectId?: SP.UserIdInfo;
 	Email?: string;
 	IsEmailAuthenticationGuestUser?: boolean;
@@ -196,7 +196,7 @@ export interface RoleDefinition {
 /*********************************************
 * ListItem
 **********************************************/
-export interface ListItem {
+export interface ListItem extends SP.SecurableObject {
 	CommentsDisabled?: boolean;
 	CommentsDisabledScope?: number;
 	ComplianceInfo?: SP.ListItemComplianceInfo;
@@ -469,7 +469,7 @@ export interface StorageMetrics {
 /*********************************************
 * List
 **********************************************/
-export interface List {
+export interface List extends SP.SecurableObject {
 	AllowContentTypes?: boolean;
 	AllowDeletion?: boolean;
 	BaseTemplate?: number;
@@ -648,7 +648,7 @@ export interface InformationRightsManagementSettings {
 /*********************************************
 * Web
 **********************************************/
-export interface Web {
+export interface Web extends SP.SecurableObject {
 	AllowAutomaticASPXPageIndexing?: boolean;
 	AllowCreateDeclarativeWorkflowForCurrentUser?: boolean;
 	AllowDesignerForCurrentUser?: boolean;
@@ -746,7 +746,7 @@ export interface AppTile {
 /*********************************************
 * Group
 **********************************************/
-export interface Group {
+export interface Group extends SP.Principal {
 	AllowMembersEditMembership?: boolean;
 	AllowRequestToJoinLeave?: boolean;
 	AutoAcceptRequestToJoinLeave?: boolean;
@@ -1242,7 +1242,7 @@ export interface Change {
 /*********************************************
 * ChangeAlert
 **********************************************/
-export interface ChangeAlert {
+export interface ChangeAlert extends SP.Change {
 	AlertId?: any;
 	WebId?: any;
 }
@@ -1250,7 +1250,7 @@ export interface ChangeAlert {
 /*********************************************
 * ChangeContentType
 **********************************************/
-export interface ChangeContentType {
+export interface ChangeContentType extends SP.Change {
 	ContentTypeId?: SP.ContentTypeId;
 	WebId?: any;
 }
@@ -1258,7 +1258,7 @@ export interface ChangeContentType {
 /*********************************************
 * ChangeField
 **********************************************/
-export interface ChangeField {
+export interface ChangeField extends SP.Change {
 	FieldId?: any;
 	WebId?: any;
 }
@@ -1266,7 +1266,7 @@ export interface ChangeField {
 /*********************************************
 * ChangeFile
 **********************************************/
-export interface ChangeFile {
+export interface ChangeFile extends SP.Change {
 	UniqueId?: any;
 	WebId?: any;
 }
@@ -1274,7 +1274,7 @@ export interface ChangeFile {
 /*********************************************
 * ChangeFolder
 **********************************************/
-export interface ChangeFolder {
+export interface ChangeFolder extends SP.Change {
 	UniqueId?: any;
 	WebId?: any;
 }
@@ -1282,14 +1282,14 @@ export interface ChangeFolder {
 /*********************************************
 * ChangeGroup
 **********************************************/
-export interface ChangeGroup {
+export interface ChangeGroup extends SP.Change {
 	GroupId?: number;
 }
 
 /*********************************************
 * ChangeItem
 **********************************************/
-export interface ChangeItem {
+export interface ChangeItem extends SP.Change {
 	ActivityType?: number;
 	ContentTypeId?: SP.ContentTypeId;
 	Editor?: string;
@@ -1314,7 +1314,7 @@ export interface ChangeItem {
 /*********************************************
 * ChangeList
 **********************************************/
-export interface ChangeList {
+export interface ChangeList extends SP.Change {
 	BaseTemplate?: number;
 	Editor?: string;
 	Hidden?: boolean;
@@ -1327,14 +1327,14 @@ export interface ChangeList {
 /*********************************************
 * ChangeSite
 **********************************************/
-export interface ChangeSite {
+export interface ChangeSite extends SP.Change {
 
 }
 
 /*********************************************
 * ChangeUser
 **********************************************/
-export interface ChangeUser {
+export interface ChangeUser extends SP.Change {
 	Activate?: boolean;
 	UserId?: number;
 }
@@ -1342,7 +1342,7 @@ export interface ChangeUser {
 /*********************************************
 * ChangeView
 **********************************************/
-export interface ChangeView {
+export interface ChangeView extends SP.Change {
 	ViewId?: any;
 	ListId?: any;
 	WebId?: any;
@@ -1351,7 +1351,7 @@ export interface ChangeView {
 /*********************************************
 * ChangeWeb
 **********************************************/
-export interface ChangeWeb {
+export interface ChangeWeb extends SP.Change {
 	WebId?: any;
 }
 
@@ -1402,7 +1402,7 @@ export interface CurrencyList {
 /*********************************************
 * FieldCalculated
 **********************************************/
-export interface FieldCalculated {
+export interface FieldCalculated extends SP.Field {
 	CurrencyLocaleId?: number;
 	DateFormat?: number;
 	DisplayFormat?: number;
@@ -1414,7 +1414,7 @@ export interface FieldCalculated {
 /*********************************************
 * FieldMultiChoice
 **********************************************/
-export interface FieldMultiChoice {
+export interface FieldMultiChoice extends SP.Field {
 	FillInChoice?: boolean;
 	Mappings?: string;
 	Choices?: Array<string>;
@@ -1423,21 +1423,21 @@ export interface FieldMultiChoice {
 /*********************************************
 * FieldChoice
 **********************************************/
-export interface FieldChoice {
+export interface FieldChoice extends SP.FieldMultiChoice {
 	EditFormat?: number;
 }
 
 /*********************************************
 * FieldComputed
 **********************************************/
-export interface FieldComputed {
+export interface FieldComputed extends SP.Field {
 	EnableLookup?: boolean;
 }
 
 /*********************************************
 * FieldNumber
 **********************************************/
-export interface FieldNumber {
+export interface FieldNumber extends SP.Field {
 	DisplayFormat?: number;
 	MaximumValue?: number;
 	MinimumValue?: number;
@@ -1447,14 +1447,14 @@ export interface FieldNumber {
 /*********************************************
 * FieldCurrency
 **********************************************/
-export interface FieldCurrency {
+export interface FieldCurrency extends SP.FieldNumber {
 	CurrencyLocaleId?: number;
 }
 
 /*********************************************
 * FieldDateTime
 **********************************************/
-export interface FieldDateTime {
+export interface FieldDateTime extends SP.Field {
 	DateTimeCalendarType?: number;
 	DisplayFormat?: number;
 	FriendlyDisplayFormat?: number;
@@ -1463,21 +1463,21 @@ export interface FieldDateTime {
 /*********************************************
 * FieldGeolocation
 **********************************************/
-export interface FieldGeolocation {
+export interface FieldGeolocation extends SP.Field {
 
 }
 
 /*********************************************
 * FieldGuid
 **********************************************/
-export interface FieldGuid {
+export interface FieldGuid extends SP.Field {
 
 }
 
 /*********************************************
 * FieldMultiLineText
 **********************************************/
-export interface FieldMultiLineText {
+export interface FieldMultiLineText extends SP.Field {
 	AllowHyperlink?: boolean;
 	AppendOnly?: boolean;
 	NumberOfLines?: number;
@@ -1490,14 +1490,14 @@ export interface FieldMultiLineText {
 /*********************************************
 * FieldLocation
 **********************************************/
-export interface FieldLocation {
+export interface FieldLocation extends SP.FieldMultiLineText {
 
 }
 
 /*********************************************
 * FieldLookup
 **********************************************/
-export interface FieldLookup {
+export interface FieldLookup extends SP.Field {
 	AllowMultipleValues?: boolean;
 	DependentLookupInternalNames?: Array<string>;
 	IsDependentLookup?: boolean;
@@ -1513,7 +1513,7 @@ export interface FieldLookup {
 /*********************************************
 * FieldRatingScale
 **********************************************/
-export interface FieldRatingScale {
+export interface FieldRatingScale extends SP.FieldMultiChoice {
 	GridEndNumber?: number;
 	GridNAOptionText?: string;
 	GridStartNumber?: number;
@@ -1526,21 +1526,21 @@ export interface FieldRatingScale {
 /*********************************************
 * FieldText
 **********************************************/
-export interface FieldText {
+export interface FieldText extends SP.Field {
 	MaxLength?: number;
 }
 
 /*********************************************
 * FieldUrl
 **********************************************/
-export interface FieldUrl {
+export interface FieldUrl extends SP.Field {
 	DisplayFormat?: number;
 }
 
 /*********************************************
 * FieldUser
 **********************************************/
-export interface FieldUser {
+export interface FieldUser extends SP.FieldLookup {
 	AllowDisplay?: boolean;
 	Presence?: boolean;
 	SelectionGroup?: number;

@@ -160,14 +160,14 @@ export interface Calendar {
 /*********************************************
 * BaseCalendarException
 **********************************************/
-export interface BaseCalendarException {
+export interface BaseCalendarException extends PS.CalendarException {
 
 }
 
 /*********************************************
 * DraftAssignment
 **********************************************/
-export interface DraftAssignment {
+export interface DraftAssignment extends PS.Assignment {
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualOvertimeWork?: string;
@@ -429,7 +429,7 @@ export interface EngagementComment {
 /*********************************************
 * ProjectEngagement
 **********************************************/
-export interface ProjectEngagement {
+export interface ProjectEngagement extends PS.Engagement {
 	ApprovedFinish?: any;
 	ApprovedMaxUnits?: number;
 	ApprovedStart?: any;
@@ -639,7 +639,7 @@ export interface Task {
 /*********************************************
 * PublishedProject
 **********************************************/
-export interface PublishedProject {
+export interface PublishedProject extends PS.Project {
 	CurrencyCode?: string;
 	CurrencyDigits?: number;
 	CurrencyPosition?: number;
@@ -679,7 +679,7 @@ export interface PublishedProject {
 /*********************************************
 * PublishedAssignment
 **********************************************/
-export interface PublishedAssignment {
+export interface PublishedAssignment extends PS.Assignment {
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualOvertimeWork?: string;
@@ -723,7 +723,7 @@ export interface PublishedAssignment {
 /*********************************************
 * PublishedProjectResource
 **********************************************/
-export interface PublishedProjectResource {
+export interface PublishedProjectResource extends PS.ProjectResource {
 	CanLevel?: boolean;
 	Code?: string;
 	CostAccrual?: number;
@@ -746,7 +746,7 @@ export interface PublishedProjectResource {
 /*********************************************
 * PublishedTask
 **********************************************/
-export interface PublishedTask {
+export interface PublishedTask extends PS.Task {
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualStart?: any;
@@ -813,7 +813,7 @@ export interface TaskLink {
 /*********************************************
 * PublishedTaskLink
 **********************************************/
-export interface PublishedTaskLink {
+export interface PublishedTaskLink extends PS.TaskLink {
 	DependencyType?: number;
 }
 
@@ -832,7 +832,7 @@ export interface TaskPlanLink {
 /*********************************************
 * DraftProject
 **********************************************/
-export interface DraftProject {
+export interface DraftProject extends PS.Project {
 	CurrencyCode?: string;
 	CurrencyDigits?: number;
 	CurrencyPosition?: number;
@@ -870,7 +870,7 @@ export interface DraftProject {
 /*********************************************
 * DraftProjectResource
 **********************************************/
-export interface DraftProjectResource {
+export interface DraftProjectResource extends PS.ProjectResource {
 	CanLevel?: boolean;
 	Code?: string;
 	CostAccrual?: number;
@@ -893,7 +893,7 @@ export interface DraftProjectResource {
 /*********************************************
 * DraftTaskLink
 **********************************************/
-export interface DraftTaskLink {
+export interface DraftTaskLink extends PS.TaskLink {
 	DependencyType?: number;
 	EndId?: any;
 	StartId?: any;
@@ -902,7 +902,7 @@ export interface DraftTaskLink {
 /*********************************************
 * DraftTask
 **********************************************/
-export interface DraftTask {
+export interface DraftTask extends PS.Task {
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualStart?: any;
@@ -965,7 +965,7 @@ export interface ProjectWorkflowInstance {
 /*********************************************
 * ProjectSummaryTask
 **********************************************/
-export interface ProjectSummaryTask {
+export interface ProjectSummaryTask extends PS.Task {
 	ActualCost?: number;
 	ActualWork?: string;
 	ActualWorkMilliseconds?: number;
@@ -1062,7 +1062,7 @@ export interface EnterpriseResourceCostRate {
 /*********************************************
 * ResourceEngagement
 **********************************************/
-export interface ResourceEngagement {
+export interface ResourceEngagement extends PS.Engagement {
 	ApprovedFinish?: any;
 	ApprovedMaxUnits?: number;
 	ApprovedStart?: any;
@@ -1131,21 +1131,21 @@ export interface EventHandler {
 /*********************************************
 * LookupCost
 **********************************************/
-export interface LookupCost {
+export interface LookupCost extends PS.LookupEntry {
 	Value?: number;
 }
 
 /*********************************************
 * LookupDate
 **********************************************/
-export interface LookupDate {
+export interface LookupDate extends PS.LookupEntry {
 	Value?: any;
 }
 
 /*********************************************
 * LookupDuration
 **********************************************/
-export interface LookupDuration {
+export interface LookupDuration extends PS.LookupEntry {
 	Value?: string;
 	ValueMilliseconds?: number;
 	ValueTimeSpan?: any;
@@ -1154,14 +1154,14 @@ export interface LookupDuration {
 /*********************************************
 * LookupNumber
 **********************************************/
-export interface LookupNumber {
+export interface LookupNumber extends PS.LookupEntry {
 	Value?: number;
 }
 
 /*********************************************
 * LookupText
 **********************************************/
-export interface LookupText {
+export interface LookupText extends PS.LookupEntry {
 	HasChildren?: boolean;
 	Mask?: PS.LookupMask;
 	Value?: string;
@@ -1210,14 +1210,14 @@ export interface PlanAssignmentInterval {
 /*********************************************
 * ProjectEngagementComment
 **********************************************/
-export interface ProjectEngagementComment {
+export interface ProjectEngagementComment extends PS.EngagementComment {
 
 }
 
 /*********************************************
 * ProjectEngagementTimephasedPeriod
 **********************************************/
-export interface ProjectEngagementTimephasedPeriod {
+export interface ProjectEngagementTimephasedPeriod extends PS.EngagementTimephasedPeriod {
 
 }
 
@@ -1360,21 +1360,21 @@ export interface WorkflowDesignerField {
 /*********************************************
 * ResourceCalendarException
 **********************************************/
-export interface ResourceCalendarException {
+export interface ResourceCalendarException extends PS.CalendarException {
 
 }
 
 /*********************************************
 * ResourceEngagementComment
 **********************************************/
-export interface ResourceEngagementComment {
+export interface ResourceEngagementComment extends PS.EngagementComment {
 
 }
 
 /*********************************************
 * ResourceEngagementTimephasedPeriod
 **********************************************/
-export interface ResourceEngagementTimephasedPeriod {
+export interface ResourceEngagementTimephasedPeriod extends PS.EngagementTimephasedPeriod {
 
 }
 

@@ -224,7 +224,7 @@ export interface UserInfo {
 /*********************************************
 * SitePage
 **********************************************/
-export interface SitePage {
+export interface SitePage extends SP.Publishing.SitePageMetadata {
 	AlternativeUrlMap?: string;
 	CanvasContent1?: string;
 	CanvasJson1?: string;
@@ -236,7 +236,7 @@ export interface SitePage {
 /*********************************************
 * RepostPage
 **********************************************/
-export interface RepostPage {
+export interface RepostPage extends SP.Publishing.SitePage {
 	IsBannerImageUrlExternal?: boolean;
 	OriginalSourceItemId?: any;
 	OriginalSourceListId?: any;
@@ -249,7 +249,7 @@ export interface RepostPage {
 /*********************************************
 * RepostPageMetadata
 **********************************************/
-export interface RepostPageMetadata {
+export interface RepostPageMetadata extends SP.Publishing.SitePageMetadata {
 	OriginalSourceItemId?: any;
 	OriginalSourceListId?: any;
 	OriginalSourceSiteId?: any;

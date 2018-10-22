@@ -38,7 +38,7 @@ export interface NewsItemMetaData {
 /*********************************************
 * NewsItem
 **********************************************/
-export interface NewsItem {
+export interface NewsItem extends SP.Utilities.NewsItemMetaData {
 	backupPictureUrl?: string;
 	caption?: string;
 	itemId?: number;

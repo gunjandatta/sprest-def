@@ -3,7 +3,7 @@
 /*********************************************
 * TaxonomyField
 **********************************************/
-export interface TaxonomyField {
+export interface TaxonomyField extends SP.FieldLookup {
 	AnchorId?: any;
 	CreateValuesInEditForm?: boolean;
 	IsAnchorValid?: boolean;
