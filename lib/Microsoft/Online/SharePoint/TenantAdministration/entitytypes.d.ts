@@ -285,16 +285,16 @@ export interface Tenant {
 }
 
 /*********************************************
-* TenantMethods
+* TenantCollections
 **********************************************/
-export interface TenantMethods extends Tenant {
+export interface TenantCollections {
 	Sites?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 }
 
 /*********************************************
 * TenantQuery
 **********************************************/
-export interface TenantQuery extends Tenant {
+export interface TenantQuery {
 	Sites?: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 }
 

@@ -117,9 +117,9 @@ export interface UserProfile {
 }
 
 /*********************************************
-* UserProfileMethods
+* UserProfileCollections
 **********************************************/
-export interface UserProfileMethods extends UserProfile {
+export interface UserProfileCollections {
 	FollowedContent?: () => SP.UserProfiles.FollowedContent;
 	PersonalSite?: () => SP.Site;
 }
@@ -127,7 +127,7 @@ export interface UserProfileMethods extends UserProfile {
 /*********************************************
 * UserProfileQuery
 **********************************************/
-export interface UserProfileQuery extends UserProfile {
+export interface UserProfileQuery {
 	FollowedContent?: SP.UserProfiles.FollowedContent;
 	PersonalSite?: SP.Site;
 }

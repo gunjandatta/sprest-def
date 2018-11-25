@@ -15,16 +15,16 @@ export interface SPFarm {
 }
 
 /*********************************************
-* SPFarmMethods
+* SPFarmCollections
 **********************************************/
-export interface SPFarmMethods extends SPFarm {
+export interface SPFarmCollections {
 	Local?: () => Microsoft.SharePoint.Administration.SPFarm;
 }
 
 /*********************************************
 * SPFarmQuery
 **********************************************/
-export interface SPFarmQuery extends SPFarm {
+export interface SPFarmQuery {
 	Local?: Microsoft.SharePoint.Administration.SPFarm;
 }
 
@@ -55,16 +55,16 @@ export interface SPWebApplication {
 }
 
 /*********************************************
-* SPWebApplicationMethods
+* SPWebApplicationCollections
 **********************************************/
-export interface SPWebApplicationMethods extends SPWebApplication {
+export interface SPWebApplicationCollections {
 	Sites?: () => Array<SP.Site>;
 }
 
 /*********************************************
 * SPWebApplicationQuery
 **********************************************/
-export interface SPWebApplicationQuery extends SPWebApplication {
+export interface SPWebApplicationQuery {
 	Sites?: Array<SP.Site>;
 }
 
@@ -76,9 +76,9 @@ export interface SPWebService {
 }
 
 /*********************************************
-* SPWebServiceMethods
+* SPWebServiceCollections
 **********************************************/
-export interface SPWebServiceMethods extends SPWebService {
+export interface SPWebServiceCollections {
 	ContentService?: () => Microsoft.SharePoint.Administration.SPWebService;
 	WebApplications?: () => Array<Microsoft.SharePoint.Administration.SPWebApplication>;
 }
@@ -86,7 +86,7 @@ export interface SPWebServiceMethods extends SPWebService {
 /*********************************************
 * SPWebServiceQuery
 **********************************************/
-export interface SPWebServiceQuery extends SPWebService {
+export interface SPWebServiceQuery {
 	ContentService?: Microsoft.SharePoint.Administration.SPWebService;
 	WebApplications?: Array<Microsoft.SharePoint.Administration.SPWebApplication>;
 }

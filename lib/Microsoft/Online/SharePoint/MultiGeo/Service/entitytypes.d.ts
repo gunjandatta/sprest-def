@@ -260,9 +260,9 @@ export interface MultiGeoServicesBeta {
 }
 
 /*********************************************
-* MultiGeoServicesBetaMethods
+* MultiGeoServicesBetaCollections
 **********************************************/
-export interface MultiGeoServicesBetaMethods extends MultiGeoServicesBeta {
+export interface MultiGeoServicesBetaCollections {
 	AllowedDataLocations?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>;
 	ContentDbSchemaVersion?: () => Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion;
 	CrossFarmGroupMoveJobs?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>;
@@ -288,7 +288,7 @@ export interface MultiGeoServicesBetaMethods extends MultiGeoServicesBeta {
 /*********************************************
 * MultiGeoServicesBetaQuery
 **********************************************/
-export interface MultiGeoServicesBetaQuery extends MultiGeoServicesBeta {
+export interface MultiGeoServicesBetaQuery {
 	AllowedDataLocations?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>;
 	ContentDbSchemaVersion?: Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion;
 	CrossFarmGroupMoveJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>;

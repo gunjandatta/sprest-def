@@ -8,16 +8,16 @@ export interface SiteCollectionCorporateCatalogAccessor {
 }
 
 /*********************************************
-* SiteCollectionCorporateCatalogAccessorMethods
+* SiteCollectionCorporateCatalogAccessorCollections
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorMethods extends SiteCollectionCorporateCatalogAccessor {
+export interface SiteCollectionCorporateCatalogAccessorCollections {
 	AvailableApps?: () => Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 }
 
 /*********************************************
 * SiteCollectionCorporateCatalogAccessorQuery
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessor {
+export interface SiteCollectionCorporateCatalogAccessorQuery {
 	AvailableApps?: Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 }
 
@@ -43,9 +43,9 @@ export interface TenantCorporateCatalogAccessor {
 }
 
 /*********************************************
-* TenantCorporateCatalogAccessorMethods
+* TenantCorporateCatalogAccessorCollections
 **********************************************/
-export interface TenantCorporateCatalogAccessorMethods extends TenantCorporateCatalogAccessor {
+export interface TenantCorporateCatalogAccessorCollections {
 	AvailableApps?: () => Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 	SiteCollectionAppCatalogsSites?: () => Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
 }
@@ -53,7 +53,7 @@ export interface TenantCorporateCatalogAccessorMethods extends TenantCorporateCa
 /*********************************************
 * TenantCorporateCatalogAccessorQuery
 **********************************************/
-export interface TenantCorporateCatalogAccessorQuery extends TenantCorporateCatalogAccessor {
+export interface TenantCorporateCatalogAccessorQuery {
 	AvailableApps?: Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 	SiteCollectionAppCatalogsSites?: Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
 }

@@ -78,16 +78,16 @@ export interface SharingInformation {
 }
 
 /*********************************************
-* SharingInformationMethods
+* SharingInformationCollections
 **********************************************/
-export interface SharingInformationMethods extends SharingInformation {
+export interface SharingInformationCollections {
 	pickerSettings?: () => SP.PickerSettings;
 }
 
 /*********************************************
 * SharingInformationQuery
 **********************************************/
-export interface SharingInformationQuery extends SharingInformation {
+export interface SharingInformationQuery {
 	pickerSettings?: SP.PickerSettings;
 }
 

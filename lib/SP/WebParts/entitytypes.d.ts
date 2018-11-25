@@ -9,16 +9,16 @@ export interface LimitedWebPartManager {
 }
 
 /*********************************************
-* LimitedWebPartManagerMethods
+* LimitedWebPartManagerCollections
 **********************************************/
-export interface LimitedWebPartManagerMethods extends LimitedWebPartManager {
+export interface LimitedWebPartManagerCollections {
 	WebParts?: () => Array<SP.WebParts.WebPartDefinition>;
 }
 
 /*********************************************
 * LimitedWebPartManagerQuery
 **********************************************/
-export interface LimitedWebPartManagerQuery extends LimitedWebPartManager {
+export interface LimitedWebPartManagerQuery {
 	WebParts?: Array<SP.WebParts.WebPartDefinition>;
 }
 
@@ -31,16 +31,16 @@ export interface WebPartDefinition {
 }
 
 /*********************************************
-* WebPartDefinitionMethods
+* WebPartDefinitionCollections
 **********************************************/
-export interface WebPartDefinitionMethods extends WebPartDefinition {
+export interface WebPartDefinitionCollections {
 	WebPart?: () => SP.WebParts.WebPart;
 }
 
 /*********************************************
 * WebPartDefinitionQuery
 **********************************************/
-export interface WebPartDefinitionQuery extends WebPartDefinition {
+export interface WebPartDefinitionQuery {
 	WebPart?: SP.WebParts.WebPart;
 }
 
@@ -58,15 +58,15 @@ export interface WebPart {
 }
 
 /*********************************************
-* WebPartMethods
+* WebPartCollections
 **********************************************/
-export interface WebPartMethods extends WebPart {
+export interface WebPartCollections {
 	Properties?: () => SP.PropertyValues;
 }
 
 /*********************************************
 * WebPartQuery
 **********************************************/
-export interface WebPartQuery extends WebPart {
+export interface WebPartQuery {
 	Properties?: SP.PropertyValues;
 }

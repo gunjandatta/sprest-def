@@ -333,8 +333,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     // See if methods exist
                     if (methods.length > 0) {
                         // Add the content
-                        content.push(create.interface(name + "Methods", name, methods.join('\n')));
-                        content.push(create.interface(name + "Query", name, queryMethods.join('\n')));
+                        content.push(create.interface(name + "Collections", null, methods.join('\n')));
+                        content.push(create.interface(name + "Query", null, queryMethods.join('\n')));
                     }
                 }
 

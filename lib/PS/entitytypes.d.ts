@@ -66,16 +66,16 @@ export interface Assignment {
 }
 
 /*********************************************
-* AssignmentMethods
+* AssignmentCollections
 **********************************************/
-export interface AssignmentMethods extends Assignment {
+export interface AssignmentCollections {
 	CustomFields?: () => Array<PS.CustomField>;
 }
 
 /*********************************************
 * AssignmentQuery
 **********************************************/
-export interface AssignmentQuery extends Assignment {
+export interface AssignmentQuery {
 	CustomFields?: Array<PS.CustomField>;
 }
 
@@ -110,9 +110,9 @@ export interface CustomField {
 }
 
 /*********************************************
-* CustomFieldMethods
+* CustomFieldCollections
 **********************************************/
-export interface CustomFieldMethods extends CustomField {
+export interface CustomFieldCollections {
 	EntityType?: () => PS.EntityType;
 	LookupEntries?: () => Array<PS.LookupEntry>;
 	LookupTable?: () => PS.LookupTable;
@@ -121,7 +121,7 @@ export interface CustomFieldMethods extends CustomField {
 /*********************************************
 * CustomFieldQuery
 **********************************************/
-export interface CustomFieldQuery extends CustomField {
+export interface CustomFieldQuery {
 	EntityType?: PS.EntityType;
 	LookupEntries?: Array<PS.LookupEntry>;
 	LookupTable?: PS.LookupTable;
@@ -152,16 +152,16 @@ export interface LookupTable {
 }
 
 /*********************************************
-* LookupTableMethods
+* LookupTableCollections
 **********************************************/
-export interface LookupTableMethods extends LookupTable {
+export interface LookupTableCollections {
 	Entries?: () => Array<PS.LookupEntry>;
 }
 
 /*********************************************
 * LookupTableQuery
 **********************************************/
-export interface LookupTableQuery extends LookupTable {
+export interface LookupTableQuery {
 	Entries?: Array<PS.LookupEntry>;
 }
 
@@ -192,16 +192,16 @@ export interface CalendarException {
 }
 
 /*********************************************
-* CalendarExceptionMethods
+* CalendarExceptionCollections
 **********************************************/
-export interface CalendarExceptionMethods extends CalendarException {
+export interface CalendarExceptionCollections {
 	Calendar?: () => PS.Calendar;
 }
 
 /*********************************************
 * CalendarExceptionQuery
 **********************************************/
-export interface CalendarExceptionQuery extends CalendarException {
+export interface CalendarExceptionQuery {
 	Calendar?: PS.Calendar;
 }
 
@@ -218,16 +218,16 @@ export interface Calendar {
 }
 
 /*********************************************
-* CalendarMethods
+* CalendarCollections
 **********************************************/
-export interface CalendarMethods extends Calendar {
+export interface CalendarCollections {
 	BaseCalendarExceptions?: () => Array<PS.CalendarException>;
 }
 
 /*********************************************
 * CalendarQuery
 **********************************************/
-export interface CalendarQuery extends Calendar {
+export interface CalendarQuery {
 	BaseCalendarExceptions?: Array<PS.CalendarException>;
 }
 
@@ -285,9 +285,9 @@ export interface DraftAssignment extends PS.Assignment {
 }
 
 /*********************************************
-* DraftAssignmentMethods
+* DraftAssignmentCollections
 **********************************************/
-export interface DraftAssignmentMethods extends DraftAssignment {
+export interface DraftAssignmentCollections {
 	Owner?: () => SP.User;
 	Parent?: () => PS.DraftAssignment;
 	Resource?: () => PS.DraftProjectResource;
@@ -297,7 +297,7 @@ export interface DraftAssignmentMethods extends DraftAssignment {
 /*********************************************
 * DraftAssignmentQuery
 **********************************************/
-export interface DraftAssignmentQuery extends DraftAssignment {
+export interface DraftAssignmentQuery {
 	Owner?: SP.User;
 	Parent?: PS.DraftAssignment;
 	Resource?: PS.DraftProjectResource;
@@ -373,9 +373,9 @@ export interface ProjectResource {
 }
 
 /*********************************************
-* ProjectResourceMethods
+* ProjectResourceCollections
 **********************************************/
-export interface ProjectResourceMethods extends ProjectResource {
+export interface ProjectResourceCollections {
 	CustomFields?: () => Array<PS.CustomField>;
 	EnterpriseResource?: () => PS.EnterpriseResource;
 }
@@ -383,7 +383,7 @@ export interface ProjectResourceMethods extends ProjectResource {
 /*********************************************
 * ProjectResourceQuery
 **********************************************/
-export interface ProjectResourceQuery extends ProjectResource {
+export interface ProjectResourceQuery {
 	CustomFields?: Array<PS.CustomField>;
 	EnterpriseResource?: PS.EnterpriseResource;
 }
@@ -422,9 +422,9 @@ export interface EnterpriseResource {
 }
 
 /*********************************************
-* EnterpriseResourceMethods
+* EnterpriseResourceCollections
 **********************************************/
-export interface EnterpriseResourceMethods extends EnterpriseResource {
+export interface EnterpriseResourceCollections {
 	Assignments?: () => Array<PS.StatusAssignment>;
 	BaseCalendar?: () => PS.Calendar;
 	CostRateTables?: () => Array<PS.EnterpriseResourceCostRateTable>;
@@ -441,7 +441,7 @@ export interface EnterpriseResourceMethods extends EnterpriseResource {
 /*********************************************
 * EnterpriseResourceQuery
 **********************************************/
-export interface EnterpriseResourceQuery extends EnterpriseResource {
+export interface EnterpriseResourceQuery {
 	Assignments?: Array<PS.StatusAssignment>;
 	BaseCalendar?: PS.Calendar;
 	CostRateTables?: Array<PS.EnterpriseResourceCostRateTable>;
@@ -494,9 +494,9 @@ export interface StatusAssignment {
 }
 
 /*********************************************
-* StatusAssignmentMethods
+* StatusAssignmentCollections
 **********************************************/
-export interface StatusAssignmentMethods extends StatusAssignment {
+export interface StatusAssignmentCollections {
 	CustomFields?: () => Array<PS.CustomField>;
 	History?: () => Array<PS.StatusAssignmentHistoryLine>;
 	Project?: () => PS.PublishedProject;
@@ -507,7 +507,7 @@ export interface StatusAssignmentMethods extends StatusAssignment {
 /*********************************************
 * StatusAssignmentQuery
 **********************************************/
-export interface StatusAssignmentQuery extends StatusAssignment {
+export interface StatusAssignmentQuery {
 	CustomFields?: Array<PS.CustomField>;
 	History?: Array<PS.StatusAssignmentHistoryLine>;
 	Project?: PS.PublishedProject;
@@ -527,16 +527,16 @@ export interface StatusAssignmentHistoryLine {
 }
 
 /*********************************************
-* StatusAssignmentHistoryLineMethods
+* StatusAssignmentHistoryLineCollections
 **********************************************/
-export interface StatusAssignmentHistoryLineMethods extends StatusAssignmentHistoryLine {
+export interface StatusAssignmentHistoryLineCollections {
 	Author?: () => SP.User;
 }
 
 /*********************************************
 * StatusAssignmentHistoryLineQuery
 **********************************************/
-export interface StatusAssignmentHistoryLineQuery extends StatusAssignmentHistoryLine {
+export interface StatusAssignmentHistoryLineQuery {
 	Author?: SP.User;
 }
 
@@ -583,9 +583,9 @@ export interface Project {
 }
 
 /*********************************************
-* ProjectMethods
+* ProjectCollections
 **********************************************/
-export interface ProjectMethods extends Project {
+export interface ProjectCollections {
 	CheckedOutBy?: () => SP.User;
 	CustomFields?: () => Array<PS.CustomField>;
 	Engagements?: () => Array<PS.ProjectEngagement>;
@@ -600,7 +600,7 @@ export interface ProjectMethods extends Project {
 /*********************************************
 * ProjectQuery
 **********************************************/
-export interface ProjectQuery extends Project {
+export interface ProjectQuery {
 	CheckedOutBy?: SP.User;
 	CustomFields?: Array<PS.CustomField>;
 	Engagements?: Array<PS.ProjectEngagement>;
@@ -627,9 +627,9 @@ export interface Engagement {
 }
 
 /*********************************************
-* EngagementMethods
+* EngagementCollections
 **********************************************/
-export interface EngagementMethods extends Engagement {
+export interface EngagementCollections {
 	Comments?: () => Array<PS.EngagementComment>;
 	ModifiedBy?: () => SP.User;
 	Project?: () => PS.Project;
@@ -641,7 +641,7 @@ export interface EngagementMethods extends Engagement {
 /*********************************************
 * EngagementQuery
 **********************************************/
-export interface EngagementQuery extends Engagement {
+export interface EngagementQuery {
 	Comments?: Array<PS.EngagementComment>;
 	ModifiedBy?: SP.User;
 	Project?: PS.Project;
@@ -660,16 +660,16 @@ export interface EngagementComment {
 }
 
 /*********************************************
-* EngagementCommentMethods
+* EngagementCommentCollections
 **********************************************/
-export interface EngagementCommentMethods extends EngagementComment {
+export interface EngagementCommentCollections {
 	Author?: () => SP.User;
 }
 
 /*********************************************
 * EngagementCommentQuery
 **********************************************/
-export interface EngagementCommentQuery extends EngagementComment {
+export interface EngagementCommentQuery {
 	Author?: SP.User;
 }
 
@@ -716,16 +716,16 @@ export interface EnterpriseProjectType {
 }
 
 /*********************************************
-* EnterpriseProjectTypeMethods
+* EnterpriseProjectTypeCollections
 **********************************************/
-export interface EnterpriseProjectTypeMethods extends EnterpriseProjectType {
+export interface EnterpriseProjectTypeCollections {
 	ProjectDetailPages?: () => Array<PS.ProjectDetailPage>;
 }
 
 /*********************************************
 * EnterpriseProjectTypeQuery
 **********************************************/
-export interface EnterpriseProjectTypeQuery extends EnterpriseProjectType {
+export interface EnterpriseProjectTypeQuery {
 	ProjectDetailPages?: Array<PS.ProjectDetailPage>;
 }
 
@@ -739,16 +739,16 @@ export interface ProjectDetailPage {
 }
 
 /*********************************************
-* ProjectDetailPageMethods
+* ProjectDetailPageCollections
 **********************************************/
-export interface ProjectDetailPageMethods extends ProjectDetailPage {
+export interface ProjectDetailPageCollections {
 	Item?: () => SP.ListItem;
 }
 
 /*********************************************
 * ProjectDetailPageQuery
 **********************************************/
-export interface ProjectDetailPageQuery extends ProjectDetailPage {
+export interface ProjectDetailPageQuery {
 	Item?: SP.ListItem;
 }
 
@@ -770,16 +770,16 @@ export interface Phase {
 }
 
 /*********************************************
-* PhaseMethods
+* PhaseCollections
 **********************************************/
-export interface PhaseMethods extends Phase {
+export interface PhaseCollections {
 	Stages?: () => Array<PS.Stage>;
 }
 
 /*********************************************
 * PhaseQuery
 **********************************************/
-export interface PhaseQuery extends Phase {
+export interface PhaseQuery {
 	Stages?: Array<PS.Stage>;
 }
 
@@ -796,9 +796,9 @@ export interface Stage {
 }
 
 /*********************************************
-* StageMethods
+* StageCollections
 **********************************************/
-export interface StageMethods extends Stage {
+export interface StageCollections {
 	CustomFields?: () => Array<PS.StageCustomField>;
 	Phase?: () => PS.Phase;
 	ProjectDetailPages?: () => Array<PS.StageDetailPage>;
@@ -808,7 +808,7 @@ export interface StageMethods extends Stage {
 /*********************************************
 * StageQuery
 **********************************************/
-export interface StageQuery extends Stage {
+export interface StageQuery {
 	CustomFields?: Array<PS.StageCustomField>;
 	Phase?: PS.Phase;
 	ProjectDetailPages?: Array<PS.StageDetailPage>;
@@ -826,16 +826,16 @@ export interface StageCustomField {
 }
 
 /*********************************************
-* StageCustomFieldMethods
+* StageCustomFieldCollections
 **********************************************/
-export interface StageCustomFieldMethods extends StageCustomField {
+export interface StageCustomFieldCollections {
 	Stage?: () => PS.Stage;
 }
 
 /*********************************************
 * StageCustomFieldQuery
 **********************************************/
-export interface StageCustomFieldQuery extends StageCustomField {
+export interface StageCustomFieldQuery {
 	Stage?: PS.Stage;
 }
 
@@ -850,9 +850,9 @@ export interface StageDetailPage {
 }
 
 /*********************************************
-* StageDetailPageMethods
+* StageDetailPageCollections
 **********************************************/
-export interface StageDetailPageMethods extends StageDetailPage {
+export interface StageDetailPageCollections {
 	Page?: () => PS.ProjectDetailPage;
 	Stage?: () => PS.Stage;
 }
@@ -860,7 +860,7 @@ export interface StageDetailPageMethods extends StageDetailPage {
 /*********************************************
 * StageDetailPageQuery
 **********************************************/
-export interface StageDetailPageQuery extends StageDetailPage {
+export interface StageDetailPageQuery {
 	Page?: PS.ProjectDetailPage;
 	Stage?: PS.Stage;
 }
@@ -977,9 +977,9 @@ export interface Task {
 }
 
 /*********************************************
-* TaskMethods
+* TaskCollections
 **********************************************/
-export interface TaskMethods extends Task {
+export interface TaskCollections {
 	CustomFields?: () => Array<PS.CustomField>;
 	SubProject?: () => PS.PublishedProject;
 }
@@ -987,7 +987,7 @@ export interface TaskMethods extends Task {
 /*********************************************
 * TaskQuery
 **********************************************/
-export interface TaskQuery extends Task {
+export interface TaskQuery {
 	CustomFields?: Array<PS.CustomField>;
 	SubProject?: PS.PublishedProject;
 }
@@ -1034,9 +1034,9 @@ export interface PublishedProject extends PS.Project {
 }
 
 /*********************************************
-* PublishedProjectMethods
+* PublishedProjectCollections
 **********************************************/
-export interface PublishedProjectMethods extends PublishedProject {
+export interface PublishedProjectCollections {
 	Assignments?: () => Array<PS.PublishedAssignment>;
 	Calendar?: () => PS.Calendar;
 	Draft?: () => PS.DraftProject;
@@ -1052,7 +1052,7 @@ export interface PublishedProjectMethods extends PublishedProject {
 /*********************************************
 * PublishedProjectQuery
 **********************************************/
-export interface PublishedProjectQuery extends PublishedProject {
+export interface PublishedProjectQuery {
 	Assignments?: Array<PS.PublishedAssignment>;
 	Calendar?: PS.Calendar;
 	Draft?: PS.DraftProject;
@@ -1110,9 +1110,9 @@ export interface PublishedAssignment extends PS.Assignment {
 }
 
 /*********************************************
-* PublishedAssignmentMethods
+* PublishedAssignmentCollections
 **********************************************/
-export interface PublishedAssignmentMethods extends PublishedAssignment {
+export interface PublishedAssignmentCollections {
 	Owner?: () => SP.User;
 	Parent?: () => PS.PublishedAssignment;
 	Resource?: () => PS.PublishedProjectResource;
@@ -1122,7 +1122,7 @@ export interface PublishedAssignmentMethods extends PublishedAssignment {
 /*********************************************
 * PublishedAssignmentQuery
 **********************************************/
-export interface PublishedAssignmentQuery extends PublishedAssignment {
+export interface PublishedAssignmentQuery {
 	Owner?: SP.User;
 	Parent?: PS.PublishedAssignment;
 	Resource?: PS.PublishedProjectResource;
@@ -1153,9 +1153,9 @@ export interface PublishedProjectResource extends PS.ProjectResource {
 }
 
 /*********************************************
-* PublishedProjectResourceMethods
+* PublishedProjectResourceCollections
 **********************************************/
-export interface PublishedProjectResourceMethods extends PublishedProjectResource {
+export interface PublishedProjectResourceCollections {
 	Assignments?: () => Array<PS.PublishedAssignment>;
 	DefaultAssignmentOwner?: () => SP.User;
 }
@@ -1163,7 +1163,7 @@ export interface PublishedProjectResourceMethods extends PublishedProjectResourc
 /*********************************************
 * PublishedProjectResourceQuery
 **********************************************/
-export interface PublishedProjectResourceQuery extends PublishedProjectResource {
+export interface PublishedProjectResourceQuery {
 	Assignments?: Array<PS.PublishedAssignment>;
 	DefaultAssignmentOwner?: SP.User;
 }
@@ -1218,9 +1218,9 @@ export interface PublishedTask extends PS.Task {
 }
 
 /*********************************************
-* PublishedTaskMethods
+* PublishedTaskCollections
 **********************************************/
-export interface PublishedTaskMethods extends PublishedTask {
+export interface PublishedTaskCollections {
 	Assignments?: () => Array<PS.PublishedAssignment>;
 	Calendar?: () => PS.Calendar;
 	EntityLinks?: () => Array<PS.EntityLink>;
@@ -1234,7 +1234,7 @@ export interface PublishedTaskMethods extends PublishedTask {
 /*********************************************
 * PublishedTaskQuery
 **********************************************/
-export interface PublishedTaskQuery extends PublishedTask {
+export interface PublishedTaskQuery {
 	Assignments?: Array<PS.PublishedAssignment>;
 	Calendar?: PS.Calendar;
 	EntityLinks?: Array<PS.EntityLink>;
@@ -1271,9 +1271,9 @@ export interface PublishedTaskLink extends PS.TaskLink {
 }
 
 /*********************************************
-* PublishedTaskLinkMethods
+* PublishedTaskLinkCollections
 **********************************************/
-export interface PublishedTaskLinkMethods extends PublishedTaskLink {
+export interface PublishedTaskLinkCollections {
 	End?: () => PS.PublishedTask;
 	Start?: () => PS.PublishedTask;
 }
@@ -1281,7 +1281,7 @@ export interface PublishedTaskLinkMethods extends PublishedTaskLink {
 /*********************************************
 * PublishedTaskLinkQuery
 **********************************************/
-export interface PublishedTaskLinkQuery extends PublishedTaskLink {
+export interface PublishedTaskLinkQuery {
 	End?: PS.PublishedTask;
 	Start?: PS.PublishedTask;
 }
@@ -1338,9 +1338,9 @@ export interface DraftProject extends PS.Project {
 }
 
 /*********************************************
-* DraftProjectMethods
+* DraftProjectCollections
 **********************************************/
-export interface DraftProjectMethods extends DraftProject {
+export interface DraftProjectCollections {
 	Assignments?: () => Array<PS.DraftAssignment>;
 	Calendar?: () => PS.Calendar;
 	IncludeCustomFields?: () => PS.DraftProject;
@@ -1353,7 +1353,7 @@ export interface DraftProjectMethods extends DraftProject {
 /*********************************************
 * DraftProjectQuery
 **********************************************/
-export interface DraftProjectQuery extends DraftProject {
+export interface DraftProjectQuery {
 	Assignments?: Array<PS.DraftAssignment>;
 	Calendar?: PS.Calendar;
 	IncludeCustomFields?: PS.DraftProject;
@@ -1387,9 +1387,9 @@ export interface DraftProjectResource extends PS.ProjectResource {
 }
 
 /*********************************************
-* DraftProjectResourceMethods
+* DraftProjectResourceCollections
 **********************************************/
-export interface DraftProjectResourceMethods extends DraftProjectResource {
+export interface DraftProjectResourceCollections {
 	Assignments?: () => Array<PS.DraftAssignment>;
 	DefaultAssignmentOwner?: () => SP.User;
 }
@@ -1397,7 +1397,7 @@ export interface DraftProjectResourceMethods extends DraftProjectResource {
 /*********************************************
 * DraftProjectResourceQuery
 **********************************************/
-export interface DraftProjectResourceQuery extends DraftProjectResource {
+export interface DraftProjectResourceQuery {
 	Assignments?: Array<PS.DraftAssignment>;
 	DefaultAssignmentOwner?: SP.User;
 }
@@ -1412,9 +1412,9 @@ export interface DraftTaskLink extends PS.TaskLink {
 }
 
 /*********************************************
-* DraftTaskLinkMethods
+* DraftTaskLinkCollections
 **********************************************/
-export interface DraftTaskLinkMethods extends DraftTaskLink {
+export interface DraftTaskLinkCollections {
 	End?: () => PS.DraftTask;
 	Start?: () => PS.DraftTask;
 }
@@ -1422,7 +1422,7 @@ export interface DraftTaskLinkMethods extends DraftTaskLink {
 /*********************************************
 * DraftTaskLinkQuery
 **********************************************/
-export interface DraftTaskLinkQuery extends DraftTaskLink {
+export interface DraftTaskLinkQuery {
 	End?: PS.DraftTask;
 	Start?: PS.DraftTask;
 }
@@ -1479,9 +1479,9 @@ export interface DraftTask extends PS.Task {
 }
 
 /*********************************************
-* DraftTaskMethods
+* DraftTaskCollections
 **********************************************/
-export interface DraftTaskMethods extends DraftTask {
+export interface DraftTaskCollections {
 	Assignments?: () => Array<PS.DraftAssignment>;
 	Calendar?: () => PS.Calendar;
 	Parent?: () => PS.DraftTask;
@@ -1493,7 +1493,7 @@ export interface DraftTaskMethods extends DraftTask {
 /*********************************************
 * DraftTaskQuery
 **********************************************/
-export interface DraftTaskQuery extends DraftTask {
+export interface DraftTaskQuery {
 	Assignments?: Array<PS.DraftAssignment>;
 	Calendar?: PS.Calendar;
 	Parent?: PS.DraftTask;
@@ -1515,9 +1515,9 @@ export interface ProjectWorkflowInstance {
 }
 
 /*********************************************
-* ProjectWorkflowInstanceMethods
+* ProjectWorkflowInstanceCollections
 **********************************************/
-export interface ProjectWorkflowInstanceMethods extends ProjectWorkflowInstance {
+export interface ProjectWorkflowInstanceCollections {
 	Project?: () => PS.Project;
 	WorkflowInstance?: () => SP.WorkflowServices.WorkflowInstance;
 	WorkflowInstanceOwner?: () => SP.User;
@@ -1526,7 +1526,7 @@ export interface ProjectWorkflowInstanceMethods extends ProjectWorkflowInstance 
 /*********************************************
 * ProjectWorkflowInstanceQuery
 **********************************************/
-export interface ProjectWorkflowInstanceQuery extends ProjectWorkflowInstance {
+export interface ProjectWorkflowInstanceQuery {
 	Project?: PS.Project;
 	WorkflowInstance?: SP.WorkflowServices.WorkflowInstance;
 	WorkflowInstanceOwner?: SP.User;
@@ -1572,9 +1572,9 @@ export interface QueueJob {
 }
 
 /*********************************************
-* QueueJobMethods
+* QueueJobCollections
 **********************************************/
-export interface QueueJobMethods extends QueueJob {
+export interface QueueJobCollections {
 	Project?: () => PS.Project;
 	Submitter?: () => SP.User;
 }
@@ -1582,7 +1582,7 @@ export interface QueueJobMethods extends QueueJob {
 /*********************************************
 * QueueJobQuery
 **********************************************/
-export interface QueueJobQuery extends QueueJob {
+export interface QueueJobQuery {
 	Project?: PS.Project;
 	Submitter?: SP.User;
 }
@@ -1628,9 +1628,9 @@ export interface StatusTask {
 }
 
 /*********************************************
-* StatusTaskMethods
+* StatusTaskCollections
 **********************************************/
-export interface StatusTaskMethods extends StatusTask {
+export interface StatusTaskCollections {
 	CustomFields?: () => Array<PS.CustomField>;
 	StatusManager?: () => SP.User;
 }
@@ -1638,7 +1638,7 @@ export interface StatusTaskMethods extends StatusTask {
 /*********************************************
 * StatusTaskQuery
 **********************************************/
-export interface StatusTaskQuery extends StatusTask {
+export interface StatusTaskQuery {
 	CustomFields?: Array<PS.CustomField>;
 	StatusManager?: SP.User;
 }
@@ -1651,16 +1651,16 @@ export interface EnterpriseResourceCostRateTable {
 }
 
 /*********************************************
-* EnterpriseResourceCostRateTableMethods
+* EnterpriseResourceCostRateTableCollections
 **********************************************/
-export interface EnterpriseResourceCostRateTableMethods extends EnterpriseResourceCostRateTable {
+export interface EnterpriseResourceCostRateTableCollections {
 	CostRates?: () => Array<PS.EnterpriseResourceCostRate>;
 }
 
 /*********************************************
 * EnterpriseResourceCostRateTableQuery
 **********************************************/
-export interface EnterpriseResourceCostRateTableQuery extends EnterpriseResourceCostRateTable {
+export interface EnterpriseResourceCostRateTableQuery {
 	CostRates?: Array<PS.EnterpriseResourceCostRate>;
 }
 
@@ -1722,9 +1722,9 @@ export interface EntityTypes {
 }
 
 /*********************************************
-* EntityTypesMethods
+* EntityTypesCollections
 **********************************************/
-export interface EntityTypesMethods extends EntityTypes {
+export interface EntityTypesCollections {
 	AssignmentEntity?: () => PS.EntityType;
 	ProjectEntity?: () => PS.EntityType;
 	ResourceEntity?: () => PS.EntityType;
@@ -1734,7 +1734,7 @@ export interface EntityTypesMethods extends EntityTypes {
 /*********************************************
 * EntityTypesQuery
 **********************************************/
-export interface EntityTypesQuery extends EntityTypes {
+export interface EntityTypesQuery {
 	AssignmentEntity?: PS.EntityType;
 	ProjectEntity?: PS.EntityType;
 	ResourceEntity?: PS.EntityType;
@@ -1765,16 +1765,16 @@ export interface EventHandler {
 }
 
 /*********************************************
-* EventHandlerMethods
+* EventHandlerCollections
 **********************************************/
-export interface EventHandlerMethods extends EventHandler {
+export interface EventHandlerCollections {
 	Event?: () => PS.Event;
 }
 
 /*********************************************
 * EventHandlerQuery
 **********************************************/
-export interface EventHandlerQuery extends EventHandler {
+export interface EventHandlerQuery {
 	Event?: PS.Event;
 }
 
@@ -1818,16 +1818,16 @@ export interface LookupText extends PS.LookupEntry {
 }
 
 /*********************************************
-* LookupTextMethods
+* LookupTextCollections
 **********************************************/
-export interface LookupTextMethods extends LookupText {
+export interface LookupTextCollections {
 	Parent?: () => PS.LookupText;
 }
 
 /*********************************************
 * LookupTextQuery
 **********************************************/
-export interface LookupTextQuery extends LookupText {
+export interface LookupTextQuery {
 	Parent?: PS.LookupText;
 }
 
@@ -1860,9 +1860,9 @@ export interface PlanAssignment {
 }
 
 /*********************************************
-* PlanAssignmentMethods
+* PlanAssignmentCollections
 **********************************************/
-export interface PlanAssignmentMethods extends PlanAssignment {
+export interface PlanAssignmentCollections {
 	CustomFields?: () => Array<PS.CustomField>;
 	Intervals?: () => Array<PS.PlanAssignmentInterval>;
 	Resource?: () => PS.EnterpriseResource;
@@ -1871,7 +1871,7 @@ export interface PlanAssignmentMethods extends PlanAssignment {
 /*********************************************
 * PlanAssignmentQuery
 **********************************************/
-export interface PlanAssignmentQuery extends PlanAssignment {
+export interface PlanAssignmentQuery {
 	CustomFields?: Array<PS.CustomField>;
 	Intervals?: Array<PS.PlanAssignmentInterval>;
 	Resource?: PS.EnterpriseResource;
@@ -1922,9 +1922,9 @@ export interface ProjectServer {
 }
 
 /*********************************************
-* ProjectServerMethods
+* ProjectServerCollections
 **********************************************/
-export interface ProjectServerMethods extends ProjectServer {
+export interface ProjectServerCollections {
 	Calendars?: () => Array<PS.Calendar>;
 	CustomFields?: () => Array<PS.CustomField>;
 	EnterpriseProjectTypes?: () => Array<PS.EnterpriseProjectType>;
@@ -1948,7 +1948,7 @@ export interface ProjectServerMethods extends ProjectServer {
 /*********************************************
 * ProjectServerQuery
 **********************************************/
-export interface ProjectServerQuery extends ProjectServer {
+export interface ProjectServerQuery {
 	Calendars?: Array<PS.Calendar>;
 	CustomFields?: Array<PS.CustomField>;
 	EnterpriseProjectTypes?: Array<PS.EnterpriseProjectType>;
@@ -1993,16 +1993,16 @@ export interface TimeSheetPeriod {
 }
 
 /*********************************************
-* TimeSheetPeriodMethods
+* TimeSheetPeriodCollections
 **********************************************/
-export interface TimeSheetPeriodMethods extends TimeSheetPeriod {
+export interface TimeSheetPeriodCollections {
 	TimeSheet?: () => PS.TimeSheet;
 }
 
 /*********************************************
 * TimeSheetPeriodQuery
 **********************************************/
-export interface TimeSheetPeriodQuery extends TimeSheetPeriod {
+export interface TimeSheetPeriodQuery {
 	TimeSheet?: PS.TimeSheet;
 }
 
@@ -2036,9 +2036,9 @@ export interface TimeSheet {
 }
 
 /*********************************************
-* TimeSheetMethods
+* TimeSheetCollections
 **********************************************/
-export interface TimeSheetMethods extends TimeSheet {
+export interface TimeSheetCollections {
 	Creator?: () => SP.User;
 	Lines?: () => Array<PS.TimeSheetLine>;
 	Manager?: () => SP.User;
@@ -2048,7 +2048,7 @@ export interface TimeSheetMethods extends TimeSheet {
 /*********************************************
 * TimeSheetQuery
 **********************************************/
-export interface TimeSheetQuery extends TimeSheet {
+export interface TimeSheetQuery {
 	Creator?: SP.User;
 	Lines?: Array<PS.TimeSheetLine>;
 	Manager?: SP.User;
@@ -2072,9 +2072,9 @@ export interface TimeSheetLine {
 }
 
 /*********************************************
-* TimeSheetLineMethods
+* TimeSheetLineCollections
 **********************************************/
-export interface TimeSheetLineMethods extends TimeSheetLine {
+export interface TimeSheetLineCollections {
 	Assignment?: () => PS.PublishedAssignment;
 	TimeSheet?: () => PS.TimeSheet;
 	Work?: () => Array<PS.TimeSheetWork>;
@@ -2083,7 +2083,7 @@ export interface TimeSheetLineMethods extends TimeSheetLine {
 /*********************************************
 * TimeSheetLineQuery
 **********************************************/
-export interface TimeSheetLineQuery extends TimeSheetLine {
+export interface TimeSheetLineQuery {
 	Assignment?: PS.PublishedAssignment;
 	TimeSheet?: PS.TimeSheet;
 	Work?: Array<PS.TimeSheetWork>;
@@ -2129,16 +2129,16 @@ export interface WorkflowDesigner {
 }
 
 /*********************************************
-* WorkflowDesignerMethods
+* WorkflowDesignerCollections
 **********************************************/
-export interface WorkflowDesignerMethods extends WorkflowDesigner {
+export interface WorkflowDesignerCollections {
 	Fields?: () => Array<PS.WorkflowDesignerField>;
 }
 
 /*********************************************
 * WorkflowDesignerQuery
 **********************************************/
-export interface WorkflowDesignerQuery extends WorkflowDesigner {
+export interface WorkflowDesignerQuery {
 	Fields?: Array<PS.WorkflowDesignerField>;
 }
 
@@ -2154,16 +2154,16 @@ export interface WorkflowDesignerField {
 }
 
 /*********************************************
-* WorkflowDesignerFieldMethods
+* WorkflowDesignerFieldCollections
 **********************************************/
-export interface WorkflowDesignerFieldMethods extends WorkflowDesignerField {
+export interface WorkflowDesignerFieldCollections {
 	LookupEntries?: () => Array<PS.LookupEntry>;
 }
 
 /*********************************************
 * WorkflowDesignerFieldQuery
 **********************************************/
-export interface WorkflowDesignerFieldQuery extends WorkflowDesignerField {
+export interface WorkflowDesignerFieldQuery {
 	LookupEntries?: Array<PS.LookupEntry>;
 }
 
@@ -2200,16 +2200,16 @@ export interface ResourcePlan {
 }
 
 /*********************************************
-* ResourcePlanMethods
+* ResourcePlanCollections
 **********************************************/
-export interface ResourcePlanMethods extends ResourcePlan {
+export interface ResourcePlanCollections {
 	Assignments?: () => Array<PS.PlanAssignment>;
 }
 
 /*********************************************
 * ResourcePlanQuery
 **********************************************/
-export interface ResourcePlanQuery extends ResourcePlan {
+export interface ResourcePlanQuery {
 	Assignments?: Array<PS.PlanAssignment>;
 }
 
@@ -2230,15 +2230,15 @@ export interface TimePhase {
 }
 
 /*********************************************
-* TimePhaseMethods
+* TimePhaseCollections
 **********************************************/
-export interface TimePhaseMethods extends TimePhase {
+export interface TimePhaseCollections {
 	Assignments?: () => Array<PS.StatusAssignment>;
 }
 
 /*********************************************
 * TimePhaseQuery
 **********************************************/
-export interface TimePhaseQuery extends TimePhase {
+export interface TimePhaseQuery {
 	Assignments?: Array<PS.StatusAssignment>;
 }

@@ -39,9 +39,9 @@ export interface SPOWebAppServicePrincipal {
 }
 
 /*********************************************
-* SPOWebAppServicePrincipalMethods
+* SPOWebAppServicePrincipalCollections
 **********************************************/
-export interface SPOWebAppServicePrincipalMethods extends SPOWebAppServicePrincipal {
+export interface SPOWebAppServicePrincipalCollections {
 	PermissionGrants?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
 	PermissionRequests?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
 }
@@ -49,7 +49,7 @@ export interface SPOWebAppServicePrincipalMethods extends SPOWebAppServicePrinci
 /*********************************************
 * SPOWebAppServicePrincipalQuery
 **********************************************/
-export interface SPOWebAppServicePrincipalQuery extends SPOWebAppServicePrincipal {
+export interface SPOWebAppServicePrincipalQuery {
 	PermissionGrants?: Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
 	PermissionRequests?: Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
 }

@@ -61,16 +61,16 @@ export interface SharePointHomeServiceContext {
 }
 
 /*********************************************
-* SharePointHomeServiceContextMethods
+* SharePointHomeServiceContextCollections
 **********************************************/
-export interface SharePointHomeServiceContextMethods extends SharePointHomeServiceContext {
+export interface SharePointHomeServiceContextCollections {
 	Token?: () => SP.OAuth.TokenResponse;
 }
 
 /*********************************************
 * SharePointHomeServiceContextQuery
 **********************************************/
-export interface SharePointHomeServiceContextQuery extends SharePointHomeServiceContext {
+export interface SharePointHomeServiceContextQuery {
 	Token?: SP.OAuth.TokenResponse;
 }
 

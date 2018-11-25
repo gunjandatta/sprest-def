@@ -21,9 +21,9 @@ export interface comment {
 }
 
 /*********************************************
-* commentMethods
+* commentCollections
 **********************************************/
-export interface commentMethods extends comment {
+export interface commentCollections {
 	likedBy?: () => Array<Microsoft.SharePoint.Likes.userEntity>;
 	replies?: () => Array<Microsoft.SharePoint.Comments.comment>;
 }
@@ -31,7 +31,7 @@ export interface commentMethods extends comment {
 /*********************************************
 * commentQuery
 **********************************************/
-export interface commentQuery extends comment {
+export interface commentQuery {
 	likedBy?: Array<Microsoft.SharePoint.Likes.userEntity>;
 	replies?: Array<Microsoft.SharePoint.Comments.comment>;
 }

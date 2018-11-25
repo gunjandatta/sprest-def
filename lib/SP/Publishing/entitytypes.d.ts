@@ -64,9 +64,9 @@ export interface VideoItem {
 }
 
 /*********************************************
-* VideoItemMethods
+* VideoItemCollections
 **********************************************/
-export interface VideoItemMethods extends VideoItem {
+export interface VideoItemCollections {
 	Author?: () => SP.User;
 	Owner?: () => SP.User;
 	PeopleInMedia?: () => Array<SP.User>;
@@ -75,7 +75,7 @@ export interface VideoItemMethods extends VideoItem {
 /*********************************************
 * VideoItemQuery
 **********************************************/
-export interface VideoItemQuery extends VideoItem {
+export interface VideoItemQuery {
 	Author?: SP.User;
 	Owner?: SP.User;
 	PeopleInMedia?: Array<SP.User>;
@@ -139,16 +139,16 @@ export interface PointPublishingPost {
 }
 
 /*********************************************
-* PointPublishingPostMethods
+* PointPublishingPostCollections
 **********************************************/
-export interface PointPublishingPostMethods extends PointPublishingPost {
+export interface PointPublishingPostCollections {
 	images?: () => Array<SP.File>;
 }
 
 /*********************************************
 * PointPublishingPostQuery
 **********************************************/
-export interface PointPublishingPostQuery extends PointPublishingPost {
+export interface PointPublishingPostQuery {
 	images?: Array<SP.File>;
 }
 
@@ -160,9 +160,9 @@ export interface PointPublishingPostServiceManager {
 }
 
 /*********************************************
-* PointPublishingPostServiceManagerMethods
+* PointPublishingPostServiceManagerCollections
 **********************************************/
-export interface PointPublishingPostServiceManagerMethods extends PointPublishingPostServiceManager {
+export interface PointPublishingPostServiceManagerCollections {
 	bannerimages?: () => Array<SP.File>;
 	contributors?: () => Array<SP.Publishing.PointPublishingUser>;
 	creators?: () => Array<SP.Publishing.PointPublishingUser>;
@@ -174,7 +174,7 @@ export interface PointPublishingPostServiceManagerMethods extends PointPublishin
 /*********************************************
 * PointPublishingPostServiceManagerQuery
 **********************************************/
-export interface PointPublishingPostServiceManagerQuery extends PointPublishingPostServiceManager {
+export interface PointPublishingPostServiceManagerQuery {
 	bannerimages?: Array<SP.File>;
 	contributors?: Array<SP.Publishing.PointPublishingUser>;
 	creators?: Array<SP.Publishing.PointPublishingUser>;
@@ -268,9 +268,9 @@ export interface SitePageMetadata {
 }
 
 /*********************************************
-* SitePageMetadataMethods
+* SitePageMetadataCollections
 **********************************************/
-export interface SitePageMetadataMethods extends SitePageMetadata {
+export interface SitePageMetadataCollections {
 	CreatedBy?: () => SP.Publishing.UserInfo;
 	LastModifiedBy?: () => SP.Publishing.UserInfo;
 }
@@ -278,7 +278,7 @@ export interface SitePageMetadataMethods extends SitePageMetadata {
 /*********************************************
 * SitePageMetadataQuery
 **********************************************/
-export interface SitePageMetadataQuery extends SitePageMetadata {
+export interface SitePageMetadataQuery {
 	CreatedBy?: SP.Publishing.UserInfo;
 	LastModifiedBy?: SP.Publishing.UserInfo;
 }
@@ -351,9 +351,9 @@ export interface SitePageService {
 }
 
 /*********************************************
-* SitePageServiceMethods
+* SitePageServiceCollections
 **********************************************/
-export interface SitePageServiceMethods extends SitePageService {
+export interface SitePageServiceCollections {
 	CommunicationSite?: () => SP.Publishing.CommunicationSite;
 	Pages?: () => Array<SP.Publishing.SitePage>;
 }
@@ -361,7 +361,7 @@ export interface SitePageServiceMethods extends SitePageService {
 /*********************************************
 * SitePageServiceQuery
 **********************************************/
-export interface SitePageServiceQuery extends SitePageService {
+export interface SitePageServiceQuery {
 	CommunicationSite?: SP.Publishing.CommunicationSite;
 	Pages?: Array<SP.Publishing.SitePage>;
 }
@@ -378,16 +378,16 @@ export interface SpotlightChannel {
 }
 
 /*********************************************
-* SpotlightChannelMethods
+* SpotlightChannelCollections
 **********************************************/
-export interface SpotlightChannelMethods extends SpotlightChannel {
+export interface SpotlightChannelCollections {
 	Channel?: () => SP.Publishing.VideoChannel;
 }
 
 /*********************************************
 * SpotlightChannelQuery
 **********************************************/
-export interface SpotlightChannelQuery extends SpotlightChannel {
+export interface SpotlightChannelQuery {
 	Channel?: SP.Publishing.VideoChannel;
 }
 
@@ -412,9 +412,9 @@ export interface VideoChannel {
 }
 
 /*********************************************
-* VideoChannelMethods
+* VideoChannelCollections
 **********************************************/
-export interface VideoChannelMethods extends VideoChannel {
+export interface VideoChannelCollections {
 	Search?: () => SP.Publishing.Search;
 	SpotlightVideos?: () => Array<SP.Publishing.SpotlightVideo>;
 	Videos?: () => Array<SP.Publishing.VideoItem>;
@@ -423,7 +423,7 @@ export interface VideoChannelMethods extends VideoChannel {
 /*********************************************
 * VideoChannelQuery
 **********************************************/
-export interface VideoChannelQuery extends VideoChannel {
+export interface VideoChannelQuery {
 	Search?: SP.Publishing.Search;
 	SpotlightVideos?: Array<SP.Publishing.SpotlightVideo>;
 	Videos?: Array<SP.Publishing.VideoItem>;
@@ -447,16 +447,16 @@ export interface SpotlightVideo {
 }
 
 /*********************************************
-* SpotlightVideoMethods
+* SpotlightVideoCollections
 **********************************************/
-export interface SpotlightVideoMethods extends SpotlightVideo {
+export interface SpotlightVideoCollections {
 	Video?: () => SP.Publishing.VideoItem;
 }
 
 /*********************************************
 * SpotlightVideoQuery
 **********************************************/
-export interface SpotlightVideoQuery extends SpotlightVideo {
+export interface SpotlightVideoQuery {
 	Video?: SP.Publishing.VideoItem;
 }
 
@@ -477,16 +477,16 @@ export interface VideoPermissionGroup {
 }
 
 /*********************************************
-* VideoPermissionGroupMethods
+* VideoPermissionGroupCollections
 **********************************************/
-export interface VideoPermissionGroupMethods extends VideoPermissionGroup {
+export interface VideoPermissionGroupCollections {
 	Users?: () => Array<SP.User>;
 }
 
 /*********************************************
 * VideoPermissionGroupQuery
 **********************************************/
-export interface VideoPermissionGroupQuery extends VideoPermissionGroup {
+export interface VideoPermissionGroupQuery {
 	Users?: Array<SP.User>;
 }
 
@@ -528,9 +528,9 @@ export interface VideoServiceManager {
 }
 
 /*********************************************
-* VideoServiceManagerMethods
+* VideoServiceManagerCollections
 **********************************************/
-export interface VideoServiceManagerMethods extends VideoServiceManager {
+export interface VideoServiceManagerCollections {
 	CanEditChannels?: () => Array<SP.Publishing.VideoChannel>;
 	Channels?: () => Array<SP.Publishing.VideoChannel>;
 	Search?: () => SP.Publishing.Search;
@@ -541,7 +541,7 @@ export interface VideoServiceManagerMethods extends VideoServiceManager {
 /*********************************************
 * VideoServiceManagerQuery
 **********************************************/
-export interface VideoServiceManagerQuery extends VideoServiceManager {
+export interface VideoServiceManagerQuery {
 	CanEditChannels?: Array<SP.Publishing.VideoChannel>;
 	Channels?: Array<SP.Publishing.VideoChannel>;
 	Search?: SP.Publishing.Search;

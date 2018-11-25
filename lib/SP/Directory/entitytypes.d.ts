@@ -34,9 +34,9 @@ export interface Group {
 }
 
 /*********************************************
-* GroupMethods
+* GroupCollections
 **********************************************/
-export interface GroupMethods extends Group {
+export interface GroupCollections {
 	members?: () => Array<SP.Directory.User>;
 	owners?: () => Array<SP.Directory.User>;
 }
@@ -44,7 +44,7 @@ export interface GroupMethods extends Group {
 /*********************************************
 * GroupQuery
 **********************************************/
-export interface GroupQuery extends Group {
+export interface GroupQuery {
 	members?: Array<SP.Directory.User>;
 	owners?: Array<SP.Directory.User>;
 }
@@ -96,9 +96,9 @@ export interface User {
 }
 
 /*********************************************
-* UserMethods
+* UserCollections
 **********************************************/
-export interface UserMethods extends User {
+export interface UserCollections {
 	membership?: () => Array<SP.Directory.Group>;
 	ownership?: () => Array<SP.Directory.Group>;
 	rankedMembership?: () => Array<SP.Directory.Group>;
@@ -107,7 +107,7 @@ export interface UserMethods extends User {
 /*********************************************
 * UserQuery
 **********************************************/
-export interface UserQuery extends User {
+export interface UserQuery {
 	membership?: Array<SP.Directory.Group>;
 	ownership?: Array<SP.Directory.Group>;
 	rankedMembership?: Array<SP.Directory.Group>;
@@ -130,16 +130,16 @@ export interface GroupAndUserStatus {
 }
 
 /*********************************************
-* GroupAndUserStatusMethods
+* GroupAndUserStatusCollections
 **********************************************/
-export interface GroupAndUserStatusMethods extends GroupAndUserStatus {
+export interface GroupAndUserStatusCollections {
 	Group?: () => SP.Directory.Group;
 }
 
 /*********************************************
 * GroupAndUserStatusQuery
 **********************************************/
-export interface GroupAndUserStatusQuery extends GroupAndUserStatus {
+export interface GroupAndUserStatusQuery {
 	Group?: SP.Directory.Group;
 }
 

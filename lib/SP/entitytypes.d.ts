@@ -9,9 +9,9 @@ export interface ApiMetadata {
 }
 
 /*********************************************
-* ApiMetadataMethods
+* ApiMetadataCollections
 **********************************************/
-export interface ApiMetadataMethods extends ApiMetadata {
+export interface ApiMetadataCollections {
 	Current?: () => SP.ApiMetadata;
 	Types?: () => Array<SP.TypeInformation>;
 }
@@ -19,7 +19,7 @@ export interface ApiMetadataMethods extends ApiMetadata {
 /*********************************************
 * ApiMetadataQuery
 **********************************************/
-export interface ApiMetadataQuery extends ApiMetadata {
+export interface ApiMetadataQuery {
 	Current?: SP.ApiMetadata;
 	Types?: Array<SP.TypeInformation>;
 }
@@ -95,9 +95,9 @@ export interface Site {
 }
 
 /*********************************************
-* SiteMethods
+* SiteCollections
 **********************************************/
-export interface SiteMethods extends Site {
+export interface SiteCollections {
 	Audit?: () => SP.Audit;
 	CustomScriptSafeDomains?: () => Array<SP.ScriptSafeDomain>;
 	EventReceivers?: () => Array<SP.EventReceiverDefinition>;
@@ -112,7 +112,7 @@ export interface SiteMethods extends Site {
 /*********************************************
 * SiteQuery
 **********************************************/
-export interface SiteQuery extends Site {
+export interface SiteQuery {
 	Audit?: SP.Audit;
 	CustomScriptSafeDomains?: Array<SP.ScriptSafeDomain>;
 	EventReceivers?: Array<SP.EventReceiverDefinition>;
@@ -184,9 +184,9 @@ export interface User extends SP.Principal {
 }
 
 /*********************************************
-* UserMethods
+* UserCollections
 **********************************************/
-export interface UserMethods extends User {
+export interface UserCollections {
 	Alerts?: () => Array<SP.Alert>;
 	Groups?: () => Array<SP.Group>;
 }
@@ -194,7 +194,7 @@ export interface UserMethods extends User {
 /*********************************************
 * UserQuery
 **********************************************/
-export interface UserQuery extends User {
+export interface UserQuery {
 	Alerts?: Array<SP.Alert>;
 	Groups?: Array<SP.Group>;
 }
@@ -222,9 +222,9 @@ export interface Alert {
 }
 
 /*********************************************
-* AlertMethods
+* AlertCollections
 **********************************************/
-export interface AlertMethods extends Alert {
+export interface AlertCollections {
 	AllProperties?: () => SP.PropertyValues;
 	Item?: () => SP.ListItem;
 	List?: () => SP.List;
@@ -234,7 +234,7 @@ export interface AlertMethods extends Alert {
 /*********************************************
 * AlertQuery
 **********************************************/
-export interface AlertQuery extends Alert {
+export interface AlertQuery {
 	AllProperties?: SP.PropertyValues;
 	Item?: SP.ListItem;
 	List?: SP.List;
@@ -256,9 +256,9 @@ export interface SecurableObject {
 }
 
 /*********************************************
-* SecurableObjectMethods
+* SecurableObjectCollections
 **********************************************/
-export interface SecurableObjectMethods extends SecurableObject {
+export interface SecurableObjectCollections {
 	FirstUniqueAncestorSecurableObject?: () => SP.SecurableObject;
 	RoleAssignments?: () => Array<SP.RoleAssignment>;
 }
@@ -266,7 +266,7 @@ export interface SecurableObjectMethods extends SecurableObject {
 /*********************************************
 * SecurableObjectQuery
 **********************************************/
-export interface SecurableObjectQuery extends SecurableObject {
+export interface SecurableObjectQuery {
 	FirstUniqueAncestorSecurableObject?: SP.SecurableObject;
 	RoleAssignments?: Array<SP.RoleAssignment>;
 }
@@ -279,9 +279,9 @@ export interface RoleAssignment {
 }
 
 /*********************************************
-* RoleAssignmentMethods
+* RoleAssignmentCollections
 **********************************************/
-export interface RoleAssignmentMethods extends RoleAssignment {
+export interface RoleAssignmentCollections {
 	Member?: () => SP.Principal;
 	RoleDefinitionBindings?: () => Array<SP.RoleDefinition>;
 }
@@ -289,7 +289,7 @@ export interface RoleAssignmentMethods extends RoleAssignment {
 /*********************************************
 * RoleAssignmentQuery
 **********************************************/
-export interface RoleAssignmentQuery extends RoleAssignment {
+export interface RoleAssignmentQuery {
 	Member?: SP.Principal;
 	RoleDefinitionBindings?: Array<SP.RoleDefinition>;
 }
@@ -326,9 +326,9 @@ export interface ListItem extends SP.SecurableObject {
 }
 
 /*********************************************
-* ListItemMethods
+* ListItemCollections
 **********************************************/
-export interface ListItemMethods extends ListItem {
+export interface ListItemCollections {
 	AttachmentFiles?: () => Array<SP.Attachment>;
 	ContentType?: () => SP.ContentType;
 	GetDlpPolicyTip?: () => SP.DlpPolicyTip;
@@ -346,7 +346,7 @@ export interface ListItemMethods extends ListItem {
 /*********************************************
 * ListItemQuery
 **********************************************/
-export interface ListItemQuery extends ListItem {
+export interface ListItemQuery {
 	AttachmentFiles?: Array<SP.Attachment>;
 	ContentType?: SP.ContentType;
 	GetDlpPolicyTip?: SP.DlpPolicyTip;
@@ -401,9 +401,9 @@ export interface ContentType {
 }
 
 /*********************************************
-* ContentTypeMethods
+* ContentTypeCollections
 **********************************************/
-export interface ContentTypeMethods extends ContentType {
+export interface ContentTypeCollections {
 	DescriptionResource?: () => SP.UserResource;
 	FieldLinks?: () => Array<SP.FieldLink>;
 	Fields?: () => Array<SP.Field>;
@@ -415,7 +415,7 @@ export interface ContentTypeMethods extends ContentType {
 /*********************************************
 * ContentTypeQuery
 **********************************************/
-export interface ContentTypeQuery extends ContentType {
+export interface ContentTypeQuery {
 	DescriptionResource?: SP.UserResource;
 	FieldLinks?: Array<SP.FieldLink>;
 	Fields?: Array<SP.Field>;
@@ -489,9 +489,9 @@ export interface Field {
 }
 
 /*********************************************
-* FieldMethods
+* FieldCollections
 **********************************************/
-export interface FieldMethods extends Field {
+export interface FieldCollections {
 	DescriptionResource?: () => SP.UserResource;
 	TitleResource?: () => SP.UserResource;
 }
@@ -499,7 +499,7 @@ export interface FieldMethods extends Field {
 /*********************************************
 * FieldQuery
 **********************************************/
-export interface FieldQuery extends Field {
+export interface FieldQuery {
 	DescriptionResource?: SP.UserResource;
 	TitleResource?: SP.UserResource;
 }
@@ -558,9 +558,9 @@ export interface File {
 }
 
 /*********************************************
-* FileMethods
+* FileCollections
 **********************************************/
-export interface FileMethods extends File {
+export interface FileCollections {
 	Author?: () => SP.User;
 	CheckedOutByUser?: () => SP.User;
 	EffectiveInformationRightsManagementSettings?: () => SP.EffectiveInformationRightsManagementSettings;
@@ -576,7 +576,7 @@ export interface FileMethods extends File {
 /*********************************************
 * FileQuery
 **********************************************/
-export interface FileQuery extends File {
+export interface FileQuery {
 	Author?: SP.User;
 	CheckedOutByUser?: SP.User;
 	EffectiveInformationRightsManagementSettings?: SP.EffectiveInformationRightsManagementSettings;
@@ -660,16 +660,16 @@ export interface FileVersion {
 }
 
 /*********************************************
-* FileVersionMethods
+* FileVersionCollections
 **********************************************/
-export interface FileVersionMethods extends FileVersion {
+export interface FileVersionCollections {
 	CreatedBy?: () => SP.User;
 }
 
 /*********************************************
 * FileVersionQuery
 **********************************************/
-export interface FileVersionQuery extends FileVersion {
+export interface FileVersionQuery {
 	CreatedBy?: SP.User;
 }
 
@@ -693,9 +693,9 @@ export interface Folder {
 }
 
 /*********************************************
-* FolderMethods
+* FolderCollections
 **********************************************/
-export interface FolderMethods extends Folder {
+export interface FolderCollections {
 	Files?: () => Array<SP.File>;
 	ListItemAllFields?: () => SP.ListItem;
 	ParentFolder?: () => SP.Folder;
@@ -707,7 +707,7 @@ export interface FolderMethods extends Folder {
 /*********************************************
 * FolderQuery
 **********************************************/
-export interface FolderQuery extends Folder {
+export interface FolderQuery {
 	Files?: Array<SP.File>;
 	ListItemAllFields?: SP.ListItem;
 	ParentFolder?: SP.Folder;
@@ -807,9 +807,9 @@ export interface List extends SP.SecurableObject {
 }
 
 /*********************************************
-* ListMethods
+* ListCollections
 **********************************************/
-export interface ListMethods extends List {
+export interface ListCollections {
 	ContentTypes?: () => Array<SP.ContentType>;
 	CreatablesInfo?: () => SP.CreatablesInfo;
 	DefaultView?: () => SP.View;
@@ -831,7 +831,7 @@ export interface ListMethods extends List {
 /*********************************************
 * ListQuery
 **********************************************/
-export interface ListQuery extends List {
+export interface ListQuery {
 	ContentTypes?: Array<SP.ContentType>;
 	CreatablesInfo?: SP.CreatablesInfo;
 	DefaultView?: SP.View;
@@ -911,16 +911,16 @@ export interface View {
 }
 
 /*********************************************
-* ViewMethods
+* ViewCollections
 **********************************************/
-export interface ViewMethods extends View {
+export interface ViewCollections {
 	ViewFields?: () => SP.ViewFieldCollection;
 }
 
 /*********************************************
 * ViewQuery
 **********************************************/
-export interface ViewQuery extends View {
+export interface ViewQuery {
 	ViewFields?: SP.ViewFieldCollection;
 }
 
@@ -1040,9 +1040,9 @@ export interface Web extends SP.SecurableObject {
 }
 
 /*********************************************
-* WebMethods
+* WebCollections
 **********************************************/
-export interface WebMethods extends Web {
+export interface WebCollections {
 	Activities?: () => Array<Microsoft.SharePoint.Activities.SPActivityEntity>;
 	ActivityLogger?: () => Microsoft.SharePoint.Internal.ActivityLogger;
 	Alerts?: () => Array<SP.Alert>;
@@ -1091,7 +1091,7 @@ export interface WebMethods extends Web {
 /*********************************************
 * WebQuery
 **********************************************/
-export interface WebQuery extends Web {
+export interface WebQuery {
 	Activities?: Array<Microsoft.SharePoint.Activities.SPActivityEntity>;
 	ActivityLogger?: Microsoft.SharePoint.Internal.ActivityLogger;
 	Alerts?: Array<SP.Alert>;
@@ -1179,9 +1179,9 @@ export interface Group extends SP.Principal {
 }
 
 /*********************************************
-* GroupMethods
+* GroupCollections
 **********************************************/
-export interface GroupMethods extends Group {
+export interface GroupCollections {
 	Owner?: () => SP.Principal;
 	Users?: () => Array<SP.User>;
 }
@@ -1189,7 +1189,7 @@ export interface GroupMethods extends Group {
 /*********************************************
 * GroupQuery
 **********************************************/
-export interface GroupQuery extends Group {
+export interface GroupQuery {
 	Owner?: SP.Principal;
 	Users?: Array<SP.User>;
 }
@@ -1238,9 +1238,9 @@ export interface Navigation {
 }
 
 /*********************************************
-* NavigationMethods
+* NavigationCollections
 **********************************************/
-export interface NavigationMethods extends Navigation {
+export interface NavigationCollections {
 	QuickLaunch?: () => Array<SP.NavigationNode>;
 	TopNavigationBar?: () => Array<SP.NavigationNode>;
 }
@@ -1248,7 +1248,7 @@ export interface NavigationMethods extends Navigation {
 /*********************************************
 * NavigationQuery
 **********************************************/
-export interface NavigationQuery extends Navigation {
+export interface NavigationQuery {
 	QuickLaunch?: Array<SP.NavigationNode>;
 	TopNavigationBar?: Array<SP.NavigationNode>;
 }
@@ -1268,16 +1268,16 @@ export interface NavigationNode {
 }
 
 /*********************************************
-* NavigationNodeMethods
+* NavigationNodeCollections
 **********************************************/
-export interface NavigationNodeMethods extends NavigationNode {
+export interface NavigationNodeCollections {
 	Children?: () => Array<SP.NavigationNode>;
 }
 
 /*********************************************
 * NavigationNodeQuery
 **********************************************/
-export interface NavigationNodeQuery extends NavigationNode {
+export interface NavigationNodeQuery {
 	Children?: Array<SP.NavigationNode>;
 }
 
@@ -1311,16 +1311,16 @@ export interface PushNotificationSubscriber {
 }
 
 /*********************************************
-* PushNotificationSubscriberMethods
+* PushNotificationSubscriberCollections
 **********************************************/
-export interface PushNotificationSubscriberMethods extends PushNotificationSubscriber {
+export interface PushNotificationSubscriberCollections {
 	User?: () => SP.User;
 }
 
 /*********************************************
 * PushNotificationSubscriberQuery
 **********************************************/
-export interface PushNotificationSubscriberQuery extends PushNotificationSubscriber {
+export interface PushNotificationSubscriberQuery {
 	User?: SP.User;
 }
 
@@ -1346,9 +1346,9 @@ export interface RecycleBinItem {
 }
 
 /*********************************************
-* RecycleBinItemMethods
+* RecycleBinItemCollections
 **********************************************/
-export interface RecycleBinItemMethods extends RecycleBinItem {
+export interface RecycleBinItemCollections {
 	Author?: () => SP.User;
 	DeletedBy?: () => SP.User;
 }
@@ -1356,7 +1356,7 @@ export interface RecycleBinItemMethods extends RecycleBinItem {
 /*********************************************
 * RecycleBinItemQuery
 **********************************************/
-export interface RecycleBinItemQuery extends RecycleBinItem {
+export interface RecycleBinItemQuery {
 	Author?: SP.User;
 	DeletedBy?: SP.User;
 }
@@ -1397,9 +1397,9 @@ export interface RegionalSettings {
 }
 
 /*********************************************
-* RegionalSettingsMethods
+* RegionalSettingsCollections
 **********************************************/
-export interface RegionalSettingsMethods extends RegionalSettings {
+export interface RegionalSettingsCollections {
 	InstalledLanguages?: () => SP.LanguageCollection;
 	TimeZone?: () => SP.TimeZone;
 	TimeZones?: () => Array<SP.TimeZone>;
@@ -1408,7 +1408,7 @@ export interface RegionalSettingsMethods extends RegionalSettings {
 /*********************************************
 * RegionalSettingsQuery
 **********************************************/
-export interface RegionalSettingsQuery extends RegionalSettings {
+export interface RegionalSettingsQuery {
 	InstalledLanguages?: SP.LanguageCollection;
 	TimeZone?: SP.TimeZone;
 	TimeZones?: Array<SP.TimeZone>;
@@ -1465,9 +1465,9 @@ export interface UserCustomAction {
 }
 
 /*********************************************
-* UserCustomActionMethods
+* UserCustomActionCollections
 **********************************************/
-export interface UserCustomActionMethods extends UserCustomAction {
+export interface UserCustomActionCollections {
 	DescriptionResource?: () => SP.UserResource;
 	TitleResource?: () => SP.UserResource;
 }
@@ -1475,7 +1475,7 @@ export interface UserCustomActionMethods extends UserCustomAction {
 /*********************************************
 * UserCustomActionQuery
 **********************************************/
-export interface UserCustomActionQuery extends UserCustomAction {
+export interface UserCustomActionQuery {
 	DescriptionResource?: SP.UserResource;
 	TitleResource?: SP.UserResource;
 }
@@ -1491,9 +1491,9 @@ export interface ListItemVersion {
 }
 
 /*********************************************
-* ListItemVersionMethods
+* ListItemVersionCollections
 **********************************************/
-export interface ListItemVersionMethods extends ListItemVersion {
+export interface ListItemVersionCollections {
 	CreatedBy?: () => SP.User;
 	Fields?: () => Array<SP.Field>;
 	FileVersion?: () => SP.FileVersion;
@@ -1502,7 +1502,7 @@ export interface ListItemVersionMethods extends ListItemVersion {
 /*********************************************
 * ListItemVersionQuery
 **********************************************/
-export interface ListItemVersionQuery extends ListItemVersion {
+export interface ListItemVersionQuery {
 	CreatedBy?: SP.User;
 	Fields?: Array<SP.Field>;
 	FileVersion?: SP.FileVersion;
@@ -1630,9 +1630,9 @@ export interface ObjectSharingSettings {
 }
 
 /*********************************************
-* ObjectSharingSettingsMethods
+* ObjectSharingSettingsCollections
 **********************************************/
-export interface ObjectSharingSettingsMethods extends ObjectSharingSettings {
+export interface ObjectSharingSettingsCollections {
 	ObjectSharingInformation?: () => SP.ObjectSharingInformation;
 	SharePointSettings?: () => SP.SharePointSharingSettings;
 	SharingPermissions?: () => Array<SP.SharingPermissionInformation>;
@@ -1641,7 +1641,7 @@ export interface ObjectSharingSettingsMethods extends ObjectSharingSettings {
 /*********************************************
 * ObjectSharingSettingsQuery
 **********************************************/
-export interface ObjectSharingSettingsQuery extends ObjectSharingSettings {
+export interface ObjectSharingSettingsQuery {
 	ObjectSharingInformation?: SP.ObjectSharingInformation;
 	SharePointSettings?: SP.SharePointSharingSettings;
 	SharingPermissions?: Array<SP.SharingPermissionInformation>;
@@ -1669,16 +1669,16 @@ export interface ObjectSharingInformation {
 }
 
 /*********************************************
-* ObjectSharingInformationMethods
+* ObjectSharingInformationCollections
 **********************************************/
-export interface ObjectSharingInformationMethods extends ObjectSharingInformation {
+export interface ObjectSharingInformationCollections {
 	SharedWithUsersCollection?: () => Array<SP.ObjectSharingInformationUser>;
 }
 
 /*********************************************
 * ObjectSharingInformationQuery
 **********************************************/
-export interface ObjectSharingInformationQuery extends ObjectSharingInformation {
+export interface ObjectSharingInformationQuery {
 	SharedWithUsersCollection?: Array<SP.ObjectSharingInformationUser>;
 }
 
@@ -1705,9 +1705,9 @@ export interface ObjectSharingInformationUser {
 }
 
 /*********************************************
-* ObjectSharingInformationUserMethods
+* ObjectSharingInformationUserCollections
 **********************************************/
-export interface ObjectSharingInformationUserMethods extends ObjectSharingInformationUser {
+export interface ObjectSharingInformationUserCollections {
 	Principal?: () => SP.Principal;
 	User?: () => SP.User;
 }
@@ -1715,7 +1715,7 @@ export interface ObjectSharingInformationUserMethods extends ObjectSharingInform
 /*********************************************
 * ObjectSharingInformationUserQuery
 **********************************************/
-export interface ObjectSharingInformationUserQuery extends ObjectSharingInformationUser {
+export interface ObjectSharingInformationUserQuery {
 	Principal?: SP.Principal;
 	User?: SP.User;
 }
@@ -1743,16 +1743,16 @@ export interface SharePointSharingSettings {
 }
 
 /*********************************************
-* SharePointSharingSettingsMethods
+* SharePointSharingSettingsCollections
 **********************************************/
-export interface SharePointSharingSettingsMethods extends SharePointSharingSettings {
+export interface SharePointSharingSettingsCollections {
 	PickerProperties?: () => SP.PickerSettings;
 }
 
 /*********************************************
 * SharePointSharingSettingsQuery
 **********************************************/
-export interface SharePointSharingSettingsQuery extends SharePointSharingSettings {
+export interface SharePointSharingSettingsQuery {
 	PickerProperties?: SP.PickerSettings;
 }
 
@@ -1810,9 +1810,9 @@ export interface SharingResult {
 }
 
 /*********************************************
-* SharingResultMethods
+* SharingResultCollections
 **********************************************/
-export interface SharingResultMethods extends SharingResult {
+export interface SharingResultCollections {
 	GroupsSharedWith?: () => Array<SP.Group>;
 	GroupUsersAddedTo?: () => SP.Group;
 	UsersWithAccessRequests?: () => Array<SP.User>;
@@ -1821,7 +1821,7 @@ export interface SharingResultMethods extends SharingResult {
 /*********************************************
 * SharingResultQuery
 **********************************************/
-export interface SharingResultQuery extends SharingResult {
+export interface SharingResultQuery {
 	GroupsSharedWith?: Array<SP.Group>;
 	GroupUsersAddedTo?: SP.Group;
 	UsersWithAccessRequests?: Array<SP.User>;
@@ -1842,9 +1842,9 @@ export interface AppContextSite {
 }
 
 /*********************************************
-* AppContextSiteMethods
+* AppContextSiteCollections
 **********************************************/
-export interface AppContextSiteMethods extends AppContextSite {
+export interface AppContextSiteCollections {
 	Site?: () => SP.Site;
 	Web?: () => SP.Web;
 }
@@ -1852,7 +1852,7 @@ export interface AppContextSiteMethods extends AppContextSite {
 /*********************************************
 * AppContextSiteQuery
 **********************************************/
-export interface AppContextSiteQuery extends AppContextSite {
+export interface AppContextSiteQuery {
 	Site?: SP.Site;
 	Web?: SP.Web;
 }
@@ -1968,16 +1968,16 @@ export interface ChangeList extends SP.Change {
 }
 
 /*********************************************
-* ChangeListMethods
+* ChangeListCollections
 **********************************************/
-export interface ChangeListMethods extends ChangeList {
+export interface ChangeListCollections {
 	Creator?: () => SP.User;
 }
 
 /*********************************************
 * ChangeListQuery
 **********************************************/
-export interface ChangeListQuery extends ChangeList {
+export interface ChangeListQuery {
 	Creator?: SP.User;
 }
 
@@ -2021,16 +2021,16 @@ export interface CheckedOutFile {
 }
 
 /*********************************************
-* CheckedOutFileMethods
+* CheckedOutFileCollections
 **********************************************/
-export interface CheckedOutFileMethods extends CheckedOutFile {
+export interface CheckedOutFileCollections {
 	CheckedOutBy?: () => SP.User;
 }
 
 /*********************************************
 * CheckedOutFileQuery
 **********************************************/
-export interface CheckedOutFileQuery extends CheckedOutFile {
+export interface CheckedOutFileQuery {
 	CheckedOutBy?: SP.User;
 }
 
@@ -2064,9 +2064,9 @@ export interface RequestContext {
 }
 
 /*********************************************
-* RequestContextMethods
+* RequestContextCollections
 **********************************************/
-export interface RequestContextMethods extends RequestContext {
+export interface RequestContextCollections {
 	Current?: () => SP.RequestContext;
 	List?: () => SP.List;
 	Site?: () => SP.Site;
@@ -2076,7 +2076,7 @@ export interface RequestContextMethods extends RequestContext {
 /*********************************************
 * RequestContextQuery
 **********************************************/
-export interface RequestContextQuery extends RequestContext {
+export interface RequestContextQuery {
 	Current?: SP.RequestContext;
 	List?: SP.List;
 	Site?: SP.Site;
@@ -2336,16 +2336,16 @@ export interface RelatedField {
 }
 
 /*********************************************
-* RelatedFieldMethods
+* RelatedFieldCollections
 **********************************************/
-export interface RelatedFieldMethods extends RelatedField {
+export interface RelatedFieldCollections {
 	LookupList?: () => SP.List;
 }
 
 /*********************************************
 * RelatedFieldQuery
 **********************************************/
-export interface RelatedFieldQuery extends RelatedField {
+export interface RelatedFieldQuery {
 	LookupList?: SP.List;
 }
 
@@ -2359,16 +2359,16 @@ export interface RemoteWeb {
 }
 
 /*********************************************
-* RemoteWebMethods
+* RemoteWebCollections
 **********************************************/
-export interface RemoteWebMethods extends RemoteWeb {
+export interface RemoteWebCollections {
 	Web?: () => SP.Web;
 }
 
 /*********************************************
 * RemoteWebQuery
 **********************************************/
-export interface RemoteWebQuery extends RemoteWeb {
+export interface RemoteWebQuery {
 	Web?: SP.Web;
 }
 
@@ -2380,9 +2380,9 @@ export interface RequestUserContext {
 }
 
 /*********************************************
-* RequestUserContextMethods
+* RequestUserContextCollections
 **********************************************/
-export interface RequestUserContextMethods extends RequestUserContext {
+export interface RequestUserContextCollections {
 	Current?: () => SP.RequestUserContext;
 	User?: () => SP.User;
 }
@@ -2390,7 +2390,7 @@ export interface RequestUserContextMethods extends RequestUserContext {
 /*********************************************
 * RequestUserContextQuery
 **********************************************/
-export interface RequestUserContextQuery extends RequestUserContext {
+export interface RequestUserContextQuery {
 	Current?: SP.RequestUserContext;
 	User?: SP.User;
 }
@@ -2441,16 +2441,16 @@ export interface VisualizationAppSynchronizationResult {
 }
 
 /*********************************************
-* VisualizationAppSynchronizationResultMethods
+* VisualizationAppSynchronizationResultCollections
 **********************************************/
-export interface VisualizationAppSynchronizationResultMethods extends VisualizationAppSynchronizationResult {
+export interface VisualizationAppSynchronizationResultCollections {
 	AppMappedViews?: () => Array<SP.View>;
 }
 
 /*********************************************
 * VisualizationAppSynchronizationResultQuery
 **********************************************/
-export interface VisualizationAppSynchronizationResultQuery extends VisualizationAppSynchronizationResult {
+export interface VisualizationAppSynchronizationResultQuery {
 	AppMappedViews?: Array<SP.View>;
 }
 
@@ -2500,16 +2500,16 @@ export interface TenantSettings {
 }
 
 /*********************************************
-* TenantSettingsMethods
+* TenantSettingsCollections
 **********************************************/
-export interface TenantSettingsMethods extends TenantSettings {
+export interface TenantSettingsCollections {
 	Current?: () => SP.TenantSettings;
 }
 
 /*********************************************
 * TenantSettingsQuery
 **********************************************/
-export interface TenantSettingsQuery extends TenantSettings {
+export interface TenantSettingsQuery {
 	Current?: SP.TenantSettings;
 }
 
@@ -2521,16 +2521,16 @@ export interface AppPrincipalIdentityProvider {
 }
 
 /*********************************************
-* AppPrincipalIdentityProviderMethods
+* AppPrincipalIdentityProviderCollections
 **********************************************/
-export interface AppPrincipalIdentityProviderMethods extends AppPrincipalIdentityProvider {
+export interface AppPrincipalIdentityProviderCollections {
 	External?: () => SP.AppPrincipalIdentityProvider;
 }
 
 /*********************************************
 * AppPrincipalIdentityProviderQuery
 **********************************************/
-export interface AppPrincipalIdentityProviderQuery extends AppPrincipalIdentityProvider {
+export interface AppPrincipalIdentityProviderQuery {
 	External?: SP.AppPrincipalIdentityProvider;
 }
 

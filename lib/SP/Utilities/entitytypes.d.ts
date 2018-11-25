@@ -64,16 +64,16 @@ export interface ThemeManager {
 }
 
 /*********************************************
-* ThemeManagerMethods
+* ThemeManagerCollections
 **********************************************/
-export interface ThemeManagerMethods extends ThemeManager {
+export interface ThemeManagerCollections {
 	ContextThemeManager?: () => SP.Utilities.ThemeManager;
 }
 
 /*********************************************
 * ThemeManagerQuery
 **********************************************/
-export interface ThemeManagerQuery extends ThemeManager {
+export interface ThemeManagerQuery {
 	ContextThemeManager?: SP.Utilities.ThemeManager;
 }
 
