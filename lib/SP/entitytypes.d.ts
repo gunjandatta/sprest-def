@@ -5,6 +5,8 @@ import { Microsoft } from "../";
 * ApiMetadata
 **********************************************/
 export interface ApiMetadata {
+	Current?: () => SP.SP_ApiMetadata_Current_SP_ApiMetadata_CurrentPartner;
+	Types?: () => SP.SP_ApiMetadata_Types_SP_TypeInformation_TypesPartner;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -23,6 +25,15 @@ export interface TypeInformation {
 * Site
 **********************************************/
 export interface Site {
+	Audit?: () => SP.SP_Site_Audit_SP_Audit_AuditPartner;
+	CustomScriptSafeDomains?: () => SP.SP_Site_CustomScriptSafeDomains_SP_ScriptSafeDomain_CustomScriptSafeDomainsPartner;
+	EventReceivers?: () => SP.SP_Site_EventReceivers_SP_EventReceiverDefinition_EventReceiversPartner;
+	Features?: () => SP.SP_Site_Features_SP_Feature_FeaturesPartner;
+	Owner?: () => SP.SP_Site_Owner_SP_User_OwnerPartner;
+	RecycleBin?: () => SP.SP_Site_RecycleBin_SP_RecycleBinItem_RecycleBinPartner;
+	RootWeb?: () => SP.SP_Site_RootWeb_SP_Web_RootWebPartner;
+	SecondaryContact?: () => SP.SP_Site_SecondaryContact_SP_User_SecondaryContactPartner;
+	UserCustomActions?: () => SP.SP_Site_UserCustomActions_SP_UserCustomAction_UserCustomActionsPartner;
 	AllowCreateDeclarativeWorkflow?: boolean;
 	AllowDesigner?: boolean;
 	AllowExternalEmbeddingWrapper?: number;
@@ -129,6 +140,8 @@ export interface Principal {
 * User
 **********************************************/
 export interface User extends SP.Principal {
+	Alerts?: () => SP.SP_User_Alerts_SP_Alert_AlertsPartner;
+	Groups?: () => SP.SP_User_Groups_SP_Group_GroupsPartner;
 	AadObjectId?: SP.UserIdInfo;
 	Email?: string;
 	IsEmailAuthenticationGuestUser?: boolean;
@@ -141,6 +154,10 @@ export interface User extends SP.Principal {
 * Alert
 **********************************************/
 export interface Alert {
+	AllProperties?: () => SP.SP_Alert_AllProperties_SP_PropertyValues_AllPropertiesPartner;
+	Item?: () => SP.SP_Alert_Item_SP_ListItem_ItemPartner;
+	List?: () => SP.SP_Alert_List_SP_List_ListPartner;
+	User?: () => SP.SP_Alert_User_SP_User_UserPartner;
 	AlertFrequency?: number;
 	AlertTemplateName?: string;
 	AlertTime?: any;
@@ -170,6 +187,8 @@ export interface PropertyValues {
 * SecurableObject
 **********************************************/
 export interface SecurableObject {
+	FirstUniqueAncestorSecurableObject?: () => SP.SP_SecurableObject_FirstUniqueAncestorSecurableObject_SP_SecurableObject_FirstUniqueAncestorSecurableObjectPartner;
+	RoleAssignments?: () => SP.SP_SecurableObject_RoleAssignments_SP_RoleAssignment_RoleAssignmentsPartner;
 	HasUniqueRoleAssignments?: boolean;
 }
 
@@ -177,6 +196,8 @@ export interface SecurableObject {
 * RoleAssignment
 **********************************************/
 export interface RoleAssignment {
+	Member?: () => SP.SP_RoleAssignment_Member_SP_Principal_MemberPartner;
+	RoleDefinitionBindings?: () => SP.SP_RoleAssignment_RoleDefinitionBindings_SP_RoleDefinition_RoleDefinitionBindingsPartner;
 	PrincipalId?: number;
 }
 
@@ -197,6 +218,18 @@ export interface RoleDefinition {
 * ListItem
 **********************************************/
 export interface ListItem extends SP.SecurableObject {
+	AttachmentFiles?: () => SP.SP_ListItem_AttachmentFiles_SP_Attachment_AttachmentFilesPartner;
+	ContentType?: () => SP.SP_ListItem_ContentType_SP_ContentType_ContentTypePartner;
+	GetDlpPolicyTip?: () => SP.SP_ListItem_GetDlpPolicyTip_SP_DlpPolicyTip_GetDlpPolicyTipPartner;
+	FieldValuesAsHtml?: () => SP.SP_ListItem_FieldValuesAsHtml_SP_FieldStringValues_FieldValuesAsHtmlPartner;
+	FieldValuesAsText?: () => SP.SP_ListItem_FieldValuesAsText_SP_FieldStringValues_FieldValuesAsTextPartner;
+	FieldValuesForEdit?: () => SP.SP_ListItem_FieldValuesForEdit_SP_FieldStringValues_FieldValuesForEditPartner;
+	File?: () => SP.SP_ListItem_File_SP_File_FilePartner;
+	Folder?: () => SP.SP_ListItem_Folder_SP_Folder_FolderPartner;
+	LikedByInformation?: () => Microsoft.SharePoint.Likes.SP_ListItem_LikedByInformation_Microsoft_SharePoint_Likes_likedByInformation_LikedByInformationPartner;
+	ParentList?: () => SP.SP_ListItem_ParentList_SP_List_ParentListPartner;
+	Properties?: () => SP.SP_ListItem_Properties_SP_PropertyValues_PropertiesPartner;
+	Versions?: () => SP.SP_ListItem_Versions_SP_ListItemVersion_VersionsPartner;
 	CommentsDisabled?: boolean;
 	CommentsDisabledScope?: number;
 	ComplianceInfo?: SP.ListItemComplianceInfo;
@@ -225,6 +258,12 @@ export interface Attachment {
 * ContentType
 **********************************************/
 export interface ContentType {
+	DescriptionResource?: () => SP.SP_ContentType_DescriptionResource_SP_UserResource_DescriptionResourcePartner;
+	FieldLinks?: () => SP.SP_ContentType_FieldLinks_SP_FieldLink_FieldLinksPartner;
+	Fields?: () => SP.SP_ContentType_Fields_SP_Field_FieldsPartner;
+	NameResource?: () => SP.SP_ContentType_NameResource_SP_UserResource_NameResourcePartner;
+	Parent?: () => SP.SP_ContentType_Parent_SP_ContentType_ParentPartner;
+	WorkflowAssociations?: () => SP.Workflow.SP_ContentType_WorkflowAssociations_SP_Workflow_WorkflowAssociation_WorkflowAssociationsPartner;
 	Description?: string;
 	DisplayFormTemplateName?: string;
 	DisplayFormUrl?: string;
@@ -275,6 +314,8 @@ export interface FieldLink {
 * Field
 **********************************************/
 export interface Field {
+	DescriptionResource?: () => SP.SP_Field_DescriptionResource_SP_UserResource_DescriptionResourcePartner;
+	TitleResource?: () => SP.SP_Field_TitleResource_SP_UserResource_TitleResourcePartner;
 	AutoIndexed?: boolean;
 	CanBeDeleted?: boolean;
 	ClientSideComponentId?: any;
@@ -338,6 +379,16 @@ export interface FieldStringValues {
 * File
 **********************************************/
 export interface File {
+	Author?: () => SP.SP_File_Author_SP_User_AuthorPartner;
+	CheckedOutByUser?: () => SP.SP_File_CheckedOutByUser_SP_User_CheckedOutByUserPartner;
+	EffectiveInformationRightsManagementSettings?: () => SP.SP_File_EffectiveInformationRightsManagementSettings_SP_EffectiveInformationRightsManagementSettings_EffectiveInformationRightsManagementSettingsPartner;
+	InformationRightsManagementSettings?: () => SP.SP_File_InformationRightsManagementSettings_SP_InformationRightsManagementFileSettings_InformationRightsManagementSettingsPartner;
+	ListItemAllFields?: () => SP.SP_File_ListItemAllFields_SP_ListItem_ListItemAllFieldsPartner;
+	LockedByUser?: () => SP.SP_File_LockedByUser_SP_User_LockedByUserPartner;
+	ModifiedBy?: () => SP.SP_File_ModifiedBy_SP_User_ModifiedByPartner;
+	Properties?: () => SP.SP_File_Properties_SP_PropertyValues_PropertiesPartner;
+	VersionEvents?: () => SP.SP_File_VersionEvents_SP_FileVersionEvent_VersionEventsPartner;
+	Versions?: () => SP.SP_File_Versions_SP_FileVersion_VersionsPartner;
 	ActivityCapabilities?: Microsoft.SharePoint.Activities.ActivityCapabilities;
 	CheckInComment?: string;
 	CheckOutType?: number;
@@ -427,6 +478,7 @@ export interface FileVersionEvent {
 * FileVersion
 **********************************************/
 export interface FileVersion {
+	CreatedBy?: () => SP.SP_FileVersion_CreatedBy_SP_User_CreatedByPartner;
 	CheckInComment?: string;
 	Created?: any;
 	ID?: number;
@@ -441,6 +493,12 @@ export interface FileVersion {
 * Folder
 **********************************************/
 export interface Folder {
+	Files?: () => SP.SP_Folder_Files_SP_File_FilesPartner;
+	ListItemAllFields?: () => SP.SP_Folder_ListItemAllFields_SP_ListItem_ListItemAllFieldsPartner;
+	ParentFolder?: () => SP.SP_Folder_ParentFolder_SP_Folder_ParentFolderPartner;
+	Properties?: () => SP.SP_Folder_Properties_SP_PropertyValues_PropertiesPartner;
+	StorageMetrics?: () => SP.SP_Folder_StorageMetrics_SP_StorageMetrics_StorageMetricsPartner;
+	Folders?: () => SP.SP_Folder_Folders_SP_Folder_FoldersPartner;
 	ContentTypeOrder?: Array<SP.ContentTypeId>;
 	Exists?: boolean;
 	IsWOPIEnabled?: boolean;
@@ -470,6 +528,22 @@ export interface StorageMetrics {
 * List
 **********************************************/
 export interface List extends SP.SecurableObject {
+	ContentTypes?: () => SP.SP_List_ContentTypes_SP_ContentType_ContentTypesPartner;
+	CreatablesInfo?: () => SP.SP_List_CreatablesInfo_SP_CreatablesInfo_CreatablesInfoPartner;
+	DefaultView?: () => SP.SP_List_DefaultView_SP_View_DefaultViewPartner;
+	DescriptionResource?: () => SP.SP_List_DescriptionResource_SP_UserResource_DescriptionResourcePartner;
+	EventReceivers?: () => SP.SP_List_EventReceivers_SP_EventReceiverDefinition_EventReceiversPartner;
+	Fields?: () => SP.SP_List_Fields_SP_Field_FieldsPartner;
+	Forms?: () => SP.SP_List_Forms_SP_Form_FormsPartner;
+	InformationRightsManagementSettings?: () => SP.SP_List_InformationRightsManagementSettings_SP_InformationRightsManagementSettings_InformationRightsManagementSettingsPartner;
+	Items?: () => SP.SP_List_Items_SP_ListItem_ItemsPartner;
+	ParentWeb?: () => SP.SP_List_ParentWeb_SP_Web_ParentWebPartner;
+	RootFolder?: () => SP.SP_List_RootFolder_SP_Folder_RootFolderPartner;
+	Subscriptions?: () => Microsoft.SharePoint.Webhooks.SP_List_Subscriptions_Microsoft_SharePoint_Webhooks_Subscription_SubscriptionsPartner;
+	TitleResource?: () => SP.SP_List_TitleResource_SP_UserResource_TitleResourcePartner;
+	UserCustomActions?: () => SP.SP_List_UserCustomActions_SP_UserCustomAction_UserCustomActionsPartner;
+	Views?: () => SP.SP_List_Views_SP_View_ViewsPartner;
+	WorkflowAssociations?: () => SP.Workflow.SP_List_WorkflowAssociations_SP_Workflow_WorkflowAssociation_WorkflowAssociationsPartner;
 	AllowContentTypes?: boolean;
 	AllowDeletion?: boolean;
 	BaseTemplate?: number;
@@ -560,6 +634,7 @@ export interface CreatablesInfo {
 * View
 **********************************************/
 export interface View {
+	ViewFields?: () => SP.SP_View_ViewFields_SP_ViewFieldCollection_ViewFieldsPartner;
 	Aggregations?: string;
 	AggregationsStatus?: string;
 	BaseViewId?: string;
@@ -649,6 +724,49 @@ export interface InformationRightsManagementSettings {
 * Web
 **********************************************/
 export interface Web extends SP.SecurableObject {
+	Activities?: () => Microsoft.SharePoint.Activities.SP_Web_Activities_Microsoft_SharePoint_Activities_SPActivityEntity_ActivitiesPartner;
+	ActivityLogger?: () => Microsoft.SharePoint.Internal.SP_Web_ActivityLogger_Microsoft_SharePoint_Internal_ActivityLogger_ActivityLoggerPartner;
+	Alerts?: () => SP.SP_Web_Alerts_SP_Alert_AlertsPartner;
+	AllProperties?: () => SP.SP_Web_AllProperties_SP_PropertyValues_AllPropertiesPartner;
+	AppTiles?: () => SP.SP_Web_AppTiles_SP_AppTile_AppTilesPartner;
+	AssociatedMemberGroup?: () => SP.SP_Web_AssociatedMemberGroup_SP_Group_AssociatedMemberGroupPartner;
+	AssociatedOwnerGroup?: () => SP.SP_Web_AssociatedOwnerGroup_SP_Group_AssociatedOwnerGroupPartner;
+	AssociatedVisitorGroup?: () => SP.SP_Web_AssociatedVisitorGroup_SP_Group_AssociatedVisitorGroupPartner;
+	Author?: () => SP.SP_Web_Author_SP_User_AuthorPartner;
+	AvailableContentTypes?: () => SP.SP_Web_AvailableContentTypes_SP_ContentType_AvailableContentTypesPartner;
+	AvailableFields?: () => SP.SP_Web_AvailableFields_SP_Field_AvailableFieldsPartner;
+	ClientWebParts?: () => SP.SP_Web_ClientWebParts_SP_ClientWebPart_ClientWebPartsPartner;
+	ContentTypes?: () => SP.SP_Web_ContentTypes_SP_ContentType_ContentTypesPartner;
+	CurrentUser?: () => SP.SP_Web_CurrentUser_SP_User_CurrentUserPartner;
+	DataLeakagePreventionStatusInfo?: () => SP.SP_Web_DataLeakagePreventionStatusInfo_SP_SPDataLeakagePreventionStatusInfo_DataLeakagePreventionStatusInfoPartner;
+	DescriptionResource?: () => SP.SP_Web_DescriptionResource_SP_UserResource_DescriptionResourcePartner;
+	EventReceivers?: () => SP.SP_Web_EventReceivers_SP_EventReceiverDefinition_EventReceiversPartner;
+	Features?: () => SP.SP_Web_Features_SP_Feature_FeaturesPartner;
+	Fields?: () => SP.SP_Web_Fields_SP_Field_FieldsPartner;
+	Folders?: () => SP.SP_Web_Folders_SP_Folder_FoldersPartner;
+	HostedApps?: () => Microsoft.SharePoint.ClientSideComponent.SP_Web_HostedApps_Microsoft_SharePoint_ClientSideComponent_HostedAppsManager_HostedAppsPartner;
+	Lists?: () => SP.SP_Web_Lists_SP_List_ListsPartner;
+	ListTemplates?: () => SP.SP_Web_ListTemplates_SP_ListTemplate_ListTemplatesPartner;
+	Navigation?: () => SP.SP_Web_Navigation_SP_Navigation_NavigationPartner;
+	OneDriveSharedItems?: () => SP.Sharing.SP_Web_OneDriveSharedItems_SP_Sharing_SharedDocumentInfo_OneDriveSharedItemsPartner;
+	ParentWeb?: () => SP.SP_Web_ParentWeb_SP_WebInformation_ParentWebPartner;
+	PushNotificationSubscribers?: () => SP.SP_Web_PushNotificationSubscribers_SP_PushNotificationSubscriber_PushNotificationSubscribersPartner;
+	RecycleBin?: () => SP.SP_Web_RecycleBin_SP_RecycleBinItem_RecycleBinPartner;
+	RegionalSettings?: () => SP.SP_Web_RegionalSettings_SP_RegionalSettings_RegionalSettingsPartner;
+	RoleDefinitions?: () => SP.SP_Web_RoleDefinitions_SP_RoleDefinition_RoleDefinitionsPartner;
+	RootFolder?: () => SP.SP_Web_RootFolder_SP_Folder_RootFolderPartner;
+	SiteCollectionAppCatalog?: () => Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SP_Web_SiteCollectionAppCatalog_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_SiteCollectionAppCatalogPartner;
+	SiteGroups?: () => SP.SP_Web_SiteGroups_SP_Group_SiteGroupsPartner;
+	SiteUserInfoList?: () => SP.SP_Web_SiteUserInfoList_SP_List_SiteUserInfoListPartner;
+	SiteUsers?: () => SP.SP_Web_SiteUsers_SP_User_SiteUsersPartner;
+	TenantAppCatalog?: () => Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SP_Web_TenantAppCatalog_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor_TenantAppCatalogPartner;
+	ThemeInfo?: () => SP.SP_Web_ThemeInfo_SP_ThemeInfo_ThemeInfoPartner;
+	TitleResource?: () => SP.SP_Web_TitleResource_SP_UserResource_TitleResourcePartner;
+	UserCustomActions?: () => SP.SP_Web_UserCustomActions_SP_UserCustomAction_UserCustomActionsPartner;
+	Webs?: () => SP.SP_Web_Webs_SP_Web_WebsPartner;
+	WebInfos?: () => SP.SP_Web_WebInfos_SP_WebInformation_WebInfosPartner;
+	WorkflowAssociations?: () => SP.Workflow.SP_Web_WorkflowAssociations_SP_Workflow_WorkflowAssociation_WorkflowAssociationsPartner;
+	WorkflowTemplates?: () => SP.Workflow.SP_Web_WorkflowTemplates_SP_Workflow_WorkflowTemplate_WorkflowTemplatesPartner;
 	AllowAutomaticASPXPageIndexing?: boolean;
 	AllowCreateDeclarativeWorkflowForCurrentUser?: boolean;
 	AllowDesignerForCurrentUser?: boolean;
@@ -747,6 +865,8 @@ export interface AppTile {
 * Group
 **********************************************/
 export interface Group extends SP.Principal {
+	Owner?: () => SP.SP_Group_Owner_SP_Principal_OwnerPartner;
+	Users?: () => SP.SP_Group_Users_SP_User_UsersPartner;
 	AllowMembersEditMembership?: boolean;
 	AllowRequestToJoinLeave?: boolean;
 	AutoAcceptRequestToJoinLeave?: boolean;
@@ -799,6 +919,8 @@ export interface ListTemplate {
 * Navigation
 **********************************************/
 export interface Navigation {
+	QuickLaunch?: () => SP.SP_Navigation_QuickLaunch_SP_NavigationNode_QuickLaunchPartner;
+	TopNavigationBar?: () => SP.SP_Navigation_TopNavigationBar_SP_NavigationNode_TopNavigationBarPartner;
 	UseShared?: boolean;
 }
 
@@ -806,6 +928,7 @@ export interface Navigation {
 * NavigationNode
 **********************************************/
 export interface NavigationNode {
+	Children?: () => SP.SP_NavigationNode_Children_SP_NavigationNode_ChildrenPartner;
 	AudienceIds?: Array<any>;
 	Id?: number;
 	IsDocLib?: boolean;
@@ -837,6 +960,7 @@ export interface WebInformation {
 * PushNotificationSubscriber
 **********************************************/
 export interface PushNotificationSubscriber {
+	User?: () => SP.SP_PushNotificationSubscriber_User_SP_User_UserPartner;
 	CustomArgs?: string;
 	DeviceAppInstanceId?: any;
 	LastModifiedTimeStamp?: any;
@@ -849,6 +973,8 @@ export interface PushNotificationSubscriber {
 * RecycleBinItem
 **********************************************/
 export interface RecycleBinItem {
+	Author?: () => SP.SP_RecycleBinItem_Author_SP_User_AuthorPartner;
+	DeletedBy?: () => SP.SP_RecycleBinItem_DeletedBy_SP_User_DeletedByPartner;
 	AuthorEmail?: string;
 	AuthorName?: string;
 	DeletedByEmail?: string;
@@ -870,6 +996,9 @@ export interface RecycleBinItem {
 * RegionalSettings
 **********************************************/
 export interface RegionalSettings {
+	InstalledLanguages?: () => SP.SP_RegionalSettings_InstalledLanguages_SP_LanguageCollection_InstalledLanguagesPartner;
+	TimeZone?: () => SP.SP_RegionalSettings_TimeZone_SP_TimeZone_TimeZonePartner;
+	TimeZones?: () => SP.SP_RegionalSettings_TimeZones_SP_TimeZone_TimeZonesPartner;
 	AdjustHijriDays?: number;
 	AlternateCalendarType?: number;
 	AM?: string;
@@ -930,6 +1059,8 @@ export interface ThemeInfo {
 * UserCustomAction
 **********************************************/
 export interface UserCustomAction {
+	DescriptionResource?: () => SP.SP_UserCustomAction_DescriptionResource_SP_UserResource_DescriptionResourcePartner;
+	TitleResource?: () => SP.SP_UserCustomAction_TitleResource_SP_UserResource_TitleResourcePartner;
 	ClientSideComponentId?: any;
 	ClientSideComponentProperties?: string;
 	CommandUIExtension?: string;
@@ -955,6 +1086,9 @@ export interface UserCustomAction {
 * ListItemVersion
 **********************************************/
 export interface ListItemVersion {
+	CreatedBy?: () => SP.SP_ListItemVersion_CreatedBy_SP_User_CreatedByPartner;
+	Fields?: () => SP.SP_ListItemVersion_Fields_SP_Field_FieldsPartner;
+	FileVersion?: () => SP.SP_ListItemVersion_FileVersion_SP_FileVersion_FileVersionPartner;
 	Created?: any;
 	IsCurrentVersion?: boolean;
 	VersionId?: number;
@@ -1044,6 +1178,9 @@ export interface AlternateUrl {
 * ObjectSharingSettings
 **********************************************/
 export interface ObjectSharingSettings {
+	ObjectSharingInformation?: () => SP.SP_ObjectSharingSettings_ObjectSharingInformation_SP_ObjectSharingInformation_ObjectSharingInformationPartner;
+	SharePointSettings?: () => SP.SP_ObjectSharingSettings_SharePointSettings_SP_SharePointSharingSettings_SharePointSettingsPartner;
+	SharingPermissions?: () => SP.SP_ObjectSharingSettings_SharingPermissions_SP_SharingPermissionInformation_SharingPermissionsPartner;
 	AccessRequestMode?: boolean;
 	BlockPeoplePickerAndSharing?: boolean;
 	CanCurrentUserManageOrganizationReadonlyLink?: boolean;
@@ -1086,6 +1223,7 @@ export interface ObjectSharingSettings {
 * ObjectSharingInformation
 **********************************************/
 export interface ObjectSharingInformation {
+	SharedWithUsersCollection?: () => SP.SP_ObjectSharingInformation_SharedWithUsersCollection_SP_ObjectSharingInformationUser_SharedWithUsersCollectionPartner;
 	AnonymousEditLink?: string;
 	AnonymousViewLink?: string;
 	CanBeShared?: boolean;
@@ -1107,6 +1245,8 @@ export interface ObjectSharingInformation {
 * ObjectSharingInformationUser
 **********************************************/
 export interface ObjectSharingInformationUser {
+	Principal?: () => SP.SP_ObjectSharingInformationUser_Principal_SP_Principal_PrincipalPartner;
+	User?: () => SP.SP_ObjectSharingInformationUser_User_SP_User_UserPartner;
 	CustomRoleNames?: string;
 	Department?: string;
 	Email?: string;
@@ -1129,6 +1269,7 @@ export interface ObjectSharingInformationUser {
 * SharePointSharingSettings
 **********************************************/
 export interface SharePointSharingSettings {
+	PickerProperties?: () => SP.SP_SharePointSharingSettings_PickerProperties_SP_PickerSettings_PickerPropertiesPartner;
 	AddToGroupModeName?: string;
 	GroupNameLines?: Array<string>;
 	GroupRoleDefinitionNamesLines?: Array<string>;
@@ -1189,6 +1330,9 @@ export interface ServerSettings {
 * SharingResult
 **********************************************/
 export interface SharingResult {
+	GroupsSharedWith?: () => SP.SP_SharingResult_GroupsSharedWith_SP_Group_GroupsSharedWithPartner;
+	GroupUsersAddedTo?: () => SP.SP_SharingResult_GroupUsersAddedTo_SP_Group_GroupUsersAddedToPartner;
+	UsersWithAccessRequests?: () => SP.SP_SharingResult_UsersWithAccessRequests_SP_User_UsersWithAccessRequestsPartner;
 	ErrorMessage?: string;
 	IconUrl?: string;
 	InvitedUsers?: Array<SP.SPInvitationCreationResult>;
@@ -1211,6 +1355,8 @@ export interface AccessRequests {
 * AppContextSite
 **********************************************/
 export interface AppContextSite {
+	Site?: () => SP.SP_AppContextSite_Site_SP_Site_SitePartner;
+	Web?: () => SP.SP_AppContextSite_Web_SP_Web_WebPartner;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -1315,6 +1461,7 @@ export interface ChangeItem extends SP.Change {
 * ChangeList
 **********************************************/
 export interface ChangeList extends SP.Change {
+	Creator?: () => SP.SP_ChangeList_Creator_SP_User_CreatorPartner;
 	BaseTemplate?: number;
 	Editor?: string;
 	Hidden?: boolean;
@@ -1359,6 +1506,7 @@ export interface ChangeWeb extends SP.Change {
 * CheckedOutFile
 **********************************************/
 export interface CheckedOutFile {
+	CheckedOutBy?: () => SP.SP_CheckedOutFile_CheckedOutBy_SP_User_CheckedOutByPartner;
 	CheckedOutById?: number;
 	ServerRelativePath?: SP.ResourcePath;
 }
@@ -1389,6 +1537,10 @@ export interface APIHubConnector {
 * RequestContext
 **********************************************/
 export interface RequestContext {
+	Current?: () => SP.SP_RequestContext_Current_SP_RequestContext_CurrentPartner;
+	List?: () => SP.SP_RequestContext_List_SP_List_ListPartner;
+	Site?: () => SP.SP_RequestContext_Site_SP_Site_SitePartner;
+	Web?: () => SP.SP_RequestContext_Web_SP_Web_WebPartner;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -1638,6 +1790,7 @@ export interface MoveCopyUtil {
 * RelatedField
 **********************************************/
 export interface RelatedField {
+	LookupList?: () => SP.SP_RelatedField_LookupList_SP_List_LookupListPartner;
 	FieldId?: any;
 	ListId?: any;
 	RelationshipDeleteBehavior?: number;
@@ -1648,6 +1801,7 @@ export interface RelatedField {
 * RemoteWeb
 **********************************************/
 export interface RemoteWeb {
+	Web?: () => SP.SP_RemoteWeb_Web_SP_Web_WebPartner;
 	CanSendEmail?: boolean;
 	ShareByEmailEnabled?: boolean;
 	ShareByLinkEnabled?: boolean;
@@ -1657,6 +1811,8 @@ export interface RemoteWeb {
 * RequestUserContext
 **********************************************/
 export interface RequestUserContext {
+	Current?: () => SP.SP_RequestUserContext_Current_SP_RequestUserContext_CurrentPartner;
+	User?: () => SP.SP_RequestUserContext_User_SP_User_UserPartner;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -1701,6 +1857,7 @@ export interface TenantAppInstance {
 * VisualizationAppSynchronizationResult
 **********************************************/
 export interface VisualizationAppSynchronizationResult {
+	AppMappedViews?: () => SP.SP_VisualizationAppSynchronizationResult_AppMappedViews_SP_View_AppMappedViewsPartner;
 	SynchronizationData?: string;
 	SynchronizationStatus?: number;
 }
@@ -1747,6 +1904,7 @@ export interface TenantAppUtility {
 * TenantSettings
 **********************************************/
 export interface TenantSettings {
+	Current?: () => SP.SP_TenantSettings_Current_SP_TenantSettings_CurrentPartner;
 	CorporateCatalogUrl?: string;
 }
 
@@ -1754,6 +1912,7 @@ export interface TenantSettings {
 * AppPrincipalIdentityProvider
 **********************************************/
 export interface AppPrincipalIdentityProvider {
+	External?: () => SP.SP_AppPrincipalIdentityProvider_External_SP_AppPrincipalIdentityProvider_ExternalPartner;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 

@@ -50,6 +50,7 @@ export interface PersonalWeb {
 * SharingInformation
 **********************************************/
 export interface SharingInformation {
+	pickerSettings?: () => SP.SP_Sharing_SharingInformation_pickerSettings_SP_PickerSettings_pickerSettingsPartner;
 	accessRequestSettings?: SP.Sharing.AccessRequestSettings;
 	anonymousLinkExpirationRestrictionDays?: number;
 	blockPeoplePickerAndSharing?: boolean;

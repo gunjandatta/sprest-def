@@ -60,6 +60,7 @@ export interface SpotlightResult {
 * ThemeManager
 **********************************************/
 export interface ThemeManager {
+	ContextThemeManager?: () => SP.Utilities.SP_Utilities_ThemeManager_ContextThemeManager_SP_Utilities_ThemeManager_ContextThemeManagerPartner;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 

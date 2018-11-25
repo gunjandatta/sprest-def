@@ -5,6 +5,8 @@ import { Microsoft } from "../../../";
 * comment
 **********************************************/
 export interface comment {
+	likedBy?: () => Microsoft.SharePoint.Likes.Microsoft_SharePoint_Comments_comment_likedBy_Microsoft_SharePoint_Likes_userEntity_likedByPartner;
+	replies?: () => Microsoft.SharePoint.Comments.Microsoft_SharePoint_Comments_comment_replies_Microsoft_SharePoint_Comments_comment_repliesPartner;
 	author?: SP.Sharing.Principal;
 	createdDate?: any;
 	id?: string;

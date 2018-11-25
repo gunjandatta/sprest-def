@@ -147,6 +147,25 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 directories[ns][collection][name]._BaseType = interface.$.BaseType;
                             }
 
+                            // Parse the methods
+                            let methods = interface.NavigationProperty || [];
+                            for (let k = 0; k < methods.length; k++) {
+                                let method = methods[k];
+
+                                // Get the method information
+                                let methodName = method.$ ? method.$.Name : null;
+                                let methodType = method.$ ? method.$.Relationship : null;
+
+                                // Validate the method information
+                                if (methodName && methodType) {
+                                    // Ensure methods exist
+                                    directories[ns][collection][name]._Methods = directories[ns][collection][name]._Methods || {};
+
+                                    // Add the method
+                                    directories[ns][collection][name]._Methods[methodName] = methodType;
+                                } else { continue; }
+                            }
+
                             // Parse the properties
                             let properties = interface.Property || [];
                             for (let k = 0; k < properties.length; k++) {
@@ -220,6 +239,18 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         if (propName == "_BaseType") {
                             // Update the references
                             updateReferences(fileImports, dirName, prop);
+                            continue;
+                        }
+
+                        // Skip the methods
+                        if(propName == "_Methods") {
+                            // Parse the methods
+                            for(var methodName in prop) {
+                                // Add the method name
+                                variables.push('\t' + methodName + '?: () => ' + prop[methodName] + ';');
+                            }
+
+                            // Continue the loop
                             continue;
                         }
 

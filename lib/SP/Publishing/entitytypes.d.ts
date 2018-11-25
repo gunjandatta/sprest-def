@@ -42,6 +42,9 @@ export interface EmbedService {
 * VideoItem
 **********************************************/
 export interface VideoItem {
+	Author?: () => SP.SP_Publishing_VideoItem_Author_SP_User_AuthorPartner;
+	Owner?: () => SP.SP_Publishing_VideoItem_Owner_SP_User_OwnerPartner;
+	PeopleInMedia?: () => SP.SP_Publishing_VideoItem_PeopleInMedia_SP_User_PeopleInMediaPartner;
 	ChannelID?: any;
 	CreatedDate?: any;
 	DefaultEmbedCode?: string;
@@ -108,6 +111,7 @@ export interface PointPublishingMagazineProps {
 * PointPublishingPost
 **********************************************/
 export interface PointPublishingPost {
+	images?: () => SP.SP_Publishing_PointPublishingPost_images_SP_File_imagesPartner;
 	Author?: string;
 	Content?: string;
 	CreatedDate?: any;
@@ -124,6 +128,12 @@ export interface PointPublishingPost {
 * PointPublishingPostServiceManager
 **********************************************/
 export interface PointPublishingPostServiceManager {
+	bannerimages?: () => SP.SP_Publishing_PointPublishingPostServiceManager_bannerimages_SP_File_bannerimagesPartner;
+	contributors?: () => SP.Publishing.SP_Publishing_PointPublishingPostServiceManager_contributors_SP_Publishing_PointPublishingUser_contributorsPartner;
+	creators?: () => SP.Publishing.SP_Publishing_PointPublishingPostServiceManager_creators_SP_Publishing_PointPublishingUser_creatorsPartner;
+	magazineprops?: () => SP.Publishing.SP_Publishing_PointPublishingPostServiceManager_magazineprops_SP_Publishing_PointPublishingMagazineProps_magazinepropsPartner;
+	posts?: () => SP.Publishing.SP_Publishing_PointPublishingPostServiceManager_posts_SP_Publishing_PointPublishingPost_postsPartner;
+	viewers?: () => SP.Publishing.SP_Publishing_PointPublishingPostServiceManager_viewers_SP_Publishing_PointPublishingUser_viewersPartner;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -181,6 +191,8 @@ export interface PrimaryCityTime {
 * SitePageMetadata
 **********************************************/
 export interface SitePageMetadata {
+	CreatedBy?: () => SP.Publishing.SP_Publishing_SitePageMetadata_CreatedBy_SP_Publishing_UserInfo_CreatedByPartner;
+	LastModifiedBy?: () => SP.Publishing.SP_Publishing_SitePageMetadata_LastModifiedBy_SP_Publishing_UserInfo_LastModifiedByPartner;
 	AbsoluteUrl?: string;
 	AuthorByline?: Array<string>;
 	BannerImageUrl?: string;
@@ -275,6 +287,8 @@ export interface SharePointHomeServiceManager {
 * SitePageService
 **********************************************/
 export interface SitePageService {
+	CommunicationSite?: () => SP.Publishing.SP_Publishing_SitePageService_CommunicationSite_SP_Publishing_CommunicationSite_CommunicationSitePartner;
+	Pages?: () => SP.Publishing.SP_Publishing_SitePageService_Pages_SP_Publishing_SitePage_PagesPartner;
 	CustomContentApprovalEnabled?: boolean;
 }
 
@@ -282,6 +296,7 @@ export interface SitePageService {
 * SpotlightChannel
 **********************************************/
 export interface SpotlightChannel {
+	Channel?: () => SP.Publishing.SP_Publishing_SpotlightChannel_Channel_SP_Publishing_VideoChannel_ChannelPartner;
 	ChannelId?: any;
 	Id?: number;
 	TileHtmlColor?: string;
@@ -293,6 +308,9 @@ export interface SpotlightChannel {
 * VideoChannel
 **********************************************/
 export interface VideoChannel {
+	Search?: () => SP.Publishing.SP_Publishing_VideoChannel_Search_SP_Publishing_Search_SearchPartner;
+	SpotlightVideos?: () => SP.Publishing.SP_Publishing_VideoChannel_SpotlightVideos_SP_Publishing_SpotlightVideo_SpotlightVideosPartner;
+	Videos?: () => SP.Publishing.SP_Publishing_VideoChannel_Videos_SP_Publishing_VideoItem_VideosPartner;
 	CanAdministrateByCurrent?: boolean;
 	CanEditByCurrent?: boolean;
 	CanViewByCurrent?: boolean;
@@ -321,6 +339,7 @@ export interface Search {
 * SpotlightVideo
 **********************************************/
 export interface SpotlightVideo {
+	Video?: () => SP.Publishing.SP_Publishing_SpotlightVideo_Video_SP_Publishing_VideoItem_VideoPartner;
 	Id?: number;
 	ServerRelativeUrl?: string;
 	Url?: string;
@@ -339,6 +358,7 @@ export interface SubtitleFile {
 * VideoPermissionGroup
 **********************************************/
 export interface VideoPermissionGroup {
+	Users?: () => SP.SP_Publishing_VideoPermissionGroup_Users_SP_User_UsersPartner;
 	Id?: number;
 }
 
@@ -370,6 +390,11 @@ export interface VideoServiceDiscoverer {
 * VideoServiceManager
 **********************************************/
 export interface VideoServiceManager {
+	CanEditChannels?: () => SP.Publishing.SP_Publishing_VideoServiceManager_CanEditChannels_SP_Publishing_VideoChannel_CanEditChannelsPartner;
+	Channels?: () => SP.Publishing.SP_Publishing_VideoServiceManager_Channels_SP_Publishing_VideoChannel_ChannelsPartner;
+	Search?: () => SP.Publishing.SP_Publishing_VideoServiceManager_Search_SP_Publishing_Search_SearchPartner;
+	SpotlightChannels?: () => SP.Publishing.SP_Publishing_VideoServiceManager_SpotlightChannels_SP_Publishing_SpotlightChannel_SpotlightChannelsPartner;
+	SpotlightVideos?: () => SP.Publishing.SP_Publishing_VideoServiceManager_SpotlightVideos_SP_Publishing_SpotlightVideo_SpotlightVideosPartner;
 	CanAdministratePortalByCurrent?: boolean;
 	CanCreateChannelsByCurrent?: boolean;
 	CanViewPortalByCurrent?: boolean;
