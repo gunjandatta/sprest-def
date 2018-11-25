@@ -181,7 +181,6 @@ export interface TenantAdminSettingsService {
 * Tenant
 **********************************************/
 export interface Tenant {
-	Sites?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 	AllowDownloadingNonWebViewableFiles?: boolean;
 	AllowedDomainListForSyncClient?: Array<any>;
 	AllowEditing?: boolean;
@@ -283,6 +282,20 @@ export interface Tenant {
 	UsePersistentCookiesForExplorerView?: boolean;
 	UserVoiceForFeedbackEnabled?: boolean;
 	WhoCanShareAllowListInTenant?: string;
+}
+
+/*********************************************
+* TenantMethods
+**********************************************/
+export interface TenantMethods extends Tenant {
+	Sites?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+}
+
+/*********************************************
+* TenantQuery
+**********************************************/
+export interface TenantQuery extends Tenant {
+	Sites?: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 }
 
 /*********************************************

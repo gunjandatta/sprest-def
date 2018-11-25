@@ -68,17 +68,43 @@ export interface LobSystem {
 * MethodExecutionResult
 **********************************************/
 export interface MethodExecutionResult {
-	ReturnParameterCollection?: () => Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MethodExecutionResultMethods
+**********************************************/
+export interface MethodExecutionResultMethods extends MethodExecutionResult {
+	ReturnParameterCollection?: () => Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+}
+
+/*********************************************
+* MethodExecutionResultQuery
+**********************************************/
+export interface MethodExecutionResultQuery extends MethodExecutionResult {
+	ReturnParameterCollection?: Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 }
 
 /*********************************************
 * EntityView
 **********************************************/
 export interface EntityView {
-	Fields?: () => Array<SP.BusinessData.EntityField>;
 	Name?: string;
 	RelatedSpecificFinderName?: string;
+}
+
+/*********************************************
+* EntityViewMethods
+**********************************************/
+export interface EntityViewMethods extends EntityView {
+	Fields?: () => Array<SP.BusinessData.EntityField>;
+}
+
+/*********************************************
+* EntityViewQuery
+**********************************************/
+export interface EntityViewQuery extends EntityView {
+	Fields?: Array<SP.BusinessData.EntityField>;
 }
 
 /*********************************************

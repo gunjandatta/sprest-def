@@ -5,9 +5,23 @@ import { Microsoft } from "../";
 * ApiMetadata
 **********************************************/
 export interface ApiMetadata {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ApiMetadataMethods
+**********************************************/
+export interface ApiMetadataMethods extends ApiMetadata {
 	Current?: () => SP.ApiMetadata;
 	Types?: () => Array<SP.TypeInformation>;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ApiMetadataQuery
+**********************************************/
+export interface ApiMetadataQuery extends ApiMetadata {
+	Current?: SP.ApiMetadata;
+	Types?: Array<SP.TypeInformation>;
 }
 
 /*********************************************
@@ -25,15 +39,6 @@ export interface TypeInformation {
 * Site
 **********************************************/
 export interface Site {
-	Audit?: () => SP.Audit;
-	CustomScriptSafeDomains?: () => Array<SP.ScriptSafeDomain>;
-	EventReceivers?: () => Array<SP.EventReceiverDefinition>;
-	Features?: () => Array<SP.Feature>;
-	Owner?: () => SP.User;
-	RecycleBin?: () => Array<SP.RecycleBinItem>;
-	RootWeb?: () => SP.Web;
-	SecondaryContact?: () => SP.User;
-	UserCustomActions?: () => Array<SP.UserCustomAction>;
 	AllowCreateDeclarativeWorkflow?: boolean;
 	AllowDesigner?: boolean;
 	AllowExternalEmbeddingWrapper?: number;
@@ -90,6 +95,36 @@ export interface Site {
 }
 
 /*********************************************
+* SiteMethods
+**********************************************/
+export interface SiteMethods extends Site {
+	Audit?: () => SP.Audit;
+	CustomScriptSafeDomains?: () => Array<SP.ScriptSafeDomain>;
+	EventReceivers?: () => Array<SP.EventReceiverDefinition>;
+	Features?: () => Array<SP.Feature>;
+	Owner?: () => SP.User;
+	RecycleBin?: () => Array<SP.RecycleBinItem>;
+	RootWeb?: () => SP.Web;
+	SecondaryContact?: () => SP.User;
+	UserCustomActions?: () => Array<SP.UserCustomAction>;
+}
+
+/*********************************************
+* SiteQuery
+**********************************************/
+export interface SiteQuery extends Site {
+	Audit?: SP.Audit;
+	CustomScriptSafeDomains?: Array<SP.ScriptSafeDomain>;
+	EventReceivers?: Array<SP.EventReceiverDefinition>;
+	Features?: Array<SP.Feature>;
+	Owner?: SP.User;
+	RecycleBin?: Array<SP.RecycleBinItem>;
+	RootWeb?: SP.Web;
+	SecondaryContact?: SP.User;
+	UserCustomActions?: Array<SP.UserCustomAction>;
+}
+
+/*********************************************
 * Audit
 **********************************************/
 export interface Audit {
@@ -140,8 +175,6 @@ export interface Principal {
 * User
 **********************************************/
 export interface User extends SP.Principal {
-	Alerts?: () => Array<SP.Alert>;
-	Groups?: () => Array<SP.Group>;
 	AadObjectId?: SP.UserIdInfo;
 	Email?: string;
 	IsEmailAuthenticationGuestUser?: boolean;
@@ -151,13 +184,25 @@ export interface User extends SP.Principal {
 }
 
 /*********************************************
+* UserMethods
+**********************************************/
+export interface UserMethods extends User {
+	Alerts?: () => Array<SP.Alert>;
+	Groups?: () => Array<SP.Group>;
+}
+
+/*********************************************
+* UserQuery
+**********************************************/
+export interface UserQuery extends User {
+	Alerts?: Array<SP.Alert>;
+	Groups?: Array<SP.Group>;
+}
+
+/*********************************************
 * Alert
 **********************************************/
 export interface Alert {
-	AllProperties?: () => SP.PropertyValues;
-	Item?: () => SP.ListItem;
-	List?: () => SP.List;
-	User?: () => SP.User;
 	AlertFrequency?: number;
 	AlertTemplateName?: string;
 	AlertTime?: any;
@@ -177,6 +222,26 @@ export interface Alert {
 }
 
 /*********************************************
+* AlertMethods
+**********************************************/
+export interface AlertMethods extends Alert {
+	AllProperties?: () => SP.PropertyValues;
+	Item?: () => SP.ListItem;
+	List?: () => SP.List;
+	User?: () => SP.User;
+}
+
+/*********************************************
+* AlertQuery
+**********************************************/
+export interface AlertQuery extends Alert {
+	AllProperties?: SP.PropertyValues;
+	Item?: SP.ListItem;
+	List?: SP.List;
+	User?: SP.User;
+}
+
+/*********************************************
 * PropertyValues
 **********************************************/
 export interface PropertyValues {
@@ -187,18 +252,46 @@ export interface PropertyValues {
 * SecurableObject
 **********************************************/
 export interface SecurableObject {
+	HasUniqueRoleAssignments?: boolean;
+}
+
+/*********************************************
+* SecurableObjectMethods
+**********************************************/
+export interface SecurableObjectMethods extends SecurableObject {
 	FirstUniqueAncestorSecurableObject?: () => SP.SecurableObject;
 	RoleAssignments?: () => Array<SP.RoleAssignment>;
-	HasUniqueRoleAssignments?: boolean;
+}
+
+/*********************************************
+* SecurableObjectQuery
+**********************************************/
+export interface SecurableObjectQuery extends SecurableObject {
+	FirstUniqueAncestorSecurableObject?: SP.SecurableObject;
+	RoleAssignments?: Array<SP.RoleAssignment>;
 }
 
 /*********************************************
 * RoleAssignment
 **********************************************/
 export interface RoleAssignment {
+	PrincipalId?: number;
+}
+
+/*********************************************
+* RoleAssignmentMethods
+**********************************************/
+export interface RoleAssignmentMethods extends RoleAssignment {
 	Member?: () => SP.Principal;
 	RoleDefinitionBindings?: () => Array<SP.RoleDefinition>;
-	PrincipalId?: number;
+}
+
+/*********************************************
+* RoleAssignmentQuery
+**********************************************/
+export interface RoleAssignmentQuery extends RoleAssignment {
+	Member?: SP.Principal;
+	RoleDefinitionBindings?: Array<SP.RoleDefinition>;
 }
 
 /*********************************************
@@ -218,18 +311,6 @@ export interface RoleDefinition {
 * ListItem
 **********************************************/
 export interface ListItem extends SP.SecurableObject {
-	AttachmentFiles?: () => Array<SP.Attachment>;
-	ContentType?: () => SP.ContentType;
-	GetDlpPolicyTip?: () => SP.DlpPolicyTip;
-	FieldValuesAsHtml?: () => SP.FieldStringValues;
-	FieldValuesAsText?: () => SP.FieldStringValues;
-	FieldValuesForEdit?: () => SP.FieldStringValues;
-	File?: () => SP.File;
-	Folder?: () => SP.Folder;
-	LikedByInformation?: () => Microsoft.SharePoint.Likes.likedByInformation;
-	ParentList?: () => SP.List;
-	Properties?: () => SP.PropertyValues;
-	Versions?: () => Array<SP.ListItemVersion>;
 	CommentsDisabled?: boolean;
 	CommentsDisabledScope?: number;
 	ComplianceInfo?: SP.ListItemComplianceInfo;
@@ -242,6 +323,42 @@ export interface ListItem extends SP.SecurableObject {
 	ServerRedirectedEmbedUri?: string;
 	ServerRedirectedEmbedUrl?: string;
 	Client_Title?: string;
+}
+
+/*********************************************
+* ListItemMethods
+**********************************************/
+export interface ListItemMethods extends ListItem {
+	AttachmentFiles?: () => Array<SP.Attachment>;
+	ContentType?: () => SP.ContentType;
+	GetDlpPolicyTip?: () => SP.DlpPolicyTip;
+	FieldValuesAsHtml?: () => SP.FieldStringValues;
+	FieldValuesAsText?: () => SP.FieldStringValues;
+	FieldValuesForEdit?: () => SP.FieldStringValues;
+	File?: () => SP.File;
+	Folder?: () => SP.Folder;
+	LikedByInformation?: () => Microsoft.SharePoint.Likes.likedByInformation;
+	ParentList?: () => SP.List;
+	Properties?: () => SP.PropertyValues;
+	Versions?: () => Array<SP.ListItemVersion>;
+}
+
+/*********************************************
+* ListItemQuery
+**********************************************/
+export interface ListItemQuery extends ListItem {
+	AttachmentFiles?: Array<SP.Attachment>;
+	ContentType?: SP.ContentType;
+	GetDlpPolicyTip?: SP.DlpPolicyTip;
+	FieldValuesAsHtml?: SP.FieldStringValues;
+	FieldValuesAsText?: SP.FieldStringValues;
+	FieldValuesForEdit?: SP.FieldStringValues;
+	File?: SP.File;
+	Folder?: SP.Folder;
+	LikedByInformation?: Microsoft.SharePoint.Likes.likedByInformation;
+	ParentList?: SP.List;
+	Properties?: SP.PropertyValues;
+	Versions?: Array<SP.ListItemVersion>;
 }
 
 /*********************************************
@@ -258,12 +375,6 @@ export interface Attachment {
 * ContentType
 **********************************************/
 export interface ContentType {
-	DescriptionResource?: () => SP.UserResource;
-	FieldLinks?: () => Array<SP.FieldLink>;
-	Fields?: () => Array<SP.Field>;
-	NameResource?: () => SP.UserResource;
-	Parent?: () => SP.ContentType;
-	WorkflowAssociations?: () => Array<SP.Workflow.WorkflowAssociation>;
 	Description?: string;
 	DisplayFormTemplateName?: string;
 	DisplayFormUrl?: string;
@@ -287,6 +398,30 @@ export interface ContentType {
 	Scope?: string;
 	Sealed?: boolean;
 	StringId?: string;
+}
+
+/*********************************************
+* ContentTypeMethods
+**********************************************/
+export interface ContentTypeMethods extends ContentType {
+	DescriptionResource?: () => SP.UserResource;
+	FieldLinks?: () => Array<SP.FieldLink>;
+	Fields?: () => Array<SP.Field>;
+	NameResource?: () => SP.UserResource;
+	Parent?: () => SP.ContentType;
+	WorkflowAssociations?: () => Array<SP.Workflow.WorkflowAssociation>;
+}
+
+/*********************************************
+* ContentTypeQuery
+**********************************************/
+export interface ContentTypeQuery extends ContentType {
+	DescriptionResource?: SP.UserResource;
+	FieldLinks?: Array<SP.FieldLink>;
+	Fields?: Array<SP.Field>;
+	NameResource?: SP.UserResource;
+	Parent?: SP.ContentType;
+	WorkflowAssociations?: Array<SP.Workflow.WorkflowAssociation>;
 }
 
 /*********************************************
@@ -314,8 +449,6 @@ export interface FieldLink {
 * Field
 **********************************************/
 export interface Field {
-	DescriptionResource?: () => SP.UserResource;
-	TitleResource?: () => SP.UserResource;
 	AutoIndexed?: boolean;
 	CanBeDeleted?: boolean;
 	ClientSideComponentId?: any;
@@ -356,6 +489,22 @@ export interface Field {
 }
 
 /*********************************************
+* FieldMethods
+**********************************************/
+export interface FieldMethods extends Field {
+	DescriptionResource?: () => SP.UserResource;
+	TitleResource?: () => SP.UserResource;
+}
+
+/*********************************************
+* FieldQuery
+**********************************************/
+export interface FieldQuery extends Field {
+	DescriptionResource?: SP.UserResource;
+	TitleResource?: SP.UserResource;
+}
+
+/*********************************************
 * DlpPolicyTip
 **********************************************/
 export interface DlpPolicyTip {
@@ -379,16 +528,6 @@ export interface FieldStringValues {
 * File
 **********************************************/
 export interface File {
-	Author?: () => SP.User;
-	CheckedOutByUser?: () => SP.User;
-	EffectiveInformationRightsManagementSettings?: () => SP.EffectiveInformationRightsManagementSettings;
-	InformationRightsManagementSettings?: () => SP.InformationRightsManagementFileSettings;
-	ListItemAllFields?: () => SP.ListItem;
-	LockedByUser?: () => SP.User;
-	ModifiedBy?: () => SP.User;
-	Properties?: () => SP.PropertyValues;
-	VersionEvents?: () => Array<SP.FileVersionEvent>;
-	Versions?: () => Array<SP.FileVersion>;
 	ActivityCapabilities?: Microsoft.SharePoint.Activities.ActivityCapabilities;
 	CheckInComment?: string;
 	CheckOutType?: number;
@@ -416,6 +555,38 @@ export interface File {
 	UIVersionLabel?: string;
 	UniqueId?: any;
 	WebId?: any;
+}
+
+/*********************************************
+* FileMethods
+**********************************************/
+export interface FileMethods extends File {
+	Author?: () => SP.User;
+	CheckedOutByUser?: () => SP.User;
+	EffectiveInformationRightsManagementSettings?: () => SP.EffectiveInformationRightsManagementSettings;
+	InformationRightsManagementSettings?: () => SP.InformationRightsManagementFileSettings;
+	ListItemAllFields?: () => SP.ListItem;
+	LockedByUser?: () => SP.User;
+	ModifiedBy?: () => SP.User;
+	Properties?: () => SP.PropertyValues;
+	VersionEvents?: () => Array<SP.FileVersionEvent>;
+	Versions?: () => Array<SP.FileVersion>;
+}
+
+/*********************************************
+* FileQuery
+**********************************************/
+export interface FileQuery extends File {
+	Author?: SP.User;
+	CheckedOutByUser?: SP.User;
+	EffectiveInformationRightsManagementSettings?: SP.EffectiveInformationRightsManagementSettings;
+	InformationRightsManagementSettings?: SP.InformationRightsManagementFileSettings;
+	ListItemAllFields?: SP.ListItem;
+	LockedByUser?: SP.User;
+	ModifiedBy?: SP.User;
+	Properties?: SP.PropertyValues;
+	VersionEvents?: Array<SP.FileVersionEvent>;
+	Versions?: Array<SP.FileVersion>;
 }
 
 /*********************************************
@@ -478,7 +649,6 @@ export interface FileVersionEvent {
 * FileVersion
 **********************************************/
 export interface FileVersion {
-	CreatedBy?: () => SP.User;
 	CheckInComment?: string;
 	Created?: any;
 	ID?: number;
@@ -490,15 +660,23 @@ export interface FileVersion {
 }
 
 /*********************************************
+* FileVersionMethods
+**********************************************/
+export interface FileVersionMethods extends FileVersion {
+	CreatedBy?: () => SP.User;
+}
+
+/*********************************************
+* FileVersionQuery
+**********************************************/
+export interface FileVersionQuery extends FileVersion {
+	CreatedBy?: SP.User;
+}
+
+/*********************************************
 * Folder
 **********************************************/
 export interface Folder {
-	Files?: () => Array<SP.File>;
-	ListItemAllFields?: () => SP.ListItem;
-	ParentFolder?: () => SP.Folder;
-	Properties?: () => SP.PropertyValues;
-	StorageMetrics?: () => SP.StorageMetrics;
-	Folders?: () => Array<SP.Folder>;
 	ContentTypeOrder?: Array<SP.ContentTypeId>;
 	Exists?: boolean;
 	IsWOPIEnabled?: boolean;
@@ -515,6 +693,30 @@ export interface Folder {
 }
 
 /*********************************************
+* FolderMethods
+**********************************************/
+export interface FolderMethods extends Folder {
+	Files?: () => Array<SP.File>;
+	ListItemAllFields?: () => SP.ListItem;
+	ParentFolder?: () => SP.Folder;
+	Properties?: () => SP.PropertyValues;
+	StorageMetrics?: () => SP.StorageMetrics;
+	Folders?: () => Array<SP.Folder>;
+}
+
+/*********************************************
+* FolderQuery
+**********************************************/
+export interface FolderQuery extends Folder {
+	Files?: Array<SP.File>;
+	ListItemAllFields?: SP.ListItem;
+	ParentFolder?: SP.Folder;
+	Properties?: SP.PropertyValues;
+	StorageMetrics?: SP.StorageMetrics;
+	Folders?: Array<SP.Folder>;
+}
+
+/*********************************************
 * StorageMetrics
 **********************************************/
 export interface StorageMetrics {
@@ -528,22 +730,6 @@ export interface StorageMetrics {
 * List
 **********************************************/
 export interface List extends SP.SecurableObject {
-	ContentTypes?: () => Array<SP.ContentType>;
-	CreatablesInfo?: () => SP.CreatablesInfo;
-	DefaultView?: () => SP.View;
-	DescriptionResource?: () => SP.UserResource;
-	EventReceivers?: () => Array<SP.EventReceiverDefinition>;
-	Fields?: () => Array<SP.Field>;
-	Forms?: () => Array<SP.Form>;
-	InformationRightsManagementSettings?: () => SP.InformationRightsManagementSettings;
-	Items?: () => Array<SP.ListItem>;
-	ParentWeb?: () => SP.Web;
-	RootFolder?: () => SP.Folder;
-	Subscriptions?: () => Array<Microsoft.SharePoint.Webhooks.Subscription>;
-	TitleResource?: () => SP.UserResource;
-	UserCustomActions?: () => Array<SP.UserCustomAction>;
-	Views?: () => Array<SP.View>;
-	WorkflowAssociations?: () => Array<SP.Workflow.WorkflowAssociation>;
 	AllowContentTypes?: boolean;
 	AllowDeletion?: boolean;
 	BaseTemplate?: number;
@@ -621,6 +807,50 @@ export interface List extends SP.SecurableObject {
 }
 
 /*********************************************
+* ListMethods
+**********************************************/
+export interface ListMethods extends List {
+	ContentTypes?: () => Array<SP.ContentType>;
+	CreatablesInfo?: () => SP.CreatablesInfo;
+	DefaultView?: () => SP.View;
+	DescriptionResource?: () => SP.UserResource;
+	EventReceivers?: () => Array<SP.EventReceiverDefinition>;
+	Fields?: () => Array<SP.Field>;
+	Forms?: () => Array<SP.Form>;
+	InformationRightsManagementSettings?: () => SP.InformationRightsManagementSettings;
+	Items?: () => Array<SP.ListItem>;
+	ParentWeb?: () => SP.Web;
+	RootFolder?: () => SP.Folder;
+	Subscriptions?: () => Array<Microsoft.SharePoint.Webhooks.Subscription>;
+	TitleResource?: () => SP.UserResource;
+	UserCustomActions?: () => Array<SP.UserCustomAction>;
+	Views?: () => Array<SP.View>;
+	WorkflowAssociations?: () => Array<SP.Workflow.WorkflowAssociation>;
+}
+
+/*********************************************
+* ListQuery
+**********************************************/
+export interface ListQuery extends List {
+	ContentTypes?: Array<SP.ContentType>;
+	CreatablesInfo?: SP.CreatablesInfo;
+	DefaultView?: SP.View;
+	DescriptionResource?: SP.UserResource;
+	EventReceivers?: Array<SP.EventReceiverDefinition>;
+	Fields?: Array<SP.Field>;
+	Forms?: Array<SP.Form>;
+	InformationRightsManagementSettings?: SP.InformationRightsManagementSettings;
+	Items?: Array<SP.ListItem>;
+	ParentWeb?: SP.Web;
+	RootFolder?: SP.Folder;
+	Subscriptions?: Array<Microsoft.SharePoint.Webhooks.Subscription>;
+	TitleResource?: SP.UserResource;
+	UserCustomActions?: Array<SP.UserCustomAction>;
+	Views?: Array<SP.View>;
+	WorkflowAssociations?: Array<SP.Workflow.WorkflowAssociation>;
+}
+
+/*********************************************
 * CreatablesInfo
 **********************************************/
 export interface CreatablesInfo {
@@ -634,7 +864,6 @@ export interface CreatablesInfo {
 * View
 **********************************************/
 export interface View {
-	ViewFields?: () => SP.ViewFieldCollection;
 	Aggregations?: string;
 	AggregationsStatus?: string;
 	BaseViewId?: string;
@@ -682,6 +911,20 @@ export interface View {
 }
 
 /*********************************************
+* ViewMethods
+**********************************************/
+export interface ViewMethods extends View {
+	ViewFields?: () => SP.ViewFieldCollection;
+}
+
+/*********************************************
+* ViewQuery
+**********************************************/
+export interface ViewQuery extends View {
+	ViewFields?: SP.ViewFieldCollection;
+}
+
+/*********************************************
 * ViewFieldCollection
 **********************************************/
 export interface ViewFieldCollection {
@@ -724,49 +967,6 @@ export interface InformationRightsManagementSettings {
 * Web
 **********************************************/
 export interface Web extends SP.SecurableObject {
-	Activities?: () => Array<Microsoft.SharePoint.Activities.SPActivityEntity>;
-	ActivityLogger?: () => Microsoft.SharePoint.Internal.ActivityLogger;
-	Alerts?: () => Array<SP.Alert>;
-	AllProperties?: () => SP.PropertyValues;
-	AppTiles?: () => Array<SP.AppTile>;
-	AssociatedMemberGroup?: () => SP.Group;
-	AssociatedOwnerGroup?: () => SP.Group;
-	AssociatedVisitorGroup?: () => SP.Group;
-	Author?: () => SP.User;
-	AvailableContentTypes?: () => Array<SP.ContentType>;
-	AvailableFields?: () => Array<SP.Field>;
-	ClientWebParts?: () => Array<SP.ClientWebPart>;
-	ContentTypes?: () => Array<SP.ContentType>;
-	CurrentUser?: () => SP.User;
-	DataLeakagePreventionStatusInfo?: () => SP.SPDataLeakagePreventionStatusInfo;
-	DescriptionResource?: () => SP.UserResource;
-	EventReceivers?: () => Array<SP.EventReceiverDefinition>;
-	Features?: () => Array<SP.Feature>;
-	Fields?: () => Array<SP.Field>;
-	Folders?: () => Array<SP.Folder>;
-	HostedApps?: () => Microsoft.SharePoint.ClientSideComponent.HostedAppsManager;
-	Lists?: () => Array<SP.List>;
-	ListTemplates?: () => Array<SP.ListTemplate>;
-	Navigation?: () => SP.Navigation;
-	OneDriveSharedItems?: () => Array<SP.Sharing.SharedDocumentInfo>;
-	ParentWeb?: () => SP.WebInformation;
-	PushNotificationSubscribers?: () => Array<SP.PushNotificationSubscriber>;
-	RecycleBin?: () => Array<SP.RecycleBinItem>;
-	RegionalSettings?: () => SP.RegionalSettings;
-	RoleDefinitions?: () => Array<SP.RoleDefinition>;
-	RootFolder?: () => SP.Folder;
-	SiteCollectionAppCatalog?: () => Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor;
-	SiteGroups?: () => Array<SP.Group>;
-	SiteUserInfoList?: () => SP.List;
-	SiteUsers?: () => Array<SP.User>;
-	TenantAppCatalog?: () => Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor;
-	ThemeInfo?: () => SP.ThemeInfo;
-	TitleResource?: () => SP.UserResource;
-	UserCustomActions?: () => Array<SP.UserCustomAction>;
-	Webs?: () => Array<SP.Web>;
-	WebInfos?: () => Array<SP.WebInformation>;
-	WorkflowAssociations?: () => Array<SP.Workflow.WorkflowAssociation>;
-	WorkflowTemplates?: () => Array<SP.Workflow.WorkflowTemplate>;
 	AccessRequestSiteDescription?: string;
 	AllowAutomaticASPXPageIndexing?: boolean;
 	AllowCreateDeclarativeWorkflowForCurrentUser?: boolean;
@@ -840,6 +1040,104 @@ export interface Web extends SP.SecurableObject {
 }
 
 /*********************************************
+* WebMethods
+**********************************************/
+export interface WebMethods extends Web {
+	Activities?: () => Array<Microsoft.SharePoint.Activities.SPActivityEntity>;
+	ActivityLogger?: () => Microsoft.SharePoint.Internal.ActivityLogger;
+	Alerts?: () => Array<SP.Alert>;
+	AllProperties?: () => SP.PropertyValues;
+	AppTiles?: () => Array<SP.AppTile>;
+	AssociatedMemberGroup?: () => SP.Group;
+	AssociatedOwnerGroup?: () => SP.Group;
+	AssociatedVisitorGroup?: () => SP.Group;
+	Author?: () => SP.User;
+	AvailableContentTypes?: () => Array<SP.ContentType>;
+	AvailableFields?: () => Array<SP.Field>;
+	ClientWebParts?: () => Array<SP.ClientWebPart>;
+	ContentTypes?: () => Array<SP.ContentType>;
+	CurrentUser?: () => SP.User;
+	DataLeakagePreventionStatusInfo?: () => SP.SPDataLeakagePreventionStatusInfo;
+	DescriptionResource?: () => SP.UserResource;
+	EventReceivers?: () => Array<SP.EventReceiverDefinition>;
+	Features?: () => Array<SP.Feature>;
+	Fields?: () => Array<SP.Field>;
+	Folders?: () => Array<SP.Folder>;
+	HostedApps?: () => Microsoft.SharePoint.ClientSideComponent.HostedAppsManager;
+	Lists?: () => Array<SP.List>;
+	ListTemplates?: () => Array<SP.ListTemplate>;
+	Navigation?: () => SP.Navigation;
+	OneDriveSharedItems?: () => Array<SP.Sharing.SharedDocumentInfo>;
+	ParentWeb?: () => SP.WebInformation;
+	PushNotificationSubscribers?: () => Array<SP.PushNotificationSubscriber>;
+	RecycleBin?: () => Array<SP.RecycleBinItem>;
+	RegionalSettings?: () => SP.RegionalSettings;
+	RoleDefinitions?: () => Array<SP.RoleDefinition>;
+	RootFolder?: () => SP.Folder;
+	SiteCollectionAppCatalog?: () => Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor;
+	SiteGroups?: () => Array<SP.Group>;
+	SiteUserInfoList?: () => SP.List;
+	SiteUsers?: () => Array<SP.User>;
+	TenantAppCatalog?: () => Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor;
+	ThemeInfo?: () => SP.ThemeInfo;
+	TitleResource?: () => SP.UserResource;
+	UserCustomActions?: () => Array<SP.UserCustomAction>;
+	Webs?: () => Array<SP.Web>;
+	WebInfos?: () => Array<SP.WebInformation>;
+	WorkflowAssociations?: () => Array<SP.Workflow.WorkflowAssociation>;
+	WorkflowTemplates?: () => Array<SP.Workflow.WorkflowTemplate>;
+}
+
+/*********************************************
+* WebQuery
+**********************************************/
+export interface WebQuery extends Web {
+	Activities?: Array<Microsoft.SharePoint.Activities.SPActivityEntity>;
+	ActivityLogger?: Microsoft.SharePoint.Internal.ActivityLogger;
+	Alerts?: Array<SP.Alert>;
+	AllProperties?: SP.PropertyValues;
+	AppTiles?: Array<SP.AppTile>;
+	AssociatedMemberGroup?: SP.Group;
+	AssociatedOwnerGroup?: SP.Group;
+	AssociatedVisitorGroup?: SP.Group;
+	Author?: SP.User;
+	AvailableContentTypes?: Array<SP.ContentType>;
+	AvailableFields?: Array<SP.Field>;
+	ClientWebParts?: Array<SP.ClientWebPart>;
+	ContentTypes?: Array<SP.ContentType>;
+	CurrentUser?: SP.User;
+	DataLeakagePreventionStatusInfo?: SP.SPDataLeakagePreventionStatusInfo;
+	DescriptionResource?: SP.UserResource;
+	EventReceivers?: Array<SP.EventReceiverDefinition>;
+	Features?: Array<SP.Feature>;
+	Fields?: Array<SP.Field>;
+	Folders?: Array<SP.Folder>;
+	HostedApps?: Microsoft.SharePoint.ClientSideComponent.HostedAppsManager;
+	Lists?: Array<SP.List>;
+	ListTemplates?: Array<SP.ListTemplate>;
+	Navigation?: SP.Navigation;
+	OneDriveSharedItems?: Array<SP.Sharing.SharedDocumentInfo>;
+	ParentWeb?: SP.WebInformation;
+	PushNotificationSubscribers?: Array<SP.PushNotificationSubscriber>;
+	RecycleBin?: Array<SP.RecycleBinItem>;
+	RegionalSettings?: SP.RegionalSettings;
+	RoleDefinitions?: Array<SP.RoleDefinition>;
+	RootFolder?: SP.Folder;
+	SiteCollectionAppCatalog?: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor;
+	SiteGroups?: Array<SP.Group>;
+	SiteUserInfoList?: SP.List;
+	SiteUsers?: Array<SP.User>;
+	TenantAppCatalog?: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor;
+	ThemeInfo?: SP.ThemeInfo;
+	TitleResource?: SP.UserResource;
+	UserCustomActions?: Array<SP.UserCustomAction>;
+	Webs?: Array<SP.Web>;
+	WebInfos?: Array<SP.WebInformation>;
+	WorkflowAssociations?: Array<SP.Workflow.WorkflowAssociation>;
+	WorkflowTemplates?: Array<SP.Workflow.WorkflowTemplate>;
+}
+
+/*********************************************
 * AppTile
 **********************************************/
 export interface AppTile {
@@ -868,8 +1166,6 @@ export interface AppTile {
 * Group
 **********************************************/
 export interface Group extends SP.Principal {
-	Owner?: () => SP.Principal;
-	Users?: () => Array<SP.User>;
 	AllowMembersEditMembership?: boolean;
 	AllowRequestToJoinLeave?: boolean;
 	AutoAcceptRequestToJoinLeave?: boolean;
@@ -880,6 +1176,22 @@ export interface Group extends SP.Principal {
 	OnlyAllowMembersViewMembership?: boolean;
 	OwnerTitle?: string;
 	RequestToJoinLeaveEmailSetting?: string;
+}
+
+/*********************************************
+* GroupMethods
+**********************************************/
+export interface GroupMethods extends Group {
+	Owner?: () => SP.Principal;
+	Users?: () => Array<SP.User>;
+}
+
+/*********************************************
+* GroupQuery
+**********************************************/
+export interface GroupQuery extends Group {
+	Owner?: SP.Principal;
+	Users?: Array<SP.User>;
 }
 
 /*********************************************
@@ -922,16 +1234,29 @@ export interface ListTemplate {
 * Navigation
 **********************************************/
 export interface Navigation {
+	UseShared?: boolean;
+}
+
+/*********************************************
+* NavigationMethods
+**********************************************/
+export interface NavigationMethods extends Navigation {
 	QuickLaunch?: () => Array<SP.NavigationNode>;
 	TopNavigationBar?: () => Array<SP.NavigationNode>;
-	UseShared?: boolean;
+}
+
+/*********************************************
+* NavigationQuery
+**********************************************/
+export interface NavigationQuery extends Navigation {
+	QuickLaunch?: Array<SP.NavigationNode>;
+	TopNavigationBar?: Array<SP.NavigationNode>;
 }
 
 /*********************************************
 * NavigationNode
 **********************************************/
 export interface NavigationNode {
-	Children?: () => Array<SP.NavigationNode>;
 	AudienceIds?: Array<any>;
 	Id?: number;
 	IsDocLib?: boolean;
@@ -940,6 +1265,20 @@ export interface NavigationNode {
 	ListTemplateType?: number;
 	Title?: string;
 	Url?: string;
+}
+
+/*********************************************
+* NavigationNodeMethods
+**********************************************/
+export interface NavigationNodeMethods extends NavigationNode {
+	Children?: () => Array<SP.NavigationNode>;
+}
+
+/*********************************************
+* NavigationNodeQuery
+**********************************************/
+export interface NavigationNodeQuery extends NavigationNode {
+	Children?: Array<SP.NavigationNode>;
 }
 
 /*********************************************
@@ -963,7 +1302,6 @@ export interface WebInformation {
 * PushNotificationSubscriber
 **********************************************/
 export interface PushNotificationSubscriber {
-	User?: () => SP.User;
 	CustomArgs?: string;
 	DeviceAppInstanceId?: any;
 	LastModifiedTimeStamp?: any;
@@ -973,11 +1311,23 @@ export interface PushNotificationSubscriber {
 }
 
 /*********************************************
+* PushNotificationSubscriberMethods
+**********************************************/
+export interface PushNotificationSubscriberMethods extends PushNotificationSubscriber {
+	User?: () => SP.User;
+}
+
+/*********************************************
+* PushNotificationSubscriberQuery
+**********************************************/
+export interface PushNotificationSubscriberQuery extends PushNotificationSubscriber {
+	User?: SP.User;
+}
+
+/*********************************************
 * RecycleBinItem
 **********************************************/
 export interface RecycleBinItem {
-	Author?: () => SP.User;
-	DeletedBy?: () => SP.User;
 	AuthorEmail?: string;
 	AuthorName?: string;
 	DeletedByEmail?: string;
@@ -996,12 +1346,25 @@ export interface RecycleBinItem {
 }
 
 /*********************************************
+* RecycleBinItemMethods
+**********************************************/
+export interface RecycleBinItemMethods extends RecycleBinItem {
+	Author?: () => SP.User;
+	DeletedBy?: () => SP.User;
+}
+
+/*********************************************
+* RecycleBinItemQuery
+**********************************************/
+export interface RecycleBinItemQuery extends RecycleBinItem {
+	Author?: SP.User;
+	DeletedBy?: SP.User;
+}
+
+/*********************************************
 * RegionalSettings
 **********************************************/
 export interface RegionalSettings {
-	InstalledLanguages?: () => SP.LanguageCollection;
-	TimeZone?: () => SP.TimeZone;
-	TimeZones?: () => Array<SP.TimeZone>;
 	AdjustHijriDays?: number;
 	AlternateCalendarType?: number;
 	AM?: string;
@@ -1034,6 +1397,24 @@ export interface RegionalSettings {
 }
 
 /*********************************************
+* RegionalSettingsMethods
+**********************************************/
+export interface RegionalSettingsMethods extends RegionalSettings {
+	InstalledLanguages?: () => SP.LanguageCollection;
+	TimeZone?: () => SP.TimeZone;
+	TimeZones?: () => Array<SP.TimeZone>;
+}
+
+/*********************************************
+* RegionalSettingsQuery
+**********************************************/
+export interface RegionalSettingsQuery extends RegionalSettings {
+	InstalledLanguages?: SP.LanguageCollection;
+	TimeZone?: SP.TimeZone;
+	TimeZones?: Array<SP.TimeZone>;
+}
+
+/*********************************************
 * LanguageCollection
 **********************************************/
 export interface LanguageCollection {
@@ -1062,8 +1443,6 @@ export interface ThemeInfo {
 * UserCustomAction
 **********************************************/
 export interface UserCustomAction {
-	DescriptionResource?: () => SP.UserResource;
-	TitleResource?: () => SP.UserResource;
 	ClientSideComponentId?: any;
 	ClientSideComponentProperties?: string;
 	CommandUIExtension?: string;
@@ -1086,16 +1465,47 @@ export interface UserCustomAction {
 }
 
 /*********************************************
+* UserCustomActionMethods
+**********************************************/
+export interface UserCustomActionMethods extends UserCustomAction {
+	DescriptionResource?: () => SP.UserResource;
+	TitleResource?: () => SP.UserResource;
+}
+
+/*********************************************
+* UserCustomActionQuery
+**********************************************/
+export interface UserCustomActionQuery extends UserCustomAction {
+	DescriptionResource?: SP.UserResource;
+	TitleResource?: SP.UserResource;
+}
+
+/*********************************************
 * ListItemVersion
 **********************************************/
 export interface ListItemVersion {
-	CreatedBy?: () => SP.User;
-	Fields?: () => Array<SP.Field>;
-	FileVersion?: () => SP.FileVersion;
 	Created?: any;
 	IsCurrentVersion?: boolean;
 	VersionId?: number;
 	VersionLabel?: string;
+}
+
+/*********************************************
+* ListItemVersionMethods
+**********************************************/
+export interface ListItemVersionMethods extends ListItemVersion {
+	CreatedBy?: () => SP.User;
+	Fields?: () => Array<SP.Field>;
+	FileVersion?: () => SP.FileVersion;
+}
+
+/*********************************************
+* ListItemVersionQuery
+**********************************************/
+export interface ListItemVersionQuery extends ListItemVersion {
+	CreatedBy?: SP.User;
+	Fields?: Array<SP.Field>;
+	FileVersion?: SP.FileVersion;
 }
 
 /*********************************************
@@ -1181,9 +1591,6 @@ export interface AlternateUrl {
 * ObjectSharingSettings
 **********************************************/
 export interface ObjectSharingSettings {
-	ObjectSharingInformation?: () => SP.ObjectSharingInformation;
-	SharePointSettings?: () => SP.SharePointSharingSettings;
-	SharingPermissions?: () => Array<SP.SharingPermissionInformation>;
 	AccessRequestMode?: boolean;
 	BlockPeoplePickerAndSharing?: boolean;
 	CanCurrentUserManageOrganizationReadonlyLink?: boolean;
@@ -1223,10 +1630,27 @@ export interface ObjectSharingSettings {
 }
 
 /*********************************************
+* ObjectSharingSettingsMethods
+**********************************************/
+export interface ObjectSharingSettingsMethods extends ObjectSharingSettings {
+	ObjectSharingInformation?: () => SP.ObjectSharingInformation;
+	SharePointSettings?: () => SP.SharePointSharingSettings;
+	SharingPermissions?: () => Array<SP.SharingPermissionInformation>;
+}
+
+/*********************************************
+* ObjectSharingSettingsQuery
+**********************************************/
+export interface ObjectSharingSettingsQuery extends ObjectSharingSettings {
+	ObjectSharingInformation?: SP.ObjectSharingInformation;
+	SharePointSettings?: SP.SharePointSharingSettings;
+	SharingPermissions?: Array<SP.SharingPermissionInformation>;
+}
+
+/*********************************************
 * ObjectSharingInformation
 **********************************************/
 export interface ObjectSharingInformation {
-	SharedWithUsersCollection?: () => Array<SP.ObjectSharingInformationUser>;
 	AnonymousEditLink?: string;
 	AnonymousViewLink?: string;
 	CanBeShared?: boolean;
@@ -1245,11 +1669,23 @@ export interface ObjectSharingInformation {
 }
 
 /*********************************************
+* ObjectSharingInformationMethods
+**********************************************/
+export interface ObjectSharingInformationMethods extends ObjectSharingInformation {
+	SharedWithUsersCollection?: () => Array<SP.ObjectSharingInformationUser>;
+}
+
+/*********************************************
+* ObjectSharingInformationQuery
+**********************************************/
+export interface ObjectSharingInformationQuery extends ObjectSharingInformation {
+	SharedWithUsersCollection?: Array<SP.ObjectSharingInformationUser>;
+}
+
+/*********************************************
 * ObjectSharingInformationUser
 **********************************************/
 export interface ObjectSharingInformationUser {
-	Principal?: () => SP.Principal;
-	User?: () => SP.User;
 	CustomRoleNames?: string;
 	Department?: string;
 	Email?: string;
@@ -1269,10 +1705,25 @@ export interface ObjectSharingInformationUser {
 }
 
 /*********************************************
+* ObjectSharingInformationUserMethods
+**********************************************/
+export interface ObjectSharingInformationUserMethods extends ObjectSharingInformationUser {
+	Principal?: () => SP.Principal;
+	User?: () => SP.User;
+}
+
+/*********************************************
+* ObjectSharingInformationUserQuery
+**********************************************/
+export interface ObjectSharingInformationUserQuery extends ObjectSharingInformationUser {
+	Principal?: SP.Principal;
+	User?: SP.User;
+}
+
+/*********************************************
 * SharePointSharingSettings
 **********************************************/
 export interface SharePointSharingSettings {
-	PickerProperties?: () => SP.PickerSettings;
 	AddToGroupModeName?: string;
 	GroupNameLines?: Array<string>;
 	GroupRoleDefinitionNamesLines?: Array<string>;
@@ -1289,6 +1740,20 @@ export interface SharePointSharingSettings {
 	TabToShow?: number;
 	txtEmailSubjectText?: string;
 	UserDisplayUrl?: string;
+}
+
+/*********************************************
+* SharePointSharingSettingsMethods
+**********************************************/
+export interface SharePointSharingSettingsMethods extends SharePointSharingSettings {
+	PickerProperties?: () => SP.PickerSettings;
+}
+
+/*********************************************
+* SharePointSharingSettingsQuery
+**********************************************/
+export interface SharePointSharingSettingsQuery extends SharePointSharingSettings {
+	PickerProperties?: SP.PickerSettings;
 }
 
 /*********************************************
@@ -1333,9 +1798,6 @@ export interface ServerSettings {
 * SharingResult
 **********************************************/
 export interface SharingResult {
-	GroupsSharedWith?: () => Array<SP.Group>;
-	GroupUsersAddedTo?: () => SP.Group;
-	UsersWithAccessRequests?: () => Array<SP.User>;
 	ErrorMessage?: string;
 	IconUrl?: string;
 	InvitedUsers?: Array<SP.SPInvitationCreationResult>;
@@ -1345,6 +1807,24 @@ export interface SharingResult {
 	UniquelyPermissionedUsers?: Array<SP.Sharing.UserSharingResult>;
 	Url?: string;
 	UsersAddedToGroup?: Array<SP.Sharing.UserSharingResult>;
+}
+
+/*********************************************
+* SharingResultMethods
+**********************************************/
+export interface SharingResultMethods extends SharingResult {
+	GroupsSharedWith?: () => Array<SP.Group>;
+	GroupUsersAddedTo?: () => SP.Group;
+	UsersWithAccessRequests?: () => Array<SP.User>;
+}
+
+/*********************************************
+* SharingResultQuery
+**********************************************/
+export interface SharingResultQuery extends SharingResult {
+	GroupsSharedWith?: Array<SP.Group>;
+	GroupUsersAddedTo?: SP.Group;
+	UsersWithAccessRequests?: Array<SP.User>;
 }
 
 /*********************************************
@@ -1358,9 +1838,23 @@ export interface AccessRequests {
 * AppContextSite
 **********************************************/
 export interface AppContextSite {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AppContextSiteMethods
+**********************************************/
+export interface AppContextSiteMethods extends AppContextSite {
 	Site?: () => SP.Site;
 	Web?: () => SP.Web;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AppContextSiteQuery
+**********************************************/
+export interface AppContextSiteQuery extends AppContextSite {
+	Site?: SP.Site;
+	Web?: SP.Web;
 }
 
 /*********************************************
@@ -1464,7 +1958,6 @@ export interface ChangeItem extends SP.Change {
 * ChangeList
 **********************************************/
 export interface ChangeList extends SP.Change {
-	Creator?: () => SP.User;
 	BaseTemplate?: number;
 	Editor?: string;
 	Hidden?: boolean;
@@ -1472,6 +1965,20 @@ export interface ChangeList extends SP.Change {
 	RootFolderUrl?: string;
 	Title?: string;
 	WebId?: any;
+}
+
+/*********************************************
+* ChangeListMethods
+**********************************************/
+export interface ChangeListMethods extends ChangeList {
+	Creator?: () => SP.User;
+}
+
+/*********************************************
+* ChangeListQuery
+**********************************************/
+export interface ChangeListQuery extends ChangeList {
+	Creator?: SP.User;
 }
 
 /*********************************************
@@ -1509,9 +2016,22 @@ export interface ChangeWeb extends SP.Change {
 * CheckedOutFile
 **********************************************/
 export interface CheckedOutFile {
-	CheckedOutBy?: () => SP.User;
 	CheckedOutById?: number;
 	ServerRelativePath?: SP.ResourcePath;
+}
+
+/*********************************************
+* CheckedOutFileMethods
+**********************************************/
+export interface CheckedOutFileMethods extends CheckedOutFile {
+	CheckedOutBy?: () => SP.User;
+}
+
+/*********************************************
+* CheckedOutFileQuery
+**********************************************/
+export interface CheckedOutFileQuery extends CheckedOutFile {
+	CheckedOutBy?: SP.User;
 }
 
 /*********************************************
@@ -1540,11 +2060,27 @@ export interface APIHubConnector {
 * RequestContext
 **********************************************/
 export interface RequestContext {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RequestContextMethods
+**********************************************/
+export interface RequestContextMethods extends RequestContext {
 	Current?: () => SP.RequestContext;
 	List?: () => SP.List;
 	Site?: () => SP.Site;
 	Web?: () => SP.Web;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RequestContextQuery
+**********************************************/
+export interface RequestContextQuery extends RequestContext {
+	Current?: SP.RequestContext;
+	List?: SP.List;
+	Site?: SP.Site;
+	Web?: SP.Web;
 }
 
 /*********************************************
@@ -1793,7 +2329,6 @@ export interface MoveCopyUtil {
 * RelatedField
 **********************************************/
 export interface RelatedField {
-	LookupList?: () => SP.List;
 	FieldId?: any;
 	ListId?: any;
 	RelationshipDeleteBehavior?: number;
@@ -1801,22 +2336,63 @@ export interface RelatedField {
 }
 
 /*********************************************
+* RelatedFieldMethods
+**********************************************/
+export interface RelatedFieldMethods extends RelatedField {
+	LookupList?: () => SP.List;
+}
+
+/*********************************************
+* RelatedFieldQuery
+**********************************************/
+export interface RelatedFieldQuery extends RelatedField {
+	LookupList?: SP.List;
+}
+
+/*********************************************
 * RemoteWeb
 **********************************************/
 export interface RemoteWeb {
-	Web?: () => SP.Web;
 	CanSendEmail?: boolean;
 	ShareByEmailEnabled?: boolean;
 	ShareByLinkEnabled?: boolean;
 }
 
 /*********************************************
+* RemoteWebMethods
+**********************************************/
+export interface RemoteWebMethods extends RemoteWeb {
+	Web?: () => SP.Web;
+}
+
+/*********************************************
+* RemoteWebQuery
+**********************************************/
+export interface RemoteWebQuery extends RemoteWeb {
+	Web?: SP.Web;
+}
+
+/*********************************************
 * RequestUserContext
 **********************************************/
 export interface RequestUserContext {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RequestUserContextMethods
+**********************************************/
+export interface RequestUserContextMethods extends RequestUserContext {
 	Current?: () => SP.RequestUserContext;
 	User?: () => SP.User;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RequestUserContextQuery
+**********************************************/
+export interface RequestUserContextQuery extends RequestUserContext {
+	Current?: SP.RequestUserContext;
+	User?: SP.User;
 }
 
 /*********************************************
@@ -1860,9 +2436,22 @@ export interface TenantAppInstance {
 * VisualizationAppSynchronizationResult
 **********************************************/
 export interface VisualizationAppSynchronizationResult {
-	AppMappedViews?: () => Array<SP.View>;
 	SynchronizationData?: string;
 	SynchronizationStatus?: number;
+}
+
+/*********************************************
+* VisualizationAppSynchronizationResultMethods
+**********************************************/
+export interface VisualizationAppSynchronizationResultMethods extends VisualizationAppSynchronizationResult {
+	AppMappedViews?: () => Array<SP.View>;
+}
+
+/*********************************************
+* VisualizationAppSynchronizationResultQuery
+**********************************************/
+export interface VisualizationAppSynchronizationResultQuery extends VisualizationAppSynchronizationResult {
+	AppMappedViews?: Array<SP.View>;
 }
 
 /*********************************************
@@ -1907,16 +2496,42 @@ export interface TenantAppUtility {
 * TenantSettings
 **********************************************/
 export interface TenantSettings {
-	Current?: () => SP.TenantSettings;
 	CorporateCatalogUrl?: string;
+}
+
+/*********************************************
+* TenantSettingsMethods
+**********************************************/
+export interface TenantSettingsMethods extends TenantSettings {
+	Current?: () => SP.TenantSettings;
+}
+
+/*********************************************
+* TenantSettingsQuery
+**********************************************/
+export interface TenantSettingsQuery extends TenantSettings {
+	Current?: SP.TenantSettings;
 }
 
 /*********************************************
 * AppPrincipalIdentityProvider
 **********************************************/
 export interface AppPrincipalIdentityProvider {
-	External?: () => SP.AppPrincipalIdentityProvider;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AppPrincipalIdentityProviderMethods
+**********************************************/
+export interface AppPrincipalIdentityProviderMethods extends AppPrincipalIdentityProvider {
+	External?: () => SP.AppPrincipalIdentityProvider;
+}
+
+/*********************************************
+* AppPrincipalIdentityProviderQuery
+**********************************************/
+export interface AppPrincipalIdentityProviderQuery extends AppPrincipalIdentityProvider {
+	External?: SP.AppPrincipalIdentityProvider;
 }
 
 /*********************************************

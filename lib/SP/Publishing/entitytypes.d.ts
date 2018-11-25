@@ -42,9 +42,6 @@ export interface EmbedService {
 * VideoItem
 **********************************************/
 export interface VideoItem {
-	Author?: () => SP.User;
-	Owner?: () => SP.User;
-	PeopleInMedia?: () => Array<SP.User>;
 	ChannelID?: any;
 	CreatedDate?: any;
 	DefaultEmbedCode?: string;
@@ -64,6 +61,24 @@ export interface VideoItem {
 	VideoProcessingStatus?: number;
 	ViewCount?: number;
 	YammerObjectUrl?: string;
+}
+
+/*********************************************
+* VideoItemMethods
+**********************************************/
+export interface VideoItemMethods extends VideoItem {
+	Author?: () => SP.User;
+	Owner?: () => SP.User;
+	PeopleInMedia?: () => Array<SP.User>;
+}
+
+/*********************************************
+* VideoItemQuery
+**********************************************/
+export interface VideoItemQuery extends VideoItem {
+	Author?: SP.User;
+	Owner?: SP.User;
+	PeopleInMedia?: Array<SP.User>;
 }
 
 /*********************************************
@@ -111,7 +126,6 @@ export interface PointPublishingMagazineProps {
 * PointPublishingPost
 **********************************************/
 export interface PointPublishingPost {
-	images?: () => Array<SP.File>;
 	Author?: string;
 	Content?: string;
 	CreatedDate?: any;
@@ -125,16 +139,48 @@ export interface PointPublishingPost {
 }
 
 /*********************************************
+* PointPublishingPostMethods
+**********************************************/
+export interface PointPublishingPostMethods extends PointPublishingPost {
+	images?: () => Array<SP.File>;
+}
+
+/*********************************************
+* PointPublishingPostQuery
+**********************************************/
+export interface PointPublishingPostQuery extends PointPublishingPost {
+	images?: Array<SP.File>;
+}
+
+/*********************************************
 * PointPublishingPostServiceManager
 **********************************************/
 export interface PointPublishingPostServiceManager {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PointPublishingPostServiceManagerMethods
+**********************************************/
+export interface PointPublishingPostServiceManagerMethods extends PointPublishingPostServiceManager {
 	bannerimages?: () => Array<SP.File>;
 	contributors?: () => Array<SP.Publishing.PointPublishingUser>;
 	creators?: () => Array<SP.Publishing.PointPublishingUser>;
 	magazineprops?: () => SP.Publishing.PointPublishingMagazineProps;
 	posts?: () => Array<SP.Publishing.PointPublishingPost>;
 	viewers?: () => Array<SP.Publishing.PointPublishingUser>;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PointPublishingPostServiceManagerQuery
+**********************************************/
+export interface PointPublishingPostServiceManagerQuery extends PointPublishingPostServiceManager {
+	bannerimages?: Array<SP.File>;
+	contributors?: Array<SP.Publishing.PointPublishingUser>;
+	creators?: Array<SP.Publishing.PointPublishingUser>;
+	magazineprops?: SP.Publishing.PointPublishingMagazineProps;
+	posts?: Array<SP.Publishing.PointPublishingPost>;
+	viewers?: Array<SP.Publishing.PointPublishingUser>;
 }
 
 /*********************************************
@@ -191,8 +237,6 @@ export interface PrimaryCityTime {
 * SitePageMetadata
 **********************************************/
 export interface SitePageMetadata {
-	CreatedBy?: () => SP.Publishing.UserInfo;
-	LastModifiedBy?: () => SP.Publishing.UserInfo;
 	AbsoluteUrl?: string;
 	AuthorByline?: Array<string>;
 	BannerImageUrl?: string;
@@ -221,6 +265,22 @@ export interface SitePageMetadata {
 	Url?: string;
 	Version?: string;
 	VersionInfo?: SP.Publishing.SitePageVersionInfo;
+}
+
+/*********************************************
+* SitePageMetadataMethods
+**********************************************/
+export interface SitePageMetadataMethods extends SitePageMetadata {
+	CreatedBy?: () => SP.Publishing.UserInfo;
+	LastModifiedBy?: () => SP.Publishing.UserInfo;
+}
+
+/*********************************************
+* SitePageMetadataQuery
+**********************************************/
+export interface SitePageMetadataQuery extends SitePageMetadata {
+	CreatedBy?: SP.Publishing.UserInfo;
+	LastModifiedBy?: SP.Publishing.UserInfo;
 }
 
 /*********************************************
@@ -287,16 +347,29 @@ export interface SharePointHomeServiceManager {
 * SitePageService
 **********************************************/
 export interface SitePageService {
+	CustomContentApprovalEnabled?: boolean;
+}
+
+/*********************************************
+* SitePageServiceMethods
+**********************************************/
+export interface SitePageServiceMethods extends SitePageService {
 	CommunicationSite?: () => SP.Publishing.CommunicationSite;
 	Pages?: () => Array<SP.Publishing.SitePage>;
-	CustomContentApprovalEnabled?: boolean;
+}
+
+/*********************************************
+* SitePageServiceQuery
+**********************************************/
+export interface SitePageServiceQuery extends SitePageService {
+	CommunicationSite?: SP.Publishing.CommunicationSite;
+	Pages?: Array<SP.Publishing.SitePage>;
 }
 
 /*********************************************
 * SpotlightChannel
 **********************************************/
 export interface SpotlightChannel {
-	Channel?: () => SP.Publishing.VideoChannel;
 	ChannelId?: any;
 	Id?: number;
 	TileHtmlColor?: string;
@@ -305,12 +378,23 @@ export interface SpotlightChannel {
 }
 
 /*********************************************
+* SpotlightChannelMethods
+**********************************************/
+export interface SpotlightChannelMethods extends SpotlightChannel {
+	Channel?: () => SP.Publishing.VideoChannel;
+}
+
+/*********************************************
+* SpotlightChannelQuery
+**********************************************/
+export interface SpotlightChannelQuery extends SpotlightChannel {
+	Channel?: SP.Publishing.VideoChannel;
+}
+
+/*********************************************
 * VideoChannel
 **********************************************/
 export interface VideoChannel {
-	Search?: () => SP.Publishing.Search;
-	SpotlightVideos?: () => Array<SP.Publishing.SpotlightVideo>;
-	Videos?: () => Array<SP.Publishing.VideoItem>;
 	CanAdministrateByCurrent?: boolean;
 	CanEditByCurrent?: boolean;
 	CanViewByCurrent?: boolean;
@@ -328,6 +412,24 @@ export interface VideoChannel {
 }
 
 /*********************************************
+* VideoChannelMethods
+**********************************************/
+export interface VideoChannelMethods extends VideoChannel {
+	Search?: () => SP.Publishing.Search;
+	SpotlightVideos?: () => Array<SP.Publishing.SpotlightVideo>;
+	Videos?: () => Array<SP.Publishing.VideoItem>;
+}
+
+/*********************************************
+* VideoChannelQuery
+**********************************************/
+export interface VideoChannelQuery extends VideoChannel {
+	Search?: SP.Publishing.Search;
+	SpotlightVideos?: Array<SP.Publishing.SpotlightVideo>;
+	Videos?: Array<SP.Publishing.VideoItem>;
+}
+
+/*********************************************
 * Search
 **********************************************/
 export interface Search {
@@ -339,10 +441,23 @@ export interface Search {
 * SpotlightVideo
 **********************************************/
 export interface SpotlightVideo {
-	Video?: () => SP.Publishing.VideoItem;
 	Id?: number;
 	ServerRelativeUrl?: string;
 	Url?: string;
+}
+
+/*********************************************
+* SpotlightVideoMethods
+**********************************************/
+export interface SpotlightVideoMethods extends SpotlightVideo {
+	Video?: () => SP.Publishing.VideoItem;
+}
+
+/*********************************************
+* SpotlightVideoQuery
+**********************************************/
+export interface SpotlightVideoQuery extends SpotlightVideo {
+	Video?: SP.Publishing.VideoItem;
 }
 
 /*********************************************
@@ -358,8 +473,21 @@ export interface SubtitleFile {
 * VideoPermissionGroup
 **********************************************/
 export interface VideoPermissionGroup {
-	Users?: () => Array<SP.User>;
 	Id?: number;
+}
+
+/*********************************************
+* VideoPermissionGroupMethods
+**********************************************/
+export interface VideoPermissionGroupMethods extends VideoPermissionGroup {
+	Users?: () => Array<SP.User>;
+}
+
+/*********************************************
+* VideoPermissionGroupQuery
+**********************************************/
+export interface VideoPermissionGroupQuery extends VideoPermissionGroup {
+	Users?: Array<SP.User>;
 }
 
 /*********************************************
@@ -392,16 +520,33 @@ export interface VideoServiceDiscoverer {
 * VideoServiceManager
 **********************************************/
 export interface VideoServiceManager {
-	CanEditChannels?: () => Array<SP.Publishing.VideoChannel>;
-	Channels?: () => Array<SP.Publishing.VideoChannel>;
-	Search?: () => SP.Publishing.Search;
-	SpotlightChannels?: () => Array<SP.Publishing.SpotlightChannel>;
-	SpotlightVideos?: () => Array<SP.Publishing.SpotlightVideo>;
 	CanAdministratePortalByCurrent?: boolean;
 	CanCreateChannelsByCurrent?: boolean;
 	CanViewPortalByCurrent?: boolean;
 	UploadGuidelinesLink?: string;
 	VideoGuidelinesLink?: string;
+}
+
+/*********************************************
+* VideoServiceManagerMethods
+**********************************************/
+export interface VideoServiceManagerMethods extends VideoServiceManager {
+	CanEditChannels?: () => Array<SP.Publishing.VideoChannel>;
+	Channels?: () => Array<SP.Publishing.VideoChannel>;
+	Search?: () => SP.Publishing.Search;
+	SpotlightChannels?: () => Array<SP.Publishing.SpotlightChannel>;
+	SpotlightVideos?: () => Array<SP.Publishing.SpotlightVideo>;
+}
+
+/*********************************************
+* VideoServiceManagerQuery
+**********************************************/
+export interface VideoServiceManagerQuery extends VideoServiceManager {
+	CanEditChannels?: Array<SP.Publishing.VideoChannel>;
+	Channels?: Array<SP.Publishing.VideoChannel>;
+	Search?: SP.Publishing.Search;
+	SpotlightChannels?: Array<SP.Publishing.SpotlightChannel>;
+	SpotlightVideos?: Array<SP.Publishing.SpotlightVideo>;
 }
 
 /*********************************************

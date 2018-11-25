@@ -60,8 +60,21 @@ export interface SpotlightResult {
 * ThemeManager
 **********************************************/
 export interface ThemeManager {
-	ContextThemeManager?: () => SP.Utilities.ThemeManager;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ThemeManagerMethods
+**********************************************/
+export interface ThemeManagerMethods extends ThemeManager {
+	ContextThemeManager?: () => SP.Utilities.ThemeManager;
+}
+
+/*********************************************
+* ThemeManagerQuery
+**********************************************/
+export interface ThemeManagerQuery extends ThemeManager {
+	ContextThemeManager?: SP.Utilities.ThemeManager;
 }
 
 /*********************************************

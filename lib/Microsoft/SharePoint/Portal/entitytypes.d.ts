@@ -53,12 +53,25 @@ export interface SharePointHomeServiceContextBuilder {
 * SharePointHomeServiceContext
 **********************************************/
 export interface SharePointHomeServiceContext {
-	Token?: () => SP.OAuth.TokenResponse;
 	CompanyPortalContext?: string;
 	HomePageCache?: Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection;
 	HomePageContext?: Microsoft.SharePoint.Portal.Home.SharePointHomePageContext;
 	Payload?: string;
 	Urls?: Array<string>;
+}
+
+/*********************************************
+* SharePointHomeServiceContextMethods
+**********************************************/
+export interface SharePointHomeServiceContextMethods extends SharePointHomeServiceContext {
+	Token?: () => SP.OAuth.TokenResponse;
+}
+
+/*********************************************
+* SharePointHomeServiceContextQuery
+**********************************************/
+export interface SharePointHomeServiceContextQuery extends SharePointHomeServiceContext {
+	Token?: SP.OAuth.TokenResponse;
 }
 
 /*********************************************

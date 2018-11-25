@@ -19,7 +19,6 @@ export interface LookupTables {
 * Assignment
 **********************************************/
 export interface Assignment {
-	CustomFields?: () => Array<PS.CustomField>;
 	ActualCostWorkPerformed?: number;
 	ActualOvertimeCost?: number;
 	BaselineCost?: number;
@@ -67,12 +66,23 @@ export interface Assignment {
 }
 
 /*********************************************
+* AssignmentMethods
+**********************************************/
+export interface AssignmentMethods extends Assignment {
+	CustomFields?: () => Array<PS.CustomField>;
+}
+
+/*********************************************
+* AssignmentQuery
+**********************************************/
+export interface AssignmentQuery extends Assignment {
+	CustomFields?: Array<PS.CustomField>;
+}
+
+/*********************************************
 * CustomField
 **********************************************/
 export interface CustomField {
-	EntityType?: () => PS.EntityType;
-	LookupEntries?: () => Array<PS.LookupEntry>;
-	LookupTable?: () => PS.LookupTable;
 	AppAlternateId?: any;
 	DepartmentId?: any;
 	Description?: string;
@@ -100,6 +110,24 @@ export interface CustomField {
 }
 
 /*********************************************
+* CustomFieldMethods
+**********************************************/
+export interface CustomFieldMethods extends CustomField {
+	EntityType?: () => PS.EntityType;
+	LookupEntries?: () => Array<PS.LookupEntry>;
+	LookupTable?: () => PS.LookupTable;
+}
+
+/*********************************************
+* CustomFieldQuery
+**********************************************/
+export interface CustomFieldQuery extends CustomField {
+	EntityType?: PS.EntityType;
+	LookupEntries?: Array<PS.LookupEntry>;
+	LookupTable?: PS.LookupTable;
+}
+
+/*********************************************
 * LookupEntry
 **********************************************/
 export interface LookupEntry {
@@ -115,7 +143,6 @@ export interface LookupEntry {
 * LookupTable
 **********************************************/
 export interface LookupTable {
-	Entries?: () => Array<PS.LookupEntry>;
 	AppAlternateId?: any;
 	FieldType?: number;
 	Id?: any;
@@ -125,10 +152,23 @@ export interface LookupTable {
 }
 
 /*********************************************
+* LookupTableMethods
+**********************************************/
+export interface LookupTableMethods extends LookupTable {
+	Entries?: () => Array<PS.LookupEntry>;
+}
+
+/*********************************************
+* LookupTableQuery
+**********************************************/
+export interface LookupTableQuery extends LookupTable {
+	Entries?: Array<PS.LookupEntry>;
+}
+
+/*********************************************
 * CalendarException
 **********************************************/
 export interface CalendarException {
-	Calendar?: () => PS.Calendar;
 	Finish?: any;
 	Id?: number;
 	Name?: string;
@@ -152,16 +192,43 @@ export interface CalendarException {
 }
 
 /*********************************************
+* CalendarExceptionMethods
+**********************************************/
+export interface CalendarExceptionMethods extends CalendarException {
+	Calendar?: () => PS.Calendar;
+}
+
+/*********************************************
+* CalendarExceptionQuery
+**********************************************/
+export interface CalendarExceptionQuery extends CalendarException {
+	Calendar?: PS.Calendar;
+}
+
+/*********************************************
 * Calendar
 **********************************************/
 export interface Calendar {
-	BaseCalendarExceptions?: () => Array<PS.CalendarException>;
 	Created?: any;
 	Id?: any;
 	IsStandardCalendar?: boolean;
 	Modified?: any;
 	Name?: string;
 	OriginalId?: any;
+}
+
+/*********************************************
+* CalendarMethods
+**********************************************/
+export interface CalendarMethods extends Calendar {
+	BaseCalendarExceptions?: () => Array<PS.CalendarException>;
+}
+
+/*********************************************
+* CalendarQuery
+**********************************************/
+export interface CalendarQuery extends Calendar {
+	BaseCalendarExceptions?: Array<PS.CalendarException>;
 }
 
 /*********************************************
@@ -175,10 +242,6 @@ export interface BaseCalendarException extends PS.CalendarException {
 * DraftAssignment
 **********************************************/
 export interface DraftAssignment extends PS.Assignment {
-	Owner?: () => SP.User;
-	Parent?: () => PS.DraftAssignment;
-	Resource?: () => PS.DraftProjectResource;
-	Task?: () => PS.DraftTask;
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualOvertimeWork?: string;
@@ -222,11 +285,29 @@ export interface DraftAssignment extends PS.Assignment {
 }
 
 /*********************************************
+* DraftAssignmentMethods
+**********************************************/
+export interface DraftAssignmentMethods extends DraftAssignment {
+	Owner?: () => SP.User;
+	Parent?: () => PS.DraftAssignment;
+	Resource?: () => PS.DraftProjectResource;
+	Task?: () => PS.DraftTask;
+}
+
+/*********************************************
+* DraftAssignmentQuery
+**********************************************/
+export interface DraftAssignmentQuery extends DraftAssignment {
+	Owner?: SP.User;
+	Parent?: PS.DraftAssignment;
+	Resource?: PS.DraftProjectResource;
+	Task?: PS.DraftTask;
+}
+
+/*********************************************
 * ProjectResource
 **********************************************/
 export interface ProjectResource {
-	CustomFields?: () => Array<PS.CustomField>;
-	EnterpriseResource?: () => PS.EnterpriseResource;
 	ActualCost?: number;
 	ActualCostWorkPerformed?: string;
 	ActualCostWorkPerformedMilliseconds?: number;
@@ -292,20 +373,25 @@ export interface ProjectResource {
 }
 
 /*********************************************
+* ProjectResourceMethods
+**********************************************/
+export interface ProjectResourceMethods extends ProjectResource {
+	CustomFields?: () => Array<PS.CustomField>;
+	EnterpriseResource?: () => PS.EnterpriseResource;
+}
+
+/*********************************************
+* ProjectResourceQuery
+**********************************************/
+export interface ProjectResourceQuery extends ProjectResource {
+	CustomFields?: Array<PS.CustomField>;
+	EnterpriseResource?: PS.EnterpriseResource;
+}
+
+/*********************************************
 * EnterpriseResource
 **********************************************/
 export interface EnterpriseResource {
-	Assignments?: () => Array<PS.StatusAssignment>;
-	BaseCalendar?: () => PS.Calendar;
-	CostRateTables?: () => Array<PS.EnterpriseResourceCostRateTable>;
-	CustomFields?: () => Array<PS.CustomField>;
-	DefaultAssignmentOwner?: () => SP.User;
-	Engagements?: () => Array<PS.ResourceEngagement>;
-	UserPermissions?: () => Array<PS.UserPermission>;
-	ResourceCalendarExceptions?: () => Array<PS.CalendarException>;
-	Self?: () => PS.EnterpriseResource;
-	TimesheetManager?: () => SP.User;
-	User?: () => SP.User;
 	CanLevel?: boolean;
 	Code?: string;
 	CostAccrual?: number;
@@ -336,14 +422,43 @@ export interface EnterpriseResource {
 }
 
 /*********************************************
+* EnterpriseResourceMethods
+**********************************************/
+export interface EnterpriseResourceMethods extends EnterpriseResource {
+	Assignments?: () => Array<PS.StatusAssignment>;
+	BaseCalendar?: () => PS.Calendar;
+	CostRateTables?: () => Array<PS.EnterpriseResourceCostRateTable>;
+	CustomFields?: () => Array<PS.CustomField>;
+	DefaultAssignmentOwner?: () => SP.User;
+	Engagements?: () => Array<PS.ResourceEngagement>;
+	UserPermissions?: () => Array<PS.UserPermission>;
+	ResourceCalendarExceptions?: () => Array<PS.CalendarException>;
+	Self?: () => PS.EnterpriseResource;
+	TimesheetManager?: () => SP.User;
+	User?: () => SP.User;
+}
+
+/*********************************************
+* EnterpriseResourceQuery
+**********************************************/
+export interface EnterpriseResourceQuery extends EnterpriseResource {
+	Assignments?: Array<PS.StatusAssignment>;
+	BaseCalendar?: PS.Calendar;
+	CostRateTables?: Array<PS.EnterpriseResourceCostRateTable>;
+	CustomFields?: Array<PS.CustomField>;
+	DefaultAssignmentOwner?: SP.User;
+	Engagements?: Array<PS.ResourceEngagement>;
+	UserPermissions?: Array<PS.UserPermission>;
+	ResourceCalendarExceptions?: Array<PS.CalendarException>;
+	Self?: PS.EnterpriseResource;
+	TimesheetManager?: SP.User;
+	User?: SP.User;
+}
+
+/*********************************************
 * StatusAssignment
 **********************************************/
 export interface StatusAssignment {
-	CustomFields?: () => Array<PS.CustomField>;
-	History?: () => Array<PS.StatusAssignmentHistoryLine>;
-	Project?: () => PS.PublishedProject;
-	Resource?: () => PS.EnterpriseResource;
-	Task?: () => PS.StatusTask;
 	ActualFinish?: any;
 	ActualOvertime?: string;
 	ActualOvertimeMilliseconds?: number;
@@ -379,10 +494,31 @@ export interface StatusAssignment {
 }
 
 /*********************************************
+* StatusAssignmentMethods
+**********************************************/
+export interface StatusAssignmentMethods extends StatusAssignment {
+	CustomFields?: () => Array<PS.CustomField>;
+	History?: () => Array<PS.StatusAssignmentHistoryLine>;
+	Project?: () => PS.PublishedProject;
+	Resource?: () => PS.EnterpriseResource;
+	Task?: () => PS.StatusTask;
+}
+
+/*********************************************
+* StatusAssignmentQuery
+**********************************************/
+export interface StatusAssignmentQuery extends StatusAssignment {
+	CustomFields?: Array<PS.CustomField>;
+	History?: Array<PS.StatusAssignmentHistoryLine>;
+	Project?: PS.PublishedProject;
+	Resource?: PS.EnterpriseResource;
+	Task?: PS.StatusTask;
+}
+
+/*********************************************
 * StatusAssignmentHistoryLine
 **********************************************/
 export interface StatusAssignmentHistoryLine {
-	Author?: () => SP.User;
 	Comment?: string;
 	Decision?: number;
 	Id?: any;
@@ -391,18 +527,23 @@ export interface StatusAssignmentHistoryLine {
 }
 
 /*********************************************
+* StatusAssignmentHistoryLineMethods
+**********************************************/
+export interface StatusAssignmentHistoryLineMethods extends StatusAssignmentHistoryLine {
+	Author?: () => SP.User;
+}
+
+/*********************************************
+* StatusAssignmentHistoryLineQuery
+**********************************************/
+export interface StatusAssignmentHistoryLineQuery extends StatusAssignmentHistoryLine {
+	Author?: SP.User;
+}
+
+/*********************************************
 * Project
 **********************************************/
 export interface Project {
-	CheckedOutBy?: () => SP.User;
-	CustomFields?: () => Array<PS.CustomField>;
-	Engagements?: () => Array<PS.ProjectEngagement>;
-	EnterpriseProjectType?: () => PS.EnterpriseProjectType;
-	UserPermissions?: () => Array<PS.UserPermission>;
-	Phase?: () => PS.Phase;
-	ProjectSummaryTask?: () => PS.ProjectSummaryTask;
-	QueueJobs?: () => Array<PS.QueueJob>;
-	Stage?: () => PS.Stage;
 	ApprovedEnd?: any;
 	ApprovedStart?: any;
 	CalculateActualCosts?: boolean;
@@ -442,15 +583,39 @@ export interface Project {
 }
 
 /*********************************************
+* ProjectMethods
+**********************************************/
+export interface ProjectMethods extends Project {
+	CheckedOutBy?: () => SP.User;
+	CustomFields?: () => Array<PS.CustomField>;
+	Engagements?: () => Array<PS.ProjectEngagement>;
+	EnterpriseProjectType?: () => PS.EnterpriseProjectType;
+	UserPermissions?: () => Array<PS.UserPermission>;
+	Phase?: () => PS.Phase;
+	ProjectSummaryTask?: () => PS.ProjectSummaryTask;
+	QueueJobs?: () => Array<PS.QueueJob>;
+	Stage?: () => PS.Stage;
+}
+
+/*********************************************
+* ProjectQuery
+**********************************************/
+export interface ProjectQuery extends Project {
+	CheckedOutBy?: SP.User;
+	CustomFields?: Array<PS.CustomField>;
+	Engagements?: Array<PS.ProjectEngagement>;
+	EnterpriseProjectType?: PS.EnterpriseProjectType;
+	UserPermissions?: Array<PS.UserPermission>;
+	Phase?: PS.Phase;
+	ProjectSummaryTask?: PS.ProjectSummaryTask;
+	QueueJobs?: Array<PS.QueueJob>;
+	Stage?: PS.Stage;
+}
+
+/*********************************************
 * Engagement
 **********************************************/
 export interface Engagement {
-	Comments?: () => Array<PS.EngagementComment>;
-	ModifiedBy?: () => SP.User;
-	Project?: () => PS.Project;
-	Resource?: () => PS.EnterpriseResource;
-	ReviewedBy?: () => SP.User;
-	SubmittedBy?: () => SP.User;
 	CreatedDate?: any;
 	Description?: string;
 	Id?: any;
@@ -462,13 +627,50 @@ export interface Engagement {
 }
 
 /*********************************************
+* EngagementMethods
+**********************************************/
+export interface EngagementMethods extends Engagement {
+	Comments?: () => Array<PS.EngagementComment>;
+	ModifiedBy?: () => SP.User;
+	Project?: () => PS.Project;
+	Resource?: () => PS.EnterpriseResource;
+	ReviewedBy?: () => SP.User;
+	SubmittedBy?: () => SP.User;
+}
+
+/*********************************************
+* EngagementQuery
+**********************************************/
+export interface EngagementQuery extends Engagement {
+	Comments?: Array<PS.EngagementComment>;
+	ModifiedBy?: SP.User;
+	Project?: PS.Project;
+	Resource?: PS.EnterpriseResource;
+	ReviewedBy?: SP.User;
+	SubmittedBy?: SP.User;
+}
+
+/*********************************************
 * EngagementComment
 **********************************************/
 export interface EngagementComment {
-	Author?: () => SP.User;
 	Created?: any;
 	Id?: any;
 	Message?: string;
+}
+
+/*********************************************
+* EngagementCommentMethods
+**********************************************/
+export interface EngagementCommentMethods extends EngagementComment {
+	Author?: () => SP.User;
+}
+
+/*********************************************
+* EngagementCommentQuery
+**********************************************/
+export interface EngagementCommentQuery extends EngagementComment {
+	Author?: SP.User;
 }
 
 /*********************************************
@@ -494,7 +696,6 @@ export interface ProjectEngagement extends PS.Engagement {
 * EnterpriseProjectType
 **********************************************/
 export interface EnterpriseProjectType {
-	ProjectDetailPages?: () => Array<PS.ProjectDetailPage>;
 	Departments?: Array<any>;
 	Description?: string;
 	Id?: any;
@@ -515,13 +716,40 @@ export interface EnterpriseProjectType {
 }
 
 /*********************************************
+* EnterpriseProjectTypeMethods
+**********************************************/
+export interface EnterpriseProjectTypeMethods extends EnterpriseProjectType {
+	ProjectDetailPages?: () => Array<PS.ProjectDetailPage>;
+}
+
+/*********************************************
+* EnterpriseProjectTypeQuery
+**********************************************/
+export interface EnterpriseProjectTypeQuery extends EnterpriseProjectType {
+	ProjectDetailPages?: Array<PS.ProjectDetailPage>;
+}
+
+/*********************************************
 * ProjectDetailPage
 **********************************************/
 export interface ProjectDetailPage {
-	Item?: () => SP.ListItem;
 	Id?: any;
 	Name?: string;
 	PageType?: number;
+}
+
+/*********************************************
+* ProjectDetailPageMethods
+**********************************************/
+export interface ProjectDetailPageMethods extends ProjectDetailPage {
+	Item?: () => SP.ListItem;
+}
+
+/*********************************************
+* ProjectDetailPageQuery
+**********************************************/
+export interface ProjectDetailPageQuery extends ProjectDetailPage {
+	Item?: SP.ListItem;
 }
 
 /*********************************************
@@ -536,20 +764,29 @@ export interface UserPermission {
 * Phase
 **********************************************/
 export interface Phase {
-	Stages?: () => Array<PS.Stage>;
 	Description?: string;
 	Id?: any;
 	Name?: string;
 }
 
 /*********************************************
+* PhaseMethods
+**********************************************/
+export interface PhaseMethods extends Phase {
+	Stages?: () => Array<PS.Stage>;
+}
+
+/*********************************************
+* PhaseQuery
+**********************************************/
+export interface PhaseQuery extends Phase {
+	Stages?: Array<PS.Stage>;
+}
+
+/*********************************************
 * Stage
 **********************************************/
 export interface Stage {
-	CustomFields?: () => Array<PS.StageCustomField>;
-	Phase?: () => PS.Phase;
-	ProjectDetailPages?: () => Array<PS.StageDetailPage>;
-	WorkflowStatusPage?: () => PS.ProjectDetailPage;
 	Behavior?: number;
 	CheckInRequired?: boolean;
 	Description?: string;
@@ -559,10 +796,29 @@ export interface Stage {
 }
 
 /*********************************************
+* StageMethods
+**********************************************/
+export interface StageMethods extends Stage {
+	CustomFields?: () => Array<PS.StageCustomField>;
+	Phase?: () => PS.Phase;
+	ProjectDetailPages?: () => Array<PS.StageDetailPage>;
+	WorkflowStatusPage?: () => PS.ProjectDetailPage;
+}
+
+/*********************************************
+* StageQuery
+**********************************************/
+export interface StageQuery extends Stage {
+	CustomFields?: Array<PS.StageCustomField>;
+	Phase?: PS.Phase;
+	ProjectDetailPages?: Array<PS.StageDetailPage>;
+	WorkflowStatusPage?: PS.ProjectDetailPage;
+}
+
+/*********************************************
 * StageCustomField
 **********************************************/
 export interface StageCustomField {
-	Stage?: () => PS.Stage;
 	Id?: any;
 	Name?: string;
 	ReadOnly?: boolean;
@@ -570,11 +826,23 @@ export interface StageCustomField {
 }
 
 /*********************************************
+* StageCustomFieldMethods
+**********************************************/
+export interface StageCustomFieldMethods extends StageCustomField {
+	Stage?: () => PS.Stage;
+}
+
+/*********************************************
+* StageCustomFieldQuery
+**********************************************/
+export interface StageCustomFieldQuery extends StageCustomField {
+	Stage?: PS.Stage;
+}
+
+/*********************************************
 * StageDetailPage
 **********************************************/
 export interface StageDetailPage {
-	Page?: () => PS.ProjectDetailPage;
-	Stage?: () => PS.Stage;
 	Description?: string;
 	Id?: any;
 	Position?: number;
@@ -582,11 +850,25 @@ export interface StageDetailPage {
 }
 
 /*********************************************
+* StageDetailPageMethods
+**********************************************/
+export interface StageDetailPageMethods extends StageDetailPage {
+	Page?: () => PS.ProjectDetailPage;
+	Stage?: () => PS.Stage;
+}
+
+/*********************************************
+* StageDetailPageQuery
+**********************************************/
+export interface StageDetailPageQuery extends StageDetailPage {
+	Page?: PS.ProjectDetailPage;
+	Stage?: PS.Stage;
+}
+
+/*********************************************
 * Task
 **********************************************/
 export interface Task {
-	CustomFields?: () => Array<PS.CustomField>;
-	SubProject?: () => PS.PublishedProject;
 	ActualCostWorkPerformed?: number;
 	ActualDuration?: string;
 	ActualDurationMilliseconds?: number;
@@ -695,19 +977,25 @@ export interface Task {
 }
 
 /*********************************************
+* TaskMethods
+**********************************************/
+export interface TaskMethods extends Task {
+	CustomFields?: () => Array<PS.CustomField>;
+	SubProject?: () => PS.PublishedProject;
+}
+
+/*********************************************
+* TaskQuery
+**********************************************/
+export interface TaskQuery extends Task {
+	CustomFields?: Array<PS.CustomField>;
+	SubProject?: PS.PublishedProject;
+}
+
+/*********************************************
 * PublishedProject
 **********************************************/
 export interface PublishedProject extends PS.Project {
-	Assignments?: () => Array<PS.PublishedAssignment>;
-	Calendar?: () => PS.Calendar;
-	Draft?: () => PS.DraftProject;
-	EntityLinks?: () => Array<PS.EntityLink>;
-	IncludeCustomFields?: () => PS.PublishedProject;
-	Owner?: () => SP.User;
-	ProjectResources?: () => Array<PS.PublishedProjectResource>;
-	ProjectWorkflowInstance?: () => PS.ProjectWorkflowInstance;
-	TaskLinks?: () => Array<PS.PublishedTaskLink>;
-	Tasks?: () => Array<PS.PublishedTask>;
 	CurrencyCode?: string;
 	CurrencyDigits?: number;
 	CurrencyPosition?: number;
@@ -746,13 +1034,41 @@ export interface PublishedProject extends PS.Project {
 }
 
 /*********************************************
+* PublishedProjectMethods
+**********************************************/
+export interface PublishedProjectMethods extends PublishedProject {
+	Assignments?: () => Array<PS.PublishedAssignment>;
+	Calendar?: () => PS.Calendar;
+	Draft?: () => PS.DraftProject;
+	EntityLinks?: () => Array<PS.EntityLink>;
+	IncludeCustomFields?: () => PS.PublishedProject;
+	Owner?: () => SP.User;
+	ProjectResources?: () => Array<PS.PublishedProjectResource>;
+	ProjectWorkflowInstance?: () => PS.ProjectWorkflowInstance;
+	TaskLinks?: () => Array<PS.PublishedTaskLink>;
+	Tasks?: () => Array<PS.PublishedTask>;
+}
+
+/*********************************************
+* PublishedProjectQuery
+**********************************************/
+export interface PublishedProjectQuery extends PublishedProject {
+	Assignments?: Array<PS.PublishedAssignment>;
+	Calendar?: PS.Calendar;
+	Draft?: PS.DraftProject;
+	EntityLinks?: Array<PS.EntityLink>;
+	IncludeCustomFields?: PS.PublishedProject;
+	Owner?: SP.User;
+	ProjectResources?: Array<PS.PublishedProjectResource>;
+	ProjectWorkflowInstance?: PS.ProjectWorkflowInstance;
+	TaskLinks?: Array<PS.PublishedTaskLink>;
+	Tasks?: Array<PS.PublishedTask>;
+}
+
+/*********************************************
 * PublishedAssignment
 **********************************************/
 export interface PublishedAssignment extends PS.Assignment {
-	Owner?: () => SP.User;
-	Parent?: () => PS.PublishedAssignment;
-	Resource?: () => PS.PublishedProjectResource;
-	Task?: () => PS.PublishedTask;
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualOvertimeWork?: string;
@@ -794,11 +1110,29 @@ export interface PublishedAssignment extends PS.Assignment {
 }
 
 /*********************************************
+* PublishedAssignmentMethods
+**********************************************/
+export interface PublishedAssignmentMethods extends PublishedAssignment {
+	Owner?: () => SP.User;
+	Parent?: () => PS.PublishedAssignment;
+	Resource?: () => PS.PublishedProjectResource;
+	Task?: () => PS.PublishedTask;
+}
+
+/*********************************************
+* PublishedAssignmentQuery
+**********************************************/
+export interface PublishedAssignmentQuery extends PublishedAssignment {
+	Owner?: SP.User;
+	Parent?: PS.PublishedAssignment;
+	Resource?: PS.PublishedProjectResource;
+	Task?: PS.PublishedTask;
+}
+
+/*********************************************
 * PublishedProjectResource
 **********************************************/
 export interface PublishedProjectResource extends PS.ProjectResource {
-	Assignments?: () => Array<PS.PublishedAssignment>;
-	DefaultAssignmentOwner?: () => SP.User;
 	CanLevel?: boolean;
 	Code?: string;
 	CostAccrual?: number;
@@ -819,17 +1153,25 @@ export interface PublishedProjectResource extends PS.ProjectResource {
 }
 
 /*********************************************
+* PublishedProjectResourceMethods
+**********************************************/
+export interface PublishedProjectResourceMethods extends PublishedProjectResource {
+	Assignments?: () => Array<PS.PublishedAssignment>;
+	DefaultAssignmentOwner?: () => SP.User;
+}
+
+/*********************************************
+* PublishedProjectResourceQuery
+**********************************************/
+export interface PublishedProjectResourceQuery extends PublishedProjectResource {
+	Assignments?: Array<PS.PublishedAssignment>;
+	DefaultAssignmentOwner?: SP.User;
+}
+
+/*********************************************
 * PublishedTask
 **********************************************/
 export interface PublishedTask extends PS.Task {
-	Assignments?: () => Array<PS.PublishedAssignment>;
-	Calendar?: () => PS.Calendar;
-	EntityLinks?: () => Array<PS.EntityLink>;
-	Parent?: () => PS.PublishedTask;
-	Predecessors?: () => Array<PS.PublishedTaskLink>;
-	StatusManager?: () => SP.User;
-	Successors?: () => Array<PS.PublishedTaskLink>;
-	TaskPlanLink?: () => PS.TaskPlanLink;
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualStart?: any;
@@ -876,6 +1218,34 @@ export interface PublishedTask extends PS.Task {
 }
 
 /*********************************************
+* PublishedTaskMethods
+**********************************************/
+export interface PublishedTaskMethods extends PublishedTask {
+	Assignments?: () => Array<PS.PublishedAssignment>;
+	Calendar?: () => PS.Calendar;
+	EntityLinks?: () => Array<PS.EntityLink>;
+	Parent?: () => PS.PublishedTask;
+	Predecessors?: () => Array<PS.PublishedTaskLink>;
+	StatusManager?: () => SP.User;
+	Successors?: () => Array<PS.PublishedTaskLink>;
+	TaskPlanLink?: () => PS.TaskPlanLink;
+}
+
+/*********************************************
+* PublishedTaskQuery
+**********************************************/
+export interface PublishedTaskQuery extends PublishedTask {
+	Assignments?: Array<PS.PublishedAssignment>;
+	Calendar?: PS.Calendar;
+	EntityLinks?: Array<PS.EntityLink>;
+	Parent?: PS.PublishedTask;
+	Predecessors?: Array<PS.PublishedTaskLink>;
+	StatusManager?: SP.User;
+	Successors?: Array<PS.PublishedTaskLink>;
+	TaskPlanLink?: PS.TaskPlanLink;
+}
+
+/*********************************************
 * EntityLink
 **********************************************/
 export interface EntityLink {
@@ -897,9 +1267,23 @@ export interface TaskLink {
 * PublishedTaskLink
 **********************************************/
 export interface PublishedTaskLink extends PS.TaskLink {
+	DependencyType?: number;
+}
+
+/*********************************************
+* PublishedTaskLinkMethods
+**********************************************/
+export interface PublishedTaskLinkMethods extends PublishedTaskLink {
 	End?: () => PS.PublishedTask;
 	Start?: () => PS.PublishedTask;
-	DependencyType?: number;
+}
+
+/*********************************************
+* PublishedTaskLinkQuery
+**********************************************/
+export interface PublishedTaskLinkQuery extends PublishedTaskLink {
+	End?: PS.PublishedTask;
+	Start?: PS.PublishedTask;
 }
 
 /*********************************************
@@ -918,13 +1302,6 @@ export interface TaskPlanLink {
 * DraftProject
 **********************************************/
 export interface DraftProject extends PS.Project {
-	Assignments?: () => Array<PS.DraftAssignment>;
-	Calendar?: () => PS.Calendar;
-	IncludeCustomFields?: () => PS.DraftProject;
-	Owner?: () => SP.User;
-	ProjectResources?: () => Array<PS.DraftProjectResource>;
-	TaskLinks?: () => Array<PS.DraftTaskLink>;
-	Tasks?: () => Array<PS.DraftTask>;
 	CurrencyCode?: string;
 	CurrencyDigits?: number;
 	CurrencyPosition?: number;
@@ -961,11 +1338,35 @@ export interface DraftProject extends PS.Project {
 }
 
 /*********************************************
+* DraftProjectMethods
+**********************************************/
+export interface DraftProjectMethods extends DraftProject {
+	Assignments?: () => Array<PS.DraftAssignment>;
+	Calendar?: () => PS.Calendar;
+	IncludeCustomFields?: () => PS.DraftProject;
+	Owner?: () => SP.User;
+	ProjectResources?: () => Array<PS.DraftProjectResource>;
+	TaskLinks?: () => Array<PS.DraftTaskLink>;
+	Tasks?: () => Array<PS.DraftTask>;
+}
+
+/*********************************************
+* DraftProjectQuery
+**********************************************/
+export interface DraftProjectQuery extends DraftProject {
+	Assignments?: Array<PS.DraftAssignment>;
+	Calendar?: PS.Calendar;
+	IncludeCustomFields?: PS.DraftProject;
+	Owner?: SP.User;
+	ProjectResources?: Array<PS.DraftProjectResource>;
+	TaskLinks?: Array<PS.DraftTaskLink>;
+	Tasks?: Array<PS.DraftTask>;
+}
+
+/*********************************************
 * DraftProjectResource
 **********************************************/
 export interface DraftProjectResource extends PS.ProjectResource {
-	Assignments?: () => Array<PS.DraftAssignment>;
-	DefaultAssignmentOwner?: () => SP.User;
 	CanLevel?: boolean;
 	Code?: string;
 	CostAccrual?: number;
@@ -986,26 +1387,50 @@ export interface DraftProjectResource extends PS.ProjectResource {
 }
 
 /*********************************************
+* DraftProjectResourceMethods
+**********************************************/
+export interface DraftProjectResourceMethods extends DraftProjectResource {
+	Assignments?: () => Array<PS.DraftAssignment>;
+	DefaultAssignmentOwner?: () => SP.User;
+}
+
+/*********************************************
+* DraftProjectResourceQuery
+**********************************************/
+export interface DraftProjectResourceQuery extends DraftProjectResource {
+	Assignments?: Array<PS.DraftAssignment>;
+	DefaultAssignmentOwner?: SP.User;
+}
+
+/*********************************************
 * DraftTaskLink
 **********************************************/
 export interface DraftTaskLink extends PS.TaskLink {
-	End?: () => PS.DraftTask;
-	Start?: () => PS.DraftTask;
 	DependencyType?: number;
 	EndId?: any;
 	StartId?: any;
 }
 
 /*********************************************
+* DraftTaskLinkMethods
+**********************************************/
+export interface DraftTaskLinkMethods extends DraftTaskLink {
+	End?: () => PS.DraftTask;
+	Start?: () => PS.DraftTask;
+}
+
+/*********************************************
+* DraftTaskLinkQuery
+**********************************************/
+export interface DraftTaskLinkQuery extends DraftTaskLink {
+	End?: PS.DraftTask;
+	Start?: PS.DraftTask;
+}
+
+/*********************************************
 * DraftTask
 **********************************************/
 export interface DraftTask extends PS.Task {
-	Assignments?: () => Array<PS.DraftAssignment>;
-	Calendar?: () => PS.Calendar;
-	Parent?: () => PS.DraftTask;
-	Predecessors?: () => Array<PS.DraftTaskLink>;
-	StatusManager?: () => SP.User;
-	Successors?: () => Array<PS.DraftTaskLink>;
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualStart?: any;
@@ -1054,18 +1479,57 @@ export interface DraftTask extends PS.Task {
 }
 
 /*********************************************
+* DraftTaskMethods
+**********************************************/
+export interface DraftTaskMethods extends DraftTask {
+	Assignments?: () => Array<PS.DraftAssignment>;
+	Calendar?: () => PS.Calendar;
+	Parent?: () => PS.DraftTask;
+	Predecessors?: () => Array<PS.DraftTaskLink>;
+	StatusManager?: () => SP.User;
+	Successors?: () => Array<PS.DraftTaskLink>;
+}
+
+/*********************************************
+* DraftTaskQuery
+**********************************************/
+export interface DraftTaskQuery extends DraftTask {
+	Assignments?: Array<PS.DraftAssignment>;
+	Calendar?: PS.Calendar;
+	Parent?: PS.DraftTask;
+	Predecessors?: Array<PS.DraftTaskLink>;
+	StatusManager?: SP.User;
+	Successors?: Array<PS.DraftTaskLink>;
+}
+
+/*********************************************
 * ProjectWorkflowInstance
 **********************************************/
 export interface ProjectWorkflowInstance {
-	Project?: () => PS.Project;
-	WorkflowInstance?: () => SP.WorkflowServices.WorkflowInstance;
-	WorkflowInstanceOwner?: () => SP.User;
 	CreatedDate?: any;
 	Id?: any;
 	LastSubmittedDate?: any;
 	WorkflowError?: string;
 	WorkflowErrorResponseCode?: number;
 	WorkflowState?: number;
+}
+
+/*********************************************
+* ProjectWorkflowInstanceMethods
+**********************************************/
+export interface ProjectWorkflowInstanceMethods extends ProjectWorkflowInstance {
+	Project?: () => PS.Project;
+	WorkflowInstance?: () => SP.WorkflowServices.WorkflowInstance;
+	WorkflowInstanceOwner?: () => SP.User;
+}
+
+/*********************************************
+* ProjectWorkflowInstanceQuery
+**********************************************/
+export interface ProjectWorkflowInstanceQuery extends ProjectWorkflowInstance {
+	Project?: PS.Project;
+	WorkflowInstance?: SP.WorkflowServices.WorkflowInstance;
+	WorkflowInstanceOwner?: SP.User;
 }
 
 /*********************************************
@@ -1099,8 +1563,6 @@ export interface ProjectSummaryTask extends PS.Task {
 * QueueJob
 **********************************************/
 export interface QueueJob {
-	Project?: () => PS.Project;
-	Submitter?: () => SP.User;
 	Id?: any;
 	JobState?: number;
 	MessageType?: number;
@@ -1110,11 +1572,25 @@ export interface QueueJob {
 }
 
 /*********************************************
+* QueueJobMethods
+**********************************************/
+export interface QueueJobMethods extends QueueJob {
+	Project?: () => PS.Project;
+	Submitter?: () => SP.User;
+}
+
+/*********************************************
+* QueueJobQuery
+**********************************************/
+export interface QueueJobQuery extends QueueJob {
+	Project?: PS.Project;
+	Submitter?: SP.User;
+}
+
+/*********************************************
 * StatusTask
 **********************************************/
 export interface StatusTask {
-	CustomFields?: () => Array<PS.CustomField>;
-	StatusManager?: () => SP.User;
 	ActualWork?: string;
 	ActualWorkMilliseconds?: number;
 	ActualWorkTimeSpan?: any;
@@ -1152,11 +1628,40 @@ export interface StatusTask {
 }
 
 /*********************************************
+* StatusTaskMethods
+**********************************************/
+export interface StatusTaskMethods extends StatusTask {
+	CustomFields?: () => Array<PS.CustomField>;
+	StatusManager?: () => SP.User;
+}
+
+/*********************************************
+* StatusTaskQuery
+**********************************************/
+export interface StatusTaskQuery extends StatusTask {
+	CustomFields?: Array<PS.CustomField>;
+	StatusManager?: SP.User;
+}
+
+/*********************************************
 * EnterpriseResourceCostRateTable
 **********************************************/
 export interface EnterpriseResourceCostRateTable {
-	CostRates?: () => Array<PS.EnterpriseResourceCostRate>;
 	Name?: number;
+}
+
+/*********************************************
+* EnterpriseResourceCostRateTableMethods
+**********************************************/
+export interface EnterpriseResourceCostRateTableMethods extends EnterpriseResourceCostRateTable {
+	CostRates?: () => Array<PS.EnterpriseResourceCostRate>;
+}
+
+/*********************************************
+* EnterpriseResourceCostRateTableQuery
+**********************************************/
+export interface EnterpriseResourceCostRateTableQuery extends EnterpriseResourceCostRateTable {
+	CostRates?: Array<PS.EnterpriseResourceCostRate>;
 }
 
 /*********************************************
@@ -1213,11 +1718,27 @@ export interface EngagementTimephasedPeriod {
 * EntityTypes
 **********************************************/
 export interface EntityTypes {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* EntityTypesMethods
+**********************************************/
+export interface EntityTypesMethods extends EntityTypes {
 	AssignmentEntity?: () => PS.EntityType;
 	ProjectEntity?: () => PS.EntityType;
 	ResourceEntity?: () => PS.EntityType;
 	TaskEntity?: () => PS.EntityType;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* EntityTypesQuery
+**********************************************/
+export interface EntityTypesQuery extends EntityTypes {
+	AssignmentEntity?: PS.EntityType;
+	ProjectEntity?: PS.EntityType;
+	ResourceEntity?: PS.EntityType;
+	TaskEntity?: PS.EntityType;
 }
 
 /*********************************************
@@ -1233,7 +1754,6 @@ export interface Event {
 * EventHandler
 **********************************************/
 export interface EventHandler {
-	Event?: () => PS.Event;
 	AssemblyName?: string;
 	ClassName?: string;
 	Description?: string;
@@ -1242,6 +1762,20 @@ export interface EventHandler {
 	Id?: any;
 	Name?: string;
 	Order?: number;
+}
+
+/*********************************************
+* EventHandlerMethods
+**********************************************/
+export interface EventHandlerMethods extends EventHandler {
+	Event?: () => PS.Event;
+}
+
+/*********************************************
+* EventHandlerQuery
+**********************************************/
+export interface EventHandlerQuery extends EventHandler {
+	Event?: PS.Event;
 }
 
 /*********************************************
@@ -1278,10 +1812,23 @@ export interface LookupNumber extends PS.LookupEntry {
 * LookupText
 **********************************************/
 export interface LookupText extends PS.LookupEntry {
-	Parent?: () => PS.LookupText;
 	HasChildren?: boolean;
 	Mask?: PS.LookupMask;
 	Value?: string;
+}
+
+/*********************************************
+* LookupTextMethods
+**********************************************/
+export interface LookupTextMethods extends LookupText {
+	Parent?: () => PS.LookupText;
+}
+
+/*********************************************
+* LookupTextQuery
+**********************************************/
+export interface LookupTextQuery extends LookupText {
+	Parent?: PS.LookupText;
 }
 
 /*********************************************
@@ -1297,9 +1844,6 @@ export interface PageSizes {
 * PlanAssignment
 **********************************************/
 export interface PlanAssignment {
-	CustomFields?: () => Array<PS.CustomField>;
-	Intervals?: () => Array<PS.PlanAssignmentInterval>;
-	Resource?: () => PS.EnterpriseResource;
 	BookingType?: number;
 	CanLevel?: boolean;
 	Code?: string;
@@ -1313,6 +1857,24 @@ export interface PlanAssignment {
 	Phonetics?: string;
 	ResourceType?: number;
 	TerminationDate?: any;
+}
+
+/*********************************************
+* PlanAssignmentMethods
+**********************************************/
+export interface PlanAssignmentMethods extends PlanAssignment {
+	CustomFields?: () => Array<PS.CustomField>;
+	Intervals?: () => Array<PS.PlanAssignmentInterval>;
+	Resource?: () => PS.EnterpriseResource;
+}
+
+/*********************************************
+* PlanAssignmentQuery
+**********************************************/
+export interface PlanAssignmentQuery extends PlanAssignment {
+	CustomFields?: Array<PS.CustomField>;
+	Intervals?: Array<PS.PlanAssignmentInterval>;
+	Resource?: PS.EnterpriseResource;
 }
 
 /*********************************************
@@ -1352,6 +1914,17 @@ export interface ProjectServerData {
 * ProjectServer
 **********************************************/
 export interface ProjectServer {
+	EngagementsTimephasedPageSize?: number;
+	EnterpriseResourcesPageSize?: number;
+	IsDelegate?: boolean;
+	IsReadOnly?: boolean;
+	ProjectsPageSize?: number;
+}
+
+/*********************************************
+* ProjectServerMethods
+**********************************************/
+export interface ProjectServerMethods extends ProjectServer {
 	Calendars?: () => Array<PS.Calendar>;
 	CustomFields?: () => Array<PS.CustomField>;
 	EnterpriseProjectTypes?: () => Array<PS.EnterpriseProjectType>;
@@ -1370,11 +1943,30 @@ export interface ProjectServer {
 	UserPermissions?: () => Array<PS.UserPermission>;
 	WorkflowActivities?: () => PS.WorkflowActivities;
 	WorkflowDesigner?: () => PS.WorkflowDesigner;
-	EngagementsTimephasedPageSize?: number;
-	EnterpriseResourcesPageSize?: number;
-	IsDelegate?: boolean;
-	IsReadOnly?: boolean;
-	ProjectsPageSize?: number;
+}
+
+/*********************************************
+* ProjectServerQuery
+**********************************************/
+export interface ProjectServerQuery extends ProjectServer {
+	Calendars?: Array<PS.Calendar>;
+	CustomFields?: Array<PS.CustomField>;
+	EnterpriseProjectTypes?: Array<PS.EnterpriseProjectType>;
+	EnterpriseResources?: Array<PS.EnterpriseResource>;
+	EntityTypes?: PS.EntityTypes;
+	EventHandlers?: Array<PS.EventHandler>;
+	Events?: Array<PS.Event>;
+	LookupTables?: Array<PS.LookupTable>;
+	Phases?: Array<PS.Phase>;
+	ProjectDetailPages?: Array<PS.ProjectDetailPage>;
+	Projects?: Array<PS.PublishedProject>;
+	ProjectWorkflowInstances?: Array<PS.ProjectWorkflowInstance>;
+	Settings?: PS.Settings;
+	Stages?: Array<PS.Stage>;
+	TimeSheetPeriods?: Array<PS.TimeSheetPeriod>;
+	UserPermissions?: Array<PS.UserPermission>;
+	WorkflowActivities?: PS.WorkflowActivities;
+	WorkflowDesigner?: PS.WorkflowDesigner;
 }
 
 /*********************************************
@@ -1394,7 +1986,6 @@ export interface Settings {
 * TimeSheetPeriod
 **********************************************/
 export interface TimeSheetPeriod {
-	TimeSheet?: () => PS.TimeSheet;
 	End?: any;
 	Id?: any;
 	Name?: string;
@@ -1402,13 +1993,23 @@ export interface TimeSheetPeriod {
 }
 
 /*********************************************
+* TimeSheetPeriodMethods
+**********************************************/
+export interface TimeSheetPeriodMethods extends TimeSheetPeriod {
+	TimeSheet?: () => PS.TimeSheet;
+}
+
+/*********************************************
+* TimeSheetPeriodQuery
+**********************************************/
+export interface TimeSheetPeriodQuery extends TimeSheetPeriod {
+	TimeSheet?: PS.TimeSheet;
+}
+
+/*********************************************
 * TimeSheet
 **********************************************/
 export interface TimeSheet {
-	Creator?: () => SP.User;
-	Lines?: () => Array<PS.TimeSheetLine>;
-	Manager?: () => SP.User;
-	Period?: () => PS.TimeSheetPeriod;
 	Comments?: string;
 	EntryMode?: number;
 	Id?: any;
@@ -1435,12 +2036,29 @@ export interface TimeSheet {
 }
 
 /*********************************************
+* TimeSheetMethods
+**********************************************/
+export interface TimeSheetMethods extends TimeSheet {
+	Creator?: () => SP.User;
+	Lines?: () => Array<PS.TimeSheetLine>;
+	Manager?: () => SP.User;
+	Period?: () => PS.TimeSheetPeriod;
+}
+
+/*********************************************
+* TimeSheetQuery
+**********************************************/
+export interface TimeSheetQuery extends TimeSheet {
+	Creator?: SP.User;
+	Lines?: Array<PS.TimeSheetLine>;
+	Manager?: SP.User;
+	Period?: PS.TimeSheetPeriod;
+}
+
+/*********************************************
 * TimeSheetLine
 **********************************************/
 export interface TimeSheetLine {
-	Assignment?: () => PS.PublishedAssignment;
-	TimeSheet?: () => PS.TimeSheet;
-	Work?: () => Array<PS.TimeSheetWork>;
 	Comment?: string;
 	Id?: any;
 	LineClass?: number;
@@ -1451,6 +2069,24 @@ export interface TimeSheetLine {
 	TotalWorkMilliseconds?: number;
 	TotalWorkTimeSpan?: any;
 	ValidationType?: number;
+}
+
+/*********************************************
+* TimeSheetLineMethods
+**********************************************/
+export interface TimeSheetLineMethods extends TimeSheetLine {
+	Assignment?: () => PS.PublishedAssignment;
+	TimeSheet?: () => PS.TimeSheet;
+	Work?: () => Array<PS.TimeSheetWork>;
+}
+
+/*********************************************
+* TimeSheetLineQuery
+**********************************************/
+export interface TimeSheetLineQuery extends TimeSheetLine {
+	Assignment?: PS.PublishedAssignment;
+	TimeSheet?: PS.TimeSheet;
+	Work?: Array<PS.TimeSheetWork>;
 }
 
 /*********************************************
@@ -1489,20 +2125,46 @@ export interface WorkflowActivities {
 * WorkflowDesigner
 **********************************************/
 export interface WorkflowDesigner {
-	Fields?: () => Array<PS.WorkflowDesignerField>;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* WorkflowDesignerMethods
+**********************************************/
+export interface WorkflowDesignerMethods extends WorkflowDesigner {
+	Fields?: () => Array<PS.WorkflowDesignerField>;
+}
+
+/*********************************************
+* WorkflowDesignerQuery
+**********************************************/
+export interface WorkflowDesignerQuery extends WorkflowDesigner {
+	Fields?: Array<PS.WorkflowDesignerField>;
 }
 
 /*********************************************
 * WorkflowDesignerField
 **********************************************/
 export interface WorkflowDesignerField {
-	LookupEntries?: () => Array<PS.LookupEntry>;
 	DisplayName?: string;
 	Id?: string;
 	IsLookupField?: boolean;
 	IsReadOnly?: boolean;
 	SPFieldType?: number;
+}
+
+/*********************************************
+* WorkflowDesignerFieldMethods
+**********************************************/
+export interface WorkflowDesignerFieldMethods extends WorkflowDesignerField {
+	LookupEntries?: () => Array<PS.LookupEntry>;
+}
+
+/*********************************************
+* WorkflowDesignerFieldQuery
+**********************************************/
+export interface WorkflowDesignerFieldQuery extends WorkflowDesignerField {
+	LookupEntries?: Array<PS.LookupEntry>;
 }
 
 /*********************************************
@@ -1530,12 +2192,25 @@ export interface ResourceEngagementTimephasedPeriod extends PS.EngagementTimepha
 * ResourcePlan
 **********************************************/
 export interface ResourcePlan {
-	Assignments?: () => Array<PS.PlanAssignment>;
 	Finish?: any;
 	Id?: any;
 	Start?: any;
 	UtilizationDate?: any;
 	UtilizationType?: number;
+}
+
+/*********************************************
+* ResourcePlanMethods
+**********************************************/
+export interface ResourcePlanMethods extends ResourcePlan {
+	Assignments?: () => Array<PS.PlanAssignment>;
+}
+
+/*********************************************
+* ResourcePlanQuery
+**********************************************/
+export interface ResourcePlanQuery extends ResourcePlan {
+	Assignments?: Array<PS.PlanAssignment>;
 }
 
 /*********************************************
@@ -1550,7 +2225,20 @@ export interface ServiceStatus {
 * TimePhase
 **********************************************/
 export interface TimePhase {
-	Assignments?: () => Array<PS.StatusAssignment>;
 	End?: any;
 	Start?: any;
+}
+
+/*********************************************
+* TimePhaseMethods
+**********************************************/
+export interface TimePhaseMethods extends TimePhase {
+	Assignments?: () => Array<PS.StatusAssignment>;
+}
+
+/*********************************************
+* TimePhaseQuery
+**********************************************/
+export interface TimePhaseQuery extends TimePhase {
+	Assignments?: Array<PS.StatusAssignment>;
 }

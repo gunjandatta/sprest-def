@@ -11,8 +11,21 @@ export interface SPAppStateQueryJobDefinition {
 * SPFarm
 **********************************************/
 export interface SPFarm {
-	Local?: () => Microsoft.SharePoint.Administration.SPFarm;
 	Id?: any;
+}
+
+/*********************************************
+* SPFarmMethods
+**********************************************/
+export interface SPFarmMethods extends SPFarm {
+	Local?: () => Microsoft.SharePoint.Administration.SPFarm;
+}
+
+/*********************************************
+* SPFarmQuery
+**********************************************/
+export interface SPFarmQuery extends SPFarm {
+	Local?: Microsoft.SharePoint.Administration.SPFarm;
 }
 
 /*********************************************
@@ -34,7 +47,6 @@ export interface SPTenantAppInstanceData {
 * SPWebApplication
 **********************************************/
 export interface SPWebApplication {
-	Sites?: () => Array<SP.Site>;
 	DisplayName?: string;
 	Id?: any;
 	OutboundMailPort?: number;
@@ -43,12 +55,40 @@ export interface SPWebApplication {
 }
 
 /*********************************************
+* SPWebApplicationMethods
+**********************************************/
+export interface SPWebApplicationMethods extends SPWebApplication {
+	Sites?: () => Array<SP.Site>;
+}
+
+/*********************************************
+* SPWebApplicationQuery
+**********************************************/
+export interface SPWebApplicationQuery extends SPWebApplication {
+	Sites?: Array<SP.Site>;
+}
+
+/*********************************************
 * SPWebService
 **********************************************/
 export interface SPWebService {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPWebServiceMethods
+**********************************************/
+export interface SPWebServiceMethods extends SPWebService {
 	ContentService?: () => Microsoft.SharePoint.Administration.SPWebService;
 	WebApplications?: () => Array<Microsoft.SharePoint.Administration.SPWebApplication>;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPWebServiceQuery
+**********************************************/
+export interface SPWebServiceQuery extends SPWebService {
+	ContentService?: Microsoft.SharePoint.Administration.SPWebService;
+	WebApplications?: Array<Microsoft.SharePoint.Administration.SPWebApplication>;
 }
 
 /*********************************************

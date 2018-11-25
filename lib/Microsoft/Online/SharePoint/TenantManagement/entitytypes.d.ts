@@ -18,9 +18,22 @@ export interface ExternalUser {
 * GetExternalUsersResults
 **********************************************/
 export interface GetExternalUsersResults {
-	ExternalUserCollection?: () => Array<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
 	TotalUserCount?: number;
 	UserCollectionPosition?: number;
+}
+
+/*********************************************
+* GetExternalUsersResultsMethods
+**********************************************/
+export interface GetExternalUsersResultsMethods extends GetExternalUsersResults {
+	ExternalUserCollection?: () => Array<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+}
+
+/*********************************************
+* GetExternalUsersResultsQuery
+**********************************************/
+export interface GetExternalUsersResultsQuery extends GetExternalUsersResults {
+	ExternalUserCollection?: Array<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
 }
 
 /*********************************************

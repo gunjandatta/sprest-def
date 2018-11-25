@@ -256,6 +256,13 @@ export interface MultiGeoApiVersions {
 * MultiGeoServicesBeta
 **********************************************/
 export interface MultiGeoServicesBeta {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MultiGeoServicesBetaMethods
+**********************************************/
+export interface MultiGeoServicesBetaMethods extends MultiGeoServicesBeta {
 	AllowedDataLocations?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>;
 	ContentDbSchemaVersion?: () => Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion;
 	CrossFarmGroupMoveJobs?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>;
@@ -276,7 +283,32 @@ export interface MultiGeoServicesBeta {
 	TenantInformationCollection?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
 	UnifiedGroups?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup>;
 	UserMoveJobs?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>;
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MultiGeoServicesBetaQuery
+**********************************************/
+export interface MultiGeoServicesBetaQuery extends MultiGeoServicesBeta {
+	AllowedDataLocations?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>;
+	ContentDbSchemaVersion?: Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion;
+	CrossFarmGroupMoveJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>;
+	CrossFarmSiteMoveJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob>;
+	CrossFarmUserMoveJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob>;
+	CrossGeoTenantBYOK?: Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOK;
+	CrossGeoTenantCompatibility?: Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility;
+	CrossGeoTenantProperties?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty>;
+	GeoAdministrators?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>;
+	GeoExperience?: Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience;
+	GeoTenantInstanceInformationCollection?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation>;
+	GlobalAdminCheck?: Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck;
+	GroupMoveJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob>;
+	SiteMoveJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob>;
+	SiteRenameJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob>;
+	StorageQuotas?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota>;
+	TaxonomyReplicationParameters?: Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters;
+	TenantInformationCollection?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
+	UnifiedGroups?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup>;
+	UserMoveJobs?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>;
 }
 
 /*********************************************

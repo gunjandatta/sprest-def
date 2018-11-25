@@ -33,8 +33,21 @@ export interface FileService {
 * Folder
 **********************************************/
 export interface Folder extends MS.FileServices.FileSystemItem {
-	Children?: () => Array<MS.FileServices.FileSystemItem>;
 	ChildrenCount?: number;
+}
+
+/*********************************************
+* FolderMethods
+**********************************************/
+export interface FolderMethods extends Folder {
+	Children?: () => Array<MS.FileServices.FileSystemItem>;
+}
+
+/*********************************************
+* FolderQuery
+**********************************************/
+export interface FolderQuery extends Folder {
+	Children?: Array<MS.FileServices.FileSystemItem>;
 }
 
 /*********************************************

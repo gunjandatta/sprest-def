@@ -4,9 +4,6 @@ import { SP } from "../../";
 * AppPackagesListItem
 **********************************************/
 export interface AppPackagesListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -75,11 +72,27 @@ export interface AppPackagesListItem extends SP.ListItem {
 }
 
 /*********************************************
+* AppPackagesListItemMethods
+**********************************************/
+export interface AppPackagesListItemMethods extends AppPackagesListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* AppPackagesListItemQuery
+**********************************************/
+export interface AppPackagesListItemQuery extends AppPackagesListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * UserInfoItem
 **********************************************/
 export interface UserInfoItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -182,11 +195,25 @@ export interface UserInfoItem extends SP.ListItem {
 }
 
 /*********************************************
+* UserInfoItemMethods
+**********************************************/
+export interface UserInfoItemMethods extends UserInfoItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* UserInfoItemQuery
+**********************************************/
+export interface UserInfoItemQuery extends UserInfoItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_appdataItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_appdataItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -241,12 +268,25 @@ export interface OData__x005f_catalogs_x002f_appdataItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_appdataItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appdataItemMethods extends OData__x005f_catalogs_x002f_appdataItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_appdataItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appdataItemQuery extends OData__x005f_catalogs_x002f_appdataItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_appfilesItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_appfilesItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -305,11 +345,27 @@ export interface OData__x005f_catalogs_x002f_appfilesItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_appfilesItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appfilesItemMethods extends OData__x005f_catalogs_x002f_appfilesItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_appfilesItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appfilesItemQuery extends OData__x005f_catalogs_x002f_appfilesItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * DraftAppsListItem
 **********************************************/
 export interface DraftAppsListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -371,11 +427,25 @@ export interface DraftAppsListItem extends SP.ListItem {
 }
 
 /*********************************************
+* DraftAppsListItemMethods
+**********************************************/
+export interface DraftAppsListItemMethods extends DraftAppsListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* DraftAppsListItemQuery
+**********************************************/
+export interface DraftAppsListItemQuery extends DraftAppsListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * BinsListItem
 **********************************************/
 export interface BinsListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -436,11 +506,25 @@ export interface BinsListItem extends SP.ListItem {
 }
 
 /*********************************************
+* BinsListItemMethods
+**********************************************/
+export interface BinsListItemMethods extends BinsListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* BinsListItemQuery
+**********************************************/
+export interface BinsListItemQuery extends BinsListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Cache_x0020_ProfilesItem
 **********************************************/
 export interface Cache_x0020_ProfilesItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -508,11 +592,25 @@ export interface Cache_x0020_ProfilesItem extends SP.ListItem {
 }
 
 /*********************************************
+* Cache_x0020_ProfilesItemMethods
+**********************************************/
+export interface Cache_x0020_ProfilesItemMethods extends Cache_x0020_ProfilesItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Cache_x0020_ProfilesItemQuery
+**********************************************/
+export interface Cache_x0020_ProfilesItemQuery extends Cache_x0020_ProfilesItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_designItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_designItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -573,11 +671,25 @@ export interface OData__x005f_catalogs_x002f_designItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_designItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_designItemMethods extends OData__x005f_catalogs_x002f_designItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_designItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_designItemQuery extends OData__x005f_catalogs_x002f_designItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Reports_x0020_ListItem
 **********************************************/
 export interface Reports_x0020_ListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -637,11 +749,25 @@ export interface Reports_x0020_ListItem extends SP.ListItem {
 }
 
 /*********************************************
+* Reports_x0020_ListItemMethods
+**********************************************/
+export interface Reports_x0020_ListItemMethods extends Reports_x0020_ListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Reports_x0020_ListItemQuery
+**********************************************/
+export interface Reports_x0020_ListItemQuery extends Reports_x0020_ListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ContentTypeSyncLogListItem
 **********************************************/
 export interface ContentTypeSyncLogListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -700,12 +826,25 @@ export interface ContentTypeSyncLogListItem extends SP.ListItem {
 }
 
 /*********************************************
+* ContentTypeSyncLogListItemMethods
+**********************************************/
+export interface ContentTypeSyncLogListItemMethods extends ContentTypeSyncLogListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* ContentTypeSyncLogListItemQuery
+**********************************************/
+export interface ContentTypeSyncLogListItemQuery extends ContentTypeSyncLogListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * IWConvertedFormsItem
 **********************************************/
 export interface IWConvertedFormsItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -767,11 +906,27 @@ export interface IWConvertedFormsItem extends SP.ListItem {
 }
 
 /*********************************************
+* IWConvertedFormsItemMethods
+**********************************************/
+export interface IWConvertedFormsItemMethods extends IWConvertedFormsItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* IWConvertedFormsItemQuery
+**********************************************/
+export interface IWConvertedFormsItemQuery extends IWConvertedFormsItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * CTDemoListItem
 **********************************************/
 export interface CTDemoListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -833,13 +988,25 @@ export interface CTDemoListItem extends SP.ListItem {
 }
 
 /*********************************************
+* CTDemoListItemMethods
+**********************************************/
+export interface CTDemoListItemMethods extends CTDemoListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* CTDemoListItemQuery
+**********************************************/
+export interface CTDemoListItemQuery extends CTDemoListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * DevListItem
 **********************************************/
 export interface DevListItem extends SP.ListItem {
-	User?: () => SP.Data.UserInfoItem;
-	Multi_x0020_Lookup?: () => Array<SP.Data.DevListItem>;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -899,11 +1066,29 @@ export interface DevListItem extends SP.ListItem {
 }
 
 /*********************************************
+* DevListItemMethods
+**********************************************/
+export interface DevListItemMethods extends DevListItem {
+	User?: () => SP.Data.UserInfoItem;
+	Multi_x0020_Lookup?: () => Array<SP.Data.DevListItem>;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* DevListItemQuery
+**********************************************/
+export interface DevListItemQuery extends DevListItem {
+	User?: SP.Data.UserInfoItem;
+	Multi_x0020_Lookup?: Array<SP.Data.DevListItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * DeviceChannelsItem
 **********************************************/
 export interface DeviceChannelsItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -963,12 +1148,25 @@ export interface DeviceChannelsItem extends SP.ListItem {
 }
 
 /*********************************************
+* DeviceChannelsItemMethods
+**********************************************/
+export interface DeviceChannelsItemMethods extends DeviceChannelsItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* DeviceChannelsItemQuery
+**********************************************/
+export interface DeviceChannelsItemQuery extends DeviceChannelsItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * DocSetItem
 **********************************************/
 export interface DocSetItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1038,13 +1236,27 @@ export interface DocSetItem extends SP.ListItem {
 }
 
 /*********************************************
-* Shared_x0020_DocumentsItem
+* DocSetItemMethods
 **********************************************/
-export interface Shared_x0020_DocumentsItem extends SP.ListItem {
-	SharedWithUsers?: () => Array<SP.Data.UserInfoItem>;
+export interface DocSetItemMethods extends DocSetItem {
 	Author?: () => SP.Data.UserInfoItem;
 	Editor?: () => SP.Data.UserInfoItem;
 	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* DocSetItemQuery
+**********************************************/
+export interface DocSetItemQuery extends DocSetItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Shared_x0020_DocumentsItem
+**********************************************/
+export interface Shared_x0020_DocumentsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1119,12 +1331,29 @@ export interface Shared_x0020_DocumentsItem extends SP.ListItem {
 }
 
 /*********************************************
+* Shared_x0020_DocumentsItemMethods
+**********************************************/
+export interface Shared_x0020_DocumentsItemMethods extends Shared_x0020_DocumentsItem {
+	SharedWithUsers?: () => Array<SP.Data.UserInfoItem>;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Shared_x0020_DocumentsItemQuery
+**********************************************/
+export interface Shared_x0020_DocumentsItemQuery extends Shared_x0020_DocumentsItem {
+	SharedWithUsers?: Array<SP.Data.UserInfoItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Event_x0020_CalloutListItem
 **********************************************/
 export interface Event_x0020_CalloutListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	ParticipantsPicker?: () => Array<SP.Data.UserInfoItem>;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1205,12 +1434,27 @@ export interface Event_x0020_CalloutListItem extends SP.ListItem {
 }
 
 /*********************************************
+* Event_x0020_CalloutListItemMethods
+**********************************************/
+export interface Event_x0020_CalloutListItemMethods extends Event_x0020_CalloutListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	ParticipantsPicker?: () => Array<SP.Data.UserInfoItem>;
+}
+
+/*********************************************
+* Event_x0020_CalloutListItemQuery
+**********************************************/
+export interface Event_x0020_CalloutListItemQuery extends Event_x0020_CalloutListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	ParticipantsPicker?: Array<SP.Data.UserInfoItem>;
+}
+
+/*********************************************
 * FormServerTemplatesItem
 **********************************************/
 export interface FormServerTemplatesItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1288,11 +1532,27 @@ export interface FormServerTemplatesItem extends SP.ListItem {
 }
 
 /*********************************************
+* FormServerTemplatesItemMethods
+**********************************************/
+export interface FormServerTemplatesItemMethods extends FormServerTemplatesItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* FormServerTemplatesItemQuery
+**********************************************/
+export interface FormServerTemplatesItemQuery extends FormServerTemplatesItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * GettingStartedListItem
 **********************************************/
 export interface GettingStartedListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1354,11 +1614,25 @@ export interface GettingStartedListItem extends SP.ListItem {
 }
 
 /*********************************************
+* GettingStartedListItemMethods
+**********************************************/
+export interface GettingStartedListItemMethods extends GettingStartedListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* GettingStartedListItemQuery
+**********************************************/
+export interface GettingStartedListItemQuery extends GettingStartedListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * LargeListListItem
 **********************************************/
 export interface LargeListListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1413,12 +1687,25 @@ export interface LargeListListItem extends SP.ListItem {
 }
 
 /*********************************************
+* LargeListListItemMethods
+**********************************************/
+export interface LargeListListItemMethods extends LargeListListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* LargeListListItemQuery
+**********************************************/
+export interface LargeListListItemQuery extends LargeListListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_ltItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_ltItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -1488,11 +1775,27 @@ export interface OData__x005f_catalogs_x002f_ltItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_ltItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_ltItemMethods extends OData__x005f_catalogs_x002f_ltItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_ltItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_ltItemQuery extends OData__x005f_catalogs_x002f_ltItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Long_x0020_Running_x0020_Operation_x0020_StatusItem
 **********************************************/
 export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1567,12 +1870,25 @@ export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem extends SP.
 }
 
 /*********************************************
+* Long_x0020_Running_x0020_Operation_x0020_StatusItemMethods
+**********************************************/
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemMethods extends Long_x0020_Running_x0020_Operation_x0020_StatusItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery
+**********************************************/
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery extends Long_x0020_Running_x0020_Operation_x0020_StatusItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_MaintenanceLogsItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -1631,11 +1947,27 @@ export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem extends SP.List
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_MaintenanceLogsItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemMethods extends OData__x005f_catalogs_x002f_MaintenanceLogsItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery extends OData__x005f_catalogs_x002f_MaintenanceLogsItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * MapListItem
 **********************************************/
 export interface MapListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1691,15 +2023,25 @@ export interface MapListItem extends SP.ListItem {
 }
 
 /*********************************************
+* MapListItemMethods
+**********************************************/
+export interface MapListItemMethods extends MapListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* MapListItemQuery
+**********************************************/
+export interface MapListItemQuery extends MapListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_masterpageItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_masterpageItem extends SP.ListItem {
-	PublishingContact?: () => SP.Data.UserInfoItem;
-	AuthenticatedCacheProfile?: () => SP.Data.Cache_x0020_ProfilesItem;
-	AnonymousCacheProfile?: () => SP.Data.Cache_x0020_ProfilesItem;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1792,13 +2134,33 @@ export interface OData__x005f_catalogs_x002f_masterpageItem extends SP.ListItem 
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_masterpageItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_masterpageItemMethods extends OData__x005f_catalogs_x002f_masterpageItem {
+	PublishingContact?: () => SP.Data.UserInfoItem;
+	AuthenticatedCacheProfile?: () => SP.Data.Cache_x0020_ProfilesItem;
+	AnonymousCacheProfile?: () => SP.Data.Cache_x0020_ProfilesItem;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_masterpageItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_masterpageItemQuery extends OData__x005f_catalogs_x002f_masterpageItem {
+	PublishingContact?: SP.Data.UserInfoItem;
+	AuthenticatedCacheProfile?: SP.Data.Cache_x0020_ProfilesItem;
+	AnonymousCacheProfile?: SP.Data.Cache_x0020_ProfilesItem;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * PublishedFeedListItem
 **********************************************/
 export interface PublishedFeedListItem extends SP.ListItem {
-	LikedBy?: () => Array<SP.Data.UserInfoItem>;
-	TaxCatchAll?: () => Array<SP.Data.TaxonomyHiddenListListItem>;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1895,11 +2257,29 @@ export interface PublishedFeedListItem extends SP.ListItem {
 }
 
 /*********************************************
+* PublishedFeedListItemMethods
+**********************************************/
+export interface PublishedFeedListItemMethods extends PublishedFeedListItem {
+	LikedBy?: () => Array<SP.Data.UserInfoItem>;
+	TaxCatchAll?: () => Array<SP.Data.TaxonomyHiddenListListItem>;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* PublishedFeedListItemQuery
+**********************************************/
+export interface PublishedFeedListItemQuery extends PublishedFeedListItem {
+	LikedBy?: Array<SP.Data.UserInfoItem>;
+	TaxCatchAll?: Array<SP.Data.TaxonomyHiddenListListItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * TaxonomyHiddenListListItem
 **********************************************/
 export interface TaxonomyHiddenListListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2063,11 +2443,25 @@ export interface TaxonomyHiddenListListItem extends SP.ListItem {
 }
 
 /*********************************************
+* TaxonomyHiddenListListItemMethods
+**********************************************/
+export interface TaxonomyHiddenListListItemMethods extends TaxonomyHiddenListListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* TaxonomyHiddenListListItemQuery
+**********************************************/
+export interface TaxonomyHiddenListListItemQuery extends TaxonomyHiddenListListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * MyContactsListItem
 **********************************************/
 export interface MyContactsListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2123,11 +2517,25 @@ export interface MyContactsListItem extends SP.ListItem {
 }
 
 /*********************************************
+* MyContactsListItemMethods
+**********************************************/
+export interface MyContactsListItemMethods extends MyContactsListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* MyContactsListItemQuery
+**********************************************/
+export interface MyContactsListItemQuery extends MyContactsListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * MyListListItem
 **********************************************/
 export interface MyListListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2187,11 +2595,25 @@ export interface MyListListItem extends SP.ListItem {
 }
 
 /*********************************************
+* MyListListItemMethods
+**********************************************/
+export interface MyListListItemMethods extends MyListListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* MyListListItemQuery
+**********************************************/
+export interface MyListListItemQuery extends MyListListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * My_x0020_Lists_x0020_InfoListItem
 **********************************************/
 export interface My_x0020_Lists_x0020_InfoListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -2246,11 +2668,25 @@ export interface My_x0020_Lists_x0020_InfoListItem extends SP.ListItem {
 }
 
 /*********************************************
+* My_x0020_Lists_x0020_InfoListItemMethods
+**********************************************/
+export interface My_x0020_Lists_x0020_InfoListItemMethods extends My_x0020_Lists_x0020_InfoListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* My_x0020_Lists_x0020_InfoListItemQuery
+**********************************************/
+export interface My_x0020_Lists_x0020_InfoListItemQuery extends My_x0020_Lists_x0020_InfoListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Notification_x0020_PagesItem
 **********************************************/
 export interface Notification_x0020_PagesItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2307,11 +2743,25 @@ export interface Notification_x0020_PagesItem extends SP.ListItem {
 }
 
 /*********************************************
+* Notification_x0020_PagesItemMethods
+**********************************************/
+export interface Notification_x0020_PagesItemMethods extends Notification_x0020_PagesItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Notification_x0020_PagesItemQuery
+**********************************************/
+export interface Notification_x0020_PagesItemQuery extends Notification_x0020_PagesItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ProjectPolicyItemListItem
 **********************************************/
 export interface ProjectPolicyItemListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2377,11 +2827,25 @@ export interface ProjectPolicyItemListItem extends SP.ListItem {
 }
 
 /*********************************************
+* ProjectPolicyItemListItemMethods
+**********************************************/
+export interface ProjectPolicyItemListItemMethods extends ProjectPolicyItemListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* ProjectPolicyItemListItemQuery
+**********************************************/
+export interface ProjectPolicyItemListItemQuery extends ProjectPolicyItemListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Quick_x0020_Deploy_x0020_ItemsItem
 **********************************************/
 export interface Quick_x0020_Deploy_x0020_ItemsItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2439,11 +2903,25 @@ export interface Quick_x0020_Deploy_x0020_ItemsItem extends SP.ListItem {
 }
 
 /*********************************************
+* Quick_x0020_Deploy_x0020_ItemsItemMethods
+**********************************************/
+export interface Quick_x0020_Deploy_x0020_ItemsItemMethods extends Quick_x0020_Deploy_x0020_ItemsItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Quick_x0020_Deploy_x0020_ItemsItemQuery
+**********************************************/
+export interface Quick_x0020_Deploy_x0020_ItemsItemQuery extends Quick_x0020_Deploy_x0020_ItemsItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Relationships_x0020_ListItem
 **********************************************/
 export interface Relationships_x0020_ListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2506,11 +2984,25 @@ export interface Relationships_x0020_ListItem extends SP.ListItem {
 }
 
 /*********************************************
+* Relationships_x0020_ListItemMethods
+**********************************************/
+export interface Relationships_x0020_ListItemMethods extends Relationships_x0020_ListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Relationships_x0020_ListItemQuery
+**********************************************/
+export interface Relationships_x0020_ListItemQuery extends Relationships_x0020_ListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ReusableContentItem
 **********************************************/
 export interface ReusableContentItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2571,11 +3063,25 @@ export interface ReusableContentItem extends SP.ListItem {
 }
 
 /*********************************************
+* ReusableContentItemMethods
+**********************************************/
+export interface ReusableContentItemMethods extends ReusableContentItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* ReusableContentItemQuery
+**********************************************/
+export interface ReusableContentItemQuery extends ReusableContentItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Sharing_x0020_LinksItem
 **********************************************/
 export interface Sharing_x0020_LinksItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2633,13 +3139,25 @@ export interface Sharing_x0020_LinksItem extends SP.ListItem {
 }
 
 /*********************************************
+* Sharing_x0020_LinksItemMethods
+**********************************************/
+export interface Sharing_x0020_LinksItemMethods extends Sharing_x0020_LinksItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Sharing_x0020_LinksItemQuery
+**********************************************/
+export interface Sharing_x0020_LinksItemQuery extends Sharing_x0020_LinksItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * SiteAssetsItem
 **********************************************/
 export interface SiteAssetsItem extends SP.ListItem {
-	SharedWithUsers?: () => Array<SP.Data.UserInfoItem>;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2710,12 +3228,29 @@ export interface SiteAssetsItem extends SP.ListItem {
 }
 
 /*********************************************
-* SiteCollectionDocumentsItem
+* SiteAssetsItemMethods
 **********************************************/
-export interface SiteCollectionDocumentsItem extends SP.ListItem {
+export interface SiteAssetsItemMethods extends SiteAssetsItem {
+	SharedWithUsers?: () => Array<SP.Data.UserInfoItem>;
 	Author?: () => SP.Data.UserInfoItem;
 	Editor?: () => SP.Data.UserInfoItem;
 	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SiteAssetsItemQuery
+**********************************************/
+export interface SiteAssetsItemQuery extends SiteAssetsItem {
+	SharedWithUsers?: Array<SP.Data.UserInfoItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SiteCollectionDocumentsItem
+**********************************************/
+export interface SiteCollectionDocumentsItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2786,14 +3321,27 @@ export interface SiteCollectionDocumentsItem extends SP.ListItem {
 }
 
 /*********************************************
-* SiteCollectionImagesItem
+* SiteCollectionDocumentsItemMethods
 **********************************************/
-export interface SiteCollectionImagesItem extends SP.ListItem {
-	VideoSetOwner?: () => SP.Data.UserInfoItem;
-	PeopleInMedia?: () => Array<SP.Data.UserInfoItem>;
+export interface SiteCollectionDocumentsItemMethods extends SiteCollectionDocumentsItem {
 	Author?: () => SP.Data.UserInfoItem;
 	Editor?: () => SP.Data.UserInfoItem;
 	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SiteCollectionDocumentsItemQuery
+**********************************************/
+export interface SiteCollectionDocumentsItemQuery extends SiteCollectionDocumentsItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SiteCollectionImagesItem
+**********************************************/
+export interface SiteCollectionImagesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2891,14 +3439,31 @@ export interface SiteCollectionImagesItem extends SP.ListItem {
 }
 
 /*********************************************
-* SitePagesItem
+* SiteCollectionImagesItemMethods
 **********************************************/
-export interface SitePagesItem extends SP.ListItem {
-	SharedWithUsers?: () => Array<SP.Data.UserInfoItem>;
-	OData__AuthorByline?: () => Array<SP.Data.UserInfoItem>;
+export interface SiteCollectionImagesItemMethods extends SiteCollectionImagesItem {
+	VideoSetOwner?: () => SP.Data.UserInfoItem;
+	PeopleInMedia?: () => Array<SP.Data.UserInfoItem>;
 	Author?: () => SP.Data.UserInfoItem;
 	Editor?: () => SP.Data.UserInfoItem;
 	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SiteCollectionImagesItemQuery
+**********************************************/
+export interface SiteCollectionImagesItemQuery extends SiteCollectionImagesItem {
+	VideoSetOwner?: SP.Data.UserInfoItem;
+	PeopleInMedia?: Array<SP.Data.UserInfoItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SitePagesItem
+**********************************************/
+export interface SitePagesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2979,12 +3544,31 @@ export interface SitePagesItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_solutionsItem
+* SitePagesItemMethods
 **********************************************/
-export interface OData__x005f_catalogs_x002f_solutionsItem extends SP.ListItem {
+export interface SitePagesItemMethods extends SitePagesItem {
+	SharedWithUsers?: () => Array<SP.Data.UserInfoItem>;
+	OData__AuthorByline?: () => Array<SP.Data.UserInfoItem>;
 	Author?: () => SP.Data.UserInfoItem;
 	Editor?: () => SP.Data.UserInfoItem;
 	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SitePagesItemQuery
+**********************************************/
+export interface SitePagesItemQuery extends SitePagesItem {
+	SharedWithUsers?: Array<SP.Data.UserInfoItem>;
+	OData__AuthorByline?: Array<SP.Data.UserInfoItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_solutionsItem
+**********************************************/
+export interface OData__x005f_catalogs_x002f_solutionsItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3049,16 +3633,27 @@ export interface OData__x005f_catalogs_x002f_solutionsItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_solutionsItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_solutionsItemMethods extends OData__x005f_catalogs_x002f_solutionsItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_solutionsItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_solutionsItemQuery extends OData__x005f_catalogs_x002f_solutionsItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * SPReactListItem
 **********************************************/
 export interface SPReactListItem extends SP.ListItem {
-	TestUser?: () => SP.Data.UserInfoItem;
-	TestMultiUser?: () => Array<SP.Data.UserInfoItem>;
-	TestLookup?: () => SP.Data.SPReactListItem;
-	TestMultiLookup?: () => Array<SP.Data.SPReactListItem>;
-	TaxCatchAll?: () => Array<SP.Data.TaxonomyHiddenListListItem>;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	Calculated_x0020_Title?: string;
 	Title?: string;
 	TestBoolean?: boolean;
@@ -3135,12 +3730,35 @@ export interface SPReactListItem extends SP.ListItem {
 }
 
 /*********************************************
+* SPReactListItemMethods
+**********************************************/
+export interface SPReactListItemMethods extends SPReactListItem {
+	TestUser?: () => SP.Data.UserInfoItem;
+	TestMultiUser?: () => Array<SP.Data.UserInfoItem>;
+	TestLookup?: () => SP.Data.SPReactListItem;
+	TestMultiLookup?: () => Array<SP.Data.SPReactListItem>;
+	TaxCatchAll?: () => Array<SP.Data.TaxonomyHiddenListListItem>;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SPReactListItemQuery
+**********************************************/
+export interface SPReactListItemQuery extends SPReactListItem {
+	TestUser?: SP.Data.UserInfoItem;
+	TestMultiUser?: Array<SP.Data.UserInfoItem>;
+	TestLookup?: SP.Data.SPReactListItem;
+	TestMultiLookup?: Array<SP.Data.SPReactListItem>;
+	TaxCatchAll?: Array<SP.Data.TaxonomyHiddenListListItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * SPRESTListDemoListItem
 **********************************************/
 export interface SPRESTListDemoListItem extends SP.ListItem {
-	DemoUser?: () => SP.Data.UserInfoItem;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3203,12 +3821,27 @@ export interface SPRESTListDemoListItem extends SP.ListItem {
 }
 
 /*********************************************
+* SPRESTListDemoListItemMethods
+**********************************************/
+export interface SPRESTListDemoListItemMethods extends SPRESTListDemoListItem {
+	DemoUser?: () => SP.Data.UserInfoItem;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* SPRESTListDemoListItemQuery
+**********************************************/
+export interface SPRESTListDemoListItemQuery extends SPRESTListDemoListItem {
+	DemoUser?: SP.Data.UserInfoItem;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Style_x0020_LibraryItem
 **********************************************/
 export interface Style_x0020_LibraryItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3277,11 +3910,27 @@ export interface Style_x0020_LibraryItem extends SP.ListItem {
 }
 
 /*********************************************
+* Style_x0020_LibraryItemMethods
+**********************************************/
+export interface Style_x0020_LibraryItemMethods extends Style_x0020_LibraryItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Style_x0020_LibraryItemQuery
+**********************************************/
+export interface Style_x0020_LibraryItemQuery extends Style_x0020_LibraryItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * PublishedLinksItem
 **********************************************/
 export interface PublishedLinksItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3338,13 +3987,25 @@ export interface PublishedLinksItem extends SP.ListItem {
 }
 
 /*********************************************
+* PublishedLinksItemMethods
+**********************************************/
+export interface PublishedLinksItemMethods extends PublishedLinksItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* PublishedLinksItemQuery
+**********************************************/
+export interface PublishedLinksItemQuery extends PublishedLinksItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * TeamMembersListItem
 **********************************************/
 export interface TeamMembersListItem extends SP.ListItem {
-	TeamMember?: () => SP.Data.UserInfoItem;
-	TaxCatchAll?: () => Array<SP.Data.TaxonomyHiddenListListItem>;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3404,11 +4065,29 @@ export interface TeamMembersListItem extends SP.ListItem {
 }
 
 /*********************************************
+* TeamMembersListItemMethods
+**********************************************/
+export interface TeamMembersListItemMethods extends TeamMembersListItem {
+	TeamMember?: () => SP.Data.UserInfoItem;
+	TaxCatchAll?: () => Array<SP.Data.TaxonomyHiddenListListItem>;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* TeamMembersListItemQuery
+**********************************************/
+export interface TeamMembersListItemQuery extends TeamMembersListItem {
+	TeamMember?: SP.Data.UserInfoItem;
+	TaxCatchAll?: Array<SP.Data.TaxonomyHiddenListListItem>;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * TestListItem
 **********************************************/
 export interface TestListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -3463,11 +4142,25 @@ export interface TestListItem extends SP.ListItem {
 }
 
 /*********************************************
+* TestListItemMethods
+**********************************************/
+export interface TestListItemMethods extends TestListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* TestListItemQuery
+**********************************************/
+export interface TestListItemQuery extends TestListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * TestProjectListItem
 **********************************************/
 export interface TestProjectListItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3524,12 +4217,25 @@ export interface TestProjectListItem extends SP.ListItem {
 }
 
 /*********************************************
+* TestProjectListItemMethods
+**********************************************/
+export interface TestProjectListItemMethods extends TestProjectListItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* TestProjectListItemQuery
+**********************************************/
+export interface TestProjectListItemQuery extends TestProjectListItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_themeItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_themeItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3590,12 +4296,27 @@ export interface OData__x005f_catalogs_x002f_themeItem extends SP.ListItem {
 }
 
 /*********************************************
-* Translation_x0020_PackagesItem
+* OData__x005f_catalogs_x002f_themeItemMethods
 **********************************************/
-export interface Translation_x0020_PackagesItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_themeItemMethods extends OData__x005f_catalogs_x002f_themeItem {
 	Author?: () => SP.Data.UserInfoItem;
 	Editor?: () => SP.Data.UserInfoItem;
 	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_themeItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_themeItemQuery extends OData__x005f_catalogs_x002f_themeItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Translation_x0020_PackagesItem
+**********************************************/
+export interface Translation_x0020_PackagesItem extends SP.ListItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3667,13 +4388,27 @@ export interface Translation_x0020_PackagesItem extends SP.ListItem {
 }
 
 /*********************************************
+* Translation_x0020_PackagesItemMethods
+**********************************************/
+export interface Translation_x0020_PackagesItemMethods extends Translation_x0020_PackagesItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Translation_x0020_PackagesItemQuery
+**********************************************/
+export interface Translation_x0020_PackagesItemQuery extends Translation_x0020_PackagesItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Translation_x0020_StatusItem
 **********************************************/
 export interface Translation_x0020_StatusItem extends SP.ListItem {
-	TranslationStateExportRequesting?: () => SP.Data.UserInfoItem;
-	TranslationStateImportRequesting?: () => SP.Data.UserInfoItem;
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3753,11 +4488,29 @@ export interface Translation_x0020_StatusItem extends SP.ListItem {
 }
 
 /*********************************************
+* Translation_x0020_StatusItemMethods
+**********************************************/
+export interface Translation_x0020_StatusItemMethods extends Translation_x0020_StatusItem {
+	TranslationStateExportRequesting?: () => SP.Data.UserInfoItem;
+	TranslationStateImportRequesting?: () => SP.Data.UserInfoItem;
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Translation_x0020_StatusItemQuery
+**********************************************/
+export interface Translation_x0020_StatusItemQuery extends Translation_x0020_StatusItem {
+	TranslationStateExportRequesting?: SP.Data.UserInfoItem;
+	TranslationStateImportRequesting?: SP.Data.UserInfoItem;
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Variation_x0020_LabelsItem
 **********************************************/
 export interface Variation_x0020_LabelsItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3825,12 +4578,25 @@ export interface Variation_x0020_LabelsItem extends SP.ListItem {
 }
 
 /*********************************************
+* Variation_x0020_LabelsItemMethods
+**********************************************/
+export interface Variation_x0020_LabelsItemMethods extends Variation_x0020_LabelsItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* Variation_x0020_LabelsItemQuery
+**********************************************/
+export interface Variation_x0020_LabelsItemQuery extends Variation_x0020_LabelsItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_wpItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_wpItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	CheckoutUser?: () => SP.Data.UserInfoItem;
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3898,12 +4664,27 @@ export interface OData__x005f_catalogs_x002f_wpItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_wfpubItem
+* OData__x005f_catalogs_x002f_wpItemMethods
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_wpItemMethods extends OData__x005f_catalogs_x002f_wpItem {
 	Author?: () => SP.Data.UserInfoItem;
 	Editor?: () => SP.Data.UserInfoItem;
 	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_wpItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wpItemQuery extends OData__x005f_catalogs_x002f_wpItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_wfpubItem
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3969,14 +4750,27 @@ export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_wfpubItemMethods
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wfpubItemMethods extends OData__x005f_catalogs_x002f_wfpubItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	CheckoutUser?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_wfpubItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wfpubItemQuery extends OData__x005f_catalogs_x002f_wfpubItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	CheckoutUser?: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * WorkflowTasksItem
 **********************************************/
 export interface WorkflowTasksItem extends SP.ListItem {
-	Author?: () => SP.Data.UserInfoItem;
-	Editor?: () => SP.Data.UserInfoItem;
-	Predecessors?: () => Array<SP.Data.WorkflowTasksItem>;
-	AssignedTo?: () => SP.Data.UserInfoItem;
-	TaskGroup?: () => SP.Data.UserInfoItem;
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -4040,4 +4834,26 @@ export interface WorkflowTasksItem extends SP.ListItem {
 	StartDate?: any;
 	DueDate?: any;
 	RelatedItems?: string;
+}
+
+/*********************************************
+* WorkflowTasksItemMethods
+**********************************************/
+export interface WorkflowTasksItemMethods extends WorkflowTasksItem {
+	Author?: () => SP.Data.UserInfoItem;
+	Editor?: () => SP.Data.UserInfoItem;
+	Predecessors?: () => Array<SP.Data.WorkflowTasksItem>;
+	AssignedTo?: () => SP.Data.UserInfoItem;
+	TaskGroup?: () => SP.Data.UserInfoItem;
+}
+
+/*********************************************
+* WorkflowTasksItemQuery
+**********************************************/
+export interface WorkflowTasksItemQuery extends WorkflowTasksItem {
+	Author?: SP.Data.UserInfoItem;
+	Editor?: SP.Data.UserInfoItem;
+	Predecessors?: Array<SP.Data.WorkflowTasksItem>;
+	AssignedTo?: SP.Data.UserInfoItem;
+	TaskGroup?: SP.Data.UserInfoItem;
 }

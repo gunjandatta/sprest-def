@@ -4,25 +4,50 @@
 * LimitedWebPartManager
 **********************************************/
 export interface LimitedWebPartManager {
-	WebParts?: () => Array<SP.WebParts.WebPartDefinition>;
 	HasPersonalizedParts?: boolean;
 	Scope?: number;
+}
+
+/*********************************************
+* LimitedWebPartManagerMethods
+**********************************************/
+export interface LimitedWebPartManagerMethods extends LimitedWebPartManager {
+	WebParts?: () => Array<SP.WebParts.WebPartDefinition>;
+}
+
+/*********************************************
+* LimitedWebPartManagerQuery
+**********************************************/
+export interface LimitedWebPartManagerQuery extends LimitedWebPartManager {
+	WebParts?: Array<SP.WebParts.WebPartDefinition>;
 }
 
 /*********************************************
 * WebPartDefinition
 **********************************************/
 export interface WebPartDefinition {
-	WebPart?: () => SP.WebParts.WebPart;
 	Id?: any;
 	ZoneId?: string;
+}
+
+/*********************************************
+* WebPartDefinitionMethods
+**********************************************/
+export interface WebPartDefinitionMethods extends WebPartDefinition {
+	WebPart?: () => SP.WebParts.WebPart;
+}
+
+/*********************************************
+* WebPartDefinitionQuery
+**********************************************/
+export interface WebPartDefinitionQuery extends WebPartDefinition {
+	WebPart?: SP.WebParts.WebPart;
 }
 
 /*********************************************
 * WebPart
 **********************************************/
 export interface WebPart {
-	Properties?: () => SP.PropertyValues;
 	ExportMode?: number;
 	Hidden?: boolean;
 	IsClosed?: boolean;
@@ -30,4 +55,18 @@ export interface WebPart {
 	Title?: string;
 	TitleUrl?: string;
 	ZoneIndex?: number;
+}
+
+/*********************************************
+* WebPartMethods
+**********************************************/
+export interface WebPartMethods extends WebPart {
+	Properties?: () => SP.PropertyValues;
+}
+
+/*********************************************
+* WebPartQuery
+**********************************************/
+export interface WebPartQuery extends WebPart {
+	Properties?: SP.PropertyValues;
 }

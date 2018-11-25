@@ -33,9 +33,23 @@ export interface SPOWebAppServicePrincipalPermissionRequest {
 * SPOWebAppServicePrincipal
 **********************************************/
 export interface SPOWebAppServicePrincipal {
-	PermissionGrants?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
-	PermissionRequests?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
 	AccountEnabled?: boolean;
 	AppId?: string;
 	ReplyUrls?: Array<string>;
+}
+
+/*********************************************
+* SPOWebAppServicePrincipalMethods
+**********************************************/
+export interface SPOWebAppServicePrincipalMethods extends SPOWebAppServicePrincipal {
+	PermissionGrants?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
+	PermissionRequests?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
+}
+
+/*********************************************
+* SPOWebAppServicePrincipalQuery
+**********************************************/
+export interface SPOWebAppServicePrincipalQuery extends SPOWebAppServicePrincipal {
+	PermissionGrants?: Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
+	PermissionRequests?: Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
 }

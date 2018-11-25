@@ -45,27 +45,66 @@ export interface WorkflowInstance {
 * WorkflowInstanceService
 **********************************************/
 export interface WorkflowInstanceService {
-	Current?: () => SP.WorkflowServices.WorkflowInstanceService;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* WorkflowInstanceServiceMethods
+**********************************************/
+export interface WorkflowInstanceServiceMethods extends WorkflowInstanceService {
+	Current?: () => SP.WorkflowServices.WorkflowInstanceService;
+}
+
+/*********************************************
+* WorkflowInstanceServiceQuery
+**********************************************/
+export interface WorkflowInstanceServiceQuery extends WorkflowInstanceService {
+	Current?: SP.WorkflowServices.WorkflowInstanceService;
 }
 
 /*********************************************
 * InteropService
 **********************************************/
 export interface InteropService {
-	Current?: () => SP.WorkflowServices.InteropService;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* InteropServiceMethods
+**********************************************/
+export interface InteropServiceMethods extends InteropService {
+	Current?: () => SP.WorkflowServices.InteropService;
+}
+
+/*********************************************
+* InteropServiceQuery
+**********************************************/
+export interface InteropServiceQuery extends InteropService {
+	Current?: SP.WorkflowServices.InteropService;
 }
 
 /*********************************************
 * WorkflowServicesManager
 **********************************************/
 export interface WorkflowServicesManager {
-	Current?: () => SP.WorkflowServices.WorkflowServicesManager;
 	AppId?: string;
 	IsConnected?: boolean;
 	ScopePath?: string;
 	ServiceHealthStatus?: number;
+}
+
+/*********************************************
+* WorkflowServicesManagerMethods
+**********************************************/
+export interface WorkflowServicesManagerMethods extends WorkflowServicesManager {
+	Current?: () => SP.WorkflowServices.WorkflowServicesManager;
+}
+
+/*********************************************
+* WorkflowServicesManagerQuery
+**********************************************/
+export interface WorkflowServicesManagerQuery extends WorkflowServicesManager {
+	Current?: SP.WorkflowServices.WorkflowServicesManager;
 }
 
 /*********************************************
@@ -88,8 +127,21 @@ export interface WorkflowSubscription {
 * WorkflowSubscriptionService
 **********************************************/
 export interface WorkflowSubscriptionService {
-	Current?: () => SP.WorkflowServices.WorkflowSubscriptionService;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* WorkflowSubscriptionServiceMethods
+**********************************************/
+export interface WorkflowSubscriptionServiceMethods extends WorkflowSubscriptionService {
+	Current?: () => SP.WorkflowServices.WorkflowSubscriptionService;
+}
+
+/*********************************************
+* WorkflowSubscriptionServiceQuery
+**********************************************/
+export interface WorkflowSubscriptionServiceQuery extends WorkflowSubscriptionService {
+	Current?: SP.WorkflowServices.WorkflowSubscriptionService;
 }
 
 /*********************************************

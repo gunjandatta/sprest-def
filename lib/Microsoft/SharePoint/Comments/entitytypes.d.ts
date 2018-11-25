@@ -5,8 +5,6 @@ import { Microsoft } from "../../../";
 * comment
 **********************************************/
 export interface comment {
-	likedBy?: () => Array<Microsoft.SharePoint.Likes.userEntity>;
-	replies?: () => Array<Microsoft.SharePoint.Comments.comment>;
 	author?: SP.Sharing.Principal;
 	createdDate?: any;
 	id?: string;
@@ -20,6 +18,22 @@ export interface comment {
 	relativeCreatedDate?: string;
 	replyCount?: number;
 	text?: string;
+}
+
+/*********************************************
+* commentMethods
+**********************************************/
+export interface commentMethods extends comment {
+	likedBy?: () => Array<Microsoft.SharePoint.Likes.userEntity>;
+	replies?: () => Array<Microsoft.SharePoint.Comments.comment>;
+}
+
+/*********************************************
+* commentQuery
+**********************************************/
+export interface commentQuery extends comment {
+	likedBy?: Array<Microsoft.SharePoint.Likes.userEntity>;
+	replies?: Array<Microsoft.SharePoint.Comments.comment>;
 }
 
 /*********************************************

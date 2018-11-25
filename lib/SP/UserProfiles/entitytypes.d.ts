@@ -92,8 +92,6 @@ export interface UserProfilePropertiesForUser {
 * UserProfile
 **********************************************/
 export interface UserProfile {
-	FollowedContent?: () => SP.UserProfiles.FollowedContent;
-	PersonalSite?: () => SP.Site;
 	AccountName?: string;
 	DisplayName?: string;
 	FollowPersonalSiteUrl?: string;
@@ -116,4 +114,20 @@ export interface UserProfile {
 	PublicUrl?: string;
 	SipAddress?: string;
 	UrlToCreatePersonalSite?: string;
+}
+
+/*********************************************
+* UserProfileMethods
+**********************************************/
+export interface UserProfileMethods extends UserProfile {
+	FollowedContent?: () => SP.UserProfiles.FollowedContent;
+	PersonalSite?: () => SP.Site;
+}
+
+/*********************************************
+* UserProfileQuery
+**********************************************/
+export interface UserProfileQuery extends UserProfile {
+	FollowedContent?: SP.UserProfiles.FollowedContent;
+	PersonalSite?: SP.Site;
 }

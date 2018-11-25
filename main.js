@@ -259,6 +259,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 // Parse the interfaces
                 for (let name in directories[dirName][filename]) {
                     let interface = directories[dirName][filename][name];
+                    let methods = [];
+                    let queryMethods = [];
                     let variables = [];
 
                     // Parse the properties
@@ -290,8 +292,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         methodType = methodInfo.isCollection ? "Array<" + methodInfo.type + ">" : methodInfo.type;
                                     }
 
-                                    // Add the method name
-                                    variables.push('\t' + methodName + '?: () => ' + methodType + ';');
+                                    // Add the method
+                                    methods.push('\t' + methodName + '?: () => ' + methodType + ';');
+                                    queryMethods.push('\t' + methodName + '?: ' + methodType + ';');
                                 }
                             }
 
@@ -326,6 +329,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                     // Add the content
                     content.push(create.interface(name, interface._BaseType, variables.join('\n')));
+
+                    // See if methods exist
+                    if (methods.length > 0) {
+                        // Add the content
+                        content.push(create.interface(name + "Methods", name, methods.join('\n')));
+                        content.push(create.interface(name + "Query", name, queryMethods.join('\n')));
+                    }
                 }
 
                 // Ensure content exists
