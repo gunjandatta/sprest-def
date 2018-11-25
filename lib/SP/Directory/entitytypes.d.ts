@@ -11,8 +11,8 @@ export interface DirectorySession {
 * Group
 **********************************************/
 export interface Group {
-	members?: () => SP.Directory.SP_Directory_Group_members_SP_Directory_User_membersPartner;
-	owners?: () => SP.Directory.SP_Directory_Group_owners_SP_Directory_User_ownersPartner;
+	members?: () => Array<SP.Directory.User>;
+	owners?: () => Array<SP.Directory.User>;
 	alias?: string;
 	allowToAddGuests?: boolean;
 	calendarUrl?: string;
@@ -39,9 +39,9 @@ export interface Group {
 * User
 **********************************************/
 export interface User {
-	membership?: () => SP.Directory.SP_Directory_User_membership_SP_Directory_Group_membershipPartner;
-	ownership?: () => SP.Directory.SP_Directory_User_ownership_SP_Directory_Group_ownershipPartner;
-	rankedMembership?: () => SP.Directory.SP_Directory_User_rankedMembership_SP_Directory_Group_rankedMembershipPartner;
+	membership?: () => Array<SP.Directory.Group>;
+	ownership?: () => Array<SP.Directory.Group>;
+	rankedMembership?: () => Array<SP.Directory.Group>;
 	aboutMe?: string;
 	accountEnabled?: boolean;
 	alias?: string;
@@ -96,7 +96,7 @@ export interface Link {
 * GroupAndUserStatus
 **********************************************/
 export interface GroupAndUserStatus {
-	Group?: () => SP.Directory.SP_Directory_GroupAndUserStatus_Group_SP_Directory_Group_GroupPartner;
+	Group?: () => SP.Directory.Group;
 	Status?: number;
 }
 

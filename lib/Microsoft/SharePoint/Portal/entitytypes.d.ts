@@ -53,7 +53,7 @@ export interface SharePointHomeServiceContextBuilder {
 * SharePointHomeServiceContext
 **********************************************/
 export interface SharePointHomeServiceContext {
-	Token?: () => SP.OAuth.Microsoft_SharePoint_Portal_SharePointHomeServiceContext_Token_SP_OAuth_TokenResponse_TokenPartner;
+	Token?: () => SP.OAuth.TokenResponse;
 	HomePageCache?: Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection;
 	HomePageContext?: Microsoft.SharePoint.Portal.Home.SharePointHomePageContext;
 	Payload?: string;

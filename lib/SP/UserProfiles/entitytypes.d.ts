@@ -92,8 +92,8 @@ export interface UserProfilePropertiesForUser {
 * UserProfile
 **********************************************/
 export interface UserProfile {
-	FollowedContent?: () => SP.UserProfiles.SP_UserProfiles_UserProfile_FollowedContent_SP_UserProfiles_FollowedContent_FollowedContentPartner;
-	PersonalSite?: () => SP.SP_UserProfiles_UserProfile_PersonalSite_SP_Site_PersonalSitePartner;
+	FollowedContent?: () => SP.UserProfiles.FollowedContent;
+	PersonalSite?: () => SP.Site;
 	AccountName?: string;
 	DisplayName?: string;
 	FollowPersonalSiteUrl?: string;

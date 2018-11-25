@@ -33,7 +33,7 @@ export interface FileService {
 * Folder
 **********************************************/
 export interface Folder extends MS.FileServices.FileSystemItem {
-	Children?: () => MS.FileServices.MS_FileServices_Folder_Children_MS_FileServices_FileSystemItem_ChildrenPartner;
+	Children?: () => Array<MS.FileServices.FileSystemItem>;
 	ChildrenCount?: number;
 }
 

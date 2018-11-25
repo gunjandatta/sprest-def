@@ -104,6 +104,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
     // Parse the xml
     parser(xml, function (err, xml) {
         let directories = {};
+        let methodTypes = {};
 
         // Parse the schemas
         let schemas = xml["edmx:Edmx"]["edmx:DataServices"][0].Schema;
@@ -127,67 +128,96 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 // See if this is a collection
                 if (value.length > 0) {
                     let collection = key + "s";
+                    let isAssociation = key == "Association";
 
                     // Parse the collection
                     for (let j = 0; j < value.length; j++) {
                         let interface = value[j];
 
-                        // Add the collection
-                        directories[ns][collection] = directories[ns][collection] || {};
+                        // See if this is not an association
+                        if (isAssociation) {
+                            var k = 0;
 
-                        // Validate the collection
-                        let name = interface.$ ? interface.$.Name : null;
-                        if (name) {
-                            // Add the interface
-                            directories[ns][collection][name] = {};
-
-                            // See if the base type exists and doesn't reference itself
-                            if (interface.$.BaseType && !interface.$.BaseType.endsWith(name)) {
-                                // Set the base type
-                                directories[ns][collection][name]._BaseType = interface.$.BaseType;
-                            }
-
-                            // Parse the methods
-                            let methods = interface.NavigationProperty || [];
-                            for (let k = 0; k < methods.length; k++) {
-                                let method = methods[k];
+                            // Parse the end points
+                            let endPoints = interface.End || [];
+                            for (let k = 0; k < endPoints.length; k++) {
+                                let endPoint = endPoints[k];
 
                                 // Get the method information
-                                let methodName = method.$ ? method.$.Name : null;
-                                let methodType = method.$ ? method.$.Relationship : null;
+                                let isCollection = endPoint.$ ? endPoint.$.Multiplicity == '*' : false;
+                                let name = interface.$ ? interface.$.Name : null;
+                                let role = endPoint.$ ? endPoint.$.Role : null;
+                                let type = endPoint.$ ? endPoint.$.Type : null;
 
-                                // Validate the method information
-                                if (methodName && methodType) {
-                                    // Ensure methods exist
-                                    directories[ns][collection][name]._Methods = directories[ns][collection][name]._Methods || {};
+                                // Ensure the name, role and type exist
+                                if (name && role && type) {
+                                    // Ensure method and name types exist
+                                    methodTypes[name] = methodTypes[name] || {};
 
                                     // Add the method
-                                    directories[ns][collection][name]._Methods[methodName] = methodType;
-                                } else { continue; }
-                            }
-
-                            // Parse the properties
-                            let properties = interface.Property || [];
-                            for (let k = 0; k < properties.length; k++) {
-                                let property = properties[k];
-
-                                // Ensure a name exists
-                                let propName = property.$ ? property.$.Name : null;
-                                if (propName) {
-                                    // Create the property
-                                    directories[ns][collection][name][propName] = {};
-                                } else { continue; }
-
-                                // Parse the attributes
-                                for (let prop in property.$) {
-                                    // Skip the name field
-                                    if (prop == "Name") { continue; }
-
-                                    // Add the property
-                                    directories[ns][collection][name][propName][prop] = property.$[prop];
+                                    methodTypes[name][role] = { isCollection, type };
                                 }
                             }
-                        } else { continue; }
+                        } else {
+                            // Add the collection
+                            directories[ns][collection] = directories[ns][collection] || {};
+
+                            // Validate the collection
+                            let name = interface.$ ? interface.$.Name : null;
+                            if (name) {
+                                // Add the interface
+                                directories[ns][collection][name] = {};
+
+                                // See if the base type exists and doesn't reference itself
+                                if (interface.$.BaseType && !interface.$.BaseType.endsWith(name)) {
+                                    // Set the base type
+                                    directories[ns][collection][name]._BaseType = interface.$.BaseType;
+                                }
+
+                                // Parse the methods
+                                let methods = interface.NavigationProperty || [];
+                                for (let k = 0; k < methods.length; k++) {
+                                    let method = methods[k];
+
+                                    // Get the method information
+                                    let methodName = method.$ ? method.$.Name : null;
+                                    let methodRole = method.$ ? method.$.ToRole : null;
+                                    let methodType = method.$ ? method.$.Relationship : null;
+
+                                    // Validate the method information
+                                    if (methodName && methodRole && methodType) {
+                                        // Ensure methods and method name exist
+                                        directories[ns][collection][name]._Methods = directories[ns][collection][name]._Methods || {};
+                                        directories[ns][collection][name]._Methods[methodName] = directories[ns][collection][name]._Methods[methodName] || {};
+
+                                        // Add the method
+                                        directories[ns][collection][name]._Methods[methodName][methodRole] = methodType;
+                                    } else { continue; }
+                                }
+
+                                // Parse the properties
+                                let properties = interface.Property || [];
+                                for (let k = 0; k < properties.length; k++) {
+                                    let property = properties[k];
+
+                                    // Ensure a name exists
+                                    let propName = property.$ ? property.$.Name : null;
+                                    if (propName) {
+                                        // Create the property
+                                        directories[ns][collection][name][propName] = {};
+                                    } else { continue; }
+
+                                    // Parse the attributes
+                                    for (let prop in property.$) {
+                                        // Skip the name field
+                                        if (prop == "Name") { continue; }
+
+                                        // Add the property
+                                        directories[ns][collection][name][propName][prop] = property.$[prop];
+                                    }
+                                }
+                            } else { continue; }
+                        }
                     }
                 }
             }
@@ -243,11 +273,26 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         }
 
                         // Skip the methods
-                        if(propName == "_Methods") {
+                        if (propName == "_Methods") {
                             // Parse the methods
-                            for(var methodName in prop) {
-                                // Add the method name
-                                variables.push('\t' + methodName + '?: () => ' + prop[methodName] + ';');
+                            for (var methodName in prop) {
+                                // Parse the method roles
+                                for (var methodRole in prop[methodName]) {
+                                    // Get the method type key
+                                    let methodKey = prop[methodName][methodRole].split('.');
+                                    methodKey = methodKey[methodKey.length - 1];
+
+                                    // See if the method information exists
+                                    let methodType = "any";
+                                    let methodInfo = methodTypes[methodKey][methodRole];
+                                    if (methodInfo) {
+                                        // Update the type
+                                        methodType = methodInfo.isCollection ? "Array<" + methodInfo.type + ">" : methodInfo.type;
+                                    }
+
+                                    // Add the method name
+                                    variables.push('\t' + methodName + '?: () => ' + methodType + ';');
+                                }
                             }
 
                             // Continue the loop

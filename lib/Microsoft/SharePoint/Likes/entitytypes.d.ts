@@ -4,7 +4,7 @@
 * likedByInformation
 **********************************************/
 export interface likedByInformation {
-	likedBy?: () => Microsoft.SharePoint.Likes.Microsoft_SharePoint_Likes_likedByInformation_likedBy_Microsoft_SharePoint_Likes_userEntity_likedByPartner;
+	likedBy?: () => Array<Microsoft.SharePoint.Likes.userEntity>;
 	isLikedByUser?: boolean;
 	likeCount?: number;
 }

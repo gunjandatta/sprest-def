@@ -45,7 +45,7 @@ export interface WorkflowInstance {
 * WorkflowInstanceService
 **********************************************/
 export interface WorkflowInstanceService {
-	Current?: () => SP.WorkflowServices.SP_WorkflowServices_WorkflowInstanceService_Current_SP_WorkflowServices_WorkflowInstanceService_CurrentPartner;
+	Current?: () => SP.WorkflowServices.WorkflowInstanceService;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -53,7 +53,7 @@ export interface WorkflowInstanceService {
 * InteropService
 **********************************************/
 export interface InteropService {
-	Current?: () => SP.WorkflowServices.SP_WorkflowServices_InteropService_Current_SP_WorkflowServices_InteropService_CurrentPartner;
+	Current?: () => SP.WorkflowServices.InteropService;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -61,7 +61,7 @@ export interface InteropService {
 * WorkflowServicesManager
 **********************************************/
 export interface WorkflowServicesManager {
-	Current?: () => SP.WorkflowServices.SP_WorkflowServices_WorkflowServicesManager_Current_SP_WorkflowServices_WorkflowServicesManager_CurrentPartner;
+	Current?: () => SP.WorkflowServices.WorkflowServicesManager;
 	AppId?: string;
 	IsConnected?: boolean;
 	ScopePath?: string;
@@ -88,7 +88,7 @@ export interface WorkflowSubscription {
 * WorkflowSubscriptionService
 **********************************************/
 export interface WorkflowSubscriptionService {
-	Current?: () => SP.WorkflowServices.SP_WorkflowServices_WorkflowSubscriptionService_Current_SP_WorkflowServices_WorkflowSubscriptionService_CurrentPartner;
+	Current?: () => SP.WorkflowServices.WorkflowSubscriptionService;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 

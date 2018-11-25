@@ -68,7 +68,7 @@ export interface LobSystem {
 * MethodExecutionResult
 **********************************************/
 export interface MethodExecutionResult {
-	ReturnParameterCollection?: () => SP.BusinessData.Runtime.SP_BusinessData_MethodExecutionResult_ReturnParameterCollection_SP_BusinessData_Runtime_EntityFieldValueDictionary_ReturnParameterCollectionPartner;
+	ReturnParameterCollection?: () => Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -76,7 +76,7 @@ export interface MethodExecutionResult {
 * EntityView
 **********************************************/
 export interface EntityView {
-	Fields?: () => SP.BusinessData.SP_BusinessData_EntityView_Fields_SP_BusinessData_EntityField_FieldsPartner;
+	Fields?: () => Array<SP.BusinessData.EntityField>;
 	Name?: string;
 	RelatedSpecificFinderName?: string;
 }

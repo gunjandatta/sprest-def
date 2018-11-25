@@ -158,11 +158,11 @@ export interface NameCriterion {
 * NonTaskDataReadResult
 **********************************************/
 export interface NonTaskDataReadResult {
-	AllLocatons?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_NonTaskDataReadResult_AllLocatons_SP_WorkManagement_OM_Location_AllLocatonsPartner;
-	PersistedProperties?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_NonTaskDataReadResult_PersistedProperties_SP_WorkManagement_OM_PersistedProperties_PersistedPropertiesPartner;
-	RefreshHistory?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_NonTaskDataReadResult_RefreshHistory_SP_WorkManagement_OM_RefreshHistory_RefreshHistoryPartner;
-	ScriptExtensions?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_NonTaskDataReadResult_ScriptExtensions_SP_WorkManagement_OM_DashboardScriptExtensionInfo_ScriptExtensionsPartner;
-	UserSettings?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_NonTaskDataReadResult_UserSettings_SP_WorkManagement_OM_UserSettings_UserSettingsPartner;
+	AllLocatons?: () => Array<SP.WorkManagement.OM.Location>;
+	PersistedProperties?: () => SP.WorkManagement.OM.PersistedProperties;
+	RefreshHistory?: () => SP.WorkManagement.OM.RefreshHistory;
+	ScriptExtensions?: () => Array<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
+	UserSettings?: () => SP.WorkManagement.OM.UserSettings;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -181,7 +181,7 @@ export interface PersistedProperties {
 * RefreshHistory
 **********************************************/
 export interface RefreshHistory {
-	Refreshes?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_RefreshHistory_Refreshes_SP_WorkManagement_OM_RefreshResult_RefreshesPartner;
+	Refreshes?: () => Array<SP.WorkManagement.OM.RefreshResult>;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -189,8 +189,8 @@ export interface RefreshHistory {
 * RefreshResult
 **********************************************/
 export interface RefreshResult {
-	ProviderStatuses?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_RefreshResult_ProviderStatuses_SP_WorkManagement_OM_ProviderRefreshStatus_ProviderStatusesPartner;
-	TaskChangesByLocation?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_RefreshResult_TaskChangesByLocation_SP_WorkManagement_OM_LocationUpdateResult_TaskChangesByLocationPartner;
+	ProviderStatuses?: () => Array<SP.WorkManagement.OM.ProviderRefreshStatus>;
+	TaskChangesByLocation?: () => Array<SP.WorkManagement.OM.LocationUpdateResult>;
 	AggregatorRefreshState?: number;
 	CorrelationId?: string;
 	RefreshFinished?: any;
@@ -244,7 +244,7 @@ export interface ProviderErrorInfo {
 * RefreshHealthInfo
 **********************************************/
 export interface RefreshHealthInfo {
-	ProviderErrors?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_RefreshHealthInfo_ProviderErrors_SP_WorkManagement_OM_ProviderErrorInfo_ProviderErrorsPartner;
+	ProviderErrors?: () => Array<SP.WorkManagement.OM.ProviderErrorInfo>;
 	LatestRefreshTime?: any;
 	NewTasks?: number;
 	Succeeded?: boolean;
@@ -268,8 +268,8 @@ export interface SortableSession extends SP.WorkManagement.OM.BaseSession {
 * SortableTaskQuery
 **********************************************/
 export interface SortableTaskQuery {
-	CoreQuery?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_SortableTaskQuery_CoreQuery_SP_WorkManagement_OM_TaskQuery_CoreQueryPartner;
-	Order?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_SortableTaskQuery_Order_SP_WorkManagement_OM_OrderInfo_OrderPartner;
+	CoreQuery?: () => SP.WorkManagement.OM.TaskQuery;
+	Order?: () => SP.WorkManagement.OM.OrderInfo;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -277,10 +277,10 @@ export interface SortableTaskQuery {
 * TaskQuery
 **********************************************/
 export interface TaskQuery {
-	CustomAttributeFilter?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskQuery_CustomAttributeFilter_SP_WorkManagement_OM_CustomAttributeFilter_CustomAttributeFilterPartner;
-	FieldFilter?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskQuery_FieldFilter_SP_WorkManagement_OM_TaskFilter_FieldFilterPartner;
-	LastModifiedDateRangeFilter?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskQuery_LastModifiedDateRangeFilter_SP_WorkManagement_OM_DateRangeCriterion_LastModifiedDateRangeFilterPartner;
-	LocationFilter?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskQuery_LocationFilter_SP_WorkManagement_OM_LocationFilter_LocationFilterPartner;
+	CustomAttributeFilter?: () => SP.WorkManagement.OM.CustomAttributeFilter;
+	FieldFilter?: () => SP.WorkManagement.OM.TaskFilter;
+	LastModifiedDateRangeFilter?: () => SP.WorkManagement.OM.DateRangeCriterion;
+	LocationFilter?: () => SP.WorkManagement.OM.LocationFilter;
 	KeywordFilter?: string;
 	LastQueryTime?: any;
 	PinnedFilter?: number;
@@ -290,11 +290,11 @@ export interface TaskQuery {
 * TaskFilter
 **********************************************/
 export interface TaskFilter {
-	CompletedCriterion?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskFilter_CompletedCriterion_SP_WorkManagement_OM_BooleanCriterion_CompletedCriterionPartner;
-	DueDateRangeCriterion?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskFilter_DueDateRangeCriterion_SP_WorkManagement_OM_DateRangeCriterion_DueDateRangeCriterionPartner;
-	IsNewCriterion?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskFilter_IsNewCriterion_SP_WorkManagement_OM_BooleanCriterion_IsNewCriterionPartner;
-	NameCriterion?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskFilter_NameCriterion_SP_WorkManagement_OM_NameCriterion_NameCriterionPartner;
-	StartDateRangeCriterion?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskFilter_StartDateRangeCriterion_SP_WorkManagement_OM_DateRangeCriterion_StartDateRangeCriterionPartner;
+	CompletedCriterion?: () => SP.WorkManagement.OM.BooleanCriterion;
+	DueDateRangeCriterion?: () => SP.WorkManagement.OM.DateRangeCriterion;
+	IsNewCriterion?: () => SP.WorkManagement.OM.BooleanCriterion;
+	NameCriterion?: () => SP.WorkManagement.OM.NameCriterion;
+	StartDateRangeCriterion?: () => SP.WorkManagement.OM.DateRangeCriterion;
 	CriterionConcatType?: number;
 	IdsToFilterBy?: Array<number>;
 }
@@ -303,7 +303,7 @@ export interface TaskFilter {
 * TaskQueryByLocationResult
 **********************************************/
 export interface TaskQueryByLocationResult {
-	Results?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskQueryByLocationResult_Results_SP_WorkManagement_OM_Task_ResultsPartner;
+	Results?: () => Array<SP.WorkManagement.OM.Task>;
 	Error?: number;
 	ErrorMessage?: string;
 }
@@ -312,7 +312,7 @@ export interface TaskQueryByLocationResult {
 * TaskQueryResult
 **********************************************/
 export interface TaskQueryResult {
-	Results?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskQueryResult_Results_SP_WorkManagement_OM_Task_ResultsPartner;
+	Results?: () => Array<SP.WorkManagement.OM.Task>;
 	Error?: number;
 	ErrorMessage?: string;
 }
@@ -321,7 +321,7 @@ export interface TaskQueryResult {
 * TaskRefreshResult
 **********************************************/
 export interface TaskRefreshResult {
-	Result?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskRefreshResult_Result_SP_WorkManagement_OM_Task_ResultPartner;
+	Result?: () => SP.WorkManagement.OM.Task;
 	ErrorCorrelationId?: string;
 	RefreshState?: number;
 }
@@ -330,7 +330,7 @@ export interface TaskRefreshResult {
 * TaskWriteResult
 **********************************************/
 export interface TaskWriteResult {
-	Result?: () => SP.WorkManagement.OM.SP_WorkManagement_OM_TaskWriteResult_Result_SP_WorkManagement_OM_Task_ResultPartner;
+	Result?: () => SP.WorkManagement.OM.Task;
 	Error?: number;
 	ErrorMessage?: string;
 }
