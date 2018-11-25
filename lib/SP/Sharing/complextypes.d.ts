@@ -217,6 +217,7 @@ export interface SharingLinkPasswordAbilityStatus extends SP.Sharing.SharingAbil
 export interface SharingInformationRequest {
 	clientSupportedFeatures?: string;
 	maxPrincipalsToReturn?: number;
+	populateInheritedLinks?: boolean;
 }
 
 /*********************************************

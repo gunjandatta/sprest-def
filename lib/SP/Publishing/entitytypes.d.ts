@@ -379,6 +379,8 @@ export interface VideoServiceDiscoverer {
 	ChannelUrlTemplate?: string;
 	IsFeedbackEnabled?: boolean;
 	IsLicensedForVideoPortal?: boolean;
+	IsMigratedToStream?: boolean;
+	IsO365VideoEnabled?: boolean;
 	IsVideoPortalEnabled?: boolean;
 	O365VideoPageUrl?: string;
 	PlayerUrlTemplate?: string;

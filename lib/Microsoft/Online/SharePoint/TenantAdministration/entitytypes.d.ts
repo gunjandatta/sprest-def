@@ -196,9 +196,11 @@ export interface Tenant {
 	BlockDownloadOfViewableFilesForGuests?: boolean;
 	BlockDownloadOfViewableFilesOnUnmanagedDevices?: boolean;
 	BlockMacSync?: boolean;
+	CommentsOnFilesDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
 	CompatibilityRange?: string;
 	ConditionalAccessPolicy?: number;
+	ContentTypeSyncSiteTemplatesList?: Array<string>;
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultLinkPermission?: number;
 	DefaultSharingLinkType?: number;
@@ -210,6 +212,7 @@ export interface Tenant {
 	EmailAttestationEnabled?: boolean;
 	EmailAttestationReAuthDays?: number;
 	EmailAttestationRequired?: boolean;
+	EnableAIPIntegration?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
 	EnableMinimumVersionRequirement?: boolean;
 	ExcludedFileExtensionsForSyncClient?: Array<string>;
@@ -230,6 +233,7 @@ export interface Tenant {
 	LegacyAuthProtocolsEnabled?: boolean;
 	LimitedAccessFileType?: number;
 	ManagedPathsForSiteCreation?: Array<string>;
+	MarkNewFilesSensitiveByDefault?: number;
 	MobileFriendlyUrlEnabledInTenant?: boolean;
 	NoAccessRedirectUrl?: string;
 	NotificationsInOneDriveForBusinessEnabled?: boolean;
@@ -238,6 +242,7 @@ export interface Tenant {
 	NotifyOwnersWhenItemsReshared?: boolean;
 	ODBAccessRequests?: number;
 	ODBMembersCanShare?: number;
+	ODBSharingCapability?: number;
 	OfficeClientADALDisabled?: boolean;
 	OneDriveForGuestsEnabled?: boolean;
 	OneDriveStorageQuota?: number;

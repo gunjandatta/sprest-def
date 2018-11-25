@@ -217,14 +217,15 @@ export interface SharedWithUser {
 **********************************************/
 export interface SharingLinkData {
 	BlocksDownload?: boolean;
+	Description?: string;
 	Expiration?: string;
 	HasExternalGuestInvitees?: boolean;
 	IsAnonymous?: boolean;
+	IsCreateOnlyLink?: boolean;
 	IsFormsLink?: boolean;
 	IsOriginatedFromSharingFlow?: boolean;
 	IsReviewLink?: boolean;
 	IsSharingLink?: boolean;
-	IsSubmitOnlyLink?: boolean;
 	IsWritable?: boolean;
 	LinkKind?: number;
 	ObjectType?: number;
@@ -248,11 +249,11 @@ export interface SharingLinkInfo {
 	HasExternalGuestInvitees?: boolean;
 	Invitations?: Array<SP.Sharing.LinkInvitation>;
 	IsActive?: boolean;
+	IsCreateOnlyLink?: boolean;
 	IsDefault?: boolean;
 	IsEditLink?: boolean;
 	IsFormsLink?: boolean;
 	IsReviewLink?: boolean;
-	IsSubmitOnlyLink?: boolean;
 	IsUnhealthy?: boolean;
 	LastModified?: string;
 	LastModifiedBy?: SP.Sharing.Principal;
@@ -786,6 +787,7 @@ export interface MediaServiceUpdateParameters {
 **********************************************/
 export interface MoveCopyOptions {
 	KeepBoth?: boolean;
+	ResetAuthorAndCreatedOnCopy?: boolean;
 }
 
 /*********************************************

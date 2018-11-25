@@ -96,3 +96,16 @@ export interface Sort {
 	Direction?: number;
 	Property?: string;
 }
+
+/*********************************************
+* PopularTenantQuery
+**********************************************/
+export interface PopularTenantQuery {
+	ClickCount?: number;
+	LCID?: number;
+	QueryCount?: number;
+	QueryText?: string;
+	SiteId?: any;
+	SourceId?: any;
+	WebId?: any;
+}

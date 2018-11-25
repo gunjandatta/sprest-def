@@ -286,7 +286,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     let methodType = "any";
                                     let methodInfo = methodTypes[methodKey][methodRole];
                                     if (methodInfo) {
-                                        // Update the type
+                                        // Update the method type
                                         methodType = methodInfo.isCollection ? "Array<" + methodInfo.type + ">" : methodInfo.type;
                                     }
 

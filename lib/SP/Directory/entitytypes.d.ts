@@ -60,6 +60,7 @@ export interface User {
 	principalName?: string;
 	responsibilities?: Array<string>;
 	schools?: Array<string>;
+	sharePointContentBarViewsTeachingBubble?: boolean;
 	sharePointConversationsLinkFirstRun?: boolean;
 	sharePointFiltersPaneFirstRun?: boolean;
 	sharePointFollowedDocumentsMigrated?: boolean;

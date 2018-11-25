@@ -433,7 +433,6 @@ export interface Project {
 	PlannerDecision?: number;
 	ProjectSiteUrl?: string;
 	ProjectType?: number;
-	ScheduledFromStart?: boolean;
 	SplitInProgress?: boolean;
 	SpreadActualCostsToStatus?: boolean;
 	SpreadPercentCompleteToStatus?: boolean;
@@ -496,6 +495,7 @@ export interface ProjectEngagement extends PS.Engagement {
 **********************************************/
 export interface EnterpriseProjectType {
 	ProjectDetailPages?: () => Array<PS.ProjectDetailPage>;
+	Departments?: Array<any>;
 	Description?: string;
 	Id?: any;
 	ImageUrl?: string;
@@ -734,6 +734,7 @@ export interface PublishedProject extends PS.Project {
 	OwnerId?: string;
 	ProjectIdentifier?: string;
 	ProtectedActualsSynch?: boolean;
+	ScheduledFromStart?: boolean;
 	ShowEstimatedDurations?: boolean;
 	StartDate?: any;
 	StatusDate?: any;
@@ -948,6 +949,7 @@ export interface DraftProject extends PS.Project {
 	OwnerId?: string;
 	ProjectIdentifier?: string;
 	ProtectedActualsSynch?: boolean;
+	ScheduledFromStart?: boolean;
 	ShowEstimatedDurations?: boolean;
 	StartDate?: any;
 	StatusDate?: any;

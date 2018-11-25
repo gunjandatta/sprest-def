@@ -6,7 +6,9 @@
 export interface SPOWebAppServicePrincipalPermissionGrant {
 	ClientId?: string;
 	ConsentType?: string;
+	IsDomainIsolated?: boolean;
 	ObjectId?: string;
+	PackageName?: string;
 	Resource?: string;
 	ResourceId?: string;
 	Scope?: string;
@@ -17,6 +19,7 @@ export interface SPOWebAppServicePrincipalPermissionGrant {
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequest {
 	Id?: any;
+	IsDomainIsolated?: boolean;
 	PackageApproverName?: string;
 	PackageName?: string;
 	PackageVersion?: string;

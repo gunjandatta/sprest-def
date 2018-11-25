@@ -29,6 +29,7 @@ export interface ContentDbSchemaVersion {
 **********************************************/
 export interface JobEntityData {
 	Option?: number;
+	Reserve?: string;
 }
 
 /*********************************************
@@ -46,7 +47,6 @@ export interface MoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.
 	Notify?: string;
 	PreferredMoveBeginDateInUtc?: any;
 	PreferredMoveEndDateInUtc?: any;
-	Reserve?: string;
 	SiteId?: any;
 	SourceDataLocation?: string;
 	State?: number;
@@ -199,6 +199,7 @@ export interface GeoMoveTenantCompatibilityCheck {
 export interface GeoTenantInstanceInformationEntityData {
 	GeoLocation?: string;
 	InstanceId?: any;
+	InstanceState?: number;
 	IsCurrentUserGeoAdministrator?: boolean;
 	IsDefaultGeoLocation?: boolean;
 	MySiteHostDomain?: string;
@@ -273,7 +274,6 @@ export interface MultiGeoServicesBeta {
 	StorageQuotas?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota>;
 	TaxonomyReplicationParameters?: () => Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters;
 	TenantInformationCollection?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
-	TenantRenameJobs?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.TenantRenameJob>;
 	UnifiedGroups?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup>;
 	UserMoveJobs?: () => Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>;
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
@@ -293,8 +293,8 @@ export interface SiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servic
 * SiteRenameJobEntityData
 **********************************************/
 export interface SiteRenameJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData {
-	Reserved?: string;
 	SourceSiteUrl?: string;
+	TargetSiteTitle?: string;
 	TargetSiteUrl?: string;
 }
 
@@ -339,27 +339,6 @@ export interface TenantInformation {
 	PortalDomain?: string;
 	RootSiteDomain?: string;
 	TenantAdminDomain?: string;
-}
-
-/*********************************************
-* TenantRenameJobEntityData
-**********************************************/
-export interface TenantRenameJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData {
-	SourceAdminSiteUrl?: string;
-	SourceMySiteHostUrl?: string;
-	SourceRootSiteUrl?: string;
-	TargetAdminSiteUrl?: string;
-	TargetMySiteHostUrl?: string;
-	TargetRootSiteUrl?: string;
-}
-
-/*********************************************
-* TenantRenameJob
-**********************************************/
-export interface TenantRenameJob extends Microsoft.Online.SharePoint.MultiGeo.Service.TenantRenameJobEntityData {
-	JobId?: any;
-	JobState?: string;
-	TriggeredBy?: string;
 }
 
 /*********************************************

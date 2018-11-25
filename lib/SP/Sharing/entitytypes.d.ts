@@ -60,6 +60,7 @@ export interface SharingInformation {
 	canSendEmail?: boolean;
 	canUseSimplifiedRoles?: boolean;
 	currentRole?: number;
+	customizedExternalSharingServiceUrl?: string;
 	defaultLinkKind?: number;
 	defaultShareLinkPermission?: number;
 	directUrl?: string;

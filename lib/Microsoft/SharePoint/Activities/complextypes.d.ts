@@ -17,6 +17,7 @@ export interface ActionFacet {
 	pointInTimeRestore?: Microsoft.SharePoint.Activities.PointInTimeRestoreFacet;
 	rename?: Microsoft.SharePoint.Activities.RenameFacet;
 	restore?: Microsoft.SharePoint.Activities.RestoreFacet;
+	restoreVersion?: Microsoft.SharePoint.Activities.RestoreVersionFacet;
 	share?: Microsoft.SharePoint.Activities.SharingFacet;
 	version?: Microsoft.SharePoint.Activities.VersionFacet;
 }
@@ -128,6 +129,13 @@ export interface RenameFacet {
 **********************************************/
 export interface RestoreFacet {
 
+}
+
+/*********************************************
+* RestoreVersionFacet
+**********************************************/
+export interface RestoreVersionFacet {
+	fromVersion?: string;
 }
 
 /*********************************************

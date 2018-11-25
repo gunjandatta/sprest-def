@@ -63,8 +63,10 @@ export interface Office365Tenant {
 	BlockDownloadOfViewableFilesForGuests?: boolean;
 	BlockDownloadOfViewableFilesOnUnmanagedDevices?: boolean;
 	BlockMacSync?: boolean;
+	CommentsOnFilesDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
 	ConditionalAccessPolicy?: number;
+	ContentTypeSyncSiteTemplatesList?: Array<string>;
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultLinkPermission?: number;
 	DefaultSharingLinkType?: number;
@@ -96,6 +98,7 @@ export interface Office365Tenant {
 	NotifyOwnersWhenItemsReshared?: boolean;
 	ODBAccessRequests?: number;
 	ODBMembersCanShare?: number;
+	ODBSharingCapability?: number;
 	OfficeClientADALDisabled?: boolean;
 	OneDriveForGuestsEnabled?: boolean;
 	OwnerAnonymousNotification?: boolean;

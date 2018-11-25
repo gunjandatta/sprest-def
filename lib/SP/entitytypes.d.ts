@@ -767,6 +767,7 @@ export interface Web extends SP.SecurableObject {
 	WebInfos?: () => Array<SP.WebInformation>;
 	WorkflowAssociations?: () => Array<SP.Workflow.WorkflowAssociation>;
 	WorkflowTemplates?: () => Array<SP.Workflow.WorkflowTemplate>;
+	AccessRequestSiteDescription?: string;
 	AllowAutomaticASPXPageIndexing?: boolean;
 	AllowCreateDeclarativeWorkflowForCurrentUser?: boolean;
 	AllowDesignerForCurrentUser?: boolean;
@@ -812,6 +813,7 @@ export interface Web extends SP.SecurableObject {
 	OverwriteTranslationsOnChange?: boolean;
 	ResourcePath?: SP.ResourcePath;
 	PreviewFeaturesEnabled?: boolean;
+	PrimaryColor?: string;
 	QuickLaunchEnabled?: boolean;
 	RecycleBinEnabled?: boolean;
 	RequestAccessEmail?: string;
@@ -832,6 +834,7 @@ export interface Web extends SP.SecurableObject {
 	UIVersion?: number;
 	UIVersionConfigurationEnabled?: boolean;
 	Url?: string;
+	UseAccessRequestDefault?: boolean;
 	WebTemplate?: string;
 	WelcomePage?: string;
 }

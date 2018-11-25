@@ -120,6 +120,7 @@ export interface EngagementTimephasedPeriodCreationInformation {
 * EnterpriseProjectTypeCreationInformation
 **********************************************/
 export interface EnterpriseProjectTypeCreationInformation {
+	DepartmentIds?: Array<any>;
 	Description?: string;
 	Id?: any;
 	ImageUrl?: string;
