@@ -120,14 +120,14 @@ export interface UserProfile {
 * UserProfileCollections
 **********************************************/
 export interface UserProfileCollections {
-	FollowedContent?: () => SP.UserProfiles.FollowedContent;
-	PersonalSite?: () => SP.Site;
+	FollowedContent<T=SP.UserProfiles.FollowedContent>(): T;
+	PersonalSite<T=SP.Site>(): T;
 }
 
 /*********************************************
 * UserProfileQuery
 **********************************************/
 export interface UserProfileQuery {
-	FollowedContent?: SP.UserProfiles.FollowedContent;
-	PersonalSite?: SP.Site;
+	FollowedContent<T=SP.UserProfiles.FollowedContent>(): T;
+	PersonalSite<T=SP.Site>(): T;
 }

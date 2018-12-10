@@ -75,14 +75,14 @@ export interface MethodExecutionResult {
 * MethodExecutionResultCollections
 **********************************************/
 export interface MethodExecutionResultCollections {
-	ReturnParameterCollection?: () => Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+	ReturnParameterCollection<T=Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>>(): T;
 }
 
 /*********************************************
 * MethodExecutionResultQuery
 **********************************************/
 export interface MethodExecutionResultQuery {
-	ReturnParameterCollection?: Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+	ReturnParameterCollection<T=Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>>(): T;
 }
 
 /*********************************************
@@ -97,14 +97,14 @@ export interface EntityView {
 * EntityViewCollections
 **********************************************/
 export interface EntityViewCollections {
-	Fields?: () => Array<SP.BusinessData.EntityField>;
+	Fields<T=Array<SP.BusinessData.EntityField>>(): T;
 }
 
 /*********************************************
 * EntityViewQuery
 **********************************************/
 export interface EntityViewQuery {
-	Fields?: Array<SP.BusinessData.EntityField>;
+	Fields<T=Array<SP.BusinessData.EntityField>>(): T;
 }
 
 /*********************************************

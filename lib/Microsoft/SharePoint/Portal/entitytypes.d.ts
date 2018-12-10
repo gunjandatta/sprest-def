@@ -64,14 +64,14 @@ export interface SharePointHomeServiceContext {
 * SharePointHomeServiceContextCollections
 **********************************************/
 export interface SharePointHomeServiceContextCollections {
-	Token?: () => SP.OAuth.TokenResponse;
+	Token<T=SP.OAuth.TokenResponse>(): T;
 }
 
 /*********************************************
 * SharePointHomeServiceContextQuery
 **********************************************/
 export interface SharePointHomeServiceContextQuery {
-	Token?: SP.OAuth.TokenResponse;
+	Token<T=SP.OAuth.TokenResponse>(): T;
 }
 
 /*********************************************

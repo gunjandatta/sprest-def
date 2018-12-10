@@ -40,14 +40,14 @@ export interface Folder extends MS.FileServices.FileSystemItem {
 * FolderCollections
 **********************************************/
 export interface FolderCollections {
-	Children?: () => Array<MS.FileServices.FileSystemItem>;
+	Children<T=Array<MS.FileServices.FileSystemItem>>(): T;
 }
 
 /*********************************************
 * FolderQuery
 **********************************************/
 export interface FolderQuery {
-	Children?: Array<MS.FileServices.FileSystemItem>;
+	Children<T=Array<MS.FileServices.FileSystemItem>>(): T;
 }
 
 /*********************************************

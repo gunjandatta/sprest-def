@@ -69,14 +69,14 @@ export interface Assignment {
 * AssignmentCollections
 **********************************************/
 export interface AssignmentCollections {
-	CustomFields?: () => Array<PS.CustomField>;
+	CustomFields<T=Array<PS.CustomField>>(): T;
 }
 
 /*********************************************
 * AssignmentQuery
 **********************************************/
 export interface AssignmentQuery {
-	CustomFields?: Array<PS.CustomField>;
+	CustomFields<T=Array<PS.CustomField>>(): T;
 }
 
 /*********************************************
@@ -113,18 +113,18 @@ export interface CustomField {
 * CustomFieldCollections
 **********************************************/
 export interface CustomFieldCollections {
-	EntityType?: () => PS.EntityType;
-	LookupEntries?: () => Array<PS.LookupEntry>;
-	LookupTable?: () => PS.LookupTable;
+	EntityType<T=PS.EntityType>(): T;
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
+	LookupTable<T=PS.LookupTable>(): T;
 }
 
 /*********************************************
 * CustomFieldQuery
 **********************************************/
 export interface CustomFieldQuery {
-	EntityType?: PS.EntityType;
-	LookupEntries?: Array<PS.LookupEntry>;
-	LookupTable?: PS.LookupTable;
+	EntityType<T=PS.EntityType>(): T;
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
+	LookupTable<T=PS.LookupTable>(): T;
 }
 
 /*********************************************
@@ -155,14 +155,14 @@ export interface LookupTable {
 * LookupTableCollections
 **********************************************/
 export interface LookupTableCollections {
-	Entries?: () => Array<PS.LookupEntry>;
+	Entries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
 * LookupTableQuery
 **********************************************/
 export interface LookupTableQuery {
-	Entries?: Array<PS.LookupEntry>;
+	Entries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
@@ -195,14 +195,14 @@ export interface CalendarException {
 * CalendarExceptionCollections
 **********************************************/
 export interface CalendarExceptionCollections {
-	Calendar?: () => PS.Calendar;
+	Calendar<T=PS.Calendar>(): T;
 }
 
 /*********************************************
 * CalendarExceptionQuery
 **********************************************/
 export interface CalendarExceptionQuery {
-	Calendar?: PS.Calendar;
+	Calendar<T=PS.Calendar>(): T;
 }
 
 /*********************************************
@@ -221,14 +221,14 @@ export interface Calendar {
 * CalendarCollections
 **********************************************/
 export interface CalendarCollections {
-	BaseCalendarExceptions?: () => Array<PS.CalendarException>;
+	BaseCalendarExceptions<T=Array<PS.CalendarException>>(): T;
 }
 
 /*********************************************
 * CalendarQuery
 **********************************************/
 export interface CalendarQuery {
-	BaseCalendarExceptions?: Array<PS.CalendarException>;
+	BaseCalendarExceptions<T=Array<PS.CalendarException>>(): T;
 }
 
 /*********************************************
@@ -288,20 +288,20 @@ export interface DraftAssignment extends PS.Assignment {
 * DraftAssignmentCollections
 **********************************************/
 export interface DraftAssignmentCollections {
-	Owner?: () => SP.User;
-	Parent?: () => PS.DraftAssignment;
-	Resource?: () => PS.DraftProjectResource;
-	Task?: () => PS.DraftTask;
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.DraftAssignment>(): T;
+	Resource<T=PS.DraftProjectResource>(): T;
+	Task<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
 * DraftAssignmentQuery
 **********************************************/
 export interface DraftAssignmentQuery {
-	Owner?: SP.User;
-	Parent?: PS.DraftAssignment;
-	Resource?: PS.DraftProjectResource;
-	Task?: PS.DraftTask;
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.DraftAssignment>(): T;
+	Resource<T=PS.DraftProjectResource>(): T;
+	Task<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
@@ -376,16 +376,16 @@ export interface ProjectResource {
 * ProjectResourceCollections
 **********************************************/
 export interface ProjectResourceCollections {
-	CustomFields?: () => Array<PS.CustomField>;
-	EnterpriseResource?: () => PS.EnterpriseResource;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseResource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
 * ProjectResourceQuery
 **********************************************/
 export interface ProjectResourceQuery {
-	CustomFields?: Array<PS.CustomField>;
-	EnterpriseResource?: PS.EnterpriseResource;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseResource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
@@ -425,34 +425,34 @@ export interface EnterpriseResource {
 * EnterpriseResourceCollections
 **********************************************/
 export interface EnterpriseResourceCollections {
-	Assignments?: () => Array<PS.StatusAssignment>;
-	BaseCalendar?: () => PS.Calendar;
-	CostRateTables?: () => Array<PS.EnterpriseResourceCostRateTable>;
-	CustomFields?: () => Array<PS.CustomField>;
-	DefaultAssignmentOwner?: () => SP.User;
-	Engagements?: () => Array<PS.ResourceEngagement>;
-	UserPermissions?: () => Array<PS.UserPermission>;
-	ResourceCalendarExceptions?: () => Array<PS.CalendarException>;
-	Self?: () => PS.EnterpriseResource;
-	TimesheetManager?: () => SP.User;
-	User?: () => SP.User;
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
+	BaseCalendar<T=PS.Calendar>(): T;
+	CostRateTables<T=Array<PS.EnterpriseResourceCostRateTable>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
+	Engagements<T=Array<PS.ResourceEngagement>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	ResourceCalendarExceptions<T=Array<PS.CalendarException>>(): T;
+	Self<T=PS.EnterpriseResource>(): T;
+	TimesheetManager<T=SP.User>(): T;
+	User<T=SP.User>(): T;
 }
 
 /*********************************************
 * EnterpriseResourceQuery
 **********************************************/
 export interface EnterpriseResourceQuery {
-	Assignments?: Array<PS.StatusAssignment>;
-	BaseCalendar?: PS.Calendar;
-	CostRateTables?: Array<PS.EnterpriseResourceCostRateTable>;
-	CustomFields?: Array<PS.CustomField>;
-	DefaultAssignmentOwner?: SP.User;
-	Engagements?: Array<PS.ResourceEngagement>;
-	UserPermissions?: Array<PS.UserPermission>;
-	ResourceCalendarExceptions?: Array<PS.CalendarException>;
-	Self?: PS.EnterpriseResource;
-	TimesheetManager?: SP.User;
-	User?: SP.User;
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
+	BaseCalendar<T=PS.Calendar>(): T;
+	CostRateTables<T=Array<PS.EnterpriseResourceCostRateTable>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
+	Engagements<T=Array<PS.ResourceEngagement>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	ResourceCalendarExceptions<T=Array<PS.CalendarException>>(): T;
+	Self<T=PS.EnterpriseResource>(): T;
+	TimesheetManager<T=SP.User>(): T;
+	User<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -497,22 +497,22 @@ export interface StatusAssignment {
 * StatusAssignmentCollections
 **********************************************/
 export interface StatusAssignmentCollections {
-	CustomFields?: () => Array<PS.CustomField>;
-	History?: () => Array<PS.StatusAssignmentHistoryLine>;
-	Project?: () => PS.PublishedProject;
-	Resource?: () => PS.EnterpriseResource;
-	Task?: () => PS.StatusTask;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	History<T=Array<PS.StatusAssignmentHistoryLine>>(): T;
+	Project<T=PS.PublishedProject>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	Task<T=PS.StatusTask>(): T;
 }
 
 /*********************************************
 * StatusAssignmentQuery
 **********************************************/
 export interface StatusAssignmentQuery {
-	CustomFields?: Array<PS.CustomField>;
-	History?: Array<PS.StatusAssignmentHistoryLine>;
-	Project?: PS.PublishedProject;
-	Resource?: PS.EnterpriseResource;
-	Task?: PS.StatusTask;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	History<T=Array<PS.StatusAssignmentHistoryLine>>(): T;
+	Project<T=PS.PublishedProject>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	Task<T=PS.StatusTask>(): T;
 }
 
 /*********************************************
@@ -530,14 +530,14 @@ export interface StatusAssignmentHistoryLine {
 * StatusAssignmentHistoryLineCollections
 **********************************************/
 export interface StatusAssignmentHistoryLineCollections {
-	Author?: () => SP.User;
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
 * StatusAssignmentHistoryLineQuery
 **********************************************/
 export interface StatusAssignmentHistoryLineQuery {
-	Author?: SP.User;
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -586,30 +586,30 @@ export interface Project {
 * ProjectCollections
 **********************************************/
 export interface ProjectCollections {
-	CheckedOutBy?: () => SP.User;
-	CustomFields?: () => Array<PS.CustomField>;
-	Engagements?: () => Array<PS.ProjectEngagement>;
-	EnterpriseProjectType?: () => PS.EnterpriseProjectType;
-	UserPermissions?: () => Array<PS.UserPermission>;
-	Phase?: () => PS.Phase;
-	ProjectSummaryTask?: () => PS.ProjectSummaryTask;
-	QueueJobs?: () => Array<PS.QueueJob>;
-	Stage?: () => PS.Stage;
+	CheckedOutBy<T=SP.User>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Engagements<T=Array<PS.ProjectEngagement>>(): T;
+	EnterpriseProjectType<T=PS.EnterpriseProjectType>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectSummaryTask<T=PS.ProjectSummaryTask>(): T;
+	QueueJobs<T=Array<PS.QueueJob>>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
 * ProjectQuery
 **********************************************/
 export interface ProjectQuery {
-	CheckedOutBy?: SP.User;
-	CustomFields?: Array<PS.CustomField>;
-	Engagements?: Array<PS.ProjectEngagement>;
-	EnterpriseProjectType?: PS.EnterpriseProjectType;
-	UserPermissions?: Array<PS.UserPermission>;
-	Phase?: PS.Phase;
-	ProjectSummaryTask?: PS.ProjectSummaryTask;
-	QueueJobs?: Array<PS.QueueJob>;
-	Stage?: PS.Stage;
+	CheckedOutBy<T=SP.User>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Engagements<T=Array<PS.ProjectEngagement>>(): T;
+	EnterpriseProjectType<T=PS.EnterpriseProjectType>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectSummaryTask<T=PS.ProjectSummaryTask>(): T;
+	QueueJobs<T=Array<PS.QueueJob>>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
@@ -630,24 +630,24 @@ export interface Engagement {
 * EngagementCollections
 **********************************************/
 export interface EngagementCollections {
-	Comments?: () => Array<PS.EngagementComment>;
-	ModifiedBy?: () => SP.User;
-	Project?: () => PS.Project;
-	Resource?: () => PS.EnterpriseResource;
-	ReviewedBy?: () => SP.User;
-	SubmittedBy?: () => SP.User;
+	Comments<T=Array<PS.EngagementComment>>(): T;
+	ModifiedBy<T=SP.User>(): T;
+	Project<T=PS.Project>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	ReviewedBy<T=SP.User>(): T;
+	SubmittedBy<T=SP.User>(): T;
 }
 
 /*********************************************
 * EngagementQuery
 **********************************************/
 export interface EngagementQuery {
-	Comments?: Array<PS.EngagementComment>;
-	ModifiedBy?: SP.User;
-	Project?: PS.Project;
-	Resource?: PS.EnterpriseResource;
-	ReviewedBy?: SP.User;
-	SubmittedBy?: SP.User;
+	Comments<T=Array<PS.EngagementComment>>(): T;
+	ModifiedBy<T=SP.User>(): T;
+	Project<T=PS.Project>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	ReviewedBy<T=SP.User>(): T;
+	SubmittedBy<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -663,14 +663,14 @@ export interface EngagementComment {
 * EngagementCommentCollections
 **********************************************/
 export interface EngagementCommentCollections {
-	Author?: () => SP.User;
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
 * EngagementCommentQuery
 **********************************************/
 export interface EngagementCommentQuery {
-	Author?: SP.User;
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -719,14 +719,14 @@ export interface EnterpriseProjectType {
 * EnterpriseProjectTypeCollections
 **********************************************/
 export interface EnterpriseProjectTypeCollections {
-	ProjectDetailPages?: () => Array<PS.ProjectDetailPage>;
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
 }
 
 /*********************************************
 * EnterpriseProjectTypeQuery
 **********************************************/
 export interface EnterpriseProjectTypeQuery {
-	ProjectDetailPages?: Array<PS.ProjectDetailPage>;
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
 }
 
 /*********************************************
@@ -742,14 +742,14 @@ export interface ProjectDetailPage {
 * ProjectDetailPageCollections
 **********************************************/
 export interface ProjectDetailPageCollections {
-	Item?: () => SP.ListItem;
+	Item<T=SP.ListItem>(): T;
 }
 
 /*********************************************
 * ProjectDetailPageQuery
 **********************************************/
 export interface ProjectDetailPageQuery {
-	Item?: SP.ListItem;
+	Item<T=SP.ListItem>(): T;
 }
 
 /*********************************************
@@ -773,14 +773,14 @@ export interface Phase {
 * PhaseCollections
 **********************************************/
 export interface PhaseCollections {
-	Stages?: () => Array<PS.Stage>;
+	Stages<T=Array<PS.Stage>>(): T;
 }
 
 /*********************************************
 * PhaseQuery
 **********************************************/
 export interface PhaseQuery {
-	Stages?: Array<PS.Stage>;
+	Stages<T=Array<PS.Stage>>(): T;
 }
 
 /*********************************************
@@ -799,20 +799,20 @@ export interface Stage {
 * StageCollections
 **********************************************/
 export interface StageCollections {
-	CustomFields?: () => Array<PS.StageCustomField>;
-	Phase?: () => PS.Phase;
-	ProjectDetailPages?: () => Array<PS.StageDetailPage>;
-	WorkflowStatusPage?: () => PS.ProjectDetailPage;
+	CustomFields<T=Array<PS.StageCustomField>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectDetailPages<T=Array<PS.StageDetailPage>>(): T;
+	WorkflowStatusPage<T=PS.ProjectDetailPage>(): T;
 }
 
 /*********************************************
 * StageQuery
 **********************************************/
 export interface StageQuery {
-	CustomFields?: Array<PS.StageCustomField>;
-	Phase?: PS.Phase;
-	ProjectDetailPages?: Array<PS.StageDetailPage>;
-	WorkflowStatusPage?: PS.ProjectDetailPage;
+	CustomFields<T=Array<PS.StageCustomField>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectDetailPages<T=Array<PS.StageDetailPage>>(): T;
+	WorkflowStatusPage<T=PS.ProjectDetailPage>(): T;
 }
 
 /*********************************************
@@ -829,14 +829,14 @@ export interface StageCustomField {
 * StageCustomFieldCollections
 **********************************************/
 export interface StageCustomFieldCollections {
-	Stage?: () => PS.Stage;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
 * StageCustomFieldQuery
 **********************************************/
 export interface StageCustomFieldQuery {
-	Stage?: PS.Stage;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
@@ -853,16 +853,16 @@ export interface StageDetailPage {
 * StageDetailPageCollections
 **********************************************/
 export interface StageDetailPageCollections {
-	Page?: () => PS.ProjectDetailPage;
-	Stage?: () => PS.Stage;
+	Page<T=PS.ProjectDetailPage>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
 * StageDetailPageQuery
 **********************************************/
 export interface StageDetailPageQuery {
-	Page?: PS.ProjectDetailPage;
-	Stage?: PS.Stage;
+	Page<T=PS.ProjectDetailPage>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
@@ -980,16 +980,16 @@ export interface Task {
 * TaskCollections
 **********************************************/
 export interface TaskCollections {
-	CustomFields?: () => Array<PS.CustomField>;
-	SubProject?: () => PS.PublishedProject;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	SubProject<T=PS.PublishedProject>(): T;
 }
 
 /*********************************************
 * TaskQuery
 **********************************************/
 export interface TaskQuery {
-	CustomFields?: Array<PS.CustomField>;
-	SubProject?: PS.PublishedProject;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	SubProject<T=PS.PublishedProject>(): T;
 }
 
 /*********************************************
@@ -1037,32 +1037,32 @@ export interface PublishedProject extends PS.Project {
 * PublishedProjectCollections
 **********************************************/
 export interface PublishedProjectCollections {
-	Assignments?: () => Array<PS.PublishedAssignment>;
-	Calendar?: () => PS.Calendar;
-	Draft?: () => PS.DraftProject;
-	EntityLinks?: () => Array<PS.EntityLink>;
-	IncludeCustomFields?: () => PS.PublishedProject;
-	Owner?: () => SP.User;
-	ProjectResources?: () => Array<PS.PublishedProjectResource>;
-	ProjectWorkflowInstance?: () => PS.ProjectWorkflowInstance;
-	TaskLinks?: () => Array<PS.PublishedTaskLink>;
-	Tasks?: () => Array<PS.PublishedTask>;
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Draft<T=PS.DraftProject>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	IncludeCustomFields<T=PS.PublishedProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.PublishedProjectResource>>(): T;
+	ProjectWorkflowInstance<T=PS.ProjectWorkflowInstance>(): T;
+	TaskLinks<T=Array<PS.PublishedTaskLink>>(): T;
+	Tasks<T=Array<PS.PublishedTask>>(): T;
 }
 
 /*********************************************
 * PublishedProjectQuery
 **********************************************/
 export interface PublishedProjectQuery {
-	Assignments?: Array<PS.PublishedAssignment>;
-	Calendar?: PS.Calendar;
-	Draft?: PS.DraftProject;
-	EntityLinks?: Array<PS.EntityLink>;
-	IncludeCustomFields?: PS.PublishedProject;
-	Owner?: SP.User;
-	ProjectResources?: Array<PS.PublishedProjectResource>;
-	ProjectWorkflowInstance?: PS.ProjectWorkflowInstance;
-	TaskLinks?: Array<PS.PublishedTaskLink>;
-	Tasks?: Array<PS.PublishedTask>;
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Draft<T=PS.DraftProject>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	IncludeCustomFields<T=PS.PublishedProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.PublishedProjectResource>>(): T;
+	ProjectWorkflowInstance<T=PS.ProjectWorkflowInstance>(): T;
+	TaskLinks<T=Array<PS.PublishedTaskLink>>(): T;
+	Tasks<T=Array<PS.PublishedTask>>(): T;
 }
 
 /*********************************************
@@ -1113,20 +1113,20 @@ export interface PublishedAssignment extends PS.Assignment {
 * PublishedAssignmentCollections
 **********************************************/
 export interface PublishedAssignmentCollections {
-	Owner?: () => SP.User;
-	Parent?: () => PS.PublishedAssignment;
-	Resource?: () => PS.PublishedProjectResource;
-	Task?: () => PS.PublishedTask;
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.PublishedAssignment>(): T;
+	Resource<T=PS.PublishedProjectResource>(): T;
+	Task<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
 * PublishedAssignmentQuery
 **********************************************/
 export interface PublishedAssignmentQuery {
-	Owner?: SP.User;
-	Parent?: PS.PublishedAssignment;
-	Resource?: PS.PublishedProjectResource;
-	Task?: PS.PublishedTask;
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.PublishedAssignment>(): T;
+	Resource<T=PS.PublishedProjectResource>(): T;
+	Task<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
@@ -1156,16 +1156,16 @@ export interface PublishedProjectResource extends PS.ProjectResource {
 * PublishedProjectResourceCollections
 **********************************************/
 export interface PublishedProjectResourceCollections {
-	Assignments?: () => Array<PS.PublishedAssignment>;
-	DefaultAssignmentOwner?: () => SP.User;
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
 * PublishedProjectResourceQuery
 **********************************************/
 export interface PublishedProjectResourceQuery {
-	Assignments?: Array<PS.PublishedAssignment>;
-	DefaultAssignmentOwner?: SP.User;
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -1221,28 +1221,28 @@ export interface PublishedTask extends PS.Task {
 * PublishedTaskCollections
 **********************************************/
 export interface PublishedTaskCollections {
-	Assignments?: () => Array<PS.PublishedAssignment>;
-	Calendar?: () => PS.Calendar;
-	EntityLinks?: () => Array<PS.EntityLink>;
-	Parent?: () => PS.PublishedTask;
-	Predecessors?: () => Array<PS.PublishedTaskLink>;
-	StatusManager?: () => SP.User;
-	Successors?: () => Array<PS.PublishedTaskLink>;
-	TaskPlanLink?: () => PS.TaskPlanLink;
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	Parent<T=PS.PublishedTask>(): T;
+	Predecessors<T=Array<PS.PublishedTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.PublishedTaskLink>>(): T;
+	TaskPlanLink<T=PS.TaskPlanLink>(): T;
 }
 
 /*********************************************
 * PublishedTaskQuery
 **********************************************/
 export interface PublishedTaskQuery {
-	Assignments?: Array<PS.PublishedAssignment>;
-	Calendar?: PS.Calendar;
-	EntityLinks?: Array<PS.EntityLink>;
-	Parent?: PS.PublishedTask;
-	Predecessors?: Array<PS.PublishedTaskLink>;
-	StatusManager?: SP.User;
-	Successors?: Array<PS.PublishedTaskLink>;
-	TaskPlanLink?: PS.TaskPlanLink;
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	Parent<T=PS.PublishedTask>(): T;
+	Predecessors<T=Array<PS.PublishedTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.PublishedTaskLink>>(): T;
+	TaskPlanLink<T=PS.TaskPlanLink>(): T;
 }
 
 /*********************************************
@@ -1274,16 +1274,16 @@ export interface PublishedTaskLink extends PS.TaskLink {
 * PublishedTaskLinkCollections
 **********************************************/
 export interface PublishedTaskLinkCollections {
-	End?: () => PS.PublishedTask;
-	Start?: () => PS.PublishedTask;
+	End<T=PS.PublishedTask>(): T;
+	Start<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
 * PublishedTaskLinkQuery
 **********************************************/
 export interface PublishedTaskLinkQuery {
-	End?: PS.PublishedTask;
-	Start?: PS.PublishedTask;
+	End<T=PS.PublishedTask>(): T;
+	Start<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
@@ -1341,26 +1341,26 @@ export interface DraftProject extends PS.Project {
 * DraftProjectCollections
 **********************************************/
 export interface DraftProjectCollections {
-	Assignments?: () => Array<PS.DraftAssignment>;
-	Calendar?: () => PS.Calendar;
-	IncludeCustomFields?: () => PS.DraftProject;
-	Owner?: () => SP.User;
-	ProjectResources?: () => Array<PS.DraftProjectResource>;
-	TaskLinks?: () => Array<PS.DraftTaskLink>;
-	Tasks?: () => Array<PS.DraftTask>;
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	IncludeCustomFields<T=PS.DraftProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.DraftProjectResource>>(): T;
+	TaskLinks<T=Array<PS.DraftTaskLink>>(): T;
+	Tasks<T=Array<PS.DraftTask>>(): T;
 }
 
 /*********************************************
 * DraftProjectQuery
 **********************************************/
 export interface DraftProjectQuery {
-	Assignments?: Array<PS.DraftAssignment>;
-	Calendar?: PS.Calendar;
-	IncludeCustomFields?: PS.DraftProject;
-	Owner?: SP.User;
-	ProjectResources?: Array<PS.DraftProjectResource>;
-	TaskLinks?: Array<PS.DraftTaskLink>;
-	Tasks?: Array<PS.DraftTask>;
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	IncludeCustomFields<T=PS.DraftProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.DraftProjectResource>>(): T;
+	TaskLinks<T=Array<PS.DraftTaskLink>>(): T;
+	Tasks<T=Array<PS.DraftTask>>(): T;
 }
 
 /*********************************************
@@ -1390,16 +1390,16 @@ export interface DraftProjectResource extends PS.ProjectResource {
 * DraftProjectResourceCollections
 **********************************************/
 export interface DraftProjectResourceCollections {
-	Assignments?: () => Array<PS.DraftAssignment>;
-	DefaultAssignmentOwner?: () => SP.User;
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
 * DraftProjectResourceQuery
 **********************************************/
 export interface DraftProjectResourceQuery {
-	Assignments?: Array<PS.DraftAssignment>;
-	DefaultAssignmentOwner?: SP.User;
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -1415,16 +1415,16 @@ export interface DraftTaskLink extends PS.TaskLink {
 * DraftTaskLinkCollections
 **********************************************/
 export interface DraftTaskLinkCollections {
-	End?: () => PS.DraftTask;
-	Start?: () => PS.DraftTask;
+	End<T=PS.DraftTask>(): T;
+	Start<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
 * DraftTaskLinkQuery
 **********************************************/
 export interface DraftTaskLinkQuery {
-	End?: PS.DraftTask;
-	Start?: PS.DraftTask;
+	End<T=PS.DraftTask>(): T;
+	Start<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
@@ -1482,24 +1482,24 @@ export interface DraftTask extends PS.Task {
 * DraftTaskCollections
 **********************************************/
 export interface DraftTaskCollections {
-	Assignments?: () => Array<PS.DraftAssignment>;
-	Calendar?: () => PS.Calendar;
-	Parent?: () => PS.DraftTask;
-	Predecessors?: () => Array<PS.DraftTaskLink>;
-	StatusManager?: () => SP.User;
-	Successors?: () => Array<PS.DraftTaskLink>;
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Parent<T=PS.DraftTask>(): T;
+	Predecessors<T=Array<PS.DraftTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.DraftTaskLink>>(): T;
 }
 
 /*********************************************
 * DraftTaskQuery
 **********************************************/
 export interface DraftTaskQuery {
-	Assignments?: Array<PS.DraftAssignment>;
-	Calendar?: PS.Calendar;
-	Parent?: PS.DraftTask;
-	Predecessors?: Array<PS.DraftTaskLink>;
-	StatusManager?: SP.User;
-	Successors?: Array<PS.DraftTaskLink>;
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Parent<T=PS.DraftTask>(): T;
+	Predecessors<T=Array<PS.DraftTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.DraftTaskLink>>(): T;
 }
 
 /*********************************************
@@ -1518,18 +1518,18 @@ export interface ProjectWorkflowInstance {
 * ProjectWorkflowInstanceCollections
 **********************************************/
 export interface ProjectWorkflowInstanceCollections {
-	Project?: () => PS.Project;
-	WorkflowInstance?: () => SP.WorkflowServices.WorkflowInstance;
-	WorkflowInstanceOwner?: () => SP.User;
+	Project<T=PS.Project>(): T;
+	WorkflowInstance<T=SP.WorkflowServices.WorkflowInstance>(): T;
+	WorkflowInstanceOwner<T=SP.User>(): T;
 }
 
 /*********************************************
 * ProjectWorkflowInstanceQuery
 **********************************************/
 export interface ProjectWorkflowInstanceQuery {
-	Project?: PS.Project;
-	WorkflowInstance?: SP.WorkflowServices.WorkflowInstance;
-	WorkflowInstanceOwner?: SP.User;
+	Project<T=PS.Project>(): T;
+	WorkflowInstance<T=SP.WorkflowServices.WorkflowInstance>(): T;
+	WorkflowInstanceOwner<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -1575,16 +1575,16 @@ export interface QueueJob {
 * QueueJobCollections
 **********************************************/
 export interface QueueJobCollections {
-	Project?: () => PS.Project;
-	Submitter?: () => SP.User;
+	Project<T=PS.Project>(): T;
+	Submitter<T=SP.User>(): T;
 }
 
 /*********************************************
 * QueueJobQuery
 **********************************************/
 export interface QueueJobQuery {
-	Project?: PS.Project;
-	Submitter?: SP.User;
+	Project<T=PS.Project>(): T;
+	Submitter<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -1631,16 +1631,16 @@ export interface StatusTask {
 * StatusTaskCollections
 **********************************************/
 export interface StatusTaskCollections {
-	CustomFields?: () => Array<PS.CustomField>;
-	StatusManager?: () => SP.User;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	StatusManager<T=SP.User>(): T;
 }
 
 /*********************************************
 * StatusTaskQuery
 **********************************************/
 export interface StatusTaskQuery {
-	CustomFields?: Array<PS.CustomField>;
-	StatusManager?: SP.User;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	StatusManager<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -1654,14 +1654,14 @@ export interface EnterpriseResourceCostRateTable {
 * EnterpriseResourceCostRateTableCollections
 **********************************************/
 export interface EnterpriseResourceCostRateTableCollections {
-	CostRates?: () => Array<PS.EnterpriseResourceCostRate>;
+	CostRates<T=Array<PS.EnterpriseResourceCostRate>>(): T;
 }
 
 /*********************************************
 * EnterpriseResourceCostRateTableQuery
 **********************************************/
 export interface EnterpriseResourceCostRateTableQuery {
-	CostRates?: Array<PS.EnterpriseResourceCostRate>;
+	CostRates<T=Array<PS.EnterpriseResourceCostRate>>(): T;
 }
 
 /*********************************************
@@ -1725,20 +1725,20 @@ export interface EntityTypes {
 * EntityTypesCollections
 **********************************************/
 export interface EntityTypesCollections {
-	AssignmentEntity?: () => PS.EntityType;
-	ProjectEntity?: () => PS.EntityType;
-	ResourceEntity?: () => PS.EntityType;
-	TaskEntity?: () => PS.EntityType;
+	AssignmentEntity<T=PS.EntityType>(): T;
+	ProjectEntity<T=PS.EntityType>(): T;
+	ResourceEntity<T=PS.EntityType>(): T;
+	TaskEntity<T=PS.EntityType>(): T;
 }
 
 /*********************************************
 * EntityTypesQuery
 **********************************************/
 export interface EntityTypesQuery {
-	AssignmentEntity?: PS.EntityType;
-	ProjectEntity?: PS.EntityType;
-	ResourceEntity?: PS.EntityType;
-	TaskEntity?: PS.EntityType;
+	AssignmentEntity<T=PS.EntityType>(): T;
+	ProjectEntity<T=PS.EntityType>(): T;
+	ResourceEntity<T=PS.EntityType>(): T;
+	TaskEntity<T=PS.EntityType>(): T;
 }
 
 /*********************************************
@@ -1768,14 +1768,14 @@ export interface EventHandler {
 * EventHandlerCollections
 **********************************************/
 export interface EventHandlerCollections {
-	Event?: () => PS.Event;
+	Event<T=PS.Event>(): T;
 }
 
 /*********************************************
 * EventHandlerQuery
 **********************************************/
 export interface EventHandlerQuery {
-	Event?: PS.Event;
+	Event<T=PS.Event>(): T;
 }
 
 /*********************************************
@@ -1821,14 +1821,14 @@ export interface LookupText extends PS.LookupEntry {
 * LookupTextCollections
 **********************************************/
 export interface LookupTextCollections {
-	Parent?: () => PS.LookupText;
+	Parent<T=PS.LookupText>(): T;
 }
 
 /*********************************************
 * LookupTextQuery
 **********************************************/
 export interface LookupTextQuery {
-	Parent?: PS.LookupText;
+	Parent<T=PS.LookupText>(): T;
 }
 
 /*********************************************
@@ -1863,18 +1863,18 @@ export interface PlanAssignment {
 * PlanAssignmentCollections
 **********************************************/
 export interface PlanAssignmentCollections {
-	CustomFields?: () => Array<PS.CustomField>;
-	Intervals?: () => Array<PS.PlanAssignmentInterval>;
-	Resource?: () => PS.EnterpriseResource;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Intervals<T=Array<PS.PlanAssignmentInterval>>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
 * PlanAssignmentQuery
 **********************************************/
 export interface PlanAssignmentQuery {
-	CustomFields?: Array<PS.CustomField>;
-	Intervals?: Array<PS.PlanAssignmentInterval>;
-	Resource?: PS.EnterpriseResource;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Intervals<T=Array<PS.PlanAssignmentInterval>>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
@@ -1925,48 +1925,48 @@ export interface ProjectServer {
 * ProjectServerCollections
 **********************************************/
 export interface ProjectServerCollections {
-	Calendars?: () => Array<PS.Calendar>;
-	CustomFields?: () => Array<PS.CustomField>;
-	EnterpriseProjectTypes?: () => Array<PS.EnterpriseProjectType>;
-	EnterpriseResources?: () => Array<PS.EnterpriseResource>;
-	EntityTypes?: () => PS.EntityTypes;
-	EventHandlers?: () => Array<PS.EventHandler>;
-	Events?: () => Array<PS.Event>;
-	LookupTables?: () => Array<PS.LookupTable>;
-	Phases?: () => Array<PS.Phase>;
-	ProjectDetailPages?: () => Array<PS.ProjectDetailPage>;
-	Projects?: () => Array<PS.PublishedProject>;
-	ProjectWorkflowInstances?: () => Array<PS.ProjectWorkflowInstance>;
-	Settings?: () => PS.Settings;
-	Stages?: () => Array<PS.Stage>;
-	TimeSheetPeriods?: () => Array<PS.TimeSheetPeriod>;
-	UserPermissions?: () => Array<PS.UserPermission>;
-	WorkflowActivities?: () => PS.WorkflowActivities;
-	WorkflowDesigner?: () => PS.WorkflowDesigner;
+	Calendars<T=Array<PS.Calendar>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseProjectTypes<T=Array<PS.EnterpriseProjectType>>(): T;
+	EnterpriseResources<T=Array<PS.EnterpriseResource>>(): T;
+	EntityTypes<T=PS.EntityTypes>(): T;
+	EventHandlers<T=Array<PS.EventHandler>>(): T;
+	Events<T=Array<PS.Event>>(): T;
+	LookupTables<T=Array<PS.LookupTable>>(): T;
+	Phases<T=Array<PS.Phase>>(): T;
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
+	Projects<T=Array<PS.PublishedProject>>(): T;
+	ProjectWorkflowInstances<T=Array<PS.ProjectWorkflowInstance>>(): T;
+	Settings<T=PS.Settings>(): T;
+	Stages<T=Array<PS.Stage>>(): T;
+	TimeSheetPeriods<T=Array<PS.TimeSheetPeriod>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	WorkflowActivities<T=PS.WorkflowActivities>(): T;
+	WorkflowDesigner<T=PS.WorkflowDesigner>(): T;
 }
 
 /*********************************************
 * ProjectServerQuery
 **********************************************/
 export interface ProjectServerQuery {
-	Calendars?: Array<PS.Calendar>;
-	CustomFields?: Array<PS.CustomField>;
-	EnterpriseProjectTypes?: Array<PS.EnterpriseProjectType>;
-	EnterpriseResources?: Array<PS.EnterpriseResource>;
-	EntityTypes?: PS.EntityTypes;
-	EventHandlers?: Array<PS.EventHandler>;
-	Events?: Array<PS.Event>;
-	LookupTables?: Array<PS.LookupTable>;
-	Phases?: Array<PS.Phase>;
-	ProjectDetailPages?: Array<PS.ProjectDetailPage>;
-	Projects?: Array<PS.PublishedProject>;
-	ProjectWorkflowInstances?: Array<PS.ProjectWorkflowInstance>;
-	Settings?: PS.Settings;
-	Stages?: Array<PS.Stage>;
-	TimeSheetPeriods?: Array<PS.TimeSheetPeriod>;
-	UserPermissions?: Array<PS.UserPermission>;
-	WorkflowActivities?: PS.WorkflowActivities;
-	WorkflowDesigner?: PS.WorkflowDesigner;
+	Calendars<T=Array<PS.Calendar>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseProjectTypes<T=Array<PS.EnterpriseProjectType>>(): T;
+	EnterpriseResources<T=Array<PS.EnterpriseResource>>(): T;
+	EntityTypes<T=PS.EntityTypes>(): T;
+	EventHandlers<T=Array<PS.EventHandler>>(): T;
+	Events<T=Array<PS.Event>>(): T;
+	LookupTables<T=Array<PS.LookupTable>>(): T;
+	Phases<T=Array<PS.Phase>>(): T;
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
+	Projects<T=Array<PS.PublishedProject>>(): T;
+	ProjectWorkflowInstances<T=Array<PS.ProjectWorkflowInstance>>(): T;
+	Settings<T=PS.Settings>(): T;
+	Stages<T=Array<PS.Stage>>(): T;
+	TimeSheetPeriods<T=Array<PS.TimeSheetPeriod>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	WorkflowActivities<T=PS.WorkflowActivities>(): T;
+	WorkflowDesigner<T=PS.WorkflowDesigner>(): T;
 }
 
 /*********************************************
@@ -1996,14 +1996,14 @@ export interface TimeSheetPeriod {
 * TimeSheetPeriodCollections
 **********************************************/
 export interface TimeSheetPeriodCollections {
-	TimeSheet?: () => PS.TimeSheet;
+	TimeSheet<T=PS.TimeSheet>(): T;
 }
 
 /*********************************************
 * TimeSheetPeriodQuery
 **********************************************/
 export interface TimeSheetPeriodQuery {
-	TimeSheet?: PS.TimeSheet;
+	TimeSheet<T=PS.TimeSheet>(): T;
 }
 
 /*********************************************
@@ -2039,20 +2039,20 @@ export interface TimeSheet {
 * TimeSheetCollections
 **********************************************/
 export interface TimeSheetCollections {
-	Creator?: () => SP.User;
-	Lines?: () => Array<PS.TimeSheetLine>;
-	Manager?: () => SP.User;
-	Period?: () => PS.TimeSheetPeriod;
+	Creator<T=SP.User>(): T;
+	Lines<T=Array<PS.TimeSheetLine>>(): T;
+	Manager<T=SP.User>(): T;
+	Period<T=PS.TimeSheetPeriod>(): T;
 }
 
 /*********************************************
 * TimeSheetQuery
 **********************************************/
 export interface TimeSheetQuery {
-	Creator?: SP.User;
-	Lines?: Array<PS.TimeSheetLine>;
-	Manager?: SP.User;
-	Period?: PS.TimeSheetPeriod;
+	Creator<T=SP.User>(): T;
+	Lines<T=Array<PS.TimeSheetLine>>(): T;
+	Manager<T=SP.User>(): T;
+	Period<T=PS.TimeSheetPeriod>(): T;
 }
 
 /*********************************************
@@ -2075,18 +2075,18 @@ export interface TimeSheetLine {
 * TimeSheetLineCollections
 **********************************************/
 export interface TimeSheetLineCollections {
-	Assignment?: () => PS.PublishedAssignment;
-	TimeSheet?: () => PS.TimeSheet;
-	Work?: () => Array<PS.TimeSheetWork>;
+	Assignment<T=PS.PublishedAssignment>(): T;
+	TimeSheet<T=PS.TimeSheet>(): T;
+	Work<T=Array<PS.TimeSheetWork>>(): T;
 }
 
 /*********************************************
 * TimeSheetLineQuery
 **********************************************/
 export interface TimeSheetLineQuery {
-	Assignment?: PS.PublishedAssignment;
-	TimeSheet?: PS.TimeSheet;
-	Work?: Array<PS.TimeSheetWork>;
+	Assignment<T=PS.PublishedAssignment>(): T;
+	TimeSheet<T=PS.TimeSheet>(): T;
+	Work<T=Array<PS.TimeSheetWork>>(): T;
 }
 
 /*********************************************
@@ -2132,14 +2132,14 @@ export interface WorkflowDesigner {
 * WorkflowDesignerCollections
 **********************************************/
 export interface WorkflowDesignerCollections {
-	Fields?: () => Array<PS.WorkflowDesignerField>;
+	Fields<T=Array<PS.WorkflowDesignerField>>(): T;
 }
 
 /*********************************************
 * WorkflowDesignerQuery
 **********************************************/
 export interface WorkflowDesignerQuery {
-	Fields?: Array<PS.WorkflowDesignerField>;
+	Fields<T=Array<PS.WorkflowDesignerField>>(): T;
 }
 
 /*********************************************
@@ -2157,14 +2157,14 @@ export interface WorkflowDesignerField {
 * WorkflowDesignerFieldCollections
 **********************************************/
 export interface WorkflowDesignerFieldCollections {
-	LookupEntries?: () => Array<PS.LookupEntry>;
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
 * WorkflowDesignerFieldQuery
 **********************************************/
 export interface WorkflowDesignerFieldQuery {
-	LookupEntries?: Array<PS.LookupEntry>;
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
@@ -2203,14 +2203,14 @@ export interface ResourcePlan {
 * ResourcePlanCollections
 **********************************************/
 export interface ResourcePlanCollections {
-	Assignments?: () => Array<PS.PlanAssignment>;
+	Assignments<T=Array<PS.PlanAssignment>>(): T;
 }
 
 /*********************************************
 * ResourcePlanQuery
 **********************************************/
 export interface ResourcePlanQuery {
-	Assignments?: Array<PS.PlanAssignment>;
+	Assignments<T=Array<PS.PlanAssignment>>(): T;
 }
 
 /*********************************************
@@ -2233,12 +2233,12 @@ export interface TimePhase {
 * TimePhaseCollections
 **********************************************/
 export interface TimePhaseCollections {
-	Assignments?: () => Array<PS.StatusAssignment>;
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
 }
 
 /*********************************************
 * TimePhaseQuery
 **********************************************/
 export interface TimePhaseQuery {
-	Assignments?: Array<PS.StatusAssignment>;
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
 }

@@ -12,14 +12,14 @@ export interface likedByInformation {
 * likedByInformationCollections
 **********************************************/
 export interface likedByInformationCollections {
-	likedBy?: () => Array<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
 }
 
 /*********************************************
 * likedByInformationQuery
 **********************************************/
 export interface likedByInformationQuery {
-	likedBy?: Array<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
 }
 
 /*********************************************

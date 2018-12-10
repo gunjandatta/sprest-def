@@ -81,14 +81,14 @@ export interface SharingInformation {
 * SharingInformationCollections
 **********************************************/
 export interface SharingInformationCollections {
-	pickerSettings?: () => SP.PickerSettings;
+	pickerSettings<T=SP.PickerSettings>(): T;
 }
 
 /*********************************************
 * SharingInformationQuery
 **********************************************/
 export interface SharingInformationQuery {
-	pickerSettings?: SP.PickerSettings;
+	pickerSettings<T=SP.PickerSettings>(): T;
 }
 
 /*********************************************

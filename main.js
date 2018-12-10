@@ -293,8 +293,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     }
 
                                     // Add the method
-                                    methods.push('\t' + methodName + '?: () => ' + methodType + ';');
-                                    queryMethods.push('\t' + methodName + '?: ' + methodType + ';');
+                                    methods.push('\t' + methodName + '<T=' + methodType + '>(): T;');
+                                    queryMethods.push('\t' + methodName + '<T=' + methodType + '>(): T;');
                                 }
                             }
 

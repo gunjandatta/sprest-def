@@ -67,18 +67,18 @@ export interface VideoItem {
 * VideoItemCollections
 **********************************************/
 export interface VideoItemCollections {
-	Author?: () => SP.User;
-	Owner?: () => SP.User;
-	PeopleInMedia?: () => Array<SP.User>;
+	Author<T=SP.User>(): T;
+	Owner<T=SP.User>(): T;
+	PeopleInMedia<T=Array<SP.User>>(): T;
 }
 
 /*********************************************
 * VideoItemQuery
 **********************************************/
 export interface VideoItemQuery {
-	Author?: SP.User;
-	Owner?: SP.User;
-	PeopleInMedia?: Array<SP.User>;
+	Author<T=SP.User>(): T;
+	Owner<T=SP.User>(): T;
+	PeopleInMedia<T=Array<SP.User>>(): T;
 }
 
 /*********************************************
@@ -142,14 +142,14 @@ export interface PointPublishingPost {
 * PointPublishingPostCollections
 **********************************************/
 export interface PointPublishingPostCollections {
-	images?: () => Array<SP.File>;
+	images<T=Array<SP.File>>(): T;
 }
 
 /*********************************************
 * PointPublishingPostQuery
 **********************************************/
 export interface PointPublishingPostQuery {
-	images?: Array<SP.File>;
+	images<T=Array<SP.File>>(): T;
 }
 
 /*********************************************
@@ -163,24 +163,24 @@ export interface PointPublishingPostServiceManager {
 * PointPublishingPostServiceManagerCollections
 **********************************************/
 export interface PointPublishingPostServiceManagerCollections {
-	bannerimages?: () => Array<SP.File>;
-	contributors?: () => Array<SP.Publishing.PointPublishingUser>;
-	creators?: () => Array<SP.Publishing.PointPublishingUser>;
-	magazineprops?: () => SP.Publishing.PointPublishingMagazineProps;
-	posts?: () => Array<SP.Publishing.PointPublishingPost>;
-	viewers?: () => Array<SP.Publishing.PointPublishingUser>;
+	bannerimages<T=Array<SP.File>>(): T;
+	contributors<T=Array<SP.Publishing.PointPublishingUser>>(): T;
+	creators<T=Array<SP.Publishing.PointPublishingUser>>(): T;
+	magazineprops<T=SP.Publishing.PointPublishingMagazineProps>(): T;
+	posts<T=Array<SP.Publishing.PointPublishingPost>>(): T;
+	viewers<T=Array<SP.Publishing.PointPublishingUser>>(): T;
 }
 
 /*********************************************
 * PointPublishingPostServiceManagerQuery
 **********************************************/
 export interface PointPublishingPostServiceManagerQuery {
-	bannerimages?: Array<SP.File>;
-	contributors?: Array<SP.Publishing.PointPublishingUser>;
-	creators?: Array<SP.Publishing.PointPublishingUser>;
-	magazineprops?: SP.Publishing.PointPublishingMagazineProps;
-	posts?: Array<SP.Publishing.PointPublishingPost>;
-	viewers?: Array<SP.Publishing.PointPublishingUser>;
+	bannerimages<T=Array<SP.File>>(): T;
+	contributors<T=Array<SP.Publishing.PointPublishingUser>>(): T;
+	creators<T=Array<SP.Publishing.PointPublishingUser>>(): T;
+	magazineprops<T=SP.Publishing.PointPublishingMagazineProps>(): T;
+	posts<T=Array<SP.Publishing.PointPublishingPost>>(): T;
+	viewers<T=Array<SP.Publishing.PointPublishingUser>>(): T;
 }
 
 /*********************************************
@@ -271,16 +271,16 @@ export interface SitePageMetadata {
 * SitePageMetadataCollections
 **********************************************/
 export interface SitePageMetadataCollections {
-	CreatedBy?: () => SP.Publishing.UserInfo;
-	LastModifiedBy?: () => SP.Publishing.UserInfo;
+	CreatedBy<T=SP.Publishing.UserInfo>(): T;
+	LastModifiedBy<T=SP.Publishing.UserInfo>(): T;
 }
 
 /*********************************************
 * SitePageMetadataQuery
 **********************************************/
 export interface SitePageMetadataQuery {
-	CreatedBy?: SP.Publishing.UserInfo;
-	LastModifiedBy?: SP.Publishing.UserInfo;
+	CreatedBy<T=SP.Publishing.UserInfo>(): T;
+	LastModifiedBy<T=SP.Publishing.UserInfo>(): T;
 }
 
 /*********************************************
@@ -354,16 +354,16 @@ export interface SitePageService {
 * SitePageServiceCollections
 **********************************************/
 export interface SitePageServiceCollections {
-	CommunicationSite?: () => SP.Publishing.CommunicationSite;
-	Pages?: () => Array<SP.Publishing.SitePage>;
+	CommunicationSite<T=SP.Publishing.CommunicationSite>(): T;
+	Pages<T=Array<SP.Publishing.SitePage>>(): T;
 }
 
 /*********************************************
 * SitePageServiceQuery
 **********************************************/
 export interface SitePageServiceQuery {
-	CommunicationSite?: SP.Publishing.CommunicationSite;
-	Pages?: Array<SP.Publishing.SitePage>;
+	CommunicationSite<T=SP.Publishing.CommunicationSite>(): T;
+	Pages<T=Array<SP.Publishing.SitePage>>(): T;
 }
 
 /*********************************************
@@ -381,14 +381,14 @@ export interface SpotlightChannel {
 * SpotlightChannelCollections
 **********************************************/
 export interface SpotlightChannelCollections {
-	Channel?: () => SP.Publishing.VideoChannel;
+	Channel<T=SP.Publishing.VideoChannel>(): T;
 }
 
 /*********************************************
 * SpotlightChannelQuery
 **********************************************/
 export interface SpotlightChannelQuery {
-	Channel?: SP.Publishing.VideoChannel;
+	Channel<T=SP.Publishing.VideoChannel>(): T;
 }
 
 /*********************************************
@@ -415,18 +415,18 @@ export interface VideoChannel {
 * VideoChannelCollections
 **********************************************/
 export interface VideoChannelCollections {
-	Search?: () => SP.Publishing.Search;
-	SpotlightVideos?: () => Array<SP.Publishing.SpotlightVideo>;
-	Videos?: () => Array<SP.Publishing.VideoItem>;
+	Search<T=SP.Publishing.Search>(): T;
+	SpotlightVideos<T=Array<SP.Publishing.SpotlightVideo>>(): T;
+	Videos<T=Array<SP.Publishing.VideoItem>>(): T;
 }
 
 /*********************************************
 * VideoChannelQuery
 **********************************************/
 export interface VideoChannelQuery {
-	Search?: SP.Publishing.Search;
-	SpotlightVideos?: Array<SP.Publishing.SpotlightVideo>;
-	Videos?: Array<SP.Publishing.VideoItem>;
+	Search<T=SP.Publishing.Search>(): T;
+	SpotlightVideos<T=Array<SP.Publishing.SpotlightVideo>>(): T;
+	Videos<T=Array<SP.Publishing.VideoItem>>(): T;
 }
 
 /*********************************************
@@ -450,14 +450,14 @@ export interface SpotlightVideo {
 * SpotlightVideoCollections
 **********************************************/
 export interface SpotlightVideoCollections {
-	Video?: () => SP.Publishing.VideoItem;
+	Video<T=SP.Publishing.VideoItem>(): T;
 }
 
 /*********************************************
 * SpotlightVideoQuery
 **********************************************/
 export interface SpotlightVideoQuery {
-	Video?: SP.Publishing.VideoItem;
+	Video<T=SP.Publishing.VideoItem>(): T;
 }
 
 /*********************************************
@@ -480,14 +480,14 @@ export interface VideoPermissionGroup {
 * VideoPermissionGroupCollections
 **********************************************/
 export interface VideoPermissionGroupCollections {
-	Users?: () => Array<SP.User>;
+	Users<T=Array<SP.User>>(): T;
 }
 
 /*********************************************
 * VideoPermissionGroupQuery
 **********************************************/
 export interface VideoPermissionGroupQuery {
-	Users?: Array<SP.User>;
+	Users<T=Array<SP.User>>(): T;
 }
 
 /*********************************************
@@ -531,22 +531,22 @@ export interface VideoServiceManager {
 * VideoServiceManagerCollections
 **********************************************/
 export interface VideoServiceManagerCollections {
-	CanEditChannels?: () => Array<SP.Publishing.VideoChannel>;
-	Channels?: () => Array<SP.Publishing.VideoChannel>;
-	Search?: () => SP.Publishing.Search;
-	SpotlightChannels?: () => Array<SP.Publishing.SpotlightChannel>;
-	SpotlightVideos?: () => Array<SP.Publishing.SpotlightVideo>;
+	CanEditChannels<T=Array<SP.Publishing.VideoChannel>>(): T;
+	Channels<T=Array<SP.Publishing.VideoChannel>>(): T;
+	Search<T=SP.Publishing.Search>(): T;
+	SpotlightChannels<T=Array<SP.Publishing.SpotlightChannel>>(): T;
+	SpotlightVideos<T=Array<SP.Publishing.SpotlightVideo>>(): T;
 }
 
 /*********************************************
 * VideoServiceManagerQuery
 **********************************************/
 export interface VideoServiceManagerQuery {
-	CanEditChannels?: Array<SP.Publishing.VideoChannel>;
-	Channels?: Array<SP.Publishing.VideoChannel>;
-	Search?: SP.Publishing.Search;
-	SpotlightChannels?: Array<SP.Publishing.SpotlightChannel>;
-	SpotlightVideos?: Array<SP.Publishing.SpotlightVideo>;
+	CanEditChannels<T=Array<SP.Publishing.VideoChannel>>(): T;
+	Channels<T=Array<SP.Publishing.VideoChannel>>(): T;
+	Search<T=SP.Publishing.Search>(): T;
+	SpotlightChannels<T=Array<SP.Publishing.SpotlightChannel>>(): T;
+	SpotlightVideos<T=Array<SP.Publishing.SpotlightVideo>>(): T;
 }
 
 /*********************************************

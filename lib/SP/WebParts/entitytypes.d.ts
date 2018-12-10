@@ -12,14 +12,14 @@ export interface LimitedWebPartManager {
 * LimitedWebPartManagerCollections
 **********************************************/
 export interface LimitedWebPartManagerCollections {
-	WebParts?: () => Array<SP.WebParts.WebPartDefinition>;
+	WebParts<T=Array<SP.WebParts.WebPartDefinition>>(): T;
 }
 
 /*********************************************
 * LimitedWebPartManagerQuery
 **********************************************/
 export interface LimitedWebPartManagerQuery {
-	WebParts?: Array<SP.WebParts.WebPartDefinition>;
+	WebParts<T=Array<SP.WebParts.WebPartDefinition>>(): T;
 }
 
 /*********************************************
@@ -34,14 +34,14 @@ export interface WebPartDefinition {
 * WebPartDefinitionCollections
 **********************************************/
 export interface WebPartDefinitionCollections {
-	WebPart?: () => SP.WebParts.WebPart;
+	WebPart<T=SP.WebParts.WebPart>(): T;
 }
 
 /*********************************************
 * WebPartDefinitionQuery
 **********************************************/
 export interface WebPartDefinitionQuery {
-	WebPart?: SP.WebParts.WebPart;
+	WebPart<T=SP.WebParts.WebPart>(): T;
 }
 
 /*********************************************
@@ -61,12 +61,12 @@ export interface WebPart {
 * WebPartCollections
 **********************************************/
 export interface WebPartCollections {
-	Properties?: () => SP.PropertyValues;
+	Properties<T=SP.PropertyValues>(): T;
 }
 
 /*********************************************
 * WebPartQuery
 **********************************************/
 export interface WebPartQuery {
-	Properties?: SP.PropertyValues;
+	Properties<T=SP.PropertyValues>(): T;
 }

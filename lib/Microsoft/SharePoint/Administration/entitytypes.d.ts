@@ -18,14 +18,14 @@ export interface SPFarm {
 * SPFarmCollections
 **********************************************/
 export interface SPFarmCollections {
-	Local?: () => Microsoft.SharePoint.Administration.SPFarm;
+	Local<T=Microsoft.SharePoint.Administration.SPFarm>(): T;
 }
 
 /*********************************************
 * SPFarmQuery
 **********************************************/
 export interface SPFarmQuery {
-	Local?: Microsoft.SharePoint.Administration.SPFarm;
+	Local<T=Microsoft.SharePoint.Administration.SPFarm>(): T;
 }
 
 /*********************************************
@@ -58,14 +58,14 @@ export interface SPWebApplication {
 * SPWebApplicationCollections
 **********************************************/
 export interface SPWebApplicationCollections {
-	Sites?: () => Array<SP.Site>;
+	Sites<T=Array<SP.Site>>(): T;
 }
 
 /*********************************************
 * SPWebApplicationQuery
 **********************************************/
 export interface SPWebApplicationQuery {
-	Sites?: Array<SP.Site>;
+	Sites<T=Array<SP.Site>>(): T;
 }
 
 /*********************************************
@@ -79,16 +79,16 @@ export interface SPWebService {
 * SPWebServiceCollections
 **********************************************/
 export interface SPWebServiceCollections {
-	ContentService?: () => Microsoft.SharePoint.Administration.SPWebService;
-	WebApplications?: () => Array<Microsoft.SharePoint.Administration.SPWebApplication>;
+	ContentService<T=Microsoft.SharePoint.Administration.SPWebService>(): T;
+	WebApplications<T=Array<Microsoft.SharePoint.Administration.SPWebApplication>>(): T;
 }
 
 /*********************************************
 * SPWebServiceQuery
 **********************************************/
 export interface SPWebServiceQuery {
-	ContentService?: Microsoft.SharePoint.Administration.SPWebService;
-	WebApplications?: Array<Microsoft.SharePoint.Administration.SPWebApplication>;
+	ContentService<T=Microsoft.SharePoint.Administration.SPWebService>(): T;
+	WebApplications<T=Array<Microsoft.SharePoint.Administration.SPWebApplication>>(): T;
 }
 
 /*********************************************

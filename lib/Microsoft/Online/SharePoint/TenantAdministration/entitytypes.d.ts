@@ -288,14 +288,14 @@ export interface Tenant {
 * TenantCollections
 **********************************************/
 export interface TenantCollections {
-	Sites?: () => Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	Sites<T=Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>>(): T;
 }
 
 /*********************************************
 * TenantQuery
 **********************************************/
 export interface TenantQuery {
-	Sites?: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	Sites<T=Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>>(): T;
 }
 
 /*********************************************

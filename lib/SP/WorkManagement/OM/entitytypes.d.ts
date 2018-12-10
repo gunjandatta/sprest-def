@@ -165,22 +165,22 @@ export interface NonTaskDataReadResult {
 * NonTaskDataReadResultCollections
 **********************************************/
 export interface NonTaskDataReadResultCollections {
-	AllLocatons?: () => Array<SP.WorkManagement.OM.Location>;
-	PersistedProperties?: () => SP.WorkManagement.OM.PersistedProperties;
-	RefreshHistory?: () => SP.WorkManagement.OM.RefreshHistory;
-	ScriptExtensions?: () => Array<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
-	UserSettings?: () => SP.WorkManagement.OM.UserSettings;
+	AllLocatons<T=Array<SP.WorkManagement.OM.Location>>(): T;
+	PersistedProperties<T=SP.WorkManagement.OM.PersistedProperties>(): T;
+	RefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(): T;
+	ScriptExtensions<T=Array<SP.WorkManagement.OM.DashboardScriptExtensionInfo>>(): T;
+	UserSettings<T=SP.WorkManagement.OM.UserSettings>(): T;
 }
 
 /*********************************************
 * NonTaskDataReadResultQuery
 **********************************************/
 export interface NonTaskDataReadResultQuery {
-	AllLocatons?: Array<SP.WorkManagement.OM.Location>;
-	PersistedProperties?: SP.WorkManagement.OM.PersistedProperties;
-	RefreshHistory?: SP.WorkManagement.OM.RefreshHistory;
-	ScriptExtensions?: Array<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
-	UserSettings?: SP.WorkManagement.OM.UserSettings;
+	AllLocatons<T=Array<SP.WorkManagement.OM.Location>>(): T;
+	PersistedProperties<T=SP.WorkManagement.OM.PersistedProperties>(): T;
+	RefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(): T;
+	ScriptExtensions<T=Array<SP.WorkManagement.OM.DashboardScriptExtensionInfo>>(): T;
+	UserSettings<T=SP.WorkManagement.OM.UserSettings>(): T;
 }
 
 /*********************************************
@@ -205,14 +205,14 @@ export interface RefreshHistory {
 * RefreshHistoryCollections
 **********************************************/
 export interface RefreshHistoryCollections {
-	Refreshes?: () => Array<SP.WorkManagement.OM.RefreshResult>;
+	Refreshes<T=Array<SP.WorkManagement.OM.RefreshResult>>(): T;
 }
 
 /*********************************************
 * RefreshHistoryQuery
 **********************************************/
 export interface RefreshHistoryQuery {
-	Refreshes?: Array<SP.WorkManagement.OM.RefreshResult>;
+	Refreshes<T=Array<SP.WorkManagement.OM.RefreshResult>>(): T;
 }
 
 /*********************************************
@@ -229,16 +229,16 @@ export interface RefreshResult {
 * RefreshResultCollections
 **********************************************/
 export interface RefreshResultCollections {
-	ProviderStatuses?: () => Array<SP.WorkManagement.OM.ProviderRefreshStatus>;
-	TaskChangesByLocation?: () => Array<SP.WorkManagement.OM.LocationUpdateResult>;
+	ProviderStatuses<T=Array<SP.WorkManagement.OM.ProviderRefreshStatus>>(): T;
+	TaskChangesByLocation<T=Array<SP.WorkManagement.OM.LocationUpdateResult>>(): T;
 }
 
 /*********************************************
 * RefreshResultQuery
 **********************************************/
 export interface RefreshResultQuery {
-	ProviderStatuses?: Array<SP.WorkManagement.OM.ProviderRefreshStatus>;
-	TaskChangesByLocation?: Array<SP.WorkManagement.OM.LocationUpdateResult>;
+	ProviderStatuses<T=Array<SP.WorkManagement.OM.ProviderRefreshStatus>>(): T;
+	TaskChangesByLocation<T=Array<SP.WorkManagement.OM.LocationUpdateResult>>(): T;
 }
 
 /*********************************************
@@ -297,14 +297,14 @@ export interface RefreshHealthInfo {
 * RefreshHealthInfoCollections
 **********************************************/
 export interface RefreshHealthInfoCollections {
-	ProviderErrors?: () => Array<SP.WorkManagement.OM.ProviderErrorInfo>;
+	ProviderErrors<T=Array<SP.WorkManagement.OM.ProviderErrorInfo>>(): T;
 }
 
 /*********************************************
 * RefreshHealthInfoQuery
 **********************************************/
 export interface RefreshHealthInfoQuery {
-	ProviderErrors?: Array<SP.WorkManagement.OM.ProviderErrorInfo>;
+	ProviderErrors<T=Array<SP.WorkManagement.OM.ProviderErrorInfo>>(): T;
 }
 
 /*********************************************
@@ -332,16 +332,16 @@ export interface SortableTaskQuery {
 * SortableTaskQueryCollections
 **********************************************/
 export interface SortableTaskQueryCollections {
-	CoreQuery?: () => SP.WorkManagement.OM.TaskQuery;
-	Order?: () => SP.WorkManagement.OM.OrderInfo;
+	CoreQuery<T=SP.WorkManagement.OM.TaskQuery>(): T;
+	Order<T=SP.WorkManagement.OM.OrderInfo>(): T;
 }
 
 /*********************************************
 * SortableTaskQueryQuery
 **********************************************/
 export interface SortableTaskQueryQuery {
-	CoreQuery?: SP.WorkManagement.OM.TaskQuery;
-	Order?: SP.WorkManagement.OM.OrderInfo;
+	CoreQuery<T=SP.WorkManagement.OM.TaskQuery>(): T;
+	Order<T=SP.WorkManagement.OM.OrderInfo>(): T;
 }
 
 /*********************************************
@@ -357,20 +357,20 @@ export interface TaskQuery {
 * TaskQueryCollections
 **********************************************/
 export interface TaskQueryCollections {
-	CustomAttributeFilter?: () => SP.WorkManagement.OM.CustomAttributeFilter;
-	FieldFilter?: () => SP.WorkManagement.OM.TaskFilter;
-	LastModifiedDateRangeFilter?: () => SP.WorkManagement.OM.DateRangeCriterion;
-	LocationFilter?: () => SP.WorkManagement.OM.LocationFilter;
+	CustomAttributeFilter<T=SP.WorkManagement.OM.CustomAttributeFilter>(): T;
+	FieldFilter<T=SP.WorkManagement.OM.TaskFilter>(): T;
+	LastModifiedDateRangeFilter<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	LocationFilter<T=SP.WorkManagement.OM.LocationFilter>(): T;
 }
 
 /*********************************************
 * TaskQueryQuery
 **********************************************/
 export interface TaskQueryQuery {
-	CustomAttributeFilter?: SP.WorkManagement.OM.CustomAttributeFilter;
-	FieldFilter?: SP.WorkManagement.OM.TaskFilter;
-	LastModifiedDateRangeFilter?: SP.WorkManagement.OM.DateRangeCriterion;
-	LocationFilter?: SP.WorkManagement.OM.LocationFilter;
+	CustomAttributeFilter<T=SP.WorkManagement.OM.CustomAttributeFilter>(): T;
+	FieldFilter<T=SP.WorkManagement.OM.TaskFilter>(): T;
+	LastModifiedDateRangeFilter<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	LocationFilter<T=SP.WorkManagement.OM.LocationFilter>(): T;
 }
 
 /*********************************************
@@ -385,22 +385,22 @@ export interface TaskFilter {
 * TaskFilterCollections
 **********************************************/
 export interface TaskFilterCollections {
-	CompletedCriterion?: () => SP.WorkManagement.OM.BooleanCriterion;
-	DueDateRangeCriterion?: () => SP.WorkManagement.OM.DateRangeCriterion;
-	IsNewCriterion?: () => SP.WorkManagement.OM.BooleanCriterion;
-	NameCriterion?: () => SP.WorkManagement.OM.NameCriterion;
-	StartDateRangeCriterion?: () => SP.WorkManagement.OM.DateRangeCriterion;
+	CompletedCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	DueDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	IsNewCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	NameCriterion<T=SP.WorkManagement.OM.NameCriterion>(): T;
+	StartDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
 }
 
 /*********************************************
 * TaskFilterQuery
 **********************************************/
 export interface TaskFilterQuery {
-	CompletedCriterion?: SP.WorkManagement.OM.BooleanCriterion;
-	DueDateRangeCriterion?: SP.WorkManagement.OM.DateRangeCriterion;
-	IsNewCriterion?: SP.WorkManagement.OM.BooleanCriterion;
-	NameCriterion?: SP.WorkManagement.OM.NameCriterion;
-	StartDateRangeCriterion?: SP.WorkManagement.OM.DateRangeCriterion;
+	CompletedCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	DueDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	IsNewCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	NameCriterion<T=SP.WorkManagement.OM.NameCriterion>(): T;
+	StartDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
 }
 
 /*********************************************
@@ -415,14 +415,14 @@ export interface TaskQueryByLocationResult {
 * TaskQueryByLocationResultCollections
 **********************************************/
 export interface TaskQueryByLocationResultCollections {
-	Results?: () => Array<SP.WorkManagement.OM.Task>;
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
 * TaskQueryByLocationResultQuery
 **********************************************/
 export interface TaskQueryByLocationResultQuery {
-	Results?: Array<SP.WorkManagement.OM.Task>;
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
@@ -437,14 +437,14 @@ export interface TaskQueryResult {
 * TaskQueryResultCollections
 **********************************************/
 export interface TaskQueryResultCollections {
-	Results?: () => Array<SP.WorkManagement.OM.Task>;
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
 * TaskQueryResultQuery
 **********************************************/
 export interface TaskQueryResultQuery {
-	Results?: Array<SP.WorkManagement.OM.Task>;
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
@@ -459,14 +459,14 @@ export interface TaskRefreshResult {
 * TaskRefreshResultCollections
 **********************************************/
 export interface TaskRefreshResultCollections {
-	Result?: () => SP.WorkManagement.OM.Task;
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************
 * TaskRefreshResultQuery
 **********************************************/
 export interface TaskRefreshResultQuery {
-	Result?: SP.WorkManagement.OM.Task;
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************
@@ -481,14 +481,14 @@ export interface TaskWriteResult {
 * TaskWriteResultCollections
 **********************************************/
 export interface TaskWriteResultCollections {
-	Result?: () => SP.WorkManagement.OM.Task;
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************
 * TaskWriteResultQuery
 **********************************************/
 export interface TaskWriteResultQuery {
-	Result?: SP.WorkManagement.OM.Task;
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************

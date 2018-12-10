@@ -67,14 +67,14 @@ export interface ThemeManager {
 * ThemeManagerCollections
 **********************************************/
 export interface ThemeManagerCollections {
-	ContextThemeManager?: () => SP.Utilities.ThemeManager;
+	ContextThemeManager<T=SP.Utilities.ThemeManager>(): T;
 }
 
 /*********************************************
 * ThemeManagerQuery
 **********************************************/
 export interface ThemeManagerQuery {
-	ContextThemeManager?: SP.Utilities.ThemeManager;
+	ContextThemeManager<T=SP.Utilities.ThemeManager>(): T;
 }
 
 /*********************************************

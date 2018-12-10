@@ -26,14 +26,14 @@ export interface GetExternalUsersResults {
 * GetExternalUsersResultsCollections
 **********************************************/
 export interface GetExternalUsersResultsCollections {
-	ExternalUserCollection?: () => Array<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+	ExternalUserCollection<T=Array<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>>(): T;
 }
 
 /*********************************************
 * GetExternalUsersResultsQuery
 **********************************************/
 export interface GetExternalUsersResultsQuery {
-	ExternalUserCollection?: Array<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+	ExternalUserCollection<T=Array<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>>(): T;
 }
 
 /*********************************************

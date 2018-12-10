@@ -37,16 +37,16 @@ export interface Group {
 * GroupCollections
 **********************************************/
 export interface GroupCollections {
-	members?: () => Array<SP.Directory.User>;
-	owners?: () => Array<SP.Directory.User>;
+	members<T=Array<SP.Directory.User>>(): T;
+	owners<T=Array<SP.Directory.User>>(): T;
 }
 
 /*********************************************
 * GroupQuery
 **********************************************/
 export interface GroupQuery {
-	members?: Array<SP.Directory.User>;
-	owners?: Array<SP.Directory.User>;
+	members<T=Array<SP.Directory.User>>(): T;
+	owners<T=Array<SP.Directory.User>>(): T;
 }
 
 /*********************************************
@@ -99,18 +99,18 @@ export interface User {
 * UserCollections
 **********************************************/
 export interface UserCollections {
-	membership?: () => Array<SP.Directory.Group>;
-	ownership?: () => Array<SP.Directory.Group>;
-	rankedMembership?: () => Array<SP.Directory.Group>;
+	membership<T=Array<SP.Directory.Group>>(): T;
+	ownership<T=Array<SP.Directory.Group>>(): T;
+	rankedMembership<T=Array<SP.Directory.Group>>(): T;
 }
 
 /*********************************************
 * UserQuery
 **********************************************/
 export interface UserQuery {
-	membership?: Array<SP.Directory.Group>;
-	ownership?: Array<SP.Directory.Group>;
-	rankedMembership?: Array<SP.Directory.Group>;
+	membership<T=Array<SP.Directory.Group>>(): T;
+	ownership<T=Array<SP.Directory.Group>>(): T;
+	rankedMembership<T=Array<SP.Directory.Group>>(): T;
 }
 
 /*********************************************
@@ -133,14 +133,14 @@ export interface GroupAndUserStatus {
 * GroupAndUserStatusCollections
 **********************************************/
 export interface GroupAndUserStatusCollections {
-	Group?: () => SP.Directory.Group;
+	Group<T=SP.Directory.Group>(): T;
 }
 
 /*********************************************
 * GroupAndUserStatusQuery
 **********************************************/
 export interface GroupAndUserStatusQuery {
-	Group?: SP.Directory.Group;
+	Group<T=SP.Directory.Group>(): T;
 }
 
 /*********************************************

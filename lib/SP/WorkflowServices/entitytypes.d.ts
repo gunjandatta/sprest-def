@@ -52,14 +52,14 @@ export interface WorkflowInstanceService {
 * WorkflowInstanceServiceCollections
 **********************************************/
 export interface WorkflowInstanceServiceCollections {
-	Current?: () => SP.WorkflowServices.WorkflowInstanceService;
+	Current<T=SP.WorkflowServices.WorkflowInstanceService>(): T;
 }
 
 /*********************************************
 * WorkflowInstanceServiceQuery
 **********************************************/
 export interface WorkflowInstanceServiceQuery {
-	Current?: SP.WorkflowServices.WorkflowInstanceService;
+	Current<T=SP.WorkflowServices.WorkflowInstanceService>(): T;
 }
 
 /*********************************************
@@ -73,14 +73,14 @@ export interface InteropService {
 * InteropServiceCollections
 **********************************************/
 export interface InteropServiceCollections {
-	Current?: () => SP.WorkflowServices.InteropService;
+	Current<T=SP.WorkflowServices.InteropService>(): T;
 }
 
 /*********************************************
 * InteropServiceQuery
 **********************************************/
 export interface InteropServiceQuery {
-	Current?: SP.WorkflowServices.InteropService;
+	Current<T=SP.WorkflowServices.InteropService>(): T;
 }
 
 /*********************************************
@@ -97,14 +97,14 @@ export interface WorkflowServicesManager {
 * WorkflowServicesManagerCollections
 **********************************************/
 export interface WorkflowServicesManagerCollections {
-	Current?: () => SP.WorkflowServices.WorkflowServicesManager;
+	Current<T=SP.WorkflowServices.WorkflowServicesManager>(): T;
 }
 
 /*********************************************
 * WorkflowServicesManagerQuery
 **********************************************/
 export interface WorkflowServicesManagerQuery {
-	Current?: SP.WorkflowServices.WorkflowServicesManager;
+	Current<T=SP.WorkflowServices.WorkflowServicesManager>(): T;
 }
 
 /*********************************************
@@ -134,14 +134,14 @@ export interface WorkflowSubscriptionService {
 * WorkflowSubscriptionServiceCollections
 **********************************************/
 export interface WorkflowSubscriptionServiceCollections {
-	Current?: () => SP.WorkflowServices.WorkflowSubscriptionService;
+	Current<T=SP.WorkflowServices.WorkflowSubscriptionService>(): T;
 }
 
 /*********************************************
 * WorkflowSubscriptionServiceQuery
 **********************************************/
 export interface WorkflowSubscriptionServiceQuery {
-	Current?: SP.WorkflowServices.WorkflowSubscriptionService;
+	Current<T=SP.WorkflowServices.WorkflowSubscriptionService>(): T;
 }
 
 /*********************************************

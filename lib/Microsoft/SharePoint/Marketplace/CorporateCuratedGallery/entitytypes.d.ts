@@ -11,14 +11,14 @@ export interface SiteCollectionCorporateCatalogAccessor {
 * SiteCollectionCorporateCatalogAccessorCollections
 **********************************************/
 export interface SiteCollectionCorporateCatalogAccessorCollections {
-	AvailableApps?: () => Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
 }
 
 /*********************************************
 * SiteCollectionCorporateCatalogAccessorQuery
 **********************************************/
 export interface SiteCollectionCorporateCatalogAccessorQuery {
-	AvailableApps?: Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
 }
 
 /*********************************************
@@ -46,16 +46,16 @@ export interface TenantCorporateCatalogAccessor {
 * TenantCorporateCatalogAccessorCollections
 **********************************************/
 export interface TenantCorporateCatalogAccessorCollections {
-	AvailableApps?: () => Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
-	SiteCollectionAppCatalogsSites?: () => Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
+	SiteCollectionAppCatalogsSites<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>>(): T;
 }
 
 /*********************************************
 * TenantCorporateCatalogAccessorQuery
 **********************************************/
 export interface TenantCorporateCatalogAccessorQuery {
-	AvailableApps?: Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
-	SiteCollectionAppCatalogsSites?: Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
+	SiteCollectionAppCatalogsSites<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>>(): T;
 }
 
 /*********************************************

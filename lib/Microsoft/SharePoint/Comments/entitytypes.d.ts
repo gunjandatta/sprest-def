@@ -24,16 +24,16 @@ export interface comment {
 * commentCollections
 **********************************************/
 export interface commentCollections {
-	likedBy?: () => Array<Microsoft.SharePoint.Likes.userEntity>;
-	replies?: () => Array<Microsoft.SharePoint.Comments.comment>;
+	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
+	replies<T=Array<Microsoft.SharePoint.Comments.comment>>(): T;
 }
 
 /*********************************************
 * commentQuery
 **********************************************/
 export interface commentQuery {
-	likedBy?: Array<Microsoft.SharePoint.Likes.userEntity>;
-	replies?: Array<Microsoft.SharePoint.Comments.comment>;
+	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
+	replies<T=Array<Microsoft.SharePoint.Comments.comment>>(): T;
 }
 
 /*********************************************
