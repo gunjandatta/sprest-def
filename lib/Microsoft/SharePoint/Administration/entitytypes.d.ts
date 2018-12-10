@@ -1,4 +1,5 @@
-
+import { Microsoft } from "../../../";
+import { SP } from "../../../";
 
 /*********************************************
 * SPAppStateQueryJobDefinition

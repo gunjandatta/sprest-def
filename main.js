@@ -295,6 +295,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     // Add the method
                                     methods.push('\t' + methodName + '<T=' + methodType + '>(): T;');
                                     queryMethods.push('\t' + methodName + '<T=' + methodType + '>(): T;');
+
+                                    // Update the references
+                                    updateReferences(fileImports, dirName, methodType);
                                 }
                             }
 

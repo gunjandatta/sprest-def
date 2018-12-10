@@ -1,4 +1,4 @@
-
+import { Microsoft } from "../../../";
 
 /*********************************************
 * likedByInformation

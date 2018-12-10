@@ -1,5 +1,5 @@
-import { SP } from "../../../";
 import { Microsoft } from "../../../";
+import { SP } from "../../../";
 
 /*********************************************
 * comment

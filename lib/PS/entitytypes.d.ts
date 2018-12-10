@@ -1,4 +1,5 @@
 import { PS } from "../";
+import { SP } from "../";
 
 /*********************************************
 * EntityType
