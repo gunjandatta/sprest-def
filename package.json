@@ -1,5 +1,5 @@
 {
-  "name": "gd-sprest-def",
+  "name": "@dattabase/sprest-def",
   "version": "0.1.0",
   "description": "TypeScript definition files generated from the $metadata REST endpoint in SharePoint.",
   "author": "Gunjan Datta <me@dattabase.com> (https://gunjandatta.github.io)",
