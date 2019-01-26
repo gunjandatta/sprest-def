@@ -134,7 +134,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     for (let j = 0; j < value.length; j++) {
                         let interface = value[j];
 
-                        // See if this is not an association
+                        // See if this is an association
                         if (isAssociation) {
                             var k = 0;
 
