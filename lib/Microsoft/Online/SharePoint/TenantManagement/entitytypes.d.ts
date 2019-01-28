@@ -143,6 +143,47 @@ export interface Office365Tenant {
 }
 
 /*********************************************
+* Office365TenantMethods
+**********************************************/
+export interface Office365TenantMethods {
+	addPublicCdnOrigin<T=void>(origin?: string): T;
+	addSdnProvider<T=void>(identifier?: string, license?: string): T;
+	addTenantCdnOrigin<T=void>(cdnType?: number, originUrl?: string): T;
+	addTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
+	addToCarLibAndCdn<T=void>(cdnType?: number, libUrl?: SP.ResourcePath, displayName?: string, thumbnailUrl?: SP.ResourcePath): T;
+	createTenantCdnDefaultOrigins<T=void>(cdnType?: number): T;
+	deleteImportProfilePropertiesJob<T=boolean>(jobId?: any): T;
+	deleteTenantTheme<T=void>(name?: string): T;
+	disableSharingForNonOwnersOfSite<T=void>(siteUrl?: string): T;
+	getAllTenantThemes<T=Array<Microsoft.Online.SharePoint.TenantManagement.ThemeProperties>>(): T;
+	getExternalUsers<T=Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults>(position?: number, pageSize?: number, filter?: string, sortOrder?: number): T;
+	getExternalUsersForSite<T=Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults>(siteUrl?: string, position?: number, pageSize?: number, filter?: string, sortOrder?: number): T;
+	getExternalUsersWithSortBy<T=Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults>(position?: number, pageSize?: number, filter?: string, sortPropertyName?: string, sortOrder?: number): T;
+	getHideDefaultThemes<T=boolean>(): T;
+	getIdleSessionSignOutForUnmanagedDevices<T=string>(): T;
+	getImportProfilePropertyJob<T=Microsoft.Online.SharePoint.TenantManagement.ImportProfilePropertiesJobInfo>(jobId?: any): T;
+	getImportProfilePropertyJobs<T=Array<Microsoft.Online.SharePoint.TenantManagement.ImportProfilePropertiesJobInfo>>(): T;
+	getTenantCdnEnabled<T=boolean>(cdnType?: number): T;
+	getTenantCdnOrigins<T=Array<string>>(cdnType?: number): T;
+	getTenantCdnPolicies<T=Array<string>>(cdnType?: number): T;
+	getTenantTheme<T=Microsoft.Online.SharePoint.TenantManagement.ThemeProperties>(name?: string): T;
+	isSharingDisabledForNonOwnersOfSite<T=boolean>(siteUrl?: string): T;
+	queueImportProfileProperties<T=any>(idType?: number, sourceDataIdProperty?: string, propertyMap?: Array<SP.KeyValue>, sourceUri?: string): T;
+	removeExternalUsers<T=Microsoft.Online.SharePoint.TenantManagement.RemoveExternalUsersResults>(uniqueIds?: Array<string>): T;
+	removeFromCarAndCdn<T=void>(remove?: boolean, cdnType?: number, libUrl?: SP.ResourcePath): T;
+	removePublicCdnOrigin<T=void>(originId?: string): T;
+	removeSdnProvider<T=void>(): T;
+	removeTenantCdnOrigin<T=void>(cdnType?: number, originUrl?: string): T;
+	revokeAllUserSessions<T=Microsoft.Online.SharePoint.TenantManagement.SPOUserSessionRevocationResult>(userName?: string): T;
+	revokeAllUserSessionsByPuid<T=Array<Microsoft.Online.SharePoint.TenantManagement.SPOUserSessionRevocationResult>>(puidList?: Array<string>): T;
+	setHideDefaultThemes<T=boolean>(hideDefaultThemes?: boolean): T;
+	setIdleSessionSignOutForUnmanagedDevices<T=boolean>(enabled?: boolean, warnAfter?: any, signOutAfter?: any): T;
+	setTenantCdnEnabled<T=void>(cdnType?: number, isEnabled?: boolean): T;
+	setTenantCdnPolicy<T=void>(cdnType?: number, policy?: number, policyValue?: string): T;
+	updateTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
+}
+
+/*********************************************
 * RemoveExternalUsersResults
 **********************************************/
 export interface RemoveExternalUsersResults {

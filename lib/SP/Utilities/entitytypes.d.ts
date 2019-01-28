@@ -78,6 +78,21 @@ export interface ThemeManagerQuery {
 }
 
 /*********************************************
+* ThemeManagerMethods
+**********************************************/
+export interface ThemeManagerMethods {
+	addTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
+	applyTheme<T=string>(name?: string, themeJson?: string): T;
+	deleteTenantTheme<T=void>(name?: string): T;
+	getAvailableThemes<T=Array<SP.Utilities.JsonTheme>>(): T;
+	getHideDefaultThemes<T=boolean>(): T;
+	getTenantTheme<T=SP.Utilities.JsonTheme>(name?: string): T;
+	getTenantThemingOptions<T=SP.Utilities.ThemingOptions>(): T;
+	setHideDefaultThemes<T=boolean>(hideDefaultThemes?: boolean): T;
+	updateTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
+}
+
+/*********************************************
 * Utility
 **********************************************/
 export interface Utility {

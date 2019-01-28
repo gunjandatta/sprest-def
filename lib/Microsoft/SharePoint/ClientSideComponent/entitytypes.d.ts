@@ -8,10 +8,26 @@ export interface HostedAppsManager {
 }
 
 /*********************************************
+* HostedAppsManagerMethods
+**********************************************/
+export interface HostedAppsManagerMethods {
+	add<T=number>(webPartDataAsJson?: string, hostType?: string): T;
+	getById<T=Microsoft.SharePoint.ClientSideComponent.HostedApp>(id?: number): T;
+}
+
+/*********************************************
 * HostedApp
 **********************************************/
 export interface HostedApp {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* HostedAppMethods
+**********************************************/
+export interface HostedAppMethods {
+	delete<T=void>(): T;
+	updateWebPartData<T=void>(webPartDataAsJson?: string): T;
 }
 
 /*********************************************

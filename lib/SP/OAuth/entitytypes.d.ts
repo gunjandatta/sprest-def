@@ -20,8 +20,22 @@ export interface NativeClient {
 }
 
 /*********************************************
+* NativeClientMethods
+**********************************************/
+export interface NativeClientMethods {
+	authenticate<T=void>(): T;
+}
+
+/*********************************************
 * Token
 **********************************************/
 export interface Token {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* TokenMethods
+**********************************************/
+export interface TokenMethods {
+	acquire<T=SP.OAuth.TokenResponse>(resource?: string, tokenType?: string): T;
 }

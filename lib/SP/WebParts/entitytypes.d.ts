@@ -23,6 +23,14 @@ export interface LimitedWebPartManagerQuery {
 }
 
 /*********************************************
+* LimitedWebPartManagerMethods
+**********************************************/
+export interface LimitedWebPartManagerMethods {
+	exportWebPart<T=string>(webPartId?: any): T;
+	importWebPart<T=SP.WebParts.WebPartDefinition>(webPartXml?: string): T;
+}
+
+/*********************************************
 * WebPartDefinition
 **********************************************/
 export interface WebPartDefinition {
@@ -42,6 +50,17 @@ export interface WebPartDefinitionCollections {
 **********************************************/
 export interface WebPartDefinitionQuery {
 	WebPart<T=SP.WebParts.WebPart>(): T;
+}
+
+/*********************************************
+* WebPartDefinitionMethods
+**********************************************/
+export interface WebPartDefinitionMethods {
+	closeWebPart<T=void>(): T;
+	deleteWebPart<T=void>(): T;
+	moveWebPartTo<T=void>(zoneID?: string, zoneIndex?: number): T;
+	openWebPart<T=void>(): T;
+	saveWebPartChanges<T=void>(): T;
 }
 
 /*********************************************

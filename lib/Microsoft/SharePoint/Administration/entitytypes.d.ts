@@ -9,6 +9,13 @@ export interface SPAppStateQueryJobDefinition {
 }
 
 /*********************************************
+* SPAppStateQueryJobDefinitionMethods
+**********************************************/
+export interface SPAppStateQueryJobDefinitionMethods {
+	performFastRevokeWithClientIds<T=void>(): T;
+}
+
+/*********************************************
 * SPFarm
 **********************************************/
 export interface SPFarm {
@@ -97,4 +104,11 @@ export interface SPWebServiceQuery {
 **********************************************/
 export interface SPAnalyticsUsageService {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPAnalyticsUsageServiceMethods
+**********************************************/
+export interface SPAnalyticsUsageServiceMethods {
+	logevent<T=void>(usageEntry?: Microsoft.SharePoint.Administration.UsageEntry): T;
 }

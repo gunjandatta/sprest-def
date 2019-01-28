@@ -22,6 +22,13 @@ export interface SiteCollectionCorporateCatalogAccessorQuery {
 }
 
 /*********************************************
+* SiteCollectionCorporateCatalogAccessorMethods
+**********************************************/
+export interface SiteCollectionCorporateCatalogAccessorMethods {
+	add<T=SP.File>(Content?: any, Overwrite?: boolean, Url?: string): T;
+}
+
+/*********************************************
 * CorporateCatalogAppMetadata
 **********************************************/
 export interface CorporateCatalogAppMetadata {
@@ -33,6 +40,18 @@ export interface CorporateCatalogAppMetadata {
 	InstalledVersion?: string;
 	IsClientSideSolution?: boolean;
 	Title?: string;
+}
+
+/*********************************************
+* CorporateCatalogAppMetadataMethods
+**********************************************/
+export interface CorporateCatalogAppMetadataMethods {
+	deploy<T=void>(skipFeatureDeployment?: boolean): T;
+	install<T=void>(): T;
+	remove<T=void>(): T;
+	retract<T=void>(): T;
+	uninstall<T=void>(): T;
+	upgrade<T=void>(): T;
 }
 
 /*********************************************
@@ -56,6 +75,13 @@ export interface TenantCorporateCatalogAccessorCollections {
 export interface TenantCorporateCatalogAccessorQuery {
 	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
 	SiteCollectionAppCatalogsSites<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>>(): T;
+}
+
+/*********************************************
+* TenantCorporateCatalogAccessorMethods
+**********************************************/
+export interface TenantCorporateCatalogAccessorMethods {
+	add<T=SP.File>(Content?: any, Overwrite?: boolean, Url?: string): T;
 }
 
 /*********************************************

@@ -129,6 +129,13 @@ export interface CustomFieldQuery {
 }
 
 /*********************************************
+* CustomFieldMethods
+**********************************************/
+export interface CustomFieldMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * LookupEntry
 **********************************************/
 export interface LookupEntry {
@@ -138,6 +145,13 @@ export interface LookupEntry {
 	Id?: any;
 	InternalName?: string;
 	SortIndex?: number;
+}
+
+/*********************************************
+* LookupEntryMethods
+**********************************************/
+export interface LookupEntryMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -164,6 +178,15 @@ export interface LookupTableCollections {
 **********************************************/
 export interface LookupTableQuery {
 	Entries<T=Array<PS.LookupEntry>>(): T;
+}
+
+/*********************************************
+* LookupTableMethods
+**********************************************/
+export interface LookupTableMethods {
+	addMask<T=void>(mask?: PS.LookupMask): T;
+	deleteObject<T=void>(): T;
+	updateMask<T=void>(mask?: PS.LookupMask, level?: number): T;
 }
 
 /*********************************************
@@ -207,6 +230,13 @@ export interface CalendarExceptionQuery {
 }
 
 /*********************************************
+* CalendarExceptionMethods
+**********************************************/
+export interface CalendarExceptionMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * Calendar
 **********************************************/
 export interface Calendar {
@@ -233,10 +263,25 @@ export interface CalendarQuery {
 }
 
 /*********************************************
+* CalendarMethods
+**********************************************/
+export interface CalendarMethods {
+	copyTo<T=PS.Calendar>(name?: string): T;
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * BaseCalendarException
 **********************************************/
 export interface BaseCalendarException extends PS.CalendarException {
 
+}
+
+/*********************************************
+* BaseCalendarExceptionMethods
+**********************************************/
+export interface BaseCalendarExceptionMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -303,6 +348,13 @@ export interface DraftAssignmentQuery {
 	Parent<T=PS.DraftAssignment>(): T;
 	Resource<T=PS.DraftProjectResource>(): T;
 	Task<T=PS.DraftTask>(): T;
+}
+
+/*********************************************
+* DraftAssignmentMethods
+**********************************************/
+export interface DraftAssignmentMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -457,6 +509,15 @@ export interface EnterpriseResourceQuery {
 }
 
 /*********************************************
+* EnterpriseResourceMethods
+**********************************************/
+export interface EnterpriseResourceMethods {
+	deleteObject<T=void>(): T;
+	forceCheckIn<T=void>(): T;
+	updateClaimsAccount<T=void>(newClaimsAccount?: string): T;
+}
+
+/*********************************************
 * StatusAssignment
 **********************************************/
 export interface StatusAssignment {
@@ -514,6 +575,14 @@ export interface StatusAssignmentQuery {
 	Project<T=PS.PublishedProject>(): T;
 	Resource<T=PS.EnterpriseResource>(): T;
 	Task<T=PS.StatusTask>(): T;
+}
+
+/*********************************************
+* StatusAssignmentMethods
+**********************************************/
+export interface StatusAssignmentMethods {
+	deleteObject<T=void>(): T;
+	submitStatusUpdates<T=void>(comment?: string): T;
 }
 
 /*********************************************
@@ -614,6 +683,16 @@ export interface ProjectQuery {
 }
 
 /*********************************************
+* ProjectMethods
+**********************************************/
+export interface ProjectMethods {
+	getResourcePlanByUrl<T=PS.ResourcePlan>(start?: string, end?: string, scale?: string): T;
+	leaveProjectStage<T=void>(): T;
+	readyToLeaveProjectStage<T=number>(): T;
+	updateIdeaListItemStatus<T=void>(status?: string): T;
+}
+
+/*********************************************
 * Engagement
 **********************************************/
 export interface Engagement {
@@ -694,6 +773,14 @@ export interface ProjectEngagement extends PS.Engagement {
 }
 
 /*********************************************
+* ProjectEngagementMethods
+**********************************************/
+export interface ProjectEngagementMethods {
+	deleteObject<T=void>(): T;
+	getTimephasedByUrl<T=Array<PS.ProjectEngagementTimephasedPeriod>>(start?: string, end?: string, scale?: string, contourType?: string): T;
+}
+
+/*********************************************
 * EnterpriseProjectType
 **********************************************/
 export interface EnterpriseProjectType {
@@ -728,6 +815,16 @@ export interface EnterpriseProjectTypeCollections {
 **********************************************/
 export interface EnterpriseProjectTypeQuery {
 	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
+}
+
+/*********************************************
+* EnterpriseProjectTypeMethods
+**********************************************/
+export interface EnterpriseProjectTypeMethods {
+	addDepartment<T=void>(departmentValueGuid?: any): T;
+	deleteObject<T=void>(): T;
+	removeDepartment<T=void>(departmentValueGuid?: any): T;
+	updateCreatePDP<T=void>(pdp?: PS.ProjectDetailPageCreationInformation): T;
 }
 
 /*********************************************
@@ -785,6 +882,13 @@ export interface PhaseQuery {
 }
 
 /*********************************************
+* PhaseMethods
+**********************************************/
+export interface PhaseMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * Stage
 **********************************************/
 export interface Stage {
@@ -817,6 +921,13 @@ export interface StageQuery {
 }
 
 /*********************************************
+* StageMethods
+**********************************************/
+export interface StageMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * StageCustomField
 **********************************************/
 export interface StageCustomField {
@@ -838,6 +949,13 @@ export interface StageCustomFieldCollections {
 **********************************************/
 export interface StageCustomFieldQuery {
 	Stage<T=PS.Stage>(): T;
+}
+
+/*********************************************
+* StageCustomFieldMethods
+**********************************************/
+export interface StageCustomFieldMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -864,6 +982,13 @@ export interface StageDetailPageCollections {
 export interface StageDetailPageQuery {
 	Page<T=PS.ProjectDetailPage>(): T;
 	Stage<T=PS.Stage>(): T;
+}
+
+/*********************************************
+* StageDetailPageMethods
+**********************************************/
+export interface StageDetailPageMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1067,6 +1192,21 @@ export interface PublishedProjectQuery {
 }
 
 /*********************************************
+* PublishedProjectMethods
+**********************************************/
+export interface PublishedProjectMethods {
+	getResourcePlanByUrl<T=PS.ResourcePlan>(start?: string, end?: string, scale?: string): T;
+	leaveProjectStage<T=void>(): T;
+	readyToLeaveProjectStage<T=number>(): T;
+	updateIdeaListItemStatus<T=void>(status?: string): T;
+	checkOut<T=PS.DraftProject>(): T;
+	createProjectSite<T=void>(siteName?: string): T;
+	deleteObject<T=PS.QueueJob>(): T;
+	submitToWorkflow<T=void>(): T;
+	updateVisibilityCustomFields<T=PS.QueueJob>(): T;
+}
+
+/*********************************************
 * PublishedAssignment
 **********************************************/
 export interface PublishedAssignment extends PS.Assignment {
@@ -1247,6 +1387,14 @@ export interface PublishedTaskQuery {
 }
 
 /*********************************************
+* PublishedTaskMethods
+**********************************************/
+export interface PublishedTaskMethods {
+	addTaskPlanLink<T=PS.TaskPlanLink>(parameters?: PS.TaskPlanLinksCreationInformation): T;
+	deleteTaskPlanLink<T=void>(): T;
+}
+
+/*********************************************
 * EntityLink
 **********************************************/
 export interface EntityLink {
@@ -1255,6 +1403,13 @@ export interface EntityLink {
 	Id?: any;
 	Label?: string;
 	Url?: string;
+}
+
+/*********************************************
+* EntityLinkMethods
+**********************************************/
+export interface EntityLinkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1297,6 +1452,13 @@ export interface TaskPlanLink {
 	PlanId?: string;
 	ProjectId?: any;
 	TaskId?: any;
+}
+
+/*********************************************
+* TaskPlanLinkMethods
+**********************************************/
+export interface TaskPlanLinkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1365,6 +1527,23 @@ export interface DraftProjectQuery {
 }
 
 /*********************************************
+* DraftProjectMethods
+**********************************************/
+export interface DraftProjectMethods {
+	getResourcePlanByUrl<T=PS.ResourcePlan>(start?: string, end?: string, scale?: string): T;
+	leaveProjectStage<T=void>(): T;
+	readyToLeaveProjectStage<T=number>(): T;
+	updateIdeaListItemStatus<T=void>(status?: string): T;
+	changeEnterpriseProjectType<T=void>(enterpriseProjectTypeUid?: any): T;
+	checkIn<T=PS.QueueJob>(force?: boolean): T;
+	getChanges<T=PS.DraftProject>(token?: string): T;
+	publish<T=PS.QueueJob>(checkIn?: boolean): T;
+	update<T=PS.QueueJob>(): T;
+	updateCustomFields<T=PS.QueueJob>(customFieldDictionary?: Array<SP.KeyValue>): T;
+	validate<T=void>(): T;
+}
+
+/*********************************************
 * DraftProjectResource
 **********************************************/
 export interface DraftProjectResource extends PS.ProjectResource {
@@ -1404,6 +1583,13 @@ export interface DraftProjectResourceQuery {
 }
 
 /*********************************************
+* DraftProjectResourceMethods
+**********************************************/
+export interface DraftProjectResourceMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * DraftTaskLink
 **********************************************/
 export interface DraftTaskLink extends PS.TaskLink {
@@ -1426,6 +1612,13 @@ export interface DraftTaskLinkCollections {
 export interface DraftTaskLinkQuery {
 	End<T=PS.DraftTask>(): T;
 	Start<T=PS.DraftTask>(): T;
+}
+
+/*********************************************
+* DraftTaskLinkMethods
+**********************************************/
+export interface DraftTaskLinkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1504,6 +1697,13 @@ export interface DraftTaskQuery {
 }
 
 /*********************************************
+* DraftTaskMethods
+**********************************************/
+export interface DraftTaskMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * ProjectWorkflowInstance
 **********************************************/
 export interface ProjectWorkflowInstance {
@@ -1531,6 +1731,14 @@ export interface ProjectWorkflowInstanceQuery {
 	Project<T=PS.Project>(): T;
 	WorkflowInstance<T=SP.WorkflowServices.WorkflowInstance>(): T;
 	WorkflowInstanceOwner<T=SP.User>(): T;
+}
+
+/*********************************************
+* ProjectWorkflowInstanceMethods
+**********************************************/
+export interface ProjectWorkflowInstanceMethods {
+	restartWorkflow<T=SP.WorkflowServices.WorkflowInstance>(): T;
+	restartWorkflowSkipToStage<T=SP.WorkflowServices.WorkflowInstance>(stageId?: any): T;
 }
 
 /*********************************************
@@ -1586,6 +1794,13 @@ export interface QueueJobCollections {
 export interface QueueJobQuery {
 	Project<T=PS.Project>(): T;
 	Submitter<T=SP.User>(): T;
+}
+
+/*********************************************
+* QueueJobMethods
+**********************************************/
+export interface QueueJobMethods {
+	cancel<T=void>(): T;
 }
 
 /*********************************************
@@ -1677,6 +1892,14 @@ export interface EnterpriseResourceCostRate {
 }
 
 /*********************************************
+* EnterpriseResourceCostRateMethods
+**********************************************/
+export interface EnterpriseResourceCostRateMethods {
+	restfulDelete<T=void>(): T;
+	rESTfulUpdate<T=void>(): T;
+}
+
+/*********************************************
 * ResourceEngagement
 **********************************************/
 export interface ResourceEngagement extends PS.Engagement {
@@ -1692,6 +1915,14 @@ export interface ResourceEngagement extends PS.Engagement {
 	RequestedWork?: string;
 	RequestedWorkMilliseconds?: number;
 	RequestedWorkTimeSpan?: any;
+}
+
+/*********************************************
+* ResourceEngagementMethods
+**********************************************/
+export interface ResourceEngagementMethods {
+	deleteObject<T=void>(): T;
+	getTimephasedByUrl<T=Array<PS.ResourceEngagementTimephasedPeriod>>(start?: string, end?: string, scale?: string, contourType?: string): T;
 }
 
 /*********************************************
@@ -1780,6 +2011,13 @@ export interface EventHandlerQuery {
 }
 
 /*********************************************
+* EventHandlerMethods
+**********************************************/
+export interface EventHandlerMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * LookupCost
 **********************************************/
 export interface LookupCost extends PS.LookupEntry {
@@ -1787,10 +2025,24 @@ export interface LookupCost extends PS.LookupEntry {
 }
 
 /*********************************************
+* LookupCostMethods
+**********************************************/
+export interface LookupCostMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * LookupDate
 **********************************************/
 export interface LookupDate extends PS.LookupEntry {
 	Value?: any;
+}
+
+/*********************************************
+* LookupDateMethods
+**********************************************/
+export interface LookupDateMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1803,10 +2055,24 @@ export interface LookupDuration extends PS.LookupEntry {
 }
 
 /*********************************************
+* LookupDurationMethods
+**********************************************/
+export interface LookupDurationMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * LookupNumber
 **********************************************/
 export interface LookupNumber extends PS.LookupEntry {
 	Value?: number;
+}
+
+/*********************************************
+* LookupNumberMethods
+**********************************************/
+export interface LookupNumberMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1830,6 +2096,13 @@ export interface LookupTextCollections {
 **********************************************/
 export interface LookupTextQuery {
 	Parent<T=PS.LookupText>(): T;
+}
+
+/*********************************************
+* LookupTextMethods
+**********************************************/
+export interface LookupTextMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1876,6 +2149,13 @@ export interface PlanAssignmentQuery {
 	CustomFields<T=Array<PS.CustomField>>(): T;
 	Intervals<T=Array<PS.PlanAssignmentInterval>>(): T;
 	Resource<T=PS.EnterpriseResource>(): T;
+}
+
+/*********************************************
+* PlanAssignmentMethods
+**********************************************/
+export interface PlanAssignmentMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1971,6 +2251,14 @@ export interface ProjectServerQuery {
 }
 
 /*********************************************
+* ProjectServerMethods
+**********************************************/
+export interface ProjectServerMethods {
+	getDeletedPublishedAssignments<T=Array<PS.DeletedPublishedAssignment>>(deletedDate?: any): T;
+	stopDelegation<T=void>(): T;
+}
+
+/*********************************************
 * Settings
 **********************************************/
 export interface Settings {
@@ -2005,6 +2293,13 @@ export interface TimeSheetPeriodCollections {
 **********************************************/
 export interface TimeSheetPeriodQuery {
 	TimeSheet<T=PS.TimeSheet>(): T;
+}
+
+/*********************************************
+* TimeSheetPeriodMethods
+**********************************************/
+export interface TimeSheetPeriodMethods {
+	createTimeSheet<T=PS.TimeSheet>(): T;
 }
 
 /*********************************************
@@ -2057,6 +2352,16 @@ export interface TimeSheetQuery {
 }
 
 /*********************************************
+* TimeSheetMethods
+**********************************************/
+export interface TimeSheetMethods {
+	deleteObject<T=void>(): T;
+	recall<T=void>(): T;
+	submit<T=void>(comment?: string): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * TimeSheetLine
 **********************************************/
 export interface TimeSheetLine {
@@ -2091,6 +2396,14 @@ export interface TimeSheetLineQuery {
 }
 
 /*********************************************
+* TimeSheetLineMethods
+**********************************************/
+export interface TimeSheetLineMethods {
+	deleteObject<T=void>(): T;
+	submit<T=void>(comment?: string): T;
+}
+
+/*********************************************
 * TimeSheetWork
 **********************************************/
 export interface TimeSheetWork {
@@ -2116,10 +2429,47 @@ export interface TimeSheetWork {
 }
 
 /*********************************************
+* TimeSheetWorkMethods
+**********************************************/
+export interface TimeSheetWorkMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * WorkflowActivities
 **********************************************/
 export interface WorkflowActivities {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* WorkflowActivitiesMethods
+**********************************************/
+export interface WorkflowActivitiesMethods {
+	checkInWithJobId<T=void>(projId?: any, jobId?: any, force?: boolean): T;
+	createProjectFromListItem<T=any>(webId?: any, listId?: any, itemId?: number, eptId?: any): T;
+	enterProjectStage<T=void>(projectId?: any, stageId?: any): T;
+	leaveProjectStage<T=void>(projectId?: any): T;
+	publishSummaryWithJobId<T=void>(projId?: any, jobId?: any): T;
+	publishWithJobId<T=void>(projectId?: any, jobId?: any): T;
+	readBooleanProperty<T=boolean>(projectId?: any, propertyId?: string): T;
+	readCurrencyProperty<T=number>(projectId?: any, propertyId?: string): T;
+	readDateTimeProperty<T=any>(projectId?: any, propertyId?: string): T;
+	readGuidProperty<T=any>(projectId?: any, propertyId?: string): T;
+	readIntegerProperty<T=number>(projectId?: any, propertyId?: string): T;
+	readNumberProperty<T=number>(projectId?: any, propertyId?: string): T;
+	readProjectProperty<T=string>(projectId?: any, propertyId?: string): T;
+	readTextProperty<T=string>(projectId?: any, propertyId?: string): T;
+	readyToLeaveProjectStage<T=number>(projectId?: any): T;
+	updateBooleanProperty<T=void>(projectId?: any, propertyId?: string, value?: boolean): T;
+	updateCurrencyProperty<T=void>(projectId?: any, propertyId?: string, value?: number): T;
+	updateDateTimeProperty<T=void>(projectId?: any, propertyId?: string, value?: any): T;
+	updateGuidProperty<T=void>(projectId?: any, propertyId?: string, value?: any): T;
+	updateIdeaListItemStatus<T=void>(projectId?: any, status?: string): T;
+	updateIntegerProperty<T=void>(projectId?: any, propertyId?: string, value?: number): T;
+	updateNumberProperty<T=void>(projectId?: any, propertyId?: string, value?: number): T;
+	updateProjectStageStatus<T=void>(projectId?: any, stageId?: any, statusInformation?: string, stageStatusValue?: number, append?: boolean): T;
+	updateTextProperty<T=void>(projectId?: any, propertyId?: string, value?: string): T;
 }
 
 /*********************************************
@@ -2176,6 +2526,13 @@ export interface ResourceCalendarException extends PS.CalendarException {
 }
 
 /*********************************************
+* ResourceCalendarExceptionMethods
+**********************************************/
+export interface ResourceCalendarExceptionMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * ResourceEngagementComment
 **********************************************/
 export interface ResourceEngagementComment extends PS.EngagementComment {
@@ -2215,11 +2572,28 @@ export interface ResourcePlanQuery {
 }
 
 /*********************************************
+* ResourcePlanMethods
+**********************************************/
+export interface ResourcePlanMethods {
+	deleteObject<T=PS.QueueJob>(): T;
+	forceCheckIn<T=PS.QueueJob>(): T;
+	publish<T=PS.QueueJob>(): T;
+	update<T=PS.QueueJob>(): T;
+}
+
+/*********************************************
 * ServiceStatus
 **********************************************/
 export interface ServiceStatus {
 	IsDelegate?: boolean;
 	IsReadOnly?: boolean;
+}
+
+/*********************************************
+* ServiceStatusMethods
+**********************************************/
+export interface ServiceStatusMethods {
+	stopDelegation<T=void>(): T;
 }
 
 /*********************************************

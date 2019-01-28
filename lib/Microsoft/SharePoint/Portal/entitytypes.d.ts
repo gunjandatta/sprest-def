@@ -16,6 +16,15 @@ export interface GroupService {
 }
 
 /*********************************************
+* GroupServiceMethods
+**********************************************/
+export interface GroupServiceMethods {
+	getGroupImage<T=any>(id?: string, hash?: string, color?: string): T;
+	setGroupImage<T=void>(imageStream?: any): T;
+	syncGroupProperties<T=void>(): T;
+}
+
+/*********************************************
 * GroupSiteManager
 **********************************************/
 export interface GroupSiteManager {
@@ -23,10 +32,35 @@ export interface GroupSiteManager {
 }
 
 /*********************************************
+* GroupSiteManagerMethods
+**********************************************/
+export interface GroupSiteManagerMethods {
+	canUserCreateGroup<T=boolean>(): T;
+	create<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): T;
+	createGroup<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, ownerPrincipalNames?: Array<string>, description?: string, creationOptions?: Array<string>): T;
+	createGroupEx<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
+	createGroupForSite<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
+	getGroupCreationContext<T=Microsoft.SharePoint.Portal.GroupCreationContext>(): T;
+	getGroupSiteConversionData<T=Microsoft.SharePoint.Portal.GroupSiteConversionInfo>(): T;
+	getSiteStatus<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): T;
+	getValidSiteUrlFromAlias<T=string>(alias?: string, managedPath?: string, isTeamSite?: boolean): T;
+	notebook<T=string>(groupId?: any): T;
+}
+
+/*********************************************
 * SiteLinkingManager
 **********************************************/
 export interface SiteLinkingManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteLinkingManagerMethods
+**********************************************/
+export interface SiteLinkingManagerMethods {
+	getSiteLinks<T=Microsoft.SharePoint.Portal.LinkedSitesListContract>(): T;
+	linkGroup<T=boolean>(groupId?: any): T;
+	unlinkGroup<T=boolean>(groupId?: any): T;
 }
 
 /*********************************************
@@ -48,6 +82,13 @@ export interface SuiteNavData {
 **********************************************/
 export interface SharePointHomeServiceContextBuilder {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SharePointHomeServiceContextBuilderMethods
+**********************************************/
+export interface SharePointHomeServiceContextBuilderMethods {
+	context<T=Microsoft.SharePoint.Portal.SharePointHomeServiceContext>(): T;
 }
 
 /*********************************************
@@ -83,10 +124,27 @@ export interface SPHubSitesUtility {
 }
 
 /*********************************************
+* SPHubSitesUtilityMethods
+**********************************************/
+export interface SPHubSitesUtilityMethods {
+	getHubSites<T=Array<SP.HubSite>>(): T;
+}
+
+/*********************************************
 * SPSiteManager
 **********************************************/
 export interface SPSiteManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPSiteManagerMethods
+**********************************************/
+export interface SPSiteManagerMethods {
+	canCreateHubJoinedSite<T=boolean>(hubSiteId?: any): T;
+	create<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): T;
+	delete<T=void>(siteId?: any): T;
+	status<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(url?: string): T;
 }
 
 /*********************************************

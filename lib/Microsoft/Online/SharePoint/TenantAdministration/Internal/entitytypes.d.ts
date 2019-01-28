@@ -15,6 +15,13 @@ export interface SPOWebAppServicePrincipalPermissionGrant {
 }
 
 /*********************************************
+* SPOWebAppServicePrincipalPermissionGrantMethods
+**********************************************/
+export interface SPOWebAppServicePrincipalPermissionGrantMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * SPOWebAppServicePrincipalPermissionRequest
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequest {
@@ -27,6 +34,14 @@ export interface SPOWebAppServicePrincipalPermissionRequest {
 	ResourceId?: string;
 	Scope?: string;
 	TimeRequested?: any;
+}
+
+/*********************************************
+* SPOWebAppServicePrincipalPermissionRequestMethods
+**********************************************/
+export interface SPOWebAppServicePrincipalPermissionRequestMethods {
+	approve<T=Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>(): T;
+	deny<T=void>(): T;
 }
 
 /*********************************************
@@ -52,4 +67,11 @@ export interface SPOWebAppServicePrincipalCollections {
 export interface SPOWebAppServicePrincipalQuery {
 	PermissionGrants<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>>(): T;
 	PermissionRequests<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>>(): T;
+}
+
+/*********************************************
+* SPOWebAppServicePrincipalMethods
+**********************************************/
+export interface SPOWebAppServicePrincipalMethods {
+	update<T=void>(): T;
 }

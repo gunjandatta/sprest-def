@@ -125,6 +125,54 @@ export interface SiteQuery {
 }
 
 /*********************************************
+* SiteMethods
+**********************************************/
+export interface SiteMethods {
+	createCopyJob<T=SP.CopyMigrationInfo>(exportObjectUris?: Array<string>, destinationUri?: string, options?: SP.CopyMigrationOptions): T;
+	createCopyJobs<T=Array<SP.CopyMigrationInfo>>(exportObjectUris?: Array<string>, destinationUri?: string, options?: SP.CopyMigrationOptions): T;
+	createMigrationIngestionJob<T=any>(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string, ingestionTaskKey?: SP.IngestionTaskKey): T;
+	createMigrationJob<T=any>(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string): T;
+	createMigrationJobEncrypted<T=any>(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string, options?: SP.EncryptionOption): T;
+	createPreviewSPSite<T=void>(upgrade?: boolean, sendemail?: boolean): T;
+	deleteMigrationJob<T=boolean>(id?: any): T;
+	extendUpgradeReminderDate<T=void>(): T;
+	getBringYourOwnKeySiteStatus<T=SP.CustomerKeyStatusInfo>(): T;
+	getBringYourOwnKeyTenantStatus<T=SP.CustomerKeyStatusInfo>(): T;
+	getCatalog<T=SP.List>(typeCatalog?: number): T;
+	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
+	getCopyJobProgress<T=SP.CopyJobProgress>(copyJobInfo?: SP.CopyMigrationInfo): T;
+	getHubSiteJoinApprovalCorrelationId<T=string>(): T;
+	getMigrationJobStatus<T=number>(id?: any): T;
+	getMigrationStatus<T=Array<SP.SPMigrationJobStatus>>(): T;
+	getRecycleBinItems<T=Array<SP.RecycleBinItem>>(pagingInfo?: string, rowLimit?: number, isAscending?: boolean, orderBy?: number, itemState?: number): T;
+	getWebPath<T=SP.ResourcePath>(siteId?: any, webId?: any): T;
+	getWebTemplates<T=Array<SP.WebTemplate>>(LCID?: number, overrideCompatLevel?: number): T;
+	invalidate<T=void>(): T;
+	joinHubSite<T=void>(hubSiteId?: any, approvalToken?: string, approvalCorrelationId?: string): T;
+	makeHubSite<T=SP.HubSite>(): T;
+	multiGeoCopyJob<T=void>(jobId?: any, userId?: number, binaryPayload?: any): T;
+	needsUpgradeByType<T=boolean>(versionUpgrade?: boolean, recursive?: boolean): T;
+	onboardTenantForBringYourOwnKey<T=SP.CustomerKeyStatusInfo>(keyInfo?: SP.CustomerKeyInfo): T;
+	onHubSiteJoinRequestApproved<T=string>(joiningSiteId?: any): T;
+	onHubSiteJoinRequestCanceled<T=void>(approvalCorrelationId?: string): T;
+	onHubSiteJoinRequestStarted<T=void>(approvalCorrelationId?: string): T;
+	openWeb<T=SP.Web>(strUrl?: string): T;
+	openWebById<T=SP.Web>(gWebId?: any): T;
+	openWebUsingPath<T=SP.Web>(path?: SP.ResourcePath): T;
+	provisionMigrationContainers<T=SP.ProvisionedMigrationContainersInfo>(): T;
+	provisionMigrationQueue<T=SP.ProvisionedMigrationQueueInfo>(): T;
+	recoverTenantForBringYourOwnKey<T=SP.CustomerKeyStatusInfo>(keyInfo?: SP.CustomerKeyInfo): T;
+	registerHubSite<T=SP.HubSite>(creationInformation?: SP.HubSiteCreationInformation): T;
+	removeHubSite<T=void>(): T;
+	rollTenantBringYourOwnKey<T=SP.CustomerKeyStatusInfo>(keyType?: number, keyVaultInfo?: SP.CustomerKeyVaultInfo): T;
+	runHealthCheck<T=SP.SiteHealth.SiteHealthSummary>(ruleId?: any, bRepair?: boolean, bRunAlways?: boolean): T;
+	runUpgradeSiteSession<T=void>(versionUpgrade?: boolean, queueOnly?: boolean, sendEmail?: boolean): T;
+	unregisterHubSite<T=void>(): T;
+	updateClientObjectModelUseRemoteAPIsPermissionSetting<T=void>(requireUseRemoteAPIs?: boolean): T;
+	validateHubSiteJoinApprovalToken<T=boolean>(joiningSiteId?: any, approvalToken?: string): T;
+}
+
+/*********************************************
 * Audit
 **********************************************/
 export interface Audit {
@@ -132,10 +180,24 @@ export interface Audit {
 }
 
 /*********************************************
+* AuditMethods
+**********************************************/
+export interface AuditMethods {
+	update<T=void>(): T;
+}
+
+/*********************************************
 * ScriptSafeDomain
 **********************************************/
 export interface ScriptSafeDomain {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ScriptSafeDomainMethods
+**********************************************/
+export interface ScriptSafeDomainMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -150,6 +212,14 @@ export interface EventReceiverDefinition {
 	Synchronization?: number;
 	EventType?: number;
 	ReceiverUrl?: string;
+}
+
+/*********************************************
+* EventReceiverDefinitionMethods
+**********************************************/
+export interface EventReceiverDefinitionMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -200,6 +270,13 @@ export interface UserQuery {
 }
 
 /*********************************************
+* UserMethods
+**********************************************/
+export interface UserMethods {
+	update<T=void>(): T;
+}
+
+/*********************************************
 * Alert
 **********************************************/
 export interface Alert {
@@ -242,6 +319,13 @@ export interface AlertQuery {
 }
 
 /*********************************************
+* AlertMethods
+**********************************************/
+export interface AlertMethods {
+	updateAlert<T=void>(): T;
+}
+
+/*********************************************
 * PropertyValues
 **********************************************/
 export interface PropertyValues {
@@ -272,6 +356,14 @@ export interface SecurableObjectQuery {
 }
 
 /*********************************************
+* SecurableObjectMethods
+**********************************************/
+export interface SecurableObjectMethods {
+	breakRoleInheritance<T=void>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): T;
+	resetRoleInheritance<T=void>(): T;
+}
+
+/*********************************************
 * RoleAssignment
 **********************************************/
 export interface RoleAssignment {
@@ -295,6 +387,14 @@ export interface RoleAssignmentQuery {
 }
 
 /*********************************************
+* RoleAssignmentMethods
+**********************************************/
+export interface RoleAssignmentMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * RoleDefinition
 **********************************************/
 export interface RoleDefinition {
@@ -305,6 +405,14 @@ export interface RoleDefinition {
 	Name?: string;
 	Order?: number;
 	RoleTypeKind?: number;
+}
+
+/*********************************************
+* RoleDefinitionMethods
+**********************************************/
+export interface RoleDefinitionMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -362,6 +470,37 @@ export interface ListItemQuery {
 }
 
 /*********************************************
+* ListItemMethods
+**********************************************/
+export interface ListItemMethods {
+	breakRoleInheritance<T=void>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): T;
+	resetRoleInheritance<T=void>(): T;
+	deleteObject<T=void>(): T;
+	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
+	getHashtags<T=Array<SP.Hashtag>>(): T;
+	getUserEffectivePermissions<T=SP.BasePermissions>(userName?: string): T;
+	getWOPIFrameUrl<T=string>(action?: number): T;
+	mediaServiceUpdate<T=void>(parameters?: SP.MediaServiceUpdateParameters): T;
+	mediaServiceUpdateV2<T=void>(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): T;
+	overridePolicyTip<T=number>(userAction?: number, justification?: string): T;
+	parseAndSetFieldValue<T=void>(fieldName?: string, value?: string): T;
+	recycle<T=any>(): T;
+	setCommentsDisabled<T=void>(value?: boolean): T;
+	setComplianceTag<T=void>(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): T;
+	setComplianceTagWithExplicitMetasUpdate<T=void>(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): T;
+	setComplianceTagWithHold<T=void>(complianceTag?: string): T;
+	setComplianceTagWithMetaInfo<T=void>(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): T;
+	setComplianceTagWithNoHold<T=void>(complianceTag?: string): T;
+	setComplianceTagWithRecord<T=void>(complianceTag?: string): T;
+	systemUpdate<T=void>(): T;
+	update<T=void>(): T;
+	updateEx<T=void>(parameters?: SP.ListItemUpdateParameters): T;
+	updateHashtags<T=Array<SP.Hashtag>>(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): T;
+	updateOverwriteVersion<T=void>(): T;
+	validateUpdateListItem<T=Array<SP.ListItemFormUpdateValue>>(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): T;
+}
+
+/*********************************************
 * Attachment
 **********************************************/
 export interface Attachment {
@@ -369,6 +508,14 @@ export interface Attachment {
 	FileNameAsPath?: SP.ResourcePath;
 	ServerRelativePath?: SP.ResourcePath;
 	ServerRelativeUrl?: string;
+}
+
+/*********************************************
+* AttachmentMethods
+**********************************************/
+export interface AttachmentMethods {
+	deleteObject<T=void>(): T;
+	recycleObject<T=void>(): T;
 }
 
 /*********************************************
@@ -425,10 +572,26 @@ export interface ContentTypeQuery {
 }
 
 /*********************************************
+* ContentTypeMethods
+**********************************************/
+export interface ContentTypeMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(updateChildren?: boolean): T;
+}
+
+/*********************************************
 * UserResource
 **********************************************/
 export interface UserResource {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* UserResourceMethods
+**********************************************/
+export interface UserResourceMethods {
+	getValueForUICulture<T=string>(cultureName?: string): T;
+	setValueForUICulture<T=void>(cultureName?: string, value?: string): T;
 }
 
 /*********************************************
@@ -443,6 +606,13 @@ export interface FieldLink {
 	ReadOnly?: boolean;
 	Required?: boolean;
 	ShowInDisplayForm?: boolean;
+}
+
+/*********************************************
+* FieldLinkMethods
+**********************************************/
+export interface FieldLinkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -502,6 +672,17 @@ export interface FieldCollections {
 export interface FieldQuery {
 	DescriptionResource<T=SP.UserResource>(): T;
 	TitleResource<T=SP.UserResource>(): T;
+}
+
+/*********************************************
+* FieldMethods
+**********************************************/
+export interface FieldMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -590,6 +771,47 @@ export interface FileQuery {
 }
 
 /*********************************************
+* FileMethods
+**********************************************/
+export interface FileMethods {
+	addActivities<T=Array<Microsoft.SharePoint.Activities.ActivityClientResponse>>(activities?: Array<Microsoft.SharePoint.Activities.ActivityClientRequest>): T;
+	addClientActivities<T=Array<Microsoft.SharePoint.Activities.ActivityClientResponse>>(activitiesStream?: any): T;
+	approve<T=void>(comment?: string): T;
+	cancelUpload<T=void>(uploadId?: any): T;
+	checkAccessAndPostViewAuditEvent<T=boolean>(): T;
+	checkIn<T=void>(comment?: string, checkInType?: number): T;
+	checkOut<T=void>(): T;
+	continueUpload<T=number>(uploadId?: any, fileOffset?: number, stream?: any): T;
+	copyTo<T=void>(strNewUrl?: string, bOverWrite?: boolean): T;
+	copyToUsingPath<T=void>(DecodedUrl?: string, bOverWrite?: boolean): T;
+	deleteObject<T=void>(): T;
+	deny<T=void>(comment?: string): T;
+	executeCobaltRequest<T=any>(inputStream?: any): T;
+	finishUpload<T=SP.File>(uploadId?: any, fileOffset?: number, stream?: any): T;
+	getFileUserValue<T=Microsoft.SharePoint.UserActions.officeFileUserValueResponse>(key?: string): T;
+	getImagePreviewUri<T=string>(width?: number, height?: number, clientType?: string): T;
+	getImagePreviewUrl<T=string>(width?: number, height?: number, clientType?: string): T;
+	getLimitedWebPartManager<T=SP.WebParts.LimitedWebPartManager>(scope?: number): T;
+	getPreAuthorizedAccessUrl<T=string>(expirationHours?: number): T;
+	getUploadStatus<T=SP.Utilities.UploadStatus>(uploadId?: any): T;
+	getWOPIFrameUrl<T=string>(action?: number): T;
+	moveTo<T=void>(newUrl?: string, flags?: number): T;
+	moveToUsingPath<T=void>(DecodedUrl?: string, moveOperations?: number): T;
+	openBinaryStream<T=any>(): T;
+	openBinaryStreamWithOptions<T=any>(openOptions?: number): T;
+	publish<T=void>(comment?: string): T;
+	recycle<T=any>(): T;
+	recycleWithETag<T=any>(etagMatch?: string): T;
+	saveBinaryStream<T=void>(file?: any): T;
+	setFileUserValue<T=Microsoft.SharePoint.UserActions.officeFileUserValueResponse>(key?: string, value?: string): T;
+	startUpload<T=number>(uploadId?: any, stream?: any): T;
+	undoCheckOut<T=void>(): T;
+	unPublish<T=void>(comment?: string): T;
+	update<T=void>(): T;
+	updateVirusInfo<T=void>(virusStatus?: any, virusMessage?: string, etagToCheck?: string): T;
+}
+
+/*********************************************
 * EffectiveInformationRightsManagementSettings
 **********************************************/
 export interface EffectiveInformationRightsManagementSettings {
@@ -634,6 +856,14 @@ export interface InformationRightsManagementFileSettings {
 }
 
 /*********************************************
+* InformationRightsManagementFileSettingsMethods
+**********************************************/
+export interface InformationRightsManagementFileSettingsMethods {
+	reset<T=void>(): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FileVersionEvent
 **********************************************/
 export interface FileVersionEvent {
@@ -671,6 +901,14 @@ export interface FileVersionCollections {
 **********************************************/
 export interface FileVersionQuery {
 	CreatedBy<T=SP.User>(): T;
+}
+
+/*********************************************
+* FileVersionMethods
+**********************************************/
+export interface FileVersionMethods {
+	deleteObject<T=void>(): T;
+	openBinaryStream<T=any>(): T;
 }
 
 /*********************************************
@@ -714,6 +952,21 @@ export interface FolderQuery {
 	Properties<T=SP.PropertyValues>(): T;
 	StorageMetrics<T=SP.StorageMetrics>(): T;
 	Folders<T=Array<SP.Folder>>(): T;
+}
+
+/*********************************************
+* FolderMethods
+**********************************************/
+export interface FolderMethods {
+	addSubFolder<T=void>(leafName?: string): T;
+	addSubFolderUsingPath<T=void>(DecodedUrl?: string): T;
+	deleteObject<T=void>(): T;
+	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
+	getListItemChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
+	moveTo<T=void>(newUrl?: string): T;
+	moveToUsingPath<T=void>(DecodedUrl?: string): T;
+	recycle<T=any>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -851,6 +1104,59 @@ export interface ListQuery {
 }
 
 /*********************************************
+* ListMethods
+**********************************************/
+export interface ListMethods {
+	breakRoleInheritance<T=void>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): T;
+	resetRoleInheritance<T=void>(): T;
+	addItem<T=SP.ListItem>(parameters?: SP.ListItemCreationInformation): T;
+	addItemUsingPath<T=SP.ListItem>(parameters?: SP.ListItemCreationInformationUsingPath): T;
+	addValidateUpdateItem<T=Array<SP.ListItemFormUpdateValue>>(listItemCreateInfo?: SP.ListItemCreationInformation, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): T;
+	addValidateUpdateItemUsingPath<T=Array<SP.ListItemFormUpdateValue>>(listItemCreateInfo?: SP.ListItemCreationInformationUsingPath, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): T;
+	bulkValidateUpdateListItems<T=Array<SP.ListItemFormUpdateValue>>(itemIds?: Array<number>, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, folderPath?: string): T;
+	createDocumentAndGetEditLink<T=string>(fileName?: string, folderPath?: string, documentTemplateType?: number, templateUrl?: string): T;
+	createDocumentWithDefaultName<T=string>(folderPath?: string, extension?: string): T;
+	createMappedView<T=SP.View>(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): T;
+	deleteObject<T=void>(): T;
+	ensureSignoffStatusField<T=SP.Field>(): T;
+	getBloomFilter<T=SP.ListBloomFilter>(startItemId?: number): T;
+	getBloomFilterWithCustomFields<T=SP.ListBloomFilter>(listItemStartingID?: number, internalFieldNames?: Array<string>): T;
+	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
+	getCheckedOutFiles<T=Array<SP.CheckedOutFile>>(): T;
+	getItemById<T=SP.ListItem>(id?: number): T;
+	getItemByStringId<T=SP.ListItem>(sId?: string): T;
+	getItemByUniqueId<T=SP.ListItem>(uniqueId?: any): T;
+	getItems<T=Array<SP.ListItem>>(query?: SP.CamlQuery): T;
+	getListItemChangesSinceToken<T=any>(query?: SP.ChangeLogItemQuery): T;
+	getMappedApp<T=SP.VisualizationAppSynchronizationResult>(appId?: any, visualizationAppTarget?: number): T;
+	getMappedApps<T=SP.VisualizationAppSynchronizationResult>(visualizationAppTarget?: number): T;
+	getRelatedFields<T=Array<SP.RelatedField>>(): T;
+	getSpecialFolderUrl<T=string>(type?: number, bForceCreate?: boolean, existingFolderGuid?: any): T;
+	getUserEffectivePermissions<T=SP.BasePermissions>(userName?: string): T;
+	getView<T=SP.View>(viewGuid?: any): T;
+	getWebDavUrl<T=string>(sourceUrl?: string): T;
+	publishMappedView<T=SP.View>(appId?: any, visualizationTarget?: number): T;
+	recycle<T=any>(): T;
+	renderExtendedListFormData<T=string>(itemId?: number, formId?: string, mode?: number, options?: number, cutoffVersion?: number): T;
+	renderListContextMenuData<T=any>(CascDelWarnMessage?: string, CustomAction?: string, Field?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsXslView?: string, ItemId?: string, ListViewPageUrl?: string, OverrideScope?: string, RootFolder?: string, View?: string, ViewCount?: string): T;
+	renderListData<T=string>(viewXml?: string): T;
+	renderListDataAsStream<T=any>(parameters?: SP.RenderListDataParameters, CascDelWarnMessage?: string, CustomAction?: string, DrillDown?: string, Field?: string, FieldInternalName?: string, Filter?: string, FilterData?: string, FilterData1?: string, FilterData10?: string, FilterData2?: string, FilterData3?: string, FilterData4?: string, FilterData5?: string, FilterData6?: string, FilterData7?: string, FilterData8?: string, FilterData9?: string, FilterField?: string, FilterField1?: string, FilterField10?: string, FilterField2?: string, FilterField3?: string, FilterField4?: string, FilterField5?: string, FilterField6?: string, FilterField7?: string, FilterField8?: string, FilterField9?: string, FilterFields?: string, FilterFields1?: string, FilterFields10?: string, FilterFields2?: string, FilterFields3?: string, FilterFields4?: string, FilterFields5?: string, FilterFields6?: string, FilterFields7?: string, FilterFields8?: string, FilterFields9?: string, FilterLookupId?: string, FilterLookupId1?: string, FilterLookupId10?: string, FilterLookupId2?: string, FilterLookupId3?: string, FilterLookupId4?: string, FilterLookupId5?: string, FilterLookupId6?: string, FilterLookupId7?: string, FilterLookupId8?: string, FilterLookupId9?: string, FilterOp?: string, FilterOp1?: string, FilterOp10?: string, FilterOp2?: string, FilterOp3?: string, FilterOp4?: string, FilterOp5?: string, FilterOp6?: string, FilterOp7?: string, FilterOp8?: string, FilterOp9?: string, FilterValue?: string, FilterValue1?: string, FilterValue10?: string, FilterValue2?: string, FilterValue3?: string, FilterValue4?: string, FilterValue5?: string, FilterValue6?: string, FilterValue7?: string, FilterValue8?: string, FilterValue9?: string, FilterValues?: string, FilterValues1?: string, FilterValues10?: string, FilterValues2?: string, FilterValues3?: string, FilterValues4?: string, FilterValues5?: string, FilterValues6?: string, FilterValues7?: string, FilterValues8?: string, FilterValues9?: string, GroupString?: string, HasOverrideSelectCommand?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsGroupRender?: string, IsXslView?: string, ListViewPageUrl?: string, OverrideScope?: string, OverrideSelectCommand?: string, PageFirstRow?: string, PageLastRow?: string, RootFolder?: string, SortDir?: string, SortDir1?: string, SortDir10?: string, SortDir2?: string, SortDir3?: string, SortDir4?: string, SortDir5?: string, SortDir6?: string, SortDir7?: string, SortDir8?: string, SortDir9?: string, SortField?: string, SortField1?: string, SortField10?: string, SortField2?: string, SortField3?: string, SortField4?: string, SortField5?: string, SortField6?: string, SortField7?: string, SortField8?: string, SortField9?: string, SortFields?: string, SortFieldValues?: string, View?: string, ViewCount?: string, ViewId?: string, ViewPath?: string, WebPartId?: string): T;
+	renderListFilterData<T=any>(ExcludeFieldFilteringHtml?: boolean, FieldInternalName?: string, OverrideScope?: string, ProcessQStringToCAML?: string, ViewId?: string): T;
+	renderListFormData<T=string>(itemId?: number, formId?: string, mode?: number): T;
+	reserveListItemId<T=number>(): T;
+	saveAsNewView<T=string>(oldName?: string, newName?: string, privateView?: boolean, uri?: string): T;
+	saveAsTemplate<T=void>(strFileName?: string, strName?: string, strDescription?: string, bSaveData?: boolean): T;
+	setExemptFromBlockDownloadOfNonViewableFiles<T=void>(value?: boolean): T;
+	syncFlowCallbackUrl<T=SP.FlowSynchronizationResult>(flowId?: string): T;
+	syncFlowInstance<T=SP.FlowSynchronizationResult>(flowID?: any): T;
+	syncFlowInstances<T=SP.FlowSynchronizationResult>(): T;
+	syncFlowTemplates<T=SP.FlowSynchronizationResult>(category?: string): T;
+	unpublishMappedView<T=SP.View>(appId?: any, visualizationTarget?: number): T;
+	update<T=void>(): T;
+	validateAppName<T=SP.VisualizationAppSynchronizationResult>(appDisplayName?: string): T;
+}
+
+/*********************************************
 * CreatablesInfo
 **********************************************/
 export interface CreatablesInfo {
@@ -925,11 +1231,33 @@ export interface ViewQuery {
 }
 
 /*********************************************
+* ViewMethods
+**********************************************/
+export interface ViewMethods {
+	addToSpotlight<T=SP.Utilities.SpotlightResult>(itemId?: number, folderPath?: string, afterItemId?: number): T;
+	deleteObject<T=void>(): T;
+	removeFromSpotlight<T=SP.Utilities.SpotlightResult>(itemId?: number, folderPath?: string): T;
+	renderAsHtml<T=string>(): T;
+	setViewXml<T=void>(viewXml?: string): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * ViewFieldCollection
 **********************************************/
 export interface ViewFieldCollection {
 	SchemaXml?: string;
 	Items?: Array<string>;
+}
+
+/*********************************************
+* ViewFieldCollectionMethods
+**********************************************/
+export interface ViewFieldCollectionMethods {
+	addViewField<T=void>(strField?: string): T;
+	moveViewFieldTo<T=void>(field?: string, index?: number): T;
+	removeAllViewFields<T=void>(): T;
+	removeViewField<T=void>(strField?: string): T;
 }
 
 /*********************************************
@@ -961,6 +1289,14 @@ export interface InformationRightsManagementSettings {
 	PolicyDescription?: string;
 	PolicyTitle?: string;
 	TemplateId?: string;
+}
+
+/*********************************************
+* InformationRightsManagementSettingsMethods
+**********************************************/
+export interface InformationRightsManagementSettingsMethods {
+	reset<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -1138,6 +1474,92 @@ export interface WebQuery {
 }
 
 /*********************************************
+* WebMethods
+**********************************************/
+export interface WebMethods {
+	breakRoleInheritance<T=void>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): T;
+	resetRoleInheritance<T=void>(): T;
+	addCrossFarmMessage<T=boolean>(messagePayloadBase64?: string): T;
+	addSupportedUILanguage<T=void>(lcid?: number): T;
+	applyTheme<T=void>(colorPaletteUrl?: string, fontSchemeUrl?: string, backgroundImageUrl?: string, shareGenerated?: boolean): T;
+	applyWebTemplate<T=void>(webTemplate?: string): T;
+	createDefaultAssociatedGroups<T=void>(userLogin?: string, userLogin2?: string, groupNameSeed?: string): T;
+	defaultDocumentLibrary<T=SP.List>(): T;
+	deleteObject<T=void>(): T;
+	doesPushNotificationSubscriberExist<T=boolean>(deviceAppInstanceId?: any): T;
+	doesUserHavePermissions<T=boolean>(permissionMask?: SP.BasePermissions): T;
+	ensureUser<T=SP.User>(logonName?: string): T;
+	executeRemoteLOB<T=any>(inputStream?: any): T;
+	getAppBdcCatalog<T=SP.BusinessData.AppBdcCatalog>(): T;
+	getAppBdcCatalogForAppInstance<T=SP.BusinessData.AppBdcCatalog>(appInstanceId?: any): T;
+	getAppInstanceById<T=SP.AppInstance>(appInstanceId?: any): T;
+	getAppInstancesByProductId<T=Array<SP.AppInstance>>(productId?: any): T;
+	getAvailableWebTemplates<T=Array<SP.WebTemplate>>(lcid?: number, doIncludeCrossLanguage?: boolean): T;
+	getCatalog<T=SP.List>(typeCatalog?: number): T;
+	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
+	getClientSideComponents<T=Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>>(components?: Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier>): T;
+	getClientSideComponentsById<T=Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>>(componentIds?: Array<any>): T;
+	getClientSideWebParts<T=Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>>(includeErrors?: boolean): T;
+	getCustomListTemplates<T=Array<SP.ListTemplate>>(): T;
+	getEntity<T=SP.BusinessData.Entity>(namespace?: string, name?: string): T;
+	getFileByGuestUrl<T=SP.File>(guestUrl?: string): T;
+	getFileByGuestUrlEnsureAccess<T=SP.File>(guestUrl?: string, ensureAccess?: boolean): T;
+	getFileByGuestUrlExtended<T=SP.File>(guestUrl?: string, requestSettings?: SP.Sharing.SharingLinkAccessRequest): T;
+	getFileById<T=SP.File>(uniqueId?: any): T;
+	getFileByLinkingUrl<T=SP.File>(linkingUrl?: string): T;
+	getFileByServerRelativePath<T=SP.File>(DecodedUrl?: string): T;
+	getFileByServerRelativeUrl<T=SP.File>(serverRelativeUrl?: string): T;
+	getFileByUrl<T=SP.File>(fileUrl?: string): T;
+	getFileByWOPIFrameUrl<T=SP.File>(wopiFrameUrl?: string): T;
+	getFolderByGuestUrl<T=SP.Folder>(guestUrl?: string, ensureAccess?: boolean): T;
+	getFolderByGuestUrlExtended<T=SP.Folder>(guestUrl?: string, requestSettings?: SP.Sharing.SharingLinkAccessRequest): T;
+	getFolderById<T=SP.Folder>(uniqueId?: any): T;
+	getFolderByServerRelativePath<T=SP.Folder>(DecodedUrl?: string): T;
+	getFolderByServerRelativeUrl<T=SP.Folder>(serverRelativeUrl?: string): T;
+	getList<T=SP.List>(strUrl?: string): T;
+	getListItem<T=SP.ListItem>(strUrl?: string): T;
+	getListItemByResourceId<T=SP.ListItem>(resourceId?: string): T;
+	getListItemUsingPath<T=SP.ListItem>(DecodedUrl?: string): T;
+	getListUsingPath<T=SP.List>(DecodedUrl?: string): T;
+	getNewsList<T=SP.List>(allowCreate?: boolean): T;
+	getOnePageContextAsStream<T=any>(): T;
+	getPushNotificationSubscriber<T=SP.PushNotificationSubscriber>(deviceAppInstanceId?: any): T;
+	getPushNotificationSubscribersByArgs<T=Array<SP.PushNotificationSubscriber>>(customArgs?: string): T;
+	getPushNotificationSubscribersByUser<T=Array<SP.PushNotificationSubscriber>>(userName?: string): T;
+	getRecycleBinItems<T=Array<SP.RecycleBinItem>>(pagingInfo?: string, rowLimit?: number, isAscending?: boolean, orderBy?: number, itemState?: number): T;
+	getRecycleBinItemsByQueryInfo<T=Array<SP.RecycleBinItem>>(IsAscending?: boolean, ItemState?: number, OrderBy?: number, PagingInfo?: string, RowLimit?: number, ShowOnlyMyItems?: boolean): T;
+	getRegionalDateTimeSchema<T=string>(): T;
+	getSharingLinkData<T=SP.SharingLinkData>(linkUrl?: string): T;
+	getStorageEntity<T=Microsoft.SharePoint.ClientSideComponent.StorageEntity>(key?: string): T;
+	getSubwebsFilteredForCurrentUser<T=Array<SP.WebInformation>>(nWebTemplateFilter?: number, nConfigurationFilter?: number): T;
+	getUserById<T=SP.User>(userId?: number): T;
+	getUserEffectivePermissions<T=SP.BasePermissions>(userName?: string): T;
+	getViewFromPath<T=SP.View>(DecodedUrl?: string): T;
+	getViewFromUrl<T=SP.View>(listUrl?: string): T;
+	hubSiteData<T=string>(forceRefresh?: boolean): T;
+	hubSiteDataAsStream<T=any>(forceRefresh?: boolean): T;
+	incrementSiteClientTag<T=void>(): T;
+	loadAndInstallApp<T=SP.AppInstance>(appPackageStream?: any): T;
+	loadAndInstallAppInSpecifiedLocale<T=SP.AppInstance>(appPackageStream?: any, installationLocaleLCID?: number): T;
+	loadApp<T=SP.AppInstance>(appPackageStream?: any, installationLocaleLCID?: number): T;
+	mapToIcon<T=string>(fileName?: string, progId?: string, size?: number): T;
+	pageContextInfo<T=any>(includeODBSettings?: boolean, emitNavigationInfo?: boolean): T;
+	parseDateTime<T=string>(value?: string, displayFormat?: number, calendarType?: number): T;
+	processExternalNotification<T=string>(stream?: any): T;
+	registerPushNotificationSubscriber<T=SP.PushNotificationSubscriber>(deviceAppInstanceId?: any, serviceToken?: string): T;
+	removeStorageEntity<T=void>(key?: string): T;
+	removeSupportedUILanguage<T=void>(lcid?: number): T;
+	setAccessRequestSiteDescriptionAndUpdate<T=void>(description?: string): T;
+	setStorageEntity<T=void>(key?: string, value?: string, description?: string, comments?: string): T;
+	setUseAccessRequestDefaultAndUpdate<T=void>(useAccessRequestDefault?: boolean): T;
+	syncFlowInstances<T=SP.FlowSynchronizationResult>(targetWebUrl?: string): T;
+	syncFlowTemplates<T=SP.FlowSynchronizationResult>(category?: string): T;
+	syncHubSiteTheme<T=void>(): T;
+	unregisterPushNotificationSubscriber<T=void>(deviceAppInstanceId?: any): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * AppTile
 **********************************************/
 export interface AppTile {
@@ -1195,11 +1617,26 @@ export interface GroupQuery {
 }
 
 /*********************************************
+* GroupMethods
+**********************************************/
+export interface GroupMethods {
+	setUserAsOwner<T=void>(ownerId?: number): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * ClientWebPart
 **********************************************/
 export interface ClientWebPart {
 	Id?: any;
 	Name?: string;
+}
+
+/*********************************************
+* ClientWebPartMethods
+**********************************************/
+export interface ClientWebPartMethods {
+	render<T=string>(properties?: Array<SP.KeyValue>): T;
 }
 
 /*********************************************
@@ -1231,6 +1668,13 @@ export interface ListTemplate {
 }
 
 /*********************************************
+* ListTemplateMethods
+**********************************************/
+export interface ListTemplateMethods {
+	getGlobalSchemaXml<T=any>(): T;
+}
+
+/*********************************************
 * Navigation
 **********************************************/
 export interface Navigation {
@@ -1251,6 +1695,13 @@ export interface NavigationCollections {
 export interface NavigationQuery {
 	QuickLaunch<T=Array<SP.NavigationNode>>(): T;
 	TopNavigationBar<T=Array<SP.NavigationNode>>(): T;
+}
+
+/*********************************************
+* NavigationMethods
+**********************************************/
+export interface NavigationMethods {
+	getNodeById<T=SP.NavigationNode>(id?: number): T;
 }
 
 /*********************************************
@@ -1279,6 +1730,14 @@ export interface NavigationNodeCollections {
 **********************************************/
 export interface NavigationNodeQuery {
 	Children<T=Array<SP.NavigationNode>>(): T;
+}
+
+/*********************************************
+* NavigationNodeMethods
+**********************************************/
+export interface NavigationNodeMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -1325,6 +1784,13 @@ export interface PushNotificationSubscriberQuery {
 }
 
 /*********************************************
+* PushNotificationSubscriberMethods
+**********************************************/
+export interface PushNotificationSubscriberMethods {
+	update<T=void>(): T;
+}
+
+/*********************************************
 * RecycleBinItem
 **********************************************/
 export interface RecycleBinItem {
@@ -1359,6 +1825,15 @@ export interface RecycleBinItemCollections {
 export interface RecycleBinItemQuery {
 	Author<T=SP.User>(): T;
 	DeletedBy<T=SP.User>(): T;
+}
+
+/*********************************************
+* RecycleBinItemMethods
+**********************************************/
+export interface RecycleBinItemMethods {
+	deleteObject<T=void>(): T;
+	moveToSecondStage<T=void>(): T;
+	restore<T=void>(): T;
 }
 
 /*********************************************
@@ -1415,11 +1890,25 @@ export interface RegionalSettingsQuery {
 }
 
 /*********************************************
+* RegionalSettingsMethods
+**********************************************/
+export interface RegionalSettingsMethods {
+	update<T=void>(): T;
+}
+
+/*********************************************
 * LanguageCollection
 **********************************************/
 export interface LanguageCollection {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 	Items?: Array<SP.Language>;
+}
+
+/*********************************************
+* LanguageCollectionMethods
+**********************************************/
+export interface LanguageCollectionMethods {
+	getById<T=SP.Language>(id?: number): T;
 }
 
 /*********************************************
@@ -1432,11 +1921,27 @@ export interface TimeZone {
 }
 
 /*********************************************
+* TimeZoneMethods
+**********************************************/
+export interface TimeZoneMethods {
+	localTimeToUTC<T=any>(date?: any): T;
+	uTCToLocalTime<T=any>(date?: any): T;
+}
+
+/*********************************************
 * ThemeInfo
 **********************************************/
 export interface ThemeInfo {
 	AccessibleDescription?: string;
 	ThemeBackgroundImageUri?: string;
+}
+
+/*********************************************
+* ThemeInfoMethods
+**********************************************/
+export interface ThemeInfoMethods {
+	getThemeFontByName<T=string>(name?: string, lcid?: number): T;
+	getThemeShadeByName<T=string>(name?: string): T;
 }
 
 /*********************************************
@@ -1481,6 +1986,14 @@ export interface UserCustomActionQuery {
 }
 
 /*********************************************
+* UserCustomActionMethods
+**********************************************/
+export interface UserCustomActionMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * ListItemVersion
 **********************************************/
 export interface ListItemVersion {
@@ -1509,10 +2022,24 @@ export interface ListItemVersionQuery {
 }
 
 /*********************************************
+* ListItemVersionMethods
+**********************************************/
+export interface ListItemVersionMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * SPAppLicenseManager
 **********************************************/
 export interface SPAppLicenseManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPAppLicenseManagerMethods
+**********************************************/
+export interface SPAppLicenseManagerMethods {
+	checkLicense<T=SP.AppLicenseCollection>(productId?: any): T;
 }
 
 /*********************************************
@@ -1568,6 +2095,22 @@ export interface AppInstance {
 	Status?: number;
 	Title?: string;
 	WebId?: any;
+}
+
+/*********************************************
+* AppInstanceMethods
+**********************************************/
+export interface AppInstanceMethods {
+	cancelAllJobs<T=boolean>(): T;
+	getAppDatabaseConnectionString<T=string>(): T;
+	getErrorDetails<T=Array<SP.AppInstanceErrorDetails>>(): T;
+	getPreviousAppVersion<T=SP.App>(): T;
+	install<T=any>(): T;
+	recycle<T=any>(): T;
+	restore<T=any>(): T;
+	retryAllJobs<T=void>(): T;
+	uninstall<T=any>(): T;
+	upgrade<T=void>(appPackageStream?: any): T;
 }
 
 /*********************************************
@@ -1680,6 +2223,13 @@ export interface ObjectSharingInformationCollections {
 **********************************************/
 export interface ObjectSharingInformationQuery {
 	SharedWithUsersCollection<T=Array<SP.ObjectSharingInformationUser>>(): T;
+}
+
+/*********************************************
+* ObjectSharingInformationMethods
+**********************************************/
+export interface ObjectSharingInformationMethods {
+	getSharedWithUsers<T=Array<SP.ObjectSharingInformationUser>>(): T;
 }
 
 /*********************************************
@@ -2035,6 +2585,13 @@ export interface CheckedOutFileQuery {
 }
 
 /*********************************************
+* CheckedOutFileMethods
+**********************************************/
+export interface CheckedOutFileMethods {
+	takeOverCheckOut<T=void>(): T;
+}
+
+/*********************************************
 * CompatibilityRange
 **********************************************/
 export interface CompatibilityRange {
@@ -2084,6 +2641,13 @@ export interface RequestContextQuery {
 }
 
 /*********************************************
+* RequestContextMethods
+**********************************************/
+export interface RequestContextMethods {
+	getRemoteContext<T=SP.RequestContext>(): T;
+}
+
+/*********************************************
 * CurrencyList
 **********************************************/
 export interface CurrencyList {
@@ -2103,12 +2667,34 @@ export interface FieldCalculated extends SP.Field {
 }
 
 /*********************************************
+* FieldCalculatedMethods
+**********************************************/
+export interface FieldCalculatedMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldMultiChoice
 **********************************************/
 export interface FieldMultiChoice extends SP.Field {
 	FillInChoice?: boolean;
 	Mappings?: string;
 	Choices?: Array<string>;
+}
+
+/*********************************************
+* FieldMultiChoiceMethods
+**********************************************/
+export interface FieldMultiChoiceMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2119,10 +2705,32 @@ export interface FieldChoice extends SP.FieldMultiChoice {
 }
 
 /*********************************************
+* FieldChoiceMethods
+**********************************************/
+export interface FieldChoiceMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldComputed
 **********************************************/
 export interface FieldComputed extends SP.Field {
 	EnableLookup?: boolean;
+}
+
+/*********************************************
+* FieldComputedMethods
+**********************************************/
+export interface FieldComputedMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2136,10 +2744,32 @@ export interface FieldNumber extends SP.Field {
 }
 
 /*********************************************
+* FieldNumberMethods
+**********************************************/
+export interface FieldNumberMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldCurrency
 **********************************************/
 export interface FieldCurrency extends SP.FieldNumber {
 	CurrencyLocaleId?: number;
+}
+
+/*********************************************
+* FieldCurrencyMethods
+**********************************************/
+export interface FieldCurrencyMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2152,6 +2782,17 @@ export interface FieldDateTime extends SP.Field {
 }
 
 /*********************************************
+* FieldDateTimeMethods
+**********************************************/
+export interface FieldDateTimeMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldGeolocation
 **********************************************/
 export interface FieldGeolocation extends SP.Field {
@@ -2159,10 +2800,32 @@ export interface FieldGeolocation extends SP.Field {
 }
 
 /*********************************************
+* FieldGeolocationMethods
+**********************************************/
+export interface FieldGeolocationMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldGuid
 **********************************************/
 export interface FieldGuid extends SP.Field {
 
+}
+
+/*********************************************
+* FieldGuidMethods
+**********************************************/
+export interface FieldGuidMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2179,10 +2842,32 @@ export interface FieldMultiLineText extends SP.Field {
 }
 
 /*********************************************
+* FieldMultiLineTextMethods
+**********************************************/
+export interface FieldMultiLineTextMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldLocation
 **********************************************/
 export interface FieldLocation extends SP.FieldMultiLineText {
 
+}
+
+/*********************************************
+* FieldLocationMethods
+**********************************************/
+export interface FieldLocationMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2202,6 +2887,17 @@ export interface FieldLookup extends SP.Field {
 }
 
 /*********************************************
+* FieldLookupMethods
+**********************************************/
+export interface FieldLookupMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldRatingScale
 **********************************************/
 export interface FieldRatingScale extends SP.FieldMultiChoice {
@@ -2215,10 +2911,32 @@ export interface FieldRatingScale extends SP.FieldMultiChoice {
 }
 
 /*********************************************
+* FieldRatingScaleMethods
+**********************************************/
+export interface FieldRatingScaleMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldText
 **********************************************/
 export interface FieldText extends SP.Field {
 	MaxLength?: number;
+}
+
+/*********************************************
+* FieldTextMethods
+**********************************************/
+export interface FieldTextMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2229,6 +2947,17 @@ export interface FieldUrl extends SP.Field {
 }
 
 /*********************************************
+* FieldUrlMethods
+**********************************************/
+export interface FieldUrlMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * FieldUser
 **********************************************/
 export interface FieldUser extends SP.FieldLookup {
@@ -2236,6 +2965,17 @@ export interface FieldUser extends SP.FieldLookup {
 	Presence?: boolean;
 	SelectionGroup?: number;
 	SelectionMode?: number;
+}
+
+/*********************************************
+* FieldUserMethods
+**********************************************/
+export interface FieldUserMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2267,6 +3007,13 @@ export interface HubSite {
 	Targets?: string;
 	TenantInstanceId?: any;
 	Title?: string;
+}
+
+/*********************************************
+* HubSiteMethods
+**********************************************/
+export interface HubSiteMethods {
+	delete<T=void>(): T;
 }
 
 /*********************************************
@@ -2370,6 +3117,19 @@ export interface RemoteWebCollections {
 **********************************************/
 export interface RemoteWebQuery {
 	Web<T=SP.Web>(): T;
+}
+
+/*********************************************
+* RemoteWebMethods
+**********************************************/
+export interface RemoteWebMethods {
+	getFileByServerRelativePath<T=SP.File>(serverRelatvieFilePath?: SP.ResourcePath): T;
+	getFileByServerRelativeUrl<T=SP.File>(serverRelativeFileUrl?: string): T;
+	getFileByUrl<T=SP.File>(fileUrl?: string): T;
+	getFolderByServerRelativeUrl<T=SP.Folder>(serverRelativeUrl?: string): T;
+	getGroupById<T=SP.Group>(groupId?: number): T;
+	getListById<T=SP.List>(listGuid?: any): T;
+	getListByServerRelativeUrl<T=SP.List>(serverRelativeUrl?: string): T;
 }
 
 /*********************************************

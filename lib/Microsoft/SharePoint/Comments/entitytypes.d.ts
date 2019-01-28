@@ -37,6 +37,14 @@ export interface commentQuery {
 }
 
 /*********************************************
+* commentMethods
+**********************************************/
+export interface commentMethods {
+	like<T=void>(): T;
+	unlike<T=void>(): T;
+}
+
+/*********************************************
 * CommentsAPI
 **********************************************/
 export interface CommentsAPI {

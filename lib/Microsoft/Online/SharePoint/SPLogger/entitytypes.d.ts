@@ -8,6 +8,15 @@ export interface LogExport {
 }
 
 /*********************************************
+* LogExportMethods
+**********************************************/
+export interface LogExportMethods {
+	getFiles<T=Array<Microsoft.Online.SharePoint.SPLogger.LogFileInfo>>(partitionId?: string, logType?: string): T;
+	getLogTypes<T=Array<string>>(): T;
+	getPartitions<T=Array<string>>(logType?: string): T;
+}
+
+/*********************************************
 * LogFileInfo
 **********************************************/
 export interface LogFileInfo {

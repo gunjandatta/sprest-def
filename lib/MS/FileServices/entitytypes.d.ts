@@ -23,6 +23,17 @@ export interface File extends MS.FileServices.FileSystemItem {
 }
 
 /*********************************************
+* FileMethods
+**********************************************/
+export interface FileMethods {
+	copyTo<T=void>(target?: string, overwrite?: boolean): T;
+	deleteObject<T=void>(): T;
+	download<T=any>(): T;
+	moveTo<T=void>(target?: string, overwrite?: boolean): T;
+	upload<T=void>(stream?: any): T;
+}
+
+/*********************************************
 * FileService
 **********************************************/
 export interface FileService {
@@ -48,6 +59,14 @@ export interface FolderCollections {
 **********************************************/
 export interface FolderQuery {
 	Children<T=Array<MS.FileServices.FileSystemItem>>(): T;
+}
+
+/*********************************************
+* FolderMethods
+**********************************************/
+export interface FolderMethods {
+	deleteObject<T=void>(): T;
+	moveTo<T=void>(target?: string): T;
 }
 
 /*********************************************

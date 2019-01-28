@@ -16,6 +16,29 @@ let create = {
     }
 };
 
+// Parse the methods and apply the methods to the directories object
+function applyMethodsToDirectories(methods, directories) {
+    // Parse the methods
+    for (let name in methods) {
+        let method = methods[name];
+
+        // Find the last index of '.'
+        let idx = name.lastIndexOf('.');
+
+        // Set the lib and obj name
+        let lib = name.substr(0, idx);
+        let obj = name.substr(idx + 1);
+
+        // See if a file name exists for this object
+        if (directories[lib] && directories[lib].EntityTypes && directories[lib].EntityTypes[obj]) {
+            obj = directories[lib].EntityTypes[obj];
+
+            // Add the method
+            obj._Methods = (obj._Methods || []).concat(method);
+        }
+    }
+}
+
 // Recursively create the directories and index files from the namespace
 function createDirectories(namespace) {
     let path = "lib";
@@ -76,6 +99,27 @@ function generateIndexFiles(path) {
     }
 };
 
+// Method to convert the type
+function getType(type = "any") {
+    // Return the type
+    return type
+        .replace(/Edm\.Boolean/, 'boolean')
+        .replace(/Edm\.Binary/, 'any')
+        .replace(/Edm\.Byte/, 'any')
+        .replace(/Edm\.DateTime/, 'any')
+        .replace(/Edm\.Decimal/, 'number')
+        .replace(/Edm\.Double/, 'number')
+        .replace(/Edm\.Guid/, 'any')
+        .replace(/Edm\.Int16/, 'number')
+        .replace(/Edm\.Int32/, 'number')
+        .replace(/Edm\.Int64/, 'number')
+        .replace(/Edm\.Stream/, 'any')
+        .replace(/Edm\.String/, 'string')
+        .replace(/Edm\.Time/, 'any')
+        .replace(/^Collection\(/, 'Array<')
+        .replace(/\)$/, '>');
+}
+
 // Method to update the references
 function updateReferences(fileImports, dirName, type) {
     // See if the type requires an import
@@ -104,6 +148,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
     // Parse the xml
     parser(xml, function (err, xml) {
         let directories = {};
+        let methods = {};
         let methodTypes = {};
 
         // Parse the schemas
@@ -129,6 +174,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 if (value.length > 0) {
                     let collection = key + "s";
                     let isAssociation = key == "Association";
+                    let isEntityContainer = key == "EntityContainer";
 
                     // Parse the collection
                     for (let j = 0; j < value.length; j++) {
@@ -158,6 +204,29 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     methodTypes[name][role] = { isCollection, type };
                                 }
                             }
+                        }
+                        // Else, see if this is an entity container
+                        else if (isEntityContainer) {
+                            // Parse the functions
+                            let functions = interface.FunctionImport || [];
+                            for (let k = 0; k < functions.length; k++) {
+                                let functionInfo = functions[k];
+
+                                // See if this function has the valid information
+                                let isValid = functionInfo.Parameter ? functionInfo.Parameter[0] : null;
+                                isValid = isValid ? isValid.$ : null;
+                                isValid = functionInfo.$ && isValid && isValid.Name == "this" && isValid.Type ? true : false;
+                                if (!isValid) { continue; }
+
+                                // Get the function information
+                                let name = functionInfo.$.Name[0].toLowerCase() + functionInfo.$.Name.slice(1);
+                                let returnType = functionInfo.$.ReturnType || "void";
+                                let parentName = functionInfo.Parameter[0].$.Type;
+
+                                // Create an array for the methods
+                                methods[parentName] = methods[parentName] || [];
+                                methods[parentName].push({ name, returnType, params: functionInfo.Parameter.slice(1) });
+                            }
                         } else {
                             // Add the collection
                             directories[ns][collection] = directories[ns][collection] || {};
@@ -186,12 +255,12 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                                     // Validate the method information
                                     if (methodName && methodRole && methodType) {
-                                        // Ensure methods and method name exist
-                                        directories[ns][collection][name]._Methods = directories[ns][collection][name]._Methods || {};
-                                        directories[ns][collection][name]._Methods[methodName] = directories[ns][collection][name]._Methods[methodName] || {};
+                                        // Ensure collection name exist
+                                        directories[ns][collection][name]._Collections = directories[ns][collection][name]._Collections || {};
+                                        directories[ns][collection][name]._Collections[methodName] = directories[ns][collection][name]._Collections[methodName] || {};
 
                                         // Add the method
-                                        directories[ns][collection][name]._Methods[methodName][methodRole] = methodType;
+                                        directories[ns][collection][name]._Collections[methodName][methodRole] = methodType;
                                     } else { continue; }
                                 }
 
@@ -222,6 +291,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 }
             }
         }
+
+        // Apply the methods to the directories object
+        applyMethodsToDirectories(methods, directories);
 
         // See if the lib directory exists
         if (fs.existsSync("lib")) {
@@ -259,6 +331,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 // Parse the interfaces
                 for (let name in directories[dirName][filename]) {
                     let interface = directories[dirName][filename][name];
+                    let collections = [];
                     let methods = [];
                     let queryMethods = [];
                     let variables = [];
@@ -274,14 +347,14 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             continue;
                         }
 
-                        // Skip the methods
-                        if (propName == "_Methods") {
-                            // Parse the methods
-                            for (var methodName in prop) {
-                                // Parse the method roles
-                                for (var methodRole in prop[methodName]) {
+                        // See if this object contains collections
+                        if (propName == "_Collections") {
+                            // Parse the collections
+                            for (var collection in prop) {
+                                // Parse the roles
+                                for (var methodRole in prop[collection]) {
                                     // Get the method type key
-                                    let methodKey = prop[methodName][methodRole].split('.');
+                                    let methodKey = prop[collection][methodRole].split('.');
                                     methodKey = methodKey[methodKey.length - 1];
 
                                     // See if the method information exists
@@ -293,8 +366,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     }
 
                                     // Add the method
-                                    methods.push('\t' + methodName + '<T=' + methodType + '>(): T;');
-                                    queryMethods.push('\t' + methodName + '<T=' + methodType + '>(): T;');
+                                    collections.push('\t' + collection + '<T=' + methodType + '>(): T;');
+                                    queryMethods.push('\t' + collection + '<T=' + methodType + '>(): T;');
 
                                     // Update the references
                                     updateReferences(fileImports, dirName, methodType);
@@ -305,23 +378,31 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             continue;
                         }
 
+                        // See if this object contains methods
+                        if (propName == "_Methods") {
+                            // Parse the methods
+                            for (let i = 0; i < prop.length; i++) {
+                                let methodInfo = prop[i];
+
+                                // Parse the parameters
+                                let params = [];
+                                for (let j = 0; j < methodInfo.params.length; j++) {
+                                    let param = methodInfo.params[j].$;
+
+                                    // Add the parameter
+                                    params.push(param.Name + "?: " + getType(param.Type));
+                                }
+
+                                // Add the method
+                                methods.push('\t' + methodInfo.name + '<T=' + getType(methodInfo.returnType) + '>(' + params.join(', ') + '): T;');
+                            }
+
+                            // Continue the loop
+                            continue;
+                        }
+
                         // Update the type
-                        let type = prop.Type || "any";
-                        type = type
-                            .replace(/Edm\.Boolean/, 'boolean')
-                            .replace(/Edm\.Binary/, 'any')
-                            .replace(/Edm\.Byte/, 'any')
-                            .replace(/Edm\.DateTime/, 'any')
-                            .replace(/Edm\.Decimal/, 'number')
-                            .replace(/Edm\.Double/, 'number')
-                            .replace(/Edm\.Guid/, 'any')
-                            .replace(/Edm\.Int16/, 'number')
-                            .replace(/Edm\.Int32/, 'number')
-                            .replace(/Edm\.Int64/, 'number')
-                            .replace(/Edm\.String/, 'string')
-                            .replace(/Edm\.Time/, 'any')
-                            .replace(/^Collection\(/, 'Array<')
-                            .replace(/\)$/, '>');
+                        let type = getType(prop.Type);
 
                         // Update the references
                         updateReferences(fileImports, dirName, type);
@@ -330,15 +411,11 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         variables.push('\t' + propName + '?: ' + type + ';');
                     }
 
-                    // Add the content
+                    // Generate the content
                     content.push(create.interface(name, interface._BaseType, variables.join('\n')));
-
-                    // See if methods exist
-                    if (methods.length > 0) {
-                        // Add the content
-                        content.push(create.interface(name + "Collections", null, methods.join('\n')));
-                        content.push(create.interface(name + "Query", null, queryMethods.join('\n')));
-                    }
+                    collections.length > 0 ? content.push(create.interface(name + "Collections", null, collections.join('\n'))) : null;
+                    queryMethods.length > 0 ? content.push(create.interface(name + "Query", null, queryMethods.join('\n'))) : null;
+                    methods.length > 0 ? content.push(create.interface(name + "Methods", null, methods.join('\n'))) : null;
                 }
 
                 // Ensure content exists

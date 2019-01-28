@@ -24,10 +24,25 @@ export interface HubSiteProperties {
 }
 
 /*********************************************
+* HubSitePropertiesMethods
+**********************************************/
+export interface HubSitePropertiesMethods {
+	update<T=void>(): T;
+}
+
+/*********************************************
 * Office365CommsMessagesServiceProxy
 **********************************************/
 export interface Office365CommsMessagesServiceProxy {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* Office365CommsMessagesServiceProxyMethods
+**********************************************/
+export interface Office365CommsMessagesServiceProxyMethods {
+	messageCenterMessages<T=Array<Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter>>(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): T;
+	serviceHealthMessages<T=Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth>(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): T;
 }
 
 /*********************************************
@@ -55,6 +70,18 @@ export interface ResponseServiceHealth {
 **********************************************/
 export interface SiteCollectionManagementService {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteCollectionManagementServiceMethods
+**********************************************/
+export interface SiteCollectionManagementServiceMethods {
+	emailAdmins<T=Array<Microsoft.Online.SharePoint.TenantAdministration.EmailResponse>>(message?: string, siteIds?: Array<any>, subject?: string): T;
+	exportCSVFile<T=string>(): T;
+	getSiteDescription<T=string>(siteId?: any): T;
+	office365ProvidedSharepointSiteActivityDataReady<T=boolean>(): T;
+	resetTimestampUpdateOffice365ProvidedSharepointSiteActivityData<T=void>(): T;
+	updateOffice365ProvidedSharepointSiteActivityData<T=boolean>(oauthToken?: string): T;
 }
 
 /*********************************************
@@ -111,6 +138,13 @@ export interface SiteProperties {
 	UserCodeMaximumLevel?: number;
 	UserCodeWarningLevel?: number;
 	WebsCount?: number;
+}
+
+/*********************************************
+* SitePropertiesMethods
+**********************************************/
+export interface SitePropertiesMethods {
+	update<T=Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>(): T;
 }
 
 /*********************************************
@@ -175,6 +209,14 @@ export interface TenantAdminSettingsService {
 	SmtpServer?: Microsoft.Online.SharePoint.TenantAdministration.SmtpServer;
 	SPListModernUXOff?: Microsoft.Online.SharePoint.TenantAdministration.SPListModernUXOff;
 	TenantDefaultTimeZoneId?: Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId;
+}
+
+/*********************************************
+* TenantAdminSettingsServiceMethods
+**********************************************/
+export interface TenantAdminSettingsServiceMethods {
+	getTenantSharingStatus<T=number>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -296,6 +338,32 @@ export interface TenantCollections {
 **********************************************/
 export interface TenantQuery {
 	Sites<T=Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>>(): T;
+}
+
+/*********************************************
+* TenantMethods
+**********************************************/
+export interface TenantMethods {
+	checkTenantIntuneLicense<T=boolean>(): T;
+	checkTenantLicenses<T=boolean>(licenses?: Array<string>): T;
+	connectSiteToHubSiteById<T=void>(siteUrl?: string, hubSiteId?: any): T;
+	createSite<T=Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>(siteCreationProperties?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties): T;
+	getIdleSessionSignOutForUnmanagedDevices<T=string>(): T;
+	getSitePropertiesByUrl<T=Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>(url?: string, includeDetail?: boolean): T;
+	getSitePropertiesFromSharePointByFilters<T=Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>>(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): T;
+	getSiteSecondaryAdministrators<T=Array<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>>(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): T;
+	getSPOTenantAllWebTemplates<T=Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>(): T;
+	registerHubSite<T=Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>(siteUrl?: string): T;
+	registerHubSiteWithCreationInformation<T=Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>(siteUrl?: string, creationInformation?: SP.HubSiteCreationInformation): T;
+	removeDeletedSite<T=Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>(siteUrl?: string): T;
+	removeDeletedSitePreferId<T=Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>(siteUrl?: string, siteId?: any): T;
+	removeSite<T=Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>(siteUrl?: string): T;
+	restoreDeletedSite<T=Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>(siteUrl?: string): T;
+	restoreDeletedSitePreferId<T=Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>(siteUrl?: string, siteId?: any): T;
+	setIdleSessionSignOutForUnmanagedDevices<T=boolean>(enabled?: boolean, warnAfter?: any, signOutAfter?: any): T;
+	setSiteSecondaryAdministrators<T=void>(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): T;
+	unregisterHubSite<T=void>(siteUrl?: string): T;
+	update<T=void>(): T;
 }
 
 /*********************************************

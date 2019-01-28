@@ -18,6 +18,13 @@ export interface AllowedDataLocation extends Microsoft.Online.SharePoint.MultiGe
 }
 
 /*********************************************
+* AllowedDataLocationMethods
+**********************************************/
+export interface AllowedDataLocationMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * ContentDbSchemaVersion
 **********************************************/
 export interface ContentDbSchemaVersion {
@@ -72,6 +79,13 @@ export interface CrossFarmGroupMoveJob {
 }
 
 /*********************************************
+* CrossFarmGroupMoveJobMethods
+**********************************************/
+export interface CrossFarmGroupMoveJobMethods {
+	update<T=void>(): T;
+}
+
+/*********************************************
 * SiteMoveJobEntityData
 **********************************************/
 export interface SiteMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
@@ -95,6 +109,13 @@ export interface CrossFarmSiteMoveJob extends Microsoft.Online.SharePoint.MultiG
 	LastModified?: any;
 	StartedDateInUtc?: any;
 	StateName?: string;
+}
+
+/*********************************************
+* CrossFarmSiteMoveJobMethods
+**********************************************/
+export interface CrossFarmSiteMoveJobMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -122,6 +143,13 @@ export interface CrossFarmUserMoveJob extends Microsoft.Online.SharePoint.MultiG
 	LastModified?: any;
 	StartedDateInUtc?: any;
 	StateName?: string;
+}
+
+/*********************************************
+* CrossFarmUserMoveJobMethods
+**********************************************/
+export interface CrossFarmUserMoveJobMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -158,6 +186,14 @@ export interface CrossGeoTenantProperty extends Microsoft.Online.SharePoint.Mult
 }
 
 /*********************************************
+* CrossGeoTenantPropertyMethods
+**********************************************/
+export interface CrossGeoTenantPropertyMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * DBSchemaCompatibilityCheck
 **********************************************/
 export interface DBSchemaCompatibilityCheck {
@@ -176,11 +212,26 @@ export interface GeoAdministrator {
 }
 
 /*********************************************
+* GeoAdministratorMethods
+**********************************************/
+export interface GeoAdministratorMethods {
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * GeoExperience
 **********************************************/
 export interface GeoExperience {
 	GeoLocation?: string;
 	MultiGeoExperienceMode?: number;
+}
+
+/*********************************************
+* GeoExperienceMethods
+**********************************************/
+export interface GeoExperienceMethods {
+	upgradeAllInstancesToSPOMode<T=void>(): T;
+	upgradeToSPOMode<T=void>(): T;
 }
 
 /*********************************************
@@ -232,6 +283,15 @@ export interface GroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servi
 	LastModified?: any;
 	StartedDateInUtc?: any;
 	StateName?: string;
+}
+
+/*********************************************
+* GroupMoveJobMethods
+**********************************************/
+export interface GroupMoveJobMethods {
+	cancel<T=void>(): T;
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -312,6 +372,17 @@ export interface MultiGeoServicesBetaQuery {
 }
 
 /*********************************************
+* MultiGeoServicesBetaMethods
+**********************************************/
+export interface MultiGeoServicesBetaMethods {
+	crossGeoCredentials<T=Microsoft.Online.SharePoint.MultiGeo.Service.GeoCredentials>(siteId?: any): T;
+	dBSchemaCompatibilityCheck<T=Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck>(): T;
+	geoMoveCompatibilityChecks<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantCompatibilityCheck>>(): T;
+	userPersonalSiteId<T=Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId>(userPrincipalName?: string): T;
+	userPersonalSiteLocation<T=Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation>(userPrincipalName?: string): T;
+}
+
+/*********************************************
 * SiteMoveJob
 **********************************************/
 export interface SiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData {
@@ -319,6 +390,15 @@ export interface SiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servic
 	LastModified?: any;
 	StartedDateInUtc?: any;
 	StateName?: string;
+}
+
+/*********************************************
+* SiteMoveJobMethods
+**********************************************/
+export interface SiteMoveJobMethods {
+	cancel<T=void>(): T;
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -353,6 +433,13 @@ export interface StorageQuota {
 }
 
 /*********************************************
+* StorageQuotaMethods
+**********************************************/
+export interface StorageQuotaMethods {
+	update<T=void>(): T;
+}
+
+/*********************************************
 * TaxonomyReplicationParameters
 **********************************************/
 export interface TaxonomyReplicationParameters {
@@ -360,6 +447,13 @@ export interface TaxonomyReplicationParameters {
 	IsReplicateAllGroups?: boolean;
 	ReplicatedContentTypes?: Array<string>;
 	ReplicatedGroups?: Array<string>;
+}
+
+/*********************************************
+* TaxonomyReplicationParametersMethods
+**********************************************/
+export interface TaxonomyReplicationParametersMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -393,6 +487,15 @@ export interface UserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servic
 	LastModified?: any;
 	StartedDateInUtc?: any;
 	StateName?: string;
+}
+
+/*********************************************
+* UserMoveJobMethods
+**********************************************/
+export interface UserMoveJobMethods {
+	cancel<T=void>(): T;
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************

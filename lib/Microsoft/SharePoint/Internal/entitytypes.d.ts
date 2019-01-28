@@ -8,6 +8,15 @@ export interface ActivityLogger {
 }
 
 /*********************************************
+* ActivityLoggerMethods
+**********************************************/
+export interface ActivityLoggerMethods {
+	feedbackDirect<T=void>(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): T;
+	feedbackIndirect<T=void>(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): T;
+	logActivity<T=void>(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string): T;
+}
+
+/*********************************************
 * TrackedItemService
 **********************************************/
 export interface TrackedItemService {

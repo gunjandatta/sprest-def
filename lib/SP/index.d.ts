@@ -50,4 +50,3 @@ import * as WorkManagement from "./WorkManagement";
 export { WorkManagement }
 export * from "./complextypes";
 export * from "./entitytypes";
-export * from "./entitycontainers";

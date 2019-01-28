@@ -8,6 +8,14 @@ export interface CommunicationSite {
 }
 
 /*********************************************
+* CommunicationSiteMethods
+**********************************************/
+export interface CommunicationSiteMethods {
+	create<T=SP.Publishing.CommunicationSiteCreationResponse>(request?: SP.Publishing.CommunicationSiteCreationRequest): T;
+	status<T=SP.Publishing.CommunicationSiteCreationResponse>(url?: string): T;
+}
+
+/*********************************************
 * EmbedDataV1
 **********************************************/
 export interface EmbedDataV1 {
@@ -36,6 +44,13 @@ export interface EmbedDataV1 {
 **********************************************/
 export interface EmbedService {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* EmbedServiceMethods
+**********************************************/
+export interface EmbedServiceMethods {
+	embedData<T=SP.Publishing.EmbedDataV1>(url?: string, version?: number): T;
 }
 
 /*********************************************
@@ -79,6 +94,30 @@ export interface VideoItemQuery {
 	Author<T=SP.User>(): T;
 	Owner<T=SP.User>(): T;
 	PeopleInMedia<T=Array<SP.User>>(): T;
+}
+
+/*********************************************
+* VideoItemMethods
+**********************************************/
+export interface VideoItemMethods {
+	customThumbnail<T=any>(): T;
+	deleteObject<T=void>(): T;
+	getFile<T=SP.File>(): T;
+	getPlaybackMetadata<T=SP.Publishing.VideoPlaybackMetadata>(sdnConfiguration?: string): T;
+	getPlaybackUrl<T=string>(videoFormat?: number): T;
+	getStreamingKeyAccessToken<T=string>(): T;
+	getVideoDetailedViewCount<T=SP.Publishing.ItemViewsAnalyticsData>(): T;
+	getVideoEmbedCode<T=string>(width?: number, height?: number, autoplay?: boolean, showInfo?: boolean, makeResponsive?: boolean): T;
+	getVideoViewProgressCount<T=Array<SP.Publishing.ViewProgressAnalyticsData>>(): T;
+	incrementVideoViewProgressCount<T=void>(percentageViewed?: number): T;
+	incrementViewCount<T=void>(viewOrigin?: number): T;
+	setPeopleInMedia<T=void>(loginNames?: Array<string>): T;
+	setVideoOwner<T=void>(id?: number): T;
+	subtitles<T=Array<SP.Publishing.SubtitleFile>>(): T;
+	thumbnails<T=Array<SP.Publishing.VideoThumbnail>>(preferredWidth?: number): T;
+	thumbnailStream<T=any>(preferredWidth?: number): T;
+	update<T=void>(): T;
+	uploadCustomThumbnail<T=void>(fileExtension?: string, customVideoThumbnail?: any): T;
 }
 
 /*********************************************
@@ -153,6 +192,14 @@ export interface PointPublishingPostQuery {
 }
 
 /*********************************************
+* PointPublishingPostMethods
+**********************************************/
+export interface PointPublishingPostMethods {
+	addImageFromUrl<T=string>(fromImageUrl?: string): T;
+	deleteObject<T=void>(): T;
+}
+
+/*********************************************
 * PointPublishingPostServiceManager
 **********************************************/
 export interface PointPublishingPostServiceManager {
@@ -184,6 +231,19 @@ export interface PointPublishingPostServiceManagerQuery {
 }
 
 /*********************************************
+* PointPublishingPostServiceManagerMethods
+**********************************************/
+export interface PointPublishingPostServiceManagerMethods {
+	addBannerImageFromUrl<T=string>(fromImageUrl?: string): T;
+	deleteMagazine<T=void>(): T;
+	getDocProps<T=Array<SP.Publishing.PointPublishingDocProps>>(docUrls?: Array<string>): T;
+	getPostsQuery<T=Array<SP.Publishing.PointPublishingPost>>(top?: number, itemIdBoundary?: number, directionAscending?: boolean, publishedOnly?: boolean, draftsOnly?: boolean): T;
+	getTopAuthors<T=Array<SP.Publishing.PointPublishingUser>>(count?: number): T;
+	queryGroupNames<T=Array<SP.Publishing.PointPublishingUser>>(query?: string): T;
+	setMagazineProperties<T=SP.Publishing.PointPublishingMagazineProps>(title?: string, description?: string, bannerImageUrl?: string, bannerColor?: string, bannerPattern?: string): T;
+}
+
+/*********************************************
 * PointPublishingUser
 **********************************************/
 export interface PointPublishingUser {
@@ -201,10 +261,25 @@ export interface PointPublishingUser {
 }
 
 /*********************************************
+* PointPublishingUserMethods
+**********************************************/
+export interface PointPublishingUserMethods {
+	deleteUserFromContainerGroup<T=void>(): T;
+}
+
+/*********************************************
 * PointPublishingSiteManager
 **********************************************/
 export interface PointPublishingSiteManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PointPublishingSiteManagerMethods
+**********************************************/
+export interface PointPublishingSiteManagerMethods {
+	create<T=SP.Publishing.PointPublishingSiteStatus>(siteInfo?: SP.Publishing.PublishSiteInformation): T;
+	getSiteStatus<T=SP.Publishing.PointPublishingSiteStatus>(siteInfo?: SP.Publishing.PublishSiteInformation): T;
 }
 
 /*********************************************
@@ -222,6 +297,13 @@ export interface PointPublishingSiteStatus {
 **********************************************/
 export interface PointPublishingTenantManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PointPublishingTenantManagerMethods
+**********************************************/
+export interface PointPublishingTenantManagerMethods {
+	isBlogEnabled<T=boolean>(): T;
 }
 
 /*********************************************
@@ -306,6 +388,26 @@ export interface SitePage extends SP.Publishing.SitePageMetadata {
 }
 
 /*********************************************
+* SitePageMethods
+**********************************************/
+export interface SitePageMethods {
+	checkOut<T=boolean>(): T;
+	checkoutPage<T=SP.Publishing.SitePage>(): T;
+	copy<T=SP.Publishing.SitePage>(): T;
+	demoteFromNews<T=boolean>(): T;
+	discardPage<T=SP.Publishing.SitePage>(): T;
+	getVersion<T=SP.Publishing.SitePage>(versionId?: number): T;
+	promoteToNews<T=boolean>(): T;
+	publish<T=boolean>(): T;
+	saveDraft<T=boolean>(sitePage?: SP.Publishing.SitePageFieldsData): T;
+	savePage<T=void>(pageStream?: any): T;
+	savePageAsDraft<T=boolean>(pageStream?: any): T;
+	savePageAsTemplate<T=SP.Publishing.SitePage>(): T;
+	sharePagePreviewByEmail<T=void>(message?: string, recipientEmails?: Array<string>): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * RepostPage
 **********************************************/
 export interface RepostPage extends SP.Publishing.SitePage {
@@ -316,6 +418,26 @@ export interface RepostPage extends SP.Publishing.SitePage {
 	OriginalSourceUrl?: string;
 	OriginalSourceWebId?: any;
 	ShouldSaveAsDraft?: boolean;
+}
+
+/*********************************************
+* RepostPageMethods
+**********************************************/
+export interface RepostPageMethods {
+	checkOut<T=boolean>(): T;
+	checkoutPage<T=SP.Publishing.SitePage>(): T;
+	copy<T=SP.Publishing.SitePage>(): T;
+	demoteFromNews<T=boolean>(): T;
+	discardPage<T=SP.Publishing.SitePage>(): T;
+	getVersion<T=SP.Publishing.SitePage>(versionId?: number): T;
+	promoteToNews<T=boolean>(): T;
+	publish<T=boolean>(): T;
+	saveDraft<T=boolean>(sitePage?: SP.Publishing.SitePageFieldsData): T;
+	savePage<T=void>(pageStream?: any): T;
+	savePageAsDraft<T=boolean>(pageStream?: any): T;
+	savePageAsTemplate<T=SP.Publishing.SitePage>(): T;
+	sharePagePreviewByEmail<T=void>(message?: string, recipientEmails?: Array<string>): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -337,10 +459,25 @@ export interface RichSharing {
 }
 
 /*********************************************
+* RichSharingMethods
+**********************************************/
+export interface RichSharingMethods {
+	sharePageByEmail<T=void>(url?: string, message?: string, recipientEmails?: Array<string>): T;
+	shareSiteByEmail<T=void>(CustomDescription?: string, CustomTitle?: string, Message?: string, Url?: string, recipientEmails?: Array<string>): T;
+}
+
+/*********************************************
 * SharePointHomeServiceManager
 **********************************************/
 export interface SharePointHomeServiceManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SharePointHomeServiceManagerMethods
+**********************************************/
+export interface SharePointHomeServiceManagerMethods {
+	getAcronymsAndColors<T=Array<SP.Publishing.AcronymInformation>>(labels?: Array<SP.Publishing.TextValueWithLanguage>): T;
 }
 
 /*********************************************
@@ -367,6 +504,16 @@ export interface SitePageServiceQuery {
 }
 
 /*********************************************
+* SitePageServiceMethods
+**********************************************/
+export interface SitePageServiceMethods {
+	addImage<T=SP.File>(pageName?: string, imageFileName?: string, imageStream?: any): T;
+	addImageFromExternalUrl<T=SP.File>(pageName?: string, imageFileName?: string, externalUrl?: string, subFolderName?: string): T;
+	canCreatePromotedPage<T=boolean>(): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * SpotlightChannel
 **********************************************/
 export interface SpotlightChannel {
@@ -389,6 +536,14 @@ export interface SpotlightChannelCollections {
 **********************************************/
 export interface SpotlightChannelQuery {
 	Channel<T=SP.Publishing.VideoChannel>(): T;
+}
+
+/*********************************************
+* SpotlightChannelMethods
+**********************************************/
+export interface SpotlightChannelMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -430,11 +585,34 @@ export interface VideoChannelQuery {
 }
 
 /*********************************************
+* VideoChannelMethods
+**********************************************/
+export interface VideoChannelMethods {
+	getAllVideos<T=Array<SP.Publishing.VideoItem>>(skip?: number, limit?: number): T;
+	getChannelPageUrl<T=string>(viewMode?: number): T;
+	getMyVideos<T=Array<SP.Publishing.VideoItem>>(skip?: number, limit?: number): T;
+	getPermissionGroup<T=SP.Publishing.VideoPermissionGroup>(permission?: number): T;
+	getVideoCount<T=number>(): T;
+	update<T=void>(): T;
+}
+
+/*********************************************
 * Search
 **********************************************/
 export interface Search {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 	QueryLanguages?: Array<number>;
+}
+
+/*********************************************
+* SearchMethods
+**********************************************/
+export interface SearchMethods {
+	newest<T=Array<SP.Publishing.VideoItem>>(startItemIndex?: number, itemLimit?: number): T;
+	popular<T=Array<SP.Publishing.VideoItem>>(startItemIndex?: number, itemLimit?: number): T;
+	query<T=Array<SP.Publishing.VideoItem>>(queryText?: string, startItemIndex?: number, itemLimit?: number, culture?: number): T;
+	queryChannels<T=Array<SP.Publishing.VideoChannel>>(queryText?: string, startItemIndex?: number, itemLimit?: number, culture?: number): T;
+	related<T=Array<SP.Publishing.VideoItem>>(videoId?: any, startItemIndex?: number, itemLimit?: number): T;
 }
 
 /*********************************************
@@ -458,6 +636,14 @@ export interface SpotlightVideoCollections {
 **********************************************/
 export interface SpotlightVideoQuery {
 	Video<T=SP.Publishing.VideoItem>(): T;
+}
+
+/*********************************************
+* SpotlightVideoMethods
+**********************************************/
+export interface SpotlightVideoMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -488,6 +674,13 @@ export interface VideoPermissionGroupCollections {
 **********************************************/
 export interface VideoPermissionGroupQuery {
 	Users<T=Array<SP.User>>(): T;
+}
+
+/*********************************************
+* VideoPermissionGroupMethods
+**********************************************/
+export interface VideoPermissionGroupMethods {
+	hasCurrentUser<T=boolean>(): T;
 }
 
 /*********************************************
@@ -547,6 +740,14 @@ export interface VideoServiceManagerQuery {
 	Search<T=SP.Publishing.Search>(): T;
 	SpotlightChannels<T=Array<SP.Publishing.SpotlightChannel>>(): T;
 	SpotlightVideos<T=Array<SP.Publishing.SpotlightVideo>>(): T;
+}
+
+/*********************************************
+* VideoServiceManagerMethods
+**********************************************/
+export interface VideoServiceManagerMethods {
+	getChannels<T=Array<SP.Publishing.VideoChannel>>(startIndex?: number, limit?: number): T;
+	getPermissionGroup<T=SP.Publishing.VideoPermissionGroup>(permission?: number): T;
 }
 
 /*********************************************

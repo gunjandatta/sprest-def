@@ -8,6 +8,19 @@ export interface DirectorySession {
 }
 
 /*********************************************
+* DirectorySessionMethods
+**********************************************/
+export interface DirectorySessionMethods {
+	getGraphUser<T=SP.Directory.User>(principalName?: string): T;
+	getSharePointDataForUser<T=SP.Directory.User>(userId?: any): T;
+	group<T=SP.Directory.Group>(groupId?: any, alias?: string): T;
+	joinGroup<T=number>(groupId?: any): T;
+	me<T=SP.Directory.User>(): T;
+	user<T=SP.Directory.User>(id?: any, principalName?: string): T;
+	validateGroupName<T=SP.Directory.GroupNameValidationResult>(displayName?: string, alias?: string): T;
+}
+
+/*********************************************
 * Group
 **********************************************/
 export interface Group {
@@ -47,6 +60,13 @@ export interface GroupCollections {
 export interface GroupQuery {
 	members<T=Array<SP.Directory.User>>(): T;
 	owners<T=Array<SP.Directory.User>>(): T;
+}
+
+/*********************************************
+* GroupMethods
+**********************************************/
+export interface GroupMethods {
+	delete<T=void>(): T;
 }
 
 /*********************************************
@@ -111,6 +131,13 @@ export interface UserQuery {
 	membership<T=Array<SP.Directory.Group>>(): T;
 	ownership<T=Array<SP.Directory.Group>>(): T;
 	rankedMembership<T=Array<SP.Directory.Group>>(): T;
+}
+
+/*********************************************
+* UserMethods
+**********************************************/
+export interface UserMethods {
+	getUserLinks<T=Array<SP.Directory.Link>>(linkName?: string, groupType?: number): T;
 }
 
 /*********************************************
