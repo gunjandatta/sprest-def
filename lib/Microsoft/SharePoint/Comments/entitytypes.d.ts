@@ -29,9 +29,9 @@ export interface commentCollections<T = any> {
 }
 
 /*********************************************
-* commentQuery
+* commentQuery<T = any>
 **********************************************/
-export interface commentQuery {
+export interface commentQuery<T = any> {
 	likedBy(): T;
 	replies(): T;
 }

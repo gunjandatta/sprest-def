@@ -55,9 +55,9 @@ export interface FolderCollections<T = any> {
 }
 
 /*********************************************
-* FolderQuery
+* FolderQuery<T = any>
 **********************************************/
-export interface FolderQuery {
+export interface FolderQuery<T = any> {
 	Children(): T;
 }
 

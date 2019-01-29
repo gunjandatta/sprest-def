@@ -55,9 +55,9 @@ export interface GroupCollections<T = any> {
 }
 
 /*********************************************
-* GroupQuery
+* GroupQuery<T = any>
 **********************************************/
-export interface GroupQuery {
+export interface GroupQuery<T = any> {
 	members(): T;
 	owners(): T;
 }
@@ -125,9 +125,9 @@ export interface UserCollections<T = any> {
 }
 
 /*********************************************
-* UserQuery
+* UserQuery<T = any>
 **********************************************/
-export interface UserQuery {
+export interface UserQuery<T = any> {
 	membership(): T;
 	ownership(): T;
 	rankedMembership(): T;
@@ -164,9 +164,9 @@ export interface GroupAndUserStatusCollections<T = any> {
 }
 
 /*********************************************
-* GroupAndUserStatusQuery
+* GroupAndUserStatusQuery<T = any>
 **********************************************/
-export interface GroupAndUserStatusQuery {
+export interface GroupAndUserStatusQuery<T = any> {
 	Group(): T;
 }
 

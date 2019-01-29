@@ -15,9 +15,9 @@ export interface SiteCollectionCorporateCatalogAccessorCollections<T = any> {
 }
 
 /*********************************************
-* SiteCollectionCorporateCatalogAccessorQuery
+* SiteCollectionCorporateCatalogAccessorQuery<T = any>
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorQuery {
+export interface SiteCollectionCorporateCatalogAccessorQuery<T = any> {
 	AvailableApps(): T;
 }
 
@@ -70,9 +70,9 @@ export interface TenantCorporateCatalogAccessorCollections<T = any> {
 }
 
 /*********************************************
-* TenantCorporateCatalogAccessorQuery
+* TenantCorporateCatalogAccessorQuery<T = any>
 **********************************************/
-export interface TenantCorporateCatalogAccessorQuery {
+export interface TenantCorporateCatalogAccessorQuery<T = any> {
 	AvailableApps(): T;
 	SiteCollectionAppCatalogsSites(): T;
 }

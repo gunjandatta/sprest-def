@@ -74,9 +74,9 @@ export interface AssignmentCollections<T = any> {
 }
 
 /*********************************************
-* AssignmentQuery
+* AssignmentQuery<T = any>
 **********************************************/
-export interface AssignmentQuery {
+export interface AssignmentQuery<T = any> {
 	CustomFields(): T;
 }
 
@@ -120,9 +120,9 @@ export interface CustomFieldCollections<T = any> {
 }
 
 /*********************************************
-* CustomFieldQuery
+* CustomFieldQuery<T = any>
 **********************************************/
-export interface CustomFieldQuery {
+export interface CustomFieldQuery<T = any> {
 	EntityType(): T;
 	LookupEntries(): T;
 	LookupTable(): T;
@@ -174,9 +174,9 @@ export interface LookupTableCollections<T = any> {
 }
 
 /*********************************************
-* LookupTableQuery
+* LookupTableQuery<T = any>
 **********************************************/
-export interface LookupTableQuery {
+export interface LookupTableQuery<T = any> {
 	Entries(): T;
 }
 
@@ -223,9 +223,9 @@ export interface CalendarExceptionCollections<T = any> {
 }
 
 /*********************************************
-* CalendarExceptionQuery
+* CalendarExceptionQuery<T = any>
 **********************************************/
-export interface CalendarExceptionQuery {
+export interface CalendarExceptionQuery<T = any> {
 	Calendar(): T;
 }
 
@@ -256,9 +256,9 @@ export interface CalendarCollections<T = any> {
 }
 
 /*********************************************
-* CalendarQuery
+* CalendarQuery<T = any>
 **********************************************/
-export interface CalendarQuery {
+export interface CalendarQuery<T = any> {
 	BaseCalendarExceptions(): T;
 }
 
@@ -341,9 +341,9 @@ export interface DraftAssignmentCollections<T = any> {
 }
 
 /*********************************************
-* DraftAssignmentQuery
+* DraftAssignmentQuery<T = any>
 **********************************************/
-export interface DraftAssignmentQuery {
+export interface DraftAssignmentQuery<T = any> {
 	Owner(): T;
 	Parent(): T;
 	Resource(): T;
@@ -434,9 +434,9 @@ export interface ProjectResourceCollections<T = any> {
 }
 
 /*********************************************
-* ProjectResourceQuery
+* ProjectResourceQuery<T = any>
 **********************************************/
-export interface ProjectResourceQuery {
+export interface ProjectResourceQuery<T = any> {
 	CustomFields(): T;
 	EnterpriseResource(): T;
 }
@@ -492,9 +492,9 @@ export interface EnterpriseResourceCollections<T = any> {
 }
 
 /*********************************************
-* EnterpriseResourceQuery
+* EnterpriseResourceQuery<T = any>
 **********************************************/
-export interface EnterpriseResourceQuery {
+export interface EnterpriseResourceQuery<T = any> {
 	Assignments(): T;
 	BaseCalendar(): T;
 	CostRateTables(): T;
@@ -567,9 +567,9 @@ export interface StatusAssignmentCollections<T = any> {
 }
 
 /*********************************************
-* StatusAssignmentQuery
+* StatusAssignmentQuery<T = any>
 **********************************************/
-export interface StatusAssignmentQuery {
+export interface StatusAssignmentQuery<T = any> {
 	CustomFields(): T;
 	History(): T;
 	Project(): T;
@@ -604,9 +604,9 @@ export interface StatusAssignmentHistoryLineCollections<T = any> {
 }
 
 /*********************************************
-* StatusAssignmentHistoryLineQuery
+* StatusAssignmentHistoryLineQuery<T = any>
 **********************************************/
-export interface StatusAssignmentHistoryLineQuery {
+export interface StatusAssignmentHistoryLineQuery<T = any> {
 	Author(): T;
 }
 
@@ -668,9 +668,9 @@ export interface ProjectCollections<T = any> {
 }
 
 /*********************************************
-* ProjectQuery
+* ProjectQuery<T = any>
 **********************************************/
-export interface ProjectQuery {
+export interface ProjectQuery<T = any> {
 	CheckedOutBy(): T;
 	CustomFields(): T;
 	Engagements(): T;
@@ -719,9 +719,9 @@ export interface EngagementCollections<T = any> {
 }
 
 /*********************************************
-* EngagementQuery
+* EngagementQuery<T = any>
 **********************************************/
-export interface EngagementQuery {
+export interface EngagementQuery<T = any> {
 	Comments(): T;
 	ModifiedBy(): T;
 	Project(): T;
@@ -747,9 +747,9 @@ export interface EngagementCommentCollections<T = any> {
 }
 
 /*********************************************
-* EngagementCommentQuery
+* EngagementCommentQuery<T = any>
 **********************************************/
-export interface EngagementCommentQuery {
+export interface EngagementCommentQuery<T = any> {
 	Author(): T;
 }
 
@@ -811,9 +811,9 @@ export interface EnterpriseProjectTypeCollections<T = any> {
 }
 
 /*********************************************
-* EnterpriseProjectTypeQuery
+* EnterpriseProjectTypeQuery<T = any>
 **********************************************/
-export interface EnterpriseProjectTypeQuery {
+export interface EnterpriseProjectTypeQuery<T = any> {
 	ProjectDetailPages(): T;
 }
 
@@ -844,9 +844,9 @@ export interface ProjectDetailPageCollections<T = any> {
 }
 
 /*********************************************
-* ProjectDetailPageQuery
+* ProjectDetailPageQuery<T = any>
 **********************************************/
-export interface ProjectDetailPageQuery {
+export interface ProjectDetailPageQuery<T = any> {
 	Item(): T;
 }
 
@@ -875,9 +875,9 @@ export interface PhaseCollections<T = any> {
 }
 
 /*********************************************
-* PhaseQuery
+* PhaseQuery<T = any>
 **********************************************/
-export interface PhaseQuery {
+export interface PhaseQuery<T = any> {
 	Stages(): T;
 }
 
@@ -911,9 +911,9 @@ export interface StageCollections<T = any> {
 }
 
 /*********************************************
-* StageQuery
+* StageQuery<T = any>
 **********************************************/
-export interface StageQuery {
+export interface StageQuery<T = any> {
 	CustomFields(): T;
 	Phase(): T;
 	ProjectDetailPages(): T;
@@ -945,9 +945,9 @@ export interface StageCustomFieldCollections<T = any> {
 }
 
 /*********************************************
-* StageCustomFieldQuery
+* StageCustomFieldQuery<T = any>
 **********************************************/
-export interface StageCustomFieldQuery {
+export interface StageCustomFieldQuery<T = any> {
 	Stage(): T;
 }
 
@@ -977,9 +977,9 @@ export interface StageDetailPageCollections<T = any> {
 }
 
 /*********************************************
-* StageDetailPageQuery
+* StageDetailPageQuery<T = any>
 **********************************************/
-export interface StageDetailPageQuery {
+export interface StageDetailPageQuery<T = any> {
 	Page(): T;
 	Stage(): T;
 }
@@ -1111,9 +1111,9 @@ export interface TaskCollections<T = any> {
 }
 
 /*********************************************
-* TaskQuery
+* TaskQuery<T = any>
 **********************************************/
-export interface TaskQuery {
+export interface TaskQuery<T = any> {
 	CustomFields(): T;
 	SubProject(): T;
 }
@@ -1176,9 +1176,9 @@ export interface PublishedProjectCollections<T = any> {
 }
 
 /*********************************************
-* PublishedProjectQuery
+* PublishedProjectQuery<T = any>
 **********************************************/
-export interface PublishedProjectQuery {
+export interface PublishedProjectQuery<T = any> {
 	Assignments(): T;
 	Calendar(): T;
 	Draft(): T;
@@ -1261,9 +1261,9 @@ export interface PublishedAssignmentCollections<T = any> {
 }
 
 /*********************************************
-* PublishedAssignmentQuery
+* PublishedAssignmentQuery<T = any>
 **********************************************/
-export interface PublishedAssignmentQuery {
+export interface PublishedAssignmentQuery<T = any> {
 	Owner(): T;
 	Parent(): T;
 	Resource(): T;
@@ -1302,9 +1302,9 @@ export interface PublishedProjectResourceCollections<T = any> {
 }
 
 /*********************************************
-* PublishedProjectResourceQuery
+* PublishedProjectResourceQuery<T = any>
 **********************************************/
-export interface PublishedProjectResourceQuery {
+export interface PublishedProjectResourceQuery<T = any> {
 	Assignments(): T;
 	DefaultAssignmentOwner(): T;
 }
@@ -1373,9 +1373,9 @@ export interface PublishedTaskCollections<T = any> {
 }
 
 /*********************************************
-* PublishedTaskQuery
+* PublishedTaskQuery<T = any>
 **********************************************/
-export interface PublishedTaskQuery {
+export interface PublishedTaskQuery<T = any> {
 	Assignments(): T;
 	Calendar(): T;
 	EntityLinks(): T;
@@ -1435,9 +1435,9 @@ export interface PublishedTaskLinkCollections<T = any> {
 }
 
 /*********************************************
-* PublishedTaskLinkQuery
+* PublishedTaskLinkQuery<T = any>
 **********************************************/
-export interface PublishedTaskLinkQuery {
+export interface PublishedTaskLinkQuery<T = any> {
 	End(): T;
 	Start(): T;
 }
@@ -1514,9 +1514,9 @@ export interface DraftProjectCollections<T = any> {
 }
 
 /*********************************************
-* DraftProjectQuery
+* DraftProjectQuery<T = any>
 **********************************************/
-export interface DraftProjectQuery {
+export interface DraftProjectQuery<T = any> {
 	Assignments(): T;
 	Calendar(): T;
 	IncludeCustomFields(): T;
@@ -1575,9 +1575,9 @@ export interface DraftProjectResourceCollections<T = any> {
 }
 
 /*********************************************
-* DraftProjectResourceQuery
+* DraftProjectResourceQuery<T = any>
 **********************************************/
-export interface DraftProjectResourceQuery {
+export interface DraftProjectResourceQuery<T = any> {
 	Assignments(): T;
 	DefaultAssignmentOwner(): T;
 }
@@ -1607,9 +1607,9 @@ export interface DraftTaskLinkCollections<T = any> {
 }
 
 /*********************************************
-* DraftTaskLinkQuery
+* DraftTaskLinkQuery<T = any>
 **********************************************/
-export interface DraftTaskLinkQuery {
+export interface DraftTaskLinkQuery<T = any> {
 	End(): T;
 	Start(): T;
 }
@@ -1685,9 +1685,9 @@ export interface DraftTaskCollections<T = any> {
 }
 
 /*********************************************
-* DraftTaskQuery
+* DraftTaskQuery<T = any>
 **********************************************/
-export interface DraftTaskQuery {
+export interface DraftTaskQuery<T = any> {
 	Assignments(): T;
 	Calendar(): T;
 	Parent(): T;
@@ -1725,9 +1725,9 @@ export interface ProjectWorkflowInstanceCollections<T = any> {
 }
 
 /*********************************************
-* ProjectWorkflowInstanceQuery
+* ProjectWorkflowInstanceQuery<T = any>
 **********************************************/
-export interface ProjectWorkflowInstanceQuery {
+export interface ProjectWorkflowInstanceQuery<T = any> {
 	Project(): T;
 	WorkflowInstance(): T;
 	WorkflowInstanceOwner(): T;
@@ -1789,9 +1789,9 @@ export interface QueueJobCollections<T = any> {
 }
 
 /*********************************************
-* QueueJobQuery
+* QueueJobQuery<T = any>
 **********************************************/
-export interface QueueJobQuery {
+export interface QueueJobQuery<T = any> {
 	Project(): T;
 	Submitter(): T;
 }
@@ -1852,9 +1852,9 @@ export interface StatusTaskCollections<T = any> {
 }
 
 /*********************************************
-* StatusTaskQuery
+* StatusTaskQuery<T = any>
 **********************************************/
-export interface StatusTaskQuery {
+export interface StatusTaskQuery<T = any> {
 	CustomFields(): T;
 	StatusManager(): T;
 }
@@ -1874,9 +1874,9 @@ export interface EnterpriseResourceCostRateTableCollections<T = any> {
 }
 
 /*********************************************
-* EnterpriseResourceCostRateTableQuery
+* EnterpriseResourceCostRateTableQuery<T = any>
 **********************************************/
-export interface EnterpriseResourceCostRateTableQuery {
+export interface EnterpriseResourceCostRateTableQuery<T = any> {
 	CostRates(): T;
 }
 
@@ -1964,9 +1964,9 @@ export interface EntityTypesCollections<T = any> {
 }
 
 /*********************************************
-* EntityTypesQuery
+* EntityTypesQuery<T = any>
 **********************************************/
-export interface EntityTypesQuery {
+export interface EntityTypesQuery<T = any> {
 	AssignmentEntity(): T;
 	ProjectEntity(): T;
 	ResourceEntity(): T;
@@ -2004,9 +2004,9 @@ export interface EventHandlerCollections<T = any> {
 }
 
 /*********************************************
-* EventHandlerQuery
+* EventHandlerQuery<T = any>
 **********************************************/
-export interface EventHandlerQuery {
+export interface EventHandlerQuery<T = any> {
 	Event(): T;
 }
 
@@ -2092,9 +2092,9 @@ export interface LookupTextCollections<T = any> {
 }
 
 /*********************************************
-* LookupTextQuery
+* LookupTextQuery<T = any>
 **********************************************/
-export interface LookupTextQuery {
+export interface LookupTextQuery<T = any> {
 	Parent(): T;
 }
 
@@ -2143,9 +2143,9 @@ export interface PlanAssignmentCollections<T = any> {
 }
 
 /*********************************************
-* PlanAssignmentQuery
+* PlanAssignmentQuery<T = any>
 **********************************************/
-export interface PlanAssignmentQuery {
+export interface PlanAssignmentQuery<T = any> {
 	CustomFields(): T;
 	Intervals(): T;
 	Resource(): T;
@@ -2227,9 +2227,9 @@ export interface ProjectServerCollections<T = any> {
 }
 
 /*********************************************
-* ProjectServerQuery
+* ProjectServerQuery<T = any>
 **********************************************/
-export interface ProjectServerQuery {
+export interface ProjectServerQuery<T = any> {
 	Calendars(): T;
 	CustomFields(): T;
 	EnterpriseProjectTypes(): T;
@@ -2289,9 +2289,9 @@ export interface TimeSheetPeriodCollections<T = any> {
 }
 
 /*********************************************
-* TimeSheetPeriodQuery
+* TimeSheetPeriodQuery<T = any>
 **********************************************/
-export interface TimeSheetPeriodQuery {
+export interface TimeSheetPeriodQuery<T = any> {
 	TimeSheet(): T;
 }
 
@@ -2342,9 +2342,9 @@ export interface TimeSheetCollections<T = any> {
 }
 
 /*********************************************
-* TimeSheetQuery
+* TimeSheetQuery<T = any>
 **********************************************/
-export interface TimeSheetQuery {
+export interface TimeSheetQuery<T = any> {
 	Creator(): T;
 	Lines(): T;
 	Manager(): T;
@@ -2387,9 +2387,9 @@ export interface TimeSheetLineCollections<T = any> {
 }
 
 /*********************************************
-* TimeSheetLineQuery
+* TimeSheetLineQuery<T = any>
 **********************************************/
-export interface TimeSheetLineQuery {
+export interface TimeSheetLineQuery<T = any> {
 	Assignment(): T;
 	TimeSheet(): T;
 	Work(): T;
@@ -2487,9 +2487,9 @@ export interface WorkflowDesignerCollections<T = any> {
 }
 
 /*********************************************
-* WorkflowDesignerQuery
+* WorkflowDesignerQuery<T = any>
 **********************************************/
-export interface WorkflowDesignerQuery {
+export interface WorkflowDesignerQuery<T = any> {
 	Fields(): T;
 }
 
@@ -2512,9 +2512,9 @@ export interface WorkflowDesignerFieldCollections<T = any> {
 }
 
 /*********************************************
-* WorkflowDesignerFieldQuery
+* WorkflowDesignerFieldQuery<T = any>
 **********************************************/
-export interface WorkflowDesignerFieldQuery {
+export interface WorkflowDesignerFieldQuery<T = any> {
 	LookupEntries(): T;
 }
 
@@ -2565,9 +2565,9 @@ export interface ResourcePlanCollections<T = any> {
 }
 
 /*********************************************
-* ResourcePlanQuery
+* ResourcePlanQuery<T = any>
 **********************************************/
-export interface ResourcePlanQuery {
+export interface ResourcePlanQuery<T = any> {
 	Assignments(): T;
 }
 
@@ -2612,8 +2612,8 @@ export interface TimePhaseCollections<T = any> {
 }
 
 /*********************************************
-* TimePhaseQuery
+* TimePhaseQuery<T = any>
 **********************************************/
-export interface TimePhaseQuery {
+export interface TimePhaseQuery<T = any> {
 	Assignments(): T;
 }

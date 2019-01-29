@@ -16,9 +16,9 @@ export interface LimitedWebPartManagerCollections<T = any> {
 }
 
 /*********************************************
-* LimitedWebPartManagerQuery
+* LimitedWebPartManagerQuery<T = any>
 **********************************************/
-export interface LimitedWebPartManagerQuery {
+export interface LimitedWebPartManagerQuery<T = any> {
 	WebParts(): T;
 }
 
@@ -46,9 +46,9 @@ export interface WebPartDefinitionCollections<T = any> {
 }
 
 /*********************************************
-* WebPartDefinitionQuery
+* WebPartDefinitionQuery<T = any>
 **********************************************/
-export interface WebPartDefinitionQuery {
+export interface WebPartDefinitionQuery<T = any> {
 	WebPart(): T;
 }
 
@@ -84,8 +84,8 @@ export interface WebPartCollections<T = any> {
 }
 
 /*********************************************
-* WebPartQuery
+* WebPartQuery<T = any>
 **********************************************/
-export interface WebPartQuery {
+export interface WebPartQuery<T = any> {
 	Properties(): T;
 }

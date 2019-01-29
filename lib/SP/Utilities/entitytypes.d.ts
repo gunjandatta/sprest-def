@@ -71,9 +71,9 @@ export interface ThemeManagerCollections<T = any> {
 }
 
 /*********************************************
-* ThemeManagerQuery
+* ThemeManagerQuery<T = any>
 **********************************************/
-export interface ThemeManagerQuery {
+export interface ThemeManagerQuery<T = any> {
 	ContextThemeManager(): T;
 }
 

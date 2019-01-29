@@ -124,9 +124,9 @@ export interface MethodExecutionResultCollections<T = any> {
 }
 
 /*********************************************
-* MethodExecutionResultQuery
+* MethodExecutionResultQuery<T = any>
 **********************************************/
-export interface MethodExecutionResultQuery {
+export interface MethodExecutionResultQuery<T = any> {
 	ReturnParameterCollection(): T;
 }
 
@@ -146,9 +146,9 @@ export interface EntityViewCollections<T = any> {
 }
 
 /*********************************************
-* EntityViewQuery
+* EntityViewQuery<T = any>
 **********************************************/
-export interface EntityViewQuery {
+export interface EntityViewQuery<T = any> {
 	Fields(): T;
 }
 

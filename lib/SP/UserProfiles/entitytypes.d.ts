@@ -208,9 +208,9 @@ export interface UserProfileCollections<T = any> {
 }
 
 /*********************************************
-* UserProfileQuery
+* UserProfileQuery<T = any>
 **********************************************/
-export interface UserProfileQuery {
+export interface UserProfileQuery<T = any> {
 	FollowedContent(): T;
 	PersonalSite(): T;
 }

@@ -30,9 +30,9 @@ export interface GetExternalUsersResultsCollections<T = any> {
 }
 
 /*********************************************
-* GetExternalUsersResultsQuery
+* GetExternalUsersResultsQuery<T = any>
 **********************************************/
-export interface GetExternalUsersResultsQuery {
+export interface GetExternalUsersResultsQuery<T = any> {
 	ExternalUserCollection(): T;
 }
 

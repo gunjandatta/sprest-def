@@ -346,9 +346,9 @@ export interface MultiGeoServicesBetaCollections<T = any> {
 }
 
 /*********************************************
-* MultiGeoServicesBetaQuery
+* MultiGeoServicesBetaQuery<T = any>
 **********************************************/
-export interface MultiGeoServicesBetaQuery {
+export interface MultiGeoServicesBetaQuery<T = any> {
 	AllowedDataLocations(): T;
 	ContentDbSchemaVersion(): T;
 	CrossFarmGroupMoveJobs(): T;

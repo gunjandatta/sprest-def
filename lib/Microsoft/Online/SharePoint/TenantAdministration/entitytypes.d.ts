@@ -1,4 +1,5 @@
 import { Microsoft } from "../../../../";
+import { SP } from "../../../../";
 
 /*********************************************
 * EmailResponse
@@ -334,9 +335,9 @@ export interface TenantCollections<T = any> {
 }
 
 /*********************************************
-* TenantQuery
+* TenantQuery<T = any>
 **********************************************/
-export interface TenantQuery {
+export interface TenantQuery<T = any> {
 	Sites(): T;
 }
 

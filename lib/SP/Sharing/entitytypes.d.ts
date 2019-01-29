@@ -85,9 +85,9 @@ export interface SharingInformationCollections<T = any> {
 }
 
 /*********************************************
-* SharingInformationQuery
+* SharingInformationQuery<T = any>
 **********************************************/
-export interface SharingInformationQuery {
+export interface SharingInformationQuery<T = any> {
 	pickerSettings(): T;
 }
 

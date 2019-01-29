@@ -388,9 +388,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 let params = [];
                                 for (let j = 0; j < methodInfo.params.length; j++) {
                                     let param = methodInfo.params[j].$;
+                                    let methodType = getType(param.Type);
 
                                     // Add the parameter
-                                    params.push(param.Name + "?: " + getType(param.Type));
+                                    params.push(param.Name + "?: " + methodType);
+
+                                    // Update the references
+                                    updateReferences(fileImports, dirName, methodType);
                                 }
 
                                 // Add the method
@@ -414,7 +418,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     // Generate the content
                     content.push(create.interface(name, interface._BaseType, variables.join('\n')));
                     collections.length > 0 ? content.push(create.interface(name + "Collections<T = any>", null, collections.join('\n'))) : null;
-                    queryMethods.length > 0 ? content.push(create.interface(name + "Query", null, queryMethods.join('\n'))) : null;
+                    queryMethods.length > 0 ? content.push(create.interface(name + "Query<T = any>", null, queryMethods.join('\n'))) : null;
                     methods.length > 0 ? content.push(create.interface(name + "Methods<T = any>", null, methods.join('\n'))) : null;
                 }
 

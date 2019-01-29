@@ -88,9 +88,9 @@ export interface VideoItemCollections<T = any> {
 }
 
 /*********************************************
-* VideoItemQuery
+* VideoItemQuery<T = any>
 **********************************************/
-export interface VideoItemQuery {
+export interface VideoItemQuery<T = any> {
 	Author(): T;
 	Owner(): T;
 	PeopleInMedia(): T;
@@ -185,9 +185,9 @@ export interface PointPublishingPostCollections<T = any> {
 }
 
 /*********************************************
-* PointPublishingPostQuery
+* PointPublishingPostQuery<T = any>
 **********************************************/
-export interface PointPublishingPostQuery {
+export interface PointPublishingPostQuery<T = any> {
 	images(): T;
 }
 
@@ -219,9 +219,9 @@ export interface PointPublishingPostServiceManagerCollections<T = any> {
 }
 
 /*********************************************
-* PointPublishingPostServiceManagerQuery
+* PointPublishingPostServiceManagerQuery<T = any>
 **********************************************/
-export interface PointPublishingPostServiceManagerQuery {
+export interface PointPublishingPostServiceManagerQuery<T = any> {
 	bannerimages(): T;
 	contributors(): T;
 	creators(): T;
@@ -358,9 +358,9 @@ export interface SitePageMetadataCollections<T = any> {
 }
 
 /*********************************************
-* SitePageMetadataQuery
+* SitePageMetadataQuery<T = any>
 **********************************************/
-export interface SitePageMetadataQuery {
+export interface SitePageMetadataQuery<T = any> {
 	CreatedBy(): T;
 	LastModifiedBy(): T;
 }
@@ -496,9 +496,9 @@ export interface SitePageServiceCollections<T = any> {
 }
 
 /*********************************************
-* SitePageServiceQuery
+* SitePageServiceQuery<T = any>
 **********************************************/
-export interface SitePageServiceQuery {
+export interface SitePageServiceQuery<T = any> {
 	CommunicationSite(): T;
 	Pages(): T;
 }
@@ -532,9 +532,9 @@ export interface SpotlightChannelCollections<T = any> {
 }
 
 /*********************************************
-* SpotlightChannelQuery
+* SpotlightChannelQuery<T = any>
 **********************************************/
-export interface SpotlightChannelQuery {
+export interface SpotlightChannelQuery<T = any> {
 	Channel(): T;
 }
 
@@ -576,9 +576,9 @@ export interface VideoChannelCollections<T = any> {
 }
 
 /*********************************************
-* VideoChannelQuery
+* VideoChannelQuery<T = any>
 **********************************************/
-export interface VideoChannelQuery {
+export interface VideoChannelQuery<T = any> {
 	Search(): T;
 	SpotlightVideos(): T;
 	Videos(): T;
@@ -632,9 +632,9 @@ export interface SpotlightVideoCollections<T = any> {
 }
 
 /*********************************************
-* SpotlightVideoQuery
+* SpotlightVideoQuery<T = any>
 **********************************************/
-export interface SpotlightVideoQuery {
+export interface SpotlightVideoQuery<T = any> {
 	Video(): T;
 }
 
@@ -670,9 +670,9 @@ export interface VideoPermissionGroupCollections<T = any> {
 }
 
 /*********************************************
-* VideoPermissionGroupQuery
+* VideoPermissionGroupQuery<T = any>
 **********************************************/
-export interface VideoPermissionGroupQuery {
+export interface VideoPermissionGroupQuery<T = any> {
 	Users(): T;
 }
 
@@ -732,9 +732,9 @@ export interface VideoServiceManagerCollections<T = any> {
 }
 
 /*********************************************
-* VideoServiceManagerQuery
+* VideoServiceManagerQuery<T = any>
 **********************************************/
-export interface VideoServiceManagerQuery {
+export interface VideoServiceManagerQuery<T = any> {
 	CanEditChannels(): T;
 	Channels(): T;
 	Search(): T;

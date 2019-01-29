@@ -17,9 +17,9 @@ export interface ApiMetadataCollections<T = any> {
 }
 
 /*********************************************
-* ApiMetadataQuery
+* ApiMetadataQuery<T = any>
 **********************************************/
-export interface ApiMetadataQuery {
+export interface ApiMetadataQuery<T = any> {
 	Current(): T;
 	Types(): T;
 }
@@ -110,9 +110,9 @@ export interface SiteCollections<T = any> {
 }
 
 /*********************************************
-* SiteQuery
+* SiteQuery<T = any>
 **********************************************/
-export interface SiteQuery {
+export interface SiteQuery<T = any> {
 	Audit(): T;
 	CustomScriptSafeDomains(): T;
 	EventReceivers(): T;
@@ -262,9 +262,9 @@ export interface UserCollections<T = any> {
 }
 
 /*********************************************
-* UserQuery
+* UserQuery<T = any>
 **********************************************/
-export interface UserQuery {
+export interface UserQuery<T = any> {
 	Alerts(): T;
 	Groups(): T;
 }
@@ -309,9 +309,9 @@ export interface AlertCollections<T = any> {
 }
 
 /*********************************************
-* AlertQuery
+* AlertQuery<T = any>
 **********************************************/
-export interface AlertQuery {
+export interface AlertQuery<T = any> {
 	AllProperties(): T;
 	Item(): T;
 	List(): T;
@@ -348,9 +348,9 @@ export interface SecurableObjectCollections<T = any> {
 }
 
 /*********************************************
-* SecurableObjectQuery
+* SecurableObjectQuery<T = any>
 **********************************************/
-export interface SecurableObjectQuery {
+export interface SecurableObjectQuery<T = any> {
 	FirstUniqueAncestorSecurableObject(): T;
 	RoleAssignments(): T;
 }
@@ -379,9 +379,9 @@ export interface RoleAssignmentCollections<T = any> {
 }
 
 /*********************************************
-* RoleAssignmentQuery
+* RoleAssignmentQuery<T = any>
 **********************************************/
-export interface RoleAssignmentQuery {
+export interface RoleAssignmentQuery<T = any> {
 	Member(): T;
 	RoleDefinitionBindings(): T;
 }
@@ -452,9 +452,9 @@ export interface ListItemCollections<T = any> {
 }
 
 /*********************************************
-* ListItemQuery
+* ListItemQuery<T = any>
 **********************************************/
-export interface ListItemQuery {
+export interface ListItemQuery<T = any> {
 	AttachmentFiles(): T;
 	ContentType(): T;
 	GetDlpPolicyTip(): T;
@@ -560,9 +560,9 @@ export interface ContentTypeCollections<T = any> {
 }
 
 /*********************************************
-* ContentTypeQuery
+* ContentTypeQuery<T = any>
 **********************************************/
-export interface ContentTypeQuery {
+export interface ContentTypeQuery<T = any> {
 	DescriptionResource(): T;
 	FieldLinks(): T;
 	Fields(): T;
@@ -667,9 +667,9 @@ export interface FieldCollections<T = any> {
 }
 
 /*********************************************
-* FieldQuery
+* FieldQuery<T = any>
 **********************************************/
-export interface FieldQuery {
+export interface FieldQuery<T = any> {
 	DescriptionResource(): T;
 	TitleResource(): T;
 }
@@ -755,9 +755,9 @@ export interface FileCollections<T = any> {
 }
 
 /*********************************************
-* FileQuery
+* FileQuery<T = any>
 **********************************************/
-export interface FileQuery {
+export interface FileQuery<T = any> {
 	Author(): T;
 	CheckedOutByUser(): T;
 	EffectiveInformationRightsManagementSettings(): T;
@@ -897,9 +897,9 @@ export interface FileVersionCollections<T = any> {
 }
 
 /*********************************************
-* FileVersionQuery
+* FileVersionQuery<T = any>
 **********************************************/
-export interface FileVersionQuery {
+export interface FileVersionQuery<T = any> {
 	CreatedBy(): T;
 }
 
@@ -943,9 +943,9 @@ export interface FolderCollections<T = any> {
 }
 
 /*********************************************
-* FolderQuery
+* FolderQuery<T = any>
 **********************************************/
-export interface FolderQuery {
+export interface FolderQuery<T = any> {
 	Files(): T;
 	ListItemAllFields(): T;
 	ParentFolder(): T;
@@ -1082,9 +1082,9 @@ export interface ListCollections<T = any> {
 }
 
 /*********************************************
-* ListQuery
+* ListQuery<T = any>
 **********************************************/
-export interface ListQuery {
+export interface ListQuery<T = any> {
 	ContentTypes(): T;
 	CreatablesInfo(): T;
 	DefaultView(): T;
@@ -1224,9 +1224,9 @@ export interface ViewCollections<T = any> {
 }
 
 /*********************************************
-* ViewQuery
+* ViewQuery<T = any>
 **********************************************/
-export interface ViewQuery {
+export interface ViewQuery<T = any> {
 	ViewFields(): T;
 }
 
@@ -1425,9 +1425,9 @@ export interface WebCollections<T = any> {
 }
 
 /*********************************************
-* WebQuery
+* WebQuery<T = any>
 **********************************************/
-export interface WebQuery {
+export interface WebQuery<T = any> {
 	Activities(): T;
 	ActivityLogger(): T;
 	Alerts(): T;
@@ -1609,9 +1609,9 @@ export interface GroupCollections<T = any> {
 }
 
 /*********************************************
-* GroupQuery
+* GroupQuery<T = any>
 **********************************************/
-export interface GroupQuery {
+export interface GroupQuery<T = any> {
 	Owner(): T;
 	Users(): T;
 }
@@ -1690,9 +1690,9 @@ export interface NavigationCollections<T = any> {
 }
 
 /*********************************************
-* NavigationQuery
+* NavigationQuery<T = any>
 **********************************************/
-export interface NavigationQuery {
+export interface NavigationQuery<T = any> {
 	QuickLaunch(): T;
 	TopNavigationBar(): T;
 }
@@ -1726,9 +1726,9 @@ export interface NavigationNodeCollections<T = any> {
 }
 
 /*********************************************
-* NavigationNodeQuery
+* NavigationNodeQuery<T = any>
 **********************************************/
-export interface NavigationNodeQuery {
+export interface NavigationNodeQuery<T = any> {
 	Children(): T;
 }
 
@@ -1777,9 +1777,9 @@ export interface PushNotificationSubscriberCollections<T = any> {
 }
 
 /*********************************************
-* PushNotificationSubscriberQuery
+* PushNotificationSubscriberQuery<T = any>
 **********************************************/
-export interface PushNotificationSubscriberQuery {
+export interface PushNotificationSubscriberQuery<T = any> {
 	User(): T;
 }
 
@@ -1820,9 +1820,9 @@ export interface RecycleBinItemCollections<T = any> {
 }
 
 /*********************************************
-* RecycleBinItemQuery
+* RecycleBinItemQuery<T = any>
 **********************************************/
-export interface RecycleBinItemQuery {
+export interface RecycleBinItemQuery<T = any> {
 	Author(): T;
 	DeletedBy(): T;
 }
@@ -1881,9 +1881,9 @@ export interface RegionalSettingsCollections<T = any> {
 }
 
 /*********************************************
-* RegionalSettingsQuery
+* RegionalSettingsQuery<T = any>
 **********************************************/
-export interface RegionalSettingsQuery {
+export interface RegionalSettingsQuery<T = any> {
 	InstalledLanguages(): T;
 	TimeZone(): T;
 	TimeZones(): T;
@@ -1978,9 +1978,9 @@ export interface UserCustomActionCollections<T = any> {
 }
 
 /*********************************************
-* UserCustomActionQuery
+* UserCustomActionQuery<T = any>
 **********************************************/
-export interface UserCustomActionQuery {
+export interface UserCustomActionQuery<T = any> {
 	DescriptionResource(): T;
 	TitleResource(): T;
 }
@@ -2013,9 +2013,9 @@ export interface ListItemVersionCollections<T = any> {
 }
 
 /*********************************************
-* ListItemVersionQuery
+* ListItemVersionQuery<T = any>
 **********************************************/
-export interface ListItemVersionQuery {
+export interface ListItemVersionQuery<T = any> {
 	CreatedBy(): T;
 	Fields(): T;
 	FileVersion(): T;
@@ -2182,9 +2182,9 @@ export interface ObjectSharingSettingsCollections<T = any> {
 }
 
 /*********************************************
-* ObjectSharingSettingsQuery
+* ObjectSharingSettingsQuery<T = any>
 **********************************************/
-export interface ObjectSharingSettingsQuery {
+export interface ObjectSharingSettingsQuery<T = any> {
 	ObjectSharingInformation(): T;
 	SharePointSettings(): T;
 	SharingPermissions(): T;
@@ -2219,9 +2219,9 @@ export interface ObjectSharingInformationCollections<T = any> {
 }
 
 /*********************************************
-* ObjectSharingInformationQuery
+* ObjectSharingInformationQuery<T = any>
 **********************************************/
-export interface ObjectSharingInformationQuery {
+export interface ObjectSharingInformationQuery<T = any> {
 	SharedWithUsersCollection(): T;
 }
 
@@ -2263,9 +2263,9 @@ export interface ObjectSharingInformationUserCollections<T = any> {
 }
 
 /*********************************************
-* ObjectSharingInformationUserQuery
+* ObjectSharingInformationUserQuery<T = any>
 **********************************************/
-export interface ObjectSharingInformationUserQuery {
+export interface ObjectSharingInformationUserQuery<T = any> {
 	Principal(): T;
 	User(): T;
 }
@@ -2300,9 +2300,9 @@ export interface SharePointSharingSettingsCollections<T = any> {
 }
 
 /*********************************************
-* SharePointSharingSettingsQuery
+* SharePointSharingSettingsQuery<T = any>
 **********************************************/
-export interface SharePointSharingSettingsQuery {
+export interface SharePointSharingSettingsQuery<T = any> {
 	PickerProperties(): T;
 }
 
@@ -2369,9 +2369,9 @@ export interface SharingResultCollections<T = any> {
 }
 
 /*********************************************
-* SharingResultQuery
+* SharingResultQuery<T = any>
 **********************************************/
-export interface SharingResultQuery {
+export interface SharingResultQuery<T = any> {
 	GroupsSharedWith(): T;
 	GroupUsersAddedTo(): T;
 	UsersWithAccessRequests(): T;
@@ -2400,9 +2400,9 @@ export interface AppContextSiteCollections<T = any> {
 }
 
 /*********************************************
-* AppContextSiteQuery
+* AppContextSiteQuery<T = any>
 **********************************************/
-export interface AppContextSiteQuery {
+export interface AppContextSiteQuery<T = any> {
 	Site(): T;
 	Web(): T;
 }
@@ -2525,9 +2525,9 @@ export interface ChangeListCollections<T = any> {
 }
 
 /*********************************************
-* ChangeListQuery
+* ChangeListQuery<T = any>
 **********************************************/
-export interface ChangeListQuery {
+export interface ChangeListQuery<T = any> {
 	Creator(): T;
 }
 
@@ -2578,9 +2578,9 @@ export interface CheckedOutFileCollections<T = any> {
 }
 
 /*********************************************
-* CheckedOutFileQuery
+* CheckedOutFileQuery<T = any>
 **********************************************/
-export interface CheckedOutFileQuery {
+export interface CheckedOutFileQuery<T = any> {
 	CheckedOutBy(): T;
 }
 
@@ -2631,9 +2631,9 @@ export interface RequestContextCollections<T = any> {
 }
 
 /*********************************************
-* RequestContextQuery
+* RequestContextQuery<T = any>
 **********************************************/
-export interface RequestContextQuery {
+export interface RequestContextQuery<T = any> {
 	Current(): T;
 	List(): T;
 	Site(): T;
@@ -3090,9 +3090,9 @@ export interface RelatedFieldCollections<T = any> {
 }
 
 /*********************************************
-* RelatedFieldQuery
+* RelatedFieldQuery<T = any>
 **********************************************/
-export interface RelatedFieldQuery {
+export interface RelatedFieldQuery<T = any> {
 	LookupList(): T;
 }
 
@@ -3113,9 +3113,9 @@ export interface RemoteWebCollections<T = any> {
 }
 
 /*********************************************
-* RemoteWebQuery
+* RemoteWebQuery<T = any>
 **********************************************/
-export interface RemoteWebQuery {
+export interface RemoteWebQuery<T = any> {
 	Web(): T;
 }
 
@@ -3148,9 +3148,9 @@ export interface RequestUserContextCollections<T = any> {
 }
 
 /*********************************************
-* RequestUserContextQuery
+* RequestUserContextQuery<T = any>
 **********************************************/
-export interface RequestUserContextQuery {
+export interface RequestUserContextQuery<T = any> {
 	Current(): T;
 	User(): T;
 }
@@ -3208,9 +3208,9 @@ export interface VisualizationAppSynchronizationResultCollections<T = any> {
 }
 
 /*********************************************
-* VisualizationAppSynchronizationResultQuery
+* VisualizationAppSynchronizationResultQuery<T = any>
 **********************************************/
-export interface VisualizationAppSynchronizationResultQuery {
+export interface VisualizationAppSynchronizationResultQuery<T = any> {
 	AppMappedViews(): T;
 }
 
@@ -3267,9 +3267,9 @@ export interface TenantSettingsCollections<T = any> {
 }
 
 /*********************************************
-* TenantSettingsQuery
+* TenantSettingsQuery<T = any>
 **********************************************/
-export interface TenantSettingsQuery {
+export interface TenantSettingsQuery<T = any> {
 	Current(): T;
 }
 
@@ -3288,9 +3288,9 @@ export interface AppPrincipalIdentityProviderCollections<T = any> {
 }
 
 /*********************************************
-* AppPrincipalIdentityProviderQuery
+* AppPrincipalIdentityProviderQuery<T = any>
 **********************************************/
-export interface AppPrincipalIdentityProviderQuery {
+export interface AppPrincipalIdentityProviderQuery<T = any> {
 	External(): T;
 }
 

@@ -248,9 +248,9 @@ export interface NonTaskDataReadResultCollections<T = any> {
 }
 
 /*********************************************
-* NonTaskDataReadResultQuery
+* NonTaskDataReadResultQuery<T = any>
 **********************************************/
-export interface NonTaskDataReadResultQuery {
+export interface NonTaskDataReadResultQuery<T = any> {
 	AllLocatons(): T;
 	PersistedProperties(): T;
 	RefreshHistory(): T;
@@ -284,9 +284,9 @@ export interface RefreshHistoryCollections<T = any> {
 }
 
 /*********************************************
-* RefreshHistoryQuery
+* RefreshHistoryQuery<T = any>
 **********************************************/
-export interface RefreshHistoryQuery {
+export interface RefreshHistoryQuery<T = any> {
 	Refreshes(): T;
 }
 
@@ -309,9 +309,9 @@ export interface RefreshResultCollections<T = any> {
 }
 
 /*********************************************
-* RefreshResultQuery
+* RefreshResultQuery<T = any>
 **********************************************/
-export interface RefreshResultQuery {
+export interface RefreshResultQuery<T = any> {
 	ProviderStatuses(): T;
 	TaskChangesByLocation(): T;
 }
@@ -376,9 +376,9 @@ export interface RefreshHealthInfoCollections<T = any> {
 }
 
 /*********************************************
-* RefreshHealthInfoQuery
+* RefreshHealthInfoQuery<T = any>
 **********************************************/
-export interface RefreshHealthInfoQuery {
+export interface RefreshHealthInfoQuery<T = any> {
 	ProviderErrors(): T;
 }
 
@@ -444,9 +444,9 @@ export interface SortableTaskQueryCollections<T = any> {
 }
 
 /*********************************************
-* SortableTaskQueryQuery
+* SortableTaskQueryQuery<T = any>
 **********************************************/
-export interface SortableTaskQueryQuery {
+export interface SortableTaskQueryQuery<T = any> {
 	CoreQuery(): T;
 	Order(): T;
 }
@@ -471,9 +471,9 @@ export interface TaskQueryCollections<T = any> {
 }
 
 /*********************************************
-* TaskQueryQuery
+* TaskQueryQuery<T = any>
 **********************************************/
-export interface TaskQueryQuery {
+export interface TaskQueryQuery<T = any> {
 	CustomAttributeFilter(): T;
 	FieldFilter(): T;
 	LastModifiedDateRangeFilter(): T;
@@ -500,9 +500,9 @@ export interface TaskFilterCollections<T = any> {
 }
 
 /*********************************************
-* TaskFilterQuery
+* TaskFilterQuery<T = any>
 **********************************************/
-export interface TaskFilterQuery {
+export interface TaskFilterQuery<T = any> {
 	CompletedCriterion(): T;
 	DueDateRangeCriterion(): T;
 	IsNewCriterion(): T;
@@ -526,9 +526,9 @@ export interface TaskQueryByLocationResultCollections<T = any> {
 }
 
 /*********************************************
-* TaskQueryByLocationResultQuery
+* TaskQueryByLocationResultQuery<T = any>
 **********************************************/
-export interface TaskQueryByLocationResultQuery {
+export interface TaskQueryByLocationResultQuery<T = any> {
 	Results(): T;
 }
 
@@ -548,9 +548,9 @@ export interface TaskQueryResultCollections<T = any> {
 }
 
 /*********************************************
-* TaskQueryResultQuery
+* TaskQueryResultQuery<T = any>
 **********************************************/
-export interface TaskQueryResultQuery {
+export interface TaskQueryResultQuery<T = any> {
 	Results(): T;
 }
 
@@ -570,9 +570,9 @@ export interface TaskRefreshResultCollections<T = any> {
 }
 
 /*********************************************
-* TaskRefreshResultQuery
+* TaskRefreshResultQuery<T = any>
 **********************************************/
-export interface TaskRefreshResultQuery {
+export interface TaskRefreshResultQuery<T = any> {
 	Result(): T;
 }
 
@@ -592,9 +592,9 @@ export interface TaskWriteResultCollections<T = any> {
 }
 
 /*********************************************
-* TaskWriteResultQuery
+* TaskWriteResultQuery<T = any>
 **********************************************/
-export interface TaskWriteResultQuery {
+export interface TaskWriteResultQuery<T = any> {
 	Result(): T;
 }
 

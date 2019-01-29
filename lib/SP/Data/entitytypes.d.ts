@@ -81,9 +81,9 @@ export interface AppPackagesListItemCollections<T = any> {
 }
 
 /*********************************************
-* AppPackagesListItemQuery
+* AppPackagesListItemQuery<T = any>
 **********************************************/
-export interface AppPackagesListItemQuery {
+export interface AppPackagesListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -203,9 +203,9 @@ export interface UserInfoItemCollections<T = any> {
 }
 
 /*********************************************
-* UserInfoItemQuery
+* UserInfoItemQuery<T = any>
 **********************************************/
-export interface UserInfoItemQuery {
+export interface UserInfoItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -276,9 +276,9 @@ export interface OData__x005f_catalogs_x002f_appdataItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_appdataItemQuery
+* OData__x005f_catalogs_x002f_appdataItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appdataItemQuery {
+export interface OData__x005f_catalogs_x002f_appdataItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -354,9 +354,9 @@ export interface OData__x005f_catalogs_x002f_appfilesItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_appfilesItemQuery
+* OData__x005f_catalogs_x002f_appfilesItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appfilesItemQuery {
+export interface OData__x005f_catalogs_x002f_appfilesItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -435,9 +435,9 @@ export interface DraftAppsListItemCollections<T = any> {
 }
 
 /*********************************************
-* DraftAppsListItemQuery
+* DraftAppsListItemQuery<T = any>
 **********************************************/
-export interface DraftAppsListItemQuery {
+export interface DraftAppsListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -514,9 +514,9 @@ export interface BinsListItemCollections<T = any> {
 }
 
 /*********************************************
-* BinsListItemQuery
+* BinsListItemQuery<T = any>
 **********************************************/
-export interface BinsListItemQuery {
+export interface BinsListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -600,9 +600,9 @@ export interface Cache_x0020_ProfilesItemCollections<T = any> {
 }
 
 /*********************************************
-* Cache_x0020_ProfilesItemQuery
+* Cache_x0020_ProfilesItemQuery<T = any>
 **********************************************/
-export interface Cache_x0020_ProfilesItemQuery {
+export interface Cache_x0020_ProfilesItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -679,9 +679,9 @@ export interface OData__x005f_catalogs_x002f_designItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_designItemQuery
+* OData__x005f_catalogs_x002f_designItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_designItemQuery {
+export interface OData__x005f_catalogs_x002f_designItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -757,9 +757,9 @@ export interface Reports_x0020_ListItemCollections<T = any> {
 }
 
 /*********************************************
-* Reports_x0020_ListItemQuery
+* Reports_x0020_ListItemQuery<T = any>
 **********************************************/
-export interface Reports_x0020_ListItemQuery {
+export interface Reports_x0020_ListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -834,9 +834,9 @@ export interface ContentTypeSyncLogListItemCollections<T = any> {
 }
 
 /*********************************************
-* ContentTypeSyncLogListItemQuery
+* ContentTypeSyncLogListItemQuery<T = any>
 **********************************************/
-export interface ContentTypeSyncLogListItemQuery {
+export interface ContentTypeSyncLogListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -915,9 +915,9 @@ export interface IWConvertedFormsItemCollections<T = any> {
 }
 
 /*********************************************
-* IWConvertedFormsItemQuery
+* IWConvertedFormsItemQuery<T = any>
 **********************************************/
-export interface IWConvertedFormsItemQuery {
+export interface IWConvertedFormsItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -996,9 +996,9 @@ export interface CTDemoListItemCollections<T = any> {
 }
 
 /*********************************************
-* CTDemoListItemQuery
+* CTDemoListItemQuery<T = any>
 **********************************************/
-export interface CTDemoListItemQuery {
+export interface CTDemoListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -1076,9 +1076,9 @@ export interface DevListItemCollections<T = any> {
 }
 
 /*********************************************
-* DevListItemQuery
+* DevListItemQuery<T = any>
 **********************************************/
-export interface DevListItemQuery {
+export interface DevListItemQuery<T = any> {
 	User(): T;
 	Multi_x0020_Lookup(): T;
 	Author(): T;
@@ -1156,9 +1156,9 @@ export interface DeviceChannelsItemCollections<T = any> {
 }
 
 /*********************************************
-* DeviceChannelsItemQuery
+* DeviceChannelsItemQuery<T = any>
 **********************************************/
-export interface DeviceChannelsItemQuery {
+export interface DeviceChannelsItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -1245,9 +1245,9 @@ export interface DocSetItemCollections<T = any> {
 }
 
 /*********************************************
-* DocSetItemQuery
+* DocSetItemQuery<T = any>
 **********************************************/
-export interface DocSetItemQuery {
+export interface DocSetItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -1341,9 +1341,9 @@ export interface Shared_x0020_DocumentsItemCollections<T = any> {
 }
 
 /*********************************************
-* Shared_x0020_DocumentsItemQuery
+* Shared_x0020_DocumentsItemQuery<T = any>
 **********************************************/
-export interface Shared_x0020_DocumentsItemQuery {
+export interface Shared_x0020_DocumentsItemQuery<T = any> {
 	SharedWithUsers(): T;
 	Author(): T;
 	Editor(): T;
@@ -1443,9 +1443,9 @@ export interface Event_x0020_CalloutListItemCollections<T = any> {
 }
 
 /*********************************************
-* Event_x0020_CalloutListItemQuery
+* Event_x0020_CalloutListItemQuery<T = any>
 **********************************************/
-export interface Event_x0020_CalloutListItemQuery {
+export interface Event_x0020_CalloutListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	ParticipantsPicker(): T;
@@ -1541,9 +1541,9 @@ export interface FormServerTemplatesItemCollections<T = any> {
 }
 
 /*********************************************
-* FormServerTemplatesItemQuery
+* FormServerTemplatesItemQuery<T = any>
 **********************************************/
-export interface FormServerTemplatesItemQuery {
+export interface FormServerTemplatesItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -1622,9 +1622,9 @@ export interface GettingStartedListItemCollections<T = any> {
 }
 
 /*********************************************
-* GettingStartedListItemQuery
+* GettingStartedListItemQuery<T = any>
 **********************************************/
-export interface GettingStartedListItemQuery {
+export interface GettingStartedListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -1695,9 +1695,9 @@ export interface LargeListListItemCollections<T = any> {
 }
 
 /*********************************************
-* LargeListListItemQuery
+* LargeListListItemQuery<T = any>
 **********************************************/
-export interface LargeListListItemQuery {
+export interface LargeListListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -1784,9 +1784,9 @@ export interface OData__x005f_catalogs_x002f_ltItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_ltItemQuery
+* OData__x005f_catalogs_x002f_ltItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_ltItemQuery {
+export interface OData__x005f_catalogs_x002f_ltItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -1878,9 +1878,9 @@ export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections<
 }
 
 /*********************************************
-* Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery
+* Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery<T = any>
 **********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery {
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -1956,9 +1956,9 @@ export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections<T = 
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery
+* OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery {
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -2031,9 +2031,9 @@ export interface MapListItemCollections<T = any> {
 }
 
 /*********************************************
-* MapListItemQuery
+* MapListItemQuery<T = any>
 **********************************************/
-export interface MapListItemQuery {
+export interface MapListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2146,9 +2146,9 @@ export interface OData__x005f_catalogs_x002f_masterpageItemCollections<T = any> 
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_masterpageItemQuery
+* OData__x005f_catalogs_x002f_masterpageItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_masterpageItemQuery {
+export interface OData__x005f_catalogs_x002f_masterpageItemQuery<T = any> {
 	PublishingContact(): T;
 	AuthenticatedCacheProfile(): T;
 	AnonymousCacheProfile(): T;
@@ -2267,9 +2267,9 @@ export interface PublishedFeedListItemCollections<T = any> {
 }
 
 /*********************************************
-* PublishedFeedListItemQuery
+* PublishedFeedListItemQuery<T = any>
 **********************************************/
-export interface PublishedFeedListItemQuery {
+export interface PublishedFeedListItemQuery<T = any> {
 	LikedBy(): T;
 	TaxCatchAll(): T;
 	Author(): T;
@@ -2451,9 +2451,9 @@ export interface TaxonomyHiddenListListItemCollections<T = any> {
 }
 
 /*********************************************
-* TaxonomyHiddenListListItemQuery
+* TaxonomyHiddenListListItemQuery<T = any>
 **********************************************/
-export interface TaxonomyHiddenListListItemQuery {
+export interface TaxonomyHiddenListListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2525,9 +2525,9 @@ export interface MyContactsListItemCollections<T = any> {
 }
 
 /*********************************************
-* MyContactsListItemQuery
+* MyContactsListItemQuery<T = any>
 **********************************************/
-export interface MyContactsListItemQuery {
+export interface MyContactsListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2603,9 +2603,9 @@ export interface MyListListItemCollections<T = any> {
 }
 
 /*********************************************
-* MyListListItemQuery
+* MyListListItemQuery<T = any>
 **********************************************/
-export interface MyListListItemQuery {
+export interface MyListListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2676,9 +2676,9 @@ export interface My_x0020_Lists_x0020_InfoListItemCollections<T = any> {
 }
 
 /*********************************************
-* My_x0020_Lists_x0020_InfoListItemQuery
+* My_x0020_Lists_x0020_InfoListItemQuery<T = any>
 **********************************************/
-export interface My_x0020_Lists_x0020_InfoListItemQuery {
+export interface My_x0020_Lists_x0020_InfoListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2751,9 +2751,9 @@ export interface Notification_x0020_PagesItemCollections<T = any> {
 }
 
 /*********************************************
-* Notification_x0020_PagesItemQuery
+* Notification_x0020_PagesItemQuery<T = any>
 **********************************************/
-export interface Notification_x0020_PagesItemQuery {
+export interface Notification_x0020_PagesItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2835,9 +2835,9 @@ export interface ProjectPolicyItemListItemCollections<T = any> {
 }
 
 /*********************************************
-* ProjectPolicyItemListItemQuery
+* ProjectPolicyItemListItemQuery<T = any>
 **********************************************/
-export interface ProjectPolicyItemListItemQuery {
+export interface ProjectPolicyItemListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2911,9 +2911,9 @@ export interface Quick_x0020_Deploy_x0020_ItemsItemCollections<T = any> {
 }
 
 /*********************************************
-* Quick_x0020_Deploy_x0020_ItemsItemQuery
+* Quick_x0020_Deploy_x0020_ItemsItemQuery<T = any>
 **********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItemQuery {
+export interface Quick_x0020_Deploy_x0020_ItemsItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -2992,9 +2992,9 @@ export interface Relationships_x0020_ListItemCollections<T = any> {
 }
 
 /*********************************************
-* Relationships_x0020_ListItemQuery
+* Relationships_x0020_ListItemQuery<T = any>
 **********************************************/
-export interface Relationships_x0020_ListItemQuery {
+export interface Relationships_x0020_ListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -3071,9 +3071,9 @@ export interface ReusableContentItemCollections<T = any> {
 }
 
 /*********************************************
-* ReusableContentItemQuery
+* ReusableContentItemQuery<T = any>
 **********************************************/
-export interface ReusableContentItemQuery {
+export interface ReusableContentItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -3147,9 +3147,9 @@ export interface Sharing_x0020_LinksItemCollections<T = any> {
 }
 
 /*********************************************
-* Sharing_x0020_LinksItemQuery
+* Sharing_x0020_LinksItemQuery<T = any>
 **********************************************/
-export interface Sharing_x0020_LinksItemQuery {
+export interface Sharing_x0020_LinksItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -3238,9 +3238,9 @@ export interface SiteAssetsItemCollections<T = any> {
 }
 
 /*********************************************
-* SiteAssetsItemQuery
+* SiteAssetsItemQuery<T = any>
 **********************************************/
-export interface SiteAssetsItemQuery {
+export interface SiteAssetsItemQuery<T = any> {
 	SharedWithUsers(): T;
 	Author(): T;
 	Editor(): T;
@@ -3330,9 +3330,9 @@ export interface SiteCollectionDocumentsItemCollections<T = any> {
 }
 
 /*********************************************
-* SiteCollectionDocumentsItemQuery
+* SiteCollectionDocumentsItemQuery<T = any>
 **********************************************/
-export interface SiteCollectionDocumentsItemQuery {
+export interface SiteCollectionDocumentsItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -3450,9 +3450,9 @@ export interface SiteCollectionImagesItemCollections<T = any> {
 }
 
 /*********************************************
-* SiteCollectionImagesItemQuery
+* SiteCollectionImagesItemQuery<T = any>
 **********************************************/
-export interface SiteCollectionImagesItemQuery {
+export interface SiteCollectionImagesItemQuery<T = any> {
 	VideoSetOwner(): T;
 	PeopleInMedia(): T;
 	Author(): T;
@@ -3555,9 +3555,9 @@ export interface SitePagesItemCollections<T = any> {
 }
 
 /*********************************************
-* SitePagesItemQuery
+* SitePagesItemQuery<T = any>
 **********************************************/
-export interface SitePagesItemQuery {
+export interface SitePagesItemQuery<T = any> {
 	SharedWithUsers(): T;
 	OData__AuthorByline(): T;
 	Author(): T;
@@ -3642,9 +3642,9 @@ export interface OData__x005f_catalogs_x002f_solutionsItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_solutionsItemQuery
+* OData__x005f_catalogs_x002f_solutionsItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_solutionsItemQuery {
+export interface OData__x005f_catalogs_x002f_solutionsItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -3743,9 +3743,9 @@ export interface SPReactListItemCollections<T = any> {
 }
 
 /*********************************************
-* SPReactListItemQuery
+* SPReactListItemQuery<T = any>
 **********************************************/
-export interface SPReactListItemQuery {
+export interface SPReactListItemQuery<T = any> {
 	TestUser(): T;
 	TestMultiUser(): T;
 	TestLookup(): T;
@@ -3830,9 +3830,9 @@ export interface SPRESTListDemoListItemCollections<T = any> {
 }
 
 /*********************************************
-* SPRESTListDemoListItemQuery
+* SPRESTListDemoListItemQuery<T = any>
 **********************************************/
-export interface SPRESTListDemoListItemQuery {
+export interface SPRESTListDemoListItemQuery<T = any> {
 	DemoUser(): T;
 	Author(): T;
 	Editor(): T;
@@ -3919,9 +3919,9 @@ export interface Style_x0020_LibraryItemCollections<T = any> {
 }
 
 /*********************************************
-* Style_x0020_LibraryItemQuery
+* Style_x0020_LibraryItemQuery<T = any>
 **********************************************/
-export interface Style_x0020_LibraryItemQuery {
+export interface Style_x0020_LibraryItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -3995,9 +3995,9 @@ export interface PublishedLinksItemCollections<T = any> {
 }
 
 /*********************************************
-* PublishedLinksItemQuery
+* PublishedLinksItemQuery<T = any>
 **********************************************/
-export interface PublishedLinksItemQuery {
+export interface PublishedLinksItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -4075,9 +4075,9 @@ export interface TeamMembersListItemCollections<T = any> {
 }
 
 /*********************************************
-* TeamMembersListItemQuery
+* TeamMembersListItemQuery<T = any>
 **********************************************/
-export interface TeamMembersListItemQuery {
+export interface TeamMembersListItemQuery<T = any> {
 	TeamMember(): T;
 	TaxCatchAll(): T;
 	Author(): T;
@@ -4150,9 +4150,9 @@ export interface TestListItemCollections<T = any> {
 }
 
 /*********************************************
-* TestListItemQuery
+* TestListItemQuery<T = any>
 **********************************************/
-export interface TestListItemQuery {
+export interface TestListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -4225,9 +4225,9 @@ export interface TestProjectListItemCollections<T = any> {
 }
 
 /*********************************************
-* TestProjectListItemQuery
+* TestProjectListItemQuery<T = any>
 **********************************************/
-export interface TestProjectListItemQuery {
+export interface TestProjectListItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -4305,9 +4305,9 @@ export interface OData__x005f_catalogs_x002f_themeItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_themeItemQuery
+* OData__x005f_catalogs_x002f_themeItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_themeItemQuery {
+export interface OData__x005f_catalogs_x002f_themeItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -4397,9 +4397,9 @@ export interface Translation_x0020_PackagesItemCollections<T = any> {
 }
 
 /*********************************************
-* Translation_x0020_PackagesItemQuery
+* Translation_x0020_PackagesItemQuery<T = any>
 **********************************************/
-export interface Translation_x0020_PackagesItemQuery {
+export interface Translation_x0020_PackagesItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -4498,9 +4498,9 @@ export interface Translation_x0020_StatusItemCollections<T = any> {
 }
 
 /*********************************************
-* Translation_x0020_StatusItemQuery
+* Translation_x0020_StatusItemQuery<T = any>
 **********************************************/
-export interface Translation_x0020_StatusItemQuery {
+export interface Translation_x0020_StatusItemQuery<T = any> {
 	TranslationStateExportRequesting(): T;
 	TranslationStateImportRequesting(): T;
 	Author(): T;
@@ -4586,9 +4586,9 @@ export interface Variation_x0020_LabelsItemCollections<T = any> {
 }
 
 /*********************************************
-* Variation_x0020_LabelsItemQuery
+* Variation_x0020_LabelsItemQuery<T = any>
 **********************************************/
-export interface Variation_x0020_LabelsItemQuery {
+export interface Variation_x0020_LabelsItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 }
@@ -4673,9 +4673,9 @@ export interface OData__x005f_catalogs_x002f_wpItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_wpItemQuery
+* OData__x005f_catalogs_x002f_wpItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wpItemQuery {
+export interface OData__x005f_catalogs_x002f_wpItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -4759,9 +4759,9 @@ export interface OData__x005f_catalogs_x002f_wfpubItemCollections<T = any> {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_wfpubItemQuery
+* OData__x005f_catalogs_x002f_wfpubItemQuery<T = any>
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wfpubItemQuery {
+export interface OData__x005f_catalogs_x002f_wfpubItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	CheckoutUser(): T;
@@ -4848,9 +4848,9 @@ export interface WorkflowTasksItemCollections<T = any> {
 }
 
 /*********************************************
-* WorkflowTasksItemQuery
+* WorkflowTasksItemQuery<T = any>
 **********************************************/
-export interface WorkflowTasksItemQuery {
+export interface WorkflowTasksItemQuery<T = any> {
 	Author(): T;
 	Editor(): T;
 	Predecessors(): T;

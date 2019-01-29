@@ -30,9 +30,9 @@ export interface SPFarmCollections<T = any> {
 }
 
 /*********************************************
-* SPFarmQuery
+* SPFarmQuery<T = any>
 **********************************************/
-export interface SPFarmQuery {
+export interface SPFarmQuery<T = any> {
 	Local(): T;
 }
 
@@ -70,9 +70,9 @@ export interface SPWebApplicationCollections<T = any> {
 }
 
 /*********************************************
-* SPWebApplicationQuery
+* SPWebApplicationQuery<T = any>
 **********************************************/
-export interface SPWebApplicationQuery {
+export interface SPWebApplicationQuery<T = any> {
 	Sites(): T;
 }
 
@@ -92,9 +92,9 @@ export interface SPWebServiceCollections<T = any> {
 }
 
 /*********************************************
-* SPWebServiceQuery
+* SPWebServiceQuery<T = any>
 **********************************************/
-export interface SPWebServiceQuery {
+export interface SPWebServiceQuery<T = any> {
 	ContentService(): T;
 	WebApplications(): T;
 }

@@ -62,9 +62,9 @@ export interface SPOWebAppServicePrincipalCollections<T = any> {
 }
 
 /*********************************************
-* SPOWebAppServicePrincipalQuery
+* SPOWebAppServicePrincipalQuery<T = any>
 **********************************************/
-export interface SPOWebAppServicePrincipalQuery {
+export interface SPOWebAppServicePrincipalQuery<T = any> {
 	PermissionGrants(): T;
 	PermissionRequests(): T;
 }

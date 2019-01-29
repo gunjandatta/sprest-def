@@ -16,9 +16,9 @@ export interface likedByInformationCollections<T = any> {
 }
 
 /*********************************************
-* likedByInformationQuery
+* likedByInformationQuery<T = any>
 **********************************************/
-export interface likedByInformationQuery {
+export interface likedByInformationQuery<T = any> {
 	likedBy(): T;
 }
 

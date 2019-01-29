@@ -82,9 +82,9 @@ export interface WorkflowInstanceServiceCollections<T = any> {
 }
 
 /*********************************************
-* WorkflowInstanceServiceQuery
+* WorkflowInstanceServiceQuery<T = any>
 **********************************************/
-export interface WorkflowInstanceServiceQuery {
+export interface WorkflowInstanceServiceQuery<T = any> {
 	Current(): T;
 }
 
@@ -115,9 +115,9 @@ export interface InteropServiceCollections<T = any> {
 }
 
 /*********************************************
-* InteropServiceQuery
+* InteropServiceQuery<T = any>
 **********************************************/
-export interface InteropServiceQuery {
+export interface InteropServiceQuery<T = any> {
 	Current(): T;
 }
 
@@ -149,9 +149,9 @@ export interface WorkflowServicesManagerCollections<T = any> {
 }
 
 /*********************************************
-* WorkflowServicesManagerQuery
+* WorkflowServicesManagerQuery<T = any>
 **********************************************/
-export interface WorkflowServicesManagerQuery {
+export interface WorkflowServicesManagerQuery<T = any> {
 	Current(): T;
 }
 
@@ -206,9 +206,9 @@ export interface WorkflowSubscriptionServiceCollections<T = any> {
 }
 
 /*********************************************
-* WorkflowSubscriptionServiceQuery
+* WorkflowSubscriptionServiceQuery<T = any>
 **********************************************/
-export interface WorkflowSubscriptionServiceQuery {
+export interface WorkflowSubscriptionServiceQuery<T = any> {
 	Current(): T;
 }
 

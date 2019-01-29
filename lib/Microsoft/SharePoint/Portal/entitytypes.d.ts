@@ -1,5 +1,5 @@
-import { SP } from "../../../";
 import { Microsoft } from "../../../";
+import { SP } from "../../../";
 
 /*********************************************
 * CollaborationMailbox
@@ -110,9 +110,9 @@ export interface SharePointHomeServiceContextCollections<T = any> {
 }
 
 /*********************************************
-* SharePointHomeServiceContextQuery
+* SharePointHomeServiceContextQuery<T = any>
 **********************************************/
-export interface SharePointHomeServiceContextQuery {
+export interface SharePointHomeServiceContextQuery<T = any> {
 	Token(): T;
 }
 
