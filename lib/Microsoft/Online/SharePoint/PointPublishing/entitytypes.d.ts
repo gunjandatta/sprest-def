@@ -8,10 +8,10 @@ export interface PointPublishingAdmin {
 }
 
 /*********************************************
-* PointPublishingAdminMethods
+* PointPublishingAdminMethods<T = any>
 **********************************************/
-export interface PointPublishingAdminMethods {
-	createTopicMagazine<T=any>(magazineName?: string): T;
-	deleteTopicMagazine<T=void>(magazineId?: any): T;
-	provisionPointPublishingAsync<T=any>(): T;
+export interface PointPublishingAdminMethods<T = any> {
+	createTopicMagazine(magazineName?: string): T;
+	deleteTopicMagazine(magazineId?: any): T;
+	provisionPointPublishingAsync(): T;
 }

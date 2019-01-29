@@ -9,10 +9,10 @@ export interface SPAppStateQueryJobDefinition {
 }
 
 /*********************************************
-* SPAppStateQueryJobDefinitionMethods
+* SPAppStateQueryJobDefinitionMethods<T = any>
 **********************************************/
-export interface SPAppStateQueryJobDefinitionMethods {
-	performFastRevokeWithClientIds<T=void>(): T;
+export interface SPAppStateQueryJobDefinitionMethods<T = any> {
+	performFastRevokeWithClientIds(): T;
 }
 
 /*********************************************
@@ -23,17 +23,17 @@ export interface SPFarm {
 }
 
 /*********************************************
-* SPFarmCollections
+* SPFarmCollections<T = any>
 **********************************************/
-export interface SPFarmCollections {
-	Local<T=Microsoft.SharePoint.Administration.SPFarm>(): T;
+export interface SPFarmCollections<T = any> {
+	Local(): T;
 }
 
 /*********************************************
 * SPFarmQuery
 **********************************************/
 export interface SPFarmQuery {
-	Local<T=Microsoft.SharePoint.Administration.SPFarm>(): T;
+	Local(): T;
 }
 
 /*********************************************
@@ -63,17 +63,17 @@ export interface SPWebApplication {
 }
 
 /*********************************************
-* SPWebApplicationCollections
+* SPWebApplicationCollections<T = any>
 **********************************************/
-export interface SPWebApplicationCollections {
-	Sites<T=Array<SP.Site>>(): T;
+export interface SPWebApplicationCollections<T = any> {
+	Sites(): T;
 }
 
 /*********************************************
 * SPWebApplicationQuery
 **********************************************/
 export interface SPWebApplicationQuery {
-	Sites<T=Array<SP.Site>>(): T;
+	Sites(): T;
 }
 
 /*********************************************
@@ -84,19 +84,19 @@ export interface SPWebService {
 }
 
 /*********************************************
-* SPWebServiceCollections
+* SPWebServiceCollections<T = any>
 **********************************************/
-export interface SPWebServiceCollections {
-	ContentService<T=Microsoft.SharePoint.Administration.SPWebService>(): T;
-	WebApplications<T=Array<Microsoft.SharePoint.Administration.SPWebApplication>>(): T;
+export interface SPWebServiceCollections<T = any> {
+	ContentService(): T;
+	WebApplications(): T;
 }
 
 /*********************************************
 * SPWebServiceQuery
 **********************************************/
 export interface SPWebServiceQuery {
-	ContentService<T=Microsoft.SharePoint.Administration.SPWebService>(): T;
-	WebApplications<T=Array<Microsoft.SharePoint.Administration.SPWebApplication>>(): T;
+	ContentService(): T;
+	WebApplications(): T;
 }
 
 /*********************************************
@@ -107,8 +107,8 @@ export interface SPAnalyticsUsageService {
 }
 
 /*********************************************
-* SPAnalyticsUsageServiceMethods
+* SPAnalyticsUsageServiceMethods<T = any>
 **********************************************/
-export interface SPAnalyticsUsageServiceMethods {
-	logevent<T=void>(usageEntry?: Microsoft.SharePoint.Administration.UsageEntry): T;
+export interface SPAnalyticsUsageServiceMethods<T = any> {
+	logevent(usageEntry?: Microsoft.SharePoint.Administration.UsageEntry): T;
 }

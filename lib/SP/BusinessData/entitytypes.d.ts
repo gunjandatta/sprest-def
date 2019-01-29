@@ -31,12 +31,12 @@ export interface EntityIdentifier {
 }
 
 /*********************************************
-* EntityIdentifierMethods
+* EntityIdentifierMethods<T = any>
 **********************************************/
-export interface EntityIdentifierMethods {
-	containsLocalizedDisplayName<T=boolean>(): T;
-	getDefaultDisplayName<T=string>(): T;
-	getLocalizedDisplayName<T=string>(): T;
+export interface EntityIdentifierMethods<T = any> {
+	containsLocalizedDisplayName(): T;
+	getDefaultDisplayName(): T;
+	getLocalizedDisplayName(): T;
 }
 
 /*********************************************
@@ -58,16 +58,16 @@ export interface TypeDescriptor {
 }
 
 /*********************************************
-* TypeDescriptorMethods
+* TypeDescriptorMethods<T = any>
 **********************************************/
-export interface TypeDescriptorMethods {
-	containsLocalizedDisplayName<T=boolean>(): T;
-	getChildTypeDescriptors<T=Array<SP.BusinessData.TypeDescriptor>>(): T;
-	getDefaultDisplayName<T=string>(): T;
-	getLocalizedDisplayName<T=string>(): T;
-	getParentTypeDescriptor<T=SP.BusinessData.TypeDescriptor>(): T;
-	isLeaf<T=boolean>(): T;
-	isRoot<T=boolean>(): T;
+export interface TypeDescriptorMethods<T = any> {
+	containsLocalizedDisplayName(): T;
+	getChildTypeDescriptors(): T;
+	getDefaultDisplayName(): T;
+	getLocalizedDisplayName(): T;
+	getParentTypeDescriptor(): T;
+	isLeaf(): T;
+	isRoot(): T;
 }
 
 /*********************************************
@@ -80,19 +80,19 @@ export interface Entity {
 }
 
 /*********************************************
-* EntityMethods
+* EntityMethods<T = any>
 **********************************************/
-export interface EntityMethods {
-	getAssociationView<T=SP.BusinessData.EntityView>(associationName?: string): T;
-	getCreatorView<T=SP.BusinessData.EntityView>(methodInstanceName?: string): T;
-	getDefaultSpecificFinderView<T=SP.BusinessData.EntityView>(): T;
-	getFilters<T=Array<SP.BusinessData.Filter>>(methodInstanceName?: string): T;
-	getFinderView<T=SP.BusinessData.EntityView>(methodInstanceName?: string): T;
-	getIdentifierCount<T=number>(): T;
-	getIdentifiers<T=Array<SP.BusinessData.EntityIdentifier>>(): T;
-	getLobSystem<T=SP.BusinessData.LobSystem>(): T;
-	getSpecificFinderView<T=SP.BusinessData.EntityView>(specificFinderName?: string): T;
-	getUpdaterView<T=SP.BusinessData.EntityView>(updaterName?: string): T;
+export interface EntityMethods<T = any> {
+	getAssociationView(associationName?: string): T;
+	getCreatorView(methodInstanceName?: string): T;
+	getDefaultSpecificFinderView(): T;
+	getFilters(methodInstanceName?: string): T;
+	getFinderView(methodInstanceName?: string): T;
+	getIdentifierCount(): T;
+	getIdentifiers(): T;
+	getLobSystem(): T;
+	getSpecificFinderView(specificFinderName?: string): T;
+	getUpdaterView(updaterName?: string): T;
 }
 
 /*********************************************
@@ -103,10 +103,10 @@ export interface LobSystem {
 }
 
 /*********************************************
-* LobSystemMethods
+* LobSystemMethods<T = any>
 **********************************************/
-export interface LobSystemMethods {
-	getLobSystemInstances<T=Array<SP.BusinessData.LobSystemInstance>>(): T;
+export interface LobSystemMethods<T = any> {
+	getLobSystemInstances(): T;
 }
 
 /*********************************************
@@ -117,17 +117,17 @@ export interface MethodExecutionResult {
 }
 
 /*********************************************
-* MethodExecutionResultCollections
+* MethodExecutionResultCollections<T = any>
 **********************************************/
-export interface MethodExecutionResultCollections {
-	ReturnParameterCollection<T=Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>>(): T;
+export interface MethodExecutionResultCollections<T = any> {
+	ReturnParameterCollection(): T;
 }
 
 /*********************************************
 * MethodExecutionResultQuery
 **********************************************/
 export interface MethodExecutionResultQuery {
-	ReturnParameterCollection<T=Array<SP.BusinessData.Runtime.EntityFieldValueDictionary>>(): T;
+	ReturnParameterCollection(): T;
 }
 
 /*********************************************
@@ -139,27 +139,27 @@ export interface EntityView {
 }
 
 /*********************************************
-* EntityViewCollections
+* EntityViewCollections<T = any>
 **********************************************/
-export interface EntityViewCollections {
-	Fields<T=Array<SP.BusinessData.EntityField>>(): T;
+export interface EntityViewCollections<T = any> {
+	Fields(): T;
 }
 
 /*********************************************
 * EntityViewQuery
 **********************************************/
 export interface EntityViewQuery {
-	Fields<T=Array<SP.BusinessData.EntityField>>(): T;
+	Fields(): T;
 }
 
 /*********************************************
-* EntityViewMethods
+* EntityViewMethods<T = any>
 **********************************************/
-export interface EntityViewMethods {
-	getDefaultValues<T=SP.BusinessData.Runtime.EntityFieldValueDictionary>(): T;
-	getType<T=string>(fieldDotNotation?: string): T;
-	getTypeDescriptor<T=SP.BusinessData.TypeDescriptor>(fieldDotNotation?: string): T;
-	getXmlSchema<T=string>(): T;
+export interface EntityViewMethods<T = any> {
+	getDefaultValues(): T;
+	getType(fieldDotNotation?: string): T;
+	getTypeDescriptor(fieldDotNotation?: string): T;
+	getXmlSchema(): T;
 }
 
 /*********************************************
@@ -170,15 +170,15 @@ export interface AppBdcCatalog {
 }
 
 /*********************************************
-* AppBdcCatalogMethods
+* AppBdcCatalogMethods<T = any>
 **********************************************/
-export interface AppBdcCatalogMethods {
-	getConnectionId<T=string>(lobSystemName?: string, lobSystemInstanceName?: string): T;
-	getEntity<T=SP.BusinessData.Entity>(namespace?: string, name?: string): T;
-	getLobSystemInstanceProperty<T=string>(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string): T;
-	getLobSystemProperty<T=string>(lobSystemName?: string, propertyName?: string): T;
-	getPermissibleConnections<T=Array<string>>(): T;
-	setConnectionId<T=void>(lobSystemName?: string, lobSystemInstanceName?: string, connectionId?: string): T;
-	setLobSystemInstanceProperty<T=void>(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string, propertyValue?: string): T;
-	setLobSystemProperty<T=void>(lobSystemName?: string, propertyName?: string, propertyValue?: string): T;
+export interface AppBdcCatalogMethods<T = any> {
+	getConnectionId(lobSystemName?: string, lobSystemInstanceName?: string): T;
+	getEntity(namespace?: string, name?: string): T;
+	getLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string): T;
+	getLobSystemProperty(lobSystemName?: string, propertyName?: string): T;
+	getPermissibleConnections(): T;
+	setConnectionId(lobSystemName?: string, lobSystemInstanceName?: string, connectionId?: string): T;
+	setLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string, propertyValue?: string): T;
+	setLobSystemProperty(lobSystemName?: string, propertyName?: string, propertyValue?: string): T;
 }

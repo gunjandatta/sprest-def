@@ -8,13 +8,13 @@ export interface DDIAdapter {
 }
 
 /*********************************************
-* DDIAdapterMethods
+* DDIAdapterMethods<T = any>
 **********************************************/
-export interface DDIAdapterMethods {
-	getList<T=string>(schema?: string, workflow?: string, stream?: any): T;
-	getObject<T=string>(schema?: string, workflow?: string, stream?: any): T;
-	multiObjectExecute<T=string>(schema?: string, workflow?: string, stream?: any): T;
-	newObject<T=string>(schema?: string, workflow?: string, stream?: any): T;
-	removeObjects<T=string>(schema?: string, workflow?: string, stream?: any): T;
-	setObject<T=string>(schema?: string, workflow?: string, stream?: any): T;
+export interface DDIAdapterMethods<T = any> {
+	getList(schema?: string, workflow?: string, stream?: any): T;
+	getObject(schema?: string, workflow?: string, stream?: any): T;
+	multiObjectExecute(schema?: string, workflow?: string, stream?: any): T;
+	newObject(schema?: string, workflow?: string, stream?: any): T;
+	removeObjects(schema?: string, workflow?: string, stream?: any): T;
+	setObject(schema?: string, workflow?: string, stream?: any): T;
 }

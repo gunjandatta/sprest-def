@@ -8,8 +8,8 @@ export interface SignalStore {
 }
 
 /*********************************************
-* SignalStoreMethods
+* SignalStoreMethods<T = any>
 **********************************************/
-export interface SignalStoreMethods {
-	signals<T=void>(signals?: Array<Microsoft.SharePoint.Client.Search.Analytics.AnalyticsSignal>): T;
+export interface SignalStoreMethods<T = any> {
+	signals(signals?: Array<Microsoft.SharePoint.Client.Search.Analytics.AnalyticsSignal>): T;
 }

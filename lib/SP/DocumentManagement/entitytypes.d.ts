@@ -8,9 +8,9 @@ export interface DocumentId {
 }
 
 /*********************************************
-* DocumentIdMethods
+* DocumentIdMethods<T = any>
 **********************************************/
-export interface DocumentIdMethods {
-	resetDocIdByServerRelativePath<T=void>(DecodedUrl?: string): T;
-	resetDocIdsInLibrary<T=void>(DecodedUrl?: string, contentTypeId?: string): T;
+export interface DocumentIdMethods<T = any> {
+	resetDocIdByServerRelativePath(DecodedUrl?: string): T;
+	resetDocIdsInLibrary(DecodedUrl?: string, contentTypeId?: string): T;
 }

@@ -8,12 +8,12 @@ export interface ActivityLogger {
 }
 
 /*********************************************
-* ActivityLoggerMethods
+* ActivityLoggerMethods<T = any>
 **********************************************/
-export interface ActivityLoggerMethods {
-	feedbackDirect<T=void>(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): T;
-	feedbackIndirect<T=void>(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): T;
-	logActivity<T=void>(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string): T;
+export interface ActivityLoggerMethods<T = any> {
+	feedbackDirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): T;
+	feedbackIndirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): T;
+	logActivity(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string): T;
 }
 
 /*********************************************

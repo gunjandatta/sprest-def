@@ -8,16 +8,16 @@ export interface DirectorySession {
 }
 
 /*********************************************
-* DirectorySessionMethods
+* DirectorySessionMethods<T = any>
 **********************************************/
-export interface DirectorySessionMethods {
-	getGraphUser<T=SP.Directory.User>(principalName?: string): T;
-	getSharePointDataForUser<T=SP.Directory.User>(userId?: any): T;
-	group<T=SP.Directory.Group>(groupId?: any, alias?: string): T;
-	joinGroup<T=number>(groupId?: any): T;
-	me<T=SP.Directory.User>(): T;
-	user<T=SP.Directory.User>(id?: any, principalName?: string): T;
-	validateGroupName<T=SP.Directory.GroupNameValidationResult>(displayName?: string, alias?: string): T;
+export interface DirectorySessionMethods<T = any> {
+	getGraphUser(principalName?: string): T;
+	getSharePointDataForUser(userId?: any): T;
+	group(groupId?: any, alias?: string): T;
+	joinGroup(groupId?: any): T;
+	me(): T;
+	user(id?: any, principalName?: string): T;
+	validateGroupName(displayName?: string, alias?: string): T;
 }
 
 /*********************************************
@@ -47,26 +47,26 @@ export interface Group {
 }
 
 /*********************************************
-* GroupCollections
+* GroupCollections<T = any>
 **********************************************/
-export interface GroupCollections {
-	members<T=Array<SP.Directory.User>>(): T;
-	owners<T=Array<SP.Directory.User>>(): T;
+export interface GroupCollections<T = any> {
+	members(): T;
+	owners(): T;
 }
 
 /*********************************************
 * GroupQuery
 **********************************************/
 export interface GroupQuery {
-	members<T=Array<SP.Directory.User>>(): T;
-	owners<T=Array<SP.Directory.User>>(): T;
+	members(): T;
+	owners(): T;
 }
 
 /*********************************************
-* GroupMethods
+* GroupMethods<T = any>
 **********************************************/
-export interface GroupMethods {
-	delete<T=void>(): T;
+export interface GroupMethods<T = any> {
+	delete(): T;
 }
 
 /*********************************************
@@ -116,28 +116,28 @@ export interface User {
 }
 
 /*********************************************
-* UserCollections
+* UserCollections<T = any>
 **********************************************/
-export interface UserCollections {
-	membership<T=Array<SP.Directory.Group>>(): T;
-	ownership<T=Array<SP.Directory.Group>>(): T;
-	rankedMembership<T=Array<SP.Directory.Group>>(): T;
+export interface UserCollections<T = any> {
+	membership(): T;
+	ownership(): T;
+	rankedMembership(): T;
 }
 
 /*********************************************
 * UserQuery
 **********************************************/
 export interface UserQuery {
-	membership<T=Array<SP.Directory.Group>>(): T;
-	ownership<T=Array<SP.Directory.Group>>(): T;
-	rankedMembership<T=Array<SP.Directory.Group>>(): T;
+	membership(): T;
+	ownership(): T;
+	rankedMembership(): T;
 }
 
 /*********************************************
-* UserMethods
+* UserMethods<T = any>
 **********************************************/
-export interface UserMethods {
-	getUserLinks<T=Array<SP.Directory.Link>>(linkName?: string, groupType?: number): T;
+export interface UserMethods<T = any> {
+	getUserLinks(linkName?: string, groupType?: number): T;
 }
 
 /*********************************************
@@ -157,17 +157,17 @@ export interface GroupAndUserStatus {
 }
 
 /*********************************************
-* GroupAndUserStatusCollections
+* GroupAndUserStatusCollections<T = any>
 **********************************************/
-export interface GroupAndUserStatusCollections {
-	Group<T=SP.Directory.Group>(): T;
+export interface GroupAndUserStatusCollections<T = any> {
+	Group(): T;
 }
 
 /*********************************************
 * GroupAndUserStatusQuery
 **********************************************/
 export interface GroupAndUserStatusQuery {
-	Group<T=SP.Directory.Group>(): T;
+	Group(): T;
 }
 
 /*********************************************

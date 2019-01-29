@@ -16,26 +16,26 @@ export interface SocialFeedManager {
 }
 
 /*********************************************
-* SocialFeedManagerMethods
+* SocialFeedManagerMethods<T = any>
 **********************************************/
-export interface SocialFeedManagerMethods {
-	createFileAttachment<T=SP.Social.SocialAttachment>(name?: string, description?: string, fileData?: any): T;
-	createImageAttachment<T=SP.Social.SocialAttachment>(name?: string, description?: string, imageData?: any): T;
-	createPost<T=SP.Social.SocialThread>(targetId?: string, creationData?: SP.Social.SocialPostCreationData): T;
-	deletePost<T=SP.Social.SocialThread>(postId?: string): T;
-	getAllLikers<T=Array<SP.Social.SocialActor>>(postId?: string): T;
-	getFeed<T=SP.Social.SocialFeed>(type?: number, options?: SP.Social.SocialFeedOptions): T;
-	getFeedFor<T=SP.Social.SocialFeed>(actorId?: string, options?: SP.Social.SocialFeedOptions): T;
-	getFullThread<T=SP.Social.SocialThread>(threadId?: string): T;
-	getMentions<T=SP.Social.SocialFeed>(clearUnreadMentions?: boolean, options?: SP.Social.SocialFeedOptions): T;
-	getPreview<T=SP.Social.SocialAttachment>(itemUrl?: string): T;
-	getPreviewImage<T=any>(url?: string, key?: string, iv?: string): T;
-	getUnreadMentionCount<T=number>(): T;
-	likePost<T=SP.Social.SocialThread>(postId?: string): T;
-	lockThread<T=SP.Social.SocialThread>(threadId?: string): T;
-	suppressThreadNotifications<T=void>(threadId?: string): T;
-	unlikePost<T=SP.Social.SocialThread>(postId?: string): T;
-	unlockThread<T=SP.Social.SocialThread>(threadId?: string): T;
+export interface SocialFeedManagerMethods<T = any> {
+	createFileAttachment(name?: string, description?: string, fileData?: any): T;
+	createImageAttachment(name?: string, description?: string, imageData?: any): T;
+	createPost(targetId?: string, creationData?: SP.Social.SocialPostCreationData): T;
+	deletePost(postId?: string): T;
+	getAllLikers(postId?: string): T;
+	getFeed(type?: number, options?: SP.Social.SocialFeedOptions): T;
+	getFeedFor(actorId?: string, options?: SP.Social.SocialFeedOptions): T;
+	getFullThread(threadId?: string): T;
+	getMentions(clearUnreadMentions?: boolean, options?: SP.Social.SocialFeedOptions): T;
+	getPreview(itemUrl?: string): T;
+	getPreviewImage(url?: string, key?: string, iv?: string): T;
+	getUnreadMentionCount(): T;
+	likePost(postId?: string): T;
+	lockThread(threadId?: string): T;
+	suppressThreadNotifications(threadId?: string): T;
+	unlikePost(postId?: string): T;
+	unlockThread(threadId?: string): T;
 }
 
 /*********************************************
@@ -47,16 +47,16 @@ export interface SocialFollowingManager {
 }
 
 /*********************************************
-* SocialFollowingManagerMethods
+* SocialFollowingManagerMethods<T = any>
 **********************************************/
-export interface SocialFollowingManagerMethods {
-	follow<T=number>(actor?: SP.Social.SocialActorInfo): T;
-	getFollowed<T=Array<SP.Social.SocialActor>>(types?: number): T;
-	getFollowedCount<T=number>(types?: number): T;
-	getFollowers<T=Array<SP.Social.SocialActor>>(): T;
-	getSuggestions<T=Array<SP.Social.SocialActor>>(): T;
-	isFollowed<T=boolean>(actor?: SP.Social.SocialActorInfo): T;
-	stopFollowing<T=boolean>(actor?: SP.Social.SocialActorInfo): T;
+export interface SocialFollowingManagerMethods<T = any> {
+	follow(actor?: SP.Social.SocialActorInfo): T;
+	getFollowed(types?: number): T;
+	getFollowedCount(types?: number): T;
+	getFollowers(): T;
+	getSuggestions(): T;
+	isFollowed(actor?: SP.Social.SocialActorInfo): T;
+	stopFollowing(actor?: SP.Social.SocialActorInfo): T;
 }
 
 /*********************************************
@@ -69,16 +69,16 @@ export interface SocialRestActor {
 }
 
 /*********************************************
-* SocialRestActorMethods
+* SocialRestActorMethods<T = any>
 **********************************************/
-export interface SocialRestActorMethods {
-	feed<T=SP.Social.SocialRestFeed>(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
-	likes<T=SP.Social.SocialRestFeed>(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
-	mentionFeed<T=SP.Social.SocialRestFeed>(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
-	news<T=SP.Social.SocialRestFeed>(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
-	organizationFeed<T=SP.Social.SocialRestFeed>(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
-	timelineFeed<T=SP.Social.SocialRestFeed>(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
-	unreadMentionCount<T=number>(): T;
+export interface SocialRestActorMethods<T = any> {
+	feed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
+	likes(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
+	mentionFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
+	news(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
+	organizationFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
+	timelineFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
+	unreadMentionCount(): T;
 }
 
 /*********************************************
@@ -89,12 +89,12 @@ export interface SocialRestFeedManager {
 }
 
 /*********************************************
-* SocialRestFeedManagerMethods
+* SocialRestFeedManagerMethods<T = any>
 **********************************************/
-export interface SocialRestFeedManagerMethods {
-	actor<T=SP.Social.SocialRestActor>(item?: string): T;
-	my<T=SP.Social.SocialRestActor>(): T;
-	post<T=SP.Social.SocialRestThread>(ID?: string): T;
+export interface SocialRestFeedManagerMethods<T = any> {
+	actor(item?: string): T;
+	my(): T;
+	post(ID?: string): T;
 }
 
 /*********************************************
@@ -106,11 +106,11 @@ export interface SocialRestFeed {
 }
 
 /*********************************************
-* SocialRestFeedMethods
+* SocialRestFeedMethods<T = any>
 **********************************************/
-export interface SocialRestFeedMethods {
-	clearUnReadMentionCount<T=SP.Social.SocialRestFeed>(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
-	post<T=SP.Social.SocialRestThread>(restCreationData?: SP.Social.SocialRestPostCreationData): T;
+export interface SocialRestFeedMethods<T = any> {
+	clearUnReadMentionCount(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): T;
+	post(restCreationData?: SP.Social.SocialRestPostCreationData): T;
 }
 
 /*********************************************
@@ -125,17 +125,17 @@ export interface SocialRestFollowingManager {
 }
 
 /*********************************************
-* SocialRestFollowingManagerMethods
+* SocialRestFollowingManagerMethods<T = any>
 **********************************************/
-export interface SocialRestFollowingManagerMethods {
-	follow<T=number>(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): T;
-	followed<T=Array<SP.Social.SocialActor>>(types?: number): T;
-	followedCount<T=number>(types?: number): T;
-	followers<T=Array<SP.Social.SocialActor>>(): T;
-	isFollowed<T=boolean>(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): T;
-	my<T=SP.Social.SocialRestFollowingManager>(): T;
-	stopFollowing<T=void>(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): T;
-	suggestions<T=Array<SP.Social.SocialActor>>(): T;
+export interface SocialRestFollowingManagerMethods<T = any> {
+	follow(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): T;
+	followed(types?: number): T;
+	followedCount(types?: number): T;
+	followers(): T;
+	isFollowed(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): T;
+	my(): T;
+	stopFollowing(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): T;
+	suggestions(): T;
 }
 
 /*********************************************
@@ -147,14 +147,14 @@ export interface SocialRestThread {
 }
 
 /*********************************************
-* SocialRestThreadMethods
+* SocialRestThreadMethods<T = any>
 **********************************************/
-export interface SocialRestThreadMethods {
-	delete<T=void>(ID?: string): T;
-	like<T=SP.Social.SocialRestThread>(ID?: string): T;
-	likers<T=Array<SP.Social.SocialActor>>(ID?: string): T;
-	lock<T=SP.Social.SocialRestThread>(ID?: string): T;
-	reply<T=SP.Social.SocialRestThread>(restCreationData?: SP.Social.SocialRestPostCreationData): T;
-	unLike<T=SP.Social.SocialRestThread>(ID?: string): T;
-	unLock<T=SP.Social.SocialRestThread>(ID?: string): T;
+export interface SocialRestThreadMethods<T = any> {
+	delete(ID?: string): T;
+	like(ID?: string): T;
+	likers(ID?: string): T;
+	lock(ID?: string): T;
+	reply(restCreationData?: SP.Social.SocialRestPostCreationData): T;
+	unLike(ID?: string): T;
+	unLock(ID?: string): T;
 }

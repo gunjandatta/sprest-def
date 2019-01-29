@@ -8,14 +8,14 @@ export interface MicrofeedPostDefinitionManager {
 }
 
 /*********************************************
-* MicrofeedPostDefinitionManagerMethods
+* MicrofeedPostDefinitionManagerMethods<T = any>
 **********************************************/
-export interface MicrofeedPostDefinitionManagerMethods {
-	deleteMicrofeedPostDefinition<T=boolean>(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): T;
-	getMicrofeedPostDefinition<T=SP.Microfeed.MicrofeedPostDefinition>(definitionName?: string): T;
-	getMicrofeedPostDefinitions<T=Array<SP.Microfeed.MicrofeedPostDefinition>>(): T;
-	newMicrofeedPostDefinition<T=SP.Microfeed.MicrofeedPostDefinition>(definitionName?: string): T;
-	updateMicrofeedPostDefinition<T=SP.Microfeed.MicrofeedPostDefinition>(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): T;
+export interface MicrofeedPostDefinitionManagerMethods<T = any> {
+	deleteMicrofeedPostDefinition(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): T;
+	getMicrofeedPostDefinition(definitionName?: string): T;
+	getMicrofeedPostDefinitions(): T;
+	newMicrofeedPostDefinition(definitionName?: string): T;
+	updateMicrofeedPostDefinition(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): T;
 }
 
 /*********************************************
@@ -26,14 +26,14 @@ export interface MicrofeedAttachmentStore {
 }
 
 /*********************************************
-* MicrofeedAttachmentStoreMethods
+* MicrofeedAttachmentStoreMethods<T = any>
 **********************************************/
-export interface MicrofeedAttachmentStoreMethods {
-	deletePreProcessedAttachment<T=void>(attachmentUri?: string): T;
-	getImage<T=any>(imageUrl?: string, key?: string, iv?: string): T;
-	preProcessAttachment<T=SP.Microfeed.MicrofeedLink>(link?: SP.Microfeed.MicrofeedLink): T;
-	putFile<T=Array<string>>(originalFileName?: string, fileData?: any): T;
-	putImage<T=Array<string>>(imageData?: any): T;
+export interface MicrofeedAttachmentStoreMethods<T = any> {
+	deletePreProcessedAttachment(attachmentUri?: string): T;
+	getImage(imageUrl?: string, key?: string, iv?: string): T;
+	preProcessAttachment(link?: SP.Microfeed.MicrofeedLink): T;
+	putFile(originalFileName?: string, fileData?: any): T;
+	putImage(imageData?: any): T;
 }
 
 /*********************************************
@@ -50,12 +50,12 @@ export interface MicrofeedData {
 }
 
 /*********************************************
-* MicrofeedDataMethods
+* MicrofeedDataMethods<T = any>
 **********************************************/
-export interface MicrofeedDataMethods {
-	addAttachment<T=void>(name?: string, bytes?: any): T;
-	systemUpdate<T=void>(): T;
-	update<T=void>(): T;
+export interface MicrofeedDataMethods<T = any> {
+	addAttachment(name?: string, bytes?: any): T;
+	systemUpdate(): T;
+	update(): T;
 }
 
 /*********************************************
@@ -68,27 +68,27 @@ export interface MicrofeedManager {
 }
 
 /*********************************************
-* MicrofeedManagerMethods
+* MicrofeedManagerMethods<T = any>
 **********************************************/
-export interface MicrofeedManagerMethods {
-	addUserToPostPeopleList<T=number>(postIdentifier?: string, UserLoginName?: string): T;
-	clearUnreadMentionsCount<T=number>(): T;
-	deleteById<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): T;
-	deleteUserFromPostPeopleList<T=number>(postIdentifier?: string, UserLoginName?: string): T;
-	getMyCategoricalFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): T;
-	getMyConsolidatedFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): T;
-	getMyPublishedFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number, ShowPublicView?: boolean): T;
-	getPublishedFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOwner?: string, feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number): T;
-	getThread<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): T;
-	getUnreadMentionsCount<T=number>(): T;
-	like<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): T;
-	lockThreadById<T=SP.Microfeed.MicrofeedThread>(threadIdentifier?: string): T;
-	post<T=SP.Microfeed.MicrofeedThread>(postOptions?: SP.Microfeed.MicrofeedPostOptions): T;
-	postReply<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string, postReplyOptions?: SP.Microfeed.MicrofeedPostOptions): T;
-	repopulateLMT<T=number>(timeStamp?: any, secureHash?: string): T;
-	unLike<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): T;
-	unLockThreadById<T=SP.Microfeed.MicrofeedThread>(threadIdentifier?: string): T;
-	unsubscribeFromEMail<T=void>(postIdentifier?: string): T;
+export interface MicrofeedManagerMethods<T = any> {
+	addUserToPostPeopleList(postIdentifier?: string, UserLoginName?: string): T;
+	clearUnreadMentionsCount(): T;
+	deleteById(postIdentifier?: string): T;
+	deleteUserFromPostPeopleList(postIdentifier?: string, UserLoginName?: string): T;
+	getMyCategoricalFeed(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): T;
+	getMyConsolidatedFeed(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): T;
+	getMyPublishedFeed(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number, ShowPublicView?: boolean): T;
+	getPublishedFeed(feedOwner?: string, feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number): T;
+	getThread(postIdentifier?: string): T;
+	getUnreadMentionsCount(): T;
+	like(postIdentifier?: string): T;
+	lockThreadById(threadIdentifier?: string): T;
+	post(postOptions?: SP.Microfeed.MicrofeedPostOptions): T;
+	postReply(postIdentifier?: string, postReplyOptions?: SP.Microfeed.MicrofeedPostOptions): T;
+	repopulateLMT(timeStamp?: any, secureHash?: string): T;
+	unLike(postIdentifier?: string): T;
+	unLockThreadById(threadIdentifier?: string): T;
+	unsubscribeFromEMail(postIdentifier?: string): T;
 }
 
 /*********************************************
@@ -107,16 +107,16 @@ export interface MicrofeedStore {
 }
 
 /*********************************************
-* MicrofeedStoreMethods
+* MicrofeedStoreMethods<T = any>
 **********************************************/
-export interface MicrofeedStoreMethods {
-	addData<T=void>(name?: string, data?: any): T;
-	addDataAsStream<T=void>(name?: string, data?: any): T;
-	executePendingOperations<T=void>(): T;
-	getItem<T=SP.Microfeed.MicrofeedData>(storeIdentifier?: string): T;
-	getSocialProperties<T=string>(accountName?: string): T;
-	incrementUnreadAtMentionCount<T=void>(accountName?: string): T;
-	newItem<T=SP.Microfeed.MicrofeedData>(storeIdentifier?: string): T;
-	query<T=Array<SP.Microfeed.MicrofeedData>>(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): T;
-	setPostLikeStatus<T=void>(accountName?: string, postId?: string, like?: boolean): T;
+export interface MicrofeedStoreMethods<T = any> {
+	addData(name?: string, data?: any): T;
+	addDataAsStream(name?: string, data?: any): T;
+	executePendingOperations(): T;
+	getItem(storeIdentifier?: string): T;
+	getSocialProperties(accountName?: string): T;
+	incrementUnreadAtMentionCount(accountName?: string): T;
+	newItem(storeIdentifier?: string): T;
+	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): T;
+	setPostLikeStatus(accountName?: string, postId?: string, like?: boolean): T;
 }

@@ -8,8 +8,8 @@ export interface ExternalSubscriptionStore {
 }
 
 /*********************************************
-* ExternalSubscriptionStoreMethods
+* ExternalSubscriptionStoreMethods<T = any>
 **********************************************/
-export interface ExternalSubscriptionStoreMethods {
-	indexStore<T=void>(): T;
+export interface ExternalSubscriptionStoreMethods<T = any> {
+	indexStore(): T;
 }

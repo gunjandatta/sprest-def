@@ -8,11 +8,11 @@ export interface SyncTranslator {
 }
 
 /*********************************************
-* SyncTranslatorMethods
+* SyncTranslatorMethods<T = any>
 **********************************************/
-export interface SyncTranslatorMethods {
-	translate<T=SP.Translation.TranslationItemInfo>(inputFile?: string, outputFile?: string): T;
-	translateStream<T=any>(inputFile?: any, fileExtension?: string): T;
+export interface SyncTranslatorMethods<T = any> {
+	translate(inputFile?: string, outputFile?: string): T;
+	translateStream(inputFile?: any, fileExtension?: string): T;
 }
 
 /*********************************************
@@ -25,12 +25,12 @@ export interface TranslationJob {
 }
 
 /*********************************************
-* TranslationJobMethods
+* TranslationJobMethods<T = any>
 **********************************************/
-export interface TranslationJobMethods {
-	translateFile<T=any>(inputFile?: string, outputFile?: string): T;
-	translateFolder<T=any>(inputFolder?: string, outputFolder?: string, recursion?: boolean): T;
-	translateLibrary<T=any>(inputLibrary?: string, outputLibrary?: string): T;
+export interface TranslationJobMethods<T = any> {
+	translateFile(inputFile?: string, outputFile?: string): T;
+	translateFolder(inputFolder?: string, outputFolder?: string, recursion?: boolean): T;
+	translateLibrary(inputLibrary?: string, outputLibrary?: string): T;
 }
 
 /*********************************************
@@ -47,10 +47,10 @@ export interface TranslationJobStatus {
 }
 
 /*********************************************
-* TranslationJobStatusMethods
+* TranslationJobStatusMethods<T = any>
 **********************************************/
-export interface TranslationJobStatusMethods {
-	getAllItems<T=Array<SP.Translation.TranslationItemInfo>>(): T;
+export interface TranslationJobStatusMethods<T = any> {
+	getAllItems(): T;
 }
 
 /*********************************************

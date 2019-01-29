@@ -15,10 +15,10 @@ export interface SPOWebAppServicePrincipalPermissionGrant {
 }
 
 /*********************************************
-* SPOWebAppServicePrincipalPermissionGrantMethods
+* SPOWebAppServicePrincipalPermissionGrantMethods<T = any>
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionGrantMethods {
-	deleteObject<T=void>(): T;
+export interface SPOWebAppServicePrincipalPermissionGrantMethods<T = any> {
+	deleteObject(): T;
 }
 
 /*********************************************
@@ -37,11 +37,11 @@ export interface SPOWebAppServicePrincipalPermissionRequest {
 }
 
 /*********************************************
-* SPOWebAppServicePrincipalPermissionRequestMethods
+* SPOWebAppServicePrincipalPermissionRequestMethods<T = any>
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionRequestMethods {
-	approve<T=Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>(): T;
-	deny<T=void>(): T;
+export interface SPOWebAppServicePrincipalPermissionRequestMethods<T = any> {
+	approve(): T;
+	deny(): T;
 }
 
 /*********************************************
@@ -54,24 +54,24 @@ export interface SPOWebAppServicePrincipal {
 }
 
 /*********************************************
-* SPOWebAppServicePrincipalCollections
+* SPOWebAppServicePrincipalCollections<T = any>
 **********************************************/
-export interface SPOWebAppServicePrincipalCollections {
-	PermissionGrants<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>>(): T;
-	PermissionRequests<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>>(): T;
+export interface SPOWebAppServicePrincipalCollections<T = any> {
+	PermissionGrants(): T;
+	PermissionRequests(): T;
 }
 
 /*********************************************
 * SPOWebAppServicePrincipalQuery
 **********************************************/
 export interface SPOWebAppServicePrincipalQuery {
-	PermissionGrants<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>>(): T;
-	PermissionRequests<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>>(): T;
+	PermissionGrants(): T;
+	PermissionRequests(): T;
 }
 
 /*********************************************
-* SPOWebAppServicePrincipalMethods
+* SPOWebAppServicePrincipalMethods<T = any>
 **********************************************/
-export interface SPOWebAppServicePrincipalMethods {
-	update<T=void>(): T;
+export interface SPOWebAppServicePrincipalMethods<T = any> {
+	update(): T;
 }

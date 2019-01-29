@@ -32,16 +32,16 @@ export interface EntityInstance {
 }
 
 /*********************************************
-* EntityInstanceMethods
+* EntityInstanceMethods<T = any>
 **********************************************/
-export interface EntityInstanceMethods {
-	createCollectionInstance<T=void>(fieldDotNotation?: string, size?: number): T;
-	createInstance<T=void>(fieldInstanceDotNotation?: string, fieldDotNotation?: string): T;
-	deleteObject<T=void>(): T;
-	fromXml<T=void>(xml?: string): T;
-	getIdentity<T=SP.BusinessData.Runtime.EntityIdentity>(): T;
-	toXml<T=string>(): T;
-	update<T=void>(): T;
+export interface EntityInstanceMethods<T = any> {
+	createCollectionInstance(fieldDotNotation?: string, size?: number): T;
+	createInstance(fieldInstanceDotNotation?: string, fieldDotNotation?: string): T;
+	deleteObject(): T;
+	fromXml(xml?: string): T;
+	getIdentity(): T;
+	toXml(): T;
+	update(): T;
 }
 
 /*********************************************
@@ -52,12 +52,12 @@ export interface EntityFieldValueDictionary {
 }
 
 /*********************************************
-* EntityFieldValueDictionaryMethods
+* EntityFieldValueDictionaryMethods<T = any>
 **********************************************/
-export interface EntityFieldValueDictionaryMethods {
-	createCollectionInstance<T=void>(fieldDotNotation?: string, size?: number): T;
-	createInstance<T=void>(fieldInstanceDotNotation?: string, fieldDotNotation?: string): T;
-	fromXml<T=void>(xml?: string): T;
-	getCollectionSize<T=number>(fieldDotNotation?: string): T;
-	toXml<T=string>(): T;
+export interface EntityFieldValueDictionaryMethods<T = any> {
+	createCollectionInstance(fieldDotNotation?: string, size?: number): T;
+	createInstance(fieldInstanceDotNotation?: string, fieldDotNotation?: string): T;
+	fromXml(xml?: string): T;
+	getCollectionSize(fieldDotNotation?: string): T;
+	toXml(): T;
 }

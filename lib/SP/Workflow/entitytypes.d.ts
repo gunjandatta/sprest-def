@@ -25,11 +25,11 @@ export interface WorkflowAssociation {
 }
 
 /*********************************************
-* WorkflowAssociationMethods
+* WorkflowAssociationMethods<T = any>
 **********************************************/
-export interface WorkflowAssociationMethods {
-	deleteObject<T=void>(): T;
-	update<T=void>(): T;
+export interface WorkflowAssociationMethods<T = any> {
+	deleteObject(): T;
+	update(): T;
 }
 
 /*********************************************
@@ -72,32 +72,32 @@ export interface SPWorkflowTask extends SP.ListItem {
 }
 
 /*********************************************
-* SPWorkflowTaskMethods
+* SPWorkflowTaskMethods<T = any>
 **********************************************/
-export interface SPWorkflowTaskMethods {
-	breakRoleInheritance<T=void>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): T;
-	resetRoleInheritance<T=void>(): T;
-	deleteObject<T=void>(): T;
-	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
-	getHashtags<T=Array<SP.Hashtag>>(): T;
-	getUserEffectivePermissions<T=SP.BasePermissions>(userName?: string): T;
-	getWOPIFrameUrl<T=string>(action?: number): T;
-	mediaServiceUpdate<T=void>(parameters?: SP.MediaServiceUpdateParameters): T;
-	mediaServiceUpdateV2<T=void>(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): T;
-	overridePolicyTip<T=number>(userAction?: number, justification?: string): T;
-	parseAndSetFieldValue<T=void>(fieldName?: string, value?: string): T;
-	recycle<T=any>(): T;
-	setCommentsDisabled<T=void>(value?: boolean): T;
-	setComplianceTag<T=void>(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): T;
-	setComplianceTagWithExplicitMetasUpdate<T=void>(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): T;
-	setComplianceTagWithHold<T=void>(complianceTag?: string): T;
-	setComplianceTagWithMetaInfo<T=void>(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): T;
-	setComplianceTagWithNoHold<T=void>(complianceTag?: string): T;
-	setComplianceTagWithRecord<T=void>(complianceTag?: string): T;
-	systemUpdate<T=void>(): T;
-	update<T=void>(): T;
-	updateEx<T=void>(parameters?: SP.ListItemUpdateParameters): T;
-	updateHashtags<T=Array<SP.Hashtag>>(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): T;
-	updateOverwriteVersion<T=void>(): T;
-	validateUpdateListItem<T=Array<SP.ListItemFormUpdateValue>>(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): T;
+export interface SPWorkflowTaskMethods<T = any> {
+	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): T;
+	resetRoleInheritance(): T;
+	deleteObject(): T;
+	getChanges(query?: SP.ChangeQuery): T;
+	getHashtags(): T;
+	getUserEffectivePermissions(userName?: string): T;
+	getWOPIFrameUrl(action?: number): T;
+	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): T;
+	mediaServiceUpdateV2(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): T;
+	overridePolicyTip(userAction?: number, justification?: string): T;
+	parseAndSetFieldValue(fieldName?: string, value?: string): T;
+	recycle(): T;
+	setCommentsDisabled(value?: boolean): T;
+	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): T;
+	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): T;
+	setComplianceTagWithHold(complianceTag?: string): T;
+	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): T;
+	setComplianceTagWithNoHold(complianceTag?: string): T;
+	setComplianceTagWithRecord(complianceTag?: string): T;
+	systemUpdate(): T;
+	update(): T;
+	updateEx(parameters?: SP.ListItemUpdateParameters): T;
+	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): T;
+	updateOverwriteVersion(): T;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): T;
 }

@@ -8,8 +8,8 @@ export interface AppLauncher {
 }
 
 /*********************************************
-* AppLauncherMethods
+* AppLauncherMethods<T = any>
 **********************************************/
-export interface AppLauncherMethods {
-	getData<T=string>(suiteVersion?: number, isMobileRequest?: boolean, locale?: string, onPremVer?: string): T;
+export interface AppLauncherMethods<T = any> {
+	getData(suiteVersion?: number, isMobileRequest?: boolean, locale?: string, onPremVer?: string): T;
 }

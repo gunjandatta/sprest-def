@@ -13,9 +13,9 @@ export interface Subscription {
 }
 
 /*********************************************
-* SubscriptionMethods
+* SubscriptionMethods<T = any>
 **********************************************/
-export interface SubscriptionMethods {
-	delete<T=void>(): T;
-	update<T=void>(parameters?: Microsoft.SharePoint.Webhooks.SubscriptionInformation): T;
+export interface SubscriptionMethods<T = any> {
+	delete(): T;
+	update(parameters?: Microsoft.SharePoint.Webhooks.SubscriptionInformation): T;
 }

@@ -16,12 +16,12 @@ export interface GroupService {
 }
 
 /*********************************************
-* GroupServiceMethods
+* GroupServiceMethods<T = any>
 **********************************************/
-export interface GroupServiceMethods {
-	getGroupImage<T=any>(id?: string, hash?: string, color?: string): T;
-	setGroupImage<T=void>(imageStream?: any): T;
-	syncGroupProperties<T=void>(): T;
+export interface GroupServiceMethods<T = any> {
+	getGroupImage(id?: string, hash?: string, color?: string): T;
+	setGroupImage(imageStream?: any): T;
+	syncGroupProperties(): T;
 }
 
 /*********************************************
@@ -32,19 +32,19 @@ export interface GroupSiteManager {
 }
 
 /*********************************************
-* GroupSiteManagerMethods
+* GroupSiteManagerMethods<T = any>
 **********************************************/
-export interface GroupSiteManagerMethods {
-	canUserCreateGroup<T=boolean>(): T;
-	create<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): T;
-	createGroup<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, ownerPrincipalNames?: Array<string>, description?: string, creationOptions?: Array<string>): T;
-	createGroupEx<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
-	createGroupForSite<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
-	getGroupCreationContext<T=Microsoft.SharePoint.Portal.GroupCreationContext>(): T;
-	getGroupSiteConversionData<T=Microsoft.SharePoint.Portal.GroupSiteConversionInfo>(): T;
-	getSiteStatus<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): T;
-	getValidSiteUrlFromAlias<T=string>(alias?: string, managedPath?: string, isTeamSite?: boolean): T;
-	notebook<T=string>(groupId?: any): T;
+export interface GroupSiteManagerMethods<T = any> {
+	canUserCreateGroup(): T;
+	create(groupId?: any): T;
+	createGroup(displayName?: string, alias?: string, isPublic?: boolean, ownerPrincipalNames?: Array<string>, description?: string, creationOptions?: Array<string>): T;
+	createGroupEx(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
+	createGroupForSite(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
+	getGroupCreationContext(): T;
+	getGroupSiteConversionData(): T;
+	getSiteStatus(groupId?: any): T;
+	getValidSiteUrlFromAlias(alias?: string, managedPath?: string, isTeamSite?: boolean): T;
+	notebook(groupId?: any): T;
 }
 
 /*********************************************
@@ -55,12 +55,12 @@ export interface SiteLinkingManager {
 }
 
 /*********************************************
-* SiteLinkingManagerMethods
+* SiteLinkingManagerMethods<T = any>
 **********************************************/
-export interface SiteLinkingManagerMethods {
-	getSiteLinks<T=Microsoft.SharePoint.Portal.LinkedSitesListContract>(): T;
-	linkGroup<T=boolean>(groupId?: any): T;
-	unlinkGroup<T=boolean>(groupId?: any): T;
+export interface SiteLinkingManagerMethods<T = any> {
+	getSiteLinks(): T;
+	linkGroup(groupId?: any): T;
+	unlinkGroup(groupId?: any): T;
 }
 
 /*********************************************
@@ -85,10 +85,10 @@ export interface SharePointHomeServiceContextBuilder {
 }
 
 /*********************************************
-* SharePointHomeServiceContextBuilderMethods
+* SharePointHomeServiceContextBuilderMethods<T = any>
 **********************************************/
-export interface SharePointHomeServiceContextBuilderMethods {
-	context<T=Microsoft.SharePoint.Portal.SharePointHomeServiceContext>(): T;
+export interface SharePointHomeServiceContextBuilderMethods<T = any> {
+	context(): T;
 }
 
 /*********************************************
@@ -103,17 +103,17 @@ export interface SharePointHomeServiceContext {
 }
 
 /*********************************************
-* SharePointHomeServiceContextCollections
+* SharePointHomeServiceContextCollections<T = any>
 **********************************************/
-export interface SharePointHomeServiceContextCollections {
-	Token<T=SP.OAuth.TokenResponse>(): T;
+export interface SharePointHomeServiceContextCollections<T = any> {
+	Token(): T;
 }
 
 /*********************************************
 * SharePointHomeServiceContextQuery
 **********************************************/
 export interface SharePointHomeServiceContextQuery {
-	Token<T=SP.OAuth.TokenResponse>(): T;
+	Token(): T;
 }
 
 /*********************************************
@@ -124,10 +124,10 @@ export interface SPHubSitesUtility {
 }
 
 /*********************************************
-* SPHubSitesUtilityMethods
+* SPHubSitesUtilityMethods<T = any>
 **********************************************/
-export interface SPHubSitesUtilityMethods {
-	getHubSites<T=Array<SP.HubSite>>(): T;
+export interface SPHubSitesUtilityMethods<T = any> {
+	getHubSites(): T;
 }
 
 /*********************************************
@@ -138,13 +138,13 @@ export interface SPSiteManager {
 }
 
 /*********************************************
-* SPSiteManagerMethods
+* SPSiteManagerMethods<T = any>
 **********************************************/
-export interface SPSiteManagerMethods {
-	canCreateHubJoinedSite<T=boolean>(hubSiteId?: any): T;
-	create<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): T;
-	delete<T=void>(siteId?: any): T;
-	status<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(url?: string): T;
+export interface SPSiteManagerMethods<T = any> {
+	canCreateHubJoinedSite(hubSiteId?: any): T;
+	create(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): T;
+	delete(siteId?: any): T;
+	status(url?: string): T;
 }
 
 /*********************************************

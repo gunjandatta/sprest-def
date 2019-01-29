@@ -8,9 +8,9 @@ export interface AppCollection {
 }
 
 /*********************************************
-* AppCollectionMethods
+* AppCollectionMethods<T = any>
 **********************************************/
-export interface AppCollectionMethods {
-	getAppsFromStore<T=string>(addInType?: string, queryString?: string): T;
-	getByType<T=string>(type?: string): T;
+export interface AppCollectionMethods<T = any> {
+	getAppsFromStore(addInType?: string, queryString?: string): T;
+	getByType(type?: string): T;
 }

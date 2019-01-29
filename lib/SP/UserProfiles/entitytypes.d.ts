@@ -16,22 +16,22 @@ export interface FollowedContent {
 }
 
 /*********************************************
-* FollowedContentMethods
+* FollowedContentMethods<T = any>
 **********************************************/
-export interface FollowedContentMethods {
-	findAndUpdateFollowedGroup<T=SP.UserProfiles.FollowedItem>(groupId?: any): T;
-	findAndUpdateFollowedItem<T=SP.UserProfiles.FollowedItem>(url?: string): T;
-	followItem<T=SP.UserProfiles.FollowResult>(item?: SP.UserProfiles.FollowedItem): T;
-	getFollowedStatus<T=number>(url?: string): T;
-	getGroups<T=Array<SP.UserProfiles.FollowedItem>>(rowLimit?: number): T;
-	getItem<T=SP.UserProfiles.FollowedItem>(url?: string): T;
-	getItems<T=Array<SP.UserProfiles.FollowedItem>>(options?: number, subtype?: number): T;
-	hasGroupMembershipChangedAndSyncChanges<T=boolean>(): T;
-	isFollowed<T=boolean>(url?: string): T;
-	refreshFollowedItem<T=SP.UserProfiles.FollowedItem>(item?: SP.UserProfiles.FollowedItem): T;
-	setItemPinState<T=SP.UserProfiles.FollowResult>(uri?: string, groupId?: any, pinState?: number): T;
-	stopFollowing<T=void>(url?: string): T;
-	updateFollowedGroupForUser<T=void>(contextUri?: string, groupId?: any, loginName?: string): T;
+export interface FollowedContentMethods<T = any> {
+	findAndUpdateFollowedGroup(groupId?: any): T;
+	findAndUpdateFollowedItem(url?: string): T;
+	followItem(item?: SP.UserProfiles.FollowedItem): T;
+	getFollowedStatus(url?: string): T;
+	getGroups(rowLimit?: number): T;
+	getItem(url?: string): T;
+	getItems(options?: number, subtype?: number): T;
+	hasGroupMembershipChangedAndSyncChanges(): T;
+	isFollowed(url?: string): T;
+	refreshFollowedItem(item?: SP.UserProfiles.FollowedItem): T;
+	setItemPinState(uri?: string, groupId?: any, pinState?: number): T;
+	stopFollowing(url?: string): T;
+	updateFollowedGroupForUser(contextUri?: string, groupId?: any, loginName?: string): T;
 }
 
 /*********************************************
@@ -59,33 +59,33 @@ export interface PeopleManager {
 }
 
 /*********************************************
-* PeopleManagerMethods
+* PeopleManagerMethods<T = any>
 **********************************************/
-export interface PeopleManagerMethods {
-	amIFollowedBy<T=boolean>(accountName?: string): T;
-	amIFollowing<T=boolean>(accountName?: string): T;
-	follow<T=void>(accountName?: string): T;
-	followTag<T=void>(value?: any): T;
-	getDefaultDocumentLibrary<T=string>(accountName?: string, createSiteIfNotExists?: boolean, siteCreationPriority?: number): T;
-	getFollowedTags<T=Array<string>>(cTagsToFetch?: number): T;
-	getFollowersFor<T=Array<SP.UserProfiles.PersonProperties>>(accountName?: string): T;
-	getMyFollowers<T=Array<SP.UserProfiles.PersonProperties>>(): T;
-	getMyProperties<T=SP.UserProfiles.PersonProperties>(): T;
-	getMySuggestions<T=Array<SP.UserProfiles.PersonProperties>>(): T;
-	getPeopleFollowedBy<T=Array<SP.UserProfiles.PersonProperties>>(accountName?: string): T;
-	getPeopleFollowedByMe<T=Array<SP.UserProfiles.PersonProperties>>(): T;
-	getPropertiesFor<T=SP.UserProfiles.PersonProperties>(accountName?: string): T;
-	getSPUserInformation<T=Array<SP.KeyValue>>(accountName?: string, siteId?: any): T;
-	getUserProfileProperties<T=Array<SP.KeyValue>>(accountName?: string): T;
-	getUserProfilePropertyFor<T=string>(accountName?: string, propertyName?: string): T;
-	hardDeleteUserProfile<T=boolean>(accountName?: string, userId?: any): T;
-	hideSuggestion<T=void>(accountName?: string): T;
-	removeSPUserInformation<T=Array<SP.KeyValue>>(accountName?: string, siteId?: any, redactName?: string): T;
-	setMultiValuedProfileProperty<T=void>(accountName?: string, propertyName?: string, propertyValues?: Array<string>): T;
-	setMyProfilePicture<T=void>(picture?: any): T;
-	setSingleValueProfileProperty<T=void>(accountName?: string, propertyName?: string, propertyValue?: string): T;
-	stopFollowing<T=void>(accountName?: string): T;
-	stopFollowingTag<T=void>(value?: any): T;
+export interface PeopleManagerMethods<T = any> {
+	amIFollowedBy(accountName?: string): T;
+	amIFollowing(accountName?: string): T;
+	follow(accountName?: string): T;
+	followTag(value?: any): T;
+	getDefaultDocumentLibrary(accountName?: string, createSiteIfNotExists?: boolean, siteCreationPriority?: number): T;
+	getFollowedTags(cTagsToFetch?: number): T;
+	getFollowersFor(accountName?: string): T;
+	getMyFollowers(): T;
+	getMyProperties(): T;
+	getMySuggestions(): T;
+	getPeopleFollowedBy(accountName?: string): T;
+	getPeopleFollowedByMe(): T;
+	getPropertiesFor(accountName?: string): T;
+	getSPUserInformation(accountName?: string, siteId?: any): T;
+	getUserProfileProperties(accountName?: string): T;
+	getUserProfilePropertyFor(accountName?: string, propertyName?: string): T;
+	hardDeleteUserProfile(accountName?: string, userId?: any): T;
+	hideSuggestion(accountName?: string): T;
+	removeSPUserInformation(accountName?: string, siteId?: any, redactName?: string): T;
+	setMultiValuedProfileProperty(accountName?: string, propertyName?: string, propertyValues?: Array<string>): T;
+	setMyProfilePicture(picture?: any): T;
+	setSingleValueProfileProperty(accountName?: string, propertyName?: string, propertyValue?: string): T;
+	stopFollowing(accountName?: string): T;
+	stopFollowingTag(value?: any): T;
 }
 
 /*********************************************
@@ -96,15 +96,15 @@ export interface PersonalCache {
 }
 
 /*********************************************
-* PersonalCacheMethods
+* PersonalCacheMethods<T = any>
 **********************************************/
-export interface PersonalCacheMethods {
-	deleteCacheItemsAsync<T=void>(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): T;
-	loadUserProfile<T=void>(email?: string): T;
-	readCache<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: string): T;
-	readCacheOrCreate<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): T;
-	readCacheOrCreateOrderById<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): T;
-	writeCache<T=void>(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): T;
+export interface PersonalCacheMethods<T = any> {
+	deleteCacheItemsAsync(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): T;
+	loadUserProfile(email?: string): T;
+	readCache(folderPath?: string): T;
+	readCacheOrCreate(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): T;
+	readCacheOrCreateOrderById(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): T;
+	writeCache(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): T;
 }
 
 /*********************************************
@@ -136,10 +136,10 @@ export interface ProfileImageStore {
 }
 
 /*********************************************
-* ProfileImageStoreMethods
+* ProfileImageStoreMethods<T = any>
 **********************************************/
-export interface ProfileImageStoreMethods {
-	saveUploadedFile<T=Array<string>>(profileType?: number, fileNamePrefix?: string, isFeedAttachment?: boolean, clientFilePath?: string, fileSize?: number, fileStream?: any): T;
+export interface ProfileImageStoreMethods<T = any> {
+	saveUploadedFile(profileType?: number, fileNamePrefix?: string, isFeedAttachment?: boolean, clientFilePath?: string, fileSize?: number, fileStream?: any): T;
 }
 
 /*********************************************
@@ -150,11 +150,11 @@ export interface ProfileLoader {
 }
 
 /*********************************************
-* ProfileLoaderMethods
+* ProfileLoaderMethods<T = any>
 **********************************************/
-export interface ProfileLoaderMethods {
-	createPersonalSiteEnqueueBulk<T=Array<string>>(emailIDs?: Array<string>): T;
-	getUserProfile<T=SP.UserProfiles.UserProfile>(): T;
+export interface ProfileLoaderMethods<T = any> {
+	createPersonalSiteEnqueueBulk(emailIDs?: Array<string>): T;
+	getUserProfile(): T;
 }
 
 /*********************************************
@@ -165,10 +165,10 @@ export interface UserProfilePropertiesForUser {
 }
 
 /*********************************************
-* UserProfilePropertiesForUserMethods
+* UserProfilePropertiesForUserMethods<T = any>
 **********************************************/
-export interface UserProfilePropertiesForUserMethods {
-	getPropertyNames<T=Array<string>>(): T;
+export interface UserProfilePropertiesForUserMethods<T = any> {
+	getPropertyNames(): T;
 }
 
 /*********************************************
@@ -200,28 +200,28 @@ export interface UserProfile {
 }
 
 /*********************************************
-* UserProfileCollections
+* UserProfileCollections<T = any>
 **********************************************/
-export interface UserProfileCollections {
-	FollowedContent<T=SP.UserProfiles.FollowedContent>(): T;
-	PersonalSite<T=SP.Site>(): T;
+export interface UserProfileCollections<T = any> {
+	FollowedContent(): T;
+	PersonalSite(): T;
 }
 
 /*********************************************
 * UserProfileQuery
 **********************************************/
 export interface UserProfileQuery {
-	FollowedContent<T=SP.UserProfiles.FollowedContent>(): T;
-	PersonalSite<T=SP.Site>(): T;
+	FollowedContent(): T;
+	PersonalSite(): T;
 }
 
 /*********************************************
-* UserProfileMethods
+* UserProfileMethods<T = any>
 **********************************************/
-export interface UserProfileMethods {
-	createPersonalSite<T=void>(lcid?: number): T;
-	createPersonalSiteEnque<T=void>(isInteractive?: boolean): T;
-	createPersonalSiteFromWorkItem<T=number>(workItemType?: any): T;
-	setMySiteFirstRunExperience<T=void>(value?: number): T;
-	shareAllSocialData<T=void>(shareAll?: boolean): T;
+export interface UserProfileMethods<T = any> {
+	createPersonalSite(lcid?: number): T;
+	createPersonalSiteEnque(isInteractive?: boolean): T;
+	createPersonalSiteFromWorkItem(workItemType?: any): T;
+	setMySiteFirstRunExperience(value?: number): T;
+	shareAllSocialData(shareAll?: boolean): T;
 }

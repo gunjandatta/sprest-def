@@ -8,8 +8,8 @@ export interface DocumentCrawlLog {
 }
 
 /*********************************************
-* DocumentCrawlLogMethods
+* DocumentCrawlLogMethods<T = any>
 **********************************************/
-export interface DocumentCrawlLogMethods {
-	getCrawledUrls<T=SP.SimpleDataTable>(getCountOnly?: boolean, maxRows?: number, queryString?: string, isLike?: boolean, contentSourceID?: number, errorLevel?: number, errorID?: number, startDateTime?: any, endDateTime?: any): T;
+export interface DocumentCrawlLogMethods<T = any> {
+	getCrawledUrls(getCountOnly?: boolean, maxRows?: number, queryString?: string, isLike?: boolean, contentSourceID?: number, errorLevel?: number, errorID?: number, startDateTime?: any, endDateTime?: any): T;
 }

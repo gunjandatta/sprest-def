@@ -21,27 +21,27 @@ export interface comment {
 }
 
 /*********************************************
-* commentCollections
+* commentCollections<T = any>
 **********************************************/
-export interface commentCollections {
-	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
-	replies<T=Array<Microsoft.SharePoint.Comments.comment>>(): T;
+export interface commentCollections<T = any> {
+	likedBy(): T;
+	replies(): T;
 }
 
 /*********************************************
 * commentQuery
 **********************************************/
 export interface commentQuery {
-	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
-	replies<T=Array<Microsoft.SharePoint.Comments.comment>>(): T;
+	likedBy(): T;
+	replies(): T;
 }
 
 /*********************************************
-* commentMethods
+* commentMethods<T = any>
 **********************************************/
-export interface commentMethods {
-	like<T=void>(): T;
-	unlike<T=void>(): T;
+export interface commentMethods<T = any> {
+	like(): T;
+	unlike(): T;
 }
 
 /*********************************************
