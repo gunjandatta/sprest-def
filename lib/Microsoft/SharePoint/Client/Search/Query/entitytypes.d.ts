@@ -9,11 +9,11 @@ export interface StringCollection {
 }
 
 /*********************************************
-* StringCollectionMethods<T = any>
+* StringCollectionMethods
 **********************************************/
-export interface StringCollectionMethods<T = any> {
-	add(property?: string): T;
-	clear(): T;
+export interface StringCollectionMethods {
+	add<T=void>(property?: string): T;
+	clear<T=void>(): T;
 }
 
 /*********************************************
@@ -31,12 +31,12 @@ export interface RankingLabeling {
 }
 
 /*********************************************
-* RankingLabelingMethods<T = any>
+* RankingLabelingMethods
 **********************************************/
-export interface RankingLabelingMethods<T = any> {
-	addJudgment(userQuery?: string, url?: string, labelId?: number): T;
-	getJudgementsForQuery(query?: string): T;
-	normalizeResultUrl(url?: string): T;
+export interface RankingLabelingMethods {
+	addJudgment<T=void>(userQuery?: string, url?: string, labelId?: number): T;
+	getJudgementsForQuery<T=Array<SP.KeyValue>>(query?: string): T;
+	normalizeResultUrl<T=string>(url?: string): T;
 }
 
 /*********************************************
@@ -48,11 +48,11 @@ export interface ReorderingRuleCollection {
 }
 
 /*********************************************
-* ReorderingRuleCollectionMethods<T = any>
+* ReorderingRuleCollectionMethods
 **********************************************/
-export interface ReorderingRuleCollectionMethods<T = any> {
-	add(matchType?: number, matchValue?: string, boost?: number): T;
-	clear(): T;
+export interface ReorderingRuleCollectionMethods {
+	add<T=void>(matchType?: number, matchValue?: string, boost?: number): T;
+	clear<T=void>(): T;
 }
 
 /*********************************************
@@ -64,9 +64,9 @@ export interface SortCollection {
 }
 
 /*********************************************
-* SortCollectionMethods<T = any>
+* SortCollectionMethods
 **********************************************/
-export interface SortCollectionMethods<T = any> {
-	add(strProperty?: string, direction?: number): T;
-	clear(): T;
+export interface SortCollectionMethods {
+	add<T=void>(strProperty?: string, direction?: number): T;
+	clear<T=void>(): T;
 }

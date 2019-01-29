@@ -20,22 +20,22 @@ export interface SPPolicyStoreProxy {
 }
 
 /*********************************************
-* SPPolicyStoreProxyMethods<T = any>
+* SPPolicyStoreProxyMethods
 **********************************************/
-export interface SPPolicyStoreProxyMethods<T = any> {
-	addDynamicScopeBinding(identity?: string, siteId?: string): T;
-	bulkUpdateDynamicScopeBindings(scopesToAdd?: Array<string>, scopesToRemove?: Array<string>, siteId?: string): T;
-	deleteDynamicScopeBinding(identity?: string, siteId?: string): T;
-	extendReviewItemsRetention(itemIds?: Array<number>, extensionDate?: any): T;
-	getDynamicScopeBindingBySiteId(siteId?: string): T;
-	markReviewItemsForDeletion(itemIds?: Array<number>): T;
-	openBinaryStreamForOriginalItem(itemId?: number): T;
-	removeContainerRetentionPolicy(siteId?: string): T;
-	removeContainerSettings(externalId?: Array<string>): T;
-	retagReviewItems(itemIds?: Array<number>, newTag?: string, newTagIsRecord?: boolean, newTagBlockDelete?: boolean, newTagIsEventBased?: boolean): T;
-	retagReviewItemsWithMetas(itemIds?: Array<number>, newTagName?: string, newTagMetas?: Array<string>): T;
-	setContainerRetentionPolicy(siteId?: string, defaultContainerLabel?: any): T;
-	updateContainerSetting(siteId?: string, externalId?: string, settingType?: number, setting?: string): T;
+export interface SPPolicyStoreProxyMethods {
+	addDynamicScopeBinding<T=void>(identity?: string, siteId?: string): T;
+	bulkUpdateDynamicScopeBindings<T=void>(scopesToAdd?: Array<string>, scopesToRemove?: Array<string>, siteId?: string): T;
+	deleteDynamicScopeBinding<T=void>(identity?: string, siteId?: string): T;
+	extendReviewItemsRetention<T=Array<number>>(itemIds?: Array<number>, extensionDate?: any): T;
+	getDynamicScopeBindingBySiteId<T=Array<string>>(siteId?: string): T;
+	markReviewItemsForDeletion<T=Array<number>>(itemIds?: Array<number>): T;
+	openBinaryStreamForOriginalItem<T=any>(itemId?: number): T;
+	removeContainerRetentionPolicy<T=void>(siteId?: string): T;
+	removeContainerSettings<T=void>(externalId?: Array<string>): T;
+	retagReviewItems<T=Array<number>>(itemIds?: Array<number>, newTag?: string, newTagIsRecord?: boolean, newTagBlockDelete?: boolean, newTagIsEventBased?: boolean): T;
+	retagReviewItemsWithMetas<T=Array<number>>(itemIds?: Array<number>, newTagName?: string, newTagMetas?: Array<string>): T;
+	setContainerRetentionPolicy<T=void>(siteId?: string, defaultContainerLabel?: any): T;
+	updateContainerSetting<T=void>(siteId?: string, externalId?: string, settingType?: number, setting?: string): T;
 }
 
 /*********************************************

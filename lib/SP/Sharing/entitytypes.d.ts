@@ -78,17 +78,17 @@ export interface SharingInformation {
 }
 
 /*********************************************
-* SharingInformationCollections<T = any>
+* SharingInformationCollections
 **********************************************/
-export interface SharingInformationCollections<T = any> {
-	pickerSettings(): T;
+export interface SharingInformationCollections {
+	pickerSettings<T=SP.PickerSettings>(): T;
 }
 
 /*********************************************
-* SharingInformationQuery<T = any>
+* SharingInformationQuery
 **********************************************/
-export interface SharingInformationQuery<T = any> {
-	pickerSettings(): T;
+export interface SharingInformationQuery {
+	pickerSettings<T=SP.PickerSettings>(): T;
 }
 
 /*********************************************

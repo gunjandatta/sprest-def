@@ -8,27 +8,27 @@ export interface BaseSession {
 }
 
 /*********************************************
-* BaseSessionMethods<T = any>
+* BaseSessionMethods
 **********************************************/
-export interface BaseSessionMethods<T = any> {
-	addAttributeToTask(taskKey?: number, attribute?: string): T;
-	beginCacheRefresh(): T;
-	beginExchangeSync(): T;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
-	deleteTask(taskKey?: number): T;
-	getCalloutInfo(taskKey?: number): T;
-	getRefreshHealthInfo(): T;
-	getRefreshHistory(since?: any): T;
-	getRefreshStatus(refreshId?: number): T;
-	isExchangeJobPending(): T;
-	pinTask(taskKey?: number): T;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): T;
-	readAllNonTaskData(): T;
-	refreshSingleTask(taskKey?: number): T;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): T;
-	removePinOnTask(taskKey?: number): T;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): T;
+export interface BaseSessionMethods {
+	addAttributeToTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	beginCacheRefresh<T=SP.WorkManagement.OM.CreateRefreshJobResult>(): T;
+	beginExchangeSync<T=boolean>(): T;
+	createPersonalTaskAndPromoteToProviderTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
+	createTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
+	deleteTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	getCalloutInfo<T=SP.WorkManagement.OM.CalloutInfo>(taskKey?: number): T;
+	getRefreshHealthInfo<T=SP.WorkManagement.OM.RefreshHealthInfo>(): T;
+	getRefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(since?: any): T;
+	getRefreshStatus<T=SP.WorkManagement.OM.RefreshResult>(refreshId?: number): T;
+	isExchangeJobPending<T=boolean>(): T;
+	pinTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	promotePersonalTaskToProviderTaskInLocation<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, locationId?: number): T;
+	readAllNonTaskData<T=SP.WorkManagement.OM.NonTaskDataReadResult>(): T;
+	refreshSingleTask<T=SP.WorkManagement.OM.TaskRefreshResult>(taskKey?: number): T;
+	removeAttributeFromTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	removePinOnTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	updateTaskWithLocalizedValue<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, field?: number, value?: string): T;
 }
 
 /*********************************************
@@ -153,28 +153,28 @@ export interface LocationOrientedSortableSession extends SP.WorkManagement.OM.Ba
 }
 
 /*********************************************
-* LocationOrientedSortableSessionMethods<T = any>
+* LocationOrientedSortableSessionMethods
 **********************************************/
-export interface LocationOrientedSortableSessionMethods<T = any> {
-	addAttributeToTask(taskKey?: number, attribute?: string): T;
-	beginCacheRefresh(): T;
-	beginExchangeSync(): T;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
-	deleteTask(taskKey?: number): T;
-	getCalloutInfo(taskKey?: number): T;
-	getRefreshHealthInfo(): T;
-	getRefreshHistory(since?: any): T;
-	getRefreshStatus(refreshId?: number): T;
-	isExchangeJobPending(): T;
-	pinTask(taskKey?: number): T;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): T;
-	readAllNonTaskData(): T;
-	refreshSingleTask(taskKey?: number): T;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): T;
-	removePinOnTask(taskKey?: number): T;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): T;
-	movePersonalTaskToLocation(taskKey?: number, newLocationKey?: number): T;
+export interface LocationOrientedSortableSessionMethods {
+	addAttributeToTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	beginCacheRefresh<T=SP.WorkManagement.OM.CreateRefreshJobResult>(): T;
+	beginExchangeSync<T=boolean>(): T;
+	createPersonalTaskAndPromoteToProviderTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
+	createTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
+	deleteTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	getCalloutInfo<T=SP.WorkManagement.OM.CalloutInfo>(taskKey?: number): T;
+	getRefreshHealthInfo<T=SP.WorkManagement.OM.RefreshHealthInfo>(): T;
+	getRefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(since?: any): T;
+	getRefreshStatus<T=SP.WorkManagement.OM.RefreshResult>(refreshId?: number): T;
+	isExchangeJobPending<T=boolean>(): T;
+	pinTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	promotePersonalTaskToProviderTaskInLocation<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, locationId?: number): T;
+	readAllNonTaskData<T=SP.WorkManagement.OM.NonTaskDataReadResult>(): T;
+	refreshSingleTask<T=SP.WorkManagement.OM.TaskRefreshResult>(taskKey?: number): T;
+	removeAttributeFromTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	removePinOnTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	updateTaskWithLocalizedValue<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, field?: number, value?: string): T;
+	movePersonalTaskToLocation<T=boolean>(taskKey?: number, newLocationKey?: number): T;
 }
 
 /*********************************************
@@ -185,29 +185,29 @@ export interface LocationOrientedUserOrderedSession extends SP.WorkManagement.OM
 }
 
 /*********************************************
-* LocationOrientedUserOrderedSessionMethods<T = any>
+* LocationOrientedUserOrderedSessionMethods
 **********************************************/
-export interface LocationOrientedUserOrderedSessionMethods<T = any> {
-	addAttributeToTask(taskKey?: number, attribute?: string): T;
-	beginCacheRefresh(): T;
-	beginExchangeSync(): T;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
-	deleteTask(taskKey?: number): T;
-	getCalloutInfo(taskKey?: number): T;
-	getRefreshHealthInfo(): T;
-	getRefreshHistory(since?: any): T;
-	getRefreshStatus(refreshId?: number): T;
-	isExchangeJobPending(): T;
-	pinTask(taskKey?: number): T;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): T;
-	readAllNonTaskData(): T;
-	refreshSingleTask(taskKey?: number): T;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): T;
-	removePinOnTask(taskKey?: number): T;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): T;
-	movePersonalTaskToLocation(taskKey?: number, newLocationKey?: number): T;
-	reorderTask(taskKey?: number, newAfterTaskKey?: number): T;
+export interface LocationOrientedUserOrderedSessionMethods {
+	addAttributeToTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	beginCacheRefresh<T=SP.WorkManagement.OM.CreateRefreshJobResult>(): T;
+	beginExchangeSync<T=boolean>(): T;
+	createPersonalTaskAndPromoteToProviderTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
+	createTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
+	deleteTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	getCalloutInfo<T=SP.WorkManagement.OM.CalloutInfo>(taskKey?: number): T;
+	getRefreshHealthInfo<T=SP.WorkManagement.OM.RefreshHealthInfo>(): T;
+	getRefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(since?: any): T;
+	getRefreshStatus<T=SP.WorkManagement.OM.RefreshResult>(refreshId?: number): T;
+	isExchangeJobPending<T=boolean>(): T;
+	pinTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	promotePersonalTaskToProviderTaskInLocation<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, locationId?: number): T;
+	readAllNonTaskData<T=SP.WorkManagement.OM.NonTaskDataReadResult>(): T;
+	refreshSingleTask<T=SP.WorkManagement.OM.TaskRefreshResult>(taskKey?: number): T;
+	removeAttributeFromTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	removePinOnTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	updateTaskWithLocalizedValue<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, field?: number, value?: string): T;
+	movePersonalTaskToLocation<T=boolean>(taskKey?: number, newLocationKey?: number): T;
+	reorderTask<T=void>(taskKey?: number, newAfterTaskKey?: number): T;
 }
 
 /*********************************************
@@ -237,25 +237,25 @@ export interface NonTaskDataReadResult {
 }
 
 /*********************************************
-* NonTaskDataReadResultCollections<T = any>
+* NonTaskDataReadResultCollections
 **********************************************/
-export interface NonTaskDataReadResultCollections<T = any> {
-	AllLocatons(): T;
-	PersistedProperties(): T;
-	RefreshHistory(): T;
-	ScriptExtensions(): T;
-	UserSettings(): T;
+export interface NonTaskDataReadResultCollections {
+	AllLocatons<T=Array<SP.WorkManagement.OM.Location>>(): T;
+	PersistedProperties<T=SP.WorkManagement.OM.PersistedProperties>(): T;
+	RefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(): T;
+	ScriptExtensions<T=Array<SP.WorkManagement.OM.DashboardScriptExtensionInfo>>(): T;
+	UserSettings<T=SP.WorkManagement.OM.UserSettings>(): T;
 }
 
 /*********************************************
-* NonTaskDataReadResultQuery<T = any>
+* NonTaskDataReadResultQuery
 **********************************************/
-export interface NonTaskDataReadResultQuery<T = any> {
-	AllLocatons(): T;
-	PersistedProperties(): T;
-	RefreshHistory(): T;
-	ScriptExtensions(): T;
-	UserSettings(): T;
+export interface NonTaskDataReadResultQuery {
+	AllLocatons<T=Array<SP.WorkManagement.OM.Location>>(): T;
+	PersistedProperties<T=SP.WorkManagement.OM.PersistedProperties>(): T;
+	RefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(): T;
+	ScriptExtensions<T=Array<SP.WorkManagement.OM.DashboardScriptExtensionInfo>>(): T;
+	UserSettings<T=SP.WorkManagement.OM.UserSettings>(): T;
 }
 
 /*********************************************
@@ -277,17 +277,17 @@ export interface RefreshHistory {
 }
 
 /*********************************************
-* RefreshHistoryCollections<T = any>
+* RefreshHistoryCollections
 **********************************************/
-export interface RefreshHistoryCollections<T = any> {
-	Refreshes(): T;
+export interface RefreshHistoryCollections {
+	Refreshes<T=Array<SP.WorkManagement.OM.RefreshResult>>(): T;
 }
 
 /*********************************************
-* RefreshHistoryQuery<T = any>
+* RefreshHistoryQuery
 **********************************************/
-export interface RefreshHistoryQuery<T = any> {
-	Refreshes(): T;
+export interface RefreshHistoryQuery {
+	Refreshes<T=Array<SP.WorkManagement.OM.RefreshResult>>(): T;
 }
 
 /*********************************************
@@ -301,19 +301,19 @@ export interface RefreshResult {
 }
 
 /*********************************************
-* RefreshResultCollections<T = any>
+* RefreshResultCollections
 **********************************************/
-export interface RefreshResultCollections<T = any> {
-	ProviderStatuses(): T;
-	TaskChangesByLocation(): T;
+export interface RefreshResultCollections {
+	ProviderStatuses<T=Array<SP.WorkManagement.OM.ProviderRefreshStatus>>(): T;
+	TaskChangesByLocation<T=Array<SP.WorkManagement.OM.LocationUpdateResult>>(): T;
 }
 
 /*********************************************
-* RefreshResultQuery<T = any>
+* RefreshResultQuery
 **********************************************/
-export interface RefreshResultQuery<T = any> {
-	ProviderStatuses(): T;
-	TaskChangesByLocation(): T;
+export interface RefreshResultQuery {
+	ProviderStatuses<T=Array<SP.WorkManagement.OM.ProviderRefreshStatus>>(): T;
+	TaskChangesByLocation<T=Array<SP.WorkManagement.OM.LocationUpdateResult>>(): T;
 }
 
 /*********************************************
@@ -369,17 +369,17 @@ export interface RefreshHealthInfo {
 }
 
 /*********************************************
-* RefreshHealthInfoCollections<T = any>
+* RefreshHealthInfoCollections
 **********************************************/
-export interface RefreshHealthInfoCollections<T = any> {
-	ProviderErrors(): T;
+export interface RefreshHealthInfoCollections {
+	ProviderErrors<T=Array<SP.WorkManagement.OM.ProviderErrorInfo>>(): T;
 }
 
 /*********************************************
-* RefreshHealthInfoQuery<T = any>
+* RefreshHealthInfoQuery
 **********************************************/
-export interface RefreshHealthInfoQuery<T = any> {
-	ProviderErrors(): T;
+export interface RefreshHealthInfoQuery {
+	ProviderErrors<T=Array<SP.WorkManagement.OM.ProviderErrorInfo>>(): T;
 }
 
 /*********************************************
@@ -390,11 +390,11 @@ export interface SortableSessionManager {
 }
 
 /*********************************************
-* SortableSessionManagerMethods<T = any>
+* SortableSessionManagerMethods
 **********************************************/
-export interface SortableSessionManagerMethods<T = any> {
-	createLocationOrientedSession(): T;
-	createSession(): T;
+export interface SortableSessionManagerMethods {
+	createLocationOrientedSession<T=SP.WorkManagement.OM.LocationOrientedSortableSession>(): T;
+	createSession<T=SP.WorkManagement.OM.SortableSession>(): T;
 }
 
 /*********************************************
@@ -405,27 +405,27 @@ export interface SortableSession extends SP.WorkManagement.OM.BaseSession {
 }
 
 /*********************************************
-* SortableSessionMethods<T = any>
+* SortableSessionMethods
 **********************************************/
-export interface SortableSessionMethods<T = any> {
-	addAttributeToTask(taskKey?: number, attribute?: string): T;
-	beginCacheRefresh(): T;
-	beginExchangeSync(): T;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
-	deleteTask(taskKey?: number): T;
-	getCalloutInfo(taskKey?: number): T;
-	getRefreshHealthInfo(): T;
-	getRefreshHistory(since?: any): T;
-	getRefreshStatus(refreshId?: number): T;
-	isExchangeJobPending(): T;
-	pinTask(taskKey?: number): T;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): T;
-	readAllNonTaskData(): T;
-	refreshSingleTask(taskKey?: number): T;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): T;
-	removePinOnTask(taskKey?: number): T;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): T;
+export interface SortableSessionMethods {
+	addAttributeToTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	beginCacheRefresh<T=SP.WorkManagement.OM.CreateRefreshJobResult>(): T;
+	beginExchangeSync<T=boolean>(): T;
+	createPersonalTaskAndPromoteToProviderTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
+	createTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
+	deleteTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	getCalloutInfo<T=SP.WorkManagement.OM.CalloutInfo>(taskKey?: number): T;
+	getRefreshHealthInfo<T=SP.WorkManagement.OM.RefreshHealthInfo>(): T;
+	getRefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(since?: any): T;
+	getRefreshStatus<T=SP.WorkManagement.OM.RefreshResult>(refreshId?: number): T;
+	isExchangeJobPending<T=boolean>(): T;
+	pinTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	promotePersonalTaskToProviderTaskInLocation<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, locationId?: number): T;
+	readAllNonTaskData<T=SP.WorkManagement.OM.NonTaskDataReadResult>(): T;
+	refreshSingleTask<T=SP.WorkManagement.OM.TaskRefreshResult>(taskKey?: number): T;
+	removeAttributeFromTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	removePinOnTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	updateTaskWithLocalizedValue<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, field?: number, value?: string): T;
 }
 
 /*********************************************
@@ -436,19 +436,19 @@ export interface SortableTaskQuery {
 }
 
 /*********************************************
-* SortableTaskQueryCollections<T = any>
+* SortableTaskQueryCollections
 **********************************************/
-export interface SortableTaskQueryCollections<T = any> {
-	CoreQuery(): T;
-	Order(): T;
+export interface SortableTaskQueryCollections {
+	CoreQuery<T=SP.WorkManagement.OM.TaskQuery>(): T;
+	Order<T=SP.WorkManagement.OM.OrderInfo>(): T;
 }
 
 /*********************************************
-* SortableTaskQueryQuery<T = any>
+* SortableTaskQueryQuery
 **********************************************/
-export interface SortableTaskQueryQuery<T = any> {
-	CoreQuery(): T;
-	Order(): T;
+export interface SortableTaskQueryQuery {
+	CoreQuery<T=SP.WorkManagement.OM.TaskQuery>(): T;
+	Order<T=SP.WorkManagement.OM.OrderInfo>(): T;
 }
 
 /*********************************************
@@ -461,23 +461,23 @@ export interface TaskQuery {
 }
 
 /*********************************************
-* TaskQueryCollections<T = any>
+* TaskQueryCollections
 **********************************************/
-export interface TaskQueryCollections<T = any> {
-	CustomAttributeFilter(): T;
-	FieldFilter(): T;
-	LastModifiedDateRangeFilter(): T;
-	LocationFilter(): T;
+export interface TaskQueryCollections {
+	CustomAttributeFilter<T=SP.WorkManagement.OM.CustomAttributeFilter>(): T;
+	FieldFilter<T=SP.WorkManagement.OM.TaskFilter>(): T;
+	LastModifiedDateRangeFilter<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	LocationFilter<T=SP.WorkManagement.OM.LocationFilter>(): T;
 }
 
 /*********************************************
-* TaskQueryQuery<T = any>
+* TaskQueryQuery
 **********************************************/
-export interface TaskQueryQuery<T = any> {
-	CustomAttributeFilter(): T;
-	FieldFilter(): T;
-	LastModifiedDateRangeFilter(): T;
-	LocationFilter(): T;
+export interface TaskQueryQuery {
+	CustomAttributeFilter<T=SP.WorkManagement.OM.CustomAttributeFilter>(): T;
+	FieldFilter<T=SP.WorkManagement.OM.TaskFilter>(): T;
+	LastModifiedDateRangeFilter<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	LocationFilter<T=SP.WorkManagement.OM.LocationFilter>(): T;
 }
 
 /*********************************************
@@ -489,25 +489,25 @@ export interface TaskFilter {
 }
 
 /*********************************************
-* TaskFilterCollections<T = any>
+* TaskFilterCollections
 **********************************************/
-export interface TaskFilterCollections<T = any> {
-	CompletedCriterion(): T;
-	DueDateRangeCriterion(): T;
-	IsNewCriterion(): T;
-	NameCriterion(): T;
-	StartDateRangeCriterion(): T;
+export interface TaskFilterCollections {
+	CompletedCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	DueDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	IsNewCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	NameCriterion<T=SP.WorkManagement.OM.NameCriterion>(): T;
+	StartDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
 }
 
 /*********************************************
-* TaskFilterQuery<T = any>
+* TaskFilterQuery
 **********************************************/
-export interface TaskFilterQuery<T = any> {
-	CompletedCriterion(): T;
-	DueDateRangeCriterion(): T;
-	IsNewCriterion(): T;
-	NameCriterion(): T;
-	StartDateRangeCriterion(): T;
+export interface TaskFilterQuery {
+	CompletedCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	DueDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
+	IsNewCriterion<T=SP.WorkManagement.OM.BooleanCriterion>(): T;
+	NameCriterion<T=SP.WorkManagement.OM.NameCriterion>(): T;
+	StartDateRangeCriterion<T=SP.WorkManagement.OM.DateRangeCriterion>(): T;
 }
 
 /*********************************************
@@ -519,17 +519,17 @@ export interface TaskQueryByLocationResult {
 }
 
 /*********************************************
-* TaskQueryByLocationResultCollections<T = any>
+* TaskQueryByLocationResultCollections
 **********************************************/
-export interface TaskQueryByLocationResultCollections<T = any> {
-	Results(): T;
+export interface TaskQueryByLocationResultCollections {
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
-* TaskQueryByLocationResultQuery<T = any>
+* TaskQueryByLocationResultQuery
 **********************************************/
-export interface TaskQueryByLocationResultQuery<T = any> {
-	Results(): T;
+export interface TaskQueryByLocationResultQuery {
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
@@ -541,17 +541,17 @@ export interface TaskQueryResult {
 }
 
 /*********************************************
-* TaskQueryResultCollections<T = any>
+* TaskQueryResultCollections
 **********************************************/
-export interface TaskQueryResultCollections<T = any> {
-	Results(): T;
+export interface TaskQueryResultCollections {
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
-* TaskQueryResultQuery<T = any>
+* TaskQueryResultQuery
 **********************************************/
-export interface TaskQueryResultQuery<T = any> {
-	Results(): T;
+export interface TaskQueryResultQuery {
+	Results<T=Array<SP.WorkManagement.OM.Task>>(): T;
 }
 
 /*********************************************
@@ -563,17 +563,17 @@ export interface TaskRefreshResult {
 }
 
 /*********************************************
-* TaskRefreshResultCollections<T = any>
+* TaskRefreshResultCollections
 **********************************************/
-export interface TaskRefreshResultCollections<T = any> {
-	Result(): T;
+export interface TaskRefreshResultCollections {
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************
-* TaskRefreshResultQuery<T = any>
+* TaskRefreshResultQuery
 **********************************************/
-export interface TaskRefreshResultQuery<T = any> {
-	Result(): T;
+export interface TaskRefreshResultQuery {
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************
@@ -585,17 +585,17 @@ export interface TaskWriteResult {
 }
 
 /*********************************************
-* TaskWriteResultCollections<T = any>
+* TaskWriteResultCollections
 **********************************************/
-export interface TaskWriteResultCollections<T = any> {
-	Result(): T;
+export interface TaskWriteResultCollections {
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************
-* TaskWriteResultQuery<T = any>
+* TaskWriteResultQuery
 **********************************************/
-export interface TaskWriteResultQuery<T = any> {
-	Result(): T;
+export interface TaskWriteResultQuery {
+	Result<T=SP.WorkManagement.OM.Task>(): T;
 }
 
 /*********************************************
@@ -606,11 +606,11 @@ export interface UserOrderedSessionManager {
 }
 
 /*********************************************
-* UserOrderedSessionManagerMethods<T = any>
+* UserOrderedSessionManagerMethods
 **********************************************/
-export interface UserOrderedSessionManagerMethods<T = any> {
-	createLocationOrientedSession(): T;
-	createSession(): T;
+export interface UserOrderedSessionManagerMethods {
+	createLocationOrientedSession<T=SP.WorkManagement.OM.LocationOrientedUserOrderedSession>(): T;
+	createSession<T=SP.WorkManagement.OM.UserOrderedSession>(): T;
 }
 
 /*********************************************
@@ -621,28 +621,28 @@ export interface UserOrderedSession extends SP.WorkManagement.OM.BaseSession {
 }
 
 /*********************************************
-* UserOrderedSessionMethods<T = any>
+* UserOrderedSessionMethods
 **********************************************/
-export interface UserOrderedSessionMethods<T = any> {
-	addAttributeToTask(taskKey?: number, attribute?: string): T;
-	beginCacheRefresh(): T;
-	beginExchangeSync(): T;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
-	deleteTask(taskKey?: number): T;
-	getCalloutInfo(taskKey?: number): T;
-	getRefreshHealthInfo(): T;
-	getRefreshHistory(since?: any): T;
-	getRefreshStatus(refreshId?: number): T;
-	isExchangeJobPending(): T;
-	pinTask(taskKey?: number): T;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): T;
-	readAllNonTaskData(): T;
-	refreshSingleTask(taskKey?: number): T;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): T;
-	removePinOnTask(taskKey?: number): T;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): T;
-	reorderTask(taskKey?: number, newAfterTaskKey?: number): T;
+export interface UserOrderedSessionMethods {
+	addAttributeToTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	beginCacheRefresh<T=SP.WorkManagement.OM.CreateRefreshJobResult>(): T;
+	beginExchangeSync<T=boolean>(): T;
+	createPersonalTaskAndPromoteToProviderTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): T;
+	createTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): T;
+	deleteTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	getCalloutInfo<T=SP.WorkManagement.OM.CalloutInfo>(taskKey?: number): T;
+	getRefreshHealthInfo<T=SP.WorkManagement.OM.RefreshHealthInfo>(): T;
+	getRefreshHistory<T=SP.WorkManagement.OM.RefreshHistory>(since?: any): T;
+	getRefreshStatus<T=SP.WorkManagement.OM.RefreshResult>(refreshId?: number): T;
+	isExchangeJobPending<T=boolean>(): T;
+	pinTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	promotePersonalTaskToProviderTaskInLocation<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, locationId?: number): T;
+	readAllNonTaskData<T=SP.WorkManagement.OM.NonTaskDataReadResult>(): T;
+	refreshSingleTask<T=SP.WorkManagement.OM.TaskRefreshResult>(taskKey?: number): T;
+	removeAttributeFromTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, attribute?: string): T;
+	removePinOnTask<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number): T;
+	updateTaskWithLocalizedValue<T=SP.WorkManagement.OM.TaskWriteResult>(taskKey?: number, field?: number, value?: string): T;
+	reorderTask<T=void>(taskKey?: number, newAfterTaskKey?: number): T;
 }
 
 /*********************************************
@@ -653,18 +653,18 @@ export interface UserSettingsManager {
 }
 
 /*********************************************
-* UserSettingsManagerMethods<T = any>
+* UserSettingsManagerMethods
 **********************************************/
-export interface UserSettingsManagerMethods<T = any> {
-	getAllLocations(): T;
-	getExchangeSyncInfo(): T;
-	getImportantLocations(): T;
-	getLocations(locationsId?: Array<number>): T;
-	getPersistedProperties(): T;
-	getUserSettings(): T;
-	isExchangeJobPending(): T;
-	optIntoExchangeSync(): T;
-	optOutOfExchangeSync(): T;
+export interface UserSettingsManagerMethods {
+	getAllLocations<T=Array<SP.WorkManagement.OM.Location>>(): T;
+	getExchangeSyncInfo<T=SP.WorkManagement.OM.ExchangeUserSyncState>(): T;
+	getImportantLocations<T=Array<SP.WorkManagement.OM.Location>>(): T;
+	getLocations<T=Array<SP.WorkManagement.OM.Location>>(locationsId?: Array<number>): T;
+	getPersistedProperties<T=SP.WorkManagement.OM.PersistedProperties>(): T;
+	getUserSettings<T=SP.WorkManagement.OM.UserSettings>(): T;
+	isExchangeJobPending<T=boolean>(): T;
+	optIntoExchangeSync<T=number>(): T;
+	optOutOfExchangeSync<T=boolean>(): T;
 }
 
 /*********************************************

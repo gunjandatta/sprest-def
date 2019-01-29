@@ -1,4 +1,4 @@
-import { SP } from "../../../../";
+
 
 /*********************************************
 * NavigationServiceRest
@@ -8,11 +8,11 @@ export interface NavigationServiceRest {
 }
 
 /*********************************************
-* NavigationServiceRestMethods<T = any>
+* NavigationServiceRestMethods
 **********************************************/
-export interface NavigationServiceRestMethods<T = any> {
-	getPublishingNavigationProviderType(mapProviderName?: string): T;
-	menuNodeKey(currentUrl?: string, mapProviderName?: string): T;
-	menuState(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): T;
-	saveMenuState(menuState?: SP.MenuState, mapProviderName?: string): T;
+export interface NavigationServiceRestMethods {
+	getPublishingNavigationProviderType<T=number>(mapProviderName?: string): T;
+	menuNodeKey<T=string>(currentUrl?: string, mapProviderName?: string): T;
+	menuState<T=SP.MenuState>(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): T;
+	saveMenuState<T=number>(menuState?: SP.MenuState, mapProviderName?: string): T;
 }

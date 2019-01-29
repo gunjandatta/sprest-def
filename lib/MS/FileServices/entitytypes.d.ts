@@ -23,14 +23,14 @@ export interface File extends MS.FileServices.FileSystemItem {
 }
 
 /*********************************************
-* FileMethods<T = any>
+* FileMethods
 **********************************************/
-export interface FileMethods<T = any> {
-	copyTo(target?: string, overwrite?: boolean): T;
-	deleteObject(): T;
-	download(): T;
-	moveTo(target?: string, overwrite?: boolean): T;
-	upload(stream?: any): T;
+export interface FileMethods {
+	copyTo<T=void>(target?: string, overwrite?: boolean): T;
+	deleteObject<T=void>(): T;
+	download<T=any>(): T;
+	moveTo<T=void>(target?: string, overwrite?: boolean): T;
+	upload<T=void>(stream?: any): T;
 }
 
 /*********************************************
@@ -48,25 +48,25 @@ export interface Folder extends MS.FileServices.FileSystemItem {
 }
 
 /*********************************************
-* FolderCollections<T = any>
+* FolderCollections
 **********************************************/
-export interface FolderCollections<T = any> {
-	Children(): T;
+export interface FolderCollections {
+	Children<T=Array<MS.FileServices.FileSystemItem>>(): T;
 }
 
 /*********************************************
-* FolderQuery<T = any>
+* FolderQuery
 **********************************************/
-export interface FolderQuery<T = any> {
-	Children(): T;
+export interface FolderQuery {
+	Children<T=Array<MS.FileServices.FileSystemItem>>(): T;
 }
 
 /*********************************************
-* FolderMethods<T = any>
+* FolderMethods
 **********************************************/
-export interface FolderMethods<T = any> {
-	deleteObject(): T;
-	moveTo(target?: string): T;
+export interface FolderMethods {
+	deleteObject<T=void>(): T;
+	moveTo<T=void>(target?: string): T;
 }
 
 /*********************************************

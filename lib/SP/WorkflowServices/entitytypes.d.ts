@@ -21,10 +21,10 @@ export interface WorkflowDefinition {
 }
 
 /*********************************************
-* WorkflowDefinitionMethods<T = any>
+* WorkflowDefinitionMethods
 **********************************************/
-export interface WorkflowDefinitionMethods<T = any> {
-	setProperty(propertyName?: string, value?: string): T;
+export interface WorkflowDefinitionMethods {
+	setProperty<T=void>(propertyName?: string, value?: string): T;
 }
 
 /*********************************************
@@ -35,22 +35,22 @@ export interface WorkflowDeploymentService {
 }
 
 /*********************************************
-* WorkflowDeploymentServiceMethods<T = any>
+* WorkflowDeploymentServiceMethods
 **********************************************/
-export interface WorkflowDeploymentServiceMethods<T = any> {
-	deleteCollateral(workflowDefinitionId?: any, leafFileName?: string): T;
-	deleteDefinition(definitionId?: any): T;
-	deprecateDefinition(definitionId?: any): T;
-	enumerateDefinitions(publishedOnly?: boolean): T;
-	enumerateIntegratedApps(): T;
-	getActivitySignatures(lastChanged?: any): T;
-	getCollateralUri(workflowDefinitionId?: any, leafFileName?: string): T;
-	getDefinition(definitionId?: any): T;
-	isIntegratedApp(): T;
-	packageDefinition(definitionId?: any, packageDefaultFilename?: string, packageTitle?: string, packageDescription?: string): T;
-	publishDefinition(definitionId?: any): T;
-	saveCollateral(workflowDefinitionId?: any, leafFileName?: string, fileContent?: any): T;
-	validateActivity(activityXaml?: string): T;
+export interface WorkflowDeploymentServiceMethods {
+	deleteCollateral<T=void>(workflowDefinitionId?: any, leafFileName?: string): T;
+	deleteDefinition<T=void>(definitionId?: any): T;
+	deprecateDefinition<T=void>(definitionId?: any): T;
+	enumerateDefinitions<T=Array<SP.WorkflowServices.WorkflowDefinition>>(publishedOnly?: boolean): T;
+	enumerateIntegratedApps<T=Array<SP.AppInstance>>(): T;
+	getActivitySignatures<T=Array<SP.KeyValue>>(lastChanged?: any): T;
+	getCollateralUri<T=string>(workflowDefinitionId?: any, leafFileName?: string): T;
+	getDefinition<T=SP.WorkflowServices.WorkflowDefinition>(definitionId?: any): T;
+	isIntegratedApp<T=boolean>(): T;
+	packageDefinition<T=string>(definitionId?: any, packageDefaultFilename?: string, packageTitle?: string, packageDescription?: string): T;
+	publishDefinition<T=void>(definitionId?: any): T;
+	saveCollateral<T=void>(workflowDefinitionId?: any, leafFileName?: string, fileContent?: any): T;
+	validateActivity<T=string>(activityXaml?: string): T;
 }
 
 /*********************************************
@@ -75,29 +75,29 @@ export interface WorkflowInstanceService {
 }
 
 /*********************************************
-* WorkflowInstanceServiceCollections<T = any>
+* WorkflowInstanceServiceCollections
 **********************************************/
-export interface WorkflowInstanceServiceCollections<T = any> {
-	Current(): T;
+export interface WorkflowInstanceServiceCollections {
+	Current<T=SP.WorkflowServices.WorkflowInstanceService>(): T;
 }
 
 /*********************************************
-* WorkflowInstanceServiceQuery<T = any>
+* WorkflowInstanceServiceQuery
 **********************************************/
-export interface WorkflowInstanceServiceQuery<T = any> {
-	Current(): T;
+export interface WorkflowInstanceServiceQuery {
+	Current<T=SP.WorkflowServices.WorkflowInstanceService>(): T;
 }
 
 /*********************************************
-* WorkflowInstanceServiceMethods<T = any>
+* WorkflowInstanceServiceMethods
 **********************************************/
-export interface WorkflowInstanceServiceMethods<T = any> {
-	enumerateInstancesForListItem(listId?: any, itemId?: number): T;
-	enumerateInstancesForListItemWithOffset(listId?: any, itemId?: number, offset?: number): T;
-	enumerateInstancesForSite(): T;
-	enumerateInstancesForSiteWithOffset(offset?: number): T;
-	getInstance(instanceId?: any): T;
-	startWorkflowOnListItemBySubscriptionId(subscriptionId?: any, itemId?: number, payload?: Array<SP.KeyValue>): T;
+export interface WorkflowInstanceServiceMethods {
+	enumerateInstancesForListItem<T=Array<SP.WorkflowServices.WorkflowInstance>>(listId?: any, itemId?: number): T;
+	enumerateInstancesForListItemWithOffset<T=Array<SP.WorkflowServices.WorkflowInstance>>(listId?: any, itemId?: number, offset?: number): T;
+	enumerateInstancesForSite<T=Array<SP.WorkflowServices.WorkflowInstance>>(): T;
+	enumerateInstancesForSiteWithOffset<T=Array<SP.WorkflowServices.WorkflowInstance>>(offset?: number): T;
+	getInstance<T=SP.WorkflowServices.WorkflowInstance>(instanceId?: any): T;
+	startWorkflowOnListItemBySubscriptionId<T=any>(subscriptionId?: any, itemId?: number, payload?: Array<SP.KeyValue>): T;
 }
 
 /*********************************************
@@ -108,27 +108,27 @@ export interface InteropService {
 }
 
 /*********************************************
-* InteropServiceCollections<T = any>
+* InteropServiceCollections
 **********************************************/
-export interface InteropServiceCollections<T = any> {
-	Current(): T;
+export interface InteropServiceCollections {
+	Current<T=SP.WorkflowServices.InteropService>(): T;
 }
 
 /*********************************************
-* InteropServiceQuery<T = any>
+* InteropServiceQuery
 **********************************************/
-export interface InteropServiceQuery<T = any> {
-	Current(): T;
+export interface InteropServiceQuery {
+	Current<T=SP.WorkflowServices.InteropService>(): T;
 }
 
 /*********************************************
-* InteropServiceMethods<T = any>
+* InteropServiceMethods
 **********************************************/
-export interface InteropServiceMethods<T = any> {
-	cancelWorkflow(instanceId?: any): T;
-	disableEvents(listId?: any, itemGuid?: any): T;
-	enableEvents(listId?: any, itemGuid?: any): T;
-	startWorkflow(associationName?: string, correlationId?: any, listId?: any, itemGuid?: any, workflowParameters?: Array<SP.KeyValue>): T;
+export interface InteropServiceMethods {
+	cancelWorkflow<T=void>(instanceId?: any): T;
+	disableEvents<T=void>(listId?: any, itemGuid?: any): T;
+	enableEvents<T=void>(listId?: any, itemGuid?: any): T;
+	startWorkflow<T=any>(associationName?: string, correlationId?: any, listId?: any, itemGuid?: any, workflowParameters?: Array<SP.KeyValue>): T;
 }
 
 /*********************************************
@@ -142,28 +142,28 @@ export interface WorkflowServicesManager {
 }
 
 /*********************************************
-* WorkflowServicesManagerCollections<T = any>
+* WorkflowServicesManagerCollections
 **********************************************/
-export interface WorkflowServicesManagerCollections<T = any> {
-	Current(): T;
+export interface WorkflowServicesManagerCollections {
+	Current<T=SP.WorkflowServices.WorkflowServicesManager>(): T;
 }
 
 /*********************************************
-* WorkflowServicesManagerQuery<T = any>
+* WorkflowServicesManagerQuery
 **********************************************/
-export interface WorkflowServicesManagerQuery<T = any> {
-	Current(): T;
+export interface WorkflowServicesManagerQuery {
+	Current<T=SP.WorkflowServices.WorkflowServicesManager>(): T;
 }
 
 /*********************************************
-* WorkflowServicesManagerMethods<T = any>
+* WorkflowServicesManagerMethods
 **********************************************/
-export interface WorkflowServicesManagerMethods<T = any> {
-	getWorkflowDeploymentService(): T;
-	getWorkflowInstanceService(): T;
-	getWorkflowInteropService(): T;
-	getWorkflowSubscriptionService(): T;
-	isIntegratedApp(): T;
+export interface WorkflowServicesManagerMethods {
+	getWorkflowDeploymentService<T=SP.WorkflowServices.WorkflowDeploymentService>(): T;
+	getWorkflowInstanceService<T=SP.WorkflowServices.WorkflowInstanceService>(): T;
+	getWorkflowInteropService<T=SP.WorkflowServices.InteropService>(): T;
+	getWorkflowSubscriptionService<T=SP.WorkflowServices.WorkflowSubscriptionService>(): T;
+	isIntegratedApp<T=boolean>(): T;
 }
 
 /*********************************************
@@ -183,12 +183,12 @@ export interface WorkflowSubscription {
 }
 
 /*********************************************
-* WorkflowSubscriptionMethods<T = any>
+* WorkflowSubscriptionMethods
 **********************************************/
-export interface WorkflowSubscriptionMethods<T = any> {
-	getExternalVariable(name?: string): T;
-	setExternalVariable(name?: string, value?: string): T;
-	setProperty(name?: string, value?: string): T;
+export interface WorkflowSubscriptionMethods {
+	getExternalVariable<T=string>(name?: string): T;
+	setExternalVariable<T=void>(name?: string, value?: string): T;
+	setProperty<T=void>(name?: string, value?: string): T;
 }
 
 /*********************************************
@@ -199,35 +199,35 @@ export interface WorkflowSubscriptionService {
 }
 
 /*********************************************
-* WorkflowSubscriptionServiceCollections<T = any>
+* WorkflowSubscriptionServiceCollections
 **********************************************/
-export interface WorkflowSubscriptionServiceCollections<T = any> {
-	Current(): T;
+export interface WorkflowSubscriptionServiceCollections {
+	Current<T=SP.WorkflowServices.WorkflowSubscriptionService>(): T;
 }
 
 /*********************************************
-* WorkflowSubscriptionServiceQuery<T = any>
+* WorkflowSubscriptionServiceQuery
 **********************************************/
-export interface WorkflowSubscriptionServiceQuery<T = any> {
-	Current(): T;
+export interface WorkflowSubscriptionServiceQuery {
+	Current<T=SP.WorkflowServices.WorkflowSubscriptionService>(): T;
 }
 
 /*********************************************
-* WorkflowSubscriptionServiceMethods<T = any>
+* WorkflowSubscriptionServiceMethods
 **********************************************/
-export interface WorkflowSubscriptionServiceMethods<T = any> {
-	deleteSubscription(subscriptionId?: any): T;
-	enumerateSubscriptions(): T;
-	enumerateSubscriptionsByDefinition(definitionId?: any): T;
-	enumerateSubscriptionsByEventSource(eventSourceId?: any): T;
-	enumerateSubscriptionsByList(listId?: any): T;
-	enumerateSubscriptionsByListAndParentContentType(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): T;
-	enumerateSubscriptionsByListWithContentType(listId?: any, includeContentTypeSpecified?: boolean): T;
-	getSubscription(subscriptionId?: any): T;
-	registerInterestInHostWebList(listId?: any, eventName?: string): T;
-	registerInterestInList(listId?: any, eventName?: string): T;
-	unregisterInterestInHostWebList(listId?: any, eventName?: string): T;
-	unregisterInterestInList(listId?: any, eventName?: string): T;
+export interface WorkflowSubscriptionServiceMethods {
+	deleteSubscription<T=void>(subscriptionId?: any): T;
+	enumerateSubscriptions<T=Array<SP.WorkflowServices.WorkflowSubscription>>(): T;
+	enumerateSubscriptionsByDefinition<T=Array<SP.WorkflowServices.WorkflowSubscription>>(definitionId?: any): T;
+	enumerateSubscriptionsByEventSource<T=Array<SP.WorkflowServices.WorkflowSubscription>>(eventSourceId?: any): T;
+	enumerateSubscriptionsByList<T=Array<SP.WorkflowServices.WorkflowSubscription>>(listId?: any): T;
+	enumerateSubscriptionsByListAndParentContentType<T=Array<SP.WorkflowServices.WorkflowSubscription>>(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): T;
+	enumerateSubscriptionsByListWithContentType<T=Array<SP.WorkflowServices.WorkflowSubscription>>(listId?: any, includeContentTypeSpecified?: boolean): T;
+	getSubscription<T=SP.WorkflowServices.WorkflowSubscription>(subscriptionId?: any): T;
+	registerInterestInHostWebList<T=void>(listId?: any, eventName?: string): T;
+	registerInterestInList<T=void>(listId?: any, eventName?: string): T;
+	unregisterInterestInHostWebList<T=void>(listId?: any, eventName?: string): T;
+	unregisterInterestInList<T=void>(listId?: any, eventName?: string): T;
 }
 
 /*********************************************
@@ -238,8 +238,8 @@ export interface WorkflowMessagingService {
 }
 
 /*********************************************
-* WorkflowMessagingServiceMethods<T = any>
+* WorkflowMessagingServiceMethods
 **********************************************/
-export interface WorkflowMessagingServiceMethods<T = any> {
-	publishEvent(eventSourceId?: any, eventName?: string, payload?: Array<SP.KeyValue>): T;
+export interface WorkflowMessagingServiceMethods {
+	publishEvent<T=string>(eventSourceId?: any, eventName?: string, payload?: Array<SP.KeyValue>): T;
 }

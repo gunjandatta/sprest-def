@@ -9,17 +9,17 @@ export interface likedByInformation {
 }
 
 /*********************************************
-* likedByInformationCollections<T = any>
+* likedByInformationCollections
 **********************************************/
-export interface likedByInformationCollections<T = any> {
-	likedBy(): T;
+export interface likedByInformationCollections {
+	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
 }
 
 /*********************************************
-* likedByInformationQuery<T = any>
+* likedByInformationQuery
 **********************************************/
-export interface likedByInformationQuery<T = any> {
-	likedBy(): T;
+export interface likedByInformationQuery {
+	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
 }
 
 /*********************************************

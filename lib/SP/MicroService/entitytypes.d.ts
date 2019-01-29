@@ -1,4 +1,4 @@
-import { SP } from "../../";
+
 
 /*********************************************
 * MicroServiceManager
@@ -8,13 +8,13 @@ export interface MicroServiceManager {
 }
 
 /*********************************************
-* MicroServiceManagerMethods<T = any>
+* MicroServiceManagerMethods
 **********************************************/
-export interface MicroServiceManagerMethods<T = any> {
-	addMicroserviceWorkItem(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): T;
-	deleteMicroserviceWorkItem(workItemId?: any): T;
-	getServiceInternalUrls(service?: string): T;
-	getServiceUrls(service?: string): T;
+export interface MicroServiceManagerMethods {
+	addMicroserviceWorkItem<T=any>(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): T;
+	deleteMicroserviceWorkItem<T=boolean>(workItemId?: any): T;
+	getServiceInternalUrls<T=Array<string>>(service?: string): T;
+	getServiceUrls<T=Array<string>>(service?: string): T;
 }
 
 /*********************************************

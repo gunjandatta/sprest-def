@@ -1,4 +1,4 @@
-import { SP } from "../../../";
+
 
 /*********************************************
 * DirectoryNotification
@@ -8,10 +8,10 @@ export interface DirectoryNotification {
 }
 
 /*********************************************
-* DirectoryNotificationMethods<T = any>
+* DirectoryNotificationMethods
 **********************************************/
-export interface DirectoryNotificationMethods<T = any> {
-	notifyChanges(directoryObjectChanges?: SP.Directory.Provider.DirectoryObjectChanges): T;
+export interface DirectoryNotificationMethods {
+	notifyChanges<T=void>(directoryObjectChanges?: SP.Directory.Provider.DirectoryObjectChanges): T;
 }
 
 /*********************************************
@@ -22,15 +22,15 @@ export interface SharePointDirectoryProvider {
 }
 
 /*********************************************
-* SharePointDirectoryProviderMethods<T = any>
+* SharePointDirectoryProviderMethods
 **********************************************/
-export interface SharePointDirectoryProviderMethods<T = any> {
-	createDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): T;
-	deleteDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): T;
-	getOrCreateUnifiedGroupTenantInstanceId(groupId?: any, tenantInstanceId?: any): T;
-	notifyDataChanges(data?: SP.Directory.Provider.DirectoryObjectData): T;
-	readDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): T;
-	readDirectoryObjectBatch(ids?: Array<any>, objectType?: number): T;
-	updateCache(data?: SP.Directory.Provider.DirectoryObjectData): T;
-	updateDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): T;
+export interface SharePointDirectoryProviderMethods {
+	createDirectoryObject<T=SP.Directory.Provider.DirectoryObjectData>(data?: SP.Directory.Provider.DirectoryObjectData): T;
+	deleteDirectoryObject<T=void>(data?: SP.Directory.Provider.DirectoryObjectData): T;
+	getOrCreateUnifiedGroupTenantInstanceId<T=any>(groupId?: any, tenantInstanceId?: any): T;
+	notifyDataChanges<T=void>(data?: SP.Directory.Provider.DirectoryObjectData): T;
+	readDirectoryObject<T=SP.Directory.Provider.DirectoryObjectData>(data?: SP.Directory.Provider.DirectoryObjectData): T;
+	readDirectoryObjectBatch<T=Array<SP.Directory.Provider.DirectoryObjectData>>(ids?: Array<any>, objectType?: number): T;
+	updateCache<T=void>(data?: SP.Directory.Provider.DirectoryObjectData): T;
+	updateDirectoryObject<T=void>(data?: SP.Directory.Provider.DirectoryObjectData): T;
 }

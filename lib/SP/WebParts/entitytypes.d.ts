@@ -9,25 +9,25 @@ export interface LimitedWebPartManager {
 }
 
 /*********************************************
-* LimitedWebPartManagerCollections<T = any>
+* LimitedWebPartManagerCollections
 **********************************************/
-export interface LimitedWebPartManagerCollections<T = any> {
-	WebParts(): T;
+export interface LimitedWebPartManagerCollections {
+	WebParts<T=Array<SP.WebParts.WebPartDefinition>>(): T;
 }
 
 /*********************************************
-* LimitedWebPartManagerQuery<T = any>
+* LimitedWebPartManagerQuery
 **********************************************/
-export interface LimitedWebPartManagerQuery<T = any> {
-	WebParts(): T;
+export interface LimitedWebPartManagerQuery {
+	WebParts<T=Array<SP.WebParts.WebPartDefinition>>(): T;
 }
 
 /*********************************************
-* LimitedWebPartManagerMethods<T = any>
+* LimitedWebPartManagerMethods
 **********************************************/
-export interface LimitedWebPartManagerMethods<T = any> {
-	exportWebPart(webPartId?: any): T;
-	importWebPart(webPartXml?: string): T;
+export interface LimitedWebPartManagerMethods {
+	exportWebPart<T=string>(webPartId?: any): T;
+	importWebPart<T=SP.WebParts.WebPartDefinition>(webPartXml?: string): T;
 }
 
 /*********************************************
@@ -39,28 +39,28 @@ export interface WebPartDefinition {
 }
 
 /*********************************************
-* WebPartDefinitionCollections<T = any>
+* WebPartDefinitionCollections
 **********************************************/
-export interface WebPartDefinitionCollections<T = any> {
-	WebPart(): T;
+export interface WebPartDefinitionCollections {
+	WebPart<T=SP.WebParts.WebPart>(): T;
 }
 
 /*********************************************
-* WebPartDefinitionQuery<T = any>
+* WebPartDefinitionQuery
 **********************************************/
-export interface WebPartDefinitionQuery<T = any> {
-	WebPart(): T;
+export interface WebPartDefinitionQuery {
+	WebPart<T=SP.WebParts.WebPart>(): T;
 }
 
 /*********************************************
-* WebPartDefinitionMethods<T = any>
+* WebPartDefinitionMethods
 **********************************************/
-export interface WebPartDefinitionMethods<T = any> {
-	closeWebPart(): T;
-	deleteWebPart(): T;
-	moveWebPartTo(zoneID?: string, zoneIndex?: number): T;
-	openWebPart(): T;
-	saveWebPartChanges(): T;
+export interface WebPartDefinitionMethods {
+	closeWebPart<T=void>(): T;
+	deleteWebPart<T=void>(): T;
+	moveWebPartTo<T=void>(zoneID?: string, zoneIndex?: number): T;
+	openWebPart<T=void>(): T;
+	saveWebPartChanges<T=void>(): T;
 }
 
 /*********************************************
@@ -77,15 +77,15 @@ export interface WebPart {
 }
 
 /*********************************************
-* WebPartCollections<T = any>
+* WebPartCollections
 **********************************************/
-export interface WebPartCollections<T = any> {
-	Properties(): T;
+export interface WebPartCollections {
+	Properties<T=SP.PropertyValues>(): T;
 }
 
 /*********************************************
-* WebPartQuery<T = any>
+* WebPartQuery
 **********************************************/
-export interface WebPartQuery<T = any> {
-	Properties(): T;
+export interface WebPartQuery {
+	Properties<T=SP.PropertyValues>(): T;
 }

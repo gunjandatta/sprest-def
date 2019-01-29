@@ -19,11 +19,11 @@ export interface TaxonomyField extends SP.FieldLookup {
 }
 
 /*********************************************
-* TaxonomyFieldMethods<T = any>
+* TaxonomyFieldMethods
 **********************************************/
-export interface TaxonomyFieldMethods<T = any> {
-	deleteObject(): T;
-	setShowInDisplayForm(value?: boolean): T;
-	setShowInEditForm(value?: boolean): T;
-	setShowInNewForm(value?: boolean): T;
+export interface TaxonomyFieldMethods {
+	deleteObject<T=void>(): T;
+	setShowInDisplayForm<T=void>(value?: boolean): T;
+	setShowInEditForm<T=void>(value?: boolean): T;
+	setShowInNewForm<T=void>(value?: boolean): T;
 }

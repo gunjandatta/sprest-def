@@ -8,8 +8,8 @@ export interface OrgNewsSiteApi {
 }
 
 /*********************************************
-* OrgNewsSiteApiMethods<T = any>
+* OrgNewsSiteApiMethods
 **********************************************/
-export interface OrgNewsSiteApiMethods<T = any> {
-	details(): T;
+export interface OrgNewsSiteApiMethods {
+	details<T=Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteInfo>(): T;
 }

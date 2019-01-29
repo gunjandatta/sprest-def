@@ -18,10 +18,10 @@ export interface AllowedDataLocation extends Microsoft.Online.SharePoint.MultiGe
 }
 
 /*********************************************
-* AllowedDataLocationMethods<T = any>
+* AllowedDataLocationMethods
 **********************************************/
-export interface AllowedDataLocationMethods<T = any> {
-	deleteObject(): T;
+export interface AllowedDataLocationMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -79,10 +79,10 @@ export interface CrossFarmGroupMoveJob {
 }
 
 /*********************************************
-* CrossFarmGroupMoveJobMethods<T = any>
+* CrossFarmGroupMoveJobMethods
 **********************************************/
-export interface CrossFarmGroupMoveJobMethods<T = any> {
-	update(): T;
+export interface CrossFarmGroupMoveJobMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -112,10 +112,10 @@ export interface CrossFarmSiteMoveJob extends Microsoft.Online.SharePoint.MultiG
 }
 
 /*********************************************
-* CrossFarmSiteMoveJobMethods<T = any>
+* CrossFarmSiteMoveJobMethods
 **********************************************/
-export interface CrossFarmSiteMoveJobMethods<T = any> {
-	update(): T;
+export interface CrossFarmSiteMoveJobMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -146,10 +146,10 @@ export interface CrossFarmUserMoveJob extends Microsoft.Online.SharePoint.MultiG
 }
 
 /*********************************************
-* CrossFarmUserMoveJobMethods<T = any>
+* CrossFarmUserMoveJobMethods
 **********************************************/
-export interface CrossFarmUserMoveJobMethods<T = any> {
-	update(): T;
+export interface CrossFarmUserMoveJobMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -186,11 +186,11 @@ export interface CrossGeoTenantProperty extends Microsoft.Online.SharePoint.Mult
 }
 
 /*********************************************
-* CrossGeoTenantPropertyMethods<T = any>
+* CrossGeoTenantPropertyMethods
 **********************************************/
-export interface CrossGeoTenantPropertyMethods<T = any> {
-	deleteObject(): T;
-	update(): T;
+export interface CrossGeoTenantPropertyMethods {
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -212,10 +212,10 @@ export interface GeoAdministrator {
 }
 
 /*********************************************
-* GeoAdministratorMethods<T = any>
+* GeoAdministratorMethods
 **********************************************/
-export interface GeoAdministratorMethods<T = any> {
-	deleteObject(): T;
+export interface GeoAdministratorMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -227,11 +227,11 @@ export interface GeoExperience {
 }
 
 /*********************************************
-* GeoExperienceMethods<T = any>
+* GeoExperienceMethods
 **********************************************/
-export interface GeoExperienceMethods<T = any> {
-	upgradeAllInstancesToSPOMode(): T;
-	upgradeToSPOMode(): T;
+export interface GeoExperienceMethods {
+	upgradeAllInstancesToSPOMode<T=void>(): T;
+	upgradeToSPOMode<T=void>(): T;
 }
 
 /*********************************************
@@ -286,12 +286,12 @@ export interface GroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servi
 }
 
 /*********************************************
-* GroupMoveJobMethods<T = any>
+* GroupMoveJobMethods
 **********************************************/
-export interface GroupMoveJobMethods<T = any> {
-	cancel(): T;
-	deleteObject(): T;
-	update(): T;
+export interface GroupMoveJobMethods {
+	cancel<T=void>(): T;
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -320,66 +320,66 @@ export interface MultiGeoServicesBeta {
 }
 
 /*********************************************
-* MultiGeoServicesBetaCollections<T = any>
+* MultiGeoServicesBetaCollections
 **********************************************/
-export interface MultiGeoServicesBetaCollections<T = any> {
-	AllowedDataLocations(): T;
-	ContentDbSchemaVersion(): T;
-	CrossFarmGroupMoveJobs(): T;
-	CrossFarmSiteMoveJobs(): T;
-	CrossFarmUserMoveJobs(): T;
-	CrossGeoTenantBYOK(): T;
-	CrossGeoTenantCompatibility(): T;
-	CrossGeoTenantProperties(): T;
-	GeoAdministrators(): T;
-	GeoExperience(): T;
-	GeoTenantInstanceInformationCollection(): T;
-	GlobalAdminCheck(): T;
-	GroupMoveJobs(): T;
-	SiteMoveJobs(): T;
-	SiteRenameJobs(): T;
-	StorageQuotas(): T;
-	TaxonomyReplicationParameters(): T;
-	TenantInformationCollection(): T;
-	UnifiedGroups(): T;
-	UserMoveJobs(): T;
+export interface MultiGeoServicesBetaCollections {
+	AllowedDataLocations<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>>(): T;
+	ContentDbSchemaVersion<T=Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion>(): T;
+	CrossFarmGroupMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>>(): T;
+	CrossFarmSiteMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob>>(): T;
+	CrossFarmUserMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob>>(): T;
+	CrossGeoTenantBYOK<T=Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOK>(): T;
+	CrossGeoTenantCompatibility<T=Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility>(): T;
+	CrossGeoTenantProperties<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty>>(): T;
+	GeoAdministrators<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>>(): T;
+	GeoExperience<T=Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience>(): T;
+	GeoTenantInstanceInformationCollection<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation>>(): T;
+	GlobalAdminCheck<T=Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck>(): T;
+	GroupMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob>>(): T;
+	SiteMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob>>(): T;
+	SiteRenameJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob>>(): T;
+	StorageQuotas<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota>>(): T;
+	TaxonomyReplicationParameters<T=Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters>(): T;
+	TenantInformationCollection<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>>(): T;
+	UnifiedGroups<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup>>(): T;
+	UserMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>>(): T;
 }
 
 /*********************************************
-* MultiGeoServicesBetaQuery<T = any>
+* MultiGeoServicesBetaQuery
 **********************************************/
-export interface MultiGeoServicesBetaQuery<T = any> {
-	AllowedDataLocations(): T;
-	ContentDbSchemaVersion(): T;
-	CrossFarmGroupMoveJobs(): T;
-	CrossFarmSiteMoveJobs(): T;
-	CrossFarmUserMoveJobs(): T;
-	CrossGeoTenantBYOK(): T;
-	CrossGeoTenantCompatibility(): T;
-	CrossGeoTenantProperties(): T;
-	GeoAdministrators(): T;
-	GeoExperience(): T;
-	GeoTenantInstanceInformationCollection(): T;
-	GlobalAdminCheck(): T;
-	GroupMoveJobs(): T;
-	SiteMoveJobs(): T;
-	SiteRenameJobs(): T;
-	StorageQuotas(): T;
-	TaxonomyReplicationParameters(): T;
-	TenantInformationCollection(): T;
-	UnifiedGroups(): T;
-	UserMoveJobs(): T;
+export interface MultiGeoServicesBetaQuery {
+	AllowedDataLocations<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>>(): T;
+	ContentDbSchemaVersion<T=Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion>(): T;
+	CrossFarmGroupMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>>(): T;
+	CrossFarmSiteMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob>>(): T;
+	CrossFarmUserMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob>>(): T;
+	CrossGeoTenantBYOK<T=Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOK>(): T;
+	CrossGeoTenantCompatibility<T=Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility>(): T;
+	CrossGeoTenantProperties<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty>>(): T;
+	GeoAdministrators<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>>(): T;
+	GeoExperience<T=Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience>(): T;
+	GeoTenantInstanceInformationCollection<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation>>(): T;
+	GlobalAdminCheck<T=Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck>(): T;
+	GroupMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob>>(): T;
+	SiteMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob>>(): T;
+	SiteRenameJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob>>(): T;
+	StorageQuotas<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota>>(): T;
+	TaxonomyReplicationParameters<T=Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters>(): T;
+	TenantInformationCollection<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>>(): T;
+	UnifiedGroups<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup>>(): T;
+	UserMoveJobs<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>>(): T;
 }
 
 /*********************************************
-* MultiGeoServicesBetaMethods<T = any>
+* MultiGeoServicesBetaMethods
 **********************************************/
-export interface MultiGeoServicesBetaMethods<T = any> {
-	crossGeoCredentials(siteId?: any): T;
-	dBSchemaCompatibilityCheck(): T;
-	geoMoveCompatibilityChecks(): T;
-	userPersonalSiteId(userPrincipalName?: string): T;
-	userPersonalSiteLocation(userPrincipalName?: string): T;
+export interface MultiGeoServicesBetaMethods {
+	crossGeoCredentials<T=Microsoft.Online.SharePoint.MultiGeo.Service.GeoCredentials>(siteId?: any): T;
+	dBSchemaCompatibilityCheck<T=Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck>(): T;
+	geoMoveCompatibilityChecks<T=Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantCompatibilityCheck>>(): T;
+	userPersonalSiteId<T=Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId>(userPrincipalName?: string): T;
+	userPersonalSiteLocation<T=Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation>(userPrincipalName?: string): T;
 }
 
 /*********************************************
@@ -393,12 +393,12 @@ export interface SiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servic
 }
 
 /*********************************************
-* SiteMoveJobMethods<T = any>
+* SiteMoveJobMethods
 **********************************************/
-export interface SiteMoveJobMethods<T = any> {
-	cancel(): T;
-	deleteObject(): T;
-	update(): T;
+export interface SiteMoveJobMethods {
+	cancel<T=void>(): T;
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -433,10 +433,10 @@ export interface StorageQuota {
 }
 
 /*********************************************
-* StorageQuotaMethods<T = any>
+* StorageQuotaMethods
 **********************************************/
-export interface StorageQuotaMethods<T = any> {
-	update(): T;
+export interface StorageQuotaMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -450,10 +450,10 @@ export interface TaxonomyReplicationParameters {
 }
 
 /*********************************************
-* TaxonomyReplicationParametersMethods<T = any>
+* TaxonomyReplicationParametersMethods
 **********************************************/
-export interface TaxonomyReplicationParametersMethods<T = any> {
-	update(): T;
+export interface TaxonomyReplicationParametersMethods {
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -490,12 +490,12 @@ export interface UserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servic
 }
 
 /*********************************************
-* UserMoveJobMethods<T = any>
+* UserMoveJobMethods
 **********************************************/
-export interface UserMoveJobMethods<T = any> {
-	cancel(): T;
-	deleteObject(): T;
-	update(): T;
+export interface UserMoveJobMethods {
+	cancel<T=void>(): T;
+	deleteObject<T=void>(): T;
+	update<T=void>(): T;
 }
 
 /*********************************************

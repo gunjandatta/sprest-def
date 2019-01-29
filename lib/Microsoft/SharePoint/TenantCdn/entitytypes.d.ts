@@ -8,8 +8,8 @@ export interface TenantCdnApi {
 }
 
 /*********************************************
-* TenantCdnApiMethods<T = any>
+* TenantCdnApiMethods
 **********************************************/
-export interface TenantCdnApiMethods<T = any> {
-	getCdnUrls(items?: Array<string>): T;
+export interface TenantCdnApiMethods {
+	getCdnUrls<T=Array<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>>(items?: Array<string>): T;
 }

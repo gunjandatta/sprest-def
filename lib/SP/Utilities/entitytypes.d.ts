@@ -64,32 +64,32 @@ export interface ThemeManager {
 }
 
 /*********************************************
-* ThemeManagerCollections<T = any>
+* ThemeManagerCollections
 **********************************************/
-export interface ThemeManagerCollections<T = any> {
-	ContextThemeManager(): T;
+export interface ThemeManagerCollections {
+	ContextThemeManager<T=SP.Utilities.ThemeManager>(): T;
 }
 
 /*********************************************
-* ThemeManagerQuery<T = any>
+* ThemeManagerQuery
 **********************************************/
-export interface ThemeManagerQuery<T = any> {
-	ContextThemeManager(): T;
+export interface ThemeManagerQuery {
+	ContextThemeManager<T=SP.Utilities.ThemeManager>(): T;
 }
 
 /*********************************************
-* ThemeManagerMethods<T = any>
+* ThemeManagerMethods
 **********************************************/
-export interface ThemeManagerMethods<T = any> {
-	addTenantTheme(name?: string, themeJson?: string): T;
-	applyTheme(name?: string, themeJson?: string): T;
-	deleteTenantTheme(name?: string): T;
-	getAvailableThemes(): T;
-	getHideDefaultThemes(): T;
-	getTenantTheme(name?: string): T;
-	getTenantThemingOptions(): T;
-	setHideDefaultThemes(hideDefaultThemes?: boolean): T;
-	updateTenantTheme(name?: string, themeJson?: string): T;
+export interface ThemeManagerMethods {
+	addTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
+	applyTheme<T=string>(name?: string, themeJson?: string): T;
+	deleteTenantTheme<T=void>(name?: string): T;
+	getAvailableThemes<T=Array<SP.Utilities.JsonTheme>>(): T;
+	getHideDefaultThemes<T=boolean>(): T;
+	getTenantTheme<T=SP.Utilities.JsonTheme>(name?: string): T;
+	getTenantThemingOptions<T=SP.Utilities.ThemingOptions>(): T;
+	setHideDefaultThemes<T=boolean>(hideDefaultThemes?: boolean): T;
+	updateTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
 }
 
 /*********************************************

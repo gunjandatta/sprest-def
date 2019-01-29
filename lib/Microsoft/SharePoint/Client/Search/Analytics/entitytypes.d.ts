@@ -1,4 +1,4 @@
-import { Microsoft } from "../../../../../";
+
 
 /*********************************************
 * SignalStore
@@ -8,8 +8,8 @@ export interface SignalStore {
 }
 
 /*********************************************
-* SignalStoreMethods<T = any>
+* SignalStoreMethods
 **********************************************/
-export interface SignalStoreMethods<T = any> {
-	signals(signals?: Array<Microsoft.SharePoint.Client.Search.Analytics.AnalyticsSignal>): T;
+export interface SignalStoreMethods {
+	signals<T=void>(signals?: Array<Microsoft.SharePoint.Client.Search.Analytics.AnalyticsSignal>): T;
 }

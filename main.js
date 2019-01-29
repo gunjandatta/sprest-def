@@ -366,8 +366,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     }
 
                                     // Add the method
-                                    collections.push('\t' + collection + '(): T;');
-                                    queryMethods.push('\t' + collection + '(): T;');
+                                    collections.push('\t' + collection + '<T=' + methodType + '>(): T;');
+                                    queryMethods.push('\t' + collection + '<T=' + methodType + '>(): T;');
 
                                     // Update the references
                                     updateReferences(fileImports, dirName, methodType);
@@ -388,17 +388,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 let params = [];
                                 for (let j = 0; j < methodInfo.params.length; j++) {
                                     let param = methodInfo.params[j].$;
-                                    let methodType = getType(param.Type);
 
                                     // Add the parameter
-                                    params.push(param.Name + "?: " + methodType);
-
-                                    // Update the references
-                                    updateReferences(fileImports, dirName, methodType);
+                                    params.push(param.Name + "?: " + getType(param.Type));
                                 }
 
                                 // Add the method
-                                methods.push('\t' + methodInfo.name + '(' + params.join(', ') + '): T;');
+                                methods.push('\t' + methodInfo.name + '<T=' + getType(methodInfo.returnType) + '>(' + params.join(', ') + '): T;');
                             }
 
                             // Continue the loop
@@ -417,9 +413,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                     // Generate the content
                     content.push(create.interface(name, interface._BaseType, variables.join('\n')));
-                    collections.length > 0 ? content.push(create.interface(name + "Collections<T = any>", null, collections.join('\n'))) : null;
-                    queryMethods.length > 0 ? content.push(create.interface(name + "Query<T = any>", null, queryMethods.join('\n'))) : null;
-                    methods.length > 0 ? content.push(create.interface(name + "Methods<T = any>", null, methods.join('\n'))) : null;
+                    collections.length > 0 ? content.push(create.interface(name + "Collections", null, collections.join('\n'))) : null;
+                    queryMethods.length > 0 ? content.push(create.interface(name + "Query", null, queryMethods.join('\n'))) : null;
+                    methods.length > 0 ? content.push(create.interface(name + "Methods", null, methods.join('\n'))) : null;
                 }
 
                 // Ensure content exists

@@ -20,10 +20,10 @@ export interface NativeClient {
 }
 
 /*********************************************
-* NativeClientMethods<T = any>
+* NativeClientMethods
 **********************************************/
-export interface NativeClientMethods<T = any> {
-	authenticate(): T;
+export interface NativeClientMethods {
+	authenticate<T=void>(): T;
 }
 
 /*********************************************
@@ -34,8 +34,8 @@ export interface Token {
 }
 
 /*********************************************
-* TokenMethods<T = any>
+* TokenMethods
 **********************************************/
-export interface TokenMethods<T = any> {
-	acquire(resource?: string, tokenType?: string): T;
+export interface TokenMethods {
+	acquire<T=SP.OAuth.TokenResponse>(resource?: string, tokenType?: string): T;
 }

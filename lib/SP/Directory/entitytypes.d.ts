@@ -8,16 +8,16 @@ export interface DirectorySession {
 }
 
 /*********************************************
-* DirectorySessionMethods<T = any>
+* DirectorySessionMethods
 **********************************************/
-export interface DirectorySessionMethods<T = any> {
-	getGraphUser(principalName?: string): T;
-	getSharePointDataForUser(userId?: any): T;
-	group(groupId?: any, alias?: string): T;
-	joinGroup(groupId?: any): T;
-	me(): T;
-	user(id?: any, principalName?: string): T;
-	validateGroupName(displayName?: string, alias?: string): T;
+export interface DirectorySessionMethods {
+	getGraphUser<T=SP.Directory.User>(principalName?: string): T;
+	getSharePointDataForUser<T=SP.Directory.User>(userId?: any): T;
+	group<T=SP.Directory.Group>(groupId?: any, alias?: string): T;
+	joinGroup<T=number>(groupId?: any): T;
+	me<T=SP.Directory.User>(): T;
+	user<T=SP.Directory.User>(id?: any, principalName?: string): T;
+	validateGroupName<T=SP.Directory.GroupNameValidationResult>(displayName?: string, alias?: string): T;
 }
 
 /*********************************************
@@ -47,26 +47,26 @@ export interface Group {
 }
 
 /*********************************************
-* GroupCollections<T = any>
+* GroupCollections
 **********************************************/
-export interface GroupCollections<T = any> {
-	members(): T;
-	owners(): T;
+export interface GroupCollections {
+	members<T=Array<SP.Directory.User>>(): T;
+	owners<T=Array<SP.Directory.User>>(): T;
 }
 
 /*********************************************
-* GroupQuery<T = any>
+* GroupQuery
 **********************************************/
-export interface GroupQuery<T = any> {
-	members(): T;
-	owners(): T;
+export interface GroupQuery {
+	members<T=Array<SP.Directory.User>>(): T;
+	owners<T=Array<SP.Directory.User>>(): T;
 }
 
 /*********************************************
-* GroupMethods<T = any>
+* GroupMethods
 **********************************************/
-export interface GroupMethods<T = any> {
-	delete(): T;
+export interface GroupMethods {
+	delete<T=void>(): T;
 }
 
 /*********************************************
@@ -116,28 +116,28 @@ export interface User {
 }
 
 /*********************************************
-* UserCollections<T = any>
+* UserCollections
 **********************************************/
-export interface UserCollections<T = any> {
-	membership(): T;
-	ownership(): T;
-	rankedMembership(): T;
+export interface UserCollections {
+	membership<T=Array<SP.Directory.Group>>(): T;
+	ownership<T=Array<SP.Directory.Group>>(): T;
+	rankedMembership<T=Array<SP.Directory.Group>>(): T;
 }
 
 /*********************************************
-* UserQuery<T = any>
+* UserQuery
 **********************************************/
-export interface UserQuery<T = any> {
-	membership(): T;
-	ownership(): T;
-	rankedMembership(): T;
+export interface UserQuery {
+	membership<T=Array<SP.Directory.Group>>(): T;
+	ownership<T=Array<SP.Directory.Group>>(): T;
+	rankedMembership<T=Array<SP.Directory.Group>>(): T;
 }
 
 /*********************************************
-* UserMethods<T = any>
+* UserMethods
 **********************************************/
-export interface UserMethods<T = any> {
-	getUserLinks(linkName?: string, groupType?: number): T;
+export interface UserMethods {
+	getUserLinks<T=Array<SP.Directory.Link>>(linkName?: string, groupType?: number): T;
 }
 
 /*********************************************
@@ -157,17 +157,17 @@ export interface GroupAndUserStatus {
 }
 
 /*********************************************
-* GroupAndUserStatusCollections<T = any>
+* GroupAndUserStatusCollections
 **********************************************/
-export interface GroupAndUserStatusCollections<T = any> {
-	Group(): T;
+export interface GroupAndUserStatusCollections {
+	Group<T=SP.Directory.Group>(): T;
 }
 
 /*********************************************
-* GroupAndUserStatusQuery<T = any>
+* GroupAndUserStatusQuery
 **********************************************/
-export interface GroupAndUserStatusQuery<T = any> {
-	Group(): T;
+export interface GroupAndUserStatusQuery {
+	Group<T=SP.Directory.Group>(): T;
 }
 
 /*********************************************

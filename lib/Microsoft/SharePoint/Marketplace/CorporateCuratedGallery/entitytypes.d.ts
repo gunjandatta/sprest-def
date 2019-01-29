@@ -8,24 +8,24 @@ export interface SiteCollectionCorporateCatalogAccessor {
 }
 
 /*********************************************
-* SiteCollectionCorporateCatalogAccessorCollections<T = any>
+* SiteCollectionCorporateCatalogAccessorCollections
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorCollections<T = any> {
-	AvailableApps(): T;
+export interface SiteCollectionCorporateCatalogAccessorCollections {
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
 }
 
 /*********************************************
-* SiteCollectionCorporateCatalogAccessorQuery<T = any>
+* SiteCollectionCorporateCatalogAccessorQuery
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorQuery<T = any> {
-	AvailableApps(): T;
+export interface SiteCollectionCorporateCatalogAccessorQuery {
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
 }
 
 /*********************************************
-* SiteCollectionCorporateCatalogAccessorMethods<T = any>
+* SiteCollectionCorporateCatalogAccessorMethods
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorMethods<T = any> {
-	add(Content?: any, Overwrite?: boolean, Url?: string): T;
+export interface SiteCollectionCorporateCatalogAccessorMethods {
+	add<T=SP.File>(Content?: any, Overwrite?: boolean, Url?: string): T;
 }
 
 /*********************************************
@@ -43,15 +43,15 @@ export interface CorporateCatalogAppMetadata {
 }
 
 /*********************************************
-* CorporateCatalogAppMetadataMethods<T = any>
+* CorporateCatalogAppMetadataMethods
 **********************************************/
-export interface CorporateCatalogAppMetadataMethods<T = any> {
-	deploy(skipFeatureDeployment?: boolean): T;
-	install(): T;
-	remove(): T;
-	retract(): T;
-	uninstall(): T;
-	upgrade(): T;
+export interface CorporateCatalogAppMetadataMethods {
+	deploy<T=void>(skipFeatureDeployment?: boolean): T;
+	install<T=void>(): T;
+	remove<T=void>(): T;
+	retract<T=void>(): T;
+	uninstall<T=void>(): T;
+	upgrade<T=void>(): T;
 }
 
 /*********************************************
@@ -62,26 +62,26 @@ export interface TenantCorporateCatalogAccessor {
 }
 
 /*********************************************
-* TenantCorporateCatalogAccessorCollections<T = any>
+* TenantCorporateCatalogAccessorCollections
 **********************************************/
-export interface TenantCorporateCatalogAccessorCollections<T = any> {
-	AvailableApps(): T;
-	SiteCollectionAppCatalogsSites(): T;
+export interface TenantCorporateCatalogAccessorCollections {
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
+	SiteCollectionAppCatalogsSites<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>>(): T;
 }
 
 /*********************************************
-* TenantCorporateCatalogAccessorQuery<T = any>
+* TenantCorporateCatalogAccessorQuery
 **********************************************/
-export interface TenantCorporateCatalogAccessorQuery<T = any> {
-	AvailableApps(): T;
-	SiteCollectionAppCatalogsSites(): T;
+export interface TenantCorporateCatalogAccessorQuery {
+	AvailableApps<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>>(): T;
+	SiteCollectionAppCatalogsSites<T=Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>>(): T;
 }
 
 /*********************************************
-* TenantCorporateCatalogAccessorMethods<T = any>
+* TenantCorporateCatalogAccessorMethods
 **********************************************/
-export interface TenantCorporateCatalogAccessorMethods<T = any> {
-	add(Content?: any, Overwrite?: boolean, Url?: string): T;
+export interface TenantCorporateCatalogAccessorMethods {
+	add<T=SP.File>(Content?: any, Overwrite?: boolean, Url?: string): T;
 }
 
 /*********************************************

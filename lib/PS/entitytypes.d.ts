@@ -67,17 +67,17 @@ export interface Assignment {
 }
 
 /*********************************************
-* AssignmentCollections<T = any>
+* AssignmentCollections
 **********************************************/
-export interface AssignmentCollections<T = any> {
-	CustomFields(): T;
+export interface AssignmentCollections {
+	CustomFields<T=Array<PS.CustomField>>(): T;
 }
 
 /*********************************************
-* AssignmentQuery<T = any>
+* AssignmentQuery
 **********************************************/
-export interface AssignmentQuery<T = any> {
-	CustomFields(): T;
+export interface AssignmentQuery {
+	CustomFields<T=Array<PS.CustomField>>(): T;
 }
 
 /*********************************************
@@ -111,28 +111,28 @@ export interface CustomField {
 }
 
 /*********************************************
-* CustomFieldCollections<T = any>
+* CustomFieldCollections
 **********************************************/
-export interface CustomFieldCollections<T = any> {
-	EntityType(): T;
-	LookupEntries(): T;
-	LookupTable(): T;
+export interface CustomFieldCollections {
+	EntityType<T=PS.EntityType>(): T;
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
+	LookupTable<T=PS.LookupTable>(): T;
 }
 
 /*********************************************
-* CustomFieldQuery<T = any>
+* CustomFieldQuery
 **********************************************/
-export interface CustomFieldQuery<T = any> {
-	EntityType(): T;
-	LookupEntries(): T;
-	LookupTable(): T;
+export interface CustomFieldQuery {
+	EntityType<T=PS.EntityType>(): T;
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
+	LookupTable<T=PS.LookupTable>(): T;
 }
 
 /*********************************************
-* CustomFieldMethods<T = any>
+* CustomFieldMethods
 **********************************************/
-export interface CustomFieldMethods<T = any> {
-	deleteObject(): T;
+export interface CustomFieldMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -148,10 +148,10 @@ export interface LookupEntry {
 }
 
 /*********************************************
-* LookupEntryMethods<T = any>
+* LookupEntryMethods
 **********************************************/
-export interface LookupEntryMethods<T = any> {
-	deleteObject(): T;
+export interface LookupEntryMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -167,26 +167,26 @@ export interface LookupTable {
 }
 
 /*********************************************
-* LookupTableCollections<T = any>
+* LookupTableCollections
 **********************************************/
-export interface LookupTableCollections<T = any> {
-	Entries(): T;
+export interface LookupTableCollections {
+	Entries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
-* LookupTableQuery<T = any>
+* LookupTableQuery
 **********************************************/
-export interface LookupTableQuery<T = any> {
-	Entries(): T;
+export interface LookupTableQuery {
+	Entries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
-* LookupTableMethods<T = any>
+* LookupTableMethods
 **********************************************/
-export interface LookupTableMethods<T = any> {
-	addMask(mask?: PS.LookupMask): T;
-	deleteObject(): T;
-	updateMask(mask?: PS.LookupMask, level?: number): T;
+export interface LookupTableMethods {
+	addMask<T=void>(mask?: PS.LookupMask): T;
+	deleteObject<T=void>(): T;
+	updateMask<T=void>(mask?: PS.LookupMask, level?: number): T;
 }
 
 /*********************************************
@@ -216,24 +216,24 @@ export interface CalendarException {
 }
 
 /*********************************************
-* CalendarExceptionCollections<T = any>
+* CalendarExceptionCollections
 **********************************************/
-export interface CalendarExceptionCollections<T = any> {
-	Calendar(): T;
+export interface CalendarExceptionCollections {
+	Calendar<T=PS.Calendar>(): T;
 }
 
 /*********************************************
-* CalendarExceptionQuery<T = any>
+* CalendarExceptionQuery
 **********************************************/
-export interface CalendarExceptionQuery<T = any> {
-	Calendar(): T;
+export interface CalendarExceptionQuery {
+	Calendar<T=PS.Calendar>(): T;
 }
 
 /*********************************************
-* CalendarExceptionMethods<T = any>
+* CalendarExceptionMethods
 **********************************************/
-export interface CalendarExceptionMethods<T = any> {
-	deleteObject(): T;
+export interface CalendarExceptionMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -249,25 +249,25 @@ export interface Calendar {
 }
 
 /*********************************************
-* CalendarCollections<T = any>
+* CalendarCollections
 **********************************************/
-export interface CalendarCollections<T = any> {
-	BaseCalendarExceptions(): T;
+export interface CalendarCollections {
+	BaseCalendarExceptions<T=Array<PS.CalendarException>>(): T;
 }
 
 /*********************************************
-* CalendarQuery<T = any>
+* CalendarQuery
 **********************************************/
-export interface CalendarQuery<T = any> {
-	BaseCalendarExceptions(): T;
+export interface CalendarQuery {
+	BaseCalendarExceptions<T=Array<PS.CalendarException>>(): T;
 }
 
 /*********************************************
-* CalendarMethods<T = any>
+* CalendarMethods
 **********************************************/
-export interface CalendarMethods<T = any> {
-	copyTo(name?: string): T;
-	deleteObject(): T;
+export interface CalendarMethods {
+	copyTo<T=PS.Calendar>(name?: string): T;
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -278,10 +278,10 @@ export interface BaseCalendarException extends PS.CalendarException {
 }
 
 /*********************************************
-* BaseCalendarExceptionMethods<T = any>
+* BaseCalendarExceptionMethods
 **********************************************/
-export interface BaseCalendarExceptionMethods<T = any> {
-	deleteObject(): T;
+export interface BaseCalendarExceptionMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -331,30 +331,30 @@ export interface DraftAssignment extends PS.Assignment {
 }
 
 /*********************************************
-* DraftAssignmentCollections<T = any>
+* DraftAssignmentCollections
 **********************************************/
-export interface DraftAssignmentCollections<T = any> {
-	Owner(): T;
-	Parent(): T;
-	Resource(): T;
-	Task(): T;
+export interface DraftAssignmentCollections {
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.DraftAssignment>(): T;
+	Resource<T=PS.DraftProjectResource>(): T;
+	Task<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
-* DraftAssignmentQuery<T = any>
+* DraftAssignmentQuery
 **********************************************/
-export interface DraftAssignmentQuery<T = any> {
-	Owner(): T;
-	Parent(): T;
-	Resource(): T;
-	Task(): T;
+export interface DraftAssignmentQuery {
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.DraftAssignment>(): T;
+	Resource<T=PS.DraftProjectResource>(): T;
+	Task<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
-* DraftAssignmentMethods<T = any>
+* DraftAssignmentMethods
 **********************************************/
-export interface DraftAssignmentMethods<T = any> {
-	deleteObject(): T;
+export interface DraftAssignmentMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -426,19 +426,19 @@ export interface ProjectResource {
 }
 
 /*********************************************
-* ProjectResourceCollections<T = any>
+* ProjectResourceCollections
 **********************************************/
-export interface ProjectResourceCollections<T = any> {
-	CustomFields(): T;
-	EnterpriseResource(): T;
+export interface ProjectResourceCollections {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseResource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
-* ProjectResourceQuery<T = any>
+* ProjectResourceQuery
 **********************************************/
-export interface ProjectResourceQuery<T = any> {
-	CustomFields(): T;
-	EnterpriseResource(): T;
+export interface ProjectResourceQuery {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseResource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
@@ -475,46 +475,46 @@ export interface EnterpriseResource {
 }
 
 /*********************************************
-* EnterpriseResourceCollections<T = any>
+* EnterpriseResourceCollections
 **********************************************/
-export interface EnterpriseResourceCollections<T = any> {
-	Assignments(): T;
-	BaseCalendar(): T;
-	CostRateTables(): T;
-	CustomFields(): T;
-	DefaultAssignmentOwner(): T;
-	Engagements(): T;
-	UserPermissions(): T;
-	ResourceCalendarExceptions(): T;
-	Self(): T;
-	TimesheetManager(): T;
-	User(): T;
+export interface EnterpriseResourceCollections {
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
+	BaseCalendar<T=PS.Calendar>(): T;
+	CostRateTables<T=Array<PS.EnterpriseResourceCostRateTable>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
+	Engagements<T=Array<PS.ResourceEngagement>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	ResourceCalendarExceptions<T=Array<PS.CalendarException>>(): T;
+	Self<T=PS.EnterpriseResource>(): T;
+	TimesheetManager<T=SP.User>(): T;
+	User<T=SP.User>(): T;
 }
 
 /*********************************************
-* EnterpriseResourceQuery<T = any>
+* EnterpriseResourceQuery
 **********************************************/
-export interface EnterpriseResourceQuery<T = any> {
-	Assignments(): T;
-	BaseCalendar(): T;
-	CostRateTables(): T;
-	CustomFields(): T;
-	DefaultAssignmentOwner(): T;
-	Engagements(): T;
-	UserPermissions(): T;
-	ResourceCalendarExceptions(): T;
-	Self(): T;
-	TimesheetManager(): T;
-	User(): T;
+export interface EnterpriseResourceQuery {
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
+	BaseCalendar<T=PS.Calendar>(): T;
+	CostRateTables<T=Array<PS.EnterpriseResourceCostRateTable>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
+	Engagements<T=Array<PS.ResourceEngagement>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	ResourceCalendarExceptions<T=Array<PS.CalendarException>>(): T;
+	Self<T=PS.EnterpriseResource>(): T;
+	TimesheetManager<T=SP.User>(): T;
+	User<T=SP.User>(): T;
 }
 
 /*********************************************
-* EnterpriseResourceMethods<T = any>
+* EnterpriseResourceMethods
 **********************************************/
-export interface EnterpriseResourceMethods<T = any> {
-	deleteObject(): T;
-	forceCheckIn(): T;
-	updateClaimsAccount(newClaimsAccount?: string): T;
+export interface EnterpriseResourceMethods {
+	deleteObject<T=void>(): T;
+	forceCheckIn<T=void>(): T;
+	updateClaimsAccount<T=void>(newClaimsAccount?: string): T;
 }
 
 /*********************************************
@@ -556,33 +556,33 @@ export interface StatusAssignment {
 }
 
 /*********************************************
-* StatusAssignmentCollections<T = any>
+* StatusAssignmentCollections
 **********************************************/
-export interface StatusAssignmentCollections<T = any> {
-	CustomFields(): T;
-	History(): T;
-	Project(): T;
-	Resource(): T;
-	Task(): T;
+export interface StatusAssignmentCollections {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	History<T=Array<PS.StatusAssignmentHistoryLine>>(): T;
+	Project<T=PS.PublishedProject>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	Task<T=PS.StatusTask>(): T;
 }
 
 /*********************************************
-* StatusAssignmentQuery<T = any>
+* StatusAssignmentQuery
 **********************************************/
-export interface StatusAssignmentQuery<T = any> {
-	CustomFields(): T;
-	History(): T;
-	Project(): T;
-	Resource(): T;
-	Task(): T;
+export interface StatusAssignmentQuery {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	History<T=Array<PS.StatusAssignmentHistoryLine>>(): T;
+	Project<T=PS.PublishedProject>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	Task<T=PS.StatusTask>(): T;
 }
 
 /*********************************************
-* StatusAssignmentMethods<T = any>
+* StatusAssignmentMethods
 **********************************************/
-export interface StatusAssignmentMethods<T = any> {
-	deleteObject(): T;
-	submitStatusUpdates(comment?: string): T;
+export interface StatusAssignmentMethods {
+	deleteObject<T=void>(): T;
+	submitStatusUpdates<T=void>(comment?: string): T;
 }
 
 /*********************************************
@@ -597,17 +597,17 @@ export interface StatusAssignmentHistoryLine {
 }
 
 /*********************************************
-* StatusAssignmentHistoryLineCollections<T = any>
+* StatusAssignmentHistoryLineCollections
 **********************************************/
-export interface StatusAssignmentHistoryLineCollections<T = any> {
-	Author(): T;
+export interface StatusAssignmentHistoryLineCollections {
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
-* StatusAssignmentHistoryLineQuery<T = any>
+* StatusAssignmentHistoryLineQuery
 **********************************************/
-export interface StatusAssignmentHistoryLineQuery<T = any> {
-	Author(): T;
+export interface StatusAssignmentHistoryLineQuery {
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -653,43 +653,43 @@ export interface Project {
 }
 
 /*********************************************
-* ProjectCollections<T = any>
+* ProjectCollections
 **********************************************/
-export interface ProjectCollections<T = any> {
-	CheckedOutBy(): T;
-	CustomFields(): T;
-	Engagements(): T;
-	EnterpriseProjectType(): T;
-	UserPermissions(): T;
-	Phase(): T;
-	ProjectSummaryTask(): T;
-	QueueJobs(): T;
-	Stage(): T;
+export interface ProjectCollections {
+	CheckedOutBy<T=SP.User>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Engagements<T=Array<PS.ProjectEngagement>>(): T;
+	EnterpriseProjectType<T=PS.EnterpriseProjectType>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectSummaryTask<T=PS.ProjectSummaryTask>(): T;
+	QueueJobs<T=Array<PS.QueueJob>>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
-* ProjectQuery<T = any>
+* ProjectQuery
 **********************************************/
-export interface ProjectQuery<T = any> {
-	CheckedOutBy(): T;
-	CustomFields(): T;
-	Engagements(): T;
-	EnterpriseProjectType(): T;
-	UserPermissions(): T;
-	Phase(): T;
-	ProjectSummaryTask(): T;
-	QueueJobs(): T;
-	Stage(): T;
+export interface ProjectQuery {
+	CheckedOutBy<T=SP.User>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Engagements<T=Array<PS.ProjectEngagement>>(): T;
+	EnterpriseProjectType<T=PS.EnterpriseProjectType>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectSummaryTask<T=PS.ProjectSummaryTask>(): T;
+	QueueJobs<T=Array<PS.QueueJob>>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
-* ProjectMethods<T = any>
+* ProjectMethods
 **********************************************/
-export interface ProjectMethods<T = any> {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): T;
-	leaveProjectStage(): T;
-	readyToLeaveProjectStage(): T;
-	updateIdeaListItemStatus(status?: string): T;
+export interface ProjectMethods {
+	getResourcePlanByUrl<T=PS.ResourcePlan>(start?: string, end?: string, scale?: string): T;
+	leaveProjectStage<T=void>(): T;
+	readyToLeaveProjectStage<T=number>(): T;
+	updateIdeaListItemStatus<T=void>(status?: string): T;
 }
 
 /*********************************************
@@ -707,27 +707,27 @@ export interface Engagement {
 }
 
 /*********************************************
-* EngagementCollections<T = any>
+* EngagementCollections
 **********************************************/
-export interface EngagementCollections<T = any> {
-	Comments(): T;
-	ModifiedBy(): T;
-	Project(): T;
-	Resource(): T;
-	ReviewedBy(): T;
-	SubmittedBy(): T;
+export interface EngagementCollections {
+	Comments<T=Array<PS.EngagementComment>>(): T;
+	ModifiedBy<T=SP.User>(): T;
+	Project<T=PS.Project>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	ReviewedBy<T=SP.User>(): T;
+	SubmittedBy<T=SP.User>(): T;
 }
 
 /*********************************************
-* EngagementQuery<T = any>
+* EngagementQuery
 **********************************************/
-export interface EngagementQuery<T = any> {
-	Comments(): T;
-	ModifiedBy(): T;
-	Project(): T;
-	Resource(): T;
-	ReviewedBy(): T;
-	SubmittedBy(): T;
+export interface EngagementQuery {
+	Comments<T=Array<PS.EngagementComment>>(): T;
+	ModifiedBy<T=SP.User>(): T;
+	Project<T=PS.Project>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
+	ReviewedBy<T=SP.User>(): T;
+	SubmittedBy<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -740,17 +740,17 @@ export interface EngagementComment {
 }
 
 /*********************************************
-* EngagementCommentCollections<T = any>
+* EngagementCommentCollections
 **********************************************/
-export interface EngagementCommentCollections<T = any> {
-	Author(): T;
+export interface EngagementCommentCollections {
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
-* EngagementCommentQuery<T = any>
+* EngagementCommentQuery
 **********************************************/
-export interface EngagementCommentQuery<T = any> {
-	Author(): T;
+export interface EngagementCommentQuery {
+	Author<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -773,11 +773,11 @@ export interface ProjectEngagement extends PS.Engagement {
 }
 
 /*********************************************
-* ProjectEngagementMethods<T = any>
+* ProjectEngagementMethods
 **********************************************/
-export interface ProjectEngagementMethods<T = any> {
-	deleteObject(): T;
-	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): T;
+export interface ProjectEngagementMethods {
+	deleteObject<T=void>(): T;
+	getTimephasedByUrl<T=Array<PS.ProjectEngagementTimephasedPeriod>>(start?: string, end?: string, scale?: string, contourType?: string): T;
 }
 
 /*********************************************
@@ -804,27 +804,27 @@ export interface EnterpriseProjectType {
 }
 
 /*********************************************
-* EnterpriseProjectTypeCollections<T = any>
+* EnterpriseProjectTypeCollections
 **********************************************/
-export interface EnterpriseProjectTypeCollections<T = any> {
-	ProjectDetailPages(): T;
+export interface EnterpriseProjectTypeCollections {
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
 }
 
 /*********************************************
-* EnterpriseProjectTypeQuery<T = any>
+* EnterpriseProjectTypeQuery
 **********************************************/
-export interface EnterpriseProjectTypeQuery<T = any> {
-	ProjectDetailPages(): T;
+export interface EnterpriseProjectTypeQuery {
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
 }
 
 /*********************************************
-* EnterpriseProjectTypeMethods<T = any>
+* EnterpriseProjectTypeMethods
 **********************************************/
-export interface EnterpriseProjectTypeMethods<T = any> {
-	addDepartment(departmentValueGuid?: any): T;
-	deleteObject(): T;
-	removeDepartment(departmentValueGuid?: any): T;
-	updateCreatePDP(pdp?: PS.ProjectDetailPageCreationInformation): T;
+export interface EnterpriseProjectTypeMethods {
+	addDepartment<T=void>(departmentValueGuid?: any): T;
+	deleteObject<T=void>(): T;
+	removeDepartment<T=void>(departmentValueGuid?: any): T;
+	updateCreatePDP<T=void>(pdp?: PS.ProjectDetailPageCreationInformation): T;
 }
 
 /*********************************************
@@ -837,17 +837,17 @@ export interface ProjectDetailPage {
 }
 
 /*********************************************
-* ProjectDetailPageCollections<T = any>
+* ProjectDetailPageCollections
 **********************************************/
-export interface ProjectDetailPageCollections<T = any> {
-	Item(): T;
+export interface ProjectDetailPageCollections {
+	Item<T=SP.ListItem>(): T;
 }
 
 /*********************************************
-* ProjectDetailPageQuery<T = any>
+* ProjectDetailPageQuery
 **********************************************/
-export interface ProjectDetailPageQuery<T = any> {
-	Item(): T;
+export interface ProjectDetailPageQuery {
+	Item<T=SP.ListItem>(): T;
 }
 
 /*********************************************
@@ -868,24 +868,24 @@ export interface Phase {
 }
 
 /*********************************************
-* PhaseCollections<T = any>
+* PhaseCollections
 **********************************************/
-export interface PhaseCollections<T = any> {
-	Stages(): T;
+export interface PhaseCollections {
+	Stages<T=Array<PS.Stage>>(): T;
 }
 
 /*********************************************
-* PhaseQuery<T = any>
+* PhaseQuery
 **********************************************/
-export interface PhaseQuery<T = any> {
-	Stages(): T;
+export interface PhaseQuery {
+	Stages<T=Array<PS.Stage>>(): T;
 }
 
 /*********************************************
-* PhaseMethods<T = any>
+* PhaseMethods
 **********************************************/
-export interface PhaseMethods<T = any> {
-	deleteObject(): T;
+export interface PhaseMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -901,30 +901,30 @@ export interface Stage {
 }
 
 /*********************************************
-* StageCollections<T = any>
+* StageCollections
 **********************************************/
-export interface StageCollections<T = any> {
-	CustomFields(): T;
-	Phase(): T;
-	ProjectDetailPages(): T;
-	WorkflowStatusPage(): T;
+export interface StageCollections {
+	CustomFields<T=Array<PS.StageCustomField>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectDetailPages<T=Array<PS.StageDetailPage>>(): T;
+	WorkflowStatusPage<T=PS.ProjectDetailPage>(): T;
 }
 
 /*********************************************
-* StageQuery<T = any>
+* StageQuery
 **********************************************/
-export interface StageQuery<T = any> {
-	CustomFields(): T;
-	Phase(): T;
-	ProjectDetailPages(): T;
-	WorkflowStatusPage(): T;
+export interface StageQuery {
+	CustomFields<T=Array<PS.StageCustomField>>(): T;
+	Phase<T=PS.Phase>(): T;
+	ProjectDetailPages<T=Array<PS.StageDetailPage>>(): T;
+	WorkflowStatusPage<T=PS.ProjectDetailPage>(): T;
 }
 
 /*********************************************
-* StageMethods<T = any>
+* StageMethods
 **********************************************/
-export interface StageMethods<T = any> {
-	deleteObject(): T;
+export interface StageMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -938,24 +938,24 @@ export interface StageCustomField {
 }
 
 /*********************************************
-* StageCustomFieldCollections<T = any>
+* StageCustomFieldCollections
 **********************************************/
-export interface StageCustomFieldCollections<T = any> {
-	Stage(): T;
+export interface StageCustomFieldCollections {
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
-* StageCustomFieldQuery<T = any>
+* StageCustomFieldQuery
 **********************************************/
-export interface StageCustomFieldQuery<T = any> {
-	Stage(): T;
+export interface StageCustomFieldQuery {
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
-* StageCustomFieldMethods<T = any>
+* StageCustomFieldMethods
 **********************************************/
-export interface StageCustomFieldMethods<T = any> {
-	deleteObject(): T;
+export interface StageCustomFieldMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -969,26 +969,26 @@ export interface StageDetailPage {
 }
 
 /*********************************************
-* StageDetailPageCollections<T = any>
+* StageDetailPageCollections
 **********************************************/
-export interface StageDetailPageCollections<T = any> {
-	Page(): T;
-	Stage(): T;
+export interface StageDetailPageCollections {
+	Page<T=PS.ProjectDetailPage>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
-* StageDetailPageQuery<T = any>
+* StageDetailPageQuery
 **********************************************/
-export interface StageDetailPageQuery<T = any> {
-	Page(): T;
-	Stage(): T;
+export interface StageDetailPageQuery {
+	Page<T=PS.ProjectDetailPage>(): T;
+	Stage<T=PS.Stage>(): T;
 }
 
 /*********************************************
-* StageDetailPageMethods<T = any>
+* StageDetailPageMethods
 **********************************************/
-export interface StageDetailPageMethods<T = any> {
-	deleteObject(): T;
+export interface StageDetailPageMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1103,19 +1103,19 @@ export interface Task {
 }
 
 /*********************************************
-* TaskCollections<T = any>
+* TaskCollections
 **********************************************/
-export interface TaskCollections<T = any> {
-	CustomFields(): T;
-	SubProject(): T;
+export interface TaskCollections {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	SubProject<T=PS.PublishedProject>(): T;
 }
 
 /*********************************************
-* TaskQuery<T = any>
+* TaskQuery
 **********************************************/
-export interface TaskQuery<T = any> {
-	CustomFields(): T;
-	SubProject(): T;
+export interface TaskQuery {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	SubProject<T=PS.PublishedProject>(): T;
 }
 
 /*********************************************
@@ -1160,50 +1160,50 @@ export interface PublishedProject extends PS.Project {
 }
 
 /*********************************************
-* PublishedProjectCollections<T = any>
+* PublishedProjectCollections
 **********************************************/
-export interface PublishedProjectCollections<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	Draft(): T;
-	EntityLinks(): T;
-	IncludeCustomFields(): T;
-	Owner(): T;
-	ProjectResources(): T;
-	ProjectWorkflowInstance(): T;
-	TaskLinks(): T;
-	Tasks(): T;
+export interface PublishedProjectCollections {
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Draft<T=PS.DraftProject>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	IncludeCustomFields<T=PS.PublishedProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.PublishedProjectResource>>(): T;
+	ProjectWorkflowInstance<T=PS.ProjectWorkflowInstance>(): T;
+	TaskLinks<T=Array<PS.PublishedTaskLink>>(): T;
+	Tasks<T=Array<PS.PublishedTask>>(): T;
 }
 
 /*********************************************
-* PublishedProjectQuery<T = any>
+* PublishedProjectQuery
 **********************************************/
-export interface PublishedProjectQuery<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	Draft(): T;
-	EntityLinks(): T;
-	IncludeCustomFields(): T;
-	Owner(): T;
-	ProjectResources(): T;
-	ProjectWorkflowInstance(): T;
-	TaskLinks(): T;
-	Tasks(): T;
+export interface PublishedProjectQuery {
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Draft<T=PS.DraftProject>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	IncludeCustomFields<T=PS.PublishedProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.PublishedProjectResource>>(): T;
+	ProjectWorkflowInstance<T=PS.ProjectWorkflowInstance>(): T;
+	TaskLinks<T=Array<PS.PublishedTaskLink>>(): T;
+	Tasks<T=Array<PS.PublishedTask>>(): T;
 }
 
 /*********************************************
-* PublishedProjectMethods<T = any>
+* PublishedProjectMethods
 **********************************************/
-export interface PublishedProjectMethods<T = any> {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): T;
-	leaveProjectStage(): T;
-	readyToLeaveProjectStage(): T;
-	updateIdeaListItemStatus(status?: string): T;
-	checkOut(): T;
-	createProjectSite(siteName?: string): T;
-	deleteObject(): T;
-	submitToWorkflow(): T;
-	updateVisibilityCustomFields(): T;
+export interface PublishedProjectMethods {
+	getResourcePlanByUrl<T=PS.ResourcePlan>(start?: string, end?: string, scale?: string): T;
+	leaveProjectStage<T=void>(): T;
+	readyToLeaveProjectStage<T=number>(): T;
+	updateIdeaListItemStatus<T=void>(status?: string): T;
+	checkOut<T=PS.DraftProject>(): T;
+	createProjectSite<T=void>(siteName?: string): T;
+	deleteObject<T=PS.QueueJob>(): T;
+	submitToWorkflow<T=void>(): T;
+	updateVisibilityCustomFields<T=PS.QueueJob>(): T;
 }
 
 /*********************************************
@@ -1251,23 +1251,23 @@ export interface PublishedAssignment extends PS.Assignment {
 }
 
 /*********************************************
-* PublishedAssignmentCollections<T = any>
+* PublishedAssignmentCollections
 **********************************************/
-export interface PublishedAssignmentCollections<T = any> {
-	Owner(): T;
-	Parent(): T;
-	Resource(): T;
-	Task(): T;
+export interface PublishedAssignmentCollections {
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.PublishedAssignment>(): T;
+	Resource<T=PS.PublishedProjectResource>(): T;
+	Task<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
-* PublishedAssignmentQuery<T = any>
+* PublishedAssignmentQuery
 **********************************************/
-export interface PublishedAssignmentQuery<T = any> {
-	Owner(): T;
-	Parent(): T;
-	Resource(): T;
-	Task(): T;
+export interface PublishedAssignmentQuery {
+	Owner<T=SP.User>(): T;
+	Parent<T=PS.PublishedAssignment>(): T;
+	Resource<T=PS.PublishedProjectResource>(): T;
+	Task<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
@@ -1294,19 +1294,19 @@ export interface PublishedProjectResource extends PS.ProjectResource {
 }
 
 /*********************************************
-* PublishedProjectResourceCollections<T = any>
+* PublishedProjectResourceCollections
 **********************************************/
-export interface PublishedProjectResourceCollections<T = any> {
-	Assignments(): T;
-	DefaultAssignmentOwner(): T;
+export interface PublishedProjectResourceCollections {
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
-* PublishedProjectResourceQuery<T = any>
+* PublishedProjectResourceQuery
 **********************************************/
-export interface PublishedProjectResourceQuery<T = any> {
-	Assignments(): T;
-	DefaultAssignmentOwner(): T;
+export interface PublishedProjectResourceQuery {
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -1359,39 +1359,39 @@ export interface PublishedTask extends PS.Task {
 }
 
 /*********************************************
-* PublishedTaskCollections<T = any>
+* PublishedTaskCollections
 **********************************************/
-export interface PublishedTaskCollections<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	EntityLinks(): T;
-	Parent(): T;
-	Predecessors(): T;
-	StatusManager(): T;
-	Successors(): T;
-	TaskPlanLink(): T;
+export interface PublishedTaskCollections {
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	Parent<T=PS.PublishedTask>(): T;
+	Predecessors<T=Array<PS.PublishedTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.PublishedTaskLink>>(): T;
+	TaskPlanLink<T=PS.TaskPlanLink>(): T;
 }
 
 /*********************************************
-* PublishedTaskQuery<T = any>
+* PublishedTaskQuery
 **********************************************/
-export interface PublishedTaskQuery<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	EntityLinks(): T;
-	Parent(): T;
-	Predecessors(): T;
-	StatusManager(): T;
-	Successors(): T;
-	TaskPlanLink(): T;
+export interface PublishedTaskQuery {
+	Assignments<T=Array<PS.PublishedAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	EntityLinks<T=Array<PS.EntityLink>>(): T;
+	Parent<T=PS.PublishedTask>(): T;
+	Predecessors<T=Array<PS.PublishedTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.PublishedTaskLink>>(): T;
+	TaskPlanLink<T=PS.TaskPlanLink>(): T;
 }
 
 /*********************************************
-* PublishedTaskMethods<T = any>
+* PublishedTaskMethods
 **********************************************/
-export interface PublishedTaskMethods<T = any> {
-	addTaskPlanLink(parameters?: PS.TaskPlanLinksCreationInformation): T;
-	deleteTaskPlanLink(): T;
+export interface PublishedTaskMethods {
+	addTaskPlanLink<T=PS.TaskPlanLink>(parameters?: PS.TaskPlanLinksCreationInformation): T;
+	deleteTaskPlanLink<T=void>(): T;
 }
 
 /*********************************************
@@ -1406,10 +1406,10 @@ export interface EntityLink {
 }
 
 /*********************************************
-* EntityLinkMethods<T = any>
+* EntityLinkMethods
 **********************************************/
-export interface EntityLinkMethods<T = any> {
-	deleteObject(): T;
+export interface EntityLinkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1427,19 +1427,19 @@ export interface PublishedTaskLink extends PS.TaskLink {
 }
 
 /*********************************************
-* PublishedTaskLinkCollections<T = any>
+* PublishedTaskLinkCollections
 **********************************************/
-export interface PublishedTaskLinkCollections<T = any> {
-	End(): T;
-	Start(): T;
+export interface PublishedTaskLinkCollections {
+	End<T=PS.PublishedTask>(): T;
+	Start<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
-* PublishedTaskLinkQuery<T = any>
+* PublishedTaskLinkQuery
 **********************************************/
-export interface PublishedTaskLinkQuery<T = any> {
-	End(): T;
-	Start(): T;
+export interface PublishedTaskLinkQuery {
+	End<T=PS.PublishedTask>(): T;
+	Start<T=PS.PublishedTask>(): T;
 }
 
 /*********************************************
@@ -1455,10 +1455,10 @@ export interface TaskPlanLink {
 }
 
 /*********************************************
-* TaskPlanLinkMethods<T = any>
+* TaskPlanLinkMethods
 **********************************************/
-export interface TaskPlanLinkMethods<T = any> {
-	deleteObject(): T;
+export interface TaskPlanLinkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1501,46 +1501,46 @@ export interface DraftProject extends PS.Project {
 }
 
 /*********************************************
-* DraftProjectCollections<T = any>
+* DraftProjectCollections
 **********************************************/
-export interface DraftProjectCollections<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	IncludeCustomFields(): T;
-	Owner(): T;
-	ProjectResources(): T;
-	TaskLinks(): T;
-	Tasks(): T;
+export interface DraftProjectCollections {
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	IncludeCustomFields<T=PS.DraftProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.DraftProjectResource>>(): T;
+	TaskLinks<T=Array<PS.DraftTaskLink>>(): T;
+	Tasks<T=Array<PS.DraftTask>>(): T;
 }
 
 /*********************************************
-* DraftProjectQuery<T = any>
+* DraftProjectQuery
 **********************************************/
-export interface DraftProjectQuery<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	IncludeCustomFields(): T;
-	Owner(): T;
-	ProjectResources(): T;
-	TaskLinks(): T;
-	Tasks(): T;
+export interface DraftProjectQuery {
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	IncludeCustomFields<T=PS.DraftProject>(): T;
+	Owner<T=SP.User>(): T;
+	ProjectResources<T=Array<PS.DraftProjectResource>>(): T;
+	TaskLinks<T=Array<PS.DraftTaskLink>>(): T;
+	Tasks<T=Array<PS.DraftTask>>(): T;
 }
 
 /*********************************************
-* DraftProjectMethods<T = any>
+* DraftProjectMethods
 **********************************************/
-export interface DraftProjectMethods<T = any> {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): T;
-	leaveProjectStage(): T;
-	readyToLeaveProjectStage(): T;
-	updateIdeaListItemStatus(status?: string): T;
-	changeEnterpriseProjectType(enterpriseProjectTypeUid?: any): T;
-	checkIn(force?: boolean): T;
-	getChanges(token?: string): T;
-	publish(checkIn?: boolean): T;
-	update(): T;
-	updateCustomFields(customFieldDictionary?: Array<SP.KeyValue>): T;
-	validate(): T;
+export interface DraftProjectMethods {
+	getResourcePlanByUrl<T=PS.ResourcePlan>(start?: string, end?: string, scale?: string): T;
+	leaveProjectStage<T=void>(): T;
+	readyToLeaveProjectStage<T=number>(): T;
+	updateIdeaListItemStatus<T=void>(status?: string): T;
+	changeEnterpriseProjectType<T=void>(enterpriseProjectTypeUid?: any): T;
+	checkIn<T=PS.QueueJob>(force?: boolean): T;
+	getChanges<T=PS.DraftProject>(token?: string): T;
+	publish<T=PS.QueueJob>(checkIn?: boolean): T;
+	update<T=PS.QueueJob>(): T;
+	updateCustomFields<T=PS.QueueJob>(customFieldDictionary?: Array<SP.KeyValue>): T;
+	validate<T=void>(): T;
 }
 
 /*********************************************
@@ -1567,26 +1567,26 @@ export interface DraftProjectResource extends PS.ProjectResource {
 }
 
 /*********************************************
-* DraftProjectResourceCollections<T = any>
+* DraftProjectResourceCollections
 **********************************************/
-export interface DraftProjectResourceCollections<T = any> {
-	Assignments(): T;
-	DefaultAssignmentOwner(): T;
+export interface DraftProjectResourceCollections {
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
-* DraftProjectResourceQuery<T = any>
+* DraftProjectResourceQuery
 **********************************************/
-export interface DraftProjectResourceQuery<T = any> {
-	Assignments(): T;
-	DefaultAssignmentOwner(): T;
+export interface DraftProjectResourceQuery {
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	DefaultAssignmentOwner<T=SP.User>(): T;
 }
 
 /*********************************************
-* DraftProjectResourceMethods<T = any>
+* DraftProjectResourceMethods
 **********************************************/
-export interface DraftProjectResourceMethods<T = any> {
-	deleteObject(): T;
+export interface DraftProjectResourceMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1599,26 +1599,26 @@ export interface DraftTaskLink extends PS.TaskLink {
 }
 
 /*********************************************
-* DraftTaskLinkCollections<T = any>
+* DraftTaskLinkCollections
 **********************************************/
-export interface DraftTaskLinkCollections<T = any> {
-	End(): T;
-	Start(): T;
+export interface DraftTaskLinkCollections {
+	End<T=PS.DraftTask>(): T;
+	Start<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
-* DraftTaskLinkQuery<T = any>
+* DraftTaskLinkQuery
 **********************************************/
-export interface DraftTaskLinkQuery<T = any> {
-	End(): T;
-	Start(): T;
+export interface DraftTaskLinkQuery {
+	End<T=PS.DraftTask>(): T;
+	Start<T=PS.DraftTask>(): T;
 }
 
 /*********************************************
-* DraftTaskLinkMethods<T = any>
+* DraftTaskLinkMethods
 **********************************************/
-export interface DraftTaskLinkMethods<T = any> {
-	deleteObject(): T;
+export interface DraftTaskLinkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1673,34 +1673,34 @@ export interface DraftTask extends PS.Task {
 }
 
 /*********************************************
-* DraftTaskCollections<T = any>
+* DraftTaskCollections
 **********************************************/
-export interface DraftTaskCollections<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	Parent(): T;
-	Predecessors(): T;
-	StatusManager(): T;
-	Successors(): T;
+export interface DraftTaskCollections {
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Parent<T=PS.DraftTask>(): T;
+	Predecessors<T=Array<PS.DraftTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.DraftTaskLink>>(): T;
 }
 
 /*********************************************
-* DraftTaskQuery<T = any>
+* DraftTaskQuery
 **********************************************/
-export interface DraftTaskQuery<T = any> {
-	Assignments(): T;
-	Calendar(): T;
-	Parent(): T;
-	Predecessors(): T;
-	StatusManager(): T;
-	Successors(): T;
+export interface DraftTaskQuery {
+	Assignments<T=Array<PS.DraftAssignment>>(): T;
+	Calendar<T=PS.Calendar>(): T;
+	Parent<T=PS.DraftTask>(): T;
+	Predecessors<T=Array<PS.DraftTaskLink>>(): T;
+	StatusManager<T=SP.User>(): T;
+	Successors<T=Array<PS.DraftTaskLink>>(): T;
 }
 
 /*********************************************
-* DraftTaskMethods<T = any>
+* DraftTaskMethods
 **********************************************/
-export interface DraftTaskMethods<T = any> {
-	deleteObject(): T;
+export interface DraftTaskMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -1716,29 +1716,29 @@ export interface ProjectWorkflowInstance {
 }
 
 /*********************************************
-* ProjectWorkflowInstanceCollections<T = any>
+* ProjectWorkflowInstanceCollections
 **********************************************/
-export interface ProjectWorkflowInstanceCollections<T = any> {
-	Project(): T;
-	WorkflowInstance(): T;
-	WorkflowInstanceOwner(): T;
+export interface ProjectWorkflowInstanceCollections {
+	Project<T=PS.Project>(): T;
+	WorkflowInstance<T=SP.WorkflowServices.WorkflowInstance>(): T;
+	WorkflowInstanceOwner<T=SP.User>(): T;
 }
 
 /*********************************************
-* ProjectWorkflowInstanceQuery<T = any>
+* ProjectWorkflowInstanceQuery
 **********************************************/
-export interface ProjectWorkflowInstanceQuery<T = any> {
-	Project(): T;
-	WorkflowInstance(): T;
-	WorkflowInstanceOwner(): T;
+export interface ProjectWorkflowInstanceQuery {
+	Project<T=PS.Project>(): T;
+	WorkflowInstance<T=SP.WorkflowServices.WorkflowInstance>(): T;
+	WorkflowInstanceOwner<T=SP.User>(): T;
 }
 
 /*********************************************
-* ProjectWorkflowInstanceMethods<T = any>
+* ProjectWorkflowInstanceMethods
 **********************************************/
-export interface ProjectWorkflowInstanceMethods<T = any> {
-	restartWorkflow(): T;
-	restartWorkflowSkipToStage(stageId?: any): T;
+export interface ProjectWorkflowInstanceMethods {
+	restartWorkflow<T=SP.WorkflowServices.WorkflowInstance>(): T;
+	restartWorkflowSkipToStage<T=SP.WorkflowServices.WorkflowInstance>(stageId?: any): T;
 }
 
 /*********************************************
@@ -1781,26 +1781,26 @@ export interface QueueJob {
 }
 
 /*********************************************
-* QueueJobCollections<T = any>
+* QueueJobCollections
 **********************************************/
-export interface QueueJobCollections<T = any> {
-	Project(): T;
-	Submitter(): T;
+export interface QueueJobCollections {
+	Project<T=PS.Project>(): T;
+	Submitter<T=SP.User>(): T;
 }
 
 /*********************************************
-* QueueJobQuery<T = any>
+* QueueJobQuery
 **********************************************/
-export interface QueueJobQuery<T = any> {
-	Project(): T;
-	Submitter(): T;
+export interface QueueJobQuery {
+	Project<T=PS.Project>(): T;
+	Submitter<T=SP.User>(): T;
 }
 
 /*********************************************
-* QueueJobMethods<T = any>
+* QueueJobMethods
 **********************************************/
-export interface QueueJobMethods<T = any> {
-	cancel(): T;
+export interface QueueJobMethods {
+	cancel<T=void>(): T;
 }
 
 /*********************************************
@@ -1844,19 +1844,19 @@ export interface StatusTask {
 }
 
 /*********************************************
-* StatusTaskCollections<T = any>
+* StatusTaskCollections
 **********************************************/
-export interface StatusTaskCollections<T = any> {
-	CustomFields(): T;
-	StatusManager(): T;
+export interface StatusTaskCollections {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	StatusManager<T=SP.User>(): T;
 }
 
 /*********************************************
-* StatusTaskQuery<T = any>
+* StatusTaskQuery
 **********************************************/
-export interface StatusTaskQuery<T = any> {
-	CustomFields(): T;
-	StatusManager(): T;
+export interface StatusTaskQuery {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	StatusManager<T=SP.User>(): T;
 }
 
 /*********************************************
@@ -1867,17 +1867,17 @@ export interface EnterpriseResourceCostRateTable {
 }
 
 /*********************************************
-* EnterpriseResourceCostRateTableCollections<T = any>
+* EnterpriseResourceCostRateTableCollections
 **********************************************/
-export interface EnterpriseResourceCostRateTableCollections<T = any> {
-	CostRates(): T;
+export interface EnterpriseResourceCostRateTableCollections {
+	CostRates<T=Array<PS.EnterpriseResourceCostRate>>(): T;
 }
 
 /*********************************************
-* EnterpriseResourceCostRateTableQuery<T = any>
+* EnterpriseResourceCostRateTableQuery
 **********************************************/
-export interface EnterpriseResourceCostRateTableQuery<T = any> {
-	CostRates(): T;
+export interface EnterpriseResourceCostRateTableQuery {
+	CostRates<T=Array<PS.EnterpriseResourceCostRate>>(): T;
 }
 
 /*********************************************
@@ -1892,11 +1892,11 @@ export interface EnterpriseResourceCostRate {
 }
 
 /*********************************************
-* EnterpriseResourceCostRateMethods<T = any>
+* EnterpriseResourceCostRateMethods
 **********************************************/
-export interface EnterpriseResourceCostRateMethods<T = any> {
-	restfulDelete(): T;
-	rESTfulUpdate(): T;
+export interface EnterpriseResourceCostRateMethods {
+	restfulDelete<T=void>(): T;
+	rESTfulUpdate<T=void>(): T;
 }
 
 /*********************************************
@@ -1918,11 +1918,11 @@ export interface ResourceEngagement extends PS.Engagement {
 }
 
 /*********************************************
-* ResourceEngagementMethods<T = any>
+* ResourceEngagementMethods
 **********************************************/
-export interface ResourceEngagementMethods<T = any> {
-	deleteObject(): T;
-	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): T;
+export interface ResourceEngagementMethods {
+	deleteObject<T=void>(): T;
+	getTimephasedByUrl<T=Array<PS.ResourceEngagementTimephasedPeriod>>(start?: string, end?: string, scale?: string, contourType?: string): T;
 }
 
 /*********************************************
@@ -1954,23 +1954,23 @@ export interface EntityTypes {
 }
 
 /*********************************************
-* EntityTypesCollections<T = any>
+* EntityTypesCollections
 **********************************************/
-export interface EntityTypesCollections<T = any> {
-	AssignmentEntity(): T;
-	ProjectEntity(): T;
-	ResourceEntity(): T;
-	TaskEntity(): T;
+export interface EntityTypesCollections {
+	AssignmentEntity<T=PS.EntityType>(): T;
+	ProjectEntity<T=PS.EntityType>(): T;
+	ResourceEntity<T=PS.EntityType>(): T;
+	TaskEntity<T=PS.EntityType>(): T;
 }
 
 /*********************************************
-* EntityTypesQuery<T = any>
+* EntityTypesQuery
 **********************************************/
-export interface EntityTypesQuery<T = any> {
-	AssignmentEntity(): T;
-	ProjectEntity(): T;
-	ResourceEntity(): T;
-	TaskEntity(): T;
+export interface EntityTypesQuery {
+	AssignmentEntity<T=PS.EntityType>(): T;
+	ProjectEntity<T=PS.EntityType>(): T;
+	ResourceEntity<T=PS.EntityType>(): T;
+	TaskEntity<T=PS.EntityType>(): T;
 }
 
 /*********************************************
@@ -1997,24 +1997,24 @@ export interface EventHandler {
 }
 
 /*********************************************
-* EventHandlerCollections<T = any>
+* EventHandlerCollections
 **********************************************/
-export interface EventHandlerCollections<T = any> {
-	Event(): T;
+export interface EventHandlerCollections {
+	Event<T=PS.Event>(): T;
 }
 
 /*********************************************
-* EventHandlerQuery<T = any>
+* EventHandlerQuery
 **********************************************/
-export interface EventHandlerQuery<T = any> {
-	Event(): T;
+export interface EventHandlerQuery {
+	Event<T=PS.Event>(): T;
 }
 
 /*********************************************
-* EventHandlerMethods<T = any>
+* EventHandlerMethods
 **********************************************/
-export interface EventHandlerMethods<T = any> {
-	deleteObject(): T;
+export interface EventHandlerMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2025,10 +2025,10 @@ export interface LookupCost extends PS.LookupEntry {
 }
 
 /*********************************************
-* LookupCostMethods<T = any>
+* LookupCostMethods
 **********************************************/
-export interface LookupCostMethods<T = any> {
-	deleteObject(): T;
+export interface LookupCostMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2039,10 +2039,10 @@ export interface LookupDate extends PS.LookupEntry {
 }
 
 /*********************************************
-* LookupDateMethods<T = any>
+* LookupDateMethods
 **********************************************/
-export interface LookupDateMethods<T = any> {
-	deleteObject(): T;
+export interface LookupDateMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2055,10 +2055,10 @@ export interface LookupDuration extends PS.LookupEntry {
 }
 
 /*********************************************
-* LookupDurationMethods<T = any>
+* LookupDurationMethods
 **********************************************/
-export interface LookupDurationMethods<T = any> {
-	deleteObject(): T;
+export interface LookupDurationMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2069,10 +2069,10 @@ export interface LookupNumber extends PS.LookupEntry {
 }
 
 /*********************************************
-* LookupNumberMethods<T = any>
+* LookupNumberMethods
 **********************************************/
-export interface LookupNumberMethods<T = any> {
-	deleteObject(): T;
+export interface LookupNumberMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2085,24 +2085,24 @@ export interface LookupText extends PS.LookupEntry {
 }
 
 /*********************************************
-* LookupTextCollections<T = any>
+* LookupTextCollections
 **********************************************/
-export interface LookupTextCollections<T = any> {
-	Parent(): T;
+export interface LookupTextCollections {
+	Parent<T=PS.LookupText>(): T;
 }
 
 /*********************************************
-* LookupTextQuery<T = any>
+* LookupTextQuery
 **********************************************/
-export interface LookupTextQuery<T = any> {
-	Parent(): T;
+export interface LookupTextQuery {
+	Parent<T=PS.LookupText>(): T;
 }
 
 /*********************************************
-* LookupTextMethods<T = any>
+* LookupTextMethods
 **********************************************/
-export interface LookupTextMethods<T = any> {
-	deleteObject(): T;
+export interface LookupTextMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2134,28 +2134,28 @@ export interface PlanAssignment {
 }
 
 /*********************************************
-* PlanAssignmentCollections<T = any>
+* PlanAssignmentCollections
 **********************************************/
-export interface PlanAssignmentCollections<T = any> {
-	CustomFields(): T;
-	Intervals(): T;
-	Resource(): T;
+export interface PlanAssignmentCollections {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Intervals<T=Array<PS.PlanAssignmentInterval>>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
-* PlanAssignmentQuery<T = any>
+* PlanAssignmentQuery
 **********************************************/
-export interface PlanAssignmentQuery<T = any> {
-	CustomFields(): T;
-	Intervals(): T;
-	Resource(): T;
+export interface PlanAssignmentQuery {
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	Intervals<T=Array<PS.PlanAssignmentInterval>>(): T;
+	Resource<T=PS.EnterpriseResource>(): T;
 }
 
 /*********************************************
-* PlanAssignmentMethods<T = any>
+* PlanAssignmentMethods
 **********************************************/
-export interface PlanAssignmentMethods<T = any> {
-	deleteObject(): T;
+export interface PlanAssignmentMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2203,59 +2203,59 @@ export interface ProjectServer {
 }
 
 /*********************************************
-* ProjectServerCollections<T = any>
+* ProjectServerCollections
 **********************************************/
-export interface ProjectServerCollections<T = any> {
-	Calendars(): T;
-	CustomFields(): T;
-	EnterpriseProjectTypes(): T;
-	EnterpriseResources(): T;
-	EntityTypes(): T;
-	EventHandlers(): T;
-	Events(): T;
-	LookupTables(): T;
-	Phases(): T;
-	ProjectDetailPages(): T;
-	Projects(): T;
-	ProjectWorkflowInstances(): T;
-	Settings(): T;
-	Stages(): T;
-	TimeSheetPeriods(): T;
-	UserPermissions(): T;
-	WorkflowActivities(): T;
-	WorkflowDesigner(): T;
+export interface ProjectServerCollections {
+	Calendars<T=Array<PS.Calendar>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseProjectTypes<T=Array<PS.EnterpriseProjectType>>(): T;
+	EnterpriseResources<T=Array<PS.EnterpriseResource>>(): T;
+	EntityTypes<T=PS.EntityTypes>(): T;
+	EventHandlers<T=Array<PS.EventHandler>>(): T;
+	Events<T=Array<PS.Event>>(): T;
+	LookupTables<T=Array<PS.LookupTable>>(): T;
+	Phases<T=Array<PS.Phase>>(): T;
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
+	Projects<T=Array<PS.PublishedProject>>(): T;
+	ProjectWorkflowInstances<T=Array<PS.ProjectWorkflowInstance>>(): T;
+	Settings<T=PS.Settings>(): T;
+	Stages<T=Array<PS.Stage>>(): T;
+	TimeSheetPeriods<T=Array<PS.TimeSheetPeriod>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	WorkflowActivities<T=PS.WorkflowActivities>(): T;
+	WorkflowDesigner<T=PS.WorkflowDesigner>(): T;
 }
 
 /*********************************************
-* ProjectServerQuery<T = any>
+* ProjectServerQuery
 **********************************************/
-export interface ProjectServerQuery<T = any> {
-	Calendars(): T;
-	CustomFields(): T;
-	EnterpriseProjectTypes(): T;
-	EnterpriseResources(): T;
-	EntityTypes(): T;
-	EventHandlers(): T;
-	Events(): T;
-	LookupTables(): T;
-	Phases(): T;
-	ProjectDetailPages(): T;
-	Projects(): T;
-	ProjectWorkflowInstances(): T;
-	Settings(): T;
-	Stages(): T;
-	TimeSheetPeriods(): T;
-	UserPermissions(): T;
-	WorkflowActivities(): T;
-	WorkflowDesigner(): T;
+export interface ProjectServerQuery {
+	Calendars<T=Array<PS.Calendar>>(): T;
+	CustomFields<T=Array<PS.CustomField>>(): T;
+	EnterpriseProjectTypes<T=Array<PS.EnterpriseProjectType>>(): T;
+	EnterpriseResources<T=Array<PS.EnterpriseResource>>(): T;
+	EntityTypes<T=PS.EntityTypes>(): T;
+	EventHandlers<T=Array<PS.EventHandler>>(): T;
+	Events<T=Array<PS.Event>>(): T;
+	LookupTables<T=Array<PS.LookupTable>>(): T;
+	Phases<T=Array<PS.Phase>>(): T;
+	ProjectDetailPages<T=Array<PS.ProjectDetailPage>>(): T;
+	Projects<T=Array<PS.PublishedProject>>(): T;
+	ProjectWorkflowInstances<T=Array<PS.ProjectWorkflowInstance>>(): T;
+	Settings<T=PS.Settings>(): T;
+	Stages<T=Array<PS.Stage>>(): T;
+	TimeSheetPeriods<T=Array<PS.TimeSheetPeriod>>(): T;
+	UserPermissions<T=Array<PS.UserPermission>>(): T;
+	WorkflowActivities<T=PS.WorkflowActivities>(): T;
+	WorkflowDesigner<T=PS.WorkflowDesigner>(): T;
 }
 
 /*********************************************
-* ProjectServerMethods<T = any>
+* ProjectServerMethods
 **********************************************/
-export interface ProjectServerMethods<T = any> {
-	getDeletedPublishedAssignments(deletedDate?: any): T;
-	stopDelegation(): T;
+export interface ProjectServerMethods {
+	getDeletedPublishedAssignments<T=Array<PS.DeletedPublishedAssignment>>(deletedDate?: any): T;
+	stopDelegation<T=void>(): T;
 }
 
 /*********************************************
@@ -2282,24 +2282,24 @@ export interface TimeSheetPeriod {
 }
 
 /*********************************************
-* TimeSheetPeriodCollections<T = any>
+* TimeSheetPeriodCollections
 **********************************************/
-export interface TimeSheetPeriodCollections<T = any> {
-	TimeSheet(): T;
+export interface TimeSheetPeriodCollections {
+	TimeSheet<T=PS.TimeSheet>(): T;
 }
 
 /*********************************************
-* TimeSheetPeriodQuery<T = any>
+* TimeSheetPeriodQuery
 **********************************************/
-export interface TimeSheetPeriodQuery<T = any> {
-	TimeSheet(): T;
+export interface TimeSheetPeriodQuery {
+	TimeSheet<T=PS.TimeSheet>(): T;
 }
 
 /*********************************************
-* TimeSheetPeriodMethods<T = any>
+* TimeSheetPeriodMethods
 **********************************************/
-export interface TimeSheetPeriodMethods<T = any> {
-	createTimeSheet(): T;
+export interface TimeSheetPeriodMethods {
+	createTimeSheet<T=PS.TimeSheet>(): T;
 }
 
 /*********************************************
@@ -2332,33 +2332,33 @@ export interface TimeSheet {
 }
 
 /*********************************************
-* TimeSheetCollections<T = any>
+* TimeSheetCollections
 **********************************************/
-export interface TimeSheetCollections<T = any> {
-	Creator(): T;
-	Lines(): T;
-	Manager(): T;
-	Period(): T;
+export interface TimeSheetCollections {
+	Creator<T=SP.User>(): T;
+	Lines<T=Array<PS.TimeSheetLine>>(): T;
+	Manager<T=SP.User>(): T;
+	Period<T=PS.TimeSheetPeriod>(): T;
 }
 
 /*********************************************
-* TimeSheetQuery<T = any>
+* TimeSheetQuery
 **********************************************/
-export interface TimeSheetQuery<T = any> {
-	Creator(): T;
-	Lines(): T;
-	Manager(): T;
-	Period(): T;
+export interface TimeSheetQuery {
+	Creator<T=SP.User>(): T;
+	Lines<T=Array<PS.TimeSheetLine>>(): T;
+	Manager<T=SP.User>(): T;
+	Period<T=PS.TimeSheetPeriod>(): T;
 }
 
 /*********************************************
-* TimeSheetMethods<T = any>
+* TimeSheetMethods
 **********************************************/
-export interface TimeSheetMethods<T = any> {
-	deleteObject(): T;
-	recall(): T;
-	submit(comment?: string): T;
-	update(): T;
+export interface TimeSheetMethods {
+	deleteObject<T=void>(): T;
+	recall<T=void>(): T;
+	submit<T=void>(comment?: string): T;
+	update<T=void>(): T;
 }
 
 /*********************************************
@@ -2378,29 +2378,29 @@ export interface TimeSheetLine {
 }
 
 /*********************************************
-* TimeSheetLineCollections<T = any>
+* TimeSheetLineCollections
 **********************************************/
-export interface TimeSheetLineCollections<T = any> {
-	Assignment(): T;
-	TimeSheet(): T;
-	Work(): T;
+export interface TimeSheetLineCollections {
+	Assignment<T=PS.PublishedAssignment>(): T;
+	TimeSheet<T=PS.TimeSheet>(): T;
+	Work<T=Array<PS.TimeSheetWork>>(): T;
 }
 
 /*********************************************
-* TimeSheetLineQuery<T = any>
+* TimeSheetLineQuery
 **********************************************/
-export interface TimeSheetLineQuery<T = any> {
-	Assignment(): T;
-	TimeSheet(): T;
-	Work(): T;
+export interface TimeSheetLineQuery {
+	Assignment<T=PS.PublishedAssignment>(): T;
+	TimeSheet<T=PS.TimeSheet>(): T;
+	Work<T=Array<PS.TimeSheetWork>>(): T;
 }
 
 /*********************************************
-* TimeSheetLineMethods<T = any>
+* TimeSheetLineMethods
 **********************************************/
-export interface TimeSheetLineMethods<T = any> {
-	deleteObject(): T;
-	submit(comment?: string): T;
+export interface TimeSheetLineMethods {
+	deleteObject<T=void>(): T;
+	submit<T=void>(comment?: string): T;
 }
 
 /*********************************************
@@ -2429,10 +2429,10 @@ export interface TimeSheetWork {
 }
 
 /*********************************************
-* TimeSheetWorkMethods<T = any>
+* TimeSheetWorkMethods
 **********************************************/
-export interface TimeSheetWorkMethods<T = any> {
-	deleteObject(): T;
+export interface TimeSheetWorkMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2443,33 +2443,33 @@ export interface WorkflowActivities {
 }
 
 /*********************************************
-* WorkflowActivitiesMethods<T = any>
+* WorkflowActivitiesMethods
 **********************************************/
-export interface WorkflowActivitiesMethods<T = any> {
-	checkInWithJobId(projId?: any, jobId?: any, force?: boolean): T;
-	createProjectFromListItem(webId?: any, listId?: any, itemId?: number, eptId?: any): T;
-	enterProjectStage(projectId?: any, stageId?: any): T;
-	leaveProjectStage(projectId?: any): T;
-	publishSummaryWithJobId(projId?: any, jobId?: any): T;
-	publishWithJobId(projectId?: any, jobId?: any): T;
-	readBooleanProperty(projectId?: any, propertyId?: string): T;
-	readCurrencyProperty(projectId?: any, propertyId?: string): T;
-	readDateTimeProperty(projectId?: any, propertyId?: string): T;
-	readGuidProperty(projectId?: any, propertyId?: string): T;
-	readIntegerProperty(projectId?: any, propertyId?: string): T;
-	readNumberProperty(projectId?: any, propertyId?: string): T;
-	readProjectProperty(projectId?: any, propertyId?: string): T;
-	readTextProperty(projectId?: any, propertyId?: string): T;
-	readyToLeaveProjectStage(projectId?: any): T;
-	updateBooleanProperty(projectId?: any, propertyId?: string, value?: boolean): T;
-	updateCurrencyProperty(projectId?: any, propertyId?: string, value?: number): T;
-	updateDateTimeProperty(projectId?: any, propertyId?: string, value?: any): T;
-	updateGuidProperty(projectId?: any, propertyId?: string, value?: any): T;
-	updateIdeaListItemStatus(projectId?: any, status?: string): T;
-	updateIntegerProperty(projectId?: any, propertyId?: string, value?: number): T;
-	updateNumberProperty(projectId?: any, propertyId?: string, value?: number): T;
-	updateProjectStageStatus(projectId?: any, stageId?: any, statusInformation?: string, stageStatusValue?: number, append?: boolean): T;
-	updateTextProperty(projectId?: any, propertyId?: string, value?: string): T;
+export interface WorkflowActivitiesMethods {
+	checkInWithJobId<T=void>(projId?: any, jobId?: any, force?: boolean): T;
+	createProjectFromListItem<T=any>(webId?: any, listId?: any, itemId?: number, eptId?: any): T;
+	enterProjectStage<T=void>(projectId?: any, stageId?: any): T;
+	leaveProjectStage<T=void>(projectId?: any): T;
+	publishSummaryWithJobId<T=void>(projId?: any, jobId?: any): T;
+	publishWithJobId<T=void>(projectId?: any, jobId?: any): T;
+	readBooleanProperty<T=boolean>(projectId?: any, propertyId?: string): T;
+	readCurrencyProperty<T=number>(projectId?: any, propertyId?: string): T;
+	readDateTimeProperty<T=any>(projectId?: any, propertyId?: string): T;
+	readGuidProperty<T=any>(projectId?: any, propertyId?: string): T;
+	readIntegerProperty<T=number>(projectId?: any, propertyId?: string): T;
+	readNumberProperty<T=number>(projectId?: any, propertyId?: string): T;
+	readProjectProperty<T=string>(projectId?: any, propertyId?: string): T;
+	readTextProperty<T=string>(projectId?: any, propertyId?: string): T;
+	readyToLeaveProjectStage<T=number>(projectId?: any): T;
+	updateBooleanProperty<T=void>(projectId?: any, propertyId?: string, value?: boolean): T;
+	updateCurrencyProperty<T=void>(projectId?: any, propertyId?: string, value?: number): T;
+	updateDateTimeProperty<T=void>(projectId?: any, propertyId?: string, value?: any): T;
+	updateGuidProperty<T=void>(projectId?: any, propertyId?: string, value?: any): T;
+	updateIdeaListItemStatus<T=void>(projectId?: any, status?: string): T;
+	updateIntegerProperty<T=void>(projectId?: any, propertyId?: string, value?: number): T;
+	updateNumberProperty<T=void>(projectId?: any, propertyId?: string, value?: number): T;
+	updateProjectStageStatus<T=void>(projectId?: any, stageId?: any, statusInformation?: string, stageStatusValue?: number, append?: boolean): T;
+	updateTextProperty<T=void>(projectId?: any, propertyId?: string, value?: string): T;
 }
 
 /*********************************************
@@ -2480,17 +2480,17 @@ export interface WorkflowDesigner {
 }
 
 /*********************************************
-* WorkflowDesignerCollections<T = any>
+* WorkflowDesignerCollections
 **********************************************/
-export interface WorkflowDesignerCollections<T = any> {
-	Fields(): T;
+export interface WorkflowDesignerCollections {
+	Fields<T=Array<PS.WorkflowDesignerField>>(): T;
 }
 
 /*********************************************
-* WorkflowDesignerQuery<T = any>
+* WorkflowDesignerQuery
 **********************************************/
-export interface WorkflowDesignerQuery<T = any> {
-	Fields(): T;
+export interface WorkflowDesignerQuery {
+	Fields<T=Array<PS.WorkflowDesignerField>>(): T;
 }
 
 /*********************************************
@@ -2505,17 +2505,17 @@ export interface WorkflowDesignerField {
 }
 
 /*********************************************
-* WorkflowDesignerFieldCollections<T = any>
+* WorkflowDesignerFieldCollections
 **********************************************/
-export interface WorkflowDesignerFieldCollections<T = any> {
-	LookupEntries(): T;
+export interface WorkflowDesignerFieldCollections {
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
-* WorkflowDesignerFieldQuery<T = any>
+* WorkflowDesignerFieldQuery
 **********************************************/
-export interface WorkflowDesignerFieldQuery<T = any> {
-	LookupEntries(): T;
+export interface WorkflowDesignerFieldQuery {
+	LookupEntries<T=Array<PS.LookupEntry>>(): T;
 }
 
 /*********************************************
@@ -2526,10 +2526,10 @@ export interface ResourceCalendarException extends PS.CalendarException {
 }
 
 /*********************************************
-* ResourceCalendarExceptionMethods<T = any>
+* ResourceCalendarExceptionMethods
 **********************************************/
-export interface ResourceCalendarExceptionMethods<T = any> {
-	deleteObject(): T;
+export interface ResourceCalendarExceptionMethods {
+	deleteObject<T=void>(): T;
 }
 
 /*********************************************
@@ -2558,27 +2558,27 @@ export interface ResourcePlan {
 }
 
 /*********************************************
-* ResourcePlanCollections<T = any>
+* ResourcePlanCollections
 **********************************************/
-export interface ResourcePlanCollections<T = any> {
-	Assignments(): T;
+export interface ResourcePlanCollections {
+	Assignments<T=Array<PS.PlanAssignment>>(): T;
 }
 
 /*********************************************
-* ResourcePlanQuery<T = any>
+* ResourcePlanQuery
 **********************************************/
-export interface ResourcePlanQuery<T = any> {
-	Assignments(): T;
+export interface ResourcePlanQuery {
+	Assignments<T=Array<PS.PlanAssignment>>(): T;
 }
 
 /*********************************************
-* ResourcePlanMethods<T = any>
+* ResourcePlanMethods
 **********************************************/
-export interface ResourcePlanMethods<T = any> {
-	deleteObject(): T;
-	forceCheckIn(): T;
-	publish(): T;
-	update(): T;
+export interface ResourcePlanMethods {
+	deleteObject<T=PS.QueueJob>(): T;
+	forceCheckIn<T=PS.QueueJob>(): T;
+	publish<T=PS.QueueJob>(): T;
+	update<T=PS.QueueJob>(): T;
 }
 
 /*********************************************
@@ -2590,10 +2590,10 @@ export interface ServiceStatus {
 }
 
 /*********************************************
-* ServiceStatusMethods<T = any>
+* ServiceStatusMethods
 **********************************************/
-export interface ServiceStatusMethods<T = any> {
-	stopDelegation(): T;
+export interface ServiceStatusMethods {
+	stopDelegation<T=void>(): T;
 }
 
 /*********************************************
@@ -2605,15 +2605,15 @@ export interface TimePhase {
 }
 
 /*********************************************
-* TimePhaseCollections<T = any>
+* TimePhaseCollections
 **********************************************/
-export interface TimePhaseCollections<T = any> {
-	Assignments(): T;
+export interface TimePhaseCollections {
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
 }
 
 /*********************************************
-* TimePhaseQuery<T = any>
+* TimePhaseQuery
 **********************************************/
-export interface TimePhaseQuery<T = any> {
-	Assignments(): T;
+export interface TimePhaseQuery {
+	Assignments<T=Array<PS.StatusAssignment>>(): T;
 }

@@ -72,21 +72,21 @@ export interface AppPackagesListItem extends SP.ListItem {
 }
 
 /*********************************************
-* AppPackagesListItemCollections<T = any>
+* AppPackagesListItemCollections
 **********************************************/
-export interface AppPackagesListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface AppPackagesListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* AppPackagesListItemQuery<T = any>
+* AppPackagesListItemQuery
 **********************************************/
-export interface AppPackagesListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface AppPackagesListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -195,19 +195,19 @@ export interface UserInfoItem extends SP.ListItem {
 }
 
 /*********************************************
-* UserInfoItemCollections<T = any>
+* UserInfoItemCollections
 **********************************************/
-export interface UserInfoItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface UserInfoItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* UserInfoItemQuery<T = any>
+* UserInfoItemQuery
 **********************************************/
-export interface UserInfoItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface UserInfoItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -268,19 +268,19 @@ export interface OData__x005f_catalogs_x002f_appdataItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_appdataItemCollections<T = any>
+* OData__x005f_catalogs_x002f_appdataItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appdataItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface OData__x005f_catalogs_x002f_appdataItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_appdataItemQuery<T = any>
+* OData__x005f_catalogs_x002f_appdataItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appdataItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface OData__x005f_catalogs_x002f_appdataItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -345,21 +345,21 @@ export interface OData__x005f_catalogs_x002f_appfilesItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_appfilesItemCollections<T = any>
+* OData__x005f_catalogs_x002f_appfilesItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appfilesItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_appfilesItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_appfilesItemQuery<T = any>
+* OData__x005f_catalogs_x002f_appfilesItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appfilesItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_appfilesItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -427,19 +427,19 @@ export interface DraftAppsListItem extends SP.ListItem {
 }
 
 /*********************************************
-* DraftAppsListItemCollections<T = any>
+* DraftAppsListItemCollections
 **********************************************/
-export interface DraftAppsListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface DraftAppsListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* DraftAppsListItemQuery<T = any>
+* DraftAppsListItemQuery
 **********************************************/
-export interface DraftAppsListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface DraftAppsListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -506,19 +506,19 @@ export interface BinsListItem extends SP.ListItem {
 }
 
 /*********************************************
-* BinsListItemCollections<T = any>
+* BinsListItemCollections
 **********************************************/
-export interface BinsListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface BinsListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* BinsListItemQuery<T = any>
+* BinsListItemQuery
 **********************************************/
-export interface BinsListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface BinsListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -592,19 +592,19 @@ export interface Cache_x0020_ProfilesItem extends SP.ListItem {
 }
 
 /*********************************************
-* Cache_x0020_ProfilesItemCollections<T = any>
+* Cache_x0020_ProfilesItemCollections
 **********************************************/
-export interface Cache_x0020_ProfilesItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Cache_x0020_ProfilesItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Cache_x0020_ProfilesItemQuery<T = any>
+* Cache_x0020_ProfilesItemQuery
 **********************************************/
-export interface Cache_x0020_ProfilesItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Cache_x0020_ProfilesItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -671,19 +671,19 @@ export interface OData__x005f_catalogs_x002f_designItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_designItemCollections<T = any>
+* OData__x005f_catalogs_x002f_designItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_designItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface OData__x005f_catalogs_x002f_designItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_designItemQuery<T = any>
+* OData__x005f_catalogs_x002f_designItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_designItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface OData__x005f_catalogs_x002f_designItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -749,19 +749,19 @@ export interface Reports_x0020_ListItem extends SP.ListItem {
 }
 
 /*********************************************
-* Reports_x0020_ListItemCollections<T = any>
+* Reports_x0020_ListItemCollections
 **********************************************/
-export interface Reports_x0020_ListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Reports_x0020_ListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Reports_x0020_ListItemQuery<T = any>
+* Reports_x0020_ListItemQuery
 **********************************************/
-export interface Reports_x0020_ListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Reports_x0020_ListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -826,19 +826,19 @@ export interface ContentTypeSyncLogListItem extends SP.ListItem {
 }
 
 /*********************************************
-* ContentTypeSyncLogListItemCollections<T = any>
+* ContentTypeSyncLogListItemCollections
 **********************************************/
-export interface ContentTypeSyncLogListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface ContentTypeSyncLogListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* ContentTypeSyncLogListItemQuery<T = any>
+* ContentTypeSyncLogListItemQuery
 **********************************************/
-export interface ContentTypeSyncLogListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface ContentTypeSyncLogListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -906,21 +906,21 @@ export interface IWConvertedFormsItem extends SP.ListItem {
 }
 
 /*********************************************
-* IWConvertedFormsItemCollections<T = any>
+* IWConvertedFormsItemCollections
 **********************************************/
-export interface IWConvertedFormsItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface IWConvertedFormsItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* IWConvertedFormsItemQuery<T = any>
+* IWConvertedFormsItemQuery
 **********************************************/
-export interface IWConvertedFormsItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface IWConvertedFormsItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -988,19 +988,19 @@ export interface CTDemoListItem extends SP.ListItem {
 }
 
 /*********************************************
-* CTDemoListItemCollections<T = any>
+* CTDemoListItemCollections
 **********************************************/
-export interface CTDemoListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface CTDemoListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* CTDemoListItemQuery<T = any>
+* CTDemoListItemQuery
 **********************************************/
-export interface CTDemoListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface CTDemoListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1066,23 +1066,23 @@ export interface DevListItem extends SP.ListItem {
 }
 
 /*********************************************
-* DevListItemCollections<T = any>
+* DevListItemCollections
 **********************************************/
-export interface DevListItemCollections<T = any> {
-	User(): T;
-	Multi_x0020_Lookup(): T;
-	Author(): T;
-	Editor(): T;
+export interface DevListItemCollections {
+	User<T=SP.Data.UserInfoItem>(): T;
+	Multi_x0020_Lookup<T=Array<SP.Data.DevListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* DevListItemQuery<T = any>
+* DevListItemQuery
 **********************************************/
-export interface DevListItemQuery<T = any> {
-	User(): T;
-	Multi_x0020_Lookup(): T;
-	Author(): T;
-	Editor(): T;
+export interface DevListItemQuery {
+	User<T=SP.Data.UserInfoItem>(): T;
+	Multi_x0020_Lookup<T=Array<SP.Data.DevListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1148,19 +1148,19 @@ export interface DeviceChannelsItem extends SP.ListItem {
 }
 
 /*********************************************
-* DeviceChannelsItemCollections<T = any>
+* DeviceChannelsItemCollections
 **********************************************/
-export interface DeviceChannelsItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface DeviceChannelsItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* DeviceChannelsItemQuery<T = any>
+* DeviceChannelsItemQuery
 **********************************************/
-export interface DeviceChannelsItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface DeviceChannelsItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1236,21 +1236,21 @@ export interface DocSetItem extends SP.ListItem {
 }
 
 /*********************************************
-* DocSetItemCollections<T = any>
+* DocSetItemCollections
 **********************************************/
-export interface DocSetItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface DocSetItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* DocSetItemQuery<T = any>
+* DocSetItemQuery
 **********************************************/
-export interface DocSetItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface DocSetItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1331,23 +1331,23 @@ export interface Shared_x0020_DocumentsItem extends SP.ListItem {
 }
 
 /*********************************************
-* Shared_x0020_DocumentsItemCollections<T = any>
+* Shared_x0020_DocumentsItemCollections
 **********************************************/
-export interface Shared_x0020_DocumentsItemCollections<T = any> {
-	SharedWithUsers(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface Shared_x0020_DocumentsItemCollections {
+	SharedWithUsers<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Shared_x0020_DocumentsItemQuery<T = any>
+* Shared_x0020_DocumentsItemQuery
 **********************************************/
-export interface Shared_x0020_DocumentsItemQuery<T = any> {
-	SharedWithUsers(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface Shared_x0020_DocumentsItemQuery {
+	SharedWithUsers<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1434,21 +1434,21 @@ export interface Event_x0020_CalloutListItem extends SP.ListItem {
 }
 
 /*********************************************
-* Event_x0020_CalloutListItemCollections<T = any>
+* Event_x0020_CalloutListItemCollections
 **********************************************/
-export interface Event_x0020_CalloutListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	ParticipantsPicker(): T;
+export interface Event_x0020_CalloutListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	ParticipantsPicker<T=Array<SP.Data.UserInfoItem>>(): T;
 }
 
 /*********************************************
-* Event_x0020_CalloutListItemQuery<T = any>
+* Event_x0020_CalloutListItemQuery
 **********************************************/
-export interface Event_x0020_CalloutListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	ParticipantsPicker(): T;
+export interface Event_x0020_CalloutListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	ParticipantsPicker<T=Array<SP.Data.UserInfoItem>>(): T;
 }
 
 /*********************************************
@@ -1532,21 +1532,21 @@ export interface FormServerTemplatesItem extends SP.ListItem {
 }
 
 /*********************************************
-* FormServerTemplatesItemCollections<T = any>
+* FormServerTemplatesItemCollections
 **********************************************/
-export interface FormServerTemplatesItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface FormServerTemplatesItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* FormServerTemplatesItemQuery<T = any>
+* FormServerTemplatesItemQuery
 **********************************************/
-export interface FormServerTemplatesItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface FormServerTemplatesItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1614,19 +1614,19 @@ export interface GettingStartedListItem extends SP.ListItem {
 }
 
 /*********************************************
-* GettingStartedListItemCollections<T = any>
+* GettingStartedListItemCollections
 **********************************************/
-export interface GettingStartedListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface GettingStartedListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* GettingStartedListItemQuery<T = any>
+* GettingStartedListItemQuery
 **********************************************/
-export interface GettingStartedListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface GettingStartedListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1687,19 +1687,19 @@ export interface LargeListListItem extends SP.ListItem {
 }
 
 /*********************************************
-* LargeListListItemCollections<T = any>
+* LargeListListItemCollections
 **********************************************/
-export interface LargeListListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface LargeListListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* LargeListListItemQuery<T = any>
+* LargeListListItemQuery
 **********************************************/
-export interface LargeListListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface LargeListListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1775,21 +1775,21 @@ export interface OData__x005f_catalogs_x002f_ltItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_ltItemCollections<T = any>
+* OData__x005f_catalogs_x002f_ltItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_ltItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_ltItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_ltItemQuery<T = any>
+* OData__x005f_catalogs_x002f_ltItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_ltItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_ltItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1870,19 +1870,19 @@ export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem extends SP.
 }
 
 /*********************************************
-* Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections<T = any>
+* Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections
 **********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery<T = any>
+* Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery
 **********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -1947,21 +1947,21 @@ export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem extends SP.List
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections<T = any>
+* OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery<T = any>
+* OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2023,19 +2023,19 @@ export interface MapListItem extends SP.ListItem {
 }
 
 /*********************************************
-* MapListItemCollections<T = any>
+* MapListItemCollections
 **********************************************/
-export interface MapListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface MapListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* MapListItemQuery<T = any>
+* MapListItemQuery
 **********************************************/
-export interface MapListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface MapListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2134,27 +2134,27 @@ export interface OData__x005f_catalogs_x002f_masterpageItem extends SP.ListItem 
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_masterpageItemCollections<T = any>
+* OData__x005f_catalogs_x002f_masterpageItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_masterpageItemCollections<T = any> {
-	PublishingContact(): T;
-	AuthenticatedCacheProfile(): T;
-	AnonymousCacheProfile(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_masterpageItemCollections {
+	PublishingContact<T=SP.Data.UserInfoItem>(): T;
+	AuthenticatedCacheProfile<T=SP.Data.Cache_x0020_ProfilesItem>(): T;
+	AnonymousCacheProfile<T=SP.Data.Cache_x0020_ProfilesItem>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_masterpageItemQuery<T = any>
+* OData__x005f_catalogs_x002f_masterpageItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_masterpageItemQuery<T = any> {
-	PublishingContact(): T;
-	AuthenticatedCacheProfile(): T;
-	AnonymousCacheProfile(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_masterpageItemQuery {
+	PublishingContact<T=SP.Data.UserInfoItem>(): T;
+	AuthenticatedCacheProfile<T=SP.Data.Cache_x0020_ProfilesItem>(): T;
+	AnonymousCacheProfile<T=SP.Data.Cache_x0020_ProfilesItem>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2257,23 +2257,23 @@ export interface PublishedFeedListItem extends SP.ListItem {
 }
 
 /*********************************************
-* PublishedFeedListItemCollections<T = any>
+* PublishedFeedListItemCollections
 **********************************************/
-export interface PublishedFeedListItemCollections<T = any> {
-	LikedBy(): T;
-	TaxCatchAll(): T;
-	Author(): T;
-	Editor(): T;
+export interface PublishedFeedListItemCollections {
+	LikedBy<T=Array<SP.Data.UserInfoItem>>(): T;
+	TaxCatchAll<T=Array<SP.Data.TaxonomyHiddenListListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* PublishedFeedListItemQuery<T = any>
+* PublishedFeedListItemQuery
 **********************************************/
-export interface PublishedFeedListItemQuery<T = any> {
-	LikedBy(): T;
-	TaxCatchAll(): T;
-	Author(): T;
-	Editor(): T;
+export interface PublishedFeedListItemQuery {
+	LikedBy<T=Array<SP.Data.UserInfoItem>>(): T;
+	TaxCatchAll<T=Array<SP.Data.TaxonomyHiddenListListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2443,19 +2443,19 @@ export interface TaxonomyHiddenListListItem extends SP.ListItem {
 }
 
 /*********************************************
-* TaxonomyHiddenListListItemCollections<T = any>
+* TaxonomyHiddenListListItemCollections
 **********************************************/
-export interface TaxonomyHiddenListListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface TaxonomyHiddenListListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* TaxonomyHiddenListListItemQuery<T = any>
+* TaxonomyHiddenListListItemQuery
 **********************************************/
-export interface TaxonomyHiddenListListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface TaxonomyHiddenListListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2517,19 +2517,19 @@ export interface MyContactsListItem extends SP.ListItem {
 }
 
 /*********************************************
-* MyContactsListItemCollections<T = any>
+* MyContactsListItemCollections
 **********************************************/
-export interface MyContactsListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface MyContactsListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* MyContactsListItemQuery<T = any>
+* MyContactsListItemQuery
 **********************************************/
-export interface MyContactsListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface MyContactsListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2595,19 +2595,19 @@ export interface MyListListItem extends SP.ListItem {
 }
 
 /*********************************************
-* MyListListItemCollections<T = any>
+* MyListListItemCollections
 **********************************************/
-export interface MyListListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface MyListListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* MyListListItemQuery<T = any>
+* MyListListItemQuery
 **********************************************/
-export interface MyListListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface MyListListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2668,19 +2668,19 @@ export interface My_x0020_Lists_x0020_InfoListItem extends SP.ListItem {
 }
 
 /*********************************************
-* My_x0020_Lists_x0020_InfoListItemCollections<T = any>
+* My_x0020_Lists_x0020_InfoListItemCollections
 **********************************************/
-export interface My_x0020_Lists_x0020_InfoListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface My_x0020_Lists_x0020_InfoListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* My_x0020_Lists_x0020_InfoListItemQuery<T = any>
+* My_x0020_Lists_x0020_InfoListItemQuery
 **********************************************/
-export interface My_x0020_Lists_x0020_InfoListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface My_x0020_Lists_x0020_InfoListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2743,19 +2743,19 @@ export interface Notification_x0020_PagesItem extends SP.ListItem {
 }
 
 /*********************************************
-* Notification_x0020_PagesItemCollections<T = any>
+* Notification_x0020_PagesItemCollections
 **********************************************/
-export interface Notification_x0020_PagesItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Notification_x0020_PagesItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Notification_x0020_PagesItemQuery<T = any>
+* Notification_x0020_PagesItemQuery
 **********************************************/
-export interface Notification_x0020_PagesItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Notification_x0020_PagesItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2827,19 +2827,19 @@ export interface ProjectPolicyItemListItem extends SP.ListItem {
 }
 
 /*********************************************
-* ProjectPolicyItemListItemCollections<T = any>
+* ProjectPolicyItemListItemCollections
 **********************************************/
-export interface ProjectPolicyItemListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface ProjectPolicyItemListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* ProjectPolicyItemListItemQuery<T = any>
+* ProjectPolicyItemListItemQuery
 **********************************************/
-export interface ProjectPolicyItemListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface ProjectPolicyItemListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2903,19 +2903,19 @@ export interface Quick_x0020_Deploy_x0020_ItemsItem extends SP.ListItem {
 }
 
 /*********************************************
-* Quick_x0020_Deploy_x0020_ItemsItemCollections<T = any>
+* Quick_x0020_Deploy_x0020_ItemsItemCollections
 **********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Quick_x0020_Deploy_x0020_ItemsItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Quick_x0020_Deploy_x0020_ItemsItemQuery<T = any>
+* Quick_x0020_Deploy_x0020_ItemsItemQuery
 **********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Quick_x0020_Deploy_x0020_ItemsItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -2984,19 +2984,19 @@ export interface Relationships_x0020_ListItem extends SP.ListItem {
 }
 
 /*********************************************
-* Relationships_x0020_ListItemCollections<T = any>
+* Relationships_x0020_ListItemCollections
 **********************************************/
-export interface Relationships_x0020_ListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Relationships_x0020_ListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Relationships_x0020_ListItemQuery<T = any>
+* Relationships_x0020_ListItemQuery
 **********************************************/
-export interface Relationships_x0020_ListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Relationships_x0020_ListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3063,19 +3063,19 @@ export interface ReusableContentItem extends SP.ListItem {
 }
 
 /*********************************************
-* ReusableContentItemCollections<T = any>
+* ReusableContentItemCollections
 **********************************************/
-export interface ReusableContentItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface ReusableContentItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* ReusableContentItemQuery<T = any>
+* ReusableContentItemQuery
 **********************************************/
-export interface ReusableContentItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface ReusableContentItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3139,19 +3139,19 @@ export interface Sharing_x0020_LinksItem extends SP.ListItem {
 }
 
 /*********************************************
-* Sharing_x0020_LinksItemCollections<T = any>
+* Sharing_x0020_LinksItemCollections
 **********************************************/
-export interface Sharing_x0020_LinksItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Sharing_x0020_LinksItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Sharing_x0020_LinksItemQuery<T = any>
+* Sharing_x0020_LinksItemQuery
 **********************************************/
-export interface Sharing_x0020_LinksItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Sharing_x0020_LinksItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3228,23 +3228,23 @@ export interface SiteAssetsItem extends SP.ListItem {
 }
 
 /*********************************************
-* SiteAssetsItemCollections<T = any>
+* SiteAssetsItemCollections
 **********************************************/
-export interface SiteAssetsItemCollections<T = any> {
-	SharedWithUsers(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SiteAssetsItemCollections {
+	SharedWithUsers<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* SiteAssetsItemQuery<T = any>
+* SiteAssetsItemQuery
 **********************************************/
-export interface SiteAssetsItemQuery<T = any> {
-	SharedWithUsers(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SiteAssetsItemQuery {
+	SharedWithUsers<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3321,21 +3321,21 @@ export interface SiteCollectionDocumentsItem extends SP.ListItem {
 }
 
 /*********************************************
-* SiteCollectionDocumentsItemCollections<T = any>
+* SiteCollectionDocumentsItemCollections
 **********************************************/
-export interface SiteCollectionDocumentsItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SiteCollectionDocumentsItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* SiteCollectionDocumentsItemQuery<T = any>
+* SiteCollectionDocumentsItemQuery
 **********************************************/
-export interface SiteCollectionDocumentsItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SiteCollectionDocumentsItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3439,25 +3439,25 @@ export interface SiteCollectionImagesItem extends SP.ListItem {
 }
 
 /*********************************************
-* SiteCollectionImagesItemCollections<T = any>
+* SiteCollectionImagesItemCollections
 **********************************************/
-export interface SiteCollectionImagesItemCollections<T = any> {
-	VideoSetOwner(): T;
-	PeopleInMedia(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SiteCollectionImagesItemCollections {
+	VideoSetOwner<T=SP.Data.UserInfoItem>(): T;
+	PeopleInMedia<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* SiteCollectionImagesItemQuery<T = any>
+* SiteCollectionImagesItemQuery
 **********************************************/
-export interface SiteCollectionImagesItemQuery<T = any> {
-	VideoSetOwner(): T;
-	PeopleInMedia(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SiteCollectionImagesItemQuery {
+	VideoSetOwner<T=SP.Data.UserInfoItem>(): T;
+	PeopleInMedia<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3544,25 +3544,25 @@ export interface SitePagesItem extends SP.ListItem {
 }
 
 /*********************************************
-* SitePagesItemCollections<T = any>
+* SitePagesItemCollections
 **********************************************/
-export interface SitePagesItemCollections<T = any> {
-	SharedWithUsers(): T;
-	OData__AuthorByline(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SitePagesItemCollections {
+	SharedWithUsers<T=Array<SP.Data.UserInfoItem>>(): T;
+	OData__AuthorByline<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* SitePagesItemQuery<T = any>
+* SitePagesItemQuery
 **********************************************/
-export interface SitePagesItemQuery<T = any> {
-	SharedWithUsers(): T;
-	OData__AuthorByline(): T;
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface SitePagesItemQuery {
+	SharedWithUsers<T=Array<SP.Data.UserInfoItem>>(): T;
+	OData__AuthorByline<T=Array<SP.Data.UserInfoItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3633,21 +3633,21 @@ export interface OData__x005f_catalogs_x002f_solutionsItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_solutionsItemCollections<T = any>
+* OData__x005f_catalogs_x002f_solutionsItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_solutionsItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_solutionsItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_solutionsItemQuery<T = any>
+* OData__x005f_catalogs_x002f_solutionsItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_solutionsItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_solutionsItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3730,29 +3730,29 @@ export interface SPReactListItem extends SP.ListItem {
 }
 
 /*********************************************
-* SPReactListItemCollections<T = any>
+* SPReactListItemCollections
 **********************************************/
-export interface SPReactListItemCollections<T = any> {
-	TestUser(): T;
-	TestMultiUser(): T;
-	TestLookup(): T;
-	TestMultiLookup(): T;
-	TaxCatchAll(): T;
-	Author(): T;
-	Editor(): T;
+export interface SPReactListItemCollections {
+	TestUser<T=SP.Data.UserInfoItem>(): T;
+	TestMultiUser<T=Array<SP.Data.UserInfoItem>>(): T;
+	TestLookup<T=SP.Data.SPReactListItem>(): T;
+	TestMultiLookup<T=Array<SP.Data.SPReactListItem>>(): T;
+	TaxCatchAll<T=Array<SP.Data.TaxonomyHiddenListListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* SPReactListItemQuery<T = any>
+* SPReactListItemQuery
 **********************************************/
-export interface SPReactListItemQuery<T = any> {
-	TestUser(): T;
-	TestMultiUser(): T;
-	TestLookup(): T;
-	TestMultiLookup(): T;
-	TaxCatchAll(): T;
-	Author(): T;
-	Editor(): T;
+export interface SPReactListItemQuery {
+	TestUser<T=SP.Data.UserInfoItem>(): T;
+	TestMultiUser<T=Array<SP.Data.UserInfoItem>>(): T;
+	TestLookup<T=SP.Data.SPReactListItem>(): T;
+	TestMultiLookup<T=Array<SP.Data.SPReactListItem>>(): T;
+	TaxCatchAll<T=Array<SP.Data.TaxonomyHiddenListListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3821,21 +3821,21 @@ export interface SPRESTListDemoListItem extends SP.ListItem {
 }
 
 /*********************************************
-* SPRESTListDemoListItemCollections<T = any>
+* SPRESTListDemoListItemCollections
 **********************************************/
-export interface SPRESTListDemoListItemCollections<T = any> {
-	DemoUser(): T;
-	Author(): T;
-	Editor(): T;
+export interface SPRESTListDemoListItemCollections {
+	DemoUser<T=SP.Data.UserInfoItem>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* SPRESTListDemoListItemQuery<T = any>
+* SPRESTListDemoListItemQuery
 **********************************************/
-export interface SPRESTListDemoListItemQuery<T = any> {
-	DemoUser(): T;
-	Author(): T;
-	Editor(): T;
+export interface SPRESTListDemoListItemQuery {
+	DemoUser<T=SP.Data.UserInfoItem>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3910,21 +3910,21 @@ export interface Style_x0020_LibraryItem extends SP.ListItem {
 }
 
 /*********************************************
-* Style_x0020_LibraryItemCollections<T = any>
+* Style_x0020_LibraryItemCollections
 **********************************************/
-export interface Style_x0020_LibraryItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface Style_x0020_LibraryItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Style_x0020_LibraryItemQuery<T = any>
+* Style_x0020_LibraryItemQuery
 **********************************************/
-export interface Style_x0020_LibraryItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface Style_x0020_LibraryItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -3987,19 +3987,19 @@ export interface PublishedLinksItem extends SP.ListItem {
 }
 
 /*********************************************
-* PublishedLinksItemCollections<T = any>
+* PublishedLinksItemCollections
 **********************************************/
-export interface PublishedLinksItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface PublishedLinksItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* PublishedLinksItemQuery<T = any>
+* PublishedLinksItemQuery
 **********************************************/
-export interface PublishedLinksItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface PublishedLinksItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4065,23 +4065,23 @@ export interface TeamMembersListItem extends SP.ListItem {
 }
 
 /*********************************************
-* TeamMembersListItemCollections<T = any>
+* TeamMembersListItemCollections
 **********************************************/
-export interface TeamMembersListItemCollections<T = any> {
-	TeamMember(): T;
-	TaxCatchAll(): T;
-	Author(): T;
-	Editor(): T;
+export interface TeamMembersListItemCollections {
+	TeamMember<T=SP.Data.UserInfoItem>(): T;
+	TaxCatchAll<T=Array<SP.Data.TaxonomyHiddenListListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* TeamMembersListItemQuery<T = any>
+* TeamMembersListItemQuery
 **********************************************/
-export interface TeamMembersListItemQuery<T = any> {
-	TeamMember(): T;
-	TaxCatchAll(): T;
-	Author(): T;
-	Editor(): T;
+export interface TeamMembersListItemQuery {
+	TeamMember<T=SP.Data.UserInfoItem>(): T;
+	TaxCatchAll<T=Array<SP.Data.TaxonomyHiddenListListItem>>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4142,19 +4142,19 @@ export interface TestListItem extends SP.ListItem {
 }
 
 /*********************************************
-* TestListItemCollections<T = any>
+* TestListItemCollections
 **********************************************/
-export interface TestListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface TestListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* TestListItemQuery<T = any>
+* TestListItemQuery
 **********************************************/
-export interface TestListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface TestListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4217,19 +4217,19 @@ export interface TestProjectListItem extends SP.ListItem {
 }
 
 /*********************************************
-* TestProjectListItemCollections<T = any>
+* TestProjectListItemCollections
 **********************************************/
-export interface TestProjectListItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface TestProjectListItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* TestProjectListItemQuery<T = any>
+* TestProjectListItemQuery
 **********************************************/
-export interface TestProjectListItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface TestProjectListItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4296,21 +4296,21 @@ export interface OData__x005f_catalogs_x002f_themeItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_themeItemCollections<T = any>
+* OData__x005f_catalogs_x002f_themeItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_themeItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_themeItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_themeItemQuery<T = any>
+* OData__x005f_catalogs_x002f_themeItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_themeItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_themeItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4388,21 +4388,21 @@ export interface Translation_x0020_PackagesItem extends SP.ListItem {
 }
 
 /*********************************************
-* Translation_x0020_PackagesItemCollections<T = any>
+* Translation_x0020_PackagesItemCollections
 **********************************************/
-export interface Translation_x0020_PackagesItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface Translation_x0020_PackagesItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Translation_x0020_PackagesItemQuery<T = any>
+* Translation_x0020_PackagesItemQuery
 **********************************************/
-export interface Translation_x0020_PackagesItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface Translation_x0020_PackagesItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4488,23 +4488,23 @@ export interface Translation_x0020_StatusItem extends SP.ListItem {
 }
 
 /*********************************************
-* Translation_x0020_StatusItemCollections<T = any>
+* Translation_x0020_StatusItemCollections
 **********************************************/
-export interface Translation_x0020_StatusItemCollections<T = any> {
-	TranslationStateExportRequesting(): T;
-	TranslationStateImportRequesting(): T;
-	Author(): T;
-	Editor(): T;
+export interface Translation_x0020_StatusItemCollections {
+	TranslationStateExportRequesting<T=SP.Data.UserInfoItem>(): T;
+	TranslationStateImportRequesting<T=SP.Data.UserInfoItem>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Translation_x0020_StatusItemQuery<T = any>
+* Translation_x0020_StatusItemQuery
 **********************************************/
-export interface Translation_x0020_StatusItemQuery<T = any> {
-	TranslationStateExportRequesting(): T;
-	TranslationStateImportRequesting(): T;
-	Author(): T;
-	Editor(): T;
+export interface Translation_x0020_StatusItemQuery {
+	TranslationStateExportRequesting<T=SP.Data.UserInfoItem>(): T;
+	TranslationStateImportRequesting<T=SP.Data.UserInfoItem>(): T;
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4578,19 +4578,19 @@ export interface Variation_x0020_LabelsItem extends SP.ListItem {
 }
 
 /*********************************************
-* Variation_x0020_LabelsItemCollections<T = any>
+* Variation_x0020_LabelsItemCollections
 **********************************************/
-export interface Variation_x0020_LabelsItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Variation_x0020_LabelsItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* Variation_x0020_LabelsItemQuery<T = any>
+* Variation_x0020_LabelsItemQuery
 **********************************************/
-export interface Variation_x0020_LabelsItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
+export interface Variation_x0020_LabelsItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4664,21 +4664,21 @@ export interface OData__x005f_catalogs_x002f_wpItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_wpItemCollections<T = any>
+* OData__x005f_catalogs_x002f_wpItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wpItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_wpItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_wpItemQuery<T = any>
+* OData__x005f_catalogs_x002f_wpItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wpItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_wpItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4750,21 +4750,21 @@ export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_wfpubItemCollections<T = any>
+* OData__x005f_catalogs_x002f_wfpubItemCollections
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wfpubItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_wfpubItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* OData__x005f_catalogs_x002f_wfpubItemQuery<T = any>
+* OData__x005f_catalogs_x002f_wfpubItemQuery
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wfpubItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	CheckoutUser(): T;
+export interface OData__x005f_catalogs_x002f_wfpubItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	CheckoutUser<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
@@ -4837,23 +4837,23 @@ export interface WorkflowTasksItem extends SP.ListItem {
 }
 
 /*********************************************
-* WorkflowTasksItemCollections<T = any>
+* WorkflowTasksItemCollections
 **********************************************/
-export interface WorkflowTasksItemCollections<T = any> {
-	Author(): T;
-	Editor(): T;
-	Predecessors(): T;
-	AssignedTo(): T;
-	TaskGroup(): T;
+export interface WorkflowTasksItemCollections {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	Predecessors<T=Array<SP.Data.WorkflowTasksItem>>(): T;
+	AssignedTo<T=SP.Data.UserInfoItem>(): T;
+	TaskGroup<T=SP.Data.UserInfoItem>(): T;
 }
 
 /*********************************************
-* WorkflowTasksItemQuery<T = any>
+* WorkflowTasksItemQuery
 **********************************************/
-export interface WorkflowTasksItemQuery<T = any> {
-	Author(): T;
-	Editor(): T;
-	Predecessors(): T;
-	AssignedTo(): T;
-	TaskGroup(): T;
+export interface WorkflowTasksItemQuery {
+	Author<T=SP.Data.UserInfoItem>(): T;
+	Editor<T=SP.Data.UserInfoItem>(): T;
+	Predecessors<T=Array<SP.Data.WorkflowTasksItem>>(): T;
+	AssignedTo<T=SP.Data.UserInfoItem>(): T;
+	TaskGroup<T=SP.Data.UserInfoItem>(): T;
 }

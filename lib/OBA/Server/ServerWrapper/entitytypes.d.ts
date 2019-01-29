@@ -8,10 +8,10 @@ export interface Diagnostics {
 }
 
 /*********************************************
-* DiagnosticsMethods<T = any>
+* DiagnosticsMethods
 **********************************************/
-export interface DiagnosticsMethods<T = any> {
-	status(): T;
+export interface DiagnosticsMethods {
+	status<T=string>(): T;
 }
 
 /*********************************************
@@ -22,10 +22,10 @@ export interface Reporting {
 }
 
 /*********************************************
-* ReportingMethods<T = any>
+* ReportingMethods
 **********************************************/
-export interface ReportingMethods<T = any> {
-	publishReport(odataPostBodyStm?: any): T;
+export interface ReportingMethods {
+	publishReport<T=void>(odataPostBodyStm?: any): T;
 }
 
 /*********************************************
@@ -36,8 +36,8 @@ export interface Taskflow {
 }
 
 /*********************************************
-* TaskflowMethods<T = any>
+* TaskflowMethods
 **********************************************/
-export interface TaskflowMethods<T = any> {
-	processTask(requestBodyStream?: any): T;
+export interface TaskflowMethods {
+	processTask<T=void>(requestBodyStream?: any): T;
 }
