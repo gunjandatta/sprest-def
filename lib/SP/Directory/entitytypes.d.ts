@@ -1,29 +1,52 @@
+import { IBaseExecution } from "../../";
+import { IBaseCollection } from "../../";
 import { SP } from "../../";
+
+/*********************************************
+* IDirectorySession
+**********************************************/
+export interface IDirectorySession extends DirectorySessionProps,DirectorySessionMethods,IBaseExecution<DirectorySession> {
+
+}
 
 /*********************************************
 * DirectorySession
 **********************************************/
-export interface DirectorySession {
+export interface DirectorySession extends DirectorySessionProps, DirectorySessionMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DirectorySessionProps
+**********************************************/
+export interface DirectorySessionProps {
+
 }
 
 /*********************************************
 * DirectorySessionMethods
 **********************************************/
 export interface DirectorySessionMethods {
-	getGraphUser<T=SP.Directory.User>(principalName?: string): T;
-	getSharePointDataForUser<T=SP.Directory.User>(userId?: any): T;
-	group<T=SP.Directory.Group>(groupId?: any, alias?: string): T;
-	joinGroup<T=number>(groupId?: any): T;
-	me<T=SP.Directory.User>(): T;
-	user<T=SP.Directory.User>(id?: any, principalName?: string): T;
-	validateGroupName<T=SP.Directory.GroupNameValidationResult>(displayName?: string, alias?: string): T;
+	getGraphUser<T=SP.Directory.User>(principalName?: string): IBaseExecution<T>;
+	getSharePointDataForUser<T=SP.Directory.User>(userId?: any): IBaseExecution<T>;
+	group<T=SP.Directory.Group>(groupId?: any, alias?: string): IBaseExecution<T>;
+	joinGroup<T=number>(groupId?: any): IBaseExecution<T>;
+	me<T=SP.Directory.User>(): IBaseExecution<T>;
+	user<T=SP.Directory.User>(id?: any, principalName?: string): IBaseExecution<T>;
+	validateGroupName<T=SP.Directory.GroupNameValidationResult>(displayName?: string, alias?: string): IBaseExecution<T>;
+}
+
+/*********************************************
+* IGroup
+**********************************************/
+export interface IGroup extends GroupProps,GroupMethods,IBaseExecution<Group> {
+
 }
 
 /*********************************************
 * Group
 **********************************************/
-export interface Group {
+export interface Group extends GroupProps, GroupMethods {
 	alias?: string;
 	allowToAddGuests?: boolean;
 	calendarUrl?: string;
@@ -47,32 +70,31 @@ export interface Group {
 }
 
 /*********************************************
-* GroupCollections
+* GroupProps
 **********************************************/
-export interface GroupCollections {
-	members<T=Array<SP.Directory.User>>(): T;
-	owners<T=Array<SP.Directory.User>>(): T;
-}
-
-/*********************************************
-* GroupQuery
-**********************************************/
-export interface GroupQuery {
-	members<T=Array<SP.Directory.User>>(): T;
-	owners<T=Array<SP.Directory.User>>(): T;
+export interface GroupProps {
+	members<T=SP.Directory.User>(): IBaseCollection<T>;
+	owners<T=SP.Directory.User>(): IBaseCollection<T>;
 }
 
 /*********************************************
 * GroupMethods
 **********************************************/
 export interface GroupMethods {
-	delete<T=void>(): T;
+	delete<T=any>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* IUser
+**********************************************/
+export interface IUser extends UserProps,UserMethods,IBaseExecution<User> {
+
 }
 
 /*********************************************
 * User
 **********************************************/
-export interface User {
+export interface User extends UserProps, UserMethods {
 	aboutMe?: string;
 	accountEnabled?: boolean;
 	alias?: string;
@@ -116,28 +138,19 @@ export interface User {
 }
 
 /*********************************************
-* UserCollections
+* UserProps
 **********************************************/
-export interface UserCollections {
-	membership<T=Array<SP.Directory.Group>>(): T;
-	ownership<T=Array<SP.Directory.Group>>(): T;
-	rankedMembership<T=Array<SP.Directory.Group>>(): T;
-}
-
-/*********************************************
-* UserQuery
-**********************************************/
-export interface UserQuery {
-	membership<T=Array<SP.Directory.Group>>(): T;
-	ownership<T=Array<SP.Directory.Group>>(): T;
-	rankedMembership<T=Array<SP.Directory.Group>>(): T;
+export interface UserProps {
+	membership<T=SP.Directory.Group>(): IBaseCollection<T>;
+	ownership<T=SP.Directory.Group>(): IBaseCollection<T>;
+	rankedMembership<T=SP.Directory.Group>(): IBaseCollection<T>;
 }
 
 /*********************************************
 * UserMethods
 **********************************************/
 export interface UserMethods {
-	getUserLinks<T=Array<SP.Directory.Link>>(linkName?: string, groupType?: number): T;
+	getUserLinks<T=Array<SP.Directory.Link>>(linkName?: string, groupType?: number): IBaseExecution<T>;
 }
 
 /*********************************************
@@ -150,24 +163,31 @@ export interface Link {
 }
 
 /*********************************************
+* IGroupAndUserStatus
+**********************************************/
+export interface IGroupAndUserStatus extends GroupAndUserStatusProps,GroupAndUserStatusMethods,IBaseExecution<GroupAndUserStatus> {
+
+}
+
+/*********************************************
 * GroupAndUserStatus
 **********************************************/
-export interface GroupAndUserStatus {
+export interface GroupAndUserStatus extends GroupAndUserStatusProps, GroupAndUserStatusMethods {
 	Status?: number;
 }
 
 /*********************************************
-* GroupAndUserStatusCollections
+* GroupAndUserStatusProps
 **********************************************/
-export interface GroupAndUserStatusCollections {
-	Group<T=SP.Directory.Group>(): T;
+export interface GroupAndUserStatusProps {
+	Group<T=SP.Directory.Group>(): IBaseExecution<T>;
 }
 
 /*********************************************
-* GroupAndUserStatusQuery
+* GroupAndUserStatusMethods
 **********************************************/
-export interface GroupAndUserStatusQuery {
-	Group<T=SP.Directory.Group>(): T;
+export interface GroupAndUserStatusMethods {
+
 }
 
 /*********************************************
@@ -192,4 +212,62 @@ export interface MembersInfo {
 export interface MyGroupsResult {
 	HasNext?: boolean;
 	HasPrev?: boolean;
+}
+
+/*********************************************
+* IGroupCollection
+**********************************************/
+export interface IGroupCollection extends GroupCollectionProps,GroupCollectionMethods,IBaseExecution<GroupCollection> {
+
+}
+
+/*********************************************
+* GroupCollection
+**********************************************/
+export interface GroupCollection extends GroupCollectionProps, GroupCollectionMethods {
+
+}
+
+/*********************************************
+* GroupCollectionProps
+**********************************************/
+export interface GroupCollectionProps {
+
+}
+
+/*********************************************
+* GroupCollectionMethods
+**********************************************/
+export interface GroupCollectionMethods {
+	add<T=any>(objectId?: any): IBaseExecution<T>;
+	remove<T=any>(objectId?: any): IBaseExecution<T>;
+}
+
+/*********************************************
+* IUserCollection
+**********************************************/
+export interface IUserCollection extends UserCollectionProps,UserCollectionMethods,IBaseExecution<UserCollection> {
+
+}
+
+/*********************************************
+* UserCollection
+**********************************************/
+export interface UserCollection extends UserCollectionProps, UserCollectionMethods {
+
+}
+
+/*********************************************
+* UserCollectionProps
+**********************************************/
+export interface UserCollectionProps {
+
+}
+
+/*********************************************
+* UserCollectionMethods
+**********************************************/
+export interface UserCollectionMethods {
+	add<T=any>(objectId?: any, principalName?: string): IBaseExecution<T>;
+	remove<T=any>(objectId?: any): IBaseExecution<T>;
 }

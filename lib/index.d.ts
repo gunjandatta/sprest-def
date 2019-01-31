@@ -10,3 +10,4 @@ import * as SP from "./SP";
 export { SP }
 import * as SPO from "./SPO";
 export { SPO }
+export * from "./base"

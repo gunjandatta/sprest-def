@@ -1,9 +1,17 @@
+import { IBaseExecution } from "../../";
 import { SP } from "../../";
+
+/*********************************************
+* IWorkflowAssociation
+**********************************************/
+export interface IWorkflowAssociation extends WorkflowAssociationProps,WorkflowAssociationMethods,IBaseExecution<WorkflowAssociation> {
+
+}
 
 /*********************************************
 * WorkflowAssociation
 **********************************************/
-export interface WorkflowAssociation {
+export interface WorkflowAssociation extends WorkflowAssociationProps, WorkflowAssociationMethods {
 	AllowManual?: boolean;
 	AssociationData?: string;
 	AutoStartChange?: boolean;
@@ -25,11 +33,18 @@ export interface WorkflowAssociation {
 }
 
 /*********************************************
+* WorkflowAssociationProps
+**********************************************/
+export interface WorkflowAssociationProps {
+
+}
+
+/*********************************************
 * WorkflowAssociationMethods
 **********************************************/
 export interface WorkflowAssociationMethods {
-	deleteObject<T=void>(): T;
-	update<T=void>(): T;
+	deleteObject<T=any>(): IBaseExecution<T>;
+	update<T=any>(): IBaseExecution<T>;
 }
 
 /*********************************************
@@ -65,9 +80,23 @@ export interface SPWorkflowManager {
 }
 
 /*********************************************
+* ISPWorkflowTask
+**********************************************/
+export interface ISPWorkflowTask extends SPWorkflowTaskProps,SPWorkflowTaskMethods,IBaseExecution<SPWorkflowTask> {
+
+}
+
+/*********************************************
 * SPWorkflowTask
 **********************************************/
-export interface SPWorkflowTask extends SP.ListItem {
+export interface SPWorkflowTask extends SP.ListItem, SPWorkflowTaskProps, SPWorkflowTaskMethods {
+
+}
+
+/*********************************************
+* SPWorkflowTaskProps
+**********************************************/
+export interface SPWorkflowTaskProps {
 
 }
 
@@ -75,29 +104,29 @@ export interface SPWorkflowTask extends SP.ListItem {
 * SPWorkflowTaskMethods
 **********************************************/
 export interface SPWorkflowTaskMethods {
-	breakRoleInheritance<T=void>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): T;
-	resetRoleInheritance<T=void>(): T;
-	deleteObject<T=void>(): T;
-	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): T;
-	getHashtags<T=Array<SP.Hashtag>>(): T;
-	getUserEffectivePermissions<T=SP.BasePermissions>(userName?: string): T;
-	getWOPIFrameUrl<T=string>(action?: number): T;
-	mediaServiceUpdate<T=void>(parameters?: SP.MediaServiceUpdateParameters): T;
-	mediaServiceUpdateV2<T=void>(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): T;
-	overridePolicyTip<T=number>(userAction?: number, justification?: string): T;
-	parseAndSetFieldValue<T=void>(fieldName?: string, value?: string): T;
-	recycle<T=any>(): T;
-	setCommentsDisabled<T=void>(value?: boolean): T;
-	setComplianceTag<T=void>(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): T;
-	setComplianceTagWithExplicitMetasUpdate<T=void>(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): T;
-	setComplianceTagWithHold<T=void>(complianceTag?: string): T;
-	setComplianceTagWithMetaInfo<T=void>(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): T;
-	setComplianceTagWithNoHold<T=void>(complianceTag?: string): T;
-	setComplianceTagWithRecord<T=void>(complianceTag?: string): T;
-	systemUpdate<T=void>(): T;
-	update<T=void>(): T;
-	updateEx<T=void>(parameters?: SP.ListItemUpdateParameters): T;
-	updateHashtags<T=Array<SP.Hashtag>>(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): T;
-	updateOverwriteVersion<T=void>(): T;
-	validateUpdateListItem<T=Array<SP.ListItemFormUpdateValue>>(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): T;
+	breakRoleInheritance<T=any>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<T>;
+	resetRoleInheritance<T=any>(): IBaseExecution<T>;
+	deleteObject<T=any>(): IBaseExecution<T>;
+	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): IBaseExecution<T>;
+	getHashtags<T=Array<SP.Hashtag>>(): IBaseExecution<T>;
+	getUserEffectivePermissions<T=SP.BasePermissions>(userName?: string): IBaseExecution<T>;
+	getWOPIFrameUrl<T=string>(action?: number): IBaseExecution<T>;
+	mediaServiceUpdate<T=any>(parameters?: SP.MediaServiceUpdateParameters): IBaseExecution<T>;
+	mediaServiceUpdateV2<T=any>(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): IBaseExecution<T>;
+	overridePolicyTip<T=number>(userAction?: number, justification?: string): IBaseExecution<T>;
+	parseAndSetFieldValue<T=any>(fieldName?: string, value?: string): IBaseExecution<T>;
+	recycle<T=any>(): IBaseExecution<T>;
+	setCommentsDisabled<T=any>(value?: boolean): IBaseExecution<T>;
+	setComplianceTag<T=any>(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): IBaseExecution<T>;
+	setComplianceTagWithExplicitMetasUpdate<T=any>(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): IBaseExecution<T>;
+	setComplianceTagWithHold<T=any>(complianceTag?: string): IBaseExecution<T>;
+	setComplianceTagWithMetaInfo<T=any>(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): IBaseExecution<T>;
+	setComplianceTagWithNoHold<T=any>(complianceTag?: string): IBaseExecution<T>;
+	setComplianceTagWithRecord<T=any>(complianceTag?: string): IBaseExecution<T>;
+	systemUpdate<T=any>(): IBaseExecution<T>;
+	update<T=any>(): IBaseExecution<T>;
+	updateEx<T=any>(parameters?: SP.ListItemUpdateParameters): IBaseExecution<T>;
+	updateHashtags<T=Array<SP.Hashtag>>(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseExecution<T>;
+	updateOverwriteVersion<T=any>(): IBaseExecution<T>;
+	validateUpdateListItem<T=Array<SP.ListItemFormUpdateValue>>(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<T>;
 }

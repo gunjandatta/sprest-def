@@ -1,10 +1,19 @@
+import { IBaseCollection } from "../../../";
 import { Microsoft } from "../../../";
 import { SP } from "../../../";
+import { IBaseExecution } from "../../../";
+
+/*********************************************
+* Icomment
+**********************************************/
+export interface Icomment extends commentProps,commentMethods,IBaseExecution<comment> {
+
+}
 
 /*********************************************
 * comment
 **********************************************/
-export interface comment {
+export interface comment extends commentProps, commentMethods {
 	author?: SP.Sharing.Principal;
 	createdDate?: any;
 	id?: string;
@@ -21,27 +30,19 @@ export interface comment {
 }
 
 /*********************************************
-* commentCollections
+* commentProps
 **********************************************/
-export interface commentCollections {
-	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
-	replies<T=Array<Microsoft.SharePoint.Comments.comment>>(): T;
-}
-
-/*********************************************
-* commentQuery
-**********************************************/
-export interface commentQuery {
-	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
-	replies<T=Array<Microsoft.SharePoint.Comments.comment>>(): T;
+export interface commentProps {
+	likedBy<T=Microsoft.SharePoint.Likes.userEntity>(): IBaseCollection<T>;
+	replies<T=Microsoft.SharePoint.Comments.comment>(): IBaseCollection<T>;
 }
 
 /*********************************************
 * commentMethods
 **********************************************/
 export interface commentMethods {
-	like<T=void>(): T;
-	unlike<T=void>(): T;
+	like<T=any>(): IBaseExecution<T>;
+	unlike<T=any>(): IBaseExecution<T>;
 }
 
 /*********************************************

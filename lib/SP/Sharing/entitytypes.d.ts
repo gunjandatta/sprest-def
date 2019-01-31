@@ -1,4 +1,5 @@
 import { SP } from "../../";
+import { IBaseCollection } from "../../";
 
 /*********************************************
 * SharedDocumentInfo
@@ -47,9 +48,16 @@ export interface PersonalWeb {
 }
 
 /*********************************************
+* ISharingInformation
+**********************************************/
+export interface ISharingInformation extends SharingInformationProps,SharingInformationMethods,IBaseExecution<SharingInformation> {
+
+}
+
+/*********************************************
 * SharingInformation
 **********************************************/
-export interface SharingInformation {
+export interface SharingInformation extends SharingInformationProps, SharingInformationMethods {
 	accessRequestSettings?: SP.Sharing.AccessRequestSettings;
 	anonymousLinkExpirationRestrictionDays?: number;
 	blockPeoplePickerAndSharing?: boolean;
@@ -78,17 +86,17 @@ export interface SharingInformation {
 }
 
 /*********************************************
-* SharingInformationCollections
+* SharingInformationProps
 **********************************************/
-export interface SharingInformationCollections {
-	pickerSettings<T=SP.PickerSettings>(): T;
+export interface SharingInformationProps {
+	pickerSettings<T=SP.PickerSettings>(): IBaseExecution<T>;
 }
 
 /*********************************************
-* SharingInformationQuery
+* SharingInformationMethods
 **********************************************/
-export interface SharingInformationQuery {
-	pickerSettings<T=SP.PickerSettings>(): T;
+export interface SharingInformationMethods {
+
 }
 
 /*********************************************

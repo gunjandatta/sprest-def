@@ -1,25 +1,33 @@
+import { IBaseCollection } from "../../../";
 import { Microsoft } from "../../../";
+
+/*********************************************
+* IlikedByInformation
+**********************************************/
+export interface IlikedByInformation extends likedByInformationProps,likedByInformationMethods,IBaseExecution<likedByInformation> {
+
+}
 
 /*********************************************
 * likedByInformation
 **********************************************/
-export interface likedByInformation {
+export interface likedByInformation extends likedByInformationProps, likedByInformationMethods {
 	isLikedByUser?: boolean;
 	likeCount?: number;
 }
 
 /*********************************************
-* likedByInformationCollections
+* likedByInformationProps
 **********************************************/
-export interface likedByInformationCollections {
-	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
+export interface likedByInformationProps {
+	likedBy<T=Microsoft.SharePoint.Likes.userEntity>(): IBaseCollection<T>;
 }
 
 /*********************************************
-* likedByInformationQuery
+* likedByInformationMethods
 **********************************************/
-export interface likedByInformationQuery {
-	likedBy<T=Array<Microsoft.SharePoint.Likes.userEntity>>(): T;
+export interface likedByInformationMethods {
+
 }
 
 /*********************************************

@@ -1,9 +1,18 @@
+import { IBaseExecution } from "../../../../../";
+import { IBaseCollection } from "../../../../../";
 import { Microsoft } from "../../../../../";
+
+/*********************************************
+* ISPOWebAppServicePrincipalPermissionGrant
+**********************************************/
+export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantProps,SPOWebAppServicePrincipalPermissionGrantMethods,IBaseExecution<SPOWebAppServicePrincipalPermissionGrant> {
+
+}
 
 /*********************************************
 * SPOWebAppServicePrincipalPermissionGrant
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionGrant {
+export interface SPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantProps, SPOWebAppServicePrincipalPermissionGrantMethods {
 	ClientId?: string;
 	ConsentType?: string;
 	IsDomainIsolated?: boolean;
@@ -15,16 +24,30 @@ export interface SPOWebAppServicePrincipalPermissionGrant {
 }
 
 /*********************************************
+* SPOWebAppServicePrincipalPermissionGrantProps
+**********************************************/
+export interface SPOWebAppServicePrincipalPermissionGrantProps {
+
+}
+
+/*********************************************
 * SPOWebAppServicePrincipalPermissionGrantMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionGrantMethods {
-	deleteObject<T=void>(): T;
+	deleteObject<T=any>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* ISPOWebAppServicePrincipalPermissionRequest
+**********************************************/
+export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestProps,SPOWebAppServicePrincipalPermissionRequestMethods,IBaseExecution<SPOWebAppServicePrincipalPermissionRequest> {
+
 }
 
 /*********************************************
 * SPOWebAppServicePrincipalPermissionRequest
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionRequest {
+export interface SPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestProps, SPOWebAppServicePrincipalPermissionRequestMethods {
 	Id?: any;
 	IsDomainIsolated?: boolean;
 	PackageApproverName?: string;
@@ -37,41 +60,47 @@ export interface SPOWebAppServicePrincipalPermissionRequest {
 }
 
 /*********************************************
+* SPOWebAppServicePrincipalPermissionRequestProps
+**********************************************/
+export interface SPOWebAppServicePrincipalPermissionRequestProps {
+
+}
+
+/*********************************************
 * SPOWebAppServicePrincipalPermissionRequestMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequestMethods {
-	approve<T=Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>(): T;
-	deny<T=void>(): T;
+	approve<T=Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>(): IBaseExecution<T>;
+	deny<T=any>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* ISPOWebAppServicePrincipal
+**********************************************/
+export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalProps,SPOWebAppServicePrincipalMethods,IBaseExecution<SPOWebAppServicePrincipal> {
+
 }
 
 /*********************************************
 * SPOWebAppServicePrincipal
 **********************************************/
-export interface SPOWebAppServicePrincipal {
+export interface SPOWebAppServicePrincipal extends SPOWebAppServicePrincipalProps, SPOWebAppServicePrincipalMethods {
 	AccountEnabled?: boolean;
 	AppId?: string;
 	ReplyUrls?: Array<string>;
 }
 
 /*********************************************
-* SPOWebAppServicePrincipalCollections
+* SPOWebAppServicePrincipalProps
 **********************************************/
-export interface SPOWebAppServicePrincipalCollections {
-	PermissionGrants<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>>(): T;
-	PermissionRequests<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>>(): T;
-}
-
-/*********************************************
-* SPOWebAppServicePrincipalQuery
-**********************************************/
-export interface SPOWebAppServicePrincipalQuery {
-	PermissionGrants<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>>(): T;
-	PermissionRequests<T=Array<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>>(): T;
+export interface SPOWebAppServicePrincipalProps {
+	PermissionGrants<T=Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>(): IBaseCollection<T>;
+	PermissionRequests<T=Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>(): IBaseCollection<T>;
 }
 
 /*********************************************
 * SPOWebAppServicePrincipalMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalMethods {
-	update<T=void>(): T;
+	update<T=any>(): IBaseExecution<T>;
 }

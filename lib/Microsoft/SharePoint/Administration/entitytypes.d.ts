@@ -1,39 +1,62 @@
+import { IBaseExecution } from "../../../";
+import { IBaseCollection } from "../../../";
 import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
+* ISPAppStateQueryJobDefinition
+**********************************************/
+export interface ISPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionProps,SPAppStateQueryJobDefinitionMethods,IBaseExecution<SPAppStateQueryJobDefinition> {
+
+}
+
+/*********************************************
 * SPAppStateQueryJobDefinition
 **********************************************/
-export interface SPAppStateQueryJobDefinition {
+export interface SPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPAppStateQueryJobDefinitionProps
+**********************************************/
+export interface SPAppStateQueryJobDefinitionProps {
+
 }
 
 /*********************************************
 * SPAppStateQueryJobDefinitionMethods
 **********************************************/
 export interface SPAppStateQueryJobDefinitionMethods {
-	performFastRevokeWithClientIds<T=void>(): T;
+	performFastRevokeWithClientIds<T=any>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* ISPFarm
+**********************************************/
+export interface ISPFarm extends SPFarmProps,SPFarmMethods,IBaseExecution<SPFarm> {
+
 }
 
 /*********************************************
 * SPFarm
 **********************************************/
-export interface SPFarm {
+export interface SPFarm extends SPFarmProps, SPFarmMethods {
 	Id?: any;
 }
 
 /*********************************************
-* SPFarmCollections
+* SPFarmProps
 **********************************************/
-export interface SPFarmCollections {
-	Local<T=Microsoft.SharePoint.Administration.SPFarm>(): T;
+export interface SPFarmProps {
+	Local<T=Microsoft.SharePoint.Administration.SPFarm>(): IBaseExecution<T>;
 }
 
 /*********************************************
-* SPFarmQuery
+* SPFarmMethods
 **********************************************/
-export interface SPFarmQuery {
-	Local<T=Microsoft.SharePoint.Administration.SPFarm>(): T;
+export interface SPFarmMethods {
+
 }
 
 /*********************************************
@@ -52,9 +75,16 @@ export interface SPTenantAppInstanceData {
 }
 
 /*********************************************
+* ISPWebApplication
+**********************************************/
+export interface ISPWebApplication extends SPWebApplicationProps,SPWebApplicationMethods,IBaseExecution<SPWebApplication> {
+
+}
+
+/*********************************************
 * SPWebApplication
 **********************************************/
-export interface SPWebApplication {
+export interface SPWebApplication extends SPWebApplicationProps, SPWebApplicationMethods {
 	DisplayName?: string;
 	Id?: any;
 	OutboundMailPort?: number;
@@ -63,52 +93,72 @@ export interface SPWebApplication {
 }
 
 /*********************************************
-* SPWebApplicationCollections
+* SPWebApplicationProps
 **********************************************/
-export interface SPWebApplicationCollections {
-	Sites<T=Array<SP.Site>>(): T;
+export interface SPWebApplicationProps {
+	Sites<T=SP.Site>(): IBaseCollection<T>;
 }
 
 /*********************************************
-* SPWebApplicationQuery
+* SPWebApplicationMethods
 **********************************************/
-export interface SPWebApplicationQuery {
-	Sites<T=Array<SP.Site>>(): T;
+export interface SPWebApplicationMethods {
+
+}
+
+/*********************************************
+* ISPWebService
+**********************************************/
+export interface ISPWebService extends SPWebServiceProps,SPWebServiceMethods,IBaseExecution<SPWebService> {
+
 }
 
 /*********************************************
 * SPWebService
 **********************************************/
-export interface SPWebService {
+export interface SPWebService extends SPWebServiceProps, SPWebServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
 /*********************************************
-* SPWebServiceCollections
+* SPWebServiceProps
 **********************************************/
-export interface SPWebServiceCollections {
-	ContentService<T=Microsoft.SharePoint.Administration.SPWebService>(): T;
-	WebApplications<T=Array<Microsoft.SharePoint.Administration.SPWebApplication>>(): T;
+export interface SPWebServiceProps {
+	ContentService<T=Microsoft.SharePoint.Administration.SPWebService>(): IBaseExecution<T>;
+	WebApplications<T=Microsoft.SharePoint.Administration.SPWebApplication>(): IBaseCollection<T>;
 }
 
 /*********************************************
-* SPWebServiceQuery
+* SPWebServiceMethods
 **********************************************/
-export interface SPWebServiceQuery {
-	ContentService<T=Microsoft.SharePoint.Administration.SPWebService>(): T;
-	WebApplications<T=Array<Microsoft.SharePoint.Administration.SPWebApplication>>(): T;
+export interface SPWebServiceMethods {
+
+}
+
+/*********************************************
+* ISPAnalyticsUsageService
+**********************************************/
+export interface ISPAnalyticsUsageService extends SPAnalyticsUsageServiceProps,SPAnalyticsUsageServiceMethods,IBaseExecution<SPAnalyticsUsageService> {
+
 }
 
 /*********************************************
 * SPAnalyticsUsageService
 **********************************************/
-export interface SPAnalyticsUsageService {
+export interface SPAnalyticsUsageService extends SPAnalyticsUsageServiceProps, SPAnalyticsUsageServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPAnalyticsUsageServiceProps
+**********************************************/
+export interface SPAnalyticsUsageServiceProps {
+
 }
 
 /*********************************************
 * SPAnalyticsUsageServiceMethods
 **********************************************/
 export interface SPAnalyticsUsageServiceMethods {
-	logevent<T=void>(usageEntry?: Microsoft.SharePoint.Administration.UsageEntry): T;
+	logevent<T=any>(usageEntry?: Microsoft.SharePoint.Administration.UsageEntry): IBaseExecution<T>;
 }

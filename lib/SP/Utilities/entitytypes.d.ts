@@ -1,4 +1,6 @@
+import { IBaseCollection } from "../../";
 import { SP } from "../../";
+import { IBaseExecution } from "../../";
 
 /*********************************************
 * MarketplaceUtilities
@@ -57,39 +59,39 @@ export interface SpotlightResult {
 }
 
 /*********************************************
+* IThemeManager
+**********************************************/
+export interface IThemeManager extends ThemeManagerProps,ThemeManagerMethods,IBaseExecution<ThemeManager> {
+
+}
+
+/*********************************************
 * ThemeManager
 **********************************************/
-export interface ThemeManager {
+export interface ThemeManager extends ThemeManagerProps, ThemeManagerMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
 /*********************************************
-* ThemeManagerCollections
+* ThemeManagerProps
 **********************************************/
-export interface ThemeManagerCollections {
-	ContextThemeManager<T=SP.Utilities.ThemeManager>(): T;
-}
-
-/*********************************************
-* ThemeManagerQuery
-**********************************************/
-export interface ThemeManagerQuery {
-	ContextThemeManager<T=SP.Utilities.ThemeManager>(): T;
+export interface ThemeManagerProps {
+	ContextThemeManager<T=SP.Utilities.ThemeManager>(): IBaseExecution<T>;
 }
 
 /*********************************************
 * ThemeManagerMethods
 **********************************************/
 export interface ThemeManagerMethods {
-	addTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
-	applyTheme<T=string>(name?: string, themeJson?: string): T;
-	deleteTenantTheme<T=void>(name?: string): T;
-	getAvailableThemes<T=Array<SP.Utilities.JsonTheme>>(): T;
-	getHideDefaultThemes<T=boolean>(): T;
-	getTenantTheme<T=SP.Utilities.JsonTheme>(name?: string): T;
-	getTenantThemingOptions<T=SP.Utilities.ThemingOptions>(): T;
-	setHideDefaultThemes<T=boolean>(hideDefaultThemes?: boolean): T;
-	updateTenantTheme<T=boolean>(name?: string, themeJson?: string): T;
+	addTenantTheme<T=boolean>(name?: string, themeJson?: string): IBaseExecution<T>;
+	applyTheme<T=string>(name?: string, themeJson?: string): IBaseExecution<T>;
+	deleteTenantTheme<T=any>(name?: string): IBaseExecution<T>;
+	getAvailableThemes<T=Array<SP.Utilities.JsonTheme>>(): IBaseExecution<T>;
+	getHideDefaultThemes<T=boolean>(): IBaseExecution<T>;
+	getTenantTheme<T=SP.Utilities.JsonTheme>(name?: string): IBaseExecution<T>;
+	getTenantThemingOptions<T=SP.Utilities.ThemingOptions>(): IBaseExecution<T>;
+	setHideDefaultThemes<T=boolean>(hideDefaultThemes?: boolean): IBaseExecution<T>;
+	updateTenantTheme<T=boolean>(name?: string, themeJson?: string): IBaseExecution<T>;
 }
 
 /*********************************************

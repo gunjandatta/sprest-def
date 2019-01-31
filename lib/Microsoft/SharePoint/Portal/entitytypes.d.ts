@@ -1,3 +1,5 @@
+import { IBaseExecution } from "../../../";
+import { IBaseCollection } from "../../../";
 import { SP } from "../../../";
 import { Microsoft } from "../../../";
 
@@ -9,58 +11,100 @@ export interface CollaborationMailbox {
 }
 
 /*********************************************
+* IGroupService
+**********************************************/
+export interface IGroupService extends GroupServiceProps,GroupServiceMethods,IBaseExecution<GroupService> {
+
+}
+
+/*********************************************
 * GroupService
 **********************************************/
-export interface GroupService {
+export interface GroupService extends GroupServiceProps, GroupServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* GroupServiceProps
+**********************************************/
+export interface GroupServiceProps {
+
 }
 
 /*********************************************
 * GroupServiceMethods
 **********************************************/
 export interface GroupServiceMethods {
-	getGroupImage<T=any>(id?: string, hash?: string, color?: string): T;
-	setGroupImage<T=void>(imageStream?: any): T;
-	syncGroupProperties<T=void>(): T;
+	getGroupImage<T=any>(id?: string, hash?: string, color?: string): IBaseExecution<T>;
+	setGroupImage<T=any>(imageStream?: any): IBaseExecution<T>;
+	syncGroupProperties<T=any>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* IGroupSiteManager
+**********************************************/
+export interface IGroupSiteManager extends GroupSiteManagerProps,GroupSiteManagerMethods,IBaseExecution<GroupSiteManager> {
+
 }
 
 /*********************************************
 * GroupSiteManager
 **********************************************/
-export interface GroupSiteManager {
+export interface GroupSiteManager extends GroupSiteManagerProps, GroupSiteManagerMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* GroupSiteManagerProps
+**********************************************/
+export interface GroupSiteManagerProps {
+
 }
 
 /*********************************************
 * GroupSiteManagerMethods
 **********************************************/
 export interface GroupSiteManagerMethods {
-	canUserCreateGroup<T=boolean>(): T;
-	create<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): T;
-	createGroup<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, ownerPrincipalNames?: Array<string>, description?: string, creationOptions?: Array<string>): T;
-	createGroupEx<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
-	createGroupForSite<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): T;
-	getGroupCreationContext<T=Microsoft.SharePoint.Portal.GroupCreationContext>(): T;
-	getGroupSiteConversionData<T=Microsoft.SharePoint.Portal.GroupSiteConversionInfo>(): T;
-	getSiteStatus<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): T;
-	getValidSiteUrlFromAlias<T=string>(alias?: string, managedPath?: string, isTeamSite?: boolean): T;
-	notebook<T=string>(groupId?: any): T;
+	canUserCreateGroup<T=boolean>(): IBaseExecution<T>;
+	create<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): IBaseExecution<T>;
+	createGroup<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, ownerPrincipalNames?: Array<string>, description?: string, creationOptions?: Array<string>): IBaseExecution<T>;
+	createGroupEx<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): IBaseExecution<T>;
+	createGroupForSite<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): IBaseExecution<T>;
+	getGroupCreationContext<T=Microsoft.SharePoint.Portal.GroupCreationContext>(): IBaseExecution<T>;
+	getGroupSiteConversionData<T=Microsoft.SharePoint.Portal.GroupSiteConversionInfo>(): IBaseExecution<T>;
+	getSiteStatus<T=Microsoft.SharePoint.Portal.GroupSiteInfo>(groupId?: any): IBaseExecution<T>;
+	getValidSiteUrlFromAlias<T=string>(alias?: string, managedPath?: string, isTeamSite?: boolean): IBaseExecution<T>;
+	notebook<T=string>(groupId?: any): IBaseExecution<T>;
+}
+
+/*********************************************
+* ISiteLinkingManager
+**********************************************/
+export interface ISiteLinkingManager extends SiteLinkingManagerProps,SiteLinkingManagerMethods,IBaseExecution<SiteLinkingManager> {
+
 }
 
 /*********************************************
 * SiteLinkingManager
 **********************************************/
-export interface SiteLinkingManager {
+export interface SiteLinkingManager extends SiteLinkingManagerProps, SiteLinkingManagerMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteLinkingManagerProps
+**********************************************/
+export interface SiteLinkingManagerProps {
+
 }
 
 /*********************************************
 * SiteLinkingManagerMethods
 **********************************************/
 export interface SiteLinkingManagerMethods {
-	getSiteLinks<T=Microsoft.SharePoint.Portal.LinkedSitesListContract>(): T;
-	linkGroup<T=boolean>(groupId?: any): T;
-	unlinkGroup<T=boolean>(groupId?: any): T;
+	getSiteLinks<T=Microsoft.SharePoint.Portal.LinkedSitesListContract>(): IBaseExecution<T>;
+	linkGroup<T=boolean>(groupId?: any): IBaseExecution<T>;
+	unlinkGroup<T=boolean>(groupId?: any): IBaseExecution<T>;
 }
 
 /*********************************************
@@ -78,23 +122,44 @@ export interface SuiteNavData {
 }
 
 /*********************************************
+* ISharePointHomeServiceContextBuilder
+**********************************************/
+export interface ISharePointHomeServiceContextBuilder extends SharePointHomeServiceContextBuilderProps,SharePointHomeServiceContextBuilderMethods,IBaseExecution<SharePointHomeServiceContextBuilder> {
+
+}
+
+/*********************************************
 * SharePointHomeServiceContextBuilder
 **********************************************/
-export interface SharePointHomeServiceContextBuilder {
+export interface SharePointHomeServiceContextBuilder extends SharePointHomeServiceContextBuilderProps, SharePointHomeServiceContextBuilderMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SharePointHomeServiceContextBuilderProps
+**********************************************/
+export interface SharePointHomeServiceContextBuilderProps {
+
 }
 
 /*********************************************
 * SharePointHomeServiceContextBuilderMethods
 **********************************************/
 export interface SharePointHomeServiceContextBuilderMethods {
-	context<T=Microsoft.SharePoint.Portal.SharePointHomeServiceContext>(): T;
+	context<T=Microsoft.SharePoint.Portal.SharePointHomeServiceContext>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* ISharePointHomeServiceContext
+**********************************************/
+export interface ISharePointHomeServiceContext extends SharePointHomeServiceContextProps,SharePointHomeServiceContextMethods,IBaseExecution<SharePointHomeServiceContext> {
+
 }
 
 /*********************************************
 * SharePointHomeServiceContext
 **********************************************/
-export interface SharePointHomeServiceContext {
+export interface SharePointHomeServiceContext extends SharePointHomeServiceContextProps, SharePointHomeServiceContextMethods {
 	CompanyPortalContext?: string;
 	HomePageCache?: Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection;
 	HomePageContext?: Microsoft.SharePoint.Portal.Home.SharePointHomePageContext;
@@ -103,48 +168,76 @@ export interface SharePointHomeServiceContext {
 }
 
 /*********************************************
-* SharePointHomeServiceContextCollections
+* SharePointHomeServiceContextProps
 **********************************************/
-export interface SharePointHomeServiceContextCollections {
-	Token<T=SP.OAuth.TokenResponse>(): T;
+export interface SharePointHomeServiceContextProps {
+	Token<T=SP.OAuth.TokenResponse>(): IBaseExecution<T>;
 }
 
 /*********************************************
-* SharePointHomeServiceContextQuery
+* SharePointHomeServiceContextMethods
 **********************************************/
-export interface SharePointHomeServiceContextQuery {
-	Token<T=SP.OAuth.TokenResponse>(): T;
+export interface SharePointHomeServiceContextMethods {
+
+}
+
+/*********************************************
+* ISPHubSitesUtility
+**********************************************/
+export interface ISPHubSitesUtility extends SPHubSitesUtilityProps,SPHubSitesUtilityMethods,IBaseExecution<SPHubSitesUtility> {
+
 }
 
 /*********************************************
 * SPHubSitesUtility
 **********************************************/
-export interface SPHubSitesUtility {
+export interface SPHubSitesUtility extends SPHubSitesUtilityProps, SPHubSitesUtilityMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPHubSitesUtilityProps
+**********************************************/
+export interface SPHubSitesUtilityProps {
+
 }
 
 /*********************************************
 * SPHubSitesUtilityMethods
 **********************************************/
 export interface SPHubSitesUtilityMethods {
-	getHubSites<T=Array<SP.HubSite>>(): T;
+	getHubSites<T=Array<SP.HubSite>>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* ISPSiteManager
+**********************************************/
+export interface ISPSiteManager extends SPSiteManagerProps,SPSiteManagerMethods,IBaseExecution<SPSiteManager> {
+
 }
 
 /*********************************************
 * SPSiteManager
 **********************************************/
-export interface SPSiteManager {
+export interface SPSiteManager extends SPSiteManagerProps, SPSiteManagerMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPSiteManagerProps
+**********************************************/
+export interface SPSiteManagerProps {
+
 }
 
 /*********************************************
 * SPSiteManagerMethods
 **********************************************/
 export interface SPSiteManagerMethods {
-	canCreateHubJoinedSite<T=boolean>(hubSiteId?: any): T;
-	create<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): T;
-	delete<T=void>(siteId?: any): T;
-	status<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(url?: string): T;
+	canCreateHubJoinedSite<T=boolean>(hubSiteId?: any): IBaseExecution<T>;
+	create<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): IBaseExecution<T>;
+	delete<T=any>(siteId?: any): IBaseExecution<T>;
+	status<T=Microsoft.SharePoint.Portal.SPSiteCreationResponse>(url?: string): IBaseExecution<T>;
 }
 
 /*********************************************

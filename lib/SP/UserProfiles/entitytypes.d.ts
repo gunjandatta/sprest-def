@@ -1,4 +1,6 @@
+import { IBaseExecution } from "../../";
 import { SP } from "../../";
+import { IBaseCollection } from "../../";
 
 /*********************************************
 * CrossGeoSync
@@ -8,30 +10,44 @@ export interface CrossGeoSync {
 }
 
 /*********************************************
+* IFollowedContent
+**********************************************/
+export interface IFollowedContent extends FollowedContentProps,FollowedContentMethods,IBaseExecution<FollowedContent> {
+
+}
+
+/*********************************************
 * FollowedContent
 **********************************************/
-export interface FollowedContent {
+export interface FollowedContent extends FollowedContentProps, FollowedContentMethods {
 	FollowedDocumentsUrl?: string;
 	FollowedSitesUrl?: string;
+}
+
+/*********************************************
+* FollowedContentProps
+**********************************************/
+export interface FollowedContentProps {
+
 }
 
 /*********************************************
 * FollowedContentMethods
 **********************************************/
 export interface FollowedContentMethods {
-	findAndUpdateFollowedGroup<T=SP.UserProfiles.FollowedItem>(groupId?: any): T;
-	findAndUpdateFollowedItem<T=SP.UserProfiles.FollowedItem>(url?: string): T;
-	followItem<T=SP.UserProfiles.FollowResult>(item?: SP.UserProfiles.FollowedItem): T;
-	getFollowedStatus<T=number>(url?: string): T;
-	getGroups<T=Array<SP.UserProfiles.FollowedItem>>(rowLimit?: number): T;
-	getItem<T=SP.UserProfiles.FollowedItem>(url?: string): T;
-	getItems<T=Array<SP.UserProfiles.FollowedItem>>(options?: number, subtype?: number): T;
-	hasGroupMembershipChangedAndSyncChanges<T=boolean>(): T;
-	isFollowed<T=boolean>(url?: string): T;
-	refreshFollowedItem<T=SP.UserProfiles.FollowedItem>(item?: SP.UserProfiles.FollowedItem): T;
-	setItemPinState<T=SP.UserProfiles.FollowResult>(uri?: string, groupId?: any, pinState?: number): T;
-	stopFollowing<T=void>(url?: string): T;
-	updateFollowedGroupForUser<T=void>(contextUri?: string, groupId?: any, loginName?: string): T;
+	findAndUpdateFollowedGroup<T=SP.UserProfiles.FollowedItem>(groupId?: any): IBaseExecution<T>;
+	findAndUpdateFollowedItem<T=SP.UserProfiles.FollowedItem>(url?: string): IBaseExecution<T>;
+	followItem<T=SP.UserProfiles.FollowResult>(item?: SP.UserProfiles.FollowedItem): IBaseExecution<T>;
+	getFollowedStatus<T=number>(url?: string): IBaseExecution<T>;
+	getGroups<T=Array<SP.UserProfiles.FollowedItem>>(rowLimit?: number): IBaseExecution<T>;
+	getItem<T=SP.UserProfiles.FollowedItem>(url?: string): IBaseExecution<T>;
+	getItems<T=Array<SP.UserProfiles.FollowedItem>>(options?: number, subtype?: number): IBaseExecution<T>;
+	hasGroupMembershipChangedAndSyncChanges<T=boolean>(): IBaseExecution<T>;
+	isFollowed<T=boolean>(url?: string): IBaseExecution<T>;
+	refreshFollowedItem<T=SP.UserProfiles.FollowedItem>(item?: SP.UserProfiles.FollowedItem): IBaseExecution<T>;
+	setItemPinState<T=SP.UserProfiles.FollowResult>(uri?: string, groupId?: any, pinState?: number): IBaseExecution<T>;
+	stopFollowing<T=any>(url?: string): IBaseExecution<T>;
+	updateFollowedGroupForUser<T=any>(contextUri?: string, groupId?: any, loginName?: string): IBaseExecution<T>;
 }
 
 /*********************************************
@@ -51,60 +67,88 @@ export interface HashTagCollection {
 }
 
 /*********************************************
+* IPeopleManager
+**********************************************/
+export interface IPeopleManager extends PeopleManagerProps,PeopleManagerMethods,IBaseExecution<PeopleManager> {
+
+}
+
+/*********************************************
 * PeopleManager
 **********************************************/
-export interface PeopleManager {
+export interface PeopleManager extends PeopleManagerProps, PeopleManagerMethods {
 	EditProfileLink?: string;
 	IsMyPeopleListPublic?: boolean;
+}
+
+/*********************************************
+* PeopleManagerProps
+**********************************************/
+export interface PeopleManagerProps {
+
 }
 
 /*********************************************
 * PeopleManagerMethods
 **********************************************/
 export interface PeopleManagerMethods {
-	amIFollowedBy<T=boolean>(accountName?: string): T;
-	amIFollowing<T=boolean>(accountName?: string): T;
-	follow<T=void>(accountName?: string): T;
-	followTag<T=void>(value?: any): T;
-	getDefaultDocumentLibrary<T=string>(accountName?: string, createSiteIfNotExists?: boolean, siteCreationPriority?: number): T;
-	getFollowedTags<T=Array<string>>(cTagsToFetch?: number): T;
-	getFollowersFor<T=Array<SP.UserProfiles.PersonProperties>>(accountName?: string): T;
-	getMyFollowers<T=Array<SP.UserProfiles.PersonProperties>>(): T;
-	getMyProperties<T=SP.UserProfiles.PersonProperties>(): T;
-	getMySuggestions<T=Array<SP.UserProfiles.PersonProperties>>(): T;
-	getPeopleFollowedBy<T=Array<SP.UserProfiles.PersonProperties>>(accountName?: string): T;
-	getPeopleFollowedByMe<T=Array<SP.UserProfiles.PersonProperties>>(): T;
-	getPropertiesFor<T=SP.UserProfiles.PersonProperties>(accountName?: string): T;
-	getSPUserInformation<T=Array<SP.KeyValue>>(accountName?: string, siteId?: any): T;
-	getUserProfileProperties<T=Array<SP.KeyValue>>(accountName?: string): T;
-	getUserProfilePropertyFor<T=string>(accountName?: string, propertyName?: string): T;
-	hardDeleteUserProfile<T=boolean>(accountName?: string, userId?: any): T;
-	hideSuggestion<T=void>(accountName?: string): T;
-	removeSPUserInformation<T=Array<SP.KeyValue>>(accountName?: string, siteId?: any, redactName?: string): T;
-	setMultiValuedProfileProperty<T=void>(accountName?: string, propertyName?: string, propertyValues?: Array<string>): T;
-	setMyProfilePicture<T=void>(picture?: any): T;
-	setSingleValueProfileProperty<T=void>(accountName?: string, propertyName?: string, propertyValue?: string): T;
-	stopFollowing<T=void>(accountName?: string): T;
-	stopFollowingTag<T=void>(value?: any): T;
+	amIFollowedBy<T=boolean>(accountName?: string): IBaseExecution<T>;
+	amIFollowing<T=boolean>(accountName?: string): IBaseExecution<T>;
+	follow<T=any>(accountName?: string): IBaseExecution<T>;
+	followTag<T=any>(value?: any): IBaseExecution<T>;
+	getDefaultDocumentLibrary<T=string>(accountName?: string, createSiteIfNotExists?: boolean, siteCreationPriority?: number): IBaseExecution<T>;
+	getFollowedTags<T=Array<string>>(cTagsToFetch?: number): IBaseExecution<T>;
+	getFollowersFor<T=Array<SP.UserProfiles.PersonProperties>>(accountName?: string): IBaseExecution<T>;
+	getMyFollowers<T=Array<SP.UserProfiles.PersonProperties>>(): IBaseExecution<T>;
+	getMyProperties<T=SP.UserProfiles.PersonProperties>(): IBaseExecution<T>;
+	getMySuggestions<T=Array<SP.UserProfiles.PersonProperties>>(): IBaseExecution<T>;
+	getPeopleFollowedBy<T=Array<SP.UserProfiles.PersonProperties>>(accountName?: string): IBaseExecution<T>;
+	getPeopleFollowedByMe<T=Array<SP.UserProfiles.PersonProperties>>(): IBaseExecution<T>;
+	getPropertiesFor<T=SP.UserProfiles.PersonProperties>(accountName?: string): IBaseExecution<T>;
+	getSPUserInformation<T=Array<SP.KeyValue>>(accountName?: string, siteId?: any): IBaseExecution<T>;
+	getUserProfileProperties<T=Array<SP.KeyValue>>(accountName?: string): IBaseExecution<T>;
+	getUserProfilePropertyFor<T=string>(accountName?: string, propertyName?: string): IBaseExecution<T>;
+	hardDeleteUserProfile<T=boolean>(accountName?: string, userId?: any): IBaseExecution<T>;
+	hideSuggestion<T=any>(accountName?: string): IBaseExecution<T>;
+	removeSPUserInformation<T=Array<SP.KeyValue>>(accountName?: string, siteId?: any, redactName?: string): IBaseExecution<T>;
+	setMultiValuedProfileProperty<T=any>(accountName?: string, propertyName?: string, propertyValues?: Array<string>): IBaseExecution<T>;
+	setMyProfilePicture<T=any>(picture?: any): IBaseExecution<T>;
+	setSingleValueProfileProperty<T=any>(accountName?: string, propertyName?: string, propertyValue?: string): IBaseExecution<T>;
+	stopFollowing<T=any>(accountName?: string): IBaseExecution<T>;
+	stopFollowingTag<T=any>(value?: any): IBaseExecution<T>;
+}
+
+/*********************************************
+* IPersonalCache
+**********************************************/
+export interface IPersonalCache extends PersonalCacheProps,PersonalCacheMethods,IBaseExecution<PersonalCache> {
+
 }
 
 /*********************************************
 * PersonalCache
 **********************************************/
-export interface PersonalCache {
+export interface PersonalCache extends PersonalCacheProps, PersonalCacheMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PersonalCacheProps
+**********************************************/
+export interface PersonalCacheProps {
+
 }
 
 /*********************************************
 * PersonalCacheMethods
 **********************************************/
 export interface PersonalCacheMethods {
-	deleteCacheItemsAsync<T=void>(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): T;
-	loadUserProfile<T=void>(email?: string): T;
-	readCache<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: string): T;
-	readCacheOrCreate<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): T;
-	readCacheOrCreateOrderById<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): T;
-	writeCache<T=void>(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): T;
+	deleteCacheItemsAsync<T=any>(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): IBaseExecution<T>;
+	loadUserProfile<T=any>(email?: string): IBaseExecution<T>;
+	readCache<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: string): IBaseExecution<T>;
+	readCacheOrCreate<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): IBaseExecution<T>;
+	readCacheOrCreateOrderById<T=Array<SP.UserProfiles.PersonalCacheItem>>(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): IBaseExecution<T>;
+	writeCache<T=any>(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): IBaseExecution<T>;
 }
 
 /*********************************************
@@ -129,52 +173,101 @@ export interface PersonProperties {
 }
 
 /*********************************************
+* IProfileImageStore
+**********************************************/
+export interface IProfileImageStore extends ProfileImageStoreProps,ProfileImageStoreMethods,IBaseExecution<ProfileImageStore> {
+
+}
+
+/*********************************************
 * ProfileImageStore
 **********************************************/
-export interface ProfileImageStore {
+export interface ProfileImageStore extends ProfileImageStoreProps, ProfileImageStoreMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ProfileImageStoreProps
+**********************************************/
+export interface ProfileImageStoreProps {
+
 }
 
 /*********************************************
 * ProfileImageStoreMethods
 **********************************************/
 export interface ProfileImageStoreMethods {
-	saveUploadedFile<T=Array<string>>(profileType?: number, fileNamePrefix?: string, isFeedAttachment?: boolean, clientFilePath?: string, fileSize?: number, fileStream?: any): T;
+	saveUploadedFile<T=Array<string>>(profileType?: number, fileNamePrefix?: string, isFeedAttachment?: boolean, clientFilePath?: string, fileSize?: number, fileStream?: any): IBaseExecution<T>;
+}
+
+/*********************************************
+* IProfileLoader
+**********************************************/
+export interface IProfileLoader extends ProfileLoaderProps,ProfileLoaderMethods,IBaseExecution<ProfileLoader> {
+
 }
 
 /*********************************************
 * ProfileLoader
 **********************************************/
-export interface ProfileLoader {
+export interface ProfileLoader extends ProfileLoaderProps, ProfileLoaderMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ProfileLoaderProps
+**********************************************/
+export interface ProfileLoaderProps {
+
 }
 
 /*********************************************
 * ProfileLoaderMethods
 **********************************************/
 export interface ProfileLoaderMethods {
-	createPersonalSiteEnqueueBulk<T=Array<string>>(emailIDs?: Array<string>): T;
-	getUserProfile<T=SP.UserProfiles.UserProfile>(): T;
+	createPersonalSiteEnqueueBulk<T=Array<string>>(emailIDs?: Array<string>): IBaseExecution<T>;
+	getUserProfile<T=SP.UserProfiles.UserProfile>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* IUserProfilePropertiesForUser
+**********************************************/
+export interface IUserProfilePropertiesForUser extends UserProfilePropertiesForUserProps,UserProfilePropertiesForUserMethods,IBaseExecution<UserProfilePropertiesForUser> {
+
 }
 
 /*********************************************
 * UserProfilePropertiesForUser
 **********************************************/
-export interface UserProfilePropertiesForUser {
+export interface UserProfilePropertiesForUser extends UserProfilePropertiesForUserProps, UserProfilePropertiesForUserMethods {
 	AccountName?: string;
+}
+
+/*********************************************
+* UserProfilePropertiesForUserProps
+**********************************************/
+export interface UserProfilePropertiesForUserProps {
+
 }
 
 /*********************************************
 * UserProfilePropertiesForUserMethods
 **********************************************/
 export interface UserProfilePropertiesForUserMethods {
-	getPropertyNames<T=Array<string>>(): T;
+	getPropertyNames<T=Array<string>>(): IBaseExecution<T>;
+}
+
+/*********************************************
+* IUserProfile
+**********************************************/
+export interface IUserProfile extends UserProfileProps,UserProfileMethods,IBaseExecution<UserProfile> {
+
 }
 
 /*********************************************
 * UserProfile
 **********************************************/
-export interface UserProfile {
+export interface UserProfile extends UserProfileProps, UserProfileMethods {
 	AccountName?: string;
 	DisplayName?: string;
 	FollowPersonalSiteUrl?: string;
@@ -200,28 +293,20 @@ export interface UserProfile {
 }
 
 /*********************************************
-* UserProfileCollections
+* UserProfileProps
 **********************************************/
-export interface UserProfileCollections {
-	FollowedContent<T=SP.UserProfiles.FollowedContent>(): T;
-	PersonalSite<T=SP.Site>(): T;
-}
-
-/*********************************************
-* UserProfileQuery
-**********************************************/
-export interface UserProfileQuery {
-	FollowedContent<T=SP.UserProfiles.FollowedContent>(): T;
-	PersonalSite<T=SP.Site>(): T;
+export interface UserProfileProps {
+	FollowedContent<T=SP.UserProfiles.FollowedContent>(): IBaseExecution<T>;
+	PersonalSite<T=SP.Site>(): IBaseExecution<T>;
 }
 
 /*********************************************
 * UserProfileMethods
 **********************************************/
 export interface UserProfileMethods {
-	createPersonalSite<T=void>(lcid?: number): T;
-	createPersonalSiteEnque<T=void>(isInteractive?: boolean): T;
-	createPersonalSiteFromWorkItem<T=number>(workItemType?: any): T;
-	setMySiteFirstRunExperience<T=void>(value?: number): T;
-	shareAllSocialData<T=void>(shareAll?: boolean): T;
+	createPersonalSite<T=any>(lcid?: number): IBaseExecution<T>;
+	createPersonalSiteEnque<T=any>(isInteractive?: boolean): IBaseExecution<T>;
+	createPersonalSiteFromWorkItem<T=number>(workItemType?: any): IBaseExecution<T>;
+	setMySiteFirstRunExperience<T=any>(value?: number): IBaseExecution<T>;
+	shareAllSocialData<T=any>(shareAll?: boolean): IBaseExecution<T>;
 }
