@@ -398,7 +398,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
                                         // Add the methods
-                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + '>;');
+                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + '>;');                                        
+                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseExecution<' + methodType + '>;');
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
                                         // Add the method

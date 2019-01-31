@@ -37,6 +37,7 @@ export interface likedByInformationProps {
 **********************************************/
 export interface likedByInformationCollections extends likedByInformationProps {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): IBaseExecution<Microsoft.SharePoint.Likes.userEntity>;
 }
 
 /*********************************************

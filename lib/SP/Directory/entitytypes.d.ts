@@ -111,7 +111,9 @@ export interface GroupProps {
 **********************************************/
 export interface GroupCollections extends GroupProps {
 	members(): IBaseCollection<SP.Directory.User>;
+	members(id: string | number): IBaseExecution<SP.Directory.User>;
 	owners(): IBaseCollection<SP.Directory.User>;
+	owners(id: string | number): IBaseExecution<SP.Directory.User>;
 }
 
 /*********************************************
@@ -201,8 +203,11 @@ export interface UserProps {
 **********************************************/
 export interface UserCollections extends UserProps {
 	membership(): IBaseCollection<SP.Directory.Group>;
+	membership(id: string | number): IBaseExecution<SP.Directory.Group>;
 	ownership(): IBaseCollection<SP.Directory.Group>;
+	ownership(id: string | number): IBaseExecution<SP.Directory.Group>;
 	rankedMembership(): IBaseCollection<SP.Directory.Group>;
+	rankedMembership(id: string | number): IBaseExecution<SP.Directory.Group>;
 }
 
 /*********************************************

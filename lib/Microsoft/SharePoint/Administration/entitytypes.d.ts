@@ -113,6 +113,7 @@ export interface SPWebApplicationProps {
 **********************************************/
 export interface SPWebApplicationCollections extends SPWebApplicationProps {
 	Sites(): IBaseCollection<SP.Site>;
+	Sites(id: string | number): IBaseExecution<SP.Site>;
 }
 
 /*********************************************
@@ -162,6 +163,7 @@ export interface SPWebServiceProps {
 **********************************************/
 export interface SPWebServiceCollections extends SPWebServiceProps {
 	WebApplications(): IBaseCollection<Microsoft.SharePoint.Administration.SPWebApplication>;
+	WebApplications(id: string | number): IBaseExecution<Microsoft.SharePoint.Administration.SPWebApplication>;
 }
 
 /*********************************************

@@ -179,6 +179,7 @@ export interface VideoItemProps {
 **********************************************/
 export interface VideoItemCollections extends VideoItemProps {
 	PeopleInMedia(): IBaseCollection<SP.User>;
+	PeopleInMedia(id: string | number): IBaseExecution<SP.User>;
 }
 
 /*********************************************
@@ -295,6 +296,7 @@ export interface PointPublishingPostProps {
 **********************************************/
 export interface PointPublishingPostCollections extends PointPublishingPostProps {
 	images(): IBaseCollection<SP.File>;
+	images(id: string | number): IBaseExecution<SP.File>;
 }
 
 /*********************************************
@@ -345,10 +347,15 @@ export interface PointPublishingPostServiceManagerProps {
 **********************************************/
 export interface PointPublishingPostServiceManagerCollections extends PointPublishingPostServiceManagerProps {
 	bannerimages(): IBaseCollection<SP.File>;
+	bannerimages(id: string | number): IBaseExecution<SP.File>;
 	contributors(): IBaseCollection<SP.Publishing.PointPublishingUser>;
+	contributors(id: string | number): IBaseExecution<SP.Publishing.PointPublishingUser>;
 	creators(): IBaseCollection<SP.Publishing.PointPublishingUser>;
+	creators(id: string | number): IBaseExecution<SP.Publishing.PointPublishingUser>;
 	posts(): IBaseCollection<SP.Publishing.PointPublishingPost>;
+	posts(id: string | number): IBaseExecution<SP.Publishing.PointPublishingPost>;
 	viewers(): IBaseCollection<SP.Publishing.PointPublishingUser>;
+	viewers(id: string | number): IBaseExecution<SP.Publishing.PointPublishingUser>;
 }
 
 /*********************************************
@@ -874,6 +881,7 @@ export interface SitePageServiceProps {
 **********************************************/
 export interface SitePageServiceCollections extends SitePageServiceProps {
 	Pages(): IBaseCollection<SP.Publishing.SitePage>;
+	Pages(id: string | number): IBaseExecution<SP.Publishing.SitePage>;
 }
 
 /*********************************************
@@ -993,7 +1001,9 @@ export interface VideoChannelProps {
 **********************************************/
 export interface VideoChannelCollections extends VideoChannelProps {
 	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo>;
+	SpotlightVideos(id: string | number): IBaseExecution<SP.Publishing.SpotlightVideo>;
 	Videos(): IBaseCollection<SP.Publishing.VideoItem>;
+	Videos(id: string | number): IBaseExecution<SP.Publishing.VideoItem>;
 }
 
 /*********************************************
@@ -1164,6 +1174,7 @@ export interface VideoPermissionGroupProps {
 **********************************************/
 export interface VideoPermissionGroupCollections extends VideoPermissionGroupProps {
 	Users(): IBaseCollection<SP.User>;
+	Users(id: string | number): IBaseExecution<SP.User>;
 }
 
 /*********************************************
@@ -1243,9 +1254,13 @@ export interface VideoServiceManagerProps {
 **********************************************/
 export interface VideoServiceManagerCollections extends VideoServiceManagerProps {
 	CanEditChannels(): IBaseCollection<SP.Publishing.VideoChannel>;
+	CanEditChannels(id: string | number): IBaseExecution<SP.Publishing.VideoChannel>;
 	Channels(): IBaseCollection<SP.Publishing.VideoChannel>;
+	Channels(id: string | number): IBaseExecution<SP.Publishing.VideoChannel>;
 	SpotlightChannels(): IBaseCollection<SP.Publishing.SpotlightChannel>;
+	SpotlightChannels(id: string | number): IBaseExecution<SP.Publishing.SpotlightChannel>;
 	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo>;
+	SpotlightVideos(id: string | number): IBaseExecution<SP.Publishing.SpotlightVideo>;
 }
 
 /*********************************************

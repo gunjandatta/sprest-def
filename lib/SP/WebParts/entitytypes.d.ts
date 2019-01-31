@@ -38,6 +38,7 @@ export interface LimitedWebPartManagerProps {
 **********************************************/
 export interface LimitedWebPartManagerCollections extends LimitedWebPartManagerProps {
 	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition>;
+	WebParts(id: string | number): IBaseExecution<SP.WebParts.WebPartDefinition>;
 }
 
 /*********************************************

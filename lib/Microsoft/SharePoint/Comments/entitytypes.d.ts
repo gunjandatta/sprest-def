@@ -50,7 +50,9 @@ export interface commentProps {
 **********************************************/
 export interface commentCollections extends commentProps {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): IBaseExecution<Microsoft.SharePoint.Likes.userEntity>;
 	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment>;
+	replies(id: string | number): IBaseExecution<Microsoft.SharePoint.Comments.comment>;
 }
 
 /*********************************************

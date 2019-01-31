@@ -96,6 +96,7 @@ export interface AssignmentProps {
 **********************************************/
 export interface AssignmentCollections extends AssignmentProps {
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 }
 
 /*********************************************
@@ -169,6 +170,7 @@ export interface CustomFieldProps {
 **********************************************/
 export interface CustomFieldCollections extends CustomFieldProps {
 	LookupEntries(): IBaseCollection<PS.LookupEntry>;
+	LookupEntries(id: string | number): IBaseExecution<PS.LookupEntry>;
 }
 
 /*********************************************
@@ -277,6 +279,7 @@ export interface LookupTableProps {
 **********************************************/
 export interface LookupTableCollections extends LookupTableProps {
 	Entries(): IBaseCollection<PS.LookupEntry>;
+	Entries(id: string | number): IBaseExecution<PS.LookupEntry>;
 }
 
 /*********************************************
@@ -401,6 +404,7 @@ export interface CalendarProps {
 **********************************************/
 export interface CalendarCollections extends CalendarProps {
 	BaseCalendarExceptions(): IBaseCollection<PS.CalendarException>;
+	BaseCalendarExceptions(id: string | number): IBaseExecution<PS.CalendarException>;
 }
 
 /*********************************************
@@ -652,6 +656,7 @@ export interface ProjectResourceProps {
 **********************************************/
 export interface ProjectResourceCollections extends ProjectResourceProps {
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 }
 
 /*********************************************
@@ -731,11 +736,17 @@ export interface EnterpriseResourceProps {
 **********************************************/
 export interface EnterpriseResourceCollections extends EnterpriseResourceProps {
 	Assignments(): IBaseCollection<PS.StatusAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.StatusAssignment>;
 	CostRateTables(): IBaseCollection<PS.EnterpriseResourceCostRateTable>;
+	CostRateTables(id: string | number): IBaseExecution<PS.EnterpriseResourceCostRateTable>;
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 	Engagements(): IBaseCollection<PS.ResourceEngagement>;
+	Engagements(id: string | number): IBaseExecution<PS.ResourceEngagement>;
 	UserPermissions(): IBaseCollection<PS.UserPermission>;
+	UserPermissions(id: string | number): IBaseExecution<PS.UserPermission>;
 	ResourceCalendarExceptions(): IBaseCollection<PS.CalendarException>;
+	ResourceCalendarExceptions(id: string | number): IBaseExecution<PS.CalendarException>;
 }
 
 /*********************************************
@@ -825,7 +836,9 @@ export interface StatusAssignmentProps {
 **********************************************/
 export interface StatusAssignmentCollections extends StatusAssignmentProps {
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 	History(): IBaseCollection<PS.StatusAssignmentHistoryLine>;
+	History(id: string | number): IBaseExecution<PS.StatusAssignmentHistoryLine>;
 }
 
 /*********************************************
@@ -927,9 +940,13 @@ export interface ProjectProps {
 **********************************************/
 export interface ProjectCollections extends ProjectProps {
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 	Engagements(): IBaseCollection<PS.ProjectEngagement>;
+	Engagements(id: string | number): IBaseExecution<PS.ProjectEngagement>;
 	UserPermissions(): IBaseCollection<PS.UserPermission>;
+	UserPermissions(id: string | number): IBaseExecution<PS.UserPermission>;
 	QueueJobs(): IBaseCollection<PS.QueueJob>;
+	QueueJobs(id: string | number): IBaseExecution<PS.QueueJob>;
 }
 
 /*********************************************
@@ -996,6 +1013,7 @@ export interface EngagementProps {
 **********************************************/
 export interface EngagementCollections extends EngagementProps {
 	Comments(): IBaseCollection<PS.EngagementComment>;
+	Comments(id: string | number): IBaseExecution<PS.EngagementComment>;
 }
 
 /*********************************************
@@ -1132,6 +1150,7 @@ export interface EnterpriseProjectTypeProps {
 **********************************************/
 export interface EnterpriseProjectTypeCollections extends EnterpriseProjectTypeProps {
 	ProjectDetailPages(): IBaseCollection<PS.ProjectDetailPage>;
+	ProjectDetailPages(id: string | number): IBaseExecution<PS.ProjectDetailPage>;
 }
 
 /*********************************************
@@ -1203,6 +1222,7 @@ export interface PhaseProps {
 **********************************************/
 export interface PhaseCollections extends PhaseProps {
 	Stages(): IBaseCollection<PS.Stage>;
+	Stages(id: string | number): IBaseExecution<PS.Stage>;
 }
 
 /*********************************************
@@ -1258,7 +1278,9 @@ export interface StageProps {
 **********************************************/
 export interface StageCollections extends StageProps {
 	CustomFields(): IBaseCollection<PS.StageCustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.StageCustomField>;
 	ProjectDetailPages(): IBaseCollection<PS.StageDetailPage>;
+	ProjectDetailPages(id: string | number): IBaseExecution<PS.StageDetailPage>;
 }
 
 /*********************************************
@@ -1518,6 +1540,7 @@ export interface TaskProps {
 **********************************************/
 export interface TaskCollections extends TaskProps {
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 }
 
 /*********************************************
@@ -1605,10 +1628,15 @@ export interface PublishedProjectProps {
 **********************************************/
 export interface PublishedProjectCollections extends PublishedProjectProps {
 	Assignments(): IBaseCollection<PS.PublishedAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.PublishedAssignment>;
 	EntityLinks(): IBaseCollection<PS.EntityLink>;
+	EntityLinks(id: string | number): IBaseExecution<PS.EntityLink>;
 	ProjectResources(): IBaseCollection<PS.PublishedProjectResource>;
+	ProjectResources(id: string | number): IBaseExecution<PS.PublishedProjectResource>;
 	TaskLinks(): IBaseCollection<PS.PublishedTaskLink>;
+	TaskLinks(id: string | number): IBaseExecution<PS.PublishedTaskLink>;
 	Tasks(): IBaseCollection<PS.PublishedTask>;
+	Tasks(id: string | number): IBaseExecution<PS.PublishedTask>;
 }
 
 /*********************************************
@@ -1730,6 +1758,7 @@ export interface PublishedProjectResourceProps {
 **********************************************/
 export interface PublishedProjectResourceCollections extends PublishedProjectResourceProps {
 	Assignments(): IBaseCollection<PS.PublishedAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.PublishedAssignment>;
 }
 
 /*********************************************
@@ -1824,9 +1853,13 @@ export interface PublishedTaskProps {
 **********************************************/
 export interface PublishedTaskCollections extends PublishedTaskProps {
 	Assignments(): IBaseCollection<PS.PublishedAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.PublishedAssignment>;
 	EntityLinks(): IBaseCollection<PS.EntityLink>;
+	EntityLinks(id: string | number): IBaseExecution<PS.EntityLink>;
 	Predecessors(): IBaseCollection<PS.PublishedTaskLink>;
+	Predecessors(id: string | number): IBaseExecution<PS.PublishedTaskLink>;
 	Successors(): IBaseCollection<PS.PublishedTaskLink>;
+	Successors(id: string | number): IBaseExecution<PS.PublishedTaskLink>;
 }
 
 /*********************************************
@@ -2035,9 +2068,13 @@ export interface DraftProjectProps {
 **********************************************/
 export interface DraftProjectCollections extends DraftProjectProps {
 	Assignments(): IBaseCollection<PS.DraftAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.DraftAssignment>;
 	ProjectResources(): IBaseCollection<PS.DraftProjectResource>;
+	ProjectResources(id: string | number): IBaseExecution<PS.DraftProjectResource>;
 	TaskLinks(): IBaseCollection<PS.DraftTaskLink>;
+	TaskLinks(id: string | number): IBaseExecution<PS.DraftTaskLink>;
 	Tasks(): IBaseCollection<PS.DraftTask>;
+	Tasks(id: string | number): IBaseExecution<PS.DraftTask>;
 }
 
 /*********************************************
@@ -2116,6 +2153,7 @@ export interface DraftProjectResourceProps {
 **********************************************/
 export interface DraftProjectResourceCollections extends DraftProjectResourceProps {
 	Assignments(): IBaseCollection<PS.DraftAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.DraftAssignment>;
 }
 
 /*********************************************
@@ -2263,8 +2301,11 @@ export interface DraftTaskProps {
 **********************************************/
 export interface DraftTaskCollections extends DraftTaskProps {
 	Assignments(): IBaseCollection<PS.DraftAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.DraftAssignment>;
 	Predecessors(): IBaseCollection<PS.DraftTaskLink>;
+	Predecessors(id: string | number): IBaseExecution<PS.DraftTaskLink>;
 	Successors(): IBaseCollection<PS.DraftTaskLink>;
+	Successors(id: string | number): IBaseExecution<PS.DraftTaskLink>;
 }
 
 /*********************************************
@@ -2488,6 +2529,7 @@ export interface StatusTaskProps {
 **********************************************/
 export interface StatusTaskCollections extends StatusTaskProps {
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 }
 
 /*********************************************
@@ -2537,6 +2579,7 @@ export interface EnterpriseResourceCostRateTableProps {
 **********************************************/
 export interface EnterpriseResourceCostRateTableCollections extends EnterpriseResourceCostRateTableProps {
 	CostRates(): IBaseCollection<PS.EnterpriseResourceCostRate>;
+	CostRates(id: string | number): IBaseExecution<PS.EnterpriseResourceCostRate>;
 }
 
 /*********************************************
@@ -3064,7 +3107,9 @@ export interface PlanAssignmentProps {
 **********************************************/
 export interface PlanAssignmentCollections extends PlanAssignmentProps {
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 	Intervals(): IBaseCollection<PS.PlanAssignmentInterval>;
+	Intervals(id: string | number): IBaseExecution<PS.PlanAssignmentInterval>;
 }
 
 /*********************************************
@@ -3155,19 +3200,33 @@ export interface ProjectServerProps {
 **********************************************/
 export interface ProjectServerCollections extends ProjectServerProps {
 	Calendars(): IBaseCollection<PS.Calendar>;
+	Calendars(id: string | number): IBaseExecution<PS.Calendar>;
 	CustomFields(): IBaseCollection<PS.CustomField>;
+	CustomFields(id: string | number): IBaseExecution<PS.CustomField>;
 	EnterpriseProjectTypes(): IBaseCollection<PS.EnterpriseProjectType>;
+	EnterpriseProjectTypes(id: string | number): IBaseExecution<PS.EnterpriseProjectType>;
 	EnterpriseResources(): IBaseCollection<PS.EnterpriseResource>;
+	EnterpriseResources(id: string | number): IBaseExecution<PS.EnterpriseResource>;
 	EventHandlers(): IBaseCollection<PS.EventHandler>;
+	EventHandlers(id: string | number): IBaseExecution<PS.EventHandler>;
 	Events(): IBaseCollection<PS.Event>;
+	Events(id: string | number): IBaseExecution<PS.Event>;
 	LookupTables(): IBaseCollection<PS.LookupTable>;
+	LookupTables(id: string | number): IBaseExecution<PS.LookupTable>;
 	Phases(): IBaseCollection<PS.Phase>;
+	Phases(id: string | number): IBaseExecution<PS.Phase>;
 	ProjectDetailPages(): IBaseCollection<PS.ProjectDetailPage>;
+	ProjectDetailPages(id: string | number): IBaseExecution<PS.ProjectDetailPage>;
 	Projects(): IBaseCollection<PS.PublishedProject>;
+	Projects(id: string | number): IBaseExecution<PS.PublishedProject>;
 	ProjectWorkflowInstances(): IBaseCollection<PS.ProjectWorkflowInstance>;
+	ProjectWorkflowInstances(id: string | number): IBaseExecution<PS.ProjectWorkflowInstance>;
 	Stages(): IBaseCollection<PS.Stage>;
+	Stages(id: string | number): IBaseExecution<PS.Stage>;
 	TimeSheetPeriods(): IBaseCollection<PS.TimeSheetPeriod>;
+	TimeSheetPeriods(id: string | number): IBaseExecution<PS.TimeSheetPeriod>;
 	UserPermissions(): IBaseCollection<PS.UserPermission>;
+	UserPermissions(id: string | number): IBaseExecution<PS.UserPermission>;
 }
 
 /*********************************************
@@ -3320,6 +3379,7 @@ export interface TimeSheetProps {
 **********************************************/
 export interface TimeSheetCollections extends TimeSheetProps {
 	Lines(): IBaseCollection<PS.TimeSheetLine>;
+	Lines(id: string | number): IBaseExecution<PS.TimeSheetLine>;
 }
 
 /*********************************************
@@ -3382,6 +3442,7 @@ export interface TimeSheetLineProps {
 **********************************************/
 export interface TimeSheetLineCollections extends TimeSheetLineProps {
 	Work(): IBaseCollection<PS.TimeSheetWork>;
+	Work(id: string | number): IBaseExecution<PS.TimeSheetWork>;
 }
 
 /*********************************************
@@ -3571,6 +3632,7 @@ export interface WorkflowDesignerProps {
 **********************************************/
 export interface WorkflowDesignerCollections extends WorkflowDesignerProps {
 	Fields(): IBaseCollection<PS.WorkflowDesignerField>;
+	Fields(id: string | number): IBaseExecution<PS.WorkflowDesignerField>;
 }
 
 /*********************************************
@@ -3624,6 +3686,7 @@ export interface WorkflowDesignerFieldProps {
 **********************************************/
 export interface WorkflowDesignerFieldCollections extends WorkflowDesignerFieldProps {
 	LookupEntries(): IBaseCollection<PS.LookupEntry>;
+	LookupEntries(id: string | number): IBaseExecution<PS.LookupEntry>;
 }
 
 /*********************************************
@@ -3740,6 +3803,7 @@ export interface ResourcePlanProps {
 **********************************************/
 export interface ResourcePlanCollections extends ResourcePlanProps {
 	Assignments(): IBaseCollection<PS.PlanAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.PlanAssignment>;
 }
 
 /*********************************************
@@ -3843,6 +3907,7 @@ export interface TimePhaseProps {
 **********************************************/
 export interface TimePhaseCollections extends TimePhaseProps {
 	Assignments(): IBaseCollection<PS.StatusAssignment>;
+	Assignments(id: string | number): IBaseExecution<PS.StatusAssignment>;
 }
 
 /*********************************************

@@ -52,6 +52,7 @@ export interface GetExternalUsersResultsProps {
 **********************************************/
 export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsProps {
 	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+	ExternalUserCollection(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
 }
 
 /*********************************************
