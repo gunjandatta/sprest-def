@@ -354,11 +354,16 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 let content = [];
                 let fileImports = [];
 
+                // Update the references
+                updateReferences(fileImports, dirName, "IBaseExecution.");
+
                 // Parse the interfaces
                 for (let name in directories[dirName][filename]) {
                     let interface = directories[dirName][filename][name];
                     let collections = [];
                     let methods = [];
+                    let props = [];
+                    let query = [];
                     let variables = [];
 
                     // Parse the properties
@@ -376,6 +381,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         if (propName == "_Collections") {
                             // Update the references
                             updateReferences(fileImports, dirName, "IBaseCollection.");
+                            updateReferences(fileImports, dirName, "IBaseResults.");
 
                             // Parse the collections
                             for (var collection in prop) {
@@ -389,8 +395,15 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     let methodInfo = methodTypes[methodKey][methodRole];
                                     let methodType = methodInfo.type || "any";
 
-                                    // Add the method
-                                    collections.push('\t' + collection + '<T=' + methodType + '>(): ' + (methodInfo.isCollection ? 'IBaseCollection' : 'IBaseExecution') + '<T>;');
+                                    // See if this is a collection
+                                    if (methodInfo.isCollection) {
+                                        // Add the methods
+                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + '>;');
+                                        query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
+                                    } else {
+                                        // Add the method
+                                        props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '>;');
+                                    }
 
                                     // Update the references
                                     updateReferences(fileImports, dirName, methodType);
@@ -404,7 +417,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         // See if this object contains methods
                         if (propName == "_Methods") {
                             // Update the references
-                            updateReferences(fileImports, dirName, "IBaseExecution.");
+                            updateReferences(fileImports, dirName, "IBaseQuery.");
 
                             // Parse the methods
                             for (let i = 0; i < prop.length; i++) {
@@ -420,7 +433,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 }
 
                                 // Add the method
-                                methods.push('\t' + methodInfo.name + '<T=' + getType(methodInfo.returnType) + '>(' + params.join(', ') + '): IBaseExecution<T>;');
+                                methods.push('\t' + methodInfo.name + '(' + params.join(', ') + '): IBaseExecution<' + getType(methodInfo.returnType) + '>;');
                             }
 
                             // Continue the loop
@@ -443,13 +456,16 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         content.push(create.interface(name, interface._BaseType, variables.join('\n')));
                     } else {
                         let baseTypes = interface._BaseType ? [interface._BaseType] : [];
-                        baseTypes.push(name + "Props");
+                        baseTypes.push(name + "Collections");
                         baseTypes.push(name + "Methods");
 
                         // Generate the content
-                        content.push(create.interface("I" + name, [name + "Props", name + "Methods", "IBaseExecution<" + name + ">"]));
+                        content.push(create.interface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"]));
+                        content.push(create.interface("I" + name + "Query", [name + "Query", name + "Methods"]));
                         content.push(create.interface(name, baseTypes.join(", "), variables.join('\n')));
-                        content.push(create.interface(name + "Props", null, collections.join('\n')));
+                        content.push(create.interface(name + "Props", null, props.join('\n')));
+                        content.push(create.interface(name + "Collections", name + "Props", collections.join('\n')));
+                        content.push(create.interface(name + "Query", name + "Props", query.join('\n')));
                         content.push(create.interface(name + "Methods", null, methods.join('\n')));
                     }
                 }

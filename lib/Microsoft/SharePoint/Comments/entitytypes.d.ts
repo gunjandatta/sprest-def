@@ -1,19 +1,28 @@
+import { IBaseExecution } from "../../../";
 import { IBaseCollection } from "../../../";
+import { IBaseResults } from "../../../";
 import { Microsoft } from "../../../";
 import { SP } from "../../../";
-import { IBaseExecution } from "../../../";
+import { IBaseQuery } from "../../../";
 
 /*********************************************
 * Icomment
 **********************************************/
-export interface Icomment extends commentProps,commentMethods,IBaseExecution<comment> {
+export interface Icomment extends commentCollections,commentMethods,IBaseQuery<IcommentQuery> {
+
+}
+
+/*********************************************
+* IcommentQuery
+**********************************************/
+export interface IcommentQuery extends commentQuery,commentMethods {
 
 }
 
 /*********************************************
 * comment
 **********************************************/
-export interface comment extends commentProps, commentMethods {
+export interface comment extends commentCollections, commentMethods {
 	author?: SP.Sharing.Principal;
 	createdDate?: any;
 	id?: string;
@@ -33,16 +42,31 @@ export interface comment extends commentProps, commentMethods {
 * commentProps
 **********************************************/
 export interface commentProps {
-	likedBy<T=Microsoft.SharePoint.Likes.userEntity>(): IBaseCollection<T>;
-	replies<T=Microsoft.SharePoint.Comments.comment>(): IBaseCollection<T>;
+
+}
+
+/*********************************************
+* commentCollections
+**********************************************/
+export interface commentCollections extends commentProps {
+	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
+	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment>;
+}
+
+/*********************************************
+* commentQuery
+**********************************************/
+export interface commentQuery extends commentProps {
+	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
+	replies: IBaseResults<Microsoft.SharePoint.Comments.comment>;
 }
 
 /*********************************************
 * commentMethods
 **********************************************/
 export interface commentMethods {
-	like<T=any>(): IBaseExecution<T>;
-	unlike<T=any>(): IBaseExecution<T>;
+	like(): IBaseExecution<any>;
+	unlike(): IBaseExecution<any>;
 }
 
 /*********************************************

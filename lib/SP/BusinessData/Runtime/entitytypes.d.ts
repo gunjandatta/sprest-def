@@ -1,5 +1,6 @@
-import { SP } from "../../../";
 import { IBaseExecution } from "../../../";
+import { SP } from "../../../";
+import { IBaseQuery } from "../../../";
 
 /*********************************************
 * EntityIdentity
@@ -28,14 +29,21 @@ export interface Subscription {
 /*********************************************
 * IEntityInstance
 **********************************************/
-export interface IEntityInstance extends EntityInstanceProps,EntityInstanceMethods,IBaseExecution<EntityInstance> {
+export interface IEntityInstance extends EntityInstanceCollections,EntityInstanceMethods,IBaseQuery<IEntityInstanceQuery> {
+
+}
+
+/*********************************************
+* IEntityInstanceQuery
+**********************************************/
+export interface IEntityInstanceQuery extends EntityInstanceQuery,EntityInstanceMethods {
 
 }
 
 /*********************************************
 * EntityInstance
 **********************************************/
-export interface EntityInstance extends EntityInstanceProps, EntityInstanceMethods {
+export interface EntityInstance extends EntityInstanceCollections, EntityInstanceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -47,29 +55,50 @@ export interface EntityInstanceProps {
 }
 
 /*********************************************
+* EntityInstanceCollections
+**********************************************/
+export interface EntityInstanceCollections extends EntityInstanceProps {
+
+}
+
+/*********************************************
+* EntityInstanceQuery
+**********************************************/
+export interface EntityInstanceQuery extends EntityInstanceProps {
+
+}
+
+/*********************************************
 * EntityInstanceMethods
 **********************************************/
 export interface EntityInstanceMethods {
-	createCollectionInstance<T=any>(fieldDotNotation?: string, size?: number): IBaseExecution<T>;
-	createInstance<T=any>(fieldInstanceDotNotation?: string, fieldDotNotation?: string): IBaseExecution<T>;
-	deleteObject<T=any>(): IBaseExecution<T>;
-	fromXml<T=any>(xml?: string): IBaseExecution<T>;
-	getIdentity<T=SP.BusinessData.Runtime.EntityIdentity>(): IBaseExecution<T>;
-	toXml<T=string>(): IBaseExecution<T>;
-	update<T=any>(): IBaseExecution<T>;
+	createCollectionInstance(fieldDotNotation?: string, size?: number): IBaseExecution<any>;
+	createInstance(fieldInstanceDotNotation?: string, fieldDotNotation?: string): IBaseExecution<any>;
+	deleteObject(): IBaseExecution<any>;
+	fromXml(xml?: string): IBaseExecution<any>;
+	getIdentity(): IBaseExecution<SP.BusinessData.Runtime.EntityIdentity>;
+	toXml(): IBaseExecution<string>;
+	update(): IBaseExecution<any>;
 }
 
 /*********************************************
 * IEntityFieldValueDictionary
 **********************************************/
-export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryProps,EntityFieldValueDictionaryMethods,IBaseExecution<EntityFieldValueDictionary> {
+export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryCollections,EntityFieldValueDictionaryMethods,IBaseQuery<IEntityFieldValueDictionaryQuery> {
+
+}
+
+/*********************************************
+* IEntityFieldValueDictionaryQuery
+**********************************************/
+export interface IEntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryQuery,EntityFieldValueDictionaryMethods {
 
 }
 
 /*********************************************
 * EntityFieldValueDictionary
 **********************************************/
-export interface EntityFieldValueDictionary extends EntityFieldValueDictionaryProps, EntityFieldValueDictionaryMethods {
+export interface EntityFieldValueDictionary extends EntityFieldValueDictionaryCollections, EntityFieldValueDictionaryMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -81,12 +110,26 @@ export interface EntityFieldValueDictionaryProps {
 }
 
 /*********************************************
+* EntityFieldValueDictionaryCollections
+**********************************************/
+export interface EntityFieldValueDictionaryCollections extends EntityFieldValueDictionaryProps {
+
+}
+
+/*********************************************
+* EntityFieldValueDictionaryQuery
+**********************************************/
+export interface EntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryProps {
+
+}
+
+/*********************************************
 * EntityFieldValueDictionaryMethods
 **********************************************/
 export interface EntityFieldValueDictionaryMethods {
-	createCollectionInstance<T=any>(fieldDotNotation?: string, size?: number): IBaseExecution<T>;
-	createInstance<T=any>(fieldInstanceDotNotation?: string, fieldDotNotation?: string): IBaseExecution<T>;
-	fromXml<T=any>(xml?: string): IBaseExecution<T>;
-	getCollectionSize<T=number>(fieldDotNotation?: string): IBaseExecution<T>;
-	toXml<T=string>(): IBaseExecution<T>;
+	createCollectionInstance(fieldDotNotation?: string, size?: number): IBaseExecution<any>;
+	createInstance(fieldInstanceDotNotation?: string, fieldDotNotation?: string): IBaseExecution<any>;
+	fromXml(xml?: string): IBaseExecution<any>;
+	getCollectionSize(fieldDotNotation?: string): IBaseExecution<number>;
+	toXml(): IBaseExecution<string>;
 }

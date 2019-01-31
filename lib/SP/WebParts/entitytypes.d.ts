@@ -1,18 +1,27 @@
-import { IBaseCollection } from "../../";
-import { SP } from "../../";
 import { IBaseExecution } from "../../";
+import { IBaseCollection } from "../../";
+import { IBaseResults } from "../../";
+import { SP } from "../../";
+import { IBaseQuery } from "../../";
 
 /*********************************************
 * ILimitedWebPartManager
 **********************************************/
-export interface ILimitedWebPartManager extends LimitedWebPartManagerProps,LimitedWebPartManagerMethods,IBaseExecution<LimitedWebPartManager> {
+export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections,LimitedWebPartManagerMethods,IBaseQuery<ILimitedWebPartManagerQuery> {
+
+}
+
+/*********************************************
+* ILimitedWebPartManagerQuery
+**********************************************/
+export interface ILimitedWebPartManagerQuery extends LimitedWebPartManagerQuery,LimitedWebPartManagerMethods {
 
 }
 
 /*********************************************
 * LimitedWebPartManager
 **********************************************/
-export interface LimitedWebPartManager extends LimitedWebPartManagerProps, LimitedWebPartManagerMethods {
+export interface LimitedWebPartManager extends LimitedWebPartManagerCollections, LimitedWebPartManagerMethods {
 	HasPersonalizedParts?: boolean;
 	Scope?: number;
 }
@@ -21,28 +30,49 @@ export interface LimitedWebPartManager extends LimitedWebPartManagerProps, Limit
 * LimitedWebPartManagerProps
 **********************************************/
 export interface LimitedWebPartManagerProps {
-	WebParts<T=SP.WebParts.WebPartDefinition>(): IBaseCollection<T>;
+
+}
+
+/*********************************************
+* LimitedWebPartManagerCollections
+**********************************************/
+export interface LimitedWebPartManagerCollections extends LimitedWebPartManagerProps {
+	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition>;
+}
+
+/*********************************************
+* LimitedWebPartManagerQuery
+**********************************************/
+export interface LimitedWebPartManagerQuery extends LimitedWebPartManagerProps {
+	WebParts: IBaseResults<SP.WebParts.WebPartDefinition>;
 }
 
 /*********************************************
 * LimitedWebPartManagerMethods
 **********************************************/
 export interface LimitedWebPartManagerMethods {
-	exportWebPart<T=string>(webPartId?: any): IBaseExecution<T>;
-	importWebPart<T=SP.WebParts.WebPartDefinition>(webPartXml?: string): IBaseExecution<T>;
+	exportWebPart(webPartId?: any): IBaseExecution<string>;
+	importWebPart(webPartXml?: string): IBaseExecution<SP.WebParts.WebPartDefinition>;
 }
 
 /*********************************************
 * IWebPartDefinition
 **********************************************/
-export interface IWebPartDefinition extends WebPartDefinitionProps,WebPartDefinitionMethods,IBaseExecution<WebPartDefinition> {
+export interface IWebPartDefinition extends WebPartDefinitionCollections,WebPartDefinitionMethods,IBaseQuery<IWebPartDefinitionQuery> {
+
+}
+
+/*********************************************
+* IWebPartDefinitionQuery
+**********************************************/
+export interface IWebPartDefinitionQuery extends WebPartDefinitionQuery,WebPartDefinitionMethods {
 
 }
 
 /*********************************************
 * WebPartDefinition
 **********************************************/
-export interface WebPartDefinition extends WebPartDefinitionProps, WebPartDefinitionMethods {
+export interface WebPartDefinition extends WebPartDefinitionCollections, WebPartDefinitionMethods {
 	Id?: any;
 	ZoneId?: string;
 }
@@ -51,31 +81,38 @@ export interface WebPartDefinition extends WebPartDefinitionProps, WebPartDefini
 * WebPartDefinitionProps
 **********************************************/
 export interface WebPartDefinitionProps {
-	WebPart<T=SP.WebParts.WebPart>(): IBaseExecution<T>;
+	WebPart(): IBaseExecution<SP.WebParts.WebPart>;
+}
+
+/*********************************************
+* WebPartDefinitionCollections
+**********************************************/
+export interface WebPartDefinitionCollections extends WebPartDefinitionProps {
+
+}
+
+/*********************************************
+* WebPartDefinitionQuery
+**********************************************/
+export interface WebPartDefinitionQuery extends WebPartDefinitionProps {
+
 }
 
 /*********************************************
 * WebPartDefinitionMethods
 **********************************************/
 export interface WebPartDefinitionMethods {
-	closeWebPart<T=any>(): IBaseExecution<T>;
-	deleteWebPart<T=any>(): IBaseExecution<T>;
-	moveWebPartTo<T=any>(zoneID?: string, zoneIndex?: number): IBaseExecution<T>;
-	openWebPart<T=any>(): IBaseExecution<T>;
-	saveWebPartChanges<T=any>(): IBaseExecution<T>;
-}
-
-/*********************************************
-* IWebPart
-**********************************************/
-export interface IWebPart extends WebPartProps,WebPartMethods,IBaseExecution<WebPart> {
-
+	closeWebPart(): IBaseExecution<any>;
+	deleteWebPart(): IBaseExecution<any>;
+	moveWebPartTo(zoneID?: string, zoneIndex?: number): IBaseExecution<any>;
+	openWebPart(): IBaseExecution<any>;
+	saveWebPartChanges(): IBaseExecution<any>;
 }
 
 /*********************************************
 * WebPart
 **********************************************/
-export interface WebPart extends WebPartProps, WebPartMethods {
+export interface WebPart {
 	ExportMode?: number;
 	Hidden?: boolean;
 	IsClosed?: boolean;
@@ -83,18 +120,4 @@ export interface WebPart extends WebPartProps, WebPartMethods {
 	Title?: string;
 	TitleUrl?: string;
 	ZoneIndex?: number;
-}
-
-/*********************************************
-* WebPartProps
-**********************************************/
-export interface WebPartProps {
-	Properties<T=SP.PropertyValues>(): IBaseExecution<T>;
-}
-
-/*********************************************
-* WebPartMethods
-**********************************************/
-export interface WebPartMethods {
-
 }

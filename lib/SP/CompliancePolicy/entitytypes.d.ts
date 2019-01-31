@@ -1,4 +1,5 @@
 import { IBaseExecution } from "../../";
+import { IBaseQuery } from "../../";
 
 /*********************************************
 * PolicyEvaluationInfo
@@ -13,14 +14,21 @@ export interface PolicyEvaluationInfo {
 /*********************************************
 * ISPPolicyStoreProxy
 **********************************************/
-export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyProps,SPPolicyStoreProxyMethods,IBaseExecution<SPPolicyStoreProxy> {
+export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections,SPPolicyStoreProxyMethods,IBaseQuery<ISPPolicyStoreProxyQuery> {
+
+}
+
+/*********************************************
+* ISPPolicyStoreProxyQuery
+**********************************************/
+export interface ISPPolicyStoreProxyQuery extends SPPolicyStoreProxyQuery,SPPolicyStoreProxyMethods {
 
 }
 
 /*********************************************
 * SPPolicyStoreProxy
 **********************************************/
-export interface SPPolicyStoreProxy extends SPPolicyStoreProxyProps, SPPolicyStoreProxyMethods {
+export interface SPPolicyStoreProxy extends SPPolicyStoreProxyCollections, SPPolicyStoreProxyMethods {
 	PolicyStoreUrl?: string;
 	ReviewCenterUrl?: string;
 	SupportContentTypeRetention?: boolean;
@@ -34,22 +42,36 @@ export interface SPPolicyStoreProxyProps {
 }
 
 /*********************************************
+* SPPolicyStoreProxyCollections
+**********************************************/
+export interface SPPolicyStoreProxyCollections extends SPPolicyStoreProxyProps {
+
+}
+
+/*********************************************
+* SPPolicyStoreProxyQuery
+**********************************************/
+export interface SPPolicyStoreProxyQuery extends SPPolicyStoreProxyProps {
+
+}
+
+/*********************************************
 * SPPolicyStoreProxyMethods
 **********************************************/
 export interface SPPolicyStoreProxyMethods {
-	addDynamicScopeBinding<T=any>(identity?: string, siteId?: string): IBaseExecution<T>;
-	bulkUpdateDynamicScopeBindings<T=any>(scopesToAdd?: Array<string>, scopesToRemove?: Array<string>, siteId?: string): IBaseExecution<T>;
-	deleteDynamicScopeBinding<T=any>(identity?: string, siteId?: string): IBaseExecution<T>;
-	extendReviewItemsRetention<T=Array<number>>(itemIds?: Array<number>, extensionDate?: any): IBaseExecution<T>;
-	getDynamicScopeBindingBySiteId<T=Array<string>>(siteId?: string): IBaseExecution<T>;
-	markReviewItemsForDeletion<T=Array<number>>(itemIds?: Array<number>): IBaseExecution<T>;
-	openBinaryStreamForOriginalItem<T=any>(itemId?: number): IBaseExecution<T>;
-	removeContainerRetentionPolicy<T=any>(siteId?: string): IBaseExecution<T>;
-	removeContainerSettings<T=any>(externalId?: Array<string>): IBaseExecution<T>;
-	retagReviewItems<T=Array<number>>(itemIds?: Array<number>, newTag?: string, newTagIsRecord?: boolean, newTagBlockDelete?: boolean, newTagIsEventBased?: boolean): IBaseExecution<T>;
-	retagReviewItemsWithMetas<T=Array<number>>(itemIds?: Array<number>, newTagName?: string, newTagMetas?: Array<string>): IBaseExecution<T>;
-	setContainerRetentionPolicy<T=any>(siteId?: string, defaultContainerLabel?: any): IBaseExecution<T>;
-	updateContainerSetting<T=any>(siteId?: string, externalId?: string, settingType?: number, setting?: string): IBaseExecution<T>;
+	addDynamicScopeBinding(identity?: string, siteId?: string): IBaseExecution<any>;
+	bulkUpdateDynamicScopeBindings(scopesToAdd?: Array<string>, scopesToRemove?: Array<string>, siteId?: string): IBaseExecution<any>;
+	deleteDynamicScopeBinding(identity?: string, siteId?: string): IBaseExecution<any>;
+	extendReviewItemsRetention(itemIds?: Array<number>, extensionDate?: any): IBaseExecution<Array<number>>;
+	getDynamicScopeBindingBySiteId(siteId?: string): IBaseExecution<Array<string>>;
+	markReviewItemsForDeletion(itemIds?: Array<number>): IBaseExecution<Array<number>>;
+	openBinaryStreamForOriginalItem(itemId?: number): IBaseExecution<any>;
+	removeContainerRetentionPolicy(siteId?: string): IBaseExecution<any>;
+	removeContainerSettings(externalId?: Array<string>): IBaseExecution<any>;
+	retagReviewItems(itemIds?: Array<number>, newTag?: string, newTagIsRecord?: boolean, newTagBlockDelete?: boolean, newTagIsEventBased?: boolean): IBaseExecution<Array<number>>;
+	retagReviewItemsWithMetas(itemIds?: Array<number>, newTagName?: string, newTagMetas?: Array<string>): IBaseExecution<Array<number>>;
+	setContainerRetentionPolicy(siteId?: string, defaultContainerLabel?: any): IBaseExecution<any>;
+	updateContainerSetting(siteId?: string, externalId?: string, settingType?: number, setting?: string): IBaseExecution<any>;
 }
 
 /*********************************************

@@ -1,18 +1,27 @@
-import { SP } from "../../";
 import { IBaseExecution } from "../../";
+import { SP } from "../../";
+import { IBaseQuery } from "../../";
 import { IBaseCollection } from "../../";
+import { IBaseResults } from "../../";
 
 /*********************************************
 * IWorkflowDefinition
 **********************************************/
-export interface IWorkflowDefinition extends WorkflowDefinitionProps,WorkflowDefinitionMethods,IBaseExecution<WorkflowDefinition> {
+export interface IWorkflowDefinition extends WorkflowDefinitionCollections,WorkflowDefinitionMethods,IBaseQuery<IWorkflowDefinitionQuery> {
+
+}
+
+/*********************************************
+* IWorkflowDefinitionQuery
+**********************************************/
+export interface IWorkflowDefinitionQuery extends WorkflowDefinitionQuery,WorkflowDefinitionMethods {
 
 }
 
 /*********************************************
 * WorkflowDefinition
 **********************************************/
-export interface WorkflowDefinition extends WorkflowDefinitionProps, WorkflowDefinitionMethods {
+export interface WorkflowDefinition extends WorkflowDefinitionCollections, WorkflowDefinitionMethods {
 	AssociationUrl?: string;
 	Description?: string;
 	DisplayName?: string;
@@ -37,23 +46,44 @@ export interface WorkflowDefinitionProps {
 }
 
 /*********************************************
+* WorkflowDefinitionCollections
+**********************************************/
+export interface WorkflowDefinitionCollections extends WorkflowDefinitionProps {
+
+}
+
+/*********************************************
+* WorkflowDefinitionQuery
+**********************************************/
+export interface WorkflowDefinitionQuery extends WorkflowDefinitionProps {
+
+}
+
+/*********************************************
 * WorkflowDefinitionMethods
 **********************************************/
 export interface WorkflowDefinitionMethods {
-	setProperty<T=any>(propertyName?: string, value?: string): IBaseExecution<T>;
+	setProperty(propertyName?: string, value?: string): IBaseExecution<any>;
 }
 
 /*********************************************
 * IWorkflowDeploymentService
 **********************************************/
-export interface IWorkflowDeploymentService extends WorkflowDeploymentServiceProps,WorkflowDeploymentServiceMethods,IBaseExecution<WorkflowDeploymentService> {
+export interface IWorkflowDeploymentService extends WorkflowDeploymentServiceCollections,WorkflowDeploymentServiceMethods,IBaseQuery<IWorkflowDeploymentServiceQuery> {
+
+}
+
+/*********************************************
+* IWorkflowDeploymentServiceQuery
+**********************************************/
+export interface IWorkflowDeploymentServiceQuery extends WorkflowDeploymentServiceQuery,WorkflowDeploymentServiceMethods {
 
 }
 
 /*********************************************
 * WorkflowDeploymentService
 **********************************************/
-export interface WorkflowDeploymentService extends WorkflowDeploymentServiceProps, WorkflowDeploymentServiceMethods {
+export interface WorkflowDeploymentService extends WorkflowDeploymentServiceCollections, WorkflowDeploymentServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -65,22 +95,36 @@ export interface WorkflowDeploymentServiceProps {
 }
 
 /*********************************************
+* WorkflowDeploymentServiceCollections
+**********************************************/
+export interface WorkflowDeploymentServiceCollections extends WorkflowDeploymentServiceProps {
+
+}
+
+/*********************************************
+* WorkflowDeploymentServiceQuery
+**********************************************/
+export interface WorkflowDeploymentServiceQuery extends WorkflowDeploymentServiceProps {
+
+}
+
+/*********************************************
 * WorkflowDeploymentServiceMethods
 **********************************************/
 export interface WorkflowDeploymentServiceMethods {
-	deleteCollateral<T=any>(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<T>;
-	deleteDefinition<T=any>(definitionId?: any): IBaseExecution<T>;
-	deprecateDefinition<T=any>(definitionId?: any): IBaseExecution<T>;
-	enumerateDefinitions<T=Array<SP.WorkflowServices.WorkflowDefinition>>(publishedOnly?: boolean): IBaseExecution<T>;
-	enumerateIntegratedApps<T=Array<SP.AppInstance>>(): IBaseExecution<T>;
-	getActivitySignatures<T=Array<SP.KeyValue>>(lastChanged?: any): IBaseExecution<T>;
-	getCollateralUri<T=string>(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<T>;
-	getDefinition<T=SP.WorkflowServices.WorkflowDefinition>(definitionId?: any): IBaseExecution<T>;
-	isIntegratedApp<T=boolean>(): IBaseExecution<T>;
-	packageDefinition<T=string>(definitionId?: any, packageDefaultFilename?: string, packageTitle?: string, packageDescription?: string): IBaseExecution<T>;
-	publishDefinition<T=any>(definitionId?: any): IBaseExecution<T>;
-	saveCollateral<T=any>(workflowDefinitionId?: any, leafFileName?: string, fileContent?: any): IBaseExecution<T>;
-	validateActivity<T=string>(activityXaml?: string): IBaseExecution<T>;
+	deleteCollateral(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<any>;
+	deleteDefinition(definitionId?: any): IBaseExecution<any>;
+	deprecateDefinition(definitionId?: any): IBaseExecution<any>;
+	enumerateDefinitions(publishedOnly?: boolean): IBaseExecution<Array<SP.WorkflowServices.WorkflowDefinition>>;
+	enumerateIntegratedApps(): IBaseExecution<Array<SP.AppInstance>>;
+	getActivitySignatures(lastChanged?: any): IBaseExecution<Array<SP.KeyValue>>;
+	getCollateralUri(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<string>;
+	getDefinition(definitionId?: any): IBaseExecution<SP.WorkflowServices.WorkflowDefinition>;
+	isIntegratedApp(): IBaseExecution<boolean>;
+	packageDefinition(definitionId?: any, packageDefaultFilename?: string, packageTitle?: string, packageDescription?: string): IBaseExecution<string>;
+	publishDefinition(definitionId?: any): IBaseExecution<any>;
+	saveCollateral(workflowDefinitionId?: any, leafFileName?: string, fileContent?: any): IBaseExecution<any>;
+	validateActivity(activityXaml?: string): IBaseExecution<string>;
 }
 
 /*********************************************
@@ -100,14 +144,21 @@ export interface WorkflowInstance {
 /*********************************************
 * IWorkflowInstanceService
 **********************************************/
-export interface IWorkflowInstanceService extends WorkflowInstanceServiceProps,WorkflowInstanceServiceMethods,IBaseExecution<WorkflowInstanceService> {
+export interface IWorkflowInstanceService extends WorkflowInstanceServiceCollections,WorkflowInstanceServiceMethods,IBaseQuery<IWorkflowInstanceServiceQuery> {
+
+}
+
+/*********************************************
+* IWorkflowInstanceServiceQuery
+**********************************************/
+export interface IWorkflowInstanceServiceQuery extends WorkflowInstanceServiceQuery,WorkflowInstanceServiceMethods {
 
 }
 
 /*********************************************
 * WorkflowInstanceService
 **********************************************/
-export interface WorkflowInstanceService extends WorkflowInstanceServiceProps, WorkflowInstanceServiceMethods {
+export interface WorkflowInstanceService extends WorkflowInstanceServiceCollections, WorkflowInstanceServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -115,32 +166,53 @@ export interface WorkflowInstanceService extends WorkflowInstanceServiceProps, W
 * WorkflowInstanceServiceProps
 **********************************************/
 export interface WorkflowInstanceServiceProps {
-	Current<T=SP.WorkflowServices.WorkflowInstanceService>(): IBaseExecution<T>;
+	Current(): IBaseExecution<SP.WorkflowServices.WorkflowInstanceService>;
+}
+
+/*********************************************
+* WorkflowInstanceServiceCollections
+**********************************************/
+export interface WorkflowInstanceServiceCollections extends WorkflowInstanceServiceProps {
+
+}
+
+/*********************************************
+* WorkflowInstanceServiceQuery
+**********************************************/
+export interface WorkflowInstanceServiceQuery extends WorkflowInstanceServiceProps {
+
 }
 
 /*********************************************
 * WorkflowInstanceServiceMethods
 **********************************************/
 export interface WorkflowInstanceServiceMethods {
-	enumerateInstancesForListItem<T=Array<SP.WorkflowServices.WorkflowInstance>>(listId?: any, itemId?: number): IBaseExecution<T>;
-	enumerateInstancesForListItemWithOffset<T=Array<SP.WorkflowServices.WorkflowInstance>>(listId?: any, itemId?: number, offset?: number): IBaseExecution<T>;
-	enumerateInstancesForSite<T=Array<SP.WorkflowServices.WorkflowInstance>>(): IBaseExecution<T>;
-	enumerateInstancesForSiteWithOffset<T=Array<SP.WorkflowServices.WorkflowInstance>>(offset?: number): IBaseExecution<T>;
-	getInstance<T=SP.WorkflowServices.WorkflowInstance>(instanceId?: any): IBaseExecution<T>;
-	startWorkflowOnListItemBySubscriptionId<T=any>(subscriptionId?: any, itemId?: number, payload?: Array<SP.KeyValue>): IBaseExecution<T>;
+	enumerateInstancesForListItem(listId?: any, itemId?: number): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
+	enumerateInstancesForListItemWithOffset(listId?: any, itemId?: number, offset?: number): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
+	enumerateInstancesForSite(): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
+	enumerateInstancesForSiteWithOffset(offset?: number): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
+	getInstance(instanceId?: any): IBaseExecution<SP.WorkflowServices.WorkflowInstance>;
+	startWorkflowOnListItemBySubscriptionId(subscriptionId?: any, itemId?: number, payload?: Array<SP.KeyValue>): IBaseExecution<any>;
 }
 
 /*********************************************
 * IInteropService
 **********************************************/
-export interface IInteropService extends InteropServiceProps,InteropServiceMethods,IBaseExecution<InteropService> {
+export interface IInteropService extends InteropServiceCollections,InteropServiceMethods,IBaseQuery<IInteropServiceQuery> {
+
+}
+
+/*********************************************
+* IInteropServiceQuery
+**********************************************/
+export interface IInteropServiceQuery extends InteropServiceQuery,InteropServiceMethods {
 
 }
 
 /*********************************************
 * InteropService
 **********************************************/
-export interface InteropService extends InteropServiceProps, InteropServiceMethods {
+export interface InteropService extends InteropServiceCollections, InteropServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -148,30 +220,51 @@ export interface InteropService extends InteropServiceProps, InteropServiceMetho
 * InteropServiceProps
 **********************************************/
 export interface InteropServiceProps {
-	Current<T=SP.WorkflowServices.InteropService>(): IBaseExecution<T>;
+	Current(): IBaseExecution<SP.WorkflowServices.InteropService>;
+}
+
+/*********************************************
+* InteropServiceCollections
+**********************************************/
+export interface InteropServiceCollections extends InteropServiceProps {
+
+}
+
+/*********************************************
+* InteropServiceQuery
+**********************************************/
+export interface InteropServiceQuery extends InteropServiceProps {
+
 }
 
 /*********************************************
 * InteropServiceMethods
 **********************************************/
 export interface InteropServiceMethods {
-	cancelWorkflow<T=any>(instanceId?: any): IBaseExecution<T>;
-	disableEvents<T=any>(listId?: any, itemGuid?: any): IBaseExecution<T>;
-	enableEvents<T=any>(listId?: any, itemGuid?: any): IBaseExecution<T>;
-	startWorkflow<T=any>(associationName?: string, correlationId?: any, listId?: any, itemGuid?: any, workflowParameters?: Array<SP.KeyValue>): IBaseExecution<T>;
+	cancelWorkflow(instanceId?: any): IBaseExecution<any>;
+	disableEvents(listId?: any, itemGuid?: any): IBaseExecution<any>;
+	enableEvents(listId?: any, itemGuid?: any): IBaseExecution<any>;
+	startWorkflow(associationName?: string, correlationId?: any, listId?: any, itemGuid?: any, workflowParameters?: Array<SP.KeyValue>): IBaseExecution<any>;
 }
 
 /*********************************************
 * IWorkflowServicesManager
 **********************************************/
-export interface IWorkflowServicesManager extends WorkflowServicesManagerProps,WorkflowServicesManagerMethods,IBaseExecution<WorkflowServicesManager> {
+export interface IWorkflowServicesManager extends WorkflowServicesManagerCollections,WorkflowServicesManagerMethods,IBaseQuery<IWorkflowServicesManagerQuery> {
+
+}
+
+/*********************************************
+* IWorkflowServicesManagerQuery
+**********************************************/
+export interface IWorkflowServicesManagerQuery extends WorkflowServicesManagerQuery,WorkflowServicesManagerMethods {
 
 }
 
 /*********************************************
 * WorkflowServicesManager
 **********************************************/
-export interface WorkflowServicesManager extends WorkflowServicesManagerProps, WorkflowServicesManagerMethods {
+export interface WorkflowServicesManager extends WorkflowServicesManagerCollections, WorkflowServicesManagerMethods {
 	AppId?: string;
 	IsConnected?: boolean;
 	ScopePath?: string;
@@ -182,31 +275,52 @@ export interface WorkflowServicesManager extends WorkflowServicesManagerProps, W
 * WorkflowServicesManagerProps
 **********************************************/
 export interface WorkflowServicesManagerProps {
-	Current<T=SP.WorkflowServices.WorkflowServicesManager>(): IBaseExecution<T>;
+	Current(): IBaseExecution<SP.WorkflowServices.WorkflowServicesManager>;
+}
+
+/*********************************************
+* WorkflowServicesManagerCollections
+**********************************************/
+export interface WorkflowServicesManagerCollections extends WorkflowServicesManagerProps {
+
+}
+
+/*********************************************
+* WorkflowServicesManagerQuery
+**********************************************/
+export interface WorkflowServicesManagerQuery extends WorkflowServicesManagerProps {
+
 }
 
 /*********************************************
 * WorkflowServicesManagerMethods
 **********************************************/
 export interface WorkflowServicesManagerMethods {
-	getWorkflowDeploymentService<T=SP.WorkflowServices.WorkflowDeploymentService>(): IBaseExecution<T>;
-	getWorkflowInstanceService<T=SP.WorkflowServices.WorkflowInstanceService>(): IBaseExecution<T>;
-	getWorkflowInteropService<T=SP.WorkflowServices.InteropService>(): IBaseExecution<T>;
-	getWorkflowSubscriptionService<T=SP.WorkflowServices.WorkflowSubscriptionService>(): IBaseExecution<T>;
-	isIntegratedApp<T=boolean>(): IBaseExecution<T>;
+	getWorkflowDeploymentService(): IBaseExecution<SP.WorkflowServices.WorkflowDeploymentService>;
+	getWorkflowInstanceService(): IBaseExecution<SP.WorkflowServices.WorkflowInstanceService>;
+	getWorkflowInteropService(): IBaseExecution<SP.WorkflowServices.InteropService>;
+	getWorkflowSubscriptionService(): IBaseExecution<SP.WorkflowServices.WorkflowSubscriptionService>;
+	isIntegratedApp(): IBaseExecution<boolean>;
 }
 
 /*********************************************
 * IWorkflowSubscription
 **********************************************/
-export interface IWorkflowSubscription extends WorkflowSubscriptionProps,WorkflowSubscriptionMethods,IBaseExecution<WorkflowSubscription> {
+export interface IWorkflowSubscription extends WorkflowSubscriptionCollections,WorkflowSubscriptionMethods,IBaseQuery<IWorkflowSubscriptionQuery> {
+
+}
+
+/*********************************************
+* IWorkflowSubscriptionQuery
+**********************************************/
+export interface IWorkflowSubscriptionQuery extends WorkflowSubscriptionQuery,WorkflowSubscriptionMethods {
 
 }
 
 /*********************************************
 * WorkflowSubscription
 **********************************************/
-export interface WorkflowSubscription extends WorkflowSubscriptionProps, WorkflowSubscriptionMethods {
+export interface WorkflowSubscription extends WorkflowSubscriptionCollections, WorkflowSubscriptionMethods {
 	DefinitionId?: any;
 	Enabled?: boolean;
 	EventSourceId?: any;
@@ -227,25 +341,46 @@ export interface WorkflowSubscriptionProps {
 }
 
 /*********************************************
+* WorkflowSubscriptionCollections
+**********************************************/
+export interface WorkflowSubscriptionCollections extends WorkflowSubscriptionProps {
+
+}
+
+/*********************************************
+* WorkflowSubscriptionQuery
+**********************************************/
+export interface WorkflowSubscriptionQuery extends WorkflowSubscriptionProps {
+
+}
+
+/*********************************************
 * WorkflowSubscriptionMethods
 **********************************************/
 export interface WorkflowSubscriptionMethods {
-	getExternalVariable<T=string>(name?: string): IBaseExecution<T>;
-	setExternalVariable<T=any>(name?: string, value?: string): IBaseExecution<T>;
-	setProperty<T=any>(name?: string, value?: string): IBaseExecution<T>;
+	getExternalVariable(name?: string): IBaseExecution<string>;
+	setExternalVariable(name?: string, value?: string): IBaseExecution<any>;
+	setProperty(name?: string, value?: string): IBaseExecution<any>;
 }
 
 /*********************************************
 * IWorkflowSubscriptionService
 **********************************************/
-export interface IWorkflowSubscriptionService extends WorkflowSubscriptionServiceProps,WorkflowSubscriptionServiceMethods,IBaseExecution<WorkflowSubscriptionService> {
+export interface IWorkflowSubscriptionService extends WorkflowSubscriptionServiceCollections,WorkflowSubscriptionServiceMethods,IBaseQuery<IWorkflowSubscriptionServiceQuery> {
+
+}
+
+/*********************************************
+* IWorkflowSubscriptionServiceQuery
+**********************************************/
+export interface IWorkflowSubscriptionServiceQuery extends WorkflowSubscriptionServiceQuery,WorkflowSubscriptionServiceMethods {
 
 }
 
 /*********************************************
 * WorkflowSubscriptionService
 **********************************************/
-export interface WorkflowSubscriptionService extends WorkflowSubscriptionServiceProps, WorkflowSubscriptionServiceMethods {
+export interface WorkflowSubscriptionService extends WorkflowSubscriptionServiceCollections, WorkflowSubscriptionServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -253,38 +388,59 @@ export interface WorkflowSubscriptionService extends WorkflowSubscriptionService
 * WorkflowSubscriptionServiceProps
 **********************************************/
 export interface WorkflowSubscriptionServiceProps {
-	Current<T=SP.WorkflowServices.WorkflowSubscriptionService>(): IBaseExecution<T>;
+	Current(): IBaseExecution<SP.WorkflowServices.WorkflowSubscriptionService>;
+}
+
+/*********************************************
+* WorkflowSubscriptionServiceCollections
+**********************************************/
+export interface WorkflowSubscriptionServiceCollections extends WorkflowSubscriptionServiceProps {
+
+}
+
+/*********************************************
+* WorkflowSubscriptionServiceQuery
+**********************************************/
+export interface WorkflowSubscriptionServiceQuery extends WorkflowSubscriptionServiceProps {
+
 }
 
 /*********************************************
 * WorkflowSubscriptionServiceMethods
 **********************************************/
 export interface WorkflowSubscriptionServiceMethods {
-	deleteSubscription<T=any>(subscriptionId?: any): IBaseExecution<T>;
-	enumerateSubscriptions<T=Array<SP.WorkflowServices.WorkflowSubscription>>(): IBaseExecution<T>;
-	enumerateSubscriptionsByDefinition<T=Array<SP.WorkflowServices.WorkflowSubscription>>(definitionId?: any): IBaseExecution<T>;
-	enumerateSubscriptionsByEventSource<T=Array<SP.WorkflowServices.WorkflowSubscription>>(eventSourceId?: any): IBaseExecution<T>;
-	enumerateSubscriptionsByList<T=Array<SP.WorkflowServices.WorkflowSubscription>>(listId?: any): IBaseExecution<T>;
-	enumerateSubscriptionsByListAndParentContentType<T=Array<SP.WorkflowServices.WorkflowSubscription>>(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): IBaseExecution<T>;
-	enumerateSubscriptionsByListWithContentType<T=Array<SP.WorkflowServices.WorkflowSubscription>>(listId?: any, includeContentTypeSpecified?: boolean): IBaseExecution<T>;
-	getSubscription<T=SP.WorkflowServices.WorkflowSubscription>(subscriptionId?: any): IBaseExecution<T>;
-	registerInterestInHostWebList<T=any>(listId?: any, eventName?: string): IBaseExecution<T>;
-	registerInterestInList<T=any>(listId?: any, eventName?: string): IBaseExecution<T>;
-	unregisterInterestInHostWebList<T=any>(listId?: any, eventName?: string): IBaseExecution<T>;
-	unregisterInterestInList<T=any>(listId?: any, eventName?: string): IBaseExecution<T>;
+	deleteSubscription(subscriptionId?: any): IBaseExecution<any>;
+	enumerateSubscriptions(): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
+	enumerateSubscriptionsByDefinition(definitionId?: any): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
+	enumerateSubscriptionsByEventSource(eventSourceId?: any): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
+	enumerateSubscriptionsByList(listId?: any): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
+	enumerateSubscriptionsByListAndParentContentType(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
+	enumerateSubscriptionsByListWithContentType(listId?: any, includeContentTypeSpecified?: boolean): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
+	getSubscription(subscriptionId?: any): IBaseExecution<SP.WorkflowServices.WorkflowSubscription>;
+	registerInterestInHostWebList(listId?: any, eventName?: string): IBaseExecution<any>;
+	registerInterestInList(listId?: any, eventName?: string): IBaseExecution<any>;
+	unregisterInterestInHostWebList(listId?: any, eventName?: string): IBaseExecution<any>;
+	unregisterInterestInList(listId?: any, eventName?: string): IBaseExecution<any>;
 }
 
 /*********************************************
 * IWorkflowMessagingService
 **********************************************/
-export interface IWorkflowMessagingService extends WorkflowMessagingServiceProps,WorkflowMessagingServiceMethods,IBaseExecution<WorkflowMessagingService> {
+export interface IWorkflowMessagingService extends WorkflowMessagingServiceCollections,WorkflowMessagingServiceMethods,IBaseQuery<IWorkflowMessagingServiceQuery> {
+
+}
+
+/*********************************************
+* IWorkflowMessagingServiceQuery
+**********************************************/
+export interface IWorkflowMessagingServiceQuery extends WorkflowMessagingServiceQuery,WorkflowMessagingServiceMethods {
 
 }
 
 /*********************************************
 * WorkflowMessagingService
 **********************************************/
-export interface WorkflowMessagingService extends WorkflowMessagingServiceProps, WorkflowMessagingServiceMethods {
+export interface WorkflowMessagingService extends WorkflowMessagingServiceCollections, WorkflowMessagingServiceMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -296,8 +452,22 @@ export interface WorkflowMessagingServiceProps {
 }
 
 /*********************************************
+* WorkflowMessagingServiceCollections
+**********************************************/
+export interface WorkflowMessagingServiceCollections extends WorkflowMessagingServiceProps {
+
+}
+
+/*********************************************
+* WorkflowMessagingServiceQuery
+**********************************************/
+export interface WorkflowMessagingServiceQuery extends WorkflowMessagingServiceProps {
+
+}
+
+/*********************************************
 * WorkflowMessagingServiceMethods
 **********************************************/
 export interface WorkflowMessagingServiceMethods {
-	publishEvent<T=string>(eventSourceId?: any, eventName?: string, payload?: Array<SP.KeyValue>): IBaseExecution<T>;
+	publishEvent(eventSourceId?: any, eventName?: string, payload?: Array<SP.KeyValue>): IBaseExecution<string>;
 }

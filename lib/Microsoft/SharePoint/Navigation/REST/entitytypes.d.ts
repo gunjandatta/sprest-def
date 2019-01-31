@@ -1,16 +1,24 @@
 import { IBaseExecution } from "../../../../";
+import { IBaseQuery } from "../../../../";
 
 /*********************************************
 * INavigationServiceRest
 **********************************************/
-export interface INavigationServiceRest extends NavigationServiceRestProps,NavigationServiceRestMethods,IBaseExecution<NavigationServiceRest> {
+export interface INavigationServiceRest extends NavigationServiceRestCollections,NavigationServiceRestMethods,IBaseQuery<INavigationServiceRestQuery> {
+
+}
+
+/*********************************************
+* INavigationServiceRestQuery
+**********************************************/
+export interface INavigationServiceRestQuery extends NavigationServiceRestQuery,NavigationServiceRestMethods {
 
 }
 
 /*********************************************
 * NavigationServiceRest
 **********************************************/
-export interface NavigationServiceRest extends NavigationServiceRestProps, NavigationServiceRestMethods {
+export interface NavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -22,11 +30,25 @@ export interface NavigationServiceRestProps {
 }
 
 /*********************************************
+* NavigationServiceRestCollections
+**********************************************/
+export interface NavigationServiceRestCollections extends NavigationServiceRestProps {
+
+}
+
+/*********************************************
+* NavigationServiceRestQuery
+**********************************************/
+export interface NavigationServiceRestQuery extends NavigationServiceRestProps {
+
+}
+
+/*********************************************
 * NavigationServiceRestMethods
 **********************************************/
 export interface NavigationServiceRestMethods {
-	getPublishingNavigationProviderType<T=number>(mapProviderName?: string): IBaseExecution<T>;
-	menuNodeKey<T=string>(currentUrl?: string, mapProviderName?: string): IBaseExecution<T>;
-	menuState<T=SP.MenuState>(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): IBaseExecution<T>;
-	saveMenuState<T=number>(menuState?: SP.MenuState, mapProviderName?: string): IBaseExecution<T>;
+	getPublishingNavigationProviderType(mapProviderName?: string): IBaseExecution<number>;
+	menuNodeKey(currentUrl?: string, mapProviderName?: string): IBaseExecution<string>;
+	menuState(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): IBaseExecution<SP.MenuState>;
+	saveMenuState(menuState?: SP.MenuState, mapProviderName?: string): IBaseExecution<number>;
 }

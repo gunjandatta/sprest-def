@@ -1,17 +1,25 @@
 import { IBaseExecution } from "../../";
+import { IBaseQuery } from "../../";
 import { SP } from "../../";
 
 /*********************************************
 * IWorkflowAssociation
 **********************************************/
-export interface IWorkflowAssociation extends WorkflowAssociationProps,WorkflowAssociationMethods,IBaseExecution<WorkflowAssociation> {
+export interface IWorkflowAssociation extends WorkflowAssociationCollections,WorkflowAssociationMethods,IBaseQuery<IWorkflowAssociationQuery> {
+
+}
+
+/*********************************************
+* IWorkflowAssociationQuery
+**********************************************/
+export interface IWorkflowAssociationQuery extends WorkflowAssociationQuery,WorkflowAssociationMethods {
 
 }
 
 /*********************************************
 * WorkflowAssociation
 **********************************************/
-export interface WorkflowAssociation extends WorkflowAssociationProps, WorkflowAssociationMethods {
+export interface WorkflowAssociation extends WorkflowAssociationCollections, WorkflowAssociationMethods {
 	AllowManual?: boolean;
 	AssociationData?: string;
 	AutoStartChange?: boolean;
@@ -40,11 +48,25 @@ export interface WorkflowAssociationProps {
 }
 
 /*********************************************
+* WorkflowAssociationCollections
+**********************************************/
+export interface WorkflowAssociationCollections extends WorkflowAssociationProps {
+
+}
+
+/*********************************************
+* WorkflowAssociationQuery
+**********************************************/
+export interface WorkflowAssociationQuery extends WorkflowAssociationProps {
+
+}
+
+/*********************************************
 * WorkflowAssociationMethods
 **********************************************/
 export interface WorkflowAssociationMethods {
-	deleteObject<T=any>(): IBaseExecution<T>;
-	update<T=any>(): IBaseExecution<T>;
+	deleteObject(): IBaseExecution<any>;
+	update(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -82,14 +104,21 @@ export interface SPWorkflowManager {
 /*********************************************
 * ISPWorkflowTask
 **********************************************/
-export interface ISPWorkflowTask extends SPWorkflowTaskProps,SPWorkflowTaskMethods,IBaseExecution<SPWorkflowTask> {
+export interface ISPWorkflowTask extends SPWorkflowTaskCollections,SPWorkflowTaskMethods,IBaseQuery<ISPWorkflowTaskQuery> {
+
+}
+
+/*********************************************
+* ISPWorkflowTaskQuery
+**********************************************/
+export interface ISPWorkflowTaskQuery extends SPWorkflowTaskQuery,SPWorkflowTaskMethods {
 
 }
 
 /*********************************************
 * SPWorkflowTask
 **********************************************/
-export interface SPWorkflowTask extends SP.ListItem, SPWorkflowTaskProps, SPWorkflowTaskMethods {
+export interface SPWorkflowTask extends SP.ListItem, SPWorkflowTaskCollections, SPWorkflowTaskMethods {
 
 }
 
@@ -101,32 +130,46 @@ export interface SPWorkflowTaskProps {
 }
 
 /*********************************************
+* SPWorkflowTaskCollections
+**********************************************/
+export interface SPWorkflowTaskCollections extends SPWorkflowTaskProps {
+
+}
+
+/*********************************************
+* SPWorkflowTaskQuery
+**********************************************/
+export interface SPWorkflowTaskQuery extends SPWorkflowTaskProps {
+
+}
+
+/*********************************************
 * SPWorkflowTaskMethods
 **********************************************/
 export interface SPWorkflowTaskMethods {
-	breakRoleInheritance<T=any>(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<T>;
-	resetRoleInheritance<T=any>(): IBaseExecution<T>;
-	deleteObject<T=any>(): IBaseExecution<T>;
-	getChanges<T=Array<SP.Change>>(query?: SP.ChangeQuery): IBaseExecution<T>;
-	getHashtags<T=Array<SP.Hashtag>>(): IBaseExecution<T>;
-	getUserEffectivePermissions<T=SP.BasePermissions>(userName?: string): IBaseExecution<T>;
-	getWOPIFrameUrl<T=string>(action?: number): IBaseExecution<T>;
-	mediaServiceUpdate<T=any>(parameters?: SP.MediaServiceUpdateParameters): IBaseExecution<T>;
-	mediaServiceUpdateV2<T=any>(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): IBaseExecution<T>;
-	overridePolicyTip<T=number>(userAction?: number, justification?: string): IBaseExecution<T>;
-	parseAndSetFieldValue<T=any>(fieldName?: string, value?: string): IBaseExecution<T>;
-	recycle<T=any>(): IBaseExecution<T>;
-	setCommentsDisabled<T=any>(value?: boolean): IBaseExecution<T>;
-	setComplianceTag<T=any>(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): IBaseExecution<T>;
-	setComplianceTagWithExplicitMetasUpdate<T=any>(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): IBaseExecution<T>;
-	setComplianceTagWithHold<T=any>(complianceTag?: string): IBaseExecution<T>;
-	setComplianceTagWithMetaInfo<T=any>(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): IBaseExecution<T>;
-	setComplianceTagWithNoHold<T=any>(complianceTag?: string): IBaseExecution<T>;
-	setComplianceTagWithRecord<T=any>(complianceTag?: string): IBaseExecution<T>;
-	systemUpdate<T=any>(): IBaseExecution<T>;
-	update<T=any>(): IBaseExecution<T>;
-	updateEx<T=any>(parameters?: SP.ListItemUpdateParameters): IBaseExecution<T>;
-	updateHashtags<T=Array<SP.Hashtag>>(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseExecution<T>;
-	updateOverwriteVersion<T=any>(): IBaseExecution<T>;
-	validateUpdateListItem<T=Array<SP.ListItemFormUpdateValue>>(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<T>;
+	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<any>;
+	resetRoleInheritance(): IBaseExecution<any>;
+	deleteObject(): IBaseExecution<any>;
+	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
+	getHashtags(): IBaseExecution<Array<SP.Hashtag>>;
+	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;
+	getWOPIFrameUrl(action?: number): IBaseExecution<string>;
+	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): IBaseExecution<any>;
+	mediaServiceUpdateV2(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): IBaseExecution<any>;
+	overridePolicyTip(userAction?: number, justification?: string): IBaseExecution<number>;
+	parseAndSetFieldValue(fieldName?: string, value?: string): IBaseExecution<any>;
+	recycle(): IBaseExecution<any>;
+	setCommentsDisabled(value?: boolean): IBaseExecution<any>;
+	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): IBaseExecution<any>;
+	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): IBaseExecution<any>;
+	setComplianceTagWithHold(complianceTag?: string): IBaseExecution<any>;
+	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): IBaseExecution<any>;
+	setComplianceTagWithNoHold(complianceTag?: string): IBaseExecution<any>;
+	setComplianceTagWithRecord(complianceTag?: string): IBaseExecution<any>;
+	systemUpdate(): IBaseExecution<any>;
+	update(): IBaseExecution<any>;
+	updateEx(parameters?: SP.ListItemUpdateParameters): IBaseExecution<any>;
+	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseExecution<Array<SP.Hashtag>>;
+	updateOverwriteVersion(): IBaseExecution<any>;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
 }

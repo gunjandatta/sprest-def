@@ -1,17 +1,25 @@
 import { IBaseExecution } from "../../";
+import { IBaseQuery } from "../../";
 import { SP } from "../../";
 
 /*********************************************
 * IMicrofeedPostDefinitionManager
 **********************************************/
-export interface IMicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerProps,MicrofeedPostDefinitionManagerMethods,IBaseExecution<MicrofeedPostDefinitionManager> {
+export interface IMicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerCollections,MicrofeedPostDefinitionManagerMethods,IBaseQuery<IMicrofeedPostDefinitionManagerQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedPostDefinitionManagerQuery
+**********************************************/
+export interface IMicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerQuery,MicrofeedPostDefinitionManagerMethods {
 
 }
 
 /*********************************************
 * MicrofeedPostDefinitionManager
 **********************************************/
-export interface MicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerProps, MicrofeedPostDefinitionManagerMethods {
+export interface MicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerCollections, MicrofeedPostDefinitionManagerMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -23,27 +31,48 @@ export interface MicrofeedPostDefinitionManagerProps {
 }
 
 /*********************************************
+* MicrofeedPostDefinitionManagerCollections
+**********************************************/
+export interface MicrofeedPostDefinitionManagerCollections extends MicrofeedPostDefinitionManagerProps {
+
+}
+
+/*********************************************
+* MicrofeedPostDefinitionManagerQuery
+**********************************************/
+export interface MicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerProps {
+
+}
+
+/*********************************************
 * MicrofeedPostDefinitionManagerMethods
 **********************************************/
 export interface MicrofeedPostDefinitionManagerMethods {
-	deleteMicrofeedPostDefinition<T=boolean>(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): IBaseExecution<T>;
-	getMicrofeedPostDefinition<T=SP.Microfeed.MicrofeedPostDefinition>(definitionName?: string): IBaseExecution<T>;
-	getMicrofeedPostDefinitions<T=Array<SP.Microfeed.MicrofeedPostDefinition>>(): IBaseExecution<T>;
-	newMicrofeedPostDefinition<T=SP.Microfeed.MicrofeedPostDefinition>(definitionName?: string): IBaseExecution<T>;
-	updateMicrofeedPostDefinition<T=SP.Microfeed.MicrofeedPostDefinition>(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): IBaseExecution<T>;
+	deleteMicrofeedPostDefinition(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): IBaseExecution<boolean>;
+	getMicrofeedPostDefinition(definitionName?: string): IBaseExecution<SP.Microfeed.MicrofeedPostDefinition>;
+	getMicrofeedPostDefinitions(): IBaseExecution<Array<SP.Microfeed.MicrofeedPostDefinition>>;
+	newMicrofeedPostDefinition(definitionName?: string): IBaseExecution<SP.Microfeed.MicrofeedPostDefinition>;
+	updateMicrofeedPostDefinition(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): IBaseExecution<SP.Microfeed.MicrofeedPostDefinition>;
 }
 
 /*********************************************
 * IMicrofeedAttachmentStore
 **********************************************/
-export interface IMicrofeedAttachmentStore extends MicrofeedAttachmentStoreProps,MicrofeedAttachmentStoreMethods,IBaseExecution<MicrofeedAttachmentStore> {
+export interface IMicrofeedAttachmentStore extends MicrofeedAttachmentStoreCollections,MicrofeedAttachmentStoreMethods,IBaseQuery<IMicrofeedAttachmentStoreQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedAttachmentStoreQuery
+**********************************************/
+export interface IMicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreQuery,MicrofeedAttachmentStoreMethods {
 
 }
 
 /*********************************************
 * MicrofeedAttachmentStore
 **********************************************/
-export interface MicrofeedAttachmentStore extends MicrofeedAttachmentStoreProps, MicrofeedAttachmentStoreMethods {
+export interface MicrofeedAttachmentStore extends MicrofeedAttachmentStoreCollections, MicrofeedAttachmentStoreMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -55,27 +84,48 @@ export interface MicrofeedAttachmentStoreProps {
 }
 
 /*********************************************
+* MicrofeedAttachmentStoreCollections
+**********************************************/
+export interface MicrofeedAttachmentStoreCollections extends MicrofeedAttachmentStoreProps {
+
+}
+
+/*********************************************
+* MicrofeedAttachmentStoreQuery
+**********************************************/
+export interface MicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreProps {
+
+}
+
+/*********************************************
 * MicrofeedAttachmentStoreMethods
 **********************************************/
 export interface MicrofeedAttachmentStoreMethods {
-	deletePreProcessedAttachment<T=any>(attachmentUri?: string): IBaseExecution<T>;
-	getImage<T=any>(imageUrl?: string, key?: string, iv?: string): IBaseExecution<T>;
-	preProcessAttachment<T=SP.Microfeed.MicrofeedLink>(link?: SP.Microfeed.MicrofeedLink): IBaseExecution<T>;
-	putFile<T=Array<string>>(originalFileName?: string, fileData?: any): IBaseExecution<T>;
-	putImage<T=Array<string>>(imageData?: any): IBaseExecution<T>;
+	deletePreProcessedAttachment(attachmentUri?: string): IBaseExecution<any>;
+	getImage(imageUrl?: string, key?: string, iv?: string): IBaseExecution<any>;
+	preProcessAttachment(link?: SP.Microfeed.MicrofeedLink): IBaseExecution<SP.Microfeed.MicrofeedLink>;
+	putFile(originalFileName?: string, fileData?: any): IBaseExecution<Array<string>>;
+	putImage(imageData?: any): IBaseExecution<Array<string>>;
 }
 
 /*********************************************
 * IMicrofeedData
 **********************************************/
-export interface IMicrofeedData extends MicrofeedDataProps,MicrofeedDataMethods,IBaseExecution<MicrofeedData> {
+export interface IMicrofeedData extends MicrofeedDataCollections,MicrofeedDataMethods,IBaseQuery<IMicrofeedDataQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedDataQuery
+**********************************************/
+export interface IMicrofeedDataQuery extends MicrofeedDataQuery,MicrofeedDataMethods {
 
 }
 
 /*********************************************
 * MicrofeedData
 **********************************************/
-export interface MicrofeedData extends MicrofeedDataProps, MicrofeedDataMethods {
+export interface MicrofeedData extends MicrofeedDataCollections, MicrofeedDataMethods {
 	Created?: any;
 	Data?: Array<SP.KeyValue>;
 	DefinitionId?: number;
@@ -93,25 +143,46 @@ export interface MicrofeedDataProps {
 }
 
 /*********************************************
+* MicrofeedDataCollections
+**********************************************/
+export interface MicrofeedDataCollections extends MicrofeedDataProps {
+
+}
+
+/*********************************************
+* MicrofeedDataQuery
+**********************************************/
+export interface MicrofeedDataQuery extends MicrofeedDataProps {
+
+}
+
+/*********************************************
 * MicrofeedDataMethods
 **********************************************/
 export interface MicrofeedDataMethods {
-	addAttachment<T=any>(name?: string, bytes?: any): IBaseExecution<T>;
-	systemUpdate<T=any>(): IBaseExecution<T>;
-	update<T=any>(): IBaseExecution<T>;
+	addAttachment(name?: string, bytes?: any): IBaseExecution<any>;
+	systemUpdate(): IBaseExecution<any>;
+	update(): IBaseExecution<any>;
 }
 
 /*********************************************
 * IMicrofeedManager
 **********************************************/
-export interface IMicrofeedManager extends MicrofeedManagerProps,MicrofeedManagerMethods,IBaseExecution<MicrofeedManager> {
+export interface IMicrofeedManager extends MicrofeedManagerCollections,MicrofeedManagerMethods,IBaseQuery<IMicrofeedManagerQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedManagerQuery
+**********************************************/
+export interface IMicrofeedManagerQuery extends MicrofeedManagerQuery,MicrofeedManagerMethods {
 
 }
 
 /*********************************************
 * MicrofeedManager
 **********************************************/
-export interface MicrofeedManager extends MicrofeedManagerProps, MicrofeedManagerMethods {
+export interface MicrofeedManager extends MicrofeedManagerCollections, MicrofeedManagerMethods {
 	CurrentUser?: SP.Microfeed.MicroBlogEntity;
 	IsFeedActivityPublic?: boolean;
 	StaticThreadLink?: string;
@@ -125,27 +196,41 @@ export interface MicrofeedManagerProps {
 }
 
 /*********************************************
+* MicrofeedManagerCollections
+**********************************************/
+export interface MicrofeedManagerCollections extends MicrofeedManagerProps {
+
+}
+
+/*********************************************
+* MicrofeedManagerQuery
+**********************************************/
+export interface MicrofeedManagerQuery extends MicrofeedManagerProps {
+
+}
+
+/*********************************************
 * MicrofeedManagerMethods
 **********************************************/
 export interface MicrofeedManagerMethods {
-	addUserToPostPeopleList<T=number>(postIdentifier?: string, UserLoginName?: string): IBaseExecution<T>;
-	clearUnreadMentionsCount<T=number>(): IBaseExecution<T>;
-	deleteById<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): IBaseExecution<T>;
-	deleteUserFromPostPeopleList<T=number>(postIdentifier?: string, UserLoginName?: string): IBaseExecution<T>;
-	getMyCategoricalFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): IBaseExecution<T>;
-	getMyConsolidatedFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): IBaseExecution<T>;
-	getMyPublishedFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number, ShowPublicView?: boolean): IBaseExecution<T>;
-	getPublishedFeed<T=SP.Microfeed.MicrofeedThreadCollection>(feedOwner?: string, feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number): IBaseExecution<T>;
-	getThread<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): IBaseExecution<T>;
-	getUnreadMentionsCount<T=number>(): IBaseExecution<T>;
-	like<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): IBaseExecution<T>;
-	lockThreadById<T=SP.Microfeed.MicrofeedThread>(threadIdentifier?: string): IBaseExecution<T>;
-	post<T=SP.Microfeed.MicrofeedThread>(postOptions?: SP.Microfeed.MicrofeedPostOptions): IBaseExecution<T>;
-	postReply<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string, postReplyOptions?: SP.Microfeed.MicrofeedPostOptions): IBaseExecution<T>;
-	repopulateLMT<T=number>(timeStamp?: any, secureHash?: string): IBaseExecution<T>;
-	unLike<T=SP.Microfeed.MicrofeedThread>(postIdentifier?: string): IBaseExecution<T>;
-	unLockThreadById<T=SP.Microfeed.MicrofeedThread>(threadIdentifier?: string): IBaseExecution<T>;
-	unsubscribeFromEMail<T=any>(postIdentifier?: string): IBaseExecution<T>;
+	addUserToPostPeopleList(postIdentifier?: string, UserLoginName?: string): IBaseExecution<number>;
+	clearUnreadMentionsCount(): IBaseExecution<number>;
+	deleteById(postIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	deleteUserFromPostPeopleList(postIdentifier?: string, UserLoginName?: string): IBaseExecution<number>;
+	getMyCategoricalFeed(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): IBaseExecution<SP.Microfeed.MicrofeedThreadCollection>;
+	getMyConsolidatedFeed(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions): IBaseExecution<SP.Microfeed.MicrofeedThreadCollection>;
+	getMyPublishedFeed(feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number, ShowPublicView?: boolean): IBaseExecution<SP.Microfeed.MicrofeedThreadCollection>;
+	getPublishedFeed(feedOwner?: string, feedOptions?: SP.Microfeed.MicrofeedRetrievalOptions, typeOfPubFeed?: number): IBaseExecution<SP.Microfeed.MicrofeedThreadCollection>;
+	getThread(postIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	getUnreadMentionsCount(): IBaseExecution<number>;
+	like(postIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	lockThreadById(threadIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	post(postOptions?: SP.Microfeed.MicrofeedPostOptions): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	postReply(postIdentifier?: string, postReplyOptions?: SP.Microfeed.MicrofeedPostOptions): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	repopulateLMT(timeStamp?: any, secureHash?: string): IBaseExecution<number>;
+	unLike(postIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	unLockThreadById(threadIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedThread>;
+	unsubscribeFromEMail(postIdentifier?: string): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -159,14 +244,21 @@ export interface MicrofeedPostOptionCollection {
 /*********************************************
 * IMicrofeedStore
 **********************************************/
-export interface IMicrofeedStore extends MicrofeedStoreProps,MicrofeedStoreMethods,IBaseExecution<MicrofeedStore> {
+export interface IMicrofeedStore extends MicrofeedStoreCollections,MicrofeedStoreMethods,IBaseQuery<IMicrofeedStoreQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedStoreQuery
+**********************************************/
+export interface IMicrofeedStoreQuery extends MicrofeedStoreQuery,MicrofeedStoreMethods {
 
 }
 
 /*********************************************
 * MicrofeedStore
 **********************************************/
-export interface MicrofeedStore extends MicrofeedStoreProps, MicrofeedStoreMethods {
+export interface MicrofeedStore extends MicrofeedStoreCollections, MicrofeedStoreMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -178,31 +270,52 @@ export interface MicrofeedStoreProps {
 }
 
 /*********************************************
+* MicrofeedStoreCollections
+**********************************************/
+export interface MicrofeedStoreCollections extends MicrofeedStoreProps {
+
+}
+
+/*********************************************
+* MicrofeedStoreQuery
+**********************************************/
+export interface MicrofeedStoreQuery extends MicrofeedStoreProps {
+
+}
+
+/*********************************************
 * MicrofeedStoreMethods
 **********************************************/
 export interface MicrofeedStoreMethods {
-	addData<T=any>(name?: string, data?: any): IBaseExecution<T>;
-	addDataAsStream<T=any>(name?: string, data?: any): IBaseExecution<T>;
-	executePendingOperations<T=any>(): IBaseExecution<T>;
-	getItem<T=SP.Microfeed.MicrofeedData>(storeIdentifier?: string): IBaseExecution<T>;
-	getSocialProperties<T=string>(accountName?: string): IBaseExecution<T>;
-	incrementUnreadAtMentionCount<T=any>(accountName?: string): IBaseExecution<T>;
-	newItem<T=SP.Microfeed.MicrofeedData>(storeIdentifier?: string): IBaseExecution<T>;
-	query<T=Array<SP.Microfeed.MicrofeedData>>(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseExecution<T>;
-	setPostLikeStatus<T=any>(accountName?: string, postId?: string, like?: boolean): IBaseExecution<T>;
+	addData(name?: string, data?: any): IBaseExecution<any>;
+	addDataAsStream(name?: string, data?: any): IBaseExecution<any>;
+	executePendingOperations(): IBaseExecution<any>;
+	getItem(storeIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedData>;
+	getSocialProperties(accountName?: string): IBaseExecution<string>;
+	incrementUnreadAtMentionCount(accountName?: string): IBaseExecution<any>;
+	newItem(storeIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedData>;
+	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseExecution<Array<SP.Microfeed.MicrofeedData>>;
+	setPostLikeStatus(accountName?: string, postId?: string, like?: boolean): IBaseExecution<any>;
 }
 
 /*********************************************
 * IMicrofeedDataCollection
 **********************************************/
-export interface IMicrofeedDataCollection extends MicrofeedDataCollectionProps,MicrofeedDataCollectionMethods,IBaseExecution<MicrofeedDataCollection> {
+export interface IMicrofeedDataCollection extends MicrofeedDataCollectionCollections,MicrofeedDataCollectionMethods,IBaseQuery<IMicrofeedDataCollectionQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedDataCollectionQuery
+**********************************************/
+export interface IMicrofeedDataCollectionQuery extends MicrofeedDataCollectionQuery,MicrofeedDataCollectionMethods {
 
 }
 
 /*********************************************
 * MicrofeedDataCollection
 **********************************************/
-export interface MicrofeedDataCollection extends MicrofeedDataCollectionProps, MicrofeedDataCollectionMethods {
+export interface MicrofeedDataCollection extends MicrofeedDataCollectionCollections, MicrofeedDataCollectionMethods {
 
 }
 
@@ -214,8 +327,22 @@ export interface MicrofeedDataCollectionProps {
 }
 
 /*********************************************
+* MicrofeedDataCollectionCollections
+**********************************************/
+export interface MicrofeedDataCollectionCollections extends MicrofeedDataCollectionProps {
+
+}
+
+/*********************************************
+* MicrofeedDataCollectionQuery
+**********************************************/
+export interface MicrofeedDataCollectionQuery extends MicrofeedDataCollectionProps {
+
+}
+
+/*********************************************
 * MicrofeedDataCollectionMethods
 **********************************************/
 export interface MicrofeedDataCollectionMethods {
-	deleteAll<T=any>(): IBaseExecution<T>;
+	deleteAll(): IBaseExecution<any>;
 }

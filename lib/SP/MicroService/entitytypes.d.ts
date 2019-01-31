@@ -1,16 +1,24 @@
 import { IBaseExecution } from "../../";
+import { IBaseQuery } from "../../";
 
 /*********************************************
 * IMicroServiceManager
 **********************************************/
-export interface IMicroServiceManager extends MicroServiceManagerProps,MicroServiceManagerMethods,IBaseExecution<MicroServiceManager> {
+export interface IMicroServiceManager extends MicroServiceManagerCollections,MicroServiceManagerMethods,IBaseQuery<IMicroServiceManagerQuery> {
+
+}
+
+/*********************************************
+* IMicroServiceManagerQuery
+**********************************************/
+export interface IMicroServiceManagerQuery extends MicroServiceManagerQuery,MicroServiceManagerMethods {
 
 }
 
 /*********************************************
 * MicroServiceManager
 **********************************************/
-export interface MicroServiceManager extends MicroServiceManagerProps, MicroServiceManagerMethods {
+export interface MicroServiceManager extends MicroServiceManagerCollections, MicroServiceManagerMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -22,13 +30,27 @@ export interface MicroServiceManagerProps {
 }
 
 /*********************************************
+* MicroServiceManagerCollections
+**********************************************/
+export interface MicroServiceManagerCollections extends MicroServiceManagerProps {
+
+}
+
+/*********************************************
+* MicroServiceManagerQuery
+**********************************************/
+export interface MicroServiceManagerQuery extends MicroServiceManagerProps {
+
+}
+
+/*********************************************
 * MicroServiceManagerMethods
 **********************************************/
 export interface MicroServiceManagerMethods {
-	addMicroserviceWorkItem<T=any>(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): IBaseExecution<T>;
-	deleteMicroserviceWorkItem<T=boolean>(workItemId?: any): IBaseExecution<T>;
-	getServiceInternalUrls<T=Array<string>>(service?: string): IBaseExecution<T>;
-	getServiceUrls<T=Array<string>>(service?: string): IBaseExecution<T>;
+	addMicroserviceWorkItem(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): IBaseExecution<any>;
+	deleteMicroserviceWorkItem(workItemId?: any): IBaseExecution<boolean>;
+	getServiceInternalUrls(service?: string): IBaseExecution<Array<string>>;
+	getServiceUrls(service?: string): IBaseExecution<Array<string>>;
 }
 
 /*********************************************

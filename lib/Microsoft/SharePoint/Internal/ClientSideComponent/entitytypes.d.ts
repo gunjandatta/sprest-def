@@ -1,4 +1,4 @@
-
+import { IBaseExecution } from "../../../../";
 
 /*********************************************
 * ComponentContextInfo

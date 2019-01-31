@@ -1,16 +1,24 @@
 import { IBaseExecution } from "../../../";
+import { IBaseQuery } from "../../../";
 
 /*********************************************
 * ISubscription
 **********************************************/
-export interface ISubscription extends SubscriptionProps,SubscriptionMethods,IBaseExecution<Subscription> {
+export interface ISubscription extends SubscriptionCollections,SubscriptionMethods,IBaseQuery<ISubscriptionQuery> {
+
+}
+
+/*********************************************
+* ISubscriptionQuery
+**********************************************/
+export interface ISubscriptionQuery extends SubscriptionQuery,SubscriptionMethods {
 
 }
 
 /*********************************************
 * Subscription
 **********************************************/
-export interface Subscription extends SubscriptionProps, SubscriptionMethods {
+export interface Subscription extends SubscriptionCollections, SubscriptionMethods {
 	clientState?: string;
 	expirationDateTime?: any;
 	id?: any;
@@ -27,9 +35,23 @@ export interface SubscriptionProps {
 }
 
 /*********************************************
+* SubscriptionCollections
+**********************************************/
+export interface SubscriptionCollections extends SubscriptionProps {
+
+}
+
+/*********************************************
+* SubscriptionQuery
+**********************************************/
+export interface SubscriptionQuery extends SubscriptionProps {
+
+}
+
+/*********************************************
 * SubscriptionMethods
 **********************************************/
 export interface SubscriptionMethods {
-	delete<T=any>(): IBaseExecution<T>;
-	update<T=any>(parameters?: Microsoft.SharePoint.Webhooks.SubscriptionInformation): IBaseExecution<T>;
+	delete(): IBaseExecution<any>;
+	update(parameters?: Microsoft.SharePoint.Webhooks.SubscriptionInformation): IBaseExecution<any>;
 }

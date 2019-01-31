@@ -1,16 +1,24 @@
 import { IBaseExecution } from "../../";
+import { IBaseQuery } from "../../";
 
 /*********************************************
 * ISyncTranslator
 **********************************************/
-export interface ISyncTranslator extends SyncTranslatorProps,SyncTranslatorMethods,IBaseExecution<SyncTranslator> {
+export interface ISyncTranslator extends SyncTranslatorCollections,SyncTranslatorMethods,IBaseQuery<ISyncTranslatorQuery> {
+
+}
+
+/*********************************************
+* ISyncTranslatorQuery
+**********************************************/
+export interface ISyncTranslatorQuery extends SyncTranslatorQuery,SyncTranslatorMethods {
 
 }
 
 /*********************************************
 * SyncTranslator
 **********************************************/
-export interface SyncTranslator extends SyncTranslatorProps, SyncTranslatorMethods {
+export interface SyncTranslator extends SyncTranslatorCollections, SyncTranslatorMethods {
 	OutputSaveBehavior?: number;
 }
 
@@ -22,24 +30,45 @@ export interface SyncTranslatorProps {
 }
 
 /*********************************************
+* SyncTranslatorCollections
+**********************************************/
+export interface SyncTranslatorCollections extends SyncTranslatorProps {
+
+}
+
+/*********************************************
+* SyncTranslatorQuery
+**********************************************/
+export interface SyncTranslatorQuery extends SyncTranslatorProps {
+
+}
+
+/*********************************************
 * SyncTranslatorMethods
 **********************************************/
 export interface SyncTranslatorMethods {
-	translate<T=SP.Translation.TranslationItemInfo>(inputFile?: string, outputFile?: string): IBaseExecution<T>;
-	translateStream<T=any>(inputFile?: any, fileExtension?: string): IBaseExecution<T>;
+	translate(inputFile?: string, outputFile?: string): IBaseExecution<SP.Translation.TranslationItemInfo>;
+	translateStream(inputFile?: any, fileExtension?: string): IBaseExecution<any>;
 }
 
 /*********************************************
 * ITranslationJob
 **********************************************/
-export interface ITranslationJob extends TranslationJobProps,TranslationJobMethods,IBaseExecution<TranslationJob> {
+export interface ITranslationJob extends TranslationJobCollections,TranslationJobMethods,IBaseQuery<ITranslationJobQuery> {
+
+}
+
+/*********************************************
+* ITranslationJobQuery
+**********************************************/
+export interface ITranslationJobQuery extends TranslationJobQuery,TranslationJobMethods {
 
 }
 
 /*********************************************
 * TranslationJob
 **********************************************/
-export interface TranslationJob extends TranslationJobProps, TranslationJobMethods {
+export interface TranslationJob extends TranslationJobCollections, TranslationJobMethods {
 	JobId?: any;
 	Name?: string;
 	OutputSaveBehavior?: number;
@@ -53,25 +82,46 @@ export interface TranslationJobProps {
 }
 
 /*********************************************
+* TranslationJobCollections
+**********************************************/
+export interface TranslationJobCollections extends TranslationJobProps {
+
+}
+
+/*********************************************
+* TranslationJobQuery
+**********************************************/
+export interface TranslationJobQuery extends TranslationJobProps {
+
+}
+
+/*********************************************
 * TranslationJobMethods
 **********************************************/
 export interface TranslationJobMethods {
-	translateFile<T=any>(inputFile?: string, outputFile?: string): IBaseExecution<T>;
-	translateFolder<T=any>(inputFolder?: string, outputFolder?: string, recursion?: boolean): IBaseExecution<T>;
-	translateLibrary<T=any>(inputLibrary?: string, outputLibrary?: string): IBaseExecution<T>;
+	translateFile(inputFile?: string, outputFile?: string): IBaseExecution<any>;
+	translateFolder(inputFolder?: string, outputFolder?: string, recursion?: boolean): IBaseExecution<any>;
+	translateLibrary(inputLibrary?: string, outputLibrary?: string): IBaseExecution<any>;
 }
 
 /*********************************************
 * ITranslationJobStatus
 **********************************************/
-export interface ITranslationJobStatus extends TranslationJobStatusProps,TranslationJobStatusMethods,IBaseExecution<TranslationJobStatus> {
+export interface ITranslationJobStatus extends TranslationJobStatusCollections,TranslationJobStatusMethods,IBaseQuery<ITranslationJobStatusQuery> {
+
+}
+
+/*********************************************
+* ITranslationJobStatusQuery
+**********************************************/
+export interface ITranslationJobStatusQuery extends TranslationJobStatusQuery,TranslationJobStatusMethods {
 
 }
 
 /*********************************************
 * TranslationJobStatus
 **********************************************/
-export interface TranslationJobStatus extends TranslationJobStatusProps, TranslationJobStatusMethods {
+export interface TranslationJobStatus extends TranslationJobStatusCollections, TranslationJobStatusMethods {
 	Canceled?: number;
 	Count?: number;
 	Failed?: number;
@@ -89,10 +139,24 @@ export interface TranslationJobStatusProps {
 }
 
 /*********************************************
+* TranslationJobStatusCollections
+**********************************************/
+export interface TranslationJobStatusCollections extends TranslationJobStatusProps {
+
+}
+
+/*********************************************
+* TranslationJobStatusQuery
+**********************************************/
+export interface TranslationJobStatusQuery extends TranslationJobStatusProps {
+
+}
+
+/*********************************************
 * TranslationJobStatusMethods
 **********************************************/
 export interface TranslationJobStatusMethods {
-	getAllItems<T=Array<SP.Translation.TranslationItemInfo>>(): IBaseExecution<T>;
+	getAllItems(): IBaseExecution<Array<SP.Translation.TranslationItemInfo>>;
 }
 
 /*********************************************

@@ -1,16 +1,24 @@
 import { IBaseExecution } from "../../../";
+import { IBaseQuery } from "../../../";
 
 /*********************************************
 * ITenantCdnApi
 **********************************************/
-export interface ITenantCdnApi extends TenantCdnApiProps,TenantCdnApiMethods,IBaseExecution<TenantCdnApi> {
+export interface ITenantCdnApi extends TenantCdnApiCollections,TenantCdnApiMethods,IBaseQuery<ITenantCdnApiQuery> {
+
+}
+
+/*********************************************
+* ITenantCdnApiQuery
+**********************************************/
+export interface ITenantCdnApiQuery extends TenantCdnApiQuery,TenantCdnApiMethods {
 
 }
 
 /*********************************************
 * TenantCdnApi
 **********************************************/
-export interface TenantCdnApi extends TenantCdnApiProps, TenantCdnApiMethods {
+export interface TenantCdnApi extends TenantCdnApiCollections, TenantCdnApiMethods {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
@@ -22,8 +30,22 @@ export interface TenantCdnApiProps {
 }
 
 /*********************************************
+* TenantCdnApiCollections
+**********************************************/
+export interface TenantCdnApiCollections extends TenantCdnApiProps {
+
+}
+
+/*********************************************
+* TenantCdnApiQuery
+**********************************************/
+export interface TenantCdnApiQuery extends TenantCdnApiProps {
+
+}
+
+/*********************************************
 * TenantCdnApiMethods
 **********************************************/
 export interface TenantCdnApiMethods {
-	getCdnUrls<T=Array<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>>(items?: Array<string>): IBaseExecution<T>;
+	getCdnUrls(items?: Array<string>): IBaseExecution<Array<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>>;
 }

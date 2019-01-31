@@ -1,6 +1,8 @@
-import { MS } from "../../";
 import { IBaseExecution } from "../../";
+import { MS } from "../../";
+import { IBaseQuery } from "../../";
 import { IBaseCollection } from "../../";
+import { IBaseResults } from "../../";
 
 /*********************************************
 * FileSystemItem
@@ -20,14 +22,21 @@ export interface FileSystemItem {
 /*********************************************
 * IFile
 **********************************************/
-export interface IFile extends FileProps,FileMethods,IBaseExecution<File> {
+export interface IFile extends FileCollections,FileMethods,IBaseQuery<IFileQuery> {
+
+}
+
+/*********************************************
+* IFileQuery
+**********************************************/
+export interface IFileQuery extends FileQuery,FileMethods {
 
 }
 
 /*********************************************
 * File
 **********************************************/
-export interface File extends MS.FileServices.FileSystemItem, FileProps, FileMethods {
+export interface File extends MS.FileServices.FileSystemItem, FileCollections, FileMethods {
 
 }
 
@@ -39,14 +48,28 @@ export interface FileProps {
 }
 
 /*********************************************
+* FileCollections
+**********************************************/
+export interface FileCollections extends FileProps {
+
+}
+
+/*********************************************
+* FileQuery
+**********************************************/
+export interface FileQuery extends FileProps {
+
+}
+
+/*********************************************
 * FileMethods
 **********************************************/
 export interface FileMethods {
-	copyTo<T=any>(target?: string, overwrite?: boolean): IBaseExecution<T>;
-	deleteObject<T=any>(): IBaseExecution<T>;
-	download<T=any>(): IBaseExecution<T>;
-	moveTo<T=any>(target?: string, overwrite?: boolean): IBaseExecution<T>;
-	upload<T=any>(stream?: any): IBaseExecution<T>;
+	copyTo(target?: string, overwrite?: boolean): IBaseExecution<any>;
+	deleteObject(): IBaseExecution<any>;
+	download(): IBaseExecution<any>;
+	moveTo(target?: string, overwrite?: boolean): IBaseExecution<any>;
+	upload(stream?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -59,14 +82,21 @@ export interface FileService {
 /*********************************************
 * IFolder
 **********************************************/
-export interface IFolder extends FolderProps,FolderMethods,IBaseExecution<Folder> {
+export interface IFolder extends FolderCollections,FolderMethods,IBaseQuery<IFolderQuery> {
+
+}
+
+/*********************************************
+* IFolderQuery
+**********************************************/
+export interface IFolderQuery extends FolderQuery,FolderMethods {
 
 }
 
 /*********************************************
 * Folder
 **********************************************/
-export interface Folder extends MS.FileServices.FileSystemItem, FolderProps, FolderMethods {
+export interface Folder extends MS.FileServices.FileSystemItem, FolderCollections, FolderMethods {
 	ChildrenCount?: number;
 }
 
@@ -74,15 +104,29 @@ export interface Folder extends MS.FileServices.FileSystemItem, FolderProps, Fol
 * FolderProps
 **********************************************/
 export interface FolderProps {
-	Children<T=MS.FileServices.FileSystemItem>(): IBaseCollection<T>;
+
+}
+
+/*********************************************
+* FolderCollections
+**********************************************/
+export interface FolderCollections extends FolderProps {
+	Children(): IBaseCollection<MS.FileServices.FileSystemItem>;
+}
+
+/*********************************************
+* FolderQuery
+**********************************************/
+export interface FolderQuery extends FolderProps {
+	Children: IBaseResults<MS.FileServices.FileSystemItem>;
 }
 
 /*********************************************
 * FolderMethods
 **********************************************/
 export interface FolderMethods {
-	deleteObject<T=any>(): IBaseExecution<T>;
-	moveTo<T=any>(target?: string): IBaseExecution<T>;
+	deleteObject(): IBaseExecution<any>;
+	moveTo(target?: string): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -95,14 +139,21 @@ export interface MeFileService {
 /*********************************************
 * IFileSystemItemCollection
 **********************************************/
-export interface IFileSystemItemCollection extends FileSystemItemCollectionProps,FileSystemItemCollectionMethods,IBaseExecution<FileSystemItemCollection> {
+export interface IFileSystemItemCollection extends FileSystemItemCollectionCollections,FileSystemItemCollectionMethods,IBaseQuery<IFileSystemItemCollectionQuery> {
+
+}
+
+/*********************************************
+* IFileSystemItemCollectionQuery
+**********************************************/
+export interface IFileSystemItemCollectionQuery extends FileSystemItemCollectionQuery,FileSystemItemCollectionMethods {
 
 }
 
 /*********************************************
 * FileSystemItemCollection
 **********************************************/
-export interface FileSystemItemCollection extends FileSystemItemCollectionProps, FileSystemItemCollectionMethods {
+export interface FileSystemItemCollection extends FileSystemItemCollectionCollections, FileSystemItemCollectionMethods {
 
 }
 
@@ -114,9 +165,23 @@ export interface FileSystemItemCollectionProps {
 }
 
 /*********************************************
+* FileSystemItemCollectionCollections
+**********************************************/
+export interface FileSystemItemCollectionCollections extends FileSystemItemCollectionProps {
+
+}
+
+/*********************************************
+* FileSystemItemCollectionQuery
+**********************************************/
+export interface FileSystemItemCollectionQuery extends FileSystemItemCollectionProps {
+
+}
+
+/*********************************************
 * FileSystemItemCollectionMethods
 **********************************************/
 export interface FileSystemItemCollectionMethods {
-	add<T=MS.FileServices.File>(name?: string, overwrite?: boolean, content?: any): IBaseExecution<T>;
-	getById<T=MS.FileServices.FileSystemItem>(id?: string): IBaseExecution<T>;
+	add(name?: string, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
+	getById(id?: string): IBaseExecution<MS.FileServices.FileSystemItem>;
 }

@@ -1,17 +1,26 @@
+import { IBaseExecution } from "../../../";
 import { IBaseCollection } from "../../../";
+import { IBaseResults } from "../../../";
 import { Microsoft } from "../../../";
 
 /*********************************************
 * IlikedByInformation
 **********************************************/
-export interface IlikedByInformation extends likedByInformationProps,likedByInformationMethods,IBaseExecution<likedByInformation> {
+export interface IlikedByInformation extends likedByInformationCollections,likedByInformationMethods,IBaseQuery<IlikedByInformationQuery> {
+
+}
+
+/*********************************************
+* IlikedByInformationQuery
+**********************************************/
+export interface IlikedByInformationQuery extends likedByInformationQuery,likedByInformationMethods {
 
 }
 
 /*********************************************
 * likedByInformation
 **********************************************/
-export interface likedByInformation extends likedByInformationProps, likedByInformationMethods {
+export interface likedByInformation extends likedByInformationCollections, likedByInformationMethods {
 	isLikedByUser?: boolean;
 	likeCount?: number;
 }
@@ -20,7 +29,21 @@ export interface likedByInformation extends likedByInformationProps, likedByInfo
 * likedByInformationProps
 **********************************************/
 export interface likedByInformationProps {
-	likedBy<T=Microsoft.SharePoint.Likes.userEntity>(): IBaseCollection<T>;
+
+}
+
+/*********************************************
+* likedByInformationCollections
+**********************************************/
+export interface likedByInformationCollections extends likedByInformationProps {
+	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
+}
+
+/*********************************************
+* likedByInformationQuery
+**********************************************/
+export interface likedByInformationQuery extends likedByInformationProps {
+	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 }
 
 /*********************************************
