@@ -151,9 +151,9 @@ export interface Site extends SiteCollections, SiteMethods {
 **********************************************/
 export interface SiteProps {
 	Audit(): IBaseExecution<SP.Audit>;
-	Owner(): IBaseExecution<SP.User>;
-	RootWeb(): IBaseExecution<SP.Web>;
-	SecondaryContact(): IBaseExecution<SP.User>;
+	Owner(): IBaseExecution<SP.User> & SP.UserCollections;
+	RootWeb(): IBaseExecution<SP.Web> & SP.WebCollections;
+	SecondaryContact(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -554,9 +554,9 @@ export interface Alert extends AlertCollections, AlertMethods {
 **********************************************/
 export interface AlertProps {
 	AllProperties(): IBaseExecution<SP.PropertyValues>;
-	Item(): IBaseExecution<SP.ListItem>;
-	List(): IBaseExecution<SP.List>;
-	User(): IBaseExecution<SP.User>;
+	Item(): IBaseExecution<SP.ListItem> & SP.ListItemCollections;
+	List(): IBaseExecution<SP.List> & SP.ListCollections;
+	User(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -820,15 +820,15 @@ export interface ListItem extends SP.SecurableObject, ListItemCollections, ListI
 * ListItemProps
 **********************************************/
 export interface ListItemProps {
-	ContentType(): IBaseExecution<SP.ContentType>;
+	ContentType(): IBaseExecution<SP.ContentType> & SP.ContentTypeCollections;
 	GetDlpPolicyTip(): IBaseExecution<SP.DlpPolicyTip>;
 	FieldValuesAsHtml(): IBaseExecution<SP.FieldStringValues>;
 	FieldValuesAsText(): IBaseExecution<SP.FieldStringValues>;
 	FieldValuesForEdit(): IBaseExecution<SP.FieldStringValues>;
-	File(): IBaseExecution<SP.File>;
-	Folder(): IBaseExecution<SP.Folder>;
+	File(): IBaseExecution<SP.File> & SP.FileCollections;
+	Folder(): IBaseExecution<SP.Folder> & SP.FolderCollections;
 	LikedByInformation(): IBaseExecution<Microsoft.SharePoint.Likes.likedByInformation>;
-	ParentList(): IBaseExecution<SP.List>;
+	ParentList(): IBaseExecution<SP.List> & SP.ListCollections;
 	Properties(): IBaseExecution<SP.PropertyValues>;
 }
 
@@ -848,6 +848,7 @@ export interface ListItemCollections extends ListItemProps {
 export interface ListItemCollectionMethods {
 	getById(itemId?: number): IBaseExecution<SP.ListItem>;
 	getByStringId(sId?: string): IBaseExecution<SP.ListItem>;
+	add(parameters?: SP.ListItemCreationInformation | any): IBaseExecution<SP.ListItem>;
 }
 
 /*********************************************
@@ -1001,7 +1002,7 @@ export interface ContentType extends ContentTypeCollections, ContentTypeMethods 
 export interface ContentTypeProps {
 	DescriptionResource(): IBaseExecution<SP.UserResource>;
 	NameResource(): IBaseExecution<SP.UserResource>;
-	Parent(): IBaseExecution<SP.ContentType>;
+	Parent(): IBaseExecution<SP.ContentType> & SP.ContentTypeCollections;
 }
 
 /*********************************************
@@ -1342,13 +1343,13 @@ export interface File extends FileCollections, FileMethods {
 * FileProps
 **********************************************/
 export interface FileProps {
-	Author(): IBaseExecution<SP.User>;
-	CheckedOutByUser(): IBaseExecution<SP.User>;
+	Author(): IBaseExecution<SP.User> & SP.UserCollections;
+	CheckedOutByUser(): IBaseExecution<SP.User> & SP.UserCollections;
 	EffectiveInformationRightsManagementSettings(): IBaseExecution<SP.EffectiveInformationRightsManagementSettings>;
 	InformationRightsManagementSettings(): IBaseExecution<SP.InformationRightsManagementFileSettings>;
-	ListItemAllFields(): IBaseExecution<SP.ListItem>;
-	LockedByUser(): IBaseExecution<SP.User>;
-	ModifiedBy(): IBaseExecution<SP.User>;
+	ListItemAllFields(): IBaseExecution<SP.ListItem> & SP.ListItemCollections;
+	LockedByUser(): IBaseExecution<SP.User> & SP.UserCollections;
+	ModifiedBy(): IBaseExecution<SP.User> & SP.UserCollections;
 	Properties(): IBaseExecution<SP.PropertyValues>;
 }
 
@@ -1570,7 +1571,7 @@ export interface FileVersion extends FileVersionCollections, FileVersionMethods 
 * FileVersionProps
 **********************************************/
 export interface FileVersionProps {
-	CreatedBy(): IBaseExecution<SP.User>;
+	CreatedBy(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -1645,8 +1646,8 @@ export interface Folder extends FolderCollections, FolderMethods {
 * FolderProps
 **********************************************/
 export interface FolderProps {
-	ListItemAllFields(): IBaseExecution<SP.ListItem>;
-	ParentFolder(): IBaseExecution<SP.Folder>;
+	ListItemAllFields(): IBaseExecution<SP.ListItem> & SP.ListItemCollections;
+	ParentFolder(): IBaseExecution<SP.Folder> & SP.FolderCollections;
 	Properties(): IBaseExecution<SP.PropertyValues>;
 	StorageMetrics(): IBaseExecution<SP.StorageMetrics>;
 }
@@ -1811,11 +1812,11 @@ export interface List extends SP.SecurableObject, ListCollections, ListMethods {
 **********************************************/
 export interface ListProps {
 	CreatablesInfo(): IBaseExecution<SP.CreatablesInfo>;
-	DefaultView(): IBaseExecution<SP.View>;
+	DefaultView(): IBaseExecution<SP.View> & SP.ViewCollections;
 	DescriptionResource(): IBaseExecution<SP.UserResource>;
 	InformationRightsManagementSettings(): IBaseExecution<SP.InformationRightsManagementSettings>;
-	ParentWeb(): IBaseExecution<SP.Web>;
-	RootFolder(): IBaseExecution<SP.Folder>;
+	ParentWeb(): IBaseExecution<SP.Web> & SP.WebCollections;
+	RootFolder(): IBaseExecution<SP.Folder> & SP.FolderCollections;
 	TitleResource(): IBaseExecution<SP.UserResource>;
 }
 
@@ -2285,20 +2286,20 @@ export interface Web extends SP.SecurableObject, WebCollections, WebMethods {
 export interface WebProps {
 	ActivityLogger(): IBaseExecution<Microsoft.SharePoint.Internal.ActivityLogger>;
 	AllProperties(): IBaseExecution<SP.PropertyValues>;
-	AssociatedMemberGroup(): IBaseExecution<SP.Group>;
-	AssociatedOwnerGroup(): IBaseExecution<SP.Group>;
-	AssociatedVisitorGroup(): IBaseExecution<SP.Group>;
-	Author(): IBaseExecution<SP.User>;
-	CurrentUser(): IBaseExecution<SP.User>;
+	AssociatedMemberGroup(): IBaseExecution<SP.Group> & SP.GroupCollections;
+	AssociatedOwnerGroup(): IBaseExecution<SP.Group> & SP.GroupCollections;
+	AssociatedVisitorGroup(): IBaseExecution<SP.Group> & SP.GroupCollections;
+	Author(): IBaseExecution<SP.User> & SP.UserCollections;
+	CurrentUser(): IBaseExecution<SP.User> & SP.UserCollections;
 	DataLeakagePreventionStatusInfo(): IBaseExecution<SP.SPDataLeakagePreventionStatusInfo>;
 	DescriptionResource(): IBaseExecution<SP.UserResource>;
 	HostedApps(): IBaseExecution<Microsoft.SharePoint.ClientSideComponent.HostedAppsManager>;
 	Navigation(): IBaseExecution<SP.Navigation>;
-	ParentWeb(): IBaseExecution<SP.WebInformation>;
+	ParentWeb(): IBaseExecution<SP.WebInformation> & SP.WebInformationCollections;
 	RegionalSettings(): IBaseExecution<SP.RegionalSettings>;
-	RootFolder(): IBaseExecution<SP.Folder>;
+	RootFolder(): IBaseExecution<SP.Folder> & SP.FolderCollections;
 	SiteCollectionAppCatalog(): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor>;
-	SiteUserInfoList(): IBaseExecution<SP.List>;
+	SiteUserInfoList(): IBaseExecution<SP.List> & SP.ListCollections;
 	TenantAppCatalog(): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor>;
 	ThemeInfo(): IBaseExecution<SP.ThemeInfo>;
 	TitleResource(): IBaseExecution<SP.UserResource>;
@@ -2906,7 +2907,7 @@ export interface PushNotificationSubscriber extends PushNotificationSubscriberCo
 * PushNotificationSubscriberProps
 **********************************************/
 export interface PushNotificationSubscriberProps {
-	User(): IBaseExecution<SP.User>;
+	User(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -2976,8 +2977,8 @@ export interface RecycleBinItem extends RecycleBinItemCollections, RecycleBinIte
 * RecycleBinItemProps
 **********************************************/
 export interface RecycleBinItemProps {
-	Author(): IBaseExecution<SP.User>;
-	DeletedBy(): IBaseExecution<SP.User>;
+	Author(): IBaseExecution<SP.User> & SP.UserCollections;
+	DeletedBy(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -3071,7 +3072,7 @@ export interface RegionalSettings extends RegionalSettingsCollections, RegionalS
 **********************************************/
 export interface RegionalSettingsProps {
 	InstalledLanguages(): IBaseExecution<SP.LanguageCollection>;
-	TimeZone(): IBaseExecution<SP.TimeZone>;
+	TimeZone(): IBaseExecution<SP.TimeZone> & SP.TimeZoneCollections;
 }
 
 /*********************************************
@@ -3361,8 +3362,8 @@ export interface ListItemVersion extends ListItemVersionCollections, ListItemVer
 * ListItemVersionProps
 **********************************************/
 export interface ListItemVersionProps {
-	CreatedBy(): IBaseExecution<SP.User>;
-	FileVersion(): IBaseExecution<SP.FileVersion>;
+	CreatedBy(): IBaseExecution<SP.User> & SP.UserCollections;
+	FileVersion(): IBaseExecution<SP.FileVersion> & SP.FileVersionCollections;
 }
 
 /*********************************************
@@ -3922,7 +3923,7 @@ export interface SharingResult extends SharingResultCollections, SharingResultMe
 * SharingResultProps
 **********************************************/
 export interface SharingResultProps {
-	GroupUsersAddedTo(): IBaseExecution<SP.Group>;
+	GroupUsersAddedTo(): IBaseExecution<SP.Group> & SP.GroupCollections;
 }
 
 /*********************************************
@@ -4250,7 +4251,7 @@ export interface CheckedOutFile extends CheckedOutFileCollections, CheckedOutFil
 * CheckedOutFileProps
 **********************************************/
 export interface CheckedOutFileProps {
-	CheckedOutBy(): IBaseExecution<SP.User>;
+	CheckedOutBy(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -4350,9 +4351,9 @@ export interface RequestContext extends RequestContextCollections, RequestContex
 **********************************************/
 export interface RequestContextProps {
 	Current(): IBaseExecution<SP.RequestContext>;
-	List(): IBaseExecution<SP.List>;
+	List(): IBaseExecution<SP.List> & SP.ListCollections;
 	Site(): IBaseExecution<SP.Site>;
-	Web(): IBaseExecution<SP.Web>;
+	Web(): IBaseExecution<SP.Web> & SP.WebCollections;
 }
 
 /*********************************************
@@ -5517,7 +5518,7 @@ export interface RemoteWeb extends RemoteWebCollections, RemoteWebMethods {
 * RemoteWebProps
 **********************************************/
 export interface RemoteWebProps {
-	Web(): IBaseExecution<SP.Web>;
+	Web(): IBaseExecution<SP.Web> & SP.WebCollections;
 }
 
 /*********************************************

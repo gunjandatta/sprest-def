@@ -1,6 +1,7 @@
 let fs = require("fs");
 let parser = require("xml2js").parseString;
 let rmDir = require("rimraf");
+let custom = require("./custom");
 
 let hasMethods = {};
 
@@ -18,6 +19,12 @@ function createInterface(name, baseType, variables) {
 
 // Parse the methods and apply the methods to the directories object
 function applyMethodsToDirectories(methods, directories) {
+    // Parse the custom methods
+    for (let name in custom) {
+        // Add the methods
+        methods[name] = (methods[name] || []).concat(custom[name]);
+    }
+
     // Parse the methods
     for (let name in methods) {
         let isCollection = false;
@@ -402,7 +409,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
                                         // Add the method
-                                        props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '>;');
+                                        props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
                                     }
 
                                     // Update the references
@@ -421,7 +428,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 let methodInfo = prop[i];
 
                                 // See if this is the "add" method, and parameters exist
-                                if(methodInfo.name == "add" && methodInfo.params.length > 0) {
+                                if (methodInfo.name == "add" && methodInfo.params.length > 0) {
                                     // Update the type
                                     methodInfo.params[0].$.Type += " | any";
                                 }

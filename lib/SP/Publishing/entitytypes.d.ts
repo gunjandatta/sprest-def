@@ -177,8 +177,8 @@ export interface VideoItem extends VideoItemCollections, VideoItemMethods {
 * VideoItemProps
 **********************************************/
 export interface VideoItemProps {
-	Author(): IBaseExecution<SP.User>;
-	Owner(): IBaseExecution<SP.User>;
+	Author(): IBaseExecution<SP.User> & SP.UserCollections;
+	Owner(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -1044,7 +1044,7 @@ export interface SpotlightChannel extends SpotlightChannelCollections, Spotlight
 * SpotlightChannelProps
 **********************************************/
 export interface SpotlightChannelProps {
-	Channel(): IBaseExecution<SP.Publishing.VideoChannel>;
+	Channel(): IBaseExecution<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections;
 }
 
 /*********************************************
@@ -1235,7 +1235,7 @@ export interface SpotlightVideo extends SpotlightVideoCollections, SpotlightVide
 * SpotlightVideoProps
 **********************************************/
 export interface SpotlightVideoProps {
-	Video(): IBaseExecution<SP.Publishing.VideoItem>;
+	Video(): IBaseExecution<SP.Publishing.VideoItem> & SP.Publishing.VideoItemCollections;
 }
 
 /*********************************************

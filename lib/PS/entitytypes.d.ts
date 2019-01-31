@@ -176,7 +176,7 @@ export interface CustomField extends CustomFieldCollections, CustomFieldMethods 
 **********************************************/
 export interface CustomFieldProps {
 	EntityType(): IBaseExecution<PS.EntityType>;
-	LookupTable(): IBaseExecution<PS.LookupTable>;
+	LookupTable(): IBaseExecution<PS.LookupTable> & PS.LookupTableCollections;
 }
 
 /*********************************************
@@ -388,7 +388,7 @@ export interface CalendarException extends CalendarExceptionCollections, Calenda
 * CalendarExceptionProps
 **********************************************/
 export interface CalendarExceptionProps {
-	Calendar(): IBaseExecution<PS.Calendar>;
+	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections;
 }
 
 /*********************************************
@@ -599,10 +599,10 @@ export interface DraftAssignment extends PS.Assignment, DraftAssignmentCollectio
 * DraftAssignmentProps
 **********************************************/
 export interface DraftAssignmentProps {
-	Owner(): IBaseExecution<SP.User>;
-	Parent(): IBaseExecution<PS.DraftAssignment>;
-	Resource(): IBaseExecution<PS.DraftProjectResource>;
-	Task(): IBaseExecution<PS.DraftTask>;
+	Owner(): IBaseExecution<SP.User> & SP.UserCollections;
+	Parent(): IBaseExecution<PS.DraftAssignment> & PS.DraftAssignmentCollections;
+	Resource(): IBaseExecution<PS.DraftProjectResource> & PS.DraftProjectResourceCollections;
+	Task(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections;
 }
 
 /*********************************************
@@ -721,7 +721,7 @@ export interface ProjectResource extends ProjectResourceCollections, ProjectReso
 * ProjectResourceProps
 **********************************************/
 export interface ProjectResourceProps {
-	EnterpriseResource(): IBaseExecution<PS.EnterpriseResource>;
+	EnterpriseResource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections;
 }
 
 /*********************************************
@@ -797,11 +797,11 @@ export interface EnterpriseResource extends EnterpriseResourceCollections, Enter
 * EnterpriseResourceProps
 **********************************************/
 export interface EnterpriseResourceProps {
-	BaseCalendar(): IBaseExecution<PS.Calendar>;
-	DefaultAssignmentOwner(): IBaseExecution<SP.User>;
-	Self(): IBaseExecution<PS.EnterpriseResource>;
-	TimesheetManager(): IBaseExecution<SP.User>;
-	User(): IBaseExecution<SP.User>;
+	BaseCalendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections;
+	DefaultAssignmentOwner(): IBaseExecution<SP.User> & SP.UserCollections;
+	Self(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections;
+	TimesheetManager(): IBaseExecution<SP.User> & SP.UserCollections;
+	User(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -909,8 +909,8 @@ export interface StatusAssignment extends StatusAssignmentCollections, StatusAss
 * StatusAssignmentProps
 **********************************************/
 export interface StatusAssignmentProps {
-	Project(): IBaseExecution<PS.PublishedProject>;
-	Resource(): IBaseExecution<PS.EnterpriseResource>;
+	Project(): IBaseExecution<PS.PublishedProject> & PS.PublishedProjectCollections;
+	Resource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections;
 	Task(): IBaseExecution<PS.StatusTask>;
 }
 
@@ -1037,11 +1037,11 @@ export interface Project extends ProjectCollections, ProjectMethods {
 * ProjectProps
 **********************************************/
 export interface ProjectProps {
-	CheckedOutBy(): IBaseExecution<SP.User>;
-	EnterpriseProjectType(): IBaseExecution<PS.EnterpriseProjectType>;
-	Phase(): IBaseExecution<PS.Phase>;
+	CheckedOutBy(): IBaseExecution<SP.User> & SP.UserCollections;
+	EnterpriseProjectType(): IBaseExecution<PS.EnterpriseProjectType> & PS.EnterpriseProjectTypeCollections;
+	Phase(): IBaseExecution<PS.Phase> & PS.PhaseCollections;
 	ProjectSummaryTask(): IBaseExecution<PS.ProjectSummaryTask>;
-	Stage(): IBaseExecution<PS.Stage>;
+	Stage(): IBaseExecution<PS.Stage> & PS.StageCollections;
 }
 
 /*********************************************
@@ -1110,11 +1110,11 @@ export interface Engagement extends EngagementCollections, EngagementMethods {
 * EngagementProps
 **********************************************/
 export interface EngagementProps {
-	ModifiedBy(): IBaseExecution<SP.User>;
+	ModifiedBy(): IBaseExecution<SP.User> & SP.UserCollections;
 	Project(): IBaseExecution<PS.Project>;
-	Resource(): IBaseExecution<PS.EnterpriseResource>;
-	ReviewedBy(): IBaseExecution<SP.User>;
-	SubmittedBy(): IBaseExecution<SP.User>;
+	Resource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections;
+	ReviewedBy(): IBaseExecution<SP.User> & SP.UserCollections;
+	SubmittedBy(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -1444,8 +1444,8 @@ export interface Stage extends StageCollections, StageMethods {
 * StageProps
 **********************************************/
 export interface StageProps {
-	Phase(): IBaseExecution<PS.Phase>;
-	WorkflowStatusPage(): IBaseExecution<PS.ProjectDetailPage>;
+	Phase(): IBaseExecution<PS.Phase> & PS.PhaseCollections;
+	WorkflowStatusPage(): IBaseExecution<PS.ProjectDetailPage> & PS.ProjectDetailPageCollections;
 }
 
 /*********************************************
@@ -1511,7 +1511,7 @@ export interface StageCustomField extends StageCustomFieldCollections, StageCust
 * StageCustomFieldProps
 **********************************************/
 export interface StageCustomFieldProps {
-	Stage(): IBaseExecution<PS.Stage>;
+	Stage(): IBaseExecution<PS.Stage> & PS.StageCollections;
 }
 
 /*********************************************
@@ -1572,8 +1572,8 @@ export interface StageDetailPage extends StageDetailPageCollections, StageDetail
 * StageDetailPageProps
 **********************************************/
 export interface StageDetailPageProps {
-	Page(): IBaseExecution<PS.ProjectDetailPage>;
-	Stage(): IBaseExecution<PS.Stage>;
+	Page(): IBaseExecution<PS.ProjectDetailPage> & PS.ProjectDetailPageCollections;
+	Stage(): IBaseExecution<PS.Stage> & PS.StageCollections;
 }
 
 /*********************************************
@@ -1735,7 +1735,7 @@ export interface Task extends TaskCollections, TaskMethods {
 * TaskProps
 **********************************************/
 export interface TaskProps {
-	SubProject(): IBaseExecution<PS.PublishedProject>;
+	SubProject(): IBaseExecution<PS.PublishedProject> & PS.PublishedProjectCollections;
 }
 
 /*********************************************
@@ -1819,11 +1819,11 @@ export interface PublishedProject extends PS.Project, PublishedProjectCollection
 * PublishedProjectProps
 **********************************************/
 export interface PublishedProjectProps {
-	Calendar(): IBaseExecution<PS.Calendar>;
+	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections;
 	Draft(): IBaseExecution<PS.DraftProject>;
-	IncludeCustomFields(): IBaseExecution<PS.PublishedProject>;
-	Owner(): IBaseExecution<SP.User>;
-	ProjectWorkflowInstance(): IBaseExecution<PS.ProjectWorkflowInstance>;
+	IncludeCustomFields(): IBaseExecution<PS.PublishedProject> & PS.PublishedProjectCollections;
+	Owner(): IBaseExecution<SP.User> & SP.UserCollections;
+	ProjectWorkflowInstance(): IBaseExecution<PS.ProjectWorkflowInstance> & PS.ProjectWorkflowInstanceCollections;
 }
 
 /*********************************************
@@ -1979,7 +1979,7 @@ export interface PublishedProjectResource extends PS.ProjectResource, PublishedP
 * PublishedProjectResourceProps
 **********************************************/
 export interface PublishedProjectResourceProps {
-	DefaultAssignmentOwner(): IBaseExecution<SP.User>;
+	DefaultAssignmentOwner(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -2079,9 +2079,9 @@ export interface PublishedTask extends PS.Task, PublishedTaskCollections, Publis
 * PublishedTaskProps
 **********************************************/
 export interface PublishedTaskProps {
-	Calendar(): IBaseExecution<PS.Calendar>;
-	Parent(): IBaseExecution<PS.PublishedTask>;
-	StatusManager(): IBaseExecution<SP.User>;
+	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections;
+	Parent(): IBaseExecution<PS.PublishedTask> & PS.PublishedTaskCollections;
+	StatusManager(): IBaseExecution<SP.User> & SP.UserCollections;
 	TaskPlanLink(): IBaseExecution<PS.TaskPlanLink>;
 }
 
@@ -2334,9 +2334,9 @@ export interface DraftProject extends PS.Project, DraftProjectCollections, Draft
 * DraftProjectProps
 **********************************************/
 export interface DraftProjectProps {
-	Calendar(): IBaseExecution<PS.Calendar>;
+	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections;
 	IncludeCustomFields(): IBaseExecution<PS.DraftProject>;
-	Owner(): IBaseExecution<SP.User>;
+	Owner(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -2421,7 +2421,7 @@ export interface DraftProjectResource extends PS.ProjectResource, DraftProjectRe
 * DraftProjectResourceProps
 **********************************************/
 export interface DraftProjectResourceProps {
-	DefaultAssignmentOwner(): IBaseExecution<SP.User>;
+	DefaultAssignmentOwner(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -2483,8 +2483,8 @@ export interface DraftTaskLink extends PS.TaskLink, DraftTaskLinkCollections, Dr
 * DraftTaskLinkProps
 **********************************************/
 export interface DraftTaskLinkProps {
-	End(): IBaseExecution<PS.DraftTask>;
-	Start(): IBaseExecution<PS.DraftTask>;
+	End(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections;
+	Start(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections;
 }
 
 /*********************************************
@@ -2586,9 +2586,9 @@ export interface DraftTask extends PS.Task, DraftTaskCollections, DraftTaskMetho
 * DraftTaskProps
 **********************************************/
 export interface DraftTaskProps {
-	Calendar(): IBaseExecution<PS.Calendar>;
-	Parent(): IBaseExecution<PS.DraftTask>;
-	StatusManager(): IBaseExecution<SP.User>;
+	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections;
+	Parent(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections;
+	StatusManager(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -2660,7 +2660,7 @@ export interface ProjectWorkflowInstance extends ProjectWorkflowInstanceCollecti
 export interface ProjectWorkflowInstanceProps {
 	Project(): IBaseExecution<PS.Project>;
 	WorkflowInstance(): IBaseExecution<SP.WorkflowServices.WorkflowInstance>;
-	WorkflowInstanceOwner(): IBaseExecution<SP.User>;
+	WorkflowInstanceOwner(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -2757,7 +2757,7 @@ export interface QueueJob extends QueueJobCollections, QueueJobMethods {
 **********************************************/
 export interface QueueJobProps {
 	Project(): IBaseExecution<PS.Project>;
-	Submitter(): IBaseExecution<SP.User>;
+	Submitter(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -2847,7 +2847,7 @@ export interface StatusTask extends StatusTaskCollections, StatusTaskMethods {
 * StatusTaskProps
 **********************************************/
 export interface StatusTaskProps {
-	StatusManager(): IBaseExecution<SP.User>;
+	StatusManager(): IBaseExecution<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -3159,7 +3159,7 @@ export interface EventHandler extends EventHandlerCollections, EventHandlerMetho
 * EventHandlerProps
 **********************************************/
 export interface EventHandlerProps {
-	Event(): IBaseExecution<PS.Event>;
+	Event(): IBaseExecution<PS.Event> & PS.EventCollections;
 }
 
 /*********************************************
@@ -3495,7 +3495,7 @@ export interface PlanAssignment extends PlanAssignmentCollections, PlanAssignmen
 * PlanAssignmentProps
 **********************************************/
 export interface PlanAssignmentProps {
-	Resource(): IBaseExecution<PS.EnterpriseResource>;
+	Resource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections;
 }
 
 /*********************************************
@@ -3832,9 +3832,9 @@ export interface TimeSheet extends TimeSheetCollections, TimeSheetMethods {
 * TimeSheetProps
 **********************************************/
 export interface TimeSheetProps {
-	Creator(): IBaseExecution<SP.User>;
-	Manager(): IBaseExecution<SP.User>;
-	Period(): IBaseExecution<PS.TimeSheetPeriod>;
+	Creator(): IBaseExecution<SP.User> & SP.UserCollections;
+	Manager(): IBaseExecution<SP.User> & SP.UserCollections;
+	Period(): IBaseExecution<PS.TimeSheetPeriod> & PS.TimeSheetPeriodCollections;
 }
 
 /*********************************************
@@ -3896,7 +3896,7 @@ export interface TimeSheetLine extends TimeSheetLineCollections, TimeSheetLineMe
 * TimeSheetLineProps
 **********************************************/
 export interface TimeSheetLineProps {
-	Assignment(): IBaseExecution<PS.PublishedAssignment>;
+	Assignment(): IBaseExecution<PS.PublishedAssignment> & PS.PublishedAssignmentCollections;
 	TimeSheet(): IBaseExecution<PS.TimeSheet>;
 }
 
