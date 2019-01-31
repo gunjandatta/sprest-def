@@ -6,3 +6,10 @@ import { IBaseExecution } from "../../../../";
 export interface SPFlight {
 	Configuration?: string;
 }
+
+/*********************************************
+* SPFlightCollections
+**********************************************/
+export interface SPFlightCollections {
+
+}

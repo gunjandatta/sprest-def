@@ -20,6 +20,21 @@ export interface FileSystemItem {
 }
 
 /*********************************************
+* FileSystemItemCollections
+**********************************************/
+export interface FileSystemItemCollections extends FileSystemItemCollectionMethods {
+
+}
+
+/*********************************************
+* FileSystemItemCollectionMethods
+**********************************************/
+export interface FileSystemItemCollectionMethods {
+	add(name?: string | any, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
+	getById(id?: string): IBaseExecution<MS.FileServices.FileSystemItem>;
+}
+
+/*********************************************
 * IFile
 **********************************************/
 export interface IFile extends FileCollections,FileMethods,IBaseQuery<IFileQuery> {
@@ -80,6 +95,13 @@ export interface FileService {
 }
 
 /*********************************************
+* FileServiceCollections
+**********************************************/
+export interface FileServiceCollections {
+
+}
+
+/*********************************************
 * IFolder
 **********************************************/
 export interface IFolder extends FolderCollections,FolderMethods,IBaseQuery<IFolderQuery> {
@@ -111,8 +133,8 @@ export interface FolderProps {
 * FolderCollections
 **********************************************/
 export interface FolderCollections extends FolderProps {
-	Children(): IBaseCollection<MS.FileServices.FileSystemItem>;
-	Children(id: string | number): IBaseExecution<MS.FileServices.FileSystemItem>;
+	Children(): IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
+	Children(id: string | number): IBaseExecution<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
 
 /*********************************************
@@ -138,51 +160,8 @@ export interface MeFileService {
 }
 
 /*********************************************
-* IFileSystemItemCollection
+* MeFileServiceCollections
 **********************************************/
-export interface IFileSystemItemCollection extends FileSystemItemCollectionCollections,FileSystemItemCollectionMethods,IBaseQuery<IFileSystemItemCollectionQuery> {
+export interface MeFileServiceCollections {
 
-}
-
-/*********************************************
-* IFileSystemItemCollectionQuery
-**********************************************/
-export interface IFileSystemItemCollectionQuery extends FileSystemItemCollectionQuery,FileSystemItemCollectionMethods {
-
-}
-
-/*********************************************
-* FileSystemItemCollection
-**********************************************/
-export interface FileSystemItemCollection extends FileSystemItemCollectionCollections, FileSystemItemCollectionMethods {
-
-}
-
-/*********************************************
-* FileSystemItemCollectionProps
-**********************************************/
-export interface FileSystemItemCollectionProps {
-
-}
-
-/*********************************************
-* FileSystemItemCollectionCollections
-**********************************************/
-export interface FileSystemItemCollectionCollections extends FileSystemItemCollectionProps {
-
-}
-
-/*********************************************
-* FileSystemItemCollectionQuery
-**********************************************/
-export interface FileSystemItemCollectionQuery extends FileSystemItemCollectionProps {
-
-}
-
-/*********************************************
-* FileSystemItemCollectionMethods
-**********************************************/
-export interface FileSystemItemCollectionMethods {
-	add(name?: string, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
-	getById(id?: string): IBaseExecution<MS.FileServices.FileSystemItem>;
 }

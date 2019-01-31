@@ -8,3 +8,10 @@ export interface OrgNewsSiteInfo {
 	Url?: string;
 	WebId?: any;
 }
+
+/*********************************************
+* OrgNewsSiteInfoCollections
+**********************************************/
+export interface OrgNewsSiteInfoCollections {
+
+}

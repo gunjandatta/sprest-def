@@ -11,3 +11,10 @@ export interface WacToken {
 	FavIconTarget?: string;
 	RedirectUrl?: string;
 }
+
+/*********************************************
+* WacTokenCollections
+**********************************************/
+export interface WacTokenCollections {
+
+}

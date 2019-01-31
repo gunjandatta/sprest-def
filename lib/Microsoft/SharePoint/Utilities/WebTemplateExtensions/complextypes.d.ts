@@ -17,10 +17,24 @@ export interface FormulaCreationInfo {
 }
 
 /*********************************************
+* FormulaCreationInfoCollections
+**********************************************/
+export interface FormulaCreationInfoCollections {
+
+}
+
+/*********************************************
 * FormulaMetadata
 **********************************************/
 export interface FormulaMetadata extends Microsoft.SharePoint.Utilities.WebTemplateExtensions.FormulaCreationInfo {
 	FormulaGuid?: any;
+}
+
+/*********************************************
+* FormulaMetadataCollections
+**********************************************/
+export interface FormulaMetadataCollections {
+
 }
 
 /*********************************************
@@ -33,6 +47,13 @@ export interface RecipeCreationInfo {
 }
 
 /*********************************************
+* RecipeCreationInfoCollections
+**********************************************/
+export interface RecipeCreationInfoCollections {
+
+}
+
+/*********************************************
 * RecipeMetadata
 **********************************************/
 export interface RecipeMetadata {
@@ -40,6 +61,13 @@ export interface RecipeMetadata {
 	RecipeGuid?: any;
 	Title?: string;
 	Version?: number;
+}
+
+/*********************************************
+* RecipeMetadataCollections
+**********************************************/
+export interface RecipeMetadataCollections {
+
 }
 
 /*********************************************
@@ -56,11 +84,25 @@ export interface SiteDesignCreationInfo {
 }
 
 /*********************************************
+* SiteDesignCreationInfoCollections
+**********************************************/
+export interface SiteDesignCreationInfoCollections {
+
+}
+
+/*********************************************
 * SiteDesignMetadata
 **********************************************/
 export interface SiteDesignMetadata extends Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo {
 	Id?: any;
 	Version?: number;
+}
+
+/*********************************************
+* SiteDesignMetadataCollections
+**********************************************/
+export interface SiteDesignMetadataCollections {
+
 }
 
 /*********************************************
@@ -73,12 +115,26 @@ export interface SiteScriptActionResult {
 }
 
 /*********************************************
+* SiteScriptActionResultCollections
+**********************************************/
+export interface SiteScriptActionResultCollections {
+
+}
+
+/*********************************************
 * SiteScriptCreationInfo
 **********************************************/
 export interface SiteScriptCreationInfo {
 	Content?: string;
 	Description?: string;
 	Title?: string;
+}
+
+/*********************************************
+* SiteScriptCreationInfoCollections
+**********************************************/
+export interface SiteScriptCreationInfoCollections {
+
 }
 
 /*********************************************
@@ -93,11 +149,25 @@ export interface SiteScriptMetadata {
 }
 
 /*********************************************
+* SiteScriptMetadataCollections
+**********************************************/
+export interface SiteScriptMetadataCollections {
+
+}
+
+/*********************************************
 * SiteScriptUpdateInfo
 **********************************************/
 export interface SiteScriptUpdateInfo extends Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo {
 	Id?: any;
 	Version?: number;
+}
+
+/*********************************************
+* SiteScriptUpdateInfoCollections
+**********************************************/
+export interface SiteScriptUpdateInfoCollections {
+
 }
 
 /*********************************************
@@ -109,6 +179,13 @@ export interface SiteDesignTask {
 	SiteDesignID?: any;
 	SiteID?: any;
 	WebID?: any;
+}
+
+/*********************************************
+* SiteDesignTaskCollections
+**********************************************/
+export interface SiteDesignTaskCollections {
+
 }
 
 /*********************************************
@@ -128,9 +205,23 @@ export interface SiteScriptActionStatus {
 }
 
 /*********************************************
+* SiteScriptActionStatusCollections
+**********************************************/
+export interface SiteScriptActionStatusCollections {
+
+}
+
+/*********************************************
 * SPSiteScriptStatusAndSchema
 **********************************************/
 export interface SPSiteScriptStatusAndSchema {
 	ActionStatus?: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus>;
 	Schema?: string;
+}
+
+/*********************************************
+* SPSiteScriptStatusAndSchemaCollections
+**********************************************/
+export interface SPSiteScriptStatusAndSchemaCollections {
+
 }

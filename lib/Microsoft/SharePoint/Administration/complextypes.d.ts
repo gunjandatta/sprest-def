@@ -10,12 +10,26 @@ export interface CentralAssetRepositoryLibraryCollection {
 }
 
 /*********************************************
+* CentralAssetRepositoryLibraryCollectionCollections
+**********************************************/
+export interface CentralAssetRepositoryLibraryCollectionCollections {
+
+}
+
+/*********************************************
 * CentralAssetRepositoryLibrary
 **********************************************/
 export interface CentralAssetRepositoryLibrary {
 	DisplayName?: string;
 	LibraryUrl?: SP.ResourcePath;
 	ThumbnailUrl?: SP.ResourcePath;
+}
+
+/*********************************************
+* CentralAssetRepositoryLibraryCollections
+**********************************************/
+export interface CentralAssetRepositoryLibraryCollections {
+
 }
 
 /*********************************************
@@ -29,6 +43,13 @@ export interface CentralAssetRepository {
 }
 
 /*********************************************
+* CentralAssetRepositoryCollections
+**********************************************/
+export interface CentralAssetRepositoryCollections {
+
+}
+
+/*********************************************
 * UsageEntry
 **********************************************/
 export interface UsageEntry {
@@ -37,4 +58,11 @@ export interface UsageEntry {
 	ScopeId?: any;
 	Site?: any;
 	User?: string;
+}
+
+/*********************************************
+* UsageEntryCollections
+**********************************************/
+export interface UsageEntryCollections {
+
 }

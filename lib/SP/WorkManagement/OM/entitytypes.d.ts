@@ -78,6 +78,13 @@ export interface BooleanCriterion {
 }
 
 /*********************************************
+* BooleanCriterionCollections
+**********************************************/
+export interface BooleanCriterionCollections {
+
+}
+
+/*********************************************
 * CalloutInfo
 **********************************************/
 export interface CalloutInfo {
@@ -92,6 +99,13 @@ export interface CalloutInfo {
 }
 
 /*********************************************
+* CalloutInfoCollections
+**********************************************/
+export interface CalloutInfoCollections {
+
+}
+
+/*********************************************
 * CreateRefreshJobResult
 **********************************************/
 export interface CreateRefreshJobResult {
@@ -101,11 +115,25 @@ export interface CreateRefreshJobResult {
 }
 
 /*********************************************
+* CreateRefreshJobResultCollections
+**********************************************/
+export interface CreateRefreshJobResultCollections {
+
+}
+
+/*********************************************
 * CustomAttributeFilter
 **********************************************/
 export interface CustomAttributeFilter {
 	Attributes?: Array<string>;
 	ConcatType?: number;
+}
+
+/*********************************************
+* CustomAttributeFilterCollections
+**********************************************/
+export interface CustomAttributeFilterCollections {
+
 }
 
 /*********************************************
@@ -119,11 +147,25 @@ export interface DashboardScriptExtensionInfo {
 }
 
 /*********************************************
+* DashboardScriptExtensionInfoCollections
+**********************************************/
+export interface DashboardScriptExtensionInfoCollections {
+
+}
+
+/*********************************************
 * DateRangeCriterion
 **********************************************/
 export interface DateRangeCriterion {
 	RangeEndValue?: any;
 	RangeStartValue?: any;
+}
+
+/*********************************************
+* DateRangeCriterionCollections
+**********************************************/
+export interface DateRangeCriterionCollections {
+
 }
 
 /*********************************************
@@ -133,6 +175,13 @@ export interface ExchangeUserSyncState {
 	IsOptedIn?: boolean;
 	LastEndTime?: any;
 	LastSyncResult?: number;
+}
+
+/*********************************************
+* ExchangeUserSyncStateCollections
+**********************************************/
+export interface ExchangeUserSyncStateCollections {
+
 }
 
 /*********************************************
@@ -149,6 +198,13 @@ export interface Location {
 }
 
 /*********************************************
+* LocationCollections
+**********************************************/
+export interface LocationCollections {
+
+}
+
+/*********************************************
 * LocationDisplaySetting
 **********************************************/
 export interface LocationDisplaySetting {
@@ -157,11 +213,25 @@ export interface LocationDisplaySetting {
 }
 
 /*********************************************
+* LocationDisplaySettingCollections
+**********************************************/
+export interface LocationDisplaySettingCollections {
+
+}
+
+/*********************************************
 * LocationFilter
 **********************************************/
 export interface LocationFilter {
 	IncludeUncategorizedTasks?: boolean;
 	LocationKeys?: Array<number>;
+}
+
+/*********************************************
+* LocationFilterCollections
+**********************************************/
+export interface LocationFilterCollections {
+
 }
 
 /*********************************************
@@ -182,6 +252,13 @@ export interface Task {
 	PinAge?: number;
 	SerializedCustomDataForClient?: string;
 	StartDate?: any;
+}
+
+/*********************************************
+* TaskCollections
+**********************************************/
+export interface TaskCollections {
+
 }
 
 /*********************************************
@@ -331,11 +408,25 @@ export interface LocationUpdateResult {
 }
 
 /*********************************************
+* LocationUpdateResultCollections
+**********************************************/
+export interface LocationUpdateResultCollections {
+
+}
+
+/*********************************************
 * NameCriterion
 **********************************************/
 export interface NameCriterion {
 	CompareType?: number;
 	CompareValue?: string;
+}
+
+/*********************************************
+* NameCriterionCollections
+**********************************************/
+export interface NameCriterionCollections {
+
 }
 
 /*********************************************
@@ -402,6 +493,13 @@ export interface PersistedProperties {
 	HasShownMarkAsImportantCallout?: boolean;
 	HasShownTaskListTooLongNotification?: boolean;
 	QuickLaunchLandingPage?: string;
+}
+
+/*********************************************
+* PersistedPropertiesCollections
+**********************************************/
+export interface PersistedPropertiesCollections {
+
 }
 
 /*********************************************
@@ -522,6 +620,13 @@ export interface ProviderRefreshStatus {
 }
 
 /*********************************************
+* ProviderRefreshStatusCollections
+**********************************************/
+export interface ProviderRefreshStatusCollections {
+
+}
+
+/*********************************************
 * UserSettings
 **********************************************/
 export interface UserSettings {
@@ -537,11 +642,25 @@ export interface UserSettings {
 }
 
 /*********************************************
+* UserSettingsCollections
+**********************************************/
+export interface UserSettingsCollections {
+
+}
+
+/*********************************************
 * OrderInfo
 **********************************************/
 export interface OrderInfo {
 	Field?: number;
 	IsDescending?: boolean;
+}
+
+/*********************************************
+* OrderInfoCollections
+**********************************************/
+export interface OrderInfoCollections {
+
 }
 
 /*********************************************
@@ -551,6 +670,13 @@ export interface ProviderErrorInfo {
 	CorrelationId?: string;
 	LastSuccessfulRefresh?: any;
 	LocalizedName?: string;
+}
+
+/*********************************************
+* ProviderErrorInfoCollections
+**********************************************/
+export interface ProviderErrorInfoCollections {
+
 }
 
 /*********************************************
@@ -729,6 +855,13 @@ export interface SortableTaskQuery {
 }
 
 /*********************************************
+* SortableTaskQueryCollections
+**********************************************/
+export interface SortableTaskQueryCollections {
+
+}
+
+/*********************************************
 * TaskQuery
 **********************************************/
 export interface TaskQuery {
@@ -738,11 +871,25 @@ export interface TaskQuery {
 }
 
 /*********************************************
+* TaskQueryCollections
+**********************************************/
+export interface TaskQueryCollections {
+
+}
+
+/*********************************************
 * TaskFilter
 **********************************************/
 export interface TaskFilter {
 	CriterionConcatType?: number;
 	IdsToFilterBy?: Array<number>;
+}
+
+/*********************************************
+* TaskFilterCollections
+**********************************************/
+export interface TaskFilterCollections {
+
 }
 
 /*********************************************
@@ -856,11 +1003,25 @@ export interface TaskRefreshResult {
 }
 
 /*********************************************
+* TaskRefreshResultCollections
+**********************************************/
+export interface TaskRefreshResultCollections {
+
+}
+
+/*********************************************
 * TaskWriteResult
 **********************************************/
 export interface TaskWriteResult {
 	Error?: number;
 	ErrorMessage?: string;
+}
+
+/*********************************************
+* TaskWriteResultCollections
+**********************************************/
+export interface TaskWriteResultCollections {
+
 }
 
 /*********************************************
@@ -1044,4 +1205,11 @@ export interface ViewSelectionInfo {
 	Id?: number;
 	Image?: string;
 	Name?: string;
+}
+
+/*********************************************
+* ViewSelectionInfoCollections
+**********************************************/
+export interface ViewSelectionInfoCollections {
+
 }

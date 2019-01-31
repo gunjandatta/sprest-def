@@ -11,6 +11,13 @@ export interface KeyValue {
 }
 
 /*********************************************
+* KeyValueCollections
+**********************************************/
+export interface KeyValueCollections {
+
+}
+
+/*********************************************
 * SimpleDataRow
 **********************************************/
 export interface SimpleDataRow {
@@ -18,10 +25,24 @@ export interface SimpleDataRow {
 }
 
 /*********************************************
+* SimpleDataRowCollections
+**********************************************/
+export interface SimpleDataRowCollections {
+
+}
+
+/*********************************************
 * SimpleDataTable
 **********************************************/
 export interface SimpleDataTable {
 	Rows?: Array<SP.SimpleDataRow>;
+}
+
+/*********************************************
+* SimpleDataTableCollections
+**********************************************/
+export interface SimpleDataTableCollections {
+
 }
 
 /*********************************************
@@ -35,11 +56,25 @@ export interface MethodInformation {
 }
 
 /*********************************************
+* MethodInformationCollections
+**********************************************/
+export interface MethodInformationCollections {
+
+}
+
+/*********************************************
 * ParameterInformation
 **********************************************/
 export interface ParameterInformation {
 	Name?: string;
 	ParameterTypeFullName?: string;
+}
+
+/*********************************************
+* ParameterInformationCollections
+**********************************************/
+export interface ParameterInformationCollections {
+
 }
 
 /*********************************************
@@ -54,10 +89,24 @@ export interface PropertyInformation {
 }
 
 /*********************************************
+* PropertyInformationCollections
+**********************************************/
+export interface PropertyInformationCollections {
+
+}
+
+/*********************************************
 * ContentTypeId
 **********************************************/
 export interface ContentTypeId {
 	StringValue?: string;
+}
+
+/*********************************************
+* ContentTypeIdCollections
+**********************************************/
+export interface ContentTypeIdCollections {
+
 }
 
 /*********************************************
@@ -69,10 +118,24 @@ export interface FieldLookupValue {
 }
 
 /*********************************************
+* FieldLookupValueCollections
+**********************************************/
+export interface FieldLookupValueCollections {
+
+}
+
+/*********************************************
 * FieldUserValue
 **********************************************/
 export interface FieldUserValue extends SP.FieldLookupValue {
 	Email?: string;
+}
+
+/*********************************************
+* FieldUserValueCollections
+**********************************************/
+export interface FieldUserValueCollections {
+
 }
 
 /*********************************************
@@ -83,10 +146,24 @@ export interface ResourcePath {
 }
 
 /*********************************************
+* ResourcePathCollections
+**********************************************/
+export interface ResourcePathCollections {
+
+}
+
+/*********************************************
 * CreatableItemInfoCollection
 **********************************************/
 export interface CreatableItemInfoCollection {
 	Items?: Array<SP.CreatableItemInfo>;
+}
+
+/*********************************************
+* CreatableItemInfoCollectionCollections
+**********************************************/
+export interface CreatableItemInfoCollectionCollections {
+
 }
 
 /*********************************************
@@ -99,10 +176,24 @@ export interface CreatableItemInfo {
 }
 
 /*********************************************
+* CreatableItemInfoCollections
+**********************************************/
+export interface CreatableItemInfoCollections {
+
+}
+
+/*********************************************
 * CurrencyInformationCollection
 **********************************************/
 export interface CurrencyInformationCollection {
 	Items?: Array<SP.CurrencyInformation>;
+}
+
+/*********************************************
+* CurrencyInformationCollectionCollections
+**********************************************/
+export interface CurrencyInformationCollectionCollections {
+
 }
 
 /*********************************************
@@ -114,10 +205,24 @@ export interface CurrencyInformation {
 }
 
 /*********************************************
+* CurrencyInformationCollections
+**********************************************/
+export interface CurrencyInformationCollections {
+
+}
+
+/*********************************************
 * EncryptionOption
 **********************************************/
 export interface EncryptionOption {
 	AES256CBCKey?: any;
+}
+
+/*********************************************
+* EncryptionOptionCollections
+**********************************************/
+export interface EncryptionOptionCollections {
+
 }
 
 /*********************************************
@@ -132,12 +237,26 @@ export interface IngestionTaskKey {
 }
 
 /*********************************************
+* IngestionTaskKeyCollections
+**********************************************/
+export interface IngestionTaskKeyCollections {
+
+}
+
+/*********************************************
 * MultiGeoCopyParameters
 **********************************************/
 export interface MultiGeoCopyParameters {
 	binaryPayload?: any;
 	jobId?: any;
 	userId?: number;
+}
+
+/*********************************************
+* MultiGeoCopyParametersCollections
+**********************************************/
+export interface MultiGeoCopyParametersCollections {
+
 }
 
 /*********************************************
@@ -156,6 +275,13 @@ export interface MenuNode {
 }
 
 /*********************************************
+* MenuNodeCollections
+**********************************************/
+export interface MenuNodeCollections {
+
+}
+
+/*********************************************
 * MenuState
 **********************************************/
 export interface MenuState {
@@ -170,6 +296,13 @@ export interface MenuState {
 }
 
 /*********************************************
+* MenuStateCollections
+**********************************************/
+export interface MenuStateCollections {
+
+}
+
+/*********************************************
 * NavigationNodeCreationInformation
 **********************************************/
 export interface NavigationNodeCreationInformation {
@@ -177,6 +310,13 @@ export interface NavigationNodeCreationInformation {
 	IsExternal?: boolean;
 	Title?: string;
 	Url?: string;
+}
+
+/*********************************************
+* NavigationNodeCreationInformationCollections
+**********************************************/
+export interface NavigationNodeCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -192,10 +332,24 @@ export interface RelatedItem {
 }
 
 /*********************************************
+* RelatedItemCollections
+**********************************************/
+export interface RelatedItemCollections {
+
+}
+
+/*********************************************
 * ScriptSafeDomainEntityData
 **********************************************/
 export interface ScriptSafeDomainEntityData {
 	DomainName?: string;
+}
+
+/*********************************************
+* ScriptSafeDomainEntityDataCollections
+**********************************************/
+export interface ScriptSafeDomainEntityDataCollections {
+
 }
 
 /*********************************************
@@ -206,11 +360,25 @@ export interface SharedWithUserCollection {
 }
 
 /*********************************************
+* SharedWithUserCollectionCollections
+**********************************************/
+export interface SharedWithUserCollectionCollections {
+
+}
+
+/*********************************************
 * SharedWithUser
 **********************************************/
 export interface SharedWithUser {
 	Email?: string;
 	Name?: string;
+}
+
+/*********************************************
+* SharedWithUserCollections
+**********************************************/
+export interface SharedWithUserCollections {
+
 }
 
 /*********************************************
@@ -234,6 +402,13 @@ export interface SharingLinkData {
 	RequiresPassword?: boolean;
 	RestrictedShareMembership?: boolean;
 	ShareId?: any;
+}
+
+/*********************************************
+* SharingLinkDataCollections
+**********************************************/
+export interface SharingLinkDataCollections {
+
 }
 
 /*********************************************
@@ -269,11 +444,25 @@ export interface SharingLinkInfo {
 }
 
 /*********************************************
+* SharingLinkInfoCollections
+**********************************************/
+export interface SharingLinkInfoCollections {
+
+}
+
+/*********************************************
 * UserIdInfo
 **********************************************/
 export interface UserIdInfo {
 	NameId?: string;
 	NameIdIssuer?: string;
+}
+
+/*********************************************
+* UserIdInfoCollections
+**********************************************/
+export interface UserIdInfoCollections {
+
 }
 
 /*********************************************
@@ -295,6 +484,13 @@ export interface AlertCreationInformation {
 }
 
 /*********************************************
+* AlertCreationInformationCollections
+**********************************************/
+export interface AlertCreationInformationCollections {
+
+}
+
+/*********************************************
 * AppLicenseCollection
 **********************************************/
 export interface AppLicenseCollection {
@@ -302,10 +498,24 @@ export interface AppLicenseCollection {
 }
 
 /*********************************************
+* AppLicenseCollectionCollections
+**********************************************/
+export interface AppLicenseCollectionCollections {
+
+}
+
+/*********************************************
 * AppLicense
 **********************************************/
 export interface AppLicense {
 	RawXMLLicenseToken?: string;
+}
+
+/*********************************************
+* AppLicenseCollections
+**********************************************/
+export interface AppLicenseCollections {
+
 }
 
 /*********************************************
@@ -329,10 +539,24 @@ export interface AppProperties {
 }
 
 /*********************************************
+* AppPropertiesCollections
+**********************************************/
+export interface AppPropertiesCollections {
+
+}
+
+/*********************************************
 * AppSiteContext
 **********************************************/
 export interface AppSiteContext {
 	SiteUrl?: string;
+}
+
+/*********************************************
+* AppSiteContextCollections
+**********************************************/
+export interface AppSiteContextCollections {
+
 }
 
 /*********************************************
@@ -345,10 +569,24 @@ export interface AppViewCreationInfo {
 }
 
 /*********************************************
+* AppViewCreationInfoCollections
+**********************************************/
+export interface AppViewCreationInfoCollections {
+
+}
+
+/*********************************************
 * AttachmentCreationInformation
 **********************************************/
 export interface AttachmentCreationInformation {
 	FileName?: string;
+}
+
+/*********************************************
+* AttachmentCreationInformationCollections
+**********************************************/
+export interface AttachmentCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -357,6 +595,13 @@ export interface AttachmentCreationInformation {
 export interface BasePermissions {
 	High?: number;
 	Low?: number;
+}
+
+/*********************************************
+* BasePermissionsCollections
+**********************************************/
+export interface BasePermissionsCollections {
+
 }
 
 /*********************************************
@@ -370,6 +615,13 @@ export interface ChangeLogItemQuery {
 	RowLimit?: string;
 	ViewFields?: string;
 	ViewName?: string;
+}
+
+/*********************************************
+* ChangeLogItemQueryCollections
+**********************************************/
+export interface ChangeLogItemQueryCollections {
+
 }
 
 /*********************************************
@@ -414,10 +666,24 @@ export interface ChangeQuery {
 }
 
 /*********************************************
+* ChangeQueryCollections
+**********************************************/
+export interface ChangeQueryCollections {
+
+}
+
+/*********************************************
 * ChangeToken
 **********************************************/
 export interface ChangeToken {
 	StringValue?: string;
+}
+
+/*********************************************
+* ChangeTokenCollections
+**********************************************/
+export interface ChangeTokenCollections {
+
 }
 
 /*********************************************
@@ -431,6 +697,13 @@ export interface ListItemComplianceInfo {
 }
 
 /*********************************************
+* ListItemComplianceInfoCollections
+**********************************************/
+export interface ListItemComplianceInfoCollections {
+
+}
+
+/*********************************************
 * ContentTypeCreationInformation
 **********************************************/
 export interface ContentTypeCreationInformation {
@@ -438,6 +711,13 @@ export interface ContentTypeCreationInformation {
 	Group?: string;
 	Id?: string;
 	Name?: string;
+}
+
+/*********************************************
+* ContentTypeCreationInformationCollections
+**********************************************/
+export interface ContentTypeCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -453,11 +733,25 @@ export interface ContextWebInformation {
 }
 
 /*********************************************
+* ContextWebInformationCollections
+**********************************************/
+export interface ContextWebInformationCollections {
+
+}
+
+/*********************************************
 * CopyJobProgress
 **********************************************/
 export interface CopyJobProgress {
 	JobState?: number;
 	Logs?: Array<string>;
+}
+
+/*********************************************
+* CopyJobProgressCollections
+**********************************************/
+export interface CopyJobProgressCollections {
+
 }
 
 /*********************************************
@@ -468,6 +762,13 @@ export interface CopyMigrationInfo {
 	JobId?: any;
 	JobQueueUri?: string;
 	SourceListItemUniqueIds?: Array<any>;
+}
+
+/*********************************************
+* CopyMigrationInfoCollections
+**********************************************/
+export interface CopyMigrationInfoCollections {
+
 }
 
 /*********************************************
@@ -482,10 +783,24 @@ export interface CopyMigrationOptions {
 }
 
 /*********************************************
+* CopyMigrationOptionsCollections
+**********************************************/
+export interface CopyMigrationOptionsCollections {
+
+}
+
+/*********************************************
 * CustomActionElementCollection
 **********************************************/
 export interface CustomActionElementCollection {
 	Items?: Array<SP.CustomActionElement>;
+}
+
+/*********************************************
+* CustomActionElementCollectionCollections
+**********************************************/
+export interface CustomActionElementCollectionCollections {
+
 }
 
 /*********************************************
@@ -508,11 +823,25 @@ export interface CustomActionElement {
 }
 
 /*********************************************
+* CustomActionElementCollections
+**********************************************/
+export interface CustomActionElementCollections {
+
+}
+
+/*********************************************
 * CustomerKeyInfo
 **********************************************/
 export interface CustomerKeyInfo {
 	PrimaryKeyVault?: SP.CustomerKeyVaultInfo;
 	SecondaryKeyVault?: SP.CustomerKeyVaultInfo;
+}
+
+/*********************************************
+* CustomerKeyInfoCollections
+**********************************************/
+export interface CustomerKeyInfoCollections {
+
 }
 
 /*********************************************
@@ -522,6 +851,13 @@ export interface CustomerKeyVaultInfo {
 	KeyName?: string;
 	KeyVersion?: any;
 	VaultName?: string;
+}
+
+/*********************************************
+* CustomerKeyVaultInfoCollections
+**********************************************/
+export interface CustomerKeyVaultInfoCollections {
+
 }
 
 /*********************************************
@@ -535,6 +871,13 @@ export interface CustomerKeyStatusInfo {
 }
 
 /*********************************************
+* CustomerKeyStatusInfoCollections
+**********************************************/
+export interface CustomerKeyStatusInfoCollections {
+
+}
+
+/*********************************************
 * DocumentLibraryInformation
 **********************************************/
 export interface DocumentLibraryInformation {
@@ -544,6 +887,13 @@ export interface DocumentLibraryInformation {
 	ModifiedFriendlyDisplay?: string;
 	ServerRelativeUrl?: string;
 	Title?: string;
+}
+
+/*********************************************
+* DocumentLibraryInformationCollections
+**********************************************/
+export interface DocumentLibraryInformationCollections {
+
 }
 
 /*********************************************
@@ -560,6 +910,13 @@ export interface EventReceiverDefinitionCreationInformation {
 }
 
 /*********************************************
+* EventReceiverDefinitionCreationInformationCollections
+**********************************************/
+export interface EventReceiverDefinitionCreationInformationCollections {
+
+}
+
+/*********************************************
 * ListDataValidationFailure
 **********************************************/
 export interface ListDataValidationFailure {
@@ -571,10 +928,24 @@ export interface ListDataValidationFailure {
 }
 
 /*********************************************
+* ListDataValidationFailureCollections
+**********************************************/
+export interface ListDataValidationFailureCollections {
+
+}
+
+/*********************************************
 * FieldCalculatedErrorValue
 **********************************************/
 export interface FieldCalculatedErrorValue {
 	ErrorMessage?: string;
+}
+
+/*********************************************
+* FieldCalculatedErrorValueCollections
+**********************************************/
+export interface FieldCalculatedErrorValueCollections {
+
 }
 
 /*********************************************
@@ -592,6 +963,13 @@ export interface FieldCreationInformation {
 }
 
 /*********************************************
+* FieldCreationInformationCollections
+**********************************************/
+export interface FieldCreationInformationCollections {
+
+}
+
+/*********************************************
 * FieldGeolocationValue
 **********************************************/
 export interface FieldGeolocationValue {
@@ -599,6 +977,13 @@ export interface FieldGeolocationValue {
 	Latitude?: number;
 	Longitude?: number;
 	Measure?: number;
+}
+
+/*********************************************
+* FieldGeolocationValueCollections
+**********************************************/
+export interface FieldGeolocationValueCollections {
+
 }
 
 /*********************************************
@@ -610,6 +995,13 @@ export interface FieldRatingScaleQuestionAnswer {
 }
 
 /*********************************************
+* FieldRatingScaleQuestionAnswerCollections
+**********************************************/
+export interface FieldRatingScaleQuestionAnswerCollections {
+
+}
+
+/*********************************************
 * FieldUrlValue
 **********************************************/
 export interface FieldUrlValue {
@@ -618,10 +1010,24 @@ export interface FieldUrlValue {
 }
 
 /*********************************************
+* FieldUrlValueCollections
+**********************************************/
+export interface FieldUrlValueCollections {
+
+}
+
+/*********************************************
 * FileCollectionAddParameters
 **********************************************/
 export interface FileCollectionAddParameters {
 	Overwrite?: boolean;
+}
+
+/*********************************************
+* FileCollectionAddParametersCollections
+**********************************************/
+export interface FileCollectionAddParametersCollections {
+
 }
 
 /*********************************************
@@ -634,10 +1040,24 @@ export interface FileCreationInformation {
 }
 
 /*********************************************
+* FileCreationInformationCollections
+**********************************************/
+export interface FileCreationInformationCollections {
+
+}
+
+/*********************************************
 * FolderCollectionAddParameters
 **********************************************/
 export interface FolderCollectionAddParameters {
 	Overwrite?: boolean;
+}
+
+/*********************************************
+* FolderCollectionAddParametersCollections
+**********************************************/
+export interface FolderCollectionAddParametersCollections {
+
 }
 
 /*********************************************
@@ -649,6 +1069,13 @@ export interface GroupCreationInformation {
 }
 
 /*********************************************
+* GroupCreationInformationCollections
+**********************************************/
+export interface GroupCreationInformationCollections {
+
+}
+
+/*********************************************
 * Hashtag
 **********************************************/
 export interface Hashtag {
@@ -656,6 +1083,13 @@ export interface Hashtag {
 	Application?: string;
 	Label?: string;
 	Timestamp?: any;
+}
+
+/*********************************************
+* HashtagCollections
+**********************************************/
+export interface HashtagCollections {
+
 }
 
 /*********************************************
@@ -674,6 +1108,13 @@ export interface HubSiteCreationInformation {
 }
 
 /*********************************************
+* HubSiteCreationInformationCollections
+**********************************************/
+export interface HubSiteCreationInformationCollections {
+
+}
+
+/*********************************************
 * SPInvitationCreationResult
 **********************************************/
 export interface SPInvitationCreationResult {
@@ -683,12 +1124,26 @@ export interface SPInvitationCreationResult {
 }
 
 /*********************************************
+* SPInvitationCreationResultCollections
+**********************************************/
+export interface SPInvitationCreationResultCollections {
+
+}
+
+/*********************************************
 * Language
 **********************************************/
 export interface Language {
 	DisplayName?: string;
 	LanguageTag?: string;
 	Lcid?: number;
+}
+
+/*********************************************
+* LanguageCollections
+**********************************************/
+export interface LanguageCollections {
+
 }
 
 /*********************************************
@@ -707,10 +1162,24 @@ export interface ListCreationInformation {
 }
 
 /*********************************************
+* ListCreationInformationCollections
+**********************************************/
+export interface ListCreationInformationCollections {
+
+}
+
+/*********************************************
 * ListDataSource
 **********************************************/
 export interface ListDataSource {
 	Properties?: Array<SP.KeyValue>;
+}
+
+/*********************************************
+* ListDataSourceCollections
+**********************************************/
+export interface ListDataSourceCollections {
+
 }
 
 /*********************************************
@@ -722,10 +1191,24 @@ export interface ListDataValidationExceptionValue {
 }
 
 /*********************************************
+* ListDataValidationExceptionValueCollections
+**********************************************/
+export interface ListDataValidationExceptionValueCollections {
+
+}
+
+/*********************************************
 * ListItemCollectionPosition
 **********************************************/
 export interface ListItemCollectionPosition {
 	PagingInfo?: string;
+}
+
+/*********************************************
+* ListItemCollectionPositionCollections
+**********************************************/
+export interface ListItemCollectionPositionCollections {
+
 }
 
 /*********************************************
@@ -738,12 +1221,26 @@ export interface ListItemCreationInformationUsingPath {
 }
 
 /*********************************************
+* ListItemCreationInformationUsingPathCollections
+**********************************************/
+export interface ListItemCreationInformationUsingPathCollections {
+
+}
+
+/*********************************************
 * ListItemCreationInformation
 **********************************************/
 export interface ListItemCreationInformation {
 	FolderUrl?: string;
 	LeafName?: string;
 	UnderlyingObjectType?: number;
+}
+
+/*********************************************
+* ListItemCreationInformationCollections
+**********************************************/
+export interface ListItemCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -758,10 +1255,24 @@ export interface ListItemFormUpdateValue {
 }
 
 /*********************************************
+* ListItemFormUpdateValueCollections
+**********************************************/
+export interface ListItemFormUpdateValueCollections {
+
+}
+
+/*********************************************
 * ListItemUpdateParameters
 **********************************************/
 export interface ListItemUpdateParameters {
 	BypassQuotaCheck?: boolean;
+}
+
+/*********************************************
+* ListItemUpdateParametersCollections
+**********************************************/
+export interface ListItemUpdateParametersCollections {
+
 }
 
 /*********************************************
@@ -784,11 +1295,25 @@ export interface MediaServiceUpdateParameters {
 }
 
 /*********************************************
+* MediaServiceUpdateParametersCollections
+**********************************************/
+export interface MediaServiceUpdateParametersCollections {
+
+}
+
+/*********************************************
 * MoveCopyOptions
 **********************************************/
 export interface MoveCopyOptions {
 	KeepBoth?: boolean;
 	ResetAuthorAndCreatedOnCopy?: boolean;
+}
+
+/*********************************************
+* MoveCopyOptionsCollections
+**********************************************/
+export interface MoveCopyOptionsCollections {
+
 }
 
 /*********************************************
@@ -801,10 +1326,24 @@ export interface ProvisionedMigrationContainersInfo {
 }
 
 /*********************************************
+* ProvisionedMigrationContainersInfoCollections
+**********************************************/
+export interface ProvisionedMigrationContainersInfoCollections {
+
+}
+
+/*********************************************
 * ProvisionedMigrationQueueInfo
 **********************************************/
 export interface ProvisionedMigrationQueueInfo {
 	JobQueueUri?: string;
+}
+
+/*********************************************
+* ProvisionedMigrationQueueInfoCollections
+**********************************************/
+export interface ProvisionedMigrationQueueInfoCollections {
+
 }
 
 /*********************************************
@@ -820,6 +1359,13 @@ export interface CamlQuery {
 }
 
 /*********************************************
+* CamlQueryCollections
+**********************************************/
+export interface CamlQueryCollections {
+
+}
+
+/*********************************************
 * RecycleBinQueryInformation
 **********************************************/
 export interface RecycleBinQueryInformation {
@@ -829,6 +1375,13 @@ export interface RecycleBinQueryInformation {
 	PagingInfo?: string;
 	RowLimit?: number;
 	ShowOnlyMyItems?: boolean;
+}
+
+/*********************************************
+* RecycleBinQueryInformationCollections
+**********************************************/
+export interface RecycleBinQueryInformationCollections {
+
 }
 
 /*********************************************
@@ -849,6 +1402,13 @@ export interface RenderListContextMenuDataParameters {
 	RootFolder?: string;
 	View?: string;
 	ViewCount?: string;
+}
+
+/*********************************************
+* RenderListContextMenuDataParametersCollections
+**********************************************/
+export interface RenderListContextMenuDataParametersCollections {
+
 }
 
 /*********************************************
@@ -984,6 +1544,13 @@ export interface RenderListDataOverrideParameters {
 }
 
 /*********************************************
+* RenderListDataOverrideParametersCollections
+**********************************************/
+export interface RenderListDataOverrideParametersCollections {
+
+}
+
+/*********************************************
 * RenderListDataParameters
 **********************************************/
 export interface RenderListDataParameters {
@@ -1004,6 +1571,13 @@ export interface RenderListDataParameters {
 }
 
 /*********************************************
+* RenderListDataParametersCollections
+**********************************************/
+export interface RenderListDataParametersCollections {
+
+}
+
+/*********************************************
 * RenderListFilterDataParameters
 **********************************************/
 export interface RenderListFilterDataParameters {
@@ -1015,6 +1589,13 @@ export interface RenderListFilterDataParameters {
 }
 
 /*********************************************
+* RenderListFilterDataParametersCollections
+**********************************************/
+export interface RenderListFilterDataParametersCollections {
+
+}
+
+/*********************************************
 * RoleDefinitionCreationInformation
 **********************************************/
 export interface RoleDefinitionCreationInformation {
@@ -1022,6 +1603,13 @@ export interface RoleDefinitionCreationInformation {
 	Description?: string;
 	Name?: string;
 	Order?: number;
+}
+
+/*********************************************
+* RoleDefinitionCreationInformationCollections
+**********************************************/
+export interface RoleDefinitionCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -1041,11 +1629,25 @@ export interface UpgradeInfo {
 }
 
 /*********************************************
+* UpgradeInfoCollections
+**********************************************/
+export interface UpgradeInfoCollections {
+
+}
+
+/*********************************************
 * SubwebQuery
 **********************************************/
 export interface SubwebQuery {
 	ConfigurationFilter?: number;
 	WebTemplateFilter?: number;
+}
+
+/*********************************************
+* SubwebQueryCollections
+**********************************************/
+export interface SubwebQueryCollections {
+
 }
 
 /*********************************************
@@ -1067,12 +1669,26 @@ export interface TenantAppInformation {
 }
 
 /*********************************************
+* TenantAppInformationCollections
+**********************************************/
+export interface TenantAppInformationCollections {
+
+}
+
+/*********************************************
 * TimeZoneInformation
 **********************************************/
 export interface TimeZoneInformation {
 	Bias?: number;
 	DaylightBias?: number;
 	StandardBias?: number;
+}
+
+/*********************************************
+* TimeZoneInformationCollections
+**********************************************/
+export interface TimeZoneInformationCollections {
+
 }
 
 /*********************************************
@@ -1088,12 +1704,26 @@ export interface UsageInfo {
 }
 
 /*********************************************
+* UsageInfoCollections
+**********************************************/
+export interface UsageInfoCollections {
+
+}
+
+/*********************************************
 * UserCreationInformation
 **********************************************/
 export interface UserCreationInformation {
 	Email?: string;
 	LoginName?: string;
 	Title?: string;
+}
+
+/*********************************************
+* UserCreationInformationCollections
+**********************************************/
+export interface UserCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -1112,12 +1742,26 @@ export interface ViewCreationInformation {
 }
 
 /*********************************************
+* ViewCreationInformationCollections
+**********************************************/
+export interface ViewCreationInformationCollections {
+
+}
+
+/*********************************************
 * VisualizationAppInfo
 **********************************************/
 export interface VisualizationAppInfo {
 	DesignUri?: string;
 	Id?: any;
 	RuntimeUri?: string;
+}
+
+/*********************************************
+* VisualizationAppInfoCollections
+**********************************************/
+export interface VisualizationAppInfoCollections {
+
 }
 
 /*********************************************
@@ -1129,6 +1773,13 @@ export interface VisualizationField {
 }
 
 /*********************************************
+* VisualizationFieldCollections
+**********************************************/
+export interface VisualizationFieldCollections {
+
+}
+
+/*********************************************
 * VisualizationStyleSet
 **********************************************/
 export interface VisualizationStyleSet {
@@ -1136,6 +1787,13 @@ export interface VisualizationStyleSet {
 	BackgroundColor?: string;
 	Fields?: Array<SP.VisualizationField>;
 	MinHeight?: string;
+}
+
+/*********************************************
+* VisualizationStyleSetCollections
+**********************************************/
+export interface VisualizationStyleSetCollections {
+
 }
 
 /*********************************************
@@ -1151,6 +1809,13 @@ export interface Visualization {
 }
 
 /*********************************************
+* VisualizationCollections
+**********************************************/
+export interface VisualizationCollections {
+
+}
+
+/*********************************************
 * WebCreationInformation
 **********************************************/
 export interface WebCreationInformation {
@@ -1160,6 +1825,13 @@ export interface WebCreationInformation {
 	Url?: string;
 	UseSamePermissionsAsParentSite?: boolean;
 	WebTemplate?: string;
+}
+
+/*********************************************
+* WebCreationInformationCollections
+**********************************************/
+export interface WebCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -1175,6 +1847,13 @@ export interface WebInfoCreationInformation {
 }
 
 /*********************************************
+* WebInfoCreationInformationCollections
+**********************************************/
+export interface WebInfoCreationInformationCollections {
+
+}
+
+/*********************************************
 * WebRequestInfo
 **********************************************/
 export interface WebRequestInfo {
@@ -1182,6 +1861,13 @@ export interface WebRequestInfo {
 	Headers?: Array<SP.KeyValue>;
 	Method?: string;
 	Url?: string;
+}
+
+/*********************************************
+* WebRequestInfoCollections
+**********************************************/
+export interface WebRequestInfoCollections {
+
 }
 
 /*********************************************
@@ -1194,9 +1880,23 @@ export interface WebResponseInfo {
 }
 
 /*********************************************
+* WebResponseInfoCollections
+**********************************************/
+export interface WebResponseInfoCollections {
+
+}
+
+/*********************************************
 * XmlSchemaFieldCreationInformation
 **********************************************/
 export interface XmlSchemaFieldCreationInformation {
 	Options?: number;
 	SchemaXml?: string;
+}
+
+/*********************************************
+* XmlSchemaFieldCreationInformationCollections
+**********************************************/
+export interface XmlSchemaFieldCreationInformationCollections {
+
 }

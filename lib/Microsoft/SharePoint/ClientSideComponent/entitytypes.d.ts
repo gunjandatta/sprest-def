@@ -109,3 +109,10 @@ export interface StorageEntity {
 	Description?: string;
 	Value?: string;
 }
+
+/*********************************************
+* StorageEntityCollections
+**********************************************/
+export interface StorageEntityCollections {
+
+}

@@ -12,3 +12,10 @@ export interface RecentDocument {
 	LinkLocation?: string;
 	TimeStamp?: any;
 }
+
+/*********************************************
+* RecentDocumentCollections
+**********************************************/
+export interface RecentDocumentCollections {
+
+}

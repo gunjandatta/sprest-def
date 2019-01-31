@@ -47,6 +47,13 @@ export interface SPOWebAppServicePrincipalPermissionGrantCollections extends SPO
 }
 
 /*********************************************
+* SPOWebAppServicePrincipalPermissionGrantCollectionMethods
+**********************************************/
+export interface SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
+	getByObjectId(objectId?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
+}
+
+/*********************************************
 * SPOWebAppServicePrincipalPermissionGrantQuery
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionGrantQuery extends SPOWebAppServicePrincipalPermissionGrantProps {
@@ -104,6 +111,14 @@ export interface SPOWebAppServicePrincipalPermissionRequestCollections extends S
 }
 
 /*********************************************
+* SPOWebAppServicePrincipalPermissionRequestCollectionMethods
+**********************************************/
+export interface SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
+	approve(resource?: string, scope?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
+	getById(id?: any): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
+}
+
+/*********************************************
 * SPOWebAppServicePrincipalPermissionRequestQuery
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequestQuery extends SPOWebAppServicePrincipalPermissionRequestProps {
@@ -152,10 +167,10 @@ export interface SPOWebAppServicePrincipalProps {
 * SPOWebAppServicePrincipalCollections
 **********************************************/
 export interface SPOWebAppServicePrincipalCollections extends SPOWebAppServicePrincipalProps {
-	PermissionGrants(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
-	PermissionGrants(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
-	PermissionRequests(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
-	PermissionRequests(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
+	PermissionGrants(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollectionMethods;
+	PermissionGrants(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollections;
+	PermissionRequests(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollectionMethods;
+	PermissionRequests(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollections;
 }
 
 /*********************************************

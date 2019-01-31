@@ -9,3 +9,10 @@ export interface Identity {
 	loginName?: string;
 	name?: string;
 }
+
+/*********************************************
+* IdentityCollections
+**********************************************/
+export interface IdentityCollections {
+
+}

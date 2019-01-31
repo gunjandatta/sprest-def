@@ -10,3 +10,10 @@ export interface SubscriptionInformation {
 	resource?: string;
 	resourceData?: string;
 }
+
+/*********************************************
+* SubscriptionInformationCollections
+**********************************************/
+export interface SubscriptionInformationCollections {
+
+}

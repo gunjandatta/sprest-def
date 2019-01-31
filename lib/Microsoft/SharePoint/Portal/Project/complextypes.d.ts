@@ -15,6 +15,13 @@ export interface MyRecsCacheBlob {
 }
 
 /*********************************************
+* MyRecsCacheBlobCollections
+**********************************************/
+export interface MyRecsCacheBlobCollections {
+
+}
+
+/*********************************************
 * MyRecsQueryInfo
 **********************************************/
 export interface MyRecsQueryInfo {
@@ -24,4 +31,11 @@ export interface MyRecsQueryInfo {
 	InterestTags?: Array<string>;
 	QueryInfoExists?: boolean;
 	SuggestedTags?: Array<string>;
+}
+
+/*********************************************
+* MyRecsQueryInfoCollections
+**********************************************/
+export interface MyRecsQueryInfoCollections {
+
 }

@@ -37,8 +37,8 @@ export interface LimitedWebPartManagerProps {
 * LimitedWebPartManagerCollections
 **********************************************/
 export interface LimitedWebPartManagerCollections extends LimitedWebPartManagerProps {
-	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition>;
-	WebParts(id: string | number): IBaseExecution<SP.WebParts.WebPartDefinition>;
+	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition> & SP.WebParts.WebPartDefinitionCollectionMethods;
+	WebParts(id: string | number): IBaseExecution<SP.WebParts.WebPartDefinition> & SP.WebParts.WebPartDefinitionCollections;
 }
 
 /*********************************************
@@ -93,6 +93,14 @@ export interface WebPartDefinitionCollections extends WebPartDefinitionProps {
 }
 
 /*********************************************
+* WebPartDefinitionCollectionMethods
+**********************************************/
+export interface WebPartDefinitionCollectionMethods {
+	getByControlId(controlId?: string): IBaseExecution<SP.WebParts.WebPartDefinition>;
+	getById(id?: any): IBaseExecution<SP.WebParts.WebPartDefinition>;
+}
+
+/*********************************************
 * WebPartDefinitionQuery
 **********************************************/
 export interface WebPartDefinitionQuery extends WebPartDefinitionProps {
@@ -121,4 +129,11 @@ export interface WebPart {
 	Title?: string;
 	TitleUrl?: string;
 	ZoneIndex?: number;
+}
+
+/*********************************************
+* WebPartCollections
+**********************************************/
+export interface WebPartCollections {
+
 }

@@ -63,3 +63,10 @@ export interface LogFileInfo {
 	FileName?: string;
 	Url?: string;
 }
+
+/*********************************************
+* LogFileInfoCollections
+**********************************************/
+export interface LogFileInfoCollections {
+
+}

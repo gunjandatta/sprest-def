@@ -9,6 +9,13 @@ export interface SPClientSideComponentIdentifier {
 }
 
 /*********************************************
+* SPClientSideComponentIdentifierCollections
+**********************************************/
+export interface SPClientSideComponentIdentifierCollections {
+
+}
+
+/*********************************************
 * SPClientSideComponentQueryResult
 **********************************************/
 export interface SPClientSideComponentQueryResult {
@@ -18,4 +25,11 @@ export interface SPClientSideComponentQueryResult {
 	ManifestType?: number;
 	Name?: string;
 	Status?: number;
+}
+
+/*********************************************
+* SPClientSideComponentQueryResultCollections
+**********************************************/
+export interface SPClientSideComponentQueryResultCollections {
+
 }

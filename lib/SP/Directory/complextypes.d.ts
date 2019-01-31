@@ -14,6 +14,13 @@ export interface GroupNameValidationResultErrorParams {
 }
 
 /*********************************************
+* GroupNameValidationResultErrorParamsCollections
+**********************************************/
+export interface GroupNameValidationResultErrorParamsCollections {
+
+}
+
+/*********************************************
 * GroupNameValidationResult
 **********************************************/
 export interface GroupNameValidationResult {
@@ -22,4 +29,11 @@ export interface GroupNameValidationResult {
 	ErrorCode?: string;
 	ErrorMessage?: string;
 	IsValidName?: boolean;
+}
+
+/*********************************************
+* GroupNameValidationResultCollections
+**********************************************/
+export interface GroupNameValidationResultCollections {
+
 }

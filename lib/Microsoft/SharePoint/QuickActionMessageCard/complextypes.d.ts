@@ -13,6 +13,13 @@ export interface AutoInvokeAction {
 }
 
 /*********************************************
+* AutoInvokeActionCollections
+**********************************************/
+export interface AutoInvokeActionCollections {
+
+}
+
+/*********************************************
 * Header
 **********************************************/
 export interface Header {
@@ -21,10 +28,24 @@ export interface Header {
 }
 
 /*********************************************
+* HeaderCollections
+**********************************************/
+export interface HeaderCollections {
+
+}
+
+/*********************************************
 * AutoInvokeOptions
 **********************************************/
 export interface AutoInvokeOptions {
 	showCardOnFailure?: string;
+}
+
+/*********************************************
+* AutoInvokeOptionsCollections
+**********************************************/
+export interface AutoInvokeOptionsCollections {
+
 }
 
 /*********************************************
@@ -36,10 +57,24 @@ export interface Choice {
 }
 
 /*********************************************
+* ChoiceCollections
+**********************************************/
+export interface ChoiceCollections {
+
+}
+
+/*********************************************
 * HeroImage
 **********************************************/
 export interface HeroImage {
 	image?: string;
+}
+
+/*********************************************
+* HeroImageCollections
+**********************************************/
+export interface HeroImageCollections {
+
 }
 
 /*********************************************
@@ -55,6 +90,13 @@ export interface MessageCardActionButton {
 }
 
 /*********************************************
+* MessageCardActionButtonCollections
+**********************************************/
+export interface MessageCardActionButtonCollections {
+
+}
+
+/*********************************************
 * MessageCardInput
 **********************************************/
 export interface MessageCardInput {
@@ -62,6 +104,13 @@ export interface MessageCardInput {
 	id?: string;
 	type?: string;
 	value?: string;
+}
+
+/*********************************************
+* MessageCardInputCollections
+**********************************************/
+export interface MessageCardInputCollections {
+
 }
 
 /*********************************************
@@ -82,12 +131,26 @@ export interface MessageCard {
 }
 
 /*********************************************
+* MessageCardCollections
+**********************************************/
+export interface MessageCardCollections {
+
+}
+
+/*********************************************
 * PotentialAction
 **********************************************/
 export interface PotentialAction {
 	actions?: Array<Microsoft.SharePoint.QuickActionMessageCard.MessageCardActionButton>;
 	inputs?: Array<Microsoft.SharePoint.QuickActionMessageCard.MessageCardInput>;
 	type?: string;
+}
+
+/*********************************************
+* PotentialActionCollections
+**********************************************/
+export interface PotentialActionCollections {
+
 }
 
 /*********************************************
@@ -104,10 +167,24 @@ export interface Section {
 }
 
 /*********************************************
+* SectionCollections
+**********************************************/
+export interface SectionCollections {
+
+}
+
+/*********************************************
 * SPAccessRequestRefreshStatusBody
 **********************************************/
 export interface SPAccessRequestRefreshStatusBody {
 	refreshStatus?: Microsoft.SharePoint.QuickActionMessageCard.SPAccessRequestRefreshStatus;
+}
+
+/*********************************************
+* SPAccessRequestRefreshStatusBodyCollections
+**********************************************/
+export interface SPAccessRequestRefreshStatusBodyCollections {
+
 }
 
 /*********************************************
@@ -120,4 +197,11 @@ export interface SPAccessRequestRefreshStatus {
 	signature?: string;
 	status?: number;
 	uniqueId?: string;
+}
+
+/*********************************************
+* SPAccessRequestRefreshStatusCollections
+**********************************************/
+export interface SPAccessRequestRefreshStatusCollections {
+
 }

@@ -9,9 +9,23 @@ export interface ClientPeoplePickerWebServiceInterface {
 }
 
 /*********************************************
+* ClientPeoplePickerWebServiceInterfaceCollections
+**********************************************/
+export interface ClientPeoplePickerWebServiceInterfaceCollections {
+
+}
+
+/*********************************************
 * PickerEntityInformation
 **********************************************/
 export interface PickerEntityInformation {
 	Entity?: SP.UI.ApplicationPages.PickerEntityInformationRequest;
 	TotalMemberCount?: number;
+}
+
+/*********************************************
+* PickerEntityInformationCollections
+**********************************************/
+export interface PickerEntityInformationCollections {
+
 }

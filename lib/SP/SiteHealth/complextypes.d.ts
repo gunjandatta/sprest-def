@@ -12,3 +12,10 @@ export interface SiteHealthResult {
 	Status?: number;
 	TimeStamp?: any;
 }
+
+/*********************************************
+* SiteHealthResultCollections
+**********************************************/
+export interface SiteHealthResultCollections {
+
+}

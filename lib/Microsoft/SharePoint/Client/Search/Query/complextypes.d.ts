@@ -12,6 +12,13 @@ export interface PersonalResultSuggestion {
 }
 
 /*********************************************
+* PersonalResultSuggestionCollections
+**********************************************/
+export interface PersonalResultSuggestionCollections {
+
+}
+
+/*********************************************
 * QueryAutoCompletionMatch
 **********************************************/
 export interface QueryAutoCompletionMatch {
@@ -26,12 +33,26 @@ export interface QueryAutoCompletionMatch {
 }
 
 /*********************************************
+* QueryAutoCompletionMatchCollections
+**********************************************/
+export interface QueryAutoCompletionMatchCollections {
+
+}
+
+/*********************************************
 * QueryAutoCompletionResults
 **********************************************/
 export interface QueryAutoCompletionResults {
 	CoreExecutionTimeMs?: number;
 	CorrelationId?: string;
 	Queries?: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletion>;
+}
+
+/*********************************************
+* QueryAutoCompletionResultsCollections
+**********************************************/
+export interface QueryAutoCompletionResultsCollections {
+
 }
 
 /*********************************************
@@ -42,6 +63,13 @@ export interface QueryAutoCompletion {
 	Query?: string;
 	Score?: number;
 	Source?: string;
+}
+
+/*********************************************
+* QueryAutoCompletionCollections
+**********************************************/
+export interface QueryAutoCompletionCollections {
+
 }
 
 /*********************************************
@@ -56,6 +84,13 @@ export interface QueryPropertyValue {
 }
 
 /*********************************************
+* QueryPropertyValueCollections
+**********************************************/
+export interface QueryPropertyValueCollections {
+
+}
+
+/*********************************************
 * QuerySuggestionQuery
 **********************************************/
 export interface QuerySuggestionQuery {
@@ -64,11 +99,25 @@ export interface QuerySuggestionQuery {
 }
 
 /*********************************************
+* QuerySuggestionQueryCollections
+**********************************************/
+export interface QuerySuggestionQueryCollections {
+
+}
+
+/*********************************************
 * QuerySuggestionRange
 **********************************************/
 export interface QuerySuggestionRange {
 	Length?: number;
 	Start?: number;
+}
+
+/*********************************************
+* QuerySuggestionRangeCollections
+**********************************************/
+export interface QuerySuggestionRangeCollections {
+
 }
 
 /*********************************************
@@ -82,6 +131,13 @@ export interface QuerySuggestionResults {
 }
 
 /*********************************************
+* QuerySuggestionResultsCollections
+**********************************************/
+export interface QuerySuggestionResultsCollections {
+
+}
+
+/*********************************************
 * ReorderingRule
 **********************************************/
 export interface ReorderingRule {
@@ -91,11 +147,25 @@ export interface ReorderingRule {
 }
 
 /*********************************************
+* ReorderingRuleCollections
+**********************************************/
+export interface ReorderingRuleCollections {
+
+}
+
+/*********************************************
 * Sort
 **********************************************/
 export interface Sort {
 	Direction?: number;
 	Property?: string;
+}
+
+/*********************************************
+* SortCollections
+**********************************************/
+export interface SortCollections {
+
 }
 
 /*********************************************
@@ -109,4 +179,11 @@ export interface PopularTenantQuery {
 	SiteId?: any;
 	SourceId?: any;
 	WebId?: any;
+}
+
+/*********************************************
+* PopularTenantQueryCollections
+**********************************************/
+export interface PopularTenantQueryCollections {
+
 }

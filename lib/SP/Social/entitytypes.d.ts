@@ -10,6 +10,13 @@ export interface SocialAnnouncementManager {
 }
 
 /*********************************************
+* SocialAnnouncementManagerCollections
+**********************************************/
+export interface SocialAnnouncementManagerCollections {
+
+}
+
+/*********************************************
 * ISocialFeedManager
 **********************************************/
 export interface ISocialFeedManager extends SocialFeedManagerCollections,SocialFeedManagerMethods,IBaseQuery<ISocialFeedManagerQuery> {

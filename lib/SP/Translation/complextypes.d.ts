@@ -17,6 +17,13 @@ export interface TranslationItemInfo {
 }
 
 /*********************************************
+* TranslationItemInfoCollections
+**********************************************/
+export interface TranslationItemInfoCollections {
+
+}
+
+/*********************************************
 * TranslationJobInfo
 **********************************************/
 export interface TranslationJobInfo {
@@ -26,4 +33,11 @@ export interface TranslationJobInfo {
 	Name?: string;
 	PartiallySubmitted?: boolean;
 	SubmittedTime?: any;
+}
+
+/*********************************************
+* TranslationJobInfoCollections
+**********************************************/
+export interface TranslationJobInfoCollections {
+
 }

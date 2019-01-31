@@ -10,6 +10,13 @@ export interface EntityIdentity {
 }
 
 /*********************************************
+* EntityIdentityCollections
+**********************************************/
+export interface EntityIdentityCollections {
+
+}
+
+/*********************************************
 * NotificationCallback
 **********************************************/
 export interface NotificationCallback {
@@ -19,11 +26,25 @@ export interface NotificationCallback {
 }
 
 /*********************************************
+* NotificationCallbackCollections
+**********************************************/
+export interface NotificationCallbackCollections {
+
+}
+
+/*********************************************
 * Subscription
 **********************************************/
 export interface Subscription {
 	Hash?: string;
 	ID?: Array<SP.KeyValue>;
+}
+
+/*********************************************
+* SubscriptionCollections
+**********************************************/
+export interface SubscriptionCollections {
+
 }
 
 /*********************************************

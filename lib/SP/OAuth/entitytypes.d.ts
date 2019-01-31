@@ -14,6 +14,13 @@ export interface TokenResponse {
 }
 
 /*********************************************
+* TokenResponseCollections
+**********************************************/
+export interface TokenResponseCollections {
+
+}
+
+/*********************************************
 * INativeClient
 **********************************************/
 export interface INativeClient extends NativeClientCollections,NativeClientMethods,IBaseQuery<INativeClientQuery> {

@@ -15,6 +15,13 @@ export interface EntityField {
 }
 
 /*********************************************
+* EntityFieldCollections
+**********************************************/
+export interface EntityFieldCollections {
+
+}
+
+/*********************************************
 * Filter
 **********************************************/
 export interface Filter {
@@ -24,6 +31,13 @@ export interface Filter {
 	LocalizedDisplayName?: string;
 	Name?: string;
 	ValueCount?: number;
+}
+
+/*********************************************
+* FilterCollections
+**********************************************/
+export interface FilterCollections {
+
 }
 
 /*********************************************
@@ -83,6 +97,13 @@ export interface EntityIdentifierMethods {
 **********************************************/
 export interface LobSystemInstance {
 	Name?: string;
+}
+
+/*********************************************
+* LobSystemInstanceCollections
+**********************************************/
+export interface LobSystemInstanceCollections {
+
 }
 
 /*********************************************

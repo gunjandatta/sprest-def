@@ -75,6 +75,13 @@ export interface AppPackagesListItem extends SP.ListItem {
 }
 
 /*********************************************
+* AppPackagesListItemCollections
+**********************************************/
+export interface AppPackagesListItemCollections {
+
+}
+
+/*********************************************
 * UserInfoItem
 **********************************************/
 export interface UserInfoItem extends SP.ListItem {
@@ -180,6 +187,13 @@ export interface UserInfoItem extends SP.ListItem {
 }
 
 /*********************************************
+* UserInfoItemCollections
+**********************************************/
+export interface UserInfoItemCollections {
+
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_appdataItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_appdataItem extends SP.ListItem {
@@ -234,6 +248,13 @@ export interface OData__x005f_catalogs_x002f_appdataItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_appdataItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appdataItemCollections {
+
 }
 
 /*********************************************
@@ -295,6 +316,13 @@ export interface OData__x005f_catalogs_x002f_appfilesItem extends SP.ListItem {
 	WorkflowVersion?: number;
 	WorkflowInstanceID?: any;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_appfilesItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appfilesItemCollections {
+
 }
 
 /*********************************************
@@ -362,6 +390,13 @@ export interface DraftAppsListItem extends SP.ListItem {
 }
 
 /*********************************************
+* DraftAppsListItemCollections
+**********************************************/
+export interface DraftAppsListItemCollections {
+
+}
+
+/*********************************************
 * BinsListItem
 **********************************************/
 export interface BinsListItem extends SP.ListItem {
@@ -422,6 +457,13 @@ export interface BinsListItem extends SP.ListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+}
+
+/*********************************************
+* BinsListItemCollections
+**********************************************/
+export interface BinsListItemCollections {
+
 }
 
 /*********************************************
@@ -495,6 +537,13 @@ export interface Cache_x0020_ProfilesItem extends SP.ListItem {
 }
 
 /*********************************************
+* Cache_x0020_ProfilesItemCollections
+**********************************************/
+export interface Cache_x0020_ProfilesItemCollections {
+
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_designItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_designItem extends SP.ListItem {
@@ -555,6 +604,13 @@ export interface OData__x005f_catalogs_x002f_designItem extends SP.ListItem {
 	ImageUrl?: SP.FieldUrlValue;
 	FontSchemeUrl?: SP.FieldUrlValue;
 	DisplayOrder?: number;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_designItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_designItemCollections {
+
 }
 
 /*********************************************
@@ -620,6 +676,13 @@ export interface Reports_x0020_ListItem extends SP.ListItem {
 }
 
 /*********************************************
+* Reports_x0020_ListItemCollections
+**********************************************/
+export interface Reports_x0020_ListItemCollections {
+
+}
+
+/*********************************************
 * ContentTypeSyncLogListItem
 **********************************************/
 export interface ContentTypeSyncLogListItem extends SP.ListItem {
@@ -678,6 +741,13 @@ export interface ContentTypeSyncLogListItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* ContentTypeSyncLogListItemCollections
+**********************************************/
+export interface ContentTypeSyncLogListItemCollections {
+
 }
 
 /*********************************************
@@ -745,6 +815,13 @@ export interface IWConvertedFormsItem extends SP.ListItem {
 }
 
 /*********************************************
+* IWConvertedFormsItemCollections
+**********************************************/
+export interface IWConvertedFormsItemCollections {
+
+}
+
+/*********************************************
 * CTDemoListItem
 **********************************************/
 export interface CTDemoListItem extends SP.ListItem {
@@ -806,6 +883,13 @@ export interface CTDemoListItem extends SP.ListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+}
+
+/*********************************************
+* CTDemoListItemCollections
+**********************************************/
+export interface CTDemoListItemCollections {
+
 }
 
 /*********************************************
@@ -978,6 +1062,13 @@ export interface DeviceChannelsItem extends SP.ListItem {
 }
 
 /*********************************************
+* DeviceChannelsItemCollections
+**********************************************/
+export interface DeviceChannelsItemCollections {
+
+}
+
+/*********************************************
 * DocSetItem
 **********************************************/
 export interface DocSetItem extends SP.ListItem {
@@ -1047,6 +1138,13 @@ export interface DocSetItem extends SP.ListItem {
 	WorkflowInstanceID?: any;
 	Combine?: string;
 	RepairDocument?: string;
+}
+
+/*********************************************
+* DocSetItemCollections
+**********************************************/
+export interface DocSetItemCollections {
+
 }
 
 /*********************************************
@@ -1379,6 +1477,13 @@ export interface FormServerTemplatesItem extends SP.ListItem {
 }
 
 /*********************************************
+* FormServerTemplatesItemCollections
+**********************************************/
+export interface FormServerTemplatesItemCollections {
+
+}
+
+/*********************************************
 * GettingStartedListItem
 **********************************************/
 export interface GettingStartedListItem extends SP.ListItem {
@@ -1443,6 +1548,13 @@ export interface GettingStartedListItem extends SP.ListItem {
 }
 
 /*********************************************
+* GettingStartedListItemCollections
+**********************************************/
+export interface GettingStartedListItemCollections {
+
+}
+
+/*********************************************
 * LargeListListItem
 **********************************************/
 export interface LargeListListItem extends SP.ListItem {
@@ -1497,6 +1609,13 @@ export interface LargeListListItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* LargeListListItemCollections
+**********************************************/
+export interface LargeListListItemCollections {
+
 }
 
 /*********************************************
@@ -1569,6 +1688,13 @@ export interface OData__x005f_catalogs_x002f_ltItem extends SP.ListItem {
 	MajorVersion?: number;
 	FeatureID?: any;
 	LanguageDisplay?: string;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_ltItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_ltItemCollections {
+
 }
 
 /*********************************************
@@ -1649,6 +1775,13 @@ export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem extends SP.
 }
 
 /*********************************************
+* Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections
+**********************************************/
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections {
+
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_MaintenanceLogsItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem extends SP.ListItem {
@@ -1710,6 +1843,13 @@ export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem extends SP.List
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections {
+
+}
+
+/*********************************************
 * MapListItem
 **********************************************/
 export interface MapListItem extends SP.ListItem {
@@ -1765,6 +1905,13 @@ export interface MapListItem extends SP.ListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+}
+
+/*********************************************
+* MapListItemCollections
+**********************************************/
+export interface MapListItemCollections {
+
 }
 
 /*********************************************
@@ -1860,6 +2007,13 @@ export interface OData__x005f_catalogs_x002f_masterpageItem extends SP.ListItem 
 	FilenameMenuNoLink?: string;
 	MasterPageIcon?: string;
 	FilenameNoLink?: string;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_masterpageItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_masterpageItemCollections {
+
 }
 
 /*********************************************
@@ -2175,6 +2329,13 @@ export interface TaxonomyHiddenListListItem extends SP.ListItem {
 }
 
 /*********************************************
+* TaxonomyHiddenListListItemCollections
+**********************************************/
+export interface TaxonomyHiddenListListItemCollections {
+
+}
+
+/*********************************************
 * MyContactsListItem
 **********************************************/
 export interface MyContactsListItem extends SP.ListItem {
@@ -2230,6 +2391,13 @@ export interface MyContactsListItem extends SP.ListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+}
+
+/*********************************************
+* MyContactsListItemCollections
+**********************************************/
+export interface MyContactsListItemCollections {
+
 }
 
 /*********************************************
@@ -2295,6 +2463,13 @@ export interface MyListListItem extends SP.ListItem {
 }
 
 /*********************************************
+* MyListListItemCollections
+**********************************************/
+export interface MyListListItemCollections {
+
+}
+
+/*********************************************
 * My_x0020_Lists_x0020_InfoListItem
 **********************************************/
 export interface My_x0020_Lists_x0020_InfoListItem extends SP.ListItem {
@@ -2349,6 +2524,13 @@ export interface My_x0020_Lists_x0020_InfoListItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* My_x0020_Lists_x0020_InfoListItemCollections
+**********************************************/
+export interface My_x0020_Lists_x0020_InfoListItemCollections {
+
 }
 
 /*********************************************
@@ -2408,6 +2590,13 @@ export interface Notification_x0020_PagesItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* Notification_x0020_PagesItemCollections
+**********************************************/
+export interface Notification_x0020_PagesItemCollections {
+
 }
 
 /*********************************************
@@ -2479,6 +2668,13 @@ export interface ProjectPolicyItemListItem extends SP.ListItem {
 }
 
 /*********************************************
+* ProjectPolicyItemListItemCollections
+**********************************************/
+export interface ProjectPolicyItemListItemCollections {
+
+}
+
+/*********************************************
 * Quick_x0020_Deploy_x0020_ItemsItem
 **********************************************/
 export interface Quick_x0020_Deploy_x0020_ItemsItem extends SP.ListItem {
@@ -2536,6 +2732,13 @@ export interface Quick_x0020_Deploy_x0020_ItemsItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* Quick_x0020_Deploy_x0020_ItemsItemCollections
+**********************************************/
+export interface Quick_x0020_Deploy_x0020_ItemsItemCollections {
+
 }
 
 /*********************************************
@@ -2604,6 +2807,13 @@ export interface Relationships_x0020_ListItem extends SP.ListItem {
 }
 
 /*********************************************
+* Relationships_x0020_ListItemCollections
+**********************************************/
+export interface Relationships_x0020_ListItemCollections {
+
+}
+
+/*********************************************
 * ReusableContentItem
 **********************************************/
 export interface ReusableContentItem extends SP.ListItem {
@@ -2667,6 +2877,13 @@ export interface ReusableContentItem extends SP.ListItem {
 }
 
 /*********************************************
+* ReusableContentItemCollections
+**********************************************/
+export interface ReusableContentItemCollections {
+
+}
+
+/*********************************************
 * Sharing_x0020_LinksItem
 **********************************************/
 export interface Sharing_x0020_LinksItem extends SP.ListItem {
@@ -2724,6 +2941,13 @@ export interface Sharing_x0020_LinksItem extends SP.ListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+}
+
+/*********************************************
+* Sharing_x0020_LinksItemCollections
+**********************************************/
+export interface Sharing_x0020_LinksItemCollections {
+
 }
 
 /*********************************************
@@ -2915,6 +3139,13 @@ export interface SiteCollectionDocumentsItem extends SP.ListItem {
 	WorkflowInstanceID?: any;
 	Combine?: string;
 	RepairDocument?: string;
+}
+
+/*********************************************
+* SiteCollectionDocumentsItemCollections
+**********************************************/
+export interface SiteCollectionDocumentsItemCollections {
+
 }
 
 /*********************************************
@@ -3262,6 +3493,13 @@ export interface OData__x005f_catalogs_x002f_solutionsItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_solutionsItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_solutionsItemCollections {
+
+}
+
+/*********************************************
 * ISPReactListItem
 **********************************************/
 export interface ISPReactListItem extends SPReactListItemCollections,SPReactListItemMethods,IBaseQuery<ISPReactListItemQuery> {
@@ -3458,6 +3696,13 @@ export interface SPRESTListDemoListItem extends SP.ListItem {
 }
 
 /*********************************************
+* SPRESTListDemoListItemCollections
+**********************************************/
+export interface SPRESTListDemoListItemCollections {
+
+}
+
+/*********************************************
 * Style_x0020_LibraryItem
 **********************************************/
 export interface Style_x0020_LibraryItem extends SP.ListItem {
@@ -3529,6 +3774,13 @@ export interface Style_x0020_LibraryItem extends SP.ListItem {
 }
 
 /*********************************************
+* Style_x0020_LibraryItemCollections
+**********************************************/
+export interface Style_x0020_LibraryItemCollections {
+
+}
+
+/*********************************************
 * PublishedLinksItem
 **********************************************/
 export interface PublishedLinksItem extends SP.ListItem {
@@ -3585,6 +3837,13 @@ export interface PublishedLinksItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* PublishedLinksItemCollections
+**********************************************/
+export interface PublishedLinksItemCollections {
+
 }
 
 /*********************************************
@@ -3752,6 +4011,13 @@ export interface TestListItem extends SP.ListItem {
 }
 
 /*********************************************
+* TestListItemCollections
+**********************************************/
+export interface TestListItemCollections {
+
+}
+
+/*********************************************
 * TestProjectListItem
 **********************************************/
 export interface TestProjectListItem extends SP.ListItem {
@@ -3808,6 +4074,13 @@ export interface TestProjectListItem extends SP.ListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+}
+
+/*********************************************
+* TestProjectListItemCollections
+**********************************************/
+export interface TestProjectListItemCollections {
+
 }
 
 /*********************************************
@@ -3871,6 +4144,13 @@ export interface OData__x005f_catalogs_x002f_themeItem extends SP.ListItem {
 	ComplianceAssetId?: string;
 	ThemeDescription?: string;
 	OData__ThemePreviewJson?: string;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_themeItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_themeItemCollections {
+
 }
 
 /*********************************************
@@ -3945,6 +4225,13 @@ export interface Translation_x0020_PackagesItem extends SP.ListItem {
 	WorkflowInstanceID?: any;
 	Combine?: string;
 	RepairDocument?: string;
+}
+
+/*********************************************
+* Translation_x0020_PackagesItemCollections
+**********************************************/
+export interface Translation_x0020_PackagesItemCollections {
+
 }
 
 /*********************************************
@@ -4030,6 +4317,13 @@ export interface Translation_x0020_StatusItem extends SP.ListItem {
 }
 
 /*********************************************
+* Translation_x0020_StatusItemCollections
+**********************************************/
+export interface Translation_x0020_StatusItemCollections {
+
+}
+
+/*********************************************
 * Variation_x0020_LabelsItem
 **********************************************/
 export interface Variation_x0020_LabelsItem extends SP.ListItem {
@@ -4097,6 +4391,13 @@ export interface Variation_x0020_LabelsItem extends SP.ListItem {
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	ComplianceAssetId?: string;
+}
+
+/*********************************************
+* Variation_x0020_LabelsItemCollections
+**********************************************/
+export interface Variation_x0020_LabelsItemCollections {
+
 }
 
 /*********************************************
@@ -4170,6 +4471,13 @@ export interface OData__x005f_catalogs_x002f_wpItem extends SP.ListItem {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_wpItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wpItemCollections {
+
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_wfpubItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
@@ -4235,6 +4543,13 @@ export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
 	AssociatedListId?: string;
 	RestrictContentTypeId?: string;
 	WorkflowDisplayName?: string;
+}
+
+/*********************************************
+* OData__x005f_catalogs_x002f_wfpubItemCollections
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wfpubItemCollections {
+
 }
 
 /*********************************************

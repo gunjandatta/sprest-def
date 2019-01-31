@@ -15,6 +15,13 @@ export interface MySiteLinks {
 }
 
 /*********************************************
+* MySiteLinksCollections
+**********************************************/
+export interface MySiteLinksCollections {
+
+}
+
+/*********************************************
 * MySiteDismissStatusText
 **********************************************/
 export interface MySiteDismissStatusText {
@@ -22,10 +29,24 @@ export interface MySiteDismissStatusText {
 }
 
 /*********************************************
+* MySiteDismissStatusTextCollections
+**********************************************/
+export interface MySiteDismissStatusTextCollections {
+
+}
+
+/*********************************************
 * MySiteDocumentMoveUtility
 **********************************************/
 export interface MySiteDocumentMoveUtility {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MySiteDocumentMoveUtilityCollections
+**********************************************/
+export interface MySiteDocumentMoveUtilityCollections {
+
 }
 
 /*********************************************
@@ -81,10 +102,24 @@ export interface SharedWithMeDocument {
 }
 
 /*********************************************
+* SharedWithMeDocumentCollections
+**********************************************/
+export interface SharedWithMeDocumentCollections {
+
+}
+
+/*********************************************
 * DocumentsSharedWithMe
 **********************************************/
 export interface DocumentsSharedWithMe {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DocumentsSharedWithMeCollections
+**********************************************/
+export interface DocumentsSharedWithMeCollections {
+
 }
 
 /*********************************************
@@ -95,6 +130,13 @@ export interface DocumentsSharedWithGroup {
 }
 
 /*********************************************
+* DocumentsSharedWithGroupCollections
+**********************************************/
+export interface DocumentsSharedWithGroupCollections {
+
+}
+
+/*********************************************
 * DocumentsSharedWithPerson
 **********************************************/
 export interface DocumentsSharedWithPerson {
@@ -102,8 +144,22 @@ export interface DocumentsSharedWithPerson {
 }
 
 /*********************************************
+* DocumentsSharedWithPersonCollections
+**********************************************/
+export interface DocumentsSharedWithPersonCollections {
+
+}
+
+/*********************************************
 * PromotedSites
 **********************************************/
 export interface PromotedSites {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PromotedSitesCollections
+**********************************************/
+export interface PromotedSitesCollections {
+
 }

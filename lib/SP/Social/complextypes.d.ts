@@ -13,6 +13,13 @@ export interface SocialActorInfo {
 }
 
 /*********************************************
+* SocialActorInfoCollections
+**********************************************/
+export interface SocialActorInfoCollections {
+
+}
+
+/*********************************************
 * SocialActor
 **********************************************/
 export interface SocialActor {
@@ -36,6 +43,13 @@ export interface SocialActor {
 }
 
 /*********************************************
+* SocialActorCollections
+**********************************************/
+export interface SocialActorCollections {
+
+}
+
+/*********************************************
 * SocialAttachmentAction
 **********************************************/
 export interface SocialAttachmentAction {
@@ -43,6 +57,13 @@ export interface SocialAttachmentAction {
 	ActionUri?: string;
 	Height?: number;
 	Width?: number;
+}
+
+/*********************************************
+* SocialAttachmentActionCollections
+**********************************************/
+export interface SocialAttachmentActionCollections {
+
 }
 
 /*********************************************
@@ -64,6 +85,13 @@ export interface SocialAttachment {
 }
 
 /*********************************************
+* SocialAttachmentCollections
+**********************************************/
+export interface SocialAttachmentCollections {
+
+}
+
+/*********************************************
 * SocialDataItem
 **********************************************/
 export interface SocialDataItem {
@@ -72,6 +100,13 @@ export interface SocialDataItem {
 	TagGuid?: any;
 	Text?: string;
 	Uri?: string;
+}
+
+/*********************************************
+* SocialDataItemCollections
+**********************************************/
+export interface SocialDataItemCollections {
+
 }
 
 /*********************************************
@@ -86,6 +121,13 @@ export interface SocialDataOverlay {
 }
 
 /*********************************************
+* SocialDataOverlayCollections
+**********************************************/
+export interface SocialDataOverlayCollections {
+
+}
+
+/*********************************************
 * SocialExceptionDetails
 **********************************************/
 export interface SocialExceptionDetails {
@@ -94,6 +136,13 @@ export interface SocialExceptionDetails {
 	InternalStackTrace?: string;
 	InternalTypeName?: string;
 	Status?: number;
+}
+
+/*********************************************
+* SocialExceptionDetailsCollections
+**********************************************/
+export interface SocialExceptionDetailsCollections {
+
 }
 
 /*********************************************
@@ -107,6 +156,13 @@ export interface SocialFeedOptions {
 }
 
 /*********************************************
+* SocialFeedOptionsCollections
+**********************************************/
+export interface SocialFeedOptionsCollections {
+
+}
+
+/*********************************************
 * SocialFeed
 **********************************************/
 export interface SocialFeed {
@@ -115,6 +171,13 @@ export interface SocialFeed {
 	OldestProcessed?: any;
 	Threads?: Array<SP.Social.SocialThread>;
 	UnreadMentionCount?: number;
+}
+
+/*********************************************
+* SocialFeedCollections
+**********************************************/
+export interface SocialFeedCollections {
+
 }
 
 /*********************************************
@@ -135,6 +198,13 @@ export interface SocialThread {
 }
 
 /*********************************************
+* SocialThreadCollections
+**********************************************/
+export interface SocialThreadCollections {
+
+}
+
+/*********************************************
 * SocialPostReference
 **********************************************/
 export interface SocialPostReference {
@@ -142,6 +212,13 @@ export interface SocialPostReference {
 	Post?: SP.Social.SocialPost;
 	ThreadId?: string;
 	ThreadOwnerIndex?: number;
+}
+
+/*********************************************
+* SocialPostReferenceCollections
+**********************************************/
+export interface SocialPostReferenceCollections {
+
 }
 
 /*********************************************
@@ -163,6 +240,13 @@ export interface SocialPost {
 }
 
 /*********************************************
+* SocialPostCollections
+**********************************************/
+export interface SocialPostCollections {
+
+}
+
+/*********************************************
 * SocialPostActorInfo
 **********************************************/
 export interface SocialPostActorInfo {
@@ -172,11 +256,25 @@ export interface SocialPostActorInfo {
 }
 
 /*********************************************
+* SocialPostActorInfoCollections
+**********************************************/
+export interface SocialPostActorInfoCollections {
+
+}
+
+/*********************************************
 * SocialLink
 **********************************************/
 export interface SocialLink {
 	Text?: string;
 	Uri?: string;
+}
+
+/*********************************************
+* SocialLinkCollections
+**********************************************/
+export interface SocialLinkCollections {
+
 }
 
 /*********************************************
@@ -193,11 +291,25 @@ export interface SocialPostCreationData {
 }
 
 /*********************************************
+* SocialPostCreationDataCollections
+**********************************************/
+export interface SocialPostCreationDataCollections {
+
+}
+
+/*********************************************
 * SocialPostDefinitionData
 **********************************************/
 export interface SocialPostDefinitionData {
 	Items?: Array<SP.Social.SocialPostDefinitionDataItem>;
 	Name?: string;
+}
+
+/*********************************************
+* SocialPostDefinitionDataCollections
+**********************************************/
+export interface SocialPostDefinitionDataCollections {
+
 }
 
 /*********************************************
@@ -213,9 +325,23 @@ export interface SocialPostDefinitionDataItem {
 }
 
 /*********************************************
+* SocialPostDefinitionDataItemCollections
+**********************************************/
+export interface SocialPostDefinitionDataItemCollections {
+
+}
+
+/*********************************************
 * SocialRestPostCreationData
 **********************************************/
 export interface SocialRestPostCreationData {
 	ID?: string;
 	creationData?: SP.Social.SocialPostCreationData;
+}
+
+/*********************************************
+* SocialRestPostCreationDataCollections
+**********************************************/
+export interface SocialRestPostCreationDataCollections {
+
 }

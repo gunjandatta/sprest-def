@@ -62,6 +62,13 @@ export interface SPFarm {
 }
 
 /*********************************************
+* SPFarmCollections
+**********************************************/
+export interface SPFarmCollections {
+
+}
+
+/*********************************************
 * FeatureDefinition
 **********************************************/
 export interface FeatureDefinition {
@@ -70,10 +77,31 @@ export interface FeatureDefinition {
 }
 
 /*********************************************
+* FeatureDefinitionCollections
+**********************************************/
+export interface FeatureDefinitionCollections extends FeatureDefinitionCollectionMethods {
+
+}
+
+/*********************************************
+* FeatureDefinitionCollectionMethods
+**********************************************/
+export interface FeatureDefinitionCollectionMethods {
+	getFeatureDefinition(featureDisplayName?: string, compatibilityLevel?: number): IBaseExecution<Microsoft.SharePoint.Administration.FeatureDefinition>;
+}
+
+/*********************************************
 * SPTenantAppInstanceData
 **********************************************/
 export interface SPTenantAppInstanceData {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPTenantAppInstanceDataCollections
+**********************************************/
+export interface SPTenantAppInstanceDataCollections {
+
 }
 
 /*********************************************

@@ -66,8 +66,22 @@ export interface userEntity {
 }
 
 /*********************************************
+* userEntityCollections
+**********************************************/
+export interface userEntityCollections {
+
+}
+
+/*********************************************
 * LikesAPI
 **********************************************/
 export interface LikesAPI {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* LikesAPICollections
+**********************************************/
+export interface LikesAPICollections {
+
 }

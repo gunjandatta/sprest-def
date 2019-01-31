@@ -11,6 +11,13 @@ export interface ContextCondition {
 }
 
 /*********************************************
+* ContextConditionCollections
+**********************************************/
+export interface ContextConditionCollections {
+
+}
+
+/*********************************************
 * CustomResult
 **********************************************/
 export interface CustomResult {
@@ -24,10 +31,24 @@ export interface CustomResult {
 }
 
 /*********************************************
+* CustomResultCollections
+**********************************************/
+export interface CustomResultCollections {
+
+}
+
+/*********************************************
 * ExpandedQueryParameters
 **********************************************/
 export interface ExpandedQueryParameters {
 	Properties?: Array<SP.KeyValue>;
+}
+
+/*********************************************
+* ExpandedQueryParametersCollections
+**********************************************/
+export interface ExpandedQueryParametersCollections {
+
 }
 
 /*********************************************
@@ -48,6 +69,13 @@ export interface PromotedResultQueryRule {
 }
 
 /*********************************************
+* PromotedResultQueryRuleCollections
+**********************************************/
+export interface PromotedResultQueryRuleCollections {
+
+}
+
+/*********************************************
 * PromotedResults
 **********************************************/
 export interface PromotedResults {
@@ -56,6 +84,13 @@ export interface PromotedResults {
 	LastModifiedTime?: any;
 	Title?: string;
 	Url?: string;
+}
+
+/*********************************************
+* PromotedResultsCollections
+**********************************************/
+export interface PromotedResultsCollections {
+
 }
 
 /*********************************************
@@ -70,11 +105,25 @@ export interface QueryCondition {
 }
 
 /*********************************************
+* QueryConditionCollections
+**********************************************/
+export interface QueryConditionCollections {
+
+}
+
+/*********************************************
 * PromotedResultsOperationsResult
 **********************************************/
 export interface PromotedResultsOperationsResult {
 	Result?: Array<Microsoft.Office.Server.Search.REST.PromotedResultQueryRule>;
 	SearchObjectOwner?: Microsoft.Office.Server.Search.REST.SearchObjectOwnerResult;
+}
+
+/*********************************************
+* PromotedResultsOperationsResultCollections
+**********************************************/
+export interface PromotedResultsOperationsResultCollections {
+
 }
 
 /*********************************************
@@ -84,6 +133,13 @@ export interface SearchObjectOwnerResult {
 	SiteCollectionId?: string;
 	SiteId?: string;
 	TenantId?: string;
+}
+
+/*********************************************
+* SearchObjectOwnerResultCollections
+**********************************************/
+export interface SearchObjectOwnerResultCollections {
+
 }
 
 /*********************************************
@@ -97,6 +153,13 @@ export interface QueryConfiguration {
 }
 
 /*********************************************
+* QueryConfigurationCollections
+**********************************************/
+export interface QueryConfigurationCollections {
+
+}
+
+/*********************************************
 * QueryContext
 **********************************************/
 export interface QueryContext {
@@ -106,11 +169,25 @@ export interface QueryContext {
 }
 
 /*********************************************
+* QueryContextCollections
+**********************************************/
+export interface QueryContextCollections {
+
+}
+
+/*********************************************
 * QueryRoutingInfo
 **********************************************/
 export interface QueryRoutingInfo {
 	QueryState?: number;
 	SearchEndpoints?: Array<Microsoft.Office.Server.Search.REST.SearchEndpoints>;
+}
+
+/*********************************************
+* QueryRoutingInfoCollections
+**********************************************/
+export interface QueryRoutingInfoCollections {
+
 }
 
 /*********************************************
@@ -125,11 +202,25 @@ export interface SearchEndpoints {
 }
 
 /*********************************************
+* SearchEndpointsCollections
+**********************************************/
+export interface SearchEndpointsCollections {
+
+}
+
+/*********************************************
 * QueryProperty
 **********************************************/
 export interface QueryProperty {
 	Name?: string;
 	Value?: Microsoft.SharePoint.Client.Search.Query.QueryPropertyValue;
+}
+
+/*********************************************
+* QueryPropertyCollections
+**********************************************/
+export interface QueryPropertyCollections {
+
 }
 
 /*********************************************
@@ -145,6 +236,13 @@ export interface QueryResult {
 }
 
 /*********************************************
+* QueryResultCollections
+**********************************************/
+export interface QueryResultCollections {
+
+}
+
+/*********************************************
 * RefinementResults
 **********************************************/
 export interface RefinementResults {
@@ -157,11 +255,25 @@ export interface RefinementResults {
 }
 
 /*********************************************
+* RefinementResultsCollections
+**********************************************/
+export interface RefinementResultsCollections {
+
+}
+
+/*********************************************
 * Refiner
 **********************************************/
 export interface Refiner {
 	Entries?: Array<Microsoft.Office.Server.Search.REST.RefinerEntry>;
 	Name?: string;
+}
+
+/*********************************************
+* RefinerCollections
+**********************************************/
+export interface RefinerCollections {
+
 }
 
 /*********************************************
@@ -172,6 +284,13 @@ export interface RefinerEntry {
 	RefinementName?: string;
 	RefinementToken?: string;
 	RefinementValue?: string;
+}
+
+/*********************************************
+* RefinerEntryCollections
+**********************************************/
+export interface RefinerEntryCollections {
+
 }
 
 /*********************************************
@@ -190,6 +309,13 @@ export interface RelevantResults {
 }
 
 /*********************************************
+* RelevantResultsCollections
+**********************************************/
+export interface RelevantResultsCollections {
+
+}
+
+/*********************************************
 * SpecialTermResults
 **********************************************/
 export interface SpecialTermResults {
@@ -202,6 +328,13 @@ export interface SpecialTermResults {
 }
 
 /*********************************************
+* SpecialTermResultsCollections
+**********************************************/
+export interface SpecialTermResultsCollections {
+
+}
+
+/*********************************************
 * SpecialTermResult
 **********************************************/
 export interface SpecialTermResult {
@@ -211,6 +344,13 @@ export interface SpecialTermResult {
 	RenderTemplateId?: string;
 	Title?: string;
 	Url?: string;
+}
+
+/*********************************************
+* SpecialTermResultCollections
+**********************************************/
+export interface SpecialTermResultCollections {
+
 }
 
 /*********************************************
@@ -269,6 +409,13 @@ export interface SearchRequest {
 }
 
 /*********************************************
+* SearchRequestCollections
+**********************************************/
+export interface SearchRequestCollections {
+
+}
+
+/*********************************************
 * SearchResult
 **********************************************/
 export interface SearchResult {
@@ -281,8 +428,22 @@ export interface SearchResult {
 }
 
 /*********************************************
+* SearchResultCollections
+**********************************************/
+export interface SearchResultCollections {
+
+}
+
+/*********************************************
 * XSSearchPolicy
 **********************************************/
 export interface XSSearchPolicy {
 	Policy?: string;
+}
+
+/*********************************************
+* XSSearchPolicyCollections
+**********************************************/
+export interface XSSearchPolicyCollections {
+
 }

@@ -2,19 +2,19 @@ let fs = require("fs");
 let parser = require("xml2js").parseString;
 let rmDir = require("rimraf");
 
-let create = {
-    interface: function (name, baseType, variables) {
-        return [
-            '/*********************************************',
-            '* ' + name,
-            '**********************************************/',
-            'export interface ' + name + (baseType ? " extends " + baseType : "") + ' {',
-            variables,
-            '}',
-            ''
-        ].join('\n');
-    }
-};
+let hasMethods = {};
+
+function createInterface(name, baseType, variables) {
+    return [
+        '/*********************************************',
+        '* ' + name,
+        '**********************************************/',
+        'export interface ' + name + (baseType ? " extends " + baseType : "") + ' {',
+        variables,
+        '}',
+        ''
+    ].join('\n');
+}
 
 // Parse the methods and apply the methods to the directories object
 function applyMethodsToDirectories(methods, directories) {
@@ -24,12 +24,13 @@ function applyMethodsToDirectories(methods, directories) {
         let method = methods[name];
 
         // See if this is a collection
-        if (/[^Collection\(][\)$]/.test(name)) {
+        if (/^Collection\(.*\)$/.test(name)) {
             // Update the name
-            name = name.replace(/^Collection\(/, "").replace(/\)$/, "") + "Collection";
+            name = name.replace(/^Collection\(/, "").replace(/\)$/, "");
 
-            // Set the flag
+            // Set the flags
             isCollection = true;
+            hasMethods[name] = true;
         }
 
         // Find the last index of '.'
@@ -40,18 +41,15 @@ function applyMethodsToDirectories(methods, directories) {
         let obj = name.substr(idx + 1);
 
         // See if a file name exists for this object
-        if (directories[lib] && directories[lib].EntityTypes) {
-            // See if this is a collection, and the object doesn't exist
-            if (isCollection && directories[lib].EntityTypes[obj] == null) {
-                // Create the object
-                directories[lib].EntityTypes[obj] = [];
-            }
+        if (directories[lib] && directories[lib].EntityTypes && directories[lib].EntityTypes[obj]) {
+            // Set the object
+            obj = directories[lib].EntityTypes[obj];
 
-            // Ensure the object exists
-            if (directories[lib].EntityTypes[obj]) {
-                // Set the object
-                obj = directories[lib].EntityTypes[obj];
-
+            // See if this is a collection
+            if (isCollection) {
+                // Add the method
+                obj._CollectionMethods = (obj._CollectionMethods || []).concat(method);
+            } else {
                 // Add the method
                 obj._Methods = (obj._Methods || []).concat(method);
             }
@@ -361,6 +359,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 for (let name in directories[dirName][filename]) {
                     let interface = directories[dirName][filename][name];
                     let collections = [];
+                    let collectionMethods = [];
                     let methods = [];
                     let props = [];
                     let query = [];
@@ -398,8 +397,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
                                         // Add the methods
-                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + '>;');                                        
-                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseExecution<' + methodType + '>;');
+                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "CollectionMethods" : "") + ';');
+                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseExecution<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
                                         // Add the method
@@ -409,6 +408,35 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     // Update the references
                                     updateReferences(fileImports, dirName, methodType);
                                 }
+                            }
+
+                            // Continue the loop
+                            continue;
+                        }
+
+                        // See if this object contains collection methods
+                        if (propName == "_CollectionMethods") {
+                            // Parse the methods
+                            for (let i = 0; i < prop.length; i++) {
+                                let methodInfo = prop[i];
+
+                                // See if this is the "add" method, and parameters exist
+                                if(methodInfo.name == "add" && methodInfo.params.length > 0) {
+                                    // Update the type
+                                    methodInfo.params[0].$.Type += " | any";
+                                }
+
+                                // Parse the parameters
+                                let params = [];
+                                for (let j = 0; j < methodInfo.params.length; j++) {
+                                    let param = methodInfo.params[j].$;
+
+                                    // Add the parameter
+                                    params.push(param.Name + "?: " + getType(param.Type));
+                                }
+
+                                // Add the method
+                                collectionMethods.push('\t' + methodInfo.name + '(' + params.join(', ') + '): IBaseExecution<' + getType(methodInfo.returnType) + '>;');
                             }
 
                             // Continue the loop
@@ -454,20 +482,23 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     // See if collection and methods don't exist
                     if (collections.length == 0 && methods.length == 0) {
                         // Generate the content
-                        content.push(create.interface(name, interface._BaseType, variables.join('\n')));
+                        content.push(createInterface(name, interface._BaseType, variables.join('\n')));
+                        content.push(createInterface(name + "Collections", collectionMethods.length > 0 ? [name + "CollectionMethods"] : null, collections.join('\n')));
+                        collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
                     } else {
                         let baseTypes = interface._BaseType ? [interface._BaseType] : [];
                         baseTypes.push(name + "Collections");
                         baseTypes.push(name + "Methods");
 
                         // Generate the content
-                        content.push(create.interface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"]));
-                        content.push(create.interface("I" + name + "Query", [name + "Query", name + "Methods"]));
-                        content.push(create.interface(name, baseTypes.join(", "), variables.join('\n')));
-                        content.push(create.interface(name + "Props", null, props.join('\n')));
-                        content.push(create.interface(name + "Collections", name + "Props", collections.join('\n')));
-                        content.push(create.interface(name + "Query", name + "Props", query.join('\n')));
-                        content.push(create.interface(name + "Methods", null, methods.join('\n')));
+                        content.push(createInterface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"]));
+                        content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"]));
+                        content.push(createInterface(name, baseTypes.join(", "), variables.join('\n')));
+                        content.push(createInterface(name + "Props", null, props.join('\n')));
+                        content.push(createInterface(name + "Collections", name + "Props", collections.join('\n')));
+                        collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
+                        content.push(createInterface(name + "Query", name + "Props", query.join('\n')));
+                        content.push(createInterface(name + "Methods", null, methods.join('\n')));
                     }
                 }
 

@@ -55,6 +55,15 @@ export interface WorkflowAssociationCollections extends WorkflowAssociationProps
 }
 
 /*********************************************
+* WorkflowAssociationCollectionMethods
+**********************************************/
+export interface WorkflowAssociationCollectionMethods {
+	add(parameters?: SP.Workflow.WorkflowAssociationCreationInformation | any): IBaseExecution<SP.Workflow.WorkflowAssociation>;
+	getById(associationId?: any): IBaseExecution<SP.Workflow.WorkflowAssociation>;
+	getByName(name?: string): IBaseExecution<SP.Workflow.WorkflowAssociation>;
+}
+
+/*********************************************
 * WorkflowAssociationQuery
 **********************************************/
 export interface WorkflowAssociationQuery extends WorkflowAssociationProps {
@@ -85,6 +94,21 @@ export interface WorkflowTemplate {
 }
 
 /*********************************************
+* WorkflowTemplateCollections
+**********************************************/
+export interface WorkflowTemplateCollections extends WorkflowTemplateCollectionMethods {
+
+}
+
+/*********************************************
+* WorkflowTemplateCollectionMethods
+**********************************************/
+export interface WorkflowTemplateCollectionMethods {
+	getById(templateId?: any): IBaseExecution<SP.Workflow.WorkflowTemplate>;
+	getByName(name?: string): IBaseExecution<SP.Workflow.WorkflowTemplate>;
+}
+
+/*********************************************
 * SPWorkflow
 **********************************************/
 export interface SPWorkflow {
@@ -95,10 +119,24 @@ export interface SPWorkflow {
 }
 
 /*********************************************
+* SPWorkflowCollections
+**********************************************/
+export interface SPWorkflowCollections {
+
+}
+
+/*********************************************
 * SPWorkflowManager
 **********************************************/
 export interface SPWorkflowManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPWorkflowManagerCollections
+**********************************************/
+export interface SPWorkflowManagerCollections {
+
 }
 
 /*********************************************

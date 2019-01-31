@@ -12,6 +12,13 @@ export interface PolicyEvaluationInfo {
 }
 
 /*********************************************
+* PolicyEvaluationInfoCollections
+**********************************************/
+export interface PolicyEvaluationInfoCollections {
+
+}
+
+/*********************************************
 * ISPPolicyStoreProxy
 **********************************************/
 export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections,SPPolicyStoreProxyMethods,IBaseQuery<ISPPolicyStoreProxyQuery> {
@@ -79,4 +86,11 @@ export interface SPPolicyStoreProxyMethods {
 **********************************************/
 export interface SPSitePreservationUtility {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPSitePreservationUtilityCollections
+**********************************************/
+export interface SPSitePreservationUtilityCollections {
+
 }

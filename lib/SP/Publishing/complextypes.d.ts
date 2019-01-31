@@ -13,6 +13,13 @@ export interface AcronymInformation {
 }
 
 /*********************************************
+* AcronymInformationCollections
+**********************************************/
+export interface AcronymInformationCollections {
+
+}
+
+/*********************************************
 * ProfileDateTime
 **********************************************/
 export interface ProfileDateTime {
@@ -21,10 +28,24 @@ export interface ProfileDateTime {
 }
 
 /*********************************************
+* ProfileDateTimeCollections
+**********************************************/
+export interface ProfileDateTimeCollections {
+
+}
+
+/*********************************************
 * DateTimeCustomProperty
 **********************************************/
 export interface DateTimeCustomProperty extends SP.Publishing.ProfileDateTime {
 	CustomPropertyName?: string;
+}
+
+/*********************************************
+* DateTimeCustomPropertyCollections
+**********************************************/
+export interface DateTimeCustomPropertyCollections {
+
 }
 
 /*********************************************
@@ -36,6 +57,13 @@ export interface ViewData {
 }
 
 /*********************************************
+* ViewDataCollections
+**********************************************/
+export interface ViewDataCollections {
+
+}
+
+/*********************************************
 * ItemViewsAnalyticsData
 **********************************************/
 export interface ItemViewsAnalyticsData extends SP.Publishing.ViewData {
@@ -44,10 +72,24 @@ export interface ItemViewsAnalyticsData extends SP.Publishing.ViewData {
 }
 
 /*********************************************
+* ItemViewsAnalyticsDataCollections
+**********************************************/
+export interface ItemViewsAnalyticsDataCollections {
+
+}
+
+/*********************************************
 * TimeFrameStatistics
 **********************************************/
 export interface TimeFrameStatistics extends SP.Publishing.ViewData {
 	Date?: any;
+}
+
+/*********************************************
+* TimeFrameStatisticsCollections
+**********************************************/
+export interface TimeFrameStatisticsCollections {
+
 }
 
 /*********************************************
@@ -60,10 +102,24 @@ export interface PersonCore {
 }
 
 /*********************************************
+* PersonCoreCollections
+**********************************************/
+export interface PersonCoreCollections {
+
+}
+
+/*********************************************
 * PersonCustomProperty
 **********************************************/
 export interface PersonCustomProperty extends SP.Publishing.PersonCore {
 	CustomPropertyName?: string;
+}
+
+/*********************************************
+* PersonCustomPropertyCollections
+**********************************************/
+export interface PersonCustomPropertyCollections {
+
 }
 
 /*********************************************
@@ -73,6 +129,13 @@ export interface PersonIdentity {
 	AadObjectId?: string;
 	DisplayName?: string;
 	UserName?: string;
+}
+
+/*********************************************
+* PersonIdentityCollections
+**********************************************/
+export interface PersonIdentityCollections {
+
 }
 
 /*********************************************
@@ -94,10 +157,24 @@ export interface PersonMagazineData {
 }
 
 /*********************************************
+* PersonMagazineDataCollections
+**********************************************/
+export interface PersonMagazineDataCollections {
+
+}
+
+/*********************************************
 * PersonMagazineUserProfileDirectsData
 **********************************************/
 export interface PersonMagazineUserProfileDirectsData {
 	DirectReports?: Array<SP.Publishing.PersonMagazineUserProfile>;
+}
+
+/*********************************************
+* PersonMagazineUserProfileDirectsDataCollections
+**********************************************/
+export interface PersonMagazineUserProfileDirectsDataCollections {
+
 }
 
 /*********************************************
@@ -140,11 +217,25 @@ export interface PersonMagazineUserProfile {
 }
 
 /*********************************************
+* PersonMagazineUserProfileCollections
+**********************************************/
+export interface PersonMagazineUserProfileCollections {
+
+}
+
+/*********************************************
 * PersonMagazineUserProfileData
 **********************************************/
 export interface PersonMagazineUserProfileData extends SP.Publishing.PersonMagazineUserProfileDirectsData {
 	ManagerChain?: Array<SP.Publishing.PersonMagazineUserProfile>;
 	Primary?: SP.Publishing.PersonMagazineUserProfile;
+}
+
+/*********************************************
+* PersonMagazineUserProfileDataCollections
+**********************************************/
+export interface PersonMagazineUserProfileDataCollections {
+
 }
 
 /*********************************************
@@ -156,10 +247,24 @@ export interface ProfileCoreProperties extends SP.Publishing.PersonIdentity {
 }
 
 /*********************************************
+* ProfileCorePropertiesCollections
+**********************************************/
+export interface ProfileCorePropertiesCollections {
+
+}
+
+/*********************************************
 * ProfileDirectsData
 **********************************************/
 export interface ProfileDirectsData {
 	DirectReports?: Array<SP.Publishing.ProfileCoreProperties>;
+}
+
+/*********************************************
+* ProfileDirectsDataCollections
+**********************************************/
+export interface ProfileDirectsDataCollections {
+
 }
 
 /*********************************************
@@ -168,6 +273,13 @@ export interface ProfileDirectsData {
 export interface ProfileData extends SP.Publishing.ProfileDirectsData {
 	ManagerChain?: Array<SP.Publishing.ProfileCoreProperties>;
 	Primary?: SP.Publishing.PersonMagazineUserProfile;
+}
+
+/*********************************************
+* ProfileDataCollections
+**********************************************/
+export interface ProfileDataCollections {
+
 }
 
 /*********************************************
@@ -201,6 +313,13 @@ export interface ProfileFullProperties extends SP.Publishing.ProfileCoreProperti
 }
 
 /*********************************************
+* ProfileFullPropertiesCollections
+**********************************************/
+export interface ProfileFullPropertiesCollections {
+
+}
+
+/*********************************************
 * ProfilePropertyViewEditPolicy
 **********************************************/
 export interface ProfilePropertyViewEditPolicy {
@@ -211,6 +330,13 @@ export interface ProfilePropertyViewEditPolicy {
 	IsVisibleOnEditor?: boolean;
 	Privacy?: number;
 	UserOverridePrivacy?: boolean;
+}
+
+/*********************************************
+* ProfilePropertyViewEditPolicyCollections
+**********************************************/
+export interface ProfilePropertyViewEditPolicyCollections {
+
 }
 
 /*********************************************
@@ -244,11 +370,25 @@ export interface ProfileViewEditPolicies {
 }
 
 /*********************************************
+* ProfileViewEditPoliciesCollections
+**********************************************/
+export interface ProfileViewEditPoliciesCollections {
+
+}
+
+/*********************************************
 * PropertyValue
 **********************************************/
 export interface PropertyValue {
 	TermId?: string;
 	Value?: string;
+}
+
+/*********************************************
+* PropertyValueCollections
+**********************************************/
+export interface PropertyValueCollections {
+
 }
 
 /*********************************************
@@ -267,9 +407,23 @@ export interface SitePageFieldsData {
 }
 
 /*********************************************
+* SitePageFieldsDataCollections
+**********************************************/
+export interface SitePageFieldsDataCollections {
+
+}
+
+/*********************************************
 * RepostPageFieldsData
 **********************************************/
 export interface RepostPageFieldsData extends SP.Publishing.SitePageFieldsData {
+
+}
+
+/*********************************************
+* RepostPageFieldsDataCollections
+**********************************************/
+export interface RepostPageFieldsDataCollections {
 
 }
 
@@ -282,11 +436,25 @@ export interface SharePagePreviewByEmailFieldsData {
 }
 
 /*********************************************
+* SharePagePreviewByEmailFieldsDataCollections
+**********************************************/
+export interface SharePagePreviewByEmailFieldsDataCollections {
+
+}
+
+/*********************************************
 * SitePageVersionInfo
 **********************************************/
 export interface SitePageVersionInfo {
 	LastVersionCreated?: any;
 	LastVersionCreatedBy?: string;
+}
+
+/*********************************************
+* SitePageVersionInfoCollections
+**********************************************/
+export interface SitePageVersionInfoCollections {
+
 }
 
 /*********************************************
@@ -300,6 +468,13 @@ export interface SiteSharingEmailContext {
 }
 
 /*********************************************
+* SiteSharingEmailContextCollections
+**********************************************/
+export interface SiteSharingEmailContextCollections {
+
+}
+
+/*********************************************
 * TaxonomicProperties
 **********************************************/
 export interface TaxonomicProperties {
@@ -308,6 +483,13 @@ export interface TaxonomicProperties {
 	Responsibilities?: Array<SP.Publishing.PropertyValue>;
 	Schools?: Array<SP.Publishing.PropertyValue>;
 	Skills?: Array<SP.Publishing.PropertyValue>;
+}
+
+/*********************************************
+* TaxonomicPropertiesCollections
+**********************************************/
+export interface TaxonomicPropertiesCollections {
+
 }
 
 /*********************************************
@@ -329,12 +511,26 @@ export interface TaxonomyMetadata {
 }
 
 /*********************************************
+* TaxonomyMetadataCollections
+**********************************************/
+export interface TaxonomyMetadataCollections {
+
+}
+
+/*********************************************
 * TextValueWithLanguage
 **********************************************/
 export interface TextValueWithLanguage {
 	ColorSeed?: string;
 	Lcid?: number;
 	Text?: string;
+}
+
+/*********************************************
+* TextValueWithLanguageCollections
+**********************************************/
+export interface TextValueWithLanguageCollections {
+
 }
 
 /*********************************************
@@ -345,11 +541,25 @@ export interface ViewProgressAnalyticsData extends SP.Publishing.ViewData {
 }
 
 /*********************************************
+* ViewProgressAnalyticsDataCollections
+**********************************************/
+export interface ViewProgressAnalyticsDataCollections {
+
+}
+
+/*********************************************
 * CommunicationSiteCreationResponse
 **********************************************/
 export interface CommunicationSiteCreationResponse {
 	SiteStatus?: number;
 	SiteUrl?: string;
+}
+
+/*********************************************
+* CommunicationSiteCreationResponseCollections
+**********************************************/
+export interface CommunicationSiteCreationResponseCollections {
+
 }
 
 /*********************************************
@@ -368,6 +578,13 @@ export interface CommunicationSiteCreationRequest {
 }
 
 /*********************************************
+* CommunicationSiteCreationRequestCollections
+**********************************************/
+export interface CommunicationSiteCreationRequestCollections {
+
+}
+
+/*********************************************
 * PublishSiteInformation
 **********************************************/
 export interface PublishSiteInformation {
@@ -377,9 +594,23 @@ export interface PublishSiteInformation {
 }
 
 /*********************************************
+* PublishSiteInformationCollections
+**********************************************/
+export interface PublishSiteInformationCollections {
+
+}
+
+/*********************************************
 * FilePickerOptions
 **********************************************/
 export interface FilePickerOptions {
 	BingSearchEnabled?: boolean;
 	CentralAssetRepository?: Microsoft.SharePoint.Administration.CentralAssetRepository;
+}
+
+/*********************************************
+* FilePickerOptionsCollections
+**********************************************/
+export interface FilePickerOptionsCollections {
+
 }

@@ -9,6 +9,13 @@ export interface MicroBlogEntityCollection {
 }
 
 /*********************************************
+* MicroBlogEntityCollectionCollections
+**********************************************/
+export interface MicroBlogEntityCollectionCollections {
+
+}
+
+/*********************************************
 * MicroBlogEntity
 **********************************************/
 export interface MicroBlogEntity {
@@ -29,6 +36,13 @@ export interface MicroBlogEntity {
 	PictureURI?: string;
 	Status?: number;
 	Title?: string;
+}
+
+/*********************************************
+* MicroBlogEntityCollections
+**********************************************/
+export interface MicroBlogEntityCollections {
+
 }
 
 /*********************************************
@@ -66,10 +80,24 @@ export interface MicrofeedPostDefinition {
 }
 
 /*********************************************
+* MicrofeedPostDefinitionCollections
+**********************************************/
+export interface MicrofeedPostDefinitionCollections {
+
+}
+
+/*********************************************
 * MicrofeedDataLinkCollection
 **********************************************/
 export interface MicrofeedDataLinkCollection {
 	Items?: Array<SP.Microfeed.MicrofeedDataLink>;
+}
+
+/*********************************************
+* MicrofeedDataLinkCollectionCollections
+**********************************************/
+export interface MicrofeedDataLinkCollectionCollections {
+
 }
 
 /*********************************************
@@ -86,6 +114,13 @@ export interface MicrofeedDataLink {
 }
 
 /*********************************************
+* MicrofeedDataLinkCollections
+**********************************************/
+export interface MicrofeedDataLinkCollections {
+
+}
+
+/*********************************************
 * MicrofeedDataQuery
 **********************************************/
 export interface MicrofeedDataQuery {
@@ -96,6 +131,13 @@ export interface MicrofeedDataQuery {
 }
 
 /*********************************************
+* MicrofeedDataQueryCollections
+**********************************************/
+export interface MicrofeedDataQueryCollections {
+
+}
+
+/*********************************************
 * MicrofeedLinkAction
 **********************************************/
 export interface MicrofeedLinkAction {
@@ -103,6 +145,13 @@ export interface MicrofeedLinkAction {
 	Height?: number;
 	Kind?: number;
 	Width?: number;
+}
+
+/*********************************************
+* MicrofeedLinkActionCollections
+**********************************************/
+export interface MicrofeedLinkActionCollections {
+
 }
 
 /*********************************************
@@ -125,10 +174,24 @@ export interface MicrofeedLink {
 }
 
 /*********************************************
+* MicrofeedLinkCollections
+**********************************************/
+export interface MicrofeedLinkCollections {
+
+}
+
+/*********************************************
 * MicrofeedPostCollection
 **********************************************/
 export interface MicrofeedPostCollection {
 	Items?: Array<SP.Microfeed.MicrofeedPost>;
+}
+
+/*********************************************
+* MicrofeedPostCollectionCollections
+**********************************************/
+export interface MicrofeedPostCollectionCollections {
+
 }
 
 /*********************************************
@@ -165,9 +228,23 @@ export interface MicrofeedPost {
 }
 
 /*********************************************
+* MicrofeedPostCollections
+**********************************************/
+export interface MicrofeedPostCollections {
+
+}
+
+/*********************************************
 * MicrofeedPostDefinitionNames
 **********************************************/
 export interface MicrofeedPostDefinitionNames {
+
+}
+
+/*********************************************
+* MicrofeedPostDefinitionNamesCollections
+**********************************************/
+export interface MicrofeedPostDefinitionNamesCollections {
 
 }
 
@@ -176,6 +253,13 @@ export interface MicrofeedPostDefinitionNames {
 **********************************************/
 export interface MicrofeedPostDefinitionNameCollection {
 	Items?: Array<string>;
+}
+
+/*********************************************
+* MicrofeedPostDefinitionNameCollectionCollections
+**********************************************/
+export interface MicrofeedPostDefinitionNameCollectionCollections {
+
 }
 
 /*********************************************
@@ -198,6 +282,13 @@ export interface MicrofeedPostOptions {
 }
 
 /*********************************************
+* MicrofeedPostOptionsCollections
+**********************************************/
+export interface MicrofeedPostOptionsCollections {
+
+}
+
+/*********************************************
 * MicrofeedRetrievalOptions
 **********************************************/
 export interface MicrofeedRetrievalOptions {
@@ -214,6 +305,13 @@ export interface MicrofeedRetrievalOptions {
 }
 
 /*********************************************
+* MicrofeedRetrievalOptionsCollections
+**********************************************/
+export interface MicrofeedRetrievalOptionsCollections {
+
+}
+
+/*********************************************
 * MicrofeedThreadCollection
 **********************************************/
 export interface MicrofeedThreadCollection {
@@ -221,6 +319,13 @@ export interface MicrofeedThreadCollection {
 	NewestProcessed?: any;
 	OldestProcessed?: any;
 	Items?: Array<SP.Microfeed.MicrofeedThread>;
+}
+
+/*********************************************
+* MicrofeedThreadCollectionCollections
+**********************************************/
+export interface MicrofeedThreadCollectionCollections {
+
 }
 
 /*********************************************
@@ -249,6 +354,13 @@ export interface MicrofeedThread {
 }
 
 /*********************************************
+* MicrofeedThreadCollections
+**********************************************/
+export interface MicrofeedThreadCollections {
+
+}
+
+/*********************************************
 * MicrofeedUserPostCollection
 **********************************************/
 export interface MicrofeedUserPostCollection {
@@ -256,8 +368,22 @@ export interface MicrofeedUserPostCollection {
 }
 
 /*********************************************
+* MicrofeedUserPostCollectionCollections
+**********************************************/
+export interface MicrofeedUserPostCollectionCollections {
+
+}
+
+/*********************************************
 * MicrofeedUserPosts
 **********************************************/
 export interface MicrofeedUserPosts {
 	AccountName?: string;
+}
+
+/*********************************************
+* MicrofeedUserPostsCollections
+**********************************************/
+export interface MicrofeedUserPostsCollections {
+
 }

@@ -12,10 +12,24 @@ export interface MarketplaceUtilities {
 }
 
 /*********************************************
+* MarketplaceUtilitiesCollections
+**********************************************/
+export interface MarketplaceUtilitiesCollections {
+
+}
+
+/*********************************************
 * ShortcutLink
 **********************************************/
 export interface ShortcutLink {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ShortcutLinkCollections
+**********************************************/
+export interface ShortcutLinkCollections {
+
 }
 
 /*********************************************
@@ -29,6 +43,13 @@ export interface ShortcutTargetInfo {
 }
 
 /*********************************************
+* ShortcutTargetInfoCollections
+**********************************************/
+export interface ShortcutTargetInfoCollections {
+
+}
+
+/*********************************************
 * FileHandlerWopiProperties
 **********************************************/
 export interface FileHandlerWopiProperties {
@@ -39,10 +60,24 @@ export interface FileHandlerWopiProperties {
 }
 
 /*********************************************
+* FileHandlerWopiPropertiesCollections
+**********************************************/
+export interface FileHandlerWopiPropertiesCollections {
+
+}
+
+/*********************************************
 * NewsUtility
 **********************************************/
 export interface NewsUtility {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* NewsUtilityCollections
+**********************************************/
+export interface NewsUtilityCollections {
+
 }
 
 /*********************************************
@@ -53,11 +88,25 @@ export interface SPSocialSwitch {
 }
 
 /*********************************************
+* SPSocialSwitchCollections
+**********************************************/
+export interface SPSocialSwitchCollections {
+
+}
+
+/*********************************************
 * SpotlightResult
 **********************************************/
 export interface SpotlightResult {
 	Order?: Array<number>;
 	ResultCode?: number;
+}
+
+/*********************************************
+* SpotlightResultCollections
+**********************************************/
+export interface SpotlightResultCollections {
+
 }
 
 /*********************************************
@@ -125,10 +174,24 @@ export interface Utility {
 }
 
 /*********************************************
+* UtilityCollections
+**********************************************/
+export interface UtilityCollections {
+
+}
+
+/*********************************************
 * WopiHostUtility
 **********************************************/
 export interface WopiHostUtility {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* WopiHostUtilityCollections
+**********************************************/
+export interface WopiHostUtilityCollections {
+
 }
 
 /*********************************************
@@ -144,10 +207,24 @@ export interface WopiProperties {
 }
 
 /*********************************************
+* WopiPropertiesCollections
+**********************************************/
+export interface WopiPropertiesCollections {
+
+}
+
+/*********************************************
 * UploadStatus
 **********************************************/
 export interface UploadStatus {
 	ExpectedContentRange?: string;
 	ExpirationDateTime?: any;
 	UploadId?: any;
+}
+
+/*********************************************
+* UploadStatusCollections
+**********************************************/
+export interface UploadStatusCollections {
+
 }

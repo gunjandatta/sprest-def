@@ -24,11 +24,25 @@ export interface ClientPeoplePickerQueryParameters {
 }
 
 /*********************************************
+* ClientPeoplePickerQueryParametersCollections
+**********************************************/
+export interface ClientPeoplePickerQueryParametersCollections {
+
+}
+
+/*********************************************
 * PeoplePickerQuerySettings
 **********************************************/
 export interface PeoplePickerQuerySettings {
 	ExcludeAllUsersOnTenantClaim?: boolean;
 	IsSharing?: boolean;
+}
+
+/*********************************************
+* PeoplePickerQuerySettingsCollections
+**********************************************/
+export interface PeoplePickerQuerySettingsCollections {
+
 }
 
 /*********************************************
@@ -39,4 +53,11 @@ export interface PickerEntityInformationRequest {
 	GroupId?: number;
 	Key?: string;
 	PrincipalType?: number;
+}
+
+/*********************************************
+* PickerEntityInformationRequestCollections
+**********************************************/
+export interface PickerEntityInformationRequestCollections {
+
 }

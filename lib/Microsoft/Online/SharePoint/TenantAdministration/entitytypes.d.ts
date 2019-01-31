@@ -13,6 +13,13 @@ export interface EmailResponse {
 }
 
 /*********************************************
+* EmailResponseCollections
+**********************************************/
+export interface EmailResponseCollections {
+
+}
+
+/*********************************************
 * IHubSiteProperties
 **********************************************/
 export interface IHubSiteProperties extends HubSitePropertiesCollections,HubSitePropertiesMethods,IBaseQuery<IHubSitePropertiesQuery> {
@@ -132,11 +139,25 @@ export interface ResponseMessageCenter {
 }
 
 /*********************************************
+* ResponseMessageCenterCollections
+**********************************************/
+export interface ResponseMessageCenterCollections {
+
+}
+
+/*********************************************
 * ResponseServiceHealth
 **********************************************/
 export interface ResponseServiceHealth {
 	AdvisoryCount?: number;
 	IncidentCount?: number;
+}
+
+/*********************************************
+* ResponseServiceHealthCollections
+**********************************************/
+export interface ResponseServiceHealthCollections {
+
 }
 
 /*********************************************
@@ -278,6 +299,14 @@ export interface SitePropertiesCollections extends SitePropertiesProps {
 }
 
 /*********************************************
+* SitePropertiesCollectionMethods
+**********************************************/
+export interface SitePropertiesCollectionMethods {
+	getById(siteId?: any): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	getLockStateById(siteId?: any): IBaseExecution<number>;
+}
+
+/*********************************************
 * SitePropertiesQuery
 **********************************************/
 export interface SitePropertiesQuery extends SitePropertiesProps {
@@ -300,11 +329,25 @@ export interface SPOTenantCdnPolicy {
 }
 
 /*********************************************
+* SPOTenantCdnPolicyCollections
+**********************************************/
+export interface SPOTenantCdnPolicyCollections {
+
+}
+
+/*********************************************
 * SPOTenantWebTemplateCollection
 **********************************************/
 export interface SPOTenantWebTemplateCollection {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 	Items?: Array<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplate>;
+}
+
+/*********************************************
+* SPOTenantWebTemplateCollectionCollections
+**********************************************/
+export interface SPOTenantWebTemplateCollectionCollections {
+
 }
 
 /*********************************************
@@ -317,6 +360,13 @@ export interface  SucceededAndFailedSiteIds {
 }
 
 /*********************************************
+*  SucceededAndFailedSiteIdsCollections
+**********************************************/
+export interface  SucceededAndFailedSiteIdsCollections {
+
+}
+
+/*********************************************
 * TenantAdminEndpoints
 **********************************************/
 export interface TenantAdminEndpoints {
@@ -325,6 +375,13 @@ export interface TenantAdminEndpoints {
 	O365AdminCenterEndpoint?: string;
 	O365MessageCenterEndpoint?: string;
 	OneDriveAdminCenterEndpoint?: string;
+}
+
+/*********************************************
+* TenantAdminEndpointsCollections
+**********************************************/
+export interface TenantAdminEndpointsCollections {
+
 }
 
 /*********************************************
@@ -530,8 +587,8 @@ export interface TenantProps {
 * TenantCollections
 **********************************************/
 export interface TenantCollections extends TenantProps {
-	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
-	Sites(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	Sites(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections;
 }
 
 /*********************************************
@@ -577,51 +634,8 @@ export interface SpoOperation {
 }
 
 /*********************************************
-* ISitePropertiesCollection
+* SpoOperationCollections
 **********************************************/
-export interface ISitePropertiesCollection extends SitePropertiesCollectionCollections,SitePropertiesCollectionMethods,IBaseQuery<ISitePropertiesCollectionQuery> {
+export interface SpoOperationCollections {
 
-}
-
-/*********************************************
-* ISitePropertiesCollectionQuery
-**********************************************/
-export interface ISitePropertiesCollectionQuery extends SitePropertiesCollectionQuery,SitePropertiesCollectionMethods {
-
-}
-
-/*********************************************
-* SitePropertiesCollection
-**********************************************/
-export interface SitePropertiesCollection extends SitePropertiesCollectionCollections, SitePropertiesCollectionMethods {
-
-}
-
-/*********************************************
-* SitePropertiesCollectionProps
-**********************************************/
-export interface SitePropertiesCollectionProps {
-
-}
-
-/*********************************************
-* SitePropertiesCollectionCollections
-**********************************************/
-export interface SitePropertiesCollectionCollections extends SitePropertiesCollectionProps {
-
-}
-
-/*********************************************
-* SitePropertiesCollectionQuery
-**********************************************/
-export interface SitePropertiesCollectionQuery extends SitePropertiesCollectionProps {
-
-}
-
-/*********************************************
-* SitePropertiesCollectionMethods
-**********************************************/
-export interface SitePropertiesCollectionMethods {
-	getById(siteId?: any): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
-	getLockStateById(siteId?: any): IBaseExecution<number>;
 }

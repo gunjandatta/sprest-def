@@ -24,6 +24,13 @@ export interface ActionFacet {
 }
 
 /*********************************************
+* ActionFacetCollections
+**********************************************/
+export interface ActionFacetCollections {
+
+}
+
+/*********************************************
 * CheckinFacet
 **********************************************/
 export interface CheckinFacet {
@@ -31,9 +38,23 @@ export interface CheckinFacet {
 }
 
 /*********************************************
+* CheckinFacetCollections
+**********************************************/
+export interface CheckinFacetCollections {
+
+}
+
+/*********************************************
 * CheckoutFacet
 **********************************************/
 export interface CheckoutFacet {
+
+}
+
+/*********************************************
+* CheckoutFacetCollections
+**********************************************/
+export interface CheckoutFacetCollections {
 
 }
 
@@ -49,6 +70,13 @@ export interface GetCommentFacet {
 }
 
 /*********************************************
+* GetCommentFacetCollections
+**********************************************/
+export interface GetCommentFacetCollections {
+
+}
+
+/*********************************************
 * ActivityIdentity
 **********************************************/
 export interface ActivityIdentity {
@@ -57,6 +85,13 @@ export interface ActivityIdentity {
 	name?: string;
 	user?: Microsoft.SharePoint.Activities.ActivityIdentityItem;
 	userPrincipalName?: string;
+}
+
+/*********************************************
+* ActivityIdentityCollections
+**********************************************/
+export interface ActivityIdentityCollections {
+
 }
 
 /*********************************************
@@ -69,9 +104,23 @@ export interface ActivityIdentityItem {
 }
 
 /*********************************************
+* ActivityIdentityItemCollections
+**********************************************/
+export interface ActivityIdentityItemCollections {
+
+}
+
+/*********************************************
 * CreateFacet
 **********************************************/
 export interface CreateFacet {
+
+}
+
+/*********************************************
+* CreateFacetCollections
+**********************************************/
+export interface CreateFacetCollections {
 
 }
 
@@ -83,9 +132,23 @@ export interface DeleteFacet {
 }
 
 /*********************************************
+* DeleteFacetCollections
+**********************************************/
+export interface DeleteFacetCollections {
+
+}
+
+/*********************************************
 * DiscardCheckoutFacet
 **********************************************/
 export interface DiscardCheckoutFacet {
+
+}
+
+/*********************************************
+* DiscardCheckoutFacetCollections
+**********************************************/
+export interface DiscardCheckoutFacetCollections {
 
 }
 
@@ -97,10 +160,24 @@ export interface EditFacet {
 }
 
 /*********************************************
+* EditFacetCollections
+**********************************************/
+export interface EditFacetCollections {
+
+}
+
+/*********************************************
 * GetMentionFacet
 **********************************************/
 export interface GetMentionFacet {
 	mentionees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+}
+
+/*********************************************
+* GetMentionFacetCollections
+**********************************************/
+export interface GetMentionFacetCollections {
+
 }
 
 /*********************************************
@@ -112,10 +189,24 @@ export interface MoveFacet {
 }
 
 /*********************************************
+* MoveFacetCollections
+**********************************************/
+export interface MoveFacetCollections {
+
+}
+
+/*********************************************
 * PointInTimeRestoreFacet
 **********************************************/
 export interface PointInTimeRestoreFacet {
 	restoreToDateTime?: string;
+}
+
+/*********************************************
+* PointInTimeRestoreFacetCollections
+**********************************************/
+export interface PointInTimeRestoreFacetCollections {
+
 }
 
 /*********************************************
@@ -126,9 +217,23 @@ export interface RenameFacet {
 }
 
 /*********************************************
+* RenameFacetCollections
+**********************************************/
+export interface RenameFacetCollections {
+
+}
+
+/*********************************************
 * RestoreFacet
 **********************************************/
 export interface RestoreFacet {
+
+}
+
+/*********************************************
+* RestoreFacetCollections
+**********************************************/
+export interface RestoreFacetCollections {
 
 }
 
@@ -140,6 +245,13 @@ export interface RestoreVersionFacet {
 }
 
 /*********************************************
+* RestoreVersionFacetCollections
+**********************************************/
+export interface RestoreVersionFacetCollections {
+
+}
+
+/*********************************************
 * SharingFacet
 **********************************************/
 export interface SharingFacet {
@@ -148,10 +260,24 @@ export interface SharingFacet {
 }
 
 /*********************************************
+* SharingFacetCollections
+**********************************************/
+export interface SharingFacetCollections {
+
+}
+
+/*********************************************
 * VersionFacet
 **********************************************/
 export interface VersionFacet {
 	newVersion?: string;
+}
+
+/*********************************************
+* VersionFacetCollections
+**********************************************/
+export interface VersionFacetCollections {
+
 }
 
 /*********************************************
@@ -165,6 +291,13 @@ export interface ActivityClientIdentity {
 }
 
 /*********************************************
+* ActivityClientIdentityCollections
+**********************************************/
+export interface ActivityClientIdentityCollections {
+
+}
+
+/*********************************************
 * ActivityTimeFacet
 **********************************************/
 export interface ActivityTimeFacet {
@@ -174,9 +307,23 @@ export interface ActivityTimeFacet {
 }
 
 /*********************************************
+* ActivityTimeFacetCollections
+**********************************************/
+export interface ActivityTimeFacetCollections {
+
+}
+
+/*********************************************
 * CoalescedFacet
 **********************************************/
 export interface CoalescedFacet {
+
+}
+
+/*********************************************
+* CoalescedFacetCollections
+**********************************************/
+export interface CoalescedFacetCollections {
 
 }
 
@@ -190,6 +337,13 @@ export interface CommentFacet {
 }
 
 /*********************************************
+* CommentFacetCollections
+**********************************************/
+export interface CommentFacetCollections {
+
+}
+
+/*********************************************
 * InDocFacet
 **********************************************/
 export interface InDocFacet {
@@ -198,11 +352,25 @@ export interface InDocFacet {
 }
 
 /*********************************************
+* InDocFacetCollections
+**********************************************/
+export interface InDocFacetCollections {
+
+}
+
+/*********************************************
 * MentionFacet
 **********************************************/
 export interface MentionFacet {
 	commentContentId?: string;
 	mentionees?: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity>;
+}
+
+/*********************************************
+* MentionFacetCollections
+**********************************************/
+export interface MentionFacetCollections {
+
 }
 
 /*********************************************
@@ -223,10 +391,24 @@ export interface ResourceFacet {
 }
 
 /*********************************************
+* ResourceFacetCollections
+**********************************************/
+export interface ResourceFacetCollections {
+
+}
+
+/*********************************************
 * RevisionInfo
 **********************************************/
 export interface RevisionInfo {
 	id?: string;
+}
+
+/*********************************************
+* RevisionInfoCollections
+**********************************************/
+export interface RevisionInfoCollections {
+
 }
 
 /*********************************************
@@ -238,11 +420,25 @@ export interface RevisionSetFacet {
 }
 
 /*********************************************
+* RevisionSetFacetCollections
+**********************************************/
+export interface RevisionSetFacetCollections {
+
+}
+
+/*********************************************
 * ActivityCapabilities
 **********************************************/
 export interface ActivityCapabilities {
 	clientActivitiesEnabled?: boolean;
 	enabled?: boolean;
+}
+
+/*********************************************
+* ActivityCapabilitiesCollections
+**********************************************/
+export interface ActivityCapabilitiesCollections {
+
 }
 
 /*********************************************
@@ -261,6 +457,13 @@ export interface ActivityClientRequest {
 }
 
 /*********************************************
+* ActivityClientRequestCollections
+**********************************************/
+export interface ActivityClientRequestCollections {
+
+}
+
+/*********************************************
 * ActivityClientResponse
 **********************************************/
 export interface ActivityClientResponse {
@@ -268,4 +471,11 @@ export interface ActivityClientResponse {
 	message?: string;
 	serverId?: string;
 	status?: number;
+}
+
+/*********************************************
+* ActivityClientResponseCollections
+**********************************************/
+export interface ActivityClientResponseCollections {
+
 }

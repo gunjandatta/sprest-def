@@ -9,12 +9,26 @@ export interface AutoQuotaEnabled {
 }
 
 /*********************************************
+* AutoQuotaEnabledCollections
+**********************************************/
+export interface AutoQuotaEnabledCollections {
+
+}
+
+/*********************************************
 * ContactAdminsByEmailFieldsData
 **********************************************/
 export interface ContactAdminsByEmailFieldsData {
 	message?: string;
 	siteIds?: Array<string>;
 	subject?: string;
+}
+
+/*********************************************
+* ContactAdminsByEmailFieldsDataCollections
+**********************************************/
+export interface ContactAdminsByEmailFieldsDataCollections {
+
 }
 
 /*********************************************
@@ -26,11 +40,25 @@ export interface CustomFormUrl {
 }
 
 /*********************************************
+* CustomFormUrlCollections
+**********************************************/
+export interface CustomFormUrlCollections {
+
+}
+
+/*********************************************
 * DisableGroupify
 **********************************************/
 export interface DisableGroupify {
 	IsReadOnly?: boolean;
 	Value?: boolean;
+}
+
+/*********************************************
+* DisableGroupifyCollections
+**********************************************/
+export interface DisableGroupifyCollections {
+
 }
 
 /*********************************************
@@ -43,12 +71,26 @@ export interface EmailAdminsFieldsData {
 }
 
 /*********************************************
+* EmailAdminsFieldsDataCollections
+**********************************************/
+export interface EmailAdminsFieldsDataCollections {
+
+}
+
+/*********************************************
 * HubSitePermission
 **********************************************/
 export interface HubSitePermission {
 	DisplayName?: string;
 	PrincipalName?: string;
 	Rights?: number;
+}
+
+/*********************************************
+* HubSitePermissionCollections
+**********************************************/
+export interface HubSitePermissionCollections {
+
 }
 
 /*********************************************
@@ -60,11 +102,25 @@ export interface MailFromAddress {
 }
 
 /*********************************************
+* MailFromAddressCollections
+**********************************************/
+export interface MailFromAddressCollections {
+
+}
+
+/*********************************************
 * MessagesFieldsData
 **********************************************/
 export interface MessagesFieldsData {
 	bearToken?: string;
 	environment?: string;
+}
+
+/*********************************************
+* MessagesFieldsDataCollections
+**********************************************/
+export interface MessagesFieldsDataCollections {
+
 }
 
 /*********************************************
@@ -76,11 +132,25 @@ export interface MobileNotificationIsEnabledForSharepoint {
 }
 
 /*********************************************
+* MobileNotificationIsEnabledForSharepointCollections
+**********************************************/
+export interface MobileNotificationIsEnabledForSharepointCollections {
+
+}
+
+/*********************************************
 * NewPortalAsDefault
 **********************************************/
 export interface NewPortalAsDefault {
 	IsReadOnly?: boolean;
 	Value?: boolean;
+}
+
+/*********************************************
+* NewPortalAsDefaultCollections
+**********************************************/
+export interface NewPortalAsDefaultCollections {
+
 }
 
 /*********************************************
@@ -92,11 +162,25 @@ export interface NewSiteManagedPath {
 }
 
 /*********************************************
+* NewSiteManagedPathCollections
+**********************************************/
+export interface NewSiteManagedPathCollections {
+
+}
+
+/*********************************************
 * NewSubsiteInModernOffForAll
 **********************************************/
 export interface NewSubsiteInModernOffForAll {
 	IsReadOnly?: boolean;
 	Value?: boolean;
+}
+
+/*********************************************
+* NewSubsiteInModernOffForAllCollections
+**********************************************/
+export interface NewSubsiteInModernOffForAllCollections {
+
 }
 
 /*********************************************
@@ -108,11 +192,25 @@ export interface NewSubsiteInModernOffForModernTemplates {
 }
 
 /*********************************************
+* NewSubsiteInModernOffForModernTemplatesCollections
+**********************************************/
+export interface NewSubsiteInModernOffForModernTemplatesCollections {
+
+}
+
+/*********************************************
 * NewTeamSiteManagedPath
 **********************************************/
 export interface NewTeamSiteManagedPath {
 	IsReadOnly?: boolean;
 	Value?: string;
+}
+
+/*********************************************
+* NewTeamSiteManagedPathCollections
+**********************************************/
+export interface NewTeamSiteManagedPathCollections {
+
 }
 
 /*********************************************
@@ -124,11 +222,25 @@ export interface ParentSiteUrl {
 }
 
 /*********************************************
+* ParentSiteUrlCollections
+**********************************************/
+export interface ParentSiteUrlCollections {
+
+}
+
+/*********************************************
 * PolicyOption
 **********************************************/
 export interface PolicyOption {
 	IsReadOnly?: boolean;
 	Value?: string;
+}
+
+/*********************************************
+* PolicyOptionCollections
+**********************************************/
+export interface PolicyOptionCollections {
+
 }
 
 /*********************************************
@@ -140,12 +252,26 @@ export interface RequireSecondaryContact {
 }
 
 /*********************************************
+* RequireSecondaryContactCollections
+**********************************************/
+export interface RequireSecondaryContactCollections {
+
+}
+
+/*********************************************
 * SecondaryAdministratorsFieldsData
 **********************************************/
 export interface SecondaryAdministratorsFieldsData {
 	secondaryAdministratorEmails?: Array<string>;
 	secondaryAdministratorLoginNames?: Array<string>;
 	siteId?: any;
+}
+
+/*********************************************
+* SecondaryAdministratorsFieldsDataCollections
+**********************************************/
+export interface SecondaryAdministratorsFieldsDataCollections {
+
 }
 
 /*********************************************
@@ -159,6 +285,13 @@ export interface SecondaryAdministratorsInfo {
 }
 
 /*********************************************
+* SecondaryAdministratorsInfoCollections
+**********************************************/
+export interface SecondaryAdministratorsInfoCollections {
+
+}
+
+/*********************************************
 * ShowNextGenerationSyncClientOnTeamSite
 **********************************************/
 export interface ShowNextGenerationSyncClientOnTeamSite {
@@ -166,6 +299,13 @@ export interface ShowNextGenerationSyncClientOnTeamSite {
 	IsReadOnly?: boolean;
 	ReadOnlyReasonCode?: number;
 	Value?: boolean;
+}
+
+/*********************************************
+* ShowNextGenerationSyncClientOnTeamSiteCollections
+**********************************************/
+export interface ShowNextGenerationSyncClientOnTeamSiteCollections {
+
 }
 
 /*********************************************
@@ -177,6 +317,13 @@ export interface ShowSelfServiceSiteCreation {
 }
 
 /*********************************************
+* ShowSelfServiceSiteCreationCollections
+**********************************************/
+export interface ShowSelfServiceSiteCreationCollections {
+
+}
+
+/*********************************************
 * SiteCreationDefaultStorageQuota
 **********************************************/
 export interface SiteCreationDefaultStorageQuota {
@@ -185,11 +332,25 @@ export interface SiteCreationDefaultStorageQuota {
 }
 
 /*********************************************
+* SiteCreationDefaultStorageQuotaCollections
+**********************************************/
+export interface SiteCreationDefaultStorageQuotaCollections {
+
+}
+
+/*********************************************
 * SiteCreationNewUX
 **********************************************/
 export interface SiteCreationNewUX {
 	IsReadOnly?: boolean;
 	Value?: boolean;
+}
+
+/*********************************************
+* SiteCreationNewUXCollections
+**********************************************/
+export interface SiteCreationNewUXCollections {
+
 }
 
 /*********************************************
@@ -210,6 +371,13 @@ export interface SiteCreationProperties {
 }
 
 /*********************************************
+* SiteCreationPropertiesCollections
+**********************************************/
+export interface SiteCreationPropertiesCollections {
+
+}
+
+/*********************************************
 * SPOSitePropertiesEnumerableFilter
 **********************************************/
 export interface SPOSitePropertiesEnumerableFilter {
@@ -222,11 +390,25 @@ export interface SPOSitePropertiesEnumerableFilter {
 }
 
 /*********************************************
+* SPOSitePropertiesEnumerableFilterCollections
+**********************************************/
+export interface SPOSitePropertiesEnumerableFilterCollections {
+
+}
+
+/*********************************************
 * SmtpServer
 **********************************************/
 export interface SmtpServer {
 	IsReadOnly?: boolean;
 	Value?: string;
+}
+
+/*********************************************
+* SmtpServerCollections
+**********************************************/
+export interface SmtpServerCollections {
+
 }
 
 /*********************************************
@@ -238,11 +420,25 @@ export interface SPListModernUXOff {
 }
 
 /*********************************************
+* SPListModernUXOffCollections
+**********************************************/
+export interface SPListModernUXOffCollections {
+
+}
+
+/*********************************************
 * TenantDefaultTimeZoneId
 **********************************************/
 export interface TenantDefaultTimeZoneId {
 	IsReadOnly?: boolean;
 	Value?: number;
+}
+
+/*********************************************
+* TenantDefaultTimeZoneIdCollections
+**********************************************/
+export interface TenantDefaultTimeZoneIdCollections {
+
 }
 
 /*********************************************
@@ -256,4 +452,11 @@ export interface SPOTenantWebTemplate {
 	Lcid?: number;
 	Name?: string;
 	Title?: string;
+}
+
+/*********************************************
+* SPOTenantWebTemplateCollections
+**********************************************/
+export interface SPOTenantWebTemplateCollections {
+
 }

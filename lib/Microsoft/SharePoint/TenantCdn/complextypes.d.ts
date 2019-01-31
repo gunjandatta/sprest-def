@@ -9,3 +9,10 @@ export interface TenantCdnUrl {
 	IsCdnUrlAvailable?: boolean;
 	ItemUrl?: string;
 }
+
+/*********************************************
+* TenantCdnUrlCollections
+**********************************************/
+export interface TenantCdnUrlCollections {
+
+}

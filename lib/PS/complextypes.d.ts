@@ -9,6 +9,13 @@ export interface EngagementSaveConflictException {
 }
 
 /*********************************************
+* EngagementSaveConflictExceptionCollections
+**********************************************/
+export interface EngagementSaveConflictExceptionCollections {
+
+}
+
+/*********************************************
 * AssignmentCreationInformation
 **********************************************/
 export interface AssignmentCreationInformation {
@@ -21,12 +28,26 @@ export interface AssignmentCreationInformation {
 }
 
 /*********************************************
+* AssignmentCreationInformationCollections
+**********************************************/
+export interface AssignmentCreationInformationCollections {
+
+}
+
+/*********************************************
 * CalendarCreationInformation
 **********************************************/
 export interface CalendarCreationInformation {
 	Id?: any;
 	Name?: string;
 	OriginalId?: any;
+}
+
+/*********************************************
+* CalendarCreationInformationCollections
+**********************************************/
+export interface CalendarCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -55,6 +76,13 @@ export interface CalendarExceptionCreationInformation {
 }
 
 /*********************************************
+* CalendarExceptionCreationInformationCollections
+**********************************************/
+export interface CalendarExceptionCreationInformationCollections {
+
+}
+
+/*********************************************
 * CostRateCreationInformation
 **********************************************/
 export interface CostRateCreationInformation {
@@ -62,6 +90,13 @@ export interface CostRateCreationInformation {
 	EffectiveDate?: any;
 	OvertimeRate?: number;
 	StandardRate?: number;
+}
+
+/*********************************************
+* CostRateCreationInformationCollections
+**********************************************/
+export interface CostRateCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -90,6 +125,13 @@ export interface CustomFieldCreationInformation {
 }
 
 /*********************************************
+* CustomFieldCreationInformationCollections
+**********************************************/
+export interface CustomFieldCreationInformationCollections {
+
+}
+
+/*********************************************
 * EngagementCreationInformation
 **********************************************/
 export interface EngagementCreationInformation {
@@ -106,6 +148,13 @@ export interface EngagementCreationInformation {
 }
 
 /*********************************************
+* EngagementCreationInformationCollections
+**********************************************/
+export interface EngagementCreationInformationCollections {
+
+}
+
+/*********************************************
 * EngagementTimephasedPeriodCreationInformation
 **********************************************/
 export interface EngagementTimephasedPeriodCreationInformation {
@@ -115,6 +164,13 @@ export interface EngagementTimephasedPeriodCreationInformation {
 	Work?: string;
 	WorkMilliseconds?: number;
 	WorkTimeSpan?: any;
+}
+
+/*********************************************
+* EngagementTimephasedPeriodCreationInformationCollections
+**********************************************/
+export interface EngagementTimephasedPeriodCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -142,12 +198,26 @@ export interface EnterpriseProjectTypeCreationInformation {
 }
 
 /*********************************************
+* EnterpriseProjectTypeCreationInformationCollections
+**********************************************/
+export interface EnterpriseProjectTypeCreationInformationCollections {
+
+}
+
+/*********************************************
 * ProjectDetailPageCreationInformation
 **********************************************/
 export interface ProjectDetailPageCreationInformation {
 	Id?: any;
 	IsCreate?: boolean;
 	Position?: number;
+}
+
+/*********************************************
+* ProjectDetailPageCreationInformationCollections
+**********************************************/
+export interface ProjectDetailPageCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -165,6 +235,13 @@ export interface EnterpriseResourceCreationInformation {
 }
 
 /*********************************************
+* EnterpriseResourceCreationInformationCollections
+**********************************************/
+export interface EnterpriseResourceCreationInformationCollections {
+
+}
+
+/*********************************************
 * EntityLinkCreationInformation
 **********************************************/
 export interface EntityLinkCreationInformation {
@@ -172,6 +249,13 @@ export interface EntityLinkCreationInformation {
 	Id?: any;
 	Label?: string;
 	Url?: string;
+}
+
+/*********************************************
+* EntityLinkCreationInformationCollections
+**********************************************/
+export interface EntityLinkCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -189,6 +273,13 @@ export interface EventHandlerCreationInformation {
 }
 
 /*********************************************
+* EventHandlerCreationInformationCollections
+**********************************************/
+export interface EventHandlerCreationInformationCollections {
+
+}
+
+/*********************************************
 * LookupEntryCreationInformation
 **********************************************/
 export interface LookupEntryCreationInformation {
@@ -197,6 +288,13 @@ export interface LookupEntryCreationInformation {
 	ParentId?: any;
 	SortIndex?: number;
 	Value?: PS.LookupEntryValue;
+}
+
+/*********************************************
+* LookupEntryCreationInformationCollections
+**********************************************/
+export interface LookupEntryCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -210,12 +308,26 @@ export interface LookupEntryValue {
 }
 
 /*********************************************
+* LookupEntryValueCollections
+**********************************************/
+export interface LookupEntryValueCollections {
+
+}
+
+/*********************************************
 * LookupMask
 **********************************************/
 export interface LookupMask {
 	Length?: number;
 	MaskType?: number;
 	Separator?: string;
+}
+
+/*********************************************
+* LookupMaskCollections
+**********************************************/
+export interface LookupMaskCollections {
+
 }
 
 /*********************************************
@@ -230,12 +342,26 @@ export interface LookupTableCreationInformation {
 }
 
 /*********************************************
+* LookupTableCreationInformationCollections
+**********************************************/
+export interface LookupTableCreationInformationCollections {
+
+}
+
+/*********************************************
 * PhaseCreationInformation
 **********************************************/
 export interface PhaseCreationInformation {
 	Description?: string;
 	Id?: any;
 	Name?: string;
+}
+
+/*********************************************
+* PhaseCreationInformationCollections
+**********************************************/
+export interface PhaseCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -249,11 +375,25 @@ export interface PlanAssignmentCreationInformation {
 }
 
 /*********************************************
+* PlanAssignmentCreationInformationCollections
+**********************************************/
+export interface PlanAssignmentCreationInformationCollections {
+
+}
+
+/*********************************************
 * PlanAssignmentIntervalCreationInformation
 **********************************************/
 export interface PlanAssignmentIntervalCreationInformation {
 	Duration?: string;
 	Interval?: any;
+}
+
+/*********************************************
+* PlanAssignmentIntervalCreationInformationCollections
+**********************************************/
+export interface PlanAssignmentIntervalCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -270,9 +410,23 @@ export interface ProjectCreationInformation {
 }
 
 /*********************************************
+* ProjectCreationInformationCollections
+**********************************************/
+export interface ProjectCreationInformationCollections {
+
+}
+
+/*********************************************
 * ProjectEngagementCreationInformation
 **********************************************/
 export interface ProjectEngagementCreationInformation extends PS.EngagementCreationInformation {
+
+}
+
+/*********************************************
+* ProjectEngagementCreationInformationCollections
+**********************************************/
+export interface ProjectEngagementCreationInformationCollections {
 
 }
 
@@ -285,6 +439,13 @@ export interface ProjectResourceCreationInformation {
 	Id?: any;
 	Name?: string;
 	Notes?: string;
+}
+
+/*********************************************
+* ProjectResourceCreationInformationCollections
+**********************************************/
+export interface ProjectResourceCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -304,12 +465,26 @@ export interface StageCreationInformation {
 }
 
 /*********************************************
+* StageCreationInformationCollections
+**********************************************/
+export interface StageCreationInformationCollections {
+
+}
+
+/*********************************************
 * StageCustomFieldCreationInformation
 **********************************************/
 export interface StageCustomFieldCreationInformation {
 	Id?: any;
 	ReadOnly?: boolean;
 	Required?: boolean;
+}
+
+/*********************************************
+* StageCustomFieldCreationInformationCollections
+**********************************************/
+export interface StageCustomFieldCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -323,6 +498,13 @@ export interface StageDetailPageCreationInformation {
 }
 
 /*********************************************
+* StageDetailPageCreationInformationCollections
+**********************************************/
+export interface StageDetailPageCreationInformationCollections {
+
+}
+
+/*********************************************
 * StatusAssignmentCreationInformation
 **********************************************/
 export interface StatusAssignmentCreationInformation {
@@ -330,6 +512,13 @@ export interface StatusAssignmentCreationInformation {
 	Id?: any;
 	ProjectId?: any;
 	Task?: PS.StatusTaskCreationInformation;
+}
+
+/*********************************************
+* StatusAssignmentCreationInformationCollections
+**********************************************/
+export interface StatusAssignmentCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -342,6 +531,13 @@ export interface StatusTaskCreationInformation {
 	ParentId?: any;
 	Start?: any;
 	Work?: string;
+}
+
+/*********************************************
+* StatusTaskCreationInformationCollections
+**********************************************/
+export interface StatusTaskCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -360,6 +556,13 @@ export interface TaskCreationInformation {
 }
 
 /*********************************************
+* TaskCreationInformationCollections
+**********************************************/
+export interface TaskCreationInformationCollections {
+
+}
+
+/*********************************************
 * TaskLinkCreationInformation
 **********************************************/
 export interface TaskLinkCreationInformation {
@@ -370,11 +573,25 @@ export interface TaskLinkCreationInformation {
 }
 
 /*********************************************
+* TaskLinkCreationInformationCollections
+**********************************************/
+export interface TaskLinkCreationInformationCollections {
+
+}
+
+/*********************************************
 * TaskPlanLinksCreationInformation
 **********************************************/
 export interface TaskPlanLinksCreationInformation {
 	GroupId?: any;
 	PlanId?: string;
+}
+
+/*********************************************
+* TaskPlanLinksCreationInformationCollections
+**********************************************/
+export interface TaskPlanLinksCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -390,6 +607,13 @@ export interface TimeSheetLineCreationInformation {
 }
 
 /*********************************************
+* TimeSheetLineCreationInformationCollections
+**********************************************/
+export interface TimeSheetLineCreationInformationCollections {
+
+}
+
+/*********************************************
 * TimeSheetWorkCreationInformation
 **********************************************/
 export interface TimeSheetWorkCreationInformation {
@@ -401,4 +625,11 @@ export interface TimeSheetWorkCreationInformation {
 	OvertimeWork?: string;
 	PlannedWork?: string;
 	Start?: any;
+}
+
+/*********************************************
+* TimeSheetWorkCreationInformationCollections
+**********************************************/
+export interface TimeSheetWorkCreationInformationCollections {
+
 }

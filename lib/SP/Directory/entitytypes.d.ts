@@ -110,10 +110,18 @@ export interface GroupProps {
 * GroupCollections
 **********************************************/
 export interface GroupCollections extends GroupProps {
-	members(): IBaseCollection<SP.Directory.User>;
-	members(id: string | number): IBaseExecution<SP.Directory.User>;
-	owners(): IBaseCollection<SP.Directory.User>;
-	owners(id: string | number): IBaseExecution<SP.Directory.User>;
+	members(): IBaseCollection<SP.Directory.User> & SP.Directory.UserCollectionMethods;
+	members(id: string | number): IBaseExecution<SP.Directory.User> & SP.Directory.UserCollections;
+	owners(): IBaseCollection<SP.Directory.User> & SP.Directory.UserCollectionMethods;
+	owners(id: string | number): IBaseExecution<SP.Directory.User> & SP.Directory.UserCollections;
+}
+
+/*********************************************
+* GroupCollectionMethods
+**********************************************/
+export interface GroupCollectionMethods {
+	add(objectId?: any | any): IBaseExecution<any>;
+	remove(objectId?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -202,12 +210,20 @@ export interface UserProps {
 * UserCollections
 **********************************************/
 export interface UserCollections extends UserProps {
-	membership(): IBaseCollection<SP.Directory.Group>;
-	membership(id: string | number): IBaseExecution<SP.Directory.Group>;
-	ownership(): IBaseCollection<SP.Directory.Group>;
-	ownership(id: string | number): IBaseExecution<SP.Directory.Group>;
-	rankedMembership(): IBaseCollection<SP.Directory.Group>;
-	rankedMembership(id: string | number): IBaseExecution<SP.Directory.Group>;
+	membership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
+	membership(id: string | number): IBaseExecution<SP.Directory.Group> & SP.Directory.GroupCollections;
+	ownership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
+	ownership(id: string | number): IBaseExecution<SP.Directory.Group> & SP.Directory.GroupCollections;
+	rankedMembership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
+	rankedMembership(id: string | number): IBaseExecution<SP.Directory.Group> & SP.Directory.GroupCollections;
+}
+
+/*********************************************
+* UserCollectionMethods
+**********************************************/
+export interface UserCollectionMethods {
+	add(objectId?: any | any, principalName?: string): IBaseExecution<any>;
+	remove(objectId?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -236,10 +252,24 @@ export interface Link {
 }
 
 /*********************************************
+* LinkCollections
+**********************************************/
+export interface LinkCollections {
+
+}
+
+/*********************************************
 * GroupAndUserStatus
 **********************************************/
 export interface GroupAndUserStatus {
 	Status?: number;
+}
+
+/*********************************************
+* GroupAndUserStatusCollections
+**********************************************/
+export interface GroupAndUserStatusCollections {
+
 }
 
 /*********************************************
@@ -251,11 +281,25 @@ export interface MembershipResult {
 }
 
 /*********************************************
+* MembershipResultCollections
+**********************************************/
+export interface MembershipResultCollections {
+
+}
+
+/*********************************************
 * MembersInfo
 **********************************************/
 export interface MembersInfo {
 	MemberNames?: Array<string>;
 	TotalCount?: number;
+}
+
+/*********************************************
+* MembersInfoCollections
+**********************************************/
+export interface MembersInfoCollections {
+
 }
 
 /*********************************************
@@ -267,101 +311,8 @@ export interface MyGroupsResult {
 }
 
 /*********************************************
-* IGroupCollection
+* MyGroupsResultCollections
 **********************************************/
-export interface IGroupCollection extends GroupCollectionCollections,GroupCollectionMethods,IBaseQuery<IGroupCollectionQuery> {
+export interface MyGroupsResultCollections {
 
-}
-
-/*********************************************
-* IGroupCollectionQuery
-**********************************************/
-export interface IGroupCollectionQuery extends GroupCollectionQuery,GroupCollectionMethods {
-
-}
-
-/*********************************************
-* GroupCollection
-**********************************************/
-export interface GroupCollection extends GroupCollectionCollections, GroupCollectionMethods {
-
-}
-
-/*********************************************
-* GroupCollectionProps
-**********************************************/
-export interface GroupCollectionProps {
-
-}
-
-/*********************************************
-* GroupCollectionCollections
-**********************************************/
-export interface GroupCollectionCollections extends GroupCollectionProps {
-
-}
-
-/*********************************************
-* GroupCollectionQuery
-**********************************************/
-export interface GroupCollectionQuery extends GroupCollectionProps {
-
-}
-
-/*********************************************
-* GroupCollectionMethods
-**********************************************/
-export interface GroupCollectionMethods {
-	add(objectId?: any): IBaseExecution<any>;
-	remove(objectId?: any): IBaseExecution<any>;
-}
-
-/*********************************************
-* IUserCollection
-**********************************************/
-export interface IUserCollection extends UserCollectionCollections,UserCollectionMethods,IBaseQuery<IUserCollectionQuery> {
-
-}
-
-/*********************************************
-* IUserCollectionQuery
-**********************************************/
-export interface IUserCollectionQuery extends UserCollectionQuery,UserCollectionMethods {
-
-}
-
-/*********************************************
-* UserCollection
-**********************************************/
-export interface UserCollection extends UserCollectionCollections, UserCollectionMethods {
-
-}
-
-/*********************************************
-* UserCollectionProps
-**********************************************/
-export interface UserCollectionProps {
-
-}
-
-/*********************************************
-* UserCollectionCollections
-**********************************************/
-export interface UserCollectionCollections extends UserCollectionProps {
-
-}
-
-/*********************************************
-* UserCollectionQuery
-**********************************************/
-export interface UserCollectionQuery extends UserCollectionProps {
-
-}
-
-/*********************************************
-* UserCollectionMethods
-**********************************************/
-export interface UserCollectionMethods {
-	add(objectId?: any, principalName?: string): IBaseExecution<any>;
-	remove(objectId?: any): IBaseExecution<any>;
 }

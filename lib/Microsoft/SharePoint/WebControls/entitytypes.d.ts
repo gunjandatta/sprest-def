@@ -9,9 +9,23 @@ export interface ModuleLink {
 }
 
 /*********************************************
+* ModuleLinkCollections
+**********************************************/
+export interface ModuleLinkCollections {
+
+}
+
+/*********************************************
 * ResourceManifestInformation
 **********************************************/
 export interface ResourceManifestInformation {
 	RequireJsScriptBlock?: string;
 	ScenarioMapping?: Array<SP.KeyValue>;
+}
+
+/*********************************************
+* ResourceManifestInformationCollections
+**********************************************/
+export interface ResourceManifestInformationCollections {
+
 }

@@ -12,6 +12,13 @@ export interface CrossGeoSync {
 }
 
 /*********************************************
+* CrossGeoSyncCollections
+**********************************************/
+export interface CrossGeoSyncCollections {
+
+}
+
+/*********************************************
 * IFollowedContent
 **********************************************/
 export interface IFollowedContent extends FollowedContentCollections,FollowedContentMethods,IBaseQuery<IFollowedContentQuery> {
@@ -82,11 +89,25 @@ export interface FollowedItemData {
 }
 
 /*********************************************
+* FollowedItemDataCollections
+**********************************************/
+export interface FollowedItemDataCollections {
+
+}
+
+/*********************************************
 * HashTagCollection
 **********************************************/
 export interface HashTagCollection {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 	Items?: Array<SP.UserProfiles.HashTag>;
+}
+
+/*********************************************
+* HashTagCollectionCollections
+**********************************************/
+export interface HashTagCollectionCollections {
+
 }
 
 /*********************************************
@@ -235,6 +256,13 @@ export interface PersonProperties {
 	Title?: string;
 	UserProfileProperties?: Array<SP.KeyValue>;
 	UserUrl?: string;
+}
+
+/*********************************************
+* PersonPropertiesCollections
+**********************************************/
+export interface PersonPropertiesCollections {
+
 }
 
 /*********************************************

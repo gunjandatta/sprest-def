@@ -165,3 +165,10 @@ export interface TranslationJobStatusMethods {
 export interface VariationsTranslationTimerJob {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
+
+/*********************************************
+* VariationsTranslationTimerJobCollections
+**********************************************/
+export interface VariationsTranslationTimerJobCollections {
+
+}

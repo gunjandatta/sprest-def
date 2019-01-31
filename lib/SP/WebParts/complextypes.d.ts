@@ -17,3 +17,10 @@ export interface TileData {
 	Title?: string;
 	TransparentOverlay?: boolean;
 }
+
+/*********************************************
+* TileDataCollections
+**********************************************/
+export interface TileDataCollections {
+
+}

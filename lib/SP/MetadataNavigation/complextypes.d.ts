@@ -9,6 +9,13 @@ export interface ConfiguredMetadataNavigationItemCollection {
 }
 
 /*********************************************
+* ConfiguredMetadataNavigationItemCollectionCollections
+**********************************************/
+export interface ConfiguredMetadataNavigationItemCollectionCollections {
+
+}
+
+/*********************************************
 * ConfiguredMetadataNavigationItem
 **********************************************/
 export interface ConfiguredMetadataNavigationItem {
@@ -20,4 +27,11 @@ export interface ConfiguredMetadataNavigationItem {
 	IsHierarchy?: boolean;
 	IsMultiValueLookup?: boolean;
 	IsTaxonomyField?: boolean;
+}
+
+/*********************************************
+* ConfiguredMetadataNavigationItemCollections
+**********************************************/
+export interface ConfiguredMetadataNavigationItemCollections {
+
 }

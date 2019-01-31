@@ -12,9 +12,23 @@ export interface AppDetails {
 }
 
 /*********************************************
+* AppDetailsCollections
+**********************************************/
+export interface AppDetailsCollections {
+
+}
+
+/*********************************************
 * AppIconInfo
 **********************************************/
 export interface AppIconInfo {
 	Content?: any;
 	MimeType?: string;
+}
+
+/*********************************************
+* AppIconInfoCollections
+**********************************************/
+export interface AppIconInfoCollections {
+
 }

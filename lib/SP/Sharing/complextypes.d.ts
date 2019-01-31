@@ -17,12 +17,26 @@ export interface Principal {
 }
 
 /*********************************************
+* PrincipalCollections
+**********************************************/
+export interface PrincipalCollections {
+
+}
+
+/*********************************************
 * LinkInvitation
 **********************************************/
 export interface LinkInvitation {
 	invitedBy?: SP.Sharing.Principal;
 	invitedOn?: string;
 	invitee?: SP.Sharing.Principal;
+}
+
+/*********************************************
+* LinkInvitationCollections
+**********************************************/
+export interface LinkInvitationCollections {
+
 }
 
 /*********************************************
@@ -35,6 +49,13 @@ export interface AccessRequestSettings {
 }
 
 /*********************************************
+* AccessRequestSettingsCollections
+**********************************************/
+export interface AccessRequestSettingsCollections {
+
+}
+
+/*********************************************
 * DirectSharingAbilities
 **********************************************/
 export interface DirectSharingAbilities {
@@ -44,11 +65,25 @@ export interface DirectSharingAbilities {
 }
 
 /*********************************************
+* DirectSharingAbilitiesCollections
+**********************************************/
+export interface DirectSharingAbilitiesCollections {
+
+}
+
+/*********************************************
 * SharingAbilityStatus
 **********************************************/
 export interface SharingAbilityStatus {
 	disabledReason?: number;
 	enabled?: boolean;
+}
+
+/*********************************************
+* SharingAbilityStatusCollections
+**********************************************/
+export interface SharingAbilityStatusCollections {
+
 }
 
 /*********************************************
@@ -62,11 +97,25 @@ export interface DomainRestrictionSettings {
 }
 
 /*********************************************
+* DomainRestrictionSettingsCollections
+**********************************************/
+export interface DomainRestrictionSettingsCollections {
+
+}
+
+/*********************************************
 * EmailData
 **********************************************/
 export interface EmailData {
 	body?: string;
 	subject?: string;
+}
+
+/*********************************************
+* EmailDataCollections
+**********************************************/
+export interface EmailDataCollections {
+
 }
 
 /*********************************************
@@ -84,6 +133,13 @@ export interface EntityPermission {
 }
 
 /*********************************************
+* EntityPermissionCollections
+**********************************************/
+export interface EntityPermissionCollections {
+
+}
+
+/*********************************************
 * LinkInfo
 **********************************************/
 export interface LinkInfo {
@@ -93,11 +149,25 @@ export interface LinkInfo {
 }
 
 /*********************************************
+* LinkInfoCollections
+**********************************************/
+export interface LinkInfoCollections {
+
+}
+
+/*********************************************
 * OversharedWebInfo
 **********************************************/
 export interface OversharedWebInfo {
 	hasUniqueRoleAssignmentsForList?: boolean;
 	principals?: Array<SP.Sharing.Principal>;
+}
+
+/*********************************************
+* OversharedWebInfoCollections
+**********************************************/
+export interface OversharedWebInfoCollections {
+
 }
 
 /*********************************************
@@ -110,11 +180,25 @@ export interface PermissionCollection {
 }
 
 /*********************************************
+* PermissionCollectionCollections
+**********************************************/
+export interface PermissionCollectionCollections {
+
+}
+
+/*********************************************
 * PrincipalInfo
 **********************************************/
 export interface PrincipalInfo {
 	principal?: SP.Sharing.Principal;
 	role?: number;
+}
+
+/*********************************************
+* PrincipalInfoCollections
+**********************************************/
+export interface PrincipalInfoCollections {
+
 }
 
 /*********************************************
@@ -127,12 +211,26 @@ export interface Recipient {
 }
 
 /*********************************************
+* RecipientCollections
+**********************************************/
+export interface RecipientCollections {
+
+}
+
+/*********************************************
 * SharedWithMeViewItemRemovalResult
 **********************************************/
 export interface SharedWithMeViewItemRemovalResult {
 	ErrorCode?: number;
 	ErrorMessage?: string;
 	Success?: boolean;
+}
+
+/*********************************************
+* SharedWithMeViewItemRemovalResultCollections
+**********************************************/
+export interface SharedWithMeViewItemRemovalResultCollections {
+
 }
 
 /*********************************************
@@ -145,6 +243,13 @@ export interface ShareLinkRequest {
 	linkKind?: number;
 	peoplePickerInput?: string;
 	settings?: SP.Sharing.ShareLinkSettings;
+}
+
+/*********************************************
+* ShareLinkRequestCollections
+**********************************************/
+export interface ShareLinkRequestCollections {
+
 }
 
 /*********************************************
@@ -168,10 +273,24 @@ export interface ShareLinkSettings {
 }
 
 /*********************************************
+* ShareLinkSettingsCollections
+**********************************************/
+export interface ShareLinkSettingsCollections {
+
+}
+
+/*********************************************
 * ShareLinkResponse
 **********************************************/
 export interface ShareLinkResponse {
 	sharingLinkInfo?: SP.SharingLinkInfo;
+}
+
+/*********************************************
+* ShareLinkResponseCollections
+**********************************************/
+export interface ShareLinkResponseCollections {
+
 }
 
 /*********************************************
@@ -182,6 +301,13 @@ export interface SharingAbilities {
 	directSharingAbilities?: SP.Sharing.DirectSharingAbilities;
 	organizationLinkAbilities?: SP.Sharing.SharingLinkAbilities;
 	peopleSharingLinkAbilities?: SP.Sharing.SharingLinkAbilities;
+}
+
+/*********************************************
+* SharingAbilitiesCollections
+**********************************************/
+export interface SharingAbilitiesCollections {
+
 }
 
 /*********************************************
@@ -199,6 +325,13 @@ export interface SharingLinkAbilities {
 }
 
 /*********************************************
+* SharingLinkAbilitiesCollections
+**********************************************/
+export interface SharingLinkAbilitiesCollections {
+
+}
+
+/*********************************************
 * SharingLinkExpirationAbilityStatus
 **********************************************/
 export interface SharingLinkExpirationAbilityStatus extends SP.Sharing.SharingAbilityStatus {
@@ -206,9 +339,23 @@ export interface SharingLinkExpirationAbilityStatus extends SP.Sharing.SharingAb
 }
 
 /*********************************************
+* SharingLinkExpirationAbilityStatusCollections
+**********************************************/
+export interface SharingLinkExpirationAbilityStatusCollections {
+
+}
+
+/*********************************************
 * SharingLinkPasswordAbilityStatus
 **********************************************/
 export interface SharingLinkPasswordAbilityStatus extends SP.Sharing.SharingAbilityStatus {
+
+}
+
+/*********************************************
+* SharingLinkPasswordAbilityStatusCollections
+**********************************************/
+export interface SharingLinkPasswordAbilityStatusCollections {
 
 }
 
@@ -222,6 +369,13 @@ export interface SharingInformationRequest {
 }
 
 /*********************************************
+* SharingInformationRequestCollections
+**********************************************/
+export interface SharingInformationRequestCollections {
+
+}
+
+/*********************************************
 * SharingLinkAccessRequest
 **********************************************/
 export interface SharingLinkAccessRequest {
@@ -230,10 +384,24 @@ export interface SharingLinkAccessRequest {
 }
 
 /*********************************************
+* SharingLinkAccessRequestCollections
+**********************************************/
+export interface SharingLinkAccessRequestCollections {
+
+}
+
+/*********************************************
 * SharingLinkDefaultTemplatesCollection
 **********************************************/
 export interface SharingLinkDefaultTemplatesCollection {
 	templates?: Array<SP.Sharing.SharingLinkDefaultTemplate>;
+}
+
+/*********************************************
+* SharingLinkDefaultTemplatesCollectionCollections
+**********************************************/
+export interface SharingLinkDefaultTemplatesCollectionCollections {
+
 }
 
 /*********************************************
@@ -248,12 +416,26 @@ export interface SharingLinkDefaultTemplate {
 }
 
 /*********************************************
+* SharingLinkDefaultTemplateCollections
+**********************************************/
+export interface SharingLinkDefaultTemplateCollections {
+
+}
+
+/*********************************************
 * SharingLinkTemplate
 **********************************************/
 export interface SharingLinkTemplate {
 	passwordProtected?: boolean;
 	role?: number;
 	scope?: number;
+}
+
+/*********************************************
+* SharingLinkTemplateCollections
+**********************************************/
+export interface SharingLinkTemplateCollections {
+
 }
 
 /*********************************************
@@ -267,12 +449,26 @@ export interface SiteSharingReportCapabilities {
 }
 
 /*********************************************
+* SiteSharingReportCapabilitiesCollections
+**********************************************/
+export interface SiteSharingReportCapabilitiesCollections {
+
+}
+
+/*********************************************
 * SiteSharingReportStatus
 **********************************************/
 export interface SiteSharingReportStatus {
 	errorCode?: number;
 	message?: string;
 	success?: boolean;
+}
+
+/*********************************************
+* SiteSharingReportStatusCollections
+**********************************************/
+export interface SiteSharingReportStatusCollections {
+
 }
 
 /*********************************************
@@ -286,11 +482,25 @@ export interface UserDirectoryInfo {
 }
 
 /*********************************************
+* UserDirectoryInfoCollections
+**********************************************/
+export interface UserDirectoryInfoCollections {
+
+}
+
+/*********************************************
 * UserRoleAssignment
 **********************************************/
 export interface UserRoleAssignment {
 	Role?: number;
 	UserId?: string;
+}
+
+/*********************************************
+* UserRoleAssignmentCollections
+**********************************************/
+export interface UserRoleAssignmentCollections {
+
 }
 
 /*********************************************
@@ -306,4 +516,11 @@ export interface UserSharingResult {
 	Message?: string;
 	Status?: boolean;
 	User?: string;
+}
+
+/*********************************************
+* UserSharingResultCollections
+**********************************************/
+export interface UserSharingResultCollections {
+
 }

@@ -8,3 +8,10 @@ export interface WorkflowAssociationCreationInformation {
 	ContentTypeAssociationTaskListName?: string;
 	Name?: string;
 }
+
+/*********************************************
+* WorkflowAssociationCreationInformationCollections
+**********************************************/
+export interface WorkflowAssociationCreationInformationCollections {
+
+}

@@ -8,3 +8,10 @@ export interface AppRenderInfo {
 	PrimaryDeviceHeight?: string;
 	PrimaryDeviceWidth?: string;
 }
+
+/*********************************************
+* AppRenderInfoCollections
+**********************************************/
+export interface AppRenderInfoCollections {
+
+}

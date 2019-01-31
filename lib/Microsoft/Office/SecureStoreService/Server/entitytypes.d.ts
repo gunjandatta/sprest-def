@@ -10,6 +10,13 @@ export interface TargetApplicationField {
 }
 
 /*********************************************
+* TargetApplicationFieldCollections
+**********************************************/
+export interface TargetApplicationFieldCollections {
+
+}
+
+/*********************************************
 * TargetApplication
 **********************************************/
 export interface TargetApplication {
@@ -17,4 +24,11 @@ export interface TargetApplication {
 	ContactEmail?: string;
 	FriendlyName?: string;
 	TargetAppType?: number;
+}
+
+/*********************************************
+* TargetApplicationCollections
+**********************************************/
+export interface TargetApplicationCollections {
+
 }

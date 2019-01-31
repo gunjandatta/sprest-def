@@ -150,6 +150,13 @@ export interface MicrofeedDataCollections extends MicrofeedDataProps {
 }
 
 /*********************************************
+* MicrofeedDataCollectionMethods
+**********************************************/
+export interface MicrofeedDataCollectionMethods {
+	deleteAll(): IBaseExecution<any>;
+}
+
+/*********************************************
 * MicrofeedDataQuery
 **********************************************/
 export interface MicrofeedDataQuery extends MicrofeedDataProps {
@@ -242,6 +249,13 @@ export interface MicrofeedPostOptionCollection {
 }
 
 /*********************************************
+* MicrofeedPostOptionCollectionCollections
+**********************************************/
+export interface MicrofeedPostOptionCollectionCollections {
+
+}
+
+/*********************************************
 * IMicrofeedStore
 **********************************************/
 export interface IMicrofeedStore extends MicrofeedStoreCollections,MicrofeedStoreMethods,IBaseQuery<IMicrofeedStoreQuery> {
@@ -296,53 +310,4 @@ export interface MicrofeedStoreMethods {
 	newItem(storeIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedData>;
 	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseExecution<Array<SP.Microfeed.MicrofeedData>>;
 	setPostLikeStatus(accountName?: string, postId?: string, like?: boolean): IBaseExecution<any>;
-}
-
-/*********************************************
-* IMicrofeedDataCollection
-**********************************************/
-export interface IMicrofeedDataCollection extends MicrofeedDataCollectionCollections,MicrofeedDataCollectionMethods,IBaseQuery<IMicrofeedDataCollectionQuery> {
-
-}
-
-/*********************************************
-* IMicrofeedDataCollectionQuery
-**********************************************/
-export interface IMicrofeedDataCollectionQuery extends MicrofeedDataCollectionQuery,MicrofeedDataCollectionMethods {
-
-}
-
-/*********************************************
-* MicrofeedDataCollection
-**********************************************/
-export interface MicrofeedDataCollection extends MicrofeedDataCollectionCollections, MicrofeedDataCollectionMethods {
-
-}
-
-/*********************************************
-* MicrofeedDataCollectionProps
-**********************************************/
-export interface MicrofeedDataCollectionProps {
-
-}
-
-/*********************************************
-* MicrofeedDataCollectionCollections
-**********************************************/
-export interface MicrofeedDataCollectionCollections extends MicrofeedDataCollectionProps {
-
-}
-
-/*********************************************
-* MicrofeedDataCollectionQuery
-**********************************************/
-export interface MicrofeedDataCollectionQuery extends MicrofeedDataCollectionProps {
-
-}
-
-/*********************************************
-* MicrofeedDataCollectionMethods
-**********************************************/
-export interface MicrofeedDataCollectionMethods {
-	deleteAll(): IBaseExecution<any>;
 }

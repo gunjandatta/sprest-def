@@ -8,3 +8,10 @@ export interface SharedWithMeDocumentUser {
 	SipAddress?: string;
 	Title?: string;
 }
+
+/*********************************************
+* SharedWithMeDocumentUserCollections
+**********************************************/
+export interface SharedWithMeDocumentUserCollections {
+
+}

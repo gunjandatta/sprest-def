@@ -19,6 +19,20 @@ export interface ExternalUser {
 }
 
 /*********************************************
+* ExternalUserCollections
+**********************************************/
+export interface ExternalUserCollections extends ExternalUserCollectionMethods {
+
+}
+
+/*********************************************
+* ExternalUserCollectionMethods
+**********************************************/
+export interface ExternalUserCollectionMethods {
+	getById(uniqueId?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+}
+
+/*********************************************
 * IGetExternalUsersResults
 **********************************************/
 export interface IGetExternalUsersResults extends GetExternalUsersResultsCollections,GetExternalUsersResultsMethods,IBaseQuery<IGetExternalUsersResultsQuery> {
@@ -51,8 +65,8 @@ export interface GetExternalUsersResultsProps {
 * GetExternalUsersResultsCollections
 **********************************************/
 export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsProps {
-	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
-	ExternalUserCollection(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollectionMethods;
+	ExternalUserCollection(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollections;
 }
 
 /*********************************************
@@ -80,6 +94,13 @@ export interface GroupCreationParams {
 }
 
 /*********************************************
+* GroupCreationParamsCollections
+**********************************************/
+export interface GroupCreationParamsCollections {
+
+}
+
+/*********************************************
 * ImportProfilePropertiesJobInfo
 **********************************************/
 export interface ImportProfilePropertiesJobInfo {
@@ -89,6 +110,13 @@ export interface ImportProfilePropertiesJobInfo {
 	LogFolderUri?: string;
 	SourceUri?: string;
 	State?: number;
+}
+
+/*********************************************
+* ImportProfilePropertiesJobInfoCollections
+**********************************************/
+export interface ImportProfilePropertiesJobInfoCollections {
+
 }
 
 /*********************************************
@@ -261,10 +289,24 @@ export interface RemoveExternalUsersResults {
 }
 
 /*********************************************
+* RemoveExternalUsersResultsCollections
+**********************************************/
+export interface RemoveExternalUsersResultsCollections {
+
+}
+
+/*********************************************
 * SPOUserSessionRevocationResult
 **********************************************/
 export interface SPOUserSessionRevocationResult {
 	State?: number;
+}
+
+/*********************************************
+* SPOUserSessionRevocationResultCollections
+**********************************************/
+export interface SPOUserSessionRevocationResultCollections {
+
 }
 
 /*********************************************
@@ -277,50 +319,8 @@ export interface ThemeProperties {
 }
 
 /*********************************************
-* IExternalUserCollection
+* ThemePropertiesCollections
 **********************************************/
-export interface IExternalUserCollection extends ExternalUserCollectionCollections,ExternalUserCollectionMethods,IBaseQuery<IExternalUserCollectionQuery> {
+export interface ThemePropertiesCollections {
 
-}
-
-/*********************************************
-* IExternalUserCollectionQuery
-**********************************************/
-export interface IExternalUserCollectionQuery extends ExternalUserCollectionQuery,ExternalUserCollectionMethods {
-
-}
-
-/*********************************************
-* ExternalUserCollection
-**********************************************/
-export interface ExternalUserCollection extends ExternalUserCollectionCollections, ExternalUserCollectionMethods {
-
-}
-
-/*********************************************
-* ExternalUserCollectionProps
-**********************************************/
-export interface ExternalUserCollectionProps {
-
-}
-
-/*********************************************
-* ExternalUserCollectionCollections
-**********************************************/
-export interface ExternalUserCollectionCollections extends ExternalUserCollectionProps {
-
-}
-
-/*********************************************
-* ExternalUserCollectionQuery
-**********************************************/
-export interface ExternalUserCollectionQuery extends ExternalUserCollectionProps {
-
-}
-
-/*********************************************
-* ExternalUserCollectionMethods
-**********************************************/
-export interface ExternalUserCollectionMethods {
-	getById(uniqueId?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
 }

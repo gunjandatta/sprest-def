@@ -9,11 +9,25 @@ export interface SharePointHomeDataCacheCollection {
 }
 
 /*********************************************
+* SharePointHomeDataCacheCollectionCollections
+**********************************************/
+export interface SharePointHomeDataCacheCollectionCollections {
+
+}
+
+/*********************************************
 * SharePointHomeDataCache
 **********************************************/
 export interface SharePointHomeDataCache {
 	Key?: string;
 	Value?: Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheEntry;
+}
+
+/*********************************************
+* SharePointHomeDataCacheCollections
+**********************************************/
+export interface SharePointHomeDataCacheCollections {
+
 }
 
 /*********************************************
@@ -25,6 +39,13 @@ export interface SharePointHomeDataCacheEntry {
 }
 
 /*********************************************
+* SharePointHomeDataCacheEntryCollections
+**********************************************/
+export interface SharePointHomeDataCacheEntryCollections {
+
+}
+
+/*********************************************
 * SharePointHomeDataCacheContext
 **********************************************/
 export interface SharePointHomeDataCacheContext {
@@ -33,6 +54,13 @@ export interface SharePointHomeDataCacheContext {
 	MySiteUrl?: string;
 	Time?: string;
 	Version?: string;
+}
+
+/*********************************************
+* SharePointHomeDataCacheContextCollections
+**********************************************/
+export interface SharePointHomeDataCacheContextCollections {
+
 }
 
 /*********************************************
@@ -64,4 +92,11 @@ export interface SharePointHomePageContext {
 	UserPhotoCdnBaseUrl?: string;
 	VideoChannelUrlTemplate?: string;
 	VideoPlayerUrlTemplate?: string;
+}
+
+/*********************************************
+* SharePointHomePageContextCollections
+**********************************************/
+export interface SharePointHomePageContextCollections {
+
 }

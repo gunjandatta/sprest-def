@@ -13,6 +13,13 @@ export interface CollaborationMailbox {
 }
 
 /*********************************************
+* CollaborationMailboxCollections
+**********************************************/
+export interface CollaborationMailboxCollections {
+
+}
+
+/*********************************************
 * IGroupService
 **********************************************/
 export interface IGroupService extends GroupServiceCollections,GroupServiceMethods,IBaseQuery<IGroupServiceQuery> {
@@ -180,10 +187,24 @@ export interface CommunityModeration {
 }
 
 /*********************************************
+* CommunityModerationCollections
+**********************************************/
+export interface CommunityModerationCollections {
+
+}
+
+/*********************************************
 * SuiteNavData
 **********************************************/
 export interface SuiteNavData {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SuiteNavDataCollections
+**********************************************/
+export interface SuiteNavDataCollections {
+
 }
 
 /*********************************************
@@ -244,6 +265,13 @@ export interface SharePointHomeServiceContext {
 	HomePageContext?: Microsoft.SharePoint.Portal.Home.SharePointHomePageContext;
 	Payload?: string;
 	Urls?: Array<string>;
+}
+
+/*********************************************
+* SharePointHomeServiceContextCollections
+**********************************************/
+export interface SharePointHomeServiceContextCollections {
+
 }
 
 /*********************************************
@@ -352,4 +380,11 @@ export interface SPSiteManagerMethods {
 **********************************************/
 export interface MySiteRecommendations {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MySiteRecommendationsCollections
+**********************************************/
+export interface MySiteRecommendationsCollections {
+
 }

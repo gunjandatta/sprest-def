@@ -61,6 +61,13 @@ export interface QueryPersonalizationData {
 }
 
 /*********************************************
+* QueryPersonalizationDataCollections
+**********************************************/
+export interface QueryPersonalizationDataCollections {
+
+}
+
+/*********************************************
 * IRankingLabeling
 **********************************************/
 export interface IRankingLabeling extends RankingLabelingCollections,RankingLabelingMethods,IBaseQuery<IRankingLabelingQuery> {

@@ -8,3 +8,10 @@ export interface SPAppPrincipalInfo {
 	Name?: string;
 	Title?: string;
 }
+
+/*********************************************
+* SPAppPrincipalInfoCollections
+**********************************************/
+export interface SPAppPrincipalInfoCollections {
+
+}

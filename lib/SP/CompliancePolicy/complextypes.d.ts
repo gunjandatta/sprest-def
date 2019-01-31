@@ -10,6 +10,13 @@ export interface PendingReviewItemsStatistics {
 }
 
 /*********************************************
+* PendingReviewItemsStatisticsCollections
+**********************************************/
+export interface PendingReviewItemsStatisticsCollections {
+
+}
+
+/*********************************************
 * ComplianceTag
 **********************************************/
 export interface ComplianceTag {
@@ -36,10 +43,24 @@ export interface ComplianceTag {
 }
 
 /*********************************************
+* ComplianceTagCollections
+**********************************************/
+export interface ComplianceTagCollections {
+
+}
+
+/*********************************************
 * DlpClassificationResult
 **********************************************/
 export interface DlpClassificationResult {
 	ClassificationId?: string;
 	Confidence?: number;
 	Count?: number;
+}
+
+/*********************************************
+* DlpClassificationResultCollections
+**********************************************/
+export interface DlpClassificationResultCollections {
+
 }

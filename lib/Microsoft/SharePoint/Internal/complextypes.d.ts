@@ -9,3 +9,10 @@ export interface TrackedItemUpdatesRequest {
 	UserEmail?: string;
 	UserLogin?: string;
 }
+
+/*********************************************
+* TrackedItemUpdatesRequestCollections
+**********************************************/
+export interface TrackedItemUpdatesRequestCollections {
+
+}

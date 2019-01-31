@@ -10,10 +10,24 @@ export interface SiteDesignPrincipal {
 }
 
 /*********************************************
+* SiteDesignPrincipalCollections
+**********************************************/
+export interface SiteDesignPrincipalCollections {
+
+}
+
+/*********************************************
 * RecipeUtility
 **********************************************/
 export interface RecipeUtility {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RecipeUtilityCollections
+**********************************************/
+export interface RecipeUtilityCollections {
+
 }
 
 /*********************************************
@@ -30,8 +44,22 @@ export interface SiteDesignRun {
 }
 
 /*********************************************
+* SiteDesignRunCollections
+**********************************************/
+export interface SiteDesignRunCollections {
+
+}
+
+/*********************************************
 * SiteScriptUtility
 **********************************************/
 export interface SiteScriptUtility {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteScriptUtilityCollections
+**********************************************/
+export interface SiteScriptUtilityCollections {
+
 }

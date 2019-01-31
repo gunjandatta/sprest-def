@@ -11,6 +11,13 @@ export interface AlternateIdData {
 }
 
 /*********************************************
+* AlternateIdDataCollections
+**********************************************/
+export interface AlternateIdDataCollections {
+
+}
+
+/*********************************************
 * DirectoryObjectChanges
 **********************************************/
 export interface DirectoryObjectChanges {
@@ -19,6 +26,13 @@ export interface DirectoryObjectChanges {
 	Id?: any;
 	LinkChanges?: Array<SP.Directory.Provider.LinkChange>;
 	PropertyChanges?: Array<SP.Directory.Provider.PropertyChange>;
+}
+
+/*********************************************
+* DirectoryObjectChangesCollections
+**********************************************/
+export interface DirectoryObjectChangesCollections {
+
 }
 
 /*********************************************
@@ -31,6 +45,13 @@ export interface LinkChange {
 }
 
 /*********************************************
+* LinkChangeCollections
+**********************************************/
+export interface LinkChangeCollections {
+
+}
+
+/*********************************************
 * LinkTarget
 **********************************************/
 export interface LinkTarget {
@@ -40,12 +61,26 @@ export interface LinkTarget {
 }
 
 /*********************************************
+* LinkTargetCollections
+**********************************************/
+export interface LinkTargetCollections {
+
+}
+
+/*********************************************
 * PropertyChange
 **********************************************/
 export interface PropertyChange {
 	Name?: string;
 	Value?: string;
 	Values?: Array<string>;
+}
+
+/*********************************************
+* PropertyChangeCollections
+**********************************************/
+export interface PropertyChangeCollections {
+
 }
 
 /*********************************************
@@ -65,6 +100,13 @@ export interface DirectoryObjectData {
 }
 
 /*********************************************
+* DirectoryObjectDataCollections
+**********************************************/
+export interface DirectoryObjectDataCollections {
+
+}
+
+/*********************************************
 * SchemaData
 **********************************************/
 export interface SchemaData {
@@ -76,10 +118,24 @@ export interface SchemaData {
 }
 
 /*********************************************
+* SchemaDataCollections
+**********************************************/
+export interface SchemaDataCollections {
+
+}
+
+/*********************************************
 * ExtendedAttributeData
 **********************************************/
 export interface ExtendedAttributeData extends SP.Directory.Provider.SchemaData {
 	Value?: any;
+}
+
+/*********************************************
+* ExtendedAttributeDataCollections
+**********************************************/
+export interface ExtendedAttributeDataCollections {
+
 }
 
 /*********************************************
@@ -90,10 +146,24 @@ export interface PropertyCollectionData extends SP.Directory.Provider.SchemaData
 }
 
 /*********************************************
+* PropertyCollectionDataCollections
+**********************************************/
+export interface PropertyCollectionDataCollections {
+
+}
+
+/*********************************************
 * PropertyData
 **********************************************/
 export interface PropertyData extends SP.Directory.Provider.SchemaData {
 	Value?: any;
+}
+
+/*********************************************
+* PropertyDataCollections
+**********************************************/
+export interface PropertyDataCollections {
+
 }
 
 /*********************************************
@@ -108,10 +178,24 @@ export interface RelationData {
 }
 
 /*********************************************
+* RelationDataCollections
+**********************************************/
+export interface RelationDataCollections {
+
+}
+
+/*********************************************
 * RelationSetData
 **********************************************/
 export interface RelationSetData extends SP.Directory.Provider.SchemaData {
 	TotalCount?: number;
+}
+
+/*********************************************
+* RelationSetDataCollections
+**********************************************/
+export interface RelationSetDataCollections {
+
 }
 
 /*********************************************
@@ -126,9 +210,23 @@ export interface ResourceData extends SP.Directory.Provider.SchemaData {
 }
 
 /*********************************************
+* ResourceDataCollections
+**********************************************/
+export interface ResourceDataCollections {
+
+}
+
+/*********************************************
 * StateData
 **********************************************/
 export interface StateData {
 	AdapterName?: string;
 	Value?: any;
+}
+
+/*********************************************
+* StateDataCollections
+**********************************************/
+export interface StateDataCollections {
+
 }

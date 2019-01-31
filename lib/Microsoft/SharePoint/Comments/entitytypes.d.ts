@@ -51,8 +51,15 @@ export interface commentProps {
 export interface commentCollections extends commentProps {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
 	likedBy(id: string | number): IBaseExecution<Microsoft.SharePoint.Likes.userEntity>;
-	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment>;
-	replies(id: string | number): IBaseExecution<Microsoft.SharePoint.Comments.comment>;
+	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollectionMethods;
+	replies(id: string | number): IBaseExecution<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollections;
+}
+
+/*********************************************
+* commentCollectionMethods
+**********************************************/
+export interface commentCollectionMethods {
+	deleteAll(): IBaseExecution<boolean>;
 }
 
 /*********************************************
@@ -76,4 +83,11 @@ export interface commentMethods {
 **********************************************/
 export interface CommentsAPI {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* CommentsAPICollections
+**********************************************/
+export interface CommentsAPICollections {
+
 }

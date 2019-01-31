@@ -11,6 +11,13 @@ export interface CrossGeoSyncUserDataBatch {
 }
 
 /*********************************************
+* CrossGeoSyncUserDataBatchCollections
+**********************************************/
+export interface CrossGeoSyncUserDataBatchCollections {
+
+}
+
+/*********************************************
 * CrossGeoSyncUserProperty
 **********************************************/
 export interface CrossGeoSyncUserProperty {
@@ -20,6 +27,13 @@ export interface CrossGeoSyncUserProperty {
 	PropertyId?: number;
 	PropertyVal?: string;
 	SecondaryVal?: string;
+}
+
+/*********************************************
+* CrossGeoSyncUserPropertyCollections
+**********************************************/
+export interface CrossGeoSyncUserPropertyCollections {
+
 }
 
 /*********************************************
@@ -49,6 +63,13 @@ export interface FollowedItem {
 }
 
 /*********************************************
+* FollowedItemCollections
+**********************************************/
+export interface FollowedItemCollections {
+
+}
+
+/*********************************************
 * FollowResult
 **********************************************/
 export interface FollowResult {
@@ -57,11 +78,25 @@ export interface FollowResult {
 }
 
 /*********************************************
+* FollowResultCollections
+**********************************************/
+export interface FollowResultCollections {
+
+}
+
+/*********************************************
 * HashTag
 **********************************************/
 export interface HashTag {
 	Name?: string;
 	UseCount?: number;
+}
+
+/*********************************************
+* HashTagCollections
+**********************************************/
+export interface HashTagCollections {
+
 }
 
 /*********************************************
@@ -75,4 +110,11 @@ export interface PersonalCacheItem {
 	ListItemId?: number;
 	ListItemUniqueId?: string;
 	ModifiedTimeUtc?: any;
+}
+
+/*********************************************
+* PersonalCacheItemCollections
+**********************************************/
+export interface PersonalCacheItemCollections {
+
 }

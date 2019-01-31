@@ -11,3 +11,10 @@ export interface MicroServiceWorkItemProperties {
 	MicroServiceName?: string;
 	RequestType?: number;
 }
+
+/*********************************************
+* MicroServiceWorkItemPropertiesCollections
+**********************************************/
+export interface MicroServiceWorkItemPropertiesCollections {
+
+}

@@ -53,6 +53,13 @@ export interface WorkflowDefinitionCollections extends WorkflowDefinitionProps {
 }
 
 /*********************************************
+* WorkflowDefinitionCollectionMethods
+**********************************************/
+export interface WorkflowDefinitionCollectionMethods {
+	sort(): IBaseExecution<any>;
+}
+
+/*********************************************
 * WorkflowDefinitionQuery
 **********************************************/
 export interface WorkflowDefinitionQuery extends WorkflowDefinitionProps {
@@ -139,6 +146,13 @@ export interface WorkflowInstance {
 	Status?: number;
 	UserStatus?: string;
 	WorkflowSubscriptionId?: any;
+}
+
+/*********************************************
+* WorkflowInstanceCollections
+**********************************************/
+export interface WorkflowInstanceCollections {
+
 }
 
 /*********************************************
@@ -345,6 +359,13 @@ export interface WorkflowSubscriptionProps {
 **********************************************/
 export interface WorkflowSubscriptionCollections extends WorkflowSubscriptionProps {
 
+}
+
+/*********************************************
+* WorkflowSubscriptionCollectionMethods
+**********************************************/
+export interface WorkflowSubscriptionCollectionMethods {
+	sort(): IBaseExecution<any>;
 }
 
 /*********************************************

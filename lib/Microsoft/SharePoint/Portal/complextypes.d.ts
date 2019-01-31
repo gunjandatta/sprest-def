@@ -14,6 +14,13 @@ export interface CollaborationMailboxResponse {
 }
 
 /*********************************************
+* CollaborationMailboxResponseCollections
+**********************************************/
+export interface CollaborationMailboxResponseCollections {
+
+}
+
+/*********************************************
 * GroupCreationContext
 **********************************************/
 export interface GroupCreationContext {
@@ -31,6 +38,13 @@ export interface GroupCreationContext {
 }
 
 /*********************************************
+* GroupCreationContextCollections
+**********************************************/
+export interface GroupCreationContextCollections {
+
+}
+
+/*********************************************
 * GroupCreationParams
 **********************************************/
 export interface GroupCreationParams {
@@ -38,6 +52,13 @@ export interface GroupCreationParams {
 	CreationOptions?: Array<string>;
 	Description?: string;
 	Owners?: Array<string>;
+}
+
+/*********************************************
+* GroupCreationParamsCollections
+**********************************************/
+export interface GroupCreationParamsCollections {
+
 }
 
 /*********************************************
@@ -54,6 +75,13 @@ export interface GroupSiteConversionInfo {
 }
 
 /*********************************************
+* GroupSiteConversionInfoCollections
+**********************************************/
+export interface GroupSiteConversionInfoCollections {
+
+}
+
+/*********************************************
 * GroupSiteInfo
 **********************************************/
 export interface GroupSiteInfo {
@@ -62,6 +90,13 @@ export interface GroupSiteInfo {
 	GroupId?: any;
 	SiteStatus?: number;
 	SiteUrl?: string;
+}
+
+/*********************************************
+* GroupSiteInfoCollections
+**********************************************/
+export interface GroupSiteInfoCollections {
+
 }
 
 /*********************************************
@@ -77,10 +112,24 @@ export interface LinkedSiteContract {
 }
 
 /*********************************************
+* LinkedSiteContractCollections
+**********************************************/
+export interface LinkedSiteContractCollections {
+
+}
+
+/*********************************************
 * LinkedSitesListContract
 **********************************************/
 export interface LinkedSitesListContract {
 	LinkedSites?: Array<Microsoft.SharePoint.Portal.LinkedSiteContract>;
+}
+
+/*********************************************
+* LinkedSitesListContractCollections
+**********************************************/
+export interface LinkedSitesListContractCollections {
+
 }
 
 /*********************************************
@@ -89,6 +138,13 @@ export interface LinkedSitesListContract {
 export interface SPSiteCreationResponse {
 	SiteStatus?: number;
 	SiteUrl?: string;
+}
+
+/*********************************************
+* SPSiteCreationResponseCollections
+**********************************************/
+export interface SPSiteCreationResponseCollections {
+
 }
 
 /*********************************************
@@ -108,4 +164,11 @@ export interface SPSiteCreationRequest {
 	Url?: string;
 	WebTemplate?: string;
 	WebTemplateExtensionId?: any;
+}
+
+/*********************************************
+* SPSiteCreationRequestCollections
+**********************************************/
+export interface SPSiteCreationRequestCollections {
+
 }

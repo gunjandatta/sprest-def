@@ -15,3 +15,10 @@ export interface ConnectionSettings {
 	SSOProviderImplId?: string;
 	Target?: string;
 }
+
+/*********************************************
+* ConnectionSettingsCollections
+**********************************************/
+export interface ConnectionSettingsCollections {
+
+}

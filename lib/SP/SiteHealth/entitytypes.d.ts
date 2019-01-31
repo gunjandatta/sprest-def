@@ -10,3 +10,10 @@ export interface SiteHealthSummary {
 	PassedCount?: number;
 	Results?: Array<SP.SiteHealth.SiteHealthResult>;
 }
+
+/*********************************************
+* SiteHealthSummaryCollections
+**********************************************/
+export interface SiteHealthSummaryCollections {
+
+}

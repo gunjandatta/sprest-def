@@ -36,8 +36,8 @@ export interface SiteCollectionCorporateCatalogAccessorProps {
 * SiteCollectionCorporateCatalogAccessorCollections
 **********************************************/
 export interface SiteCollectionCorporateCatalogAccessorCollections extends SiteCollectionCorporateCatalogAccessorProps {
-	AvailableApps(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
-	AvailableApps(id: string | number): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
+	AvailableApps(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
+	AvailableApps(id: string | number): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections;
 }
 
 /*********************************************
@@ -97,6 +97,13 @@ export interface CorporateCatalogAppMetadataCollections extends CorporateCatalog
 }
 
 /*********************************************
+* CorporateCatalogAppMetadataCollectionMethods
+**********************************************/
+export interface CorporateCatalogAppMetadataCollectionMethods {
+	getById(id?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
+}
+
+/*********************************************
 * CorporateCatalogAppMetadataQuery
 **********************************************/
 export interface CorporateCatalogAppMetadataQuery extends CorporateCatalogAppMetadataProps {
@@ -147,10 +154,10 @@ export interface TenantCorporateCatalogAccessorProps {
 * TenantCorporateCatalogAccessorCollections
 **********************************************/
 export interface TenantCorporateCatalogAccessorCollections extends TenantCorporateCatalogAccessorProps {
-	AvailableApps(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
-	AvailableApps(id: string | number): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
-	SiteCollectionAppCatalogsSites(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
-	SiteCollectionAppCatalogsSites(id: string | number): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	AvailableApps(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
+	AvailableApps(id: string | number): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections;
+	SiteCollectionAppCatalogsSites(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollectionMethods;
+	SiteCollectionAppCatalogsSites(id: string | number): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollections;
 }
 
 /*********************************************
@@ -177,10 +184,34 @@ export interface SiteCollectionAppCatalogAllowedItem {
 }
 
 /*********************************************
+* SiteCollectionAppCatalogAllowedItemCollections
+**********************************************/
+export interface SiteCollectionAppCatalogAllowedItemCollections extends SiteCollectionAppCatalogAllowedItemCollectionMethods {
+
+}
+
+/*********************************************
+* SiteCollectionAppCatalogAllowedItemCollectionMethods
+**********************************************/
+export interface SiteCollectionAppCatalogAllowedItemCollectionMethods {
+	add(absolutePath?: string | any): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	getByAbsoluteUrl(absolutePath?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	remove(absolutePath?: string): IBaseExecution<any>;
+	removeById(siteId?: any): IBaseExecution<any>;
+}
+
+/*********************************************
 * SPCorporateCuratedGallerySettingsBase
 **********************************************/
 export interface SPCorporateCuratedGallerySettingsBase {
 	HostSiteFullUrl?: string;
+}
+
+/*********************************************
+* SPCorporateCuratedGallerySettingsBaseCollections
+**********************************************/
+export interface SPCorporateCuratedGallerySettingsBaseCollections {
+
 }
 
 /*********************************************
@@ -191,102 +222,8 @@ export interface SPCorporateCuratedGallerySettingsFactory {
 }
 
 /*********************************************
-* ICorporateCatalogAppMetadataCollection
+* SPCorporateCuratedGallerySettingsFactoryCollections
 **********************************************/
-export interface ICorporateCatalogAppMetadataCollection extends CorporateCatalogAppMetadataCollectionCollections,CorporateCatalogAppMetadataCollectionMethods,IBaseQuery<ICorporateCatalogAppMetadataCollectionQuery> {
+export interface SPCorporateCuratedGallerySettingsFactoryCollections {
 
-}
-
-/*********************************************
-* ICorporateCatalogAppMetadataCollectionQuery
-**********************************************/
-export interface ICorporateCatalogAppMetadataCollectionQuery extends CorporateCatalogAppMetadataCollectionQuery,CorporateCatalogAppMetadataCollectionMethods {
-
-}
-
-/*********************************************
-* CorporateCatalogAppMetadataCollection
-**********************************************/
-export interface CorporateCatalogAppMetadataCollection extends CorporateCatalogAppMetadataCollectionCollections, CorporateCatalogAppMetadataCollectionMethods {
-
-}
-
-/*********************************************
-* CorporateCatalogAppMetadataCollectionProps
-**********************************************/
-export interface CorporateCatalogAppMetadataCollectionProps {
-
-}
-
-/*********************************************
-* CorporateCatalogAppMetadataCollectionCollections
-**********************************************/
-export interface CorporateCatalogAppMetadataCollectionCollections extends CorporateCatalogAppMetadataCollectionProps {
-
-}
-
-/*********************************************
-* CorporateCatalogAppMetadataCollectionQuery
-**********************************************/
-export interface CorporateCatalogAppMetadataCollectionQuery extends CorporateCatalogAppMetadataCollectionProps {
-
-}
-
-/*********************************************
-* CorporateCatalogAppMetadataCollectionMethods
-**********************************************/
-export interface CorporateCatalogAppMetadataCollectionMethods {
-	getById(id?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
-}
-
-/*********************************************
-* ISiteCollectionAppCatalogAllowedItemCollection
-**********************************************/
-export interface ISiteCollectionAppCatalogAllowedItemCollection extends SiteCollectionAppCatalogAllowedItemCollectionCollections,SiteCollectionAppCatalogAllowedItemCollectionMethods,IBaseQuery<ISiteCollectionAppCatalogAllowedItemCollectionQuery> {
-
-}
-
-/*********************************************
-* ISiteCollectionAppCatalogAllowedItemCollectionQuery
-**********************************************/
-export interface ISiteCollectionAppCatalogAllowedItemCollectionQuery extends SiteCollectionAppCatalogAllowedItemCollectionQuery,SiteCollectionAppCatalogAllowedItemCollectionMethods {
-
-}
-
-/*********************************************
-* SiteCollectionAppCatalogAllowedItemCollection
-**********************************************/
-export interface SiteCollectionAppCatalogAllowedItemCollection extends SiteCollectionAppCatalogAllowedItemCollectionCollections, SiteCollectionAppCatalogAllowedItemCollectionMethods {
-
-}
-
-/*********************************************
-* SiteCollectionAppCatalogAllowedItemCollectionProps
-**********************************************/
-export interface SiteCollectionAppCatalogAllowedItemCollectionProps {
-
-}
-
-/*********************************************
-* SiteCollectionAppCatalogAllowedItemCollectionCollections
-**********************************************/
-export interface SiteCollectionAppCatalogAllowedItemCollectionCollections extends SiteCollectionAppCatalogAllowedItemCollectionProps {
-
-}
-
-/*********************************************
-* SiteCollectionAppCatalogAllowedItemCollectionQuery
-**********************************************/
-export interface SiteCollectionAppCatalogAllowedItemCollectionQuery extends SiteCollectionAppCatalogAllowedItemCollectionProps {
-
-}
-
-/*********************************************
-* SiteCollectionAppCatalogAllowedItemCollectionMethods
-**********************************************/
-export interface SiteCollectionAppCatalogAllowedItemCollectionMethods {
-	add(absolutePath?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
-	getByAbsoluteUrl(absolutePath?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
-	remove(absolutePath?: string): IBaseExecution<any>;
-	removeById(siteId?: any): IBaseExecution<any>;
 }

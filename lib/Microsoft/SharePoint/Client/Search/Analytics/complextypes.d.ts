@@ -13,12 +13,26 @@ export interface AnalyticsAction {
 }
 
 /*********************************************
+* AnalyticsActionCollections
+**********************************************/
+export interface AnalyticsActionCollections {
+
+}
+
+/*********************************************
 * AnalyticsActor
 **********************************************/
 export interface AnalyticsActor {
 	Id?: string;
 	Properties?: Array<SP.KeyValue>;
 	TenantId?: any;
+}
+
+/*********************************************
+* AnalyticsActorCollections
+**********************************************/
+export interface AnalyticsActorCollections {
+
 }
 
 /*********************************************
@@ -30,6 +44,13 @@ export interface AnalyticsItem {
 }
 
 /*********************************************
+* AnalyticsItemCollections
+**********************************************/
+export interface AnalyticsItemCollections {
+
+}
+
+/*********************************************
 * AnalyticsSignal
 **********************************************/
 export interface AnalyticsSignal {
@@ -37,4 +58,11 @@ export interface AnalyticsSignal {
 	Actor?: Microsoft.SharePoint.Client.Search.Analytics.AnalyticsActor;
 	Item?: Microsoft.SharePoint.Client.Search.Analytics.AnalyticsItem;
 	Source?: string;
+}
+
+/*********************************************
+* AnalyticsSignalCollections
+**********************************************/
+export interface AnalyticsSignalCollections {
+
 }

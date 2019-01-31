@@ -8,3 +8,10 @@ export interface TaxonomyFieldValue {
 	TermGuid?: string;
 	WssId?: number;
 }
+
+/*********************************************
+* TaxonomyFieldValueCollections
+**********************************************/
+export interface TaxonomyFieldValueCollections {
+
+}

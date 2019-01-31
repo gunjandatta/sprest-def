@@ -8,3 +8,10 @@ export interface UserInformation {
 	Name?: string;
 	Puid?: string;
 }
+
+/*********************************************
+* UserInformationCollections
+**********************************************/
+export interface UserInformationCollections {
+
+}

@@ -15,11 +15,25 @@ export interface EmailProperties {
 }
 
 /*********************************************
+* EmailPropertiesCollections
+**********************************************/
+export interface EmailPropertiesCollections {
+
+}
+
+/*********************************************
 * JsonTheme
 **********************************************/
 export interface JsonTheme {
 	name?: string;
 	themeJson?: string;
+}
+
+/*********************************************
+* JsonThemeCollections
+**********************************************/
+export interface JsonThemeCollections {
+
 }
 
 /*********************************************
@@ -37,6 +51,13 @@ export interface NewsItemMetaData {
 }
 
 /*********************************************
+* NewsItemMetaDataCollections
+**********************************************/
+export interface NewsItemMetaDataCollections {
+
+}
+
+/*********************************************
 * NewsItem
 **********************************************/
 export interface NewsItem extends SP.Utilities.NewsItemMetaData {
@@ -46,6 +67,13 @@ export interface NewsItem extends SP.Utilities.NewsItemMetaData {
 	pictureAltText?: string;
 	pictureUrl?: string;
 	properties?: string;
+}
+
+/*********************************************
+* NewsItemCollections
+**********************************************/
+export interface NewsItemCollections {
+
 }
 
 /*********************************************
@@ -64,11 +92,25 @@ export interface PrincipalInfo {
 }
 
 /*********************************************
+* PrincipalInfoCollections
+**********************************************/
+export interface PrincipalInfoCollections {
+
+}
+
+/*********************************************
 * WebAppUrlsByAction
 **********************************************/
 export interface WebAppUrlsByAction {
 	Action?: string;
 	UrlsByExt?: Array<SP.Utilities.WebAppExtUrlPair>;
+}
+
+/*********************************************
+* WebAppUrlsByActionCollections
+**********************************************/
+export interface WebAppUrlsByActionCollections {
+
 }
 
 /*********************************************
@@ -80,11 +122,25 @@ export interface WebAppExtUrlPair {
 }
 
 /*********************************************
+* WebAppExtUrlPairCollections
+**********************************************/
+export interface WebAppExtUrlPairCollections {
+
+}
+
+/*********************************************
 * WikiPageCreationInformation
 **********************************************/
 export interface WikiPageCreationInformation {
 	ServerRelativeUrl?: string;
 	WikiHtmlContent?: string;
+}
+
+/*********************************************
+* WikiPageCreationInformationCollections
+**********************************************/
+export interface WikiPageCreationInformationCollections {
+
 }
 
 /*********************************************
@@ -97,9 +153,23 @@ export interface WopiWebAppProperties {
 }
 
 /*********************************************
+* WopiWebAppPropertiesCollections
+**********************************************/
+export interface WopiWebAppPropertiesCollections {
+
+}
+
+/*********************************************
 * ThemingOptions
 **********************************************/
 export interface ThemingOptions {
 	hideDefaultThemes?: boolean;
 	themePreviews?: Array<SP.Utilities.JsonTheme>;
+}
+
+/*********************************************
+* ThemingOptionsCollections
+**********************************************/
+export interface ThemingOptionsCollections {
+
 }

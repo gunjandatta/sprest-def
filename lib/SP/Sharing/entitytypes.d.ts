@@ -43,10 +43,24 @@ export interface SharedDocumentInfo {
 }
 
 /*********************************************
+* SharedDocumentInfoCollections
+**********************************************/
+export interface SharedDocumentInfoCollections {
+
+}
+
+/*********************************************
 * PersonalWeb
 **********************************************/
 export interface PersonalWeb {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PersonalWebCollections
+**********************************************/
+export interface PersonalWebCollections {
+
 }
 
 /*********************************************
@@ -81,10 +95,24 @@ export interface SharingInformation {
 }
 
 /*********************************************
+* SharingInformationCollections
+**********************************************/
+export interface SharingInformationCollections {
+
+}
+
+/*********************************************
 * DocumentSharingManager
 **********************************************/
 export interface DocumentSharingManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DocumentSharingManagerCollections
+**********************************************/
+export interface DocumentSharingManagerCollections {
+
 }
 
 /*********************************************
@@ -95,6 +123,13 @@ export interface SecurableObjectExtensions {
 }
 
 /*********************************************
+* SecurableObjectExtensionsCollections
+**********************************************/
+export interface SecurableObjectExtensionsCollections {
+
+}
+
+/*********************************************
 * SiteSharingReportHelper
 **********************************************/
 export interface SiteSharingReportHelper {
@@ -102,8 +137,22 @@ export interface SiteSharingReportHelper {
 }
 
 /*********************************************
+* SiteSharingReportHelperCollections
+**********************************************/
+export interface SiteSharingReportHelperCollections {
+
+}
+
+/*********************************************
 * WebSharingManager
 **********************************************/
 export interface WebSharingManager {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* WebSharingManagerCollections
+**********************************************/
+export interface WebSharingManagerCollections {
+
 }

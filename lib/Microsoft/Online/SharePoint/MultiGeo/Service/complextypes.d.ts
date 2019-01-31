@@ -10,6 +10,13 @@ export interface GeoCredentials {
 }
 
 /*********************************************
+* GeoCredentialsCollections
+**********************************************/
+export interface GeoCredentialsCollections {
+
+}
+
+/*********************************************
 * GeoAdministratorEntityData
 **********************************************/
 export interface GeoAdministratorEntityData {
@@ -20,9 +27,23 @@ export interface GeoAdministratorEntityData {
 }
 
 /*********************************************
+* GeoAdministratorEntityDataCollections
+**********************************************/
+export interface GeoAdministratorEntityDataCollections {
+
+}
+
+/*********************************************
 * GeoMoveTenantPropertyCompatibilityCheck
 **********************************************/
 export interface GeoMoveTenantPropertyCompatibilityCheck {
 	GeoMoveTenantPropertyCheckResult?: number;
 	PropertyName?: string;
+}
+
+/*********************************************
+* GeoMoveTenantPropertyCompatibilityCheckCollections
+**********************************************/
+export interface GeoMoveTenantPropertyCompatibilityCheckCollections {
+
 }
