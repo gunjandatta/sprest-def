@@ -141,7 +141,7 @@ export interface ThemeManagerProps {
 * ThemeManagerPropMethods
 **********************************************/
 export interface ThemeManagerPropMethods {
-	ContextThemeManager(): IBaseExecution<SP.Utilities.ThemeManager> & SP.Utilities.ThemeManagerCollections & SP.Utilities.ThemeManagerMethods;
+	ContextThemeManager(): IBaseQuery<SP.Utilities.ThemeManager, SP.Utilities.ThemeManagerQuery> & SP.Utilities.ThemeManagerCollections & SP.Utilities.ThemeManagerMethods;
 }
 
 /*********************************************

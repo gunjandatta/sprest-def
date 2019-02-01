@@ -190,7 +190,7 @@ export interface CustomFieldProps {
 **********************************************/
 export interface CustomFieldPropMethods {
 	EntityType(): IBaseExecution<PS.EntityType> & PS.EntityTypeCollections;
-	LookupTable(): IBaseExecution<PS.LookupTable> & PS.LookupTableCollections & PS.LookupTableMethods;
+	LookupTable(): IBaseQuery<PS.LookupTable, PS.LookupTableQuery> & PS.LookupTableCollections & PS.LookupTableMethods;
 }
 
 /*********************************************
@@ -425,7 +425,7 @@ export interface CalendarExceptionProps {
 * CalendarExceptionPropMethods
 **********************************************/
 export interface CalendarExceptionPropMethods {
-	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections & PS.CalendarMethods;
+	Calendar(): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
 }
 
 /*********************************************
@@ -657,10 +657,10 @@ export interface DraftAssignmentProps {
 * DraftAssignmentPropMethods
 **********************************************/
 export interface DraftAssignmentPropMethods {
-	Owner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	Parent(): IBaseExecution<PS.DraftAssignment> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
-	Resource(): IBaseExecution<PS.DraftProjectResource> & PS.DraftProjectResourceCollections & PS.DraftProjectResourceMethods;
-	Task(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections & PS.DraftTaskMethods;
+	Owner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	Parent(): IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentQuery> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
+	Resource(): IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceQuery> & PS.DraftProjectResourceCollections & PS.DraftProjectResourceMethods;
+	Task(): IBaseQuery<PS.DraftTask, PS.DraftTaskQuery> & PS.DraftTaskCollections & PS.DraftTaskMethods;
 }
 
 /*********************************************
@@ -789,7 +789,7 @@ export interface ProjectResourceProps {
 * ProjectResourcePropMethods
 **********************************************/
 export interface ProjectResourcePropMethods {
-	EnterpriseResource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
+	EnterpriseResource(): IBaseQuery<PS.EnterpriseResource, PS.EnterpriseResourceQuery> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
 }
 
 /*********************************************
@@ -873,11 +873,11 @@ export interface EnterpriseResourceProps {
 * EnterpriseResourcePropMethods
 **********************************************/
 export interface EnterpriseResourcePropMethods {
-	BaseCalendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections & PS.CalendarMethods;
-	DefaultAssignmentOwner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	Self(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
-	TimesheetManager(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	User(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	BaseCalendar(): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
+	DefaultAssignmentOwner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	Self(): IBaseQuery<PS.EnterpriseResource, PS.EnterpriseResourceQuery> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
+	TimesheetManager(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	User(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -997,9 +997,9 @@ export interface StatusAssignmentProps {
 * StatusAssignmentPropMethods
 **********************************************/
 export interface StatusAssignmentPropMethods {
-	Project(): IBaseExecution<PS.PublishedProject> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
-	Resource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
-	Task(): IBaseExecution<PS.StatusTask> & PS.StatusTaskCollections;
+	Project(): IBaseQuery<PS.PublishedProject, PS.PublishedProjectQuery> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
+	Resource(): IBaseQuery<PS.EnterpriseResource, PS.EnterpriseResourceQuery> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
+	Task(): IBaseQuery<PS.StatusTask, PS.StatusTaskQuery> & PS.StatusTaskCollections;
 }
 
 /*********************************************
@@ -1142,11 +1142,11 @@ export interface ProjectProps {
 * ProjectPropMethods
 **********************************************/
 export interface ProjectPropMethods {
-	CheckedOutBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	EnterpriseProjectType(): IBaseExecution<PS.EnterpriseProjectType> & PS.EnterpriseProjectTypeCollections & PS.EnterpriseProjectTypeMethods;
-	Phase(): IBaseExecution<PS.Phase> & PS.PhaseCollections & PS.PhaseMethods;
+	CheckedOutBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	EnterpriseProjectType(): IBaseQuery<PS.EnterpriseProjectType, PS.EnterpriseProjectTypeQuery> & PS.EnterpriseProjectTypeCollections & PS.EnterpriseProjectTypeMethods;
+	Phase(): IBaseQuery<PS.Phase, PS.PhaseQuery> & PS.PhaseCollections & PS.PhaseMethods;
 	ProjectSummaryTask(): IBaseExecution<PS.ProjectSummaryTask> & PS.ProjectSummaryTaskCollections;
-	Stage(): IBaseExecution<PS.Stage> & PS.StageCollections & PS.StageMethods;
+	Stage(): IBaseQuery<PS.Stage, PS.StageQuery> & PS.StageCollections & PS.StageMethods;
 }
 
 /*********************************************
@@ -1227,11 +1227,11 @@ export interface EngagementProps {
 * EngagementPropMethods
 **********************************************/
 export interface EngagementPropMethods {
-	ModifiedBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	Project(): IBaseExecution<PS.Project> & PS.ProjectCollections & PS.ProjectMethods;
-	Resource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
-	ReviewedBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	SubmittedBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	ModifiedBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	Project(): IBaseQuery<PS.Project, PS.ProjectQuery> & PS.ProjectCollections & PS.ProjectMethods;
+	Resource(): IBaseQuery<PS.EnterpriseResource, PS.EnterpriseResourceQuery> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
+	ReviewedBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	SubmittedBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -1608,8 +1608,8 @@ export interface StageProps {
 * StagePropMethods
 **********************************************/
 export interface StagePropMethods {
-	Phase(): IBaseExecution<PS.Phase> & PS.PhaseCollections & PS.PhaseMethods;
-	WorkflowStatusPage(): IBaseExecution<PS.ProjectDetailPage> & PS.ProjectDetailPageCollections;
+	Phase(): IBaseQuery<PS.Phase, PS.PhaseQuery> & PS.PhaseCollections & PS.PhaseMethods;
+	WorkflowStatusPage(): IBaseQuery<PS.ProjectDetailPage, PS.ProjectDetailPageQuery> & PS.ProjectDetailPageCollections;
 }
 
 /*********************************************
@@ -1684,7 +1684,7 @@ export interface StageCustomFieldProps {
 * StageCustomFieldPropMethods
 **********************************************/
 export interface StageCustomFieldPropMethods {
-	Stage(): IBaseExecution<PS.Stage> & PS.StageCollections & PS.StageMethods;
+	Stage(): IBaseQuery<PS.Stage, PS.StageQuery> & PS.StageCollections & PS.StageMethods;
 }
 
 /*********************************************
@@ -1752,8 +1752,8 @@ export interface StageDetailPageProps {
 * StageDetailPagePropMethods
 **********************************************/
 export interface StageDetailPagePropMethods {
-	Page(): IBaseExecution<PS.ProjectDetailPage> & PS.ProjectDetailPageCollections;
-	Stage(): IBaseExecution<PS.Stage> & PS.StageCollections & PS.StageMethods;
+	Page(): IBaseQuery<PS.ProjectDetailPage, PS.ProjectDetailPageQuery> & PS.ProjectDetailPageCollections;
+	Stage(): IBaseQuery<PS.Stage, PS.StageQuery> & PS.StageCollections & PS.StageMethods;
 }
 
 /*********************************************
@@ -1923,7 +1923,7 @@ export interface TaskProps {
 * TaskPropMethods
 **********************************************/
 export interface TaskPropMethods {
-	SubProject(): IBaseExecution<PS.PublishedProject> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
+	SubProject(): IBaseQuery<PS.PublishedProject, PS.PublishedProjectQuery> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
 }
 
 /*********************************************
@@ -2015,11 +2015,11 @@ export interface PublishedProjectProps {
 * PublishedProjectPropMethods
 **********************************************/
 export interface PublishedProjectPropMethods {
-	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections & PS.CalendarMethods;
-	Draft(): IBaseExecution<PS.DraftProject> & PS.DraftProjectCollections & PS.DraftProjectMethods;
-	IncludeCustomFields(): IBaseExecution<PS.PublishedProject> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
-	Owner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	ProjectWorkflowInstance(): IBaseExecution<PS.ProjectWorkflowInstance> & PS.ProjectWorkflowInstanceCollections & PS.ProjectWorkflowInstanceMethods;
+	Calendar(): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
+	Draft(): IBaseQuery<PS.DraftProject, PS.DraftProjectQuery> & PS.DraftProjectCollections & PS.DraftProjectMethods;
+	IncludeCustomFields(): IBaseQuery<PS.PublishedProject, PS.PublishedProjectQuery> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
+	Owner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	ProjectWorkflowInstance(): IBaseQuery<PS.ProjectWorkflowInstance, PS.ProjectWorkflowInstanceQuery> & PS.ProjectWorkflowInstanceCollections & PS.ProjectWorkflowInstanceMethods;
 }
 
 /*********************************************
@@ -2197,7 +2197,7 @@ export interface PublishedProjectResourceProps {
 * PublishedProjectResourcePropMethods
 **********************************************/
 export interface PublishedProjectResourcePropMethods {
-	DefaultAssignmentOwner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	DefaultAssignmentOwner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -2305,9 +2305,9 @@ export interface PublishedTaskProps {
 * PublishedTaskPropMethods
 **********************************************/
 export interface PublishedTaskPropMethods {
-	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections & PS.CalendarMethods;
-	Parent(): IBaseExecution<PS.PublishedTask> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
-	StatusManager(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Calendar(): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
+	Parent(): IBaseQuery<PS.PublishedTask, PS.PublishedTaskQuery> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
+	StatusManager(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 	TaskPlanLink(): IBaseExecution<PS.TaskPlanLink> & PS.TaskPlanLinkCollections & PS.TaskPlanLinkMethods;
 }
 
@@ -2593,9 +2593,9 @@ export interface DraftProjectProps {
 * DraftProjectPropMethods
 **********************************************/
 export interface DraftProjectPropMethods {
-	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections & PS.CalendarMethods;
-	IncludeCustomFields(): IBaseExecution<PS.DraftProject> & PS.DraftProjectCollections & PS.DraftProjectMethods;
-	Owner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Calendar(): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
+	IncludeCustomFields(): IBaseQuery<PS.DraftProject, PS.DraftProjectQuery> & PS.DraftProjectCollections & PS.DraftProjectMethods;
+	Owner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -2690,7 +2690,7 @@ export interface DraftProjectResourceProps {
 * DraftProjectResourcePropMethods
 **********************************************/
 export interface DraftProjectResourcePropMethods {
-	DefaultAssignmentOwner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	DefaultAssignmentOwner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -2760,8 +2760,8 @@ export interface DraftTaskLinkProps {
 * DraftTaskLinkPropMethods
 **********************************************/
 export interface DraftTaskLinkPropMethods {
-	End(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections & PS.DraftTaskMethods;
-	Start(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections & PS.DraftTaskMethods;
+	End(): IBaseQuery<PS.DraftTask, PS.DraftTaskQuery> & PS.DraftTaskCollections & PS.DraftTaskMethods;
+	Start(): IBaseQuery<PS.DraftTask, PS.DraftTaskQuery> & PS.DraftTaskCollections & PS.DraftTaskMethods;
 }
 
 /*********************************************
@@ -2871,9 +2871,9 @@ export interface DraftTaskProps {
 * DraftTaskPropMethods
 **********************************************/
 export interface DraftTaskPropMethods {
-	Calendar(): IBaseExecution<PS.Calendar> & PS.CalendarCollections & PS.CalendarMethods;
-	Parent(): IBaseExecution<PS.DraftTask> & PS.DraftTaskCollections & PS.DraftTaskMethods;
-	StatusManager(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Calendar(): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
+	Parent(): IBaseQuery<PS.DraftTask, PS.DraftTaskQuery> & PS.DraftTaskCollections & PS.DraftTaskMethods;
+	StatusManager(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -2953,9 +2953,9 @@ export interface ProjectWorkflowInstanceProps {
 * ProjectWorkflowInstancePropMethods
 **********************************************/
 export interface ProjectWorkflowInstancePropMethods {
-	Project(): IBaseExecution<PS.Project> & PS.ProjectCollections & PS.ProjectMethods;
+	Project(): IBaseQuery<PS.Project, PS.ProjectQuery> & PS.ProjectCollections & PS.ProjectMethods;
 	WorkflowInstance(): IBaseExecution<SP.WorkflowServices.WorkflowInstance> & SP.WorkflowServices.WorkflowInstanceCollections;
-	WorkflowInstanceOwner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	WorkflowInstanceOwner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3060,8 +3060,8 @@ export interface QueueJobProps {
 * QueueJobPropMethods
 **********************************************/
 export interface QueueJobPropMethods {
-	Project(): IBaseExecution<PS.Project> & PS.ProjectCollections & PS.ProjectMethods;
-	Submitter(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Project(): IBaseQuery<PS.Project, PS.ProjectQuery> & PS.ProjectCollections & PS.ProjectMethods;
+	Submitter(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3159,7 +3159,7 @@ export interface StatusTaskProps {
 * StatusTaskPropMethods
 **********************************************/
 export interface StatusTaskPropMethods {
-	StatusManager(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	StatusManager(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3804,7 +3804,7 @@ export interface LookupTextProps {
 * LookupTextPropMethods
 **********************************************/
 export interface LookupTextPropMethods {
-	Parent(): IBaseExecution<PS.LookupText> & PS.LookupTextCollections & PS.LookupTextMethods;
+	Parent(): IBaseQuery<PS.LookupText, PS.LookupTextQuery> & PS.LookupTextCollections & PS.LookupTextMethods;
 }
 
 /*********************************************
@@ -3888,7 +3888,7 @@ export interface PlanAssignmentProps {
 * PlanAssignmentPropMethods
 **********************************************/
 export interface PlanAssignmentPropMethods {
-	Resource(): IBaseExecution<PS.EnterpriseResource> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
+	Resource(): IBaseQuery<PS.EnterpriseResource, PS.EnterpriseResourceQuery> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
 }
 
 /*********************************************
@@ -4038,10 +4038,10 @@ export interface ProjectServerProps {
 * ProjectServerPropMethods
 **********************************************/
 export interface ProjectServerPropMethods {
-	EntityTypes(): IBaseExecution<PS.EntityTypes> & PS.EntityTypesCollections;
+	EntityTypes(): IBaseQuery<PS.EntityTypes, PS.EntityTypesQuery> & PS.EntityTypesCollections;
 	Settings(): IBaseExecution<PS.Settings> & PS.SettingsCollections;
 	WorkflowActivities(): IBaseExecution<PS.WorkflowActivities> & PS.WorkflowActivitiesCollections & PS.WorkflowActivitiesMethods;
-	WorkflowDesigner(): IBaseExecution<PS.WorkflowDesigner> & PS.WorkflowDesignerCollections;
+	WorkflowDesigner(): IBaseQuery<PS.WorkflowDesigner, PS.WorkflowDesignerQuery> & PS.WorkflowDesignerCollections;
 }
 
 /*********************************************
@@ -4165,7 +4165,7 @@ export interface TimeSheetPeriodProps {
 * TimeSheetPeriodPropMethods
 **********************************************/
 export interface TimeSheetPeriodPropMethods {
-	TimeSheet(): IBaseExecution<PS.TimeSheet> & PS.TimeSheetCollections & PS.TimeSheetMethods;
+	TimeSheet(): IBaseQuery<PS.TimeSheet, PS.TimeSheetQuery> & PS.TimeSheetCollections & PS.TimeSheetMethods;
 }
 
 /*********************************************
@@ -4251,9 +4251,9 @@ export interface TimeSheetProps {
 * TimeSheetPropMethods
 **********************************************/
 export interface TimeSheetPropMethods {
-	Creator(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	Manager(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	Period(): IBaseExecution<PS.TimeSheetPeriod> & PS.TimeSheetPeriodCollections & PS.TimeSheetPeriodMethods;
+	Creator(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	Manager(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	Period(): IBaseQuery<PS.TimeSheetPeriod, PS.TimeSheetPeriodQuery> & PS.TimeSheetPeriodCollections & PS.TimeSheetPeriodMethods;
 }
 
 /*********************************************
@@ -4325,8 +4325,8 @@ export interface TimeSheetLineProps {
 * TimeSheetLinePropMethods
 **********************************************/
 export interface TimeSheetLinePropMethods {
-	Assignment(): IBaseExecution<PS.PublishedAssignment> & PS.PublishedAssignmentCollections;
-	TimeSheet(): IBaseExecution<PS.TimeSheet> & PS.TimeSheetCollections & PS.TimeSheetMethods;
+	Assignment(): IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentQuery> & PS.PublishedAssignmentCollections;
+	TimeSheet(): IBaseQuery<PS.TimeSheet, PS.TimeSheetQuery> & PS.TimeSheetCollections & PS.TimeSheetMethods;
 }
 
 /*********************************************

@@ -37,7 +37,7 @@ export interface ApiMetadataProps {
 * ApiMetadataPropMethods
 **********************************************/
 export interface ApiMetadataPropMethods {
-	Current(): IBaseExecution<SP.ApiMetadata> & SP.ApiMetadataCollections;
+	Current(): IBaseQuery<SP.ApiMetadata, SP.ApiMetadataQuery> & SP.ApiMetadataCollections;
 }
 
 /*********************************************
@@ -166,9 +166,9 @@ export interface SiteProps {
 **********************************************/
 export interface SitePropMethods {
 	Audit(): IBaseExecution<SP.Audit> & SP.AuditCollections & SP.AuditMethods;
-	Owner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	RootWeb(): IBaseExecution<SP.Web> & SP.WebCollections & SP.WebMethods;
-	SecondaryContact(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Owner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	RootWeb(): IBaseQuery<SP.Web, SP.WebQuery> & SP.WebCollections & SP.WebMethods;
+	SecondaryContact(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -611,9 +611,9 @@ export interface AlertProps {
 **********************************************/
 export interface AlertPropMethods {
 	AllProperties(): IBaseExecution<SP.PropertyValues> & SP.PropertyValuesCollections;
-	Item(): IBaseExecution<SP.ListItem> & SP.ListItemCollections & SP.ListItemMethods;
-	List(): IBaseExecution<SP.List> & SP.ListCollections & SP.ListMethods;
-	User(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Item(): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	List(): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	User(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -697,7 +697,7 @@ export interface SecurableObjectProps {
 * SecurableObjectPropMethods
 **********************************************/
 export interface SecurableObjectPropMethods {
-	FirstUniqueAncestorSecurableObject(): IBaseExecution<SP.SecurableObject> & SP.SecurableObjectCollections & SP.SecurableObjectMethods;
+	FirstUniqueAncestorSecurableObject(): IBaseQuery<SP.SecurableObject, SP.SecurableObjectQuery> & SP.SecurableObjectCollections & SP.SecurableObjectMethods;
 }
 
 /*********************************************
@@ -912,15 +912,15 @@ export interface ListItemProps {
 * ListItemPropMethods
 **********************************************/
 export interface ListItemPropMethods {
-	ContentType(): IBaseExecution<SP.ContentType> & SP.ContentTypeCollections & SP.ContentTypeMethods;
+	ContentType(): IBaseQuery<SP.ContentType, SP.ContentTypeQuery> & SP.ContentTypeCollections & SP.ContentTypeMethods;
 	GetDlpPolicyTip(): IBaseExecution<SP.DlpPolicyTip> & SP.DlpPolicyTipCollections;
 	FieldValuesAsHtml(): IBaseExecution<SP.FieldStringValues> & SP.FieldStringValuesCollections;
 	FieldValuesAsText(): IBaseExecution<SP.FieldStringValues> & SP.FieldStringValuesCollections;
 	FieldValuesForEdit(): IBaseExecution<SP.FieldStringValues> & SP.FieldStringValuesCollections;
-	File(): IBaseExecution<SP.File> & SP.FileCollections & SP.FileMethods;
-	Folder(): IBaseExecution<SP.Folder> & SP.FolderCollections & SP.FolderMethods;
-	LikedByInformation(): IBaseExecution<Microsoft.SharePoint.Likes.likedByInformation> & Microsoft.SharePoint.Likes.likedByInformationCollections;
-	ParentList(): IBaseExecution<SP.List> & SP.ListCollections & SP.ListMethods;
+	File(): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	Folder(): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	LikedByInformation(): IBaseQuery<Microsoft.SharePoint.Likes.likedByInformation, Microsoft.SharePoint.Likes.likedByInformationQuery> & Microsoft.SharePoint.Likes.likedByInformationCollections;
+	ParentList(): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
 	Properties(): IBaseExecution<SP.PropertyValues> & SP.PropertyValuesCollections;
 }
 
@@ -1120,7 +1120,7 @@ export interface ContentTypeProps {
 export interface ContentTypePropMethods {
 	DescriptionResource(): IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
 	NameResource(): IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
-	Parent(): IBaseExecution<SP.ContentType> & SP.ContentTypeCollections & SP.ContentTypeMethods;
+	Parent(): IBaseQuery<SP.ContentType, SP.ContentTypeQuery> & SP.ContentTypeCollections & SP.ContentTypeMethods;
 }
 
 /*********************************************
@@ -1499,13 +1499,13 @@ export interface FileProps {
 * FilePropMethods
 **********************************************/
 export interface FilePropMethods {
-	Author(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	CheckedOutByUser(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Author(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	CheckedOutByUser(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 	EffectiveInformationRightsManagementSettings(): IBaseExecution<SP.EffectiveInformationRightsManagementSettings> & SP.EffectiveInformationRightsManagementSettingsCollections;
 	InformationRightsManagementSettings(): IBaseExecution<SP.InformationRightsManagementFileSettings> & SP.InformationRightsManagementFileSettingsCollections & SP.InformationRightsManagementFileSettingsMethods;
-	ListItemAllFields(): IBaseExecution<SP.ListItem> & SP.ListItemCollections & SP.ListItemMethods;
-	LockedByUser(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	ModifiedBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	ListItemAllFields(): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	LockedByUser(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	ModifiedBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 	Properties(): IBaseExecution<SP.PropertyValues> & SP.PropertyValuesCollections;
 }
 
@@ -1752,7 +1752,7 @@ export interface FileVersionProps {
 * FileVersionPropMethods
 **********************************************/
 export interface FileVersionPropMethods {
-	CreatedBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	CreatedBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -1834,8 +1834,8 @@ export interface FolderProps {
 * FolderPropMethods
 **********************************************/
 export interface FolderPropMethods {
-	ListItemAllFields(): IBaseExecution<SP.ListItem> & SP.ListItemCollections & SP.ListItemMethods;
-	ParentFolder(): IBaseExecution<SP.Folder> & SP.FolderCollections & SP.FolderMethods;
+	ListItemAllFields(): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	ParentFolder(): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
 	Properties(): IBaseExecution<SP.PropertyValues> & SP.PropertyValuesCollections;
 	StorageMetrics(): IBaseExecution<SP.StorageMetrics> & SP.StorageMetricsCollections;
 }
@@ -2012,11 +2012,11 @@ export interface ListProps {
 **********************************************/
 export interface ListPropMethods {
 	CreatablesInfo(): IBaseExecution<SP.CreatablesInfo> & SP.CreatablesInfoCollections;
-	DefaultView(): IBaseExecution<SP.View> & SP.ViewCollections & SP.ViewMethods;
+	DefaultView(): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
 	DescriptionResource(): IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
 	InformationRightsManagementSettings(): IBaseExecution<SP.InformationRightsManagementSettings> & SP.InformationRightsManagementSettingsCollections & SP.InformationRightsManagementSettingsMethods;
-	ParentWeb(): IBaseExecution<SP.Web> & SP.WebCollections & SP.WebMethods;
-	RootFolder(): IBaseExecution<SP.Folder> & SP.FolderCollections & SP.FolderMethods;
+	ParentWeb(): IBaseQuery<SP.Web, SP.WebQuery> & SP.WebCollections & SP.WebMethods;
+	RootFolder(): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
 	TitleResource(): IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
 }
 
@@ -2525,21 +2525,21 @@ export interface WebProps {
 export interface WebPropMethods {
 	ActivityLogger(): IBaseExecution<Microsoft.SharePoint.Internal.ActivityLogger> & Microsoft.SharePoint.Internal.ActivityLoggerCollections & Microsoft.SharePoint.Internal.ActivityLoggerMethods;
 	AllProperties(): IBaseExecution<SP.PropertyValues> & SP.PropertyValuesCollections;
-	AssociatedMemberGroup(): IBaseExecution<SP.Group> & SP.GroupCollections & SP.GroupMethods;
-	AssociatedOwnerGroup(): IBaseExecution<SP.Group> & SP.GroupCollections & SP.GroupMethods;
-	AssociatedVisitorGroup(): IBaseExecution<SP.Group> & SP.GroupCollections & SP.GroupMethods;
-	Author(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	CurrentUser(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	AssociatedMemberGroup(): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections & SP.GroupMethods;
+	AssociatedOwnerGroup(): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections & SP.GroupMethods;
+	AssociatedVisitorGroup(): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections & SP.GroupMethods;
+	Author(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	CurrentUser(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 	DataLeakagePreventionStatusInfo(): IBaseExecution<SP.SPDataLeakagePreventionStatusInfo> & SP.SPDataLeakagePreventionStatusInfoCollections;
 	DescriptionResource(): IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
 	HostedApps(): IBaseExecution<Microsoft.SharePoint.ClientSideComponent.HostedAppsManager> & Microsoft.SharePoint.ClientSideComponent.HostedAppsManagerCollections & Microsoft.SharePoint.ClientSideComponent.HostedAppsManagerMethods;
-	Navigation(): IBaseExecution<SP.Navigation> & SP.NavigationCollections & SP.NavigationMethods;
+	Navigation(): IBaseQuery<SP.Navigation, SP.NavigationQuery> & SP.NavigationCollections & SP.NavigationMethods;
 	ParentWeb(): IBaseExecution<SP.WebInformation> & SP.WebInformationCollections;
-	RegionalSettings(): IBaseExecution<SP.RegionalSettings> & SP.RegionalSettingsCollections & SP.RegionalSettingsMethods;
-	RootFolder(): IBaseExecution<SP.Folder> & SP.FolderCollections & SP.FolderMethods;
-	SiteCollectionAppCatalog(): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessorCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessorMethods;
-	SiteUserInfoList(): IBaseExecution<SP.List> & SP.ListCollections & SP.ListMethods;
-	TenantAppCatalog(): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessorCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessorMethods;
+	RegionalSettings(): IBaseQuery<SP.RegionalSettings, SP.RegionalSettingsQuery> & SP.RegionalSettingsCollections & SP.RegionalSettingsMethods;
+	RootFolder(): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	SiteCollectionAppCatalog(): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor, Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessorQuery> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessorCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessorMethods;
+	SiteUserInfoList(): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	TenantAppCatalog(): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor, Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessorQuery> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessorCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessorMethods;
 	ThemeInfo(): IBaseExecution<SP.ThemeInfo> & SP.ThemeInfoCollections & SP.ThemeInfoMethods;
 	TitleResource(): IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
 }
@@ -3212,7 +3212,7 @@ export interface PushNotificationSubscriberProps {
 * PushNotificationSubscriberPropMethods
 **********************************************/
 export interface PushNotificationSubscriberPropMethods {
-	User(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	User(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3289,8 +3289,8 @@ export interface RecycleBinItemProps {
 * RecycleBinItemPropMethods
 **********************************************/
 export interface RecycleBinItemPropMethods {
-	Author(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	DeletedBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Author(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	DeletedBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3722,8 +3722,8 @@ export interface ListItemVersionProps {
 * ListItemVersionPropMethods
 **********************************************/
 export interface ListItemVersionPropMethods {
-	CreatedBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
-	FileVersion(): IBaseExecution<SP.FileVersion> & SP.FileVersionCollections & SP.FileVersionMethods;
+	CreatedBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	FileVersion(): IBaseQuery<SP.FileVersion, SP.FileVersionQuery> & SP.FileVersionCollections & SP.FileVersionMethods;
 }
 
 /*********************************************
@@ -4059,8 +4059,8 @@ export interface ObjectSharingSettingsProps {
 * ObjectSharingSettingsPropMethods
 **********************************************/
 export interface ObjectSharingSettingsPropMethods {
-	ObjectSharingInformation(): IBaseExecution<SP.ObjectSharingInformation> & SP.ObjectSharingInformationCollections & SP.ObjectSharingInformationMethods;
-	SharePointSettings(): IBaseExecution<SP.SharePointSharingSettings> & SP.SharePointSharingSettingsCollections;
+	ObjectSharingInformation(): IBaseQuery<SP.ObjectSharingInformation, SP.ObjectSharingInformationQuery> & SP.ObjectSharingInformationCollections & SP.ObjectSharingInformationMethods;
+	SharePointSettings(): IBaseQuery<SP.SharePointSharingSettings, SP.SharePointSharingSettingsQuery> & SP.SharePointSharingSettingsCollections;
 }
 
 /*********************************************
@@ -4337,7 +4337,7 @@ export interface SharingResultProps {
 * SharingResultPropMethods
 **********************************************/
 export interface SharingResultPropMethods {
-	GroupUsersAddedTo(): IBaseExecution<SP.Group> & SP.GroupCollections & SP.GroupMethods;
+	GroupUsersAddedTo(): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections & SP.GroupMethods;
 }
 
 /*********************************************
@@ -4688,7 +4688,7 @@ export interface CheckedOutFileProps {
 * CheckedOutFilePropMethods
 **********************************************/
 export interface CheckedOutFilePropMethods {
-	CheckedOutBy(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	CheckedOutBy(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -4794,10 +4794,10 @@ export interface RequestContextProps {
 * RequestContextPropMethods
 **********************************************/
 export interface RequestContextPropMethods {
-	Current(): IBaseExecution<SP.RequestContext> & SP.RequestContextCollections & SP.RequestContextMethods;
-	List(): IBaseExecution<SP.List> & SP.ListCollections & SP.ListMethods;
-	Site(): IBaseExecution<SP.Site> & SP.SiteCollections & SP.SiteMethods;
-	Web(): IBaseExecution<SP.Web> & SP.WebCollections & SP.WebMethods;
+	Current(): IBaseQuery<SP.RequestContext, SP.RequestContextQuery> & SP.RequestContextCollections & SP.RequestContextMethods;
+	List(): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	Site(): IBaseQuery<SP.Site, SP.SiteQuery> & SP.SiteCollections & SP.SiteMethods;
+	Web(): IBaseQuery<SP.Web, SP.WebQuery> & SP.WebCollections & SP.WebMethods;
 }
 
 /*********************************************
@@ -6114,7 +6114,7 @@ export interface RemoteWebProps {
 * RemoteWebPropMethods
 **********************************************/
 export interface RemoteWebPropMethods {
-	Web(): IBaseExecution<SP.Web> & SP.WebCollections & SP.WebMethods;
+	Web(): IBaseQuery<SP.Web, SP.WebQuery> & SP.WebCollections & SP.WebMethods;
 }
 
 /*********************************************

@@ -453,8 +453,16 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         collections.push('\t' + collection + '(id: string | number): ' + 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
+                                        // See if there is a query
+                                        if (hasCollections[methodType]) {
+                                            // Add the method
+                                            props.push('\t' + collection + '(): ' + 'IBaseQuery<' + methodType + ', ' + methodType + 'Query> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
+                                        } else {
+                                            // Add the method
+                                            props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
+                                        }
+
                                         // Add the method
-                                        props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
                                         query.push('\t' + collection + ': ' + methodType + ' & ' + methodType + 'Collections;');
                                     }
 

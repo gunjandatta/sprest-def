@@ -201,7 +201,7 @@ export interface WorkflowInstanceServiceProps {
 * WorkflowInstanceServicePropMethods
 **********************************************/
 export interface WorkflowInstanceServicePropMethods {
-	Current(): IBaseExecution<SP.WorkflowServices.WorkflowInstanceService> & SP.WorkflowServices.WorkflowInstanceServiceCollections & SP.WorkflowServices.WorkflowInstanceServiceMethods;
+	Current(): IBaseQuery<SP.WorkflowServices.WorkflowInstanceService, SP.WorkflowServices.WorkflowInstanceServiceQuery> & SP.WorkflowServices.WorkflowInstanceServiceCollections & SP.WorkflowServices.WorkflowInstanceServiceMethods;
 }
 
 /*********************************************
@@ -262,7 +262,7 @@ export interface InteropServiceProps {
 * InteropServicePropMethods
 **********************************************/
 export interface InteropServicePropMethods {
-	Current(): IBaseExecution<SP.WorkflowServices.InteropService> & SP.WorkflowServices.InteropServiceCollections & SP.WorkflowServices.InteropServiceMethods;
+	Current(): IBaseQuery<SP.WorkflowServices.InteropService, SP.WorkflowServices.InteropServiceQuery> & SP.WorkflowServices.InteropServiceCollections & SP.WorkflowServices.InteropServiceMethods;
 }
 
 /*********************************************
@@ -324,7 +324,7 @@ export interface WorkflowServicesManagerProps {
 * WorkflowServicesManagerPropMethods
 **********************************************/
 export interface WorkflowServicesManagerPropMethods {
-	Current(): IBaseExecution<SP.WorkflowServices.WorkflowServicesManager> & SP.WorkflowServices.WorkflowServicesManagerCollections & SP.WorkflowServices.WorkflowServicesManagerMethods;
+	Current(): IBaseQuery<SP.WorkflowServices.WorkflowServicesManager, SP.WorkflowServices.WorkflowServicesManagerQuery> & SP.WorkflowServices.WorkflowServicesManagerCollections & SP.WorkflowServices.WorkflowServicesManagerMethods;
 }
 
 /*********************************************
@@ -458,7 +458,7 @@ export interface WorkflowSubscriptionServiceProps {
 * WorkflowSubscriptionServicePropMethods
 **********************************************/
 export interface WorkflowSubscriptionServicePropMethods {
-	Current(): IBaseExecution<SP.WorkflowServices.WorkflowSubscriptionService> & SP.WorkflowServices.WorkflowSubscriptionServiceCollections & SP.WorkflowServices.WorkflowSubscriptionServiceMethods;
+	Current(): IBaseQuery<SP.WorkflowServices.WorkflowSubscriptionService, SP.WorkflowServices.WorkflowSubscriptionServiceQuery> & SP.WorkflowServices.WorkflowSubscriptionServiceCollections & SP.WorkflowServices.WorkflowSubscriptionServiceMethods;
 }
 
 /*********************************************
