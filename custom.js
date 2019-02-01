@@ -14,6 +14,15 @@ module.exports = {
         }
     ],
 
+    // Content Type
+    "SP.ContentType": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
+
     // Content Types
     "Collection(SP.ContentType)": [
         {
@@ -310,6 +319,15 @@ module.exports = {
         }
     ],
 
+    // Views
+    "Collection(SP.View)": [
+        {
+            name: "add",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
+
     // Web
     "SP.Web": [
         {
@@ -317,7 +335,14 @@ module.exports = {
             returnType: "boolean",
             params: [
                 { $: { Name: "high", Type: "number" } },
-                { $: { Name: "low", Type: "number" } },
+                { $: { Name: "low", Type: "number" } }
+            ]
+        },
+        {
+            name: "getCatalog",
+            returnType: "SP.IList",
+            params: [
+                { $: { Name: "listTemplateType", Type: "number" } }
             ]
         },
         {
