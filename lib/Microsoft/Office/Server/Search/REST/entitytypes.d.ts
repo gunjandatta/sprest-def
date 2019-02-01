@@ -1,5 +1,6 @@
 import { IBaseExecution } from "../../../../../";
 import { IBaseQuery } from "../../../../../";
+import { Microsoft } from "../../../../../";
 
 /*********************************************
 * ISearchService

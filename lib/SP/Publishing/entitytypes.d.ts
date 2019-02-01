@@ -1,8 +1,8 @@
 import { IBaseExecution } from "../../";
 import { IBaseQuery } from "../../";
+import { SP } from "../../";
 import { IBaseCollection } from "../../";
 import { IBaseResults } from "../../";
-import { SP } from "../../";
 
 /*********************************************
 * ICommunicationSite

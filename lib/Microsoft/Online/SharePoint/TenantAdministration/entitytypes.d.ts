@@ -3,6 +3,7 @@ import { Microsoft } from "../../../../";
 import { IBaseQuery } from "../../../../";
 import { IBaseCollection } from "../../../../";
 import { IBaseResults } from "../../../../";
+import { SP } from "../../../../";
 
 /*********************************************
 * EmailResponse

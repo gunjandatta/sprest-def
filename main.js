@@ -460,9 +460,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 let params = [];
                                 for (let j = 0; j < methodInfo.params.length; j++) {
                                     let param = methodInfo.params[j].$;
+                                    let paramType = getType(param.Type);
+
+                                    // Update the reference
+                                    paramType.indexOf('.') > 0 ? updateReferences(fileImports, dirName, paramType) : null;
 
                                     // Add the parameter
-                                    params.push(param.Name + "?: " + getType(param.Type));
+                                    params.push(param.Name + "?: " + paramType);
                                 }
 
                                 // Add the method
