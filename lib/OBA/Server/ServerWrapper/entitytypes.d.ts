@@ -19,27 +19,34 @@ export interface IDiagnosticsQuery extends DiagnosticsQuery,DiagnosticsMethods {
 * Diagnostics
 **********************************************/
 export interface Diagnostics extends DiagnosticsCollections, DiagnosticsMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * DiagnosticsProps
 **********************************************/
 export interface DiagnosticsProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DiagnosticsPropMethods
+**********************************************/
+export interface DiagnosticsPropMethods {
 
 }
 
 /*********************************************
 * DiagnosticsCollections
 **********************************************/
-export interface DiagnosticsCollections extends DiagnosticsProps {
+export interface DiagnosticsCollections extends DiagnosticsProps, DiagnosticsPropMethods {
 
 }
 
 /*********************************************
 * DiagnosticsQuery
 **********************************************/
-export interface DiagnosticsQuery extends DiagnosticsProps {
+export interface DiagnosticsQuery extends DiagnosticsProps,DiagnosticsMethods {
 
 }
 
@@ -68,27 +75,34 @@ export interface IReportingQuery extends ReportingQuery,ReportingMethods {
 * Reporting
 **********************************************/
 export interface Reporting extends ReportingCollections, ReportingMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * ReportingProps
 **********************************************/
 export interface ReportingProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ReportingPropMethods
+**********************************************/
+export interface ReportingPropMethods {
 
 }
 
 /*********************************************
 * ReportingCollections
 **********************************************/
-export interface ReportingCollections extends ReportingProps {
+export interface ReportingCollections extends ReportingProps, ReportingPropMethods {
 
 }
 
 /*********************************************
 * ReportingQuery
 **********************************************/
-export interface ReportingQuery extends ReportingProps {
+export interface ReportingQuery extends ReportingProps,ReportingMethods {
 
 }
 
@@ -117,27 +131,34 @@ export interface ITaskflowQuery extends TaskflowQuery,TaskflowMethods {
 * Taskflow
 **********************************************/
 export interface Taskflow extends TaskflowCollections, TaskflowMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * TaskflowProps
 **********************************************/
 export interface TaskflowProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* TaskflowPropMethods
+**********************************************/
+export interface TaskflowPropMethods {
 
 }
 
 /*********************************************
 * TaskflowCollections
 **********************************************/
-export interface TaskflowCollections extends TaskflowProps {
+export interface TaskflowCollections extends TaskflowProps, TaskflowPropMethods {
 
 }
 
 /*********************************************
 * TaskflowQuery
 **********************************************/
-export interface TaskflowQuery extends TaskflowProps {
+export interface TaskflowQuery extends TaskflowProps,TaskflowMethods {
 
 }
 

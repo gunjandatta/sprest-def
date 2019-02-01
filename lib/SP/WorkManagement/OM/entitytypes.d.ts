@@ -22,27 +22,34 @@ export interface IBaseSessionQuery extends BaseSessionQuery,BaseSessionMethods {
 * BaseSession
 **********************************************/
 export interface BaseSession extends BaseSessionCollections, BaseSessionMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * BaseSessionProps
 **********************************************/
 export interface BaseSessionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* BaseSessionPropMethods
+**********************************************/
+export interface BaseSessionPropMethods {
 
 }
 
 /*********************************************
 * BaseSessionCollections
 **********************************************/
-export interface BaseSessionCollections extends BaseSessionProps {
+export interface BaseSessionCollections extends BaseSessionProps, BaseSessionPropMethods {
 
 }
 
 /*********************************************
 * BaseSessionQuery
 **********************************************/
-export interface BaseSessionQuery extends BaseSessionProps {
+export interface BaseSessionQuery extends BaseSessionProps,BaseSessionMethods {
 
 }
 
@@ -290,16 +297,23 @@ export interface LocationOrientedSortableSessionProps {
 }
 
 /*********************************************
+* LocationOrientedSortableSessionPropMethods
+**********************************************/
+export interface LocationOrientedSortableSessionPropMethods {
+
+}
+
+/*********************************************
 * LocationOrientedSortableSessionCollections
 **********************************************/
-export interface LocationOrientedSortableSessionCollections extends LocationOrientedSortableSessionProps {
+export interface LocationOrientedSortableSessionCollections extends LocationOrientedSortableSessionProps, LocationOrientedSortableSessionPropMethods {
 
 }
 
 /*********************************************
 * LocationOrientedSortableSessionQuery
 **********************************************/
-export interface LocationOrientedSortableSessionQuery extends LocationOrientedSortableSessionProps {
+export interface LocationOrientedSortableSessionQuery extends LocationOrientedSortableSessionProps,LocationOrientedSortableSessionMethods {
 
 }
 
@@ -357,16 +371,23 @@ export interface LocationOrientedUserOrderedSessionProps {
 }
 
 /*********************************************
+* LocationOrientedUserOrderedSessionPropMethods
+**********************************************/
+export interface LocationOrientedUserOrderedSessionPropMethods {
+
+}
+
+/*********************************************
 * LocationOrientedUserOrderedSessionCollections
 **********************************************/
-export interface LocationOrientedUserOrderedSessionCollections extends LocationOrientedUserOrderedSessionProps {
+export interface LocationOrientedUserOrderedSessionCollections extends LocationOrientedUserOrderedSessionProps, LocationOrientedUserOrderedSessionPropMethods {
 
 }
 
 /*********************************************
 * LocationOrientedUserOrderedSessionQuery
 **********************************************/
-export interface LocationOrientedUserOrderedSessionQuery extends LocationOrientedUserOrderedSessionProps {
+export interface LocationOrientedUserOrderedSessionQuery extends LocationOrientedUserOrderedSessionProps,LocationOrientedUserOrderedSessionMethods {
 
 }
 
@@ -447,13 +468,20 @@ export interface INonTaskDataReadResultQuery extends NonTaskDataReadResultQuery,
 * NonTaskDataReadResult
 **********************************************/
 export interface NonTaskDataReadResult extends NonTaskDataReadResultCollections, NonTaskDataReadResultMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * NonTaskDataReadResultProps
 **********************************************/
 export interface NonTaskDataReadResultProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* NonTaskDataReadResultPropMethods
+**********************************************/
+export interface NonTaskDataReadResultPropMethods {
 	PersistedProperties(): IBaseExecution<SP.WorkManagement.OM.PersistedProperties>;
 	RefreshHistory(): IBaseExecution<SP.WorkManagement.OM.RefreshHistory>;
 	UserSettings(): IBaseExecution<SP.WorkManagement.OM.UserSettings>;
@@ -462,7 +490,7 @@ export interface NonTaskDataReadResultProps {
 /*********************************************
 * NonTaskDataReadResultCollections
 **********************************************/
-export interface NonTaskDataReadResultCollections extends NonTaskDataReadResultProps {
+export interface NonTaskDataReadResultCollections extends NonTaskDataReadResultProps, NonTaskDataReadResultPropMethods {
 	AllLocatons(): IBaseCollection<SP.WorkManagement.OM.Location>;
 	AllLocatons(id: string | number): IBaseQuery<SP.WorkManagement.OM.Location>;
 	ScriptExtensions(): IBaseCollection<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
@@ -472,9 +500,12 @@ export interface NonTaskDataReadResultCollections extends NonTaskDataReadResultP
 /*********************************************
 * NonTaskDataReadResultQuery
 **********************************************/
-export interface NonTaskDataReadResultQuery extends NonTaskDataReadResultProps {
+export interface NonTaskDataReadResultQuery extends NonTaskDataReadResultProps,NonTaskDataReadResultMethods {
 	AllLocatons: IBaseResults<SP.WorkManagement.OM.Location>;
+	PersistedProperties: SP.WorkManagement.OM.PersistedProperties;
+	RefreshHistory: SP.WorkManagement.OM.RefreshHistory;
 	ScriptExtensions: IBaseResults<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
+	UserSettings: SP.WorkManagement.OM.UserSettings;
 }
 
 /*********************************************
@@ -520,28 +551,35 @@ export interface IRefreshHistoryQuery extends RefreshHistoryQuery,RefreshHistory
 * RefreshHistory
 **********************************************/
 export interface RefreshHistory extends RefreshHistoryCollections, RefreshHistoryMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * RefreshHistoryProps
 **********************************************/
 export interface RefreshHistoryProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RefreshHistoryPropMethods
+**********************************************/
+export interface RefreshHistoryPropMethods {
 
 }
 
 /*********************************************
 * RefreshHistoryCollections
 **********************************************/
-export interface RefreshHistoryCollections extends RefreshHistoryProps {
-	Refreshes(): IBaseCollection<SP.WorkManagement.OM.RefreshResult>;
-	Refreshes(id: string | number): IBaseQuery<SP.WorkManagement.OM.RefreshResult>;
+export interface RefreshHistoryCollections extends RefreshHistoryProps, RefreshHistoryPropMethods {
+	Refreshes(): IBaseCollection<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultQuery>;
+	Refreshes(id: string | number): IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultQuery>;
 }
 
 /*********************************************
 * RefreshHistoryQuery
 **********************************************/
-export interface RefreshHistoryQuery extends RefreshHistoryProps {
+export interface RefreshHistoryQuery extends RefreshHistoryProps,RefreshHistoryMethods {
 	Refreshes: IBaseResults<SP.WorkManagement.OM.RefreshResult>;
 }
 
@@ -570,6 +608,13 @@ export interface IRefreshResultQuery extends RefreshResultQuery,RefreshResultMet
 * RefreshResult
 **********************************************/
 export interface RefreshResult extends RefreshResultCollections, RefreshResultMethods {
+
+}
+
+/*********************************************
+* RefreshResultProps
+**********************************************/
+export interface RefreshResultProps {
 	AggregatorRefreshState?: number;
 	CorrelationId?: string;
 	RefreshFinished?: any;
@@ -577,16 +622,16 @@ export interface RefreshResult extends RefreshResultCollections, RefreshResultMe
 }
 
 /*********************************************
-* RefreshResultProps
+* RefreshResultPropMethods
 **********************************************/
-export interface RefreshResultProps {
+export interface RefreshResultPropMethods {
 
 }
 
 /*********************************************
 * RefreshResultCollections
 **********************************************/
-export interface RefreshResultCollections extends RefreshResultProps {
+export interface RefreshResultCollections extends RefreshResultProps, RefreshResultPropMethods {
 	ProviderStatuses(): IBaseCollection<SP.WorkManagement.OM.ProviderRefreshStatus>;
 	ProviderStatuses(id: string | number): IBaseQuery<SP.WorkManagement.OM.ProviderRefreshStatus>;
 	TaskChangesByLocation(): IBaseCollection<SP.WorkManagement.OM.LocationUpdateResult>;
@@ -596,7 +641,7 @@ export interface RefreshResultCollections extends RefreshResultProps {
 /*********************************************
 * RefreshResultQuery
 **********************************************/
-export interface RefreshResultQuery extends RefreshResultProps {
+export interface RefreshResultQuery extends RefreshResultProps,RefreshResultMethods {
 	ProviderStatuses: IBaseResults<SP.WorkManagement.OM.ProviderRefreshStatus>;
 	TaskChangesByLocation: IBaseResults<SP.WorkManagement.OM.LocationUpdateResult>;
 }
@@ -697,22 +742,29 @@ export interface IRefreshHealthInfoQuery extends RefreshHealthInfoQuery,RefreshH
 * RefreshHealthInfo
 **********************************************/
 export interface RefreshHealthInfo extends RefreshHealthInfoCollections, RefreshHealthInfoMethods {
-	LatestRefreshTime?: any;
-	NewTasks?: number;
-	Succeeded?: boolean;
+
 }
 
 /*********************************************
 * RefreshHealthInfoProps
 **********************************************/
 export interface RefreshHealthInfoProps {
+	LatestRefreshTime?: any;
+	NewTasks?: number;
+	Succeeded?: boolean;
+}
+
+/*********************************************
+* RefreshHealthInfoPropMethods
+**********************************************/
+export interface RefreshHealthInfoPropMethods {
 
 }
 
 /*********************************************
 * RefreshHealthInfoCollections
 **********************************************/
-export interface RefreshHealthInfoCollections extends RefreshHealthInfoProps {
+export interface RefreshHealthInfoCollections extends RefreshHealthInfoProps, RefreshHealthInfoPropMethods {
 	ProviderErrors(): IBaseCollection<SP.WorkManagement.OM.ProviderErrorInfo>;
 	ProviderErrors(id: string | number): IBaseQuery<SP.WorkManagement.OM.ProviderErrorInfo>;
 }
@@ -720,7 +772,7 @@ export interface RefreshHealthInfoCollections extends RefreshHealthInfoProps {
 /*********************************************
 * RefreshHealthInfoQuery
 **********************************************/
-export interface RefreshHealthInfoQuery extends RefreshHealthInfoProps {
+export interface RefreshHealthInfoQuery extends RefreshHealthInfoProps,RefreshHealthInfoMethods {
 	ProviderErrors: IBaseResults<SP.WorkManagement.OM.ProviderErrorInfo>;
 }
 
@@ -749,27 +801,34 @@ export interface ISortableSessionManagerQuery extends SortableSessionManagerQuer
 * SortableSessionManager
 **********************************************/
 export interface SortableSessionManager extends SortableSessionManagerCollections, SortableSessionManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SortableSessionManagerProps
 **********************************************/
 export interface SortableSessionManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SortableSessionManagerPropMethods
+**********************************************/
+export interface SortableSessionManagerPropMethods {
 
 }
 
 /*********************************************
 * SortableSessionManagerCollections
 **********************************************/
-export interface SortableSessionManagerCollections extends SortableSessionManagerProps {
+export interface SortableSessionManagerCollections extends SortableSessionManagerProps, SortableSessionManagerPropMethods {
 
 }
 
 /*********************************************
 * SortableSessionManagerQuery
 **********************************************/
-export interface SortableSessionManagerQuery extends SortableSessionManagerProps {
+export interface SortableSessionManagerQuery extends SortableSessionManagerProps,SortableSessionManagerMethods {
 
 }
 
@@ -810,16 +869,23 @@ export interface SortableSessionProps {
 }
 
 /*********************************************
+* SortableSessionPropMethods
+**********************************************/
+export interface SortableSessionPropMethods {
+
+}
+
+/*********************************************
 * SortableSessionCollections
 **********************************************/
-export interface SortableSessionCollections extends SortableSessionProps {
+export interface SortableSessionCollections extends SortableSessionProps, SortableSessionPropMethods {
 
 }
 
 /*********************************************
 * SortableSessionQuery
 **********************************************/
-export interface SortableSessionQuery extends SortableSessionProps {
+export interface SortableSessionQuery extends SortableSessionProps,SortableSessionMethods {
 
 }
 
@@ -862,6 +928,14 @@ export interface SortableTaskQueryCollections {
 }
 
 /*********************************************
+* SortableTaskQueryQuery
+**********************************************/
+export interface SortableTaskQueryQuery extends SortableTaskQuery {
+	CoreQuery: SP.WorkManagement.OM.TaskQuery;
+	Order: SP.WorkManagement.OM.OrderInfo;
+}
+
+/*********************************************
 * TaskQuery
 **********************************************/
 export interface TaskQuery {
@@ -878,6 +952,16 @@ export interface TaskQueryCollections {
 }
 
 /*********************************************
+* TaskQueryQuery
+**********************************************/
+export interface TaskQueryQuery extends TaskQuery {
+	CustomAttributeFilter: SP.WorkManagement.OM.CustomAttributeFilter;
+	FieldFilter: SP.WorkManagement.OM.TaskFilter;
+	LastModifiedDateRangeFilter: SP.WorkManagement.OM.DateRangeCriterion;
+	LocationFilter: SP.WorkManagement.OM.LocationFilter;
+}
+
+/*********************************************
 * TaskFilter
 **********************************************/
 export interface TaskFilter {
@@ -890,6 +974,17 @@ export interface TaskFilter {
 **********************************************/
 export interface TaskFilterCollections {
 
+}
+
+/*********************************************
+* TaskFilterQuery
+**********************************************/
+export interface TaskFilterQuery extends TaskFilter {
+	CompletedCriterion: SP.WorkManagement.OM.BooleanCriterion;
+	DueDateRangeCriterion: SP.WorkManagement.OM.DateRangeCriterion;
+	IsNewCriterion: SP.WorkManagement.OM.BooleanCriterion;
+	NameCriterion: SP.WorkManagement.OM.NameCriterion;
+	StartDateRangeCriterion: SP.WorkManagement.OM.DateRangeCriterion;
 }
 
 /*********************************************
@@ -910,21 +1005,28 @@ export interface ITaskQueryByLocationResultQuery extends TaskQueryByLocationResu
 * TaskQueryByLocationResult
 **********************************************/
 export interface TaskQueryByLocationResult extends TaskQueryByLocationResultCollections, TaskQueryByLocationResultMethods {
-	Error?: number;
-	ErrorMessage?: string;
+
 }
 
 /*********************************************
 * TaskQueryByLocationResultProps
 **********************************************/
 export interface TaskQueryByLocationResultProps {
+	Error?: number;
+	ErrorMessage?: string;
+}
+
+/*********************************************
+* TaskQueryByLocationResultPropMethods
+**********************************************/
+export interface TaskQueryByLocationResultPropMethods {
 
 }
 
 /*********************************************
 * TaskQueryByLocationResultCollections
 **********************************************/
-export interface TaskQueryByLocationResultCollections extends TaskQueryByLocationResultProps {
+export interface TaskQueryByLocationResultCollections extends TaskQueryByLocationResultProps, TaskQueryByLocationResultPropMethods {
 	Results(): IBaseCollection<SP.WorkManagement.OM.Task>;
 	Results(id: string | number): IBaseQuery<SP.WorkManagement.OM.Task>;
 }
@@ -932,7 +1034,7 @@ export interface TaskQueryByLocationResultCollections extends TaskQueryByLocatio
 /*********************************************
 * TaskQueryByLocationResultQuery
 **********************************************/
-export interface TaskQueryByLocationResultQuery extends TaskQueryByLocationResultProps {
+export interface TaskQueryByLocationResultQuery extends TaskQueryByLocationResultProps,TaskQueryByLocationResultMethods {
 	Results: IBaseResults<SP.WorkManagement.OM.Task>;
 }
 
@@ -961,21 +1063,28 @@ export interface ITaskQueryResultQuery extends TaskQueryResultQuery,TaskQueryRes
 * TaskQueryResult
 **********************************************/
 export interface TaskQueryResult extends TaskQueryResultCollections, TaskQueryResultMethods {
-	Error?: number;
-	ErrorMessage?: string;
+
 }
 
 /*********************************************
 * TaskQueryResultProps
 **********************************************/
 export interface TaskQueryResultProps {
+	Error?: number;
+	ErrorMessage?: string;
+}
+
+/*********************************************
+* TaskQueryResultPropMethods
+**********************************************/
+export interface TaskQueryResultPropMethods {
 
 }
 
 /*********************************************
 * TaskQueryResultCollections
 **********************************************/
-export interface TaskQueryResultCollections extends TaskQueryResultProps {
+export interface TaskQueryResultCollections extends TaskQueryResultProps, TaskQueryResultPropMethods {
 	Results(): IBaseCollection<SP.WorkManagement.OM.Task>;
 	Results(id: string | number): IBaseQuery<SP.WorkManagement.OM.Task>;
 }
@@ -983,7 +1092,7 @@ export interface TaskQueryResultCollections extends TaskQueryResultProps {
 /*********************************************
 * TaskQueryResultQuery
 **********************************************/
-export interface TaskQueryResultQuery extends TaskQueryResultProps {
+export interface TaskQueryResultQuery extends TaskQueryResultProps,TaskQueryResultMethods {
 	Results: IBaseResults<SP.WorkManagement.OM.Task>;
 }
 
@@ -1010,6 +1119,13 @@ export interface TaskRefreshResultCollections {
 }
 
 /*********************************************
+* TaskRefreshResultQuery
+**********************************************/
+export interface TaskRefreshResultQuery extends TaskRefreshResult {
+	Result: SP.WorkManagement.OM.Task;
+}
+
+/*********************************************
 * TaskWriteResult
 **********************************************/
 export interface TaskWriteResult {
@@ -1022,6 +1138,13 @@ export interface TaskWriteResult {
 **********************************************/
 export interface TaskWriteResultCollections {
 
+}
+
+/*********************************************
+* TaskWriteResultQuery
+**********************************************/
+export interface TaskWriteResultQuery extends TaskWriteResult {
+	Result: SP.WorkManagement.OM.Task;
 }
 
 /*********************************************
@@ -1042,27 +1165,34 @@ export interface IUserOrderedSessionManagerQuery extends UserOrderedSessionManag
 * UserOrderedSessionManager
 **********************************************/
 export interface UserOrderedSessionManager extends UserOrderedSessionManagerCollections, UserOrderedSessionManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * UserOrderedSessionManagerProps
 **********************************************/
 export interface UserOrderedSessionManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* UserOrderedSessionManagerPropMethods
+**********************************************/
+export interface UserOrderedSessionManagerPropMethods {
 
 }
 
 /*********************************************
 * UserOrderedSessionManagerCollections
 **********************************************/
-export interface UserOrderedSessionManagerCollections extends UserOrderedSessionManagerProps {
+export interface UserOrderedSessionManagerCollections extends UserOrderedSessionManagerProps, UserOrderedSessionManagerPropMethods {
 
 }
 
 /*********************************************
 * UserOrderedSessionManagerQuery
 **********************************************/
-export interface UserOrderedSessionManagerQuery extends UserOrderedSessionManagerProps {
+export interface UserOrderedSessionManagerQuery extends UserOrderedSessionManagerProps,UserOrderedSessionManagerMethods {
 
 }
 
@@ -1103,16 +1233,23 @@ export interface UserOrderedSessionProps {
 }
 
 /*********************************************
+* UserOrderedSessionPropMethods
+**********************************************/
+export interface UserOrderedSessionPropMethods {
+
+}
+
+/*********************************************
 * UserOrderedSessionCollections
 **********************************************/
-export interface UserOrderedSessionCollections extends UserOrderedSessionProps {
+export interface UserOrderedSessionCollections extends UserOrderedSessionProps, UserOrderedSessionPropMethods {
 
 }
 
 /*********************************************
 * UserOrderedSessionQuery
 **********************************************/
-export interface UserOrderedSessionQuery extends UserOrderedSessionProps {
+export interface UserOrderedSessionQuery extends UserOrderedSessionProps,UserOrderedSessionMethods {
 
 }
 
@@ -1159,27 +1296,34 @@ export interface IUserSettingsManagerQuery extends UserSettingsManagerQuery,User
 * UserSettingsManager
 **********************************************/
 export interface UserSettingsManager extends UserSettingsManagerCollections, UserSettingsManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * UserSettingsManagerProps
 **********************************************/
 export interface UserSettingsManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* UserSettingsManagerPropMethods
+**********************************************/
+export interface UserSettingsManagerPropMethods {
 
 }
 
 /*********************************************
 * UserSettingsManagerCollections
 **********************************************/
-export interface UserSettingsManagerCollections extends UserSettingsManagerProps {
+export interface UserSettingsManagerCollections extends UserSettingsManagerProps, UserSettingsManagerPropMethods {
 
 }
 
 /*********************************************
 * UserSettingsManagerQuery
 **********************************************/
-export interface UserSettingsManagerQuery extends UserSettingsManagerProps {
+export interface UserSettingsManagerQuery extends UserSettingsManagerProps,UserSettingsManagerMethods {
 
 }
 

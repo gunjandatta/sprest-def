@@ -3,6 +3,7 @@ let parser = require("xml2js").parseString;
 let rmDir = require("rimraf");
 let custom = require("./custom");
 
+let hasCollections = {};
 let hasMethods = {};
 
 function createInterface(name, baseType, variables) {
@@ -286,6 +287,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                                         // Add the method
                                         directories[ns][collection][name]._Collections[methodName][methodRole] = methodType;
+
+                                        // Set the flag
+                                        hasCollections[ns + "." + name] = true;
                                     } else { continue; }
                                 }
 
@@ -402,32 +406,16 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     let methodInfo = methodTypes[methodKey][methodRole];
                                     let methodType = methodInfo.type || "any";
 
-                                    // Set the method query
-                                    let methodQuery = null;
-                                    let idx = methodType.lastIndexOf(".");
-                                    if (idx > 0) {
-                                        // Get the lib
-                                        let lib = methodType.substr(0, idx);
-
-                                        // Get the target method
-                                        let method = methodType.substr(idx + 1);
-
-                                        // See if methods exist
-                                        if (hasMethods[method]) {
-                                            // Set the method query
-                                            methodQuery = lib + ".I" + method + "Query";
-                                        }
-                                    }
-
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
                                         // Add the methods
-                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "CollectionMethods" : "") + ';');
-                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseQuery<' + methodType + (methodQuery ? ', ' + methodQuery : '') + '>' + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
+                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '') + ';');
+                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasMethods[methodType] ? ' & ' + methodType + 'Collections' : '') + ';');
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
                                         // Add the method
                                         props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
+                                        query.push('\t' + collection + ': ' + methodType + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
                                     }
 
                                     // Update the references
@@ -508,8 +496,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     // See if collection and methods don't exist
                     if (collections.length == 0 && methods.length == 0) {
                         // Generate the content
-                        content.push(createInterface(name, interface._BaseType, variables.join('\n')));
+                        content.push(createInterface(name, null, variables.join('\n')));
                         content.push(createInterface(name + "Collections", collectionMethods.length > 0 ? [name + "CollectionMethods"] : null, collections.join('\n')));
+                        query.length > 0 ? content.push(createInterface(name + "Query", name, query.join('\n'))) : null;
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
                     } else {
                         let baseTypes = interface._BaseType ? [interface._BaseType] : [];
@@ -519,11 +508,12 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         // Generate the content
                         content.push(createInterface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"]));
                         content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"]));
-                        content.push(createInterface(name, baseTypes.join(", "), variables.join('\n')));
-                        content.push(createInterface(name + "Props", null, props.join('\n')));
-                        content.push(createInterface(name + "Collections", name + "Props", collections.join('\n')));
+                        content.push(createInterface(name, baseTypes.join(", ")));
+                        content.push(createInterface(name + "Props", null, variables.join('\n')));
+                        content.push(createInterface(name + "PropMethods", null, props.join('\n')));
+                        content.push(createInterface(name + "Collections", name + "Props, " + name + "PropMethods", collections.join('\n')));
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
-                        content.push(createInterface(name + "Query", name + "Props", query.join('\n')));
+                        content.push(createInterface(name + "Query", [name + "Props", name + "Methods"], query.join('\n')));
                         content.push(createInterface(name + "Methods", null, methods.join('\n')));
                     }
                 }

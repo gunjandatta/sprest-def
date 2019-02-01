@@ -19,27 +19,34 @@ export interface ILogExportQuery extends LogExportQuery,LogExportMethods {
 * LogExport
 **********************************************/
 export interface LogExport extends LogExportCollections, LogExportMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * LogExportProps
 **********************************************/
 export interface LogExportProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* LogExportPropMethods
+**********************************************/
+export interface LogExportPropMethods {
 
 }
 
 /*********************************************
 * LogExportCollections
 **********************************************/
-export interface LogExportCollections extends LogExportProps {
+export interface LogExportCollections extends LogExportProps, LogExportPropMethods {
 
 }
 
 /*********************************************
 * LogExportQuery
 **********************************************/
-export interface LogExportQuery extends LogExportProps {
+export interface LogExportQuery extends LogExportProps,LogExportMethods {
 
 }
 

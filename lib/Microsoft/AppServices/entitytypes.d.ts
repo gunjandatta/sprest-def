@@ -19,27 +19,34 @@ export interface IAppCollectionQuery extends AppCollectionQuery,AppCollectionMet
 * AppCollection
 **********************************************/
 export interface AppCollection extends AppCollectionCollections, AppCollectionMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * AppCollectionProps
 **********************************************/
 export interface AppCollectionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AppCollectionPropMethods
+**********************************************/
+export interface AppCollectionPropMethods {
 
 }
 
 /*********************************************
 * AppCollectionCollections
 **********************************************/
-export interface AppCollectionCollections extends AppCollectionProps {
+export interface AppCollectionCollections extends AppCollectionProps, AppCollectionPropMethods {
 
 }
 
 /*********************************************
 * AppCollectionQuery
 **********************************************/
-export interface AppCollectionQuery extends AppCollectionProps {
+export interface AppCollectionQuery extends AppCollectionProps,AppCollectionMethods {
 
 }
 

@@ -36,29 +36,36 @@ export interface ISPPolicyStoreProxyQuery extends SPPolicyStoreProxyQuery,SPPoli
 * SPPolicyStoreProxy
 **********************************************/
 export interface SPPolicyStoreProxy extends SPPolicyStoreProxyCollections, SPPolicyStoreProxyMethods {
-	PolicyStoreUrl?: string;
-	ReviewCenterUrl?: string;
-	SupportContentTypeRetention?: boolean;
+
 }
 
 /*********************************************
 * SPPolicyStoreProxyProps
 **********************************************/
 export interface SPPolicyStoreProxyProps {
+	PolicyStoreUrl?: string;
+	ReviewCenterUrl?: string;
+	SupportContentTypeRetention?: boolean;
+}
+
+/*********************************************
+* SPPolicyStoreProxyPropMethods
+**********************************************/
+export interface SPPolicyStoreProxyPropMethods {
 
 }
 
 /*********************************************
 * SPPolicyStoreProxyCollections
 **********************************************/
-export interface SPPolicyStoreProxyCollections extends SPPolicyStoreProxyProps {
+export interface SPPolicyStoreProxyCollections extends SPPolicyStoreProxyProps, SPPolicyStoreProxyPropMethods {
 
 }
 
 /*********************************************
 * SPPolicyStoreProxyQuery
 **********************************************/
-export interface SPPolicyStoreProxyQuery extends SPPolicyStoreProxyProps {
+export interface SPPolicyStoreProxyQuery extends SPPolicyStoreProxyProps,SPPolicyStoreProxyMethods {
 
 }
 

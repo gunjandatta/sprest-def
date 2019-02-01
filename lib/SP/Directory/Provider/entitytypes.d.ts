@@ -20,27 +20,34 @@ export interface IDirectoryNotificationQuery extends DirectoryNotificationQuery,
 * DirectoryNotification
 **********************************************/
 export interface DirectoryNotification extends DirectoryNotificationCollections, DirectoryNotificationMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * DirectoryNotificationProps
 **********************************************/
 export interface DirectoryNotificationProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DirectoryNotificationPropMethods
+**********************************************/
+export interface DirectoryNotificationPropMethods {
 
 }
 
 /*********************************************
 * DirectoryNotificationCollections
 **********************************************/
-export interface DirectoryNotificationCollections extends DirectoryNotificationProps {
+export interface DirectoryNotificationCollections extends DirectoryNotificationProps, DirectoryNotificationPropMethods {
 
 }
 
 /*********************************************
 * DirectoryNotificationQuery
 **********************************************/
-export interface DirectoryNotificationQuery extends DirectoryNotificationProps {
+export interface DirectoryNotificationQuery extends DirectoryNotificationProps,DirectoryNotificationMethods {
 
 }
 
@@ -69,27 +76,34 @@ export interface ISharePointDirectoryProviderQuery extends SharePointDirectoryPr
 * SharePointDirectoryProvider
 **********************************************/
 export interface SharePointDirectoryProvider extends SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SharePointDirectoryProviderProps
 **********************************************/
 export interface SharePointDirectoryProviderProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SharePointDirectoryProviderPropMethods
+**********************************************/
+export interface SharePointDirectoryProviderPropMethods {
 
 }
 
 /*********************************************
 * SharePointDirectoryProviderCollections
 **********************************************/
-export interface SharePointDirectoryProviderCollections extends SharePointDirectoryProviderProps {
+export interface SharePointDirectoryProviderCollections extends SharePointDirectoryProviderProps, SharePointDirectoryProviderPropMethods {
 
 }
 
 /*********************************************
 * SharePointDirectoryProviderQuery
 **********************************************/
-export interface SharePointDirectoryProviderQuery extends SharePointDirectoryProviderProps {
+export interface SharePointDirectoryProviderQuery extends SharePointDirectoryProviderProps,SharePointDirectoryProviderMethods {
 
 }
 

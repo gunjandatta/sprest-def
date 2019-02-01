@@ -34,28 +34,35 @@ export interface ISocialFeedManagerQuery extends SocialFeedManagerQuery,SocialFe
 * SocialFeedManager
 **********************************************/
 export interface SocialFeedManager extends SocialFeedManagerCollections, SocialFeedManagerMethods {
-	Owner?: SP.Social.SocialActor;
-	PersonalSitePortalUri?: string;
+
 }
 
 /*********************************************
 * SocialFeedManagerProps
 **********************************************/
 export interface SocialFeedManagerProps {
+	Owner?: SP.Social.SocialActor;
+	PersonalSitePortalUri?: string;
+}
+
+/*********************************************
+* SocialFeedManagerPropMethods
+**********************************************/
+export interface SocialFeedManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialFeedManagerCollections
 **********************************************/
-export interface SocialFeedManagerCollections extends SocialFeedManagerProps {
+export interface SocialFeedManagerCollections extends SocialFeedManagerProps, SocialFeedManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialFeedManagerQuery
 **********************************************/
-export interface SocialFeedManagerQuery extends SocialFeedManagerProps {
+export interface SocialFeedManagerQuery extends SocialFeedManagerProps,SocialFeedManagerMethods {
 
 }
 
@@ -100,28 +107,35 @@ export interface ISocialFollowingManagerQuery extends SocialFollowingManagerQuer
 * SocialFollowingManager
 **********************************************/
 export interface SocialFollowingManager extends SocialFollowingManagerCollections, SocialFollowingManagerMethods {
-	FollowedDocumentsUri?: string;
-	FollowedSitesUri?: string;
+
 }
 
 /*********************************************
 * SocialFollowingManagerProps
 **********************************************/
 export interface SocialFollowingManagerProps {
+	FollowedDocumentsUri?: string;
+	FollowedSitesUri?: string;
+}
+
+/*********************************************
+* SocialFollowingManagerPropMethods
+**********************************************/
+export interface SocialFollowingManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialFollowingManagerCollections
 **********************************************/
-export interface SocialFollowingManagerCollections extends SocialFollowingManagerProps {
+export interface SocialFollowingManagerCollections extends SocialFollowingManagerProps, SocialFollowingManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialFollowingManagerQuery
 **********************************************/
-export interface SocialFollowingManagerQuery extends SocialFollowingManagerProps {
+export interface SocialFollowingManagerQuery extends SocialFollowingManagerProps,SocialFollowingManagerMethods {
 
 }
 
@@ -156,29 +170,36 @@ export interface ISocialRestActorQuery extends SocialRestActorQuery,SocialRestAc
 * SocialRestActor
 **********************************************/
 export interface SocialRestActor extends SocialRestActorCollections, SocialRestActorMethods {
-	FollowableItem?: string;
-	FollowableItemActor?: SP.Social.SocialActor;
-	Me?: SP.Social.SocialActor;
+
 }
 
 /*********************************************
 * SocialRestActorProps
 **********************************************/
 export interface SocialRestActorProps {
+	FollowableItem?: string;
+	FollowableItemActor?: SP.Social.SocialActor;
+	Me?: SP.Social.SocialActor;
+}
+
+/*********************************************
+* SocialRestActorPropMethods
+**********************************************/
+export interface SocialRestActorPropMethods {
 
 }
 
 /*********************************************
 * SocialRestActorCollections
 **********************************************/
-export interface SocialRestActorCollections extends SocialRestActorProps {
+export interface SocialRestActorCollections extends SocialRestActorProps, SocialRestActorPropMethods {
 
 }
 
 /*********************************************
 * SocialRestActorQuery
 **********************************************/
-export interface SocialRestActorQuery extends SocialRestActorProps {
+export interface SocialRestActorQuery extends SocialRestActorProps,SocialRestActorMethods {
 
 }
 
@@ -213,27 +234,34 @@ export interface ISocialRestFeedManagerQuery extends SocialRestFeedManagerQuery,
 * SocialRestFeedManager
 **********************************************/
 export interface SocialRestFeedManager extends SocialRestFeedManagerCollections, SocialRestFeedManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SocialRestFeedManagerProps
 **********************************************/
 export interface SocialRestFeedManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SocialRestFeedManagerPropMethods
+**********************************************/
+export interface SocialRestFeedManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFeedManagerCollections
 **********************************************/
-export interface SocialRestFeedManagerCollections extends SocialRestFeedManagerProps {
+export interface SocialRestFeedManagerCollections extends SocialRestFeedManagerProps, SocialRestFeedManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFeedManagerQuery
 **********************************************/
-export interface SocialRestFeedManagerQuery extends SocialRestFeedManagerProps {
+export interface SocialRestFeedManagerQuery extends SocialRestFeedManagerProps,SocialRestFeedManagerMethods {
 
 }
 
@@ -264,28 +292,35 @@ export interface ISocialRestFeedQuery extends SocialRestFeedQuery,SocialRestFeed
 * SocialRestFeed
 **********************************************/
 export interface SocialRestFeed extends SocialRestFeedCollections, SocialRestFeedMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	SocialFeed?: SP.Social.SocialFeed;
+
 }
 
 /*********************************************
 * SocialRestFeedProps
 **********************************************/
 export interface SocialRestFeedProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	SocialFeed?: SP.Social.SocialFeed;
+}
+
+/*********************************************
+* SocialRestFeedPropMethods
+**********************************************/
+export interface SocialRestFeedPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFeedCollections
 **********************************************/
-export interface SocialRestFeedCollections extends SocialRestFeedProps {
+export interface SocialRestFeedCollections extends SocialRestFeedProps, SocialRestFeedPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFeedQuery
 **********************************************/
-export interface SocialRestFeedQuery extends SocialRestFeedProps {
+export interface SocialRestFeedQuery extends SocialRestFeedProps,SocialRestFeedMethods {
 
 }
 
@@ -315,6 +350,13 @@ export interface ISocialRestFollowingManagerQuery extends SocialRestFollowingMan
 * SocialRestFollowingManager
 **********************************************/
 export interface SocialRestFollowingManager extends SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods {
+
+}
+
+/*********************************************
+* SocialRestFollowingManagerProps
+**********************************************/
+export interface SocialRestFollowingManagerProps {
 	FollowedDocumentsUri?: string;
 	FollowedSitesUri?: string;
 	MyFollowedDocumentsUri?: string;
@@ -323,23 +365,23 @@ export interface SocialRestFollowingManager extends SocialRestFollowingManagerCo
 }
 
 /*********************************************
-* SocialRestFollowingManagerProps
+* SocialRestFollowingManagerPropMethods
 **********************************************/
-export interface SocialRestFollowingManagerProps {
+export interface SocialRestFollowingManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFollowingManagerCollections
 **********************************************/
-export interface SocialRestFollowingManagerCollections extends SocialRestFollowingManagerProps {
+export interface SocialRestFollowingManagerCollections extends SocialRestFollowingManagerProps, SocialRestFollowingManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFollowingManagerQuery
 **********************************************/
-export interface SocialRestFollowingManagerQuery extends SocialRestFollowingManagerProps {
+export interface SocialRestFollowingManagerQuery extends SocialRestFollowingManagerProps,SocialRestFollowingManagerMethods {
 
 }
 
@@ -375,28 +417,35 @@ export interface ISocialRestThreadQuery extends SocialRestThreadQuery,SocialRest
 * SocialRestThread
 **********************************************/
 export interface SocialRestThread extends SocialRestThreadCollections, SocialRestThreadMethods {
-	ID?: string;
-	SocialThread?: SP.Social.SocialThread;
+
 }
 
 /*********************************************
 * SocialRestThreadProps
 **********************************************/
 export interface SocialRestThreadProps {
+	ID?: string;
+	SocialThread?: SP.Social.SocialThread;
+}
+
+/*********************************************
+* SocialRestThreadPropMethods
+**********************************************/
+export interface SocialRestThreadPropMethods {
 
 }
 
 /*********************************************
 * SocialRestThreadCollections
 **********************************************/
-export interface SocialRestThreadCollections extends SocialRestThreadProps {
+export interface SocialRestThreadCollections extends SocialRestThreadProps, SocialRestThreadPropMethods {
 
 }
 
 /*********************************************
 * SocialRestThreadQuery
 **********************************************/
-export interface SocialRestThreadQuery extends SocialRestThreadProps {
+export interface SocialRestThreadQuery extends SocialRestThreadProps,SocialRestThreadMethods {
 
 }
 

@@ -19,27 +19,34 @@ export interface IPointPublishingAdminQuery extends PointPublishingAdminQuery,Po
 * PointPublishingAdmin
 **********************************************/
 export interface PointPublishingAdmin extends PointPublishingAdminCollections, PointPublishingAdminMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * PointPublishingAdminProps
 **********************************************/
 export interface PointPublishingAdminProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PointPublishingAdminPropMethods
+**********************************************/
+export interface PointPublishingAdminPropMethods {
 
 }
 
 /*********************************************
 * PointPublishingAdminCollections
 **********************************************/
-export interface PointPublishingAdminCollections extends PointPublishingAdminProps {
+export interface PointPublishingAdminCollections extends PointPublishingAdminProps, PointPublishingAdminPropMethods {
 
 }
 
 /*********************************************
 * PointPublishingAdminQuery
 **********************************************/
-export interface PointPublishingAdminQuery extends PointPublishingAdminProps {
+export interface PointPublishingAdminQuery extends PointPublishingAdminProps,PointPublishingAdminMethods {
 
 }
 

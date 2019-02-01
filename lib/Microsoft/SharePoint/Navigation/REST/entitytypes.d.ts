@@ -20,27 +20,34 @@ export interface INavigationServiceRestQuery extends NavigationServiceRestQuery,
 * NavigationServiceRest
 **********************************************/
 export interface NavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * NavigationServiceRestProps
 **********************************************/
 export interface NavigationServiceRestProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* NavigationServiceRestPropMethods
+**********************************************/
+export interface NavigationServiceRestPropMethods {
 
 }
 
 /*********************************************
 * NavigationServiceRestCollections
 **********************************************/
-export interface NavigationServiceRestCollections extends NavigationServiceRestProps {
+export interface NavigationServiceRestCollections extends NavigationServiceRestProps, NavigationServiceRestPropMethods {
 
 }
 
 /*********************************************
 * NavigationServiceRestQuery
 **********************************************/
-export interface NavigationServiceRestQuery extends NavigationServiceRestProps {
+export interface NavigationServiceRestQuery extends NavigationServiceRestProps,NavigationServiceRestMethods {
 
 }
 

@@ -37,27 +37,34 @@ export interface IGroupServiceQuery extends GroupServiceQuery,GroupServiceMethod
 * GroupService
 **********************************************/
 export interface GroupService extends GroupServiceCollections, GroupServiceMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * GroupServiceProps
 **********************************************/
 export interface GroupServiceProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* GroupServicePropMethods
+**********************************************/
+export interface GroupServicePropMethods {
 
 }
 
 /*********************************************
 * GroupServiceCollections
 **********************************************/
-export interface GroupServiceCollections extends GroupServiceProps {
+export interface GroupServiceCollections extends GroupServiceProps, GroupServicePropMethods {
 
 }
 
 /*********************************************
 * GroupServiceQuery
 **********************************************/
-export interface GroupServiceQuery extends GroupServiceProps {
+export interface GroupServiceQuery extends GroupServiceProps,GroupServiceMethods {
 
 }
 
@@ -88,27 +95,34 @@ export interface IGroupSiteManagerQuery extends GroupSiteManagerQuery,GroupSiteM
 * GroupSiteManager
 **********************************************/
 export interface GroupSiteManager extends GroupSiteManagerCollections, GroupSiteManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * GroupSiteManagerProps
 **********************************************/
 export interface GroupSiteManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* GroupSiteManagerPropMethods
+**********************************************/
+export interface GroupSiteManagerPropMethods {
 
 }
 
 /*********************************************
 * GroupSiteManagerCollections
 **********************************************/
-export interface GroupSiteManagerCollections extends GroupSiteManagerProps {
+export interface GroupSiteManagerCollections extends GroupSiteManagerProps, GroupSiteManagerPropMethods {
 
 }
 
 /*********************************************
 * GroupSiteManagerQuery
 **********************************************/
-export interface GroupSiteManagerQuery extends GroupSiteManagerProps {
+export interface GroupSiteManagerQuery extends GroupSiteManagerProps,GroupSiteManagerMethods {
 
 }
 
@@ -146,27 +160,34 @@ export interface ISiteLinkingManagerQuery extends SiteLinkingManagerQuery,SiteLi
 * SiteLinkingManager
 **********************************************/
 export interface SiteLinkingManager extends SiteLinkingManagerCollections, SiteLinkingManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SiteLinkingManagerProps
 **********************************************/
 export interface SiteLinkingManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteLinkingManagerPropMethods
+**********************************************/
+export interface SiteLinkingManagerPropMethods {
 
 }
 
 /*********************************************
 * SiteLinkingManagerCollections
 **********************************************/
-export interface SiteLinkingManagerCollections extends SiteLinkingManagerProps {
+export interface SiteLinkingManagerCollections extends SiteLinkingManagerProps, SiteLinkingManagerPropMethods {
 
 }
 
 /*********************************************
 * SiteLinkingManagerQuery
 **********************************************/
-export interface SiteLinkingManagerQuery extends SiteLinkingManagerProps {
+export interface SiteLinkingManagerQuery extends SiteLinkingManagerProps,SiteLinkingManagerMethods {
 
 }
 
@@ -225,27 +246,34 @@ export interface ISharePointHomeServiceContextBuilderQuery extends SharePointHom
 * SharePointHomeServiceContextBuilder
 **********************************************/
 export interface SharePointHomeServiceContextBuilder extends SharePointHomeServiceContextBuilderCollections, SharePointHomeServiceContextBuilderMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SharePointHomeServiceContextBuilderProps
 **********************************************/
 export interface SharePointHomeServiceContextBuilderProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SharePointHomeServiceContextBuilderPropMethods
+**********************************************/
+export interface SharePointHomeServiceContextBuilderPropMethods {
 
 }
 
 /*********************************************
 * SharePointHomeServiceContextBuilderCollections
 **********************************************/
-export interface SharePointHomeServiceContextBuilderCollections extends SharePointHomeServiceContextBuilderProps {
+export interface SharePointHomeServiceContextBuilderCollections extends SharePointHomeServiceContextBuilderProps, SharePointHomeServiceContextBuilderPropMethods {
 
 }
 
 /*********************************************
 * SharePointHomeServiceContextBuilderQuery
 **********************************************/
-export interface SharePointHomeServiceContextBuilderQuery extends SharePointHomeServiceContextBuilderProps {
+export interface SharePointHomeServiceContextBuilderQuery extends SharePointHomeServiceContextBuilderProps,SharePointHomeServiceContextBuilderMethods {
 
 }
 
@@ -275,6 +303,13 @@ export interface SharePointHomeServiceContextCollections {
 }
 
 /*********************************************
+* SharePointHomeServiceContextQuery
+**********************************************/
+export interface SharePointHomeServiceContextQuery extends SharePointHomeServiceContext {
+	Token: SP.OAuth.TokenResponse;
+}
+
+/*********************************************
 * ISPHubSitesUtility
 **********************************************/
 export interface ISPHubSitesUtility extends SPHubSitesUtilityCollections,SPHubSitesUtilityMethods,IBaseQuery<ISPHubSitesUtilityQuery> {
@@ -292,27 +327,34 @@ export interface ISPHubSitesUtilityQuery extends SPHubSitesUtilityQuery,SPHubSit
 * SPHubSitesUtility
 **********************************************/
 export interface SPHubSitesUtility extends SPHubSitesUtilityCollections, SPHubSitesUtilityMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SPHubSitesUtilityProps
 **********************************************/
 export interface SPHubSitesUtilityProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPHubSitesUtilityPropMethods
+**********************************************/
+export interface SPHubSitesUtilityPropMethods {
 
 }
 
 /*********************************************
 * SPHubSitesUtilityCollections
 **********************************************/
-export interface SPHubSitesUtilityCollections extends SPHubSitesUtilityProps {
+export interface SPHubSitesUtilityCollections extends SPHubSitesUtilityProps, SPHubSitesUtilityPropMethods {
 
 }
 
 /*********************************************
 * SPHubSitesUtilityQuery
 **********************************************/
-export interface SPHubSitesUtilityQuery extends SPHubSitesUtilityProps {
+export interface SPHubSitesUtilityQuery extends SPHubSitesUtilityProps,SPHubSitesUtilityMethods {
 
 }
 
@@ -341,27 +383,34 @@ export interface ISPSiteManagerQuery extends SPSiteManagerQuery,SPSiteManagerMet
 * SPSiteManager
 **********************************************/
 export interface SPSiteManager extends SPSiteManagerCollections, SPSiteManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SPSiteManagerProps
 **********************************************/
 export interface SPSiteManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPSiteManagerPropMethods
+**********************************************/
+export interface SPSiteManagerPropMethods {
 
 }
 
 /*********************************************
 * SPSiteManagerCollections
 **********************************************/
-export interface SPSiteManagerCollections extends SPSiteManagerProps {
+export interface SPSiteManagerCollections extends SPSiteManagerProps, SPSiteManagerPropMethods {
 
 }
 
 /*********************************************
 * SPSiteManagerQuery
 **********************************************/
-export interface SPSiteManagerQuery extends SPSiteManagerProps {
+export interface SPSiteManagerQuery extends SPSiteManagerProps,SPSiteManagerMethods {
 
 }
 

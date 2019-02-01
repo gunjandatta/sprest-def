@@ -65,27 +65,34 @@ export interface IEntityInstanceQuery extends EntityInstanceQuery,EntityInstance
 * EntityInstance
 **********************************************/
 export interface EntityInstance extends EntityInstanceCollections, EntityInstanceMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * EntityInstanceProps
 **********************************************/
 export interface EntityInstanceProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* EntityInstancePropMethods
+**********************************************/
+export interface EntityInstancePropMethods {
 
 }
 
 /*********************************************
 * EntityInstanceCollections
 **********************************************/
-export interface EntityInstanceCollections extends EntityInstanceProps {
+export interface EntityInstanceCollections extends EntityInstanceProps, EntityInstancePropMethods {
 
 }
 
 /*********************************************
 * EntityInstanceQuery
 **********************************************/
-export interface EntityInstanceQuery extends EntityInstanceProps {
+export interface EntityInstanceQuery extends EntityInstanceProps,EntityInstanceMethods {
 
 }
 
@@ -120,27 +127,34 @@ export interface IEntityFieldValueDictionaryQuery extends EntityFieldValueDictio
 * EntityFieldValueDictionary
 **********************************************/
 export interface EntityFieldValueDictionary extends EntityFieldValueDictionaryCollections, EntityFieldValueDictionaryMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * EntityFieldValueDictionaryProps
 **********************************************/
 export interface EntityFieldValueDictionaryProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* EntityFieldValueDictionaryPropMethods
+**********************************************/
+export interface EntityFieldValueDictionaryPropMethods {
 
 }
 
 /*********************************************
 * EntityFieldValueDictionaryCollections
 **********************************************/
-export interface EntityFieldValueDictionaryCollections extends EntityFieldValueDictionaryProps {
+export interface EntityFieldValueDictionaryCollections extends EntityFieldValueDictionaryProps, EntityFieldValueDictionaryPropMethods {
 
 }
 
 /*********************************************
 * EntityFieldValueDictionaryQuery
 **********************************************/
-export interface EntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryProps {
+export interface EntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryProps,EntityFieldValueDictionaryMethods {
 
 }
 

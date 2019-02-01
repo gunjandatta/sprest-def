@@ -23,27 +23,34 @@ export interface ISPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDe
 * SPAppStateQueryJobDefinition
 **********************************************/
 export interface SPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionCollections, SPAppStateQueryJobDefinitionMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SPAppStateQueryJobDefinitionProps
 **********************************************/
 export interface SPAppStateQueryJobDefinitionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPAppStateQueryJobDefinitionPropMethods
+**********************************************/
+export interface SPAppStateQueryJobDefinitionPropMethods {
 
 }
 
 /*********************************************
 * SPAppStateQueryJobDefinitionCollections
 **********************************************/
-export interface SPAppStateQueryJobDefinitionCollections extends SPAppStateQueryJobDefinitionProps {
+export interface SPAppStateQueryJobDefinitionCollections extends SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionPropMethods {
 
 }
 
 /*********************************************
 * SPAppStateQueryJobDefinitionQuery
 **********************************************/
-export interface SPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionProps {
+export interface SPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionProps,SPAppStateQueryJobDefinitionMethods {
 
 }
 
@@ -66,6 +73,13 @@ export interface SPFarm {
 **********************************************/
 export interface SPFarmCollections {
 
+}
+
+/*********************************************
+* SPFarmQuery
+**********************************************/
+export interface SPFarmQuery extends SPFarm {
+	Local: Microsoft.SharePoint.Administration.SPFarm;
 }
 
 /*********************************************
@@ -122,6 +136,13 @@ export interface ISPWebApplicationQuery extends SPWebApplicationQuery,SPWebAppli
 * SPWebApplication
 **********************************************/
 export interface SPWebApplication extends SPWebApplicationCollections, SPWebApplicationMethods {
+
+}
+
+/*********************************************
+* SPWebApplicationProps
+**********************************************/
+export interface SPWebApplicationProps {
 	DisplayName?: string;
 	Id?: any;
 	OutboundMailPort?: number;
@@ -130,24 +151,24 @@ export interface SPWebApplication extends SPWebApplicationCollections, SPWebAppl
 }
 
 /*********************************************
-* SPWebApplicationProps
+* SPWebApplicationPropMethods
 **********************************************/
-export interface SPWebApplicationProps {
+export interface SPWebApplicationPropMethods {
 
 }
 
 /*********************************************
 * SPWebApplicationCollections
 **********************************************/
-export interface SPWebApplicationCollections extends SPWebApplicationProps {
-	Sites(): IBaseCollection<SP.Site>;
-	Sites(id: string | number): IBaseQuery<SP.Site>;
+export interface SPWebApplicationCollections extends SPWebApplicationProps, SPWebApplicationPropMethods {
+	Sites(): IBaseCollection<SP.Site, SP.SiteQuery>;
+	Sites(id: string | number): IBaseQuery<SP.Site, SP.SiteQuery>;
 }
 
 /*********************************************
 * SPWebApplicationQuery
 **********************************************/
-export interface SPWebApplicationQuery extends SPWebApplicationProps {
+export interface SPWebApplicationQuery extends SPWebApplicationProps,SPWebApplicationMethods {
 	Sites: IBaseResults<SP.Site>;
 }
 
@@ -176,28 +197,36 @@ export interface ISPWebServiceQuery extends SPWebServiceQuery,SPWebServiceMethod
 * SPWebService
 **********************************************/
 export interface SPWebService extends SPWebServiceCollections, SPWebServiceMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SPWebServiceProps
 **********************************************/
 export interface SPWebServiceProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPWebServicePropMethods
+**********************************************/
+export interface SPWebServicePropMethods {
 	ContentService(): IBaseExecution<Microsoft.SharePoint.Administration.SPWebService>;
 }
 
 /*********************************************
 * SPWebServiceCollections
 **********************************************/
-export interface SPWebServiceCollections extends SPWebServiceProps {
-	WebApplications(): IBaseCollection<Microsoft.SharePoint.Administration.SPWebApplication>;
-	WebApplications(id: string | number): IBaseQuery<Microsoft.SharePoint.Administration.SPWebApplication>;
+export interface SPWebServiceCollections extends SPWebServiceProps, SPWebServicePropMethods {
+	WebApplications(): IBaseCollection<Microsoft.SharePoint.Administration.SPWebApplication, Microsoft.SharePoint.Administration.SPWebApplicationQuery>;
+	WebApplications(id: string | number): IBaseQuery<Microsoft.SharePoint.Administration.SPWebApplication, Microsoft.SharePoint.Administration.SPWebApplicationQuery>;
 }
 
 /*********************************************
 * SPWebServiceQuery
 **********************************************/
-export interface SPWebServiceQuery extends SPWebServiceProps {
+export interface SPWebServiceQuery extends SPWebServiceProps,SPWebServiceMethods {
+	ContentService: Microsoft.SharePoint.Administration.SPWebService;
 	WebApplications: IBaseResults<Microsoft.SharePoint.Administration.SPWebApplication>;
 }
 
@@ -226,27 +255,34 @@ export interface ISPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceQu
 * SPAnalyticsUsageService
 **********************************************/
 export interface SPAnalyticsUsageService extends SPAnalyticsUsageServiceCollections, SPAnalyticsUsageServiceMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SPAnalyticsUsageServiceProps
 **********************************************/
 export interface SPAnalyticsUsageServiceProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPAnalyticsUsageServicePropMethods
+**********************************************/
+export interface SPAnalyticsUsageServicePropMethods {
 
 }
 
 /*********************************************
 * SPAnalyticsUsageServiceCollections
 **********************************************/
-export interface SPAnalyticsUsageServiceCollections extends SPAnalyticsUsageServiceProps {
+export interface SPAnalyticsUsageServiceCollections extends SPAnalyticsUsageServiceProps, SPAnalyticsUsageServicePropMethods {
 
 }
 
 /*********************************************
 * SPAnalyticsUsageServiceQuery
 **********************************************/
-export interface SPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceProps {
+export interface SPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceProps,SPAnalyticsUsageServiceMethods {
 
 }
 

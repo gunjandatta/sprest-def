@@ -19,27 +19,34 @@ export interface ISyncTranslatorQuery extends SyncTranslatorQuery,SyncTranslator
 * SyncTranslator
 **********************************************/
 export interface SyncTranslator extends SyncTranslatorCollections, SyncTranslatorMethods {
-	OutputSaveBehavior?: number;
+
 }
 
 /*********************************************
 * SyncTranslatorProps
 **********************************************/
 export interface SyncTranslatorProps {
+	OutputSaveBehavior?: number;
+}
+
+/*********************************************
+* SyncTranslatorPropMethods
+**********************************************/
+export interface SyncTranslatorPropMethods {
 
 }
 
 /*********************************************
 * SyncTranslatorCollections
 **********************************************/
-export interface SyncTranslatorCollections extends SyncTranslatorProps {
+export interface SyncTranslatorCollections extends SyncTranslatorProps, SyncTranslatorPropMethods {
 
 }
 
 /*********************************************
 * SyncTranslatorQuery
 **********************************************/
-export interface SyncTranslatorQuery extends SyncTranslatorProps {
+export interface SyncTranslatorQuery extends SyncTranslatorProps,SyncTranslatorMethods {
 
 }
 
@@ -69,29 +76,36 @@ export interface ITranslationJobQuery extends TranslationJobQuery,TranslationJob
 * TranslationJob
 **********************************************/
 export interface TranslationJob extends TranslationJobCollections, TranslationJobMethods {
-	JobId?: any;
-	Name?: string;
-	OutputSaveBehavior?: number;
+
 }
 
 /*********************************************
 * TranslationJobProps
 **********************************************/
 export interface TranslationJobProps {
+	JobId?: any;
+	Name?: string;
+	OutputSaveBehavior?: number;
+}
+
+/*********************************************
+* TranslationJobPropMethods
+**********************************************/
+export interface TranslationJobPropMethods {
 
 }
 
 /*********************************************
 * TranslationJobCollections
 **********************************************/
-export interface TranslationJobCollections extends TranslationJobProps {
+export interface TranslationJobCollections extends TranslationJobProps, TranslationJobPropMethods {
 
 }
 
 /*********************************************
 * TranslationJobQuery
 **********************************************/
-export interface TranslationJobQuery extends TranslationJobProps {
+export interface TranslationJobQuery extends TranslationJobProps,TranslationJobMethods {
 
 }
 
@@ -122,6 +136,13 @@ export interface ITranslationJobStatusQuery extends TranslationJobStatusQuery,Tr
 * TranslationJobStatus
 **********************************************/
 export interface TranslationJobStatus extends TranslationJobStatusCollections, TranslationJobStatusMethods {
+
+}
+
+/*********************************************
+* TranslationJobStatusProps
+**********************************************/
+export interface TranslationJobStatusProps {
 	Canceled?: number;
 	Count?: number;
 	Failed?: number;
@@ -132,23 +153,23 @@ export interface TranslationJobStatus extends TranslationJobStatusCollections, T
 }
 
 /*********************************************
-* TranslationJobStatusProps
+* TranslationJobStatusPropMethods
 **********************************************/
-export interface TranslationJobStatusProps {
+export interface TranslationJobStatusPropMethods {
 
 }
 
 /*********************************************
 * TranslationJobStatusCollections
 **********************************************/
-export interface TranslationJobStatusCollections extends TranslationJobStatusProps {
+export interface TranslationJobStatusCollections extends TranslationJobStatusProps, TranslationJobStatusPropMethods {
 
 }
 
 /*********************************************
 * TranslationJobStatusQuery
 **********************************************/
-export interface TranslationJobStatusQuery extends TranslationJobStatusProps {
+export interface TranslationJobStatusQuery extends TranslationJobStatusProps,TranslationJobStatusMethods {
 
 }
 

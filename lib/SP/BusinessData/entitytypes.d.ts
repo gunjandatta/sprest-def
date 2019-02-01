@@ -58,28 +58,35 @@ export interface IEntityIdentifierQuery extends EntityIdentifierQuery,EntityIden
 * EntityIdentifier
 **********************************************/
 export interface EntityIdentifier extends EntityIdentifierCollections, EntityIdentifierMethods {
-	IdentifierType?: string;
-	Name?: string;
+
 }
 
 /*********************************************
 * EntityIdentifierProps
 **********************************************/
 export interface EntityIdentifierProps {
+	IdentifierType?: string;
+	Name?: string;
+}
+
+/*********************************************
+* EntityIdentifierPropMethods
+**********************************************/
+export interface EntityIdentifierPropMethods {
 
 }
 
 /*********************************************
 * EntityIdentifierCollections
 **********************************************/
-export interface EntityIdentifierCollections extends EntityIdentifierProps {
+export interface EntityIdentifierCollections extends EntityIdentifierProps, EntityIdentifierPropMethods {
 
 }
 
 /*********************************************
 * EntityIdentifierQuery
 **********************************************/
-export interface EntityIdentifierQuery extends EntityIdentifierProps {
+export interface EntityIdentifierQuery extends EntityIdentifierProps,EntityIdentifierMethods {
 
 }
 
@@ -124,6 +131,13 @@ export interface ITypeDescriptorQuery extends TypeDescriptorQuery,TypeDescriptor
 * TypeDescriptor
 **********************************************/
 export interface TypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods {
+
+}
+
+/*********************************************
+* TypeDescriptorProps
+**********************************************/
+export interface TypeDescriptorProps {
 	ContainsReadOnly?: boolean;
 	IsCollection?: boolean;
 	IsReadOnly?: boolean;
@@ -132,23 +146,23 @@ export interface TypeDescriptor extends TypeDescriptorCollections, TypeDescripto
 }
 
 /*********************************************
-* TypeDescriptorProps
+* TypeDescriptorPropMethods
 **********************************************/
-export interface TypeDescriptorProps {
+export interface TypeDescriptorPropMethods {
 
 }
 
 /*********************************************
 * TypeDescriptorCollections
 **********************************************/
-export interface TypeDescriptorCollections extends TypeDescriptorProps {
+export interface TypeDescriptorCollections extends TypeDescriptorProps, TypeDescriptorPropMethods {
 
 }
 
 /*********************************************
 * TypeDescriptorQuery
 **********************************************/
-export interface TypeDescriptorQuery extends TypeDescriptorProps {
+export interface TypeDescriptorQuery extends TypeDescriptorProps,TypeDescriptorMethods {
 
 }
 
@@ -183,29 +197,36 @@ export interface IEntityQuery extends EntityQuery,EntityMethods {
 * Entity
 **********************************************/
 export interface Entity extends EntityCollections, EntityMethods {
-	EstimatedInstanceCount?: number;
-	Name?: string;
-	Namespace?: string;
+
 }
 
 /*********************************************
 * EntityProps
 **********************************************/
 export interface EntityProps {
+	EstimatedInstanceCount?: number;
+	Name?: string;
+	Namespace?: string;
+}
+
+/*********************************************
+* EntityPropMethods
+**********************************************/
+export interface EntityPropMethods {
 
 }
 
 /*********************************************
 * EntityCollections
 **********************************************/
-export interface EntityCollections extends EntityProps {
+export interface EntityCollections extends EntityProps, EntityPropMethods {
 
 }
 
 /*********************************************
 * EntityQuery
 **********************************************/
-export interface EntityQuery extends EntityProps {
+export interface EntityQuery extends EntityProps,EntityMethods {
 
 }
 
@@ -243,27 +264,34 @@ export interface ILobSystemQuery extends LobSystemQuery,LobSystemMethods {
 * LobSystem
 **********************************************/
 export interface LobSystem extends LobSystemCollections, LobSystemMethods {
-	Name?: string;
+
 }
 
 /*********************************************
 * LobSystemProps
 **********************************************/
 export interface LobSystemProps {
+	Name?: string;
+}
+
+/*********************************************
+* LobSystemPropMethods
+**********************************************/
+export interface LobSystemPropMethods {
 
 }
 
 /*********************************************
 * LobSystemCollections
 **********************************************/
-export interface LobSystemCollections extends LobSystemProps {
+export interface LobSystemCollections extends LobSystemProps, LobSystemPropMethods {
 
 }
 
 /*********************************************
 * LobSystemQuery
 **********************************************/
-export interface LobSystemQuery extends LobSystemProps {
+export interface LobSystemQuery extends LobSystemProps,LobSystemMethods {
 
 }
 
@@ -292,20 +320,27 @@ export interface IMethodExecutionResultQuery extends MethodExecutionResultQuery,
 * MethodExecutionResult
 **********************************************/
 export interface MethodExecutionResult extends MethodExecutionResultCollections, MethodExecutionResultMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * MethodExecutionResultProps
 **********************************************/
 export interface MethodExecutionResultProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MethodExecutionResultPropMethods
+**********************************************/
+export interface MethodExecutionResultPropMethods {
 
 }
 
 /*********************************************
 * MethodExecutionResultCollections
 **********************************************/
-export interface MethodExecutionResultCollections extends MethodExecutionResultProps {
+export interface MethodExecutionResultCollections extends MethodExecutionResultProps, MethodExecutionResultPropMethods {
 	ReturnParameterCollection(): IBaseCollection<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 	ReturnParameterCollection(id: string | number): IBaseQuery<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 }
@@ -313,7 +348,7 @@ export interface MethodExecutionResultCollections extends MethodExecutionResultP
 /*********************************************
 * MethodExecutionResultQuery
 **********************************************/
-export interface MethodExecutionResultQuery extends MethodExecutionResultProps {
+export interface MethodExecutionResultQuery extends MethodExecutionResultProps,MethodExecutionResultMethods {
 	ReturnParameterCollection: IBaseResults<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 }
 
@@ -342,21 +377,28 @@ export interface IEntityViewQuery extends EntityViewQuery,EntityViewMethods {
 * EntityView
 **********************************************/
 export interface EntityView extends EntityViewCollections, EntityViewMethods {
-	Name?: string;
-	RelatedSpecificFinderName?: string;
+
 }
 
 /*********************************************
 * EntityViewProps
 **********************************************/
 export interface EntityViewProps {
+	Name?: string;
+	RelatedSpecificFinderName?: string;
+}
+
+/*********************************************
+* EntityViewPropMethods
+**********************************************/
+export interface EntityViewPropMethods {
 
 }
 
 /*********************************************
 * EntityViewCollections
 **********************************************/
-export interface EntityViewCollections extends EntityViewProps {
+export interface EntityViewCollections extends EntityViewProps, EntityViewPropMethods {
 	Fields(): IBaseCollection<SP.BusinessData.EntityField>;
 	Fields(id: string | number): IBaseQuery<SP.BusinessData.EntityField>;
 }
@@ -364,7 +406,7 @@ export interface EntityViewCollections extends EntityViewProps {
 /*********************************************
 * EntityViewQuery
 **********************************************/
-export interface EntityViewQuery extends EntityViewProps {
+export interface EntityViewQuery extends EntityViewProps,EntityViewMethods {
 	Fields: IBaseResults<SP.BusinessData.EntityField>;
 }
 
@@ -396,27 +438,34 @@ export interface IAppBdcCatalogQuery extends AppBdcCatalogQuery,AppBdcCatalogMet
 * AppBdcCatalog
 **********************************************/
 export interface AppBdcCatalog extends AppBdcCatalogCollections, AppBdcCatalogMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * AppBdcCatalogProps
 **********************************************/
 export interface AppBdcCatalogProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AppBdcCatalogPropMethods
+**********************************************/
+export interface AppBdcCatalogPropMethods {
 
 }
 
 /*********************************************
 * AppBdcCatalogCollections
 **********************************************/
-export interface AppBdcCatalogCollections extends AppBdcCatalogProps {
+export interface AppBdcCatalogCollections extends AppBdcCatalogProps, AppBdcCatalogPropMethods {
 
 }
 
 /*********************************************
 * AppBdcCatalogQuery
 **********************************************/
-export interface AppBdcCatalogQuery extends AppBdcCatalogProps {
+export interface AppBdcCatalogQuery extends AppBdcCatalogProps,AppBdcCatalogMethods {
 
 }
 

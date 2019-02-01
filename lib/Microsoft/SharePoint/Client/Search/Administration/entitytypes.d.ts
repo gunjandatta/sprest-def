@@ -19,27 +19,34 @@ export interface IDocumentCrawlLogQuery extends DocumentCrawlLogQuery,DocumentCr
 * DocumentCrawlLog
 **********************************************/
 export interface DocumentCrawlLog extends DocumentCrawlLogCollections, DocumentCrawlLogMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * DocumentCrawlLogProps
 **********************************************/
 export interface DocumentCrawlLogProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DocumentCrawlLogPropMethods
+**********************************************/
+export interface DocumentCrawlLogPropMethods {
 
 }
 
 /*********************************************
 * DocumentCrawlLogCollections
 **********************************************/
-export interface DocumentCrawlLogCollections extends DocumentCrawlLogProps {
+export interface DocumentCrawlLogCollections extends DocumentCrawlLogProps, DocumentCrawlLogPropMethods {
 
 }
 
 /*********************************************
 * DocumentCrawlLogQuery
 **********************************************/
-export interface DocumentCrawlLogQuery extends DocumentCrawlLogProps {
+export interface DocumentCrawlLogQuery extends DocumentCrawlLogProps,DocumentCrawlLogMethods {
 
 }
 

@@ -19,27 +19,34 @@ export interface IOrgNewsSiteApiQuery extends OrgNewsSiteApiQuery,OrgNewsSiteApi
 * OrgNewsSiteApi
 **********************************************/
 export interface OrgNewsSiteApi extends OrgNewsSiteApiCollections, OrgNewsSiteApiMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * OrgNewsSiteApiProps
 **********************************************/
 export interface OrgNewsSiteApiProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* OrgNewsSiteApiPropMethods
+**********************************************/
+export interface OrgNewsSiteApiPropMethods {
 
 }
 
 /*********************************************
 * OrgNewsSiteApiCollections
 **********************************************/
-export interface OrgNewsSiteApiCollections extends OrgNewsSiteApiProps {
+export interface OrgNewsSiteApiCollections extends OrgNewsSiteApiProps, OrgNewsSiteApiPropMethods {
 
 }
 
 /*********************************************
 * OrgNewsSiteApiQuery
 **********************************************/
-export interface OrgNewsSiteApiQuery extends OrgNewsSiteApiProps {
+export interface OrgNewsSiteApiQuery extends OrgNewsSiteApiProps,OrgNewsSiteApiMethods {
 
 }
 

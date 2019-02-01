@@ -20,6 +20,13 @@ export interface ITaxonomyFieldQuery extends TaxonomyFieldQuery,TaxonomyFieldMet
 * TaxonomyField
 **********************************************/
 export interface TaxonomyField extends SP.FieldLookup, TaxonomyFieldCollections, TaxonomyFieldMethods {
+
+}
+
+/*********************************************
+* TaxonomyFieldProps
+**********************************************/
+export interface TaxonomyFieldProps {
 	AnchorId?: any;
 	CreateValuesInEditForm?: boolean;
 	IsAnchorValid?: boolean;
@@ -35,23 +42,23 @@ export interface TaxonomyField extends SP.FieldLookup, TaxonomyFieldCollections,
 }
 
 /*********************************************
-* TaxonomyFieldProps
+* TaxonomyFieldPropMethods
 **********************************************/
-export interface TaxonomyFieldProps {
+export interface TaxonomyFieldPropMethods {
 
 }
 
 /*********************************************
 * TaxonomyFieldCollections
 **********************************************/
-export interface TaxonomyFieldCollections extends TaxonomyFieldProps {
+export interface TaxonomyFieldCollections extends TaxonomyFieldProps, TaxonomyFieldPropMethods {
 
 }
 
 /*********************************************
 * TaxonomyFieldQuery
 **********************************************/
-export interface TaxonomyFieldQuery extends TaxonomyFieldProps {
+export interface TaxonomyFieldQuery extends TaxonomyFieldProps,TaxonomyFieldMethods {
 
 }
 

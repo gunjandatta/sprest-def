@@ -7,7 +7,7 @@ import { IBaseResults } from "../../";
 /*********************************************
 * AppPackagesListItem
 **********************************************/
-export interface AppPackagesListItem extends SP.ListItem {
+export interface AppPackagesListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -83,9 +83,18 @@ export interface AppPackagesListItemCollections {
 }
 
 /*********************************************
+* AppPackagesListItemQuery
+**********************************************/
+export interface AppPackagesListItemQuery extends AppPackagesListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * UserInfoItem
 **********************************************/
-export interface UserInfoItem extends SP.ListItem {
+export interface UserInfoItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -195,9 +204,17 @@ export interface UserInfoItemCollections {
 }
 
 /*********************************************
+* UserInfoItemQuery
+**********************************************/
+export interface UserInfoItemQuery extends UserInfoItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_appdataItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appdataItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_appdataItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -259,9 +276,17 @@ export interface OData__x005f_catalogs_x002f_appdataItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_appdataItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appdataItemQuery extends OData__x005f_catalogs_x002f_appdataItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_appfilesItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_appfilesItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_appfilesItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -327,9 +352,18 @@ export interface OData__x005f_catalogs_x002f_appfilesItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_appfilesItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_appfilesItemQuery extends OData__x005f_catalogs_x002f_appfilesItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * DraftAppsListItem
 **********************************************/
-export interface DraftAppsListItem extends SP.ListItem {
+export interface DraftAppsListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -398,9 +432,17 @@ export interface DraftAppsListItemCollections {
 }
 
 /*********************************************
+* DraftAppsListItemQuery
+**********************************************/
+export interface DraftAppsListItemQuery extends DraftAppsListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * BinsListItem
 **********************************************/
-export interface BinsListItem extends SP.ListItem {
+export interface BinsListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -468,9 +510,17 @@ export interface BinsListItemCollections {
 }
 
 /*********************************************
+* BinsListItemQuery
+**********************************************/
+export interface BinsListItemQuery extends BinsListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Cache_x0020_ProfilesItem
 **********************************************/
-export interface Cache_x0020_ProfilesItem extends SP.ListItem {
+export interface Cache_x0020_ProfilesItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -545,9 +595,17 @@ export interface Cache_x0020_ProfilesItemCollections {
 }
 
 /*********************************************
+* Cache_x0020_ProfilesItemQuery
+**********************************************/
+export interface Cache_x0020_ProfilesItemQuery extends Cache_x0020_ProfilesItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_designItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_designItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_designItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -615,9 +673,17 @@ export interface OData__x005f_catalogs_x002f_designItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_designItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_designItemQuery extends OData__x005f_catalogs_x002f_designItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Reports_x0020_ListItem
 **********************************************/
-export interface Reports_x0020_ListItem extends SP.ListItem {
+export interface Reports_x0020_ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -684,9 +750,17 @@ export interface Reports_x0020_ListItemCollections {
 }
 
 /*********************************************
+* Reports_x0020_ListItemQuery
+**********************************************/
+export interface Reports_x0020_ListItemQuery extends Reports_x0020_ListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ContentTypeSyncLogListItem
 **********************************************/
-export interface ContentTypeSyncLogListItem extends SP.ListItem {
+export interface ContentTypeSyncLogListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -752,9 +826,17 @@ export interface ContentTypeSyncLogListItemCollections {
 }
 
 /*********************************************
+* ContentTypeSyncLogListItemQuery
+**********************************************/
+export interface ContentTypeSyncLogListItemQuery extends ContentTypeSyncLogListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * IWConvertedFormsItem
 **********************************************/
-export interface IWConvertedFormsItem extends SP.ListItem {
+export interface IWConvertedFormsItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -823,9 +905,18 @@ export interface IWConvertedFormsItemCollections {
 }
 
 /*********************************************
+* IWConvertedFormsItemQuery
+**********************************************/
+export interface IWConvertedFormsItemQuery extends IWConvertedFormsItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * CTDemoListItem
 **********************************************/
-export interface CTDemoListItem extends SP.ListItem {
+export interface CTDemoListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -894,6 +985,14 @@ export interface CTDemoListItemCollections {
 }
 
 /*********************************************
+* CTDemoListItemQuery
+**********************************************/
+export interface CTDemoListItemQuery extends CTDemoListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * IDevListItem
 **********************************************/
 export interface IDevListItem extends DevListItemCollections,DevListItemMethods,IBaseQuery<IDevListItemQuery> {
@@ -911,6 +1010,13 @@ export interface IDevListItemQuery extends DevListItemQuery,DevListItemMethods {
 * DevListItem
 **********************************************/
 export interface DevListItem extends SP.ListItem, DevListItemCollections, DevListItemMethods {
+
+}
+
+/*********************************************
+* DevListItemProps
+**********************************************/
+export interface DevListItemProps {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -970,9 +1076,9 @@ export interface DevListItem extends SP.ListItem, DevListItemCollections, DevLis
 }
 
 /*********************************************
-* DevListItemProps
+* DevListItemPropMethods
 **********************************************/
-export interface DevListItemProps {
+export interface DevListItemPropMethods {
 	User(): IBaseExecution<SP.Data.UserInfoItem>;
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -981,16 +1087,19 @@ export interface DevListItemProps {
 /*********************************************
 * DevListItemCollections
 **********************************************/
-export interface DevListItemCollections extends DevListItemProps {
-	Multi_x0020_Lookup(): IBaseCollection<SP.Data.DevListItem>;
-	Multi_x0020_Lookup(id: string | number): IBaseQuery<SP.Data.DevListItem>;
+export interface DevListItemCollections extends DevListItemProps, DevListItemPropMethods {
+	Multi_x0020_Lookup(): IBaseCollection<SP.Data.DevListItem, SP.Data.DevListItemQuery>;
+	Multi_x0020_Lookup(id: string | number): IBaseQuery<SP.Data.DevListItem, SP.Data.DevListItemQuery>;
 }
 
 /*********************************************
 * DevListItemQuery
 **********************************************/
-export interface DevListItemQuery extends DevListItemProps {
+export interface DevListItemQuery extends DevListItemProps,DevListItemMethods {
+	User: SP.Data.UserInfoItem;
 	Multi_x0020_Lookup: IBaseResults<SP.Data.DevListItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -1003,7 +1112,7 @@ export interface DevListItemMethods {
 /*********************************************
 * DeviceChannelsItem
 **********************************************/
-export interface DeviceChannelsItem extends SP.ListItem {
+export interface DeviceChannelsItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1070,9 +1179,17 @@ export interface DeviceChannelsItemCollections {
 }
 
 /*********************************************
+* DeviceChannelsItemQuery
+**********************************************/
+export interface DeviceChannelsItemQuery extends DeviceChannelsItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * DocSetItem
 **********************************************/
-export interface DocSetItem extends SP.ListItem {
+export interface DocSetItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1149,6 +1266,15 @@ export interface DocSetItemCollections {
 }
 
 /*********************************************
+* DocSetItemQuery
+**********************************************/
+export interface DocSetItemQuery extends DocSetItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * IShared_x0020_DocumentsItem
 **********************************************/
 export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemCollections,Shared_x0020_DocumentsItemMethods,IBaseQuery<IShared_x0020_DocumentsItemQuery> {
@@ -1166,6 +1292,13 @@ export interface IShared_x0020_DocumentsItemQuery extends Shared_x0020_Documents
 * Shared_x0020_DocumentsItem
 **********************************************/
 export interface Shared_x0020_DocumentsItem extends SP.ListItem, Shared_x0020_DocumentsItemCollections, Shared_x0020_DocumentsItemMethods {
+
+}
+
+/*********************************************
+* Shared_x0020_DocumentsItemProps
+**********************************************/
+export interface Shared_x0020_DocumentsItemProps {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1240,9 +1373,9 @@ export interface Shared_x0020_DocumentsItem extends SP.ListItem, Shared_x0020_Do
 }
 
 /*********************************************
-* Shared_x0020_DocumentsItemProps
+* Shared_x0020_DocumentsItemPropMethods
 **********************************************/
-export interface Shared_x0020_DocumentsItemProps {
+export interface Shared_x0020_DocumentsItemPropMethods {
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
 	CheckoutUser(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -1251,16 +1384,19 @@ export interface Shared_x0020_DocumentsItemProps {
 /*********************************************
 * Shared_x0020_DocumentsItemCollections
 **********************************************/
-export interface Shared_x0020_DocumentsItemCollections extends Shared_x0020_DocumentsItemProps {
-	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem>;
-	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
+export interface Shared_x0020_DocumentsItemCollections extends Shared_x0020_DocumentsItemProps, Shared_x0020_DocumentsItemPropMethods {
+	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
 }
 
 /*********************************************
 * Shared_x0020_DocumentsItemQuery
 **********************************************/
-export interface Shared_x0020_DocumentsItemQuery extends Shared_x0020_DocumentsItemProps {
+export interface Shared_x0020_DocumentsItemQuery extends Shared_x0020_DocumentsItemProps,Shared_x0020_DocumentsItemMethods {
 	SharedWithUsers: IBaseResults<SP.Data.UserInfoItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -1288,6 +1424,13 @@ export interface IEvent_x0020_CalloutListItemQuery extends Event_x0020_CalloutLi
 * Event_x0020_CalloutListItem
 **********************************************/
 export interface Event_x0020_CalloutListItem extends SP.ListItem, Event_x0020_CalloutListItemCollections, Event_x0020_CalloutListItemMethods {
+
+}
+
+/*********************************************
+* Event_x0020_CalloutListItemProps
+**********************************************/
+export interface Event_x0020_CalloutListItemProps {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1368,9 +1511,9 @@ export interface Event_x0020_CalloutListItem extends SP.ListItem, Event_x0020_Ca
 }
 
 /*********************************************
-* Event_x0020_CalloutListItemProps
+* Event_x0020_CalloutListItemPropMethods
 **********************************************/
-export interface Event_x0020_CalloutListItemProps {
+export interface Event_x0020_CalloutListItemPropMethods {
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
 }
@@ -1378,15 +1521,17 @@ export interface Event_x0020_CalloutListItemProps {
 /*********************************************
 * Event_x0020_CalloutListItemCollections
 **********************************************/
-export interface Event_x0020_CalloutListItemCollections extends Event_x0020_CalloutListItemProps {
-	ParticipantsPicker(): IBaseCollection<SP.Data.UserInfoItem>;
-	ParticipantsPicker(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
+export interface Event_x0020_CalloutListItemCollections extends Event_x0020_CalloutListItemProps, Event_x0020_CalloutListItemPropMethods {
+	ParticipantsPicker(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	ParticipantsPicker(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
 }
 
 /*********************************************
 * Event_x0020_CalloutListItemQuery
 **********************************************/
-export interface Event_x0020_CalloutListItemQuery extends Event_x0020_CalloutListItemProps {
+export interface Event_x0020_CalloutListItemQuery extends Event_x0020_CalloutListItemProps,Event_x0020_CalloutListItemMethods {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
 	ParticipantsPicker: IBaseResults<SP.Data.UserInfoItem>;
 }
 
@@ -1400,7 +1545,7 @@ export interface Event_x0020_CalloutListItemMethods {
 /*********************************************
 * FormServerTemplatesItem
 **********************************************/
-export interface FormServerTemplatesItem extends SP.ListItem {
+export interface FormServerTemplatesItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -1485,9 +1630,18 @@ export interface FormServerTemplatesItemCollections {
 }
 
 /*********************************************
+* FormServerTemplatesItemQuery
+**********************************************/
+export interface FormServerTemplatesItemQuery extends FormServerTemplatesItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * GettingStartedListItem
 **********************************************/
-export interface GettingStartedListItem extends SP.ListItem {
+export interface GettingStartedListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1556,9 +1710,17 @@ export interface GettingStartedListItemCollections {
 }
 
 /*********************************************
+* GettingStartedListItemQuery
+**********************************************/
+export interface GettingStartedListItemQuery extends GettingStartedListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * LargeListListItem
 **********************************************/
-export interface LargeListListItem extends SP.ListItem {
+export interface LargeListListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -1620,9 +1782,17 @@ export interface LargeListListItemCollections {
 }
 
 /*********************************************
+* LargeListListItemQuery
+**********************************************/
+export interface LargeListListItemQuery extends LargeListListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_ltItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_ltItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_ltItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -1699,9 +1869,18 @@ export interface OData__x005f_catalogs_x002f_ltItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_ltItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_ltItemQuery extends OData__x005f_catalogs_x002f_ltItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Long_x0020_Running_x0020_Operation_x0020_StatusItem
 **********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem extends SP.ListItem {
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1783,9 +1962,17 @@ export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections 
 }
 
 /*********************************************
+* Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery
+**********************************************/
+export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemQuery extends Long_x0020_Running_x0020_Operation_x0020_StatusItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_MaintenanceLogsItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -1851,9 +2038,18 @@ export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemQuery extends OData__x005f_catalogs_x002f_MaintenanceLogsItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * MapListItem
 **********************************************/
-export interface MapListItem extends SP.ListItem {
+export interface MapListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1916,9 +2112,17 @@ export interface MapListItemCollections {
 }
 
 /*********************************************
+* MapListItemQuery
+**********************************************/
+export interface MapListItemQuery extends MapListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_masterpageItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_masterpageItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_masterpageItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -2018,6 +2222,18 @@ export interface OData__x005f_catalogs_x002f_masterpageItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_masterpageItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_masterpageItemQuery extends OData__x005f_catalogs_x002f_masterpageItem {
+	PublishingContact: SP.Data.UserInfoItem;
+	AuthenticatedCacheProfile: SP.Data.Cache_x0020_ProfilesItem;
+	AnonymousCacheProfile: SP.Data.Cache_x0020_ProfilesItem;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * IPublishedFeedListItem
 **********************************************/
 export interface IPublishedFeedListItem extends PublishedFeedListItemCollections,PublishedFeedListItemMethods,IBaseQuery<IPublishedFeedListItemQuery> {
@@ -2035,6 +2251,13 @@ export interface IPublishedFeedListItemQuery extends PublishedFeedListItemQuery,
 * PublishedFeedListItem
 **********************************************/
 export interface PublishedFeedListItem extends SP.ListItem, PublishedFeedListItemCollections, PublishedFeedListItemMethods {
+
+}
+
+/*********************************************
+* PublishedFeedListItemProps
+**********************************************/
+export interface PublishedFeedListItemProps {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2131,9 +2354,9 @@ export interface PublishedFeedListItem extends SP.ListItem, PublishedFeedListIte
 }
 
 /*********************************************
-* PublishedFeedListItemProps
+* PublishedFeedListItemPropMethods
 **********************************************/
-export interface PublishedFeedListItemProps {
+export interface PublishedFeedListItemPropMethods {
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
 }
@@ -2141,19 +2364,21 @@ export interface PublishedFeedListItemProps {
 /*********************************************
 * PublishedFeedListItemCollections
 **********************************************/
-export interface PublishedFeedListItemCollections extends PublishedFeedListItemProps {
-	LikedBy(): IBaseCollection<SP.Data.UserInfoItem>;
-	LikedBy(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
-	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem>;
-	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem>;
+export interface PublishedFeedListItemCollections extends PublishedFeedListItemProps, PublishedFeedListItemPropMethods {
+	LikedBy(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	LikedBy(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemQuery>;
+	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemQuery>;
 }
 
 /*********************************************
 * PublishedFeedListItemQuery
 **********************************************/
-export interface PublishedFeedListItemQuery extends PublishedFeedListItemProps {
+export interface PublishedFeedListItemQuery extends PublishedFeedListItemProps,PublishedFeedListItemMethods {
 	LikedBy: IBaseResults<SP.Data.UserInfoItem>;
 	TaxCatchAll: IBaseResults<SP.Data.TaxonomyHiddenListListItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -2166,7 +2391,7 @@ export interface PublishedFeedListItemMethods {
 /*********************************************
 * TaxonomyHiddenListListItem
 **********************************************/
-export interface TaxonomyHiddenListListItem extends SP.ListItem {
+export interface TaxonomyHiddenListListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2337,9 +2562,17 @@ export interface TaxonomyHiddenListListItemCollections {
 }
 
 /*********************************************
+* TaxonomyHiddenListListItemQuery
+**********************************************/
+export interface TaxonomyHiddenListListItemQuery extends TaxonomyHiddenListListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * MyContactsListItem
 **********************************************/
-export interface MyContactsListItem extends SP.ListItem {
+export interface MyContactsListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2402,9 +2635,17 @@ export interface MyContactsListItemCollections {
 }
 
 /*********************************************
+* MyContactsListItemQuery
+**********************************************/
+export interface MyContactsListItemQuery extends MyContactsListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * MyListListItem
 **********************************************/
-export interface MyListListItem extends SP.ListItem {
+export interface MyListListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2471,9 +2712,17 @@ export interface MyListListItemCollections {
 }
 
 /*********************************************
+* MyListListItemQuery
+**********************************************/
+export interface MyListListItemQuery extends MyListListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * My_x0020_Lists_x0020_InfoListItem
 **********************************************/
-export interface My_x0020_Lists_x0020_InfoListItem extends SP.ListItem {
+export interface My_x0020_Lists_x0020_InfoListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -2535,9 +2784,17 @@ export interface My_x0020_Lists_x0020_InfoListItemCollections {
 }
 
 /*********************************************
+* My_x0020_Lists_x0020_InfoListItemQuery
+**********************************************/
+export interface My_x0020_Lists_x0020_InfoListItemQuery extends My_x0020_Lists_x0020_InfoListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Notification_x0020_PagesItem
 **********************************************/
-export interface Notification_x0020_PagesItem extends SP.ListItem {
+export interface Notification_x0020_PagesItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2601,9 +2858,17 @@ export interface Notification_x0020_PagesItemCollections {
 }
 
 /*********************************************
+* Notification_x0020_PagesItemQuery
+**********************************************/
+export interface Notification_x0020_PagesItemQuery extends Notification_x0020_PagesItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ProjectPolicyItemListItem
 **********************************************/
-export interface ProjectPolicyItemListItem extends SP.ListItem {
+export interface ProjectPolicyItemListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2676,9 +2941,17 @@ export interface ProjectPolicyItemListItemCollections {
 }
 
 /*********************************************
+* ProjectPolicyItemListItemQuery
+**********************************************/
+export interface ProjectPolicyItemListItemQuery extends ProjectPolicyItemListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Quick_x0020_Deploy_x0020_ItemsItem
 **********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItem extends SP.ListItem {
+export interface Quick_x0020_Deploy_x0020_ItemsItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2743,9 +3016,17 @@ export interface Quick_x0020_Deploy_x0020_ItemsItemCollections {
 }
 
 /*********************************************
+* Quick_x0020_Deploy_x0020_ItemsItemQuery
+**********************************************/
+export interface Quick_x0020_Deploy_x0020_ItemsItemQuery extends Quick_x0020_Deploy_x0020_ItemsItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Relationships_x0020_ListItem
 **********************************************/
-export interface Relationships_x0020_ListItem extends SP.ListItem {
+export interface Relationships_x0020_ListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2815,9 +3096,17 @@ export interface Relationships_x0020_ListItemCollections {
 }
 
 /*********************************************
+* Relationships_x0020_ListItemQuery
+**********************************************/
+export interface Relationships_x0020_ListItemQuery extends Relationships_x0020_ListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ReusableContentItem
 **********************************************/
-export interface ReusableContentItem extends SP.ListItem {
+export interface ReusableContentItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2885,9 +3174,17 @@ export interface ReusableContentItemCollections {
 }
 
 /*********************************************
+* ReusableContentItemQuery
+**********************************************/
+export interface ReusableContentItemQuery extends ReusableContentItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Sharing_x0020_LinksItem
 **********************************************/
-export interface Sharing_x0020_LinksItem extends SP.ListItem {
+export interface Sharing_x0020_LinksItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -2952,6 +3249,14 @@ export interface Sharing_x0020_LinksItemCollections {
 }
 
 /*********************************************
+* Sharing_x0020_LinksItemQuery
+**********************************************/
+export interface Sharing_x0020_LinksItemQuery extends Sharing_x0020_LinksItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ISiteAssetsItem
 **********************************************/
 export interface ISiteAssetsItem extends SiteAssetsItemCollections,SiteAssetsItemMethods,IBaseQuery<ISiteAssetsItemQuery> {
@@ -2969,6 +3274,13 @@ export interface ISiteAssetsItemQuery extends SiteAssetsItemQuery,SiteAssetsItem
 * SiteAssetsItem
 **********************************************/
 export interface SiteAssetsItem extends SP.ListItem, SiteAssetsItemCollections, SiteAssetsItemMethods {
+
+}
+
+/*********************************************
+* SiteAssetsItemProps
+**********************************************/
+export interface SiteAssetsItemProps {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3039,9 +3351,9 @@ export interface SiteAssetsItem extends SP.ListItem, SiteAssetsItemCollections, 
 }
 
 /*********************************************
-* SiteAssetsItemProps
+* SiteAssetsItemPropMethods
 **********************************************/
-export interface SiteAssetsItemProps {
+export interface SiteAssetsItemPropMethods {
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
 	CheckoutUser(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -3050,16 +3362,19 @@ export interface SiteAssetsItemProps {
 /*********************************************
 * SiteAssetsItemCollections
 **********************************************/
-export interface SiteAssetsItemCollections extends SiteAssetsItemProps {
-	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem>;
-	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
+export interface SiteAssetsItemCollections extends SiteAssetsItemProps, SiteAssetsItemPropMethods {
+	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
 }
 
 /*********************************************
 * SiteAssetsItemQuery
 **********************************************/
-export interface SiteAssetsItemQuery extends SiteAssetsItemProps {
+export interface SiteAssetsItemQuery extends SiteAssetsItemProps,SiteAssetsItemMethods {
 	SharedWithUsers: IBaseResults<SP.Data.UserInfoItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -3072,7 +3387,7 @@ export interface SiteAssetsItemMethods {
 /*********************************************
 * SiteCollectionDocumentsItem
 **********************************************/
-export interface SiteCollectionDocumentsItem extends SP.ListItem {
+export interface SiteCollectionDocumentsItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3150,6 +3465,15 @@ export interface SiteCollectionDocumentsItemCollections {
 }
 
 /*********************************************
+* SiteCollectionDocumentsItemQuery
+**********************************************/
+export interface SiteCollectionDocumentsItemQuery extends SiteCollectionDocumentsItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ISiteCollectionImagesItem
 **********************************************/
 export interface ISiteCollectionImagesItem extends SiteCollectionImagesItemCollections,SiteCollectionImagesItemMethods,IBaseQuery<ISiteCollectionImagesItemQuery> {
@@ -3167,6 +3491,13 @@ export interface ISiteCollectionImagesItemQuery extends SiteCollectionImagesItem
 * SiteCollectionImagesItem
 **********************************************/
 export interface SiteCollectionImagesItem extends SP.ListItem, SiteCollectionImagesItemCollections, SiteCollectionImagesItemMethods {
+
+}
+
+/*********************************************
+* SiteCollectionImagesItemProps
+**********************************************/
+export interface SiteCollectionImagesItemProps {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3264,9 +3595,9 @@ export interface SiteCollectionImagesItem extends SP.ListItem, SiteCollectionIma
 }
 
 /*********************************************
-* SiteCollectionImagesItemProps
+* SiteCollectionImagesItemPropMethods
 **********************************************/
-export interface SiteCollectionImagesItemProps {
+export interface SiteCollectionImagesItemPropMethods {
 	VideoSetOwner(): IBaseExecution<SP.Data.UserInfoItem>;
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -3276,16 +3607,20 @@ export interface SiteCollectionImagesItemProps {
 /*********************************************
 * SiteCollectionImagesItemCollections
 **********************************************/
-export interface SiteCollectionImagesItemCollections extends SiteCollectionImagesItemProps {
-	PeopleInMedia(): IBaseCollection<SP.Data.UserInfoItem>;
-	PeopleInMedia(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
+export interface SiteCollectionImagesItemCollections extends SiteCollectionImagesItemProps, SiteCollectionImagesItemPropMethods {
+	PeopleInMedia(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	PeopleInMedia(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
 }
 
 /*********************************************
 * SiteCollectionImagesItemQuery
 **********************************************/
-export interface SiteCollectionImagesItemQuery extends SiteCollectionImagesItemProps {
+export interface SiteCollectionImagesItemQuery extends SiteCollectionImagesItemProps,SiteCollectionImagesItemMethods {
+	VideoSetOwner: SP.Data.UserInfoItem;
 	PeopleInMedia: IBaseResults<SP.Data.UserInfoItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -3313,6 +3648,13 @@ export interface ISitePagesItemQuery extends SitePagesItemQuery,SitePagesItemMet
 * SitePagesItem
 **********************************************/
 export interface SitePagesItem extends SP.ListItem, SitePagesItemCollections, SitePagesItemMethods {
+
+}
+
+/*********************************************
+* SitePagesItemProps
+**********************************************/
+export interface SitePagesItemProps {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -3393,9 +3735,9 @@ export interface SitePagesItem extends SP.ListItem, SitePagesItemCollections, Si
 }
 
 /*********************************************
-* SitePagesItemProps
+* SitePagesItemPropMethods
 **********************************************/
-export interface SitePagesItemProps {
+export interface SitePagesItemPropMethods {
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
 	CheckoutUser(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -3404,19 +3746,22 @@ export interface SitePagesItemProps {
 /*********************************************
 * SitePagesItemCollections
 **********************************************/
-export interface SitePagesItemCollections extends SitePagesItemProps {
-	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem>;
-	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
-	OData__AuthorByline(): IBaseCollection<SP.Data.UserInfoItem>;
-	OData__AuthorByline(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
+export interface SitePagesItemCollections extends SitePagesItemProps, SitePagesItemPropMethods {
+	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	OData__AuthorByline(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	OData__AuthorByline(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
 }
 
 /*********************************************
 * SitePagesItemQuery
 **********************************************/
-export interface SitePagesItemQuery extends SitePagesItemProps {
+export interface SitePagesItemQuery extends SitePagesItemProps,SitePagesItemMethods {
 	SharedWithUsers: IBaseResults<SP.Data.UserInfoItem>;
 	OData__AuthorByline: IBaseResults<SP.Data.UserInfoItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -3429,7 +3774,7 @@ export interface SitePagesItemMethods {
 /*********************************************
 * OData__x005f_catalogs_x002f_solutionsItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_solutionsItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_solutionsItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3501,6 +3846,15 @@ export interface OData__x005f_catalogs_x002f_solutionsItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_solutionsItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_solutionsItemQuery extends OData__x005f_catalogs_x002f_solutionsItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ISPReactListItem
 **********************************************/
 export interface ISPReactListItem extends SPReactListItemCollections,SPReactListItemMethods,IBaseQuery<ISPReactListItemQuery> {
@@ -3518,6 +3872,13 @@ export interface ISPReactListItemQuery extends SPReactListItemQuery,SPReactListI
 * SPReactListItem
 **********************************************/
 export interface SPReactListItem extends SP.ListItem, SPReactListItemCollections, SPReactListItemMethods {
+
+}
+
+/*********************************************
+* SPReactListItemProps
+**********************************************/
+export interface SPReactListItemProps {
 	Calculated_x0020_Title?: string;
 	Title?: string;
 	TestBoolean?: boolean;
@@ -3594,9 +3955,9 @@ export interface SPReactListItem extends SP.ListItem, SPReactListItemCollections
 }
 
 /*********************************************
-* SPReactListItemProps
+* SPReactListItemPropMethods
 **********************************************/
-export interface SPReactListItemProps {
+export interface SPReactListItemPropMethods {
 	TestUser(): IBaseExecution<SP.Data.UserInfoItem>;
 	TestLookup(): IBaseExecution<SP.Data.SPReactListItem>;
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -3606,22 +3967,26 @@ export interface SPReactListItemProps {
 /*********************************************
 * SPReactListItemCollections
 **********************************************/
-export interface SPReactListItemCollections extends SPReactListItemProps {
-	TestMultiUser(): IBaseCollection<SP.Data.UserInfoItem>;
-	TestMultiUser(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
-	TestMultiLookup(): IBaseCollection<SP.Data.SPReactListItem>;
-	TestMultiLookup(id: string | number): IBaseQuery<SP.Data.SPReactListItem>;
-	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem>;
-	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem>;
+export interface SPReactListItemCollections extends SPReactListItemProps, SPReactListItemPropMethods {
+	TestMultiUser(): IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	TestMultiUser(id: string | number): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery>;
+	TestMultiLookup(): IBaseCollection<SP.Data.SPReactListItem, SP.Data.SPReactListItemQuery>;
+	TestMultiLookup(id: string | number): IBaseQuery<SP.Data.SPReactListItem, SP.Data.SPReactListItemQuery>;
+	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemQuery>;
+	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemQuery>;
 }
 
 /*********************************************
 * SPReactListItemQuery
 **********************************************/
-export interface SPReactListItemQuery extends SPReactListItemProps {
+export interface SPReactListItemQuery extends SPReactListItemProps,SPReactListItemMethods {
+	TestUser: SP.Data.UserInfoItem;
 	TestMultiUser: IBaseResults<SP.Data.UserInfoItem>;
+	TestLookup: SP.Data.SPReactListItem;
 	TestMultiLookup: IBaseResults<SP.Data.SPReactListItem>;
 	TaxCatchAll: IBaseResults<SP.Data.TaxonomyHiddenListListItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -3634,7 +3999,7 @@ export interface SPReactListItemMethods {
 /*********************************************
 * SPRESTListDemoListItem
 **********************************************/
-export interface SPRESTListDemoListItem extends SP.ListItem {
+export interface SPRESTListDemoListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3704,9 +4069,18 @@ export interface SPRESTListDemoListItemCollections {
 }
 
 /*********************************************
+* SPRESTListDemoListItemQuery
+**********************************************/
+export interface SPRESTListDemoListItemQuery extends SPRESTListDemoListItem {
+	DemoUser: SP.Data.UserInfoItem;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Style_x0020_LibraryItem
 **********************************************/
-export interface Style_x0020_LibraryItem extends SP.ListItem {
+export interface Style_x0020_LibraryItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -3782,9 +4156,18 @@ export interface Style_x0020_LibraryItemCollections {
 }
 
 /*********************************************
+* Style_x0020_LibraryItemQuery
+**********************************************/
+export interface Style_x0020_LibraryItemQuery extends Style_x0020_LibraryItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * PublishedLinksItem
 **********************************************/
-export interface PublishedLinksItem extends SP.ListItem {
+export interface PublishedLinksItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3848,6 +4231,14 @@ export interface PublishedLinksItemCollections {
 }
 
 /*********************************************
+* PublishedLinksItemQuery
+**********************************************/
+export interface PublishedLinksItemQuery extends PublishedLinksItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * ITeamMembersListItem
 **********************************************/
 export interface ITeamMembersListItem extends TeamMembersListItemCollections,TeamMembersListItemMethods,IBaseQuery<ITeamMembersListItemQuery> {
@@ -3865,6 +4256,13 @@ export interface ITeamMembersListItemQuery extends TeamMembersListItemQuery,Team
 * TeamMembersListItem
 **********************************************/
 export interface TeamMembersListItem extends SP.ListItem, TeamMembersListItemCollections, TeamMembersListItemMethods {
+
+}
+
+/*********************************************
+* TeamMembersListItemProps
+**********************************************/
+export interface TeamMembersListItemProps {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -3924,9 +4322,9 @@ export interface TeamMembersListItem extends SP.ListItem, TeamMembersListItemCol
 }
 
 /*********************************************
-* TeamMembersListItemProps
+* TeamMembersListItemPropMethods
 **********************************************/
-export interface TeamMembersListItemProps {
+export interface TeamMembersListItemPropMethods {
 	TeamMember(): IBaseExecution<SP.Data.UserInfoItem>;
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -3935,16 +4333,19 @@ export interface TeamMembersListItemProps {
 /*********************************************
 * TeamMembersListItemCollections
 **********************************************/
-export interface TeamMembersListItemCollections extends TeamMembersListItemProps {
-	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem>;
-	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem>;
+export interface TeamMembersListItemCollections extends TeamMembersListItemProps, TeamMembersListItemPropMethods {
+	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemQuery>;
+	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemQuery>;
 }
 
 /*********************************************
 * TeamMembersListItemQuery
 **********************************************/
-export interface TeamMembersListItemQuery extends TeamMembersListItemProps {
+export interface TeamMembersListItemQuery extends TeamMembersListItemProps,TeamMembersListItemMethods {
+	TeamMember: SP.Data.UserInfoItem;
 	TaxCatchAll: IBaseResults<SP.Data.TaxonomyHiddenListListItem>;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
 }
 
 /*********************************************
@@ -3957,7 +4358,7 @@ export interface TeamMembersListItemMethods {
 /*********************************************
 * TestListItem
 **********************************************/
-export interface TestListItem extends SP.ListItem {
+export interface TestListItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -4019,9 +4420,17 @@ export interface TestListItemCollections {
 }
 
 /*********************************************
+* TestListItemQuery
+**********************************************/
+export interface TestListItemQuery extends TestListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * TestProjectListItem
 **********************************************/
-export interface TestProjectListItem extends SP.ListItem {
+export interface TestProjectListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -4085,9 +4494,17 @@ export interface TestProjectListItemCollections {
 }
 
 /*********************************************
+* TestProjectListItemQuery
+**********************************************/
+export interface TestProjectListItemQuery extends TestProjectListItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_themeItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_themeItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_themeItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -4155,9 +4572,18 @@ export interface OData__x005f_catalogs_x002f_themeItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_themeItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_themeItemQuery extends OData__x005f_catalogs_x002f_themeItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Translation_x0020_PackagesItem
 **********************************************/
-export interface Translation_x0020_PackagesItem extends SP.ListItem {
+export interface Translation_x0020_PackagesItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -4236,9 +4662,18 @@ export interface Translation_x0020_PackagesItemCollections {
 }
 
 /*********************************************
+* Translation_x0020_PackagesItemQuery
+**********************************************/
+export interface Translation_x0020_PackagesItemQuery extends Translation_x0020_PackagesItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Translation_x0020_StatusItem
 **********************************************/
-export interface Translation_x0020_StatusItem extends SP.ListItem {
+export interface Translation_x0020_StatusItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -4325,9 +4760,19 @@ export interface Translation_x0020_StatusItemCollections {
 }
 
 /*********************************************
+* Translation_x0020_StatusItemQuery
+**********************************************/
+export interface Translation_x0020_StatusItemQuery extends Translation_x0020_StatusItem {
+	TranslationStateExportRequesting: SP.Data.UserInfoItem;
+	TranslationStateImportRequesting: SP.Data.UserInfoItem;
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * Variation_x0020_LabelsItem
 **********************************************/
-export interface Variation_x0020_LabelsItem extends SP.ListItem {
+export interface Variation_x0020_LabelsItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -4402,9 +4847,17 @@ export interface Variation_x0020_LabelsItemCollections {
 }
 
 /*********************************************
+* Variation_x0020_LabelsItemQuery
+**********************************************/
+export interface Variation_x0020_LabelsItemQuery extends Variation_x0020_LabelsItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_wpItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wpItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_wpItem {
 	ContentTypeId?: string;
 	OData__ModerationComments?: string;
 	FileLeafRef?: string;
@@ -4479,9 +4932,18 @@ export interface OData__x005f_catalogs_x002f_wpItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_wpItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wpItemQuery extends OData__x005f_catalogs_x002f_wpItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_wfpubItem
 **********************************************/
-export interface OData__x005f_catalogs_x002f_wfpubItem extends SP.ListItem {
+export interface OData__x005f_catalogs_x002f_wfpubItem {
 	ID?: number;
 	ContentTypeId?: string;
 	Created?: any;
@@ -4554,6 +5016,15 @@ export interface OData__x005f_catalogs_x002f_wfpubItemCollections {
 }
 
 /*********************************************
+* OData__x005f_catalogs_x002f_wfpubItemQuery
+**********************************************/
+export interface OData__x005f_catalogs_x002f_wfpubItemQuery extends OData__x005f_catalogs_x002f_wfpubItem {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
+	CheckoutUser: SP.Data.UserInfoItem;
+}
+
+/*********************************************
 * IWorkflowTasksItem
 **********************************************/
 export interface IWorkflowTasksItem extends WorkflowTasksItemCollections,WorkflowTasksItemMethods,IBaseQuery<IWorkflowTasksItemQuery> {
@@ -4571,6 +5042,13 @@ export interface IWorkflowTasksItemQuery extends WorkflowTasksItemQuery,Workflow
 * WorkflowTasksItem
 **********************************************/
 export interface WorkflowTasksItem extends SP.ListItem, WorkflowTasksItemCollections, WorkflowTasksItemMethods {
+
+}
+
+/*********************************************
+* WorkflowTasksItemProps
+**********************************************/
+export interface WorkflowTasksItemProps {
 	ID?: number;
 	ContentTypeId?: string;
 	Title?: string;
@@ -4637,9 +5115,9 @@ export interface WorkflowTasksItem extends SP.ListItem, WorkflowTasksItemCollect
 }
 
 /*********************************************
-* WorkflowTasksItemProps
+* WorkflowTasksItemPropMethods
 **********************************************/
-export interface WorkflowTasksItemProps {
+export interface WorkflowTasksItemPropMethods {
 	Author(): IBaseExecution<SP.Data.UserInfoItem>;
 	Editor(): IBaseExecution<SP.Data.UserInfoItem>;
 	AssignedTo(): IBaseExecution<SP.Data.UserInfoItem>;
@@ -4649,16 +5127,20 @@ export interface WorkflowTasksItemProps {
 /*********************************************
 * WorkflowTasksItemCollections
 **********************************************/
-export interface WorkflowTasksItemCollections extends WorkflowTasksItemProps {
-	Predecessors(): IBaseCollection<SP.Data.WorkflowTasksItem>;
-	Predecessors(id: string | number): IBaseQuery<SP.Data.WorkflowTasksItem>;
+export interface WorkflowTasksItemCollections extends WorkflowTasksItemProps, WorkflowTasksItemPropMethods {
+	Predecessors(): IBaseCollection<SP.Data.WorkflowTasksItem, SP.Data.WorkflowTasksItemQuery>;
+	Predecessors(id: string | number): IBaseQuery<SP.Data.WorkflowTasksItem, SP.Data.WorkflowTasksItemQuery>;
 }
 
 /*********************************************
 * WorkflowTasksItemQuery
 **********************************************/
-export interface WorkflowTasksItemQuery extends WorkflowTasksItemProps {
+export interface WorkflowTasksItemQuery extends WorkflowTasksItemProps,WorkflowTasksItemMethods {
+	Author: SP.Data.UserInfoItem;
+	Editor: SP.Data.UserInfoItem;
 	Predecessors: IBaseResults<SP.Data.WorkflowTasksItem>;
+	AssignedTo: SP.Data.UserInfoItem;
+	TaskGroup: SP.Data.UserInfoItem;
 }
 
 /*********************************************

@@ -19,27 +19,34 @@ export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionSto
 * ExternalSubscriptionStore
 **********************************************/
 export interface ExternalSubscriptionStore extends ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * ExternalSubscriptionStoreProps
 **********************************************/
 export interface ExternalSubscriptionStoreProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ExternalSubscriptionStorePropMethods
+**********************************************/
+export interface ExternalSubscriptionStorePropMethods {
 
 }
 
 /*********************************************
 * ExternalSubscriptionStoreCollections
 **********************************************/
-export interface ExternalSubscriptionStoreCollections extends ExternalSubscriptionStoreProps {
+export interface ExternalSubscriptionStoreCollections extends ExternalSubscriptionStoreProps, ExternalSubscriptionStorePropMethods {
 
 }
 
 /*********************************************
 * ExternalSubscriptionStoreQuery
 **********************************************/
-export interface ExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreProps {
+export interface ExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreProps,ExternalSubscriptionStoreMethods {
 
 }
 

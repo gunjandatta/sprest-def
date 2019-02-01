@@ -20,6 +20,13 @@ export interface IWorkflowAssociationQuery extends WorkflowAssociationQuery,Work
 * WorkflowAssociation
 **********************************************/
 export interface WorkflowAssociation extends WorkflowAssociationCollections, WorkflowAssociationMethods {
+
+}
+
+/*********************************************
+* WorkflowAssociationProps
+**********************************************/
+export interface WorkflowAssociationProps {
 	AllowManual?: boolean;
 	AssociationData?: string;
 	AutoStartChange?: boolean;
@@ -41,16 +48,16 @@ export interface WorkflowAssociation extends WorkflowAssociationCollections, Wor
 }
 
 /*********************************************
-* WorkflowAssociationProps
+* WorkflowAssociationPropMethods
 **********************************************/
-export interface WorkflowAssociationProps {
+export interface WorkflowAssociationPropMethods {
 
 }
 
 /*********************************************
 * WorkflowAssociationCollections
 **********************************************/
-export interface WorkflowAssociationCollections extends WorkflowAssociationProps {
+export interface WorkflowAssociationCollections extends WorkflowAssociationProps, WorkflowAssociationPropMethods {
 
 }
 
@@ -66,7 +73,7 @@ export interface WorkflowAssociationCollectionMethods {
 /*********************************************
 * WorkflowAssociationQuery
 **********************************************/
-export interface WorkflowAssociationQuery extends WorkflowAssociationProps {
+export interface WorkflowAssociationQuery extends WorkflowAssociationProps,WorkflowAssociationMethods {
 
 }
 
@@ -168,16 +175,23 @@ export interface SPWorkflowTaskProps {
 }
 
 /*********************************************
+* SPWorkflowTaskPropMethods
+**********************************************/
+export interface SPWorkflowTaskPropMethods {
+
+}
+
+/*********************************************
 * SPWorkflowTaskCollections
 **********************************************/
-export interface SPWorkflowTaskCollections extends SPWorkflowTaskProps {
+export interface SPWorkflowTaskCollections extends SPWorkflowTaskProps, SPWorkflowTaskPropMethods {
 
 }
 
 /*********************************************
 * SPWorkflowTaskQuery
 **********************************************/
-export interface SPWorkflowTaskQuery extends SPWorkflowTaskProps {
+export interface SPWorkflowTaskQuery extends SPWorkflowTaskProps,SPWorkflowTaskMethods {
 
 }
 
@@ -210,4 +224,5 @@ export interface SPWorkflowTaskMethods {
 	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseExecution<Array<SP.Hashtag>>;
 	updateOverwriteVersion(): IBaseExecution<any>;
 	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
+	update(properties?: any): IBaseExecution<any>;
 }

@@ -19,27 +19,34 @@ export interface IDocumentIdQuery extends DocumentIdQuery,DocumentIdMethods {
 * DocumentId
 **********************************************/
 export interface DocumentId extends DocumentIdCollections, DocumentIdMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * DocumentIdProps
 **********************************************/
 export interface DocumentIdProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DocumentIdPropMethods
+**********************************************/
+export interface DocumentIdPropMethods {
 
 }
 
 /*********************************************
 * DocumentIdCollections
 **********************************************/
-export interface DocumentIdCollections extends DocumentIdProps {
+export interface DocumentIdCollections extends DocumentIdProps, DocumentIdPropMethods {
 
 }
 
 /*********************************************
 * DocumentIdQuery
 **********************************************/
-export interface DocumentIdQuery extends DocumentIdProps {
+export interface DocumentIdQuery extends DocumentIdProps,DocumentIdMethods {
 
 }
 

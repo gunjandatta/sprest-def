@@ -19,27 +19,34 @@ export interface IAppLauncherQuery extends AppLauncherQuery,AppLauncherMethods {
 * AppLauncher
 **********************************************/
 export interface AppLauncher extends AppLauncherCollections, AppLauncherMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * AppLauncherProps
 **********************************************/
 export interface AppLauncherProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AppLauncherPropMethods
+**********************************************/
+export interface AppLauncherPropMethods {
 
 }
 
 /*********************************************
 * AppLauncherCollections
 **********************************************/
-export interface AppLauncherCollections extends AppLauncherProps {
+export interface AppLauncherCollections extends AppLauncherProps, AppLauncherPropMethods {
 
 }
 
 /*********************************************
 * AppLauncherQuery
 **********************************************/
-export interface AppLauncherQuery extends AppLauncherProps {
+export interface AppLauncherQuery extends AppLauncherProps,AppLauncherMethods {
 
 }
 

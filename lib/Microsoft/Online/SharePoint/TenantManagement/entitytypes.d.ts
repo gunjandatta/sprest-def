@@ -50,21 +50,28 @@ export interface IGetExternalUsersResultsQuery extends GetExternalUsersResultsQu
 * GetExternalUsersResults
 **********************************************/
 export interface GetExternalUsersResults extends GetExternalUsersResultsCollections, GetExternalUsersResultsMethods {
-	TotalUserCount?: number;
-	UserCollectionPosition?: number;
+
 }
 
 /*********************************************
 * GetExternalUsersResultsProps
 **********************************************/
 export interface GetExternalUsersResultsProps {
+	TotalUserCount?: number;
+	UserCollectionPosition?: number;
+}
+
+/*********************************************
+* GetExternalUsersResultsPropMethods
+**********************************************/
+export interface GetExternalUsersResultsPropMethods {
 
 }
 
 /*********************************************
 * GetExternalUsersResultsCollections
 **********************************************/
-export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsProps {
+export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsProps, GetExternalUsersResultsPropMethods {
 	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollectionMethods;
 	ExternalUserCollection(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollections;
 }
@@ -72,7 +79,7 @@ export interface GetExternalUsersResultsCollections extends GetExternalUsersResu
 /*********************************************
 * GetExternalUsersResultsQuery
 **********************************************/
-export interface GetExternalUsersResultsQuery extends GetExternalUsersResultsProps {
+export interface GetExternalUsersResultsQuery extends GetExternalUsersResultsProps,GetExternalUsersResultsMethods {
 	ExternalUserCollection: IBaseResults<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
 }
 
@@ -137,6 +144,13 @@ export interface IOffice365TenantQuery extends Office365TenantQuery,Office365Ten
 * Office365Tenant
 **********************************************/
 export interface Office365Tenant extends Office365TenantCollections, Office365TenantMethods {
+
+}
+
+/*********************************************
+* Office365TenantProps
+**********************************************/
+export interface Office365TenantProps {
 	AllowDownloadingNonWebViewableFiles?: boolean;
 	AllowedDomainListForSyncClient?: Array<any>;
 	AllowEditing?: boolean;
@@ -218,23 +232,23 @@ export interface Office365Tenant extends Office365TenantCollections, Office365Te
 }
 
 /*********************************************
-* Office365TenantProps
+* Office365TenantPropMethods
 **********************************************/
-export interface Office365TenantProps {
+export interface Office365TenantPropMethods {
 
 }
 
 /*********************************************
 * Office365TenantCollections
 **********************************************/
-export interface Office365TenantCollections extends Office365TenantProps {
+export interface Office365TenantCollections extends Office365TenantProps, Office365TenantPropMethods {
 
 }
 
 /*********************************************
 * Office365TenantQuery
 **********************************************/
-export interface Office365TenantQuery extends Office365TenantProps {
+export interface Office365TenantQuery extends Office365TenantProps,Office365TenantMethods {
 
 }
 

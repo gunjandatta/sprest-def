@@ -20,27 +20,34 @@ export interface ISignalStoreQuery extends SignalStoreQuery,SignalStoreMethods {
 * SignalStore
 **********************************************/
 export interface SignalStore extends SignalStoreCollections, SignalStoreMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SignalStoreProps
 **********************************************/
 export interface SignalStoreProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SignalStorePropMethods
+**********************************************/
+export interface SignalStorePropMethods {
 
 }
 
 /*********************************************
 * SignalStoreCollections
 **********************************************/
-export interface SignalStoreCollections extends SignalStoreProps {
+export interface SignalStoreCollections extends SignalStoreProps, SignalStorePropMethods {
 
 }
 
 /*********************************************
 * SignalStoreQuery
 **********************************************/
-export interface SignalStoreQuery extends SignalStoreProps {
+export interface SignalStoreQuery extends SignalStoreProps,SignalStoreMethods {
 
 }
 

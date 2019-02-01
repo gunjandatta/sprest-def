@@ -127,7 +127,7 @@ export interface FieldLookupValueCollections {
 /*********************************************
 * FieldUserValue
 **********************************************/
-export interface FieldUserValue extends SP.FieldLookupValue {
+export interface FieldUserValue {
 	Email?: string;
 }
 

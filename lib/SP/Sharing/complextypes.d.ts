@@ -334,7 +334,7 @@ export interface SharingLinkAbilitiesCollections {
 /*********************************************
 * SharingLinkExpirationAbilityStatus
 **********************************************/
-export interface SharingLinkExpirationAbilityStatus extends SP.Sharing.SharingAbilityStatus {
+export interface SharingLinkExpirationAbilityStatus {
 	defaultExpirationInDays?: number;
 }
 
@@ -348,7 +348,7 @@ export interface SharingLinkExpirationAbilityStatusCollections {
 /*********************************************
 * SharingLinkPasswordAbilityStatus
 **********************************************/
-export interface SharingLinkPasswordAbilityStatus extends SP.Sharing.SharingAbilityStatus {
+export interface SharingLinkPasswordAbilityStatus {
 
 }
 

@@ -350,5 +350,14 @@ module.exports = {
             returnType: "any",
             params: [{ $: { Name: "properties", Type: "any" } }]
         }
+    ],
+
+    // Workflow Task
+    "SP.Workflow.SPWorkflowTask": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
     ]
 }

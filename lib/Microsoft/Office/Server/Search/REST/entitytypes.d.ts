@@ -20,27 +20,34 @@ export interface ISearchServiceQuery extends SearchServiceQuery,SearchServiceMet
 * SearchService
 **********************************************/
 export interface SearchService extends SearchServiceCollections, SearchServiceMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SearchServiceProps
 **********************************************/
 export interface SearchServiceProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SearchServicePropMethods
+**********************************************/
+export interface SearchServicePropMethods {
 
 }
 
 /*********************************************
 * SearchServiceCollections
 **********************************************/
-export interface SearchServiceCollections extends SearchServiceProps {
+export interface SearchServiceCollections extends SearchServiceProps, SearchServicePropMethods {
 
 }
 
 /*********************************************
 * SearchServiceQuery
 **********************************************/
-export interface SearchServiceQuery extends SearchServiceProps {
+export interface SearchServiceQuery extends SearchServiceProps,SearchServiceMethods {
 
 }
 
@@ -77,27 +84,34 @@ export interface ISearchSettingQuery extends SearchSettingQuery,SearchSettingMet
 * SearchSetting
 **********************************************/
 export interface SearchSetting extends SearchSettingCollections, SearchSettingMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * SearchSettingProps
 **********************************************/
 export interface SearchSettingProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SearchSettingPropMethods
+**********************************************/
+export interface SearchSettingPropMethods {
 
 }
 
 /*********************************************
 * SearchSettingCollections
 **********************************************/
-export interface SearchSettingCollections extends SearchSettingProps {
+export interface SearchSettingCollections extends SearchSettingProps, SearchSettingPropMethods {
 
 }
 
 /*********************************************
 * SearchSettingQuery
 **********************************************/
-export interface SearchSettingQuery extends SearchSettingProps {
+export interface SearchSettingQuery extends SearchSettingProps,SearchSettingMethods {
 
 }
 

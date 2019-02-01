@@ -63,16 +63,23 @@ export interface FileProps {
 }
 
 /*********************************************
+* FilePropMethods
+**********************************************/
+export interface FilePropMethods {
+
+}
+
+/*********************************************
 * FileCollections
 **********************************************/
-export interface FileCollections extends FileProps {
+export interface FileCollections extends FileProps, FilePropMethods {
 
 }
 
 /*********************************************
 * FileQuery
 **********************************************/
-export interface FileQuery extends FileProps {
+export interface FileQuery extends FileProps,FileMethods {
 
 }
 
@@ -119,20 +126,27 @@ export interface IFolderQuery extends FolderQuery,FolderMethods {
 * Folder
 **********************************************/
 export interface Folder extends MS.FileServices.FileSystemItem, FolderCollections, FolderMethods {
-	ChildrenCount?: number;
+
 }
 
 /*********************************************
 * FolderProps
 **********************************************/
 export interface FolderProps {
+	ChildrenCount?: number;
+}
+
+/*********************************************
+* FolderPropMethods
+**********************************************/
+export interface FolderPropMethods {
 
 }
 
 /*********************************************
 * FolderCollections
 **********************************************/
-export interface FolderCollections extends FolderProps {
+export interface FolderCollections extends FolderProps, FolderPropMethods {
 	Children(): IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
 	Children(id: string | number): IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
@@ -140,7 +154,7 @@ export interface FolderCollections extends FolderProps {
 /*********************************************
 * FolderQuery
 **********************************************/
-export interface FolderQuery extends FolderProps {
+export interface FolderQuery extends FolderProps,FolderMethods {
 	Children: IBaseResults<MS.FileServices.FileSystemItem>;
 }
 

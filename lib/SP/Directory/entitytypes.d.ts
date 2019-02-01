@@ -22,27 +22,34 @@ export interface IDirectorySessionQuery extends DirectorySessionQuery,DirectoryS
 * DirectorySession
 **********************************************/
 export interface DirectorySession extends DirectorySessionCollections, DirectorySessionMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * DirectorySessionProps
 **********************************************/
 export interface DirectorySessionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DirectorySessionPropMethods
+**********************************************/
+export interface DirectorySessionPropMethods {
 
 }
 
 /*********************************************
 * DirectorySessionCollections
 **********************************************/
-export interface DirectorySessionCollections extends DirectorySessionProps {
+export interface DirectorySessionCollections extends DirectorySessionProps, DirectorySessionPropMethods {
 
 }
 
 /*********************************************
 * DirectorySessionQuery
 **********************************************/
-export interface DirectorySessionQuery extends DirectorySessionProps {
+export interface DirectorySessionQuery extends DirectorySessionProps,DirectorySessionMethods {
 
 }
 
@@ -77,6 +84,13 @@ export interface IGroupQuery extends GroupQuery,GroupMethods {
 * Group
 **********************************************/
 export interface Group extends GroupCollections, GroupMethods {
+
+}
+
+/*********************************************
+* GroupProps
+**********************************************/
+export interface GroupProps {
 	alias?: string;
 	allowToAddGuests?: boolean;
 	calendarUrl?: string;
@@ -100,20 +114,20 @@ export interface Group extends GroupCollections, GroupMethods {
 }
 
 /*********************************************
-* GroupProps
+* GroupPropMethods
 **********************************************/
-export interface GroupProps {
+export interface GroupPropMethods {
 
 }
 
 /*********************************************
 * GroupCollections
 **********************************************/
-export interface GroupCollections extends GroupProps {
-	members(): IBaseCollection<SP.Directory.User> & SP.Directory.UserCollectionMethods;
-	members(id: string | number): IBaseQuery<SP.Directory.User> & SP.Directory.UserCollections;
-	owners(): IBaseCollection<SP.Directory.User> & SP.Directory.UserCollectionMethods;
-	owners(id: string | number): IBaseQuery<SP.Directory.User> & SP.Directory.UserCollections;
+export interface GroupCollections extends GroupProps, GroupPropMethods {
+	members(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollectionMethods;
+	members(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections;
+	owners(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollectionMethods;
+	owners(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections;
 }
 
 /*********************************************
@@ -127,7 +141,7 @@ export interface GroupCollectionMethods {
 /*********************************************
 * GroupQuery
 **********************************************/
-export interface GroupQuery extends GroupProps {
+export interface GroupQuery extends GroupProps,GroupMethods {
 	members: IBaseResults<SP.Directory.User>;
 	owners: IBaseResults<SP.Directory.User>;
 }
@@ -157,6 +171,13 @@ export interface IUserQuery extends UserQuery,UserMethods {
 * User
 **********************************************/
 export interface User extends UserCollections, UserMethods {
+
+}
+
+/*********************************************
+* UserProps
+**********************************************/
+export interface UserProps {
 	aboutMe?: string;
 	accountEnabled?: boolean;
 	alias?: string;
@@ -200,22 +221,22 @@ export interface User extends UserCollections, UserMethods {
 }
 
 /*********************************************
-* UserProps
+* UserPropMethods
 **********************************************/
-export interface UserProps {
+export interface UserPropMethods {
 
 }
 
 /*********************************************
 * UserCollections
 **********************************************/
-export interface UserCollections extends UserProps {
-	membership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
-	membership(id: string | number): IBaseQuery<SP.Directory.Group> & SP.Directory.GroupCollections;
-	ownership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
-	ownership(id: string | number): IBaseQuery<SP.Directory.Group> & SP.Directory.GroupCollections;
-	rankedMembership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
-	rankedMembership(id: string | number): IBaseQuery<SP.Directory.Group> & SP.Directory.GroupCollections;
+export interface UserCollections extends UserProps, UserPropMethods {
+	membership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollectionMethods;
+	membership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections;
+	ownership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollectionMethods;
+	ownership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections;
+	rankedMembership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollectionMethods;
+	rankedMembership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections;
 }
 
 /*********************************************
@@ -229,7 +250,7 @@ export interface UserCollectionMethods {
 /*********************************************
 * UserQuery
 **********************************************/
-export interface UserQuery extends UserProps {
+export interface UserQuery extends UserProps,UserMethods {
 	membership: IBaseResults<SP.Directory.Group>;
 	ownership: IBaseResults<SP.Directory.Group>;
 	rankedMembership: IBaseResults<SP.Directory.Group>;
@@ -270,6 +291,13 @@ export interface GroupAndUserStatus {
 **********************************************/
 export interface GroupAndUserStatusCollections {
 
+}
+
+/*********************************************
+* GroupAndUserStatusQuery
+**********************************************/
+export interface GroupAndUserStatusQuery extends GroupAndUserStatus {
+	Group: SP.Directory.Group & SP.Directory.GroupCollections;
 }
 
 /*********************************************

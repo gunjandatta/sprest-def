@@ -127,28 +127,35 @@ export interface IThemeManagerQuery extends ThemeManagerQuery,ThemeManagerMethod
 * ThemeManager
 **********************************************/
 export interface ThemeManager extends ThemeManagerCollections, ThemeManagerMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * ThemeManagerProps
 **********************************************/
 export interface ThemeManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ThemeManagerPropMethods
+**********************************************/
+export interface ThemeManagerPropMethods {
 	ContextThemeManager(): IBaseExecution<SP.Utilities.ThemeManager>;
 }
 
 /*********************************************
 * ThemeManagerCollections
 **********************************************/
-export interface ThemeManagerCollections extends ThemeManagerProps {
+export interface ThemeManagerCollections extends ThemeManagerProps, ThemeManagerPropMethods {
 
 }
 
 /*********************************************
 * ThemeManagerQuery
 **********************************************/
-export interface ThemeManagerQuery extends ThemeManagerProps {
-
+export interface ThemeManagerQuery extends ThemeManagerProps,ThemeManagerMethods {
+	ContextThemeManager: SP.Utilities.ThemeManager;
 }
 
 /*********************************************

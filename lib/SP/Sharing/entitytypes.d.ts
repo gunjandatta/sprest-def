@@ -103,6 +103,13 @@ export interface SharingInformationCollections {
 }
 
 /*********************************************
+* SharingInformationQuery
+**********************************************/
+export interface SharingInformationQuery extends SharingInformation {
+	pickerSettings: SP.PickerSettings;
+}
+
+/*********************************************
 * DocumentSharingManager
 **********************************************/
 export interface DocumentSharingManager {

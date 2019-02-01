@@ -20,6 +20,13 @@ export interface ISubscriptionQuery extends SubscriptionQuery,SubscriptionMethod
 * Subscription
 **********************************************/
 export interface Subscription extends SubscriptionCollections, SubscriptionMethods {
+
+}
+
+/*********************************************
+* SubscriptionProps
+**********************************************/
+export interface SubscriptionProps {
 	clientState?: string;
 	expirationDateTime?: any;
 	id?: any;
@@ -29,16 +36,16 @@ export interface Subscription extends SubscriptionCollections, SubscriptionMetho
 }
 
 /*********************************************
-* SubscriptionProps
+* SubscriptionPropMethods
 **********************************************/
-export interface SubscriptionProps {
+export interface SubscriptionPropMethods {
 
 }
 
 /*********************************************
 * SubscriptionCollections
 **********************************************/
-export interface SubscriptionCollections extends SubscriptionProps {
+export interface SubscriptionCollections extends SubscriptionProps, SubscriptionPropMethods {
 
 }
 
@@ -54,7 +61,7 @@ export interface SubscriptionCollectionMethods {
 /*********************************************
 * SubscriptionQuery
 **********************************************/
-export interface SubscriptionQuery extends SubscriptionProps {
+export interface SubscriptionQuery extends SubscriptionProps,SubscriptionMethods {
 
 }
 

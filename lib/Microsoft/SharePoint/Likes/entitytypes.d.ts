@@ -22,21 +22,28 @@ export interface IlikedByInformationQuery extends likedByInformationQuery,likedB
 * likedByInformation
 **********************************************/
 export interface likedByInformation extends likedByInformationCollections, likedByInformationMethods {
-	isLikedByUser?: boolean;
-	likeCount?: number;
+
 }
 
 /*********************************************
 * likedByInformationProps
 **********************************************/
 export interface likedByInformationProps {
+	isLikedByUser?: boolean;
+	likeCount?: number;
+}
+
+/*********************************************
+* likedByInformationPropMethods
+**********************************************/
+export interface likedByInformationPropMethods {
 
 }
 
 /*********************************************
 * likedByInformationCollections
 **********************************************/
-export interface likedByInformationCollections extends likedByInformationProps {
+export interface likedByInformationCollections extends likedByInformationProps, likedByInformationPropMethods {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
 	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity>;
 }
@@ -44,7 +51,7 @@ export interface likedByInformationCollections extends likedByInformationProps {
 /*********************************************
 * likedByInformationQuery
 **********************************************/
-export interface likedByInformationQuery extends likedByInformationProps {
+export interface likedByInformationQuery extends likedByInformationProps,likedByInformationMethods {
 	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 }
 

@@ -19,27 +19,34 @@ export interface IDDIAdapterQuery extends DDIAdapterQuery,DDIAdapterMethods {
 * DDIAdapter
 **********************************************/
 export interface DDIAdapter extends DDIAdapterCollections, DDIAdapterMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * DDIAdapterProps
 **********************************************/
 export interface DDIAdapterProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DDIAdapterPropMethods
+**********************************************/
+export interface DDIAdapterPropMethods {
 
 }
 
 /*********************************************
 * DDIAdapterCollections
 **********************************************/
-export interface DDIAdapterCollections extends DDIAdapterProps {
+export interface DDIAdapterCollections extends DDIAdapterProps, DDIAdapterPropMethods {
 
 }
 
 /*********************************************
 * DDIAdapterQuery
 **********************************************/
-export interface DDIAdapterQuery extends DDIAdapterProps {
+export interface DDIAdapterQuery extends DDIAdapterProps,DDIAdapterMethods {
 
 }
 

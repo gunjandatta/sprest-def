@@ -26,7 +26,7 @@ export interface FormulaCreationInfoCollections {
 /*********************************************
 * FormulaMetadata
 **********************************************/
-export interface FormulaMetadata extends Microsoft.SharePoint.Utilities.WebTemplateExtensions.FormulaCreationInfo {
+export interface FormulaMetadata {
 	FormulaGuid?: any;
 }
 
@@ -93,7 +93,7 @@ export interface SiteDesignCreationInfoCollections {
 /*********************************************
 * SiteDesignMetadata
 **********************************************/
-export interface SiteDesignMetadata extends Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignCreationInfo {
+export interface SiteDesignMetadata {
 	Id?: any;
 	Version?: number;
 }
@@ -158,7 +158,7 @@ export interface SiteScriptMetadataCollections {
 /*********************************************
 * SiteScriptUpdateInfo
 **********************************************/
-export interface SiteScriptUpdateInfo extends Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptCreationInfo {
+export interface SiteScriptUpdateInfo {
 	Id?: any;
 	Version?: number;
 }

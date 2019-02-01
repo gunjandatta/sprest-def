@@ -21,7 +21,7 @@ export interface BaseCustomPropertyCollections {
 /*********************************************
 * BigIntCustomProperty
 **********************************************/
-export interface BigIntCustomProperty extends Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty {
+export interface BigIntCustomProperty {
 	Value?: number;
 }
 
@@ -35,7 +35,7 @@ export interface BigIntCustomPropertyCollections {
 /*********************************************
 * BooleanCustomProperty
 **********************************************/
-export interface BooleanCustomProperty extends Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty {
+export interface BooleanCustomProperty {
 	Value?: boolean;
 }
 
@@ -49,7 +49,7 @@ export interface BooleanCustomPropertyCollections {
 /*********************************************
 * DateTimeTypeCustomProperty
 **********************************************/
-export interface DateTimeTypeCustomProperty extends Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty {
+export interface DateTimeTypeCustomProperty {
 	Value?: any;
 }
 
@@ -63,7 +63,7 @@ export interface DateTimeTypeCustomPropertyCollections {
 /*********************************************
 * MultiValueStringCustomProperty
 **********************************************/
-export interface MultiValueStringCustomProperty extends Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty {
+export interface MultiValueStringCustomProperty {
 	Value?: Array<string>;
 }
 
@@ -77,7 +77,7 @@ export interface MultiValueStringCustomPropertyCollections {
 /*********************************************
 * NumberCustomProperty
 **********************************************/
-export interface NumberCustomProperty extends Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty {
+export interface NumberCustomProperty {
 	Value?: number;
 }
 
@@ -91,7 +91,7 @@ export interface NumberCustomPropertyCollections {
 /*********************************************
 * PersonTypeCustomProperty
 **********************************************/
-export interface PersonTypeCustomProperty extends Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty {
+export interface PersonTypeCustomProperty {
 	Value?: SP.Publishing.ProfileCoreProperties;
 }
 
@@ -105,7 +105,7 @@ export interface PersonTypeCustomPropertyCollections {
 /*********************************************
 * StringCustomProperty
 **********************************************/
-export interface StringCustomProperty extends Microsoft.SharePoint.Publishing.RestOnly.BaseCustomProperty {
+export interface StringCustomProperty {
 	Value?: string;
 }
 

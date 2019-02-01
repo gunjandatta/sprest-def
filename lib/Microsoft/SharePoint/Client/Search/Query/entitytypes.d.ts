@@ -20,28 +20,35 @@ export interface IStringCollectionQuery extends StringCollectionQuery,StringColl
 * StringCollection
 **********************************************/
 export interface StringCollection extends StringCollectionCollections, StringCollectionMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<string>;
+
 }
 
 /*********************************************
 * StringCollectionProps
 **********************************************/
 export interface StringCollectionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	Items?: Array<string>;
+}
+
+/*********************************************
+* StringCollectionPropMethods
+**********************************************/
+export interface StringCollectionPropMethods {
 
 }
 
 /*********************************************
 * StringCollectionCollections
 **********************************************/
-export interface StringCollectionCollections extends StringCollectionProps {
+export interface StringCollectionCollections extends StringCollectionProps, StringCollectionPropMethods {
 
 }
 
 /*********************************************
 * StringCollectionQuery
 **********************************************/
-export interface StringCollectionQuery extends StringCollectionProps {
+export interface StringCollectionQuery extends StringCollectionProps,StringCollectionMethods {
 
 }
 
@@ -85,27 +92,34 @@ export interface IRankingLabelingQuery extends RankingLabelingQuery,RankingLabel
 * RankingLabeling
 **********************************************/
 export interface RankingLabeling extends RankingLabelingCollections, RankingLabelingMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * RankingLabelingProps
 **********************************************/
 export interface RankingLabelingProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RankingLabelingPropMethods
+**********************************************/
+export interface RankingLabelingPropMethods {
 
 }
 
 /*********************************************
 * RankingLabelingCollections
 **********************************************/
-export interface RankingLabelingCollections extends RankingLabelingProps {
+export interface RankingLabelingCollections extends RankingLabelingProps, RankingLabelingPropMethods {
 
 }
 
 /*********************************************
 * RankingLabelingQuery
 **********************************************/
-export interface RankingLabelingQuery extends RankingLabelingProps {
+export interface RankingLabelingQuery extends RankingLabelingProps,RankingLabelingMethods {
 
 }
 
@@ -136,28 +150,35 @@ export interface IReorderingRuleCollectionQuery extends ReorderingRuleCollection
 * ReorderingRuleCollection
 **********************************************/
 export interface ReorderingRuleCollection extends ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<Microsoft.SharePoint.Client.Search.Query.ReorderingRule>;
+
 }
 
 /*********************************************
 * ReorderingRuleCollectionProps
 **********************************************/
 export interface ReorderingRuleCollectionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	Items?: Array<Microsoft.SharePoint.Client.Search.Query.ReorderingRule>;
+}
+
+/*********************************************
+* ReorderingRuleCollectionPropMethods
+**********************************************/
+export interface ReorderingRuleCollectionPropMethods {
 
 }
 
 /*********************************************
 * ReorderingRuleCollectionCollections
 **********************************************/
-export interface ReorderingRuleCollectionCollections extends ReorderingRuleCollectionProps {
+export interface ReorderingRuleCollectionCollections extends ReorderingRuleCollectionProps, ReorderingRuleCollectionPropMethods {
 
 }
 
 /*********************************************
 * ReorderingRuleCollectionQuery
 **********************************************/
-export interface ReorderingRuleCollectionQuery extends ReorderingRuleCollectionProps {
+export interface ReorderingRuleCollectionQuery extends ReorderingRuleCollectionProps,ReorderingRuleCollectionMethods {
 
 }
 
@@ -187,28 +208,35 @@ export interface ISortCollectionQuery extends SortCollectionQuery,SortCollection
 * SortCollection
 **********************************************/
 export interface SortCollection extends SortCollectionCollections, SortCollectionMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<Microsoft.SharePoint.Client.Search.Query.Sort>;
+
 }
 
 /*********************************************
 * SortCollectionProps
 **********************************************/
 export interface SortCollectionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	Items?: Array<Microsoft.SharePoint.Client.Search.Query.Sort>;
+}
+
+/*********************************************
+* SortCollectionPropMethods
+**********************************************/
+export interface SortCollectionPropMethods {
 
 }
 
 /*********************************************
 * SortCollectionCollections
 **********************************************/
-export interface SortCollectionCollections extends SortCollectionProps {
+export interface SortCollectionCollections extends SortCollectionProps, SortCollectionPropMethods {
 
 }
 
 /*********************************************
 * SortCollectionQuery
 **********************************************/
-export interface SortCollectionQuery extends SortCollectionProps {
+export interface SortCollectionQuery extends SortCollectionProps,SortCollectionMethods {
 
 }
 

@@ -50,9 +50,16 @@ export interface AllowedDataLocationProps {
 }
 
 /*********************************************
+* AllowedDataLocationPropMethods
+**********************************************/
+export interface AllowedDataLocationPropMethods {
+
+}
+
+/*********************************************
 * AllowedDataLocationCollections
 **********************************************/
-export interface AllowedDataLocationCollections extends AllowedDataLocationProps {
+export interface AllowedDataLocationCollections extends AllowedDataLocationProps, AllowedDataLocationPropMethods {
 
 }
 
@@ -66,7 +73,7 @@ export interface AllowedDataLocationCollectionMethods {
 /*********************************************
 * AllowedDataLocationQuery
 **********************************************/
-export interface AllowedDataLocationQuery extends AllowedDataLocationProps {
+export interface AllowedDataLocationQuery extends AllowedDataLocationProps,AllowedDataLocationMethods {
 
 }
 
@@ -109,7 +116,7 @@ export interface JobEntityDataCollections {
 /*********************************************
 * MoveJobEntityData
 **********************************************/
-export interface MoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData {
+export interface MoveJobEntityData {
 	ApiVersion?: string;
 	CancelTriggeredBy?: string;
 	DestinationDataLocation?: string;
@@ -138,7 +145,7 @@ export interface MoveJobEntityDataCollections {
 /*********************************************
 * GroupMoveJobEntityData
 **********************************************/
-export interface GroupMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
+export interface GroupMoveJobEntityData {
 	GroupName?: string;
 }
 
@@ -167,6 +174,13 @@ export interface ICrossFarmGroupMoveJobQuery extends CrossFarmGroupMoveJobQuery,
 * CrossFarmGroupMoveJob
 **********************************************/
 export interface CrossFarmGroupMoveJob extends CrossFarmGroupMoveJobCollections, CrossFarmGroupMoveJobMethods {
+
+}
+
+/*********************************************
+* CrossFarmGroupMoveJobProps
+**********************************************/
+export interface CrossFarmGroupMoveJobProps {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -174,16 +188,16 @@ export interface CrossFarmGroupMoveJob extends CrossFarmGroupMoveJobCollections,
 }
 
 /*********************************************
-* CrossFarmGroupMoveJobProps
+* CrossFarmGroupMoveJobPropMethods
 **********************************************/
-export interface CrossFarmGroupMoveJobProps {
+export interface CrossFarmGroupMoveJobPropMethods {
 
 }
 
 /*********************************************
 * CrossFarmGroupMoveJobCollections
 **********************************************/
-export interface CrossFarmGroupMoveJobCollections extends CrossFarmGroupMoveJobProps {
+export interface CrossFarmGroupMoveJobCollections extends CrossFarmGroupMoveJobProps, CrossFarmGroupMoveJobPropMethods {
 
 }
 
@@ -197,7 +211,7 @@ export interface CrossFarmGroupMoveJobCollectionMethods {
 /*********************************************
 * CrossFarmGroupMoveJobQuery
 **********************************************/
-export interface CrossFarmGroupMoveJobQuery extends CrossFarmGroupMoveJobProps {
+export interface CrossFarmGroupMoveJobQuery extends CrossFarmGroupMoveJobProps,CrossFarmGroupMoveJobMethods {
 
 }
 
@@ -211,7 +225,7 @@ export interface CrossFarmGroupMoveJobMethods {
 /*********************************************
 * SiteMoveJobEntityData
 **********************************************/
-export interface SiteMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
+export interface SiteMoveJobEntityData {
 	SourceSiteUrl?: string;
 	TargetSiteUrl?: string;
 }
@@ -226,7 +240,7 @@ export interface SiteMoveJobEntityDataCollections {
 /*********************************************
 * CrossFarmSiteMoveJobEntityData
 **********************************************/
-export interface CrossFarmSiteMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData {
+export interface CrossFarmSiteMoveJobEntityData {
 	TextPayload?: string;
 	WorkflowData?: string;
 }
@@ -256,6 +270,13 @@ export interface ICrossFarmSiteMoveJobQuery extends CrossFarmSiteMoveJobQuery,Cr
 * CrossFarmSiteMoveJob
 **********************************************/
 export interface CrossFarmSiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobEntityData, CrossFarmSiteMoveJobCollections, CrossFarmSiteMoveJobMethods {
+
+}
+
+/*********************************************
+* CrossFarmSiteMoveJobProps
+**********************************************/
+export interface CrossFarmSiteMoveJobProps {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -263,16 +284,16 @@ export interface CrossFarmSiteMoveJob extends Microsoft.Online.SharePoint.MultiG
 }
 
 /*********************************************
-* CrossFarmSiteMoveJobProps
+* CrossFarmSiteMoveJobPropMethods
 **********************************************/
-export interface CrossFarmSiteMoveJobProps {
+export interface CrossFarmSiteMoveJobPropMethods {
 
 }
 
 /*********************************************
 * CrossFarmSiteMoveJobCollections
 **********************************************/
-export interface CrossFarmSiteMoveJobCollections extends CrossFarmSiteMoveJobProps {
+export interface CrossFarmSiteMoveJobCollections extends CrossFarmSiteMoveJobProps, CrossFarmSiteMoveJobPropMethods {
 
 }
 
@@ -286,7 +307,7 @@ export interface CrossFarmSiteMoveJobCollectionMethods {
 /*********************************************
 * CrossFarmSiteMoveJobQuery
 **********************************************/
-export interface CrossFarmSiteMoveJobQuery extends CrossFarmSiteMoveJobProps {
+export interface CrossFarmSiteMoveJobQuery extends CrossFarmSiteMoveJobProps,CrossFarmSiteMoveJobMethods {
 
 }
 
@@ -300,7 +321,7 @@ export interface CrossFarmSiteMoveJobMethods {
 /*********************************************
 * UserMoveJobEntityData
 **********************************************/
-export interface UserMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
+export interface UserMoveJobEntityData {
 	HasOdbInSourceDataLocation?: boolean;
 	UserPrincipalName?: string;
 	ValidationResult?: number;
@@ -316,7 +337,7 @@ export interface UserMoveJobEntityDataCollections {
 /*********************************************
 * CrossFarmUserMoveJobEntityData
 **********************************************/
-export interface CrossFarmUserMoveJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobEntityData {
+export interface CrossFarmUserMoveJobEntityData {
 	TextPayload?: string;
 	WorkflowData?: string;
 }
@@ -346,6 +367,13 @@ export interface ICrossFarmUserMoveJobQuery extends CrossFarmUserMoveJobQuery,Cr
 * CrossFarmUserMoveJob
 **********************************************/
 export interface CrossFarmUserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobEntityData, CrossFarmUserMoveJobCollections, CrossFarmUserMoveJobMethods {
+
+}
+
+/*********************************************
+* CrossFarmUserMoveJobProps
+**********************************************/
+export interface CrossFarmUserMoveJobProps {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -353,16 +381,16 @@ export interface CrossFarmUserMoveJob extends Microsoft.Online.SharePoint.MultiG
 }
 
 /*********************************************
-* CrossFarmUserMoveJobProps
+* CrossFarmUserMoveJobPropMethods
 **********************************************/
-export interface CrossFarmUserMoveJobProps {
+export interface CrossFarmUserMoveJobPropMethods {
 
 }
 
 /*********************************************
 * CrossFarmUserMoveJobCollections
 **********************************************/
-export interface CrossFarmUserMoveJobCollections extends CrossFarmUserMoveJobProps {
+export interface CrossFarmUserMoveJobCollections extends CrossFarmUserMoveJobProps, CrossFarmUserMoveJobPropMethods {
 
 }
 
@@ -376,7 +404,7 @@ export interface CrossFarmUserMoveJobCollectionMethods {
 /*********************************************
 * CrossFarmUserMoveJobQuery
 **********************************************/
-export interface CrossFarmUserMoveJobQuery extends CrossFarmUserMoveJobProps {
+export interface CrossFarmUserMoveJobQuery extends CrossFarmUserMoveJobProps,CrossFarmUserMoveJobMethods {
 
 }
 
@@ -452,20 +480,27 @@ export interface ICrossGeoTenantPropertyQuery extends CrossGeoTenantPropertyQuer
 * CrossGeoTenantProperty
 **********************************************/
 export interface CrossGeoTenantProperty extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityData, CrossGeoTenantPropertyCollections, CrossGeoTenantPropertyMethods {
-	LastModifiedTimeInUtc?: any;
+
 }
 
 /*********************************************
 * CrossGeoTenantPropertyProps
 **********************************************/
 export interface CrossGeoTenantPropertyProps {
+	LastModifiedTimeInUtc?: any;
+}
+
+/*********************************************
+* CrossGeoTenantPropertyPropMethods
+**********************************************/
+export interface CrossGeoTenantPropertyPropMethods {
 
 }
 
 /*********************************************
 * CrossGeoTenantPropertyCollections
 **********************************************/
-export interface CrossGeoTenantPropertyCollections extends CrossGeoTenantPropertyProps {
+export interface CrossGeoTenantPropertyCollections extends CrossGeoTenantPropertyProps, CrossGeoTenantPropertyPropMethods {
 
 }
 
@@ -480,7 +515,7 @@ export interface CrossGeoTenantPropertyCollectionMethods {
 /*********************************************
 * CrossGeoTenantPropertyQuery
 **********************************************/
-export interface CrossGeoTenantPropertyQuery extends CrossGeoTenantPropertyProps {
+export interface CrossGeoTenantPropertyQuery extends CrossGeoTenantPropertyProps,CrossGeoTenantPropertyMethods {
 
 }
 
@@ -524,6 +559,13 @@ export interface IGeoAdministratorQuery extends GeoAdministratorQuery,GeoAdminis
 * GeoAdministrator
 **********************************************/
 export interface GeoAdministrator extends GeoAdministratorCollections, GeoAdministratorMethods {
+
+}
+
+/*********************************************
+* GeoAdministratorProps
+**********************************************/
+export interface GeoAdministratorProps {
 	DisplayName?: string;
 	GeoLocation?: string;
 	LoginName?: string;
@@ -532,16 +574,16 @@ export interface GeoAdministrator extends GeoAdministratorCollections, GeoAdmini
 }
 
 /*********************************************
-* GeoAdministratorProps
+* GeoAdministratorPropMethods
 **********************************************/
-export interface GeoAdministratorProps {
+export interface GeoAdministratorPropMethods {
 
 }
 
 /*********************************************
 * GeoAdministratorCollections
 **********************************************/
-export interface GeoAdministratorCollections extends GeoAdministratorProps {
+export interface GeoAdministratorCollections extends GeoAdministratorProps, GeoAdministratorPropMethods {
 
 }
 
@@ -558,7 +600,7 @@ export interface GeoAdministratorCollectionMethods {
 /*********************************************
 * GeoAdministratorQuery
 **********************************************/
-export interface GeoAdministratorQuery extends GeoAdministratorProps {
+export interface GeoAdministratorQuery extends GeoAdministratorProps,GeoAdministratorMethods {
 
 }
 
@@ -587,28 +629,35 @@ export interface IGeoExperienceQuery extends GeoExperienceQuery,GeoExperienceMet
 * GeoExperience
 **********************************************/
 export interface GeoExperience extends GeoExperienceCollections, GeoExperienceMethods {
-	GeoLocation?: string;
-	MultiGeoExperienceMode?: number;
+
 }
 
 /*********************************************
 * GeoExperienceProps
 **********************************************/
 export interface GeoExperienceProps {
+	GeoLocation?: string;
+	MultiGeoExperienceMode?: number;
+}
+
+/*********************************************
+* GeoExperiencePropMethods
+**********************************************/
+export interface GeoExperiencePropMethods {
 
 }
 
 /*********************************************
 * GeoExperienceCollections
 **********************************************/
-export interface GeoExperienceCollections extends GeoExperienceProps {
+export interface GeoExperienceCollections extends GeoExperienceProps, GeoExperiencePropMethods {
 
 }
 
 /*********************************************
 * GeoExperienceQuery
 **********************************************/
-export interface GeoExperienceQuery extends GeoExperienceProps {
+export interface GeoExperienceQuery extends GeoExperienceProps,GeoExperienceMethods {
 
 }
 
@@ -664,7 +713,7 @@ export interface GeoTenantInstanceInformationEntityDataCollections {
 /*********************************************
 * GeoTenantInstanceInformation
 **********************************************/
-export interface GeoTenantInstanceInformation extends Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformationEntityData {
+export interface GeoTenantInstanceInformation {
 
 }
 
@@ -714,6 +763,13 @@ export interface IGroupMoveJobQuery extends GroupMoveJobQuery,GroupMoveJobMethod
 * GroupMoveJob
 **********************************************/
 export interface GroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobEntityData, GroupMoveJobCollections, GroupMoveJobMethods {
+
+}
+
+/*********************************************
+* GroupMoveJobProps
+**********************************************/
+export interface GroupMoveJobProps {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -721,16 +777,16 @@ export interface GroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servi
 }
 
 /*********************************************
-* GroupMoveJobProps
+* GroupMoveJobPropMethods
 **********************************************/
-export interface GroupMoveJobProps {
+export interface GroupMoveJobPropMethods {
 
 }
 
 /*********************************************
 * GroupMoveJobCollections
 **********************************************/
-export interface GroupMoveJobCollections extends GroupMoveJobProps {
+export interface GroupMoveJobCollections extends GroupMoveJobProps, GroupMoveJobPropMethods {
 
 }
 
@@ -745,7 +801,7 @@ export interface GroupMoveJobCollectionMethods {
 /*********************************************
 * GroupMoveJobQuery
 **********************************************/
-export interface GroupMoveJobQuery extends GroupMoveJobProps {
+export interface GroupMoveJobQuery extends GroupMoveJobProps,GroupMoveJobMethods {
 
 }
 
@@ -761,7 +817,7 @@ export interface GroupMoveJobMethods {
 /*********************************************
 * MoveJob
 **********************************************/
-export interface MoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.MoveJobEntityData {
+export interface MoveJob {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -808,13 +864,20 @@ export interface IMultiGeoServicesBetaQuery extends MultiGeoServicesBetaQuery,Mu
 * MultiGeoServicesBeta
 **********************************************/
 export interface MultiGeoServicesBeta extends MultiGeoServicesBetaCollections, MultiGeoServicesBetaMethods {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+
 }
 
 /*********************************************
 * MultiGeoServicesBetaProps
 **********************************************/
 export interface MultiGeoServicesBetaProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MultiGeoServicesBetaPropMethods
+**********************************************/
+export interface MultiGeoServicesBetaPropMethods {
 	ContentDbSchemaVersion(): IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion>;
 	CrossGeoTenantBYOK(): IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOK>;
 	CrossGeoTenantCompatibility(): IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility>;
@@ -826,7 +889,7 @@ export interface MultiGeoServicesBetaProps {
 /*********************************************
 * MultiGeoServicesBetaCollections
 **********************************************/
-export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaProps {
+export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaProps, MultiGeoServicesBetaPropMethods {
 	AllowedDataLocations(): IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation> & Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationCollectionMethods;
 	AllowedDataLocations(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation> & Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationCollections;
 	CrossFarmGroupMoveJobs(): IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobCollectionMethods;
@@ -860,18 +923,24 @@ export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaPro
 /*********************************************
 * MultiGeoServicesBetaQuery
 **********************************************/
-export interface MultiGeoServicesBetaQuery extends MultiGeoServicesBetaProps {
+export interface MultiGeoServicesBetaQuery extends MultiGeoServicesBetaProps,MultiGeoServicesBetaMethods {
 	AllowedDataLocations: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>;
+	ContentDbSchemaVersion: Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion;
 	CrossFarmGroupMoveJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>;
 	CrossFarmSiteMoveJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob>;
 	CrossFarmUserMoveJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob>;
+	CrossGeoTenantBYOK: Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOK;
+	CrossGeoTenantCompatibility: Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility;
 	CrossGeoTenantProperties: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty>;
 	GeoAdministrators: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>;
+	GeoExperience: Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience;
 	GeoTenantInstanceInformationCollection: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation>;
+	GlobalAdminCheck: Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck;
 	GroupMoveJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob>;
 	SiteMoveJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob>;
 	SiteRenameJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob>;
 	StorageQuotas: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota>;
+	TaxonomyReplicationParameters: Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters;
 	TenantInformationCollection: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
 	UnifiedGroups: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup>;
 	UserMoveJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>;
@@ -906,6 +975,13 @@ export interface ISiteMoveJobQuery extends SiteMoveJobQuery,SiteMoveJobMethods {
 * SiteMoveJob
 **********************************************/
 export interface SiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData, SiteMoveJobCollections, SiteMoveJobMethods {
+
+}
+
+/*********************************************
+* SiteMoveJobProps
+**********************************************/
+export interface SiteMoveJobProps {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -913,16 +989,16 @@ export interface SiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servic
 }
 
 /*********************************************
-* SiteMoveJobProps
+* SiteMoveJobPropMethods
 **********************************************/
-export interface SiteMoveJobProps {
+export interface SiteMoveJobPropMethods {
 
 }
 
 /*********************************************
 * SiteMoveJobCollections
 **********************************************/
-export interface SiteMoveJobCollections extends SiteMoveJobProps {
+export interface SiteMoveJobCollections extends SiteMoveJobProps, SiteMoveJobPropMethods {
 
 }
 
@@ -937,7 +1013,7 @@ export interface SiteMoveJobCollectionMethods {
 /*********************************************
 * SiteMoveJobQuery
 **********************************************/
-export interface SiteMoveJobQuery extends SiteMoveJobProps {
+export interface SiteMoveJobQuery extends SiteMoveJobProps,SiteMoveJobMethods {
 
 }
 
@@ -953,7 +1029,7 @@ export interface SiteMoveJobMethods {
 /*********************************************
 * SiteRenameJobEntityData
 **********************************************/
-export interface SiteRenameJobEntityData extends Microsoft.Online.SharePoint.MultiGeo.Service.JobEntityData {
+export interface SiteRenameJobEntityData {
 	SourceSiteUrl?: string;
 	TargetSiteTitle?: string;
 	TargetSiteUrl?: string;
@@ -969,7 +1045,7 @@ export interface SiteRenameJobEntityDataCollections {
 /*********************************************
 * SiteRenameJob
 **********************************************/
-export interface SiteRenameJob extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobEntityData {
+export interface SiteRenameJob {
 	JobId?: any;
 	JobState?: string;
 	SiteId?: any;
@@ -1008,6 +1084,13 @@ export interface IStorageQuotaQuery extends StorageQuotaQuery,StorageQuotaMethod
 * StorageQuota
 **********************************************/
 export interface StorageQuota extends StorageQuotaCollections, StorageQuotaMethods {
+
+}
+
+/*********************************************
+* StorageQuotaProps
+**********************************************/
+export interface StorageQuotaProps {
 	GeoAllocatedStorageMB?: number;
 	GeoAvailableStorageMB?: number;
 	GeoLocation?: string;
@@ -1017,16 +1100,16 @@ export interface StorageQuota extends StorageQuotaCollections, StorageQuotaMetho
 }
 
 /*********************************************
-* StorageQuotaProps
+* StorageQuotaPropMethods
 **********************************************/
-export interface StorageQuotaProps {
+export interface StorageQuotaPropMethods {
 
 }
 
 /*********************************************
 * StorageQuotaCollections
 **********************************************/
-export interface StorageQuotaCollections extends StorageQuotaProps {
+export interface StorageQuotaCollections extends StorageQuotaProps, StorageQuotaPropMethods {
 
 }
 
@@ -1040,7 +1123,7 @@ export interface StorageQuotaCollectionMethods {
 /*********************************************
 * StorageQuotaQuery
 **********************************************/
-export interface StorageQuotaQuery extends StorageQuotaProps {
+export interface StorageQuotaQuery extends StorageQuotaProps,StorageQuotaMethods {
 
 }
 
@@ -1069,6 +1152,13 @@ export interface ITaxonomyReplicationParametersQuery extends TaxonomyReplication
 * TaxonomyReplicationParameters
 **********************************************/
 export interface TaxonomyReplicationParameters extends TaxonomyReplicationParametersCollections, TaxonomyReplicationParametersMethods {
+
+}
+
+/*********************************************
+* TaxonomyReplicationParametersProps
+**********************************************/
+export interface TaxonomyReplicationParametersProps {
 	IsReplicateAllContentTypes?: boolean;
 	IsReplicateAllGroups?: boolean;
 	ReplicatedContentTypes?: Array<string>;
@@ -1076,23 +1166,23 @@ export interface TaxonomyReplicationParameters extends TaxonomyReplicationParame
 }
 
 /*********************************************
-* TaxonomyReplicationParametersProps
+* TaxonomyReplicationParametersPropMethods
 **********************************************/
-export interface TaxonomyReplicationParametersProps {
+export interface TaxonomyReplicationParametersPropMethods {
 
 }
 
 /*********************************************
 * TaxonomyReplicationParametersCollections
 **********************************************/
-export interface TaxonomyReplicationParametersCollections extends TaxonomyReplicationParametersProps {
+export interface TaxonomyReplicationParametersCollections extends TaxonomyReplicationParametersProps, TaxonomyReplicationParametersPropMethods {
 
 }
 
 /*********************************************
 * TaxonomyReplicationParametersQuery
 **********************************************/
-export interface TaxonomyReplicationParametersQuery extends TaxonomyReplicationParametersProps {
+export interface TaxonomyReplicationParametersQuery extends TaxonomyReplicationParametersProps,TaxonomyReplicationParametersMethods {
 
 }
 
@@ -1165,6 +1255,13 @@ export interface IUserMoveJobQuery extends UserMoveJobQuery,UserMoveJobMethods {
 * UserMoveJob
 **********************************************/
 export interface UserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobEntityData, UserMoveJobCollections, UserMoveJobMethods {
+
+}
+
+/*********************************************
+* UserMoveJobProps
+**********************************************/
+export interface UserMoveJobProps {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -1172,16 +1269,16 @@ export interface UserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Servic
 }
 
 /*********************************************
-* UserMoveJobProps
+* UserMoveJobPropMethods
 **********************************************/
-export interface UserMoveJobProps {
+export interface UserMoveJobPropMethods {
 
 }
 
 /*********************************************
 * UserMoveJobCollections
 **********************************************/
-export interface UserMoveJobCollections extends UserMoveJobProps {
+export interface UserMoveJobCollections extends UserMoveJobProps, UserMoveJobPropMethods {
 
 }
 
@@ -1199,7 +1296,7 @@ export interface UserMoveJobCollectionMethods {
 /*********************************************
 * UserMoveJobQuery
 **********************************************/
-export interface UserMoveJobQuery extends UserMoveJobProps {
+export interface UserMoveJobQuery extends UserMoveJobProps,UserMoveJobMethods {
 
 }
 
