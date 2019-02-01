@@ -54,7 +54,7 @@ export interface SubscriptionCollections extends SubscriptionPropMethods {
 **********************************************/
 export interface SubscriptionCollectionMethods {
 	add(parameters?: Microsoft.SharePoint.Webhooks.SubscriptionInformation): IBaseExecution<Microsoft.SharePoint.Webhooks.Subscription>;
-	getById(id?: any): IBaseQuery<Microsoft.SharePoint.Webhooks.Subscription>;
+	getById(id?: any): IBaseQuery<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionMethods;
 	remove(subscriptionId?: any): IBaseExecution<any>;
 }
 

@@ -114,7 +114,7 @@ export interface CorporateCatalogAppMetadataCollections extends CorporateCatalog
 * CorporateCatalogAppMetadataCollectionMethods
 **********************************************/
 export interface CorporateCatalogAppMetadataCollectionMethods {
-	getById(id?: string): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
+	getById(id?: string): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataMethods;
 }
 
 /*********************************************

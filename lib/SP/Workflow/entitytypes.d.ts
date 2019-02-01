@@ -66,8 +66,8 @@ export interface WorkflowAssociationCollections extends WorkflowAssociationPropM
 **********************************************/
 export interface WorkflowAssociationCollectionMethods {
 	add(parameters?: SP.Workflow.WorkflowAssociationCreationInformation): IBaseExecution<SP.Workflow.WorkflowAssociation>;
-	getById(associationId?: any): IBaseQuery<SP.Workflow.WorkflowAssociation>;
-	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowAssociation>;
+	getById(associationId?: any): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationMethods;
+	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationMethods;
 }
 
 /*********************************************

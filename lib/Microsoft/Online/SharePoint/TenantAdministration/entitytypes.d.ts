@@ -331,7 +331,7 @@ export interface SitePropertiesCollections extends SitePropertiesPropMethods {
 * SitePropertiesCollectionMethods
 **********************************************/
 export interface SitePropertiesCollectionMethods {
-	getById(siteId?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	getById(siteId?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 	getLockStateById(siteId?: any): IBaseExecution<number>;
 }
 

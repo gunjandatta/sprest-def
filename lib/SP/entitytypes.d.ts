@@ -354,7 +354,7 @@ export interface ScriptSafeDomainCollections extends ScriptSafeDomainPropMethods
 **********************************************/
 export interface ScriptSafeDomainCollectionMethods {
 	create(parameters?: SP.ScriptSafeDomainEntityData): IBaseExecution<SP.ScriptSafeDomain>;
-	getByDomainName(domainName?: string): IBaseQuery<SP.ScriptSafeDomain>;
+	getByDomainName(domainName?: string): IBaseQuery<SP.ScriptSafeDomain> & SP.ScriptSafeDomainMethods;
 }
 
 /*********************************************
@@ -425,7 +425,7 @@ export interface EventReceiverDefinitionCollections extends EventReceiverDefinit
 **********************************************/
 export interface EventReceiverDefinitionCollectionMethods {
 	add(eventReceiverCreationInformation?: SP.EventReceiverDefinitionCreationInformation): IBaseExecution<SP.EventReceiverDefinition>;
-	getById(eventReceiverId?: any): IBaseQuery<SP.EventReceiverDefinition>;
+	getById(eventReceiverId?: any): IBaseQuery<SP.EventReceiverDefinition> & SP.EventReceiverDefinitionMethods;
 }
 
 /*********************************************
@@ -539,9 +539,9 @@ export interface UserCollections extends UserPropMethods {
 * UserCollectionMethods
 **********************************************/
 export interface UserCollectionMethods {
-	getByEmail(emailAddress?: string): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections;
-	getById(id?: number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections;
-	getByLoginName(loginName?: string): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections;
+	getByEmail(emailAddress?: string): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	getById(id?: number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	getByLoginName(loginName?: string): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 	removeById(id?: number): IBaseExecution<any>;
 	removeByLoginName(loginName?: string): IBaseExecution<any>;
 }
@@ -631,7 +631,7 @@ export interface AlertCollectionMethods {
 	contains(idAlert?: any): IBaseExecution<boolean>;
 	deleteAlert(idAlert?: any): IBaseExecution<any>;
 	deleteAlertAtIndex(index?: number): IBaseExecution<any>;
-	getById(idAlert?: any): IBaseQuery<SP.Alert, SP.AlertQuery> & SP.AlertCollections;
+	getById(idAlert?: any): IBaseQuery<SP.Alert, SP.AlertQuery> & SP.AlertCollections & SP.AlertMethods;
 }
 
 /*********************************************
@@ -772,7 +772,7 @@ export interface RoleAssignmentCollections extends RoleAssignmentPropMethods {
 **********************************************/
 export interface RoleAssignmentCollectionMethods {
 	addRoleAssignment(principalId?: number, roleDefId?: number): IBaseExecution<any>;
-	getByPrincipalId(principalId?: number): IBaseQuery<SP.RoleAssignment, SP.RoleAssignmentQuery> & SP.RoleAssignmentCollections;
+	getByPrincipalId(principalId?: number): IBaseQuery<SP.RoleAssignment, SP.RoleAssignmentQuery> & SP.RoleAssignmentCollections & SP.RoleAssignmentMethods;
 	removeRoleAssignment(principalId?: number, roleDefId?: number): IBaseExecution<any>;
 }
 
@@ -845,11 +845,11 @@ export interface RoleDefinitionCollections extends RoleDefinitionPropMethods {
 * RoleDefinitionCollectionMethods
 **********************************************/
 export interface RoleDefinitionCollectionMethods {
-	getById(id?: number): IBaseQuery<SP.RoleDefinition>;
+	getById(id?: number): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionMethods;
 	removeAll(): IBaseExecution<any>;
-	getById(id?: number): IBaseQuery<SP.RoleDefinition>;
-	getByName(name?: string): IBaseQuery<SP.RoleDefinition>;
-	getByType(roleType?: number): IBaseQuery<SP.RoleDefinition>;
+	getById(id?: number): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionMethods;
+	getByName(name?: string): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionMethods;
+	getByType(roleType?: number): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionMethods;
 	recreateMissingDefaultRoleDefinitions(): IBaseExecution<any>;
 }
 
@@ -938,8 +938,8 @@ export interface ListItemCollections extends ListItemPropMethods {
 * ListItemCollectionMethods
 **********************************************/
 export interface ListItemCollectionMethods {
-	getById(itemId?: number): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections;
-	getByStringId(sId?: string): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections;
+	getById(itemId?: number): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	getByStringId(sId?: string): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
 	add(parameters?: SP.ListItemCreationInformation | any): IBaseExecution<SP.ListItem>;
 }
 
@@ -1044,8 +1044,8 @@ export interface AttachmentCollections extends AttachmentPropMethods {
 export interface AttachmentCollectionMethods {
 	// add(FileName?: string): IBaseExecution<SP.Attachment>;
 	addUsingPath(DecodedUrl?: string, contentStream?: any): IBaseExecution<SP.Attachment>;
-	getByFileName(fileName?: string): IBaseQuery<SP.Attachment>;
-	getByFileNameAsPath(DecodedUrl?: string): IBaseQuery<SP.Attachment>;
+	getByFileName(fileName?: string): IBaseQuery<SP.Attachment> & SP.AttachmentMethods;
+	getByFileNameAsPath(DecodedUrl?: string): IBaseQuery<SP.Attachment> & SP.AttachmentMethods;
 	add(FileName?: SP.ListItemCreationInformation, Content?: any): IBaseExecution<SP.ListItem>;
 }
 
@@ -1140,7 +1140,7 @@ export interface ContentTypeCollections extends ContentTypePropMethods {
 **********************************************/
 export interface ContentTypeCollectionMethods {
 	addAvailableContentType(contentTypeId?: string): IBaseExecution<SP.ContentType>;
-	getById(contentTypeId?: string): IBaseQuery<SP.ContentType, SP.ContentTypeQuery> & SP.ContentTypeCollections;
+	getById(contentTypeId?: string): IBaseQuery<SP.ContentType, SP.ContentTypeQuery> & SP.ContentTypeCollections & SP.ContentTypeMethods;
 	add(parameters?: SP.ContentTypeCreationInformation | any): IBaseExecution<SP.ContentType>;
 }
 
@@ -1275,7 +1275,7 @@ export interface FieldLinkCollections extends FieldLinkPropMethods {
 * FieldLinkCollectionMethods
 **********************************************/
 export interface FieldLinkCollectionMethods {
-	getById(id?: any): IBaseQuery<SP.FieldLink>;
+	getById(id?: any): IBaseQuery<SP.FieldLink> & SP.FieldLinkMethods;
 	reorder(internalNames?: Array<string>): IBaseExecution<any>;
 	add(parameters?: any): IBaseExecution<SP.FieldLink>;
 }
@@ -1380,9 +1380,9 @@ export interface FieldCollectionMethods {
 	addDependentLookupField(displayName?: string, primaryLookupFieldId?: any, showField?: string): IBaseExecution<SP.Field>;
 	addField(parameters?: SP.FieldCreationInformation): IBaseExecution<SP.Field>;
 	// createFieldAsXml(parameters?: SP.XmlSchemaFieldCreationInformation): IBaseExecution<SP.Field>;
-	getById(id?: any): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections;
-	getByInternalNameOrTitle(strName?: string): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections;
-	getByTitle(title?: string): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections;
+	getById(id?: any): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections & SP.FieldMethods;
+	getByInternalNameOrTitle(strName?: string): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections & SP.FieldMethods;
+	getByTitle(title?: string): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections & SP.FieldMethods;
 	createFieldAsXml(schemaXml?: string): IBaseExecution<any>;
 }
 
@@ -1528,9 +1528,9 @@ export interface FileCollectionMethods {
 	addStubUsingPath(DecodedUrl?: string): IBaseExecution<SP.File>;
 	addTemplateFile(urlOfFile?: string, templateFileType?: number): IBaseExecution<SP.File>;
 	addUsingPath(DecodedUrl?: string, Overwrite?: boolean, contentStream?: any): IBaseExecution<SP.File>;
-	getByPathOrAddStub(DecodedUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections;
-	getByUrl(url?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections;
-	getByUrlOrAddStub(urlOfFile?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections;
+	getByPathOrAddStub(DecodedUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getByUrl(url?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getByUrlOrAddStub(urlOfFile?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
 	add(Url?: string, Overwrite?: boolean, Content?: any): IBaseExecution<SP.File>;
 }
 
@@ -1769,7 +1769,7 @@ export interface FileVersionCollectionMethods {
 	deleteAll(): IBaseExecution<any>;
 	deleteByID(vid?: number): IBaseExecution<any>;
 	deleteByLabel(versionlabel?: string): IBaseExecution<any>;
-	getById(versionid?: number): IBaseQuery<SP.FileVersion, SP.FileVersionQuery> & SP.FileVersionCollections;
+	getById(versionid?: number): IBaseQuery<SP.FileVersion, SP.FileVersionQuery> & SP.FileVersionCollections & SP.FileVersionMethods;
 	recycleByID(vid?: number): IBaseExecution<any>;
 	recycleByLabel(versionlabel?: string): IBaseExecution<any>;
 	restoreByLabel(versionlabel?: string): IBaseExecution<any>;
@@ -1857,8 +1857,8 @@ export interface FolderCollectionMethods {
 	add(url?: string): IBaseExecution<SP.Folder>;
 	addUsingPath(DecodedUrl?: string, Overwrite?: boolean): IBaseExecution<SP.Folder>;
 	addWithOverwrite(url?: string, overwrite?: boolean): IBaseExecution<SP.Folder>;
-	getByPath(DecodedUrl?: string): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections;
-	getByUrl(url?: string): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections;
+	getByPath(DecodedUrl?: string): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	getByUrl(url?: string): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
 }
 
 /*********************************************
@@ -2053,8 +2053,8 @@ export interface ListCollectionMethods {
 	ensureEventsList(): IBaseExecution<SP.List>;
 	ensureSiteAssetsLibrary(): IBaseExecution<SP.List>;
 	ensureSitePagesLibrary(): IBaseExecution<SP.List>;
-	getById(id?: any): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections;
-	getByTitle(title?: string): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections;
+	getById(id?: any): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	getByTitle(title?: string): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
 	add(parameters?: SP.ListCreationInformation | any): IBaseExecution<SP.List>;
 }
 
@@ -2241,8 +2241,8 @@ export interface ViewCollections extends ViewPropMethods {
 **********************************************/
 export interface ViewCollectionMethods {
 	// add(parameters?: SP.ViewCreationInformation): IBaseExecution<SP.View>;
-	getById(guidId?: any): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections;
-	getByTitle(strTitle?: string): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections;
+	getById(guidId?: any): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
+	getByTitle(strTitle?: string): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
 	add(properties?: any): IBaseExecution<any>;
 }
 
@@ -2831,8 +2831,8 @@ export interface GroupCollections extends GroupPropMethods {
 * GroupCollectionMethods
 **********************************************/
 export interface GroupCollectionMethods {
-	getById(id?: number): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections;
-	getByName(name?: string): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections;
+	getById(id?: number): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections & SP.GroupMethods;
+	getByName(name?: string): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections & SP.GroupMethods;
 	removeById(id?: number): IBaseExecution<any>;
 	removeByLoginName(loginName?: string): IBaseExecution<any>;
 	add(parameters?: SP.GroupCreationInformation): IBaseExecution<SP.Group>;
@@ -2901,7 +2901,7 @@ export interface ClientWebPartCollections extends ClientWebPartPropMethods {
 * ClientWebPartCollectionMethods
 **********************************************/
 export interface ClientWebPartCollectionMethods {
-	getById(id?: any): IBaseQuery<SP.ClientWebPart>;
+	getById(id?: any): IBaseQuery<SP.ClientWebPart> & SP.ClientWebPartMethods;
 }
 
 /*********************************************
@@ -2992,7 +2992,7 @@ export interface ListTemplateCollections extends ListTemplatePropMethods {
 * ListTemplateCollectionMethods
 **********************************************/
 export interface ListTemplateCollectionMethods {
-	getByName(name?: string): IBaseQuery<SP.ListTemplate>;
+	getByName(name?: string): IBaseQuery<SP.ListTemplate> & SP.ListTemplateMethods;
 }
 
 /*********************************************
@@ -3123,8 +3123,8 @@ export interface NavigationNodeCollections extends NavigationNodePropMethods {
 * NavigationNodeCollectionMethods
 **********************************************/
 export interface NavigationNodeCollectionMethods {
-	getById(id?: number): IBaseQuery<SP.NavigationNode, SP.NavigationNodeQuery> & SP.NavigationNodeCollections;
-	getByIndex(index?: number): IBaseQuery<SP.NavigationNode, SP.NavigationNodeQuery> & SP.NavigationNodeCollections;
+	getById(id?: number): IBaseQuery<SP.NavigationNode, SP.NavigationNodeQuery> & SP.NavigationNodeCollections & SP.NavigationNodeMethods;
+	getByIndex(index?: number): IBaseQuery<SP.NavigationNode, SP.NavigationNodeQuery> & SP.NavigationNodeCollections & SP.NavigationNodeMethods;
 	moveAfter(nodeId?: number, previousNodeId?: number): IBaseExecution<any>;
 }
 
@@ -3226,7 +3226,7 @@ export interface PushNotificationSubscriberCollections extends PushNotificationS
 * PushNotificationSubscriberCollectionMethods
 **********************************************/
 export interface PushNotificationSubscriberCollectionMethods {
-	getByStoreId(id?: string): IBaseQuery<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberQuery> & SP.PushNotificationSubscriberCollections;
+	getByStoreId(id?: string): IBaseQuery<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberQuery> & SP.PushNotificationSubscriberCollections & SP.PushNotificationSubscriberMethods;
 }
 
 /*********************************************
@@ -3307,7 +3307,7 @@ export interface RecycleBinItemCollectionMethods {
 	deleteAll(): IBaseExecution<any>;
 	deleteAllSecondStageItems(): IBaseExecution<any>;
 	deleteByIds(ids?: Array<string>): IBaseExecution<any>;
-	getById(id?: any): IBaseQuery<SP.RecycleBinItem, SP.RecycleBinItemQuery> & SP.RecycleBinItemCollections;
+	getById(id?: any): IBaseQuery<SP.RecycleBinItem, SP.RecycleBinItemQuery> & SP.RecycleBinItemCollections & SP.RecycleBinItemMethods;
 	moveAllToSecondStage(): IBaseExecution<any>;
 	moveToSecondStageByIds(ids?: Array<string>): IBaseExecution<any>;
 	restoreAll(): IBaseExecution<any>;
@@ -3524,7 +3524,7 @@ export interface TimeZoneCollections extends TimeZonePropMethods {
 * TimeZoneCollectionMethods
 **********************************************/
 export interface TimeZoneCollectionMethods {
-	getById(id?: number): IBaseQuery<SP.TimeZone>;
+	getById(id?: number): IBaseQuery<SP.TimeZone> & SP.TimeZoneMethods;
 }
 
 /*********************************************
@@ -3666,7 +3666,7 @@ export interface UserCustomActionCollections extends UserCustomActionPropMethods
 **********************************************/
 export interface UserCustomActionCollectionMethods {
 	clear(): IBaseExecution<any>;
-	getById(id?: any): IBaseQuery<SP.UserCustomAction, SP.UserCustomActionQuery> & SP.UserCustomActionCollections;
+	getById(id?: any): IBaseQuery<SP.UserCustomAction, SP.UserCustomActionQuery> & SP.UserCustomActionCollections & SP.UserCustomActionMethods;
 	add(properties?: any): IBaseExecution<any>;
 }
 
@@ -3738,7 +3738,7 @@ export interface ListItemVersionCollections extends ListItemVersionPropMethods {
 * ListItemVersionCollectionMethods
 **********************************************/
 export interface ListItemVersionCollectionMethods {
-	getById(versionId?: number): IBaseQuery<SP.ListItemVersion, SP.ListItemVersionQuery> & SP.ListItemVersionCollections;
+	getById(versionId?: number): IBaseQuery<SP.ListItemVersion, SP.ListItemVersionQuery> & SP.ListItemVersionCollections & SP.ListItemVersionMethods;
 }
 
 /*********************************************
@@ -4702,7 +4702,7 @@ export interface CheckedOutFileCollections extends CheckedOutFilePropMethods {
 * CheckedOutFileCollectionMethods
 **********************************************/
 export interface CheckedOutFileCollectionMethods {
-	getByPath(DecodedUrl?: string): IBaseQuery<SP.CheckedOutFile, SP.CheckedOutFileQuery> & SP.CheckedOutFileCollections;
+	getByPath(DecodedUrl?: string): IBaseQuery<SP.CheckedOutFile, SP.CheckedOutFileQuery> & SP.CheckedOutFileCollections & SP.CheckedOutFileMethods;
 }
 
 /*********************************************
@@ -5934,7 +5934,7 @@ export interface HubSiteCollections extends HubSitePropMethods {
 * HubSiteCollectionMethods
 **********************************************/
 export interface HubSiteCollectionMethods {
-	getById(hubSiteId?: any): IBaseQuery<SP.HubSite>;
+	getById(hubSiteId?: any): IBaseQuery<SP.HubSite> & SP.HubSiteMethods;
 }
 
 /*********************************************

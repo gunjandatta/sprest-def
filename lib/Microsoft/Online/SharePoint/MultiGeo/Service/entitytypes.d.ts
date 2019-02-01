@@ -67,7 +67,7 @@ export interface AllowedDataLocationCollections extends AllowedDataLocationPropM
 * AllowedDataLocationCollectionMethods
 **********************************************/
 export interface AllowedDataLocationCollectionMethods {
-	getByLocation(location?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation>;
+	getByLocation(location?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation> & Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationMethods;
 }
 
 /*********************************************
@@ -205,7 +205,7 @@ export interface CrossFarmGroupMoveJobCollections extends CrossFarmGroupMoveJobP
 * CrossFarmGroupMoveJobCollectionMethods
 **********************************************/
 export interface CrossFarmGroupMoveJobCollectionMethods {
-	getByMoveId(moveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob>;
+	getByMoveId(moveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobMethods;
 }
 
 /*********************************************
@@ -301,7 +301,7 @@ export interface CrossFarmSiteMoveJobCollections extends CrossFarmSiteMoveJobPro
 * CrossFarmSiteMoveJobCollectionMethods
 **********************************************/
 export interface CrossFarmSiteMoveJobCollectionMethods {
-	getByMoveId(moveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob>;
+	getByMoveId(moveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobMethods;
 }
 
 /*********************************************
@@ -398,7 +398,7 @@ export interface CrossFarmUserMoveJobCollections extends CrossFarmUserMoveJobPro
 * CrossFarmUserMoveJobCollectionMethods
 **********************************************/
 export interface CrossFarmUserMoveJobCollectionMethods {
-	getByMoveId(moveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob>;
+	getByMoveId(moveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobMethods;
 }
 
 /*********************************************
@@ -508,7 +508,7 @@ export interface CrossGeoTenantPropertyCollections extends CrossGeoTenantPropert
 * CrossGeoTenantPropertyCollectionMethods
 **********************************************/
 export interface CrossGeoTenantPropertyCollectionMethods {
-	getByPropertyNameAndGeoLocation(propertyName?: string, geo?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty>;
+	getByPropertyNameAndGeoLocation(propertyName?: string, geo?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyMethods;
 	getChanges(startTimeInUtc?: any): IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty>>;
 }
 
@@ -592,9 +592,9 @@ export interface GeoAdministratorCollections extends GeoAdministratorPropMethods
 **********************************************/
 export interface GeoAdministratorCollectionMethods {
 	create(parameters?: Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorEntityData): IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>;
-	getByLoginName(loginName?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>;
-	getByLoginNameAndType(loginName?: string, memberType?: number): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>;
-	getByObjectId(objectId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator>;
+	getByLoginName(loginName?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorMethods;
+	getByLoginNameAndType(loginName?: string, memberType?: number): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorMethods;
+	getByObjectId(objectId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorMethods;
 }
 
 /*********************************************
@@ -794,7 +794,7 @@ export interface GroupMoveJobCollections extends GroupMoveJobPropMethods {
 * GroupMoveJobCollectionMethods
 **********************************************/
 export interface GroupMoveJobCollectionMethods {
-	getByGroupName(groupname?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob>;
+	getByGroupName(groupname?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobMethods;
 	getMoveReport(moveState?: number, moveDirection?: number, limit?: number, startTime?: any, endTime?: any): IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob>>;
 }
 
@@ -1006,7 +1006,7 @@ export interface SiteMoveJobCollections extends SiteMoveJobPropMethods {
 * SiteMoveJobCollectionMethods
 **********************************************/
 export interface SiteMoveJobCollectionMethods {
-	getByUrl(url?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob>;
+	getByUrl(url?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobMethods;
 	getMoveReport(moveState?: number, moveDirection?: number, limit?: number, startTime?: any, endTime?: any): IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob>>;
 }
 
@@ -1117,7 +1117,7 @@ export interface StorageQuotaCollections extends StorageQuotaPropMethods {
 * StorageQuotaCollectionMethods
 **********************************************/
 export interface StorageQuotaCollectionMethods {
-	getByLocation(geoLocation?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota>;
+	getByLocation(geoLocation?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaMethods;
 }
 
 /*********************************************
@@ -1287,8 +1287,8 @@ export interface UserMoveJobCollections extends UserMoveJobPropMethods {
 **********************************************/
 export interface UserMoveJobCollectionMethods {
 	getByDirection(direction?: string): IBaseQuery<Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>>;
-	getByMoveId(odbMoveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>;
-	getByUpn(upn?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>;
+	getByMoveId(odbMoveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobMethods;
+	getByUpn(upn?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobMethods;
 	getByValidPdl(validPdl?: boolean): IBaseQuery<Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>>;
 	getMoveReport(moveState?: number, moveDirection?: number, limit?: number, startTime?: any, endTime?: any): IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>>;
 }

@@ -214,7 +214,7 @@ export interface VideoItemCollections extends VideoItemPropMethods {
 * VideoItemCollectionMethods
 **********************************************/
 export interface VideoItemCollectionMethods {
-	getById(id?: any): IBaseQuery<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollections;
+	getById(id?: any): IBaseQuery<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollections & SP.Publishing.VideoItemMethods;
 }
 
 /*********************************************
@@ -368,8 +368,8 @@ export interface PointPublishingPostCollections extends PointPublishingPostPropM
 * PointPublishingPostCollectionMethods
 **********************************************/
 export interface PointPublishingPostCollectionMethods {
-	getById(id?: number, publishedOnly?: boolean): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections;
-	getByName(name?: string, publishedOnly?: boolean): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections;
+	getById(id?: number, publishedOnly?: boolean): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections & SP.Publishing.PointPublishingPostMethods;
+	getByName(name?: string, publishedOnly?: boolean): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections & SP.Publishing.PointPublishingPostMethods;
 }
 
 /*********************************************
@@ -520,7 +520,7 @@ export interface PointPublishingUserCollections extends PointPublishingUserPropM
 **********************************************/
 export interface PointPublishingUserCollectionMethods {
 	addOrUpdateUser(loginName?: string, isOwner?: boolean): IBaseExecution<SP.Publishing.PointPublishingUser>;
-	getById(userId?: number): IBaseQuery<SP.Publishing.PointPublishingUser>;
+	getById(userId?: number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserMethods;
 }
 
 /*********************************************
@@ -810,8 +810,8 @@ export interface SitePageCollectionMethods {
 	ensureTitleResource(): IBaseExecution<any>;
 	feed(promotedState?: number, published?: boolean, metadataFilter?: string): IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
 	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string): IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
-	getById(id?: number): IBaseQuery<SP.Publishing.SitePage>;
-	getByUrl(url?: string): IBaseQuery<SP.Publishing.SitePage>;
+	getById(id?: number): IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageMethods;
+	getByUrl(url?: string): IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageMethods;
 	getPageColumnState(url?: string): IBaseExecution<number>;
 	isSitePage(url?: string): IBaseExecution<boolean>;
 	templates(): IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
@@ -1168,7 +1168,7 @@ export interface SpotlightChannelCollections extends SpotlightChannelPropMethods
 * SpotlightChannelCollectionMethods
 **********************************************/
 export interface SpotlightChannelCollectionMethods {
-	getById(id?: number): IBaseQuery<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery> & SP.Publishing.SpotlightChannelCollections;
+	getById(id?: number): IBaseQuery<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery> & SP.Publishing.SpotlightChannelCollections & SP.Publishing.SpotlightChannelMethods;
 }
 
 /*********************************************
@@ -1248,7 +1248,7 @@ export interface VideoChannelCollections extends VideoChannelPropMethods {
 * VideoChannelCollectionMethods
 **********************************************/
 export interface VideoChannelCollectionMethods {
-	getById(id?: any): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections;
+	getById(id?: any): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
 }
 
 /*********************************************
@@ -1381,7 +1381,7 @@ export interface SpotlightVideoCollections extends SpotlightVideoPropMethods {
 * SpotlightVideoCollectionMethods
 **********************************************/
 export interface SpotlightVideoCollectionMethods {
-	getById(id?: number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections;
+	getById(id?: number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections & SP.Publishing.SpotlightVideoMethods;
 }
 
 /*********************************************

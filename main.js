@@ -493,7 +493,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Else, see if this is a "getBy" method
                                 else if (/^getBy/.test(methodInfo.name)) {
                                     // Set the type
-                                    methodType = 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ", " + methodType + "Query" : "") + '>' + (hasCollections[methodType] ? " & " + methodType + "Collections" : "");
+                                    methodType = 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ", " + methodType + "Query" : "") + '>' + (hasCollections[methodType] ? " & " + methodType + "Collections" : "") + (hasMethods[methodType] ? " & " + methodType + "Methods" : "");
                                 } else {
                                     // Set the type
                                     methodType = 'IBaseExecution<' + methodType + '>';

@@ -57,7 +57,7 @@ export interface SPOWebAppServicePrincipalPermissionGrantCollections extends SPO
 * SPOWebAppServicePrincipalPermissionGrantCollectionMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
-	getByObjectId(objectId?: string): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
+	getByObjectId(objectId?: string): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantMethods;
 }
 
 /*********************************************
@@ -129,7 +129,7 @@ export interface SPOWebAppServicePrincipalPermissionRequestCollections extends S
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
 	approve(resource?: string, scope?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
-	getById(id?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest>;
+	getById(id?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestMethods;
 }
 
 /*********************************************
