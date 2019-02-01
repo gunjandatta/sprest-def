@@ -57,14 +57,14 @@ export interface IEntityInstance extends EntityInstanceCollections,EntityInstanc
 /*********************************************
 * IEntityInstanceQuery
 **********************************************/
-export interface IEntityInstanceQuery extends EntityInstanceQuery,EntityInstanceMethods {
+export interface IEntityInstanceQuery extends EntityInstanceQuery, EntityInstanceMethods {
 
 }
 
 /*********************************************
 * EntityInstance
 **********************************************/
-export interface EntityInstance extends EntityInstanceCollections, EntityInstanceMethods {
+export interface EntityInstance extends EntityInstanceProps, EntityInstanceCollections, EntityInstanceMethods {
 
 }
 
@@ -85,14 +85,14 @@ export interface EntityInstancePropMethods {
 /*********************************************
 * EntityInstanceCollections
 **********************************************/
-export interface EntityInstanceCollections extends EntityInstanceProps, EntityInstancePropMethods {
+export interface EntityInstanceCollections extends EntityInstancePropMethods {
 
 }
 
 /*********************************************
 * EntityInstanceQuery
 **********************************************/
-export interface EntityInstanceQuery extends EntityInstanceProps,EntityInstanceMethods {
+export interface EntityInstanceQuery extends EntityInstanceProps, EntityInstanceMethods {
 
 }
 
@@ -119,14 +119,14 @@ export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryC
 /*********************************************
 * IEntityFieldValueDictionaryQuery
 **********************************************/
-export interface IEntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryQuery,EntityFieldValueDictionaryMethods {
+export interface IEntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryQuery, EntityFieldValueDictionaryMethods {
 
 }
 
 /*********************************************
 * EntityFieldValueDictionary
 **********************************************/
-export interface EntityFieldValueDictionary extends EntityFieldValueDictionaryCollections, EntityFieldValueDictionaryMethods {
+export interface EntityFieldValueDictionary extends EntityFieldValueDictionaryProps, EntityFieldValueDictionaryCollections, EntityFieldValueDictionaryMethods {
 
 }
 
@@ -147,14 +147,14 @@ export interface EntityFieldValueDictionaryPropMethods {
 /*********************************************
 * EntityFieldValueDictionaryCollections
 **********************************************/
-export interface EntityFieldValueDictionaryCollections extends EntityFieldValueDictionaryProps, EntityFieldValueDictionaryPropMethods {
+export interface EntityFieldValueDictionaryCollections extends EntityFieldValueDictionaryPropMethods {
 
 }
 
 /*********************************************
 * EntityFieldValueDictionaryQuery
 **********************************************/
-export interface EntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryProps,EntityFieldValueDictionaryMethods {
+export interface EntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryProps, EntityFieldValueDictionaryMethods {
 
 }
 

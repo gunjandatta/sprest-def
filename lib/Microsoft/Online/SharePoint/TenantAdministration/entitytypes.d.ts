@@ -30,14 +30,14 @@ export interface IHubSiteProperties extends HubSitePropertiesCollections,HubSite
 /*********************************************
 * IHubSitePropertiesQuery
 **********************************************/
-export interface IHubSitePropertiesQuery extends HubSitePropertiesQuery,HubSitePropertiesMethods {
+export interface IHubSitePropertiesQuery extends HubSitePropertiesQuery, HubSitePropertiesMethods {
 
 }
 
 /*********************************************
 * HubSiteProperties
 **********************************************/
-export interface HubSiteProperties extends HubSitePropertiesCollections, HubSitePropertiesMethods {
+export interface HubSiteProperties extends HubSitePropertiesProps, HubSitePropertiesCollections, HubSitePropertiesMethods {
 
 }
 
@@ -66,14 +66,14 @@ export interface HubSitePropertiesPropMethods {
 /*********************************************
 * HubSitePropertiesCollections
 **********************************************/
-export interface HubSitePropertiesCollections extends HubSitePropertiesProps, HubSitePropertiesPropMethods {
+export interface HubSitePropertiesCollections extends HubSitePropertiesPropMethods {
 
 }
 
 /*********************************************
 * HubSitePropertiesQuery
 **********************************************/
-export interface HubSitePropertiesQuery extends HubSitePropertiesProps,HubSitePropertiesMethods {
+export interface HubSitePropertiesQuery extends HubSitePropertiesProps, HubSitePropertiesMethods {
 
 }
 
@@ -94,14 +94,14 @@ export interface IOffice365CommsMessagesServiceProxy extends Office365CommsMessa
 /*********************************************
 * IOffice365CommsMessagesServiceProxyQuery
 **********************************************/
-export interface IOffice365CommsMessagesServiceProxyQuery extends Office365CommsMessagesServiceProxyQuery,Office365CommsMessagesServiceProxyMethods {
+export interface IOffice365CommsMessagesServiceProxyQuery extends Office365CommsMessagesServiceProxyQuery, Office365CommsMessagesServiceProxyMethods {
 
 }
 
 /*********************************************
 * Office365CommsMessagesServiceProxy
 **********************************************/
-export interface Office365CommsMessagesServiceProxy extends Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods {
+export interface Office365CommsMessagesServiceProxy extends Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods {
 
 }
 
@@ -122,14 +122,14 @@ export interface Office365CommsMessagesServiceProxyPropMethods {
 /*********************************************
 * Office365CommsMessagesServiceProxyCollections
 **********************************************/
-export interface Office365CommsMessagesServiceProxyCollections extends Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyPropMethods {
+export interface Office365CommsMessagesServiceProxyCollections extends Office365CommsMessagesServiceProxyPropMethods {
 
 }
 
 /*********************************************
 * Office365CommsMessagesServiceProxyQuery
 **********************************************/
-export interface Office365CommsMessagesServiceProxyQuery extends Office365CommsMessagesServiceProxyProps,Office365CommsMessagesServiceProxyMethods {
+export interface Office365CommsMessagesServiceProxyQuery extends Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyMethods {
 
 }
 
@@ -185,14 +185,14 @@ export interface ISiteCollectionManagementService extends SiteCollectionManageme
 /*********************************************
 * ISiteCollectionManagementServiceQuery
 **********************************************/
-export interface ISiteCollectionManagementServiceQuery extends SiteCollectionManagementServiceQuery,SiteCollectionManagementServiceMethods {
+export interface ISiteCollectionManagementServiceQuery extends SiteCollectionManagementServiceQuery, SiteCollectionManagementServiceMethods {
 
 }
 
 /*********************************************
 * SiteCollectionManagementService
 **********************************************/
-export interface SiteCollectionManagementService extends SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods {
+export interface SiteCollectionManagementService extends SiteCollectionManagementServiceProps, SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods {
 
 }
 
@@ -213,14 +213,14 @@ export interface SiteCollectionManagementServicePropMethods {
 /*********************************************
 * SiteCollectionManagementServiceCollections
 **********************************************/
-export interface SiteCollectionManagementServiceCollections extends SiteCollectionManagementServiceProps, SiteCollectionManagementServicePropMethods {
+export interface SiteCollectionManagementServiceCollections extends SiteCollectionManagementServicePropMethods {
 
 }
 
 /*********************************************
 * SiteCollectionManagementServiceQuery
 **********************************************/
-export interface SiteCollectionManagementServiceQuery extends SiteCollectionManagementServiceProps,SiteCollectionManagementServiceMethods {
+export interface SiteCollectionManagementServiceQuery extends SiteCollectionManagementServiceProps, SiteCollectionManagementServiceMethods {
 
 }
 
@@ -246,14 +246,14 @@ export interface ISiteProperties extends SitePropertiesCollections,SitePropertie
 /*********************************************
 * ISitePropertiesQuery
 **********************************************/
-export interface ISitePropertiesQuery extends SitePropertiesQuery,SitePropertiesMethods {
+export interface ISitePropertiesQuery extends SitePropertiesQuery, SitePropertiesMethods {
 
 }
 
 /*********************************************
 * SiteProperties
 **********************************************/
-export interface SiteProperties extends SitePropertiesCollections, SitePropertiesMethods {
+export interface SiteProperties extends SitePropertiesProps, SitePropertiesCollections, SitePropertiesMethods {
 
 }
 
@@ -323,7 +323,7 @@ export interface SitePropertiesPropMethods {
 /*********************************************
 * SitePropertiesCollections
 **********************************************/
-export interface SitePropertiesCollections extends SitePropertiesProps, SitePropertiesPropMethods {
+export interface SitePropertiesCollections extends SitePropertiesPropMethods {
 
 }
 
@@ -331,14 +331,14 @@ export interface SitePropertiesCollections extends SitePropertiesProps, SiteProp
 * SitePropertiesCollectionMethods
 **********************************************/
 export interface SitePropertiesCollectionMethods {
-	getById(siteId?: any): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	getById(siteId?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 	getLockStateById(siteId?: any): IBaseExecution<number>;
 }
 
 /*********************************************
 * SitePropertiesQuery
 **********************************************/
-export interface SitePropertiesQuery extends SitePropertiesProps,SitePropertiesMethods {
+export interface SitePropertiesQuery extends SitePropertiesProps, SitePropertiesMethods {
 
 }
 
@@ -423,14 +423,14 @@ export interface ITenantAdminSettingsService extends TenantAdminSettingsServiceC
 /*********************************************
 * ITenantAdminSettingsServiceQuery
 **********************************************/
-export interface ITenantAdminSettingsServiceQuery extends TenantAdminSettingsServiceQuery,TenantAdminSettingsServiceMethods {
+export interface ITenantAdminSettingsServiceQuery extends TenantAdminSettingsServiceQuery, TenantAdminSettingsServiceMethods {
 
 }
 
 /*********************************************
 * TenantAdminSettingsService
 **********************************************/
-export interface TenantAdminSettingsService extends TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods {
+export interface TenantAdminSettingsService extends TenantAdminSettingsServiceProps, TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods {
 
 }
 
@@ -472,14 +472,14 @@ export interface TenantAdminSettingsServicePropMethods {
 /*********************************************
 * TenantAdminSettingsServiceCollections
 **********************************************/
-export interface TenantAdminSettingsServiceCollections extends TenantAdminSettingsServiceProps, TenantAdminSettingsServicePropMethods {
+export interface TenantAdminSettingsServiceCollections extends TenantAdminSettingsServicePropMethods {
 
 }
 
 /*********************************************
 * TenantAdminSettingsServiceQuery
 **********************************************/
-export interface TenantAdminSettingsServiceQuery extends TenantAdminSettingsServiceProps,TenantAdminSettingsServiceMethods {
+export interface TenantAdminSettingsServiceQuery extends TenantAdminSettingsServiceProps, TenantAdminSettingsServiceMethods {
 
 }
 
@@ -501,14 +501,14 @@ export interface ITenant extends TenantCollections,TenantMethods,IBaseQuery<ITen
 /*********************************************
 * ITenantQuery
 **********************************************/
-export interface ITenantQuery extends TenantQuery,TenantMethods {
+export interface ITenantQuery extends TenantQuery, TenantMethods {
 
 }
 
 /*********************************************
 * Tenant
 **********************************************/
-export interface Tenant extends TenantCollections, TenantMethods {
+export interface Tenant extends TenantProps, TenantCollections, TenantMethods {
 
 }
 
@@ -629,15 +629,15 @@ export interface TenantPropMethods {
 /*********************************************
 * TenantCollections
 **********************************************/
-export interface TenantCollections extends TenantProps, TenantPropMethods {
+export interface TenantCollections extends TenantPropMethods {
 	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
-	Sites(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections;
+	Sites(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 }
 
 /*********************************************
 * TenantQuery
 **********************************************/
-export interface TenantQuery extends TenantProps,TenantMethods {
+export interface TenantQuery extends TenantProps, TenantMethods {
 	Sites: IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 }
 

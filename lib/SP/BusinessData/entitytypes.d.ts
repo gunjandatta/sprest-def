@@ -50,14 +50,14 @@ export interface IEntityIdentifier extends EntityIdentifierCollections,EntityIde
 /*********************************************
 * IEntityIdentifierQuery
 **********************************************/
-export interface IEntityIdentifierQuery extends EntityIdentifierQuery,EntityIdentifierMethods {
+export interface IEntityIdentifierQuery extends EntityIdentifierQuery, EntityIdentifierMethods {
 
 }
 
 /*********************************************
 * EntityIdentifier
 **********************************************/
-export interface EntityIdentifier extends EntityIdentifierCollections, EntityIdentifierMethods {
+export interface EntityIdentifier extends EntityIdentifierProps, EntityIdentifierCollections, EntityIdentifierMethods {
 
 }
 
@@ -79,14 +79,14 @@ export interface EntityIdentifierPropMethods {
 /*********************************************
 * EntityIdentifierCollections
 **********************************************/
-export interface EntityIdentifierCollections extends EntityIdentifierProps, EntityIdentifierPropMethods {
+export interface EntityIdentifierCollections extends EntityIdentifierPropMethods {
 
 }
 
 /*********************************************
 * EntityIdentifierQuery
 **********************************************/
-export interface EntityIdentifierQuery extends EntityIdentifierProps,EntityIdentifierMethods {
+export interface EntityIdentifierQuery extends EntityIdentifierProps, EntityIdentifierMethods {
 
 }
 
@@ -123,14 +123,14 @@ export interface ITypeDescriptor extends TypeDescriptorCollections,TypeDescripto
 /*********************************************
 * ITypeDescriptorQuery
 **********************************************/
-export interface ITypeDescriptorQuery extends TypeDescriptorQuery,TypeDescriptorMethods {
+export interface ITypeDescriptorQuery extends TypeDescriptorQuery, TypeDescriptorMethods {
 
 }
 
 /*********************************************
 * TypeDescriptor
 **********************************************/
-export interface TypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods {
+export interface TypeDescriptor extends TypeDescriptorProps, TypeDescriptorCollections, TypeDescriptorMethods {
 
 }
 
@@ -155,14 +155,14 @@ export interface TypeDescriptorPropMethods {
 /*********************************************
 * TypeDescriptorCollections
 **********************************************/
-export interface TypeDescriptorCollections extends TypeDescriptorProps, TypeDescriptorPropMethods {
+export interface TypeDescriptorCollections extends TypeDescriptorPropMethods {
 
 }
 
 /*********************************************
 * TypeDescriptorQuery
 **********************************************/
-export interface TypeDescriptorQuery extends TypeDescriptorProps,TypeDescriptorMethods {
+export interface TypeDescriptorQuery extends TypeDescriptorProps, TypeDescriptorMethods {
 
 }
 
@@ -189,14 +189,14 @@ export interface IEntity extends EntityCollections,EntityMethods,IBaseQuery<IEnt
 /*********************************************
 * IEntityQuery
 **********************************************/
-export interface IEntityQuery extends EntityQuery,EntityMethods {
+export interface IEntityQuery extends EntityQuery, EntityMethods {
 
 }
 
 /*********************************************
 * Entity
 **********************************************/
-export interface Entity extends EntityCollections, EntityMethods {
+export interface Entity extends EntityProps, EntityCollections, EntityMethods {
 
 }
 
@@ -219,14 +219,14 @@ export interface EntityPropMethods {
 /*********************************************
 * EntityCollections
 **********************************************/
-export interface EntityCollections extends EntityProps, EntityPropMethods {
+export interface EntityCollections extends EntityPropMethods {
 
 }
 
 /*********************************************
 * EntityQuery
 **********************************************/
-export interface EntityQuery extends EntityProps,EntityMethods {
+export interface EntityQuery extends EntityProps, EntityMethods {
 
 }
 
@@ -256,14 +256,14 @@ export interface ILobSystem extends LobSystemCollections,LobSystemMethods,IBaseQ
 /*********************************************
 * ILobSystemQuery
 **********************************************/
-export interface ILobSystemQuery extends LobSystemQuery,LobSystemMethods {
+export interface ILobSystemQuery extends LobSystemQuery, LobSystemMethods {
 
 }
 
 /*********************************************
 * LobSystem
 **********************************************/
-export interface LobSystem extends LobSystemCollections, LobSystemMethods {
+export interface LobSystem extends LobSystemProps, LobSystemCollections, LobSystemMethods {
 
 }
 
@@ -284,14 +284,14 @@ export interface LobSystemPropMethods {
 /*********************************************
 * LobSystemCollections
 **********************************************/
-export interface LobSystemCollections extends LobSystemProps, LobSystemPropMethods {
+export interface LobSystemCollections extends LobSystemPropMethods {
 
 }
 
 /*********************************************
 * LobSystemQuery
 **********************************************/
-export interface LobSystemQuery extends LobSystemProps,LobSystemMethods {
+export interface LobSystemQuery extends LobSystemProps, LobSystemMethods {
 
 }
 
@@ -312,14 +312,14 @@ export interface IMethodExecutionResult extends MethodExecutionResultCollections
 /*********************************************
 * IMethodExecutionResultQuery
 **********************************************/
-export interface IMethodExecutionResultQuery extends MethodExecutionResultQuery,MethodExecutionResultMethods {
+export interface IMethodExecutionResultQuery extends MethodExecutionResultQuery, MethodExecutionResultMethods {
 
 }
 
 /*********************************************
 * MethodExecutionResult
 **********************************************/
-export interface MethodExecutionResult extends MethodExecutionResultCollections, MethodExecutionResultMethods {
+export interface MethodExecutionResult extends MethodExecutionResultProps, MethodExecutionResultCollections, MethodExecutionResultMethods {
 
 }
 
@@ -340,15 +340,15 @@ export interface MethodExecutionResultPropMethods {
 /*********************************************
 * MethodExecutionResultCollections
 **********************************************/
-export interface MethodExecutionResultCollections extends MethodExecutionResultProps, MethodExecutionResultPropMethods {
+export interface MethodExecutionResultCollections extends MethodExecutionResultPropMethods {
 	ReturnParameterCollection(): IBaseCollection<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
-	ReturnParameterCollection(id: string | number): IBaseQuery<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+	ReturnParameterCollection(id: string | number): IBaseQuery<SP.BusinessData.Runtime.EntityFieldValueDictionary> & SP.BusinessData.Runtime.EntityFieldValueDictionaryCollections & SP.BusinessData.Runtime.EntityFieldValueDictionaryMethods;
 }
 
 /*********************************************
 * MethodExecutionResultQuery
 **********************************************/
-export interface MethodExecutionResultQuery extends MethodExecutionResultProps,MethodExecutionResultMethods {
+export interface MethodExecutionResultQuery extends MethodExecutionResultProps, MethodExecutionResultMethods {
 	ReturnParameterCollection: IBaseResults<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 }
 
@@ -369,14 +369,14 @@ export interface IEntityView extends EntityViewCollections,EntityViewMethods,IBa
 /*********************************************
 * IEntityViewQuery
 **********************************************/
-export interface IEntityViewQuery extends EntityViewQuery,EntityViewMethods {
+export interface IEntityViewQuery extends EntityViewQuery, EntityViewMethods {
 
 }
 
 /*********************************************
 * EntityView
 **********************************************/
-export interface EntityView extends EntityViewCollections, EntityViewMethods {
+export interface EntityView extends EntityViewProps, EntityViewCollections, EntityViewMethods {
 
 }
 
@@ -398,15 +398,15 @@ export interface EntityViewPropMethods {
 /*********************************************
 * EntityViewCollections
 **********************************************/
-export interface EntityViewCollections extends EntityViewProps, EntityViewPropMethods {
+export interface EntityViewCollections extends EntityViewPropMethods {
 	Fields(): IBaseCollection<SP.BusinessData.EntityField>;
-	Fields(id: string | number): IBaseQuery<SP.BusinessData.EntityField>;
+	Fields(id: string | number): IBaseQuery<SP.BusinessData.EntityField> & SP.BusinessData.EntityFieldCollections;
 }
 
 /*********************************************
 * EntityViewQuery
 **********************************************/
-export interface EntityViewQuery extends EntityViewProps,EntityViewMethods {
+export interface EntityViewQuery extends EntityViewProps, EntityViewMethods {
 	Fields: IBaseResults<SP.BusinessData.EntityField>;
 }
 
@@ -430,14 +430,14 @@ export interface IAppBdcCatalog extends AppBdcCatalogCollections,AppBdcCatalogMe
 /*********************************************
 * IAppBdcCatalogQuery
 **********************************************/
-export interface IAppBdcCatalogQuery extends AppBdcCatalogQuery,AppBdcCatalogMethods {
+export interface IAppBdcCatalogQuery extends AppBdcCatalogQuery, AppBdcCatalogMethods {
 
 }
 
 /*********************************************
 * AppBdcCatalog
 **********************************************/
-export interface AppBdcCatalog extends AppBdcCatalogCollections, AppBdcCatalogMethods {
+export interface AppBdcCatalog extends AppBdcCatalogProps, AppBdcCatalogCollections, AppBdcCatalogMethods {
 
 }
 
@@ -458,14 +458,14 @@ export interface AppBdcCatalogPropMethods {
 /*********************************************
 * AppBdcCatalogCollections
 **********************************************/
-export interface AppBdcCatalogCollections extends AppBdcCatalogProps, AppBdcCatalogPropMethods {
+export interface AppBdcCatalogCollections extends AppBdcCatalogPropMethods {
 
 }
 
 /*********************************************
 * AppBdcCatalogQuery
 **********************************************/
-export interface AppBdcCatalogQuery extends AppBdcCatalogProps,AppBdcCatalogMethods {
+export interface AppBdcCatalogQuery extends AppBdcCatalogProps, AppBdcCatalogMethods {
 
 }
 

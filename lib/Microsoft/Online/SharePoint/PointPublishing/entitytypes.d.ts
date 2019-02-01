@@ -11,14 +11,14 @@ export interface IPointPublishingAdmin extends PointPublishingAdminCollections,P
 /*********************************************
 * IPointPublishingAdminQuery
 **********************************************/
-export interface IPointPublishingAdminQuery extends PointPublishingAdminQuery,PointPublishingAdminMethods {
+export interface IPointPublishingAdminQuery extends PointPublishingAdminQuery, PointPublishingAdminMethods {
 
 }
 
 /*********************************************
 * PointPublishingAdmin
 **********************************************/
-export interface PointPublishingAdmin extends PointPublishingAdminCollections, PointPublishingAdminMethods {
+export interface PointPublishingAdmin extends PointPublishingAdminProps, PointPublishingAdminCollections, PointPublishingAdminMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface PointPublishingAdminPropMethods {
 /*********************************************
 * PointPublishingAdminCollections
 **********************************************/
-export interface PointPublishingAdminCollections extends PointPublishingAdminProps, PointPublishingAdminPropMethods {
+export interface PointPublishingAdminCollections extends PointPublishingAdminPropMethods {
 
 }
 
 /*********************************************
 * PointPublishingAdminQuery
 **********************************************/
-export interface PointPublishingAdminQuery extends PointPublishingAdminProps,PointPublishingAdminMethods {
+export interface PointPublishingAdminQuery extends PointPublishingAdminProps, PointPublishingAdminMethods {
 
 }
 

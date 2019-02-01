@@ -12,14 +12,14 @@ export interface INavigationServiceRest extends NavigationServiceRestCollections
 /*********************************************
 * INavigationServiceRestQuery
 **********************************************/
-export interface INavigationServiceRestQuery extends NavigationServiceRestQuery,NavigationServiceRestMethods {
+export interface INavigationServiceRestQuery extends NavigationServiceRestQuery, NavigationServiceRestMethods {
 
 }
 
 /*********************************************
 * NavigationServiceRest
 **********************************************/
-export interface NavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods {
+export interface NavigationServiceRest extends NavigationServiceRestProps, NavigationServiceRestCollections, NavigationServiceRestMethods {
 
 }
 
@@ -40,14 +40,14 @@ export interface NavigationServiceRestPropMethods {
 /*********************************************
 * NavigationServiceRestCollections
 **********************************************/
-export interface NavigationServiceRestCollections extends NavigationServiceRestProps, NavigationServiceRestPropMethods {
+export interface NavigationServiceRestCollections extends NavigationServiceRestPropMethods {
 
 }
 
 /*********************************************
 * NavigationServiceRestQuery
 **********************************************/
-export interface NavigationServiceRestQuery extends NavigationServiceRestProps,NavigationServiceRestMethods {
+export interface NavigationServiceRestQuery extends NavigationServiceRestProps, NavigationServiceRestMethods {
 
 }
 

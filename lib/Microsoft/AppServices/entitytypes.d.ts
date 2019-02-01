@@ -11,14 +11,14 @@ export interface IAppCollection extends AppCollectionCollections,AppCollectionMe
 /*********************************************
 * IAppCollectionQuery
 **********************************************/
-export interface IAppCollectionQuery extends AppCollectionQuery,AppCollectionMethods {
+export interface IAppCollectionQuery extends AppCollectionQuery, AppCollectionMethods {
 
 }
 
 /*********************************************
 * AppCollection
 **********************************************/
-export interface AppCollection extends AppCollectionCollections, AppCollectionMethods {
+export interface AppCollection extends AppCollectionProps, AppCollectionCollections, AppCollectionMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface AppCollectionPropMethods {
 /*********************************************
 * AppCollectionCollections
 **********************************************/
-export interface AppCollectionCollections extends AppCollectionProps, AppCollectionPropMethods {
+export interface AppCollectionCollections extends AppCollectionPropMethods {
 
 }
 
 /*********************************************
 * AppCollectionQuery
 **********************************************/
-export interface AppCollectionQuery extends AppCollectionProps,AppCollectionMethods {
+export interface AppCollectionQuery extends AppCollectionProps, AppCollectionMethods {
 
 }
 

@@ -12,14 +12,14 @@ export interface IStringCollection extends StringCollectionCollections,StringCol
 /*********************************************
 * IStringCollectionQuery
 **********************************************/
-export interface IStringCollectionQuery extends StringCollectionQuery,StringCollectionMethods {
+export interface IStringCollectionQuery extends StringCollectionQuery, StringCollectionMethods {
 
 }
 
 /*********************************************
 * StringCollection
 **********************************************/
-export interface StringCollection extends StringCollectionCollections, StringCollectionMethods {
+export interface StringCollection extends StringCollectionProps, StringCollectionCollections, StringCollectionMethods {
 
 }
 
@@ -41,14 +41,14 @@ export interface StringCollectionPropMethods {
 /*********************************************
 * StringCollectionCollections
 **********************************************/
-export interface StringCollectionCollections extends StringCollectionProps, StringCollectionPropMethods {
+export interface StringCollectionCollections extends StringCollectionPropMethods {
 
 }
 
 /*********************************************
 * StringCollectionQuery
 **********************************************/
-export interface StringCollectionQuery extends StringCollectionProps,StringCollectionMethods {
+export interface StringCollectionQuery extends StringCollectionProps, StringCollectionMethods {
 
 }
 
@@ -84,14 +84,14 @@ export interface IRankingLabeling extends RankingLabelingCollections,RankingLabe
 /*********************************************
 * IRankingLabelingQuery
 **********************************************/
-export interface IRankingLabelingQuery extends RankingLabelingQuery,RankingLabelingMethods {
+export interface IRankingLabelingQuery extends RankingLabelingQuery, RankingLabelingMethods {
 
 }
 
 /*********************************************
 * RankingLabeling
 **********************************************/
-export interface RankingLabeling extends RankingLabelingCollections, RankingLabelingMethods {
+export interface RankingLabeling extends RankingLabelingProps, RankingLabelingCollections, RankingLabelingMethods {
 
 }
 
@@ -112,14 +112,14 @@ export interface RankingLabelingPropMethods {
 /*********************************************
 * RankingLabelingCollections
 **********************************************/
-export interface RankingLabelingCollections extends RankingLabelingProps, RankingLabelingPropMethods {
+export interface RankingLabelingCollections extends RankingLabelingPropMethods {
 
 }
 
 /*********************************************
 * RankingLabelingQuery
 **********************************************/
-export interface RankingLabelingQuery extends RankingLabelingProps,RankingLabelingMethods {
+export interface RankingLabelingQuery extends RankingLabelingProps, RankingLabelingMethods {
 
 }
 
@@ -142,14 +142,14 @@ export interface IReorderingRuleCollection extends ReorderingRuleCollectionColle
 /*********************************************
 * IReorderingRuleCollectionQuery
 **********************************************/
-export interface IReorderingRuleCollectionQuery extends ReorderingRuleCollectionQuery,ReorderingRuleCollectionMethods {
+export interface IReorderingRuleCollectionQuery extends ReorderingRuleCollectionQuery, ReorderingRuleCollectionMethods {
 
 }
 
 /*********************************************
 * ReorderingRuleCollection
 **********************************************/
-export interface ReorderingRuleCollection extends ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods {
+export interface ReorderingRuleCollection extends ReorderingRuleCollectionProps, ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods {
 
 }
 
@@ -171,14 +171,14 @@ export interface ReorderingRuleCollectionPropMethods {
 /*********************************************
 * ReorderingRuleCollectionCollections
 **********************************************/
-export interface ReorderingRuleCollectionCollections extends ReorderingRuleCollectionProps, ReorderingRuleCollectionPropMethods {
+export interface ReorderingRuleCollectionCollections extends ReorderingRuleCollectionPropMethods {
 
 }
 
 /*********************************************
 * ReorderingRuleCollectionQuery
 **********************************************/
-export interface ReorderingRuleCollectionQuery extends ReorderingRuleCollectionProps,ReorderingRuleCollectionMethods {
+export interface ReorderingRuleCollectionQuery extends ReorderingRuleCollectionProps, ReorderingRuleCollectionMethods {
 
 }
 
@@ -200,14 +200,14 @@ export interface ISortCollection extends SortCollectionCollections,SortCollectio
 /*********************************************
 * ISortCollectionQuery
 **********************************************/
-export interface ISortCollectionQuery extends SortCollectionQuery,SortCollectionMethods {
+export interface ISortCollectionQuery extends SortCollectionQuery, SortCollectionMethods {
 
 }
 
 /*********************************************
 * SortCollection
 **********************************************/
-export interface SortCollection extends SortCollectionCollections, SortCollectionMethods {
+export interface SortCollection extends SortCollectionProps, SortCollectionCollections, SortCollectionMethods {
 
 }
 
@@ -229,14 +229,14 @@ export interface SortCollectionPropMethods {
 /*********************************************
 * SortCollectionCollections
 **********************************************/
-export interface SortCollectionCollections extends SortCollectionProps, SortCollectionPropMethods {
+export interface SortCollectionCollections extends SortCollectionPropMethods {
 
 }
 
 /*********************************************
 * SortCollectionQuery
 **********************************************/
-export interface SortCollectionQuery extends SortCollectionProps,SortCollectionMethods {
+export interface SortCollectionQuery extends SortCollectionProps, SortCollectionMethods {
 
 }
 

@@ -15,14 +15,14 @@ export interface ISPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinit
 /*********************************************
 * ISPAppStateQueryJobDefinitionQuery
 **********************************************/
-export interface ISPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionQuery,SPAppStateQueryJobDefinitionMethods {
+export interface ISPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionQuery, SPAppStateQueryJobDefinitionMethods {
 
 }
 
 /*********************************************
 * SPAppStateQueryJobDefinition
 **********************************************/
-export interface SPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionCollections, SPAppStateQueryJobDefinitionMethods {
+export interface SPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionCollections, SPAppStateQueryJobDefinitionMethods {
 
 }
 
@@ -43,14 +43,14 @@ export interface SPAppStateQueryJobDefinitionPropMethods {
 /*********************************************
 * SPAppStateQueryJobDefinitionCollections
 **********************************************/
-export interface SPAppStateQueryJobDefinitionCollections extends SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionPropMethods {
+export interface SPAppStateQueryJobDefinitionCollections extends SPAppStateQueryJobDefinitionPropMethods {
 
 }
 
 /*********************************************
 * SPAppStateQueryJobDefinitionQuery
 **********************************************/
-export interface SPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionProps,SPAppStateQueryJobDefinitionMethods {
+export interface SPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionMethods {
 
 }
 
@@ -79,7 +79,7 @@ export interface SPFarmCollections {
 * SPFarmQuery
 **********************************************/
 export interface SPFarmQuery extends SPFarm {
-	Local: Microsoft.SharePoint.Administration.SPFarm;
+	Local: Microsoft.SharePoint.Administration.SPFarm & Microsoft.SharePoint.Administration.SPFarmCollections;
 }
 
 /*********************************************
@@ -128,14 +128,14 @@ export interface ISPWebApplication extends SPWebApplicationCollections,SPWebAppl
 /*********************************************
 * ISPWebApplicationQuery
 **********************************************/
-export interface ISPWebApplicationQuery extends SPWebApplicationQuery,SPWebApplicationMethods {
+export interface ISPWebApplicationQuery extends SPWebApplicationQuery, SPWebApplicationMethods {
 
 }
 
 /*********************************************
 * SPWebApplication
 **********************************************/
-export interface SPWebApplication extends SPWebApplicationCollections, SPWebApplicationMethods {
+export interface SPWebApplication extends SPWebApplicationProps, SPWebApplicationCollections, SPWebApplicationMethods {
 
 }
 
@@ -160,15 +160,15 @@ export interface SPWebApplicationPropMethods {
 /*********************************************
 * SPWebApplicationCollections
 **********************************************/
-export interface SPWebApplicationCollections extends SPWebApplicationProps, SPWebApplicationPropMethods {
+export interface SPWebApplicationCollections extends SPWebApplicationPropMethods {
 	Sites(): IBaseCollection<SP.Site, SP.SiteQuery>;
-	Sites(id: string | number): IBaseQuery<SP.Site, SP.SiteQuery>;
+	Sites(id: string | number): IBaseQuery<SP.Site, SP.SiteQuery> & SP.SiteCollections & SP.SiteMethods;
 }
 
 /*********************************************
 * SPWebApplicationQuery
 **********************************************/
-export interface SPWebApplicationQuery extends SPWebApplicationProps,SPWebApplicationMethods {
+export interface SPWebApplicationQuery extends SPWebApplicationProps, SPWebApplicationMethods {
 	Sites: IBaseResults<SP.Site>;
 }
 
@@ -189,14 +189,14 @@ export interface ISPWebService extends SPWebServiceCollections,SPWebServiceMetho
 /*********************************************
 * ISPWebServiceQuery
 **********************************************/
-export interface ISPWebServiceQuery extends SPWebServiceQuery,SPWebServiceMethods {
+export interface ISPWebServiceQuery extends SPWebServiceQuery, SPWebServiceMethods {
 
 }
 
 /*********************************************
 * SPWebService
 **********************************************/
-export interface SPWebService extends SPWebServiceCollections, SPWebServiceMethods {
+export interface SPWebService extends SPWebServiceProps, SPWebServiceCollections, SPWebServiceMethods {
 
 }
 
@@ -211,22 +211,22 @@ export interface SPWebServiceProps {
 * SPWebServicePropMethods
 **********************************************/
 export interface SPWebServicePropMethods {
-	ContentService(): IBaseExecution<Microsoft.SharePoint.Administration.SPWebService>;
+	ContentService(): IBaseExecution<Microsoft.SharePoint.Administration.SPWebService> & Microsoft.SharePoint.Administration.SPWebServiceCollections;
 }
 
 /*********************************************
 * SPWebServiceCollections
 **********************************************/
-export interface SPWebServiceCollections extends SPWebServiceProps, SPWebServicePropMethods {
+export interface SPWebServiceCollections extends SPWebServicePropMethods {
 	WebApplications(): IBaseCollection<Microsoft.SharePoint.Administration.SPWebApplication, Microsoft.SharePoint.Administration.SPWebApplicationQuery>;
-	WebApplications(id: string | number): IBaseQuery<Microsoft.SharePoint.Administration.SPWebApplication, Microsoft.SharePoint.Administration.SPWebApplicationQuery>;
+	WebApplications(id: string | number): IBaseQuery<Microsoft.SharePoint.Administration.SPWebApplication, Microsoft.SharePoint.Administration.SPWebApplicationQuery> & Microsoft.SharePoint.Administration.SPWebApplicationCollections;
 }
 
 /*********************************************
 * SPWebServiceQuery
 **********************************************/
-export interface SPWebServiceQuery extends SPWebServiceProps,SPWebServiceMethods {
-	ContentService: Microsoft.SharePoint.Administration.SPWebService;
+export interface SPWebServiceQuery extends SPWebServiceProps, SPWebServiceMethods {
+	ContentService: Microsoft.SharePoint.Administration.SPWebService & Microsoft.SharePoint.Administration.SPWebServiceCollections;
 	WebApplications: IBaseResults<Microsoft.SharePoint.Administration.SPWebApplication>;
 }
 
@@ -247,14 +247,14 @@ export interface ISPAnalyticsUsageService extends SPAnalyticsUsageServiceCollect
 /*********************************************
 * ISPAnalyticsUsageServiceQuery
 **********************************************/
-export interface ISPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceQuery,SPAnalyticsUsageServiceMethods {
+export interface ISPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceQuery, SPAnalyticsUsageServiceMethods {
 
 }
 
 /*********************************************
 * SPAnalyticsUsageService
 **********************************************/
-export interface SPAnalyticsUsageService extends SPAnalyticsUsageServiceCollections, SPAnalyticsUsageServiceMethods {
+export interface SPAnalyticsUsageService extends SPAnalyticsUsageServiceProps, SPAnalyticsUsageServiceCollections, SPAnalyticsUsageServiceMethods {
 
 }
 
@@ -275,14 +275,14 @@ export interface SPAnalyticsUsageServicePropMethods {
 /*********************************************
 * SPAnalyticsUsageServiceCollections
 **********************************************/
-export interface SPAnalyticsUsageServiceCollections extends SPAnalyticsUsageServiceProps, SPAnalyticsUsageServicePropMethods {
+export interface SPAnalyticsUsageServiceCollections extends SPAnalyticsUsageServicePropMethods {
 
 }
 
 /*********************************************
 * SPAnalyticsUsageServiceQuery
 **********************************************/
-export interface SPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceProps,SPAnalyticsUsageServiceMethods {
+export interface SPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceProps, SPAnalyticsUsageServiceMethods {
 
 }
 

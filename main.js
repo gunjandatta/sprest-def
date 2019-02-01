@@ -3,8 +3,30 @@ let parser = require("xml2js").parseString;
 let rmDir = require("rimraf");
 let custom = require("./custom");
 
-let hasCollections = {};
-let hasMethods = {};
+function analyzeCollections(directories) {
+    let hasCollections = {};
+    let hasCollectionMethods = {};
+    let hasMethods = {};
+
+    // Parse the directories
+    for (let dirName in directories) {
+        // Parse the filenames
+        for (let filename in directories[dirName]) {
+            // Parse the interfaces
+            for (let name in directories[dirName][filename]) {
+                let interface = directories[dirName][filename][name];
+
+                // Set the flags
+                hasCollections[dirName + "." + name] = interface._Collections ? true : false;
+                hasCollectionMethods[dirName + "." + name] = interface._CollectionMethods ? true : false;
+                hasMethods[dirName + "." + name] = interface._Methods ? true : false;
+            }
+        }
+    }
+
+    // Return the data
+    return { hasCollections, hasCollectionMethods, hasMethods };
+}
 
 function createInterface(name, baseType, variables) {
     return [
@@ -22,8 +44,27 @@ function createInterface(name, baseType, variables) {
 function applyMethodsToDirectories(methods, directories) {
     // Parse the custom methods
     for (let name in custom) {
+        // Get the methods
+        let oldMethods = methods[name] || [];
+
+        // Parse the custom methods
+        for (let i = 0; i < custom[name].length; i++) {
+            let methodInfo = custom[name][i];
+
+            // Parse the old methods
+            for (let i = 0; i < oldMethods.length; i++) {
+                let oldMethod = oldMethods[i];
+
+                // See the method name exists
+                if (oldMethod.name == methodInfo.name) {
+                    // Comment out the method
+                    oldMethod.name = "// " + oldMethod.name;
+                }
+            }
+        }
+
         // Add the methods
-        methods[name] = (methods[name] || []).concat(custom[name]);
+        methods[name] = oldMethods.concat(custom[name]);
     }
 
     // Parse the methods
@@ -38,7 +79,6 @@ function applyMethodsToDirectories(methods, directories) {
 
             // Set the flags
             isCollection = true;
-            hasMethods[name] = true;
         }
 
         // Find the last index of '.'
@@ -287,9 +327,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                                         // Add the method
                                         directories[ns][collection][name]._Collections[methodName][methodRole] = methodType;
-
-                                        // Set the flag
-                                        hasCollections[ns + "." + name] = true;
                                     } else { continue; }
                                 }
 
@@ -347,6 +384,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
         // Append the index file
         fs.appendFileSync("lib/index.d.ts", '\nexport * from "./base"');
+
+        // Determine the collections
+        let { hasCollections, hasCollectionMethods, hasMethods } = analyzeCollections(directories);
 
         // Parse the directories
         // NameSpace -> Collection -> Interface -> Properties
@@ -409,13 +449,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
                                         // Add the methods
-                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '') + ';');
-                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasMethods[methodType] ? ' & ' + methodType + 'Collections' : '') + ';');
+                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasCollectionMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '') + ';');
+                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
                                         // Add the method
-                                        props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
-                                        query.push('\t' + collection + ': ' + methodType + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
+                                        props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
+                                        query.push('\t' + collection + ': ' + methodType + ' & ' + methodType + 'Collections;');
                                     }
 
                                     // Update the references
@@ -442,8 +482,25 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     params.push(param.Name + "?: " + getType(param.Type));
                                 }
 
+                                // Set the method type
+                                let methodType = getType(methodInfo.returnType)
+
+                                // See if we are overwriting the type
+                                if (methodInfo.overwrite) {
+                                    // Set the type
+                                    methodType = methodInfo.returnType;
+                                }
+                                // Else, see if this is a "getBy" method
+                                else if (/^getBy/.test(methodInfo.name)) {
+                                    // Set the type
+                                    methodType = 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ", " + methodType + "Query" : "") + '>' + (hasCollections[methodType] ? " & " + methodType + "Collections" : "");
+                                } else {
+                                    // Set the type
+                                    methodType = 'IBaseExecution<' + methodType + '>';
+                                }
+
                                 // Add the method
-                                collectionMethods.push('\t' + methodInfo.name + '(' + params.join(', ') + '): IBaseExecution<' + getType(methodInfo.returnType) + '>;');
+                                collectionMethods.push('\t' + methodInfo.name + '(' + params.join(', ') + '): ' + methodType + ';');
                             }
 
                             // Continue the loop
@@ -475,8 +532,11 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     params.push(param.Name + "?: " + paramType);
                                 }
 
+                                // Set the method type
+                                let methodType = methodInfo.overwrite ? methodInfo.returnType : 'IBaseExecution<' + getType(methodInfo.returnType) + '>';
+
                                 // Add the method
-                                methods.push('\t' + methodName + '(' + params.join(', ') + '): IBaseExecution<' + getType(methodInfo.returnType) + '>;');
+                                methods.push('\t' + methodName + '(' + params.join(', ') + '): ' + methodType + ';');
                             }
 
                             // Continue the loop
@@ -502,18 +562,19 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
                     } else {
                         let baseTypes = interface._BaseType ? [interface._BaseType] : [];
+                        baseTypes.push(name + "Props");
                         baseTypes.push(name + "Collections");
                         baseTypes.push(name + "Methods");
 
                         // Generate the content
                         content.push(createInterface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"]));
-                        content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"]));
+                        content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"].join(', ')));
                         content.push(createInterface(name, baseTypes.join(", ")));
                         content.push(createInterface(name + "Props", null, variables.join('\n')));
                         content.push(createInterface(name + "PropMethods", null, props.join('\n')));
-                        content.push(createInterface(name + "Collections", name + "Props, " + name + "PropMethods", collections.join('\n')));
+                        content.push(createInterface(name + "Collections", name + "PropMethods", collections.join('\n')));
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
-                        content.push(createInterface(name + "Query", [name + "Props", name + "Methods"], query.join('\n')));
+                        content.push(createInterface(name + "Query", [name + "Props", name + "Methods"].join(', '), query.join('\n')));
                         content.push(createInterface(name + "Methods", null, methods.join('\n')));
                     }
                 }

@@ -15,14 +15,14 @@ export interface Icomment extends commentCollections,commentMethods,IBaseQuery<I
 /*********************************************
 * IcommentQuery
 **********************************************/
-export interface IcommentQuery extends commentQuery,commentMethods {
+export interface IcommentQuery extends commentQuery, commentMethods {
 
 }
 
 /*********************************************
 * comment
 **********************************************/
-export interface comment extends commentCollections, commentMethods {
+export interface comment extends commentProps, commentCollections, commentMethods {
 
 }
 
@@ -55,11 +55,11 @@ export interface commentPropMethods {
 /*********************************************
 * commentCollections
 **********************************************/
-export interface commentCollections extends commentProps, commentPropMethods {
+export interface commentCollections extends commentPropMethods {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
-	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
 	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery> & Microsoft.SharePoint.Comments.commentCollectionMethods;
-	replies(id: string | number): IBaseQuery<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery> & Microsoft.SharePoint.Comments.commentCollections;
+	replies(id: string | number): IBaseQuery<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery> & Microsoft.SharePoint.Comments.commentCollections & Microsoft.SharePoint.Comments.commentMethods;
 }
 
 /*********************************************
@@ -72,7 +72,7 @@ export interface commentCollectionMethods {
 /*********************************************
 * commentQuery
 **********************************************/
-export interface commentQuery extends commentProps,commentMethods {
+export interface commentQuery extends commentProps, commentMethods {
 	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 	replies: IBaseResults<Microsoft.SharePoint.Comments.comment>;
 }

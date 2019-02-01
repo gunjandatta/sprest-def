@@ -11,14 +11,14 @@ export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections,OrgNewsSiteAp
 /*********************************************
 * IOrgNewsSiteApiQuery
 **********************************************/
-export interface IOrgNewsSiteApiQuery extends OrgNewsSiteApiQuery,OrgNewsSiteApiMethods {
+export interface IOrgNewsSiteApiQuery extends OrgNewsSiteApiQuery, OrgNewsSiteApiMethods {
 
 }
 
 /*********************************************
 * OrgNewsSiteApi
 **********************************************/
-export interface OrgNewsSiteApi extends OrgNewsSiteApiCollections, OrgNewsSiteApiMethods {
+export interface OrgNewsSiteApi extends OrgNewsSiteApiProps, OrgNewsSiteApiCollections, OrgNewsSiteApiMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface OrgNewsSiteApiPropMethods {
 /*********************************************
 * OrgNewsSiteApiCollections
 **********************************************/
-export interface OrgNewsSiteApiCollections extends OrgNewsSiteApiProps, OrgNewsSiteApiPropMethods {
+export interface OrgNewsSiteApiCollections extends OrgNewsSiteApiPropMethods {
 
 }
 
 /*********************************************
 * OrgNewsSiteApiQuery
 **********************************************/
-export interface OrgNewsSiteApiQuery extends OrgNewsSiteApiProps,OrgNewsSiteApiMethods {
+export interface OrgNewsSiteApiQuery extends OrgNewsSiteApiProps, OrgNewsSiteApiMethods {
 
 }
 

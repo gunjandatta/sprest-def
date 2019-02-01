@@ -11,14 +11,14 @@ export interface IActivityLogger extends ActivityLoggerCollections,ActivityLogge
 /*********************************************
 * IActivityLoggerQuery
 **********************************************/
-export interface IActivityLoggerQuery extends ActivityLoggerQuery,ActivityLoggerMethods {
+export interface IActivityLoggerQuery extends ActivityLoggerQuery, ActivityLoggerMethods {
 
 }
 
 /*********************************************
 * ActivityLogger
 **********************************************/
-export interface ActivityLogger extends ActivityLoggerCollections, ActivityLoggerMethods {
+export interface ActivityLogger extends ActivityLoggerProps, ActivityLoggerCollections, ActivityLoggerMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface ActivityLoggerPropMethods {
 /*********************************************
 * ActivityLoggerCollections
 **********************************************/
-export interface ActivityLoggerCollections extends ActivityLoggerProps, ActivityLoggerPropMethods {
+export interface ActivityLoggerCollections extends ActivityLoggerPropMethods {
 
 }
 
 /*********************************************
 * ActivityLoggerQuery
 **********************************************/
-export interface ActivityLoggerQuery extends ActivityLoggerProps,ActivityLoggerMethods {
+export interface ActivityLoggerQuery extends ActivityLoggerProps, ActivityLoggerMethods {
 
 }
 

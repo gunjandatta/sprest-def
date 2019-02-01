@@ -11,14 +11,14 @@ export interface IDDIAdapter extends DDIAdapterCollections,DDIAdapterMethods,IBa
 /*********************************************
 * IDDIAdapterQuery
 **********************************************/
-export interface IDDIAdapterQuery extends DDIAdapterQuery,DDIAdapterMethods {
+export interface IDDIAdapterQuery extends DDIAdapterQuery, DDIAdapterMethods {
 
 }
 
 /*********************************************
 * DDIAdapter
 **********************************************/
-export interface DDIAdapter extends DDIAdapterCollections, DDIAdapterMethods {
+export interface DDIAdapter extends DDIAdapterProps, DDIAdapterCollections, DDIAdapterMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface DDIAdapterPropMethods {
 /*********************************************
 * DDIAdapterCollections
 **********************************************/
-export interface DDIAdapterCollections extends DDIAdapterProps, DDIAdapterPropMethods {
+export interface DDIAdapterCollections extends DDIAdapterPropMethods {
 
 }
 
 /*********************************************
 * DDIAdapterQuery
 **********************************************/
-export interface DDIAdapterQuery extends DDIAdapterProps,DDIAdapterMethods {
+export interface DDIAdapterQuery extends DDIAdapterProps, DDIAdapterMethods {
 
 }
 

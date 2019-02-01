@@ -12,14 +12,14 @@ export interface ITaxonomyField extends TaxonomyFieldCollections,TaxonomyFieldMe
 /*********************************************
 * ITaxonomyFieldQuery
 **********************************************/
-export interface ITaxonomyFieldQuery extends TaxonomyFieldQuery,TaxonomyFieldMethods {
+export interface ITaxonomyFieldQuery extends TaxonomyFieldQuery, TaxonomyFieldMethods {
 
 }
 
 /*********************************************
 * TaxonomyField
 **********************************************/
-export interface TaxonomyField extends SP.FieldLookup, TaxonomyFieldCollections, TaxonomyFieldMethods {
+export interface TaxonomyField extends SP.FieldLookup, TaxonomyFieldProps, TaxonomyFieldCollections, TaxonomyFieldMethods {
 
 }
 
@@ -51,14 +51,14 @@ export interface TaxonomyFieldPropMethods {
 /*********************************************
 * TaxonomyFieldCollections
 **********************************************/
-export interface TaxonomyFieldCollections extends TaxonomyFieldProps, TaxonomyFieldPropMethods {
+export interface TaxonomyFieldCollections extends TaxonomyFieldPropMethods {
 
 }
 
 /*********************************************
 * TaxonomyFieldQuery
 **********************************************/
-export interface TaxonomyFieldQuery extends TaxonomyFieldProps,TaxonomyFieldMethods {
+export interface TaxonomyFieldQuery extends TaxonomyFieldProps, TaxonomyFieldMethods {
 
 }
 

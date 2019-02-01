@@ -11,14 +11,14 @@ export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCol
 /*********************************************
 * IExternalSubscriptionStoreQuery
 **********************************************/
-export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreQuery,ExternalSubscriptionStoreMethods {
+export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreQuery, ExternalSubscriptionStoreMethods {
 
 }
 
 /*********************************************
 * ExternalSubscriptionStore
 **********************************************/
-export interface ExternalSubscriptionStore extends ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods {
+export interface ExternalSubscriptionStore extends ExternalSubscriptionStoreProps, ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface ExternalSubscriptionStorePropMethods {
 /*********************************************
 * ExternalSubscriptionStoreCollections
 **********************************************/
-export interface ExternalSubscriptionStoreCollections extends ExternalSubscriptionStoreProps, ExternalSubscriptionStorePropMethods {
+export interface ExternalSubscriptionStoreCollections extends ExternalSubscriptionStorePropMethods {
 
 }
 
 /*********************************************
 * ExternalSubscriptionStoreQuery
 **********************************************/
-export interface ExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreProps,ExternalSubscriptionStoreMethods {
+export interface ExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreProps, ExternalSubscriptionStoreMethods {
 
 }
 

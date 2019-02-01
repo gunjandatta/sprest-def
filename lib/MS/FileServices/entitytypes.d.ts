@@ -31,7 +31,7 @@ export interface FileSystemItemCollections extends FileSystemItemCollectionMetho
 **********************************************/
 export interface FileSystemItemCollectionMethods {
 	add(name?: string, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
-	getById(id?: string): IBaseExecution<MS.FileServices.FileSystemItem>;
+	getById(id?: string): IBaseQuery<MS.FileServices.FileSystemItem>;
 }
 
 /*********************************************
@@ -44,14 +44,14 @@ export interface IFile extends FileCollections,FileMethods,IBaseQuery<IFileQuery
 /*********************************************
 * IFileQuery
 **********************************************/
-export interface IFileQuery extends FileQuery,FileMethods {
+export interface IFileQuery extends FileQuery, FileMethods {
 
 }
 
 /*********************************************
 * File
 **********************************************/
-export interface File extends MS.FileServices.FileSystemItem, FileCollections, FileMethods {
+export interface File extends MS.FileServices.FileSystemItem, FileProps, FileCollections, FileMethods {
 
 }
 
@@ -72,14 +72,14 @@ export interface FilePropMethods {
 /*********************************************
 * FileCollections
 **********************************************/
-export interface FileCollections extends FileProps, FilePropMethods {
+export interface FileCollections extends FilePropMethods {
 
 }
 
 /*********************************************
 * FileQuery
 **********************************************/
-export interface FileQuery extends FileProps,FileMethods {
+export interface FileQuery extends FileProps, FileMethods {
 
 }
 
@@ -118,14 +118,14 @@ export interface IFolder extends FolderCollections,FolderMethods,IBaseQuery<IFol
 /*********************************************
 * IFolderQuery
 **********************************************/
-export interface IFolderQuery extends FolderQuery,FolderMethods {
+export interface IFolderQuery extends FolderQuery, FolderMethods {
 
 }
 
 /*********************************************
 * Folder
 **********************************************/
-export interface Folder extends MS.FileServices.FileSystemItem, FolderCollections, FolderMethods {
+export interface Folder extends MS.FileServices.FileSystemItem, FolderProps, FolderCollections, FolderMethods {
 
 }
 
@@ -146,7 +146,7 @@ export interface FolderPropMethods {
 /*********************************************
 * FolderCollections
 **********************************************/
-export interface FolderCollections extends FolderProps, FolderPropMethods {
+export interface FolderCollections extends FolderPropMethods {
 	Children(): IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
 	Children(id: string | number): IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
@@ -154,7 +154,7 @@ export interface FolderCollections extends FolderProps, FolderPropMethods {
 /*********************************************
 * FolderQuery
 **********************************************/
-export interface FolderQuery extends FolderProps,FolderMethods {
+export interface FolderQuery extends FolderProps, FolderMethods {
 	Children: IBaseResults<MS.FileServices.FileSystemItem>;
 }
 

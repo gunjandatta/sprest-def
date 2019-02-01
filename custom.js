@@ -32,15 +32,6 @@ module.exports = {
         }
     ],
 
-    // Features
-    "Collection(SP.Feature)": [
-        {
-            name: "getByName",
-            returnType: "IBaseResults<SP.Feature>",
-            params: [{ $: { Name: "name", Type: "string" } }]
-        }
-    ],
-
     // Field
     "SP.Field": [
         {
@@ -204,11 +195,6 @@ module.exports = {
     // Folder
     "SP.Folder": [
         {
-            name: "getByUrl",
-            returnType: "any",
-            params: [{ $: { Name: "serverRelativeUrl", Type: "string" } }]
-        },
-        {
             name: "update",
             returnType: "any",
             params: [{ $: { Name: "properties", Type: "any" } }]
@@ -340,7 +326,8 @@ module.exports = {
         },
         {
             name: "getCatalog",
-            returnType: "SP.IList",
+            overwrite: true,
+            returnType: "IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections",
             params: [
                 { $: { Name: "listTemplateType", Type: "number" } }
             ]

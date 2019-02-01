@@ -29,7 +29,7 @@ export interface ExternalUserCollections extends ExternalUserCollectionMethods {
 * ExternalUserCollectionMethods
 **********************************************/
 export interface ExternalUserCollectionMethods {
-	getById(uniqueId?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+	getById(uniqueId?: string): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
 }
 
 /*********************************************
@@ -42,14 +42,14 @@ export interface IGetExternalUsersResults extends GetExternalUsersResultsCollect
 /*********************************************
 * IGetExternalUsersResultsQuery
 **********************************************/
-export interface IGetExternalUsersResultsQuery extends GetExternalUsersResultsQuery,GetExternalUsersResultsMethods {
+export interface IGetExternalUsersResultsQuery extends GetExternalUsersResultsQuery, GetExternalUsersResultsMethods {
 
 }
 
 /*********************************************
 * GetExternalUsersResults
 **********************************************/
-export interface GetExternalUsersResults extends GetExternalUsersResultsCollections, GetExternalUsersResultsMethods {
+export interface GetExternalUsersResults extends GetExternalUsersResultsProps, GetExternalUsersResultsCollections, GetExternalUsersResultsMethods {
 
 }
 
@@ -71,7 +71,7 @@ export interface GetExternalUsersResultsPropMethods {
 /*********************************************
 * GetExternalUsersResultsCollections
 **********************************************/
-export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsProps, GetExternalUsersResultsPropMethods {
+export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsPropMethods {
 	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollectionMethods;
 	ExternalUserCollection(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollections;
 }
@@ -79,7 +79,7 @@ export interface GetExternalUsersResultsCollections extends GetExternalUsersResu
 /*********************************************
 * GetExternalUsersResultsQuery
 **********************************************/
-export interface GetExternalUsersResultsQuery extends GetExternalUsersResultsProps,GetExternalUsersResultsMethods {
+export interface GetExternalUsersResultsQuery extends GetExternalUsersResultsProps, GetExternalUsersResultsMethods {
 	ExternalUserCollection: IBaseResults<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
 }
 
@@ -136,14 +136,14 @@ export interface IOffice365Tenant extends Office365TenantCollections,Office365Te
 /*********************************************
 * IOffice365TenantQuery
 **********************************************/
-export interface IOffice365TenantQuery extends Office365TenantQuery,Office365TenantMethods {
+export interface IOffice365TenantQuery extends Office365TenantQuery, Office365TenantMethods {
 
 }
 
 /*********************************************
 * Office365Tenant
 **********************************************/
-export interface Office365Tenant extends Office365TenantCollections, Office365TenantMethods {
+export interface Office365Tenant extends Office365TenantProps, Office365TenantCollections, Office365TenantMethods {
 
 }
 
@@ -241,14 +241,14 @@ export interface Office365TenantPropMethods {
 /*********************************************
 * Office365TenantCollections
 **********************************************/
-export interface Office365TenantCollections extends Office365TenantProps, Office365TenantPropMethods {
+export interface Office365TenantCollections extends Office365TenantPropMethods {
 
 }
 
 /*********************************************
 * Office365TenantQuery
 **********************************************/
-export interface Office365TenantQuery extends Office365TenantProps,Office365TenantMethods {
+export interface Office365TenantQuery extends Office365TenantProps, Office365TenantMethods {
 
 }
 

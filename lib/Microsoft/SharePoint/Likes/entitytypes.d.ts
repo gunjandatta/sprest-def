@@ -14,14 +14,14 @@ export interface IlikedByInformation extends likedByInformationCollections,liked
 /*********************************************
 * IlikedByInformationQuery
 **********************************************/
-export interface IlikedByInformationQuery extends likedByInformationQuery,likedByInformationMethods {
+export interface IlikedByInformationQuery extends likedByInformationQuery, likedByInformationMethods {
 
 }
 
 /*********************************************
 * likedByInformation
 **********************************************/
-export interface likedByInformation extends likedByInformationCollections, likedByInformationMethods {
+export interface likedByInformation extends likedByInformationProps, likedByInformationCollections, likedByInformationMethods {
 
 }
 
@@ -43,15 +43,15 @@ export interface likedByInformationPropMethods {
 /*********************************************
 * likedByInformationCollections
 **********************************************/
-export interface likedByInformationCollections extends likedByInformationProps, likedByInformationPropMethods {
+export interface likedByInformationCollections extends likedByInformationPropMethods {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
-	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
 }
 
 /*********************************************
 * likedByInformationQuery
 **********************************************/
-export interface likedByInformationQuery extends likedByInformationProps,likedByInformationMethods {
+export interface likedByInformationQuery extends likedByInformationProps, likedByInformationMethods {
 	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 }
 

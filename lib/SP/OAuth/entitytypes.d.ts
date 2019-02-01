@@ -30,14 +30,14 @@ export interface INativeClient extends NativeClientCollections,NativeClientMetho
 /*********************************************
 * INativeClientQuery
 **********************************************/
-export interface INativeClientQuery extends NativeClientQuery,NativeClientMethods {
+export interface INativeClientQuery extends NativeClientQuery, NativeClientMethods {
 
 }
 
 /*********************************************
 * NativeClient
 **********************************************/
-export interface NativeClient extends NativeClientCollections, NativeClientMethods {
+export interface NativeClient extends NativeClientProps, NativeClientCollections, NativeClientMethods {
 
 }
 
@@ -58,14 +58,14 @@ export interface NativeClientPropMethods {
 /*********************************************
 * NativeClientCollections
 **********************************************/
-export interface NativeClientCollections extends NativeClientProps, NativeClientPropMethods {
+export interface NativeClientCollections extends NativeClientPropMethods {
 
 }
 
 /*********************************************
 * NativeClientQuery
 **********************************************/
-export interface NativeClientQuery extends NativeClientProps,NativeClientMethods {
+export interface NativeClientQuery extends NativeClientProps, NativeClientMethods {
 
 }
 
@@ -86,14 +86,14 @@ export interface IToken extends TokenCollections,TokenMethods,IBaseQuery<ITokenQ
 /*********************************************
 * ITokenQuery
 **********************************************/
-export interface ITokenQuery extends TokenQuery,TokenMethods {
+export interface ITokenQuery extends TokenQuery, TokenMethods {
 
 }
 
 /*********************************************
 * Token
 **********************************************/
-export interface Token extends TokenCollections, TokenMethods {
+export interface Token extends TokenProps, TokenCollections, TokenMethods {
 
 }
 
@@ -114,14 +114,14 @@ export interface TokenPropMethods {
 /*********************************************
 * TokenCollections
 **********************************************/
-export interface TokenCollections extends TokenProps, TokenPropMethods {
+export interface TokenCollections extends TokenPropMethods {
 
 }
 
 /*********************************************
 * TokenQuery
 **********************************************/
-export interface TokenQuery extends TokenProps,TokenMethods {
+export interface TokenQuery extends TokenProps, TokenMethods {
 
 }
 

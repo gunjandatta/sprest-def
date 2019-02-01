@@ -11,14 +11,14 @@ export interface ITenantCdnApi extends TenantCdnApiCollections,TenantCdnApiMetho
 /*********************************************
 * ITenantCdnApiQuery
 **********************************************/
-export interface ITenantCdnApiQuery extends TenantCdnApiQuery,TenantCdnApiMethods {
+export interface ITenantCdnApiQuery extends TenantCdnApiQuery, TenantCdnApiMethods {
 
 }
 
 /*********************************************
 * TenantCdnApi
 **********************************************/
-export interface TenantCdnApi extends TenantCdnApiCollections, TenantCdnApiMethods {
+export interface TenantCdnApi extends TenantCdnApiProps, TenantCdnApiCollections, TenantCdnApiMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface TenantCdnApiPropMethods {
 /*********************************************
 * TenantCdnApiCollections
 **********************************************/
-export interface TenantCdnApiCollections extends TenantCdnApiProps, TenantCdnApiPropMethods {
+export interface TenantCdnApiCollections extends TenantCdnApiPropMethods {
 
 }
 
 /*********************************************
 * TenantCdnApiQuery
 **********************************************/
-export interface TenantCdnApiQuery extends TenantCdnApiProps,TenantCdnApiMethods {
+export interface TenantCdnApiQuery extends TenantCdnApiProps, TenantCdnApiMethods {
 
 }
 

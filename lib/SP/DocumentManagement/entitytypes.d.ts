@@ -11,14 +11,14 @@ export interface IDocumentId extends DocumentIdCollections,DocumentIdMethods,IBa
 /*********************************************
 * IDocumentIdQuery
 **********************************************/
-export interface IDocumentIdQuery extends DocumentIdQuery,DocumentIdMethods {
+export interface IDocumentIdQuery extends DocumentIdQuery, DocumentIdMethods {
 
 }
 
 /*********************************************
 * DocumentId
 **********************************************/
-export interface DocumentId extends DocumentIdCollections, DocumentIdMethods {
+export interface DocumentId extends DocumentIdProps, DocumentIdCollections, DocumentIdMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface DocumentIdPropMethods {
 /*********************************************
 * DocumentIdCollections
 **********************************************/
-export interface DocumentIdCollections extends DocumentIdProps, DocumentIdPropMethods {
+export interface DocumentIdCollections extends DocumentIdPropMethods {
 
 }
 
 /*********************************************
 * DocumentIdQuery
 **********************************************/
-export interface DocumentIdQuery extends DocumentIdProps,DocumentIdMethods {
+export interface DocumentIdQuery extends DocumentIdProps, DocumentIdMethods {
 
 }
 

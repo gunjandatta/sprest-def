@@ -11,14 +11,14 @@ export interface IDiagnostics extends DiagnosticsCollections,DiagnosticsMethods,
 /*********************************************
 * IDiagnosticsQuery
 **********************************************/
-export interface IDiagnosticsQuery extends DiagnosticsQuery,DiagnosticsMethods {
+export interface IDiagnosticsQuery extends DiagnosticsQuery, DiagnosticsMethods {
 
 }
 
 /*********************************************
 * Diagnostics
 **********************************************/
-export interface Diagnostics extends DiagnosticsCollections, DiagnosticsMethods {
+export interface Diagnostics extends DiagnosticsProps, DiagnosticsCollections, DiagnosticsMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface DiagnosticsPropMethods {
 /*********************************************
 * DiagnosticsCollections
 **********************************************/
-export interface DiagnosticsCollections extends DiagnosticsProps, DiagnosticsPropMethods {
+export interface DiagnosticsCollections extends DiagnosticsPropMethods {
 
 }
 
 /*********************************************
 * DiagnosticsQuery
 **********************************************/
-export interface DiagnosticsQuery extends DiagnosticsProps,DiagnosticsMethods {
+export interface DiagnosticsQuery extends DiagnosticsProps, DiagnosticsMethods {
 
 }
 
@@ -67,14 +67,14 @@ export interface IReporting extends ReportingCollections,ReportingMethods,IBaseQ
 /*********************************************
 * IReportingQuery
 **********************************************/
-export interface IReportingQuery extends ReportingQuery,ReportingMethods {
+export interface IReportingQuery extends ReportingQuery, ReportingMethods {
 
 }
 
 /*********************************************
 * Reporting
 **********************************************/
-export interface Reporting extends ReportingCollections, ReportingMethods {
+export interface Reporting extends ReportingProps, ReportingCollections, ReportingMethods {
 
 }
 
@@ -95,14 +95,14 @@ export interface ReportingPropMethods {
 /*********************************************
 * ReportingCollections
 **********************************************/
-export interface ReportingCollections extends ReportingProps, ReportingPropMethods {
+export interface ReportingCollections extends ReportingPropMethods {
 
 }
 
 /*********************************************
 * ReportingQuery
 **********************************************/
-export interface ReportingQuery extends ReportingProps,ReportingMethods {
+export interface ReportingQuery extends ReportingProps, ReportingMethods {
 
 }
 
@@ -123,14 +123,14 @@ export interface ITaskflow extends TaskflowCollections,TaskflowMethods,IBaseQuer
 /*********************************************
 * ITaskflowQuery
 **********************************************/
-export interface ITaskflowQuery extends TaskflowQuery,TaskflowMethods {
+export interface ITaskflowQuery extends TaskflowQuery, TaskflowMethods {
 
 }
 
 /*********************************************
 * Taskflow
 **********************************************/
-export interface Taskflow extends TaskflowCollections, TaskflowMethods {
+export interface Taskflow extends TaskflowProps, TaskflowCollections, TaskflowMethods {
 
 }
 
@@ -151,14 +151,14 @@ export interface TaskflowPropMethods {
 /*********************************************
 * TaskflowCollections
 **********************************************/
-export interface TaskflowCollections extends TaskflowProps, TaskflowPropMethods {
+export interface TaskflowCollections extends TaskflowPropMethods {
 
 }
 
 /*********************************************
 * TaskflowQuery
 **********************************************/
-export interface TaskflowQuery extends TaskflowProps,TaskflowMethods {
+export interface TaskflowQuery extends TaskflowProps, TaskflowMethods {
 
 }
 

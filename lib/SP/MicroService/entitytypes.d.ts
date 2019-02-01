@@ -12,14 +12,14 @@ export interface IMicroServiceManager extends MicroServiceManagerCollections,Mic
 /*********************************************
 * IMicroServiceManagerQuery
 **********************************************/
-export interface IMicroServiceManagerQuery extends MicroServiceManagerQuery,MicroServiceManagerMethods {
+export interface IMicroServiceManagerQuery extends MicroServiceManagerQuery, MicroServiceManagerMethods {
 
 }
 
 /*********************************************
 * MicroServiceManager
 **********************************************/
-export interface MicroServiceManager extends MicroServiceManagerCollections, MicroServiceManagerMethods {
+export interface MicroServiceManager extends MicroServiceManagerProps, MicroServiceManagerCollections, MicroServiceManagerMethods {
 
 }
 
@@ -40,14 +40,14 @@ export interface MicroServiceManagerPropMethods {
 /*********************************************
 * MicroServiceManagerCollections
 **********************************************/
-export interface MicroServiceManagerCollections extends MicroServiceManagerProps, MicroServiceManagerPropMethods {
+export interface MicroServiceManagerCollections extends MicroServiceManagerPropMethods {
 
 }
 
 /*********************************************
 * MicroServiceManagerQuery
 **********************************************/
-export interface MicroServiceManagerQuery extends MicroServiceManagerProps,MicroServiceManagerMethods {
+export interface MicroServiceManagerQuery extends MicroServiceManagerProps, MicroServiceManagerMethods {
 
 }
 

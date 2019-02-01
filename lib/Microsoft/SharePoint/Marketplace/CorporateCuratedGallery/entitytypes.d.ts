@@ -14,14 +14,14 @@ export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionC
 /*********************************************
 * ISiteCollectionCorporateCatalogAccessorQuery
 **********************************************/
-export interface ISiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessorQuery,SiteCollectionCorporateCatalogAccessorMethods {
+export interface ISiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessorQuery, SiteCollectionCorporateCatalogAccessorMethods {
 
 }
 
 /*********************************************
 * SiteCollectionCorporateCatalogAccessor
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessor extends SiteCollectionCorporateCatalogAccessorCollections, SiteCollectionCorporateCatalogAccessorMethods {
+export interface SiteCollectionCorporateCatalogAccessor extends SiteCollectionCorporateCatalogAccessorProps, SiteCollectionCorporateCatalogAccessorCollections, SiteCollectionCorporateCatalogAccessorMethods {
 
 }
 
@@ -42,15 +42,15 @@ export interface SiteCollectionCorporateCatalogAccessorPropMethods {
 /*********************************************
 * SiteCollectionCorporateCatalogAccessorCollections
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorCollections extends SiteCollectionCorporateCatalogAccessorProps, SiteCollectionCorporateCatalogAccessorPropMethods {
+export interface SiteCollectionCorporateCatalogAccessorCollections extends SiteCollectionCorporateCatalogAccessorPropMethods {
 	AvailableApps(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
-	AvailableApps(id: string | number): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections;
+	AvailableApps(id: string | number): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataMethods;
 }
 
 /*********************************************
 * SiteCollectionCorporateCatalogAccessorQuery
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessorProps,SiteCollectionCorporateCatalogAccessorMethods {
+export interface SiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessorProps, SiteCollectionCorporateCatalogAccessorMethods {
 	AvailableApps: IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 }
 
@@ -71,14 +71,14 @@ export interface ICorporateCatalogAppMetadata extends CorporateCatalogAppMetadat
 /*********************************************
 * ICorporateCatalogAppMetadataQuery
 **********************************************/
-export interface ICorporateCatalogAppMetadataQuery extends CorporateCatalogAppMetadataQuery,CorporateCatalogAppMetadataMethods {
+export interface ICorporateCatalogAppMetadataQuery extends CorporateCatalogAppMetadataQuery, CorporateCatalogAppMetadataMethods {
 
 }
 
 /*********************************************
 * CorporateCatalogAppMetadata
 **********************************************/
-export interface CorporateCatalogAppMetadata extends CorporateCatalogAppMetadataCollections, CorporateCatalogAppMetadataMethods {
+export interface CorporateCatalogAppMetadata extends CorporateCatalogAppMetadataProps, CorporateCatalogAppMetadataCollections, CorporateCatalogAppMetadataMethods {
 
 }
 
@@ -106,7 +106,7 @@ export interface CorporateCatalogAppMetadataPropMethods {
 /*********************************************
 * CorporateCatalogAppMetadataCollections
 **********************************************/
-export interface CorporateCatalogAppMetadataCollections extends CorporateCatalogAppMetadataProps, CorporateCatalogAppMetadataPropMethods {
+export interface CorporateCatalogAppMetadataCollections extends CorporateCatalogAppMetadataPropMethods {
 
 }
 
@@ -114,13 +114,13 @@ export interface CorporateCatalogAppMetadataCollections extends CorporateCatalog
 * CorporateCatalogAppMetadataCollectionMethods
 **********************************************/
 export interface CorporateCatalogAppMetadataCollectionMethods {
-	getById(id?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
+	getById(id?: string): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 }
 
 /*********************************************
 * CorporateCatalogAppMetadataQuery
 **********************************************/
-export interface CorporateCatalogAppMetadataQuery extends CorporateCatalogAppMetadataProps,CorporateCatalogAppMetadataMethods {
+export interface CorporateCatalogAppMetadataQuery extends CorporateCatalogAppMetadataProps, CorporateCatalogAppMetadataMethods {
 
 }
 
@@ -146,14 +146,14 @@ export interface ITenantCorporateCatalogAccessor extends TenantCorporateCatalogA
 /*********************************************
 * ITenantCorporateCatalogAccessorQuery
 **********************************************/
-export interface ITenantCorporateCatalogAccessorQuery extends TenantCorporateCatalogAccessorQuery,TenantCorporateCatalogAccessorMethods {
+export interface ITenantCorporateCatalogAccessorQuery extends TenantCorporateCatalogAccessorQuery, TenantCorporateCatalogAccessorMethods {
 
 }
 
 /*********************************************
 * TenantCorporateCatalogAccessor
 **********************************************/
-export interface TenantCorporateCatalogAccessor extends TenantCorporateCatalogAccessorCollections, TenantCorporateCatalogAccessorMethods {
+export interface TenantCorporateCatalogAccessor extends TenantCorporateCatalogAccessorProps, TenantCorporateCatalogAccessorCollections, TenantCorporateCatalogAccessorMethods {
 
 }
 
@@ -174,9 +174,9 @@ export interface TenantCorporateCatalogAccessorPropMethods {
 /*********************************************
 * TenantCorporateCatalogAccessorCollections
 **********************************************/
-export interface TenantCorporateCatalogAccessorCollections extends TenantCorporateCatalogAccessorProps, TenantCorporateCatalogAccessorPropMethods {
+export interface TenantCorporateCatalogAccessorCollections extends TenantCorporateCatalogAccessorPropMethods {
 	AvailableApps(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
-	AvailableApps(id: string | number): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections;
+	AvailableApps(id: string | number): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataMethods;
 	SiteCollectionAppCatalogsSites(): IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollectionMethods;
 	SiteCollectionAppCatalogsSites(id: string | number): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollections;
 }
@@ -184,7 +184,7 @@ export interface TenantCorporateCatalogAccessorCollections extends TenantCorpora
 /*********************************************
 * TenantCorporateCatalogAccessorQuery
 **********************************************/
-export interface TenantCorporateCatalogAccessorQuery extends TenantCorporateCatalogAccessorProps,TenantCorporateCatalogAccessorMethods {
+export interface TenantCorporateCatalogAccessorQuery extends TenantCorporateCatalogAccessorProps, TenantCorporateCatalogAccessorMethods {
 	AvailableApps: IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 	SiteCollectionAppCatalogsSites: IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
 }
@@ -216,7 +216,7 @@ export interface SiteCollectionAppCatalogAllowedItemCollections extends SiteColl
 **********************************************/
 export interface SiteCollectionAppCatalogAllowedItemCollectionMethods {
 	add(absolutePath?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
-	getByAbsoluteUrl(absolutePath?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	getByAbsoluteUrl(absolutePath?: string): IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
 	remove(absolutePath?: string): IBaseExecution<any>;
 	removeById(siteId?: any): IBaseExecution<any>;
 }

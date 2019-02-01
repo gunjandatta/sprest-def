@@ -11,14 +11,14 @@ export interface IAppLauncher extends AppLauncherCollections,AppLauncherMethods,
 /*********************************************
 * IAppLauncherQuery
 **********************************************/
-export interface IAppLauncherQuery extends AppLauncherQuery,AppLauncherMethods {
+export interface IAppLauncherQuery extends AppLauncherQuery, AppLauncherMethods {
 
 }
 
 /*********************************************
 * AppLauncher
 **********************************************/
-export interface AppLauncher extends AppLauncherCollections, AppLauncherMethods {
+export interface AppLauncher extends AppLauncherProps, AppLauncherCollections, AppLauncherMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface AppLauncherPropMethods {
 /*********************************************
 * AppLauncherCollections
 **********************************************/
-export interface AppLauncherCollections extends AppLauncherProps, AppLauncherPropMethods {
+export interface AppLauncherCollections extends AppLauncherPropMethods {
 
 }
 
 /*********************************************
 * AppLauncherQuery
 **********************************************/
-export interface AppLauncherQuery extends AppLauncherProps,AppLauncherMethods {
+export interface AppLauncherQuery extends AppLauncherProps, AppLauncherMethods {
 
 }
 

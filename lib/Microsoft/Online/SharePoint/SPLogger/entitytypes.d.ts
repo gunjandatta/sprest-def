@@ -11,14 +11,14 @@ export interface ILogExport extends LogExportCollections,LogExportMethods,IBaseQ
 /*********************************************
 * ILogExportQuery
 **********************************************/
-export interface ILogExportQuery extends LogExportQuery,LogExportMethods {
+export interface ILogExportQuery extends LogExportQuery, LogExportMethods {
 
 }
 
 /*********************************************
 * LogExport
 **********************************************/
-export interface LogExport extends LogExportCollections, LogExportMethods {
+export interface LogExport extends LogExportProps, LogExportCollections, LogExportMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface LogExportPropMethods {
 /*********************************************
 * LogExportCollections
 **********************************************/
-export interface LogExportCollections extends LogExportProps, LogExportPropMethods {
+export interface LogExportCollections extends LogExportPropMethods {
 
 }
 
 /*********************************************
 * LogExportQuery
 **********************************************/
-export interface LogExportQuery extends LogExportProps,LogExportMethods {
+export interface LogExportQuery extends LogExportProps, LogExportMethods {
 
 }
 

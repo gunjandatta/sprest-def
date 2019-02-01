@@ -12,14 +12,14 @@ export interface IMicrofeedPostDefinitionManager extends MicrofeedPostDefinition
 /*********************************************
 * IMicrofeedPostDefinitionManagerQuery
 **********************************************/
-export interface IMicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerQuery,MicrofeedPostDefinitionManagerMethods {
+export interface IMicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerQuery, MicrofeedPostDefinitionManagerMethods {
 
 }
 
 /*********************************************
 * MicrofeedPostDefinitionManager
 **********************************************/
-export interface MicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerCollections, MicrofeedPostDefinitionManagerMethods {
+export interface MicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerProps, MicrofeedPostDefinitionManagerCollections, MicrofeedPostDefinitionManagerMethods {
 
 }
 
@@ -40,14 +40,14 @@ export interface MicrofeedPostDefinitionManagerPropMethods {
 /*********************************************
 * MicrofeedPostDefinitionManagerCollections
 **********************************************/
-export interface MicrofeedPostDefinitionManagerCollections extends MicrofeedPostDefinitionManagerProps, MicrofeedPostDefinitionManagerPropMethods {
+export interface MicrofeedPostDefinitionManagerCollections extends MicrofeedPostDefinitionManagerPropMethods {
 
 }
 
 /*********************************************
 * MicrofeedPostDefinitionManagerQuery
 **********************************************/
-export interface MicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerProps,MicrofeedPostDefinitionManagerMethods {
+export interface MicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerProps, MicrofeedPostDefinitionManagerMethods {
 
 }
 
@@ -72,14 +72,14 @@ export interface IMicrofeedAttachmentStore extends MicrofeedAttachmentStoreColle
 /*********************************************
 * IMicrofeedAttachmentStoreQuery
 **********************************************/
-export interface IMicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreQuery,MicrofeedAttachmentStoreMethods {
+export interface IMicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreQuery, MicrofeedAttachmentStoreMethods {
 
 }
 
 /*********************************************
 * MicrofeedAttachmentStore
 **********************************************/
-export interface MicrofeedAttachmentStore extends MicrofeedAttachmentStoreCollections, MicrofeedAttachmentStoreMethods {
+export interface MicrofeedAttachmentStore extends MicrofeedAttachmentStoreProps, MicrofeedAttachmentStoreCollections, MicrofeedAttachmentStoreMethods {
 
 }
 
@@ -100,14 +100,14 @@ export interface MicrofeedAttachmentStorePropMethods {
 /*********************************************
 * MicrofeedAttachmentStoreCollections
 **********************************************/
-export interface MicrofeedAttachmentStoreCollections extends MicrofeedAttachmentStoreProps, MicrofeedAttachmentStorePropMethods {
+export interface MicrofeedAttachmentStoreCollections extends MicrofeedAttachmentStorePropMethods {
 
 }
 
 /*********************************************
 * MicrofeedAttachmentStoreQuery
 **********************************************/
-export interface MicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreProps,MicrofeedAttachmentStoreMethods {
+export interface MicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreProps, MicrofeedAttachmentStoreMethods {
 
 }
 
@@ -132,14 +132,14 @@ export interface IMicrofeedData extends MicrofeedDataCollections,MicrofeedDataMe
 /*********************************************
 * IMicrofeedDataQuery
 **********************************************/
-export interface IMicrofeedDataQuery extends MicrofeedDataQuery,MicrofeedDataMethods {
+export interface IMicrofeedDataQuery extends MicrofeedDataQuery, MicrofeedDataMethods {
 
 }
 
 /*********************************************
 * MicrofeedData
 **********************************************/
-export interface MicrofeedData extends MicrofeedDataCollections, MicrofeedDataMethods {
+export interface MicrofeedData extends MicrofeedDataProps, MicrofeedDataCollections, MicrofeedDataMethods {
 
 }
 
@@ -166,7 +166,7 @@ export interface MicrofeedDataPropMethods {
 /*********************************************
 * MicrofeedDataCollections
 **********************************************/
-export interface MicrofeedDataCollections extends MicrofeedDataProps, MicrofeedDataPropMethods {
+export interface MicrofeedDataCollections extends MicrofeedDataPropMethods {
 
 }
 
@@ -180,7 +180,7 @@ export interface MicrofeedDataCollectionMethods {
 /*********************************************
 * MicrofeedDataQuery
 **********************************************/
-export interface MicrofeedDataQuery extends MicrofeedDataProps,MicrofeedDataMethods {
+export interface MicrofeedDataQuery extends MicrofeedDataProps, MicrofeedDataMethods {
 
 }
 
@@ -203,14 +203,14 @@ export interface IMicrofeedManager extends MicrofeedManagerCollections,Microfeed
 /*********************************************
 * IMicrofeedManagerQuery
 **********************************************/
-export interface IMicrofeedManagerQuery extends MicrofeedManagerQuery,MicrofeedManagerMethods {
+export interface IMicrofeedManagerQuery extends MicrofeedManagerQuery, MicrofeedManagerMethods {
 
 }
 
 /*********************************************
 * MicrofeedManager
 **********************************************/
-export interface MicrofeedManager extends MicrofeedManagerCollections, MicrofeedManagerMethods {
+export interface MicrofeedManager extends MicrofeedManagerProps, MicrofeedManagerCollections, MicrofeedManagerMethods {
 
 }
 
@@ -233,14 +233,14 @@ export interface MicrofeedManagerPropMethods {
 /*********************************************
 * MicrofeedManagerCollections
 **********************************************/
-export interface MicrofeedManagerCollections extends MicrofeedManagerProps, MicrofeedManagerPropMethods {
+export interface MicrofeedManagerCollections extends MicrofeedManagerPropMethods {
 
 }
 
 /*********************************************
 * MicrofeedManagerQuery
 **********************************************/
-export interface MicrofeedManagerQuery extends MicrofeedManagerProps,MicrofeedManagerMethods {
+export interface MicrofeedManagerQuery extends MicrofeedManagerProps, MicrofeedManagerMethods {
 
 }
 
@@ -293,14 +293,14 @@ export interface IMicrofeedStore extends MicrofeedStoreCollections,MicrofeedStor
 /*********************************************
 * IMicrofeedStoreQuery
 **********************************************/
-export interface IMicrofeedStoreQuery extends MicrofeedStoreQuery,MicrofeedStoreMethods {
+export interface IMicrofeedStoreQuery extends MicrofeedStoreQuery, MicrofeedStoreMethods {
 
 }
 
 /*********************************************
 * MicrofeedStore
 **********************************************/
-export interface MicrofeedStore extends MicrofeedStoreCollections, MicrofeedStoreMethods {
+export interface MicrofeedStore extends MicrofeedStoreProps, MicrofeedStoreCollections, MicrofeedStoreMethods {
 
 }
 
@@ -321,14 +321,14 @@ export interface MicrofeedStorePropMethods {
 /*********************************************
 * MicrofeedStoreCollections
 **********************************************/
-export interface MicrofeedStoreCollections extends MicrofeedStoreProps, MicrofeedStorePropMethods {
+export interface MicrofeedStoreCollections extends MicrofeedStorePropMethods {
 
 }
 
 /*********************************************
 * MicrofeedStoreQuery
 **********************************************/
-export interface MicrofeedStoreQuery extends MicrofeedStoreProps,MicrofeedStoreMethods {
+export interface MicrofeedStoreQuery extends MicrofeedStoreProps, MicrofeedStoreMethods {
 
 }
 

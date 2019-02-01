@@ -11,14 +11,14 @@ export interface ISyncTranslator extends SyncTranslatorCollections,SyncTranslato
 /*********************************************
 * ISyncTranslatorQuery
 **********************************************/
-export interface ISyncTranslatorQuery extends SyncTranslatorQuery,SyncTranslatorMethods {
+export interface ISyncTranslatorQuery extends SyncTranslatorQuery, SyncTranslatorMethods {
 
 }
 
 /*********************************************
 * SyncTranslator
 **********************************************/
-export interface SyncTranslator extends SyncTranslatorCollections, SyncTranslatorMethods {
+export interface SyncTranslator extends SyncTranslatorProps, SyncTranslatorCollections, SyncTranslatorMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface SyncTranslatorPropMethods {
 /*********************************************
 * SyncTranslatorCollections
 **********************************************/
-export interface SyncTranslatorCollections extends SyncTranslatorProps, SyncTranslatorPropMethods {
+export interface SyncTranslatorCollections extends SyncTranslatorPropMethods {
 
 }
 
 /*********************************************
 * SyncTranslatorQuery
 **********************************************/
-export interface SyncTranslatorQuery extends SyncTranslatorProps,SyncTranslatorMethods {
+export interface SyncTranslatorQuery extends SyncTranslatorProps, SyncTranslatorMethods {
 
 }
 
@@ -68,14 +68,14 @@ export interface ITranslationJob extends TranslationJobCollections,TranslationJo
 /*********************************************
 * ITranslationJobQuery
 **********************************************/
-export interface ITranslationJobQuery extends TranslationJobQuery,TranslationJobMethods {
+export interface ITranslationJobQuery extends TranslationJobQuery, TranslationJobMethods {
 
 }
 
 /*********************************************
 * TranslationJob
 **********************************************/
-export interface TranslationJob extends TranslationJobCollections, TranslationJobMethods {
+export interface TranslationJob extends TranslationJobProps, TranslationJobCollections, TranslationJobMethods {
 
 }
 
@@ -98,14 +98,14 @@ export interface TranslationJobPropMethods {
 /*********************************************
 * TranslationJobCollections
 **********************************************/
-export interface TranslationJobCollections extends TranslationJobProps, TranslationJobPropMethods {
+export interface TranslationJobCollections extends TranslationJobPropMethods {
 
 }
 
 /*********************************************
 * TranslationJobQuery
 **********************************************/
-export interface TranslationJobQuery extends TranslationJobProps,TranslationJobMethods {
+export interface TranslationJobQuery extends TranslationJobProps, TranslationJobMethods {
 
 }
 
@@ -128,14 +128,14 @@ export interface ITranslationJobStatus extends TranslationJobStatusCollections,T
 /*********************************************
 * ITranslationJobStatusQuery
 **********************************************/
-export interface ITranslationJobStatusQuery extends TranslationJobStatusQuery,TranslationJobStatusMethods {
+export interface ITranslationJobStatusQuery extends TranslationJobStatusQuery, TranslationJobStatusMethods {
 
 }
 
 /*********************************************
 * TranslationJobStatus
 **********************************************/
-export interface TranslationJobStatus extends TranslationJobStatusCollections, TranslationJobStatusMethods {
+export interface TranslationJobStatus extends TranslationJobStatusProps, TranslationJobStatusCollections, TranslationJobStatusMethods {
 
 }
 
@@ -162,14 +162,14 @@ export interface TranslationJobStatusPropMethods {
 /*********************************************
 * TranslationJobStatusCollections
 **********************************************/
-export interface TranslationJobStatusCollections extends TranslationJobStatusProps, TranslationJobStatusPropMethods {
+export interface TranslationJobStatusCollections extends TranslationJobStatusPropMethods {
 
 }
 
 /*********************************************
 * TranslationJobStatusQuery
 **********************************************/
-export interface TranslationJobStatusQuery extends TranslationJobStatusProps,TranslationJobStatusMethods {
+export interface TranslationJobStatusQuery extends TranslationJobStatusProps, TranslationJobStatusMethods {
 
 }
 

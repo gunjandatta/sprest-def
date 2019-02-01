@@ -11,14 +11,14 @@ export interface IHostedAppsManager extends HostedAppsManagerCollections,HostedA
 /*********************************************
 * IHostedAppsManagerQuery
 **********************************************/
-export interface IHostedAppsManagerQuery extends HostedAppsManagerQuery,HostedAppsManagerMethods {
+export interface IHostedAppsManagerQuery extends HostedAppsManagerQuery, HostedAppsManagerMethods {
 
 }
 
 /*********************************************
 * HostedAppsManager
 **********************************************/
-export interface HostedAppsManager extends HostedAppsManagerCollections, HostedAppsManagerMethods {
+export interface HostedAppsManager extends HostedAppsManagerProps, HostedAppsManagerCollections, HostedAppsManagerMethods {
 
 }
 
@@ -39,14 +39,14 @@ export interface HostedAppsManagerPropMethods {
 /*********************************************
 * HostedAppsManagerCollections
 **********************************************/
-export interface HostedAppsManagerCollections extends HostedAppsManagerProps, HostedAppsManagerPropMethods {
+export interface HostedAppsManagerCollections extends HostedAppsManagerPropMethods {
 
 }
 
 /*********************************************
 * HostedAppsManagerQuery
 **********************************************/
-export interface HostedAppsManagerQuery extends HostedAppsManagerProps,HostedAppsManagerMethods {
+export interface HostedAppsManagerQuery extends HostedAppsManagerProps, HostedAppsManagerMethods {
 
 }
 
@@ -68,14 +68,14 @@ export interface IHostedApp extends HostedAppCollections,HostedAppMethods,IBaseQ
 /*********************************************
 * IHostedAppQuery
 **********************************************/
-export interface IHostedAppQuery extends HostedAppQuery,HostedAppMethods {
+export interface IHostedAppQuery extends HostedAppQuery, HostedAppMethods {
 
 }
 
 /*********************************************
 * HostedApp
 **********************************************/
-export interface HostedApp extends HostedAppCollections, HostedAppMethods {
+export interface HostedApp extends HostedAppProps, HostedAppCollections, HostedAppMethods {
 
 }
 
@@ -96,14 +96,14 @@ export interface HostedAppPropMethods {
 /*********************************************
 * HostedAppCollections
 **********************************************/
-export interface HostedAppCollections extends HostedAppProps, HostedAppPropMethods {
+export interface HostedAppCollections extends HostedAppPropMethods {
 
 }
 
 /*********************************************
 * HostedAppQuery
 **********************************************/
-export interface HostedAppQuery extends HostedAppProps,HostedAppMethods {
+export interface HostedAppQuery extends HostedAppProps, HostedAppMethods {
 
 }
 

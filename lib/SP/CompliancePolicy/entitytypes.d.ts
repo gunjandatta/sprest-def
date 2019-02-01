@@ -28,14 +28,14 @@ export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections,SPPol
 /*********************************************
 * ISPPolicyStoreProxyQuery
 **********************************************/
-export interface ISPPolicyStoreProxyQuery extends SPPolicyStoreProxyQuery,SPPolicyStoreProxyMethods {
+export interface ISPPolicyStoreProxyQuery extends SPPolicyStoreProxyQuery, SPPolicyStoreProxyMethods {
 
 }
 
 /*********************************************
 * SPPolicyStoreProxy
 **********************************************/
-export interface SPPolicyStoreProxy extends SPPolicyStoreProxyCollections, SPPolicyStoreProxyMethods {
+export interface SPPolicyStoreProxy extends SPPolicyStoreProxyProps, SPPolicyStoreProxyCollections, SPPolicyStoreProxyMethods {
 
 }
 
@@ -58,14 +58,14 @@ export interface SPPolicyStoreProxyPropMethods {
 /*********************************************
 * SPPolicyStoreProxyCollections
 **********************************************/
-export interface SPPolicyStoreProxyCollections extends SPPolicyStoreProxyProps, SPPolicyStoreProxyPropMethods {
+export interface SPPolicyStoreProxyCollections extends SPPolicyStoreProxyPropMethods {
 
 }
 
 /*********************************************
 * SPPolicyStoreProxyQuery
 **********************************************/
-export interface SPPolicyStoreProxyQuery extends SPPolicyStoreProxyProps,SPPolicyStoreProxyMethods {
+export interface SPPolicyStoreProxyQuery extends SPPolicyStoreProxyProps, SPPolicyStoreProxyMethods {
 
 }
 

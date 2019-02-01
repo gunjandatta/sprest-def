@@ -12,14 +12,14 @@ export interface ISignalStore extends SignalStoreCollections,SignalStoreMethods,
 /*********************************************
 * ISignalStoreQuery
 **********************************************/
-export interface ISignalStoreQuery extends SignalStoreQuery,SignalStoreMethods {
+export interface ISignalStoreQuery extends SignalStoreQuery, SignalStoreMethods {
 
 }
 
 /*********************************************
 * SignalStore
 **********************************************/
-export interface SignalStore extends SignalStoreCollections, SignalStoreMethods {
+export interface SignalStore extends SignalStoreProps, SignalStoreCollections, SignalStoreMethods {
 
 }
 
@@ -40,14 +40,14 @@ export interface SignalStorePropMethods {
 /*********************************************
 * SignalStoreCollections
 **********************************************/
-export interface SignalStoreCollections extends SignalStoreProps, SignalStorePropMethods {
+export interface SignalStoreCollections extends SignalStorePropMethods {
 
 }
 
 /*********************************************
 * SignalStoreQuery
 **********************************************/
-export interface SignalStoreQuery extends SignalStoreProps,SignalStoreMethods {
+export interface SignalStoreQuery extends SignalStoreProps, SignalStoreMethods {
 
 }
 

@@ -12,14 +12,14 @@ export interface ISearchService extends SearchServiceCollections,SearchServiceMe
 /*********************************************
 * ISearchServiceQuery
 **********************************************/
-export interface ISearchServiceQuery extends SearchServiceQuery,SearchServiceMethods {
+export interface ISearchServiceQuery extends SearchServiceQuery, SearchServiceMethods {
 
 }
 
 /*********************************************
 * SearchService
 **********************************************/
-export interface SearchService extends SearchServiceCollections, SearchServiceMethods {
+export interface SearchService extends SearchServiceProps, SearchServiceCollections, SearchServiceMethods {
 
 }
 
@@ -40,14 +40,14 @@ export interface SearchServicePropMethods {
 /*********************************************
 * SearchServiceCollections
 **********************************************/
-export interface SearchServiceCollections extends SearchServiceProps, SearchServicePropMethods {
+export interface SearchServiceCollections extends SearchServicePropMethods {
 
 }
 
 /*********************************************
 * SearchServiceQuery
 **********************************************/
-export interface SearchServiceQuery extends SearchServiceProps,SearchServiceMethods {
+export interface SearchServiceQuery extends SearchServiceProps, SearchServiceMethods {
 
 }
 
@@ -76,14 +76,14 @@ export interface ISearchSetting extends SearchSettingCollections,SearchSettingMe
 /*********************************************
 * ISearchSettingQuery
 **********************************************/
-export interface ISearchSettingQuery extends SearchSettingQuery,SearchSettingMethods {
+export interface ISearchSettingQuery extends SearchSettingQuery, SearchSettingMethods {
 
 }
 
 /*********************************************
 * SearchSetting
 **********************************************/
-export interface SearchSetting extends SearchSettingCollections, SearchSettingMethods {
+export interface SearchSetting extends SearchSettingProps, SearchSettingCollections, SearchSettingMethods {
 
 }
 
@@ -104,14 +104,14 @@ export interface SearchSettingPropMethods {
 /*********************************************
 * SearchSettingCollections
 **********************************************/
-export interface SearchSettingCollections extends SearchSettingProps, SearchSettingPropMethods {
+export interface SearchSettingCollections extends SearchSettingPropMethods {
 
 }
 
 /*********************************************
 * SearchSettingQuery
 **********************************************/
-export interface SearchSettingQuery extends SearchSettingProps,SearchSettingMethods {
+export interface SearchSettingQuery extends SearchSettingProps, SearchSettingMethods {
 
 }
 

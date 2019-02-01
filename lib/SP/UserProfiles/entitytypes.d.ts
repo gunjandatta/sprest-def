@@ -28,14 +28,14 @@ export interface IFollowedContent extends FollowedContentCollections,FollowedCon
 /*********************************************
 * IFollowedContentQuery
 **********************************************/
-export interface IFollowedContentQuery extends FollowedContentQuery,FollowedContentMethods {
+export interface IFollowedContentQuery extends FollowedContentQuery, FollowedContentMethods {
 
 }
 
 /*********************************************
 * FollowedContent
 **********************************************/
-export interface FollowedContent extends FollowedContentCollections, FollowedContentMethods {
+export interface FollowedContent extends FollowedContentProps, FollowedContentCollections, FollowedContentMethods {
 
 }
 
@@ -57,14 +57,14 @@ export interface FollowedContentPropMethods {
 /*********************************************
 * FollowedContentCollections
 **********************************************/
-export interface FollowedContentCollections extends FollowedContentProps, FollowedContentPropMethods {
+export interface FollowedContentCollections extends FollowedContentPropMethods {
 
 }
 
 /*********************************************
 * FollowedContentQuery
 **********************************************/
-export interface FollowedContentQuery extends FollowedContentProps,FollowedContentMethods {
+export interface FollowedContentQuery extends FollowedContentProps, FollowedContentMethods {
 
 }
 
@@ -127,14 +127,14 @@ export interface IPeopleManager extends PeopleManagerCollections,PeopleManagerMe
 /*********************************************
 * IPeopleManagerQuery
 **********************************************/
-export interface IPeopleManagerQuery extends PeopleManagerQuery,PeopleManagerMethods {
+export interface IPeopleManagerQuery extends PeopleManagerQuery, PeopleManagerMethods {
 
 }
 
 /*********************************************
 * PeopleManager
 **********************************************/
-export interface PeopleManager extends PeopleManagerCollections, PeopleManagerMethods {
+export interface PeopleManager extends PeopleManagerProps, PeopleManagerCollections, PeopleManagerMethods {
 
 }
 
@@ -156,14 +156,14 @@ export interface PeopleManagerPropMethods {
 /*********************************************
 * PeopleManagerCollections
 **********************************************/
-export interface PeopleManagerCollections extends PeopleManagerProps, PeopleManagerPropMethods {
+export interface PeopleManagerCollections extends PeopleManagerPropMethods {
 
 }
 
 /*********************************************
 * PeopleManagerQuery
 **********************************************/
-export interface PeopleManagerQuery extends PeopleManagerProps,PeopleManagerMethods {
+export interface PeopleManagerQuery extends PeopleManagerProps, PeopleManagerMethods {
 
 }
 
@@ -207,14 +207,14 @@ export interface IPersonalCache extends PersonalCacheCollections,PersonalCacheMe
 /*********************************************
 * IPersonalCacheQuery
 **********************************************/
-export interface IPersonalCacheQuery extends PersonalCacheQuery,PersonalCacheMethods {
+export interface IPersonalCacheQuery extends PersonalCacheQuery, PersonalCacheMethods {
 
 }
 
 /*********************************************
 * PersonalCache
 **********************************************/
-export interface PersonalCache extends PersonalCacheCollections, PersonalCacheMethods {
+export interface PersonalCache extends PersonalCacheProps, PersonalCacheCollections, PersonalCacheMethods {
 
 }
 
@@ -235,14 +235,14 @@ export interface PersonalCachePropMethods {
 /*********************************************
 * PersonalCacheCollections
 **********************************************/
-export interface PersonalCacheCollections extends PersonalCacheProps, PersonalCachePropMethods {
+export interface PersonalCacheCollections extends PersonalCachePropMethods {
 
 }
 
 /*********************************************
 * PersonalCacheQuery
 **********************************************/
-export interface PersonalCacheQuery extends PersonalCacheProps,PersonalCacheMethods {
+export interface PersonalCacheQuery extends PersonalCacheProps, PersonalCacheMethods {
 
 }
 
@@ -296,14 +296,14 @@ export interface IProfileImageStore extends ProfileImageStoreCollections,Profile
 /*********************************************
 * IProfileImageStoreQuery
 **********************************************/
-export interface IProfileImageStoreQuery extends ProfileImageStoreQuery,ProfileImageStoreMethods {
+export interface IProfileImageStoreQuery extends ProfileImageStoreQuery, ProfileImageStoreMethods {
 
 }
 
 /*********************************************
 * ProfileImageStore
 **********************************************/
-export interface ProfileImageStore extends ProfileImageStoreCollections, ProfileImageStoreMethods {
+export interface ProfileImageStore extends ProfileImageStoreProps, ProfileImageStoreCollections, ProfileImageStoreMethods {
 
 }
 
@@ -324,14 +324,14 @@ export interface ProfileImageStorePropMethods {
 /*********************************************
 * ProfileImageStoreCollections
 **********************************************/
-export interface ProfileImageStoreCollections extends ProfileImageStoreProps, ProfileImageStorePropMethods {
+export interface ProfileImageStoreCollections extends ProfileImageStorePropMethods {
 
 }
 
 /*********************************************
 * ProfileImageStoreQuery
 **********************************************/
-export interface ProfileImageStoreQuery extends ProfileImageStoreProps,ProfileImageStoreMethods {
+export interface ProfileImageStoreQuery extends ProfileImageStoreProps, ProfileImageStoreMethods {
 
 }
 
@@ -352,14 +352,14 @@ export interface IProfileLoader extends ProfileLoaderCollections,ProfileLoaderMe
 /*********************************************
 * IProfileLoaderQuery
 **********************************************/
-export interface IProfileLoaderQuery extends ProfileLoaderQuery,ProfileLoaderMethods {
+export interface IProfileLoaderQuery extends ProfileLoaderQuery, ProfileLoaderMethods {
 
 }
 
 /*********************************************
 * ProfileLoader
 **********************************************/
-export interface ProfileLoader extends ProfileLoaderCollections, ProfileLoaderMethods {
+export interface ProfileLoader extends ProfileLoaderProps, ProfileLoaderCollections, ProfileLoaderMethods {
 
 }
 
@@ -380,14 +380,14 @@ export interface ProfileLoaderPropMethods {
 /*********************************************
 * ProfileLoaderCollections
 **********************************************/
-export interface ProfileLoaderCollections extends ProfileLoaderProps, ProfileLoaderPropMethods {
+export interface ProfileLoaderCollections extends ProfileLoaderPropMethods {
 
 }
 
 /*********************************************
 * ProfileLoaderQuery
 **********************************************/
-export interface ProfileLoaderQuery extends ProfileLoaderProps,ProfileLoaderMethods {
+export interface ProfileLoaderQuery extends ProfileLoaderProps, ProfileLoaderMethods {
 
 }
 
@@ -409,14 +409,14 @@ export interface IUserProfilePropertiesForUser extends UserProfilePropertiesForU
 /*********************************************
 * IUserProfilePropertiesForUserQuery
 **********************************************/
-export interface IUserProfilePropertiesForUserQuery extends UserProfilePropertiesForUserQuery,UserProfilePropertiesForUserMethods {
+export interface IUserProfilePropertiesForUserQuery extends UserProfilePropertiesForUserQuery, UserProfilePropertiesForUserMethods {
 
 }
 
 /*********************************************
 * UserProfilePropertiesForUser
 **********************************************/
-export interface UserProfilePropertiesForUser extends UserProfilePropertiesForUserCollections, UserProfilePropertiesForUserMethods {
+export interface UserProfilePropertiesForUser extends UserProfilePropertiesForUserProps, UserProfilePropertiesForUserCollections, UserProfilePropertiesForUserMethods {
 
 }
 
@@ -437,14 +437,14 @@ export interface UserProfilePropertiesForUserPropMethods {
 /*********************************************
 * UserProfilePropertiesForUserCollections
 **********************************************/
-export interface UserProfilePropertiesForUserCollections extends UserProfilePropertiesForUserProps, UserProfilePropertiesForUserPropMethods {
+export interface UserProfilePropertiesForUserCollections extends UserProfilePropertiesForUserPropMethods {
 
 }
 
 /*********************************************
 * UserProfilePropertiesForUserQuery
 **********************************************/
-export interface UserProfilePropertiesForUserQuery extends UserProfilePropertiesForUserProps,UserProfilePropertiesForUserMethods {
+export interface UserProfilePropertiesForUserQuery extends UserProfilePropertiesForUserProps, UserProfilePropertiesForUserMethods {
 
 }
 
@@ -465,14 +465,14 @@ export interface IUserProfile extends UserProfileCollections,UserProfileMethods,
 /*********************************************
 * IUserProfileQuery
 **********************************************/
-export interface IUserProfileQuery extends UserProfileQuery,UserProfileMethods {
+export interface IUserProfileQuery extends UserProfileQuery, UserProfileMethods {
 
 }
 
 /*********************************************
 * UserProfile
 **********************************************/
-export interface UserProfile extends UserProfileCollections, UserProfileMethods {
+export interface UserProfile extends UserProfileProps, UserProfileCollections, UserProfileMethods {
 
 }
 
@@ -508,23 +508,23 @@ export interface UserProfileProps {
 * UserProfilePropMethods
 **********************************************/
 export interface UserProfilePropMethods {
-	FollowedContent(): IBaseExecution<SP.UserProfiles.FollowedContent>;
-	PersonalSite(): IBaseExecution<SP.Site>;
+	FollowedContent(): IBaseExecution<SP.UserProfiles.FollowedContent> & SP.UserProfiles.FollowedContentCollections & SP.UserProfiles.FollowedContentMethods;
+	PersonalSite(): IBaseExecution<SP.Site> & SP.SiteCollections & SP.SiteMethods;
 }
 
 /*********************************************
 * UserProfileCollections
 **********************************************/
-export interface UserProfileCollections extends UserProfileProps, UserProfilePropMethods {
+export interface UserProfileCollections extends UserProfilePropMethods {
 
 }
 
 /*********************************************
 * UserProfileQuery
 **********************************************/
-export interface UserProfileQuery extends UserProfileProps,UserProfileMethods {
-	FollowedContent: SP.UserProfiles.FollowedContent;
-	PersonalSite: SP.Site;
+export interface UserProfileQuery extends UserProfileProps, UserProfileMethods {
+	FollowedContent: SP.UserProfiles.FollowedContent & SP.UserProfiles.FollowedContentCollections;
+	PersonalSite: SP.Site & SP.SiteCollections;
 }
 
 /*********************************************

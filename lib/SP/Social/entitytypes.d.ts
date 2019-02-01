@@ -26,14 +26,14 @@ export interface ISocialFeedManager extends SocialFeedManagerCollections,SocialF
 /*********************************************
 * ISocialFeedManagerQuery
 **********************************************/
-export interface ISocialFeedManagerQuery extends SocialFeedManagerQuery,SocialFeedManagerMethods {
+export interface ISocialFeedManagerQuery extends SocialFeedManagerQuery, SocialFeedManagerMethods {
 
 }
 
 /*********************************************
 * SocialFeedManager
 **********************************************/
-export interface SocialFeedManager extends SocialFeedManagerCollections, SocialFeedManagerMethods {
+export interface SocialFeedManager extends SocialFeedManagerProps, SocialFeedManagerCollections, SocialFeedManagerMethods {
 
 }
 
@@ -55,14 +55,14 @@ export interface SocialFeedManagerPropMethods {
 /*********************************************
 * SocialFeedManagerCollections
 **********************************************/
-export interface SocialFeedManagerCollections extends SocialFeedManagerProps, SocialFeedManagerPropMethods {
+export interface SocialFeedManagerCollections extends SocialFeedManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialFeedManagerQuery
 **********************************************/
-export interface SocialFeedManagerQuery extends SocialFeedManagerProps,SocialFeedManagerMethods {
+export interface SocialFeedManagerQuery extends SocialFeedManagerProps, SocialFeedManagerMethods {
 
 }
 
@@ -99,14 +99,14 @@ export interface ISocialFollowingManager extends SocialFollowingManagerCollectio
 /*********************************************
 * ISocialFollowingManagerQuery
 **********************************************/
-export interface ISocialFollowingManagerQuery extends SocialFollowingManagerQuery,SocialFollowingManagerMethods {
+export interface ISocialFollowingManagerQuery extends SocialFollowingManagerQuery, SocialFollowingManagerMethods {
 
 }
 
 /*********************************************
 * SocialFollowingManager
 **********************************************/
-export interface SocialFollowingManager extends SocialFollowingManagerCollections, SocialFollowingManagerMethods {
+export interface SocialFollowingManager extends SocialFollowingManagerProps, SocialFollowingManagerCollections, SocialFollowingManagerMethods {
 
 }
 
@@ -128,14 +128,14 @@ export interface SocialFollowingManagerPropMethods {
 /*********************************************
 * SocialFollowingManagerCollections
 **********************************************/
-export interface SocialFollowingManagerCollections extends SocialFollowingManagerProps, SocialFollowingManagerPropMethods {
+export interface SocialFollowingManagerCollections extends SocialFollowingManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialFollowingManagerQuery
 **********************************************/
-export interface SocialFollowingManagerQuery extends SocialFollowingManagerProps,SocialFollowingManagerMethods {
+export interface SocialFollowingManagerQuery extends SocialFollowingManagerProps, SocialFollowingManagerMethods {
 
 }
 
@@ -162,14 +162,14 @@ export interface ISocialRestActor extends SocialRestActorCollections,SocialRestA
 /*********************************************
 * ISocialRestActorQuery
 **********************************************/
-export interface ISocialRestActorQuery extends SocialRestActorQuery,SocialRestActorMethods {
+export interface ISocialRestActorQuery extends SocialRestActorQuery, SocialRestActorMethods {
 
 }
 
 /*********************************************
 * SocialRestActor
 **********************************************/
-export interface SocialRestActor extends SocialRestActorCollections, SocialRestActorMethods {
+export interface SocialRestActor extends SocialRestActorProps, SocialRestActorCollections, SocialRestActorMethods {
 
 }
 
@@ -192,14 +192,14 @@ export interface SocialRestActorPropMethods {
 /*********************************************
 * SocialRestActorCollections
 **********************************************/
-export interface SocialRestActorCollections extends SocialRestActorProps, SocialRestActorPropMethods {
+export interface SocialRestActorCollections extends SocialRestActorPropMethods {
 
 }
 
 /*********************************************
 * SocialRestActorQuery
 **********************************************/
-export interface SocialRestActorQuery extends SocialRestActorProps,SocialRestActorMethods {
+export interface SocialRestActorQuery extends SocialRestActorProps, SocialRestActorMethods {
 
 }
 
@@ -226,14 +226,14 @@ export interface ISocialRestFeedManager extends SocialRestFeedManagerCollections
 /*********************************************
 * ISocialRestFeedManagerQuery
 **********************************************/
-export interface ISocialRestFeedManagerQuery extends SocialRestFeedManagerQuery,SocialRestFeedManagerMethods {
+export interface ISocialRestFeedManagerQuery extends SocialRestFeedManagerQuery, SocialRestFeedManagerMethods {
 
 }
 
 /*********************************************
 * SocialRestFeedManager
 **********************************************/
-export interface SocialRestFeedManager extends SocialRestFeedManagerCollections, SocialRestFeedManagerMethods {
+export interface SocialRestFeedManager extends SocialRestFeedManagerProps, SocialRestFeedManagerCollections, SocialRestFeedManagerMethods {
 
 }
 
@@ -254,14 +254,14 @@ export interface SocialRestFeedManagerPropMethods {
 /*********************************************
 * SocialRestFeedManagerCollections
 **********************************************/
-export interface SocialRestFeedManagerCollections extends SocialRestFeedManagerProps, SocialRestFeedManagerPropMethods {
+export interface SocialRestFeedManagerCollections extends SocialRestFeedManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFeedManagerQuery
 **********************************************/
-export interface SocialRestFeedManagerQuery extends SocialRestFeedManagerProps,SocialRestFeedManagerMethods {
+export interface SocialRestFeedManagerQuery extends SocialRestFeedManagerProps, SocialRestFeedManagerMethods {
 
 }
 
@@ -284,14 +284,14 @@ export interface ISocialRestFeed extends SocialRestFeedCollections,SocialRestFee
 /*********************************************
 * ISocialRestFeedQuery
 **********************************************/
-export interface ISocialRestFeedQuery extends SocialRestFeedQuery,SocialRestFeedMethods {
+export interface ISocialRestFeedQuery extends SocialRestFeedQuery, SocialRestFeedMethods {
 
 }
 
 /*********************************************
 * SocialRestFeed
 **********************************************/
-export interface SocialRestFeed extends SocialRestFeedCollections, SocialRestFeedMethods {
+export interface SocialRestFeed extends SocialRestFeedProps, SocialRestFeedCollections, SocialRestFeedMethods {
 
 }
 
@@ -313,14 +313,14 @@ export interface SocialRestFeedPropMethods {
 /*********************************************
 * SocialRestFeedCollections
 **********************************************/
-export interface SocialRestFeedCollections extends SocialRestFeedProps, SocialRestFeedPropMethods {
+export interface SocialRestFeedCollections extends SocialRestFeedPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFeedQuery
 **********************************************/
-export interface SocialRestFeedQuery extends SocialRestFeedProps,SocialRestFeedMethods {
+export interface SocialRestFeedQuery extends SocialRestFeedProps, SocialRestFeedMethods {
 
 }
 
@@ -342,14 +342,14 @@ export interface ISocialRestFollowingManager extends SocialRestFollowingManagerC
 /*********************************************
 * ISocialRestFollowingManagerQuery
 **********************************************/
-export interface ISocialRestFollowingManagerQuery extends SocialRestFollowingManagerQuery,SocialRestFollowingManagerMethods {
+export interface ISocialRestFollowingManagerQuery extends SocialRestFollowingManagerQuery, SocialRestFollowingManagerMethods {
 
 }
 
 /*********************************************
 * SocialRestFollowingManager
 **********************************************/
-export interface SocialRestFollowingManager extends SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods {
+export interface SocialRestFollowingManager extends SocialRestFollowingManagerProps, SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods {
 
 }
 
@@ -374,14 +374,14 @@ export interface SocialRestFollowingManagerPropMethods {
 /*********************************************
 * SocialRestFollowingManagerCollections
 **********************************************/
-export interface SocialRestFollowingManagerCollections extends SocialRestFollowingManagerProps, SocialRestFollowingManagerPropMethods {
+export interface SocialRestFollowingManagerCollections extends SocialRestFollowingManagerPropMethods {
 
 }
 
 /*********************************************
 * SocialRestFollowingManagerQuery
 **********************************************/
-export interface SocialRestFollowingManagerQuery extends SocialRestFollowingManagerProps,SocialRestFollowingManagerMethods {
+export interface SocialRestFollowingManagerQuery extends SocialRestFollowingManagerProps, SocialRestFollowingManagerMethods {
 
 }
 
@@ -409,14 +409,14 @@ export interface ISocialRestThread extends SocialRestThreadCollections,SocialRes
 /*********************************************
 * ISocialRestThreadQuery
 **********************************************/
-export interface ISocialRestThreadQuery extends SocialRestThreadQuery,SocialRestThreadMethods {
+export interface ISocialRestThreadQuery extends SocialRestThreadQuery, SocialRestThreadMethods {
 
 }
 
 /*********************************************
 * SocialRestThread
 **********************************************/
-export interface SocialRestThread extends SocialRestThreadCollections, SocialRestThreadMethods {
+export interface SocialRestThread extends SocialRestThreadProps, SocialRestThreadCollections, SocialRestThreadMethods {
 
 }
 
@@ -438,14 +438,14 @@ export interface SocialRestThreadPropMethods {
 /*********************************************
 * SocialRestThreadCollections
 **********************************************/
-export interface SocialRestThreadCollections extends SocialRestThreadProps, SocialRestThreadPropMethods {
+export interface SocialRestThreadCollections extends SocialRestThreadPropMethods {
 
 }
 
 /*********************************************
 * SocialRestThreadQuery
 **********************************************/
-export interface SocialRestThreadQuery extends SocialRestThreadProps,SocialRestThreadMethods {
+export interface SocialRestThreadQuery extends SocialRestThreadProps, SocialRestThreadMethods {
 
 }
 

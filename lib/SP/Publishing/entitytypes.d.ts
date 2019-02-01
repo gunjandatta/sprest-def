@@ -14,14 +14,14 @@ export interface ICommunicationSite extends CommunicationSiteCollections,Communi
 /*********************************************
 * ICommunicationSiteQuery
 **********************************************/
-export interface ICommunicationSiteQuery extends CommunicationSiteQuery,CommunicationSiteMethods {
+export interface ICommunicationSiteQuery extends CommunicationSiteQuery, CommunicationSiteMethods {
 
 }
 
 /*********************************************
 * CommunicationSite
 **********************************************/
-export interface CommunicationSite extends CommunicationSiteCollections, CommunicationSiteMethods {
+export interface CommunicationSite extends CommunicationSiteProps, CommunicationSiteCollections, CommunicationSiteMethods {
 
 }
 
@@ -42,14 +42,14 @@ export interface CommunicationSitePropMethods {
 /*********************************************
 * CommunicationSiteCollections
 **********************************************/
-export interface CommunicationSiteCollections extends CommunicationSiteProps, CommunicationSitePropMethods {
+export interface CommunicationSiteCollections extends CommunicationSitePropMethods {
 
 }
 
 /*********************************************
 * CommunicationSiteQuery
 **********************************************/
-export interface CommunicationSiteQuery extends CommunicationSiteProps,CommunicationSiteMethods {
+export interface CommunicationSiteQuery extends CommunicationSiteProps, CommunicationSiteMethods {
 
 }
 
@@ -102,14 +102,14 @@ export interface IEmbedService extends EmbedServiceCollections,EmbedServiceMetho
 /*********************************************
 * IEmbedServiceQuery
 **********************************************/
-export interface IEmbedServiceQuery extends EmbedServiceQuery,EmbedServiceMethods {
+export interface IEmbedServiceQuery extends EmbedServiceQuery, EmbedServiceMethods {
 
 }
 
 /*********************************************
 * EmbedService
 **********************************************/
-export interface EmbedService extends EmbedServiceCollections, EmbedServiceMethods {
+export interface EmbedService extends EmbedServiceProps, EmbedServiceCollections, EmbedServiceMethods {
 
 }
 
@@ -130,14 +130,14 @@ export interface EmbedServicePropMethods {
 /*********************************************
 * EmbedServiceCollections
 **********************************************/
-export interface EmbedServiceCollections extends EmbedServiceProps, EmbedServicePropMethods {
+export interface EmbedServiceCollections extends EmbedServicePropMethods {
 
 }
 
 /*********************************************
 * EmbedServiceQuery
 **********************************************/
-export interface EmbedServiceQuery extends EmbedServiceProps,EmbedServiceMethods {
+export interface EmbedServiceQuery extends EmbedServiceProps, EmbedServiceMethods {
 
 }
 
@@ -158,14 +158,14 @@ export interface IVideoItem extends VideoItemCollections,VideoItemMethods,IBaseQ
 /*********************************************
 * IVideoItemQuery
 **********************************************/
-export interface IVideoItemQuery extends VideoItemQuery,VideoItemMethods {
+export interface IVideoItemQuery extends VideoItemQuery, VideoItemMethods {
 
 }
 
 /*********************************************
 * VideoItem
 **********************************************/
-export interface VideoItem extends VideoItemCollections, VideoItemMethods {
+export interface VideoItem extends VideoItemProps, VideoItemCollections, VideoItemMethods {
 
 }
 
@@ -198,29 +198,29 @@ export interface VideoItemProps {
 * VideoItemPropMethods
 **********************************************/
 export interface VideoItemPropMethods {
-	Author(): IBaseExecution<SP.User> & SP.UserCollections;
-	Owner(): IBaseExecution<SP.User> & SP.UserCollections;
+	Author(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Owner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
 * VideoItemCollections
 **********************************************/
-export interface VideoItemCollections extends VideoItemProps, VideoItemPropMethods {
+export interface VideoItemCollections extends VideoItemPropMethods {
 	PeopleInMedia(): IBaseCollection<SP.User, SP.UserQuery> & SP.UserCollectionMethods;
-	PeopleInMedia(id: string | number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections;
+	PeopleInMedia(id: string | number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
 * VideoItemCollectionMethods
 **********************************************/
 export interface VideoItemCollectionMethods {
-	getById(id?: any): IBaseExecution<SP.Publishing.VideoItem>;
+	getById(id?: any): IBaseQuery<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollections;
 }
 
 /*********************************************
 * VideoItemQuery
 **********************************************/
-export interface VideoItemQuery extends VideoItemProps,VideoItemMethods {
+export interface VideoItemQuery extends VideoItemProps, VideoItemMethods {
 	Author: SP.User & SP.UserCollections;
 	Owner: SP.User & SP.UserCollections;
 	PeopleInMedia: IBaseResults<SP.User>;
@@ -322,14 +322,14 @@ export interface IPointPublishingPost extends PointPublishingPostCollections,Poi
 /*********************************************
 * IPointPublishingPostQuery
 **********************************************/
-export interface IPointPublishingPostQuery extends PointPublishingPostQuery,PointPublishingPostMethods {
+export interface IPointPublishingPostQuery extends PointPublishingPostQuery, PointPublishingPostMethods {
 
 }
 
 /*********************************************
 * PointPublishingPost
 **********************************************/
-export interface PointPublishingPost extends PointPublishingPostCollections, PointPublishingPostMethods {
+export interface PointPublishingPost extends PointPublishingPostProps, PointPublishingPostCollections, PointPublishingPostMethods {
 
 }
 
@@ -359,23 +359,23 @@ export interface PointPublishingPostPropMethods {
 /*********************************************
 * PointPublishingPostCollections
 **********************************************/
-export interface PointPublishingPostCollections extends PointPublishingPostProps, PointPublishingPostPropMethods {
+export interface PointPublishingPostCollections extends PointPublishingPostPropMethods {
 	images(): IBaseCollection<SP.File, SP.FileQuery> & SP.FileCollectionMethods;
-	images(id: string | number): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections;
+	images(id: string | number): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
 }
 
 /*********************************************
 * PointPublishingPostCollectionMethods
 **********************************************/
 export interface PointPublishingPostCollectionMethods {
-	getById(id?: number, publishedOnly?: boolean): IBaseExecution<SP.Publishing.PointPublishingPost>;
-	getByName(name?: string, publishedOnly?: boolean): IBaseExecution<SP.Publishing.PointPublishingPost>;
+	getById(id?: number, publishedOnly?: boolean): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections;
+	getByName(name?: string, publishedOnly?: boolean): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections;
 }
 
 /*********************************************
 * PointPublishingPostQuery
 **********************************************/
-export interface PointPublishingPostQuery extends PointPublishingPostProps,PointPublishingPostMethods {
+export interface PointPublishingPostQuery extends PointPublishingPostProps, PointPublishingPostMethods {
 	images: IBaseResults<SP.File>;
 }
 
@@ -397,14 +397,14 @@ export interface IPointPublishingPostServiceManager extends PointPublishingPostS
 /*********************************************
 * IPointPublishingPostServiceManagerQuery
 **********************************************/
-export interface IPointPublishingPostServiceManagerQuery extends PointPublishingPostServiceManagerQuery,PointPublishingPostServiceManagerMethods {
+export interface IPointPublishingPostServiceManagerQuery extends PointPublishingPostServiceManagerQuery, PointPublishingPostServiceManagerMethods {
 
 }
 
 /*********************************************
 * PointPublishingPostServiceManager
 **********************************************/
-export interface PointPublishingPostServiceManager extends PointPublishingPostServiceManagerCollections, PointPublishingPostServiceManagerMethods {
+export interface PointPublishingPostServiceManager extends PointPublishingPostServiceManagerProps, PointPublishingPostServiceManagerCollections, PointPublishingPostServiceManagerMethods {
 
 }
 
@@ -419,33 +419,33 @@ export interface PointPublishingPostServiceManagerProps {
 * PointPublishingPostServiceManagerPropMethods
 **********************************************/
 export interface PointPublishingPostServiceManagerPropMethods {
-	magazineprops(): IBaseExecution<SP.Publishing.PointPublishingMagazineProps>;
+	magazineprops(): IBaseExecution<SP.Publishing.PointPublishingMagazineProps> & SP.Publishing.PointPublishingMagazinePropsCollections;
 }
 
 /*********************************************
 * PointPublishingPostServiceManagerCollections
 **********************************************/
-export interface PointPublishingPostServiceManagerCollections extends PointPublishingPostServiceManagerProps, PointPublishingPostServiceManagerPropMethods {
+export interface PointPublishingPostServiceManagerCollections extends PointPublishingPostServiceManagerPropMethods {
 	bannerimages(): IBaseCollection<SP.File, SP.FileQuery> & SP.FileCollectionMethods;
-	bannerimages(id: string | number): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections;
+	bannerimages(id: string | number): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
 	contributors(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
-	contributors(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
+	contributors(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
 	creators(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
-	creators(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
+	creators(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
 	posts(): IBaseCollection<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollectionMethods;
-	posts(id: string | number): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections;
+	posts(id: string | number): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections & SP.Publishing.PointPublishingPostMethods;
 	viewers(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
-	viewers(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
+	viewers(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
 }
 
 /*********************************************
 * PointPublishingPostServiceManagerQuery
 **********************************************/
-export interface PointPublishingPostServiceManagerQuery extends PointPublishingPostServiceManagerProps,PointPublishingPostServiceManagerMethods {
+export interface PointPublishingPostServiceManagerQuery extends PointPublishingPostServiceManagerProps, PointPublishingPostServiceManagerMethods {
 	bannerimages: IBaseResults<SP.File>;
 	contributors: IBaseResults<SP.Publishing.PointPublishingUser>;
 	creators: IBaseResults<SP.Publishing.PointPublishingUser>;
-	magazineprops: SP.Publishing.PointPublishingMagazineProps;
+	magazineprops: SP.Publishing.PointPublishingMagazineProps & SP.Publishing.PointPublishingMagazinePropsCollections;
 	posts: IBaseResults<SP.Publishing.PointPublishingPost>;
 	viewers: IBaseResults<SP.Publishing.PointPublishingUser>;
 }
@@ -473,14 +473,14 @@ export interface IPointPublishingUser extends PointPublishingUserCollections,Poi
 /*********************************************
 * IPointPublishingUserQuery
 **********************************************/
-export interface IPointPublishingUserQuery extends PointPublishingUserQuery,PointPublishingUserMethods {
+export interface IPointPublishingUserQuery extends PointPublishingUserQuery, PointPublishingUserMethods {
 
 }
 
 /*********************************************
 * PointPublishingUser
 **********************************************/
-export interface PointPublishingUser extends PointPublishingUserCollections, PointPublishingUserMethods {
+export interface PointPublishingUser extends PointPublishingUserProps, PointPublishingUserCollections, PointPublishingUserMethods {
 
 }
 
@@ -511,7 +511,7 @@ export interface PointPublishingUserPropMethods {
 /*********************************************
 * PointPublishingUserCollections
 **********************************************/
-export interface PointPublishingUserCollections extends PointPublishingUserProps, PointPublishingUserPropMethods {
+export interface PointPublishingUserCollections extends PointPublishingUserPropMethods {
 
 }
 
@@ -520,13 +520,13 @@ export interface PointPublishingUserCollections extends PointPublishingUserProps
 **********************************************/
 export interface PointPublishingUserCollectionMethods {
 	addOrUpdateUser(loginName?: string, isOwner?: boolean): IBaseExecution<SP.Publishing.PointPublishingUser>;
-	getById(userId?: number): IBaseExecution<SP.Publishing.PointPublishingUser>;
+	getById(userId?: number): IBaseQuery<SP.Publishing.PointPublishingUser>;
 }
 
 /*********************************************
 * PointPublishingUserQuery
 **********************************************/
-export interface PointPublishingUserQuery extends PointPublishingUserProps,PointPublishingUserMethods {
+export interface PointPublishingUserQuery extends PointPublishingUserProps, PointPublishingUserMethods {
 
 }
 
@@ -547,14 +547,14 @@ export interface IPointPublishingSiteManager extends PointPublishingSiteManagerC
 /*********************************************
 * IPointPublishingSiteManagerQuery
 **********************************************/
-export interface IPointPublishingSiteManagerQuery extends PointPublishingSiteManagerQuery,PointPublishingSiteManagerMethods {
+export interface IPointPublishingSiteManagerQuery extends PointPublishingSiteManagerQuery, PointPublishingSiteManagerMethods {
 
 }
 
 /*********************************************
 * PointPublishingSiteManager
 **********************************************/
-export interface PointPublishingSiteManager extends PointPublishingSiteManagerCollections, PointPublishingSiteManagerMethods {
+export interface PointPublishingSiteManager extends PointPublishingSiteManagerProps, PointPublishingSiteManagerCollections, PointPublishingSiteManagerMethods {
 
 }
 
@@ -575,14 +575,14 @@ export interface PointPublishingSiteManagerPropMethods {
 /*********************************************
 * PointPublishingSiteManagerCollections
 **********************************************/
-export interface PointPublishingSiteManagerCollections extends PointPublishingSiteManagerProps, PointPublishingSiteManagerPropMethods {
+export interface PointPublishingSiteManagerCollections extends PointPublishingSiteManagerPropMethods {
 
 }
 
 /*********************************************
 * PointPublishingSiteManagerQuery
 **********************************************/
-export interface PointPublishingSiteManagerQuery extends PointPublishingSiteManagerProps,PointPublishingSiteManagerMethods {
+export interface PointPublishingSiteManagerQuery extends PointPublishingSiteManagerProps, PointPublishingSiteManagerMethods {
 
 }
 
@@ -621,14 +621,14 @@ export interface IPointPublishingTenantManager extends PointPublishingTenantMana
 /*********************************************
 * IPointPublishingTenantManagerQuery
 **********************************************/
-export interface IPointPublishingTenantManagerQuery extends PointPublishingTenantManagerQuery,PointPublishingTenantManagerMethods {
+export interface IPointPublishingTenantManagerQuery extends PointPublishingTenantManagerQuery, PointPublishingTenantManagerMethods {
 
 }
 
 /*********************************************
 * PointPublishingTenantManager
 **********************************************/
-export interface PointPublishingTenantManager extends PointPublishingTenantManagerCollections, PointPublishingTenantManagerMethods {
+export interface PointPublishingTenantManager extends PointPublishingTenantManagerProps, PointPublishingTenantManagerCollections, PointPublishingTenantManagerMethods {
 
 }
 
@@ -649,14 +649,14 @@ export interface PointPublishingTenantManagerPropMethods {
 /*********************************************
 * PointPublishingTenantManagerCollections
 **********************************************/
-export interface PointPublishingTenantManagerCollections extends PointPublishingTenantManagerProps, PointPublishingTenantManagerPropMethods {
+export interface PointPublishingTenantManagerCollections extends PointPublishingTenantManagerPropMethods {
 
 }
 
 /*********************************************
 * PointPublishingTenantManagerQuery
 **********************************************/
-export interface PointPublishingTenantManagerQuery extends PointPublishingTenantManagerProps,PointPublishingTenantManagerMethods {
+export interface PointPublishingTenantManagerQuery extends PointPublishingTenantManagerProps, PointPublishingTenantManagerMethods {
 
 }
 
@@ -728,15 +728,15 @@ export interface SitePageMetadataCollections extends SitePageMetadataCollectionM
 * SitePageMetadataQuery
 **********************************************/
 export interface SitePageMetadataQuery extends SitePageMetadata {
-	CreatedBy: SP.Publishing.UserInfo;
-	LastModifiedBy: SP.Publishing.UserInfo;
+	CreatedBy: SP.Publishing.UserInfo & SP.Publishing.UserInfoCollections;
+	LastModifiedBy: SP.Publishing.UserInfo & SP.Publishing.UserInfoCollections;
 }
 
 /*********************************************
 * SitePageMetadataCollectionMethods
 **********************************************/
 export interface SitePageMetadataCollectionMethods {
-	getById(id?: number): IBaseExecution<SP.Publishing.SitePageMetadata>;
+	getById(id?: number): IBaseQuery<SP.Publishing.SitePageMetadata, SP.Publishing.SitePageMetadataQuery> & SP.Publishing.SitePageMetadataCollections;
 }
 
 /*********************************************
@@ -766,14 +766,14 @@ export interface ISitePage extends SitePageCollections,SitePageMethods,IBaseQuer
 /*********************************************
 * ISitePageQuery
 **********************************************/
-export interface ISitePageQuery extends SitePageQuery,SitePageMethods {
+export interface ISitePageQuery extends SitePageQuery, SitePageMethods {
 
 }
 
 /*********************************************
 * SitePage
 **********************************************/
-export interface SitePage extends SP.Publishing.SitePageMetadata, SitePageCollections, SitePageMethods {
+export interface SitePage extends SP.Publishing.SitePageMetadata, SitePageProps, SitePageCollections, SitePageMethods {
 
 }
 
@@ -799,7 +799,7 @@ export interface SitePagePropMethods {
 /*********************************************
 * SitePageCollections
 **********************************************/
-export interface SitePageCollections extends SitePageProps, SitePagePropMethods {
+export interface SitePageCollections extends SitePagePropMethods {
 
 }
 
@@ -810,8 +810,8 @@ export interface SitePageCollectionMethods {
 	ensureTitleResource(): IBaseExecution<any>;
 	feed(promotedState?: number, published?: boolean, metadataFilter?: string): IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
 	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string): IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
-	getById(id?: number): IBaseExecution<SP.Publishing.SitePage>;
-	getByUrl(url?: string): IBaseExecution<SP.Publishing.SitePage>;
+	getById(id?: number): IBaseQuery<SP.Publishing.SitePage>;
+	getByUrl(url?: string): IBaseQuery<SP.Publishing.SitePage>;
 	getPageColumnState(url?: string): IBaseExecution<number>;
 	isSitePage(url?: string): IBaseExecution<boolean>;
 	templates(): IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
@@ -820,7 +820,7 @@ export interface SitePageCollectionMethods {
 /*********************************************
 * SitePageQuery
 **********************************************/
-export interface SitePageQuery extends SitePageProps,SitePageMethods {
+export interface SitePageQuery extends SitePageProps, SitePageMethods {
 
 }
 
@@ -854,14 +854,14 @@ export interface IRepostPage extends RepostPageCollections,RepostPageMethods,IBa
 /*********************************************
 * IRepostPageQuery
 **********************************************/
-export interface IRepostPageQuery extends RepostPageQuery,RepostPageMethods {
+export interface IRepostPageQuery extends RepostPageQuery, RepostPageMethods {
 
 }
 
 /*********************************************
 * RepostPage
 **********************************************/
-export interface RepostPage extends SP.Publishing.SitePage, RepostPageCollections, RepostPageMethods {
+export interface RepostPage extends SP.Publishing.SitePage, RepostPageProps, RepostPageCollections, RepostPageMethods {
 
 }
 
@@ -888,7 +888,7 @@ export interface RepostPagePropMethods {
 /*********************************************
 * RepostPageCollections
 **********************************************/
-export interface RepostPageCollections extends RepostPageProps, RepostPagePropMethods {
+export interface RepostPageCollections extends RepostPagePropMethods {
 
 }
 
@@ -902,7 +902,7 @@ export interface RepostPageCollectionMethods {
 /*********************************************
 * RepostPageQuery
 **********************************************/
-export interface RepostPageQuery extends RepostPageProps,RepostPageMethods {
+export interface RepostPageQuery extends RepostPageProps, RepostPageMethods {
 
 }
 
@@ -954,14 +954,14 @@ export interface IRichSharing extends RichSharingCollections,RichSharingMethods,
 /*********************************************
 * IRichSharingQuery
 **********************************************/
-export interface IRichSharingQuery extends RichSharingQuery,RichSharingMethods {
+export interface IRichSharingQuery extends RichSharingQuery, RichSharingMethods {
 
 }
 
 /*********************************************
 * RichSharing
 **********************************************/
-export interface RichSharing extends RichSharingCollections, RichSharingMethods {
+export interface RichSharing extends RichSharingProps, RichSharingCollections, RichSharingMethods {
 
 }
 
@@ -982,14 +982,14 @@ export interface RichSharingPropMethods {
 /*********************************************
 * RichSharingCollections
 **********************************************/
-export interface RichSharingCollections extends RichSharingProps, RichSharingPropMethods {
+export interface RichSharingCollections extends RichSharingPropMethods {
 
 }
 
 /*********************************************
 * RichSharingQuery
 **********************************************/
-export interface RichSharingQuery extends RichSharingProps,RichSharingMethods {
+export interface RichSharingQuery extends RichSharingProps, RichSharingMethods {
 
 }
 
@@ -1011,14 +1011,14 @@ export interface ISharePointHomeServiceManager extends SharePointHomeServiceMana
 /*********************************************
 * ISharePointHomeServiceManagerQuery
 **********************************************/
-export interface ISharePointHomeServiceManagerQuery extends SharePointHomeServiceManagerQuery,SharePointHomeServiceManagerMethods {
+export interface ISharePointHomeServiceManagerQuery extends SharePointHomeServiceManagerQuery, SharePointHomeServiceManagerMethods {
 
 }
 
 /*********************************************
 * SharePointHomeServiceManager
 **********************************************/
-export interface SharePointHomeServiceManager extends SharePointHomeServiceManagerCollections, SharePointHomeServiceManagerMethods {
+export interface SharePointHomeServiceManager extends SharePointHomeServiceManagerProps, SharePointHomeServiceManagerCollections, SharePointHomeServiceManagerMethods {
 
 }
 
@@ -1039,14 +1039,14 @@ export interface SharePointHomeServiceManagerPropMethods {
 /*********************************************
 * SharePointHomeServiceManagerCollections
 **********************************************/
-export interface SharePointHomeServiceManagerCollections extends SharePointHomeServiceManagerProps, SharePointHomeServiceManagerPropMethods {
+export interface SharePointHomeServiceManagerCollections extends SharePointHomeServiceManagerPropMethods {
 
 }
 
 /*********************************************
 * SharePointHomeServiceManagerQuery
 **********************************************/
-export interface SharePointHomeServiceManagerQuery extends SharePointHomeServiceManagerProps,SharePointHomeServiceManagerMethods {
+export interface SharePointHomeServiceManagerQuery extends SharePointHomeServiceManagerProps, SharePointHomeServiceManagerMethods {
 
 }
 
@@ -1067,14 +1067,14 @@ export interface ISitePageService extends SitePageServiceCollections,SitePageSer
 /*********************************************
 * ISitePageServiceQuery
 **********************************************/
-export interface ISitePageServiceQuery extends SitePageServiceQuery,SitePageServiceMethods {
+export interface ISitePageServiceQuery extends SitePageServiceQuery, SitePageServiceMethods {
 
 }
 
 /*********************************************
 * SitePageService
 **********************************************/
-export interface SitePageService extends SitePageServiceCollections, SitePageServiceMethods {
+export interface SitePageService extends SitePageServiceProps, SitePageServiceCollections, SitePageServiceMethods {
 
 }
 
@@ -1089,22 +1089,22 @@ export interface SitePageServiceProps {
 * SitePageServicePropMethods
 **********************************************/
 export interface SitePageServicePropMethods {
-	CommunicationSite(): IBaseExecution<SP.Publishing.CommunicationSite>;
+	CommunicationSite(): IBaseExecution<SP.Publishing.CommunicationSite> & SP.Publishing.CommunicationSiteCollections & SP.Publishing.CommunicationSiteMethods;
 }
 
 /*********************************************
 * SitePageServiceCollections
 **********************************************/
-export interface SitePageServiceCollections extends SitePageServiceProps, SitePageServicePropMethods {
+export interface SitePageServiceCollections extends SitePageServicePropMethods {
 	Pages(): IBaseCollection<SP.Publishing.SitePage> & SP.Publishing.SitePageCollectionMethods;
-	Pages(id: string | number): IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections;
+	Pages(id: string | number): IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 }
 
 /*********************************************
 * SitePageServiceQuery
 **********************************************/
-export interface SitePageServiceQuery extends SitePageServiceProps,SitePageServiceMethods {
-	CommunicationSite: SP.Publishing.CommunicationSite;
+export interface SitePageServiceQuery extends SitePageServiceProps, SitePageServiceMethods {
+	CommunicationSite: SP.Publishing.CommunicationSite & SP.Publishing.CommunicationSiteCollections;
 	Pages: IBaseResults<SP.Publishing.SitePage>;
 }
 
@@ -1128,14 +1128,14 @@ export interface ISpotlightChannel extends SpotlightChannelCollections,Spotlight
 /*********************************************
 * ISpotlightChannelQuery
 **********************************************/
-export interface ISpotlightChannelQuery extends SpotlightChannelQuery,SpotlightChannelMethods {
+export interface ISpotlightChannelQuery extends SpotlightChannelQuery, SpotlightChannelMethods {
 
 }
 
 /*********************************************
 * SpotlightChannel
 **********************************************/
-export interface SpotlightChannel extends SpotlightChannelCollections, SpotlightChannelMethods {
+export interface SpotlightChannel extends SpotlightChannelProps, SpotlightChannelCollections, SpotlightChannelMethods {
 
 }
 
@@ -1154,13 +1154,13 @@ export interface SpotlightChannelProps {
 * SpotlightChannelPropMethods
 **********************************************/
 export interface SpotlightChannelPropMethods {
-	Channel(): IBaseExecution<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections;
+	Channel(): IBaseExecution<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
 }
 
 /*********************************************
 * SpotlightChannelCollections
 **********************************************/
-export interface SpotlightChannelCollections extends SpotlightChannelProps, SpotlightChannelPropMethods {
+export interface SpotlightChannelCollections extends SpotlightChannelPropMethods {
 
 }
 
@@ -1168,13 +1168,13 @@ export interface SpotlightChannelCollections extends SpotlightChannelProps, Spot
 * SpotlightChannelCollectionMethods
 **********************************************/
 export interface SpotlightChannelCollectionMethods {
-	getById(id?: number): IBaseExecution<SP.Publishing.SpotlightChannel>;
+	getById(id?: number): IBaseQuery<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery> & SP.Publishing.SpotlightChannelCollections;
 }
 
 /*********************************************
 * SpotlightChannelQuery
 **********************************************/
-export interface SpotlightChannelQuery extends SpotlightChannelProps,SpotlightChannelMethods {
+export interface SpotlightChannelQuery extends SpotlightChannelProps, SpotlightChannelMethods {
 	Channel: SP.Publishing.VideoChannel & SP.Publishing.VideoChannelCollections;
 }
 
@@ -1196,14 +1196,14 @@ export interface IVideoChannel extends VideoChannelCollections,VideoChannelMetho
 /*********************************************
 * IVideoChannelQuery
 **********************************************/
-export interface IVideoChannelQuery extends VideoChannelQuery,VideoChannelMethods {
+export interface IVideoChannelQuery extends VideoChannelQuery, VideoChannelMethods {
 
 }
 
 /*********************************************
 * VideoChannel
 **********************************************/
-export interface VideoChannel extends VideoChannelCollections, VideoChannelMethods {
+export interface VideoChannel extends VideoChannelProps, VideoChannelCollections, VideoChannelMethods {
 
 }
 
@@ -1231,31 +1231,31 @@ export interface VideoChannelProps {
 * VideoChannelPropMethods
 **********************************************/
 export interface VideoChannelPropMethods {
-	Search(): IBaseExecution<SP.Publishing.Search>;
+	Search(): IBaseExecution<SP.Publishing.Search> & SP.Publishing.SearchCollections & SP.Publishing.SearchMethods;
 }
 
 /*********************************************
 * VideoChannelCollections
 **********************************************/
-export interface VideoChannelCollections extends VideoChannelProps, VideoChannelPropMethods {
+export interface VideoChannelCollections extends VideoChannelPropMethods {
 	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollectionMethods;
-	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections;
+	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections & SP.Publishing.SpotlightVideoMethods;
 	Videos(): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollectionMethods;
-	Videos(id: string | number): IBaseQuery<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollections;
+	Videos(id: string | number): IBaseQuery<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollections & SP.Publishing.VideoItemMethods;
 }
 
 /*********************************************
 * VideoChannelCollectionMethods
 **********************************************/
 export interface VideoChannelCollectionMethods {
-	getById(id?: any): IBaseExecution<SP.Publishing.VideoChannel>;
+	getById(id?: any): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections;
 }
 
 /*********************************************
 * VideoChannelQuery
 **********************************************/
-export interface VideoChannelQuery extends VideoChannelProps,VideoChannelMethods {
-	Search: SP.Publishing.Search;
+export interface VideoChannelQuery extends VideoChannelProps, VideoChannelMethods {
+	Search: SP.Publishing.Search & SP.Publishing.SearchCollections;
 	SpotlightVideos: IBaseResults<SP.Publishing.SpotlightVideo>;
 	Videos: IBaseResults<SP.Publishing.VideoItem>;
 }
@@ -1282,14 +1282,14 @@ export interface ISearch extends SearchCollections,SearchMethods,IBaseQuery<ISea
 /*********************************************
 * ISearchQuery
 **********************************************/
-export interface ISearchQuery extends SearchQuery,SearchMethods {
+export interface ISearchQuery extends SearchQuery, SearchMethods {
 
 }
 
 /*********************************************
 * Search
 **********************************************/
-export interface Search extends SearchCollections, SearchMethods {
+export interface Search extends SearchProps, SearchCollections, SearchMethods {
 
 }
 
@@ -1311,14 +1311,14 @@ export interface SearchPropMethods {
 /*********************************************
 * SearchCollections
 **********************************************/
-export interface SearchCollections extends SearchProps, SearchPropMethods {
+export interface SearchCollections extends SearchPropMethods {
 
 }
 
 /*********************************************
 * SearchQuery
 **********************************************/
-export interface SearchQuery extends SearchProps,SearchMethods {
+export interface SearchQuery extends SearchProps, SearchMethods {
 
 }
 
@@ -1343,14 +1343,14 @@ export interface ISpotlightVideo extends SpotlightVideoCollections,SpotlightVide
 /*********************************************
 * ISpotlightVideoQuery
 **********************************************/
-export interface ISpotlightVideoQuery extends SpotlightVideoQuery,SpotlightVideoMethods {
+export interface ISpotlightVideoQuery extends SpotlightVideoQuery, SpotlightVideoMethods {
 
 }
 
 /*********************************************
 * SpotlightVideo
 **********************************************/
-export interface SpotlightVideo extends SpotlightVideoCollections, SpotlightVideoMethods {
+export interface SpotlightVideo extends SpotlightVideoProps, SpotlightVideoCollections, SpotlightVideoMethods {
 
 }
 
@@ -1367,13 +1367,13 @@ export interface SpotlightVideoProps {
 * SpotlightVideoPropMethods
 **********************************************/
 export interface SpotlightVideoPropMethods {
-	Video(): IBaseExecution<SP.Publishing.VideoItem> & SP.Publishing.VideoItemCollections;
+	Video(): IBaseExecution<SP.Publishing.VideoItem> & SP.Publishing.VideoItemCollections & SP.Publishing.VideoItemMethods;
 }
 
 /*********************************************
 * SpotlightVideoCollections
 **********************************************/
-export interface SpotlightVideoCollections extends SpotlightVideoProps, SpotlightVideoPropMethods {
+export interface SpotlightVideoCollections extends SpotlightVideoPropMethods {
 
 }
 
@@ -1381,13 +1381,13 @@ export interface SpotlightVideoCollections extends SpotlightVideoProps, Spotligh
 * SpotlightVideoCollectionMethods
 **********************************************/
 export interface SpotlightVideoCollectionMethods {
-	getById(id?: number): IBaseExecution<SP.Publishing.SpotlightVideo>;
+	getById(id?: number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections;
 }
 
 /*********************************************
 * SpotlightVideoQuery
 **********************************************/
-export interface SpotlightVideoQuery extends SpotlightVideoProps,SpotlightVideoMethods {
+export interface SpotlightVideoQuery extends SpotlightVideoProps, SpotlightVideoMethods {
 	Video: SP.Publishing.VideoItem & SP.Publishing.VideoItemCollections;
 }
 
@@ -1434,14 +1434,14 @@ export interface IVideoPermissionGroup extends VideoPermissionGroupCollections,V
 /*********************************************
 * IVideoPermissionGroupQuery
 **********************************************/
-export interface IVideoPermissionGroupQuery extends VideoPermissionGroupQuery,VideoPermissionGroupMethods {
+export interface IVideoPermissionGroupQuery extends VideoPermissionGroupQuery, VideoPermissionGroupMethods {
 
 }
 
 /*********************************************
 * VideoPermissionGroup
 **********************************************/
-export interface VideoPermissionGroup extends VideoPermissionGroupCollections, VideoPermissionGroupMethods {
+export interface VideoPermissionGroup extends VideoPermissionGroupProps, VideoPermissionGroupCollections, VideoPermissionGroupMethods {
 
 }
 
@@ -1462,15 +1462,15 @@ export interface VideoPermissionGroupPropMethods {
 /*********************************************
 * VideoPermissionGroupCollections
 **********************************************/
-export interface VideoPermissionGroupCollections extends VideoPermissionGroupProps, VideoPermissionGroupPropMethods {
+export interface VideoPermissionGroupCollections extends VideoPermissionGroupPropMethods {
 	Users(): IBaseCollection<SP.User, SP.UserQuery> & SP.UserCollectionMethods;
-	Users(id: string | number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections;
+	Users(id: string | number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
 * VideoPermissionGroupQuery
 **********************************************/
-export interface VideoPermissionGroupQuery extends VideoPermissionGroupProps,VideoPermissionGroupMethods {
+export interface VideoPermissionGroupQuery extends VideoPermissionGroupProps, VideoPermissionGroupMethods {
 	Users: IBaseResults<SP.User>;
 }
 
@@ -1531,14 +1531,14 @@ export interface IVideoServiceManager extends VideoServiceManagerCollections,Vid
 /*********************************************
 * IVideoServiceManagerQuery
 **********************************************/
-export interface IVideoServiceManagerQuery extends VideoServiceManagerQuery,VideoServiceManagerMethods {
+export interface IVideoServiceManagerQuery extends VideoServiceManagerQuery, VideoServiceManagerMethods {
 
 }
 
 /*********************************************
 * VideoServiceManager
 **********************************************/
-export interface VideoServiceManager extends VideoServiceManagerCollections, VideoServiceManagerMethods {
+export interface VideoServiceManager extends VideoServiceManagerProps, VideoServiceManagerCollections, VideoServiceManagerMethods {
 
 }
 
@@ -1557,30 +1557,30 @@ export interface VideoServiceManagerProps {
 * VideoServiceManagerPropMethods
 **********************************************/
 export interface VideoServiceManagerPropMethods {
-	Search(): IBaseExecution<SP.Publishing.Search>;
+	Search(): IBaseExecution<SP.Publishing.Search> & SP.Publishing.SearchCollections & SP.Publishing.SearchMethods;
 }
 
 /*********************************************
 * VideoServiceManagerCollections
 **********************************************/
-export interface VideoServiceManagerCollections extends VideoServiceManagerProps, VideoServiceManagerPropMethods {
+export interface VideoServiceManagerCollections extends VideoServiceManagerPropMethods {
 	CanEditChannels(): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollectionMethods;
-	CanEditChannels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections;
+	CanEditChannels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
 	Channels(): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollectionMethods;
-	Channels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections;
+	Channels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
 	SpotlightChannels(): IBaseCollection<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery> & SP.Publishing.SpotlightChannelCollectionMethods;
-	SpotlightChannels(id: string | number): IBaseQuery<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery> & SP.Publishing.SpotlightChannelCollections;
+	SpotlightChannels(id: string | number): IBaseQuery<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery> & SP.Publishing.SpotlightChannelCollections & SP.Publishing.SpotlightChannelMethods;
 	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollectionMethods;
-	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections;
+	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections & SP.Publishing.SpotlightVideoMethods;
 }
 
 /*********************************************
 * VideoServiceManagerQuery
 **********************************************/
-export interface VideoServiceManagerQuery extends VideoServiceManagerProps,VideoServiceManagerMethods {
+export interface VideoServiceManagerQuery extends VideoServiceManagerProps, VideoServiceManagerMethods {
 	CanEditChannels: IBaseResults<SP.Publishing.VideoChannel>;
 	Channels: IBaseResults<SP.Publishing.VideoChannel>;
-	Search: SP.Publishing.Search;
+	Search: SP.Publishing.Search & SP.Publishing.SearchCollections;
 	SpotlightChannels: IBaseResults<SP.Publishing.SpotlightChannel>;
 	SpotlightVideos: IBaseResults<SP.Publishing.SpotlightVideo>;
 }
@@ -1613,5 +1613,5 @@ export interface VideoThumbnailCollections extends VideoThumbnailCollectionMetho
 * VideoThumbnailCollectionMethods
 **********************************************/
 export interface VideoThumbnailCollectionMethods {
-	getByIndex(choice?: number): IBaseExecution<SP.Publishing.VideoThumbnail>;
+	getByIndex(choice?: number): IBaseQuery<SP.Publishing.VideoThumbnail>;
 }
