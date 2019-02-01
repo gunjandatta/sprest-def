@@ -1,8 +1,8 @@
 import { IBaseExecution } from "../../";
 import { IBaseCollection } from "../../";
+import { IBaseQuery } from "../../";
 import { IBaseResults } from "../../";
 import { SP } from "../../";
-import { IBaseQuery } from "../../";
 
 /*********************************************
 * MarketplaceUtilities

@@ -387,6 +387,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         if (propName == "_Collections") {
                             // Update the references
                             updateReferences(fileImports, dirName, "IBaseCollection.");
+                            updateReferences(fileImports, dirName, "IBaseQuery.");
                             updateReferences(fileImports, dirName, "IBaseResults.");
 
                             // Parse the collections
@@ -401,11 +402,28 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     let methodInfo = methodTypes[methodKey][methodRole];
                                     let methodType = methodInfo.type || "any";
 
+                                    // Set the method query
+                                    let methodQuery = null;
+                                    let idx = methodType.lastIndexOf(".");
+                                    if (idx > 0) {
+                                        // Get the lib
+                                        let lib = methodType.substr(0, idx);
+
+                                        // Get the target method
+                                        let method = methodType.substr(idx + 1);
+
+                                        // See if methods exist
+                                        if (hasMethods[method]) {
+                                            // Set the method query
+                                            methodQuery = lib + ".I" + method + "Query";
+                                        }
+                                    }
+
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
                                         // Add the methods
                                         collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "CollectionMethods" : "") + ';');
-                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseExecution<' + methodType + '>' + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
+                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseQuery<' + methodType + (methodQuery ? ', ' + methodQuery : '') + '>' + (hasMethods[methodType] ? " & " + methodType + "Collections" : "") + ';');
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
                                         // Add the method

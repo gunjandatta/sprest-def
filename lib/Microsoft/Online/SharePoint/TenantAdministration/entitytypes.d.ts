@@ -589,7 +589,7 @@ export interface TenantProps {
 **********************************************/
 export interface TenantCollections extends TenantProps {
 	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
-	Sites(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections;
+	Sites(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections;
 }
 
 /*********************************************

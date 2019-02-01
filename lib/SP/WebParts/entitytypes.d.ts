@@ -1,8 +1,8 @@
 import { IBaseExecution } from "../../";
 import { IBaseCollection } from "../../";
+import { IBaseQuery } from "../../";
 import { IBaseResults } from "../../";
 import { SP } from "../../";
-import { IBaseQuery } from "../../";
 
 /*********************************************
 * ILimitedWebPartManager
@@ -38,7 +38,7 @@ export interface LimitedWebPartManagerProps {
 **********************************************/
 export interface LimitedWebPartManagerCollections extends LimitedWebPartManagerProps {
 	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition> & SP.WebParts.WebPartDefinitionCollectionMethods;
-	WebParts(id: string | number): IBaseExecution<SP.WebParts.WebPartDefinition> & SP.WebParts.WebPartDefinitionCollections;
+	WebParts(id: string | number): IBaseQuery<SP.WebParts.WebPartDefinition> & SP.WebParts.WebPartDefinitionCollections;
 }
 
 /*********************************************

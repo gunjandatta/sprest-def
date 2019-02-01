@@ -186,7 +186,7 @@ export interface VideoItemProps {
 **********************************************/
 export interface VideoItemCollections extends VideoItemProps {
 	PeopleInMedia(): IBaseCollection<SP.User> & SP.UserCollectionMethods;
-	PeopleInMedia(id: string | number): IBaseExecution<SP.User> & SP.UserCollections;
+	PeopleInMedia(id: string | number): IBaseQuery<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -331,7 +331,7 @@ export interface PointPublishingPostProps {
 **********************************************/
 export interface PointPublishingPostCollections extends PointPublishingPostProps {
 	images(): IBaseCollection<SP.File> & SP.FileCollectionMethods;
-	images(id: string | number): IBaseExecution<SP.File> & SP.FileCollections;
+	images(id: string | number): IBaseQuery<SP.File> & SP.FileCollections;
 }
 
 /*********************************************
@@ -390,15 +390,15 @@ export interface PointPublishingPostServiceManagerProps {
 **********************************************/
 export interface PointPublishingPostServiceManagerCollections extends PointPublishingPostServiceManagerProps {
 	bannerimages(): IBaseCollection<SP.File> & SP.FileCollectionMethods;
-	bannerimages(id: string | number): IBaseExecution<SP.File> & SP.FileCollections;
+	bannerimages(id: string | number): IBaseQuery<SP.File> & SP.FileCollections;
 	contributors(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
-	contributors(id: string | number): IBaseExecution<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
+	contributors(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
 	creators(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
-	creators(id: string | number): IBaseExecution<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
+	creators(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
 	posts(): IBaseCollection<SP.Publishing.PointPublishingPost> & SP.Publishing.PointPublishingPostCollectionMethods;
-	posts(id: string | number): IBaseExecution<SP.Publishing.PointPublishingPost> & SP.Publishing.PointPublishingPostCollections;
+	posts(id: string | number): IBaseQuery<SP.Publishing.PointPublishingPost> & SP.Publishing.PointPublishingPostCollections;
 	viewers(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
-	viewers(id: string | number): IBaseExecution<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
+	viewers(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections;
 }
 
 /*********************************************
@@ -995,7 +995,7 @@ export interface SitePageServiceProps {
 **********************************************/
 export interface SitePageServiceCollections extends SitePageServiceProps {
 	Pages(): IBaseCollection<SP.Publishing.SitePage> & SP.Publishing.SitePageCollectionMethods;
-	Pages(id: string | number): IBaseExecution<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections;
+	Pages(id: string | number): IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections;
 }
 
 /*********************************************
@@ -1122,9 +1122,9 @@ export interface VideoChannelProps {
 **********************************************/
 export interface VideoChannelCollections extends VideoChannelProps {
 	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo> & SP.Publishing.SpotlightVideoCollectionMethods;
-	SpotlightVideos(id: string | number): IBaseExecution<SP.Publishing.SpotlightVideo> & SP.Publishing.SpotlightVideoCollections;
+	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo> & SP.Publishing.SpotlightVideoCollections;
 	Videos(): IBaseCollection<SP.Publishing.VideoItem> & SP.Publishing.VideoItemCollectionMethods;
-	Videos(id: string | number): IBaseExecution<SP.Publishing.VideoItem> & SP.Publishing.VideoItemCollections;
+	Videos(id: string | number): IBaseQuery<SP.Publishing.VideoItem> & SP.Publishing.VideoItemCollections;
 }
 
 /*********************************************
@@ -1325,7 +1325,7 @@ export interface VideoPermissionGroupProps {
 **********************************************/
 export interface VideoPermissionGroupCollections extends VideoPermissionGroupProps {
 	Users(): IBaseCollection<SP.User> & SP.UserCollectionMethods;
-	Users(id: string | number): IBaseExecution<SP.User> & SP.UserCollections;
+	Users(id: string | number): IBaseQuery<SP.User> & SP.UserCollections;
 }
 
 /*********************************************
@@ -1419,13 +1419,13 @@ export interface VideoServiceManagerProps {
 **********************************************/
 export interface VideoServiceManagerCollections extends VideoServiceManagerProps {
 	CanEditChannels(): IBaseCollection<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollectionMethods;
-	CanEditChannels(id: string | number): IBaseExecution<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections;
+	CanEditChannels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections;
 	Channels(): IBaseCollection<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollectionMethods;
-	Channels(id: string | number): IBaseExecution<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections;
+	Channels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections;
 	SpotlightChannels(): IBaseCollection<SP.Publishing.SpotlightChannel> & SP.Publishing.SpotlightChannelCollectionMethods;
-	SpotlightChannels(id: string | number): IBaseExecution<SP.Publishing.SpotlightChannel> & SP.Publishing.SpotlightChannelCollections;
+	SpotlightChannels(id: string | number): IBaseQuery<SP.Publishing.SpotlightChannel> & SP.Publishing.SpotlightChannelCollections;
 	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo> & SP.Publishing.SpotlightVideoCollectionMethods;
-	SpotlightVideos(id: string | number): IBaseExecution<SP.Publishing.SpotlightVideo> & SP.Publishing.SpotlightVideoCollections;
+	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo> & SP.Publishing.SpotlightVideoCollections;
 }
 
 /*********************************************

@@ -1,5 +1,6 @@
 import { IBaseExecution } from "../../../";
 import { IBaseCollection } from "../../../";
+import { IBaseQuery } from "../../../";
 import { IBaseResults } from "../../../";
 import { Microsoft } from "../../../";
 
@@ -37,7 +38,7 @@ export interface likedByInformationProps {
 **********************************************/
 export interface likedByInformationCollections extends likedByInformationProps {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
-	likedBy(id: string | number): IBaseExecution<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity>;
 }
 
 /*********************************************

@@ -134,7 +134,7 @@ export interface FolderProps {
 **********************************************/
 export interface FolderCollections extends FolderProps {
 	Children(): IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
-	Children(id: string | number): IBaseExecution<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
+	Children(id: string | number): IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
 
 /*********************************************

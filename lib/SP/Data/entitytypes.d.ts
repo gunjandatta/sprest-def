@@ -1,6 +1,7 @@
 import { IBaseExecution } from "../../";
 import { SP } from "../../";
 import { IBaseCollection } from "../../";
+import { IBaseQuery } from "../../";
 import { IBaseResults } from "../../";
 
 /*********************************************
@@ -982,7 +983,7 @@ export interface DevListItemProps {
 **********************************************/
 export interface DevListItemCollections extends DevListItemProps {
 	Multi_x0020_Lookup(): IBaseCollection<SP.Data.DevListItem>;
-	Multi_x0020_Lookup(id: string | number): IBaseExecution<SP.Data.DevListItem>;
+	Multi_x0020_Lookup(id: string | number): IBaseQuery<SP.Data.DevListItem>;
 }
 
 /*********************************************
@@ -1252,7 +1253,7 @@ export interface Shared_x0020_DocumentsItemProps {
 **********************************************/
 export interface Shared_x0020_DocumentsItemCollections extends Shared_x0020_DocumentsItemProps {
 	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem>;
-	SharedWithUsers(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 }
 
 /*********************************************
@@ -1379,7 +1380,7 @@ export interface Event_x0020_CalloutListItemProps {
 **********************************************/
 export interface Event_x0020_CalloutListItemCollections extends Event_x0020_CalloutListItemProps {
 	ParticipantsPicker(): IBaseCollection<SP.Data.UserInfoItem>;
-	ParticipantsPicker(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	ParticipantsPicker(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 }
 
 /*********************************************
@@ -2142,9 +2143,9 @@ export interface PublishedFeedListItemProps {
 **********************************************/
 export interface PublishedFeedListItemCollections extends PublishedFeedListItemProps {
 	LikedBy(): IBaseCollection<SP.Data.UserInfoItem>;
-	LikedBy(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	LikedBy(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem>;
-	TaxCatchAll(id: string | number): IBaseExecution<SP.Data.TaxonomyHiddenListListItem>;
+	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem>;
 }
 
 /*********************************************
@@ -3051,7 +3052,7 @@ export interface SiteAssetsItemProps {
 **********************************************/
 export interface SiteAssetsItemCollections extends SiteAssetsItemProps {
 	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem>;
-	SharedWithUsers(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 }
 
 /*********************************************
@@ -3277,7 +3278,7 @@ export interface SiteCollectionImagesItemProps {
 **********************************************/
 export interface SiteCollectionImagesItemCollections extends SiteCollectionImagesItemProps {
 	PeopleInMedia(): IBaseCollection<SP.Data.UserInfoItem>;
-	PeopleInMedia(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	PeopleInMedia(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 }
 
 /*********************************************
@@ -3405,9 +3406,9 @@ export interface SitePagesItemProps {
 **********************************************/
 export interface SitePagesItemCollections extends SitePagesItemProps {
 	SharedWithUsers(): IBaseCollection<SP.Data.UserInfoItem>;
-	SharedWithUsers(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	SharedWithUsers(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 	OData__AuthorByline(): IBaseCollection<SP.Data.UserInfoItem>;
-	OData__AuthorByline(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	OData__AuthorByline(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 }
 
 /*********************************************
@@ -3607,11 +3608,11 @@ export interface SPReactListItemProps {
 **********************************************/
 export interface SPReactListItemCollections extends SPReactListItemProps {
 	TestMultiUser(): IBaseCollection<SP.Data.UserInfoItem>;
-	TestMultiUser(id: string | number): IBaseExecution<SP.Data.UserInfoItem>;
+	TestMultiUser(id: string | number): IBaseQuery<SP.Data.UserInfoItem>;
 	TestMultiLookup(): IBaseCollection<SP.Data.SPReactListItem>;
-	TestMultiLookup(id: string | number): IBaseExecution<SP.Data.SPReactListItem>;
+	TestMultiLookup(id: string | number): IBaseQuery<SP.Data.SPReactListItem>;
 	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem>;
-	TaxCatchAll(id: string | number): IBaseExecution<SP.Data.TaxonomyHiddenListListItem>;
+	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem>;
 }
 
 /*********************************************
@@ -3936,7 +3937,7 @@ export interface TeamMembersListItemProps {
 **********************************************/
 export interface TeamMembersListItemCollections extends TeamMembersListItemProps {
 	TaxCatchAll(): IBaseCollection<SP.Data.TaxonomyHiddenListListItem>;
-	TaxCatchAll(id: string | number): IBaseExecution<SP.Data.TaxonomyHiddenListListItem>;
+	TaxCatchAll(id: string | number): IBaseQuery<SP.Data.TaxonomyHiddenListListItem>;
 }
 
 /*********************************************
@@ -4650,7 +4651,7 @@ export interface WorkflowTasksItemProps {
 **********************************************/
 export interface WorkflowTasksItemCollections extends WorkflowTasksItemProps {
 	Predecessors(): IBaseCollection<SP.Data.WorkflowTasksItem>;
-	Predecessors(id: string | number): IBaseExecution<SP.Data.WorkflowTasksItem>;
+	Predecessors(id: string | number): IBaseQuery<SP.Data.WorkflowTasksItem>;
 }
 
 /*********************************************

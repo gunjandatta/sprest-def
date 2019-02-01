@@ -307,7 +307,7 @@ export interface MethodExecutionResultProps {
 **********************************************/
 export interface MethodExecutionResultCollections extends MethodExecutionResultProps {
 	ReturnParameterCollection(): IBaseCollection<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
-	ReturnParameterCollection(id: string | number): IBaseExecution<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+	ReturnParameterCollection(id: string | number): IBaseQuery<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 }
 
 /*********************************************
@@ -358,7 +358,7 @@ export interface EntityViewProps {
 **********************************************/
 export interface EntityViewCollections extends EntityViewProps {
 	Fields(): IBaseCollection<SP.BusinessData.EntityField>;
-	Fields(id: string | number): IBaseExecution<SP.BusinessData.EntityField>;
+	Fields(id: string | number): IBaseQuery<SP.BusinessData.EntityField>;
 }
 
 /*********************************************

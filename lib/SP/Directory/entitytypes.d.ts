@@ -111,9 +111,9 @@ export interface GroupProps {
 **********************************************/
 export interface GroupCollections extends GroupProps {
 	members(): IBaseCollection<SP.Directory.User> & SP.Directory.UserCollectionMethods;
-	members(id: string | number): IBaseExecution<SP.Directory.User> & SP.Directory.UserCollections;
+	members(id: string | number): IBaseQuery<SP.Directory.User> & SP.Directory.UserCollections;
 	owners(): IBaseCollection<SP.Directory.User> & SP.Directory.UserCollectionMethods;
-	owners(id: string | number): IBaseExecution<SP.Directory.User> & SP.Directory.UserCollections;
+	owners(id: string | number): IBaseQuery<SP.Directory.User> & SP.Directory.UserCollections;
 }
 
 /*********************************************
@@ -211,11 +211,11 @@ export interface UserProps {
 **********************************************/
 export interface UserCollections extends UserProps {
 	membership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
-	membership(id: string | number): IBaseExecution<SP.Directory.Group> & SP.Directory.GroupCollections;
+	membership(id: string | number): IBaseQuery<SP.Directory.Group> & SP.Directory.GroupCollections;
 	ownership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
-	ownership(id: string | number): IBaseExecution<SP.Directory.Group> & SP.Directory.GroupCollections;
+	ownership(id: string | number): IBaseQuery<SP.Directory.Group> & SP.Directory.GroupCollections;
 	rankedMembership(): IBaseCollection<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
-	rankedMembership(id: string | number): IBaseExecution<SP.Directory.Group> & SP.Directory.GroupCollections;
+	rankedMembership(id: string | number): IBaseQuery<SP.Directory.Group> & SP.Directory.GroupCollections;
 }
 
 /*********************************************

@@ -1,8 +1,8 @@
 import { IBaseExecution } from "../../../../";
 import { IBaseCollection } from "../../../../";
+import { IBaseQuery } from "../../../../";
 import { IBaseResults } from "../../../../";
 import { Microsoft } from "../../../../";
-import { IBaseQuery } from "../../../../";
 import { SP } from "../../../../";
 
 /*********************************************
@@ -66,7 +66,7 @@ export interface GetExternalUsersResultsProps {
 **********************************************/
 export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsProps {
 	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollectionMethods;
-	ExternalUserCollection(id: string | number): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollections;
+	ExternalUserCollection(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollections;
 }
 
 /*********************************************

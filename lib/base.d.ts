@@ -1,7 +1,7 @@
 /**
  * Base Execution
  */
-export interface IBaseExecution<Type = any, Result = Type, QueryResult = Result> {
+export interface IBaseExecution<Type = any, Result = Type> {
     /**
      * Method to execute the request as a batch.
      * Currently available in SharePoint Online only.
@@ -73,7 +73,7 @@ export interface IBaseExecution<Type = any, Result = Type, QueryResult = Result>
 /**
  * Base Query
  */
-export interface IBaseQuery<Type = any, Result = Type> extends IBaseExecution<Type, Result> {
+export interface IBaseQuery<Type = any, Result = Type> extends IBaseExecution<Type> {
     /**
      * Queries the collection.
      * @param oData - The OData information.

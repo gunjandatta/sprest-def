@@ -464,9 +464,9 @@ export interface NonTaskDataReadResultProps {
 **********************************************/
 export interface NonTaskDataReadResultCollections extends NonTaskDataReadResultProps {
 	AllLocatons(): IBaseCollection<SP.WorkManagement.OM.Location>;
-	AllLocatons(id: string | number): IBaseExecution<SP.WorkManagement.OM.Location>;
+	AllLocatons(id: string | number): IBaseQuery<SP.WorkManagement.OM.Location>;
 	ScriptExtensions(): IBaseCollection<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
-	ScriptExtensions(id: string | number): IBaseExecution<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
+	ScriptExtensions(id: string | number): IBaseQuery<SP.WorkManagement.OM.DashboardScriptExtensionInfo>;
 }
 
 /*********************************************
@@ -535,7 +535,7 @@ export interface RefreshHistoryProps {
 **********************************************/
 export interface RefreshHistoryCollections extends RefreshHistoryProps {
 	Refreshes(): IBaseCollection<SP.WorkManagement.OM.RefreshResult>;
-	Refreshes(id: string | number): IBaseExecution<SP.WorkManagement.OM.RefreshResult>;
+	Refreshes(id: string | number): IBaseQuery<SP.WorkManagement.OM.RefreshResult>;
 }
 
 /*********************************************
@@ -588,9 +588,9 @@ export interface RefreshResultProps {
 **********************************************/
 export interface RefreshResultCollections extends RefreshResultProps {
 	ProviderStatuses(): IBaseCollection<SP.WorkManagement.OM.ProviderRefreshStatus>;
-	ProviderStatuses(id: string | number): IBaseExecution<SP.WorkManagement.OM.ProviderRefreshStatus>;
+	ProviderStatuses(id: string | number): IBaseQuery<SP.WorkManagement.OM.ProviderRefreshStatus>;
 	TaskChangesByLocation(): IBaseCollection<SP.WorkManagement.OM.LocationUpdateResult>;
-	TaskChangesByLocation(id: string | number): IBaseExecution<SP.WorkManagement.OM.LocationUpdateResult>;
+	TaskChangesByLocation(id: string | number): IBaseQuery<SP.WorkManagement.OM.LocationUpdateResult>;
 }
 
 /*********************************************
@@ -714,7 +714,7 @@ export interface RefreshHealthInfoProps {
 **********************************************/
 export interface RefreshHealthInfoCollections extends RefreshHealthInfoProps {
 	ProviderErrors(): IBaseCollection<SP.WorkManagement.OM.ProviderErrorInfo>;
-	ProviderErrors(id: string | number): IBaseExecution<SP.WorkManagement.OM.ProviderErrorInfo>;
+	ProviderErrors(id: string | number): IBaseQuery<SP.WorkManagement.OM.ProviderErrorInfo>;
 }
 
 /*********************************************
@@ -926,7 +926,7 @@ export interface TaskQueryByLocationResultProps {
 **********************************************/
 export interface TaskQueryByLocationResultCollections extends TaskQueryByLocationResultProps {
 	Results(): IBaseCollection<SP.WorkManagement.OM.Task>;
-	Results(id: string | number): IBaseExecution<SP.WorkManagement.OM.Task>;
+	Results(id: string | number): IBaseQuery<SP.WorkManagement.OM.Task>;
 }
 
 /*********************************************
@@ -977,7 +977,7 @@ export interface TaskQueryResultProps {
 **********************************************/
 export interface TaskQueryResultCollections extends TaskQueryResultProps {
 	Results(): IBaseCollection<SP.WorkManagement.OM.Task>;
-	Results(id: string | number): IBaseExecution<SP.WorkManagement.OM.Task>;
+	Results(id: string | number): IBaseQuery<SP.WorkManagement.OM.Task>;
 }
 
 /*********************************************

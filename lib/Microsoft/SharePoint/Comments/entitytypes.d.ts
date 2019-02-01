@@ -1,9 +1,9 @@
 import { IBaseExecution } from "../../../";
 import { IBaseCollection } from "../../../";
+import { IBaseQuery } from "../../../";
 import { IBaseResults } from "../../../";
 import { Microsoft } from "../../../";
 import { SP } from "../../../";
-import { IBaseQuery } from "../../../";
 
 /*********************************************
 * Icomment
@@ -50,9 +50,9 @@ export interface commentProps {
 **********************************************/
 export interface commentCollections extends commentProps {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
-	likedBy(id: string | number): IBaseExecution<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity>;
 	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollectionMethods;
-	replies(id: string | number): IBaseExecution<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollections;
+	replies(id: string | number): IBaseQuery<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollections;
 }
 
 /*********************************************

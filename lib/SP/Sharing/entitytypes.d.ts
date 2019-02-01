@@ -1,6 +1,7 @@
 import { IBaseExecution } from "../../";
 import { SP } from "../../";
 import { IBaseCollection } from "../../";
+import { IBaseQuery } from "../../";
 import { IBaseResults } from "../../";
 
 /*********************************************
