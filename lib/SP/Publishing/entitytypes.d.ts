@@ -198,8 +198,8 @@ export interface VideoItemProps {
 * VideoItemPropMethods
 **********************************************/
 export interface VideoItemPropMethods {
-	Author(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
-	Owner(): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
+	Author(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
+	Owner(): IBaseExecution<SP.User> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -419,7 +419,7 @@ export interface PointPublishingPostServiceManagerProps {
 * PointPublishingPostServiceManagerPropMethods
 **********************************************/
 export interface PointPublishingPostServiceManagerPropMethods {
-	magazineprops(): IBaseQuery<SP.Publishing.PointPublishingMagazineProps> & SP.Publishing.PointPublishingMagazinePropsCollections;
+	magazineprops(): IBaseExecution<SP.Publishing.PointPublishingMagazineProps> & SP.Publishing.PointPublishingMagazinePropsCollections;
 }
 
 /*********************************************
@@ -1089,7 +1089,7 @@ export interface SitePageServiceProps {
 * SitePageServicePropMethods
 **********************************************/
 export interface SitePageServicePropMethods {
-	CommunicationSite(): IBaseQuery<SP.Publishing.CommunicationSite> & SP.Publishing.CommunicationSiteCollections & SP.Publishing.CommunicationSiteMethods;
+	CommunicationSite(): IBaseExecution<SP.Publishing.CommunicationSite> & SP.Publishing.CommunicationSiteCollections & SP.Publishing.CommunicationSiteMethods;
 }
 
 /*********************************************
@@ -1154,7 +1154,7 @@ export interface SpotlightChannelProps {
 * SpotlightChannelPropMethods
 **********************************************/
 export interface SpotlightChannelPropMethods {
-	Channel(): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
+	Channel(): IBaseExecution<SP.Publishing.VideoChannel> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
 }
 
 /*********************************************
@@ -1231,7 +1231,7 @@ export interface VideoChannelProps {
 * VideoChannelPropMethods
 **********************************************/
 export interface VideoChannelPropMethods {
-	Search(): IBaseQuery<SP.Publishing.Search> & SP.Publishing.SearchCollections & SP.Publishing.SearchMethods;
+	Search(): IBaseExecution<SP.Publishing.Search> & SP.Publishing.SearchCollections & SP.Publishing.SearchMethods;
 }
 
 /*********************************************
@@ -1367,7 +1367,7 @@ export interface SpotlightVideoProps {
 * SpotlightVideoPropMethods
 **********************************************/
 export interface SpotlightVideoPropMethods {
-	Video(): IBaseQuery<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollections & SP.Publishing.VideoItemMethods;
+	Video(): IBaseExecution<SP.Publishing.VideoItem> & SP.Publishing.VideoItemCollections & SP.Publishing.VideoItemMethods;
 }
 
 /*********************************************
@@ -1557,7 +1557,7 @@ export interface VideoServiceManagerProps {
 * VideoServiceManagerPropMethods
 **********************************************/
 export interface VideoServiceManagerPropMethods {
-	Search(): IBaseQuery<SP.Publishing.Search> & SP.Publishing.SearchCollections & SP.Publishing.SearchMethods;
+	Search(): IBaseExecution<SP.Publishing.Search> & SP.Publishing.SearchCollections & SP.Publishing.SearchMethods;
 }
 
 /*********************************************

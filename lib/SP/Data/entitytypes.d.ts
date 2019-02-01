@@ -1079,9 +1079,9 @@ export interface DevListItemProps {
 * DevListItemPropMethods
 **********************************************/
 export interface DevListItemPropMethods {
-	User(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	User(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -1376,9 +1376,9 @@ export interface Shared_x0020_DocumentsItemProps {
 * Shared_x0020_DocumentsItemPropMethods
 **********************************************/
 export interface Shared_x0020_DocumentsItemPropMethods {
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	CheckoutUser(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -1514,8 +1514,8 @@ export interface Event_x0020_CalloutListItemProps {
 * Event_x0020_CalloutListItemPropMethods
 **********************************************/
 export interface Event_x0020_CalloutListItemPropMethods {
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -2357,8 +2357,8 @@ export interface PublishedFeedListItemProps {
 * PublishedFeedListItemPropMethods
 **********************************************/
 export interface PublishedFeedListItemPropMethods {
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -3354,9 +3354,9 @@ export interface SiteAssetsItemProps {
 * SiteAssetsItemPropMethods
 **********************************************/
 export interface SiteAssetsItemPropMethods {
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	CheckoutUser(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -3598,10 +3598,10 @@ export interface SiteCollectionImagesItemProps {
 * SiteCollectionImagesItemPropMethods
 **********************************************/
 export interface SiteCollectionImagesItemPropMethods {
-	VideoSetOwner(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	VideoSetOwner(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	CheckoutUser(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -3738,9 +3738,9 @@ export interface SitePagesItemProps {
 * SitePagesItemPropMethods
 **********************************************/
 export interface SitePagesItemPropMethods {
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	CheckoutUser(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -3958,10 +3958,10 @@ export interface SPReactListItemProps {
 * SPReactListItemPropMethods
 **********************************************/
 export interface SPReactListItemPropMethods {
-	TestUser(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	TestLookup(): IBaseQuery<SP.Data.SPReactListItem, SP.Data.SPReactListItemQuery> & SP.Data.SPReactListItemCollections;
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	TestUser(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	TestLookup(): IBaseExecution<SP.Data.SPReactListItem> & SP.Data.SPReactListItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -4325,9 +4325,9 @@ export interface TeamMembersListItemProps {
 * TeamMembersListItemPropMethods
 **********************************************/
 export interface TeamMembersListItemPropMethods {
-	TeamMember(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	TeamMember(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -5118,10 +5118,10 @@ export interface WorkflowTasksItemProps {
 * WorkflowTasksItemPropMethods
 **********************************************/
 export interface WorkflowTasksItemPropMethods {
-	Author(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	Editor(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	AssignedTo(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
-	TaskGroup(): IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemQuery> & SP.Data.UserInfoItemCollections;
+	Author(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	Editor(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	AssignedTo(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
+	TaskGroup(): IBaseExecution<SP.Data.UserInfoItem> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************

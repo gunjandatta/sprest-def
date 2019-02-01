@@ -192,6 +192,19 @@ module.exports = {
         }
     ],
 
+    // Files
+    "Collection(SP.File)": [
+        {
+            name: "add",
+            returnType: "SP.File",
+            params: [
+                { $: { Name: "Url", Type: "string" } },
+                { $: { Name: "Overwrite", Type: "boolean" } },
+                { $: { Name: "Content", Type: "any" } }
+            ]
+        }
+    ],
+
     // Folder
     "SP.Folder": [
         {

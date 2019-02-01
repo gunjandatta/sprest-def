@@ -96,7 +96,7 @@ export interface WebPartDefinitionProps {
 * WebPartDefinitionPropMethods
 **********************************************/
 export interface WebPartDefinitionPropMethods {
-	WebPart(): IBaseQuery<SP.WebParts.WebPart, SP.WebParts.WebPartQuery> & SP.WebParts.WebPartCollections;
+	WebPart(): IBaseExecution<SP.WebParts.WebPart> & SP.WebParts.WebPartCollections;
 }
 
 /*********************************************

@@ -482,9 +482,9 @@ export interface NonTaskDataReadResultProps {
 * NonTaskDataReadResultPropMethods
 **********************************************/
 export interface NonTaskDataReadResultPropMethods {
-	PersistedProperties(): IBaseQuery<SP.WorkManagement.OM.PersistedProperties> & SP.WorkManagement.OM.PersistedPropertiesCollections;
-	RefreshHistory(): IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryQuery> & SP.WorkManagement.OM.RefreshHistoryCollections;
-	UserSettings(): IBaseQuery<SP.WorkManagement.OM.UserSettings> & SP.WorkManagement.OM.UserSettingsCollections;
+	PersistedProperties(): IBaseExecution<SP.WorkManagement.OM.PersistedProperties> & SP.WorkManagement.OM.PersistedPropertiesCollections;
+	RefreshHistory(): IBaseExecution<SP.WorkManagement.OM.RefreshHistory> & SP.WorkManagement.OM.RefreshHistoryCollections;
+	UserSettings(): IBaseExecution<SP.WorkManagement.OM.UserSettings> & SP.WorkManagement.OM.UserSettingsCollections;
 }
 
 /*********************************************
