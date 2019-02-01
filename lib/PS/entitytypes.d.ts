@@ -191,7 +191,7 @@ export interface CustomFieldCollections extends CustomFieldProps {
 * CustomFieldCollectionMethods
 **********************************************/
 export interface CustomFieldCollectionMethods {
-	add(parameters?: PS.CustomFieldCreationInformation | any): IBaseExecution<PS.CustomField>;
+	add(parameters?: PS.CustomFieldCreationInformation): IBaseExecution<PS.CustomField>;
 	getByAppAlternateId(objectId?: string): IBaseExecution<PS.CustomField>;
 	getByGuid(uid?: any): IBaseExecution<PS.CustomField>;
 	getById(objectId?: string): IBaseExecution<PS.CustomField>;
@@ -209,7 +209,7 @@ export interface CustomFieldQuery extends CustomFieldProps {
 * CustomFieldMethods
 **********************************************/
 export interface CustomFieldMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -256,7 +256,7 @@ export interface LookupEntryCollections extends LookupEntryProps {
 * LookupEntryCollectionMethods
 **********************************************/
 export interface LookupEntryCollectionMethods {
-	add(parameters?: PS.LookupEntryCreationInformation | any): IBaseExecution<PS.LookupEntry>;
+	add(parameters?: PS.LookupEntryCreationInformation): IBaseExecution<PS.LookupEntry>;
 	getByAppAlternateId(objectId?: string): IBaseExecution<PS.LookupEntry>;
 	getByGuid(uid?: any): IBaseExecution<PS.LookupEntry>;
 	getById(objectId?: string): IBaseExecution<PS.LookupEntry>;
@@ -273,7 +273,7 @@ export interface LookupEntryQuery extends LookupEntryProps {
 * LookupEntryMethods
 **********************************************/
 export interface LookupEntryMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -321,7 +321,7 @@ export interface LookupTableCollections extends LookupTableProps {
 * LookupTableCollectionMethods
 **********************************************/
 export interface LookupTableCollectionMethods {
-	add(parameters?: PS.LookupTableCreationInformation | any): IBaseExecution<PS.LookupTable>;
+	add(parameters?: PS.LookupTableCreationInformation): IBaseExecution<PS.LookupTable>;
 	getByAppAlternateId(objectId?: string): IBaseExecution<PS.LookupTable>;
 	getByGuid(uid?: any): IBaseExecution<PS.LookupTable>;
 	getById(objectId?: string): IBaseExecution<PS.LookupTable>;
@@ -340,7 +340,7 @@ export interface LookupTableQuery extends LookupTableProps {
 **********************************************/
 export interface LookupTableMethods {
 	addMask(mask?: PS.LookupMask): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	updateMask(mask?: PS.LookupMask, level?: number): IBaseExecution<any>;
 }
 
@@ -402,7 +402,7 @@ export interface CalendarExceptionCollections extends CalendarExceptionProps {
 * CalendarExceptionCollectionMethods
 **********************************************/
 export interface CalendarExceptionCollectionMethods {
-	add(parameters?: PS.CalendarExceptionCreationInformation | any): IBaseExecution<PS.CalendarException>;
+	add(parameters?: PS.CalendarExceptionCreationInformation): IBaseExecution<PS.CalendarException>;
 	getById(id?: number): IBaseExecution<PS.CalendarException>;
 }
 
@@ -417,7 +417,7 @@ export interface CalendarExceptionQuery extends CalendarExceptionProps {
 * CalendarExceptionMethods
 **********************************************/
 export interface CalendarExceptionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -465,7 +465,7 @@ export interface CalendarCollections extends CalendarProps {
 * CalendarCollectionMethods
 **********************************************/
 export interface CalendarCollectionMethods {
-	add(parameters?: PS.CalendarCreationInformation | any): IBaseExecution<PS.Calendar>;
+	add(parameters?: PS.CalendarCreationInformation): IBaseExecution<PS.Calendar>;
 	getByGuid(uid?: any): IBaseExecution<PS.Calendar>;
 	getById(objectId?: string): IBaseExecution<PS.Calendar>;
 	update(): IBaseExecution<any>;
@@ -483,7 +483,7 @@ export interface CalendarQuery extends CalendarProps {
 **********************************************/
 export interface CalendarMethods {
 	copyTo(name?: string): IBaseExecution<PS.Calendar>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -532,7 +532,7 @@ export interface BaseCalendarExceptionQuery extends BaseCalendarExceptionProps {
 * BaseCalendarExceptionMethods
 **********************************************/
 export interface BaseCalendarExceptionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -616,7 +616,7 @@ export interface DraftAssignmentCollections extends DraftAssignmentProps {
 * DraftAssignmentCollectionMethods
 **********************************************/
 export interface DraftAssignmentCollectionMethods {
-	add(parameters?: PS.AssignmentCreationInformation | any): IBaseExecution<PS.DraftAssignment>;
+	add(parameters?: PS.AssignmentCreationInformation): IBaseExecution<PS.DraftAssignment>;
 	getByGuid(uid?: any): IBaseExecution<PS.DraftAssignment>;
 	getById(objectId?: string): IBaseExecution<PS.DraftAssignment>;
 }
@@ -632,7 +632,7 @@ export interface DraftAssignmentQuery extends DraftAssignmentProps {
 * DraftAssignmentMethods
 **********************************************/
 export interface DraftAssignmentMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -826,7 +826,7 @@ export interface EnterpriseResourceCollections extends EnterpriseResourceProps {
 * EnterpriseResourceCollectionMethods
 **********************************************/
 export interface EnterpriseResourceCollectionMethods {
-	add(parameters?: PS.EnterpriseResourceCreationInformation | any): IBaseExecution<PS.EnterpriseResource>;
+	add(parameters?: PS.EnterpriseResourceCreationInformation): IBaseExecution<PS.EnterpriseResource>;
 	getByGuid(uid?: any): IBaseExecution<PS.EnterpriseResource>;
 	getById(objectId?: string): IBaseExecution<PS.EnterpriseResource>;
 	update(): IBaseExecution<any>;
@@ -848,7 +848,7 @@ export interface EnterpriseResourceQuery extends EnterpriseResourceProps {
 * EnterpriseResourceMethods
 **********************************************/
 export interface EnterpriseResourceMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	forceCheckIn(): IBaseExecution<any>;
 	updateClaimsAccount(newClaimsAccount?: string): IBaseExecution<any>;
 }
@@ -928,7 +928,7 @@ export interface StatusAssignmentCollections extends StatusAssignmentProps {
 * StatusAssignmentCollectionMethods
 **********************************************/
 export interface StatusAssignmentCollectionMethods {
-	add(parameters?: PS.StatusAssignmentCreationInformation | any): IBaseExecution<PS.StatusAssignment>;
+	add(parameters?: PS.StatusAssignmentCreationInformation): IBaseExecution<PS.StatusAssignment>;
 	getByGuid(uid?: any): IBaseExecution<PS.StatusAssignment>;
 	getById(objectId?: string): IBaseExecution<PS.StatusAssignment>;
 	getTimePhaseByUrl(start?: string, end?: string): IBaseExecution<PS.TimePhase>;
@@ -948,7 +948,7 @@ export interface StatusAssignmentQuery extends StatusAssignmentProps {
 * StatusAssignmentMethods
 **********************************************/
 export interface StatusAssignmentMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	submitStatusUpdates(comment?: string): IBaseExecution<any>;
 }
 
@@ -1159,7 +1159,7 @@ export interface EngagementCommentCollections extends EngagementCommentCollectio
 * EngagementCommentCollectionMethods
 **********************************************/
 export interface EngagementCommentCollectionMethods {
-	add(comment?: string | any): IBaseExecution<PS.EngagementComment>;
+	add(comment?: string): IBaseExecution<PS.EngagementComment>;
 }
 
 /*********************************************
@@ -1213,7 +1213,7 @@ export interface ProjectEngagementCollections extends ProjectEngagementProps {
 * ProjectEngagementCollectionMethods
 **********************************************/
 export interface ProjectEngagementCollectionMethods {
-	add(parameters?: PS.ProjectEngagementCreationInformation | any): IBaseExecution<PS.ProjectEngagement>;
+	add(parameters?: PS.ProjectEngagementCreationInformation): IBaseExecution<PS.ProjectEngagement>;
 	getByGuid(uid?: any): IBaseExecution<PS.ProjectEngagement>;
 	getById(objectId?: string): IBaseExecution<PS.ProjectEngagement>;
 	update(): IBaseExecution<any>;
@@ -1230,7 +1230,7 @@ export interface ProjectEngagementQuery extends ProjectEngagementProps {
 * ProjectEngagementMethods
 **********************************************/
 export interface ProjectEngagementMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): IBaseExecution<Array<PS.ProjectEngagementTimephasedPeriod>>;
 }
 
@@ -1290,7 +1290,7 @@ export interface EnterpriseProjectTypeCollections extends EnterpriseProjectTypeP
 * EnterpriseProjectTypeCollectionMethods
 **********************************************/
 export interface EnterpriseProjectTypeCollectionMethods {
-	add(parameters?: PS.EnterpriseProjectTypeCreationInformation | any): IBaseExecution<PS.EnterpriseProjectType>;
+	add(parameters?: PS.EnterpriseProjectTypeCreationInformation): IBaseExecution<PS.EnterpriseProjectType>;
 	getByGuid(uid?: any): IBaseExecution<PS.EnterpriseProjectType>;
 	getById(objectId?: string): IBaseExecution<PS.EnterpriseProjectType>;
 	update(): IBaseExecution<any>;
@@ -1308,7 +1308,7 @@ export interface EnterpriseProjectTypeQuery extends EnterpriseProjectTypeProps {
 **********************************************/
 export interface EnterpriseProjectTypeMethods {
 	addDepartment(departmentValueGuid?: any): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	removeDepartment(departmentValueGuid?: any): IBaseExecution<any>;
 	updateCreatePDP(pdp?: PS.ProjectDetailPageCreationInformation): IBaseExecution<any>;
 }
@@ -1394,7 +1394,7 @@ export interface PhaseCollections extends PhaseProps {
 * PhaseCollectionMethods
 **********************************************/
 export interface PhaseCollectionMethods {
-	add(parameters?: PS.PhaseCreationInformation | any): IBaseExecution<PS.Phase>;
+	add(parameters?: PS.PhaseCreationInformation): IBaseExecution<PS.Phase>;
 	getByGuid(uid?: any): IBaseExecution<PS.Phase>;
 	getById(objectId?: string): IBaseExecution<PS.Phase>;
 	update(): IBaseExecution<any>;
@@ -1411,7 +1411,7 @@ export interface PhaseQuery extends PhaseProps {
 * PhaseMethods
 **********************************************/
 export interface PhaseMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1462,7 +1462,7 @@ export interface StageCollections extends StageProps {
 * StageCollectionMethods
 **********************************************/
 export interface StageCollectionMethods {
-	add(parameters?: PS.StageCreationInformation | any): IBaseExecution<PS.Stage>;
+	add(parameters?: PS.StageCreationInformation): IBaseExecution<PS.Stage>;
 	getByGuid(uid?: any): IBaseExecution<PS.Stage>;
 	getById(objectId?: string): IBaseExecution<PS.Stage>;
 	update(): IBaseExecution<any>;
@@ -1480,7 +1480,7 @@ export interface StageQuery extends StageProps {
 * StageMethods
 **********************************************/
 export interface StageMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1525,7 +1525,7 @@ export interface StageCustomFieldCollections extends StageCustomFieldProps {
 * StageCustomFieldCollectionMethods
 **********************************************/
 export interface StageCustomFieldCollectionMethods {
-	add(creationInfo?: PS.StageCustomFieldCreationInformation | any): IBaseExecution<PS.StageCustomField>;
+	add(creationInfo?: PS.StageCustomFieldCreationInformation): IBaseExecution<PS.StageCustomField>;
 	getByGuid(uid?: any): IBaseExecution<PS.StageCustomField>;
 	getById(objectId?: string): IBaseExecution<PS.StageCustomField>;
 }
@@ -1541,7 +1541,7 @@ export interface StageCustomFieldQuery extends StageCustomFieldProps {
 * StageCustomFieldMethods
 **********************************************/
 export interface StageCustomFieldMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1587,7 +1587,7 @@ export interface StageDetailPageCollections extends StageDetailPageProps {
 * StageDetailPageCollectionMethods
 **********************************************/
 export interface StageDetailPageCollectionMethods {
-	add(parameters?: PS.StageDetailPageCreationInformation | any): IBaseExecution<PS.StageDetailPage>;
+	add(parameters?: PS.StageDetailPageCreationInformation): IBaseExecution<PS.StageDetailPage>;
 	getByGuid(uid?: any): IBaseExecution<PS.StageDetailPage>;
 	getById(objectId?: string): IBaseExecution<PS.StageDetailPage>;
 }
@@ -1603,7 +1603,7 @@ export interface StageDetailPageQuery extends StageDetailPageProps {
 * StageDetailPageMethods
 **********************************************/
 export interface StageDetailPageMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1846,7 +1846,7 @@ export interface PublishedProjectCollections extends PublishedProjectProps {
 * PublishedProjectCollectionMethods
 **********************************************/
 export interface PublishedProjectCollectionMethods {
-	add(parameters?: PS.ProjectCreationInformation | any): IBaseExecution<PS.PublishedProject>;
+	add(parameters?: PS.ProjectCreationInformation): IBaseExecution<PS.PublishedProject>;
 	getByGuid(uid?: any): IBaseExecution<PS.PublishedProject>;
 	getById(objectId?: string): IBaseExecution<PS.PublishedProject>;
 	update(): IBaseExecution<PS.QueueJob>;
@@ -1874,7 +1874,7 @@ export interface PublishedProjectMethods {
 	updateIdeaListItemStatus(status?: string): IBaseExecution<any>;
 	checkOut(): IBaseExecution<PS.DraftProject>;
 	createProjectSite(siteName?: string): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<PS.QueueJob>;
+	delete(): IBaseExecution<PS.QueueJob>;
 	submitToWorkflow(): IBaseExecution<any>;
 	updateVisibilityCustomFields(): IBaseExecution<PS.QueueJob>;
 }
@@ -2168,7 +2168,7 @@ export interface EntityLinkCollections extends EntityLinkProps {
 * EntityLinkCollectionMethods
 **********************************************/
 export interface EntityLinkCollectionMethods {
-	add(parameters?: PS.EntityLinkCreationInformation | any): IBaseExecution<PS.EntityLink>;
+	add(parameters?: PS.EntityLinkCreationInformation): IBaseExecution<PS.EntityLink>;
 	getByGuid(id?: any): IBaseExecution<PS.EntityLink>;
 	update(): IBaseExecution<any>;
 }
@@ -2184,7 +2184,7 @@ export interface EntityLinkQuery extends EntityLinkProps {
 * EntityLinkMethods
 **********************************************/
 export interface EntityLinkMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2274,7 +2274,7 @@ export interface TaskPlanLinkQuery extends TaskPlanLinkProps {
 * TaskPlanLinkMethods
 **********************************************/
 export interface TaskPlanLinkMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2436,7 +2436,7 @@ export interface DraftProjectResourceCollections extends DraftProjectResourcePro
 * DraftProjectResourceCollectionMethods
 **********************************************/
 export interface DraftProjectResourceCollectionMethods {
-	add(parameters?: PS.ProjectResourceCreationInformation | any): IBaseExecution<PS.DraftProjectResource>;
+	add(parameters?: PS.ProjectResourceCreationInformation): IBaseExecution<PS.DraftProjectResource>;
 	addEnterpriseResourceById(resourceId?: any): IBaseExecution<PS.QueueJob>;
 	getByGuid(uid?: any): IBaseExecution<PS.DraftProjectResource>;
 	getById(objectId?: string): IBaseExecution<PS.DraftProjectResource>;
@@ -2453,7 +2453,7 @@ export interface DraftProjectResourceQuery extends DraftProjectResourceProps {
 * DraftProjectResourceMethods
 **********************************************/
 export interface DraftProjectResourceMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2498,7 +2498,7 @@ export interface DraftTaskLinkCollections extends DraftTaskLinkProps {
 * DraftTaskLinkCollectionMethods
 **********************************************/
 export interface DraftTaskLinkCollectionMethods {
-	add(parameters?: PS.TaskLinkCreationInformation | any): IBaseExecution<PS.DraftTaskLink>;
+	add(parameters?: PS.TaskLinkCreationInformation): IBaseExecution<PS.DraftTaskLink>;
 	getByGuid(uid?: any): IBaseExecution<PS.DraftTaskLink>;
 	getById(objectId?: string): IBaseExecution<PS.DraftTaskLink>;
 }
@@ -2514,7 +2514,7 @@ export interface DraftTaskLinkQuery extends DraftTaskLinkProps {
 * DraftTaskLinkMethods
 **********************************************/
 export interface DraftTaskLinkMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2607,7 +2607,7 @@ export interface DraftTaskCollections extends DraftTaskProps {
 * DraftTaskCollectionMethods
 **********************************************/
 export interface DraftTaskCollectionMethods {
-	add(parameters?: PS.TaskCreationInformation | any): IBaseExecution<PS.DraftTask>;
+	add(parameters?: PS.TaskCreationInformation): IBaseExecution<PS.DraftTask>;
 	getByGuid(uid?: any): IBaseExecution<PS.DraftTask>;
 	getById(objectId?: string): IBaseExecution<PS.DraftTask>;
 }
@@ -2625,7 +2625,7 @@ export interface DraftTaskQuery extends DraftTaskProps {
 * DraftTaskMethods
 **********************************************/
 export interface DraftTaskMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2965,7 +2965,7 @@ export interface EnterpriseResourceCostRateCollections extends EnterpriseResourc
 * EnterpriseResourceCostRateCollectionMethods
 **********************************************/
 export interface EnterpriseResourceCostRateCollectionMethods {
-	add(parameters?: PS.CostRateCreationInformation | any): IBaseExecution<PS.EnterpriseResourceCostRate>;
+	add(parameters?: PS.CostRateCreationInformation): IBaseExecution<PS.EnterpriseResourceCostRate>;
 	getByDateUrl(effectiveDate?: string): IBaseExecution<PS.EnterpriseResourceCostRate>;
 }
 
@@ -3050,7 +3050,7 @@ export interface ResourceEngagementQuery extends ResourceEngagementProps {
 * ResourceEngagementMethods
 **********************************************/
 export interface ResourceEngagementMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): IBaseExecution<Array<PS.ResourceEngagementTimephasedPeriod>>;
 }
 
@@ -3173,7 +3173,7 @@ export interface EventHandlerCollections extends EventHandlerProps {
 * EventHandlerCollectionMethods
 **********************************************/
 export interface EventHandlerCollectionMethods {
-	add(parameters?: PS.EventHandlerCreationInformation | any): IBaseExecution<PS.EventHandler>;
+	add(parameters?: PS.EventHandlerCreationInformation): IBaseExecution<PS.EventHandler>;
 	getByGuid(uid?: any): IBaseExecution<PS.EventHandler>;
 	getById(objectId?: string): IBaseExecution<PS.EventHandler>;
 	update(): IBaseExecution<any>;
@@ -3190,7 +3190,7 @@ export interface EventHandlerQuery extends EventHandlerProps {
 * EventHandlerMethods
 **********************************************/
 export interface EventHandlerMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3239,7 +3239,7 @@ export interface LookupCostQuery extends LookupCostProps {
 * LookupCostMethods
 **********************************************/
 export interface LookupCostMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3288,7 +3288,7 @@ export interface LookupDateQuery extends LookupDateProps {
 * LookupDateMethods
 **********************************************/
 export interface LookupDateMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3339,7 +3339,7 @@ export interface LookupDurationQuery extends LookupDurationProps {
 * LookupDurationMethods
 **********************************************/
 export interface LookupDurationMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3388,7 +3388,7 @@ export interface LookupNumberQuery extends LookupNumberProps {
 * LookupNumberMethods
 **********************************************/
 export interface LookupNumberMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3439,7 +3439,7 @@ export interface LookupTextQuery extends LookupTextProps {
 * LookupTextMethods
 **********************************************/
 export interface LookupTextMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3512,7 +3512,7 @@ export interface PlanAssignmentCollections extends PlanAssignmentProps {
 * PlanAssignmentCollectionMethods
 **********************************************/
 export interface PlanAssignmentCollectionMethods {
-	add(parameters?: PS.PlanAssignmentCreationInformation | any): IBaseExecution<PS.PlanAssignment>;
+	add(parameters?: PS.PlanAssignmentCreationInformation): IBaseExecution<PS.PlanAssignment>;
 	getByGuid(uid?: any): IBaseExecution<PS.PlanAssignment>;
 	getById(objectId?: string): IBaseExecution<PS.PlanAssignment>;
 }
@@ -3529,7 +3529,7 @@ export interface PlanAssignmentQuery extends PlanAssignmentProps {
 * PlanAssignmentMethods
 **********************************************/
 export interface PlanAssignmentMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3856,7 +3856,7 @@ export interface TimeSheetQuery extends TimeSheetProps {
 * TimeSheetMethods
 **********************************************/
 export interface TimeSheetMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	recall(): IBaseExecution<any>;
 	submit(comment?: string): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
@@ -3912,7 +3912,7 @@ export interface TimeSheetLineCollections extends TimeSheetLineProps {
 * TimeSheetLineCollectionMethods
 **********************************************/
 export interface TimeSheetLineCollectionMethods {
-	add(parameters?: PS.TimeSheetLineCreationInformation | any): IBaseExecution<PS.TimeSheetLine>;
+	add(parameters?: PS.TimeSheetLineCreationInformation): IBaseExecution<PS.TimeSheetLine>;
 	getByGuid(uid?: any): IBaseExecution<PS.TimeSheetLine>;
 	getById(objectId?: string): IBaseExecution<PS.TimeSheetLine>;
 }
@@ -3928,7 +3928,7 @@ export interface TimeSheetLineQuery extends TimeSheetLineProps {
 * TimeSheetLineMethods
 **********************************************/
 export interface TimeSheetLineMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	submit(comment?: string): IBaseExecution<any>;
 }
 
@@ -3989,7 +3989,7 @@ export interface TimeSheetWorkCollections extends TimeSheetWorkProps {
 * TimeSheetWorkCollectionMethods
 **********************************************/
 export interface TimeSheetWorkCollectionMethods {
-	add(parameters?: PS.TimeSheetWorkCreationInformation | any): IBaseExecution<PS.TimeSheetWork>;
+	add(parameters?: PS.TimeSheetWorkCreationInformation): IBaseExecution<PS.TimeSheetWork>;
 	getById(objectId?: string): IBaseExecution<PS.TimeSheetWork>;
 	getByStartDate(start?: any): IBaseExecution<PS.TimeSheetWork>;
 }
@@ -4005,7 +4005,7 @@ export interface TimeSheetWorkQuery extends TimeSheetWorkProps {
 * TimeSheetWorkMethods
 **********************************************/
 export interface TimeSheetWorkMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4237,7 +4237,7 @@ export interface ResourceCalendarExceptionQuery extends ResourceCalendarExceptio
 * ResourceCalendarExceptionMethods
 **********************************************/
 export interface ResourceCalendarExceptionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4326,7 +4326,7 @@ export interface ResourcePlanQuery extends ResourcePlanProps {
 * ResourcePlanMethods
 **********************************************/
 export interface ResourcePlanMethods {
-	deleteObject(): IBaseExecution<PS.QueueJob>;
+	delete(): IBaseExecution<PS.QueueJob>;
 	forceCheckIn(): IBaseExecution<PS.QueueJob>;
 	publish(): IBaseExecution<PS.QueueJob>;
 	update(): IBaseExecution<PS.QueueJob>;

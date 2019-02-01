@@ -194,7 +194,7 @@ export interface SiteCollectionAppCatalogAllowedItemCollections extends SiteColl
 * SiteCollectionAppCatalogAllowedItemCollectionMethods
 **********************************************/
 export interface SiteCollectionAppCatalogAllowedItemCollectionMethods {
-	add(absolutePath?: string | any): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	add(absolutePath?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
 	getByAbsoluteUrl(absolutePath?: string): IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
 	remove(absolutePath?: string): IBaseExecution<any>;
 	removeById(siteId?: any): IBaseExecution<any>;

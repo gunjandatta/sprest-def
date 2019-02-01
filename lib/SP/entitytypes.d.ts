@@ -229,6 +229,7 @@ export interface SiteMethods {
 	unregisterHubSite(): IBaseExecution<any>;
 	updateClientObjectModelUseRemoteAPIsPermissionSetting(requireUseRemoteAPIs?: boolean): IBaseExecution<any>;
 	validateHubSiteJoinApprovalToken(joiningSiteId?: any, approvalToken?: string): IBaseExecution<boolean>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -334,7 +335,7 @@ export interface ScriptSafeDomainQuery extends ScriptSafeDomainProps {
 * ScriptSafeDomainMethods
 **********************************************/
 export interface ScriptSafeDomainMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -383,7 +384,7 @@ export interface EventReceiverDefinitionCollections extends EventReceiverDefinit
 * EventReceiverDefinitionCollectionMethods
 **********************************************/
 export interface EventReceiverDefinitionCollectionMethods {
-	add(eventReceiverCreationInformation?: SP.EventReceiverDefinitionCreationInformation | any): IBaseExecution<SP.EventReceiverDefinition>;
+	add(eventReceiverCreationInformation?: SP.EventReceiverDefinitionCreationInformation): IBaseExecution<SP.EventReceiverDefinition>;
 	getById(eventReceiverId?: any): IBaseExecution<SP.EventReceiverDefinition>;
 }
 
@@ -398,7 +399,7 @@ export interface EventReceiverDefinitionQuery extends EventReceiverDefinitionPro
 * EventReceiverDefinitionMethods
 **********************************************/
 export interface EventReceiverDefinitionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -421,9 +422,10 @@ export interface FeatureCollections extends FeatureCollectionMethods {
 * FeatureCollectionMethods
 **********************************************/
 export interface FeatureCollectionMethods {
-	add(featureId?: any | any, force?: boolean, featdefScope?: number): IBaseExecution<SP.Feature>;
+	add(featureId?: any, force?: boolean, featdefScope?: number): IBaseExecution<SP.Feature>;
 	getById(featureId?: any): IBaseExecution<SP.Feature>;
 	remove(featureId?: any, force?: boolean): IBaseExecution<any>;
+	getByName(name?: string): IBaseExecution<IBaseResults<SP.Feature>>;
 }
 
 /*********************************************
@@ -511,6 +513,8 @@ export interface UserQuery extends UserProps {
 **********************************************/
 export interface UserMethods {
 	update(): IBaseExecution<any>;
+	add(properties?: SP.UserCreationInformation): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -570,7 +574,7 @@ export interface AlertCollections extends AlertProps {
 * AlertCollectionMethods
 **********************************************/
 export interface AlertCollectionMethods {
-	add(alertCreationInformation?: SP.AlertCreationInformation | any): IBaseExecution<any>;
+	add(alertCreationInformation?: SP.AlertCreationInformation): IBaseExecution<any>;
 	contains(idAlert?: any): IBaseExecution<boolean>;
 	deleteAlert(idAlert?: any): IBaseExecution<any>;
 	deleteAlertAtIndex(index?: number): IBaseExecution<any>;
@@ -712,8 +716,9 @@ export interface RoleAssignmentQuery extends RoleAssignmentProps {
 * RoleAssignmentMethods
 **********************************************/
 export interface RoleAssignmentMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -780,8 +785,9 @@ export interface RoleDefinitionQuery extends RoleDefinitionProps {
 * RoleDefinitionMethods
 **********************************************/
 export interface RoleDefinitionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -865,7 +871,7 @@ export interface ListItemQuery extends ListItemProps {
 export interface ListItemMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<any>;
 	resetRoleInheritance(): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
 	getHashtags(): IBaseExecution<Array<SP.Hashtag>>;
 	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;
@@ -888,6 +894,7 @@ export interface ListItemMethods {
 	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseExecution<Array<SP.Hashtag>>;
 	updateOverwriteVersion(): IBaseExecution<any>;
 	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -932,10 +939,11 @@ export interface AttachmentCollections extends AttachmentProps {
 * AttachmentCollectionMethods
 **********************************************/
 export interface AttachmentCollectionMethods {
-	add(FileName?: string | any): IBaseExecution<SP.Attachment>;
+	add(FileName?: string): IBaseExecution<SP.Attachment>;
 	addUsingPath(DecodedUrl?: string, contentStream?: any): IBaseExecution<SP.Attachment>;
 	getByFileName(fileName?: string): IBaseExecution<SP.Attachment>;
 	getByFileNameAsPath(DecodedUrl?: string): IBaseExecution<SP.Attachment>;
+	add(FileName?: SP.ListItemCreationInformation, Content?: any): IBaseExecution<SP.ListItem>;
 }
 
 /*********************************************
@@ -949,7 +957,7 @@ export interface AttachmentQuery extends AttachmentProps {
 * AttachmentMethods
 **********************************************/
 export interface AttachmentMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	recycleObject(): IBaseExecution<any>;
 }
 
@@ -1023,6 +1031,7 @@ export interface ContentTypeCollections extends ContentTypeProps {
 export interface ContentTypeCollectionMethods {
 	addAvailableContentType(contentTypeId?: string): IBaseExecution<SP.ContentType>;
 	getById(contentTypeId?: string): IBaseExecution<SP.ContentType>;
+	add(parameters?: SP.ContentTypeCreationInformation | any): IBaseExecution<SP.ContentType>;
 }
 
 /*********************************************
@@ -1038,7 +1047,7 @@ export interface ContentTypeQuery extends ContentTypeProps {
 * ContentTypeMethods
 **********************************************/
 export interface ContentTypeMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(updateChildren?: boolean): IBaseExecution<any>;
 }
 
@@ -1140,6 +1149,7 @@ export interface FieldLinkCollections extends FieldLinkProps {
 export interface FieldLinkCollectionMethods {
 	getById(id?: any): IBaseExecution<SP.FieldLink>;
 	reorder(internalNames?: Array<string>): IBaseExecution<any>;
+	add(parameters?: any): IBaseExecution<SP.FieldLink>;
 }
 
 /*********************************************
@@ -1153,7 +1163,7 @@ export interface FieldLinkQuery extends FieldLinkProps {
 * FieldLinkMethods
 **********************************************/
 export interface FieldLinkMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1238,6 +1248,7 @@ export interface FieldCollectionMethods {
 	getById(id?: any): IBaseExecution<SP.Field>;
 	getByInternalNameOrTitle(strName?: string): IBaseExecution<SP.Field>;
 	getByTitle(title?: string): IBaseExecution<SP.Field>;
+	createFieldAsXml(schemaXml?: string): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1251,11 +1262,13 @@ export interface FieldQuery extends FieldProps {
 * FieldMethods
 **********************************************/
 export interface FieldMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	add(parameters?: SP.FieldCreationInformation | any): IBaseExecution<SP.Field>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1367,7 +1380,7 @@ export interface FileCollections extends FileProps {
 * FileCollectionMethods
 **********************************************/
 export interface FileCollectionMethods {
-	add(Content?: any | any, Overwrite?: boolean, Url?: string): IBaseExecution<SP.File>;
+	add(Content?: any, Overwrite?: boolean, Url?: string): IBaseExecution<SP.File>;
 	addStub(urlOfFile?: string): IBaseExecution<SP.File>;
 	addStubUsingPath(DecodedUrl?: string): IBaseExecution<SP.File>;
 	addTemplateFile(urlOfFile?: string, templateFileType?: number): IBaseExecution<SP.File>;
@@ -1399,7 +1412,7 @@ export interface FileMethods {
 	continueUpload(uploadId?: any, fileOffset?: number, stream?: any): IBaseExecution<number>;
 	copyTo(strNewUrl?: string, bOverWrite?: boolean): IBaseExecution<any>;
 	copyToUsingPath(DecodedUrl?: string, bOverWrite?: boolean): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	deny(comment?: string): IBaseExecution<any>;
 	executeCobaltRequest(inputStream?: any): IBaseExecution<any>;
 	finishUpload(uploadId?: any, fileOffset?: number, stream?: any): IBaseExecution<SP.File>;
@@ -1424,6 +1437,8 @@ export interface FileMethods {
 	unPublish(comment?: string): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 	updateVirusInfo(virusStatus?: any, virusMessage?: string, etagToCheck?: string): IBaseExecution<any>;
+	content(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1605,7 +1620,7 @@ export interface FileVersionQuery extends FileVersionProps {
 * FileVersionMethods
 **********************************************/
 export interface FileVersionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	openBinaryStream(): IBaseExecution<any>;
 }
 
@@ -1666,7 +1681,7 @@ export interface FolderCollections extends FolderProps {
 * FolderCollectionMethods
 **********************************************/
 export interface FolderCollectionMethods {
-	add(url?: string | any): IBaseExecution<SP.Folder>;
+	add(url?: string): IBaseExecution<SP.Folder>;
 	addUsingPath(DecodedUrl?: string, Overwrite?: boolean): IBaseExecution<SP.Folder>;
 	addWithOverwrite(url?: string, overwrite?: boolean): IBaseExecution<SP.Folder>;
 	getByPath(DecodedUrl?: string): IBaseExecution<SP.Folder>;
@@ -1687,13 +1702,15 @@ export interface FolderQuery extends FolderProps {
 export interface FolderMethods {
 	addSubFolder(leafName?: string): IBaseExecution<any>;
 	addSubFolderUsingPath(DecodedUrl?: string): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
 	getListItemChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
 	moveTo(newUrl?: string): IBaseExecution<any>;
 	moveToUsingPath(DecodedUrl?: string): IBaseExecution<any>;
 	recycle(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	getByUrl(serverRelativeUrl?: string): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1848,13 +1865,14 @@ export interface ListCollections extends ListProps {
 * ListCollectionMethods
 **********************************************/
 export interface ListCollectionMethods {
-	add(parameters?: SP.ListCreationInformation | any): IBaseExecution<SP.List>;
+	add(parameters?: SP.ListCreationInformation): IBaseExecution<SP.List>;
 	ensureClientRenderedSitePagesLibrary(): IBaseExecution<SP.List>;
 	ensureEventsList(): IBaseExecution<SP.List>;
 	ensureSiteAssetsLibrary(): IBaseExecution<SP.List>;
 	ensureSitePagesLibrary(): IBaseExecution<SP.List>;
 	getById(id?: any): IBaseExecution<SP.List>;
 	getByTitle(title?: string): IBaseExecution<SP.List>;
+	add(parameters?: SP.ListCreationInformation | any): IBaseExecution<SP.List>;
 }
 
 /*********************************************
@@ -1886,7 +1904,7 @@ export interface ListMethods {
 	createDocumentAndGetEditLink(fileName?: string, folderPath?: string, documentTemplateType?: number, templateUrl?: string): IBaseExecution<string>;
 	createDocumentWithDefaultName(folderPath?: string, extension?: string): IBaseExecution<string>;
 	createMappedView(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): IBaseExecution<SP.View>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	ensureSignoffStatusField(): IBaseExecution<SP.Field>;
 	getBloomFilter(startItemId?: number): IBaseExecution<SP.ListBloomFilter>;
 	getBloomFilterWithCustomFields(listItemStartingID?: number, internalFieldNames?: Array<string>): IBaseExecution<SP.ListBloomFilter>;
@@ -1923,6 +1941,7 @@ export interface ListMethods {
 	unpublishMappedView(appId?: any, visualizationTarget?: number): IBaseExecution<SP.View>;
 	update(): IBaseExecution<any>;
 	validateAppName(appDisplayName?: string): IBaseExecution<SP.VisualizationAppSynchronizationResult>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2024,7 +2043,7 @@ export interface ViewCollections extends ViewProps {
 * ViewCollectionMethods
 **********************************************/
 export interface ViewCollectionMethods {
-	add(parameters?: SP.ViewCreationInformation | any): IBaseExecution<SP.View>;
+	add(parameters?: SP.ViewCreationInformation): IBaseExecution<SP.View>;
 	getById(guidId?: any): IBaseExecution<SP.View>;
 	getByTitle(strTitle?: string): IBaseExecution<SP.View>;
 }
@@ -2041,7 +2060,7 @@ export interface ViewQuery extends ViewProps {
 **********************************************/
 export interface ViewMethods {
 	addToSpotlight(itemId?: number, folderPath?: string, afterItemId?: number): IBaseExecution<SP.Utilities.SpotlightResult>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	removeFromSpotlight(itemId?: number, folderPath?: string): IBaseExecution<SP.Utilities.SpotlightResult>;
 	renderAsHtml(): IBaseExecution<string>;
 	setViewXml(viewXml?: string): IBaseExecution<any>;
@@ -2363,7 +2382,7 @@ export interface WebCollections extends WebProps {
 * WebCollectionMethods
 **********************************************/
 export interface WebCollectionMethods {
-	add(parameters?: SP.WebCreationInformation | any): IBaseExecution<SP.Web>;
+	add(parameters?: SP.WebCreationInformation): IBaseExecution<SP.Web>;
 }
 
 /*********************************************
@@ -2408,7 +2427,7 @@ export interface WebMethods {
 	applyWebTemplate(webTemplate?: string): IBaseExecution<any>;
 	createDefaultAssociatedGroups(userLogin?: string, userLogin2?: string, groupNameSeed?: string): IBaseExecution<any>;
 	defaultDocumentLibrary(): IBaseExecution<SP.List>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	doesPushNotificationSubscriberExist(deviceAppInstanceId?: any): IBaseExecution<boolean>;
 	doesUserHavePermissions(permissionMask?: SP.BasePermissions): IBaseExecution<boolean>;
 	ensureUser(logonName?: string): IBaseExecution<SP.User>;
@@ -2480,6 +2499,8 @@ export interface WebMethods {
 	syncHubSiteTheme(): IBaseExecution<any>;
 	unregisterPushNotificationSubscriber(deviceAppInstanceId?: any): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	doesUserHavePermissions(high?: number, low?: number): IBaseExecution<boolean>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2567,6 +2588,7 @@ export interface GroupCollectionMethods {
 	getByName(name?: string): IBaseExecution<SP.Group>;
 	removeById(id?: number): IBaseExecution<any>;
 	removeByLoginName(loginName?: string): IBaseExecution<any>;
+	add(parameters?: SP.GroupCreationInformation): IBaseExecution<SP.Group>;
 }
 
 /*********************************************
@@ -2841,7 +2863,7 @@ export interface NavigationNodeQuery extends NavigationNodeProps {
 * NavigationNodeMethods
 **********************************************/
 export interface NavigationNodeMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -2873,7 +2895,7 @@ export interface WebInformationCollections extends WebInformationCollectionMetho
 * WebInformationCollectionMethods
 **********************************************/
 export interface WebInformationCollectionMethods {
-	add(parameters?: SP.WebInfoCreationInformation | any): IBaseExecution<SP.WebInformation>;
+	add(parameters?: SP.WebInfoCreationInformation): IBaseExecution<SP.WebInformation>;
 	getById(id?: any): IBaseExecution<SP.WebInformation>;
 }
 
@@ -3013,7 +3035,7 @@ export interface RecycleBinItemQuery extends RecycleBinItemProps {
 * RecycleBinItemMethods
 **********************************************/
 export interface RecycleBinItemMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	moveToSecondStage(): IBaseExecution<any>;
 	restore(): IBaseExecution<any>;
 }
@@ -3317,6 +3339,7 @@ export interface UserCustomActionCollections extends UserCustomActionProps {
 export interface UserCustomActionCollectionMethods {
 	clear(): IBaseExecution<any>;
 	getById(id?: any): IBaseExecution<SP.UserCustomAction>;
+	add(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3330,8 +3353,9 @@ export interface UserCustomActionQuery extends UserCustomActionProps {
 * UserCustomActionMethods
 **********************************************/
 export interface UserCustomActionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3392,7 +3416,7 @@ export interface ListItemVersionQuery extends ListItemVersionProps {
 * ListItemVersionMethods
 **********************************************/
 export interface ListItemVersionMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -3476,7 +3500,7 @@ export interface UserSolutionCollections extends UserSolutionCollectionMethods {
 * UserSolutionCollectionMethods
 **********************************************/
 export interface UserSolutionCollectionMethods {
-	add(solutionGalleryItemId?: number | any): IBaseExecution<SP.UserSolution>;
+	add(solutionGalleryItemId?: number): IBaseExecution<SP.UserSolution>;
 }
 
 /*********************************************
@@ -4442,11 +4466,12 @@ export interface FieldCalculatedQuery extends FieldCalculatedProps {
 * FieldCalculatedMethods
 **********************************************/
 export interface FieldCalculatedMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4497,11 +4522,12 @@ export interface FieldMultiChoiceQuery extends FieldMultiChoiceProps {
 * FieldMultiChoiceMethods
 **********************************************/
 export interface FieldMultiChoiceMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4550,11 +4576,12 @@ export interface FieldChoiceQuery extends FieldChoiceProps {
 * FieldChoiceMethods
 **********************************************/
 export interface FieldChoiceMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4603,11 +4630,12 @@ export interface FieldComputedQuery extends FieldComputedProps {
 * FieldComputedMethods
 **********************************************/
 export interface FieldComputedMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4659,11 +4687,12 @@ export interface FieldNumberQuery extends FieldNumberProps {
 * FieldNumberMethods
 **********************************************/
 export interface FieldNumberMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4712,11 +4741,12 @@ export interface FieldCurrencyQuery extends FieldCurrencyProps {
 * FieldCurrencyMethods
 **********************************************/
 export interface FieldCurrencyMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4767,11 +4797,12 @@ export interface FieldDateTimeQuery extends FieldDateTimeProps {
 * FieldDateTimeMethods
 **********************************************/
 export interface FieldDateTimeMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4820,11 +4851,12 @@ export interface FieldGeolocationQuery extends FieldGeolocationProps {
 * FieldGeolocationMethods
 **********************************************/
 export interface FieldGeolocationMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4873,11 +4905,12 @@ export interface FieldGuidQuery extends FieldGuidProps {
 * FieldGuidMethods
 **********************************************/
 export interface FieldGuidMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4932,11 +4965,12 @@ export interface FieldMultiLineTextQuery extends FieldMultiLineTextProps {
 * FieldMultiLineTextMethods
 **********************************************/
 export interface FieldMultiLineTextMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4985,11 +5019,12 @@ export interface FieldLocationQuery extends FieldLocationProps {
 * FieldLocationMethods
 **********************************************/
 export interface FieldLocationMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -5047,11 +5082,12 @@ export interface FieldLookupQuery extends FieldLookupProps {
 * FieldLookupMethods
 **********************************************/
 export interface FieldLookupMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -5106,11 +5142,12 @@ export interface FieldRatingScaleQuery extends FieldRatingScaleProps {
 * FieldRatingScaleMethods
 **********************************************/
 export interface FieldRatingScaleMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -5159,11 +5196,12 @@ export interface FieldTextQuery extends FieldTextProps {
 * FieldTextMethods
 **********************************************/
 export interface FieldTextMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -5212,11 +5250,12 @@ export interface FieldUrlQuery extends FieldUrlProps {
 * FieldUrlMethods
 **********************************************/
 export interface FieldUrlMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -5268,11 +5307,12 @@ export interface FieldUserQuery extends FieldUserProps {
 * FieldUserMethods
 **********************************************/
 export interface FieldUserMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************

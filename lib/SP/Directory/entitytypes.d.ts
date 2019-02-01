@@ -120,7 +120,7 @@ export interface GroupCollections extends GroupProps {
 * GroupCollectionMethods
 **********************************************/
 export interface GroupCollectionMethods {
-	add(objectId?: any | any): IBaseExecution<any>;
+	add(objectId?: any): IBaseExecution<any>;
 	remove(objectId?: any): IBaseExecution<any>;
 }
 
@@ -222,7 +222,7 @@ export interface UserCollections extends UserProps {
 * UserCollectionMethods
 **********************************************/
 export interface UserCollectionMethods {
-	add(objectId?: any | any, principalName?: string): IBaseExecution<any>;
+	add(objectId?: any, principalName?: string): IBaseExecution<any>;
 	remove(objectId?: any): IBaseExecution<any>;
 }
 

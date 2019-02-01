@@ -30,7 +30,7 @@ export interface FileSystemItemCollections extends FileSystemItemCollectionMetho
 * FileSystemItemCollectionMethods
 **********************************************/
 export interface FileSystemItemCollectionMethods {
-	add(name?: string | any, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
+	add(name?: string, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
 	getById(id?: string): IBaseExecution<MS.FileServices.FileSystemItem>;
 }
 
@@ -81,7 +81,7 @@ export interface FileQuery extends FileProps {
 **********************************************/
 export interface FileMethods {
 	copyTo(target?: string, overwrite?: boolean): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	download(): IBaseExecution<any>;
 	moveTo(target?: string, overwrite?: boolean): IBaseExecution<any>;
 	upload(stream?: any): IBaseExecution<any>;
@@ -148,7 +148,7 @@ export interface FolderQuery extends FolderProps {
 * FolderMethods
 **********************************************/
 export interface FolderMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	moveTo(target?: string): IBaseExecution<any>;
 }
 

@@ -427,12 +427,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             for (let i = 0; i < prop.length; i++) {
                                 let methodInfo = prop[i];
 
-                                // See if this is the "add" method, and parameters exist
-                                if (methodInfo.name == "add" && methodInfo.params.length > 0) {
-                                    // Update the type
-                                    methodInfo.params[0].$.Type += " | any";
-                                }
-
                                 // Parse the parameters
                                 let params = [];
                                 for (let j = 0; j < methodInfo.params.length; j++) {
@@ -459,6 +453,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             for (let i = 0; i < prop.length; i++) {
                                 let methodInfo = prop[i];
 
+                                // Set the method name
+                                let methodName = methodInfo.name == "deleteObject" ? "delete" : methodInfo.name;
+
                                 // Parse the parameters
                                 let params = [];
                                 for (let j = 0; j < methodInfo.params.length; j++) {
@@ -469,7 +466,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 }
 
                                 // Add the method
-                                methods.push('\t' + methodInfo.name + '(' + params.join(', ') + '): IBaseExecution<' + getType(methodInfo.returnType) + '>;');
+                                methods.push('\t' + methodName + '(' + params.join(', ') + '): IBaseExecution<' + getType(methodInfo.returnType) + '>;');
                             }
 
                             // Continue the loop

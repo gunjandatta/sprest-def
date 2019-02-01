@@ -59,7 +59,7 @@ export interface TaxonomyFieldQuery extends TaxonomyFieldProps {
 * TaxonomyFieldMethods
 **********************************************/
 export interface TaxonomyFieldMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;

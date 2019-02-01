@@ -208,7 +208,7 @@ export interface VideoItemQuery extends VideoItemProps {
 **********************************************/
 export interface VideoItemMethods {
 	customThumbnail(): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	getFile(): IBaseExecution<SP.File>;
 	getPlaybackMetadata(sdnConfiguration?: string): IBaseExecution<SP.Publishing.VideoPlaybackMetadata>;
 	getPlaybackUrl(videoFormat?: number): IBaseExecution<string>;
@@ -354,7 +354,7 @@ export interface PointPublishingPostQuery extends PointPublishingPostProps {
 **********************************************/
 export interface PointPublishingPostMethods {
 	addImageFromUrl(fromImageUrl?: string): IBaseExecution<string>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1072,7 +1072,7 @@ export interface SpotlightChannelQuery extends SpotlightChannelProps {
 * SpotlightChannelMethods
 **********************************************/
 export interface SpotlightChannelMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -1263,7 +1263,7 @@ export interface SpotlightVideoQuery extends SpotlightVideoProps {
 * SpotlightVideoMethods
 **********************************************/
 export interface SpotlightVideoMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -1287,7 +1287,7 @@ export interface SubtitleFileCollections extends SubtitleFileCollectionMethods {
 * SubtitleFileCollectionMethods
 **********************************************/
 export interface SubtitleFileCollectionMethods {
-	add(language?: string | any, extension?: string, stream?: any): IBaseExecution<any>;
+	add(language?: string, extension?: string, stream?: any): IBaseExecution<any>;
 	getSubtitleFile(name?: string): IBaseExecution<any>;
 	remove(name?: string): IBaseExecution<any>;
 }

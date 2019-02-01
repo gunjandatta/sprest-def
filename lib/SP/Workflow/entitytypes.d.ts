@@ -58,7 +58,7 @@ export interface WorkflowAssociationCollections extends WorkflowAssociationProps
 * WorkflowAssociationCollectionMethods
 **********************************************/
 export interface WorkflowAssociationCollectionMethods {
-	add(parameters?: SP.Workflow.WorkflowAssociationCreationInformation | any): IBaseExecution<SP.Workflow.WorkflowAssociation>;
+	add(parameters?: SP.Workflow.WorkflowAssociationCreationInformation): IBaseExecution<SP.Workflow.WorkflowAssociation>;
 	getById(associationId?: any): IBaseExecution<SP.Workflow.WorkflowAssociation>;
 	getByName(name?: string): IBaseExecution<SP.Workflow.WorkflowAssociation>;
 }
@@ -74,7 +74,7 @@ export interface WorkflowAssociationQuery extends WorkflowAssociationProps {
 * WorkflowAssociationMethods
 **********************************************/
 export interface WorkflowAssociationMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -187,7 +187,7 @@ export interface SPWorkflowTaskQuery extends SPWorkflowTaskProps {
 export interface SPWorkflowTaskMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<any>;
 	resetRoleInheritance(): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
 	getHashtags(): IBaseExecution<Array<SP.Hashtag>>;
 	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;

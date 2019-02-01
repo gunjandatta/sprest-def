@@ -64,7 +64,7 @@ export interface SPOWebAppServicePrincipalPermissionGrantQuery extends SPOWebApp
 * SPOWebAppServicePrincipalPermissionGrantMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionGrantMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************

@@ -74,7 +74,7 @@ export interface AllowedDataLocationQuery extends AllowedDataLocationProps {
 * AllowedDataLocationMethods
 **********************************************/
 export interface AllowedDataLocationMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -488,7 +488,7 @@ export interface CrossGeoTenantPropertyQuery extends CrossGeoTenantPropertyProps
 * CrossGeoTenantPropertyMethods
 **********************************************/
 export interface CrossGeoTenantPropertyMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -566,7 +566,7 @@ export interface GeoAdministratorQuery extends GeoAdministratorProps {
 * GeoAdministratorMethods
 **********************************************/
 export interface GeoAdministratorMethods {
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -754,7 +754,7 @@ export interface GroupMoveJobQuery extends GroupMoveJobProps {
 **********************************************/
 export interface GroupMoveJobMethods {
 	cancel(): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -946,7 +946,7 @@ export interface SiteMoveJobQuery extends SiteMoveJobProps {
 **********************************************/
 export interface SiteMoveJobMethods {
 	cancel(): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 
@@ -1208,7 +1208,7 @@ export interface UserMoveJobQuery extends UserMoveJobProps {
 **********************************************/
 export interface UserMoveJobMethods {
 	cancel(): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 }
 

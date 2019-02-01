@@ -95,7 +95,7 @@ export interface EntityInstanceQuery extends EntityInstanceProps {
 export interface EntityInstanceMethods {
 	createCollectionInstance(fieldDotNotation?: string, size?: number): IBaseExecution<any>;
 	createInstance(fieldInstanceDotNotation?: string, fieldDotNotation?: string): IBaseExecution<any>;
-	deleteObject(): IBaseExecution<any>;
+	delete(): IBaseExecution<any>;
 	fromXml(xml?: string): IBaseExecution<any>;
 	getIdentity(): IBaseExecution<SP.BusinessData.Runtime.EntityIdentity>;
 	toXml(): IBaseExecution<string>;
