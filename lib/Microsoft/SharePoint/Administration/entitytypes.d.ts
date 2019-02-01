@@ -211,7 +211,7 @@ export interface SPWebServiceProps {
 * SPWebServicePropMethods
 **********************************************/
 export interface SPWebServicePropMethods {
-	ContentService(): IBaseExecution<Microsoft.SharePoint.Administration.SPWebService> & Microsoft.SharePoint.Administration.SPWebServiceCollections;
+	ContentService(): IBaseQuery<Microsoft.SharePoint.Administration.SPWebService, Microsoft.SharePoint.Administration.SPWebServiceQuery> & Microsoft.SharePoint.Administration.SPWebServiceCollections;
 }
 
 /*********************************************

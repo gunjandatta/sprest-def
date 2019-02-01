@@ -305,6 +305,15 @@ module.exports = {
         }
     ],
 
+    // View
+    "SP.View": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
+
     // Views
     "Collection(SP.View)": [
         {

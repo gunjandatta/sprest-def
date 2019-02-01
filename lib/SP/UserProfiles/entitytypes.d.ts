@@ -508,8 +508,8 @@ export interface UserProfileProps {
 * UserProfilePropMethods
 **********************************************/
 export interface UserProfilePropMethods {
-	FollowedContent(): IBaseExecution<SP.UserProfiles.FollowedContent> & SP.UserProfiles.FollowedContentCollections & SP.UserProfiles.FollowedContentMethods;
-	PersonalSite(): IBaseExecution<SP.Site> & SP.SiteCollections & SP.SiteMethods;
+	FollowedContent(): IBaseQuery<SP.UserProfiles.FollowedContent> & SP.UserProfiles.FollowedContentCollections & SP.UserProfiles.FollowedContentMethods;
+	PersonalSite(): IBaseQuery<SP.Site, SP.SiteQuery> & SP.SiteCollections & SP.SiteMethods;
 }
 
 /*********************************************
