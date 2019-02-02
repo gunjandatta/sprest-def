@@ -1,4 +1,4 @@
-import { IBaseExecution, IBaseResult } from "../../../";
+import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
 
 /*********************************************
 * TrackedItemUpdatesRequest

@@ -139,9 +139,6 @@ function createDirectories(namespace) {
 
 // Generates the base collection interface
 function generateBaseCollection(methodType, hasCollections, hasCollectionMethods) {
-    if (methodType == "SP.Attachment") {
-        let a = 0;
-    }
     // See if a collection exists
     if (hasCollections[methodType]) {
         // See if methods exist
@@ -167,6 +164,12 @@ function generateBaseCollection(methodType, hasCollections, hasCollectionMethods
 // Generates the base query interface
 function generateBaseQuery(methodType, hasCollections, hasMethods) {
     let baseQuery = null;
+
+    // See if this is a collection
+    if (/^Array\<.*\>$/.test(methodType)) {
+        // Update the method type
+        methodType = methodType.replace(/^Array\</, '').replace(/\>/, '');
+    }
 
     // See if a collection exists
     if (hasCollections[methodType]) {
@@ -457,7 +460,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 let fileImports = [];
 
                 // Update the references
-                updateReferences(fileImports, dirName, "IBaseExecution, IBaseResult.");
+                updateReferences(fileImports, dirName, "IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults.");
 
                 // Parse the interfaces
                 for (let name in directories[dirName][filename]) {
@@ -482,9 +485,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                         // See if this object contains collections
                         if (propName == "_Collections") {
-                            // Update the references
-                            updateReferences(fileImports, dirName, "IBaseCollection, IBaseQuery, IBaseResults.");
-
                             // Parse the collections
                             for (var collection in prop) {
                                 // Parse the roles

@@ -1,6 +1,5 @@
-import { IBaseExecution, IBaseResult } from "../../../../../";
+import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../../";
 import { Microsoft } from "../../../../../";
-import { IBaseCollection, IBaseQuery, IBaseResults } from "../../../../../";
 
 /*********************************************
 * AllowedDataLocationEntityData
@@ -1466,10 +1465,10 @@ export interface UserMoveJobCollections extends UserMoveJobPropMethods {
 * UserMoveJobCollectionMethods
 **********************************************/
 export interface UserMoveJobCollectionMethods {
-	getByDirection(direction?: string): IBaseQuery<Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>> & Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>Collections;
+	getByDirection(direction?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobMethods;
 	getByMoveId(odbMoveId?: any): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobMethods;
 	getByUpn(upn?: string): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobMethods;
-	getByValidPdl(validPdl?: boolean): IBaseQuery<Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>> & Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>Collections;
+	getByValidPdl(validPdl?: boolean): IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobMethods;
 	getMoveReport(moveState?: number, moveDirection?: number, limit?: number, startTime?: any, endTime?: any): IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob>>;
 }
 

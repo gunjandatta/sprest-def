@@ -1,6 +1,5 @@
-import { IBaseExecution, IBaseResult } from "../../";
+import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
 import { SP } from "../../";
-import { IBaseCollection, IBaseQuery, IBaseResults } from "../../";
 
 /*********************************************
 * SharedDocumentInfo

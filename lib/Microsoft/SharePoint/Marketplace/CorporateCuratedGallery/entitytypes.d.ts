@@ -1,5 +1,4 @@
-import { IBaseExecution, IBaseResult } from "../../../../";
-import { IBaseCollection, IBaseQuery, IBaseResults } from "../../../../";
+import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../";
 import { Microsoft } from "../../../../";
 
 /*********************************************
