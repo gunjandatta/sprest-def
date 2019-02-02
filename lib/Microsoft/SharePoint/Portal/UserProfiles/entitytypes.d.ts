@@ -53,7 +53,7 @@ export interface MySiteDocumentMoveUtilityCollections {
 * SharedWithMeDocument
 **********************************************/
 export interface SharedWithMeDocument {
-	Authors?: Array<Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser>;
+	Authors?: { results: Array<Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser> };
 	CallerStack?: string;
 	ChildCount?: number;
 	ClickThroughId?: string;
@@ -61,7 +61,7 @@ export interface SharedWithMeDocument {
 	CreatedDateTime?: any;
 	CreatedDateTimeUTC?: any;
 	DocId?: string;
-	Editors?: Array<Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser>;
+	Editors?: { results: Array<Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser> };
 	Extension?: string;
 	FileLeafRef?: string;
 	FileRef?: string;
@@ -85,7 +85,7 @@ export interface SharedWithMeDocument {
 	ServerRedirectedPreviewUrl?: string;
 	ServerRedirectedUrl?: string;
 	SharedDateTimeUTC?: any;
-	SharedWithInternal?: Array<Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser>;
+	SharedWithInternal?: { results: Array<Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser> };
 	SiteId?: string;
 	SiteUrl?: string;
 	SpResourceUrl?: string;

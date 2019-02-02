@@ -106,12 +106,12 @@ export interface BooleanCriterionCollections {
 * CalloutInfo
 **********************************************/
 export interface CalloutInfo {
-	Contacts?: Array<string>;
+	Contacts?: { results: Array<string> };
 	DirectLinkTitle?: string;
 	DirectLinkUrl?: string;
-	Hierarchy?: Array<string>;
-	Predecessors?: Array<string>;
-	Successors?: Array<string>;
+	Hierarchy?: { results: Array<string> };
+	Predecessors?: { results: Array<string> };
+	Successors?: { results: Array<string> };
 	Title?: string;
 	Url?: string;
 }
@@ -143,7 +143,7 @@ export interface CreateRefreshJobResultCollections {
 * CustomAttributeFilter
 **********************************************/
 export interface CustomAttributeFilter {
-	Attributes?: Array<string>;
+	Attributes?: { results: Array<string> };
 	ConcatType?: number;
 }
 
@@ -161,7 +161,7 @@ export interface DashboardScriptExtensionInfo {
 	ProviderKey?: string;
 	ScriptClass?: string;
 	ScriptData?: string;
-	ScriptFiles?: Array<string>;
+	ScriptFiles?: { results: Array<string> };
 }
 
 /*********************************************
@@ -242,7 +242,7 @@ export interface LocationDisplaySettingCollections {
 **********************************************/
 export interface LocationFilter {
 	IncludeUncategorizedTasks?: boolean;
-	LocationKeys?: Array<number>;
+	LocationKeys?: { results: Array<number> };
 }
 
 /*********************************************
@@ -256,7 +256,7 @@ export interface LocationFilterCollections {
 * Task
 **********************************************/
 export interface Task {
-	CustomAttributes?: Array<string>;
+	CustomAttributes?: { results: Array<string> };
 	Description?: string;
 	DueDate?: any;
 	EditUrl?: string;
@@ -572,7 +572,7 @@ export interface NonTaskDataReadResultMethods {
 * PersistedProperties
 **********************************************/
 export interface PersistedProperties {
-	FilteredLocationIds?: Array<number>;
+	FilteredLocationIds?: { results: Array<number> };
 	GroupByProjects?: boolean;
 	HasShownMarkAsImportantCallout?: boolean;
 	HasShownTaskListTooLongNotification?: boolean;
@@ -759,7 +759,7 @@ export interface UserSettings {
 	DaysAfterCurrentDateTimelineEnds?: number;
 	DaysATaskIsConsideredNewTask?: number;
 	DaysBeforeCurrentDateTimelineStarts?: number;
-	ImportantLocationIds?: Array<number>;
+	ImportantLocationIds?: { results: Array<number> };
 	ImportantTasksLimit?: number;
 	InactiveMonthsBeforeLocationExpiration?: number;
 	LateTasksLimit?: number;
@@ -1089,7 +1089,7 @@ export interface TaskQueryOData extends IBaseResult, TaskQuery {
 **********************************************/
 export interface TaskFilter {
 	CriterionConcatType?: number;
-	IdsToFilterBy?: Array<number>;
+	IdsToFilterBy?: { results: Array<number> };
 }
 
 /*********************************************

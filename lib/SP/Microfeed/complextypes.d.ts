@@ -5,7 +5,7 @@ import { SP } from "../../";
 * MicroBlogEntityCollection
 **********************************************/
 export interface MicroBlogEntityCollection {
-	Items?: Array<SP.Microfeed.MicroBlogEntity>;
+	Items?: { results: Array<SP.Microfeed.MicroBlogEntity> };
 }
 
 /*********************************************
@@ -90,7 +90,7 @@ export interface MicrofeedPostDefinitionCollections {
 * MicrofeedDataLinkCollection
 **********************************************/
 export interface MicrofeedDataLinkCollection {
-	Items?: Array<SP.Microfeed.MicrofeedDataLink>;
+	Items?: { results: Array<SP.Microfeed.MicrofeedDataLink> };
 }
 
 /*********************************************
@@ -126,7 +126,7 @@ export interface MicrofeedDataLinkCollections {
 export interface MicrofeedDataQuery {
 	ItemLimit?: number;
 	Query?: string;
-	ViewFields?: Array<string>;
+	ViewFields?: { results: Array<string> };
 	ViewFieldsOnly?: boolean;
 }
 
@@ -184,7 +184,7 @@ export interface MicrofeedLinkCollections {
 * MicrofeedPostCollection
 **********************************************/
 export interface MicrofeedPostCollection {
-	Items?: Array<SP.Microfeed.MicrofeedPost>;
+	Items?: { results: Array<SP.Microfeed.MicrofeedPost> };
 }
 
 /*********************************************
@@ -211,7 +211,7 @@ export interface MicrofeedPost {
 	Footer?: string;
 	ID?: string;
 	ILikeIt?: boolean;
-	LikersList?: Array<number>;
+	LikersList?: { results: Array<number> };
 	Locked?: boolean;
 	MediaLink?: SP.Microfeed.MicrofeedLink;
 	MicroBlogType?: number;
@@ -252,7 +252,7 @@ export interface MicrofeedPostDefinitionNamesCollections {
 * MicrofeedPostDefinitionNameCollection
 **********************************************/
 export interface MicrofeedPostDefinitionNameCollection {
-	Items?: Array<string>;
+	Items?: { results: Array<string> };
 }
 
 /*********************************************
@@ -271,7 +271,7 @@ export interface MicrofeedPostOptions {
 	DataLinks?: SP.Microfeed.MicrofeedDataLinkCollection;
 	DefinitionName?: string;
 	MediaLink?: SP.Microfeed.MicrofeedLink;
-	PeopleList?: Array<string>;
+	PeopleList?: { results: Array<string> };
 	PostSource?: string;
 	PostSourceUri?: string;
 	RefThread_ReferenceID?: string;
@@ -299,7 +299,7 @@ export interface MicrofeedRetrievalOptions {
 	IncludedTypes?: number;
 	NewerThan?: any;
 	OlderThan?: any;
-	PostDefinitionFilter?: Array<string>;
+	PostDefinitionFilter?: { results: Array<string> };
 	ResultSortOrder?: number;
 	ThreadCount?: number;
 }
@@ -318,7 +318,7 @@ export interface MicrofeedThreadCollection {
 	CurrentUserUnreadMentionCount?: number;
 	NewestProcessed?: any;
 	OldestProcessed?: any;
-	Items?: Array<SP.Microfeed.MicrofeedThread>;
+	Items?: { results: Array<SP.Microfeed.MicrofeedThread> };
 }
 
 /*********************************************
@@ -336,12 +336,12 @@ export interface MicrofeedThread {
 	CanHaveAttachments?: boolean;
 	CanLike?: boolean;
 	CanReply?: boolean;
-	DataLinks?: Array<SP.Microfeed.MicrofeedDataLink>;
+	DataLinks?: { results: Array<SP.Microfeed.MicrofeedDataLink> };
 	DefinitionId?: number;
 	DefinitionName?: string;
 	Identifier?: string;
 	Locked?: boolean;
-	MicrofeedEntities?: Array<SP.Microfeed.MicroBlogEntity>;
+	MicrofeedEntities?: { results: Array<SP.Microfeed.MicroBlogEntity> };
 	OwnerIndex?: number;
 	RefReply?: SP.Microfeed.MicrofeedPost;
 	RefRoot?: SP.Microfeed.MicrofeedPost;
@@ -364,7 +364,7 @@ export interface MicrofeedThreadCollections {
 * MicrofeedUserPostCollection
 **********************************************/
 export interface MicrofeedUserPostCollection {
-	Items?: Array<SP.Microfeed.MicrofeedUserPosts>;
+	Items?: { results: Array<SP.Microfeed.MicrofeedUserPosts> };
 }
 
 /*********************************************

@@ -49,7 +49,7 @@ export interface commentProps {
 	itemId?: number;
 	likeCount?: number;
 	listId?: any;
-	mentions?: Array<Microsoft.SharePoint.Comments.Client.Identity>;
+	mentions?: { results: Array<Microsoft.SharePoint.Comments.Client.Identity> };
 	parentId?: string;
 	relativeCreatedDate?: string;
 	replyCount?: number;

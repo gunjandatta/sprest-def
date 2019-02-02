@@ -59,7 +59,7 @@ export interface HubSitePropertiesProps {
 	Description?: string;
 	ID?: any;
 	LogoUrl?: string;
-	Permissions?: Array<Microsoft.Online.SharePoint.TenantAdministration.HubSitePermission>;
+	Permissions?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.HubSitePermission> };
 	RequiresJoinApproval?: boolean;
 	SiteDesignId?: any;
 	SiteId?: any;
@@ -422,7 +422,7 @@ export interface SPOTenantCdnPolicyCollections {
 **********************************************/
 export interface SPOTenantWebTemplateCollection {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplate>;
+	Items?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplate> };
 }
 
 /*********************************************
@@ -437,8 +437,8 @@ export interface SPOTenantWebTemplateCollectionCollections {
 **********************************************/
 export interface  SucceededAndFailedSiteIds {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	FailedSiteIds?: Array<string>;
-	SucceededSiteIds?: Array<string>;
+	FailedSiteIds?: { results: Array<string> };
+	SucceededSiteIds?: { results: Array<string> };
 }
 
 /*********************************************
@@ -507,7 +507,7 @@ export interface TenantAdminSettingsService extends IBaseResult, TenantAdminSett
 export interface TenantAdminSettingsServiceProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 	AutoQuotaEnabled?: Microsoft.Online.SharePoint.TenantAdministration.AutoQuotaEnabled;
-	AvailableManagedPathsForSiteCreation?: Array<string>;
+	AvailableManagedPathsForSiteCreation?: { results: Array<string> };
 	CustomFormUrl?: Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl;
 	DisableGroupify?: Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify;
 	MailFromAddress?: Microsoft.Online.SharePoint.TenantAdministration.MailFromAddress;
@@ -598,7 +598,7 @@ export interface Tenant extends IBaseResult, TenantProps, TenantCollections, Ten
 **********************************************/
 export interface TenantProps {
 	AllowDownloadingNonWebViewableFiles?: boolean;
-	AllowedDomainListForSyncClient?: Array<any>;
+	AllowedDomainListForSyncClient?: { results: Array<any> };
 	AllowEditing?: boolean;
 	AllowLimitedAccessOnUnmanagedDevices?: boolean;
 	AllowSelectSGsInODBListInTenant?: string;
@@ -615,11 +615,11 @@ export interface TenantProps {
 	CommentsOnSitePagesDisabled?: boolean;
 	CompatibilityRange?: string;
 	ConditionalAccessPolicy?: number;
-	ContentTypeSyncSiteTemplatesList?: Array<string>;
+	ContentTypeSyncSiteTemplatesList?: { results: Array<string> };
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultLinkPermission?: number;
 	DefaultSharingLinkType?: number;
-	DisabledWebPartIds?: Array<any>;
+	DisabledWebPartIds?: { results: Array<any> };
 	DisableReportProblemDialog?: boolean;
 	DisallowInfectedFileDownload?: boolean;
 	DisplayNamesOfFileViewers?: boolean;
@@ -630,7 +630,7 @@ export interface TenantProps {
 	EnableAIPIntegration?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
 	EnableMinimumVersionRequirement?: boolean;
-	ExcludedFileExtensionsForSyncClient?: Array<string>;
+	ExcludedFileExtensionsForSyncClient?: { results: Array<string> };
 	ExternalServicesEnabled?: boolean;
 	FileAnonymousLinkType?: number;
 	FilePickerExternalImageSearchEnabled?: boolean;
@@ -647,7 +647,7 @@ export interface TenantProps {
 	IsUnmanagedSyncClientRestrictionFlightEnabled?: boolean;
 	LegacyAuthProtocolsEnabled?: boolean;
 	LimitedAccessFileType?: number;
-	ManagedPathsForSiteCreation?: Array<string>;
+	ManagedPathsForSiteCreation?: { results: Array<string> };
 	MarkNewFilesSensitiveByDefault?: number;
 	MobileFriendlyUrlEnabledInTenant?: boolean;
 	NoAccessRedirectUrl?: string;
@@ -671,7 +671,7 @@ export interface TenantProps {
 	ProvisionSharedWithEveryoneFolder?: boolean;
 	PublicCdnAllowedFileTypes?: string;
 	PublicCdnEnabled?: boolean;
-	PublicCdnOrigins?: Array<string>;
+	PublicCdnOrigins?: { results: Array<string> };
 	RequireAcceptingAccountMatchInvitedAccount?: boolean;
 	RequireAnonymousLinksExpireInDays?: number;
 	ResourceQuota?: number;

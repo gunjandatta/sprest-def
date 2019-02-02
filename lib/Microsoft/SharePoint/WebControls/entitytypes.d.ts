@@ -20,7 +20,7 @@ export interface ModuleLinkCollections {
 **********************************************/
 export interface ResourceManifestInformation {
 	RequireJsScriptBlock?: string;
-	ScenarioMapping?: Array<SP.KeyValue>;
+	ScenarioMapping?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************

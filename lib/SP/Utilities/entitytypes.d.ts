@@ -95,7 +95,7 @@ export interface SPSocialSwitchCollections {
 * SpotlightResult
 **********************************************/
 export interface SpotlightResult {
-	Order?: Array<number>;
+	Order?: { results: Array<number> };
 	ResultCode?: number;
 }
 

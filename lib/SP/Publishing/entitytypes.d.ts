@@ -797,7 +797,7 @@ export interface PrimaryCityTimeCollections {
 **********************************************/
 export interface SitePageMetadata {
 	AbsoluteUrl?: string;
-	AuthorByline?: Array<string>;
+	AuthorByline?: { results: Array<string> };
 	BannerImageUrl?: string;
 	CommentCount?: number;
 	CommentsDisabled?: boolean;
@@ -1519,7 +1519,7 @@ export interface Search extends IBaseResult, SearchProps, SearchCollections, Sea
 **********************************************/
 export interface SearchProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	QueryLanguages?: Array<number>;
+	QueryLanguages?: { results: Array<number> };
 }
 
 /*********************************************

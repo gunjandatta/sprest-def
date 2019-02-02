@@ -6,8 +6,8 @@ import { SP } from "../../";
 **********************************************/
 export interface MicroServiceWorkItemProperties {
 	ApiPath?: string;
-	CustomProperties?: Array<SP.KeyValue>;
-	HttpHeaders?: Array<SP.KeyValue>;
+	CustomProperties?: { results: Array<SP.KeyValue> };
+	HttpHeaders?: { results: Array<SP.KeyValue> };
 	MicroServiceName?: string;
 	RequestType?: number;
 }

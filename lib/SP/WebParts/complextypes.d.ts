@@ -4,7 +4,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 * TileData
 **********************************************/
 export interface TileData {
-	BackgroundCollageImageLocations?: Array<string>;
+	BackgroundCollageImageLocations?: { results: Array<string> };
 	BackgroundImageLocation?: string;
 	BackgroundImageRendersAsIcon?: boolean;
 	BodyText?: string;

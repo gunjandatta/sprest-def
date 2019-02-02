@@ -42,7 +42,7 @@ export interface StringCollection extends IBaseResult, StringCollectionProps, St
 **********************************************/
 export interface StringCollectionProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<string>;
+	Items?: { results: Array<string> };
 }
 
 /*********************************************
@@ -200,7 +200,7 @@ export interface ReorderingRuleCollection extends IBaseResult, ReorderingRuleCol
 **********************************************/
 export interface ReorderingRuleCollectionProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<Microsoft.SharePoint.Client.Search.Query.ReorderingRule>;
+	Items?: { results: Array<Microsoft.SharePoint.Client.Search.Query.ReorderingRule> };
 }
 
 /*********************************************
@@ -272,7 +272,7 @@ export interface SortCollection extends IBaseResult, SortCollectionProps, SortCo
 **********************************************/
 export interface SortCollectionProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<Microsoft.SharePoint.Client.Search.Query.Sort>;
+	Items?: { results: Array<Microsoft.SharePoint.Client.Search.Query.Sort> };
 }
 
 /*********************************************

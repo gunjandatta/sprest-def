@@ -81,8 +81,8 @@ export interface TypeInformation {
 	BaseTypeFullName?: string;
 	FullName?: string;
 	IsValueObject?: boolean;
-	Methods?: Array<SP.MethodInformation>;
-	Properties?: Array<SP.PropertyInformation>;
+	Methods?: { results: Array<SP.MethodInformation> };
+	Properties?: { results: Array<SP.PropertyInformation> };
 }
 
 /*********************************************
@@ -695,7 +695,7 @@ export interface AlertProps {
 	ItemID?: number;
 	ListID?: any;
 	ListUrl?: string;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 	Status?: number;
 	Title?: string;
 	UserId?: number;
@@ -1636,7 +1636,7 @@ export interface DlpPolicyTip {
 	ComplianceUrl?: string;
 	GeneralText?: string;
 	LastProcessedTime?: any;
-	MatchedConditionDescriptions?: Array<string>;
+	MatchedConditionDescriptions?: { results: Array<string> };
 	OverrideOptions?: number;
 	TwoLetterISOLanguageName?: string;
 }
@@ -2092,7 +2092,7 @@ export interface Folder extends IBaseResult, FolderProps, FolderCollections, Fol
 * FolderProps
 **********************************************/
 export interface FolderProps {
-	ContentTypeOrder?: Array<SP.ContentTypeId>;
+	ContentTypeOrder?: { results: Array<SP.ContentTypeId> };
 	Exists?: boolean;
 	IsWOPIEnabled?: boolean;
 	ItemCount?: number;
@@ -2102,7 +2102,7 @@ export interface FolderProps {
 	ServerRelativeUrl?: string;
 	TimeCreated?: any;
 	TimeLastModified?: any;
-	UniqueContentTypeOrder?: Array<SP.ContentTypeId>;
+	UniqueContentTypeOrder?: { results: Array<SP.ContentTypeId> };
 	UniqueId?: any;
 	WelcomePage?: string;
 }
@@ -2611,7 +2611,7 @@ export interface ViewFieldCollection extends IBaseResult, ViewFieldCollectionPro
 **********************************************/
 export interface ViewFieldCollectionProps {
 	SchemaXml?: string;
-	Items?: Array<string>;
+	Items?: { results: Array<string> };
 }
 
 /*********************************************
@@ -2850,7 +2850,7 @@ export interface WebProps {
 	ShowUrlStructureForCurrentUser?: boolean;
 	SiteLogoDescription?: string;
 	SiteLogoUrl?: string;
-	SupportedUILanguageIds?: Array<number>;
+	SupportedUILanguageIds?: { results: Array<number> };
 	SyndicationEnabled?: boolean;
 	TenantTagPolicyEnabled?: boolean;
 	ThemeData?: string;
@@ -3510,7 +3510,7 @@ export interface NavigationNode extends IBaseResult, NavigationNodeProps, Naviga
 * NavigationNodeProps
 **********************************************/
 export interface NavigationNodeProps {
-	AudienceIds?: Array<any>;
+	AudienceIds?: { results: Array<any> };
 	Id?: number;
 	IsDocLib?: boolean;
 	IsExternal?: boolean;
@@ -3917,7 +3917,7 @@ export interface LanguageCollection extends IBaseResult, LanguageCollectionProps
 **********************************************/
 export interface LanguageCollectionProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<SP.Language>;
+	Items?: { results: Array<SP.Language> };
 }
 
 /*********************************************
@@ -4604,7 +4604,7 @@ export interface ObjectSharingSettingsProps {
 	CanShareFolder?: boolean;
 	DefaultShareLinkPermission?: number;
 	DefaultShareLinkType?: number;
-	GroupsList?: Array<SP.KeyValue>;
+	GroupsList?: { results: Array<SP.KeyValue> };
 	HasEditRole?: boolean;
 	HasReadRole?: boolean;
 	InheritingWebLink?: string;
@@ -4617,10 +4617,10 @@ export interface ObjectSharingSettingsProps {
 	ListId?: any;
 	PermissionsOnlyMode?: boolean;
 	RequiredAnonymousLinkExpirationInDays?: number;
-	Roles?: Array<SP.KeyValue>;
+	Roles?: { results: Array<SP.KeyValue> };
 	ShareByEmailEnabled?: boolean;
 	ShowExternalSharingWarning?: boolean;
-	SimplifiedRoles?: Array<SP.KeyValue>;
+	SimplifiedRoles?: { results: Array<SP.KeyValue> };
 	SupportsAclPropagation?: boolean;
 	WebUrl?: string;
 }
@@ -4709,7 +4709,7 @@ export interface ObjectSharingInformationProps {
 	IsSharedWithMany?: boolean;
 	IsSharedWithSecurityGroup?: boolean;
 	PendingAccessRequestsLink?: string;
-	SharingLinks?: Array<SP.SharingLinkInfo>;
+	SharingLinks?: { results: Array<SP.SharingLinkInfo> };
 	TotalFileCount?: number;
 }
 
@@ -4784,14 +4784,14 @@ export interface ObjectSharingInformationUserOData extends IBaseResult, ObjectSh
 **********************************************/
 export interface SharePointSharingSettings {
 	AddToGroupModeName?: string;
-	GroupNameLines?: Array<string>;
-	GroupRoleDefinitionNamesLines?: Array<string>;
+	GroupNameLines?: { results: Array<string> };
+	GroupRoleDefinitionNamesLines?: { results: Array<string> };
 	IsMobileView?: boolean;
 	PanelGivePermissionsVisible?: boolean;
 	PanelShowHideMoreOptionsVisible?: boolean;
 	PanelSimplifiedRoleSelectorVisible?: boolean;
-	RequiredScriptFileLinks?: Array<string>;
-	RoleDefinitionNameLines?: Array<string>;
+	RequiredScriptFileLinks?: { results: Array<string> };
+	RoleDefinitionNameLines?: { results: Array<string> };
 	SelectedGroup?: string;
 	SharedWithEnabled?: boolean;
 	SharingCssLink?: string;
@@ -4922,13 +4922,13 @@ export interface SharingResult extends IBaseResult, SharingResultProps, SharingR
 export interface SharingResultProps {
 	ErrorMessage?: string;
 	IconUrl?: string;
-	InvitedUsers?: Array<SP.SPInvitationCreationResult>;
+	InvitedUsers?: { results: Array<SP.SPInvitationCreationResult> };
 	Name?: string;
 	PermissionsPageRelativeUrl?: string;
 	StatusCode?: number;
-	UniquelyPermissionedUsers?: Array<SP.Sharing.UserSharingResult>;
+	UniquelyPermissionedUsers?: { results: Array<SP.Sharing.UserSharingResult> };
 	Url?: string;
-	UsersAddedToGroup?: Array<SP.Sharing.UserSharingResult>;
+	UsersAddedToGroup?: { results: Array<SP.Sharing.UserSharingResult> };
 }
 
 /*********************************************
@@ -5585,7 +5585,7 @@ export interface FieldMultiChoice extends SP.Field, IBaseResult, FieldMultiChoic
 export interface FieldMultiChoiceProps {
 	FillInChoice?: boolean;
 	Mappings?: string;
-	Choices?: Array<string>;
+	Choices?: { results: Array<string> };
 }
 
 /*********************************************
@@ -6347,7 +6347,7 @@ export interface FieldLookup extends SP.Field, IBaseResult, FieldLookupProps, Fi
 **********************************************/
 export interface FieldLookupProps {
 	AllowMultipleValues?: boolean;
-	DependentLookupInternalNames?: Array<string>;
+	DependentLookupInternalNames?: { results: Array<string> };
 	IsDependentLookup?: boolean;
 	IsRelationship?: boolean;
 	LookupField?: string;
@@ -6821,8 +6821,8 @@ export interface HubSiteMethods {
 export interface ListBloomFilter {
 	BloomFilterSize?: number;
 	FalsePositiveRate?: number;
-	HashedValueSet?: Array<string>;
-	IndexMap?: Array<number>;
+	HashedValueSet?: { results: Array<string> };
+	IndexMap?: { results: Array<number> };
 	ItemProcessedCount?: number;
 	K?: number;
 	LastListItemIdProcessed?: number;

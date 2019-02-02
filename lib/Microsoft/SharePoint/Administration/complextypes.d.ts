@@ -6,7 +6,7 @@ import { SP } from "../../../";
 * CentralAssetRepositoryLibraryCollection
 **********************************************/
 export interface CentralAssetRepositoryLibraryCollection {
-	Items?: Array<Microsoft.SharePoint.Administration.CentralAssetRepositoryLibrary>;
+	Items?: { results: Array<Microsoft.SharePoint.Administration.CentralAssetRepositoryLibrary> };
 }
 
 /*********************************************

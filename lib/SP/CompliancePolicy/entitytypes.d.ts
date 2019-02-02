@@ -4,10 +4,10 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 * PolicyEvaluationInfo
 **********************************************/
 export interface PolicyEvaluationInfo {
-	ApplicablePolicies?: Array<string>;
+	ApplicablePolicies?: { results: Array<string> };
 	DlpAccessScope?: number;
-	MatchedRules?: Array<string>;
-	OverriddenRules?: Array<string>;
+	MatchedRules?: { results: Array<string> };
+	OverriddenRules?: { results: Array<string> };
 }
 
 /*********************************************

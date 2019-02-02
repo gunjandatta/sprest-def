@@ -213,7 +213,7 @@ export interface SPOWebAppServicePrincipal extends IBaseResult, SPOWebAppService
 export interface SPOWebAppServicePrincipalProps {
 	AccountEnabled?: boolean;
 	AppId?: string;
-	ReplyUrls?: Array<string>;
+	ReplyUrls?: { results: Array<string> };
 }
 
 /*********************************************

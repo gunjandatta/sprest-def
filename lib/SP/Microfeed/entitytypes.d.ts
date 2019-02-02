@@ -189,7 +189,7 @@ export interface MicrofeedData extends IBaseResult, MicrofeedDataProps, Microfee
 **********************************************/
 export interface MicrofeedDataProps {
 	Created?: any;
-	Data?: Array<SP.KeyValue>;
+	Data?: { results: Array<SP.KeyValue> };
 	DefinitionId?: number;
 	ItemType?: number;
 	Modified?: any;
@@ -328,7 +328,7 @@ export interface MicrofeedManagerMethods {
 **********************************************/
 export interface MicrofeedPostOptionCollection {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<SP.Microfeed.MicrofeedPostOptions>;
+	Items?: { results: Array<SP.Microfeed.MicrofeedPostOptions> };
 }
 
 /*********************************************

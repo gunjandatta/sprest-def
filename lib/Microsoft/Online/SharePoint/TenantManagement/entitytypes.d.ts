@@ -106,9 +106,9 @@ export interface GetExternalUsersResultsMethods {
 **********************************************/
 export interface GroupCreationParams {
 	Classification?: string;
-	CreationOptions?: Array<string>;
+	CreationOptions?: { results: Array<string> };
 	Description?: string;
-	Owners?: Array<string>;
+	Owners?: { results: Array<string> };
 }
 
 /*********************************************
@@ -177,7 +177,7 @@ export interface Office365Tenant extends IBaseResult, Office365TenantProps, Offi
 **********************************************/
 export interface Office365TenantProps {
 	AllowDownloadingNonWebViewableFiles?: boolean;
-	AllowedDomainListForSyncClient?: Array<any>;
+	AllowedDomainListForSyncClient?: { results: Array<any> };
 	AllowEditing?: boolean;
 	AllowLimitedAccessOnUnmanagedDevices?: boolean;
 	AllowSelectSGsInODBList?: string;
@@ -193,7 +193,7 @@ export interface Office365TenantProps {
 	CommentsOnFilesDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
 	ConditionalAccessPolicy?: number;
-	ContentTypeSyncSiteTemplatesList?: Array<string>;
+	ContentTypeSyncSiteTemplatesList?: { results: Array<string> };
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultLinkPermission?: number;
 	DefaultSharingLinkType?: number;
@@ -202,7 +202,7 @@ export interface Office365TenantProps {
 	EmailAttestationReAuthDays?: number;
 	EmailAttestationRequired?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
-	ExcludedFileExtensionsForSyncClient?: Array<string>;
+	ExcludedFileExtensionsForSyncClient?: { results: Array<string> };
 	ExternalServicesEnabled?: boolean;
 	FileAnonymousLinkType?: number;
 	FilePickerExternalImageSearchEnabled?: boolean;
@@ -233,7 +233,7 @@ export interface Office365TenantProps {
 	ProvisionSharedWithEveryoneFolder?: boolean;
 	PublicCdnAllowedFileTypes?: string;
 	PublicCdnEnabled?: boolean;
-	PublicCdnOrigins?: Array<string>;
+	PublicCdnOrigins?: { results: Array<string> };
 	RequireAcceptingAccountMatchInvitedAccount?: boolean;
 	RequireAnonymousLinksExpireInDays?: number;
 	SearchResolveExactEmailOrUPN?: boolean;
@@ -323,8 +323,8 @@ export interface Office365TenantMethods {
 **********************************************/
 export interface RemoveExternalUsersResults {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	RemoveFailed?: Array<string>;
-	RemoveSucceeded?: Array<string>;
+	RemoveFailed?: { results: Array<string> };
+	RemoveSucceeded?: { results: Array<string> };
 }
 
 /*********************************************
@@ -354,7 +354,7 @@ export interface SPOUserSessionRevocationResultCollections {
 export interface ThemeProperties {
 	IsInverted?: boolean;
 	Name?: string;
-	Palette?: Array<SP.KeyValue>;
+	Palette?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************

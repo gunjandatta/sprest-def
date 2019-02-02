@@ -380,7 +380,7 @@ export interface LookupTableProps {
 	AppAlternateId?: any;
 	FieldType?: number;
 	Id?: any;
-	Masks?: Array<PS.LookupMask>;
+	Masks?: { results: Array<PS.LookupMask> };
 	Name?: string;
 	SortOrder?: number;
 }
@@ -1602,7 +1602,7 @@ export interface EnterpriseProjectType extends IBaseResult, EnterpriseProjectTyp
 * EnterpriseProjectTypeProps
 **********************************************/
 export interface EnterpriseProjectTypeProps {
-	Departments?: Array<any>;
+	Departments?: { results: Array<any> };
 	Description?: string;
 	Id?: any;
 	ImageUrl?: string;

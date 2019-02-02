@@ -10,7 +10,7 @@ export interface FormulaCreationInfo {
 	IsDefault?: boolean;
 	PreviewImageAltText?: string;
 	PreviewImageUrl?: string;
-	RecipeGuids?: Array<any>;
+	RecipeGuids?: { results: Array<any> };
 	Title?: string;
 	Version?: number;
 	WebTemplate?: string;
@@ -78,7 +78,7 @@ export interface SiteDesignCreationInfo {
 	IsDefault?: boolean;
 	PreviewImageAltText?: string;
 	PreviewImageUrl?: string;
-	SiteScriptIds?: Array<any>;
+	SiteScriptIds?: { results: Array<any> };
 	Title?: string;
 	WebTemplate?: string;
 }
@@ -215,7 +215,7 @@ export interface SiteScriptActionStatusCollections {
 * SPSiteScriptStatusAndSchema
 **********************************************/
 export interface SPSiteScriptStatusAndSchema {
-	ActionStatus?: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus>;
+	ActionStatus?: { results: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus> };
 	Schema?: string;
 }
 

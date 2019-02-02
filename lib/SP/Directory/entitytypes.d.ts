@@ -134,8 +134,8 @@ export interface GroupProps {
 	pictureUrl?: string;
 	principalName?: string;
 	siteUrl?: string;
-	teamsResources?: Array<SP.KeyValue>;
-	yammerResources?: Array<SP.KeyValue>;
+	teamsResources?: { results: Array<SP.KeyValue> };
+	yammerResources?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
@@ -224,17 +224,17 @@ export interface UserProps {
 	displayName?: string;
 	hireDate?: any;
 	id?: any;
-	interests?: Array<string>;
+	interests?: { results: Array<string> };
 	mail?: string;
 	mySite?: string;
 	netId?: string;
 	officeGraphEnabled?: boolean;
-	pastProjects?: Array<string>;
+	pastProjects?: { results: Array<string> };
 	pointPublishingPersonalSiteUrl?: string;
 	preferredName?: string;
 	principalName?: string;
-	responsibilities?: Array<string>;
-	schools?: Array<string>;
+	responsibilities?: { results: Array<string> };
+	schools?: { results: Array<string> };
 	sharePointContentBarViewsTeachingBubble?: boolean;
 	sharePointConversationsLinkFirstRun?: boolean;
 	sharePointFiltersPaneFirstRun?: boolean;
@@ -253,8 +253,8 @@ export interface UserProps {
 	sharePointProfileId?: any;
 	sharePointSaveForLaterTeachingBubble?: boolean;
 	sharePointTeamsTeachingBubble?: boolean;
-	skills?: Array<string>;
-	tags?: Array<string>;
+	skills?: { results: Array<string> };
+	tags?: { results: Array<string> };
 	tenantInstanceId?: any;
 	userType?: string;
 }
@@ -344,7 +344,7 @@ export interface GroupAndUserStatusOData extends IBaseResult, GroupAndUserStatus
 **********************************************/
 export interface MembershipResult {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	GroupsList?: Array<any>;
+	GroupsList?: { results: Array<any> };
 }
 
 /*********************************************
@@ -358,7 +358,7 @@ export interface MembershipResultCollections {
 * MembersInfo
 **********************************************/
 export interface MembersInfo {
-	MemberNames?: Array<string>;
+	MemberNames?: { results: Array<string> };
 	TotalCount?: number;
 }
 

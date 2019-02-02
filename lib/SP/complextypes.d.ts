@@ -21,7 +21,7 @@ export interface KeyValueCollections {
 * SimpleDataRow
 **********************************************/
 export interface SimpleDataRow {
-	Cells?: Array<SP.KeyValue>;
+	Cells?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
@@ -35,7 +35,7 @@ export interface SimpleDataRowCollections {
 * SimpleDataTable
 **********************************************/
 export interface SimpleDataTable {
-	Rows?: Array<SP.SimpleDataRow>;
+	Rows?: { results: Array<SP.SimpleDataRow> };
 }
 
 /*********************************************
@@ -51,7 +51,7 @@ export interface SimpleDataTableCollections {
 export interface MethodInformation {
 	IsBeta?: boolean;
 	Name?: string;
-	Parameters?: Array<SP.ParameterInformation>;
+	Parameters?: { results: Array<SP.ParameterInformation> };
 	ReturnTypeFullName?: string;
 }
 
@@ -156,7 +156,7 @@ export interface ResourcePathCollections {
 * CreatableItemInfoCollection
 **********************************************/
 export interface CreatableItemInfoCollection {
-	Items?: Array<SP.CreatableItemInfo>;
+	Items?: { results: Array<SP.CreatableItemInfo> };
 }
 
 /*********************************************
@@ -186,7 +186,7 @@ export interface CreatableItemInfoCollections {
 * CurrencyInformationCollection
 **********************************************/
 export interface CurrencyInformationCollection {
-	Items?: Array<SP.CurrencyInformation>;
+	Items?: { results: Array<SP.CurrencyInformation> };
 }
 
 /*********************************************
@@ -263,12 +263,12 @@ export interface MultiGeoCopyParametersCollections {
 * MenuNode
 **********************************************/
 export interface MenuNode {
-	CustomProperties?: Array<SP.KeyValue>;
+	CustomProperties?: { results: Array<SP.KeyValue> };
 	FriendlyUrlSegment?: string;
 	IsDeleted?: boolean;
 	IsHidden?: boolean;
 	Key?: string;
-	Nodes?: Array<SP.MenuNode>;
+	Nodes?: { results: Array<SP.MenuNode> };
 	NodeType?: number;
 	SimpleUrl?: string;
 	Title?: string;
@@ -286,7 +286,7 @@ export interface MenuNodeCollections {
 **********************************************/
 export interface MenuState {
 	FriendlyUrlPrefix?: string;
-	Nodes?: Array<SP.MenuNode>;
+	Nodes?: { results: Array<SP.MenuNode> };
 	SimpleUrl?: string;
 	SPSitePrefix?: string;
 	SPWebPrefix?: string;
@@ -356,7 +356,7 @@ export interface ScriptSafeDomainEntityDataCollections {
 * SharedWithUserCollection
 **********************************************/
 export interface SharedWithUserCollection {
-	Items?: Array<SP.SharedWithUser>;
+	Items?: { results: Array<SP.SharedWithUser> };
 }
 
 /*********************************************
@@ -423,7 +423,7 @@ export interface SharingLinkInfo {
 	Description?: string;
 	Expiration?: string;
 	HasExternalGuestInvitees?: boolean;
-	Invitations?: Array<SP.Sharing.LinkInvitation>;
+	Invitations?: { results: Array<SP.Sharing.LinkInvitation> };
 	IsActive?: boolean;
 	IsCreateOnlyLink?: boolean;
 	IsDefault?: boolean;
@@ -478,7 +478,7 @@ export interface AlertCreationInformation {
 	EventType?: number;
 	EventTypeBitmask?: number;
 	Filter?: string;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 	Status?: number;
 	Title?: string;
 }
@@ -494,7 +494,7 @@ export interface AlertCreationInformationCollections {
 * AppLicenseCollection
 **********************************************/
 export interface AppLicenseCollection {
-	Items?: Array<SP.AppLicense>;
+	Items?: { results: Array<SP.AppLicense> };
 }
 
 /*********************************************
@@ -728,7 +728,7 @@ export interface ContextWebInformation {
 	FormDigestValue?: string;
 	LibraryVersion?: string;
 	SiteFullUrl?: string;
-	SupportedSchemaVersions?: Array<string>;
+	SupportedSchemaVersions?: { results: Array<string> };
 	WebFullUrl?: string;
 }
 
@@ -744,7 +744,7 @@ export interface ContextWebInformationCollections {
 **********************************************/
 export interface CopyJobProgress {
 	JobState?: number;
-	Logs?: Array<string>;
+	Logs?: { results: Array<string> };
 }
 
 /*********************************************
@@ -761,7 +761,7 @@ export interface CopyMigrationInfo {
 	EncryptionKey?: any;
 	JobId?: any;
 	JobQueueUri?: string;
-	SourceListItemUniqueIds?: Array<any>;
+	SourceListItemUniqueIds?: { results: Array<any> };
 }
 
 /*********************************************
@@ -793,7 +793,7 @@ export interface CopyMigrationOptionsCollections {
 * CustomActionElementCollection
 **********************************************/
 export interface CustomActionElementCollection {
-	Items?: Array<SP.CustomActionElement>;
+	Items?: { results: Array<SP.CustomActionElement> };
 }
 
 /*********************************************
@@ -952,7 +952,7 @@ export interface FieldCalculatedErrorValueCollections {
 * FieldCreationInformation
 **********************************************/
 export interface FieldCreationInformation {
-	Choices?: Array<string>;
+	Choices?: { results: Array<string> };
 	IsCompactName?: boolean;
 	LookupFieldName?: string;
 	LookupListId?: any;
@@ -1151,7 +1151,7 @@ export interface LanguageCollections {
 **********************************************/
 export interface ListCreationInformation {
 	CustomSchemaXml?: string;
-	DataSourceProperties?: Array<SP.KeyValue>;
+	DataSourceProperties?: { results: Array<SP.KeyValue> };
 	Description?: string;
 	DocumentTemplateType?: number;
 	QuickLaunchOption?: number;
@@ -1172,7 +1172,7 @@ export interface ListCreationInformationCollections {
 * ListDataSource
 **********************************************/
 export interface ListDataSource {
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
@@ -1186,7 +1186,7 @@ export interface ListDataSourceCollections {
 * ListDataValidationExceptionValue
 **********************************************/
 export interface ListDataValidationExceptionValue {
-	FieldFailures?: Array<SP.ListDataValidationFailure>;
+	FieldFailures?: { results: Array<SP.ListDataValidationFailure> };
 	ItemFailure?: SP.ListDataValidationFailure;
 }
 
@@ -1737,7 +1737,7 @@ export interface ViewCreationInformation {
 	RowLimit?: number;
 	SetAsDefaultView?: boolean;
 	Title?: string;
-	ViewFields?: Array<string>;
+	ViewFields?: { results: Array<string> };
 	ViewTypeKind?: number;
 }
 
@@ -1785,7 +1785,7 @@ export interface VisualizationFieldCollections {
 export interface VisualizationStyleSet {
 	AspectRatio?: string;
 	BackgroundColor?: string;
-	Fields?: Array<SP.VisualizationField>;
+	Fields?: { results: Array<SP.VisualizationField> };
 	MinHeight?: string;
 }
 
@@ -1858,7 +1858,7 @@ export interface WebInfoCreationInformationCollections {
 **********************************************/
 export interface WebRequestInfo {
 	Body?: string;
-	Headers?: Array<SP.KeyValue>;
+	Headers?: { results: Array<SP.KeyValue> };
 	Method?: string;
 	Url?: string;
 }
@@ -1875,7 +1875,7 @@ export interface WebRequestInfoCollections {
 **********************************************/
 export interface WebResponseInfo {
 	Body?: string;
-	Headers?: Array<SP.KeyValue>;
+	Headers?: { results: Array<SP.KeyValue> };
 	StatusCode?: number;
 }
 

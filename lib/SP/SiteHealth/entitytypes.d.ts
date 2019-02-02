@@ -8,7 +8,7 @@ export interface SiteHealthSummary {
 	FailedErrorCount?: number;
 	FailedWarningCount?: number;
 	PassedCount?: number;
-	Results?: Array<SP.SiteHealth.SiteHealthResult>;
+	Results?: { results: Array<SP.SiteHealth.SiteHealthResult> };
 }
 
 /*********************************************

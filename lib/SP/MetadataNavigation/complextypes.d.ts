@@ -5,7 +5,7 @@ import { SP } from "../../";
 * ConfiguredMetadataNavigationItemCollection
 **********************************************/
 export interface ConfiguredMetadataNavigationItemCollection {
-	Items?: Array<SP.MetadataNavigation.ConfiguredMetadataNavigationItem>;
+	Items?: { results: Array<SP.MetadataNavigation.ConfiguredMetadataNavigationItem> };
 }
 
 /*********************************************

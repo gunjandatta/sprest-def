@@ -64,7 +64,7 @@ export interface DateTimeTypeCustomPropertyCollections {
 * MultiValueStringCustomProperty
 **********************************************/
 export interface MultiValueStringCustomProperty {
-	Value?: Array<string>;
+	Value?: { results: Array<string> };
 }
 
 /*********************************************

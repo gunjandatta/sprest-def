@@ -141,7 +141,7 @@ export interface EngagementCreationInformation {
 	MaxUnits?: number;
 	ResourceId?: any;
 	Start?: any;
-	TimephasedPeriodData?: Array<PS.EngagementTimephasedPeriodCreationInformation>;
+	TimephasedPeriodData?: { results: Array<PS.EngagementTimephasedPeriodCreationInformation> };
 	Work?: string;
 	WorkMilliseconds?: number;
 	WorkTimeSpan?: any;
@@ -177,7 +177,7 @@ export interface EngagementTimephasedPeriodCreationInformationCollections {
 * EnterpriseProjectTypeCreationInformation
 **********************************************/
 export interface EnterpriseProjectTypeCreationInformation {
-	DepartmentIds?: Array<any>;
+	DepartmentIds?: { results: Array<any> };
 	Description?: string;
 	Id?: any;
 	ImageUrl?: string;
@@ -186,7 +186,7 @@ export interface EnterpriseProjectTypeCreationInformation {
 	Name?: string;
 	Order?: number;
 	PermissionSyncEnable?: boolean;
-	ProjectDetailPages?: Array<PS.ProjectDetailPageCreationInformation>;
+	ProjectDetailPages?: { results: Array<PS.ProjectDetailPageCreationInformation> };
 	ProjectPlanTemplateId?: any;
 	SiteCreationOption?: number;
 	SiteCreationURL?: string;
@@ -334,9 +334,9 @@ export interface LookupMaskCollections {
 * LookupTableCreationInformation
 **********************************************/
 export interface LookupTableCreationInformation {
-	Entries?: Array<PS.LookupEntryCreationInformation>;
+	Entries?: { results: Array<PS.LookupEntryCreationInformation> };
 	Id?: any;
-	Masks?: Array<PS.LookupMask>;
+	Masks?: { results: Array<PS.LookupMask> };
 	Name?: string;
 	SortOrder?: number;
 }
@@ -370,7 +370,7 @@ export interface PhaseCreationInformationCollections {
 export interface PlanAssignmentCreationInformation {
 	BookingType?: number;
 	Id?: any;
-	Intervals?: Array<PS.PlanAssignmentIntervalCreationInformation>;
+	Intervals?: { results: Array<PS.PlanAssignmentIntervalCreationInformation> };
 	ResourceId?: any;
 }
 
@@ -454,12 +454,12 @@ export interface ProjectResourceCreationInformationCollections {
 export interface StageCreationInformation {
 	Behavior?: number;
 	CheckInRequired?: boolean;
-	CustomFields?: Array<PS.StageCustomFieldCreationInformation>;
+	CustomFields?: { results: Array<PS.StageCustomFieldCreationInformation> };
 	Description?: string;
 	Id?: any;
 	Name?: string;
 	PhaseId?: any;
-	ProjectDetailPages?: Array<PS.StageDetailPageCreationInformation>;
+	ProjectDetailPages?: { results: Array<PS.StageDetailPageCreationInformation> };
 	SubmitDescription?: string;
 	WorkflowStatusPageId?: any;
 }

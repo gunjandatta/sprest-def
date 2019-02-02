@@ -345,7 +345,7 @@ export interface SharePointHomeServiceContext {
 	HomePageCache?: Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection;
 	HomePageContext?: Microsoft.SharePoint.Portal.Home.SharePointHomePageContext;
 	Payload?: string;
-	Urls?: Array<string>;
+	Urls?: { results: Array<string> };
 }
 
 /*********************************************

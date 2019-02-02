@@ -103,7 +103,7 @@ export interface FollowedContentMethods {
 **********************************************/
 export interface FollowedItemData {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
@@ -118,7 +118,7 @@ export interface FollowedItemDataCollections {
 **********************************************/
 export interface HashTagCollection {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: Array<SP.UserProfiles.HashTag>;
+	Items?: { results: Array<SP.UserProfiles.HashTag> };
 }
 
 /*********************************************
@@ -302,19 +302,19 @@ export interface PersonalCacheMethods {
 **********************************************/
 export interface PersonProperties {
 	AccountName?: string;
-	DirectReports?: Array<string>;
+	DirectReports?: { results: Array<string> };
 	DisplayName?: string;
 	Email?: string;
-	ExtendedManagers?: Array<string>;
-	ExtendedReports?: Array<string>;
+	ExtendedManagers?: { results: Array<string> };
+	ExtendedReports?: { results: Array<string> };
 	IsFollowed?: boolean;
 	LatestPost?: string;
-	Peers?: Array<string>;
+	Peers?: { results: Array<string> };
 	PersonalSiteHostUrl?: string;
 	PersonalUrl?: string;
 	PictureUrl?: string;
 	Title?: string;
-	UserProfileProperties?: Array<SP.KeyValue>;
+	UserProfileProperties?: { results: Array<SP.KeyValue> };
 	UserUrl?: string;
 }
 

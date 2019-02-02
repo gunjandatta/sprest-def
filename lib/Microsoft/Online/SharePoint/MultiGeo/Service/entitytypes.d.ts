@@ -487,8 +487,8 @@ export interface CrossGeoTenantBYOKCollections {
 **********************************************/
 export interface CrossGeoTenantCompatibility {
 	AbsCredentialsCount?: number;
-	DbExtensionSchemaNames?: Array<string>;
-	DbExtensionSchemaVersions?: Array<string>;
+	DbExtensionSchemaNames?: { results: Array<string> };
+	DbExtensionSchemaVersions?: { results: Array<string> };
 	DbSchemaVersion?: string;
 }
 
@@ -770,7 +770,7 @@ export interface GeoExperienceMethods {
 export interface GeoMoveTenantCompatibilityCheck {
 	DestinationDataLocation?: string;
 	GeoMoveTenantCompatibilityResult?: number;
-	GeoMoveTenantPropertyCompatibilityChecks?: Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantPropertyCompatibilityCheck>;
+	GeoMoveTenantPropertyCompatibilityChecks?: { results: Array<Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantPropertyCompatibilityCheck> };
 	SourceDataLocation?: string;
 }
 
@@ -945,7 +945,7 @@ export interface MoveJobCollections {
 **********************************************/
 export interface MultiGeoApiVersions {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	SupportedVersions?: Array<string>;
+	SupportedVersions?: { results: Array<string> };
 }
 
 /*********************************************
@@ -1326,8 +1326,8 @@ export interface TaxonomyReplicationParameters extends IBaseResult, TaxonomyRepl
 export interface TaxonomyReplicationParametersProps {
 	IsReplicateAllContentTypes?: boolean;
 	IsReplicateAllGroups?: boolean;
-	ReplicatedContentTypes?: Array<string>;
-	ReplicatedGroups?: Array<string>;
+	ReplicatedContentTypes?: { results: Array<string> };
+	ReplicatedGroups?: { results: Array<string> };
 }
 
 /*********************************************

@@ -47,7 +47,7 @@ export interface WorkflowDefinitionProps {
 	FormField?: string;
 	Id?: any;
 	InitiationUrl?: string;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 	Published?: boolean;
 	RequiresAssociationForm?: boolean;
 	RequiresInitiationForm?: boolean;
@@ -181,7 +181,7 @@ export interface WorkflowInstance {
 	Id?: any;
 	InstanceCreated?: any;
 	LastUpdated?: any;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 	Status?: number;
 	UserStatus?: string;
 	WorkflowSubscriptionId?: any;
@@ -461,12 +461,12 @@ export interface WorkflowSubscriptionProps {
 	DefinitionId?: any;
 	Enabled?: boolean;
 	EventSourceId?: any;
-	EventTypes?: Array<string>;
+	EventTypes?: { results: Array<string> };
 	Id?: any;
 	ManualStartBypassesActivationLimit?: boolean;
 	Name?: string;
 	ParentContentTypeId?: string;
-	PropertyDefinitions?: Array<SP.KeyValue>;
+	PropertyDefinitions?: { results: Array<SP.KeyValue> };
 	StatusFieldName?: string;
 }
 

@@ -36,7 +36,7 @@ export interface NotificationCallbackCollections {
 **********************************************/
 export interface Subscription {
 	Hash?: string;
-	ID?: Array<SP.KeyValue>;
+	ID?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
