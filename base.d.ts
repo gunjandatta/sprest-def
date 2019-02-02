@@ -101,6 +101,12 @@ export interface IBaseResult {
  * Base Results
  */
 export interface IBaseResults<Type = any> extends IBaseResult {
+    /** Returns the next set of results. */
+    next(): IBaseCollection<Type>;
+
+    /** True, if more items exist. */
+    nextFl: boolean;
+
     /** Results */
     results: Array<Type>;
 }
