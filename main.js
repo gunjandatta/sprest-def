@@ -593,6 +593,9 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 if (methodInfo.overwrite != true) {
                                     // See if collections exist
                                     if (hasCollections[methodType]) {
+                                        // Update the reference
+                                        updateReferences(fileImports, dirName, methodType);
+
                                         // Update the method type
                                         methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                     } else {

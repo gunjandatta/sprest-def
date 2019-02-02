@@ -1,5 +1,6 @@
 import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../";
 import { Microsoft } from "../../../../";
+import { SP } from "../../../../";
 
 /*********************************************
 * ISiteCollectionCorporateCatalogAccessor
