@@ -712,7 +712,7 @@ export interface TenantPropMethods {
 * TenantCollections
 **********************************************/
 export interface TenantCollections extends TenantPropMethods {
-	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	Sites(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 }
 
@@ -733,7 +733,7 @@ export interface TenantMethods {
 	createSite(siteCreationProperties?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	getIdleSessionSignOutForUnmanagedDevices(): IBaseExecution<string>;
 	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
-	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
 	getSPOTenantAllWebTemplates(): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	registerHubSite(siteUrl?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;

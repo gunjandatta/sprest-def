@@ -283,8 +283,8 @@ export interface VideoItemMethods {
 	incrementViewCount(viewOrigin?: number): IBaseExecution<any>;
 	setPeopleInMedia(loginNames?: Array<string>): IBaseExecution<any>;
 	setVideoOwner(id?: number): IBaseExecution<any>;
-	subtitles(): IBaseCollection<SP.Publishing.SubtitleFile>;
-	thumbnails(preferredWidth?: number): IBaseCollection<SP.Publishing.VideoThumbnail>;
+	subtitles(): IBaseCollection<SP.Publishing.SubtitleFile> & SP.Publishing.SubtitleFileCollectionMethods;
+	thumbnails(preferredWidth?: number): IBaseCollection<SP.Publishing.VideoThumbnail> & SP.Publishing.VideoThumbnailCollectionMethods;
 	thumbnailStream(preferredWidth?: number): IBaseExecution<any>;
 	update(): IBaseExecution<any>;
 	uploadCustomThumbnail(fileExtension?: string, customVideoThumbnail?: any): IBaseExecution<any>;
@@ -496,13 +496,13 @@ export interface PointPublishingPostServiceManagerPropMethods {
 export interface PointPublishingPostServiceManagerCollections extends PointPublishingPostServiceManagerPropMethods {
 	bannerimages(): IBaseCollection<SP.File, SP.FileQuery, IBaseExecution & SP.FileCollectionMethods> & IBaseExecution & SP.FileCollectionMethods;
 	bannerimages(id: string | number): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
-	contributors(): IBaseCollection<SP.Publishing.PointPublishingUser>;
+	contributors(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
 	contributors(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
-	creators(): IBaseCollection<SP.Publishing.PointPublishingUser>;
+	creators(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
 	creators(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
 	posts(): IBaseCollection<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery, IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods> & IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods;
 	posts(id: string | number): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections & SP.Publishing.PointPublishingPostMethods;
-	viewers(): IBaseCollection<SP.Publishing.PointPublishingUser>;
+	viewers(): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
 	viewers(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
 }
 
@@ -526,8 +526,8 @@ export interface PointPublishingPostServiceManagerMethods {
 	deleteMagazine(): IBaseExecution<any>;
 	getDocProps(docUrls?: Array<string>): IBaseCollection<SP.Publishing.PointPublishingDocProps>;
 	getPostsQuery(top?: number, itemIdBoundary?: number, directionAscending?: boolean, publishedOnly?: boolean, draftsOnly?: boolean): IBaseCollection<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery, IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods> & IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods;
-	getTopAuthors(count?: number): IBaseCollection<SP.Publishing.PointPublishingUser>;
-	queryGroupNames(query?: string): IBaseCollection<SP.Publishing.PointPublishingUser>;
+	getTopAuthors(count?: number): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
+	queryGroupNames(query?: string): IBaseCollection<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollectionMethods;
 	setMagazineProperties(title?: string, description?: string, bannerImageUrl?: string, bannerColor?: string, bannerPattern?: string): IBaseExecution<SP.Publishing.PointPublishingMagazineProps>;
 }
 
@@ -1276,7 +1276,7 @@ export interface SitePageServicePropMethods {
 * SitePageServiceCollections
 **********************************************/
 export interface SitePageServiceCollections extends SitePageServicePropMethods {
-	Pages(): IBaseCollection<SP.Publishing.SitePage>;
+	Pages(): IBaseCollection<SP.Publishing.SitePage> & SP.Publishing.SitePageCollectionMethods;
 	Pages(id: string | number): IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 }
 

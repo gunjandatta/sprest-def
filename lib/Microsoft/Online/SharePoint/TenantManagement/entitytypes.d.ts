@@ -84,7 +84,7 @@ export interface GetExternalUsersResultsPropMethods {
 * GetExternalUsersResultsCollections
 **********************************************/
 export interface GetExternalUsersResultsCollections extends GetExternalUsersResultsPropMethods {
-	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+	ExternalUserCollection(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollectionMethods;
 	ExternalUserCollection(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollections;
 }
 

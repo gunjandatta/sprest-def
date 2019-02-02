@@ -139,6 +139,9 @@ function createDirectories(namespace) {
 
 // Generates the base collection interface
 function generateBaseCollection(methodType, hasCollections, hasCollectionMethods) {
+    if (methodType == "SP.Attachment") {
+        let a = 0;
+    }
     // See if a collection exists
     if (hasCollections[methodType]) {
         // See if methods exist
@@ -150,8 +153,14 @@ function generateBaseCollection(methodType, hasCollections, hasCollectionMethods
             return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query>';
         }
     } else {
-        // Generate the interface
-        return 'IBaseCollection<' + methodType + '>';
+        // See if methods exist
+        if (hasCollectionMethods[methodType]) {
+            // Generate the interface
+            return 'IBaseCollection<' + methodType + '> & ' + methodType + 'CollectionMethods';
+        } else {
+            // Generate the interface
+            return 'IBaseCollection<' + methodType + '>';
+        }
     }
 }
 
@@ -577,10 +586,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                                     // Add the parameter
                                     params.push(param.Name + "?: " + paramType);
-                                }
-
-                                if (methodInfo.name == "getCatalog") {
-                                    let a = 0;
                                 }
 
                                 // See if we are not overwriting the type

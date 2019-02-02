@@ -412,6 +412,6 @@ export interface MicrofeedStoreMethods {
 	getSocialProperties(accountName?: string): IBaseExecution<string>;
 	incrementUnreadAtMentionCount(accountName?: string): IBaseExecution<any>;
 	newItem(storeIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedData>;
-	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseCollection<SP.Microfeed.MicrofeedData>;
+	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseCollection<SP.Microfeed.MicrofeedData> & SP.Microfeed.MicrofeedDataCollectionMethods;
 	setPostLikeStatus(accountName?: string, postId?: string, like?: boolean): IBaseExecution<any>;
 }
