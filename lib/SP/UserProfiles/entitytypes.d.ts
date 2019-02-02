@@ -32,14 +32,14 @@ export interface IFollowedContentCollection extends IBaseResults<FollowedContent
 /*********************************************
 * IFollowedContentQueryCollection
 **********************************************/
-export interface IFollowedContentQueryCollection extends IBaseResults<FollowedContentQuery> {
-	done?: (resolve: (value?: Array<FollowedContentQuery>) => void) => void;
+export interface IFollowedContentQueryCollection extends IBaseResults<FollowedContentOData> {
+	done?: (resolve: (value?: Array<FollowedContentOData>) => void) => void;
 }
 
 /*********************************************
 * IFollowedContentQuery
 **********************************************/
-export interface IFollowedContentQuery extends FollowedContentQuery, FollowedContentMethods {
+export interface IFollowedContentQuery extends FollowedContentOData, FollowedContentMethods {
 
 }
 
@@ -73,9 +73,9 @@ export interface FollowedContentCollections extends FollowedContentPropMethods {
 }
 
 /*********************************************
-* FollowedContentQuery
+* FollowedContentOData
 **********************************************/
-export interface FollowedContentQuery extends IBaseResult, FollowedContentProps, FollowedContentMethods {
+export interface FollowedContentOData extends IBaseResult, FollowedContentProps, FollowedContentMethods {
 
 }
 
@@ -145,14 +145,14 @@ export interface IPeopleManagerCollection extends IBaseResults<PeopleManager> {
 /*********************************************
 * IPeopleManagerQueryCollection
 **********************************************/
-export interface IPeopleManagerQueryCollection extends IBaseResults<PeopleManagerQuery> {
-	done?: (resolve: (value?: Array<PeopleManagerQuery>) => void) => void;
+export interface IPeopleManagerQueryCollection extends IBaseResults<PeopleManagerOData> {
+	done?: (resolve: (value?: Array<PeopleManagerOData>) => void) => void;
 }
 
 /*********************************************
 * IPeopleManagerQuery
 **********************************************/
-export interface IPeopleManagerQuery extends PeopleManagerQuery, PeopleManagerMethods {
+export interface IPeopleManagerQuery extends PeopleManagerOData, PeopleManagerMethods {
 
 }
 
@@ -186,9 +186,9 @@ export interface PeopleManagerCollections extends PeopleManagerPropMethods {
 }
 
 /*********************************************
-* PeopleManagerQuery
+* PeopleManagerOData
 **********************************************/
-export interface PeopleManagerQuery extends IBaseResult, PeopleManagerProps, PeopleManagerMethods {
+export interface PeopleManagerOData extends IBaseResult, PeopleManagerProps, PeopleManagerMethods {
 
 }
 
@@ -239,14 +239,14 @@ export interface IPersonalCacheCollection extends IBaseResults<PersonalCache> {
 /*********************************************
 * IPersonalCacheQueryCollection
 **********************************************/
-export interface IPersonalCacheQueryCollection extends IBaseResults<PersonalCacheQuery> {
-	done?: (resolve: (value?: Array<PersonalCacheQuery>) => void) => void;
+export interface IPersonalCacheQueryCollection extends IBaseResults<PersonalCacheOData> {
+	done?: (resolve: (value?: Array<PersonalCacheOData>) => void) => void;
 }
 
 /*********************************************
 * IPersonalCacheQuery
 **********************************************/
-export interface IPersonalCacheQuery extends PersonalCacheQuery, PersonalCacheMethods {
+export interface IPersonalCacheQuery extends PersonalCacheOData, PersonalCacheMethods {
 
 }
 
@@ -279,9 +279,9 @@ export interface PersonalCacheCollections extends PersonalCachePropMethods {
 }
 
 /*********************************************
-* PersonalCacheQuery
+* PersonalCacheOData
 **********************************************/
-export interface PersonalCacheQuery extends IBaseResult, PersonalCacheProps, PersonalCacheMethods {
+export interface PersonalCacheOData extends IBaseResult, PersonalCacheProps, PersonalCacheMethods {
 
 }
 
@@ -342,14 +342,14 @@ export interface IProfileImageStoreCollection extends IBaseResults<ProfileImageS
 /*********************************************
 * IProfileImageStoreQueryCollection
 **********************************************/
-export interface IProfileImageStoreQueryCollection extends IBaseResults<ProfileImageStoreQuery> {
-	done?: (resolve: (value?: Array<ProfileImageStoreQuery>) => void) => void;
+export interface IProfileImageStoreQueryCollection extends IBaseResults<ProfileImageStoreOData> {
+	done?: (resolve: (value?: Array<ProfileImageStoreOData>) => void) => void;
 }
 
 /*********************************************
 * IProfileImageStoreQuery
 **********************************************/
-export interface IProfileImageStoreQuery extends ProfileImageStoreQuery, ProfileImageStoreMethods {
+export interface IProfileImageStoreQuery extends ProfileImageStoreOData, ProfileImageStoreMethods {
 
 }
 
@@ -382,9 +382,9 @@ export interface ProfileImageStoreCollections extends ProfileImageStorePropMetho
 }
 
 /*********************************************
-* ProfileImageStoreQuery
+* ProfileImageStoreOData
 **********************************************/
-export interface ProfileImageStoreQuery extends IBaseResult, ProfileImageStoreProps, ProfileImageStoreMethods {
+export interface ProfileImageStoreOData extends IBaseResult, ProfileImageStoreProps, ProfileImageStoreMethods {
 
 }
 
@@ -412,14 +412,14 @@ export interface IProfileLoaderCollection extends IBaseResults<ProfileLoader> {
 /*********************************************
 * IProfileLoaderQueryCollection
 **********************************************/
-export interface IProfileLoaderQueryCollection extends IBaseResults<ProfileLoaderQuery> {
-	done?: (resolve: (value?: Array<ProfileLoaderQuery>) => void) => void;
+export interface IProfileLoaderQueryCollection extends IBaseResults<ProfileLoaderOData> {
+	done?: (resolve: (value?: Array<ProfileLoaderOData>) => void) => void;
 }
 
 /*********************************************
 * IProfileLoaderQuery
 **********************************************/
-export interface IProfileLoaderQuery extends ProfileLoaderQuery, ProfileLoaderMethods {
+export interface IProfileLoaderQuery extends ProfileLoaderOData, ProfileLoaderMethods {
 
 }
 
@@ -452,9 +452,9 @@ export interface ProfileLoaderCollections extends ProfileLoaderPropMethods {
 }
 
 /*********************************************
-* ProfileLoaderQuery
+* ProfileLoaderOData
 **********************************************/
-export interface ProfileLoaderQuery extends IBaseResult, ProfileLoaderProps, ProfileLoaderMethods {
+export interface ProfileLoaderOData extends IBaseResult, ProfileLoaderProps, ProfileLoaderMethods {
 
 }
 
@@ -463,7 +463,7 @@ export interface ProfileLoaderQuery extends IBaseResult, ProfileLoaderProps, Pro
 **********************************************/
 export interface ProfileLoaderMethods {
 	createPersonalSiteEnqueueBulk(emailIDs?: Array<string>): IBaseCollection<string>;
-	getUserProfile(): IBaseQuery<SP.UserProfiles.UserProfile, SP.UserProfiles.UserProfileQuery> & SP.UserProfiles.UserProfileCollections & SP.UserProfiles.UserProfileMethods;
+	getUserProfile(): IBaseQuery<SP.UserProfiles.UserProfile, SP.UserProfiles.UserProfileOData> & SP.UserProfiles.UserProfileCollections & SP.UserProfiles.UserProfileMethods;
 }
 
 /*********************************************
@@ -483,14 +483,14 @@ export interface IUserProfilePropertiesForUserCollection extends IBaseResults<Us
 /*********************************************
 * IUserProfilePropertiesForUserQueryCollection
 **********************************************/
-export interface IUserProfilePropertiesForUserQueryCollection extends IBaseResults<UserProfilePropertiesForUserQuery> {
-	done?: (resolve: (value?: Array<UserProfilePropertiesForUserQuery>) => void) => void;
+export interface IUserProfilePropertiesForUserQueryCollection extends IBaseResults<UserProfilePropertiesForUserOData> {
+	done?: (resolve: (value?: Array<UserProfilePropertiesForUserOData>) => void) => void;
 }
 
 /*********************************************
 * IUserProfilePropertiesForUserQuery
 **********************************************/
-export interface IUserProfilePropertiesForUserQuery extends UserProfilePropertiesForUserQuery, UserProfilePropertiesForUserMethods {
+export interface IUserProfilePropertiesForUserQuery extends UserProfilePropertiesForUserOData, UserProfilePropertiesForUserMethods {
 
 }
 
@@ -523,9 +523,9 @@ export interface UserProfilePropertiesForUserCollections extends UserProfileProp
 }
 
 /*********************************************
-* UserProfilePropertiesForUserQuery
+* UserProfilePropertiesForUserOData
 **********************************************/
-export interface UserProfilePropertiesForUserQuery extends IBaseResult, UserProfilePropertiesForUserProps, UserProfilePropertiesForUserMethods {
+export interface UserProfilePropertiesForUserOData extends IBaseResult, UserProfilePropertiesForUserProps, UserProfilePropertiesForUserMethods {
 
 }
 
@@ -553,14 +553,14 @@ export interface IUserProfileCollection extends IBaseResults<UserProfile> {
 /*********************************************
 * IUserProfileQueryCollection
 **********************************************/
-export interface IUserProfileQueryCollection extends IBaseResults<UserProfileQuery> {
-	done?: (resolve: (value?: Array<UserProfileQuery>) => void) => void;
+export interface IUserProfileQueryCollection extends IBaseResults<UserProfileOData> {
+	done?: (resolve: (value?: Array<UserProfileOData>) => void) => void;
 }
 
 /*********************************************
 * IUserProfileQuery
 **********************************************/
-export interface IUserProfileQuery extends UserProfileQuery, UserProfileMethods {
+export interface IUserProfileQuery extends UserProfileOData, UserProfileMethods {
 
 }
 
@@ -604,7 +604,7 @@ export interface UserProfileProps {
 **********************************************/
 export interface UserProfilePropMethods {
 	FollowedContent(): IBaseExecution<SP.UserProfiles.FollowedContent> & SP.UserProfiles.FollowedContentCollections & SP.UserProfiles.FollowedContentMethods;
-	PersonalSite(): IBaseQuery<SP.Site, SP.SiteQuery> & SP.SiteCollections & SP.SiteMethods;
+	PersonalSite(): IBaseQuery<SP.Site, SP.SiteOData> & SP.SiteCollections & SP.SiteMethods;
 }
 
 /*********************************************
@@ -615,9 +615,9 @@ export interface UserProfileCollections extends UserProfilePropMethods {
 }
 
 /*********************************************
-* UserProfileQuery
+* UserProfileOData
 **********************************************/
-export interface UserProfileQuery extends IBaseResult, UserProfileProps, UserProfileMethods {
+export interface UserProfileOData extends IBaseResult, UserProfileProps, UserProfileMethods {
 	FollowedContent: SP.UserProfiles.FollowedContent & SP.UserProfiles.FollowedContentCollections;
 	PersonalSite: SP.Site & SP.SiteCollections;
 }

@@ -18,14 +18,14 @@ export interface ITenantCdnApiCollection extends IBaseResults<TenantCdnApi> {
 /*********************************************
 * ITenantCdnApiQueryCollection
 **********************************************/
-export interface ITenantCdnApiQueryCollection extends IBaseResults<TenantCdnApiQuery> {
-	done?: (resolve: (value?: Array<TenantCdnApiQuery>) => void) => void;
+export interface ITenantCdnApiQueryCollection extends IBaseResults<TenantCdnApiOData> {
+	done?: (resolve: (value?: Array<TenantCdnApiOData>) => void) => void;
 }
 
 /*********************************************
 * ITenantCdnApiQuery
 **********************************************/
-export interface ITenantCdnApiQuery extends TenantCdnApiQuery, TenantCdnApiMethods {
+export interface ITenantCdnApiQuery extends TenantCdnApiOData, TenantCdnApiMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface TenantCdnApiCollections extends TenantCdnApiPropMethods {
 }
 
 /*********************************************
-* TenantCdnApiQuery
+* TenantCdnApiOData
 **********************************************/
-export interface TenantCdnApiQuery extends IBaseResult, TenantCdnApiProps, TenantCdnApiMethods {
+export interface TenantCdnApiOData extends IBaseResult, TenantCdnApiProps, TenantCdnApiMethods {
 
 }
 

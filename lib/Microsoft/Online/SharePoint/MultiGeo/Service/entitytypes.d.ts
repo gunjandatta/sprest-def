@@ -35,14 +35,14 @@ export interface IAllowedDataLocationCollection extends IBaseResults<AllowedData
 /*********************************************
 * IAllowedDataLocationQueryCollection
 **********************************************/
-export interface IAllowedDataLocationQueryCollection extends IBaseResults<AllowedDataLocationQuery>, AllowedDataLocationCollectionMethods {
-	done?: (resolve: (value?: Array<AllowedDataLocationQuery>) => void) => void;
+export interface IAllowedDataLocationQueryCollection extends IBaseResults<AllowedDataLocationOData>, AllowedDataLocationCollectionMethods {
+	done?: (resolve: (value?: Array<AllowedDataLocationOData>) => void) => void;
 }
 
 /*********************************************
 * IAllowedDataLocationQuery
 **********************************************/
-export interface IAllowedDataLocationQuery extends AllowedDataLocationQuery, AllowedDataLocationMethods {
+export interface IAllowedDataLocationQuery extends AllowedDataLocationOData, AllowedDataLocationMethods {
 
 }
 
@@ -82,9 +82,9 @@ export interface AllowedDataLocationCollectionMethods {
 }
 
 /*********************************************
-* AllowedDataLocationQuery
+* AllowedDataLocationOData
 **********************************************/
-export interface AllowedDataLocationQuery extends IBaseResult, AllowedDataLocationProps, AllowedDataLocationMethods {
+export interface AllowedDataLocationOData extends IBaseResult, AllowedDataLocationProps, AllowedDataLocationMethods {
 
 }
 
@@ -184,14 +184,14 @@ export interface ICrossFarmGroupMoveJobCollection extends IBaseResults<CrossFarm
 /*********************************************
 * ICrossFarmGroupMoveJobQueryCollection
 **********************************************/
-export interface ICrossFarmGroupMoveJobQueryCollection extends IBaseResults<CrossFarmGroupMoveJobQuery>, CrossFarmGroupMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<CrossFarmGroupMoveJobQuery>) => void) => void;
+export interface ICrossFarmGroupMoveJobQueryCollection extends IBaseResults<CrossFarmGroupMoveJobOData>, CrossFarmGroupMoveJobCollectionMethods {
+	done?: (resolve: (value?: Array<CrossFarmGroupMoveJobOData>) => void) => void;
 }
 
 /*********************************************
 * ICrossFarmGroupMoveJobQuery
 **********************************************/
-export interface ICrossFarmGroupMoveJobQuery extends CrossFarmGroupMoveJobQuery, CrossFarmGroupMoveJobMethods {
+export interface ICrossFarmGroupMoveJobQuery extends CrossFarmGroupMoveJobOData, CrossFarmGroupMoveJobMethods {
 
 }
 
@@ -234,9 +234,9 @@ export interface CrossFarmGroupMoveJobCollectionMethods {
 }
 
 /*********************************************
-* CrossFarmGroupMoveJobQuery
+* CrossFarmGroupMoveJobOData
 **********************************************/
-export interface CrossFarmGroupMoveJobQuery extends IBaseResult, CrossFarmGroupMoveJobProps, CrossFarmGroupMoveJobMethods {
+export interface CrossFarmGroupMoveJobOData extends IBaseResult, CrossFarmGroupMoveJobProps, CrossFarmGroupMoveJobMethods {
 
 }
 
@@ -294,14 +294,14 @@ export interface ICrossFarmSiteMoveJobCollection extends IBaseResults<CrossFarmS
 /*********************************************
 * ICrossFarmSiteMoveJobQueryCollection
 **********************************************/
-export interface ICrossFarmSiteMoveJobQueryCollection extends IBaseResults<CrossFarmSiteMoveJobQuery>, CrossFarmSiteMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<CrossFarmSiteMoveJobQuery>) => void) => void;
+export interface ICrossFarmSiteMoveJobQueryCollection extends IBaseResults<CrossFarmSiteMoveJobOData>, CrossFarmSiteMoveJobCollectionMethods {
+	done?: (resolve: (value?: Array<CrossFarmSiteMoveJobOData>) => void) => void;
 }
 
 /*********************************************
 * ICrossFarmSiteMoveJobQuery
 **********************************************/
-export interface ICrossFarmSiteMoveJobQuery extends CrossFarmSiteMoveJobQuery, CrossFarmSiteMoveJobMethods {
+export interface ICrossFarmSiteMoveJobQuery extends CrossFarmSiteMoveJobOData, CrossFarmSiteMoveJobMethods {
 
 }
 
@@ -344,9 +344,9 @@ export interface CrossFarmSiteMoveJobCollectionMethods {
 }
 
 /*********************************************
-* CrossFarmSiteMoveJobQuery
+* CrossFarmSiteMoveJobOData
 **********************************************/
-export interface CrossFarmSiteMoveJobQuery extends IBaseResult, CrossFarmSiteMoveJobProps, CrossFarmSiteMoveJobMethods {
+export interface CrossFarmSiteMoveJobOData extends IBaseResult, CrossFarmSiteMoveJobProps, CrossFarmSiteMoveJobMethods {
 
 }
 
@@ -405,14 +405,14 @@ export interface ICrossFarmUserMoveJobCollection extends IBaseResults<CrossFarmU
 /*********************************************
 * ICrossFarmUserMoveJobQueryCollection
 **********************************************/
-export interface ICrossFarmUserMoveJobQueryCollection extends IBaseResults<CrossFarmUserMoveJobQuery>, CrossFarmUserMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<CrossFarmUserMoveJobQuery>) => void) => void;
+export interface ICrossFarmUserMoveJobQueryCollection extends IBaseResults<CrossFarmUserMoveJobOData>, CrossFarmUserMoveJobCollectionMethods {
+	done?: (resolve: (value?: Array<CrossFarmUserMoveJobOData>) => void) => void;
 }
 
 /*********************************************
 * ICrossFarmUserMoveJobQuery
 **********************************************/
-export interface ICrossFarmUserMoveJobQuery extends CrossFarmUserMoveJobQuery, CrossFarmUserMoveJobMethods {
+export interface ICrossFarmUserMoveJobQuery extends CrossFarmUserMoveJobOData, CrossFarmUserMoveJobMethods {
 
 }
 
@@ -455,9 +455,9 @@ export interface CrossFarmUserMoveJobCollectionMethods {
 }
 
 /*********************************************
-* CrossFarmUserMoveJobQuery
+* CrossFarmUserMoveJobOData
 **********************************************/
-export interface CrossFarmUserMoveJobQuery extends IBaseResult, CrossFarmUserMoveJobProps, CrossFarmUserMoveJobMethods {
+export interface CrossFarmUserMoveJobOData extends IBaseResult, CrossFarmUserMoveJobProps, CrossFarmUserMoveJobMethods {
 
 }
 
@@ -532,14 +532,14 @@ export interface ICrossGeoTenantPropertyCollection extends IBaseResults<CrossGeo
 /*********************************************
 * ICrossGeoTenantPropertyQueryCollection
 **********************************************/
-export interface ICrossGeoTenantPropertyQueryCollection extends IBaseResults<CrossGeoTenantPropertyQuery>, CrossGeoTenantPropertyCollectionMethods {
-	done?: (resolve: (value?: Array<CrossGeoTenantPropertyQuery>) => void) => void;
+export interface ICrossGeoTenantPropertyQueryCollection extends IBaseResults<CrossGeoTenantPropertyOData>, CrossGeoTenantPropertyCollectionMethods {
+	done?: (resolve: (value?: Array<CrossGeoTenantPropertyOData>) => void) => void;
 }
 
 /*********************************************
 * ICrossGeoTenantPropertyQuery
 **********************************************/
-export interface ICrossGeoTenantPropertyQuery extends CrossGeoTenantPropertyQuery, CrossGeoTenantPropertyMethods {
+export interface ICrossGeoTenantPropertyQuery extends CrossGeoTenantPropertyOData, CrossGeoTenantPropertyMethods {
 
 }
 
@@ -580,9 +580,9 @@ export interface CrossGeoTenantPropertyCollectionMethods {
 }
 
 /*********************************************
-* CrossGeoTenantPropertyQuery
+* CrossGeoTenantPropertyOData
 **********************************************/
-export interface CrossGeoTenantPropertyQuery extends IBaseResult, CrossGeoTenantPropertyProps, CrossGeoTenantPropertyMethods {
+export interface CrossGeoTenantPropertyOData extends IBaseResult, CrossGeoTenantPropertyProps, CrossGeoTenantPropertyMethods {
 
 }
 
@@ -625,14 +625,14 @@ export interface IGeoAdministratorCollection extends IBaseResults<GeoAdministrat
 /*********************************************
 * IGeoAdministratorQueryCollection
 **********************************************/
-export interface IGeoAdministratorQueryCollection extends IBaseResults<GeoAdministratorQuery>, GeoAdministratorCollectionMethods {
-	done?: (resolve: (value?: Array<GeoAdministratorQuery>) => void) => void;
+export interface IGeoAdministratorQueryCollection extends IBaseResults<GeoAdministratorOData>, GeoAdministratorCollectionMethods {
+	done?: (resolve: (value?: Array<GeoAdministratorOData>) => void) => void;
 }
 
 /*********************************************
 * IGeoAdministratorQuery
 **********************************************/
-export interface IGeoAdministratorQuery extends GeoAdministratorQuery, GeoAdministratorMethods {
+export interface IGeoAdministratorQuery extends GeoAdministratorOData, GeoAdministratorMethods {
 
 }
 
@@ -679,9 +679,9 @@ export interface GeoAdministratorCollectionMethods {
 }
 
 /*********************************************
-* GeoAdministratorQuery
+* GeoAdministratorOData
 **********************************************/
-export interface GeoAdministratorQuery extends IBaseResult, GeoAdministratorProps, GeoAdministratorMethods {
+export interface GeoAdministratorOData extends IBaseResult, GeoAdministratorProps, GeoAdministratorMethods {
 
 }
 
@@ -709,14 +709,14 @@ export interface IGeoExperienceCollection extends IBaseResults<GeoExperience> {
 /*********************************************
 * IGeoExperienceQueryCollection
 **********************************************/
-export interface IGeoExperienceQueryCollection extends IBaseResults<GeoExperienceQuery> {
-	done?: (resolve: (value?: Array<GeoExperienceQuery>) => void) => void;
+export interface IGeoExperienceQueryCollection extends IBaseResults<GeoExperienceOData> {
+	done?: (resolve: (value?: Array<GeoExperienceOData>) => void) => void;
 }
 
 /*********************************************
 * IGeoExperienceQuery
 **********************************************/
-export interface IGeoExperienceQuery extends GeoExperienceQuery, GeoExperienceMethods {
+export interface IGeoExperienceQuery extends GeoExperienceOData, GeoExperienceMethods {
 
 }
 
@@ -750,9 +750,9 @@ export interface GeoExperienceCollections extends GeoExperiencePropMethods {
 }
 
 /*********************************************
-* GeoExperienceQuery
+* GeoExperienceOData
 **********************************************/
-export interface GeoExperienceQuery extends IBaseResult, GeoExperienceProps, GeoExperienceMethods {
+export interface GeoExperienceOData extends IBaseResult, GeoExperienceProps, GeoExperienceMethods {
 
 }
 
@@ -857,14 +857,14 @@ export interface IGroupMoveJobCollection extends IBaseResults<GroupMoveJob>, Gro
 /*********************************************
 * IGroupMoveJobQueryCollection
 **********************************************/
-export interface IGroupMoveJobQueryCollection extends IBaseResults<GroupMoveJobQuery>, GroupMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<GroupMoveJobQuery>) => void) => void;
+export interface IGroupMoveJobQueryCollection extends IBaseResults<GroupMoveJobOData>, GroupMoveJobCollectionMethods {
+	done?: (resolve: (value?: Array<GroupMoveJobOData>) => void) => void;
 }
 
 /*********************************************
 * IGroupMoveJobQuery
 **********************************************/
-export interface IGroupMoveJobQuery extends GroupMoveJobQuery, GroupMoveJobMethods {
+export interface IGroupMoveJobQuery extends GroupMoveJobOData, GroupMoveJobMethods {
 
 }
 
@@ -908,9 +908,9 @@ export interface GroupMoveJobCollectionMethods {
 }
 
 /*********************************************
-* GroupMoveJobQuery
+* GroupMoveJobOData
 **********************************************/
-export interface GroupMoveJobQuery extends IBaseResult, GroupMoveJobProps, GroupMoveJobMethods {
+export interface GroupMoveJobOData extends IBaseResult, GroupMoveJobProps, GroupMoveJobMethods {
 
 }
 
@@ -972,14 +972,14 @@ export interface IMultiGeoServicesBetaCollection extends IBaseResults<MultiGeoSe
 /*********************************************
 * IMultiGeoServicesBetaQueryCollection
 **********************************************/
-export interface IMultiGeoServicesBetaQueryCollection extends IBaseResults<MultiGeoServicesBetaQuery> {
-	done?: (resolve: (value?: Array<MultiGeoServicesBetaQuery>) => void) => void;
+export interface IMultiGeoServicesBetaQueryCollection extends IBaseResults<MultiGeoServicesBetaOData> {
+	done?: (resolve: (value?: Array<MultiGeoServicesBetaOData>) => void) => void;
 }
 
 /*********************************************
 * IMultiGeoServicesBetaQuery
 **********************************************/
-export interface IMultiGeoServicesBetaQuery extends MultiGeoServicesBetaQuery, MultiGeoServicesBetaMethods {
+export interface IMultiGeoServicesBetaQuery extends MultiGeoServicesBetaOData, MultiGeoServicesBetaMethods {
 
 }
 
@@ -1044,9 +1044,9 @@ export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaPro
 }
 
 /*********************************************
-* MultiGeoServicesBetaQuery
+* MultiGeoServicesBetaOData
 **********************************************/
-export interface MultiGeoServicesBetaQuery extends IBaseResult, MultiGeoServicesBetaProps, MultiGeoServicesBetaMethods {
+export interface MultiGeoServicesBetaOData extends IBaseResult, MultiGeoServicesBetaProps, MultiGeoServicesBetaMethods {
 	AllowedDataLocations: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation> & Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationCollectionMethods;
 	ContentDbSchemaVersion: Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersion & Microsoft.Online.SharePoint.MultiGeo.Service.ContentDbSchemaVersionCollections;
 	CrossFarmGroupMoveJobs: IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobCollectionMethods;
@@ -1097,14 +1097,14 @@ export interface ISiteMoveJobCollection extends IBaseResults<SiteMoveJob>, SiteM
 /*********************************************
 * ISiteMoveJobQueryCollection
 **********************************************/
-export interface ISiteMoveJobQueryCollection extends IBaseResults<SiteMoveJobQuery>, SiteMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<SiteMoveJobQuery>) => void) => void;
+export interface ISiteMoveJobQueryCollection extends IBaseResults<SiteMoveJobOData>, SiteMoveJobCollectionMethods {
+	done?: (resolve: (value?: Array<SiteMoveJobOData>) => void) => void;
 }
 
 /*********************************************
 * ISiteMoveJobQuery
 **********************************************/
-export interface ISiteMoveJobQuery extends SiteMoveJobQuery, SiteMoveJobMethods {
+export interface ISiteMoveJobQuery extends SiteMoveJobOData, SiteMoveJobMethods {
 
 }
 
@@ -1148,9 +1148,9 @@ export interface SiteMoveJobCollectionMethods {
 }
 
 /*********************************************
-* SiteMoveJobQuery
+* SiteMoveJobOData
 **********************************************/
-export interface SiteMoveJobQuery extends IBaseResult, SiteMoveJobProps, SiteMoveJobMethods {
+export interface SiteMoveJobOData extends IBaseResult, SiteMoveJobProps, SiteMoveJobMethods {
 
 }
 
@@ -1220,14 +1220,14 @@ export interface IStorageQuotaCollection extends IBaseResults<StorageQuota>, Sto
 /*********************************************
 * IStorageQuotaQueryCollection
 **********************************************/
-export interface IStorageQuotaQueryCollection extends IBaseResults<StorageQuotaQuery>, StorageQuotaCollectionMethods {
-	done?: (resolve: (value?: Array<StorageQuotaQuery>) => void) => void;
+export interface IStorageQuotaQueryCollection extends IBaseResults<StorageQuotaOData>, StorageQuotaCollectionMethods {
+	done?: (resolve: (value?: Array<StorageQuotaOData>) => void) => void;
 }
 
 /*********************************************
 * IStorageQuotaQuery
 **********************************************/
-export interface IStorageQuotaQuery extends StorageQuotaQuery, StorageQuotaMethods {
+export interface IStorageQuotaQuery extends StorageQuotaOData, StorageQuotaMethods {
 
 }
 
@@ -1272,9 +1272,9 @@ export interface StorageQuotaCollectionMethods {
 }
 
 /*********************************************
-* StorageQuotaQuery
+* StorageQuotaOData
 **********************************************/
-export interface StorageQuotaQuery extends IBaseResult, StorageQuotaProps, StorageQuotaMethods {
+export interface StorageQuotaOData extends IBaseResult, StorageQuotaProps, StorageQuotaMethods {
 
 }
 
@@ -1302,14 +1302,14 @@ export interface ITaxonomyReplicationParametersCollection extends IBaseResults<T
 /*********************************************
 * ITaxonomyReplicationParametersQueryCollection
 **********************************************/
-export interface ITaxonomyReplicationParametersQueryCollection extends IBaseResults<TaxonomyReplicationParametersQuery> {
-	done?: (resolve: (value?: Array<TaxonomyReplicationParametersQuery>) => void) => void;
+export interface ITaxonomyReplicationParametersQueryCollection extends IBaseResults<TaxonomyReplicationParametersOData> {
+	done?: (resolve: (value?: Array<TaxonomyReplicationParametersOData>) => void) => void;
 }
 
 /*********************************************
 * ITaxonomyReplicationParametersQuery
 **********************************************/
-export interface ITaxonomyReplicationParametersQuery extends TaxonomyReplicationParametersQuery, TaxonomyReplicationParametersMethods {
+export interface ITaxonomyReplicationParametersQuery extends TaxonomyReplicationParametersOData, TaxonomyReplicationParametersMethods {
 
 }
 
@@ -1345,9 +1345,9 @@ export interface TaxonomyReplicationParametersCollections extends TaxonomyReplic
 }
 
 /*********************************************
-* TaxonomyReplicationParametersQuery
+* TaxonomyReplicationParametersOData
 **********************************************/
-export interface TaxonomyReplicationParametersQuery extends IBaseResult, TaxonomyReplicationParametersProps, TaxonomyReplicationParametersMethods {
+export interface TaxonomyReplicationParametersOData extends IBaseResult, TaxonomyReplicationParametersProps, TaxonomyReplicationParametersMethods {
 
 }
 
@@ -1419,14 +1419,14 @@ export interface IUserMoveJobCollection extends IBaseResults<UserMoveJob>, UserM
 /*********************************************
 * IUserMoveJobQueryCollection
 **********************************************/
-export interface IUserMoveJobQueryCollection extends IBaseResults<UserMoveJobQuery>, UserMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<UserMoveJobQuery>) => void) => void;
+export interface IUserMoveJobQueryCollection extends IBaseResults<UserMoveJobOData>, UserMoveJobCollectionMethods {
+	done?: (resolve: (value?: Array<UserMoveJobOData>) => void) => void;
 }
 
 /*********************************************
 * IUserMoveJobQuery
 **********************************************/
-export interface IUserMoveJobQuery extends UserMoveJobQuery, UserMoveJobMethods {
+export interface IUserMoveJobQuery extends UserMoveJobOData, UserMoveJobMethods {
 
 }
 
@@ -1473,9 +1473,9 @@ export interface UserMoveJobCollectionMethods {
 }
 
 /*********************************************
-* UserMoveJobQuery
+* UserMoveJobOData
 **********************************************/
-export interface UserMoveJobQuery extends IBaseResult, UserMoveJobProps, UserMoveJobMethods {
+export interface UserMoveJobOData extends IBaseResult, UserMoveJobProps, UserMoveJobMethods {
 
 }
 

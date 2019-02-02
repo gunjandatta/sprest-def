@@ -17,14 +17,14 @@ export interface IPointPublishingAdminCollection extends IBaseResults<PointPubli
 /*********************************************
 * IPointPublishingAdminQueryCollection
 **********************************************/
-export interface IPointPublishingAdminQueryCollection extends IBaseResults<PointPublishingAdminQuery> {
-	done?: (resolve: (value?: Array<PointPublishingAdminQuery>) => void) => void;
+export interface IPointPublishingAdminQueryCollection extends IBaseResults<PointPublishingAdminOData> {
+	done?: (resolve: (value?: Array<PointPublishingAdminOData>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingAdminQuery
 **********************************************/
-export interface IPointPublishingAdminQuery extends PointPublishingAdminQuery, PointPublishingAdminMethods {
+export interface IPointPublishingAdminQuery extends PointPublishingAdminOData, PointPublishingAdminMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface PointPublishingAdminCollections extends PointPublishingAdminPro
 }
 
 /*********************************************
-* PointPublishingAdminQuery
+* PointPublishingAdminOData
 **********************************************/
-export interface PointPublishingAdminQuery extends IBaseResult, PointPublishingAdminProps, PointPublishingAdminMethods {
+export interface PointPublishingAdminOData extends IBaseResult, PointPublishingAdminProps, PointPublishingAdminMethods {
 
 }
 

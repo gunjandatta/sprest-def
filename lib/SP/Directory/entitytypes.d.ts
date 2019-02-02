@@ -18,14 +18,14 @@ export interface IDirectorySessionCollection extends IBaseResults<DirectorySessi
 /*********************************************
 * IDirectorySessionQueryCollection
 **********************************************/
-export interface IDirectorySessionQueryCollection extends IBaseResults<DirectorySessionQuery> {
-	done?: (resolve: (value?: Array<DirectorySessionQuery>) => void) => void;
+export interface IDirectorySessionQueryCollection extends IBaseResults<DirectorySessionOData> {
+	done?: (resolve: (value?: Array<DirectorySessionOData>) => void) => void;
 }
 
 /*********************************************
 * IDirectorySessionQuery
 **********************************************/
-export interface IDirectorySessionQuery extends DirectorySessionQuery, DirectorySessionMethods {
+export interface IDirectorySessionQuery extends DirectorySessionOData, DirectorySessionMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface DirectorySessionCollections extends DirectorySessionPropMethods
 }
 
 /*********************************************
-* DirectorySessionQuery
+* DirectorySessionOData
 **********************************************/
-export interface DirectorySessionQuery extends IBaseResult, DirectorySessionProps, DirectorySessionMethods {
+export interface DirectorySessionOData extends IBaseResult, DirectorySessionProps, DirectorySessionMethods {
 
 }
 
@@ -68,12 +68,12 @@ export interface DirectorySessionQuery extends IBaseResult, DirectorySessionProp
 * DirectorySessionMethods
 **********************************************/
 export interface DirectorySessionMethods {
-	getGraphUser(principalName?: string): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
-	getSharePointDataForUser(userId?: any): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
-	group(groupId?: any, alias?: string): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
+	getGraphUser(principalName?: string): IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	getSharePointDataForUser(userId?: any): IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	group(groupId?: any, alias?: string): IBaseQuery<SP.Directory.Group, SP.Directory.GroupOData> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
 	joinGroup(groupId?: any): IBaseExecution<number>;
-	me(): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
-	user(id?: any, principalName?: string): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	me(): IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	user(id?: any, principalName?: string): IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
 	validateGroupName(displayName?: string, alias?: string): IBaseExecution<SP.Directory.GroupNameValidationResult>;
 }
 
@@ -94,14 +94,14 @@ export interface IGroupCollection extends IBaseResults<Group>, GroupCollectionMe
 /*********************************************
 * IGroupQueryCollection
 **********************************************/
-export interface IGroupQueryCollection extends IBaseResults<GroupQuery>, GroupCollectionMethods {
-	done?: (resolve: (value?: Array<GroupQuery>) => void) => void;
+export interface IGroupQueryCollection extends IBaseResults<GroupOData>, GroupCollectionMethods {
+	done?: (resolve: (value?: Array<GroupOData>) => void) => void;
 }
 
 /*********************************************
 * IGroupQuery
 **********************************************/
-export interface IGroupQuery extends GroupQuery, GroupMethods {
+export interface IGroupQuery extends GroupOData, GroupMethods {
 
 }
 
@@ -149,10 +149,10 @@ export interface GroupPropMethods {
 * GroupCollections
 **********************************************/
 export interface GroupCollections extends GroupPropMethods {
-	members(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery, IBaseExecution & SP.Directory.UserCollectionMethods> & IBaseExecution & SP.Directory.UserCollectionMethods;
-	members(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
-	owners(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery, IBaseExecution & SP.Directory.UserCollectionMethods> & IBaseExecution & SP.Directory.UserCollectionMethods;
-	owners(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	members(): IBaseCollection<SP.Directory.User, SP.Directory.UserOData, IBaseExecution & SP.Directory.UserCollectionMethods> & IBaseExecution & SP.Directory.UserCollectionMethods;
+	members(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	owners(): IBaseCollection<SP.Directory.User, SP.Directory.UserOData, IBaseExecution & SP.Directory.UserCollectionMethods> & IBaseExecution & SP.Directory.UserCollectionMethods;
+	owners(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
 }
 
 /*********************************************
@@ -164,9 +164,9 @@ export interface GroupCollectionMethods {
 }
 
 /*********************************************
-* GroupQuery
+* GroupOData
 **********************************************/
-export interface GroupQuery extends IBaseResult, GroupProps, GroupMethods {
+export interface GroupOData extends IBaseResult, GroupProps, GroupMethods {
 	members: IBaseResults<SP.Directory.User> & SP.Directory.UserCollectionMethods;
 	owners: IBaseResults<SP.Directory.User> & SP.Directory.UserCollectionMethods;
 }
@@ -195,14 +195,14 @@ export interface IUserCollection extends IBaseResults<User>, UserCollectionMetho
 /*********************************************
 * IUserQueryCollection
 **********************************************/
-export interface IUserQueryCollection extends IBaseResults<UserQuery>, UserCollectionMethods {
-	done?: (resolve: (value?: Array<UserQuery>) => void) => void;
+export interface IUserQueryCollection extends IBaseResults<UserOData>, UserCollectionMethods {
+	done?: (resolve: (value?: Array<UserOData>) => void) => void;
 }
 
 /*********************************************
 * IUserQuery
 **********************************************/
-export interface IUserQuery extends UserQuery, UserMethods {
+export interface IUserQuery extends UserOData, UserMethods {
 
 }
 
@@ -270,12 +270,12 @@ export interface UserPropMethods {
 * UserCollections
 **********************************************/
 export interface UserCollections extends UserPropMethods {
-	membership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
-	membership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
-	ownership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
-	ownership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
-	rankedMembership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
-	rankedMembership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
+	membership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupOData, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
+	membership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupOData> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
+	ownership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupOData, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
+	ownership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupOData> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
+	rankedMembership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupOData, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
+	rankedMembership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupOData> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
 }
 
 /*********************************************
@@ -287,9 +287,9 @@ export interface UserCollectionMethods {
 }
 
 /*********************************************
-* UserQuery
+* UserOData
 **********************************************/
-export interface UserQuery extends IBaseResult, UserProps, UserMethods {
+export interface UserOData extends IBaseResult, UserProps, UserMethods {
 	membership: IBaseResults<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
 	ownership: IBaseResults<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
 	rankedMembership: IBaseResults<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
@@ -333,9 +333,9 @@ export interface GroupAndUserStatusCollections {
 }
 
 /*********************************************
-* GroupAndUserStatusQuery
+* GroupAndUserStatusOData
 **********************************************/
-export interface GroupAndUserStatusQuery extends IBaseResult, GroupAndUserStatus {
+export interface GroupAndUserStatusOData extends IBaseResult, GroupAndUserStatus {
 	Group: SP.Directory.Group & SP.Directory.GroupCollections & SP.Directory.GroupCollectionMethods;
 }
 

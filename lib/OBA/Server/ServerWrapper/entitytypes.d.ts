@@ -17,14 +17,14 @@ export interface IDiagnosticsCollection extends IBaseResults<Diagnostics> {
 /*********************************************
 * IDiagnosticsQueryCollection
 **********************************************/
-export interface IDiagnosticsQueryCollection extends IBaseResults<DiagnosticsQuery> {
-	done?: (resolve: (value?: Array<DiagnosticsQuery>) => void) => void;
+export interface IDiagnosticsQueryCollection extends IBaseResults<DiagnosticsOData> {
+	done?: (resolve: (value?: Array<DiagnosticsOData>) => void) => void;
 }
 
 /*********************************************
 * IDiagnosticsQuery
 **********************************************/
-export interface IDiagnosticsQuery extends DiagnosticsQuery, DiagnosticsMethods {
+export interface IDiagnosticsQuery extends DiagnosticsOData, DiagnosticsMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface DiagnosticsCollections extends DiagnosticsPropMethods {
 }
 
 /*********************************************
-* DiagnosticsQuery
+* DiagnosticsOData
 **********************************************/
-export interface DiagnosticsQuery extends IBaseResult, DiagnosticsProps, DiagnosticsMethods {
+export interface DiagnosticsOData extends IBaseResult, DiagnosticsProps, DiagnosticsMethods {
 
 }
 
@@ -87,14 +87,14 @@ export interface IReportingCollection extends IBaseResults<Reporting> {
 /*********************************************
 * IReportingQueryCollection
 **********************************************/
-export interface IReportingQueryCollection extends IBaseResults<ReportingQuery> {
-	done?: (resolve: (value?: Array<ReportingQuery>) => void) => void;
+export interface IReportingQueryCollection extends IBaseResults<ReportingOData> {
+	done?: (resolve: (value?: Array<ReportingOData>) => void) => void;
 }
 
 /*********************************************
 * IReportingQuery
 **********************************************/
-export interface IReportingQuery extends ReportingQuery, ReportingMethods {
+export interface IReportingQuery extends ReportingOData, ReportingMethods {
 
 }
 
@@ -127,9 +127,9 @@ export interface ReportingCollections extends ReportingPropMethods {
 }
 
 /*********************************************
-* ReportingQuery
+* ReportingOData
 **********************************************/
-export interface ReportingQuery extends IBaseResult, ReportingProps, ReportingMethods {
+export interface ReportingOData extends IBaseResult, ReportingProps, ReportingMethods {
 
 }
 
@@ -157,14 +157,14 @@ export interface ITaskflowCollection extends IBaseResults<Taskflow> {
 /*********************************************
 * ITaskflowQueryCollection
 **********************************************/
-export interface ITaskflowQueryCollection extends IBaseResults<TaskflowQuery> {
-	done?: (resolve: (value?: Array<TaskflowQuery>) => void) => void;
+export interface ITaskflowQueryCollection extends IBaseResults<TaskflowOData> {
+	done?: (resolve: (value?: Array<TaskflowOData>) => void) => void;
 }
 
 /*********************************************
 * ITaskflowQuery
 **********************************************/
-export interface ITaskflowQuery extends TaskflowQuery, TaskflowMethods {
+export interface ITaskflowQuery extends TaskflowOData, TaskflowMethods {
 
 }
 
@@ -197,9 +197,9 @@ export interface TaskflowCollections extends TaskflowPropMethods {
 }
 
 /*********************************************
-* TaskflowQuery
+* TaskflowOData
 **********************************************/
-export interface TaskflowQuery extends IBaseResult, TaskflowProps, TaskflowMethods {
+export interface TaskflowOData extends IBaseResult, TaskflowProps, TaskflowMethods {
 
 }
 

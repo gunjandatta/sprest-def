@@ -18,14 +18,14 @@ export interface ISearchServiceCollection extends IBaseResults<SearchService> {
 /*********************************************
 * ISearchServiceQueryCollection
 **********************************************/
-export interface ISearchServiceQueryCollection extends IBaseResults<SearchServiceQuery> {
-	done?: (resolve: (value?: Array<SearchServiceQuery>) => void) => void;
+export interface ISearchServiceQueryCollection extends IBaseResults<SearchServiceOData> {
+	done?: (resolve: (value?: Array<SearchServiceOData>) => void) => void;
 }
 
 /*********************************************
 * ISearchServiceQuery
 **********************************************/
-export interface ISearchServiceQuery extends SearchServiceQuery, SearchServiceMethods {
+export interface ISearchServiceQuery extends SearchServiceOData, SearchServiceMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface SearchServiceCollections extends SearchServicePropMethods {
 }
 
 /*********************************************
-* SearchServiceQuery
+* SearchServiceOData
 **********************************************/
-export interface SearchServiceQuery extends IBaseResult, SearchServiceProps, SearchServiceMethods {
+export interface SearchServiceOData extends IBaseResult, SearchServiceProps, SearchServiceMethods {
 
 }
 
@@ -96,14 +96,14 @@ export interface ISearchSettingCollection extends IBaseResults<SearchSetting> {
 /*********************************************
 * ISearchSettingQueryCollection
 **********************************************/
-export interface ISearchSettingQueryCollection extends IBaseResults<SearchSettingQuery> {
-	done?: (resolve: (value?: Array<SearchSettingQuery>) => void) => void;
+export interface ISearchSettingQueryCollection extends IBaseResults<SearchSettingOData> {
+	done?: (resolve: (value?: Array<SearchSettingOData>) => void) => void;
 }
 
 /*********************************************
 * ISearchSettingQuery
 **********************************************/
-export interface ISearchSettingQuery extends SearchSettingQuery, SearchSettingMethods {
+export interface ISearchSettingQuery extends SearchSettingOData, SearchSettingMethods {
 
 }
 
@@ -136,9 +136,9 @@ export interface SearchSettingCollections extends SearchSettingPropMethods {
 }
 
 /*********************************************
-* SearchSettingQuery
+* SearchSettingOData
 **********************************************/
-export interface SearchSettingQuery extends IBaseResult, SearchSettingProps, SearchSettingMethods {
+export interface SearchSettingOData extends IBaseResult, SearchSettingProps, SearchSettingMethods {
 
 }
 

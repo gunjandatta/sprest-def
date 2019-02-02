@@ -18,14 +18,14 @@ export interface ILogExportCollection extends IBaseResults<LogExport> {
 /*********************************************
 * ILogExportQueryCollection
 **********************************************/
-export interface ILogExportQueryCollection extends IBaseResults<LogExportQuery> {
-	done?: (resolve: (value?: Array<LogExportQuery>) => void) => void;
+export interface ILogExportQueryCollection extends IBaseResults<LogExportOData> {
+	done?: (resolve: (value?: Array<LogExportOData>) => void) => void;
 }
 
 /*********************************************
 * ILogExportQuery
 **********************************************/
-export interface ILogExportQuery extends LogExportQuery, LogExportMethods {
+export interface ILogExportQuery extends LogExportOData, LogExportMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface LogExportCollections extends LogExportPropMethods {
 }
 
 /*********************************************
-* LogExportQuery
+* LogExportOData
 **********************************************/
-export interface LogExportQuery extends IBaseResult, LogExportProps, LogExportMethods {
+export interface LogExportOData extends IBaseResult, LogExportProps, LogExportMethods {
 
 }
 

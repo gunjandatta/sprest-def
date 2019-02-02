@@ -33,14 +33,14 @@ export interface IGroupServiceCollection extends IBaseResults<GroupService> {
 /*********************************************
 * IGroupServiceQueryCollection
 **********************************************/
-export interface IGroupServiceQueryCollection extends IBaseResults<GroupServiceQuery> {
-	done?: (resolve: (value?: Array<GroupServiceQuery>) => void) => void;
+export interface IGroupServiceQueryCollection extends IBaseResults<GroupServiceOData> {
+	done?: (resolve: (value?: Array<GroupServiceOData>) => void) => void;
 }
 
 /*********************************************
 * IGroupServiceQuery
 **********************************************/
-export interface IGroupServiceQuery extends GroupServiceQuery, GroupServiceMethods {
+export interface IGroupServiceQuery extends GroupServiceOData, GroupServiceMethods {
 
 }
 
@@ -73,9 +73,9 @@ export interface GroupServiceCollections extends GroupServicePropMethods {
 }
 
 /*********************************************
-* GroupServiceQuery
+* GroupServiceOData
 **********************************************/
-export interface GroupServiceQuery extends IBaseResult, GroupServiceProps, GroupServiceMethods {
+export interface GroupServiceOData extends IBaseResult, GroupServiceProps, GroupServiceMethods {
 
 }
 
@@ -105,14 +105,14 @@ export interface IGroupSiteManagerCollection extends IBaseResults<GroupSiteManag
 /*********************************************
 * IGroupSiteManagerQueryCollection
 **********************************************/
-export interface IGroupSiteManagerQueryCollection extends IBaseResults<GroupSiteManagerQuery> {
-	done?: (resolve: (value?: Array<GroupSiteManagerQuery>) => void) => void;
+export interface IGroupSiteManagerQueryCollection extends IBaseResults<GroupSiteManagerOData> {
+	done?: (resolve: (value?: Array<GroupSiteManagerOData>) => void) => void;
 }
 
 /*********************************************
 * IGroupSiteManagerQuery
 **********************************************/
-export interface IGroupSiteManagerQuery extends GroupSiteManagerQuery, GroupSiteManagerMethods {
+export interface IGroupSiteManagerQuery extends GroupSiteManagerOData, GroupSiteManagerMethods {
 
 }
 
@@ -145,9 +145,9 @@ export interface GroupSiteManagerCollections extends GroupSiteManagerPropMethods
 }
 
 /*********************************************
-* GroupSiteManagerQuery
+* GroupSiteManagerOData
 **********************************************/
-export interface GroupSiteManagerQuery extends IBaseResult, GroupSiteManagerProps, GroupSiteManagerMethods {
+export interface GroupSiteManagerOData extends IBaseResult, GroupSiteManagerProps, GroupSiteManagerMethods {
 
 }
 
@@ -184,14 +184,14 @@ export interface ISiteLinkingManagerCollection extends IBaseResults<SiteLinkingM
 /*********************************************
 * ISiteLinkingManagerQueryCollection
 **********************************************/
-export interface ISiteLinkingManagerQueryCollection extends IBaseResults<SiteLinkingManagerQuery> {
-	done?: (resolve: (value?: Array<SiteLinkingManagerQuery>) => void) => void;
+export interface ISiteLinkingManagerQueryCollection extends IBaseResults<SiteLinkingManagerOData> {
+	done?: (resolve: (value?: Array<SiteLinkingManagerOData>) => void) => void;
 }
 
 /*********************************************
 * ISiteLinkingManagerQuery
 **********************************************/
-export interface ISiteLinkingManagerQuery extends SiteLinkingManagerQuery, SiteLinkingManagerMethods {
+export interface ISiteLinkingManagerQuery extends SiteLinkingManagerOData, SiteLinkingManagerMethods {
 
 }
 
@@ -224,9 +224,9 @@ export interface SiteLinkingManagerCollections extends SiteLinkingManagerPropMet
 }
 
 /*********************************************
-* SiteLinkingManagerQuery
+* SiteLinkingManagerOData
 **********************************************/
-export interface SiteLinkingManagerQuery extends IBaseResult, SiteLinkingManagerProps, SiteLinkingManagerMethods {
+export interface SiteLinkingManagerOData extends IBaseResult, SiteLinkingManagerProps, SiteLinkingManagerMethods {
 
 }
 
@@ -284,14 +284,14 @@ export interface ISharePointHomeServiceContextBuilderCollection extends IBaseRes
 /*********************************************
 * ISharePointHomeServiceContextBuilderQueryCollection
 **********************************************/
-export interface ISharePointHomeServiceContextBuilderQueryCollection extends IBaseResults<SharePointHomeServiceContextBuilderQuery> {
-	done?: (resolve: (value?: Array<SharePointHomeServiceContextBuilderQuery>) => void) => void;
+export interface ISharePointHomeServiceContextBuilderQueryCollection extends IBaseResults<SharePointHomeServiceContextBuilderOData> {
+	done?: (resolve: (value?: Array<SharePointHomeServiceContextBuilderOData>) => void) => void;
 }
 
 /*********************************************
 * ISharePointHomeServiceContextBuilderQuery
 **********************************************/
-export interface ISharePointHomeServiceContextBuilderQuery extends SharePointHomeServiceContextBuilderQuery, SharePointHomeServiceContextBuilderMethods {
+export interface ISharePointHomeServiceContextBuilderQuery extends SharePointHomeServiceContextBuilderOData, SharePointHomeServiceContextBuilderMethods {
 
 }
 
@@ -324,9 +324,9 @@ export interface SharePointHomeServiceContextBuilderCollections extends SharePoi
 }
 
 /*********************************************
-* SharePointHomeServiceContextBuilderQuery
+* SharePointHomeServiceContextBuilderOData
 **********************************************/
-export interface SharePointHomeServiceContextBuilderQuery extends IBaseResult, SharePointHomeServiceContextBuilderProps, SharePointHomeServiceContextBuilderMethods {
+export interface SharePointHomeServiceContextBuilderOData extends IBaseResult, SharePointHomeServiceContextBuilderProps, SharePointHomeServiceContextBuilderMethods {
 
 }
 
@@ -334,7 +334,7 @@ export interface SharePointHomeServiceContextBuilderQuery extends IBaseResult, S
 * SharePointHomeServiceContextBuilderMethods
 **********************************************/
 export interface SharePointHomeServiceContextBuilderMethods {
-	context(): IBaseQuery<Microsoft.SharePoint.Portal.SharePointHomeServiceContext, Microsoft.SharePoint.Portal.SharePointHomeServiceContextQuery> & Microsoft.SharePoint.Portal.SharePointHomeServiceContextCollections;
+	context(): IBaseQuery<Microsoft.SharePoint.Portal.SharePointHomeServiceContext, Microsoft.SharePoint.Portal.SharePointHomeServiceContextOData> & Microsoft.SharePoint.Portal.SharePointHomeServiceContextCollections;
 }
 
 /*********************************************
@@ -356,9 +356,9 @@ export interface SharePointHomeServiceContextCollections {
 }
 
 /*********************************************
-* SharePointHomeServiceContextQuery
+* SharePointHomeServiceContextOData
 **********************************************/
-export interface SharePointHomeServiceContextQuery extends IBaseResult, SharePointHomeServiceContext {
+export interface SharePointHomeServiceContextOData extends IBaseResult, SharePointHomeServiceContext {
 	Token: SP.OAuth.TokenResponse & SP.OAuth.TokenResponseCollections;
 }
 
@@ -379,14 +379,14 @@ export interface ISPHubSitesUtilityCollection extends IBaseResults<SPHubSitesUti
 /*********************************************
 * ISPHubSitesUtilityQueryCollection
 **********************************************/
-export interface ISPHubSitesUtilityQueryCollection extends IBaseResults<SPHubSitesUtilityQuery> {
-	done?: (resolve: (value?: Array<SPHubSitesUtilityQuery>) => void) => void;
+export interface ISPHubSitesUtilityQueryCollection extends IBaseResults<SPHubSitesUtilityOData> {
+	done?: (resolve: (value?: Array<SPHubSitesUtilityOData>) => void) => void;
 }
 
 /*********************************************
 * ISPHubSitesUtilityQuery
 **********************************************/
-export interface ISPHubSitesUtilityQuery extends SPHubSitesUtilityQuery, SPHubSitesUtilityMethods {
+export interface ISPHubSitesUtilityQuery extends SPHubSitesUtilityOData, SPHubSitesUtilityMethods {
 
 }
 
@@ -419,9 +419,9 @@ export interface SPHubSitesUtilityCollections extends SPHubSitesUtilityPropMetho
 }
 
 /*********************************************
-* SPHubSitesUtilityQuery
+* SPHubSitesUtilityOData
 **********************************************/
-export interface SPHubSitesUtilityQuery extends IBaseResult, SPHubSitesUtilityProps, SPHubSitesUtilityMethods {
+export interface SPHubSitesUtilityOData extends IBaseResult, SPHubSitesUtilityProps, SPHubSitesUtilityMethods {
 
 }
 
@@ -449,14 +449,14 @@ export interface ISPSiteManagerCollection extends IBaseResults<SPSiteManager> {
 /*********************************************
 * ISPSiteManagerQueryCollection
 **********************************************/
-export interface ISPSiteManagerQueryCollection extends IBaseResults<SPSiteManagerQuery> {
-	done?: (resolve: (value?: Array<SPSiteManagerQuery>) => void) => void;
+export interface ISPSiteManagerQueryCollection extends IBaseResults<SPSiteManagerOData> {
+	done?: (resolve: (value?: Array<SPSiteManagerOData>) => void) => void;
 }
 
 /*********************************************
 * ISPSiteManagerQuery
 **********************************************/
-export interface ISPSiteManagerQuery extends SPSiteManagerQuery, SPSiteManagerMethods {
+export interface ISPSiteManagerQuery extends SPSiteManagerOData, SPSiteManagerMethods {
 
 }
 
@@ -489,9 +489,9 @@ export interface SPSiteManagerCollections extends SPSiteManagerPropMethods {
 }
 
 /*********************************************
-* SPSiteManagerQuery
+* SPSiteManagerOData
 **********************************************/
-export interface SPSiteManagerQuery extends IBaseResult, SPSiteManagerProps, SPSiteManagerMethods {
+export interface SPSiteManagerOData extends IBaseResult, SPSiteManagerProps, SPSiteManagerMethods {
 
 }
 

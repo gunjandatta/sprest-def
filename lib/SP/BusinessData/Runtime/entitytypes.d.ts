@@ -63,14 +63,14 @@ export interface IEntityInstanceCollection extends IBaseResults<EntityInstance> 
 /*********************************************
 * IEntityInstanceQueryCollection
 **********************************************/
-export interface IEntityInstanceQueryCollection extends IBaseResults<EntityInstanceQuery> {
-	done?: (resolve: (value?: Array<EntityInstanceQuery>) => void) => void;
+export interface IEntityInstanceQueryCollection extends IBaseResults<EntityInstanceOData> {
+	done?: (resolve: (value?: Array<EntityInstanceOData>) => void) => void;
 }
 
 /*********************************************
 * IEntityInstanceQuery
 **********************************************/
-export interface IEntityInstanceQuery extends EntityInstanceQuery, EntityInstanceMethods {
+export interface IEntityInstanceQuery extends EntityInstanceOData, EntityInstanceMethods {
 
 }
 
@@ -103,9 +103,9 @@ export interface EntityInstanceCollections extends EntityInstancePropMethods {
 }
 
 /*********************************************
-* EntityInstanceQuery
+* EntityInstanceOData
 **********************************************/
-export interface EntityInstanceQuery extends IBaseResult, EntityInstanceProps, EntityInstanceMethods {
+export interface EntityInstanceOData extends IBaseResult, EntityInstanceProps, EntityInstanceMethods {
 
 }
 
@@ -139,14 +139,14 @@ export interface IEntityFieldValueDictionaryCollection extends IBaseResults<Enti
 /*********************************************
 * IEntityFieldValueDictionaryQueryCollection
 **********************************************/
-export interface IEntityFieldValueDictionaryQueryCollection extends IBaseResults<EntityFieldValueDictionaryQuery> {
-	done?: (resolve: (value?: Array<EntityFieldValueDictionaryQuery>) => void) => void;
+export interface IEntityFieldValueDictionaryQueryCollection extends IBaseResults<EntityFieldValueDictionaryOData> {
+	done?: (resolve: (value?: Array<EntityFieldValueDictionaryOData>) => void) => void;
 }
 
 /*********************************************
 * IEntityFieldValueDictionaryQuery
 **********************************************/
-export interface IEntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryQuery, EntityFieldValueDictionaryMethods {
+export interface IEntityFieldValueDictionaryQuery extends EntityFieldValueDictionaryOData, EntityFieldValueDictionaryMethods {
 
 }
 
@@ -179,9 +179,9 @@ export interface EntityFieldValueDictionaryCollections extends EntityFieldValueD
 }
 
 /*********************************************
-* EntityFieldValueDictionaryQuery
+* EntityFieldValueDictionaryOData
 **********************************************/
-export interface EntityFieldValueDictionaryQuery extends IBaseResult, EntityFieldValueDictionaryProps, EntityFieldValueDictionaryMethods {
+export interface EntityFieldValueDictionaryOData extends IBaseResult, EntityFieldValueDictionaryProps, EntityFieldValueDictionaryMethods {
 
 }
 

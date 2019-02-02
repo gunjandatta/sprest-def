@@ -18,14 +18,14 @@ export interface ILimitedWebPartManagerCollection extends IBaseResults<LimitedWe
 /*********************************************
 * ILimitedWebPartManagerQueryCollection
 **********************************************/
-export interface ILimitedWebPartManagerQueryCollection extends IBaseResults<LimitedWebPartManagerQuery> {
-	done?: (resolve: (value?: Array<LimitedWebPartManagerQuery>) => void) => void;
+export interface ILimitedWebPartManagerQueryCollection extends IBaseResults<LimitedWebPartManagerOData> {
+	done?: (resolve: (value?: Array<LimitedWebPartManagerOData>) => void) => void;
 }
 
 /*********************************************
 * ILimitedWebPartManagerQuery
 **********************************************/
-export interface ILimitedWebPartManagerQuery extends LimitedWebPartManagerQuery, LimitedWebPartManagerMethods {
+export interface ILimitedWebPartManagerQuery extends LimitedWebPartManagerOData, LimitedWebPartManagerMethods {
 
 }
 
@@ -55,14 +55,14 @@ export interface LimitedWebPartManagerPropMethods {
 * LimitedWebPartManagerCollections
 **********************************************/
 export interface LimitedWebPartManagerCollections extends LimitedWebPartManagerPropMethods {
-	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery, IBaseExecution & SP.WebParts.WebPartDefinitionCollectionMethods> & IBaseExecution & SP.WebParts.WebPartDefinitionCollectionMethods;
-	WebParts(id: string | number): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
+	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionOData, IBaseExecution & SP.WebParts.WebPartDefinitionCollectionMethods> & IBaseExecution & SP.WebParts.WebPartDefinitionCollectionMethods;
+	WebParts(id: string | number): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionOData> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
 }
 
 /*********************************************
-* LimitedWebPartManagerQuery
+* LimitedWebPartManagerOData
 **********************************************/
-export interface LimitedWebPartManagerQuery extends IBaseResult, LimitedWebPartManagerProps, LimitedWebPartManagerMethods {
+export interface LimitedWebPartManagerOData extends IBaseResult, LimitedWebPartManagerProps, LimitedWebPartManagerMethods {
 	WebParts: IBaseResults<SP.WebParts.WebPartDefinition> & SP.WebParts.WebPartDefinitionCollectionMethods;
 }
 
@@ -71,7 +71,7 @@ export interface LimitedWebPartManagerQuery extends IBaseResult, LimitedWebPartM
 **********************************************/
 export interface LimitedWebPartManagerMethods {
 	exportWebPart(webPartId?: any): IBaseExecution<string>;
-	importWebPart(webPartXml?: string): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
+	importWebPart(webPartXml?: string): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionOData> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
 }
 
 /*********************************************
@@ -91,14 +91,14 @@ export interface IWebPartDefinitionCollection extends IBaseResults<WebPartDefini
 /*********************************************
 * IWebPartDefinitionQueryCollection
 **********************************************/
-export interface IWebPartDefinitionQueryCollection extends IBaseResults<WebPartDefinitionQuery>, WebPartDefinitionCollectionMethods {
-	done?: (resolve: (value?: Array<WebPartDefinitionQuery>) => void) => void;
+export interface IWebPartDefinitionQueryCollection extends IBaseResults<WebPartDefinitionOData>, WebPartDefinitionCollectionMethods {
+	done?: (resolve: (value?: Array<WebPartDefinitionOData>) => void) => void;
 }
 
 /*********************************************
 * IWebPartDefinitionQuery
 **********************************************/
-export interface IWebPartDefinitionQuery extends WebPartDefinitionQuery, WebPartDefinitionMethods {
+export interface IWebPartDefinitionQuery extends WebPartDefinitionOData, WebPartDefinitionMethods {
 
 }
 
@@ -121,7 +121,7 @@ export interface WebPartDefinitionProps {
 * WebPartDefinitionPropMethods
 **********************************************/
 export interface WebPartDefinitionPropMethods {
-	WebPart(): IBaseQuery<SP.WebParts.WebPart, SP.WebParts.WebPartQuery> & SP.WebParts.WebPartCollections;
+	WebPart(): IBaseQuery<SP.WebParts.WebPart, SP.WebParts.WebPartOData> & SP.WebParts.WebPartCollections;
 }
 
 /*********************************************
@@ -135,14 +135,14 @@ export interface WebPartDefinitionCollections extends WebPartDefinitionPropMetho
 * WebPartDefinitionCollectionMethods
 **********************************************/
 export interface WebPartDefinitionCollectionMethods {
-	getByControlId(controlId?: string): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
-	getById(id?: any): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
+	getByControlId(controlId?: string): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionOData> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
+	getById(id?: any): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionOData> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
 }
 
 /*********************************************
-* WebPartDefinitionQuery
+* WebPartDefinitionOData
 **********************************************/
-export interface WebPartDefinitionQuery extends IBaseResult, WebPartDefinitionProps, WebPartDefinitionMethods {
+export interface WebPartDefinitionOData extends IBaseResult, WebPartDefinitionProps, WebPartDefinitionMethods {
 	WebPart: SP.WebParts.WebPart & SP.WebParts.WebPartCollections;
 }
 
@@ -178,8 +178,8 @@ export interface WebPartCollections {
 }
 
 /*********************************************
-* WebPartQuery
+* WebPartOData
 **********************************************/
-export interface WebPartQuery extends IBaseResult, WebPart {
+export interface WebPartOData extends IBaseResult, WebPart {
 	Properties: SP.PropertyValues & SP.PropertyValuesCollections;
 }

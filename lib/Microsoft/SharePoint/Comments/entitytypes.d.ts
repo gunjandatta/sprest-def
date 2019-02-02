@@ -19,14 +19,14 @@ export interface IcommentCollection extends IBaseResults<comment>, commentCollec
 /*********************************************
 * IcommentQueryCollection
 **********************************************/
-export interface IcommentQueryCollection extends IBaseResults<commentQuery>, commentCollectionMethods {
-	done?: (resolve: (value?: Array<commentQuery>) => void) => void;
+export interface IcommentQueryCollection extends IBaseResults<commentOData>, commentCollectionMethods {
+	done?: (resolve: (value?: Array<commentOData>) => void) => void;
 }
 
 /*********************************************
 * IcommentQuery
 **********************************************/
-export interface IcommentQuery extends commentQuery, commentMethods {
+export interface IcommentQuery extends commentOData, commentMethods {
 
 }
 
@@ -69,8 +69,8 @@ export interface commentPropMethods {
 export interface commentCollections extends commentPropMethods {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
 	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
-	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery, IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
-	replies(id: string | number): IBaseQuery<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery> & Microsoft.SharePoint.Comments.commentCollections & Microsoft.SharePoint.Comments.commentMethods;
+	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
+	replies(id: string | number): IBaseQuery<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData> & Microsoft.SharePoint.Comments.commentCollections & Microsoft.SharePoint.Comments.commentMethods;
 }
 
 /*********************************************
@@ -81,9 +81,9 @@ export interface commentCollectionMethods {
 }
 
 /*********************************************
-* commentQuery
+* commentOData
 **********************************************/
-export interface commentQuery extends IBaseResult, commentProps, commentMethods {
+export interface commentOData extends IBaseResult, commentProps, commentMethods {
 	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 	replies: IBaseResults<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollectionMethods;
 }

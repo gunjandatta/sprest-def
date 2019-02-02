@@ -18,14 +18,14 @@ export interface IlikedByInformationCollection extends IBaseResults<likedByInfor
 /*********************************************
 * IlikedByInformationQueryCollection
 **********************************************/
-export interface IlikedByInformationQueryCollection extends IBaseResults<likedByInformationQuery> {
-	done?: (resolve: (value?: Array<likedByInformationQuery>) => void) => void;
+export interface IlikedByInformationQueryCollection extends IBaseResults<likedByInformationOData> {
+	done?: (resolve: (value?: Array<likedByInformationOData>) => void) => void;
 }
 
 /*********************************************
 * IlikedByInformationQuery
 **********************************************/
-export interface IlikedByInformationQuery extends likedByInformationQuery, likedByInformationMethods {
+export interface IlikedByInformationQuery extends likedByInformationOData, likedByInformationMethods {
 
 }
 
@@ -60,9 +60,9 @@ export interface likedByInformationCollections extends likedByInformationPropMet
 }
 
 /*********************************************
-* likedByInformationQuery
+* likedByInformationOData
 **********************************************/
-export interface likedByInformationQuery extends IBaseResult, likedByInformationProps, likedByInformationMethods {
+export interface likedByInformationOData extends IBaseResult, likedByInformationProps, likedByInformationMethods {
 	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 }
 

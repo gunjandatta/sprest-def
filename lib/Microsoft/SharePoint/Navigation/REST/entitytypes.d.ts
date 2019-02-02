@@ -18,14 +18,14 @@ export interface INavigationServiceRestCollection extends IBaseResults<Navigatio
 /*********************************************
 * INavigationServiceRestQueryCollection
 **********************************************/
-export interface INavigationServiceRestQueryCollection extends IBaseResults<NavigationServiceRestQuery> {
-	done?: (resolve: (value?: Array<NavigationServiceRestQuery>) => void) => void;
+export interface INavigationServiceRestQueryCollection extends IBaseResults<NavigationServiceRestOData> {
+	done?: (resolve: (value?: Array<NavigationServiceRestOData>) => void) => void;
 }
 
 /*********************************************
 * INavigationServiceRestQuery
 **********************************************/
-export interface INavigationServiceRestQuery extends NavigationServiceRestQuery, NavigationServiceRestMethods {
+export interface INavigationServiceRestQuery extends NavigationServiceRestOData, NavigationServiceRestMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface NavigationServiceRestCollections extends NavigationServiceRestP
 }
 
 /*********************************************
-* NavigationServiceRestQuery
+* NavigationServiceRestOData
 **********************************************/
-export interface NavigationServiceRestQuery extends IBaseResult, NavigationServiceRestProps, NavigationServiceRestMethods {
+export interface NavigationServiceRestOData extends IBaseResult, NavigationServiceRestProps, NavigationServiceRestMethods {
 
 }
 

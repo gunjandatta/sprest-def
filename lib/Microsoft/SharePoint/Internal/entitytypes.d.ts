@@ -17,14 +17,14 @@ export interface IActivityLoggerCollection extends IBaseResults<ActivityLogger> 
 /*********************************************
 * IActivityLoggerQueryCollection
 **********************************************/
-export interface IActivityLoggerQueryCollection extends IBaseResults<ActivityLoggerQuery> {
-	done?: (resolve: (value?: Array<ActivityLoggerQuery>) => void) => void;
+export interface IActivityLoggerQueryCollection extends IBaseResults<ActivityLoggerOData> {
+	done?: (resolve: (value?: Array<ActivityLoggerOData>) => void) => void;
 }
 
 /*********************************************
 * IActivityLoggerQuery
 **********************************************/
-export interface IActivityLoggerQuery extends ActivityLoggerQuery, ActivityLoggerMethods {
+export interface IActivityLoggerQuery extends ActivityLoggerOData, ActivityLoggerMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface ActivityLoggerCollections extends ActivityLoggerPropMethods {
 }
 
 /*********************************************
-* ActivityLoggerQuery
+* ActivityLoggerOData
 **********************************************/
-export interface ActivityLoggerQuery extends IBaseResult, ActivityLoggerProps, ActivityLoggerMethods {
+export interface ActivityLoggerOData extends IBaseResult, ActivityLoggerProps, ActivityLoggerMethods {
 
 }
 

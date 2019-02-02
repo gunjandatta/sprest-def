@@ -18,14 +18,14 @@ export interface ITaxonomyFieldCollection extends IBaseResults<TaxonomyField> {
 /*********************************************
 * ITaxonomyFieldQueryCollection
 **********************************************/
-export interface ITaxonomyFieldQueryCollection extends IBaseResults<TaxonomyFieldQuery> {
-	done?: (resolve: (value?: Array<TaxonomyFieldQuery>) => void) => void;
+export interface ITaxonomyFieldQueryCollection extends IBaseResults<TaxonomyFieldOData> {
+	done?: (resolve: (value?: Array<TaxonomyFieldOData>) => void) => void;
 }
 
 /*********************************************
 * ITaxonomyFieldQuery
 **********************************************/
-export interface ITaxonomyFieldQuery extends TaxonomyFieldQuery, TaxonomyFieldMethods {
+export interface ITaxonomyFieldQuery extends TaxonomyFieldOData, TaxonomyFieldMethods {
 
 }
 
@@ -69,9 +69,9 @@ export interface TaxonomyFieldCollections extends TaxonomyFieldPropMethods {
 }
 
 /*********************************************
-* TaxonomyFieldQuery
+* TaxonomyFieldOData
 **********************************************/
-export interface TaxonomyFieldQuery extends IBaseResult, TaxonomyFieldProps, TaxonomyFieldMethods {
+export interface TaxonomyFieldOData extends IBaseResult, TaxonomyFieldProps, TaxonomyFieldMethods {
 
 }
 

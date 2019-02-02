@@ -18,14 +18,14 @@ export interface IDocumentCrawlLogCollection extends IBaseResults<DocumentCrawlL
 /*********************************************
 * IDocumentCrawlLogQueryCollection
 **********************************************/
-export interface IDocumentCrawlLogQueryCollection extends IBaseResults<DocumentCrawlLogQuery> {
-	done?: (resolve: (value?: Array<DocumentCrawlLogQuery>) => void) => void;
+export interface IDocumentCrawlLogQueryCollection extends IBaseResults<DocumentCrawlLogOData> {
+	done?: (resolve: (value?: Array<DocumentCrawlLogOData>) => void) => void;
 }
 
 /*********************************************
 * IDocumentCrawlLogQuery
 **********************************************/
-export interface IDocumentCrawlLogQuery extends DocumentCrawlLogQuery, DocumentCrawlLogMethods {
+export interface IDocumentCrawlLogQuery extends DocumentCrawlLogOData, DocumentCrawlLogMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface DocumentCrawlLogCollections extends DocumentCrawlLogPropMethods
 }
 
 /*********************************************
-* DocumentCrawlLogQuery
+* DocumentCrawlLogOData
 **********************************************/
-export interface DocumentCrawlLogQuery extends IBaseResult, DocumentCrawlLogProps, DocumentCrawlLogMethods {
+export interface DocumentCrawlLogOData extends IBaseResult, DocumentCrawlLogProps, DocumentCrawlLogMethods {
 
 }
 

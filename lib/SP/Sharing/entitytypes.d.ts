@@ -100,9 +100,9 @@ export interface SharingInformationCollections {
 }
 
 /*********************************************
-* SharingInformationQuery
+* SharingInformationOData
 **********************************************/
-export interface SharingInformationQuery extends IBaseResult, SharingInformation {
+export interface SharingInformationOData extends IBaseResult, SharingInformation {
 	pickerSettings: SP.PickerSettings & SP.PickerSettingsCollections;
 }
 

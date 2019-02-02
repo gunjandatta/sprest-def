@@ -18,14 +18,14 @@ export interface ISyncTranslatorCollection extends IBaseResults<SyncTranslator> 
 /*********************************************
 * ISyncTranslatorQueryCollection
 **********************************************/
-export interface ISyncTranslatorQueryCollection extends IBaseResults<SyncTranslatorQuery> {
-	done?: (resolve: (value?: Array<SyncTranslatorQuery>) => void) => void;
+export interface ISyncTranslatorQueryCollection extends IBaseResults<SyncTranslatorOData> {
+	done?: (resolve: (value?: Array<SyncTranslatorOData>) => void) => void;
 }
 
 /*********************************************
 * ISyncTranslatorQuery
 **********************************************/
-export interface ISyncTranslatorQuery extends SyncTranslatorQuery, SyncTranslatorMethods {
+export interface ISyncTranslatorQuery extends SyncTranslatorOData, SyncTranslatorMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface SyncTranslatorCollections extends SyncTranslatorPropMethods {
 }
 
 /*********************************************
-* SyncTranslatorQuery
+* SyncTranslatorOData
 **********************************************/
-export interface SyncTranslatorQuery extends IBaseResult, SyncTranslatorProps, SyncTranslatorMethods {
+export interface SyncTranslatorOData extends IBaseResult, SyncTranslatorProps, SyncTranslatorMethods {
 
 }
 
@@ -89,14 +89,14 @@ export interface ITranslationJobCollection extends IBaseResults<TranslationJob> 
 /*********************************************
 * ITranslationJobQueryCollection
 **********************************************/
-export interface ITranslationJobQueryCollection extends IBaseResults<TranslationJobQuery> {
-	done?: (resolve: (value?: Array<TranslationJobQuery>) => void) => void;
+export interface ITranslationJobQueryCollection extends IBaseResults<TranslationJobOData> {
+	done?: (resolve: (value?: Array<TranslationJobOData>) => void) => void;
 }
 
 /*********************************************
 * ITranslationJobQuery
 **********************************************/
-export interface ITranslationJobQuery extends TranslationJobQuery, TranslationJobMethods {
+export interface ITranslationJobQuery extends TranslationJobOData, TranslationJobMethods {
 
 }
 
@@ -131,9 +131,9 @@ export interface TranslationJobCollections extends TranslationJobPropMethods {
 }
 
 /*********************************************
-* TranslationJobQuery
+* TranslationJobOData
 **********************************************/
-export interface TranslationJobQuery extends IBaseResult, TranslationJobProps, TranslationJobMethods {
+export interface TranslationJobOData extends IBaseResult, TranslationJobProps, TranslationJobMethods {
 
 }
 
@@ -163,14 +163,14 @@ export interface ITranslationJobStatusCollection extends IBaseResults<Translatio
 /*********************************************
 * ITranslationJobStatusQueryCollection
 **********************************************/
-export interface ITranslationJobStatusQueryCollection extends IBaseResults<TranslationJobStatusQuery> {
-	done?: (resolve: (value?: Array<TranslationJobStatusQuery>) => void) => void;
+export interface ITranslationJobStatusQueryCollection extends IBaseResults<TranslationJobStatusOData> {
+	done?: (resolve: (value?: Array<TranslationJobStatusOData>) => void) => void;
 }
 
 /*********************************************
 * ITranslationJobStatusQuery
 **********************************************/
-export interface ITranslationJobStatusQuery extends TranslationJobStatusQuery, TranslationJobStatusMethods {
+export interface ITranslationJobStatusQuery extends TranslationJobStatusOData, TranslationJobStatusMethods {
 
 }
 
@@ -209,9 +209,9 @@ export interface TranslationJobStatusCollections extends TranslationJobStatusPro
 }
 
 /*********************************************
-* TranslationJobStatusQuery
+* TranslationJobStatusOData
 **********************************************/
-export interface TranslationJobStatusQuery extends IBaseResult, TranslationJobStatusProps, TranslationJobStatusMethods {
+export interface TranslationJobStatusOData extends IBaseResult, TranslationJobStatusProps, TranslationJobStatusMethods {
 
 }
 

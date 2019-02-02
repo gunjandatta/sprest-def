@@ -17,14 +17,14 @@ export interface IDDIAdapterCollection extends IBaseResults<DDIAdapter> {
 /*********************************************
 * IDDIAdapterQueryCollection
 **********************************************/
-export interface IDDIAdapterQueryCollection extends IBaseResults<DDIAdapterQuery> {
-	done?: (resolve: (value?: Array<DDIAdapterQuery>) => void) => void;
+export interface IDDIAdapterQueryCollection extends IBaseResults<DDIAdapterOData> {
+	done?: (resolve: (value?: Array<DDIAdapterOData>) => void) => void;
 }
 
 /*********************************************
 * IDDIAdapterQuery
 **********************************************/
-export interface IDDIAdapterQuery extends DDIAdapterQuery, DDIAdapterMethods {
+export interface IDDIAdapterQuery extends DDIAdapterOData, DDIAdapterMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface DDIAdapterCollections extends DDIAdapterPropMethods {
 }
 
 /*********************************************
-* DDIAdapterQuery
+* DDIAdapterOData
 **********************************************/
-export interface DDIAdapterQuery extends IBaseResult, DDIAdapterProps, DDIAdapterMethods {
+export interface DDIAdapterOData extends IBaseResult, DDIAdapterProps, DDIAdapterMethods {
 
 }
 

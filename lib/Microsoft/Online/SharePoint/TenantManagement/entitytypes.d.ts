@@ -46,14 +46,14 @@ export interface IGetExternalUsersResultsCollection extends IBaseResults<GetExte
 /*********************************************
 * IGetExternalUsersResultsQueryCollection
 **********************************************/
-export interface IGetExternalUsersResultsQueryCollection extends IBaseResults<GetExternalUsersResultsQuery> {
-	done?: (resolve: (value?: Array<GetExternalUsersResultsQuery>) => void) => void;
+export interface IGetExternalUsersResultsQueryCollection extends IBaseResults<GetExternalUsersResultsOData> {
+	done?: (resolve: (value?: Array<GetExternalUsersResultsOData>) => void) => void;
 }
 
 /*********************************************
 * IGetExternalUsersResultsQuery
 **********************************************/
-export interface IGetExternalUsersResultsQuery extends GetExternalUsersResultsQuery, GetExternalUsersResultsMethods {
+export interface IGetExternalUsersResultsQuery extends GetExternalUsersResultsOData, GetExternalUsersResultsMethods {
 
 }
 
@@ -88,9 +88,9 @@ export interface GetExternalUsersResultsCollections extends GetExternalUsersResu
 }
 
 /*********************************************
-* GetExternalUsersResultsQuery
+* GetExternalUsersResultsOData
 **********************************************/
-export interface GetExternalUsersResultsQuery extends IBaseResult, GetExternalUsersResultsProps, GetExternalUsersResultsMethods {
+export interface GetExternalUsersResultsOData extends IBaseResult, GetExternalUsersResultsProps, GetExternalUsersResultsMethods {
 	ExternalUserCollection: IBaseResults<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollectionMethods;
 }
 
@@ -154,14 +154,14 @@ export interface IOffice365TenantCollection extends IBaseResults<Office365Tenant
 /*********************************************
 * IOffice365TenantQueryCollection
 **********************************************/
-export interface IOffice365TenantQueryCollection extends IBaseResults<Office365TenantQuery> {
-	done?: (resolve: (value?: Array<Office365TenantQuery>) => void) => void;
+export interface IOffice365TenantQueryCollection extends IBaseResults<Office365TenantOData> {
+	done?: (resolve: (value?: Array<Office365TenantOData>) => void) => void;
 }
 
 /*********************************************
 * IOffice365TenantQuery
 **********************************************/
-export interface IOffice365TenantQuery extends Office365TenantQuery, Office365TenantMethods {
+export interface IOffice365TenantQuery extends Office365TenantOData, Office365TenantMethods {
 
 }
 
@@ -271,9 +271,9 @@ export interface Office365TenantCollections extends Office365TenantPropMethods {
 }
 
 /*********************************************
-* Office365TenantQuery
+* Office365TenantOData
 **********************************************/
-export interface Office365TenantQuery extends IBaseResult, Office365TenantProps, Office365TenantMethods {
+export interface Office365TenantOData extends IBaseResult, Office365TenantProps, Office365TenantMethods {
 
 }
 
@@ -291,9 +291,9 @@ export interface Office365TenantMethods {
 	deleteTenantTheme(name?: string): IBaseExecution<any>;
 	disableSharingForNonOwnersOfSite(siteUrl?: string): IBaseExecution<any>;
 	getAllTenantThemes(): IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ThemeProperties>;
-	getExternalUsers(position?: number, pageSize?: number, filter?: string, sortOrder?: number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsQuery> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
-	getExternalUsersForSite(siteUrl?: string, position?: number, pageSize?: number, filter?: string, sortOrder?: number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsQuery> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
-	getExternalUsersWithSortBy(position?: number, pageSize?: number, filter?: string, sortPropertyName?: string, sortOrder?: number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsQuery> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
+	getExternalUsers(position?: number, pageSize?: number, filter?: string, sortOrder?: number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsOData> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
+	getExternalUsersForSite(siteUrl?: string, position?: number, pageSize?: number, filter?: string, sortOrder?: number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsOData> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
+	getExternalUsersWithSortBy(position?: number, pageSize?: number, filter?: string, sortPropertyName?: string, sortOrder?: number): IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsOData> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
 	getHideDefaultThemes(): IBaseExecution<boolean>;
 	getIdleSessionSignOutForUnmanagedDevices(): IBaseExecution<string>;
 	getImportProfilePropertyJob(jobId?: any): IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.ImportProfilePropertiesJobInfo>;

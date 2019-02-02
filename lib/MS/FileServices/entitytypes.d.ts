@@ -48,14 +48,14 @@ export interface IFileCollection extends IBaseResults<File> {
 /*********************************************
 * IFileQueryCollection
 **********************************************/
-export interface IFileQueryCollection extends IBaseResults<FileQuery> {
-	done?: (resolve: (value?: Array<FileQuery>) => void) => void;
+export interface IFileQueryCollection extends IBaseResults<FileOData> {
+	done?: (resolve: (value?: Array<FileOData>) => void) => void;
 }
 
 /*********************************************
 * IFileQuery
 **********************************************/
-export interface IFileQuery extends FileQuery, FileMethods {
+export interface IFileQuery extends FileOData, FileMethods {
 
 }
 
@@ -88,9 +88,9 @@ export interface FileCollections extends FilePropMethods {
 }
 
 /*********************************************
-* FileQuery
+* FileOData
 **********************************************/
-export interface FileQuery extends IBaseResult, FileProps, FileMethods {
+export interface FileOData extends IBaseResult, FileProps, FileMethods {
 
 }
 
@@ -136,14 +136,14 @@ export interface IFolderCollection extends IBaseResults<Folder> {
 /*********************************************
 * IFolderQueryCollection
 **********************************************/
-export interface IFolderQueryCollection extends IBaseResults<FolderQuery> {
-	done?: (resolve: (value?: Array<FolderQuery>) => void) => void;
+export interface IFolderQueryCollection extends IBaseResults<FolderOData> {
+	done?: (resolve: (value?: Array<FolderOData>) => void) => void;
 }
 
 /*********************************************
 * IFolderQuery
 **********************************************/
-export interface IFolderQuery extends FolderQuery, FolderMethods {
+export interface IFolderQuery extends FolderOData, FolderMethods {
 
 }
 
@@ -177,9 +177,9 @@ export interface FolderCollections extends FolderPropMethods {
 }
 
 /*********************************************
-* FolderQuery
+* FolderOData
 **********************************************/
-export interface FolderQuery extends IBaseResult, FolderProps, FolderMethods {
+export interface FolderOData extends IBaseResult, FolderProps, FolderMethods {
 	Children: IBaseResults<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
 }
 

@@ -17,14 +17,14 @@ export interface IExternalSubscriptionStoreCollection extends IBaseResults<Exter
 /*********************************************
 * IExternalSubscriptionStoreQueryCollection
 **********************************************/
-export interface IExternalSubscriptionStoreQueryCollection extends IBaseResults<ExternalSubscriptionStoreQuery> {
-	done?: (resolve: (value?: Array<ExternalSubscriptionStoreQuery>) => void) => void;
+export interface IExternalSubscriptionStoreQueryCollection extends IBaseResults<ExternalSubscriptionStoreOData> {
+	done?: (resolve: (value?: Array<ExternalSubscriptionStoreOData>) => void) => void;
 }
 
 /*********************************************
 * IExternalSubscriptionStoreQuery
 **********************************************/
-export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreQuery, ExternalSubscriptionStoreMethods {
+export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreOData, ExternalSubscriptionStoreMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface ExternalSubscriptionStoreCollections extends ExternalSubscripti
 }
 
 /*********************************************
-* ExternalSubscriptionStoreQuery
+* ExternalSubscriptionStoreOData
 **********************************************/
-export interface ExternalSubscriptionStoreQuery extends IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreMethods {
+export interface ExternalSubscriptionStoreOData extends IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreMethods {
 
 }
 

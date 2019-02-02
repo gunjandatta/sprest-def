@@ -37,14 +37,14 @@ export interface INativeClientCollection extends IBaseResults<NativeClient> {
 /*********************************************
 * INativeClientQueryCollection
 **********************************************/
-export interface INativeClientQueryCollection extends IBaseResults<NativeClientQuery> {
-	done?: (resolve: (value?: Array<NativeClientQuery>) => void) => void;
+export interface INativeClientQueryCollection extends IBaseResults<NativeClientOData> {
+	done?: (resolve: (value?: Array<NativeClientOData>) => void) => void;
 }
 
 /*********************************************
 * INativeClientQuery
 **********************************************/
-export interface INativeClientQuery extends NativeClientQuery, NativeClientMethods {
+export interface INativeClientQuery extends NativeClientOData, NativeClientMethods {
 
 }
 
@@ -77,9 +77,9 @@ export interface NativeClientCollections extends NativeClientPropMethods {
 }
 
 /*********************************************
-* NativeClientQuery
+* NativeClientOData
 **********************************************/
-export interface NativeClientQuery extends IBaseResult, NativeClientProps, NativeClientMethods {
+export interface NativeClientOData extends IBaseResult, NativeClientProps, NativeClientMethods {
 
 }
 
@@ -107,14 +107,14 @@ export interface ITokenCollection extends IBaseResults<Token> {
 /*********************************************
 * ITokenQueryCollection
 **********************************************/
-export interface ITokenQueryCollection extends IBaseResults<TokenQuery> {
-	done?: (resolve: (value?: Array<TokenQuery>) => void) => void;
+export interface ITokenQueryCollection extends IBaseResults<TokenOData> {
+	done?: (resolve: (value?: Array<TokenOData>) => void) => void;
 }
 
 /*********************************************
 * ITokenQuery
 **********************************************/
-export interface ITokenQuery extends TokenQuery, TokenMethods {
+export interface ITokenQuery extends TokenOData, TokenMethods {
 
 }
 
@@ -147,9 +147,9 @@ export interface TokenCollections extends TokenPropMethods {
 }
 
 /*********************************************
-* TokenQuery
+* TokenOData
 **********************************************/
-export interface TokenQuery extends IBaseResult, TokenProps, TokenMethods {
+export interface TokenOData extends IBaseResult, TokenProps, TokenMethods {
 
 }
 

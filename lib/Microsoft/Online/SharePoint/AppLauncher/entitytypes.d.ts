@@ -17,14 +17,14 @@ export interface IAppLauncherCollection extends IBaseResults<AppLauncher> {
 /*********************************************
 * IAppLauncherQueryCollection
 **********************************************/
-export interface IAppLauncherQueryCollection extends IBaseResults<AppLauncherQuery> {
-	done?: (resolve: (value?: Array<AppLauncherQuery>) => void) => void;
+export interface IAppLauncherQueryCollection extends IBaseResults<AppLauncherOData> {
+	done?: (resolve: (value?: Array<AppLauncherOData>) => void) => void;
 }
 
 /*********************************************
 * IAppLauncherQuery
 **********************************************/
-export interface IAppLauncherQuery extends AppLauncherQuery, AppLauncherMethods {
+export interface IAppLauncherQuery extends AppLauncherOData, AppLauncherMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface AppLauncherCollections extends AppLauncherPropMethods {
 }
 
 /*********************************************
-* AppLauncherQuery
+* AppLauncherOData
 **********************************************/
-export interface AppLauncherQuery extends IBaseResult, AppLauncherProps, AppLauncherMethods {
+export interface AppLauncherOData extends IBaseResult, AppLauncherProps, AppLauncherMethods {
 
 }
 

@@ -17,14 +17,14 @@ export interface IAppCollectionCollection extends IBaseResults<AppCollection> {
 /*********************************************
 * IAppCollectionQueryCollection
 **********************************************/
-export interface IAppCollectionQueryCollection extends IBaseResults<AppCollectionQuery> {
-	done?: (resolve: (value?: Array<AppCollectionQuery>) => void) => void;
+export interface IAppCollectionQueryCollection extends IBaseResults<AppCollectionOData> {
+	done?: (resolve: (value?: Array<AppCollectionOData>) => void) => void;
 }
 
 /*********************************************
 * IAppCollectionQuery
 **********************************************/
-export interface IAppCollectionQuery extends AppCollectionQuery, AppCollectionMethods {
+export interface IAppCollectionQuery extends AppCollectionOData, AppCollectionMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface AppCollectionCollections extends AppCollectionPropMethods {
 }
 
 /*********************************************
-* AppCollectionQuery
+* AppCollectionOData
 **********************************************/
-export interface AppCollectionQuery extends IBaseResult, AppCollectionProps, AppCollectionMethods {
+export interface AppCollectionOData extends IBaseResult, AppCollectionProps, AppCollectionMethods {
 
 }
 

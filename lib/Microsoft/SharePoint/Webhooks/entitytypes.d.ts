@@ -18,14 +18,14 @@ export interface ISubscriptionCollection extends IBaseResults<Subscription>, Sub
 /*********************************************
 * ISubscriptionQueryCollection
 **********************************************/
-export interface ISubscriptionQueryCollection extends IBaseResults<SubscriptionQuery>, SubscriptionCollectionMethods {
-	done?: (resolve: (value?: Array<SubscriptionQuery>) => void) => void;
+export interface ISubscriptionQueryCollection extends IBaseResults<SubscriptionOData>, SubscriptionCollectionMethods {
+	done?: (resolve: (value?: Array<SubscriptionOData>) => void) => void;
 }
 
 /*********************************************
 * ISubscriptionQuery
 **********************************************/
-export interface ISubscriptionQuery extends SubscriptionQuery, SubscriptionMethods {
+export interface ISubscriptionQuery extends SubscriptionOData, SubscriptionMethods {
 
 }
 
@@ -72,9 +72,9 @@ export interface SubscriptionCollectionMethods {
 }
 
 /*********************************************
-* SubscriptionQuery
+* SubscriptionOData
 **********************************************/
-export interface SubscriptionQuery extends IBaseResult, SubscriptionProps, SubscriptionMethods {
+export interface SubscriptionOData extends IBaseResult, SubscriptionProps, SubscriptionMethods {
 
 }
 

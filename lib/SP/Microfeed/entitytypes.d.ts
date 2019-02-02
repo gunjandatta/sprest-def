@@ -18,14 +18,14 @@ export interface IMicrofeedPostDefinitionManagerCollection extends IBaseResults<
 /*********************************************
 * IMicrofeedPostDefinitionManagerQueryCollection
 **********************************************/
-export interface IMicrofeedPostDefinitionManagerQueryCollection extends IBaseResults<MicrofeedPostDefinitionManagerQuery> {
-	done?: (resolve: (value?: Array<MicrofeedPostDefinitionManagerQuery>) => void) => void;
+export interface IMicrofeedPostDefinitionManagerQueryCollection extends IBaseResults<MicrofeedPostDefinitionManagerOData> {
+	done?: (resolve: (value?: Array<MicrofeedPostDefinitionManagerOData>) => void) => void;
 }
 
 /*********************************************
 * IMicrofeedPostDefinitionManagerQuery
 **********************************************/
-export interface IMicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerQuery, MicrofeedPostDefinitionManagerMethods {
+export interface IMicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerOData, MicrofeedPostDefinitionManagerMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface MicrofeedPostDefinitionManagerCollections extends MicrofeedPost
 }
 
 /*********************************************
-* MicrofeedPostDefinitionManagerQuery
+* MicrofeedPostDefinitionManagerOData
 **********************************************/
-export interface MicrofeedPostDefinitionManagerQuery extends IBaseResult, MicrofeedPostDefinitionManagerProps, MicrofeedPostDefinitionManagerMethods {
+export interface MicrofeedPostDefinitionManagerOData extends IBaseResult, MicrofeedPostDefinitionManagerProps, MicrofeedPostDefinitionManagerMethods {
 
 }
 
@@ -92,14 +92,14 @@ export interface IMicrofeedAttachmentStoreCollection extends IBaseResults<Microf
 /*********************************************
 * IMicrofeedAttachmentStoreQueryCollection
 **********************************************/
-export interface IMicrofeedAttachmentStoreQueryCollection extends IBaseResults<MicrofeedAttachmentStoreQuery> {
-	done?: (resolve: (value?: Array<MicrofeedAttachmentStoreQuery>) => void) => void;
+export interface IMicrofeedAttachmentStoreQueryCollection extends IBaseResults<MicrofeedAttachmentStoreOData> {
+	done?: (resolve: (value?: Array<MicrofeedAttachmentStoreOData>) => void) => void;
 }
 
 /*********************************************
 * IMicrofeedAttachmentStoreQuery
 **********************************************/
-export interface IMicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreQuery, MicrofeedAttachmentStoreMethods {
+export interface IMicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreOData, MicrofeedAttachmentStoreMethods {
 
 }
 
@@ -132,9 +132,9 @@ export interface MicrofeedAttachmentStoreCollections extends MicrofeedAttachment
 }
 
 /*********************************************
-* MicrofeedAttachmentStoreQuery
+* MicrofeedAttachmentStoreOData
 **********************************************/
-export interface MicrofeedAttachmentStoreQuery extends IBaseResult, MicrofeedAttachmentStoreProps, MicrofeedAttachmentStoreMethods {
+export interface MicrofeedAttachmentStoreOData extends IBaseResult, MicrofeedAttachmentStoreProps, MicrofeedAttachmentStoreMethods {
 
 }
 
@@ -166,14 +166,14 @@ export interface IMicrofeedDataCollection extends IBaseResults<MicrofeedData>, M
 /*********************************************
 * IMicrofeedDataQueryCollection
 **********************************************/
-export interface IMicrofeedDataQueryCollection extends IBaseResults<MicrofeedDataQuery>, MicrofeedDataCollectionMethods {
-	done?: (resolve: (value?: Array<MicrofeedDataQuery>) => void) => void;
+export interface IMicrofeedDataQueryCollection extends IBaseResults<MicrofeedDataOData>, MicrofeedDataCollectionMethods {
+	done?: (resolve: (value?: Array<MicrofeedDataOData>) => void) => void;
 }
 
 /*********************************************
 * IMicrofeedDataQuery
 **********************************************/
-export interface IMicrofeedDataQuery extends MicrofeedDataQuery, MicrofeedDataMethods {
+export interface IMicrofeedDataQuery extends MicrofeedDataOData, MicrofeedDataMethods {
 
 }
 
@@ -219,9 +219,9 @@ export interface MicrofeedDataCollectionMethods {
 }
 
 /*********************************************
-* MicrofeedDataQuery
+* MicrofeedDataOData
 **********************************************/
-export interface MicrofeedDataQuery extends IBaseResult, MicrofeedDataProps, MicrofeedDataMethods {
+export interface MicrofeedDataOData extends IBaseResult, MicrofeedDataProps, MicrofeedDataMethods {
 
 }
 
@@ -251,14 +251,14 @@ export interface IMicrofeedManagerCollection extends IBaseResults<MicrofeedManag
 /*********************************************
 * IMicrofeedManagerQueryCollection
 **********************************************/
-export interface IMicrofeedManagerQueryCollection extends IBaseResults<MicrofeedManagerQuery> {
-	done?: (resolve: (value?: Array<MicrofeedManagerQuery>) => void) => void;
+export interface IMicrofeedManagerQueryCollection extends IBaseResults<MicrofeedManagerOData> {
+	done?: (resolve: (value?: Array<MicrofeedManagerOData>) => void) => void;
 }
 
 /*********************************************
 * IMicrofeedManagerQuery
 **********************************************/
-export interface IMicrofeedManagerQuery extends MicrofeedManagerQuery, MicrofeedManagerMethods {
+export interface IMicrofeedManagerQuery extends MicrofeedManagerOData, MicrofeedManagerMethods {
 
 }
 
@@ -293,9 +293,9 @@ export interface MicrofeedManagerCollections extends MicrofeedManagerPropMethods
 }
 
 /*********************************************
-* MicrofeedManagerQuery
+* MicrofeedManagerOData
 **********************************************/
-export interface MicrofeedManagerQuery extends IBaseResult, MicrofeedManagerProps, MicrofeedManagerMethods {
+export interface MicrofeedManagerOData extends IBaseResult, MicrofeedManagerProps, MicrofeedManagerMethods {
 
 }
 
@@ -355,14 +355,14 @@ export interface IMicrofeedStoreCollection extends IBaseResults<MicrofeedStore> 
 /*********************************************
 * IMicrofeedStoreQueryCollection
 **********************************************/
-export interface IMicrofeedStoreQueryCollection extends IBaseResults<MicrofeedStoreQuery> {
-	done?: (resolve: (value?: Array<MicrofeedStoreQuery>) => void) => void;
+export interface IMicrofeedStoreQueryCollection extends IBaseResults<MicrofeedStoreOData> {
+	done?: (resolve: (value?: Array<MicrofeedStoreOData>) => void) => void;
 }
 
 /*********************************************
 * IMicrofeedStoreQuery
 **********************************************/
-export interface IMicrofeedStoreQuery extends MicrofeedStoreQuery, MicrofeedStoreMethods {
+export interface IMicrofeedStoreQuery extends MicrofeedStoreOData, MicrofeedStoreMethods {
 
 }
 
@@ -395,9 +395,9 @@ export interface MicrofeedStoreCollections extends MicrofeedStorePropMethods {
 }
 
 /*********************************************
-* MicrofeedStoreQuery
+* MicrofeedStoreOData
 **********************************************/
-export interface MicrofeedStoreQuery extends IBaseResult, MicrofeedStoreProps, MicrofeedStoreMethods {
+export interface MicrofeedStoreOData extends IBaseResult, MicrofeedStoreProps, MicrofeedStoreMethods {
 
 }
 

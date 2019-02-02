@@ -18,14 +18,14 @@ export interface IMicroServiceManagerCollection extends IBaseResults<MicroServic
 /*********************************************
 * IMicroServiceManagerQueryCollection
 **********************************************/
-export interface IMicroServiceManagerQueryCollection extends IBaseResults<MicroServiceManagerQuery> {
-	done?: (resolve: (value?: Array<MicroServiceManagerQuery>) => void) => void;
+export interface IMicroServiceManagerQueryCollection extends IBaseResults<MicroServiceManagerOData> {
+	done?: (resolve: (value?: Array<MicroServiceManagerOData>) => void) => void;
 }
 
 /*********************************************
 * IMicroServiceManagerQuery
 **********************************************/
-export interface IMicroServiceManagerQuery extends MicroServiceManagerQuery, MicroServiceManagerMethods {
+export interface IMicroServiceManagerQuery extends MicroServiceManagerOData, MicroServiceManagerMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface MicroServiceManagerCollections extends MicroServiceManagerPropM
 }
 
 /*********************************************
-* MicroServiceManagerQuery
+* MicroServiceManagerOData
 **********************************************/
-export interface MicroServiceManagerQuery extends IBaseResult, MicroServiceManagerProps, MicroServiceManagerMethods {
+export interface MicroServiceManagerOData extends IBaseResult, MicroServiceManagerProps, MicroServiceManagerMethods {
 
 }
 

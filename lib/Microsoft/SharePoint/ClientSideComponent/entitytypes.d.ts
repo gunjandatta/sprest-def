@@ -18,14 +18,14 @@ export interface IHostedAppsManagerCollection extends IBaseResults<HostedAppsMan
 /*********************************************
 * IHostedAppsManagerQueryCollection
 **********************************************/
-export interface IHostedAppsManagerQueryCollection extends IBaseResults<HostedAppsManagerQuery> {
-	done?: (resolve: (value?: Array<HostedAppsManagerQuery>) => void) => void;
+export interface IHostedAppsManagerQueryCollection extends IBaseResults<HostedAppsManagerOData> {
+	done?: (resolve: (value?: Array<HostedAppsManagerOData>) => void) => void;
 }
 
 /*********************************************
 * IHostedAppsManagerQuery
 **********************************************/
-export interface IHostedAppsManagerQuery extends HostedAppsManagerQuery, HostedAppsManagerMethods {
+export interface IHostedAppsManagerQuery extends HostedAppsManagerOData, HostedAppsManagerMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface HostedAppsManagerCollections extends HostedAppsManagerPropMetho
 }
 
 /*********************************************
-* HostedAppsManagerQuery
+* HostedAppsManagerOData
 **********************************************/
-export interface HostedAppsManagerQuery extends IBaseResult, HostedAppsManagerProps, HostedAppsManagerMethods {
+export interface HostedAppsManagerOData extends IBaseResult, HostedAppsManagerProps, HostedAppsManagerMethods {
 
 }
 
@@ -89,14 +89,14 @@ export interface IHostedAppCollection extends IBaseResults<HostedApp> {
 /*********************************************
 * IHostedAppQueryCollection
 **********************************************/
-export interface IHostedAppQueryCollection extends IBaseResults<HostedAppQuery> {
-	done?: (resolve: (value?: Array<HostedAppQuery>) => void) => void;
+export interface IHostedAppQueryCollection extends IBaseResults<HostedAppOData> {
+	done?: (resolve: (value?: Array<HostedAppOData>) => void) => void;
 }
 
 /*********************************************
 * IHostedAppQuery
 **********************************************/
-export interface IHostedAppQuery extends HostedAppQuery, HostedAppMethods {
+export interface IHostedAppQuery extends HostedAppOData, HostedAppMethods {
 
 }
 
@@ -129,9 +129,9 @@ export interface HostedAppCollections extends HostedAppPropMethods {
 }
 
 /*********************************************
-* HostedAppQuery
+* HostedAppOData
 **********************************************/
-export interface HostedAppQuery extends IBaseResult, HostedAppProps, HostedAppMethods {
+export interface HostedAppOData extends IBaseResult, HostedAppProps, HostedAppMethods {
 
 }
 

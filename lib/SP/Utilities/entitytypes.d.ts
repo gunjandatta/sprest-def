@@ -123,14 +123,14 @@ export interface IThemeManagerCollection extends IBaseResults<ThemeManager> {
 /*********************************************
 * IThemeManagerQueryCollection
 **********************************************/
-export interface IThemeManagerQueryCollection extends IBaseResults<ThemeManagerQuery> {
-	done?: (resolve: (value?: Array<ThemeManagerQuery>) => void) => void;
+export interface IThemeManagerQueryCollection extends IBaseResults<ThemeManagerOData> {
+	done?: (resolve: (value?: Array<ThemeManagerOData>) => void) => void;
 }
 
 /*********************************************
 * IThemeManagerQuery
 **********************************************/
-export interface IThemeManagerQuery extends ThemeManagerQuery, ThemeManagerMethods {
+export interface IThemeManagerQuery extends ThemeManagerOData, ThemeManagerMethods {
 
 }
 
@@ -152,7 +152,7 @@ export interface ThemeManagerProps {
 * ThemeManagerPropMethods
 **********************************************/
 export interface ThemeManagerPropMethods {
-	ContextThemeManager(): IBaseQuery<SP.Utilities.ThemeManager, SP.Utilities.ThemeManagerQuery> & SP.Utilities.ThemeManagerCollections & SP.Utilities.ThemeManagerMethods;
+	ContextThemeManager(): IBaseQuery<SP.Utilities.ThemeManager, SP.Utilities.ThemeManagerOData> & SP.Utilities.ThemeManagerCollections & SP.Utilities.ThemeManagerMethods;
 }
 
 /*********************************************
@@ -163,9 +163,9 @@ export interface ThemeManagerCollections extends ThemeManagerPropMethods {
 }
 
 /*********************************************
-* ThemeManagerQuery
+* ThemeManagerOData
 **********************************************/
-export interface ThemeManagerQuery extends IBaseResult, ThemeManagerProps, ThemeManagerMethods {
+export interface ThemeManagerOData extends IBaseResult, ThemeManagerProps, ThemeManagerMethods {
 	ContextThemeManager: SP.Utilities.ThemeManager & SP.Utilities.ThemeManagerCollections;
 }
 

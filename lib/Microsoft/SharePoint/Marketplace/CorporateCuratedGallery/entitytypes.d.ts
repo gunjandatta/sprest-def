@@ -19,14 +19,14 @@ export interface ISiteCollectionCorporateCatalogAccessorCollection extends IBase
 /*********************************************
 * ISiteCollectionCorporateCatalogAccessorQueryCollection
 **********************************************/
-export interface ISiteCollectionCorporateCatalogAccessorQueryCollection extends IBaseResults<SiteCollectionCorporateCatalogAccessorQuery> {
-	done?: (resolve: (value?: Array<SiteCollectionCorporateCatalogAccessorQuery>) => void) => void;
+export interface ISiteCollectionCorporateCatalogAccessorQueryCollection extends IBaseResults<SiteCollectionCorporateCatalogAccessorOData> {
+	done?: (resolve: (value?: Array<SiteCollectionCorporateCatalogAccessorOData>) => void) => void;
 }
 
 /*********************************************
 * ISiteCollectionCorporateCatalogAccessorQuery
 **********************************************/
-export interface ISiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessorQuery, SiteCollectionCorporateCatalogAccessorMethods {
+export interface ISiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessorOData, SiteCollectionCorporateCatalogAccessorMethods {
 
 }
 
@@ -60,9 +60,9 @@ export interface SiteCollectionCorporateCatalogAccessorCollections extends SiteC
 }
 
 /*********************************************
-* SiteCollectionCorporateCatalogAccessorQuery
+* SiteCollectionCorporateCatalogAccessorOData
 **********************************************/
-export interface SiteCollectionCorporateCatalogAccessorQuery extends IBaseResult, SiteCollectionCorporateCatalogAccessorProps, SiteCollectionCorporateCatalogAccessorMethods {
+export interface SiteCollectionCorporateCatalogAccessorOData extends IBaseResult, SiteCollectionCorporateCatalogAccessorProps, SiteCollectionCorporateCatalogAccessorMethods {
 	AvailableApps: IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
 }
 
@@ -70,7 +70,7 @@ export interface SiteCollectionCorporateCatalogAccessorQuery extends IBaseResult
 * SiteCollectionCorporateCatalogAccessorMethods
 **********************************************/
 export interface SiteCollectionCorporateCatalogAccessorMethods {
-	add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 
 /*********************************************
@@ -90,14 +90,14 @@ export interface ICorporateCatalogAppMetadataCollection extends IBaseResults<Cor
 /*********************************************
 * ICorporateCatalogAppMetadataQueryCollection
 **********************************************/
-export interface ICorporateCatalogAppMetadataQueryCollection extends IBaseResults<CorporateCatalogAppMetadataQuery>, CorporateCatalogAppMetadataCollectionMethods {
-	done?: (resolve: (value?: Array<CorporateCatalogAppMetadataQuery>) => void) => void;
+export interface ICorporateCatalogAppMetadataQueryCollection extends IBaseResults<CorporateCatalogAppMetadataOData>, CorporateCatalogAppMetadataCollectionMethods {
+	done?: (resolve: (value?: Array<CorporateCatalogAppMetadataOData>) => void) => void;
 }
 
 /*********************************************
 * ICorporateCatalogAppMetadataQuery
 **********************************************/
-export interface ICorporateCatalogAppMetadataQuery extends CorporateCatalogAppMetadataQuery, CorporateCatalogAppMetadataMethods {
+export interface ICorporateCatalogAppMetadataQuery extends CorporateCatalogAppMetadataOData, CorporateCatalogAppMetadataMethods {
 
 }
 
@@ -144,9 +144,9 @@ export interface CorporateCatalogAppMetadataCollectionMethods {
 }
 
 /*********************************************
-* CorporateCatalogAppMetadataQuery
+* CorporateCatalogAppMetadataOData
 **********************************************/
-export interface CorporateCatalogAppMetadataQuery extends IBaseResult, CorporateCatalogAppMetadataProps, CorporateCatalogAppMetadataMethods {
+export interface CorporateCatalogAppMetadataOData extends IBaseResult, CorporateCatalogAppMetadataProps, CorporateCatalogAppMetadataMethods {
 
 }
 
@@ -179,14 +179,14 @@ export interface ITenantCorporateCatalogAccessorCollection extends IBaseResults<
 /*********************************************
 * ITenantCorporateCatalogAccessorQueryCollection
 **********************************************/
-export interface ITenantCorporateCatalogAccessorQueryCollection extends IBaseResults<TenantCorporateCatalogAccessorQuery> {
-	done?: (resolve: (value?: Array<TenantCorporateCatalogAccessorQuery>) => void) => void;
+export interface ITenantCorporateCatalogAccessorQueryCollection extends IBaseResults<TenantCorporateCatalogAccessorOData> {
+	done?: (resolve: (value?: Array<TenantCorporateCatalogAccessorOData>) => void) => void;
 }
 
 /*********************************************
 * ITenantCorporateCatalogAccessorQuery
 **********************************************/
-export interface ITenantCorporateCatalogAccessorQuery extends TenantCorporateCatalogAccessorQuery, TenantCorporateCatalogAccessorMethods {
+export interface ITenantCorporateCatalogAccessorQuery extends TenantCorporateCatalogAccessorOData, TenantCorporateCatalogAccessorMethods {
 
 }
 
@@ -222,9 +222,9 @@ export interface TenantCorporateCatalogAccessorCollections extends TenantCorpora
 }
 
 /*********************************************
-* TenantCorporateCatalogAccessorQuery
+* TenantCorporateCatalogAccessorOData
 **********************************************/
-export interface TenantCorporateCatalogAccessorQuery extends IBaseResult, TenantCorporateCatalogAccessorProps, TenantCorporateCatalogAccessorMethods {
+export interface TenantCorporateCatalogAccessorOData extends IBaseResult, TenantCorporateCatalogAccessorProps, TenantCorporateCatalogAccessorMethods {
 	AvailableApps: IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
 	SiteCollectionAppCatalogsSites: IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollectionMethods;
 }
@@ -233,7 +233,7 @@ export interface TenantCorporateCatalogAccessorQuery extends IBaseResult, Tenant
 * TenantCorporateCatalogAccessorMethods
 **********************************************/
 export interface TenantCorporateCatalogAccessorMethods {
-	add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 
 /*********************************************

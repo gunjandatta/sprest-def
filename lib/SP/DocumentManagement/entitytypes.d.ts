@@ -17,14 +17,14 @@ export interface IDocumentIdCollection extends IBaseResults<DocumentId> {
 /*********************************************
 * IDocumentIdQueryCollection
 **********************************************/
-export interface IDocumentIdQueryCollection extends IBaseResults<DocumentIdQuery> {
-	done?: (resolve: (value?: Array<DocumentIdQuery>) => void) => void;
+export interface IDocumentIdQueryCollection extends IBaseResults<DocumentIdOData> {
+	done?: (resolve: (value?: Array<DocumentIdOData>) => void) => void;
 }
 
 /*********************************************
 * IDocumentIdQuery
 **********************************************/
-export interface IDocumentIdQuery extends DocumentIdQuery, DocumentIdMethods {
+export interface IDocumentIdQuery extends DocumentIdOData, DocumentIdMethods {
 
 }
 
@@ -57,9 +57,9 @@ export interface DocumentIdCollections extends DocumentIdPropMethods {
 }
 
 /*********************************************
-* DocumentIdQuery
+* DocumentIdOData
 **********************************************/
-export interface DocumentIdQuery extends IBaseResult, DocumentIdProps, DocumentIdMethods {
+export interface DocumentIdOData extends IBaseResult, DocumentIdProps, DocumentIdMethods {
 
 }
 

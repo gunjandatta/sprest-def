@@ -34,14 +34,14 @@ export interface IHubSitePropertiesCollection extends IBaseResults<HubSiteProper
 /*********************************************
 * IHubSitePropertiesQueryCollection
 **********************************************/
-export interface IHubSitePropertiesQueryCollection extends IBaseResults<HubSitePropertiesQuery> {
-	done?: (resolve: (value?: Array<HubSitePropertiesQuery>) => void) => void;
+export interface IHubSitePropertiesQueryCollection extends IBaseResults<HubSitePropertiesOData> {
+	done?: (resolve: (value?: Array<HubSitePropertiesOData>) => void) => void;
 }
 
 /*********************************************
 * IHubSitePropertiesQuery
 **********************************************/
-export interface IHubSitePropertiesQuery extends HubSitePropertiesQuery, HubSitePropertiesMethods {
+export interface IHubSitePropertiesQuery extends HubSitePropertiesOData, HubSitePropertiesMethods {
 
 }
 
@@ -82,9 +82,9 @@ export interface HubSitePropertiesCollections extends HubSitePropertiesPropMetho
 }
 
 /*********************************************
-* HubSitePropertiesQuery
+* HubSitePropertiesOData
 **********************************************/
-export interface HubSitePropertiesQuery extends IBaseResult, HubSitePropertiesProps, HubSitePropertiesMethods {
+export interface HubSitePropertiesOData extends IBaseResult, HubSitePropertiesProps, HubSitePropertiesMethods {
 
 }
 
@@ -112,14 +112,14 @@ export interface IOffice365CommsMessagesServiceProxyCollection extends IBaseResu
 /*********************************************
 * IOffice365CommsMessagesServiceProxyQueryCollection
 **********************************************/
-export interface IOffice365CommsMessagesServiceProxyQueryCollection extends IBaseResults<Office365CommsMessagesServiceProxyQuery> {
-	done?: (resolve: (value?: Array<Office365CommsMessagesServiceProxyQuery>) => void) => void;
+export interface IOffice365CommsMessagesServiceProxyQueryCollection extends IBaseResults<Office365CommsMessagesServiceProxyOData> {
+	done?: (resolve: (value?: Array<Office365CommsMessagesServiceProxyOData>) => void) => void;
 }
 
 /*********************************************
 * IOffice365CommsMessagesServiceProxyQuery
 **********************************************/
-export interface IOffice365CommsMessagesServiceProxyQuery extends Office365CommsMessagesServiceProxyQuery, Office365CommsMessagesServiceProxyMethods {
+export interface IOffice365CommsMessagesServiceProxyQuery extends Office365CommsMessagesServiceProxyOData, Office365CommsMessagesServiceProxyMethods {
 
 }
 
@@ -152,9 +152,9 @@ export interface Office365CommsMessagesServiceProxyCollections extends Office365
 }
 
 /*********************************************
-* Office365CommsMessagesServiceProxyQuery
+* Office365CommsMessagesServiceProxyOData
 **********************************************/
-export interface Office365CommsMessagesServiceProxyQuery extends IBaseResult, Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyMethods {
+export interface Office365CommsMessagesServiceProxyOData extends IBaseResult, Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyMethods {
 
 }
 
@@ -217,14 +217,14 @@ export interface ISiteCollectionManagementServiceCollection extends IBaseResults
 /*********************************************
 * ISiteCollectionManagementServiceQueryCollection
 **********************************************/
-export interface ISiteCollectionManagementServiceQueryCollection extends IBaseResults<SiteCollectionManagementServiceQuery> {
-	done?: (resolve: (value?: Array<SiteCollectionManagementServiceQuery>) => void) => void;
+export interface ISiteCollectionManagementServiceQueryCollection extends IBaseResults<SiteCollectionManagementServiceOData> {
+	done?: (resolve: (value?: Array<SiteCollectionManagementServiceOData>) => void) => void;
 }
 
 /*********************************************
 * ISiteCollectionManagementServiceQuery
 **********************************************/
-export interface ISiteCollectionManagementServiceQuery extends SiteCollectionManagementServiceQuery, SiteCollectionManagementServiceMethods {
+export interface ISiteCollectionManagementServiceQuery extends SiteCollectionManagementServiceOData, SiteCollectionManagementServiceMethods {
 
 }
 
@@ -257,9 +257,9 @@ export interface SiteCollectionManagementServiceCollections extends SiteCollecti
 }
 
 /*********************************************
-* SiteCollectionManagementServiceQuery
+* SiteCollectionManagementServiceOData
 **********************************************/
-export interface SiteCollectionManagementServiceQuery extends IBaseResult, SiteCollectionManagementServiceProps, SiteCollectionManagementServiceMethods {
+export interface SiteCollectionManagementServiceOData extends IBaseResult, SiteCollectionManagementServiceProps, SiteCollectionManagementServiceMethods {
 
 }
 
@@ -292,14 +292,14 @@ export interface ISitePropertiesCollection extends IBaseResults<SiteProperties>,
 /*********************************************
 * ISitePropertiesQueryCollection
 **********************************************/
-export interface ISitePropertiesQueryCollection extends IBaseResults<SitePropertiesQuery>, SitePropertiesCollectionMethods {
-	done?: (resolve: (value?: Array<SitePropertiesQuery>) => void) => void;
+export interface ISitePropertiesQueryCollection extends IBaseResults<SitePropertiesOData>, SitePropertiesCollectionMethods {
+	done?: (resolve: (value?: Array<SitePropertiesOData>) => void) => void;
 }
 
 /*********************************************
 * ISitePropertiesQuery
 **********************************************/
-export interface ISitePropertiesQuery extends SitePropertiesQuery, SitePropertiesMethods {
+export interface ISitePropertiesQuery extends SitePropertiesOData, SitePropertiesMethods {
 
 }
 
@@ -389,9 +389,9 @@ export interface SitePropertiesCollectionMethods {
 }
 
 /*********************************************
-* SitePropertiesQuery
+* SitePropertiesOData
 **********************************************/
-export interface SitePropertiesQuery extends IBaseResult, SitePropertiesProps, SitePropertiesMethods {
+export interface SitePropertiesOData extends IBaseResult, SitePropertiesProps, SitePropertiesMethods {
 
 }
 
@@ -483,14 +483,14 @@ export interface ITenantAdminSettingsServiceCollection extends IBaseResults<Tena
 /*********************************************
 * ITenantAdminSettingsServiceQueryCollection
 **********************************************/
-export interface ITenantAdminSettingsServiceQueryCollection extends IBaseResults<TenantAdminSettingsServiceQuery> {
-	done?: (resolve: (value?: Array<TenantAdminSettingsServiceQuery>) => void) => void;
+export interface ITenantAdminSettingsServiceQueryCollection extends IBaseResults<TenantAdminSettingsServiceOData> {
+	done?: (resolve: (value?: Array<TenantAdminSettingsServiceOData>) => void) => void;
 }
 
 /*********************************************
 * ITenantAdminSettingsServiceQuery
 **********************************************/
-export interface ITenantAdminSettingsServiceQuery extends TenantAdminSettingsServiceQuery, TenantAdminSettingsServiceMethods {
+export interface ITenantAdminSettingsServiceQuery extends TenantAdminSettingsServiceOData, TenantAdminSettingsServiceMethods {
 
 }
 
@@ -544,9 +544,9 @@ export interface TenantAdminSettingsServiceCollections extends TenantAdminSettin
 }
 
 /*********************************************
-* TenantAdminSettingsServiceQuery
+* TenantAdminSettingsServiceOData
 **********************************************/
-export interface TenantAdminSettingsServiceQuery extends IBaseResult, TenantAdminSettingsServiceProps, TenantAdminSettingsServiceMethods {
+export interface TenantAdminSettingsServiceOData extends IBaseResult, TenantAdminSettingsServiceProps, TenantAdminSettingsServiceMethods {
 
 }
 
@@ -575,14 +575,14 @@ export interface ITenantCollection extends IBaseResults<Tenant> {
 /*********************************************
 * ITenantQueryCollection
 **********************************************/
-export interface ITenantQueryCollection extends IBaseResults<TenantQuery> {
-	done?: (resolve: (value?: Array<TenantQuery>) => void) => void;
+export interface ITenantQueryCollection extends IBaseResults<TenantOData> {
+	done?: (resolve: (value?: Array<TenantOData>) => void) => void;
 }
 
 /*********************************************
 * ITenantQuery
 **********************************************/
-export interface ITenantQuery extends TenantQuery, TenantMethods {
+export interface ITenantQuery extends TenantOData, TenantMethods {
 
 }
 
@@ -716,9 +716,9 @@ export interface TenantCollections extends TenantPropMethods {
 }
 
 /*********************************************
-* TenantQuery
+* TenantOData
 **********************************************/
-export interface TenantQuery extends IBaseResult, TenantProps, TenantMethods {
+export interface TenantOData extends IBaseResult, TenantProps, TenantMethods {
 	Sites: IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 }
 

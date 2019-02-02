@@ -18,14 +18,14 @@ export interface IWorkflowAssociationCollection extends IBaseResults<WorkflowAss
 /*********************************************
 * IWorkflowAssociationQueryCollection
 **********************************************/
-export interface IWorkflowAssociationQueryCollection extends IBaseResults<WorkflowAssociationQuery>, WorkflowAssociationCollectionMethods {
-	done?: (resolve: (value?: Array<WorkflowAssociationQuery>) => void) => void;
+export interface IWorkflowAssociationQueryCollection extends IBaseResults<WorkflowAssociationOData>, WorkflowAssociationCollectionMethods {
+	done?: (resolve: (value?: Array<WorkflowAssociationOData>) => void) => void;
 }
 
 /*********************************************
 * IWorkflowAssociationQuery
 **********************************************/
-export interface IWorkflowAssociationQuery extends WorkflowAssociationQuery, WorkflowAssociationMethods {
+export interface IWorkflowAssociationQuery extends WorkflowAssociationOData, WorkflowAssociationMethods {
 
 }
 
@@ -84,9 +84,9 @@ export interface WorkflowAssociationCollectionMethods {
 }
 
 /*********************************************
-* WorkflowAssociationQuery
+* WorkflowAssociationOData
 **********************************************/
-export interface WorkflowAssociationQuery extends IBaseResult, WorkflowAssociationProps, WorkflowAssociationMethods {
+export interface WorkflowAssociationOData extends IBaseResult, WorkflowAssociationProps, WorkflowAssociationMethods {
 
 }
 
@@ -176,14 +176,14 @@ export interface ISPWorkflowTaskCollection extends IBaseResults<SPWorkflowTask> 
 /*********************************************
 * ISPWorkflowTaskQueryCollection
 **********************************************/
-export interface ISPWorkflowTaskQueryCollection extends IBaseResults<SPWorkflowTaskQuery> {
-	done?: (resolve: (value?: Array<SPWorkflowTaskQuery>) => void) => void;
+export interface ISPWorkflowTaskQueryCollection extends IBaseResults<SPWorkflowTaskOData> {
+	done?: (resolve: (value?: Array<SPWorkflowTaskOData>) => void) => void;
 }
 
 /*********************************************
 * ISPWorkflowTaskQuery
 **********************************************/
-export interface ISPWorkflowTaskQuery extends SPWorkflowTaskQuery, SPWorkflowTaskMethods {
+export interface ISPWorkflowTaskQuery extends SPWorkflowTaskOData, SPWorkflowTaskMethods {
 
 }
 
@@ -216,9 +216,9 @@ export interface SPWorkflowTaskCollections extends SPWorkflowTaskPropMethods {
 }
 
 /*********************************************
-* SPWorkflowTaskQuery
+* SPWorkflowTaskOData
 **********************************************/
-export interface SPWorkflowTaskQuery extends IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskMethods {
+export interface SPWorkflowTaskOData extends IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskMethods {
 
 }
 

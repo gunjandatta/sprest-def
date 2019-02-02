@@ -18,14 +18,14 @@ export interface ISignalStoreCollection extends IBaseResults<SignalStore> {
 /*********************************************
 * ISignalStoreQueryCollection
 **********************************************/
-export interface ISignalStoreQueryCollection extends IBaseResults<SignalStoreQuery> {
-	done?: (resolve: (value?: Array<SignalStoreQuery>) => void) => void;
+export interface ISignalStoreQueryCollection extends IBaseResults<SignalStoreOData> {
+	done?: (resolve: (value?: Array<SignalStoreOData>) => void) => void;
 }
 
 /*********************************************
 * ISignalStoreQuery
 **********************************************/
-export interface ISignalStoreQuery extends SignalStoreQuery, SignalStoreMethods {
+export interface ISignalStoreQuery extends SignalStoreOData, SignalStoreMethods {
 
 }
 
@@ -58,9 +58,9 @@ export interface SignalStoreCollections extends SignalStorePropMethods {
 }
 
 /*********************************************
-* SignalStoreQuery
+* SignalStoreOData
 **********************************************/
-export interface SignalStoreQuery extends IBaseResult, SignalStoreProps, SignalStoreMethods {
+export interface SignalStoreOData extends IBaseResult, SignalStoreProps, SignalStoreMethods {
 
 }
 

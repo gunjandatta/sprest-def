@@ -144,10 +144,10 @@ function generateBaseCollection(methodType, hasCollections, hasCollectionMethods
         // See if methods exist
         if (hasCollectionMethods[methodType]) {
             // Generate the interface
-            return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query, IBaseExecution & ' + methodType + 'CollectionMethods> & IBaseExecution & ' + methodType + 'CollectionMethods';
+            return 'IBaseCollection<' + methodType + ', ' + methodType + 'OData, IBaseExecution & ' + methodType + 'CollectionMethods> & IBaseExecution & ' + methodType + 'CollectionMethods';
         } else {
             // Generate the interface
-            return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query>';
+            return 'IBaseCollection<' + methodType + ', ' + methodType + 'OData>';
         }
     } else {
         // See if methods exist
@@ -174,7 +174,7 @@ function generateBaseQuery(methodType, hasCollections, hasMethods) {
     // See if a collection exists
     if (hasCollections[methodType]) {
         // Set the base query
-        baseQuery = 'IBaseQuery<' + methodType + ', ' + methodType + 'Query>';
+        baseQuery = 'IBaseQuery<' + methodType + ', ' + methodType + 'OData>';
     } else {
         // Set the base query
         baseQuery = 'IBaseQuery<' + methodType + '>';
@@ -645,7 +645,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         // Generate the content
                         content.push(createInterface(name, null, variables.join('\n')));
                         content.push(createInterface(name + "Collections", collectionMethods.length > 0 ? [name + "CollectionMethods"] : null, collections.join('\n')));
-                        query.length > 0 ? content.push(createInterface(name + "Query", "IBaseResult, " + name, query.join('\n'))) : null;
+                        query.length > 0 ? content.push(createInterface(name + "OData", "IBaseResult, " + name, query.join('\n'))) : null;
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
                     } else {
                         let baseTypes = interface._BaseType ? [interface._BaseType] : [];
@@ -667,14 +667,14 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         // Generate the content
                         content.push(createInterface("I" + name, [name + "Collections", name + "Methods", (hasQueryMethod ? "IBaseExecution<I" + name + ">" : "IBaseQuery<I" + name + "Query>")].join(', ')));
                         content.push(createInterface("I" + name + "Collection", "IBaseResults<" + name + ">" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + ">) => void) => void;"));
-                        content.push(createInterface("I" + name + "QueryCollection", "IBaseResults<" + name + "Query>" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + "Query>) => void) => void;"));
-                        content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"].join(', ')));
+                        content.push(createInterface("I" + name + "QueryCollection", "IBaseResults<" + name + "OData>" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + "OData>) => void) => void;"));
+                        content.push(createInterface("I" + name + "Query", [name + "OData", name + "Methods"].join(', ')));
                         content.push(createInterface(name, baseTypes.join(", ")));
                         content.push(createInterface(name + "Props", null, variables.join('\n')));
                         content.push(createInterface(name + "PropMethods", null, props.join('\n')));
                         content.push(createInterface(name + "Collections", name + "PropMethods", collections.join('\n')));
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
-                        content.push(createInterface(name + "Query", ["IBaseResult", name + "Props", name + "Methods"].join(', '), query.join('\n')));
+                        content.push(createInterface(name + "OData", ["IBaseResult", name + "Props", name + "Methods"].join(', '), query.join('\n')));
                         content.push(createInterface(name + "Methods", null, methods.join('\n')));
                     }
                 }
