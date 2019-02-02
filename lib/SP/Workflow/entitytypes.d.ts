@@ -202,8 +202,8 @@ export interface SPWorkflowTaskMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<any>;
 	resetRoleInheritance(): IBaseExecution<any>;
 	delete(): IBaseExecution<any>;
-	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
-	getHashtags(): IBaseExecution<Array<SP.Hashtag>>;
+	getChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
+	getHashtags(): IBaseCollection<SP.Hashtag>;
 	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;
 	getWOPIFrameUrl(action?: number): IBaseExecution<string>;
 	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): IBaseExecution<any>;
@@ -221,8 +221,8 @@ export interface SPWorkflowTaskMethods {
 	systemUpdate(): IBaseExecution<any>;
 	// update(): IBaseExecution<any>;
 	updateEx(parameters?: SP.ListItemUpdateParameters): IBaseExecution<any>;
-	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseExecution<Array<SP.Hashtag>>;
+	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseCollection<SP.Hashtag>;
 	updateOverwriteVersion(): IBaseExecution<any>;
-	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseCollection<SP.ListItemFormUpdateValue>;
 	update(properties?: any): IBaseExecution<any>;
 }

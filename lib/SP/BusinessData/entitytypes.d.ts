@@ -171,7 +171,7 @@ export interface TypeDescriptorQuery extends TypeDescriptorProps, TypeDescriptor
 **********************************************/
 export interface TypeDescriptorMethods {
 	containsLocalizedDisplayName(): IBaseExecution<boolean>;
-	getChildTypeDescriptors(): IBaseExecution<Array<SP.BusinessData.TypeDescriptor>>;
+	getChildTypeDescriptors(): IBaseCollection<SP.BusinessData.TypeDescriptor>;
 	getDefaultDisplayName(): IBaseExecution<string>;
 	getLocalizedDisplayName(): IBaseExecution<string>;
 	getParentTypeDescriptor(): IBaseExecution<SP.BusinessData.TypeDescriptor>;
@@ -234,16 +234,16 @@ export interface EntityQuery extends EntityProps, EntityMethods {
 * EntityMethods
 **********************************************/
 export interface EntityMethods {
-	getAssociationView(associationName?: string): IBaseExecution<SP.BusinessData.EntityView>;
-	getCreatorView(methodInstanceName?: string): IBaseExecution<SP.BusinessData.EntityView>;
-	getDefaultSpecificFinderView(): IBaseExecution<SP.BusinessData.EntityView>;
-	getFilters(methodInstanceName?: string): IBaseExecution<Array<SP.BusinessData.Filter>>;
-	getFinderView(methodInstanceName?: string): IBaseExecution<SP.BusinessData.EntityView>;
+	getAssociationView(associationName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewQuery> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getCreatorView(methodInstanceName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewQuery> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getDefaultSpecificFinderView(): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewQuery> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getFilters(methodInstanceName?: string): IBaseCollection<SP.BusinessData.Filter>;
+	getFinderView(methodInstanceName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewQuery> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
 	getIdentifierCount(): IBaseExecution<number>;
-	getIdentifiers(): IBaseExecution<Array<SP.BusinessData.EntityIdentifier>>;
+	getIdentifiers(): IBaseCollection<SP.BusinessData.EntityIdentifier>;
 	getLobSystem(): IBaseExecution<SP.BusinessData.LobSystem>;
-	getSpecificFinderView(specificFinderName?: string): IBaseExecution<SP.BusinessData.EntityView>;
-	getUpdaterView(updaterName?: string): IBaseExecution<SP.BusinessData.EntityView>;
+	getSpecificFinderView(specificFinderName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewQuery> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getUpdaterView(updaterName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewQuery> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
 }
 
 /*********************************************
@@ -299,7 +299,7 @@ export interface LobSystemQuery extends LobSystemProps, LobSystemMethods {
 * LobSystemMethods
 **********************************************/
 export interface LobSystemMethods {
-	getLobSystemInstances(): IBaseExecution<Array<SP.BusinessData.LobSystemInstance>>;
+	getLobSystemInstances(): IBaseCollection<SP.BusinessData.LobSystemInstance>;
 }
 
 /*********************************************
@@ -477,7 +477,7 @@ export interface AppBdcCatalogMethods {
 	getEntity(namespace?: string, name?: string): IBaseExecution<SP.BusinessData.Entity>;
 	getLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string): IBaseExecution<string>;
 	getLobSystemProperty(lobSystemName?: string, propertyName?: string): IBaseExecution<string>;
-	getPermissibleConnections(): IBaseExecution<Array<string>>;
+	getPermissibleConnections(): IBaseCollection<string>;
 	setConnectionId(lobSystemName?: string, lobSystemInstanceName?: string, connectionId?: string): IBaseExecution<any>;
 	setLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string, propertyValue?: string): IBaseExecution<any>;
 	setLobSystemProperty(lobSystemName?: string, propertyName?: string, propertyValue?: string): IBaseExecution<any>;

@@ -177,7 +177,7 @@ export interface TranslationJobStatusQuery extends TranslationJobStatusProps, Tr
 * TranslationJobStatusMethods
 **********************************************/
 export interface TranslationJobStatusMethods {
-	getAllItems(): IBaseExecution<Array<SP.Translation.TranslationItemInfo>>;
+	getAllItems(): IBaseCollection<SP.Translation.TranslationItemInfo>;
 }
 
 /*********************************************

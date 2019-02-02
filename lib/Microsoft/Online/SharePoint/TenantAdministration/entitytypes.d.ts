@@ -137,7 +137,7 @@ export interface Office365CommsMessagesServiceProxyQuery extends Office365CommsM
 * Office365CommsMessagesServiceProxyMethods
 **********************************************/
 export interface Office365CommsMessagesServiceProxyMethods {
-	messageCenterMessages(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): IBaseExecution<Array<Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter>>;
+	messageCenterMessages(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter>;
 	serviceHealthMessages(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth>;
 }
 
@@ -228,7 +228,7 @@ export interface SiteCollectionManagementServiceQuery extends SiteCollectionMana
 * SiteCollectionManagementServiceMethods
 **********************************************/
 export interface SiteCollectionManagementServiceMethods {
-	emailAdmins(message?: string, siteIds?: Array<any>, subject?: string): IBaseExecution<Array<Microsoft.Online.SharePoint.TenantAdministration.EmailResponse>>;
+	emailAdmins(message?: string, siteIds?: Array<any>, subject?: string): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.EmailResponse>;
 	exportCSVFile(): IBaseExecution<string>;
 	getSiteDescription(siteId?: any): IBaseExecution<string>;
 	office365ProvidedSharepointSiteActivityDataReady(): IBaseExecution<boolean>;
@@ -651,8 +651,8 @@ export interface TenantMethods {
 	createSite(siteCreationProperties?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	getIdleSessionSignOutForUnmanagedDevices(): IBaseExecution<string>;
 	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
-	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): IBaseExecution<Array<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>>;
-	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): IBaseExecution<Array<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>>;
+	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
 	getSPOTenantAllWebTemplates(): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	registerHubSite(siteUrl?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	registerHubSiteWithCreationInformation(siteUrl?: string, creationInformation?: SP.HubSiteCreationInformation): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;

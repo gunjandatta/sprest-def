@@ -136,9 +136,9 @@ export interface WorkflowDeploymentServiceMethods {
 	deleteCollateral(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<any>;
 	deleteDefinition(definitionId?: any): IBaseExecution<any>;
 	deprecateDefinition(definitionId?: any): IBaseExecution<any>;
-	enumerateDefinitions(publishedOnly?: boolean): IBaseExecution<Array<SP.WorkflowServices.WorkflowDefinition>>;
-	enumerateIntegratedApps(): IBaseExecution<Array<SP.AppInstance>>;
-	getActivitySignatures(lastChanged?: any): IBaseExecution<Array<SP.KeyValue>>;
+	enumerateDefinitions(publishedOnly?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowDefinition> & SP.WorkflowServices.WorkflowDefinitionCollectionMethods;
+	enumerateIntegratedApps(): IBaseCollection<SP.AppInstance>;
+	getActivitySignatures(lastChanged?: any): IBaseCollection<SP.KeyValue>;
 	getCollateralUri(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<string>;
 	getDefinition(definitionId?: any): IBaseExecution<SP.WorkflowServices.WorkflowDefinition>;
 	isIntegratedApp(): IBaseExecution<boolean>;
@@ -222,10 +222,10 @@ export interface WorkflowInstanceServiceQuery extends WorkflowInstanceServicePro
 * WorkflowInstanceServiceMethods
 **********************************************/
 export interface WorkflowInstanceServiceMethods {
-	enumerateInstancesForListItem(listId?: any, itemId?: number): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
-	enumerateInstancesForListItemWithOffset(listId?: any, itemId?: number, offset?: number): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
-	enumerateInstancesForSite(): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
-	enumerateInstancesForSiteWithOffset(offset?: number): IBaseExecution<Array<SP.WorkflowServices.WorkflowInstance>>;
+	enumerateInstancesForListItem(listId?: any, itemId?: number): IBaseCollection<SP.WorkflowServices.WorkflowInstance>;
+	enumerateInstancesForListItemWithOffset(listId?: any, itemId?: number, offset?: number): IBaseCollection<SP.WorkflowServices.WorkflowInstance>;
+	enumerateInstancesForSite(): IBaseCollection<SP.WorkflowServices.WorkflowInstance>;
+	enumerateInstancesForSiteWithOffset(offset?: number): IBaseCollection<SP.WorkflowServices.WorkflowInstance>;
 	getInstance(instanceId?: any): IBaseExecution<SP.WorkflowServices.WorkflowInstance>;
 	startWorkflowOnListItemBySubscriptionId(subscriptionId?: any, itemId?: number, payload?: Array<SP.KeyValue>): IBaseExecution<any>;
 }
@@ -346,9 +346,9 @@ export interface WorkflowServicesManagerQuery extends WorkflowServicesManagerPro
 **********************************************/
 export interface WorkflowServicesManagerMethods {
 	getWorkflowDeploymentService(): IBaseExecution<SP.WorkflowServices.WorkflowDeploymentService>;
-	getWorkflowInstanceService(): IBaseExecution<SP.WorkflowServices.WorkflowInstanceService>;
-	getWorkflowInteropService(): IBaseExecution<SP.WorkflowServices.InteropService>;
-	getWorkflowSubscriptionService(): IBaseExecution<SP.WorkflowServices.WorkflowSubscriptionService>;
+	getWorkflowInstanceService(): IBaseQuery<SP.WorkflowServices.WorkflowInstanceService, SP.WorkflowServices.WorkflowInstanceServiceQuery> & SP.WorkflowServices.WorkflowInstanceServiceCollections & SP.WorkflowServices.WorkflowInstanceServiceMethods;
+	getWorkflowInteropService(): IBaseQuery<SP.WorkflowServices.InteropService, SP.WorkflowServices.InteropServiceQuery> & SP.WorkflowServices.InteropServiceCollections & SP.WorkflowServices.InteropServiceMethods;
+	getWorkflowSubscriptionService(): IBaseQuery<SP.WorkflowServices.WorkflowSubscriptionService, SP.WorkflowServices.WorkflowSubscriptionServiceQuery> & SP.WorkflowServices.WorkflowSubscriptionServiceCollections & SP.WorkflowServices.WorkflowSubscriptionServiceMethods;
 	isIntegratedApp(): IBaseExecution<boolean>;
 }
 
@@ -480,12 +480,12 @@ export interface WorkflowSubscriptionServiceQuery extends WorkflowSubscriptionSe
 **********************************************/
 export interface WorkflowSubscriptionServiceMethods {
 	deleteSubscription(subscriptionId?: any): IBaseExecution<any>;
-	enumerateSubscriptions(): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
-	enumerateSubscriptionsByDefinition(definitionId?: any): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
-	enumerateSubscriptionsByEventSource(eventSourceId?: any): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
-	enumerateSubscriptionsByList(listId?: any): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
-	enumerateSubscriptionsByListAndParentContentType(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
-	enumerateSubscriptionsByListWithContentType(listId?: any, includeContentTypeSpecified?: boolean): IBaseExecution<Array<SP.WorkflowServices.WorkflowSubscription>>;
+	enumerateSubscriptions(): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
+	enumerateSubscriptionsByDefinition(definitionId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
+	enumerateSubscriptionsByEventSource(eventSourceId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
+	enumerateSubscriptionsByList(listId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
+	enumerateSubscriptionsByListAndParentContentType(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
+	enumerateSubscriptionsByListWithContentType(listId?: any, includeContentTypeSpecified?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
 	getSubscription(subscriptionId?: any): IBaseExecution<SP.WorkflowServices.WorkflowSubscription>;
 	registerInterestInHostWebList(listId?: any, eventName?: string): IBaseExecution<any>;
 	registerInterestInList(listId?: any, eventName?: string): IBaseExecution<any>;

@@ -57,8 +57,8 @@ export interface MicroServiceManagerQuery extends MicroServiceManagerProps, Micr
 export interface MicroServiceManagerMethods {
 	addMicroserviceWorkItem(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): IBaseExecution<any>;
 	deleteMicroserviceWorkItem(workItemId?: any): IBaseExecution<boolean>;
-	getServiceInternalUrls(service?: string): IBaseExecution<Array<string>>;
-	getServiceUrls(service?: string): IBaseExecution<Array<string>>;
+	getServiceInternalUrls(service?: string): IBaseCollection<string>;
+	getServiceUrls(service?: string): IBaseCollection<string>;
 }
 
 /*********************************************

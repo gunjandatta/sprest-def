@@ -57,12 +57,12 @@ export interface DirectorySessionQuery extends DirectorySessionProps, DirectoryS
 * DirectorySessionMethods
 **********************************************/
 export interface DirectorySessionMethods {
-	getGraphUser(principalName?: string): IBaseExecution<SP.Directory.User>;
-	getSharePointDataForUser(userId?: any): IBaseExecution<SP.Directory.User>;
-	group(groupId?: any, alias?: string): IBaseExecution<SP.Directory.Group>;
+	getGraphUser(principalName?: string): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	getSharePointDataForUser(userId?: any): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	group(groupId?: any, alias?: string): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
 	joinGroup(groupId?: any): IBaseExecution<number>;
-	me(): IBaseExecution<SP.Directory.User>;
-	user(id?: any, principalName?: string): IBaseExecution<SP.Directory.User>;
+	me(): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
+	user(id?: any, principalName?: string): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
 	validateGroupName(displayName?: string, alias?: string): IBaseExecution<SP.Directory.GroupNameValidationResult>;
 }
 
@@ -260,7 +260,7 @@ export interface UserQuery extends UserProps, UserMethods {
 * UserMethods
 **********************************************/
 export interface UserMethods {
-	getUserLinks(linkName?: string, groupType?: number): IBaseExecution<Array<SP.Directory.Link>>;
+	getUserLinks(linkName?: string, groupType?: number): IBaseCollection<SP.Directory.Link>;
 }
 
 /*********************************************

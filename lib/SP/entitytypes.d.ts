@@ -207,7 +207,7 @@ export interface SiteQuery extends SiteProps, SiteMethods {
 **********************************************/
 export interface SiteMethods {
 	createCopyJob(exportObjectUris?: Array<string>, destinationUri?: string, options?: SP.CopyMigrationOptions): IBaseExecution<SP.CopyMigrationInfo>;
-	createCopyJobs(exportObjectUris?: Array<string>, destinationUri?: string, options?: SP.CopyMigrationOptions): IBaseExecution<Array<SP.CopyMigrationInfo>>;
+	createCopyJobs(exportObjectUris?: Array<string>, destinationUri?: string, options?: SP.CopyMigrationOptions): IBaseCollection<SP.CopyMigrationInfo>;
 	createMigrationIngestionJob(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string, ingestionTaskKey?: SP.IngestionTaskKey): IBaseExecution<any>;
 	createMigrationJob(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string): IBaseExecution<any>;
 	createMigrationJobEncrypted(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string, options?: SP.EncryptionOption): IBaseExecution<any>;
@@ -216,15 +216,15 @@ export interface SiteMethods {
 	extendUpgradeReminderDate(): IBaseExecution<any>;
 	getBringYourOwnKeySiteStatus(): IBaseExecution<SP.CustomerKeyStatusInfo>;
 	getBringYourOwnKeyTenantStatus(): IBaseExecution<SP.CustomerKeyStatusInfo>;
-	getCatalog(typeCatalog?: number): IBaseExecution<SP.List>;
-	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
+	getCatalog(typeCatalog?: number): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	getChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
 	getCopyJobProgress(copyJobInfo?: SP.CopyMigrationInfo): IBaseExecution<SP.CopyJobProgress>;
 	getHubSiteJoinApprovalCorrelationId(): IBaseExecution<string>;
 	getMigrationJobStatus(id?: any): IBaseExecution<number>;
-	getMigrationStatus(): IBaseExecution<Array<SP.SPMigrationJobStatus>>;
-	getRecycleBinItems(pagingInfo?: string, rowLimit?: number, isAscending?: boolean, orderBy?: number, itemState?: number): IBaseExecution<Array<SP.RecycleBinItem>>;
+	getMigrationStatus(): IBaseCollection<SP.SPMigrationJobStatus>;
+	getRecycleBinItems(pagingInfo?: string, rowLimit?: number, isAscending?: boolean, orderBy?: number, itemState?: number): IBaseCollection<SP.RecycleBinItem, SP.RecycleBinItemQuery> & SP.RecycleBinItemCollectionMethods;
 	getWebPath(siteId?: any, webId?: any): IBaseExecution<SP.ResourcePath>;
-	getWebTemplates(LCID?: number, overrideCompatLevel?: number): IBaseExecution<Array<SP.WebTemplate>>;
+	getWebTemplates(LCID?: number, overrideCompatLevel?: number): IBaseCollection<SP.WebTemplate> & SP.WebTemplateCollectionMethods;
 	invalidate(): IBaseExecution<any>;
 	joinHubSite(hubSiteId?: any, approvalToken?: string, approvalCorrelationId?: string): IBaseExecution<any>;
 	makeHubSite(): IBaseExecution<SP.HubSite>;
@@ -234,9 +234,9 @@ export interface SiteMethods {
 	onHubSiteJoinRequestApproved(joiningSiteId?: any): IBaseExecution<string>;
 	onHubSiteJoinRequestCanceled(approvalCorrelationId?: string): IBaseExecution<any>;
 	onHubSiteJoinRequestStarted(approvalCorrelationId?: string): IBaseExecution<any>;
-	openWeb(strUrl?: string): IBaseExecution<SP.Web>;
-	openWebById(gWebId?: any): IBaseExecution<SP.Web>;
-	openWebUsingPath(path?: SP.ResourcePath): IBaseExecution<SP.Web>;
+	openWeb(strUrl?: string): IBaseQuery<SP.Web, SP.WebQuery> & SP.WebCollections & SP.WebMethods;
+	openWebById(gWebId?: any): IBaseQuery<SP.Web, SP.WebQuery> & SP.WebCollections & SP.WebMethods;
+	openWebUsingPath(path?: SP.ResourcePath): IBaseQuery<SP.Web, SP.WebQuery> & SP.WebCollections & SP.WebMethods;
 	provisionMigrationContainers(): IBaseExecution<SP.ProvisionedMigrationContainersInfo>;
 	provisionMigrationQueue(): IBaseExecution<SP.ProvisionedMigrationQueueInfo>;
 	recoverTenantForBringYourOwnKey(keyInfo?: SP.CustomerKeyInfo): IBaseExecution<SP.CustomerKeyStatusInfo>;
@@ -968,8 +968,8 @@ export interface ListItemMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<any>;
 	resetRoleInheritance(): IBaseExecution<any>;
 	delete(): IBaseExecution<any>;
-	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
-	getHashtags(): IBaseExecution<Array<SP.Hashtag>>;
+	getChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
+	getHashtags(): IBaseCollection<SP.Hashtag>;
 	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;
 	getWOPIFrameUrl(action?: number): IBaseExecution<string>;
 	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): IBaseExecution<any>;
@@ -987,9 +987,9 @@ export interface ListItemMethods {
 	systemUpdate(): IBaseExecution<any>;
 	// update(): IBaseExecution<any>;
 	updateEx(parameters?: SP.ListItemUpdateParameters): IBaseExecution<any>;
-	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseExecution<Array<SP.Hashtag>>;
+	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseCollection<SP.Hashtag>;
 	updateOverwriteVersion(): IBaseExecution<any>;
-	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseCollection<SP.ListItemFormUpdateValue>;
 	update(properties?: any): IBaseExecution<any>;
 }
 
@@ -1403,7 +1403,7 @@ export interface FieldMethods {
 	setShowInEditForm(value?: boolean): IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): IBaseExecution<any>;
 	// update(): IBaseExecution<any>;
-	add(parameters?: SP.FieldCreationInformation | any): IBaseExecution<SP.Field>;
+	add(parameters?: SP.FieldCreationInformation | any): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections & SP.FieldMethods;
 	update(properties?: any): IBaseExecution<any>;
 }
 
@@ -1554,8 +1554,8 @@ export interface FileQuery extends FileProps, FileMethods {
 * FileMethods
 **********************************************/
 export interface FileMethods {
-	addActivities(activities?: Array<Microsoft.SharePoint.Activities.ActivityClientRequest>): IBaseExecution<Array<Microsoft.SharePoint.Activities.ActivityClientResponse>>;
-	addClientActivities(activitiesStream?: any): IBaseExecution<Array<Microsoft.SharePoint.Activities.ActivityClientResponse>>;
+	addActivities(activities?: Array<Microsoft.SharePoint.Activities.ActivityClientRequest>): IBaseCollection<Microsoft.SharePoint.Activities.ActivityClientResponse>;
+	addClientActivities(activitiesStream?: any): IBaseCollection<Microsoft.SharePoint.Activities.ActivityClientResponse>;
 	approve(comment?: string): IBaseExecution<any>;
 	cancelUpload(uploadId?: any): IBaseExecution<any>;
 	checkAccessAndPostViewAuditEvent(): IBaseExecution<boolean>;
@@ -1567,11 +1567,11 @@ export interface FileMethods {
 	delete(): IBaseExecution<any>;
 	deny(comment?: string): IBaseExecution<any>;
 	executeCobaltRequest(inputStream?: any): IBaseExecution<any>;
-	finishUpload(uploadId?: any, fileOffset?: number, stream?: any): IBaseExecution<SP.File>;
+	finishUpload(uploadId?: any, fileOffset?: number, stream?: any): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
 	getFileUserValue(key?: string): IBaseExecution<Microsoft.SharePoint.UserActions.officeFileUserValueResponse>;
 	getImagePreviewUri(width?: number, height?: number, clientType?: string): IBaseExecution<string>;
 	getImagePreviewUrl(width?: number, height?: number, clientType?: string): IBaseExecution<string>;
-	getLimitedWebPartManager(scope?: number): IBaseExecution<SP.WebParts.LimitedWebPartManager>;
+	getLimitedWebPartManager(scope?: number): IBaseQuery<SP.WebParts.LimitedWebPartManager, SP.WebParts.LimitedWebPartManagerQuery> & SP.WebParts.LimitedWebPartManagerCollections & SP.WebParts.LimitedWebPartManagerMethods;
 	getPreAuthorizedAccessUrl(expirationHours?: number): IBaseExecution<string>;
 	getUploadStatus(uploadId?: any): IBaseExecution<SP.Utilities.UploadStatus>;
 	getWOPIFrameUrl(action?: number): IBaseExecution<string>;
@@ -1880,8 +1880,8 @@ export interface FolderMethods {
 	addSubFolder(leafName?: string): IBaseExecution<any>;
 	addSubFolderUsingPath(DecodedUrl?: string): IBaseExecution<any>;
 	delete(): IBaseExecution<any>;
-	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
-	getListItemChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
+	getChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
+	getListItemChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
 	moveTo(newUrl?: string): IBaseExecution<any>;
 	moveToUsingPath(DecodedUrl?: string): IBaseExecution<any>;
 	recycle(): IBaseExecution<any>;
@@ -2086,33 +2086,33 @@ export interface ListQuery extends ListProps, ListMethods {
 export interface ListMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<any>;
 	resetRoleInheritance(): IBaseExecution<any>;
-	addItem(parameters?: SP.ListItemCreationInformation): IBaseExecution<SP.ListItem>;
-	addItemUsingPath(parameters?: SP.ListItemCreationInformationUsingPath): IBaseExecution<SP.ListItem>;
-	addValidateUpdateItem(listItemCreateInfo?: SP.ListItemCreationInformation, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
-	addValidateUpdateItemUsingPath(listItemCreateInfo?: SP.ListItemCreationInformationUsingPath, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
-	bulkValidateUpdateListItems(itemIds?: Array<number>, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, folderPath?: string): IBaseExecution<Array<SP.ListItemFormUpdateValue>>;
+	addItem(parameters?: SP.ListItemCreationInformation): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	addItemUsingPath(parameters?: SP.ListItemCreationInformationUsingPath): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	addValidateUpdateItem(listItemCreateInfo?: SP.ListItemCreationInformation, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseCollection<SP.ListItemFormUpdateValue>;
+	addValidateUpdateItemUsingPath(listItemCreateInfo?: SP.ListItemCreationInformationUsingPath, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseCollection<SP.ListItemFormUpdateValue>;
+	bulkValidateUpdateListItems(itemIds?: Array<number>, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, folderPath?: string): IBaseCollection<SP.ListItemFormUpdateValue>;
 	createDocumentAndGetEditLink(fileName?: string, folderPath?: string, documentTemplateType?: number, templateUrl?: string): IBaseExecution<string>;
 	createDocumentWithDefaultName(folderPath?: string, extension?: string): IBaseExecution<string>;
-	createMappedView(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): IBaseExecution<SP.View>;
+	createMappedView(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
 	delete(): IBaseExecution<any>;
-	ensureSignoffStatusField(): IBaseExecution<SP.Field>;
+	ensureSignoffStatusField(): IBaseQuery<SP.Field, SP.FieldQuery> & SP.FieldCollections & SP.FieldMethods;
 	getBloomFilter(startItemId?: number): IBaseExecution<SP.ListBloomFilter>;
 	getBloomFilterWithCustomFields(listItemStartingID?: number, internalFieldNames?: Array<string>): IBaseExecution<SP.ListBloomFilter>;
-	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
-	getCheckedOutFiles(): IBaseExecution<Array<SP.CheckedOutFile>>;
-	getItemById(id?: number): IBaseExecution<SP.ListItem>;
-	getItemByStringId(sId?: string): IBaseExecution<SP.ListItem>;
-	getItemByUniqueId(uniqueId?: any): IBaseExecution<SP.ListItem>;
-	getItems(query?: SP.CamlQuery): IBaseExecution<Array<SP.ListItem>>;
+	getChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
+	getCheckedOutFiles(): IBaseCollection<SP.CheckedOutFile, SP.CheckedOutFileQuery> & SP.CheckedOutFileCollectionMethods;
+	getItemById(id?: number): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	getItemByStringId(sId?: string): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	getItemByUniqueId(uniqueId?: any): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	getItems(query?: SP.CamlQuery): IBaseCollection<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollectionMethods;
 	getListItemChangesSinceToken(query?: SP.ChangeLogItemQuery): IBaseExecution<any>;
-	getMappedApp(appId?: any, visualizationAppTarget?: number): IBaseExecution<SP.VisualizationAppSynchronizationResult>;
-	getMappedApps(visualizationAppTarget?: number): IBaseExecution<SP.VisualizationAppSynchronizationResult>;
-	getRelatedFields(): IBaseExecution<Array<SP.RelatedField>>;
+	getMappedApp(appId?: any, visualizationAppTarget?: number): IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultQuery> & SP.VisualizationAppSynchronizationResultCollections;
+	getMappedApps(visualizationAppTarget?: number): IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultQuery> & SP.VisualizationAppSynchronizationResultCollections;
+	getRelatedFields(): IBaseCollection<SP.RelatedField, SP.RelatedFieldQuery> & SP.RelatedFieldCollectionMethods;
 	getSpecialFolderUrl(type?: number, bForceCreate?: boolean, existingFolderGuid?: any): IBaseExecution<string>;
 	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;
-	getView(viewGuid?: any): IBaseExecution<SP.View>;
+	getView(viewGuid?: any): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
 	getWebDavUrl(sourceUrl?: string): IBaseExecution<string>;
-	publishMappedView(appId?: any, visualizationTarget?: number): IBaseExecution<SP.View>;
+	publishMappedView(appId?: any, visualizationTarget?: number): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
 	recycle(): IBaseExecution<any>;
 	renderExtendedListFormData(itemId?: number, formId?: string, mode?: number, options?: number, cutoffVersion?: number): IBaseExecution<string>;
 	renderListContextMenuData(CascDelWarnMessage?: string, CustomAction?: string, Field?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsXslView?: string, ItemId?: string, ListViewPageUrl?: string, OverrideScope?: string, RootFolder?: string, View?: string, ViewCount?: string): IBaseExecution<any>;
@@ -2128,9 +2128,9 @@ export interface ListMethods {
 	syncFlowInstance(flowID?: any): IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowInstances(): IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowTemplates(category?: string): IBaseExecution<SP.FlowSynchronizationResult>;
-	unpublishMappedView(appId?: any, visualizationTarget?: number): IBaseExecution<SP.View>;
+	unpublishMappedView(appId?: any, visualizationTarget?: number): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
 	// update(): IBaseExecution<any>;
-	validateAppName(appDisplayName?: string): IBaseExecution<SP.VisualizationAppSynchronizationResult>;
+	validateAppName(appDisplayName?: string): IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultQuery> & SP.VisualizationAppSynchronizationResultCollections;
 	update(properties?: any): IBaseExecution<any>;
 }
 
@@ -2665,58 +2665,58 @@ export interface WebMethods {
 	applyTheme(colorPaletteUrl?: string, fontSchemeUrl?: string, backgroundImageUrl?: string, shareGenerated?: boolean): IBaseExecution<any>;
 	applyWebTemplate(webTemplate?: string): IBaseExecution<any>;
 	createDefaultAssociatedGroups(userLogin?: string, userLogin2?: string, groupNameSeed?: string): IBaseExecution<any>;
-	defaultDocumentLibrary(): IBaseExecution<SP.List>;
+	defaultDocumentLibrary(): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
 	delete(): IBaseExecution<any>;
 	doesPushNotificationSubscriberExist(deviceAppInstanceId?: any): IBaseExecution<boolean>;
 	// doesUserHavePermissions(permissionMask?: SP.BasePermissions): IBaseExecution<boolean>;
-	ensureUser(logonName?: string): IBaseExecution<SP.User>;
+	ensureUser(logonName?: string): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 	executeRemoteLOB(inputStream?: any): IBaseExecution<any>;
 	getAppBdcCatalog(): IBaseExecution<SP.BusinessData.AppBdcCatalog>;
 	getAppBdcCatalogForAppInstance(appInstanceId?: any): IBaseExecution<SP.BusinessData.AppBdcCatalog>;
 	getAppInstanceById(appInstanceId?: any): IBaseExecution<SP.AppInstance>;
-	getAppInstancesByProductId(productId?: any): IBaseExecution<Array<SP.AppInstance>>;
-	getAvailableWebTemplates(lcid?: number, doIncludeCrossLanguage?: boolean): IBaseExecution<Array<SP.WebTemplate>>;
-	// getCatalog(typeCatalog?: number): IBaseExecution<SP.List>;
-	getChanges(query?: SP.ChangeQuery): IBaseExecution<Array<SP.Change>>;
-	getClientSideComponents(components?: Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier>): IBaseExecution<Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>>;
-	getClientSideComponentsById(componentIds?: Array<any>): IBaseExecution<Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>>;
-	getClientSideWebParts(includeErrors?: boolean): IBaseExecution<Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>>;
-	getCustomListTemplates(): IBaseExecution<Array<SP.ListTemplate>>;
+	getAppInstancesByProductId(productId?: any): IBaseCollection<SP.AppInstance>;
+	getAvailableWebTemplates(lcid?: number, doIncludeCrossLanguage?: boolean): IBaseCollection<SP.WebTemplate> & SP.WebTemplateCollectionMethods;
+	getCatalog(typeCatalog?: number): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	getChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
+	getClientSideComponents(components?: Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier>): IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
+	getClientSideComponentsById(componentIds?: Array<any>): IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
+	getClientSideWebParts(includeErrors?: boolean): IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
+	getCustomListTemplates(): IBaseCollection<SP.ListTemplate> & SP.ListTemplateCollectionMethods;
 	getEntity(namespace?: string, name?: string): IBaseExecution<SP.BusinessData.Entity>;
-	getFileByGuestUrl(guestUrl?: string): IBaseExecution<SP.File>;
-	getFileByGuestUrlEnsureAccess(guestUrl?: string, ensureAccess?: boolean): IBaseExecution<SP.File>;
-	getFileByGuestUrlExtended(guestUrl?: string, requestSettings?: SP.Sharing.SharingLinkAccessRequest): IBaseExecution<SP.File>;
-	getFileById(uniqueId?: any): IBaseExecution<SP.File>;
-	getFileByLinkingUrl(linkingUrl?: string): IBaseExecution<SP.File>;
-	getFileByServerRelativePath(DecodedUrl?: string): IBaseExecution<SP.File>;
-	getFileByServerRelativeUrl(serverRelativeUrl?: string): IBaseExecution<SP.File>;
-	getFileByUrl(fileUrl?: string): IBaseExecution<SP.File>;
-	getFileByWOPIFrameUrl(wopiFrameUrl?: string): IBaseExecution<SP.File>;
-	getFolderByGuestUrl(guestUrl?: string, ensureAccess?: boolean): IBaseExecution<SP.Folder>;
-	getFolderByGuestUrlExtended(guestUrl?: string, requestSettings?: SP.Sharing.SharingLinkAccessRequest): IBaseExecution<SP.Folder>;
-	getFolderById(uniqueId?: any): IBaseExecution<SP.Folder>;
-	getFolderByServerRelativePath(DecodedUrl?: string): IBaseExecution<SP.Folder>;
-	getFolderByServerRelativeUrl(serverRelativeUrl?: string): IBaseExecution<SP.Folder>;
-	getList(strUrl?: string): IBaseExecution<SP.List>;
-	getListItem(strUrl?: string): IBaseExecution<SP.ListItem>;
-	getListItemByResourceId(resourceId?: string): IBaseExecution<SP.ListItem>;
-	getListItemUsingPath(DecodedUrl?: string): IBaseExecution<SP.ListItem>;
-	getListUsingPath(DecodedUrl?: string): IBaseExecution<SP.List>;
-	getNewsList(allowCreate?: boolean): IBaseExecution<SP.List>;
+	getFileByGuestUrl(guestUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByGuestUrlEnsureAccess(guestUrl?: string, ensureAccess?: boolean): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByGuestUrlExtended(guestUrl?: string, requestSettings?: SP.Sharing.SharingLinkAccessRequest): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileById(uniqueId?: any): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByLinkingUrl(linkingUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByServerRelativePath(DecodedUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByServerRelativeUrl(serverRelativeUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByUrl(fileUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByWOPIFrameUrl(wopiFrameUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFolderByGuestUrl(guestUrl?: string, ensureAccess?: boolean): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	getFolderByGuestUrlExtended(guestUrl?: string, requestSettings?: SP.Sharing.SharingLinkAccessRequest): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	getFolderById(uniqueId?: any): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	getFolderByServerRelativePath(DecodedUrl?: string): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	getFolderByServerRelativeUrl(serverRelativeUrl?: string): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	getList(strUrl?: string): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	getListItem(strUrl?: string): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	getListItemByResourceId(resourceId?: string): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	getListItemUsingPath(DecodedUrl?: string): IBaseQuery<SP.ListItem, SP.ListItemQuery> & SP.ListItemCollections & SP.ListItemMethods;
+	getListUsingPath(DecodedUrl?: string): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	getNewsList(allowCreate?: boolean): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
 	getOnePageContextAsStream(): IBaseExecution<any>;
-	getPushNotificationSubscriber(deviceAppInstanceId?: any): IBaseExecution<SP.PushNotificationSubscriber>;
-	getPushNotificationSubscribersByArgs(customArgs?: string): IBaseExecution<Array<SP.PushNotificationSubscriber>>;
-	getPushNotificationSubscribersByUser(userName?: string): IBaseExecution<Array<SP.PushNotificationSubscriber>>;
-	getRecycleBinItems(pagingInfo?: string, rowLimit?: number, isAscending?: boolean, orderBy?: number, itemState?: number): IBaseExecution<Array<SP.RecycleBinItem>>;
-	getRecycleBinItemsByQueryInfo(IsAscending?: boolean, ItemState?: number, OrderBy?: number, PagingInfo?: string, RowLimit?: number, ShowOnlyMyItems?: boolean): IBaseExecution<Array<SP.RecycleBinItem>>;
+	getPushNotificationSubscriber(deviceAppInstanceId?: any): IBaseQuery<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberQuery> & SP.PushNotificationSubscriberCollections & SP.PushNotificationSubscriberMethods;
+	getPushNotificationSubscribersByArgs(customArgs?: string): IBaseCollection<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberQuery> & SP.PushNotificationSubscriberCollectionMethods;
+	getPushNotificationSubscribersByUser(userName?: string): IBaseCollection<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberQuery> & SP.PushNotificationSubscriberCollectionMethods;
+	getRecycleBinItems(pagingInfo?: string, rowLimit?: number, isAscending?: boolean, orderBy?: number, itemState?: number): IBaseCollection<SP.RecycleBinItem, SP.RecycleBinItemQuery> & SP.RecycleBinItemCollectionMethods;
+	getRecycleBinItemsByQueryInfo(IsAscending?: boolean, ItemState?: number, OrderBy?: number, PagingInfo?: string, RowLimit?: number, ShowOnlyMyItems?: boolean): IBaseCollection<SP.RecycleBinItem, SP.RecycleBinItemQuery> & SP.RecycleBinItemCollectionMethods;
 	getRegionalDateTimeSchema(): IBaseExecution<string>;
 	getSharingLinkData(linkUrl?: string): IBaseExecution<SP.SharingLinkData>;
 	getStorageEntity(key?: string): IBaseExecution<Microsoft.SharePoint.ClientSideComponent.StorageEntity>;
-	getSubwebsFilteredForCurrentUser(nWebTemplateFilter?: number, nConfigurationFilter?: number): IBaseExecution<Array<SP.WebInformation>>;
-	getUserById(userId?: number): IBaseExecution<SP.User>;
+	getSubwebsFilteredForCurrentUser(nWebTemplateFilter?: number, nConfigurationFilter?: number): IBaseCollection<SP.WebInformation> & SP.WebInformationCollectionMethods;
+	getUserById(userId?: number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;
-	getViewFromPath(DecodedUrl?: string): IBaseExecution<SP.View>;
-	getViewFromUrl(listUrl?: string): IBaseExecution<SP.View>;
+	getViewFromPath(DecodedUrl?: string): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
+	getViewFromUrl(listUrl?: string): IBaseQuery<SP.View, SP.ViewQuery> & SP.ViewCollections & SP.ViewMethods;
 	hubSiteData(forceRefresh?: boolean): IBaseExecution<string>;
 	hubSiteDataAsStream(forceRefresh?: boolean): IBaseExecution<any>;
 	incrementSiteClientTag(): IBaseExecution<any>;
@@ -2727,7 +2727,7 @@ export interface WebMethods {
 	pageContextInfo(includeODBSettings?: boolean, emitNavigationInfo?: boolean): IBaseExecution<any>;
 	parseDateTime(value?: string, displayFormat?: number, calendarType?: number): IBaseExecution<string>;
 	processExternalNotification(stream?: any): IBaseExecution<string>;
-	registerPushNotificationSubscriber(deviceAppInstanceId?: any, serviceToken?: string): IBaseExecution<SP.PushNotificationSubscriber>;
+	registerPushNotificationSubscriber(deviceAppInstanceId?: any, serviceToken?: string): IBaseQuery<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberQuery> & SP.PushNotificationSubscriberCollections & SP.PushNotificationSubscriberMethods;
 	removeStorageEntity(key?: string): IBaseExecution<any>;
 	removeSupportedUILanguage(lcid?: number): IBaseExecution<any>;
 	setAccessRequestSiteDescriptionAndUpdate(description?: string): IBaseExecution<any>;
@@ -2739,7 +2739,6 @@ export interface WebMethods {
 	unregisterPushNotificationSubscriber(deviceAppInstanceId?: any): IBaseExecution<any>;
 	// update(): IBaseExecution<any>;
 	doesUserHavePermissions(high?: number, low?: number): IBaseExecution<boolean>;
-	getCatalog(listTemplateType?: number): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections;
 	update(properties?: any): IBaseExecution<any>;
 }
 
@@ -3066,7 +3065,7 @@ export interface NavigationQuery extends NavigationProps, NavigationMethods {
 * NavigationMethods
 **********************************************/
 export interface NavigationMethods {
-	getNodeById(id?: number): IBaseExecution<SP.NavigationNode>;
+	getNodeById(id?: number): IBaseQuery<SP.NavigationNode, SP.NavigationNodeQuery> & SP.NavigationNodeCollections & SP.NavigationNodeMethods;
 }
 
 /*********************************************
@@ -3951,7 +3950,7 @@ export interface AppInstanceQuery extends AppInstanceProps, AppInstanceMethods {
 export interface AppInstanceMethods {
 	cancelAllJobs(): IBaseExecution<boolean>;
 	getAppDatabaseConnectionString(): IBaseExecution<string>;
-	getErrorDetails(): IBaseExecution<Array<SP.AppInstanceErrorDetails>>;
+	getErrorDetails(): IBaseCollection<SP.AppInstanceErrorDetails>;
 	getPreviousAppVersion(): IBaseExecution<SP.App>;
 	install(): IBaseExecution<any>;
 	recycle(): IBaseExecution<any>;
@@ -4155,7 +4154,7 @@ export interface ObjectSharingInformationQuery extends ObjectSharingInformationP
 * ObjectSharingInformationMethods
 **********************************************/
 export interface ObjectSharingInformationMethods {
-	getSharedWithUsers(): IBaseExecution<Array<SP.ObjectSharingInformationUser>>;
+	getSharedWithUsers(): IBaseCollection<SP.ObjectSharingInformationUser, SP.ObjectSharingInformationUserQuery>;
 }
 
 /*********************************************
@@ -4821,7 +4820,7 @@ export interface RequestContextQuery extends RequestContextProps, RequestContext
 * RequestContextMethods
 **********************************************/
 export interface RequestContextMethods {
-	getRemoteContext(): IBaseExecution<SP.RequestContext>;
+	getRemoteContext(): IBaseQuery<SP.RequestContext, SP.RequestContextQuery> & SP.RequestContextCollections & SP.RequestContextMethods;
 }
 
 /*********************************************
@@ -6135,13 +6134,13 @@ export interface RemoteWebQuery extends RemoteWebProps, RemoteWebMethods {
 * RemoteWebMethods
 **********************************************/
 export interface RemoteWebMethods {
-	getFileByServerRelativePath(serverRelatvieFilePath?: SP.ResourcePath): IBaseExecution<SP.File>;
-	getFileByServerRelativeUrl(serverRelativeFileUrl?: string): IBaseExecution<SP.File>;
-	getFileByUrl(fileUrl?: string): IBaseExecution<SP.File>;
-	getFolderByServerRelativeUrl(serverRelativeUrl?: string): IBaseExecution<SP.Folder>;
-	getGroupById(groupId?: number): IBaseExecution<SP.Group>;
-	getListById(listGuid?: any): IBaseExecution<SP.List>;
-	getListByServerRelativeUrl(serverRelativeUrl?: string): IBaseExecution<SP.List>;
+	getFileByServerRelativePath(serverRelatvieFilePath?: SP.ResourcePath): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByServerRelativeUrl(serverRelativeFileUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFileByUrl(fileUrl?: string): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
+	getFolderByServerRelativeUrl(serverRelativeUrl?: string): IBaseQuery<SP.Folder, SP.FolderQuery> & SP.FolderCollections & SP.FolderMethods;
+	getGroupById(groupId?: number): IBaseQuery<SP.Group, SP.GroupQuery> & SP.GroupCollections & SP.GroupMethods;
+	getListById(listGuid?: any): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
+	getListByServerRelativeUrl(serverRelativeUrl?: string): IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections & SP.ListMethods;
 }
 
 /*********************************************

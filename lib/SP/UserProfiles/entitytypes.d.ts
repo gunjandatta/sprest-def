@@ -76,9 +76,9 @@ export interface FollowedContentMethods {
 	findAndUpdateFollowedItem(url?: string): IBaseExecution<SP.UserProfiles.FollowedItem>;
 	followItem(item?: SP.UserProfiles.FollowedItem): IBaseExecution<SP.UserProfiles.FollowResult>;
 	getFollowedStatus(url?: string): IBaseExecution<number>;
-	getGroups(rowLimit?: number): IBaseExecution<Array<SP.UserProfiles.FollowedItem>>;
+	getGroups(rowLimit?: number): IBaseCollection<SP.UserProfiles.FollowedItem>;
 	getItem(url?: string): IBaseExecution<SP.UserProfiles.FollowedItem>;
-	getItems(options?: number, subtype?: number): IBaseExecution<Array<SP.UserProfiles.FollowedItem>>;
+	getItems(options?: number, subtype?: number): IBaseCollection<SP.UserProfiles.FollowedItem>;
 	hasGroupMembershipChangedAndSyncChanges(): IBaseExecution<boolean>;
 	isFollowed(url?: string): IBaseExecution<boolean>;
 	refreshFollowedItem(item?: SP.UserProfiles.FollowedItem): IBaseExecution<SP.UserProfiles.FollowedItem>;
@@ -176,20 +176,20 @@ export interface PeopleManagerMethods {
 	follow(accountName?: string): IBaseExecution<any>;
 	followTag(value?: any): IBaseExecution<any>;
 	getDefaultDocumentLibrary(accountName?: string, createSiteIfNotExists?: boolean, siteCreationPriority?: number): IBaseExecution<string>;
-	getFollowedTags(cTagsToFetch?: number): IBaseExecution<Array<string>>;
-	getFollowersFor(accountName?: string): IBaseExecution<Array<SP.UserProfiles.PersonProperties>>;
-	getMyFollowers(): IBaseExecution<Array<SP.UserProfiles.PersonProperties>>;
+	getFollowedTags(cTagsToFetch?: number): IBaseCollection<string>;
+	getFollowersFor(accountName?: string): IBaseCollection<SP.UserProfiles.PersonProperties>;
+	getMyFollowers(): IBaseCollection<SP.UserProfiles.PersonProperties>;
 	getMyProperties(): IBaseExecution<SP.UserProfiles.PersonProperties>;
-	getMySuggestions(): IBaseExecution<Array<SP.UserProfiles.PersonProperties>>;
-	getPeopleFollowedBy(accountName?: string): IBaseExecution<Array<SP.UserProfiles.PersonProperties>>;
-	getPeopleFollowedByMe(): IBaseExecution<Array<SP.UserProfiles.PersonProperties>>;
+	getMySuggestions(): IBaseCollection<SP.UserProfiles.PersonProperties>;
+	getPeopleFollowedBy(accountName?: string): IBaseCollection<SP.UserProfiles.PersonProperties>;
+	getPeopleFollowedByMe(): IBaseCollection<SP.UserProfiles.PersonProperties>;
 	getPropertiesFor(accountName?: string): IBaseExecution<SP.UserProfiles.PersonProperties>;
-	getSPUserInformation(accountName?: string, siteId?: any): IBaseExecution<Array<SP.KeyValue>>;
-	getUserProfileProperties(accountName?: string): IBaseExecution<Array<SP.KeyValue>>;
+	getSPUserInformation(accountName?: string, siteId?: any): IBaseCollection<SP.KeyValue>;
+	getUserProfileProperties(accountName?: string): IBaseCollection<SP.KeyValue>;
 	getUserProfilePropertyFor(accountName?: string, propertyName?: string): IBaseExecution<string>;
 	hardDeleteUserProfile(accountName?: string, userId?: any): IBaseExecution<boolean>;
 	hideSuggestion(accountName?: string): IBaseExecution<any>;
-	removeSPUserInformation(accountName?: string, siteId?: any, redactName?: string): IBaseExecution<Array<SP.KeyValue>>;
+	removeSPUserInformation(accountName?: string, siteId?: any, redactName?: string): IBaseCollection<SP.KeyValue>;
 	setMultiValuedProfileProperty(accountName?: string, propertyName?: string, propertyValues?: Array<string>): IBaseExecution<any>;
 	setMyProfilePicture(picture?: any): IBaseExecution<any>;
 	setSingleValueProfileProperty(accountName?: string, propertyName?: string, propertyValue?: string): IBaseExecution<any>;
@@ -252,9 +252,9 @@ export interface PersonalCacheQuery extends PersonalCacheProps, PersonalCacheMet
 export interface PersonalCacheMethods {
 	deleteCacheItemsAsync(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): IBaseExecution<any>;
 	loadUserProfile(email?: string): IBaseExecution<any>;
-	readCache(folderPath?: string): IBaseExecution<Array<SP.UserProfiles.PersonalCacheItem>>;
-	readCacheOrCreate(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): IBaseExecution<Array<SP.UserProfiles.PersonalCacheItem>>;
-	readCacheOrCreateOrderById(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): IBaseExecution<Array<SP.UserProfiles.PersonalCacheItem>>;
+	readCache(folderPath?: string): IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
+	readCacheOrCreate(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
+	readCacheOrCreateOrderById(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
 	writeCache(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): IBaseExecution<any>;
 }
 
@@ -339,7 +339,7 @@ export interface ProfileImageStoreQuery extends ProfileImageStoreProps, ProfileI
 * ProfileImageStoreMethods
 **********************************************/
 export interface ProfileImageStoreMethods {
-	saveUploadedFile(profileType?: number, fileNamePrefix?: string, isFeedAttachment?: boolean, clientFilePath?: string, fileSize?: number, fileStream?: any): IBaseExecution<Array<string>>;
+	saveUploadedFile(profileType?: number, fileNamePrefix?: string, isFeedAttachment?: boolean, clientFilePath?: string, fileSize?: number, fileStream?: any): IBaseCollection<string>;
 }
 
 /*********************************************
@@ -395,8 +395,8 @@ export interface ProfileLoaderQuery extends ProfileLoaderProps, ProfileLoaderMet
 * ProfileLoaderMethods
 **********************************************/
 export interface ProfileLoaderMethods {
-	createPersonalSiteEnqueueBulk(emailIDs?: Array<string>): IBaseExecution<Array<string>>;
-	getUserProfile(): IBaseExecution<SP.UserProfiles.UserProfile>;
+	createPersonalSiteEnqueueBulk(emailIDs?: Array<string>): IBaseCollection<string>;
+	getUserProfile(): IBaseQuery<SP.UserProfiles.UserProfile, SP.UserProfiles.UserProfileQuery> & SP.UserProfiles.UserProfileCollections & SP.UserProfiles.UserProfileMethods;
 }
 
 /*********************************************
@@ -452,7 +452,7 @@ export interface UserProfilePropertiesForUserQuery extends UserProfileProperties
 * UserProfilePropertiesForUserMethods
 **********************************************/
 export interface UserProfilePropertiesForUserMethods {
-	getPropertyNames(): IBaseExecution<Array<string>>;
+	getPropertyNames(): IBaseCollection<string>;
 }
 
 /*********************************************

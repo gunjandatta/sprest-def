@@ -540,8 +540,34 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     params.push(param.Name + "?: " + paramType);
                                 }
 
-                                // Set the method type
-                                let methodType = methodInfo.overwrite ? methodInfo.returnType : 'IBaseExecution<' + getType(methodInfo.returnType) + '>';
+                                if (methodInfo.name == "getCatalog") {
+                                    let a = 0;
+                                }
+
+                                // See if we are not overwriting the type
+                                let methodType = methodInfo.returnType;
+                                if (methodInfo.overwrite != true) {
+                                    // See if collections exist
+                                    if (hasCollections[methodType]) {
+                                        // Update the method type
+                                        methodType = 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '');
+                                    } else {
+                                        // Get the type
+                                        methodType = getType(methodInfo.returnType);
+
+                                        // See if this is an array
+                                        if (/^Array\<.*\>$/.test(methodType)) {
+                                            // Remove the array
+                                            methodType = methodType.replace(/^Array\</, '').replace(/\>$/, '');
+
+                                            // Set the type
+                                            methodType = 'IBaseCollection<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasCollectionMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '');
+                                        } else {
+                                            // Set the type
+                                            methodType = 'IBaseExecution<' + methodType + '>';
+                                        }
+                                    }
+                                }
 
                                 // Add the method
                                 methods.push('\t' + methodName + '(' + params.join(', ') + '): ' + methodType + ';');

@@ -526,7 +526,7 @@ export interface CalendarQuery extends CalendarProps, CalendarMethods {
 * CalendarMethods
 **********************************************/
 export interface CalendarMethods {
-	copyTo(name?: string): IBaseExecution<PS.Calendar>;
+	copyTo(name?: string): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
 	delete(): IBaseExecution<any>;
 }
 
@@ -1182,7 +1182,7 @@ export interface ProjectQuery extends ProjectProps, ProjectMethods {
 * ProjectMethods
 **********************************************/
 export interface ProjectMethods {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): IBaseExecution<PS.ResourcePlan>;
+	getResourcePlanByUrl(start?: string, end?: string, scale?: string): IBaseQuery<PS.ResourcePlan, PS.ResourcePlanQuery> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
 	leaveProjectStage(): IBaseExecution<any>;
 	readyToLeaveProjectStage(): IBaseExecution<number>;
 	updateIdeaListItemStatus(status?: string): IBaseExecution<any>;
@@ -1367,7 +1367,7 @@ export interface ProjectEngagementQuery extends ProjectEngagementProps, ProjectE
 **********************************************/
 export interface ProjectEngagementMethods {
 	delete(): IBaseExecution<any>;
-	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): IBaseExecution<Array<PS.ProjectEngagementTimephasedPeriod>>;
+	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): IBaseCollection<PS.ProjectEngagementTimephasedPeriod> & PS.ProjectEngagementTimephasedPeriodCollectionMethods;
 }
 
 /*********************************************
@@ -2069,15 +2069,15 @@ export interface PublishedProjectQuery extends PublishedProjectProps, PublishedP
 * PublishedProjectMethods
 **********************************************/
 export interface PublishedProjectMethods {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): IBaseExecution<PS.ResourcePlan>;
+	getResourcePlanByUrl(start?: string, end?: string, scale?: string): IBaseQuery<PS.ResourcePlan, PS.ResourcePlanQuery> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
 	leaveProjectStage(): IBaseExecution<any>;
 	readyToLeaveProjectStage(): IBaseExecution<number>;
 	updateIdeaListItemStatus(status?: string): IBaseExecution<any>;
-	checkOut(): IBaseExecution<PS.DraftProject>;
+	checkOut(): IBaseQuery<PS.DraftProject, PS.DraftProjectQuery> & PS.DraftProjectCollections & PS.DraftProjectMethods;
 	createProjectSite(siteName?: string): IBaseExecution<any>;
-	delete(): IBaseExecution<PS.QueueJob>;
+	delete(): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
 	submitToWorkflow(): IBaseExecution<any>;
-	updateVisibilityCustomFields(): IBaseExecution<PS.QueueJob>;
+	updateVisibilityCustomFields(): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
 }
 
 /*********************************************
@@ -2629,16 +2629,16 @@ export interface DraftProjectQuery extends DraftProjectProps, DraftProjectMethod
 * DraftProjectMethods
 **********************************************/
 export interface DraftProjectMethods {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): IBaseExecution<PS.ResourcePlan>;
+	getResourcePlanByUrl(start?: string, end?: string, scale?: string): IBaseQuery<PS.ResourcePlan, PS.ResourcePlanQuery> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
 	leaveProjectStage(): IBaseExecution<any>;
 	readyToLeaveProjectStage(): IBaseExecution<number>;
 	updateIdeaListItemStatus(status?: string): IBaseExecution<any>;
 	changeEnterpriseProjectType(enterpriseProjectTypeUid?: any): IBaseExecution<any>;
-	checkIn(force?: boolean): IBaseExecution<PS.QueueJob>;
-	getChanges(token?: string): IBaseExecution<PS.DraftProject>;
-	publish(checkIn?: boolean): IBaseExecution<PS.QueueJob>;
-	update(): IBaseExecution<PS.QueueJob>;
-	updateCustomFields(customFieldDictionary?: Array<SP.KeyValue>): IBaseExecution<PS.QueueJob>;
+	checkIn(force?: boolean): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
+	getChanges(token?: string): IBaseQuery<PS.DraftProject, PS.DraftProjectQuery> & PS.DraftProjectCollections & PS.DraftProjectMethods;
+	publish(checkIn?: boolean): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
+	update(): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
+	updateCustomFields(customFieldDictionary?: Array<SP.KeyValue>): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
 	validate(): IBaseExecution<any>;
 }
 
@@ -3385,7 +3385,7 @@ export interface ResourceEngagementQuery extends ResourceEngagementProps, Resour
 **********************************************/
 export interface ResourceEngagementMethods {
 	delete(): IBaseExecution<any>;
-	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): IBaseExecution<Array<PS.ResourceEngagementTimephasedPeriod>>;
+	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): IBaseCollection<PS.ResourceEngagementTimephasedPeriod> & PS.ResourceEngagementTimephasedPeriodCollectionMethods;
 }
 
 /*********************************************
@@ -4106,7 +4106,7 @@ export interface ProjectServerQuery extends ProjectServerProps, ProjectServerMet
 * ProjectServerMethods
 **********************************************/
 export interface ProjectServerMethods {
-	getDeletedPublishedAssignments(deletedDate?: any): IBaseExecution<Array<PS.DeletedPublishedAssignment>>;
+	getDeletedPublishedAssignments(deletedDate?: any): IBaseCollection<PS.DeletedPublishedAssignment>;
 	stopDelegation(): IBaseExecution<any>;
 }
 
@@ -4194,7 +4194,7 @@ export interface TimeSheetPeriodQuery extends TimeSheetPeriodProps, TimeSheetPer
 * TimeSheetPeriodMethods
 **********************************************/
 export interface TimeSheetPeriodMethods {
-	createTimeSheet(): IBaseExecution<PS.TimeSheet>;
+	createTimeSheet(): IBaseQuery<PS.TimeSheet, PS.TimeSheetQuery> & PS.TimeSheetCollections & PS.TimeSheetMethods;
 }
 
 /*********************************************
@@ -4799,10 +4799,10 @@ export interface ResourcePlanQuery extends ResourcePlanProps, ResourcePlanMethod
 * ResourcePlanMethods
 **********************************************/
 export interface ResourcePlanMethods {
-	delete(): IBaseExecution<PS.QueueJob>;
-	forceCheckIn(): IBaseExecution<PS.QueueJob>;
-	publish(): IBaseExecution<PS.QueueJob>;
-	update(): IBaseExecution<PS.QueueJob>;
+	delete(): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
+	forceCheckIn(): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
+	publish(): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
+	update(): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
 }
 
 /*********************************************

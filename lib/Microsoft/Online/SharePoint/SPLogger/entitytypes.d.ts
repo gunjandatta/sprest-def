@@ -54,9 +54,9 @@ export interface LogExportQuery extends LogExportProps, LogExportMethods {
 * LogExportMethods
 **********************************************/
 export interface LogExportMethods {
-	getFiles(partitionId?: string, logType?: string): IBaseExecution<Array<Microsoft.Online.SharePoint.SPLogger.LogFileInfo>>;
-	getLogTypes(): IBaseExecution<Array<string>>;
-	getPartitions(logType?: string): IBaseExecution<Array<string>>;
+	getFiles(partitionId?: string, logType?: string): IBaseCollection<Microsoft.Online.SharePoint.SPLogger.LogFileInfo>;
+	getLogTypes(): IBaseCollection<string>;
+	getPartitions(logType?: string): IBaseCollection<string>;
 }
 
 /*********************************************

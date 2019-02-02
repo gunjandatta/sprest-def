@@ -76,14 +76,14 @@ export interface SPPolicyStoreProxyMethods {
 	addDynamicScopeBinding(identity?: string, siteId?: string): IBaseExecution<any>;
 	bulkUpdateDynamicScopeBindings(scopesToAdd?: Array<string>, scopesToRemove?: Array<string>, siteId?: string): IBaseExecution<any>;
 	deleteDynamicScopeBinding(identity?: string, siteId?: string): IBaseExecution<any>;
-	extendReviewItemsRetention(itemIds?: Array<number>, extensionDate?: any): IBaseExecution<Array<number>>;
-	getDynamicScopeBindingBySiteId(siteId?: string): IBaseExecution<Array<string>>;
-	markReviewItemsForDeletion(itemIds?: Array<number>): IBaseExecution<Array<number>>;
+	extendReviewItemsRetention(itemIds?: Array<number>, extensionDate?: any): IBaseCollection<number>;
+	getDynamicScopeBindingBySiteId(siteId?: string): IBaseCollection<string>;
+	markReviewItemsForDeletion(itemIds?: Array<number>): IBaseCollection<number>;
 	openBinaryStreamForOriginalItem(itemId?: number): IBaseExecution<any>;
 	removeContainerRetentionPolicy(siteId?: string): IBaseExecution<any>;
 	removeContainerSettings(externalId?: Array<string>): IBaseExecution<any>;
-	retagReviewItems(itemIds?: Array<number>, newTag?: string, newTagIsRecord?: boolean, newTagBlockDelete?: boolean, newTagIsEventBased?: boolean): IBaseExecution<Array<number>>;
-	retagReviewItemsWithMetas(itemIds?: Array<number>, newTagName?: string, newTagMetas?: Array<string>): IBaseExecution<Array<number>>;
+	retagReviewItems(itemIds?: Array<number>, newTag?: string, newTagIsRecord?: boolean, newTagBlockDelete?: boolean, newTagIsEventBased?: boolean): IBaseCollection<number>;
+	retagReviewItemsWithMetas(itemIds?: Array<number>, newTagName?: string, newTagMetas?: Array<string>): IBaseCollection<number>;
 	setContainerRetentionPolicy(siteId?: string, defaultContainerLabel?: any): IBaseExecution<any>;
 	updateContainerSetting(siteId?: string, externalId?: string, settingType?: number, setting?: string): IBaseExecution<any>;
 }

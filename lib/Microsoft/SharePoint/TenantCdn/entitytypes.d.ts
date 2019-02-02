@@ -54,5 +54,5 @@ export interface TenantCdnApiQuery extends TenantCdnApiProps, TenantCdnApiMethod
 * TenantCdnApiMethods
 **********************************************/
 export interface TenantCdnApiMethods {
-	getCdnUrls(items?: Array<string>): IBaseExecution<Array<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>>;
+	getCdnUrls(items?: Array<string>): IBaseCollection<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>;
 }

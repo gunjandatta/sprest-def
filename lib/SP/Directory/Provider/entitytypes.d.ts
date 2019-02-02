@@ -116,7 +116,7 @@ export interface SharePointDirectoryProviderMethods {
 	getOrCreateUnifiedGroupTenantInstanceId(groupId?: any, tenantInstanceId?: any): IBaseExecution<any>;
 	notifyDataChanges(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<any>;
 	readDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<SP.Directory.Provider.DirectoryObjectData>;
-	readDirectoryObjectBatch(ids?: Array<any>, objectType?: number): IBaseExecution<Array<SP.Directory.Provider.DirectoryObjectData>>;
+	readDirectoryObjectBatch(ids?: Array<any>, objectType?: number): IBaseCollection<SP.Directory.Provider.DirectoryObjectData>;
 	updateCache(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<any>;
 	updateDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<any>;
 }

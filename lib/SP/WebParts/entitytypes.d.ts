@@ -60,7 +60,7 @@ export interface LimitedWebPartManagerQuery extends LimitedWebPartManagerProps, 
 **********************************************/
 export interface LimitedWebPartManagerMethods {
 	exportWebPart(webPartId?: any): IBaseExecution<string>;
-	importWebPart(webPartXml?: string): IBaseExecution<SP.WebParts.WebPartDefinition>;
+	importWebPart(webPartXml?: string): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
 }
 
 /*********************************************

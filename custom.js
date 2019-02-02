@@ -347,14 +347,6 @@ module.exports = {
             ]
         },
         {
-            name: "getCatalog",
-            overwrite: true,
-            returnType: "IBaseQuery<SP.List, SP.ListQuery> & SP.ListCollections",
-            params: [
-                { $: { Name: "listTemplateType", Type: "number" } }
-            ]
-        },
-        {
             name: "update",
             returnType: "any",
             params: [{ $: { Name: "properties", Type: "any" } }]

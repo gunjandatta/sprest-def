@@ -165,7 +165,7 @@ export interface ThemeManagerMethods {
 	addTenantTheme(name?: string, themeJson?: string): IBaseExecution<boolean>;
 	applyTheme(name?: string, themeJson?: string): IBaseExecution<string>;
 	deleteTenantTheme(name?: string): IBaseExecution<any>;
-	getAvailableThemes(): IBaseExecution<Array<SP.Utilities.JsonTheme>>;
+	getAvailableThemes(): IBaseCollection<SP.Utilities.JsonTheme>;
 	getHideDefaultThemes(): IBaseExecution<boolean>;
 	getTenantTheme(name?: string): IBaseExecution<SP.Utilities.JsonTheme>;
 	getTenantThemingOptions(): IBaseExecution<SP.Utilities.ThemingOptions>;

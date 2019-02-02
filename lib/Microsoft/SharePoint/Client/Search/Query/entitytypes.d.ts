@@ -128,7 +128,7 @@ export interface RankingLabelingQuery extends RankingLabelingProps, RankingLabel
 **********************************************/
 export interface RankingLabelingMethods {
 	addJudgment(userQuery?: string, url?: string, labelId?: number): IBaseExecution<any>;
-	getJudgementsForQuery(query?: string): IBaseExecution<Array<SP.KeyValue>>;
+	getJudgementsForQuery(query?: string): IBaseCollection<SP.KeyValue>;
 	normalizeResultUrl(url?: string): IBaseExecution<string>;
 }
 

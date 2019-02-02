@@ -281,7 +281,7 @@ export interface SharePointHomeServiceContextBuilderQuery extends SharePointHome
 * SharePointHomeServiceContextBuilderMethods
 **********************************************/
 export interface SharePointHomeServiceContextBuilderMethods {
-	context(): IBaseExecution<Microsoft.SharePoint.Portal.SharePointHomeServiceContext>;
+	context(): IBaseQuery<Microsoft.SharePoint.Portal.SharePointHomeServiceContext, Microsoft.SharePoint.Portal.SharePointHomeServiceContextQuery> & Microsoft.SharePoint.Portal.SharePointHomeServiceContextCollections;
 }
 
 /*********************************************
@@ -362,7 +362,7 @@ export interface SPHubSitesUtilityQuery extends SPHubSitesUtilityProps, SPHubSit
 * SPHubSitesUtilityMethods
 **********************************************/
 export interface SPHubSitesUtilityMethods {
-	getHubSites(): IBaseExecution<Array<SP.HubSite>>;
+	getHubSites(): IBaseCollection<SP.HubSite> & SP.HubSiteCollectionMethods;
 }
 
 /*********************************************

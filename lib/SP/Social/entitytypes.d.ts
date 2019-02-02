@@ -74,7 +74,7 @@ export interface SocialFeedManagerMethods {
 	createImageAttachment(name?: string, description?: string, imageData?: any): IBaseExecution<SP.Social.SocialAttachment>;
 	createPost(targetId?: string, creationData?: SP.Social.SocialPostCreationData): IBaseExecution<SP.Social.SocialThread>;
 	deletePost(postId?: string): IBaseExecution<SP.Social.SocialThread>;
-	getAllLikers(postId?: string): IBaseExecution<Array<SP.Social.SocialActor>>;
+	getAllLikers(postId?: string): IBaseCollection<SP.Social.SocialActor>;
 	getFeed(type?: number, options?: SP.Social.SocialFeedOptions): IBaseExecution<SP.Social.SocialFeed>;
 	getFeedFor(actorId?: string, options?: SP.Social.SocialFeedOptions): IBaseExecution<SP.Social.SocialFeed>;
 	getFullThread(threadId?: string): IBaseExecution<SP.Social.SocialThread>;
@@ -144,10 +144,10 @@ export interface SocialFollowingManagerQuery extends SocialFollowingManagerProps
 **********************************************/
 export interface SocialFollowingManagerMethods {
 	follow(actor?: SP.Social.SocialActorInfo): IBaseExecution<number>;
-	getFollowed(types?: number): IBaseExecution<Array<SP.Social.SocialActor>>;
+	getFollowed(types?: number): IBaseCollection<SP.Social.SocialActor>;
 	getFollowedCount(types?: number): IBaseExecution<number>;
-	getFollowers(): IBaseExecution<Array<SP.Social.SocialActor>>;
-	getSuggestions(): IBaseExecution<Array<SP.Social.SocialActor>>;
+	getFollowers(): IBaseCollection<SP.Social.SocialActor>;
+	getSuggestions(): IBaseCollection<SP.Social.SocialActor>;
 	isFollowed(actor?: SP.Social.SocialActorInfo): IBaseExecution<boolean>;
 	stopFollowing(actor?: SP.Social.SocialActorInfo): IBaseExecution<boolean>;
 }
@@ -390,13 +390,13 @@ export interface SocialRestFollowingManagerQuery extends SocialRestFollowingMana
 **********************************************/
 export interface SocialRestFollowingManagerMethods {
 	follow(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): IBaseExecution<number>;
-	followed(types?: number): IBaseExecution<Array<SP.Social.SocialActor>>;
+	followed(types?: number): IBaseCollection<SP.Social.SocialActor>;
 	followedCount(types?: number): IBaseExecution<number>;
-	followers(): IBaseExecution<Array<SP.Social.SocialActor>>;
+	followers(): IBaseCollection<SP.Social.SocialActor>;
 	isFollowed(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): IBaseExecution<boolean>;
 	my(): IBaseExecution<SP.Social.SocialRestFollowingManager>;
 	stopFollowing(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): IBaseExecution<any>;
-	suggestions(): IBaseExecution<Array<SP.Social.SocialActor>>;
+	suggestions(): IBaseCollection<SP.Social.SocialActor>;
 }
 
 /*********************************************
@@ -455,7 +455,7 @@ export interface SocialRestThreadQuery extends SocialRestThreadProps, SocialRest
 export interface SocialRestThreadMethods {
 	delete(ID?: string): IBaseExecution<any>;
 	like(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;
-	likers(ID?: string): IBaseExecution<Array<SP.Social.SocialActor>>;
+	likers(ID?: string): IBaseCollection<SP.Social.SocialActor>;
 	lock(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;
 	reply(restCreationData?: SP.Social.SocialRestPostCreationData): IBaseExecution<SP.Social.SocialRestThread>;
 	unLike(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;

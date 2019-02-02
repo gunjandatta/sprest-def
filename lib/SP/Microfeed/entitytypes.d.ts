@@ -57,7 +57,7 @@ export interface MicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefini
 export interface MicrofeedPostDefinitionManagerMethods {
 	deleteMicrofeedPostDefinition(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): IBaseExecution<boolean>;
 	getMicrofeedPostDefinition(definitionName?: string): IBaseExecution<SP.Microfeed.MicrofeedPostDefinition>;
-	getMicrofeedPostDefinitions(): IBaseExecution<Array<SP.Microfeed.MicrofeedPostDefinition>>;
+	getMicrofeedPostDefinitions(): IBaseCollection<SP.Microfeed.MicrofeedPostDefinition>;
 	newMicrofeedPostDefinition(definitionName?: string): IBaseExecution<SP.Microfeed.MicrofeedPostDefinition>;
 	updateMicrofeedPostDefinition(postDefinition?: SP.Microfeed.MicrofeedPostDefinition): IBaseExecution<SP.Microfeed.MicrofeedPostDefinition>;
 }
@@ -118,8 +118,8 @@ export interface MicrofeedAttachmentStoreMethods {
 	deletePreProcessedAttachment(attachmentUri?: string): IBaseExecution<any>;
 	getImage(imageUrl?: string, key?: string, iv?: string): IBaseExecution<any>;
 	preProcessAttachment(link?: SP.Microfeed.MicrofeedLink): IBaseExecution<SP.Microfeed.MicrofeedLink>;
-	putFile(originalFileName?: string, fileData?: any): IBaseExecution<Array<string>>;
-	putImage(imageData?: any): IBaseExecution<Array<string>>;
+	putFile(originalFileName?: string, fileData?: any): IBaseCollection<string>;
+	putImage(imageData?: any): IBaseCollection<string>;
 }
 
 /*********************************************
@@ -343,6 +343,6 @@ export interface MicrofeedStoreMethods {
 	getSocialProperties(accountName?: string): IBaseExecution<string>;
 	incrementUnreadAtMentionCount(accountName?: string): IBaseExecution<any>;
 	newItem(storeIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedData>;
-	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseExecution<Array<SP.Microfeed.MicrofeedData>>;
+	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseCollection<SP.Microfeed.MicrofeedData> & SP.Microfeed.MicrofeedDataCollectionMethods;
 	setPostLikeStatus(accountName?: string, postId?: string, like?: boolean): IBaseExecution<any>;
 }
