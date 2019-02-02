@@ -1,5 +1,5 @@
 # SharePoint Definition Files
-This library generates the TypeScript definition files from the $metadata REST endpoint in SharePoint. This will allow anyone to import the definition files to be used in any project, which isn't linked to a framework.
+This library generates the TypeScript definition files from the $metadata REST endpoint in SharePoint for the [gd-sprest](https://gunjandatta.github.io) library.
 
 ## Example
 ```
