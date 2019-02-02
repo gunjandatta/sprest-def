@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IOrgNewsSiteApi
 **********************************************/
-export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections,OrgNewsSiteApiMethods,IBaseQuery<IOrgNewsSiteApiQuery> {
+export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections, OrgNewsSiteApiMethods, IBaseQuery<IOrgNewsSiteApiQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections,OrgNewsSiteAp
 * IOrgNewsSiteApiCollection
 **********************************************/
 export interface IOrgNewsSiteApiCollection extends IBaseResults<OrgNewsSiteApi> {
-	done(resolve: (value?: Array<OrgNewsSiteApi | any>) => void);
+	done?: (resolve: (value?: Array<OrgNewsSiteApi>) => void) => void;
 }
 
 /*********************************************
 * IOrgNewsSiteApiQueryCollection
 **********************************************/
 export interface IOrgNewsSiteApiQueryCollection extends IBaseResults<OrgNewsSiteApiQuery> {
-	done(resolve: (value?: Array<OrgNewsSiteApiQuery | any>) => void);
+	done?: (resolve: (value?: Array<OrgNewsSiteApiQuery>) => void) => void;
 }
 
 /*********************************************

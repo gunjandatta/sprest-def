@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../../";
 /*********************************************
 * ISignalStore
 **********************************************/
-export interface ISignalStore extends SignalStoreCollections,SignalStoreMethods,IBaseQuery<ISignalStoreQuery> {
+export interface ISignalStore extends SignalStoreCollections, SignalStoreMethods, IBaseQuery<ISignalStoreQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface ISignalStore extends SignalStoreCollections,SignalStoreMethods,
 * ISignalStoreCollection
 **********************************************/
 export interface ISignalStoreCollection extends IBaseResults<SignalStore> {
-	done(resolve: (value?: Array<SignalStore | any>) => void);
+	done?: (resolve: (value?: Array<SignalStore>) => void) => void;
 }
 
 /*********************************************
 * ISignalStoreQueryCollection
 **********************************************/
 export interface ISignalStoreQueryCollection extends IBaseResults<SignalStoreQuery> {
-	done(resolve: (value?: Array<SignalStoreQuery | any>) => void);
+	done?: (resolve: (value?: Array<SignalStoreQuery>) => void) => void;
 }
 
 /*********************************************

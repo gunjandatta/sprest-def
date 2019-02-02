@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IDocumentId
 **********************************************/
-export interface IDocumentId extends DocumentIdCollections,DocumentIdMethods,IBaseQuery<IDocumentIdQuery> {
+export interface IDocumentId extends DocumentIdCollections, DocumentIdMethods, IBaseQuery<IDocumentIdQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IDocumentId extends DocumentIdCollections,DocumentIdMethods,IBa
 * IDocumentIdCollection
 **********************************************/
 export interface IDocumentIdCollection extends IBaseResults<DocumentId> {
-	done(resolve: (value?: Array<DocumentId | any>) => void);
+	done?: (resolve: (value?: Array<DocumentId>) => void) => void;
 }
 
 /*********************************************
 * IDocumentIdQueryCollection
 **********************************************/
 export interface IDocumentIdQueryCollection extends IBaseResults<DocumentIdQuery> {
-	done(resolve: (value?: Array<DocumentIdQuery | any>) => void);
+	done?: (resolve: (value?: Array<DocumentIdQuery>) => void) => void;
 }
 
 /*********************************************

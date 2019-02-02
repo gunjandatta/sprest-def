@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IAppLauncher
 **********************************************/
-export interface IAppLauncher extends AppLauncherCollections,AppLauncherMethods,IBaseQuery<IAppLauncherQuery> {
+export interface IAppLauncher extends AppLauncherCollections, AppLauncherMethods, IBaseQuery<IAppLauncherQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IAppLauncher extends AppLauncherCollections,AppLauncherMethods,
 * IAppLauncherCollection
 **********************************************/
 export interface IAppLauncherCollection extends IBaseResults<AppLauncher> {
-	done(resolve: (value?: Array<AppLauncher | any>) => void);
+	done?: (resolve: (value?: Array<AppLauncher>) => void) => void;
 }
 
 /*********************************************
 * IAppLauncherQueryCollection
 **********************************************/
 export interface IAppLauncherQueryCollection extends IBaseResults<AppLauncherQuery> {
-	done(resolve: (value?: Array<AppLauncherQuery | any>) => void);
+	done?: (resolve: (value?: Array<AppLauncherQuery>) => void) => void;
 }
 
 /*********************************************

@@ -4,7 +4,7 @@ import { Microsoft } from "../../../";
 /*********************************************
 * ISubscription
 **********************************************/
-export interface ISubscription extends SubscriptionCollections,SubscriptionMethods,IBaseQuery<ISubscriptionQuery> {
+export interface ISubscription extends SubscriptionCollections, SubscriptionMethods, IBaseQuery<ISubscriptionQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface ISubscription extends SubscriptionCollections,SubscriptionMetho
 * ISubscriptionCollection
 **********************************************/
 export interface ISubscriptionCollection extends IBaseResults<Subscription>, SubscriptionCollectionMethods {
-	done(resolve: (value?: Array<Subscription | any>) => void);
+	done?: (resolve: (value?: Array<Subscription>) => void) => void;
 }
 
 /*********************************************
 * ISubscriptionQueryCollection
 **********************************************/
 export interface ISubscriptionQueryCollection extends IBaseResults<SubscriptionQuery>, SubscriptionCollectionMethods {
-	done(resolve: (value?: Array<SubscriptionQuery | any>) => void);
+	done?: (resolve: (value?: Array<SubscriptionQuery>) => void) => void;
 }
 
 /*********************************************

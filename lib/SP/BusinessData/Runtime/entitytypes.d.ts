@@ -49,7 +49,7 @@ export interface SubscriptionCollections {
 /*********************************************
 * IEntityInstance
 **********************************************/
-export interface IEntityInstance extends EntityInstanceCollections,EntityInstanceMethods,IBaseQuery<IEntityInstanceQuery> {
+export interface IEntityInstance extends EntityInstanceCollections, EntityInstanceMethods, IBaseQuery<IEntityInstanceQuery> {
 
 }
 
@@ -57,14 +57,14 @@ export interface IEntityInstance extends EntityInstanceCollections,EntityInstanc
 * IEntityInstanceCollection
 **********************************************/
 export interface IEntityInstanceCollection extends IBaseResults<EntityInstance> {
-	done(resolve: (value?: Array<EntityInstance | any>) => void);
+	done?: (resolve: (value?: Array<EntityInstance>) => void) => void;
 }
 
 /*********************************************
 * IEntityInstanceQueryCollection
 **********************************************/
 export interface IEntityInstanceQueryCollection extends IBaseResults<EntityInstanceQuery> {
-	done(resolve: (value?: Array<EntityInstanceQuery | any>) => void);
+	done?: (resolve: (value?: Array<EntityInstanceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -125,7 +125,7 @@ export interface EntityInstanceMethods {
 /*********************************************
 * IEntityFieldValueDictionary
 **********************************************/
-export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryCollections,EntityFieldValueDictionaryMethods,IBaseQuery<IEntityFieldValueDictionaryQuery> {
+export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryCollections, EntityFieldValueDictionaryMethods, IBaseQuery<IEntityFieldValueDictionaryQuery> {
 
 }
 
@@ -133,14 +133,14 @@ export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryC
 * IEntityFieldValueDictionaryCollection
 **********************************************/
 export interface IEntityFieldValueDictionaryCollection extends IBaseResults<EntityFieldValueDictionary> {
-	done(resolve: (value?: Array<EntityFieldValueDictionary | any>) => void);
+	done?: (resolve: (value?: Array<EntityFieldValueDictionary>) => void) => void;
 }
 
 /*********************************************
 * IEntityFieldValueDictionaryQueryCollection
 **********************************************/
 export interface IEntityFieldValueDictionaryQueryCollection extends IBaseResults<EntityFieldValueDictionaryQuery> {
-	done(resolve: (value?: Array<EntityFieldValueDictionaryQuery | any>) => void);
+	done?: (resolve: (value?: Array<EntityFieldValueDictionaryQuery>) => void) => void;
 }
 
 /*********************************************

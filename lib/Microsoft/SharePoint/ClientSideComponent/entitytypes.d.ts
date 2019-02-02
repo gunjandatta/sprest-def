@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IHostedAppsManager
 **********************************************/
-export interface IHostedAppsManager extends HostedAppsManagerCollections,HostedAppsManagerMethods,IBaseQuery<IHostedAppsManagerQuery> {
+export interface IHostedAppsManager extends HostedAppsManagerCollections, HostedAppsManagerMethods, IBaseQuery<IHostedAppsManagerQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IHostedAppsManager extends HostedAppsManagerCollections,HostedA
 * IHostedAppsManagerCollection
 **********************************************/
 export interface IHostedAppsManagerCollection extends IBaseResults<HostedAppsManager> {
-	done(resolve: (value?: Array<HostedAppsManager | any>) => void);
+	done?: (resolve: (value?: Array<HostedAppsManager>) => void) => void;
 }
 
 /*********************************************
 * IHostedAppsManagerQueryCollection
 **********************************************/
 export interface IHostedAppsManagerQueryCollection extends IBaseResults<HostedAppsManagerQuery> {
-	done(resolve: (value?: Array<HostedAppsManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<HostedAppsManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -74,7 +74,7 @@ export interface HostedAppsManagerMethods {
 /*********************************************
 * IHostedApp
 **********************************************/
-export interface IHostedApp extends HostedAppCollections,HostedAppMethods,IBaseQuery<IHostedAppQuery> {
+export interface IHostedApp extends HostedAppCollections, HostedAppMethods, IBaseQuery<IHostedAppQuery> {
 
 }
 
@@ -82,14 +82,14 @@ export interface IHostedApp extends HostedAppCollections,HostedAppMethods,IBaseQ
 * IHostedAppCollection
 **********************************************/
 export interface IHostedAppCollection extends IBaseResults<HostedApp> {
-	done(resolve: (value?: Array<HostedApp | any>) => void);
+	done?: (resolve: (value?: Array<HostedApp>) => void) => void;
 }
 
 /*********************************************
 * IHostedAppQueryCollection
 **********************************************/
 export interface IHostedAppQueryCollection extends IBaseResults<HostedAppQuery> {
-	done(resolve: (value?: Array<HostedAppQuery | any>) => void);
+	done?: (resolve: (value?: Array<HostedAppQuery>) => void) => void;
 }
 
 /*********************************************

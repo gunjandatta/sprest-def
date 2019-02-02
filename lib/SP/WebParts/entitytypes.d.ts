@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * ILimitedWebPartManager
 **********************************************/
-export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections,LimitedWebPartManagerMethods,IBaseQuery<ILimitedWebPartManagerQuery> {
+export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections, LimitedWebPartManagerMethods, IBaseQuery<ILimitedWebPartManagerQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections
 * ILimitedWebPartManagerCollection
 **********************************************/
 export interface ILimitedWebPartManagerCollection extends IBaseResults<LimitedWebPartManager> {
-	done(resolve: (value?: Array<LimitedWebPartManager | any>) => void);
+	done?: (resolve: (value?: Array<LimitedWebPartManager>) => void) => void;
 }
 
 /*********************************************
 * ILimitedWebPartManagerQueryCollection
 **********************************************/
 export interface ILimitedWebPartManagerQueryCollection extends IBaseResults<LimitedWebPartManagerQuery> {
-	done(resolve: (value?: Array<LimitedWebPartManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<LimitedWebPartManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -77,7 +77,7 @@ export interface LimitedWebPartManagerMethods {
 /*********************************************
 * IWebPartDefinition
 **********************************************/
-export interface IWebPartDefinition extends WebPartDefinitionCollections,WebPartDefinitionMethods,IBaseQuery<IWebPartDefinitionQuery> {
+export interface IWebPartDefinition extends WebPartDefinitionCollections, WebPartDefinitionMethods, IBaseQuery<IWebPartDefinitionQuery> {
 
 }
 
@@ -85,14 +85,14 @@ export interface IWebPartDefinition extends WebPartDefinitionCollections,WebPart
 * IWebPartDefinitionCollection
 **********************************************/
 export interface IWebPartDefinitionCollection extends IBaseResults<WebPartDefinition>, WebPartDefinitionCollectionMethods {
-	done(resolve: (value?: Array<WebPartDefinition | any>) => void);
+	done?: (resolve: (value?: Array<WebPartDefinition>) => void) => void;
 }
 
 /*********************************************
 * IWebPartDefinitionQueryCollection
 **********************************************/
 export interface IWebPartDefinitionQueryCollection extends IBaseResults<WebPartDefinitionQuery>, WebPartDefinitionCollectionMethods {
-	done(resolve: (value?: Array<WebPartDefinitionQuery | any>) => void);
+	done?: (resolve: (value?: Array<WebPartDefinitionQuery>) => void) => void;
 }
 
 /*********************************************

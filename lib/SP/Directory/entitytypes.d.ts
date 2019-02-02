@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IDirectorySession
 **********************************************/
-export interface IDirectorySession extends DirectorySessionCollections,DirectorySessionMethods,IBaseQuery<IDirectorySessionQuery> {
+export interface IDirectorySession extends DirectorySessionCollections, DirectorySessionMethods, IBaseQuery<IDirectorySessionQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface IDirectorySession extends DirectorySessionCollections,Directory
 * IDirectorySessionCollection
 **********************************************/
 export interface IDirectorySessionCollection extends IBaseResults<DirectorySession> {
-	done(resolve: (value?: Array<DirectorySession | any>) => void);
+	done?: (resolve: (value?: Array<DirectorySession>) => void) => void;
 }
 
 /*********************************************
 * IDirectorySessionQueryCollection
 **********************************************/
 export interface IDirectorySessionQueryCollection extends IBaseResults<DirectorySessionQuery> {
-	done(resolve: (value?: Array<DirectorySessionQuery | any>) => void);
+	done?: (resolve: (value?: Array<DirectorySessionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -80,7 +80,7 @@ export interface DirectorySessionMethods {
 /*********************************************
 * IGroup
 **********************************************/
-export interface IGroup extends GroupCollections,GroupMethods,IBaseQuery<IGroupQuery> {
+export interface IGroup extends GroupCollections, GroupMethods, IBaseQuery<IGroupQuery> {
 
 }
 
@@ -88,14 +88,14 @@ export interface IGroup extends GroupCollections,GroupMethods,IBaseQuery<IGroupQ
 * IGroupCollection
 **********************************************/
 export interface IGroupCollection extends IBaseResults<Group>, GroupCollectionMethods {
-	done(resolve: (value?: Array<Group | any>) => void);
+	done?: (resolve: (value?: Array<Group>) => void) => void;
 }
 
 /*********************************************
 * IGroupQueryCollection
 **********************************************/
 export interface IGroupQueryCollection extends IBaseResults<GroupQuery>, GroupCollectionMethods {
-	done(resolve: (value?: Array<GroupQuery | any>) => void);
+	done?: (resolve: (value?: Array<GroupQuery>) => void) => void;
 }
 
 /*********************************************
@@ -181,7 +181,7 @@ export interface GroupMethods {
 /*********************************************
 * IUser
 **********************************************/
-export interface IUser extends UserCollections,UserMethods,IBaseQuery<IUserQuery> {
+export interface IUser extends UserCollections, UserMethods, IBaseQuery<IUserQuery> {
 
 }
 
@@ -189,14 +189,14 @@ export interface IUser extends UserCollections,UserMethods,IBaseQuery<IUserQuery
 * IUserCollection
 **********************************************/
 export interface IUserCollection extends IBaseResults<User>, UserCollectionMethods {
-	done(resolve: (value?: Array<User | any>) => void);
+	done?: (resolve: (value?: Array<User>) => void) => void;
 }
 
 /*********************************************
 * IUserQueryCollection
 **********************************************/
 export interface IUserQueryCollection extends IBaseResults<UserQuery>, UserCollectionMethods {
-	done(resolve: (value?: Array<UserQuery | any>) => void);
+	done?: (resolve: (value?: Array<UserQuery>) => void) => void;
 }
 
 /*********************************************

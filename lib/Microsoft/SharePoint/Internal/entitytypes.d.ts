@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IActivityLogger
 **********************************************/
-export interface IActivityLogger extends ActivityLoggerCollections,ActivityLoggerMethods,IBaseQuery<IActivityLoggerQuery> {
+export interface IActivityLogger extends ActivityLoggerCollections, ActivityLoggerMethods, IBaseQuery<IActivityLoggerQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IActivityLogger extends ActivityLoggerCollections,ActivityLogge
 * IActivityLoggerCollection
 **********************************************/
 export interface IActivityLoggerCollection extends IBaseResults<ActivityLogger> {
-	done(resolve: (value?: Array<ActivityLogger | any>) => void);
+	done?: (resolve: (value?: Array<ActivityLogger>) => void) => void;
 }
 
 /*********************************************
 * IActivityLoggerQueryCollection
 **********************************************/
 export interface IActivityLoggerQueryCollection extends IBaseResults<ActivityLoggerQuery> {
-	done(resolve: (value?: Array<ActivityLoggerQuery | any>) => void);
+	done?: (resolve: (value?: Array<ActivityLoggerQuery>) => void) => void;
 }
 
 /*********************************************

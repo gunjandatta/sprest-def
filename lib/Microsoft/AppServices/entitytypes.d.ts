@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IAppCollection
 **********************************************/
-export interface IAppCollection extends AppCollectionCollections,AppCollectionMethods,IBaseQuery<IAppCollectionQuery> {
+export interface IAppCollection extends AppCollectionCollections, AppCollectionMethods, IBaseQuery<IAppCollectionQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IAppCollection extends AppCollectionCollections,AppCollectionMe
 * IAppCollectionCollection
 **********************************************/
 export interface IAppCollectionCollection extends IBaseResults<AppCollection> {
-	done(resolve: (value?: Array<AppCollection | any>) => void);
+	done?: (resolve: (value?: Array<AppCollection>) => void) => void;
 }
 
 /*********************************************
 * IAppCollectionQueryCollection
 **********************************************/
 export interface IAppCollectionQueryCollection extends IBaseResults<AppCollectionQuery> {
-	done(resolve: (value?: Array<AppCollectionQuery | any>) => void);
+	done?: (resolve: (value?: Array<AppCollectionQuery>) => void) => void;
 }
 
 /*********************************************

@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IMicroServiceManager
 **********************************************/
-export interface IMicroServiceManager extends MicroServiceManagerCollections,MicroServiceManagerMethods,IBaseQuery<IMicroServiceManagerQuery> {
+export interface IMicroServiceManager extends MicroServiceManagerCollections, MicroServiceManagerMethods, IBaseQuery<IMicroServiceManagerQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface IMicroServiceManager extends MicroServiceManagerCollections,Mic
 * IMicroServiceManagerCollection
 **********************************************/
 export interface IMicroServiceManagerCollection extends IBaseResults<MicroServiceManager> {
-	done(resolve: (value?: Array<MicroServiceManager | any>) => void);
+	done?: (resolve: (value?: Array<MicroServiceManager>) => void) => void;
 }
 
 /*********************************************
 * IMicroServiceManagerQueryCollection
 **********************************************/
 export interface IMicroServiceManagerQueryCollection extends IBaseResults<MicroServiceManagerQuery> {
-	done(resolve: (value?: Array<MicroServiceManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<MicroServiceManagerQuery>) => void) => void;
 }
 
 /*********************************************

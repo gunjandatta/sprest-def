@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * ILogExport
 **********************************************/
-export interface ILogExport extends LogExportCollections,LogExportMethods,IBaseQuery<ILogExportQuery> {
+export interface ILogExport extends LogExportCollections, LogExportMethods, IBaseQuery<ILogExportQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface ILogExport extends LogExportCollections,LogExportMethods,IBaseQ
 * ILogExportCollection
 **********************************************/
 export interface ILogExportCollection extends IBaseResults<LogExport> {
-	done(resolve: (value?: Array<LogExport | any>) => void);
+	done?: (resolve: (value?: Array<LogExport>) => void) => void;
 }
 
 /*********************************************
 * ILogExportQueryCollection
 **********************************************/
 export interface ILogExportQueryCollection extends IBaseResults<LogExportQuery> {
-	done(resolve: (value?: Array<LogExportQuery | any>) => void);
+	done?: (resolve: (value?: Array<LogExportQuery>) => void) => void;
 }
 
 /*********************************************

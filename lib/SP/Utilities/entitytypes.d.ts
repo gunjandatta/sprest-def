@@ -109,7 +109,7 @@ export interface SpotlightResultCollections {
 /*********************************************
 * IThemeManager
 **********************************************/
-export interface IThemeManager extends ThemeManagerCollections,ThemeManagerMethods,IBaseQuery<IThemeManagerQuery> {
+export interface IThemeManager extends ThemeManagerCollections, ThemeManagerMethods, IBaseQuery<IThemeManagerQuery> {
 
 }
 
@@ -117,14 +117,14 @@ export interface IThemeManager extends ThemeManagerCollections,ThemeManagerMetho
 * IThemeManagerCollection
 **********************************************/
 export interface IThemeManagerCollection extends IBaseResults<ThemeManager> {
-	done(resolve: (value?: Array<ThemeManager | any>) => void);
+	done?: (resolve: (value?: Array<ThemeManager>) => void) => void;
 }
 
 /*********************************************
 * IThemeManagerQueryCollection
 **********************************************/
 export interface IThemeManagerQueryCollection extends IBaseResults<ThemeManagerQuery> {
-	done(resolve: (value?: Array<ThemeManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<ThemeManagerQuery>) => void) => void;
 }
 
 /*********************************************

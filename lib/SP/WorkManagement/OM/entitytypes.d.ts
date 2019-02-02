@@ -4,7 +4,7 @@ import { SP } from "../../../";
 /*********************************************
 * IBaseSession
 **********************************************/
-export interface IBaseSession extends BaseSessionCollections,BaseSessionMethods,IBaseQuery<IBaseSessionQuery> {
+export interface IBaseSession extends BaseSessionCollections, BaseSessionMethods, IBaseQuery<IBaseSessionQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface IBaseSession extends BaseSessionCollections,BaseSessionMethods,
 * IBaseSessionCollection
 **********************************************/
 export interface IBaseSessionCollection extends IBaseResults<BaseSession> {
-	done(resolve: (value?: Array<BaseSession | any>) => void);
+	done?: (resolve: (value?: Array<BaseSession>) => void) => void;
 }
 
 /*********************************************
 * IBaseSessionQueryCollection
 **********************************************/
 export interface IBaseSessionQueryCollection extends IBaseResults<BaseSessionQuery> {
-	done(resolve: (value?: Array<BaseSessionQuery | any>) => void);
+	done?: (resolve: (value?: Array<BaseSessionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -282,7 +282,7 @@ export interface TaskCollections {
 /*********************************************
 * ILocationOrientedSortableSession
 **********************************************/
-export interface ILocationOrientedSortableSession extends LocationOrientedSortableSessionCollections,LocationOrientedSortableSessionMethods,IBaseQuery<ILocationOrientedSortableSessionQuery> {
+export interface ILocationOrientedSortableSession extends LocationOrientedSortableSessionCollections, LocationOrientedSortableSessionMethods, IBaseQuery<ILocationOrientedSortableSessionQuery> {
 
 }
 
@@ -290,14 +290,14 @@ export interface ILocationOrientedSortableSession extends LocationOrientedSortab
 * ILocationOrientedSortableSessionCollection
 **********************************************/
 export interface ILocationOrientedSortableSessionCollection extends IBaseResults<LocationOrientedSortableSession> {
-	done(resolve: (value?: Array<LocationOrientedSortableSession | any>) => void);
+	done?: (resolve: (value?: Array<LocationOrientedSortableSession>) => void) => void;
 }
 
 /*********************************************
 * ILocationOrientedSortableSessionQueryCollection
 **********************************************/
 export interface ILocationOrientedSortableSessionQueryCollection extends IBaseResults<LocationOrientedSortableSessionQuery> {
-	done(resolve: (value?: Array<LocationOrientedSortableSessionQuery | any>) => void);
+	done?: (resolve: (value?: Array<LocationOrientedSortableSessionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -370,7 +370,7 @@ export interface LocationOrientedSortableSessionMethods {
 /*********************************************
 * ILocationOrientedUserOrderedSession
 **********************************************/
-export interface ILocationOrientedUserOrderedSession extends LocationOrientedUserOrderedSessionCollections,LocationOrientedUserOrderedSessionMethods,IBaseQuery<ILocationOrientedUserOrderedSessionQuery> {
+export interface ILocationOrientedUserOrderedSession extends LocationOrientedUserOrderedSessionCollections, LocationOrientedUserOrderedSessionMethods, IBaseQuery<ILocationOrientedUserOrderedSessionQuery> {
 
 }
 
@@ -378,14 +378,14 @@ export interface ILocationOrientedUserOrderedSession extends LocationOrientedUse
 * ILocationOrientedUserOrderedSessionCollection
 **********************************************/
 export interface ILocationOrientedUserOrderedSessionCollection extends IBaseResults<LocationOrientedUserOrderedSession> {
-	done(resolve: (value?: Array<LocationOrientedUserOrderedSession | any>) => void);
+	done?: (resolve: (value?: Array<LocationOrientedUserOrderedSession>) => void) => void;
 }
 
 /*********************************************
 * ILocationOrientedUserOrderedSessionQueryCollection
 **********************************************/
 export interface ILocationOrientedUserOrderedSessionQueryCollection extends IBaseResults<LocationOrientedUserOrderedSessionQuery> {
-	done(resolve: (value?: Array<LocationOrientedUserOrderedSessionQuery | any>) => void);
+	done?: (resolve: (value?: Array<LocationOrientedUserOrderedSessionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -492,7 +492,7 @@ export interface NameCriterionCollections {
 /*********************************************
 * INonTaskDataReadResult
 **********************************************/
-export interface INonTaskDataReadResult extends NonTaskDataReadResultCollections,NonTaskDataReadResultMethods,IBaseQuery<INonTaskDataReadResultQuery> {
+export interface INonTaskDataReadResult extends NonTaskDataReadResultCollections, NonTaskDataReadResultMethods, IBaseQuery<INonTaskDataReadResultQuery> {
 
 }
 
@@ -500,14 +500,14 @@ export interface INonTaskDataReadResult extends NonTaskDataReadResultCollections
 * INonTaskDataReadResultCollection
 **********************************************/
 export interface INonTaskDataReadResultCollection extends IBaseResults<NonTaskDataReadResult> {
-	done(resolve: (value?: Array<NonTaskDataReadResult | any>) => void);
+	done?: (resolve: (value?: Array<NonTaskDataReadResult>) => void) => void;
 }
 
 /*********************************************
 * INonTaskDataReadResultQueryCollection
 **********************************************/
 export interface INonTaskDataReadResultQueryCollection extends IBaseResults<NonTaskDataReadResultQuery> {
-	done(resolve: (value?: Array<NonTaskDataReadResultQuery | any>) => void);
+	done?: (resolve: (value?: Array<NonTaskDataReadResultQuery>) => void) => void;
 }
 
 /*********************************************
@@ -589,7 +589,7 @@ export interface PersistedPropertiesCollections {
 /*********************************************
 * IRefreshHistory
 **********************************************/
-export interface IRefreshHistory extends RefreshHistoryCollections,RefreshHistoryMethods,IBaseQuery<IRefreshHistoryQuery> {
+export interface IRefreshHistory extends RefreshHistoryCollections, RefreshHistoryMethods, IBaseQuery<IRefreshHistoryQuery> {
 
 }
 
@@ -597,14 +597,14 @@ export interface IRefreshHistory extends RefreshHistoryCollections,RefreshHistor
 * IRefreshHistoryCollection
 **********************************************/
 export interface IRefreshHistoryCollection extends IBaseResults<RefreshHistory> {
-	done(resolve: (value?: Array<RefreshHistory | any>) => void);
+	done?: (resolve: (value?: Array<RefreshHistory>) => void) => void;
 }
 
 /*********************************************
 * IRefreshHistoryQueryCollection
 **********************************************/
 export interface IRefreshHistoryQueryCollection extends IBaseResults<RefreshHistoryQuery> {
-	done(resolve: (value?: Array<RefreshHistoryQuery | any>) => void);
+	done?: (resolve: (value?: Array<RefreshHistoryQuery>) => void) => void;
 }
 
 /*********************************************
@@ -660,7 +660,7 @@ export interface RefreshHistoryMethods {
 /*********************************************
 * IRefreshResult
 **********************************************/
-export interface IRefreshResult extends RefreshResultCollections,RefreshResultMethods,IBaseQuery<IRefreshResultQuery> {
+export interface IRefreshResult extends RefreshResultCollections, RefreshResultMethods, IBaseQuery<IRefreshResultQuery> {
 
 }
 
@@ -668,14 +668,14 @@ export interface IRefreshResult extends RefreshResultCollections,RefreshResultMe
 * IRefreshResultCollection
 **********************************************/
 export interface IRefreshResultCollection extends IBaseResults<RefreshResult> {
-	done(resolve: (value?: Array<RefreshResult | any>) => void);
+	done?: (resolve: (value?: Array<RefreshResult>) => void) => void;
 }
 
 /*********************************************
 * IRefreshResultQueryCollection
 **********************************************/
 export interface IRefreshResultQueryCollection extends IBaseResults<RefreshResultQuery> {
-	done(resolve: (value?: Array<RefreshResultQuery | any>) => void);
+	done?: (resolve: (value?: Array<RefreshResultQuery>) => void) => void;
 }
 
 /*********************************************
@@ -808,7 +808,7 @@ export interface ProviderErrorInfoCollections {
 /*********************************************
 * IRefreshHealthInfo
 **********************************************/
-export interface IRefreshHealthInfo extends RefreshHealthInfoCollections,RefreshHealthInfoMethods,IBaseQuery<IRefreshHealthInfoQuery> {
+export interface IRefreshHealthInfo extends RefreshHealthInfoCollections, RefreshHealthInfoMethods, IBaseQuery<IRefreshHealthInfoQuery> {
 
 }
 
@@ -816,14 +816,14 @@ export interface IRefreshHealthInfo extends RefreshHealthInfoCollections,Refresh
 * IRefreshHealthInfoCollection
 **********************************************/
 export interface IRefreshHealthInfoCollection extends IBaseResults<RefreshHealthInfo> {
-	done(resolve: (value?: Array<RefreshHealthInfo | any>) => void);
+	done?: (resolve: (value?: Array<RefreshHealthInfo>) => void) => void;
 }
 
 /*********************************************
 * IRefreshHealthInfoQueryCollection
 **********************************************/
 export interface IRefreshHealthInfoQueryCollection extends IBaseResults<RefreshHealthInfoQuery> {
-	done(resolve: (value?: Array<RefreshHealthInfoQuery | any>) => void);
+	done?: (resolve: (value?: Array<RefreshHealthInfoQuery>) => void) => void;
 }
 
 /*********************************************
@@ -881,7 +881,7 @@ export interface RefreshHealthInfoMethods {
 /*********************************************
 * ISortableSessionManager
 **********************************************/
-export interface ISortableSessionManager extends SortableSessionManagerCollections,SortableSessionManagerMethods,IBaseQuery<ISortableSessionManagerQuery> {
+export interface ISortableSessionManager extends SortableSessionManagerCollections, SortableSessionManagerMethods, IBaseQuery<ISortableSessionManagerQuery> {
 
 }
 
@@ -889,14 +889,14 @@ export interface ISortableSessionManager extends SortableSessionManagerCollectio
 * ISortableSessionManagerCollection
 **********************************************/
 export interface ISortableSessionManagerCollection extends IBaseResults<SortableSessionManager> {
-	done(resolve: (value?: Array<SortableSessionManager | any>) => void);
+	done?: (resolve: (value?: Array<SortableSessionManager>) => void) => void;
 }
 
 /*********************************************
 * ISortableSessionManagerQueryCollection
 **********************************************/
 export interface ISortableSessionManagerQueryCollection extends IBaseResults<SortableSessionManagerQuery> {
-	done(resolve: (value?: Array<SortableSessionManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<SortableSessionManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -952,7 +952,7 @@ export interface SortableSessionManagerMethods {
 /*********************************************
 * ISortableSession
 **********************************************/
-export interface ISortableSession extends SortableSessionCollections,SortableSessionMethods,IBaseQuery<ISortableSessionQuery> {
+export interface ISortableSession extends SortableSessionCollections, SortableSessionMethods, IBaseQuery<ISortableSessionQuery> {
 
 }
 
@@ -960,14 +960,14 @@ export interface ISortableSession extends SortableSessionCollections,SortableSes
 * ISortableSessionCollection
 **********************************************/
 export interface ISortableSessionCollection extends IBaseResults<SortableSession> {
-	done(resolve: (value?: Array<SortableSession | any>) => void);
+	done?: (resolve: (value?: Array<SortableSession>) => void) => void;
 }
 
 /*********************************************
 * ISortableSessionQueryCollection
 **********************************************/
 export interface ISortableSessionQueryCollection extends IBaseResults<SortableSessionQuery> {
-	done(resolve: (value?: Array<SortableSessionQuery | any>) => void);
+	done?: (resolve: (value?: Array<SortableSessionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1113,7 +1113,7 @@ export interface TaskFilterQuery extends IBaseResult, TaskFilter {
 /*********************************************
 * ITaskQueryByLocationResult
 **********************************************/
-export interface ITaskQueryByLocationResult extends TaskQueryByLocationResultCollections,TaskQueryByLocationResultMethods,IBaseQuery<ITaskQueryByLocationResultQuery> {
+export interface ITaskQueryByLocationResult extends TaskQueryByLocationResultCollections, TaskQueryByLocationResultMethods, IBaseQuery<ITaskQueryByLocationResultQuery> {
 
 }
 
@@ -1121,14 +1121,14 @@ export interface ITaskQueryByLocationResult extends TaskQueryByLocationResultCol
 * ITaskQueryByLocationResultCollection
 **********************************************/
 export interface ITaskQueryByLocationResultCollection extends IBaseResults<TaskQueryByLocationResult> {
-	done(resolve: (value?: Array<TaskQueryByLocationResult | any>) => void);
+	done?: (resolve: (value?: Array<TaskQueryByLocationResult>) => void) => void;
 }
 
 /*********************************************
 * ITaskQueryByLocationResultQueryCollection
 **********************************************/
 export interface ITaskQueryByLocationResultQueryCollection extends IBaseResults<TaskQueryByLocationResultQuery> {
-	done(resolve: (value?: Array<TaskQueryByLocationResultQuery | any>) => void);
+	done?: (resolve: (value?: Array<TaskQueryByLocationResultQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1185,7 +1185,7 @@ export interface TaskQueryByLocationResultMethods {
 /*********************************************
 * ITaskQueryResult
 **********************************************/
-export interface ITaskQueryResult extends TaskQueryResultCollections,TaskQueryResultMethods,IBaseQuery<ITaskQueryResultQuery> {
+export interface ITaskQueryResult extends TaskQueryResultCollections, TaskQueryResultMethods, IBaseQuery<ITaskQueryResultQuery> {
 
 }
 
@@ -1193,14 +1193,14 @@ export interface ITaskQueryResult extends TaskQueryResultCollections,TaskQueryRe
 * ITaskQueryResultCollection
 **********************************************/
 export interface ITaskQueryResultCollection extends IBaseResults<TaskQueryResult> {
-	done(resolve: (value?: Array<TaskQueryResult | any>) => void);
+	done?: (resolve: (value?: Array<TaskQueryResult>) => void) => void;
 }
 
 /*********************************************
 * ITaskQueryResultQueryCollection
 **********************************************/
 export interface ITaskQueryResultQueryCollection extends IBaseResults<TaskQueryResultQuery> {
-	done(resolve: (value?: Array<TaskQueryResultQuery | any>) => void);
+	done?: (resolve: (value?: Array<TaskQueryResultQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1301,7 +1301,7 @@ export interface TaskWriteResultQuery extends IBaseResult, TaskWriteResult {
 /*********************************************
 * IUserOrderedSessionManager
 **********************************************/
-export interface IUserOrderedSessionManager extends UserOrderedSessionManagerCollections,UserOrderedSessionManagerMethods,IBaseQuery<IUserOrderedSessionManagerQuery> {
+export interface IUserOrderedSessionManager extends UserOrderedSessionManagerCollections, UserOrderedSessionManagerMethods, IBaseQuery<IUserOrderedSessionManagerQuery> {
 
 }
 
@@ -1309,14 +1309,14 @@ export interface IUserOrderedSessionManager extends UserOrderedSessionManagerCol
 * IUserOrderedSessionManagerCollection
 **********************************************/
 export interface IUserOrderedSessionManagerCollection extends IBaseResults<UserOrderedSessionManager> {
-	done(resolve: (value?: Array<UserOrderedSessionManager | any>) => void);
+	done?: (resolve: (value?: Array<UserOrderedSessionManager>) => void) => void;
 }
 
 /*********************************************
 * IUserOrderedSessionManagerQueryCollection
 **********************************************/
 export interface IUserOrderedSessionManagerQueryCollection extends IBaseResults<UserOrderedSessionManagerQuery> {
-	done(resolve: (value?: Array<UserOrderedSessionManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<UserOrderedSessionManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1372,7 +1372,7 @@ export interface UserOrderedSessionManagerMethods {
 /*********************************************
 * IUserOrderedSession
 **********************************************/
-export interface IUserOrderedSession extends UserOrderedSessionCollections,UserOrderedSessionMethods,IBaseQuery<IUserOrderedSessionQuery> {
+export interface IUserOrderedSession extends UserOrderedSessionCollections, UserOrderedSessionMethods, IBaseQuery<IUserOrderedSessionQuery> {
 
 }
 
@@ -1380,14 +1380,14 @@ export interface IUserOrderedSession extends UserOrderedSessionCollections,UserO
 * IUserOrderedSessionCollection
 **********************************************/
 export interface IUserOrderedSessionCollection extends IBaseResults<UserOrderedSession> {
-	done(resolve: (value?: Array<UserOrderedSession | any>) => void);
+	done?: (resolve: (value?: Array<UserOrderedSession>) => void) => void;
 }
 
 /*********************************************
 * IUserOrderedSessionQueryCollection
 **********************************************/
 export interface IUserOrderedSessionQueryCollection extends IBaseResults<UserOrderedSessionQuery> {
-	done(resolve: (value?: Array<UserOrderedSessionQuery | any>) => void);
+	done?: (resolve: (value?: Array<UserOrderedSessionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1460,7 +1460,7 @@ export interface UserOrderedSessionMethods {
 /*********************************************
 * IUserSettingsManager
 **********************************************/
-export interface IUserSettingsManager extends UserSettingsManagerCollections,UserSettingsManagerMethods,IBaseQuery<IUserSettingsManagerQuery> {
+export interface IUserSettingsManager extends UserSettingsManagerCollections, UserSettingsManagerMethods, IBaseQuery<IUserSettingsManagerQuery> {
 
 }
 
@@ -1468,14 +1468,14 @@ export interface IUserSettingsManager extends UserSettingsManagerCollections,Use
 * IUserSettingsManagerCollection
 **********************************************/
 export interface IUserSettingsManagerCollection extends IBaseResults<UserSettingsManager> {
-	done(resolve: (value?: Array<UserSettingsManager | any>) => void);
+	done?: (resolve: (value?: Array<UserSettingsManager>) => void) => void;
 }
 
 /*********************************************
 * IUserSettingsManagerQueryCollection
 **********************************************/
 export interface IUserSettingsManagerQueryCollection extends IBaseResults<UserSettingsManagerQuery> {
-	done(resolve: (value?: Array<UserSettingsManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<UserSettingsManagerQuery>) => void) => void;
 }
 
 /*********************************************

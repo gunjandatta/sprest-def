@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IDDIAdapter
 **********************************************/
-export interface IDDIAdapter extends DDIAdapterCollections,DDIAdapterMethods,IBaseQuery<IDDIAdapterQuery> {
+export interface IDDIAdapter extends DDIAdapterCollections, DDIAdapterMethods, IBaseQuery<IDDIAdapterQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IDDIAdapter extends DDIAdapterCollections,DDIAdapterMethods,IBa
 * IDDIAdapterCollection
 **********************************************/
 export interface IDDIAdapterCollection extends IBaseResults<DDIAdapter> {
-	done(resolve: (value?: Array<DDIAdapter | any>) => void);
+	done?: (resolve: (value?: Array<DDIAdapter>) => void) => void;
 }
 
 /*********************************************
 * IDDIAdapterQueryCollection
 **********************************************/
 export interface IDDIAdapterQueryCollection extends IBaseResults<DDIAdapterQuery> {
-	done(resolve: (value?: Array<DDIAdapterQuery | any>) => void);
+	done?: (resolve: (value?: Array<DDIAdapterQuery>) => void) => void;
 }
 
 /*********************************************

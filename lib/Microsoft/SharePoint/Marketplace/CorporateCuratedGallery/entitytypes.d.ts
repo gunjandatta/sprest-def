@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../";
 /*********************************************
 * ISiteCollectionCorporateCatalogAccessor
 **********************************************/
-export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionCorporateCatalogAccessorCollections,SiteCollectionCorporateCatalogAccessorMethods,IBaseQuery<ISiteCollectionCorporateCatalogAccessorQuery> {
+export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionCorporateCatalogAccessorCollections, SiteCollectionCorporateCatalogAccessorMethods, IBaseQuery<ISiteCollectionCorporateCatalogAccessorQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionC
 * ISiteCollectionCorporateCatalogAccessorCollection
 **********************************************/
 export interface ISiteCollectionCorporateCatalogAccessorCollection extends IBaseResults<SiteCollectionCorporateCatalogAccessor> {
-	done(resolve: (value?: Array<SiteCollectionCorporateCatalogAccessor | any>) => void);
+	done?: (resolve: (value?: Array<SiteCollectionCorporateCatalogAccessor>) => void) => void;
 }
 
 /*********************************************
 * ISiteCollectionCorporateCatalogAccessorQueryCollection
 **********************************************/
 export interface ISiteCollectionCorporateCatalogAccessorQueryCollection extends IBaseResults<SiteCollectionCorporateCatalogAccessorQuery> {
-	done(resolve: (value?: Array<SiteCollectionCorporateCatalogAccessorQuery | any>) => void);
+	done?: (resolve: (value?: Array<SiteCollectionCorporateCatalogAccessorQuery>) => void) => void;
 }
 
 /*********************************************
@@ -75,7 +75,7 @@ export interface SiteCollectionCorporateCatalogAccessorMethods {
 /*********************************************
 * ICorporateCatalogAppMetadata
 **********************************************/
-export interface ICorporateCatalogAppMetadata extends CorporateCatalogAppMetadataCollections,CorporateCatalogAppMetadataMethods,IBaseQuery<ICorporateCatalogAppMetadataQuery> {
+export interface ICorporateCatalogAppMetadata extends CorporateCatalogAppMetadataCollections, CorporateCatalogAppMetadataMethods, IBaseQuery<ICorporateCatalogAppMetadataQuery> {
 
 }
 
@@ -83,14 +83,14 @@ export interface ICorporateCatalogAppMetadata extends CorporateCatalogAppMetadat
 * ICorporateCatalogAppMetadataCollection
 **********************************************/
 export interface ICorporateCatalogAppMetadataCollection extends IBaseResults<CorporateCatalogAppMetadata>, CorporateCatalogAppMetadataCollectionMethods {
-	done(resolve: (value?: Array<CorporateCatalogAppMetadata | any>) => void);
+	done?: (resolve: (value?: Array<CorporateCatalogAppMetadata>) => void) => void;
 }
 
 /*********************************************
 * ICorporateCatalogAppMetadataQueryCollection
 **********************************************/
 export interface ICorporateCatalogAppMetadataQueryCollection extends IBaseResults<CorporateCatalogAppMetadataQuery>, CorporateCatalogAppMetadataCollectionMethods {
-	done(resolve: (value?: Array<CorporateCatalogAppMetadataQuery | any>) => void);
+	done?: (resolve: (value?: Array<CorporateCatalogAppMetadataQuery>) => void) => void;
 }
 
 /*********************************************
@@ -164,7 +164,7 @@ export interface CorporateCatalogAppMetadataMethods {
 /*********************************************
 * ITenantCorporateCatalogAccessor
 **********************************************/
-export interface ITenantCorporateCatalogAccessor extends TenantCorporateCatalogAccessorCollections,TenantCorporateCatalogAccessorMethods,IBaseQuery<ITenantCorporateCatalogAccessorQuery> {
+export interface ITenantCorporateCatalogAccessor extends TenantCorporateCatalogAccessorCollections, TenantCorporateCatalogAccessorMethods, IBaseQuery<ITenantCorporateCatalogAccessorQuery> {
 
 }
 
@@ -172,14 +172,14 @@ export interface ITenantCorporateCatalogAccessor extends TenantCorporateCatalogA
 * ITenantCorporateCatalogAccessorCollection
 **********************************************/
 export interface ITenantCorporateCatalogAccessorCollection extends IBaseResults<TenantCorporateCatalogAccessor> {
-	done(resolve: (value?: Array<TenantCorporateCatalogAccessor | any>) => void);
+	done?: (resolve: (value?: Array<TenantCorporateCatalogAccessor>) => void) => void;
 }
 
 /*********************************************
 * ITenantCorporateCatalogAccessorQueryCollection
 **********************************************/
 export interface ITenantCorporateCatalogAccessorQueryCollection extends IBaseResults<TenantCorporateCatalogAccessorQuery> {
-	done(resolve: (value?: Array<TenantCorporateCatalogAccessorQuery | any>) => void);
+	done?: (resolve: (value?: Array<TenantCorporateCatalogAccessorQuery>) => void) => void;
 }
 
 /*********************************************

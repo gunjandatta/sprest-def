@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IPointPublishingAdmin
 **********************************************/
-export interface IPointPublishingAdmin extends PointPublishingAdminCollections,PointPublishingAdminMethods,IBaseQuery<IPointPublishingAdminQuery> {
+export interface IPointPublishingAdmin extends PointPublishingAdminCollections, PointPublishingAdminMethods, IBaseQuery<IPointPublishingAdminQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IPointPublishingAdmin extends PointPublishingAdminCollections,P
 * IPointPublishingAdminCollection
 **********************************************/
 export interface IPointPublishingAdminCollection extends IBaseResults<PointPublishingAdmin> {
-	done(resolve: (value?: Array<PointPublishingAdmin | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingAdmin>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingAdminQueryCollection
 **********************************************/
 export interface IPointPublishingAdminQueryCollection extends IBaseResults<PointPublishingAdminQuery> {
-	done(resolve: (value?: Array<PointPublishingAdminQuery | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingAdminQuery>) => void) => void;
 }
 
 /*********************************************

@@ -20,7 +20,7 @@ export interface PolicyEvaluationInfoCollections {
 /*********************************************
 * ISPPolicyStoreProxy
 **********************************************/
-export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections,SPPolicyStoreProxyMethods,IBaseQuery<ISPPolicyStoreProxyQuery> {
+export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections, SPPolicyStoreProxyMethods, IBaseQuery<ISPPolicyStoreProxyQuery> {
 
 }
 
@@ -28,14 +28,14 @@ export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections,SPPol
 * ISPPolicyStoreProxyCollection
 **********************************************/
 export interface ISPPolicyStoreProxyCollection extends IBaseResults<SPPolicyStoreProxy> {
-	done(resolve: (value?: Array<SPPolicyStoreProxy | any>) => void);
+	done?: (resolve: (value?: Array<SPPolicyStoreProxy>) => void) => void;
 }
 
 /*********************************************
 * ISPPolicyStoreProxyQueryCollection
 **********************************************/
 export interface ISPPolicyStoreProxyQueryCollection extends IBaseResults<SPPolicyStoreProxyQuery> {
-	done(resolve: (value?: Array<SPPolicyStoreProxyQuery | any>) => void);
+	done?: (resolve: (value?: Array<SPPolicyStoreProxyQuery>) => void) => void;
 }
 
 /*********************************************

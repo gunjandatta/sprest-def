@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../../";
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionGrant
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantCollections,SPOWebAppServicePrincipalPermissionGrantMethods,IBaseQuery<ISPOWebAppServicePrincipalPermissionGrantQuery> {
+export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods, IBaseQuery<ISPOWebAppServicePrincipalPermissionGrantQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServ
 * ISPOWebAppServicePrincipalPermissionGrantCollection
 **********************************************/
 export interface ISPOWebAppServicePrincipalPermissionGrantCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionGrant>, SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
-	done(resolve: (value?: Array<SPOWebAppServicePrincipalPermissionGrant | any>) => void);
+	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionGrant>) => void) => void;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionGrantQueryCollection
 **********************************************/
 export interface ISPOWebAppServicePrincipalPermissionGrantQueryCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionGrantQuery>, SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
-	done(resolve: (value?: Array<SPOWebAppServicePrincipalPermissionGrantQuery | any>) => void);
+	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionGrantQuery>) => void) => void;
 }
 
 /*********************************************
@@ -88,7 +88,7 @@ export interface SPOWebAppServicePrincipalPermissionGrantMethods {
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionRequest
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestCollections,SPOWebAppServicePrincipalPermissionRequestMethods,IBaseQuery<ISPOWebAppServicePrincipalPermissionRequestQuery> {
+export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestCollections, SPOWebAppServicePrincipalPermissionRequestMethods, IBaseQuery<ISPOWebAppServicePrincipalPermissionRequestQuery> {
 
 }
 
@@ -96,14 +96,14 @@ export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppSe
 * ISPOWebAppServicePrincipalPermissionRequestCollection
 **********************************************/
 export interface ISPOWebAppServicePrincipalPermissionRequestCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionRequest>, SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
-	done(resolve: (value?: Array<SPOWebAppServicePrincipalPermissionRequest | any>) => void);
+	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionRequest>) => void) => void;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionRequestQueryCollection
 **********************************************/
 export interface ISPOWebAppServicePrincipalPermissionRequestQueryCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionRequestQuery>, SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
-	done(resolve: (value?: Array<SPOWebAppServicePrincipalPermissionRequestQuery | any>) => void);
+	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionRequestQuery>) => void) => void;
 }
 
 /*********************************************
@@ -175,7 +175,7 @@ export interface SPOWebAppServicePrincipalPermissionRequestMethods {
 /*********************************************
 * ISPOWebAppServicePrincipal
 **********************************************/
-export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCollections,SPOWebAppServicePrincipalMethods,IBaseQuery<ISPOWebAppServicePrincipalQuery> {
+export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCollections, SPOWebAppServicePrincipalMethods, IBaseQuery<ISPOWebAppServicePrincipalQuery> {
 
 }
 
@@ -183,14 +183,14 @@ export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCol
 * ISPOWebAppServicePrincipalCollection
 **********************************************/
 export interface ISPOWebAppServicePrincipalCollection extends IBaseResults<SPOWebAppServicePrincipal> {
-	done(resolve: (value?: Array<SPOWebAppServicePrincipal | any>) => void);
+	done?: (resolve: (value?: Array<SPOWebAppServicePrincipal>) => void) => void;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalQueryCollection
 **********************************************/
 export interface ISPOWebAppServicePrincipalQueryCollection extends IBaseResults<SPOWebAppServicePrincipalQuery> {
-	done(resolve: (value?: Array<SPOWebAppServicePrincipalQuery | any>) => void);
+	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalQuery>) => void) => void;
 }
 
 /*********************************************

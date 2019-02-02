@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IDiagnostics
 **********************************************/
-export interface IDiagnostics extends DiagnosticsCollections,DiagnosticsMethods,IBaseQuery<IDiagnosticsQuery> {
+export interface IDiagnostics extends DiagnosticsCollections, DiagnosticsMethods, IBaseQuery<IDiagnosticsQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IDiagnostics extends DiagnosticsCollections,DiagnosticsMethods,
 * IDiagnosticsCollection
 **********************************************/
 export interface IDiagnosticsCollection extends IBaseResults<Diagnostics> {
-	done(resolve: (value?: Array<Diagnostics | any>) => void);
+	done?: (resolve: (value?: Array<Diagnostics>) => void) => void;
 }
 
 /*********************************************
 * IDiagnosticsQueryCollection
 **********************************************/
 export interface IDiagnosticsQueryCollection extends IBaseResults<DiagnosticsQuery> {
-	done(resolve: (value?: Array<DiagnosticsQuery | any>) => void);
+	done?: (resolve: (value?: Array<DiagnosticsQuery>) => void) => void;
 }
 
 /*********************************************
@@ -73,7 +73,7 @@ export interface DiagnosticsMethods {
 /*********************************************
 * IReporting
 **********************************************/
-export interface IReporting extends ReportingCollections,ReportingMethods,IBaseQuery<IReportingQuery> {
+export interface IReporting extends ReportingCollections, ReportingMethods, IBaseQuery<IReportingQuery> {
 
 }
 
@@ -81,14 +81,14 @@ export interface IReporting extends ReportingCollections,ReportingMethods,IBaseQ
 * IReportingCollection
 **********************************************/
 export interface IReportingCollection extends IBaseResults<Reporting> {
-	done(resolve: (value?: Array<Reporting | any>) => void);
+	done?: (resolve: (value?: Array<Reporting>) => void) => void;
 }
 
 /*********************************************
 * IReportingQueryCollection
 **********************************************/
 export interface IReportingQueryCollection extends IBaseResults<ReportingQuery> {
-	done(resolve: (value?: Array<ReportingQuery | any>) => void);
+	done?: (resolve: (value?: Array<ReportingQuery>) => void) => void;
 }
 
 /*********************************************
@@ -143,7 +143,7 @@ export interface ReportingMethods {
 /*********************************************
 * ITaskflow
 **********************************************/
-export interface ITaskflow extends TaskflowCollections,TaskflowMethods,IBaseQuery<ITaskflowQuery> {
+export interface ITaskflow extends TaskflowCollections, TaskflowMethods, IBaseQuery<ITaskflowQuery> {
 
 }
 
@@ -151,14 +151,14 @@ export interface ITaskflow extends TaskflowCollections,TaskflowMethods,IBaseQuer
 * ITaskflowCollection
 **********************************************/
 export interface ITaskflowCollection extends IBaseResults<Taskflow> {
-	done(resolve: (value?: Array<Taskflow | any>) => void);
+	done?: (resolve: (value?: Array<Taskflow>) => void) => void;
 }
 
 /*********************************************
 * ITaskflowQueryCollection
 **********************************************/
 export interface ITaskflowQueryCollection extends IBaseResults<TaskflowQuery> {
-	done(resolve: (value?: Array<TaskflowQuery | any>) => void);
+	done?: (resolve: (value?: Array<TaskflowQuery>) => void) => void;
 }
 
 /*********************************************

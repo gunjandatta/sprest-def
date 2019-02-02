@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IExternalSubscriptionStore
 **********************************************/
-export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCollections,ExternalSubscriptionStoreMethods,IBaseQuery<IExternalSubscriptionStoreQuery> {
+export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods, IBaseQuery<IExternalSubscriptionStoreQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCol
 * IExternalSubscriptionStoreCollection
 **********************************************/
 export interface IExternalSubscriptionStoreCollection extends IBaseResults<ExternalSubscriptionStore> {
-	done(resolve: (value?: Array<ExternalSubscriptionStore | any>) => void);
+	done?: (resolve: (value?: Array<ExternalSubscriptionStore>) => void) => void;
 }
 
 /*********************************************
 * IExternalSubscriptionStoreQueryCollection
 **********************************************/
 export interface IExternalSubscriptionStoreQueryCollection extends IBaseResults<ExternalSubscriptionStoreQuery> {
-	done(resolve: (value?: Array<ExternalSubscriptionStoreQuery | any>) => void);
+	done?: (resolve: (value?: Array<ExternalSubscriptionStoreQuery>) => void) => void;
 }
 
 /*********************************************

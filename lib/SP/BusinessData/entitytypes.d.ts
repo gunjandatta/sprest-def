@@ -40,7 +40,7 @@ export interface FilterCollections {
 /*********************************************
 * IEntityIdentifier
 **********************************************/
-export interface IEntityIdentifier extends EntityIdentifierCollections,EntityIdentifierMethods,IBaseQuery<IEntityIdentifierQuery> {
+export interface IEntityIdentifier extends EntityIdentifierCollections, EntityIdentifierMethods, IBaseQuery<IEntityIdentifierQuery> {
 
 }
 
@@ -48,14 +48,14 @@ export interface IEntityIdentifier extends EntityIdentifierCollections,EntityIde
 * IEntityIdentifierCollection
 **********************************************/
 export interface IEntityIdentifierCollection extends IBaseResults<EntityIdentifier> {
-	done(resolve: (value?: Array<EntityIdentifier | any>) => void);
+	done?: (resolve: (value?: Array<EntityIdentifier>) => void) => void;
 }
 
 /*********************************************
 * IEntityIdentifierQueryCollection
 **********************************************/
 export interface IEntityIdentifierQueryCollection extends IBaseResults<EntityIdentifierQuery> {
-	done(resolve: (value?: Array<EntityIdentifierQuery | any>) => void);
+	done?: (resolve: (value?: Array<EntityIdentifierQuery>) => void) => void;
 }
 
 /*********************************************
@@ -127,7 +127,7 @@ export interface LobSystemInstanceCollections {
 /*********************************************
 * ITypeDescriptor
 **********************************************/
-export interface ITypeDescriptor extends TypeDescriptorCollections,TypeDescriptorMethods,IBaseQuery<ITypeDescriptorQuery> {
+export interface ITypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods, IBaseQuery<ITypeDescriptorQuery> {
 
 }
 
@@ -135,14 +135,14 @@ export interface ITypeDescriptor extends TypeDescriptorCollections,TypeDescripto
 * ITypeDescriptorCollection
 **********************************************/
 export interface ITypeDescriptorCollection extends IBaseResults<TypeDescriptor> {
-	done(resolve: (value?: Array<TypeDescriptor | any>) => void);
+	done?: (resolve: (value?: Array<TypeDescriptor>) => void) => void;
 }
 
 /*********************************************
 * ITypeDescriptorQueryCollection
 **********************************************/
 export interface ITypeDescriptorQueryCollection extends IBaseResults<TypeDescriptorQuery> {
-	done(resolve: (value?: Array<TypeDescriptorQuery | any>) => void);
+	done?: (resolve: (value?: Array<TypeDescriptorQuery>) => void) => void;
 }
 
 /*********************************************
@@ -207,7 +207,7 @@ export interface TypeDescriptorMethods {
 /*********************************************
 * IEntity
 **********************************************/
-export interface IEntity extends EntityCollections,EntityMethods,IBaseQuery<IEntityQuery> {
+export interface IEntity extends EntityCollections, EntityMethods, IBaseQuery<IEntityQuery> {
 
 }
 
@@ -215,14 +215,14 @@ export interface IEntity extends EntityCollections,EntityMethods,IBaseQuery<IEnt
 * IEntityCollection
 **********************************************/
 export interface IEntityCollection extends IBaseResults<Entity> {
-	done(resolve: (value?: Array<Entity | any>) => void);
+	done?: (resolve: (value?: Array<Entity>) => void) => void;
 }
 
 /*********************************************
 * IEntityQueryCollection
 **********************************************/
 export interface IEntityQueryCollection extends IBaseResults<EntityQuery> {
-	done(resolve: (value?: Array<EntityQuery | any>) => void);
+	done?: (resolve: (value?: Array<EntityQuery>) => void) => void;
 }
 
 /*********************************************
@@ -288,7 +288,7 @@ export interface EntityMethods {
 /*********************************************
 * ILobSystem
 **********************************************/
-export interface ILobSystem extends LobSystemCollections,LobSystemMethods,IBaseQuery<ILobSystemQuery> {
+export interface ILobSystem extends LobSystemCollections, LobSystemMethods, IBaseQuery<ILobSystemQuery> {
 
 }
 
@@ -296,14 +296,14 @@ export interface ILobSystem extends LobSystemCollections,LobSystemMethods,IBaseQ
 * ILobSystemCollection
 **********************************************/
 export interface ILobSystemCollection extends IBaseResults<LobSystem> {
-	done(resolve: (value?: Array<LobSystem | any>) => void);
+	done?: (resolve: (value?: Array<LobSystem>) => void) => void;
 }
 
 /*********************************************
 * ILobSystemQueryCollection
 **********************************************/
 export interface ILobSystemQueryCollection extends IBaseResults<LobSystemQuery> {
-	done(resolve: (value?: Array<LobSystemQuery | any>) => void);
+	done?: (resolve: (value?: Array<LobSystemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -358,7 +358,7 @@ export interface LobSystemMethods {
 /*********************************************
 * IMethodExecutionResult
 **********************************************/
-export interface IMethodExecutionResult extends MethodExecutionResultCollections,MethodExecutionResultMethods,IBaseQuery<IMethodExecutionResultQuery> {
+export interface IMethodExecutionResult extends MethodExecutionResultCollections, MethodExecutionResultMethods, IBaseQuery<IMethodExecutionResultQuery> {
 
 }
 
@@ -366,14 +366,14 @@ export interface IMethodExecutionResult extends MethodExecutionResultCollections
 * IMethodExecutionResultCollection
 **********************************************/
 export interface IMethodExecutionResultCollection extends IBaseResults<MethodExecutionResult> {
-	done(resolve: (value?: Array<MethodExecutionResult | any>) => void);
+	done?: (resolve: (value?: Array<MethodExecutionResult>) => void) => void;
 }
 
 /*********************************************
 * IMethodExecutionResultQueryCollection
 **********************************************/
 export interface IMethodExecutionResultQueryCollection extends IBaseResults<MethodExecutionResultQuery> {
-	done(resolve: (value?: Array<MethodExecutionResultQuery | any>) => void);
+	done?: (resolve: (value?: Array<MethodExecutionResultQuery>) => void) => void;
 }
 
 /*********************************************
@@ -429,7 +429,7 @@ export interface MethodExecutionResultMethods {
 /*********************************************
 * IEntityView
 **********************************************/
-export interface IEntityView extends EntityViewCollections,EntityViewMethods,IBaseQuery<IEntityViewQuery> {
+export interface IEntityView extends EntityViewCollections, EntityViewMethods, IBaseQuery<IEntityViewQuery> {
 
 }
 
@@ -437,14 +437,14 @@ export interface IEntityView extends EntityViewCollections,EntityViewMethods,IBa
 * IEntityViewCollection
 **********************************************/
 export interface IEntityViewCollection extends IBaseResults<EntityView> {
-	done(resolve: (value?: Array<EntityView | any>) => void);
+	done?: (resolve: (value?: Array<EntityView>) => void) => void;
 }
 
 /*********************************************
 * IEntityViewQueryCollection
 **********************************************/
 export interface IEntityViewQueryCollection extends IBaseResults<EntityViewQuery> {
-	done(resolve: (value?: Array<EntityViewQuery | any>) => void);
+	done?: (resolve: (value?: Array<EntityViewQuery>) => void) => void;
 }
 
 /*********************************************
@@ -504,7 +504,7 @@ export interface EntityViewMethods {
 /*********************************************
 * IAppBdcCatalog
 **********************************************/
-export interface IAppBdcCatalog extends AppBdcCatalogCollections,AppBdcCatalogMethods,IBaseQuery<IAppBdcCatalogQuery> {
+export interface IAppBdcCatalog extends AppBdcCatalogCollections, AppBdcCatalogMethods, IBaseQuery<IAppBdcCatalogQuery> {
 
 }
 
@@ -512,14 +512,14 @@ export interface IAppBdcCatalog extends AppBdcCatalogCollections,AppBdcCatalogMe
 * IAppBdcCatalogCollection
 **********************************************/
 export interface IAppBdcCatalogCollection extends IBaseResults<AppBdcCatalog> {
-	done(resolve: (value?: Array<AppBdcCatalog | any>) => void);
+	done?: (resolve: (value?: Array<AppBdcCatalog>) => void) => void;
 }
 
 /*********************************************
 * IAppBdcCatalogQueryCollection
 **********************************************/
 export interface IAppBdcCatalogQueryCollection extends IBaseResults<AppBdcCatalogQuery> {
-	done(resolve: (value?: Array<AppBdcCatalogQuery | any>) => void);
+	done?: (resolve: (value?: Array<AppBdcCatalogQuery>) => void) => void;
 }
 
 /*********************************************

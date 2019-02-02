@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * ITenantCdnApi
 **********************************************/
-export interface ITenantCdnApi extends TenantCdnApiCollections,TenantCdnApiMethods,IBaseQuery<ITenantCdnApiQuery> {
+export interface ITenantCdnApi extends TenantCdnApiCollections, TenantCdnApiMethods, IBaseQuery<ITenantCdnApiQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface ITenantCdnApi extends TenantCdnApiCollections,TenantCdnApiMetho
 * ITenantCdnApiCollection
 **********************************************/
 export interface ITenantCdnApiCollection extends IBaseResults<TenantCdnApi> {
-	done(resolve: (value?: Array<TenantCdnApi | any>) => void);
+	done?: (resolve: (value?: Array<TenantCdnApi>) => void) => void;
 }
 
 /*********************************************
 * ITenantCdnApiQueryCollection
 **********************************************/
 export interface ITenantCdnApiQueryCollection extends IBaseResults<TenantCdnApiQuery> {
-	done(resolve: (value?: Array<TenantCdnApiQuery | any>) => void);
+	done?: (resolve: (value?: Array<TenantCdnApiQuery>) => void) => void;
 }
 
 /*********************************************

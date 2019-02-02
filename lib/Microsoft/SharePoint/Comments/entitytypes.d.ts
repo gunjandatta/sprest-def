@@ -5,7 +5,7 @@ import { SP } from "../../../";
 /*********************************************
 * Icomment
 **********************************************/
-export interface Icomment extends commentCollections,commentMethods,IBaseQuery<IcommentQuery> {
+export interface Icomment extends commentCollections, commentMethods, IBaseQuery<IcommentQuery> {
 
 }
 
@@ -13,14 +13,14 @@ export interface Icomment extends commentCollections,commentMethods,IBaseQuery<I
 * IcommentCollection
 **********************************************/
 export interface IcommentCollection extends IBaseResults<comment>, commentCollectionMethods {
-	done(resolve: (value?: Array<comment | any>) => void);
+	done?: (resolve: (value?: Array<comment>) => void) => void;
 }
 
 /*********************************************
 * IcommentQueryCollection
 **********************************************/
 export interface IcommentQueryCollection extends IBaseResults<commentQuery>, commentCollectionMethods {
-	done(resolve: (value?: Array<commentQuery | any>) => void);
+	done?: (resolve: (value?: Array<commentQuery>) => void) => void;
 }
 
 /*********************************************

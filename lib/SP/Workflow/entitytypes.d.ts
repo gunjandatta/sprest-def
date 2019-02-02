@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IWorkflowAssociation
 **********************************************/
-export interface IWorkflowAssociation extends WorkflowAssociationCollections,WorkflowAssociationMethods,IBaseQuery<IWorkflowAssociationQuery> {
+export interface IWorkflowAssociation extends WorkflowAssociationCollections, WorkflowAssociationMethods, IBaseQuery<IWorkflowAssociationQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface IWorkflowAssociation extends WorkflowAssociationCollections,Wor
 * IWorkflowAssociationCollection
 **********************************************/
 export interface IWorkflowAssociationCollection extends IBaseResults<WorkflowAssociation>, WorkflowAssociationCollectionMethods {
-	done(resolve: (value?: Array<WorkflowAssociation | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowAssociation>) => void) => void;
 }
 
 /*********************************************
 * IWorkflowAssociationQueryCollection
 **********************************************/
 export interface IWorkflowAssociationQueryCollection extends IBaseResults<WorkflowAssociationQuery>, WorkflowAssociationCollectionMethods {
-	done(resolve: (value?: Array<WorkflowAssociationQuery | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowAssociationQuery>) => void) => void;
 }
 
 /*********************************************
@@ -162,7 +162,7 @@ export interface SPWorkflowManagerCollections {
 /*********************************************
 * ISPWorkflowTask
 **********************************************/
-export interface ISPWorkflowTask extends SPWorkflowTaskCollections,SPWorkflowTaskMethods,IBaseQuery<ISPWorkflowTaskQuery> {
+export interface ISPWorkflowTask extends SPWorkflowTaskCollections, SPWorkflowTaskMethods, IBaseQuery<ISPWorkflowTaskQuery> {
 
 }
 
@@ -170,14 +170,14 @@ export interface ISPWorkflowTask extends SPWorkflowTaskCollections,SPWorkflowTas
 * ISPWorkflowTaskCollection
 **********************************************/
 export interface ISPWorkflowTaskCollection extends IBaseResults<SPWorkflowTask> {
-	done(resolve: (value?: Array<SPWorkflowTask | any>) => void);
+	done?: (resolve: (value?: Array<SPWorkflowTask>) => void) => void;
 }
 
 /*********************************************
 * ISPWorkflowTaskQueryCollection
 **********************************************/
 export interface ISPWorkflowTaskQueryCollection extends IBaseResults<SPWorkflowTaskQuery> {
-	done(resolve: (value?: Array<SPWorkflowTaskQuery | any>) => void);
+	done?: (resolve: (value?: Array<SPWorkflowTaskQuery>) => void) => void;
 }
 
 /*********************************************

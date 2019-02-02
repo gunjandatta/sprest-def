@@ -78,7 +78,7 @@ export interface IBaseQuery<Type = any, Result = Type> extends IBaseExecution<Ty
      * Queries the collection.
      * @param oData - The OData information.
      */
-    query?(query: IODataQuery): IBaseExecution<Result>;
+    query?: (query: IODataQuery) => IBaseExecution<Result>;
 }
 
 /**

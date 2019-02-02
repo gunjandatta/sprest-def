@@ -992,7 +992,7 @@ export interface CTDemoListItemQuery extends IBaseResult, CTDemoListItem {
 /*********************************************
 * IDevListItem
 **********************************************/
-export interface IDevListItem extends DevListItemCollections,DevListItemMethods,IBaseQuery<IDevListItemQuery> {
+export interface IDevListItem extends DevListItemCollections, DevListItemMethods, IBaseQuery<IDevListItemQuery> {
 
 }
 
@@ -1000,14 +1000,14 @@ export interface IDevListItem extends DevListItemCollections,DevListItemMethods,
 * IDevListItemCollection
 **********************************************/
 export interface IDevListItemCollection extends IBaseResults<DevListItem> {
-	done(resolve: (value?: Array<DevListItem | any>) => void);
+	done?: (resolve: (value?: Array<DevListItem>) => void) => void;
 }
 
 /*********************************************
 * IDevListItemQueryCollection
 **********************************************/
 export interface IDevListItemQueryCollection extends IBaseResults<DevListItemQuery> {
-	done(resolve: (value?: Array<DevListItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<DevListItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1288,7 +1288,7 @@ export interface DocSetItemQuery extends IBaseResult, DocSetItem {
 /*********************************************
 * IShared_x0020_DocumentsItem
 **********************************************/
-export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemCollections,Shared_x0020_DocumentsItemMethods,IBaseQuery<IShared_x0020_DocumentsItemQuery> {
+export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemCollections, Shared_x0020_DocumentsItemMethods, IBaseQuery<IShared_x0020_DocumentsItemQuery> {
 
 }
 
@@ -1296,14 +1296,14 @@ export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemC
 * IShared_x0020_DocumentsItemCollection
 **********************************************/
 export interface IShared_x0020_DocumentsItemCollection extends IBaseResults<Shared_x0020_DocumentsItem> {
-	done(resolve: (value?: Array<Shared_x0020_DocumentsItem | any>) => void);
+	done?: (resolve: (value?: Array<Shared_x0020_DocumentsItem>) => void) => void;
 }
 
 /*********************************************
 * IShared_x0020_DocumentsItemQueryCollection
 **********************************************/
 export interface IShared_x0020_DocumentsItemQueryCollection extends IBaseResults<Shared_x0020_DocumentsItemQuery> {
-	done(resolve: (value?: Array<Shared_x0020_DocumentsItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<Shared_x0020_DocumentsItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1434,7 +1434,7 @@ export interface Shared_x0020_DocumentsItemMethods {
 /*********************************************
 * IEvent_x0020_CalloutListItem
 **********************************************/
-export interface IEvent_x0020_CalloutListItem extends Event_x0020_CalloutListItemCollections,Event_x0020_CalloutListItemMethods,IBaseQuery<IEvent_x0020_CalloutListItemQuery> {
+export interface IEvent_x0020_CalloutListItem extends Event_x0020_CalloutListItemCollections, Event_x0020_CalloutListItemMethods, IBaseQuery<IEvent_x0020_CalloutListItemQuery> {
 
 }
 
@@ -1442,14 +1442,14 @@ export interface IEvent_x0020_CalloutListItem extends Event_x0020_CalloutListIte
 * IEvent_x0020_CalloutListItemCollection
 **********************************************/
 export interface IEvent_x0020_CalloutListItemCollection extends IBaseResults<Event_x0020_CalloutListItem> {
-	done(resolve: (value?: Array<Event_x0020_CalloutListItem | any>) => void);
+	done?: (resolve: (value?: Array<Event_x0020_CalloutListItem>) => void) => void;
 }
 
 /*********************************************
 * IEvent_x0020_CalloutListItemQueryCollection
 **********************************************/
 export interface IEvent_x0020_CalloutListItemQueryCollection extends IBaseResults<Event_x0020_CalloutListItemQuery> {
-	done(resolve: (value?: Array<Event_x0020_CalloutListItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<Event_x0020_CalloutListItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2275,7 +2275,7 @@ export interface OData__x005f_catalogs_x002f_masterpageItemQuery extends IBaseRe
 /*********************************************
 * IPublishedFeedListItem
 **********************************************/
-export interface IPublishedFeedListItem extends PublishedFeedListItemCollections,PublishedFeedListItemMethods,IBaseQuery<IPublishedFeedListItemQuery> {
+export interface IPublishedFeedListItem extends PublishedFeedListItemCollections, PublishedFeedListItemMethods, IBaseQuery<IPublishedFeedListItemQuery> {
 
 }
 
@@ -2283,14 +2283,14 @@ export interface IPublishedFeedListItem extends PublishedFeedListItemCollections
 * IPublishedFeedListItemCollection
 **********************************************/
 export interface IPublishedFeedListItemCollection extends IBaseResults<PublishedFeedListItem> {
-	done(resolve: (value?: Array<PublishedFeedListItem | any>) => void);
+	done?: (resolve: (value?: Array<PublishedFeedListItem>) => void) => void;
 }
 
 /*********************************************
 * IPublishedFeedListItemQueryCollection
 **********************************************/
 export interface IPublishedFeedListItemQueryCollection extends IBaseResults<PublishedFeedListItemQuery> {
-	done(resolve: (value?: Array<PublishedFeedListItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<PublishedFeedListItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3312,7 +3312,7 @@ export interface Sharing_x0020_LinksItemQuery extends IBaseResult, Sharing_x0020
 /*********************************************
 * ISiteAssetsItem
 **********************************************/
-export interface ISiteAssetsItem extends SiteAssetsItemCollections,SiteAssetsItemMethods,IBaseQuery<ISiteAssetsItemQuery> {
+export interface ISiteAssetsItem extends SiteAssetsItemCollections, SiteAssetsItemMethods, IBaseQuery<ISiteAssetsItemQuery> {
 
 }
 
@@ -3320,14 +3320,14 @@ export interface ISiteAssetsItem extends SiteAssetsItemCollections,SiteAssetsIte
 * ISiteAssetsItemCollection
 **********************************************/
 export interface ISiteAssetsItemCollection extends IBaseResults<SiteAssetsItem> {
-	done(resolve: (value?: Array<SiteAssetsItem | any>) => void);
+	done?: (resolve: (value?: Array<SiteAssetsItem>) => void) => void;
 }
 
 /*********************************************
 * ISiteAssetsItemQueryCollection
 **********************************************/
 export interface ISiteAssetsItemQueryCollection extends IBaseResults<SiteAssetsItemQuery> {
-	done(resolve: (value?: Array<SiteAssetsItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<SiteAssetsItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3543,7 +3543,7 @@ export interface SiteCollectionDocumentsItemQuery extends IBaseResult, SiteColle
 /*********************************************
 * ISiteCollectionImagesItem
 **********************************************/
-export interface ISiteCollectionImagesItem extends SiteCollectionImagesItemCollections,SiteCollectionImagesItemMethods,IBaseQuery<ISiteCollectionImagesItemQuery> {
+export interface ISiteCollectionImagesItem extends SiteCollectionImagesItemCollections, SiteCollectionImagesItemMethods, IBaseQuery<ISiteCollectionImagesItemQuery> {
 
 }
 
@@ -3551,14 +3551,14 @@ export interface ISiteCollectionImagesItem extends SiteCollectionImagesItemColle
 * ISiteCollectionImagesItemCollection
 **********************************************/
 export interface ISiteCollectionImagesItemCollection extends IBaseResults<SiteCollectionImagesItem> {
-	done(resolve: (value?: Array<SiteCollectionImagesItem | any>) => void);
+	done?: (resolve: (value?: Array<SiteCollectionImagesItem>) => void) => void;
 }
 
 /*********************************************
 * ISiteCollectionImagesItemQueryCollection
 **********************************************/
 export interface ISiteCollectionImagesItemQueryCollection extends IBaseResults<SiteCollectionImagesItemQuery> {
-	done(resolve: (value?: Array<SiteCollectionImagesItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<SiteCollectionImagesItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3714,7 +3714,7 @@ export interface SiteCollectionImagesItemMethods {
 /*********************************************
 * ISitePagesItem
 **********************************************/
-export interface ISitePagesItem extends SitePagesItemCollections,SitePagesItemMethods,IBaseQuery<ISitePagesItemQuery> {
+export interface ISitePagesItem extends SitePagesItemCollections, SitePagesItemMethods, IBaseQuery<ISitePagesItemQuery> {
 
 }
 
@@ -3722,14 +3722,14 @@ export interface ISitePagesItem extends SitePagesItemCollections,SitePagesItemMe
 * ISitePagesItemCollection
 **********************************************/
 export interface ISitePagesItemCollection extends IBaseResults<SitePagesItem> {
-	done(resolve: (value?: Array<SitePagesItem | any>) => void);
+	done?: (resolve: (value?: Array<SitePagesItem>) => void) => void;
 }
 
 /*********************************************
 * ISitePagesItemQueryCollection
 **********************************************/
 export interface ISitePagesItemQueryCollection extends IBaseResults<SitePagesItemQuery> {
-	done(resolve: (value?: Array<SitePagesItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<SitePagesItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3952,7 +3952,7 @@ export interface OData__x005f_catalogs_x002f_solutionsItemQuery extends IBaseRes
 /*********************************************
 * ISPReactListItem
 **********************************************/
-export interface ISPReactListItem extends SPReactListItemCollections,SPReactListItemMethods,IBaseQuery<ISPReactListItemQuery> {
+export interface ISPReactListItem extends SPReactListItemCollections, SPReactListItemMethods, IBaseQuery<ISPReactListItemQuery> {
 
 }
 
@@ -3960,14 +3960,14 @@ export interface ISPReactListItem extends SPReactListItemCollections,SPReactList
 * ISPReactListItemCollection
 **********************************************/
 export interface ISPReactListItemCollection extends IBaseResults<SPReactListItem> {
-	done(resolve: (value?: Array<SPReactListItem | any>) => void);
+	done?: (resolve: (value?: Array<SPReactListItem>) => void) => void;
 }
 
 /*********************************************
 * ISPReactListItemQueryCollection
 **********************************************/
 export interface ISPReactListItemQueryCollection extends IBaseResults<SPReactListItemQuery> {
-	done(resolve: (value?: Array<SPReactListItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<SPReactListItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4350,7 +4350,7 @@ export interface PublishedLinksItemQuery extends IBaseResult, PublishedLinksItem
 /*********************************************
 * ITeamMembersListItem
 **********************************************/
-export interface ITeamMembersListItem extends TeamMembersListItemCollections,TeamMembersListItemMethods,IBaseQuery<ITeamMembersListItemQuery> {
+export interface ITeamMembersListItem extends TeamMembersListItemCollections, TeamMembersListItemMethods, IBaseQuery<ITeamMembersListItemQuery> {
 
 }
 
@@ -4358,14 +4358,14 @@ export interface ITeamMembersListItem extends TeamMembersListItemCollections,Tea
 * ITeamMembersListItemCollection
 **********************************************/
 export interface ITeamMembersListItemCollection extends IBaseResults<TeamMembersListItem> {
-	done(resolve: (value?: Array<TeamMembersListItem | any>) => void);
+	done?: (resolve: (value?: Array<TeamMembersListItem>) => void) => void;
 }
 
 /*********************************************
 * ITeamMembersListItemQueryCollection
 **********************************************/
 export interface ITeamMembersListItemQueryCollection extends IBaseResults<TeamMembersListItemQuery> {
-	done(resolve: (value?: Array<TeamMembersListItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<TeamMembersListItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5150,7 +5150,7 @@ export interface OData__x005f_catalogs_x002f_wfpubItemQuery extends IBaseResult,
 /*********************************************
 * IWorkflowTasksItem
 **********************************************/
-export interface IWorkflowTasksItem extends WorkflowTasksItemCollections,WorkflowTasksItemMethods,IBaseQuery<IWorkflowTasksItemQuery> {
+export interface IWorkflowTasksItem extends WorkflowTasksItemCollections, WorkflowTasksItemMethods, IBaseQuery<IWorkflowTasksItemQuery> {
 
 }
 
@@ -5158,14 +5158,14 @@ export interface IWorkflowTasksItem extends WorkflowTasksItemCollections,Workflo
 * IWorkflowTasksItemCollection
 **********************************************/
 export interface IWorkflowTasksItemCollection extends IBaseResults<WorkflowTasksItem> {
-	done(resolve: (value?: Array<WorkflowTasksItem | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowTasksItem>) => void) => void;
 }
 
 /*********************************************
 * IWorkflowTasksItemQueryCollection
 **********************************************/
 export interface IWorkflowTasksItemQueryCollection extends IBaseResults<WorkflowTasksItemQuery> {
-	done(resolve: (value?: Array<WorkflowTasksItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowTasksItemQuery>) => void) => void;
 }
 
 /*********************************************

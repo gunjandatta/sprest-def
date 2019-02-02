@@ -22,7 +22,7 @@ export interface TokenResponseCollections {
 /*********************************************
 * INativeClient
 **********************************************/
-export interface INativeClient extends NativeClientCollections,NativeClientMethods,IBaseQuery<INativeClientQuery> {
+export interface INativeClient extends NativeClientCollections, NativeClientMethods, IBaseQuery<INativeClientQuery> {
 
 }
 
@@ -30,14 +30,14 @@ export interface INativeClient extends NativeClientCollections,NativeClientMetho
 * INativeClientCollection
 **********************************************/
 export interface INativeClientCollection extends IBaseResults<NativeClient> {
-	done(resolve: (value?: Array<NativeClient | any>) => void);
+	done?: (resolve: (value?: Array<NativeClient>) => void) => void;
 }
 
 /*********************************************
 * INativeClientQueryCollection
 **********************************************/
 export interface INativeClientQueryCollection extends IBaseResults<NativeClientQuery> {
-	done(resolve: (value?: Array<NativeClientQuery | any>) => void);
+	done?: (resolve: (value?: Array<NativeClientQuery>) => void) => void;
 }
 
 /*********************************************
@@ -92,7 +92,7 @@ export interface NativeClientMethods {
 /*********************************************
 * IToken
 **********************************************/
-export interface IToken extends TokenCollections,TokenMethods,IBaseQuery<ITokenQuery> {
+export interface IToken extends TokenCollections, TokenMethods, IBaseQuery<ITokenQuery> {
 
 }
 
@@ -100,14 +100,14 @@ export interface IToken extends TokenCollections,TokenMethods,IBaseQuery<ITokenQ
 * ITokenCollection
 **********************************************/
 export interface ITokenCollection extends IBaseResults<Token> {
-	done(resolve: (value?: Array<Token | any>) => void);
+	done?: (resolve: (value?: Array<Token>) => void) => void;
 }
 
 /*********************************************
 * ITokenQueryCollection
 **********************************************/
 export interface ITokenQueryCollection extends IBaseResults<TokenQuery> {
-	done(resolve: (value?: Array<TokenQuery | any>) => void);
+	done?: (resolve: (value?: Array<TokenQuery>) => void) => void;
 }
 
 /*********************************************

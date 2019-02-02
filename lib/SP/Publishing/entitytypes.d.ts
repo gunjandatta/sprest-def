@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * ICommunicationSite
 **********************************************/
-export interface ICommunicationSite extends CommunicationSiteCollections,CommunicationSiteMethods,IBaseQuery<ICommunicationSiteQuery> {
+export interface ICommunicationSite extends CommunicationSiteCollections, CommunicationSiteMethods, IBaseQuery<ICommunicationSiteQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface ICommunicationSite extends CommunicationSiteCollections,Communi
 * ICommunicationSiteCollection
 **********************************************/
 export interface ICommunicationSiteCollection extends IBaseResults<CommunicationSite> {
-	done(resolve: (value?: Array<CommunicationSite | any>) => void);
+	done?: (resolve: (value?: Array<CommunicationSite>) => void) => void;
 }
 
 /*********************************************
 * ICommunicationSiteQueryCollection
 **********************************************/
 export interface ICommunicationSiteQueryCollection extends IBaseResults<CommunicationSiteQuery> {
-	done(resolve: (value?: Array<CommunicationSiteQuery | any>) => void);
+	done?: (resolve: (value?: Array<CommunicationSiteQuery>) => void) => void;
 }
 
 /*********************************************
@@ -106,7 +106,7 @@ export interface EmbedDataV1Collections {
 /*********************************************
 * IEmbedService
 **********************************************/
-export interface IEmbedService extends EmbedServiceCollections,EmbedServiceMethods,IBaseQuery<IEmbedServiceQuery> {
+export interface IEmbedService extends EmbedServiceCollections, EmbedServiceMethods, IBaseQuery<IEmbedServiceQuery> {
 
 }
 
@@ -114,14 +114,14 @@ export interface IEmbedService extends EmbedServiceCollections,EmbedServiceMetho
 * IEmbedServiceCollection
 **********************************************/
 export interface IEmbedServiceCollection extends IBaseResults<EmbedService> {
-	done(resolve: (value?: Array<EmbedService | any>) => void);
+	done?: (resolve: (value?: Array<EmbedService>) => void) => void;
 }
 
 /*********************************************
 * IEmbedServiceQueryCollection
 **********************************************/
 export interface IEmbedServiceQueryCollection extends IBaseResults<EmbedServiceQuery> {
-	done(resolve: (value?: Array<EmbedServiceQuery | any>) => void);
+	done?: (resolve: (value?: Array<EmbedServiceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -176,7 +176,7 @@ export interface EmbedServiceMethods {
 /*********************************************
 * IVideoItem
 **********************************************/
-export interface IVideoItem extends VideoItemCollections,VideoItemMethods,IBaseQuery<IVideoItemQuery> {
+export interface IVideoItem extends VideoItemCollections, VideoItemMethods, IBaseQuery<IVideoItemQuery> {
 
 }
 
@@ -184,14 +184,14 @@ export interface IVideoItem extends VideoItemCollections,VideoItemMethods,IBaseQ
 * IVideoItemCollection
 **********************************************/
 export interface IVideoItemCollection extends IBaseResults<VideoItem>, VideoItemCollectionMethods {
-	done(resolve: (value?: Array<VideoItem | any>) => void);
+	done?: (resolve: (value?: Array<VideoItem>) => void) => void;
 }
 
 /*********************************************
 * IVideoItemQueryCollection
 **********************************************/
 export interface IVideoItemQueryCollection extends IBaseResults<VideoItemQuery>, VideoItemCollectionMethods {
-	done(resolve: (value?: Array<VideoItemQuery | any>) => void);
+	done?: (resolve: (value?: Array<VideoItemQuery>) => void) => void;
 }
 
 /*********************************************
@@ -354,7 +354,7 @@ export interface PointPublishingMagazinePropsCollections {
 /*********************************************
 * IPointPublishingPost
 **********************************************/
-export interface IPointPublishingPost extends PointPublishingPostCollections,PointPublishingPostMethods,IBaseQuery<IPointPublishingPostQuery> {
+export interface IPointPublishingPost extends PointPublishingPostCollections, PointPublishingPostMethods, IBaseQuery<IPointPublishingPostQuery> {
 
 }
 
@@ -362,14 +362,14 @@ export interface IPointPublishingPost extends PointPublishingPostCollections,Poi
 * IPointPublishingPostCollection
 **********************************************/
 export interface IPointPublishingPostCollection extends IBaseResults<PointPublishingPost>, PointPublishingPostCollectionMethods {
-	done(resolve: (value?: Array<PointPublishingPost | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingPost>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingPostQueryCollection
 **********************************************/
 export interface IPointPublishingPostQueryCollection extends IBaseResults<PointPublishingPostQuery>, PointPublishingPostCollectionMethods {
-	done(resolve: (value?: Array<PointPublishingPostQuery | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingPostQuery>) => void) => void;
 }
 
 /*********************************************
@@ -443,7 +443,7 @@ export interface PointPublishingPostMethods {
 /*********************************************
 * IPointPublishingPostServiceManager
 **********************************************/
-export interface IPointPublishingPostServiceManager extends PointPublishingPostServiceManagerCollections,PointPublishingPostServiceManagerMethods,IBaseQuery<IPointPublishingPostServiceManagerQuery> {
+export interface IPointPublishingPostServiceManager extends PointPublishingPostServiceManagerCollections, PointPublishingPostServiceManagerMethods, IBaseQuery<IPointPublishingPostServiceManagerQuery> {
 
 }
 
@@ -451,14 +451,14 @@ export interface IPointPublishingPostServiceManager extends PointPublishingPostS
 * IPointPublishingPostServiceManagerCollection
 **********************************************/
 export interface IPointPublishingPostServiceManagerCollection extends IBaseResults<PointPublishingPostServiceManager> {
-	done(resolve: (value?: Array<PointPublishingPostServiceManager | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingPostServiceManager>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingPostServiceManagerQueryCollection
 **********************************************/
 export interface IPointPublishingPostServiceManagerQueryCollection extends IBaseResults<PointPublishingPostServiceManagerQuery> {
-	done(resolve: (value?: Array<PointPublishingPostServiceManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingPostServiceManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -533,7 +533,7 @@ export interface PointPublishingPostServiceManagerMethods {
 /*********************************************
 * IPointPublishingUser
 **********************************************/
-export interface IPointPublishingUser extends PointPublishingUserCollections,PointPublishingUserMethods,IBaseQuery<IPointPublishingUserQuery> {
+export interface IPointPublishingUser extends PointPublishingUserCollections, PointPublishingUserMethods, IBaseQuery<IPointPublishingUserQuery> {
 
 }
 
@@ -541,14 +541,14 @@ export interface IPointPublishingUser extends PointPublishingUserCollections,Poi
 * IPointPublishingUserCollection
 **********************************************/
 export interface IPointPublishingUserCollection extends IBaseResults<PointPublishingUser>, PointPublishingUserCollectionMethods {
-	done(resolve: (value?: Array<PointPublishingUser | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingUser>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingUserQueryCollection
 **********************************************/
 export interface IPointPublishingUserQueryCollection extends IBaseResults<PointPublishingUserQuery>, PointPublishingUserCollectionMethods {
-	done(resolve: (value?: Array<PointPublishingUserQuery | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingUserQuery>) => void) => void;
 }
 
 /*********************************************
@@ -621,7 +621,7 @@ export interface PointPublishingUserMethods {
 /*********************************************
 * IPointPublishingSiteManager
 **********************************************/
-export interface IPointPublishingSiteManager extends PointPublishingSiteManagerCollections,PointPublishingSiteManagerMethods,IBaseQuery<IPointPublishingSiteManagerQuery> {
+export interface IPointPublishingSiteManager extends PointPublishingSiteManagerCollections, PointPublishingSiteManagerMethods, IBaseQuery<IPointPublishingSiteManagerQuery> {
 
 }
 
@@ -629,14 +629,14 @@ export interface IPointPublishingSiteManager extends PointPublishingSiteManagerC
 * IPointPublishingSiteManagerCollection
 **********************************************/
 export interface IPointPublishingSiteManagerCollection extends IBaseResults<PointPublishingSiteManager> {
-	done(resolve: (value?: Array<PointPublishingSiteManager | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingSiteManager>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingSiteManagerQueryCollection
 **********************************************/
 export interface IPointPublishingSiteManagerQueryCollection extends IBaseResults<PointPublishingSiteManagerQuery> {
-	done(resolve: (value?: Array<PointPublishingSiteManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingSiteManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -709,7 +709,7 @@ export interface PointPublishingSiteStatusCollections {
 /*********************************************
 * IPointPublishingTenantManager
 **********************************************/
-export interface IPointPublishingTenantManager extends PointPublishingTenantManagerCollections,PointPublishingTenantManagerMethods,IBaseQuery<IPointPublishingTenantManagerQuery> {
+export interface IPointPublishingTenantManager extends PointPublishingTenantManagerCollections, PointPublishingTenantManagerMethods, IBaseQuery<IPointPublishingTenantManagerQuery> {
 
 }
 
@@ -717,14 +717,14 @@ export interface IPointPublishingTenantManager extends PointPublishingTenantMana
 * IPointPublishingTenantManagerCollection
 **********************************************/
 export interface IPointPublishingTenantManagerCollection extends IBaseResults<PointPublishingTenantManager> {
-	done(resolve: (value?: Array<PointPublishingTenantManager | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingTenantManager>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingTenantManagerQueryCollection
 **********************************************/
 export interface IPointPublishingTenantManagerQueryCollection extends IBaseResults<PointPublishingTenantManagerQuery> {
-	done(resolve: (value?: Array<PointPublishingTenantManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<PointPublishingTenantManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -868,7 +868,7 @@ export interface UserInfoCollections {
 /*********************************************
 * ISitePage
 **********************************************/
-export interface ISitePage extends SitePageCollections,SitePageMethods,IBaseQuery<ISitePageQuery> {
+export interface ISitePage extends SitePageCollections, SitePageMethods, IBaseQuery<ISitePageQuery> {
 
 }
 
@@ -876,14 +876,14 @@ export interface ISitePage extends SitePageCollections,SitePageMethods,IBaseQuer
 * ISitePageCollection
 **********************************************/
 export interface ISitePageCollection extends IBaseResults<SitePage>, SitePageCollectionMethods {
-	done(resolve: (value?: Array<SitePage | any>) => void);
+	done?: (resolve: (value?: Array<SitePage>) => void) => void;
 }
 
 /*********************************************
 * ISitePageQueryCollection
 **********************************************/
 export interface ISitePageQueryCollection extends IBaseResults<SitePageQuery>, SitePageCollectionMethods {
-	done(resolve: (value?: Array<SitePageQuery | any>) => void);
+	done?: (resolve: (value?: Array<SitePageQuery>) => void) => void;
 }
 
 /*********************************************
@@ -970,7 +970,7 @@ export interface SitePageMethods {
 /*********************************************
 * IRepostPage
 **********************************************/
-export interface IRepostPage extends RepostPageCollections,RepostPageMethods,IBaseQuery<IRepostPageQuery> {
+export interface IRepostPage extends RepostPageCollections, RepostPageMethods, IBaseQuery<IRepostPageQuery> {
 
 }
 
@@ -978,14 +978,14 @@ export interface IRepostPage extends RepostPageCollections,RepostPageMethods,IBa
 * IRepostPageCollection
 **********************************************/
 export interface IRepostPageCollection extends IBaseResults<RepostPage>, RepostPageCollectionMethods {
-	done(resolve: (value?: Array<RepostPage | any>) => void);
+	done?: (resolve: (value?: Array<RepostPage>) => void) => void;
 }
 
 /*********************************************
 * IRepostPageQueryCollection
 **********************************************/
 export interface IRepostPageQueryCollection extends IBaseResults<RepostPageQuery>, RepostPageCollectionMethods {
-	done(resolve: (value?: Array<RepostPageQuery | any>) => void);
+	done?: (resolve: (value?: Array<RepostPageQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1084,7 +1084,7 @@ export interface RepostPageMetadataCollections {
 /*********************************************
 * IRichSharing
 **********************************************/
-export interface IRichSharing extends RichSharingCollections,RichSharingMethods,IBaseQuery<IRichSharingQuery> {
+export interface IRichSharing extends RichSharingCollections, RichSharingMethods, IBaseQuery<IRichSharingQuery> {
 
 }
 
@@ -1092,14 +1092,14 @@ export interface IRichSharing extends RichSharingCollections,RichSharingMethods,
 * IRichSharingCollection
 **********************************************/
 export interface IRichSharingCollection extends IBaseResults<RichSharing> {
-	done(resolve: (value?: Array<RichSharing | any>) => void);
+	done?: (resolve: (value?: Array<RichSharing>) => void) => void;
 }
 
 /*********************************************
 * IRichSharingQueryCollection
 **********************************************/
 export interface IRichSharingQueryCollection extends IBaseResults<RichSharingQuery> {
-	done(resolve: (value?: Array<RichSharingQuery | any>) => void);
+	done?: (resolve: (value?: Array<RichSharingQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1155,7 +1155,7 @@ export interface RichSharingMethods {
 /*********************************************
 * ISharePointHomeServiceManager
 **********************************************/
-export interface ISharePointHomeServiceManager extends SharePointHomeServiceManagerCollections,SharePointHomeServiceManagerMethods,IBaseQuery<ISharePointHomeServiceManagerQuery> {
+export interface ISharePointHomeServiceManager extends SharePointHomeServiceManagerCollections, SharePointHomeServiceManagerMethods, IBaseQuery<ISharePointHomeServiceManagerQuery> {
 
 }
 
@@ -1163,14 +1163,14 @@ export interface ISharePointHomeServiceManager extends SharePointHomeServiceMana
 * ISharePointHomeServiceManagerCollection
 **********************************************/
 export interface ISharePointHomeServiceManagerCollection extends IBaseResults<SharePointHomeServiceManager> {
-	done(resolve: (value?: Array<SharePointHomeServiceManager | any>) => void);
+	done?: (resolve: (value?: Array<SharePointHomeServiceManager>) => void) => void;
 }
 
 /*********************************************
 * ISharePointHomeServiceManagerQueryCollection
 **********************************************/
 export interface ISharePointHomeServiceManagerQueryCollection extends IBaseResults<SharePointHomeServiceManagerQuery> {
-	done(resolve: (value?: Array<SharePointHomeServiceManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<SharePointHomeServiceManagerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1225,7 +1225,7 @@ export interface SharePointHomeServiceManagerMethods {
 /*********************************************
 * ISitePageService
 **********************************************/
-export interface ISitePageService extends SitePageServiceCollections,SitePageServiceMethods,IBaseQuery<ISitePageServiceQuery> {
+export interface ISitePageService extends SitePageServiceCollections, SitePageServiceMethods, IBaseQuery<ISitePageServiceQuery> {
 
 }
 
@@ -1233,14 +1233,14 @@ export interface ISitePageService extends SitePageServiceCollections,SitePageSer
 * ISitePageServiceCollection
 **********************************************/
 export interface ISitePageServiceCollection extends IBaseResults<SitePageService> {
-	done(resolve: (value?: Array<SitePageService | any>) => void);
+	done?: (resolve: (value?: Array<SitePageService>) => void) => void;
 }
 
 /*********************************************
 * ISitePageServiceQueryCollection
 **********************************************/
 export interface ISitePageServiceQueryCollection extends IBaseResults<SitePageServiceQuery> {
-	done(resolve: (value?: Array<SitePageServiceQuery | any>) => void);
+	done?: (resolve: (value?: Array<SitePageServiceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1300,7 +1300,7 @@ export interface SitePageServiceMethods {
 /*********************************************
 * ISpotlightChannel
 **********************************************/
-export interface ISpotlightChannel extends SpotlightChannelCollections,SpotlightChannelMethods,IBaseQuery<ISpotlightChannelQuery> {
+export interface ISpotlightChannel extends SpotlightChannelCollections, SpotlightChannelMethods, IBaseQuery<ISpotlightChannelQuery> {
 
 }
 
@@ -1308,14 +1308,14 @@ export interface ISpotlightChannel extends SpotlightChannelCollections,Spotlight
 * ISpotlightChannelCollection
 **********************************************/
 export interface ISpotlightChannelCollection extends IBaseResults<SpotlightChannel>, SpotlightChannelCollectionMethods {
-	done(resolve: (value?: Array<SpotlightChannel | any>) => void);
+	done?: (resolve: (value?: Array<SpotlightChannel>) => void) => void;
 }
 
 /*********************************************
 * ISpotlightChannelQueryCollection
 **********************************************/
 export interface ISpotlightChannelQueryCollection extends IBaseResults<SpotlightChannelQuery>, SpotlightChannelCollectionMethods {
-	done(resolve: (value?: Array<SpotlightChannelQuery | any>) => void);
+	done?: (resolve: (value?: Array<SpotlightChannelQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1382,7 +1382,7 @@ export interface SpotlightChannelMethods {
 /*********************************************
 * IVideoChannel
 **********************************************/
-export interface IVideoChannel extends VideoChannelCollections,VideoChannelMethods,IBaseQuery<IVideoChannelQuery> {
+export interface IVideoChannel extends VideoChannelCollections, VideoChannelMethods, IBaseQuery<IVideoChannelQuery> {
 
 }
 
@@ -1390,14 +1390,14 @@ export interface IVideoChannel extends VideoChannelCollections,VideoChannelMetho
 * IVideoChannelCollection
 **********************************************/
 export interface IVideoChannelCollection extends IBaseResults<VideoChannel>, VideoChannelCollectionMethods {
-	done(resolve: (value?: Array<VideoChannel | any>) => void);
+	done?: (resolve: (value?: Array<VideoChannel>) => void) => void;
 }
 
 /*********************************************
 * IVideoChannelQueryCollection
 **********************************************/
 export interface IVideoChannelQueryCollection extends IBaseResults<VideoChannelQuery>, VideoChannelCollectionMethods {
-	done(resolve: (value?: Array<VideoChannelQuery | any>) => void);
+	done?: (resolve: (value?: Array<VideoChannelQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1482,7 +1482,7 @@ export interface VideoChannelMethods {
 /*********************************************
 * ISearch
 **********************************************/
-export interface ISearch extends SearchCollections,SearchMethods,IBaseQuery<ISearchQuery> {
+export interface ISearch extends SearchCollections, SearchMethods, IBaseQuery<ISearchQuery> {
 
 }
 
@@ -1490,14 +1490,14 @@ export interface ISearch extends SearchCollections,SearchMethods,IBaseQuery<ISea
 * ISearchCollection
 **********************************************/
 export interface ISearchCollection extends IBaseResults<Search> {
-	done(resolve: (value?: Array<Search | any>) => void);
+	done?: (resolve: (value?: Array<Search>) => void) => void;
 }
 
 /*********************************************
 * ISearchQueryCollection
 **********************************************/
 export interface ISearchQueryCollection extends IBaseResults<SearchQuery> {
-	done(resolve: (value?: Array<SearchQuery | any>) => void);
+	done?: (resolve: (value?: Array<SearchQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1557,7 +1557,7 @@ export interface SearchMethods {
 /*********************************************
 * ISpotlightVideo
 **********************************************/
-export interface ISpotlightVideo extends SpotlightVideoCollections,SpotlightVideoMethods,IBaseQuery<ISpotlightVideoQuery> {
+export interface ISpotlightVideo extends SpotlightVideoCollections, SpotlightVideoMethods, IBaseQuery<ISpotlightVideoQuery> {
 
 }
 
@@ -1565,14 +1565,14 @@ export interface ISpotlightVideo extends SpotlightVideoCollections,SpotlightVide
 * ISpotlightVideoCollection
 **********************************************/
 export interface ISpotlightVideoCollection extends IBaseResults<SpotlightVideo>, SpotlightVideoCollectionMethods {
-	done(resolve: (value?: Array<SpotlightVideo | any>) => void);
+	done?: (resolve: (value?: Array<SpotlightVideo>) => void) => void;
 }
 
 /*********************************************
 * ISpotlightVideoQueryCollection
 **********************************************/
 export interface ISpotlightVideoQueryCollection extends IBaseResults<SpotlightVideoQuery>, SpotlightVideoCollectionMethods {
-	done(resolve: (value?: Array<SpotlightVideoQuery | any>) => void);
+	done?: (resolve: (value?: Array<SpotlightVideoQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1662,7 +1662,7 @@ export interface SubtitleFileCollectionMethods {
 /*********************************************
 * IVideoPermissionGroup
 **********************************************/
-export interface IVideoPermissionGroup extends VideoPermissionGroupCollections,VideoPermissionGroupMethods,IBaseQuery<IVideoPermissionGroupQuery> {
+export interface IVideoPermissionGroup extends VideoPermissionGroupCollections, VideoPermissionGroupMethods, IBaseQuery<IVideoPermissionGroupQuery> {
 
 }
 
@@ -1670,14 +1670,14 @@ export interface IVideoPermissionGroup extends VideoPermissionGroupCollections,V
 * IVideoPermissionGroupCollection
 **********************************************/
 export interface IVideoPermissionGroupCollection extends IBaseResults<VideoPermissionGroup> {
-	done(resolve: (value?: Array<VideoPermissionGroup | any>) => void);
+	done?: (resolve: (value?: Array<VideoPermissionGroup>) => void) => void;
 }
 
 /*********************************************
 * IVideoPermissionGroupQueryCollection
 **********************************************/
 export interface IVideoPermissionGroupQueryCollection extends IBaseResults<VideoPermissionGroupQuery> {
-	done(resolve: (value?: Array<VideoPermissionGroupQuery | any>) => void);
+	done?: (resolve: (value?: Array<VideoPermissionGroupQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1773,7 +1773,7 @@ export interface VideoServiceDiscovererCollections {
 /*********************************************
 * IVideoServiceManager
 **********************************************/
-export interface IVideoServiceManager extends VideoServiceManagerCollections,VideoServiceManagerMethods,IBaseQuery<IVideoServiceManagerQuery> {
+export interface IVideoServiceManager extends VideoServiceManagerCollections, VideoServiceManagerMethods, IBaseQuery<IVideoServiceManagerQuery> {
 
 }
 
@@ -1781,14 +1781,14 @@ export interface IVideoServiceManager extends VideoServiceManagerCollections,Vid
 * IVideoServiceManagerCollection
 **********************************************/
 export interface IVideoServiceManagerCollection extends IBaseResults<VideoServiceManager> {
-	done(resolve: (value?: Array<VideoServiceManager | any>) => void);
+	done?: (resolve: (value?: Array<VideoServiceManager>) => void) => void;
 }
 
 /*********************************************
 * IVideoServiceManagerQueryCollection
 **********************************************/
 export interface IVideoServiceManagerQueryCollection extends IBaseResults<VideoServiceManagerQuery> {
-	done(resolve: (value?: Array<VideoServiceManagerQuery | any>) => void);
+	done?: (resolve: (value?: Array<VideoServiceManagerQuery>) => void) => void;
 }
 
 /*********************************************

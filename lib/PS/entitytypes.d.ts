@@ -34,7 +34,7 @@ export interface LookupTablesCollections {
 /*********************************************
 * IAssignment
 **********************************************/
-export interface IAssignment extends AssignmentCollections,AssignmentMethods,IBaseQuery<IAssignmentQuery> {
+export interface IAssignment extends AssignmentCollections, AssignmentMethods, IBaseQuery<IAssignmentQuery> {
 
 }
 
@@ -42,14 +42,14 @@ export interface IAssignment extends AssignmentCollections,AssignmentMethods,IBa
 * IAssignmentCollection
 **********************************************/
 export interface IAssignmentCollection extends IBaseResults<Assignment> {
-	done(resolve: (value?: Array<Assignment | any>) => void);
+	done?: (resolve: (value?: Array<Assignment>) => void) => void;
 }
 
 /*********************************************
 * IAssignmentQueryCollection
 **********************************************/
 export interface IAssignmentQueryCollection extends IBaseResults<AssignmentQuery> {
-	done(resolve: (value?: Array<AssignmentQuery | any>) => void);
+	done?: (resolve: (value?: Array<AssignmentQuery>) => void) => void;
 }
 
 /*********************************************
@@ -148,7 +148,7 @@ export interface AssignmentMethods {
 /*********************************************
 * ICustomField
 **********************************************/
-export interface ICustomField extends CustomFieldCollections,CustomFieldMethods,IBaseQuery<ICustomFieldQuery> {
+export interface ICustomField extends CustomFieldCollections, CustomFieldMethods, IBaseQuery<ICustomFieldQuery> {
 
 }
 
@@ -156,14 +156,14 @@ export interface ICustomField extends CustomFieldCollections,CustomFieldMethods,
 * ICustomFieldCollection
 **********************************************/
 export interface ICustomFieldCollection extends IBaseResults<CustomField>, CustomFieldCollectionMethods {
-	done(resolve: (value?: Array<CustomField | any>) => void);
+	done?: (resolve: (value?: Array<CustomField>) => void) => void;
 }
 
 /*********************************************
 * ICustomFieldQueryCollection
 **********************************************/
 export interface ICustomFieldQueryCollection extends IBaseResults<CustomFieldQuery>, CustomFieldCollectionMethods {
-	done(resolve: (value?: Array<CustomFieldQuery | any>) => void);
+	done?: (resolve: (value?: Array<CustomFieldQuery>) => void) => void;
 }
 
 /*********************************************
@@ -256,7 +256,7 @@ export interface CustomFieldMethods {
 /*********************************************
 * ILookupEntry
 **********************************************/
-export interface ILookupEntry extends LookupEntryCollections,LookupEntryMethods,IBaseQuery<ILookupEntryQuery> {
+export interface ILookupEntry extends LookupEntryCollections, LookupEntryMethods, IBaseQuery<ILookupEntryQuery> {
 
 }
 
@@ -264,14 +264,14 @@ export interface ILookupEntry extends LookupEntryCollections,LookupEntryMethods,
 * ILookupEntryCollection
 **********************************************/
 export interface ILookupEntryCollection extends IBaseResults<LookupEntry>, LookupEntryCollectionMethods {
-	done(resolve: (value?: Array<LookupEntry | any>) => void);
+	done?: (resolve: (value?: Array<LookupEntry>) => void) => void;
 }
 
 /*********************************************
 * ILookupEntryQueryCollection
 **********************************************/
 export interface ILookupEntryQueryCollection extends IBaseResults<LookupEntryQuery>, LookupEntryCollectionMethods {
-	done(resolve: (value?: Array<LookupEntryQuery | any>) => void);
+	done?: (resolve: (value?: Array<LookupEntryQuery>) => void) => void;
 }
 
 /*********************************************
@@ -341,7 +341,7 @@ export interface LookupEntryMethods {
 /*********************************************
 * ILookupTable
 **********************************************/
-export interface ILookupTable extends LookupTableCollections,LookupTableMethods,IBaseQuery<ILookupTableQuery> {
+export interface ILookupTable extends LookupTableCollections, LookupTableMethods, IBaseQuery<ILookupTableQuery> {
 
 }
 
@@ -349,14 +349,14 @@ export interface ILookupTable extends LookupTableCollections,LookupTableMethods,
 * ILookupTableCollection
 **********************************************/
 export interface ILookupTableCollection extends IBaseResults<LookupTable>, LookupTableCollectionMethods {
-	done(resolve: (value?: Array<LookupTable | any>) => void);
+	done?: (resolve: (value?: Array<LookupTable>) => void) => void;
 }
 
 /*********************************************
 * ILookupTableQueryCollection
 **********************************************/
 export interface ILookupTableQueryCollection extends IBaseResults<LookupTableQuery>, LookupTableCollectionMethods {
-	done(resolve: (value?: Array<LookupTableQuery | any>) => void);
+	done?: (resolve: (value?: Array<LookupTableQuery>) => void) => void;
 }
 
 /*********************************************
@@ -430,7 +430,7 @@ export interface LookupTableMethods {
 /*********************************************
 * ICalendarException
 **********************************************/
-export interface ICalendarException extends CalendarExceptionCollections,CalendarExceptionMethods,IBaseQuery<ICalendarExceptionQuery> {
+export interface ICalendarException extends CalendarExceptionCollections, CalendarExceptionMethods, IBaseQuery<ICalendarExceptionQuery> {
 
 }
 
@@ -438,14 +438,14 @@ export interface ICalendarException extends CalendarExceptionCollections,Calenda
 * ICalendarExceptionCollection
 **********************************************/
 export interface ICalendarExceptionCollection extends IBaseResults<CalendarException>, CalendarExceptionCollectionMethods {
-	done(resolve: (value?: Array<CalendarException | any>) => void);
+	done?: (resolve: (value?: Array<CalendarException>) => void) => void;
 }
 
 /*********************************************
 * ICalendarExceptionQueryCollection
 **********************************************/
 export interface ICalendarExceptionQueryCollection extends IBaseResults<CalendarExceptionQuery>, CalendarExceptionCollectionMethods {
-	done(resolve: (value?: Array<CalendarExceptionQuery | any>) => void);
+	done?: (resolve: (value?: Array<CalendarExceptionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -527,7 +527,7 @@ export interface CalendarExceptionMethods {
 /*********************************************
 * ICalendar
 **********************************************/
-export interface ICalendar extends CalendarCollections,CalendarMethods,IBaseQuery<ICalendarQuery> {
+export interface ICalendar extends CalendarCollections, CalendarMethods, IBaseQuery<ICalendarQuery> {
 
 }
 
@@ -535,14 +535,14 @@ export interface ICalendar extends CalendarCollections,CalendarMethods,IBaseQuer
 * ICalendarCollection
 **********************************************/
 export interface ICalendarCollection extends IBaseResults<Calendar>, CalendarCollectionMethods {
-	done(resolve: (value?: Array<Calendar | any>) => void);
+	done?: (resolve: (value?: Array<Calendar>) => void) => void;
 }
 
 /*********************************************
 * ICalendarQueryCollection
 **********************************************/
 export interface ICalendarQueryCollection extends IBaseResults<CalendarQuery>, CalendarCollectionMethods {
-	done(resolve: (value?: Array<CalendarQuery | any>) => void);
+	done?: (resolve: (value?: Array<CalendarQuery>) => void) => void;
 }
 
 /*********************************************
@@ -614,7 +614,7 @@ export interface CalendarMethods {
 /*********************************************
 * IBaseCalendarException
 **********************************************/
-export interface IBaseCalendarException extends BaseCalendarExceptionCollections,BaseCalendarExceptionMethods,IBaseQuery<IBaseCalendarExceptionQuery> {
+export interface IBaseCalendarException extends BaseCalendarExceptionCollections, BaseCalendarExceptionMethods, IBaseQuery<IBaseCalendarExceptionQuery> {
 
 }
 
@@ -622,14 +622,14 @@ export interface IBaseCalendarException extends BaseCalendarExceptionCollections
 * IBaseCalendarExceptionCollection
 **********************************************/
 export interface IBaseCalendarExceptionCollection extends IBaseResults<BaseCalendarException> {
-	done(resolve: (value?: Array<BaseCalendarException | any>) => void);
+	done?: (resolve: (value?: Array<BaseCalendarException>) => void) => void;
 }
 
 /*********************************************
 * IBaseCalendarExceptionQueryCollection
 **********************************************/
 export interface IBaseCalendarExceptionQueryCollection extends IBaseResults<BaseCalendarExceptionQuery> {
-	done(resolve: (value?: Array<BaseCalendarExceptionQuery | any>) => void);
+	done?: (resolve: (value?: Array<BaseCalendarExceptionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -684,7 +684,7 @@ export interface BaseCalendarExceptionMethods {
 /*********************************************
 * IDraftAssignment
 **********************************************/
-export interface IDraftAssignment extends DraftAssignmentCollections,DraftAssignmentMethods,IBaseQuery<IDraftAssignmentQuery> {
+export interface IDraftAssignment extends DraftAssignmentCollections, DraftAssignmentMethods, IBaseQuery<IDraftAssignmentQuery> {
 
 }
 
@@ -692,14 +692,14 @@ export interface IDraftAssignment extends DraftAssignmentCollections,DraftAssign
 * IDraftAssignmentCollection
 **********************************************/
 export interface IDraftAssignmentCollection extends IBaseResults<DraftAssignment>, DraftAssignmentCollectionMethods {
-	done(resolve: (value?: Array<DraftAssignment | any>) => void);
+	done?: (resolve: (value?: Array<DraftAssignment>) => void) => void;
 }
 
 /*********************************************
 * IDraftAssignmentQueryCollection
 **********************************************/
 export interface IDraftAssignmentQueryCollection extends IBaseResults<DraftAssignmentQuery>, DraftAssignmentCollectionMethods {
-	done(resolve: (value?: Array<DraftAssignmentQuery | any>) => void);
+	done?: (resolve: (value?: Array<DraftAssignmentQuery>) => void) => void;
 }
 
 /*********************************************
@@ -808,7 +808,7 @@ export interface DraftAssignmentMethods {
 /*********************************************
 * IProjectResource
 **********************************************/
-export interface IProjectResource extends ProjectResourceCollections,ProjectResourceMethods,IBaseQuery<IProjectResourceQuery> {
+export interface IProjectResource extends ProjectResourceCollections, ProjectResourceMethods, IBaseQuery<IProjectResourceQuery> {
 
 }
 
@@ -816,14 +816,14 @@ export interface IProjectResource extends ProjectResourceCollections,ProjectReso
 * IProjectResourceCollection
 **********************************************/
 export interface IProjectResourceCollection extends IBaseResults<ProjectResource> {
-	done(resolve: (value?: Array<ProjectResource | any>) => void);
+	done?: (resolve: (value?: Array<ProjectResource>) => void) => void;
 }
 
 /*********************************************
 * IProjectResourceQueryCollection
 **********************************************/
 export interface IProjectResourceQueryCollection extends IBaseResults<ProjectResourceQuery> {
-	done(resolve: (value?: Array<ProjectResourceQuery | any>) => void);
+	done?: (resolve: (value?: Array<ProjectResourceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -941,7 +941,7 @@ export interface ProjectResourceMethods {
 /*********************************************
 * IEnterpriseResource
 **********************************************/
-export interface IEnterpriseResource extends EnterpriseResourceCollections,EnterpriseResourceMethods,IBaseQuery<IEnterpriseResourceQuery> {
+export interface IEnterpriseResource extends EnterpriseResourceCollections, EnterpriseResourceMethods, IBaseQuery<IEnterpriseResourceQuery> {
 
 }
 
@@ -949,14 +949,14 @@ export interface IEnterpriseResource extends EnterpriseResourceCollections,Enter
 * IEnterpriseResourceCollection
 **********************************************/
 export interface IEnterpriseResourceCollection extends IBaseResults<EnterpriseResource>, EnterpriseResourceCollectionMethods {
-	done(resolve: (value?: Array<EnterpriseResource | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseResource>) => void) => void;
 }
 
 /*********************************************
 * IEnterpriseResourceQueryCollection
 **********************************************/
 export interface IEnterpriseResourceQueryCollection extends IBaseResults<EnterpriseResourceQuery>, EnterpriseResourceCollectionMethods {
-	done(resolve: (value?: Array<EnterpriseResourceQuery | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseResourceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1074,7 +1074,7 @@ export interface EnterpriseResourceMethods {
 /*********************************************
 * IStatusAssignment
 **********************************************/
-export interface IStatusAssignment extends StatusAssignmentCollections,StatusAssignmentMethods,IBaseQuery<IStatusAssignmentQuery> {
+export interface IStatusAssignment extends StatusAssignmentCollections, StatusAssignmentMethods, IBaseQuery<IStatusAssignmentQuery> {
 
 }
 
@@ -1082,14 +1082,14 @@ export interface IStatusAssignment extends StatusAssignmentCollections,StatusAss
 * IStatusAssignmentCollection
 **********************************************/
 export interface IStatusAssignmentCollection extends IBaseResults<StatusAssignment>, StatusAssignmentCollectionMethods {
-	done(resolve: (value?: Array<StatusAssignment | any>) => void);
+	done?: (resolve: (value?: Array<StatusAssignment>) => void) => void;
 }
 
 /*********************************************
 * IStatusAssignmentQueryCollection
 **********************************************/
 export interface IStatusAssignmentQueryCollection extends IBaseResults<StatusAssignmentQuery>, StatusAssignmentCollectionMethods {
-	done(resolve: (value?: Array<StatusAssignmentQuery | any>) => void);
+	done?: (resolve: (value?: Array<StatusAssignmentQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1229,7 +1229,7 @@ export interface StatusAssignmentHistoryLineCollectionMethods {
 /*********************************************
 * IProject
 **********************************************/
-export interface IProject extends ProjectCollections,ProjectMethods,IBaseQuery<IProjectQuery> {
+export interface IProject extends ProjectCollections, ProjectMethods, IBaseQuery<IProjectQuery> {
 
 }
 
@@ -1237,14 +1237,14 @@ export interface IProject extends ProjectCollections,ProjectMethods,IBaseQuery<I
 * IProjectCollection
 **********************************************/
 export interface IProjectCollection extends IBaseResults<Project> {
-	done(resolve: (value?: Array<Project | any>) => void);
+	done?: (resolve: (value?: Array<Project>) => void) => void;
 }
 
 /*********************************************
 * IProjectQueryCollection
 **********************************************/
 export interface IProjectQueryCollection extends IBaseResults<ProjectQuery> {
-	done(resolve: (value?: Array<ProjectQuery | any>) => void);
+	done?: (resolve: (value?: Array<ProjectQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1356,7 +1356,7 @@ export interface ProjectMethods {
 /*********************************************
 * IEngagement
 **********************************************/
-export interface IEngagement extends EngagementCollections,EngagementMethods,IBaseQuery<IEngagementQuery> {
+export interface IEngagement extends EngagementCollections, EngagementMethods, IBaseQuery<IEngagementQuery> {
 
 }
 
@@ -1364,14 +1364,14 @@ export interface IEngagement extends EngagementCollections,EngagementMethods,IBa
 * IEngagementCollection
 **********************************************/
 export interface IEngagementCollection extends IBaseResults<Engagement> {
-	done(resolve: (value?: Array<Engagement | any>) => void);
+	done?: (resolve: (value?: Array<Engagement>) => void) => void;
 }
 
 /*********************************************
 * IEngagementQueryCollection
 **********************************************/
 export interface IEngagementQueryCollection extends IBaseResults<EngagementQuery> {
-	done(resolve: (value?: Array<EngagementQuery | any>) => void);
+	done?: (resolve: (value?: Array<EngagementQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1473,7 +1473,7 @@ export interface EngagementCommentCollectionMethods {
 /*********************************************
 * IProjectEngagement
 **********************************************/
-export interface IProjectEngagement extends ProjectEngagementCollections,ProjectEngagementMethods,IBaseQuery<IProjectEngagementQuery> {
+export interface IProjectEngagement extends ProjectEngagementCollections, ProjectEngagementMethods, IBaseQuery<IProjectEngagementQuery> {
 
 }
 
@@ -1481,14 +1481,14 @@ export interface IProjectEngagement extends ProjectEngagementCollections,Project
 * IProjectEngagementCollection
 **********************************************/
 export interface IProjectEngagementCollection extends IBaseResults<ProjectEngagement>, ProjectEngagementCollectionMethods {
-	done(resolve: (value?: Array<ProjectEngagement | any>) => void);
+	done?: (resolve: (value?: Array<ProjectEngagement>) => void) => void;
 }
 
 /*********************************************
 * IProjectEngagementQueryCollection
 **********************************************/
 export interface IProjectEngagementQueryCollection extends IBaseResults<ProjectEngagementQuery>, ProjectEngagementCollectionMethods {
-	done(resolve: (value?: Array<ProjectEngagementQuery | any>) => void);
+	done?: (resolve: (value?: Array<ProjectEngagementQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1566,7 +1566,7 @@ export interface ProjectEngagementMethods {
 /*********************************************
 * IEnterpriseProjectType
 **********************************************/
-export interface IEnterpriseProjectType extends EnterpriseProjectTypeCollections,EnterpriseProjectTypeMethods,IBaseQuery<IEnterpriseProjectTypeQuery> {
+export interface IEnterpriseProjectType extends EnterpriseProjectTypeCollections, EnterpriseProjectTypeMethods, IBaseQuery<IEnterpriseProjectTypeQuery> {
 
 }
 
@@ -1574,14 +1574,14 @@ export interface IEnterpriseProjectType extends EnterpriseProjectTypeCollections
 * IEnterpriseProjectTypeCollection
 **********************************************/
 export interface IEnterpriseProjectTypeCollection extends IBaseResults<EnterpriseProjectType>, EnterpriseProjectTypeCollectionMethods {
-	done(resolve: (value?: Array<EnterpriseProjectType | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseProjectType>) => void) => void;
 }
 
 /*********************************************
 * IEnterpriseProjectTypeQueryCollection
 **********************************************/
 export interface IEnterpriseProjectTypeQueryCollection extends IBaseResults<EnterpriseProjectTypeQuery>, EnterpriseProjectTypeCollectionMethods {
-	done(resolve: (value?: Array<EnterpriseProjectTypeQuery | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseProjectTypeQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1712,7 +1712,7 @@ export interface UserPermissionCollections {
 /*********************************************
 * IPhase
 **********************************************/
-export interface IPhase extends PhaseCollections,PhaseMethods,IBaseQuery<IPhaseQuery> {
+export interface IPhase extends PhaseCollections, PhaseMethods, IBaseQuery<IPhaseQuery> {
 
 }
 
@@ -1720,14 +1720,14 @@ export interface IPhase extends PhaseCollections,PhaseMethods,IBaseQuery<IPhaseQ
 * IPhaseCollection
 **********************************************/
 export interface IPhaseCollection extends IBaseResults<Phase>, PhaseCollectionMethods {
-	done(resolve: (value?: Array<Phase | any>) => void);
+	done?: (resolve: (value?: Array<Phase>) => void) => void;
 }
 
 /*********************************************
 * IPhaseQueryCollection
 **********************************************/
 export interface IPhaseQueryCollection extends IBaseResults<PhaseQuery>, PhaseCollectionMethods {
-	done(resolve: (value?: Array<PhaseQuery | any>) => void);
+	done?: (resolve: (value?: Array<PhaseQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1795,7 +1795,7 @@ export interface PhaseMethods {
 /*********************************************
 * IStage
 **********************************************/
-export interface IStage extends StageCollections,StageMethods,IBaseQuery<IStageQuery> {
+export interface IStage extends StageCollections, StageMethods, IBaseQuery<IStageQuery> {
 
 }
 
@@ -1803,14 +1803,14 @@ export interface IStage extends StageCollections,StageMethods,IBaseQuery<IStageQ
 * IStageCollection
 **********************************************/
 export interface IStageCollection extends IBaseResults<Stage>, StageCollectionMethods {
-	done(resolve: (value?: Array<Stage | any>) => void);
+	done?: (resolve: (value?: Array<Stage>) => void) => void;
 }
 
 /*********************************************
 * IStageQueryCollection
 **********************************************/
 export interface IStageQueryCollection extends IBaseResults<StageQuery>, StageCollectionMethods {
-	done(resolve: (value?: Array<StageQuery | any>) => void);
+	done?: (resolve: (value?: Array<StageQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1887,7 +1887,7 @@ export interface StageMethods {
 /*********************************************
 * IStageCustomField
 **********************************************/
-export interface IStageCustomField extends StageCustomFieldCollections,StageCustomFieldMethods,IBaseQuery<IStageCustomFieldQuery> {
+export interface IStageCustomField extends StageCustomFieldCollections, StageCustomFieldMethods, IBaseQuery<IStageCustomFieldQuery> {
 
 }
 
@@ -1895,14 +1895,14 @@ export interface IStageCustomField extends StageCustomFieldCollections,StageCust
 * IStageCustomFieldCollection
 **********************************************/
 export interface IStageCustomFieldCollection extends IBaseResults<StageCustomField>, StageCustomFieldCollectionMethods {
-	done(resolve: (value?: Array<StageCustomField | any>) => void);
+	done?: (resolve: (value?: Array<StageCustomField>) => void) => void;
 }
 
 /*********************************************
 * IStageCustomFieldQueryCollection
 **********************************************/
 export interface IStageCustomFieldQueryCollection extends IBaseResults<StageCustomFieldQuery>, StageCustomFieldCollectionMethods {
-	done(resolve: (value?: Array<StageCustomFieldQuery | any>) => void);
+	done?: (resolve: (value?: Array<StageCustomFieldQuery>) => void) => void;
 }
 
 /*********************************************
@@ -1969,7 +1969,7 @@ export interface StageCustomFieldMethods {
 /*********************************************
 * IStageDetailPage
 **********************************************/
-export interface IStageDetailPage extends StageDetailPageCollections,StageDetailPageMethods,IBaseQuery<IStageDetailPageQuery> {
+export interface IStageDetailPage extends StageDetailPageCollections, StageDetailPageMethods, IBaseQuery<IStageDetailPageQuery> {
 
 }
 
@@ -1977,14 +1977,14 @@ export interface IStageDetailPage extends StageDetailPageCollections,StageDetail
 * IStageDetailPageCollection
 **********************************************/
 export interface IStageDetailPageCollection extends IBaseResults<StageDetailPage>, StageDetailPageCollectionMethods {
-	done(resolve: (value?: Array<StageDetailPage | any>) => void);
+	done?: (resolve: (value?: Array<StageDetailPage>) => void) => void;
 }
 
 /*********************************************
 * IStageDetailPageQueryCollection
 **********************************************/
 export interface IStageDetailPageQueryCollection extends IBaseResults<StageDetailPageQuery>, StageDetailPageCollectionMethods {
-	done(resolve: (value?: Array<StageDetailPageQuery | any>) => void);
+	done?: (resolve: (value?: Array<StageDetailPageQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2053,7 +2053,7 @@ export interface StageDetailPageMethods {
 /*********************************************
 * ITask
 **********************************************/
-export interface ITask extends TaskCollections,TaskMethods,IBaseQuery<ITaskQuery> {
+export interface ITask extends TaskCollections, TaskMethods, IBaseQuery<ITaskQuery> {
 
 }
 
@@ -2061,14 +2061,14 @@ export interface ITask extends TaskCollections,TaskMethods,IBaseQuery<ITaskQuery
 * ITaskCollection
 **********************************************/
 export interface ITaskCollection extends IBaseResults<Task> {
-	done(resolve: (value?: Array<Task | any>) => void);
+	done?: (resolve: (value?: Array<Task>) => void) => void;
 }
 
 /*********************************************
 * ITaskQueryCollection
 **********************************************/
 export interface ITaskQueryCollection extends IBaseResults<TaskQuery> {
-	done(resolve: (value?: Array<TaskQuery | any>) => void);
+	done?: (resolve: (value?: Array<TaskQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2229,7 +2229,7 @@ export interface TaskMethods {
 /*********************************************
 * IPublishedProject
 **********************************************/
-export interface IPublishedProject extends PublishedProjectCollections,PublishedProjectMethods,IBaseQuery<IPublishedProjectQuery> {
+export interface IPublishedProject extends PublishedProjectCollections, PublishedProjectMethods, IBaseQuery<IPublishedProjectQuery> {
 
 }
 
@@ -2237,14 +2237,14 @@ export interface IPublishedProject extends PublishedProjectCollections,Published
 * IPublishedProjectCollection
 **********************************************/
 export interface IPublishedProjectCollection extends IBaseResults<PublishedProject>, PublishedProjectCollectionMethods {
-	done(resolve: (value?: Array<PublishedProject | any>) => void);
+	done?: (resolve: (value?: Array<PublishedProject>) => void) => void;
 }
 
 /*********************************************
 * IPublishedProjectQueryCollection
 **********************************************/
 export interface IPublishedProjectQueryCollection extends IBaseResults<PublishedProjectQuery>, PublishedProjectCollectionMethods {
-	done(resolve: (value?: Array<PublishedProjectQuery | any>) => void);
+	done?: (resolve: (value?: Array<PublishedProjectQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2443,7 +2443,7 @@ export interface PublishedAssignmentCollectionMethods {
 /*********************************************
 * IPublishedProjectResource
 **********************************************/
-export interface IPublishedProjectResource extends PublishedProjectResourceCollections,PublishedProjectResourceMethods,IBaseQuery<IPublishedProjectResourceQuery> {
+export interface IPublishedProjectResource extends PublishedProjectResourceCollections, PublishedProjectResourceMethods, IBaseQuery<IPublishedProjectResourceQuery> {
 
 }
 
@@ -2451,14 +2451,14 @@ export interface IPublishedProjectResource extends PublishedProjectResourceColle
 * IPublishedProjectResourceCollection
 **********************************************/
 export interface IPublishedProjectResourceCollection extends IBaseResults<PublishedProjectResource>, PublishedProjectResourceCollectionMethods {
-	done(resolve: (value?: Array<PublishedProjectResource | any>) => void);
+	done?: (resolve: (value?: Array<PublishedProjectResource>) => void) => void;
 }
 
 /*********************************************
 * IPublishedProjectResourceQueryCollection
 **********************************************/
 export interface IPublishedProjectResourceQueryCollection extends IBaseResults<PublishedProjectResourceQuery>, PublishedProjectResourceCollectionMethods {
-	done(resolve: (value?: Array<PublishedProjectResourceQuery | any>) => void);
+	done?: (resolve: (value?: Array<PublishedProjectResourceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2539,7 +2539,7 @@ export interface PublishedProjectResourceMethods {
 /*********************************************
 * IPublishedTask
 **********************************************/
-export interface IPublishedTask extends PublishedTaskCollections,PublishedTaskMethods,IBaseQuery<IPublishedTaskQuery> {
+export interface IPublishedTask extends PublishedTaskCollections, PublishedTaskMethods, IBaseQuery<IPublishedTaskQuery> {
 
 }
 
@@ -2547,14 +2547,14 @@ export interface IPublishedTask extends PublishedTaskCollections,PublishedTaskMe
 * IPublishedTaskCollection
 **********************************************/
 export interface IPublishedTaskCollection extends IBaseResults<PublishedTask>, PublishedTaskCollectionMethods {
-	done(resolve: (value?: Array<PublishedTask | any>) => void);
+	done?: (resolve: (value?: Array<PublishedTask>) => void) => void;
 }
 
 /*********************************************
 * IPublishedTaskQueryCollection
 **********************************************/
 export interface IPublishedTaskQueryCollection extends IBaseResults<PublishedTaskQuery>, PublishedTaskCollectionMethods {
-	done(resolve: (value?: Array<PublishedTaskQuery | any>) => void);
+	done?: (resolve: (value?: Array<PublishedTaskQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2677,7 +2677,7 @@ export interface PublishedTaskMethods {
 /*********************************************
 * IEntityLink
 **********************************************/
-export interface IEntityLink extends EntityLinkCollections,EntityLinkMethods,IBaseQuery<IEntityLinkQuery> {
+export interface IEntityLink extends EntityLinkCollections, EntityLinkMethods, IBaseQuery<IEntityLinkQuery> {
 
 }
 
@@ -2685,14 +2685,14 @@ export interface IEntityLink extends EntityLinkCollections,EntityLinkMethods,IBa
 * IEntityLinkCollection
 **********************************************/
 export interface IEntityLinkCollection extends IBaseResults<EntityLink>, EntityLinkCollectionMethods {
-	done(resolve: (value?: Array<EntityLink | any>) => void);
+	done?: (resolve: (value?: Array<EntityLink>) => void) => void;
 }
 
 /*********************************************
 * IEntityLinkQueryCollection
 **********************************************/
 export interface IEntityLinkQueryCollection extends IBaseResults<EntityLinkQuery>, EntityLinkCollectionMethods {
-	done(resolve: (value?: Array<EntityLinkQuery | any>) => void);
+	done?: (resolve: (value?: Array<EntityLinkQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2804,7 +2804,7 @@ export interface PublishedTaskLinkCollectionMethods {
 /*********************************************
 * ITaskPlanLink
 **********************************************/
-export interface ITaskPlanLink extends TaskPlanLinkCollections,TaskPlanLinkMethods,IBaseQuery<ITaskPlanLinkQuery> {
+export interface ITaskPlanLink extends TaskPlanLinkCollections, TaskPlanLinkMethods, IBaseQuery<ITaskPlanLinkQuery> {
 
 }
 
@@ -2812,14 +2812,14 @@ export interface ITaskPlanLink extends TaskPlanLinkCollections,TaskPlanLinkMetho
 * ITaskPlanLinkCollection
 **********************************************/
 export interface ITaskPlanLinkCollection extends IBaseResults<TaskPlanLink> {
-	done(resolve: (value?: Array<TaskPlanLink | any>) => void);
+	done?: (resolve: (value?: Array<TaskPlanLink>) => void) => void;
 }
 
 /*********************************************
 * ITaskPlanLinkQueryCollection
 **********************************************/
 export interface ITaskPlanLinkQueryCollection extends IBaseResults<TaskPlanLinkQuery> {
-	done(resolve: (value?: Array<TaskPlanLinkQuery | any>) => void);
+	done?: (resolve: (value?: Array<TaskPlanLinkQuery>) => void) => void;
 }
 
 /*********************************************
@@ -2879,7 +2879,7 @@ export interface TaskPlanLinkMethods {
 /*********************************************
 * IDraftProject
 **********************************************/
-export interface IDraftProject extends DraftProjectCollections,DraftProjectMethods,IBaseQuery<IDraftProjectQuery> {
+export interface IDraftProject extends DraftProjectCollections, DraftProjectMethods, IBaseQuery<IDraftProjectQuery> {
 
 }
 
@@ -2887,14 +2887,14 @@ export interface IDraftProject extends DraftProjectCollections,DraftProjectMetho
 * IDraftProjectCollection
 **********************************************/
 export interface IDraftProjectCollection extends IBaseResults<DraftProject> {
-	done(resolve: (value?: Array<DraftProject | any>) => void);
+	done?: (resolve: (value?: Array<DraftProject>) => void) => void;
 }
 
 /*********************************************
 * IDraftProjectQueryCollection
 **********************************************/
 export interface IDraftProjectQueryCollection extends IBaseResults<DraftProjectQuery> {
-	done(resolve: (value?: Array<DraftProjectQuery | any>) => void);
+	done?: (resolve: (value?: Array<DraftProjectQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3006,7 +3006,7 @@ export interface DraftProjectMethods {
 /*********************************************
 * IDraftProjectResource
 **********************************************/
-export interface IDraftProjectResource extends DraftProjectResourceCollections,DraftProjectResourceMethods,IBaseQuery<IDraftProjectResourceQuery> {
+export interface IDraftProjectResource extends DraftProjectResourceCollections, DraftProjectResourceMethods, IBaseQuery<IDraftProjectResourceQuery> {
 
 }
 
@@ -3014,14 +3014,14 @@ export interface IDraftProjectResource extends DraftProjectResourceCollections,D
 * IDraftProjectResourceCollection
 **********************************************/
 export interface IDraftProjectResourceCollection extends IBaseResults<DraftProjectResource>, DraftProjectResourceCollectionMethods {
-	done(resolve: (value?: Array<DraftProjectResource | any>) => void);
+	done?: (resolve: (value?: Array<DraftProjectResource>) => void) => void;
 }
 
 /*********************************************
 * IDraftProjectResourceQueryCollection
 **********************************************/
 export interface IDraftProjectResourceQueryCollection extends IBaseResults<DraftProjectResourceQuery>, DraftProjectResourceCollectionMethods {
-	done(resolve: (value?: Array<DraftProjectResourceQuery | any>) => void);
+	done?: (resolve: (value?: Array<DraftProjectResourceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3104,7 +3104,7 @@ export interface DraftProjectResourceMethods {
 /*********************************************
 * IDraftTaskLink
 **********************************************/
-export interface IDraftTaskLink extends DraftTaskLinkCollections,DraftTaskLinkMethods,IBaseQuery<IDraftTaskLinkQuery> {
+export interface IDraftTaskLink extends DraftTaskLinkCollections, DraftTaskLinkMethods, IBaseQuery<IDraftTaskLinkQuery> {
 
 }
 
@@ -3112,14 +3112,14 @@ export interface IDraftTaskLink extends DraftTaskLinkCollections,DraftTaskLinkMe
 * IDraftTaskLinkCollection
 **********************************************/
 export interface IDraftTaskLinkCollection extends IBaseResults<DraftTaskLink>, DraftTaskLinkCollectionMethods {
-	done(resolve: (value?: Array<DraftTaskLink | any>) => void);
+	done?: (resolve: (value?: Array<DraftTaskLink>) => void) => void;
 }
 
 /*********************************************
 * IDraftTaskLinkQueryCollection
 **********************************************/
 export interface IDraftTaskLinkQueryCollection extends IBaseResults<DraftTaskLinkQuery>, DraftTaskLinkCollectionMethods {
-	done(resolve: (value?: Array<DraftTaskLinkQuery | any>) => void);
+	done?: (resolve: (value?: Array<DraftTaskLinkQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3187,7 +3187,7 @@ export interface DraftTaskLinkMethods {
 /*********************************************
 * IDraftTask
 **********************************************/
-export interface IDraftTask extends DraftTaskCollections,DraftTaskMethods,IBaseQuery<IDraftTaskQuery> {
+export interface IDraftTask extends DraftTaskCollections, DraftTaskMethods, IBaseQuery<IDraftTaskQuery> {
 
 }
 
@@ -3195,14 +3195,14 @@ export interface IDraftTask extends DraftTaskCollections,DraftTaskMethods,IBaseQ
 * IDraftTaskCollection
 **********************************************/
 export interface IDraftTaskCollection extends IBaseResults<DraftTask>, DraftTaskCollectionMethods {
-	done(resolve: (value?: Array<DraftTask | any>) => void);
+	done?: (resolve: (value?: Array<DraftTask>) => void) => void;
 }
 
 /*********************************************
 * IDraftTaskQueryCollection
 **********************************************/
 export interface IDraftTaskQueryCollection extends IBaseResults<DraftTaskQuery>, DraftTaskCollectionMethods {
-	done(resolve: (value?: Array<DraftTaskQuery | any>) => void);
+	done?: (resolve: (value?: Array<DraftTaskQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3322,7 +3322,7 @@ export interface DraftTaskMethods {
 /*********************************************
 * IProjectWorkflowInstance
 **********************************************/
-export interface IProjectWorkflowInstance extends ProjectWorkflowInstanceCollections,ProjectWorkflowInstanceMethods,IBaseQuery<IProjectWorkflowInstanceQuery> {
+export interface IProjectWorkflowInstance extends ProjectWorkflowInstanceCollections, ProjectWorkflowInstanceMethods, IBaseQuery<IProjectWorkflowInstanceQuery> {
 
 }
 
@@ -3330,14 +3330,14 @@ export interface IProjectWorkflowInstance extends ProjectWorkflowInstanceCollect
 * IProjectWorkflowInstanceCollection
 **********************************************/
 export interface IProjectWorkflowInstanceCollection extends IBaseResults<ProjectWorkflowInstance>, ProjectWorkflowInstanceCollectionMethods {
-	done(resolve: (value?: Array<ProjectWorkflowInstance | any>) => void);
+	done?: (resolve: (value?: Array<ProjectWorkflowInstance>) => void) => void;
 }
 
 /*********************************************
 * IProjectWorkflowInstanceQueryCollection
 **********************************************/
 export interface IProjectWorkflowInstanceQueryCollection extends IBaseResults<ProjectWorkflowInstanceQuery>, ProjectWorkflowInstanceCollectionMethods {
-	done(resolve: (value?: Array<ProjectWorkflowInstanceQuery | any>) => void);
+	done?: (resolve: (value?: Array<ProjectWorkflowInstanceQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3443,7 +3443,7 @@ export interface ProjectSummaryTaskCollections {
 /*********************************************
 * IQueueJob
 **********************************************/
-export interface IQueueJob extends QueueJobCollections,QueueJobMethods,IBaseQuery<IQueueJobQuery> {
+export interface IQueueJob extends QueueJobCollections, QueueJobMethods, IBaseQuery<IQueueJobQuery> {
 
 }
 
@@ -3451,14 +3451,14 @@ export interface IQueueJob extends QueueJobCollections,QueueJobMethods,IBaseQuer
 * IQueueJobCollection
 **********************************************/
 export interface IQueueJobCollection extends IBaseResults<QueueJob>, QueueJobCollectionMethods {
-	done(resolve: (value?: Array<QueueJob | any>) => void);
+	done?: (resolve: (value?: Array<QueueJob>) => void) => void;
 }
 
 /*********************************************
 * IQueueJobQueryCollection
 **********************************************/
 export interface IQueueJobQueryCollection extends IBaseResults<QueueJobQuery>, QueueJobCollectionMethods {
-	done(resolve: (value?: Array<QueueJobQuery | any>) => void);
+	done?: (resolve: (value?: Array<QueueJobQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3528,7 +3528,7 @@ export interface QueueJobMethods {
 /*********************************************
 * IStatusTask
 **********************************************/
-export interface IStatusTask extends StatusTaskCollections,StatusTaskMethods,IBaseQuery<IStatusTaskQuery> {
+export interface IStatusTask extends StatusTaskCollections, StatusTaskMethods, IBaseQuery<IStatusTaskQuery> {
 
 }
 
@@ -3536,14 +3536,14 @@ export interface IStatusTask extends StatusTaskCollections,StatusTaskMethods,IBa
 * IStatusTaskCollection
 **********************************************/
 export interface IStatusTaskCollection extends IBaseResults<StatusTask> {
-	done(resolve: (value?: Array<StatusTask | any>) => void);
+	done?: (resolve: (value?: Array<StatusTask>) => void) => void;
 }
 
 /*********************************************
 * IStatusTaskQueryCollection
 **********************************************/
 export interface IStatusTaskQueryCollection extends IBaseResults<StatusTaskQuery> {
-	done(resolve: (value?: Array<StatusTaskQuery | any>) => void);
+	done?: (resolve: (value?: Array<StatusTaskQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3633,7 +3633,7 @@ export interface StatusTaskMethods {
 /*********************************************
 * IEnterpriseResourceCostRateTable
 **********************************************/
-export interface IEnterpriseResourceCostRateTable extends EnterpriseResourceCostRateTableCollections,EnterpriseResourceCostRateTableMethods,IBaseQuery<IEnterpriseResourceCostRateTableQuery> {
+export interface IEnterpriseResourceCostRateTable extends EnterpriseResourceCostRateTableCollections, EnterpriseResourceCostRateTableMethods, IBaseQuery<IEnterpriseResourceCostRateTableQuery> {
 
 }
 
@@ -3641,14 +3641,14 @@ export interface IEnterpriseResourceCostRateTable extends EnterpriseResourceCost
 * IEnterpriseResourceCostRateTableCollection
 **********************************************/
 export interface IEnterpriseResourceCostRateTableCollection extends IBaseResults<EnterpriseResourceCostRateTable> {
-	done(resolve: (value?: Array<EnterpriseResourceCostRateTable | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseResourceCostRateTable>) => void) => void;
 }
 
 /*********************************************
 * IEnterpriseResourceCostRateTableQueryCollection
 **********************************************/
 export interface IEnterpriseResourceCostRateTableQueryCollection extends IBaseResults<EnterpriseResourceCostRateTableQuery> {
-	done(resolve: (value?: Array<EnterpriseResourceCostRateTableQuery | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseResourceCostRateTableQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3704,7 +3704,7 @@ export interface EnterpriseResourceCostRateTableMethods {
 /*********************************************
 * IEnterpriseResourceCostRate
 **********************************************/
-export interface IEnterpriseResourceCostRate extends EnterpriseResourceCostRateCollections,EnterpriseResourceCostRateMethods,IBaseQuery<IEnterpriseResourceCostRateQuery> {
+export interface IEnterpriseResourceCostRate extends EnterpriseResourceCostRateCollections, EnterpriseResourceCostRateMethods, IBaseQuery<IEnterpriseResourceCostRateQuery> {
 
 }
 
@@ -3712,14 +3712,14 @@ export interface IEnterpriseResourceCostRate extends EnterpriseResourceCostRateC
 * IEnterpriseResourceCostRateCollection
 **********************************************/
 export interface IEnterpriseResourceCostRateCollection extends IBaseResults<EnterpriseResourceCostRate>, EnterpriseResourceCostRateCollectionMethods {
-	done(resolve: (value?: Array<EnterpriseResourceCostRate | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseResourceCostRate>) => void) => void;
 }
 
 /*********************************************
 * IEnterpriseResourceCostRateQueryCollection
 **********************************************/
 export interface IEnterpriseResourceCostRateQueryCollection extends IBaseResults<EnterpriseResourceCostRateQuery>, EnterpriseResourceCostRateCollectionMethods {
-	done(resolve: (value?: Array<EnterpriseResourceCostRateQuery | any>) => void);
+	done?: (resolve: (value?: Array<EnterpriseResourceCostRateQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3787,7 +3787,7 @@ export interface EnterpriseResourceCostRateMethods {
 /*********************************************
 * IResourceEngagement
 **********************************************/
-export interface IResourceEngagement extends ResourceEngagementCollections,ResourceEngagementMethods,IBaseQuery<IResourceEngagementQuery> {
+export interface IResourceEngagement extends ResourceEngagementCollections, ResourceEngagementMethods, IBaseQuery<IResourceEngagementQuery> {
 
 }
 
@@ -3795,14 +3795,14 @@ export interface IResourceEngagement extends ResourceEngagementCollections,Resou
 * IResourceEngagementCollection
 **********************************************/
 export interface IResourceEngagementCollection extends IBaseResults<ResourceEngagement>, ResourceEngagementCollectionMethods {
-	done(resolve: (value?: Array<ResourceEngagement | any>) => void);
+	done?: (resolve: (value?: Array<ResourceEngagement>) => void) => void;
 }
 
 /*********************************************
 * IResourceEngagementQueryCollection
 **********************************************/
 export interface IResourceEngagementQueryCollection extends IBaseResults<ResourceEngagementQuery>, ResourceEngagementCollectionMethods {
-	done(resolve: (value?: Array<ResourceEngagementQuery | any>) => void);
+	done?: (resolve: (value?: Array<ResourceEngagementQuery>) => void) => void;
 }
 
 /*********************************************
@@ -3961,7 +3961,7 @@ export interface EventCollectionMethods {
 /*********************************************
 * IEventHandler
 **********************************************/
-export interface IEventHandler extends EventHandlerCollections,EventHandlerMethods,IBaseQuery<IEventHandlerQuery> {
+export interface IEventHandler extends EventHandlerCollections, EventHandlerMethods, IBaseQuery<IEventHandlerQuery> {
 
 }
 
@@ -3969,14 +3969,14 @@ export interface IEventHandler extends EventHandlerCollections,EventHandlerMetho
 * IEventHandlerCollection
 **********************************************/
 export interface IEventHandlerCollection extends IBaseResults<EventHandler>, EventHandlerCollectionMethods {
-	done(resolve: (value?: Array<EventHandler | any>) => void);
+	done?: (resolve: (value?: Array<EventHandler>) => void) => void;
 }
 
 /*********************************************
 * IEventHandlerQueryCollection
 **********************************************/
 export interface IEventHandlerQueryCollection extends IBaseResults<EventHandlerQuery>, EventHandlerCollectionMethods {
-	done(resolve: (value?: Array<EventHandlerQuery | any>) => void);
+	done?: (resolve: (value?: Array<EventHandlerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4048,7 +4048,7 @@ export interface EventHandlerMethods {
 /*********************************************
 * ILookupCost
 **********************************************/
-export interface ILookupCost extends LookupCostCollections,LookupCostMethods,IBaseQuery<ILookupCostQuery> {
+export interface ILookupCost extends LookupCostCollections, LookupCostMethods, IBaseQuery<ILookupCostQuery> {
 
 }
 
@@ -4056,14 +4056,14 @@ export interface ILookupCost extends LookupCostCollections,LookupCostMethods,IBa
 * ILookupCostCollection
 **********************************************/
 export interface ILookupCostCollection extends IBaseResults<LookupCost> {
-	done(resolve: (value?: Array<LookupCost | any>) => void);
+	done?: (resolve: (value?: Array<LookupCost>) => void) => void;
 }
 
 /*********************************************
 * ILookupCostQueryCollection
 **********************************************/
 export interface ILookupCostQueryCollection extends IBaseResults<LookupCostQuery> {
-	done(resolve: (value?: Array<LookupCostQuery | any>) => void);
+	done?: (resolve: (value?: Array<LookupCostQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4118,7 +4118,7 @@ export interface LookupCostMethods {
 /*********************************************
 * ILookupDate
 **********************************************/
-export interface ILookupDate extends LookupDateCollections,LookupDateMethods,IBaseQuery<ILookupDateQuery> {
+export interface ILookupDate extends LookupDateCollections, LookupDateMethods, IBaseQuery<ILookupDateQuery> {
 
 }
 
@@ -4126,14 +4126,14 @@ export interface ILookupDate extends LookupDateCollections,LookupDateMethods,IBa
 * ILookupDateCollection
 **********************************************/
 export interface ILookupDateCollection extends IBaseResults<LookupDate> {
-	done(resolve: (value?: Array<LookupDate | any>) => void);
+	done?: (resolve: (value?: Array<LookupDate>) => void) => void;
 }
 
 /*********************************************
 * ILookupDateQueryCollection
 **********************************************/
 export interface ILookupDateQueryCollection extends IBaseResults<LookupDateQuery> {
-	done(resolve: (value?: Array<LookupDateQuery | any>) => void);
+	done?: (resolve: (value?: Array<LookupDateQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4188,7 +4188,7 @@ export interface LookupDateMethods {
 /*********************************************
 * ILookupDuration
 **********************************************/
-export interface ILookupDuration extends LookupDurationCollections,LookupDurationMethods,IBaseQuery<ILookupDurationQuery> {
+export interface ILookupDuration extends LookupDurationCollections, LookupDurationMethods, IBaseQuery<ILookupDurationQuery> {
 
 }
 
@@ -4196,14 +4196,14 @@ export interface ILookupDuration extends LookupDurationCollections,LookupDuratio
 * ILookupDurationCollection
 **********************************************/
 export interface ILookupDurationCollection extends IBaseResults<LookupDuration> {
-	done(resolve: (value?: Array<LookupDuration | any>) => void);
+	done?: (resolve: (value?: Array<LookupDuration>) => void) => void;
 }
 
 /*********************************************
 * ILookupDurationQueryCollection
 **********************************************/
 export interface ILookupDurationQueryCollection extends IBaseResults<LookupDurationQuery> {
-	done(resolve: (value?: Array<LookupDurationQuery | any>) => void);
+	done?: (resolve: (value?: Array<LookupDurationQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4260,7 +4260,7 @@ export interface LookupDurationMethods {
 /*********************************************
 * ILookupNumber
 **********************************************/
-export interface ILookupNumber extends LookupNumberCollections,LookupNumberMethods,IBaseQuery<ILookupNumberQuery> {
+export interface ILookupNumber extends LookupNumberCollections, LookupNumberMethods, IBaseQuery<ILookupNumberQuery> {
 
 }
 
@@ -4268,14 +4268,14 @@ export interface ILookupNumber extends LookupNumberCollections,LookupNumberMetho
 * ILookupNumberCollection
 **********************************************/
 export interface ILookupNumberCollection extends IBaseResults<LookupNumber> {
-	done(resolve: (value?: Array<LookupNumber | any>) => void);
+	done?: (resolve: (value?: Array<LookupNumber>) => void) => void;
 }
 
 /*********************************************
 * ILookupNumberQueryCollection
 **********************************************/
 export interface ILookupNumberQueryCollection extends IBaseResults<LookupNumberQuery> {
-	done(resolve: (value?: Array<LookupNumberQuery | any>) => void);
+	done?: (resolve: (value?: Array<LookupNumberQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4330,7 +4330,7 @@ export interface LookupNumberMethods {
 /*********************************************
 * ILookupText
 **********************************************/
-export interface ILookupText extends LookupTextCollections,LookupTextMethods,IBaseQuery<ILookupTextQuery> {
+export interface ILookupText extends LookupTextCollections, LookupTextMethods, IBaseQuery<ILookupTextQuery> {
 
 }
 
@@ -4338,14 +4338,14 @@ export interface ILookupText extends LookupTextCollections,LookupTextMethods,IBa
 * ILookupTextCollection
 **********************************************/
 export interface ILookupTextCollection extends IBaseResults<LookupText> {
-	done(resolve: (value?: Array<LookupText | any>) => void);
+	done?: (resolve: (value?: Array<LookupText>) => void) => void;
 }
 
 /*********************************************
 * ILookupTextQueryCollection
 **********************************************/
 export interface ILookupTextQueryCollection extends IBaseResults<LookupTextQuery> {
-	done(resolve: (value?: Array<LookupTextQuery | any>) => void);
+	done?: (resolve: (value?: Array<LookupTextQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4418,7 +4418,7 @@ export interface PageSizesCollections {
 /*********************************************
 * IPlanAssignment
 **********************************************/
-export interface IPlanAssignment extends PlanAssignmentCollections,PlanAssignmentMethods,IBaseQuery<IPlanAssignmentQuery> {
+export interface IPlanAssignment extends PlanAssignmentCollections, PlanAssignmentMethods, IBaseQuery<IPlanAssignmentQuery> {
 
 }
 
@@ -4426,14 +4426,14 @@ export interface IPlanAssignment extends PlanAssignmentCollections,PlanAssignmen
 * IPlanAssignmentCollection
 **********************************************/
 export interface IPlanAssignmentCollection extends IBaseResults<PlanAssignment>, PlanAssignmentCollectionMethods {
-	done(resolve: (value?: Array<PlanAssignment | any>) => void);
+	done?: (resolve: (value?: Array<PlanAssignment>) => void) => void;
 }
 
 /*********************************************
 * IPlanAssignmentQueryCollection
 **********************************************/
 export interface IPlanAssignmentQueryCollection extends IBaseResults<PlanAssignmentQuery>, PlanAssignmentCollectionMethods {
-	done(resolve: (value?: Array<PlanAssignmentQuery | any>) => void);
+	done?: (resolve: (value?: Array<PlanAssignmentQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4590,7 +4590,7 @@ export interface ProjectServerDataCollections {
 /*********************************************
 * IProjectServer
 **********************************************/
-export interface IProjectServer extends ProjectServerCollections,ProjectServerMethods,IBaseQuery<IProjectServerQuery> {
+export interface IProjectServer extends ProjectServerCollections, ProjectServerMethods, IBaseQuery<IProjectServerQuery> {
 
 }
 
@@ -4598,14 +4598,14 @@ export interface IProjectServer extends ProjectServerCollections,ProjectServerMe
 * IProjectServerCollection
 **********************************************/
 export interface IProjectServerCollection extends IBaseResults<ProjectServer> {
-	done(resolve: (value?: Array<ProjectServer | any>) => void);
+	done?: (resolve: (value?: Array<ProjectServer>) => void) => void;
 }
 
 /*********************************************
 * IProjectServerQueryCollection
 **********************************************/
 export interface IProjectServerQueryCollection extends IBaseResults<ProjectServerQuery> {
-	done(resolve: (value?: Array<ProjectServerQuery | any>) => void);
+	done?: (resolve: (value?: Array<ProjectServerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4732,7 +4732,7 @@ export interface SettingsCollections {
 /*********************************************
 * ITimeSheetPeriod
 **********************************************/
-export interface ITimeSheetPeriod extends TimeSheetPeriodCollections,TimeSheetPeriodMethods,IBaseQuery<ITimeSheetPeriodQuery> {
+export interface ITimeSheetPeriod extends TimeSheetPeriodCollections, TimeSheetPeriodMethods, IBaseQuery<ITimeSheetPeriodQuery> {
 
 }
 
@@ -4740,14 +4740,14 @@ export interface ITimeSheetPeriod extends TimeSheetPeriodCollections,TimeSheetPe
 * ITimeSheetPeriodCollection
 **********************************************/
 export interface ITimeSheetPeriodCollection extends IBaseResults<TimeSheetPeriod>, TimeSheetPeriodCollectionMethods {
-	done(resolve: (value?: Array<TimeSheetPeriod | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheetPeriod>) => void) => void;
 }
 
 /*********************************************
 * ITimeSheetPeriodQueryCollection
 **********************************************/
 export interface ITimeSheetPeriodQueryCollection extends IBaseResults<TimeSheetPeriodQuery>, TimeSheetPeriodCollectionMethods {
-	done(resolve: (value?: Array<TimeSheetPeriodQuery | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheetPeriodQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4813,7 +4813,7 @@ export interface TimeSheetPeriodMethods {
 /*********************************************
 * ITimeSheet
 **********************************************/
-export interface ITimeSheet extends TimeSheetCollections,TimeSheetMethods,IBaseQuery<ITimeSheetQuery> {
+export interface ITimeSheet extends TimeSheetCollections, TimeSheetMethods, IBaseQuery<ITimeSheetQuery> {
 
 }
 
@@ -4821,14 +4821,14 @@ export interface ITimeSheet extends TimeSheetCollections,TimeSheetMethods,IBaseQ
 * ITimeSheetCollection
 **********************************************/
 export interface ITimeSheetCollection extends IBaseResults<TimeSheet> {
-	done(resolve: (value?: Array<TimeSheet | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheet>) => void) => void;
 }
 
 /*********************************************
 * ITimeSheetQueryCollection
 **********************************************/
 export interface ITimeSheetQueryCollection extends IBaseResults<TimeSheetQuery> {
-	done(resolve: (value?: Array<TimeSheetQuery | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheetQuery>) => void) => void;
 }
 
 /*********************************************
@@ -4914,7 +4914,7 @@ export interface TimeSheetMethods {
 /*********************************************
 * ITimeSheetLine
 **********************************************/
-export interface ITimeSheetLine extends TimeSheetLineCollections,TimeSheetLineMethods,IBaseQuery<ITimeSheetLineQuery> {
+export interface ITimeSheetLine extends TimeSheetLineCollections, TimeSheetLineMethods, IBaseQuery<ITimeSheetLineQuery> {
 
 }
 
@@ -4922,14 +4922,14 @@ export interface ITimeSheetLine extends TimeSheetLineCollections,TimeSheetLineMe
 * ITimeSheetLineCollection
 **********************************************/
 export interface ITimeSheetLineCollection extends IBaseResults<TimeSheetLine>, TimeSheetLineCollectionMethods {
-	done(resolve: (value?: Array<TimeSheetLine | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheetLine>) => void) => void;
 }
 
 /*********************************************
 * ITimeSheetLineQueryCollection
 **********************************************/
 export interface ITimeSheetLineQueryCollection extends IBaseResults<TimeSheetLineQuery>, TimeSheetLineCollectionMethods {
-	done(resolve: (value?: Array<TimeSheetLineQuery | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheetLineQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5007,7 +5007,7 @@ export interface TimeSheetLineMethods {
 /*********************************************
 * ITimeSheetWork
 **********************************************/
-export interface ITimeSheetWork extends TimeSheetWorkCollections,TimeSheetWorkMethods,IBaseQuery<ITimeSheetWorkQuery> {
+export interface ITimeSheetWork extends TimeSheetWorkCollections, TimeSheetWorkMethods, IBaseQuery<ITimeSheetWorkQuery> {
 
 }
 
@@ -5015,14 +5015,14 @@ export interface ITimeSheetWork extends TimeSheetWorkCollections,TimeSheetWorkMe
 * ITimeSheetWorkCollection
 **********************************************/
 export interface ITimeSheetWorkCollection extends IBaseResults<TimeSheetWork>, TimeSheetWorkCollectionMethods {
-	done(resolve: (value?: Array<TimeSheetWork | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheetWork>) => void) => void;
 }
 
 /*********************************************
 * ITimeSheetWorkQueryCollection
 **********************************************/
 export interface ITimeSheetWorkQueryCollection extends IBaseResults<TimeSheetWorkQuery>, TimeSheetWorkCollectionMethods {
-	done(resolve: (value?: Array<TimeSheetWorkQuery | any>) => void);
+	done?: (resolve: (value?: Array<TimeSheetWorkQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5104,7 +5104,7 @@ export interface TimeSheetWorkMethods {
 /*********************************************
 * IWorkflowActivities
 **********************************************/
-export interface IWorkflowActivities extends WorkflowActivitiesCollections,WorkflowActivitiesMethods,IBaseQuery<IWorkflowActivitiesQuery> {
+export interface IWorkflowActivities extends WorkflowActivitiesCollections, WorkflowActivitiesMethods, IBaseQuery<IWorkflowActivitiesQuery> {
 
 }
 
@@ -5112,14 +5112,14 @@ export interface IWorkflowActivities extends WorkflowActivitiesCollections,Workf
 * IWorkflowActivitiesCollection
 **********************************************/
 export interface IWorkflowActivitiesCollection extends IBaseResults<WorkflowActivities> {
-	done(resolve: (value?: Array<WorkflowActivities | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowActivities>) => void) => void;
 }
 
 /*********************************************
 * IWorkflowActivitiesQueryCollection
 **********************************************/
 export interface IWorkflowActivitiesQueryCollection extends IBaseResults<WorkflowActivitiesQuery> {
-	done(resolve: (value?: Array<WorkflowActivitiesQuery | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowActivitiesQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5197,7 +5197,7 @@ export interface WorkflowActivitiesMethods {
 /*********************************************
 * IWorkflowDesigner
 **********************************************/
-export interface IWorkflowDesigner extends WorkflowDesignerCollections,WorkflowDesignerMethods,IBaseQuery<IWorkflowDesignerQuery> {
+export interface IWorkflowDesigner extends WorkflowDesignerCollections, WorkflowDesignerMethods, IBaseQuery<IWorkflowDesignerQuery> {
 
 }
 
@@ -5205,14 +5205,14 @@ export interface IWorkflowDesigner extends WorkflowDesignerCollections,WorkflowD
 * IWorkflowDesignerCollection
 **********************************************/
 export interface IWorkflowDesignerCollection extends IBaseResults<WorkflowDesigner> {
-	done(resolve: (value?: Array<WorkflowDesigner | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowDesigner>) => void) => void;
 }
 
 /*********************************************
 * IWorkflowDesignerQueryCollection
 **********************************************/
 export interface IWorkflowDesignerQueryCollection extends IBaseResults<WorkflowDesignerQuery> {
-	done(resolve: (value?: Array<WorkflowDesignerQuery | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowDesignerQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5268,7 +5268,7 @@ export interface WorkflowDesignerMethods {
 /*********************************************
 * IWorkflowDesignerField
 **********************************************/
-export interface IWorkflowDesignerField extends WorkflowDesignerFieldCollections,WorkflowDesignerFieldMethods,IBaseQuery<IWorkflowDesignerFieldQuery> {
+export interface IWorkflowDesignerField extends WorkflowDesignerFieldCollections, WorkflowDesignerFieldMethods, IBaseQuery<IWorkflowDesignerFieldQuery> {
 
 }
 
@@ -5276,14 +5276,14 @@ export interface IWorkflowDesignerField extends WorkflowDesignerFieldCollections
 * IWorkflowDesignerFieldCollection
 **********************************************/
 export interface IWorkflowDesignerFieldCollection extends IBaseResults<WorkflowDesignerField>, WorkflowDesignerFieldCollectionMethods {
-	done(resolve: (value?: Array<WorkflowDesignerField | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowDesignerField>) => void) => void;
 }
 
 /*********************************************
 * IWorkflowDesignerFieldQueryCollection
 **********************************************/
 export interface IWorkflowDesignerFieldQueryCollection extends IBaseResults<WorkflowDesignerFieldQuery>, WorkflowDesignerFieldCollectionMethods {
-	done(resolve: (value?: Array<WorkflowDesignerFieldQuery | any>) => void);
+	done?: (resolve: (value?: Array<WorkflowDesignerFieldQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5350,7 +5350,7 @@ export interface WorkflowDesignerFieldMethods {
 /*********************************************
 * IResourceCalendarException
 **********************************************/
-export interface IResourceCalendarException extends ResourceCalendarExceptionCollections,ResourceCalendarExceptionMethods,IBaseQuery<IResourceCalendarExceptionQuery> {
+export interface IResourceCalendarException extends ResourceCalendarExceptionCollections, ResourceCalendarExceptionMethods, IBaseQuery<IResourceCalendarExceptionQuery> {
 
 }
 
@@ -5358,14 +5358,14 @@ export interface IResourceCalendarException extends ResourceCalendarExceptionCol
 * IResourceCalendarExceptionCollection
 **********************************************/
 export interface IResourceCalendarExceptionCollection extends IBaseResults<ResourceCalendarException> {
-	done(resolve: (value?: Array<ResourceCalendarException | any>) => void);
+	done?: (resolve: (value?: Array<ResourceCalendarException>) => void) => void;
 }
 
 /*********************************************
 * IResourceCalendarExceptionQueryCollection
 **********************************************/
 export interface IResourceCalendarExceptionQueryCollection extends IBaseResults<ResourceCalendarExceptionQuery> {
-	done(resolve: (value?: Array<ResourceCalendarExceptionQuery | any>) => void);
+	done?: (resolve: (value?: Array<ResourceCalendarExceptionQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5455,7 +5455,7 @@ export interface ResourceEngagementTimephasedPeriodCollectionMethods {
 /*********************************************
 * IResourcePlan
 **********************************************/
-export interface IResourcePlan extends ResourcePlanCollections,ResourcePlanMethods,IBaseQuery<IResourcePlanQuery> {
+export interface IResourcePlan extends ResourcePlanCollections, ResourcePlanMethods, IBaseQuery<IResourcePlanQuery> {
 
 }
 
@@ -5463,14 +5463,14 @@ export interface IResourcePlan extends ResourcePlanCollections,ResourcePlanMetho
 * IResourcePlanCollection
 **********************************************/
 export interface IResourcePlanCollection extends IBaseResults<ResourcePlan> {
-	done(resolve: (value?: Array<ResourcePlan | any>) => void);
+	done?: (resolve: (value?: Array<ResourcePlan>) => void) => void;
 }
 
 /*********************************************
 * IResourcePlanQueryCollection
 **********************************************/
 export interface IResourcePlanQueryCollection extends IBaseResults<ResourcePlanQuery> {
-	done(resolve: (value?: Array<ResourcePlanQuery | any>) => void);
+	done?: (resolve: (value?: Array<ResourcePlanQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5533,7 +5533,7 @@ export interface ResourcePlanMethods {
 /*********************************************
 * IServiceStatus
 **********************************************/
-export interface IServiceStatus extends ServiceStatusCollections,ServiceStatusMethods,IBaseQuery<IServiceStatusQuery> {
+export interface IServiceStatus extends ServiceStatusCollections, ServiceStatusMethods, IBaseQuery<IServiceStatusQuery> {
 
 }
 
@@ -5541,14 +5541,14 @@ export interface IServiceStatus extends ServiceStatusCollections,ServiceStatusMe
 * IServiceStatusCollection
 **********************************************/
 export interface IServiceStatusCollection extends IBaseResults<ServiceStatus> {
-	done(resolve: (value?: Array<ServiceStatus | any>) => void);
+	done?: (resolve: (value?: Array<ServiceStatus>) => void) => void;
 }
 
 /*********************************************
 * IServiceStatusQueryCollection
 **********************************************/
 export interface IServiceStatusQueryCollection extends IBaseResults<ServiceStatusQuery> {
-	done(resolve: (value?: Array<ServiceStatusQuery | any>) => void);
+	done?: (resolve: (value?: Array<ServiceStatusQuery>) => void) => void;
 }
 
 /*********************************************
@@ -5604,7 +5604,7 @@ export interface ServiceStatusMethods {
 /*********************************************
 * ITimePhase
 **********************************************/
-export interface ITimePhase extends TimePhaseCollections,TimePhaseMethods,IBaseQuery<ITimePhaseQuery> {
+export interface ITimePhase extends TimePhaseCollections, TimePhaseMethods, IBaseQuery<ITimePhaseQuery> {
 
 }
 
@@ -5612,14 +5612,14 @@ export interface ITimePhase extends TimePhaseCollections,TimePhaseMethods,IBaseQ
 * ITimePhaseCollection
 **********************************************/
 export interface ITimePhaseCollection extends IBaseResults<TimePhase> {
-	done(resolve: (value?: Array<TimePhase | any>) => void);
+	done?: (resolve: (value?: Array<TimePhase>) => void) => void;
 }
 
 /*********************************************
 * ITimePhaseQueryCollection
 **********************************************/
 export interface ITimePhaseQueryCollection extends IBaseResults<TimePhaseQuery> {
-	done(resolve: (value?: Array<TimePhaseQuery | any>) => void);
+	done?: (resolve: (value?: Array<TimePhaseQuery>) => void) => void;
 }
 
 /*********************************************

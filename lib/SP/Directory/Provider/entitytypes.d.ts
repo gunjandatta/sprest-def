@@ -4,7 +4,7 @@ import { SP } from "../../../";
 /*********************************************
 * IDirectoryNotification
 **********************************************/
-export interface IDirectoryNotification extends DirectoryNotificationCollections,DirectoryNotificationMethods,IBaseQuery<IDirectoryNotificationQuery> {
+export interface IDirectoryNotification extends DirectoryNotificationCollections, DirectoryNotificationMethods, IBaseQuery<IDirectoryNotificationQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface IDirectoryNotification extends DirectoryNotificationCollections
 * IDirectoryNotificationCollection
 **********************************************/
 export interface IDirectoryNotificationCollection extends IBaseResults<DirectoryNotification> {
-	done(resolve: (value?: Array<DirectoryNotification | any>) => void);
+	done?: (resolve: (value?: Array<DirectoryNotification>) => void) => void;
 }
 
 /*********************************************
 * IDirectoryNotificationQueryCollection
 **********************************************/
 export interface IDirectoryNotificationQueryCollection extends IBaseResults<DirectoryNotificationQuery> {
-	done(resolve: (value?: Array<DirectoryNotificationQuery | any>) => void);
+	done?: (resolve: (value?: Array<DirectoryNotificationQuery>) => void) => void;
 }
 
 /*********************************************
@@ -74,7 +74,7 @@ export interface DirectoryNotificationMethods {
 /*********************************************
 * ISharePointDirectoryProvider
 **********************************************/
-export interface ISharePointDirectoryProvider extends SharePointDirectoryProviderCollections,SharePointDirectoryProviderMethods,IBaseQuery<ISharePointDirectoryProviderQuery> {
+export interface ISharePointDirectoryProvider extends SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods, IBaseQuery<ISharePointDirectoryProviderQuery> {
 
 }
 
@@ -82,14 +82,14 @@ export interface ISharePointDirectoryProvider extends SharePointDirectoryProvide
 * ISharePointDirectoryProviderCollection
 **********************************************/
 export interface ISharePointDirectoryProviderCollection extends IBaseResults<SharePointDirectoryProvider> {
-	done(resolve: (value?: Array<SharePointDirectoryProvider | any>) => void);
+	done?: (resolve: (value?: Array<SharePointDirectoryProvider>) => void) => void;
 }
 
 /*********************************************
 * ISharePointDirectoryProviderQueryCollection
 **********************************************/
 export interface ISharePointDirectoryProviderQueryCollection extends IBaseResults<SharePointDirectoryProviderQuery> {
-	done(resolve: (value?: Array<SharePointDirectoryProviderQuery | any>) => void);
+	done?: (resolve: (value?: Array<SharePointDirectoryProviderQuery>) => void) => void;
 }
 
 /*********************************************

@@ -4,7 +4,7 @@ import { Microsoft } from "../../../";
 /*********************************************
 * IlikedByInformation
 **********************************************/
-export interface IlikedByInformation extends likedByInformationCollections,likedByInformationMethods,IBaseQuery<IlikedByInformationQuery> {
+export interface IlikedByInformation extends likedByInformationCollections, likedByInformationMethods, IBaseQuery<IlikedByInformationQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface IlikedByInformation extends likedByInformationCollections,liked
 * IlikedByInformationCollection
 **********************************************/
 export interface IlikedByInformationCollection extends IBaseResults<likedByInformation> {
-	done(resolve: (value?: Array<likedByInformation | any>) => void);
+	done?: (resolve: (value?: Array<likedByInformation>) => void) => void;
 }
 
 /*********************************************
 * IlikedByInformationQueryCollection
 **********************************************/
 export interface IlikedByInformationQueryCollection extends IBaseResults<likedByInformationQuery> {
-	done(resolve: (value?: Array<likedByInformationQuery | any>) => void);
+	done?: (resolve: (value?: Array<likedByInformationQuery>) => void) => void;
 }
 
 /*********************************************

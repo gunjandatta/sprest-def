@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * ITaxonomyField
 **********************************************/
-export interface ITaxonomyField extends TaxonomyFieldCollections,TaxonomyFieldMethods,IBaseQuery<ITaxonomyFieldQuery> {
+export interface ITaxonomyField extends TaxonomyFieldCollections, TaxonomyFieldMethods, IBaseQuery<ITaxonomyFieldQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface ITaxonomyField extends TaxonomyFieldCollections,TaxonomyFieldMe
 * ITaxonomyFieldCollection
 **********************************************/
 export interface ITaxonomyFieldCollection extends IBaseResults<TaxonomyField> {
-	done(resolve: (value?: Array<TaxonomyField | any>) => void);
+	done?: (resolve: (value?: Array<TaxonomyField>) => void) => void;
 }
 
 /*********************************************
 * ITaxonomyFieldQueryCollection
 **********************************************/
 export interface ITaxonomyFieldQueryCollection extends IBaseResults<TaxonomyFieldQuery> {
-	done(resolve: (value?: Array<TaxonomyFieldQuery | any>) => void);
+	done?: (resolve: (value?: Array<TaxonomyFieldQuery>) => void) => void;
 }
 
 /*********************************************

@@ -4,7 +4,7 @@ import { SP } from "../../../../";
 /*********************************************
 * INavigationServiceRest
 **********************************************/
-export interface INavigationServiceRest extends NavigationServiceRestCollections,NavigationServiceRestMethods,IBaseQuery<INavigationServiceRestQuery> {
+export interface INavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods, IBaseQuery<INavigationServiceRestQuery> {
 
 }
 
@@ -12,14 +12,14 @@ export interface INavigationServiceRest extends NavigationServiceRestCollections
 * INavigationServiceRestCollection
 **********************************************/
 export interface INavigationServiceRestCollection extends IBaseResults<NavigationServiceRest> {
-	done(resolve: (value?: Array<NavigationServiceRest | any>) => void);
+	done?: (resolve: (value?: Array<NavigationServiceRest>) => void) => void;
 }
 
 /*********************************************
 * INavigationServiceRestQueryCollection
 **********************************************/
 export interface INavigationServiceRestQueryCollection extends IBaseResults<NavigationServiceRestQuery> {
-	done(resolve: (value?: Array<NavigationServiceRestQuery | any>) => void);
+	done?: (resolve: (value?: Array<NavigationServiceRestQuery>) => void) => void;
 }
 
 /*********************************************

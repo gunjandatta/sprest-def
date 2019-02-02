@@ -32,7 +32,7 @@ export interface ExternalUserCollectionMethods {
 /*********************************************
 * IGetExternalUsersResults
 **********************************************/
-export interface IGetExternalUsersResults extends GetExternalUsersResultsCollections,GetExternalUsersResultsMethods,IBaseQuery<IGetExternalUsersResultsQuery> {
+export interface IGetExternalUsersResults extends GetExternalUsersResultsCollections, GetExternalUsersResultsMethods, IBaseQuery<IGetExternalUsersResultsQuery> {
 
 }
 
@@ -40,14 +40,14 @@ export interface IGetExternalUsersResults extends GetExternalUsersResultsCollect
 * IGetExternalUsersResultsCollection
 **********************************************/
 export interface IGetExternalUsersResultsCollection extends IBaseResults<GetExternalUsersResults> {
-	done(resolve: (value?: Array<GetExternalUsersResults | any>) => void);
+	done?: (resolve: (value?: Array<GetExternalUsersResults>) => void) => void;
 }
 
 /*********************************************
 * IGetExternalUsersResultsQueryCollection
 **********************************************/
 export interface IGetExternalUsersResultsQueryCollection extends IBaseResults<GetExternalUsersResultsQuery> {
-	done(resolve: (value?: Array<GetExternalUsersResultsQuery | any>) => void);
+	done?: (resolve: (value?: Array<GetExternalUsersResultsQuery>) => void) => void;
 }
 
 /*********************************************
@@ -140,7 +140,7 @@ export interface ImportProfilePropertiesJobInfoCollections {
 /*********************************************
 * IOffice365Tenant
 **********************************************/
-export interface IOffice365Tenant extends Office365TenantCollections,Office365TenantMethods,IBaseQuery<IOffice365TenantQuery> {
+export interface IOffice365Tenant extends Office365TenantCollections, Office365TenantMethods, IBaseQuery<IOffice365TenantQuery> {
 
 }
 
@@ -148,14 +148,14 @@ export interface IOffice365Tenant extends Office365TenantCollections,Office365Te
 * IOffice365TenantCollection
 **********************************************/
 export interface IOffice365TenantCollection extends IBaseResults<Office365Tenant> {
-	done(resolve: (value?: Array<Office365Tenant | any>) => void);
+	done?: (resolve: (value?: Array<Office365Tenant>) => void) => void;
 }
 
 /*********************************************
 * IOffice365TenantQueryCollection
 **********************************************/
 export interface IOffice365TenantQueryCollection extends IBaseResults<Office365TenantQuery> {
-	done(resolve: (value?: Array<Office365TenantQuery | any>) => void);
+	done?: (resolve: (value?: Array<Office365TenantQuery>) => void) => void;
 }
 
 /*********************************************

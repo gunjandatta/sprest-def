@@ -3,7 +3,7 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 /*********************************************
 * IDocumentCrawlLog
 **********************************************/
-export interface IDocumentCrawlLog extends DocumentCrawlLogCollections,DocumentCrawlLogMethods,IBaseQuery<IDocumentCrawlLogQuery> {
+export interface IDocumentCrawlLog extends DocumentCrawlLogCollections, DocumentCrawlLogMethods, IBaseQuery<IDocumentCrawlLogQuery> {
 
 }
 
@@ -11,14 +11,14 @@ export interface IDocumentCrawlLog extends DocumentCrawlLogCollections,DocumentC
 * IDocumentCrawlLogCollection
 **********************************************/
 export interface IDocumentCrawlLogCollection extends IBaseResults<DocumentCrawlLog> {
-	done(resolve: (value?: Array<DocumentCrawlLog | any>) => void);
+	done?: (resolve: (value?: Array<DocumentCrawlLog>) => void) => void;
 }
 
 /*********************************************
 * IDocumentCrawlLogQueryCollection
 **********************************************/
 export interface IDocumentCrawlLogQueryCollection extends IBaseResults<DocumentCrawlLogQuery> {
-	done(resolve: (value?: Array<DocumentCrawlLogQuery | any>) => void);
+	done?: (resolve: (value?: Array<DocumentCrawlLogQuery>) => void) => void;
 }
 
 /*********************************************

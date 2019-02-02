@@ -34,7 +34,7 @@ export interface FileSystemItemCollectionMethods {
 /*********************************************
 * IFile
 **********************************************/
-export interface IFile extends FileCollections,FileMethods,IBaseQuery<IFileQuery> {
+export interface IFile extends FileCollections, FileMethods, IBaseQuery<IFileQuery> {
 
 }
 
@@ -42,14 +42,14 @@ export interface IFile extends FileCollections,FileMethods,IBaseQuery<IFileQuery
 * IFileCollection
 **********************************************/
 export interface IFileCollection extends IBaseResults<File> {
-	done(resolve: (value?: Array<File | any>) => void);
+	done?: (resolve: (value?: Array<File>) => void) => void;
 }
 
 /*********************************************
 * IFileQueryCollection
 **********************************************/
 export interface IFileQueryCollection extends IBaseResults<FileQuery> {
-	done(resolve: (value?: Array<FileQuery | any>) => void);
+	done?: (resolve: (value?: Array<FileQuery>) => void) => void;
 }
 
 /*********************************************
@@ -122,7 +122,7 @@ export interface FileServiceCollections {
 /*********************************************
 * IFolder
 **********************************************/
-export interface IFolder extends FolderCollections,FolderMethods,IBaseQuery<IFolderQuery> {
+export interface IFolder extends FolderCollections, FolderMethods, IBaseQuery<IFolderQuery> {
 
 }
 
@@ -130,14 +130,14 @@ export interface IFolder extends FolderCollections,FolderMethods,IBaseQuery<IFol
 * IFolderCollection
 **********************************************/
 export interface IFolderCollection extends IBaseResults<Folder> {
-	done(resolve: (value?: Array<Folder | any>) => void);
+	done?: (resolve: (value?: Array<Folder>) => void) => void;
 }
 
 /*********************************************
 * IFolderQueryCollection
 **********************************************/
 export interface IFolderQueryCollection extends IBaseResults<FolderQuery> {
-	done(resolve: (value?: Array<FolderQuery | any>) => void);
+	done?: (resolve: (value?: Array<FolderQuery>) => void) => void;
 }
 
 /*********************************************
