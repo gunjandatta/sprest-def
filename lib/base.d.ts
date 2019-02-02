@@ -108,7 +108,7 @@ export interface IBaseResults<Type = any> extends IBaseResult<Type> {
 /**
  * Base Collection
  */
-export interface IBaseCollection<Type = any, Result = Type> extends IBaseQuery<IBaseResults<Type>, IBaseResults<Result>> { }
+export interface IBaseCollection<Type = any, Result = Type, Methods = void> extends IBaseQuery<IBaseResults<Type> & Methods, IBaseResults<Result> & Methods> { }
 
 /**
  * Method Information Settings

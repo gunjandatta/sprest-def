@@ -288,14 +288,14 @@ export interface ISiteProperties extends SitePropertiesCollections,SitePropertie
 /*********************************************
 * ISitePropertiesCollection
 **********************************************/
-export interface ISitePropertiesCollection extends IBaseResults<SiteProperties> {
+export interface ISitePropertiesCollection extends IBaseResults<SiteProperties>, SitePropertiesCollectionMethods {
 
 }
 
 /*********************************************
 * ISitePropertiesQueryCollection
 **********************************************/
-export interface ISitePropertiesQueryCollection extends IBaseResults<SitePropertiesQuery> {
+export interface ISitePropertiesQueryCollection extends IBaseResults<SitePropertiesQuery>, SitePropertiesCollectionMethods {
 
 }
 
@@ -387,7 +387,7 @@ export interface SitePropertiesCollections extends SitePropertiesPropMethods {
 * SitePropertiesCollectionMethods
 **********************************************/
 export interface SitePropertiesCollectionMethods {
-	getById(siteId?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
+	getById(siteId?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 	getLockStateById(siteId?: any): IBaseExecution<number>;
 }
 
@@ -714,7 +714,7 @@ export interface TenantPropMethods {
 * TenantCollections
 **********************************************/
 export interface TenantCollections extends TenantPropMethods {
-	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 	Sites(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 }
 
@@ -735,7 +735,7 @@ export interface TenantMethods {
 	createSite(siteCreationProperties?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	getIdleSessionSignOutForUnmanagedDevices(): IBaseExecution<string>;
 	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
-	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
 	getSPOTenantAllWebTemplates(): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	registerHubSite(siteUrl?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;

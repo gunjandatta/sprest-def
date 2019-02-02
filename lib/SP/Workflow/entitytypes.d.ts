@@ -12,14 +12,14 @@ export interface IWorkflowAssociation extends WorkflowAssociationCollections,Wor
 /*********************************************
 * IWorkflowAssociationCollection
 **********************************************/
-export interface IWorkflowAssociationCollection extends IBaseResults<WorkflowAssociation> {
+export interface IWorkflowAssociationCollection extends IBaseResults<WorkflowAssociation>, WorkflowAssociationCollectionMethods {
 
 }
 
 /*********************************************
 * IWorkflowAssociationQueryCollection
 **********************************************/
-export interface IWorkflowAssociationQueryCollection extends IBaseResults<WorkflowAssociationQuery> {
+export interface IWorkflowAssociationQueryCollection extends IBaseResults<WorkflowAssociationQuery>, WorkflowAssociationCollectionMethods {
 
 }
 
@@ -80,8 +80,8 @@ export interface WorkflowAssociationCollections extends WorkflowAssociationPropM
 **********************************************/
 export interface WorkflowAssociationCollectionMethods {
 	add(parameters?: SP.Workflow.WorkflowAssociationCreationInformation): IBaseExecution<SP.Workflow.WorkflowAssociation>;
-	getById(associationId?: any): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationMethods;
-	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationMethods;
+	getById(associationId?: any): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationCollections & SP.Workflow.WorkflowAssociationMethods;
+	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationCollections & SP.Workflow.WorkflowAssociationMethods;
 }
 
 /*********************************************
@@ -125,8 +125,8 @@ export interface WorkflowTemplateCollections extends WorkflowTemplateCollectionM
 * WorkflowTemplateCollectionMethods
 **********************************************/
 export interface WorkflowTemplateCollectionMethods {
-	getById(templateId?: any): IBaseQuery<SP.Workflow.WorkflowTemplate>;
-	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowTemplate>;
+	getById(templateId?: any): IBaseQuery<SP.Workflow.WorkflowTemplate> & SP.Workflow.WorkflowTemplateCollections;
+	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowTemplate> & SP.Workflow.WorkflowTemplateCollections;
 }
 
 /*********************************************

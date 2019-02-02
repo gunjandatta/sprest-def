@@ -12,14 +12,14 @@ export interface ISubscription extends SubscriptionCollections,SubscriptionMetho
 /*********************************************
 * ISubscriptionCollection
 **********************************************/
-export interface ISubscriptionCollection extends IBaseResults<Subscription> {
+export interface ISubscriptionCollection extends IBaseResults<Subscription>, SubscriptionCollectionMethods {
 
 }
 
 /*********************************************
 * ISubscriptionQueryCollection
 **********************************************/
-export interface ISubscriptionQueryCollection extends IBaseResults<SubscriptionQuery> {
+export interface ISubscriptionQueryCollection extends IBaseResults<SubscriptionQuery>, SubscriptionCollectionMethods {
 
 }
 
@@ -68,7 +68,7 @@ export interface SubscriptionCollections extends SubscriptionPropMethods {
 **********************************************/
 export interface SubscriptionCollectionMethods {
 	add(parameters?: Microsoft.SharePoint.Webhooks.SubscriptionInformation): IBaseExecution<Microsoft.SharePoint.Webhooks.Subscription>;
-	getById(id?: any): IBaseQuery<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionMethods;
+	getById(id?: any): IBaseQuery<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionCollections & Microsoft.SharePoint.Webhooks.SubscriptionMethods;
 	remove(subscriptionId?: any): IBaseExecution<any>;
 }
 

@@ -432,7 +432,7 @@ export interface SPHubSitesUtilityQuery extends SPHubSitesUtilityProps, SPHubSit
 * SPHubSitesUtilityMethods
 **********************************************/
 export interface SPHubSitesUtilityMethods {
-	getHubSites(): IBaseCollection<SP.HubSite> & SP.HubSiteCollectionMethods;
+	getHubSites(): IBaseCollection<SP.HubSite>;
 }
 
 /*********************************************

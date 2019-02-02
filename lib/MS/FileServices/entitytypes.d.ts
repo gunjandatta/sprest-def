@@ -31,7 +31,7 @@ export interface FileSystemItemCollections extends FileSystemItemCollectionMetho
 **********************************************/
 export interface FileSystemItemCollectionMethods {
 	add(name?: string, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
-	getById(id?: string): IBaseQuery<MS.FileServices.FileSystemItem>;
+	getById(id?: string): IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
 
 /*********************************************
@@ -175,7 +175,7 @@ export interface FolderPropMethods {
 * FolderCollections
 **********************************************/
 export interface FolderCollections extends FolderPropMethods {
-	Children(): IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
+	Children(): IBaseCollection<MS.FileServices.FileSystemItem>;
 	Children(id: string | number): IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
 

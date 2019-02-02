@@ -137,6 +137,50 @@ function createDirectories(namespace) {
     return path;
 };
 
+// Generates the base collection interface
+function generateBaseCollection(methodType, hasCollections, hasCollectionMethods) {
+    // See if a collection exists
+    if (hasCollections[methodType]) {
+        // See if methods exist
+        if (hasCollectionMethods[methodType]) {
+            // Generate the interface
+            return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query, ' + methodType + 'CollectionMethods> & ' + methodType + 'CollectionMethods';
+        } else {
+            // Generate the interface
+            return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query>';
+        }
+    } else {
+        // Generate the interface
+        return 'IBaseCollection<' + methodType + '>';
+    }
+}
+
+// Generates the base query interface
+function generateBaseQuery(methodType, hasCollections, hasMethods) {
+    let baseQuery = null;
+
+    // See if a collection exists
+    if (hasCollections[methodType]) {
+        // Set the base query
+        baseQuery = 'IBaseQuery<' + methodType + ', ' + methodType + 'Query>';
+    } else {
+        // Set the base query
+        baseQuery = 'IBaseQuery<' + methodType + '>';
+    }
+
+    // Append the collection
+    baseQuery += ' & ' + methodType + 'Collections';
+
+    // See if methods exist
+    if (hasMethods[methodType]) {
+        // Append the methods
+        baseQuery += ' & ' + methodType + 'Methods';
+    }
+
+    // Return the query
+    return baseQuery;
+}
+
 // Recursively read and generate index files
 function generateIndexFiles(path) {
     let content = [];
@@ -449,14 +493,14 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
                                         // Add the methods
-                                        collections.push('\t' + collection + '(): ' + 'IBaseCollection<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasCollectionMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '') + ';');
-                                        collections.push('\t' + collection + '(id: string | number): ' + 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
+                                        collections.push('\t' + collection + '(): ' + generateBaseCollection(methodType, hasCollections, hasCollectionMethods) + ';');
+                                        collections.push('\t' + collection + '(id: string | number): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
                                         query.push('\t' + collection + ': IBaseResults<' + methodType + '>;');
                                     } else {
                                         // See if there is a query
                                         if (hasCollections[methodType]) {
                                             // Add the method
-                                            props.push('\t' + collection + '(): ' + 'IBaseQuery<' + methodType + ', ' + methodType + 'Query> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
+                                            props.push('\t' + collection + '(): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
                                         } else {
                                             // Add the method
                                             props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
@@ -501,7 +545,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Else, see if this is a "getBy" method
                                 else if (/^getBy/.test(methodInfo.name)) {
                                     // Set the type
-                                    methodType = 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ", " + methodType + "Query" : "") + '>' + (hasCollections[methodType] ? " & " + methodType + "Collections" : "") + (hasMethods[methodType] ? " & " + methodType + "Methods" : "");
+                                    methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                 } else {
                                     // Set the type
                                     methodType = 'IBaseExecution<' + methodType + '>';
@@ -550,7 +594,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     // See if collections exist
                                     if (hasCollections[methodType]) {
                                         // Update the method type
-                                        methodType = 'IBaseQuery<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '');
+                                        methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                     } else {
                                         // Get the type
                                         methodType = getType(methodInfo.returnType);
@@ -561,7 +605,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                             methodType = methodType.replace(/^Array\</, '').replace(/\>$/, '');
 
                                             // Set the type
-                                            methodType = 'IBaseCollection<' + methodType + (hasCollections[methodType] ? ', ' + methodType + 'Query' : '') + '>' + (hasCollectionMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '');
+                                            methodType = generateBaseCollection(methodType, hasCollections, hasCollectionMethods);
                                         } else {
                                             // Set the type
                                             methodType = 'IBaseExecution<' + methodType + '>';
@@ -602,8 +646,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                         // Generate the content
                         content.push(createInterface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"]));
-                        content.push(createInterface("I" + name + "Collection", "IBaseResults<" + name + ">"));
-                        content.push(createInterface("I" + name + "QueryCollection", "IBaseResults<" + name + "Query>"));
+                        content.push(createInterface("I" + name + "Collection", "IBaseResults<" + name + ">" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : "")));
+                        content.push(createInterface("I" + name + "QueryCollection", "IBaseResults<" + name + "Query>" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : "")));
                         content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"].join(', ')));
                         content.push(createInterface(name, baseTypes.join(", ")));
                         content.push(createInterface(name + "Props", null, variables.join('\n')));

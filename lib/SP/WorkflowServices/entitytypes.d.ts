@@ -14,14 +14,14 @@ export interface IWorkflowDefinition extends WorkflowDefinitionCollections,Workf
 /*********************************************
 * IWorkflowDefinitionCollection
 **********************************************/
-export interface IWorkflowDefinitionCollection extends IBaseResults<WorkflowDefinition> {
+export interface IWorkflowDefinitionCollection extends IBaseResults<WorkflowDefinition>, WorkflowDefinitionCollectionMethods {
 
 }
 
 /*********************************************
 * IWorkflowDefinitionQueryCollection
 **********************************************/
-export interface IWorkflowDefinitionQueryCollection extends IBaseResults<WorkflowDefinitionQuery> {
+export interface IWorkflowDefinitionQueryCollection extends IBaseResults<WorkflowDefinitionQuery>, WorkflowDefinitionCollectionMethods {
 
 }
 
@@ -164,7 +164,7 @@ export interface WorkflowDeploymentServiceMethods {
 	deleteCollateral(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<any>;
 	deleteDefinition(definitionId?: any): IBaseExecution<any>;
 	deprecateDefinition(definitionId?: any): IBaseExecution<any>;
-	enumerateDefinitions(publishedOnly?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowDefinition> & SP.WorkflowServices.WorkflowDefinitionCollectionMethods;
+	enumerateDefinitions(publishedOnly?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowDefinition>;
 	enumerateIntegratedApps(): IBaseCollection<SP.AppInstance>;
 	getActivitySignatures(lastChanged?: any): IBaseCollection<SP.KeyValue>;
 	getCollateralUri(workflowDefinitionId?: any, leafFileName?: string): IBaseExecution<string>;
@@ -432,14 +432,14 @@ export interface IWorkflowSubscription extends WorkflowSubscriptionCollections,W
 /*********************************************
 * IWorkflowSubscriptionCollection
 **********************************************/
-export interface IWorkflowSubscriptionCollection extends IBaseResults<WorkflowSubscription> {
+export interface IWorkflowSubscriptionCollection extends IBaseResults<WorkflowSubscription>, WorkflowSubscriptionCollectionMethods {
 
 }
 
 /*********************************************
 * IWorkflowSubscriptionQueryCollection
 **********************************************/
-export interface IWorkflowSubscriptionQueryCollection extends IBaseResults<WorkflowSubscriptionQuery> {
+export interface IWorkflowSubscriptionQueryCollection extends IBaseResults<WorkflowSubscriptionQuery>, WorkflowSubscriptionCollectionMethods {
 
 }
 
@@ -578,12 +578,12 @@ export interface WorkflowSubscriptionServiceQuery extends WorkflowSubscriptionSe
 **********************************************/
 export interface WorkflowSubscriptionServiceMethods {
 	deleteSubscription(subscriptionId?: any): IBaseExecution<any>;
-	enumerateSubscriptions(): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
-	enumerateSubscriptionsByDefinition(definitionId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
-	enumerateSubscriptionsByEventSource(eventSourceId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
-	enumerateSubscriptionsByList(listId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
-	enumerateSubscriptionsByListAndParentContentType(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
-	enumerateSubscriptionsByListWithContentType(listId?: any, includeContentTypeSpecified?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowSubscription> & SP.WorkflowServices.WorkflowSubscriptionCollectionMethods;
+	enumerateSubscriptions(): IBaseCollection<SP.WorkflowServices.WorkflowSubscription>;
+	enumerateSubscriptionsByDefinition(definitionId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription>;
+	enumerateSubscriptionsByEventSource(eventSourceId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription>;
+	enumerateSubscriptionsByList(listId?: any): IBaseCollection<SP.WorkflowServices.WorkflowSubscription>;
+	enumerateSubscriptionsByListAndParentContentType(listId?: any, parentContentTypeId?: SP.ContentTypeId, includeNoContentTypeSpecified?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowSubscription>;
+	enumerateSubscriptionsByListWithContentType(listId?: any, includeContentTypeSpecified?: boolean): IBaseCollection<SP.WorkflowServices.WorkflowSubscription>;
 	getSubscription(subscriptionId?: any): IBaseExecution<SP.WorkflowServices.WorkflowSubscription>;
 	registerInterestInHostWebList(listId?: any, eventName?: string): IBaseExecution<any>;
 	registerInterestInList(listId?: any, eventName?: string): IBaseExecution<any>;

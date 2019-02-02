@@ -15,14 +15,14 @@ export interface Icomment extends commentCollections,commentMethods,IBaseQuery<I
 /*********************************************
 * IcommentCollection
 **********************************************/
-export interface IcommentCollection extends IBaseResults<comment> {
+export interface IcommentCollection extends IBaseResults<comment>, commentCollectionMethods {
 
 }
 
 /*********************************************
 * IcommentQueryCollection
 **********************************************/
-export interface IcommentQueryCollection extends IBaseResults<commentQuery> {
+export interface IcommentQueryCollection extends IBaseResults<commentQuery>, commentCollectionMethods {
 
 }
 
@@ -72,7 +72,7 @@ export interface commentPropMethods {
 export interface commentCollections extends commentPropMethods {
 	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
 	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
-	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery> & Microsoft.SharePoint.Comments.commentCollectionMethods;
+	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery, Microsoft.SharePoint.Comments.commentCollectionMethods> & Microsoft.SharePoint.Comments.commentCollectionMethods;
 	replies(id: string | number): IBaseQuery<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentQuery> & Microsoft.SharePoint.Comments.commentCollections & Microsoft.SharePoint.Comments.commentMethods;
 }
 

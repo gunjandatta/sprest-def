@@ -160,14 +160,14 @@ export interface IMicrofeedData extends MicrofeedDataCollections,MicrofeedDataMe
 /*********************************************
 * IMicrofeedDataCollection
 **********************************************/
-export interface IMicrofeedDataCollection extends IBaseResults<MicrofeedData> {
+export interface IMicrofeedDataCollection extends IBaseResults<MicrofeedData>, MicrofeedDataCollectionMethods {
 
 }
 
 /*********************************************
 * IMicrofeedDataQueryCollection
 **********************************************/
-export interface IMicrofeedDataQueryCollection extends IBaseResults<MicrofeedDataQuery> {
+export interface IMicrofeedDataQueryCollection extends IBaseResults<MicrofeedDataQuery>, MicrofeedDataCollectionMethods {
 
 }
 
@@ -413,6 +413,6 @@ export interface MicrofeedStoreMethods {
 	getSocialProperties(accountName?: string): IBaseExecution<string>;
 	incrementUnreadAtMentionCount(accountName?: string): IBaseExecution<any>;
 	newItem(storeIdentifier?: string): IBaseExecution<SP.Microfeed.MicrofeedData>;
-	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseCollection<SP.Microfeed.MicrofeedData> & SP.Microfeed.MicrofeedDataCollectionMethods;
+	query(storeIdentifier?: string, query?: SP.Microfeed.MicrofeedDataQuery): IBaseCollection<SP.Microfeed.MicrofeedData>;
 	setPostLikeStatus(accountName?: string, postId?: string, like?: boolean): IBaseExecution<any>;
 }
