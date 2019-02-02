@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../";
-import { IBaseQuery } from "../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../";
 import { SP } from "../../../../";
 
 /*********************************************
@@ -13,14 +12,14 @@ export interface INavigationServiceRest extends NavigationServiceRestCollections
 * INavigationServiceRestCollection
 **********************************************/
 export interface INavigationServiceRestCollection extends IBaseResults<NavigationServiceRest> {
-
+	done(resolve: (value?: Array<NavigationServiceRest | any>) => void);
 }
 
 /*********************************************
 * INavigationServiceRestQueryCollection
 **********************************************/
 export interface INavigationServiceRestQueryCollection extends IBaseResults<NavigationServiceRestQuery> {
-
+	done(resolve: (value?: Array<NavigationServiceRestQuery | any>) => void);
 }
 
 /*********************************************
@@ -33,7 +32,7 @@ export interface INavigationServiceRestQuery extends NavigationServiceRestQuery,
 /*********************************************
 * NavigationServiceRest
 **********************************************/
-export interface NavigationServiceRest extends NavigationServiceRestProps, NavigationServiceRestCollections, NavigationServiceRestMethods {
+export interface NavigationServiceRest extends IBaseResult, NavigationServiceRestProps, NavigationServiceRestCollections, NavigationServiceRestMethods {
 
 }
 
@@ -61,7 +60,7 @@ export interface NavigationServiceRestCollections extends NavigationServiceRestP
 /*********************************************
 * NavigationServiceRestQuery
 **********************************************/
-export interface NavigationServiceRestQuery extends NavigationServiceRestProps, NavigationServiceRestMethods {
+export interface NavigationServiceRestQuery extends IBaseResult, NavigationServiceRestProps, NavigationServiceRestMethods {
 
 }
 

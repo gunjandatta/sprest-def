@@ -1,8 +1,6 @@
-import { IBaseExecution } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 import { SP } from "../../";
-import { IBaseCollection } from "../../";
-import { IBaseQuery } from "../../";
-import { IBaseResults } from "../../";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../";
 
 /*********************************************
 * SharedDocumentInfo
@@ -105,7 +103,7 @@ export interface SharingInformationCollections {
 /*********************************************
 * SharingInformationQuery
 **********************************************/
-export interface SharingInformationQuery extends SharingInformation {
+export interface SharingInformationQuery extends IBaseResult, SharingInformation {
 	pickerSettings: SP.PickerSettings & SP.PickerSettingsCollections;
 }
 

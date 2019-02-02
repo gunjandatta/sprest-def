@@ -1,7 +1,5 @@
-import { IBaseExecution } from "../../../";
-import { IBaseCollection } from "../../../";
-import { IBaseQuery } from "../../../";
-import { IBaseResults } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../../";
 import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
@@ -16,14 +14,14 @@ export interface Icomment extends commentCollections,commentMethods,IBaseQuery<I
 * IcommentCollection
 **********************************************/
 export interface IcommentCollection extends IBaseResults<comment>, commentCollectionMethods {
-
+	done(resolve: (value?: Array<comment | any>) => void);
 }
 
 /*********************************************
 * IcommentQueryCollection
 **********************************************/
 export interface IcommentQueryCollection extends IBaseResults<commentQuery>, commentCollectionMethods {
-
+	done(resolve: (value?: Array<commentQuery | any>) => void);
 }
 
 /*********************************************
@@ -36,7 +34,7 @@ export interface IcommentQuery extends commentQuery, commentMethods {
 /*********************************************
 * comment
 **********************************************/
-export interface comment extends commentProps, commentCollections, commentMethods {
+export interface comment extends IBaseResult, commentProps, commentCollections, commentMethods {
 
 }
 
@@ -86,9 +84,9 @@ export interface commentCollectionMethods {
 /*********************************************
 * commentQuery
 **********************************************/
-export interface commentQuery extends commentProps, commentMethods {
+export interface commentQuery extends IBaseResult, commentProps, commentMethods {
 	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
-	replies: IBaseResults<Microsoft.SharePoint.Comments.comment>;
+	replies: IBaseResults<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollectionMethods;
 }
 
 /*********************************************

@@ -1,8 +1,6 @@
-import { IBaseExecution } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 import { SP } from "../../";
-import { IBaseQuery } from "../../";
-import { IBaseCollection } from "../../";
-import { IBaseResults } from "../../";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../";
 
 /*********************************************
 * IWorkflowDefinition
@@ -15,14 +13,14 @@ export interface IWorkflowDefinition extends WorkflowDefinitionCollections,Workf
 * IWorkflowDefinitionCollection
 **********************************************/
 export interface IWorkflowDefinitionCollection extends IBaseResults<WorkflowDefinition>, WorkflowDefinitionCollectionMethods {
-
+	done(resolve: (value?: Array<WorkflowDefinition | any>) => void);
 }
 
 /*********************************************
 * IWorkflowDefinitionQueryCollection
 **********************************************/
 export interface IWorkflowDefinitionQueryCollection extends IBaseResults<WorkflowDefinitionQuery>, WorkflowDefinitionCollectionMethods {
-
+	done(resolve: (value?: Array<WorkflowDefinitionQuery | any>) => void);
 }
 
 /*********************************************
@@ -35,7 +33,7 @@ export interface IWorkflowDefinitionQuery extends WorkflowDefinitionQuery, Workf
 /*********************************************
 * WorkflowDefinition
 **********************************************/
-export interface WorkflowDefinition extends WorkflowDefinitionProps, WorkflowDefinitionCollections, WorkflowDefinitionMethods {
+export interface WorkflowDefinition extends IBaseResult, WorkflowDefinitionProps, WorkflowDefinitionCollections, WorkflowDefinitionMethods {
 
 }
 
@@ -83,7 +81,7 @@ export interface WorkflowDefinitionCollectionMethods {
 /*********************************************
 * WorkflowDefinitionQuery
 **********************************************/
-export interface WorkflowDefinitionQuery extends WorkflowDefinitionProps, WorkflowDefinitionMethods {
+export interface WorkflowDefinitionQuery extends IBaseResult, WorkflowDefinitionProps, WorkflowDefinitionMethods {
 
 }
 
@@ -105,14 +103,14 @@ export interface IWorkflowDeploymentService extends WorkflowDeploymentServiceCol
 * IWorkflowDeploymentServiceCollection
 **********************************************/
 export interface IWorkflowDeploymentServiceCollection extends IBaseResults<WorkflowDeploymentService> {
-
+	done(resolve: (value?: Array<WorkflowDeploymentService | any>) => void);
 }
 
 /*********************************************
 * IWorkflowDeploymentServiceQueryCollection
 **********************************************/
 export interface IWorkflowDeploymentServiceQueryCollection extends IBaseResults<WorkflowDeploymentServiceQuery> {
-
+	done(resolve: (value?: Array<WorkflowDeploymentServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -125,7 +123,7 @@ export interface IWorkflowDeploymentServiceQuery extends WorkflowDeploymentServi
 /*********************************************
 * WorkflowDeploymentService
 **********************************************/
-export interface WorkflowDeploymentService extends WorkflowDeploymentServiceProps, WorkflowDeploymentServiceCollections, WorkflowDeploymentServiceMethods {
+export interface WorkflowDeploymentService extends IBaseResult, WorkflowDeploymentServiceProps, WorkflowDeploymentServiceCollections, WorkflowDeploymentServiceMethods {
 
 }
 
@@ -153,7 +151,7 @@ export interface WorkflowDeploymentServiceCollections extends WorkflowDeployment
 /*********************************************
 * WorkflowDeploymentServiceQuery
 **********************************************/
-export interface WorkflowDeploymentServiceQuery extends WorkflowDeploymentServiceProps, WorkflowDeploymentServiceMethods {
+export interface WorkflowDeploymentServiceQuery extends IBaseResult, WorkflowDeploymentServiceProps, WorkflowDeploymentServiceMethods {
 
 }
 
@@ -208,14 +206,14 @@ export interface IWorkflowInstanceService extends WorkflowInstanceServiceCollect
 * IWorkflowInstanceServiceCollection
 **********************************************/
 export interface IWorkflowInstanceServiceCollection extends IBaseResults<WorkflowInstanceService> {
-
+	done(resolve: (value?: Array<WorkflowInstanceService | any>) => void);
 }
 
 /*********************************************
 * IWorkflowInstanceServiceQueryCollection
 **********************************************/
 export interface IWorkflowInstanceServiceQueryCollection extends IBaseResults<WorkflowInstanceServiceQuery> {
-
+	done(resolve: (value?: Array<WorkflowInstanceServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -228,7 +226,7 @@ export interface IWorkflowInstanceServiceQuery extends WorkflowInstanceServiceQu
 /*********************************************
 * WorkflowInstanceService
 **********************************************/
-export interface WorkflowInstanceService extends WorkflowInstanceServiceProps, WorkflowInstanceServiceCollections, WorkflowInstanceServiceMethods {
+export interface WorkflowInstanceService extends IBaseResult, WorkflowInstanceServiceProps, WorkflowInstanceServiceCollections, WorkflowInstanceServiceMethods {
 
 }
 
@@ -256,7 +254,7 @@ export interface WorkflowInstanceServiceCollections extends WorkflowInstanceServ
 /*********************************************
 * WorkflowInstanceServiceQuery
 **********************************************/
-export interface WorkflowInstanceServiceQuery extends WorkflowInstanceServiceProps, WorkflowInstanceServiceMethods {
+export interface WorkflowInstanceServiceQuery extends IBaseResult, WorkflowInstanceServiceProps, WorkflowInstanceServiceMethods {
 	Current: SP.WorkflowServices.WorkflowInstanceService & SP.WorkflowServices.WorkflowInstanceServiceCollections;
 }
 
@@ -283,14 +281,14 @@ export interface IInteropService extends InteropServiceCollections,InteropServic
 * IInteropServiceCollection
 **********************************************/
 export interface IInteropServiceCollection extends IBaseResults<InteropService> {
-
+	done(resolve: (value?: Array<InteropService | any>) => void);
 }
 
 /*********************************************
 * IInteropServiceQueryCollection
 **********************************************/
 export interface IInteropServiceQueryCollection extends IBaseResults<InteropServiceQuery> {
-
+	done(resolve: (value?: Array<InteropServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -303,7 +301,7 @@ export interface IInteropServiceQuery extends InteropServiceQuery, InteropServic
 /*********************************************
 * InteropService
 **********************************************/
-export interface InteropService extends InteropServiceProps, InteropServiceCollections, InteropServiceMethods {
+export interface InteropService extends IBaseResult, InteropServiceProps, InteropServiceCollections, InteropServiceMethods {
 
 }
 
@@ -331,7 +329,7 @@ export interface InteropServiceCollections extends InteropServicePropMethods {
 /*********************************************
 * InteropServiceQuery
 **********************************************/
-export interface InteropServiceQuery extends InteropServiceProps, InteropServiceMethods {
+export interface InteropServiceQuery extends IBaseResult, InteropServiceProps, InteropServiceMethods {
 	Current: SP.WorkflowServices.InteropService & SP.WorkflowServices.InteropServiceCollections;
 }
 
@@ -356,14 +354,14 @@ export interface IWorkflowServicesManager extends WorkflowServicesManagerCollect
 * IWorkflowServicesManagerCollection
 **********************************************/
 export interface IWorkflowServicesManagerCollection extends IBaseResults<WorkflowServicesManager> {
-
+	done(resolve: (value?: Array<WorkflowServicesManager | any>) => void);
 }
 
 /*********************************************
 * IWorkflowServicesManagerQueryCollection
 **********************************************/
 export interface IWorkflowServicesManagerQueryCollection extends IBaseResults<WorkflowServicesManagerQuery> {
-
+	done(resolve: (value?: Array<WorkflowServicesManagerQuery | any>) => void);
 }
 
 /*********************************************
@@ -376,7 +374,7 @@ export interface IWorkflowServicesManagerQuery extends WorkflowServicesManagerQu
 /*********************************************
 * WorkflowServicesManager
 **********************************************/
-export interface WorkflowServicesManager extends WorkflowServicesManagerProps, WorkflowServicesManagerCollections, WorkflowServicesManagerMethods {
+export interface WorkflowServicesManager extends IBaseResult, WorkflowServicesManagerProps, WorkflowServicesManagerCollections, WorkflowServicesManagerMethods {
 
 }
 
@@ -407,7 +405,7 @@ export interface WorkflowServicesManagerCollections extends WorkflowServicesMana
 /*********************************************
 * WorkflowServicesManagerQuery
 **********************************************/
-export interface WorkflowServicesManagerQuery extends WorkflowServicesManagerProps, WorkflowServicesManagerMethods {
+export interface WorkflowServicesManagerQuery extends IBaseResult, WorkflowServicesManagerProps, WorkflowServicesManagerMethods {
 	Current: SP.WorkflowServices.WorkflowServicesManager & SP.WorkflowServices.WorkflowServicesManagerCollections;
 }
 
@@ -433,14 +431,14 @@ export interface IWorkflowSubscription extends WorkflowSubscriptionCollections,W
 * IWorkflowSubscriptionCollection
 **********************************************/
 export interface IWorkflowSubscriptionCollection extends IBaseResults<WorkflowSubscription>, WorkflowSubscriptionCollectionMethods {
-
+	done(resolve: (value?: Array<WorkflowSubscription | any>) => void);
 }
 
 /*********************************************
 * IWorkflowSubscriptionQueryCollection
 **********************************************/
 export interface IWorkflowSubscriptionQueryCollection extends IBaseResults<WorkflowSubscriptionQuery>, WorkflowSubscriptionCollectionMethods {
-
+	done(resolve: (value?: Array<WorkflowSubscriptionQuery | any>) => void);
 }
 
 /*********************************************
@@ -453,7 +451,7 @@ export interface IWorkflowSubscriptionQuery extends WorkflowSubscriptionQuery, W
 /*********************************************
 * WorkflowSubscription
 **********************************************/
-export interface WorkflowSubscription extends WorkflowSubscriptionProps, WorkflowSubscriptionCollections, WorkflowSubscriptionMethods {
+export interface WorkflowSubscription extends IBaseResult, WorkflowSubscriptionProps, WorkflowSubscriptionCollections, WorkflowSubscriptionMethods {
 
 }
 
@@ -497,7 +495,7 @@ export interface WorkflowSubscriptionCollectionMethods {
 /*********************************************
 * WorkflowSubscriptionQuery
 **********************************************/
-export interface WorkflowSubscriptionQuery extends WorkflowSubscriptionProps, WorkflowSubscriptionMethods {
+export interface WorkflowSubscriptionQuery extends IBaseResult, WorkflowSubscriptionProps, WorkflowSubscriptionMethods {
 
 }
 
@@ -521,14 +519,14 @@ export interface IWorkflowSubscriptionService extends WorkflowSubscriptionServic
 * IWorkflowSubscriptionServiceCollection
 **********************************************/
 export interface IWorkflowSubscriptionServiceCollection extends IBaseResults<WorkflowSubscriptionService> {
-
+	done(resolve: (value?: Array<WorkflowSubscriptionService | any>) => void);
 }
 
 /*********************************************
 * IWorkflowSubscriptionServiceQueryCollection
 **********************************************/
 export interface IWorkflowSubscriptionServiceQueryCollection extends IBaseResults<WorkflowSubscriptionServiceQuery> {
-
+	done(resolve: (value?: Array<WorkflowSubscriptionServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -541,7 +539,7 @@ export interface IWorkflowSubscriptionServiceQuery extends WorkflowSubscriptionS
 /*********************************************
 * WorkflowSubscriptionService
 **********************************************/
-export interface WorkflowSubscriptionService extends WorkflowSubscriptionServiceProps, WorkflowSubscriptionServiceCollections, WorkflowSubscriptionServiceMethods {
+export interface WorkflowSubscriptionService extends IBaseResult, WorkflowSubscriptionServiceProps, WorkflowSubscriptionServiceCollections, WorkflowSubscriptionServiceMethods {
 
 }
 
@@ -569,7 +567,7 @@ export interface WorkflowSubscriptionServiceCollections extends WorkflowSubscrip
 /*********************************************
 * WorkflowSubscriptionServiceQuery
 **********************************************/
-export interface WorkflowSubscriptionServiceQuery extends WorkflowSubscriptionServiceProps, WorkflowSubscriptionServiceMethods {
+export interface WorkflowSubscriptionServiceQuery extends IBaseResult, WorkflowSubscriptionServiceProps, WorkflowSubscriptionServiceMethods {
 	Current: SP.WorkflowServices.WorkflowSubscriptionService & SP.WorkflowServices.WorkflowSubscriptionServiceCollections;
 }
 
@@ -602,14 +600,14 @@ export interface IWorkflowMessagingService extends WorkflowMessagingServiceColle
 * IWorkflowMessagingServiceCollection
 **********************************************/
 export interface IWorkflowMessagingServiceCollection extends IBaseResults<WorkflowMessagingService> {
-
+	done(resolve: (value?: Array<WorkflowMessagingService | any>) => void);
 }
 
 /*********************************************
 * IWorkflowMessagingServiceQueryCollection
 **********************************************/
 export interface IWorkflowMessagingServiceQueryCollection extends IBaseResults<WorkflowMessagingServiceQuery> {
-
+	done(resolve: (value?: Array<WorkflowMessagingServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -622,7 +620,7 @@ export interface IWorkflowMessagingServiceQuery extends WorkflowMessagingService
 /*********************************************
 * WorkflowMessagingService
 **********************************************/
-export interface WorkflowMessagingService extends WorkflowMessagingServiceProps, WorkflowMessagingServiceCollections, WorkflowMessagingServiceMethods {
+export interface WorkflowMessagingService extends IBaseResult, WorkflowMessagingServiceProps, WorkflowMessagingServiceCollections, WorkflowMessagingServiceMethods {
 
 }
 
@@ -650,7 +648,7 @@ export interface WorkflowMessagingServiceCollections extends WorkflowMessagingSe
 /*********************************************
 * WorkflowMessagingServiceQuery
 **********************************************/
-export interface WorkflowMessagingServiceQuery extends WorkflowMessagingServiceProps, WorkflowMessagingServiceMethods {
+export interface WorkflowMessagingServiceQuery extends IBaseResult, WorkflowMessagingServiceProps, WorkflowMessagingServiceMethods {
 
 }
 

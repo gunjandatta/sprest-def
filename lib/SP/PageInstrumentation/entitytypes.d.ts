@@ -1,4 +1,4 @@
-import { IBaseExecution } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 
 /*********************************************
 * ClickManager

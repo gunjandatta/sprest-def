@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../../";
-import { IBaseQuery } from "../../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
@@ -13,14 +12,14 @@ export interface IStringCollection extends StringCollectionCollections,StringCol
 * IStringCollectionCollection
 **********************************************/
 export interface IStringCollectionCollection extends IBaseResults<StringCollection> {
-
+	done(resolve: (value?: Array<StringCollection | any>) => void);
 }
 
 /*********************************************
 * IStringCollectionQueryCollection
 **********************************************/
 export interface IStringCollectionQueryCollection extends IBaseResults<StringCollectionQuery> {
-
+	done(resolve: (value?: Array<StringCollectionQuery | any>) => void);
 }
 
 /*********************************************
@@ -33,7 +32,7 @@ export interface IStringCollectionQuery extends StringCollectionQuery, StringCol
 /*********************************************
 * StringCollection
 **********************************************/
-export interface StringCollection extends StringCollectionProps, StringCollectionCollections, StringCollectionMethods {
+export interface StringCollection extends IBaseResult, StringCollectionProps, StringCollectionCollections, StringCollectionMethods {
 
 }
 
@@ -62,7 +61,7 @@ export interface StringCollectionCollections extends StringCollectionPropMethods
 /*********************************************
 * StringCollectionQuery
 **********************************************/
-export interface StringCollectionQuery extends StringCollectionProps, StringCollectionMethods {
+export interface StringCollectionQuery extends IBaseResult, StringCollectionProps, StringCollectionMethods {
 
 }
 
@@ -99,14 +98,14 @@ export interface IRankingLabeling extends RankingLabelingCollections,RankingLabe
 * IRankingLabelingCollection
 **********************************************/
 export interface IRankingLabelingCollection extends IBaseResults<RankingLabeling> {
-
+	done(resolve: (value?: Array<RankingLabeling | any>) => void);
 }
 
 /*********************************************
 * IRankingLabelingQueryCollection
 **********************************************/
 export interface IRankingLabelingQueryCollection extends IBaseResults<RankingLabelingQuery> {
-
+	done(resolve: (value?: Array<RankingLabelingQuery | any>) => void);
 }
 
 /*********************************************
@@ -119,7 +118,7 @@ export interface IRankingLabelingQuery extends RankingLabelingQuery, RankingLabe
 /*********************************************
 * RankingLabeling
 **********************************************/
-export interface RankingLabeling extends RankingLabelingProps, RankingLabelingCollections, RankingLabelingMethods {
+export interface RankingLabeling extends IBaseResult, RankingLabelingProps, RankingLabelingCollections, RankingLabelingMethods {
 
 }
 
@@ -147,7 +146,7 @@ export interface RankingLabelingCollections extends RankingLabelingPropMethods {
 /*********************************************
 * RankingLabelingQuery
 **********************************************/
-export interface RankingLabelingQuery extends RankingLabelingProps, RankingLabelingMethods {
+export interface RankingLabelingQuery extends IBaseResult, RankingLabelingProps, RankingLabelingMethods {
 
 }
 
@@ -171,14 +170,14 @@ export interface IReorderingRuleCollection extends ReorderingRuleCollectionColle
 * IReorderingRuleCollectionCollection
 **********************************************/
 export interface IReorderingRuleCollectionCollection extends IBaseResults<ReorderingRuleCollection> {
-
+	done(resolve: (value?: Array<ReorderingRuleCollection | any>) => void);
 }
 
 /*********************************************
 * IReorderingRuleCollectionQueryCollection
 **********************************************/
 export interface IReorderingRuleCollectionQueryCollection extends IBaseResults<ReorderingRuleCollectionQuery> {
-
+	done(resolve: (value?: Array<ReorderingRuleCollectionQuery | any>) => void);
 }
 
 /*********************************************
@@ -191,7 +190,7 @@ export interface IReorderingRuleCollectionQuery extends ReorderingRuleCollection
 /*********************************************
 * ReorderingRuleCollection
 **********************************************/
-export interface ReorderingRuleCollection extends ReorderingRuleCollectionProps, ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods {
+export interface ReorderingRuleCollection extends IBaseResult, ReorderingRuleCollectionProps, ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods {
 
 }
 
@@ -220,7 +219,7 @@ export interface ReorderingRuleCollectionCollections extends ReorderingRuleColle
 /*********************************************
 * ReorderingRuleCollectionQuery
 **********************************************/
-export interface ReorderingRuleCollectionQuery extends ReorderingRuleCollectionProps, ReorderingRuleCollectionMethods {
+export interface ReorderingRuleCollectionQuery extends IBaseResult, ReorderingRuleCollectionProps, ReorderingRuleCollectionMethods {
 
 }
 
@@ -243,14 +242,14 @@ export interface ISortCollection extends SortCollectionCollections,SortCollectio
 * ISortCollectionCollection
 **********************************************/
 export interface ISortCollectionCollection extends IBaseResults<SortCollection> {
-
+	done(resolve: (value?: Array<SortCollection | any>) => void);
 }
 
 /*********************************************
 * ISortCollectionQueryCollection
 **********************************************/
 export interface ISortCollectionQueryCollection extends IBaseResults<SortCollectionQuery> {
-
+	done(resolve: (value?: Array<SortCollectionQuery | any>) => void);
 }
 
 /*********************************************
@@ -263,7 +262,7 @@ export interface ISortCollectionQuery extends SortCollectionQuery, SortCollectio
 /*********************************************
 * SortCollection
 **********************************************/
-export interface SortCollection extends SortCollectionProps, SortCollectionCollections, SortCollectionMethods {
+export interface SortCollection extends IBaseResult, SortCollectionProps, SortCollectionCollections, SortCollectionMethods {
 
 }
 
@@ -292,7 +291,7 @@ export interface SortCollectionCollections extends SortCollectionPropMethods {
 /*********************************************
 * SortCollectionQuery
 **********************************************/
-export interface SortCollectionQuery extends SortCollectionProps, SortCollectionMethods {
+export interface SortCollectionQuery extends IBaseResult, SortCollectionProps, SortCollectionMethods {
 
 }
 

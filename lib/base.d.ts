@@ -62,7 +62,7 @@ export interface IBaseExecution<Type = any, Result = Type> {
      * Method to wait for the requests to complete.
      * @param resolve - The method to be executed after the request completes.
      */
-    done<T=IBaseResult>(resolve: (value?: T) => void);
+    done<T=Result>(resolve: (value?: T) => void);
 
     /**
      * Method to get the request information.
@@ -84,7 +84,7 @@ export interface IBaseQuery<Type = any, Result = Type> extends IBaseExecution<Ty
 /**
  * Base Result
  */
-export interface IBaseResult<Type = any, Result = Type, QueryResult = Result> {
+export interface IBaseResult {
     /** True, if the object exists, false otherwise. */
     existsFl: boolean;
 
@@ -100,7 +100,7 @@ export interface IBaseResult<Type = any, Result = Type, QueryResult = Result> {
 /**
  * Base Results
  */
-export interface IBaseResults<Type = any> extends IBaseResult<Type> {
+export interface IBaseResults<Type = any> extends IBaseResult {
     /** Results */
     results: Array<Type>;
 }

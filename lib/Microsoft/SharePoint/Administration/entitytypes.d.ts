@@ -1,7 +1,5 @@
-import { IBaseExecution } from "../../../";
-import { IBaseQuery } from "../../../";
-import { IBaseCollection } from "../../../";
-import { IBaseResults } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../../";
 import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
@@ -16,14 +14,14 @@ export interface ISPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinit
 * ISPAppStateQueryJobDefinitionCollection
 **********************************************/
 export interface ISPAppStateQueryJobDefinitionCollection extends IBaseResults<SPAppStateQueryJobDefinition> {
-
+	done(resolve: (value?: Array<SPAppStateQueryJobDefinition | any>) => void);
 }
 
 /*********************************************
 * ISPAppStateQueryJobDefinitionQueryCollection
 **********************************************/
 export interface ISPAppStateQueryJobDefinitionQueryCollection extends IBaseResults<SPAppStateQueryJobDefinitionQuery> {
-
+	done(resolve: (value?: Array<SPAppStateQueryJobDefinitionQuery | any>) => void);
 }
 
 /*********************************************
@@ -36,7 +34,7 @@ export interface ISPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDe
 /*********************************************
 * SPAppStateQueryJobDefinition
 **********************************************/
-export interface SPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionCollections, SPAppStateQueryJobDefinitionMethods {
+export interface SPAppStateQueryJobDefinition extends IBaseResult, SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionCollections, SPAppStateQueryJobDefinitionMethods {
 
 }
 
@@ -64,7 +62,7 @@ export interface SPAppStateQueryJobDefinitionCollections extends SPAppStateQuery
 /*********************************************
 * SPAppStateQueryJobDefinitionQuery
 **********************************************/
-export interface SPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionMethods {
+export interface SPAppStateQueryJobDefinitionQuery extends IBaseResult, SPAppStateQueryJobDefinitionProps, SPAppStateQueryJobDefinitionMethods {
 
 }
 
@@ -92,7 +90,7 @@ export interface SPFarmCollections {
 /*********************************************
 * SPFarmQuery
 **********************************************/
-export interface SPFarmQuery extends SPFarm {
+export interface SPFarmQuery extends IBaseResult, SPFarm {
 	Local: Microsoft.SharePoint.Administration.SPFarm & Microsoft.SharePoint.Administration.SPFarmCollections;
 }
 
@@ -143,14 +141,14 @@ export interface ISPWebApplication extends SPWebApplicationCollections,SPWebAppl
 * ISPWebApplicationCollection
 **********************************************/
 export interface ISPWebApplicationCollection extends IBaseResults<SPWebApplication> {
-
+	done(resolve: (value?: Array<SPWebApplication | any>) => void);
 }
 
 /*********************************************
 * ISPWebApplicationQueryCollection
 **********************************************/
 export interface ISPWebApplicationQueryCollection extends IBaseResults<SPWebApplicationQuery> {
-
+	done(resolve: (value?: Array<SPWebApplicationQuery | any>) => void);
 }
 
 /*********************************************
@@ -163,7 +161,7 @@ export interface ISPWebApplicationQuery extends SPWebApplicationQuery, SPWebAppl
 /*********************************************
 * SPWebApplication
 **********************************************/
-export interface SPWebApplication extends SPWebApplicationProps, SPWebApplicationCollections, SPWebApplicationMethods {
+export interface SPWebApplication extends IBaseResult, SPWebApplicationProps, SPWebApplicationCollections, SPWebApplicationMethods {
 
 }
 
@@ -196,7 +194,7 @@ export interface SPWebApplicationCollections extends SPWebApplicationPropMethods
 /*********************************************
 * SPWebApplicationQuery
 **********************************************/
-export interface SPWebApplicationQuery extends SPWebApplicationProps, SPWebApplicationMethods {
+export interface SPWebApplicationQuery extends IBaseResult, SPWebApplicationProps, SPWebApplicationMethods {
 	Sites: IBaseResults<SP.Site>;
 }
 
@@ -218,14 +216,14 @@ export interface ISPWebService extends SPWebServiceCollections,SPWebServiceMetho
 * ISPWebServiceCollection
 **********************************************/
 export interface ISPWebServiceCollection extends IBaseResults<SPWebService> {
-
+	done(resolve: (value?: Array<SPWebService | any>) => void);
 }
 
 /*********************************************
 * ISPWebServiceQueryCollection
 **********************************************/
 export interface ISPWebServiceQueryCollection extends IBaseResults<SPWebServiceQuery> {
-
+	done(resolve: (value?: Array<SPWebServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -238,7 +236,7 @@ export interface ISPWebServiceQuery extends SPWebServiceQuery, SPWebServiceMetho
 /*********************************************
 * SPWebService
 **********************************************/
-export interface SPWebService extends SPWebServiceProps, SPWebServiceCollections, SPWebServiceMethods {
+export interface SPWebService extends IBaseResult, SPWebServiceProps, SPWebServiceCollections, SPWebServiceMethods {
 
 }
 
@@ -267,7 +265,7 @@ export interface SPWebServiceCollections extends SPWebServicePropMethods {
 /*********************************************
 * SPWebServiceQuery
 **********************************************/
-export interface SPWebServiceQuery extends SPWebServiceProps, SPWebServiceMethods {
+export interface SPWebServiceQuery extends IBaseResult, SPWebServiceProps, SPWebServiceMethods {
 	ContentService: Microsoft.SharePoint.Administration.SPWebService & Microsoft.SharePoint.Administration.SPWebServiceCollections;
 	WebApplications: IBaseResults<Microsoft.SharePoint.Administration.SPWebApplication>;
 }
@@ -290,14 +288,14 @@ export interface ISPAnalyticsUsageService extends SPAnalyticsUsageServiceCollect
 * ISPAnalyticsUsageServiceCollection
 **********************************************/
 export interface ISPAnalyticsUsageServiceCollection extends IBaseResults<SPAnalyticsUsageService> {
-
+	done(resolve: (value?: Array<SPAnalyticsUsageService | any>) => void);
 }
 
 /*********************************************
 * ISPAnalyticsUsageServiceQueryCollection
 **********************************************/
 export interface ISPAnalyticsUsageServiceQueryCollection extends IBaseResults<SPAnalyticsUsageServiceQuery> {
-
+	done(resolve: (value?: Array<SPAnalyticsUsageServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -310,7 +308,7 @@ export interface ISPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceQu
 /*********************************************
 * SPAnalyticsUsageService
 **********************************************/
-export interface SPAnalyticsUsageService extends SPAnalyticsUsageServiceProps, SPAnalyticsUsageServiceCollections, SPAnalyticsUsageServiceMethods {
+export interface SPAnalyticsUsageService extends IBaseResult, SPAnalyticsUsageServiceProps, SPAnalyticsUsageServiceCollections, SPAnalyticsUsageServiceMethods {
 
 }
 
@@ -338,7 +336,7 @@ export interface SPAnalyticsUsageServiceCollections extends SPAnalyticsUsageServ
 /*********************************************
 * SPAnalyticsUsageServiceQuery
 **********************************************/
-export interface SPAnalyticsUsageServiceQuery extends SPAnalyticsUsageServiceProps, SPAnalyticsUsageServiceMethods {
+export interface SPAnalyticsUsageServiceQuery extends IBaseResult, SPAnalyticsUsageServiceProps, SPAnalyticsUsageServiceMethods {
 
 }
 

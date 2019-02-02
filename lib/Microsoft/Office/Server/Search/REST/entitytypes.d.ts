@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../../";
-import { IBaseQuery } from "../../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
@@ -13,14 +12,14 @@ export interface ISearchService extends SearchServiceCollections,SearchServiceMe
 * ISearchServiceCollection
 **********************************************/
 export interface ISearchServiceCollection extends IBaseResults<SearchService> {
-
+	done(resolve: (value?: Array<SearchService | any>) => void);
 }
 
 /*********************************************
 * ISearchServiceQueryCollection
 **********************************************/
 export interface ISearchServiceQueryCollection extends IBaseResults<SearchServiceQuery> {
-
+	done(resolve: (value?: Array<SearchServiceQuery | any>) => void);
 }
 
 /*********************************************
@@ -33,7 +32,7 @@ export interface ISearchServiceQuery extends SearchServiceQuery, SearchServiceMe
 /*********************************************
 * SearchService
 **********************************************/
-export interface SearchService extends SearchServiceProps, SearchServiceCollections, SearchServiceMethods {
+export interface SearchService extends IBaseResult, SearchServiceProps, SearchServiceCollections, SearchServiceMethods {
 
 }
 
@@ -61,7 +60,7 @@ export interface SearchServiceCollections extends SearchServicePropMethods {
 /*********************************************
 * SearchServiceQuery
 **********************************************/
-export interface SearchServiceQuery extends SearchServiceProps, SearchServiceMethods {
+export interface SearchServiceQuery extends IBaseResult, SearchServiceProps, SearchServiceMethods {
 
 }
 
@@ -91,14 +90,14 @@ export interface ISearchSetting extends SearchSettingCollections,SearchSettingMe
 * ISearchSettingCollection
 **********************************************/
 export interface ISearchSettingCollection extends IBaseResults<SearchSetting> {
-
+	done(resolve: (value?: Array<SearchSetting | any>) => void);
 }
 
 /*********************************************
 * ISearchSettingQueryCollection
 **********************************************/
 export interface ISearchSettingQueryCollection extends IBaseResults<SearchSettingQuery> {
-
+	done(resolve: (value?: Array<SearchSettingQuery | any>) => void);
 }
 
 /*********************************************
@@ -111,7 +110,7 @@ export interface ISearchSettingQuery extends SearchSettingQuery, SearchSettingMe
 /*********************************************
 * SearchSetting
 **********************************************/
-export interface SearchSetting extends SearchSettingProps, SearchSettingCollections, SearchSettingMethods {
+export interface SearchSetting extends IBaseResult, SearchSettingProps, SearchSettingCollections, SearchSettingMethods {
 
 }
 
@@ -139,7 +138,7 @@ export interface SearchSettingCollections extends SearchSettingPropMethods {
 /*********************************************
 * SearchSettingQuery
 **********************************************/
-export interface SearchSettingQuery extends SearchSettingProps, SearchSettingMethods {
+export interface SearchSettingQuery extends IBaseResult, SearchSettingProps, SearchSettingMethods {
 
 }
 

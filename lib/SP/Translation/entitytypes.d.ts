@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../";
-import { IBaseQuery } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 
 /*********************************************
 * ISyncTranslator
@@ -12,14 +11,14 @@ export interface ISyncTranslator extends SyncTranslatorCollections,SyncTranslato
 * ISyncTranslatorCollection
 **********************************************/
 export interface ISyncTranslatorCollection extends IBaseResults<SyncTranslator> {
-
+	done(resolve: (value?: Array<SyncTranslator | any>) => void);
 }
 
 /*********************************************
 * ISyncTranslatorQueryCollection
 **********************************************/
 export interface ISyncTranslatorQueryCollection extends IBaseResults<SyncTranslatorQuery> {
-
+	done(resolve: (value?: Array<SyncTranslatorQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface ISyncTranslatorQuery extends SyncTranslatorQuery, SyncTranslato
 /*********************************************
 * SyncTranslator
 **********************************************/
-export interface SyncTranslator extends SyncTranslatorProps, SyncTranslatorCollections, SyncTranslatorMethods {
+export interface SyncTranslator extends IBaseResult, SyncTranslatorProps, SyncTranslatorCollections, SyncTranslatorMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface SyncTranslatorCollections extends SyncTranslatorPropMethods {
 /*********************************************
 * SyncTranslatorQuery
 **********************************************/
-export interface SyncTranslatorQuery extends SyncTranslatorProps, SyncTranslatorMethods {
+export interface SyncTranslatorQuery extends IBaseResult, SyncTranslatorProps, SyncTranslatorMethods {
 
 }
 
@@ -83,14 +82,14 @@ export interface ITranslationJob extends TranslationJobCollections,TranslationJo
 * ITranslationJobCollection
 **********************************************/
 export interface ITranslationJobCollection extends IBaseResults<TranslationJob> {
-
+	done(resolve: (value?: Array<TranslationJob | any>) => void);
 }
 
 /*********************************************
 * ITranslationJobQueryCollection
 **********************************************/
 export interface ITranslationJobQueryCollection extends IBaseResults<TranslationJobQuery> {
-
+	done(resolve: (value?: Array<TranslationJobQuery | any>) => void);
 }
 
 /*********************************************
@@ -103,7 +102,7 @@ export interface ITranslationJobQuery extends TranslationJobQuery, TranslationJo
 /*********************************************
 * TranslationJob
 **********************************************/
-export interface TranslationJob extends TranslationJobProps, TranslationJobCollections, TranslationJobMethods {
+export interface TranslationJob extends IBaseResult, TranslationJobProps, TranslationJobCollections, TranslationJobMethods {
 
 }
 
@@ -133,7 +132,7 @@ export interface TranslationJobCollections extends TranslationJobPropMethods {
 /*********************************************
 * TranslationJobQuery
 **********************************************/
-export interface TranslationJobQuery extends TranslationJobProps, TranslationJobMethods {
+export interface TranslationJobQuery extends IBaseResult, TranslationJobProps, TranslationJobMethods {
 
 }
 
@@ -157,14 +156,14 @@ export interface ITranslationJobStatus extends TranslationJobStatusCollections,T
 * ITranslationJobStatusCollection
 **********************************************/
 export interface ITranslationJobStatusCollection extends IBaseResults<TranslationJobStatus> {
-
+	done(resolve: (value?: Array<TranslationJobStatus | any>) => void);
 }
 
 /*********************************************
 * ITranslationJobStatusQueryCollection
 **********************************************/
 export interface ITranslationJobStatusQueryCollection extends IBaseResults<TranslationJobStatusQuery> {
-
+	done(resolve: (value?: Array<TranslationJobStatusQuery | any>) => void);
 }
 
 /*********************************************
@@ -177,7 +176,7 @@ export interface ITranslationJobStatusQuery extends TranslationJobStatusQuery, T
 /*********************************************
 * TranslationJobStatus
 **********************************************/
-export interface TranslationJobStatus extends TranslationJobStatusProps, TranslationJobStatusCollections, TranslationJobStatusMethods {
+export interface TranslationJobStatus extends IBaseResult, TranslationJobStatusProps, TranslationJobStatusCollections, TranslationJobStatusMethods {
 
 }
 
@@ -211,7 +210,7 @@ export interface TranslationJobStatusCollections extends TranslationJobStatusPro
 /*********************************************
 * TranslationJobStatusQuery
 **********************************************/
-export interface TranslationJobStatusQuery extends TranslationJobStatusProps, TranslationJobStatusMethods {
+export interface TranslationJobStatusQuery extends IBaseResult, TranslationJobStatusProps, TranslationJobStatusMethods {
 
 }
 

@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../";
-import { IBaseQuery } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
 
 /*********************************************
 * IOrgNewsSiteApi
@@ -12,14 +11,14 @@ export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections,OrgNewsSiteAp
 * IOrgNewsSiteApiCollection
 **********************************************/
 export interface IOrgNewsSiteApiCollection extends IBaseResults<OrgNewsSiteApi> {
-
+	done(resolve: (value?: Array<OrgNewsSiteApi | any>) => void);
 }
 
 /*********************************************
 * IOrgNewsSiteApiQueryCollection
 **********************************************/
 export interface IOrgNewsSiteApiQueryCollection extends IBaseResults<OrgNewsSiteApiQuery> {
-
+	done(resolve: (value?: Array<OrgNewsSiteApiQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IOrgNewsSiteApiQuery extends OrgNewsSiteApiQuery, OrgNewsSiteAp
 /*********************************************
 * OrgNewsSiteApi
 **********************************************/
-export interface OrgNewsSiteApi extends OrgNewsSiteApiProps, OrgNewsSiteApiCollections, OrgNewsSiteApiMethods {
+export interface OrgNewsSiteApi extends IBaseResult, OrgNewsSiteApiProps, OrgNewsSiteApiCollections, OrgNewsSiteApiMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface OrgNewsSiteApiCollections extends OrgNewsSiteApiPropMethods {
 /*********************************************
 * OrgNewsSiteApiQuery
 **********************************************/
-export interface OrgNewsSiteApiQuery extends OrgNewsSiteApiProps, OrgNewsSiteApiMethods {
+export interface OrgNewsSiteApiQuery extends IBaseResult, OrgNewsSiteApiProps, OrgNewsSiteApiMethods {
 
 }
 

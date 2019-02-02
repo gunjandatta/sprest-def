@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../";
-import { IBaseQuery } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 import { SP } from "../../";
 
 /*********************************************
@@ -13,14 +12,14 @@ export interface IMicroServiceManager extends MicroServiceManagerCollections,Mic
 * IMicroServiceManagerCollection
 **********************************************/
 export interface IMicroServiceManagerCollection extends IBaseResults<MicroServiceManager> {
-
+	done(resolve: (value?: Array<MicroServiceManager | any>) => void);
 }
 
 /*********************************************
 * IMicroServiceManagerQueryCollection
 **********************************************/
 export interface IMicroServiceManagerQueryCollection extends IBaseResults<MicroServiceManagerQuery> {
-
+	done(resolve: (value?: Array<MicroServiceManagerQuery | any>) => void);
 }
 
 /*********************************************
@@ -33,7 +32,7 @@ export interface IMicroServiceManagerQuery extends MicroServiceManagerQuery, Mic
 /*********************************************
 * MicroServiceManager
 **********************************************/
-export interface MicroServiceManager extends MicroServiceManagerProps, MicroServiceManagerCollections, MicroServiceManagerMethods {
+export interface MicroServiceManager extends IBaseResult, MicroServiceManagerProps, MicroServiceManagerCollections, MicroServiceManagerMethods {
 
 }
 
@@ -61,7 +60,7 @@ export interface MicroServiceManagerCollections extends MicroServiceManagerPropM
 /*********************************************
 * MicroServiceManagerQuery
 **********************************************/
-export interface MicroServiceManagerQuery extends MicroServiceManagerProps, MicroServiceManagerMethods {
+export interface MicroServiceManagerQuery extends IBaseResult, MicroServiceManagerProps, MicroServiceManagerMethods {
 
 }
 

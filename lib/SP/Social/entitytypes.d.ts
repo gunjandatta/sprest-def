@@ -1,6 +1,5 @@
-import { IBaseExecution } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 import { SP } from "../../";
-import { IBaseQuery } from "../../";
 
 /*********************************************
 * SocialAnnouncementManager
@@ -27,14 +26,14 @@ export interface ISocialFeedManager extends SocialFeedManagerCollections,SocialF
 * ISocialFeedManagerCollection
 **********************************************/
 export interface ISocialFeedManagerCollection extends IBaseResults<SocialFeedManager> {
-
+	done(resolve: (value?: Array<SocialFeedManager | any>) => void);
 }
 
 /*********************************************
 * ISocialFeedManagerQueryCollection
 **********************************************/
 export interface ISocialFeedManagerQueryCollection extends IBaseResults<SocialFeedManagerQuery> {
-
+	done(resolve: (value?: Array<SocialFeedManagerQuery | any>) => void);
 }
 
 /*********************************************
@@ -47,7 +46,7 @@ export interface ISocialFeedManagerQuery extends SocialFeedManagerQuery, SocialF
 /*********************************************
 * SocialFeedManager
 **********************************************/
-export interface SocialFeedManager extends SocialFeedManagerProps, SocialFeedManagerCollections, SocialFeedManagerMethods {
+export interface SocialFeedManager extends IBaseResult, SocialFeedManagerProps, SocialFeedManagerCollections, SocialFeedManagerMethods {
 
 }
 
@@ -76,7 +75,7 @@ export interface SocialFeedManagerCollections extends SocialFeedManagerPropMetho
 /*********************************************
 * SocialFeedManagerQuery
 **********************************************/
-export interface SocialFeedManagerQuery extends SocialFeedManagerProps, SocialFeedManagerMethods {
+export interface SocialFeedManagerQuery extends IBaseResult, SocialFeedManagerProps, SocialFeedManagerMethods {
 
 }
 
@@ -114,14 +113,14 @@ export interface ISocialFollowingManager extends SocialFollowingManagerCollectio
 * ISocialFollowingManagerCollection
 **********************************************/
 export interface ISocialFollowingManagerCollection extends IBaseResults<SocialFollowingManager> {
-
+	done(resolve: (value?: Array<SocialFollowingManager | any>) => void);
 }
 
 /*********************************************
 * ISocialFollowingManagerQueryCollection
 **********************************************/
 export interface ISocialFollowingManagerQueryCollection extends IBaseResults<SocialFollowingManagerQuery> {
-
+	done(resolve: (value?: Array<SocialFollowingManagerQuery | any>) => void);
 }
 
 /*********************************************
@@ -134,7 +133,7 @@ export interface ISocialFollowingManagerQuery extends SocialFollowingManagerQuer
 /*********************************************
 * SocialFollowingManager
 **********************************************/
-export interface SocialFollowingManager extends SocialFollowingManagerProps, SocialFollowingManagerCollections, SocialFollowingManagerMethods {
+export interface SocialFollowingManager extends IBaseResult, SocialFollowingManagerProps, SocialFollowingManagerCollections, SocialFollowingManagerMethods {
 
 }
 
@@ -163,7 +162,7 @@ export interface SocialFollowingManagerCollections extends SocialFollowingManage
 /*********************************************
 * SocialFollowingManagerQuery
 **********************************************/
-export interface SocialFollowingManagerQuery extends SocialFollowingManagerProps, SocialFollowingManagerMethods {
+export interface SocialFollowingManagerQuery extends IBaseResult, SocialFollowingManagerProps, SocialFollowingManagerMethods {
 
 }
 
@@ -191,14 +190,14 @@ export interface ISocialRestActor extends SocialRestActorCollections,SocialRestA
 * ISocialRestActorCollection
 **********************************************/
 export interface ISocialRestActorCollection extends IBaseResults<SocialRestActor> {
-
+	done(resolve: (value?: Array<SocialRestActor | any>) => void);
 }
 
 /*********************************************
 * ISocialRestActorQueryCollection
 **********************************************/
 export interface ISocialRestActorQueryCollection extends IBaseResults<SocialRestActorQuery> {
-
+	done(resolve: (value?: Array<SocialRestActorQuery | any>) => void);
 }
 
 /*********************************************
@@ -211,7 +210,7 @@ export interface ISocialRestActorQuery extends SocialRestActorQuery, SocialRestA
 /*********************************************
 * SocialRestActor
 **********************************************/
-export interface SocialRestActor extends SocialRestActorProps, SocialRestActorCollections, SocialRestActorMethods {
+export interface SocialRestActor extends IBaseResult, SocialRestActorProps, SocialRestActorCollections, SocialRestActorMethods {
 
 }
 
@@ -241,7 +240,7 @@ export interface SocialRestActorCollections extends SocialRestActorPropMethods {
 /*********************************************
 * SocialRestActorQuery
 **********************************************/
-export interface SocialRestActorQuery extends SocialRestActorProps, SocialRestActorMethods {
+export interface SocialRestActorQuery extends IBaseResult, SocialRestActorProps, SocialRestActorMethods {
 
 }
 
@@ -269,14 +268,14 @@ export interface ISocialRestFeedManager extends SocialRestFeedManagerCollections
 * ISocialRestFeedManagerCollection
 **********************************************/
 export interface ISocialRestFeedManagerCollection extends IBaseResults<SocialRestFeedManager> {
-
+	done(resolve: (value?: Array<SocialRestFeedManager | any>) => void);
 }
 
 /*********************************************
 * ISocialRestFeedManagerQueryCollection
 **********************************************/
 export interface ISocialRestFeedManagerQueryCollection extends IBaseResults<SocialRestFeedManagerQuery> {
-
+	done(resolve: (value?: Array<SocialRestFeedManagerQuery | any>) => void);
 }
 
 /*********************************************
@@ -289,7 +288,7 @@ export interface ISocialRestFeedManagerQuery extends SocialRestFeedManagerQuery,
 /*********************************************
 * SocialRestFeedManager
 **********************************************/
-export interface SocialRestFeedManager extends SocialRestFeedManagerProps, SocialRestFeedManagerCollections, SocialRestFeedManagerMethods {
+export interface SocialRestFeedManager extends IBaseResult, SocialRestFeedManagerProps, SocialRestFeedManagerCollections, SocialRestFeedManagerMethods {
 
 }
 
@@ -317,7 +316,7 @@ export interface SocialRestFeedManagerCollections extends SocialRestFeedManagerP
 /*********************************************
 * SocialRestFeedManagerQuery
 **********************************************/
-export interface SocialRestFeedManagerQuery extends SocialRestFeedManagerProps, SocialRestFeedManagerMethods {
+export interface SocialRestFeedManagerQuery extends IBaseResult, SocialRestFeedManagerProps, SocialRestFeedManagerMethods {
 
 }
 
@@ -341,14 +340,14 @@ export interface ISocialRestFeed extends SocialRestFeedCollections,SocialRestFee
 * ISocialRestFeedCollection
 **********************************************/
 export interface ISocialRestFeedCollection extends IBaseResults<SocialRestFeed> {
-
+	done(resolve: (value?: Array<SocialRestFeed | any>) => void);
 }
 
 /*********************************************
 * ISocialRestFeedQueryCollection
 **********************************************/
 export interface ISocialRestFeedQueryCollection extends IBaseResults<SocialRestFeedQuery> {
-
+	done(resolve: (value?: Array<SocialRestFeedQuery | any>) => void);
 }
 
 /*********************************************
@@ -361,7 +360,7 @@ export interface ISocialRestFeedQuery extends SocialRestFeedQuery, SocialRestFee
 /*********************************************
 * SocialRestFeed
 **********************************************/
-export interface SocialRestFeed extends SocialRestFeedProps, SocialRestFeedCollections, SocialRestFeedMethods {
+export interface SocialRestFeed extends IBaseResult, SocialRestFeedProps, SocialRestFeedCollections, SocialRestFeedMethods {
 
 }
 
@@ -390,7 +389,7 @@ export interface SocialRestFeedCollections extends SocialRestFeedPropMethods {
 /*********************************************
 * SocialRestFeedQuery
 **********************************************/
-export interface SocialRestFeedQuery extends SocialRestFeedProps, SocialRestFeedMethods {
+export interface SocialRestFeedQuery extends IBaseResult, SocialRestFeedProps, SocialRestFeedMethods {
 
 }
 
@@ -413,14 +412,14 @@ export interface ISocialRestFollowingManager extends SocialRestFollowingManagerC
 * ISocialRestFollowingManagerCollection
 **********************************************/
 export interface ISocialRestFollowingManagerCollection extends IBaseResults<SocialRestFollowingManager> {
-
+	done(resolve: (value?: Array<SocialRestFollowingManager | any>) => void);
 }
 
 /*********************************************
 * ISocialRestFollowingManagerQueryCollection
 **********************************************/
 export interface ISocialRestFollowingManagerQueryCollection extends IBaseResults<SocialRestFollowingManagerQuery> {
-
+	done(resolve: (value?: Array<SocialRestFollowingManagerQuery | any>) => void);
 }
 
 /*********************************************
@@ -433,7 +432,7 @@ export interface ISocialRestFollowingManagerQuery extends SocialRestFollowingMan
 /*********************************************
 * SocialRestFollowingManager
 **********************************************/
-export interface SocialRestFollowingManager extends SocialRestFollowingManagerProps, SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods {
+export interface SocialRestFollowingManager extends IBaseResult, SocialRestFollowingManagerProps, SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods {
 
 }
 
@@ -465,7 +464,7 @@ export interface SocialRestFollowingManagerCollections extends SocialRestFollowi
 /*********************************************
 * SocialRestFollowingManagerQuery
 **********************************************/
-export interface SocialRestFollowingManagerQuery extends SocialRestFollowingManagerProps, SocialRestFollowingManagerMethods {
+export interface SocialRestFollowingManagerQuery extends IBaseResult, SocialRestFollowingManagerProps, SocialRestFollowingManagerMethods {
 
 }
 
@@ -494,14 +493,14 @@ export interface ISocialRestThread extends SocialRestThreadCollections,SocialRes
 * ISocialRestThreadCollection
 **********************************************/
 export interface ISocialRestThreadCollection extends IBaseResults<SocialRestThread> {
-
+	done(resolve: (value?: Array<SocialRestThread | any>) => void);
 }
 
 /*********************************************
 * ISocialRestThreadQueryCollection
 **********************************************/
 export interface ISocialRestThreadQueryCollection extends IBaseResults<SocialRestThreadQuery> {
-
+	done(resolve: (value?: Array<SocialRestThreadQuery | any>) => void);
 }
 
 /*********************************************
@@ -514,7 +513,7 @@ export interface ISocialRestThreadQuery extends SocialRestThreadQuery, SocialRes
 /*********************************************
 * SocialRestThread
 **********************************************/
-export interface SocialRestThread extends SocialRestThreadProps, SocialRestThreadCollections, SocialRestThreadMethods {
+export interface SocialRestThread extends IBaseResult, SocialRestThreadProps, SocialRestThreadCollections, SocialRestThreadMethods {
 
 }
 
@@ -543,7 +542,7 @@ export interface SocialRestThreadCollections extends SocialRestThreadPropMethods
 /*********************************************
 * SocialRestThreadQuery
 **********************************************/
-export interface SocialRestThreadQuery extends SocialRestThreadProps, SocialRestThreadMethods {
+export interface SocialRestThreadQuery extends IBaseResult, SocialRestThreadProps, SocialRestThreadMethods {
 
 }
 

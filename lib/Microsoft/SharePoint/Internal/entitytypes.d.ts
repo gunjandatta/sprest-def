@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../";
-import { IBaseQuery } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
 
 /*********************************************
 * IActivityLogger
@@ -12,14 +11,14 @@ export interface IActivityLogger extends ActivityLoggerCollections,ActivityLogge
 * IActivityLoggerCollection
 **********************************************/
 export interface IActivityLoggerCollection extends IBaseResults<ActivityLogger> {
-
+	done(resolve: (value?: Array<ActivityLogger | any>) => void);
 }
 
 /*********************************************
 * IActivityLoggerQueryCollection
 **********************************************/
 export interface IActivityLoggerQueryCollection extends IBaseResults<ActivityLoggerQuery> {
-
+	done(resolve: (value?: Array<ActivityLoggerQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IActivityLoggerQuery extends ActivityLoggerQuery, ActivityLogge
 /*********************************************
 * ActivityLogger
 **********************************************/
-export interface ActivityLogger extends ActivityLoggerProps, ActivityLoggerCollections, ActivityLoggerMethods {
+export interface ActivityLogger extends IBaseResult, ActivityLoggerProps, ActivityLoggerCollections, ActivityLoggerMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface ActivityLoggerCollections extends ActivityLoggerPropMethods {
 /*********************************************
 * ActivityLoggerQuery
 **********************************************/
-export interface ActivityLoggerQuery extends ActivityLoggerProps, ActivityLoggerMethods {
+export interface ActivityLoggerQuery extends IBaseResult, ActivityLoggerProps, ActivityLoggerMethods {
 
 }
 

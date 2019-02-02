@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../";
-import { IBaseQuery } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
 import { Microsoft } from "../../../";
 
 /*********************************************
@@ -13,14 +12,14 @@ export interface ISubscription extends SubscriptionCollections,SubscriptionMetho
 * ISubscriptionCollection
 **********************************************/
 export interface ISubscriptionCollection extends IBaseResults<Subscription>, SubscriptionCollectionMethods {
-
+	done(resolve: (value?: Array<Subscription | any>) => void);
 }
 
 /*********************************************
 * ISubscriptionQueryCollection
 **********************************************/
 export interface ISubscriptionQueryCollection extends IBaseResults<SubscriptionQuery>, SubscriptionCollectionMethods {
-
+	done(resolve: (value?: Array<SubscriptionQuery | any>) => void);
 }
 
 /*********************************************
@@ -33,7 +32,7 @@ export interface ISubscriptionQuery extends SubscriptionQuery, SubscriptionMetho
 /*********************************************
 * Subscription
 **********************************************/
-export interface Subscription extends SubscriptionProps, SubscriptionCollections, SubscriptionMethods {
+export interface Subscription extends IBaseResult, SubscriptionProps, SubscriptionCollections, SubscriptionMethods {
 
 }
 
@@ -75,7 +74,7 @@ export interface SubscriptionCollectionMethods {
 /*********************************************
 * SubscriptionQuery
 **********************************************/
-export interface SubscriptionQuery extends SubscriptionProps, SubscriptionMethods {
+export interface SubscriptionQuery extends IBaseResult, SubscriptionProps, SubscriptionMethods {
 
 }
 

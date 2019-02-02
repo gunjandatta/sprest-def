@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../";
-import { IBaseQuery } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 
 /*********************************************
 * IAppCollection
@@ -12,14 +11,14 @@ export interface IAppCollection extends AppCollectionCollections,AppCollectionMe
 * IAppCollectionCollection
 **********************************************/
 export interface IAppCollectionCollection extends IBaseResults<AppCollection> {
-
+	done(resolve: (value?: Array<AppCollection | any>) => void);
 }
 
 /*********************************************
 * IAppCollectionQueryCollection
 **********************************************/
 export interface IAppCollectionQueryCollection extends IBaseResults<AppCollectionQuery> {
-
+	done(resolve: (value?: Array<AppCollectionQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IAppCollectionQuery extends AppCollectionQuery, AppCollectionMe
 /*********************************************
 * AppCollection
 **********************************************/
-export interface AppCollection extends AppCollectionProps, AppCollectionCollections, AppCollectionMethods {
+export interface AppCollection extends IBaseResult, AppCollectionProps, AppCollectionCollections, AppCollectionMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface AppCollectionCollections extends AppCollectionPropMethods {
 /*********************************************
 * AppCollectionQuery
 **********************************************/
-export interface AppCollectionQuery extends AppCollectionProps, AppCollectionMethods {
+export interface AppCollectionQuery extends IBaseResult, AppCollectionProps, AppCollectionMethods {
 
 }
 

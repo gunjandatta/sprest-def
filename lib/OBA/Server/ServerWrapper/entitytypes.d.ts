@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../";
-import { IBaseQuery } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
 
 /*********************************************
 * IDiagnostics
@@ -12,14 +11,14 @@ export interface IDiagnostics extends DiagnosticsCollections,DiagnosticsMethods,
 * IDiagnosticsCollection
 **********************************************/
 export interface IDiagnosticsCollection extends IBaseResults<Diagnostics> {
-
+	done(resolve: (value?: Array<Diagnostics | any>) => void);
 }
 
 /*********************************************
 * IDiagnosticsQueryCollection
 **********************************************/
 export interface IDiagnosticsQueryCollection extends IBaseResults<DiagnosticsQuery> {
-
+	done(resolve: (value?: Array<DiagnosticsQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IDiagnosticsQuery extends DiagnosticsQuery, DiagnosticsMethods 
 /*********************************************
 * Diagnostics
 **********************************************/
-export interface Diagnostics extends DiagnosticsProps, DiagnosticsCollections, DiagnosticsMethods {
+export interface Diagnostics extends IBaseResult, DiagnosticsProps, DiagnosticsCollections, DiagnosticsMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface DiagnosticsCollections extends DiagnosticsPropMethods {
 /*********************************************
 * DiagnosticsQuery
 **********************************************/
-export interface DiagnosticsQuery extends DiagnosticsProps, DiagnosticsMethods {
+export interface DiagnosticsQuery extends IBaseResult, DiagnosticsProps, DiagnosticsMethods {
 
 }
 
@@ -82,14 +81,14 @@ export interface IReporting extends ReportingCollections,ReportingMethods,IBaseQ
 * IReportingCollection
 **********************************************/
 export interface IReportingCollection extends IBaseResults<Reporting> {
-
+	done(resolve: (value?: Array<Reporting | any>) => void);
 }
 
 /*********************************************
 * IReportingQueryCollection
 **********************************************/
 export interface IReportingQueryCollection extends IBaseResults<ReportingQuery> {
-
+	done(resolve: (value?: Array<ReportingQuery | any>) => void);
 }
 
 /*********************************************
@@ -102,7 +101,7 @@ export interface IReportingQuery extends ReportingQuery, ReportingMethods {
 /*********************************************
 * Reporting
 **********************************************/
-export interface Reporting extends ReportingProps, ReportingCollections, ReportingMethods {
+export interface Reporting extends IBaseResult, ReportingProps, ReportingCollections, ReportingMethods {
 
 }
 
@@ -130,7 +129,7 @@ export interface ReportingCollections extends ReportingPropMethods {
 /*********************************************
 * ReportingQuery
 **********************************************/
-export interface ReportingQuery extends ReportingProps, ReportingMethods {
+export interface ReportingQuery extends IBaseResult, ReportingProps, ReportingMethods {
 
 }
 
@@ -152,14 +151,14 @@ export interface ITaskflow extends TaskflowCollections,TaskflowMethods,IBaseQuer
 * ITaskflowCollection
 **********************************************/
 export interface ITaskflowCollection extends IBaseResults<Taskflow> {
-
+	done(resolve: (value?: Array<Taskflow | any>) => void);
 }
 
 /*********************************************
 * ITaskflowQueryCollection
 **********************************************/
 export interface ITaskflowQueryCollection extends IBaseResults<TaskflowQuery> {
-
+	done(resolve: (value?: Array<TaskflowQuery | any>) => void);
 }
 
 /*********************************************
@@ -172,7 +171,7 @@ export interface ITaskflowQuery extends TaskflowQuery, TaskflowMethods {
 /*********************************************
 * Taskflow
 **********************************************/
-export interface Taskflow extends TaskflowProps, TaskflowCollections, TaskflowMethods {
+export interface Taskflow extends IBaseResult, TaskflowProps, TaskflowCollections, TaskflowMethods {
 
 }
 
@@ -200,7 +199,7 @@ export interface TaskflowCollections extends TaskflowPropMethods {
 /*********************************************
 * TaskflowQuery
 **********************************************/
-export interface TaskflowQuery extends TaskflowProps, TaskflowMethods {
+export interface TaskflowQuery extends IBaseResult, TaskflowProps, TaskflowMethods {
 
 }
 

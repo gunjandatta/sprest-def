@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../";
-import { IBaseQuery } from "../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../";
 
 /*********************************************
 * IAppLauncher
@@ -12,14 +11,14 @@ export interface IAppLauncher extends AppLauncherCollections,AppLauncherMethods,
 * IAppLauncherCollection
 **********************************************/
 export interface IAppLauncherCollection extends IBaseResults<AppLauncher> {
-
+	done(resolve: (value?: Array<AppLauncher | any>) => void);
 }
 
 /*********************************************
 * IAppLauncherQueryCollection
 **********************************************/
 export interface IAppLauncherQueryCollection extends IBaseResults<AppLauncherQuery> {
-
+	done(resolve: (value?: Array<AppLauncherQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IAppLauncherQuery extends AppLauncherQuery, AppLauncherMethods 
 /*********************************************
 * AppLauncher
 **********************************************/
-export interface AppLauncher extends AppLauncherProps, AppLauncherCollections, AppLauncherMethods {
+export interface AppLauncher extends IBaseResult, AppLauncherProps, AppLauncherCollections, AppLauncherMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface AppLauncherCollections extends AppLauncherPropMethods {
 /*********************************************
 * AppLauncherQuery
 **********************************************/
-export interface AppLauncherQuery extends AppLauncherProps, AppLauncherMethods {
+export interface AppLauncherQuery extends IBaseResult, AppLauncherProps, AppLauncherMethods {
 
 }
 

@@ -1,7 +1,5 @@
-import { IBaseExecution } from "../../../../";
-import { IBaseCollection } from "../../../../";
-import { IBaseQuery } from "../../../../";
-import { IBaseResults } from "../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../../../";
 import { Microsoft } from "../../../../";
 import { SP } from "../../../../";
 
@@ -43,14 +41,14 @@ export interface IGetExternalUsersResults extends GetExternalUsersResultsCollect
 * IGetExternalUsersResultsCollection
 **********************************************/
 export interface IGetExternalUsersResultsCollection extends IBaseResults<GetExternalUsersResults> {
-
+	done(resolve: (value?: Array<GetExternalUsersResults | any>) => void);
 }
 
 /*********************************************
 * IGetExternalUsersResultsQueryCollection
 **********************************************/
 export interface IGetExternalUsersResultsQueryCollection extends IBaseResults<GetExternalUsersResultsQuery> {
-
+	done(resolve: (value?: Array<GetExternalUsersResultsQuery | any>) => void);
 }
 
 /*********************************************
@@ -63,7 +61,7 @@ export interface IGetExternalUsersResultsQuery extends GetExternalUsersResultsQu
 /*********************************************
 * GetExternalUsersResults
 **********************************************/
-export interface GetExternalUsersResults extends GetExternalUsersResultsProps, GetExternalUsersResultsCollections, GetExternalUsersResultsMethods {
+export interface GetExternalUsersResults extends IBaseResult, GetExternalUsersResultsProps, GetExternalUsersResultsCollections, GetExternalUsersResultsMethods {
 
 }
 
@@ -93,8 +91,8 @@ export interface GetExternalUsersResultsCollections extends GetExternalUsersResu
 /*********************************************
 * GetExternalUsersResultsQuery
 **********************************************/
-export interface GetExternalUsersResultsQuery extends GetExternalUsersResultsProps, GetExternalUsersResultsMethods {
-	ExternalUserCollection: IBaseResults<Microsoft.Online.SharePoint.TenantManagement.ExternalUser>;
+export interface GetExternalUsersResultsQuery extends IBaseResult, GetExternalUsersResultsProps, GetExternalUsersResultsMethods {
+	ExternalUserCollection: IBaseResults<Microsoft.Online.SharePoint.TenantManagement.ExternalUser> & Microsoft.Online.SharePoint.TenantManagement.ExternalUserCollectionMethods;
 }
 
 /*********************************************
@@ -151,14 +149,14 @@ export interface IOffice365Tenant extends Office365TenantCollections,Office365Te
 * IOffice365TenantCollection
 **********************************************/
 export interface IOffice365TenantCollection extends IBaseResults<Office365Tenant> {
-
+	done(resolve: (value?: Array<Office365Tenant | any>) => void);
 }
 
 /*********************************************
 * IOffice365TenantQueryCollection
 **********************************************/
 export interface IOffice365TenantQueryCollection extends IBaseResults<Office365TenantQuery> {
-
+	done(resolve: (value?: Array<Office365TenantQuery | any>) => void);
 }
 
 /*********************************************
@@ -171,7 +169,7 @@ export interface IOffice365TenantQuery extends Office365TenantQuery, Office365Te
 /*********************************************
 * Office365Tenant
 **********************************************/
-export interface Office365Tenant extends Office365TenantProps, Office365TenantCollections, Office365TenantMethods {
+export interface Office365Tenant extends IBaseResult, Office365TenantProps, Office365TenantCollections, Office365TenantMethods {
 
 }
 
@@ -276,7 +274,7 @@ export interface Office365TenantCollections extends Office365TenantPropMethods {
 /*********************************************
 * Office365TenantQuery
 **********************************************/
-export interface Office365TenantQuery extends Office365TenantProps, Office365TenantMethods {
+export interface Office365TenantQuery extends IBaseResult, Office365TenantProps, Office365TenantMethods {
 
 }
 

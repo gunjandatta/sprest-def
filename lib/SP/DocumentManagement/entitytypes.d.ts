@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../";
-import { IBaseQuery } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 
 /*********************************************
 * IDocumentId
@@ -12,14 +11,14 @@ export interface IDocumentId extends DocumentIdCollections,DocumentIdMethods,IBa
 * IDocumentIdCollection
 **********************************************/
 export interface IDocumentIdCollection extends IBaseResults<DocumentId> {
-
+	done(resolve: (value?: Array<DocumentId | any>) => void);
 }
 
 /*********************************************
 * IDocumentIdQueryCollection
 **********************************************/
 export interface IDocumentIdQueryCollection extends IBaseResults<DocumentIdQuery> {
-
+	done(resolve: (value?: Array<DocumentIdQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IDocumentIdQuery extends DocumentIdQuery, DocumentIdMethods {
 /*********************************************
 * DocumentId
 **********************************************/
-export interface DocumentId extends DocumentIdProps, DocumentIdCollections, DocumentIdMethods {
+export interface DocumentId extends IBaseResult, DocumentIdProps, DocumentIdCollections, DocumentIdMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface DocumentIdCollections extends DocumentIdPropMethods {
 /*********************************************
 * DocumentIdQuery
 **********************************************/
-export interface DocumentIdQuery extends DocumentIdProps, DocumentIdMethods {
+export interface DocumentIdQuery extends IBaseResult, DocumentIdProps, DocumentIdMethods {
 
 }
 

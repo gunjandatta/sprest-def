@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../../";
-import { IBaseQuery } from "../../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
@@ -13,14 +12,14 @@ export interface ISignalStore extends SignalStoreCollections,SignalStoreMethods,
 * ISignalStoreCollection
 **********************************************/
 export interface ISignalStoreCollection extends IBaseResults<SignalStore> {
-
+	done(resolve: (value?: Array<SignalStore | any>) => void);
 }
 
 /*********************************************
 * ISignalStoreQueryCollection
 **********************************************/
 export interface ISignalStoreQueryCollection extends IBaseResults<SignalStoreQuery> {
-
+	done(resolve: (value?: Array<SignalStoreQuery | any>) => void);
 }
 
 /*********************************************
@@ -33,7 +32,7 @@ export interface ISignalStoreQuery extends SignalStoreQuery, SignalStoreMethods 
 /*********************************************
 * SignalStore
 **********************************************/
-export interface SignalStore extends SignalStoreProps, SignalStoreCollections, SignalStoreMethods {
+export interface SignalStore extends IBaseResult, SignalStoreProps, SignalStoreCollections, SignalStoreMethods {
 
 }
 
@@ -61,7 +60,7 @@ export interface SignalStoreCollections extends SignalStorePropMethods {
 /*********************************************
 * SignalStoreQuery
 **********************************************/
-export interface SignalStoreQuery extends SignalStoreProps, SignalStoreMethods {
+export interface SignalStoreQuery extends IBaseResult, SignalStoreProps, SignalStoreMethods {
 
 }
 

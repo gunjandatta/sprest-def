@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../../";
-import { IBaseQuery } from "../../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../../";
 
 /*********************************************
 * IDDIAdapter
@@ -12,14 +11,14 @@ export interface IDDIAdapter extends DDIAdapterCollections,DDIAdapterMethods,IBa
 * IDDIAdapterCollection
 **********************************************/
 export interface IDDIAdapterCollection extends IBaseResults<DDIAdapter> {
-
+	done(resolve: (value?: Array<DDIAdapter | any>) => void);
 }
 
 /*********************************************
 * IDDIAdapterQueryCollection
 **********************************************/
 export interface IDDIAdapterQueryCollection extends IBaseResults<DDIAdapterQuery> {
-
+	done(resolve: (value?: Array<DDIAdapterQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IDDIAdapterQuery extends DDIAdapterQuery, DDIAdapterMethods {
 /*********************************************
 * DDIAdapter
 **********************************************/
-export interface DDIAdapter extends DDIAdapterProps, DDIAdapterCollections, DDIAdapterMethods {
+export interface DDIAdapter extends IBaseResult, DDIAdapterProps, DDIAdapterCollections, DDIAdapterMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface DDIAdapterCollections extends DDIAdapterPropMethods {
 /*********************************************
 * DDIAdapterQuery
 **********************************************/
-export interface DDIAdapterQuery extends DDIAdapterProps, DDIAdapterMethods {
+export interface DDIAdapterQuery extends IBaseResult, DDIAdapterProps, DDIAdapterMethods {
 
 }
 

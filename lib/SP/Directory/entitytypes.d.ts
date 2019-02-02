@@ -1,7 +1,5 @@
-import { IBaseExecution } from "../../";
-import { IBaseQuery } from "../../";
-import { IBaseCollection } from "../../";
-import { IBaseResults } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../";
 import { SP } from "../../";
 
 /*********************************************
@@ -15,14 +13,14 @@ export interface IDirectorySession extends DirectorySessionCollections,Directory
 * IDirectorySessionCollection
 **********************************************/
 export interface IDirectorySessionCollection extends IBaseResults<DirectorySession> {
-
+	done(resolve: (value?: Array<DirectorySession | any>) => void);
 }
 
 /*********************************************
 * IDirectorySessionQueryCollection
 **********************************************/
 export interface IDirectorySessionQueryCollection extends IBaseResults<DirectorySessionQuery> {
-
+	done(resolve: (value?: Array<DirectorySessionQuery | any>) => void);
 }
 
 /*********************************************
@@ -35,7 +33,7 @@ export interface IDirectorySessionQuery extends DirectorySessionQuery, Directory
 /*********************************************
 * DirectorySession
 **********************************************/
-export interface DirectorySession extends DirectorySessionProps, DirectorySessionCollections, DirectorySessionMethods {
+export interface DirectorySession extends IBaseResult, DirectorySessionProps, DirectorySessionCollections, DirectorySessionMethods {
 
 }
 
@@ -63,7 +61,7 @@ export interface DirectorySessionCollections extends DirectorySessionPropMethods
 /*********************************************
 * DirectorySessionQuery
 **********************************************/
-export interface DirectorySessionQuery extends DirectorySessionProps, DirectorySessionMethods {
+export interface DirectorySessionQuery extends IBaseResult, DirectorySessionProps, DirectorySessionMethods {
 
 }
 
@@ -91,14 +89,14 @@ export interface IGroup extends GroupCollections,GroupMethods,IBaseQuery<IGroupQ
 * IGroupCollection
 **********************************************/
 export interface IGroupCollection extends IBaseResults<Group>, GroupCollectionMethods {
-
+	done(resolve: (value?: Array<Group | any>) => void);
 }
 
 /*********************************************
 * IGroupQueryCollection
 **********************************************/
 export interface IGroupQueryCollection extends IBaseResults<GroupQuery>, GroupCollectionMethods {
-
+	done(resolve: (value?: Array<GroupQuery | any>) => void);
 }
 
 /*********************************************
@@ -111,7 +109,7 @@ export interface IGroupQuery extends GroupQuery, GroupMethods {
 /*********************************************
 * Group
 **********************************************/
-export interface Group extends GroupProps, GroupCollections, GroupMethods {
+export interface Group extends IBaseResult, GroupProps, GroupCollections, GroupMethods {
 
 }
 
@@ -169,9 +167,9 @@ export interface GroupCollectionMethods {
 /*********************************************
 * GroupQuery
 **********************************************/
-export interface GroupQuery extends GroupProps, GroupMethods {
-	members: IBaseResults<SP.Directory.User>;
-	owners: IBaseResults<SP.Directory.User>;
+export interface GroupQuery extends IBaseResult, GroupProps, GroupMethods {
+	members: IBaseResults<SP.Directory.User> & SP.Directory.UserCollectionMethods;
+	owners: IBaseResults<SP.Directory.User> & SP.Directory.UserCollectionMethods;
 }
 
 /*********************************************
@@ -192,14 +190,14 @@ export interface IUser extends UserCollections,UserMethods,IBaseQuery<IUserQuery
 * IUserCollection
 **********************************************/
 export interface IUserCollection extends IBaseResults<User>, UserCollectionMethods {
-
+	done(resolve: (value?: Array<User | any>) => void);
 }
 
 /*********************************************
 * IUserQueryCollection
 **********************************************/
 export interface IUserQueryCollection extends IBaseResults<UserQuery>, UserCollectionMethods {
-
+	done(resolve: (value?: Array<UserQuery | any>) => void);
 }
 
 /*********************************************
@@ -212,7 +210,7 @@ export interface IUserQuery extends UserQuery, UserMethods {
 /*********************************************
 * User
 **********************************************/
-export interface User extends UserProps, UserCollections, UserMethods {
+export interface User extends IBaseResult, UserProps, UserCollections, UserMethods {
 
 }
 
@@ -292,10 +290,10 @@ export interface UserCollectionMethods {
 /*********************************************
 * UserQuery
 **********************************************/
-export interface UserQuery extends UserProps, UserMethods {
-	membership: IBaseResults<SP.Directory.Group>;
-	ownership: IBaseResults<SP.Directory.Group>;
-	rankedMembership: IBaseResults<SP.Directory.Group>;
+export interface UserQuery extends IBaseResult, UserProps, UserMethods {
+	membership: IBaseResults<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
+	ownership: IBaseResults<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
+	rankedMembership: IBaseResults<SP.Directory.Group> & SP.Directory.GroupCollectionMethods;
 }
 
 /*********************************************
@@ -338,8 +336,8 @@ export interface GroupAndUserStatusCollections {
 /*********************************************
 * GroupAndUserStatusQuery
 **********************************************/
-export interface GroupAndUserStatusQuery extends GroupAndUserStatus {
-	Group: SP.Directory.Group & SP.Directory.GroupCollections;
+export interface GroupAndUserStatusQuery extends IBaseResult, GroupAndUserStatus {
+	Group: SP.Directory.Group & SP.Directory.GroupCollections & SP.Directory.GroupCollectionMethods;
 }
 
 /*********************************************

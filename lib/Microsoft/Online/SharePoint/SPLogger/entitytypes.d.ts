@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../";
-import { IBaseQuery } from "../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../";
 
 /*********************************************
 * ILogExport
@@ -12,14 +11,14 @@ export interface ILogExport extends LogExportCollections,LogExportMethods,IBaseQ
 * ILogExportCollection
 **********************************************/
 export interface ILogExportCollection extends IBaseResults<LogExport> {
-
+	done(resolve: (value?: Array<LogExport | any>) => void);
 }
 
 /*********************************************
 * ILogExportQueryCollection
 **********************************************/
 export interface ILogExportQueryCollection extends IBaseResults<LogExportQuery> {
-
+	done(resolve: (value?: Array<LogExportQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface ILogExportQuery extends LogExportQuery, LogExportMethods {
 /*********************************************
 * LogExport
 **********************************************/
-export interface LogExport extends LogExportProps, LogExportCollections, LogExportMethods {
+export interface LogExport extends IBaseResult, LogExportProps, LogExportCollections, LogExportMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface LogExportCollections extends LogExportPropMethods {
 /*********************************************
 * LogExportQuery
 **********************************************/
-export interface LogExportQuery extends LogExportProps, LogExportMethods {
+export interface LogExportQuery extends IBaseResult, LogExportProps, LogExportMethods {
 
 }
 

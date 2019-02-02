@@ -1,6 +1,5 @@
-import { IBaseExecution } from "../../";
+import { IBaseExecution, IBaseResult } from "../../";
 import { SP } from "../../";
-import { IBaseQuery } from "../../";
 
 /*********************************************
 * ITaxonomyField
@@ -13,14 +12,14 @@ export interface ITaxonomyField extends TaxonomyFieldCollections,TaxonomyFieldMe
 * ITaxonomyFieldCollection
 **********************************************/
 export interface ITaxonomyFieldCollection extends IBaseResults<TaxonomyField> {
-
+	done(resolve: (value?: Array<TaxonomyField | any>) => void);
 }
 
 /*********************************************
 * ITaxonomyFieldQueryCollection
 **********************************************/
 export interface ITaxonomyFieldQueryCollection extends IBaseResults<TaxonomyFieldQuery> {
-
+	done(resolve: (value?: Array<TaxonomyFieldQuery | any>) => void);
 }
 
 /*********************************************
@@ -33,7 +32,7 @@ export interface ITaxonomyFieldQuery extends TaxonomyFieldQuery, TaxonomyFieldMe
 /*********************************************
 * TaxonomyField
 **********************************************/
-export interface TaxonomyField extends SP.FieldLookup, TaxonomyFieldProps, TaxonomyFieldCollections, TaxonomyFieldMethods {
+export interface TaxonomyField extends SP.FieldLookup, IBaseResult, TaxonomyFieldProps, TaxonomyFieldCollections, TaxonomyFieldMethods {
 
 }
 
@@ -72,7 +71,7 @@ export interface TaxonomyFieldCollections extends TaxonomyFieldPropMethods {
 /*********************************************
 * TaxonomyFieldQuery
 **********************************************/
-export interface TaxonomyFieldQuery extends TaxonomyFieldProps, TaxonomyFieldMethods {
+export interface TaxonomyFieldQuery extends IBaseResult, TaxonomyFieldProps, TaxonomyFieldMethods {
 
 }
 

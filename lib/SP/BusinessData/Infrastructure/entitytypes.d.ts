@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../";
-import { IBaseQuery } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
 
 /*********************************************
 * IExternalSubscriptionStore
@@ -12,14 +11,14 @@ export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCol
 * IExternalSubscriptionStoreCollection
 **********************************************/
 export interface IExternalSubscriptionStoreCollection extends IBaseResults<ExternalSubscriptionStore> {
-
+	done(resolve: (value?: Array<ExternalSubscriptionStore | any>) => void);
 }
 
 /*********************************************
 * IExternalSubscriptionStoreQueryCollection
 **********************************************/
 export interface IExternalSubscriptionStoreQueryCollection extends IBaseResults<ExternalSubscriptionStoreQuery> {
-
+	done(resolve: (value?: Array<ExternalSubscriptionStoreQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionSto
 /*********************************************
 * ExternalSubscriptionStore
 **********************************************/
-export interface ExternalSubscriptionStore extends ExternalSubscriptionStoreProps, ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods {
+export interface ExternalSubscriptionStore extends IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface ExternalSubscriptionStoreCollections extends ExternalSubscripti
 /*********************************************
 * ExternalSubscriptionStoreQuery
 **********************************************/
-export interface ExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreProps, ExternalSubscriptionStoreMethods {
+export interface ExternalSubscriptionStoreQuery extends IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreMethods {
 
 }
 

@@ -1,7 +1,5 @@
-import { IBaseExecution } from "../../../";
-import { IBaseCollection } from "../../../";
-import { IBaseQuery } from "../../../";
-import { IBaseResults } from "../../../";
+import { IBaseExecution, IBaseResult } from "../../../";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../../";
 import { Microsoft } from "../../../";
 
 /*********************************************
@@ -15,14 +13,14 @@ export interface IlikedByInformation extends likedByInformationCollections,liked
 * IlikedByInformationCollection
 **********************************************/
 export interface IlikedByInformationCollection extends IBaseResults<likedByInformation> {
-
+	done(resolve: (value?: Array<likedByInformation | any>) => void);
 }
 
 /*********************************************
 * IlikedByInformationQueryCollection
 **********************************************/
 export interface IlikedByInformationQueryCollection extends IBaseResults<likedByInformationQuery> {
-
+	done(resolve: (value?: Array<likedByInformationQuery | any>) => void);
 }
 
 /*********************************************
@@ -35,7 +33,7 @@ export interface IlikedByInformationQuery extends likedByInformationQuery, liked
 /*********************************************
 * likedByInformation
 **********************************************/
-export interface likedByInformation extends likedByInformationProps, likedByInformationCollections, likedByInformationMethods {
+export interface likedByInformation extends IBaseResult, likedByInformationProps, likedByInformationCollections, likedByInformationMethods {
 
 }
 
@@ -65,7 +63,7 @@ export interface likedByInformationCollections extends likedByInformationPropMet
 /*********************************************
 * likedByInformationQuery
 **********************************************/
-export interface likedByInformationQuery extends likedByInformationProps, likedByInformationMethods {
+export interface likedByInformationQuery extends IBaseResult, likedByInformationProps, likedByInformationMethods {
 	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 }
 

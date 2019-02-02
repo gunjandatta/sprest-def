@@ -1,5 +1,4 @@
-import { IBaseExecution } from "../../../../";
-import { IBaseQuery } from "../../../../";
+import { IBaseExecution, IBaseResult } from "../../../../";
 
 /*********************************************
 * IPointPublishingAdmin
@@ -12,14 +11,14 @@ export interface IPointPublishingAdmin extends PointPublishingAdminCollections,P
 * IPointPublishingAdminCollection
 **********************************************/
 export interface IPointPublishingAdminCollection extends IBaseResults<PointPublishingAdmin> {
-
+	done(resolve: (value?: Array<PointPublishingAdmin | any>) => void);
 }
 
 /*********************************************
 * IPointPublishingAdminQueryCollection
 **********************************************/
 export interface IPointPublishingAdminQueryCollection extends IBaseResults<PointPublishingAdminQuery> {
-
+	done(resolve: (value?: Array<PointPublishingAdminQuery | any>) => void);
 }
 
 /*********************************************
@@ -32,7 +31,7 @@ export interface IPointPublishingAdminQuery extends PointPublishingAdminQuery, P
 /*********************************************
 * PointPublishingAdmin
 **********************************************/
-export interface PointPublishingAdmin extends PointPublishingAdminProps, PointPublishingAdminCollections, PointPublishingAdminMethods {
+export interface PointPublishingAdmin extends IBaseResult, PointPublishingAdminProps, PointPublishingAdminCollections, PointPublishingAdminMethods {
 
 }
 
@@ -60,7 +59,7 @@ export interface PointPublishingAdminCollections extends PointPublishingAdminPro
 /*********************************************
 * PointPublishingAdminQuery
 **********************************************/
-export interface PointPublishingAdminQuery extends PointPublishingAdminProps, PointPublishingAdminMethods {
+export interface PointPublishingAdminQuery extends IBaseResult, PointPublishingAdminProps, PointPublishingAdminMethods {
 
 }
 
