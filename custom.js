@@ -164,7 +164,7 @@ module.exports = {
     "Collection(SP.Field)": [
         {
             name: "createFieldAsXml",
-            returnType: "any",
+            returnType: "SP.Field",
             params: [{ $: { Name: "schemaXml", Type: "string" } }]
         }
     ],

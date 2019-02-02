@@ -1604,7 +1604,7 @@ export interface FieldCollectionMethods {
 	getById(id?: any): IBaseQuery<SP.Field, SP.FieldOData> & SP.FieldCollections & SP.FieldMethods;
 	getByInternalNameOrTitle(strName?: string): IBaseQuery<SP.Field, SP.FieldOData> & SP.FieldCollections & SP.FieldMethods;
 	getByTitle(title?: string): IBaseQuery<SP.Field, SP.FieldOData> & SP.FieldCollections & SP.FieldMethods;
-	createFieldAsXml(schemaXml?: string): IBaseExecution<any>;
+	createFieldAsXml(schemaXml?: string): IBaseExecution<SP.Field>;
 }
 
 /*********************************************
