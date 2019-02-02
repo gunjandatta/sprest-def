@@ -12,6 +12,20 @@ export interface IDirectorySession extends DirectorySessionCollections,Directory
 }
 
 /*********************************************
+* IDirectorySessionCollection
+**********************************************/
+export interface IDirectorySessionCollection extends IBaseResults<DirectorySession> {
+
+}
+
+/*********************************************
+* IDirectorySessionQueryCollection
+**********************************************/
+export interface IDirectorySessionQueryCollection extends IBaseResults<DirectorySessionQuery> {
+
+}
+
+/*********************************************
 * IDirectorySessionQuery
 **********************************************/
 export interface IDirectorySessionQuery extends DirectorySessionQuery, DirectorySessionMethods {
@@ -70,6 +84,20 @@ export interface DirectorySessionMethods {
 * IGroup
 **********************************************/
 export interface IGroup extends GroupCollections,GroupMethods,IBaseQuery<IGroupQuery> {
+
+}
+
+/*********************************************
+* IGroupCollection
+**********************************************/
+export interface IGroupCollection extends IBaseResults<Group> {
+
+}
+
+/*********************************************
+* IGroupQueryCollection
+**********************************************/
+export interface IGroupQueryCollection extends IBaseResults<GroupQuery> {
 
 }
 
@@ -157,6 +185,20 @@ export interface GroupMethods {
 * IUser
 **********************************************/
 export interface IUser extends UserCollections,UserMethods,IBaseQuery<IUserQuery> {
+
+}
+
+/*********************************************
+* IUserCollection
+**********************************************/
+export interface IUserCollection extends IBaseResults<User> {
+
+}
+
+/*********************************************
+* IUserQueryCollection
+**********************************************/
+export interface IUserQueryCollection extends IBaseResults<UserQuery> {
 
 }
 

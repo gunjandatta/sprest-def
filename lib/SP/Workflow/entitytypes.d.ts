@@ -10,6 +10,20 @@ export interface IWorkflowAssociation extends WorkflowAssociationCollections,Wor
 }
 
 /*********************************************
+* IWorkflowAssociationCollection
+**********************************************/
+export interface IWorkflowAssociationCollection extends IBaseResults<WorkflowAssociation> {
+
+}
+
+/*********************************************
+* IWorkflowAssociationQueryCollection
+**********************************************/
+export interface IWorkflowAssociationQueryCollection extends IBaseResults<WorkflowAssociationQuery> {
+
+}
+
+/*********************************************
 * IWorkflowAssociationQuery
 **********************************************/
 export interface IWorkflowAssociationQuery extends WorkflowAssociationQuery, WorkflowAssociationMethods {
@@ -150,6 +164,20 @@ export interface SPWorkflowManagerCollections {
 * ISPWorkflowTask
 **********************************************/
 export interface ISPWorkflowTask extends SPWorkflowTaskCollections,SPWorkflowTaskMethods,IBaseQuery<ISPWorkflowTaskQuery> {
+
+}
+
+/*********************************************
+* ISPWorkflowTaskCollection
+**********************************************/
+export interface ISPWorkflowTaskCollection extends IBaseResults<SPWorkflowTask> {
+
+}
+
+/*********************************************
+* ISPWorkflowTaskQueryCollection
+**********************************************/
+export interface ISPWorkflowTaskQueryCollection extends IBaseResults<SPWorkflowTaskQuery> {
 
 }
 

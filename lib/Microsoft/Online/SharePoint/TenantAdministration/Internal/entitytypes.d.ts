@@ -12,6 +12,20 @@ export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServ
 }
 
 /*********************************************
+* ISPOWebAppServicePrincipalPermissionGrantCollection
+**********************************************/
+export interface ISPOWebAppServicePrincipalPermissionGrantCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionGrant> {
+
+}
+
+/*********************************************
+* ISPOWebAppServicePrincipalPermissionGrantQueryCollection
+**********************************************/
+export interface ISPOWebAppServicePrincipalPermissionGrantQueryCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionGrantQuery> {
+
+}
+
+/*********************************************
 * ISPOWebAppServicePrincipalPermissionGrantQuery
 **********************************************/
 export interface ISPOWebAppServicePrincipalPermissionGrantQuery extends SPOWebAppServicePrincipalPermissionGrantQuery, SPOWebAppServicePrincipalPermissionGrantMethods {
@@ -78,6 +92,20 @@ export interface SPOWebAppServicePrincipalPermissionGrantMethods {
 * ISPOWebAppServicePrincipalPermissionRequest
 **********************************************/
 export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestCollections,SPOWebAppServicePrincipalPermissionRequestMethods,IBaseQuery<ISPOWebAppServicePrincipalPermissionRequestQuery> {
+
+}
+
+/*********************************************
+* ISPOWebAppServicePrincipalPermissionRequestCollection
+**********************************************/
+export interface ISPOWebAppServicePrincipalPermissionRequestCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionRequest> {
+
+}
+
+/*********************************************
+* ISPOWebAppServicePrincipalPermissionRequestQueryCollection
+**********************************************/
+export interface ISPOWebAppServicePrincipalPermissionRequestQueryCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionRequestQuery> {
 
 }
 
@@ -151,6 +179,20 @@ export interface SPOWebAppServicePrincipalPermissionRequestMethods {
 * ISPOWebAppServicePrincipal
 **********************************************/
 export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCollections,SPOWebAppServicePrincipalMethods,IBaseQuery<ISPOWebAppServicePrincipalQuery> {
+
+}
+
+/*********************************************
+* ISPOWebAppServicePrincipalCollection
+**********************************************/
+export interface ISPOWebAppServicePrincipalCollection extends IBaseResults<SPOWebAppServicePrincipal> {
+
+}
+
+/*********************************************
+* ISPOWebAppServicePrincipalQueryCollection
+**********************************************/
+export interface ISPOWebAppServicePrincipalQueryCollection extends IBaseResults<SPOWebAppServicePrincipalQuery> {
 
 }
 

@@ -10,6 +10,20 @@ export interface IStringCollection extends StringCollectionCollections,StringCol
 }
 
 /*********************************************
+* IStringCollectionCollection
+**********************************************/
+export interface IStringCollectionCollection extends IBaseResults<StringCollection> {
+
+}
+
+/*********************************************
+* IStringCollectionQueryCollection
+**********************************************/
+export interface IStringCollectionQueryCollection extends IBaseResults<StringCollectionQuery> {
+
+}
+
+/*********************************************
 * IStringCollectionQuery
 **********************************************/
 export interface IStringCollectionQuery extends StringCollectionQuery, StringCollectionMethods {
@@ -82,6 +96,20 @@ export interface IRankingLabeling extends RankingLabelingCollections,RankingLabe
 }
 
 /*********************************************
+* IRankingLabelingCollection
+**********************************************/
+export interface IRankingLabelingCollection extends IBaseResults<RankingLabeling> {
+
+}
+
+/*********************************************
+* IRankingLabelingQueryCollection
+**********************************************/
+export interface IRankingLabelingQueryCollection extends IBaseResults<RankingLabelingQuery> {
+
+}
+
+/*********************************************
 * IRankingLabelingQuery
 **********************************************/
 export interface IRankingLabelingQuery extends RankingLabelingQuery, RankingLabelingMethods {
@@ -140,6 +168,20 @@ export interface IReorderingRuleCollection extends ReorderingRuleCollectionColle
 }
 
 /*********************************************
+* IReorderingRuleCollectionCollection
+**********************************************/
+export interface IReorderingRuleCollectionCollection extends IBaseResults<ReorderingRuleCollection> {
+
+}
+
+/*********************************************
+* IReorderingRuleCollectionQueryCollection
+**********************************************/
+export interface IReorderingRuleCollectionQueryCollection extends IBaseResults<ReorderingRuleCollectionQuery> {
+
+}
+
+/*********************************************
 * IReorderingRuleCollectionQuery
 **********************************************/
 export interface IReorderingRuleCollectionQuery extends ReorderingRuleCollectionQuery, ReorderingRuleCollectionMethods {
@@ -194,6 +236,20 @@ export interface ReorderingRuleCollectionMethods {
 * ISortCollection
 **********************************************/
 export interface ISortCollection extends SortCollectionCollections,SortCollectionMethods,IBaseQuery<ISortCollectionQuery> {
+
+}
+
+/*********************************************
+* ISortCollectionCollection
+**********************************************/
+export interface ISortCollectionCollection extends IBaseResults<SortCollection> {
+
+}
+
+/*********************************************
+* ISortCollectionQueryCollection
+**********************************************/
+export interface ISortCollectionQueryCollection extends IBaseResults<SortCollectionQuery> {
 
 }
 

@@ -42,6 +42,20 @@ export interface IFile extends FileCollections,FileMethods,IBaseQuery<IFileQuery
 }
 
 /*********************************************
+* IFileCollection
+**********************************************/
+export interface IFileCollection extends IBaseResults<File> {
+
+}
+
+/*********************************************
+* IFileQueryCollection
+**********************************************/
+export interface IFileQueryCollection extends IBaseResults<FileQuery> {
+
+}
+
+/*********************************************
 * IFileQuery
 **********************************************/
 export interface IFileQuery extends FileQuery, FileMethods {
@@ -112,6 +126,20 @@ export interface FileServiceCollections {
 * IFolder
 **********************************************/
 export interface IFolder extends FolderCollections,FolderMethods,IBaseQuery<IFolderQuery> {
+
+}
+
+/*********************************************
+* IFolderCollection
+**********************************************/
+export interface IFolderCollection extends IBaseResults<Folder> {
+
+}
+
+/*********************************************
+* IFolderQueryCollection
+**********************************************/
+export interface IFolderQueryCollection extends IBaseResults<FolderQuery> {
 
 }
 

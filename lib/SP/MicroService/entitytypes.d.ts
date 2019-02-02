@@ -10,6 +10,20 @@ export interface IMicroServiceManager extends MicroServiceManagerCollections,Mic
 }
 
 /*********************************************
+* IMicroServiceManagerCollection
+**********************************************/
+export interface IMicroServiceManagerCollection extends IBaseResults<MicroServiceManager> {
+
+}
+
+/*********************************************
+* IMicroServiceManagerQueryCollection
+**********************************************/
+export interface IMicroServiceManagerQueryCollection extends IBaseResults<MicroServiceManagerQuery> {
+
+}
+
+/*********************************************
 * IMicroServiceManagerQuery
 **********************************************/
 export interface IMicroServiceManagerQuery extends MicroServiceManagerQuery, MicroServiceManagerMethods {

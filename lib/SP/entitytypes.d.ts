@@ -13,6 +13,20 @@ export interface IApiMetadata extends ApiMetadataCollections,ApiMetadataMethods,
 }
 
 /*********************************************
+* IApiMetadataCollection
+**********************************************/
+export interface IApiMetadataCollection extends IBaseResults<ApiMetadata> {
+
+}
+
+/*********************************************
+* IApiMetadataQueryCollection
+**********************************************/
+export interface IApiMetadataQueryCollection extends IBaseResults<ApiMetadataQuery> {
+
+}
+
+/*********************************************
 * IApiMetadataQuery
 **********************************************/
 export interface IApiMetadataQuery extends ApiMetadataQuery, ApiMetadataMethods {
@@ -85,6 +99,20 @@ export interface TypeInformationCollections {
 * ISite
 **********************************************/
 export interface ISite extends SiteCollections,SiteMethods,IBaseQuery<ISiteQuery> {
+
+}
+
+/*********************************************
+* ISiteCollection
+**********************************************/
+export interface ISiteCollection extends IBaseResults<Site> {
+
+}
+
+/*********************************************
+* ISiteQueryCollection
+**********************************************/
+export interface ISiteQueryCollection extends IBaseResults<SiteQuery> {
 
 }
 
@@ -259,6 +287,20 @@ export interface IAudit extends AuditCollections,AuditMethods,IBaseQuery<IAuditQ
 }
 
 /*********************************************
+* IAuditCollection
+**********************************************/
+export interface IAuditCollection extends IBaseResults<Audit> {
+
+}
+
+/*********************************************
+* IAuditQueryCollection
+**********************************************/
+export interface IAuditQueryCollection extends IBaseResults<AuditQuery> {
+
+}
+
+/*********************************************
 * IAuditQuery
 **********************************************/
 export interface IAuditQuery extends AuditQuery, AuditMethods {
@@ -311,6 +353,20 @@ export interface AuditMethods {
 * IScriptSafeDomain
 **********************************************/
 export interface IScriptSafeDomain extends ScriptSafeDomainCollections,ScriptSafeDomainMethods,IBaseQuery<IScriptSafeDomainQuery> {
+
+}
+
+/*********************************************
+* IScriptSafeDomainCollection
+**********************************************/
+export interface IScriptSafeDomainCollection extends IBaseResults<ScriptSafeDomain> {
+
+}
+
+/*********************************************
+* IScriptSafeDomainQueryCollection
+**********************************************/
+export interface IScriptSafeDomainQueryCollection extends IBaseResults<ScriptSafeDomainQuery> {
 
 }
 
@@ -375,6 +431,20 @@ export interface ScriptSafeDomainMethods {
 * IEventReceiverDefinition
 **********************************************/
 export interface IEventReceiverDefinition extends EventReceiverDefinitionCollections,EventReceiverDefinitionMethods,IBaseQuery<IEventReceiverDefinitionQuery> {
+
+}
+
+/*********************************************
+* IEventReceiverDefinitionCollection
+**********************************************/
+export interface IEventReceiverDefinitionCollection extends IBaseResults<EventReceiverDefinition> {
+
+}
+
+/*********************************************
+* IEventReceiverDefinitionQueryCollection
+**********************************************/
+export interface IEventReceiverDefinitionQueryCollection extends IBaseResults<EventReceiverDefinitionQuery> {
 
 }
 
@@ -493,6 +563,20 @@ export interface IUser extends UserCollections,UserMethods,IBaseQuery<IUserQuery
 }
 
 /*********************************************
+* IUserCollection
+**********************************************/
+export interface IUserCollection extends IBaseResults<User> {
+
+}
+
+/*********************************************
+* IUserQueryCollection
+**********************************************/
+export interface IUserQueryCollection extends IBaseResults<UserQuery> {
+
+}
+
+/*********************************************
 * IUserQuery
 **********************************************/
 export interface IUserQuery extends UserQuery, UserMethods {
@@ -567,6 +651,20 @@ export interface UserMethods {
 * IAlert
 **********************************************/
 export interface IAlert extends AlertCollections,AlertMethods,IBaseQuery<IAlertQuery> {
+
+}
+
+/*********************************************
+* IAlertCollection
+**********************************************/
+export interface IAlertCollection extends IBaseResults<Alert> {
+
+}
+
+/*********************************************
+* IAlertQueryCollection
+**********************************************/
+export interface IAlertQueryCollection extends IBaseResults<AlertQuery> {
 
 }
 
@@ -673,6 +771,20 @@ export interface ISecurableObject extends SecurableObjectCollections,SecurableOb
 }
 
 /*********************************************
+* ISecurableObjectCollection
+**********************************************/
+export interface ISecurableObjectCollection extends IBaseResults<SecurableObject> {
+
+}
+
+/*********************************************
+* ISecurableObjectQueryCollection
+**********************************************/
+export interface ISecurableObjectQueryCollection extends IBaseResults<SecurableObjectQuery> {
+
+}
+
+/*********************************************
 * ISecurableObjectQuery
 **********************************************/
 export interface ISecurableObjectQuery extends SecurableObjectQuery, SecurableObjectMethods {
@@ -728,6 +840,20 @@ export interface SecurableObjectMethods {
 * IRoleAssignment
 **********************************************/
 export interface IRoleAssignment extends RoleAssignmentCollections,RoleAssignmentMethods,IBaseQuery<IRoleAssignmentQuery> {
+
+}
+
+/*********************************************
+* IRoleAssignmentCollection
+**********************************************/
+export interface IRoleAssignmentCollection extends IBaseResults<RoleAssignment> {
+
+}
+
+/*********************************************
+* IRoleAssignmentQueryCollection
+**********************************************/
+export interface IRoleAssignmentQueryCollection extends IBaseResults<RoleAssignmentQuery> {
 
 }
 
@@ -797,6 +923,20 @@ export interface RoleAssignmentMethods {
 * IRoleDefinition
 **********************************************/
 export interface IRoleDefinition extends RoleDefinitionCollections,RoleDefinitionMethods,IBaseQuery<IRoleDefinitionQuery> {
+
+}
+
+/*********************************************
+* IRoleDefinitionCollection
+**********************************************/
+export interface IRoleDefinitionCollection extends IBaseResults<RoleDefinition> {
+
+}
+
+/*********************************************
+* IRoleDefinitionQueryCollection
+**********************************************/
+export interface IRoleDefinitionQueryCollection extends IBaseResults<RoleDefinitionQuery> {
 
 }
 
@@ -873,6 +1013,20 @@ export interface RoleDefinitionMethods {
 * IListItem
 **********************************************/
 export interface IListItem extends ListItemCollections,ListItemMethods,IBaseQuery<IListItemQuery> {
+
+}
+
+/*********************************************
+* IListItemCollection
+**********************************************/
+export interface IListItemCollection extends IBaseResults<ListItem> {
+
+}
+
+/*********************************************
+* IListItemQueryCollection
+**********************************************/
+export interface IListItemQueryCollection extends IBaseResults<ListItemQuery> {
 
 }
 
@@ -1001,6 +1155,20 @@ export interface IAttachment extends AttachmentCollections,AttachmentMethods,IBa
 }
 
 /*********************************************
+* IAttachmentCollection
+**********************************************/
+export interface IAttachmentCollection extends IBaseResults<Attachment> {
+
+}
+
+/*********************************************
+* IAttachmentQueryCollection
+**********************************************/
+export interface IAttachmentQueryCollection extends IBaseResults<AttachmentQuery> {
+
+}
+
+/*********************************************
 * IAttachmentQuery
 **********************************************/
 export interface IAttachmentQuery extends AttachmentQuery, AttachmentMethods {
@@ -1046,7 +1214,7 @@ export interface AttachmentCollectionMethods {
 	addUsingPath(DecodedUrl?: string, contentStream?: any): IBaseExecution<SP.Attachment>;
 	getByFileName(fileName?: string): IBaseQuery<SP.Attachment> & SP.AttachmentMethods;
 	getByFileNameAsPath(DecodedUrl?: string): IBaseQuery<SP.Attachment> & SP.AttachmentMethods;
-	add(FileName?: SP.ListItemCreationInformation, Content?: any): IBaseExecution<SP.ListItem>;
+	add(FileName?: string, Content?: any): IBaseExecution<SP.Attachment>;
 }
 
 /*********************************************
@@ -1068,6 +1236,20 @@ export interface AttachmentMethods {
 * IContentType
 **********************************************/
 export interface IContentType extends ContentTypeCollections,ContentTypeMethods,IBaseQuery<IContentTypeQuery> {
+
+}
+
+/*********************************************
+* IContentTypeCollection
+**********************************************/
+export interface IContentTypeCollection extends IBaseResults<ContentType> {
+
+}
+
+/*********************************************
+* IContentTypeQueryCollection
+**********************************************/
+export interface IContentTypeQueryCollection extends IBaseResults<ContentTypeQuery> {
 
 }
 
@@ -1173,6 +1355,20 @@ export interface IUserResource extends UserResourceCollections,UserResourceMetho
 }
 
 /*********************************************
+* IUserResourceCollection
+**********************************************/
+export interface IUserResourceCollection extends IBaseResults<UserResource> {
+
+}
+
+/*********************************************
+* IUserResourceQueryCollection
+**********************************************/
+export interface IUserResourceQueryCollection extends IBaseResults<UserResourceQuery> {
+
+}
+
+/*********************************************
 * IUserResourceQuery
 **********************************************/
 export interface IUserResourceQuery extends UserResourceQuery, UserResourceMethods {
@@ -1226,6 +1422,20 @@ export interface UserResourceMethods {
 * IFieldLink
 **********************************************/
 export interface IFieldLink extends FieldLinkCollections,FieldLinkMethods,IBaseQuery<IFieldLinkQuery> {
+
+}
+
+/*********************************************
+* IFieldLinkCollection
+**********************************************/
+export interface IFieldLinkCollection extends IBaseResults<FieldLink> {
+
+}
+
+/*********************************************
+* IFieldLinkQueryCollection
+**********************************************/
+export interface IFieldLinkQueryCollection extends IBaseResults<FieldLinkQuery> {
 
 }
 
@@ -1298,6 +1508,20 @@ export interface FieldLinkMethods {
 * IField
 **********************************************/
 export interface IField extends FieldCollections,FieldMethods,IBaseQuery<IFieldQuery> {
+
+}
+
+/*********************************************
+* IFieldCollection
+**********************************************/
+export interface IFieldCollection extends IBaseResults<Field> {
+
+}
+
+/*********************************************
+* IFieldQueryCollection
+**********************************************/
+export interface IFieldQueryCollection extends IBaseResults<FieldQuery> {
 
 }
 
@@ -1445,6 +1669,20 @@ export interface FieldStringValuesCollections {
 * IFile
 **********************************************/
 export interface IFile extends FileCollections,FileMethods,IBaseQuery<IFileQuery> {
+
+}
+
+/*********************************************
+* IFileCollection
+**********************************************/
+export interface IFileCollection extends IBaseResults<File> {
+
+}
+
+/*********************************************
+* IFileQueryCollection
+**********************************************/
+export interface IFileQueryCollection extends IBaseResults<FileQuery> {
 
 }
 
@@ -1631,6 +1869,20 @@ export interface IInformationRightsManagementFileSettings extends InformationRig
 }
 
 /*********************************************
+* IInformationRightsManagementFileSettingsCollection
+**********************************************/
+export interface IInformationRightsManagementFileSettingsCollection extends IBaseResults<InformationRightsManagementFileSettings> {
+
+}
+
+/*********************************************
+* IInformationRightsManagementFileSettingsQueryCollection
+**********************************************/
+export interface IInformationRightsManagementFileSettingsQueryCollection extends IBaseResults<InformationRightsManagementFileSettingsQuery> {
+
+}
+
+/*********************************************
 * IInformationRightsManagementFileSettingsQuery
 **********************************************/
 export interface IInformationRightsManagementFileSettingsQuery extends InformationRightsManagementFileSettingsQuery, InformationRightsManagementFileSettingsMethods {
@@ -1721,6 +1973,20 @@ export interface IFileVersion extends FileVersionCollections,FileVersionMethods,
 }
 
 /*********************************************
+* IFileVersionCollection
+**********************************************/
+export interface IFileVersionCollection extends IBaseResults<FileVersion> {
+
+}
+
+/*********************************************
+* IFileVersionQueryCollection
+**********************************************/
+export interface IFileVersionQueryCollection extends IBaseResults<FileVersionQuery> {
+
+}
+
+/*********************************************
 * IFileVersionQuery
 **********************************************/
 export interface IFileVersionQuery extends FileVersionQuery, FileVersionMethods {
@@ -1794,6 +2060,20 @@ export interface FileVersionMethods {
 * IFolder
 **********************************************/
 export interface IFolder extends FolderCollections,FolderMethods,IBaseQuery<IFolderQuery> {
+
+}
+
+/*********************************************
+* IFolderCollection
+**********************************************/
+export interface IFolderCollection extends IBaseResults<Folder> {
+
+}
+
+/*********************************************
+* IFolderQueryCollection
+**********************************************/
+export interface IFolderQueryCollection extends IBaseResults<FolderQuery> {
 
 }
 
@@ -1910,6 +2190,20 @@ export interface StorageMetricsCollections {
 * IList
 **********************************************/
 export interface IList extends ListCollections,ListMethods,IBaseQuery<IListQuery> {
+
+}
+
+/*********************************************
+* IListCollection
+**********************************************/
+export interface IListCollection extends IBaseResults<List> {
+
+}
+
+/*********************************************
+* IListQueryCollection
+**********************************************/
+export interface IListQueryCollection extends IBaseResults<ListQuery> {
 
 }
 
@@ -2159,6 +2453,20 @@ export interface IView extends ViewCollections,ViewMethods,IBaseQuery<IViewQuery
 }
 
 /*********************************************
+* IViewCollection
+**********************************************/
+export interface IViewCollection extends IBaseResults<View> {
+
+}
+
+/*********************************************
+* IViewQueryCollection
+**********************************************/
+export interface IViewQueryCollection extends IBaseResults<ViewQuery> {
+
+}
+
+/*********************************************
 * IViewQuery
 **********************************************/
 export interface IViewQuery extends ViewQuery, ViewMethods {
@@ -2274,6 +2582,20 @@ export interface IViewFieldCollection extends ViewFieldCollectionCollections,Vie
 }
 
 /*********************************************
+* IViewFieldCollectionCollection
+**********************************************/
+export interface IViewFieldCollectionCollection extends IBaseResults<ViewFieldCollection> {
+
+}
+
+/*********************************************
+* IViewFieldCollectionQueryCollection
+**********************************************/
+export interface IViewFieldCollectionQueryCollection extends IBaseResults<ViewFieldCollectionQuery> {
+
+}
+
+/*********************************************
 * IViewFieldCollectionQuery
 **********************************************/
 export interface IViewFieldCollectionQuery extends ViewFieldCollectionQuery, ViewFieldCollectionMethods {
@@ -2359,6 +2681,20 @@ export interface IInformationRightsManagementSettings extends InformationRightsM
 }
 
 /*********************************************
+* IInformationRightsManagementSettingsCollection
+**********************************************/
+export interface IInformationRightsManagementSettingsCollection extends IBaseResults<InformationRightsManagementSettings> {
+
+}
+
+/*********************************************
+* IInformationRightsManagementSettingsQueryCollection
+**********************************************/
+export interface IInformationRightsManagementSettingsQueryCollection extends IBaseResults<InformationRightsManagementSettingsQuery> {
+
+}
+
+/*********************************************
 * IInformationRightsManagementSettingsQuery
 **********************************************/
 export interface IInformationRightsManagementSettingsQuery extends InformationRightsManagementSettingsQuery, InformationRightsManagementSettingsMethods {
@@ -2426,6 +2762,20 @@ export interface InformationRightsManagementSettingsMethods {
 * IWeb
 **********************************************/
 export interface IWeb extends WebCollections,WebMethods,IBaseQuery<IWebQuery> {
+
+}
+
+/*********************************************
+* IWebCollection
+**********************************************/
+export interface IWebCollection extends IBaseResults<Web> {
+
+}
+
+/*********************************************
+* IWebQueryCollection
+**********************************************/
+export interface IWebQueryCollection extends IBaseResults<WebQuery> {
 
 }
 
@@ -2782,6 +3132,20 @@ export interface IGroup extends GroupCollections,GroupMethods,IBaseQuery<IGroupQ
 }
 
 /*********************************************
+* IGroupCollection
+**********************************************/
+export interface IGroupCollection extends IBaseResults<Group> {
+
+}
+
+/*********************************************
+* IGroupQueryCollection
+**********************************************/
+export interface IGroupQueryCollection extends IBaseResults<GroupQuery> {
+
+}
+
+/*********************************************
 * IGroupQuery
 **********************************************/
 export interface IGroupQuery extends GroupQuery, GroupMethods {
@@ -2857,6 +3221,20 @@ export interface GroupMethods {
 * IClientWebPart
 **********************************************/
 export interface IClientWebPart extends ClientWebPartCollections,ClientWebPartMethods,IBaseQuery<IClientWebPartQuery> {
+
+}
+
+/*********************************************
+* IClientWebPartCollection
+**********************************************/
+export interface IClientWebPartCollection extends IBaseResults<ClientWebPart> {
+
+}
+
+/*********************************************
+* IClientWebPartQueryCollection
+**********************************************/
+export interface IClientWebPartQueryCollection extends IBaseResults<ClientWebPartQuery> {
 
 }
 
@@ -2942,6 +3320,20 @@ export interface IListTemplate extends ListTemplateCollections,ListTemplateMetho
 }
 
 /*********************************************
+* IListTemplateCollection
+**********************************************/
+export interface IListTemplateCollection extends IBaseResults<ListTemplate> {
+
+}
+
+/*********************************************
+* IListTemplateQueryCollection
+**********************************************/
+export interface IListTemplateQueryCollection extends IBaseResults<ListTemplateQuery> {
+
+}
+
+/*********************************************
 * IListTemplateQuery
 **********************************************/
 export interface IListTemplateQuery extends ListTemplateQuery, ListTemplateMethods {
@@ -3016,6 +3408,20 @@ export interface INavigation extends NavigationCollections,NavigationMethods,IBa
 }
 
 /*********************************************
+* INavigationCollection
+**********************************************/
+export interface INavigationCollection extends IBaseResults<Navigation> {
+
+}
+
+/*********************************************
+* INavigationQueryCollection
+**********************************************/
+export interface INavigationQueryCollection extends IBaseResults<NavigationQuery> {
+
+}
+
+/*********************************************
 * INavigationQuery
 **********************************************/
 export interface INavigationQuery extends NavigationQuery, NavigationMethods {
@@ -3072,6 +3478,20 @@ export interface NavigationMethods {
 * INavigationNode
 **********************************************/
 export interface INavigationNode extends NavigationNodeCollections,NavigationNodeMethods,IBaseQuery<INavigationNodeQuery> {
+
+}
+
+/*********************************************
+* INavigationNodeCollection
+**********************************************/
+export interface INavigationNodeCollection extends IBaseResults<NavigationNode> {
+
+}
+
+/*********************************************
+* INavigationNodeQueryCollection
+**********************************************/
+export interface INavigationNodeQueryCollection extends IBaseResults<NavigationNodeQuery> {
 
 }
 
@@ -3182,6 +3602,20 @@ export interface IPushNotificationSubscriber extends PushNotificationSubscriberC
 }
 
 /*********************************************
+* IPushNotificationSubscriberCollection
+**********************************************/
+export interface IPushNotificationSubscriberCollection extends IBaseResults<PushNotificationSubscriber> {
+
+}
+
+/*********************************************
+* IPushNotificationSubscriberQueryCollection
+**********************************************/
+export interface IPushNotificationSubscriberQueryCollection extends IBaseResults<PushNotificationSubscriberQuery> {
+
+}
+
+/*********************************************
 * IPushNotificationSubscriberQuery
 **********************************************/
 export interface IPushNotificationSubscriberQuery extends PushNotificationSubscriberQuery, PushNotificationSubscriberMethods {
@@ -3246,6 +3680,20 @@ export interface PushNotificationSubscriberMethods {
 * IRecycleBinItem
 **********************************************/
 export interface IRecycleBinItem extends RecycleBinItemCollections,RecycleBinItemMethods,IBaseQuery<IRecycleBinItemQuery> {
+
+}
+
+/*********************************************
+* IRecycleBinItemCollection
+**********************************************/
+export interface IRecycleBinItemCollection extends IBaseResults<RecycleBinItem> {
+
+}
+
+/*********************************************
+* IRecycleBinItemQueryCollection
+**********************************************/
+export interface IRecycleBinItemQueryCollection extends IBaseResults<RecycleBinItemQuery> {
 
 }
 
@@ -3338,6 +3786,20 @@ export interface IRegionalSettings extends RegionalSettingsCollections,RegionalS
 }
 
 /*********************************************
+* IRegionalSettingsCollection
+**********************************************/
+export interface IRegionalSettingsCollection extends IBaseResults<RegionalSettings> {
+
+}
+
+/*********************************************
+* IRegionalSettingsQueryCollection
+**********************************************/
+export interface IRegionalSettingsQueryCollection extends IBaseResults<RegionalSettingsQuery> {
+
+}
+
+/*********************************************
 * IRegionalSettingsQuery
 **********************************************/
 export interface IRegionalSettingsQuery extends RegionalSettingsQuery, RegionalSettingsMethods {
@@ -3426,6 +3888,20 @@ export interface ILanguageCollection extends LanguageCollectionCollections,Langu
 }
 
 /*********************************************
+* ILanguageCollectionCollection
+**********************************************/
+export interface ILanguageCollectionCollection extends IBaseResults<LanguageCollection> {
+
+}
+
+/*********************************************
+* ILanguageCollectionQueryCollection
+**********************************************/
+export interface ILanguageCollectionQueryCollection extends IBaseResults<LanguageCollectionQuery> {
+
+}
+
+/*********************************************
 * ILanguageCollectionQuery
 **********************************************/
 export interface ILanguageCollectionQuery extends LanguageCollectionQuery, LanguageCollectionMethods {
@@ -3479,6 +3955,20 @@ export interface LanguageCollectionMethods {
 * ITimeZone
 **********************************************/
 export interface ITimeZone extends TimeZoneCollections,TimeZoneMethods,IBaseQuery<ITimeZoneQuery> {
+
+}
+
+/*********************************************
+* ITimeZoneCollection
+**********************************************/
+export interface ITimeZoneCollection extends IBaseResults<TimeZone> {
+
+}
+
+/*********************************************
+* ITimeZoneQueryCollection
+**********************************************/
+export interface ITimeZoneQueryCollection extends IBaseResults<TimeZoneQuery> {
 
 }
 
@@ -3549,6 +4039,20 @@ export interface IThemeInfo extends ThemeInfoCollections,ThemeInfoMethods,IBaseQ
 }
 
 /*********************************************
+* IThemeInfoCollection
+**********************************************/
+export interface IThemeInfoCollection extends IBaseResults<ThemeInfo> {
+
+}
+
+/*********************************************
+* IThemeInfoQueryCollection
+**********************************************/
+export interface IThemeInfoQueryCollection extends IBaseResults<ThemeInfoQuery> {
+
+}
+
+/*********************************************
 * IThemeInfoQuery
 **********************************************/
 export interface IThemeInfoQuery extends ThemeInfoQuery, ThemeInfoMethods {
@@ -3603,6 +4107,20 @@ export interface ThemeInfoMethods {
 * IUserCustomAction
 **********************************************/
 export interface IUserCustomAction extends UserCustomActionCollections,UserCustomActionMethods,IBaseQuery<IUserCustomActionQuery> {
+
+}
+
+/*********************************************
+* IUserCustomActionCollection
+**********************************************/
+export interface IUserCustomActionCollection extends IBaseResults<UserCustomAction> {
+
+}
+
+/*********************************************
+* IUserCustomActionQueryCollection
+**********************************************/
+export interface IUserCustomActionQueryCollection extends IBaseResults<UserCustomActionQuery> {
 
 }
 
@@ -3694,6 +4212,20 @@ export interface IListItemVersion extends ListItemVersionCollections,ListItemVer
 }
 
 /*********************************************
+* IListItemVersionCollection
+**********************************************/
+export interface IListItemVersionCollection extends IBaseResults<ListItemVersion> {
+
+}
+
+/*********************************************
+* IListItemVersionQueryCollection
+**********************************************/
+export interface IListItemVersionQueryCollection extends IBaseResults<ListItemVersionQuery> {
+
+}
+
+/*********************************************
 * IListItemVersionQuery
 **********************************************/
 export interface IListItemVersionQuery extends ListItemVersionQuery, ListItemVersionMethods {
@@ -3760,6 +4292,20 @@ export interface ListItemVersionMethods {
 * ISPAppLicenseManager
 **********************************************/
 export interface ISPAppLicenseManager extends SPAppLicenseManagerCollections,SPAppLicenseManagerMethods,IBaseQuery<ISPAppLicenseManagerQuery> {
+
+}
+
+/*********************************************
+* ISPAppLicenseManagerCollection
+**********************************************/
+export interface ISPAppLicenseManagerCollection extends IBaseResults<SPAppLicenseManager> {
+
+}
+
+/*********************************************
+* ISPAppLicenseManagerQueryCollection
+**********************************************/
+export interface ISPAppLicenseManagerQueryCollection extends IBaseResults<SPAppLicenseManagerQuery> {
 
 }
 
@@ -3889,6 +4435,20 @@ export interface IAppInstance extends AppInstanceCollections,AppInstanceMethods,
 }
 
 /*********************************************
+* IAppInstanceCollection
+**********************************************/
+export interface IAppInstanceCollection extends IBaseResults<AppInstance> {
+
+}
+
+/*********************************************
+* IAppInstanceQueryCollection
+**********************************************/
+export interface IAppInstanceQueryCollection extends IBaseResults<AppInstanceQuery> {
+
+}
+
+/*********************************************
 * IAppInstanceQuery
 **********************************************/
 export interface IAppInstanceQuery extends AppInstanceQuery, AppInstanceMethods {
@@ -3999,6 +4559,20 @@ export interface IObjectSharingSettings extends ObjectSharingSettingsCollections
 }
 
 /*********************************************
+* IObjectSharingSettingsCollection
+**********************************************/
+export interface IObjectSharingSettingsCollection extends IBaseResults<ObjectSharingSettings> {
+
+}
+
+/*********************************************
+* IObjectSharingSettingsQueryCollection
+**********************************************/
+export interface IObjectSharingSettingsQueryCollection extends IBaseResults<ObjectSharingSettingsQuery> {
+
+}
+
+/*********************************************
 * IObjectSharingSettingsQuery
 **********************************************/
 export interface IObjectSharingSettingsQuery extends ObjectSharingSettingsQuery, ObjectSharingSettingsMethods {
@@ -4090,6 +4664,20 @@ export interface ObjectSharingSettingsMethods {
 * IObjectSharingInformation
 **********************************************/
 export interface IObjectSharingInformation extends ObjectSharingInformationCollections,ObjectSharingInformationMethods,IBaseQuery<IObjectSharingInformationQuery> {
+
+}
+
+/*********************************************
+* IObjectSharingInformationCollection
+**********************************************/
+export interface IObjectSharingInformationCollection extends IBaseResults<ObjectSharingInformation> {
+
+}
+
+/*********************************************
+* IObjectSharingInformationQueryCollection
+**********************************************/
+export interface IObjectSharingInformationQueryCollection extends IBaseResults<ObjectSharingInformationQuery> {
 
 }
 
@@ -4300,6 +4888,20 @@ export interface ServerSettingsCollections {
 * ISharingResult
 **********************************************/
 export interface ISharingResult extends SharingResultCollections,SharingResultMethods,IBaseQuery<ISharingResultQuery> {
+
+}
+
+/*********************************************
+* ISharingResultCollection
+**********************************************/
+export interface ISharingResultCollection extends IBaseResults<SharingResult> {
+
+}
+
+/*********************************************
+* ISharingResultQueryCollection
+**********************************************/
+export interface ISharingResultQueryCollection extends IBaseResults<SharingResultQuery> {
 
 }
 
@@ -4662,6 +5264,20 @@ export interface ICheckedOutFile extends CheckedOutFileCollections,CheckedOutFil
 }
 
 /*********************************************
+* ICheckedOutFileCollection
+**********************************************/
+export interface ICheckedOutFileCollection extends IBaseResults<CheckedOutFile> {
+
+}
+
+/*********************************************
+* ICheckedOutFileQueryCollection
+**********************************************/
+export interface ICheckedOutFileQueryCollection extends IBaseResults<CheckedOutFileQuery> {
+
+}
+
+/*********************************************
 * ICheckedOutFileQuery
 **********************************************/
 export interface ICheckedOutFileQuery extends CheckedOutFileQuery, CheckedOutFileMethods {
@@ -4769,6 +5385,20 @@ export interface IRequestContext extends RequestContextCollections,RequestContex
 }
 
 /*********************************************
+* IRequestContextCollection
+**********************************************/
+export interface IRequestContextCollection extends IBaseResults<RequestContext> {
+
+}
+
+/*********************************************
+* IRequestContextQueryCollection
+**********************************************/
+export interface IRequestContextQueryCollection extends IBaseResults<RequestContextQuery> {
+
+}
+
+/*********************************************
 * IRequestContextQuery
 **********************************************/
 export interface IRequestContextQuery extends RequestContextQuery, RequestContextMethods {
@@ -4845,6 +5475,20 @@ export interface IFieldCalculated extends FieldCalculatedCollections,FieldCalcul
 }
 
 /*********************************************
+* IFieldCalculatedCollection
+**********************************************/
+export interface IFieldCalculatedCollection extends IBaseResults<FieldCalculated> {
+
+}
+
+/*********************************************
+* IFieldCalculatedQueryCollection
+**********************************************/
+export interface IFieldCalculatedQueryCollection extends IBaseResults<FieldCalculatedQuery> {
+
+}
+
+/*********************************************
 * IFieldCalculatedQuery
 **********************************************/
 export interface IFieldCalculatedQuery extends FieldCalculatedQuery, FieldCalculatedMethods {
@@ -4907,6 +5551,20 @@ export interface FieldCalculatedMethods {
 * IFieldMultiChoice
 **********************************************/
 export interface IFieldMultiChoice extends FieldMultiChoiceCollections,FieldMultiChoiceMethods,IBaseQuery<IFieldMultiChoiceQuery> {
+
+}
+
+/*********************************************
+* IFieldMultiChoiceCollection
+**********************************************/
+export interface IFieldMultiChoiceCollection extends IBaseResults<FieldMultiChoice> {
+
+}
+
+/*********************************************
+* IFieldMultiChoiceQueryCollection
+**********************************************/
+export interface IFieldMultiChoiceQueryCollection extends IBaseResults<FieldMultiChoiceQuery> {
 
 }
 
@@ -4974,6 +5632,20 @@ export interface IFieldChoice extends FieldChoiceCollections,FieldChoiceMethods,
 }
 
 /*********************************************
+* IFieldChoiceCollection
+**********************************************/
+export interface IFieldChoiceCollection extends IBaseResults<FieldChoice> {
+
+}
+
+/*********************************************
+* IFieldChoiceQueryCollection
+**********************************************/
+export interface IFieldChoiceQueryCollection extends IBaseResults<FieldChoiceQuery> {
+
+}
+
+/*********************************************
 * IFieldChoiceQuery
 **********************************************/
 export interface IFieldChoiceQuery extends FieldChoiceQuery, FieldChoiceMethods {
@@ -5035,6 +5707,20 @@ export interface IFieldComputed extends FieldComputedCollections,FieldComputedMe
 }
 
 /*********************************************
+* IFieldComputedCollection
+**********************************************/
+export interface IFieldComputedCollection extends IBaseResults<FieldComputed> {
+
+}
+
+/*********************************************
+* IFieldComputedQueryCollection
+**********************************************/
+export interface IFieldComputedQueryCollection extends IBaseResults<FieldComputedQuery> {
+
+}
+
+/*********************************************
 * IFieldComputedQuery
 **********************************************/
 export interface IFieldComputedQuery extends FieldComputedQuery, FieldComputedMethods {
@@ -5092,6 +5778,20 @@ export interface FieldComputedMethods {
 * IFieldNumber
 **********************************************/
 export interface IFieldNumber extends FieldNumberCollections,FieldNumberMethods,IBaseQuery<IFieldNumberQuery> {
+
+}
+
+/*********************************************
+* IFieldNumberCollection
+**********************************************/
+export interface IFieldNumberCollection extends IBaseResults<FieldNumber> {
+
+}
+
+/*********************************************
+* IFieldNumberQueryCollection
+**********************************************/
+export interface IFieldNumberQueryCollection extends IBaseResults<FieldNumberQuery> {
 
 }
 
@@ -5160,6 +5860,20 @@ export interface IFieldCurrency extends FieldCurrencyCollections,FieldCurrencyMe
 }
 
 /*********************************************
+* IFieldCurrencyCollection
+**********************************************/
+export interface IFieldCurrencyCollection extends IBaseResults<FieldCurrency> {
+
+}
+
+/*********************************************
+* IFieldCurrencyQueryCollection
+**********************************************/
+export interface IFieldCurrencyQueryCollection extends IBaseResults<FieldCurrencyQuery> {
+
+}
+
+/*********************************************
 * IFieldCurrencyQuery
 **********************************************/
 export interface IFieldCurrencyQuery extends FieldCurrencyQuery, FieldCurrencyMethods {
@@ -5217,6 +5931,20 @@ export interface FieldCurrencyMethods {
 * IFieldDateTime
 **********************************************/
 export interface IFieldDateTime extends FieldDateTimeCollections,FieldDateTimeMethods,IBaseQuery<IFieldDateTimeQuery> {
+
+}
+
+/*********************************************
+* IFieldDateTimeCollection
+**********************************************/
+export interface IFieldDateTimeCollection extends IBaseResults<FieldDateTime> {
+
+}
+
+/*********************************************
+* IFieldDateTimeQueryCollection
+**********************************************/
+export interface IFieldDateTimeQueryCollection extends IBaseResults<FieldDateTimeQuery> {
 
 }
 
@@ -5284,6 +6012,20 @@ export interface IFieldGeolocation extends FieldGeolocationCollections,FieldGeol
 }
 
 /*********************************************
+* IFieldGeolocationCollection
+**********************************************/
+export interface IFieldGeolocationCollection extends IBaseResults<FieldGeolocation> {
+
+}
+
+/*********************************************
+* IFieldGeolocationQueryCollection
+**********************************************/
+export interface IFieldGeolocationQueryCollection extends IBaseResults<FieldGeolocationQuery> {
+
+}
+
+/*********************************************
 * IFieldGeolocationQuery
 **********************************************/
 export interface IFieldGeolocationQuery extends FieldGeolocationQuery, FieldGeolocationMethods {
@@ -5345,6 +6087,20 @@ export interface IFieldGuid extends FieldGuidCollections,FieldGuidMethods,IBaseQ
 }
 
 /*********************************************
+* IFieldGuidCollection
+**********************************************/
+export interface IFieldGuidCollection extends IBaseResults<FieldGuid> {
+
+}
+
+/*********************************************
+* IFieldGuidQueryCollection
+**********************************************/
+export interface IFieldGuidQueryCollection extends IBaseResults<FieldGuidQuery> {
+
+}
+
+/*********************************************
 * IFieldGuidQuery
 **********************************************/
 export interface IFieldGuidQuery extends FieldGuidQuery, FieldGuidMethods {
@@ -5402,6 +6158,20 @@ export interface FieldGuidMethods {
 * IFieldMultiLineText
 **********************************************/
 export interface IFieldMultiLineText extends FieldMultiLineTextCollections,FieldMultiLineTextMethods,IBaseQuery<IFieldMultiLineTextQuery> {
+
+}
+
+/*********************************************
+* IFieldMultiLineTextCollection
+**********************************************/
+export interface IFieldMultiLineTextCollection extends IBaseResults<FieldMultiLineText> {
+
+}
+
+/*********************************************
+* IFieldMultiLineTextQueryCollection
+**********************************************/
+export interface IFieldMultiLineTextQueryCollection extends IBaseResults<FieldMultiLineTextQuery> {
 
 }
 
@@ -5473,6 +6243,20 @@ export interface IFieldLocation extends FieldLocationCollections,FieldLocationMe
 }
 
 /*********************************************
+* IFieldLocationCollection
+**********************************************/
+export interface IFieldLocationCollection extends IBaseResults<FieldLocation> {
+
+}
+
+/*********************************************
+* IFieldLocationQueryCollection
+**********************************************/
+export interface IFieldLocationQueryCollection extends IBaseResults<FieldLocationQuery> {
+
+}
+
+/*********************************************
 * IFieldLocationQuery
 **********************************************/
 export interface IFieldLocationQuery extends FieldLocationQuery, FieldLocationMethods {
@@ -5530,6 +6314,20 @@ export interface FieldLocationMethods {
 * IFieldLookup
 **********************************************/
 export interface IFieldLookup extends FieldLookupCollections,FieldLookupMethods,IBaseQuery<IFieldLookupQuery> {
+
+}
+
+/*********************************************
+* IFieldLookupCollection
+**********************************************/
+export interface IFieldLookupCollection extends IBaseResults<FieldLookup> {
+
+}
+
+/*********************************************
+* IFieldLookupQueryCollection
+**********************************************/
+export interface IFieldLookupQueryCollection extends IBaseResults<FieldLookupQuery> {
 
 }
 
@@ -5604,6 +6402,20 @@ export interface IFieldRatingScale extends FieldRatingScaleCollections,FieldRati
 }
 
 /*********************************************
+* IFieldRatingScaleCollection
+**********************************************/
+export interface IFieldRatingScaleCollection extends IBaseResults<FieldRatingScale> {
+
+}
+
+/*********************************************
+* IFieldRatingScaleQueryCollection
+**********************************************/
+export interface IFieldRatingScaleQueryCollection extends IBaseResults<FieldRatingScaleQuery> {
+
+}
+
+/*********************************************
 * IFieldRatingScaleQuery
 **********************************************/
 export interface IFieldRatingScaleQuery extends FieldRatingScaleQuery, FieldRatingScaleMethods {
@@ -5671,6 +6483,20 @@ export interface IFieldText extends FieldTextCollections,FieldTextMethods,IBaseQ
 }
 
 /*********************************************
+* IFieldTextCollection
+**********************************************/
+export interface IFieldTextCollection extends IBaseResults<FieldText> {
+
+}
+
+/*********************************************
+* IFieldTextQueryCollection
+**********************************************/
+export interface IFieldTextQueryCollection extends IBaseResults<FieldTextQuery> {
+
+}
+
+/*********************************************
 * IFieldTextQuery
 **********************************************/
 export interface IFieldTextQuery extends FieldTextQuery, FieldTextMethods {
@@ -5732,6 +6558,20 @@ export interface IFieldUrl extends FieldUrlCollections,FieldUrlMethods,IBaseQuer
 }
 
 /*********************************************
+* IFieldUrlCollection
+**********************************************/
+export interface IFieldUrlCollection extends IBaseResults<FieldUrl> {
+
+}
+
+/*********************************************
+* IFieldUrlQueryCollection
+**********************************************/
+export interface IFieldUrlQueryCollection extends IBaseResults<FieldUrlQuery> {
+
+}
+
+/*********************************************
 * IFieldUrlQuery
 **********************************************/
 export interface IFieldUrlQuery extends FieldUrlQuery, FieldUrlMethods {
@@ -5789,6 +6629,20 @@ export interface FieldUrlMethods {
 * IFieldUser
 **********************************************/
 export interface IFieldUser extends FieldUserCollections,FieldUserMethods,IBaseQuery<IFieldUserQuery> {
+
+}
+
+/*********************************************
+* IFieldUserCollection
+**********************************************/
+export interface IFieldUserCollection extends IBaseResults<FieldUser> {
+
+}
+
+/*********************************************
+* IFieldUserQueryCollection
+**********************************************/
+export interface IFieldUserQueryCollection extends IBaseResults<FieldUserQuery> {
 
 }
 
@@ -5882,6 +6736,20 @@ export interface HashtagStoreManagerCollections {
 * IHubSite
 **********************************************/
 export interface IHubSite extends HubSiteCollections,HubSiteMethods,IBaseQuery<IHubSiteQuery> {
+
+}
+
+/*********************************************
+* IHubSiteCollection
+**********************************************/
+export interface IHubSiteCollection extends IBaseResults<HubSite> {
+
+}
+
+/*********************************************
+* IHubSiteQueryCollection
+**********************************************/
+export interface IHubSiteQueryCollection extends IBaseResults<HubSiteQuery> {
 
 }
 
@@ -6087,6 +6955,20 @@ export interface IRemoteWeb extends RemoteWebCollections,RemoteWebMethods,IBaseQ
 }
 
 /*********************************************
+* IRemoteWebCollection
+**********************************************/
+export interface IRemoteWebCollection extends IBaseResults<RemoteWeb> {
+
+}
+
+/*********************************************
+* IRemoteWebQueryCollection
+**********************************************/
+export interface IRemoteWebQueryCollection extends IBaseResults<RemoteWebQuery> {
+
+}
+
+/*********************************************
 * IRemoteWebQuery
 **********************************************/
 export interface IRemoteWebQuery extends RemoteWebQuery, RemoteWebMethods {
@@ -6241,6 +7123,20 @@ export interface TenantAppInstanceCollections {
 * IVisualizationAppSynchronizationResult
 **********************************************/
 export interface IVisualizationAppSynchronizationResult extends VisualizationAppSynchronizationResultCollections,VisualizationAppSynchronizationResultMethods,IBaseQuery<IVisualizationAppSynchronizationResultQuery> {
+
+}
+
+/*********************************************
+* IVisualizationAppSynchronizationResultCollection
+**********************************************/
+export interface IVisualizationAppSynchronizationResultCollection extends IBaseResults<VisualizationAppSynchronizationResult> {
+
+}
+
+/*********************************************
+* IVisualizationAppSynchronizationResultQueryCollection
+**********************************************/
+export interface IVisualizationAppSynchronizationResultQueryCollection extends IBaseResults<VisualizationAppSynchronizationResultQuery> {
 
 }
 

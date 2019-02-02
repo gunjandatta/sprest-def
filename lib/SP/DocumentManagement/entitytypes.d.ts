@@ -9,6 +9,20 @@ export interface IDocumentId extends DocumentIdCollections,DocumentIdMethods,IBa
 }
 
 /*********************************************
+* IDocumentIdCollection
+**********************************************/
+export interface IDocumentIdCollection extends IBaseResults<DocumentId> {
+
+}
+
+/*********************************************
+* IDocumentIdQueryCollection
+**********************************************/
+export interface IDocumentIdQueryCollection extends IBaseResults<DocumentIdQuery> {
+
+}
+
+/*********************************************
 * IDocumentIdQuery
 **********************************************/
 export interface IDocumentIdQuery extends DocumentIdQuery, DocumentIdMethods {

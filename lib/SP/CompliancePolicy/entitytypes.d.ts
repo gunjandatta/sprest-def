@@ -26,6 +26,20 @@ export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections,SPPol
 }
 
 /*********************************************
+* ISPPolicyStoreProxyCollection
+**********************************************/
+export interface ISPPolicyStoreProxyCollection extends IBaseResults<SPPolicyStoreProxy> {
+
+}
+
+/*********************************************
+* ISPPolicyStoreProxyQueryCollection
+**********************************************/
+export interface ISPPolicyStoreProxyQueryCollection extends IBaseResults<SPPolicyStoreProxyQuery> {
+
+}
+
+/*********************************************
 * ISPPolicyStoreProxyQuery
 **********************************************/
 export interface ISPPolicyStoreProxyQuery extends SPPolicyStoreProxyQuery, SPPolicyStoreProxyMethods {

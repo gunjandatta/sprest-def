@@ -9,6 +9,20 @@ export interface ISyncTranslator extends SyncTranslatorCollections,SyncTranslato
 }
 
 /*********************************************
+* ISyncTranslatorCollection
+**********************************************/
+export interface ISyncTranslatorCollection extends IBaseResults<SyncTranslator> {
+
+}
+
+/*********************************************
+* ISyncTranslatorQueryCollection
+**********************************************/
+export interface ISyncTranslatorQueryCollection extends IBaseResults<SyncTranslatorQuery> {
+
+}
+
+/*********************************************
 * ISyncTranslatorQuery
 **********************************************/
 export interface ISyncTranslatorQuery extends SyncTranslatorQuery, SyncTranslatorMethods {
@@ -62,6 +76,20 @@ export interface SyncTranslatorMethods {
 * ITranslationJob
 **********************************************/
 export interface ITranslationJob extends TranslationJobCollections,TranslationJobMethods,IBaseQuery<ITranslationJobQuery> {
+
+}
+
+/*********************************************
+* ITranslationJobCollection
+**********************************************/
+export interface ITranslationJobCollection extends IBaseResults<TranslationJob> {
+
+}
+
+/*********************************************
+* ITranslationJobQueryCollection
+**********************************************/
+export interface ITranslationJobQueryCollection extends IBaseResults<TranslationJobQuery> {
 
 }
 
@@ -122,6 +150,20 @@ export interface TranslationJobMethods {
 * ITranslationJobStatus
 **********************************************/
 export interface ITranslationJobStatus extends TranslationJobStatusCollections,TranslationJobStatusMethods,IBaseQuery<ITranslationJobStatusQuery> {
+
+}
+
+/*********************************************
+* ITranslationJobStatusCollection
+**********************************************/
+export interface ITranslationJobStatusCollection extends IBaseResults<TranslationJobStatus> {
+
+}
+
+/*********************************************
+* ITranslationJobStatusQueryCollection
+**********************************************/
+export interface ITranslationJobStatusQueryCollection extends IBaseResults<TranslationJobStatusQuery> {
 
 }
 

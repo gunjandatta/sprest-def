@@ -10,6 +10,20 @@ export interface INavigationServiceRest extends NavigationServiceRestCollections
 }
 
 /*********************************************
+* INavigationServiceRestCollection
+**********************************************/
+export interface INavigationServiceRestCollection extends IBaseResults<NavigationServiceRest> {
+
+}
+
+/*********************************************
+* INavigationServiceRestQueryCollection
+**********************************************/
+export interface INavigationServiceRestQueryCollection extends IBaseResults<NavigationServiceRestQuery> {
+
+}
+
+/*********************************************
 * INavigationServiceRestQuery
 **********************************************/
 export interface INavigationServiceRestQuery extends NavigationServiceRestQuery, NavigationServiceRestMethods {

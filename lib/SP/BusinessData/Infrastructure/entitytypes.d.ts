@@ -9,6 +9,20 @@ export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCol
 }
 
 /*********************************************
+* IExternalSubscriptionStoreCollection
+**********************************************/
+export interface IExternalSubscriptionStoreCollection extends IBaseResults<ExternalSubscriptionStore> {
+
+}
+
+/*********************************************
+* IExternalSubscriptionStoreQueryCollection
+**********************************************/
+export interface IExternalSubscriptionStoreQueryCollection extends IBaseResults<ExternalSubscriptionStoreQuery> {
+
+}
+
+/*********************************************
 * IExternalSubscriptionStoreQuery
 **********************************************/
 export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionStoreQuery, ExternalSubscriptionStoreMethods {

@@ -1000,6 +1000,20 @@ export interface IDevListItem extends DevListItemCollections,DevListItemMethods,
 }
 
 /*********************************************
+* IDevListItemCollection
+**********************************************/
+export interface IDevListItemCollection extends IBaseResults<DevListItem> {
+
+}
+
+/*********************************************
+* IDevListItemQueryCollection
+**********************************************/
+export interface IDevListItemQueryCollection extends IBaseResults<DevListItemQuery> {
+
+}
+
+/*********************************************
 * IDevListItemQuery
 **********************************************/
 export interface IDevListItemQuery extends DevListItemQuery, DevListItemMethods {
@@ -1282,6 +1296,20 @@ export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemC
 }
 
 /*********************************************
+* IShared_x0020_DocumentsItemCollection
+**********************************************/
+export interface IShared_x0020_DocumentsItemCollection extends IBaseResults<Shared_x0020_DocumentsItem> {
+
+}
+
+/*********************************************
+* IShared_x0020_DocumentsItemQueryCollection
+**********************************************/
+export interface IShared_x0020_DocumentsItemQueryCollection extends IBaseResults<Shared_x0020_DocumentsItemQuery> {
+
+}
+
+/*********************************************
 * IShared_x0020_DocumentsItemQuery
 **********************************************/
 export interface IShared_x0020_DocumentsItemQuery extends Shared_x0020_DocumentsItemQuery, Shared_x0020_DocumentsItemMethods {
@@ -1410,6 +1438,20 @@ export interface Shared_x0020_DocumentsItemMethods {
 * IEvent_x0020_CalloutListItem
 **********************************************/
 export interface IEvent_x0020_CalloutListItem extends Event_x0020_CalloutListItemCollections,Event_x0020_CalloutListItemMethods,IBaseQuery<IEvent_x0020_CalloutListItemQuery> {
+
+}
+
+/*********************************************
+* IEvent_x0020_CalloutListItemCollection
+**********************************************/
+export interface IEvent_x0020_CalloutListItemCollection extends IBaseResults<Event_x0020_CalloutListItem> {
+
+}
+
+/*********************************************
+* IEvent_x0020_CalloutListItemQueryCollection
+**********************************************/
+export interface IEvent_x0020_CalloutListItemQueryCollection extends IBaseResults<Event_x0020_CalloutListItemQuery> {
 
 }
 
@@ -2237,6 +2279,20 @@ export interface OData__x005f_catalogs_x002f_masterpageItemQuery extends OData__
 * IPublishedFeedListItem
 **********************************************/
 export interface IPublishedFeedListItem extends PublishedFeedListItemCollections,PublishedFeedListItemMethods,IBaseQuery<IPublishedFeedListItemQuery> {
+
+}
+
+/*********************************************
+* IPublishedFeedListItemCollection
+**********************************************/
+export interface IPublishedFeedListItemCollection extends IBaseResults<PublishedFeedListItem> {
+
+}
+
+/*********************************************
+* IPublishedFeedListItemQueryCollection
+**********************************************/
+export interface IPublishedFeedListItemQueryCollection extends IBaseResults<PublishedFeedListItemQuery> {
 
 }
 
@@ -3264,6 +3320,20 @@ export interface ISiteAssetsItem extends SiteAssetsItemCollections,SiteAssetsIte
 }
 
 /*********************************************
+* ISiteAssetsItemCollection
+**********************************************/
+export interface ISiteAssetsItemCollection extends IBaseResults<SiteAssetsItem> {
+
+}
+
+/*********************************************
+* ISiteAssetsItemQueryCollection
+**********************************************/
+export interface ISiteAssetsItemQueryCollection extends IBaseResults<SiteAssetsItemQuery> {
+
+}
+
+/*********************************************
 * ISiteAssetsItemQuery
 **********************************************/
 export interface ISiteAssetsItemQuery extends SiteAssetsItemQuery, SiteAssetsItemMethods {
@@ -3481,6 +3551,20 @@ export interface ISiteCollectionImagesItem extends SiteCollectionImagesItemColle
 }
 
 /*********************************************
+* ISiteCollectionImagesItemCollection
+**********************************************/
+export interface ISiteCollectionImagesItemCollection extends IBaseResults<SiteCollectionImagesItem> {
+
+}
+
+/*********************************************
+* ISiteCollectionImagesItemQueryCollection
+**********************************************/
+export interface ISiteCollectionImagesItemQueryCollection extends IBaseResults<SiteCollectionImagesItemQuery> {
+
+}
+
+/*********************************************
 * ISiteCollectionImagesItemQuery
 **********************************************/
 export interface ISiteCollectionImagesItemQuery extends SiteCollectionImagesItemQuery, SiteCollectionImagesItemMethods {
@@ -3634,6 +3718,20 @@ export interface SiteCollectionImagesItemMethods {
 * ISitePagesItem
 **********************************************/
 export interface ISitePagesItem extends SitePagesItemCollections,SitePagesItemMethods,IBaseQuery<ISitePagesItemQuery> {
+
+}
+
+/*********************************************
+* ISitePagesItemCollection
+**********************************************/
+export interface ISitePagesItemCollection extends IBaseResults<SitePagesItem> {
+
+}
+
+/*********************************************
+* ISitePagesItemQueryCollection
+**********************************************/
+export interface ISitePagesItemQueryCollection extends IBaseResults<SitePagesItemQuery> {
 
 }
 
@@ -3858,6 +3956,20 @@ export interface OData__x005f_catalogs_x002f_solutionsItemQuery extends OData__x
 * ISPReactListItem
 **********************************************/
 export interface ISPReactListItem extends SPReactListItemCollections,SPReactListItemMethods,IBaseQuery<ISPReactListItemQuery> {
+
+}
+
+/*********************************************
+* ISPReactListItemCollection
+**********************************************/
+export interface ISPReactListItemCollection extends IBaseResults<SPReactListItem> {
+
+}
+
+/*********************************************
+* ISPReactListItemQueryCollection
+**********************************************/
+export interface ISPReactListItemQueryCollection extends IBaseResults<SPReactListItemQuery> {
 
 }
 
@@ -4242,6 +4354,20 @@ export interface PublishedLinksItemQuery extends PublishedLinksItem {
 * ITeamMembersListItem
 **********************************************/
 export interface ITeamMembersListItem extends TeamMembersListItemCollections,TeamMembersListItemMethods,IBaseQuery<ITeamMembersListItemQuery> {
+
+}
+
+/*********************************************
+* ITeamMembersListItemCollection
+**********************************************/
+export interface ITeamMembersListItemCollection extends IBaseResults<TeamMembersListItem> {
+
+}
+
+/*********************************************
+* ITeamMembersListItemQueryCollection
+**********************************************/
+export interface ITeamMembersListItemQueryCollection extends IBaseResults<TeamMembersListItemQuery> {
 
 }
 
@@ -5028,6 +5154,20 @@ export interface OData__x005f_catalogs_x002f_wfpubItemQuery extends OData__x005f
 * IWorkflowTasksItem
 **********************************************/
 export interface IWorkflowTasksItem extends WorkflowTasksItemCollections,WorkflowTasksItemMethods,IBaseQuery<IWorkflowTasksItemQuery> {
+
+}
+
+/*********************************************
+* IWorkflowTasksItemCollection
+**********************************************/
+export interface IWorkflowTasksItemCollection extends IBaseResults<WorkflowTasksItem> {
+
+}
+
+/*********************************************
+* IWorkflowTasksItemQueryCollection
+**********************************************/
+export interface IWorkflowTasksItemQueryCollection extends IBaseResults<WorkflowTasksItemQuery> {
 
 }
 

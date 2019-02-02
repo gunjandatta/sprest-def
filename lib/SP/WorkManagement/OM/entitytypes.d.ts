@@ -12,6 +12,20 @@ export interface IBaseSession extends BaseSessionCollections,BaseSessionMethods,
 }
 
 /*********************************************
+* IBaseSessionCollection
+**********************************************/
+export interface IBaseSessionCollection extends IBaseResults<BaseSession> {
+
+}
+
+/*********************************************
+* IBaseSessionQueryCollection
+**********************************************/
+export interface IBaseSessionQueryCollection extends IBaseResults<BaseSessionQuery> {
+
+}
+
+/*********************************************
 * IBaseSessionQuery
 **********************************************/
 export interface IBaseSessionQuery extends BaseSessionQuery, BaseSessionMethods {
@@ -276,6 +290,20 @@ export interface ILocationOrientedSortableSession extends LocationOrientedSortab
 }
 
 /*********************************************
+* ILocationOrientedSortableSessionCollection
+**********************************************/
+export interface ILocationOrientedSortableSessionCollection extends IBaseResults<LocationOrientedSortableSession> {
+
+}
+
+/*********************************************
+* ILocationOrientedSortableSessionQueryCollection
+**********************************************/
+export interface ILocationOrientedSortableSessionQueryCollection extends IBaseResults<LocationOrientedSortableSessionQuery> {
+
+}
+
+/*********************************************
 * ILocationOrientedSortableSessionQuery
 **********************************************/
 export interface ILocationOrientedSortableSessionQuery extends LocationOrientedSortableSessionQuery, LocationOrientedSortableSessionMethods {
@@ -346,6 +374,20 @@ export interface LocationOrientedSortableSessionMethods {
 * ILocationOrientedUserOrderedSession
 **********************************************/
 export interface ILocationOrientedUserOrderedSession extends LocationOrientedUserOrderedSessionCollections,LocationOrientedUserOrderedSessionMethods,IBaseQuery<ILocationOrientedUserOrderedSessionQuery> {
+
+}
+
+/*********************************************
+* ILocationOrientedUserOrderedSessionCollection
+**********************************************/
+export interface ILocationOrientedUserOrderedSessionCollection extends IBaseResults<LocationOrientedUserOrderedSession> {
+
+}
+
+/*********************************************
+* ILocationOrientedUserOrderedSessionQueryCollection
+**********************************************/
+export interface ILocationOrientedUserOrderedSessionQueryCollection extends IBaseResults<LocationOrientedUserOrderedSessionQuery> {
 
 }
 
@@ -458,6 +500,20 @@ export interface INonTaskDataReadResult extends NonTaskDataReadResultCollections
 }
 
 /*********************************************
+* INonTaskDataReadResultCollection
+**********************************************/
+export interface INonTaskDataReadResultCollection extends IBaseResults<NonTaskDataReadResult> {
+
+}
+
+/*********************************************
+* INonTaskDataReadResultQueryCollection
+**********************************************/
+export interface INonTaskDataReadResultQueryCollection extends IBaseResults<NonTaskDataReadResultQuery> {
+
+}
+
+/*********************************************
 * INonTaskDataReadResultQuery
 **********************************************/
 export interface INonTaskDataReadResultQuery extends NonTaskDataReadResultQuery, NonTaskDataReadResultMethods {
@@ -541,6 +597,20 @@ export interface IRefreshHistory extends RefreshHistoryCollections,RefreshHistor
 }
 
 /*********************************************
+* IRefreshHistoryCollection
+**********************************************/
+export interface IRefreshHistoryCollection extends IBaseResults<RefreshHistory> {
+
+}
+
+/*********************************************
+* IRefreshHistoryQueryCollection
+**********************************************/
+export interface IRefreshHistoryQueryCollection extends IBaseResults<RefreshHistoryQuery> {
+
+}
+
+/*********************************************
 * IRefreshHistoryQuery
 **********************************************/
 export interface IRefreshHistoryQuery extends RefreshHistoryQuery, RefreshHistoryMethods {
@@ -594,6 +664,20 @@ export interface RefreshHistoryMethods {
 * IRefreshResult
 **********************************************/
 export interface IRefreshResult extends RefreshResultCollections,RefreshResultMethods,IBaseQuery<IRefreshResultQuery> {
+
+}
+
+/*********************************************
+* IRefreshResultCollection
+**********************************************/
+export interface IRefreshResultCollection extends IBaseResults<RefreshResult> {
+
+}
+
+/*********************************************
+* IRefreshResultQueryCollection
+**********************************************/
+export interface IRefreshResultQueryCollection extends IBaseResults<RefreshResultQuery> {
 
 }
 
@@ -732,6 +816,20 @@ export interface IRefreshHealthInfo extends RefreshHealthInfoCollections,Refresh
 }
 
 /*********************************************
+* IRefreshHealthInfoCollection
+**********************************************/
+export interface IRefreshHealthInfoCollection extends IBaseResults<RefreshHealthInfo> {
+
+}
+
+/*********************************************
+* IRefreshHealthInfoQueryCollection
+**********************************************/
+export interface IRefreshHealthInfoQueryCollection extends IBaseResults<RefreshHealthInfoQuery> {
+
+}
+
+/*********************************************
 * IRefreshHealthInfoQuery
 **********************************************/
 export interface IRefreshHealthInfoQuery extends RefreshHealthInfoQuery, RefreshHealthInfoMethods {
@@ -791,6 +889,20 @@ export interface ISortableSessionManager extends SortableSessionManagerCollectio
 }
 
 /*********************************************
+* ISortableSessionManagerCollection
+**********************************************/
+export interface ISortableSessionManagerCollection extends IBaseResults<SortableSessionManager> {
+
+}
+
+/*********************************************
+* ISortableSessionManagerQueryCollection
+**********************************************/
+export interface ISortableSessionManagerQueryCollection extends IBaseResults<SortableSessionManagerQuery> {
+
+}
+
+/*********************************************
 * ISortableSessionManagerQuery
 **********************************************/
 export interface ISortableSessionManagerQuery extends SortableSessionManagerQuery, SortableSessionManagerMethods {
@@ -844,6 +956,20 @@ export interface SortableSessionManagerMethods {
 * ISortableSession
 **********************************************/
 export interface ISortableSession extends SortableSessionCollections,SortableSessionMethods,IBaseQuery<ISortableSessionQuery> {
+
+}
+
+/*********************************************
+* ISortableSessionCollection
+**********************************************/
+export interface ISortableSessionCollection extends IBaseResults<SortableSession> {
+
+}
+
+/*********************************************
+* ISortableSessionQueryCollection
+**********************************************/
+export interface ISortableSessionQueryCollection extends IBaseResults<SortableSessionQuery> {
 
 }
 
@@ -995,6 +1121,20 @@ export interface ITaskQueryByLocationResult extends TaskQueryByLocationResultCol
 }
 
 /*********************************************
+* ITaskQueryByLocationResultCollection
+**********************************************/
+export interface ITaskQueryByLocationResultCollection extends IBaseResults<TaskQueryByLocationResult> {
+
+}
+
+/*********************************************
+* ITaskQueryByLocationResultQueryCollection
+**********************************************/
+export interface ITaskQueryByLocationResultQueryCollection extends IBaseResults<TaskQueryByLocationResultQuery> {
+
+}
+
+/*********************************************
 * ITaskQueryByLocationResultQuery
 **********************************************/
 export interface ITaskQueryByLocationResultQuery extends TaskQueryByLocationResultQuery, TaskQueryByLocationResultMethods {
@@ -1049,6 +1189,20 @@ export interface TaskQueryByLocationResultMethods {
 * ITaskQueryResult
 **********************************************/
 export interface ITaskQueryResult extends TaskQueryResultCollections,TaskQueryResultMethods,IBaseQuery<ITaskQueryResultQuery> {
+
+}
+
+/*********************************************
+* ITaskQueryResultCollection
+**********************************************/
+export interface ITaskQueryResultCollection extends IBaseResults<TaskQueryResult> {
+
+}
+
+/*********************************************
+* ITaskQueryResultQueryCollection
+**********************************************/
+export interface ITaskQueryResultQueryCollection extends IBaseResults<TaskQueryResultQuery> {
 
 }
 
@@ -1155,6 +1309,20 @@ export interface IUserOrderedSessionManager extends UserOrderedSessionManagerCol
 }
 
 /*********************************************
+* IUserOrderedSessionManagerCollection
+**********************************************/
+export interface IUserOrderedSessionManagerCollection extends IBaseResults<UserOrderedSessionManager> {
+
+}
+
+/*********************************************
+* IUserOrderedSessionManagerQueryCollection
+**********************************************/
+export interface IUserOrderedSessionManagerQueryCollection extends IBaseResults<UserOrderedSessionManagerQuery> {
+
+}
+
+/*********************************************
 * IUserOrderedSessionManagerQuery
 **********************************************/
 export interface IUserOrderedSessionManagerQuery extends UserOrderedSessionManagerQuery, UserOrderedSessionManagerMethods {
@@ -1208,6 +1376,20 @@ export interface UserOrderedSessionManagerMethods {
 * IUserOrderedSession
 **********************************************/
 export interface IUserOrderedSession extends UserOrderedSessionCollections,UserOrderedSessionMethods,IBaseQuery<IUserOrderedSessionQuery> {
+
+}
+
+/*********************************************
+* IUserOrderedSessionCollection
+**********************************************/
+export interface IUserOrderedSessionCollection extends IBaseResults<UserOrderedSession> {
+
+}
+
+/*********************************************
+* IUserOrderedSessionQueryCollection
+**********************************************/
+export interface IUserOrderedSessionQueryCollection extends IBaseResults<UserOrderedSessionQuery> {
 
 }
 
@@ -1282,6 +1464,20 @@ export interface UserOrderedSessionMethods {
 * IUserSettingsManager
 **********************************************/
 export interface IUserSettingsManager extends UserSettingsManagerCollections,UserSettingsManagerMethods,IBaseQuery<IUserSettingsManagerQuery> {
+
+}
+
+/*********************************************
+* IUserSettingsManagerCollection
+**********************************************/
+export interface IUserSettingsManagerCollection extends IBaseResults<UserSettingsManager> {
+
+}
+
+/*********************************************
+* IUserSettingsManagerQueryCollection
+**********************************************/
+export interface IUserSettingsManagerQueryCollection extends IBaseResults<UserSettingsManagerQuery> {
 
 }
 

@@ -10,6 +10,20 @@ export interface ITaxonomyField extends TaxonomyFieldCollections,TaxonomyFieldMe
 }
 
 /*********************************************
+* ITaxonomyFieldCollection
+**********************************************/
+export interface ITaxonomyFieldCollection extends IBaseResults<TaxonomyField> {
+
+}
+
+/*********************************************
+* ITaxonomyFieldQueryCollection
+**********************************************/
+export interface ITaxonomyFieldQueryCollection extends IBaseResults<TaxonomyFieldQuery> {
+
+}
+
+/*********************************************
 * ITaxonomyFieldQuery
 **********************************************/
 export interface ITaxonomyFieldQuery extends TaxonomyFieldQuery, TaxonomyFieldMethods {

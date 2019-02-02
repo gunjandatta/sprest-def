@@ -12,6 +12,20 @@ export interface IlikedByInformation extends likedByInformationCollections,liked
 }
 
 /*********************************************
+* IlikedByInformationCollection
+**********************************************/
+export interface IlikedByInformationCollection extends IBaseResults<likedByInformation> {
+
+}
+
+/*********************************************
+* IlikedByInformationQueryCollection
+**********************************************/
+export interface IlikedByInformationQueryCollection extends IBaseResults<likedByInformationQuery> {
+
+}
+
+/*********************************************
 * IlikedByInformationQuery
 **********************************************/
 export interface IlikedByInformationQuery extends likedByInformationQuery, likedByInformationMethods {

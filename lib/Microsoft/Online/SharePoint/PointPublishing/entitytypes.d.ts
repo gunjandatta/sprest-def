@@ -9,6 +9,20 @@ export interface IPointPublishingAdmin extends PointPublishingAdminCollections,P
 }
 
 /*********************************************
+* IPointPublishingAdminCollection
+**********************************************/
+export interface IPointPublishingAdminCollection extends IBaseResults<PointPublishingAdmin> {
+
+}
+
+/*********************************************
+* IPointPublishingAdminQueryCollection
+**********************************************/
+export interface IPointPublishingAdminQueryCollection extends IBaseResults<PointPublishingAdminQuery> {
+
+}
+
+/*********************************************
 * IPointPublishingAdminQuery
 **********************************************/
 export interface IPointPublishingAdminQuery extends PointPublishingAdminQuery, PointPublishingAdminMethods {

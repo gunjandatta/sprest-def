@@ -9,6 +9,20 @@ export interface IActivityLogger extends ActivityLoggerCollections,ActivityLogge
 }
 
 /*********************************************
+* IActivityLoggerCollection
+**********************************************/
+export interface IActivityLoggerCollection extends IBaseResults<ActivityLogger> {
+
+}
+
+/*********************************************
+* IActivityLoggerQueryCollection
+**********************************************/
+export interface IActivityLoggerQueryCollection extends IBaseResults<ActivityLoggerQuery> {
+
+}
+
+/*********************************************
 * IActivityLoggerQuery
 **********************************************/
 export interface IActivityLoggerQuery extends ActivityLoggerQuery, ActivityLoggerMethods {

@@ -24,6 +24,20 @@ export interface ISocialFeedManager extends SocialFeedManagerCollections,SocialF
 }
 
 /*********************************************
+* ISocialFeedManagerCollection
+**********************************************/
+export interface ISocialFeedManagerCollection extends IBaseResults<SocialFeedManager> {
+
+}
+
+/*********************************************
+* ISocialFeedManagerQueryCollection
+**********************************************/
+export interface ISocialFeedManagerQueryCollection extends IBaseResults<SocialFeedManagerQuery> {
+
+}
+
+/*********************************************
 * ISocialFeedManagerQuery
 **********************************************/
 export interface ISocialFeedManagerQuery extends SocialFeedManagerQuery, SocialFeedManagerMethods {
@@ -97,6 +111,20 @@ export interface ISocialFollowingManager extends SocialFollowingManagerCollectio
 }
 
 /*********************************************
+* ISocialFollowingManagerCollection
+**********************************************/
+export interface ISocialFollowingManagerCollection extends IBaseResults<SocialFollowingManager> {
+
+}
+
+/*********************************************
+* ISocialFollowingManagerQueryCollection
+**********************************************/
+export interface ISocialFollowingManagerQueryCollection extends IBaseResults<SocialFollowingManagerQuery> {
+
+}
+
+/*********************************************
 * ISocialFollowingManagerQuery
 **********************************************/
 export interface ISocialFollowingManagerQuery extends SocialFollowingManagerQuery, SocialFollowingManagerMethods {
@@ -156,6 +184,20 @@ export interface SocialFollowingManagerMethods {
 * ISocialRestActor
 **********************************************/
 export interface ISocialRestActor extends SocialRestActorCollections,SocialRestActorMethods,IBaseQuery<ISocialRestActorQuery> {
+
+}
+
+/*********************************************
+* ISocialRestActorCollection
+**********************************************/
+export interface ISocialRestActorCollection extends IBaseResults<SocialRestActor> {
+
+}
+
+/*********************************************
+* ISocialRestActorQueryCollection
+**********************************************/
+export interface ISocialRestActorQueryCollection extends IBaseResults<SocialRestActorQuery> {
 
 }
 
@@ -224,6 +266,20 @@ export interface ISocialRestFeedManager extends SocialRestFeedManagerCollections
 }
 
 /*********************************************
+* ISocialRestFeedManagerCollection
+**********************************************/
+export interface ISocialRestFeedManagerCollection extends IBaseResults<SocialRestFeedManager> {
+
+}
+
+/*********************************************
+* ISocialRestFeedManagerQueryCollection
+**********************************************/
+export interface ISocialRestFeedManagerQueryCollection extends IBaseResults<SocialRestFeedManagerQuery> {
+
+}
+
+/*********************************************
 * ISocialRestFeedManagerQuery
 **********************************************/
 export interface ISocialRestFeedManagerQuery extends SocialRestFeedManagerQuery, SocialRestFeedManagerMethods {
@@ -282,6 +338,20 @@ export interface ISocialRestFeed extends SocialRestFeedCollections,SocialRestFee
 }
 
 /*********************************************
+* ISocialRestFeedCollection
+**********************************************/
+export interface ISocialRestFeedCollection extends IBaseResults<SocialRestFeed> {
+
+}
+
+/*********************************************
+* ISocialRestFeedQueryCollection
+**********************************************/
+export interface ISocialRestFeedQueryCollection extends IBaseResults<SocialRestFeedQuery> {
+
+}
+
+/*********************************************
 * ISocialRestFeedQuery
 **********************************************/
 export interface ISocialRestFeedQuery extends SocialRestFeedQuery, SocialRestFeedMethods {
@@ -336,6 +406,20 @@ export interface SocialRestFeedMethods {
 * ISocialRestFollowingManager
 **********************************************/
 export interface ISocialRestFollowingManager extends SocialRestFollowingManagerCollections,SocialRestFollowingManagerMethods,IBaseQuery<ISocialRestFollowingManagerQuery> {
+
+}
+
+/*********************************************
+* ISocialRestFollowingManagerCollection
+**********************************************/
+export interface ISocialRestFollowingManagerCollection extends IBaseResults<SocialRestFollowingManager> {
+
+}
+
+/*********************************************
+* ISocialRestFollowingManagerQueryCollection
+**********************************************/
+export interface ISocialRestFollowingManagerQueryCollection extends IBaseResults<SocialRestFollowingManagerQuery> {
 
 }
 
@@ -403,6 +487,20 @@ export interface SocialRestFollowingManagerMethods {
 * ISocialRestThread
 **********************************************/
 export interface ISocialRestThread extends SocialRestThreadCollections,SocialRestThreadMethods,IBaseQuery<ISocialRestThreadQuery> {
+
+}
+
+/*********************************************
+* ISocialRestThreadCollection
+**********************************************/
+export interface ISocialRestThreadCollection extends IBaseResults<SocialRestThread> {
+
+}
+
+/*********************************************
+* ISocialRestThreadQueryCollection
+**********************************************/
+export interface ISocialRestThreadQueryCollection extends IBaseResults<SocialRestThreadQuery> {
 
 }
 

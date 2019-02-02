@@ -13,6 +13,20 @@ export interface Icomment extends commentCollections,commentMethods,IBaseQuery<I
 }
 
 /*********************************************
+* IcommentCollection
+**********************************************/
+export interface IcommentCollection extends IBaseResults<comment> {
+
+}
+
+/*********************************************
+* IcommentQueryCollection
+**********************************************/
+export interface IcommentQueryCollection extends IBaseResults<commentQuery> {
+
+}
+
+/*********************************************
 * IcommentQuery
 **********************************************/
 export interface IcommentQuery extends commentQuery, commentMethods {

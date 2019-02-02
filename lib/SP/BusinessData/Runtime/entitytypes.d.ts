@@ -55,6 +55,20 @@ export interface IEntityInstance extends EntityInstanceCollections,EntityInstanc
 }
 
 /*********************************************
+* IEntityInstanceCollection
+**********************************************/
+export interface IEntityInstanceCollection extends IBaseResults<EntityInstance> {
+
+}
+
+/*********************************************
+* IEntityInstanceQueryCollection
+**********************************************/
+export interface IEntityInstanceQueryCollection extends IBaseResults<EntityInstanceQuery> {
+
+}
+
+/*********************************************
 * IEntityInstanceQuery
 **********************************************/
 export interface IEntityInstanceQuery extends EntityInstanceQuery, EntityInstanceMethods {
@@ -113,6 +127,20 @@ export interface EntityInstanceMethods {
 * IEntityFieldValueDictionary
 **********************************************/
 export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryCollections,EntityFieldValueDictionaryMethods,IBaseQuery<IEntityFieldValueDictionaryQuery> {
+
+}
+
+/*********************************************
+* IEntityFieldValueDictionaryCollection
+**********************************************/
+export interface IEntityFieldValueDictionaryCollection extends IBaseResults<EntityFieldValueDictionary> {
+
+}
+
+/*********************************************
+* IEntityFieldValueDictionaryQueryCollection
+**********************************************/
+export interface IEntityFieldValueDictionaryQueryCollection extends IBaseResults<EntityFieldValueDictionaryQuery> {
 
 }
 

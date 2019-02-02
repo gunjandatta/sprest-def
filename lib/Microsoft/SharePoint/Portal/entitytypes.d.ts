@@ -27,6 +27,20 @@ export interface IGroupService extends GroupServiceCollections,GroupServiceMetho
 }
 
 /*********************************************
+* IGroupServiceCollection
+**********************************************/
+export interface IGroupServiceCollection extends IBaseResults<GroupService> {
+
+}
+
+/*********************************************
+* IGroupServiceQueryCollection
+**********************************************/
+export interface IGroupServiceQueryCollection extends IBaseResults<GroupServiceQuery> {
+
+}
+
+/*********************************************
 * IGroupServiceQuery
 **********************************************/
 export interface IGroupServiceQuery extends GroupServiceQuery, GroupServiceMethods {
@@ -81,6 +95,20 @@ export interface GroupServiceMethods {
 * IGroupSiteManager
 **********************************************/
 export interface IGroupSiteManager extends GroupSiteManagerCollections,GroupSiteManagerMethods,IBaseQuery<IGroupSiteManagerQuery> {
+
+}
+
+/*********************************************
+* IGroupSiteManagerCollection
+**********************************************/
+export interface IGroupSiteManagerCollection extends IBaseResults<GroupSiteManager> {
+
+}
+
+/*********************************************
+* IGroupSiteManagerQueryCollection
+**********************************************/
+export interface IGroupSiteManagerQueryCollection extends IBaseResults<GroupSiteManagerQuery> {
 
 }
 
@@ -146,6 +174,20 @@ export interface GroupSiteManagerMethods {
 * ISiteLinkingManager
 **********************************************/
 export interface ISiteLinkingManager extends SiteLinkingManagerCollections,SiteLinkingManagerMethods,IBaseQuery<ISiteLinkingManagerQuery> {
+
+}
+
+/*********************************************
+* ISiteLinkingManagerCollection
+**********************************************/
+export interface ISiteLinkingManagerCollection extends IBaseResults<SiteLinkingManager> {
+
+}
+
+/*********************************************
+* ISiteLinkingManagerQueryCollection
+**********************************************/
+export interface ISiteLinkingManagerQueryCollection extends IBaseResults<SiteLinkingManagerQuery> {
 
 }
 
@@ -236,6 +278,20 @@ export interface ISharePointHomeServiceContextBuilder extends SharePointHomeServ
 }
 
 /*********************************************
+* ISharePointHomeServiceContextBuilderCollection
+**********************************************/
+export interface ISharePointHomeServiceContextBuilderCollection extends IBaseResults<SharePointHomeServiceContextBuilder> {
+
+}
+
+/*********************************************
+* ISharePointHomeServiceContextBuilderQueryCollection
+**********************************************/
+export interface ISharePointHomeServiceContextBuilderQueryCollection extends IBaseResults<SharePointHomeServiceContextBuilderQuery> {
+
+}
+
+/*********************************************
 * ISharePointHomeServiceContextBuilderQuery
 **********************************************/
 export interface ISharePointHomeServiceContextBuilderQuery extends SharePointHomeServiceContextBuilderQuery, SharePointHomeServiceContextBuilderMethods {
@@ -317,6 +373,20 @@ export interface ISPHubSitesUtility extends SPHubSitesUtilityCollections,SPHubSi
 }
 
 /*********************************************
+* ISPHubSitesUtilityCollection
+**********************************************/
+export interface ISPHubSitesUtilityCollection extends IBaseResults<SPHubSitesUtility> {
+
+}
+
+/*********************************************
+* ISPHubSitesUtilityQueryCollection
+**********************************************/
+export interface ISPHubSitesUtilityQueryCollection extends IBaseResults<SPHubSitesUtilityQuery> {
+
+}
+
+/*********************************************
 * ISPHubSitesUtilityQuery
 **********************************************/
 export interface ISPHubSitesUtilityQuery extends SPHubSitesUtilityQuery, SPHubSitesUtilityMethods {
@@ -369,6 +439,20 @@ export interface SPHubSitesUtilityMethods {
 * ISPSiteManager
 **********************************************/
 export interface ISPSiteManager extends SPSiteManagerCollections,SPSiteManagerMethods,IBaseQuery<ISPSiteManagerQuery> {
+
+}
+
+/*********************************************
+* ISPSiteManagerCollection
+**********************************************/
+export interface ISPSiteManagerCollection extends IBaseResults<SPSiteManager> {
+
+}
+
+/*********************************************
+* ISPSiteManagerQueryCollection
+**********************************************/
+export interface ISPSiteManagerQueryCollection extends IBaseResults<SPSiteManagerQuery> {
 
 }
 

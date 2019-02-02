@@ -28,6 +28,20 @@ export interface INativeClient extends NativeClientCollections,NativeClientMetho
 }
 
 /*********************************************
+* INativeClientCollection
+**********************************************/
+export interface INativeClientCollection extends IBaseResults<NativeClient> {
+
+}
+
+/*********************************************
+* INativeClientQueryCollection
+**********************************************/
+export interface INativeClientQueryCollection extends IBaseResults<NativeClientQuery> {
+
+}
+
+/*********************************************
 * INativeClientQuery
 **********************************************/
 export interface INativeClientQuery extends NativeClientQuery, NativeClientMethods {
@@ -80,6 +94,20 @@ export interface NativeClientMethods {
 * IToken
 **********************************************/
 export interface IToken extends TokenCollections,TokenMethods,IBaseQuery<ITokenQuery> {
+
+}
+
+/*********************************************
+* ITokenCollection
+**********************************************/
+export interface ITokenCollection extends IBaseResults<Token> {
+
+}
+
+/*********************************************
+* ITokenQueryCollection
+**********************************************/
+export interface ITokenQueryCollection extends IBaseResults<TokenQuery> {
 
 }
 

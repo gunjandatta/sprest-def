@@ -10,6 +10,20 @@ export interface IMicrofeedPostDefinitionManager extends MicrofeedPostDefinition
 }
 
 /*********************************************
+* IMicrofeedPostDefinitionManagerCollection
+**********************************************/
+export interface IMicrofeedPostDefinitionManagerCollection extends IBaseResults<MicrofeedPostDefinitionManager> {
+
+}
+
+/*********************************************
+* IMicrofeedPostDefinitionManagerQueryCollection
+**********************************************/
+export interface IMicrofeedPostDefinitionManagerQueryCollection extends IBaseResults<MicrofeedPostDefinitionManagerQuery> {
+
+}
+
+/*********************************************
 * IMicrofeedPostDefinitionManagerQuery
 **********************************************/
 export interface IMicrofeedPostDefinitionManagerQuery extends MicrofeedPostDefinitionManagerQuery, MicrofeedPostDefinitionManagerMethods {
@@ -70,6 +84,20 @@ export interface IMicrofeedAttachmentStore extends MicrofeedAttachmentStoreColle
 }
 
 /*********************************************
+* IMicrofeedAttachmentStoreCollection
+**********************************************/
+export interface IMicrofeedAttachmentStoreCollection extends IBaseResults<MicrofeedAttachmentStore> {
+
+}
+
+/*********************************************
+* IMicrofeedAttachmentStoreQueryCollection
+**********************************************/
+export interface IMicrofeedAttachmentStoreQueryCollection extends IBaseResults<MicrofeedAttachmentStoreQuery> {
+
+}
+
+/*********************************************
 * IMicrofeedAttachmentStoreQuery
 **********************************************/
 export interface IMicrofeedAttachmentStoreQuery extends MicrofeedAttachmentStoreQuery, MicrofeedAttachmentStoreMethods {
@@ -126,6 +154,20 @@ export interface MicrofeedAttachmentStoreMethods {
 * IMicrofeedData
 **********************************************/
 export interface IMicrofeedData extends MicrofeedDataCollections,MicrofeedDataMethods,IBaseQuery<IMicrofeedDataQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedDataCollection
+**********************************************/
+export interface IMicrofeedDataCollection extends IBaseResults<MicrofeedData> {
+
+}
+
+/*********************************************
+* IMicrofeedDataQueryCollection
+**********************************************/
+export interface IMicrofeedDataQueryCollection extends IBaseResults<MicrofeedDataQuery> {
 
 }
 
@@ -197,6 +239,20 @@ export interface MicrofeedDataMethods {
 * IMicrofeedManager
 **********************************************/
 export interface IMicrofeedManager extends MicrofeedManagerCollections,MicrofeedManagerMethods,IBaseQuery<IMicrofeedManagerQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedManagerCollection
+**********************************************/
+export interface IMicrofeedManagerCollection extends IBaseResults<MicrofeedManager> {
+
+}
+
+/*********************************************
+* IMicrofeedManagerQueryCollection
+**********************************************/
+export interface IMicrofeedManagerQueryCollection extends IBaseResults<MicrofeedManagerQuery> {
 
 }
 
@@ -287,6 +343,20 @@ export interface MicrofeedPostOptionCollectionCollections {
 * IMicrofeedStore
 **********************************************/
 export interface IMicrofeedStore extends MicrofeedStoreCollections,MicrofeedStoreMethods,IBaseQuery<IMicrofeedStoreQuery> {
+
+}
+
+/*********************************************
+* IMicrofeedStoreCollection
+**********************************************/
+export interface IMicrofeedStoreCollection extends IBaseResults<MicrofeedStore> {
+
+}
+
+/*********************************************
+* IMicrofeedStoreQueryCollection
+**********************************************/
+export interface IMicrofeedStoreQueryCollection extends IBaseResults<MicrofeedStoreQuery> {
 
 }
 

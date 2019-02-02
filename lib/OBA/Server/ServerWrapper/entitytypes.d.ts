@@ -9,6 +9,20 @@ export interface IDiagnostics extends DiagnosticsCollections,DiagnosticsMethods,
 }
 
 /*********************************************
+* IDiagnosticsCollection
+**********************************************/
+export interface IDiagnosticsCollection extends IBaseResults<Diagnostics> {
+
+}
+
+/*********************************************
+* IDiagnosticsQueryCollection
+**********************************************/
+export interface IDiagnosticsQueryCollection extends IBaseResults<DiagnosticsQuery> {
+
+}
+
+/*********************************************
 * IDiagnosticsQuery
 **********************************************/
 export interface IDiagnosticsQuery extends DiagnosticsQuery, DiagnosticsMethods {
@@ -65,6 +79,20 @@ export interface IReporting extends ReportingCollections,ReportingMethods,IBaseQ
 }
 
 /*********************************************
+* IReportingCollection
+**********************************************/
+export interface IReportingCollection extends IBaseResults<Reporting> {
+
+}
+
+/*********************************************
+* IReportingQueryCollection
+**********************************************/
+export interface IReportingQueryCollection extends IBaseResults<ReportingQuery> {
+
+}
+
+/*********************************************
 * IReportingQuery
 **********************************************/
 export interface IReportingQuery extends ReportingQuery, ReportingMethods {
@@ -117,6 +145,20 @@ export interface ReportingMethods {
 * ITaskflow
 **********************************************/
 export interface ITaskflow extends TaskflowCollections,TaskflowMethods,IBaseQuery<ITaskflowQuery> {
+
+}
+
+/*********************************************
+* ITaskflowCollection
+**********************************************/
+export interface ITaskflowCollection extends IBaseResults<Taskflow> {
+
+}
+
+/*********************************************
+* ITaskflowQueryCollection
+**********************************************/
+export interface ITaskflowQueryCollection extends IBaseResults<TaskflowQuery> {
 
 }
 

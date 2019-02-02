@@ -9,6 +9,20 @@ export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections,OrgNewsSiteAp
 }
 
 /*********************************************
+* IOrgNewsSiteApiCollection
+**********************************************/
+export interface IOrgNewsSiteApiCollection extends IBaseResults<OrgNewsSiteApi> {
+
+}
+
+/*********************************************
+* IOrgNewsSiteApiQueryCollection
+**********************************************/
+export interface IOrgNewsSiteApiQueryCollection extends IBaseResults<OrgNewsSiteApiQuery> {
+
+}
+
+/*********************************************
 * IOrgNewsSiteApiQuery
 **********************************************/
 export interface IOrgNewsSiteApiQuery extends OrgNewsSiteApiQuery, OrgNewsSiteApiMethods {

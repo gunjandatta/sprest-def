@@ -6,9 +6,9 @@ module.exports = {
     "Collection(SP.Attachment)": [
         {
             name: "add",
-            returnType: "SP.ListItem",
+            returnType: "SP.Attachment",
             params: [
-                { $: { Name: "FileName", Type: "SP.ListItemCreationInformation" }, },
+                { $: { Name: "FileName", Type: "string" }, },
                 { $: { Name: "Content", Type: "any" }, }
             ]
         }

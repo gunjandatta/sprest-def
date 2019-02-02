@@ -9,6 +9,20 @@ export interface ITenantCdnApi extends TenantCdnApiCollections,TenantCdnApiMetho
 }
 
 /*********************************************
+* ITenantCdnApiCollection
+**********************************************/
+export interface ITenantCdnApiCollection extends IBaseResults<TenantCdnApi> {
+
+}
+
+/*********************************************
+* ITenantCdnApiQueryCollection
+**********************************************/
+export interface ITenantCdnApiQueryCollection extends IBaseResults<TenantCdnApiQuery> {
+
+}
+
+/*********************************************
 * ITenantCdnApiQuery
 **********************************************/
 export interface ITenantCdnApiQuery extends TenantCdnApiQuery, TenantCdnApiMethods {

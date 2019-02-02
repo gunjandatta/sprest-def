@@ -29,6 +29,20 @@ export interface IAllowedDataLocation extends AllowedDataLocationCollections,All
 }
 
 /*********************************************
+* IAllowedDataLocationCollection
+**********************************************/
+export interface IAllowedDataLocationCollection extends IBaseResults<AllowedDataLocation> {
+
+}
+
+/*********************************************
+* IAllowedDataLocationQueryCollection
+**********************************************/
+export interface IAllowedDataLocationQueryCollection extends IBaseResults<AllowedDataLocationQuery> {
+
+}
+
+/*********************************************
 * IAllowedDataLocationQuery
 **********************************************/
 export interface IAllowedDataLocationQuery extends AllowedDataLocationQuery, AllowedDataLocationMethods {
@@ -164,6 +178,20 @@ export interface ICrossFarmGroupMoveJob extends CrossFarmGroupMoveJobCollections
 }
 
 /*********************************************
+* ICrossFarmGroupMoveJobCollection
+**********************************************/
+export interface ICrossFarmGroupMoveJobCollection extends IBaseResults<CrossFarmGroupMoveJob> {
+
+}
+
+/*********************************************
+* ICrossFarmGroupMoveJobQueryCollection
+**********************************************/
+export interface ICrossFarmGroupMoveJobQueryCollection extends IBaseResults<CrossFarmGroupMoveJobQuery> {
+
+}
+
+/*********************************************
 * ICrossFarmGroupMoveJobQuery
 **********************************************/
 export interface ICrossFarmGroupMoveJobQuery extends CrossFarmGroupMoveJobQuery, CrossFarmGroupMoveJobMethods {
@@ -256,6 +284,20 @@ export interface CrossFarmSiteMoveJobEntityDataCollections {
 * ICrossFarmSiteMoveJob
 **********************************************/
 export interface ICrossFarmSiteMoveJob extends CrossFarmSiteMoveJobCollections,CrossFarmSiteMoveJobMethods,IBaseQuery<ICrossFarmSiteMoveJobQuery> {
+
+}
+
+/*********************************************
+* ICrossFarmSiteMoveJobCollection
+**********************************************/
+export interface ICrossFarmSiteMoveJobCollection extends IBaseResults<CrossFarmSiteMoveJob> {
+
+}
+
+/*********************************************
+* ICrossFarmSiteMoveJobQueryCollection
+**********************************************/
+export interface ICrossFarmSiteMoveJobQueryCollection extends IBaseResults<CrossFarmSiteMoveJobQuery> {
 
 }
 
@@ -353,6 +395,20 @@ export interface CrossFarmUserMoveJobEntityDataCollections {
 * ICrossFarmUserMoveJob
 **********************************************/
 export interface ICrossFarmUserMoveJob extends CrossFarmUserMoveJobCollections,CrossFarmUserMoveJobMethods,IBaseQuery<ICrossFarmUserMoveJobQuery> {
+
+}
+
+/*********************************************
+* ICrossFarmUserMoveJobCollection
+**********************************************/
+export interface ICrossFarmUserMoveJobCollection extends IBaseResults<CrossFarmUserMoveJob> {
+
+}
+
+/*********************************************
+* ICrossFarmUserMoveJobQueryCollection
+**********************************************/
+export interface ICrossFarmUserMoveJobQueryCollection extends IBaseResults<CrossFarmUserMoveJobQuery> {
 
 }
 
@@ -470,6 +526,20 @@ export interface ICrossGeoTenantProperty extends CrossGeoTenantPropertyCollectio
 }
 
 /*********************************************
+* ICrossGeoTenantPropertyCollection
+**********************************************/
+export interface ICrossGeoTenantPropertyCollection extends IBaseResults<CrossGeoTenantProperty> {
+
+}
+
+/*********************************************
+* ICrossGeoTenantPropertyQueryCollection
+**********************************************/
+export interface ICrossGeoTenantPropertyQueryCollection extends IBaseResults<CrossGeoTenantPropertyQuery> {
+
+}
+
+/*********************************************
 * ICrossGeoTenantPropertyQuery
 **********************************************/
 export interface ICrossGeoTenantPropertyQuery extends CrossGeoTenantPropertyQuery, CrossGeoTenantPropertyMethods {
@@ -549,6 +619,20 @@ export interface IGeoAdministrator extends GeoAdministratorCollections,GeoAdmini
 }
 
 /*********************************************
+* IGeoAdministratorCollection
+**********************************************/
+export interface IGeoAdministratorCollection extends IBaseResults<GeoAdministrator> {
+
+}
+
+/*********************************************
+* IGeoAdministratorQueryCollection
+**********************************************/
+export interface IGeoAdministratorQueryCollection extends IBaseResults<GeoAdministratorQuery> {
+
+}
+
+/*********************************************
 * IGeoAdministratorQuery
 **********************************************/
 export interface IGeoAdministratorQuery extends GeoAdministratorQuery, GeoAdministratorMethods {
@@ -615,6 +699,20 @@ export interface GeoAdministratorMethods {
 * IGeoExperience
 **********************************************/
 export interface IGeoExperience extends GeoExperienceCollections,GeoExperienceMethods,IBaseQuery<IGeoExperienceQuery> {
+
+}
+
+/*********************************************
+* IGeoExperienceCollection
+**********************************************/
+export interface IGeoExperienceCollection extends IBaseResults<GeoExperience> {
+
+}
+
+/*********************************************
+* IGeoExperienceQueryCollection
+**********************************************/
+export interface IGeoExperienceQueryCollection extends IBaseResults<GeoExperienceQuery> {
 
 }
 
@@ -753,6 +851,20 @@ export interface IGroupMoveJob extends GroupMoveJobCollections,GroupMoveJobMetho
 }
 
 /*********************************************
+* IGroupMoveJobCollection
+**********************************************/
+export interface IGroupMoveJobCollection extends IBaseResults<GroupMoveJob> {
+
+}
+
+/*********************************************
+* IGroupMoveJobQueryCollection
+**********************************************/
+export interface IGroupMoveJobQueryCollection extends IBaseResults<GroupMoveJobQuery> {
+
+}
+
+/*********************************************
 * IGroupMoveJobQuery
 **********************************************/
 export interface IGroupMoveJobQuery extends GroupMoveJobQuery, GroupMoveJobMethods {
@@ -850,6 +962,20 @@ export interface MultiGeoApiVersionsCollections {
 * IMultiGeoServicesBeta
 **********************************************/
 export interface IMultiGeoServicesBeta extends MultiGeoServicesBetaCollections,MultiGeoServicesBetaMethods,IBaseQuery<IMultiGeoServicesBetaQuery> {
+
+}
+
+/*********************************************
+* IMultiGeoServicesBetaCollection
+**********************************************/
+export interface IMultiGeoServicesBetaCollection extends IBaseResults<MultiGeoServicesBeta> {
+
+}
+
+/*********************************************
+* IMultiGeoServicesBetaQueryCollection
+**********************************************/
+export interface IMultiGeoServicesBetaQueryCollection extends IBaseResults<MultiGeoServicesBetaQuery> {
 
 }
 
@@ -965,6 +1091,20 @@ export interface ISiteMoveJob extends SiteMoveJobCollections,SiteMoveJobMethods,
 }
 
 /*********************************************
+* ISiteMoveJobCollection
+**********************************************/
+export interface ISiteMoveJobCollection extends IBaseResults<SiteMoveJob> {
+
+}
+
+/*********************************************
+* ISiteMoveJobQueryCollection
+**********************************************/
+export interface ISiteMoveJobQueryCollection extends IBaseResults<SiteMoveJobQuery> {
+
+}
+
+/*********************************************
 * ISiteMoveJobQuery
 **********************************************/
 export interface ISiteMoveJobQuery extends SiteMoveJobQuery, SiteMoveJobMethods {
@@ -1074,6 +1214,20 @@ export interface IStorageQuota extends StorageQuotaCollections,StorageQuotaMetho
 }
 
 /*********************************************
+* IStorageQuotaCollection
+**********************************************/
+export interface IStorageQuotaCollection extends IBaseResults<StorageQuota> {
+
+}
+
+/*********************************************
+* IStorageQuotaQueryCollection
+**********************************************/
+export interface IStorageQuotaQueryCollection extends IBaseResults<StorageQuotaQuery> {
+
+}
+
+/*********************************************
 * IStorageQuotaQuery
 **********************************************/
 export interface IStorageQuotaQuery extends StorageQuotaQuery, StorageQuotaMethods {
@@ -1138,6 +1292,20 @@ export interface StorageQuotaMethods {
 * ITaxonomyReplicationParameters
 **********************************************/
 export interface ITaxonomyReplicationParameters extends TaxonomyReplicationParametersCollections,TaxonomyReplicationParametersMethods,IBaseQuery<ITaxonomyReplicationParametersQuery> {
+
+}
+
+/*********************************************
+* ITaxonomyReplicationParametersCollection
+**********************************************/
+export interface ITaxonomyReplicationParametersCollection extends IBaseResults<TaxonomyReplicationParameters> {
+
+}
+
+/*********************************************
+* ITaxonomyReplicationParametersQueryCollection
+**********************************************/
+export interface ITaxonomyReplicationParametersQueryCollection extends IBaseResults<TaxonomyReplicationParametersQuery> {
 
 }
 
@@ -1241,6 +1409,20 @@ export interface UnifiedGroupCollectionMethods {
 * IUserMoveJob
 **********************************************/
 export interface IUserMoveJob extends UserMoveJobCollections,UserMoveJobMethods,IBaseQuery<IUserMoveJobQuery> {
+
+}
+
+/*********************************************
+* IUserMoveJobCollection
+**********************************************/
+export interface IUserMoveJobCollection extends IBaseResults<UserMoveJob> {
+
+}
+
+/*********************************************
+* IUserMoveJobQueryCollection
+**********************************************/
+export interface IUserMoveJobQueryCollection extends IBaseResults<UserMoveJobQuery> {
 
 }
 

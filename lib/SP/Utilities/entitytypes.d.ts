@@ -117,6 +117,20 @@ export interface IThemeManager extends ThemeManagerCollections,ThemeManagerMetho
 }
 
 /*********************************************
+* IThemeManagerCollection
+**********************************************/
+export interface IThemeManagerCollection extends IBaseResults<ThemeManager> {
+
+}
+
+/*********************************************
+* IThemeManagerQueryCollection
+**********************************************/
+export interface IThemeManagerQueryCollection extends IBaseResults<ThemeManagerQuery> {
+
+}
+
+/*********************************************
 * IThemeManagerQuery
 **********************************************/
 export interface IThemeManagerQuery extends ThemeManagerQuery, ThemeManagerMethods {

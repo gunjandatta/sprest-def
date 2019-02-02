@@ -13,6 +13,20 @@ export interface ISPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinit
 }
 
 /*********************************************
+* ISPAppStateQueryJobDefinitionCollection
+**********************************************/
+export interface ISPAppStateQueryJobDefinitionCollection extends IBaseResults<SPAppStateQueryJobDefinition> {
+
+}
+
+/*********************************************
+* ISPAppStateQueryJobDefinitionQueryCollection
+**********************************************/
+export interface ISPAppStateQueryJobDefinitionQueryCollection extends IBaseResults<SPAppStateQueryJobDefinitionQuery> {
+
+}
+
+/*********************************************
 * ISPAppStateQueryJobDefinitionQuery
 **********************************************/
 export interface ISPAppStateQueryJobDefinitionQuery extends SPAppStateQueryJobDefinitionQuery, SPAppStateQueryJobDefinitionMethods {
@@ -126,6 +140,20 @@ export interface ISPWebApplication extends SPWebApplicationCollections,SPWebAppl
 }
 
 /*********************************************
+* ISPWebApplicationCollection
+**********************************************/
+export interface ISPWebApplicationCollection extends IBaseResults<SPWebApplication> {
+
+}
+
+/*********************************************
+* ISPWebApplicationQueryCollection
+**********************************************/
+export interface ISPWebApplicationQueryCollection extends IBaseResults<SPWebApplicationQuery> {
+
+}
+
+/*********************************************
 * ISPWebApplicationQuery
 **********************************************/
 export interface ISPWebApplicationQuery extends SPWebApplicationQuery, SPWebApplicationMethods {
@@ -187,6 +215,20 @@ export interface ISPWebService extends SPWebServiceCollections,SPWebServiceMetho
 }
 
 /*********************************************
+* ISPWebServiceCollection
+**********************************************/
+export interface ISPWebServiceCollection extends IBaseResults<SPWebService> {
+
+}
+
+/*********************************************
+* ISPWebServiceQueryCollection
+**********************************************/
+export interface ISPWebServiceQueryCollection extends IBaseResults<SPWebServiceQuery> {
+
+}
+
+/*********************************************
 * ISPWebServiceQuery
 **********************************************/
 export interface ISPWebServiceQuery extends SPWebServiceQuery, SPWebServiceMethods {
@@ -241,6 +283,20 @@ export interface SPWebServiceMethods {
 * ISPAnalyticsUsageService
 **********************************************/
 export interface ISPAnalyticsUsageService extends SPAnalyticsUsageServiceCollections,SPAnalyticsUsageServiceMethods,IBaseQuery<ISPAnalyticsUsageServiceQuery> {
+
+}
+
+/*********************************************
+* ISPAnalyticsUsageServiceCollection
+**********************************************/
+export interface ISPAnalyticsUsageServiceCollection extends IBaseResults<SPAnalyticsUsageService> {
+
+}
+
+/*********************************************
+* ISPAnalyticsUsageServiceQueryCollection
+**********************************************/
+export interface ISPAnalyticsUsageServiceQueryCollection extends IBaseResults<SPAnalyticsUsageServiceQuery> {
 
 }
 

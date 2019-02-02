@@ -12,6 +12,20 @@ export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections
 }
 
 /*********************************************
+* ILimitedWebPartManagerCollection
+**********************************************/
+export interface ILimitedWebPartManagerCollection extends IBaseResults<LimitedWebPartManager> {
+
+}
+
+/*********************************************
+* ILimitedWebPartManagerQueryCollection
+**********************************************/
+export interface ILimitedWebPartManagerQueryCollection extends IBaseResults<LimitedWebPartManagerQuery> {
+
+}
+
+/*********************************************
 * ILimitedWebPartManagerQuery
 **********************************************/
 export interface ILimitedWebPartManagerQuery extends LimitedWebPartManagerQuery, LimitedWebPartManagerMethods {
@@ -67,6 +81,20 @@ export interface LimitedWebPartManagerMethods {
 * IWebPartDefinition
 **********************************************/
 export interface IWebPartDefinition extends WebPartDefinitionCollections,WebPartDefinitionMethods,IBaseQuery<IWebPartDefinitionQuery> {
+
+}
+
+/*********************************************
+* IWebPartDefinitionCollection
+**********************************************/
+export interface IWebPartDefinitionCollection extends IBaseResults<WebPartDefinition> {
+
+}
+
+/*********************************************
+* IWebPartDefinitionQueryCollection
+**********************************************/
+export interface IWebPartDefinitionQueryCollection extends IBaseResults<WebPartDefinitionQuery> {
 
 }
 

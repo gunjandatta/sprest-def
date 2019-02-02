@@ -10,6 +10,20 @@ export interface ISubscription extends SubscriptionCollections,SubscriptionMetho
 }
 
 /*********************************************
+* ISubscriptionCollection
+**********************************************/
+export interface ISubscriptionCollection extends IBaseResults<Subscription> {
+
+}
+
+/*********************************************
+* ISubscriptionQueryCollection
+**********************************************/
+export interface ISubscriptionQueryCollection extends IBaseResults<SubscriptionQuery> {
+
+}
+
+/*********************************************
 * ISubscriptionQuery
 **********************************************/
 export interface ISubscriptionQuery extends SubscriptionQuery, SubscriptionMethods {

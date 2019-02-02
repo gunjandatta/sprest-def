@@ -12,6 +12,20 @@ export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionC
 }
 
 /*********************************************
+* ISiteCollectionCorporateCatalogAccessorCollection
+**********************************************/
+export interface ISiteCollectionCorporateCatalogAccessorCollection extends IBaseResults<SiteCollectionCorporateCatalogAccessor> {
+
+}
+
+/*********************************************
+* ISiteCollectionCorporateCatalogAccessorQueryCollection
+**********************************************/
+export interface ISiteCollectionCorporateCatalogAccessorQueryCollection extends IBaseResults<SiteCollectionCorporateCatalogAccessorQuery> {
+
+}
+
+/*********************************************
 * ISiteCollectionCorporateCatalogAccessorQuery
 **********************************************/
 export interface ISiteCollectionCorporateCatalogAccessorQuery extends SiteCollectionCorporateCatalogAccessorQuery, SiteCollectionCorporateCatalogAccessorMethods {
@@ -65,6 +79,20 @@ export interface SiteCollectionCorporateCatalogAccessorMethods {
 * ICorporateCatalogAppMetadata
 **********************************************/
 export interface ICorporateCatalogAppMetadata extends CorporateCatalogAppMetadataCollections,CorporateCatalogAppMetadataMethods,IBaseQuery<ICorporateCatalogAppMetadataQuery> {
+
+}
+
+/*********************************************
+* ICorporateCatalogAppMetadataCollection
+**********************************************/
+export interface ICorporateCatalogAppMetadataCollection extends IBaseResults<CorporateCatalogAppMetadata> {
+
+}
+
+/*********************************************
+* ICorporateCatalogAppMetadataQueryCollection
+**********************************************/
+export interface ICorporateCatalogAppMetadataQueryCollection extends IBaseResults<CorporateCatalogAppMetadataQuery> {
 
 }
 
@@ -140,6 +168,20 @@ export interface CorporateCatalogAppMetadataMethods {
 * ITenantCorporateCatalogAccessor
 **********************************************/
 export interface ITenantCorporateCatalogAccessor extends TenantCorporateCatalogAccessorCollections,TenantCorporateCatalogAccessorMethods,IBaseQuery<ITenantCorporateCatalogAccessorQuery> {
+
+}
+
+/*********************************************
+* ITenantCorporateCatalogAccessorCollection
+**********************************************/
+export interface ITenantCorporateCatalogAccessorCollection extends IBaseResults<TenantCorporateCatalogAccessor> {
+
+}
+
+/*********************************************
+* ITenantCorporateCatalogAccessorQueryCollection
+**********************************************/
+export interface ITenantCorporateCatalogAccessorQueryCollection extends IBaseResults<TenantCorporateCatalogAccessorQuery> {
 
 }
 

@@ -40,6 +40,20 @@ export interface IGetExternalUsersResults extends GetExternalUsersResultsCollect
 }
 
 /*********************************************
+* IGetExternalUsersResultsCollection
+**********************************************/
+export interface IGetExternalUsersResultsCollection extends IBaseResults<GetExternalUsersResults> {
+
+}
+
+/*********************************************
+* IGetExternalUsersResultsQueryCollection
+**********************************************/
+export interface IGetExternalUsersResultsQueryCollection extends IBaseResults<GetExternalUsersResultsQuery> {
+
+}
+
+/*********************************************
 * IGetExternalUsersResultsQuery
 **********************************************/
 export interface IGetExternalUsersResultsQuery extends GetExternalUsersResultsQuery, GetExternalUsersResultsMethods {
@@ -130,6 +144,20 @@ export interface ImportProfilePropertiesJobInfoCollections {
 * IOffice365Tenant
 **********************************************/
 export interface IOffice365Tenant extends Office365TenantCollections,Office365TenantMethods,IBaseQuery<IOffice365TenantQuery> {
+
+}
+
+/*********************************************
+* IOffice365TenantCollection
+**********************************************/
+export interface IOffice365TenantCollection extends IBaseResults<Office365Tenant> {
+
+}
+
+/*********************************************
+* IOffice365TenantQueryCollection
+**********************************************/
+export interface IOffice365TenantQueryCollection extends IBaseResults<Office365TenantQuery> {
 
 }
 

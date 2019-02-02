@@ -12,6 +12,20 @@ export interface ICommunicationSite extends CommunicationSiteCollections,Communi
 }
 
 /*********************************************
+* ICommunicationSiteCollection
+**********************************************/
+export interface ICommunicationSiteCollection extends IBaseResults<CommunicationSite> {
+
+}
+
+/*********************************************
+* ICommunicationSiteQueryCollection
+**********************************************/
+export interface ICommunicationSiteQueryCollection extends IBaseResults<CommunicationSiteQuery> {
+
+}
+
+/*********************************************
 * ICommunicationSiteQuery
 **********************************************/
 export interface ICommunicationSiteQuery extends CommunicationSiteQuery, CommunicationSiteMethods {
@@ -100,6 +114,20 @@ export interface IEmbedService extends EmbedServiceCollections,EmbedServiceMetho
 }
 
 /*********************************************
+* IEmbedServiceCollection
+**********************************************/
+export interface IEmbedServiceCollection extends IBaseResults<EmbedService> {
+
+}
+
+/*********************************************
+* IEmbedServiceQueryCollection
+**********************************************/
+export interface IEmbedServiceQueryCollection extends IBaseResults<EmbedServiceQuery> {
+
+}
+
+/*********************************************
 * IEmbedServiceQuery
 **********************************************/
 export interface IEmbedServiceQuery extends EmbedServiceQuery, EmbedServiceMethods {
@@ -152,6 +180,20 @@ export interface EmbedServiceMethods {
 * IVideoItem
 **********************************************/
 export interface IVideoItem extends VideoItemCollections,VideoItemMethods,IBaseQuery<IVideoItemQuery> {
+
+}
+
+/*********************************************
+* IVideoItemCollection
+**********************************************/
+export interface IVideoItemCollection extends IBaseResults<VideoItem> {
+
+}
+
+/*********************************************
+* IVideoItemQueryCollection
+**********************************************/
+export interface IVideoItemQueryCollection extends IBaseResults<VideoItemQuery> {
 
 }
 
@@ -320,6 +362,20 @@ export interface IPointPublishingPost extends PointPublishingPostCollections,Poi
 }
 
 /*********************************************
+* IPointPublishingPostCollection
+**********************************************/
+export interface IPointPublishingPostCollection extends IBaseResults<PointPublishingPost> {
+
+}
+
+/*********************************************
+* IPointPublishingPostQueryCollection
+**********************************************/
+export interface IPointPublishingPostQueryCollection extends IBaseResults<PointPublishingPostQuery> {
+
+}
+
+/*********************************************
 * IPointPublishingPostQuery
 **********************************************/
 export interface IPointPublishingPostQuery extends PointPublishingPostQuery, PointPublishingPostMethods {
@@ -391,6 +447,20 @@ export interface PointPublishingPostMethods {
 * IPointPublishingPostServiceManager
 **********************************************/
 export interface IPointPublishingPostServiceManager extends PointPublishingPostServiceManagerCollections,PointPublishingPostServiceManagerMethods,IBaseQuery<IPointPublishingPostServiceManagerQuery> {
+
+}
+
+/*********************************************
+* IPointPublishingPostServiceManagerCollection
+**********************************************/
+export interface IPointPublishingPostServiceManagerCollection extends IBaseResults<PointPublishingPostServiceManager> {
+
+}
+
+/*********************************************
+* IPointPublishingPostServiceManagerQueryCollection
+**********************************************/
+export interface IPointPublishingPostServiceManagerQueryCollection extends IBaseResults<PointPublishingPostServiceManagerQuery> {
 
 }
 
@@ -471,6 +541,20 @@ export interface IPointPublishingUser extends PointPublishingUserCollections,Poi
 }
 
 /*********************************************
+* IPointPublishingUserCollection
+**********************************************/
+export interface IPointPublishingUserCollection extends IBaseResults<PointPublishingUser> {
+
+}
+
+/*********************************************
+* IPointPublishingUserQueryCollection
+**********************************************/
+export interface IPointPublishingUserQueryCollection extends IBaseResults<PointPublishingUserQuery> {
+
+}
+
+/*********************************************
 * IPointPublishingUserQuery
 **********************************************/
 export interface IPointPublishingUserQuery extends PointPublishingUserQuery, PointPublishingUserMethods {
@@ -545,6 +629,20 @@ export interface IPointPublishingSiteManager extends PointPublishingSiteManagerC
 }
 
 /*********************************************
+* IPointPublishingSiteManagerCollection
+**********************************************/
+export interface IPointPublishingSiteManagerCollection extends IBaseResults<PointPublishingSiteManager> {
+
+}
+
+/*********************************************
+* IPointPublishingSiteManagerQueryCollection
+**********************************************/
+export interface IPointPublishingSiteManagerQueryCollection extends IBaseResults<PointPublishingSiteManagerQuery> {
+
+}
+
+/*********************************************
 * IPointPublishingSiteManagerQuery
 **********************************************/
 export interface IPointPublishingSiteManagerQuery extends PointPublishingSiteManagerQuery, PointPublishingSiteManagerMethods {
@@ -615,6 +713,20 @@ export interface PointPublishingSiteStatusCollections {
 * IPointPublishingTenantManager
 **********************************************/
 export interface IPointPublishingTenantManager extends PointPublishingTenantManagerCollections,PointPublishingTenantManagerMethods,IBaseQuery<IPointPublishingTenantManagerQuery> {
+
+}
+
+/*********************************************
+* IPointPublishingTenantManagerCollection
+**********************************************/
+export interface IPointPublishingTenantManagerCollection extends IBaseResults<PointPublishingTenantManager> {
+
+}
+
+/*********************************************
+* IPointPublishingTenantManagerQueryCollection
+**********************************************/
+export interface IPointPublishingTenantManagerQueryCollection extends IBaseResults<PointPublishingTenantManagerQuery> {
 
 }
 
@@ -764,6 +876,20 @@ export interface ISitePage extends SitePageCollections,SitePageMethods,IBaseQuer
 }
 
 /*********************************************
+* ISitePageCollection
+**********************************************/
+export interface ISitePageCollection extends IBaseResults<SitePage> {
+
+}
+
+/*********************************************
+* ISitePageQueryCollection
+**********************************************/
+export interface ISitePageQueryCollection extends IBaseResults<SitePageQuery> {
+
+}
+
+/*********************************************
 * ISitePageQuery
 **********************************************/
 export interface ISitePageQuery extends SitePageQuery, SitePageMethods {
@@ -848,6 +974,20 @@ export interface SitePageMethods {
 * IRepostPage
 **********************************************/
 export interface IRepostPage extends RepostPageCollections,RepostPageMethods,IBaseQuery<IRepostPageQuery> {
+
+}
+
+/*********************************************
+* IRepostPageCollection
+**********************************************/
+export interface IRepostPageCollection extends IBaseResults<RepostPage> {
+
+}
+
+/*********************************************
+* IRepostPageQueryCollection
+**********************************************/
+export interface IRepostPageQueryCollection extends IBaseResults<RepostPageQuery> {
 
 }
 
@@ -952,6 +1092,20 @@ export interface IRichSharing extends RichSharingCollections,RichSharingMethods,
 }
 
 /*********************************************
+* IRichSharingCollection
+**********************************************/
+export interface IRichSharingCollection extends IBaseResults<RichSharing> {
+
+}
+
+/*********************************************
+* IRichSharingQueryCollection
+**********************************************/
+export interface IRichSharingQueryCollection extends IBaseResults<RichSharingQuery> {
+
+}
+
+/*********************************************
 * IRichSharingQuery
 **********************************************/
 export interface IRichSharingQuery extends RichSharingQuery, RichSharingMethods {
@@ -1009,6 +1163,20 @@ export interface ISharePointHomeServiceManager extends SharePointHomeServiceMana
 }
 
 /*********************************************
+* ISharePointHomeServiceManagerCollection
+**********************************************/
+export interface ISharePointHomeServiceManagerCollection extends IBaseResults<SharePointHomeServiceManager> {
+
+}
+
+/*********************************************
+* ISharePointHomeServiceManagerQueryCollection
+**********************************************/
+export interface ISharePointHomeServiceManagerQueryCollection extends IBaseResults<SharePointHomeServiceManagerQuery> {
+
+}
+
+/*********************************************
 * ISharePointHomeServiceManagerQuery
 **********************************************/
 export interface ISharePointHomeServiceManagerQuery extends SharePointHomeServiceManagerQuery, SharePointHomeServiceManagerMethods {
@@ -1061,6 +1229,20 @@ export interface SharePointHomeServiceManagerMethods {
 * ISitePageService
 **********************************************/
 export interface ISitePageService extends SitePageServiceCollections,SitePageServiceMethods,IBaseQuery<ISitePageServiceQuery> {
+
+}
+
+/*********************************************
+* ISitePageServiceCollection
+**********************************************/
+export interface ISitePageServiceCollection extends IBaseResults<SitePageService> {
+
+}
+
+/*********************************************
+* ISitePageServiceQueryCollection
+**********************************************/
+export interface ISitePageServiceQueryCollection extends IBaseResults<SitePageServiceQuery> {
 
 }
 
@@ -1122,6 +1304,20 @@ export interface SitePageServiceMethods {
 * ISpotlightChannel
 **********************************************/
 export interface ISpotlightChannel extends SpotlightChannelCollections,SpotlightChannelMethods,IBaseQuery<ISpotlightChannelQuery> {
+
+}
+
+/*********************************************
+* ISpotlightChannelCollection
+**********************************************/
+export interface ISpotlightChannelCollection extends IBaseResults<SpotlightChannel> {
+
+}
+
+/*********************************************
+* ISpotlightChannelQueryCollection
+**********************************************/
+export interface ISpotlightChannelQueryCollection extends IBaseResults<SpotlightChannelQuery> {
 
 }
 
@@ -1190,6 +1386,20 @@ export interface SpotlightChannelMethods {
 * IVideoChannel
 **********************************************/
 export interface IVideoChannel extends VideoChannelCollections,VideoChannelMethods,IBaseQuery<IVideoChannelQuery> {
+
+}
+
+/*********************************************
+* IVideoChannelCollection
+**********************************************/
+export interface IVideoChannelCollection extends IBaseResults<VideoChannel> {
+
+}
+
+/*********************************************
+* IVideoChannelQueryCollection
+**********************************************/
+export interface IVideoChannelQueryCollection extends IBaseResults<VideoChannelQuery> {
 
 }
 
@@ -1280,6 +1490,20 @@ export interface ISearch extends SearchCollections,SearchMethods,IBaseQuery<ISea
 }
 
 /*********************************************
+* ISearchCollection
+**********************************************/
+export interface ISearchCollection extends IBaseResults<Search> {
+
+}
+
+/*********************************************
+* ISearchQueryCollection
+**********************************************/
+export interface ISearchQueryCollection extends IBaseResults<SearchQuery> {
+
+}
+
+/*********************************************
 * ISearchQuery
 **********************************************/
 export interface ISearchQuery extends SearchQuery, SearchMethods {
@@ -1337,6 +1561,20 @@ export interface SearchMethods {
 * ISpotlightVideo
 **********************************************/
 export interface ISpotlightVideo extends SpotlightVideoCollections,SpotlightVideoMethods,IBaseQuery<ISpotlightVideoQuery> {
+
+}
+
+/*********************************************
+* ISpotlightVideoCollection
+**********************************************/
+export interface ISpotlightVideoCollection extends IBaseResults<SpotlightVideo> {
+
+}
+
+/*********************************************
+* ISpotlightVideoQueryCollection
+**********************************************/
+export interface ISpotlightVideoQueryCollection extends IBaseResults<SpotlightVideoQuery> {
 
 }
 
@@ -1428,6 +1666,20 @@ export interface SubtitleFileCollectionMethods {
 * IVideoPermissionGroup
 **********************************************/
 export interface IVideoPermissionGroup extends VideoPermissionGroupCollections,VideoPermissionGroupMethods,IBaseQuery<IVideoPermissionGroupQuery> {
+
+}
+
+/*********************************************
+* IVideoPermissionGroupCollection
+**********************************************/
+export interface IVideoPermissionGroupCollection extends IBaseResults<VideoPermissionGroup> {
+
+}
+
+/*********************************************
+* IVideoPermissionGroupQueryCollection
+**********************************************/
+export interface IVideoPermissionGroupQueryCollection extends IBaseResults<VideoPermissionGroupQuery> {
 
 }
 
@@ -1525,6 +1777,20 @@ export interface VideoServiceDiscovererCollections {
 * IVideoServiceManager
 **********************************************/
 export interface IVideoServiceManager extends VideoServiceManagerCollections,VideoServiceManagerMethods,IBaseQuery<IVideoServiceManagerQuery> {
+
+}
+
+/*********************************************
+* IVideoServiceManagerCollection
+**********************************************/
+export interface IVideoServiceManagerCollection extends IBaseResults<VideoServiceManager> {
+
+}
+
+/*********************************************
+* IVideoServiceManagerQueryCollection
+**********************************************/
+export interface IVideoServiceManagerQueryCollection extends IBaseResults<VideoServiceManagerQuery> {
 
 }
 

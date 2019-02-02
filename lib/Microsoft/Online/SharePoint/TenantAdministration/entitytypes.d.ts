@@ -28,6 +28,20 @@ export interface IHubSiteProperties extends HubSitePropertiesCollections,HubSite
 }
 
 /*********************************************
+* IHubSitePropertiesCollection
+**********************************************/
+export interface IHubSitePropertiesCollection extends IBaseResults<HubSiteProperties> {
+
+}
+
+/*********************************************
+* IHubSitePropertiesQueryCollection
+**********************************************/
+export interface IHubSitePropertiesQueryCollection extends IBaseResults<HubSitePropertiesQuery> {
+
+}
+
+/*********************************************
 * IHubSitePropertiesQuery
 **********************************************/
 export interface IHubSitePropertiesQuery extends HubSitePropertiesQuery, HubSitePropertiesMethods {
@@ -88,6 +102,20 @@ export interface HubSitePropertiesMethods {
 * IOffice365CommsMessagesServiceProxy
 **********************************************/
 export interface IOffice365CommsMessagesServiceProxy extends Office365CommsMessagesServiceProxyCollections,Office365CommsMessagesServiceProxyMethods,IBaseQuery<IOffice365CommsMessagesServiceProxyQuery> {
+
+}
+
+/*********************************************
+* IOffice365CommsMessagesServiceProxyCollection
+**********************************************/
+export interface IOffice365CommsMessagesServiceProxyCollection extends IBaseResults<Office365CommsMessagesServiceProxy> {
+
+}
+
+/*********************************************
+* IOffice365CommsMessagesServiceProxyQueryCollection
+**********************************************/
+export interface IOffice365CommsMessagesServiceProxyQueryCollection extends IBaseResults<Office365CommsMessagesServiceProxyQuery> {
 
 }
 
@@ -183,6 +211,20 @@ export interface ISiteCollectionManagementService extends SiteCollectionManageme
 }
 
 /*********************************************
+* ISiteCollectionManagementServiceCollection
+**********************************************/
+export interface ISiteCollectionManagementServiceCollection extends IBaseResults<SiteCollectionManagementService> {
+
+}
+
+/*********************************************
+* ISiteCollectionManagementServiceQueryCollection
+**********************************************/
+export interface ISiteCollectionManagementServiceQueryCollection extends IBaseResults<SiteCollectionManagementServiceQuery> {
+
+}
+
+/*********************************************
 * ISiteCollectionManagementServiceQuery
 **********************************************/
 export interface ISiteCollectionManagementServiceQuery extends SiteCollectionManagementServiceQuery, SiteCollectionManagementServiceMethods {
@@ -240,6 +282,20 @@ export interface SiteCollectionManagementServiceMethods {
 * ISiteProperties
 **********************************************/
 export interface ISiteProperties extends SitePropertiesCollections,SitePropertiesMethods,IBaseQuery<ISitePropertiesQuery> {
+
+}
+
+/*********************************************
+* ISitePropertiesCollection
+**********************************************/
+export interface ISitePropertiesCollection extends IBaseResults<SiteProperties> {
+
+}
+
+/*********************************************
+* ISitePropertiesQueryCollection
+**********************************************/
+export interface ISitePropertiesQueryCollection extends IBaseResults<SitePropertiesQuery> {
 
 }
 
@@ -421,6 +477,20 @@ export interface ITenantAdminSettingsService extends TenantAdminSettingsServiceC
 }
 
 /*********************************************
+* ITenantAdminSettingsServiceCollection
+**********************************************/
+export interface ITenantAdminSettingsServiceCollection extends IBaseResults<TenantAdminSettingsService> {
+
+}
+
+/*********************************************
+* ITenantAdminSettingsServiceQueryCollection
+**********************************************/
+export interface ITenantAdminSettingsServiceQueryCollection extends IBaseResults<TenantAdminSettingsServiceQuery> {
+
+}
+
+/*********************************************
 * ITenantAdminSettingsServiceQuery
 **********************************************/
 export interface ITenantAdminSettingsServiceQuery extends TenantAdminSettingsServiceQuery, TenantAdminSettingsServiceMethods {
@@ -495,6 +565,20 @@ export interface TenantAdminSettingsServiceMethods {
 * ITenant
 **********************************************/
 export interface ITenant extends TenantCollections,TenantMethods,IBaseQuery<ITenantQuery> {
+
+}
+
+/*********************************************
+* ITenantCollection
+**********************************************/
+export interface ITenantCollection extends IBaseResults<Tenant> {
+
+}
+
+/*********************************************
+* ITenantQueryCollection
+**********************************************/
+export interface ITenantQueryCollection extends IBaseResults<TenantQuery> {
 
 }
 

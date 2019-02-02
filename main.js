@@ -602,6 +602,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                         // Generate the content
                         content.push(createInterface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"]));
+                        content.push(createInterface("I" + name + "Collection", "IBaseResults<" + name + ">"));
+                        content.push(createInterface("I" + name + "QueryCollection", "IBaseResults<" + name + "Query>"));
                         content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"].join(', ')));
                         content.push(createInterface(name, baseTypes.join(", ")));
                         content.push(createInterface(name + "Props", null, variables.join('\n')));

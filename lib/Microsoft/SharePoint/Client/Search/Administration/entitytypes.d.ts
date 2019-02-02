@@ -9,6 +9,20 @@ export interface IDocumentCrawlLog extends DocumentCrawlLogCollections,DocumentC
 }
 
 /*********************************************
+* IDocumentCrawlLogCollection
+**********************************************/
+export interface IDocumentCrawlLogCollection extends IBaseResults<DocumentCrawlLog> {
+
+}
+
+/*********************************************
+* IDocumentCrawlLogQueryCollection
+**********************************************/
+export interface IDocumentCrawlLogQueryCollection extends IBaseResults<DocumentCrawlLogQuery> {
+
+}
+
+/*********************************************
 * IDocumentCrawlLogQuery
 **********************************************/
 export interface IDocumentCrawlLogQuery extends DocumentCrawlLogQuery, DocumentCrawlLogMethods {

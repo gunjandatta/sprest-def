@@ -10,6 +10,20 @@ export interface ISignalStore extends SignalStoreCollections,SignalStoreMethods,
 }
 
 /*********************************************
+* ISignalStoreCollection
+**********************************************/
+export interface ISignalStoreCollection extends IBaseResults<SignalStore> {
+
+}
+
+/*********************************************
+* ISignalStoreQueryCollection
+**********************************************/
+export interface ISignalStoreQueryCollection extends IBaseResults<SignalStoreQuery> {
+
+}
+
+/*********************************************
 * ISignalStoreQuery
 **********************************************/
 export interface ISignalStoreQuery extends SignalStoreQuery, SignalStoreMethods {

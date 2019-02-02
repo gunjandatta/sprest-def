@@ -9,6 +9,20 @@ export interface IAppLauncher extends AppLauncherCollections,AppLauncherMethods,
 }
 
 /*********************************************
+* IAppLauncherCollection
+**********************************************/
+export interface IAppLauncherCollection extends IBaseResults<AppLauncher> {
+
+}
+
+/*********************************************
+* IAppLauncherQueryCollection
+**********************************************/
+export interface IAppLauncherQueryCollection extends IBaseResults<AppLauncherQuery> {
+
+}
+
+/*********************************************
 * IAppLauncherQuery
 **********************************************/
 export interface IAppLauncherQuery extends AppLauncherQuery, AppLauncherMethods {

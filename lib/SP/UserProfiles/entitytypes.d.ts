@@ -26,6 +26,20 @@ export interface IFollowedContent extends FollowedContentCollections,FollowedCon
 }
 
 /*********************************************
+* IFollowedContentCollection
+**********************************************/
+export interface IFollowedContentCollection extends IBaseResults<FollowedContent> {
+
+}
+
+/*********************************************
+* IFollowedContentQueryCollection
+**********************************************/
+export interface IFollowedContentQueryCollection extends IBaseResults<FollowedContentQuery> {
+
+}
+
+/*********************************************
 * IFollowedContentQuery
 **********************************************/
 export interface IFollowedContentQuery extends FollowedContentQuery, FollowedContentMethods {
@@ -125,6 +139,20 @@ export interface IPeopleManager extends PeopleManagerCollections,PeopleManagerMe
 }
 
 /*********************************************
+* IPeopleManagerCollection
+**********************************************/
+export interface IPeopleManagerCollection extends IBaseResults<PeopleManager> {
+
+}
+
+/*********************************************
+* IPeopleManagerQueryCollection
+**********************************************/
+export interface IPeopleManagerQueryCollection extends IBaseResults<PeopleManagerQuery> {
+
+}
+
+/*********************************************
 * IPeopleManagerQuery
 **********************************************/
 export interface IPeopleManagerQuery extends PeopleManagerQuery, PeopleManagerMethods {
@@ -201,6 +229,20 @@ export interface PeopleManagerMethods {
 * IPersonalCache
 **********************************************/
 export interface IPersonalCache extends PersonalCacheCollections,PersonalCacheMethods,IBaseQuery<IPersonalCacheQuery> {
+
+}
+
+/*********************************************
+* IPersonalCacheCollection
+**********************************************/
+export interface IPersonalCacheCollection extends IBaseResults<PersonalCache> {
+
+}
+
+/*********************************************
+* IPersonalCacheQueryCollection
+**********************************************/
+export interface IPersonalCacheQueryCollection extends IBaseResults<PersonalCacheQuery> {
 
 }
 
@@ -294,6 +336,20 @@ export interface IProfileImageStore extends ProfileImageStoreCollections,Profile
 }
 
 /*********************************************
+* IProfileImageStoreCollection
+**********************************************/
+export interface IProfileImageStoreCollection extends IBaseResults<ProfileImageStore> {
+
+}
+
+/*********************************************
+* IProfileImageStoreQueryCollection
+**********************************************/
+export interface IProfileImageStoreQueryCollection extends IBaseResults<ProfileImageStoreQuery> {
+
+}
+
+/*********************************************
 * IProfileImageStoreQuery
 **********************************************/
 export interface IProfileImageStoreQuery extends ProfileImageStoreQuery, ProfileImageStoreMethods {
@@ -346,6 +402,20 @@ export interface ProfileImageStoreMethods {
 * IProfileLoader
 **********************************************/
 export interface IProfileLoader extends ProfileLoaderCollections,ProfileLoaderMethods,IBaseQuery<IProfileLoaderQuery> {
+
+}
+
+/*********************************************
+* IProfileLoaderCollection
+**********************************************/
+export interface IProfileLoaderCollection extends IBaseResults<ProfileLoader> {
+
+}
+
+/*********************************************
+* IProfileLoaderQueryCollection
+**********************************************/
+export interface IProfileLoaderQueryCollection extends IBaseResults<ProfileLoaderQuery> {
 
 }
 
@@ -407,6 +477,20 @@ export interface IUserProfilePropertiesForUser extends UserProfilePropertiesForU
 }
 
 /*********************************************
+* IUserProfilePropertiesForUserCollection
+**********************************************/
+export interface IUserProfilePropertiesForUserCollection extends IBaseResults<UserProfilePropertiesForUser> {
+
+}
+
+/*********************************************
+* IUserProfilePropertiesForUserQueryCollection
+**********************************************/
+export interface IUserProfilePropertiesForUserQueryCollection extends IBaseResults<UserProfilePropertiesForUserQuery> {
+
+}
+
+/*********************************************
 * IUserProfilePropertiesForUserQuery
 **********************************************/
 export interface IUserProfilePropertiesForUserQuery extends UserProfilePropertiesForUserQuery, UserProfilePropertiesForUserMethods {
@@ -459,6 +543,20 @@ export interface UserProfilePropertiesForUserMethods {
 * IUserProfile
 **********************************************/
 export interface IUserProfile extends UserProfileCollections,UserProfileMethods,IBaseQuery<IUserProfileQuery> {
+
+}
+
+/*********************************************
+* IUserProfileCollection
+**********************************************/
+export interface IUserProfileCollection extends IBaseResults<UserProfile> {
+
+}
+
+/*********************************************
+* IUserProfileQueryCollection
+**********************************************/
+export interface IUserProfileQueryCollection extends IBaseResults<UserProfileQuery> {
 
 }
 

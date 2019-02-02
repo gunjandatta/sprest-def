@@ -10,6 +10,20 @@ export interface ISearchService extends SearchServiceCollections,SearchServiceMe
 }
 
 /*********************************************
+* ISearchServiceCollection
+**********************************************/
+export interface ISearchServiceCollection extends IBaseResults<SearchService> {
+
+}
+
+/*********************************************
+* ISearchServiceQueryCollection
+**********************************************/
+export interface ISearchServiceQueryCollection extends IBaseResults<SearchServiceQuery> {
+
+}
+
+/*********************************************
 * ISearchServiceQuery
 **********************************************/
 export interface ISearchServiceQuery extends SearchServiceQuery, SearchServiceMethods {
@@ -70,6 +84,20 @@ export interface SearchServiceMethods {
 * ISearchSetting
 **********************************************/
 export interface ISearchSetting extends SearchSettingCollections,SearchSettingMethods,IBaseQuery<ISearchSettingQuery> {
+
+}
+
+/*********************************************
+* ISearchSettingCollection
+**********************************************/
+export interface ISearchSettingCollection extends IBaseResults<SearchSetting> {
+
+}
+
+/*********************************************
+* ISearchSettingQueryCollection
+**********************************************/
+export interface ISearchSettingQueryCollection extends IBaseResults<SearchSettingQuery> {
 
 }
 

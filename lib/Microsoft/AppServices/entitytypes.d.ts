@@ -9,6 +9,20 @@ export interface IAppCollection extends AppCollectionCollections,AppCollectionMe
 }
 
 /*********************************************
+* IAppCollectionCollection
+**********************************************/
+export interface IAppCollectionCollection extends IBaseResults<AppCollection> {
+
+}
+
+/*********************************************
+* IAppCollectionQueryCollection
+**********************************************/
+export interface IAppCollectionQueryCollection extends IBaseResults<AppCollectionQuery> {
+
+}
+
+/*********************************************
 * IAppCollectionQuery
 **********************************************/
 export interface IAppCollectionQuery extends AppCollectionQuery, AppCollectionMethods {

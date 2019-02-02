@@ -9,6 +9,20 @@ export interface IDDIAdapter extends DDIAdapterCollections,DDIAdapterMethods,IBa
 }
 
 /*********************************************
+* IDDIAdapterCollection
+**********************************************/
+export interface IDDIAdapterCollection extends IBaseResults<DDIAdapter> {
+
+}
+
+/*********************************************
+* IDDIAdapterQueryCollection
+**********************************************/
+export interface IDDIAdapterQueryCollection extends IBaseResults<DDIAdapterQuery> {
+
+}
+
+/*********************************************
 * IDDIAdapterQuery
 **********************************************/
 export interface IDDIAdapterQuery extends DDIAdapterQuery, DDIAdapterMethods {

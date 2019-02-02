@@ -9,6 +9,20 @@ export interface IHostedAppsManager extends HostedAppsManagerCollections,HostedA
 }
 
 /*********************************************
+* IHostedAppsManagerCollection
+**********************************************/
+export interface IHostedAppsManagerCollection extends IBaseResults<HostedAppsManager> {
+
+}
+
+/*********************************************
+* IHostedAppsManagerQueryCollection
+**********************************************/
+export interface IHostedAppsManagerQueryCollection extends IBaseResults<HostedAppsManagerQuery> {
+
+}
+
+/*********************************************
 * IHostedAppsManagerQuery
 **********************************************/
 export interface IHostedAppsManagerQuery extends HostedAppsManagerQuery, HostedAppsManagerMethods {
@@ -62,6 +76,20 @@ export interface HostedAppsManagerMethods {
 * IHostedApp
 **********************************************/
 export interface IHostedApp extends HostedAppCollections,HostedAppMethods,IBaseQuery<IHostedAppQuery> {
+
+}
+
+/*********************************************
+* IHostedAppCollection
+**********************************************/
+export interface IHostedAppCollection extends IBaseResults<HostedApp> {
+
+}
+
+/*********************************************
+* IHostedAppQueryCollection
+**********************************************/
+export interface IHostedAppQueryCollection extends IBaseResults<HostedAppQuery> {
 
 }
 

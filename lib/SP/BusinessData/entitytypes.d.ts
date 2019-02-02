@@ -48,6 +48,20 @@ export interface IEntityIdentifier extends EntityIdentifierCollections,EntityIde
 }
 
 /*********************************************
+* IEntityIdentifierCollection
+**********************************************/
+export interface IEntityIdentifierCollection extends IBaseResults<EntityIdentifier> {
+
+}
+
+/*********************************************
+* IEntityIdentifierQueryCollection
+**********************************************/
+export interface IEntityIdentifierQueryCollection extends IBaseResults<EntityIdentifierQuery> {
+
+}
+
+/*********************************************
 * IEntityIdentifierQuery
 **********************************************/
 export interface IEntityIdentifierQuery extends EntityIdentifierQuery, EntityIdentifierMethods {
@@ -121,6 +135,20 @@ export interface ITypeDescriptor extends TypeDescriptorCollections,TypeDescripto
 }
 
 /*********************************************
+* ITypeDescriptorCollection
+**********************************************/
+export interface ITypeDescriptorCollection extends IBaseResults<TypeDescriptor> {
+
+}
+
+/*********************************************
+* ITypeDescriptorQueryCollection
+**********************************************/
+export interface ITypeDescriptorQueryCollection extends IBaseResults<TypeDescriptorQuery> {
+
+}
+
+/*********************************************
 * ITypeDescriptorQuery
 **********************************************/
 export interface ITypeDescriptorQuery extends TypeDescriptorQuery, TypeDescriptorMethods {
@@ -183,6 +211,20 @@ export interface TypeDescriptorMethods {
 * IEntity
 **********************************************/
 export interface IEntity extends EntityCollections,EntityMethods,IBaseQuery<IEntityQuery> {
+
+}
+
+/*********************************************
+* IEntityCollection
+**********************************************/
+export interface IEntityCollection extends IBaseResults<Entity> {
+
+}
+
+/*********************************************
+* IEntityQueryCollection
+**********************************************/
+export interface IEntityQueryCollection extends IBaseResults<EntityQuery> {
 
 }
 
@@ -254,6 +296,20 @@ export interface ILobSystem extends LobSystemCollections,LobSystemMethods,IBaseQ
 }
 
 /*********************************************
+* ILobSystemCollection
+**********************************************/
+export interface ILobSystemCollection extends IBaseResults<LobSystem> {
+
+}
+
+/*********************************************
+* ILobSystemQueryCollection
+**********************************************/
+export interface ILobSystemQueryCollection extends IBaseResults<LobSystemQuery> {
+
+}
+
+/*********************************************
 * ILobSystemQuery
 **********************************************/
 export interface ILobSystemQuery extends LobSystemQuery, LobSystemMethods {
@@ -306,6 +362,20 @@ export interface LobSystemMethods {
 * IMethodExecutionResult
 **********************************************/
 export interface IMethodExecutionResult extends MethodExecutionResultCollections,MethodExecutionResultMethods,IBaseQuery<IMethodExecutionResultQuery> {
+
+}
+
+/*********************************************
+* IMethodExecutionResultCollection
+**********************************************/
+export interface IMethodExecutionResultCollection extends IBaseResults<MethodExecutionResult> {
+
+}
+
+/*********************************************
+* IMethodExecutionResultQueryCollection
+**********************************************/
+export interface IMethodExecutionResultQueryCollection extends IBaseResults<MethodExecutionResultQuery> {
 
 }
 
@@ -367,6 +437,20 @@ export interface IEntityView extends EntityViewCollections,EntityViewMethods,IBa
 }
 
 /*********************************************
+* IEntityViewCollection
+**********************************************/
+export interface IEntityViewCollection extends IBaseResults<EntityView> {
+
+}
+
+/*********************************************
+* IEntityViewQueryCollection
+**********************************************/
+export interface IEntityViewQueryCollection extends IBaseResults<EntityViewQuery> {
+
+}
+
+/*********************************************
 * IEntityViewQuery
 **********************************************/
 export interface IEntityViewQuery extends EntityViewQuery, EntityViewMethods {
@@ -424,6 +508,20 @@ export interface EntityViewMethods {
 * IAppBdcCatalog
 **********************************************/
 export interface IAppBdcCatalog extends AppBdcCatalogCollections,AppBdcCatalogMethods,IBaseQuery<IAppBdcCatalogQuery> {
+
+}
+
+/*********************************************
+* IAppBdcCatalogCollection
+**********************************************/
+export interface IAppBdcCatalogCollection extends IBaseResults<AppBdcCatalog> {
+
+}
+
+/*********************************************
+* IAppBdcCatalogQueryCollection
+**********************************************/
+export interface IAppBdcCatalogQueryCollection extends IBaseResults<AppBdcCatalogQuery> {
 
 }
 

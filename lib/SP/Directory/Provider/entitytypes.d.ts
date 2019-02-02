@@ -10,6 +10,20 @@ export interface IDirectoryNotification extends DirectoryNotificationCollections
 }
 
 /*********************************************
+* IDirectoryNotificationCollection
+**********************************************/
+export interface IDirectoryNotificationCollection extends IBaseResults<DirectoryNotification> {
+
+}
+
+/*********************************************
+* IDirectoryNotificationQueryCollection
+**********************************************/
+export interface IDirectoryNotificationQueryCollection extends IBaseResults<DirectoryNotificationQuery> {
+
+}
+
+/*********************************************
 * IDirectoryNotificationQuery
 **********************************************/
 export interface IDirectoryNotificationQuery extends DirectoryNotificationQuery, DirectoryNotificationMethods {
@@ -62,6 +76,20 @@ export interface DirectoryNotificationMethods {
 * ISharePointDirectoryProvider
 **********************************************/
 export interface ISharePointDirectoryProvider extends SharePointDirectoryProviderCollections,SharePointDirectoryProviderMethods,IBaseQuery<ISharePointDirectoryProviderQuery> {
+
+}
+
+/*********************************************
+* ISharePointDirectoryProviderCollection
+**********************************************/
+export interface ISharePointDirectoryProviderCollection extends IBaseResults<SharePointDirectoryProvider> {
+
+}
+
+/*********************************************
+* ISharePointDirectoryProviderQueryCollection
+**********************************************/
+export interface ISharePointDirectoryProviderQueryCollection extends IBaseResults<SharePointDirectoryProviderQuery> {
 
 }
 
