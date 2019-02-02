@@ -1482,7 +1482,7 @@ export interface VideoChannelMethods {
 /*********************************************
 * ISearch
 **********************************************/
-export interface ISearch extends SearchCollections, SearchMethods, IBaseQuery<ISearchQuery> {
+export interface ISearch extends SearchCollections, SearchMethods, IBaseExecution<ISearch> {
 
 }
 

@@ -604,9 +604,15 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                             // Remove the array
                                             methodType = methodType.replace(/^Array\</, '').replace(/\>$/, '');
 
+                                            // Update the reference
+                                            updateReferences(fileImports, dirName, methodType);
+
                                             // Set the type
                                             methodType = generateBaseCollection(methodType, hasCollections, hasCollectionMethods);
                                         } else {
+                                            // Update the reference
+                                            updateReferences(fileImports, dirName, methodType);
+
                                             // Set the type
                                             methodType = 'IBaseExecution<' + methodType + '>';
                                         }
@@ -645,8 +651,18 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         baseTypes.push(name + "Collections");
                         baseTypes.push(name + "Methods");
 
+                        // Parse the methods
+                        let hasQueryMethod = false;
+                        for (let i = 0; i < methods.length; i++) {
+                            let method = methods[i];
+                            if (/^\tquery\(/.test(method)) {
+                                hasQueryMethod = true;
+                                break;
+                            }
+                        }
+
                         // Generate the content
-                        content.push(createInterface("I" + name, [name + "Collections", name + "Methods", "IBaseQuery<I" + name + "Query>"].join(', ')));
+                        content.push(createInterface("I" + name, [name + "Collections", name + "Methods", (hasQueryMethod ? "IBaseExecution<I" + name + ">" : "IBaseQuery<I" + name + "Query>")].join(', ')));
                         content.push(createInterface("I" + name + "Collection", "IBaseResults<" + name + ">" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + ">) => void) => void;"));
                         content.push(createInterface("I" + name + "QueryCollection", "IBaseResults<" + name + "Query>" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + "Query>) => void) => void;"));
                         content.push(createInterface("I" + name + "Query", [name + "Query", name + "Methods"].join(', ')));

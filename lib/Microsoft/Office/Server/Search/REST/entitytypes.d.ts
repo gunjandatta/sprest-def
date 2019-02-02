@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../../";
 /*********************************************
 * ISearchService
 **********************************************/
-export interface ISearchService extends SearchServiceCollections, SearchServiceMethods, IBaseQuery<ISearchServiceQuery> {
+export interface ISearchService extends SearchServiceCollections, SearchServiceMethods, IBaseExecution<ISearchService> {
 
 }
 

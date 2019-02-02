@@ -341,7 +341,7 @@ export interface MicrofeedPostOptionCollectionCollections {
 /*********************************************
 * IMicrofeedStore
 **********************************************/
-export interface IMicrofeedStore extends MicrofeedStoreCollections, MicrofeedStoreMethods, IBaseQuery<IMicrofeedStoreQuery> {
+export interface IMicrofeedStore extends MicrofeedStoreCollections, MicrofeedStoreMethods, IBaseExecution<IMicrofeedStore> {
 
 }
 

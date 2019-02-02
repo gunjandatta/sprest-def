@@ -1,4 +1,5 @@
 import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { SP } from "../../";
 
 /*********************************************
 * TokenResponse
