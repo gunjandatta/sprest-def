@@ -8,7 +8,7 @@ import { Microsoft } from "../../../../../";
 export interface AnalyticsAction {
 	ActionType?: string;
 	ExpireTime?: any;
-	Properties?: { results: Array<SP.KeyValue> };
+	Properties?: Array<SP.KeyValue>;
 	UserTime?: any;
 }
 
@@ -24,7 +24,7 @@ export interface AnalyticsActionCollections {
 **********************************************/
 export interface AnalyticsActor {
 	Id?: string;
-	Properties?: { results: Array<SP.KeyValue> };
+	Properties?: Array<SP.KeyValue>;
 	TenantId?: any;
 }
 
@@ -40,7 +40,7 @@ export interface AnalyticsActorCollections {
 **********************************************/
 export interface AnalyticsItem {
 	Id?: string;
-	Properties?: { results: Array<SP.KeyValue> };
+	Properties?: Array<SP.KeyValue>;
 }
 
 /*********************************************

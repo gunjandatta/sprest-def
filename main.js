@@ -636,8 +636,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         // Update the references
                         updateReferences(fileImports, dirName, type);
 
-                        // See if this type is a collection
-                        if (/^Array\<.*\>$/.test(type)) {
+                        // See if this type is a collection and this is the entity types
+                        if (filename == "EntityTypes" && /^Array\<.*\>$/.test(type)) {
                             // Ensure it's a results type
                             type = "{ results: " + type + " }";
                         }

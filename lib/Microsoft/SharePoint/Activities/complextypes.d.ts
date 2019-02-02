@@ -66,7 +66,7 @@ export interface GetCommentFacet {
 	isReply?: boolean;
 	parentAuthor?: Microsoft.SharePoint.Activities.ActivityIdentity;
 	parentCommentId?: string;
-	participants?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
+	participants?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
 }
 
 /*********************************************
@@ -170,7 +170,7 @@ export interface EditFacetCollections {
 * GetMentionFacet
 **********************************************/
 export interface GetMentionFacet {
-	mentionees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
+	mentionees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
 }
 
 /*********************************************
@@ -255,7 +255,7 @@ export interface RestoreVersionFacetCollections {
 * SharingFacet
 **********************************************/
 export interface SharingFacet {
-	recipients?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
+	recipients?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
 	sharingType?: string;
 }
 
@@ -333,7 +333,7 @@ export interface CoalescedFacetCollections {
 export interface CommentFacet {
 	commentText?: string;
 	parentAuthor?: Microsoft.SharePoint.Activities.ActivityClientIdentity;
-	participants?: { results: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity> };
+	participants?: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity>;
 }
 
 /*********************************************
@@ -363,7 +363,7 @@ export interface InDocFacetCollections {
 **********************************************/
 export interface MentionFacet {
 	commentContentId?: string;
-	mentionees?: { results: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity> };
+	mentionees?: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity>;
 }
 
 /*********************************************
@@ -416,7 +416,7 @@ export interface RevisionInfoCollections {
 **********************************************/
 export interface RevisionSetFacet {
 	author?: Microsoft.SharePoint.Activities.ActivityClientIdentity;
-	revisions?: { results: Array<Microsoft.SharePoint.Activities.RevisionInfo> };
+	revisions?: Array<Microsoft.SharePoint.Activities.RevisionInfo>;
 }
 
 /*********************************************

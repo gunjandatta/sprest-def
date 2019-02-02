@@ -6,7 +6,7 @@ import { SP } from "../../";
 **********************************************/
 export interface PageImpressionClient {
 	BasePageCorrelationId?: string;
-	ClientIdToClickInfoMap?: { results: Array<SP.KeyValue> };
+	ClientIdToClickInfoMap?: Array<SP.KeyValue>;
 }
 
 /*********************************************

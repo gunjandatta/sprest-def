@@ -20,7 +20,7 @@ export interface AutoQuotaEnabledCollections {
 **********************************************/
 export interface ContactAdminsByEmailFieldsData {
 	message?: string;
-	siteIds?: { results: Array<string> };
+	siteIds?: Array<string>;
 	subject?: string;
 }
 
@@ -66,7 +66,7 @@ export interface DisableGroupifyCollections {
 **********************************************/
 export interface EmailAdminsFieldsData {
 	message?: string;
-	siteIds?: { results: Array<any> };
+	siteIds?: Array<any>;
 	subject?: string;
 }
 
@@ -262,8 +262,8 @@ export interface RequireSecondaryContactCollections {
 * SecondaryAdministratorsFieldsData
 **********************************************/
 export interface SecondaryAdministratorsFieldsData {
-	secondaryAdministratorEmails?: { results: Array<string> };
-	secondaryAdministratorLoginNames?: { results: Array<string> };
+	secondaryAdministratorEmails?: Array<string>;
+	secondaryAdministratorLoginNames?: Array<string>;
 	siteId?: any;
 }
 

@@ -145,7 +145,7 @@ export interface EntityPermissionCollections {
 export interface LinkInfo {
 	isInherited?: boolean;
 	linkDetails?: SP.SharingLinkInfo;
-	linkMembers?: { results: Array<SP.Sharing.Principal> };
+	linkMembers?: Array<SP.Sharing.Principal>;
 }
 
 /*********************************************
@@ -160,7 +160,7 @@ export interface LinkInfoCollections {
 **********************************************/
 export interface OversharedWebInfo {
 	hasUniqueRoleAssignmentsForList?: boolean;
-	principals?: { results: Array<SP.Sharing.Principal> };
+	principals?: Array<SP.Sharing.Principal>;
 }
 
 /*********************************************
@@ -174,9 +174,9 @@ export interface OversharedWebInfoCollections {
 * PermissionCollection
 **********************************************/
 export interface PermissionCollection {
-	links?: { results: Array<SP.Sharing.LinkInfo> };
-	principals?: { results: Array<SP.Sharing.PrincipalInfo> };
-	siteAdmins?: { results: Array<SP.Sharing.PrincipalInfo> };
+	links?: Array<SP.Sharing.LinkInfo>;
+	principals?: Array<SP.Sharing.PrincipalInfo>;
+	siteAdmins?: Array<SP.Sharing.PrincipalInfo>;
 }
 
 /*********************************************
@@ -260,7 +260,7 @@ export interface ShareLinkSettings {
 	applicationLink?: boolean;
 	description?: string;
 	expiration?: string;
-	inviteesToRemove?: { results: Array<SP.Sharing.Principal> };
+	inviteesToRemove?: Array<SP.Sharing.Principal>;
 	limitUseToApplication?: boolean;
 	linkKind?: number;
 	nonDefaultLink?: boolean;
@@ -394,7 +394,7 @@ export interface SharingLinkAccessRequestCollections {
 * SharingLinkDefaultTemplatesCollection
 **********************************************/
 export interface SharingLinkDefaultTemplatesCollection {
-	templates?: { results: Array<SP.Sharing.SharingLinkDefaultTemplate> };
+	templates?: Array<SP.Sharing.SharingLinkDefaultTemplate>;
 }
 
 /*********************************************
@@ -507,7 +507,7 @@ export interface UserRoleAssignmentCollections {
 * UserSharingResult
 **********************************************/
 export interface UserSharingResult {
-	AllowedRoles?: { results: Array<number> };
+	AllowedRoles?: Array<number>;
 	CurrentRole?: number;
 	DisplayName?: string;
 	Email?: string;

@@ -24,8 +24,8 @@ export interface DirectoryObjectChanges {
 	DirectoryObjectSubType?: number;
 	DirectoryObjectType?: number;
 	Id?: any;
-	LinkChanges?: { results: Array<SP.Directory.Provider.LinkChange> };
-	PropertyChanges?: { results: Array<SP.Directory.Provider.PropertyChange> };
+	LinkChanges?: Array<SP.Directory.Provider.LinkChange>;
+	PropertyChanges?: Array<SP.Directory.Provider.PropertyChange>;
 }
 
 /*********************************************
@@ -39,9 +39,9 @@ export interface DirectoryObjectChangesCollections {
 * LinkChange
 **********************************************/
 export interface LinkChange {
-	Added?: { results: Array<SP.Directory.Provider.LinkTarget> };
+	Added?: Array<SP.Directory.Provider.LinkTarget>;
 	Name?: string;
-	Removed?: { results: Array<SP.Directory.Provider.LinkTarget> };
+	Removed?: Array<SP.Directory.Provider.LinkTarget>;
 }
 
 /*********************************************
@@ -73,7 +73,7 @@ export interface LinkTargetCollections {
 export interface PropertyChange {
 	Name?: string;
 	Value?: string;
-	Values?: { results: Array<string> };
+	Values?: Array<string>;
 }
 
 /*********************************************
@@ -88,7 +88,7 @@ export interface PropertyChangeCollections {
 **********************************************/
 export interface DirectoryObjectData {
 	AlternateId?: SP.Directory.Provider.AlternateIdData;
-	AttributeExpirationTimes?: { results: Array<SP.KeyValue> };
+	AttributeExpirationTimes?: Array<SP.KeyValue>;
 	ChangeMarker?: string;
 	DirectoryObjectSubType?: number;
 	DirectoryObjectType?: number;

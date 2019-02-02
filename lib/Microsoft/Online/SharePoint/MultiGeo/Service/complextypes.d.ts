@@ -4,8 +4,8 @@ import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults 
 * GeoCredentials
 **********************************************/
 export interface GeoCredentials {
-	AltDatabaseCredentials?: { results: Array<string> };
-	FarmCredentials?: { results: Array<string> };
+	AltDatabaseCredentials?: Array<string>;
+	FarmCredentials?: Array<string>;
 	FarmCredentialsExpirationTime?: any;
 }
 

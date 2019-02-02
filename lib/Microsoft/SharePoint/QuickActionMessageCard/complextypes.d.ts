@@ -6,7 +6,7 @@ import { Microsoft } from "../../../";
 **********************************************/
 export interface AutoInvokeAction {
 	body?: string;
-	headers?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.Header> };
+	headers?: Array<Microsoft.SharePoint.QuickActionMessageCard.Header>;
 	hideCardOnInvoke?: string;
 	target?: string;
 	type?: string;
@@ -83,7 +83,7 @@ export interface HeroImageCollections {
 export interface MessageCardActionButton {
 	body?: string;
 	bodyContentType?: string;
-	headers?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.Header> };
+	headers?: Array<Microsoft.SharePoint.QuickActionMessageCard.Header>;
 	name?: string;
 	target?: string;
 	type?: string;
@@ -100,7 +100,7 @@ export interface MessageCardActionButtonCollections {
 * MessageCardInput
 **********************************************/
 export interface MessageCardInput {
-	choices?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.Choice> };
+	choices?: Array<Microsoft.SharePoint.QuickActionMessageCard.Choice>;
 	id?: string;
 	type?: string;
 	value?: string;
@@ -122,8 +122,8 @@ export interface MessageCard {
 	context?: string;
 	hideOriginalBody?: string;
 	originator?: string;
-	potentialAction?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.PotentialAction> };
-	sections?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.Section> };
+	potentialAction?: Array<Microsoft.SharePoint.QuickActionMessageCard.PotentialAction>;
+	sections?: Array<Microsoft.SharePoint.QuickActionMessageCard.Section>;
 	text?: string;
 	themeColor?: string;
 	title?: string;
@@ -141,8 +141,8 @@ export interface MessageCardCollections {
 * PotentialAction
 **********************************************/
 export interface PotentialAction {
-	actions?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.MessageCardActionButton> };
-	inputs?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.MessageCardInput> };
+	actions?: Array<Microsoft.SharePoint.QuickActionMessageCard.MessageCardActionButton>;
+	inputs?: Array<Microsoft.SharePoint.QuickActionMessageCard.MessageCardInput>;
 	type?: string;
 }
 

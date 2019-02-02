@@ -45,7 +45,7 @@ export interface QueryAutoCompletionMatchCollections {
 export interface QueryAutoCompletionResults {
 	CoreExecutionTimeMs?: number;
 	CorrelationId?: string;
-	Queries?: { results: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletion> };
+	Queries?: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletion>;
 }
 
 /*********************************************
@@ -59,7 +59,7 @@ export interface QueryAutoCompletionResultsCollections {
 * QueryAutoCompletion
 **********************************************/
 export interface QueryAutoCompletion {
-	Matches?: { results: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletionMatch> };
+	Matches?: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletionMatch>;
 	Query?: string;
 	Score?: number;
 	Source?: string;
@@ -79,7 +79,7 @@ export interface QueryPropertyValue {
 	BoolVal?: boolean;
 	IntVal?: number;
 	QueryPropertyValueTypeIndex?: number;
-	StrArray?: { results: Array<string> };
+	StrArray?: Array<string>;
 	StrVal?: string;
 }
 
@@ -124,10 +124,10 @@ export interface QuerySuggestionRangeCollections {
 * QuerySuggestionResults
 **********************************************/
 export interface QuerySuggestionResults {
-	PeopleNames?: { results: Array<string> };
-	PersonalResults?: { results: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion> };
-	PopularResults?: { results: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion> };
-	Queries?: { results: Array<Microsoft.SharePoint.Client.Search.Query.QuerySuggestionQuery> };
+	PeopleNames?: Array<string>;
+	PersonalResults?: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion>;
+	PopularResults?: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion>;
+	Queries?: Array<Microsoft.SharePoint.Client.Search.Query.QuerySuggestionQuery>;
 }
 
 /*********************************************

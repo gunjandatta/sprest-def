@@ -24,12 +24,12 @@ export interface CollaborationMailboxResponseCollections {
 * GroupCreationContext
 **********************************************/
 export interface GroupCreationContext {
-	ClassificationDescriptions?: { results: Array<SP.KeyValue> };
-	ClassificationDescriptionsNew?: { results: Array<SP.KeyValue> };
-	ClassificationPrivacy?: { results: Array<SP.KeyValue> };
+	ClassificationDescriptions?: Array<SP.KeyValue>;
+	ClassificationDescriptionsNew?: Array<SP.KeyValue>;
+	ClassificationPrivacy?: Array<SP.KeyValue>;
 	CustomFormUrl?: string;
-	DataClassificationOptions?: { results: Array<string> };
-	DataClassificationOptionsNew?: { results: Array<SP.KeyValue> };
+	DataClassificationOptions?: Array<string>;
+	DataClassificationOptionsNew?: Array<SP.KeyValue>;
 	DefaultClassification?: string;
 	ExternalInvitationEnabled?: boolean;
 	RequireSecondaryContact?: boolean;
@@ -49,9 +49,9 @@ export interface GroupCreationContextCollections {
 **********************************************/
 export interface GroupCreationParams {
 	Classification?: string;
-	CreationOptions?: { results: Array<string> };
+	CreationOptions?: Array<string>;
 	Description?: string;
-	Owners?: { results: Array<string> };
+	Owners?: Array<string>;
 }
 
 /*********************************************
@@ -69,9 +69,9 @@ export interface GroupSiteConversionInfo {
 	IsGroupifyDisabled?: boolean;
 	IsRegionRestricted?: boolean;
 	IsWrongPdl?: boolean;
-	SuggestedMembers?: { results: Array<string> };
-	SuggestedOwners?: { results: Array<string> };
-	UnsuggestablePrincipals?: { results: Array<string> };
+	SuggestedMembers?: Array<string>;
+	SuggestedOwners?: Array<string>;
+	UnsuggestablePrincipals?: Array<string>;
 }
 
 /*********************************************
@@ -122,7 +122,7 @@ export interface LinkedSiteContractCollections {
 * LinkedSitesListContract
 **********************************************/
 export interface LinkedSitesListContract {
-	LinkedSites?: { results: Array<Microsoft.SharePoint.Portal.LinkedSiteContract> };
+	LinkedSites?: Array<Microsoft.SharePoint.Portal.LinkedSiteContract>;
 }
 
 /*********************************************
