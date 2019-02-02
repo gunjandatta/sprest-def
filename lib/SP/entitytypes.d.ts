@@ -2394,7 +2394,7 @@ export interface ListMethods {
 	getItemById(id?: number): IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	getItemByStringId(sId?: string): IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	getItemByUniqueId(uniqueId?: any): IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
-	getItems(query?: SP.CamlQuery): IBaseCollection<SP.ListItem, SP.ListItemOData, IBaseExecution & SP.ListItemCollectionMethods> & IBaseExecution & SP.ListItemCollectionMethods;
+	// getItems(query?: SP.CamlQuery): IBaseCollection<SP.ListItem, SP.ListItemOData, IBaseExecution & SP.ListItemCollectionMethods> & IBaseExecution & SP.ListItemCollectionMethods;
 	getListItemChangesSinceToken(query?: SP.ChangeLogItemQuery): IBaseExecution<any>;
 	getMappedApp(appId?: any, visualizationAppTarget?: number): IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getMappedApps(visualizationAppTarget?: number): IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
@@ -2422,6 +2422,8 @@ export interface ListMethods {
 	unpublishMappedView(appId?: any, visualizationTarget?: number): IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	// update(): IBaseExecution<any>;
 	validateAppName(appDisplayName?: string): IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
+	getItems(viewXML?: string): IBaseCollection<SP.ListItem, SP.ListItemOData, IBaseExecution & SP.ListItemCollectionMethods> & IBaseExecution & SP.ListItemCollectionMethods;
+	getItemsByQuery(camlQuery?: string): IBaseCollection<SP.ListItem, SP.ListItemOData, IBaseExecution & SP.ListItemCollectionMethods> & IBaseExecution & SP.ListItemCollectionMethods;
 	update(properties?: any): IBaseExecution<any>;
 }
 
