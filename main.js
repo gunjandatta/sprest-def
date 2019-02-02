@@ -144,7 +144,7 @@ function generateBaseCollection(methodType, hasCollections, hasCollectionMethods
         // See if methods exist
         if (hasCollectionMethods[methodType]) {
             // Generate the interface
-            return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query, ' + methodType + 'CollectionMethods> & ' + methodType + 'CollectionMethods';
+            return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query, IBaseExecution & ' + methodType + 'CollectionMethods> & IBaseExecution & ' + methodType + 'CollectionMethods';
         } else {
             // Generate the interface
             return 'IBaseCollection<' + methodType + ', ' + methodType + 'Query>';

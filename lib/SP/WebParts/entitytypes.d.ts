@@ -58,7 +58,7 @@ export interface LimitedWebPartManagerPropMethods {
 * LimitedWebPartManagerCollections
 **********************************************/
 export interface LimitedWebPartManagerCollections extends LimitedWebPartManagerPropMethods {
-	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery, SP.WebParts.WebPartDefinitionCollectionMethods> & SP.WebParts.WebPartDefinitionCollectionMethods;
+	WebParts(): IBaseCollection<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery, IBaseExecution & SP.WebParts.WebPartDefinitionCollectionMethods> & IBaseExecution & SP.WebParts.WebPartDefinitionCollectionMethods;
 	WebParts(id: string | number): IBaseQuery<SP.WebParts.WebPartDefinition, SP.WebParts.WebPartDefinitionQuery> & SP.WebParts.WebPartDefinitionCollections & SP.WebParts.WebPartDefinitionMethods;
 }
 

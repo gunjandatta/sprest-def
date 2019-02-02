@@ -248,7 +248,7 @@ export interface VideoItemPropMethods {
 * VideoItemCollections
 **********************************************/
 export interface VideoItemCollections extends VideoItemPropMethods {
-	PeopleInMedia(): IBaseCollection<SP.User, SP.UserQuery, SP.UserCollectionMethods> & SP.UserCollectionMethods;
+	PeopleInMedia(): IBaseCollection<SP.User, SP.UserQuery, IBaseExecution & SP.UserCollectionMethods> & IBaseExecution & SP.UserCollectionMethods;
 	PeopleInMedia(id: string | number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
@@ -416,7 +416,7 @@ export interface PointPublishingPostPropMethods {
 * PointPublishingPostCollections
 **********************************************/
 export interface PointPublishingPostCollections extends PointPublishingPostPropMethods {
-	images(): IBaseCollection<SP.File, SP.FileQuery, SP.FileCollectionMethods> & SP.FileCollectionMethods;
+	images(): IBaseCollection<SP.File, SP.FileQuery, IBaseExecution & SP.FileCollectionMethods> & IBaseExecution & SP.FileCollectionMethods;
 	images(id: string | number): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
 }
 
@@ -496,13 +496,13 @@ export interface PointPublishingPostServiceManagerPropMethods {
 * PointPublishingPostServiceManagerCollections
 **********************************************/
 export interface PointPublishingPostServiceManagerCollections extends PointPublishingPostServiceManagerPropMethods {
-	bannerimages(): IBaseCollection<SP.File, SP.FileQuery, SP.FileCollectionMethods> & SP.FileCollectionMethods;
+	bannerimages(): IBaseCollection<SP.File, SP.FileQuery, IBaseExecution & SP.FileCollectionMethods> & IBaseExecution & SP.FileCollectionMethods;
 	bannerimages(id: string | number): IBaseQuery<SP.File, SP.FileQuery> & SP.FileCollections & SP.FileMethods;
 	contributors(): IBaseCollection<SP.Publishing.PointPublishingUser>;
 	contributors(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
 	creators(): IBaseCollection<SP.Publishing.PointPublishingUser>;
 	creators(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
-	posts(): IBaseCollection<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery, SP.Publishing.PointPublishingPostCollectionMethods> & SP.Publishing.PointPublishingPostCollectionMethods;
+	posts(): IBaseCollection<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery, IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods> & IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods;
 	posts(id: string | number): IBaseQuery<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery> & SP.Publishing.PointPublishingPostCollections & SP.Publishing.PointPublishingPostMethods;
 	viewers(): IBaseCollection<SP.Publishing.PointPublishingUser>;
 	viewers(id: string | number): IBaseQuery<SP.Publishing.PointPublishingUser> & SP.Publishing.PointPublishingUserCollections & SP.Publishing.PointPublishingUserMethods;
@@ -527,7 +527,7 @@ export interface PointPublishingPostServiceManagerMethods {
 	addBannerImageFromUrl(fromImageUrl?: string): IBaseExecution<string>;
 	deleteMagazine(): IBaseExecution<any>;
 	getDocProps(docUrls?: Array<string>): IBaseCollection<SP.Publishing.PointPublishingDocProps>;
-	getPostsQuery(top?: number, itemIdBoundary?: number, directionAscending?: boolean, publishedOnly?: boolean, draftsOnly?: boolean): IBaseCollection<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery, SP.Publishing.PointPublishingPostCollectionMethods> & SP.Publishing.PointPublishingPostCollectionMethods;
+	getPostsQuery(top?: number, itemIdBoundary?: number, directionAscending?: boolean, publishedOnly?: boolean, draftsOnly?: boolean): IBaseCollection<SP.Publishing.PointPublishingPost, SP.Publishing.PointPublishingPostQuery, IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods> & IBaseExecution & SP.Publishing.PointPublishingPostCollectionMethods;
 	getTopAuthors(count?: number): IBaseCollection<SP.Publishing.PointPublishingUser>;
 	queryGroupNames(query?: string): IBaseCollection<SP.Publishing.PointPublishingUser>;
 	setMagazineProperties(title?: string, description?: string, bannerImageUrl?: string, bannerColor?: string, bannerPattern?: string): IBaseExecution<SP.Publishing.PointPublishingMagazineProps>;
@@ -1448,9 +1448,9 @@ export interface VideoChannelPropMethods {
 * VideoChannelCollections
 **********************************************/
 export interface VideoChannelCollections extends VideoChannelPropMethods {
-	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery, SP.Publishing.SpotlightVideoCollectionMethods> & SP.Publishing.SpotlightVideoCollectionMethods;
+	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery, IBaseExecution & SP.Publishing.SpotlightVideoCollectionMethods> & IBaseExecution & SP.Publishing.SpotlightVideoCollectionMethods;
 	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections & SP.Publishing.SpotlightVideoMethods;
-	Videos(): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, SP.Publishing.VideoItemCollectionMethods> & SP.Publishing.VideoItemCollectionMethods;
+	Videos(): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, IBaseExecution & SP.Publishing.VideoItemCollectionMethods> & IBaseExecution & SP.Publishing.VideoItemCollectionMethods;
 	Videos(id: string | number): IBaseQuery<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery> & SP.Publishing.VideoItemCollections & SP.Publishing.VideoItemMethods;
 }
 
@@ -1474,9 +1474,9 @@ export interface VideoChannelQuery extends VideoChannelProps, VideoChannelMethod
 * VideoChannelMethods
 **********************************************/
 export interface VideoChannelMethods {
-	getAllVideos(skip?: number, limit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, SP.Publishing.VideoItemCollectionMethods> & SP.Publishing.VideoItemCollectionMethods;
+	getAllVideos(skip?: number, limit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, IBaseExecution & SP.Publishing.VideoItemCollectionMethods> & IBaseExecution & SP.Publishing.VideoItemCollectionMethods;
 	getChannelPageUrl(viewMode?: number): IBaseExecution<string>;
-	getMyVideos(skip?: number, limit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, SP.Publishing.VideoItemCollectionMethods> & SP.Publishing.VideoItemCollectionMethods;
+	getMyVideos(skip?: number, limit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, IBaseExecution & SP.Publishing.VideoItemCollectionMethods> & IBaseExecution & SP.Publishing.VideoItemCollectionMethods;
 	getPermissionGroup(permission?: number): IBaseQuery<SP.Publishing.VideoPermissionGroup, SP.Publishing.VideoPermissionGroupQuery> & SP.Publishing.VideoPermissionGroupCollections & SP.Publishing.VideoPermissionGroupMethods;
 	getVideoCount(): IBaseExecution<number>;
 	update(): IBaseExecution<any>;
@@ -1550,11 +1550,11 @@ export interface SearchQuery extends SearchProps, SearchMethods {
 * SearchMethods
 **********************************************/
 export interface SearchMethods {
-	newest(startItemIndex?: number, itemLimit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, SP.Publishing.VideoItemCollectionMethods> & SP.Publishing.VideoItemCollectionMethods;
-	popular(startItemIndex?: number, itemLimit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, SP.Publishing.VideoItemCollectionMethods> & SP.Publishing.VideoItemCollectionMethods;
-	query(queryText?: string, startItemIndex?: number, itemLimit?: number, culture?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, SP.Publishing.VideoItemCollectionMethods> & SP.Publishing.VideoItemCollectionMethods;
-	queryChannels(queryText?: string, startItemIndex?: number, itemLimit?: number, culture?: number): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, SP.Publishing.VideoChannelCollectionMethods> & SP.Publishing.VideoChannelCollectionMethods;
-	related(videoId?: any, startItemIndex?: number, itemLimit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, SP.Publishing.VideoItemCollectionMethods> & SP.Publishing.VideoItemCollectionMethods;
+	newest(startItemIndex?: number, itemLimit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, IBaseExecution & SP.Publishing.VideoItemCollectionMethods> & IBaseExecution & SP.Publishing.VideoItemCollectionMethods;
+	popular(startItemIndex?: number, itemLimit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, IBaseExecution & SP.Publishing.VideoItemCollectionMethods> & IBaseExecution & SP.Publishing.VideoItemCollectionMethods;
+	query(queryText?: string, startItemIndex?: number, itemLimit?: number, culture?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, IBaseExecution & SP.Publishing.VideoItemCollectionMethods> & IBaseExecution & SP.Publishing.VideoItemCollectionMethods;
+	queryChannels(queryText?: string, startItemIndex?: number, itemLimit?: number, culture?: number): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, IBaseExecution & SP.Publishing.VideoChannelCollectionMethods> & IBaseExecution & SP.Publishing.VideoChannelCollectionMethods;
+	related(videoId?: any, startItemIndex?: number, itemLimit?: number): IBaseCollection<SP.Publishing.VideoItem, SP.Publishing.VideoItemQuery, IBaseExecution & SP.Publishing.VideoItemCollectionMethods> & IBaseExecution & SP.Publishing.VideoItemCollectionMethods;
 }
 
 /*********************************************
@@ -1715,7 +1715,7 @@ export interface VideoPermissionGroupPropMethods {
 * VideoPermissionGroupCollections
 **********************************************/
 export interface VideoPermissionGroupCollections extends VideoPermissionGroupPropMethods {
-	Users(): IBaseCollection<SP.User, SP.UserQuery, SP.UserCollectionMethods> & SP.UserCollectionMethods;
+	Users(): IBaseCollection<SP.User, SP.UserQuery, IBaseExecution & SP.UserCollectionMethods> & IBaseExecution & SP.UserCollectionMethods;
 	Users(id: string | number): IBaseQuery<SP.User, SP.UserQuery> & SP.UserCollections & SP.UserMethods;
 }
 
@@ -1830,13 +1830,13 @@ export interface VideoServiceManagerPropMethods {
 * VideoServiceManagerCollections
 **********************************************/
 export interface VideoServiceManagerCollections extends VideoServiceManagerPropMethods {
-	CanEditChannels(): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, SP.Publishing.VideoChannelCollectionMethods> & SP.Publishing.VideoChannelCollectionMethods;
+	CanEditChannels(): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, IBaseExecution & SP.Publishing.VideoChannelCollectionMethods> & IBaseExecution & SP.Publishing.VideoChannelCollectionMethods;
 	CanEditChannels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
-	Channels(): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, SP.Publishing.VideoChannelCollectionMethods> & SP.Publishing.VideoChannelCollectionMethods;
+	Channels(): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, IBaseExecution & SP.Publishing.VideoChannelCollectionMethods> & IBaseExecution & SP.Publishing.VideoChannelCollectionMethods;
 	Channels(id: string | number): IBaseQuery<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery> & SP.Publishing.VideoChannelCollections & SP.Publishing.VideoChannelMethods;
-	SpotlightChannels(): IBaseCollection<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery, SP.Publishing.SpotlightChannelCollectionMethods> & SP.Publishing.SpotlightChannelCollectionMethods;
+	SpotlightChannels(): IBaseCollection<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery, IBaseExecution & SP.Publishing.SpotlightChannelCollectionMethods> & IBaseExecution & SP.Publishing.SpotlightChannelCollectionMethods;
 	SpotlightChannels(id: string | number): IBaseQuery<SP.Publishing.SpotlightChannel, SP.Publishing.SpotlightChannelQuery> & SP.Publishing.SpotlightChannelCollections & SP.Publishing.SpotlightChannelMethods;
-	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery, SP.Publishing.SpotlightVideoCollectionMethods> & SP.Publishing.SpotlightVideoCollectionMethods;
+	SpotlightVideos(): IBaseCollection<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery, IBaseExecution & SP.Publishing.SpotlightVideoCollectionMethods> & IBaseExecution & SP.Publishing.SpotlightVideoCollectionMethods;
 	SpotlightVideos(id: string | number): IBaseQuery<SP.Publishing.SpotlightVideo, SP.Publishing.SpotlightVideoQuery> & SP.Publishing.SpotlightVideoCollections & SP.Publishing.SpotlightVideoMethods;
 }
 
@@ -1855,7 +1855,7 @@ export interface VideoServiceManagerQuery extends VideoServiceManagerProps, Vide
 * VideoServiceManagerMethods
 **********************************************/
 export interface VideoServiceManagerMethods {
-	getChannels(startIndex?: number, limit?: number): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, SP.Publishing.VideoChannelCollectionMethods> & SP.Publishing.VideoChannelCollectionMethods;
+	getChannels(startIndex?: number, limit?: number): IBaseCollection<SP.Publishing.VideoChannel, SP.Publishing.VideoChannelQuery, IBaseExecution & SP.Publishing.VideoChannelCollectionMethods> & IBaseExecution & SP.Publishing.VideoChannelCollectionMethods;
 	getPermissionGroup(permission?: number): IBaseQuery<SP.Publishing.VideoPermissionGroup, SP.Publishing.VideoPermissionGroupQuery> & SP.Publishing.VideoPermissionGroupCollections & SP.Publishing.VideoPermissionGroupMethods;
 }
 

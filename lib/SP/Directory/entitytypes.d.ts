@@ -152,9 +152,9 @@ export interface GroupPropMethods {
 * GroupCollections
 **********************************************/
 export interface GroupCollections extends GroupPropMethods {
-	members(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery, SP.Directory.UserCollectionMethods> & SP.Directory.UserCollectionMethods;
+	members(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery, IBaseExecution & SP.Directory.UserCollectionMethods> & IBaseExecution & SP.Directory.UserCollectionMethods;
 	members(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
-	owners(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery, SP.Directory.UserCollectionMethods> & SP.Directory.UserCollectionMethods;
+	owners(): IBaseCollection<SP.Directory.User, SP.Directory.UserQuery, IBaseExecution & SP.Directory.UserCollectionMethods> & IBaseExecution & SP.Directory.UserCollectionMethods;
 	owners(id: string | number): IBaseQuery<SP.Directory.User, SP.Directory.UserQuery> & SP.Directory.UserCollections & SP.Directory.UserMethods;
 }
 
@@ -273,11 +273,11 @@ export interface UserPropMethods {
 * UserCollections
 **********************************************/
 export interface UserCollections extends UserPropMethods {
-	membership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, SP.Directory.GroupCollectionMethods> & SP.Directory.GroupCollectionMethods;
+	membership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
 	membership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
-	ownership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, SP.Directory.GroupCollectionMethods> & SP.Directory.GroupCollectionMethods;
+	ownership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
 	ownership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
-	rankedMembership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, SP.Directory.GroupCollectionMethods> & SP.Directory.GroupCollectionMethods;
+	rankedMembership(): IBaseCollection<SP.Directory.Group, SP.Directory.GroupQuery, IBaseExecution & SP.Directory.GroupCollectionMethods> & IBaseExecution & SP.Directory.GroupCollectionMethods;
 	rankedMembership(id: string | number): IBaseQuery<SP.Directory.Group, SP.Directory.GroupQuery> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
 }
 

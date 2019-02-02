@@ -130,7 +130,7 @@ export interface AssignmentPropMethods {
 * AssignmentCollections
 **********************************************/
 export interface AssignmentCollections extends AssignmentPropMethods {
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
 }
 
@@ -585,7 +585,7 @@ export interface CalendarPropMethods {
 * CalendarCollections
 **********************************************/
 export interface CalendarCollections extends CalendarPropMethods {
-	BaseCalendarExceptions(): IBaseCollection<PS.CalendarException, PS.CalendarExceptionQuery, PS.CalendarExceptionCollectionMethods> & PS.CalendarExceptionCollectionMethods;
+	BaseCalendarExceptions(): IBaseCollection<PS.CalendarException, PS.CalendarExceptionQuery, IBaseExecution & PS.CalendarExceptionCollectionMethods> & IBaseExecution & PS.CalendarExceptionCollectionMethods;
 	BaseCalendarExceptions(id: string | number): IBaseQuery<PS.CalendarException, PS.CalendarExceptionQuery> & PS.CalendarExceptionCollections & PS.CalendarExceptionMethods;
 }
 
@@ -922,7 +922,7 @@ export interface ProjectResourcePropMethods {
 * ProjectResourceCollections
 **********************************************/
 export interface ProjectResourceCollections extends ProjectResourcePropMethods {
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
 }
 
@@ -1024,17 +1024,17 @@ export interface EnterpriseResourcePropMethods {
 * EnterpriseResourceCollections
 **********************************************/
 export interface EnterpriseResourceCollections extends EnterpriseResourcePropMethods {
-	Assignments(): IBaseCollection<PS.StatusAssignment, PS.StatusAssignmentQuery, PS.StatusAssignmentCollectionMethods> & PS.StatusAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.StatusAssignment, PS.StatusAssignmentQuery, IBaseExecution & PS.StatusAssignmentCollectionMethods> & IBaseExecution & PS.StatusAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.StatusAssignment, PS.StatusAssignmentQuery> & PS.StatusAssignmentCollections & PS.StatusAssignmentMethods;
 	CostRateTables(): IBaseCollection<PS.EnterpriseResourceCostRateTable, PS.EnterpriseResourceCostRateTableQuery>;
 	CostRateTables(id: string | number): IBaseQuery<PS.EnterpriseResourceCostRateTable, PS.EnterpriseResourceCostRateTableQuery> & PS.EnterpriseResourceCostRateTableCollections;
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
 	Engagements(): IBaseCollection<PS.ResourceEngagement>;
 	Engagements(id: string | number): IBaseQuery<PS.ResourceEngagement> & PS.ResourceEngagementCollections & PS.ResourceEngagementMethods;
 	UserPermissions(): IBaseCollection<PS.UserPermission>;
 	UserPermissions(id: string | number): IBaseQuery<PS.UserPermission> & PS.UserPermissionCollections;
-	ResourceCalendarExceptions(): IBaseCollection<PS.CalendarException, PS.CalendarExceptionQuery, PS.CalendarExceptionCollectionMethods> & PS.CalendarExceptionCollectionMethods;
+	ResourceCalendarExceptions(): IBaseCollection<PS.CalendarException, PS.CalendarExceptionQuery, IBaseExecution & PS.CalendarExceptionCollectionMethods> & IBaseExecution & PS.CalendarExceptionCollectionMethods;
 	ResourceCalendarExceptions(id: string | number): IBaseQuery<PS.CalendarException, PS.CalendarExceptionQuery> & PS.CalendarExceptionCollections & PS.CalendarExceptionMethods;
 }
 
@@ -1160,9 +1160,9 @@ export interface StatusAssignmentPropMethods {
 * StatusAssignmentCollections
 **********************************************/
 export interface StatusAssignmentCollections extends StatusAssignmentPropMethods {
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
-	History(): IBaseCollection<PS.StatusAssignmentHistoryLine, PS.StatusAssignmentHistoryLineQuery, PS.StatusAssignmentHistoryLineCollectionMethods> & PS.StatusAssignmentHistoryLineCollectionMethods;
+	History(): IBaseCollection<PS.StatusAssignmentHistoryLine, PS.StatusAssignmentHistoryLineQuery, IBaseExecution & PS.StatusAssignmentHistoryLineCollectionMethods> & IBaseExecution & PS.StatusAssignmentHistoryLineCollectionMethods;
 	History(id: string | number): IBaseQuery<PS.StatusAssignmentHistoryLine, PS.StatusAssignmentHistoryLineQuery> & PS.StatusAssignmentHistoryLineCollections;
 }
 
@@ -1321,13 +1321,13 @@ export interface ProjectPropMethods {
 * ProjectCollections
 **********************************************/
 export interface ProjectCollections extends ProjectPropMethods {
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
 	Engagements(): IBaseCollection<PS.ProjectEngagement>;
 	Engagements(id: string | number): IBaseQuery<PS.ProjectEngagement> & PS.ProjectEngagementCollections & PS.ProjectEngagementMethods;
 	UserPermissions(): IBaseCollection<PS.UserPermission>;
 	UserPermissions(id: string | number): IBaseQuery<PS.UserPermission> & PS.UserPermissionCollections;
-	QueueJobs(): IBaseCollection<PS.QueueJob, PS.QueueJobQuery, PS.QueueJobCollectionMethods> & PS.QueueJobCollectionMethods;
+	QueueJobs(): IBaseCollection<PS.QueueJob, PS.QueueJobQuery, IBaseExecution & PS.QueueJobCollectionMethods> & IBaseExecution & PS.QueueJobCollectionMethods;
 	QueueJobs(id: string | number): IBaseQuery<PS.QueueJob, PS.QueueJobQuery> & PS.QueueJobCollections & PS.QueueJobMethods;
 }
 
@@ -1420,7 +1420,7 @@ export interface EngagementPropMethods {
 * EngagementCollections
 **********************************************/
 export interface EngagementCollections extends EngagementPropMethods {
-	Comments(): IBaseCollection<PS.EngagementComment, PS.EngagementCommentQuery, PS.EngagementCommentCollectionMethods> & PS.EngagementCommentCollectionMethods;
+	Comments(): IBaseCollection<PS.EngagementComment, PS.EngagementCommentQuery, IBaseExecution & PS.EngagementCommentCollectionMethods> & IBaseExecution & PS.EngagementCommentCollectionMethods;
 	Comments(id: string | number): IBaseQuery<PS.EngagementComment, PS.EngagementCommentQuery> & PS.EngagementCommentCollections;
 }
 
@@ -1635,7 +1635,7 @@ export interface EnterpriseProjectTypePropMethods {
 * EnterpriseProjectTypeCollections
 **********************************************/
 export interface EnterpriseProjectTypeCollections extends EnterpriseProjectTypePropMethods {
-	ProjectDetailPages(): IBaseCollection<PS.ProjectDetailPage, PS.ProjectDetailPageQuery, PS.ProjectDetailPageCollectionMethods> & PS.ProjectDetailPageCollectionMethods;
+	ProjectDetailPages(): IBaseCollection<PS.ProjectDetailPage, PS.ProjectDetailPageQuery, IBaseExecution & PS.ProjectDetailPageCollectionMethods> & IBaseExecution & PS.ProjectDetailPageCollectionMethods;
 	ProjectDetailPages(id: string | number): IBaseQuery<PS.ProjectDetailPage, PS.ProjectDetailPageQuery> & PS.ProjectDetailPageCollections;
 }
 
@@ -1767,7 +1767,7 @@ export interface PhasePropMethods {
 * PhaseCollections
 **********************************************/
 export interface PhaseCollections extends PhasePropMethods {
-	Stages(): IBaseCollection<PS.Stage, PS.StageQuery, PS.StageCollectionMethods> & PS.StageCollectionMethods;
+	Stages(): IBaseCollection<PS.Stage, PS.StageQuery, IBaseExecution & PS.StageCollectionMethods> & IBaseExecution & PS.StageCollectionMethods;
 	Stages(id: string | number): IBaseQuery<PS.Stage, PS.StageQuery> & PS.StageCollections & PS.StageMethods;
 }
 
@@ -1854,9 +1854,9 @@ export interface StagePropMethods {
 * StageCollections
 **********************************************/
 export interface StageCollections extends StagePropMethods {
-	CustomFields(): IBaseCollection<PS.StageCustomField, PS.StageCustomFieldQuery, PS.StageCustomFieldCollectionMethods> & PS.StageCustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.StageCustomField, PS.StageCustomFieldQuery, IBaseExecution & PS.StageCustomFieldCollectionMethods> & IBaseExecution & PS.StageCustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.StageCustomField, PS.StageCustomFieldQuery> & PS.StageCustomFieldCollections & PS.StageCustomFieldMethods;
-	ProjectDetailPages(): IBaseCollection<PS.StageDetailPage, PS.StageDetailPageQuery, PS.StageDetailPageCollectionMethods> & PS.StageDetailPageCollectionMethods;
+	ProjectDetailPages(): IBaseCollection<PS.StageDetailPage, PS.StageDetailPageQuery, IBaseExecution & PS.StageDetailPageCollectionMethods> & IBaseExecution & PS.StageDetailPageCollectionMethods;
 	ProjectDetailPages(id: string | number): IBaseQuery<PS.StageDetailPage, PS.StageDetailPageQuery> & PS.StageDetailPageCollections & PS.StageDetailPageMethods;
 }
 
@@ -2210,7 +2210,7 @@ export interface TaskPropMethods {
 * TaskCollections
 **********************************************/
 export interface TaskCollections extends TaskPropMethods {
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
 }
 
@@ -2320,15 +2320,15 @@ export interface PublishedProjectPropMethods {
 * PublishedProjectCollections
 **********************************************/
 export interface PublishedProjectCollections extends PublishedProjectPropMethods {
-	Assignments(): IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentQuery, PS.PublishedAssignmentCollectionMethods> & PS.PublishedAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentQuery, IBaseExecution & PS.PublishedAssignmentCollectionMethods> & IBaseExecution & PS.PublishedAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentQuery> & PS.PublishedAssignmentCollections;
 	EntityLinks(): IBaseCollection<PS.EntityLink>;
 	EntityLinks(id: string | number): IBaseQuery<PS.EntityLink> & PS.EntityLinkCollections & PS.EntityLinkMethods;
-	ProjectResources(): IBaseCollection<PS.PublishedProjectResource, PS.PublishedProjectResourceQuery, PS.PublishedProjectResourceCollectionMethods> & PS.PublishedProjectResourceCollectionMethods;
+	ProjectResources(): IBaseCollection<PS.PublishedProjectResource, PS.PublishedProjectResourceQuery, IBaseExecution & PS.PublishedProjectResourceCollectionMethods> & IBaseExecution & PS.PublishedProjectResourceCollectionMethods;
 	ProjectResources(id: string | number): IBaseQuery<PS.PublishedProjectResource, PS.PublishedProjectResourceQuery> & PS.PublishedProjectResourceCollections;
-	TaskLinks(): IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery, PS.PublishedTaskLinkCollectionMethods> & PS.PublishedTaskLinkCollectionMethods;
+	TaskLinks(): IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery, IBaseExecution & PS.PublishedTaskLinkCollectionMethods> & IBaseExecution & PS.PublishedTaskLinkCollectionMethods;
 	TaskLinks(id: string | number): IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery> & PS.PublishedTaskLinkCollections;
-	Tasks(): IBaseCollection<PS.PublishedTask, PS.PublishedTaskQuery, PS.PublishedTaskCollectionMethods> & PS.PublishedTaskCollectionMethods;
+	Tasks(): IBaseCollection<PS.PublishedTask, PS.PublishedTaskQuery, IBaseExecution & PS.PublishedTaskCollectionMethods> & IBaseExecution & PS.PublishedTaskCollectionMethods;
 	Tasks(id: string | number): IBaseQuery<PS.PublishedTask, PS.PublishedTaskQuery> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
 }
 
@@ -2512,7 +2512,7 @@ export interface PublishedProjectResourcePropMethods {
 * PublishedProjectResourceCollections
 **********************************************/
 export interface PublishedProjectResourceCollections extends PublishedProjectResourcePropMethods {
-	Assignments(): IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentQuery, PS.PublishedAssignmentCollectionMethods> & PS.PublishedAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentQuery, IBaseExecution & PS.PublishedAssignmentCollectionMethods> & IBaseExecution & PS.PublishedAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentQuery> & PS.PublishedAssignmentCollections;
 }
 
@@ -2637,13 +2637,13 @@ export interface PublishedTaskPropMethods {
 * PublishedTaskCollections
 **********************************************/
 export interface PublishedTaskCollections extends PublishedTaskPropMethods {
-	Assignments(): IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentQuery, PS.PublishedAssignmentCollectionMethods> & PS.PublishedAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentQuery, IBaseExecution & PS.PublishedAssignmentCollectionMethods> & IBaseExecution & PS.PublishedAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentQuery> & PS.PublishedAssignmentCollections;
 	EntityLinks(): IBaseCollection<PS.EntityLink>;
 	EntityLinks(id: string | number): IBaseQuery<PS.EntityLink> & PS.EntityLinkCollections & PS.EntityLinkMethods;
-	Predecessors(): IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery, PS.PublishedTaskLinkCollectionMethods> & PS.PublishedTaskLinkCollectionMethods;
+	Predecessors(): IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery, IBaseExecution & PS.PublishedTaskLinkCollectionMethods> & IBaseExecution & PS.PublishedTaskLinkCollectionMethods;
 	Predecessors(id: string | number): IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery> & PS.PublishedTaskLinkCollections;
-	Successors(): IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery, PS.PublishedTaskLinkCollectionMethods> & PS.PublishedTaskLinkCollectionMethods;
+	Successors(): IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery, IBaseExecution & PS.PublishedTaskLinkCollectionMethods> & IBaseExecution & PS.PublishedTaskLinkCollectionMethods;
 	Successors(id: string | number): IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkQuery> & PS.PublishedTaskLinkCollections;
 }
 
@@ -2966,13 +2966,13 @@ export interface DraftProjectPropMethods {
 * DraftProjectCollections
 **********************************************/
 export interface DraftProjectCollections extends DraftProjectPropMethods {
-	Assignments(): IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentQuery, PS.DraftAssignmentCollectionMethods> & PS.DraftAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentQuery, IBaseExecution & PS.DraftAssignmentCollectionMethods> & IBaseExecution & PS.DraftAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentQuery> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
-	ProjectResources(): IBaseCollection<PS.DraftProjectResource, PS.DraftProjectResourceQuery, PS.DraftProjectResourceCollectionMethods> & PS.DraftProjectResourceCollectionMethods;
+	ProjectResources(): IBaseCollection<PS.DraftProjectResource, PS.DraftProjectResourceQuery, IBaseExecution & PS.DraftProjectResourceCollectionMethods> & IBaseExecution & PS.DraftProjectResourceCollectionMethods;
 	ProjectResources(id: string | number): IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceQuery> & PS.DraftProjectResourceCollections & PS.DraftProjectResourceMethods;
-	TaskLinks(): IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkQuery, PS.DraftTaskLinkCollectionMethods> & PS.DraftTaskLinkCollectionMethods;
+	TaskLinks(): IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkQuery, IBaseExecution & PS.DraftTaskLinkCollectionMethods> & IBaseExecution & PS.DraftTaskLinkCollectionMethods;
 	TaskLinks(id: string | number): IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkQuery> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
-	Tasks(): IBaseCollection<PS.DraftTask, PS.DraftTaskQuery, PS.DraftTaskCollectionMethods> & PS.DraftTaskCollectionMethods;
+	Tasks(): IBaseCollection<PS.DraftTask, PS.DraftTaskQuery, IBaseExecution & PS.DraftTaskCollectionMethods> & IBaseExecution & PS.DraftTaskCollectionMethods;
 	Tasks(id: string | number): IBaseQuery<PS.DraftTask, PS.DraftTaskQuery> & PS.DraftTaskCollections & PS.DraftTaskMethods;
 }
 
@@ -3075,7 +3075,7 @@ export interface DraftProjectResourcePropMethods {
 * DraftProjectResourceCollections
 **********************************************/
 export interface DraftProjectResourceCollections extends DraftProjectResourcePropMethods {
-	Assignments(): IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentQuery, PS.DraftAssignmentCollectionMethods> & PS.DraftAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentQuery, IBaseExecution & PS.DraftAssignmentCollectionMethods> & IBaseExecution & PS.DraftAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentQuery> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
 }
 
@@ -3286,11 +3286,11 @@ export interface DraftTaskPropMethods {
 * DraftTaskCollections
 **********************************************/
 export interface DraftTaskCollections extends DraftTaskPropMethods {
-	Assignments(): IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentQuery, PS.DraftAssignmentCollectionMethods> & PS.DraftAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentQuery, IBaseExecution & PS.DraftAssignmentCollectionMethods> & IBaseExecution & PS.DraftAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentQuery> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
-	Predecessors(): IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkQuery, PS.DraftTaskLinkCollectionMethods> & PS.DraftTaskLinkCollectionMethods;
+	Predecessors(): IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkQuery, IBaseExecution & PS.DraftTaskLinkCollectionMethods> & IBaseExecution & PS.DraftTaskLinkCollectionMethods;
 	Predecessors(id: string | number): IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkQuery> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
-	Successors(): IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkQuery, PS.DraftTaskLinkCollectionMethods> & PS.DraftTaskLinkCollectionMethods;
+	Successors(): IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkQuery, IBaseExecution & PS.DraftTaskLinkCollectionMethods> & IBaseExecution & PS.DraftTaskLinkCollectionMethods;
 	Successors(id: string | number): IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkQuery> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
 }
 
@@ -3614,7 +3614,7 @@ export interface StatusTaskPropMethods {
 * StatusTaskCollections
 **********************************************/
 export interface StatusTaskCollections extends StatusTaskPropMethods {
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
 }
 
@@ -4483,7 +4483,7 @@ export interface PlanAssignmentPropMethods {
 * PlanAssignmentCollections
 **********************************************/
 export interface PlanAssignmentCollections extends PlanAssignmentPropMethods {
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
 	Intervals(): IBaseCollection<PS.PlanAssignmentInterval>;
 	Intervals(id: string | number): IBaseQuery<PS.PlanAssignmentInterval> & PS.PlanAssignmentIntervalCollections;
@@ -4650,31 +4650,31 @@ export interface ProjectServerPropMethods {
 * ProjectServerCollections
 **********************************************/
 export interface ProjectServerCollections extends ProjectServerPropMethods {
-	Calendars(): IBaseCollection<PS.Calendar, PS.CalendarQuery, PS.CalendarCollectionMethods> & PS.CalendarCollectionMethods;
+	Calendars(): IBaseCollection<PS.Calendar, PS.CalendarQuery, IBaseExecution & PS.CalendarCollectionMethods> & IBaseExecution & PS.CalendarCollectionMethods;
 	Calendars(id: string | number): IBaseQuery<PS.Calendar, PS.CalendarQuery> & PS.CalendarCollections & PS.CalendarMethods;
-	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, PS.CustomFieldCollectionMethods> & PS.CustomFieldCollectionMethods;
+	CustomFields(): IBaseCollection<PS.CustomField, PS.CustomFieldQuery, IBaseExecution & PS.CustomFieldCollectionMethods> & IBaseExecution & PS.CustomFieldCollectionMethods;
 	CustomFields(id: string | number): IBaseQuery<PS.CustomField, PS.CustomFieldQuery> & PS.CustomFieldCollections & PS.CustomFieldMethods;
-	EnterpriseProjectTypes(): IBaseCollection<PS.EnterpriseProjectType, PS.EnterpriseProjectTypeQuery, PS.EnterpriseProjectTypeCollectionMethods> & PS.EnterpriseProjectTypeCollectionMethods;
+	EnterpriseProjectTypes(): IBaseCollection<PS.EnterpriseProjectType, PS.EnterpriseProjectTypeQuery, IBaseExecution & PS.EnterpriseProjectTypeCollectionMethods> & IBaseExecution & PS.EnterpriseProjectTypeCollectionMethods;
 	EnterpriseProjectTypes(id: string | number): IBaseQuery<PS.EnterpriseProjectType, PS.EnterpriseProjectTypeQuery> & PS.EnterpriseProjectTypeCollections & PS.EnterpriseProjectTypeMethods;
-	EnterpriseResources(): IBaseCollection<PS.EnterpriseResource, PS.EnterpriseResourceQuery, PS.EnterpriseResourceCollectionMethods> & PS.EnterpriseResourceCollectionMethods;
+	EnterpriseResources(): IBaseCollection<PS.EnterpriseResource, PS.EnterpriseResourceQuery, IBaseExecution & PS.EnterpriseResourceCollectionMethods> & IBaseExecution & PS.EnterpriseResourceCollectionMethods;
 	EnterpriseResources(id: string | number): IBaseQuery<PS.EnterpriseResource, PS.EnterpriseResourceQuery> & PS.EnterpriseResourceCollections & PS.EnterpriseResourceMethods;
-	EventHandlers(): IBaseCollection<PS.EventHandler, PS.EventHandlerQuery, PS.EventHandlerCollectionMethods> & PS.EventHandlerCollectionMethods;
+	EventHandlers(): IBaseCollection<PS.EventHandler, PS.EventHandlerQuery, IBaseExecution & PS.EventHandlerCollectionMethods> & IBaseExecution & PS.EventHandlerCollectionMethods;
 	EventHandlers(id: string | number): IBaseQuery<PS.EventHandler, PS.EventHandlerQuery> & PS.EventHandlerCollections & PS.EventHandlerMethods;
 	Events(): IBaseCollection<PS.Event>;
 	Events(id: string | number): IBaseQuery<PS.Event> & PS.EventCollections;
-	LookupTables(): IBaseCollection<PS.LookupTable, PS.LookupTableQuery, PS.LookupTableCollectionMethods> & PS.LookupTableCollectionMethods;
+	LookupTables(): IBaseCollection<PS.LookupTable, PS.LookupTableQuery, IBaseExecution & PS.LookupTableCollectionMethods> & IBaseExecution & PS.LookupTableCollectionMethods;
 	LookupTables(id: string | number): IBaseQuery<PS.LookupTable, PS.LookupTableQuery> & PS.LookupTableCollections & PS.LookupTableMethods;
-	Phases(): IBaseCollection<PS.Phase, PS.PhaseQuery, PS.PhaseCollectionMethods> & PS.PhaseCollectionMethods;
+	Phases(): IBaseCollection<PS.Phase, PS.PhaseQuery, IBaseExecution & PS.PhaseCollectionMethods> & IBaseExecution & PS.PhaseCollectionMethods;
 	Phases(id: string | number): IBaseQuery<PS.Phase, PS.PhaseQuery> & PS.PhaseCollections & PS.PhaseMethods;
-	ProjectDetailPages(): IBaseCollection<PS.ProjectDetailPage, PS.ProjectDetailPageQuery, PS.ProjectDetailPageCollectionMethods> & PS.ProjectDetailPageCollectionMethods;
+	ProjectDetailPages(): IBaseCollection<PS.ProjectDetailPage, PS.ProjectDetailPageQuery, IBaseExecution & PS.ProjectDetailPageCollectionMethods> & IBaseExecution & PS.ProjectDetailPageCollectionMethods;
 	ProjectDetailPages(id: string | number): IBaseQuery<PS.ProjectDetailPage, PS.ProjectDetailPageQuery> & PS.ProjectDetailPageCollections;
-	Projects(): IBaseCollection<PS.PublishedProject, PS.PublishedProjectQuery, PS.PublishedProjectCollectionMethods> & PS.PublishedProjectCollectionMethods;
+	Projects(): IBaseCollection<PS.PublishedProject, PS.PublishedProjectQuery, IBaseExecution & PS.PublishedProjectCollectionMethods> & IBaseExecution & PS.PublishedProjectCollectionMethods;
 	Projects(id: string | number): IBaseQuery<PS.PublishedProject, PS.PublishedProjectQuery> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
-	ProjectWorkflowInstances(): IBaseCollection<PS.ProjectWorkflowInstance, PS.ProjectWorkflowInstanceQuery, PS.ProjectWorkflowInstanceCollectionMethods> & PS.ProjectWorkflowInstanceCollectionMethods;
+	ProjectWorkflowInstances(): IBaseCollection<PS.ProjectWorkflowInstance, PS.ProjectWorkflowInstanceQuery, IBaseExecution & PS.ProjectWorkflowInstanceCollectionMethods> & IBaseExecution & PS.ProjectWorkflowInstanceCollectionMethods;
 	ProjectWorkflowInstances(id: string | number): IBaseQuery<PS.ProjectWorkflowInstance, PS.ProjectWorkflowInstanceQuery> & PS.ProjectWorkflowInstanceCollections & PS.ProjectWorkflowInstanceMethods;
-	Stages(): IBaseCollection<PS.Stage, PS.StageQuery, PS.StageCollectionMethods> & PS.StageCollectionMethods;
+	Stages(): IBaseCollection<PS.Stage, PS.StageQuery, IBaseExecution & PS.StageCollectionMethods> & IBaseExecution & PS.StageCollectionMethods;
 	Stages(id: string | number): IBaseQuery<PS.Stage, PS.StageQuery> & PS.StageCollections & PS.StageMethods;
-	TimeSheetPeriods(): IBaseCollection<PS.TimeSheetPeriod, PS.TimeSheetPeriodQuery, PS.TimeSheetPeriodCollectionMethods> & PS.TimeSheetPeriodCollectionMethods;
+	TimeSheetPeriods(): IBaseCollection<PS.TimeSheetPeriod, PS.TimeSheetPeriodQuery, IBaseExecution & PS.TimeSheetPeriodCollectionMethods> & IBaseExecution & PS.TimeSheetPeriodCollectionMethods;
 	TimeSheetPeriods(id: string | number): IBaseQuery<PS.TimeSheetPeriod, PS.TimeSheetPeriodQuery> & PS.TimeSheetPeriodCollections & PS.TimeSheetPeriodMethods;
 	UserPermissions(): IBaseCollection<PS.UserPermission>;
 	UserPermissions(id: string | number): IBaseQuery<PS.UserPermission> & PS.UserPermissionCollections;
@@ -4890,7 +4890,7 @@ export interface TimeSheetPropMethods {
 * TimeSheetCollections
 **********************************************/
 export interface TimeSheetCollections extends TimeSheetPropMethods {
-	Lines(): IBaseCollection<PS.TimeSheetLine, PS.TimeSheetLineQuery, PS.TimeSheetLineCollectionMethods> & PS.TimeSheetLineCollectionMethods;
+	Lines(): IBaseCollection<PS.TimeSheetLine, PS.TimeSheetLineQuery, IBaseExecution & PS.TimeSheetLineCollectionMethods> & IBaseExecution & PS.TimeSheetLineCollectionMethods;
 	Lines(id: string | number): IBaseQuery<PS.TimeSheetLine, PS.TimeSheetLineQuery> & PS.TimeSheetLineCollections & PS.TimeSheetLineMethods;
 }
 
@@ -5250,7 +5250,7 @@ export interface WorkflowDesignerPropMethods {
 * WorkflowDesignerCollections
 **********************************************/
 export interface WorkflowDesignerCollections extends WorkflowDesignerPropMethods {
-	Fields(): IBaseCollection<PS.WorkflowDesignerField, PS.WorkflowDesignerFieldQuery, PS.WorkflowDesignerFieldCollectionMethods> & PS.WorkflowDesignerFieldCollectionMethods;
+	Fields(): IBaseCollection<PS.WorkflowDesignerField, PS.WorkflowDesignerFieldQuery, IBaseExecution & PS.WorkflowDesignerFieldCollectionMethods> & IBaseExecution & PS.WorkflowDesignerFieldCollectionMethods;
 	Fields(id: string | number): IBaseQuery<PS.WorkflowDesignerField, PS.WorkflowDesignerFieldQuery> & PS.WorkflowDesignerFieldCollections;
 }
 
@@ -5512,7 +5512,7 @@ export interface ResourcePlanPropMethods {
 * ResourcePlanCollections
 **********************************************/
 export interface ResourcePlanCollections extends ResourcePlanPropMethods {
-	Assignments(): IBaseCollection<PS.PlanAssignment, PS.PlanAssignmentQuery, PS.PlanAssignmentCollectionMethods> & PS.PlanAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.PlanAssignment, PS.PlanAssignmentQuery, IBaseExecution & PS.PlanAssignmentCollectionMethods> & IBaseExecution & PS.PlanAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.PlanAssignment, PS.PlanAssignmentQuery> & PS.PlanAssignmentCollections & PS.PlanAssignmentMethods;
 }
 
@@ -5658,7 +5658,7 @@ export interface TimePhasePropMethods {
 * TimePhaseCollections
 **********************************************/
 export interface TimePhaseCollections extends TimePhasePropMethods {
-	Assignments(): IBaseCollection<PS.StatusAssignment, PS.StatusAssignmentQuery, PS.StatusAssignmentCollectionMethods> & PS.StatusAssignmentCollectionMethods;
+	Assignments(): IBaseCollection<PS.StatusAssignment, PS.StatusAssignmentQuery, IBaseExecution & PS.StatusAssignmentCollectionMethods> & IBaseExecution & PS.StatusAssignmentCollectionMethods;
 	Assignments(id: string | number): IBaseQuery<PS.StatusAssignment, PS.StatusAssignmentQuery> & PS.StatusAssignmentCollections & PS.StatusAssignmentMethods;
 }
 
