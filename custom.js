@@ -2,6 +2,17 @@
  * Custom Methods
  */
 module.exports = {
+    // Search
+    "Microsoft.Office.Server.Search.REST.SearchService": [
+        {
+            name: "searchquery",
+            returnType: "Microsoft.Office.Server.Search.REST.SearchResult",
+            params: [
+                { $: { Name: "request", Type: "Microsoft.Office.Server.Search.REST.SearchRequest" } }
+            ]
+        }
+    ],
+
     // Attachments
     "Collection(SP.Attachment)": [
         {

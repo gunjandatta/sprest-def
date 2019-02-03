@@ -77,6 +77,7 @@ export interface SearchServiceMethods {
 	resultspageaddress(): IBaseExecution<string>;
 	searchcenterurl(): IBaseExecution<string>;
 	suggest(querytext?: string, iNumberOfQuerySuggestions?: number, iNumberOfResultSuggestions?: number, iNumberOfPopularResultSuggestions?: number, fPreQuerySuggestions?: boolean, fHitHighlighting?: boolean, fCapitalizeFirstLetters?: boolean, culture?: number, enableStemming?: boolean, showPeopleNameSuggestions?: boolean, enableQueryRules?: boolean, fPrefixMatchAllTerms?: boolean, sourceId?: string, clientType?: string, useOLSQuery?: number, OLSQuerySession?: string, zeroTermSuggestions?: boolean): IBaseExecution<Microsoft.SharePoint.Client.Search.Query.QuerySuggestionResults>;
+	searchquery(request?: Microsoft.Office.Server.Search.REST.SearchRequest): IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
 }
 
 /*********************************************
