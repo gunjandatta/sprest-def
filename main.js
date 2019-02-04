@@ -820,8 +820,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                 // Add the method
                 methods.push([
-                    '\t' + methodInfo.name + ': { ',
-                    argNames.length > 0 ? '\t\targNames: IMapper & [ "' + argNames.join('", "') + '" ],' : '',
+                    '\t' + methodInfo.name + ': IMapper & { ',
+                    argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],' : '',
                     '\t},'
                 ].join('\n'));
             }
