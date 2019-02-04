@@ -429,21 +429,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             rmDir.sync("lib")
         }
 
-        // See if the mapper directory exists
-        if (fs.existsSync("mapper")) {
-            // Delete the directory
-            rmDir.sync("mapper")
-        }
-
         // Create the directory
         fs.mkdir("lib");
-        fs.mkdir("mapper");
 
         // Parse the directories
         for (let dirName in directories) {
             // Create the directories
             createDirectories("lib", dirName);
-            createDirectories("mapper", dirName);
         }
 
         // Copy the base file
@@ -611,6 +603,14 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Set the method type
                                 let methodType = getType(methodInfo.returnType)
 
+                                // Ensure this method isn't being overridden
+                                if (!methodInfo.name.startsWith('\/\/')) {
+                                    // Add the mapper
+                                    let mapperKey = dirName.replace(/\./g, '_') + '_' + name + "_Collection";
+                                    mapper[mapperKey] = mapper[mapperKey] || [];
+                                    mapper[mapperKey].push(methodInfo);
+                                }
+
                                 // See if we are overwriting the type
                                 if (methodInfo.overwrite) {
                                     // Set the type
@@ -658,7 +658,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Ensure this method isn't being overridden
                                 if (!methodName.startsWith('\/\/')) {
                                     // Add the mapper
-                                    let mapperKey = name.toLowerCase();
+                                    let mapperKey = dirName.replace(/\./g, '_') + '_' + name;
                                     mapper[mapperKey] = mapper[mapperKey] || [];
                                     mapper[mapperKey].push(methodInfo);
                                 }
@@ -786,6 +786,15 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             // Create the index file
             fs.appendFileSync(path + "/index.d.ts", '\n' + filesIndex.join('\n'));
 
+            // Ensure api data exists
+            if (api.length > 0) {
+                // Remove duplicates from the import array
+                apiImports = apiImports.filter(function (item, pos) { return apiImports.indexOf(item) == pos; });
+
+                // Create the api file
+                fs.appendFileSync("lib/api.d.ts", apiImports.join('\n') + '\n\n' + api.join('\n'));
+            }
+
             // Parse the mapper
             let mapperContent = [];
             for (let mapperKey in mapper) {
@@ -793,7 +802,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                 // Add the header
                 methods.push('\/* ' + mapperKey + ' *\/');
-                methods.push('export const ' + mapperKey + ' = {');
+                methods.push('export interface ' + mapperKey + ' {');
 
                 // Parse the methods
                 for (let i = 0; i < mapper[mapperKey].length; i++) {
@@ -811,7 +820,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     // Add the method
                     methods.push([
                         '\t' + methodInfo.name + ': { ',
-                        argNames ? '\t\targNames: [ "' + argNames.join('", "') + '" ],' : '',
+                        argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],' : '',
                         '\t},'
                     ].join('\n'));
                 }
@@ -823,17 +832,8 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 mapperContent.push(methods.join('\n'));
             }
 
-            // Ensure data exists
-            if (api.length > 0) {
-                // Remove duplicates from the import array
-                apiImports = apiImports.filter(function (item, pos) { return apiImports.indexOf(item) == pos; });
-
-                // Create the api file
-                fs.appendFileSync("lib/api.d.ts", apiImports.join('\n') + '\n\n' + api.join('\n'));
-            }
-
             // Create the index file
-            fs.appendFileSync('mapper/' + dirName.replace(/\./g, '/') + '/mapper.ts', '\n' + mapperContent.join('\n'));
+            fs.appendFileSync('lib/mapper.ts', '\n' + mapperContent.join('\n'));
         }
 
         // Log
