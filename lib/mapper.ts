@@ -3,7 +3,7 @@ import { IMapper } from "./base";
 /* SP_Site */
 export interface SP_Site {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	createCopyJob: IMapper & {
 		argNames: [ "exportObjectUris", "destinationUri", "options" ],
 	},
@@ -221,7 +221,7 @@ export interface SP_User_Collection {
 /* SP_User */
 export interface SP_User {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	add: IMapper & {
 		argNames: [ "properties" ],
 	},
@@ -253,7 +253,7 @@ export interface SP_Alert_Collection {
 /* SP_Alert */
 export interface SP_Alert {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	updateAlert: IMapper & {
 
 	},
@@ -262,7 +262,7 @@ export interface SP_Alert {
 /* SP_SecurableObject */
 export interface SP_SecurableObject {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
@@ -288,7 +288,7 @@ export interface SP_RoleAssignment_Collection {
 /* SP_RoleAssignment */
 export interface SP_RoleAssignment {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -348,7 +348,7 @@ export interface SP_ListItem_Collection {
 /* SP_ListItem */
 export interface SP_ListItem {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
@@ -471,7 +471,7 @@ export interface SP_ContentType_Collection {
 /* SP_ContentType */
 export interface SP_ContentType {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -516,7 +516,7 @@ export interface SP_FieldLink {
 /* SP_Field */
 export interface SP_Field {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -592,7 +592,7 @@ export interface SP_File_Collection {
 /* SP_File */
 export interface SP_File {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	addActivities: IMapper & {
 		argNames: [ "activities" ],
 	},
@@ -743,7 +743,7 @@ export interface SP_FileVersion_Collection {
 /* SP_FileVersion */
 export interface SP_FileVersion {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -775,7 +775,7 @@ export interface SP_Folder_Collection {
 /* SP_Folder */
 export interface SP_Folder {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	addSubFolder: IMapper & {
 		argNames: [ "leafName" ],
 	},
@@ -808,7 +808,7 @@ export interface SP_Folder {
 /* SP_List */
 export interface SP_List {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
@@ -998,7 +998,7 @@ export interface SP_View_Collection {
 /* SP_View */
 export interface SP_View {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	addToSpotlight: IMapper & {
 		argNames: [ "itemId", "folderPath", "afterItemId" ],
 	},
@@ -1069,7 +1069,7 @@ export interface SP_Web_Collection {
 /* SP_Web */
 export interface SP_Web {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
@@ -1335,7 +1335,7 @@ export interface SP_Group_Collection {
 /* SP_Group */
 export interface SP_Group {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	setUserAsOwner: IMapper & {
 		argNames: [ "ownerId" ],
 	},
@@ -1379,7 +1379,7 @@ export interface SP_ListTemplate {
 /* SP_Navigation */
 export interface SP_Navigation {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getNodeById: IMapper & {
 		argNames: [ "id" ],
 	},
@@ -1402,7 +1402,7 @@ export interface SP_NavigationNode_Collection {
 /* SP_NavigationNode */
 export interface SP_NavigationNode {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -1433,7 +1433,7 @@ export interface SP_PushNotificationSubscriber_Collection {
 /* SP_PushNotificationSubscriber */
 export interface SP_PushNotificationSubscriber {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	update: IMapper & {
 
 	},
@@ -1471,7 +1471,7 @@ export interface SP_RecycleBinItem_Collection {
 /* SP_RecycleBinItem */
 export interface SP_RecycleBinItem {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -1486,7 +1486,7 @@ export interface SP_RecycleBinItem {
 /* SP_RegionalSettings */
 export interface SP_RegionalSettings {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	update: IMapper & {
 
 	},
@@ -1547,7 +1547,7 @@ export interface SP_UserCustomAction_Collection {
 /* SP_UserCustomAction */
 export interface SP_UserCustomAction {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -1567,7 +1567,7 @@ export interface SP_ListItemVersion_Collection {
 /* SP_ListItemVersion */
 export interface SP_ListItemVersion {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -1627,7 +1627,7 @@ export interface SP_AppInstance {
 /* SP_ObjectSharingInformation */
 export interface SP_ObjectSharingInformation {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getSharedWithUsers: IMapper & {
 
 	},
@@ -1644,7 +1644,7 @@ export interface SP_CheckedOutFile_Collection {
 /* SP_CheckedOutFile */
 export interface SP_CheckedOutFile {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	takeOverCheckOut: IMapper & {
 
 	},
@@ -1653,7 +1653,7 @@ export interface SP_CheckedOutFile {
 /* SP_RequestContext */
 export interface SP_RequestContext {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getRemoteContext: IMapper & {
 
 	},
@@ -2006,7 +2006,7 @@ export interface SP_RelatedField_Collection {
 /* SP_RemoteWeb */
 export interface SP_RemoteWeb {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getFileByServerRelativePath: IMapper & {
 		argNames: [ "serverRelatvieFilePath" ],
 	},
@@ -3054,7 +3054,7 @@ export interface PS_CustomField_Collection {
 /* PS_CustomField */
 export interface PS_CustomField {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3108,7 +3108,7 @@ export interface PS_LookupTable_Collection {
 /* PS_LookupTable */
 export interface PS_LookupTable {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	addMask: IMapper & {
 		argNames: [ "mask" ],
 	},
@@ -3123,7 +3123,7 @@ export interface PS_LookupTable {
 /* PS_CalendarException */
 export interface PS_CalendarException {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3160,7 +3160,7 @@ export interface PS_Calendar_Collection {
 /* PS_Calendar */
 export interface PS_Calendar {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	copyTo: IMapper & {
 		argNames: [ "name" ],
 	},
@@ -3180,7 +3180,7 @@ export interface PS_BaseCalendarException {
 /* PS_DraftAssignment */
 export interface PS_DraftAssignment {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3220,7 +3220,7 @@ export interface PS_EnterpriseResource_Collection {
 /* PS_EnterpriseResource */
 export interface PS_EnterpriseResource {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3258,7 +3258,7 @@ export interface PS_StatusAssignment_Collection {
 /* PS_StatusAssignment */
 export interface PS_StatusAssignment {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3278,7 +3278,7 @@ export interface PS_StatusAssignmentHistoryLine_Collection {
 /* PS_Project */
 export interface PS_Project {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getResourcePlanByUrl: IMapper & {
 		argNames: [ "start", "end", "scale" ],
 	},
@@ -3349,7 +3349,7 @@ export interface PS_EnterpriseProjectType_Collection {
 /* PS_EnterpriseProjectType */
 export interface PS_EnterpriseProjectType {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	addDepartment: IMapper & {
 		argNames: [ "departmentValueGuid" ],
 	},
@@ -3395,7 +3395,7 @@ export interface PS_Phase_Collection {
 /* PS_Phase */
 export interface PS_Phase {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3421,7 +3421,7 @@ export interface PS_Stage_Collection {
 /* PS_Stage */
 export interface PS_Stage {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3444,7 +3444,7 @@ export interface PS_StageCustomField_Collection {
 /* PS_StageCustomField */
 export interface PS_StageCustomField {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3467,7 +3467,7 @@ export interface PS_StageDetailPage_Collection {
 /* PS_StageDetailPage */
 export interface PS_StageDetailPage {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3496,7 +3496,7 @@ export interface PS_PublishedProject_Collection {
 /* PS_PublishedProject */
 export interface PS_PublishedProject {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getResourcePlanByUrl: IMapper & {
 		argNames: [ "start", "end", "scale" ],
 	},
@@ -3562,7 +3562,7 @@ export interface PS_PublishedTask_Collection {
 /* PS_PublishedTask */
 export interface PS_PublishedTask {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	addTaskPlanLink: IMapper & {
 		argNames: [ "parameters" ],
 	},
@@ -3615,7 +3615,7 @@ export interface PS_TaskPlanLink {
 /* PS_DraftProject */
 export interface PS_DraftProject {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getResourcePlanByUrl: IMapper & {
 		argNames: [ "start", "end", "scale" ],
 	},
@@ -3654,7 +3654,7 @@ export interface PS_DraftProject {
 /* PS_DraftProjectResource */
 export interface PS_DraftProjectResource {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3680,7 +3680,7 @@ export interface PS_DraftProjectResource_Collection {
 /* PS_DraftTaskLink */
 export interface PS_DraftTaskLink {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3703,7 +3703,7 @@ export interface PS_DraftTaskLink_Collection {
 /* PS_DraftTask */
 export interface PS_DraftTask {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3734,7 +3734,7 @@ export interface PS_ProjectWorkflowInstance_Collection {
 /* PS_ProjectWorkflowInstance */
 export interface PS_ProjectWorkflowInstance {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	restartWorkflow: IMapper & {
 
 	},
@@ -3757,7 +3757,7 @@ export interface PS_QueueJob_Collection {
 /* PS_QueueJob */
 export interface PS_QueueJob {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	cancel: IMapper & {
 
 	},
@@ -3841,7 +3841,7 @@ export interface PS_EventHandler_Collection {
 /* PS_EventHandler */
 export interface PS_EventHandler {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3882,7 +3882,7 @@ export interface PS_LookupNumber {
 /* PS_LookupText */
 export interface PS_LookupText {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3905,7 +3905,7 @@ export interface PS_PlanAssignment_Collection {
 /* PS_PlanAssignment */
 export interface PS_PlanAssignment {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3933,7 +3933,7 @@ export interface PS_ProjectEngagementTimephasedPeriod_Collection {
 /* PS_ProjectServer */
 export interface PS_ProjectServer {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	getDeletedPublishedAssignments: IMapper & {
 		argNames: [ "deletedDate" ],
 	},
@@ -3956,7 +3956,7 @@ export interface PS_TimeSheetPeriod_Collection {
 /* PS_TimeSheetPeriod */
 export interface PS_TimeSheetPeriod {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	createTimeSheet: IMapper & {
 
 	},
@@ -3965,7 +3965,7 @@ export interface PS_TimeSheetPeriod {
 /* PS_TimeSheet */
 export interface PS_TimeSheet {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -3997,7 +3997,7 @@ export interface PS_TimeSheetLine_Collection {
 /* PS_TimeSheetLine */
 export interface PS_TimeSheetLine {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},
@@ -4132,7 +4132,7 @@ export interface PS_ResourceEngagementTimephasedPeriod_Collection {
 /* PS_ResourcePlan */
 export interface PS_ResourcePlan {
 	properties?: Array<string>;
-	query: { argNames: ["oData"] },
+	query: IMapper & { argNames: ["oData"] },
 	deleteObject: IMapper & {
 
 	},

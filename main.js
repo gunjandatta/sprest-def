@@ -811,7 +811,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             // See if this type is queryable
             if (hasCollections[mapperKey.replace('_', '.')]) {
                 // Add the query method
-                methods.push('\tquery: { argNames: ["oData"] },')
+                methods.push('\tquery: IMapper & { argNames: ["oData"] },')
             }
 
             // Parse the methods
