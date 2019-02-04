@@ -453,12 +453,12 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         // Parse the directories
         // NameSpace -> Collection -> Interface -> Properties
         // Directory -> File
+        let mapper = {};
         for (let dirName in directories) {
             let api = [];
             let apiImports = [];
             let files = {};
             let filesIndex = [];
-            let mapper = {};
 
             // Set the path
             let path = "lib/" + dirName.replace(/\./g, '/');
@@ -794,47 +794,47 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 // Create the api file
                 fs.appendFileSync("lib/api.d.ts", apiImports.join('\n') + '\n\n' + api.join('\n'));
             }
+        }
 
-            // Parse the mapper
-            let mapperContent = [];
-            for (let mapperKey in mapper) {
-                let methods = [];
+        // Parse the mapper
+        let mapperContent = [];
+        for (let mapperKey in mapper) {
+            let methods = [];
 
-                // Add the header
-                methods.push('\/* ' + mapperKey + ' *\/');
-                methods.push('export interface ' + mapperKey + ' {');
+            // Add the header
+            methods.push('\/* ' + mapperKey + ' *\/');
+            methods.push('export interface ' + mapperKey + ' {');
 
-                // Parse the methods
-                for (let i = 0; i < mapper[mapperKey].length; i++) {
-                    let argNames = [];
-                    let methodInfo = mapper[mapperKey][i];
+            // Parse the methods
+            for (let i = 0; i < mapper[mapperKey].length; i++) {
+                let argNames = [];
+                let methodInfo = mapper[mapperKey][i];
 
-                    // Parse the parameters
-                    for (let j = 0; j < methodInfo.params.length; j++) {
-                        let param = methodInfo.params[j];
+                // Parse the parameters
+                for (let j = 0; j < methodInfo.params.length; j++) {
+                    let param = methodInfo.params[j];
 
-                        // Append the argument
-                        argNames.push(param.$.Name);
-                    }
-
-                    // Add the method
-                    methods.push([
-                        '\t' + methodInfo.name + ': { ',
-                        argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],' : '',
-                        '\t},'
-                    ].join('\n'));
+                    // Append the argument
+                    argNames.push(param.$.Name);
                 }
 
-                // Add the closing tag
-                methods.push('};\n');
-
-                // Generate the interface
-                mapperContent.push(methods.join('\n'));
+                // Add the method
+                methods.push([
+                    '\t' + methodInfo.name + ': { ',
+                    argNames.length > 0 ? '\t\targNames: IMapper & [ "' + argNames.join('", "') + '" ],' : '',
+                    '\t},'
+                ].join('\n'));
             }
 
-            // Create the index file
-            fs.appendFileSync('lib/mapper.ts', '\n' + mapperContent.join('\n'));
+            // Add the closing tag
+            methods.push('};\n');
+
+            // Generate the interface
+            mapperContent.push(methods.join('\n'));
         }
+
+        // Create the index file
+        fs.appendFileSync('lib/mapper.ts', 'import { IMapper } from "./base";\n\n' + mapperContent.join('\n'));
 
         // Log
         console.log("Library generated in './lib'");

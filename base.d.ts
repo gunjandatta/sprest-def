@@ -117,6 +117,19 @@ export interface IBaseResults<Type = any> extends IBaseResult {
 export interface IBaseCollection<Type = any, Result = Type, Methods = void> extends IBaseQuery<IBaseResults<Type> & Methods, IBaseResults<Result> & Methods> { }
 
 /**
+ * Mapper
+ */
+export interface IMapper {
+    data?: any;
+    inheritMetadataType?: boolean;
+    metadataType?: any;
+    replaceEndpointFl?: boolean;
+    requestType?: number;
+    requestMethod?: string;
+    returnType?: string;
+}
+
+/**
  * Method Information Settings
  */
 export interface IMethodInfo {
