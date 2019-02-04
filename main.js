@@ -3,6 +3,7 @@ let parser = require("xml2js").parseString;
 let rmDir = require("rimraf");
 let custom = require("./custom");
 
+// Method to analyze the interfaces
 function analyzeCollections(directories) {
     let hasCollections = {};
     let hasCollectionMethods = {};
@@ -26,18 +27,6 @@ function analyzeCollections(directories) {
 
     // Return the data
     return { hasCollections, hasCollectionMethods, hasMethods };
-}
-
-function createInterface(name, baseType, variables) {
-    return [
-        '/*********************************************',
-        '* ' + name,
-        '**********************************************/',
-        'export interface ' + name + (baseType ? " extends " + baseType : "") + ' {',
-        variables,
-        '}',
-        ''
-    ].join('\n');
 }
 
 // Parse the methods and apply the methods to the directories object
@@ -106,9 +95,7 @@ function applyMethodsToDirectories(methods, directories) {
 }
 
 // Recursively create the directories and index files from the namespace
-function createDirectories(namespace) {
-    let path = "lib";
-
+function createDirectories(path, namespace) {
     // See if we need to create directories
     if (namespace.indexOf('.') > 0) {
         // Get the sub directories
@@ -136,6 +123,19 @@ function createDirectories(namespace) {
     // Return the path
     return path;
 };
+
+// Creates the interface
+function createInterface(name, baseType, variables) {
+    return [
+        '/*********************************************',
+        '* ' + name,
+        '**********************************************/',
+        'export interface ' + name + (baseType ? " extends " + baseType : "") + ' {',
+        variables,
+        '}',
+        ''
+    ].join('\n');
+}
 
 // Generates the base collection interface
 function generateBaseCollection(methodType, hasCollections, hasCollectionMethods) {
@@ -283,6 +283,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             if (ns) {
                 // Set the directory name
                 directories[ns] = directories[ns] || {};
+                directories[ns]._api = [];
             } else { continue; }
 
             // Parse the schema
@@ -304,8 +305,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                         // See if this is an association
                         if (isAssociation) {
-                            var k = 0;
-
                             // Parse the end points
                             let endPoints = interface.End || [];
                             for (let k = 0; k < endPoints.length; k++) {
@@ -333,6 +332,13 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             let functions = interface.FunctionImport || [];
                             for (let k = 0; k < functions.length; k++) {
                                 let functionInfo = functions[k];
+
+                                // See if this is an endpoint
+                                if (functionInfo.$.IsComposable && functionInfo.$.IsBindable != "true") {
+                                    // Add the endpoint
+                                    directories[ns]._api.push(functionInfo.$);
+                                    continue;
+                                }
 
                                 // See if this function has the valid information
                                 let isValid = functionInfo.Parameter ? functionInfo.Parameter[0] : null;
@@ -419,17 +425,25 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
         // See if the lib directory exists
         if (fs.existsSync("lib")) {
-            // Delete the lib directory
+            // Delete the directory
             rmDir.sync("lib")
+        }
+
+        // See if the mapper directory exists
+        if (fs.existsSync("mapper")) {
+            // Delete the directory
+            rmDir.sync("mapper")
         }
 
         // Create the directory
         fs.mkdir("lib");
+        fs.mkdir("mapper");
 
         // Parse the directories
         for (let dirName in directories) {
             // Create the directories
-            createDirectories(dirName);
+            createDirectories("lib", dirName);
+            createDirectories("mapper", dirName);
         }
 
         // Copy the base file
@@ -448,8 +462,11 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         // NameSpace -> Collection -> Interface -> Properties
         // Directory -> File
         for (let dirName in directories) {
+            let api = [];
+            let apiImports = [];
             let files = {};
             let filesIndex = [];
+            let mapper = {};
 
             // Set the path
             let path = "lib/" + dirName.replace(/\./g, '/');
@@ -458,6 +475,56 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             for (let filename in directories[dirName]) {
                 let content = [];
                 let fileImports = [];
+
+                // See if this is the API information
+                if (filename == "_api") {
+                    let apiInfo = directories[dirName]._api;
+
+                    // Ensure data exists
+                    if (apiInfo.length == 0) { continue; }
+
+                    // Create the interface
+                    api.push('/** ' + dirName + ' */');
+                    api.push('export interface ' + dirName + '_API {');
+
+                    // Parse the endpoints
+                    for (let i = 0; i < apiInfo.length; i++) {
+                        let endpoint = apiInfo[i];
+
+                        // Validate the endpoint
+                        if (endpoint.Name.indexOf('_') > 0) { continue; }
+
+                        // Get the lib containing the type
+                        let lib = endpoint.ReturnType.split('.')[0];
+
+                        // See if this is a collection
+                        if (/^Collection\(/.test(lib)) {
+                            // Get the type
+                            lib = lib.replace(/^Collection\(/, '');
+
+                            // Update the return type
+                            endpoint.ReturnType = endpoint.ReturnType.replace(/^Collection\(/, '').replace(/\)$/, '') + "Collections";
+                        }
+                        // Else, see if methods exist
+                        else if (hasMethods[endpoint.ReturnType]) {
+                            // Update the return type
+                            let idx = endpoint.ReturnType.lastIndexOf('.');
+                            endpoint.ReturnType = endpoint.ReturnType.substr(0, idx) + '.I' + endpoint.ReturnType.substr(idx + 1);
+                        }
+
+                        // Update the imports
+                        apiImports.push('import { ' + lib + ' } from ".";');
+
+                        // Add the endpoint
+                        api.push('\t' + endpoint.Name + ': ' + endpoint.ReturnType + ';');
+                    }
+
+                    // End the interface
+                    api.push('}');
+
+                    // Continue the loop
+                    continue;
+                }
 
                 // Update the references
                 updateReferences(fileImports, dirName, "IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults.");
@@ -588,6 +655,14 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     params.push(param.Name + "?: " + paramType);
                                 }
 
+                                // Ensure this method isn't being overridden
+                                if (!methodName.startsWith('\/\/')) {
+                                    // Add the mapper
+                                    let mapperKey = name.toLowerCase();
+                                    mapper[mapperKey] = mapper[mapperKey] || [];
+                                    mapper[mapperKey].push(methodInfo);
+                                }
+
                                 // See if we are not overwriting the type
                                 let methodType = methodInfo.returnType;
                                 if (methodInfo.overwrite != true) {
@@ -710,6 +785,55 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
             // Create the index file
             fs.appendFileSync(path + "/index.d.ts", '\n' + filesIndex.join('\n'));
+
+            // Parse the mapper
+            let mapperContent = [];
+            for (let mapperKey in mapper) {
+                let methods = [];
+
+                // Add the header
+                methods.push('\/* ' + mapperKey + ' *\/');
+                methods.push('export const ' + mapperKey + ' = {');
+
+                // Parse the methods
+                for (let i = 0; i < mapper[mapperKey].length; i++) {
+                    let argNames = [];
+                    let methodInfo = mapper[mapperKey][i];
+
+                    // Parse the parameters
+                    for (let j = 0; j < methodInfo.params.length; j++) {
+                        let param = methodInfo.params[j];
+
+                        // Append the argument
+                        argNames.push(param.$.Name);
+                    }
+
+                    // Add the method
+                    methods.push([
+                        '\t' + methodInfo.name + ': { ',
+                        argNames ? '\t\targNames: [ "' + argNames.join('", "') + '" ],' : '',
+                        '\t},'
+                    ].join('\n'));
+                }
+
+                // Add the closing tag
+                methods.push('};\n');
+
+                // Generate the interface
+                mapperContent.push(methods.join('\n'));
+            }
+
+            // Ensure data exists
+            if (api.length > 0) {
+                // Remove duplicates from the import array
+                apiImports = apiImports.filter(function (item, pos) { return apiImports.indexOf(item) == pos; });
+
+                // Create the api file
+                fs.appendFileSync("lib/api.d.ts", apiImports.join('\n') + '\n\n' + api.join('\n'));
+            }
+
+            // Create the index file
+            fs.appendFileSync('mapper/' + dirName.replace(/\./g, '/') + '/mapper.ts', '\n' + mapperContent.join('\n'));
         }
 
         // Log
