@@ -2,6044 +2,6461 @@ import { IMapper } from "./base";
 
 /* SP_Site */
 export interface SP_Site {
-	createCopyJob: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	createCopyJob: IMapper & {
 		argNames: [ "exportObjectUris", "destinationUri", "options" ],
 	},
-	createCopyJobs: IMapper & { 
+	createCopyJobs: IMapper & {
 		argNames: [ "exportObjectUris", "destinationUri", "options" ],
 	},
-	createMigrationIngestionJob: IMapper & { 
+	createMigrationIngestionJob: IMapper & {
 		argNames: [ "gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri", "ingestionTaskKey" ],
 	},
-	createMigrationJob: IMapper & { 
+	createMigrationJob: IMapper & {
 		argNames: [ "gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri" ],
 	},
-	createMigrationJobEncrypted: IMapper & { 
+	createMigrationJobEncrypted: IMapper & {
 		argNames: [ "gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri", "options" ],
 	},
-	createPreviewSPSite: IMapper & { 
+	createPreviewSPSite: IMapper & {
 		argNames: [ "upgrade", "sendemail" ],
 	},
-	deleteMigrationJob: IMapper & { 
+	deleteMigrationJob: IMapper & {
 		argNames: [ "id" ],
 	},
-	extendUpgradeReminderDate: IMapper & { 
+	extendUpgradeReminderDate: IMapper & {
 
 	},
-	getBringYourOwnKeySiteStatus: IMapper & { 
+	getBringYourOwnKeySiteStatus: IMapper & {
 
 	},
-	getBringYourOwnKeyTenantStatus: IMapper & { 
+	getBringYourOwnKeyTenantStatus: IMapper & {
 
 	},
-	getCatalog: IMapper & { 
+	getCatalog: IMapper & {
 		argNames: [ "typeCatalog" ],
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "query" ],
 	},
-	getCopyJobProgress: IMapper & { 
+	getCopyJobProgress: IMapper & {
 		argNames: [ "copyJobInfo" ],
 	},
-	getHubSiteJoinApprovalCorrelationId: IMapper & { 
+	getHubSiteJoinApprovalCorrelationId: IMapper & {
 
 	},
-	getMigrationJobStatus: IMapper & { 
+	getMigrationJobStatus: IMapper & {
 		argNames: [ "id" ],
 	},
-	getMigrationStatus: IMapper & { 
+	getMigrationStatus: IMapper & {
 
 	},
-	getRecycleBinItems: IMapper & { 
+	getRecycleBinItems: IMapper & {
 		argNames: [ "pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState" ],
 	},
-	getWebPath: IMapper & { 
+	getWebPath: IMapper & {
 		argNames: [ "siteId", "webId" ],
 	},
-	getWebTemplates: IMapper & { 
+	getWebTemplates: IMapper & {
 		argNames: [ "LCID", "overrideCompatLevel" ],
 	},
-	invalidate: IMapper & { 
+	invalidate: IMapper & {
 
 	},
-	joinHubSite: IMapper & { 
+	joinHubSite: IMapper & {
 		argNames: [ "hubSiteId", "approvalToken", "approvalCorrelationId" ],
 	},
-	makeHubSite: IMapper & { 
+	makeHubSite: IMapper & {
 
 	},
-	multiGeoCopyJob: IMapper & { 
+	multiGeoCopyJob: IMapper & {
 		argNames: [ "jobId", "userId", "binaryPayload" ],
 	},
-	needsUpgradeByType: IMapper & { 
+	needsUpgradeByType: IMapper & {
 		argNames: [ "versionUpgrade", "recursive" ],
 	},
-	onboardTenantForBringYourOwnKey: IMapper & { 
+	onboardTenantForBringYourOwnKey: IMapper & {
 		argNames: [ "keyInfo" ],
 	},
-	onHubSiteJoinRequestApproved: IMapper & { 
+	onHubSiteJoinRequestApproved: IMapper & {
 		argNames: [ "joiningSiteId" ],
 	},
-	onHubSiteJoinRequestCanceled: IMapper & { 
+	onHubSiteJoinRequestCanceled: IMapper & {
 		argNames: [ "approvalCorrelationId" ],
 	},
-	onHubSiteJoinRequestStarted: IMapper & { 
+	onHubSiteJoinRequestStarted: IMapper & {
 		argNames: [ "approvalCorrelationId" ],
 	},
-	openWeb: IMapper & { 
+	openWeb: IMapper & {
 		argNames: [ "strUrl" ],
 	},
-	openWebById: IMapper & { 
+	openWebById: IMapper & {
 		argNames: [ "gWebId" ],
 	},
-	openWebUsingPath: IMapper & { 
+	openWebUsingPath: IMapper & {
 		argNames: [ "path" ],
 	},
-	provisionMigrationContainers: IMapper & { 
+	provisionMigrationContainers: IMapper & {
 
 	},
-	provisionMigrationQueue: IMapper & { 
+	provisionMigrationQueue: IMapper & {
 
 	},
-	recoverTenantForBringYourOwnKey: IMapper & { 
+	recoverTenantForBringYourOwnKey: IMapper & {
 		argNames: [ "keyInfo" ],
 	},
-	registerHubSite: IMapper & { 
+	registerHubSite: IMapper & {
 		argNames: [ "creationInformation" ],
 	},
-	removeHubSite: IMapper & { 
+	removeHubSite: IMapper & {
 
 	},
-	rollTenantBringYourOwnKey: IMapper & { 
+	rollTenantBringYourOwnKey: IMapper & {
 		argNames: [ "keyType", "keyVaultInfo" ],
 	},
-	runHealthCheck: IMapper & { 
+	runHealthCheck: IMapper & {
 		argNames: [ "ruleId", "bRepair", "bRunAlways" ],
 	},
-	runUpgradeSiteSession: IMapper & { 
+	runUpgradeSiteSession: IMapper & {
 		argNames: [ "versionUpgrade", "queueOnly", "sendEmail" ],
 	},
-	unregisterHubSite: IMapper & { 
+	unregisterHubSite: IMapper & {
 
 	},
-	updateClientObjectModelUseRemoteAPIsPermissionSetting: IMapper & { 
+	updateClientObjectModelUseRemoteAPIsPermissionSetting: IMapper & {
 		argNames: [ "requireUseRemoteAPIs" ],
 	},
-	validateHubSiteJoinApprovalToken: IMapper & { 
+	validateHubSiteJoinApprovalToken: IMapper & {
 		argNames: [ "joiningSiteId", "approvalToken" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_Audit */
 export interface SP_Audit {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* SP_ScriptSafeDomain */
 export interface SP_ScriptSafeDomain {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* SP_ScriptSafeDomain_Collection */
 export interface SP_ScriptSafeDomain_Collection {
-	create: IMapper & { 
+	properties?: Array<string>;
+	create: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByDomainName: IMapper & { 
+	getByDomainName: IMapper & {
 		argNames: [ "domainName" ],
 	},
 };
 
 /* SP_EventReceiverDefinition_Collection */
 export interface SP_EventReceiverDefinition_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "eventReceiverCreationInformation" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "eventReceiverId" ],
 	},
 };
 
 /* SP_EventReceiverDefinition */
 export interface SP_EventReceiverDefinition {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Feature_Collection */
 export interface SP_Feature_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "featureId", "force", "featdefScope" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "featureId" ],
 	},
-	remove: IMapper & { 
+	remove: IMapper & {
 		argNames: [ "featureId", "force" ],
 	},
 };
 
 /* SP_User_Collection */
 export interface SP_User_Collection {
-	getByEmail: IMapper & { 
+	properties?: Array<string>;
+	getByEmail: IMapper & {
 		argNames: [ "emailAddress" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByLoginName: IMapper & { 
+	getByLoginName: IMapper & {
 		argNames: [ "loginName" ],
 	},
-	removeById: IMapper & { 
+	removeById: IMapper & {
 		argNames: [ "id" ],
 	},
-	removeByLoginName: IMapper & { 
+	removeByLoginName: IMapper & {
 		argNames: [ "loginName" ],
 	},
 };
 
 /* SP_User */
 export interface SP_User {
-	add: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	add: IMapper & {
 		argNames: [ "properties" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_Alert_Collection */
 export interface SP_Alert_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "alertCreationInformation" ],
 	},
-	contains: IMapper & { 
+	contains: IMapper & {
 		argNames: [ "idAlert" ],
 	},
-	deleteAlert: IMapper & { 
+	deleteAlert: IMapper & {
 		argNames: [ "idAlert" ],
 	},
-	deleteAlertAtIndex: IMapper & { 
+	deleteAlertAtIndex: IMapper & {
 		argNames: [ "index" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "idAlert" ],
 	},
 };
 
 /* SP_Alert */
 export interface SP_Alert {
-	updateAlert: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	updateAlert: IMapper & {
 
 	},
 };
 
 /* SP_SecurableObject */
 export interface SP_SecurableObject {
-	breakRoleInheritance: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
-	resetRoleInheritance: IMapper & { 
+	resetRoleInheritance: IMapper & {
 
 	},
 };
 
 /* SP_RoleAssignment_Collection */
 export interface SP_RoleAssignment_Collection {
-	addRoleAssignment: IMapper & { 
+	properties?: Array<string>;
+	addRoleAssignment: IMapper & {
 		argNames: [ "principalId", "roleDefId" ],
 	},
-	getByPrincipalId: IMapper & { 
+	getByPrincipalId: IMapper & {
 		argNames: [ "principalId" ],
 	},
-	removeRoleAssignment: IMapper & { 
+	removeRoleAssignment: IMapper & {
 		argNames: [ "principalId", "roleDefId" ],
 	},
 };
 
 /* SP_RoleAssignment */
 export interface SP_RoleAssignment {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_RoleDefinition_Collection */
 export interface SP_RoleDefinition_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	removeAll: IMapper & { 
+	removeAll: IMapper & {
 
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByName: IMapper & { 
+	getByName: IMapper & {
 		argNames: [ "name" ],
 	},
-	getByType: IMapper & { 
+	getByType: IMapper & {
 		argNames: [ "roleType" ],
 	},
-	recreateMissingDefaultRoleDefinitions: IMapper & { 
+	recreateMissingDefaultRoleDefinitions: IMapper & {
 
 	},
 };
 
 /* SP_RoleDefinition */
 export interface SP_RoleDefinition {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_ListItem_Collection */
 export interface SP_ListItem_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "itemId" ],
 	},
-	getByStringId: IMapper & { 
+	getByStringId: IMapper & {
 		argNames: [ "sId" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
 };
 
 /* SP_ListItem */
 export interface SP_ListItem {
-	breakRoleInheritance: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
-	resetRoleInheritance: IMapper & { 
+	resetRoleInheritance: IMapper & {
 
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "query" ],
 	},
-	getHashtags: IMapper & { 
+	getHashtags: IMapper & {
 
 	},
-	getUserEffectivePermissions: IMapper & { 
+	getUserEffectivePermissions: IMapper & {
 		argNames: [ "userName" ],
 	},
-	getWOPIFrameUrl: IMapper & { 
+	getWOPIFrameUrl: IMapper & {
 		argNames: [ "action" ],
 	},
-	mediaServiceUpdate: IMapper & { 
+	mediaServiceUpdate: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	mediaServiceUpdateV2: IMapper & { 
+	mediaServiceUpdateV2: IMapper & {
 		argNames: [ "parameters", "eventFiringEnabled" ],
 	},
-	overridePolicyTip: IMapper & { 
+	overridePolicyTip: IMapper & {
 		argNames: [ "userAction", "justification" ],
 	},
-	parseAndSetFieldValue: IMapper & { 
+	parseAndSetFieldValue: IMapper & {
 		argNames: [ "fieldName", "value" ],
 	},
-	recycle: IMapper & { 
+	recycle: IMapper & {
 
 	},
-	setCommentsDisabled: IMapper & { 
+	setCommentsDisabled: IMapper & {
 		argNames: [ "value" ],
 	},
-	setComplianceTag: IMapper & { 
+	setComplianceTag: IMapper & {
 		argNames: [ "complianceTag", "isTagPolicyHold", "isTagPolicyRecord", "isEventBasedTag", "isTagSuperLock" ],
 	},
-	setComplianceTagWithExplicitMetasUpdate: IMapper & { 
+	setComplianceTagWithExplicitMetasUpdate: IMapper & {
 		argNames: [ "complianceTag", "complianceFlags", "complianceTagWrittenTime", "userEmailAddress" ],
 	},
-	setComplianceTagWithHold: IMapper & { 
+	setComplianceTagWithHold: IMapper & {
 		argNames: [ "complianceTag" ],
 	},
-	setComplianceTagWithMetaInfo: IMapper & { 
+	setComplianceTagWithMetaInfo: IMapper & {
 		argNames: [ "complianceTag", "blockDelete", "blockEdit", "complianceTagWrittenTime", "userEmailAddress", "isTagSuperLock" ],
 	},
-	setComplianceTagWithNoHold: IMapper & { 
+	setComplianceTagWithNoHold: IMapper & {
 		argNames: [ "complianceTag" ],
 	},
-	setComplianceTagWithRecord: IMapper & { 
+	setComplianceTagWithRecord: IMapper & {
 		argNames: [ "complianceTag" ],
 	},
-	systemUpdate: IMapper & { 
+	systemUpdate: IMapper & {
 
 	},
-	updateEx: IMapper & { 
+	updateEx: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	updateHashtags: IMapper & { 
+	updateHashtags: IMapper & {
 		argNames: [ "hashtagsToAdd", "hashtagsToRemove" ],
 	},
-	updateOverwriteVersion: IMapper & { 
+	updateOverwriteVersion: IMapper & {
 
 	},
-	validateUpdateListItem: IMapper & { 
+	validateUpdateListItem: IMapper & {
 		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_Attachment */
 export interface SP_Attachment {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	recycleObject: IMapper & { 
+	recycleObject: IMapper & {
 
 	},
 };
 
 /* SP_Attachment_Collection */
 export interface SP_Attachment_Collection {
-	addUsingPath: IMapper & { 
+	properties?: Array<string>;
+	addUsingPath: IMapper & {
 		argNames: [ "DecodedUrl", "contentStream" ],
 	},
-	getByFileName: IMapper & { 
+	getByFileName: IMapper & {
 		argNames: [ "fileName" ],
 	},
-	getByFileNameAsPath: IMapper & { 
+	getByFileNameAsPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "FileName", "Content" ],
 	},
 };
 
 /* SP_ContentType_Collection */
 export interface SP_ContentType_Collection {
-	addAvailableContentType: IMapper & { 
+	properties?: Array<string>;
+	addAvailableContentType: IMapper & {
 		argNames: [ "contentTypeId" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "contentTypeId" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
 };
 
 /* SP_ContentType */
 export interface SP_ContentType {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_UserResource */
 export interface SP_UserResource {
-	getValueForUICulture: IMapper & { 
+	properties?: Array<string>;
+	getValueForUICulture: IMapper & {
 		argNames: [ "cultureName" ],
 	},
-	setValueForUICulture: IMapper & { 
+	setValueForUICulture: IMapper & {
 		argNames: [ "cultureName", "value" ],
 	},
 };
 
 /* SP_FieldLink_Collection */
 export interface SP_FieldLink_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	reorder: IMapper & { 
+	reorder: IMapper & {
 		argNames: [ "internalNames" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
 };
 
 /* SP_FieldLink */
 export interface SP_FieldLink {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* SP_Field */
 export interface SP_Field {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_Field_Collection */
 export interface SP_Field_Collection {
-	addDependentLookupField: IMapper & { 
+	properties?: Array<string>;
+	addDependentLookupField: IMapper & {
 		argNames: [ "displayName", "primaryLookupFieldId", "showField" ],
 	},
-	addField: IMapper & { 
+	addField: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByInternalNameOrTitle: IMapper & { 
+	getByInternalNameOrTitle: IMapper & {
 		argNames: [ "strName" ],
 	},
-	getByTitle: IMapper & { 
+	getByTitle: IMapper & {
 		argNames: [ "title" ],
 	},
-	createFieldAsXml: IMapper & { 
+	createFieldAsXml: IMapper & {
 		argNames: [ "schemaXml" ],
 	},
 };
 
 /* SP_File_Collection */
 export interface SP_File_Collection {
-	addStub: IMapper & { 
+	properties?: Array<string>;
+	addStub: IMapper & {
 		argNames: [ "urlOfFile" ],
 	},
-	addStubUsingPath: IMapper & { 
+	addStubUsingPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	addTemplateFile: IMapper & { 
+	addTemplateFile: IMapper & {
 		argNames: [ "urlOfFile", "templateFileType" ],
 	},
-	addUsingPath: IMapper & { 
+	addUsingPath: IMapper & {
 		argNames: [ "DecodedUrl", "Overwrite", "contentStream" ],
 	},
-	getByPathOrAddStub: IMapper & { 
+	getByPathOrAddStub: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	getByUrl: IMapper & { 
+	getByUrl: IMapper & {
 		argNames: [ "url" ],
 	},
-	getByUrlOrAddStub: IMapper & { 
+	getByUrlOrAddStub: IMapper & {
 		argNames: [ "urlOfFile" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "Url", "Overwrite", "Content" ],
 	},
 };
 
 /* SP_File */
 export interface SP_File {
-	addActivities: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	addActivities: IMapper & {
 		argNames: [ "activities" ],
 	},
-	addClientActivities: IMapper & { 
+	addClientActivities: IMapper & {
 		argNames: [ "activitiesStream" ],
 	},
-	approve: IMapper & { 
+	approve: IMapper & {
 		argNames: [ "comment" ],
 	},
-	cancelUpload: IMapper & { 
+	cancelUpload: IMapper & {
 		argNames: [ "uploadId" ],
 	},
-	checkAccessAndPostViewAuditEvent: IMapper & { 
+	checkAccessAndPostViewAuditEvent: IMapper & {
 
 	},
-	checkIn: IMapper & { 
+	checkIn: IMapper & {
 		argNames: [ "comment", "checkInType" ],
 	},
-	checkOut: IMapper & { 
+	checkOut: IMapper & {
 
 	},
-	continueUpload: IMapper & { 
+	continueUpload: IMapper & {
 		argNames: [ "uploadId", "fileOffset", "stream" ],
 	},
-	copyTo: IMapper & { 
+	copyTo: IMapper & {
 		argNames: [ "strNewUrl", "bOverWrite" ],
 	},
-	copyToUsingPath: IMapper & { 
+	copyToUsingPath: IMapper & {
 		argNames: [ "DecodedUrl", "bOverWrite" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	deny: IMapper & { 
+	deny: IMapper & {
 		argNames: [ "comment" ],
 	},
-	executeCobaltRequest: IMapper & { 
+	executeCobaltRequest: IMapper & {
 		argNames: [ "inputStream" ],
 	},
-	finishUpload: IMapper & { 
+	finishUpload: IMapper & {
 		argNames: [ "uploadId", "fileOffset", "stream" ],
 	},
-	getFileUserValue: IMapper & { 
+	getFileUserValue: IMapper & {
 		argNames: [ "key" ],
 	},
-	getImagePreviewUri: IMapper & { 
+	getImagePreviewUri: IMapper & {
 		argNames: [ "width", "height", "clientType" ],
 	},
-	getImagePreviewUrl: IMapper & { 
+	getImagePreviewUrl: IMapper & {
 		argNames: [ "width", "height", "clientType" ],
 	},
-	getLimitedWebPartManager: IMapper & { 
+	getLimitedWebPartManager: IMapper & {
 		argNames: [ "scope" ],
 	},
-	getPreAuthorizedAccessUrl: IMapper & { 
+	getPreAuthorizedAccessUrl: IMapper & {
 		argNames: [ "expirationHours" ],
 	},
-	getUploadStatus: IMapper & { 
+	getUploadStatus: IMapper & {
 		argNames: [ "uploadId" ],
 	},
-	getWOPIFrameUrl: IMapper & { 
+	getWOPIFrameUrl: IMapper & {
 		argNames: [ "action" ],
 	},
-	moveTo: IMapper & { 
+	moveTo: IMapper & {
 		argNames: [ "newUrl", "flags" ],
 	},
-	moveToUsingPath: IMapper & { 
+	moveToUsingPath: IMapper & {
 		argNames: [ "DecodedUrl", "moveOperations" ],
 	},
-	openBinaryStream: IMapper & { 
+	openBinaryStream: IMapper & {
 
 	},
-	openBinaryStreamWithOptions: IMapper & { 
+	openBinaryStreamWithOptions: IMapper & {
 		argNames: [ "openOptions" ],
 	},
-	publish: IMapper & { 
+	publish: IMapper & {
 		argNames: [ "comment" ],
 	},
-	recycle: IMapper & { 
+	recycle: IMapper & {
 
 	},
-	recycleWithETag: IMapper & { 
+	recycleWithETag: IMapper & {
 		argNames: [ "etagMatch" ],
 	},
-	saveBinaryStream: IMapper & { 
+	saveBinaryStream: IMapper & {
 		argNames: [ "file" ],
 	},
-	setFileUserValue: IMapper & { 
+	setFileUserValue: IMapper & {
 		argNames: [ "key", "value" ],
 	},
-	startUpload: IMapper & { 
+	startUpload: IMapper & {
 		argNames: [ "uploadId", "stream" ],
 	},
-	undoCheckOut: IMapper & { 
+	undoCheckOut: IMapper & {
 
 	},
-	unPublish: IMapper & { 
+	unPublish: IMapper & {
 		argNames: [ "comment" ],
 	},
-	updateVirusInfo: IMapper & { 
+	updateVirusInfo: IMapper & {
 		argNames: [ "virusStatus", "virusMessage", "etagToCheck" ],
 	},
-	content: IMapper & { 
+	content: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_InformationRightsManagementFileSettings */
 export interface SP_InformationRightsManagementFileSettings {
-	reset: IMapper & { 
+	properties?: Array<string>;
+	reset: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_FileVersion_Collection */
 export interface SP_FileVersion_Collection {
-	deleteAll: IMapper & { 
+	properties?: Array<string>;
+	deleteAll: IMapper & {
 
 	},
-	deleteByID: IMapper & { 
+	deleteByID: IMapper & {
 		argNames: [ "vid" ],
 	},
-	deleteByLabel: IMapper & { 
+	deleteByLabel: IMapper & {
 		argNames: [ "versionlabel" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "versionid" ],
 	},
-	recycleByID: IMapper & { 
+	recycleByID: IMapper & {
 		argNames: [ "vid" ],
 	},
-	recycleByLabel: IMapper & { 
+	recycleByLabel: IMapper & {
 		argNames: [ "versionlabel" ],
 	},
-	restoreByLabel: IMapper & { 
+	restoreByLabel: IMapper & {
 		argNames: [ "versionlabel" ],
 	},
 };
 
 /* SP_FileVersion */
 export interface SP_FileVersion {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	openBinaryStream: IMapper & { 
+	openBinaryStream: IMapper & {
 
 	},
 };
 
 /* SP_Folder_Collection */
 export interface SP_Folder_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "url" ],
 	},
-	addUsingPath: IMapper & { 
+	addUsingPath: IMapper & {
 		argNames: [ "DecodedUrl", "Overwrite" ],
 	},
-	addWithOverwrite: IMapper & { 
+	addWithOverwrite: IMapper & {
 		argNames: [ "url", "overwrite" ],
 	},
-	getByPath: IMapper & { 
+	getByPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	getByUrl: IMapper & { 
+	getByUrl: IMapper & {
 		argNames: [ "url" ],
 	},
 };
 
 /* SP_Folder */
 export interface SP_Folder {
-	addSubFolder: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	addSubFolder: IMapper & {
 		argNames: [ "leafName" ],
 	},
-	addSubFolderUsingPath: IMapper & { 
+	addSubFolderUsingPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "query" ],
 	},
-	getListItemChanges: IMapper & { 
+	getListItemChanges: IMapper & {
 		argNames: [ "query" ],
 	},
-	moveTo: IMapper & { 
+	moveTo: IMapper & {
 		argNames: [ "newUrl" ],
 	},
-	moveToUsingPath: IMapper & { 
+	moveToUsingPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	recycle: IMapper & { 
+	recycle: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_List */
 export interface SP_List {
-	breakRoleInheritance: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
-	resetRoleInheritance: IMapper & { 
+	resetRoleInheritance: IMapper & {
 
 	},
-	addItem: IMapper & { 
+	addItem: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	addItemUsingPath: IMapper & { 
+	addItemUsingPath: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	addValidateUpdateItem: IMapper & { 
+	addValidateUpdateItem: IMapper & {
 		argNames: [ "listItemCreateInfo", "formValues", "bNewDocumentUpdate", "checkInComment" ],
 	},
-	addValidateUpdateItemUsingPath: IMapper & { 
+	addValidateUpdateItemUsingPath: IMapper & {
 		argNames: [ "listItemCreateInfo", "formValues", "bNewDocumentUpdate", "checkInComment" ],
 	},
-	bulkValidateUpdateListItems: IMapper & { 
+	bulkValidateUpdateListItems: IMapper & {
 		argNames: [ "itemIds", "formValues", "bNewDocumentUpdate", "checkInComment", "folderPath" ],
 	},
-	createDocumentAndGetEditLink: IMapper & { 
+	createDocumentAndGetEditLink: IMapper & {
 		argNames: [ "fileName", "folderPath", "documentTemplateType", "templateUrl" ],
 	},
-	createDocumentWithDefaultName: IMapper & { 
+	createDocumentWithDefaultName: IMapper & {
 		argNames: [ "folderPath", "extension" ],
 	},
-	createMappedView: IMapper & { 
+	createMappedView: IMapper & {
 		argNames: [ "appViewCreationInfo", "visualizationTarget" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	ensureSignoffStatusField: IMapper & { 
+	ensureSignoffStatusField: IMapper & {
 
 	},
-	getBloomFilter: IMapper & { 
+	getBloomFilter: IMapper & {
 		argNames: [ "startItemId" ],
 	},
-	getBloomFilterWithCustomFields: IMapper & { 
+	getBloomFilterWithCustomFields: IMapper & {
 		argNames: [ "listItemStartingID", "internalFieldNames" ],
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "query" ],
 	},
-	getCheckedOutFiles: IMapper & { 
+	getCheckedOutFiles: IMapper & {
 
 	},
-	getItemById: IMapper & { 
+	getItemById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getItemByStringId: IMapper & { 
+	getItemByStringId: IMapper & {
 		argNames: [ "sId" ],
 	},
-	getItemByUniqueId: IMapper & { 
+	getItemByUniqueId: IMapper & {
 		argNames: [ "uniqueId" ],
 	},
-	getListItemChangesSinceToken: IMapper & { 
+	getListItemChangesSinceToken: IMapper & {
 		argNames: [ "query" ],
 	},
-	getMappedApp: IMapper & { 
+	getMappedApp: IMapper & {
 		argNames: [ "appId", "visualizationAppTarget" ],
 	},
-	getMappedApps: IMapper & { 
+	getMappedApps: IMapper & {
 		argNames: [ "visualizationAppTarget" ],
 	},
-	getRelatedFields: IMapper & { 
+	getRelatedFields: IMapper & {
 
 	},
-	getSpecialFolderUrl: IMapper & { 
+	getSpecialFolderUrl: IMapper & {
 		argNames: [ "type", "bForceCreate", "existingFolderGuid" ],
 	},
-	getUserEffectivePermissions: IMapper & { 
+	getUserEffectivePermissions: IMapper & {
 		argNames: [ "userName" ],
 	},
-	getView: IMapper & { 
+	getView: IMapper & {
 		argNames: [ "viewGuid" ],
 	},
-	getWebDavUrl: IMapper & { 
+	getWebDavUrl: IMapper & {
 		argNames: [ "sourceUrl" ],
 	},
-	publishMappedView: IMapper & { 
+	publishMappedView: IMapper & {
 		argNames: [ "appId", "visualizationTarget" ],
 	},
-	recycle: IMapper & { 
+	recycle: IMapper & {
 
 	},
-	renderExtendedListFormData: IMapper & { 
+	renderExtendedListFormData: IMapper & {
 		argNames: [ "itemId", "formId", "mode", "options", "cutoffVersion" ],
 	},
-	renderListContextMenuData: IMapper & { 
+	renderListContextMenuData: IMapper & {
 		argNames: [ "CascDelWarnMessage", "CustomAction", "Field", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsXslView", "ItemId", "ListViewPageUrl", "OverrideScope", "RootFolder", "View", "ViewCount" ],
 	},
-	renderListData: IMapper & { 
+	renderListData: IMapper & {
 		argNames: [ "viewXml" ],
 	},
-	renderListDataAsStream: IMapper & { 
+	renderListDataAsStream: IMapper & {
 		argNames: [ "parameters", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "RootFolder", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId" ],
 	},
-	renderListFilterData: IMapper & { 
+	renderListFilterData: IMapper & {
 		argNames: [ "ExcludeFieldFilteringHtml", "FieldInternalName", "OverrideScope", "ProcessQStringToCAML", "ViewId" ],
 	},
-	renderListFormData: IMapper & { 
+	renderListFormData: IMapper & {
 		argNames: [ "itemId", "formId", "mode" ],
 	},
-	reserveListItemId: IMapper & { 
+	reserveListItemId: IMapper & {
 
 	},
-	saveAsNewView: IMapper & { 
+	saveAsNewView: IMapper & {
 		argNames: [ "oldName", "newName", "privateView", "uri" ],
 	},
-	saveAsTemplate: IMapper & { 
+	saveAsTemplate: IMapper & {
 		argNames: [ "strFileName", "strName", "strDescription", "bSaveData" ],
 	},
-	setExemptFromBlockDownloadOfNonViewableFiles: IMapper & { 
+	setExemptFromBlockDownloadOfNonViewableFiles: IMapper & {
 		argNames: [ "value" ],
 	},
-	syncFlowCallbackUrl: IMapper & { 
+	syncFlowCallbackUrl: IMapper & {
 		argNames: [ "flowId" ],
 	},
-	syncFlowInstance: IMapper & { 
+	syncFlowInstance: IMapper & {
 		argNames: [ "flowID" ],
 	},
-	syncFlowInstances: IMapper & { 
+	syncFlowInstances: IMapper & {
 
 	},
-	syncFlowTemplates: IMapper & { 
+	syncFlowTemplates: IMapper & {
 		argNames: [ "category" ],
 	},
-	unpublishMappedView: IMapper & { 
+	unpublishMappedView: IMapper & {
 		argNames: [ "appId", "visualizationTarget" ],
 	},
-	validateAppName: IMapper & { 
+	validateAppName: IMapper & {
 		argNames: [ "appDisplayName" ],
 	},
-	getItems: IMapper & { 
+	getItems: IMapper & {
 		argNames: [ "viewXML" ],
 	},
-	getItemsByQuery: IMapper & { 
+	getItemsByQuery: IMapper & {
 		argNames: [ "camlQuery" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_List_Collection */
 export interface SP_List_Collection {
-	ensureClientRenderedSitePagesLibrary: IMapper & { 
+	properties?: Array<string>;
+	ensureClientRenderedSitePagesLibrary: IMapper & {
 
 	},
-	ensureEventsList: IMapper & { 
+	ensureEventsList: IMapper & {
 
 	},
-	ensureSiteAssetsLibrary: IMapper & { 
+	ensureSiteAssetsLibrary: IMapper & {
 
 	},
-	ensureSitePagesLibrary: IMapper & { 
+	ensureSitePagesLibrary: IMapper & {
 
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByTitle: IMapper & { 
+	getByTitle: IMapper & {
 		argNames: [ "title" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
 };
 
 /* SP_View_Collection */
 export interface SP_View_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "guidId" ],
 	},
-	getByTitle: IMapper & { 
+	getByTitle: IMapper & {
 		argNames: [ "strTitle" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_View */
 export interface SP_View {
-	addToSpotlight: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	addToSpotlight: IMapper & {
 		argNames: [ "itemId", "folderPath", "afterItemId" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	removeFromSpotlight: IMapper & { 
+	removeFromSpotlight: IMapper & {
 		argNames: [ "itemId", "folderPath" ],
 	},
-	renderAsHtml: IMapper & { 
+	renderAsHtml: IMapper & {
 
 	},
-	setViewXml: IMapper & { 
+	setViewXml: IMapper & {
 		argNames: [ "viewXml" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_ViewFieldCollection */
 export interface SP_ViewFieldCollection {
-	addViewField: IMapper & { 
+	properties?: Array<string>;
+	addViewField: IMapper & {
 		argNames: [ "strField" ],
 	},
-	moveViewFieldTo: IMapper & { 
+	moveViewFieldTo: IMapper & {
 		argNames: [ "field", "index" ],
 	},
-	removeAllViewFields: IMapper & { 
+	removeAllViewFields: IMapper & {
 
 	},
-	removeViewField: IMapper & { 
+	removeViewField: IMapper & {
 		argNames: [ "strField" ],
 	},
 };
 
 /* SP_Form_Collection */
 export interface SP_Form_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByPageType: IMapper & { 
+	getByPageType: IMapper & {
 		argNames: [ "formType" ],
 	},
 };
 
 /* SP_InformationRightsManagementSettings */
 export interface SP_InformationRightsManagementSettings {
-	reset: IMapper & { 
+	properties?: Array<string>;
+	reset: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Web_Collection */
 export interface SP_Web_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
 };
 
 /* SP_Web */
 export interface SP_Web {
-	breakRoleInheritance: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
-	resetRoleInheritance: IMapper & { 
+	resetRoleInheritance: IMapper & {
 
 	},
-	addCrossFarmMessage: IMapper & { 
+	addCrossFarmMessage: IMapper & {
 		argNames: [ "messagePayloadBase64" ],
 	},
-	addSupportedUILanguage: IMapper & { 
+	addSupportedUILanguage: IMapper & {
 		argNames: [ "lcid" ],
 	},
-	applyTheme: IMapper & { 
+	applyTheme: IMapper & {
 		argNames: [ "colorPaletteUrl", "fontSchemeUrl", "backgroundImageUrl", "shareGenerated" ],
 	},
-	applyWebTemplate: IMapper & { 
+	applyWebTemplate: IMapper & {
 		argNames: [ "webTemplate" ],
 	},
-	createDefaultAssociatedGroups: IMapper & { 
+	createDefaultAssociatedGroups: IMapper & {
 		argNames: [ "userLogin", "userLogin2", "groupNameSeed" ],
 	},
-	defaultDocumentLibrary: IMapper & { 
+	defaultDocumentLibrary: IMapper & {
 
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	doesPushNotificationSubscriberExist: IMapper & { 
+	doesPushNotificationSubscriberExist: IMapper & {
 		argNames: [ "deviceAppInstanceId" ],
 	},
-	ensureUser: IMapper & { 
+	ensureUser: IMapper & {
 		argNames: [ "logonName" ],
 	},
-	executeRemoteLOB: IMapper & { 
+	executeRemoteLOB: IMapper & {
 		argNames: [ "inputStream" ],
 	},
-	getAppBdcCatalog: IMapper & { 
+	getAppBdcCatalog: IMapper & {
 
 	},
-	getAppBdcCatalogForAppInstance: IMapper & { 
+	getAppBdcCatalogForAppInstance: IMapper & {
 		argNames: [ "appInstanceId" ],
 	},
-	getAppInstanceById: IMapper & { 
+	getAppInstanceById: IMapper & {
 		argNames: [ "appInstanceId" ],
 	},
-	getAppInstancesByProductId: IMapper & { 
+	getAppInstancesByProductId: IMapper & {
 		argNames: [ "productId" ],
 	},
-	getAvailableWebTemplates: IMapper & { 
+	getAvailableWebTemplates: IMapper & {
 		argNames: [ "lcid", "doIncludeCrossLanguage" ],
 	},
-	getCatalog: IMapper & { 
+	getCatalog: IMapper & {
 		argNames: [ "typeCatalog" ],
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "query" ],
 	},
-	getClientSideComponents: IMapper & { 
+	getClientSideComponents: IMapper & {
 		argNames: [ "components" ],
 	},
-	getClientSideComponentsById: IMapper & { 
+	getClientSideComponentsById: IMapper & {
 		argNames: [ "componentIds" ],
 	},
-	getClientSideWebParts: IMapper & { 
+	getClientSideWebParts: IMapper & {
 		argNames: [ "includeErrors" ],
 	},
-	getCustomListTemplates: IMapper & { 
+	getCustomListTemplates: IMapper & {
 
 	},
-	getEntity: IMapper & { 
+	getEntity: IMapper & {
 		argNames: [ "namespace", "name" ],
 	},
-	getFileByGuestUrl: IMapper & { 
+	getFileByGuestUrl: IMapper & {
 		argNames: [ "guestUrl" ],
 	},
-	getFileByGuestUrlEnsureAccess: IMapper & { 
+	getFileByGuestUrlEnsureAccess: IMapper & {
 		argNames: [ "guestUrl", "ensureAccess" ],
 	},
-	getFileByGuestUrlExtended: IMapper & { 
+	getFileByGuestUrlExtended: IMapper & {
 		argNames: [ "guestUrl", "requestSettings" ],
 	},
-	getFileById: IMapper & { 
+	getFileById: IMapper & {
 		argNames: [ "uniqueId" ],
 	},
-	getFileByLinkingUrl: IMapper & { 
+	getFileByLinkingUrl: IMapper & {
 		argNames: [ "linkingUrl" ],
 	},
-	getFileByServerRelativePath: IMapper & { 
+	getFileByServerRelativePath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	getFileByServerRelativeUrl: IMapper & { 
+	getFileByServerRelativeUrl: IMapper & {
 		argNames: [ "serverRelativeUrl" ],
 	},
-	getFileByUrl: IMapper & { 
+	getFileByUrl: IMapper & {
 		argNames: [ "fileUrl" ],
 	},
-	getFileByWOPIFrameUrl: IMapper & { 
+	getFileByWOPIFrameUrl: IMapper & {
 		argNames: [ "wopiFrameUrl" ],
 	},
-	getFolderByGuestUrl: IMapper & { 
+	getFolderByGuestUrl: IMapper & {
 		argNames: [ "guestUrl", "ensureAccess" ],
 	},
-	getFolderByGuestUrlExtended: IMapper & { 
+	getFolderByGuestUrlExtended: IMapper & {
 		argNames: [ "guestUrl", "requestSettings" ],
 	},
-	getFolderById: IMapper & { 
+	getFolderById: IMapper & {
 		argNames: [ "uniqueId" ],
 	},
-	getFolderByServerRelativePath: IMapper & { 
+	getFolderByServerRelativePath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	getFolderByServerRelativeUrl: IMapper & { 
+	getFolderByServerRelativeUrl: IMapper & {
 		argNames: [ "serverRelativeUrl" ],
 	},
-	getList: IMapper & { 
+	getList: IMapper & {
 		argNames: [ "strUrl" ],
 	},
-	getListItem: IMapper & { 
+	getListItem: IMapper & {
 		argNames: [ "strUrl" ],
 	},
-	getListItemByResourceId: IMapper & { 
+	getListItemByResourceId: IMapper & {
 		argNames: [ "resourceId" ],
 	},
-	getListItemUsingPath: IMapper & { 
+	getListItemUsingPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	getListUsingPath: IMapper & { 
+	getListUsingPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	getNewsList: IMapper & { 
+	getNewsList: IMapper & {
 		argNames: [ "allowCreate" ],
 	},
-	getOnePageContextAsStream: IMapper & { 
+	getOnePageContextAsStream: IMapper & {
 
 	},
-	getPushNotificationSubscriber: IMapper & { 
+	getPushNotificationSubscriber: IMapper & {
 		argNames: [ "deviceAppInstanceId" ],
 	},
-	getPushNotificationSubscribersByArgs: IMapper & { 
+	getPushNotificationSubscribersByArgs: IMapper & {
 		argNames: [ "customArgs" ],
 	},
-	getPushNotificationSubscribersByUser: IMapper & { 
+	getPushNotificationSubscribersByUser: IMapper & {
 		argNames: [ "userName" ],
 	},
-	getRecycleBinItems: IMapper & { 
+	getRecycleBinItems: IMapper & {
 		argNames: [ "pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState" ],
 	},
-	getRecycleBinItemsByQueryInfo: IMapper & { 
+	getRecycleBinItemsByQueryInfo: IMapper & {
 		argNames: [ "IsAscending", "ItemState", "OrderBy", "PagingInfo", "RowLimit", "ShowOnlyMyItems" ],
 	},
-	getRegionalDateTimeSchema: IMapper & { 
+	getRegionalDateTimeSchema: IMapper & {
 
 	},
-	getSharingLinkData: IMapper & { 
+	getSharingLinkData: IMapper & {
 		argNames: [ "linkUrl" ],
 	},
-	getStorageEntity: IMapper & { 
+	getStorageEntity: IMapper & {
 		argNames: [ "key" ],
 	},
-	getSubwebsFilteredForCurrentUser: IMapper & { 
+	getSubwebsFilteredForCurrentUser: IMapper & {
 		argNames: [ "nWebTemplateFilter", "nConfigurationFilter" ],
 	},
-	getUserById: IMapper & { 
+	getUserById: IMapper & {
 		argNames: [ "userId" ],
 	},
-	getUserEffectivePermissions: IMapper & { 
+	getUserEffectivePermissions: IMapper & {
 		argNames: [ "userName" ],
 	},
-	getViewFromPath: IMapper & { 
+	getViewFromPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	getViewFromUrl: IMapper & { 
+	getViewFromUrl: IMapper & {
 		argNames: [ "listUrl" ],
 	},
-	hubSiteData: IMapper & { 
+	hubSiteData: IMapper & {
 		argNames: [ "forceRefresh" ],
 	},
-	hubSiteDataAsStream: IMapper & { 
+	hubSiteDataAsStream: IMapper & {
 		argNames: [ "forceRefresh" ],
 	},
-	incrementSiteClientTag: IMapper & { 
+	incrementSiteClientTag: IMapper & {
 
 	},
-	loadAndInstallApp: IMapper & { 
+	loadAndInstallApp: IMapper & {
 		argNames: [ "appPackageStream" ],
 	},
-	loadAndInstallAppInSpecifiedLocale: IMapper & { 
+	loadAndInstallAppInSpecifiedLocale: IMapper & {
 		argNames: [ "appPackageStream", "installationLocaleLCID" ],
 	},
-	loadApp: IMapper & { 
+	loadApp: IMapper & {
 		argNames: [ "appPackageStream", "installationLocaleLCID" ],
 	},
-	mapToIcon: IMapper & { 
+	mapToIcon: IMapper & {
 		argNames: [ "fileName", "progId", "size" ],
 	},
-	pageContextInfo: IMapper & { 
+	pageContextInfo: IMapper & {
 		argNames: [ "includeODBSettings", "emitNavigationInfo" ],
 	},
-	parseDateTime: IMapper & { 
+	parseDateTime: IMapper & {
 		argNames: [ "value", "displayFormat", "calendarType" ],
 	},
-	processExternalNotification: IMapper & { 
+	processExternalNotification: IMapper & {
 		argNames: [ "stream" ],
 	},
-	registerPushNotificationSubscriber: IMapper & { 
+	registerPushNotificationSubscriber: IMapper & {
 		argNames: [ "deviceAppInstanceId", "serviceToken" ],
 	},
-	removeStorageEntity: IMapper & { 
+	removeStorageEntity: IMapper & {
 		argNames: [ "key" ],
 	},
-	removeSupportedUILanguage: IMapper & { 
+	removeSupportedUILanguage: IMapper & {
 		argNames: [ "lcid" ],
 	},
-	setAccessRequestSiteDescriptionAndUpdate: IMapper & { 
+	setAccessRequestSiteDescriptionAndUpdate: IMapper & {
 		argNames: [ "description" ],
 	},
-	setStorageEntity: IMapper & { 
+	setStorageEntity: IMapper & {
 		argNames: [ "key", "value", "description", "comments" ],
 	},
-	setUseAccessRequestDefaultAndUpdate: IMapper & { 
+	setUseAccessRequestDefaultAndUpdate: IMapper & {
 		argNames: [ "useAccessRequestDefault" ],
 	},
-	syncFlowInstances: IMapper & { 
+	syncFlowInstances: IMapper & {
 		argNames: [ "targetWebUrl" ],
 	},
-	syncFlowTemplates: IMapper & { 
+	syncFlowTemplates: IMapper & {
 		argNames: [ "category" ],
 	},
-	syncHubSiteTheme: IMapper & { 
+	syncHubSiteTheme: IMapper & {
 
 	},
-	unregisterPushNotificationSubscriber: IMapper & { 
+	unregisterPushNotificationSubscriber: IMapper & {
 		argNames: [ "deviceAppInstanceId" ],
 	},
-	doesUserHavePermissions: IMapper & { 
+	doesUserHavePermissions: IMapper & {
 		argNames: [ "high", "low" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_Group_Collection */
 export interface SP_Group_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByName: IMapper & { 
+	getByName: IMapper & {
 		argNames: [ "name" ],
 	},
-	removeById: IMapper & { 
+	removeById: IMapper & {
 		argNames: [ "id" ],
 	},
-	removeByLoginName: IMapper & { 
+	removeByLoginName: IMapper & {
 		argNames: [ "loginName" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
 };
 
 /* SP_Group */
 export interface SP_Group {
-	setUserAsOwner: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	setUserAsOwner: IMapper & {
 		argNames: [ "ownerId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_ClientWebPart_Collection */
 export interface SP_ClientWebPart_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_ClientWebPart */
 export interface SP_ClientWebPart {
-	render: IMapper & { 
+	properties?: Array<string>;
+	render: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_ListTemplate_Collection */
 export interface SP_ListTemplate_Collection {
-	getByName: IMapper & { 
+	properties?: Array<string>;
+	getByName: IMapper & {
 		argNames: [ "name" ],
 	},
 };
 
 /* SP_ListTemplate */
 export interface SP_ListTemplate {
-	getGlobalSchemaXml: IMapper & { 
+	properties?: Array<string>;
+	getGlobalSchemaXml: IMapper & {
 
 	},
 };
 
 /* SP_Navigation */
 export interface SP_Navigation {
-	getNodeById: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getNodeById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_NavigationNode_Collection */
 export interface SP_NavigationNode_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByIndex: IMapper & { 
+	getByIndex: IMapper & {
 		argNames: [ "index" ],
 	},
-	moveAfter: IMapper & { 
+	moveAfter: IMapper & {
 		argNames: [ "nodeId", "previousNodeId" ],
 	},
 };
 
 /* SP_NavigationNode */
 export interface SP_NavigationNode {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_WebInformation_Collection */
 export interface SP_WebInformation_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_PushNotificationSubscriber_Collection */
 export interface SP_PushNotificationSubscriber_Collection {
-	getByStoreId: IMapper & { 
+	properties?: Array<string>;
+	getByStoreId: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_PushNotificationSubscriber */
 export interface SP_PushNotificationSubscriber {
-	update: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	update: IMapper & {
 
 	},
 };
 
 /* SP_RecycleBinItem_Collection */
 export interface SP_RecycleBinItem_Collection {
-	deleteAll: IMapper & { 
+	properties?: Array<string>;
+	deleteAll: IMapper & {
 
 	},
-	deleteAllSecondStageItems: IMapper & { 
+	deleteAllSecondStageItems: IMapper & {
 
 	},
-	deleteByIds: IMapper & { 
+	deleteByIds: IMapper & {
 		argNames: [ "ids" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	moveAllToSecondStage: IMapper & { 
+	moveAllToSecondStage: IMapper & {
 
 	},
-	moveToSecondStageByIds: IMapper & { 
+	moveToSecondStageByIds: IMapper & {
 		argNames: [ "ids" ],
 	},
-	restoreAll: IMapper & { 
+	restoreAll: IMapper & {
 
 	},
-	restoreByIds: IMapper & { 
+	restoreByIds: IMapper & {
 		argNames: [ "ids" ],
 	},
 };
 
 /* SP_RecycleBinItem */
 export interface SP_RecycleBinItem {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	moveToSecondStage: IMapper & { 
+	moveToSecondStage: IMapper & {
 
 	},
-	restore: IMapper & { 
+	restore: IMapper & {
 
 	},
 };
 
 /* SP_RegionalSettings */
 export interface SP_RegionalSettings {
-	update: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	update: IMapper & {
 
 	},
 };
 
 /* SP_LanguageCollection */
 export interface SP_LanguageCollection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_TimeZone_Collection */
 export interface SP_TimeZone_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_TimeZone */
 export interface SP_TimeZone {
-	localTimeToUTC: IMapper & { 
+	properties?: Array<string>;
+	localTimeToUTC: IMapper & {
 		argNames: [ "date" ],
 	},
-	uTCToLocalTime: IMapper & { 
+	uTCToLocalTime: IMapper & {
 		argNames: [ "date" ],
 	},
 };
 
 /* SP_ThemeInfo */
 export interface SP_ThemeInfo {
-	getThemeFontByName: IMapper & { 
+	properties?: Array<string>;
+	getThemeFontByName: IMapper & {
 		argNames: [ "name", "lcid" ],
 	},
-	getThemeShadeByName: IMapper & { 
+	getThemeShadeByName: IMapper & {
 		argNames: [ "name" ],
 	},
 };
 
 /* SP_UserCustomAction_Collection */
 export interface SP_UserCustomAction_Collection {
-	clear: IMapper & { 
+	properties?: Array<string>;
+	clear: IMapper & {
 
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	add: IMapper & { 
+	add: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_UserCustomAction */
 export interface SP_UserCustomAction {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_ListItemVersion_Collection */
 export interface SP_ListItemVersion_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "versionId" ],
 	},
 };
 
 /* SP_ListItemVersion */
 export interface SP_ListItemVersion {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* SP_SPAppLicenseManager */
 export interface SP_SPAppLicenseManager {
-	checkLicense: IMapper & { 
+	properties?: Array<string>;
+	checkLicense: IMapper & {
 		argNames: [ "productId" ],
 	},
 };
 
 /* SP_UserSolution_Collection */
 export interface SP_UserSolution_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "solutionGalleryItemId" ],
 	},
 };
 
 /* SP_AppInstance */
 export interface SP_AppInstance {
-	cancelAllJobs: IMapper & { 
+	properties?: Array<string>;
+	cancelAllJobs: IMapper & {
 
 	},
-	getAppDatabaseConnectionString: IMapper & { 
+	getAppDatabaseConnectionString: IMapper & {
 
 	},
-	getErrorDetails: IMapper & { 
+	getErrorDetails: IMapper & {
 
 	},
-	getPreviousAppVersion: IMapper & { 
+	getPreviousAppVersion: IMapper & {
 
 	},
-	install: IMapper & { 
+	install: IMapper & {
 
 	},
-	recycle: IMapper & { 
+	recycle: IMapper & {
 
 	},
-	restore: IMapper & { 
+	restore: IMapper & {
 
 	},
-	retryAllJobs: IMapper & { 
+	retryAllJobs: IMapper & {
 
 	},
-	uninstall: IMapper & { 
+	uninstall: IMapper & {
 
 	},
-	upgrade: IMapper & { 
+	upgrade: IMapper & {
 		argNames: [ "appPackageStream" ],
 	},
 };
 
 /* SP_ObjectSharingInformation */
 export interface SP_ObjectSharingInformation {
-	getSharedWithUsers: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getSharedWithUsers: IMapper & {
 
 	},
 };
 
 /* SP_CheckedOutFile_Collection */
 export interface SP_CheckedOutFile_Collection {
-	getByPath: IMapper & { 
+	properties?: Array<string>;
+	getByPath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
 };
 
 /* SP_CheckedOutFile */
 export interface SP_CheckedOutFile {
-	takeOverCheckOut: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	takeOverCheckOut: IMapper & {
 
 	},
 };
 
 /* SP_RequestContext */
 export interface SP_RequestContext {
-	getRemoteContext: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getRemoteContext: IMapper & {
 
 	},
 };
 
 /* SP_FieldCalculated */
 export interface SP_FieldCalculated {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldMultiChoice */
 export interface SP_FieldMultiChoice {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldChoice */
 export interface SP_FieldChoice {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldComputed */
 export interface SP_FieldComputed {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldNumber */
 export interface SP_FieldNumber {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldCurrency */
 export interface SP_FieldCurrency {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldDateTime */
 export interface SP_FieldDateTime {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldGeolocation */
 export interface SP_FieldGeolocation {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldGuid */
 export interface SP_FieldGuid {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldMultiLineText */
 export interface SP_FieldMultiLineText {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldLocation */
 export interface SP_FieldLocation {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldLookup */
 export interface SP_FieldLookup {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldRatingScale */
 export interface SP_FieldRatingScale {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldText */
 export interface SP_FieldText {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldUrl */
 export interface SP_FieldUrl {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_FieldUser */
 export interface SP_FieldUser {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* SP_HubSite_Collection */
 export interface SP_HubSite_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "hubSiteId" ],
 	},
 };
 
 /* SP_HubSite */
 export interface SP_HubSite {
-	delete: IMapper & { 
+	properties?: Array<string>;
+	delete: IMapper & {
 
 	},
 };
 
 /* SP_RelatedField_Collection */
 export interface SP_RelatedField_Collection {
-	getByFieldId: IMapper & { 
+	properties?: Array<string>;
+	getByFieldId: IMapper & {
 		argNames: [ "fieldId" ],
 	},
 };
 
 /* SP_RemoteWeb */
 export interface SP_RemoteWeb {
-	getFileByServerRelativePath: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getFileByServerRelativePath: IMapper & {
 		argNames: [ "serverRelatvieFilePath" ],
 	},
-	getFileByServerRelativeUrl: IMapper & { 
+	getFileByServerRelativeUrl: IMapper & {
 		argNames: [ "serverRelativeFileUrl" ],
 	},
-	getFileByUrl: IMapper & { 
+	getFileByUrl: IMapper & {
 		argNames: [ "fileUrl" ],
 	},
-	getFolderByServerRelativeUrl: IMapper & { 
+	getFolderByServerRelativeUrl: IMapper & {
 		argNames: [ "serverRelativeUrl" ],
 	},
-	getGroupById: IMapper & { 
+	getGroupById: IMapper & {
 		argNames: [ "groupId" ],
 	},
-	getListById: IMapper & { 
+	getListById: IMapper & {
 		argNames: [ "listGuid" ],
 	},
-	getListByServerRelativeUrl: IMapper & { 
+	getListByServerRelativeUrl: IMapper & {
 		argNames: [ "serverRelativeUrl" ],
 	},
 };
 
 /* SP_WebTemplate_Collection */
 export interface SP_WebTemplate_Collection {
-	getByName: IMapper & { 
+	properties?: Array<string>;
+	getByName: IMapper & {
 		argNames: [ "name" ],
 	},
 };
 
 /* SP_Directory_DirectorySession */
 export interface SP_Directory_DirectorySession {
-	getGraphUser: IMapper & { 
+	properties?: Array<string>;
+	getGraphUser: IMapper & {
 		argNames: [ "principalName" ],
 	},
-	getSharePointDataForUser: IMapper & { 
+	getSharePointDataForUser: IMapper & {
 		argNames: [ "userId" ],
 	},
-	group: IMapper & { 
+	group: IMapper & {
 		argNames: [ "groupId", "alias" ],
 	},
-	joinGroup: IMapper & { 
+	joinGroup: IMapper & {
 		argNames: [ "groupId" ],
 	},
-	me: IMapper & { 
+	me: IMapper & {
 
 	},
-	user: IMapper & { 
+	user: IMapper & {
 		argNames: [ "id", "principalName" ],
 	},
-	validateGroupName: IMapper & { 
+	validateGroupName: IMapper & {
 		argNames: [ "displayName", "alias" ],
 	},
 };
 
 /* SP_Directory_Group_Collection */
 export interface SP_Directory_Group_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	remove: IMapper & { 
+	remove: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* SP_Directory_Group */
 export interface SP_Directory_Group {
-	delete: IMapper & { 
+	properties?: Array<string>;
+	delete: IMapper & {
 
 	},
 };
 
 /* SP_Directory_User_Collection */
 export interface SP_Directory_User_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "objectId", "principalName" ],
 	},
-	remove: IMapper & { 
+	remove: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* SP_Directory_User */
 export interface SP_Directory_User {
-	getUserLinks: IMapper & { 
+	properties?: Array<string>;
+	getUserLinks: IMapper & {
 		argNames: [ "linkName", "groupType" ],
 	},
 };
 
 /* SP_CompliancePolicy_SPPolicyStoreProxy */
 export interface SP_CompliancePolicy_SPPolicyStoreProxy {
-	addDynamicScopeBinding: IMapper & { 
+	properties?: Array<string>;
+	addDynamicScopeBinding: IMapper & {
 		argNames: [ "identity", "siteId" ],
 	},
-	bulkUpdateDynamicScopeBindings: IMapper & { 
+	bulkUpdateDynamicScopeBindings: IMapper & {
 		argNames: [ "scopesToAdd", "scopesToRemove", "siteId" ],
 	},
-	deleteDynamicScopeBinding: IMapper & { 
+	deleteDynamicScopeBinding: IMapper & {
 		argNames: [ "identity", "siteId" ],
 	},
-	extendReviewItemsRetention: IMapper & { 
+	extendReviewItemsRetention: IMapper & {
 		argNames: [ "itemIds", "extensionDate" ],
 	},
-	getDynamicScopeBindingBySiteId: IMapper & { 
+	getDynamicScopeBindingBySiteId: IMapper & {
 		argNames: [ "siteId" ],
 	},
-	markReviewItemsForDeletion: IMapper & { 
+	markReviewItemsForDeletion: IMapper & {
 		argNames: [ "itemIds" ],
 	},
-	openBinaryStreamForOriginalItem: IMapper & { 
+	openBinaryStreamForOriginalItem: IMapper & {
 		argNames: [ "itemId" ],
 	},
-	removeContainerRetentionPolicy: IMapper & { 
+	removeContainerRetentionPolicy: IMapper & {
 		argNames: [ "siteId" ],
 	},
-	removeContainerSettings: IMapper & { 
+	removeContainerSettings: IMapper & {
 		argNames: [ "externalId" ],
 	},
-	retagReviewItems: IMapper & { 
+	retagReviewItems: IMapper & {
 		argNames: [ "itemIds", "newTag", "newTagIsRecord", "newTagBlockDelete", "newTagIsEventBased" ],
 	},
-	retagReviewItemsWithMetas: IMapper & { 
+	retagReviewItemsWithMetas: IMapper & {
 		argNames: [ "itemIds", "newTagName", "newTagMetas" ],
 	},
-	setContainerRetentionPolicy: IMapper & { 
+	setContainerRetentionPolicy: IMapper & {
 		argNames: [ "siteId", "defaultContainerLabel" ],
 	},
-	updateContainerSetting: IMapper & { 
+	updateContainerSetting: IMapper & {
 		argNames: [ "siteId", "externalId", "settingType", "setting" ],
 	},
 };
 
 /* MS_FileServices_FileSystemItem_Collection */
 export interface MS_FileServices_FileSystemItem_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "name", "overwrite", "content" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* MS_FileServices_File */
 export interface MS_FileServices_File {
-	copyTo: IMapper & { 
+	properties?: Array<string>;
+	copyTo: IMapper & {
 		argNames: [ "target", "overwrite" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	download: IMapper & { 
+	download: IMapper & {
 
 	},
-	moveTo: IMapper & { 
+	moveTo: IMapper & {
 		argNames: [ "target", "overwrite" ],
 	},
-	upload: IMapper & { 
+	upload: IMapper & {
 		argNames: [ "stream" ],
 	},
 };
 
 /* MS_FileServices_Folder */
 export interface MS_FileServices_Folder {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	moveTo: IMapper & { 
+	moveTo: IMapper & {
 		argNames: [ "target" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation_Collection {
-	getByLocation: IMapper & { 
+	properties?: Array<string>;
+	getByLocation: IMapper & {
 		argNames: [ "location" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_AllowedDataLocation {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmGroupMoveJob_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmGroupMoveJob_Collection {
-	getByMoveId: IMapper & { 
+	properties?: Array<string>;
+	getByMoveId: IMapper & {
 		argNames: [ "moveId" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmGroupMoveJob */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmGroupMoveJob {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJob_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJob_Collection {
-	getByMoveId: IMapper & { 
+	properties?: Array<string>;
+	getByMoveId: IMapper & {
 		argNames: [ "moveId" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJob */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmSiteMoveJob {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJob_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJob_Collection {
-	getByMoveId: IMapper & { 
+	properties?: Array<string>;
+	getByMoveId: IMapper & {
 		argNames: [ "moveId" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJob */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossFarmUserMoveJob {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty_Collection {
-	getByPropertyNameAndGeoLocation: IMapper & { 
+	properties?: Array<string>;
+	getByPropertyNameAndGeoLocation: IMapper & {
 		argNames: [ "propertyName", "geo" ],
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "startTimeInUtc" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_CrossGeoTenantProperty {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator_Collection {
-	create: IMapper & { 
+	properties?: Array<string>;
+	create: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByLoginName: IMapper & { 
+	getByLoginName: IMapper & {
 		argNames: [ "loginName" ],
 	},
-	getByLoginNameAndType: IMapper & { 
+	getByLoginNameAndType: IMapper & {
 		argNames: [ "loginName", "memberType" ],
 	},
-	getByObjectId: IMapper & { 
+	getByObjectId: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_GeoAdministrator {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_GeoExperience {
-	upgradeAllInstancesToSPOMode: IMapper & { 
+	properties?: Array<string>;
+	upgradeAllInstancesToSPOMode: IMapper & {
 
 	},
-	upgradeToSPOMode: IMapper & { 
+	upgradeToSPOMode: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_GeoTenantInstanceInformation_Collection {
-	getByGeoLocation: IMapper & { 
+	properties?: Array<string>;
+	getByGeoLocation: IMapper & {
 		argNames: [ "geoLocation" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob_Collection {
-	getByGroupName: IMapper & { 
+	properties?: Array<string>;
+	getByGroupName: IMapper & {
 		argNames: [ "groupname" ],
 	},
-	getMoveReport: IMapper & { 
+	getMoveReport: IMapper & {
 		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_GroupMoveJob {
-	cancel: IMapper & { 
+	properties?: Array<string>;
+	cancel: IMapper & {
 
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_MultiGeoServicesBeta {
-	crossGeoCredentials: IMapper & { 
+	properties?: Array<string>;
+	crossGeoCredentials: IMapper & {
 		argNames: [ "siteId" ],
 	},
-	dBSchemaCompatibilityCheck: IMapper & { 
+	dBSchemaCompatibilityCheck: IMapper & {
 
 	},
-	geoMoveCompatibilityChecks: IMapper & { 
+	geoMoveCompatibilityChecks: IMapper & {
 
 	},
-	userPersonalSiteId: IMapper & { 
+	userPersonalSiteId: IMapper & {
 		argNames: [ "userPrincipalName" ],
 	},
-	userPersonalSiteLocation: IMapper & { 
+	userPersonalSiteLocation: IMapper & {
 		argNames: [ "userPrincipalName" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob_Collection {
-	getByUrl: IMapper & { 
+	properties?: Array<string>;
+	getByUrl: IMapper & {
 		argNames: [ "url" ],
 	},
-	getMoveReport: IMapper & { 
+	getMoveReport: IMapper & {
 		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_SiteMoveJob {
-	cancel: IMapper & { 
+	properties?: Array<string>;
+	cancel: IMapper & {
 
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_SiteRenameJob_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_SiteRenameJob_Collection {
-	getBySiteUrl: IMapper & { 
+	properties?: Array<string>;
+	getBySiteUrl: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota_Collection {
-	getByLocation: IMapper & { 
+	properties?: Array<string>;
+	getByLocation: IMapper & {
 		argNames: [ "geoLocation" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_StorageQuota {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_TaxonomyReplicationParameters {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_UnifiedGroup_Collection {
-	getByAlias: IMapper & { 
+	properties?: Array<string>;
+	getByAlias: IMapper & {
 		argNames: [ "alias" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_Collection */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob_Collection {
-	getByDirection: IMapper & { 
+	properties?: Array<string>;
+	getByDirection: IMapper & {
 		argNames: [ "direction" ],
 	},
-	getByMoveId: IMapper & { 
+	getByMoveId: IMapper & {
 		argNames: [ "odbMoveId" ],
 	},
-	getByUpn: IMapper & { 
+	getByUpn: IMapper & {
 		argNames: [ "upn" ],
 	},
-	getByValidPdl: IMapper & { 
+	getByValidPdl: IMapper & {
 		argNames: [ "validPdl" ],
 	},
-	getMoveReport: IMapper & { 
+	getMoveReport: IMapper & {
 		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob */
 export interface Microsoft_Online_SharePoint_MultiGeo_Service_UserMoveJob {
-	cancel: IMapper & { 
+	properties?: Array<string>;
+	cancel: IMapper & {
 
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Directory_Provider_DirectoryNotification */
 export interface SP_Directory_Provider_DirectoryNotification {
-	notifyChanges: IMapper & { 
+	properties?: Array<string>;
+	notifyChanges: IMapper & {
 		argNames: [ "directoryObjectChanges" ],
 	},
 };
 
 /* SP_Directory_Provider_SharePointDirectoryProvider */
 export interface SP_Directory_Provider_SharePointDirectoryProvider {
-	createDirectoryObject: IMapper & { 
+	properties?: Array<string>;
+	createDirectoryObject: IMapper & {
 		argNames: [ "data" ],
 	},
-	deleteDirectoryObject: IMapper & { 
+	deleteDirectoryObject: IMapper & {
 		argNames: [ "data" ],
 	},
-	getOrCreateUnifiedGroupTenantInstanceId: IMapper & { 
+	getOrCreateUnifiedGroupTenantInstanceId: IMapper & {
 		argNames: [ "groupId", "tenantInstanceId" ],
 	},
-	notifyDataChanges: IMapper & { 
+	notifyDataChanges: IMapper & {
 		argNames: [ "data" ],
 	},
-	readDirectoryObject: IMapper & { 
+	readDirectoryObject: IMapper & {
 		argNames: [ "data" ],
 	},
-	readDirectoryObjectBatch: IMapper & { 
+	readDirectoryObjectBatch: IMapper & {
 		argNames: [ "ids", "objectType" ],
 	},
-	updateCache: IMapper & { 
+	updateCache: IMapper & {
 		argNames: [ "data" ],
 	},
-	updateDirectoryObject: IMapper & { 
+	updateDirectoryObject: IMapper & {
 		argNames: [ "data" ],
 	},
 };
 
 /* SP_Microfeed_MicrofeedPostDefinitionManager */
 export interface SP_Microfeed_MicrofeedPostDefinitionManager {
-	deleteMicrofeedPostDefinition: IMapper & { 
+	properties?: Array<string>;
+	deleteMicrofeedPostDefinition: IMapper & {
 		argNames: [ "postDefinition" ],
 	},
-	getMicrofeedPostDefinition: IMapper & { 
+	getMicrofeedPostDefinition: IMapper & {
 		argNames: [ "definitionName" ],
 	},
-	getMicrofeedPostDefinitions: IMapper & { 
+	getMicrofeedPostDefinitions: IMapper & {
 
 	},
-	newMicrofeedPostDefinition: IMapper & { 
+	newMicrofeedPostDefinition: IMapper & {
 		argNames: [ "definitionName" ],
 	},
-	updateMicrofeedPostDefinition: IMapper & { 
+	updateMicrofeedPostDefinition: IMapper & {
 		argNames: [ "postDefinition" ],
 	},
 };
 
 /* SP_Microfeed_MicrofeedAttachmentStore */
 export interface SP_Microfeed_MicrofeedAttachmentStore {
-	deletePreProcessedAttachment: IMapper & { 
+	properties?: Array<string>;
+	deletePreProcessedAttachment: IMapper & {
 		argNames: [ "attachmentUri" ],
 	},
-	getImage: IMapper & { 
+	getImage: IMapper & {
 		argNames: [ "imageUrl", "key", "iv" ],
 	},
-	preProcessAttachment: IMapper & { 
+	preProcessAttachment: IMapper & {
 		argNames: [ "link" ],
 	},
-	putFile: IMapper & { 
+	putFile: IMapper & {
 		argNames: [ "originalFileName", "fileData" ],
 	},
-	putImage: IMapper & { 
+	putImage: IMapper & {
 		argNames: [ "imageData" ],
 	},
 };
 
 /* SP_Microfeed_MicrofeedData_Collection */
 export interface SP_Microfeed_MicrofeedData_Collection {
-	deleteAll: IMapper & { 
+	properties?: Array<string>;
+	deleteAll: IMapper & {
 
 	},
 };
 
 /* SP_Microfeed_MicrofeedData */
 export interface SP_Microfeed_MicrofeedData {
-	addAttachment: IMapper & { 
+	properties?: Array<string>;
+	addAttachment: IMapper & {
 		argNames: [ "name", "bytes" ],
 	},
-	systemUpdate: IMapper & { 
+	systemUpdate: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Microfeed_MicrofeedManager */
 export interface SP_Microfeed_MicrofeedManager {
-	addUserToPostPeopleList: IMapper & { 
+	properties?: Array<string>;
+	addUserToPostPeopleList: IMapper & {
 		argNames: [ "postIdentifier", "UserLoginName" ],
 	},
-	clearUnreadMentionsCount: IMapper & { 
+	clearUnreadMentionsCount: IMapper & {
 
 	},
-	deleteById: IMapper & { 
+	deleteById: IMapper & {
 		argNames: [ "postIdentifier" ],
 	},
-	deleteUserFromPostPeopleList: IMapper & { 
+	deleteUserFromPostPeopleList: IMapper & {
 		argNames: [ "postIdentifier", "UserLoginName" ],
 	},
-	getMyCategoricalFeed: IMapper & { 
+	getMyCategoricalFeed: IMapper & {
 		argNames: [ "feedOptions" ],
 	},
-	getMyConsolidatedFeed: IMapper & { 
+	getMyConsolidatedFeed: IMapper & {
 		argNames: [ "feedOptions" ],
 	},
-	getMyPublishedFeed: IMapper & { 
+	getMyPublishedFeed: IMapper & {
 		argNames: [ "feedOptions", "typeOfPubFeed", "ShowPublicView" ],
 	},
-	getPublishedFeed: IMapper & { 
+	getPublishedFeed: IMapper & {
 		argNames: [ "feedOwner", "feedOptions", "typeOfPubFeed" ],
 	},
-	getThread: IMapper & { 
+	getThread: IMapper & {
 		argNames: [ "postIdentifier" ],
 	},
-	getUnreadMentionsCount: IMapper & { 
+	getUnreadMentionsCount: IMapper & {
 
 	},
-	like: IMapper & { 
+	like: IMapper & {
 		argNames: [ "postIdentifier" ],
 	},
-	lockThreadById: IMapper & { 
+	lockThreadById: IMapper & {
 		argNames: [ "threadIdentifier" ],
 	},
-	post: IMapper & { 
+	post: IMapper & {
 		argNames: [ "postOptions" ],
 	},
-	postReply: IMapper & { 
+	postReply: IMapper & {
 		argNames: [ "postIdentifier", "postReplyOptions" ],
 	},
-	repopulateLMT: IMapper & { 
+	repopulateLMT: IMapper & {
 		argNames: [ "timeStamp", "secureHash" ],
 	},
-	unLike: IMapper & { 
+	unLike: IMapper & {
 		argNames: [ "postIdentifier" ],
 	},
-	unLockThreadById: IMapper & { 
+	unLockThreadById: IMapper & {
 		argNames: [ "threadIdentifier" ],
 	},
-	unsubscribeFromEMail: IMapper & { 
+	unsubscribeFromEMail: IMapper & {
 		argNames: [ "postIdentifier" ],
 	},
 };
 
 /* SP_Microfeed_MicrofeedStore */
 export interface SP_Microfeed_MicrofeedStore {
-	addData: IMapper & { 
+	properties?: Array<string>;
+	addData: IMapper & {
 		argNames: [ "name", "data" ],
 	},
-	addDataAsStream: IMapper & { 
+	addDataAsStream: IMapper & {
 		argNames: [ "name", "data" ],
 	},
-	executePendingOperations: IMapper & { 
+	executePendingOperations: IMapper & {
 
 	},
-	getItem: IMapper & { 
+	getItem: IMapper & {
 		argNames: [ "storeIdentifier" ],
 	},
-	getSocialProperties: IMapper & { 
+	getSocialProperties: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	incrementUnreadAtMentionCount: IMapper & { 
+	incrementUnreadAtMentionCount: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	newItem: IMapper & { 
+	newItem: IMapper & {
 		argNames: [ "storeIdentifier" ],
 	},
-	query: IMapper & { 
+	query: IMapper & {
 		argNames: [ "storeIdentifier", "query" ],
 	},
-	setPostLikeStatus: IMapper & { 
+	setPostLikeStatus: IMapper & {
 		argNames: [ "accountName", "postId", "like" ],
 	},
 };
 
 /* SP_Social_SocialFeedManager */
 export interface SP_Social_SocialFeedManager {
-	createFileAttachment: IMapper & { 
+	properties?: Array<string>;
+	createFileAttachment: IMapper & {
 		argNames: [ "name", "description", "fileData" ],
 	},
-	createImageAttachment: IMapper & { 
+	createImageAttachment: IMapper & {
 		argNames: [ "name", "description", "imageData" ],
 	},
-	createPost: IMapper & { 
+	createPost: IMapper & {
 		argNames: [ "targetId", "creationData" ],
 	},
-	deletePost: IMapper & { 
+	deletePost: IMapper & {
 		argNames: [ "postId" ],
 	},
-	getAllLikers: IMapper & { 
+	getAllLikers: IMapper & {
 		argNames: [ "postId" ],
 	},
-	getFeed: IMapper & { 
+	getFeed: IMapper & {
 		argNames: [ "type", "options" ],
 	},
-	getFeedFor: IMapper & { 
+	getFeedFor: IMapper & {
 		argNames: [ "actorId", "options" ],
 	},
-	getFullThread: IMapper & { 
+	getFullThread: IMapper & {
 		argNames: [ "threadId" ],
 	},
-	getMentions: IMapper & { 
+	getMentions: IMapper & {
 		argNames: [ "clearUnreadMentions", "options" ],
 	},
-	getPreview: IMapper & { 
+	getPreview: IMapper & {
 		argNames: [ "itemUrl" ],
 	},
-	getPreviewImage: IMapper & { 
+	getPreviewImage: IMapper & {
 		argNames: [ "url", "key", "iv" ],
 	},
-	getUnreadMentionCount: IMapper & { 
+	getUnreadMentionCount: IMapper & {
 
 	},
-	likePost: IMapper & { 
+	likePost: IMapper & {
 		argNames: [ "postId" ],
 	},
-	lockThread: IMapper & { 
+	lockThread: IMapper & {
 		argNames: [ "threadId" ],
 	},
-	suppressThreadNotifications: IMapper & { 
+	suppressThreadNotifications: IMapper & {
 		argNames: [ "threadId" ],
 	},
-	unlikePost: IMapper & { 
+	unlikePost: IMapper & {
 		argNames: [ "postId" ],
 	},
-	unlockThread: IMapper & { 
+	unlockThread: IMapper & {
 		argNames: [ "threadId" ],
 	},
 };
 
 /* SP_Social_SocialFollowingManager */
 export interface SP_Social_SocialFollowingManager {
-	follow: IMapper & { 
+	properties?: Array<string>;
+	follow: IMapper & {
 		argNames: [ "actor" ],
 	},
-	getFollowed: IMapper & { 
+	getFollowed: IMapper & {
 		argNames: [ "types" ],
 	},
-	getFollowedCount: IMapper & { 
+	getFollowedCount: IMapper & {
 		argNames: [ "types" ],
 	},
-	getFollowers: IMapper & { 
+	getFollowers: IMapper & {
 
 	},
-	getSuggestions: IMapper & { 
+	getSuggestions: IMapper & {
 
 	},
-	isFollowed: IMapper & { 
+	isFollowed: IMapper & {
 		argNames: [ "actor" ],
 	},
-	stopFollowing: IMapper & { 
+	stopFollowing: IMapper & {
 		argNames: [ "actor" ],
 	},
 };
 
 /* SP_Social_SocialRestActor */
 export interface SP_Social_SocialRestActor {
-	feed: IMapper & { 
+	properties?: Array<string>;
+	feed: IMapper & {
 		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
 	},
-	likes: IMapper & { 
+	likes: IMapper & {
 		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
 	},
-	mentionFeed: IMapper & { 
+	mentionFeed: IMapper & {
 		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
 	},
-	news: IMapper & { 
+	news: IMapper & {
 		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
 	},
-	organizationFeed: IMapper & { 
+	organizationFeed: IMapper & {
 		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
 	},
-	timelineFeed: IMapper & { 
+	timelineFeed: IMapper & {
 		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
 	},
-	unreadMentionCount: IMapper & { 
+	unreadMentionCount: IMapper & {
 
 	},
 };
 
 /* SP_Social_SocialRestFeedManager */
 export interface SP_Social_SocialRestFeedManager {
-	actor: IMapper & { 
+	properties?: Array<string>;
+	actor: IMapper & {
 		argNames: [ "item" ],
 	},
-	my: IMapper & { 
+	my: IMapper & {
 
 	},
-	post: IMapper & { 
+	post: IMapper & {
 		argNames: [ "ID" ],
 	},
 };
 
 /* SP_Social_SocialRestFeed */
 export interface SP_Social_SocialRestFeed {
-	clearUnReadMentionCount: IMapper & { 
+	properties?: Array<string>;
+	clearUnReadMentionCount: IMapper & {
 		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
 	},
-	post: IMapper & { 
+	post: IMapper & {
 		argNames: [ "restCreationData" ],
 	},
 };
 
 /* SP_Social_SocialRestFollowingManager */
 export interface SP_Social_SocialRestFollowingManager {
-	follow: IMapper & { 
+	properties?: Array<string>;
+	follow: IMapper & {
 		argNames: [ "AccountName", "ActorType", "ContentUri", "Id", "TagGuid" ],
 	},
-	followed: IMapper & { 
+	followed: IMapper & {
 		argNames: [ "types" ],
 	},
-	followedCount: IMapper & { 
+	followedCount: IMapper & {
 		argNames: [ "types" ],
 	},
-	followers: IMapper & { 
+	followers: IMapper & {
 
 	},
-	isFollowed: IMapper & { 
+	isFollowed: IMapper & {
 		argNames: [ "AccountName", "ActorType", "ContentUri", "Id", "TagGuid" ],
 	},
-	my: IMapper & { 
+	my: IMapper & {
 
 	},
-	stopFollowing: IMapper & { 
+	stopFollowing: IMapper & {
 		argNames: [ "AccountName", "ActorType", "ContentUri", "Id", "TagGuid" ],
 	},
-	suggestions: IMapper & { 
+	suggestions: IMapper & {
 
 	},
 };
 
 /* SP_Social_SocialRestThread */
 export interface SP_Social_SocialRestThread {
-	delete: IMapper & { 
+	properties?: Array<string>;
+	delete: IMapper & {
 		argNames: [ "ID" ],
 	},
-	like: IMapper & { 
+	like: IMapper & {
 		argNames: [ "ID" ],
 	},
-	likers: IMapper & { 
+	likers: IMapper & {
 		argNames: [ "ID" ],
 	},
-	lock: IMapper & { 
+	lock: IMapper & {
 		argNames: [ "ID" ],
 	},
-	reply: IMapper & { 
+	reply: IMapper & {
 		argNames: [ "restCreationData" ],
 	},
-	unLike: IMapper & { 
+	unLike: IMapper & {
 		argNames: [ "ID" ],
 	},
-	unLock: IMapper & { 
+	unLock: IMapper & {
 		argNames: [ "ID" ],
 	},
 };
 
 /* SP_UserProfiles_FollowedContent */
 export interface SP_UserProfiles_FollowedContent {
-	findAndUpdateFollowedGroup: IMapper & { 
+	properties?: Array<string>;
+	findAndUpdateFollowedGroup: IMapper & {
 		argNames: [ "groupId" ],
 	},
-	findAndUpdateFollowedItem: IMapper & { 
+	findAndUpdateFollowedItem: IMapper & {
 		argNames: [ "url" ],
 	},
-	followItem: IMapper & { 
+	followItem: IMapper & {
 		argNames: [ "item" ],
 	},
-	getFollowedStatus: IMapper & { 
+	getFollowedStatus: IMapper & {
 		argNames: [ "url" ],
 	},
-	getGroups: IMapper & { 
+	getGroups: IMapper & {
 		argNames: [ "rowLimit" ],
 	},
-	getItem: IMapper & { 
+	getItem: IMapper & {
 		argNames: [ "url" ],
 	},
-	getItems: IMapper & { 
+	getItems: IMapper & {
 		argNames: [ "options", "subtype" ],
 	},
-	hasGroupMembershipChangedAndSyncChanges: IMapper & { 
+	hasGroupMembershipChangedAndSyncChanges: IMapper & {
 
 	},
-	isFollowed: IMapper & { 
+	isFollowed: IMapper & {
 		argNames: [ "url" ],
 	},
-	refreshFollowedItem: IMapper & { 
+	refreshFollowedItem: IMapper & {
 		argNames: [ "item" ],
 	},
-	setItemPinState: IMapper & { 
+	setItemPinState: IMapper & {
 		argNames: [ "uri", "groupId", "pinState" ],
 	},
-	stopFollowing: IMapper & { 
+	stopFollowing: IMapper & {
 		argNames: [ "url" ],
 	},
-	updateFollowedGroupForUser: IMapper & { 
+	updateFollowedGroupForUser: IMapper & {
 		argNames: [ "contextUri", "groupId", "loginName" ],
 	},
 };
 
 /* SP_UserProfiles_PeopleManager */
 export interface SP_UserProfiles_PeopleManager {
-	amIFollowedBy: IMapper & { 
+	properties?: Array<string>;
+	amIFollowedBy: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	amIFollowing: IMapper & { 
+	amIFollowing: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	follow: IMapper & { 
+	follow: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	followTag: IMapper & { 
+	followTag: IMapper & {
 		argNames: [ "value" ],
 	},
-	getDefaultDocumentLibrary: IMapper & { 
+	getDefaultDocumentLibrary: IMapper & {
 		argNames: [ "accountName", "createSiteIfNotExists", "siteCreationPriority" ],
 	},
-	getFollowedTags: IMapper & { 
+	getFollowedTags: IMapper & {
 		argNames: [ "cTagsToFetch" ],
 	},
-	getFollowersFor: IMapper & { 
+	getFollowersFor: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	getMyFollowers: IMapper & { 
+	getMyFollowers: IMapper & {
 
 	},
-	getMyProperties: IMapper & { 
+	getMyProperties: IMapper & {
 
 	},
-	getMySuggestions: IMapper & { 
+	getMySuggestions: IMapper & {
 
 	},
-	getPeopleFollowedBy: IMapper & { 
+	getPeopleFollowedBy: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	getPeopleFollowedByMe: IMapper & { 
+	getPeopleFollowedByMe: IMapper & {
 
 	},
-	getPropertiesFor: IMapper & { 
+	getPropertiesFor: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	getSPUserInformation: IMapper & { 
+	getSPUserInformation: IMapper & {
 		argNames: [ "accountName", "siteId" ],
 	},
-	getUserProfileProperties: IMapper & { 
+	getUserProfileProperties: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	getUserProfilePropertyFor: IMapper & { 
+	getUserProfilePropertyFor: IMapper & {
 		argNames: [ "accountName", "propertyName" ],
 	},
-	hardDeleteUserProfile: IMapper & { 
+	hardDeleteUserProfile: IMapper & {
 		argNames: [ "accountName", "userId" ],
 	},
-	hideSuggestion: IMapper & { 
+	hideSuggestion: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	removeSPUserInformation: IMapper & { 
+	removeSPUserInformation: IMapper & {
 		argNames: [ "accountName", "siteId", "redactName" ],
 	},
-	setMultiValuedProfileProperty: IMapper & { 
+	setMultiValuedProfileProperty: IMapper & {
 		argNames: [ "accountName", "propertyName", "propertyValues" ],
 	},
-	setMyProfilePicture: IMapper & { 
+	setMyProfilePicture: IMapper & {
 		argNames: [ "picture" ],
 	},
-	setSingleValueProfileProperty: IMapper & { 
+	setSingleValueProfileProperty: IMapper & {
 		argNames: [ "accountName", "propertyName", "propertyValue" ],
 	},
-	stopFollowing: IMapper & { 
+	stopFollowing: IMapper & {
 		argNames: [ "accountName" ],
 	},
-	stopFollowingTag: IMapper & { 
+	stopFollowingTag: IMapper & {
 		argNames: [ "value" ],
 	},
 };
 
 /* SP_UserProfiles_PersonalCache */
 export interface SP_UserProfiles_PersonalCache {
-	deleteCacheItemsAsync: IMapper & { 
+	properties?: Array<string>;
+	deleteCacheItemsAsync: IMapper & {
 		argNames: [ "cacheItems" ],
 	},
-	loadUserProfile: IMapper & { 
+	loadUserProfile: IMapper & {
 		argNames: [ "email" ],
 	},
-	readCache: IMapper & { 
+	readCache: IMapper & {
 		argNames: [ "folderPath" ],
 	},
-	readCacheOrCreate: IMapper & { 
+	readCacheOrCreate: IMapper & {
 		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing" ],
 	},
-	readCacheOrCreateOrderById: IMapper & { 
+	readCacheOrCreateOrderById: IMapper & {
 		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing" ],
 	},
-	writeCache: IMapper & { 
+	writeCache: IMapper & {
 		argNames: [ "cacheItems" ],
 	},
 };
 
 /* SP_UserProfiles_ProfileImageStore */
 export interface SP_UserProfiles_ProfileImageStore {
-	saveUploadedFile: IMapper & { 
+	properties?: Array<string>;
+	saveUploadedFile: IMapper & {
 		argNames: [ "profileType", "fileNamePrefix", "isFeedAttachment", "clientFilePath", "fileSize", "fileStream" ],
 	},
 };
 
 /* SP_UserProfiles_ProfileLoader */
 export interface SP_UserProfiles_ProfileLoader {
-	createPersonalSiteEnqueueBulk: IMapper & { 
+	properties?: Array<string>;
+	createPersonalSiteEnqueueBulk: IMapper & {
 		argNames: [ "emailIDs" ],
 	},
-	getUserProfile: IMapper & { 
+	getUserProfile: IMapper & {
 
 	},
 };
 
 /* SP_UserProfiles_UserProfilePropertiesForUser */
 export interface SP_UserProfiles_UserProfilePropertiesForUser {
-	getPropertyNames: IMapper & { 
+	properties?: Array<string>;
+	getPropertyNames: IMapper & {
 
 	},
 };
 
 /* SP_UserProfiles_UserProfile */
 export interface SP_UserProfiles_UserProfile {
-	createPersonalSite: IMapper & { 
+	properties?: Array<string>;
+	createPersonalSite: IMapper & {
 		argNames: [ "lcid" ],
 	},
-	createPersonalSiteEnque: IMapper & { 
+	createPersonalSiteEnque: IMapper & {
 		argNames: [ "isInteractive" ],
 	},
-	createPersonalSiteFromWorkItem: IMapper & { 
+	createPersonalSiteFromWorkItem: IMapper & {
 		argNames: [ "workItemType" ],
 	},
-	setMySiteFirstRunExperience: IMapper & { 
+	setMySiteFirstRunExperience: IMapper & {
 		argNames: [ "value" ],
 	},
-	shareAllSocialData: IMapper & { 
+	shareAllSocialData: IMapper & {
 		argNames: [ "shareAll" ],
 	},
 };
 
 /* PS_CustomField_Collection */
 export interface PS_CustomField_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByAppAlternateId: IMapper & { 
+	getByAppAlternateId: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_CustomField */
 export interface PS_CustomField {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_LookupEntry */
 export interface PS_LookupEntry {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_LookupEntry_Collection */
 export interface PS_LookupEntry_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByAppAlternateId: IMapper & { 
+	getByAppAlternateId: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_LookupTable_Collection */
 export interface PS_LookupTable_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByAppAlternateId: IMapper & { 
+	getByAppAlternateId: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_LookupTable */
 export interface PS_LookupTable {
-	addMask: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	addMask: IMapper & {
 		argNames: [ "mask" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	updateMask: IMapper & { 
+	updateMask: IMapper & {
 		argNames: [ "mask", "level" ],
 	},
 };
 
 /* PS_CalendarException */
 export interface PS_CalendarException {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_CalendarException_Collection */
 export interface PS_CalendarException_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* PS_Calendar_Collection */
 export interface PS_Calendar_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_Calendar */
 export interface PS_Calendar {
-	copyTo: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	copyTo: IMapper & {
 		argNames: [ "name" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_BaseCalendarException */
 export interface PS_BaseCalendarException {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_DraftAssignment */
 export interface PS_DraftAssignment {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_DraftAssignment_Collection */
 export interface PS_DraftAssignment_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_EnterpriseResource_Collection */
 export interface PS_EnterpriseResource_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_EnterpriseResource */
 export interface PS_EnterpriseResource {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	forceCheckIn: IMapper & { 
+	forceCheckIn: IMapper & {
 
 	},
-	updateClaimsAccount: IMapper & { 
+	updateClaimsAccount: IMapper & {
 		argNames: [ "newClaimsAccount" ],
 	},
 };
 
 /* PS_StatusAssignment_Collection */
 export interface PS_StatusAssignment_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	getTimePhaseByUrl: IMapper & { 
+	getTimePhaseByUrl: IMapper & {
 		argNames: [ "start", "end" ],
 	},
-	submitAllStatusUpdates: IMapper & { 
+	submitAllStatusUpdates: IMapper & {
 		argNames: [ "comment" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_StatusAssignment */
 export interface PS_StatusAssignment {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	submitStatusUpdates: IMapper & { 
+	submitStatusUpdates: IMapper & {
 		argNames: [ "comment" ],
 	},
 };
 
 /* PS_StatusAssignmentHistoryLine_Collection */
 export interface PS_StatusAssignmentHistoryLine_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_Project */
 export interface PS_Project {
-	getResourcePlanByUrl: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getResourcePlanByUrl: IMapper & {
 		argNames: [ "start", "end", "scale" ],
 	},
-	leaveProjectStage: IMapper & { 
+	leaveProjectStage: IMapper & {
 
 	},
-	readyToLeaveProjectStage: IMapper & { 
+	readyToLeaveProjectStage: IMapper & {
 
 	},
-	updateIdeaListItemStatus: IMapper & { 
+	updateIdeaListItemStatus: IMapper & {
 		argNames: [ "status" ],
 	},
 };
 
 /* PS_EngagementComment_Collection */
 export interface PS_EngagementComment_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "comment" ],
 	},
 };
 
 /* PS_ProjectEngagement_Collection */
 export interface PS_ProjectEngagement_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_ProjectEngagement */
 export interface PS_ProjectEngagement {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	getTimephasedByUrl: IMapper & { 
+	getTimephasedByUrl: IMapper & {
 		argNames: [ "start", "end", "scale", "contourType" ],
 	},
 };
 
 /* PS_EnterpriseProjectType_Collection */
 export interface PS_EnterpriseProjectType_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_EnterpriseProjectType */
 export interface PS_EnterpriseProjectType {
-	addDepartment: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	addDepartment: IMapper & {
 		argNames: [ "departmentValueGuid" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	removeDepartment: IMapper & { 
+	removeDepartment: IMapper & {
 		argNames: [ "departmentValueGuid" ],
 	},
-	updateCreatePDP: IMapper & { 
+	updateCreatePDP: IMapper & {
 		argNames: [ "pdp" ],
 	},
 };
 
 /* PS_ProjectDetailPage_Collection */
 export interface PS_ProjectDetailPage_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_Phase_Collection */
 export interface PS_Phase_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_Phase */
 export interface PS_Phase {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_Stage_Collection */
 export interface PS_Stage_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_Stage */
 export interface PS_Stage {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_StageCustomField_Collection */
 export interface PS_StageCustomField_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "creationInfo" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_StageCustomField */
 export interface PS_StageCustomField {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_StageDetailPage_Collection */
 export interface PS_StageDetailPage_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_StageDetailPage */
 export interface PS_StageDetailPage {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_PublishedProject_Collection */
 export interface PS_PublishedProject_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
-	validate: IMapper & { 
+	validate: IMapper & {
 
 	},
 };
 
 /* PS_PublishedProject */
 export interface PS_PublishedProject {
-	getResourcePlanByUrl: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getResourcePlanByUrl: IMapper & {
 		argNames: [ "start", "end", "scale" ],
 	},
-	leaveProjectStage: IMapper & { 
+	leaveProjectStage: IMapper & {
 
 	},
-	readyToLeaveProjectStage: IMapper & { 
+	readyToLeaveProjectStage: IMapper & {
 
 	},
-	updateIdeaListItemStatus: IMapper & { 
+	updateIdeaListItemStatus: IMapper & {
 		argNames: [ "status" ],
 	},
-	checkOut: IMapper & { 
+	checkOut: IMapper & {
 
 	},
-	createProjectSite: IMapper & { 
+	createProjectSite: IMapper & {
 		argNames: [ "siteName" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	submitToWorkflow: IMapper & { 
+	submitToWorkflow: IMapper & {
 
 	},
-	updateVisibilityCustomFields: IMapper & { 
+	updateVisibilityCustomFields: IMapper & {
 
 	},
 };
 
 /* PS_PublishedAssignment_Collection */
 export interface PS_PublishedAssignment_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_PublishedProjectResource_Collection */
 export interface PS_PublishedProjectResource_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_PublishedTask_Collection */
 export interface PS_PublishedTask_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_PublishedTask */
 export interface PS_PublishedTask {
-	addTaskPlanLink: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	addTaskPlanLink: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	deleteTaskPlanLink: IMapper & { 
+	deleteTaskPlanLink: IMapper & {
 
 	},
 };
 
 /* PS_EntityLink_Collection */
 export interface PS_EntityLink_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "id" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_EntityLink */
 export interface PS_EntityLink {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_PublishedTaskLink_Collection */
 export interface PS_PublishedTaskLink_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_TaskPlanLink */
 export interface PS_TaskPlanLink {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_DraftProject */
 export interface PS_DraftProject {
-	getResourcePlanByUrl: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getResourcePlanByUrl: IMapper & {
 		argNames: [ "start", "end", "scale" ],
 	},
-	leaveProjectStage: IMapper & { 
+	leaveProjectStage: IMapper & {
 
 	},
-	readyToLeaveProjectStage: IMapper & { 
+	readyToLeaveProjectStage: IMapper & {
 
 	},
-	updateIdeaListItemStatus: IMapper & { 
+	updateIdeaListItemStatus: IMapper & {
 		argNames: [ "status" ],
 	},
-	changeEnterpriseProjectType: IMapper & { 
+	changeEnterpriseProjectType: IMapper & {
 		argNames: [ "enterpriseProjectTypeUid" ],
 	},
-	checkIn: IMapper & { 
+	checkIn: IMapper & {
 		argNames: [ "force" ],
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "token" ],
 	},
-	publish: IMapper & { 
+	publish: IMapper & {
 		argNames: [ "checkIn" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
-	updateCustomFields: IMapper & { 
+	updateCustomFields: IMapper & {
 		argNames: [ "customFieldDictionary" ],
 	},
-	validate: IMapper & { 
+	validate: IMapper & {
 
 	},
 };
 
 /* PS_DraftProjectResource */
 export interface PS_DraftProjectResource {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_DraftProjectResource_Collection */
 export interface PS_DraftProjectResource_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	addEnterpriseResourceById: IMapper & { 
+	addEnterpriseResourceById: IMapper & {
 		argNames: [ "resourceId" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_DraftTaskLink */
 export interface PS_DraftTaskLink {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_DraftTaskLink_Collection */
 export interface PS_DraftTaskLink_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_DraftTask */
 export interface PS_DraftTask {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_DraftTask_Collection */
 export interface PS_DraftTask_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_ProjectWorkflowInstance_Collection */
 export interface PS_ProjectWorkflowInstance_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_ProjectWorkflowInstance */
 export interface PS_ProjectWorkflowInstance {
-	restartWorkflow: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	restartWorkflow: IMapper & {
 
 	},
-	restartWorkflowSkipToStage: IMapper & { 
+	restartWorkflowSkipToStage: IMapper & {
 		argNames: [ "stageId" ],
 	},
 };
 
 /* PS_QueueJob_Collection */
 export interface PS_QueueJob_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_QueueJob */
 export interface PS_QueueJob {
-	cancel: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	cancel: IMapper & {
 
 	},
 };
 
 /* PS_EnterpriseResourceCostRate_Collection */
 export interface PS_EnterpriseResourceCostRate_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByDateUrl: IMapper & { 
+	getByDateUrl: IMapper & {
 		argNames: [ "effectiveDate" ],
 	},
 };
 
 /* PS_EnterpriseResourceCostRate */
 export interface PS_EnterpriseResourceCostRate {
-	restfulDelete: IMapper & { 
+	properties?: Array<string>;
+	restfulDelete: IMapper & {
 
 	},
-	rESTfulUpdate: IMapper & { 
+	rESTfulUpdate: IMapper & {
 
 	},
 };
 
 /* PS_ResourceEngagement_Collection */
 export interface PS_ResourceEngagement_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_ResourceEngagement */
 export interface PS_ResourceEngagement {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	getTimephasedByUrl: IMapper & { 
+	getTimephasedByUrl: IMapper & {
 		argNames: [ "start", "end", "scale", "contourType" ],
 	},
 };
 
 /* PS_Event_Collection */
 export interface PS_Event_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	getByInt: IMapper & { 
+	getByInt: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* PS_EventHandler_Collection */
 export interface PS_EventHandler_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_EventHandler */
 export interface PS_EventHandler {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_LookupCost */
 export interface PS_LookupCost {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_LookupDate */
 export interface PS_LookupDate {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_LookupDuration */
 export interface PS_LookupDuration {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_LookupNumber */
 export interface PS_LookupNumber {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_LookupText */
 export interface PS_LookupText {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_PlanAssignment_Collection */
 export interface PS_PlanAssignment_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_PlanAssignment */
 export interface PS_PlanAssignment {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_PlanAssignmentInterval_Collection */
 export interface PS_PlanAssignmentInterval_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByStart: IMapper & { 
+	getByStart: IMapper & {
 		argNames: [ "start" ],
 	},
 };
 
 /* PS_ProjectEngagementTimephasedPeriod_Collection */
 export interface PS_ProjectEngagementTimephasedPeriod_Collection {
-	getByStartUrl: IMapper & { 
+	properties?: Array<string>;
+	getByStartUrl: IMapper & {
 		argNames: [ "start" ],
 	},
 };
 
 /* PS_ProjectServer */
 export interface PS_ProjectServer {
-	getDeletedPublishedAssignments: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	getDeletedPublishedAssignments: IMapper & {
 		argNames: [ "deletedDate" ],
 	},
-	stopDelegation: IMapper & { 
+	stopDelegation: IMapper & {
 
 	},
 };
 
 /* PS_TimeSheetPeriod_Collection */
 export interface PS_TimeSheetPeriod_Collection {
-	getByGuid: IMapper & { 
+	properties?: Array<string>;
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_TimeSheetPeriod */
 export interface PS_TimeSheetPeriod {
-	createTimeSheet: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	createTimeSheet: IMapper & {
 
 	},
 };
 
 /* PS_TimeSheet */
 export interface PS_TimeSheet {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	recall: IMapper & { 
+	recall: IMapper & {
 
 	},
-	submit: IMapper & { 
+	submit: IMapper & {
 		argNames: [ "comment" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_TimeSheetLine_Collection */
 export interface PS_TimeSheetLine_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getByGuid: IMapper & { 
+	getByGuid: IMapper & {
 		argNames: [ "uid" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_TimeSheetLine */
 export interface PS_TimeSheetLine {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	submit: IMapper & { 
+	submit: IMapper & {
 		argNames: [ "comment" ],
 	},
 };
 
 /* PS_TimeSheetWork_Collection */
 export interface PS_TimeSheetWork_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
-	getByStartDate: IMapper & { 
+	getByStartDate: IMapper & {
 		argNames: [ "start" ],
 	},
 };
 
 /* PS_TimeSheetWork */
 export interface PS_TimeSheetWork {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_WorkflowActivities */
 export interface PS_WorkflowActivities {
-	checkInWithJobId: IMapper & { 
+	properties?: Array<string>;
+	checkInWithJobId: IMapper & {
 		argNames: [ "projId", "jobId", "force" ],
 	},
-	createProjectFromListItem: IMapper & { 
+	createProjectFromListItem: IMapper & {
 		argNames: [ "webId", "listId", "itemId", "eptId" ],
 	},
-	enterProjectStage: IMapper & { 
+	enterProjectStage: IMapper & {
 		argNames: [ "projectId", "stageId" ],
 	},
-	leaveProjectStage: IMapper & { 
+	leaveProjectStage: IMapper & {
 		argNames: [ "projectId" ],
 	},
-	publishSummaryWithJobId: IMapper & { 
+	publishSummaryWithJobId: IMapper & {
 		argNames: [ "projId", "jobId" ],
 	},
-	publishWithJobId: IMapper & { 
+	publishWithJobId: IMapper & {
 		argNames: [ "projectId", "jobId" ],
 	},
-	readBooleanProperty: IMapper & { 
+	readBooleanProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readCurrencyProperty: IMapper & { 
+	readCurrencyProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readDateTimeProperty: IMapper & { 
+	readDateTimeProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readGuidProperty: IMapper & { 
+	readGuidProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readIntegerProperty: IMapper & { 
+	readIntegerProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readNumberProperty: IMapper & { 
+	readNumberProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readProjectProperty: IMapper & { 
+	readProjectProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readTextProperty: IMapper & { 
+	readTextProperty: IMapper & {
 		argNames: [ "projectId", "propertyId" ],
 	},
-	readyToLeaveProjectStage: IMapper & { 
+	readyToLeaveProjectStage: IMapper & {
 		argNames: [ "projectId" ],
 	},
-	updateBooleanProperty: IMapper & { 
+	updateBooleanProperty: IMapper & {
 		argNames: [ "projectId", "propertyId", "value" ],
 	},
-	updateCurrencyProperty: IMapper & { 
+	updateCurrencyProperty: IMapper & {
 		argNames: [ "projectId", "propertyId", "value" ],
 	},
-	updateDateTimeProperty: IMapper & { 
+	updateDateTimeProperty: IMapper & {
 		argNames: [ "projectId", "propertyId", "value" ],
 	},
-	updateGuidProperty: IMapper & { 
+	updateGuidProperty: IMapper & {
 		argNames: [ "projectId", "propertyId", "value" ],
 	},
-	updateIdeaListItemStatus: IMapper & { 
+	updateIdeaListItemStatus: IMapper & {
 		argNames: [ "projectId", "status" ],
 	},
-	updateIntegerProperty: IMapper & { 
+	updateIntegerProperty: IMapper & {
 		argNames: [ "projectId", "propertyId", "value" ],
 	},
-	updateNumberProperty: IMapper & { 
+	updateNumberProperty: IMapper & {
 		argNames: [ "projectId", "propertyId", "value" ],
 	},
-	updateProjectStageStatus: IMapper & { 
+	updateProjectStageStatus: IMapper & {
 		argNames: [ "projectId", "stageId", "statusInformation", "stageStatusValue", "append" ],
 	},
-	updateTextProperty: IMapper & { 
+	updateTextProperty: IMapper & {
 		argNames: [ "projectId", "propertyId", "value" ],
 	},
 };
 
 /* PS_WorkflowDesignerField_Collection */
 export interface PS_WorkflowDesignerField_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* PS_ResourceCalendarException */
 export interface PS_ResourceCalendarException {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* PS_ResourceEngagementTimephasedPeriod_Collection */
 export interface PS_ResourceEngagementTimephasedPeriod_Collection {
-	getByStartUrl: IMapper & { 
+	properties?: Array<string>;
+	getByStartUrl: IMapper & {
 		argNames: [ "start" ],
 	},
 };
 
 /* PS_ResourcePlan */
 export interface PS_ResourcePlan {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	query: { argNames: ["query"] },
+	deleteObject: IMapper & {
 
 	},
-	forceCheckIn: IMapper & { 
+	forceCheckIn: IMapper & {
 
 	},
-	publish: IMapper & { 
+	publish: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* PS_ServiceStatus */
 export interface PS_ServiceStatus {
-	stopDelegation: IMapper & { 
+	properties?: Array<string>;
+	stopDelegation: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_CommunicationSite */
 export interface SP_Publishing_CommunicationSite {
-	create: IMapper & { 
+	properties?: Array<string>;
+	create: IMapper & {
 		argNames: [ "request" ],
 	},
-	status: IMapper & { 
+	status: IMapper & {
 		argNames: [ "url" ],
 	},
 };
 
 /* SP_Publishing_EmbedService */
 export interface SP_Publishing_EmbedService {
-	embedData: IMapper & { 
+	properties?: Array<string>;
+	embedData: IMapper & {
 		argNames: [ "url", "version" ],
 	},
 };
 
 /* SP_Publishing_VideoItem */
 export interface SP_Publishing_VideoItem {
-	customThumbnail: IMapper & { 
+	properties?: Array<string>;
+	customThumbnail: IMapper & {
 
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	getFile: IMapper & { 
+	getFile: IMapper & {
 
 	},
-	getPlaybackMetadata: IMapper & { 
+	getPlaybackMetadata: IMapper & {
 		argNames: [ "sdnConfiguration" ],
 	},
-	getPlaybackUrl: IMapper & { 
+	getPlaybackUrl: IMapper & {
 		argNames: [ "videoFormat" ],
 	},
-	getStreamingKeyAccessToken: IMapper & { 
+	getStreamingKeyAccessToken: IMapper & {
 
 	},
-	getVideoDetailedViewCount: IMapper & { 
+	getVideoDetailedViewCount: IMapper & {
 
 	},
-	getVideoEmbedCode: IMapper & { 
+	getVideoEmbedCode: IMapper & {
 		argNames: [ "width", "height", "autoplay", "showInfo", "makeResponsive" ],
 	},
-	getVideoViewProgressCount: IMapper & { 
+	getVideoViewProgressCount: IMapper & {
 
 	},
-	incrementVideoViewProgressCount: IMapper & { 
+	incrementVideoViewProgressCount: IMapper & {
 		argNames: [ "percentageViewed" ],
 	},
-	incrementViewCount: IMapper & { 
+	incrementViewCount: IMapper & {
 		argNames: [ "viewOrigin" ],
 	},
-	setPeopleInMedia: IMapper & { 
+	setPeopleInMedia: IMapper & {
 		argNames: [ "loginNames" ],
 	},
-	setVideoOwner: IMapper & { 
+	setVideoOwner: IMapper & {
 		argNames: [ "id" ],
 	},
-	subtitles: IMapper & { 
+	subtitles: IMapper & {
 
 	},
-	thumbnails: IMapper & { 
+	thumbnails: IMapper & {
 		argNames: [ "preferredWidth" ],
 	},
-	thumbnailStream: IMapper & { 
+	thumbnailStream: IMapper & {
 		argNames: [ "preferredWidth" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
-	uploadCustomThumbnail: IMapper & { 
+	uploadCustomThumbnail: IMapper & {
 		argNames: [ "fileExtension", "customVideoThumbnail" ],
 	},
 };
 
 /* SP_Publishing_VideoItem_Collection */
 export interface SP_Publishing_VideoItem_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_Publishing_PointPublishingPost_Collection */
 export interface SP_Publishing_PointPublishingPost_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id", "publishedOnly" ],
 	},
-	getByName: IMapper & { 
+	getByName: IMapper & {
 		argNames: [ "name", "publishedOnly" ],
 	},
 };
 
 /* SP_Publishing_PointPublishingPost */
 export interface SP_Publishing_PointPublishingPost {
-	addImageFromUrl: IMapper & { 
+	properties?: Array<string>;
+	addImageFromUrl: IMapper & {
 		argNames: [ "fromImageUrl" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_PointPublishingPostServiceManager */
 export interface SP_Publishing_PointPublishingPostServiceManager {
-	addBannerImageFromUrl: IMapper & { 
+	properties?: Array<string>;
+	addBannerImageFromUrl: IMapper & {
 		argNames: [ "fromImageUrl" ],
 	},
-	deleteMagazine: IMapper & { 
+	deleteMagazine: IMapper & {
 
 	},
-	getDocProps: IMapper & { 
+	getDocProps: IMapper & {
 		argNames: [ "docUrls" ],
 	},
-	getPostsQuery: IMapper & { 
+	getPostsQuery: IMapper & {
 		argNames: [ "top", "itemIdBoundary", "directionAscending", "publishedOnly", "draftsOnly" ],
 	},
-	getTopAuthors: IMapper & { 
+	getTopAuthors: IMapper & {
 		argNames: [ "count" ],
 	},
-	queryGroupNames: IMapper & { 
+	queryGroupNames: IMapper & {
 		argNames: [ "query" ],
 	},
-	setMagazineProperties: IMapper & { 
+	setMagazineProperties: IMapper & {
 		argNames: [ "title", "description", "bannerImageUrl", "bannerColor", "bannerPattern" ],
 	},
 };
 
 /* SP_Publishing_PointPublishingUser_Collection */
 export interface SP_Publishing_PointPublishingUser_Collection {
-	addOrUpdateUser: IMapper & { 
+	properties?: Array<string>;
+	addOrUpdateUser: IMapper & {
 		argNames: [ "loginName", "isOwner" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "userId" ],
 	},
 };
 
 /* SP_Publishing_PointPublishingUser */
 export interface SP_Publishing_PointPublishingUser {
-	deleteUserFromContainerGroup: IMapper & { 
+	properties?: Array<string>;
+	deleteUserFromContainerGroup: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_PointPublishingSiteManager */
 export interface SP_Publishing_PointPublishingSiteManager {
-	create: IMapper & { 
+	properties?: Array<string>;
+	create: IMapper & {
 		argNames: [ "siteInfo" ],
 	},
-	getSiteStatus: IMapper & { 
+	getSiteStatus: IMapper & {
 		argNames: [ "siteInfo" ],
 	},
 };
 
 /* SP_Publishing_PointPublishingTenantManager */
 export interface SP_Publishing_PointPublishingTenantManager {
-	isBlogEnabled: IMapper & { 
+	properties?: Array<string>;
+	isBlogEnabled: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_SitePageMetadata_Collection */
 export interface SP_Publishing_SitePageMetadata_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_Publishing_SitePage */
 export interface SP_Publishing_SitePage {
-	checkOut: IMapper & { 
+	properties?: Array<string>;
+	checkOut: IMapper & {
 
 	},
-	checkoutPage: IMapper & { 
+	checkoutPage: IMapper & {
 
 	},
-	copy: IMapper & { 
+	copy: IMapper & {
 
 	},
-	demoteFromNews: IMapper & { 
+	demoteFromNews: IMapper & {
 
 	},
-	discardPage: IMapper & { 
+	discardPage: IMapper & {
 
 	},
-	getVersion: IMapper & { 
+	getVersion: IMapper & {
 		argNames: [ "versionId" ],
 	},
-	promoteToNews: IMapper & { 
+	promoteToNews: IMapper & {
 
 	},
-	publish: IMapper & { 
+	publish: IMapper & {
 
 	},
-	saveDraft: IMapper & { 
+	saveDraft: IMapper & {
 		argNames: [ "sitePage" ],
 	},
-	savePage: IMapper & { 
+	savePage: IMapper & {
 		argNames: [ "pageStream" ],
 	},
-	savePageAsDraft: IMapper & { 
+	savePageAsDraft: IMapper & {
 		argNames: [ "pageStream" ],
 	},
-	savePageAsTemplate: IMapper & { 
+	savePageAsTemplate: IMapper & {
 
 	},
-	sharePagePreviewByEmail: IMapper & { 
+	sharePagePreviewByEmail: IMapper & {
 		argNames: [ "message", "recipientEmails" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_SitePage_Collection */
 export interface SP_Publishing_SitePage_Collection {
-	ensureTitleResource: IMapper & { 
+	properties?: Array<string>;
+	ensureTitleResource: IMapper & {
 
 	},
-	feed: IMapper & { 
+	feed: IMapper & {
 		argNames: [ "promotedState", "published", "metadataFilter" ],
 	},
-	feedTargeted: IMapper & { 
+	feedTargeted: IMapper & {
 		argNames: [ "promotedState", "published", "metadataFilter" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	getByUrl: IMapper & { 
+	getByUrl: IMapper & {
 		argNames: [ "url" ],
 	},
-	getPageColumnState: IMapper & { 
+	getPageColumnState: IMapper & {
 		argNames: [ "url" ],
 	},
-	isSitePage: IMapper & { 
+	isSitePage: IMapper & {
 		argNames: [ "url" ],
 	},
-	templates: IMapper & { 
+	templates: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_RepostPage_Collection */
 export interface SP_Publishing_RepostPage_Collection {
-	isContentTypeAvailable: IMapper & { 
+	properties?: Array<string>;
+	isContentTypeAvailable: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_RepostPage */
 export interface SP_Publishing_RepostPage {
-	checkOut: IMapper & { 
+	properties?: Array<string>;
+	checkOut: IMapper & {
 
 	},
-	checkoutPage: IMapper & { 
+	checkoutPage: IMapper & {
 
 	},
-	copy: IMapper & { 
+	copy: IMapper & {
 
 	},
-	demoteFromNews: IMapper & { 
+	demoteFromNews: IMapper & {
 
 	},
-	discardPage: IMapper & { 
+	discardPage: IMapper & {
 
 	},
-	getVersion: IMapper & { 
+	getVersion: IMapper & {
 		argNames: [ "versionId" ],
 	},
-	promoteToNews: IMapper & { 
+	promoteToNews: IMapper & {
 
 	},
-	publish: IMapper & { 
+	publish: IMapper & {
 
 	},
-	saveDraft: IMapper & { 
+	saveDraft: IMapper & {
 		argNames: [ "sitePage" ],
 	},
-	savePage: IMapper & { 
+	savePage: IMapper & {
 		argNames: [ "pageStream" ],
 	},
-	savePageAsDraft: IMapper & { 
+	savePageAsDraft: IMapper & {
 		argNames: [ "pageStream" ],
 	},
-	savePageAsTemplate: IMapper & { 
+	savePageAsTemplate: IMapper & {
 
 	},
-	sharePagePreviewByEmail: IMapper & { 
+	sharePagePreviewByEmail: IMapper & {
 		argNames: [ "message", "recipientEmails" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_RichSharing */
 export interface SP_Publishing_RichSharing {
-	sharePageByEmail: IMapper & { 
+	properties?: Array<string>;
+	sharePageByEmail: IMapper & {
 		argNames: [ "url", "message", "recipientEmails" ],
 	},
-	shareSiteByEmail: IMapper & { 
+	shareSiteByEmail: IMapper & {
 		argNames: [ "CustomDescription", "CustomTitle", "Message", "Url", "recipientEmails" ],
 	},
 };
 
 /* SP_Publishing_SharePointHomeServiceManager */
 export interface SP_Publishing_SharePointHomeServiceManager {
-	getAcronymsAndColors: IMapper & { 
+	properties?: Array<string>;
+	getAcronymsAndColors: IMapper & {
 		argNames: [ "labels" ],
 	},
 };
 
 /* SP_Publishing_SitePageService */
 export interface SP_Publishing_SitePageService {
-	addImage: IMapper & { 
+	properties?: Array<string>;
+	addImage: IMapper & {
 		argNames: [ "pageName", "imageFileName", "imageStream" ],
 	},
-	addImageFromExternalUrl: IMapper & { 
+	addImageFromExternalUrl: IMapper & {
 		argNames: [ "pageName", "imageFileName", "externalUrl", "subFolderName" ],
 	},
-	canCreatePromotedPage: IMapper & { 
+	canCreatePromotedPage: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_SpotlightChannel_Collection */
 export interface SP_Publishing_SpotlightChannel_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_Publishing_SpotlightChannel */
 export interface SP_Publishing_SpotlightChannel {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_VideoChannel_Collection */
 export interface SP_Publishing_VideoChannel_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_Publishing_VideoChannel */
 export interface SP_Publishing_VideoChannel {
-	getAllVideos: IMapper & { 
+	properties?: Array<string>;
+	getAllVideos: IMapper & {
 		argNames: [ "skip", "limit" ],
 	},
-	getChannelPageUrl: IMapper & { 
+	getChannelPageUrl: IMapper & {
 		argNames: [ "viewMode" ],
 	},
-	getMyVideos: IMapper & { 
+	getMyVideos: IMapper & {
 		argNames: [ "skip", "limit" ],
 	},
-	getPermissionGroup: IMapper & { 
+	getPermissionGroup: IMapper & {
 		argNames: [ "permission" ],
 	},
-	getVideoCount: IMapper & { 
+	getVideoCount: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_Search */
 export interface SP_Publishing_Search {
-	newest: IMapper & { 
+	properties?: Array<string>;
+	newest: IMapper & {
 		argNames: [ "startItemIndex", "itemLimit" ],
 	},
-	popular: IMapper & { 
+	popular: IMapper & {
 		argNames: [ "startItemIndex", "itemLimit" ],
 	},
-	query: IMapper & { 
+	query: IMapper & {
 		argNames: [ "queryText", "startItemIndex", "itemLimit", "culture" ],
 	},
-	queryChannels: IMapper & { 
+	queryChannels: IMapper & {
 		argNames: [ "queryText", "startItemIndex", "itemLimit", "culture" ],
 	},
-	related: IMapper & { 
+	related: IMapper & {
 		argNames: [ "videoId", "startItemIndex", "itemLimit" ],
 	},
 };
 
 /* SP_Publishing_SpotlightVideo_Collection */
 export interface SP_Publishing_SpotlightVideo_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_Publishing_SpotlightVideo */
 export interface SP_Publishing_SpotlightVideo {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_SubtitleFile_Collection */
 export interface SP_Publishing_SubtitleFile_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "language", "extension", "stream" ],
 	},
-	getSubtitleFile: IMapper & { 
+	getSubtitleFile: IMapper & {
 		argNames: [ "name" ],
 	},
-	remove: IMapper & { 
+	remove: IMapper & {
 		argNames: [ "name" ],
 	},
 };
 
 /* SP_Publishing_VideoPermissionGroup */
 export interface SP_Publishing_VideoPermissionGroup {
-	hasCurrentUser: IMapper & { 
+	properties?: Array<string>;
+	hasCurrentUser: IMapper & {
 
 	},
 };
 
 /* SP_Publishing_VideoServiceManager */
 export interface SP_Publishing_VideoServiceManager {
-	getChannels: IMapper & { 
+	properties?: Array<string>;
+	getChannels: IMapper & {
 		argNames: [ "startIndex", "limit" ],
 	},
-	getPermissionGroup: IMapper & { 
+	getPermissionGroup: IMapper & {
 		argNames: [ "permission" ],
 	},
 };
 
 /* SP_Publishing_VideoThumbnail_Collection */
 export interface SP_Publishing_VideoThumbnail_Collection {
-	getByIndex: IMapper & { 
+	properties?: Array<string>;
+	getByIndex: IMapper & {
 		argNames: [ "choice" ],
 	},
 };
 
 /* Microsoft_SharePoint_Client_Search_Query_StringCollection */
 export interface Microsoft_SharePoint_Client_Search_Query_StringCollection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "property" ],
 	},
-	clear: IMapper & { 
+	clear: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Client_Search_Query_RankingLabeling */
 export interface Microsoft_SharePoint_Client_Search_Query_RankingLabeling {
-	addJudgment: IMapper & { 
+	properties?: Array<string>;
+	addJudgment: IMapper & {
 		argNames: [ "userQuery", "url", "labelId" ],
 	},
-	getJudgementsForQuery: IMapper & { 
+	getJudgementsForQuery: IMapper & {
 		argNames: [ "query" ],
 	},
-	normalizeResultUrl: IMapper & { 
+	normalizeResultUrl: IMapper & {
 		argNames: [ "url" ],
 	},
 };
 
 /* Microsoft_SharePoint_Client_Search_Query_ReorderingRuleCollection */
 export interface Microsoft_SharePoint_Client_Search_Query_ReorderingRuleCollection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "matchType", "matchValue", "boost" ],
 	},
-	clear: IMapper & { 
+	clear: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Client_Search_Query_SortCollection */
 export interface Microsoft_SharePoint_Client_Search_Query_SortCollection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "strProperty", "direction" ],
 	},
-	clear: IMapper & { 
+	clear: IMapper & {
 
 	},
 };
 
 /* Microsoft_Office_Server_Search_REST_SearchService */
 export interface Microsoft_Office_Server_Search_REST_SearchService {
-	autocompletions: IMapper & { 
+	properties?: Array<string>;
+	autocompletions: IMapper & {
 		argNames: [ "querytext", "sources", "numberOfCompletions", "cursorPosition" ],
 	},
-	export: IMapper & { 
+	export: IMapper & {
 		argNames: [ "userName", "startTime" ],
 	},
-	exportpopulartenantqueries: IMapper & { 
+	exportpopulartenantqueries: IMapper & {
 
 	},
-	postquery: IMapper & { 
+	postquery: IMapper & {
 		argNames: [ "request" ],
 	},
-	query: IMapper & { 
+	query: IMapper & {
 		argNames: [ "querytext", "queryTemplate", "enableInterleaving", "sourceId", "rankingModelId", "startRow", "rowLimit", "rowsPerPage", "selectProperties", "culture", "refinementFilters", "refiners", "hiddenConstraints", "sortList", "enableStemming", "trimDuplicates", "timeout", "enableNicknames", "enablePhonetic", "enableFQL", "hitHighlightedProperties", "propertiesToGenerateAcronyms", "bypassResultTypes", "processBestBets", "clientType", "personalizationData", "resultsUrl", "queryTag", "trimDuplicatesIncludeId", "totalRowsExactMinimum", "impressionId", "properties", "enableQueryRules", "summaryLength", "maxSnippetLength", "desiredSnippetLength", "uiLanguage", "blockDedupeMode", "generateBlockRankLog", "enableSorting", "collapseSpecification", "processPersonalFavorites", "enableOrderingHitHighlightedProperty", "hitHighlightedMultivaluePropertyLimit", "queryTemplatePropertiesUrl", "timeZoneId", "useOLSQuery", "OLSQuerySession" ],
 	},
-	recordPageClick: IMapper & { 
+	recordPageClick: IMapper & {
 		argNames: [ "pageInfo", "clickType", "blockType", "clickedResultId", "subResultIndex", "immediacySourceId", "immediacyQueryString", "immediacyTitle", "immediacyUrl" ],
 	},
-	resultspageaddress: IMapper & { 
+	resultspageaddress: IMapper & {
 
 	},
-	searchcenterurl: IMapper & { 
+	searchcenterurl: IMapper & {
 
 	},
-	suggest: IMapper & { 
+	suggest: IMapper & {
 		argNames: [ "querytext", "iNumberOfQuerySuggestions", "iNumberOfResultSuggestions", "iNumberOfPopularResultSuggestions", "fPreQuerySuggestions", "fHitHighlighting", "fCapitalizeFirstLetters", "culture", "enableStemming", "showPeopleNameSuggestions", "enableQueryRules", "fPrefixMatchAllTerms", "sourceId", "clientType", "useOLSQuery", "OLSQuerySession", "zeroTermSuggestions" ],
 	},
-	searchquery: IMapper & { 
+	searchquery: IMapper & {
 		argNames: [ "request" ],
 	},
 };
 
 /* Microsoft_Office_Server_Search_REST_SearchSetting */
 export interface Microsoft_Office_Server_Search_REST_SearchSetting {
-	getpromotedresultqueryrules: IMapper & { 
+	properties?: Array<string>;
+	getpromotedresultqueryrules: IMapper & {
 		argNames: [ "siteCollectionLevel", "offset", "numberOfRules" ],
 	},
-	getqueryconfiguration: IMapper & { 
+	getqueryconfiguration: IMapper & {
 		argNames: [ "callLocalSearchFarmsOnly" ],
 	},
-	getxssearchpolicy: IMapper & { 
+	getxssearchpolicy: IMapper & {
 
 	},
-	pingadminendpoint: IMapper & { 
+	pingadminendpoint: IMapper & {
 
 	},
-	setxssearchpolicy: IMapper & { 
+	setxssearchpolicy: IMapper & {
 		argNames: [ "policy" ],
 	},
 };
 
 /* Microsoft_SharePoint_Client_Search_Analytics_SignalStore */
 export interface Microsoft_SharePoint_Client_Search_Analytics_SignalStore {
-	signals: IMapper & { 
+	properties?: Array<string>;
+	signals: IMapper & {
 		argNames: [ "signals" ],
 	},
 };
 
 /* Microsoft_SharePoint_Portal_GroupService */
 export interface Microsoft_SharePoint_Portal_GroupService {
-	getGroupImage: IMapper & { 
+	properties?: Array<string>;
+	getGroupImage: IMapper & {
 		argNames: [ "id", "hash", "color" ],
 	},
-	setGroupImage: IMapper & { 
+	setGroupImage: IMapper & {
 		argNames: [ "imageStream" ],
 	},
-	syncGroupProperties: IMapper & { 
+	syncGroupProperties: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Portal_GroupSiteManager */
 export interface Microsoft_SharePoint_Portal_GroupSiteManager {
-	canUserCreateGroup: IMapper & { 
+	properties?: Array<string>;
+	canUserCreateGroup: IMapper & {
 
 	},
-	create: IMapper & { 
+	create: IMapper & {
 		argNames: [ "groupId" ],
 	},
-	createGroup: IMapper & { 
+	createGroup: IMapper & {
 		argNames: [ "displayName", "alias", "isPublic", "ownerPrincipalNames", "description", "creationOptions" ],
 	},
-	createGroupEx: IMapper & { 
+	createGroupEx: IMapper & {
 		argNames: [ "displayName", "alias", "isPublic", "optionalParams" ],
 	},
-	createGroupForSite: IMapper & { 
+	createGroupForSite: IMapper & {
 		argNames: [ "displayName", "alias", "isPublic", "optionalParams" ],
 	},
-	getGroupCreationContext: IMapper & { 
+	getGroupCreationContext: IMapper & {
 
 	},
-	getGroupSiteConversionData: IMapper & { 
+	getGroupSiteConversionData: IMapper & {
 
 	},
-	getSiteStatus: IMapper & { 
+	getSiteStatus: IMapper & {
 		argNames: [ "groupId" ],
 	},
-	getValidSiteUrlFromAlias: IMapper & { 
+	getValidSiteUrlFromAlias: IMapper & {
 		argNames: [ "alias", "managedPath", "isTeamSite" ],
 	},
-	notebook: IMapper & { 
+	notebook: IMapper & {
 		argNames: [ "groupId" ],
 	},
 };
 
 /* Microsoft_SharePoint_Portal_SiteLinkingManager */
 export interface Microsoft_SharePoint_Portal_SiteLinkingManager {
-	getSiteLinks: IMapper & { 
+	properties?: Array<string>;
+	getSiteLinks: IMapper & {
 
 	},
-	linkGroup: IMapper & { 
+	linkGroup: IMapper & {
 		argNames: [ "groupId" ],
 	},
-	unlinkGroup: IMapper & { 
+	unlinkGroup: IMapper & {
 		argNames: [ "groupId" ],
 	},
 };
 
 /* Microsoft_SharePoint_Portal_SharePointHomeServiceContextBuilder */
 export interface Microsoft_SharePoint_Portal_SharePointHomeServiceContextBuilder {
-	context: IMapper & { 
+	properties?: Array<string>;
+	context: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Portal_SPHubSitesUtility */
 export interface Microsoft_SharePoint_Portal_SPHubSitesUtility {
-	getHubSites: IMapper & { 
+	properties?: Array<string>;
+	getHubSites: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Portal_SPSiteManager */
 export interface Microsoft_SharePoint_Portal_SPSiteManager {
-	canCreateHubJoinedSite: IMapper & { 
+	properties?: Array<string>;
+	canCreateHubJoinedSite: IMapper & {
 		argNames: [ "hubSiteId" ],
 	},
-	create: IMapper & { 
+	create: IMapper & {
 		argNames: [ "request" ],
 	},
-	delete: IMapper & { 
+	delete: IMapper & {
 		argNames: [ "siteId" ],
 	},
-	status: IMapper & { 
+	status: IMapper & {
 		argNames: [ "url" ],
 	},
 };
 
 /* Microsoft_SharePoint_Administration_SPAppStateQueryJobDefinition */
 export interface Microsoft_SharePoint_Administration_SPAppStateQueryJobDefinition {
-	performFastRevokeWithClientIds: IMapper & { 
+	properties?: Array<string>;
+	performFastRevokeWithClientIds: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Administration_FeatureDefinition_Collection */
 export interface Microsoft_SharePoint_Administration_FeatureDefinition_Collection {
-	getFeatureDefinition: IMapper & { 
+	properties?: Array<string>;
+	getFeatureDefinition: IMapper & {
 		argNames: [ "featureDisplayName", "compatibilityLevel" ],
 	},
 };
 
 /* Microsoft_SharePoint_Administration_SPAnalyticsUsageService */
 export interface Microsoft_SharePoint_Administration_SPAnalyticsUsageService {
-	logevent: IMapper & { 
+	properties?: Array<string>;
+	logevent: IMapper & {
 		argNames: [ "usageEntry" ],
 	},
 };
 
 /* Microsoft_SharePoint_ClientSideComponent_HostedAppsManager */
 export interface Microsoft_SharePoint_ClientSideComponent_HostedAppsManager {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "webPartDataAsJson", "hostType" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* Microsoft_SharePoint_ClientSideComponent_HostedApp */
 export interface Microsoft_SharePoint_ClientSideComponent_HostedApp {
-	delete: IMapper & { 
+	properties?: Array<string>;
+	delete: IMapper & {
 
 	},
-	updateWebPartData: IMapper & { 
+	updateWebPartData: IMapper & {
 		argNames: [ "webPartDataAsJson" ],
 	},
 };
 
 /* Microsoft_SharePoint_Comments_comment */
 export interface Microsoft_SharePoint_Comments_comment {
-	like: IMapper & { 
+	properties?: Array<string>;
+	like: IMapper & {
 
 	},
-	unlike: IMapper & { 
+	unlike: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Comments_comment_Collection */
 export interface Microsoft_SharePoint_Comments_comment_Collection {
-	deleteAll: IMapper & { 
+	properties?: Array<string>;
+	deleteAll: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Internal_ActivityLogger */
 export interface Microsoft_SharePoint_Internal_ActivityLogger {
-	feedbackDirect: IMapper & { 
+	properties?: Array<string>;
+	feedbackDirect: IMapper & {
 		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "json" ],
 	},
-	feedbackIndirect: IMapper & { 
+	feedbackIndirect: IMapper & {
 		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "json" ],
 	},
-	logActivity: IMapper & { 
+	logActivity: IMapper & {
 		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType" ],
 	},
 };
 
 /* SP_MicroService_MicroServiceManager */
 export interface SP_MicroService_MicroServiceManager {
-	addMicroserviceWorkItem: IMapper & { 
+	properties?: Array<string>;
+	addMicroserviceWorkItem: IMapper & {
 		argNames: [ "payLoad", "minutes", "properties" ],
 	},
-	deleteMicroserviceWorkItem: IMapper & { 
+	deleteMicroserviceWorkItem: IMapper & {
 		argNames: [ "workItemId" ],
 	},
-	getServiceInternalUrls: IMapper & { 
+	getServiceInternalUrls: IMapper & {
 		argNames: [ "service" ],
 	},
-	getServiceUrls: IMapper & { 
+	getServiceUrls: IMapper & {
 		argNames: [ "service" ],
 	},
 };
 
 /* Microsoft_SharePoint_OrgNewsSite_OrgNewsSiteApi */
 export interface Microsoft_SharePoint_OrgNewsSite_OrgNewsSiteApi {
-	details: IMapper & { 
+	properties?: Array<string>;
+	details: IMapper & {
 
 	},
 };
 
 /* SP_Utilities_ThemeManager */
 export interface SP_Utilities_ThemeManager {
-	addTenantTheme: IMapper & { 
+	properties?: Array<string>;
+	addTenantTheme: IMapper & {
 		argNames: [ "name", "themeJson" ],
 	},
-	applyTheme: IMapper & { 
+	applyTheme: IMapper & {
 		argNames: [ "name", "themeJson" ],
 	},
-	deleteTenantTheme: IMapper & { 
+	deleteTenantTheme: IMapper & {
 		argNames: [ "name" ],
 	},
-	getAvailableThemes: IMapper & { 
+	getAvailableThemes: IMapper & {
 
 	},
-	getHideDefaultThemes: IMapper & { 
+	getHideDefaultThemes: IMapper & {
 
 	},
-	getTenantTheme: IMapper & { 
+	getTenantTheme: IMapper & {
 		argNames: [ "name" ],
 	},
-	getTenantThemingOptions: IMapper & { 
+	getTenantThemingOptions: IMapper & {
 
 	},
-	setHideDefaultThemes: IMapper & { 
+	setHideDefaultThemes: IMapper & {
 		argNames: [ "hideDefaultThemes" ],
 	},
-	updateTenantTheme: IMapper & { 
+	updateTenantTheme: IMapper & {
 		argNames: [ "name", "themeJson" ],
 	},
 };
 
 /* SP_WebParts_LimitedWebPartManager */
 export interface SP_WebParts_LimitedWebPartManager {
-	exportWebPart: IMapper & { 
+	properties?: Array<string>;
+	exportWebPart: IMapper & {
 		argNames: [ "webPartId" ],
 	},
-	importWebPart: IMapper & { 
+	importWebPart: IMapper & {
 		argNames: [ "webPartXml" ],
 	},
 };
 
 /* SP_WebParts_WebPartDefinition_Collection */
 export interface SP_WebParts_WebPartDefinition_Collection {
-	getByControlId: IMapper & { 
+	properties?: Array<string>;
+	getByControlId: IMapper & {
 		argNames: [ "controlId" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* SP_WebParts_WebPartDefinition */
 export interface SP_WebParts_WebPartDefinition {
-	closeWebPart: IMapper & { 
+	properties?: Array<string>;
+	closeWebPart: IMapper & {
 
 	},
-	deleteWebPart: IMapper & { 
+	deleteWebPart: IMapper & {
 
 	},
-	moveWebPartTo: IMapper & { 
+	moveWebPartTo: IMapper & {
 		argNames: [ "zoneID", "zoneIndex" ],
 	},
-	openWebPart: IMapper & { 
+	openWebPart: IMapper & {
 
 	},
-	saveWebPartChanges: IMapper & { 
+	saveWebPartChanges: IMapper & {
 
 	},
 };
 
 /* SP_Workflow_WorkflowAssociation_Collection */
 export interface SP_Workflow_WorkflowAssociation_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "associationId" ],
 	},
-	getByName: IMapper & { 
+	getByName: IMapper & {
 		argNames: [ "name" ],
 	},
 };
 
 /* SP_Workflow_WorkflowAssociation */
 export interface SP_Workflow_WorkflowAssociation {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Workflow_WorkflowTemplate_Collection */
 export interface SP_Workflow_WorkflowTemplate_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "templateId" ],
 	},
-	getByName: IMapper & { 
+	getByName: IMapper & {
 		argNames: [ "name" ],
 	},
 };
 
 /* SP_Workflow_SPWorkflowTask */
 export interface SP_Workflow_SPWorkflowTask {
-	breakRoleInheritance: IMapper & { 
+	properties?: Array<string>;
+	breakRoleInheritance: IMapper & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 	},
-	resetRoleInheritance: IMapper & { 
+	resetRoleInheritance: IMapper & {
 
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	getChanges: IMapper & { 
+	getChanges: IMapper & {
 		argNames: [ "query" ],
 	},
-	getHashtags: IMapper & { 
+	getHashtags: IMapper & {
 
 	},
-	getUserEffectivePermissions: IMapper & { 
+	getUserEffectivePermissions: IMapper & {
 		argNames: [ "userName" ],
 	},
-	getWOPIFrameUrl: IMapper & { 
+	getWOPIFrameUrl: IMapper & {
 		argNames: [ "action" ],
 	},
-	mediaServiceUpdate: IMapper & { 
+	mediaServiceUpdate: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	mediaServiceUpdateV2: IMapper & { 
+	mediaServiceUpdateV2: IMapper & {
 		argNames: [ "parameters", "eventFiringEnabled" ],
 	},
-	overridePolicyTip: IMapper & { 
+	overridePolicyTip: IMapper & {
 		argNames: [ "userAction", "justification" ],
 	},
-	parseAndSetFieldValue: IMapper & { 
+	parseAndSetFieldValue: IMapper & {
 		argNames: [ "fieldName", "value" ],
 	},
-	recycle: IMapper & { 
+	recycle: IMapper & {
 
 	},
-	setCommentsDisabled: IMapper & { 
+	setCommentsDisabled: IMapper & {
 		argNames: [ "value" ],
 	},
-	setComplianceTag: IMapper & { 
+	setComplianceTag: IMapper & {
 		argNames: [ "complianceTag", "isTagPolicyHold", "isTagPolicyRecord", "isEventBasedTag", "isTagSuperLock" ],
 	},
-	setComplianceTagWithExplicitMetasUpdate: IMapper & { 
+	setComplianceTagWithExplicitMetasUpdate: IMapper & {
 		argNames: [ "complianceTag", "complianceFlags", "complianceTagWrittenTime", "userEmailAddress" ],
 	},
-	setComplianceTagWithHold: IMapper & { 
+	setComplianceTagWithHold: IMapper & {
 		argNames: [ "complianceTag" ],
 	},
-	setComplianceTagWithMetaInfo: IMapper & { 
+	setComplianceTagWithMetaInfo: IMapper & {
 		argNames: [ "complianceTag", "blockDelete", "blockEdit", "complianceTagWrittenTime", "userEmailAddress", "isTagSuperLock" ],
 	},
-	setComplianceTagWithNoHold: IMapper & { 
+	setComplianceTagWithNoHold: IMapper & {
 		argNames: [ "complianceTag" ],
 	},
-	setComplianceTagWithRecord: IMapper & { 
+	setComplianceTagWithRecord: IMapper & {
 		argNames: [ "complianceTag" ],
 	},
-	systemUpdate: IMapper & { 
+	systemUpdate: IMapper & {
 
 	},
-	updateEx: IMapper & { 
+	updateEx: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	updateHashtags: IMapper & { 
+	updateHashtags: IMapper & {
 		argNames: [ "hashtagsToAdd", "hashtagsToRemove" ],
 	},
-	updateOverwriteVersion: IMapper & { 
+	updateOverwriteVersion: IMapper & {
 
 	},
-	validateUpdateListItem: IMapper & { 
+	validateUpdateListItem: IMapper & {
 		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "properties" ],
 	},
 };
 
 /* Microsoft_SharePoint_TenantCdn_TenantCdnApi */
 export interface Microsoft_SharePoint_TenantCdn_TenantCdnApi {
-	getCdnUrls: IMapper & { 
+	properties?: Array<string>;
+	getCdnUrls: IMapper & {
 		argNames: [ "items" ],
 	},
 };
 
 /* Microsoft_SharePoint_Webhooks_Subscription_Collection */
 export interface Microsoft_SharePoint_Webhooks_Subscription_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "parameters" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
-	remove: IMapper & { 
+	remove: IMapper & {
 		argNames: [ "subscriptionId" ],
 	},
 };
 
 /* Microsoft_SharePoint_Webhooks_Subscription */
 export interface Microsoft_SharePoint_Webhooks_Subscription {
-	delete: IMapper & { 
+	properties?: Array<string>;
+	delete: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 		argNames: [ "parameters" ],
 	},
 };
 
 /* SP_Taxonomy_TaxonomyField */
 export interface SP_Taxonomy_TaxonomyField {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
-	setShowInDisplayForm: IMapper & { 
+	setShowInDisplayForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInEditForm: IMapper & { 
+	setShowInEditForm: IMapper & {
 		argNames: [ "value" ],
 	},
-	setShowInNewForm: IMapper & { 
+	setShowInNewForm: IMapper & {
 		argNames: [ "value" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_HubSiteProperties */
 export interface Microsoft_Online_SharePoint_TenantAdministration_HubSiteProperties {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_Office365CommsMessagesServiceProxy */
 export interface Microsoft_Online_SharePoint_TenantAdministration_Office365CommsMessagesServiceProxy {
-	messageCenterMessages: IMapper & { 
+	properties?: Array<string>;
+	messageCenterMessages: IMapper & {
 		argNames: [ "messagesFieldsData" ],
 	},
-	serviceHealthMessages: IMapper & { 
+	serviceHealthMessages: IMapper & {
 		argNames: [ "messagesFieldsData" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService */
 export interface Microsoft_Online_SharePoint_TenantAdministration_SiteCollectionManagementService {
-	emailAdmins: IMapper & { 
+	properties?: Array<string>;
+	emailAdmins: IMapper & {
 		argNames: [ "message", "siteIds", "subject" ],
 	},
-	exportCSVFile: IMapper & { 
+	exportCSVFile: IMapper & {
 
 	},
-	getSiteDescription: IMapper & { 
+	getSiteDescription: IMapper & {
 		argNames: [ "siteId" ],
 	},
-	office365ProvidedSharepointSiteActivityDataReady: IMapper & { 
+	office365ProvidedSharepointSiteActivityDataReady: IMapper & {
 
 	},
-	resetTimestampUpdateOffice365ProvidedSharepointSiteActivityData: IMapper & { 
+	resetTimestampUpdateOffice365ProvidedSharepointSiteActivityData: IMapper & {
 
 	},
-	updateOffice365ProvidedSharepointSiteActivityData: IMapper & { 
+	updateOffice365ProvidedSharepointSiteActivityData: IMapper & {
 		argNames: [ "oauthToken" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_Collection */
 export interface Microsoft_Online_SharePoint_TenantAdministration_SiteProperties_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "siteId" ],
 	},
-	getLockStateById: IMapper & { 
+	getLockStateById: IMapper & {
 		argNames: [ "siteId" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_SiteProperties */
 export interface Microsoft_Online_SharePoint_TenantAdministration_SiteProperties {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService */
 export interface Microsoft_Online_SharePoint_TenantAdministration_TenantAdminSettingsService {
-	getTenantSharingStatus: IMapper & { 
+	properties?: Array<string>;
+	getTenantSharingStatus: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_Tenant */
 export interface Microsoft_Online_SharePoint_TenantAdministration_Tenant {
-	checkTenantIntuneLicense: IMapper & { 
+	properties?: Array<string>;
+	checkTenantIntuneLicense: IMapper & {
 
 	},
-	checkTenantLicenses: IMapper & { 
+	checkTenantLicenses: IMapper & {
 		argNames: [ "licenses" ],
 	},
-	connectSiteToHubSiteById: IMapper & { 
+	connectSiteToHubSiteById: IMapper & {
 		argNames: [ "siteUrl", "hubSiteId" ],
 	},
-	createSite: IMapper & { 
+	createSite: IMapper & {
 		argNames: [ "siteCreationProperties" ],
 	},
-	getIdleSessionSignOutForUnmanagedDevices: IMapper & { 
+	getIdleSessionSignOutForUnmanagedDevices: IMapper & {
 
 	},
-	getSitePropertiesByUrl: IMapper & { 
+	getSitePropertiesByUrl: IMapper & {
 		argNames: [ "url", "includeDetail" ],
 	},
-	getSitePropertiesFromSharePointByFilters: IMapper & { 
+	getSitePropertiesFromSharePointByFilters: IMapper & {
 		argNames: [ "speFilter" ],
 	},
-	getSiteSecondaryAdministrators: IMapper & { 
+	getSiteSecondaryAdministrators: IMapper & {
 		argNames: [ "secondaryAdministratorsFieldsData" ],
 	},
-	getSPOTenantAllWebTemplates: IMapper & { 
+	getSPOTenantAllWebTemplates: IMapper & {
 
 	},
-	registerHubSite: IMapper & { 
+	registerHubSite: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
-	registerHubSiteWithCreationInformation: IMapper & { 
+	registerHubSiteWithCreationInformation: IMapper & {
 		argNames: [ "siteUrl", "creationInformation" ],
 	},
-	removeDeletedSite: IMapper & { 
+	removeDeletedSite: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
-	removeDeletedSitePreferId: IMapper & { 
+	removeDeletedSitePreferId: IMapper & {
 		argNames: [ "siteUrl", "siteId" ],
 	},
-	removeSite: IMapper & { 
+	removeSite: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
-	restoreDeletedSite: IMapper & { 
+	restoreDeletedSite: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
-	restoreDeletedSitePreferId: IMapper & { 
+	restoreDeletedSitePreferId: IMapper & {
 		argNames: [ "siteUrl", "siteId" ],
 	},
-	setIdleSessionSignOutForUnmanagedDevices: IMapper & { 
+	setIdleSessionSignOutForUnmanagedDevices: IMapper & {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
 	},
-	setSiteSecondaryAdministrators: IMapper & { 
+	setSiteSecondaryAdministrators: IMapper & {
 		argNames: [ "secondaryAdministratorsFieldsData" ],
 	},
-	unregisterHubSite: IMapper & { 
+	unregisterHubSite: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_Translation_SyncTranslator */
 export interface SP_Translation_SyncTranslator {
-	translate: IMapper & { 
+	properties?: Array<string>;
+	translate: IMapper & {
 		argNames: [ "inputFile", "outputFile" ],
 	},
-	translateStream: IMapper & { 
+	translateStream: IMapper & {
 		argNames: [ "inputFile", "fileExtension" ],
 	},
 };
 
 /* SP_Translation_TranslationJob */
 export interface SP_Translation_TranslationJob {
-	translateFile: IMapper & { 
+	properties?: Array<string>;
+	translateFile: IMapper & {
 		argNames: [ "inputFile", "outputFile" ],
 	},
-	translateFolder: IMapper & { 
+	translateFolder: IMapper & {
 		argNames: [ "inputFolder", "outputFolder", "recursion" ],
 	},
-	translateLibrary: IMapper & { 
+	translateLibrary: IMapper & {
 		argNames: [ "inputLibrary", "outputLibrary" ],
 	},
 };
 
 /* SP_Translation_TranslationJobStatus */
 export interface SP_Translation_TranslationJobStatus {
-	getAllItems: IMapper & { 
+	properties?: Array<string>;
+	getAllItems: IMapper & {
 
 	},
 };
 
 /* SP_WorkManagement_OM_BaseSession */
 export interface SP_WorkManagement_OM_BaseSession {
-	addAttributeToTask: IMapper & { 
+	properties?: Array<string>;
+	addAttributeToTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	beginCacheRefresh: IMapper & { 
+	beginCacheRefresh: IMapper & {
 
 	},
-	beginExchangeSync: IMapper & { 
+	beginExchangeSync: IMapper & {
 
 	},
-	createPersonalTaskAndPromoteToProviderTask: IMapper & { 
+	createPersonalTaskAndPromoteToProviderTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
 	},
-	createTask: IMapper & { 
+	createTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
 	},
-	deleteTask: IMapper & { 
+	deleteTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getCalloutInfo: IMapper & { 
+	getCalloutInfo: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getRefreshHealthInfo: IMapper & { 
+	getRefreshHealthInfo: IMapper & {
 
 	},
-	getRefreshHistory: IMapper & { 
+	getRefreshHistory: IMapper & {
 		argNames: [ "since" ],
 	},
-	getRefreshStatus: IMapper & { 
+	getRefreshStatus: IMapper & {
 		argNames: [ "refreshId" ],
 	},
-	isExchangeJobPending: IMapper & { 
+	isExchangeJobPending: IMapper & {
 
 	},
-	pinTask: IMapper & { 
+	pinTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	promotePersonalTaskToProviderTaskInLocation: IMapper & { 
+	promotePersonalTaskToProviderTaskInLocation: IMapper & {
 		argNames: [ "taskKey", "locationId" ],
 	},
-	readAllNonTaskData: IMapper & { 
+	readAllNonTaskData: IMapper & {
 
 	},
-	refreshSingleTask: IMapper & { 
+	refreshSingleTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	removeAttributeFromTask: IMapper & { 
+	removeAttributeFromTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	removePinOnTask: IMapper & { 
+	removePinOnTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	updateTaskWithLocalizedValue: IMapper & { 
+	updateTaskWithLocalizedValue: IMapper & {
 		argNames: [ "taskKey", "field", "value" ],
 	},
 };
 
 /* SP_WorkManagement_OM_LocationOrientedSortableSession */
 export interface SP_WorkManagement_OM_LocationOrientedSortableSession {
-	addAttributeToTask: IMapper & { 
+	properties?: Array<string>;
+	addAttributeToTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	beginCacheRefresh: IMapper & { 
+	beginCacheRefresh: IMapper & {
 
 	},
-	beginExchangeSync: IMapper & { 
+	beginExchangeSync: IMapper & {
 
 	},
-	createPersonalTaskAndPromoteToProviderTask: IMapper & { 
+	createPersonalTaskAndPromoteToProviderTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
 	},
-	createTask: IMapper & { 
+	createTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
 	},
-	deleteTask: IMapper & { 
+	deleteTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getCalloutInfo: IMapper & { 
+	getCalloutInfo: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getRefreshHealthInfo: IMapper & { 
+	getRefreshHealthInfo: IMapper & {
 
 	},
-	getRefreshHistory: IMapper & { 
+	getRefreshHistory: IMapper & {
 		argNames: [ "since" ],
 	},
-	getRefreshStatus: IMapper & { 
+	getRefreshStatus: IMapper & {
 		argNames: [ "refreshId" ],
 	},
-	isExchangeJobPending: IMapper & { 
+	isExchangeJobPending: IMapper & {
 
 	},
-	pinTask: IMapper & { 
+	pinTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	promotePersonalTaskToProviderTaskInLocation: IMapper & { 
+	promotePersonalTaskToProviderTaskInLocation: IMapper & {
 		argNames: [ "taskKey", "locationId" ],
 	},
-	readAllNonTaskData: IMapper & { 
+	readAllNonTaskData: IMapper & {
 
 	},
-	refreshSingleTask: IMapper & { 
+	refreshSingleTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	removeAttributeFromTask: IMapper & { 
+	removeAttributeFromTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	removePinOnTask: IMapper & { 
+	removePinOnTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	updateTaskWithLocalizedValue: IMapper & { 
+	updateTaskWithLocalizedValue: IMapper & {
 		argNames: [ "taskKey", "field", "value" ],
 	},
-	movePersonalTaskToLocation: IMapper & { 
+	movePersonalTaskToLocation: IMapper & {
 		argNames: [ "taskKey", "newLocationKey" ],
 	},
 };
 
 /* SP_WorkManagement_OM_LocationOrientedUserOrderedSession */
 export interface SP_WorkManagement_OM_LocationOrientedUserOrderedSession {
-	addAttributeToTask: IMapper & { 
+	properties?: Array<string>;
+	addAttributeToTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	beginCacheRefresh: IMapper & { 
+	beginCacheRefresh: IMapper & {
 
 	},
-	beginExchangeSync: IMapper & { 
+	beginExchangeSync: IMapper & {
 
 	},
-	createPersonalTaskAndPromoteToProviderTask: IMapper & { 
+	createPersonalTaskAndPromoteToProviderTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
 	},
-	createTask: IMapper & { 
+	createTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
 	},
-	deleteTask: IMapper & { 
+	deleteTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getCalloutInfo: IMapper & { 
+	getCalloutInfo: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getRefreshHealthInfo: IMapper & { 
+	getRefreshHealthInfo: IMapper & {
 
 	},
-	getRefreshHistory: IMapper & { 
+	getRefreshHistory: IMapper & {
 		argNames: [ "since" ],
 	},
-	getRefreshStatus: IMapper & { 
+	getRefreshStatus: IMapper & {
 		argNames: [ "refreshId" ],
 	},
-	isExchangeJobPending: IMapper & { 
+	isExchangeJobPending: IMapper & {
 
 	},
-	pinTask: IMapper & { 
+	pinTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	promotePersonalTaskToProviderTaskInLocation: IMapper & { 
+	promotePersonalTaskToProviderTaskInLocation: IMapper & {
 		argNames: [ "taskKey", "locationId" ],
 	},
-	readAllNonTaskData: IMapper & { 
+	readAllNonTaskData: IMapper & {
 
 	},
-	refreshSingleTask: IMapper & { 
+	refreshSingleTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	removeAttributeFromTask: IMapper & { 
+	removeAttributeFromTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	removePinOnTask: IMapper & { 
+	removePinOnTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	updateTaskWithLocalizedValue: IMapper & { 
+	updateTaskWithLocalizedValue: IMapper & {
 		argNames: [ "taskKey", "field", "value" ],
 	},
-	movePersonalTaskToLocation: IMapper & { 
+	movePersonalTaskToLocation: IMapper & {
 		argNames: [ "taskKey", "newLocationKey" ],
 	},
-	reorderTask: IMapper & { 
+	reorderTask: IMapper & {
 		argNames: [ "taskKey", "newAfterTaskKey" ],
 	},
 };
 
 /* SP_WorkManagement_OM_SortableSessionManager */
 export interface SP_WorkManagement_OM_SortableSessionManager {
-	createLocationOrientedSession: IMapper & { 
+	properties?: Array<string>;
+	createLocationOrientedSession: IMapper & {
 
 	},
-	createSession: IMapper & { 
+	createSession: IMapper & {
 
 	},
 };
 
 /* SP_WorkManagement_OM_SortableSession */
 export interface SP_WorkManagement_OM_SortableSession {
-	addAttributeToTask: IMapper & { 
+	properties?: Array<string>;
+	addAttributeToTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	beginCacheRefresh: IMapper & { 
+	beginCacheRefresh: IMapper & {
 
 	},
-	beginExchangeSync: IMapper & { 
+	beginExchangeSync: IMapper & {
 
 	},
-	createPersonalTaskAndPromoteToProviderTask: IMapper & { 
+	createPersonalTaskAndPromoteToProviderTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
 	},
-	createTask: IMapper & { 
+	createTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
 	},
-	deleteTask: IMapper & { 
+	deleteTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getCalloutInfo: IMapper & { 
+	getCalloutInfo: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getRefreshHealthInfo: IMapper & { 
+	getRefreshHealthInfo: IMapper & {
 
 	},
-	getRefreshHistory: IMapper & { 
+	getRefreshHistory: IMapper & {
 		argNames: [ "since" ],
 	},
-	getRefreshStatus: IMapper & { 
+	getRefreshStatus: IMapper & {
 		argNames: [ "refreshId" ],
 	},
-	isExchangeJobPending: IMapper & { 
+	isExchangeJobPending: IMapper & {
 
 	},
-	pinTask: IMapper & { 
+	pinTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	promotePersonalTaskToProviderTaskInLocation: IMapper & { 
+	promotePersonalTaskToProviderTaskInLocation: IMapper & {
 		argNames: [ "taskKey", "locationId" ],
 	},
-	readAllNonTaskData: IMapper & { 
+	readAllNonTaskData: IMapper & {
 
 	},
-	refreshSingleTask: IMapper & { 
+	refreshSingleTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	removeAttributeFromTask: IMapper & { 
+	removeAttributeFromTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	removePinOnTask: IMapper & { 
+	removePinOnTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	updateTaskWithLocalizedValue: IMapper & { 
+	updateTaskWithLocalizedValue: IMapper & {
 		argNames: [ "taskKey", "field", "value" ],
 	},
 };
 
 /* SP_WorkManagement_OM_UserOrderedSessionManager */
 export interface SP_WorkManagement_OM_UserOrderedSessionManager {
-	createLocationOrientedSession: IMapper & { 
+	properties?: Array<string>;
+	createLocationOrientedSession: IMapper & {
 
 	},
-	createSession: IMapper & { 
+	createSession: IMapper & {
 
 	},
 };
 
 /* SP_WorkManagement_OM_UserOrderedSession */
 export interface SP_WorkManagement_OM_UserOrderedSession {
-	addAttributeToTask: IMapper & { 
+	properties?: Array<string>;
+	addAttributeToTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	beginCacheRefresh: IMapper & { 
+	beginCacheRefresh: IMapper & {
 
 	},
-	beginExchangeSync: IMapper & { 
+	beginExchangeSync: IMapper & {
 
 	},
-	createPersonalTaskAndPromoteToProviderTask: IMapper & { 
+	createPersonalTaskAndPromoteToProviderTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
 	},
-	createTask: IMapper & { 
+	createTask: IMapper & {
 		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
 	},
-	deleteTask: IMapper & { 
+	deleteTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getCalloutInfo: IMapper & { 
+	getCalloutInfo: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	getRefreshHealthInfo: IMapper & { 
+	getRefreshHealthInfo: IMapper & {
 
 	},
-	getRefreshHistory: IMapper & { 
+	getRefreshHistory: IMapper & {
 		argNames: [ "since" ],
 	},
-	getRefreshStatus: IMapper & { 
+	getRefreshStatus: IMapper & {
 		argNames: [ "refreshId" ],
 	},
-	isExchangeJobPending: IMapper & { 
+	isExchangeJobPending: IMapper & {
 
 	},
-	pinTask: IMapper & { 
+	pinTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	promotePersonalTaskToProviderTaskInLocation: IMapper & { 
+	promotePersonalTaskToProviderTaskInLocation: IMapper & {
 		argNames: [ "taskKey", "locationId" ],
 	},
-	readAllNonTaskData: IMapper & { 
+	readAllNonTaskData: IMapper & {
 
 	},
-	refreshSingleTask: IMapper & { 
+	refreshSingleTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	removeAttributeFromTask: IMapper & { 
+	removeAttributeFromTask: IMapper & {
 		argNames: [ "taskKey", "attribute" ],
 	},
-	removePinOnTask: IMapper & { 
+	removePinOnTask: IMapper & {
 		argNames: [ "taskKey" ],
 	},
-	updateTaskWithLocalizedValue: IMapper & { 
+	updateTaskWithLocalizedValue: IMapper & {
 		argNames: [ "taskKey", "field", "value" ],
 	},
-	reorderTask: IMapper & { 
+	reorderTask: IMapper & {
 		argNames: [ "taskKey", "newAfterTaskKey" ],
 	},
 };
 
 /* SP_WorkManagement_OM_UserSettingsManager */
 export interface SP_WorkManagement_OM_UserSettingsManager {
-	getAllLocations: IMapper & { 
+	properties?: Array<string>;
+	getAllLocations: IMapper & {
 
 	},
-	getExchangeSyncInfo: IMapper & { 
+	getExchangeSyncInfo: IMapper & {
 
 	},
-	getImportantLocations: IMapper & { 
+	getImportantLocations: IMapper & {
 
 	},
-	getLocations: IMapper & { 
+	getLocations: IMapper & {
 		argNames: [ "locationsId" ],
 	},
-	getPersistedProperties: IMapper & { 
+	getPersistedProperties: IMapper & {
 
 	},
-	getUserSettings: IMapper & { 
+	getUserSettings: IMapper & {
 
 	},
-	isExchangeJobPending: IMapper & { 
+	isExchangeJobPending: IMapper & {
 
 	},
-	optIntoExchangeSync: IMapper & { 
+	optIntoExchangeSync: IMapper & {
 
 	},
-	optOutOfExchangeSync: IMapper & { 
+	optOutOfExchangeSync: IMapper & {
 
 	},
 };
 
 /* Microsoft_AppServices_AppCollection */
 export interface Microsoft_AppServices_AppCollection {
-	getAppsFromStore: IMapper & { 
+	properties?: Array<string>;
+	getAppsFromStore: IMapper & {
 		argNames: [ "addInType", "queryString" ],
 	},
-	getByType: IMapper & { 
+	getByType: IMapper & {
 		argNames: [ "type" ],
 	},
 };
 
 /* SP_DocumentManagement_DocumentId */
 export interface SP_DocumentManagement_DocumentId {
-	resetDocIdByServerRelativePath: IMapper & { 
+	properties?: Array<string>;
+	resetDocIdByServerRelativePath: IMapper & {
 		argNames: [ "DecodedUrl" ],
 	},
-	resetDocIdsInLibrary: IMapper & { 
+	resetDocIdsInLibrary: IMapper & {
 		argNames: [ "DecodedUrl", "contentTypeId" ],
 	},
 };
 
 /* OBA_Server_ServerWrapper_Diagnostics */
 export interface OBA_Server_ServerWrapper_Diagnostics {
-	status: IMapper & { 
+	properties?: Array<string>;
+	status: IMapper & {
 
 	},
 };
 
 /* OBA_Server_ServerWrapper_Reporting */
 export interface OBA_Server_ServerWrapper_Reporting {
-	publishReport: IMapper & { 
+	properties?: Array<string>;
+	publishReport: IMapper & {
 		argNames: [ "odataPostBodyStm" ],
 	},
 };
 
 /* OBA_Server_ServerWrapper_Taskflow */
 export interface OBA_Server_ServerWrapper_Taskflow {
-	processTask: IMapper & { 
+	properties?: Array<string>;
+	processTask: IMapper & {
 		argNames: [ "requestBodyStream" ],
 	},
 };
 
 /* SP_WorkflowServices_WorkflowDefinition_Collection */
 export interface SP_WorkflowServices_WorkflowDefinition_Collection {
-	sort: IMapper & { 
+	properties?: Array<string>;
+	sort: IMapper & {
 
 	},
 };
 
 /* SP_WorkflowServices_WorkflowDefinition */
 export interface SP_WorkflowServices_WorkflowDefinition {
-	setProperty: IMapper & { 
+	properties?: Array<string>;
+	setProperty: IMapper & {
 		argNames: [ "propertyName", "value" ],
 	},
 };
 
 /* SP_WorkflowServices_WorkflowDeploymentService */
 export interface SP_WorkflowServices_WorkflowDeploymentService {
-	deleteCollateral: IMapper & { 
+	properties?: Array<string>;
+	deleteCollateral: IMapper & {
 		argNames: [ "workflowDefinitionId", "leafFileName" ],
 	},
-	deleteDefinition: IMapper & { 
+	deleteDefinition: IMapper & {
 		argNames: [ "definitionId" ],
 	},
-	deprecateDefinition: IMapper & { 
+	deprecateDefinition: IMapper & {
 		argNames: [ "definitionId" ],
 	},
-	enumerateDefinitions: IMapper & { 
+	enumerateDefinitions: IMapper & {
 		argNames: [ "publishedOnly" ],
 	},
-	enumerateIntegratedApps: IMapper & { 
+	enumerateIntegratedApps: IMapper & {
 
 	},
-	getActivitySignatures: IMapper & { 
+	getActivitySignatures: IMapper & {
 		argNames: [ "lastChanged" ],
 	},
-	getCollateralUri: IMapper & { 
+	getCollateralUri: IMapper & {
 		argNames: [ "workflowDefinitionId", "leafFileName" ],
 	},
-	getDefinition: IMapper & { 
+	getDefinition: IMapper & {
 		argNames: [ "definitionId" ],
 	},
-	isIntegratedApp: IMapper & { 
+	isIntegratedApp: IMapper & {
 
 	},
-	packageDefinition: IMapper & { 
+	packageDefinition: IMapper & {
 		argNames: [ "definitionId", "packageDefaultFilename", "packageTitle", "packageDescription" ],
 	},
-	publishDefinition: IMapper & { 
+	publishDefinition: IMapper & {
 		argNames: [ "definitionId" ],
 	},
-	saveCollateral: IMapper & { 
+	saveCollateral: IMapper & {
 		argNames: [ "workflowDefinitionId", "leafFileName", "fileContent" ],
 	},
-	validateActivity: IMapper & { 
+	validateActivity: IMapper & {
 		argNames: [ "activityXaml" ],
 	},
 };
 
 /* SP_WorkflowServices_WorkflowInstanceService */
 export interface SP_WorkflowServices_WorkflowInstanceService {
-	enumerateInstancesForListItem: IMapper & { 
+	properties?: Array<string>;
+	enumerateInstancesForListItem: IMapper & {
 		argNames: [ "listId", "itemId" ],
 	},
-	enumerateInstancesForListItemWithOffset: IMapper & { 
+	enumerateInstancesForListItemWithOffset: IMapper & {
 		argNames: [ "listId", "itemId", "offset" ],
 	},
-	enumerateInstancesForSite: IMapper & { 
+	enumerateInstancesForSite: IMapper & {
 
 	},
-	enumerateInstancesForSiteWithOffset: IMapper & { 
+	enumerateInstancesForSiteWithOffset: IMapper & {
 		argNames: [ "offset" ],
 	},
-	getInstance: IMapper & { 
+	getInstance: IMapper & {
 		argNames: [ "instanceId" ],
 	},
-	startWorkflowOnListItemBySubscriptionId: IMapper & { 
+	startWorkflowOnListItemBySubscriptionId: IMapper & {
 		argNames: [ "subscriptionId", "itemId", "payload" ],
 	},
 };
 
 /* SP_WorkflowServices_InteropService */
 export interface SP_WorkflowServices_InteropService {
-	cancelWorkflow: IMapper & { 
+	properties?: Array<string>;
+	cancelWorkflow: IMapper & {
 		argNames: [ "instanceId" ],
 	},
-	disableEvents: IMapper & { 
+	disableEvents: IMapper & {
 		argNames: [ "listId", "itemGuid" ],
 	},
-	enableEvents: IMapper & { 
+	enableEvents: IMapper & {
 		argNames: [ "listId", "itemGuid" ],
 	},
-	startWorkflow: IMapper & { 
+	startWorkflow: IMapper & {
 		argNames: [ "associationName", "correlationId", "listId", "itemGuid", "workflowParameters" ],
 	},
 };
 
 /* SP_WorkflowServices_WorkflowServicesManager */
 export interface SP_WorkflowServices_WorkflowServicesManager {
-	getWorkflowDeploymentService: IMapper & { 
+	properties?: Array<string>;
+	getWorkflowDeploymentService: IMapper & {
 
 	},
-	getWorkflowInstanceService: IMapper & { 
+	getWorkflowInstanceService: IMapper & {
 
 	},
-	getWorkflowInteropService: IMapper & { 
+	getWorkflowInteropService: IMapper & {
 
 	},
-	getWorkflowSubscriptionService: IMapper & { 
+	getWorkflowSubscriptionService: IMapper & {
 
 	},
-	isIntegratedApp: IMapper & { 
+	isIntegratedApp: IMapper & {
 
 	},
 };
 
 /* SP_WorkflowServices_WorkflowSubscription_Collection */
 export interface SP_WorkflowServices_WorkflowSubscription_Collection {
-	sort: IMapper & { 
+	properties?: Array<string>;
+	sort: IMapper & {
 
 	},
 };
 
 /* SP_WorkflowServices_WorkflowSubscription */
 export interface SP_WorkflowServices_WorkflowSubscription {
-	getExternalVariable: IMapper & { 
+	properties?: Array<string>;
+	getExternalVariable: IMapper & {
 		argNames: [ "name" ],
 	},
-	setExternalVariable: IMapper & { 
+	setExternalVariable: IMapper & {
 		argNames: [ "name", "value" ],
 	},
-	setProperty: IMapper & { 
+	setProperty: IMapper & {
 		argNames: [ "name", "value" ],
 	},
 };
 
 /* SP_WorkflowServices_WorkflowSubscriptionService */
 export interface SP_WorkflowServices_WorkflowSubscriptionService {
-	deleteSubscription: IMapper & { 
+	properties?: Array<string>;
+	deleteSubscription: IMapper & {
 		argNames: [ "subscriptionId" ],
 	},
-	enumerateSubscriptions: IMapper & { 
+	enumerateSubscriptions: IMapper & {
 
 	},
-	enumerateSubscriptionsByDefinition: IMapper & { 
+	enumerateSubscriptionsByDefinition: IMapper & {
 		argNames: [ "definitionId" ],
 	},
-	enumerateSubscriptionsByEventSource: IMapper & { 
+	enumerateSubscriptionsByEventSource: IMapper & {
 		argNames: [ "eventSourceId" ],
 	},
-	enumerateSubscriptionsByList: IMapper & { 
+	enumerateSubscriptionsByList: IMapper & {
 		argNames: [ "listId" ],
 	},
-	enumerateSubscriptionsByListAndParentContentType: IMapper & { 
+	enumerateSubscriptionsByListAndParentContentType: IMapper & {
 		argNames: [ "listId", "parentContentTypeId", "includeNoContentTypeSpecified" ],
 	},
-	enumerateSubscriptionsByListWithContentType: IMapper & { 
+	enumerateSubscriptionsByListWithContentType: IMapper & {
 		argNames: [ "listId", "includeContentTypeSpecified" ],
 	},
-	getSubscription: IMapper & { 
+	getSubscription: IMapper & {
 		argNames: [ "subscriptionId" ],
 	},
-	registerInterestInHostWebList: IMapper & { 
+	registerInterestInHostWebList: IMapper & {
 		argNames: [ "listId", "eventName" ],
 	},
-	registerInterestInList: IMapper & { 
+	registerInterestInList: IMapper & {
 		argNames: [ "listId", "eventName" ],
 	},
-	unregisterInterestInHostWebList: IMapper & { 
+	unregisterInterestInHostWebList: IMapper & {
 		argNames: [ "listId", "eventName" ],
 	},
-	unregisterInterestInList: IMapper & { 
+	unregisterInterestInList: IMapper & {
 		argNames: [ "listId", "eventName" ],
 	},
 };
 
 /* SP_WorkflowServices_WorkflowMessagingService */
 export interface SP_WorkflowServices_WorkflowMessagingService {
-	publishEvent: IMapper & { 
+	properties?: Array<string>;
+	publishEvent: IMapper & {
 		argNames: [ "eventSourceId", "eventName", "payload" ],
 	},
 };
 
 /* Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor */
 export interface Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "Content", "Overwrite", "Url" ],
 	},
 };
 
 /* Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_Collection */
 export interface Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata */
 export interface Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_CorporateCatalogAppMetadata {
-	deploy: IMapper & { 
+	properties?: Array<string>;
+	deploy: IMapper & {
 		argNames: [ "skipFeatureDeployment" ],
 	},
-	install: IMapper & { 
+	install: IMapper & {
 
 	},
-	remove: IMapper & { 
+	remove: IMapper & {
 
 	},
-	retract: IMapper & { 
+	retract: IMapper & {
 
 	},
-	uninstall: IMapper & { 
+	uninstall: IMapper & {
 
 	},
-	upgrade: IMapper & { 
+	upgrade: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor */
 export interface Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_TenantCorporateCatalogAccessor {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "Content", "Overwrite", "Url" ],
 	},
 };
 
 /* Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_Collection */
 export interface Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionAppCatalogAllowedItem_Collection {
-	add: IMapper & { 
+	properties?: Array<string>;
+	add: IMapper & {
 		argNames: [ "absolutePath" ],
 	},
-	getByAbsoluteUrl: IMapper & { 
+	getByAbsoluteUrl: IMapper & {
 		argNames: [ "absolutePath" ],
 	},
-	remove: IMapper & { 
+	remove: IMapper & {
 		argNames: [ "absolutePath" ],
 	},
-	removeById: IMapper & { 
+	removeById: IMapper & {
 		argNames: [ "siteId" ],
 	},
 };
 
 /* Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog */
 export interface Microsoft_SharePoint_Client_Search_Administration_DocumentCrawlLog {
-	getCrawledUrls: IMapper & { 
+	properties?: Array<string>;
+	getCrawledUrls: IMapper & {
 		argNames: [ "getCountOnly", "maxRows", "queryString", "isLike", "contentSourceID", "errorLevel", "errorID", "startDateTime", "endDateTime" ],
 	},
 };
 
 /* SP_OAuth_NativeClient */
 export interface SP_OAuth_NativeClient {
-	authenticate: IMapper & { 
+	properties?: Array<string>;
+	authenticate: IMapper & {
 
 	},
 };
 
 /* SP_OAuth_Token */
 export interface SP_OAuth_Token {
-	acquire: IMapper & { 
+	properties?: Array<string>;
+	acquire: IMapper & {
 		argNames: [ "resource", "tokenType" ],
 	},
 };
 
 /* SP_BusinessData_Runtime_EntityInstance */
 export interface SP_BusinessData_Runtime_EntityInstance {
-	createCollectionInstance: IMapper & { 
+	properties?: Array<string>;
+	createCollectionInstance: IMapper & {
 		argNames: [ "fieldDotNotation", "size" ],
 	},
-	createInstance: IMapper & { 
+	createInstance: IMapper & {
 		argNames: [ "fieldInstanceDotNotation", "fieldDotNotation" ],
 	},
-	deleteObject: IMapper & { 
+	deleteObject: IMapper & {
 
 	},
-	fromXml: IMapper & { 
+	fromXml: IMapper & {
 		argNames: [ "xml" ],
 	},
-	getIdentity: IMapper & { 
+	getIdentity: IMapper & {
 
 	},
-	toXml: IMapper & { 
+	toXml: IMapper & {
 
 	},
-	update: IMapper & { 
+	update: IMapper & {
 
 	},
 };
 
 /* SP_BusinessData_Runtime_EntityFieldValueDictionary */
 export interface SP_BusinessData_Runtime_EntityFieldValueDictionary {
-	createCollectionInstance: IMapper & { 
+	properties?: Array<string>;
+	createCollectionInstance: IMapper & {
 		argNames: [ "fieldDotNotation", "size" ],
 	},
-	createInstance: IMapper & { 
+	createInstance: IMapper & {
 		argNames: [ "fieldInstanceDotNotation", "fieldDotNotation" ],
 	},
-	fromXml: IMapper & { 
+	fromXml: IMapper & {
 		argNames: [ "xml" ],
 	},
-	getCollectionSize: IMapper & { 
+	getCollectionSize: IMapper & {
 		argNames: [ "fieldDotNotation" ],
 	},
-	toXml: IMapper & { 
+	toXml: IMapper & {
 
 	},
 };
 
 /* SP_BusinessData_EntityIdentifier */
 export interface SP_BusinessData_EntityIdentifier {
-	containsLocalizedDisplayName: IMapper & { 
+	properties?: Array<string>;
+	containsLocalizedDisplayName: IMapper & {
 
 	},
-	getDefaultDisplayName: IMapper & { 
+	getDefaultDisplayName: IMapper & {
 
 	},
-	getLocalizedDisplayName: IMapper & { 
+	getLocalizedDisplayName: IMapper & {
 
 	},
 };
 
 /* SP_BusinessData_TypeDescriptor */
 export interface SP_BusinessData_TypeDescriptor {
-	containsLocalizedDisplayName: IMapper & { 
+	properties?: Array<string>;
+	containsLocalizedDisplayName: IMapper & {
 
 	},
-	getChildTypeDescriptors: IMapper & { 
+	getChildTypeDescriptors: IMapper & {
 
 	},
-	getDefaultDisplayName: IMapper & { 
+	getDefaultDisplayName: IMapper & {
 
 	},
-	getLocalizedDisplayName: IMapper & { 
+	getLocalizedDisplayName: IMapper & {
 
 	},
-	getParentTypeDescriptor: IMapper & { 
+	getParentTypeDescriptor: IMapper & {
 
 	},
-	isLeaf: IMapper & { 
+	isLeaf: IMapper & {
 
 	},
-	isRoot: IMapper & { 
+	isRoot: IMapper & {
 
 	},
 };
 
 /* SP_BusinessData_Entity */
 export interface SP_BusinessData_Entity {
-	getAssociationView: IMapper & { 
+	properties?: Array<string>;
+	getAssociationView: IMapper & {
 		argNames: [ "associationName" ],
 	},
-	getCreatorView: IMapper & { 
+	getCreatorView: IMapper & {
 		argNames: [ "methodInstanceName" ],
 	},
-	getDefaultSpecificFinderView: IMapper & { 
+	getDefaultSpecificFinderView: IMapper & {
 
 	},
-	getFilters: IMapper & { 
+	getFilters: IMapper & {
 		argNames: [ "methodInstanceName" ],
 	},
-	getFinderView: IMapper & { 
+	getFinderView: IMapper & {
 		argNames: [ "methodInstanceName" ],
 	},
-	getIdentifierCount: IMapper & { 
+	getIdentifierCount: IMapper & {
 
 	},
-	getIdentifiers: IMapper & { 
+	getIdentifiers: IMapper & {
 
 	},
-	getLobSystem: IMapper & { 
+	getLobSystem: IMapper & {
 
 	},
-	getSpecificFinderView: IMapper & { 
+	getSpecificFinderView: IMapper & {
 		argNames: [ "specificFinderName" ],
 	},
-	getUpdaterView: IMapper & { 
+	getUpdaterView: IMapper & {
 		argNames: [ "updaterName" ],
 	},
 };
 
 /* SP_BusinessData_LobSystem */
 export interface SP_BusinessData_LobSystem {
-	getLobSystemInstances: IMapper & { 
+	properties?: Array<string>;
+	getLobSystemInstances: IMapper & {
 
 	},
 };
 
 /* SP_BusinessData_EntityView */
 export interface SP_BusinessData_EntityView {
-	getDefaultValues: IMapper & { 
+	properties?: Array<string>;
+	getDefaultValues: IMapper & {
 
 	},
-	getType: IMapper & { 
+	getType: IMapper & {
 		argNames: [ "fieldDotNotation" ],
 	},
-	getTypeDescriptor: IMapper & { 
+	getTypeDescriptor: IMapper & {
 		argNames: [ "fieldDotNotation" ],
 	},
-	getXmlSchema: IMapper & { 
+	getXmlSchema: IMapper & {
 
 	},
 };
 
 /* SP_BusinessData_AppBdcCatalog */
 export interface SP_BusinessData_AppBdcCatalog {
-	getConnectionId: IMapper & { 
+	properties?: Array<string>;
+	getConnectionId: IMapper & {
 		argNames: [ "lobSystemName", "lobSystemInstanceName" ],
 	},
-	getEntity: IMapper & { 
+	getEntity: IMapper & {
 		argNames: [ "namespace", "name" ],
 	},
-	getLobSystemInstanceProperty: IMapper & { 
+	getLobSystemInstanceProperty: IMapper & {
 		argNames: [ "lobSystemName", "lobSystemInstanceName", "propertyName" ],
 	},
-	getLobSystemProperty: IMapper & { 
+	getLobSystemProperty: IMapper & {
 		argNames: [ "lobSystemName", "propertyName" ],
 	},
-	getPermissibleConnections: IMapper & { 
+	getPermissibleConnections: IMapper & {
 
 	},
-	setConnectionId: IMapper & { 
+	setConnectionId: IMapper & {
 		argNames: [ "lobSystemName", "lobSystemInstanceName", "connectionId" ],
 	},
-	setLobSystemInstanceProperty: IMapper & { 
+	setLobSystemInstanceProperty: IMapper & {
 		argNames: [ "lobSystemName", "lobSystemInstanceName", "propertyName", "propertyValue" ],
 	},
-	setLobSystemProperty: IMapper & { 
+	setLobSystemProperty: IMapper & {
 		argNames: [ "lobSystemName", "propertyName", "propertyValue" ],
 	},
 };
 
 /* SP_BusinessData_Infrastructure_ExternalSubscriptionStore */
 export interface SP_BusinessData_Infrastructure_ExternalSubscriptionStore {
-	indexStore: IMapper & { 
+	properties?: Array<string>;
+	indexStore: IMapper & {
 
 	},
 };
 
 /* Microsoft_SharePoint_Navigation_REST_NavigationServiceRest */
 export interface Microsoft_SharePoint_Navigation_REST_NavigationServiceRest {
-	getPublishingNavigationProviderType: IMapper & { 
+	properties?: Array<string>;
+	getPublishingNavigationProviderType: IMapper & {
 		argNames: [ "mapProviderName" ],
 	},
-	menuNodeKey: IMapper & { 
+	menuNodeKey: IMapper & {
 		argNames: [ "currentUrl", "mapProviderName" ],
 	},
-	menuState: IMapper & { 
+	menuState: IMapper & {
 		argNames: [ "menuNodeKey", "mapProviderName", "depth", "customProperties" ],
 	},
-	saveMenuState: IMapper & { 
+	saveMenuState: IMapper & {
 		argNames: [ "menuState", "mapProviderName" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_AppLauncher_AppLauncher */
 export interface Microsoft_Online_SharePoint_AppLauncher_AppLauncher {
-	getData: IMapper & { 
+	properties?: Array<string>;
+	getData: IMapper & {
 		argNames: [ "suiteVersion", "isMobileRequest", "locale", "onPremVer" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_PointPublishing_PointPublishingAdmin */
 export interface Microsoft_Online_SharePoint_PointPublishing_PointPublishingAdmin {
-	createTopicMagazine: IMapper & { 
+	properties?: Array<string>;
+	createTopicMagazine: IMapper & {
 		argNames: [ "magazineName" ],
 	},
-	deleteTopicMagazine: IMapper & { 
+	deleteTopicMagazine: IMapper & {
 		argNames: [ "magazineId" ],
 	},
-	provisionPointPublishingAsync: IMapper & { 
+	provisionPointPublishingAsync: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_SPLogger_LogExport */
 export interface Microsoft_Online_SharePoint_SPLogger_LogExport {
-	getFiles: IMapper & { 
+	properties?: Array<string>;
+	getFiles: IMapper & {
 		argNames: [ "partitionId", "logType" ],
 	},
-	getLogTypes: IMapper & { 
+	getLogTypes: IMapper & {
 
 	},
-	getPartitions: IMapper & { 
+	getPartitions: IMapper & {
 		argNames: [ "logType" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdmin_MiddleTier_DDIAdapter */
 export interface Microsoft_Online_SharePoint_TenantAdmin_MiddleTier_DDIAdapter {
-	getList: IMapper & { 
+	properties?: Array<string>;
+	getList: IMapper & {
 		argNames: [ "schema", "workflow", "stream" ],
 	},
-	getObject: IMapper & { 
+	getObject: IMapper & {
 		argNames: [ "schema", "workflow", "stream" ],
 	},
-	multiObjectExecute: IMapper & { 
+	multiObjectExecute: IMapper & {
 		argNames: [ "schema", "workflow", "stream" ],
 	},
-	newObject: IMapper & { 
+	newObject: IMapper & {
 		argNames: [ "schema", "workflow", "stream" ],
 	},
-	removeObjects: IMapper & { 
+	removeObjects: IMapper & {
 		argNames: [ "schema", "workflow", "stream" ],
 	},
-	setObject: IMapper & { 
+	setObject: IMapper & {
 		argNames: [ "schema", "workflow", "stream" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionGrant_Collection */
 export interface Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionGrant_Collection {
-	getByObjectId: IMapper & { 
+	properties?: Array<string>;
+	getByObjectId: IMapper & {
 		argNames: [ "objectId" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionGrant */
 export interface Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionGrant {
-	deleteObject: IMapper & { 
+	properties?: Array<string>;
+	deleteObject: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionRequest_Collection */
 export interface Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionRequest_Collection {
-	approve: IMapper & { 
+	properties?: Array<string>;
+	approve: IMapper & {
 		argNames: [ "resource", "scope" ],
 	},
-	getById: IMapper & { 
+	getById: IMapper & {
 		argNames: [ "id" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionRequest */
 export interface Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipalPermissionRequest {
-	approve: IMapper & { 
+	properties?: Array<string>;
+	approve: IMapper & {
 
 	},
-	deny: IMapper & { 
+	deny: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipal */
 export interface Microsoft_Online_SharePoint_TenantAdministration_Internal_SPOWebAppServicePrincipal {
-	update: IMapper & { 
+	properties?: Array<string>;
+	update: IMapper & {
 
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantManagement_ExternalUser_Collection */
 export interface Microsoft_Online_SharePoint_TenantManagement_ExternalUser_Collection {
-	getById: IMapper & { 
+	properties?: Array<string>;
+	getById: IMapper & {
 		argNames: [ "uniqueId" ],
 	},
 };
 
 /* Microsoft_Online_SharePoint_TenantManagement_Office365Tenant */
 export interface Microsoft_Online_SharePoint_TenantManagement_Office365Tenant {
-	addPublicCdnOrigin: IMapper & { 
+	properties?: Array<string>;
+	addPublicCdnOrigin: IMapper & {
 		argNames: [ "origin" ],
 	},
-	addSdnProvider: IMapper & { 
+	addSdnProvider: IMapper & {
 		argNames: [ "identifier", "license" ],
 	},
-	addTenantCdnOrigin: IMapper & { 
+	addTenantCdnOrigin: IMapper & {
 		argNames: [ "cdnType", "originUrl" ],
 	},
-	addTenantTheme: IMapper & { 
+	addTenantTheme: IMapper & {
 		argNames: [ "name", "themeJson" ],
 	},
-	addToCarLibAndCdn: IMapper & { 
+	addToCarLibAndCdn: IMapper & {
 		argNames: [ "cdnType", "libUrl", "displayName", "thumbnailUrl" ],
 	},
-	createTenantCdnDefaultOrigins: IMapper & { 
+	createTenantCdnDefaultOrigins: IMapper & {
 		argNames: [ "cdnType" ],
 	},
-	deleteImportProfilePropertiesJob: IMapper & { 
+	deleteImportProfilePropertiesJob: IMapper & {
 		argNames: [ "jobId" ],
 	},
-	deleteTenantTheme: IMapper & { 
+	deleteTenantTheme: IMapper & {
 		argNames: [ "name" ],
 	},
-	disableSharingForNonOwnersOfSite: IMapper & { 
+	disableSharingForNonOwnersOfSite: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
-	getAllTenantThemes: IMapper & { 
+	getAllTenantThemes: IMapper & {
 
 	},
-	getExternalUsers: IMapper & { 
+	getExternalUsers: IMapper & {
 		argNames: [ "position", "pageSize", "filter", "sortOrder" ],
 	},
-	getExternalUsersForSite: IMapper & { 
+	getExternalUsersForSite: IMapper & {
 		argNames: [ "siteUrl", "position", "pageSize", "filter", "sortOrder" ],
 	},
-	getExternalUsersWithSortBy: IMapper & { 
+	getExternalUsersWithSortBy: IMapper & {
 		argNames: [ "position", "pageSize", "filter", "sortPropertyName", "sortOrder" ],
 	},
-	getHideDefaultThemes: IMapper & { 
+	getHideDefaultThemes: IMapper & {
 
 	},
-	getIdleSessionSignOutForUnmanagedDevices: IMapper & { 
+	getIdleSessionSignOutForUnmanagedDevices: IMapper & {
 
 	},
-	getImportProfilePropertyJob: IMapper & { 
+	getImportProfilePropertyJob: IMapper & {
 		argNames: [ "jobId" ],
 	},
-	getImportProfilePropertyJobs: IMapper & { 
+	getImportProfilePropertyJobs: IMapper & {
 
 	},
-	getTenantCdnEnabled: IMapper & { 
+	getTenantCdnEnabled: IMapper & {
 		argNames: [ "cdnType" ],
 	},
-	getTenantCdnOrigins: IMapper & { 
+	getTenantCdnOrigins: IMapper & {
 		argNames: [ "cdnType" ],
 	},
-	getTenantCdnPolicies: IMapper & { 
+	getTenantCdnPolicies: IMapper & {
 		argNames: [ "cdnType" ],
 	},
-	getTenantTheme: IMapper & { 
+	getTenantTheme: IMapper & {
 		argNames: [ "name" ],
 	},
-	isSharingDisabledForNonOwnersOfSite: IMapper & { 
+	isSharingDisabledForNonOwnersOfSite: IMapper & {
 		argNames: [ "siteUrl" ],
 	},
-	queueImportProfileProperties: IMapper & { 
+	queueImportProfileProperties: IMapper & {
 		argNames: [ "idType", "sourceDataIdProperty", "propertyMap", "sourceUri" ],
 	},
-	removeExternalUsers: IMapper & { 
+	removeExternalUsers: IMapper & {
 		argNames: [ "uniqueIds" ],
 	},
-	removeFromCarAndCdn: IMapper & { 
+	removeFromCarAndCdn: IMapper & {
 		argNames: [ "remove", "cdnType", "libUrl" ],
 	},
-	removePublicCdnOrigin: IMapper & { 
+	removePublicCdnOrigin: IMapper & {
 		argNames: [ "originId" ],
 	},
-	removeSdnProvider: IMapper & { 
+	removeSdnProvider: IMapper & {
 
 	},
-	removeTenantCdnOrigin: IMapper & { 
+	removeTenantCdnOrigin: IMapper & {
 		argNames: [ "cdnType", "originUrl" ],
 	},
-	revokeAllUserSessions: IMapper & { 
+	revokeAllUserSessions: IMapper & {
 		argNames: [ "userName" ],
 	},
-	revokeAllUserSessionsByPuid: IMapper & { 
+	revokeAllUserSessionsByPuid: IMapper & {
 		argNames: [ "puidList" ],
 	},
-	setHideDefaultThemes: IMapper & { 
+	setHideDefaultThemes: IMapper & {
 		argNames: [ "hideDefaultThemes" ],
 	},
-	setIdleSessionSignOutForUnmanagedDevices: IMapper & { 
+	setIdleSessionSignOutForUnmanagedDevices: IMapper & {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
 	},
-	setTenantCdnEnabled: IMapper & { 
+	setTenantCdnEnabled: IMapper & {
 		argNames: [ "cdnType", "isEnabled" ],
 	},
-	setTenantCdnPolicy: IMapper & { 
+	setTenantCdnPolicy: IMapper & {
 		argNames: [ "cdnType", "policy", "policyValue" ],
 	},
-	updateTenantTheme: IMapper & { 
+	updateTenantTheme: IMapper & {
 		argNames: [ "name", "themeJson" ],
 	},
 };

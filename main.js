@@ -805,6 +805,15 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             methods.push('\/* ' + mapperKey + ' *\/');
             methods.push('export interface ' + mapperKey + ' {');
 
+            // Add the optional properties
+            methods.push('\tproperties?: Array<string>;');
+
+            // See if this type is queryable
+            if (hasCollections[mapperKey.replace('_', '.')]) {
+                // Add the query method
+                methods.push('\tquery: { argNames: ["query"] },')
+            }
+
             // Parse the methods
             for (let i = 0; i < mapper[mapperKey].length; i++) {
                 let argNames = [];
@@ -820,7 +829,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                 // Add the method
                 methods.push([
-                    '\t' + methodInfo.name + ': IMapper & { ',
+                    '\t' + methodInfo.name + ': IMapper & {',
                     argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],' : '',
                     '\t},'
                 ].join('\n'));
