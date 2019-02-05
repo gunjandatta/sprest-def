@@ -453,10 +453,10 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         // Parse the directories
         // NameSpace -> Collection -> Interface -> Properties
         // Directory -> File
+        let api = [];
+        let apiImports = [];
         let mapper = {};
         for (let dirName in directories) {
-            let api = [];
-            let apiImports = [];
             let files = {};
             let filesIndex = [];
 
@@ -606,7 +606,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Ensure this method isn't being overridden
                                 if (!methodInfo.name.startsWith('\/\/')) {
                                     // Add the mapper
-                                    let mapperKey = dirName.replace(/\./g, '_') + '_' + name + "_Collection";
+                                    let mapperKey = dirName + '.' + name + '.Collection';
                                     mapper[mapperKey] = mapper[mapperKey] || [];
                                     mapper[mapperKey].push(methodInfo);
                                 }
@@ -658,7 +658,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Ensure this method isn't being overridden
                                 if (!methodName.startsWith('\/\/')) {
                                     // Add the mapper
-                                    let mapperKey = dirName.replace(/\./g, '_') + '_' + name;
+                                    let mapperKey = dirName + '.' + name;
                                     mapper[mapperKey] = mapper[mapperKey] || [];
                                     mapper[mapperKey].push(methodInfo);
                                 }
@@ -785,31 +785,37 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
             // Create the index file
             fs.appendFileSync(path + "/index.d.ts", '\n' + filesIndex.join('\n'));
-
-            // Ensure api data exists
-            if (api.length > 0) {
-                // Remove duplicates from the import array
-                apiImports = apiImports.filter(function (item, pos) { return apiImports.indexOf(item) == pos; });
-
-                // Create the api file
-                fs.appendFileSync("lib/api.d.ts", apiImports.join('\n') + '\n\n' + api.join('\n'));
-            }
         }
 
-        // Parse the mapper
+        // Remove duplicates from the import array
+        apiImports = apiImports.filter(function (item, pos) { return apiImports.indexOf(item) == pos; });
+
+        // Create the api file
+        fs.appendFileSync("lib/api.d.ts", apiImports.join('\n') + '\n\n' + api.join('\n'));
+
+        // Get the mapper keys
+        let mapperKeys = [];
+        for (let mapperKey in mapper) { mapperKeys.push(mapperKey); }
+        mapperKeys = mapperKeys.sort();
+
+        // Parse the mapper names
         let mapperContent = [];
-        for (let mapperKey in mapper) {
+        for (let i = 0; i < mapperKeys.length; i++) {
+            let mapperKey = mapperKeys[i];
             let methods = [];
 
             // Add the header
             methods.push('\/* ' + mapperKey + ' *\/');
-            methods.push('export interface ' + mapperKey + ' {');
+            methods.push('export interface ' + mapperKey.replace(/\./g, '_') + ' {');
 
-            // Add the optional properties
-            methods.push('\tproperties?: Array<string>;');
+            // See if this is not a collection
+            if (/\.Collection$/.test(mapperKey) == false) {
+                // Add the optional properties
+                methods.push('\tproperties?: Array<string>;');
+            }
 
             // See if this type is queryable
-            if (hasCollections[mapperKey.replace('_', '.')]) {
+            if (hasCollections[mapperKey]) {
                 // Add the query method
                 methods.push('\tquery: IMapper & { argNames: ["oData"] },')
             }
