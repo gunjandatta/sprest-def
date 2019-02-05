@@ -26,6 +26,7 @@ export interface IMapper {
 	}
 
 	"MS.FileServices.FileSystemItem.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "name", "overwrite", "content" ],
 		},
@@ -142,6 +143,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation.Collection": {
+		properties?: Array<string>;
 		getByLocation: IMapperMethod & {
 		argNames: [ "location" ],
 		},
@@ -158,6 +160,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob.Collection": {
+		properties?: Array<string>;
 		getByMoveId: IMapperMethod & {
 		argNames: [ "moveId" ],
 		},
@@ -174,6 +177,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob.Collection": {
+		properties?: Array<string>;
 		getByMoveId: IMapperMethod & {
 		argNames: [ "moveId" ],
 		},
@@ -190,6 +194,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob.Collection": {
+		properties?: Array<string>;
 		getByMoveId: IMapperMethod & {
 		argNames: [ "moveId" ],
 		},
@@ -209,6 +214,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty.Collection": {
+		properties?: Array<string>;
 		getByPropertyNameAndGeoLocation: IMapperMethod & {
 		argNames: [ "propertyName", "geo" ],
 		},
@@ -229,6 +235,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator.Collection": {
+		properties?: Array<string>;
 		create: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -260,6 +267,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation.Collection": {
+		properties?: Array<string>;
 		getByGeoLocation: IMapperMethod & {
 		argNames: [ "geoLocation" ],
 		},
@@ -282,6 +290,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob.Collection": {
+		properties?: Array<string>;
 		getByGroupName: IMapperMethod & {
 		argNames: [ "groupname" ],
 		},
@@ -332,6 +341,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob.Collection": {
+		properties?: Array<string>;
 		getByUrl: IMapperMethod & {
 		argNames: [ "url" ],
 		},
@@ -345,6 +355,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob.Collection": {
+		properties?: Array<string>;
 		getBySiteUrl: IMapperMethod & {
 		argNames: [ "siteUrl" ],
 		},
@@ -361,6 +372,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota.Collection": {
+		properties?: Array<string>;
 		getByLocation: IMapperMethod & {
 		argNames: [ "geoLocation" ],
 		},
@@ -377,6 +389,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup.Collection": {
+		properties?: Array<string>;
 		getByAlias: IMapperMethod & {
 		argNames: [ "alias" ],
 		},
@@ -399,6 +412,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob.Collection": {
+		properties?: Array<string>;
 		getByDirection: IMapperMethod & {
 		argNames: [ "direction" ],
 		},
@@ -505,6 +519,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant.Collection": {
+		properties?: Array<string>;
 		getByObjectId: IMapperMethod & {
 		argNames: [ "objectId" ],
 		},
@@ -524,6 +539,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest.Collection": {
+		properties?: Array<string>;
 		approve: IMapperMethod & {
 		argNames: [ "resource", "scope" ],
 		},
@@ -581,6 +597,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteProperties.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "siteId" ],
 		},
@@ -686,6 +703,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.Online.SharePoint.TenantManagement.ExternalUser.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "uniqueId" ],
 		},
@@ -834,6 +852,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.SharePoint.Administration.FeatureDefinition.Collection": {
+		properties?: Array<string>;
 		getFeatureDefinition: IMapperMethod & {
 		argNames: [ "featureDisplayName", "compatibilityLevel" ],
 		},
@@ -958,6 +977,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.SharePoint.Comments.comment.Collection": {
+		properties?: Array<string>;
 		deleteAll: IMapperMethod & {
 		},
 
@@ -1005,6 +1025,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -1014,6 +1035,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "absolutePath" ],
 		},
@@ -1206,6 +1228,7 @@ export interface IMapper {
 	}
 
 	"Microsoft.SharePoint.Webhooks.Subscription.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1266,6 +1289,7 @@ export interface IMapper {
 	}
 
 	"PS.Calendar.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1295,6 +1319,7 @@ export interface IMapper {
 	}
 
 	"PS.CalendarException.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1317,6 +1342,7 @@ export interface IMapper {
 	}
 
 	"PS.CustomField.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1350,6 +1376,7 @@ export interface IMapper {
 	}
 
 	"PS.DraftAssignment.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1422,6 +1449,7 @@ export interface IMapper {
 	}
 
 	"PS.DraftProjectResource.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1452,6 +1480,7 @@ export interface IMapper {
 	}
 
 	"PS.DraftTask.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1478,6 +1507,7 @@ export interface IMapper {
 	}
 
 	"PS.DraftTaskLink.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1495,6 +1525,7 @@ export interface IMapper {
 	}
 
 	"PS.EngagementComment.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "comment" ],
 		},
@@ -1525,6 +1556,7 @@ export interface IMapper {
 	}
 
 	"PS.EnterpriseProjectType.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1561,6 +1593,7 @@ export interface IMapper {
 	}
 
 	"PS.EnterpriseResource.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1591,6 +1624,7 @@ export interface IMapper {
 	}
 
 	"PS.EnterpriseResourceCostRate.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1611,6 +1645,7 @@ export interface IMapper {
 	}
 
 	"PS.EntityLink.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1627,6 +1662,7 @@ export interface IMapper {
 	}
 
 	"PS.Event.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "objectId" ],
 		},
@@ -1649,6 +1685,7 @@ export interface IMapper {
 	}
 
 	"PS.EventHandler.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1697,6 +1734,7 @@ export interface IMapper {
 	}
 
 	"PS.LookupEntry.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1742,6 +1780,7 @@ export interface IMapper {
 	}
 
 	"PS.LookupTable.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1784,6 +1823,7 @@ export interface IMapper {
 	}
 
 	"PS.Phase.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1813,6 +1853,7 @@ export interface IMapper {
 	}
 
 	"PS.PlanAssignment.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1830,6 +1871,7 @@ export interface IMapper {
 	}
 
 	"PS.PlanAssignmentInterval.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -1863,6 +1905,7 @@ export interface IMapper {
 	}
 
 	"PS.ProjectDetailPage.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -1887,6 +1930,7 @@ export interface IMapper {
 	}
 
 	"PS.ProjectEngagement.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -1907,6 +1951,7 @@ export interface IMapper {
 	}
 
 	"PS.ProjectEngagementTimephasedPeriod.Collection": {
+		properties?: Array<string>;
 		getByStartUrl: IMapperMethod & {
 		argNames: [ "start" ],
 		},
@@ -1942,6 +1987,7 @@ export interface IMapper {
 	}
 
 	"PS.ProjectWorkflowInstance.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "objectId" ],
 		},
@@ -1951,6 +1997,7 @@ export interface IMapper {
 	}
 
 	"PS.PublishedAssignment.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -2000,6 +2047,7 @@ export interface IMapper {
 	}
 
 	"PS.PublishedProject.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -2023,6 +2071,7 @@ export interface IMapper {
 	}
 
 	"PS.PublishedProjectResource.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -2049,6 +2098,7 @@ export interface IMapper {
 	}
 
 	"PS.PublishedTask.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -2062,6 +2112,7 @@ export interface IMapper {
 	}
 
 	"PS.PublishedTaskLink.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -2084,6 +2135,7 @@ export interface IMapper {
 	}
 
 	"PS.QueueJob.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -2115,6 +2167,7 @@ export interface IMapper {
 	}
 
 	"PS.ResourceEngagement.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -2131,6 +2184,7 @@ export interface IMapper {
 	}
 
 	"PS.ResourceEngagementTimephasedPeriod.Collection": {
+		properties?: Array<string>;
 		getByStartUrl: IMapperMethod & {
 		argNames: [ "start" ],
 		},
@@ -2174,6 +2228,7 @@ export interface IMapper {
 	}
 
 	"PS.Stage.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -2203,6 +2258,7 @@ export interface IMapper {
 	}
 
 	"PS.StageCustomField.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "creationInfo" ],
 		},
@@ -2229,6 +2285,7 @@ export interface IMapper {
 	}
 
 	"PS.StageDetailPage.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -2259,6 +2316,7 @@ export interface IMapper {
 	}
 
 	"PS.StatusAssignment.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -2287,6 +2345,7 @@ export interface IMapper {
 	}
 
 	"PS.StatusAssignmentHistoryLine.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "objectId" ],
 		},
@@ -2335,6 +2394,7 @@ export interface IMapper {
 	}
 
 	"PS.TimeSheetLine.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -2361,6 +2421,7 @@ export interface IMapper {
 	}
 
 	"PS.TimeSheetPeriod.Collection": {
+		properties?: Array<string>;
 		getByGuid: IMapperMethod & {
 		argNames: [ "uid" ],
 		},
@@ -2381,6 +2442,7 @@ export interface IMapper {
 	}
 
 	"PS.TimeSheetWork.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -2498,6 +2560,7 @@ export interface IMapper {
 	}
 
 	"PS.WorkflowDesignerField.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "objectId" ],
 		},
@@ -2516,6 +2579,7 @@ export interface IMapper {
 	}
 
 	"SP.Alert.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "alertCreationInformation" ],
 		},
@@ -2586,6 +2650,7 @@ export interface IMapper {
 	}
 
 	"SP.Attachment.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "FileName", "Content" ],
 		},
@@ -2821,6 +2886,7 @@ export interface IMapper {
 	}
 
 	"SP.CheckedOutFile.Collection": {
+		properties?: Array<string>;
 		getByPath: IMapperMethod & {
 		argNames: [ "DecodedUrl" ],
 		},
@@ -2838,6 +2904,7 @@ export interface IMapper {
 	}
 
 	"SP.ClientWebPart.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -2916,6 +2983,7 @@ export interface IMapper {
 	}
 
 	"SP.ContentType.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -2973,6 +3041,7 @@ export interface IMapper {
 	}
 
 	"SP.Directory.Group.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "objectId" ],
 		},
@@ -3040,6 +3109,7 @@ export interface IMapper {
 	}
 
 	"SP.Directory.User.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "objectId", "principalName" ],
 		},
@@ -3070,11 +3140,13 @@ export interface IMapper {
 		},
 
 		update: IMapperMethod & {
+		argNames: [ "properties" ],
 		},
 
 	}
 
 	"SP.EventReceiverDefinition.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "eventReceiverCreationInformation" ],
 		},
@@ -3088,6 +3160,7 @@ export interface IMapper {
 	}
 
 	"SP.Feature.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "featureId", "force", "featdefScope" ],
 		},
@@ -3134,6 +3207,7 @@ export interface IMapper {
 	}
 
 	"SP.Field.Collection": {
+		properties?: Array<string>;
 		addDependentLookupField: IMapperMethod & {
 		argNames: [ "displayName", "primaryLookupFieldId", "showField" ],
 		},
@@ -3331,6 +3405,7 @@ export interface IMapper {
 	}
 
 	"SP.FieldLink.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -3698,6 +3773,7 @@ export interface IMapper {
 	}
 
 	"SP.File.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "Url", "Overwrite", "Content" ],
 		},
@@ -3747,6 +3823,7 @@ export interface IMapper {
 	}
 
 	"SP.FileVersion.Collection": {
+		properties?: Array<string>;
 		deleteAll: IMapperMethod & {
 		},
 
@@ -3819,6 +3896,7 @@ export interface IMapper {
 	}
 
 	"SP.Folder.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "url" ],
 		},
@@ -3844,6 +3922,7 @@ export interface IMapper {
 	}
 
 	"SP.Form.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -3870,6 +3949,7 @@ export interface IMapper {
 	}
 
 	"SP.Group.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -3902,6 +3982,7 @@ export interface IMapper {
 	}
 
 	"SP.HubSite.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "hubSiteId" ],
 		},
@@ -4129,6 +4210,7 @@ export interface IMapper {
 	}
 
 	"SP.List.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -4258,6 +4340,7 @@ export interface IMapper {
 	}
 
 	"SP.ListItem.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -4284,6 +4367,7 @@ export interface IMapper {
 	}
 
 	"SP.ListItemVersion.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "versionId" ],
 		},
@@ -4300,6 +4384,7 @@ export interface IMapper {
 	}
 
 	"SP.ListTemplate.Collection": {
+		properties?: Array<string>;
 		getByName: IMapperMethod & {
 		argNames: [ "name" ],
 		},
@@ -4367,6 +4452,7 @@ export interface IMapper {
 	}
 
 	"SP.Microfeed.MicrofeedData.Collection": {
+		properties?: Array<string>;
 		deleteAll: IMapperMethod & {
 		},
 
@@ -4533,6 +4619,7 @@ export interface IMapper {
 	}
 
 	"SP.NavigationNode.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -4607,6 +4694,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.PointPublishingPost.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id", "publishedOnly" ],
 		},
@@ -4679,6 +4767,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.PointPublishingUser.Collection": {
+		properties?: Array<string>;
 		addOrUpdateUser: IMapperMethod & {
 		argNames: [ "loginName", "isOwner" ],
 		},
@@ -4743,6 +4832,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.RepostPage.Collection": {
+		properties?: Array<string>;
 		isContentTypeAvailable: IMapperMethod & {
 		},
 
@@ -4846,6 +4936,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.SitePage.Collection": {
+		properties?: Array<string>;
 		ensureTitleResource: IMapperMethod & {
 		},
 
@@ -4881,6 +4972,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.SitePageMetadata.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -4922,6 +5014,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.SpotlightChannel.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -4943,6 +5036,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.SpotlightVideo.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -4952,6 +5046,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.SubtitleFile.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "language", "extension", "stream" ],
 		},
@@ -4997,6 +5092,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.VideoChannel.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -5076,6 +5172,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.VideoItem.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -5108,6 +5205,7 @@ export interface IMapper {
 	}
 
 	"SP.Publishing.VideoThumbnail.Collection": {
+		properties?: Array<string>;
 		getByIndex: IMapperMethod & {
 		argNames: [ "choice" ],
 		},
@@ -5126,6 +5224,7 @@ export interface IMapper {
 	}
 
 	"SP.PushNotificationSubscriber.Collection": {
+		properties?: Array<string>;
 		getByStoreId: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -5150,6 +5249,7 @@ export interface IMapper {
 	}
 
 	"SP.RecycleBinItem.Collection": {
+		properties?: Array<string>;
 		deleteAll: IMapperMethod & {
 		},
 
@@ -5192,6 +5292,7 @@ export interface IMapper {
 	}
 
 	"SP.RelatedField.Collection": {
+		properties?: Array<string>;
 		getByFieldId: IMapperMethod & {
 		argNames: [ "fieldId" ],
 		},
@@ -5257,6 +5358,7 @@ export interface IMapper {
 	}
 
 	"SP.RoleAssignment.Collection": {
+		properties?: Array<string>;
 		addRoleAssignment: IMapperMethod & {
 		argNames: [ "principalId", "roleDefId" ],
 		},
@@ -5285,6 +5387,7 @@ export interface IMapper {
 	}
 
 	"SP.RoleDefinition.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -5323,6 +5426,7 @@ export interface IMapper {
 	}
 
 	"SP.ScriptSafeDomain.Collection": {
+		properties?: Array<string>;
 		create: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -5783,6 +5887,7 @@ export interface IMapper {
 	}
 
 	"SP.TimeZone.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -5841,6 +5946,7 @@ export interface IMapper {
 	}
 
 	"SP.User.Collection": {
+		properties?: Array<string>;
 		getByEmail: IMapperMethod & {
 		argNames: [ "emailAddress" ],
 		},
@@ -5879,6 +5985,7 @@ export interface IMapper {
 	}
 
 	"SP.UserCustomAction.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "properties" ],
 		},
@@ -6138,6 +6245,7 @@ export interface IMapper {
 	}
 
 	"SP.UserSolution.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "solutionGalleryItemId" ],
 		},
@@ -6214,6 +6322,7 @@ export interface IMapper {
 	}
 
 	"SP.View.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "properties" ],
 		},
@@ -6567,6 +6676,7 @@ export interface IMapper {
 	}
 
 	"SP.Web.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -6576,6 +6686,7 @@ export interface IMapper {
 	}
 
 	"SP.WebInformation.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -6625,6 +6736,7 @@ export interface IMapper {
 	}
 
 	"SP.WebParts.WebPartDefinition.Collection": {
+		properties?: Array<string>;
 		getByControlId: IMapperMethod & {
 		argNames: [ "controlId" ],
 		},
@@ -6638,6 +6750,7 @@ export interface IMapper {
 	}
 
 	"SP.WebTemplate.Collection": {
+		properties?: Array<string>;
 		getByName: IMapperMethod & {
 		argNames: [ "name" ],
 		},
@@ -7178,6 +7291,7 @@ export interface IMapper {
 	}
 
 	"SP.Workflow.WorkflowAssociation.Collection": {
+		properties?: Array<string>;
 		add: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
@@ -7195,6 +7309,7 @@ export interface IMapper {
 	}
 
 	"SP.Workflow.WorkflowTemplate.Collection": {
+		properties?: Array<string>;
 		getById: IMapperMethod & {
 		argNames: [ "templateId" ],
 		},
@@ -7238,6 +7353,7 @@ export interface IMapper {
 	}
 
 	"SP.WorkflowServices.WorkflowDefinition.Collection": {
+		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		sort: IMapperMethod & {
@@ -7374,6 +7490,7 @@ export interface IMapper {
 	}
 
 	"SP.WorkflowServices.WorkflowSubscription.Collection": {
+		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		sort: IMapperMethod & {

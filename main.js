@@ -809,15 +809,11 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             mapperDef.push('\t"' + mapperKey + '": {');
             mapperContent.push('\t"' + mapperKey + '": {');
 
-            // See if this is not a collection
-            let isCollection = /\.Collection$/.test(mapperKey);
-            if (!isCollection) {
-                // Add the optional properties
-                mapperDef.push('\t\tproperties?: Array<string>;');
-            }
+            // Add the optional properties
+            mapperDef.push('\t\tproperties?: Array<string>;');
 
             // See if this type is queryable
-            if (hasCollections[mapperKey] || isCollection) {
+            if (hasCollections[mapperKey] || /\.Collection$/.test(mapperKey)) {
                 // Add the query method
                 mapperMethods.push({
                     name: "query",

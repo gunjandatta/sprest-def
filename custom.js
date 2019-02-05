@@ -43,6 +43,15 @@ module.exports = {
         }
     ],
 
+    // Event Receiver
+    "SP.EventReceiverDefinition": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
+
     // Field
     "SP.Field": [
         {

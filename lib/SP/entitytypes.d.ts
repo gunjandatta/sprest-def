@@ -507,7 +507,8 @@ export interface EventReceiverDefinitionOData extends IBaseResult, EventReceiver
 **********************************************/
 export interface EventReceiverDefinitionMethods {
 	delete(): IBaseExecution<any>;
-	update(): IBaseExecution<any>;
+	// update(): IBaseExecution<any>;
+	update(properties?: any): IBaseExecution<any>;
 }
 
 /*********************************************
