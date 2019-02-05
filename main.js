@@ -818,7 +818,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
             if (hasCollections[mapperKey]) {
                 // Add the query method
                 mapperDef.push('\t\tquery: IMapperMethod & { argNames: ["oData"] },')
-                mapperContent.push('\t\tquery: { argNames: ["oData"], RequestType: RequestType.OData },');
+                mapperContent.push('\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },');
             }
 
             // Parse the methods
