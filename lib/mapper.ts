@@ -4901,15 +4901,7 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.RoleDefinition.Collection": {
-		getById: {
-		argNames: [ "id" ],
-		},
-
 		removeAll: {
-		},
-
-		getById: {
-		argNames: [ "id" ],
 		},
 
 		getByName: {
@@ -4921,6 +4913,10 @@ export const Mapper: IMapper = {
 		},
 
 		recreateMissingDefaultRoleDefinitions: {
+		},
+
+		getById: {
+		argNames: [ "id" ],
 		},
 
 	},

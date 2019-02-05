@@ -5015,15 +5015,7 @@ export interface IMapper {
 	}
 
 	"SP.RoleDefinition.Collection": {
-		getById: IMapperMethod & {
-		argNames: [ "id" ],
-		},
-
 		removeAll: IMapperMethod & {
-		},
-
-		getById: IMapperMethod & {
-		argNames: [ "id" ],
 		},
 
 		getByName: IMapperMethod & {
@@ -5035,6 +5027,10 @@ export interface IMapper {
 		},
 
 		recreateMissingDefaultRoleDefinitions: IMapperMethod & {
+		},
+
+		getById: IMapperMethod & {
+		argNames: [ "id" ],
 		},
 
 	}

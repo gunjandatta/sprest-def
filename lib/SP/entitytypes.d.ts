@@ -982,12 +982,13 @@ export interface RoleDefinitionCollections extends RoleDefinitionPropMethods {
 * RoleDefinitionCollectionMethods
 **********************************************/
 export interface RoleDefinitionCollectionMethods {
-	getById(id?: number): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
+	// getById(id?: number): IBaseExecution<SP.RoleDefinition>;
 	removeAll(): IBaseExecution<any>;
-	getById(id?: number): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
+	// getById(id?: number): IBaseExecution<SP.RoleDefinition>;
 	getByName(name?: string): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	getByType(roleType?: number): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	recreateMissingDefaultRoleDefinitions(): IBaseExecution<any>;
+	getById(id?: number): IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 }
 
 /*********************************************

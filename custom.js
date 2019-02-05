@@ -300,6 +300,17 @@ module.exports = {
         }
     ],
 
+    // Role Definitions
+    "Collection(SP.RoleDefinition)": [
+        // Note - This is added due to it existing in the metadata twice.
+        //        Need to see if it's removed in future updates.
+        {
+            name: "getById",
+            returnType: "SP.RoleDefinition",
+            params: [{ $: { Name: "id", Type: "number" } }]
+        }
+    ],
+
     // Site
     "SP.Site": [
         {
