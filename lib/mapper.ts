@@ -2,82 +2,85 @@ import { IMapper } from "./mapper.d";
 export const Mapper: IMapper = {
 	"MS.FileServices.File": {
 		copyTo: {
-		argNames: [ "target", "overwrite" ],
+			argNames: ["target", "overwrite"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		download: {
 		},
 
 		moveTo: {
-		argNames: [ "target", "overwrite" ],
+			argNames: ["target", "overwrite"],
 		},
 
 		upload: {
-		argNames: [ "stream" ],
+			argNames: ["stream"],
 		},
 
 	},
 
 	"MS.FileServices.FileSystemItem.Collection": {
 		add: {
-		argNames: [ "name", "overwrite", "content" ],
+			argNames: ["name", "overwrite", "content"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"MS.FileServices.Folder": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		moveTo: {
-		argNames: [ "target" ],
+			argNames: ["target"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.AppServices.AppCollection": {
 		getAppsFromStore: {
-		argNames: [ "addInType", "queryString" ],
+			argNames: ["addInType", "queryString"],
 		},
 
 		getByType: {
-		argNames: [ "type" ],
+			argNames: ["type"],
 		},
 
 	},
 
 	"Microsoft.Office.Server.Search.REST.SearchService": {
 		autocompletions: {
-		argNames: [ "querytext", "sources", "numberOfCompletions", "cursorPosition" ],
+			argNames: ["querytext", "sources", "numberOfCompletions", "cursorPosition"],
 		},
 
 		export: {
-		argNames: [ "userName", "startTime" ],
+			argNames: ["userName", "startTime"],
 		},
 
 		exportpopulartenantqueries: {
 		},
 
 		postquery: {
-		argNames: [ "request" ],
+			argNames: ["request"],
 		},
 
 		query: {
-		argNames: [ "querytext", "queryTemplate", "enableInterleaving", "sourceId", "rankingModelId", "startRow", "rowLimit", "rowsPerPage", "selectProperties", "culture", "refinementFilters", "refiners", "hiddenConstraints", "sortList", "enableStemming", "trimDuplicates", "timeout", "enableNicknames", "enablePhonetic", "enableFQL", "hitHighlightedProperties", "propertiesToGenerateAcronyms", "bypassResultTypes", "processBestBets", "clientType", "personalizationData", "resultsUrl", "queryTag", "trimDuplicatesIncludeId", "totalRowsExactMinimum", "impressionId", "properties", "enableQueryRules", "summaryLength", "maxSnippetLength", "desiredSnippetLength", "uiLanguage", "blockDedupeMode", "generateBlockRankLog", "enableSorting", "collapseSpecification", "processPersonalFavorites", "enableOrderingHitHighlightedProperty", "hitHighlightedMultivaluePropertyLimit", "queryTemplatePropertiesUrl", "timeZoneId", "useOLSQuery", "OLSQuerySession" ],
+			argNames: ["querytext", "queryTemplate", "enableInterleaving", "sourceId", "rankingModelId", "startRow", "rowLimit", "rowsPerPage", "selectProperties", "culture", "refinementFilters", "refiners", "hiddenConstraints", "sortList", "enableStemming", "trimDuplicates", "timeout", "enableNicknames", "enablePhonetic", "enableFQL", "hitHighlightedProperties", "propertiesToGenerateAcronyms", "bypassResultTypes", "processBestBets", "clientType", "personalizationData", "resultsUrl", "queryTag", "trimDuplicatesIncludeId", "totalRowsExactMinimum", "impressionId", "properties", "enableQueryRules", "summaryLength", "maxSnippetLength", "desiredSnippetLength", "uiLanguage", "blockDedupeMode", "generateBlockRankLog", "enableSorting", "collapseSpecification", "processPersonalFavorites", "enableOrderingHitHighlightedProperty", "hitHighlightedMultivaluePropertyLimit", "queryTemplatePropertiesUrl", "timeZoneId", "useOLSQuery", "OLSQuerySession"],
 		},
 
 		recordPageClick: {
-		argNames: [ "pageInfo", "clickType", "blockType", "clickedResultId", "subResultIndex", "immediacySourceId", "immediacyQueryString", "immediacyTitle", "immediacyUrl" ],
+			argNames: ["pageInfo", "clickType", "blockType", "clickedResultId", "subResultIndex", "immediacySourceId", "immediacyQueryString", "immediacyTitle", "immediacyUrl"],
 		},
 
 		resultspageaddress: {
@@ -86,23 +89,23 @@ export const Mapper: IMapper = {
 		searchcenterurl: {
 		},
 
-		suggest: {
-		argNames: [ "querytext", "iNumberOfQuerySuggestions", "iNumberOfResultSuggestions", "iNumberOfPopularResultSuggestions", "fPreQuerySuggestions", "fHitHighlighting", "fCapitalizeFirstLetters", "culture", "enableStemming", "showPeopleNameSuggestions", "enableQueryRules", "fPrefixMatchAllTerms", "sourceId", "clientType", "useOLSQuery", "OLSQuerySession", "zeroTermSuggestions" ],
+		searchquery: {
+			argNames: ["request"],
 		},
 
-		searchquery: {
-		argNames: [ "request" ],
+		suggest: {
+			argNames: ["querytext", "iNumberOfQuerySuggestions", "iNumberOfResultSuggestions", "iNumberOfPopularResultSuggestions", "fPreQuerySuggestions", "fHitHighlighting", "fCapitalizeFirstLetters", "culture", "enableStemming", "showPeopleNameSuggestions", "enableQueryRules", "fPrefixMatchAllTerms", "sourceId", "clientType", "useOLSQuery", "OLSQuerySession", "zeroTermSuggestions"],
 		},
 
 	},
 
 	"Microsoft.Office.Server.Search.REST.SearchSetting": {
 		getpromotedresultqueryrules: {
-		argNames: [ "siteCollectionLevel", "offset", "numberOfRules" ],
+			argNames: ["siteCollectionLevel", "offset", "numberOfRules"],
 		},
 
 		getqueryconfiguration: {
-		argNames: [ "callLocalSearchFarmsOnly" ],
+			argNames: ["callLocalSearchFarmsOnly"],
 		},
 
 		getxssearchpolicy: {
@@ -112,29 +115,31 @@ export const Mapper: IMapper = {
 		},
 
 		setxssearchpolicy: {
-		argNames: [ "policy" ],
+			argNames: ["policy"],
 		},
 
 	},
 
 	"Microsoft.Online.SharePoint.AppLauncher.AppLauncher": {
 		getData: {
-		argNames: [ "suiteVersion", "isMobileRequest", "locale", "onPremVer" ],
+			argNames: ["suiteVersion", "isMobileRequest", "locale", "onPremVer"],
 		},
 
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation.Collection": {
 		getByLocation: {
-		argNames: [ "location" ],
+			argNames: ["location"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -146,8 +151,10 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob.Collection": {
 		getByMoveId: {
-		argNames: [ "moveId" ],
+			argNames: ["moveId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -159,8 +166,10 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob.Collection": {
 		getByMoveId: {
-		argNames: [ "moveId" ],
+			argNames: ["moveId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -172,14 +181,16 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob.Collection": {
 		getByMoveId: {
-		argNames: [ "moveId" ],
+			argNames: ["moveId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
@@ -189,38 +200,42 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty.Collection": {
 		getByPropertyNameAndGeoLocation: {
-		argNames: [ "propertyName", "geo" ],
+			argNames: ["propertyName", "geo"],
 		},
 
 		getChanges: {
-		argNames: [ "startTimeInUtc" ],
+			argNames: ["startTimeInUtc"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator.Collection": {
 		create: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByLoginName: {
-		argNames: [ "loginName" ],
+			argNames: ["loginName"],
 		},
 
 		getByLoginNameAndType: {
-		argNames: [ "loginName", "memberType" ],
+			argNames: ["loginName", "memberType"],
 		},
 
 		getByObjectId: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -235,8 +250,10 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation.Collection": {
 		getByGeoLocation: {
-		argNames: [ "geoLocation" ],
+			argNames: ["geoLocation"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -245,7 +262,7 @@ export const Mapper: IMapper = {
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
@@ -255,19 +272,20 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob.Collection": {
 		getByGroupName: {
-		argNames: [ "groupname" ],
+			argNames: ["groupname"],
 		},
 
 		getMoveReport: {
-		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
+			argNames: ["moveState", "moveDirection", "limit", "startTime", "endTime"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		crossGeoCredentials: {
-		argNames: [ "siteId" ],
+			argNames: ["siteId"],
 		},
 
 		dBSchemaCompatibilityCheck: {
@@ -276,12 +294,14 @@ export const Mapper: IMapper = {
 		geoMoveCompatibilityChecks: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		userPersonalSiteId: {
-		argNames: [ "userPrincipalName" ],
+			argNames: ["userPrincipalName"],
 		},
 
 		userPersonalSiteLocation: {
-		argNames: [ "userPrincipalName" ],
+			argNames: ["userPrincipalName"],
 		},
 
 	},
@@ -291,7 +311,7 @@ export const Mapper: IMapper = {
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
@@ -301,19 +321,23 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob.Collection": {
 		getByUrl: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		getMoveReport: {
-		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
+			argNames: ["moveState", "moveDirection", "limit", "startTime", "endTime"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob.Collection": {
 		getBySiteUrl: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -325,8 +349,10 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota.Collection": {
 		getByLocation: {
-		argNames: [ "geoLocation" ],
+			argNames: ["geoLocation"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -338,8 +364,10 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup.Collection": {
 		getByAlias: {
-		argNames: [ "alias" ],
+			argNames: ["alias"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -348,7 +376,7 @@ export const Mapper: IMapper = {
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
@@ -358,34 +386,36 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJob.Collection": {
 		getByDirection: {
-		argNames: [ "direction" ],
+			argNames: ["direction"],
 		},
 
 		getByMoveId: {
-		argNames: [ "odbMoveId" ],
+			argNames: ["odbMoveId"],
 		},
 
 		getByUpn: {
-		argNames: [ "upn" ],
+			argNames: ["upn"],
 		},
 
 		getByValidPdl: {
-		argNames: [ "validPdl" ],
+			argNames: ["validPdl"],
 		},
 
 		getMoveReport: {
-		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
+			argNames: ["moveState", "moveDirection", "limit", "startTime", "endTime"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin": {
 		createTopicMagazine: {
-		argNames: [ "magazineName" ],
+			argNames: ["magazineName"],
 		},
 
 		deleteTopicMagazine: {
-		argNames: [ "magazineId" ],
+			argNames: ["magazineId"],
 		},
 
 		provisionPointPublishingAsync: {
@@ -395,41 +425,41 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.SPLogger.LogExport": {
 		getFiles: {
-		argNames: [ "partitionId", "logType" ],
+			argNames: ["partitionId", "logType"],
 		},
 
 		getLogTypes: {
 		},
 
 		getPartitions: {
-		argNames: [ "logType" ],
+			argNames: ["logType"],
 		},
 
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdmin.MiddleTier.DDIAdapter": {
 		getList: {
-		argNames: [ "schema", "workflow", "stream" ],
+			argNames: ["schema", "workflow", "stream"],
 		},
 
 		getObject: {
-		argNames: [ "schema", "workflow", "stream" ],
+			argNames: ["schema", "workflow", "stream"],
 		},
 
 		multiObjectExecute: {
-		argNames: [ "schema", "workflow", "stream" ],
+			argNames: ["schema", "workflow", "stream"],
 		},
 
 		newObject: {
-		argNames: [ "schema", "workflow", "stream" ],
+			argNames: ["schema", "workflow", "stream"],
 		},
 
 		removeObjects: {
-		argNames: [ "schema", "workflow", "stream" ],
+			argNames: ["schema", "workflow", "stream"],
 		},
 
 		setObject: {
-		argNames: [ "schema", "workflow", "stream" ],
+			argNames: ["schema", "workflow", "stream"],
 		},
 
 	},
@@ -442,6 +472,7 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipal": {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		update: {
 		},
 
@@ -449,15 +480,17 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant.Collection": {
 		getByObjectId: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -472,36 +505,38 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest.Collection": {
 		approve: {
-		argNames: [ "resource", "scope" ],
+			argNames: ["resource", "scope"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Office365CommsMessagesServiceProxy": {
 		messageCenterMessages: {
-		argNames: [ "messagesFieldsData" ],
+			argNames: ["messagesFieldsData"],
 		},
 
 		serviceHealthMessages: {
-		argNames: [ "messagesFieldsData" ],
+			argNames: ["messagesFieldsData"],
 		},
 
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService": {
 		emailAdmins: {
-		argNames: [ "message", "siteIds", "subject" ],
+			argNames: ["message", "siteIds", "subject"],
 		},
 
 		exportCSVFile: {
 		},
 
 		getSiteDescription: {
-		argNames: [ "siteId" ],
+			argNames: ["siteId"],
 		},
 
 		office365ProvidedSharepointSiteActivityDataReady: {
@@ -511,7 +546,7 @@ export const Mapper: IMapper = {
 		},
 
 		updateOffice365ProvidedSharepointSiteActivityData: {
-		argNames: [ "oauthToken" ],
+			argNames: ["oauthToken"],
 		},
 
 	},
@@ -524,88 +559,91 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteProperties.Collection": {
 		getById: {
-		argNames: [ "siteId" ],
+			argNames: ["siteId"],
 		},
 
 		getLockStateById: {
-		argNames: [ "siteId" ],
+			argNames: ["siteId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Tenant": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		checkTenantIntuneLicense: {
 		},
 
 		checkTenantLicenses: {
-		argNames: [ "licenses" ],
+			argNames: ["licenses"],
 		},
 
 		connectSiteToHubSiteById: {
-		argNames: [ "siteUrl", "hubSiteId" ],
+			argNames: ["siteUrl", "hubSiteId"],
 		},
 
 		createSite: {
-		argNames: [ "siteCreationProperties" ],
+			argNames: ["siteCreationProperties"],
 		},
 
 		getIdleSessionSignOutForUnmanagedDevices: {
 		},
 
-		getSitePropertiesByUrl: {
-		argNames: [ "url", "includeDetail" ],
-		},
-
-		getSitePropertiesFromSharePointByFilters: {
-		argNames: [ "speFilter" ],
-		},
-
-		getSiteSecondaryAdministrators: {
-		argNames: [ "secondaryAdministratorsFieldsData" ],
-		},
-
 		getSPOTenantAllWebTemplates: {
 		},
 
+		getSitePropertiesByUrl: {
+			argNames: ["url", "includeDetail"],
+		},
+
+		getSitePropertiesFromSharePointByFilters: {
+			argNames: ["speFilter"],
+		},
+
+		getSiteSecondaryAdministrators: {
+			argNames: ["secondaryAdministratorsFieldsData"],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		registerHubSite: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
 
 		registerHubSiteWithCreationInformation: {
-		argNames: [ "siteUrl", "creationInformation" ],
+			argNames: ["siteUrl", "creationInformation"],
 		},
 
 		removeDeletedSite: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
 
 		removeDeletedSitePreferId: {
-		argNames: [ "siteUrl", "siteId" ],
+			argNames: ["siteUrl", "siteId"],
 		},
 
 		removeSite: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
 
 		restoreDeletedSite: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
 
 		restoreDeletedSitePreferId: {
-		argNames: [ "siteUrl", "siteId" ],
+			argNames: ["siteUrl", "siteId"],
 		},
 
 		setIdleSessionSignOutForUnmanagedDevices: {
-		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
+			argNames: ["enabled", "warnAfter", "signOutAfter"],
 		},
 
 		setSiteSecondaryAdministrators: {
-		argNames: [ "secondaryAdministratorsFieldsData" ],
+			argNames: ["secondaryAdministratorsFieldsData"],
 		},
 
 		unregisterHubSite: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
 
 		update: {
@@ -624,61 +662,63 @@ export const Mapper: IMapper = {
 
 	"Microsoft.Online.SharePoint.TenantManagement.ExternalUser.Collection": {
 		getById: {
-		argNames: [ "uniqueId" ],
+			argNames: ["uniqueId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.Online.SharePoint.TenantManagement.Office365Tenant": {
 		addPublicCdnOrigin: {
-		argNames: [ "origin" ],
+			argNames: ["origin"],
 		},
 
 		addSdnProvider: {
-		argNames: [ "identifier", "license" ],
+			argNames: ["identifier", "license"],
 		},
 
 		addTenantCdnOrigin: {
-		argNames: [ "cdnType", "originUrl" ],
+			argNames: ["cdnType", "originUrl"],
 		},
 
 		addTenantTheme: {
-		argNames: [ "name", "themeJson" ],
+			argNames: ["name", "themeJson"],
 		},
 
 		addToCarLibAndCdn: {
-		argNames: [ "cdnType", "libUrl", "displayName", "thumbnailUrl" ],
+			argNames: ["cdnType", "libUrl", "displayName", "thumbnailUrl"],
 		},
 
 		createTenantCdnDefaultOrigins: {
-		argNames: [ "cdnType" ],
+			argNames: ["cdnType"],
 		},
 
 		deleteImportProfilePropertiesJob: {
-		argNames: [ "jobId" ],
+			argNames: ["jobId"],
 		},
 
 		deleteTenantTheme: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 		disableSharingForNonOwnersOfSite: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
 
 		getAllTenantThemes: {
 		},
 
 		getExternalUsers: {
-		argNames: [ "position", "pageSize", "filter", "sortOrder" ],
+			argNames: ["position", "pageSize", "filter", "sortOrder"],
 		},
 
 		getExternalUsersForSite: {
-		argNames: [ "siteUrl", "position", "pageSize", "filter", "sortOrder" ],
+			argNames: ["siteUrl", "position", "pageSize", "filter", "sortOrder"],
 		},
 
 		getExternalUsersWithSortBy: {
-		argNames: [ "position", "pageSize", "filter", "sortPropertyName", "sortOrder" ],
+			argNames: ["position", "pageSize", "filter", "sortPropertyName", "sortOrder"],
 		},
 
 		getHideDefaultThemes: {
@@ -688,95 +728,97 @@ export const Mapper: IMapper = {
 		},
 
 		getImportProfilePropertyJob: {
-		argNames: [ "jobId" ],
+			argNames: ["jobId"],
 		},
 
 		getImportProfilePropertyJobs: {
 		},
 
 		getTenantCdnEnabled: {
-		argNames: [ "cdnType" ],
+			argNames: ["cdnType"],
 		},
 
 		getTenantCdnOrigins: {
-		argNames: [ "cdnType" ],
+			argNames: ["cdnType"],
 		},
 
 		getTenantCdnPolicies: {
-		argNames: [ "cdnType" ],
+			argNames: ["cdnType"],
 		},
 
 		getTenantTheme: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 		isSharingDisabledForNonOwnersOfSite: {
-		argNames: [ "siteUrl" ],
+			argNames: ["siteUrl"],
 		},
 
 		queueImportProfileProperties: {
-		argNames: [ "idType", "sourceDataIdProperty", "propertyMap", "sourceUri" ],
+			argNames: ["idType", "sourceDataIdProperty", "propertyMap", "sourceUri"],
 		},
 
 		removeExternalUsers: {
-		argNames: [ "uniqueIds" ],
+			argNames: ["uniqueIds"],
 		},
 
 		removeFromCarAndCdn: {
-		argNames: [ "remove", "cdnType", "libUrl" ],
+			argNames: ["remove", "cdnType", "libUrl"],
 		},
 
 		removePublicCdnOrigin: {
-		argNames: [ "originId" ],
+			argNames: ["originId"],
 		},
 
 		removeSdnProvider: {
 		},
 
 		removeTenantCdnOrigin: {
-		argNames: [ "cdnType", "originUrl" ],
+			argNames: ["cdnType", "originUrl"],
 		},
 
 		revokeAllUserSessions: {
-		argNames: [ "userName" ],
+			argNames: ["userName"],
 		},
 
 		revokeAllUserSessionsByPuid: {
-		argNames: [ "puidList" ],
+			argNames: ["puidList"],
 		},
 
 		setHideDefaultThemes: {
-		argNames: [ "hideDefaultThemes" ],
+			argNames: ["hideDefaultThemes"],
 		},
 
 		setIdleSessionSignOutForUnmanagedDevices: {
-		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
+			argNames: ["enabled", "warnAfter", "signOutAfter"],
 		},
 
 		setTenantCdnEnabled: {
-		argNames: [ "cdnType", "isEnabled" ],
+			argNames: ["cdnType", "isEnabled"],
 		},
 
 		setTenantCdnPolicy: {
-		argNames: [ "cdnType", "policy", "policyValue" ],
+			argNames: ["cdnType", "policy", "policyValue"],
 		},
 
 		updateTenantTheme: {
-		argNames: [ "name", "themeJson" ],
+			argNames: ["name", "themeJson"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Administration.FeatureDefinition.Collection": {
 		getFeatureDefinition: {
-		argNames: [ "featureDisplayName", "compatibilityLevel" ],
+			argNames: ["featureDisplayName", "compatibilityLevel"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.SharePoint.Administration.SPAnalyticsUsageService": {
 		logevent: {
-		argNames: [ "usageEntry" ],
+			argNames: ["usageEntry"],
 		},
 
 	},
@@ -789,36 +831,36 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Client.Search.Administration.DocumentCrawlLog": {
 		getCrawledUrls: {
-		argNames: [ "getCountOnly", "maxRows", "queryString", "isLike", "contentSourceID", "errorLevel", "errorID", "startDateTime", "endDateTime" ],
+			argNames: ["getCountOnly", "maxRows", "queryString", "isLike", "contentSourceID", "errorLevel", "errorID", "startDateTime", "endDateTime"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Client.Search.Analytics.SignalStore": {
 		signals: {
-		argNames: [ "signals" ],
+			argNames: ["signals"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Client.Search.Query.RankingLabeling": {
 		addJudgment: {
-		argNames: [ "userQuery", "url", "labelId" ],
+			argNames: ["userQuery", "url", "labelId"],
 		},
 
 		getJudgementsForQuery: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		normalizeResultUrl: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Client.Search.Query.ReorderingRuleCollection": {
 		add: {
-		argNames: [ "matchType", "matchValue", "boost" ],
+			argNames: ["matchType", "matchValue", "boost"],
 		},
 
 		clear: {
@@ -828,7 +870,7 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Client.Search.Query.SortCollection": {
 		add: {
-		argNames: [ "strProperty", "direction" ],
+			argNames: ["strProperty", "direction"],
 		},
 
 		clear: {
@@ -838,7 +880,7 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Client.Search.Query.StringCollection": {
 		add: {
-		argNames: [ "property" ],
+			argNames: ["property"],
 		},
 
 		clear: {
@@ -848,30 +890,31 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.ClientSideComponent.HostedApp": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		updateWebPartData: {
-		argNames: [ "webPartDataAsJson" ],
+			argNames: ["webPartDataAsJson"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.ClientSideComponent.HostedAppsManager": {
 		add: {
-		argNames: [ "webPartDataAsJson", "hostType" ],
+			argNames: ["webPartDataAsJson", "hostType"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Comments.comment": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		like: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		unlike: {
 		},
@@ -882,26 +925,28 @@ export const Mapper: IMapper = {
 		deleteAll: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 	},
 
 	"Microsoft.SharePoint.Internal.ActivityLogger": {
 		feedbackDirect: {
-		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "json" ],
+			argNames: ["Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "json"],
 		},
 
 		feedbackIndirect: {
-		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "json" ],
+			argNames: ["Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "json"],
 		},
 
 		logActivity: {
-		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType" ],
+			argNames: ["Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata": {
 		deploy: {
-		argNames: [ "skipFeatureDeployment" ],
+			argNames: ["skipFeatureDeployment"],
 		},
 
 		install: {
@@ -923,61 +968,67 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem.Collection": {
 		add: {
-		argNames: [ "absolutePath" ],
+			argNames: ["absolutePath"],
 		},
 
 		getByAbsoluteUrl: {
-		argNames: [ "absolutePath" ],
+			argNames: ["absolutePath"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		remove: {
-		argNames: [ "absolutePath" ],
+			argNames: ["absolutePath"],
 		},
 
 		removeById: {
-		argNames: [ "siteId" ],
+			argNames: ["siteId"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		add: {
-		argNames: [ "Content", "Overwrite", "Url" ],
+			argNames: ["Content", "Overwrite", "Url"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		add: {
-		argNames: [ "Content", "Overwrite", "Url" ],
+			argNames: ["Content", "Overwrite", "Url"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"Microsoft.SharePoint.Navigation.REST.NavigationServiceRest": {
 		getPublishingNavigationProviderType: {
-		argNames: [ "mapProviderName" ],
+			argNames: ["mapProviderName"],
 		},
 
 		menuNodeKey: {
-		argNames: [ "currentUrl", "mapProviderName" ],
+			argNames: ["currentUrl", "mapProviderName"],
 		},
 
 		menuState: {
-		argNames: [ "menuNodeKey", "mapProviderName", "depth", "customProperties" ],
+			argNames: ["menuNodeKey", "mapProviderName", "depth", "customProperties"],
 		},
 
 		saveMenuState: {
-		argNames: [ "menuState", "mapProviderName" ],
+			argNames: ["menuState", "mapProviderName"],
 		},
 
 	},
@@ -990,11 +1041,11 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Portal.GroupService": {
 		getGroupImage: {
-		argNames: [ "id", "hash", "color" ],
+			argNames: ["id", "hash", "color"],
 		},
 
 		setGroupImage: {
-		argNames: [ "imageStream" ],
+			argNames: ["imageStream"],
 		},
 
 		syncGroupProperties: {
@@ -1007,19 +1058,19 @@ export const Mapper: IMapper = {
 		},
 
 		create: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 		createGroup: {
-		argNames: [ "displayName", "alias", "isPublic", "ownerPrincipalNames", "description", "creationOptions" ],
+			argNames: ["displayName", "alias", "isPublic", "ownerPrincipalNames", "description", "creationOptions"],
 		},
 
 		createGroupEx: {
-		argNames: [ "displayName", "alias", "isPublic", "optionalParams" ],
+			argNames: ["displayName", "alias", "isPublic", "optionalParams"],
 		},
 
 		createGroupForSite: {
-		argNames: [ "displayName", "alias", "isPublic", "optionalParams" ],
+			argNames: ["displayName", "alias", "isPublic", "optionalParams"],
 		},
 
 		getGroupCreationContext: {
@@ -1029,15 +1080,15 @@ export const Mapper: IMapper = {
 		},
 
 		getSiteStatus: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 		getValidSiteUrlFromAlias: {
-		argNames: [ "alias", "managedPath", "isTeamSite" ],
+			argNames: ["alias", "managedPath", "isTeamSite"],
 		},
 
 		notebook: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 	},
@@ -1050,20 +1101,20 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Portal.SPSiteManager": {
 		canCreateHubJoinedSite: {
-		argNames: [ "hubSiteId" ],
+			argNames: ["hubSiteId"],
 		},
 
 		create: {
-		argNames: [ "request" ],
+			argNames: ["request"],
 		},
 
 		delete: {
-		argNames: [ "siteId" ],
-		requestType: RequestType.Delete
+			argNames: ["siteId"],
+			requestType: RequestType.Delete
 		},
 
 		status: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 	},
@@ -1079,44 +1130,46 @@ export const Mapper: IMapper = {
 		},
 
 		linkGroup: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 		unlinkGroup: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.TenantCdn.TenantCdnApi": {
 		getCdnUrls: {
-		argNames: [ "items" ],
+			argNames: ["items"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Webhooks.Subscription": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Webhooks.Subscription.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		remove: {
-		argNames: [ "subscriptionId" ],
+			argNames: ["subscriptionId"],
 		},
 
 	},
@@ -1129,49 +1182,52 @@ export const Mapper: IMapper = {
 
 	"OBA.Server.ServerWrapper.Reporting": {
 		publishReport: {
-		argNames: [ "odataPostBodyStm" ],
+			argNames: ["odataPostBodyStm"],
 		},
 
 	},
 
 	"OBA.Server.ServerWrapper.Taskflow": {
 		processTask: {
-		argNames: [ "requestBodyStream" ],
+			argNames: ["requestBodyStream"],
 		},
 
 	},
 
 	"PS.BaseCalendarException": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.Calendar": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		copyTo: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.Calendar.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1179,48 +1235,54 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.CalendarException": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.CalendarException.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.CustomField": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.CustomField.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByAppAlternateId: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1228,65 +1290,69 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.DraftAssignment": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.DraftAssignment.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.DraftProject": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
+		changeEnterpriseProjectType: {
+			argNames: ["enterpriseProjectTypeUid"],
+		},
+
+		checkIn: {
+			argNames: ["force"],
+		},
+
+		getChanges: {
+			argNames: ["token"],
+		},
+
 		getResourcePlanByUrl: {
-		argNames: [ "start", "end", "scale" ],
+			argNames: ["start", "end", "scale"],
 		},
 
 		leaveProjectStage: {
 		},
 
-		readyToLeaveProjectStage: {
-		},
-
-		updateIdeaListItemStatus: {
-		argNames: [ "status" ],
-		},
-
-		changeEnterpriseProjectType: {
-		argNames: [ "enterpriseProjectTypeUid" ],
-		},
-
-		checkIn: {
-		argNames: [ "force" ],
-		},
-
-		getChanges: {
-		argNames: [ "token" ],
-		},
-
 		publish: {
-		argNames: [ "checkIn" ],
+			argNames: ["checkIn"],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		readyToLeaveProjectStage: {
 		},
 
 		update: {
 		},
 
 		updateCustomFields: {
-		argNames: [ "customFieldDictionary" ],
+			argNames: ["customFieldDictionary"],
+		},
+
+		updateIdeaListItemStatus: {
+			argNames: ["status"],
 		},
 
 		validate: {
@@ -1295,117 +1361,131 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.DraftProjectResource": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.DraftProjectResource.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		addEnterpriseResourceById: {
-		argNames: [ "resourceId" ],
+			argNames: ["resourceId"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.DraftTask": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.DraftTask.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.DraftTaskLink": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.DraftTaskLink.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.EngagementComment.Collection": {
 		add: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.EnterpriseProjectType": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addDepartment: {
-		argNames: [ "departmentValueGuid" ],
+			argNames: ["departmentValueGuid"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		removeDepartment: {
-		argNames: [ "departmentValueGuid" ],
+			argNames: ["departmentValueGuid"],
 		},
 
 		updateCreatePDP: {
-		argNames: [ "pdp" ],
+			argNames: ["pdp"],
 		},
 
 	},
 
 	"PS.EnterpriseProjectType.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1413,32 +1493,35 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.EnterpriseResource": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		forceCheckIn: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		updateClaimsAccount: {
-		argNames: [ "newClaimsAccount" ],
+			argNames: ["newClaimsAccount"],
 		},
 
 	},
 
 	"PS.EnterpriseResource.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1446,40 +1529,44 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.EnterpriseResourceCostRate": {
-		restfulDelete: {
+		rESTfulUpdate: {
 		},
 
-		rESTfulUpdate: {
+		restfulDelete: {
 		},
 
 	},
 
 	"PS.EnterpriseResourceCostRate.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByDateUrl: {
-		argNames: [ "effectiveDate" ],
+			argNames: ["effectiveDate"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.EntityLink": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.EntityLink.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1488,35 +1575,40 @@ export const Mapper: IMapper = {
 
 	"PS.Event.Collection": {
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 		getByInt: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.EventHandler": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.EventHandler.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1525,90 +1617,95 @@ export const Mapper: IMapper = {
 
 	"PS.LookupCost": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.LookupDate": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.LookupDuration": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.LookupEntry": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.LookupEntry.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByAppAlternateId: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.LookupNumber": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.LookupTable": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addMask: {
-		argNames: [ "mask" ],
+			argNames: ["mask"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		updateMask: {
-		argNames: [ "mask", "level" ],
+			argNames: ["mask", "level"],
 		},
 
 	},
 
 	"PS.LookupTable.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByAppAlternateId: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1616,33 +1713,37 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.LookupText": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.Phase": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.Phase.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1650,91 +1751,101 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.PlanAssignment": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.PlanAssignment.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.PlanAssignmentInterval.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getByStart: {
-		argNames: [ "start" ],
+			argNames: ["start"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.Project": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getResourcePlanByUrl: {
-		argNames: [ "start", "end", "scale" ],
+			argNames: ["start", "end", "scale"],
 		},
 
 		leaveProjectStage: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		readyToLeaveProjectStage: {
 		},
 
 		updateIdeaListItemStatus: {
-		argNames: [ "status" ],
+			argNames: ["status"],
 		},
 
 	},
 
 	"PS.ProjectDetailPage.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.ProjectEngagement": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		getTimephasedByUrl: {
-		argNames: [ "start", "end", "scale", "contourType" ],
+			argNames: ["start", "end", "scale", "contourType"],
 		},
 
 	},
 
 	"PS.ProjectEngagement.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1743,16 +1854,19 @@ export const Mapper: IMapper = {
 
 	"PS.ProjectEngagementTimephasedPeriod.Collection": {
 		getByStartUrl: {
-		argNames: [ "start" ],
+			argNames: ["start"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.ProjectServer": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getDeletedPublishedAssignments: {
-		argNames: [ "deletedDate" ],
+			argNames: ["deletedDate"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		stopDelegation: {
 		},
@@ -1761,61 +1875,67 @@ export const Mapper: IMapper = {
 
 	"PS.ProjectWorkflowInstance": {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		restartWorkflow: {
 		},
 
 		restartWorkflowSkipToStage: {
-		argNames: [ "stageId" ],
+			argNames: ["stageId"],
 		},
 
 	},
 
 	"PS.ProjectWorkflowInstance.Collection": {
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.PublishedAssignment.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.PublishedProject": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
+		checkOut: {
+		},
+
+		createProjectSite: {
+			argNames: ["siteName"],
+		},
+
+		delete: {
+			requestType: RequestType.Delete
+		},
+
 		getResourcePlanByUrl: {
-		argNames: [ "start", "end", "scale" ],
+			argNames: ["start", "end", "scale"],
 		},
 
 		leaveProjectStage: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		readyToLeaveProjectStage: {
 		},
 
-		updateIdeaListItemStatus: {
-		argNames: [ "status" ],
-		},
-
-		checkOut: {
-		},
-
-		createProjectSite: {
-		argNames: [ "siteName" ],
-		},
-
-		delete: {
-		requestType: RequestType.Delete
-		},
-
 		submitToWorkflow: {
+		},
+
+		updateIdeaListItemStatus: {
+			argNames: ["status"],
 		},
 
 		updateVisibilityCustomFields: {
@@ -1825,16 +1945,18 @@ export const Mapper: IMapper = {
 
 	"PS.PublishedProject.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1846,92 +1968,104 @@ export const Mapper: IMapper = {
 
 	"PS.PublishedProjectResource.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.PublishedTask": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addTaskPlanLink: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		deleteTaskPlanLink: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 	},
 
 	"PS.PublishedTask.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.PublishedTaskLink.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.QueueJob": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		cancel: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.QueueJob.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.ResourceCalendarException": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.ResourceEngagement": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		getTimephasedByUrl: {
-		argNames: [ "start", "end", "scale", "contourType" ],
+			argNames: ["start", "end", "scale", "contourType"],
 		},
 
 	},
 
 	"PS.ResourceEngagement.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1940,15 +2074,16 @@ export const Mapper: IMapper = {
 
 	"PS.ResourceEngagementTimephasedPeriod.Collection": {
 		getByStartUrl: {
-		argNames: [ "start" ],
+			argNames: ["start"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.ResourcePlan": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		forceCheckIn: {
@@ -1956,6 +2091,8 @@ export const Mapper: IMapper = {
 
 		publish: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1969,25 +2106,28 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.Stage": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.Stage.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -1995,82 +2135,91 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.StageCustomField": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.StageCustomField.Collection": {
 		add: {
-		argNames: [ "creationInfo" ],
+			argNames: ["creationInfo"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.StageDetailPage": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.StageDetailPage.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.StatusAssignment": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		submitStatusUpdates: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
 
 	},
 
 	"PS.StatusAssignment.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 		getTimePhaseByUrl: {
-		argNames: [ "start", "end" ],
+			argNames: ["start", "end"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		submitAllStatusUpdates: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
 
 		update: {
@@ -2080,29 +2229,32 @@ export const Mapper: IMapper = {
 
 	"PS.StatusAssignmentHistoryLine.Collection": {
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.TaskPlanLink": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.TimeSheet": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recall: {
 		},
 
 		submit: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
 
 		update: {
@@ -2111,180 +2263,191 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.TimeSheetLine": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		submit: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
 
 	},
 
 	"PS.TimeSheetLine.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.TimeSheetPeriod": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		createTimeSheet: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.TimeSheetPeriod.Collection": {
 		getByGuid: {
-		argNames: [ "uid" ],
+			argNames: ["uid"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.TimeSheetWork": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"PS.TimeSheetWork.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 		getByStartDate: {
-		argNames: [ "start" ],
+			argNames: ["start"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"PS.WorkflowActivities": {
 		checkInWithJobId: {
-		argNames: [ "projId", "jobId", "force" ],
+			argNames: ["projId", "jobId", "force"],
 		},
 
 		createProjectFromListItem: {
-		argNames: [ "webId", "listId", "itemId", "eptId" ],
+			argNames: ["webId", "listId", "itemId", "eptId"],
 		},
 
 		enterProjectStage: {
-		argNames: [ "projectId", "stageId" ],
+			argNames: ["projectId", "stageId"],
 		},
 
 		leaveProjectStage: {
-		argNames: [ "projectId" ],
+			argNames: ["projectId"],
 		},
 
 		publishSummaryWithJobId: {
-		argNames: [ "projId", "jobId" ],
+			argNames: ["projId", "jobId"],
 		},
 
 		publishWithJobId: {
-		argNames: [ "projectId", "jobId" ],
+			argNames: ["projectId", "jobId"],
 		},
 
 		readBooleanProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readCurrencyProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readDateTimeProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readGuidProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readIntegerProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readNumberProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readProjectProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readTextProperty: {
-		argNames: [ "projectId", "propertyId" ],
+			argNames: ["projectId", "propertyId"],
 		},
 
 		readyToLeaveProjectStage: {
-		argNames: [ "projectId" ],
+			argNames: ["projectId"],
 		},
 
 		updateBooleanProperty: {
-		argNames: [ "projectId", "propertyId", "value" ],
+			argNames: ["projectId", "propertyId", "value"],
 		},
 
 		updateCurrencyProperty: {
-		argNames: [ "projectId", "propertyId", "value" ],
+			argNames: ["projectId", "propertyId", "value"],
 		},
 
 		updateDateTimeProperty: {
-		argNames: [ "projectId", "propertyId", "value" ],
+			argNames: ["projectId", "propertyId", "value"],
 		},
 
 		updateGuidProperty: {
-		argNames: [ "projectId", "propertyId", "value" ],
+			argNames: ["projectId", "propertyId", "value"],
 		},
 
 		updateIdeaListItemStatus: {
-		argNames: [ "projectId", "status" ],
+			argNames: ["projectId", "status"],
 		},
 
 		updateIntegerProperty: {
-		argNames: [ "projectId", "propertyId", "value" ],
+			argNames: ["projectId", "propertyId", "value"],
 		},
 
 		updateNumberProperty: {
-		argNames: [ "projectId", "propertyId", "value" ],
+			argNames: ["projectId", "propertyId", "value"],
 		},
 
 		updateProjectStageStatus: {
-		argNames: [ "projectId", "stageId", "statusInformation", "stageStatusValue", "append" ],
+			argNames: ["projectId", "stageId", "statusInformation", "stageStatusValue", "append"],
 		},
 
 		updateTextProperty: {
-		argNames: [ "projectId", "propertyId", "value" ],
+			argNames: ["projectId", "propertyId", "value"],
 		},
 
 	},
 
 	"PS.WorkflowDesignerField.Collection": {
 		getById: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Alert": {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		updateAlert: {
 		},
 
@@ -2292,24 +2455,26 @@ export const Mapper: IMapper = {
 
 	"SP.Alert.Collection": {
 		add: {
-		argNames: [ "alertCreationInformation" ],
+			argNames: ["alertCreationInformation"],
 		},
 
 		contains: {
-		argNames: [ "idAlert" ],
+			argNames: ["idAlert"],
 		},
 
 		deleteAlert: {
-		argNames: [ "idAlert" ],
+			argNames: ["idAlert"],
 		},
 
 		deleteAlertAtIndex: {
-		argNames: [ "index" ],
+			argNames: ["index"],
 		},
 
 		getById: {
-		argNames: [ "idAlert" ],
+			argNames: ["idAlert"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -2342,14 +2507,14 @@ export const Mapper: IMapper = {
 		},
 
 		upgrade: {
-		argNames: [ "appPackageStream" ],
+			argNames: ["appPackageStream"],
 		},
 
 	},
 
 	"SP.Attachment": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		recycleObject: {
@@ -2358,21 +2523,23 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Attachment.Collection": {
+		add: {
+			argNames: ["FileName", "Content"],
+		},
+
 		addUsingPath: {
-		argNames: [ "DecodedUrl", "contentStream" ],
+			argNames: ["DecodedUrl", "contentStream"],
 		},
 
 		getByFileName: {
-		argNames: [ "fileName" ],
+			argNames: ["fileName"],
 		},
 
 		getByFileNameAsPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
-		add: {
-		argNames: [ "FileName", "Content" ],
-		},
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -2384,56 +2551,56 @@ export const Mapper: IMapper = {
 
 	"SP.BusinessData.AppBdcCatalog": {
 		getConnectionId: {
-		argNames: [ "lobSystemName", "lobSystemInstanceName" ],
+			argNames: ["lobSystemName", "lobSystemInstanceName"],
 		},
 
 		getEntity: {
-		argNames: [ "namespace", "name" ],
+			argNames: ["namespace", "name"],
 		},
 
 		getLobSystemInstanceProperty: {
-		argNames: [ "lobSystemName", "lobSystemInstanceName", "propertyName" ],
+			argNames: ["lobSystemName", "lobSystemInstanceName", "propertyName"],
 		},
 
 		getLobSystemProperty: {
-		argNames: [ "lobSystemName", "propertyName" ],
+			argNames: ["lobSystemName", "propertyName"],
 		},
 
 		getPermissibleConnections: {
 		},
 
 		setConnectionId: {
-		argNames: [ "lobSystemName", "lobSystemInstanceName", "connectionId" ],
+			argNames: ["lobSystemName", "lobSystemInstanceName", "connectionId"],
 		},
 
 		setLobSystemInstanceProperty: {
-		argNames: [ "lobSystemName", "lobSystemInstanceName", "propertyName", "propertyValue" ],
+			argNames: ["lobSystemName", "lobSystemInstanceName", "propertyName", "propertyValue"],
 		},
 
 		setLobSystemProperty: {
-		argNames: [ "lobSystemName", "propertyName", "propertyValue" ],
+			argNames: ["lobSystemName", "propertyName", "propertyValue"],
 		},
 
 	},
 
 	"SP.BusinessData.Entity": {
 		getAssociationView: {
-		argNames: [ "associationName" ],
+			argNames: ["associationName"],
 		},
 
 		getCreatorView: {
-		argNames: [ "methodInstanceName" ],
+			argNames: ["methodInstanceName"],
 		},
 
 		getDefaultSpecificFinderView: {
 		},
 
 		getFilters: {
-		argNames: [ "methodInstanceName" ],
+			argNames: ["methodInstanceName"],
 		},
 
 		getFinderView: {
-		argNames: [ "methodInstanceName" ],
+			argNames: ["methodInstanceName"],
 		},
 
 		getIdentifierCount: {
@@ -2446,11 +2613,11 @@ export const Mapper: IMapper = {
 		},
 
 		getSpecificFinderView: {
-		argNames: [ "specificFinderName" ],
+			argNames: ["specificFinderName"],
 		},
 
 		getUpdaterView: {
-		argNames: [ "updaterName" ],
+			argNames: ["updaterName"],
 		},
 
 	},
@@ -2468,20 +2635,21 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.BusinessData.EntityView": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getDefaultValues: {
 		},
 
 		getType: {
-		argNames: [ "fieldDotNotation" ],
+			argNames: ["fieldDotNotation"],
 		},
 
 		getTypeDescriptor: {
-		argNames: [ "fieldDotNotation" ],
+			argNames: ["fieldDotNotation"],
 		},
 
 		getXmlSchema: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -2499,19 +2667,19 @@ export const Mapper: IMapper = {
 
 	"SP.BusinessData.Runtime.EntityFieldValueDictionary": {
 		createCollectionInstance: {
-		argNames: [ "fieldDotNotation", "size" ],
+			argNames: ["fieldDotNotation", "size"],
 		},
 
 		createInstance: {
-		argNames: [ "fieldInstanceDotNotation", "fieldDotNotation" ],
+			argNames: ["fieldInstanceDotNotation", "fieldDotNotation"],
 		},
 
 		fromXml: {
-		argNames: [ "xml" ],
+			argNames: ["xml"],
 		},
 
 		getCollectionSize: {
-		argNames: [ "fieldDotNotation" ],
+			argNames: ["fieldDotNotation"],
 		},
 
 		toXml: {
@@ -2521,19 +2689,19 @@ export const Mapper: IMapper = {
 
 	"SP.BusinessData.Runtime.EntityInstance": {
 		createCollectionInstance: {
-		argNames: [ "fieldDotNotation", "size" ],
+			argNames: ["fieldDotNotation", "size"],
 		},
 
 		createInstance: {
-		argNames: [ "fieldInstanceDotNotation", "fieldDotNotation" ],
+			argNames: ["fieldInstanceDotNotation", "fieldDotNotation"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		fromXml: {
-		argNames: [ "xml" ],
+			argNames: ["xml"],
 		},
 
 		getIdentity: {
@@ -2573,6 +2741,7 @@ export const Mapper: IMapper = {
 
 	"SP.CheckedOutFile": {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		takeOverCheckOut: {
 		},
 
@@ -2580,231 +2749,244 @@ export const Mapper: IMapper = {
 
 	"SP.CheckedOutFile.Collection": {
 		getByPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.ClientWebPart": {
 		render: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.ClientWebPart.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.CompliancePolicy.SPPolicyStoreProxy": {
 		addDynamicScopeBinding: {
-		argNames: [ "identity", "siteId" ],
+			argNames: ["identity", "siteId"],
 		},
 
 		bulkUpdateDynamicScopeBindings: {
-		argNames: [ "scopesToAdd", "scopesToRemove", "siteId" ],
+			argNames: ["scopesToAdd", "scopesToRemove", "siteId"],
 		},
 
 		deleteDynamicScopeBinding: {
-		argNames: [ "identity", "siteId" ],
+			argNames: ["identity", "siteId"],
 		},
 
 		extendReviewItemsRetention: {
-		argNames: [ "itemIds", "extensionDate" ],
+			argNames: ["itemIds", "extensionDate"],
 		},
 
 		getDynamicScopeBindingBySiteId: {
-		argNames: [ "siteId" ],
+			argNames: ["siteId"],
 		},
 
 		markReviewItemsForDeletion: {
-		argNames: [ "itemIds" ],
+			argNames: ["itemIds"],
 		},
 
 		openBinaryStreamForOriginalItem: {
-		argNames: [ "itemId" ],
+			argNames: ["itemId"],
 		},
 
 		removeContainerRetentionPolicy: {
-		argNames: [ "siteId" ],
+			argNames: ["siteId"],
 		},
 
 		removeContainerSettings: {
-		argNames: [ "externalId" ],
+			argNames: ["externalId"],
 		},
 
 		retagReviewItems: {
-		argNames: [ "itemIds", "newTag", "newTagIsRecord", "newTagBlockDelete", "newTagIsEventBased" ],
+			argNames: ["itemIds", "newTag", "newTagIsRecord", "newTagBlockDelete", "newTagIsEventBased"],
 		},
 
 		retagReviewItemsWithMetas: {
-		argNames: [ "itemIds", "newTagName", "newTagMetas" ],
+			argNames: ["itemIds", "newTagName", "newTagMetas"],
 		},
 
 		setContainerRetentionPolicy: {
-		argNames: [ "siteId", "defaultContainerLabel" ],
+			argNames: ["siteId", "defaultContainerLabel"],
 		},
 
 		updateContainerSetting: {
-		argNames: [ "siteId", "externalId", "settingType", "setting" ],
+			argNames: ["siteId", "externalId", "settingType", "setting"],
 		},
 
 	},
 
 	"SP.ContentType": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.ContentType.Collection": {
+		add: {
+			argNames: ["parameters"],
+		},
+
 		addAvailableContentType: {
-		argNames: [ "contentTypeId" ],
+			argNames: ["contentTypeId"],
 		},
 
 		getById: {
-		argNames: [ "contentTypeId" ],
+			argNames: ["contentTypeId"],
 		},
 
-		add: {
-		argNames: [ "parameters" ],
-		},
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Directory.DirectorySession": {
 		getGraphUser: {
-		argNames: [ "principalName" ],
+			argNames: ["principalName"],
 		},
 
 		getSharePointDataForUser: {
-		argNames: [ "userId" ],
+			argNames: ["userId"],
 		},
 
 		group: {
-		argNames: [ "groupId", "alias" ],
+			argNames: ["groupId", "alias"],
 		},
 
 		joinGroup: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 		me: {
 		},
 
 		user: {
-		argNames: [ "id", "principalName" ],
+			argNames: ["id", "principalName"],
 		},
 
 		validateGroupName: {
-		argNames: [ "displayName", "alias" ],
+			argNames: ["displayName", "alias"],
 		},
 
 	},
 
 	"SP.Directory.Group": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Directory.Group.Collection": {
 		add: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		remove: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 	},
 
 	"SP.Directory.Provider.DirectoryNotification": {
 		notifyChanges: {
-		argNames: [ "directoryObjectChanges" ],
+			argNames: ["directoryObjectChanges"],
 		},
 
 	},
 
 	"SP.Directory.Provider.SharePointDirectoryProvider": {
 		createDirectoryObject: {
-		argNames: [ "data" ],
+			argNames: ["data"],
 		},
 
 		deleteDirectoryObject: {
-		argNames: [ "data" ],
+			argNames: ["data"],
 		},
 
 		getOrCreateUnifiedGroupTenantInstanceId: {
-		argNames: [ "groupId", "tenantInstanceId" ],
+			argNames: ["groupId", "tenantInstanceId"],
 		},
 
 		notifyDataChanges: {
-		argNames: [ "data" ],
+			argNames: ["data"],
 		},
 
 		readDirectoryObject: {
-		argNames: [ "data" ],
+			argNames: ["data"],
 		},
 
 		readDirectoryObjectBatch: {
-		argNames: [ "ids", "objectType" ],
+			argNames: ["ids", "objectType"],
 		},
 
 		updateCache: {
-		argNames: [ "data" ],
+			argNames: ["data"],
 		},
 
 		updateDirectoryObject: {
-		argNames: [ "data" ],
+			argNames: ["data"],
 		},
 
 	},
 
 	"SP.Directory.User": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getUserLinks: {
-		argNames: [ "linkName", "groupType" ],
+			argNames: ["linkName", "groupType"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Directory.User.Collection": {
 		add: {
-		argNames: [ "objectId", "principalName" ],
+			argNames: ["objectId", "principalName"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		remove: {
-		argNames: [ "objectId" ],
+			argNames: ["objectId"],
 		},
 
 	},
 
 	"SP.DocumentManagement.DocumentId": {
 		resetDocIdByServerRelativePath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		resetDocIdsInLibrary: {
-		argNames: [ "DecodedUrl", "contentTypeId" ],
+			argNames: ["DecodedUrl", "contentTypeId"],
 		},
 
 	},
 
 	"SP.EventReceiverDefinition": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
@@ -2814,660 +2996,673 @@ export const Mapper: IMapper = {
 
 	"SP.EventReceiverDefinition.Collection": {
 		add: {
-		argNames: [ "eventReceiverCreationInformation" ],
+			argNames: ["eventReceiverCreationInformation"],
 		},
 
 		getById: {
-		argNames: [ "eventReceiverId" ],
+			argNames: ["eventReceiverId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Feature.Collection": {
 		add: {
-		argNames: [ "featureId", "force", "featdefScope" ],
+			argNames: ["featureId", "force", "featdefScope"],
 		},
 
 		getById: {
-		argNames: [ "featureId" ],
+			argNames: ["featureId"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		remove: {
-		argNames: [ "featureId", "force" ],
+			argNames: ["featureId", "force"],
 		},
 
 	},
 
 	"SP.Field": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-		delete: {
-		requestType: RequestType.Delete
+		add: {
+			argNames: ["parameters"],
 		},
 
+		delete: {
+			requestType: RequestType.Delete
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
-		},
-
-		add: {
-		argNames: [ "parameters" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.Field.Collection": {
 		addDependentLookupField: {
-		argNames: [ "displayName", "primaryLookupFieldId", "showField" ],
+			argNames: ["displayName", "primaryLookupFieldId", "showField"],
 		},
 
 		addField: {
-		argNames: [ "parameters" ],
-		},
-
-		getById: {
-		argNames: [ "id" ],
-		},
-
-		getByInternalNameOrTitle: {
-		argNames: [ "strName" ],
-		},
-
-		getByTitle: {
-		argNames: [ "title" ],
+			argNames: ["parameters"],
 		},
 
 		createFieldAsXml: {
-		argNames: [ "schemaXml" ],
+			argNames: ["schemaXml"],
 		},
+
+		getById: {
+			argNames: ["id"],
+		},
+
+		getByInternalNameOrTitle: {
+			argNames: ["strName"],
+		},
+
+		getByTitle: {
+			argNames: ["title"],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.FieldCalculated": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldChoice": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldComputed": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldCurrency": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldDateTime": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldGeolocation": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldGuid": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldLink": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"SP.FieldLink.Collection": {
-		getById: {
-		argNames: [ "id" ],
+		add: {
+			argNames: ["parameters"],
 		},
+
+		getById: {
+			argNames: ["id"],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		reorder: {
-		argNames: [ "internalNames" ],
-		},
-
-		add: {
-		argNames: [ "parameters" ],
+			argNames: ["internalNames"],
 		},
 
 	},
 
 	"SP.FieldLocation": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldLookup": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldMultiChoice": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldMultiLineText": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldNumber": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldRatingScale": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldText": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldUrl": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.FieldUser": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.File": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addActivities: {
-		argNames: [ "activities" ],
+			argNames: ["activities"],
 		},
 
 		addClientActivities: {
-		argNames: [ "activitiesStream" ],
+			argNames: ["activitiesStream"],
 		},
 
 		approve: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
 
 		cancelUpload: {
-		argNames: [ "uploadId" ],
+			argNames: ["uploadId"],
 		},
 
 		checkAccessAndPostViewAuditEvent: {
 		},
 
 		checkIn: {
-		argNames: [ "comment", "checkInType" ],
+			argNames: ["comment", "checkInType"],
 		},
 
 		checkOut: {
 		},
 
+		content: {
+		},
+
 		continueUpload: {
-		argNames: [ "uploadId", "fileOffset", "stream" ],
+			argNames: ["uploadId", "fileOffset", "stream"],
 		},
 
 		copyTo: {
-		argNames: [ "strNewUrl", "bOverWrite" ],
+			argNames: ["strNewUrl", "bOverWrite"],
 		},
 
 		copyToUsingPath: {
-		argNames: [ "DecodedUrl", "bOverWrite" ],
+			argNames: ["DecodedUrl", "bOverWrite"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		deny: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
 
 		executeCobaltRequest: {
-		argNames: [ "inputStream" ],
+			argNames: ["inputStream"],
 		},
 
 		finishUpload: {
-		argNames: [ "uploadId", "fileOffset", "stream" ],
+			argNames: ["uploadId", "fileOffset", "stream"],
 		},
 
 		getFileUserValue: {
-		argNames: [ "key" ],
+			argNames: ["key"],
 		},
 
 		getImagePreviewUri: {
-		argNames: [ "width", "height", "clientType" ],
+			argNames: ["width", "height", "clientType"],
 		},
 
 		getImagePreviewUrl: {
-		argNames: [ "width", "height", "clientType" ],
+			argNames: ["width", "height", "clientType"],
 		},
 
 		getLimitedWebPartManager: {
-		argNames: [ "scope" ],
+			argNames: ["scope"],
 		},
 
 		getPreAuthorizedAccessUrl: {
-		argNames: [ "expirationHours" ],
+			argNames: ["expirationHours"],
 		},
 
 		getUploadStatus: {
-		argNames: [ "uploadId" ],
+			argNames: ["uploadId"],
 		},
 
 		getWOPIFrameUrl: {
-		argNames: [ "action" ],
+			argNames: ["action"],
 		},
 
 		moveTo: {
-		argNames: [ "newUrl", "flags" ],
+			argNames: ["newUrl", "flags"],
 		},
 
 		moveToUsingPath: {
-		argNames: [ "DecodedUrl", "moveOperations" ],
+			argNames: ["DecodedUrl", "moveOperations"],
 		},
 
 		openBinaryStream: {
 		},
 
 		openBinaryStreamWithOptions: {
-		argNames: [ "openOptions" ],
+			argNames: ["openOptions"],
 		},
 
 		publish: {
-		argNames: [ "comment" ],
+			argNames: ["comment"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recycle: {
 		},
 
 		recycleWithETag: {
-		argNames: [ "etagMatch" ],
+			argNames: ["etagMatch"],
 		},
 
 		saveBinaryStream: {
-		argNames: [ "file" ],
+			argNames: ["file"],
 		},
 
 		setFileUserValue: {
-		argNames: [ "key", "value" ],
+			argNames: ["key", "value"],
 		},
 
 		startUpload: {
-		argNames: [ "uploadId", "stream" ],
+			argNames: ["uploadId", "stream"],
+		},
+
+		unPublish: {
+			argNames: ["comment"],
 		},
 
 		undoCheckOut: {
 		},
 
-		unPublish: {
-		argNames: [ "comment" ],
+		update: {
+			argNames: ["properties"],
 		},
 
 		updateVirusInfo: {
-		argNames: [ "virusStatus", "virusMessage", "etagToCheck" ],
-		},
-
-		content: {
-		},
-
-		update: {
-		argNames: [ "properties" ],
+			argNames: ["virusStatus", "virusMessage", "etagToCheck"],
 		},
 
 	},
 
 	"SP.File.Collection": {
+		add: {
+			argNames: ["Url", "Overwrite", "Content"],
+		},
+
 		addStub: {
-		argNames: [ "urlOfFile" ],
+			argNames: ["urlOfFile"],
 		},
 
 		addStubUsingPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		addTemplateFile: {
-		argNames: [ "urlOfFile", "templateFileType" ],
+			argNames: ["urlOfFile", "templateFileType"],
 		},
 
 		addUsingPath: {
-		argNames: [ "DecodedUrl", "Overwrite", "contentStream" ],
+			argNames: ["DecodedUrl", "Overwrite", "contentStream"],
 		},
 
 		getByPathOrAddStub: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		getByUrl: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		getByUrlOrAddStub: {
-		argNames: [ "urlOfFile" ],
+			argNames: ["urlOfFile"],
 		},
 
-		add: {
-		argNames: [ "Url", "Overwrite", "Content" ],
-		},
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.FileVersion": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		openBinaryStream: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -3476,108 +3671,116 @@ export const Mapper: IMapper = {
 		},
 
 		deleteByID: {
-		argNames: [ "vid" ],
+			argNames: ["vid"],
 		},
 
 		deleteByLabel: {
-		argNames: [ "versionlabel" ],
+			argNames: ["versionlabel"],
 		},
 
 		getById: {
-		argNames: [ "versionid" ],
+			argNames: ["versionid"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		recycleByID: {
-		argNames: [ "vid" ],
+			argNames: ["vid"],
 		},
 
 		recycleByLabel: {
-		argNames: [ "versionlabel" ],
+			argNames: ["versionlabel"],
 		},
 
 		restoreByLabel: {
-		argNames: [ "versionlabel" ],
+			argNames: ["versionlabel"],
 		},
 
 	},
 
 	"SP.Folder": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addSubFolder: {
-		argNames: [ "leafName" ],
+			argNames: ["leafName"],
 		},
 
 		addSubFolderUsingPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		getChanges: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		getListItemChanges: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		moveTo: {
-		argNames: [ "newUrl" ],
+			argNames: ["newUrl"],
 		},
 
 		moveToUsingPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recycle: {
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.Folder.Collection": {
 		add: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		addUsingPath: {
-		argNames: [ "DecodedUrl", "Overwrite" ],
+			argNames: ["DecodedUrl", "Overwrite"],
 		},
 
 		addWithOverwrite: {
-		argNames: [ "url", "overwrite" ],
+			argNames: ["url", "overwrite"],
 		},
 
 		getByPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		getByUrl: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Form.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getByPageType: {
-		argNames: [ "formType" ],
+			argNames: ["formType"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Group": {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		setUserAsOwner: {
-		argNames: [ "ownerId" ],
+			argNames: ["ownerId"],
 		},
 
 		update: {
@@ -3586,39 +3789,43 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Group.Collection": {
+		add: {
+			argNames: ["parameters"],
+		},
+
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getByName: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		removeById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		removeByLoginName: {
-		argNames: [ "loginName" ],
-		},
-
-		add: {
-		argNames: [ "parameters" ],
+			argNames: ["loginName"],
 		},
 
 	},
 
 	"SP.HubSite": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"SP.HubSite.Collection": {
 		getById: {
-		argNames: [ "hubSiteId" ],
+			argNames: ["hubSiteId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -3642,201 +3849,206 @@ export const Mapper: IMapper = {
 
 	"SP.LanguageCollection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 	},
 
 	"SP.List": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-		breakRoleInheritance: {
-		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
-		},
-
-		resetRoleInheritance: {
-		},
-
 		addItem: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		addItemUsingPath: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		addValidateUpdateItem: {
-		argNames: [ "listItemCreateInfo", "formValues", "bNewDocumentUpdate", "checkInComment" ],
+			argNames: ["listItemCreateInfo", "formValues", "bNewDocumentUpdate", "checkInComment"],
 		},
 
 		addValidateUpdateItemUsingPath: {
-		argNames: [ "listItemCreateInfo", "formValues", "bNewDocumentUpdate", "checkInComment" ],
+			argNames: ["listItemCreateInfo", "formValues", "bNewDocumentUpdate", "checkInComment"],
+		},
+
+		breakRoleInheritance: {
+			argNames: ["copyRoleAssignments", "clearSubscopes"],
 		},
 
 		bulkValidateUpdateListItems: {
-		argNames: [ "itemIds", "formValues", "bNewDocumentUpdate", "checkInComment", "folderPath" ],
+			argNames: ["itemIds", "formValues", "bNewDocumentUpdate", "checkInComment", "folderPath"],
 		},
 
 		createDocumentAndGetEditLink: {
-		argNames: [ "fileName", "folderPath", "documentTemplateType", "templateUrl" ],
+			argNames: ["fileName", "folderPath", "documentTemplateType", "templateUrl"],
 		},
 
 		createDocumentWithDefaultName: {
-		argNames: [ "folderPath", "extension" ],
+			argNames: ["folderPath", "extension"],
 		},
 
 		createMappedView: {
-		argNames: [ "appViewCreationInfo", "visualizationTarget" ],
+			argNames: ["appViewCreationInfo", "visualizationTarget"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		ensureSignoffStatusField: {
 		},
 
 		getBloomFilter: {
-		argNames: [ "startItemId" ],
+			argNames: ["startItemId"],
 		},
 
 		getBloomFilterWithCustomFields: {
-		argNames: [ "listItemStartingID", "internalFieldNames" ],
+			argNames: ["listItemStartingID", "internalFieldNames"],
 		},
 
 		getChanges: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		getCheckedOutFiles: {
 		},
 
 		getItemById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getItemByStringId: {
-		argNames: [ "sId" ],
+			argNames: ["sId"],
 		},
 
 		getItemByUniqueId: {
-		argNames: [ "uniqueId" ],
+			argNames: ["uniqueId"],
+		},
+
+		getItems: {
+			argNames: ["viewXML"],
+		},
+
+		getItemsByQuery: {
+			argNames: ["camlQuery"],
 		},
 
 		getListItemChangesSinceToken: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		getMappedApp: {
-		argNames: [ "appId", "visualizationAppTarget" ],
+			argNames: ["appId", "visualizationAppTarget"],
 		},
 
 		getMappedApps: {
-		argNames: [ "visualizationAppTarget" ],
+			argNames: ["visualizationAppTarget"],
 		},
 
 		getRelatedFields: {
 		},
 
 		getSpecialFolderUrl: {
-		argNames: [ "type", "bForceCreate", "existingFolderGuid" ],
+			argNames: ["type", "bForceCreate", "existingFolderGuid"],
 		},
 
 		getUserEffectivePermissions: {
-		argNames: [ "userName" ],
+			argNames: ["userName"],
 		},
 
 		getView: {
-		argNames: [ "viewGuid" ],
+			argNames: ["viewGuid"],
 		},
 
 		getWebDavUrl: {
-		argNames: [ "sourceUrl" ],
+			argNames: ["sourceUrl"],
 		},
 
 		publishMappedView: {
-		argNames: [ "appId", "visualizationTarget" ],
+			argNames: ["appId", "visualizationTarget"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recycle: {
 		},
 
 		renderExtendedListFormData: {
-		argNames: [ "itemId", "formId", "mode", "options", "cutoffVersion" ],
+			argNames: ["itemId", "formId", "mode", "options", "cutoffVersion"],
 		},
 
 		renderListContextMenuData: {
-		argNames: [ "CascDelWarnMessage", "CustomAction", "Field", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsXslView", "ItemId", "ListViewPageUrl", "OverrideScope", "RootFolder", "View", "ViewCount" ],
+			argNames: ["CascDelWarnMessage", "CustomAction", "Field", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsXslView", "ItemId", "ListViewPageUrl", "OverrideScope", "RootFolder", "View", "ViewCount"],
 		},
 
 		renderListData: {
-		argNames: [ "viewXml" ],
+			argNames: ["viewXml"],
 		},
 
 		renderListDataAsStream: {
-		argNames: [ "parameters", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "RootFolder", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId" ],
+			argNames: ["parameters", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "RootFolder", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId"],
 		},
 
 		renderListFilterData: {
-		argNames: [ "ExcludeFieldFilteringHtml", "FieldInternalName", "OverrideScope", "ProcessQStringToCAML", "ViewId" ],
+			argNames: ["ExcludeFieldFilteringHtml", "FieldInternalName", "OverrideScope", "ProcessQStringToCAML", "ViewId"],
 		},
 
 		renderListFormData: {
-		argNames: [ "itemId", "formId", "mode" ],
+			argNames: ["itemId", "formId", "mode"],
 		},
 
 		reserveListItemId: {
 		},
 
+		resetRoleInheritance: {
+		},
+
 		saveAsNewView: {
-		argNames: [ "oldName", "newName", "privateView", "uri" ],
+			argNames: ["oldName", "newName", "privateView", "uri"],
 		},
 
 		saveAsTemplate: {
-		argNames: [ "strFileName", "strName", "strDescription", "bSaveData" ],
+			argNames: ["strFileName", "strName", "strDescription", "bSaveData"],
 		},
 
 		setExemptFromBlockDownloadOfNonViewableFiles: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		syncFlowCallbackUrl: {
-		argNames: [ "flowId" ],
+			argNames: ["flowId"],
 		},
 
 		syncFlowInstance: {
-		argNames: [ "flowID" ],
+			argNames: ["flowID"],
 		},
 
 		syncFlowInstances: {
 		},
 
 		syncFlowTemplates: {
-		argNames: [ "category" ],
+			argNames: ["category"],
 		},
 
 		unpublishMappedView: {
-		argNames: [ "appId", "visualizationTarget" ],
-		},
-
-		validateAppName: {
-		argNames: [ "appDisplayName" ],
-		},
-
-		getItems: {
-		argNames: [ "viewXML" ],
-		},
-
-		getItemsByQuery: {
-		argNames: [ "camlQuery" ],
+			argNames: ["appId", "visualizationTarget"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
+		},
+
+		validateAppName: {
+			argNames: ["appDisplayName"],
 		},
 
 	},
 
 	"SP.List.Collection": {
+		add: {
+			argNames: ["parameters"],
+		},
+
 		ensureClientRenderedSitePagesLibrary: {
 		},
 
@@ -3850,145 +4062,149 @@ export const Mapper: IMapper = {
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getByTitle: {
-		argNames: [ "title" ],
+			argNames: ["title"],
 		},
 
-		add: {
-		argNames: [ "parameters" ],
-		},
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.ListItem": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		breakRoleInheritance: {
-		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
-		},
-
-		resetRoleInheritance: {
+			argNames: ["copyRoleAssignments", "clearSubscopes"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		getChanges: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		getHashtags: {
 		},
 
 		getUserEffectivePermissions: {
-		argNames: [ "userName" ],
+			argNames: ["userName"],
 		},
 
 		getWOPIFrameUrl: {
-		argNames: [ "action" ],
+			argNames: ["action"],
 		},
 
 		mediaServiceUpdate: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		mediaServiceUpdateV2: {
-		argNames: [ "parameters", "eventFiringEnabled" ],
+			argNames: ["parameters", "eventFiringEnabled"],
 		},
 
 		overridePolicyTip: {
-		argNames: [ "userAction", "justification" ],
+			argNames: ["userAction", "justification"],
 		},
 
 		parseAndSetFieldValue: {
-		argNames: [ "fieldName", "value" ],
+			argNames: ["fieldName", "value"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recycle: {
 		},
 
+		resetRoleInheritance: {
+		},
+
 		setCommentsDisabled: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setComplianceTag: {
-		argNames: [ "complianceTag", "isTagPolicyHold", "isTagPolicyRecord", "isEventBasedTag", "isTagSuperLock" ],
+			argNames: ["complianceTag", "isTagPolicyHold", "isTagPolicyRecord", "isEventBasedTag", "isTagSuperLock"],
 		},
 
 		setComplianceTagWithExplicitMetasUpdate: {
-		argNames: [ "complianceTag", "complianceFlags", "complianceTagWrittenTime", "userEmailAddress" ],
+			argNames: ["complianceTag", "complianceFlags", "complianceTagWrittenTime", "userEmailAddress"],
 		},
 
 		setComplianceTagWithHold: {
-		argNames: [ "complianceTag" ],
+			argNames: ["complianceTag"],
 		},
 
 		setComplianceTagWithMetaInfo: {
-		argNames: [ "complianceTag", "blockDelete", "blockEdit", "complianceTagWrittenTime", "userEmailAddress", "isTagSuperLock" ],
+			argNames: ["complianceTag", "blockDelete", "blockEdit", "complianceTagWrittenTime", "userEmailAddress", "isTagSuperLock"],
 		},
 
 		setComplianceTagWithNoHold: {
-		argNames: [ "complianceTag" ],
+			argNames: ["complianceTag"],
 		},
 
 		setComplianceTagWithRecord: {
-		argNames: [ "complianceTag" ],
+			argNames: ["complianceTag"],
 		},
 
 		systemUpdate: {
 		},
 
+		update: {
+			argNames: ["properties"],
+		},
+
 		updateEx: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		updateHashtags: {
-		argNames: [ "hashtagsToAdd", "hashtagsToRemove" ],
+			argNames: ["hashtagsToAdd", "hashtagsToRemove"],
 		},
 
 		updateOverwriteVersion: {
 		},
 
 		validateUpdateListItem: {
-		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment" ],
-		},
-
-		update: {
-		argNames: [ "properties" ],
+			argNames: ["formValues", "bNewDocumentUpdate", "checkInComment"],
 		},
 
 	},
 
 	"SP.ListItem.Collection": {
+		add: {
+			argNames: ["parameters"],
+		},
+
 		getById: {
-		argNames: [ "itemId" ],
+			argNames: ["itemId"],
 		},
 
 		getByStringId: {
-		argNames: [ "sId" ],
+			argNames: ["sId"],
 		},
 
-		add: {
-		argNames: [ "parameters" ],
-		},
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.ListItemVersion": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.ListItemVersion.Collection": {
 		getById: {
-		argNames: [ "versionId" ],
+			argNames: ["versionId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -4000,56 +4216,58 @@ export const Mapper: IMapper = {
 
 	"SP.ListTemplate.Collection": {
 		getByName: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.MicroService.MicroServiceManager": {
 		addMicroserviceWorkItem: {
-		argNames: [ "payLoad", "minutes", "properties" ],
+			argNames: ["payLoad", "minutes", "properties"],
 		},
 
 		deleteMicroserviceWorkItem: {
-		argNames: [ "workItemId" ],
+			argNames: ["workItemId"],
 		},
 
 		getServiceInternalUrls: {
-		argNames: [ "service" ],
+			argNames: ["service"],
 		},
 
 		getServiceUrls: {
-		argNames: [ "service" ],
+			argNames: ["service"],
 		},
 
 	},
 
 	"SP.Microfeed.MicrofeedAttachmentStore": {
 		deletePreProcessedAttachment: {
-		argNames: [ "attachmentUri" ],
+			argNames: ["attachmentUri"],
 		},
 
 		getImage: {
-		argNames: [ "imageUrl", "key", "iv" ],
+			argNames: ["imageUrl", "key", "iv"],
 		},
 
 		preProcessAttachment: {
-		argNames: [ "link" ],
+			argNames: ["link"],
 		},
 
 		putFile: {
-		argNames: [ "originalFileName", "fileData" ],
+			argNames: ["originalFileName", "fileData"],
 		},
 
 		putImage: {
-		argNames: [ "imageData" ],
+			argNames: ["imageData"],
 		},
 
 	},
 
 	"SP.Microfeed.MicrofeedData": {
 		addAttachment: {
-		argNames: [ "name", "bytes" ],
+			argNames: ["name", "bytes"],
 		},
 
 		systemUpdate: {
@@ -4064,154 +4282,158 @@ export const Mapper: IMapper = {
 		deleteAll: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 	},
 
 	"SP.Microfeed.MicrofeedManager": {
 		addUserToPostPeopleList: {
-		argNames: [ "postIdentifier", "UserLoginName" ],
+			argNames: ["postIdentifier", "UserLoginName"],
 		},
 
 		clearUnreadMentionsCount: {
 		},
 
 		deleteById: {
-		argNames: [ "postIdentifier" ],
+			argNames: ["postIdentifier"],
 		},
 
 		deleteUserFromPostPeopleList: {
-		argNames: [ "postIdentifier", "UserLoginName" ],
+			argNames: ["postIdentifier", "UserLoginName"],
 		},
 
 		getMyCategoricalFeed: {
-		argNames: [ "feedOptions" ],
+			argNames: ["feedOptions"],
 		},
 
 		getMyConsolidatedFeed: {
-		argNames: [ "feedOptions" ],
+			argNames: ["feedOptions"],
 		},
 
 		getMyPublishedFeed: {
-		argNames: [ "feedOptions", "typeOfPubFeed", "ShowPublicView" ],
+			argNames: ["feedOptions", "typeOfPubFeed", "ShowPublicView"],
 		},
 
 		getPublishedFeed: {
-		argNames: [ "feedOwner", "feedOptions", "typeOfPubFeed" ],
+			argNames: ["feedOwner", "feedOptions", "typeOfPubFeed"],
 		},
 
 		getThread: {
-		argNames: [ "postIdentifier" ],
+			argNames: ["postIdentifier"],
 		},
 
 		getUnreadMentionsCount: {
 		},
 
 		like: {
-		argNames: [ "postIdentifier" ],
+			argNames: ["postIdentifier"],
 		},
 
 		lockThreadById: {
-		argNames: [ "threadIdentifier" ],
+			argNames: ["threadIdentifier"],
 		},
 
 		post: {
-		argNames: [ "postOptions" ],
+			argNames: ["postOptions"],
 		},
 
 		postReply: {
-		argNames: [ "postIdentifier", "postReplyOptions" ],
+			argNames: ["postIdentifier", "postReplyOptions"],
 		},
 
 		repopulateLMT: {
-		argNames: [ "timeStamp", "secureHash" ],
+			argNames: ["timeStamp", "secureHash"],
 		},
 
 		unLike: {
-		argNames: [ "postIdentifier" ],
+			argNames: ["postIdentifier"],
 		},
 
 		unLockThreadById: {
-		argNames: [ "threadIdentifier" ],
+			argNames: ["threadIdentifier"],
 		},
 
 		unsubscribeFromEMail: {
-		argNames: [ "postIdentifier" ],
+			argNames: ["postIdentifier"],
 		},
 
 	},
 
 	"SP.Microfeed.MicrofeedPostDefinitionManager": {
 		deleteMicrofeedPostDefinition: {
-		argNames: [ "postDefinition" ],
+			argNames: ["postDefinition"],
 		},
 
 		getMicrofeedPostDefinition: {
-		argNames: [ "definitionName" ],
+			argNames: ["definitionName"],
 		},
 
 		getMicrofeedPostDefinitions: {
 		},
 
 		newMicrofeedPostDefinition: {
-		argNames: [ "definitionName" ],
+			argNames: ["definitionName"],
 		},
 
 		updateMicrofeedPostDefinition: {
-		argNames: [ "postDefinition" ],
+			argNames: ["postDefinition"],
 		},
 
 	},
 
 	"SP.Microfeed.MicrofeedStore": {
 		addData: {
-		argNames: [ "name", "data" ],
+			argNames: ["name", "data"],
 		},
 
 		addDataAsStream: {
-		argNames: [ "name", "data" ],
+			argNames: ["name", "data"],
 		},
 
 		executePendingOperations: {
 		},
 
 		getItem: {
-		argNames: [ "storeIdentifier" ],
+			argNames: ["storeIdentifier"],
 		},
 
 		getSocialProperties: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		incrementUnreadAtMentionCount: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		newItem: {
-		argNames: [ "storeIdentifier" ],
+			argNames: ["storeIdentifier"],
 		},
 
 		query: {
-		argNames: [ "storeIdentifier", "query" ],
+			argNames: ["storeIdentifier", "query"],
 		},
 
 		setPostLikeStatus: {
-		argNames: [ "accountName", "postId", "like" ],
+			argNames: ["accountName", "postId", "like"],
 		},
 
 	},
 
 	"SP.Navigation": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getNodeById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.NavigationNode": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -4220,16 +4442,18 @@ export const Mapper: IMapper = {
 
 	"SP.NavigationNode.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getByIndex: {
-		argNames: [ "index" ],
+			argNames: ["index"],
 		},
 
 		moveAfter: {
-		argNames: [ "nodeId", "previousNodeId" ],
+			argNames: ["nodeId", "previousNodeId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -4241,97 +4465,102 @@ export const Mapper: IMapper = {
 
 	"SP.OAuth.Token": {
 		acquire: {
-		argNames: [ "resource", "tokenType" ],
+			argNames: ["resource", "tokenType"],
 		},
 
 	},
 
 	"SP.ObjectSharingInformation": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getSharedWithUsers: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.CommunicationSite": {
 		create: {
-		argNames: [ "request" ],
+			argNames: ["request"],
 		},
 
 		status: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 	},
 
 	"SP.Publishing.EmbedService": {
 		embedData: {
-		argNames: [ "url", "version" ],
+			argNames: ["url", "version"],
 		},
 
 	},
 
 	"SP.Publishing.PointPublishingPost": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addImageFromUrl: {
-		argNames: [ "fromImageUrl" ],
+			argNames: ["fromImageUrl"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.PointPublishingPost.Collection": {
 		getById: {
-		argNames: [ "id", "publishedOnly" ],
+			argNames: ["id", "publishedOnly"],
 		},
 
 		getByName: {
-		argNames: [ "name", "publishedOnly" ],
+			argNames: ["name", "publishedOnly"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.PointPublishingPostServiceManager": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addBannerImageFromUrl: {
-		argNames: [ "fromImageUrl" ],
+			argNames: ["fromImageUrl"],
 		},
 
 		deleteMagazine: {
 		},
 
 		getDocProps: {
-		argNames: [ "docUrls" ],
+			argNames: ["docUrls"],
 		},
 
 		getPostsQuery: {
-		argNames: [ "top", "itemIdBoundary", "directionAscending", "publishedOnly", "draftsOnly" ],
+			argNames: ["top", "itemIdBoundary", "directionAscending", "publishedOnly", "draftsOnly"],
 		},
 
 		getTopAuthors: {
-		argNames: [ "count" ],
+			argNames: ["count"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		queryGroupNames: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		setMagazineProperties: {
-		argNames: [ "title", "description", "bannerImageUrl", "bannerColor", "bannerPattern" ],
+			argNames: ["title", "description", "bannerImageUrl", "bannerColor", "bannerPattern"],
 		},
 
 	},
 
 	"SP.Publishing.PointPublishingSiteManager": {
 		create: {
-		argNames: [ "siteInfo" ],
+			argNames: ["siteInfo"],
 		},
 
 		getSiteStatus: {
-		argNames: [ "siteInfo" ],
+			argNames: ["siteInfo"],
 		},
 
 	},
@@ -4350,12 +4579,14 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.PointPublishingUser.Collection": {
 		addOrUpdateUser: {
-		argNames: [ "loginName", "isOwner" ],
+			argNames: ["loginName", "isOwner"],
 		},
 
 		getById: {
-		argNames: [ "userId" ],
+			argNames: ["userId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
@@ -4376,7 +4607,7 @@ export const Mapper: IMapper = {
 		},
 
 		getVersion: {
-		argNames: [ "versionId" ],
+			argNames: ["versionId"],
 		},
 
 		promoteToNews: {
@@ -4386,22 +4617,22 @@ export const Mapper: IMapper = {
 		},
 
 		saveDraft: {
-		argNames: [ "sitePage" ],
+			argNames: ["sitePage"],
 		},
 
 		savePage: {
-		argNames: [ "pageStream" ],
+			argNames: ["pageStream"],
 		},
 
 		savePageAsDraft: {
-		argNames: [ "pageStream" ],
+			argNames: ["pageStream"],
 		},
 
 		savePageAsTemplate: {
 		},
 
 		sharePagePreviewByEmail: {
-		argNames: [ "message", "recipientEmails" ],
+			argNames: ["message", "recipientEmails"],
 		},
 
 		update: {
@@ -4413,45 +4644,47 @@ export const Mapper: IMapper = {
 		isContentTypeAvailable: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 	},
 
 	"SP.Publishing.RichSharing": {
 		sharePageByEmail: {
-		argNames: [ "url", "message", "recipientEmails" ],
+			argNames: ["url", "message", "recipientEmails"],
 		},
 
 		shareSiteByEmail: {
-		argNames: [ "CustomDescription", "CustomTitle", "Message", "Url", "recipientEmails" ],
+			argNames: ["CustomDescription", "CustomTitle", "Message", "Url", "recipientEmails"],
 		},
 
 	},
 
 	"SP.Publishing.Search": {
 		newest: {
-		argNames: [ "startItemIndex", "itemLimit" ],
+			argNames: ["startItemIndex", "itemLimit"],
 		},
 
 		popular: {
-		argNames: [ "startItemIndex", "itemLimit" ],
+			argNames: ["startItemIndex", "itemLimit"],
 		},
 
 		query: {
-		argNames: [ "queryText", "startItemIndex", "itemLimit", "culture" ],
+			argNames: ["queryText", "startItemIndex", "itemLimit", "culture"],
 		},
 
 		queryChannels: {
-		argNames: [ "queryText", "startItemIndex", "itemLimit", "culture" ],
+			argNames: ["queryText", "startItemIndex", "itemLimit", "culture"],
 		},
 
 		related: {
-		argNames: [ "videoId", "startItemIndex", "itemLimit" ],
+			argNames: ["videoId", "startItemIndex", "itemLimit"],
 		},
 
 	},
 
 	"SP.Publishing.SharePointHomeServiceManager": {
 		getAcronymsAndColors: {
-		argNames: [ "labels" ],
+			argNames: ["labels"],
 		},
 
 	},
@@ -4473,7 +4706,7 @@ export const Mapper: IMapper = {
 		},
 
 		getVersion: {
-		argNames: [ "versionId" ],
+			argNames: ["versionId"],
 		},
 
 		promoteToNews: {
@@ -4483,22 +4716,22 @@ export const Mapper: IMapper = {
 		},
 
 		saveDraft: {
-		argNames: [ "sitePage" ],
+			argNames: ["sitePage"],
 		},
 
 		savePage: {
-		argNames: [ "pageStream" ],
+			argNames: ["pageStream"],
 		},
 
 		savePageAsDraft: {
-		argNames: [ "pageStream" ],
+			argNames: ["pageStream"],
 		},
 
 		savePageAsTemplate: {
 		},
 
 		sharePagePreviewByEmail: {
-		argNames: [ "message", "recipientEmails" ],
+			argNames: ["message", "recipientEmails"],
 		},
 
 		update: {
@@ -4511,28 +4744,30 @@ export const Mapper: IMapper = {
 		},
 
 		feed: {
-		argNames: [ "promotedState", "published", "metadataFilter" ],
+			argNames: ["promotedState", "published", "metadataFilter"],
 		},
 
 		feedTargeted: {
-		argNames: [ "promotedState", "published", "metadataFilter" ],
+			argNames: ["promotedState", "published", "metadataFilter"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getByUrl: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		getPageColumnState: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		isSitePage: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		templates: {
 		},
@@ -4541,23 +4776,26 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.SitePageMetadata.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.SitePageService": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addImage: {
-		argNames: [ "pageName", "imageFileName", "imageStream" ],
+			argNames: ["pageName", "imageFileName", "imageStream"],
 		},
 
 		addImageFromExternalUrl: {
-		argNames: [ "pageName", "imageFileName", "externalUrl", "subFolderName" ],
+			argNames: ["pageName", "imageFileName", "externalUrl", "subFolderName"],
 		},
 
 		canCreatePromotedPage: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -4565,10 +4803,11 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.SpotlightChannel": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -4577,16 +4816,19 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.SpotlightChannel.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.SpotlightVideo": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -4595,46 +4837,51 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.SpotlightVideo.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.SubtitleFile.Collection": {
 		add: {
-		argNames: [ "language", "extension", "stream" ],
+			argNames: ["language", "extension", "stream"],
 		},
 
 		getSubtitleFile: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		remove: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 	},
 
 	"SP.Publishing.VideoChannel": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getAllVideos: {
-		argNames: [ "skip", "limit" ],
+			argNames: ["skip", "limit"],
 		},
 
 		getChannelPageUrl: {
-		argNames: [ "viewMode" ],
+			argNames: ["viewMode"],
 		},
 
 		getMyVideos: {
-		argNames: [ "skip", "limit" ],
+			argNames: ["skip", "limit"],
 		},
 
 		getPermissionGroup: {
-		argNames: [ "permission" ],
+			argNames: ["permission"],
 		},
 
 		getVideoCount: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
 		},
@@ -4643,29 +4890,30 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.VideoChannel.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.VideoItem": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		customThumbnail: {
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		getFile: {
 		},
 
 		getPlaybackMetadata: {
-		argNames: [ "sdnConfiguration" ],
+			argNames: ["sdnConfiguration"],
 		},
 
 		getPlaybackUrl: {
-		argNames: [ "videoFormat" ],
+			argNames: ["videoFormat"],
 		},
 
 		getStreamingKeyAccessToken: {
@@ -4675,83 +4923,92 @@ export const Mapper: IMapper = {
 		},
 
 		getVideoEmbedCode: {
-		argNames: [ "width", "height", "autoplay", "showInfo", "makeResponsive" ],
+			argNames: ["width", "height", "autoplay", "showInfo", "makeResponsive"],
 		},
 
 		getVideoViewProgressCount: {
 		},
 
 		incrementVideoViewProgressCount: {
-		argNames: [ "percentageViewed" ],
+			argNames: ["percentageViewed"],
 		},
 
 		incrementViewCount: {
-		argNames: [ "viewOrigin" ],
+			argNames: ["viewOrigin"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		setPeopleInMedia: {
-		argNames: [ "loginNames" ],
+			argNames: ["loginNames"],
 		},
 
 		setVideoOwner: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		subtitles: {
 		},
 
-		thumbnails: {
-		argNames: [ "preferredWidth" ],
+		thumbnailStream: {
+			argNames: ["preferredWidth"],
 		},
 
-		thumbnailStream: {
-		argNames: [ "preferredWidth" ],
+		thumbnails: {
+			argNames: ["preferredWidth"],
 		},
 
 		update: {
 		},
 
 		uploadCustomThumbnail: {
-		argNames: [ "fileExtension", "customVideoThumbnail" ],
+			argNames: ["fileExtension", "customVideoThumbnail"],
 		},
 
 	},
 
 	"SP.Publishing.VideoItem.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.VideoPermissionGroup": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		hasCurrentUser: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.VideoServiceManager": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getChannels: {
-		argNames: [ "startIndex", "limit" ],
+			argNames: ["startIndex", "limit"],
 		},
 
 		getPermissionGroup: {
-		argNames: [ "permission" ],
+			argNames: ["permission"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Publishing.VideoThumbnail.Collection": {
 		getByIndex: {
-		argNames: [ "choice" ],
+			argNames: ["choice"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.PushNotificationSubscriber": {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		update: {
 		},
 
@@ -4759,19 +5016,22 @@ export const Mapper: IMapper = {
 
 	"SP.PushNotificationSubscriber.Collection": {
 		getByStoreId: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.RecycleBinItem": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		moveToSecondStage: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		restore: {
 		},
@@ -4786,31 +5046,34 @@ export const Mapper: IMapper = {
 		},
 
 		deleteByIds: {
-		argNames: [ "ids" ],
+			argNames: ["ids"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		moveAllToSecondStage: {
 		},
 
 		moveToSecondStageByIds: {
-		argNames: [ "ids" ],
+			argNames: ["ids"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		restoreAll: {
 		},
 
 		restoreByIds: {
-		argNames: [ "ids" ],
+			argNames: ["ids"],
 		},
 
 	},
 
 	"SP.RegionalSettings": {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		update: {
 		},
 
@@ -4818,139 +5081,151 @@ export const Mapper: IMapper = {
 
 	"SP.RelatedField.Collection": {
 		getByFieldId: {
-		argNames: [ "fieldId" ],
+			argNames: ["fieldId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.RemoteWeb": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getFileByServerRelativePath: {
-		argNames: [ "serverRelatvieFilePath" ],
+			argNames: ["serverRelatvieFilePath"],
 		},
 
 		getFileByServerRelativeUrl: {
-		argNames: [ "serverRelativeFileUrl" ],
+			argNames: ["serverRelativeFileUrl"],
 		},
 
 		getFileByUrl: {
-		argNames: [ "fileUrl" ],
+			argNames: ["fileUrl"],
 		},
 
 		getFolderByServerRelativeUrl: {
-		argNames: [ "serverRelativeUrl" ],
+			argNames: ["serverRelativeUrl"],
 		},
 
 		getGroupById: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 		getListById: {
-		argNames: [ "listGuid" ],
+			argNames: ["listGuid"],
 		},
 
 		getListByServerRelativeUrl: {
-		argNames: [ "serverRelativeUrl" ],
+			argNames: ["serverRelativeUrl"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.RequestContext": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getRemoteContext: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.RoleAssignment": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.RoleAssignment.Collection": {
 		addRoleAssignment: {
-		argNames: [ "principalId", "roleDefId" ],
+			argNames: ["principalId", "roleDefId"],
 		},
 
 		getByPrincipalId: {
-		argNames: [ "principalId" ],
+			argNames: ["principalId"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		removeRoleAssignment: {
-		argNames: [ "principalId", "roleDefId" ],
+			argNames: ["principalId", "roleDefId"],
 		},
 
 	},
 
 	"SP.RoleDefinition": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.RoleDefinition.Collection": {
-		removeAll: {
+		getById: {
+			argNames: ["id"],
 		},
 
 		getByName: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 		getByType: {
-		argNames: [ "roleType" ],
+			argNames: ["roleType"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recreateMissingDefaultRoleDefinitions: {
 		},
 
-		getById: {
-		argNames: [ "id" ],
+		removeAll: {
 		},
 
 	},
 
 	"SP.SPAppLicenseManager": {
 		checkLicense: {
-		argNames: [ "productId" ],
+			argNames: ["productId"],
 		},
 
 	},
 
 	"SP.ScriptSafeDomain": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 	},
 
 	"SP.ScriptSafeDomain.Collection": {
 		create: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getByDomainName: {
-		argNames: [ "domainName" ],
+			argNames: ["domainName"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.SecurableObject": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		breakRoleInheritance: {
-		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
+			argNames: ["copyRoleAssignments", "clearSubscopes"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		resetRoleInheritance: {
 		},
@@ -4958,33 +5233,32 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Site": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		createCopyJob: {
-		argNames: [ "exportObjectUris", "destinationUri", "options" ],
+			argNames: ["exportObjectUris", "destinationUri", "options"],
 		},
 
 		createCopyJobs: {
-		argNames: [ "exportObjectUris", "destinationUri", "options" ],
+			argNames: ["exportObjectUris", "destinationUri", "options"],
 		},
 
 		createMigrationIngestionJob: {
-		argNames: [ "gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri", "ingestionTaskKey" ],
+			argNames: ["gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri", "ingestionTaskKey"],
 		},
 
 		createMigrationJob: {
-		argNames: [ "gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri" ],
+			argNames: ["gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri"],
 		},
 
 		createMigrationJobEncrypted: {
-		argNames: [ "gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri", "options" ],
+			argNames: ["gWebId", "azureContainerSourceUri", "azureContainerManifestUri", "azureQueueReportUri", "options"],
 		},
 
 		createPreviewSPSite: {
-		argNames: [ "upgrade", "sendemail" ],
+			argNames: ["upgrade", "sendemail"],
 		},
 
 		deleteMigrationJob: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		extendUpgradeReminderDate: {
@@ -4997,83 +5271,83 @@ export const Mapper: IMapper = {
 		},
 
 		getCatalog: {
-		argNames: [ "typeCatalog" ],
+			argNames: ["typeCatalog"],
 		},
 
 		getChanges: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		getCopyJobProgress: {
-		argNames: [ "copyJobInfo" ],
+			argNames: ["copyJobInfo"],
 		},
 
 		getHubSiteJoinApprovalCorrelationId: {
 		},
 
 		getMigrationJobStatus: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getMigrationStatus: {
 		},
 
 		getRecycleBinItems: {
-		argNames: [ "pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState" ],
+			argNames: ["pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState"],
 		},
 
 		getWebPath: {
-		argNames: [ "siteId", "webId" ],
+			argNames: ["siteId", "webId"],
 		},
 
 		getWebTemplates: {
-		argNames: [ "LCID", "overrideCompatLevel" ],
+			argNames: ["LCID", "overrideCompatLevel"],
 		},
 
 		invalidate: {
 		},
 
 		joinHubSite: {
-		argNames: [ "hubSiteId", "approvalToken", "approvalCorrelationId" ],
+			argNames: ["hubSiteId", "approvalToken", "approvalCorrelationId"],
 		},
 
 		makeHubSite: {
 		},
 
 		multiGeoCopyJob: {
-		argNames: [ "jobId", "userId", "binaryPayload" ],
+			argNames: ["jobId", "userId", "binaryPayload"],
 		},
 
 		needsUpgradeByType: {
-		argNames: [ "versionUpgrade", "recursive" ],
-		},
-
-		onboardTenantForBringYourOwnKey: {
-		argNames: [ "keyInfo" ],
+			argNames: ["versionUpgrade", "recursive"],
 		},
 
 		onHubSiteJoinRequestApproved: {
-		argNames: [ "joiningSiteId" ],
+			argNames: ["joiningSiteId"],
 		},
 
 		onHubSiteJoinRequestCanceled: {
-		argNames: [ "approvalCorrelationId" ],
+			argNames: ["approvalCorrelationId"],
 		},
 
 		onHubSiteJoinRequestStarted: {
-		argNames: [ "approvalCorrelationId" ],
+			argNames: ["approvalCorrelationId"],
+		},
+
+		onboardTenantForBringYourOwnKey: {
+			argNames: ["keyInfo"],
 		},
 
 		openWeb: {
-		argNames: [ "strUrl" ],
+			argNames: ["strUrl"],
 		},
 
 		openWebById: {
-		argNames: [ "gWebId" ],
+			argNames: ["gWebId"],
 		},
 
 		openWebUsingPath: {
-		argNames: [ "path" ],
+			argNames: ["path"],
 		},
 
 		provisionMigrationContainers: {
@@ -5082,127 +5356,129 @@ export const Mapper: IMapper = {
 		provisionMigrationQueue: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		recoverTenantForBringYourOwnKey: {
-		argNames: [ "keyInfo" ],
+			argNames: ["keyInfo"],
 		},
 
 		registerHubSite: {
-		argNames: [ "creationInformation" ],
+			argNames: ["creationInformation"],
 		},
 
 		removeHubSite: {
 		},
 
 		rollTenantBringYourOwnKey: {
-		argNames: [ "keyType", "keyVaultInfo" ],
+			argNames: ["keyType", "keyVaultInfo"],
 		},
 
 		runHealthCheck: {
-		argNames: [ "ruleId", "bRepair", "bRunAlways" ],
+			argNames: ["ruleId", "bRepair", "bRunAlways"],
 		},
 
 		runUpgradeSiteSession: {
-		argNames: [ "versionUpgrade", "queueOnly", "sendEmail" ],
+			argNames: ["versionUpgrade", "queueOnly", "sendEmail"],
 		},
 
 		unregisterHubSite: {
 		},
 
+		update: {
+			argNames: ["properties"],
+		},
+
 		updateClientObjectModelUseRemoteAPIsPermissionSetting: {
-		argNames: [ "requireUseRemoteAPIs" ],
+			argNames: ["requireUseRemoteAPIs"],
 		},
 
 		validateHubSiteJoinApprovalToken: {
-		argNames: [ "joiningSiteId", "approvalToken" ],
-		},
-
-		update: {
-		argNames: [ "properties" ],
+			argNames: ["joiningSiteId", "approvalToken"],
 		},
 
 	},
 
 	"SP.Social.SocialFeedManager": {
 		createFileAttachment: {
-		argNames: [ "name", "description", "fileData" ],
+			argNames: ["name", "description", "fileData"],
 		},
 
 		createImageAttachment: {
-		argNames: [ "name", "description", "imageData" ],
+			argNames: ["name", "description", "imageData"],
 		},
 
 		createPost: {
-		argNames: [ "targetId", "creationData" ],
+			argNames: ["targetId", "creationData"],
 		},
 
 		deletePost: {
-		argNames: [ "postId" ],
+			argNames: ["postId"],
 		},
 
 		getAllLikers: {
-		argNames: [ "postId" ],
+			argNames: ["postId"],
 		},
 
 		getFeed: {
-		argNames: [ "type", "options" ],
+			argNames: ["type", "options"],
 		},
 
 		getFeedFor: {
-		argNames: [ "actorId", "options" ],
+			argNames: ["actorId", "options"],
 		},
 
 		getFullThread: {
-		argNames: [ "threadId" ],
+			argNames: ["threadId"],
 		},
 
 		getMentions: {
-		argNames: [ "clearUnreadMentions", "options" ],
+			argNames: ["clearUnreadMentions", "options"],
 		},
 
 		getPreview: {
-		argNames: [ "itemUrl" ],
+			argNames: ["itemUrl"],
 		},
 
 		getPreviewImage: {
-		argNames: [ "url", "key", "iv" ],
+			argNames: ["url", "key", "iv"],
 		},
 
 		getUnreadMentionCount: {
 		},
 
 		likePost: {
-		argNames: [ "postId" ],
+			argNames: ["postId"],
 		},
 
 		lockThread: {
-		argNames: [ "threadId" ],
+			argNames: ["threadId"],
 		},
 
 		suppressThreadNotifications: {
-		argNames: [ "threadId" ],
+			argNames: ["threadId"],
 		},
 
 		unlikePost: {
-		argNames: [ "postId" ],
+			argNames: ["postId"],
 		},
 
 		unlockThread: {
-		argNames: [ "threadId" ],
+			argNames: ["threadId"],
 		},
 
 	},
 
 	"SP.Social.SocialFollowingManager": {
 		follow: {
-		argNames: [ "actor" ],
+			argNames: ["actor"],
 		},
 
 		getFollowed: {
-		argNames: [ "types" ],
+			argNames: ["types"],
 		},
 
 		getFollowedCount: {
-		argNames: [ "types" ],
+			argNames: ["types"],
 		},
 
 		getFollowers: {
@@ -5212,38 +5488,38 @@ export const Mapper: IMapper = {
 		},
 
 		isFollowed: {
-		argNames: [ "actor" ],
+			argNames: ["actor"],
 		},
 
 		stopFollowing: {
-		argNames: [ "actor" ],
+			argNames: ["actor"],
 		},
 
 	},
 
 	"SP.Social.SocialRestActor": {
 		feed: {
-		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
+			argNames: ["MaxThreadCount", "NewerThan", "OlderThan", "SortOrder"],
 		},
 
 		likes: {
-		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
+			argNames: ["MaxThreadCount", "NewerThan", "OlderThan", "SortOrder"],
 		},
 
 		mentionFeed: {
-		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
+			argNames: ["MaxThreadCount", "NewerThan", "OlderThan", "SortOrder"],
 		},
 
 		news: {
-		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
+			argNames: ["MaxThreadCount", "NewerThan", "OlderThan", "SortOrder"],
 		},
 
 		organizationFeed: {
-		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
+			argNames: ["MaxThreadCount", "NewerThan", "OlderThan", "SortOrder"],
 		},
 
 		timelineFeed: {
-		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
+			argNames: ["MaxThreadCount", "NewerThan", "OlderThan", "SortOrder"],
 		},
 
 		unreadMentionCount: {
@@ -5253,54 +5529,54 @@ export const Mapper: IMapper = {
 
 	"SP.Social.SocialRestFeed": {
 		clearUnReadMentionCount: {
-		argNames: [ "MaxThreadCount", "NewerThan", "OlderThan", "SortOrder" ],
+			argNames: ["MaxThreadCount", "NewerThan", "OlderThan", "SortOrder"],
 		},
 
 		post: {
-		argNames: [ "restCreationData" ],
+			argNames: ["restCreationData"],
 		},
 
 	},
 
 	"SP.Social.SocialRestFeedManager": {
 		actor: {
-		argNames: [ "item" ],
+			argNames: ["item"],
 		},
 
 		my: {
 		},
 
 		post: {
-		argNames: [ "ID" ],
+			argNames: ["ID"],
 		},
 
 	},
 
 	"SP.Social.SocialRestFollowingManager": {
 		follow: {
-		argNames: [ "AccountName", "ActorType", "ContentUri", "Id", "TagGuid" ],
+			argNames: ["AccountName", "ActorType", "ContentUri", "Id", "TagGuid"],
 		},
 
 		followed: {
-		argNames: [ "types" ],
+			argNames: ["types"],
 		},
 
 		followedCount: {
-		argNames: [ "types" ],
+			argNames: ["types"],
 		},
 
 		followers: {
 		},
 
 		isFollowed: {
-		argNames: [ "AccountName", "ActorType", "ContentUri", "Id", "TagGuid" ],
+			argNames: ["AccountName", "ActorType", "ContentUri", "Id", "TagGuid"],
 		},
 
 		my: {
 		},
 
 		stopFollowing: {
-		argNames: [ "AccountName", "ActorType", "ContentUri", "Id", "TagGuid" ],
+			argNames: ["AccountName", "ActorType", "ContentUri", "Id", "TagGuid"],
 		},
 
 		suggestions: {
@@ -5310,106 +5586,108 @@ export const Mapper: IMapper = {
 
 	"SP.Social.SocialRestThread": {
 		delete: {
-		argNames: [ "ID" ],
-		requestType: RequestType.Delete
+			argNames: ["ID"],
+			requestType: RequestType.Delete
 		},
 
 		like: {
-		argNames: [ "ID" ],
+			argNames: ["ID"],
 		},
 
 		likers: {
-		argNames: [ "ID" ],
+			argNames: ["ID"],
 		},
 
 		lock: {
-		argNames: [ "ID" ],
+			argNames: ["ID"],
 		},
 
 		reply: {
-		argNames: [ "restCreationData" ],
+			argNames: ["restCreationData"],
 		},
 
 		unLike: {
-		argNames: [ "ID" ],
+			argNames: ["ID"],
 		},
 
 		unLock: {
-		argNames: [ "ID" ],
+			argNames: ["ID"],
 		},
 
 	},
 
 	"SP.Taxonomy.TaxonomyField": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		setShowInDisplayForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInEditForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setShowInNewForm: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 	},
 
 	"SP.ThemeInfo": {
 		getThemeFontByName: {
-		argNames: [ "name", "lcid" ],
+			argNames: ["name", "lcid"],
 		},
 
 		getThemeShadeByName: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 	},
 
 	"SP.TimeZone": {
 		localTimeToUTC: {
-		argNames: [ "date" ],
+			argNames: ["date"],
 		},
 
 		uTCToLocalTime: {
-		argNames: [ "date" ],
+			argNames: ["date"],
 		},
 
 	},
 
 	"SP.TimeZone.Collection": {
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Translation.SyncTranslator": {
 		translate: {
-		argNames: [ "inputFile", "outputFile" ],
+			argNames: ["inputFile", "outputFile"],
 		},
 
 		translateStream: {
-		argNames: [ "inputFile", "fileExtension" ],
+			argNames: ["inputFile", "fileExtension"],
 		},
 
 	},
 
 	"SP.Translation.TranslationJob": {
 		translateFile: {
-		argNames: [ "inputFile", "outputFile" ],
+			argNames: ["inputFile", "outputFile"],
 		},
 
 		translateFolder: {
-		argNames: [ "inputFolder", "outputFolder", "recursion" ],
+			argNames: ["inputFolder", "outputFolder", "recursion"],
 		},
 
 		translateLibrary: {
-		argNames: [ "inputLibrary", "outputLibrary" ],
+			argNames: ["inputLibrary", "outputLibrary"],
 		},
 
 	},
@@ -5421,147 +5699,153 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.User": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		add: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.User.Collection": {
 		getByEmail: {
-		argNames: [ "emailAddress" ],
+			argNames: ["emailAddress"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		getByLoginName: {
-		argNames: [ "loginName" ],
+			argNames: ["loginName"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		removeById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
 		removeByLoginName: {
-		argNames: [ "loginName" ],
+			argNames: ["loginName"],
 		},
 
 	},
 
 	"SP.UserCustomAction": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.UserCustomAction.Collection": {
+		add: {
+			argNames: ["properties"],
+		},
+
 		clear: {
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
 
-		add: {
-		argNames: [ "properties" ],
-		},
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.UserProfiles.FollowedContent": {
 		findAndUpdateFollowedGroup: {
-		argNames: [ "groupId" ],
+			argNames: ["groupId"],
 		},
 
 		findAndUpdateFollowedItem: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		followItem: {
-		argNames: [ "item" ],
+			argNames: ["item"],
 		},
 
 		getFollowedStatus: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		getGroups: {
-		argNames: [ "rowLimit" ],
+			argNames: ["rowLimit"],
 		},
 
 		getItem: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		getItems: {
-		argNames: [ "options", "subtype" ],
+			argNames: ["options", "subtype"],
 		},
 
 		hasGroupMembershipChangedAndSyncChanges: {
 		},
 
 		isFollowed: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		refreshFollowedItem: {
-		argNames: [ "item" ],
+			argNames: ["item"],
 		},
 
 		setItemPinState: {
-		argNames: [ "uri", "groupId", "pinState" ],
+			argNames: ["uri", "groupId", "pinState"],
 		},
 
 		stopFollowing: {
-		argNames: [ "url" ],
+			argNames: ["url"],
 		},
 
 		updateFollowedGroupForUser: {
-		argNames: [ "contextUri", "groupId", "loginName" ],
+			argNames: ["contextUri", "groupId", "loginName"],
 		},
 
 	},
 
 	"SP.UserProfiles.PeopleManager": {
 		amIFollowedBy: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		amIFollowing: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		follow: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		followTag: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		getDefaultDocumentLibrary: {
-		argNames: [ "accountName", "createSiteIfNotExists", "siteCreationPriority" ],
+			argNames: ["accountName", "createSiteIfNotExists", "siteCreationPriority"],
 		},
 
 		getFollowedTags: {
-		argNames: [ "cTagsToFetch" ],
+			argNames: ["cTagsToFetch"],
 		},
 
 		getFollowersFor: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		getMyFollowers: {
@@ -5574,99 +5858,99 @@ export const Mapper: IMapper = {
 		},
 
 		getPeopleFollowedBy: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		getPeopleFollowedByMe: {
 		},
 
 		getPropertiesFor: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		getSPUserInformation: {
-		argNames: [ "accountName", "siteId" ],
+			argNames: ["accountName", "siteId"],
 		},
 
 		getUserProfileProperties: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		getUserProfilePropertyFor: {
-		argNames: [ "accountName", "propertyName" ],
+			argNames: ["accountName", "propertyName"],
 		},
 
 		hardDeleteUserProfile: {
-		argNames: [ "accountName", "userId" ],
+			argNames: ["accountName", "userId"],
 		},
 
 		hideSuggestion: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		removeSPUserInformation: {
-		argNames: [ "accountName", "siteId", "redactName" ],
+			argNames: ["accountName", "siteId", "redactName"],
 		},
 
 		setMultiValuedProfileProperty: {
-		argNames: [ "accountName", "propertyName", "propertyValues" ],
+			argNames: ["accountName", "propertyName", "propertyValues"],
 		},
 
 		setMyProfilePicture: {
-		argNames: [ "picture" ],
+			argNames: ["picture"],
 		},
 
 		setSingleValueProfileProperty: {
-		argNames: [ "accountName", "propertyName", "propertyValue" ],
+			argNames: ["accountName", "propertyName", "propertyValue"],
 		},
 
 		stopFollowing: {
-		argNames: [ "accountName" ],
+			argNames: ["accountName"],
 		},
 
 		stopFollowingTag: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 	},
 
 	"SP.UserProfiles.PersonalCache": {
 		deleteCacheItemsAsync: {
-		argNames: [ "cacheItems" ],
+			argNames: ["cacheItems"],
 		},
 
 		loadUserProfile: {
-		argNames: [ "email" ],
+			argNames: ["email"],
 		},
 
 		readCache: {
-		argNames: [ "folderPath" ],
+			argNames: ["folderPath"],
 		},
 
 		readCacheOrCreate: {
-		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing" ],
+			argNames: ["folderPath", "requiredCacheKeys", "createIfMissing"],
 		},
 
 		readCacheOrCreateOrderById: {
-		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing" ],
+			argNames: ["folderPath", "requiredCacheKeys", "createIfMissing"],
 		},
 
 		writeCache: {
-		argNames: [ "cacheItems" ],
+			argNames: ["cacheItems"],
 		},
 
 	},
 
 	"SP.UserProfiles.ProfileImageStore": {
 		saveUploadedFile: {
-		argNames: [ "profileType", "fileNamePrefix", "isFeedAttachment", "clientFilePath", "fileSize", "fileStream" ],
+			argNames: ["profileType", "fileNamePrefix", "isFeedAttachment", "clientFilePath", "fileSize", "fileStream"],
 		},
 
 	},
 
 	"SP.UserProfiles.ProfileLoader": {
 		createPersonalSiteEnqueueBulk: {
-		argNames: [ "emailIDs" ],
+			argNames: ["emailIDs"],
 		},
 
 		getUserProfile: {
@@ -5675,25 +5959,26 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.UserProfiles.UserProfile": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		createPersonalSite: {
-		argNames: [ "lcid" ],
+			argNames: ["lcid"],
 		},
 
 		createPersonalSiteEnque: {
-		argNames: [ "isInteractive" ],
+			argNames: ["isInteractive"],
 		},
 
 		createPersonalSiteFromWorkItem: {
-		argNames: [ "workItemType" ],
+			argNames: ["workItemType"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		setMySiteFirstRunExperience: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		shareAllSocialData: {
-		argNames: [ "shareAll" ],
+			argNames: ["shareAll"],
 		},
 
 	},
@@ -5706,34 +5991,35 @@ export const Mapper: IMapper = {
 
 	"SP.UserResource": {
 		getValueForUICulture: {
-		argNames: [ "cultureName" ],
+			argNames: ["cultureName"],
 		},
 
 		setValueForUICulture: {
-		argNames: [ "cultureName", "value" ],
+			argNames: ["cultureName", "value"],
 		},
 
 	},
 
 	"SP.UserSolution.Collection": {
 		add: {
-		argNames: [ "solutionGalleryItemId" ],
+			argNames: ["solutionGalleryItemId"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Utilities.ThemeManager": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addTenantTheme: {
-		argNames: [ "name", "themeJson" ],
+			argNames: ["name", "themeJson"],
 		},
 
 		applyTheme: {
-		argNames: [ "name", "themeJson" ],
+			argNames: ["name", "themeJson"],
 		},
 
 		deleteTenantTheme: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 		getAvailableThemes: {
@@ -5743,430 +6029,440 @@ export const Mapper: IMapper = {
 		},
 
 		getTenantTheme: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 		getTenantThemingOptions: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		setHideDefaultThemes: {
-		argNames: [ "hideDefaultThemes" ],
+			argNames: ["hideDefaultThemes"],
 		},
 
 		updateTenantTheme: {
-		argNames: [ "name", "themeJson" ],
+			argNames: ["name", "themeJson"],
 		},
 
 	},
 
 	"SP.View": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		addToSpotlight: {
-		argNames: [ "itemId", "folderPath", "afterItemId" ],
+			argNames: ["itemId", "folderPath", "afterItemId"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		removeFromSpotlight: {
-		argNames: [ "itemId", "folderPath" ],
+			argNames: ["itemId", "folderPath"],
 		},
 
 		renderAsHtml: {
 		},
 
 		setViewXml: {
-		argNames: [ "viewXml" ],
+			argNames: ["viewXml"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.View.Collection": {
+		add: {
+			argNames: ["properties"],
+		},
+
 		getById: {
-		argNames: [ "guidId" ],
+			argNames: ["guidId"],
 		},
 
 		getByTitle: {
-		argNames: [ "strTitle" ],
+			argNames: ["strTitle"],
 		},
 
-		add: {
-		argNames: [ "properties" ],
-		},
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.ViewFieldCollection": {
 		addViewField: {
-		argNames: [ "strField" ],
+			argNames: ["strField"],
 		},
 
 		moveViewFieldTo: {
-		argNames: [ "field", "index" ],
+			argNames: ["field", "index"],
 		},
 
 		removeAllViewFields: {
 		},
 
 		removeViewField: {
-		argNames: [ "strField" ],
+			argNames: ["strField"],
 		},
 
 	},
 
 	"SP.Web": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-		breakRoleInheritance: {
-		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
-		},
-
-		resetRoleInheritance: {
-		},
-
 		addCrossFarmMessage: {
-		argNames: [ "messagePayloadBase64" ],
+			argNames: ["messagePayloadBase64"],
 		},
 
 		addSupportedUILanguage: {
-		argNames: [ "lcid" ],
+			argNames: ["lcid"],
 		},
 
 		applyTheme: {
-		argNames: [ "colorPaletteUrl", "fontSchemeUrl", "backgroundImageUrl", "shareGenerated" ],
+			argNames: ["colorPaletteUrl", "fontSchemeUrl", "backgroundImageUrl", "shareGenerated"],
 		},
 
 		applyWebTemplate: {
-		argNames: [ "webTemplate" ],
+			argNames: ["webTemplate"],
+		},
+
+		breakRoleInheritance: {
+			argNames: ["copyRoleAssignments", "clearSubscopes"],
 		},
 
 		createDefaultAssociatedGroups: {
-		argNames: [ "userLogin", "userLogin2", "groupNameSeed" ],
+			argNames: ["userLogin", "userLogin2", "groupNameSeed"],
 		},
 
 		defaultDocumentLibrary: {
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		doesPushNotificationSubscriberExist: {
-		argNames: [ "deviceAppInstanceId" ],
+			argNames: ["deviceAppInstanceId"],
+		},
+
+		doesUserHavePermissions: {
+			argNames: ["high", "low"],
 		},
 
 		ensureUser: {
-		argNames: [ "logonName" ],
+			argNames: ["logonName"],
 		},
 
 		executeRemoteLOB: {
-		argNames: [ "inputStream" ],
+			argNames: ["inputStream"],
 		},
 
 		getAppBdcCatalog: {
 		},
 
 		getAppBdcCatalogForAppInstance: {
-		argNames: [ "appInstanceId" ],
+			argNames: ["appInstanceId"],
 		},
 
 		getAppInstanceById: {
-		argNames: [ "appInstanceId" ],
+			argNames: ["appInstanceId"],
 		},
 
 		getAppInstancesByProductId: {
-		argNames: [ "productId" ],
+			argNames: ["productId"],
 		},
 
 		getAvailableWebTemplates: {
-		argNames: [ "lcid", "doIncludeCrossLanguage" ],
+			argNames: ["lcid", "doIncludeCrossLanguage"],
 		},
 
 		getCatalog: {
-		argNames: [ "typeCatalog" ],
+			argNames: ["typeCatalog"],
 		},
 
 		getChanges: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		getClientSideComponents: {
-		argNames: [ "components" ],
+			argNames: ["components"],
 		},
 
 		getClientSideComponentsById: {
-		argNames: [ "componentIds" ],
+			argNames: ["componentIds"],
 		},
 
 		getClientSideWebParts: {
-		argNames: [ "includeErrors" ],
+			argNames: ["includeErrors"],
 		},
 
 		getCustomListTemplates: {
 		},
 
 		getEntity: {
-		argNames: [ "namespace", "name" ],
+			argNames: ["namespace", "name"],
 		},
 
 		getFileByGuestUrl: {
-		argNames: [ "guestUrl" ],
+			argNames: ["guestUrl"],
 		},
 
 		getFileByGuestUrlEnsureAccess: {
-		argNames: [ "guestUrl", "ensureAccess" ],
+			argNames: ["guestUrl", "ensureAccess"],
 		},
 
 		getFileByGuestUrlExtended: {
-		argNames: [ "guestUrl", "requestSettings" ],
+			argNames: ["guestUrl", "requestSettings"],
 		},
 
 		getFileById: {
-		argNames: [ "uniqueId" ],
+			argNames: ["uniqueId"],
 		},
 
 		getFileByLinkingUrl: {
-		argNames: [ "linkingUrl" ],
+			argNames: ["linkingUrl"],
 		},
 
 		getFileByServerRelativePath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		getFileByServerRelativeUrl: {
-		argNames: [ "serverRelativeUrl" ],
+			argNames: ["serverRelativeUrl"],
 		},
 
 		getFileByUrl: {
-		argNames: [ "fileUrl" ],
+			argNames: ["fileUrl"],
 		},
 
 		getFileByWOPIFrameUrl: {
-		argNames: [ "wopiFrameUrl" ],
+			argNames: ["wopiFrameUrl"],
 		},
 
 		getFolderByGuestUrl: {
-		argNames: [ "guestUrl", "ensureAccess" ],
+			argNames: ["guestUrl", "ensureAccess"],
 		},
 
 		getFolderByGuestUrlExtended: {
-		argNames: [ "guestUrl", "requestSettings" ],
+			argNames: ["guestUrl", "requestSettings"],
 		},
 
 		getFolderById: {
-		argNames: [ "uniqueId" ],
+			argNames: ["uniqueId"],
 		},
 
 		getFolderByServerRelativePath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		getFolderByServerRelativeUrl: {
-		argNames: [ "serverRelativeUrl" ],
+			argNames: ["serverRelativeUrl"],
 		},
 
 		getList: {
-		argNames: [ "strUrl" ],
+			argNames: ["strUrl"],
 		},
 
 		getListItem: {
-		argNames: [ "strUrl" ],
+			argNames: ["strUrl"],
 		},
 
 		getListItemByResourceId: {
-		argNames: [ "resourceId" ],
+			argNames: ["resourceId"],
 		},
 
 		getListItemUsingPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		getListUsingPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		getNewsList: {
-		argNames: [ "allowCreate" ],
+			argNames: ["allowCreate"],
 		},
 
 		getOnePageContextAsStream: {
 		},
 
 		getPushNotificationSubscriber: {
-		argNames: [ "deviceAppInstanceId" ],
+			argNames: ["deviceAppInstanceId"],
 		},
 
 		getPushNotificationSubscribersByArgs: {
-		argNames: [ "customArgs" ],
+			argNames: ["customArgs"],
 		},
 
 		getPushNotificationSubscribersByUser: {
-		argNames: [ "userName" ],
+			argNames: ["userName"],
 		},
 
 		getRecycleBinItems: {
-		argNames: [ "pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState" ],
+			argNames: ["pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState"],
 		},
 
 		getRecycleBinItemsByQueryInfo: {
-		argNames: [ "IsAscending", "ItemState", "OrderBy", "PagingInfo", "RowLimit", "ShowOnlyMyItems" ],
+			argNames: ["IsAscending", "ItemState", "OrderBy", "PagingInfo", "RowLimit", "ShowOnlyMyItems"],
 		},
 
 		getRegionalDateTimeSchema: {
 		},
 
 		getSharingLinkData: {
-		argNames: [ "linkUrl" ],
+			argNames: ["linkUrl"],
 		},
 
 		getStorageEntity: {
-		argNames: [ "key" ],
+			argNames: ["key"],
 		},
 
 		getSubwebsFilteredForCurrentUser: {
-		argNames: [ "nWebTemplateFilter", "nConfigurationFilter" ],
+			argNames: ["nWebTemplateFilter", "nConfigurationFilter"],
 		},
 
 		getUserById: {
-		argNames: [ "userId" ],
+			argNames: ["userId"],
 		},
 
 		getUserEffectivePermissions: {
-		argNames: [ "userName" ],
+			argNames: ["userName"],
 		},
 
 		getViewFromPath: {
-		argNames: [ "DecodedUrl" ],
+			argNames: ["DecodedUrl"],
 		},
 
 		getViewFromUrl: {
-		argNames: [ "listUrl" ],
+			argNames: ["listUrl"],
 		},
 
 		hubSiteData: {
-		argNames: [ "forceRefresh" ],
+			argNames: ["forceRefresh"],
 		},
 
 		hubSiteDataAsStream: {
-		argNames: [ "forceRefresh" ],
+			argNames: ["forceRefresh"],
 		},
 
 		incrementSiteClientTag: {
 		},
 
 		loadAndInstallApp: {
-		argNames: [ "appPackageStream" ],
+			argNames: ["appPackageStream"],
 		},
 
 		loadAndInstallAppInSpecifiedLocale: {
-		argNames: [ "appPackageStream", "installationLocaleLCID" ],
+			argNames: ["appPackageStream", "installationLocaleLCID"],
 		},
 
 		loadApp: {
-		argNames: [ "appPackageStream", "installationLocaleLCID" ],
+			argNames: ["appPackageStream", "installationLocaleLCID"],
 		},
 
 		mapToIcon: {
-		argNames: [ "fileName", "progId", "size" ],
+			argNames: ["fileName", "progId", "size"],
 		},
 
 		pageContextInfo: {
-		argNames: [ "includeODBSettings", "emitNavigationInfo" ],
+			argNames: ["includeODBSettings", "emitNavigationInfo"],
 		},
 
 		parseDateTime: {
-		argNames: [ "value", "displayFormat", "calendarType" ],
+			argNames: ["value", "displayFormat", "calendarType"],
 		},
 
 		processExternalNotification: {
-		argNames: [ "stream" ],
+			argNames: ["stream"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		registerPushNotificationSubscriber: {
-		argNames: [ "deviceAppInstanceId", "serviceToken" ],
+			argNames: ["deviceAppInstanceId", "serviceToken"],
 		},
 
 		removeStorageEntity: {
-		argNames: [ "key" ],
+			argNames: ["key"],
 		},
 
 		removeSupportedUILanguage: {
-		argNames: [ "lcid" ],
+			argNames: ["lcid"],
+		},
+
+		resetRoleInheritance: {
 		},
 
 		setAccessRequestSiteDescriptionAndUpdate: {
-		argNames: [ "description" ],
+			argNames: ["description"],
 		},
 
 		setStorageEntity: {
-		argNames: [ "key", "value", "description", "comments" ],
+			argNames: ["key", "value", "description", "comments"],
 		},
 
 		setUseAccessRequestDefaultAndUpdate: {
-		argNames: [ "useAccessRequestDefault" ],
+			argNames: ["useAccessRequestDefault"],
 		},
 
 		syncFlowInstances: {
-		argNames: [ "targetWebUrl" ],
+			argNames: ["targetWebUrl"],
 		},
 
 		syncFlowTemplates: {
-		argNames: [ "category" ],
+			argNames: ["category"],
 		},
 
 		syncHubSiteTheme: {
 		},
 
 		unregisterPushNotificationSubscriber: {
-		argNames: [ "deviceAppInstanceId" ],
-		},
-
-		doesUserHavePermissions: {
-		argNames: [ "high", "low" ],
+			argNames: ["deviceAppInstanceId"],
 		},
 
 		update: {
-		argNames: [ "properties" ],
+			argNames: ["properties"],
 		},
 
 	},
 
 	"SP.Web.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.WebInformation.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.WebParts.LimitedWebPartManager": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		exportWebPart: {
-		argNames: [ "webPartId" ],
+			argNames: ["webPartId"],
 		},
 
 		importWebPart: {
-		argNames: [ "webPartXml" ],
+			argNames: ["webPartXml"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.WebParts.WebPartDefinition": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		closeWebPart: {
 		},
 
@@ -6174,11 +6470,13 @@ export const Mapper: IMapper = {
 		},
 
 		moveWebPartTo: {
-		argNames: [ "zoneID", "zoneIndex" ],
+			argNames: ["zoneID", "zoneIndex"],
 		},
 
 		openWebPart: {
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		saveWebPartChanges: {
 		},
@@ -6187,25 +6485,29 @@ export const Mapper: IMapper = {
 
 	"SP.WebParts.WebPartDefinition.Collection": {
 		getByControlId: {
-		argNames: [ "controlId" ],
+			argNames: ["controlId"],
 		},
 
 		getById: {
-		argNames: [ "id" ],
+			argNames: ["id"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.WebTemplate.Collection": {
 		getByName: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.WorkManagement.OM.BaseSession": {
 		addAttributeToTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		beginCacheRefresh: {
@@ -6215,67 +6517,67 @@ export const Mapper: IMapper = {
 		},
 
 		createPersonalTaskAndPromoteToProviderTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey"],
 		},
 
 		createTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl"],
 		},
 
 		deleteTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getCalloutInfo: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getRefreshHealthInfo: {
 		},
 
 		getRefreshHistory: {
-		argNames: [ "since" ],
+			argNames: ["since"],
 		},
 
 		getRefreshStatus: {
-		argNames: [ "refreshId" ],
+			argNames: ["refreshId"],
 		},
 
 		isExchangeJobPending: {
 		},
 
 		pinTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		promotePersonalTaskToProviderTaskInLocation: {
-		argNames: [ "taskKey", "locationId" ],
+			argNames: ["taskKey", "locationId"],
 		},
 
 		readAllNonTaskData: {
 		},
 
 		refreshSingleTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		removeAttributeFromTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		removePinOnTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		updateTaskWithLocalizedValue: {
-		argNames: [ "taskKey", "field", "value" ],
+			argNames: ["taskKey", "field", "value"],
 		},
 
 	},
 
 	"SP.WorkManagement.OM.LocationOrientedSortableSession": {
 		addAttributeToTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		beginCacheRefresh: {
@@ -6285,71 +6587,71 @@ export const Mapper: IMapper = {
 		},
 
 		createPersonalTaskAndPromoteToProviderTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey"],
 		},
 
 		createTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl"],
 		},
 
 		deleteTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getCalloutInfo: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getRefreshHealthInfo: {
 		},
 
 		getRefreshHistory: {
-		argNames: [ "since" ],
+			argNames: ["since"],
 		},
 
 		getRefreshStatus: {
-		argNames: [ "refreshId" ],
+			argNames: ["refreshId"],
 		},
 
 		isExchangeJobPending: {
 		},
 
+		movePersonalTaskToLocation: {
+			argNames: ["taskKey", "newLocationKey"],
+		},
+
 		pinTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		promotePersonalTaskToProviderTaskInLocation: {
-		argNames: [ "taskKey", "locationId" ],
+			argNames: ["taskKey", "locationId"],
 		},
 
 		readAllNonTaskData: {
 		},
 
 		refreshSingleTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		removeAttributeFromTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		removePinOnTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		updateTaskWithLocalizedValue: {
-		argNames: [ "taskKey", "field", "value" ],
-		},
-
-		movePersonalTaskToLocation: {
-		argNames: [ "taskKey", "newLocationKey" ],
+			argNames: ["taskKey", "field", "value"],
 		},
 
 	},
 
 	"SP.WorkManagement.OM.LocationOrientedUserOrderedSession": {
 		addAttributeToTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		beginCacheRefresh: {
@@ -6359,75 +6661,75 @@ export const Mapper: IMapper = {
 		},
 
 		createPersonalTaskAndPromoteToProviderTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey"],
 		},
 
 		createTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl"],
 		},
 
 		deleteTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getCalloutInfo: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getRefreshHealthInfo: {
 		},
 
 		getRefreshHistory: {
-		argNames: [ "since" ],
+			argNames: ["since"],
 		},
 
 		getRefreshStatus: {
-		argNames: [ "refreshId" ],
+			argNames: ["refreshId"],
 		},
 
 		isExchangeJobPending: {
 		},
 
+		movePersonalTaskToLocation: {
+			argNames: ["taskKey", "newLocationKey"],
+		},
+
 		pinTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		promotePersonalTaskToProviderTaskInLocation: {
-		argNames: [ "taskKey", "locationId" ],
+			argNames: ["taskKey", "locationId"],
 		},
 
 		readAllNonTaskData: {
 		},
 
 		refreshSingleTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		removeAttributeFromTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		removePinOnTask: {
-		argNames: [ "taskKey" ],
-		},
-
-		updateTaskWithLocalizedValue: {
-		argNames: [ "taskKey", "field", "value" ],
-		},
-
-		movePersonalTaskToLocation: {
-		argNames: [ "taskKey", "newLocationKey" ],
+			argNames: ["taskKey"],
 		},
 
 		reorderTask: {
-		argNames: [ "taskKey", "newAfterTaskKey" ],
+			argNames: ["taskKey", "newAfterTaskKey"],
+		},
+
+		updateTaskWithLocalizedValue: {
+			argNames: ["taskKey", "field", "value"],
 		},
 
 	},
 
 	"SP.WorkManagement.OM.SortableSession": {
 		addAttributeToTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		beginCacheRefresh: {
@@ -6437,60 +6739,60 @@ export const Mapper: IMapper = {
 		},
 
 		createPersonalTaskAndPromoteToProviderTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey"],
 		},
 
 		createTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl"],
 		},
 
 		deleteTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getCalloutInfo: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getRefreshHealthInfo: {
 		},
 
 		getRefreshHistory: {
-		argNames: [ "since" ],
+			argNames: ["since"],
 		},
 
 		getRefreshStatus: {
-		argNames: [ "refreshId" ],
+			argNames: ["refreshId"],
 		},
 
 		isExchangeJobPending: {
 		},
 
 		pinTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		promotePersonalTaskToProviderTaskInLocation: {
-		argNames: [ "taskKey", "locationId" ],
+			argNames: ["taskKey", "locationId"],
 		},
 
 		readAllNonTaskData: {
 		},
 
 		refreshSingleTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		removeAttributeFromTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		removePinOnTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		updateTaskWithLocalizedValue: {
-		argNames: [ "taskKey", "field", "value" ],
+			argNames: ["taskKey", "field", "value"],
 		},
 
 	},
@@ -6506,7 +6808,7 @@ export const Mapper: IMapper = {
 
 	"SP.WorkManagement.OM.UserOrderedSession": {
 		addAttributeToTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		beginCacheRefresh: {
@@ -6516,64 +6818,64 @@ export const Mapper: IMapper = {
 		},
 
 		createPersonalTaskAndPromoteToProviderTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey"],
 		},
 
 		createTask: {
-		argNames: [ "taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl" ],
+			argNames: ["taskName", "description", "localizedStartDate", "localizedDueDate", "completed", "pinned", "locationKey", "editUrl"],
 		},
 
 		deleteTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getCalloutInfo: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		getRefreshHealthInfo: {
 		},
 
 		getRefreshHistory: {
-		argNames: [ "since" ],
+			argNames: ["since"],
 		},
 
 		getRefreshStatus: {
-		argNames: [ "refreshId" ],
+			argNames: ["refreshId"],
 		},
 
 		isExchangeJobPending: {
 		},
 
 		pinTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		promotePersonalTaskToProviderTaskInLocation: {
-		argNames: [ "taskKey", "locationId" ],
+			argNames: ["taskKey", "locationId"],
 		},
 
 		readAllNonTaskData: {
 		},
 
 		refreshSingleTask: {
-		argNames: [ "taskKey" ],
+			argNames: ["taskKey"],
 		},
 
 		removeAttributeFromTask: {
-		argNames: [ "taskKey", "attribute" ],
+			argNames: ["taskKey", "attribute"],
 		},
 
 		removePinOnTask: {
-		argNames: [ "taskKey" ],
-		},
-
-		updateTaskWithLocalizedValue: {
-		argNames: [ "taskKey", "field", "value" ],
+			argNames: ["taskKey"],
 		},
 
 		reorderTask: {
-		argNames: [ "taskKey", "newAfterTaskKey" ],
+			argNames: ["taskKey", "newAfterTaskKey"],
+		},
+
+		updateTaskWithLocalizedValue: {
+			argNames: ["taskKey", "field", "value"],
 		},
 
 	},
@@ -6598,7 +6900,7 @@ export const Mapper: IMapper = {
 		},
 
 		getLocations: {
-		argNames: [ "locationsId" ],
+			argNames: ["locationsId"],
 		},
 
 		getPersistedProperties: {
@@ -6620,105 +6922,105 @@ export const Mapper: IMapper = {
 
 	"SP.Workflow.SPWorkflowTask": {
 		breakRoleInheritance: {
-		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
-		},
-
-		resetRoleInheritance: {
+			argNames: ["copyRoleAssignments", "clearSubscopes"],
 		},
 
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		getChanges: {
-		argNames: [ "query" ],
+			argNames: ["query"],
 		},
 
 		getHashtags: {
 		},
 
 		getUserEffectivePermissions: {
-		argNames: [ "userName" ],
+			argNames: ["userName"],
 		},
 
 		getWOPIFrameUrl: {
-		argNames: [ "action" ],
+			argNames: ["action"],
 		},
 
 		mediaServiceUpdate: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		mediaServiceUpdateV2: {
-		argNames: [ "parameters", "eventFiringEnabled" ],
+			argNames: ["parameters", "eventFiringEnabled"],
 		},
 
 		overridePolicyTip: {
-		argNames: [ "userAction", "justification" ],
+			argNames: ["userAction", "justification"],
 		},
 
 		parseAndSetFieldValue: {
-		argNames: [ "fieldName", "value" ],
+			argNames: ["fieldName", "value"],
 		},
 
 		recycle: {
 		},
 
+		resetRoleInheritance: {
+		},
+
 		setCommentsDisabled: {
-		argNames: [ "value" ],
+			argNames: ["value"],
 		},
 
 		setComplianceTag: {
-		argNames: [ "complianceTag", "isTagPolicyHold", "isTagPolicyRecord", "isEventBasedTag", "isTagSuperLock" ],
+			argNames: ["complianceTag", "isTagPolicyHold", "isTagPolicyRecord", "isEventBasedTag", "isTagSuperLock"],
 		},
 
 		setComplianceTagWithExplicitMetasUpdate: {
-		argNames: [ "complianceTag", "complianceFlags", "complianceTagWrittenTime", "userEmailAddress" ],
+			argNames: ["complianceTag", "complianceFlags", "complianceTagWrittenTime", "userEmailAddress"],
 		},
 
 		setComplianceTagWithHold: {
-		argNames: [ "complianceTag" ],
+			argNames: ["complianceTag"],
 		},
 
 		setComplianceTagWithMetaInfo: {
-		argNames: [ "complianceTag", "blockDelete", "blockEdit", "complianceTagWrittenTime", "userEmailAddress", "isTagSuperLock" ],
+			argNames: ["complianceTag", "blockDelete", "blockEdit", "complianceTagWrittenTime", "userEmailAddress", "isTagSuperLock"],
 		},
 
 		setComplianceTagWithNoHold: {
-		argNames: [ "complianceTag" ],
+			argNames: ["complianceTag"],
 		},
 
 		setComplianceTagWithRecord: {
-		argNames: [ "complianceTag" ],
+			argNames: ["complianceTag"],
 		},
 
 		systemUpdate: {
 		},
 
+		update: {
+			argNames: ["properties"],
+		},
+
 		updateEx: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		updateHashtags: {
-		argNames: [ "hashtagsToAdd", "hashtagsToRemove" ],
+			argNames: ["hashtagsToAdd", "hashtagsToRemove"],
 		},
 
 		updateOverwriteVersion: {
 		},
 
 		validateUpdateListItem: {
-		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment" ],
-		},
-
-		update: {
-		argNames: [ "properties" ],
+			argNames: ["formValues", "bNewDocumentUpdate", "checkInComment"],
 		},
 
 	},
 
 	"SP.Workflow.WorkflowAssociation": {
 		delete: {
-		requestType: RequestType.Delete
+			requestType: RequestType.Delete
 		},
 
 		update: {
@@ -6728,58 +7030,65 @@ export const Mapper: IMapper = {
 
 	"SP.Workflow.WorkflowAssociation.Collection": {
 		add: {
-		argNames: [ "parameters" ],
+			argNames: ["parameters"],
 		},
 
 		getById: {
-		argNames: [ "associationId" ],
+			argNames: ["associationId"],
 		},
 
 		getByName: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.Workflow.WorkflowTemplate.Collection": {
 		getById: {
-		argNames: [ "templateId" ],
+			argNames: ["templateId"],
 		},
 
 		getByName: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 
 	"SP.WorkflowServices.InteropService": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		cancelWorkflow: {
-		argNames: [ "instanceId" ],
+			argNames: ["instanceId"],
 		},
 
 		disableEvents: {
-		argNames: [ "listId", "itemGuid" ],
+			argNames: ["listId", "itemGuid"],
 		},
 
 		enableEvents: {
-		argNames: [ "listId", "itemGuid" ],
+			argNames: ["listId", "itemGuid"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		startWorkflow: {
-		argNames: [ "associationName", "correlationId", "listId", "itemGuid", "workflowParameters" ],
+			argNames: ["associationName", "correlationId", "listId", "itemGuid", "workflowParameters"],
 		},
 
 	},
 
 	"SP.WorkflowServices.WorkflowDefinition": {
 		setProperty: {
-		argNames: [ "propertyName", "value" ],
+			argNames: ["propertyName", "value"],
 		},
 
 	},
 
 	"SP.WorkflowServices.WorkflowDefinition.Collection": {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		sort: {
 		},
 
@@ -6787,93 +7096,93 @@ export const Mapper: IMapper = {
 
 	"SP.WorkflowServices.WorkflowDeploymentService": {
 		deleteCollateral: {
-		argNames: [ "workflowDefinitionId", "leafFileName" ],
+			argNames: ["workflowDefinitionId", "leafFileName"],
 		},
 
 		deleteDefinition: {
-		argNames: [ "definitionId" ],
+			argNames: ["definitionId"],
 		},
 
 		deprecateDefinition: {
-		argNames: [ "definitionId" ],
+			argNames: ["definitionId"],
 		},
 
 		enumerateDefinitions: {
-		argNames: [ "publishedOnly" ],
+			argNames: ["publishedOnly"],
 		},
 
 		enumerateIntegratedApps: {
 		},
 
 		getActivitySignatures: {
-		argNames: [ "lastChanged" ],
+			argNames: ["lastChanged"],
 		},
 
 		getCollateralUri: {
-		argNames: [ "workflowDefinitionId", "leafFileName" ],
+			argNames: ["workflowDefinitionId", "leafFileName"],
 		},
 
 		getDefinition: {
-		argNames: [ "definitionId" ],
+			argNames: ["definitionId"],
 		},
 
 		isIntegratedApp: {
 		},
 
 		packageDefinition: {
-		argNames: [ "definitionId", "packageDefaultFilename", "packageTitle", "packageDescription" ],
+			argNames: ["definitionId", "packageDefaultFilename", "packageTitle", "packageDescription"],
 		},
 
 		publishDefinition: {
-		argNames: [ "definitionId" ],
+			argNames: ["definitionId"],
 		},
 
 		saveCollateral: {
-		argNames: [ "workflowDefinitionId", "leafFileName", "fileContent" ],
+			argNames: ["workflowDefinitionId", "leafFileName", "fileContent"],
 		},
 
 		validateActivity: {
-		argNames: [ "activityXaml" ],
+			argNames: ["activityXaml"],
 		},
 
 	},
 
 	"SP.WorkflowServices.WorkflowInstanceService": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		enumerateInstancesForListItem: {
-		argNames: [ "listId", "itemId" ],
+			argNames: ["listId", "itemId"],
 		},
 
 		enumerateInstancesForListItemWithOffset: {
-		argNames: [ "listId", "itemId", "offset" ],
+			argNames: ["listId", "itemId", "offset"],
 		},
 
 		enumerateInstancesForSite: {
 		},
 
 		enumerateInstancesForSiteWithOffset: {
-		argNames: [ "offset" ],
+			argNames: ["offset"],
 		},
 
 		getInstance: {
-		argNames: [ "instanceId" ],
+			argNames: ["instanceId"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		startWorkflowOnListItemBySubscriptionId: {
-		argNames: [ "subscriptionId", "itemId", "payload" ],
+			argNames: ["subscriptionId", "itemId", "payload"],
 		},
 
 	},
 
 	"SP.WorkflowServices.WorkflowMessagingService": {
 		publishEvent: {
-		argNames: [ "eventSourceId", "eventName", "payload" ],
+			argNames: ["eventSourceId", "eventName", "payload"],
 		},
 
 	},
 
 	"SP.WorkflowServices.WorkflowServicesManager": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		getWorkflowDeploymentService: {
 		},
 
@@ -6889,76 +7198,81 @@ export const Mapper: IMapper = {
 		isIntegratedApp: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 	},
 
 	"SP.WorkflowServices.WorkflowSubscription": {
 		getExternalVariable: {
-		argNames: [ "name" ],
+			argNames: ["name"],
 		},
 
 		setExternalVariable: {
-		argNames: [ "name", "value" ],
+			argNames: ["name", "value"],
 		},
 
 		setProperty: {
-		argNames: [ "name", "value" ],
+			argNames: ["name", "value"],
 		},
 
 	},
 
 	"SP.WorkflowServices.WorkflowSubscription.Collection": {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		sort: {
 		},
 
 	},
 
 	"SP.WorkflowServices.WorkflowSubscriptionService": {
-		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deleteSubscription: {
-		argNames: [ "subscriptionId" ],
+			argNames: ["subscriptionId"],
 		},
 
 		enumerateSubscriptions: {
 		},
 
 		enumerateSubscriptionsByDefinition: {
-		argNames: [ "definitionId" ],
+			argNames: ["definitionId"],
 		},
 
 		enumerateSubscriptionsByEventSource: {
-		argNames: [ "eventSourceId" ],
+			argNames: ["eventSourceId"],
 		},
 
 		enumerateSubscriptionsByList: {
-		argNames: [ "listId" ],
+			argNames: ["listId"],
 		},
 
 		enumerateSubscriptionsByListAndParentContentType: {
-		argNames: [ "listId", "parentContentTypeId", "includeNoContentTypeSpecified" ],
+			argNames: ["listId", "parentContentTypeId", "includeNoContentTypeSpecified"],
 		},
 
 		enumerateSubscriptionsByListWithContentType: {
-		argNames: [ "listId", "includeContentTypeSpecified" ],
+			argNames: ["listId", "includeContentTypeSpecified"],
 		},
 
 		getSubscription: {
-		argNames: [ "subscriptionId" ],
+			argNames: ["subscriptionId"],
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		registerInterestInHostWebList: {
-		argNames: [ "listId", "eventName" ],
+			argNames: ["listId", "eventName"],
 		},
 
 		registerInterestInList: {
-		argNames: [ "listId", "eventName" ],
+			argNames: ["listId", "eventName"],
 		},
 
 		unregisterInterestInHostWebList: {
-		argNames: [ "listId", "eventName" ],
+			argNames: ["listId", "eventName"],
 		},
 
 		unregisterInterestInList: {
-		argNames: [ "listId", "eventName" ],
+			argNames: ["listId", "eventName"],
 		},
 
 	},

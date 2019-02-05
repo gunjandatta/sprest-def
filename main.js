@@ -803,22 +803,27 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         let mapperDef = [];
         for (let i = 0; i < mapperKeys.length; i++) {
             let mapperKey = mapperKeys[i];
+            let mapperMethods = [];
 
             // Add the lib
             mapperDef.push('\t"' + mapperKey + '": {');
             mapperContent.push('\t"' + mapperKey + '": {');
 
             // See if this is not a collection
-            if (/\.Collection$/.test(mapperKey) == false) {
+            let isCollection = /\.Collection$/.test(mapperKey);
+            if (!isCollection) {
                 // Add the optional properties
                 mapperDef.push('\t\tproperties?: Array<string>;');
             }
 
             // See if this type is queryable
-            if (hasCollections[mapperKey]) {
+            if (hasCollections[mapperKey] || isCollection) {
                 // Add the query method
-                mapperDef.push('\t\tquery: IMapperMethod & { argNames: ["oData"] },')
-                mapperContent.push('\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },');
+                mapperMethods.push({
+                    name: "query",
+                    def: '\t\tquery: IMapperMethod & { argNames: ["oData"] },\n',
+                    method: '\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },\n'
+                });
             }
 
             // Parse the methods
@@ -842,17 +847,33 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 }
 
                 // Add the method
-                mapperDef.push([
-                    '\t\t' + methodName + ': IMapperMethod & {\n',
-                    argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],\n' : '',
-                    '\t\t},\n'
-                ].join(''));
-                mapperContent.push([
-                    '\t\t' + methodName + ': {\n',
-                    argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],\n' : '',
-                    methodName == "delete" ? '\t\trequestType: RequestType.Delete\n' : '',
-                    '\t\t},\n'
-                ].join(''));
+                mapperMethods.push({
+                    name: methodName,
+                    def: [
+                        '\t\t' + methodName + ': IMapperMethod & {\n',
+                        argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],\n' : '',
+                        '\t\t},\n'
+                    ].join(''),
+                    method: [
+                        '\t\t' + methodName + ': {\n',
+                        argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],\n' : '',
+                        methodName == "delete" ? '\t\trequestType: RequestType.Delete\n' : '',
+                        '\t\t},\n'
+                    ].join('')
+                });
+            }
+
+            // Sort the methods
+            mapperMethods = mapperMethods.sort((a, b) => {
+                if (a.name < b.name) { return -1; }
+                if (a.name > b.name) { return 1; }
+                return 0;
+            });
+
+            // Parse the methods
+            for (let i = 0; i < mapperMethods.length; i++) {
+                mapperDef.push(mapperMethods[i].def);
+                mapperContent.push(mapperMethods[i].method);
             }
 
             // Add the closing tag

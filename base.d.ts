@@ -123,6 +123,7 @@ export interface IMapperMethod {
     data?: any;
     inheritMetadataType?: boolean;
     metadataType?: any;
+    name?: string;
     replaceEndpointFl?: boolean;
     requestType?: number;
     requestMethod?: string;
