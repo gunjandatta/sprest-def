@@ -5933,10 +5933,6 @@ export interface IMapper {
 
 	"SP.User": {
 		properties?: Array<string>;
-		add: IMapperMethod & {
-		argNames: [ "properties" ],
-		},
-
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		update: IMapperMethod & {
@@ -5947,6 +5943,10 @@ export interface IMapper {
 
 	"SP.User.Collection": {
 		properties?: Array<string>;
+		add: IMapperMethod & {
+		argNames: [ "properties" ],
+		},
+
 		getByEmail: IMapperMethod & {
 		argNames: [ "emailAddress" ],
 		},

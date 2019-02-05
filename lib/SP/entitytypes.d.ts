@@ -626,6 +626,7 @@ export interface UserCollectionMethods {
 	getByLoginName(loginName?: string): IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	removeById(id?: number): IBaseExecution<any>;
 	removeByLoginName(loginName?: string): IBaseExecution<any>;
+	add(properties?: SP.UserCreationInformation): IBaseExecution<any>;
 }
 
 /*********************************************
@@ -641,7 +642,6 @@ export interface UserOData extends IBaseResult, UserProps, UserMethods {
 **********************************************/
 export interface UserMethods {
 	// update(): IBaseExecution<any>;
-	add(properties?: SP.UserCreationInformation): IBaseExecution<any>;
 	update(properties?: any): IBaseExecution<any>;
 }
 

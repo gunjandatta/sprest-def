@@ -332,14 +332,18 @@ module.exports = {
     // User
     "SP.User": [
         {
-            name: "add",
-            returnType: "any",
-            params: [{ $: { Name: "properties", Type: "SP.UserCreationInformation" } }]
-        },
-        {
             name: "update",
             returnType: "any",
             params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
+
+    // Users
+    "Collection(SP.User)": [
+        {
+            name: "add",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "SP.UserCreationInformation" } }]
         }
     ],
 

@@ -5700,10 +5700,6 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.User": {
-		add: {
-		argNames: [ "properties" ],
-		},
-
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		update: {
@@ -5713,6 +5709,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.User.Collection": {
+		add: {
+		argNames: [ "properties" ],
+		},
+
 		getByEmail: {
 		argNames: [ "emailAddress" ],
 		},
