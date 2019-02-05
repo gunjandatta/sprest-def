@@ -800,24 +800,25 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
         // Parse the mapper names
         let mapperContent = [];
+        let mapperDef = [];
         for (let i = 0; i < mapperKeys.length; i++) {
             let mapperKey = mapperKeys[i];
-            let methods = [];
 
-            // Add the header
-            methods.push('\/* ' + mapperKey + ' *\/');
-            methods.push('export interface ' + mapperKey.replace(/\./g, '_') + ' {');
+            // Add the lib
+            mapperDef.push('\t"' + mapperKey + '": {');
+            mapperContent.push('\t"' + mapperKey + '": {');
 
             // See if this is not a collection
             if (/\.Collection$/.test(mapperKey) == false) {
                 // Add the optional properties
-                methods.push('\tproperties?: Array<string>;');
+                mapperDef.push('\t\tproperties?: Array<string>;');
             }
 
             // See if this type is queryable
             if (hasCollections[mapperKey]) {
                 // Add the query method
-                methods.push('\tquery: IMapper & { argNames: ["oData"] },')
+                mapperDef.push('\t\tquery: IMapperMethod & { argNames: ["oData"] },')
+                mapperContent.push('\t\tquery: { argNames: ["oData"], RequestType: RequestType.OData },');
             }
 
             // Parse the methods
@@ -833,23 +834,46 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                     argNames.push(param.$.Name);
                 }
 
+                // Validate the method name
+                let methodName = methodInfo.name;
+                if (methodName == "deleteObject") {
+                    // Update the method
+                    methodName = "delete";
+                }
+
                 // Add the method
-                methods.push([
-                    '\t' + methodInfo.name + ': IMapper & {',
-                    argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],' : '',
-                    '\t},'
-                ].join('\n'));
+                mapperDef.push([
+                    '\t\t' + methodName + ': IMapperMethod & {\n',
+                    argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],\n' : '',
+                    '\t\t},\n'
+                ].join(''));
+                mapperContent.push([
+                    '\t\t' + methodName + ': {\n',
+                    argNames.length > 0 ? '\t\targNames: [ "' + argNames.join('", "') + '" ],\n' : '',
+                    methodName == "delete" ? '\t\trequestType: RequestType.Delete\n' : '',
+                    '\t\t},\n'
+                ].join(''));
             }
 
             // Add the closing tag
-            methods.push('};\n');
-
-            // Generate the interface
-            mapperContent.push(methods.join('\n'));
+            mapperDef.push('\t}\n');
+            mapperContent.push('\t},\n');
         }
 
-        // Create the index file
-        fs.appendFileSync('lib/mapper.ts', 'import { IMapper } from "./base";\n\n' + mapperContent.join('\n'));
+        // Create the mapper files
+        fs.appendFileSync('lib/mapper.d.ts', [
+            'import { IMapperMethod } from "./base";\n\n',
+            '/** Mapper */',
+            'export interface IMapper {',
+            mapperDef.join('\n'),
+            '}'
+        ].join('\n'));
+        fs.appendFileSync('lib/mapper.ts', [
+            'import { IMapper } from "./mapper.d";',
+            'export const Mapper: IMapper = {',
+            mapperContent.join('\n'),
+            '};'
+        ].join('\n'));
 
         // Log
         console.log("Library generated in './lib'");

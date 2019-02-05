@@ -117,9 +117,9 @@ export interface IBaseResults<Type = any> extends IBaseResult {
 export interface IBaseCollection<Type = any, Result = Type, Methods = void> extends IBaseQuery<IBaseResults<Type> & Methods, IBaseResults<Result> & Methods> { }
 
 /**
- * Mapper
+ * Mapper Method
  */
-export interface IMapper {
+export interface IMapperMethod {
     data?: any;
     inheritMetadataType?: boolean;
     metadataType?: any;
