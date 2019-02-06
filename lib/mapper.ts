@@ -1,4 +1,6 @@
 import { IMapper } from "./mapper.d";
+declare var RequestType;
+
 export const Mapper: IMapper = {
 	"MS.FileServices.File": {
 		copyTo: {
@@ -998,7 +1000,7 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor": {
 		add: {
-		argNames: [ "Content", "Overwrite", "Url" ],
+		argNames: [ "Url", "Overwrite", "Content" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1007,7 +1009,7 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor": {
 		add: {
-		argNames: [ "Content", "Overwrite", "Url" ],
+		argNames: [ "Url", "Overwrite", "Content" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },

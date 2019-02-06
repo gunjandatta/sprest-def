@@ -70,7 +70,8 @@ export interface SiteCollectionCorporateCatalogAccessorOData extends IBaseResult
 * SiteCollectionCorporateCatalogAccessorMethods
 **********************************************/
 export interface SiteCollectionCorporateCatalogAccessorMethods {
-	add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	// add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	add(Url?: string, Overwrite?: boolean, Content?: any): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 
 /*********************************************
@@ -233,7 +234,8 @@ export interface TenantCorporateCatalogAccessorOData extends IBaseResult, Tenant
 * TenantCorporateCatalogAccessorMethods
 **********************************************/
 export interface TenantCorporateCatalogAccessorMethods {
-	add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	// add(Content?: any, Overwrite?: boolean, Url?: string): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	add(Url?: string, Overwrite?: boolean, Content?: any): IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 
 /*********************************************

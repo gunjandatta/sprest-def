@@ -1059,7 +1059,7 @@ export interface IMapper {
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor": {
 		properties?: Array<string>;
 		add: IMapperMethod & {
-		argNames: [ "Content", "Overwrite", "Url" ],
+		argNames: [ "Url", "Overwrite", "Content" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -1069,7 +1069,7 @@ export interface IMapper {
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor": {
 		properties?: Array<string>;
 		add: IMapperMethod & {
-		argNames: [ "Content", "Overwrite", "Url" ],
+		argNames: [ "Url", "Overwrite", "Content" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },

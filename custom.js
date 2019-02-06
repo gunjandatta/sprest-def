@@ -329,6 +329,30 @@ module.exports = {
         }
     ],
 
+    // Tenant App
+    "Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor": [
+        {
+            name: "add",
+            returnType: "SP.File",
+            params: [
+                { $: { Name: "Url", Type: "string" } },
+                { $: { Name: "Overwrite", Type: "boolean" } },
+                { $: { Name: "Content", Type: "any" } }
+            ]
+        }
+    ],
+    "Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor": [
+        {
+            name: "add",
+            returnType: "SP.File",
+            params: [
+                { $: { Name: "Url", Type: "string" } },
+                { $: { Name: "Overwrite", Type: "boolean" } },
+                { $: { Name: "Content", Type: "any" } }
+            ]
+        }
+    ],
+
     // User
     "SP.User": [
         {

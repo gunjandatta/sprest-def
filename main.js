@@ -887,6 +887,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         ].join('\n'));
         fs.appendFileSync('lib/mapper.ts', [
             'import { IMapper } from "./mapper.d";',
+            'declare var RequestType;\n',
             'export const Mapper: IMapper = {',
             mapperContent.join('\n'),
             '};'
