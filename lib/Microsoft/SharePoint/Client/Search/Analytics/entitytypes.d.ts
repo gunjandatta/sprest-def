@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../../";
+import { Base } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
 * ISignalStore
 **********************************************/
-export interface ISignalStore extends SignalStoreCollections, SignalStoreMethods, IBaseQuery<ISignalStoreQuery> {
+export interface ISignalStore extends SignalStoreCollections, SignalStoreMethods, Base.IBaseQuery<ISignalStoreQuery> {
 
 }
 
 /*********************************************
 * ISignalStoreCollection
 **********************************************/
-export interface ISignalStoreCollection extends IBaseResults<SignalStore> {
+export interface ISignalStoreCollection extends Base.IBaseResults<SignalStore> {
 	done?: (resolve: (value?: Array<SignalStore>) => void) => void;
 }
 
 /*********************************************
 * ISignalStoreQueryCollection
 **********************************************/
-export interface ISignalStoreQueryCollection extends IBaseResults<SignalStoreOData> {
+export interface ISignalStoreQueryCollection extends Base.IBaseResults<SignalStoreOData> {
 	done?: (resolve: (value?: Array<SignalStoreOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface ISignalStoreQuery extends SignalStoreOData, SignalStoreMethods 
 /*********************************************
 * SignalStore
 **********************************************/
-export interface SignalStore extends IBaseResult, SignalStoreProps, SignalStoreCollections, SignalStoreMethods {
+export interface SignalStore extends Base.IBaseResult, SignalStoreProps, SignalStoreCollections, SignalStoreMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface SignalStoreCollections extends SignalStorePropMethods {
 /*********************************************
 * SignalStoreOData
 **********************************************/
-export interface SignalStoreOData extends IBaseResult, SignalStoreProps, SignalStoreMethods {
+export interface SignalStoreOData extends Base.IBaseResult, SignalStoreProps, SignalStoreMethods {
 
 }
 
@@ -68,5 +68,5 @@ export interface SignalStoreOData extends IBaseResult, SignalStoreProps, SignalS
 * SignalStoreMethods
 **********************************************/
 export interface SignalStoreMethods {
-	signals(signals?: Array<Microsoft.SharePoint.Client.Search.Analytics.AnalyticsSignal>): IBaseExecution<any>;
+	signals(signals?: Array<Microsoft.SharePoint.Client.Search.Analytics.AnalyticsSignal>): Base.IBaseExecution<any>;
 }

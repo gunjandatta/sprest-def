@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 import { Microsoft } from "../../../";
 
 /*********************************************
 * IHostedAppsManager
 **********************************************/
-export interface IHostedAppsManager extends HostedAppsManagerCollections, HostedAppsManagerMethods, IBaseQuery<IHostedAppsManagerQuery> {
+export interface IHostedAppsManager extends HostedAppsManagerCollections, HostedAppsManagerMethods, Base.IBaseQuery<IHostedAppsManagerQuery> {
 
 }
 
 /*********************************************
 * IHostedAppsManagerCollection
 **********************************************/
-export interface IHostedAppsManagerCollection extends IBaseResults<HostedAppsManager> {
+export interface IHostedAppsManagerCollection extends Base.IBaseResults<HostedAppsManager> {
 	done?: (resolve: (value?: Array<HostedAppsManager>) => void) => void;
 }
 
 /*********************************************
 * IHostedAppsManagerQueryCollection
 **********************************************/
-export interface IHostedAppsManagerQueryCollection extends IBaseResults<HostedAppsManagerOData> {
+export interface IHostedAppsManagerQueryCollection extends Base.IBaseResults<HostedAppsManagerOData> {
 	done?: (resolve: (value?: Array<HostedAppsManagerOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface IHostedAppsManagerQuery extends HostedAppsManagerOData, HostedA
 /*********************************************
 * HostedAppsManager
 **********************************************/
-export interface HostedAppsManager extends IBaseResult, HostedAppsManagerProps, HostedAppsManagerCollections, HostedAppsManagerMethods {
+export interface HostedAppsManager extends Base.IBaseResult, HostedAppsManagerProps, HostedAppsManagerCollections, HostedAppsManagerMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface HostedAppsManagerCollections extends HostedAppsManagerPropMetho
 /*********************************************
 * HostedAppsManagerOData
 **********************************************/
-export interface HostedAppsManagerOData extends IBaseResult, HostedAppsManagerProps, HostedAppsManagerMethods {
+export interface HostedAppsManagerOData extends Base.IBaseResult, HostedAppsManagerProps, HostedAppsManagerMethods {
 
 }
 
@@ -68,28 +68,28 @@ export interface HostedAppsManagerOData extends IBaseResult, HostedAppsManagerPr
 * HostedAppsManagerMethods
 **********************************************/
 export interface HostedAppsManagerMethods {
-	add(webPartDataAsJson?: string, hostType?: string): IBaseExecution<number>;
-	getById(id?: number): IBaseExecution<Microsoft.SharePoint.ClientSideComponent.HostedApp>;
+	add(webPartDataAsJson?: string, hostType?: string): Base.IBaseExecution<number>;
+	getById(id?: number): Base.IBaseExecution<Microsoft.SharePoint.ClientSideComponent.HostedApp>;
 }
 
 /*********************************************
 * IHostedApp
 **********************************************/
-export interface IHostedApp extends HostedAppCollections, HostedAppMethods, IBaseQuery<IHostedAppQuery> {
+export interface IHostedApp extends HostedAppCollections, HostedAppMethods, Base.IBaseQuery<IHostedAppQuery> {
 
 }
 
 /*********************************************
 * IHostedAppCollection
 **********************************************/
-export interface IHostedAppCollection extends IBaseResults<HostedApp> {
+export interface IHostedAppCollection extends Base.IBaseResults<HostedApp> {
 	done?: (resolve: (value?: Array<HostedApp>) => void) => void;
 }
 
 /*********************************************
 * IHostedAppQueryCollection
 **********************************************/
-export interface IHostedAppQueryCollection extends IBaseResults<HostedAppOData> {
+export interface IHostedAppQueryCollection extends Base.IBaseResults<HostedAppOData> {
 	done?: (resolve: (value?: Array<HostedAppOData>) => void) => void;
 }
 
@@ -103,7 +103,7 @@ export interface IHostedAppQuery extends HostedAppOData, HostedAppMethods {
 /*********************************************
 * HostedApp
 **********************************************/
-export interface HostedApp extends IBaseResult, HostedAppProps, HostedAppCollections, HostedAppMethods {
+export interface HostedApp extends Base.IBaseResult, HostedAppProps, HostedAppCollections, HostedAppMethods {
 
 }
 
@@ -131,7 +131,7 @@ export interface HostedAppCollections extends HostedAppPropMethods {
 /*********************************************
 * HostedAppOData
 **********************************************/
-export interface HostedAppOData extends IBaseResult, HostedAppProps, HostedAppMethods {
+export interface HostedAppOData extends Base.IBaseResult, HostedAppProps, HostedAppMethods {
 
 }
 
@@ -139,8 +139,8 @@ export interface HostedAppOData extends IBaseResult, HostedAppProps, HostedAppMe
 * HostedAppMethods
 **********************************************/
 export interface HostedAppMethods {
-	delete(): IBaseExecution<any>;
-	updateWebPartData(webPartDataAsJson?: string): IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
+	updateWebPartData(webPartDataAsJson?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

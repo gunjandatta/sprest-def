@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 
 /*********************************************
 * IExternalSubscriptionStore
 **********************************************/
-export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods, IBaseQuery<IExternalSubscriptionStoreQuery> {
+export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods, Base.IBaseQuery<IExternalSubscriptionStoreQuery> {
 
 }
 
 /*********************************************
 * IExternalSubscriptionStoreCollection
 **********************************************/
-export interface IExternalSubscriptionStoreCollection extends IBaseResults<ExternalSubscriptionStore> {
+export interface IExternalSubscriptionStoreCollection extends Base.IBaseResults<ExternalSubscriptionStore> {
 	done?: (resolve: (value?: Array<ExternalSubscriptionStore>) => void) => void;
 }
 
 /*********************************************
 * IExternalSubscriptionStoreQueryCollection
 **********************************************/
-export interface IExternalSubscriptionStoreQueryCollection extends IBaseResults<ExternalSubscriptionStoreOData> {
+export interface IExternalSubscriptionStoreQueryCollection extends Base.IBaseResults<ExternalSubscriptionStoreOData> {
 	done?: (resolve: (value?: Array<ExternalSubscriptionStoreOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IExternalSubscriptionStoreQuery extends ExternalSubscriptionSto
 /*********************************************
 * ExternalSubscriptionStore
 **********************************************/
-export interface ExternalSubscriptionStore extends IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods {
+export interface ExternalSubscriptionStore extends Base.IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface ExternalSubscriptionStoreCollections extends ExternalSubscripti
 /*********************************************
 * ExternalSubscriptionStoreOData
 **********************************************/
-export interface ExternalSubscriptionStoreOData extends IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreMethods {
+export interface ExternalSubscriptionStoreOData extends Base.IBaseResult, ExternalSubscriptionStoreProps, ExternalSubscriptionStoreMethods {
 
 }
 
@@ -67,5 +67,5 @@ export interface ExternalSubscriptionStoreOData extends IBaseResult, ExternalSub
 * ExternalSubscriptionStoreMethods
 **********************************************/
 export interface ExternalSubscriptionStoreMethods {
-	indexStore(): IBaseExecution<any>;
+	indexStore(): Base.IBaseExecution<any>;
 }

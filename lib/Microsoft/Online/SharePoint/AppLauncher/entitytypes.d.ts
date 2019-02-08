@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../";
+import { Base } from "../../../../";
 
 /*********************************************
 * IAppLauncher
 **********************************************/
-export interface IAppLauncher extends AppLauncherCollections, AppLauncherMethods, IBaseQuery<IAppLauncherQuery> {
+export interface IAppLauncher extends AppLauncherCollections, AppLauncherMethods, Base.IBaseQuery<IAppLauncherQuery> {
 
 }
 
 /*********************************************
 * IAppLauncherCollection
 **********************************************/
-export interface IAppLauncherCollection extends IBaseResults<AppLauncher> {
+export interface IAppLauncherCollection extends Base.IBaseResults<AppLauncher> {
 	done?: (resolve: (value?: Array<AppLauncher>) => void) => void;
 }
 
 /*********************************************
 * IAppLauncherQueryCollection
 **********************************************/
-export interface IAppLauncherQueryCollection extends IBaseResults<AppLauncherOData> {
+export interface IAppLauncherQueryCollection extends Base.IBaseResults<AppLauncherOData> {
 	done?: (resolve: (value?: Array<AppLauncherOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IAppLauncherQuery extends AppLauncherOData, AppLauncherMethods 
 /*********************************************
 * AppLauncher
 **********************************************/
-export interface AppLauncher extends IBaseResult, AppLauncherProps, AppLauncherCollections, AppLauncherMethods {
+export interface AppLauncher extends Base.IBaseResult, AppLauncherProps, AppLauncherCollections, AppLauncherMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface AppLauncherCollections extends AppLauncherPropMethods {
 /*********************************************
 * AppLauncherOData
 **********************************************/
-export interface AppLauncherOData extends IBaseResult, AppLauncherProps, AppLauncherMethods {
+export interface AppLauncherOData extends Base.IBaseResult, AppLauncherProps, AppLauncherMethods {
 
 }
 
@@ -67,5 +67,5 @@ export interface AppLauncherOData extends IBaseResult, AppLauncherProps, AppLaun
 * AppLauncherMethods
 **********************************************/
 export interface AppLauncherMethods {
-	getData(suiteVersion?: number, isMobileRequest?: boolean, locale?: string, onPremVer?: string): IBaseExecution<string>;
+	getData(suiteVersion?: number, isMobileRequest?: boolean, locale?: string, onPremVer?: string): Base.IBaseExecution<string>;
 }

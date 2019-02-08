@@ -1,4 +1,4 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
@@ -109,21 +109,21 @@ export interface SpotlightResultCollections {
 /*********************************************
 * IThemeManager
 **********************************************/
-export interface IThemeManager extends ThemeManagerCollections, ThemeManagerMethods, IBaseQuery<IThemeManagerQuery> {
+export interface IThemeManager extends ThemeManagerCollections, ThemeManagerMethods, Base.IBaseQuery<IThemeManagerQuery> {
 
 }
 
 /*********************************************
 * IThemeManagerCollection
 **********************************************/
-export interface IThemeManagerCollection extends IBaseResults<ThemeManager> {
+export interface IThemeManagerCollection extends Base.IBaseResults<ThemeManager> {
 	done?: (resolve: (value?: Array<ThemeManager>) => void) => void;
 }
 
 /*********************************************
 * IThemeManagerQueryCollection
 **********************************************/
-export interface IThemeManagerQueryCollection extends IBaseResults<ThemeManagerOData> {
+export interface IThemeManagerQueryCollection extends Base.IBaseResults<ThemeManagerOData> {
 	done?: (resolve: (value?: Array<ThemeManagerOData>) => void) => void;
 }
 
@@ -137,7 +137,7 @@ export interface IThemeManagerQuery extends ThemeManagerOData, ThemeManagerMetho
 /*********************************************
 * ThemeManager
 **********************************************/
-export interface ThemeManager extends IBaseResult, ThemeManagerProps, ThemeManagerCollections, ThemeManagerMethods {
+export interface ThemeManager extends Base.IBaseResult, ThemeManagerProps, ThemeManagerCollections, ThemeManagerMethods {
 
 }
 
@@ -152,7 +152,7 @@ export interface ThemeManagerProps {
 * ThemeManagerPropMethods
 **********************************************/
 export interface ThemeManagerPropMethods {
-	ContextThemeManager(): IBaseQuery<SP.Utilities.ThemeManager, SP.Utilities.ThemeManagerOData> & SP.Utilities.ThemeManagerCollections & SP.Utilities.ThemeManagerMethods;
+	ContextThemeManager(): Base.IBaseQuery<SP.Utilities.ThemeManager, SP.Utilities.ThemeManagerOData> & SP.Utilities.ThemeManagerCollections & SP.Utilities.ThemeManagerMethods;
 }
 
 /*********************************************
@@ -165,7 +165,7 @@ export interface ThemeManagerCollections extends ThemeManagerPropMethods {
 /*********************************************
 * ThemeManagerOData
 **********************************************/
-export interface ThemeManagerOData extends IBaseResult, ThemeManagerProps, ThemeManagerMethods {
+export interface ThemeManagerOData extends Base.IBaseResult, ThemeManagerProps, ThemeManagerMethods {
 	ContextThemeManager: SP.Utilities.ThemeManager & SP.Utilities.ThemeManagerCollections;
 }
 
@@ -173,15 +173,15 @@ export interface ThemeManagerOData extends IBaseResult, ThemeManagerProps, Theme
 * ThemeManagerMethods
 **********************************************/
 export interface ThemeManagerMethods {
-	addTenantTheme(name?: string, themeJson?: string): IBaseExecution<boolean>;
-	applyTheme(name?: string, themeJson?: string): IBaseExecution<string>;
-	deleteTenantTheme(name?: string): IBaseExecution<any>;
-	getAvailableThemes(): IBaseCollection<SP.Utilities.JsonTheme>;
-	getHideDefaultThemes(): IBaseExecution<boolean>;
-	getTenantTheme(name?: string): IBaseExecution<SP.Utilities.JsonTheme>;
-	getTenantThemingOptions(): IBaseExecution<SP.Utilities.ThemingOptions>;
-	setHideDefaultThemes(hideDefaultThemes?: boolean): IBaseExecution<boolean>;
-	updateTenantTheme(name?: string, themeJson?: string): IBaseExecution<boolean>;
+	addTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
+	applyTheme(name?: string, themeJson?: string): Base.IBaseExecution<string>;
+	deleteTenantTheme(name?: string): Base.IBaseExecution<any>;
+	getAvailableThemes(): Base.IBaseCollection<SP.Utilities.JsonTheme>;
+	getHideDefaultThemes(): Base.IBaseExecution<boolean>;
+	getTenantTheme(name?: string): Base.IBaseExecution<SP.Utilities.JsonTheme>;
+	getTenantThemingOptions(): Base.IBaseExecution<SP.Utilities.ThemingOptions>;
+	setHideDefaultThemes(hideDefaultThemes?: boolean): Base.IBaseExecution<boolean>;
+	updateTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************

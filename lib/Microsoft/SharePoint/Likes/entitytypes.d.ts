@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 import { Microsoft } from "../../../";
 
 /*********************************************
 * IlikedByInformation
 **********************************************/
-export interface IlikedByInformation extends likedByInformationCollections, likedByInformationMethods, IBaseQuery<IlikedByInformationQuery> {
+export interface IlikedByInformation extends likedByInformationCollections, likedByInformationMethods, Base.IBaseQuery<IlikedByInformationQuery> {
 
 }
 
 /*********************************************
 * IlikedByInformationCollection
 **********************************************/
-export interface IlikedByInformationCollection extends IBaseResults<likedByInformation> {
+export interface IlikedByInformationCollection extends Base.IBaseResults<likedByInformation> {
 	done?: (resolve: (value?: Array<likedByInformation>) => void) => void;
 }
 
 /*********************************************
 * IlikedByInformationQueryCollection
 **********************************************/
-export interface IlikedByInformationQueryCollection extends IBaseResults<likedByInformationOData> {
+export interface IlikedByInformationQueryCollection extends Base.IBaseResults<likedByInformationOData> {
 	done?: (resolve: (value?: Array<likedByInformationOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface IlikedByInformationQuery extends likedByInformationOData, liked
 /*********************************************
 * likedByInformation
 **********************************************/
-export interface likedByInformation extends IBaseResult, likedByInformationProps, likedByInformationCollections, likedByInformationMethods {
+export interface likedByInformation extends Base.IBaseResult, likedByInformationProps, likedByInformationCollections, likedByInformationMethods {
 
 }
 
@@ -55,15 +55,15 @@ export interface likedByInformationPropMethods {
 * likedByInformationCollections
 **********************************************/
 export interface likedByInformationCollections extends likedByInformationPropMethods {
-	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
-	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
+	likedBy(): Base.IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
 }
 
 /*********************************************
 * likedByInformationOData
 **********************************************/
-export interface likedByInformationOData extends IBaseResult, likedByInformationProps, likedByInformationMethods {
-	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
+export interface likedByInformationOData extends Base.IBaseResult, likedByInformationProps, likedByInformationMethods {
+	likedBy: Base.IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
 }
 
 /*********************************************

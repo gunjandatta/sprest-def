@@ -1,4 +1,4 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { MS } from "../../";
 
 /*********************************************
@@ -27,28 +27,28 @@ export interface FileSystemItemCollections extends FileSystemItemCollectionMetho
 * FileSystemItemCollectionMethods
 **********************************************/
 export interface FileSystemItemCollectionMethods {
-	add(name?: string, overwrite?: boolean, content?: any): IBaseExecution<MS.FileServices.File>;
-	getById(id?: string): IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
+	add(name?: string, overwrite?: boolean, content?: any): Base.IBaseExecution<MS.FileServices.File>;
+	getById(id?: string): Base.IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
 
 /*********************************************
 * IFile
 **********************************************/
-export interface IFile extends FileCollections, FileMethods, IBaseQuery<IFileQuery> {
+export interface IFile extends FileCollections, FileMethods, Base.IBaseQuery<IFileQuery> {
 
 }
 
 /*********************************************
 * IFileCollection
 **********************************************/
-export interface IFileCollection extends IBaseResults<File> {
+export interface IFileCollection extends Base.IBaseResults<File> {
 	done?: (resolve: (value?: Array<File>) => void) => void;
 }
 
 /*********************************************
 * IFileQueryCollection
 **********************************************/
-export interface IFileQueryCollection extends IBaseResults<FileOData> {
+export interface IFileQueryCollection extends Base.IBaseResults<FileOData> {
 	done?: (resolve: (value?: Array<FileOData>) => void) => void;
 }
 
@@ -62,7 +62,7 @@ export interface IFileQuery extends FileOData, FileMethods {
 /*********************************************
 * File
 **********************************************/
-export interface File extends MS.FileServices.FileSystemItem, IBaseResult, FileProps, FileCollections, FileMethods {
+export interface File extends MS.FileServices.FileSystemItem, Base.IBaseResult, FileProps, FileCollections, FileMethods {
 
 }
 
@@ -90,7 +90,7 @@ export interface FileCollections extends FilePropMethods {
 /*********************************************
 * FileOData
 **********************************************/
-export interface FileOData extends IBaseResult, FileProps, FileMethods {
+export interface FileOData extends Base.IBaseResult, FileProps, FileMethods {
 
 }
 
@@ -98,11 +98,11 @@ export interface FileOData extends IBaseResult, FileProps, FileMethods {
 * FileMethods
 **********************************************/
 export interface FileMethods {
-	copyTo(target?: string, overwrite?: boolean): IBaseExecution<any>;
-	delete(): IBaseExecution<any>;
-	download(): IBaseExecution<any>;
-	moveTo(target?: string, overwrite?: boolean): IBaseExecution<any>;
-	upload(stream?: any): IBaseExecution<any>;
+	copyTo(target?: string, overwrite?: boolean): Base.IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
+	download(): Base.IBaseExecution<any>;
+	moveTo(target?: string, overwrite?: boolean): Base.IBaseExecution<any>;
+	upload(stream?: any): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -122,21 +122,21 @@ export interface FileServiceCollections {
 /*********************************************
 * IFolder
 **********************************************/
-export interface IFolder extends FolderCollections, FolderMethods, IBaseQuery<IFolderQuery> {
+export interface IFolder extends FolderCollections, FolderMethods, Base.IBaseQuery<IFolderQuery> {
 
 }
 
 /*********************************************
 * IFolderCollection
 **********************************************/
-export interface IFolderCollection extends IBaseResults<Folder> {
+export interface IFolderCollection extends Base.IBaseResults<Folder> {
 	done?: (resolve: (value?: Array<Folder>) => void) => void;
 }
 
 /*********************************************
 * IFolderQueryCollection
 **********************************************/
-export interface IFolderQueryCollection extends IBaseResults<FolderOData> {
+export interface IFolderQueryCollection extends Base.IBaseResults<FolderOData> {
 	done?: (resolve: (value?: Array<FolderOData>) => void) => void;
 }
 
@@ -150,7 +150,7 @@ export interface IFolderQuery extends FolderOData, FolderMethods {
 /*********************************************
 * Folder
 **********************************************/
-export interface Folder extends MS.FileServices.FileSystemItem, IBaseResult, FolderProps, FolderCollections, FolderMethods {
+export interface Folder extends MS.FileServices.FileSystemItem, Base.IBaseResult, FolderProps, FolderCollections, FolderMethods {
 
 }
 
@@ -172,23 +172,23 @@ export interface FolderPropMethods {
 * FolderCollections
 **********************************************/
 export interface FolderCollections extends FolderPropMethods {
-	Children(): IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
-	Children(id: string | number): IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
+	Children(): Base.IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
+	Children(id: string | number): Base.IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
 
 /*********************************************
 * FolderOData
 **********************************************/
-export interface FolderOData extends IBaseResult, FolderProps, FolderMethods {
-	Children: IBaseResults<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
+export interface FolderOData extends Base.IBaseResult, FolderProps, FolderMethods {
+	Children: Base.IBaseResults<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
 }
 
 /*********************************************
 * FolderMethods
 **********************************************/
 export interface FolderMethods {
-	delete(): IBaseExecution<any>;
-	moveTo(target?: string): IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
+	moveTo(target?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

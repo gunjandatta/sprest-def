@@ -248,13 +248,13 @@ module.exports = {
         {
             name: "getItems",
             overwrite: true,
-            returnType: "IBaseCollection<SP.ListItem, SP.ListItemOData, IBaseExecution & SP.ListItemCollectionMethods> & IBaseExecution & SP.ListItemCollectionMethods",
+            returnType: "Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods",
             params: [{ $: { Name: "viewXML", Type: "string" } }]
         },
         {
             name: "getItemsByQuery",
             overwrite: true,
-            returnType: "IBaseCollection<SP.ListItem, SP.ListItemOData, IBaseExecution & SP.ListItemCollectionMethods> & IBaseExecution & SP.ListItemCollectionMethods",
+            returnType: "Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods",
             params: [{ $: { Name: "camlQuery", Type: "string" } }]
         },
         {

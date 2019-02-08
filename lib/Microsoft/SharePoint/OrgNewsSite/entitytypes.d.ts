@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 import { Microsoft } from "../../../";
 
 /*********************************************
 * IOrgNewsSiteApi
 **********************************************/
-export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections, OrgNewsSiteApiMethods, IBaseQuery<IOrgNewsSiteApiQuery> {
+export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections, OrgNewsSiteApiMethods, Base.IBaseQuery<IOrgNewsSiteApiQuery> {
 
 }
 
 /*********************************************
 * IOrgNewsSiteApiCollection
 **********************************************/
-export interface IOrgNewsSiteApiCollection extends IBaseResults<OrgNewsSiteApi> {
+export interface IOrgNewsSiteApiCollection extends Base.IBaseResults<OrgNewsSiteApi> {
 	done?: (resolve: (value?: Array<OrgNewsSiteApi>) => void) => void;
 }
 
 /*********************************************
 * IOrgNewsSiteApiQueryCollection
 **********************************************/
-export interface IOrgNewsSiteApiQueryCollection extends IBaseResults<OrgNewsSiteApiOData> {
+export interface IOrgNewsSiteApiQueryCollection extends Base.IBaseResults<OrgNewsSiteApiOData> {
 	done?: (resolve: (value?: Array<OrgNewsSiteApiOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface IOrgNewsSiteApiQuery extends OrgNewsSiteApiOData, OrgNewsSiteAp
 /*********************************************
 * OrgNewsSiteApi
 **********************************************/
-export interface OrgNewsSiteApi extends IBaseResult, OrgNewsSiteApiProps, OrgNewsSiteApiCollections, OrgNewsSiteApiMethods {
+export interface OrgNewsSiteApi extends Base.IBaseResult, OrgNewsSiteApiProps, OrgNewsSiteApiCollections, OrgNewsSiteApiMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface OrgNewsSiteApiCollections extends OrgNewsSiteApiPropMethods {
 /*********************************************
 * OrgNewsSiteApiOData
 **********************************************/
-export interface OrgNewsSiteApiOData extends IBaseResult, OrgNewsSiteApiProps, OrgNewsSiteApiMethods {
+export interface OrgNewsSiteApiOData extends Base.IBaseResult, OrgNewsSiteApiProps, OrgNewsSiteApiMethods {
 
 }
 
@@ -68,5 +68,5 @@ export interface OrgNewsSiteApiOData extends IBaseResult, OrgNewsSiteApiProps, O
 * OrgNewsSiteApiMethods
 **********************************************/
 export interface OrgNewsSiteApiMethods {
-	details(): IBaseExecution<Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteInfo>;
+	details(): Base.IBaseExecution<Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteInfo>;
 }

@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 
 /*********************************************
 * IAppCollection
 **********************************************/
-export interface IAppCollection extends AppCollectionCollections, AppCollectionMethods, IBaseQuery<IAppCollectionQuery> {
+export interface IAppCollection extends AppCollectionCollections, AppCollectionMethods, Base.IBaseQuery<IAppCollectionQuery> {
 
 }
 
 /*********************************************
 * IAppCollectionCollection
 **********************************************/
-export interface IAppCollectionCollection extends IBaseResults<AppCollection> {
+export interface IAppCollectionCollection extends Base.IBaseResults<AppCollection> {
 	done?: (resolve: (value?: Array<AppCollection>) => void) => void;
 }
 
 /*********************************************
 * IAppCollectionQueryCollection
 **********************************************/
-export interface IAppCollectionQueryCollection extends IBaseResults<AppCollectionOData> {
+export interface IAppCollectionQueryCollection extends Base.IBaseResults<AppCollectionOData> {
 	done?: (resolve: (value?: Array<AppCollectionOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IAppCollectionQuery extends AppCollectionOData, AppCollectionMe
 /*********************************************
 * AppCollection
 **********************************************/
-export interface AppCollection extends IBaseResult, AppCollectionProps, AppCollectionCollections, AppCollectionMethods {
+export interface AppCollection extends Base.IBaseResult, AppCollectionProps, AppCollectionCollections, AppCollectionMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface AppCollectionCollections extends AppCollectionPropMethods {
 /*********************************************
 * AppCollectionOData
 **********************************************/
-export interface AppCollectionOData extends IBaseResult, AppCollectionProps, AppCollectionMethods {
+export interface AppCollectionOData extends Base.IBaseResult, AppCollectionProps, AppCollectionMethods {
 
 }
 
@@ -67,6 +67,6 @@ export interface AppCollectionOData extends IBaseResult, AppCollectionProps, App
 * AppCollectionMethods
 **********************************************/
 export interface AppCollectionMethods {
-	getAppsFromStore(addInType?: string, queryString?: string): IBaseExecution<string>;
-	getByType(type?: string): IBaseExecution<string>;
+	getAppsFromStore(addInType?: string, queryString?: string): Base.IBaseExecution<string>;
+	getByType(type?: string): Base.IBaseExecution<string>;
 }

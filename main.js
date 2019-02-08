@@ -144,19 +144,19 @@ function generateBaseCollection(methodType, hasCollections, hasCollectionMethods
         // See if methods exist
         if (hasCollectionMethods[methodType]) {
             // Generate the interface
-            return 'IBaseCollection<' + methodType + ', ' + methodType + 'OData, IBaseExecution & ' + methodType + 'CollectionMethods> & IBaseExecution & ' + methodType + 'CollectionMethods';
+            return 'Base.IBaseCollection<' + methodType + ', ' + methodType + 'OData, Base.IBaseExecution & ' + methodType + 'CollectionMethods> & Base.IBaseExecution & ' + methodType + 'CollectionMethods';
         } else {
             // Generate the interface
-            return 'IBaseCollection<' + methodType + ', ' + methodType + 'OData>';
+            return 'Base.IBaseCollection<' + methodType + ', ' + methodType + 'OData>';
         }
     } else {
         // See if methods exist
         if (hasCollectionMethods[methodType]) {
             // Generate the interface
-            return 'IBaseCollection<' + methodType + '> & ' + methodType + 'CollectionMethods';
+            return 'Base.IBaseCollection<' + methodType + '> & ' + methodType + 'CollectionMethods';
         } else {
             // Generate the interface
-            return 'IBaseCollection<' + methodType + '>';
+            return 'Base.IBaseCollection<' + methodType + '>';
         }
     }
 }
@@ -174,10 +174,10 @@ function generateBaseQuery(methodType, hasCollections, hasMethods) {
     // See if a collection exists
     if (hasCollections[methodType]) {
         // Set the base query
-        baseQuery = 'IBaseQuery<' + methodType + ', ' + methodType + 'OData>';
+        baseQuery = 'Base.IBaseQuery<' + methodType + ', ' + methodType + 'OData>';
     } else {
         // Set the base query
-        baseQuery = 'IBaseQuery<' + methodType + '>';
+        baseQuery = 'Base.IBaseQuery<' + methodType + '>';
     }
 
     // Append the collection
@@ -445,7 +445,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         generateIndexFiles("lib");
 
         // Append the index file
-        fs.appendFileSync("lib/index.d.ts", '\nexport * from "./base"');
+        fs.appendFileSync("lib/index.d.ts", '\nimport * as Base from "./base";\nexport { Base }');
 
         // Determine the collections
         let { hasCollections, hasCollectionMethods, hasMethods } = analyzeCollections(directories);
@@ -519,7 +519,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                 }
 
                 // Update the references
-                updateReferences(fileImports, dirName, "IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults.");
+                updateReferences(fileImports, dirName, "Base.");
 
                 // Parse the interfaces
                 for (let name in directories[dirName][filename]) {
@@ -561,7 +561,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         // Add the methods
                                         collections.push('\t' + collection + '(): ' + generateBaseCollection(methodType, hasCollections, hasCollectionMethods) + ';');
                                         collections.push('\t' + collection + '(id: string | number): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
-                                        query.push('\t' + collection + ': IBaseResults<' + methodType + '>' + (hasCollectionMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '') + ';');
+                                        query.push('\t' + collection + ': Base.IBaseResults<' + methodType + '>' + (hasCollectionMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '') + ';');
                                     } else {
                                         // See if there is a query
                                         if (hasCollections[methodType]) {
@@ -569,7 +569,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                             props.push('\t' + collection + '(): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
                                         } else {
                                             // Add the method
-                                            props.push('\t' + collection + '(): ' + 'IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
+                                            props.push('\t' + collection + '(): ' + 'Base.IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
                                         }
 
                                         // Add the method
@@ -622,7 +622,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                     methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                 } else {
                                     // Set the type
-                                    methodType = 'IBaseExecution<' + methodType + '>';
+                                    methodType = 'Base.IBaseExecution<' + methodType + '>';
                                 }
 
                                 // Add the method
@@ -692,7 +692,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                             updateReferences(fileImports, dirName, methodType);
 
                                             // Set the type
-                                            methodType = 'IBaseExecution<' + methodType + '>';
+                                            methodType = 'Base.IBaseExecution<' + methodType + '>';
                                         }
                                     }
                                 }
@@ -726,11 +726,11 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         // Generate the content
                         content.push(createInterface(name, null, variables.join('\n')));
                         content.push(createInterface(name + "Collections", collectionMethods.length > 0 ? [name + "CollectionMethods"] : null, collections.join('\n')));
-                        query.length > 0 ? content.push(createInterface(name + "OData", "IBaseResult, " + name, query.join('\n'))) : null;
+                        query.length > 0 ? content.push(createInterface(name + "OData", "Base.IBaseResult, " + name, query.join('\n'))) : null;
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
                     } else {
                         let baseTypes = interface._BaseType ? [interface._BaseType] : [];
-                        baseTypes.push("IBaseResult")
+                        baseTypes.push("Base.IBaseResult")
                         baseTypes.push(name + "Props");
                         baseTypes.push(name + "Collections");
                         baseTypes.push(name + "Methods");
@@ -746,16 +746,16 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         }
 
                         // Generate the content
-                        content.push(createInterface("I" + name, [name + "Collections", name + "Methods", (hasQueryMethod ? "IBaseExecution<I" + name + ">" : "IBaseQuery<I" + name + "Query>")].join(', ')));
-                        content.push(createInterface("I" + name + "Collection", "IBaseResults<" + name + ">" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + ">) => void) => void;"));
-                        content.push(createInterface("I" + name + "QueryCollection", "IBaseResults<" + name + "OData>" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + "OData>) => void) => void;"));
+                        content.push(createInterface("I" + name, [name + "Collections", name + "Methods", (hasQueryMethod ? "Base.IBaseExecution<I" + name + ">" : "Base.IBaseQuery<I" + name + "Query>")].join(', ')));
+                        content.push(createInterface("I" + name + "Collection", "Base.IBaseResults<" + name + ">" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + ">) => void) => void;"));
+                        content.push(createInterface("I" + name + "QueryCollection", "Base.IBaseResults<" + name + "OData>" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + "OData>) => void) => void;"));
                         content.push(createInterface("I" + name + "Query", [name + "OData", name + "Methods"].join(', ')));
                         content.push(createInterface(name, baseTypes.join(", ")));
                         content.push(createInterface(name + "Props", null, variables.join('\n')));
                         content.push(createInterface(name + "PropMethods", null, props.join('\n')));
                         content.push(createInterface(name + "Collections", name + "PropMethods", collections.join('\n')));
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
-                        content.push(createInterface(name + "OData", ["IBaseResult", name + "Props", name + "Methods"].join(', '), query.join('\n')));
+                        content.push(createInterface(name + "OData", ["Base.IBaseResult", name + "Props", name + "Methods"].join(', '), query.join('\n')));
                         content.push(createInterface(name + "Methods", null, methods.join('\n')));
                     }
                 }

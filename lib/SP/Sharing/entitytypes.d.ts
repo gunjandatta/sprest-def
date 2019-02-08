@@ -1,4 +1,4 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
@@ -102,7 +102,7 @@ export interface SharingInformationCollections {
 /*********************************************
 * SharingInformationOData
 **********************************************/
-export interface SharingInformationOData extends IBaseResult, SharingInformation {
+export interface SharingInformationOData extends Base.IBaseResult, SharingInformation {
 	pickerSettings: SP.PickerSettings & SP.PickerSettingsCollections;
 }
 

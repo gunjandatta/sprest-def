@@ -1,25 +1,25 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
 * Icomment
 **********************************************/
-export interface Icomment extends commentCollections, commentMethods, IBaseQuery<IcommentQuery> {
+export interface Icomment extends commentCollections, commentMethods, Base.IBaseQuery<IcommentQuery> {
 
 }
 
 /*********************************************
 * IcommentCollection
 **********************************************/
-export interface IcommentCollection extends IBaseResults<comment>, commentCollectionMethods {
+export interface IcommentCollection extends Base.IBaseResults<comment>, commentCollectionMethods {
 	done?: (resolve: (value?: Array<comment>) => void) => void;
 }
 
 /*********************************************
 * IcommentQueryCollection
 **********************************************/
-export interface IcommentQueryCollection extends IBaseResults<commentOData>, commentCollectionMethods {
+export interface IcommentQueryCollection extends Base.IBaseResults<commentOData>, commentCollectionMethods {
 	done?: (resolve: (value?: Array<commentOData>) => void) => void;
 }
 
@@ -33,7 +33,7 @@ export interface IcommentQuery extends commentOData, commentMethods {
 /*********************************************
 * comment
 **********************************************/
-export interface comment extends IBaseResult, commentProps, commentCollections, commentMethods {
+export interface comment extends Base.IBaseResult, commentProps, commentCollections, commentMethods {
 
 }
 
@@ -67,33 +67,33 @@ export interface commentPropMethods {
 * commentCollections
 **********************************************/
 export interface commentCollections extends commentPropMethods {
-	likedBy(): IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
-	likedBy(id: string | number): IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
-	replies(): IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
-	replies(id: string | number): IBaseQuery<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData> & Microsoft.SharePoint.Comments.commentCollections & Microsoft.SharePoint.Comments.commentMethods;
+	likedBy(): Base.IBaseCollection<Microsoft.SharePoint.Likes.userEntity>;
+	likedBy(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Likes.userEntity> & Microsoft.SharePoint.Likes.userEntityCollections;
+	replies(): Base.IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
+	replies(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData> & Microsoft.SharePoint.Comments.commentCollections & Microsoft.SharePoint.Comments.commentMethods;
 }
 
 /*********************************************
 * commentCollectionMethods
 **********************************************/
 export interface commentCollectionMethods {
-	deleteAll(): IBaseExecution<boolean>;
+	deleteAll(): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************
 * commentOData
 **********************************************/
-export interface commentOData extends IBaseResult, commentProps, commentMethods {
-	likedBy: IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
-	replies: IBaseResults<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollectionMethods;
+export interface commentOData extends Base.IBaseResult, commentProps, commentMethods {
+	likedBy: Base.IBaseResults<Microsoft.SharePoint.Likes.userEntity>;
+	replies: Base.IBaseResults<Microsoft.SharePoint.Comments.comment> & Microsoft.SharePoint.Comments.commentCollectionMethods;
 }
 
 /*********************************************
 * commentMethods
 **********************************************/
 export interface commentMethods {
-	like(): IBaseExecution<any>;
-	unlike(): IBaseExecution<any>;
+	like(): Base.IBaseExecution<any>;
+	unlike(): Base.IBaseExecution<any>;
 }
 
 /*********************************************

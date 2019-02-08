@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../";
+import { Base } from "../../../../";
 import { SP } from "../../../../";
 
 /*********************************************
 * INavigationServiceRest
 **********************************************/
-export interface INavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods, IBaseQuery<INavigationServiceRestQuery> {
+export interface INavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods, Base.IBaseQuery<INavigationServiceRestQuery> {
 
 }
 
 /*********************************************
 * INavigationServiceRestCollection
 **********************************************/
-export interface INavigationServiceRestCollection extends IBaseResults<NavigationServiceRest> {
+export interface INavigationServiceRestCollection extends Base.IBaseResults<NavigationServiceRest> {
 	done?: (resolve: (value?: Array<NavigationServiceRest>) => void) => void;
 }
 
 /*********************************************
 * INavigationServiceRestQueryCollection
 **********************************************/
-export interface INavigationServiceRestQueryCollection extends IBaseResults<NavigationServiceRestOData> {
+export interface INavigationServiceRestQueryCollection extends Base.IBaseResults<NavigationServiceRestOData> {
 	done?: (resolve: (value?: Array<NavigationServiceRestOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface INavigationServiceRestQuery extends NavigationServiceRestOData,
 /*********************************************
 * NavigationServiceRest
 **********************************************/
-export interface NavigationServiceRest extends IBaseResult, NavigationServiceRestProps, NavigationServiceRestCollections, NavigationServiceRestMethods {
+export interface NavigationServiceRest extends Base.IBaseResult, NavigationServiceRestProps, NavigationServiceRestCollections, NavigationServiceRestMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface NavigationServiceRestCollections extends NavigationServiceRestP
 /*********************************************
 * NavigationServiceRestOData
 **********************************************/
-export interface NavigationServiceRestOData extends IBaseResult, NavigationServiceRestProps, NavigationServiceRestMethods {
+export interface NavigationServiceRestOData extends Base.IBaseResult, NavigationServiceRestProps, NavigationServiceRestMethods {
 
 }
 
@@ -68,8 +68,8 @@ export interface NavigationServiceRestOData extends IBaseResult, NavigationServi
 * NavigationServiceRestMethods
 **********************************************/
 export interface NavigationServiceRestMethods {
-	getPublishingNavigationProviderType(mapProviderName?: string): IBaseExecution<number>;
-	menuNodeKey(currentUrl?: string, mapProviderName?: string): IBaseExecution<string>;
-	menuState(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): IBaseExecution<SP.MenuState>;
-	saveMenuState(menuState?: SP.MenuState, mapProviderName?: string): IBaseExecution<number>;
+	getPublishingNavigationProviderType(mapProviderName?: string): Base.IBaseExecution<number>;
+	menuNodeKey(currentUrl?: string, mapProviderName?: string): Base.IBaseExecution<string>;
+	menuState(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): Base.IBaseExecution<SP.MenuState>;
+	saveMenuState(menuState?: SP.MenuState, mapProviderName?: string): Base.IBaseExecution<number>;
 }

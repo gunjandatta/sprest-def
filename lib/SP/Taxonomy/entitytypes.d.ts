@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
 * ITaxonomyField
 **********************************************/
-export interface ITaxonomyField extends TaxonomyFieldCollections, TaxonomyFieldMethods, IBaseQuery<ITaxonomyFieldQuery> {
+export interface ITaxonomyField extends TaxonomyFieldCollections, TaxonomyFieldMethods, Base.IBaseQuery<ITaxonomyFieldQuery> {
 
 }
 
 /*********************************************
 * ITaxonomyFieldCollection
 **********************************************/
-export interface ITaxonomyFieldCollection extends IBaseResults<TaxonomyField> {
+export interface ITaxonomyFieldCollection extends Base.IBaseResults<TaxonomyField> {
 	done?: (resolve: (value?: Array<TaxonomyField>) => void) => void;
 }
 
 /*********************************************
 * ITaxonomyFieldQueryCollection
 **********************************************/
-export interface ITaxonomyFieldQueryCollection extends IBaseResults<TaxonomyFieldOData> {
+export interface ITaxonomyFieldQueryCollection extends Base.IBaseResults<TaxonomyFieldOData> {
 	done?: (resolve: (value?: Array<TaxonomyFieldOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface ITaxonomyFieldQuery extends TaxonomyFieldOData, TaxonomyFieldMe
 /*********************************************
 * TaxonomyField
 **********************************************/
-export interface TaxonomyField extends SP.FieldLookup, IBaseResult, TaxonomyFieldProps, TaxonomyFieldCollections, TaxonomyFieldMethods {
+export interface TaxonomyField extends SP.FieldLookup, Base.IBaseResult, TaxonomyFieldProps, TaxonomyFieldCollections, TaxonomyFieldMethods {
 
 }
 
@@ -71,7 +71,7 @@ export interface TaxonomyFieldCollections extends TaxonomyFieldPropMethods {
 /*********************************************
 * TaxonomyFieldOData
 **********************************************/
-export interface TaxonomyFieldOData extends IBaseResult, TaxonomyFieldProps, TaxonomyFieldMethods {
+export interface TaxonomyFieldOData extends Base.IBaseResult, TaxonomyFieldProps, TaxonomyFieldMethods {
 
 }
 
@@ -79,8 +79,8 @@ export interface TaxonomyFieldOData extends IBaseResult, TaxonomyFieldProps, Tax
 * TaxonomyFieldMethods
 **********************************************/
 export interface TaxonomyFieldMethods {
-	delete(): IBaseExecution<any>;
-	setShowInDisplayForm(value?: boolean): IBaseExecution<any>;
-	setShowInEditForm(value?: boolean): IBaseExecution<any>;
-	setShowInNewForm(value?: boolean): IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
+	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
+	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
+	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
 }

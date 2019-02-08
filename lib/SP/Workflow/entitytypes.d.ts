@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
 * IWorkflowAssociation
 **********************************************/
-export interface IWorkflowAssociation extends WorkflowAssociationCollections, WorkflowAssociationMethods, IBaseQuery<IWorkflowAssociationQuery> {
+export interface IWorkflowAssociation extends WorkflowAssociationCollections, WorkflowAssociationMethods, Base.IBaseQuery<IWorkflowAssociationQuery> {
 
 }
 
 /*********************************************
 * IWorkflowAssociationCollection
 **********************************************/
-export interface IWorkflowAssociationCollection extends IBaseResults<WorkflowAssociation>, WorkflowAssociationCollectionMethods {
+export interface IWorkflowAssociationCollection extends Base.IBaseResults<WorkflowAssociation>, WorkflowAssociationCollectionMethods {
 	done?: (resolve: (value?: Array<WorkflowAssociation>) => void) => void;
 }
 
 /*********************************************
 * IWorkflowAssociationQueryCollection
 **********************************************/
-export interface IWorkflowAssociationQueryCollection extends IBaseResults<WorkflowAssociationOData>, WorkflowAssociationCollectionMethods {
+export interface IWorkflowAssociationQueryCollection extends Base.IBaseResults<WorkflowAssociationOData>, WorkflowAssociationCollectionMethods {
 	done?: (resolve: (value?: Array<WorkflowAssociationOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface IWorkflowAssociationQuery extends WorkflowAssociationOData, Wor
 /*********************************************
 * WorkflowAssociation
 **********************************************/
-export interface WorkflowAssociation extends IBaseResult, WorkflowAssociationProps, WorkflowAssociationCollections, WorkflowAssociationMethods {
+export interface WorkflowAssociation extends Base.IBaseResult, WorkflowAssociationProps, WorkflowAssociationCollections, WorkflowAssociationMethods {
 
 }
 
@@ -78,15 +78,15 @@ export interface WorkflowAssociationCollections extends WorkflowAssociationPropM
 * WorkflowAssociationCollectionMethods
 **********************************************/
 export interface WorkflowAssociationCollectionMethods {
-	add(parameters?: SP.Workflow.WorkflowAssociationCreationInformation): IBaseExecution<SP.Workflow.WorkflowAssociation>;
-	getById(associationId?: any): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationCollections & SP.Workflow.WorkflowAssociationMethods;
-	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationCollections & SP.Workflow.WorkflowAssociationMethods;
+	add(parameters?: SP.Workflow.WorkflowAssociationCreationInformation): Base.IBaseExecution<SP.Workflow.WorkflowAssociation>;
+	getById(associationId?: any): Base.IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationCollections & SP.Workflow.WorkflowAssociationMethods;
+	getByName(name?: string): Base.IBaseQuery<SP.Workflow.WorkflowAssociation> & SP.Workflow.WorkflowAssociationCollections & SP.Workflow.WorkflowAssociationMethods;
 }
 
 /*********************************************
 * WorkflowAssociationOData
 **********************************************/
-export interface WorkflowAssociationOData extends IBaseResult, WorkflowAssociationProps, WorkflowAssociationMethods {
+export interface WorkflowAssociationOData extends Base.IBaseResult, WorkflowAssociationProps, WorkflowAssociationMethods {
 
 }
 
@@ -94,8 +94,8 @@ export interface WorkflowAssociationOData extends IBaseResult, WorkflowAssociati
 * WorkflowAssociationMethods
 **********************************************/
 export interface WorkflowAssociationMethods {
-	delete(): IBaseExecution<any>;
-	update(): IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -124,8 +124,8 @@ export interface WorkflowTemplateCollections extends WorkflowTemplateCollectionM
 * WorkflowTemplateCollectionMethods
 **********************************************/
 export interface WorkflowTemplateCollectionMethods {
-	getById(templateId?: any): IBaseQuery<SP.Workflow.WorkflowTemplate> & SP.Workflow.WorkflowTemplateCollections;
-	getByName(name?: string): IBaseQuery<SP.Workflow.WorkflowTemplate> & SP.Workflow.WorkflowTemplateCollections;
+	getById(templateId?: any): Base.IBaseQuery<SP.Workflow.WorkflowTemplate> & SP.Workflow.WorkflowTemplateCollections;
+	getByName(name?: string): Base.IBaseQuery<SP.Workflow.WorkflowTemplate> & SP.Workflow.WorkflowTemplateCollections;
 }
 
 /*********************************************
@@ -162,21 +162,21 @@ export interface SPWorkflowManagerCollections {
 /*********************************************
 * ISPWorkflowTask
 **********************************************/
-export interface ISPWorkflowTask extends SPWorkflowTaskCollections, SPWorkflowTaskMethods, IBaseQuery<ISPWorkflowTaskQuery> {
+export interface ISPWorkflowTask extends SPWorkflowTaskCollections, SPWorkflowTaskMethods, Base.IBaseQuery<ISPWorkflowTaskQuery> {
 
 }
 
 /*********************************************
 * ISPWorkflowTaskCollection
 **********************************************/
-export interface ISPWorkflowTaskCollection extends IBaseResults<SPWorkflowTask> {
+export interface ISPWorkflowTaskCollection extends Base.IBaseResults<SPWorkflowTask> {
 	done?: (resolve: (value?: Array<SPWorkflowTask>) => void) => void;
 }
 
 /*********************************************
 * ISPWorkflowTaskQueryCollection
 **********************************************/
-export interface ISPWorkflowTaskQueryCollection extends IBaseResults<SPWorkflowTaskOData> {
+export interface ISPWorkflowTaskQueryCollection extends Base.IBaseResults<SPWorkflowTaskOData> {
 	done?: (resolve: (value?: Array<SPWorkflowTaskOData>) => void) => void;
 }
 
@@ -190,7 +190,7 @@ export interface ISPWorkflowTaskQuery extends SPWorkflowTaskOData, SPWorkflowTas
 /*********************************************
 * SPWorkflowTask
 **********************************************/
-export interface SPWorkflowTask extends SP.ListItem, IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskCollections, SPWorkflowTaskMethods {
+export interface SPWorkflowTask extends SP.ListItem, Base.IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskCollections, SPWorkflowTaskMethods {
 
 }
 
@@ -218,7 +218,7 @@ export interface SPWorkflowTaskCollections extends SPWorkflowTaskPropMethods {
 /*********************************************
 * SPWorkflowTaskOData
 **********************************************/
-export interface SPWorkflowTaskOData extends IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskMethods {
+export interface SPWorkflowTaskOData extends Base.IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskMethods {
 
 }
 
@@ -226,30 +226,30 @@ export interface SPWorkflowTaskOData extends IBaseResult, SPWorkflowTaskProps, S
 * SPWorkflowTaskMethods
 **********************************************/
 export interface SPWorkflowTaskMethods {
-	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): IBaseExecution<any>;
-	resetRoleInheritance(): IBaseExecution<any>;
-	delete(): IBaseExecution<any>;
-	getChanges(query?: SP.ChangeQuery): IBaseCollection<SP.Change>;
-	getHashtags(): IBaseCollection<SP.Hashtag>;
-	getUserEffectivePermissions(userName?: string): IBaseExecution<SP.BasePermissions>;
-	getWOPIFrameUrl(action?: number): IBaseExecution<string>;
-	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): IBaseExecution<any>;
-	mediaServiceUpdateV2(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): IBaseExecution<any>;
-	overridePolicyTip(userAction?: number, justification?: string): IBaseExecution<number>;
-	parseAndSetFieldValue(fieldName?: string, value?: string): IBaseExecution<any>;
-	recycle(): IBaseExecution<any>;
-	setCommentsDisabled(value?: boolean): IBaseExecution<any>;
-	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): IBaseExecution<any>;
-	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): IBaseExecution<any>;
-	setComplianceTagWithHold(complianceTag?: string): IBaseExecution<any>;
-	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): IBaseExecution<any>;
-	setComplianceTagWithNoHold(complianceTag?: string): IBaseExecution<any>;
-	setComplianceTagWithRecord(complianceTag?: string): IBaseExecution<any>;
-	systemUpdate(): IBaseExecution<any>;
-	// update(): IBaseExecution<any>;
-	updateEx(parameters?: SP.ListItemUpdateParameters): IBaseExecution<any>;
-	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): IBaseCollection<SP.Hashtag>;
-	updateOverwriteVersion(): IBaseExecution<any>;
-	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): IBaseCollection<SP.ListItemFormUpdateValue>;
-	update(properties?: any): IBaseExecution<any>;
+	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): Base.IBaseExecution<any>;
+	resetRoleInheritance(): Base.IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
+	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
+	getHashtags(): Base.IBaseCollection<SP.Hashtag>;
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
+	getWOPIFrameUrl(action?: number): Base.IBaseExecution<string>;
+	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;
+	mediaServiceUpdateV2(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): Base.IBaseExecution<any>;
+	overridePolicyTip(userAction?: number, justification?: string): Base.IBaseExecution<number>;
+	parseAndSetFieldValue(fieldName?: string, value?: string): Base.IBaseExecution<any>;
+	recycle(): Base.IBaseExecution<any>;
+	setCommentsDisabled(value?: boolean): Base.IBaseExecution<any>;
+	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): Base.IBaseExecution<any>;
+	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): Base.IBaseExecution<any>;
+	setComplianceTagWithHold(complianceTag?: string): Base.IBaseExecution<any>;
+	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): Base.IBaseExecution<any>;
+	setComplianceTagWithNoHold(complianceTag?: string): Base.IBaseExecution<any>;
+	setComplianceTagWithRecord(complianceTag?: string): Base.IBaseExecution<any>;
+	systemUpdate(): Base.IBaseExecution<any>;
+	// update(): Base.IBaseExecution<any>;
+	updateEx(parameters?: SP.ListItemUpdateParameters): Base.IBaseExecution<any>;
+	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): Base.IBaseCollection<SP.Hashtag>;
+	updateOverwriteVersion(): Base.IBaseExecution<any>;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	update(properties?: any): Base.IBaseExecution<any>;
 }

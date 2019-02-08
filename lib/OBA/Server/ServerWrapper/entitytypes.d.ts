@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 
 /*********************************************
 * IDiagnostics
 **********************************************/
-export interface IDiagnostics extends DiagnosticsCollections, DiagnosticsMethods, IBaseQuery<IDiagnosticsQuery> {
+export interface IDiagnostics extends DiagnosticsCollections, DiagnosticsMethods, Base.IBaseQuery<IDiagnosticsQuery> {
 
 }
 
 /*********************************************
 * IDiagnosticsCollection
 **********************************************/
-export interface IDiagnosticsCollection extends IBaseResults<Diagnostics> {
+export interface IDiagnosticsCollection extends Base.IBaseResults<Diagnostics> {
 	done?: (resolve: (value?: Array<Diagnostics>) => void) => void;
 }
 
 /*********************************************
 * IDiagnosticsQueryCollection
 **********************************************/
-export interface IDiagnosticsQueryCollection extends IBaseResults<DiagnosticsOData> {
+export interface IDiagnosticsQueryCollection extends Base.IBaseResults<DiagnosticsOData> {
 	done?: (resolve: (value?: Array<DiagnosticsOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IDiagnosticsQuery extends DiagnosticsOData, DiagnosticsMethods 
 /*********************************************
 * Diagnostics
 **********************************************/
-export interface Diagnostics extends IBaseResult, DiagnosticsProps, DiagnosticsCollections, DiagnosticsMethods {
+export interface Diagnostics extends Base.IBaseResult, DiagnosticsProps, DiagnosticsCollections, DiagnosticsMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface DiagnosticsCollections extends DiagnosticsPropMethods {
 /*********************************************
 * DiagnosticsOData
 **********************************************/
-export interface DiagnosticsOData extends IBaseResult, DiagnosticsProps, DiagnosticsMethods {
+export interface DiagnosticsOData extends Base.IBaseResult, DiagnosticsProps, DiagnosticsMethods {
 
 }
 
@@ -67,27 +67,27 @@ export interface DiagnosticsOData extends IBaseResult, DiagnosticsProps, Diagnos
 * DiagnosticsMethods
 **********************************************/
 export interface DiagnosticsMethods {
-	status(): IBaseExecution<string>;
+	status(): Base.IBaseExecution<string>;
 }
 
 /*********************************************
 * IReporting
 **********************************************/
-export interface IReporting extends ReportingCollections, ReportingMethods, IBaseQuery<IReportingQuery> {
+export interface IReporting extends ReportingCollections, ReportingMethods, Base.IBaseQuery<IReportingQuery> {
 
 }
 
 /*********************************************
 * IReportingCollection
 **********************************************/
-export interface IReportingCollection extends IBaseResults<Reporting> {
+export interface IReportingCollection extends Base.IBaseResults<Reporting> {
 	done?: (resolve: (value?: Array<Reporting>) => void) => void;
 }
 
 /*********************************************
 * IReportingQueryCollection
 **********************************************/
-export interface IReportingQueryCollection extends IBaseResults<ReportingOData> {
+export interface IReportingQueryCollection extends Base.IBaseResults<ReportingOData> {
 	done?: (resolve: (value?: Array<ReportingOData>) => void) => void;
 }
 
@@ -101,7 +101,7 @@ export interface IReportingQuery extends ReportingOData, ReportingMethods {
 /*********************************************
 * Reporting
 **********************************************/
-export interface Reporting extends IBaseResult, ReportingProps, ReportingCollections, ReportingMethods {
+export interface Reporting extends Base.IBaseResult, ReportingProps, ReportingCollections, ReportingMethods {
 
 }
 
@@ -129,7 +129,7 @@ export interface ReportingCollections extends ReportingPropMethods {
 /*********************************************
 * ReportingOData
 **********************************************/
-export interface ReportingOData extends IBaseResult, ReportingProps, ReportingMethods {
+export interface ReportingOData extends Base.IBaseResult, ReportingProps, ReportingMethods {
 
 }
 
@@ -137,27 +137,27 @@ export interface ReportingOData extends IBaseResult, ReportingProps, ReportingMe
 * ReportingMethods
 **********************************************/
 export interface ReportingMethods {
-	publishReport(odataPostBodyStm?: any): IBaseExecution<any>;
+	publishReport(odataPostBodyStm?: any): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ITaskflow
 **********************************************/
-export interface ITaskflow extends TaskflowCollections, TaskflowMethods, IBaseQuery<ITaskflowQuery> {
+export interface ITaskflow extends TaskflowCollections, TaskflowMethods, Base.IBaseQuery<ITaskflowQuery> {
 
 }
 
 /*********************************************
 * ITaskflowCollection
 **********************************************/
-export interface ITaskflowCollection extends IBaseResults<Taskflow> {
+export interface ITaskflowCollection extends Base.IBaseResults<Taskflow> {
 	done?: (resolve: (value?: Array<Taskflow>) => void) => void;
 }
 
 /*********************************************
 * ITaskflowQueryCollection
 **********************************************/
-export interface ITaskflowQueryCollection extends IBaseResults<TaskflowOData> {
+export interface ITaskflowQueryCollection extends Base.IBaseResults<TaskflowOData> {
 	done?: (resolve: (value?: Array<TaskflowOData>) => void) => void;
 }
 
@@ -171,7 +171,7 @@ export interface ITaskflowQuery extends TaskflowOData, TaskflowMethods {
 /*********************************************
 * Taskflow
 **********************************************/
-export interface Taskflow extends IBaseResult, TaskflowProps, TaskflowCollections, TaskflowMethods {
+export interface Taskflow extends Base.IBaseResult, TaskflowProps, TaskflowCollections, TaskflowMethods {
 
 }
 
@@ -199,7 +199,7 @@ export interface TaskflowCollections extends TaskflowPropMethods {
 /*********************************************
 * TaskflowOData
 **********************************************/
-export interface TaskflowOData extends IBaseResult, TaskflowProps, TaskflowMethods {
+export interface TaskflowOData extends Base.IBaseResult, TaskflowProps, TaskflowMethods {
 
 }
 
@@ -207,5 +207,5 @@ export interface TaskflowOData extends IBaseResult, TaskflowProps, TaskflowMetho
 * TaskflowMethods
 **********************************************/
 export interface TaskflowMethods {
-	processTask(requestBodyStream?: any): IBaseExecution<any>;
+	processTask(requestBodyStream?: any): Base.IBaseExecution<any>;
 }

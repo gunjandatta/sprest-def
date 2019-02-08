@@ -1,4 +1,4 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
@@ -18,21 +18,21 @@ export interface SocialAnnouncementManagerCollections {
 /*********************************************
 * ISocialFeedManager
 **********************************************/
-export interface ISocialFeedManager extends SocialFeedManagerCollections, SocialFeedManagerMethods, IBaseQuery<ISocialFeedManagerQuery> {
+export interface ISocialFeedManager extends SocialFeedManagerCollections, SocialFeedManagerMethods, Base.IBaseQuery<ISocialFeedManagerQuery> {
 
 }
 
 /*********************************************
 * ISocialFeedManagerCollection
 **********************************************/
-export interface ISocialFeedManagerCollection extends IBaseResults<SocialFeedManager> {
+export interface ISocialFeedManagerCollection extends Base.IBaseResults<SocialFeedManager> {
 	done?: (resolve: (value?: Array<SocialFeedManager>) => void) => void;
 }
 
 /*********************************************
 * ISocialFeedManagerQueryCollection
 **********************************************/
-export interface ISocialFeedManagerQueryCollection extends IBaseResults<SocialFeedManagerOData> {
+export interface ISocialFeedManagerQueryCollection extends Base.IBaseResults<SocialFeedManagerOData> {
 	done?: (resolve: (value?: Array<SocialFeedManagerOData>) => void) => void;
 }
 
@@ -46,7 +46,7 @@ export interface ISocialFeedManagerQuery extends SocialFeedManagerOData, SocialF
 /*********************************************
 * SocialFeedManager
 **********************************************/
-export interface SocialFeedManager extends IBaseResult, SocialFeedManagerProps, SocialFeedManagerCollections, SocialFeedManagerMethods {
+export interface SocialFeedManager extends Base.IBaseResult, SocialFeedManagerProps, SocialFeedManagerCollections, SocialFeedManagerMethods {
 
 }
 
@@ -75,7 +75,7 @@ export interface SocialFeedManagerCollections extends SocialFeedManagerPropMetho
 /*********************************************
 * SocialFeedManagerOData
 **********************************************/
-export interface SocialFeedManagerOData extends IBaseResult, SocialFeedManagerProps, SocialFeedManagerMethods {
+export interface SocialFeedManagerOData extends Base.IBaseResult, SocialFeedManagerProps, SocialFeedManagerMethods {
 
 }
 
@@ -83,43 +83,43 @@ export interface SocialFeedManagerOData extends IBaseResult, SocialFeedManagerPr
 * SocialFeedManagerMethods
 **********************************************/
 export interface SocialFeedManagerMethods {
-	createFileAttachment(name?: string, description?: string, fileData?: any): IBaseExecution<SP.Social.SocialAttachment>;
-	createImageAttachment(name?: string, description?: string, imageData?: any): IBaseExecution<SP.Social.SocialAttachment>;
-	createPost(targetId?: string, creationData?: SP.Social.SocialPostCreationData): IBaseExecution<SP.Social.SocialThread>;
-	deletePost(postId?: string): IBaseExecution<SP.Social.SocialThread>;
-	getAllLikers(postId?: string): IBaseCollection<SP.Social.SocialActor>;
-	getFeed(type?: number, options?: SP.Social.SocialFeedOptions): IBaseExecution<SP.Social.SocialFeed>;
-	getFeedFor(actorId?: string, options?: SP.Social.SocialFeedOptions): IBaseExecution<SP.Social.SocialFeed>;
-	getFullThread(threadId?: string): IBaseExecution<SP.Social.SocialThread>;
-	getMentions(clearUnreadMentions?: boolean, options?: SP.Social.SocialFeedOptions): IBaseExecution<SP.Social.SocialFeed>;
-	getPreview(itemUrl?: string): IBaseExecution<SP.Social.SocialAttachment>;
-	getPreviewImage(url?: string, key?: string, iv?: string): IBaseExecution<any>;
-	getUnreadMentionCount(): IBaseExecution<number>;
-	likePost(postId?: string): IBaseExecution<SP.Social.SocialThread>;
-	lockThread(threadId?: string): IBaseExecution<SP.Social.SocialThread>;
-	suppressThreadNotifications(threadId?: string): IBaseExecution<any>;
-	unlikePost(postId?: string): IBaseExecution<SP.Social.SocialThread>;
-	unlockThread(threadId?: string): IBaseExecution<SP.Social.SocialThread>;
+	createFileAttachment(name?: string, description?: string, fileData?: any): Base.IBaseExecution<SP.Social.SocialAttachment>;
+	createImageAttachment(name?: string, description?: string, imageData?: any): Base.IBaseExecution<SP.Social.SocialAttachment>;
+	createPost(targetId?: string, creationData?: SP.Social.SocialPostCreationData): Base.IBaseExecution<SP.Social.SocialThread>;
+	deletePost(postId?: string): Base.IBaseExecution<SP.Social.SocialThread>;
+	getAllLikers(postId?: string): Base.IBaseCollection<SP.Social.SocialActor>;
+	getFeed(type?: number, options?: SP.Social.SocialFeedOptions): Base.IBaseExecution<SP.Social.SocialFeed>;
+	getFeedFor(actorId?: string, options?: SP.Social.SocialFeedOptions): Base.IBaseExecution<SP.Social.SocialFeed>;
+	getFullThread(threadId?: string): Base.IBaseExecution<SP.Social.SocialThread>;
+	getMentions(clearUnreadMentions?: boolean, options?: SP.Social.SocialFeedOptions): Base.IBaseExecution<SP.Social.SocialFeed>;
+	getPreview(itemUrl?: string): Base.IBaseExecution<SP.Social.SocialAttachment>;
+	getPreviewImage(url?: string, key?: string, iv?: string): Base.IBaseExecution<any>;
+	getUnreadMentionCount(): Base.IBaseExecution<number>;
+	likePost(postId?: string): Base.IBaseExecution<SP.Social.SocialThread>;
+	lockThread(threadId?: string): Base.IBaseExecution<SP.Social.SocialThread>;
+	suppressThreadNotifications(threadId?: string): Base.IBaseExecution<any>;
+	unlikePost(postId?: string): Base.IBaseExecution<SP.Social.SocialThread>;
+	unlockThread(threadId?: string): Base.IBaseExecution<SP.Social.SocialThread>;
 }
 
 /*********************************************
 * ISocialFollowingManager
 **********************************************/
-export interface ISocialFollowingManager extends SocialFollowingManagerCollections, SocialFollowingManagerMethods, IBaseQuery<ISocialFollowingManagerQuery> {
+export interface ISocialFollowingManager extends SocialFollowingManagerCollections, SocialFollowingManagerMethods, Base.IBaseQuery<ISocialFollowingManagerQuery> {
 
 }
 
 /*********************************************
 * ISocialFollowingManagerCollection
 **********************************************/
-export interface ISocialFollowingManagerCollection extends IBaseResults<SocialFollowingManager> {
+export interface ISocialFollowingManagerCollection extends Base.IBaseResults<SocialFollowingManager> {
 	done?: (resolve: (value?: Array<SocialFollowingManager>) => void) => void;
 }
 
 /*********************************************
 * ISocialFollowingManagerQueryCollection
 **********************************************/
-export interface ISocialFollowingManagerQueryCollection extends IBaseResults<SocialFollowingManagerOData> {
+export interface ISocialFollowingManagerQueryCollection extends Base.IBaseResults<SocialFollowingManagerOData> {
 	done?: (resolve: (value?: Array<SocialFollowingManagerOData>) => void) => void;
 }
 
@@ -133,7 +133,7 @@ export interface ISocialFollowingManagerQuery extends SocialFollowingManagerODat
 /*********************************************
 * SocialFollowingManager
 **********************************************/
-export interface SocialFollowingManager extends IBaseResult, SocialFollowingManagerProps, SocialFollowingManagerCollections, SocialFollowingManagerMethods {
+export interface SocialFollowingManager extends Base.IBaseResult, SocialFollowingManagerProps, SocialFollowingManagerCollections, SocialFollowingManagerMethods {
 
 }
 
@@ -162,7 +162,7 @@ export interface SocialFollowingManagerCollections extends SocialFollowingManage
 /*********************************************
 * SocialFollowingManagerOData
 **********************************************/
-export interface SocialFollowingManagerOData extends IBaseResult, SocialFollowingManagerProps, SocialFollowingManagerMethods {
+export interface SocialFollowingManagerOData extends Base.IBaseResult, SocialFollowingManagerProps, SocialFollowingManagerMethods {
 
 }
 
@@ -170,33 +170,33 @@ export interface SocialFollowingManagerOData extends IBaseResult, SocialFollowin
 * SocialFollowingManagerMethods
 **********************************************/
 export interface SocialFollowingManagerMethods {
-	follow(actor?: SP.Social.SocialActorInfo): IBaseExecution<number>;
-	getFollowed(types?: number): IBaseCollection<SP.Social.SocialActor>;
-	getFollowedCount(types?: number): IBaseExecution<number>;
-	getFollowers(): IBaseCollection<SP.Social.SocialActor>;
-	getSuggestions(): IBaseCollection<SP.Social.SocialActor>;
-	isFollowed(actor?: SP.Social.SocialActorInfo): IBaseExecution<boolean>;
-	stopFollowing(actor?: SP.Social.SocialActorInfo): IBaseExecution<boolean>;
+	follow(actor?: SP.Social.SocialActorInfo): Base.IBaseExecution<number>;
+	getFollowed(types?: number): Base.IBaseCollection<SP.Social.SocialActor>;
+	getFollowedCount(types?: number): Base.IBaseExecution<number>;
+	getFollowers(): Base.IBaseCollection<SP.Social.SocialActor>;
+	getSuggestions(): Base.IBaseCollection<SP.Social.SocialActor>;
+	isFollowed(actor?: SP.Social.SocialActorInfo): Base.IBaseExecution<boolean>;
+	stopFollowing(actor?: SP.Social.SocialActorInfo): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************
 * ISocialRestActor
 **********************************************/
-export interface ISocialRestActor extends SocialRestActorCollections, SocialRestActorMethods, IBaseQuery<ISocialRestActorQuery> {
+export interface ISocialRestActor extends SocialRestActorCollections, SocialRestActorMethods, Base.IBaseQuery<ISocialRestActorQuery> {
 
 }
 
 /*********************************************
 * ISocialRestActorCollection
 **********************************************/
-export interface ISocialRestActorCollection extends IBaseResults<SocialRestActor> {
+export interface ISocialRestActorCollection extends Base.IBaseResults<SocialRestActor> {
 	done?: (resolve: (value?: Array<SocialRestActor>) => void) => void;
 }
 
 /*********************************************
 * ISocialRestActorQueryCollection
 **********************************************/
-export interface ISocialRestActorQueryCollection extends IBaseResults<SocialRestActorOData> {
+export interface ISocialRestActorQueryCollection extends Base.IBaseResults<SocialRestActorOData> {
 	done?: (resolve: (value?: Array<SocialRestActorOData>) => void) => void;
 }
 
@@ -210,7 +210,7 @@ export interface ISocialRestActorQuery extends SocialRestActorOData, SocialRestA
 /*********************************************
 * SocialRestActor
 **********************************************/
-export interface SocialRestActor extends IBaseResult, SocialRestActorProps, SocialRestActorCollections, SocialRestActorMethods {
+export interface SocialRestActor extends Base.IBaseResult, SocialRestActorProps, SocialRestActorCollections, SocialRestActorMethods {
 
 }
 
@@ -240,7 +240,7 @@ export interface SocialRestActorCollections extends SocialRestActorPropMethods {
 /*********************************************
 * SocialRestActorOData
 **********************************************/
-export interface SocialRestActorOData extends IBaseResult, SocialRestActorProps, SocialRestActorMethods {
+export interface SocialRestActorOData extends Base.IBaseResult, SocialRestActorProps, SocialRestActorMethods {
 
 }
 
@@ -248,33 +248,33 @@ export interface SocialRestActorOData extends IBaseResult, SocialRestActorProps,
 * SocialRestActorMethods
 **********************************************/
 export interface SocialRestActorMethods {
-	feed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): IBaseExecution<SP.Social.SocialRestFeed>;
-	likes(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): IBaseExecution<SP.Social.SocialRestFeed>;
-	mentionFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): IBaseExecution<SP.Social.SocialRestFeed>;
-	news(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): IBaseExecution<SP.Social.SocialRestFeed>;
-	organizationFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): IBaseExecution<SP.Social.SocialRestFeed>;
-	timelineFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): IBaseExecution<SP.Social.SocialRestFeed>;
-	unreadMentionCount(): IBaseExecution<number>;
+	feed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): Base.IBaseExecution<SP.Social.SocialRestFeed>;
+	likes(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): Base.IBaseExecution<SP.Social.SocialRestFeed>;
+	mentionFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): Base.IBaseExecution<SP.Social.SocialRestFeed>;
+	news(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): Base.IBaseExecution<SP.Social.SocialRestFeed>;
+	organizationFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): Base.IBaseExecution<SP.Social.SocialRestFeed>;
+	timelineFeed(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): Base.IBaseExecution<SP.Social.SocialRestFeed>;
+	unreadMentionCount(): Base.IBaseExecution<number>;
 }
 
 /*********************************************
 * ISocialRestFeedManager
 **********************************************/
-export interface ISocialRestFeedManager extends SocialRestFeedManagerCollections, SocialRestFeedManagerMethods, IBaseQuery<ISocialRestFeedManagerQuery> {
+export interface ISocialRestFeedManager extends SocialRestFeedManagerCollections, SocialRestFeedManagerMethods, Base.IBaseQuery<ISocialRestFeedManagerQuery> {
 
 }
 
 /*********************************************
 * ISocialRestFeedManagerCollection
 **********************************************/
-export interface ISocialRestFeedManagerCollection extends IBaseResults<SocialRestFeedManager> {
+export interface ISocialRestFeedManagerCollection extends Base.IBaseResults<SocialRestFeedManager> {
 	done?: (resolve: (value?: Array<SocialRestFeedManager>) => void) => void;
 }
 
 /*********************************************
 * ISocialRestFeedManagerQueryCollection
 **********************************************/
-export interface ISocialRestFeedManagerQueryCollection extends IBaseResults<SocialRestFeedManagerOData> {
+export interface ISocialRestFeedManagerQueryCollection extends Base.IBaseResults<SocialRestFeedManagerOData> {
 	done?: (resolve: (value?: Array<SocialRestFeedManagerOData>) => void) => void;
 }
 
@@ -288,7 +288,7 @@ export interface ISocialRestFeedManagerQuery extends SocialRestFeedManagerOData,
 /*********************************************
 * SocialRestFeedManager
 **********************************************/
-export interface SocialRestFeedManager extends IBaseResult, SocialRestFeedManagerProps, SocialRestFeedManagerCollections, SocialRestFeedManagerMethods {
+export interface SocialRestFeedManager extends Base.IBaseResult, SocialRestFeedManagerProps, SocialRestFeedManagerCollections, SocialRestFeedManagerMethods {
 
 }
 
@@ -316,7 +316,7 @@ export interface SocialRestFeedManagerCollections extends SocialRestFeedManagerP
 /*********************************************
 * SocialRestFeedManagerOData
 **********************************************/
-export interface SocialRestFeedManagerOData extends IBaseResult, SocialRestFeedManagerProps, SocialRestFeedManagerMethods {
+export interface SocialRestFeedManagerOData extends Base.IBaseResult, SocialRestFeedManagerProps, SocialRestFeedManagerMethods {
 
 }
 
@@ -324,29 +324,29 @@ export interface SocialRestFeedManagerOData extends IBaseResult, SocialRestFeedM
 * SocialRestFeedManagerMethods
 **********************************************/
 export interface SocialRestFeedManagerMethods {
-	actor(item?: string): IBaseExecution<SP.Social.SocialRestActor>;
-	my(): IBaseExecution<SP.Social.SocialRestActor>;
-	post(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;
+	actor(item?: string): Base.IBaseExecution<SP.Social.SocialRestActor>;
+	my(): Base.IBaseExecution<SP.Social.SocialRestActor>;
+	post(ID?: string): Base.IBaseExecution<SP.Social.SocialRestThread>;
 }
 
 /*********************************************
 * ISocialRestFeed
 **********************************************/
-export interface ISocialRestFeed extends SocialRestFeedCollections, SocialRestFeedMethods, IBaseQuery<ISocialRestFeedQuery> {
+export interface ISocialRestFeed extends SocialRestFeedCollections, SocialRestFeedMethods, Base.IBaseQuery<ISocialRestFeedQuery> {
 
 }
 
 /*********************************************
 * ISocialRestFeedCollection
 **********************************************/
-export interface ISocialRestFeedCollection extends IBaseResults<SocialRestFeed> {
+export interface ISocialRestFeedCollection extends Base.IBaseResults<SocialRestFeed> {
 	done?: (resolve: (value?: Array<SocialRestFeed>) => void) => void;
 }
 
 /*********************************************
 * ISocialRestFeedQueryCollection
 **********************************************/
-export interface ISocialRestFeedQueryCollection extends IBaseResults<SocialRestFeedOData> {
+export interface ISocialRestFeedQueryCollection extends Base.IBaseResults<SocialRestFeedOData> {
 	done?: (resolve: (value?: Array<SocialRestFeedOData>) => void) => void;
 }
 
@@ -360,7 +360,7 @@ export interface ISocialRestFeedQuery extends SocialRestFeedOData, SocialRestFee
 /*********************************************
 * SocialRestFeed
 **********************************************/
-export interface SocialRestFeed extends IBaseResult, SocialRestFeedProps, SocialRestFeedCollections, SocialRestFeedMethods {
+export interface SocialRestFeed extends Base.IBaseResult, SocialRestFeedProps, SocialRestFeedCollections, SocialRestFeedMethods {
 
 }
 
@@ -389,7 +389,7 @@ export interface SocialRestFeedCollections extends SocialRestFeedPropMethods {
 /*********************************************
 * SocialRestFeedOData
 **********************************************/
-export interface SocialRestFeedOData extends IBaseResult, SocialRestFeedProps, SocialRestFeedMethods {
+export interface SocialRestFeedOData extends Base.IBaseResult, SocialRestFeedProps, SocialRestFeedMethods {
 
 }
 
@@ -397,28 +397,28 @@ export interface SocialRestFeedOData extends IBaseResult, SocialRestFeedProps, S
 * SocialRestFeedMethods
 **********************************************/
 export interface SocialRestFeedMethods {
-	clearUnReadMentionCount(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): IBaseExecution<SP.Social.SocialRestFeed>;
-	post(restCreationData?: SP.Social.SocialRestPostCreationData): IBaseExecution<SP.Social.SocialRestThread>;
+	clearUnReadMentionCount(MaxThreadCount?: number, NewerThan?: any, OlderThan?: any, SortOrder?: number): Base.IBaseExecution<SP.Social.SocialRestFeed>;
+	post(restCreationData?: SP.Social.SocialRestPostCreationData): Base.IBaseExecution<SP.Social.SocialRestThread>;
 }
 
 /*********************************************
 * ISocialRestFollowingManager
 **********************************************/
-export interface ISocialRestFollowingManager extends SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods, IBaseQuery<ISocialRestFollowingManagerQuery> {
+export interface ISocialRestFollowingManager extends SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods, Base.IBaseQuery<ISocialRestFollowingManagerQuery> {
 
 }
 
 /*********************************************
 * ISocialRestFollowingManagerCollection
 **********************************************/
-export interface ISocialRestFollowingManagerCollection extends IBaseResults<SocialRestFollowingManager> {
+export interface ISocialRestFollowingManagerCollection extends Base.IBaseResults<SocialRestFollowingManager> {
 	done?: (resolve: (value?: Array<SocialRestFollowingManager>) => void) => void;
 }
 
 /*********************************************
 * ISocialRestFollowingManagerQueryCollection
 **********************************************/
-export interface ISocialRestFollowingManagerQueryCollection extends IBaseResults<SocialRestFollowingManagerOData> {
+export interface ISocialRestFollowingManagerQueryCollection extends Base.IBaseResults<SocialRestFollowingManagerOData> {
 	done?: (resolve: (value?: Array<SocialRestFollowingManagerOData>) => void) => void;
 }
 
@@ -432,7 +432,7 @@ export interface ISocialRestFollowingManagerQuery extends SocialRestFollowingMan
 /*********************************************
 * SocialRestFollowingManager
 **********************************************/
-export interface SocialRestFollowingManager extends IBaseResult, SocialRestFollowingManagerProps, SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods {
+export interface SocialRestFollowingManager extends Base.IBaseResult, SocialRestFollowingManagerProps, SocialRestFollowingManagerCollections, SocialRestFollowingManagerMethods {
 
 }
 
@@ -464,7 +464,7 @@ export interface SocialRestFollowingManagerCollections extends SocialRestFollowi
 /*********************************************
 * SocialRestFollowingManagerOData
 **********************************************/
-export interface SocialRestFollowingManagerOData extends IBaseResult, SocialRestFollowingManagerProps, SocialRestFollowingManagerMethods {
+export interface SocialRestFollowingManagerOData extends Base.IBaseResult, SocialRestFollowingManagerProps, SocialRestFollowingManagerMethods {
 
 }
 
@@ -472,34 +472,34 @@ export interface SocialRestFollowingManagerOData extends IBaseResult, SocialRest
 * SocialRestFollowingManagerMethods
 **********************************************/
 export interface SocialRestFollowingManagerMethods {
-	follow(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): IBaseExecution<number>;
-	followed(types?: number): IBaseCollection<SP.Social.SocialActor>;
-	followedCount(types?: number): IBaseExecution<number>;
-	followers(): IBaseCollection<SP.Social.SocialActor>;
-	isFollowed(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): IBaseExecution<boolean>;
-	my(): IBaseExecution<SP.Social.SocialRestFollowingManager>;
-	stopFollowing(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): IBaseExecution<any>;
-	suggestions(): IBaseCollection<SP.Social.SocialActor>;
+	follow(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): Base.IBaseExecution<number>;
+	followed(types?: number): Base.IBaseCollection<SP.Social.SocialActor>;
+	followedCount(types?: number): Base.IBaseExecution<number>;
+	followers(): Base.IBaseCollection<SP.Social.SocialActor>;
+	isFollowed(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): Base.IBaseExecution<boolean>;
+	my(): Base.IBaseExecution<SP.Social.SocialRestFollowingManager>;
+	stopFollowing(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): Base.IBaseExecution<any>;
+	suggestions(): Base.IBaseCollection<SP.Social.SocialActor>;
 }
 
 /*********************************************
 * ISocialRestThread
 **********************************************/
-export interface ISocialRestThread extends SocialRestThreadCollections, SocialRestThreadMethods, IBaseQuery<ISocialRestThreadQuery> {
+export interface ISocialRestThread extends SocialRestThreadCollections, SocialRestThreadMethods, Base.IBaseQuery<ISocialRestThreadQuery> {
 
 }
 
 /*********************************************
 * ISocialRestThreadCollection
 **********************************************/
-export interface ISocialRestThreadCollection extends IBaseResults<SocialRestThread> {
+export interface ISocialRestThreadCollection extends Base.IBaseResults<SocialRestThread> {
 	done?: (resolve: (value?: Array<SocialRestThread>) => void) => void;
 }
 
 /*********************************************
 * ISocialRestThreadQueryCollection
 **********************************************/
-export interface ISocialRestThreadQueryCollection extends IBaseResults<SocialRestThreadOData> {
+export interface ISocialRestThreadQueryCollection extends Base.IBaseResults<SocialRestThreadOData> {
 	done?: (resolve: (value?: Array<SocialRestThreadOData>) => void) => void;
 }
 
@@ -513,7 +513,7 @@ export interface ISocialRestThreadQuery extends SocialRestThreadOData, SocialRes
 /*********************************************
 * SocialRestThread
 **********************************************/
-export interface SocialRestThread extends IBaseResult, SocialRestThreadProps, SocialRestThreadCollections, SocialRestThreadMethods {
+export interface SocialRestThread extends Base.IBaseResult, SocialRestThreadProps, SocialRestThreadCollections, SocialRestThreadMethods {
 
 }
 
@@ -542,7 +542,7 @@ export interface SocialRestThreadCollections extends SocialRestThreadPropMethods
 /*********************************************
 * SocialRestThreadOData
 **********************************************/
-export interface SocialRestThreadOData extends IBaseResult, SocialRestThreadProps, SocialRestThreadMethods {
+export interface SocialRestThreadOData extends Base.IBaseResult, SocialRestThreadProps, SocialRestThreadMethods {
 
 }
 
@@ -550,11 +550,11 @@ export interface SocialRestThreadOData extends IBaseResult, SocialRestThreadProp
 * SocialRestThreadMethods
 **********************************************/
 export interface SocialRestThreadMethods {
-	delete(ID?: string): IBaseExecution<any>;
-	like(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;
-	likers(ID?: string): IBaseCollection<SP.Social.SocialActor>;
-	lock(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;
-	reply(restCreationData?: SP.Social.SocialRestPostCreationData): IBaseExecution<SP.Social.SocialRestThread>;
-	unLike(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;
-	unLock(ID?: string): IBaseExecution<SP.Social.SocialRestThread>;
+	delete(ID?: string): Base.IBaseExecution<any>;
+	like(ID?: string): Base.IBaseExecution<SP.Social.SocialRestThread>;
+	likers(ID?: string): Base.IBaseCollection<SP.Social.SocialActor>;
+	lock(ID?: string): Base.IBaseExecution<SP.Social.SocialRestThread>;
+	reply(restCreationData?: SP.Social.SocialRestPostCreationData): Base.IBaseExecution<SP.Social.SocialRestThread>;
+	unLike(ID?: string): Base.IBaseExecution<SP.Social.SocialRestThread>;
+	unLock(ID?: string): Base.IBaseExecution<SP.Social.SocialRestThread>;
 }

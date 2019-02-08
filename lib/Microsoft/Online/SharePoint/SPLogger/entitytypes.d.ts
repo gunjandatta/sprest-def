@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../";
+import { Base } from "../../../../";
 import { Microsoft } from "../../../../";
 
 /*********************************************
 * ILogExport
 **********************************************/
-export interface ILogExport extends LogExportCollections, LogExportMethods, IBaseQuery<ILogExportQuery> {
+export interface ILogExport extends LogExportCollections, LogExportMethods, Base.IBaseQuery<ILogExportQuery> {
 
 }
 
 /*********************************************
 * ILogExportCollection
 **********************************************/
-export interface ILogExportCollection extends IBaseResults<LogExport> {
+export interface ILogExportCollection extends Base.IBaseResults<LogExport> {
 	done?: (resolve: (value?: Array<LogExport>) => void) => void;
 }
 
 /*********************************************
 * ILogExportQueryCollection
 **********************************************/
-export interface ILogExportQueryCollection extends IBaseResults<LogExportOData> {
+export interface ILogExportQueryCollection extends Base.IBaseResults<LogExportOData> {
 	done?: (resolve: (value?: Array<LogExportOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface ILogExportQuery extends LogExportOData, LogExportMethods {
 /*********************************************
 * LogExport
 **********************************************/
-export interface LogExport extends IBaseResult, LogExportProps, LogExportCollections, LogExportMethods {
+export interface LogExport extends Base.IBaseResult, LogExportProps, LogExportCollections, LogExportMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface LogExportCollections extends LogExportPropMethods {
 /*********************************************
 * LogExportOData
 **********************************************/
-export interface LogExportOData extends IBaseResult, LogExportProps, LogExportMethods {
+export interface LogExportOData extends Base.IBaseResult, LogExportProps, LogExportMethods {
 
 }
 
@@ -68,9 +68,9 @@ export interface LogExportOData extends IBaseResult, LogExportProps, LogExportMe
 * LogExportMethods
 **********************************************/
 export interface LogExportMethods {
-	getFiles(partitionId?: string, logType?: string): IBaseCollection<Microsoft.Online.SharePoint.SPLogger.LogFileInfo>;
-	getLogTypes(): IBaseCollection<string>;
-	getPartitions(logType?: string): IBaseCollection<string>;
+	getFiles(partitionId?: string, logType?: string): Base.IBaseCollection<Microsoft.Online.SharePoint.SPLogger.LogFileInfo>;
+	getLogTypes(): Base.IBaseCollection<string>;
+	getPartitions(logType?: string): Base.IBaseCollection<string>;
 }
 
 /*********************************************

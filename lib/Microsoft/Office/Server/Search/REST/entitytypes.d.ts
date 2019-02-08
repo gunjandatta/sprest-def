@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../../";
+import { Base } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
 * ISearchService
 **********************************************/
-export interface ISearchService extends SearchServiceCollections, SearchServiceMethods, IBaseExecution<ISearchService> {
+export interface ISearchService extends SearchServiceCollections, SearchServiceMethods, Base.IBaseExecution<ISearchService> {
 
 }
 
 /*********************************************
 * ISearchServiceCollection
 **********************************************/
-export interface ISearchServiceCollection extends IBaseResults<SearchService> {
+export interface ISearchServiceCollection extends Base.IBaseResults<SearchService> {
 	done?: (resolve: (value?: Array<SearchService>) => void) => void;
 }
 
 /*********************************************
 * ISearchServiceQueryCollection
 **********************************************/
-export interface ISearchServiceQueryCollection extends IBaseResults<SearchServiceOData> {
+export interface ISearchServiceQueryCollection extends Base.IBaseResults<SearchServiceOData> {
 	done?: (resolve: (value?: Array<SearchServiceOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface ISearchServiceQuery extends SearchServiceOData, SearchServiceMe
 /*********************************************
 * SearchService
 **********************************************/
-export interface SearchService extends IBaseResult, SearchServiceProps, SearchServiceCollections, SearchServiceMethods {
+export interface SearchService extends Base.IBaseResult, SearchServiceProps, SearchServiceCollections, SearchServiceMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface SearchServiceCollections extends SearchServicePropMethods {
 /*********************************************
 * SearchServiceOData
 **********************************************/
-export interface SearchServiceOData extends IBaseResult, SearchServiceProps, SearchServiceMethods {
+export interface SearchServiceOData extends Base.IBaseResult, SearchServiceProps, SearchServiceMethods {
 
 }
 
@@ -68,36 +68,36 @@ export interface SearchServiceOData extends IBaseResult, SearchServiceProps, Sea
 * SearchServiceMethods
 **********************************************/
 export interface SearchServiceMethods {
-	autocompletions(querytext?: string, sources?: string, numberOfCompletions?: number, cursorPosition?: number): IBaseExecution<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletionResults>;
-	export(userName?: string, startTime?: any): IBaseExecution<string>;
-	exportpopulartenantqueries(): IBaseCollection<Microsoft.SharePoint.Client.Search.Query.PopularTenantQuery>;
-	postquery(request?: Microsoft.Office.Server.Search.REST.SearchRequest): IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
-	query(querytext?: string, queryTemplate?: string, enableInterleaving?: boolean, sourceId?: any, rankingModelId?: string, startRow?: number, rowLimit?: number, rowsPerPage?: number, selectProperties?: string, culture?: number, refinementFilters?: string, refiners?: string, hiddenConstraints?: string, sortList?: string, enableStemming?: boolean, trimDuplicates?: boolean, timeout?: number, enableNicknames?: boolean, enablePhonetic?: boolean, enableFQL?: boolean, hitHighlightedProperties?: string, propertiesToGenerateAcronyms?: string, bypassResultTypes?: boolean, processBestBets?: boolean, clientType?: string, personalizationData?: any, resultsUrl?: string, queryTag?: string, trimDuplicatesIncludeId?: number, totalRowsExactMinimum?: number, impressionId?: string, properties?: string, enableQueryRules?: boolean, summaryLength?: number, maxSnippetLength?: number, desiredSnippetLength?: number, uiLanguage?: number, blockDedupeMode?: number, generateBlockRankLog?: boolean, enableSorting?: boolean, collapseSpecification?: string, processPersonalFavorites?: boolean, enableOrderingHitHighlightedProperty?: boolean, hitHighlightedMultivaluePropertyLimit?: number, queryTemplatePropertiesUrl?: string, timeZoneId?: number, useOLSQuery?: number, OLSQuerySession?: string): IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
-	recordPageClick(pageInfo?: string, clickType?: string, blockType?: number, clickedResultId?: string, subResultIndex?: number, immediacySourceId?: string, immediacyQueryString?: string, immediacyTitle?: string, immediacyUrl?: string): IBaseExecution<any>;
-	resultspageaddress(): IBaseExecution<string>;
-	searchcenterurl(): IBaseExecution<string>;
-	suggest(querytext?: string, iNumberOfQuerySuggestions?: number, iNumberOfResultSuggestions?: number, iNumberOfPopularResultSuggestions?: number, fPreQuerySuggestions?: boolean, fHitHighlighting?: boolean, fCapitalizeFirstLetters?: boolean, culture?: number, enableStemming?: boolean, showPeopleNameSuggestions?: boolean, enableQueryRules?: boolean, fPrefixMatchAllTerms?: boolean, sourceId?: string, clientType?: string, useOLSQuery?: number, OLSQuerySession?: string, zeroTermSuggestions?: boolean): IBaseExecution<Microsoft.SharePoint.Client.Search.Query.QuerySuggestionResults>;
-	searchquery(request?: Microsoft.Office.Server.Search.REST.SearchRequest): IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
+	autocompletions(querytext?: string, sources?: string, numberOfCompletions?: number, cursorPosition?: number): Base.IBaseExecution<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletionResults>;
+	export(userName?: string, startTime?: any): Base.IBaseExecution<string>;
+	exportpopulartenantqueries(): Base.IBaseCollection<Microsoft.SharePoint.Client.Search.Query.PopularTenantQuery>;
+	postquery(request?: Microsoft.Office.Server.Search.REST.SearchRequest): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
+	query(querytext?: string, queryTemplate?: string, enableInterleaving?: boolean, sourceId?: any, rankingModelId?: string, startRow?: number, rowLimit?: number, rowsPerPage?: number, selectProperties?: string, culture?: number, refinementFilters?: string, refiners?: string, hiddenConstraints?: string, sortList?: string, enableStemming?: boolean, trimDuplicates?: boolean, timeout?: number, enableNicknames?: boolean, enablePhonetic?: boolean, enableFQL?: boolean, hitHighlightedProperties?: string, propertiesToGenerateAcronyms?: string, bypassResultTypes?: boolean, processBestBets?: boolean, clientType?: string, personalizationData?: any, resultsUrl?: string, queryTag?: string, trimDuplicatesIncludeId?: number, totalRowsExactMinimum?: number, impressionId?: string, properties?: string, enableQueryRules?: boolean, summaryLength?: number, maxSnippetLength?: number, desiredSnippetLength?: number, uiLanguage?: number, blockDedupeMode?: number, generateBlockRankLog?: boolean, enableSorting?: boolean, collapseSpecification?: string, processPersonalFavorites?: boolean, enableOrderingHitHighlightedProperty?: boolean, hitHighlightedMultivaluePropertyLimit?: number, queryTemplatePropertiesUrl?: string, timeZoneId?: number, useOLSQuery?: number, OLSQuerySession?: string): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
+	recordPageClick(pageInfo?: string, clickType?: string, blockType?: number, clickedResultId?: string, subResultIndex?: number, immediacySourceId?: string, immediacyQueryString?: string, immediacyTitle?: string, immediacyUrl?: string): Base.IBaseExecution<any>;
+	resultspageaddress(): Base.IBaseExecution<string>;
+	searchcenterurl(): Base.IBaseExecution<string>;
+	suggest(querytext?: string, iNumberOfQuerySuggestions?: number, iNumberOfResultSuggestions?: number, iNumberOfPopularResultSuggestions?: number, fPreQuerySuggestions?: boolean, fHitHighlighting?: boolean, fCapitalizeFirstLetters?: boolean, culture?: number, enableStemming?: boolean, showPeopleNameSuggestions?: boolean, enableQueryRules?: boolean, fPrefixMatchAllTerms?: boolean, sourceId?: string, clientType?: string, useOLSQuery?: number, OLSQuerySession?: string, zeroTermSuggestions?: boolean): Base.IBaseExecution<Microsoft.SharePoint.Client.Search.Query.QuerySuggestionResults>;
+	searchquery(request?: Microsoft.Office.Server.Search.REST.SearchRequest): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
 }
 
 /*********************************************
 * ISearchSetting
 **********************************************/
-export interface ISearchSetting extends SearchSettingCollections, SearchSettingMethods, IBaseQuery<ISearchSettingQuery> {
+export interface ISearchSetting extends SearchSettingCollections, SearchSettingMethods, Base.IBaseQuery<ISearchSettingQuery> {
 
 }
 
 /*********************************************
 * ISearchSettingCollection
 **********************************************/
-export interface ISearchSettingCollection extends IBaseResults<SearchSetting> {
+export interface ISearchSettingCollection extends Base.IBaseResults<SearchSetting> {
 	done?: (resolve: (value?: Array<SearchSetting>) => void) => void;
 }
 
 /*********************************************
 * ISearchSettingQueryCollection
 **********************************************/
-export interface ISearchSettingQueryCollection extends IBaseResults<SearchSettingOData> {
+export interface ISearchSettingQueryCollection extends Base.IBaseResults<SearchSettingOData> {
 	done?: (resolve: (value?: Array<SearchSettingOData>) => void) => void;
 }
 
@@ -111,7 +111,7 @@ export interface ISearchSettingQuery extends SearchSettingOData, SearchSettingMe
 /*********************************************
 * SearchSetting
 **********************************************/
-export interface SearchSetting extends IBaseResult, SearchSettingProps, SearchSettingCollections, SearchSettingMethods {
+export interface SearchSetting extends Base.IBaseResult, SearchSettingProps, SearchSettingCollections, SearchSettingMethods {
 
 }
 
@@ -139,7 +139,7 @@ export interface SearchSettingCollections extends SearchSettingPropMethods {
 /*********************************************
 * SearchSettingOData
 **********************************************/
-export interface SearchSettingOData extends IBaseResult, SearchSettingProps, SearchSettingMethods {
+export interface SearchSettingOData extends Base.IBaseResult, SearchSettingProps, SearchSettingMethods {
 
 }
 
@@ -147,9 +147,9 @@ export interface SearchSettingOData extends IBaseResult, SearchSettingProps, Sea
 * SearchSettingMethods
 **********************************************/
 export interface SearchSettingMethods {
-	getpromotedresultqueryrules(siteCollectionLevel?: boolean, offset?: number, numberOfRules?: number): IBaseExecution<Microsoft.Office.Server.Search.REST.PromotedResultsOperationsResult>;
-	getqueryconfiguration(callLocalSearchFarmsOnly?: boolean): IBaseExecution<Microsoft.Office.Server.Search.REST.QueryConfiguration>;
-	getxssearchpolicy(): IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
-	pingadminendpoint(): IBaseExecution<boolean>;
-	setxssearchpolicy(policy?: string): IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
+	getpromotedresultqueryrules(siteCollectionLevel?: boolean, offset?: number, numberOfRules?: number): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.PromotedResultsOperationsResult>;
+	getqueryconfiguration(callLocalSearchFarmsOnly?: boolean): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.QueryConfiguration>;
+	getxssearchpolicy(): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
+	pingadminendpoint(): Base.IBaseExecution<boolean>;
+	setxssearchpolicy(policy?: string): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
 }

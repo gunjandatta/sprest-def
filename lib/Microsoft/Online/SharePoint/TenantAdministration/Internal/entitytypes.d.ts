@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../../";
+import { Base } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionGrant
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods, IBaseQuery<ISPOWebAppServicePrincipalPermissionGrantQuery> {
+export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods, Base.IBaseQuery<ISPOWebAppServicePrincipalPermissionGrantQuery> {
 
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionGrantCollection
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionGrantCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionGrant>, SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
+export interface ISPOWebAppServicePrincipalPermissionGrantCollection extends Base.IBaseResults<SPOWebAppServicePrincipalPermissionGrant>, SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
 	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionGrant>) => void) => void;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionGrantQueryCollection
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionGrantQueryCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionGrantOData>, SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
+export interface ISPOWebAppServicePrincipalPermissionGrantQueryCollection extends Base.IBaseResults<SPOWebAppServicePrincipalPermissionGrantOData>, SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
 	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionGrantOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface ISPOWebAppServicePrincipalPermissionGrantQuery extends SPOWebAp
 /*********************************************
 * SPOWebAppServicePrincipalPermissionGrant
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionGrant extends IBaseResult, SPOWebAppServicePrincipalPermissionGrantProps, SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods {
+export interface SPOWebAppServicePrincipalPermissionGrant extends Base.IBaseResult, SPOWebAppServicePrincipalPermissionGrantProps, SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods {
 
 }
 
@@ -68,13 +68,13 @@ export interface SPOWebAppServicePrincipalPermissionGrantCollections extends SPO
 * SPOWebAppServicePrincipalPermissionGrantCollectionMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionGrantCollectionMethods {
-	getByObjectId(objectId?: string): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantMethods;
+	getByObjectId(objectId?: string): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantMethods;
 }
 
 /*********************************************
 * SPOWebAppServicePrincipalPermissionGrantOData
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionGrantOData extends IBaseResult, SPOWebAppServicePrincipalPermissionGrantProps, SPOWebAppServicePrincipalPermissionGrantMethods {
+export interface SPOWebAppServicePrincipalPermissionGrantOData extends Base.IBaseResult, SPOWebAppServicePrincipalPermissionGrantProps, SPOWebAppServicePrincipalPermissionGrantMethods {
 
 }
 
@@ -82,27 +82,27 @@ export interface SPOWebAppServicePrincipalPermissionGrantOData extends IBaseResu
 * SPOWebAppServicePrincipalPermissionGrantMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionGrantMethods {
-	delete(): IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionRequest
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestCollections, SPOWebAppServicePrincipalPermissionRequestMethods, IBaseQuery<ISPOWebAppServicePrincipalPermissionRequestQuery> {
+export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestCollections, SPOWebAppServicePrincipalPermissionRequestMethods, Base.IBaseQuery<ISPOWebAppServicePrincipalPermissionRequestQuery> {
 
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionRequestCollection
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionRequestCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionRequest>, SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
+export interface ISPOWebAppServicePrincipalPermissionRequestCollection extends Base.IBaseResults<SPOWebAppServicePrincipalPermissionRequest>, SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
 	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionRequest>) => void) => void;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionRequestQueryCollection
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionRequestQueryCollection extends IBaseResults<SPOWebAppServicePrincipalPermissionRequestOData>, SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
+export interface ISPOWebAppServicePrincipalPermissionRequestQueryCollection extends Base.IBaseResults<SPOWebAppServicePrincipalPermissionRequestOData>, SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
 	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalPermissionRequestOData>) => void) => void;
 }
 
@@ -116,7 +116,7 @@ export interface ISPOWebAppServicePrincipalPermissionRequestQuery extends SPOWeb
 /*********************************************
 * SPOWebAppServicePrincipalPermissionRequest
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionRequest extends IBaseResult, SPOWebAppServicePrincipalPermissionRequestProps, SPOWebAppServicePrincipalPermissionRequestCollections, SPOWebAppServicePrincipalPermissionRequestMethods {
+export interface SPOWebAppServicePrincipalPermissionRequest extends Base.IBaseResult, SPOWebAppServicePrincipalPermissionRequestProps, SPOWebAppServicePrincipalPermissionRequestCollections, SPOWebAppServicePrincipalPermissionRequestMethods {
 
 }
 
@@ -153,14 +153,14 @@ export interface SPOWebAppServicePrincipalPermissionRequestCollections extends S
 * SPOWebAppServicePrincipalPermissionRequestCollectionMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequestCollectionMethods {
-	approve(resource?: string, scope?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
-	getById(id?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestMethods;
+	approve(resource?: string, scope?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
+	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestMethods;
 }
 
 /*********************************************
 * SPOWebAppServicePrincipalPermissionRequestOData
 **********************************************/
-export interface SPOWebAppServicePrincipalPermissionRequestOData extends IBaseResult, SPOWebAppServicePrincipalPermissionRequestProps, SPOWebAppServicePrincipalPermissionRequestMethods {
+export interface SPOWebAppServicePrincipalPermissionRequestOData extends Base.IBaseResult, SPOWebAppServicePrincipalPermissionRequestProps, SPOWebAppServicePrincipalPermissionRequestMethods {
 
 }
 
@@ -168,28 +168,28 @@ export interface SPOWebAppServicePrincipalPermissionRequestOData extends IBaseRe
 * SPOWebAppServicePrincipalPermissionRequestMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequestMethods {
-	approve(): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
-	deny(): IBaseExecution<any>;
+	approve(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant>;
+	deny(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipal
 **********************************************/
-export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCollections, SPOWebAppServicePrincipalMethods, IBaseQuery<ISPOWebAppServicePrincipalQuery> {
+export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCollections, SPOWebAppServicePrincipalMethods, Base.IBaseQuery<ISPOWebAppServicePrincipalQuery> {
 
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalCollection
 **********************************************/
-export interface ISPOWebAppServicePrincipalCollection extends IBaseResults<SPOWebAppServicePrincipal> {
+export interface ISPOWebAppServicePrincipalCollection extends Base.IBaseResults<SPOWebAppServicePrincipal> {
 	done?: (resolve: (value?: Array<SPOWebAppServicePrincipal>) => void) => void;
 }
 
 /*********************************************
 * ISPOWebAppServicePrincipalQueryCollection
 **********************************************/
-export interface ISPOWebAppServicePrincipalQueryCollection extends IBaseResults<SPOWebAppServicePrincipalOData> {
+export interface ISPOWebAppServicePrincipalQueryCollection extends Base.IBaseResults<SPOWebAppServicePrincipalOData> {
 	done?: (resolve: (value?: Array<SPOWebAppServicePrincipalOData>) => void) => void;
 }
 
@@ -203,7 +203,7 @@ export interface ISPOWebAppServicePrincipalQuery extends SPOWebAppServicePrincip
 /*********************************************
 * SPOWebAppServicePrincipal
 **********************************************/
-export interface SPOWebAppServicePrincipal extends IBaseResult, SPOWebAppServicePrincipalProps, SPOWebAppServicePrincipalCollections, SPOWebAppServicePrincipalMethods {
+export interface SPOWebAppServicePrincipal extends Base.IBaseResult, SPOWebAppServicePrincipalProps, SPOWebAppServicePrincipalCollections, SPOWebAppServicePrincipalMethods {
 
 }
 
@@ -227,23 +227,23 @@ export interface SPOWebAppServicePrincipalPropMethods {
 * SPOWebAppServicePrincipalCollections
 **********************************************/
 export interface SPOWebAppServicePrincipalCollections extends SPOWebAppServicePrincipalPropMethods {
-	PermissionGrants(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollectionMethods;
-	PermissionGrants(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantMethods;
-	PermissionRequests(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollectionMethods;
-	PermissionRequests(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestMethods;
+	PermissionGrants(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollectionMethods;
+	PermissionGrants(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantMethods;
+	PermissionRequests(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollectionMethods;
+	PermissionRequests(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestMethods;
 }
 
 /*********************************************
 * SPOWebAppServicePrincipalOData
 **********************************************/
-export interface SPOWebAppServicePrincipalOData extends IBaseResult, SPOWebAppServicePrincipalProps, SPOWebAppServicePrincipalMethods {
-	PermissionGrants: IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollectionMethods;
-	PermissionRequests: IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollectionMethods;
+export interface SPOWebAppServicePrincipalOData extends Base.IBaseResult, SPOWebAppServicePrincipalProps, SPOWebAppServicePrincipalMethods {
+	PermissionGrants: Base.IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollectionMethods;
+	PermissionRequests: Base.IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollectionMethods;
 }
 
 /*********************************************
 * SPOWebAppServicePrincipalMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalMethods {
-	update(): IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
 }

@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 
 /*********************************************
 * IActivityLogger
 **********************************************/
-export interface IActivityLogger extends ActivityLoggerCollections, ActivityLoggerMethods, IBaseQuery<IActivityLoggerQuery> {
+export interface IActivityLogger extends ActivityLoggerCollections, ActivityLoggerMethods, Base.IBaseQuery<IActivityLoggerQuery> {
 
 }
 
 /*********************************************
 * IActivityLoggerCollection
 **********************************************/
-export interface IActivityLoggerCollection extends IBaseResults<ActivityLogger> {
+export interface IActivityLoggerCollection extends Base.IBaseResults<ActivityLogger> {
 	done?: (resolve: (value?: Array<ActivityLogger>) => void) => void;
 }
 
 /*********************************************
 * IActivityLoggerQueryCollection
 **********************************************/
-export interface IActivityLoggerQueryCollection extends IBaseResults<ActivityLoggerOData> {
+export interface IActivityLoggerQueryCollection extends Base.IBaseResults<ActivityLoggerOData> {
 	done?: (resolve: (value?: Array<ActivityLoggerOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IActivityLoggerQuery extends ActivityLoggerOData, ActivityLogge
 /*********************************************
 * ActivityLogger
 **********************************************/
-export interface ActivityLogger extends IBaseResult, ActivityLoggerProps, ActivityLoggerCollections, ActivityLoggerMethods {
+export interface ActivityLogger extends Base.IBaseResult, ActivityLoggerProps, ActivityLoggerCollections, ActivityLoggerMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface ActivityLoggerCollections extends ActivityLoggerPropMethods {
 /*********************************************
 * ActivityLoggerOData
 **********************************************/
-export interface ActivityLoggerOData extends IBaseResult, ActivityLoggerProps, ActivityLoggerMethods {
+export interface ActivityLoggerOData extends Base.IBaseResult, ActivityLoggerProps, ActivityLoggerMethods {
 
 }
 
@@ -67,9 +67,9 @@ export interface ActivityLoggerOData extends IBaseResult, ActivityLoggerProps, A
 * ActivityLoggerMethods
 **********************************************/
 export interface ActivityLoggerMethods {
-	feedbackDirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): IBaseExecution<any>;
-	feedbackIndirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): IBaseExecution<any>;
-	logActivity(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string): IBaseExecution<any>;
+	feedbackDirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): Base.IBaseExecution<any>;
+	feedbackIndirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): Base.IBaseExecution<any>;
+	logActivity(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

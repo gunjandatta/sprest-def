@@ -1,4 +1,4 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
@@ -40,21 +40,21 @@ export interface FilterCollections {
 /*********************************************
 * IEntityIdentifier
 **********************************************/
-export interface IEntityIdentifier extends EntityIdentifierCollections, EntityIdentifierMethods, IBaseQuery<IEntityIdentifierQuery> {
+export interface IEntityIdentifier extends EntityIdentifierCollections, EntityIdentifierMethods, Base.IBaseQuery<IEntityIdentifierQuery> {
 
 }
 
 /*********************************************
 * IEntityIdentifierCollection
 **********************************************/
-export interface IEntityIdentifierCollection extends IBaseResults<EntityIdentifier> {
+export interface IEntityIdentifierCollection extends Base.IBaseResults<EntityIdentifier> {
 	done?: (resolve: (value?: Array<EntityIdentifier>) => void) => void;
 }
 
 /*********************************************
 * IEntityIdentifierQueryCollection
 **********************************************/
-export interface IEntityIdentifierQueryCollection extends IBaseResults<EntityIdentifierOData> {
+export interface IEntityIdentifierQueryCollection extends Base.IBaseResults<EntityIdentifierOData> {
 	done?: (resolve: (value?: Array<EntityIdentifierOData>) => void) => void;
 }
 
@@ -68,7 +68,7 @@ export interface IEntityIdentifierQuery extends EntityIdentifierOData, EntityIde
 /*********************************************
 * EntityIdentifier
 **********************************************/
-export interface EntityIdentifier extends IBaseResult, EntityIdentifierProps, EntityIdentifierCollections, EntityIdentifierMethods {
+export interface EntityIdentifier extends Base.IBaseResult, EntityIdentifierProps, EntityIdentifierCollections, EntityIdentifierMethods {
 
 }
 
@@ -97,7 +97,7 @@ export interface EntityIdentifierCollections extends EntityIdentifierPropMethods
 /*********************************************
 * EntityIdentifierOData
 **********************************************/
-export interface EntityIdentifierOData extends IBaseResult, EntityIdentifierProps, EntityIdentifierMethods {
+export interface EntityIdentifierOData extends Base.IBaseResult, EntityIdentifierProps, EntityIdentifierMethods {
 
 }
 
@@ -105,9 +105,9 @@ export interface EntityIdentifierOData extends IBaseResult, EntityIdentifierProp
 * EntityIdentifierMethods
 **********************************************/
 export interface EntityIdentifierMethods {
-	containsLocalizedDisplayName(): IBaseExecution<boolean>;
-	getDefaultDisplayName(): IBaseExecution<string>;
-	getLocalizedDisplayName(): IBaseExecution<string>;
+	containsLocalizedDisplayName(): Base.IBaseExecution<boolean>;
+	getDefaultDisplayName(): Base.IBaseExecution<string>;
+	getLocalizedDisplayName(): Base.IBaseExecution<string>;
 }
 
 /*********************************************
@@ -127,21 +127,21 @@ export interface LobSystemInstanceCollections {
 /*********************************************
 * ITypeDescriptor
 **********************************************/
-export interface ITypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods, IBaseQuery<ITypeDescriptorQuery> {
+export interface ITypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods, Base.IBaseQuery<ITypeDescriptorQuery> {
 
 }
 
 /*********************************************
 * ITypeDescriptorCollection
 **********************************************/
-export interface ITypeDescriptorCollection extends IBaseResults<TypeDescriptor> {
+export interface ITypeDescriptorCollection extends Base.IBaseResults<TypeDescriptor> {
 	done?: (resolve: (value?: Array<TypeDescriptor>) => void) => void;
 }
 
 /*********************************************
 * ITypeDescriptorQueryCollection
 **********************************************/
-export interface ITypeDescriptorQueryCollection extends IBaseResults<TypeDescriptorOData> {
+export interface ITypeDescriptorQueryCollection extends Base.IBaseResults<TypeDescriptorOData> {
 	done?: (resolve: (value?: Array<TypeDescriptorOData>) => void) => void;
 }
 
@@ -155,7 +155,7 @@ export interface ITypeDescriptorQuery extends TypeDescriptorOData, TypeDescripto
 /*********************************************
 * TypeDescriptor
 **********************************************/
-export interface TypeDescriptor extends IBaseResult, TypeDescriptorProps, TypeDescriptorCollections, TypeDescriptorMethods {
+export interface TypeDescriptor extends Base.IBaseResult, TypeDescriptorProps, TypeDescriptorCollections, TypeDescriptorMethods {
 
 }
 
@@ -187,7 +187,7 @@ export interface TypeDescriptorCollections extends TypeDescriptorPropMethods {
 /*********************************************
 * TypeDescriptorOData
 **********************************************/
-export interface TypeDescriptorOData extends IBaseResult, TypeDescriptorProps, TypeDescriptorMethods {
+export interface TypeDescriptorOData extends Base.IBaseResult, TypeDescriptorProps, TypeDescriptorMethods {
 
 }
 
@@ -195,33 +195,33 @@ export interface TypeDescriptorOData extends IBaseResult, TypeDescriptorProps, T
 * TypeDescriptorMethods
 **********************************************/
 export interface TypeDescriptorMethods {
-	containsLocalizedDisplayName(): IBaseExecution<boolean>;
-	getChildTypeDescriptors(): IBaseCollection<SP.BusinessData.TypeDescriptor>;
-	getDefaultDisplayName(): IBaseExecution<string>;
-	getLocalizedDisplayName(): IBaseExecution<string>;
-	getParentTypeDescriptor(): IBaseExecution<SP.BusinessData.TypeDescriptor>;
-	isLeaf(): IBaseExecution<boolean>;
-	isRoot(): IBaseExecution<boolean>;
+	containsLocalizedDisplayName(): Base.IBaseExecution<boolean>;
+	getChildTypeDescriptors(): Base.IBaseCollection<SP.BusinessData.TypeDescriptor>;
+	getDefaultDisplayName(): Base.IBaseExecution<string>;
+	getLocalizedDisplayName(): Base.IBaseExecution<string>;
+	getParentTypeDescriptor(): Base.IBaseExecution<SP.BusinessData.TypeDescriptor>;
+	isLeaf(): Base.IBaseExecution<boolean>;
+	isRoot(): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************
 * IEntity
 **********************************************/
-export interface IEntity extends EntityCollections, EntityMethods, IBaseQuery<IEntityQuery> {
+export interface IEntity extends EntityCollections, EntityMethods, Base.IBaseQuery<IEntityQuery> {
 
 }
 
 /*********************************************
 * IEntityCollection
 **********************************************/
-export interface IEntityCollection extends IBaseResults<Entity> {
+export interface IEntityCollection extends Base.IBaseResults<Entity> {
 	done?: (resolve: (value?: Array<Entity>) => void) => void;
 }
 
 /*********************************************
 * IEntityQueryCollection
 **********************************************/
-export interface IEntityQueryCollection extends IBaseResults<EntityOData> {
+export interface IEntityQueryCollection extends Base.IBaseResults<EntityOData> {
 	done?: (resolve: (value?: Array<EntityOData>) => void) => void;
 }
 
@@ -235,7 +235,7 @@ export interface IEntityQuery extends EntityOData, EntityMethods {
 /*********************************************
 * Entity
 **********************************************/
-export interface Entity extends IBaseResult, EntityProps, EntityCollections, EntityMethods {
+export interface Entity extends Base.IBaseResult, EntityProps, EntityCollections, EntityMethods {
 
 }
 
@@ -265,7 +265,7 @@ export interface EntityCollections extends EntityPropMethods {
 /*********************************************
 * EntityOData
 **********************************************/
-export interface EntityOData extends IBaseResult, EntityProps, EntityMethods {
+export interface EntityOData extends Base.IBaseResult, EntityProps, EntityMethods {
 
 }
 
@@ -273,36 +273,36 @@ export interface EntityOData extends IBaseResult, EntityProps, EntityMethods {
 * EntityMethods
 **********************************************/
 export interface EntityMethods {
-	getAssociationView(associationName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getCreatorView(methodInstanceName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getDefaultSpecificFinderView(): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getFilters(methodInstanceName?: string): IBaseCollection<SP.BusinessData.Filter>;
-	getFinderView(methodInstanceName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getIdentifierCount(): IBaseExecution<number>;
-	getIdentifiers(): IBaseCollection<SP.BusinessData.EntityIdentifier>;
-	getLobSystem(): IBaseExecution<SP.BusinessData.LobSystem>;
-	getSpecificFinderView(specificFinderName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getUpdaterView(updaterName?: string): IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getAssociationView(associationName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getCreatorView(methodInstanceName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getDefaultSpecificFinderView(): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getFilters(methodInstanceName?: string): Base.IBaseCollection<SP.BusinessData.Filter>;
+	getFinderView(methodInstanceName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getIdentifierCount(): Base.IBaseExecution<number>;
+	getIdentifiers(): Base.IBaseCollection<SP.BusinessData.EntityIdentifier>;
+	getLobSystem(): Base.IBaseExecution<SP.BusinessData.LobSystem>;
+	getSpecificFinderView(specificFinderName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getUpdaterView(updaterName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
 }
 
 /*********************************************
 * ILobSystem
 **********************************************/
-export interface ILobSystem extends LobSystemCollections, LobSystemMethods, IBaseQuery<ILobSystemQuery> {
+export interface ILobSystem extends LobSystemCollections, LobSystemMethods, Base.IBaseQuery<ILobSystemQuery> {
 
 }
 
 /*********************************************
 * ILobSystemCollection
 **********************************************/
-export interface ILobSystemCollection extends IBaseResults<LobSystem> {
+export interface ILobSystemCollection extends Base.IBaseResults<LobSystem> {
 	done?: (resolve: (value?: Array<LobSystem>) => void) => void;
 }
 
 /*********************************************
 * ILobSystemQueryCollection
 **********************************************/
-export interface ILobSystemQueryCollection extends IBaseResults<LobSystemOData> {
+export interface ILobSystemQueryCollection extends Base.IBaseResults<LobSystemOData> {
 	done?: (resolve: (value?: Array<LobSystemOData>) => void) => void;
 }
 
@@ -316,7 +316,7 @@ export interface ILobSystemQuery extends LobSystemOData, LobSystemMethods {
 /*********************************************
 * LobSystem
 **********************************************/
-export interface LobSystem extends IBaseResult, LobSystemProps, LobSystemCollections, LobSystemMethods {
+export interface LobSystem extends Base.IBaseResult, LobSystemProps, LobSystemCollections, LobSystemMethods {
 
 }
 
@@ -344,7 +344,7 @@ export interface LobSystemCollections extends LobSystemPropMethods {
 /*********************************************
 * LobSystemOData
 **********************************************/
-export interface LobSystemOData extends IBaseResult, LobSystemProps, LobSystemMethods {
+export interface LobSystemOData extends Base.IBaseResult, LobSystemProps, LobSystemMethods {
 
 }
 
@@ -352,27 +352,27 @@ export interface LobSystemOData extends IBaseResult, LobSystemProps, LobSystemMe
 * LobSystemMethods
 **********************************************/
 export interface LobSystemMethods {
-	getLobSystemInstances(): IBaseCollection<SP.BusinessData.LobSystemInstance>;
+	getLobSystemInstances(): Base.IBaseCollection<SP.BusinessData.LobSystemInstance>;
 }
 
 /*********************************************
 * IMethodExecutionResult
 **********************************************/
-export interface IMethodExecutionResult extends MethodExecutionResultCollections, MethodExecutionResultMethods, IBaseQuery<IMethodExecutionResultQuery> {
+export interface IMethodExecutionResult extends MethodExecutionResultCollections, MethodExecutionResultMethods, Base.IBaseQuery<IMethodExecutionResultQuery> {
 
 }
 
 /*********************************************
 * IMethodExecutionResultCollection
 **********************************************/
-export interface IMethodExecutionResultCollection extends IBaseResults<MethodExecutionResult> {
+export interface IMethodExecutionResultCollection extends Base.IBaseResults<MethodExecutionResult> {
 	done?: (resolve: (value?: Array<MethodExecutionResult>) => void) => void;
 }
 
 /*********************************************
 * IMethodExecutionResultQueryCollection
 **********************************************/
-export interface IMethodExecutionResultQueryCollection extends IBaseResults<MethodExecutionResultOData> {
+export interface IMethodExecutionResultQueryCollection extends Base.IBaseResults<MethodExecutionResultOData> {
 	done?: (resolve: (value?: Array<MethodExecutionResultOData>) => void) => void;
 }
 
@@ -386,7 +386,7 @@ export interface IMethodExecutionResultQuery extends MethodExecutionResultOData,
 /*********************************************
 * MethodExecutionResult
 **********************************************/
-export interface MethodExecutionResult extends IBaseResult, MethodExecutionResultProps, MethodExecutionResultCollections, MethodExecutionResultMethods {
+export interface MethodExecutionResult extends Base.IBaseResult, MethodExecutionResultProps, MethodExecutionResultCollections, MethodExecutionResultMethods {
 
 }
 
@@ -408,15 +408,15 @@ export interface MethodExecutionResultPropMethods {
 * MethodExecutionResultCollections
 **********************************************/
 export interface MethodExecutionResultCollections extends MethodExecutionResultPropMethods {
-	ReturnParameterCollection(): IBaseCollection<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
-	ReturnParameterCollection(id: string | number): IBaseQuery<SP.BusinessData.Runtime.EntityFieldValueDictionary> & SP.BusinessData.Runtime.EntityFieldValueDictionaryCollections & SP.BusinessData.Runtime.EntityFieldValueDictionaryMethods;
+	ReturnParameterCollection(): Base.IBaseCollection<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+	ReturnParameterCollection(id: string | number): Base.IBaseQuery<SP.BusinessData.Runtime.EntityFieldValueDictionary> & SP.BusinessData.Runtime.EntityFieldValueDictionaryCollections & SP.BusinessData.Runtime.EntityFieldValueDictionaryMethods;
 }
 
 /*********************************************
 * MethodExecutionResultOData
 **********************************************/
-export interface MethodExecutionResultOData extends IBaseResult, MethodExecutionResultProps, MethodExecutionResultMethods {
-	ReturnParameterCollection: IBaseResults<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+export interface MethodExecutionResultOData extends Base.IBaseResult, MethodExecutionResultProps, MethodExecutionResultMethods {
+	ReturnParameterCollection: Base.IBaseResults<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
 }
 
 /*********************************************
@@ -429,21 +429,21 @@ export interface MethodExecutionResultMethods {
 /*********************************************
 * IEntityView
 **********************************************/
-export interface IEntityView extends EntityViewCollections, EntityViewMethods, IBaseQuery<IEntityViewQuery> {
+export interface IEntityView extends EntityViewCollections, EntityViewMethods, Base.IBaseQuery<IEntityViewQuery> {
 
 }
 
 /*********************************************
 * IEntityViewCollection
 **********************************************/
-export interface IEntityViewCollection extends IBaseResults<EntityView> {
+export interface IEntityViewCollection extends Base.IBaseResults<EntityView> {
 	done?: (resolve: (value?: Array<EntityView>) => void) => void;
 }
 
 /*********************************************
 * IEntityViewQueryCollection
 **********************************************/
-export interface IEntityViewQueryCollection extends IBaseResults<EntityViewOData> {
+export interface IEntityViewQueryCollection extends Base.IBaseResults<EntityViewOData> {
 	done?: (resolve: (value?: Array<EntityViewOData>) => void) => void;
 }
 
@@ -457,7 +457,7 @@ export interface IEntityViewQuery extends EntityViewOData, EntityViewMethods {
 /*********************************************
 * EntityView
 **********************************************/
-export interface EntityView extends IBaseResult, EntityViewProps, EntityViewCollections, EntityViewMethods {
+export interface EntityView extends Base.IBaseResult, EntityViewProps, EntityViewCollections, EntityViewMethods {
 
 }
 
@@ -480,45 +480,45 @@ export interface EntityViewPropMethods {
 * EntityViewCollections
 **********************************************/
 export interface EntityViewCollections extends EntityViewPropMethods {
-	Fields(): IBaseCollection<SP.BusinessData.EntityField>;
-	Fields(id: string | number): IBaseQuery<SP.BusinessData.EntityField> & SP.BusinessData.EntityFieldCollections;
+	Fields(): Base.IBaseCollection<SP.BusinessData.EntityField>;
+	Fields(id: string | number): Base.IBaseQuery<SP.BusinessData.EntityField> & SP.BusinessData.EntityFieldCollections;
 }
 
 /*********************************************
 * EntityViewOData
 **********************************************/
-export interface EntityViewOData extends IBaseResult, EntityViewProps, EntityViewMethods {
-	Fields: IBaseResults<SP.BusinessData.EntityField>;
+export interface EntityViewOData extends Base.IBaseResult, EntityViewProps, EntityViewMethods {
+	Fields: Base.IBaseResults<SP.BusinessData.EntityField>;
 }
 
 /*********************************************
 * EntityViewMethods
 **********************************************/
 export interface EntityViewMethods {
-	getDefaultValues(): IBaseExecution<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
-	getType(fieldDotNotation?: string): IBaseExecution<string>;
-	getTypeDescriptor(fieldDotNotation?: string): IBaseExecution<SP.BusinessData.TypeDescriptor>;
-	getXmlSchema(): IBaseExecution<string>;
+	getDefaultValues(): Base.IBaseExecution<SP.BusinessData.Runtime.EntityFieldValueDictionary>;
+	getType(fieldDotNotation?: string): Base.IBaseExecution<string>;
+	getTypeDescriptor(fieldDotNotation?: string): Base.IBaseExecution<SP.BusinessData.TypeDescriptor>;
+	getXmlSchema(): Base.IBaseExecution<string>;
 }
 
 /*********************************************
 * IAppBdcCatalog
 **********************************************/
-export interface IAppBdcCatalog extends AppBdcCatalogCollections, AppBdcCatalogMethods, IBaseQuery<IAppBdcCatalogQuery> {
+export interface IAppBdcCatalog extends AppBdcCatalogCollections, AppBdcCatalogMethods, Base.IBaseQuery<IAppBdcCatalogQuery> {
 
 }
 
 /*********************************************
 * IAppBdcCatalogCollection
 **********************************************/
-export interface IAppBdcCatalogCollection extends IBaseResults<AppBdcCatalog> {
+export interface IAppBdcCatalogCollection extends Base.IBaseResults<AppBdcCatalog> {
 	done?: (resolve: (value?: Array<AppBdcCatalog>) => void) => void;
 }
 
 /*********************************************
 * IAppBdcCatalogQueryCollection
 **********************************************/
-export interface IAppBdcCatalogQueryCollection extends IBaseResults<AppBdcCatalogOData> {
+export interface IAppBdcCatalogQueryCollection extends Base.IBaseResults<AppBdcCatalogOData> {
 	done?: (resolve: (value?: Array<AppBdcCatalogOData>) => void) => void;
 }
 
@@ -532,7 +532,7 @@ export interface IAppBdcCatalogQuery extends AppBdcCatalogOData, AppBdcCatalogMe
 /*********************************************
 * AppBdcCatalog
 **********************************************/
-export interface AppBdcCatalog extends IBaseResult, AppBdcCatalogProps, AppBdcCatalogCollections, AppBdcCatalogMethods {
+export interface AppBdcCatalog extends Base.IBaseResult, AppBdcCatalogProps, AppBdcCatalogCollections, AppBdcCatalogMethods {
 
 }
 
@@ -560,7 +560,7 @@ export interface AppBdcCatalogCollections extends AppBdcCatalogPropMethods {
 /*********************************************
 * AppBdcCatalogOData
 **********************************************/
-export interface AppBdcCatalogOData extends IBaseResult, AppBdcCatalogProps, AppBdcCatalogMethods {
+export interface AppBdcCatalogOData extends Base.IBaseResult, AppBdcCatalogProps, AppBdcCatalogMethods {
 
 }
 
@@ -568,12 +568,12 @@ export interface AppBdcCatalogOData extends IBaseResult, AppBdcCatalogProps, App
 * AppBdcCatalogMethods
 **********************************************/
 export interface AppBdcCatalogMethods {
-	getConnectionId(lobSystemName?: string, lobSystemInstanceName?: string): IBaseExecution<string>;
-	getEntity(namespace?: string, name?: string): IBaseExecution<SP.BusinessData.Entity>;
-	getLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string): IBaseExecution<string>;
-	getLobSystemProperty(lobSystemName?: string, propertyName?: string): IBaseExecution<string>;
-	getPermissibleConnections(): IBaseCollection<string>;
-	setConnectionId(lobSystemName?: string, lobSystemInstanceName?: string, connectionId?: string): IBaseExecution<any>;
-	setLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string, propertyValue?: string): IBaseExecution<any>;
-	setLobSystemProperty(lobSystemName?: string, propertyName?: string, propertyValue?: string): IBaseExecution<any>;
+	getConnectionId(lobSystemName?: string, lobSystemInstanceName?: string): Base.IBaseExecution<string>;
+	getEntity(namespace?: string, name?: string): Base.IBaseExecution<SP.BusinessData.Entity>;
+	getLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string): Base.IBaseExecution<string>;
+	getLobSystemProperty(lobSystemName?: string, propertyName?: string): Base.IBaseExecution<string>;
+	getPermissibleConnections(): Base.IBaseCollection<string>;
+	setConnectionId(lobSystemName?: string, lobSystemInstanceName?: string, connectionId?: string): Base.IBaseExecution<any>;
+	setLobSystemInstanceProperty(lobSystemName?: string, lobSystemInstanceName?: string, propertyName?: string, propertyValue?: string): Base.IBaseExecution<any>;
+	setLobSystemProperty(lobSystemName?: string, propertyName?: string, propertyValue?: string): Base.IBaseExecution<any>;
 }

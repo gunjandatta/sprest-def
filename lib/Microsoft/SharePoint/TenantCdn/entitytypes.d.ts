@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 import { Microsoft } from "../../../";
 
 /*********************************************
 * ITenantCdnApi
 **********************************************/
-export interface ITenantCdnApi extends TenantCdnApiCollections, TenantCdnApiMethods, IBaseQuery<ITenantCdnApiQuery> {
+export interface ITenantCdnApi extends TenantCdnApiCollections, TenantCdnApiMethods, Base.IBaseQuery<ITenantCdnApiQuery> {
 
 }
 
 /*********************************************
 * ITenantCdnApiCollection
 **********************************************/
-export interface ITenantCdnApiCollection extends IBaseResults<TenantCdnApi> {
+export interface ITenantCdnApiCollection extends Base.IBaseResults<TenantCdnApi> {
 	done?: (resolve: (value?: Array<TenantCdnApi>) => void) => void;
 }
 
 /*********************************************
 * ITenantCdnApiQueryCollection
 **********************************************/
-export interface ITenantCdnApiQueryCollection extends IBaseResults<TenantCdnApiOData> {
+export interface ITenantCdnApiQueryCollection extends Base.IBaseResults<TenantCdnApiOData> {
 	done?: (resolve: (value?: Array<TenantCdnApiOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface ITenantCdnApiQuery extends TenantCdnApiOData, TenantCdnApiMetho
 /*********************************************
 * TenantCdnApi
 **********************************************/
-export interface TenantCdnApi extends IBaseResult, TenantCdnApiProps, TenantCdnApiCollections, TenantCdnApiMethods {
+export interface TenantCdnApi extends Base.IBaseResult, TenantCdnApiProps, TenantCdnApiCollections, TenantCdnApiMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface TenantCdnApiCollections extends TenantCdnApiPropMethods {
 /*********************************************
 * TenantCdnApiOData
 **********************************************/
-export interface TenantCdnApiOData extends IBaseResult, TenantCdnApiProps, TenantCdnApiMethods {
+export interface TenantCdnApiOData extends Base.IBaseResult, TenantCdnApiProps, TenantCdnApiMethods {
 
 }
 
@@ -68,5 +68,5 @@ export interface TenantCdnApiOData extends IBaseResult, TenantCdnApiProps, Tenan
 * TenantCdnApiMethods
 **********************************************/
 export interface TenantCdnApiMethods {
-	getCdnUrls(items?: Array<string>): IBaseCollection<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>;
+	getCdnUrls(items?: Array<string>): Base.IBaseCollection<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>;
 }

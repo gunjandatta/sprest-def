@@ -1,25 +1,25 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../../";
+import { Base } from "../../../../../";
 import { SP } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
 * IStringCollection
 **********************************************/
-export interface IStringCollection extends StringCollectionCollections, StringCollectionMethods, IBaseQuery<IStringCollectionQuery> {
+export interface IStringCollection extends StringCollectionCollections, StringCollectionMethods, Base.IBaseQuery<IStringCollectionQuery> {
 
 }
 
 /*********************************************
 * IStringCollectionCollection
 **********************************************/
-export interface IStringCollectionCollection extends IBaseResults<StringCollection> {
+export interface IStringCollectionCollection extends Base.IBaseResults<StringCollection> {
 	done?: (resolve: (value?: Array<StringCollection>) => void) => void;
 }
 
 /*********************************************
 * IStringCollectionQueryCollection
 **********************************************/
-export interface IStringCollectionQueryCollection extends IBaseResults<StringCollectionOData> {
+export interface IStringCollectionQueryCollection extends Base.IBaseResults<StringCollectionOData> {
 	done?: (resolve: (value?: Array<StringCollectionOData>) => void) => void;
 }
 
@@ -33,7 +33,7 @@ export interface IStringCollectionQuery extends StringCollectionOData, StringCol
 /*********************************************
 * StringCollection
 **********************************************/
-export interface StringCollection extends IBaseResult, StringCollectionProps, StringCollectionCollections, StringCollectionMethods {
+export interface StringCollection extends Base.IBaseResult, StringCollectionProps, StringCollectionCollections, StringCollectionMethods {
 
 }
 
@@ -62,7 +62,7 @@ export interface StringCollectionCollections extends StringCollectionPropMethods
 /*********************************************
 * StringCollectionOData
 **********************************************/
-export interface StringCollectionOData extends IBaseResult, StringCollectionProps, StringCollectionMethods {
+export interface StringCollectionOData extends Base.IBaseResult, StringCollectionProps, StringCollectionMethods {
 
 }
 
@@ -70,8 +70,8 @@ export interface StringCollectionOData extends IBaseResult, StringCollectionProp
 * StringCollectionMethods
 **********************************************/
 export interface StringCollectionMethods {
-	add(property?: string): IBaseExecution<any>;
-	clear(): IBaseExecution<any>;
+	add(property?: string): Base.IBaseExecution<any>;
+	clear(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -91,21 +91,21 @@ export interface QueryPersonalizationDataCollections {
 /*********************************************
 * IRankingLabeling
 **********************************************/
-export interface IRankingLabeling extends RankingLabelingCollections, RankingLabelingMethods, IBaseQuery<IRankingLabelingQuery> {
+export interface IRankingLabeling extends RankingLabelingCollections, RankingLabelingMethods, Base.IBaseQuery<IRankingLabelingQuery> {
 
 }
 
 /*********************************************
 * IRankingLabelingCollection
 **********************************************/
-export interface IRankingLabelingCollection extends IBaseResults<RankingLabeling> {
+export interface IRankingLabelingCollection extends Base.IBaseResults<RankingLabeling> {
 	done?: (resolve: (value?: Array<RankingLabeling>) => void) => void;
 }
 
 /*********************************************
 * IRankingLabelingQueryCollection
 **********************************************/
-export interface IRankingLabelingQueryCollection extends IBaseResults<RankingLabelingOData> {
+export interface IRankingLabelingQueryCollection extends Base.IBaseResults<RankingLabelingOData> {
 	done?: (resolve: (value?: Array<RankingLabelingOData>) => void) => void;
 }
 
@@ -119,7 +119,7 @@ export interface IRankingLabelingQuery extends RankingLabelingOData, RankingLabe
 /*********************************************
 * RankingLabeling
 **********************************************/
-export interface RankingLabeling extends IBaseResult, RankingLabelingProps, RankingLabelingCollections, RankingLabelingMethods {
+export interface RankingLabeling extends Base.IBaseResult, RankingLabelingProps, RankingLabelingCollections, RankingLabelingMethods {
 
 }
 
@@ -147,7 +147,7 @@ export interface RankingLabelingCollections extends RankingLabelingPropMethods {
 /*********************************************
 * RankingLabelingOData
 **********************************************/
-export interface RankingLabelingOData extends IBaseResult, RankingLabelingProps, RankingLabelingMethods {
+export interface RankingLabelingOData extends Base.IBaseResult, RankingLabelingProps, RankingLabelingMethods {
 
 }
 
@@ -155,29 +155,29 @@ export interface RankingLabelingOData extends IBaseResult, RankingLabelingProps,
 * RankingLabelingMethods
 **********************************************/
 export interface RankingLabelingMethods {
-	addJudgment(userQuery?: string, url?: string, labelId?: number): IBaseExecution<any>;
-	getJudgementsForQuery(query?: string): IBaseCollection<SP.KeyValue>;
-	normalizeResultUrl(url?: string): IBaseExecution<string>;
+	addJudgment(userQuery?: string, url?: string, labelId?: number): Base.IBaseExecution<any>;
+	getJudgementsForQuery(query?: string): Base.IBaseCollection<SP.KeyValue>;
+	normalizeResultUrl(url?: string): Base.IBaseExecution<string>;
 }
 
 /*********************************************
 * IReorderingRuleCollection
 **********************************************/
-export interface IReorderingRuleCollection extends ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods, IBaseQuery<IReorderingRuleCollectionQuery> {
+export interface IReorderingRuleCollection extends ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods, Base.IBaseQuery<IReorderingRuleCollectionQuery> {
 
 }
 
 /*********************************************
 * IReorderingRuleCollectionCollection
 **********************************************/
-export interface IReorderingRuleCollectionCollection extends IBaseResults<ReorderingRuleCollection> {
+export interface IReorderingRuleCollectionCollection extends Base.IBaseResults<ReorderingRuleCollection> {
 	done?: (resolve: (value?: Array<ReorderingRuleCollection>) => void) => void;
 }
 
 /*********************************************
 * IReorderingRuleCollectionQueryCollection
 **********************************************/
-export interface IReorderingRuleCollectionQueryCollection extends IBaseResults<ReorderingRuleCollectionOData> {
+export interface IReorderingRuleCollectionQueryCollection extends Base.IBaseResults<ReorderingRuleCollectionOData> {
 	done?: (resolve: (value?: Array<ReorderingRuleCollectionOData>) => void) => void;
 }
 
@@ -191,7 +191,7 @@ export interface IReorderingRuleCollectionQuery extends ReorderingRuleCollection
 /*********************************************
 * ReorderingRuleCollection
 **********************************************/
-export interface ReorderingRuleCollection extends IBaseResult, ReorderingRuleCollectionProps, ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods {
+export interface ReorderingRuleCollection extends Base.IBaseResult, ReorderingRuleCollectionProps, ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods {
 
 }
 
@@ -220,7 +220,7 @@ export interface ReorderingRuleCollectionCollections extends ReorderingRuleColle
 /*********************************************
 * ReorderingRuleCollectionOData
 **********************************************/
-export interface ReorderingRuleCollectionOData extends IBaseResult, ReorderingRuleCollectionProps, ReorderingRuleCollectionMethods {
+export interface ReorderingRuleCollectionOData extends Base.IBaseResult, ReorderingRuleCollectionProps, ReorderingRuleCollectionMethods {
 
 }
 
@@ -228,28 +228,28 @@ export interface ReorderingRuleCollectionOData extends IBaseResult, ReorderingRu
 * ReorderingRuleCollectionMethods
 **********************************************/
 export interface ReorderingRuleCollectionMethods {
-	add(matchType?: number, matchValue?: string, boost?: number): IBaseExecution<any>;
-	clear(): IBaseExecution<any>;
+	add(matchType?: number, matchValue?: string, boost?: number): Base.IBaseExecution<any>;
+	clear(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ISortCollection
 **********************************************/
-export interface ISortCollection extends SortCollectionCollections, SortCollectionMethods, IBaseQuery<ISortCollectionQuery> {
+export interface ISortCollection extends SortCollectionCollections, SortCollectionMethods, Base.IBaseQuery<ISortCollectionQuery> {
 
 }
 
 /*********************************************
 * ISortCollectionCollection
 **********************************************/
-export interface ISortCollectionCollection extends IBaseResults<SortCollection> {
+export interface ISortCollectionCollection extends Base.IBaseResults<SortCollection> {
 	done?: (resolve: (value?: Array<SortCollection>) => void) => void;
 }
 
 /*********************************************
 * ISortCollectionQueryCollection
 **********************************************/
-export interface ISortCollectionQueryCollection extends IBaseResults<SortCollectionOData> {
+export interface ISortCollectionQueryCollection extends Base.IBaseResults<SortCollectionOData> {
 	done?: (resolve: (value?: Array<SortCollectionOData>) => void) => void;
 }
 
@@ -263,7 +263,7 @@ export interface ISortCollectionQuery extends SortCollectionOData, SortCollectio
 /*********************************************
 * SortCollection
 **********************************************/
-export interface SortCollection extends IBaseResult, SortCollectionProps, SortCollectionCollections, SortCollectionMethods {
+export interface SortCollection extends Base.IBaseResult, SortCollectionProps, SortCollectionCollections, SortCollectionMethods {
 
 }
 
@@ -292,7 +292,7 @@ export interface SortCollectionCollections extends SortCollectionPropMethods {
 /*********************************************
 * SortCollectionOData
 **********************************************/
-export interface SortCollectionOData extends IBaseResult, SortCollectionProps, SortCollectionMethods {
+export interface SortCollectionOData extends Base.IBaseResult, SortCollectionProps, SortCollectionMethods {
 
 }
 
@@ -300,6 +300,6 @@ export interface SortCollectionOData extends IBaseResult, SortCollectionProps, S
 * SortCollectionMethods
 **********************************************/
 export interface SortCollectionMethods {
-	add(strProperty?: string, direction?: number): IBaseExecution<any>;
-	clear(): IBaseExecution<any>;
+	add(strProperty?: string, direction?: number): Base.IBaseExecution<any>;
+	clear(): Base.IBaseExecution<any>;
 }

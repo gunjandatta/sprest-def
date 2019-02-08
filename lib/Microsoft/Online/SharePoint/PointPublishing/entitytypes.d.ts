@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../";
+import { Base } from "../../../../";
 
 /*********************************************
 * IPointPublishingAdmin
 **********************************************/
-export interface IPointPublishingAdmin extends PointPublishingAdminCollections, PointPublishingAdminMethods, IBaseQuery<IPointPublishingAdminQuery> {
+export interface IPointPublishingAdmin extends PointPublishingAdminCollections, PointPublishingAdminMethods, Base.IBaseQuery<IPointPublishingAdminQuery> {
 
 }
 
 /*********************************************
 * IPointPublishingAdminCollection
 **********************************************/
-export interface IPointPublishingAdminCollection extends IBaseResults<PointPublishingAdmin> {
+export interface IPointPublishingAdminCollection extends Base.IBaseResults<PointPublishingAdmin> {
 	done?: (resolve: (value?: Array<PointPublishingAdmin>) => void) => void;
 }
 
 /*********************************************
 * IPointPublishingAdminQueryCollection
 **********************************************/
-export interface IPointPublishingAdminQueryCollection extends IBaseResults<PointPublishingAdminOData> {
+export interface IPointPublishingAdminQueryCollection extends Base.IBaseResults<PointPublishingAdminOData> {
 	done?: (resolve: (value?: Array<PointPublishingAdminOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IPointPublishingAdminQuery extends PointPublishingAdminOData, P
 /*********************************************
 * PointPublishingAdmin
 **********************************************/
-export interface PointPublishingAdmin extends IBaseResult, PointPublishingAdminProps, PointPublishingAdminCollections, PointPublishingAdminMethods {
+export interface PointPublishingAdmin extends Base.IBaseResult, PointPublishingAdminProps, PointPublishingAdminCollections, PointPublishingAdminMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface PointPublishingAdminCollections extends PointPublishingAdminPro
 /*********************************************
 * PointPublishingAdminOData
 **********************************************/
-export interface PointPublishingAdminOData extends IBaseResult, PointPublishingAdminProps, PointPublishingAdminMethods {
+export interface PointPublishingAdminOData extends Base.IBaseResult, PointPublishingAdminProps, PointPublishingAdminMethods {
 
 }
 
@@ -67,7 +67,7 @@ export interface PointPublishingAdminOData extends IBaseResult, PointPublishingA
 * PointPublishingAdminMethods
 **********************************************/
 export interface PointPublishingAdminMethods {
-	createTopicMagazine(magazineName?: string): IBaseExecution<any>;
-	deleteTopicMagazine(magazineId?: any): IBaseExecution<any>;
-	provisionPointPublishingAsync(): IBaseExecution<any>;
+	createTopicMagazine(magazineName?: string): Base.IBaseExecution<any>;
+	deleteTopicMagazine(magazineId?: any): Base.IBaseExecution<any>;
+	provisionPointPublishingAsync(): Base.IBaseExecution<any>;
 }

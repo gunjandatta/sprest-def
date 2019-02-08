@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../";
+import { Base } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
 * IDirectoryNotification
 **********************************************/
-export interface IDirectoryNotification extends DirectoryNotificationCollections, DirectoryNotificationMethods, IBaseQuery<IDirectoryNotificationQuery> {
+export interface IDirectoryNotification extends DirectoryNotificationCollections, DirectoryNotificationMethods, Base.IBaseQuery<IDirectoryNotificationQuery> {
 
 }
 
 /*********************************************
 * IDirectoryNotificationCollection
 **********************************************/
-export interface IDirectoryNotificationCollection extends IBaseResults<DirectoryNotification> {
+export interface IDirectoryNotificationCollection extends Base.IBaseResults<DirectoryNotification> {
 	done?: (resolve: (value?: Array<DirectoryNotification>) => void) => void;
 }
 
 /*********************************************
 * IDirectoryNotificationQueryCollection
 **********************************************/
-export interface IDirectoryNotificationQueryCollection extends IBaseResults<DirectoryNotificationOData> {
+export interface IDirectoryNotificationQueryCollection extends Base.IBaseResults<DirectoryNotificationOData> {
 	done?: (resolve: (value?: Array<DirectoryNotificationOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface IDirectoryNotificationQuery extends DirectoryNotificationOData,
 /*********************************************
 * DirectoryNotification
 **********************************************/
-export interface DirectoryNotification extends IBaseResult, DirectoryNotificationProps, DirectoryNotificationCollections, DirectoryNotificationMethods {
+export interface DirectoryNotification extends Base.IBaseResult, DirectoryNotificationProps, DirectoryNotificationCollections, DirectoryNotificationMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface DirectoryNotificationCollections extends DirectoryNotificationP
 /*********************************************
 * DirectoryNotificationOData
 **********************************************/
-export interface DirectoryNotificationOData extends IBaseResult, DirectoryNotificationProps, DirectoryNotificationMethods {
+export interface DirectoryNotificationOData extends Base.IBaseResult, DirectoryNotificationProps, DirectoryNotificationMethods {
 
 }
 
@@ -68,27 +68,27 @@ export interface DirectoryNotificationOData extends IBaseResult, DirectoryNotifi
 * DirectoryNotificationMethods
 **********************************************/
 export interface DirectoryNotificationMethods {
-	notifyChanges(directoryObjectChanges?: SP.Directory.Provider.DirectoryObjectChanges): IBaseExecution<any>;
+	notifyChanges(directoryObjectChanges?: SP.Directory.Provider.DirectoryObjectChanges): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ISharePointDirectoryProvider
 **********************************************/
-export interface ISharePointDirectoryProvider extends SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods, IBaseQuery<ISharePointDirectoryProviderQuery> {
+export interface ISharePointDirectoryProvider extends SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods, Base.IBaseQuery<ISharePointDirectoryProviderQuery> {
 
 }
 
 /*********************************************
 * ISharePointDirectoryProviderCollection
 **********************************************/
-export interface ISharePointDirectoryProviderCollection extends IBaseResults<SharePointDirectoryProvider> {
+export interface ISharePointDirectoryProviderCollection extends Base.IBaseResults<SharePointDirectoryProvider> {
 	done?: (resolve: (value?: Array<SharePointDirectoryProvider>) => void) => void;
 }
 
 /*********************************************
 * ISharePointDirectoryProviderQueryCollection
 **********************************************/
-export interface ISharePointDirectoryProviderQueryCollection extends IBaseResults<SharePointDirectoryProviderOData> {
+export interface ISharePointDirectoryProviderQueryCollection extends Base.IBaseResults<SharePointDirectoryProviderOData> {
 	done?: (resolve: (value?: Array<SharePointDirectoryProviderOData>) => void) => void;
 }
 
@@ -102,7 +102,7 @@ export interface ISharePointDirectoryProviderQuery extends SharePointDirectoryPr
 /*********************************************
 * SharePointDirectoryProvider
 **********************************************/
-export interface SharePointDirectoryProvider extends IBaseResult, SharePointDirectoryProviderProps, SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods {
+export interface SharePointDirectoryProvider extends Base.IBaseResult, SharePointDirectoryProviderProps, SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods {
 
 }
 
@@ -130,7 +130,7 @@ export interface SharePointDirectoryProviderCollections extends SharePointDirect
 /*********************************************
 * SharePointDirectoryProviderOData
 **********************************************/
-export interface SharePointDirectoryProviderOData extends IBaseResult, SharePointDirectoryProviderProps, SharePointDirectoryProviderMethods {
+export interface SharePointDirectoryProviderOData extends Base.IBaseResult, SharePointDirectoryProviderProps, SharePointDirectoryProviderMethods {
 
 }
 
@@ -138,12 +138,12 @@ export interface SharePointDirectoryProviderOData extends IBaseResult, SharePoin
 * SharePointDirectoryProviderMethods
 **********************************************/
 export interface SharePointDirectoryProviderMethods {
-	createDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<SP.Directory.Provider.DirectoryObjectData>;
-	deleteDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<any>;
-	getOrCreateUnifiedGroupTenantInstanceId(groupId?: any, tenantInstanceId?: any): IBaseExecution<any>;
-	notifyDataChanges(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<any>;
-	readDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<SP.Directory.Provider.DirectoryObjectData>;
-	readDirectoryObjectBatch(ids?: Array<any>, objectType?: number): IBaseCollection<SP.Directory.Provider.DirectoryObjectData>;
-	updateCache(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<any>;
-	updateDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): IBaseExecution<any>;
+	createDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<SP.Directory.Provider.DirectoryObjectData>;
+	deleteDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<any>;
+	getOrCreateUnifiedGroupTenantInstanceId(groupId?: any, tenantInstanceId?: any): Base.IBaseExecution<any>;
+	notifyDataChanges(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<any>;
+	readDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<SP.Directory.Provider.DirectoryObjectData>;
+	readDirectoryObjectBatch(ids?: Array<any>, objectType?: number): Base.IBaseCollection<SP.Directory.Provider.DirectoryObjectData>;
+	updateCache(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<any>;
+	updateDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<any>;
 }

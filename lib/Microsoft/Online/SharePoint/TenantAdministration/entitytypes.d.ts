@@ -1,4 +1,4 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../";
+import { Base } from "../../../../";
 import { Microsoft } from "../../../../";
 import { SP } from "../../../../";
 
@@ -20,21 +20,21 @@ export interface EmailResponseCollections {
 /*********************************************
 * IHubSiteProperties
 **********************************************/
-export interface IHubSiteProperties extends HubSitePropertiesCollections, HubSitePropertiesMethods, IBaseQuery<IHubSitePropertiesQuery> {
+export interface IHubSiteProperties extends HubSitePropertiesCollections, HubSitePropertiesMethods, Base.IBaseQuery<IHubSitePropertiesQuery> {
 
 }
 
 /*********************************************
 * IHubSitePropertiesCollection
 **********************************************/
-export interface IHubSitePropertiesCollection extends IBaseResults<HubSiteProperties> {
+export interface IHubSitePropertiesCollection extends Base.IBaseResults<HubSiteProperties> {
 	done?: (resolve: (value?: Array<HubSiteProperties>) => void) => void;
 }
 
 /*********************************************
 * IHubSitePropertiesQueryCollection
 **********************************************/
-export interface IHubSitePropertiesQueryCollection extends IBaseResults<HubSitePropertiesOData> {
+export interface IHubSitePropertiesQueryCollection extends Base.IBaseResults<HubSitePropertiesOData> {
 	done?: (resolve: (value?: Array<HubSitePropertiesOData>) => void) => void;
 }
 
@@ -48,7 +48,7 @@ export interface IHubSitePropertiesQuery extends HubSitePropertiesOData, HubSite
 /*********************************************
 * HubSiteProperties
 **********************************************/
-export interface HubSiteProperties extends IBaseResult, HubSitePropertiesProps, HubSitePropertiesCollections, HubSitePropertiesMethods {
+export interface HubSiteProperties extends Base.IBaseResult, HubSitePropertiesProps, HubSitePropertiesCollections, HubSitePropertiesMethods {
 
 }
 
@@ -84,7 +84,7 @@ export interface HubSitePropertiesCollections extends HubSitePropertiesPropMetho
 /*********************************************
 * HubSitePropertiesOData
 **********************************************/
-export interface HubSitePropertiesOData extends IBaseResult, HubSitePropertiesProps, HubSitePropertiesMethods {
+export interface HubSitePropertiesOData extends Base.IBaseResult, HubSitePropertiesProps, HubSitePropertiesMethods {
 
 }
 
@@ -92,27 +92,27 @@ export interface HubSitePropertiesOData extends IBaseResult, HubSitePropertiesPr
 * HubSitePropertiesMethods
 **********************************************/
 export interface HubSitePropertiesMethods {
-	update(): IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * IOffice365CommsMessagesServiceProxy
 **********************************************/
-export interface IOffice365CommsMessagesServiceProxy extends Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods, IBaseQuery<IOffice365CommsMessagesServiceProxyQuery> {
+export interface IOffice365CommsMessagesServiceProxy extends Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods, Base.IBaseQuery<IOffice365CommsMessagesServiceProxyQuery> {
 
 }
 
 /*********************************************
 * IOffice365CommsMessagesServiceProxyCollection
 **********************************************/
-export interface IOffice365CommsMessagesServiceProxyCollection extends IBaseResults<Office365CommsMessagesServiceProxy> {
+export interface IOffice365CommsMessagesServiceProxyCollection extends Base.IBaseResults<Office365CommsMessagesServiceProxy> {
 	done?: (resolve: (value?: Array<Office365CommsMessagesServiceProxy>) => void) => void;
 }
 
 /*********************************************
 * IOffice365CommsMessagesServiceProxyQueryCollection
 **********************************************/
-export interface IOffice365CommsMessagesServiceProxyQueryCollection extends IBaseResults<Office365CommsMessagesServiceProxyOData> {
+export interface IOffice365CommsMessagesServiceProxyQueryCollection extends Base.IBaseResults<Office365CommsMessagesServiceProxyOData> {
 	done?: (resolve: (value?: Array<Office365CommsMessagesServiceProxyOData>) => void) => void;
 }
 
@@ -126,7 +126,7 @@ export interface IOffice365CommsMessagesServiceProxyQuery extends Office365Comms
 /*********************************************
 * Office365CommsMessagesServiceProxy
 **********************************************/
-export interface Office365CommsMessagesServiceProxy extends IBaseResult, Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods {
+export interface Office365CommsMessagesServiceProxy extends Base.IBaseResult, Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods {
 
 }
 
@@ -154,7 +154,7 @@ export interface Office365CommsMessagesServiceProxyCollections extends Office365
 /*********************************************
 * Office365CommsMessagesServiceProxyOData
 **********************************************/
-export interface Office365CommsMessagesServiceProxyOData extends IBaseResult, Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyMethods {
+export interface Office365CommsMessagesServiceProxyOData extends Base.IBaseResult, Office365CommsMessagesServiceProxyProps, Office365CommsMessagesServiceProxyMethods {
 
 }
 
@@ -162,8 +162,8 @@ export interface Office365CommsMessagesServiceProxyOData extends IBaseResult, Of
 * Office365CommsMessagesServiceProxyMethods
 **********************************************/
 export interface Office365CommsMessagesServiceProxyMethods {
-	messageCenterMessages(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter>;
-	serviceHealthMessages(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth>;
+	messageCenterMessages(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.ResponseMessageCenter>;
+	serviceHealthMessages(messagesFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.MessagesFieldsData): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.ResponseServiceHealth>;
 }
 
 /*********************************************
@@ -203,21 +203,21 @@ export interface ResponseServiceHealthCollections {
 /*********************************************
 * ISiteCollectionManagementService
 **********************************************/
-export interface ISiteCollectionManagementService extends SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods, IBaseQuery<ISiteCollectionManagementServiceQuery> {
+export interface ISiteCollectionManagementService extends SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods, Base.IBaseQuery<ISiteCollectionManagementServiceQuery> {
 
 }
 
 /*********************************************
 * ISiteCollectionManagementServiceCollection
 **********************************************/
-export interface ISiteCollectionManagementServiceCollection extends IBaseResults<SiteCollectionManagementService> {
+export interface ISiteCollectionManagementServiceCollection extends Base.IBaseResults<SiteCollectionManagementService> {
 	done?: (resolve: (value?: Array<SiteCollectionManagementService>) => void) => void;
 }
 
 /*********************************************
 * ISiteCollectionManagementServiceQueryCollection
 **********************************************/
-export interface ISiteCollectionManagementServiceQueryCollection extends IBaseResults<SiteCollectionManagementServiceOData> {
+export interface ISiteCollectionManagementServiceQueryCollection extends Base.IBaseResults<SiteCollectionManagementServiceOData> {
 	done?: (resolve: (value?: Array<SiteCollectionManagementServiceOData>) => void) => void;
 }
 
@@ -231,7 +231,7 @@ export interface ISiteCollectionManagementServiceQuery extends SiteCollectionMan
 /*********************************************
 * SiteCollectionManagementService
 **********************************************/
-export interface SiteCollectionManagementService extends IBaseResult, SiteCollectionManagementServiceProps, SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods {
+export interface SiteCollectionManagementService extends Base.IBaseResult, SiteCollectionManagementServiceProps, SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods {
 
 }
 
@@ -259,7 +259,7 @@ export interface SiteCollectionManagementServiceCollections extends SiteCollecti
 /*********************************************
 * SiteCollectionManagementServiceOData
 **********************************************/
-export interface SiteCollectionManagementServiceOData extends IBaseResult, SiteCollectionManagementServiceProps, SiteCollectionManagementServiceMethods {
+export interface SiteCollectionManagementServiceOData extends Base.IBaseResult, SiteCollectionManagementServiceProps, SiteCollectionManagementServiceMethods {
 
 }
 
@@ -267,32 +267,32 @@ export interface SiteCollectionManagementServiceOData extends IBaseResult, SiteC
 * SiteCollectionManagementServiceMethods
 **********************************************/
 export interface SiteCollectionManagementServiceMethods {
-	emailAdmins(message?: string, siteIds?: Array<any>, subject?: string): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.EmailResponse>;
-	exportCSVFile(): IBaseExecution<string>;
-	getSiteDescription(siteId?: any): IBaseExecution<string>;
-	office365ProvidedSharepointSiteActivityDataReady(): IBaseExecution<boolean>;
-	resetTimestampUpdateOffice365ProvidedSharepointSiteActivityData(): IBaseExecution<any>;
-	updateOffice365ProvidedSharepointSiteActivityData(oauthToken?: string): IBaseExecution<boolean>;
+	emailAdmins(message?: string, siteIds?: Array<any>, subject?: string): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.EmailResponse>;
+	exportCSVFile(): Base.IBaseExecution<string>;
+	getSiteDescription(siteId?: any): Base.IBaseExecution<string>;
+	office365ProvidedSharepointSiteActivityDataReady(): Base.IBaseExecution<boolean>;
+	resetTimestampUpdateOffice365ProvidedSharepointSiteActivityData(): Base.IBaseExecution<any>;
+	updateOffice365ProvidedSharepointSiteActivityData(oauthToken?: string): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************
 * ISiteProperties
 **********************************************/
-export interface ISiteProperties extends SitePropertiesCollections, SitePropertiesMethods, IBaseQuery<ISitePropertiesQuery> {
+export interface ISiteProperties extends SitePropertiesCollections, SitePropertiesMethods, Base.IBaseQuery<ISitePropertiesQuery> {
 
 }
 
 /*********************************************
 * ISitePropertiesCollection
 **********************************************/
-export interface ISitePropertiesCollection extends IBaseResults<SiteProperties>, SitePropertiesCollectionMethods {
+export interface ISitePropertiesCollection extends Base.IBaseResults<SiteProperties>, SitePropertiesCollectionMethods {
 	done?: (resolve: (value?: Array<SiteProperties>) => void) => void;
 }
 
 /*********************************************
 * ISitePropertiesQueryCollection
 **********************************************/
-export interface ISitePropertiesQueryCollection extends IBaseResults<SitePropertiesOData>, SitePropertiesCollectionMethods {
+export interface ISitePropertiesQueryCollection extends Base.IBaseResults<SitePropertiesOData>, SitePropertiesCollectionMethods {
 	done?: (resolve: (value?: Array<SitePropertiesOData>) => void) => void;
 }
 
@@ -306,7 +306,7 @@ export interface ISitePropertiesQuery extends SitePropertiesOData, SitePropertie
 /*********************************************
 * SiteProperties
 **********************************************/
-export interface SiteProperties extends IBaseResult, SitePropertiesProps, SitePropertiesCollections, SitePropertiesMethods {
+export interface SiteProperties extends Base.IBaseResult, SitePropertiesProps, SitePropertiesCollections, SitePropertiesMethods {
 
 }
 
@@ -384,14 +384,14 @@ export interface SitePropertiesCollections extends SitePropertiesPropMethods {
 * SitePropertiesCollectionMethods
 **********************************************/
 export interface SitePropertiesCollectionMethods {
-	getById(siteId?: any): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
-	getLockStateById(siteId?: any): IBaseExecution<number>;
+	getById(siteId?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
+	getLockStateById(siteId?: any): Base.IBaseExecution<number>;
 }
 
 /*********************************************
 * SitePropertiesOData
 **********************************************/
-export interface SitePropertiesOData extends IBaseResult, SitePropertiesProps, SitePropertiesMethods {
+export interface SitePropertiesOData extends Base.IBaseResult, SitePropertiesProps, SitePropertiesMethods {
 
 }
 
@@ -399,7 +399,7 @@ export interface SitePropertiesOData extends IBaseResult, SitePropertiesProps, S
 * SitePropertiesMethods
 **********************************************/
 export interface SitePropertiesMethods {
-	update(): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	update(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 }
 
 /*********************************************
@@ -469,21 +469,21 @@ export interface TenantAdminEndpointsCollections {
 /*********************************************
 * ITenantAdminSettingsService
 **********************************************/
-export interface ITenantAdminSettingsService extends TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods, IBaseQuery<ITenantAdminSettingsServiceQuery> {
+export interface ITenantAdminSettingsService extends TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods, Base.IBaseQuery<ITenantAdminSettingsServiceQuery> {
 
 }
 
 /*********************************************
 * ITenantAdminSettingsServiceCollection
 **********************************************/
-export interface ITenantAdminSettingsServiceCollection extends IBaseResults<TenantAdminSettingsService> {
+export interface ITenantAdminSettingsServiceCollection extends Base.IBaseResults<TenantAdminSettingsService> {
 	done?: (resolve: (value?: Array<TenantAdminSettingsService>) => void) => void;
 }
 
 /*********************************************
 * ITenantAdminSettingsServiceQueryCollection
 **********************************************/
-export interface ITenantAdminSettingsServiceQueryCollection extends IBaseResults<TenantAdminSettingsServiceOData> {
+export interface ITenantAdminSettingsServiceQueryCollection extends Base.IBaseResults<TenantAdminSettingsServiceOData> {
 	done?: (resolve: (value?: Array<TenantAdminSettingsServiceOData>) => void) => void;
 }
 
@@ -497,7 +497,7 @@ export interface ITenantAdminSettingsServiceQuery extends TenantAdminSettingsSer
 /*********************************************
 * TenantAdminSettingsService
 **********************************************/
-export interface TenantAdminSettingsService extends IBaseResult, TenantAdminSettingsServiceProps, TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods {
+export interface TenantAdminSettingsService extends Base.IBaseResult, TenantAdminSettingsServiceProps, TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods {
 
 }
 
@@ -546,7 +546,7 @@ export interface TenantAdminSettingsServiceCollections extends TenantAdminSettin
 /*********************************************
 * TenantAdminSettingsServiceOData
 **********************************************/
-export interface TenantAdminSettingsServiceOData extends IBaseResult, TenantAdminSettingsServiceProps, TenantAdminSettingsServiceMethods {
+export interface TenantAdminSettingsServiceOData extends Base.IBaseResult, TenantAdminSettingsServiceProps, TenantAdminSettingsServiceMethods {
 
 }
 
@@ -554,28 +554,28 @@ export interface TenantAdminSettingsServiceOData extends IBaseResult, TenantAdmi
 * TenantAdminSettingsServiceMethods
 **********************************************/
 export interface TenantAdminSettingsServiceMethods {
-	getTenantSharingStatus(): IBaseExecution<number>;
-	update(): IBaseExecution<any>;
+	getTenantSharingStatus(): Base.IBaseExecution<number>;
+	update(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ITenant
 **********************************************/
-export interface ITenant extends TenantCollections, TenantMethods, IBaseQuery<ITenantQuery> {
+export interface ITenant extends TenantCollections, TenantMethods, Base.IBaseQuery<ITenantQuery> {
 
 }
 
 /*********************************************
 * ITenantCollection
 **********************************************/
-export interface ITenantCollection extends IBaseResults<Tenant> {
+export interface ITenantCollection extends Base.IBaseResults<Tenant> {
 	done?: (resolve: (value?: Array<Tenant>) => void) => void;
 }
 
 /*********************************************
 * ITenantQueryCollection
 **********************************************/
-export interface ITenantQueryCollection extends IBaseResults<TenantOData> {
+export interface ITenantQueryCollection extends Base.IBaseResults<TenantOData> {
 	done?: (resolve: (value?: Array<TenantOData>) => void) => void;
 }
 
@@ -589,7 +589,7 @@ export interface ITenantQuery extends TenantOData, TenantMethods {
 /*********************************************
 * Tenant
 **********************************************/
-export interface Tenant extends IBaseResult, TenantProps, TenantCollections, TenantMethods {
+export interface Tenant extends Base.IBaseResult, TenantProps, TenantCollections, TenantMethods {
 
 }
 
@@ -711,41 +711,41 @@ export interface TenantPropMethods {
 * TenantCollections
 **********************************************/
 export interface TenantCollections extends TenantPropMethods {
-	Sites(): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
-	Sites(id: string | number): IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
+	Sites(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	Sites(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 }
 
 /*********************************************
 * TenantOData
 **********************************************/
-export interface TenantOData extends IBaseResult, TenantProps, TenantMethods {
-	Sites: IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+export interface TenantOData extends Base.IBaseResult, TenantProps, TenantMethods {
+	Sites: Base.IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 }
 
 /*********************************************
 * TenantMethods
 **********************************************/
 export interface TenantMethods {
-	checkTenantIntuneLicense(): IBaseExecution<boolean>;
-	checkTenantLicenses(licenses?: Array<string>): IBaseExecution<boolean>;
-	connectSiteToHubSiteById(siteUrl?: string, hubSiteId?: any): IBaseExecution<any>;
-	createSite(siteCreationProperties?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
-	getIdleSessionSignOutForUnmanagedDevices(): IBaseExecution<string>;
-	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
-	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
-	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
-	getSPOTenantAllWebTemplates(): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
-	registerHubSite(siteUrl?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
-	registerHubSiteWithCreationInformation(siteUrl?: string, creationInformation?: SP.HubSiteCreationInformation): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
-	removeDeletedSite(siteUrl?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
-	removeDeletedSitePreferId(siteUrl?: string, siteId?: any): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
-	removeSite(siteUrl?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
-	restoreDeletedSite(siteUrl?: string): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
-	restoreDeletedSitePreferId(siteUrl?: string, siteId?: any): IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
-	setIdleSessionSignOutForUnmanagedDevices(enabled?: boolean, warnAfter?: any, signOutAfter?: any): IBaseExecution<boolean>;
-	setSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): IBaseExecution<any>;
-	unregisterHubSite(siteUrl?: string): IBaseExecution<any>;
-	update(): IBaseExecution<any>;
+	checkTenantIntuneLicense(): Base.IBaseExecution<boolean>;
+	checkTenantLicenses(licenses?: Array<string>): Base.IBaseExecution<boolean>;
+	connectSiteToHubSiteById(siteUrl?: string, hubSiteId?: any): Base.IBaseExecution<any>;
+	createSite(siteCreationProperties?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	getIdleSessionSignOutForUnmanagedDevices(): Base.IBaseExecution<string>;
+	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
+	getSPOTenantAllWebTemplates(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
+	registerHubSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
+	registerHubSiteWithCreationInformation(siteUrl?: string, creationInformation?: SP.HubSiteCreationInformation): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
+	removeDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	removeDeletedSitePreferId(siteUrl?: string, siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	removeSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	restoreDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	restoreDeletedSitePreferId(siteUrl?: string, siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	setIdleSessionSignOutForUnmanagedDevices(enabled?: boolean, warnAfter?: any, signOutAfter?: any): Base.IBaseExecution<boolean>;
+	setSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseExecution<any>;
+	unregisterHubSite(siteUrl?: string): Base.IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
 }
 
 /*********************************************

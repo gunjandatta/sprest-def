@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
 * ISyncTranslator
 **********************************************/
-export interface ISyncTranslator extends SyncTranslatorCollections, SyncTranslatorMethods, IBaseQuery<ISyncTranslatorQuery> {
+export interface ISyncTranslator extends SyncTranslatorCollections, SyncTranslatorMethods, Base.IBaseQuery<ISyncTranslatorQuery> {
 
 }
 
 /*********************************************
 * ISyncTranslatorCollection
 **********************************************/
-export interface ISyncTranslatorCollection extends IBaseResults<SyncTranslator> {
+export interface ISyncTranslatorCollection extends Base.IBaseResults<SyncTranslator> {
 	done?: (resolve: (value?: Array<SyncTranslator>) => void) => void;
 }
 
 /*********************************************
 * ISyncTranslatorQueryCollection
 **********************************************/
-export interface ISyncTranslatorQueryCollection extends IBaseResults<SyncTranslatorOData> {
+export interface ISyncTranslatorQueryCollection extends Base.IBaseResults<SyncTranslatorOData> {
 	done?: (resolve: (value?: Array<SyncTranslatorOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface ISyncTranslatorQuery extends SyncTranslatorOData, SyncTranslato
 /*********************************************
 * SyncTranslator
 **********************************************/
-export interface SyncTranslator extends IBaseResult, SyncTranslatorProps, SyncTranslatorCollections, SyncTranslatorMethods {
+export interface SyncTranslator extends Base.IBaseResult, SyncTranslatorProps, SyncTranslatorCollections, SyncTranslatorMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface SyncTranslatorCollections extends SyncTranslatorPropMethods {
 /*********************************************
 * SyncTranslatorOData
 **********************************************/
-export interface SyncTranslatorOData extends IBaseResult, SyncTranslatorProps, SyncTranslatorMethods {
+export interface SyncTranslatorOData extends Base.IBaseResult, SyncTranslatorProps, SyncTranslatorMethods {
 
 }
 
@@ -68,28 +68,28 @@ export interface SyncTranslatorOData extends IBaseResult, SyncTranslatorProps, S
 * SyncTranslatorMethods
 **********************************************/
 export interface SyncTranslatorMethods {
-	translate(inputFile?: string, outputFile?: string): IBaseExecution<SP.Translation.TranslationItemInfo>;
-	translateStream(inputFile?: any, fileExtension?: string): IBaseExecution<any>;
+	translate(inputFile?: string, outputFile?: string): Base.IBaseExecution<SP.Translation.TranslationItemInfo>;
+	translateStream(inputFile?: any, fileExtension?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ITranslationJob
 **********************************************/
-export interface ITranslationJob extends TranslationJobCollections, TranslationJobMethods, IBaseQuery<ITranslationJobQuery> {
+export interface ITranslationJob extends TranslationJobCollections, TranslationJobMethods, Base.IBaseQuery<ITranslationJobQuery> {
 
 }
 
 /*********************************************
 * ITranslationJobCollection
 **********************************************/
-export interface ITranslationJobCollection extends IBaseResults<TranslationJob> {
+export interface ITranslationJobCollection extends Base.IBaseResults<TranslationJob> {
 	done?: (resolve: (value?: Array<TranslationJob>) => void) => void;
 }
 
 /*********************************************
 * ITranslationJobQueryCollection
 **********************************************/
-export interface ITranslationJobQueryCollection extends IBaseResults<TranslationJobOData> {
+export interface ITranslationJobQueryCollection extends Base.IBaseResults<TranslationJobOData> {
 	done?: (resolve: (value?: Array<TranslationJobOData>) => void) => void;
 }
 
@@ -103,7 +103,7 @@ export interface ITranslationJobQuery extends TranslationJobOData, TranslationJo
 /*********************************************
 * TranslationJob
 **********************************************/
-export interface TranslationJob extends IBaseResult, TranslationJobProps, TranslationJobCollections, TranslationJobMethods {
+export interface TranslationJob extends Base.IBaseResult, TranslationJobProps, TranslationJobCollections, TranslationJobMethods {
 
 }
 
@@ -133,7 +133,7 @@ export interface TranslationJobCollections extends TranslationJobPropMethods {
 /*********************************************
 * TranslationJobOData
 **********************************************/
-export interface TranslationJobOData extends IBaseResult, TranslationJobProps, TranslationJobMethods {
+export interface TranslationJobOData extends Base.IBaseResult, TranslationJobProps, TranslationJobMethods {
 
 }
 
@@ -141,29 +141,29 @@ export interface TranslationJobOData extends IBaseResult, TranslationJobProps, T
 * TranslationJobMethods
 **********************************************/
 export interface TranslationJobMethods {
-	translateFile(inputFile?: string, outputFile?: string): IBaseExecution<any>;
-	translateFolder(inputFolder?: string, outputFolder?: string, recursion?: boolean): IBaseExecution<any>;
-	translateLibrary(inputLibrary?: string, outputLibrary?: string): IBaseExecution<any>;
+	translateFile(inputFile?: string, outputFile?: string): Base.IBaseExecution<any>;
+	translateFolder(inputFolder?: string, outputFolder?: string, recursion?: boolean): Base.IBaseExecution<any>;
+	translateLibrary(inputLibrary?: string, outputLibrary?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
 * ITranslationJobStatus
 **********************************************/
-export interface ITranslationJobStatus extends TranslationJobStatusCollections, TranslationJobStatusMethods, IBaseQuery<ITranslationJobStatusQuery> {
+export interface ITranslationJobStatus extends TranslationJobStatusCollections, TranslationJobStatusMethods, Base.IBaseQuery<ITranslationJobStatusQuery> {
 
 }
 
 /*********************************************
 * ITranslationJobStatusCollection
 **********************************************/
-export interface ITranslationJobStatusCollection extends IBaseResults<TranslationJobStatus> {
+export interface ITranslationJobStatusCollection extends Base.IBaseResults<TranslationJobStatus> {
 	done?: (resolve: (value?: Array<TranslationJobStatus>) => void) => void;
 }
 
 /*********************************************
 * ITranslationJobStatusQueryCollection
 **********************************************/
-export interface ITranslationJobStatusQueryCollection extends IBaseResults<TranslationJobStatusOData> {
+export interface ITranslationJobStatusQueryCollection extends Base.IBaseResults<TranslationJobStatusOData> {
 	done?: (resolve: (value?: Array<TranslationJobStatusOData>) => void) => void;
 }
 
@@ -177,7 +177,7 @@ export interface ITranslationJobStatusQuery extends TranslationJobStatusOData, T
 /*********************************************
 * TranslationJobStatus
 **********************************************/
-export interface TranslationJobStatus extends IBaseResult, TranslationJobStatusProps, TranslationJobStatusCollections, TranslationJobStatusMethods {
+export interface TranslationJobStatus extends Base.IBaseResult, TranslationJobStatusProps, TranslationJobStatusCollections, TranslationJobStatusMethods {
 
 }
 
@@ -211,7 +211,7 @@ export interface TranslationJobStatusCollections extends TranslationJobStatusPro
 /*********************************************
 * TranslationJobStatusOData
 **********************************************/
-export interface TranslationJobStatusOData extends IBaseResult, TranslationJobStatusProps, TranslationJobStatusMethods {
+export interface TranslationJobStatusOData extends Base.IBaseResult, TranslationJobStatusProps, TranslationJobStatusMethods {
 
 }
 
@@ -219,7 +219,7 @@ export interface TranslationJobStatusOData extends IBaseResult, TranslationJobSt
 * TranslationJobStatusMethods
 **********************************************/
 export interface TranslationJobStatusMethods {
-	getAllItems(): IBaseCollection<SP.Translation.TranslationItemInfo>;
+	getAllItems(): Base.IBaseCollection<SP.Translation.TranslationItemInfo>;
 }
 
 /*********************************************

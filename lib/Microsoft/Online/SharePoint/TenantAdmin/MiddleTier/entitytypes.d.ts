@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../../";
+import { Base } from "../../../../../";
 
 /*********************************************
 * IDDIAdapter
 **********************************************/
-export interface IDDIAdapter extends DDIAdapterCollections, DDIAdapterMethods, IBaseQuery<IDDIAdapterQuery> {
+export interface IDDIAdapter extends DDIAdapterCollections, DDIAdapterMethods, Base.IBaseQuery<IDDIAdapterQuery> {
 
 }
 
 /*********************************************
 * IDDIAdapterCollection
 **********************************************/
-export interface IDDIAdapterCollection extends IBaseResults<DDIAdapter> {
+export interface IDDIAdapterCollection extends Base.IBaseResults<DDIAdapter> {
 	done?: (resolve: (value?: Array<DDIAdapter>) => void) => void;
 }
 
 /*********************************************
 * IDDIAdapterQueryCollection
 **********************************************/
-export interface IDDIAdapterQueryCollection extends IBaseResults<DDIAdapterOData> {
+export interface IDDIAdapterQueryCollection extends Base.IBaseResults<DDIAdapterOData> {
 	done?: (resolve: (value?: Array<DDIAdapterOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IDDIAdapterQuery extends DDIAdapterOData, DDIAdapterMethods {
 /*********************************************
 * DDIAdapter
 **********************************************/
-export interface DDIAdapter extends IBaseResult, DDIAdapterProps, DDIAdapterCollections, DDIAdapterMethods {
+export interface DDIAdapter extends Base.IBaseResult, DDIAdapterProps, DDIAdapterCollections, DDIAdapterMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface DDIAdapterCollections extends DDIAdapterPropMethods {
 /*********************************************
 * DDIAdapterOData
 **********************************************/
-export interface DDIAdapterOData extends IBaseResult, DDIAdapterProps, DDIAdapterMethods {
+export interface DDIAdapterOData extends Base.IBaseResult, DDIAdapterProps, DDIAdapterMethods {
 
 }
 
@@ -67,10 +67,10 @@ export interface DDIAdapterOData extends IBaseResult, DDIAdapterProps, DDIAdapte
 * DDIAdapterMethods
 **********************************************/
 export interface DDIAdapterMethods {
-	getList(schema?: string, workflow?: string, stream?: any): IBaseExecution<string>;
-	getObject(schema?: string, workflow?: string, stream?: any): IBaseExecution<string>;
-	multiObjectExecute(schema?: string, workflow?: string, stream?: any): IBaseExecution<string>;
-	newObject(schema?: string, workflow?: string, stream?: any): IBaseExecution<string>;
-	removeObjects(schema?: string, workflow?: string, stream?: any): IBaseExecution<string>;
-	setObject(schema?: string, workflow?: string, stream?: any): IBaseExecution<string>;
+	getList(schema?: string, workflow?: string, stream?: any): Base.IBaseExecution<string>;
+	getObject(schema?: string, workflow?: string, stream?: any): Base.IBaseExecution<string>;
+	multiObjectExecute(schema?: string, workflow?: string, stream?: any): Base.IBaseExecution<string>;
+	newObject(schema?: string, workflow?: string, stream?: any): Base.IBaseExecution<string>;
+	removeObjects(schema?: string, workflow?: string, stream?: any): Base.IBaseExecution<string>;
+	setObject(schema?: string, workflow?: string, stream?: any): Base.IBaseExecution<string>;
 }

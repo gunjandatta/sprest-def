@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
 * IMicroServiceManager
 **********************************************/
-export interface IMicroServiceManager extends MicroServiceManagerCollections, MicroServiceManagerMethods, IBaseQuery<IMicroServiceManagerQuery> {
+export interface IMicroServiceManager extends MicroServiceManagerCollections, MicroServiceManagerMethods, Base.IBaseQuery<IMicroServiceManagerQuery> {
 
 }
 
 /*********************************************
 * IMicroServiceManagerCollection
 **********************************************/
-export interface IMicroServiceManagerCollection extends IBaseResults<MicroServiceManager> {
+export interface IMicroServiceManagerCollection extends Base.IBaseResults<MicroServiceManager> {
 	done?: (resolve: (value?: Array<MicroServiceManager>) => void) => void;
 }
 
 /*********************************************
 * IMicroServiceManagerQueryCollection
 **********************************************/
-export interface IMicroServiceManagerQueryCollection extends IBaseResults<MicroServiceManagerOData> {
+export interface IMicroServiceManagerQueryCollection extends Base.IBaseResults<MicroServiceManagerOData> {
 	done?: (resolve: (value?: Array<MicroServiceManagerOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface IMicroServiceManagerQuery extends MicroServiceManagerOData, Mic
 /*********************************************
 * MicroServiceManager
 **********************************************/
-export interface MicroServiceManager extends IBaseResult, MicroServiceManagerProps, MicroServiceManagerCollections, MicroServiceManagerMethods {
+export interface MicroServiceManager extends Base.IBaseResult, MicroServiceManagerProps, MicroServiceManagerCollections, MicroServiceManagerMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface MicroServiceManagerCollections extends MicroServiceManagerPropM
 /*********************************************
 * MicroServiceManagerOData
 **********************************************/
-export interface MicroServiceManagerOData extends IBaseResult, MicroServiceManagerProps, MicroServiceManagerMethods {
+export interface MicroServiceManagerOData extends Base.IBaseResult, MicroServiceManagerProps, MicroServiceManagerMethods {
 
 }
 
@@ -68,10 +68,10 @@ export interface MicroServiceManagerOData extends IBaseResult, MicroServiceManag
 * MicroServiceManagerMethods
 **********************************************/
 export interface MicroServiceManagerMethods {
-	addMicroserviceWorkItem(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): IBaseExecution<any>;
-	deleteMicroserviceWorkItem(workItemId?: any): IBaseExecution<boolean>;
-	getServiceInternalUrls(service?: string): IBaseCollection<string>;
-	getServiceUrls(service?: string): IBaseCollection<string>;
+	addMicroserviceWorkItem(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): Base.IBaseExecution<any>;
+	deleteMicroserviceWorkItem(workItemId?: any): Base.IBaseExecution<boolean>;
+	getServiceInternalUrls(service?: string): Base.IBaseCollection<string>;
+	getServiceUrls(service?: string): Base.IBaseCollection<string>;
 }
 
 /*********************************************

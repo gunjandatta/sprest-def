@@ -1,23 +1,23 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../";
+import { Base } from "../../";
 
 /*********************************************
 * IDocumentId
 **********************************************/
-export interface IDocumentId extends DocumentIdCollections, DocumentIdMethods, IBaseQuery<IDocumentIdQuery> {
+export interface IDocumentId extends DocumentIdCollections, DocumentIdMethods, Base.IBaseQuery<IDocumentIdQuery> {
 
 }
 
 /*********************************************
 * IDocumentIdCollection
 **********************************************/
-export interface IDocumentIdCollection extends IBaseResults<DocumentId> {
+export interface IDocumentIdCollection extends Base.IBaseResults<DocumentId> {
 	done?: (resolve: (value?: Array<DocumentId>) => void) => void;
 }
 
 /*********************************************
 * IDocumentIdQueryCollection
 **********************************************/
-export interface IDocumentIdQueryCollection extends IBaseResults<DocumentIdOData> {
+export interface IDocumentIdQueryCollection extends Base.IBaseResults<DocumentIdOData> {
 	done?: (resolve: (value?: Array<DocumentIdOData>) => void) => void;
 }
 
@@ -31,7 +31,7 @@ export interface IDocumentIdQuery extends DocumentIdOData, DocumentIdMethods {
 /*********************************************
 * DocumentId
 **********************************************/
-export interface DocumentId extends IBaseResult, DocumentIdProps, DocumentIdCollections, DocumentIdMethods {
+export interface DocumentId extends Base.IBaseResult, DocumentIdProps, DocumentIdCollections, DocumentIdMethods {
 
 }
 
@@ -59,7 +59,7 @@ export interface DocumentIdCollections extends DocumentIdPropMethods {
 /*********************************************
 * DocumentIdOData
 **********************************************/
-export interface DocumentIdOData extends IBaseResult, DocumentIdProps, DocumentIdMethods {
+export interface DocumentIdOData extends Base.IBaseResult, DocumentIdProps, DocumentIdMethods {
 
 }
 
@@ -67,6 +67,6 @@ export interface DocumentIdOData extends IBaseResult, DocumentIdProps, DocumentI
 * DocumentIdMethods
 **********************************************/
 export interface DocumentIdMethods {
-	resetDocIdByServerRelativePath(DecodedUrl?: string): IBaseExecution<any>;
-	resetDocIdsInLibrary(DecodedUrl?: string, contentTypeId?: string): IBaseExecution<any>;
+	resetDocIdByServerRelativePath(DecodedUrl?: string): Base.IBaseExecution<any>;
+	resetDocIdsInLibrary(DecodedUrl?: string, contentTypeId?: string): Base.IBaseExecution<any>;
 }

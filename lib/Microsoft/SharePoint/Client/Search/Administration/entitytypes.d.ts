@@ -1,24 +1,24 @@
-import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResult, IBaseResults } from "../../../../../";
+import { Base } from "../../../../../";
 import { SP } from "../../../../../";
 
 /*********************************************
 * IDocumentCrawlLog
 **********************************************/
-export interface IDocumentCrawlLog extends DocumentCrawlLogCollections, DocumentCrawlLogMethods, IBaseQuery<IDocumentCrawlLogQuery> {
+export interface IDocumentCrawlLog extends DocumentCrawlLogCollections, DocumentCrawlLogMethods, Base.IBaseQuery<IDocumentCrawlLogQuery> {
 
 }
 
 /*********************************************
 * IDocumentCrawlLogCollection
 **********************************************/
-export interface IDocumentCrawlLogCollection extends IBaseResults<DocumentCrawlLog> {
+export interface IDocumentCrawlLogCollection extends Base.IBaseResults<DocumentCrawlLog> {
 	done?: (resolve: (value?: Array<DocumentCrawlLog>) => void) => void;
 }
 
 /*********************************************
 * IDocumentCrawlLogQueryCollection
 **********************************************/
-export interface IDocumentCrawlLogQueryCollection extends IBaseResults<DocumentCrawlLogOData> {
+export interface IDocumentCrawlLogQueryCollection extends Base.IBaseResults<DocumentCrawlLogOData> {
 	done?: (resolve: (value?: Array<DocumentCrawlLogOData>) => void) => void;
 }
 
@@ -32,7 +32,7 @@ export interface IDocumentCrawlLogQuery extends DocumentCrawlLogOData, DocumentC
 /*********************************************
 * DocumentCrawlLog
 **********************************************/
-export interface DocumentCrawlLog extends IBaseResult, DocumentCrawlLogProps, DocumentCrawlLogCollections, DocumentCrawlLogMethods {
+export interface DocumentCrawlLog extends Base.IBaseResult, DocumentCrawlLogProps, DocumentCrawlLogCollections, DocumentCrawlLogMethods {
 
 }
 
@@ -60,7 +60,7 @@ export interface DocumentCrawlLogCollections extends DocumentCrawlLogPropMethods
 /*********************************************
 * DocumentCrawlLogOData
 **********************************************/
-export interface DocumentCrawlLogOData extends IBaseResult, DocumentCrawlLogProps, DocumentCrawlLogMethods {
+export interface DocumentCrawlLogOData extends Base.IBaseResult, DocumentCrawlLogProps, DocumentCrawlLogMethods {
 
 }
 
@@ -68,5 +68,5 @@ export interface DocumentCrawlLogOData extends IBaseResult, DocumentCrawlLogProp
 * DocumentCrawlLogMethods
 **********************************************/
 export interface DocumentCrawlLogMethods {
-	getCrawledUrls(getCountOnly?: boolean, maxRows?: number, queryString?: string, isLike?: boolean, contentSourceID?: number, errorLevel?: number, errorID?: number, startDateTime?: any, endDateTime?: any): IBaseExecution<SP.SimpleDataTable>;
+	getCrawledUrls(getCountOnly?: boolean, maxRows?: number, queryString?: string, isLike?: boolean, contentSourceID?: number, errorLevel?: number, errorID?: number, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
 }
