@@ -12,3 +12,5 @@ import * as SPO from "./SPO";
 export { SPO }
 import * as Base from "./base";
 export { Base }
+import { IODataQuery } from "./base";
+export { IODataQuery }

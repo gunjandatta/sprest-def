@@ -445,7 +445,12 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         generateIndexFiles("lib");
 
         // Append the index file
-        fs.appendFileSync("lib/index.d.ts", '\nimport * as Base from "./base";\nexport { Base }');
+        fs.appendFileSync("lib/index.d.ts", [
+            '\nimport * as Base from "./base";',
+            'export { Base }',
+            'import { IODataQuery } from "./base";',
+            'export { IODataQuery }'
+        ].join('\n'));
 
         // Determine the collections
         let { hasCollections, hasCollectionMethods, hasMethods } = analyzeCollections(directories);
