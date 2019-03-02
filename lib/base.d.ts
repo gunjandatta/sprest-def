@@ -186,6 +186,9 @@ export interface IRequestInfo {
     /** The data being sent in the body of the request. */
     data?: object;
 
+    /** The request headers. */
+    headers: { [key: string]: string };
+
     /** The request method (GET/POST) */
     method: string;
 
