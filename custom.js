@@ -269,7 +269,7 @@ module.exports = {
         {
             name: "add",
             returnType: "SP.List",
-            params: [{ $: { Name: "parameters", Type: "SP.ListCreationInformation" } }]
+            params: [{ $: { Name: "parameters", Type: "SP.ListProps" } }]
         }
     ],
 

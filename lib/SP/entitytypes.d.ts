@@ -2348,7 +2348,7 @@ export interface ListCollectionMethods {
 	ensureSitePagesLibrary(): Base.IBaseExecution<SP.List>;
 	getById(id?: any): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
 	getByTitle(title?: string): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
-	add(parameters?: SP.ListCreationInformation): Base.IBaseExecution<SP.List>;
+	add(parameters?: SP.ListProps): Base.IBaseExecution<SP.List>;
 }
 
 /*********************************************
