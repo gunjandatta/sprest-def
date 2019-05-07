@@ -39,7 +39,7 @@ module.exports = {
         {
             name: "add",
             returnType: "SP.ContentType",
-            params: [{ $: { Name: "parameters", Type: "SP.ContentTypeCreationInformation | any" } }]
+            params: [{ $: { Name: "parameters", Type: "SP.ContentTypeCreationInformation" } }]
         }
     ],
 
@@ -57,7 +57,7 @@ module.exports = {
         {
             name: "add",
             returnType: "SP.Field",
-            params: [{ $: { Name: "parameters", Type: "SP.FieldCreationInformation | any" } }]
+            params: [{ $: { Name: "parameters", Type: "SP.FieldCreationInformation" } }]
         },
         {
             name: "update",
@@ -269,7 +269,7 @@ module.exports = {
         {
             name: "add",
             returnType: "SP.List",
-            params: [{ $: { Name: "parameters", Type: "SP.ListCreationInformation | any" } }]
+            params: [{ $: { Name: "parameters", Type: "SP.ListCreationInformation" } }]
         }
     ],
 
@@ -287,7 +287,7 @@ module.exports = {
         {
             name: "add",
             returnType: "SP.ListItem",
-            params: [{ $: { Name: "parameters", Type: "SP.ListItemCreationInformation | any" } }]
+            params: [{ $: { Name: "parameters", Type: "SP.ListItemCreationInformation" } }]
         }
     ],
 

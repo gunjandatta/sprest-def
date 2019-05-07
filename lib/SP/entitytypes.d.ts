@@ -1093,7 +1093,7 @@ export interface ListItemCollections extends ListItemPropMethods {
 export interface ListItemCollectionMethods {
 	getById(itemId?: number): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	getByStringId(sId?: string): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
-	add(parameters?: SP.ListItemCreationInformation | any): Base.IBaseExecution<SP.ListItem>;
+	add(parameters?: SP.ListItemCreationInformation): Base.IBaseExecution<SP.ListItem>;
 }
 
 /*********************************************
@@ -1322,7 +1322,7 @@ export interface ContentTypeCollections extends ContentTypePropMethods {
 export interface ContentTypeCollectionMethods {
 	addAvailableContentType(contentTypeId?: string): Base.IBaseExecution<SP.ContentType>;
 	getById(contentTypeId?: string): Base.IBaseQuery<SP.ContentType, SP.ContentTypeOData> & SP.ContentTypeCollections & SP.ContentTypeMethods;
-	add(parameters?: SP.ContentTypeCreationInformation | any): Base.IBaseExecution<SP.ContentType>;
+	add(parameters?: SP.ContentTypeCreationInformation): Base.IBaseExecution<SP.ContentType>;
 }
 
 /*********************************************
@@ -1626,7 +1626,7 @@ export interface FieldMethods {
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
 	// update(): Base.IBaseExecution<any>;
-	add(parameters?: SP.FieldCreationInformation | any): Base.IBaseQuery<SP.Field, SP.FieldOData> & SP.FieldCollections & SP.FieldMethods;
+	add(parameters?: SP.FieldCreationInformation): Base.IBaseQuery<SP.Field, SP.FieldOData> & SP.FieldCollections & SP.FieldMethods;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 
@@ -2348,7 +2348,7 @@ export interface ListCollectionMethods {
 	ensureSitePagesLibrary(): Base.IBaseExecution<SP.List>;
 	getById(id?: any): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
 	getByTitle(title?: string): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
-	add(parameters?: SP.ListCreationInformation | any): Base.IBaseExecution<SP.List>;
+	add(parameters?: SP.ListCreationInformation): Base.IBaseExecution<SP.List>;
 }
 
 /*********************************************
