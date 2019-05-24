@@ -6771,7 +6771,8 @@ export interface FieldThumbnailMethods {
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
-	update(): Base.IBaseExecution<any>;
+	// update(): Base.IBaseExecution<any>;
+	update(properties?: any): Base.IBaseExecution<any>;
 }
 
 /*********************************************

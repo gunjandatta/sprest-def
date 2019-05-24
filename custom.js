@@ -165,6 +165,13 @@ module.exports = {
             params: [{ $: { Name: "properties", Type: "any" } }]
         }
     ],
+    "SP.FieldThumbnail": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
     "SP.FieldUrl": [
         {
             name: "update",

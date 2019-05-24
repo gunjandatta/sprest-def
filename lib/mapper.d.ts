@@ -3769,6 +3769,7 @@ export interface IMapper {
 		},
 
 		update: IMapperMethod & {
+		argNames: [ "properties" ],
 		},
 
 	}
