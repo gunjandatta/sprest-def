@@ -69,4 +69,5 @@ export interface DocumentCrawlLogOData extends Base.IBaseResult, DocumentCrawlLo
 **********************************************/
 export interface DocumentCrawlLogMethods {
 	getCrawledUrls(getCountOnly?: boolean, maxRows?: number, queryString?: string, isLike?: boolean, contentSourceID?: number, errorLevel?: number, errorID?: number, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
+	getUnsuccesfulCrawledUrls(displayUrl?: string, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
 }

@@ -1,4 +1,20 @@
 import { Base } from "../../../../";
+import { Microsoft } from "../../../../";
+
+/*********************************************
+* DesignPackageMenuContents
+**********************************************/
+export interface DesignPackageMenuContents {
+	HiddenDesignPackages?: number;
+	SiteDesigns?: { results: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignMetadata> };
+}
+
+/*********************************************
+* DesignPackageMenuContentsCollections
+**********************************************/
+export interface DesignPackageMenuContentsCollections {
+
+}
 
 /*********************************************
 * SiteDesignPrincipal

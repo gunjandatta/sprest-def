@@ -75,6 +75,7 @@ export interface RecipeMetadataCollections {
 **********************************************/
 export interface SiteDesignCreationInfo {
 	Description?: string;
+	DesignPackageId?: any;
 	IsDefault?: boolean;
 	PreviewImageAltText?: string;
 	PreviewImageUrl?: string;
@@ -152,6 +153,39 @@ export interface SiteScriptMetadata {
 * SiteScriptMetadataCollections
 **********************************************/
 export interface SiteScriptMetadataCollections {
+
+}
+
+/*********************************************
+* SiteScriptSerializationInfo
+**********************************************/
+export interface SiteScriptSerializationInfo {
+	IncludeBranding?: boolean;
+	IncludedLists?: Array<string>;
+	IncludeRegionalSettings?: boolean;
+	IncludeSiteExternalSharingCapability?: boolean;
+	IncludeTheme?: boolean;
+}
+
+/*********************************************
+* SiteScriptSerializationInfoCollections
+**********************************************/
+export interface SiteScriptSerializationInfoCollections {
+
+}
+
+/*********************************************
+* SiteScriptSerializationResult
+**********************************************/
+export interface SiteScriptSerializationResult {
+	JSON?: string;
+	Warnings?: Array<string>;
+}
+
+/*********************************************
+* SiteScriptSerializationResultCollections
+**********************************************/
+export interface SiteScriptSerializationResultCollections {
 
 }
 

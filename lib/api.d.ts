@@ -15,10 +15,12 @@ export interface SP_API {
 	lists: SP.ListCollections;
 	me: SP.RequestUserContext;
 	microservicemanager: SP.MicroService.IMicroServiceManager;
+	OrgNews: SP.IOrganizationNews;
 	OrgNewsSite: Microsoft.SharePoint.OrgNewsSite.IOrgNewsSiteApi;
 	site: SP.ISite;
 	sitelinkingmanager: Microsoft.SharePoint.Portal.ISiteLinkingManager;
 	sphomeservice: Microsoft.SharePoint.Portal.ISharePointHomeServiceContextBuilder;
+	SPHSite: SP.ISPHSite;
 	spsitemanager: Microsoft.SharePoint.Portal.ISPSiteManager;
 	thememanager: SP.Utilities.IThemeManager;
 	web: SP.IWeb;

@@ -110,21 +110,6 @@ export interface ContentDbSchemaVersionCollections {
 }
 
 /*********************************************
-* JobEntityData
-**********************************************/
-export interface JobEntityData {
-	Option?: number;
-	Reserve?: string;
-}
-
-/*********************************************
-* JobEntityDataCollections
-**********************************************/
-export interface JobEntityDataCollections {
-
-}
-
-/*********************************************
 * MoveJobEntityData
 **********************************************/
 export interface MoveJobEntityData {
@@ -137,8 +122,10 @@ export interface MoveJobEntityData {
 	Id?: any;
 	JobPhase?: number;
 	Notify?: string;
+	Option?: number;
 	PreferredMoveBeginDateInUtc?: any;
 	PreferredMoveEndDateInUtc?: any;
+	Reserve?: string;
 	SiteId?: any;
 	SourceDataLocation?: string;
 	State?: number;
@@ -504,6 +491,7 @@ export interface CrossGeoTenantCompatibilityCollections {
 **********************************************/
 export interface CrossGeoTenantPropertyEntityData {
 	GeoLocation?: string;
+	IsDeleted?: boolean;
 	Name?: string;
 	Value?: string;
 }
@@ -924,6 +912,21 @@ export interface GroupMoveJobMethods {
 }
 
 /*********************************************
+* JobEntityData
+**********************************************/
+export interface JobEntityData {
+	Option?: number;
+	Reserve?: string;
+}
+
+/*********************************************
+* JobEntityDataCollections
+**********************************************/
+export interface JobEntityDataCollections {
+
+}
+
+/*********************************************
 * MoveJob
 **********************************************/
 export interface MoveJob {
@@ -1201,6 +1204,7 @@ export interface SiteRenameJobCollections extends SiteRenameJobCollectionMethods
 **********************************************/
 export interface SiteRenameJobCollectionMethods {
 	getBySiteUrl(siteUrl?: string): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollections;
+	getSiteRenameReport(state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob>>;
 }
 
 /*********************************************

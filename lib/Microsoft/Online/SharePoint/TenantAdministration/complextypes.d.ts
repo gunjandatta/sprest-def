@@ -16,22 +16,6 @@ export interface AutoQuotaEnabledCollections {
 }
 
 /*********************************************
-* ContactAdminsByEmailFieldsData
-**********************************************/
-export interface ContactAdminsByEmailFieldsData {
-	message?: string;
-	siteIds?: Array<string>;
-	subject?: string;
-}
-
-/*********************************************
-* ContactAdminsByEmailFieldsDataCollections
-**********************************************/
-export interface ContactAdminsByEmailFieldsDataCollections {
-
-}
-
-/*********************************************
 * CustomFormUrl
 **********************************************/
 export interface CustomFormUrl {
@@ -58,22 +42,6 @@ export interface DisableGroupify {
 * DisableGroupifyCollections
 **********************************************/
 export interface DisableGroupifyCollections {
-
-}
-
-/*********************************************
-* EmailAdminsFieldsData
-**********************************************/
-export interface EmailAdminsFieldsData {
-	message?: string;
-	siteIds?: Array<any>;
-	subject?: string;
-}
-
-/*********************************************
-* EmailAdminsFieldsDataCollections
-**********************************************/
-export interface EmailAdminsFieldsDataCollections {
 
 }
 
@@ -415,6 +383,7 @@ export interface SmtpServerCollections {
 * SPListModernUXOff
 **********************************************/
 export interface SPListModernUXOff {
+	IsHidden?: boolean;
 	IsReadOnly?: boolean;
 	Value?: boolean;
 }

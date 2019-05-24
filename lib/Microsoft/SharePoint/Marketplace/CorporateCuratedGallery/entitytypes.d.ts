@@ -235,6 +235,7 @@ export interface TenantCorporateCatalogAccessorOData extends Base.IBaseResult, T
 **********************************************/
 export interface TenantCorporateCatalogAccessorMethods {
 	// add(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	syncSolutionToTeams(id?: number): Base.IBaseExecution<any>;
 	add(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 
@@ -258,7 +259,6 @@ export interface SiteCollectionAppCatalogAllowedItemCollections extends SiteColl
 **********************************************/
 export interface SiteCollectionAppCatalogAllowedItemCollectionMethods {
 	add(absolutePath?: string): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
-	getByAbsoluteUrl(absolutePath?: string): Base.IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollections;
 	remove(absolutePath?: string): Base.IBaseExecution<any>;
 	removeById(siteId?: any): Base.IBaseExecution<any>;
 }

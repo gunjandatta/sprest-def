@@ -2,6 +2,235 @@ import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
+* Access_x0020_RequestsItem
+**********************************************/
+export interface Access_x0020_RequestsItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	RequestId?: any;
+	RequestedObjectUrl?: SP.FieldUrlValue;
+	RequestedObjectTitle?: string;
+	InheritingRequestedWebId?: any;
+	RequestedWebId?: any;
+	RequestedListId?: any;
+	RequestedListItemId?: any;
+	RequestedBy?: string;
+	RequestedByUserId?: number;
+	RequestedByDisplayName?: string;
+	RequestedFor?: string;
+	RequestedForDisplayName?: string;
+	RequestedForUserId?: number;
+	ApprovedById?: number;
+	ApprovedByStringId?: string;
+	AcceptedBy?: string;
+	Status?: number;
+	Expires?: any;
+	PermissionType?: string;
+	PermissionLevelRequested?: number;
+	AnonymousLinkType?: string;
+	SendWelcomeEmail?: boolean;
+	WelcomeEmailSubject?: string;
+	WelcomeEmailBody?: string;
+	ExtendedWelcomeEmailBody?: string;
+	Conversation?: string;
+	IsInvitation?: boolean;
+	StatusDisp?: string;
+	RequestedForDisplayNameDisp?: string;
+	RequestedByDisplayNameDisp?: string;
+	RequestDate?: string;
+	ApprovalAction?: string;
+	PropagateAcl?: boolean;
+	ComplianceAssetId?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+	PermissionDisp?: string;
+	ObjectRequestedTitleDisp?: string;
+}
+
+/*********************************************
+* Access_x0020_RequestsItemCollections
+**********************************************/
+export interface Access_x0020_RequestsItemCollections {
+
+}
+
+/*********************************************
+* Access_x0020_RequestsItemOData
+**********************************************/
+export interface Access_x0020_RequestsItemOData extends Base.IBaseResult, Access_x0020_RequestsItem {
+	ApprovedBy: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* UserInfoItem
+**********************************************/
+export interface UserInfoItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	Name?: string;
+	EMail?: string;
+	MobilePhone?: string;
+	Notes?: string;
+	SipAddress?: string;
+	Locale?: number;
+	CalendarType?: number;
+	AdjustHijriDays?: number;
+	TimeZone?: number;
+	Time24?: boolean;
+	AltCalendarType?: number;
+	CalendarViewOptions?: number;
+	WorkDays?: number;
+	WorkDayStartHour?: number;
+	WorkDayEndHour?: number;
+	MUILanguages?: string;
+	ContentLanguages?: string;
+	IsSiteAdmin?: boolean;
+	Deleted?: boolean;
+	UserInfoHidden?: boolean;
+	Picture?: SP.FieldUrlValue;
+	Department?: string;
+	JobTitle?: string;
+	IsActive?: boolean;
+	FirstName?: string;
+	LastName?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	WorkPhone?: string;
+	UserName?: string;
+	WebSite?: SP.FieldUrlValue;
+	SPSResponsibility?: string;
+	Office?: string;
+	SPSPictureTimestamp?: string;
+	SPSPicturePlaceholderState?: number;
+	SPSPictureExchangeSyncState?: number;
+	ComplianceAssetId?: string;
+	OtherMail?: string;
+	UserExpiration?: any;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+	UserLastDeletionTime?: any;
+	GroupLink?: string;
+	GroupEdit?: string;
+	ImnName?: string;
+	PictureDisp?: string;
+	PictureOnly_Size_36px?: string;
+	PictureOnly_Size_48px?: string;
+	PictureOnly_Size_72px?: string;
+	NameWithPicture?: string;
+	NameWithPictureAndDetails?: string;
+	EditUser?: string;
+	UserSelection?: string;
+	ContentTypeDisp?: string;
+}
+
+/*********************************************
+* UserInfoItemCollections
+**********************************************/
+export interface UserInfoItemCollections {
+
+}
+
+/*********************************************
+* UserInfoItemOData
+**********************************************/
+export interface UserInfoItemOData extends Base.IBaseResult, UserInfoItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
 * AppPackagesListItem
 **********************************************/
 export interface AppPackagesListItem {
@@ -86,126 +315,6 @@ export interface AppPackagesListItemOData extends Base.IBaseResult, AppPackagesL
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* UserInfoItem
-**********************************************/
-export interface UserInfoItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	Name?: string;
-	EMail?: string;
-	MobilePhone?: string;
-	Notes?: string;
-	SipAddress?: string;
-	Locale?: number;
-	CalendarType?: number;
-	AdjustHijriDays?: number;
-	TimeZone?: number;
-	Time24?: boolean;
-	AltCalendarType?: number;
-	CalendarViewOptions?: number;
-	WorkDays?: number;
-	WorkDayStartHour?: number;
-	WorkDayEndHour?: number;
-	MUILanguages?: string;
-	ContentLanguages?: string;
-	IsSiteAdmin?: boolean;
-	Deleted?: boolean;
-	UserInfoHidden?: boolean;
-	Picture?: SP.FieldUrlValue;
-	Department?: string;
-	JobTitle?: string;
-	IsActive?: boolean;
-	FirstName?: string;
-	LastName?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	WorkPhone?: string;
-	UserName?: string;
-	WebSite?: SP.FieldUrlValue;
-	SPSResponsibility?: string;
-	Office?: string;
-	SPSPictureTimestamp?: string;
-	SPSPicturePlaceholderState?: number;
-	SPSPictureExchangeSyncState?: number;
-	OtherMail?: string;
-	ComplianceAssetId?: string;
-	UserExpiration?: any;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	GroupLink?: string;
-	GroupEdit?: string;
-	ImnName?: string;
-	PictureDisp?: string;
-	PictureOnly_Size_36px?: string;
-	PictureOnly_Size_48px?: string;
-	PictureOnly_Size_72px?: string;
-	NameWithPicture?: string;
-	NameWithPictureAndDetails?: string;
-	EditUser?: string;
-	UserSelection?: string;
-	ContentTypeDisp?: string;
-}
-
-/*********************************************
-* UserInfoItemCollections
-**********************************************/
-export interface UserInfoItemCollections {
-
-}
-
-/*********************************************
-* UserInfoItemOData
-**********************************************/
-export interface UserInfoItemOData extends Base.IBaseResult, UserInfoItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -437,169 +546,6 @@ export interface DraftAppsListItemOData extends Base.IBaseResult, DraftAppsListI
 }
 
 /*********************************************
-* BinsListItem
-**********************************************/
-export interface BinsListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	ComplianceAssetId?: string;
-	js?: string;
-	css?: string;
-	html?: string;
-	head?: string;
-	body?: string;
-	forkedFrom?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* BinsListItemCollections
-**********************************************/
-export interface BinsListItemCollections {
-
-}
-
-/*********************************************
-* BinsListItemOData
-**********************************************/
-export interface BinsListItemOData extends Base.IBaseResult, BinsListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Cache_x0020_ProfilesItem
-**********************************************/
-export interface Cache_x0020_ProfilesItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	PublishingCacheDisplayName?: string;
-	PublishingCacheDisplayDescriptio?: string;
-	PublishingCachePerformACLCheck?: boolean;
-	PublishingCacheEnabled?: boolean;
-	PublishingCacheDuration?: number;
-	PublishingCacheCheckForChanges?: boolean;
-	PublishingVaryByCustom?: string;
-	PublishingVaryByHeader?: string;
-	PublishingVaryByParam?: string;
-	PublishingVaryByRights?: boolean;
-	PublishingCacheability?: string;
-	PublishingAuthenticatedUse?: boolean;
-	PublishingCacheAllowWriters?: boolean;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Cache_x0020_ProfilesItemCollections
-**********************************************/
-export interface Cache_x0020_ProfilesItemCollections {
-
-}
-
-/*********************************************
-* Cache_x0020_ProfilesItemOData
-**********************************************/
-export interface Cache_x0020_ProfilesItemOData extends Base.IBaseResult, Cache_x0020_ProfilesItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
 * OData__x005f_catalogs_x002f_designItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_designItem {
@@ -673,83 +619,6 @@ export interface OData__x005f_catalogs_x002f_designItemCollections {
 * OData__x005f_catalogs_x002f_designItemOData
 **********************************************/
 export interface OData__x005f_catalogs_x002f_designItemOData extends Base.IBaseResult, OData__x005f_catalogs_x002f_designItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Reports_x0020_ListItem
-**********************************************/
-export interface Reports_x0020_ListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	File_x0020_Type?: string;
-	OData__x0024_Resources_x003a_cmscore_x?: string;
-	OData__x0024_Resources_x003a_cmscore_x0?: string;
-	OData__x0024_Resources_x003a_cmscore_x1?: string;
-	OData__x0024_Resources_x003a_cmscore_x2?: string;
-	Report_x0020_Description?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Reports_x0020_ListItemCollections
-**********************************************/
-export interface Reports_x0020_ListItemCollections {
-
-}
-
-/*********************************************
-* Reports_x0020_ListItemOData
-**********************************************/
-export interface Reports_x0020_ListItemOData extends Base.IBaseResult, Reports_x0020_ListItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
@@ -911,381 +780,6 @@ export interface IWConvertedFormsItemOData extends Base.IBaseResult, IWConverted
 }
 
 /*********************************************
-* CTDemoListItem
-**********************************************/
-export interface CTDemoListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	ComplianceAssetId?: string;
-	URL?: SP.FieldUrlValue;
-	Comments?: string;
-	URLwMenu?: string;
-	URLNoMenu?: string;
-	Modified_x0020_By?: string;
-	Created_x0020_By?: string;
-	SelectFilename?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* CTDemoListItemCollections
-**********************************************/
-export interface CTDemoListItemCollections {
-
-}
-
-/*********************************************
-* CTDemoListItemOData
-**********************************************/
-export interface CTDemoListItemOData extends Base.IBaseResult, CTDemoListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* IDevListItem
-**********************************************/
-export interface IDevListItem extends DevListItemCollections, DevListItemMethods, Base.IBaseQuery<IDevListItemQuery> {
-
-}
-
-/*********************************************
-* IDevListItemCollection
-**********************************************/
-export interface IDevListItemCollection extends Base.IBaseResults<DevListItem> {
-	done?: (resolve: (value?: Array<DevListItem>) => void) => void;
-}
-
-/*********************************************
-* IDevListItemQueryCollection
-**********************************************/
-export interface IDevListItemQueryCollection extends Base.IBaseResults<DevListItemOData> {
-	done?: (resolve: (value?: Array<DevListItemOData>) => void) => void;
-}
-
-/*********************************************
-* IDevListItemQuery
-**********************************************/
-export interface IDevListItemQuery extends DevListItemOData, DevListItemMethods {
-
-}
-
-/*********************************************
-* DevListItem
-**********************************************/
-export interface DevListItem extends SP.ListItem, Base.IBaseResult, DevListItemProps, DevListItemCollections, DevListItemMethods {
-
-}
-
-/*********************************************
-* DevListItemProps
-**********************************************/
-export interface DevListItemProps {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	UserId?: number;
-	UserStringId?: string;
-	Date?: any;
-	URL?: SP.FieldUrlValue;
-	Multi_x0020_LookupId?: { results: Array<number> };
-	ComplianceAssetId?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* DevListItemPropMethods
-**********************************************/
-export interface DevListItemPropMethods {
-	User(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* DevListItemCollections
-**********************************************/
-export interface DevListItemCollections extends DevListItemPropMethods {
-	Multi_x0020_Lookup(): Base.IBaseCollection<SP.Data.DevListItem, SP.Data.DevListItemOData>;
-	Multi_x0020_Lookup(id: string | number): Base.IBaseQuery<SP.Data.DevListItem, SP.Data.DevListItemOData> & SP.Data.DevListItemCollections;
-}
-
-/*********************************************
-* DevListItemOData
-**********************************************/
-export interface DevListItemOData extends Base.IBaseResult, DevListItemProps, DevListItemMethods {
-	User: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Multi_x0020_Lookup: Base.IBaseResults<SP.Data.DevListItem>;
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* DevListItemMethods
-**********************************************/
-export interface DevListItemMethods {
-
-}
-
-/*********************************************
-* DeviceChannelsItem
-**********************************************/
-export interface DeviceChannelsItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	ChannelAlias?: string;
-	ChannelDescription?: string;
-	UserAgentSubstrings?: string;
-	ChannelIsActive?: boolean;
-	ChannelPriority?: number;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* DeviceChannelsItemCollections
-**********************************************/
-export interface DeviceChannelsItemCollections {
-
-}
-
-/*********************************************
-* DeviceChannelsItemOData
-**********************************************/
-export interface DeviceChannelsItemOData extends Base.IBaseResult, DeviceChannelsItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* DocSetItem
-**********************************************/
-export interface DocSetItem {
-	ContentTypeId?: string;
-	OData__ModerationComments?: string;
-	FileLeafRef?: string;
-	Modified_x0020_By?: string;
-	Created_x0020_By?: string;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__SourceUrl?: string;
-	OData__SharedFileIndex?: string;
-	ComplianceAssetId?: string;
-	Title?: string;
-	TemplateUrl?: string;
-	xd_ProgID?: string;
-	xd_Signature?: boolean;
-	OData__ShortcutUrl?: SP.FieldUrlValue;
-	OData__ShortcutSiteId?: any;
-	OData__ShortcutWebId?: any;
-	OData__ShortcutUniqueId?: any;
-	DocumentSetDescription?: string;
-	ID?: number;
-	Created?: any;
-	AuthorId?: number;
-	Modified?: any;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	OData__ModerationStatus?: number;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	CheckoutUserId?: number;
-	UniqueId?: any;
-	OData__CheckinComment?: string;
-	LinkCheckedOutTitle?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	FileSizeDisplay?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	SelectTitle?: string;
-	SelectFilename?: string;
-	Edit?: string;
-	owshiddenversion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowVersion?: number;
-	WorkflowInstanceID?: any;
-	Combine?: string;
-	RepairDocument?: string;
-}
-
-/*********************************************
-* DocSetItemCollections
-**********************************************/
-export interface DocSetItemCollections {
-
-}
-
-/*********************************************
-* DocSetItemOData
-**********************************************/
-export interface DocSetItemOData extends Base.IBaseResult, DocSetItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
 * IShared_x0020_DocumentsItem
 **********************************************/
 export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemCollections, Shared_x0020_DocumentsItemMethods, Base.IBaseQuery<IShared_x0020_DocumentsItemQuery> {
@@ -1341,13 +835,9 @@ export interface Shared_x0020_DocumentsItemProps {
 	OData__ShortcutSiteId?: any;
 	OData__ShortcutWebId?: any;
 	OData__ShortcutUniqueId?: any;
-	ClientSideApplicationId?: string;
 	SharedWithUsersId?: { results: Array<number> };
 	SharedWithDetails?: string;
 	ComplianceAssetId?: string;
-	Category?: { results: Array<string> };
-	MediaServiceMetadata?: string;
-	MediaServiceFastMetadata?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -1428,156 +918,6 @@ export interface Shared_x0020_DocumentsItemOData extends Base.IBaseResult, Share
 * Shared_x0020_DocumentsItemMethods
 **********************************************/
 export interface Shared_x0020_DocumentsItemMethods {
-
-}
-
-/*********************************************
-* IEvent_x0020_CalloutListItem
-**********************************************/
-export interface IEvent_x0020_CalloutListItem extends Event_x0020_CalloutListItemCollections, Event_x0020_CalloutListItemMethods, Base.IBaseQuery<IEvent_x0020_CalloutListItemQuery> {
-
-}
-
-/*********************************************
-* IEvent_x0020_CalloutListItemCollection
-**********************************************/
-export interface IEvent_x0020_CalloutListItemCollection extends Base.IBaseResults<Event_x0020_CalloutListItem> {
-	done?: (resolve: (value?: Array<Event_x0020_CalloutListItem>) => void) => void;
-}
-
-/*********************************************
-* IEvent_x0020_CalloutListItemQueryCollection
-**********************************************/
-export interface IEvent_x0020_CalloutListItemQueryCollection extends Base.IBaseResults<Event_x0020_CalloutListItemOData> {
-	done?: (resolve: (value?: Array<Event_x0020_CalloutListItemOData>) => void) => void;
-}
-
-/*********************************************
-* IEvent_x0020_CalloutListItemQuery
-**********************************************/
-export interface IEvent_x0020_CalloutListItemQuery extends Event_x0020_CalloutListItemOData, Event_x0020_CalloutListItemMethods {
-
-}
-
-/*********************************************
-* Event_x0020_CalloutListItem
-**********************************************/
-export interface Event_x0020_CalloutListItem extends SP.ListItem, Base.IBaseResult, Event_x0020_CalloutListItemProps, Event_x0020_CalloutListItemCollections, Event_x0020_CalloutListItemMethods {
-
-}
-
-/*********************************************
-* Event_x0020_CalloutListItemProps
-**********************************************/
-export interface Event_x0020_CalloutListItemProps {
-	ID?: number;
-	ContentTypeId?: string;
-	Title?: string;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	OData__ModerationComments?: string;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-	Location?: string;
-	Geolocation?: SP.FieldGeolocationValue;
-	EventDate?: any;
-	EndDate?: any;
-	Description?: string;
-	fAllDayEvent?: boolean;
-	fRecurrence?: boolean;
-	WorkspaceLink?: boolean;
-	EventType?: number;
-	UID?: any;
-	RecurrenceID?: any;
-	EventCanceled?: boolean;
-	Duration?: number;
-	RecurrenceData?: string;
-	TimeZone?: number;
-	XMLTZone?: string;
-	MasterSeriesItemID?: number;
-	Workspace?: SP.FieldUrlValue;
-	ParticipantsPickerId?: { results: Array<number> };
-	ParticipantsPickerStringId?: { results: Array<string> };
-	Category?: string;
-	Facilities?: { results: Array<SP.FieldLookupValue> };
-	FreeBusy?: string;
-	Overbook?: string;
-	Participants?: string;
-	BannerUrl?: SP.FieldUrlValue;
-}
-
-/*********************************************
-* Event_x0020_CalloutListItemPropMethods
-**********************************************/
-export interface Event_x0020_CalloutListItemPropMethods {
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Event_x0020_CalloutListItemCollections
-**********************************************/
-export interface Event_x0020_CalloutListItemCollections extends Event_x0020_CalloutListItemPropMethods {
-	ParticipantsPicker(): Base.IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData>;
-	ParticipantsPicker(id: string | number): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Event_x0020_CalloutListItemOData
-**********************************************/
-export interface Event_x0020_CalloutListItemOData extends Base.IBaseResult, Event_x0020_CalloutListItemProps, Event_x0020_CalloutListItemMethods {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	ParticipantsPicker: Base.IBaseResults<SP.Data.UserInfoItem>;
-}
-
-/*********************************************
-* Event_x0020_CalloutListItemMethods
-**********************************************/
-export interface Event_x0020_CalloutListItemMethods {
 
 }
 
@@ -1757,78 +1097,6 @@ export interface GettingStartedListItemOData extends Base.IBaseResult, GettingSt
 }
 
 /*********************************************
-* LargeListListItem
-**********************************************/
-export interface LargeListListItem {
-	ID?: number;
-	ContentTypeId?: string;
-	Title?: string;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	OData__ModerationComments?: string;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* LargeListListItemCollections
-**********************************************/
-export interface LargeListListItemCollections {
-
-}
-
-/*********************************************
-* LargeListListItemOData
-**********************************************/
-export interface LargeListListItemOData extends Base.IBaseResult, LargeListListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
 * OData__x005f_catalogs_x002f_ltItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_ltItem {
@@ -1917,98 +1185,6 @@ export interface OData__x005f_catalogs_x002f_ltItemOData extends Base.IBaseResul
 }
 
 /*********************************************
-* Long_x0020_Running_x0020_Operation_x0020_StatusItem
-**********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	Url_x0020_to_x0020_Navigate_x002?: string;
-	Operations_x0020_Performed?: number;
-	Url_x0020_to_x0020_Retry?: string;
-	Status_x0020_Description?: string;
-	Status?: string;
-	Time_x0020_Last_x0020_Updated?: any;
-	Time_x0020_Started?: any;
-	Total_x0020_number_x0020_of_x002?: number;
-	User_x0020_Name?: string;
-	Wait_x0020_Message?: string;
-	Errors_x0020_Encountered?: string;
-	Sucesses_x0020_Encountered?: string;
-	User_x0020_Can_x0020_Cancel?: boolean;
-	User_x0020_Requested_x0020_Cance?: boolean;
-	Redirect_x0020_When_x0020_Finish?: boolean;
-	Gears_x0020_Image?: string;
-	Previous_x0020_JobId?: any;
-	Original_x0020_JobId?: any;
-	Retry_x0020_Information?: string;
-	Type_x0020_Of_x0020_Job?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections
-**********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemCollections {
-
-}
-
-/*********************************************
-* Long_x0020_Running_x0020_Operation_x0020_StatusItemOData
-**********************************************/
-export interface Long_x0020_Running_x0020_Operation_x0020_StatusItemOData extends Base.IBaseResult, Long_x0020_Running_x0020_Operation_x0020_StatusItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
 * OData__x005f_catalogs_x002f_MaintenanceLogsItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_MaintenanceLogsItem {
@@ -2086,79 +1262,6 @@ export interface OData__x005f_catalogs_x002f_MaintenanceLogsItemOData extends Ba
 }
 
 /*********************************************
-* MapListItem
-**********************************************/
-export interface MapListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	ComplianceAssetId?: string;
-	Location?: SP.FieldGeolocationValue;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* MapListItemCollections
-**********************************************/
-export interface MapListItemCollections {
-
-}
-
-/*********************************************
-* MapListItemOData
-**********************************************/
-export interface MapListItemOData extends Base.IBaseResult, MapListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
 * OData__x005f_catalogs_x002f_masterpageItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_masterpageItem {
@@ -2190,19 +1293,6 @@ export interface OData__x005f_catalogs_x002f_masterpageItem {
 	ManagedPropertyMapping?: string;
 	CompatibleSearchDataTypes?: { results: Array<string> };
 	CompatibleManagedProperties?: string;
-	PublishingContactId?: number;
-	PublishingContactStringId?: string;
-	PublishingPreviewImage?: SP.FieldUrlValue;
-	PublishingHidden?: boolean;
-	OData__PublishingMigratedGuid?: any;
-	PublishingAssociatedVariations?: string;
-	AuthenticatedCacheProfileId?: number;
-	AnonymousCacheProfileId?: number;
-	HtmlDesignFromMaster?: SP.FieldUrlValue;
-	HtmlDesignAssociated?: boolean;
-	HtmlDesignStatusAndPreview?: SP.FieldUrlValue;
-	HtmlDesignPreviewUrl?: SP.FieldUrlValue;
-	ComplianceAssetId?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -2248,6 +1338,7 @@ export interface OData__x005f_catalogs_x002f_masterpageItem {
 	GUID?: any;
 	WorkflowVersion?: number;
 	WorkflowInstanceID?: any;
+	ComplianceAssetId?: string;
 	FilenameMenuNoLink?: string;
 	MasterPageIcon?: string;
 	FilenameNoLink?: string;
@@ -2264,9 +1355,6 @@ export interface OData__x005f_catalogs_x002f_masterpageItemCollections {
 * OData__x005f_catalogs_x002f_masterpageItemOData
 **********************************************/
 export interface OData__x005f_catalogs_x002f_masterpageItemOData extends Base.IBaseResult, OData__x005f_catalogs_x002f_masterpageItem {
-	PublishingContact: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	AuthenticatedCacheProfile: SP.Data.Cache_x0020_ProfilesItem & SP.Data.Cache_x0020_ProfilesItemCollections;
-	AnonymousCacheProfile: SP.Data.Cache_x0020_ProfilesItem & SP.Data.Cache_x0020_ProfilesItemCollections;
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
@@ -2558,7 +1646,6 @@ export interface TaxonomyHiddenListListItem {
 	Path1027?: string;
 	Term1048?: string;
 	Path1048?: string;
-	ComplianceAssetId?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -2605,6 +1692,7 @@ export interface TaxonomyHiddenListListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+	ComplianceAssetId?: string;
 }
 
 /*********************************************
@@ -2618,302 +1706,6 @@ export interface TaxonomyHiddenListListItemCollections {
 * TaxonomyHiddenListListItemOData
 **********************************************/
 export interface TaxonomyHiddenListListItemOData extends Base.IBaseResult, TaxonomyHiddenListListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* MyContactsListItem
-**********************************************/
-export interface MyContactsListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	ComplianceAssetId?: string;
-	MCPhoneNumber?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* MyContactsListItemCollections
-**********************************************/
-export interface MyContactsListItemCollections {
-
-}
-
-/*********************************************
-* MyContactsListItemOData
-**********************************************/
-export interface MyContactsListItemOData extends Base.IBaseResult, MyContactsListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* MyListListItem
-**********************************************/
-export interface MyListListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	EIAddress?: string;
-	EICity?: string;
-	EIEMail?: string;
-	EIPostalCode?: string;
-	EIState?: string;
-	ComplianceAssetId?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* MyListListItemCollections
-**********************************************/
-export interface MyListListItemCollections {
-
-}
-
-/*********************************************
-* MyListListItemOData
-**********************************************/
-export interface MyListListItemOData extends Base.IBaseResult, MyListListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* My_x0020_Lists_x0020_InfoListItem
-**********************************************/
-export interface My_x0020_Lists_x0020_InfoListItem {
-	ID?: number;
-	ContentTypeId?: string;
-	Title?: string;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	OData__ModerationComments?: string;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* My_x0020_Lists_x0020_InfoListItemCollections
-**********************************************/
-export interface My_x0020_Lists_x0020_InfoListItemCollections {
-
-}
-
-/*********************************************
-* My_x0020_Lists_x0020_InfoListItemOData
-**********************************************/
-export interface My_x0020_Lists_x0020_InfoListItemOData extends Base.IBaseResult, My_x0020_Lists_x0020_InfoListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Notification_x0020_PagesItem
-**********************************************/
-export interface Notification_x0020_PagesItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	PageURL?: SP.FieldUrlValue;
-	DeliveryDate?: any;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Notification_x0020_PagesItemCollections
-**********************************************/
-export interface Notification_x0020_PagesItemCollections {
-
-}
-
-/*********************************************
-* Notification_x0020_PagesItemOData
-**********************************************/
-export interface Notification_x0020_PagesItemOData extends Base.IBaseResult, Notification_x0020_PagesItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
@@ -2937,7 +1729,6 @@ export interface ProjectPolicyItemListItem {
 	ProjectTeamMailBoxId?: string;
 	ProjectTeamMailBoxWorkItemId?: any;
 	OData__dlc_ExpireDate?: any;
-	ComplianceAssetId?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -2984,6 +1775,7 @@ export interface ProjectPolicyItemListItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
+	ComplianceAssetId?: string;
 }
 
 /*********************************************
@@ -3002,249 +1794,16 @@ export interface ProjectPolicyItemListItemOData extends Base.IBaseResult, Projec
 }
 
 /*********************************************
-* Quick_x0020_Deploy_x0020_ItemsItem
+* SharePointHomeOrgLinksListItem
 **********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItem {
+export interface SharePointHomeOrgLinksListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
 	File_x0020_Type?: string;
-	JobId?: any;
-	ItemUrl?: SP.FieldUrlValue;
-	ItemType?: number;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Quick_x0020_Deploy_x0020_ItemsItemCollections
-**********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItemCollections {
-
-}
-
-/*********************************************
-* Quick_x0020_Deploy_x0020_ItemsItemOData
-**********************************************/
-export interface Quick_x0020_Deploy_x0020_ItemsItemOData extends Base.IBaseResult, Quick_x0020_Deploy_x0020_ItemsItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Relationships_x0020_ListItem
-**********************************************/
-export interface Relationships_x0020_ListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	GroupGuid?: any;
-	Status?: number;
-	EntryType?: number;
-	Label?: any;
-	ObjectID?: SP.FieldUrlValue;
-	ParentAreaID?: SP.FieldUrlValue;
-	Deleted?: boolean;
-	LastPropagatedSourcePageVersion?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Relationships_x0020_ListItemCollections
-**********************************************/
-export interface Relationships_x0020_ListItemCollections {
-
-}
-
-/*********************************************
-* Relationships_x0020_ListItemOData
-**********************************************/
-export interface Relationships_x0020_ListItemOData extends Base.IBaseResult, Relationships_x0020_ListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* ReusableContentItem
-**********************************************/
-export interface ReusableContentItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	Comments?: string;
-	ContentCategory?: string;
-	AutomaticUpdate?: boolean;
-	ShowInRibbon?: boolean;
-	ReusableHtml?: string;
-	ReusableText?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* ReusableContentItemCollections
-**********************************************/
-export interface ReusableContentItemCollections {
-
-}
-
-/*********************************************
-* ReusableContentItemOData
-**********************************************/
-export interface ReusableContentItemOData extends Base.IBaseResult, ReusableContentItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Sharing_x0020_LinksItem
-**********************************************/
-export interface Sharing_x0020_LinksItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	SharingDocId?: any;
-	CurrentLink?: number;
-	AvailableLinks?: string;
+	Url?: SP.FieldUrlValue;
+	Priority?: number;
+	MobileAppVisible?: boolean;
 	ComplianceAssetId?: string;
 	ID?: number;
 	Modified?: any;
@@ -3295,80 +1854,26 @@ export interface Sharing_x0020_LinksItem {
 }
 
 /*********************************************
-* Sharing_x0020_LinksItemCollections
+* SharePointHomeOrgLinksListItemCollections
 **********************************************/
-export interface Sharing_x0020_LinksItemCollections {
+export interface SharePointHomeOrgLinksListItemCollections {
 
 }
 
 /*********************************************
-* Sharing_x0020_LinksItemOData
+* SharePointHomeOrgLinksListItemOData
 **********************************************/
-export interface Sharing_x0020_LinksItemOData extends Base.IBaseResult, Sharing_x0020_LinksItem {
+export interface SharePointHomeOrgLinksListItemOData extends Base.IBaseResult, SharePointHomeOrgLinksListItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* ISiteAssetsItem
-**********************************************/
-export interface ISiteAssetsItem extends SiteAssetsItemCollections, SiteAssetsItemMethods, Base.IBaseQuery<ISiteAssetsItemQuery> {
-
-}
-
-/*********************************************
-* ISiteAssetsItemCollection
-**********************************************/
-export interface ISiteAssetsItemCollection extends Base.IBaseResults<SiteAssetsItem> {
-	done?: (resolve: (value?: Array<SiteAssetsItem>) => void) => void;
-}
-
-/*********************************************
-* ISiteAssetsItemQueryCollection
-**********************************************/
-export interface ISiteAssetsItemQueryCollection extends Base.IBaseResults<SiteAssetsItemOData> {
-	done?: (resolve: (value?: Array<SiteAssetsItemOData>) => void) => void;
-}
-
-/*********************************************
-* ISiteAssetsItemQuery
-**********************************************/
-export interface ISiteAssetsItemQuery extends SiteAssetsItemOData, SiteAssetsItemMethods {
-
 }
 
 /*********************************************
 * SiteAssetsItem
 **********************************************/
-export interface SiteAssetsItem extends SP.ListItem, Base.IBaseResult, SiteAssetsItemProps, SiteAssetsItemCollections, SiteAssetsItemMethods {
-
-}
-
-/*********************************************
-* SiteAssetsItemProps
-**********************************************/
-export interface SiteAssetsItemProps {
-	ContentTypeId?: string;
-	OData__ModerationComments?: string;
-	FileLeafRef?: string;
-	Modified_x0020_By?: string;
-	Created_x0020_By?: string;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__SourceUrl?: string;
-	OData__SharedFileIndex?: string;
-	Title?: string;
-	TemplateUrl?: string;
-	xd_ProgID?: string;
-	xd_Signature?: boolean;
-	OData__ShortcutUrl?: SP.FieldUrlValue;
-	OData__ShortcutSiteId?: any;
-	OData__ShortcutWebId?: any;
-	OData__ShortcutUniqueId?: any;
-	SharedWithUsersId?: { results: Array<number> };
-	SharedWithDetails?: string;
-	ComplianceAssetId?: string;
+export interface SiteAssetsItem {
 	ID?: number;
+	ContentTypeId?: string;
 	Created?: any;
 	AuthorId?: number;
 	Modified?: any;
@@ -3376,6 +1881,7 @@ export interface SiteAssetsItemProps {
 	OData__HasCopyDestinations?: boolean;
 	OData__CopySource?: string;
 	OData__ModerationStatus?: number;
+	OData__ModerationComments?: string;
 	FileRef?: string;
 	FileDirRef?: string;
 	Last_x0020_Modified?: any;
@@ -3383,9 +1889,16 @@ export interface SiteAssetsItemProps {
 	FSObjType?: number;
 	PermMask?: string;
 	CheckoutUserId?: number;
+	FileLeafRef?: string;
 	UniqueId?: any;
 	OData__CheckinComment?: string;
 	LinkCheckedOutTitle?: string;
+	Modified_x0020_By?: string;
+	Created_x0020_By?: string;
+	File_x0020_Type?: string;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__SourceUrl?: string;
+	OData__SharedFileIndex?: string;
 	OData__EditMenuTableStart?: string;
 	OData__EditMenuTableStart2?: string;
 	OData__EditMenuTableEnd?: string;
@@ -3413,302 +1926,33 @@ export interface SiteAssetsItemProps {
 	GUID?: any;
 	WorkflowVersion?: number;
 	WorkflowInstanceID?: any;
+	ComplianceAssetId?: string;
+	Title?: string;
+	TemplateUrl?: string;
+	xd_ProgID?: string;
+	xd_Signature?: boolean;
 	Combine?: string;
 	RepairDocument?: string;
-}
-
-/*********************************************
-* SiteAssetsItemPropMethods
-**********************************************/
-export interface SiteAssetsItemPropMethods {
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	OData__ShortcutUrl?: SP.FieldUrlValue;
+	OData__ShortcutSiteId?: any;
+	OData__ShortcutWebId?: any;
+	OData__ShortcutUniqueId?: any;
 }
 
 /*********************************************
 * SiteAssetsItemCollections
 **********************************************/
-export interface SiteAssetsItemCollections extends SiteAssetsItemPropMethods {
-	SharedWithUsers(): Base.IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData>;
-	SharedWithUsers(id: string | number): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+export interface SiteAssetsItemCollections {
+
 }
 
 /*********************************************
 * SiteAssetsItemOData
 **********************************************/
-export interface SiteAssetsItemOData extends Base.IBaseResult, SiteAssetsItemProps, SiteAssetsItemMethods {
-	SharedWithUsers: Base.IBaseResults<SP.Data.UserInfoItem>;
+export interface SiteAssetsItemOData extends Base.IBaseResult, SiteAssetsItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* SiteAssetsItemMethods
-**********************************************/
-export interface SiteAssetsItemMethods {
-
-}
-
-/*********************************************
-* SiteCollectionDocumentsItem
-**********************************************/
-export interface SiteCollectionDocumentsItem {
-	ContentTypeId?: string;
-	OData__ModerationComments?: string;
-	FileLeafRef?: string;
-	Modified_x0020_By?: string;
-	Created_x0020_By?: string;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__SourceUrl?: string;
-	OData__SharedFileIndex?: string;
-	Title?: string;
-	TemplateUrl?: string;
-	xd_ProgID?: string;
-	xd_Signature?: boolean;
-	OData__ShortcutUrl?: SP.FieldUrlValue;
-	OData__ShortcutSiteId?: any;
-	OData__ShortcutWebId?: any;
-	OData__ShortcutUniqueId?: any;
-	PublishingStartDate?: any;
-	PublishingExpirationDate?: any;
-	ComplianceAssetId?: string;
-	ID?: number;
-	Created?: any;
-	AuthorId?: number;
-	Modified?: any;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	OData__ModerationStatus?: number;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	CheckoutUserId?: number;
-	UniqueId?: any;
-	OData__CheckinComment?: string;
-	LinkCheckedOutTitle?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	FileSizeDisplay?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	SelectTitle?: string;
-	SelectFilename?: string;
-	Edit?: string;
-	owshiddenversion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowVersion?: number;
-	WorkflowInstanceID?: any;
-	Combine?: string;
-	RepairDocument?: string;
-}
-
-/*********************************************
-* SiteCollectionDocumentsItemCollections
-**********************************************/
-export interface SiteCollectionDocumentsItemCollections {
-
-}
-
-/*********************************************
-* SiteCollectionDocumentsItemOData
-**********************************************/
-export interface SiteCollectionDocumentsItemOData extends Base.IBaseResult, SiteCollectionDocumentsItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* ISiteCollectionImagesItem
-**********************************************/
-export interface ISiteCollectionImagesItem extends SiteCollectionImagesItemCollections, SiteCollectionImagesItemMethods, Base.IBaseQuery<ISiteCollectionImagesItemQuery> {
-
-}
-
-/*********************************************
-* ISiteCollectionImagesItemCollection
-**********************************************/
-export interface ISiteCollectionImagesItemCollection extends Base.IBaseResults<SiteCollectionImagesItem> {
-	done?: (resolve: (value?: Array<SiteCollectionImagesItem>) => void) => void;
-}
-
-/*********************************************
-* ISiteCollectionImagesItemQueryCollection
-**********************************************/
-export interface ISiteCollectionImagesItemQueryCollection extends Base.IBaseResults<SiteCollectionImagesItemOData> {
-	done?: (resolve: (value?: Array<SiteCollectionImagesItemOData>) => void) => void;
-}
-
-/*********************************************
-* ISiteCollectionImagesItemQuery
-**********************************************/
-export interface ISiteCollectionImagesItemQuery extends SiteCollectionImagesItemOData, SiteCollectionImagesItemMethods {
-
-}
-
-/*********************************************
-* SiteCollectionImagesItem
-**********************************************/
-export interface SiteCollectionImagesItem extends SP.ListItem, Base.IBaseResult, SiteCollectionImagesItemProps, SiteCollectionImagesItemCollections, SiteCollectionImagesItemMethods {
-
-}
-
-/*********************************************
-* SiteCollectionImagesItemProps
-**********************************************/
-export interface SiteCollectionImagesItemProps {
-	ContentTypeId?: string;
-	OData__ModerationComments?: string;
-	FileLeafRef?: string;
-	Modified_x0020_By?: string;
-	Created_x0020_By?: string;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__SourceUrl?: string;
-	OData__SharedFileIndex?: string;
-	PreviewOnForm?: string;
-	ThumbnailOnForm?: string;
-	OData__Author?: string;
-	FileType?: string;
-	ImageSize?: string;
-	Title?: string;
-	ImageWidth?: number;
-	ImageHeight?: number;
-	ImageCreateDate?: any;
-	OData__Comments?: string;
-	ThumbnailExists?: boolean;
-	PreviewExists?: boolean;
-	EncodedAbsThumbnailUrl?: string;
-	EncodedAbsWebImgUrl?: string;
-	NameOrTitle?: string;
-	Keywords?: string;
-	wic_System_Copyright?: string;
-	AlternateThumbnailUrl?: SP.FieldUrlValue;
-	MediaLengthInSeconds?: number;
-	PublishingStartDate?: any;
-	PublishingExpirationDate?: any;
-	VideoWidthInPixels?: number;
-	VideoHeightInPixels?: number;
-	VideoRenditionLabel?: string;
-	VideoRenditionBitRate?: number;
-	VideoSetDescription?: string;
-	VideoSetOwnerId?: number;
-	VideoSetOwnerStringId?: string;
-	VideoSetThumbnailTimeIndex?: number;
-	VideoSetDefaultEncoding?: SP.FieldUrlValue;
-	VideoSetUserOverrideEncoding?: SP.FieldUrlValue;
-	VideoSetExternalLink?: SP.FieldUrlValue;
-	VideoSetEmbedCode?: string;
-	VideoSetShowDownloadLink?: boolean;
-	VideoSetShowEmbedLink?: boolean;
-	VideoSetRenditionsInfo?: string;
-	PeopleInMediaId?: { results: Array<number> };
-	PeopleInMediaStringId?: { results: Array<string> };
-	NoCrawl?: boolean;
-	ComplianceAssetId?: string;
-	ID?: number;
-	Created?: any;
-	AuthorId?: number;
-	Modified?: any;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	OData__ModerationStatus?: number;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	CheckoutUserId?: number;
-	UniqueId?: any;
-	OData__CheckinComment?: string;
-	LinkCheckedOutTitle?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	FileSizeDisplay?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	SelectTitle?: string;
-	SelectFilename?: string;
-	Edit?: string;
-	owshiddenversion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowVersion?: number;
-	WorkflowInstanceID?: any;
-}
-
-/*********************************************
-* SiteCollectionImagesItemPropMethods
-**********************************************/
-export interface SiteCollectionImagesItemPropMethods {
-	VideoSetOwner(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* SiteCollectionImagesItemCollections
-**********************************************/
-export interface SiteCollectionImagesItemCollections extends SiteCollectionImagesItemPropMethods {
-	PeopleInMedia(): Base.IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData>;
-	PeopleInMedia(id: string | number): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* SiteCollectionImagesItemOData
-**********************************************/
-export interface SiteCollectionImagesItemOData extends Base.IBaseResult, SiteCollectionImagesItemProps, SiteCollectionImagesItemMethods {
-	VideoSetOwner: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	PeopleInMedia: Base.IBaseResults<SP.Data.UserInfoItem>;
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* SiteCollectionImagesItemMethods
-**********************************************/
-export interface SiteCollectionImagesItemMethods {
-
 }
 
 /*********************************************
@@ -3770,8 +2014,6 @@ export interface SitePagesItemProps {
 	PromotedState?: number;
 	FirstPublishedDate?: any;
 	LinkTitle?: string;
-	SharedWithUsersId?: { results: Array<number> };
-	SharedWithDetails?: string;
 	LayoutWebpartsContent?: string;
 	ComplianceAssetId?: string;
 	OData__OriginalSourceUrl?: string;
@@ -3782,6 +2024,7 @@ export interface SitePagesItemProps {
 	OData__AuthorBylineId?: { results: Array<number> };
 	_AuthorBylineStringId?: { results: Array<string> };
 	OData__TopicHeader?: string;
+	OData__SPSitePageFlags?: { results: Array<string> };
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -3842,8 +2085,6 @@ export interface SitePagesItemPropMethods {
 * SitePagesItemCollections
 **********************************************/
 export interface SitePagesItemCollections extends SitePagesItemPropMethods {
-	SharedWithUsers(): Base.IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData>;
-	SharedWithUsers(id: string | number): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 	OData__AuthorByline(): Base.IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData>;
 	OData__AuthorByline(id: string | number): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 }
@@ -3852,7 +2093,6 @@ export interface SitePagesItemCollections extends SitePagesItemPropMethods {
 * SitePagesItemOData
 **********************************************/
 export interface SitePagesItemOData extends Base.IBaseResult, SitePagesItemProps, SitePagesItemMethods {
-	SharedWithUsers: Base.IBaseResults<SP.Data.UserInfoItem>;
 	OData__AuthorByline: Base.IBaseResults<SP.Data.UserInfoItem>;
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
@@ -3950,243 +2190,6 @@ export interface OData__x005f_catalogs_x002f_solutionsItemOData extends Base.IBa
 }
 
 /*********************************************
-* ISPReactListItem
-**********************************************/
-export interface ISPReactListItem extends SPReactListItemCollections, SPReactListItemMethods, Base.IBaseQuery<ISPReactListItemQuery> {
-
-}
-
-/*********************************************
-* ISPReactListItemCollection
-**********************************************/
-export interface ISPReactListItemCollection extends Base.IBaseResults<SPReactListItem> {
-	done?: (resolve: (value?: Array<SPReactListItem>) => void) => void;
-}
-
-/*********************************************
-* ISPReactListItemQueryCollection
-**********************************************/
-export interface ISPReactListItemQueryCollection extends Base.IBaseResults<SPReactListItemOData> {
-	done?: (resolve: (value?: Array<SPReactListItemOData>) => void) => void;
-}
-
-/*********************************************
-* ISPReactListItemQuery
-**********************************************/
-export interface ISPReactListItemQuery extends SPReactListItemOData, SPReactListItemMethods {
-
-}
-
-/*********************************************
-* SPReactListItem
-**********************************************/
-export interface SPReactListItem extends SP.ListItem, Base.IBaseResult, SPReactListItemProps, SPReactListItemCollections, SPReactListItemMethods {
-
-}
-
-/*********************************************
-* SPReactListItemProps
-**********************************************/
-export interface SPReactListItemProps {
-	Calculated_x0020_Title?: string;
-	Title?: string;
-	TestBoolean?: boolean;
-	TestChoice?: string;
-	TestMultiChoice?: string;
-	TestComments?: string;
-	TestDate?: any;
-	TestDateTime?: any;
-	TestNote?: string;
-	TestNumberDecimal?: number;
-	TestNumberInteger?: number;
-	Percentage?: number;
-	TestUrl?: SP.FieldUrlValue;
-	TestUserId?: number;
-	TestUserStringId?: string;
-	TestMultiUserId?: { results: Array<number> };
-	TestMultiUserStringId?: { results: Array<string> };
-	TestLookupId?: number;
-	TestMultiLookupId?: { results: Array<number> };
-	TestManagedMetadata?: { results: Array<SP.Taxonomy.TaxonomyFieldValue> };
-	TestNumberPercentage?: number;
-	ContentTypeId?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	g0e355e0ec7e416095dbaecb58b958cf?: string;
-	TaxCatchAllId?: { results: Array<number> };
-	ComplianceAssetId?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* SPReactListItemPropMethods
-**********************************************/
-export interface SPReactListItemPropMethods {
-	TestUser(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	TestLookup(): Base.IBaseQuery<SP.Data.SPReactListItem, SP.Data.SPReactListItemOData> & SP.Data.SPReactListItemCollections;
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* SPReactListItemCollections
-**********************************************/
-export interface SPReactListItemCollections extends SPReactListItemPropMethods {
-	TestMultiUser(): Base.IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData>;
-	TestMultiUser(id: string | number): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	TestMultiLookup(): Base.IBaseCollection<SP.Data.SPReactListItem, SP.Data.SPReactListItemOData>;
-	TestMultiLookup(id: string | number): Base.IBaseQuery<SP.Data.SPReactListItem, SP.Data.SPReactListItemOData> & SP.Data.SPReactListItemCollections;
-	TaxCatchAll(): Base.IBaseCollection<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemOData>;
-	TaxCatchAll(id: string | number): Base.IBaseQuery<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemOData> & SP.Data.TaxonomyHiddenListListItemCollections;
-}
-
-/*********************************************
-* SPReactListItemOData
-**********************************************/
-export interface SPReactListItemOData extends Base.IBaseResult, SPReactListItemProps, SPReactListItemMethods {
-	TestUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	TestMultiUser: Base.IBaseResults<SP.Data.UserInfoItem>;
-	TestLookup: SP.Data.SPReactListItem & SP.Data.SPReactListItemCollections;
-	TestMultiLookup: Base.IBaseResults<SP.Data.SPReactListItem>;
-	TaxCatchAll: Base.IBaseResults<SP.Data.TaxonomyHiddenListListItem>;
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* SPReactListItemMethods
-**********************************************/
-export interface SPReactListItemMethods {
-
-}
-
-/*********************************************
-* SPRESTListDemoListItem
-**********************************************/
-export interface SPRESTListDemoListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	ParentID?: number;
-	DemoChoice?: string;
-	DemoNote?: string;
-	DemoUserId?: number;
-	DemoUserStringId?: string;
-	ChildChoice?: string;
-	ChildNote?: string;
-	ChildText?: string;
-	ComplianceAssetId?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* SPRESTListDemoListItemCollections
-**********************************************/
-export interface SPRESTListDemoListItemCollections {
-
-}
-
-/*********************************************
-* SPRESTListDemoListItemOData
-**********************************************/
-export interface SPRESTListDemoListItemOData extends Base.IBaseResult, SPRESTListDemoListItem {
-	DemoUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
 * Style_x0020_LibraryItem
 **********************************************/
 export interface Style_x0020_LibraryItem {
@@ -4274,357 +2277,6 @@ export interface Style_x0020_LibraryItemOData extends Base.IBaseResult, Style_x0
 }
 
 /*********************************************
-* PublishedLinksItem
-**********************************************/
-export interface PublishedLinksItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	PublishedLinksURL?: SP.FieldUrlValue;
-	PublishedLinksDescription?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* PublishedLinksItemCollections
-**********************************************/
-export interface PublishedLinksItemCollections {
-
-}
-
-/*********************************************
-* PublishedLinksItemOData
-**********************************************/
-export interface PublishedLinksItemOData extends Base.IBaseResult, PublishedLinksItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* ITeamMembersListItem
-**********************************************/
-export interface ITeamMembersListItem extends TeamMembersListItemCollections, TeamMembersListItemMethods, Base.IBaseQuery<ITeamMembersListItemQuery> {
-
-}
-
-/*********************************************
-* ITeamMembersListItemCollection
-**********************************************/
-export interface ITeamMembersListItemCollection extends Base.IBaseResults<TeamMembersListItem> {
-	done?: (resolve: (value?: Array<TeamMembersListItem>) => void) => void;
-}
-
-/*********************************************
-* ITeamMembersListItemQueryCollection
-**********************************************/
-export interface ITeamMembersListItemQueryCollection extends Base.IBaseResults<TeamMembersListItemOData> {
-	done?: (resolve: (value?: Array<TeamMembersListItemOData>) => void) => void;
-}
-
-/*********************************************
-* ITeamMembersListItemQuery
-**********************************************/
-export interface ITeamMembersListItemQuery extends TeamMembersListItemOData, TeamMembersListItemMethods {
-
-}
-
-/*********************************************
-* TeamMembersListItem
-**********************************************/
-export interface TeamMembersListItem extends SP.ListItem, Base.IBaseResult, TeamMembersListItemProps, TeamMembersListItemCollections, TeamMembersListItemMethods {
-
-}
-
-/*********************************************
-* TeamMembersListItemProps
-**********************************************/
-export interface TeamMembersListItemProps {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	ComplianceAssetId?: string;
-	TeamMemberId?: number;
-	TeamMemberStringId?: string;
-	CheckInStatus_0?: string;
-	CheckInStatus?: SP.Taxonomy.TaxonomyFieldValue;
-	TaxCatchAllId?: { results: Array<number> };
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* TeamMembersListItemPropMethods
-**********************************************/
-export interface TeamMembersListItemPropMethods {
-	TeamMember(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* TeamMembersListItemCollections
-**********************************************/
-export interface TeamMembersListItemCollections extends TeamMembersListItemPropMethods {
-	TaxCatchAll(): Base.IBaseCollection<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemOData>;
-	TaxCatchAll(id: string | number): Base.IBaseQuery<SP.Data.TaxonomyHiddenListListItem, SP.Data.TaxonomyHiddenListListItemOData> & SP.Data.TaxonomyHiddenListListItemCollections;
-}
-
-/*********************************************
-* TeamMembersListItemOData
-**********************************************/
-export interface TeamMembersListItemOData extends Base.IBaseResult, TeamMembersListItemProps, TeamMembersListItemMethods {
-	TeamMember: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	TaxCatchAll: Base.IBaseResults<SP.Data.TaxonomyHiddenListListItem>;
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* TeamMembersListItemMethods
-**********************************************/
-export interface TeamMembersListItemMethods {
-
-}
-
-/*********************************************
-* TestListItem
-**********************************************/
-export interface TestListItem {
-	ID?: number;
-	ContentTypeId?: string;
-	Title?: string;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	OData__ModerationComments?: string;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* TestListItemCollections
-**********************************************/
-export interface TestListItemCollections {
-
-}
-
-/*********************************************
-* TestListItemOData
-**********************************************/
-export interface TestListItemOData extends Base.IBaseResult, TestListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* TestProjectListItem
-**********************************************/
-export interface TestProjectListItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	TPCategory?: string;
-	TPLink?: SP.FieldUrlValue;
-	ComplianceAssetId?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-}
-
-/*********************************************
-* TestProjectListItemCollections
-**********************************************/
-export interface TestProjectListItemCollections {
-
-}
-
-/*********************************************
-* TestProjectListItemOData
-**********************************************/
-export interface TestProjectListItemOData extends Base.IBaseResult, TestProjectListItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
 * OData__x005f_catalogs_x002f_themeItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_themeItem {
@@ -4701,280 +2353,6 @@ export interface OData__x005f_catalogs_x002f_themeItemOData extends Base.IBaseRe
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Translation_x0020_PackagesItem
-**********************************************/
-export interface Translation_x0020_PackagesItem {
-	ContentTypeId?: string;
-	OData__ModerationComments?: string;
-	FileLeafRef?: string;
-	Modified_x0020_By?: string;
-	Created_x0020_By?: string;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__SourceUrl?: string;
-	OData__SharedFileIndex?: string;
-	Title?: string;
-	TemplateUrl?: string;
-	xd_ProgID?: string;
-	xd_Signature?: boolean;
-	OData__ShortcutUrl?: SP.FieldUrlValue;
-	OData__ShortcutSiteId?: any;
-	OData__ShortcutWebId?: any;
-	OData__ShortcutUniqueId?: any;
-	TranslationPackageGroupId?: any;
-	OData__dlc_ExpireDateSaved?: any;
-	OData__dlc_ExpireDate?: any;
-	ComplianceAssetId?: string;
-	ID?: number;
-	Created?: any;
-	AuthorId?: number;
-	Modified?: any;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	OData__ModerationStatus?: number;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	CheckoutUserId?: number;
-	UniqueId?: any;
-	OData__CheckinComment?: string;
-	LinkCheckedOutTitle?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	FileSizeDisplay?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	SelectTitle?: string;
-	SelectFilename?: string;
-	Edit?: string;
-	owshiddenversion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowVersion?: number;
-	WorkflowInstanceID?: any;
-	Combine?: string;
-	RepairDocument?: string;
-}
-
-/*********************************************
-* Translation_x0020_PackagesItemCollections
-**********************************************/
-export interface Translation_x0020_PackagesItemCollections {
-
-}
-
-/*********************************************
-* Translation_x0020_PackagesItemOData
-**********************************************/
-export interface Translation_x0020_PackagesItemOData extends Base.IBaseResult, Translation_x0020_PackagesItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Translation_x0020_StatusItem
-**********************************************/
-export interface Translation_x0020_StatusItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	File_x0020_Type?: string;
-	Modified_x0020_By?: string;
-	Created_x0020_By?: string;
-	TranslationStateJobId?: any;
-	TranslationStateStartTime?: any;
-	TranslationStateEndTime?: any;
-	TranslationStateExportTime?: any;
-	TranslationStateUploadTime?: any;
-	TranslationStateTranslationType?: string;
-	TranslationStateTranslatorName?: string;
-	TranslationStateExportRequestingId?: number;
-	TranslationStateExportRequestingStringId?: string;
-	TranslationStateImportRequestingId?: number;
-	TranslationStateImportRequestingStringId?: string;
-	TranslationStateListId?: string;
-	TranslationStateWebId?: string;
-	TranslationStateListUrl?: SP.FieldUrlValue;
-	TranslationStateItemInformation?: string;
-	TranslationStateExportJobSize?: number;
-	TranslationStateImportJobSize?: number;
-	TranslationStateDownloadLink?: SP.FieldUrlValue;
-	TranslationStateStatus?: string;
-	TranslationStateNumberOfItems?: number;
-	TranslationStateErrors?: string;
-	TranslationStateTermInformation?: string;
-	SelectFilename?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Translation_x0020_StatusItemCollections
-**********************************************/
-export interface Translation_x0020_StatusItemCollections {
-
-}
-
-/*********************************************
-* Translation_x0020_StatusItemOData
-**********************************************/
-export interface Translation_x0020_StatusItemOData extends Base.IBaseResult, Translation_x0020_StatusItem {
-	TranslationStateExportRequesting: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	TranslationStateImportRequesting: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* Variation_x0020_LabelsItem
-**********************************************/
-export interface Variation_x0020_LabelsItem {
-	ContentTypeId?: string;
-	Title?: string;
-	OData__ModerationComments?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	File_x0020_Type?: string;
-	Flag_x0020_Control_x0020_Display?: string;
-	Language?: string;
-	Locale?: string;
-	Is_x0020_Source?: boolean;
-	Description?: string;
-	Hierarchy_x0020_Creation_x0020_M?: string;
-	Hierarchy_x0020_Is_x0020_Created?: boolean;
-	Top_x0020_Web_x0020_URL?: SP.FieldUrlValue;
-	NotificationMode?: boolean;
-	IsMachineTranslationEnabledField?: boolean;
-	IsHumanTranslationEnabledFieldNa?: boolean;
-	MachineTranslationLanguageFieldN?: string;
-	HumanTranslationLanguageFieldNam?: string;
-	ID?: number;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	Edit?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-}
-
-/*********************************************
-* Variation_x0020_LabelsItemCollections
-**********************************************/
-export interface Variation_x0020_LabelsItemCollections {
-
-}
-
-/*********************************************
-* Variation_x0020_LabelsItemOData
-**********************************************/
-export interface Variation_x0020_LabelsItemOData extends Base.IBaseResult, Variation_x0020_LabelsItem {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -5145,144 +2523,4 @@ export interface OData__x005f_catalogs_x002f_wfpubItemOData extends Base.IBaseRe
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* IWorkflowTasksItem
-**********************************************/
-export interface IWorkflowTasksItem extends WorkflowTasksItemCollections, WorkflowTasksItemMethods, Base.IBaseQuery<IWorkflowTasksItemQuery> {
-
-}
-
-/*********************************************
-* IWorkflowTasksItemCollection
-**********************************************/
-export interface IWorkflowTasksItemCollection extends Base.IBaseResults<WorkflowTasksItem> {
-	done?: (resolve: (value?: Array<WorkflowTasksItem>) => void) => void;
-}
-
-/*********************************************
-* IWorkflowTasksItemQueryCollection
-**********************************************/
-export interface IWorkflowTasksItemQueryCollection extends Base.IBaseResults<WorkflowTasksItemOData> {
-	done?: (resolve: (value?: Array<WorkflowTasksItemOData>) => void) => void;
-}
-
-/*********************************************
-* IWorkflowTasksItemQuery
-**********************************************/
-export interface IWorkflowTasksItemQuery extends WorkflowTasksItemOData, WorkflowTasksItemMethods {
-
-}
-
-/*********************************************
-* WorkflowTasksItem
-**********************************************/
-export interface WorkflowTasksItem extends SP.ListItem, Base.IBaseResult, WorkflowTasksItemProps, WorkflowTasksItemCollections, WorkflowTasksItemMethods {
-
-}
-
-/*********************************************
-* WorkflowTasksItemProps
-**********************************************/
-export interface WorkflowTasksItemProps {
-	ID?: number;
-	ContentTypeId?: string;
-	Title?: string;
-	Modified?: any;
-	Created?: any;
-	AuthorId?: number;
-	EditorId?: number;
-	OData__HasCopyDestinations?: boolean;
-	OData__CopySource?: string;
-	owshiddenversion?: number;
-	WorkflowVersion?: number;
-	OData__UIVersion?: number;
-	OData__UIVersionString?: string;
-	Attachments?: boolean;
-	OData__ModerationStatus?: number;
-	OData__ModerationComments?: string;
-	Edit?: string;
-	LinkTitleNoMenu?: string;
-	LinkTitle?: string;
-	LinkTitle2?: string;
-	SelectTitle?: string;
-	InstanceID?: number;
-	Order?: number;
-	GUID?: any;
-	WorkflowInstanceID?: any;
-	FileRef?: string;
-	FileDirRef?: string;
-	Last_x0020_Modified?: any;
-	Created_x0020_Date?: any;
-	FSObjType?: number;
-	PermMask?: string;
-	FileLeafRef?: string;
-	UniqueId?: any;
-	File_x0020_Type?: string;
-	HTML_x0020_File_x0020_Type?: string;
-	OData__EditMenuTableStart?: string;
-	OData__EditMenuTableStart2?: string;
-	OData__EditMenuTableEnd?: string;
-	LinkFilenameNoMenu?: string;
-	LinkFilename?: string;
-	LinkFilename2?: string;
-	DocIcon?: string;
-	ServerUrl?: string;
-	EncodedAbsUrl?: string;
-	BaseName?: string;
-	OData__Level?: number;
-	OData__IsCurrentVersion?: boolean;
-	OData__IsRecord?: string;
-	AppAuthorId?: number;
-	AppEditorId?: number;
-	ComplianceAssetId?: string;
-	PredecessorsId?: { results: Array<number> };
-	Priority?: string;
-	Status?: string;
-	PercentComplete?: number;
-	AssignedToId?: number;
-	AssignedToStringId?: string;
-	TaskGroupId?: number;
-	TaskGroupStringId?: string;
-	Body?: string;
-	StartDate?: any;
-	DueDate?: any;
-	RelatedItems?: string;
-}
-
-/*********************************************
-* WorkflowTasksItemPropMethods
-**********************************************/
-export interface WorkflowTasksItemPropMethods {
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	AssignedTo(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	TaskGroup(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* WorkflowTasksItemCollections
-**********************************************/
-export interface WorkflowTasksItemCollections extends WorkflowTasksItemPropMethods {
-	Predecessors(): Base.IBaseCollection<SP.Data.WorkflowTasksItem, SP.Data.WorkflowTasksItemOData>;
-	Predecessors(id: string | number): Base.IBaseQuery<SP.Data.WorkflowTasksItem, SP.Data.WorkflowTasksItemOData> & SP.Data.WorkflowTasksItemCollections;
-}
-
-/*********************************************
-* WorkflowTasksItemOData
-**********************************************/
-export interface WorkflowTasksItemOData extends Base.IBaseResult, WorkflowTasksItemProps, WorkflowTasksItemMethods {
-	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	Predecessors: Base.IBaseResults<SP.Data.WorkflowTasksItem>;
-	AssignedTo: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-	TaskGroup: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
-}
-
-/*********************************************
-* WorkflowTasksItemMethods
-**********************************************/
-export interface WorkflowTasksItemMethods {
-
 }

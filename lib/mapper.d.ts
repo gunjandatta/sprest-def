@@ -75,6 +75,7 @@ export interface IMapper {
 		},
 
 		exportpopulartenantqueries: IMapperMethod & {
+		argNames: [ "count" ],
 		},
 
 		postquery: IMapperMethod & {
@@ -132,6 +133,84 @@ export interface IMapper {
 		getData: IMapperMethod & {
 		argNames: [ "suiteVersion", "isMobileRequest", "locale", "onPremVer" ],
 		},
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Service.Device": {
+		properties?: Array<string>;
+		delete: IMapperMethod & {
+		},
+
+		update: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Service.Device.Collection": {
+		properties?: Array<string>;
+		getById: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage": {
+		properties?: Array<string>;
+		create: IMapperMethod & {
+		argNames: [ "config" ],
+		},
+
+		delete: IMapperMethod & {
+		},
+
+		update: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential": {
+		properties?: Array<string>;
+		delete: IMapperMethod & {
+		},
+
+		update: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential.Collection": {
+		properties?: Array<string>;
+		getById: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		getCredentials: IMapperMethod & {
+		argNames: [ "AccountName", "Type" ],
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask": {
+		properties?: Array<string>;
+		delete: IMapperMethod & {
+		},
+
+		update: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask.Collection": {
+		properties?: Array<string>;
+		getById: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
 
 	}
 
@@ -360,6 +439,10 @@ export interface IMapper {
 		argNames: [ "siteUrl" ],
 		},
 
+		getSiteRenameReport: IMapperMethod & {
+		argNames: [ "state" ],
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
 
 	}
@@ -437,6 +520,15 @@ export interface IMapper {
 
 	}
 
+	"Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob.Collection": {
+		properties?: Array<string>;
+		getState: IMapperMethod & {
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+	}
+
 	"Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin": {
 		properties?: Array<string>;
 		createTopicMagazine: IMapperMethod & {
@@ -498,6 +590,20 @@ export interface IMapper {
 	"Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties": {
 		properties?: Array<string>;
 		update: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrant.Collection": {
+		properties?: Array<string>;
+		add: IMapperMethod & {
+		argNames: [ "servicePrincipalId", "resource", "scope" ],
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+		remove: IMapperMethod & {
+		argNames: [ "servicePrincipalId", "resource", "scope" ],
 		},
 
 	}
@@ -566,10 +672,6 @@ export interface IMapper {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService": {
 		properties?: Array<string>;
-		emailAdmins: IMapperMethod & {
-		argNames: [ "message", "siteIds", "subject" ],
-		},
-
 		exportCSVFile: IMapperMethod & {
 		},
 
@@ -599,6 +701,10 @@ export interface IMapper {
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteProperties.Collection": {
 		properties?: Array<string>;
 		getById: IMapperMethod & {
+		argNames: [ "siteId" ],
+		},
+
+		getGroupSiteRelationship: IMapperMethod & {
 		argNames: [ "siteId" ],
 		},
 
@@ -633,6 +739,10 @@ export interface IMapper {
 		getSPOTenantAllWebTemplates: IMapperMethod & {
 		},
 
+		getSPOTenantWebTemplates: IMapperMethod & {
+		argNames: [ "localeId", "compatibilityLevel" ],
+		},
+
 		getSitePropertiesByUrl: IMapperMethod & {
 		argNames: [ "url", "includeDetail" ],
 		},
@@ -643,6 +753,10 @@ export interface IMapper {
 
 		getSiteSecondaryAdministrators: IMapperMethod & {
 		argNames: [ "secondaryAdministratorsFieldsData" ],
+		},
+
+		grantHubSiteRightsById: IMapperMethod & {
+		argNames: [ "hubSiteId", "principals", "grantedRights" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -675,12 +789,20 @@ export interface IMapper {
 		argNames: [ "siteUrl", "siteId" ],
 		},
 
+		revokeHubSiteRightsById: IMapperMethod & {
+		argNames: [ "hubSiteId", "principals" ],
+		},
+
 		setIdleSessionSignOutForUnmanagedDevices: IMapperMethod & {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
 		},
 
 		setSiteSecondaryAdministrators: IMapperMethod & {
 		argNames: [ "secondaryAdministratorsFieldsData" ],
+		},
+
+		swapSite: IMapperMethod & {
+		argNames: [ "sourceUrl", "targetUrl", "archiveUrl" ],
 		},
 
 		unregisterHubSite: IMapperMethod & {
@@ -730,8 +852,8 @@ export interface IMapper {
 		argNames: [ "name", "themeJson" ],
 		},
 
-		addToCarLibAndCdn: IMapperMethod & {
-		argNames: [ "cdnType", "libUrl", "displayName", "thumbnailUrl" ],
+		addToOrgAssetsLibAndCdn: IMapperMethod & {
+		argNames: [ "cdnType", "libUrl", "thumbnailUrl" ],
 		},
 
 		createTenantCdnDefaultOrigins: IMapperMethod & {
@@ -806,7 +928,7 @@ export interface IMapper {
 		argNames: [ "uniqueIds" ],
 		},
 
-		removeFromCarAndCdn: IMapperMethod & {
+		removeFromOrgAssetsAndCdn: IMapperMethod & {
 		argNames: [ "remove", "cdnType", "libUrl" ],
 		},
 
@@ -835,6 +957,10 @@ export interface IMapper {
 
 		setIdleSessionSignOutForUnmanagedDevices: IMapperMethod & {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
+		},
+
+		setOrgAssetsLib: IMapperMethod & {
+		argNames: [ "libUrl", "thumbnailUrl" ],
 		},
 
 		setTenantCdnEnabled: IMapperMethod & {
@@ -880,6 +1006,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		getCrawledUrls: IMapperMethod & {
 		argNames: [ "getCountOnly", "maxRows", "queryString", "isLike", "contentSourceID", "errorLevel", "errorID", "startDateTime", "endDateTime" ],
+		},
+
+		getUnsuccesfulCrawledUrls: IMapperMethod & {
+		argNames: [ "displayUrl", "startDateTime", "endDateTime" ],
 		},
 
 	}
@@ -1040,10 +1170,6 @@ export interface IMapper {
 		argNames: [ "absolutePath" ],
 		},
 
-		getByAbsoluteUrl: IMapperMethod & {
-		argNames: [ "absolutePath" ],
-		},
-
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		remove: IMapperMethod & {
@@ -1073,6 +1199,10 @@ export interface IMapper {
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
+
+		syncSolutionToTeams: IMapperMethod & {
+		argNames: [ "id" ],
+		},
 
 	}
 
@@ -1139,6 +1269,13 @@ export interface IMapper {
 		argNames: [ "displayName", "alias", "isPublic", "optionalParams" ],
 		},
 
+		delete: IMapperMethod & {
+		argNames: [ "siteUrl" ],
+		},
+
+		ensureTeamForGroup: IMapperMethod & {
+		},
+
 		getGroupCreationContext: IMapperMethod & {
 		},
 
@@ -1151,6 +1288,14 @@ export interface IMapper {
 
 		getValidSiteUrlFromAlias: IMapperMethod & {
 		argNames: [ "alias", "managedPath", "isTeamSite" ],
+		},
+
+		hideTeamifyPrompt: IMapperMethod & {
+		argNames: [ "siteUrl" ],
+		},
+
+		isTeamifyPromptHidden: IMapperMethod & {
+		argNames: [ "siteUrl" ],
 		},
 
 		notebook: IMapperMethod & {
@@ -1177,6 +1322,22 @@ export interface IMapper {
 		},
 
 		delete: IMapperMethod & {
+		argNames: [ "siteId" ],
+		},
+
+		getTeamChannelSiteOwner: IMapperMethod & {
+		argNames: [ "siteId" ],
+		},
+
+		restoreTeamsChannelSite: IMapperMethod & {
+		argNames: [ "siteId", "relatedGroupId" ],
+		},
+
+		setTeamChannelSiteOwner: IMapperMethod & {
+		argNames: [ "siteId", "logonName", "secondaryLogonName" ],
+		},
+
+		siteUrl: IMapperMethod & {
 		argNames: [ "siteId" ],
 		},
 
@@ -2035,6 +2196,9 @@ export interface IMapper {
 		},
 
 		submitToWorkflow: IMapperMethod & {
+		},
+
+		unlinkProjectSite: IMapperMethod & {
 		},
 
 		updateIdeaListItemStatus: IMapperMethod & {
@@ -2976,6 +3140,10 @@ export interface IMapper {
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		reorderFields: IMapperMethod & {
+		argNames: [ "fieldNames" ],
+		},
+
 		update: IMapperMethod & {
 		argNames: [ "properties" ],
 		},
@@ -3583,6 +3751,28 @@ export interface IMapper {
 
 	}
 
+	"SP.FieldThumbnail": {
+		properties?: Array<string>;
+		delete: IMapperMethod & {
+		},
+
+		setShowInDisplayForm: IMapperMethod & {
+		argNames: [ "value" ],
+		},
+
+		setShowInEditForm: IMapperMethod & {
+		argNames: [ "value" ],
+		},
+
+		setShowInNewForm: IMapperMethod & {
+		argNames: [ "value" ],
+		},
+
+		update: IMapperMethod & {
+		},
+
+	}
+
 	"SP.FieldUrl": {
 		properties?: Array<string>;
 		delete: IMapperMethod & {
@@ -3631,10 +3821,6 @@ export interface IMapper {
 
 	"SP.File": {
 		properties?: Array<string>;
-		addActivities: IMapperMethod & {
-		argNames: [ "activities" ],
-		},
-
 		addClientActivities: IMapperMethod & {
 		argNames: [ "activitiesStream" ],
 		},
@@ -3984,6 +4170,10 @@ export interface IMapper {
 	"SP.HubSite.Collection": {
 		properties?: Array<string>;
 		getById: IMapperMethod & {
+		argNames: [ "hubSiteId" ],
+		},
+
+		getSiteUrlByHubSiteId: IMapperMethod & {
 		argNames: [ "hubSiteId" ],
 		},
 
@@ -4403,6 +4593,10 @@ export interface IMapper {
 		argNames: [ "workItemId" ],
 		},
 
+		deleteMicroserviceWorkItemByContentDbId: IMapperMethod & {
+		argNames: [ "contentDatabaseId", "siteId", "workItemId" ],
+		},
+
 		getServiceInternalUrls: IMapperMethod & {
 		argNames: [ "service" ],
 		},
@@ -4660,10 +4854,21 @@ export interface IMapper {
 
 	}
 
+	"SP.OrganizationNews": {
+		properties?: Array<string>;
+		sitesReference: IMapperMethod & {
+		},
+
+	}
+
 	"SP.Publishing.CommunicationSite": {
 		properties?: Array<string>;
 		create: IMapperMethod & {
 		argNames: [ "request" ],
+		},
+
+		enable: IMapperMethod & {
+		argNames: [ "designPackageId" ],
 		},
 
 		status: IMapperMethod & {
@@ -4791,6 +4996,9 @@ export interface IMapper {
 		copy: IMapperMethod & {
 		},
 
+		createNewsCopy: IMapperMethod & {
+		},
+
 		demoteFromNews: IMapperMethod & {
 		},
 
@@ -4895,6 +5103,9 @@ export interface IMapper {
 		copy: IMapperMethod & {
 		},
 
+		createNewsCopy: IMapperMethod & {
+		},
+
 		demoteFromNews: IMapperMethod & {
 		},
 
@@ -4937,6 +5148,14 @@ export interface IMapper {
 
 	"SP.Publishing.SitePage.Collection": {
 		properties?: Array<string>;
+		createAppPage: IMapperMethod & {
+		argNames: [ "webPartDataAsJson" ],
+		},
+
+		createFullPageApp: IMapperMethod & {
+		argNames: [ "webPartDataAsJson", "title", "addToQuickLaunch" ],
+		},
+
 		ensureTitleResource: IMapperMethod & {
 		},
 
@@ -4967,6 +5186,14 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		templates: IMapperMethod & {
+		},
+
+		updateAppPage: IMapperMethod & {
+		argNames: [ "pageId", "webPartDataAsJson", "title", "includeInNavigation" ],
+		},
+
+		updateFullPageApp: IMapperMethod & {
+		argNames: [ "serverRelativeUrl", "webPartDataAsJson" ],
 		},
 
 	}
@@ -5418,6 +5645,13 @@ export interface IMapper {
 
 	}
 
+	"SP.SPHSite": {
+		properties?: Array<string>;
+		details: IMapperMethod & {
+		},
+
+	}
+
 	"SP.ScriptSafeDomain": {
 		properties?: Array<string>;
 		delete: IMapperMethod & {
@@ -5476,6 +5710,10 @@ export interface IMapper {
 
 		createPreviewSPSite: IMapperMethod & {
 		argNames: [ "upgrade", "sendemail" ],
+		},
+
+		createSPAsyncReadJob: IMapperMethod & {
+		argNames: [ "url", "options" ],
 		},
 
 		deleteMigrationJob: IMapperMethod & {
@@ -5933,6 +6171,9 @@ export interface IMapper {
 
 	"SP.User": {
 		properties?: Array<string>;
+		expire: IMapperMethod & {
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		update: IMapperMethod & {
@@ -6611,6 +6852,9 @@ export interface IMapper {
 
 		mapToIcon: IMapperMethod & {
 		argNames: [ "fileName", "progId", "size" ],
+		},
+
+		pageContextCore: IMapperMethod & {
 		},
 
 		pageContextInfo: IMapperMethod & {

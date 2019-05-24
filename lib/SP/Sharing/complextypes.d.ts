@@ -14,6 +14,7 @@ export interface Principal {
 	name?: string;
 	principalType?: number;
 	userId?: SP.UserIdInfo;
+	userPrincipalName?: string;
 }
 
 /*********************************************
@@ -259,6 +260,7 @@ export interface ShareLinkSettings {
 	allowAnonymousAccess?: boolean;
 	applicationLink?: boolean;
 	description?: string;
+	embeddable?: boolean;
 	expiration?: string;
 	inviteesToRemove?: Array<SP.Sharing.Principal>;
 	limitUseToApplication?: boolean;
@@ -314,6 +316,7 @@ export interface SharingAbilitiesCollections {
 * SharingLinkAbilities
 **********************************************/
 export interface SharingLinkAbilities {
+	canAddNewExternalPrincipals?: SP.Sharing.SharingAbilityStatus;
 	canGetEditLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReadLink?: SP.Sharing.SharingAbilityStatus;
 	canHaveExternalUsers?: SP.Sharing.SharingAbilityStatus;
@@ -445,6 +448,7 @@ export interface SiteSharingReportCapabilities {
 	canCancelSharingReport?: boolean;
 	canCreateSharingReport?: boolean;
 	createSharingReportNotAllowedReason?: string;
+	jobData?: SP.Sharing.SiteSharingReportJobData;
 	stopSharingReportNotAllowedReason?: string;
 }
 
@@ -456,10 +460,26 @@ export interface SiteSharingReportCapabilitiesCollections {
 }
 
 /*********************************************
+* SiteSharingReportJobData
+**********************************************/
+export interface SiteSharingReportJobData {
+	folderUrl?: string;
+	webUrl?: string;
+}
+
+/*********************************************
+* SiteSharingReportJobDataCollections
+**********************************************/
+export interface SiteSharingReportJobDataCollections {
+
+}
+
+/*********************************************
 * SiteSharingReportStatus
 **********************************************/
 export interface SiteSharingReportStatus {
 	errorCode?: number;
+	jobData?: SP.Sharing.SiteSharingReportJobData;
 	message?: string;
 	success?: boolean;
 }

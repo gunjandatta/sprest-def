@@ -571,6 +571,7 @@ export interface CommunicationSiteCreationRequest {
 	Description?: string;
 	lcid?: number;
 	SensitivityLabel?: any;
+	SensitivityLabel2?: string;
 	SiteDesignId?: any;
 	Title?: string;
 	Url?: string;
@@ -605,7 +606,8 @@ export interface PublishSiteInformationCollections {
 **********************************************/
 export interface FilePickerOptions {
 	BingSearchEnabled?: boolean;
-	CentralAssetRepository?: Microsoft.SharePoint.Administration.CentralAssetRepository;
+	CentralAssetRepository?: Microsoft.SharePoint.Administration.OrgAssets;
+	OrgAssets?: Microsoft.SharePoint.Administration.OrgAssets;
 }
 
 /*********************************************

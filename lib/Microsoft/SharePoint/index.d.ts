@@ -4,6 +4,8 @@ import * as Administration from "./Administration";
 export { Administration }
 import * as AppManagement from "./AppManagement";
 export { AppManagement }
+import * as AuthPolicy from "./AuthPolicy";
+export { AuthPolicy }
 import * as Client from "./Client";
 export { Client }
 import * as ClientSideComponent from "./ClientSideComponent";

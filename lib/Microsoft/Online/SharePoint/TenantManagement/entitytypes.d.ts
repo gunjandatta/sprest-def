@@ -176,11 +176,14 @@ export interface Office365Tenant extends Base.IBaseResult, Office365TenantProps,
 * Office365TenantProps
 **********************************************/
 export interface Office365TenantProps {
+	AddressbarLinkPermission?: number;
+	AllowCommentsTextOnEmailEnabled?: boolean;
 	AllowDownloadingNonWebViewableFiles?: boolean;
 	AllowedDomainListForSyncClient?: { results: Array<any> };
 	AllowEditing?: boolean;
+	AllowGuestUserShareToUsersNotInSiteCollection?: boolean;
 	AllowLimitedAccessOnUnmanagedDevices?: boolean;
-	AllowSelectSGsInODBList?: string;
+	AllowSelectSGsInODBList?: { results: Array<string> };
 	ApplyAppEnforcedRestrictionsToAdHocRecipients?: boolean;
 	BccExternalSharingInvitations?: boolean;
 	BccExternalSharingInvitationsList?: string;
@@ -193,6 +196,7 @@ export interface Office365TenantProps {
 	CommentsOnFilesDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
 	ConditionalAccessPolicy?: number;
+	ConditionalAccessPolicyErrorHelpLink?: string;
 	ContentTypeSyncSiteTemplatesList?: { results: Array<string> };
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultLinkPermission?: number;
@@ -202,12 +206,15 @@ export interface Office365TenantProps {
 	EmailAttestationReAuthDays?: number;
 	EmailAttestationRequired?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
+	EnablePromotedFileHandlers?: boolean;
 	ExcludedFileExtensionsForSyncClient?: { results: Array<string> };
 	ExternalServicesEnabled?: boolean;
+	ExternalUserExpirationRequired?: boolean;
+	ExternalUserExpireInDays?: number;
 	FileAnonymousLinkType?: number;
 	FilePickerExternalImageSearchEnabled?: boolean;
 	FolderAnonymousLinkType?: number;
-	GetCentralAssetRepo?: Microsoft.SharePoint.Administration.CentralAssetRepository;
+	GetOrgAssets?: Microsoft.SharePoint.Administration.OrgAssets;
 	GuestSharingGroupAllowList?: string;
 	HideSyncButtonOnODB?: boolean;
 	IPAddressAllowList?: string;
@@ -249,6 +256,7 @@ export interface Office365TenantProps {
 	SignInAccelerationDomain?: string;
 	SocialBarOnSitePagesDisabled?: boolean;
 	StartASiteFormUrl?: string;
+	SyncAadB2BManagementPolicy?: boolean;
 	SyncPrivacyProfileProperties?: boolean;
 	UseFindPeopleInPeoplePicker?: boolean;
 	UsePersistentCookiesForExplorerView?: boolean;
@@ -285,7 +293,7 @@ export interface Office365TenantMethods {
 	addSdnProvider(identifier?: string, license?: string): Base.IBaseExecution<any>;
 	addTenantCdnOrigin(cdnType?: number, originUrl?: string): Base.IBaseExecution<any>;
 	addTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
-	addToCarLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, displayName?: string, thumbnailUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
+	addToOrgAssetsLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
 	createTenantCdnDefaultOrigins(cdnType?: number): Base.IBaseExecution<any>;
 	deleteImportProfilePropertiesJob(jobId?: any): Base.IBaseExecution<boolean>;
 	deleteTenantTheme(name?: string): Base.IBaseExecution<any>;
@@ -305,7 +313,7 @@ export interface Office365TenantMethods {
 	isSharingDisabledForNonOwnersOfSite(siteUrl?: string): Base.IBaseExecution<boolean>;
 	queueImportProfileProperties(idType?: number, sourceDataIdProperty?: string, propertyMap?: Array<SP.KeyValue>, sourceUri?: string): Base.IBaseExecution<any>;
 	removeExternalUsers(uniqueIds?: Array<string>): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.RemoveExternalUsersResults>;
-	removeFromCarAndCdn(remove?: boolean, cdnType?: number, libUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
+	removeFromOrgAssetsAndCdn(remove?: boolean, cdnType?: number, libUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
 	removePublicCdnOrigin(originId?: string): Base.IBaseExecution<any>;
 	removeSdnProvider(): Base.IBaseExecution<any>;
 	removeTenantCdnOrigin(cdnType?: number, originUrl?: string): Base.IBaseExecution<any>;
@@ -313,6 +321,7 @@ export interface Office365TenantMethods {
 	revokeAllUserSessionsByPuid(puidList?: Array<string>): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.SPOUserSessionRevocationResult>;
 	setHideDefaultThemes(hideDefaultThemes?: boolean): Base.IBaseExecution<boolean>;
 	setIdleSessionSignOutForUnmanagedDevices(enabled?: boolean, warnAfter?: any, signOutAfter?: any): Base.IBaseExecution<boolean>;
+	setOrgAssetsLib(libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
 	setTenantCdnEnabled(cdnType?: number, isEnabled?: boolean): Base.IBaseExecution<any>;
 	setTenantCdnPolicy(cdnType?: number, policy?: number, policyValue?: string): Base.IBaseExecution<any>;
 	updateTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;

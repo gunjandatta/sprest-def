@@ -70,6 +70,7 @@ export interface MicroServiceManagerOData extends Base.IBaseResult, MicroService
 export interface MicroServiceManagerMethods {
 	addMicroserviceWorkItem(payLoad?: any, minutes?: number, properties?: SP.MicroService.MicroServiceWorkItemProperties): Base.IBaseExecution<any>;
 	deleteMicroserviceWorkItem(workItemId?: any): Base.IBaseExecution<boolean>;
+	deleteMicroserviceWorkItemByContentDbId(contentDatabaseId?: any, siteId?: any, workItemId?: any): Base.IBaseExecution<boolean>;
 	getServiceInternalUrls(service?: string): Base.IBaseCollection<string>;
 	getServiceUrls(service?: string): Base.IBaseCollection<string>;
 }

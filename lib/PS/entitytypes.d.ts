@@ -1198,10 +1198,16 @@ export interface StatusAssignmentMethods {
 * StatusAssignmentHistoryLine
 **********************************************/
 export interface StatusAssignmentHistoryLine {
+	ApproverId?: any;
 	Comment?: string;
 	Decision?: number;
+	DecisionDate?: any;
 	Id?: any;
+	ReassignedResourceId?: any;
+	ReassignmentDate?: any;
+	State?: number;
 	Submitted?: any;
+	SubmitterId?: any;
 	UpdateType?: number;
 }
 
@@ -2135,6 +2141,7 @@ export interface TaskProps {
 	Id?: any;
 	IgnoreResourceCalendar?: boolean;
 	IsCritical?: boolean;
+	IsDurationEstimate?: boolean;
 	IsExternalTask?: boolean;
 	IsOverAllocated?: boolean;
 	IsRecurring?: boolean;
@@ -2368,6 +2375,7 @@ export interface PublishedProjectMethods {
 	createProjectSite(siteName?: string): Base.IBaseExecution<any>;
 	delete(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	submitToWorkflow(): Base.IBaseExecution<any>;
+	unlinkProjectSite(): Base.IBaseExecution<any>;
 	updateVisibilityCustomFields(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 }
 
@@ -2776,6 +2784,9 @@ export interface TaskLinkCollections {
 **********************************************/
 export interface PublishedTaskLink {
 	DependencyType?: number;
+	LinkLag?: number;
+	LinkLagFmt?: number;
+	ProjUid?: any;
 }
 
 /*********************************************

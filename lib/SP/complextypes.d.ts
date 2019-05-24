@@ -153,6 +153,51 @@ export interface ResourcePathCollections {
 }
 
 /*********************************************
+* PortalAndOrgNewsSiteReference
+**********************************************/
+export interface PortalAndOrgNewsSiteReference {
+	SiteId?: any;
+	WebId?: any;
+}
+
+/*********************************************
+* PortalAndOrgNewsSiteReferenceCollections
+**********************************************/
+export interface PortalAndOrgNewsSiteReferenceCollections {
+
+}
+
+/*********************************************
+* OrganizationNewsSiteReference
+**********************************************/
+export interface OrganizationNewsSiteReference {
+
+}
+
+/*********************************************
+* OrganizationNewsSiteReferenceCollections
+**********************************************/
+export interface OrganizationNewsSiteReferenceCollections {
+
+}
+
+/*********************************************
+* SPHSiteReference
+**********************************************/
+export interface SPHSiteReference {
+	LogoUrl?: string;
+	Title?: string;
+	Url?: string;
+}
+
+/*********************************************
+* SPHSiteReferenceCollections
+**********************************************/
+export interface SPHSiteReferenceCollections {
+
+}
+
+/*********************************************
 * CreatableItemInfoCollection
 **********************************************/
 export interface CreatableItemInfoCollection {
@@ -387,6 +432,7 @@ export interface SharedWithUserCollections {
 export interface SharingLinkData {
 	BlocksDownload?: boolean;
 	Description?: string;
+	Embeddable?: boolean;
 	Expiration?: string;
 	HasExternalGuestInvitees?: boolean;
 	IsAnonymous?: boolean;
@@ -421,6 +467,7 @@ export interface SharingLinkInfo {
 	Created?: string;
 	CreatedBy?: SP.Sharing.Principal;
 	Description?: string;
+	Embeddable?: boolean;
 	Expiration?: string;
 	HasExternalGuestInvitees?: boolean;
 	Invitations?: Array<SP.Sharing.LinkInvitation>;
@@ -572,6 +619,38 @@ export interface AppViewCreationInfo {
 * AppViewCreationInfoCollections
 **********************************************/
 export interface AppViewCreationInfoCollections {
+
+}
+
+/*********************************************
+* AsyncReadJobInfo
+**********************************************/
+export interface AsyncReadJobInfo {
+	EncryptionKey?: any;
+	JobId?: any;
+	JobQueueUri?: string;
+	ManifestContainerUri?: string;
+}
+
+/*********************************************
+* AsyncReadJobInfoCollections
+**********************************************/
+export interface AsyncReadJobInfoCollections {
+
+}
+
+/*********************************************
+* AsyncReadOptions
+**********************************************/
+export interface AsyncReadOptions {
+	IncludeSecurity?: boolean;
+	IncludeVersions?: boolean;
+}
+
+/*********************************************
+* AsyncReadOptionsCollections
+**********************************************/
+export interface AsyncReadOptionsCollections {
 
 }
 

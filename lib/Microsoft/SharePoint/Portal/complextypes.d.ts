@@ -136,6 +136,7 @@ export interface LinkedSitesListContractCollections {
 * SPSiteCreationResponse
 **********************************************/
 export interface SPSiteCreationResponse {
+	SiteId?: string;
 	SiteStatus?: number;
 	SiteUrl?: string;
 }
@@ -156,7 +157,9 @@ export interface SPSiteCreationRequest {
 	HubSiteId?: any;
 	Lcid?: number;
 	Owner?: string;
+	RelatedGroupId?: any;
 	SensitivityLabel?: any;
+	SensitivityLabel2?: string;
 	ShareByEmailEnabled?: boolean;
 	SiteDesignId?: any;
 	TimeZoneId?: number;
@@ -170,5 +173,20 @@ export interface SPSiteCreationRequest {
 * SPSiteCreationRequestCollections
 **********************************************/
 export interface SPSiteCreationRequestCollections {
+
+}
+
+/*********************************************
+* GetTeamChannelSiteOwnerResponse
+**********************************************/
+export interface GetTeamChannelSiteOwnerResponse {
+	Owner?: string;
+	SecondaryContact?: string;
+}
+
+/*********************************************
+* GetTeamChannelSiteOwnerResponseCollections
+**********************************************/
+export interface GetTeamChannelSiteOwnerResponseCollections {
 
 }

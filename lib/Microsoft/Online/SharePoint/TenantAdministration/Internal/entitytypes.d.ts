@@ -2,6 +2,34 @@ import { Base } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
+* SPO3rdPartyAADPermissionGrant
+**********************************************/
+export interface SPO3rdPartyAADPermissionGrant {
+	ClientId?: string;
+	ConsentType?: string;
+	IsDomainIsolated?: boolean;
+	ObjectId?: string;
+	PackageName?: string;
+	Resource?: string;
+	Scope?: string;
+}
+
+/*********************************************
+* SPO3rdPartyAADPermissionGrantCollections
+**********************************************/
+export interface SPO3rdPartyAADPermissionGrantCollections extends SPO3rdPartyAADPermissionGrantCollectionMethods {
+
+}
+
+/*********************************************
+* SPO3rdPartyAADPermissionGrantCollectionMethods
+**********************************************/
+export interface SPO3rdPartyAADPermissionGrantCollectionMethods {
+	add(servicePrincipalId?: string, resource?: string, scope?: string): Base.IBaseExecution<any>;
+	remove(servicePrincipalId?: string, resource?: string, scope?: string): Base.IBaseExecution<any>;
+}
+
+/*********************************************
 * ISPOWebAppServicePrincipalPermissionGrant
 **********************************************/
 export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods, Base.IBaseQuery<ISPOWebAppServicePrincipalPermissionGrantQuery> {
@@ -227,6 +255,8 @@ export interface SPOWebAppServicePrincipalPropMethods {
 * SPOWebAppServicePrincipalCollections
 **********************************************/
 export interface SPOWebAppServicePrincipalCollections extends SPOWebAppServicePrincipalPropMethods {
+	GrantManager(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrantCollectionMethods;
+	GrantManager(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrantCollections;
 	PermissionGrants(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollectionMethods;
 	PermissionGrants(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollections & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantMethods;
 	PermissionRequests(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollectionMethods;
@@ -237,6 +267,7 @@ export interface SPOWebAppServicePrincipalCollections extends SPOWebAppServicePr
 * SPOWebAppServicePrincipalOData
 **********************************************/
 export interface SPOWebAppServicePrincipalOData extends Base.IBaseResult, SPOWebAppServicePrincipalProps, SPOWebAppServicePrincipalMethods {
+	GrantManager: Base.IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPO3rdPartyAADPermissionGrantCollectionMethods;
 	PermissionGrants: Base.IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrant> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionGrantCollectionMethods;
 	PermissionRequests: Base.IBaseResults<Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequest> & Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipalPermissionRequestCollectionMethods;
 }

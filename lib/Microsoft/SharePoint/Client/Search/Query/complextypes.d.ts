@@ -172,6 +172,7 @@ export interface SortCollections {
 * PopularTenantQuery
 **********************************************/
 export interface PopularTenantQuery {
+	AlwaysSuggest?: boolean;
 	ClickCount?: number;
 	LCID?: number;
 	QueryCount?: number;

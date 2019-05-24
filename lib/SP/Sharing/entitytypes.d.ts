@@ -80,6 +80,7 @@ export interface SharingInformation {
 	directUrl?: string;
 	domainRestrictionSettings?: SP.Sharing.DomainRestrictionSettings;
 	hasUniquePermissions?: boolean;
+	itemUniqueId?: any;
 	microserviceShareUiUrl?: string;
 	permissionsInformation?: SP.Sharing.PermissionCollection;
 	sharedObjectType?: number;

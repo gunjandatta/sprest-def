@@ -3,49 +3,53 @@ import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
-* CentralAssetRepositoryLibraryCollection
+* OrgAssetsLibraryCollection
 **********************************************/
-export interface CentralAssetRepositoryLibraryCollection {
-	Items?: Array<Microsoft.SharePoint.Administration.CentralAssetRepositoryLibrary>;
+export interface OrgAssetsLibraryCollection {
+	Items?: Array<Microsoft.SharePoint.Administration.OrgAssetsLibrary>;
 }
 
 /*********************************************
-* CentralAssetRepositoryLibraryCollectionCollections
+* OrgAssetsLibraryCollectionCollections
 **********************************************/
-export interface CentralAssetRepositoryLibraryCollectionCollections {
+export interface OrgAssetsLibraryCollectionCollections {
 
 }
 
 /*********************************************
-* CentralAssetRepositoryLibrary
+* OrgAssetsLibrary
 **********************************************/
-export interface CentralAssetRepositoryLibrary {
+export interface OrgAssetsLibrary {
 	DisplayName?: string;
+	FileType?: string;
 	LibraryUrl?: SP.ResourcePath;
+	ListId?: any;
 	ThumbnailUrl?: SP.ResourcePath;
+	UniqueId?: any;
 }
 
 /*********************************************
-* CentralAssetRepositoryLibraryCollections
+* OrgAssetsLibraryCollections
 **********************************************/
-export interface CentralAssetRepositoryLibraryCollections {
+export interface OrgAssetsLibraryCollections {
 
 }
 
 /*********************************************
-* CentralAssetRepository
+* OrgAssets
 **********************************************/
-export interface CentralAssetRepository {
-	CentralAssetRepositoryLibraries?: Microsoft.SharePoint.Administration.CentralAssetRepositoryLibraryCollection;
+export interface OrgAssets {
+	CentralAssetRepositoryLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
+	OrgAssetsLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
 	SiteId?: any;
 	Url?: SP.ResourcePath;
 	WebId?: any;
 }
 
 /*********************************************
-* CentralAssetRepositoryCollections
+* OrgAssetsCollections
 **********************************************/
-export interface CentralAssetRepositoryCollections {
+export interface OrgAssetsCollections {
 
 }
 

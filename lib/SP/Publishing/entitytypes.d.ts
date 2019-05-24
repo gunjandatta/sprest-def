@@ -69,6 +69,7 @@ export interface CommunicationSiteOData extends Base.IBaseResult, CommunicationS
 **********************************************/
 export interface CommunicationSiteMethods {
 	create(request?: SP.Publishing.CommunicationSiteCreationRequest): Base.IBaseExecution<SP.Publishing.CommunicationSiteCreationResponse>;
+	enable(designPackageId?: any): Base.IBaseExecution<any>;
 	status(url?: string): Base.IBaseExecution<SP.Publishing.CommunicationSiteCreationResponse>;
 }
 
@@ -799,6 +800,7 @@ export interface SitePageMetadata {
 	AbsoluteUrl?: string;
 	AuthorByline?: { results: Array<string> };
 	BannerImageUrl?: string;
+	BannerThumbnailUrl?: string;
 	CommentCount?: number;
 	CommentsDisabled?: boolean;
 	ContentTypeId?: string;
@@ -910,6 +912,8 @@ export interface SitePageProps {
 	IsLikedByCurrentUser?: boolean;
 	IsTemplate?: boolean;
 	LayoutWebpartsContent?: string;
+	Name?: string;
+	SitePageFlags?: string;
 }
 
 /*********************************************
@@ -930,6 +934,8 @@ export interface SitePageCollections extends SitePagePropMethods {
 * SitePageCollectionMethods
 **********************************************/
 export interface SitePageCollectionMethods {
+	createAppPage(webPartDataAsJson?: string): Base.IBaseExecution<string>;
+	createFullPageApp(webPartDataAsJson?: string, title?: string, addToQuickLaunch?: boolean): Base.IBaseExecution<string>;
 	ensureTitleResource(): Base.IBaseExecution<any>;
 	feed(promotedState?: number, published?: boolean, metadataFilter?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
 	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
@@ -938,6 +944,8 @@ export interface SitePageCollectionMethods {
 	getPageColumnState(url?: string): Base.IBaseExecution<number>;
 	isSitePage(url?: string): Base.IBaseExecution<boolean>;
 	templates(): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
+	updateAppPage(pageId?: number, webPartDataAsJson?: string, title?: string, includeInNavigation?: boolean): Base.IBaseExecution<string>;
+	updateFullPageApp(serverRelativeUrl?: string, webPartDataAsJson?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -954,6 +962,7 @@ export interface SitePageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
 	copy(): Base.IBaseExecution<SP.Publishing.SitePage>;
+	createNewsCopy(): Base.IBaseExecution<SP.Publishing.SitePage>;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
 	getVersion(versionId?: number): Base.IBaseExecution<SP.Publishing.SitePage>;
@@ -1050,6 +1059,7 @@ export interface RepostPageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
 	copy(): Base.IBaseExecution<SP.Publishing.SitePage>;
+	createNewsCopy(): Base.IBaseExecution<SP.Publishing.SitePage>;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
 	getVersion(versionId?: number): Base.IBaseExecution<SP.Publishing.SitePage>;

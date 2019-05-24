@@ -151,6 +151,7 @@ export interface SiteProps {
 	DisableCompanyWideSharingLinks?: boolean;
 	DisableFlows?: boolean;
 	ExternalSharingTipsEnabled?: boolean;
+	ExternalUserExpirationInDays?: number;
 	GeoLocation?: string;
 	GroupId?: any;
 	HubSiteId?: any;
@@ -163,6 +164,7 @@ export interface SiteProps {
 	ResourcePath?: SP.ResourcePath;
 	PrimaryUri?: string;
 	ReadOnly?: boolean;
+	RelatedGroupId?: any;
 	RequiredDesignerVersion?: string;
 	SandboxedCodeActivationCapability?: number;
 	ServerRelativePath?: SP.ResourcePath;
@@ -237,6 +239,7 @@ export interface SiteMethods {
 	createMigrationJob(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string): Base.IBaseExecution<any>;
 	createMigrationJobEncrypted(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string, options?: SP.EncryptionOption): Base.IBaseExecution<any>;
 	createPreviewSPSite(upgrade?: boolean, sendemail?: boolean): Base.IBaseExecution<any>;
+	createSPAsyncReadJob(url?: string, options?: SP.AsyncReadOptions): Base.IBaseCollection<SP.AsyncReadJobInfo>;
 	deleteMigrationJob(id?: any): Base.IBaseExecution<boolean>;
 	extendUpgradeReminderDate(): Base.IBaseExecution<any>;
 	getBringYourOwnKeySiteStatus(): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
@@ -594,10 +597,12 @@ export interface User extends SP.Principal, Base.IBaseResult, UserProps, UserCol
 export interface UserProps {
 	AadObjectId?: SP.UserIdInfo;
 	Email?: string;
+	Expiration?: string;
 	IsEmailAuthenticationGuestUser?: boolean;
 	IsShareByEmailGuestUser?: boolean;
 	IsSiteAdmin?: boolean;
 	UserId?: SP.UserIdInfo;
+	UserPrincipalName?: string;
 }
 
 /*********************************************
@@ -641,6 +646,7 @@ export interface UserOData extends Base.IBaseResult, UserProps, UserMethods {
 * UserMethods
 **********************************************/
 export interface UserMethods {
+	expire(): Base.IBaseExecution<any>;
 	// update(): Base.IBaseExecution<any>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
@@ -1342,6 +1348,7 @@ export interface ContentTypeOData extends Base.IBaseResult, ContentTypeProps, Co
 **********************************************/
 export interface ContentTypeMethods {
 	delete(): Base.IBaseExecution<any>;
+	reorderFields(fieldNames?: Array<string>): Base.IBaseExecution<any>;
 	// update(updateChildren?: boolean): Base.IBaseExecution<any>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
@@ -1791,7 +1798,6 @@ export interface FileOData extends Base.IBaseResult, FileProps, FileMethods {
 * FileMethods
 **********************************************/
 export interface FileMethods {
-	addActivities(activities?: Array<Microsoft.SharePoint.Activities.ActivityClientRequest>): Base.IBaseCollection<Microsoft.SharePoint.Activities.ActivityClientResponse>;
 	addClientActivities(activitiesStream?: any): Base.IBaseCollection<Microsoft.SharePoint.Activities.ActivityClientResponse>;
 	approve(comment?: string): Base.IBaseExecution<any>;
 	cancelUpload(uploadId?: any): Base.IBaseExecution<any>;
@@ -2821,6 +2827,7 @@ export interface WebProps {
 	DesignPackageId?: any;
 	DisableAppViews?: boolean;
 	DisableFlows?: boolean;
+	DisableRecommendedItems?: boolean;
 	DocumentLibraryCalloutOfficeWebAppPreviewersDisabled?: boolean;
 	EffectiveBasePermissions?: SP.BasePermissions;
 	EnableMinimalDownload?: boolean;
@@ -2849,6 +2856,7 @@ export interface WebProps {
 	RecycleBinEnabled?: boolean;
 	RequestAccessEmail?: string;
 	SaveSiteAsTemplateEnabled?: boolean;
+	SearchScope?: number;
 	ServerRelativePath?: SP.ResourcePath;
 	ServerRelativeUrl?: string;
 	ShowUrlStructureForCurrentUser?: boolean;
@@ -3075,6 +3083,7 @@ export interface WebMethods {
 	loadAndInstallAppInSpecifiedLocale(appPackageStream?: any, installationLocaleLCID?: number): Base.IBaseExecution<SP.AppInstance>;
 	loadApp(appPackageStream?: any, installationLocaleLCID?: number): Base.IBaseExecution<SP.AppInstance>;
 	mapToIcon(fileName?: string, progId?: string, size?: number): Base.IBaseExecution<string>;
+	pageContextCore(): Base.IBaseExecution<any>;
 	pageContextInfo(includeODBSettings?: boolean, emitNavigationInfo?: boolean): Base.IBaseExecution<any>;
 	parseDateTime(value?: string, displayFormat?: number, calendarType?: number): Base.IBaseExecution<string>;
 	processExternalNotification(stream?: any): Base.IBaseExecution<string>;
@@ -4535,6 +4544,146 @@ export interface App {
 **********************************************/
 export interface AppCollections {
 
+}
+
+/*********************************************
+* ISPHSite
+**********************************************/
+export interface ISPHSite extends SPHSiteCollections, SPHSiteMethods, Base.IBaseQuery<ISPHSiteQuery> {
+
+}
+
+/*********************************************
+* ISPHSiteCollection
+**********************************************/
+export interface ISPHSiteCollection extends Base.IBaseResults<SPHSite> {
+	done?: (resolve: (value?: Array<SPHSite>) => void) => void;
+}
+
+/*********************************************
+* ISPHSiteQueryCollection
+**********************************************/
+export interface ISPHSiteQueryCollection extends Base.IBaseResults<SPHSiteOData> {
+	done?: (resolve: (value?: Array<SPHSiteOData>) => void) => void;
+}
+
+/*********************************************
+* ISPHSiteQuery
+**********************************************/
+export interface ISPHSiteQuery extends SPHSiteOData, SPHSiteMethods {
+
+}
+
+/*********************************************
+* SPHSite
+**********************************************/
+export interface SPHSite extends Base.IBaseResult, SPHSiteProps, SPHSiteCollections, SPHSiteMethods {
+
+}
+
+/*********************************************
+* SPHSiteProps
+**********************************************/
+export interface SPHSiteProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPHSitePropMethods
+**********************************************/
+export interface SPHSitePropMethods {
+
+}
+
+/*********************************************
+* SPHSiteCollections
+**********************************************/
+export interface SPHSiteCollections extends SPHSitePropMethods {
+
+}
+
+/*********************************************
+* SPHSiteOData
+**********************************************/
+export interface SPHSiteOData extends Base.IBaseResult, SPHSiteProps, SPHSiteMethods {
+
+}
+
+/*********************************************
+* SPHSiteMethods
+**********************************************/
+export interface SPHSiteMethods {
+	details(): Base.IBaseExecution<SP.SPHSiteReference>;
+}
+
+/*********************************************
+* IOrganizationNews
+**********************************************/
+export interface IOrganizationNews extends OrganizationNewsCollections, OrganizationNewsMethods, Base.IBaseQuery<IOrganizationNewsQuery> {
+
+}
+
+/*********************************************
+* IOrganizationNewsCollection
+**********************************************/
+export interface IOrganizationNewsCollection extends Base.IBaseResults<OrganizationNews> {
+	done?: (resolve: (value?: Array<OrganizationNews>) => void) => void;
+}
+
+/*********************************************
+* IOrganizationNewsQueryCollection
+**********************************************/
+export interface IOrganizationNewsQueryCollection extends Base.IBaseResults<OrganizationNewsOData> {
+	done?: (resolve: (value?: Array<OrganizationNewsOData>) => void) => void;
+}
+
+/*********************************************
+* IOrganizationNewsQuery
+**********************************************/
+export interface IOrganizationNewsQuery extends OrganizationNewsOData, OrganizationNewsMethods {
+
+}
+
+/*********************************************
+* OrganizationNews
+**********************************************/
+export interface OrganizationNews extends Base.IBaseResult, OrganizationNewsProps, OrganizationNewsCollections, OrganizationNewsMethods {
+
+}
+
+/*********************************************
+* OrganizationNewsProps
+**********************************************/
+export interface OrganizationNewsProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* OrganizationNewsPropMethods
+**********************************************/
+export interface OrganizationNewsPropMethods {
+
+}
+
+/*********************************************
+* OrganizationNewsCollections
+**********************************************/
+export interface OrganizationNewsCollections extends OrganizationNewsPropMethods {
+
+}
+
+/*********************************************
+* OrganizationNewsOData
+**********************************************/
+export interface OrganizationNewsOData extends Base.IBaseResult, OrganizationNewsProps, OrganizationNewsMethods {
+
+}
+
+/*********************************************
+* OrganizationNewsMethods
+**********************************************/
+export interface OrganizationNewsMethods {
+	sitesReference(): Base.IBaseCollection<SP.OrganizationNewsSiteReference>;
 }
 
 /*********************************************
@@ -6552,6 +6701,80 @@ export interface FieldTextMethods {
 }
 
 /*********************************************
+* IFieldThumbnail
+**********************************************/
+export interface IFieldThumbnail extends FieldThumbnailCollections, FieldThumbnailMethods, Base.IBaseQuery<IFieldThumbnailQuery> {
+
+}
+
+/*********************************************
+* IFieldThumbnailCollection
+**********************************************/
+export interface IFieldThumbnailCollection extends Base.IBaseResults<FieldThumbnail> {
+	done?: (resolve: (value?: Array<FieldThumbnail>) => void) => void;
+}
+
+/*********************************************
+* IFieldThumbnailQueryCollection
+**********************************************/
+export interface IFieldThumbnailQueryCollection extends Base.IBaseResults<FieldThumbnailOData> {
+	done?: (resolve: (value?: Array<FieldThumbnailOData>) => void) => void;
+}
+
+/*********************************************
+* IFieldThumbnailQuery
+**********************************************/
+export interface IFieldThumbnailQuery extends FieldThumbnailOData, FieldThumbnailMethods {
+
+}
+
+/*********************************************
+* FieldThumbnail
+**********************************************/
+export interface FieldThumbnail extends SP.FieldMultiLineText, Base.IBaseResult, FieldThumbnailProps, FieldThumbnailCollections, FieldThumbnailMethods {
+
+}
+
+/*********************************************
+* FieldThumbnailProps
+**********************************************/
+export interface FieldThumbnailProps {
+
+}
+
+/*********************************************
+* FieldThumbnailPropMethods
+**********************************************/
+export interface FieldThumbnailPropMethods {
+
+}
+
+/*********************************************
+* FieldThumbnailCollections
+**********************************************/
+export interface FieldThumbnailCollections extends FieldThumbnailPropMethods {
+
+}
+
+/*********************************************
+* FieldThumbnailOData
+**********************************************/
+export interface FieldThumbnailOData extends Base.IBaseResult, FieldThumbnailProps, FieldThumbnailMethods {
+
+}
+
+/*********************************************
+* FieldThumbnailMethods
+**********************************************/
+export interface FieldThumbnailMethods {
+	delete(): Base.IBaseExecution<any>;
+	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
+	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
+	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
 * IFieldUrl
 **********************************************/
 export interface IFieldUrl extends FieldUrlCollections, FieldUrlMethods, Base.IBaseQuery<IFieldUrlQuery> {
@@ -6803,6 +7026,7 @@ export interface HubSiteCollections extends HubSitePropMethods {
 **********************************************/
 export interface HubSiteCollectionMethods {
 	getById(hubSiteId?: any): Base.IBaseQuery<SP.HubSite> & SP.HubSiteCollections & SP.HubSiteMethods;
+	getSiteUrlByHubSiteId(hubSiteId?: any): Base.IBaseExecution<string>;
 }
 
 /*********************************************
