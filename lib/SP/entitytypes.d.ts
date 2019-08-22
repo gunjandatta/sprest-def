@@ -1099,7 +1099,7 @@ export interface ListItemCollections extends ListItemPropMethods {
 export interface ListItemCollectionMethods {
 	getById(itemId?: number): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	getByStringId(sId?: string): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
-	add(parameters?: SP.ListItemCreationInformation): Base.IBaseExecution<SP.ListItem>;
+	add(parameters?: any): Base.IBaseExecution<SP.ListItem>;
 }
 
 /*********************************************

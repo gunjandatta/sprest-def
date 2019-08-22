@@ -106,7 +106,7 @@ function createDirectories(path, namespace) {
             // See if the directory doesn't exists
             if (!fs.existsSync(path)) {
                 // Create the directory
-                fs.mkdir(path);
+                fs.mkdir(path, function (err) { });
             }
         });
     } else {
@@ -116,7 +116,7 @@ function createDirectories(path, namespace) {
         // See if the directory doesn't exist
         if (!fs.existsSync(path)) {
             // Create the directory
-            fs.mkdir(path);
+            fs.mkdir(path, function (err) { });
         }
     }
 
@@ -430,7 +430,10 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         }
 
         // Create the directory
-        fs.mkdir("lib");
+        fs.mkdir("lib", function (err) {
+            // Error creating the directory
+            return;
+        });
 
         // Parse the directories
         for (let dirName in directories) {
