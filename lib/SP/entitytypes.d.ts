@@ -2939,6 +2939,8 @@ export interface WebCollections extends WebPropMethods {
 	PushNotificationSubscribers(id: string | number): Base.IBaseQuery<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberOData> & SP.PushNotificationSubscriberCollections & SP.PushNotificationSubscriberMethods;
 	RecycleBin(): Base.IBaseCollection<SP.RecycleBinItem, SP.RecycleBinItemOData, Base.IBaseExecution & SP.RecycleBinItemCollectionMethods> & Base.IBaseExecution & SP.RecycleBinItemCollectionMethods;
 	RecycleBin(id: string | number): Base.IBaseQuery<SP.RecycleBinItem, SP.RecycleBinItemOData> & SP.RecycleBinItemCollections & SP.RecycleBinItemMethods;
+	RoleAssignments(): Base.IBaseCollection<SP.RoleAssignment, SP.RoleAssignmentOData, Base.IBaseExecution & SP.RoleAssignmentCollectionMethods> & Base.IBaseExecution & SP.RoleAssignmentCollectionMethods;
+	RoleAssignments(id: string | number): Base.IBaseQuery<SP.RoleAssignment, SP.RoleAssignmentOData> & SP.RoleAssignmentCollections & SP.RoleAssignmentMethods;
 	RoleDefinitions(): Base.IBaseCollection<SP.RoleDefinition> & SP.RoleDefinitionCollectionMethods;
 	RoleDefinitions(id: string | number): Base.IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	SiteGroups(): Base.IBaseCollection<SP.Group, SP.GroupOData, Base.IBaseExecution & SP.GroupCollectionMethods> & Base.IBaseExecution & SP.GroupCollectionMethods;
@@ -2997,6 +2999,7 @@ export interface WebOData extends Base.IBaseResult, WebProps, WebMethods {
 	PushNotificationSubscribers: Base.IBaseResults<SP.PushNotificationSubscriber> & SP.PushNotificationSubscriberCollectionMethods;
 	RecycleBin: Base.IBaseResults<SP.RecycleBinItem> & SP.RecycleBinItemCollectionMethods;
 	RegionalSettings: SP.RegionalSettings & SP.RegionalSettingsCollections;
+	RoleAssignments: Base.IBaseResults<SP.RoleAssignment> & SP.RoleAssignmentCollectionMethods;
 	RoleDefinitions: Base.IBaseResults<SP.RoleDefinition> & SP.RoleDefinitionCollectionMethods;
 	RootFolder: SP.Folder & SP.FolderCollections & SP.FolderCollectionMethods;
 	SiteCollectionAppCatalog: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessorCollections;
