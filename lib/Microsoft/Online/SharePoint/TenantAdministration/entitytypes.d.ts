@@ -42,6 +42,8 @@ export interface HubSiteProperties extends Base.IBaseResult, HubSitePropertiesPr
 **********************************************/
 export interface HubSitePropertiesProps {
 	Description?: string;
+	EnablePermissionsSync?: boolean;
+	HideNameInNavigation?: boolean;
 	ID?: any;
 	LogoUrl?: string;
 	Permissions?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.HubSitePermission> };
@@ -301,18 +303,22 @@ export interface SitePropertiesProps {
 	AllowDownloadingNonWebViewableFiles?: boolean;
 	AllowEditing?: boolean;
 	AllowSelfServiceUpgrade?: boolean;
+	AnonymousLinkExpirationInDays?: number;
 	AverageResourceUsage?: number;
 	CommentsOnSitePagesDisabled?: boolean;
 	CompatibilityLevel?: number;
 	ConditionalAccessPolicy?: number;
 	CurrentResourceUsage?: number;
 	DefaultLinkPermission?: number;
+	DefaultLinkToExistingAccess?: boolean;
+	DefaultLinkToExistingAccessReset?: boolean;
 	DefaultSharingLinkType?: number;
 	DenyAddAndCustomizePages?: number;
 	Description?: string;
 	DisableAppViews?: number;
 	DisableCompanyWideSharingLinks?: number;
 	DisableFlows?: number;
+	ExternalUserExpirationInDays?: number;
 	GroupId?: any;
 	GroupOwnerLoginName?: string;
 	HasHolds?: boolean;
@@ -324,6 +330,8 @@ export interface SitePropertiesProps {
 	LimitedAccessFileType?: number;
 	LockIssue?: string;
 	LockState?: string;
+	OverrideTenantAnonymousLinkExpirationPolicy?: boolean;
+	OverrideTenantExternalUserExpirationPolicy?: boolean;
 	Owner?: string;
 	OwnerEmail?: string;
 	OwnerLoginName?: string;
@@ -377,6 +385,7 @@ export interface SitePropertiesCollectionMethods {
 	getById(siteId?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 	getGroupSiteRelationship(siteId?: any): Base.IBaseExecution<number>;
 	getLockStateById(siteId?: any): Base.IBaseExecution<number>;
+	getSiteUserGroups(siteId?: any, userGroupIds?: Array<number>): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupInfo>>;
 }
 
 /*********************************************
@@ -391,6 +400,78 @@ export interface SitePropertiesOData extends Base.IBaseResult, SitePropertiesPro
 **********************************************/
 export interface SitePropertiesMethods {
 	update(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+}
+
+/*********************************************
+* ISPOGroup
+**********************************************/
+export interface ISPOGroup extends SPOGroupCollections, SPOGroupMethods, Base.IBaseQuery<ISPOGroupQuery> {
+
+}
+
+/*********************************************
+* ISPOGroupCollection
+**********************************************/
+export interface ISPOGroupCollection extends Base.IBaseResults<SPOGroup> {
+	done?: (resolve: (value?: Array<SPOGroup>) => void) => void;
+}
+
+/*********************************************
+* ISPOGroupQueryCollection
+**********************************************/
+export interface ISPOGroupQueryCollection extends Base.IBaseResults<SPOGroupOData> {
+	done?: (resolve: (value?: Array<SPOGroupOData>) => void) => void;
+}
+
+/*********************************************
+* ISPOGroupQuery
+**********************************************/
+export interface ISPOGroupQuery extends SPOGroupOData, SPOGroupMethods {
+
+}
+
+/*********************************************
+* SPOGroup
+**********************************************/
+export interface SPOGroup extends Base.IBaseResult, SPOGroupProps, SPOGroupCollections, SPOGroupMethods {
+
+}
+
+/*********************************************
+* SPOGroupProps
+**********************************************/
+export interface SPOGroupProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPOGroupPropMethods
+**********************************************/
+export interface SPOGroupPropMethods {
+
+}
+
+/*********************************************
+* SPOGroupCollections
+**********************************************/
+export interface SPOGroupCollections extends SPOGroupPropMethods {
+
+}
+
+/*********************************************
+* SPOGroupOData
+**********************************************/
+export interface SPOGroupOData extends Base.IBaseResult, SPOGroupProps, SPOGroupMethods {
+
+}
+
+/*********************************************
+* SPOGroupMethods
+**********************************************/
+export interface SPOGroupMethods {
+	getGroupInfo(groupId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.GroupInfo>;
+	updateGroupProperties(groupId?: any, displayName?: string): Base.IBaseExecution<any>;
+	updateGroupPropertiesBySiteId(groupId?: any, siteId?: any, displayName?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -607,6 +688,7 @@ export interface TenantProps {
 	EmailAttestationReAuthDays?: number;
 	EmailAttestationRequired?: boolean;
 	EnableAIPIntegration?: boolean;
+	EnableAzureADB2BIntegration?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
 	EnableMinimumVersionRequirement?: boolean;
 	EnablePromotedFileHandlers?: boolean;
@@ -719,9 +801,11 @@ export interface TenantMethods {
 	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
+	getSPOAllWebTemplates(cultureName?: string, compatibilityLevel?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	getSPOTenantAllWebTemplates(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	getSPOTenantWebTemplates(localeId?: number, compatibilityLevel?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	grantHubSiteRightsById(hubSiteId?: any, principals?: Array<string>, grantedRights?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
+	hasValidEducationLicense(): Base.IBaseExecution<boolean>;
 	registerHubSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	registerHubSiteWithCreationInformation(siteUrl?: string, creationInformation?: SP.HubSiteCreationInformation): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	removeDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;

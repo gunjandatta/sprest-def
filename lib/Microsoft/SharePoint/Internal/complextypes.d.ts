@@ -1,6 +1,23 @@
 import { Base } from "../../../";
 
 /*********************************************
+* MountPointRemoteItemRequest
+**********************************************/
+export interface MountPointRemoteItemRequest {
+	RemoteItemListId?: any;
+	RemoteItemSiteId?: any;
+	RemoteItemUniqueId?: any;
+	RemoteItemWebId?: any;
+}
+
+/*********************************************
+* MountPointRemoteItemRequestCollections
+**********************************************/
+export interface MountPointRemoteItemRequestCollections {
+
+}
+
+/*********************************************
 * TrackedItemUpdatesRequest
 **********************************************/
 export interface TrackedItemUpdatesRequest {

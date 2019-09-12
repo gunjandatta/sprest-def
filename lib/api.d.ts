@@ -13,11 +13,16 @@ export interface SP_API {
 	hubsites: SP.HubSiteCollections;
 	HubSitesUtility: Microsoft.SharePoint.Portal.ISPHubSitesUtility;
 	lists: SP.ListCollections;
+	machinelearning: Microsoft.Office.Server.ContentCenter.SPMachineLearningHub;
 	me: SP.RequestUserContext;
 	microservicemanager: SP.MicroService.IMicroServiceManager;
+	models: Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections;
 	OrgNews: SP.IOrganizationNews;
 	OrgNewsSite: Microsoft.SharePoint.OrgNewsSite.IOrgNewsSiteApi;
+	PortalNavigationCache: SP.Publishing.Navigation.IPortalNavigationCacheWrapper;
+	publications: Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollections;
 	site: SP.ISite;
+	SiteIconManager: Microsoft.SharePoint.Portal.ISiteIconManager;
 	sitelinkingmanager: Microsoft.SharePoint.Portal.ISiteLinkingManager;
 	sphomeservice: Microsoft.SharePoint.Portal.ISharePointHomeServiceContextBuilder;
 	SPHSite: SP.ISPHSite;

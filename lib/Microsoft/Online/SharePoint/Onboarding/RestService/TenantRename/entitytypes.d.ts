@@ -14,6 +14,7 @@ export interface TenantRenameJobEntityData {
 	TargetDomainPrefix?: string;
 	TargetMySiteHostUrl?: string;
 	TargetRootSiteUrl?: string;
+	UseV2TenantRename?: boolean;
 }
 
 /*********************************************

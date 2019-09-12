@@ -2128,6 +2128,8 @@ export interface TaskProps {
 	EarliestFinish?: any;
 	EarliestStart?: any;
 	EstimateAtCompletion?: number;
+	ExternalProjectUid?: any;
+	ExternalTaskUid?: any;
 	FinishSlack?: string;
 	FinishSlackMilliseconds?: number;
 	FinishSlackTimeSpan?: any;
@@ -2785,6 +2787,7 @@ export interface TaskLinkCollections {
 export interface PublishedTaskLink {
 	DependencyType?: number;
 	LinkLag?: number;
+	LinkLagDuration?: string;
 	LinkLagFmt?: number;
 	ProjUid?: any;
 }
@@ -3009,6 +3012,7 @@ export interface DraftProjectMethods {
 	checkIn(force?: boolean): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	getChanges(token?: string): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections & PS.DraftProjectMethods;
 	publish(checkIn?: boolean): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
+	publishSummary(checkIn?: boolean): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	update(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	updateCustomFields(customFieldDictionary?: Array<SP.KeyValue>): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	validate(): Base.IBaseExecution<any>;
@@ -3153,6 +3157,7 @@ export interface DraftTaskLink extends PS.TaskLink, Base.IBaseResult, DraftTaskL
 export interface DraftTaskLinkProps {
 	DependencyType?: number;
 	EndId?: any;
+	LinkLagDuration?: string;
 	StartId?: any;
 }
 

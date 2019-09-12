@@ -69,4 +69,5 @@ export interface TenantCdnApiOData extends Base.IBaseResult, TenantCdnApiProps, 
 **********************************************/
 export interface TenantCdnApiMethods {
 	getCdnUrls(items?: Array<string>): Base.IBaseCollection<Microsoft.SharePoint.TenantCdn.TenantCdnUrl>;
+	isFolderUrlsInTenantCdn(urls?: Array<string>, cdnType?: number): Base.IBaseCollection<boolean>;
 }

@@ -239,7 +239,7 @@ export interface SiteMethods {
 	createMigrationJob(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string): Base.IBaseExecution<any>;
 	createMigrationJobEncrypted(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string, options?: SP.EncryptionOption): Base.IBaseExecution<any>;
 	createPreviewSPSite(upgrade?: boolean, sendemail?: boolean): Base.IBaseExecution<any>;
-	createSPAsyncReadJob(url?: string, options?: SP.AsyncReadOptions): Base.IBaseCollection<SP.AsyncReadJobInfo>;
+	createSPAsyncReadJob(url?: string, readOptions?: SP.AsyncReadOptions, encryptionOption?: SP.EncryptionOption, azureContainerManifestUri?: string, azureQueueReportUri?: string): Base.IBaseExecution<SP.AsyncReadJobInfo>;
 	deleteMigrationJob(id?: any): Base.IBaseExecution<boolean>;
 	extendUpgradeReminderDate(): Base.IBaseExecution<any>;
 	getBringYourOwnKeySiteStatus(): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
@@ -255,7 +255,6 @@ export interface SiteMethods {
 	getWebTemplates(LCID?: number, overrideCompatLevel?: number): Base.IBaseCollection<SP.WebTemplate> & SP.WebTemplateCollectionMethods;
 	invalidate(): Base.IBaseExecution<any>;
 	joinHubSite(hubSiteId?: any, approvalToken?: string, approvalCorrelationId?: string): Base.IBaseExecution<any>;
-	makeHubSite(): Base.IBaseExecution<SP.HubSite>;
 	multiGeoCopyJob(jobId?: any, userId?: number, binaryPayload?: any): Base.IBaseExecution<any>;
 	needsUpgradeByType(versionUpgrade?: boolean, recursive?: boolean): Base.IBaseExecution<boolean>;
 	onboardTenantForBringYourOwnKey(keyInfo?: SP.CustomerKeyInfo): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
@@ -269,7 +268,6 @@ export interface SiteMethods {
 	provisionMigrationQueue(): Base.IBaseExecution<SP.ProvisionedMigrationQueueInfo>;
 	recoverTenantForBringYourOwnKey(keyInfo?: SP.CustomerKeyInfo): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
 	registerHubSite(creationInformation?: SP.HubSiteCreationInformation): Base.IBaseExecution<SP.HubSite>;
-	removeHubSite(): Base.IBaseExecution<any>;
 	rollTenantBringYourOwnKey(keyType?: number, keyVaultInfo?: SP.CustomerKeyVaultInfo): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
 	runHealthCheck(ruleId?: any, bRepair?: boolean, bRunAlways?: boolean): Base.IBaseExecution<SP.SiteHealth.SiteHealthSummary>;
 	runUpgradeSiteSession(versionUpgrade?: boolean, queueOnly?: boolean, sendEmail?: boolean): Base.IBaseExecution<any>;
@@ -1553,6 +1551,8 @@ export interface FieldProps {
 	CanBeDeleted?: boolean;
 	ClientSideComponentId?: any;
 	ClientSideComponentProperties?: string;
+	ClientValidationFormula?: string;
+	ClientValidationMessage?: string;
 	CustomFormatter?: string;
 	DefaultFormula?: string;
 	DefaultValue?: string;
@@ -1629,6 +1629,8 @@ export interface FieldOData extends Base.IBaseResult, FieldProps, FieldMethods {
 **********************************************/
 export interface FieldMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -1811,11 +1813,13 @@ export interface FileMethods {
 	deny(comment?: string): Base.IBaseExecution<any>;
 	executeCobaltRequest(inputStream?: any): Base.IBaseExecution<any>;
 	finishUpload(uploadId?: any, fileOffset?: number, stream?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	finishUploadWithChecksum(uploadId?: any, fileOffset?: number, checksum?: string, stream?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	getFileUserValue(key?: string): Base.IBaseExecution<Microsoft.SharePoint.UserActions.officeFileUserValueResponse>;
 	getImagePreviewUri(width?: number, height?: number, clientType?: string): Base.IBaseExecution<string>;
 	getImagePreviewUrl(width?: number, height?: number, clientType?: string): Base.IBaseExecution<string>;
 	getLimitedWebPartManager(scope?: number): Base.IBaseQuery<SP.WebParts.LimitedWebPartManager, SP.WebParts.LimitedWebPartManagerOData> & SP.WebParts.LimitedWebPartManagerCollections & SP.WebParts.LimitedWebPartManagerMethods;
 	getPreAuthorizedAccessUrl(expirationHours?: number): Base.IBaseExecution<string>;
+	getPreAuthorizedAccessUrl2(expirationHours?: number, expirationMinuites?: number): Base.IBaseExecution<string>;
 	getUploadStatus(uploadId?: any): Base.IBaseExecution<SP.Utilities.UploadStatus>;
 	getWOPIFrameUrl(action?: number): Base.IBaseExecution<string>;
 	moveTo(newUrl?: string, flags?: number): Base.IBaseExecution<any>;
@@ -2416,7 +2420,7 @@ export interface ListMethods {
 	renderExtendedListFormData(itemId?: number, formId?: string, mode?: number, options?: number, cutoffVersion?: number): Base.IBaseExecution<string>;
 	renderListContextMenuData(CascDelWarnMessage?: string, CustomAction?: string, Field?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsXslView?: string, ItemId?: string, ListViewPageUrl?: string, OverrideScope?: string, RootFolder?: string, View?: string, ViewCount?: string): Base.IBaseExecution<any>;
 	renderListData(viewXml?: string): Base.IBaseExecution<string>;
-	renderListDataAsStream(parameters?: SP.RenderListDataParameters, CascDelWarnMessage?: string, CustomAction?: string, DrillDown?: string, Field?: string, FieldInternalName?: string, Filter?: string, FilterData?: string, FilterData1?: string, FilterData10?: string, FilterData2?: string, FilterData3?: string, FilterData4?: string, FilterData5?: string, FilterData6?: string, FilterData7?: string, FilterData8?: string, FilterData9?: string, FilterField?: string, FilterField1?: string, FilterField10?: string, FilterField2?: string, FilterField3?: string, FilterField4?: string, FilterField5?: string, FilterField6?: string, FilterField7?: string, FilterField8?: string, FilterField9?: string, FilterFields?: string, FilterFields1?: string, FilterFields10?: string, FilterFields2?: string, FilterFields3?: string, FilterFields4?: string, FilterFields5?: string, FilterFields6?: string, FilterFields7?: string, FilterFields8?: string, FilterFields9?: string, FilterLookupId?: string, FilterLookupId1?: string, FilterLookupId10?: string, FilterLookupId2?: string, FilterLookupId3?: string, FilterLookupId4?: string, FilterLookupId5?: string, FilterLookupId6?: string, FilterLookupId7?: string, FilterLookupId8?: string, FilterLookupId9?: string, FilterOp?: string, FilterOp1?: string, FilterOp10?: string, FilterOp2?: string, FilterOp3?: string, FilterOp4?: string, FilterOp5?: string, FilterOp6?: string, FilterOp7?: string, FilterOp8?: string, FilterOp9?: string, FilterValue?: string, FilterValue1?: string, FilterValue10?: string, FilterValue2?: string, FilterValue3?: string, FilterValue4?: string, FilterValue5?: string, FilterValue6?: string, FilterValue7?: string, FilterValue8?: string, FilterValue9?: string, FilterValues?: string, FilterValues1?: string, FilterValues10?: string, FilterValues2?: string, FilterValues3?: string, FilterValues4?: string, FilterValues5?: string, FilterValues6?: string, FilterValues7?: string, FilterValues8?: string, FilterValues9?: string, GroupString?: string, HasOverrideSelectCommand?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsGroupRender?: string, IsXslView?: string, ListViewPageUrl?: string, OverrideScope?: string, OverrideSelectCommand?: string, PageFirstRow?: string, PageLastRow?: string, RootFolder?: string, SortDir?: string, SortDir1?: string, SortDir10?: string, SortDir2?: string, SortDir3?: string, SortDir4?: string, SortDir5?: string, SortDir6?: string, SortDir7?: string, SortDir8?: string, SortDir9?: string, SortField?: string, SortField1?: string, SortField10?: string, SortField2?: string, SortField3?: string, SortField4?: string, SortField5?: string, SortField6?: string, SortField7?: string, SortField8?: string, SortField9?: string, SortFields?: string, SortFieldValues?: string, View?: string, ViewCount?: string, ViewId?: string, ViewPath?: string, WebPartId?: string): Base.IBaseExecution<any>;
+	renderListDataAsStream(parameters?: SP.RenderListDataParameters, CascDelWarnMessage?: string, CustomAction?: string, DrillDown?: string, Field?: string, FieldInternalName?: string, Filter?: string, FilterData?: string, FilterData1?: string, FilterData10?: string, FilterData2?: string, FilterData3?: string, FilterData4?: string, FilterData5?: string, FilterData6?: string, FilterData7?: string, FilterData8?: string, FilterData9?: string, FilterField?: string, FilterField1?: string, FilterField10?: string, FilterField2?: string, FilterField3?: string, FilterField4?: string, FilterField5?: string, FilterField6?: string, FilterField7?: string, FilterField8?: string, FilterField9?: string, FilterFields?: string, FilterFields1?: string, FilterFields10?: string, FilterFields2?: string, FilterFields3?: string, FilterFields4?: string, FilterFields5?: string, FilterFields6?: string, FilterFields7?: string, FilterFields8?: string, FilterFields9?: string, FilterLookupId?: string, FilterLookupId1?: string, FilterLookupId10?: string, FilterLookupId2?: string, FilterLookupId3?: string, FilterLookupId4?: string, FilterLookupId5?: string, FilterLookupId6?: string, FilterLookupId7?: string, FilterLookupId8?: string, FilterLookupId9?: string, FilterOp?: string, FilterOp1?: string, FilterOp10?: string, FilterOp2?: string, FilterOp3?: string, FilterOp4?: string, FilterOp5?: string, FilterOp6?: string, FilterOp7?: string, FilterOp8?: string, FilterOp9?: string, FilterValue?: string, FilterValue1?: string, FilterValue10?: string, FilterValue2?: string, FilterValue3?: string, FilterValue4?: string, FilterValue5?: string, FilterValue6?: string, FilterValue7?: string, FilterValue8?: string, FilterValue9?: string, FilterValues?: string, FilterValues1?: string, FilterValues10?: string, FilterValues2?: string, FilterValues3?: string, FilterValues4?: string, FilterValues5?: string, FilterValues6?: string, FilterValues7?: string, FilterValues8?: string, FilterValues9?: string, GroupString?: string, HasOverrideSelectCommand?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsGroupRender?: string, IsXslView?: string, ListViewPageUrl?: string, OverrideScope?: string, OverrideSelectCommand?: string, PageFirstRow?: string, PageLastRow?: string, RootFolder?: string, RootFolderUniqueId?: string, SortDir?: string, SortDir1?: string, SortDir10?: string, SortDir2?: string, SortDir3?: string, SortDir4?: string, SortDir5?: string, SortDir6?: string, SortDir7?: string, SortDir8?: string, SortDir9?: string, SortField?: string, SortField1?: string, SortField10?: string, SortField2?: string, SortField3?: string, SortField4?: string, SortField5?: string, SortField6?: string, SortField7?: string, SortField8?: string, SortField9?: string, SortFields?: string, SortFieldValues?: string, View?: string, ViewCount?: string, ViewId?: string, ViewPath?: string, WebPartId?: string): Base.IBaseExecution<any>;
 	renderListFilterData(ExcludeFieldFilteringHtml?: boolean, FieldInternalName?: string, OverrideScope?: string, ProcessQStringToCAML?: string, ViewId?: string): Base.IBaseExecution<any>;
 	renderListFormData(itemId?: number, formId?: string, mode?: number): Base.IBaseExecution<string>;
 	reserveListItemId(): Base.IBaseExecution<number>;
@@ -2804,6 +2808,7 @@ export interface Web extends SP.SecurableObject, Base.IBaseResult, WebProps, Web
 * WebProps
 **********************************************/
 export interface WebProps {
+	AccessRequestListUrl?: string;
 	AccessRequestSiteDescription?: string;
 	AllowAutomaticASPXPageIndexing?: boolean;
 	AllowCreateDeclarativeWorkflowForCurrentUser?: boolean;
@@ -2815,13 +2820,14 @@ export interface WebProps {
 	AllowSavePublishDeclarativeWorkflowForCurrentUser?: boolean;
 	AlternateCssUrl?: string;
 	AppInstanceId?: any;
+	ClassicWelcomePage?: string;
 	CommentsOnSitePagesDisabled?: boolean;
 	Configuration?: number;
 	ContainsConfidentialInfo?: boolean;
 	Created?: any;
 	CurrentChangeToken?: SP.ChangeToken;
 	CustomMasterUrl?: string;
-	DepartmentData?: string;
+	CustomSiteActionsDisabled?: boolean;
 	Description?: string;
 	DesignerDownloadUrlForCurrentUser?: string;
 	DesignPackageId?: any;
@@ -2832,11 +2838,14 @@ export interface WebProps {
 	EffectiveBasePermissions?: SP.BasePermissions;
 	EnableMinimalDownload?: boolean;
 	ExcludeFromOfflineClient?: boolean;
+	FooterEmphasis?: number;
 	FooterEnabled?: boolean;
+	FooterLayout?: number;
 	HeaderEmphasis?: number;
 	HeaderLayout?: number;
 	HorizontalQuickLaunch?: boolean;
 	Id?: any;
+	IsHomepageModernized?: boolean;
 	IsMultilingual?: boolean;
 	Language?: number;
 	LastItemModifiedDate?: any;
@@ -2864,6 +2873,7 @@ export interface WebProps {
 	SiteLogoUrl?: string;
 	SupportedUILanguageIds?: { results: Array<number> };
 	SyndicationEnabled?: boolean;
+	TenantAdminMembersCanShare?: number;
 	TenantTagPolicyEnabled?: boolean;
 	ThemeData?: string;
 	ThemedCssFolderUrl?: string;
@@ -3033,6 +3043,7 @@ export interface WebMethods {
 	// doesUserHavePermissions(permissionMask?: SP.BasePermissions): Base.IBaseExecution<boolean>;
 	ensureUser(logonName?: string): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	executeRemoteLOB(inputStream?: any): Base.IBaseExecution<any>;
+	getAllClientSideComponents(): Base.IBaseExecution<string>;
 	getAppBdcCatalog(): Base.IBaseExecution<SP.BusinessData.AppBdcCatalog>;
 	getAppBdcCatalogForAppInstance(appInstanceId?: any): Base.IBaseExecution<SP.BusinessData.AppBdcCatalog>;
 	getAppInstanceById(appInstanceId?: any): Base.IBaseExecution<SP.AppInstance>;
@@ -3065,7 +3076,6 @@ export interface WebMethods {
 	getListItemUsingPath(DecodedUrl?: string): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	getListUsingPath(DecodedUrl?: string): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
 	getNewsList(allowCreate?: boolean): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
-	getOnePageContextAsStream(): Base.IBaseExecution<any>;
 	getPushNotificationSubscriber(deviceAppInstanceId?: any): Base.IBaseQuery<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberOData> & SP.PushNotificationSubscriberCollections & SP.PushNotificationSubscriberMethods;
 	getPushNotificationSubscribersByArgs(customArgs?: string): Base.IBaseCollection<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberOData, Base.IBaseExecution & SP.PushNotificationSubscriberCollectionMethods> & Base.IBaseExecution & SP.PushNotificationSubscriberCollectionMethods;
 	getPushNotificationSubscribersByUser(userName?: string): Base.IBaseCollection<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberOData, Base.IBaseExecution & SP.PushNotificationSubscriberCollectionMethods> & Base.IBaseExecution & SP.PushNotificationSubscriberCollectionMethods;
@@ -3073,6 +3083,7 @@ export interface WebMethods {
 	getRecycleBinItemsByQueryInfo(IsAscending?: boolean, ItemState?: number, OrderBy?: number, PagingInfo?: string, RowLimit?: number, ShowOnlyMyItems?: boolean): Base.IBaseCollection<SP.RecycleBinItem, SP.RecycleBinItemOData, Base.IBaseExecution & SP.RecycleBinItemCollectionMethods> & Base.IBaseExecution & SP.RecycleBinItemCollectionMethods;
 	getRegionalDateTimeSchema(): Base.IBaseExecution<string>;
 	getSharingLinkData(linkUrl?: string): Base.IBaseExecution<SP.SharingLinkData>;
+	getSPAppContextAsStream(): Base.IBaseExecution<any>;
 	getStorageEntity(key?: string): Base.IBaseExecution<Microsoft.SharePoint.ClientSideComponent.StorageEntity>;
 	getSubwebsFilteredForCurrentUser(nWebTemplateFilter?: number, nConfigurationFilter?: number): Base.IBaseCollection<SP.WebInformation> & SP.WebInformationCollectionMethods;
 	getUserById(userId?: number): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
@@ -3183,6 +3194,8 @@ export interface GroupProps {
 	CanCurrentUserManageGroup?: boolean;
 	CanCurrentUserViewMembership?: boolean;
 	Description?: string;
+	Id?: number;
+	IsHiddenInUI?: boolean;
 	OnlyAllowMembersViewMembership?: boolean;
 	OwnerTitle?: string;
 	RequestToJoinLeaveEmailSetting?: string;
@@ -4299,6 +4312,78 @@ export interface ListItemVersionOData extends Base.IBaseResult, ListItemVersionP
 **********************************************/
 export interface ListItemVersionMethods {
 	delete(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* ITranslationStatusCollection
+**********************************************/
+export interface ITranslationStatusCollection extends TranslationStatusCollectionCollections, TranslationStatusCollectionMethods, Base.IBaseQuery<ITranslationStatusCollectionQuery> {
+
+}
+
+/*********************************************
+* ITranslationStatusCollectionCollection
+**********************************************/
+export interface ITranslationStatusCollectionCollection extends Base.IBaseResults<TranslationStatusCollection> {
+	done?: (resolve: (value?: Array<TranslationStatusCollection>) => void) => void;
+}
+
+/*********************************************
+* ITranslationStatusCollectionQueryCollection
+**********************************************/
+export interface ITranslationStatusCollectionQueryCollection extends Base.IBaseResults<TranslationStatusCollectionOData> {
+	done?: (resolve: (value?: Array<TranslationStatusCollectionOData>) => void) => void;
+}
+
+/*********************************************
+* ITranslationStatusCollectionQuery
+**********************************************/
+export interface ITranslationStatusCollectionQuery extends TranslationStatusCollectionOData, TranslationStatusCollectionMethods {
+
+}
+
+/*********************************************
+* TranslationStatusCollection
+**********************************************/
+export interface TranslationStatusCollection extends Base.IBaseResult, TranslationStatusCollectionProps, TranslationStatusCollectionCollections, TranslationStatusCollectionMethods {
+
+}
+
+/*********************************************
+* TranslationStatusCollectionProps
+**********************************************/
+export interface TranslationStatusCollectionProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	UntranslatedLanguages?: { results: Array<string> };
+	Items?: { results: Array<SP.TranslationStatus> };
+}
+
+/*********************************************
+* TranslationStatusCollectionPropMethods
+**********************************************/
+export interface TranslationStatusCollectionPropMethods {
+
+}
+
+/*********************************************
+* TranslationStatusCollectionCollections
+**********************************************/
+export interface TranslationStatusCollectionCollections extends TranslationStatusCollectionPropMethods {
+
+}
+
+/*********************************************
+* TranslationStatusCollectionOData
+**********************************************/
+export interface TranslationStatusCollectionOData extends Base.IBaseResult, TranslationStatusCollectionProps, TranslationStatusCollectionMethods {
+
+}
+
+/*********************************************
+* TranslationStatusCollectionMethods
+**********************************************/
+export interface TranslationStatusCollectionMethods {
+	create(request?: SP.TranslationStatusCreationRequest): Base.IBaseExecution<SP.TranslationStatusCollection>;
 }
 
 /*********************************************
@@ -5693,6 +5778,8 @@ export interface FieldCalculatedOData extends Base.IBaseResult, FieldCalculatedP
 **********************************************/
 export interface FieldCalculatedMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -5770,6 +5857,8 @@ export interface FieldMultiChoiceOData extends Base.IBaseResult, FieldMultiChoic
 **********************************************/
 export interface FieldMultiChoiceMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -5845,6 +5934,8 @@ export interface FieldChoiceOData extends Base.IBaseResult, FieldChoiceProps, Fi
 **********************************************/
 export interface FieldChoiceMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -5920,6 +6011,8 @@ export interface FieldComputedOData extends Base.IBaseResult, FieldComputedProps
 **********************************************/
 export interface FieldComputedMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -5998,6 +6091,8 @@ export interface FieldNumberOData extends Base.IBaseResult, FieldNumberProps, Fi
 **********************************************/
 export interface FieldNumberMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6073,6 +6168,8 @@ export interface FieldCurrencyOData extends Base.IBaseResult, FieldCurrencyProps
 **********************************************/
 export interface FieldCurrencyMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6150,6 +6247,8 @@ export interface FieldDateTimeOData extends Base.IBaseResult, FieldDateTimeProps
 **********************************************/
 export interface FieldDateTimeMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6225,6 +6324,8 @@ export interface FieldGeolocationOData extends Base.IBaseResult, FieldGeolocatio
 **********************************************/
 export interface FieldGeolocationMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6300,6 +6401,8 @@ export interface FieldGuidOData extends Base.IBaseResult, FieldGuidProps, FieldG
 **********************************************/
 export interface FieldGuidMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6381,6 +6484,8 @@ export interface FieldMultiLineTextOData extends Base.IBaseResult, FieldMultiLin
 **********************************************/
 export interface FieldMultiLineTextMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6456,6 +6561,8 @@ export interface FieldLocationOData extends Base.IBaseResult, FieldLocationProps
 **********************************************/
 export interface FieldLocationMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6540,6 +6647,8 @@ export interface FieldLookupOData extends Base.IBaseResult, FieldLookupProps, Fi
 **********************************************/
 export interface FieldLookupMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6621,6 +6730,8 @@ export interface FieldRatingScaleOData extends Base.IBaseResult, FieldRatingScal
 **********************************************/
 export interface FieldRatingScaleMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6696,6 +6807,8 @@ export interface FieldTextOData extends Base.IBaseResult, FieldTextProps, FieldT
 **********************************************/
 export interface FieldTextMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6771,6 +6884,8 @@ export interface FieldThumbnailOData extends Base.IBaseResult, FieldThumbnailPro
 **********************************************/
 export interface FieldThumbnailMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6846,6 +6961,8 @@ export interface FieldUrlOData extends Base.IBaseResult, FieldUrlProps, FieldUrl
 **********************************************/
 export interface FieldUrlMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -6924,6 +7041,8 @@ export interface FieldUserOData extends Base.IBaseResult, FieldUserProps, FieldU
 **********************************************/
 export interface FieldUserMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
@@ -7000,8 +7119,12 @@ export interface HubSite extends Base.IBaseResult, HubSiteProps, HubSiteCollecti
 **********************************************/
 export interface HubSiteProps {
 	Description?: string;
+	EnablePermissionsSync?: boolean;
+	HideNameInNavigation?: boolean;
 	ID?: any;
 	LogoUrl?: string;
+	ParentHubSiteId?: any;
+	RelatedHubSiteIds?: { results: Array<any> };
 	RequiresJoinApproval?: boolean;
 	SiteDesignId?: any;
 	SiteId?: any;
@@ -7044,7 +7167,9 @@ export interface HubSiteOData extends Base.IBaseResult, HubSiteProps, HubSiteMet
 * HubSiteMethods
 **********************************************/
 export interface HubSiteMethods {
+	connect(hubSiteId?: any): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
+	disconnect(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -7546,6 +7671,39 @@ export interface AppPrincipalManager {
 * AppPrincipalManagerCollections
 **********************************************/
 export interface AppPrincipalManagerCollections {
+
+}
+
+/*********************************************
+* CompanyPortalContext
+**********************************************/
+export interface CompanyPortalContext {
+	FooterNavigation?: string;
+	HeaderEmphasis?: number;
+	HeaderLayout?: number;
+	HubSiteData?: string;
+	HubSiteId?: string;
+	IsFooterEnabled?: boolean;
+	IsHubSite?: boolean;
+	IsMegaMenuEnabled?: boolean;
+	Language?: number;
+	NavigationInfo?: string;
+	SiteAcronym?: string;
+	SiteId?: string;
+	siteUrl?: string;
+	ThemedCssFolderUrl?: string;
+	ThemeInfo?: string;
+	WebAbsoluteUrl?: string;
+	WebLogoBackgroundColor?: string;
+	WebLogoUrl?: string;
+	WebServerRelativeUrl?: string;
+	WebTitle?: string;
+}
+
+/*********************************************
+* CompanyPortalContextCollections
+**********************************************/
+export interface CompanyPortalContextCollections {
 
 }
 

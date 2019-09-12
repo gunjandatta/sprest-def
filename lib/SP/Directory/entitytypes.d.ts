@@ -243,9 +243,11 @@ export interface UserProps {
 	sharePointHomeCreateNewsTeachingBubble?: boolean;
 	sharePointHomeFirstRun?: boolean;
 	sharePointHomeMobileUpsell?: boolean;
+	sharePointHomeRefreshFirstRun?: boolean;
 	sharePointLibrariesFirstRun?: boolean;
 	sharePointListsFirstRun?: boolean;
 	sharePointModernDocSetsFirstRun?: boolean;
+	sharePointModernHomepageFirstRun?: boolean;
 	sharePointNewsDigestTeachingBubble?: boolean;
 	sharePointNewsDigestTeachingBubbleHomePage?: boolean;
 	sharePointOneDriveBusinessFirstRun?: boolean;

@@ -32,6 +32,7 @@ export interface GroupCreationContext {
 	DataClassificationOptionsNew?: Array<SP.KeyValue>;
 	DefaultClassification?: string;
 	ExternalInvitationEnabled?: boolean;
+	PreferredLanguage?: number;
 	RequireSecondaryContact?: boolean;
 	SitePath?: string;
 	UsageGuidelineUrl?: string;
@@ -52,6 +53,7 @@ export interface GroupCreationParams {
 	CreationOptions?: Array<string>;
 	Description?: string;
 	Owners?: Array<string>;
+	PreferredDataLocation?: string;
 }
 
 /*********************************************

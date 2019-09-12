@@ -6,6 +6,7 @@ import { SP } from "../../";
 **********************************************/
 export interface Principal {
 	email?: string;
+	expiration?: string;
 	id?: number;
 	isActive?: boolean;
 	isExternal?: boolean;
@@ -175,6 +176,7 @@ export interface OversharedWebInfoCollections {
 * PermissionCollection
 **********************************************/
 export interface PermissionCollection {
+	hasInheritedLinks?: boolean;
 	links?: Array<SP.Sharing.LinkInfo>;
 	principals?: Array<SP.Sharing.PrincipalInfo>;
 	siteAdmins?: Array<SP.Sharing.PrincipalInfo>;

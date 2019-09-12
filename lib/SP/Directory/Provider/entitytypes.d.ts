@@ -141,6 +141,7 @@ export interface SharePointDirectoryProviderMethods {
 	createDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<SP.Directory.Provider.DirectoryObjectData>;
 	deleteDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<any>;
 	getOrCreateUnifiedGroupTenantInstanceId(groupId?: any, tenantInstanceId?: any): Base.IBaseExecution<any>;
+	getOrCreateUnifiedGroupWithPreferredDataLocation(groupId?: any, preferredDataLocation?: string): Base.IBaseExecution<any>;
 	notifyDataChanges(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<any>;
 	readDirectoryObject(data?: SP.Directory.Provider.DirectoryObjectData): Base.IBaseExecution<SP.Directory.Provider.DirectoryObjectData>;
 	readDirectoryObjectBatch(ids?: Array<any>, objectType?: number): Base.IBaseCollection<SP.Directory.Provider.DirectoryObjectData>;

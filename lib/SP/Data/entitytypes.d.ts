@@ -156,6 +156,7 @@ export interface UserInfoItem {
 	ComplianceAssetId?: string;
 	OtherMail?: string;
 	UserExpiration?: any;
+	UserLastDeletionTime?: any;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -200,7 +201,6 @@ export interface UserInfoItem {
 	OData__IsRecord?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
-	UserLastDeletionTime?: any;
 	GroupLink?: string;
 	GroupEdit?: string;
 	ImnName?: string;
@@ -543,6 +543,93 @@ export interface DraftAppsListItemCollections {
 export interface DraftAppsListItemOData extends Base.IBaseResult, DraftAppsListItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* ClientSideAssetsItem
+**********************************************/
+export interface ClientSideAssetsItem {
+	ID?: number;
+	ContentTypeId?: string;
+	Created?: any;
+	AuthorId?: number;
+	Modified?: any;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	OData__ModerationStatus?: number;
+	OData__ModerationComments?: string;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	CheckoutUserId?: number;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	OData__CheckinComment?: string;
+	LinkCheckedOutTitle?: string;
+	Modified_x0020_By?: string;
+	Created_x0020_By?: string;
+	File_x0020_Type?: string;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__SourceUrl?: string;
+	OData__SharedFileIndex?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	FileSizeDisplay?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+	SelectTitle?: string;
+	SelectFilename?: string;
+	Edit?: string;
+	owshiddenversion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowVersion?: number;
+	WorkflowInstanceID?: any;
+	ComplianceAssetId?: string;
+	Title?: string;
+	TemplateUrl?: string;
+	xd_ProgID?: string;
+	xd_Signature?: boolean;
+	Combine?: string;
+	RepairDocument?: string;
+	OData__ShortcutUrl?: SP.FieldUrlValue;
+	OData__ShortcutSiteId?: any;
+	OData__ShortcutWebId?: any;
+	OData__ShortcutUniqueId?: any;
+}
+
+/*********************************************
+* ClientSideAssetsItemCollections
+**********************************************/
+export interface ClientSideAssetsItemCollections {
+
+}
+
+/*********************************************
+* ClientSideAssetsItemOData
+**********************************************/
+export interface ClientSideAssetsItemOData extends Base.IBaseResult, ClientSideAssetsItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
