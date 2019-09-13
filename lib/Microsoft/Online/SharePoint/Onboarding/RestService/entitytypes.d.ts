@@ -69,8 +69,6 @@ export interface OnboardingServicesBetaPropMethods {
 * OnboardingServicesBetaCollections
 **********************************************/
 export interface OnboardingServicesBetaCollections extends OnboardingServicesBetaPropMethods {
-	SiteRenameJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollectionMethods;
-	SiteRenameJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollections;
 	TenantRenameJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobCollectionMethods;
 	TenantRenameJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobCollections;
 }
@@ -79,7 +77,6 @@ export interface OnboardingServicesBetaCollections extends OnboardingServicesBet
 * OnboardingServicesBetaOData
 **********************************************/
 export interface OnboardingServicesBetaOData extends Base.IBaseResult, OnboardingServicesBetaProps, OnboardingServicesBetaMethods {
-	SiteRenameJobs: Base.IBaseResults<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollectionMethods;
 	TenantRenameJobs: Base.IBaseResults<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobCollectionMethods;
 }
 

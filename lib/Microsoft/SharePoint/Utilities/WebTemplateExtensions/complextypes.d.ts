@@ -162,7 +162,6 @@ export interface SiteScriptMetadataCollections {
 export interface SiteScriptSerializationInfo {
 	IncludeBranding?: boolean;
 	IncludedLists?: Array<string>;
-	IncludeLinksToExportedItems?: boolean;
 	IncludeRegionalSettings?: boolean;
 	IncludeSiteExternalSharingCapability?: boolean;
 	IncludeTheme?: boolean;

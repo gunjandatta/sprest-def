@@ -1034,6 +1034,8 @@ export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaPro
 	GroupMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobMethods;
 	SiteMoveJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollectionMethods;
 	SiteMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobMethods;
+	SiteRenameJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollectionMethods;
+	SiteRenameJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollections;
 	StorageQuotas(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollectionMethods;
 	StorageQuotas(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollections & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaMethods;
 	TenantInformationCollection(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
@@ -1062,6 +1064,7 @@ export interface MultiGeoServicesBetaOData extends Base.IBaseResult, MultiGeoSer
 	GlobalAdminCheck: Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck & Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheckCollections;
 	GroupMoveJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobCollectionMethods;
 	SiteMoveJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollectionMethods;
+	SiteRenameJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollectionMethods;
 	StorageQuotas: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollectionMethods;
 	TaxonomyReplicationParameters: Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters & Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParametersCollections;
 	TenantInformationCollection: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
@@ -1161,6 +1164,47 @@ export interface SiteMoveJobMethods {
 	cancel(): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* SiteRenameJobEntityData
+**********************************************/
+export interface SiteRenameJobEntityData {
+	SourceSiteUrl?: string;
+	TargetSiteTitle?: string;
+	TargetSiteUrl?: string;
+}
+
+/*********************************************
+* SiteRenameJobEntityDataCollections
+**********************************************/
+export interface SiteRenameJobEntityDataCollections {
+
+}
+
+/*********************************************
+* SiteRenameJob
+**********************************************/
+export interface SiteRenameJob {
+	JobId?: any;
+	JobState?: string;
+	SiteId?: any;
+	TriggeredBy?: string;
+}
+
+/*********************************************
+* SiteRenameJobCollections
+**********************************************/
+export interface SiteRenameJobCollections extends SiteRenameJobCollectionMethods {
+
+}
+
+/*********************************************
+* SiteRenameJobCollectionMethods
+**********************************************/
+export interface SiteRenameJobCollectionMethods {
+	getBySiteUrl(siteUrl?: string): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollections;
+	getSiteRenameReport(state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob>>;
 }
 
 /*********************************************

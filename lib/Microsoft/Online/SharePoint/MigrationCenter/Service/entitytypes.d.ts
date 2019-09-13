@@ -40,15 +40,13 @@ export interface Device extends Microsoft.Online.SharePoint.MigrationCenter.Comm
 * DeviceProps
 **********************************************/
 export interface DeviceProps {
-	ActionId?: number;
+	Action?: number;
 	AssignedTimeUTC?: any;
-	DebugCommand?: string;
 	DeviceAddedTimeUTC?: any;
 	Id?: any;
-	LastActivityTimeUtc?: any;
-	LastModifiedTimeUtc?: any;
 	LinkedTaskId?: any;
 	Status?: number;
+	StatusUpdatedTimeUTC?: any;
 }
 
 /*********************************************
@@ -285,12 +283,9 @@ export interface MigrationCenterStorage extends Base.IBaseResult, MigrationCente
 * MigrationCenterStorageProps
 **********************************************/
 export interface MigrationCenterStorageProps {
-	EncryptedCertificate?: string;
 	EncryptionKey?: string;
-	GlobalTaskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings;
-	IsServiceInitialized?: boolean;
 	SchedulerInformation?: Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation;
-	SchemaVersion?: string;
+	StorageSchemaVersion?: string;
 }
 
 /*********************************************
@@ -318,7 +313,7 @@ export interface MigrationCenterStorageOData extends Base.IBaseResult, Migration
 * MigrationCenterStorageMethods
 **********************************************/
 export interface MigrationCenterStorageMethods {
-	create(config?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationStorageSettings): Base.IBaseExecution<any>;
+	create(config?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationStorageConfig): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
 }
@@ -362,26 +357,13 @@ export interface MigrationTask extends Microsoft.Online.SharePoint.MigrationCent
 * MigrationTaskProps
 **********************************************/
 export interface MigrationTaskProps {
-	ActionId?: number;
-	ClientName?: string;
-	DebugCommand?: string;
+	Action?: number;
 	Duration?: any;
 	ErrorCode?: number;
-	ErrorMessage?: string;
-	FailedTimes?: number;
-	FailedTimeUtc?: any;
-	FailureId?: number;
-	FilesScanned?: number;
-	FilesScannedWithIssues?: number;
-	FriendlyClientName?: string;
-	IsRetryableFailure?: boolean;
-	IsScanDone?: boolean;
 	LinkedDeviceId?: any;
-	LogFilePath?: string;
 	ManagementStatus?: number;
 	MigratedFilesCount?: number;
-	ReportFileUrl?: string;
-	ScanDoneTimeUtc?: any;
+	ScannedFilesCount?: number;
 	StartTimeUTC?: any;
 	Status?: number;
 	StatusUpdatedTimeUTC?: any;
@@ -389,7 +371,6 @@ export interface MigrationTaskProps {
 	ToBeMigratedFilesCount?: number;
 	TotalBytes?: number;
 	TotalBytesMigrated?: number;
-	UpdateStatusOnly?: boolean;
 	WorkflowId?: any;
 }
 

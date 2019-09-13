@@ -77,11 +77,8 @@ export interface SharingInformation {
 	customizedExternalSharingServiceUrl?: string;
 	defaultLinkKind?: number;
 	defaultShareLinkPermission?: number;
-	defaultShareLinkScope?: number;
-	defaultShareLinkToExistingAccess?: boolean;
 	directUrl?: string;
 	domainRestrictionSettings?: SP.Sharing.DomainRestrictionSettings;
-	effectiveLimitedAccessFileType?: number;
 	hasUniquePermissions?: boolean;
 	itemUniqueId?: any;
 	microserviceShareUiUrl?: string;

@@ -72,8 +72,6 @@ export interface SharedWithMeDocument {
 	LinkingUrl?: string;
 	ListId?: string;
 	ListItemId?: string;
-	LocalItemDriveId?: string;
-	LocalItemUniqueId?: string;
 	MediaBaseUrl?: string;
 	Modified?: any;
 	ModifiedDateTimeUTC?: any;

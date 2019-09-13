@@ -1,5 +1,4 @@
 import { Base } from "../../../../";
-import { Microsoft } from "../../../../";
 
 /*********************************************
 * AutoQuotaEnabled
@@ -43,21 +42,6 @@ export interface DisableGroupify {
 * DisableGroupifyCollections
 **********************************************/
 export interface DisableGroupifyCollections {
-
-}
-
-/*********************************************
-* GroupInfo
-**********************************************/
-export interface GroupInfo {
-	GroupStatusInAAD?: number;
-	SiteUrl?: string;
-}
-
-/*********************************************
-* GroupInfoCollections
-**********************************************/
-export interface GroupInfoCollections {
 
 }
 
@@ -377,37 +361,6 @@ export interface SPOSitePropertiesEnumerableFilter {
 * SPOSitePropertiesEnumerableFilterCollections
 **********************************************/
 export interface SPOSitePropertiesEnumerableFilterCollections {
-
-}
-
-/*********************************************
-* SiteUserGroupInfo
-**********************************************/
-export interface SiteUserGroupInfo {
-	userGroup?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
-}
-
-/*********************************************
-* SiteUserGroupInfoCollections
-**********************************************/
-export interface SiteUserGroupInfoCollections {
-
-}
-
-/*********************************************
-* UserInfo
-**********************************************/
-export interface UserInfo {
-	email?: string;
-	loginName?: string;
-	name?: string;
-	userPrincipalName?: string;
-}
-
-/*********************************************
-* UserInfoCollections
-**********************************************/
-export interface UserInfoCollections {
 
 }
 

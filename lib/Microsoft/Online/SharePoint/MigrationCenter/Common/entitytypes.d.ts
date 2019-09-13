@@ -5,7 +5,7 @@ import { Base } from "../../../../../";
 **********************************************/
 export interface MigrationCredentialEntityData {
 	AccountName?: string;
-	Description?: string;
+	Location?: string;
 	Password?: string;
 	Type?: number;
 }
@@ -63,18 +63,17 @@ export interface MigrationTaskEntityData {
 	SourceListName?: string;
 	SourceListRelativePath?: string;
 	SourceUri?: string;
-	SourceUserName?: string;
 	StartMigrationAutomaticallyWhenNoScanIssue?: boolean;
 	TargetListName?: string;
 	TargetListRelativePath?: string;
 	TargetSiteUrl?: string;
-	TargetUserName?: string;
 	TurnOnDateCreatedFilter?: boolean;
 	TurnOnDateModifiedFilter?: boolean;
 	TurnOnExtensionFilter?: boolean;
 	Type?: number;
 	UseCustomAzureStorage?: boolean;
 	UserMappingCSVFile?: string;
+	UserName?: string;
 	VersionNumsPreserved?: number;
 }
 

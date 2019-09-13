@@ -113,21 +113,13 @@ export interface CorporateCatalogAppMetadata extends Base.IBaseResult, Corporate
 * CorporateCatalogAppMetadataProps
 **********************************************/
 export interface CorporateCatalogAppMetadataProps {
-	AadAppId?: string;
-	AadPermissions?: string;
 	AppCatalogVersion?: string;
 	CanUpgrade?: boolean;
-	CDNLocation?: string;
 	CurrentVersionDeployed?: boolean;
 	Deployed?: boolean;
 	ID?: string;
 	InstalledVersion?: string;
 	IsClientSideSolution?: boolean;
-	IsEnabled?: boolean;
-	ProductId?: string;
-	ShortDescription?: string;
-	SkipDeploymentFeature?: boolean;
-	ThumbnailUrl?: string;
 	Title?: string;
 }
 
@@ -244,7 +236,6 @@ export interface TenantCorporateCatalogAccessorOData extends Base.IBaseResult, T
 export interface TenantCorporateCatalogAccessorMethods {
 	// add(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	syncSolutionToTeams(id?: number): Base.IBaseExecution<any>;
-	upload(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseExecution<any>;
 	add(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 

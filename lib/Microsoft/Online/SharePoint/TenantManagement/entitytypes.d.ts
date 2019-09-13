@@ -205,7 +205,6 @@ export interface Office365TenantProps {
 	EmailAttestationEnabled?: boolean;
 	EmailAttestationReAuthDays?: number;
 	EmailAttestationRequired?: boolean;
-	EnableAzureADB2BIntegration?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
 	EnablePromotedFileHandlers?: boolean;
 	ExcludedFileExtensionsForSyncClient?: { results: Array<string> };
@@ -294,7 +293,7 @@ export interface Office365TenantMethods {
 	addSdnProvider(identifier?: string, license?: string): Base.IBaseExecution<any>;
 	addTenantCdnOrigin(cdnType?: number, originUrl?: string): Base.IBaseExecution<any>;
 	addTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
-	addToOrgAssetsLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number): Base.IBaseExecution<any>;
+	addToOrgAssetsLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
 	createTenantCdnDefaultOrigins(cdnType?: number): Base.IBaseExecution<any>;
 	deleteImportProfilePropertiesJob(jobId?: any): Base.IBaseExecution<boolean>;
 	deleteTenantTheme(name?: string): Base.IBaseExecution<any>;
@@ -314,7 +313,6 @@ export interface Office365TenantMethods {
 	isSharingDisabledForNonOwnersOfSite(siteUrl?: string): Base.IBaseExecution<boolean>;
 	queueImportProfileProperties(idType?: number, sourceDataIdProperty?: string, propertyMap?: Array<SP.KeyValue>, sourceUri?: string): Base.IBaseExecution<any>;
 	removeExternalUsers(uniqueIds?: Array<string>): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantManagement.RemoveExternalUsersResults>;
-	removeFromOrgAssets(libUrl?: SP.ResourcePath, listId?: any): Base.IBaseExecution<any>;
 	removeFromOrgAssetsAndCdn(remove?: boolean, cdnType?: number, libUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
 	removePublicCdnOrigin(originId?: string): Base.IBaseExecution<any>;
 	removeSdnProvider(): Base.IBaseExecution<any>;
@@ -323,7 +321,7 @@ export interface Office365TenantMethods {
 	revokeAllUserSessionsByPuid(puidList?: Array<string>): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.SPOUserSessionRevocationResult>;
 	setHideDefaultThemes(hideDefaultThemes?: boolean): Base.IBaseExecution<boolean>;
 	setIdleSessionSignOutForUnmanagedDevices(enabled?: boolean, warnAfter?: any, signOutAfter?: any): Base.IBaseExecution<boolean>;
-	setOrgAssetsLib(libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number): Base.IBaseExecution<any>;
+	setOrgAssetsLib(libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath): Base.IBaseExecution<any>;
 	setTenantCdnEnabled(cdnType?: number, isEnabled?: boolean): Base.IBaseExecution<any>;
 	setTenantCdnPolicy(cdnType?: number, policy?: number, policyValue?: string): Base.IBaseExecution<any>;
 	updateTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;

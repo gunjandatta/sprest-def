@@ -20,7 +20,6 @@ export interface ActionFacet {
 	restore?: Microsoft.SharePoint.Activities.RestoreFacet;
 	restoreVersion?: Microsoft.SharePoint.Activities.RestoreVersionFacet;
 	share?: Microsoft.SharePoint.Activities.SharingFacet;
-	task?: Microsoft.SharePoint.Activities.TaskFacet;
 	version?: Microsoft.SharePoint.Activities.VersionFacet;
 }
 
@@ -268,81 +267,6 @@ export interface SharingFacetCollections {
 }
 
 /*********************************************
-* TaskFacet
-**********************************************/
-export interface TaskFacet {
-	assignee?: Microsoft.SharePoint.Activities.ActivityIdentity;
-	complete?: Microsoft.SharePoint.Activities.TaskCompleteFacet;
-	create?: Microsoft.SharePoint.Activities.TaskCreateFacet;
-	reassign?: Microsoft.SharePoint.Activities.TaskReassignFacet;
-	reopen?: Microsoft.SharePoint.Activities.TaskReopenFacet;
-	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
-}
-
-/*********************************************
-* TaskFacetCollections
-**********************************************/
-export interface TaskFacetCollections {
-
-}
-
-/*********************************************
-* TaskCompleteFacet
-**********************************************/
-export interface TaskCompleteFacet {
-
-}
-
-/*********************************************
-* TaskCompleteFacetCollections
-**********************************************/
-export interface TaskCompleteFacetCollections {
-
-}
-
-/*********************************************
-* TaskCreateFacet
-**********************************************/
-export interface TaskCreateFacet {
-
-}
-
-/*********************************************
-* TaskCreateFacetCollections
-**********************************************/
-export interface TaskCreateFacetCollections {
-
-}
-
-/*********************************************
-* TaskReassignFacet
-**********************************************/
-export interface TaskReassignFacet {
-	lastAssignee?: Microsoft.SharePoint.Activities.ActivityIdentity;
-}
-
-/*********************************************
-* TaskReassignFacetCollections
-**********************************************/
-export interface TaskReassignFacetCollections {
-
-}
-
-/*********************************************
-* TaskReopenFacet
-**********************************************/
-export interface TaskReopenFacet {
-
-}
-
-/*********************************************
-* TaskReopenFacetCollections
-**********************************************/
-export interface TaskReopenFacetCollections {
-
-}
-
-/*********************************************
 * VersionFacet
 **********************************************/
 export interface VersionFacet {
@@ -507,7 +431,6 @@ export interface RevisionSetFacetCollections {
 **********************************************/
 export interface ActivityCapabilities {
 	clientActivitiesEnabled?: boolean;
-	clientActivitiesNotificationEnabled?: boolean;
 	enabled?: boolean;
 }
 

@@ -308,7 +308,6 @@ export interface MultiGeoCopyParametersCollections {
 * MenuNode
 **********************************************/
 export interface MenuNode {
-	AudienceIds?: Array<any>;
 	CustomProperties?: Array<SP.KeyValue>;
 	FriendlyUrlSegment?: string;
 	IsDeleted?: boolean;
@@ -331,7 +330,6 @@ export interface MenuNodeCollections {
 * MenuState
 **********************************************/
 export interface MenuState {
-	AudienceIds?: Array<any>;
 	FriendlyUrlPrefix?: string;
 	Nodes?: Array<SP.MenuNode>;
 	SimpleUrl?: string;
@@ -474,7 +472,6 @@ export interface SharingLinkInfo {
 	HasExternalGuestInvitees?: boolean;
 	Invitations?: Array<SP.Sharing.LinkInvitation>;
 	IsActive?: boolean;
-	IsAddressBarLink?: boolean;
 	IsCreateOnlyLink?: boolean;
 	IsDefault?: boolean;
 	IsEditLink?: boolean;
@@ -490,7 +487,6 @@ export interface SharingLinkInfo {
 	RequiresPassword?: boolean;
 	RestrictedShareMembership?: boolean;
 	ShareId?: any;
-	ShareTokenString?: string;
 	Url?: string;
 }
 
@@ -630,8 +626,10 @@ export interface AppViewCreationInfoCollections {
 * AsyncReadJobInfo
 **********************************************/
 export interface AsyncReadJobInfo {
-	CurrentChangeToken?: string;
+	EncryptionKey?: any;
 	JobId?: any;
+	JobQueueUri?: string;
+	ManifestContainerUri?: string;
 }
 
 /*********************************************
@@ -645,11 +643,8 @@ export interface AsyncReadJobInfoCollections {
 * AsyncReadOptions
 **********************************************/
 export interface AsyncReadOptions {
-	IncludeDirectDescendantsOnly?: boolean;
-	IncludeExtendedMetadata?: boolean;
 	IncludeSecurity?: boolean;
 	IncludeVersions?: boolean;
-	StartChangeToken?: string;
 }
 
 /*********************************************
@@ -767,24 +762,6 @@ export interface ChangeToken {
 * ChangeTokenCollections
 **********************************************/
 export interface ChangeTokenCollections {
-
-}
-
-/*********************************************
-* ClassificationResult
-**********************************************/
-export interface ClassificationResult {
-	ConfidenceScore?: number;
-	ContentTypeId?: string;
-	Metas?: Array<SP.KeyValue>;
-	ModelId?: string;
-	ModelVersion?: string;
-}
-
-/*********************************************
-* ClassificationResultCollections
-**********************************************/
-export interface ClassificationResultCollections {
 
 }
 
@@ -1199,10 +1176,7 @@ export interface HashtagCollections {
 **********************************************/
 export interface HubSiteCreationInformation {
 	Description?: string;
-	EnablePermissionsSync?: boolean;
-	HideNameInNavigation?: boolean;
 	LogoUrl?: string;
-	ParentHubSiteId?: any;
 	RequiresJoinApproval?: boolean;
 	SiteDesignId?: any;
 	SiteId?: any;
@@ -1384,7 +1358,6 @@ export interface ListItemUpdateParametersCollections {
 * MediaServiceUpdateParameters
 **********************************************/
 export interface MediaServiceUpdateParameters {
-	ClassificationResult?: SP.ClassificationResult;
 	ContentVersion?: number;
 	MediaServiceAutoKeyPoints?: string;
 	MediaServiceAutoTags?: string;
@@ -1413,7 +1386,6 @@ export interface MediaServiceUpdateParametersCollections {
 export interface MoveCopyOptions {
 	KeepBoth?: boolean;
 	ResetAuthorAndCreatedOnCopy?: boolean;
-	ShouldBypassSharedLocks?: boolean;
 }
 
 /*********************************************
@@ -1619,7 +1591,6 @@ export interface RenderListDataOverrideParameters {
 	PageFirstRow?: string;
 	PageLastRow?: string;
 	RootFolder?: string;
-	RootFolderUniqueId?: string;
 	SortDir?: string;
 	SortDir1?: string;
 	SortDir10?: string;
@@ -1671,7 +1642,6 @@ export interface RenderListDataParameters {
 	FolderServerRelativeUrl?: string;
 	ImageFieldsToTryRewriteToCdnUrls?: string;
 	MergeDefaultView?: boolean;
-	OriginalDate?: boolean;
 	OverrideViewXml?: string;
 	Paging?: string;
 	RenderOptions?: number;
@@ -2007,37 +1977,5 @@ export interface XmlSchemaFieldCreationInformation {
 * XmlSchemaFieldCreationInformationCollections
 **********************************************/
 export interface XmlSchemaFieldCreationInformationCollections {
-
-}
-
-/*********************************************
-* TranslationStatusCreationRequest
-**********************************************/
-export interface TranslationStatusCreationRequest {
-	LanguageCodes?: Array<string>;
-}
-
-/*********************************************
-* TranslationStatusCreationRequestCollections
-**********************************************/
-export interface TranslationStatusCreationRequestCollections {
-
-}
-
-/*********************************************
-* TranslationStatus
-**********************************************/
-export interface TranslationStatus {
-	Culture?: string;
-	FileStatus?: any;
-	HasPublishedVersion?: boolean;
-	LastModified?: any;
-	Path?: SP.ResourcePath;
-}
-
-/*********************************************
-* TranslationStatusCollections
-**********************************************/
-export interface TranslationStatusCollections {
 
 }

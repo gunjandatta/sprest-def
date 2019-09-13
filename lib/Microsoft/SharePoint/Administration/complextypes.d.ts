@@ -24,7 +24,6 @@ export interface OrgAssetsLibrary {
 	FileType?: string;
 	LibraryUrl?: SP.ResourcePath;
 	ListId?: any;
-	OrgAssetType?: number;
 	ThumbnailUrl?: SP.ResourcePath;
 	UniqueId?: any;
 }

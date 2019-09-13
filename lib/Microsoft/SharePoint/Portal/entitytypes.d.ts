@@ -503,7 +503,6 @@ export interface SPSiteManagerOData extends Base.IBaseResult, SPSiteManagerProps
 * SPSiteManagerMethods
 **********************************************/
 export interface SPSiteManagerMethods {
-	archiveTeamChannelSite(siteId?: any, archive?: boolean): Base.IBaseExecution<any>;
 	canCreateHubJoinedSite(hubSiteId?: any): Base.IBaseExecution<boolean>;
 	create(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
 	delete(siteId?: any): Base.IBaseExecution<any>;
@@ -512,76 +511,6 @@ export interface SPSiteManagerMethods {
 	setTeamChannelSiteOwner(siteId?: any, logonName?: string, secondaryLogonName?: string): Base.IBaseExecution<any>;
 	siteUrl(siteId?: any): Base.IBaseExecution<string>;
 	status(url?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
-}
-
-/*********************************************
-* ISiteIconManager
-**********************************************/
-export interface ISiteIconManager extends SiteIconManagerCollections, SiteIconManagerMethods, Base.IBaseQuery<ISiteIconManagerQuery> {
-
-}
-
-/*********************************************
-* ISiteIconManagerCollection
-**********************************************/
-export interface ISiteIconManagerCollection extends Base.IBaseResults<SiteIconManager> {
-	done?: (resolve: (value?: Array<SiteIconManager>) => void) => void;
-}
-
-/*********************************************
-* ISiteIconManagerQueryCollection
-**********************************************/
-export interface ISiteIconManagerQueryCollection extends Base.IBaseResults<SiteIconManagerOData> {
-	done?: (resolve: (value?: Array<SiteIconManagerOData>) => void) => void;
-}
-
-/*********************************************
-* ISiteIconManagerQuery
-**********************************************/
-export interface ISiteIconManagerQuery extends SiteIconManagerOData, SiteIconManagerMethods {
-
-}
-
-/*********************************************
-* SiteIconManager
-**********************************************/
-export interface SiteIconManager extends Base.IBaseResult, SiteIconManagerProps, SiteIconManagerCollections, SiteIconManagerMethods {
-
-}
-
-/*********************************************
-* SiteIconManagerProps
-**********************************************/
-export interface SiteIconManagerProps {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-}
-
-/*********************************************
-* SiteIconManagerPropMethods
-**********************************************/
-export interface SiteIconManagerPropMethods {
-
-}
-
-/*********************************************
-* SiteIconManagerCollections
-**********************************************/
-export interface SiteIconManagerCollections extends SiteIconManagerPropMethods {
-
-}
-
-/*********************************************
-* SiteIconManagerOData
-**********************************************/
-export interface SiteIconManagerOData extends Base.IBaseResult, SiteIconManagerProps, SiteIconManagerMethods {
-
-}
-
-/*********************************************
-* SiteIconManagerMethods
-**********************************************/
-export interface SiteIconManagerMethods {
-	getSiteLogo(siteUrl?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
