@@ -1065,6 +1065,7 @@ export interface ListItemProps {
 	ServerRedirectedEmbedUri?: string;
 	ServerRedirectedEmbedUrl?: string;
 	Client_Title?: string;
+	Title?: string;
 }
 
 /*********************************************
@@ -3188,6 +3189,7 @@ export interface GroupProps {
 	OnlyAllowMembersViewMembership?: boolean;
 	OwnerTitle?: string;
 	RequestToJoinLeaveEmailSetting?: string;
+	Title?: string;
 }
 
 /*********************************************

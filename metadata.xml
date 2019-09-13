@@ -1039,6 +1039,7 @@
                 <Property Name="ServerRedirectedEmbedUri" Type="Edm.String"/>
                 <Property Name="ServerRedirectedEmbedUrl" Type="Edm.String"/>
                 <Property Name="Client_Title" Type="Edm.String"/>
+                <Property Name="Title" Type="Edm.String" />
                 <NavigationProperty Name="AttachmentFiles" Relationship="SP.SP_ListItem_AttachmentFiles_SP_Attachment_AttachmentFilesPartner" ToRole="AttachmentFiles" FromRole="AttachmentFilesPartner"/>
                 <NavigationProperty Name="ContentType" Relationship="SP.SP_ListItem_ContentType_SP_ContentType_ContentTypePartner" ToRole="ContentType" FromRole="ContentTypePartner"/>
                 <NavigationProperty Name="GetDlpPolicyTip" Relationship="SP.SP_ListItem_GetDlpPolicyTip_SP_DlpPolicyTip_GetDlpPolicyTipPartner" ToRole="GetDlpPolicyTip" FromRole="GetDlpPolicyTipPartner"/>
@@ -1660,6 +1661,7 @@
                 <Property Name="OnlyAllowMembersViewMembership" Type="Edm.Boolean" Nullable="false"/>
                 <Property Name="OwnerTitle" Type="Edm.String"/>
                 <Property Name="RequestToJoinLeaveEmailSetting" Type="Edm.String"/>
+                <Property Name="Title" Type="Edm.String"/>
                 <NavigationProperty Name="Owner" Relationship="SP.SP_Group_Owner_SP_Principal_OwnerPartner" ToRole="Owner" FromRole="OwnerPartner"/>
                 <NavigationProperty Name="Users" Relationship="SP.SP_Group_Users_SP_User_UsersPartner" ToRole="Users" FromRole="UsersPartner"/>
             </EntityType>
