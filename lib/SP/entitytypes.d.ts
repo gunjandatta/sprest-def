@@ -2334,6 +2334,8 @@ export interface ListCollections extends ListPropMethods {
 	Forms(id: string | number): Base.IBaseQuery<SP.Form> & SP.FormCollections;
 	Items(): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
 	Items(id: string | number): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
+	RoleAssignments(): Base.IBaseCollection<SP.RoleAssignment, SP.RoleAssignmentOData, Base.IBaseExecution & SP.RoleAssignmentCollectionMethods> & Base.IBaseExecution & SP.RoleAssignmentCollectionMethods;
+	RoleAssignments(id: string | number): Base.IBaseQuery<SP.RoleAssignment, SP.RoleAssignmentOData> & SP.RoleAssignmentCollections & SP.RoleAssignmentMethods;
 	Subscriptions(): Base.IBaseCollection<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionCollectionMethods;
 	Subscriptions(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionCollections & Microsoft.SharePoint.Webhooks.SubscriptionMethods;
 	UserCustomActions(): Base.IBaseCollection<SP.UserCustomAction, SP.UserCustomActionOData, Base.IBaseExecution & SP.UserCustomActionCollectionMethods> & Base.IBaseExecution & SP.UserCustomActionCollectionMethods;
@@ -2372,6 +2374,7 @@ export interface ListOData extends Base.IBaseResult, ListProps, ListMethods {
 	InformationRightsManagementSettings: SP.InformationRightsManagementSettings & SP.InformationRightsManagementSettingsCollections;
 	Items: Base.IBaseResults<SP.ListItem> & SP.ListItemCollectionMethods;
 	ParentWeb: SP.Web & SP.WebCollections & SP.WebCollectionMethods;
+	RoleAssignments: Base.IBaseResults<SP.RoleAssignment> & SP.RoleAssignmentCollectionMethods;
 	RootFolder: SP.Folder & SP.FolderCollections & SP.FolderCollectionMethods;
 	Subscriptions: Base.IBaseResults<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionCollectionMethods;
 	TitleResource: SP.UserResource & SP.UserResourceCollections;

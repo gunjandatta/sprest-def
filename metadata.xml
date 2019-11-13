@@ -1404,6 +1404,7 @@
                 <NavigationProperty Name="InformationRightsManagementSettings" Relationship="SP.SP_List_InformationRightsManagementSettings_SP_InformationRightsManagementSettings_InformationRightsManagementSettingsPartner" ToRole="InformationRightsManagementSettings" FromRole="InformationRightsManagementSettingsPartner"/>
                 <NavigationProperty Name="Items" Relationship="SP.SP_List_Items_SP_ListItem_ItemsPartner" ToRole="Items" FromRole="ItemsPartner"/>
                 <NavigationProperty Name="ParentWeb" Relationship="SP.SP_List_ParentWeb_SP_Web_ParentWebPartner" ToRole="ParentWeb" FromRole="ParentWebPartner"/>
+                <NavigationProperty Name="RoleAssignments" Relationship="SP.SP_SecurableObject_RoleAssignments_SP_RoleAssignment_RoleAssignmentsPartner" ToRole="RoleAssignments" FromRole="RoleAssignmentsPartner" />
                 <NavigationProperty Name="RootFolder" Relationship="SP.SP_List_RootFolder_SP_Folder_RootFolderPartner" ToRole="RootFolder" FromRole="RootFolderPartner"/>
                 <NavigationProperty Name="Subscriptions" Relationship="Microsoft.SharePoint.Webhooks.SP_List_Subscriptions_Microsoft_SharePoint_Webhooks_Subscription_SubscriptionsPartner" ToRole="Subscriptions" FromRole="SubscriptionsPartner"/>
                 <NavigationProperty Name="TitleResource" Relationship="SP.SP_List_TitleResource_SP_UserResource_TitleResourcePartner" ToRole="TitleResource" FromRole="TitleResourcePartner"/>

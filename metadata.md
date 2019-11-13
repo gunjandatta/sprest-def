@@ -10,6 +10,12 @@ These are missing properties that are relevant to the SharePoint REST API.
 <Property Name="Title" Type="Edm.String"/>
 ```
 
+###### EntityType List
+
+```
+<NavigationProperty Name="RoleAssignments" Relationship="SP.SP_SecurableObject_RoleAssignments_SP_RoleAssignment_RoleAssignmentsPartner" ToRole="RoleAssignments" FromRole="RoleAssignmentsPartner" />
+```
+
 ###### EntityType List Item
 
 ```
