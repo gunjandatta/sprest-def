@@ -235,6 +235,7 @@ function getType(type = "any") {
         .replace(/Edm\.Int16/, 'number')
         .replace(/Edm\.Int32/, 'number')
         .replace(/Edm\.Int64/, 'number')
+        .replace(/Edm\.Single/, 'any')
         .replace(/Edm\.Stream/, 'any')
         .replace(/Edm\.String/, 'string')
         .replace(/Edm\.Time/, 'any')

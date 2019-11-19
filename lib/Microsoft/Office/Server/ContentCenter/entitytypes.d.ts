@@ -1,6 +1,5 @@
 import { Base } from "../../../../";
 import { Microsoft } from "../../../../";
-import { Edm } from "../../../../";
 
 /*********************************************
 * ISPMachineLearningHub
@@ -118,7 +117,7 @@ export interface SPMachineLearningModel extends Base.IBaseResult, SPMachineLearn
 * SPMachineLearningModelProps
 **********************************************/
 export interface SPMachineLearningModelProps {
-	Accuracy?: Edm.Single;
+	Accuracy?: any;
 	ContentTypeGroup?: string;
 	ContentTypeId?: string;
 	ContentTypeName?: string;
@@ -344,7 +343,7 @@ export interface SPMachineLearningSampleMethods {
 * SPMachineLearningModelEntityData
 **********************************************/
 export interface SPMachineLearningModelEntityData {
-	Accuracy?: Edm.Single;
+	Accuracy?: any;
 	ColumnId?: string;
 	ColumnName?: string;
 	ContentTypeGroup?: string;
