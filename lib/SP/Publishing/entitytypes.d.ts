@@ -819,6 +819,7 @@ export interface SitePageMetadata {
 	PageLayoutType?: string;
 	Path?: SP.ResourcePath;
 	PromotedState?: number;
+	PublishStartDate?: any;
 	SocialBarOnSitePagesDisabled?: boolean;
 	Title?: string;
 	TopicHeader?: string;
@@ -920,7 +921,7 @@ export interface SitePageProps {
 * SitePagePropMethods
 **********************************************/
 export interface SitePagePropMethods {
-
+	Translations(): Base.IBaseExecution<SP.TranslationStatusCollection> & SP.TranslationStatusCollectionCollections & SP.TranslationStatusCollectionMethods;
 }
 
 /*********************************************
@@ -937,10 +938,11 @@ export interface SitePageCollectionMethods {
 	createAppPage(webPartDataAsJson?: string): Base.IBaseExecution<string>;
 	createFullPageApp(webPartDataAsJson?: string, title?: string, addToQuickLaunch?: boolean): Base.IBaseExecution<string>;
 	ensureTitleResource(): Base.IBaseExecution<any>;
-	feed(promotedState?: number, published?: boolean, metadataFilter?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
-	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
-	getById(id?: number): Base.IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getByUrl(url?: string): Base.IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	feed(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
+	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
+	getById(id?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getByUniqueId(uniqueId?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getByUrl(url?: string): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	getPageColumnState(url?: string): Base.IBaseExecution<number>;
 	isSitePage(url?: string): Base.IBaseExecution<boolean>;
 	templates(): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
@@ -952,7 +954,7 @@ export interface SitePageCollectionMethods {
 * SitePageOData
 **********************************************/
 export interface SitePageOData extends Base.IBaseResult, SitePageProps, SitePageMethods {
-
+	Translations: SP.TranslationStatusCollection & SP.TranslationStatusCollectionCollections;
 }
 
 /*********************************************
@@ -960,18 +962,19 @@ export interface SitePageOData extends Base.IBaseResult, SitePageProps, SitePage
 **********************************************/
 export interface SitePageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
-	checkoutPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
-	copy(): Base.IBaseExecution<SP.Publishing.SitePage>;
-	createNewsCopy(): Base.IBaseExecution<SP.Publishing.SitePage>;
+	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
-	discardPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
-	getVersion(versionId?: number): Base.IBaseExecution<SP.Publishing.SitePage>;
+	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
-	savePageAsTemplate(): Base.IBaseExecution<SP.Publishing.SitePage>;
+	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
 }
@@ -1057,18 +1060,19 @@ export interface RepostPageOData extends Base.IBaseResult, RepostPageProps, Repo
 **********************************************/
 export interface RepostPageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
-	checkoutPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
-	copy(): Base.IBaseExecution<SP.Publishing.SitePage>;
-	createNewsCopy(): Base.IBaseExecution<SP.Publishing.SitePage>;
+	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
-	discardPage(): Base.IBaseExecution<SP.Publishing.SitePage>;
-	getVersion(versionId?: number): Base.IBaseExecution<SP.Publishing.SitePage>;
+	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
-	savePageAsTemplate(): Base.IBaseExecution<SP.Publishing.SitePage>;
+	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
 }
@@ -1233,6 +1237,91 @@ export interface SharePointHomeServiceManagerMethods {
 }
 
 /*********************************************
+* ISitePage3D
+**********************************************/
+export interface ISitePage3D extends SitePage3DCollections, SitePage3DMethods, Base.IBaseQuery<ISitePage3DQuery> {
+
+}
+
+/*********************************************
+* ISitePage3DCollection
+**********************************************/
+export interface ISitePage3DCollection extends Base.IBaseResults<SitePage3D> {
+	done?: (resolve: (value?: Array<SitePage3D>) => void) => void;
+}
+
+/*********************************************
+* ISitePage3DQueryCollection
+**********************************************/
+export interface ISitePage3DQueryCollection extends Base.IBaseResults<SitePage3DOData> {
+	done?: (resolve: (value?: Array<SitePage3DOData>) => void) => void;
+}
+
+/*********************************************
+* ISitePage3DQuery
+**********************************************/
+export interface ISitePage3DQuery extends SitePage3DOData, SitePage3DMethods {
+
+}
+
+/*********************************************
+* SitePage3D
+**********************************************/
+export interface SitePage3D extends SP.Publishing.SitePage, Base.IBaseResult, SitePage3DProps, SitePage3DCollections, SitePage3DMethods {
+
+}
+
+/*********************************************
+* SitePage3DProps
+**********************************************/
+export interface SitePage3DProps {
+	SpaceContent?: string;
+}
+
+/*********************************************
+* SitePage3DPropMethods
+**********************************************/
+export interface SitePage3DPropMethods {
+
+}
+
+/*********************************************
+* SitePage3DCollections
+**********************************************/
+export interface SitePage3DCollections extends SitePage3DPropMethods {
+
+}
+
+/*********************************************
+* SitePage3DOData
+**********************************************/
+export interface SitePage3DOData extends Base.IBaseResult, SitePage3DProps, SitePage3DMethods {
+
+}
+
+/*********************************************
+* SitePage3DMethods
+**********************************************/
+export interface SitePage3DMethods {
+	checkOut(): Base.IBaseExecution<boolean>;
+	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	promoteToNews(): Base.IBaseExecution<boolean>;
+	publish(): Base.IBaseExecution<boolean>;
+	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
+	savePage(pageStream?: any): Base.IBaseExecution<any>;
+	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
+	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
+	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
 * ISitePageService
 **********************************************/
 export interface ISitePageService extends SitePageServiceCollections, SitePageServiceMethods, Base.IBaseQuery<ISitePageServiceQuery> {
@@ -1285,8 +1374,8 @@ export interface SitePageServicePropMethods {
 * SitePageServiceCollections
 **********************************************/
 export interface SitePageServiceCollections extends SitePageServicePropMethods {
-	Pages(): Base.IBaseCollection<SP.Publishing.SitePage> & SP.Publishing.SitePageCollectionMethods;
-	Pages(id: string | number): Base.IBaseQuery<SP.Publishing.SitePage> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	Pages(): Base.IBaseCollection<SP.Publishing.SitePage, SP.Publishing.SitePageOData, Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods> & Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods;
+	Pages(id: string | number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 }
 
 /*********************************************
@@ -1819,6 +1908,7 @@ export interface VideoServiceManager extends Base.IBaseResult, VideoServiceManag
 * VideoServiceManagerProps
 **********************************************/
 export interface VideoServiceManagerProps {
+	AutomaticMigrationType?: string;
 	CanAdministratePortalByCurrent?: boolean;
 	CanCreateChannelsByCurrent?: boolean;
 	CanViewPortalByCurrent?: boolean;

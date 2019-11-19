@@ -290,11 +290,16 @@ export interface PersonalCacheOData extends Base.IBaseResult, PersonalCacheProps
 **********************************************/
 export interface PersonalCacheMethods {
 	deleteCacheItemsAsync(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): Base.IBaseExecution<any>;
+	deleteCacheItemsAsync2(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>, mySiteUrl?: string): Base.IBaseExecution<any>;
 	loadUserProfile(email?: string): Base.IBaseExecution<any>;
 	readCache(folderPath?: string): Base.IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
+	readCache2(folderPath?: string, mySiteUrl?: string): Base.IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
 	readCacheOrCreate(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): Base.IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
+	readCacheOrCreate2(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean, mySiteUrl?: string): Base.IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
 	readCacheOrCreateOrderById(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean): Base.IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
+	readCacheOrCreateOrderById2(folderPath?: SP.ResourcePath, requiredCacheKeys?: Array<string>, createIfMissing?: boolean, mySiteUrl?: string): Base.IBaseCollection<SP.UserProfiles.PersonalCacheItem>;
 	writeCache(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>): Base.IBaseExecution<any>;
+	writeCache2(cacheItems?: Array<SP.UserProfiles.PersonalCacheItem>, mySiteUrl?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

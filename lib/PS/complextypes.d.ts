@@ -569,6 +569,7 @@ export interface TaskLinkCreationInformation {
 	DependencyType?: number;
 	EndId?: any;
 	Id?: any;
+	LinkLagDuration?: string;
 	StartId?: any;
 }
 

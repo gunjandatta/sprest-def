@@ -2,6 +2,55 @@ import { Base } from "../../../../../";
 import { Microsoft } from "../../../../../";
 
 /*********************************************
+* QueryPropertyValue
+**********************************************/
+export interface QueryPropertyValue {
+	BoolVal?: boolean;
+	IntVal?: number;
+	QueryPropertyValueTypeIndex?: number;
+	StrArray?: Array<string>;
+	StrVal?: string;
+}
+
+/*********************************************
+* QueryPropertyValueCollections
+**********************************************/
+export interface QueryPropertyValueCollections {
+
+}
+
+/*********************************************
+* ReorderingRule
+**********************************************/
+export interface ReorderingRule {
+	Boost?: number;
+	MatchType?: number;
+	MatchValue?: string;
+}
+
+/*********************************************
+* ReorderingRuleCollections
+**********************************************/
+export interface ReorderingRuleCollections {
+
+}
+
+/*********************************************
+* Sort
+**********************************************/
+export interface Sort {
+	Direction?: number;
+	Property?: string;
+}
+
+/*********************************************
+* SortCollections
+**********************************************/
+export interface SortCollections {
+
+}
+
+/*********************************************
 * PersonalResultSuggestion
 **********************************************/
 export interface PersonalResultSuggestion {
@@ -73,24 +122,6 @@ export interface QueryAutoCompletionCollections {
 }
 
 /*********************************************
-* QueryPropertyValue
-**********************************************/
-export interface QueryPropertyValue {
-	BoolVal?: boolean;
-	IntVal?: number;
-	QueryPropertyValueTypeIndex?: number;
-	StrArray?: Array<string>;
-	StrVal?: string;
-}
-
-/*********************************************
-* QueryPropertyValueCollections
-**********************************************/
-export interface QueryPropertyValueCollections {
-
-}
-
-/*********************************************
 * QuerySuggestionQuery
 **********************************************/
 export interface QuerySuggestionQuery {
@@ -138,33 +169,32 @@ export interface QuerySuggestionResultsCollections {
 }
 
 /*********************************************
-* ReorderingRule
+* TenantCustomQuerySuggestions
 **********************************************/
-export interface ReorderingRule {
-	Boost?: number;
-	MatchType?: number;
-	MatchValue?: string;
+export interface TenantCustomQuerySuggestions {
+	AlwaysSuggest?: Array<Microsoft.SharePoint.Client.Search.Query.CustomQuerySuggestions>;
+	NeverSuggest?: Array<Microsoft.SharePoint.Client.Search.Query.CustomQuerySuggestions>;
 }
 
 /*********************************************
-* ReorderingRuleCollections
+* TenantCustomQuerySuggestionsCollections
 **********************************************/
-export interface ReorderingRuleCollections {
+export interface TenantCustomQuerySuggestionsCollections {
 
 }
 
 /*********************************************
-* Sort
+* CustomQuerySuggestions
 **********************************************/
-export interface Sort {
-	Direction?: number;
-	Property?: string;
+export interface CustomQuerySuggestions {
+	LCID?: number;
+	Queries?: Array<string>;
 }
 
 /*********************************************
-* SortCollections
+* CustomQuerySuggestionsCollections
 **********************************************/
-export interface SortCollections {
+export interface CustomQuerySuggestionsCollections {
 
 }
 

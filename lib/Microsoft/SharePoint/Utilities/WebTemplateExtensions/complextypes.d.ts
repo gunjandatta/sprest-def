@@ -2,75 +2,6 @@ import { Base } from "../../../../";
 import { Microsoft } from "../../../../";
 
 /*********************************************
-* FormulaCreationInfo
-**********************************************/
-export interface FormulaCreationInfo {
-	Description?: string;
-	DesignPackageGuid?: any;
-	IsDefault?: boolean;
-	PreviewImageAltText?: string;
-	PreviewImageUrl?: string;
-	RecipeGuids?: Array<any>;
-	Title?: string;
-	Version?: number;
-	WebTemplate?: string;
-}
-
-/*********************************************
-* FormulaCreationInfoCollections
-**********************************************/
-export interface FormulaCreationInfoCollections {
-
-}
-
-/*********************************************
-* FormulaMetadata
-**********************************************/
-export interface FormulaMetadata {
-	FormulaGuid?: any;
-}
-
-/*********************************************
-* FormulaMetadataCollections
-**********************************************/
-export interface FormulaMetadataCollections {
-
-}
-
-/*********************************************
-* RecipeCreationInfo
-**********************************************/
-export interface RecipeCreationInfo {
-	Content?: string;
-	Description?: string;
-	Title?: string;
-}
-
-/*********************************************
-* RecipeCreationInfoCollections
-**********************************************/
-export interface RecipeCreationInfoCollections {
-
-}
-
-/*********************************************
-* RecipeMetadata
-**********************************************/
-export interface RecipeMetadata {
-	Description?: string;
-	RecipeGuid?: any;
-	Title?: string;
-	Version?: number;
-}
-
-/*********************************************
-* RecipeMetadataCollections
-**********************************************/
-export interface RecipeMetadataCollections {
-
-}
-
-/*********************************************
 * SiteDesignCreationInfo
 **********************************************/
 export interface SiteDesignCreationInfo {
@@ -145,6 +76,7 @@ export interface SiteScriptMetadata {
 	Content?: string;
 	Description?: string;
 	Id?: any;
+	IsSiteScriptPackage?: boolean;
 	Title?: string;
 	Version?: number;
 }
@@ -162,6 +94,7 @@ export interface SiteScriptMetadataCollections {
 export interface SiteScriptSerializationInfo {
 	IncludeBranding?: boolean;
 	IncludedLists?: Array<string>;
+	IncludeLinksToExportedItems?: boolean;
 	IncludeRegionalSettings?: boolean;
 	IncludeSiteExternalSharingCapability?: boolean;
 	IncludeTheme?: boolean;

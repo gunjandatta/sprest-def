@@ -103,6 +103,7 @@ export interface HashTagCollections {
 * PersonalCacheItem
 **********************************************/
 export interface PersonalCacheItem {
+	AltTitle?: string;
 	CacheKey?: string;
 	CacheValue?: string;
 	CacheValueHash?: string;

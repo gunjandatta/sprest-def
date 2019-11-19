@@ -1,17 +1,17 @@
 import { Base } from "../../../../";
-import { Microsoft } from "../../../../";
 
 /*********************************************
-* SPAuthEvents
+* SPAuthEvent
 **********************************************/
-export interface SPAuthEvents {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-	Items?: { results: Array<Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent> };
+export interface SPAuthEvent {
+	EventData?: string;
+	EventSource?: number;
+	TenantId?: any;
 }
 
 /*********************************************
-* SPAuthEventsCollections
+* SPAuthEventCollections
 **********************************************/
-export interface SPAuthEventsCollections {
+export interface SPAuthEventCollections {
 
 }

@@ -402,6 +402,7 @@ export interface SitePageFieldsData {
 	Description?: string;
 	LayoutWebpartsContent?: string;
 	Modified?: any;
+	PublishStartDate?: any;
 	Title?: string;
 	TopicHeader?: string;
 }
@@ -439,6 +440,20 @@ export interface SharePagePreviewByEmailFieldsData {
 * SharePagePreviewByEmailFieldsDataCollections
 **********************************************/
 export interface SharePagePreviewByEmailFieldsDataCollections {
+
+}
+
+/*********************************************
+* SitePage3DFieldsData
+**********************************************/
+export interface SitePage3DFieldsData {
+	SpaceContent?: string;
+}
+
+/*********************************************
+* SitePage3DFieldsDataCollections
+**********************************************/
+export interface SitePage3DFieldsDataCollections {
 
 }
 

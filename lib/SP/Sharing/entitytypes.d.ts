@@ -66,6 +66,7 @@ export interface PersonalWebCollections {
 **********************************************/
 export interface SharingInformation {
 	accessRequestSettings?: SP.Sharing.AccessRequestSettings;
+	addressBarLinkSettings?: SP.Sharing.AddressBarLinkSettings;
 	anonymousLinkExpirationRestrictionDays?: number;
 	blockPeoplePickerAndSharing?: boolean;
 	canAddExternalPrincipal?: boolean;
@@ -77,8 +78,12 @@ export interface SharingInformation {
 	customizedExternalSharingServiceUrl?: string;
 	defaultLinkKind?: number;
 	defaultShareLinkPermission?: number;
+	defaultShareLinkScope?: number;
+	defaultShareLinkToExistingAccess?: boolean;
 	directUrl?: string;
+	doesUserHaveIBSegment?: boolean;
 	domainRestrictionSettings?: SP.Sharing.DomainRestrictionSettings;
+	effectiveLimitedAccessFileType?: number;
 	hasUniquePermissions?: boolean;
 	itemUniqueId?: any;
 	microserviceShareUiUrl?: string;
@@ -89,6 +94,7 @@ export interface SharingInformation {
 	sharingLinkTemplates?: SP.Sharing.SharingLinkDefaultTemplatesCollection;
 	sharingStatus?: number;
 	showExternalSharingWarning?: boolean;
+	siteIBSegmentIDs?: { results: Array<string> };
 	webTemplateId?: number;
 	webUrl?: string;
 }

@@ -163,7 +163,9 @@ export interface QueryConfigurationCollections {
 * QueryContext
 **********************************************/
 export interface QueryContext {
+	GroupObjectIds?: Array<any>;
 	PortalUrl?: string;
+	RoleIds?: Array<any>;
 	SpSiteId?: any;
 	SpWebId?: any;
 }

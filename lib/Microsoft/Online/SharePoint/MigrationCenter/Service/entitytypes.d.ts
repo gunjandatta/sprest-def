@@ -40,13 +40,18 @@ export interface Device extends Microsoft.Online.SharePoint.MigrationCenter.Comm
 * DeviceProps
 **********************************************/
 export interface DeviceProps {
-	Action?: number;
+	ActionId?: number;
 	AssignedTimeUTC?: any;
+	DebugCommand?: string;
 	DeviceAddedTimeUTC?: any;
+	Disconnected?: boolean;
+	FromClient?: boolean;
 	Id?: any;
+	LastActivityTimeUtc?: any;
+	LastHeartbeatTimeUtc?: any;
+	LastModifiedTimeUtc?: any;
 	LinkedTaskId?: any;
 	Status?: number;
-	StatusUpdatedTimeUTC?: any;
 }
 
 /*********************************************
@@ -138,8 +143,6 @@ export interface MigrationCenterServicesPropMethods {
 * MigrationCenterServicesCollections
 **********************************************/
 export interface MigrationCenterServicesCollections extends MigrationCenterServicesPropMethods {
-	Credentials(): Base.IBaseCollection<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialCollectionMethods;
-	Credentials(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialMethods;
 	Devices(): Base.IBaseCollection<Microsoft.Online.SharePoint.MigrationCenter.Service.Device> & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceCollectionMethods;
 	Devices(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.Device> & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceMethods;
 	Tasks(): Base.IBaseCollection<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollectionMethods;
@@ -150,7 +153,6 @@ export interface MigrationCenterServicesCollections extends MigrationCenterServi
 * MigrationCenterServicesOData
 **********************************************/
 export interface MigrationCenterServicesOData extends Base.IBaseResult, MigrationCenterServicesProps, MigrationCenterServicesMethods {
-	Credentials: Base.IBaseResults<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialCollectionMethods;
 	Devices: Base.IBaseResults<Microsoft.Online.SharePoint.MigrationCenter.Service.Device> & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceCollectionMethods;
 	Storage: Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorage & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCenterStorageCollections;
 	Tasks: Base.IBaseResults<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollectionMethods;
@@ -161,6 +163,191 @@ export interface MigrationCenterServicesOData extends Base.IBaseResult, Migratio
 **********************************************/
 export interface MigrationCenterServicesMethods {
 
+}
+
+/*********************************************
+* IMigrationCenterStorage
+**********************************************/
+export interface IMigrationCenterStorage extends MigrationCenterStorageCollections, MigrationCenterStorageMethods, Base.IBaseQuery<IMigrationCenterStorageQuery> {
+
+}
+
+/*********************************************
+* IMigrationCenterStorageCollection
+**********************************************/
+export interface IMigrationCenterStorageCollection extends Base.IBaseResults<MigrationCenterStorage> {
+	done?: (resolve: (value?: Array<MigrationCenterStorage>) => void) => void;
+}
+
+/*********************************************
+* IMigrationCenterStorageQueryCollection
+**********************************************/
+export interface IMigrationCenterStorageQueryCollection extends Base.IBaseResults<MigrationCenterStorageOData> {
+	done?: (resolve: (value?: Array<MigrationCenterStorageOData>) => void) => void;
+}
+
+/*********************************************
+* IMigrationCenterStorageQuery
+**********************************************/
+export interface IMigrationCenterStorageQuery extends MigrationCenterStorageOData, MigrationCenterStorageMethods {
+
+}
+
+/*********************************************
+* MigrationCenterStorage
+**********************************************/
+export interface MigrationCenterStorage extends Base.IBaseResult, MigrationCenterStorageProps, MigrationCenterStorageCollections, MigrationCenterStorageMethods {
+
+}
+
+/*********************************************
+* MigrationCenterStorageProps
+**********************************************/
+export interface MigrationCenterStorageProps {
+	ActionId?: number;
+	DebugCommand?: string;
+	GlobalTaskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings;
+	IsServiceInitialized?: boolean;
+	SchedulerInformation?: Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation;
+	SchemaVersion?: string;
+	TotalDevicesAdded?: number;
+	TotalTasksAdded?: number;
+}
+
+/*********************************************
+* MigrationCenterStoragePropMethods
+**********************************************/
+export interface MigrationCenterStoragePropMethods {
+
+}
+
+/*********************************************
+* MigrationCenterStorageCollections
+**********************************************/
+export interface MigrationCenterStorageCollections extends MigrationCenterStoragePropMethods {
+
+}
+
+/*********************************************
+* MigrationCenterStorageOData
+**********************************************/
+export interface MigrationCenterStorageOData extends Base.IBaseResult, MigrationCenterStorageProps, MigrationCenterStorageMethods {
+
+}
+
+/*********************************************
+* MigrationCenterStorageMethods
+**********************************************/
+export interface MigrationCenterStorageMethods {
+	create(config?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationStorageSettings): Base.IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* IMigrationTask
+**********************************************/
+export interface IMigrationTask extends MigrationTaskCollections, MigrationTaskMethods, Base.IBaseQuery<IMigrationTaskQuery> {
+
+}
+
+/*********************************************
+* IMigrationTaskCollection
+**********************************************/
+export interface IMigrationTaskCollection extends Base.IBaseResults<MigrationTask>, MigrationTaskCollectionMethods {
+	done?: (resolve: (value?: Array<MigrationTask>) => void) => void;
+}
+
+/*********************************************
+* IMigrationTaskQueryCollection
+**********************************************/
+export interface IMigrationTaskQueryCollection extends Base.IBaseResults<MigrationTaskOData>, MigrationTaskCollectionMethods {
+	done?: (resolve: (value?: Array<MigrationTaskOData>) => void) => void;
+}
+
+/*********************************************
+* IMigrationTaskQuery
+**********************************************/
+export interface IMigrationTaskQuery extends MigrationTaskOData, MigrationTaskMethods {
+
+}
+
+/*********************************************
+* MigrationTask
+**********************************************/
+export interface MigrationTask extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData, Base.IBaseResult, MigrationTaskProps, MigrationTaskCollections, MigrationTaskMethods {
+
+}
+
+/*********************************************
+* MigrationTaskProps
+**********************************************/
+export interface MigrationTaskProps {
+	ActionId?: number;
+	ClientName?: string;
+	DebugCommand?: string;
+	Duration?: any;
+	ErrorCode?: number;
+	ErrorMessage?: string;
+	FailedTimes?: number;
+	FailedTimeUtc?: any;
+	FailureId?: number;
+	FilesScanned?: number;
+	FilesScannedWithIssues?: number;
+	FriendlyClientName?: string;
+	IsRetryableFailure?: boolean;
+	IsScanDone?: boolean;
+	LinkedDeviceId?: any;
+	LogFilePath?: string;
+	ManagementStatus?: number;
+	MigratedFilesCount?: number;
+	ReportFileUrl?: string;
+	ScanDoneTimeUtc?: any;
+	StartTimeUTC?: any;
+	Status?: number;
+	StatusUpdatedTimeUTC?: any;
+	TaskId?: any;
+	ToBeMigratedFilesCount?: number;
+	TotalBytes?: number;
+	TotalBytesMigrated?: number;
+	UpdateStatusOnly?: boolean;
+	WorkflowId?: any;
+}
+
+/*********************************************
+* MigrationTaskPropMethods
+**********************************************/
+export interface MigrationTaskPropMethods {
+
+}
+
+/*********************************************
+* MigrationTaskCollections
+**********************************************/
+export interface MigrationTaskCollections extends MigrationTaskPropMethods {
+
+}
+
+/*********************************************
+* MigrationTaskCollectionMethods
+**********************************************/
+export interface MigrationTaskCollectionMethods {
+	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskMethods;
+}
+
+/*********************************************
+* MigrationTaskOData
+**********************************************/
+export interface MigrationTaskOData extends Base.IBaseResult, MigrationTaskProps, MigrationTaskMethods {
+
+}
+
+/*********************************************
+* MigrationTaskMethods
+**********************************************/
+export interface MigrationTaskMethods {
+	delete(): Base.IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -240,172 +427,6 @@ export interface MigrationCredentialOData extends Base.IBaseResult, MigrationCre
 * MigrationCredentialMethods
 **********************************************/
 export interface MigrationCredentialMethods {
-	delete(): Base.IBaseExecution<any>;
-	update(): Base.IBaseExecution<any>;
-}
-
-/*********************************************
-* IMigrationCenterStorage
-**********************************************/
-export interface IMigrationCenterStorage extends MigrationCenterStorageCollections, MigrationCenterStorageMethods, Base.IBaseQuery<IMigrationCenterStorageQuery> {
-
-}
-
-/*********************************************
-* IMigrationCenterStorageCollection
-**********************************************/
-export interface IMigrationCenterStorageCollection extends Base.IBaseResults<MigrationCenterStorage> {
-	done?: (resolve: (value?: Array<MigrationCenterStorage>) => void) => void;
-}
-
-/*********************************************
-* IMigrationCenterStorageQueryCollection
-**********************************************/
-export interface IMigrationCenterStorageQueryCollection extends Base.IBaseResults<MigrationCenterStorageOData> {
-	done?: (resolve: (value?: Array<MigrationCenterStorageOData>) => void) => void;
-}
-
-/*********************************************
-* IMigrationCenterStorageQuery
-**********************************************/
-export interface IMigrationCenterStorageQuery extends MigrationCenterStorageOData, MigrationCenterStorageMethods {
-
-}
-
-/*********************************************
-* MigrationCenterStorage
-**********************************************/
-export interface MigrationCenterStorage extends Base.IBaseResult, MigrationCenterStorageProps, MigrationCenterStorageCollections, MigrationCenterStorageMethods {
-
-}
-
-/*********************************************
-* MigrationCenterStorageProps
-**********************************************/
-export interface MigrationCenterStorageProps {
-	EncryptionKey?: string;
-	SchedulerInformation?: Microsoft.Online.SharePoint.MigrationCenter.Common.TaskSchedulerInformation;
-	StorageSchemaVersion?: string;
-}
-
-/*********************************************
-* MigrationCenterStoragePropMethods
-**********************************************/
-export interface MigrationCenterStoragePropMethods {
-
-}
-
-/*********************************************
-* MigrationCenterStorageCollections
-**********************************************/
-export interface MigrationCenterStorageCollections extends MigrationCenterStoragePropMethods {
-
-}
-
-/*********************************************
-* MigrationCenterStorageOData
-**********************************************/
-export interface MigrationCenterStorageOData extends Base.IBaseResult, MigrationCenterStorageProps, MigrationCenterStorageMethods {
-
-}
-
-/*********************************************
-* MigrationCenterStorageMethods
-**********************************************/
-export interface MigrationCenterStorageMethods {
-	create(config?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationStorageConfig): Base.IBaseExecution<any>;
-	delete(): Base.IBaseExecution<any>;
-	update(): Base.IBaseExecution<any>;
-}
-
-/*********************************************
-* IMigrationTask
-**********************************************/
-export interface IMigrationTask extends MigrationTaskCollections, MigrationTaskMethods, Base.IBaseQuery<IMigrationTaskQuery> {
-
-}
-
-/*********************************************
-* IMigrationTaskCollection
-**********************************************/
-export interface IMigrationTaskCollection extends Base.IBaseResults<MigrationTask>, MigrationTaskCollectionMethods {
-	done?: (resolve: (value?: Array<MigrationTask>) => void) => void;
-}
-
-/*********************************************
-* IMigrationTaskQueryCollection
-**********************************************/
-export interface IMigrationTaskQueryCollection extends Base.IBaseResults<MigrationTaskOData>, MigrationTaskCollectionMethods {
-	done?: (resolve: (value?: Array<MigrationTaskOData>) => void) => void;
-}
-
-/*********************************************
-* IMigrationTaskQuery
-**********************************************/
-export interface IMigrationTaskQuery extends MigrationTaskOData, MigrationTaskMethods {
-
-}
-
-/*********************************************
-* MigrationTask
-**********************************************/
-export interface MigrationTask extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData, Base.IBaseResult, MigrationTaskProps, MigrationTaskCollections, MigrationTaskMethods {
-
-}
-
-/*********************************************
-* MigrationTaskProps
-**********************************************/
-export interface MigrationTaskProps {
-	Action?: number;
-	Duration?: any;
-	ErrorCode?: number;
-	LinkedDeviceId?: any;
-	ManagementStatus?: number;
-	MigratedFilesCount?: number;
-	ScannedFilesCount?: number;
-	StartTimeUTC?: any;
-	Status?: number;
-	StatusUpdatedTimeUTC?: any;
-	TaskId?: any;
-	ToBeMigratedFilesCount?: number;
-	TotalBytes?: number;
-	TotalBytesMigrated?: number;
-	WorkflowId?: any;
-}
-
-/*********************************************
-* MigrationTaskPropMethods
-**********************************************/
-export interface MigrationTaskPropMethods {
-
-}
-
-/*********************************************
-* MigrationTaskCollections
-**********************************************/
-export interface MigrationTaskCollections extends MigrationTaskPropMethods {
-
-}
-
-/*********************************************
-* MigrationTaskCollectionMethods
-**********************************************/
-export interface MigrationTaskCollectionMethods {
-	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskMethods;
-}
-
-/*********************************************
-* MigrationTaskOData
-**********************************************/
-export interface MigrationTaskOData extends Base.IBaseResult, MigrationTaskProps, MigrationTaskMethods {
-
-}
-
-/*********************************************
-* MigrationTaskMethods
-**********************************************/
-export interface MigrationTaskMethods {
 	delete(): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
 }

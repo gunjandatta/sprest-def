@@ -2,6 +2,87 @@ import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
+* IEntity
+**********************************************/
+export interface IEntity extends EntityCollections, EntityMethods, Base.IBaseQuery<IEntityQuery> {
+
+}
+
+/*********************************************
+* IEntityCollection
+**********************************************/
+export interface IEntityCollection extends Base.IBaseResults<Entity> {
+	done?: (resolve: (value?: Array<Entity>) => void) => void;
+}
+
+/*********************************************
+* IEntityQueryCollection
+**********************************************/
+export interface IEntityQueryCollection extends Base.IBaseResults<EntityOData> {
+	done?: (resolve: (value?: Array<EntityOData>) => void) => void;
+}
+
+/*********************************************
+* IEntityQuery
+**********************************************/
+export interface IEntityQuery extends EntityOData, EntityMethods {
+
+}
+
+/*********************************************
+* Entity
+**********************************************/
+export interface Entity extends Base.IBaseResult, EntityProps, EntityCollections, EntityMethods {
+
+}
+
+/*********************************************
+* EntityProps
+**********************************************/
+export interface EntityProps {
+	EstimatedInstanceCount?: number;
+	Name?: string;
+	Namespace?: string;
+}
+
+/*********************************************
+* EntityPropMethods
+**********************************************/
+export interface EntityPropMethods {
+
+}
+
+/*********************************************
+* EntityCollections
+**********************************************/
+export interface EntityCollections extends EntityPropMethods {
+
+}
+
+/*********************************************
+* EntityOData
+**********************************************/
+export interface EntityOData extends Base.IBaseResult, EntityProps, EntityMethods {
+
+}
+
+/*********************************************
+* EntityMethods
+**********************************************/
+export interface EntityMethods {
+	getAssociationView(associationName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getCreatorView(methodInstanceName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getDefaultSpecificFinderView(): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getFilters(methodInstanceName?: string): Base.IBaseCollection<SP.BusinessData.Filter>;
+	getFinderView(methodInstanceName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getIdentifierCount(): Base.IBaseExecution<number>;
+	getIdentifiers(): Base.IBaseCollection<SP.BusinessData.EntityIdentifier>;
+	getLobSystem(): Base.IBaseExecution<SP.BusinessData.LobSystem>;
+	getSpecificFinderView(specificFinderName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+	getUpdaterView(updaterName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
+}
+
+/*********************************************
 * EntityField
 **********************************************/
 export interface EntityField {
@@ -122,167 +203,6 @@ export interface LobSystemInstance {
 **********************************************/
 export interface LobSystemInstanceCollections {
 
-}
-
-/*********************************************
-* ITypeDescriptor
-**********************************************/
-export interface ITypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods, Base.IBaseQuery<ITypeDescriptorQuery> {
-
-}
-
-/*********************************************
-* ITypeDescriptorCollection
-**********************************************/
-export interface ITypeDescriptorCollection extends Base.IBaseResults<TypeDescriptor> {
-	done?: (resolve: (value?: Array<TypeDescriptor>) => void) => void;
-}
-
-/*********************************************
-* ITypeDescriptorQueryCollection
-**********************************************/
-export interface ITypeDescriptorQueryCollection extends Base.IBaseResults<TypeDescriptorOData> {
-	done?: (resolve: (value?: Array<TypeDescriptorOData>) => void) => void;
-}
-
-/*********************************************
-* ITypeDescriptorQuery
-**********************************************/
-export interface ITypeDescriptorQuery extends TypeDescriptorOData, TypeDescriptorMethods {
-
-}
-
-/*********************************************
-* TypeDescriptor
-**********************************************/
-export interface TypeDescriptor extends Base.IBaseResult, TypeDescriptorProps, TypeDescriptorCollections, TypeDescriptorMethods {
-
-}
-
-/*********************************************
-* TypeDescriptorProps
-**********************************************/
-export interface TypeDescriptorProps {
-	ContainsReadOnly?: boolean;
-	IsCollection?: boolean;
-	IsReadOnly?: boolean;
-	Name?: string;
-	TypeName?: string;
-}
-
-/*********************************************
-* TypeDescriptorPropMethods
-**********************************************/
-export interface TypeDescriptorPropMethods {
-
-}
-
-/*********************************************
-* TypeDescriptorCollections
-**********************************************/
-export interface TypeDescriptorCollections extends TypeDescriptorPropMethods {
-
-}
-
-/*********************************************
-* TypeDescriptorOData
-**********************************************/
-export interface TypeDescriptorOData extends Base.IBaseResult, TypeDescriptorProps, TypeDescriptorMethods {
-
-}
-
-/*********************************************
-* TypeDescriptorMethods
-**********************************************/
-export interface TypeDescriptorMethods {
-	containsLocalizedDisplayName(): Base.IBaseExecution<boolean>;
-	getChildTypeDescriptors(): Base.IBaseCollection<SP.BusinessData.TypeDescriptor>;
-	getDefaultDisplayName(): Base.IBaseExecution<string>;
-	getLocalizedDisplayName(): Base.IBaseExecution<string>;
-	getParentTypeDescriptor(): Base.IBaseExecution<SP.BusinessData.TypeDescriptor>;
-	isLeaf(): Base.IBaseExecution<boolean>;
-	isRoot(): Base.IBaseExecution<boolean>;
-}
-
-/*********************************************
-* IEntity
-**********************************************/
-export interface IEntity extends EntityCollections, EntityMethods, Base.IBaseQuery<IEntityQuery> {
-
-}
-
-/*********************************************
-* IEntityCollection
-**********************************************/
-export interface IEntityCollection extends Base.IBaseResults<Entity> {
-	done?: (resolve: (value?: Array<Entity>) => void) => void;
-}
-
-/*********************************************
-* IEntityQueryCollection
-**********************************************/
-export interface IEntityQueryCollection extends Base.IBaseResults<EntityOData> {
-	done?: (resolve: (value?: Array<EntityOData>) => void) => void;
-}
-
-/*********************************************
-* IEntityQuery
-**********************************************/
-export interface IEntityQuery extends EntityOData, EntityMethods {
-
-}
-
-/*********************************************
-* Entity
-**********************************************/
-export interface Entity extends Base.IBaseResult, EntityProps, EntityCollections, EntityMethods {
-
-}
-
-/*********************************************
-* EntityProps
-**********************************************/
-export interface EntityProps {
-	EstimatedInstanceCount?: number;
-	Name?: string;
-	Namespace?: string;
-}
-
-/*********************************************
-* EntityPropMethods
-**********************************************/
-export interface EntityPropMethods {
-
-}
-
-/*********************************************
-* EntityCollections
-**********************************************/
-export interface EntityCollections extends EntityPropMethods {
-
-}
-
-/*********************************************
-* EntityOData
-**********************************************/
-export interface EntityOData extends Base.IBaseResult, EntityProps, EntityMethods {
-
-}
-
-/*********************************************
-* EntityMethods
-**********************************************/
-export interface EntityMethods {
-	getAssociationView(associationName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getCreatorView(methodInstanceName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getDefaultSpecificFinderView(): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getFilters(methodInstanceName?: string): Base.IBaseCollection<SP.BusinessData.Filter>;
-	getFinderView(methodInstanceName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getIdentifierCount(): Base.IBaseExecution<number>;
-	getIdentifiers(): Base.IBaseCollection<SP.BusinessData.EntityIdentifier>;
-	getLobSystem(): Base.IBaseExecution<SP.BusinessData.LobSystem>;
-	getSpecificFinderView(specificFinderName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
-	getUpdaterView(updaterName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
 }
 
 /*********************************************
@@ -424,6 +344,86 @@ export interface MethodExecutionResultOData extends Base.IBaseResult, MethodExec
 **********************************************/
 export interface MethodExecutionResultMethods {
 
+}
+
+/*********************************************
+* ITypeDescriptor
+**********************************************/
+export interface ITypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods, Base.IBaseQuery<ITypeDescriptorQuery> {
+
+}
+
+/*********************************************
+* ITypeDescriptorCollection
+**********************************************/
+export interface ITypeDescriptorCollection extends Base.IBaseResults<TypeDescriptor> {
+	done?: (resolve: (value?: Array<TypeDescriptor>) => void) => void;
+}
+
+/*********************************************
+* ITypeDescriptorQueryCollection
+**********************************************/
+export interface ITypeDescriptorQueryCollection extends Base.IBaseResults<TypeDescriptorOData> {
+	done?: (resolve: (value?: Array<TypeDescriptorOData>) => void) => void;
+}
+
+/*********************************************
+* ITypeDescriptorQuery
+**********************************************/
+export interface ITypeDescriptorQuery extends TypeDescriptorOData, TypeDescriptorMethods {
+
+}
+
+/*********************************************
+* TypeDescriptor
+**********************************************/
+export interface TypeDescriptor extends Base.IBaseResult, TypeDescriptorProps, TypeDescriptorCollections, TypeDescriptorMethods {
+
+}
+
+/*********************************************
+* TypeDescriptorProps
+**********************************************/
+export interface TypeDescriptorProps {
+	ContainsReadOnly?: boolean;
+	IsCollection?: boolean;
+	IsReadOnly?: boolean;
+	Name?: string;
+	TypeName?: string;
+}
+
+/*********************************************
+* TypeDescriptorPropMethods
+**********************************************/
+export interface TypeDescriptorPropMethods {
+
+}
+
+/*********************************************
+* TypeDescriptorCollections
+**********************************************/
+export interface TypeDescriptorCollections extends TypeDescriptorPropMethods {
+
+}
+
+/*********************************************
+* TypeDescriptorOData
+**********************************************/
+export interface TypeDescriptorOData extends Base.IBaseResult, TypeDescriptorProps, TypeDescriptorMethods {
+
+}
+
+/*********************************************
+* TypeDescriptorMethods
+**********************************************/
+export interface TypeDescriptorMethods {
+	containsLocalizedDisplayName(): Base.IBaseExecution<boolean>;
+	getChildTypeDescriptors(): Base.IBaseCollection<SP.BusinessData.TypeDescriptor>;
+	getDefaultDisplayName(): Base.IBaseExecution<string>;
+	getLocalizedDisplayName(): Base.IBaseExecution<string>;
+	getParentTypeDescriptor(): Base.IBaseExecution<SP.BusinessData.TypeDescriptor>;
+	isLeaf(): Base.IBaseExecution<boolean>;
+	isRoot(): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************

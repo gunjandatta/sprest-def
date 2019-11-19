@@ -73,6 +73,20 @@ export interface ActivityLoggerMethods {
 }
 
 /*********************************************
+* MountService
+**********************************************/
+export interface MountService {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* MountServiceCollections
+**********************************************/
+export interface MountServiceCollections {
+
+}
+
+/*********************************************
 * TrackedItemService
 **********************************************/
 export interface TrackedItemService {

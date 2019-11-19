@@ -6,6 +6,7 @@ import { SP } from "../../";
 **********************************************/
 export interface Principal {
 	email?: string;
+	expiration?: string;
 	id?: number;
 	isActive?: boolean;
 	isExternal?: boolean;
@@ -57,12 +58,28 @@ export interface AccessRequestSettingsCollections {
 }
 
 /*********************************************
+* AddressBarLinkSettings
+**********************************************/
+export interface AddressBarLinkSettings {
+	linkDisabled?: boolean;
+	linkPermission?: number;
+}
+
+/*********************************************
+* AddressBarLinkSettingsCollections
+**********************************************/
+export interface AddressBarLinkSettingsCollections {
+
+}
+
+/*********************************************
 * DirectSharingAbilities
 **********************************************/
 export interface DirectSharingAbilities {
 	canAddExternalPrincipal?: SP.Sharing.SharingAbilityStatus;
 	canAddInternalPrincipal?: SP.Sharing.SharingAbilityStatus;
 	canRequestGrantAccess?: SP.Sharing.SharingAbilityStatus;
+	supportsReviewPermission?: SP.Sharing.SharingAbilityStatus;
 }
 
 /*********************************************
@@ -175,6 +192,7 @@ export interface OversharedWebInfoCollections {
 * PermissionCollection
 **********************************************/
 export interface PermissionCollection {
+	hasInheritedLinks?: boolean;
 	links?: Array<SP.Sharing.LinkInfo>;
 	principals?: Array<SP.Sharing.PrincipalInfo>;
 	siteAdmins?: Array<SP.Sharing.PrincipalInfo>;
@@ -319,9 +337,11 @@ export interface SharingLinkAbilities {
 	canAddNewExternalPrincipals?: SP.Sharing.SharingAbilityStatus;
 	canGetEditLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReadLink?: SP.Sharing.SharingAbilityStatus;
+	canGetReviewLink?: SP.Sharing.SharingAbilityStatus;
 	canHaveExternalUsers?: SP.Sharing.SharingAbilityStatus;
 	canManageEditLink?: SP.Sharing.SharingAbilityStatus;
 	canManageReadLink?: SP.Sharing.SharingAbilityStatus;
+	canManageReviewLink?: SP.Sharing.SharingAbilityStatus;
 	linkExpiration?: SP.Sharing.SharingLinkExpirationAbilityStatus;
 	passwordProtected?: SP.Sharing.SharingLinkPasswordAbilityStatus;
 	supportsRestrictedView?: SP.Sharing.SharingAbilityStatus;

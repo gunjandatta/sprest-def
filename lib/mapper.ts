@@ -61,6 +61,75 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.Office.Server.ContentCenter.SPMachineLearningModel": {
+		update: {
+		},
+
+	},
+
+	"Microsoft.Office.Server.ContentCenter.SPMachineLearningModel.Collection": {
+		getByTitle: {
+		argNames: [ "title" ],
+		},
+
+		getByUniqueId: {
+		argNames: [ "uniqueId" ],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+
+	"Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication": {
+		delete: {
+		requestType: RequestType.Delete
+		},
+
+		update: {
+		},
+
+	},
+
+	"Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication.Collection": {
+		batchDelete: {
+		argNames: [ "publications" ],
+		},
+
+		getByModelUniqueId: {
+		argNames: [ "modelUniqueId" ],
+		},
+
+		getByUniqueId: {
+		argNames: [ "uniqueId" ],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+
+	"Microsoft.Office.Server.ContentCenter.SPMachineLearningSample": {
+		update: {
+		},
+
+	},
+
+	"Microsoft.Office.Server.ContentCenter.SPMachineLearningSample.Collection": {
+		getByModelId: {
+		argNames: [ "modelID" ],
+		},
+
+		getByTitle: {
+		argNames: [ "title" ],
+		},
+
+		getByUniqueId: {
+		argNames: [ "uniqueId" ],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+
 	"Microsoft.Office.Server.Search.REST.SearchService": {
 		autocompletions: {
 		argNames: [ "querytext", "sources", "numberOfCompletions", "cursorPosition" ],
@@ -68,6 +137,9 @@ export const Mapper: IMapper = {
 
 		export: {
 		argNames: [ "userName", "startTime" ],
+		},
+
+		exportmanualsuggestions: {
 		},
 
 		exportpopulartenantqueries: {
@@ -108,7 +180,7 @@ export const Mapper: IMapper = {
 		},
 
 		getqueryconfiguration: {
-		argNames: [ "callLocalSearchFarmsOnly" ],
+		argNames: [ "callLocalSearchFarmsOnly", "skipGroupObjectIdLookup" ],
 		},
 
 		getxssearchpolicy: {
@@ -218,12 +290,6 @@ export const Mapper: IMapper = {
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
-	},
-
-	"Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob": {
-		update: {
-		},
 
 	},
 
@@ -410,19 +476,6 @@ export const Mapper: IMapper = {
 
 	},
 
-	"Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob.Collection": {
-		getBySiteUrl: {
-		argNames: [ "siteUrl" ],
-		},
-
-		getSiteRenameReport: {
-		argNames: [ "state" ],
-		},
-
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-
-	},
-
 	"Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota": {
 		update: {
 		},
@@ -491,7 +544,40 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob.Collection": {
+		getBySiteUrl: {
+		argNames: [ "siteUrl" ],
+		},
+
+		getJobsByParentId: {
+		argNames: [ "parentId" ],
+		},
+
+		getJobsByParentIdAndState: {
+		argNames: [ "parentId", "state" ],
+		},
+
+		getJobsBySiteUrl: {
+		argNames: [ "url" ],
+		},
+
+		getSiteRenameReport: {
+		argNames: [ "state" ],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+
 	"Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob.Collection": {
+		getJobById: {
+		argNames: [ "jobId", "loadProgressState" ],
+		},
+
+		getJobsByState: {
+		argNames: [ "state" ],
+		},
+
 		getState: {
 		},
 
@@ -630,6 +716,21 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.Online.SharePoint.TenantAdministration.SPOGroup": {
+		getGroupInfo: {
+		argNames: [ "groupId" ],
+		},
+
+		updateGroupProperties: {
+		argNames: [ "groupId", "displayName" ],
+		},
+
+		updateGroupPropertiesBySiteId: {
+		argNames: [ "groupId", "siteId", "displayName" ],
+		},
+
+	},
+
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService": {
 		exportCSVFile: {
 		},
@@ -669,6 +770,10 @@ export const Mapper: IMapper = {
 		argNames: [ "siteId" ],
 		},
 
+		getSiteUserGroups: {
+		argNames: [ "siteId", "userGroupIds" ],
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -692,6 +797,10 @@ export const Mapper: IMapper = {
 		getIdleSessionSignOutForUnmanagedDevices: {
 		},
 
+		getSPOAllWebTemplates: {
+		argNames: [ "cultureName", "compatibilityLevel" ],
+		},
+
 		getSPOTenantAllWebTemplates: {
 		},
 
@@ -713,6 +822,9 @@ export const Mapper: IMapper = {
 
 		grantHubSiteRightsById: {
 		argNames: [ "hubSiteId", "principals", "grantedRights" ],
+		},
+
+		hasValidEducationLicense: {
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -761,6 +873,10 @@ export const Mapper: IMapper = {
 		argNames: [ "sourceUrl", "targetUrl", "archiveUrl" ],
 		},
 
+		swapSiteWithSmartGestureOption: {
+		argNames: [ "sourceUrl", "targetUrl", "archiveUrl", "includeSmartGestures" ],
+		},
+
 		unregisterHubSite: {
 		argNames: [ "siteUrl" ],
 		},
@@ -806,7 +922,7 @@ export const Mapper: IMapper = {
 		},
 
 		addToOrgAssetsLibAndCdn: {
-		argNames: [ "cdnType", "libUrl", "thumbnailUrl" ],
+		argNames: [ "cdnType", "libUrl", "thumbnailUrl", "orgAssetType" ],
 		},
 
 		createTenantCdnDefaultOrigins: {
@@ -881,6 +997,10 @@ export const Mapper: IMapper = {
 		argNames: [ "uniqueIds" ],
 		},
 
+		removeFromOrgAssets: {
+		argNames: [ "libUrl", "listId" ],
+		},
+
 		removeFromOrgAssetsAndCdn: {
 		argNames: [ "remove", "cdnType", "libUrl" ],
 		},
@@ -913,7 +1033,7 @@ export const Mapper: IMapper = {
 		},
 
 		setOrgAssetsLib: {
-		argNames: [ "libUrl", "thumbnailUrl" ],
+		argNames: [ "libUrl", "thumbnailUrl", "orgAssetType" ],
 		},
 
 		setTenantCdnEnabled: {
@@ -1139,6 +1259,10 @@ export const Mapper: IMapper = {
 		argNames: [ "id" ],
 		},
 
+		upload: {
+		argNames: [ "Content", "Overwrite", "Url" ],
+		},
+
 	},
 
 	"Microsoft.SharePoint.Navigation.REST.NavigationServiceRest": {
@@ -1243,6 +1367,10 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.SharePoint.Portal.SPSiteManager": {
+		archiveTeamChannelSite: {
+		argNames: [ "siteId", "archive" ],
+		},
+
 		canCreateHubJoinedSite: {
 		argNames: [ "hubSiteId" ],
 		},
@@ -1254,6 +1382,10 @@ export const Mapper: IMapper = {
 		delete: {
 		argNames: [ "siteId" ],
 		requestType: RequestType.Delete
+		},
+
+		getIBSegmentLabels: {
+		argNames: [ "IBSegments" ],
 		},
 
 		getTeamChannelSiteOwner: {
@@ -1276,10 +1408,21 @@ export const Mapper: IMapper = {
 		argNames: [ "url" ],
 		},
 
+		updateWorkflow2013Endpoint: {
+		argNames: [ "workflowServiceAddress", "workflowHostname" ],
+		},
+
 	},
 
 	"Microsoft.SharePoint.Portal.SharePointHomeServiceContextBuilder": {
 		context: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.Portal.SiteIconManager": {
+		getSiteLogo: {
+		argNames: [ "siteUrl" ],
 		},
 
 	},
@@ -1301,6 +1444,10 @@ export const Mapper: IMapper = {
 	"Microsoft.SharePoint.TenantCdn.TenantCdnApi": {
 		getCdnUrls: {
 		argNames: [ "items" ],
+		},
+
+		isFolderUrlsInTenantCdn: {
+		argNames: [ "urls", "cdnType" ],
 		},
 
 	},
@@ -1448,15 +1595,6 @@ export const Mapper: IMapper = {
 
 	},
 
-	"PS.DraftAssignment": {
-		delete: {
-		requestType: RequestType.Delete
-		},
-
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-
-	},
-
 	"PS.DraftAssignment.Collection": {
 		add: {
 		argNames: [ "parameters" ],
@@ -1468,60 +1606,6 @@ export const Mapper: IMapper = {
 
 		getById: {
 		argNames: [ "objectId" ],
-		},
-
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-
-	},
-
-	"PS.DraftProject": {
-		changeEnterpriseProjectType: {
-		argNames: [ "enterpriseProjectTypeUid" ],
-		},
-
-		checkIn: {
-		argNames: [ "force" ],
-		},
-
-		getChanges: {
-		argNames: [ "token" ],
-		},
-
-		getResourcePlanByUrl: {
-		argNames: [ "start", "end", "scale" ],
-		},
-
-		leaveProjectStage: {
-		},
-
-		publish: {
-		argNames: [ "checkIn" ],
-		},
-
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-
-		readyToLeaveProjectStage: {
-		},
-
-		update: {
-		},
-
-		updateCustomFields: {
-		argNames: [ "customFieldDictionary" ],
-		},
-
-		updateIdeaListItemStatus: {
-		argNames: [ "status" ],
-		},
-
-		validate: {
-		},
-
-	},
-
-	"PS.DraftProjectResource": {
-		delete: {
-		requestType: RequestType.Delete
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1549,15 +1633,6 @@ export const Mapper: IMapper = {
 
 	},
 
-	"PS.DraftTask": {
-		delete: {
-		requestType: RequestType.Delete
-		},
-
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-
-	},
-
 	"PS.DraftTask.Collection": {
 		add: {
 		argNames: [ "parameters" ],
@@ -1569,15 +1644,6 @@ export const Mapper: IMapper = {
 
 		getById: {
 		argNames: [ "objectId" ],
-		},
-
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-
-	},
-
-	"PS.DraftTaskLink": {
-		delete: {
-		requestType: RequestType.Delete
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2188,6 +2254,9 @@ export const Mapper: IMapper = {
 	},
 
 	"PS.QueueJob.Collection": {
+		getAll: {
+		},
+
 		getByGuid: {
 		argNames: [ "uid" ],
 		},
@@ -3095,6 +3164,10 @@ export const Mapper: IMapper = {
 		argNames: [ "groupId", "tenantInstanceId" ],
 		},
 
+		getOrCreateUnifiedGroupWithPreferredDataLocation: {
+		argNames: [ "groupId", "preferredDataLocation" ],
+		},
+
 		notifyDataChanges: {
 		argNames: [ "data" ],
 		},
@@ -3200,6 +3273,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		setShowInDisplayForm: {
@@ -3254,6 +3333,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3275,6 +3360,12 @@ export const Mapper: IMapper = {
 	"SP.FieldChoice": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3300,6 +3391,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3321,6 +3418,12 @@ export const Mapper: IMapper = {
 	"SP.FieldCurrency": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3346,6 +3449,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3369,6 +3478,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3390,6 +3505,12 @@ export const Mapper: IMapper = {
 	"SP.FieldGuid": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3439,6 +3560,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3460,6 +3587,12 @@ export const Mapper: IMapper = {
 	"SP.FieldLookup": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3485,6 +3618,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3506,6 +3645,12 @@ export const Mapper: IMapper = {
 	"SP.FieldMultiLineText": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3531,6 +3676,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3552,6 +3703,12 @@ export const Mapper: IMapper = {
 	"SP.FieldRatingScale": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3577,6 +3734,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3598,6 +3761,12 @@ export const Mapper: IMapper = {
 	"SP.FieldThumbnail": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3623,6 +3792,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -3644,6 +3819,12 @@ export const Mapper: IMapper = {
 	"SP.FieldUser": {
 		delete: {
 		requestType: RequestType.Delete
+		},
+
+		disableIndex: {
+		},
+
+		enableIndex: {
 		},
 
 		setShowInDisplayForm: {
@@ -3706,6 +3887,10 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		deleteWithParameters: {
+		argNames: [ "parameters" ],
+		},
+
 		deny: {
 		argNames: [ "comment" ],
 		},
@@ -3716,6 +3901,10 @@ export const Mapper: IMapper = {
 
 		finishUpload: {
 		argNames: [ "uploadId", "fileOffset", "stream" ],
+		},
+
+		finishUploadWithChecksum: {
+		argNames: [ "uploadId", "fileOffset", "checksum", "stream" ],
 		},
 
 		getFileUserValue: {
@@ -3736,6 +3925,10 @@ export const Mapper: IMapper = {
 
 		getPreAuthorizedAccessUrl: {
 		argNames: [ "expirationHours" ],
+		},
+
+		getPreAuthorizedAccessUrl2: {
+		argNames: [ "expirationHours", "expirationMinuites" ],
 		},
 
 		getUploadStatus: {
@@ -3772,6 +3965,10 @@ export const Mapper: IMapper = {
 
 		recycleWithETag: {
 		argNames: [ "etagMatch" ],
+		},
+
+		recycleWithParameters: {
+		argNames: [ "parameters" ],
 		},
 
 		saveBinaryStream: {
@@ -3821,7 +4018,7 @@ export const Mapper: IMapper = {
 		},
 
 		addUsingPath: {
-		argNames: [ "DecodedUrl", "Overwrite", "contentStream" ],
+		argNames: [ "DecodedUrl", "AutoCheckoutOnInvalidData", "Overwrite", "XorHash", "contentStream" ],
 		},
 
 		getByPathOrAddStub: {
@@ -3897,6 +4094,10 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		deleteWithParameters: {
+		argNames: [ "parameters" ],
+		},
+
 		getChanges: {
 		argNames: [ "query" ],
 		},
@@ -3916,6 +4117,10 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recycle: {
+		},
+
+		recycleWithParameters: {
+		argNames: [ "parameters" ],
 		},
 
 		update: {
@@ -4011,6 +4216,10 @@ export const Mapper: IMapper = {
 		argNames: [ "hubSiteId" ],
 		},
 
+		getConnectedHubs: {
+		argNames: [ "hubSiteId", "option" ],
+		},
+
 		getSiteUrlByHubSiteId: {
 		argNames: [ "hubSiteId" ],
 		},
@@ -4033,6 +4242,12 @@ export const Mapper: IMapper = {
 		},
 
 		update: {
+		},
+
+	},
+
+	"SP.KnowledgeHub": {
+		siteReference: {
 		},
 
 	},
@@ -4176,7 +4391,7 @@ export const Mapper: IMapper = {
 		},
 
 		renderListDataAsStream: {
-		argNames: [ "parameters", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "RootFolder", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId" ],
+		argNames: [ "parameters", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "RootFolder", "RootFolderUniqueId", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId" ],
 		},
 
 		renderListFilterData: {
@@ -4272,6 +4487,10 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		deleteWithParameters: {
+		argNames: [ "parameters" ],
+		},
+
 		getChanges: {
 		argNames: [ "query" ],
 		},
@@ -4306,6 +4525,10 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recycle: {
+		},
+
+		recycleWithParameters: {
+		argNames: [ "parameters" ],
 		},
 
 		resetRoleInheritance: {
@@ -4613,6 +4836,15 @@ export const Mapper: IMapper = {
 
 	},
 
+	"SP.MultilingualSettings": {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		setNotificationRecipients: {
+		argNames: [ "request" ],
+		},
+
+	},
+
 	"SP.Navigation": {
 		getNodeById: {
 		argNames: [ "id" ],
@@ -4696,6 +4928,18 @@ export const Mapper: IMapper = {
 	"SP.Publishing.EmbedService": {
 		embedData: {
 		argNames: [ "url", "version" ],
+		},
+
+	},
+
+	"SP.Publishing.Navigation.PortalNavigationCacheWrapper": {
+		disable: {
+		},
+
+		enable: {
+		},
+
+		refresh: {
 		},
 
 	},
@@ -4838,6 +5082,10 @@ export const Mapper: IMapper = {
 		savePageAsTemplate: {
 		},
 
+		schedulePublish: {
+		argNames: [ "sitePage" ],
+		},
+
 		sharePagePreviewByEmail: {
 		argNames: [ "message", "recipientEmails" ],
 		},
@@ -4925,6 +5173,8 @@ export const Mapper: IMapper = {
 		publish: {
 		},
 
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		saveDraft: {
 		argNames: [ "sitePage" ],
 		},
@@ -4938,6 +5188,10 @@ export const Mapper: IMapper = {
 		},
 
 		savePageAsTemplate: {
+		},
+
+		schedulePublish: {
+		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: {
@@ -4962,15 +5216,19 @@ export const Mapper: IMapper = {
 		},
 
 		feed: {
-		argNames: [ "promotedState", "published", "metadataFilter" ],
+		argNames: [ "promotedState", "published", "metadataFilter", "languageOverride" ],
 		},
 
 		feedTargeted: {
-		argNames: [ "promotedState", "published", "metadataFilter" ],
+		argNames: [ "promotedState", "published", "metadataFilter", "languageOverride" ],
 		},
 
 		getById: {
 		argNames: [ "id" ],
+		},
+
+		getByUniqueId: {
+		argNames: [ "uniqueId" ],
 		},
 
 		getByUrl: {
@@ -4996,6 +5254,63 @@ export const Mapper: IMapper = {
 
 		updateFullPageApp: {
 		argNames: [ "serverRelativeUrl", "webPartDataAsJson" ],
+		},
+
+	},
+
+	"SP.Publishing.SitePage3D": {
+		checkOut: {
+		},
+
+		checkoutPage: {
+		},
+
+		copy: {
+		},
+
+		createNewsCopy: {
+		},
+
+		demoteFromNews: {
+		},
+
+		discardPage: {
+		},
+
+		getVersion: {
+		argNames: [ "versionId" ],
+		},
+
+		promoteToNews: {
+		},
+
+		publish: {
+		},
+
+		saveDraft: {
+		argNames: [ "sitePage" ],
+		},
+
+		savePage: {
+		argNames: [ "pageStream" ],
+		},
+
+		savePageAsDraft: {
+		argNames: [ "pageStream" ],
+		},
+
+		savePageAsTemplate: {
+		},
+
+		schedulePublish: {
+		argNames: [ "sitePage" ],
+		},
+
+		sharePagePreviewByEmail: {
+		argNames: [ "message", "recipientEmails" ],
+		},
+
+		update: {
 		},
 
 	},
@@ -5490,7 +5805,7 @@ export const Mapper: IMapper = {
 		},
 
 		createSPAsyncReadJob: {
-		argNames: [ "url", "options" ],
+		argNames: [ "url", "readOptions", "encryptionOption", "azureContainerManifestUri", "azureQueueReportUri" ],
 		},
 
 		deleteMigrationJob: {
@@ -5547,9 +5862,6 @@ export const Mapper: IMapper = {
 		argNames: [ "hubSiteId", "approvalToken", "approvalCorrelationId" ],
 		},
 
-		makeHubSite: {
-		},
-
 		multiGeoCopyJob: {
 		argNames: [ "jobId", "userId", "binaryPayload" ],
 		},
@@ -5600,9 +5912,6 @@ export const Mapper: IMapper = {
 
 		registerHubSite: {
 		argNames: [ "creationInformation" ],
-		},
-
-		removeHubSite: {
 		},
 
 		rollTenantBringYourOwnKey: {
@@ -5857,6 +6166,12 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		disableIndex: {
+		},
+
+		enableIndex: {
+		},
+
 		setShowInDisplayForm: {
 		argNames: [ "value" ],
 		},
@@ -5930,6 +6245,16 @@ export const Mapper: IMapper = {
 
 	"SP.Translation.TranslationJobStatus": {
 		getAllItems: {
+		},
+
+	},
+
+	"SP.TranslationStatusCollection": {
+		create: {
+		argNames: [ "request" ],
+		},
+
+		updateTranslationLanguages: {
 		},
 
 	},
@@ -6158,6 +6483,10 @@ export const Mapper: IMapper = {
 		argNames: [ "cacheItems" ],
 		},
 
+		deleteCacheItemsAsync2: {
+		argNames: [ "cacheItems", "mySiteUrl" ],
+		},
+
 		loadUserProfile: {
 		argNames: [ "email" ],
 		},
@@ -6166,16 +6495,32 @@ export const Mapper: IMapper = {
 		argNames: [ "folderPath" ],
 		},
 
+		readCache2: {
+		argNames: [ "folderPath", "mySiteUrl" ],
+		},
+
 		readCacheOrCreate: {
 		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing" ],
+		},
+
+		readCacheOrCreate2: {
+		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing", "mySiteUrl" ],
 		},
 
 		readCacheOrCreateOrderById: {
 		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing" ],
 		},
 
+		readCacheOrCreateOrderById2: {
+		argNames: [ "folderPath", "requiredCacheKeys", "createIfMissing", "mySiteUrl" ],
+		},
+
 		writeCache: {
 		argNames: [ "cacheItems" ],
+		},
+
+		writeCache2: {
+		argNames: [ "cacheItems", "mySiteUrl" ],
 		},
 
 	},
@@ -6397,6 +6742,9 @@ export const Mapper: IMapper = {
 		argNames: [ "inputStream" ],
 		},
 
+		getAllClientSideComponents: {
+		},
+
 		getAppBdcCatalog: {
 		},
 
@@ -6523,9 +6871,6 @@ export const Mapper: IMapper = {
 		argNames: [ "allowCreate" ],
 		},
 
-		getOnePageContextAsStream: {
-		},
-
 		getPushNotificationSubscriber: {
 		argNames: [ "deviceAppInstanceId" ],
 		},
@@ -6547,6 +6892,9 @@ export const Mapper: IMapper = {
 		},
 
 		getRegionalDateTimeSchema: {
+		},
+
+		getSPAppContextAsStream: {
 		},
 
 		getSharingLinkData: {
@@ -6665,6 +7013,10 @@ export const Mapper: IMapper = {
 
 		update: {
 		argNames: [ "properties" ],
+		},
+
+		uploadImage: {
+		argNames: [ "listTitle", "imageName", "contentStream" ],
 		},
 
 	},
@@ -7171,6 +7523,10 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		deleteWithParameters: {
+		argNames: [ "parameters" ],
+		},
+
 		getChanges: {
 		argNames: [ "query" ],
 		},
@@ -7203,6 +7559,10 @@ export const Mapper: IMapper = {
 		},
 
 		recycle: {
+		},
+
+		recycleWithParameters: {
+		argNames: [ "parameters" ],
 		},
 
 		resetRoleInheritance: {

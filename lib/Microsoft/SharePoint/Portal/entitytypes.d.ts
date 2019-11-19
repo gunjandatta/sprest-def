@@ -172,78 +172,6 @@ export interface GroupSiteManagerMethods {
 }
 
 /*********************************************
-* ISiteLinkingManager
-**********************************************/
-export interface ISiteLinkingManager extends SiteLinkingManagerCollections, SiteLinkingManagerMethods, Base.IBaseQuery<ISiteLinkingManagerQuery> {
-
-}
-
-/*********************************************
-* ISiteLinkingManagerCollection
-**********************************************/
-export interface ISiteLinkingManagerCollection extends Base.IBaseResults<SiteLinkingManager> {
-	done?: (resolve: (value?: Array<SiteLinkingManager>) => void) => void;
-}
-
-/*********************************************
-* ISiteLinkingManagerQueryCollection
-**********************************************/
-export interface ISiteLinkingManagerQueryCollection extends Base.IBaseResults<SiteLinkingManagerOData> {
-	done?: (resolve: (value?: Array<SiteLinkingManagerOData>) => void) => void;
-}
-
-/*********************************************
-* ISiteLinkingManagerQuery
-**********************************************/
-export interface ISiteLinkingManagerQuery extends SiteLinkingManagerOData, SiteLinkingManagerMethods {
-
-}
-
-/*********************************************
-* SiteLinkingManager
-**********************************************/
-export interface SiteLinkingManager extends Base.IBaseResult, SiteLinkingManagerProps, SiteLinkingManagerCollections, SiteLinkingManagerMethods {
-
-}
-
-/*********************************************
-* SiteLinkingManagerProps
-**********************************************/
-export interface SiteLinkingManagerProps {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-}
-
-/*********************************************
-* SiteLinkingManagerPropMethods
-**********************************************/
-export interface SiteLinkingManagerPropMethods {
-
-}
-
-/*********************************************
-* SiteLinkingManagerCollections
-**********************************************/
-export interface SiteLinkingManagerCollections extends SiteLinkingManagerPropMethods {
-
-}
-
-/*********************************************
-* SiteLinkingManagerOData
-**********************************************/
-export interface SiteLinkingManagerOData extends Base.IBaseResult, SiteLinkingManagerProps, SiteLinkingManagerMethods {
-
-}
-
-/*********************************************
-* SiteLinkingManagerMethods
-**********************************************/
-export interface SiteLinkingManagerMethods {
-	getSiteLinks(): Base.IBaseExecution<Microsoft.SharePoint.Portal.LinkedSitesListContract>;
-	linkGroup(groupId?: any): Base.IBaseExecution<boolean>;
-	unlinkGroup(groupId?: any): Base.IBaseExecution<boolean>;
-}
-
-/*********************************************
 * CommunityModeration
 **********************************************/
 export interface CommunityModeration {
@@ -503,14 +431,159 @@ export interface SPSiteManagerOData extends Base.IBaseResult, SPSiteManagerProps
 * SPSiteManagerMethods
 **********************************************/
 export interface SPSiteManagerMethods {
+	archiveTeamChannelSite(siteId?: any, archive?: boolean): Base.IBaseExecution<any>;
 	canCreateHubJoinedSite(hubSiteId?: any): Base.IBaseExecution<boolean>;
 	create(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
 	delete(siteId?: any): Base.IBaseExecution<any>;
+	getIBSegmentLabels(IBSegments?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.Portal.IBSegmentInfo>;
 	getTeamChannelSiteOwner(siteId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GetTeamChannelSiteOwnerResponse>;
 	restoreTeamsChannelSite(siteId?: any, relatedGroupId?: any): Base.IBaseExecution<any>;
 	setTeamChannelSiteOwner(siteId?: any, logonName?: string, secondaryLogonName?: string): Base.IBaseExecution<any>;
 	siteUrl(siteId?: any): Base.IBaseExecution<string>;
 	status(url?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
+	updateWorkflow2013Endpoint(workflowServiceAddress?: string, workflowHostname?: string): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* ISiteIconManager
+**********************************************/
+export interface ISiteIconManager extends SiteIconManagerCollections, SiteIconManagerMethods, Base.IBaseQuery<ISiteIconManagerQuery> {
+
+}
+
+/*********************************************
+* ISiteIconManagerCollection
+**********************************************/
+export interface ISiteIconManagerCollection extends Base.IBaseResults<SiteIconManager> {
+	done?: (resolve: (value?: Array<SiteIconManager>) => void) => void;
+}
+
+/*********************************************
+* ISiteIconManagerQueryCollection
+**********************************************/
+export interface ISiteIconManagerQueryCollection extends Base.IBaseResults<SiteIconManagerOData> {
+	done?: (resolve: (value?: Array<SiteIconManagerOData>) => void) => void;
+}
+
+/*********************************************
+* ISiteIconManagerQuery
+**********************************************/
+export interface ISiteIconManagerQuery extends SiteIconManagerOData, SiteIconManagerMethods {
+
+}
+
+/*********************************************
+* SiteIconManager
+**********************************************/
+export interface SiteIconManager extends Base.IBaseResult, SiteIconManagerProps, SiteIconManagerCollections, SiteIconManagerMethods {
+
+}
+
+/*********************************************
+* SiteIconManagerProps
+**********************************************/
+export interface SiteIconManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteIconManagerPropMethods
+**********************************************/
+export interface SiteIconManagerPropMethods {
+
+}
+
+/*********************************************
+* SiteIconManagerCollections
+**********************************************/
+export interface SiteIconManagerCollections extends SiteIconManagerPropMethods {
+
+}
+
+/*********************************************
+* SiteIconManagerOData
+**********************************************/
+export interface SiteIconManagerOData extends Base.IBaseResult, SiteIconManagerProps, SiteIconManagerMethods {
+
+}
+
+/*********************************************
+* SiteIconManagerMethods
+**********************************************/
+export interface SiteIconManagerMethods {
+	getSiteLogo(siteUrl?: string): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* ISiteLinkingManager
+**********************************************/
+export interface ISiteLinkingManager extends SiteLinkingManagerCollections, SiteLinkingManagerMethods, Base.IBaseQuery<ISiteLinkingManagerQuery> {
+
+}
+
+/*********************************************
+* ISiteLinkingManagerCollection
+**********************************************/
+export interface ISiteLinkingManagerCollection extends Base.IBaseResults<SiteLinkingManager> {
+	done?: (resolve: (value?: Array<SiteLinkingManager>) => void) => void;
+}
+
+/*********************************************
+* ISiteLinkingManagerQueryCollection
+**********************************************/
+export interface ISiteLinkingManagerQueryCollection extends Base.IBaseResults<SiteLinkingManagerOData> {
+	done?: (resolve: (value?: Array<SiteLinkingManagerOData>) => void) => void;
+}
+
+/*********************************************
+* ISiteLinkingManagerQuery
+**********************************************/
+export interface ISiteLinkingManagerQuery extends SiteLinkingManagerOData, SiteLinkingManagerMethods {
+
+}
+
+/*********************************************
+* SiteLinkingManager
+**********************************************/
+export interface SiteLinkingManager extends Base.IBaseResult, SiteLinkingManagerProps, SiteLinkingManagerCollections, SiteLinkingManagerMethods {
+
+}
+
+/*********************************************
+* SiteLinkingManagerProps
+**********************************************/
+export interface SiteLinkingManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteLinkingManagerPropMethods
+**********************************************/
+export interface SiteLinkingManagerPropMethods {
+
+}
+
+/*********************************************
+* SiteLinkingManagerCollections
+**********************************************/
+export interface SiteLinkingManagerCollections extends SiteLinkingManagerPropMethods {
+
+}
+
+/*********************************************
+* SiteLinkingManagerOData
+**********************************************/
+export interface SiteLinkingManagerOData extends Base.IBaseResult, SiteLinkingManagerProps, SiteLinkingManagerMethods {
+
+}
+
+/*********************************************
+* SiteLinkingManagerMethods
+**********************************************/
+export interface SiteLinkingManagerMethods {
+	getSiteLinks(): Base.IBaseExecution<Microsoft.SharePoint.Portal.LinkedSitesListContract>;
+	linkGroup(groupId?: any): Base.IBaseExecution<boolean>;
+	unlinkGroup(groupId?: any): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************

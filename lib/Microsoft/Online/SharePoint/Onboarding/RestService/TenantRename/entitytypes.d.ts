@@ -5,15 +5,17 @@ import { Microsoft } from "../../../../../../";
 * TenantRenameJobEntityData
 **********************************************/
 export interface TenantRenameJobEntityData {
+	IncludeGestures?: string;
+	JobId?: any;
 	SkipDomainCheck?: boolean;
 	SourceAdminSiteUrl?: string;
-	SourceDomainPrefixFixup?: string;
 	SourceMySiteHostUrl?: string;
 	SourceRootSiteUrl?: string;
 	TargetAdminSiteUrl?: string;
 	TargetDomainPrefix?: string;
 	TargetMySiteHostUrl?: string;
 	TargetRootSiteUrl?: string;
+	UseV2TenantRename?: boolean;
 }
 
 /*********************************************
@@ -27,8 +29,12 @@ export interface TenantRenameJobEntityDataCollections {
 * TenantRenameJob
 **********************************************/
 export interface TenantRenameJob {
-	JobId?: any;
+	FailedSitesCount?: number;
+	InprogressSitesCount?: number;
 	JobState?: string;
+	QueuedSitesCount?: number;
+	SuccessSitesCount?: number;
+	SuspendedSitesCount?: number;
 	TriggeredBy?: string;
 }
 
@@ -43,5 +49,7 @@ export interface TenantRenameJobCollections extends TenantRenameJobCollectionMet
 * TenantRenameJobCollectionMethods
 **********************************************/
 export interface TenantRenameJobCollectionMethods {
+	getJobById(jobId?: any, loadProgressState?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
+	getJobsByState(state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>>;
 	getState(): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
 }

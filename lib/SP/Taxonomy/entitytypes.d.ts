@@ -80,6 +80,8 @@ export interface TaxonomyFieldOData extends Base.IBaseResult, TaxonomyFieldProps
 **********************************************/
 export interface TaxonomyFieldMethods {
 	delete(): Base.IBaseExecution<any>;
+	disableIndex(): Base.IBaseExecution<number>;
+	enableIndex(): Base.IBaseExecution<number>;
 	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
 	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;

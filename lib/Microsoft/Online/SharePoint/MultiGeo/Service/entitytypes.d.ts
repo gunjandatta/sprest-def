@@ -155,44 +155,9 @@ export interface GroupMoveJobEntityDataCollections {
 }
 
 /*********************************************
-* ICrossFarmGroupMoveJob
-**********************************************/
-export interface ICrossFarmGroupMoveJob extends CrossFarmGroupMoveJobCollections, CrossFarmGroupMoveJobMethods, Base.IBaseQuery<ICrossFarmGroupMoveJobQuery> {
-
-}
-
-/*********************************************
-* ICrossFarmGroupMoveJobCollection
-**********************************************/
-export interface ICrossFarmGroupMoveJobCollection extends Base.IBaseResults<CrossFarmGroupMoveJob>, CrossFarmGroupMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<CrossFarmGroupMoveJob>) => void) => void;
-}
-
-/*********************************************
-* ICrossFarmGroupMoveJobQueryCollection
-**********************************************/
-export interface ICrossFarmGroupMoveJobQueryCollection extends Base.IBaseResults<CrossFarmGroupMoveJobOData>, CrossFarmGroupMoveJobCollectionMethods {
-	done?: (resolve: (value?: Array<CrossFarmGroupMoveJobOData>) => void) => void;
-}
-
-/*********************************************
-* ICrossFarmGroupMoveJobQuery
-**********************************************/
-export interface ICrossFarmGroupMoveJobQuery extends CrossFarmGroupMoveJobOData, CrossFarmGroupMoveJobMethods {
-
-}
-
-/*********************************************
 * CrossFarmGroupMoveJob
 **********************************************/
-export interface CrossFarmGroupMoveJob extends Base.IBaseResult, CrossFarmGroupMoveJobProps, CrossFarmGroupMoveJobCollections, CrossFarmGroupMoveJobMethods {
-
-}
-
-/*********************************************
-* CrossFarmGroupMoveJobProps
-**********************************************/
-export interface CrossFarmGroupMoveJobProps {
+export interface CrossFarmGroupMoveJob {
 	IsContentMoved?: boolean;
 	LastModified?: any;
 	StartedDateInUtc?: any;
@@ -200,16 +165,9 @@ export interface CrossFarmGroupMoveJobProps {
 }
 
 /*********************************************
-* CrossFarmGroupMoveJobPropMethods
-**********************************************/
-export interface CrossFarmGroupMoveJobPropMethods {
-
-}
-
-/*********************************************
 * CrossFarmGroupMoveJobCollections
 **********************************************/
-export interface CrossFarmGroupMoveJobCollections extends CrossFarmGroupMoveJobPropMethods {
+export interface CrossFarmGroupMoveJobCollections extends CrossFarmGroupMoveJobCollectionMethods {
 
 }
 
@@ -217,21 +175,7 @@ export interface CrossFarmGroupMoveJobCollections extends CrossFarmGroupMoveJobP
 * CrossFarmGroupMoveJobCollectionMethods
 **********************************************/
 export interface CrossFarmGroupMoveJobCollectionMethods {
-	getByMoveId(moveId?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobMethods;
-}
-
-/*********************************************
-* CrossFarmGroupMoveJobOData
-**********************************************/
-export interface CrossFarmGroupMoveJobOData extends Base.IBaseResult, CrossFarmGroupMoveJobProps, CrossFarmGroupMoveJobMethods {
-
-}
-
-/*********************************************
-* CrossFarmGroupMoveJobMethods
-**********************************************/
-export interface CrossFarmGroupMoveJobMethods {
-	update(): Base.IBaseExecution<any>;
+	getByMoveId(moveId?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobCollections;
 }
 
 /*********************************************
@@ -1019,7 +963,7 @@ export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaPro
 	AllowedDataLocations(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation> & Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationCollectionMethods;
 	AllowedDataLocations(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocation> & Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationCollections & Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationMethods;
 	CrossFarmGroupMoveJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobCollectionMethods;
-	CrossFarmGroupMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobMethods;
+	CrossFarmGroupMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmGroupMoveJobCollections;
 	CrossFarmSiteMoveJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobCollectionMethods;
 	CrossFarmSiteMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobMethods;
 	CrossFarmUserMoveJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobCollectionMethods;
@@ -1034,8 +978,6 @@ export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaPro
 	GroupMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobMethods;
 	SiteMoveJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollectionMethods;
 	SiteMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobMethods;
-	SiteRenameJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollectionMethods;
-	SiteRenameJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollections;
 	StorageQuotas(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollectionMethods;
 	StorageQuotas(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollections & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaMethods;
 	TenantInformationCollection(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
@@ -1064,7 +1006,6 @@ export interface MultiGeoServicesBetaOData extends Base.IBaseResult, MultiGeoSer
 	GlobalAdminCheck: Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck & Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheckCollections;
 	GroupMoveJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobCollectionMethods;
 	SiteMoveJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollectionMethods;
-	SiteRenameJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollectionMethods;
 	StorageQuotas: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollectionMethods;
 	TaxonomyReplicationParameters: Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters & Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParametersCollections;
 	TenantInformationCollection: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
@@ -1164,47 +1105,6 @@ export interface SiteMoveJobMethods {
 	cancel(): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
-}
-
-/*********************************************
-* SiteRenameJobEntityData
-**********************************************/
-export interface SiteRenameJobEntityData {
-	SourceSiteUrl?: string;
-	TargetSiteTitle?: string;
-	TargetSiteUrl?: string;
-}
-
-/*********************************************
-* SiteRenameJobEntityDataCollections
-**********************************************/
-export interface SiteRenameJobEntityDataCollections {
-
-}
-
-/*********************************************
-* SiteRenameJob
-**********************************************/
-export interface SiteRenameJob {
-	JobId?: any;
-	JobState?: string;
-	SiteId?: any;
-	TriggeredBy?: string;
-}
-
-/*********************************************
-* SiteRenameJobCollections
-**********************************************/
-export interface SiteRenameJobCollections extends SiteRenameJobCollectionMethods {
-
-}
-
-/*********************************************
-* SiteRenameJobCollectionMethods
-**********************************************/
-export interface SiteRenameJobCollectionMethods {
-	getBySiteUrl(siteUrl?: string): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJobCollections;
-	getSiteRenameReport(state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.MultiGeo.Service.SiteRenameJob>>;
 }
 
 /*********************************************
@@ -1371,6 +1271,7 @@ export interface TenantInformation {
 	PortalDomain?: string;
 	RootSiteDomain?: string;
 	TenantAdminDomain?: string;
+	VanityDomains?: { results: Array<string> };
 }
 
 /*********************************************

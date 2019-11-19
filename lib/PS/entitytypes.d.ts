@@ -682,44 +682,25 @@ export interface BaseCalendarExceptionMethods {
 }
 
 /*********************************************
-* IDraftAssignment
+* DeletedPublishedAssignment
 **********************************************/
-export interface IDraftAssignment extends DraftAssignmentCollections, DraftAssignmentMethods, Base.IBaseQuery<IDraftAssignmentQuery> {
-
+export interface DeletedPublishedAssignment {
+	DeletedDate?: any;
+	Id?: any;
+	ProjectId?: any;
 }
 
 /*********************************************
-* IDraftAssignmentCollection
+* DeletedPublishedAssignmentCollections
 **********************************************/
-export interface IDraftAssignmentCollection extends Base.IBaseResults<DraftAssignment>, DraftAssignmentCollectionMethods {
-	done?: (resolve: (value?: Array<DraftAssignment>) => void) => void;
-}
-
-/*********************************************
-* IDraftAssignmentQueryCollection
-**********************************************/
-export interface IDraftAssignmentQueryCollection extends Base.IBaseResults<DraftAssignmentOData>, DraftAssignmentCollectionMethods {
-	done?: (resolve: (value?: Array<DraftAssignmentOData>) => void) => void;
-}
-
-/*********************************************
-* IDraftAssignmentQuery
-**********************************************/
-export interface IDraftAssignmentQuery extends DraftAssignmentOData, DraftAssignmentMethods {
+export interface DeletedPublishedAssignmentCollections {
 
 }
 
 /*********************************************
 * DraftAssignment
 **********************************************/
-export interface DraftAssignment extends PS.Assignment, Base.IBaseResult, DraftAssignmentProps, DraftAssignmentCollections, DraftAssignmentMethods {
-
-}
-
-/*********************************************
-* DraftAssignmentProps
-**********************************************/
-export interface DraftAssignmentProps {
+export interface DraftAssignment {
 	ActualCost?: number;
 	ActualFinish?: any;
 	ActualOvertimeWork?: string;
@@ -763,35 +744,16 @@ export interface DraftAssignmentProps {
 }
 
 /*********************************************
-* DraftAssignmentPropMethods
-**********************************************/
-export interface DraftAssignmentPropMethods {
-	Owner(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
-	Parent(): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
-	Resource(): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections & PS.DraftProjectResourceMethods;
-	Task(): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections & PS.DraftTaskMethods;
-}
-
-/*********************************************
 * DraftAssignmentCollections
 **********************************************/
-export interface DraftAssignmentCollections extends DraftAssignmentPropMethods {
+export interface DraftAssignmentCollections extends DraftAssignmentCollectionMethods {
 
-}
-
-/*********************************************
-* DraftAssignmentCollectionMethods
-**********************************************/
-export interface DraftAssignmentCollectionMethods {
-	add(parameters?: PS.AssignmentCreationInformation): Base.IBaseExecution<PS.DraftAssignment>;
-	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
-	getById(objectId?: string): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
 }
 
 /*********************************************
 * DraftAssignmentOData
 **********************************************/
-export interface DraftAssignmentOData extends Base.IBaseResult, DraftAssignmentProps, DraftAssignmentMethods {
+export interface DraftAssignmentOData extends Base.IBaseResult, DraftAssignment {
 	Owner: SP.User & SP.UserCollections & SP.UserCollectionMethods;
 	Parent: PS.DraftAssignment & PS.DraftAssignmentCollections & PS.DraftAssignmentCollectionMethods;
 	Resource: PS.DraftProjectResource & PS.DraftProjectResourceCollections & PS.DraftProjectResourceCollectionMethods;
@@ -799,10 +761,12 @@ export interface DraftAssignmentOData extends Base.IBaseResult, DraftAssignmentP
 }
 
 /*********************************************
-* DraftAssignmentMethods
+* DraftAssignmentCollectionMethods
 **********************************************/
-export interface DraftAssignmentMethods {
-	delete(): Base.IBaseExecution<any>;
+export interface DraftAssignmentCollectionMethods {
+	add(parameters?: PS.AssignmentCreationInformation): Base.IBaseExecution<PS.DraftAssignment>;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 }
 
 /*********************************************
@@ -2128,6 +2092,8 @@ export interface TaskProps {
 	EarliestFinish?: any;
 	EarliestStart?: any;
 	EstimateAtCompletion?: number;
+	ExternalProjectUid?: any;
+	ExternalTaskUid?: any;
 	FinishSlack?: string;
 	FinishSlackMilliseconds?: number;
 	FinishSlackTimeSpan?: any;
@@ -2314,7 +2280,7 @@ export interface PublishedProjectProps {
 **********************************************/
 export interface PublishedProjectPropMethods {
 	Calendar(): Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
-	Draft(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections & PS.DraftProjectMethods;
+	Draft(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
 	IncludeCustomFields(): Base.IBaseQuery<PS.PublishedProject, PS.PublishedProjectOData> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
 	Owner(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	ProjectWorkflowInstance(): Base.IBaseQuery<PS.ProjectWorkflowInstance, PS.ProjectWorkflowInstanceOData> & PS.ProjectWorkflowInstanceCollections & PS.ProjectWorkflowInstanceMethods;
@@ -2371,7 +2337,7 @@ export interface PublishedProjectMethods {
 	leaveProjectStage(): Base.IBaseExecution<any>;
 	readyToLeaveProjectStage(): Base.IBaseExecution<number>;
 	updateIdeaListItemStatus(status?: string): Base.IBaseExecution<any>;
-	checkOut(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections & PS.DraftProjectMethods;
+	checkOut(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
 	createProjectSite(siteName?: string): Base.IBaseExecution<any>;
 	delete(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	submitToWorkflow(): Base.IBaseExecution<any>;
@@ -2785,6 +2751,7 @@ export interface TaskLinkCollections {
 export interface PublishedTaskLink {
 	DependencyType?: number;
 	LinkLag?: number;
+	LinkLagDuration?: string;
 	LinkLagFmt?: number;
 	ProjUid?: any;
 }
@@ -2966,7 +2933,7 @@ export interface DraftProjectProps {
 **********************************************/
 export interface DraftProjectPropMethods {
 	Calendar(): Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
-	IncludeCustomFields(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections & PS.DraftProjectMethods;
+	IncludeCustomFields(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
 	Owner(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 }
 
@@ -2975,13 +2942,13 @@ export interface DraftProjectPropMethods {
 **********************************************/
 export interface DraftProjectCollections extends DraftProjectPropMethods {
 	Assignments(): Base.IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentOData, Base.IBaseExecution & PS.DraftAssignmentCollectionMethods> & Base.IBaseExecution & PS.DraftAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
+	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 	ProjectResources(): Base.IBaseCollection<PS.DraftProjectResource, PS.DraftProjectResourceOData, Base.IBaseExecution & PS.DraftProjectResourceCollectionMethods> & Base.IBaseExecution & PS.DraftProjectResourceCollectionMethods;
-	ProjectResources(id: string | number): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections & PS.DraftProjectResourceMethods;
+	ProjectResources(id: string | number): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
 	TaskLinks(): Base.IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkOData, Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods> & Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods;
-	TaskLinks(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
+	TaskLinks(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 	Tasks(): Base.IBaseCollection<PS.DraftTask, PS.DraftTaskOData, Base.IBaseExecution & PS.DraftTaskCollectionMethods> & Base.IBaseExecution & PS.DraftTaskCollectionMethods;
-	Tasks(id: string | number): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections & PS.DraftTaskMethods;
+	Tasks(id: string | number): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
 }
 
 /*********************************************
@@ -3001,17 +2968,7 @@ export interface DraftProjectOData extends Base.IBaseResult, DraftProjectProps, 
 * DraftProjectMethods
 **********************************************/
 export interface DraftProjectMethods {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): Base.IBaseQuery<PS.ResourcePlan, PS.ResourcePlanOData> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
-	leaveProjectStage(): Base.IBaseExecution<any>;
-	readyToLeaveProjectStage(): Base.IBaseExecution<number>;
-	updateIdeaListItemStatus(status?: string): Base.IBaseExecution<any>;
-	changeEnterpriseProjectType(enterpriseProjectTypeUid?: any): Base.IBaseExecution<any>;
-	checkIn(force?: boolean): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
-	getChanges(token?: string): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections & PS.DraftProjectMethods;
-	publish(checkIn?: boolean): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
-	update(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
-	updateCustomFields(customFieldDictionary?: Array<SP.KeyValue>): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
-	validate(): Base.IBaseExecution<any>;
+
 }
 
 /*********************************************
@@ -3084,7 +3041,7 @@ export interface DraftProjectResourcePropMethods {
 **********************************************/
 export interface DraftProjectResourceCollections extends DraftProjectResourcePropMethods {
 	Assignments(): Base.IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentOData, Base.IBaseExecution & PS.DraftAssignmentCollectionMethods> & Base.IBaseExecution & PS.DraftAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
+	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 }
 
 /*********************************************
@@ -3093,8 +3050,8 @@ export interface DraftProjectResourceCollections extends DraftProjectResourcePro
 export interface DraftProjectResourceCollectionMethods {
 	add(parameters?: PS.ProjectResourceCreationInformation): Base.IBaseExecution<PS.DraftProjectResource>;
 	addEnterpriseResourceById(resourceId?: any): Base.IBaseExecution<PS.QueueJob>;
-	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections & PS.DraftProjectResourceMethods;
-	getById(objectId?: string): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections & PS.DraftProjectResourceMethods;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
 }
 
 /*********************************************
@@ -3109,66 +3066,32 @@ export interface DraftProjectResourceOData extends Base.IBaseResult, DraftProjec
 * DraftProjectResourceMethods
 **********************************************/
 export interface DraftProjectResourceMethods {
-	delete(): Base.IBaseExecution<any>;
-}
-
-/*********************************************
-* IDraftTaskLink
-**********************************************/
-export interface IDraftTaskLink extends DraftTaskLinkCollections, DraftTaskLinkMethods, Base.IBaseQuery<IDraftTaskLinkQuery> {
-
-}
-
-/*********************************************
-* IDraftTaskLinkCollection
-**********************************************/
-export interface IDraftTaskLinkCollection extends Base.IBaseResults<DraftTaskLink>, DraftTaskLinkCollectionMethods {
-	done?: (resolve: (value?: Array<DraftTaskLink>) => void) => void;
-}
-
-/*********************************************
-* IDraftTaskLinkQueryCollection
-**********************************************/
-export interface IDraftTaskLinkQueryCollection extends Base.IBaseResults<DraftTaskLinkOData>, DraftTaskLinkCollectionMethods {
-	done?: (resolve: (value?: Array<DraftTaskLinkOData>) => void) => void;
-}
-
-/*********************************************
-* IDraftTaskLinkQuery
-**********************************************/
-export interface IDraftTaskLinkQuery extends DraftTaskLinkOData, DraftTaskLinkMethods {
 
 }
 
 /*********************************************
 * DraftTaskLink
 **********************************************/
-export interface DraftTaskLink extends PS.TaskLink, Base.IBaseResult, DraftTaskLinkProps, DraftTaskLinkCollections, DraftTaskLinkMethods {
-
-}
-
-/*********************************************
-* DraftTaskLinkProps
-**********************************************/
-export interface DraftTaskLinkProps {
+export interface DraftTaskLink {
 	DependencyType?: number;
 	EndId?: any;
+	LinkLagDuration?: string;
 	StartId?: any;
-}
-
-/*********************************************
-* DraftTaskLinkPropMethods
-**********************************************/
-export interface DraftTaskLinkPropMethods {
-	End(): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections & PS.DraftTaskMethods;
-	Start(): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections & PS.DraftTaskMethods;
 }
 
 /*********************************************
 * DraftTaskLinkCollections
 **********************************************/
-export interface DraftTaskLinkCollections extends DraftTaskLinkPropMethods {
+export interface DraftTaskLinkCollections extends DraftTaskLinkCollectionMethods {
 
+}
+
+/*********************************************
+* DraftTaskLinkOData
+**********************************************/
+export interface DraftTaskLinkOData extends Base.IBaseResult, DraftTaskLink {
+	End: PS.DraftTask & PS.DraftTaskCollections & PS.DraftTaskCollectionMethods;
+	Start: PS.DraftTask & PS.DraftTaskCollections & PS.DraftTaskCollectionMethods;
 }
 
 /*********************************************
@@ -3176,23 +3099,8 @@ export interface DraftTaskLinkCollections extends DraftTaskLinkPropMethods {
 **********************************************/
 export interface DraftTaskLinkCollectionMethods {
 	add(parameters?: PS.TaskLinkCreationInformation): Base.IBaseExecution<PS.DraftTaskLink>;
-	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
-	getById(objectId?: string): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
-}
-
-/*********************************************
-* DraftTaskLinkOData
-**********************************************/
-export interface DraftTaskLinkOData extends Base.IBaseResult, DraftTaskLinkProps, DraftTaskLinkMethods {
-	End: PS.DraftTask & PS.DraftTaskCollections & PS.DraftTaskCollectionMethods;
-	Start: PS.DraftTask & PS.DraftTaskCollections & PS.DraftTaskCollectionMethods;
-}
-
-/*********************************************
-* DraftTaskLinkMethods
-**********************************************/
-export interface DraftTaskLinkMethods {
-	delete(): Base.IBaseExecution<any>;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 }
 
 /*********************************************
@@ -3286,7 +3194,7 @@ export interface DraftTaskProps {
 **********************************************/
 export interface DraftTaskPropMethods {
 	Calendar(): Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
-	Parent(): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections & PS.DraftTaskMethods;
+	Parent(): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
 	StatusManager(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 }
 
@@ -3295,11 +3203,11 @@ export interface DraftTaskPropMethods {
 **********************************************/
 export interface DraftTaskCollections extends DraftTaskPropMethods {
 	Assignments(): Base.IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentOData, Base.IBaseExecution & PS.DraftAssignmentCollectionMethods> & Base.IBaseExecution & PS.DraftAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections & PS.DraftAssignmentMethods;
+	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 	Predecessors(): Base.IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkOData, Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods> & Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods;
-	Predecessors(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
+	Predecessors(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 	Successors(): Base.IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkOData, Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods> & Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods;
-	Successors(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections & PS.DraftTaskLinkMethods;
+	Successors(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 }
 
 /*********************************************
@@ -3307,8 +3215,8 @@ export interface DraftTaskCollections extends DraftTaskPropMethods {
 **********************************************/
 export interface DraftTaskCollectionMethods {
 	add(parameters?: PS.TaskCreationInformation): Base.IBaseExecution<PS.DraftTask>;
-	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections & PS.DraftTaskMethods;
-	getById(objectId?: string): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections & PS.DraftTaskMethods;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
 }
 
 /*********************************************
@@ -3327,7 +3235,7 @@ export interface DraftTaskOData extends Base.IBaseResult, DraftTaskProps, DraftT
 * DraftTaskMethods
 **********************************************/
 export interface DraftTaskMethods {
-	delete(): Base.IBaseExecution<any>;
+
 }
 
 /*********************************************
@@ -3517,6 +3425,7 @@ export interface QueueJobCollections extends QueueJobPropMethods {
 * QueueJobCollectionMethods
 **********************************************/
 export interface QueueJobCollectionMethods {
+	getAll(): Base.IBaseExecution<Array<PS.QueueJob>>;
 	getByGuid(uid?: any): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	getById(objectId?: string): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 }
@@ -3884,22 +3793,6 @@ export interface ResourceEngagementOData extends Base.IBaseResult, ResourceEngag
 export interface ResourceEngagementMethods {
 	delete(): Base.IBaseExecution<any>;
 	getTimephasedByUrl(start?: string, end?: string, scale?: string, contourType?: string): Base.IBaseCollection<PS.ResourceEngagementTimephasedPeriod> & PS.ResourceEngagementTimephasedPeriodCollectionMethods;
-}
-
-/*********************************************
-* DeletedPublishedAssignment
-**********************************************/
-export interface DeletedPublishedAssignment {
-	DeletedDate?: any;
-	Id?: any;
-	ProjectId?: any;
-}
-
-/*********************************************
-* DeletedPublishedAssignmentCollections
-**********************************************/
-export interface DeletedPublishedAssignmentCollections {
-
 }
 
 /*********************************************

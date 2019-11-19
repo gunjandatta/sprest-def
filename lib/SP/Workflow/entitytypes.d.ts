@@ -229,6 +229,7 @@ export interface SPWorkflowTaskMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): Base.IBaseExecution<any>;
 	resetRoleInheritance(): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
+	deleteWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getHashtags(): Base.IBaseCollection<SP.Hashtag>;
 	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
@@ -238,6 +239,7 @@ export interface SPWorkflowTaskMethods {
 	overridePolicyTip(userAction?: number, justification?: string): Base.IBaseExecution<number>;
 	parseAndSetFieldValue(fieldName?: string, value?: string): Base.IBaseExecution<any>;
 	recycle(): Base.IBaseExecution<any>;
+	recycleWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	setCommentsDisabled(value?: boolean): Base.IBaseExecution<any>;
 	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): Base.IBaseExecution<any>;
 	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): Base.IBaseExecution<any>;

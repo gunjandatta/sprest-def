@@ -1,28 +1,14 @@
 import { Base } from "../../../../../";
 
 /*********************************************
-* MigrationCredentialEntityData
-**********************************************/
-export interface MigrationCredentialEntityData {
-	AccountName?: string;
-	Location?: string;
-	Password?: string;
-	Type?: number;
-}
-
-/*********************************************
-* MigrationCredentialEntityDataCollections
-**********************************************/
-export interface MigrationCredentialEntityDataCollections {
-
-}
-
-/*********************************************
 * DeviceEntityData
 **********************************************/
 export interface DeviceEntityData {
+	ClientUserName?: string;
 	DeviceName?: string;
+	DiskSpace?: number;
 	FriendlyName?: string;
+	TargetUserName?: string;
 	TaskQueueExpiresOnTimeUtc?: any;
 	TaskQueueUrl?: string;
 	Version?: string;
@@ -63,17 +49,18 @@ export interface MigrationTaskEntityData {
 	SourceListName?: string;
 	SourceListRelativePath?: string;
 	SourceUri?: string;
+	SourceUserName?: string;
 	StartMigrationAutomaticallyWhenNoScanIssue?: boolean;
 	TargetListName?: string;
 	TargetListRelativePath?: string;
 	TargetSiteUrl?: string;
+	TargetUserName?: string;
 	TurnOnDateCreatedFilter?: boolean;
 	TurnOnDateModifiedFilter?: boolean;
 	TurnOnExtensionFilter?: boolean;
 	Type?: number;
 	UseCustomAzureStorage?: boolean;
 	UserMappingCSVFile?: string;
-	UserName?: string;
 	VersionNumsPreserved?: number;
 }
 
@@ -81,5 +68,22 @@ export interface MigrationTaskEntityData {
 * MigrationTaskEntityDataCollections
 **********************************************/
 export interface MigrationTaskEntityDataCollections {
+
+}
+
+/*********************************************
+* MigrationCredentialEntityData
+**********************************************/
+export interface MigrationCredentialEntityData {
+	AccountName?: string;
+	Description?: string;
+	Password?: string;
+	Type?: number;
+}
+
+/*********************************************
+* MigrationCredentialEntityDataCollections
+**********************************************/
+export interface MigrationCredentialEntityDataCollections {
 
 }

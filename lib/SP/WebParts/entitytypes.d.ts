@@ -2,6 +2,33 @@ import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
+* WebPart
+**********************************************/
+export interface WebPart {
+	ExportMode?: number;
+	Hidden?: boolean;
+	IsClosed?: boolean;
+	Subtitle?: string;
+	Title?: string;
+	TitleUrl?: string;
+	ZoneIndex?: number;
+}
+
+/*********************************************
+* WebPartCollections
+**********************************************/
+export interface WebPartCollections {
+
+}
+
+/*********************************************
+* WebPartOData
+**********************************************/
+export interface WebPartOData extends Base.IBaseResult, WebPart {
+	Properties: SP.PropertyValues & SP.PropertyValuesCollections;
+}
+
+/*********************************************
 * ILimitedWebPartManager
 **********************************************/
 export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections, LimitedWebPartManagerMethods, Base.IBaseQuery<ILimitedWebPartManagerQuery> {
@@ -155,31 +182,4 @@ export interface WebPartDefinitionMethods {
 	moveWebPartTo(zoneID?: string, zoneIndex?: number): Base.IBaseExecution<any>;
 	openWebPart(): Base.IBaseExecution<any>;
 	saveWebPartChanges(): Base.IBaseExecution<any>;
-}
-
-/*********************************************
-* WebPart
-**********************************************/
-export interface WebPart {
-	ExportMode?: number;
-	Hidden?: boolean;
-	IsClosed?: boolean;
-	Subtitle?: string;
-	Title?: string;
-	TitleUrl?: string;
-	ZoneIndex?: number;
-}
-
-/*********************************************
-* WebPartCollections
-**********************************************/
-export interface WebPartCollections {
-
-}
-
-/*********************************************
-* WebPartOData
-**********************************************/
-export interface WebPartOData extends Base.IBaseResult, WebPart {
-	Properties: SP.PropertyValues & SP.PropertyValuesCollections;
 }

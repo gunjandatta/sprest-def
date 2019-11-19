@@ -118,6 +118,7 @@ export interface Group extends Base.IBaseResult, GroupProps, GroupCollections, G
 export interface GroupProps {
 	alias?: string;
 	allowToAddGuests?: boolean;
+	assignedLabels?: string;
 	calendarUrl?: string;
 	classification?: string;
 	description?: string;
@@ -243,9 +244,11 @@ export interface UserProps {
 	sharePointHomeCreateNewsTeachingBubble?: boolean;
 	sharePointHomeFirstRun?: boolean;
 	sharePointHomeMobileUpsell?: boolean;
+	sharePointHomeRefreshFirstRun?: boolean;
 	sharePointLibrariesFirstRun?: boolean;
 	sharePointListsFirstRun?: boolean;
 	sharePointModernDocSetsFirstRun?: boolean;
+	sharePointModernHomepageFirstRun?: boolean;
 	sharePointNewsDigestTeachingBubble?: boolean;
 	sharePointNewsDigestTeachingBubbleHomePage?: boolean;
 	sharePointOneDriveBusinessFirstRun?: boolean;

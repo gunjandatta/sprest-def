@@ -33,20 +33,6 @@ export interface SiteDesignPrincipalCollections {
 }
 
 /*********************************************
-* RecipeUtility
-**********************************************/
-export interface RecipeUtility {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-}
-
-/*********************************************
-* RecipeUtilityCollections
-**********************************************/
-export interface RecipeUtilityCollections {
-
-}
-
-/*********************************************
 * SiteDesignRun
 **********************************************/
 export interface SiteDesignRun {

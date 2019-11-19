@@ -2,51 +2,6 @@ import { Base } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
-* EntityIdentity
-**********************************************/
-export interface EntityIdentity {
-	IdentifierCount?: number;
-}
-
-/*********************************************
-* EntityIdentityCollections
-**********************************************/
-export interface EntityIdentityCollections {
-
-}
-
-/*********************************************
-* NotificationCallback
-**********************************************/
-export interface NotificationCallback {
-	NotificationContext?: string;
-	NotificationEndpoint?: string;
-	NotificationForwarderType?: string;
-}
-
-/*********************************************
-* NotificationCallbackCollections
-**********************************************/
-export interface NotificationCallbackCollections {
-
-}
-
-/*********************************************
-* Subscription
-**********************************************/
-export interface Subscription {
-	Hash?: string;
-	ID?: { results: Array<SP.KeyValue> };
-}
-
-/*********************************************
-* SubscriptionCollections
-**********************************************/
-export interface SubscriptionCollections {
-
-}
-
-/*********************************************
 * IEntityInstance
 **********************************************/
 export interface IEntityInstance extends EntityInstanceCollections, EntityInstanceMethods, Base.IBaseQuery<IEntityInstanceQuery> {
@@ -194,4 +149,49 @@ export interface EntityFieldValueDictionaryMethods {
 	fromXml(xml?: string): Base.IBaseExecution<any>;
 	getCollectionSize(fieldDotNotation?: string): Base.IBaseExecution<number>;
 	toXml(): Base.IBaseExecution<string>;
+}
+
+/*********************************************
+* EntityIdentity
+**********************************************/
+export interface EntityIdentity {
+	IdentifierCount?: number;
+}
+
+/*********************************************
+* EntityIdentityCollections
+**********************************************/
+export interface EntityIdentityCollections {
+
+}
+
+/*********************************************
+* NotificationCallback
+**********************************************/
+export interface NotificationCallback {
+	NotificationContext?: string;
+	NotificationEndpoint?: string;
+	NotificationForwarderType?: string;
+}
+
+/*********************************************
+* NotificationCallbackCollections
+**********************************************/
+export interface NotificationCallbackCollections {
+
+}
+
+/*********************************************
+* Subscription
+**********************************************/
+export interface Subscription {
+	Hash?: string;
+	ID?: { results: Array<SP.KeyValue> };
+}
+
+/*********************************************
+* SubscriptionCollections
+**********************************************/
+export interface SubscriptionCollections {
+
 }

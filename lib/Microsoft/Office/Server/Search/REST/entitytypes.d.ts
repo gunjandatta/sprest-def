@@ -70,6 +70,7 @@ export interface SearchServiceOData extends Base.IBaseResult, SearchServiceProps
 export interface SearchServiceMethods {
 	autocompletions(querytext?: string, sources?: string, numberOfCompletions?: number, cursorPosition?: number): Base.IBaseExecution<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletionResults>;
 	export(userName?: string, startTime?: any): Base.IBaseExecution<string>;
+	exportmanualsuggestions(): Base.IBaseExecution<Microsoft.SharePoint.Client.Search.Query.TenantCustomQuerySuggestions>;
 	exportpopulartenantqueries(count?: number): Base.IBaseCollection<Microsoft.SharePoint.Client.Search.Query.PopularTenantQuery>;
 	postquery(request?: Microsoft.Office.Server.Search.REST.SearchRequest): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
 	query(querytext?: string, queryTemplate?: string, enableInterleaving?: boolean, sourceId?: any, rankingModelId?: string, startRow?: number, rowLimit?: number, rowsPerPage?: number, selectProperties?: string, culture?: number, refinementFilters?: string, refiners?: string, hiddenConstraints?: string, sortList?: string, enableStemming?: boolean, trimDuplicates?: boolean, timeout?: number, enableNicknames?: boolean, enablePhonetic?: boolean, enableFQL?: boolean, hitHighlightedProperties?: string, propertiesToGenerateAcronyms?: string, bypassResultTypes?: boolean, processBestBets?: boolean, clientType?: string, personalizationData?: any, resultsUrl?: string, queryTag?: string, trimDuplicatesIncludeId?: number, totalRowsExactMinimum?: number, impressionId?: string, properties?: string, enableQueryRules?: boolean, summaryLength?: number, maxSnippetLength?: number, desiredSnippetLength?: number, uiLanguage?: number, blockDedupeMode?: number, generateBlockRankLog?: boolean, enableSorting?: boolean, collapseSpecification?: string, processPersonalFavorites?: boolean, enableOrderingHitHighlightedProperty?: boolean, hitHighlightedMultivaluePropertyLimit?: number, queryTemplatePropertiesUrl?: string, timeZoneId?: number, useOLSQuery?: number, OLSQuerySession?: string): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.SearchResult>;
@@ -148,7 +149,7 @@ export interface SearchSettingOData extends Base.IBaseResult, SearchSettingProps
 **********************************************/
 export interface SearchSettingMethods {
 	getpromotedresultqueryrules(siteCollectionLevel?: boolean, offset?: number, numberOfRules?: number): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.PromotedResultsOperationsResult>;
-	getqueryconfiguration(callLocalSearchFarmsOnly?: boolean): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.QueryConfiguration>;
+	getqueryconfiguration(callLocalSearchFarmsOnly?: boolean, skipGroupObjectIdLookup?: boolean): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.QueryConfiguration>;
 	getxssearchpolicy(): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
 	pingadminendpoint(): Base.IBaseExecution<boolean>;
 	setxssearchpolicy(policy?: string): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
