@@ -4,7 +4,7 @@ import { SP } from "../../../";
 /*********************************************
 * IDirectoryNotification
 **********************************************/
-export interface IDirectoryNotification extends DirectoryNotificationCollections, DirectoryNotificationMethods, Base.IBaseQuery<IDirectoryNotification, IDirectoryNotificationQuery> {
+export interface IDirectoryNotification extends DirectoryNotificationCollections, DirectoryNotificationMethods, Base.IBaseQuery<DirectoryNotification, IDirectoryNotificationQuery> {
 
 }
 
@@ -74,7 +74,7 @@ export interface DirectoryNotificationMethods {
 /*********************************************
 * ISharePointDirectoryProvider
 **********************************************/
-export interface ISharePointDirectoryProvider extends SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods, Base.IBaseQuery<ISharePointDirectoryProvider, ISharePointDirectoryProviderQuery> {
+export interface ISharePointDirectoryProvider extends SharePointDirectoryProviderCollections, SharePointDirectoryProviderMethods, Base.IBaseQuery<SharePointDirectoryProvider, ISharePointDirectoryProviderQuery> {
 
 }
 

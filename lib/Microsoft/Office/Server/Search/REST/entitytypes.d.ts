@@ -84,7 +84,7 @@ export interface SearchServiceMethods {
 /*********************************************
 * ISearchSetting
 **********************************************/
-export interface ISearchSetting extends SearchSettingCollections, SearchSettingMethods, Base.IBaseQuery<ISearchSetting, ISearchSettingQuery> {
+export interface ISearchSetting extends SearchSettingCollections, SearchSettingMethods, Base.IBaseQuery<SearchSetting, ISearchSettingQuery> {
 
 }
 

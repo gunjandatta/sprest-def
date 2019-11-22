@@ -3,7 +3,7 @@ import { Base } from "../../";
 /*********************************************
 * IDocumentId
 **********************************************/
-export interface IDocumentId extends DocumentIdCollections, DocumentIdMethods, Base.IBaseQuery<IDocumentId, IDocumentIdQuery> {
+export interface IDocumentId extends DocumentIdCollections, DocumentIdMethods, Base.IBaseQuery<DocumentId, IDocumentIdQuery> {
 
 }
 

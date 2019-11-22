@@ -5,7 +5,7 @@ import { Microsoft } from "../../../../../";
 /*********************************************
 * IStringCollection
 **********************************************/
-export interface IStringCollection extends StringCollectionCollections, StringCollectionMethods, Base.IBaseQuery<IStringCollection, IStringCollectionQuery> {
+export interface IStringCollection extends StringCollectionCollections, StringCollectionMethods, Base.IBaseQuery<StringCollection, IStringCollectionQuery> {
 
 }
 
@@ -91,7 +91,7 @@ export interface QueryPersonalizationDataCollections {
 /*********************************************
 * IRankingLabeling
 **********************************************/
-export interface IRankingLabeling extends RankingLabelingCollections, RankingLabelingMethods, Base.IBaseQuery<IRankingLabeling, IRankingLabelingQuery> {
+export interface IRankingLabeling extends RankingLabelingCollections, RankingLabelingMethods, Base.IBaseQuery<RankingLabeling, IRankingLabelingQuery> {
 
 }
 
@@ -163,7 +163,7 @@ export interface RankingLabelingMethods {
 /*********************************************
 * IReorderingRuleCollection
 **********************************************/
-export interface IReorderingRuleCollection extends ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods, Base.IBaseQuery<IReorderingRuleCollection, IReorderingRuleCollectionQuery> {
+export interface IReorderingRuleCollection extends ReorderingRuleCollectionCollections, ReorderingRuleCollectionMethods, Base.IBaseQuery<ReorderingRuleCollection, IReorderingRuleCollectionQuery> {
 
 }
 
@@ -235,7 +235,7 @@ export interface ReorderingRuleCollectionMethods {
 /*********************************************
 * ISortCollection
 **********************************************/
-export interface ISortCollection extends SortCollectionCollections, SortCollectionMethods, Base.IBaseQuery<ISortCollection, ISortCollectionQuery> {
+export interface ISortCollection extends SortCollectionCollections, SortCollectionMethods, Base.IBaseQuery<SortCollection, ISortCollectionQuery> {
 
 }
 

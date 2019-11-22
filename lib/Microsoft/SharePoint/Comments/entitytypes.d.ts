@@ -5,7 +5,7 @@ import { SP } from "../../../";
 /*********************************************
 * Icomment
 **********************************************/
-export interface Icomment extends commentCollections, commentMethods, Base.IBaseQuery<Icomment, IcommentQuery> {
+export interface Icomment extends commentCollections, commentMethods, Base.IBaseQuery<comment, IcommentQuery> {
 
 }
 

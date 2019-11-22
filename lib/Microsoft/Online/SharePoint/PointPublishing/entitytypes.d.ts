@@ -3,7 +3,7 @@ import { Base } from "../../../../";
 /*********************************************
 * IPointPublishingAdmin
 **********************************************/
-export interface IPointPublishingAdmin extends PointPublishingAdminCollections, PointPublishingAdminMethods, Base.IBaseQuery<IPointPublishingAdmin, IPointPublishingAdminQuery> {
+export interface IPointPublishingAdmin extends PointPublishingAdminCollections, PointPublishingAdminMethods, Base.IBaseQuery<PointPublishingAdmin, IPointPublishingAdminQuery> {
 
 }
 

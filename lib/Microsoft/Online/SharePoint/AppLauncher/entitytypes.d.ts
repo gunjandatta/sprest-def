@@ -3,7 +3,7 @@ import { Base } from "../../../../";
 /*********************************************
 * IAppLauncher
 **********************************************/
-export interface IAppLauncher extends AppLauncherCollections, AppLauncherMethods, Base.IBaseQuery<IAppLauncher, IAppLauncherQuery> {
+export interface IAppLauncher extends AppLauncherCollections, AppLauncherMethods, Base.IBaseQuery<AppLauncher, IAppLauncherQuery> {
 
 }
 

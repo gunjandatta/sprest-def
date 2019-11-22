@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../../";
 /*********************************************
 * ISignalStore
 **********************************************/
-export interface ISignalStore extends SignalStoreCollections, SignalStoreMethods, Base.IBaseQuery<ISignalStore, ISignalStoreQuery> {
+export interface ISignalStore extends SignalStoreCollections, SignalStoreMethods, Base.IBaseQuery<SignalStore, ISignalStoreQuery> {
 
 }
 

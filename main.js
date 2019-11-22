@@ -755,7 +755,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         }
 
                         // Generate the content
-                        content.push(createInterface("I" + name, [name + "Collections", name + "Methods", (hasQueryMethod ? "Base.IBaseExecution<I" + name + ">" : "Base.IBaseQuery<I" + name + ", I" + name + "Query>")].join(', ')));
+                        content.push(createInterface("I" + name, [name + "Collections", name + "Methods", (hasQueryMethod ? "Base.IBaseExecution<I" + name + ">" : "Base.IBaseQuery<" + name + ", I" + name + "Query>")].join(', ')));
                         content.push(createInterface("I" + name + "Collection", "Base.IBaseResults<" + name + ">" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + ">) => void) => void;"));
                         content.push(createInterface("I" + name + "QueryCollection", "Base.IBaseResults<" + name + "OData>" + (collectionMethods.length > 0 ? ", " + name + "CollectionMethods" : ""), "\tdone?: (resolve: (value?: Array<" + name + "OData>) => void) => void;"));
                         content.push(createInterface("I" + name + "Query", [name + "OData", name + "Methods"].join(', ')));

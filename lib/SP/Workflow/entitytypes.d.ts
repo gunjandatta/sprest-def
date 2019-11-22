@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IWorkflowAssociation
 **********************************************/
-export interface IWorkflowAssociation extends WorkflowAssociationCollections, WorkflowAssociationMethods, Base.IBaseQuery<IWorkflowAssociation, IWorkflowAssociationQuery> {
+export interface IWorkflowAssociation extends WorkflowAssociationCollections, WorkflowAssociationMethods, Base.IBaseQuery<WorkflowAssociation, IWorkflowAssociationQuery> {
 
 }
 
@@ -162,7 +162,7 @@ export interface SPWorkflowManagerCollections {
 /*********************************************
 * ISPWorkflowTask
 **********************************************/
-export interface ISPWorkflowTask extends SPWorkflowTaskCollections, SPWorkflowTaskMethods, Base.IBaseQuery<ISPWorkflowTask, ISPWorkflowTaskQuery> {
+export interface ISPWorkflowTask extends SPWorkflowTaskCollections, SPWorkflowTaskMethods, Base.IBaseQuery<SPWorkflowTask, ISPWorkflowTaskQuery> {
 
 }
 

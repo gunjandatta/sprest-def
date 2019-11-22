@@ -4,7 +4,7 @@ import { Microsoft } from "../../../";
 /*********************************************
 * IOrgNewsSiteApi
 **********************************************/
-export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections, OrgNewsSiteApiMethods, Base.IBaseQuery<IOrgNewsSiteApi, IOrgNewsSiteApiQuery> {
+export interface IOrgNewsSiteApi extends OrgNewsSiteApiCollections, OrgNewsSiteApiMethods, Base.IBaseQuery<OrgNewsSiteApi, IOrgNewsSiteApiQuery> {
 
 }
 

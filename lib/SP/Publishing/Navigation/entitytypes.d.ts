@@ -3,7 +3,7 @@ import { Base } from "../../../";
 /*********************************************
 * IPortalNavigationCacheWrapper
 **********************************************/
-export interface IPortalNavigationCacheWrapper extends PortalNavigationCacheWrapperCollections, PortalNavigationCacheWrapperMethods, Base.IBaseQuery<IPortalNavigationCacheWrapper, IPortalNavigationCacheWrapperQuery> {
+export interface IPortalNavigationCacheWrapper extends PortalNavigationCacheWrapperCollections, PortalNavigationCacheWrapperMethods, Base.IBaseQuery<PortalNavigationCacheWrapper, IPortalNavigationCacheWrapperQuery> {
 
 }
 

@@ -873,7 +873,7 @@ export interface IWConvertedFormsItemOData extends Base.IBaseResult, IWConverted
 /*********************************************
 * IShared_x0020_DocumentsItem
 **********************************************/
-export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemCollections, Shared_x0020_DocumentsItemMethods, Base.IBaseQuery<IShared_x0020_DocumentsItem, IShared_x0020_DocumentsItemQuery> {
+export interface IShared_x0020_DocumentsItem extends Shared_x0020_DocumentsItemCollections, Shared_x0020_DocumentsItemMethods, Base.IBaseQuery<Shared_x0020_DocumentsItem, IShared_x0020_DocumentsItemQuery> {
 
 }
 
@@ -1459,7 +1459,7 @@ export interface OData__x005f_catalogs_x002f_masterpageItemOData extends Base.IB
 /*********************************************
 * IPublishedFeedListItem
 **********************************************/
-export interface IPublishedFeedListItem extends PublishedFeedListItemCollections, PublishedFeedListItemMethods, Base.IBaseQuery<IPublishedFeedListItem, IPublishedFeedListItemQuery> {
+export interface IPublishedFeedListItem extends PublishedFeedListItemCollections, PublishedFeedListItemMethods, Base.IBaseQuery<PublishedFeedListItem, IPublishedFeedListItemQuery> {
 
 }
 
@@ -2055,7 +2055,7 @@ export interface SiteAssetsItemOData extends Base.IBaseResult, SiteAssetsItem {
 /*********************************************
 * ISitePagesItem
 **********************************************/
-export interface ISitePagesItem extends SitePagesItemCollections, SitePagesItemMethods, Base.IBaseQuery<ISitePagesItem, ISitePagesItemQuery> {
+export interface ISitePagesItem extends SitePagesItemCollections, SitePagesItemMethods, Base.IBaseQuery<SitePagesItem, ISitePagesItemQuery> {
 
 }
 

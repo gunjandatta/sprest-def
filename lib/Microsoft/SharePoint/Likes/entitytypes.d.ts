@@ -4,7 +4,7 @@ import { Microsoft } from "../../../";
 /*********************************************
 * IlikedByInformation
 **********************************************/
-export interface IlikedByInformation extends likedByInformationCollections, likedByInformationMethods, Base.IBaseQuery<IlikedByInformation, IlikedByInformationQuery> {
+export interface IlikedByInformation extends likedByInformationCollections, likedByInformationMethods, Base.IBaseQuery<likedByInformation, IlikedByInformationQuery> {
 
 }
 

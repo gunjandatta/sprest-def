@@ -23,7 +23,7 @@ export interface TokenResponseCollections {
 /*********************************************
 * INativeClient
 **********************************************/
-export interface INativeClient extends NativeClientCollections, NativeClientMethods, Base.IBaseQuery<INativeClient, INativeClientQuery> {
+export interface INativeClient extends NativeClientCollections, NativeClientMethods, Base.IBaseQuery<NativeClient, INativeClientQuery> {
 
 }
 
@@ -93,7 +93,7 @@ export interface NativeClientMethods {
 /*********************************************
 * IToken
 **********************************************/
-export interface IToken extends TokenCollections, TokenMethods, Base.IBaseQuery<IToken, ITokenQuery> {
+export interface IToken extends TokenCollections, TokenMethods, Base.IBaseQuery<Token, ITokenQuery> {
 
 }
 

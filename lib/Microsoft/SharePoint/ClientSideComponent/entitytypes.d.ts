@@ -4,7 +4,7 @@ import { Microsoft } from "../../../";
 /*********************************************
 * IHostedAppsManager
 **********************************************/
-export interface IHostedAppsManager extends HostedAppsManagerCollections, HostedAppsManagerMethods, Base.IBaseQuery<IHostedAppsManager, IHostedAppsManagerQuery> {
+export interface IHostedAppsManager extends HostedAppsManagerCollections, HostedAppsManagerMethods, Base.IBaseQuery<HostedAppsManager, IHostedAppsManagerQuery> {
 
 }
 
@@ -75,7 +75,7 @@ export interface HostedAppsManagerMethods {
 /*********************************************
 * IHostedApp
 **********************************************/
-export interface IHostedApp extends HostedAppCollections, HostedAppMethods, Base.IBaseQuery<IHostedApp, IHostedAppQuery> {
+export interface IHostedApp extends HostedAppCollections, HostedAppMethods, Base.IBaseQuery<HostedApp, IHostedAppQuery> {
 
 }
 

@@ -32,7 +32,7 @@ export interface SPO3rdPartyAADPermissionGrantCollectionMethods {
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionGrant
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods, Base.IBaseQuery<ISPOWebAppServicePrincipalPermissionGrant, ISPOWebAppServicePrincipalPermissionGrantQuery> {
+export interface ISPOWebAppServicePrincipalPermissionGrant extends SPOWebAppServicePrincipalPermissionGrantCollections, SPOWebAppServicePrincipalPermissionGrantMethods, Base.IBaseQuery<SPOWebAppServicePrincipalPermissionGrant, ISPOWebAppServicePrincipalPermissionGrantQuery> {
 
 }
 
@@ -116,7 +116,7 @@ export interface SPOWebAppServicePrincipalPermissionGrantMethods {
 /*********************************************
 * ISPOWebAppServicePrincipalPermissionRequest
 **********************************************/
-export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestCollections, SPOWebAppServicePrincipalPermissionRequestMethods, Base.IBaseQuery<ISPOWebAppServicePrincipalPermissionRequest, ISPOWebAppServicePrincipalPermissionRequestQuery> {
+export interface ISPOWebAppServicePrincipalPermissionRequest extends SPOWebAppServicePrincipalPermissionRequestCollections, SPOWebAppServicePrincipalPermissionRequestMethods, Base.IBaseQuery<SPOWebAppServicePrincipalPermissionRequest, ISPOWebAppServicePrincipalPermissionRequestQuery> {
 
 }
 
@@ -203,7 +203,7 @@ export interface SPOWebAppServicePrincipalPermissionRequestMethods {
 /*********************************************
 * ISPOWebAppServicePrincipal
 **********************************************/
-export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCollections, SPOWebAppServicePrincipalMethods, Base.IBaseQuery<ISPOWebAppServicePrincipal, ISPOWebAppServicePrincipalQuery> {
+export interface ISPOWebAppServicePrincipal extends SPOWebAppServicePrincipalCollections, SPOWebAppServicePrincipalMethods, Base.IBaseQuery<SPOWebAppServicePrincipal, ISPOWebAppServicePrincipalQuery> {
 
 }
 

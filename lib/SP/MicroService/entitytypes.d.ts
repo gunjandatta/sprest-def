@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IMicroServiceManager
 **********************************************/
-export interface IMicroServiceManager extends MicroServiceManagerCollections, MicroServiceManagerMethods, Base.IBaseQuery<IMicroServiceManager, IMicroServiceManagerQuery> {
+export interface IMicroServiceManager extends MicroServiceManagerCollections, MicroServiceManagerMethods, Base.IBaseQuery<MicroServiceManager, IMicroServiceManagerQuery> {
 
 }
 

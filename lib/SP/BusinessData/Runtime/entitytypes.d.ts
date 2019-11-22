@@ -4,7 +4,7 @@ import { SP } from "../../../";
 /*********************************************
 * IEntityInstance
 **********************************************/
-export interface IEntityInstance extends EntityInstanceCollections, EntityInstanceMethods, Base.IBaseQuery<IEntityInstance, IEntityInstanceQuery> {
+export interface IEntityInstance extends EntityInstanceCollections, EntityInstanceMethods, Base.IBaseQuery<EntityInstance, IEntityInstanceQuery> {
 
 }
 
@@ -80,7 +80,7 @@ export interface EntityInstanceMethods {
 /*********************************************
 * IEntityFieldValueDictionary
 **********************************************/
-export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryCollections, EntityFieldValueDictionaryMethods, Base.IBaseQuery<IEntityFieldValueDictionary, IEntityFieldValueDictionaryQuery> {
+export interface IEntityFieldValueDictionary extends EntityFieldValueDictionaryCollections, EntityFieldValueDictionaryMethods, Base.IBaseQuery<EntityFieldValueDictionary, IEntityFieldValueDictionaryQuery> {
 
 }
 

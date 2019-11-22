@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IWorkflowDefinition
 **********************************************/
-export interface IWorkflowDefinition extends WorkflowDefinitionCollections, WorkflowDefinitionMethods, Base.IBaseQuery<IWorkflowDefinition, IWorkflowDefinitionQuery> {
+export interface IWorkflowDefinition extends WorkflowDefinitionCollections, WorkflowDefinitionMethods, Base.IBaseQuery<WorkflowDefinition, IWorkflowDefinitionQuery> {
 
 }
 
@@ -94,7 +94,7 @@ export interface WorkflowDefinitionMethods {
 /*********************************************
 * IWorkflowDeploymentService
 **********************************************/
-export interface IWorkflowDeploymentService extends WorkflowDeploymentServiceCollections, WorkflowDeploymentServiceMethods, Base.IBaseQuery<IWorkflowDeploymentService, IWorkflowDeploymentServiceQuery> {
+export interface IWorkflowDeploymentService extends WorkflowDeploymentServiceCollections, WorkflowDeploymentServiceMethods, Base.IBaseQuery<WorkflowDeploymentService, IWorkflowDeploymentServiceQuery> {
 
 }
 
@@ -197,7 +197,7 @@ export interface WorkflowInstanceCollections {
 /*********************************************
 * IWorkflowInstanceService
 **********************************************/
-export interface IWorkflowInstanceService extends WorkflowInstanceServiceCollections, WorkflowInstanceServiceMethods, Base.IBaseQuery<IWorkflowInstanceService, IWorkflowInstanceServiceQuery> {
+export interface IWorkflowInstanceService extends WorkflowInstanceServiceCollections, WorkflowInstanceServiceMethods, Base.IBaseQuery<WorkflowInstanceService, IWorkflowInstanceServiceQuery> {
 
 }
 
@@ -272,7 +272,7 @@ export interface WorkflowInstanceServiceMethods {
 /*********************************************
 * IInteropService
 **********************************************/
-export interface IInteropService extends InteropServiceCollections, InteropServiceMethods, Base.IBaseQuery<IInteropService, IInteropServiceQuery> {
+export interface IInteropService extends InteropServiceCollections, InteropServiceMethods, Base.IBaseQuery<InteropService, IInteropServiceQuery> {
 
 }
 
@@ -345,7 +345,7 @@ export interface InteropServiceMethods {
 /*********************************************
 * IWorkflowServicesManager
 **********************************************/
-export interface IWorkflowServicesManager extends WorkflowServicesManagerCollections, WorkflowServicesManagerMethods, Base.IBaseQuery<IWorkflowServicesManager, IWorkflowServicesManagerQuery> {
+export interface IWorkflowServicesManager extends WorkflowServicesManagerCollections, WorkflowServicesManagerMethods, Base.IBaseQuery<WorkflowServicesManager, IWorkflowServicesManagerQuery> {
 
 }
 
@@ -422,7 +422,7 @@ export interface WorkflowServicesManagerMethods {
 /*********************************************
 * IWorkflowSubscription
 **********************************************/
-export interface IWorkflowSubscription extends WorkflowSubscriptionCollections, WorkflowSubscriptionMethods, Base.IBaseQuery<IWorkflowSubscription, IWorkflowSubscriptionQuery> {
+export interface IWorkflowSubscription extends WorkflowSubscriptionCollections, WorkflowSubscriptionMethods, Base.IBaseQuery<WorkflowSubscription, IWorkflowSubscriptionQuery> {
 
 }
 
@@ -510,7 +510,7 @@ export interface WorkflowSubscriptionMethods {
 /*********************************************
 * IWorkflowSubscriptionService
 **********************************************/
-export interface IWorkflowSubscriptionService extends WorkflowSubscriptionServiceCollections, WorkflowSubscriptionServiceMethods, Base.IBaseQuery<IWorkflowSubscriptionService, IWorkflowSubscriptionServiceQuery> {
+export interface IWorkflowSubscriptionService extends WorkflowSubscriptionServiceCollections, WorkflowSubscriptionServiceMethods, Base.IBaseQuery<WorkflowSubscriptionService, IWorkflowSubscriptionServiceQuery> {
 
 }
 
@@ -591,7 +591,7 @@ export interface WorkflowSubscriptionServiceMethods {
 /*********************************************
 * IWorkflowMessagingService
 **********************************************/
-export interface IWorkflowMessagingService extends WorkflowMessagingServiceCollections, WorkflowMessagingServiceMethods, Base.IBaseQuery<IWorkflowMessagingService, IWorkflowMessagingServiceQuery> {
+export interface IWorkflowMessagingService extends WorkflowMessagingServiceCollections, WorkflowMessagingServiceMethods, Base.IBaseQuery<WorkflowMessagingService, IWorkflowMessagingServiceQuery> {
 
 }
 

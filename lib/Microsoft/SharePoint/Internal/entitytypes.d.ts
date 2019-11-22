@@ -3,7 +3,7 @@ import { Base } from "../../../";
 /*********************************************
 * IActivityLogger
 **********************************************/
-export interface IActivityLogger extends ActivityLoggerCollections, ActivityLoggerMethods, Base.IBaseQuery<IActivityLogger, IActivityLoggerQuery> {
+export interface IActivityLogger extends ActivityLoggerCollections, ActivityLoggerMethods, Base.IBaseQuery<ActivityLogger, IActivityLoggerQuery> {
 
 }
 

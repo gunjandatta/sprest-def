@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IDirectorySession
 **********************************************/
-export interface IDirectorySession extends DirectorySessionCollections, DirectorySessionMethods, Base.IBaseQuery<IDirectorySession, IDirectorySessionQuery> {
+export interface IDirectorySession extends DirectorySessionCollections, DirectorySessionMethods, Base.IBaseQuery<DirectorySession, IDirectorySessionQuery> {
 
 }
 
@@ -80,7 +80,7 @@ export interface DirectorySessionMethods {
 /*********************************************
 * IGroup
 **********************************************/
-export interface IGroup extends GroupCollections, GroupMethods, Base.IBaseQuery<IGroup, IGroupQuery> {
+export interface IGroup extends GroupCollections, GroupMethods, Base.IBaseQuery<Group, IGroupQuery> {
 
 }
 
@@ -182,7 +182,7 @@ export interface GroupMethods {
 /*********************************************
 * IUser
 **********************************************/
-export interface IUser extends UserCollections, UserMethods, Base.IBaseQuery<IUser, IUserQuery> {
+export interface IUser extends UserCollections, UserMethods, Base.IBaseQuery<User, IUserQuery> {
 
 }
 
