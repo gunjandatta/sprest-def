@@ -19,7 +19,7 @@ export interface JobEntityDataCollections {
 /*********************************************
 * IOnboardingServicesBeta
 **********************************************/
-export interface IOnboardingServicesBeta extends OnboardingServicesBetaCollections, OnboardingServicesBetaMethods, Base.IBaseQuery<IOnboardingServicesBetaQuery> {
+export interface IOnboardingServicesBeta extends OnboardingServicesBetaCollections, OnboardingServicesBetaMethods, Base.IBaseQuery<IOnboardingServicesBeta, IOnboardingServicesBetaQuery> {
 
 }
 

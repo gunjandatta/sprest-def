@@ -4,7 +4,7 @@ import { SP } from "../../../../../";
 /*********************************************
 * IDocumentCrawlLog
 **********************************************/
-export interface IDocumentCrawlLog extends DocumentCrawlLogCollections, DocumentCrawlLogMethods, Base.IBaseQuery<IDocumentCrawlLogQuery> {
+export interface IDocumentCrawlLog extends DocumentCrawlLogCollections, DocumentCrawlLogMethods, Base.IBaseQuery<IDocumentCrawlLog, IDocumentCrawlLogQuery> {
 
 }
 

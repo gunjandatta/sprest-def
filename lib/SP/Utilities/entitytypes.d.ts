@@ -109,7 +109,7 @@ export interface SpotlightResultCollections {
 /*********************************************
 * IThemeManager
 **********************************************/
-export interface IThemeManager extends ThemeManagerCollections, ThemeManagerMethods, Base.IBaseQuery<IThemeManagerQuery> {
+export interface IThemeManager extends ThemeManagerCollections, ThemeManagerMethods, Base.IBaseQuery<IThemeManager, IThemeManagerQuery> {
 
 }
 

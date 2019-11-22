@@ -31,7 +31,7 @@ export interface WebPartOData extends Base.IBaseResult, WebPart {
 /*********************************************
 * ILimitedWebPartManager
 **********************************************/
-export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections, LimitedWebPartManagerMethods, Base.IBaseQuery<ILimitedWebPartManagerQuery> {
+export interface ILimitedWebPartManager extends LimitedWebPartManagerCollections, LimitedWebPartManagerMethods, Base.IBaseQuery<ILimitedWebPartManager, ILimitedWebPartManagerQuery> {
 
 }
 
@@ -104,7 +104,7 @@ export interface LimitedWebPartManagerMethods {
 /*********************************************
 * IWebPartDefinition
 **********************************************/
-export interface IWebPartDefinition extends WebPartDefinitionCollections, WebPartDefinitionMethods, Base.IBaseQuery<IWebPartDefinitionQuery> {
+export interface IWebPartDefinition extends WebPartDefinitionCollections, WebPartDefinitionMethods, Base.IBaseQuery<IWebPartDefinition, IWebPartDefinitionQuery> {
 
 }
 

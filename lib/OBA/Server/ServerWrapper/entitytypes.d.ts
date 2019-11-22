@@ -3,7 +3,7 @@ import { Base } from "../../../";
 /*********************************************
 * IDiagnostics
 **********************************************/
-export interface IDiagnostics extends DiagnosticsCollections, DiagnosticsMethods, Base.IBaseQuery<IDiagnosticsQuery> {
+export interface IDiagnostics extends DiagnosticsCollections, DiagnosticsMethods, Base.IBaseQuery<IDiagnostics, IDiagnosticsQuery> {
 
 }
 
@@ -73,7 +73,7 @@ export interface DiagnosticsMethods {
 /*********************************************
 * IReporting
 **********************************************/
-export interface IReporting extends ReportingCollections, ReportingMethods, Base.IBaseQuery<IReportingQuery> {
+export interface IReporting extends ReportingCollections, ReportingMethods, Base.IBaseQuery<IReporting, IReportingQuery> {
 
 }
 
@@ -143,7 +143,7 @@ export interface ReportingMethods {
 /*********************************************
 * ITaskflow
 **********************************************/
-export interface ITaskflow extends TaskflowCollections, TaskflowMethods, Base.IBaseQuery<ITaskflowQuery> {
+export interface ITaskflow extends TaskflowCollections, TaskflowMethods, Base.IBaseQuery<ITaskflow, ITaskflowQuery> {
 
 }
 

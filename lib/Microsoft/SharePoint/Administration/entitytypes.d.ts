@@ -5,7 +5,7 @@ import { SP } from "../../../";
 /*********************************************
 * ISPAppStateQueryJobDefinition
 **********************************************/
-export interface ISPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionCollections, SPAppStateQueryJobDefinitionMethods, Base.IBaseQuery<ISPAppStateQueryJobDefinitionQuery> {
+export interface ISPAppStateQueryJobDefinition extends SPAppStateQueryJobDefinitionCollections, SPAppStateQueryJobDefinitionMethods, Base.IBaseQuery<ISPAppStateQueryJobDefinition, ISPAppStateQueryJobDefinitionQuery> {
 
 }
 
@@ -132,7 +132,7 @@ export interface SPTenantAppInstanceDataCollections {
 /*********************************************
 * ISPWebApplication
 **********************************************/
-export interface ISPWebApplication extends SPWebApplicationCollections, SPWebApplicationMethods, Base.IBaseQuery<ISPWebApplicationQuery> {
+export interface ISPWebApplication extends SPWebApplicationCollections, SPWebApplicationMethods, Base.IBaseQuery<ISPWebApplication, ISPWebApplicationQuery> {
 
 }
 
@@ -207,7 +207,7 @@ export interface SPWebApplicationMethods {
 /*********************************************
 * ISPWebService
 **********************************************/
-export interface ISPWebService extends SPWebServiceCollections, SPWebServiceMethods, Base.IBaseQuery<ISPWebServiceQuery> {
+export interface ISPWebService extends SPWebServiceCollections, SPWebServiceMethods, Base.IBaseQuery<ISPWebService, ISPWebServiceQuery> {
 
 }
 
@@ -279,7 +279,7 @@ export interface SPWebServiceMethods {
 /*********************************************
 * ISPAnalyticsUsageService
 **********************************************/
-export interface ISPAnalyticsUsageService extends SPAnalyticsUsageServiceCollections, SPAnalyticsUsageServiceMethods, Base.IBaseQuery<ISPAnalyticsUsageServiceQuery> {
+export interface ISPAnalyticsUsageService extends SPAnalyticsUsageServiceCollections, SPAnalyticsUsageServiceMethods, Base.IBaseQuery<ISPAnalyticsUsageService, ISPAnalyticsUsageServiceQuery> {
 
 }
 

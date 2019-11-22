@@ -20,7 +20,7 @@ export interface PolicyEvaluationInfoCollections {
 /*********************************************
 * ISPPolicyStoreProxy
 **********************************************/
-export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections, SPPolicyStoreProxyMethods, Base.IBaseQuery<ISPPolicyStoreProxyQuery> {
+export interface ISPPolicyStoreProxy extends SPPolicyStoreProxyCollections, SPPolicyStoreProxyMethods, Base.IBaseQuery<ISPPolicyStoreProxy, ISPPolicyStoreProxyQuery> {
 
 }
 

@@ -4,7 +4,7 @@ import { Microsoft } from "../../../";
 /*********************************************
 * ITenantCdnApi
 **********************************************/
-export interface ITenantCdnApi extends TenantCdnApiCollections, TenantCdnApiMethods, Base.IBaseQuery<ITenantCdnApiQuery> {
+export interface ITenantCdnApi extends TenantCdnApiCollections, TenantCdnApiMethods, Base.IBaseQuery<ITenantCdnApi, ITenantCdnApiQuery> {
 
 }
 

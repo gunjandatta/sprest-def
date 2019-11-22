@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../";
 /*********************************************
 * ILogExport
 **********************************************/
-export interface ILogExport extends LogExportCollections, LogExportMethods, Base.IBaseQuery<ILogExportQuery> {
+export interface ILogExport extends LogExportCollections, LogExportMethods, Base.IBaseQuery<ILogExport, ILogExportQuery> {
 
 }
 

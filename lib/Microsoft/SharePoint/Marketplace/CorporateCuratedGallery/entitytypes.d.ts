@@ -5,7 +5,7 @@ import { SP } from "../../../../";
 /*********************************************
 * ISiteCollectionCorporateCatalogAccessor
 **********************************************/
-export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionCorporateCatalogAccessorCollections, SiteCollectionCorporateCatalogAccessorMethods, Base.IBaseQuery<ISiteCollectionCorporateCatalogAccessorQuery> {
+export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionCorporateCatalogAccessorCollections, SiteCollectionCorporateCatalogAccessorMethods, Base.IBaseQuery<ISiteCollectionCorporateCatalogAccessor, ISiteCollectionCorporateCatalogAccessorQuery> {
 
 }
 
@@ -77,7 +77,7 @@ export interface SiteCollectionCorporateCatalogAccessorMethods {
 /*********************************************
 * ICorporateCatalogAppMetadata
 **********************************************/
-export interface ICorporateCatalogAppMetadata extends CorporateCatalogAppMetadataCollections, CorporateCatalogAppMetadataMethods, Base.IBaseQuery<ICorporateCatalogAppMetadataQuery> {
+export interface ICorporateCatalogAppMetadata extends CorporateCatalogAppMetadataCollections, CorporateCatalogAppMetadataMethods, Base.IBaseQuery<ICorporateCatalogAppMetadata, ICorporateCatalogAppMetadataQuery> {
 
 }
 
@@ -174,7 +174,7 @@ export interface CorporateCatalogAppMetadataMethods {
 /*********************************************
 * ITenantCorporateCatalogAccessor
 **********************************************/
-export interface ITenantCorporateCatalogAccessor extends TenantCorporateCatalogAccessorCollections, TenantCorporateCatalogAccessorMethods, Base.IBaseQuery<ITenantCorporateCatalogAccessorQuery> {
+export interface ITenantCorporateCatalogAccessor extends TenantCorporateCatalogAccessorCollections, TenantCorporateCatalogAccessorMethods, Base.IBaseQuery<ITenantCorporateCatalogAccessor, ITenantCorporateCatalogAccessorQuery> {
 
 }
 

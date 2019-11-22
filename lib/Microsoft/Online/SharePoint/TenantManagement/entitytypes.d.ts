@@ -32,7 +32,7 @@ export interface ExternalUserCollectionMethods {
 /*********************************************
 * IGetExternalUsersResults
 **********************************************/
-export interface IGetExternalUsersResults extends GetExternalUsersResultsCollections, GetExternalUsersResultsMethods, Base.IBaseQuery<IGetExternalUsersResultsQuery> {
+export interface IGetExternalUsersResults extends GetExternalUsersResultsCollections, GetExternalUsersResultsMethods, Base.IBaseQuery<IGetExternalUsersResults, IGetExternalUsersResultsQuery> {
 
 }
 
@@ -140,7 +140,7 @@ export interface ImportProfilePropertiesJobInfoCollections {
 /*********************************************
 * IOffice365Tenant
 **********************************************/
-export interface IOffice365Tenant extends Office365TenantCollections, Office365TenantMethods, Base.IBaseQuery<IOffice365TenantQuery> {
+export interface IOffice365Tenant extends Office365TenantCollections, Office365TenantMethods, Base.IBaseQuery<IOffice365Tenant, IOffice365TenantQuery> {
 
 }
 

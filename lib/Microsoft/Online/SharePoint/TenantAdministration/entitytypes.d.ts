@@ -5,7 +5,7 @@ import { SP } from "../../../../";
 /*********************************************
 * IHubSiteProperties
 **********************************************/
-export interface IHubSiteProperties extends HubSitePropertiesCollections, HubSitePropertiesMethods, Base.IBaseQuery<IHubSitePropertiesQuery> {
+export interface IHubSiteProperties extends HubSitePropertiesCollections, HubSitePropertiesMethods, Base.IBaseQuery<IHubSiteProperties, IHubSitePropertiesQuery> {
 
 }
 
@@ -86,7 +86,7 @@ export interface HubSitePropertiesMethods {
 /*********************************************
 * IOffice365CommsMessagesServiceProxy
 **********************************************/
-export interface IOffice365CommsMessagesServiceProxy extends Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods, Base.IBaseQuery<IOffice365CommsMessagesServiceProxyQuery> {
+export interface IOffice365CommsMessagesServiceProxy extends Office365CommsMessagesServiceProxyCollections, Office365CommsMessagesServiceProxyMethods, Base.IBaseQuery<IOffice365CommsMessagesServiceProxy, IOffice365CommsMessagesServiceProxyQuery> {
 
 }
 
@@ -191,7 +191,7 @@ export interface ResponseServiceHealthCollections {
 /*********************************************
 * ISiteCollectionManagementService
 **********************************************/
-export interface ISiteCollectionManagementService extends SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods, Base.IBaseQuery<ISiteCollectionManagementServiceQuery> {
+export interface ISiteCollectionManagementService extends SiteCollectionManagementServiceCollections, SiteCollectionManagementServiceMethods, Base.IBaseQuery<ISiteCollectionManagementService, ISiteCollectionManagementServiceQuery> {
 
 }
 
@@ -265,7 +265,7 @@ export interface SiteCollectionManagementServiceMethods {
 /*********************************************
 * ISiteProperties
 **********************************************/
-export interface ISiteProperties extends SitePropertiesCollections, SitePropertiesMethods, Base.IBaseQuery<ISitePropertiesQuery> {
+export interface ISiteProperties extends SitePropertiesCollections, SitePropertiesMethods, Base.IBaseQuery<ISiteProperties, ISitePropertiesQuery> {
 
 }
 
@@ -409,7 +409,7 @@ export interface SitePropertiesMethods {
 /*********************************************
 * ISPOGroup
 **********************************************/
-export interface ISPOGroup extends SPOGroupCollections, SPOGroupMethods, Base.IBaseQuery<ISPOGroupQuery> {
+export interface ISPOGroup extends SPOGroupCollections, SPOGroupMethods, Base.IBaseQuery<ISPOGroup, ISPOGroupQuery> {
 
 }
 
@@ -529,7 +529,7 @@ export interface TenantAdminEndpointsCollections {
 /*********************************************
 * ITenantAdminSettingsService
 **********************************************/
-export interface ITenantAdminSettingsService extends TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods, Base.IBaseQuery<ITenantAdminSettingsServiceQuery> {
+export interface ITenantAdminSettingsService extends TenantAdminSettingsServiceCollections, TenantAdminSettingsServiceMethods, Base.IBaseQuery<ITenantAdminSettingsService, ITenantAdminSettingsServiceQuery> {
 
 }
 
@@ -621,7 +621,7 @@ export interface TenantAdminSettingsServiceMethods {
 /*********************************************
 * ITenant
 **********************************************/
-export interface ITenant extends TenantCollections, TenantMethods, Base.IBaseQuery<ITenantQuery> {
+export interface ITenant extends TenantCollections, TenantMethods, Base.IBaseQuery<ITenant, ITenantQuery> {
 
 }
 

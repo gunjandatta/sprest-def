@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../";
 /*********************************************
 * ISPMachineLearningHub
 **********************************************/
-export interface ISPMachineLearningHub extends SPMachineLearningHubCollections, SPMachineLearningHubMethods, Base.IBaseQuery<ISPMachineLearningHubQuery> {
+export interface ISPMachineLearningHub extends SPMachineLearningHubCollections, SPMachineLearningHubMethods, Base.IBaseQuery<ISPMachineLearningHub, ISPMachineLearningHubQuery> {
 
 }
 
@@ -81,7 +81,7 @@ export interface SPMachineLearningHubMethods {
 /*********************************************
 * ISPMachineLearningModel
 **********************************************/
-export interface ISPMachineLearningModel extends SPMachineLearningModelCollections, SPMachineLearningModelMethods, Base.IBaseQuery<ISPMachineLearningModelQuery> {
+export interface ISPMachineLearningModel extends SPMachineLearningModelCollections, SPMachineLearningModelMethods, Base.IBaseQuery<ISPMachineLearningModel, ISPMachineLearningModelQuery> {
 
 }
 
@@ -170,7 +170,7 @@ export interface SPMachineLearningModelMethods {
 /*********************************************
 * ISPMachineLearningPublication
 **********************************************/
-export interface ISPMachineLearningPublication extends SPMachineLearningPublicationCollections, SPMachineLearningPublicationMethods, Base.IBaseQuery<ISPMachineLearningPublicationQuery> {
+export interface ISPMachineLearningPublication extends SPMachineLearningPublicationCollections, SPMachineLearningPublicationMethods, Base.IBaseQuery<ISPMachineLearningPublication, ISPMachineLearningPublicationQuery> {
 
 }
 
@@ -257,7 +257,7 @@ export interface SPMachineLearningPublicationMethods {
 /*********************************************
 * ISPMachineLearningSample
 **********************************************/
-export interface ISPMachineLearningSample extends SPMachineLearningSampleCollections, SPMachineLearningSampleMethods, Base.IBaseQuery<ISPMachineLearningSampleQuery> {
+export interface ISPMachineLearningSample extends SPMachineLearningSampleCollections, SPMachineLearningSampleMethods, Base.IBaseQuery<ISPMachineLearningSample, ISPMachineLearningSampleQuery> {
 
 }
 

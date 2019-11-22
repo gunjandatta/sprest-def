@@ -3,7 +3,7 @@ import { Base } from "../../../";
 /*********************************************
 * IExternalSubscriptionStore
 **********************************************/
-export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods, Base.IBaseQuery<IExternalSubscriptionStoreQuery> {
+export interface IExternalSubscriptionStore extends ExternalSubscriptionStoreCollections, ExternalSubscriptionStoreMethods, Base.IBaseQuery<IExternalSubscriptionStore, IExternalSubscriptionStoreQuery> {
 
 }
 

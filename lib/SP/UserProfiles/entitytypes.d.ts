@@ -18,7 +18,7 @@ export interface CrossGeoSyncCollections {
 /*********************************************
 * IFollowedContent
 **********************************************/
-export interface IFollowedContent extends FollowedContentCollections, FollowedContentMethods, Base.IBaseQuery<IFollowedContentQuery> {
+export interface IFollowedContent extends FollowedContentCollections, FollowedContentMethods, Base.IBaseQuery<IFollowedContent, IFollowedContentQuery> {
 
 }
 
@@ -131,7 +131,7 @@ export interface HashTagCollectionCollections {
 /*********************************************
 * IPeopleManager
 **********************************************/
-export interface IPeopleManager extends PeopleManagerCollections, PeopleManagerMethods, Base.IBaseQuery<IPeopleManagerQuery> {
+export interface IPeopleManager extends PeopleManagerCollections, PeopleManagerMethods, Base.IBaseQuery<IPeopleManager, IPeopleManagerQuery> {
 
 }
 
@@ -225,7 +225,7 @@ export interface PeopleManagerMethods {
 /*********************************************
 * IPersonalCache
 **********************************************/
-export interface IPersonalCache extends PersonalCacheCollections, PersonalCacheMethods, Base.IBaseQuery<IPersonalCacheQuery> {
+export interface IPersonalCache extends PersonalCacheCollections, PersonalCacheMethods, Base.IBaseQuery<IPersonalCache, IPersonalCacheQuery> {
 
 }
 
@@ -333,7 +333,7 @@ export interface PersonPropertiesCollections {
 /*********************************************
 * IProfileImageStore
 **********************************************/
-export interface IProfileImageStore extends ProfileImageStoreCollections, ProfileImageStoreMethods, Base.IBaseQuery<IProfileImageStoreQuery> {
+export interface IProfileImageStore extends ProfileImageStoreCollections, ProfileImageStoreMethods, Base.IBaseQuery<IProfileImageStore, IProfileImageStoreQuery> {
 
 }
 
@@ -403,7 +403,7 @@ export interface ProfileImageStoreMethods {
 /*********************************************
 * IProfileLoader
 **********************************************/
-export interface IProfileLoader extends ProfileLoaderCollections, ProfileLoaderMethods, Base.IBaseQuery<IProfileLoaderQuery> {
+export interface IProfileLoader extends ProfileLoaderCollections, ProfileLoaderMethods, Base.IBaseQuery<IProfileLoader, IProfileLoaderQuery> {
 
 }
 
@@ -474,7 +474,7 @@ export interface ProfileLoaderMethods {
 /*********************************************
 * IUserProfilePropertiesForUser
 **********************************************/
-export interface IUserProfilePropertiesForUser extends UserProfilePropertiesForUserCollections, UserProfilePropertiesForUserMethods, Base.IBaseQuery<IUserProfilePropertiesForUserQuery> {
+export interface IUserProfilePropertiesForUser extends UserProfilePropertiesForUserCollections, UserProfilePropertiesForUserMethods, Base.IBaseQuery<IUserProfilePropertiesForUser, IUserProfilePropertiesForUserQuery> {
 
 }
 
@@ -544,7 +544,7 @@ export interface UserProfilePropertiesForUserMethods {
 /*********************************************
 * IUserProfile
 **********************************************/
-export interface IUserProfile extends UserProfileCollections, UserProfileMethods, Base.IBaseQuery<IUserProfileQuery> {
+export interface IUserProfile extends UserProfileCollections, UserProfileMethods, Base.IBaseQuery<IUserProfile, IUserProfileQuery> {
 
 }
 

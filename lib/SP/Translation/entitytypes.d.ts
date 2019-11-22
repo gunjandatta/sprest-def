@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * ISyncTranslator
 **********************************************/
-export interface ISyncTranslator extends SyncTranslatorCollections, SyncTranslatorMethods, Base.IBaseQuery<ISyncTranslatorQuery> {
+export interface ISyncTranslator extends SyncTranslatorCollections, SyncTranslatorMethods, Base.IBaseQuery<ISyncTranslator, ISyncTranslatorQuery> {
 
 }
 
@@ -75,7 +75,7 @@ export interface SyncTranslatorMethods {
 /*********************************************
 * ITranslationJob
 **********************************************/
-export interface ITranslationJob extends TranslationJobCollections, TranslationJobMethods, Base.IBaseQuery<ITranslationJobQuery> {
+export interface ITranslationJob extends TranslationJobCollections, TranslationJobMethods, Base.IBaseQuery<ITranslationJob, ITranslationJobQuery> {
 
 }
 
@@ -149,7 +149,7 @@ export interface TranslationJobMethods {
 /*********************************************
 * ITranslationJobStatus
 **********************************************/
-export interface ITranslationJobStatus extends TranslationJobStatusCollections, TranslationJobStatusMethods, Base.IBaseQuery<ITranslationJobStatusQuery> {
+export interface ITranslationJobStatus extends TranslationJobStatusCollections, TranslationJobStatusMethods, Base.IBaseQuery<ITranslationJobStatus, ITranslationJobStatusQuery> {
 
 }
 

@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../../";
 /*********************************************
 * IDevice
 **********************************************/
-export interface IDevice extends DeviceCollections, DeviceMethods, Base.IBaseQuery<IDeviceQuery> {
+export interface IDevice extends DeviceCollections, DeviceMethods, Base.IBaseQuery<IDevice, IDeviceQuery> {
 
 }
 
@@ -93,7 +93,7 @@ export interface DeviceMethods {
 /*********************************************
 * IMigrationCenterServices
 **********************************************/
-export interface IMigrationCenterServices extends MigrationCenterServicesCollections, MigrationCenterServicesMethods, Base.IBaseQuery<IMigrationCenterServicesQuery> {
+export interface IMigrationCenterServices extends MigrationCenterServicesCollections, MigrationCenterServicesMethods, Base.IBaseQuery<IMigrationCenterServices, IMigrationCenterServicesQuery> {
 
 }
 
@@ -168,7 +168,7 @@ export interface MigrationCenterServicesMethods {
 /*********************************************
 * IMigrationCenterStorage
 **********************************************/
-export interface IMigrationCenterStorage extends MigrationCenterStorageCollections, MigrationCenterStorageMethods, Base.IBaseQuery<IMigrationCenterStorageQuery> {
+export interface IMigrationCenterStorage extends MigrationCenterStorageCollections, MigrationCenterStorageMethods, Base.IBaseQuery<IMigrationCenterStorage, IMigrationCenterStorageQuery> {
 
 }
 
@@ -247,7 +247,7 @@ export interface MigrationCenterStorageMethods {
 /*********************************************
 * IMigrationTask
 **********************************************/
-export interface IMigrationTask extends MigrationTaskCollections, MigrationTaskMethods, Base.IBaseQuery<IMigrationTaskQuery> {
+export interface IMigrationTask extends MigrationTaskCollections, MigrationTaskMethods, Base.IBaseQuery<IMigrationTask, IMigrationTaskQuery> {
 
 }
 
@@ -353,7 +353,7 @@ export interface MigrationTaskMethods {
 /*********************************************
 * IMigrationCredential
 **********************************************/
-export interface IMigrationCredential extends MigrationCredentialCollections, MigrationCredentialMethods, Base.IBaseQuery<IMigrationCredentialQuery> {
+export interface IMigrationCredential extends MigrationCredentialCollections, MigrationCredentialMethods, Base.IBaseQuery<IMigrationCredential, IMigrationCredentialQuery> {
 
 }
 

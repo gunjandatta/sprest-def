@@ -3,7 +3,7 @@ import { Base } from "../../";
 /*********************************************
 * IAppCollection
 **********************************************/
-export interface IAppCollection extends AppCollectionCollections, AppCollectionMethods, Base.IBaseQuery<IAppCollectionQuery> {
+export interface IAppCollection extends AppCollectionCollections, AppCollectionMethods, Base.IBaseQuery<IAppCollection, IAppCollectionQuery> {
 
 }
 

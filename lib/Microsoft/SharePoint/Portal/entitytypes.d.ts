@@ -19,7 +19,7 @@ export interface CollaborationMailboxCollections {
 /*********************************************
 * IGroupService
 **********************************************/
-export interface IGroupService extends GroupServiceCollections, GroupServiceMethods, Base.IBaseQuery<IGroupServiceQuery> {
+export interface IGroupService extends GroupServiceCollections, GroupServiceMethods, Base.IBaseQuery<IGroupService, IGroupServiceQuery> {
 
 }
 
@@ -91,7 +91,7 @@ export interface GroupServiceMethods {
 /*********************************************
 * IGroupSiteManager
 **********************************************/
-export interface IGroupSiteManager extends GroupSiteManagerCollections, GroupSiteManagerMethods, Base.IBaseQuery<IGroupSiteManagerQuery> {
+export interface IGroupSiteManager extends GroupSiteManagerCollections, GroupSiteManagerMethods, Base.IBaseQuery<IGroupSiteManager, IGroupSiteManagerQuery> {
 
 }
 
@@ -202,7 +202,7 @@ export interface SuiteNavDataCollections {
 /*********************************************
 * ISharePointHomeServiceContextBuilder
 **********************************************/
-export interface ISharePointHomeServiceContextBuilder extends SharePointHomeServiceContextBuilderCollections, SharePointHomeServiceContextBuilderMethods, Base.IBaseQuery<ISharePointHomeServiceContextBuilderQuery> {
+export interface ISharePointHomeServiceContextBuilder extends SharePointHomeServiceContextBuilderCollections, SharePointHomeServiceContextBuilderMethods, Base.IBaseQuery<ISharePointHomeServiceContextBuilder, ISharePointHomeServiceContextBuilderQuery> {
 
 }
 
@@ -297,7 +297,7 @@ export interface SharePointHomeServiceContextOData extends Base.IBaseResult, Sha
 /*********************************************
 * ISPHubSitesUtility
 **********************************************/
-export interface ISPHubSitesUtility extends SPHubSitesUtilityCollections, SPHubSitesUtilityMethods, Base.IBaseQuery<ISPHubSitesUtilityQuery> {
+export interface ISPHubSitesUtility extends SPHubSitesUtilityCollections, SPHubSitesUtilityMethods, Base.IBaseQuery<ISPHubSitesUtility, ISPHubSitesUtilityQuery> {
 
 }
 
@@ -367,7 +367,7 @@ export interface SPHubSitesUtilityMethods {
 /*********************************************
 * ISPSiteManager
 **********************************************/
-export interface ISPSiteManager extends SPSiteManagerCollections, SPSiteManagerMethods, Base.IBaseQuery<ISPSiteManagerQuery> {
+export interface ISPSiteManager extends SPSiteManagerCollections, SPSiteManagerMethods, Base.IBaseQuery<ISPSiteManager, ISPSiteManagerQuery> {
 
 }
 
@@ -447,7 +447,7 @@ export interface SPSiteManagerMethods {
 /*********************************************
 * ISiteIconManager
 **********************************************/
-export interface ISiteIconManager extends SiteIconManagerCollections, SiteIconManagerMethods, Base.IBaseQuery<ISiteIconManagerQuery> {
+export interface ISiteIconManager extends SiteIconManagerCollections, SiteIconManagerMethods, Base.IBaseQuery<ISiteIconManager, ISiteIconManagerQuery> {
 
 }
 
@@ -517,7 +517,7 @@ export interface SiteIconManagerMethods {
 /*********************************************
 * ISiteLinkingManager
 **********************************************/
-export interface ISiteLinkingManager extends SiteLinkingManagerCollections, SiteLinkingManagerMethods, Base.IBaseQuery<ISiteLinkingManagerQuery> {
+export interface ISiteLinkingManager extends SiteLinkingManagerCollections, SiteLinkingManagerMethods, Base.IBaseQuery<ISiteLinkingManager, ISiteLinkingManagerQuery> {
 
 }
 

@@ -4,7 +4,7 @@ import { Microsoft } from "../../../";
 /*********************************************
 * ISubscription
 **********************************************/
-export interface ISubscription extends SubscriptionCollections, SubscriptionMethods, Base.IBaseQuery<ISubscriptionQuery> {
+export interface ISubscription extends SubscriptionCollections, SubscriptionMethods, Base.IBaseQuery<ISubscription, ISubscriptionQuery> {
 
 }
 

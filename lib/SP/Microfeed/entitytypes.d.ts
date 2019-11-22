@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IMicrofeedPostDefinitionManager
 **********************************************/
-export interface IMicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerCollections, MicrofeedPostDefinitionManagerMethods, Base.IBaseQuery<IMicrofeedPostDefinitionManagerQuery> {
+export interface IMicrofeedPostDefinitionManager extends MicrofeedPostDefinitionManagerCollections, MicrofeedPostDefinitionManagerMethods, Base.IBaseQuery<IMicrofeedPostDefinitionManager, IMicrofeedPostDefinitionManagerQuery> {
 
 }
 
@@ -78,7 +78,7 @@ export interface MicrofeedPostDefinitionManagerMethods {
 /*********************************************
 * IMicrofeedAttachmentStore
 **********************************************/
-export interface IMicrofeedAttachmentStore extends MicrofeedAttachmentStoreCollections, MicrofeedAttachmentStoreMethods, Base.IBaseQuery<IMicrofeedAttachmentStoreQuery> {
+export interface IMicrofeedAttachmentStore extends MicrofeedAttachmentStoreCollections, MicrofeedAttachmentStoreMethods, Base.IBaseQuery<IMicrofeedAttachmentStore, IMicrofeedAttachmentStoreQuery> {
 
 }
 
@@ -152,7 +152,7 @@ export interface MicrofeedAttachmentStoreMethods {
 /*********************************************
 * IMicrofeedData
 **********************************************/
-export interface IMicrofeedData extends MicrofeedDataCollections, MicrofeedDataMethods, Base.IBaseQuery<IMicrofeedDataQuery> {
+export interface IMicrofeedData extends MicrofeedDataCollections, MicrofeedDataMethods, Base.IBaseQuery<IMicrofeedData, IMicrofeedDataQuery> {
 
 }
 
@@ -237,7 +237,7 @@ export interface MicrofeedDataMethods {
 /*********************************************
 * IMicrofeedManager
 **********************************************/
-export interface IMicrofeedManager extends MicrofeedManagerCollections, MicrofeedManagerMethods, Base.IBaseQuery<IMicrofeedManagerQuery> {
+export interface IMicrofeedManager extends MicrofeedManagerCollections, MicrofeedManagerMethods, Base.IBaseQuery<IMicrofeedManager, IMicrofeedManagerQuery> {
 
 }
 

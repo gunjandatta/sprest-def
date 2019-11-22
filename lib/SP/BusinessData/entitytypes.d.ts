@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * IEntity
 **********************************************/
-export interface IEntity extends EntityCollections, EntityMethods, Base.IBaseQuery<IEntityQuery> {
+export interface IEntity extends EntityCollections, EntityMethods, Base.IBaseQuery<IEntity, IEntityQuery> {
 
 }
 
@@ -121,7 +121,7 @@ export interface FilterCollections {
 /*********************************************
 * IEntityIdentifier
 **********************************************/
-export interface IEntityIdentifier extends EntityIdentifierCollections, EntityIdentifierMethods, Base.IBaseQuery<IEntityIdentifierQuery> {
+export interface IEntityIdentifier extends EntityIdentifierCollections, EntityIdentifierMethods, Base.IBaseQuery<IEntityIdentifier, IEntityIdentifierQuery> {
 
 }
 
@@ -208,7 +208,7 @@ export interface LobSystemInstanceCollections {
 /*********************************************
 * ILobSystem
 **********************************************/
-export interface ILobSystem extends LobSystemCollections, LobSystemMethods, Base.IBaseQuery<ILobSystemQuery> {
+export interface ILobSystem extends LobSystemCollections, LobSystemMethods, Base.IBaseQuery<ILobSystem, ILobSystemQuery> {
 
 }
 
@@ -278,7 +278,7 @@ export interface LobSystemMethods {
 /*********************************************
 * IMethodExecutionResult
 **********************************************/
-export interface IMethodExecutionResult extends MethodExecutionResultCollections, MethodExecutionResultMethods, Base.IBaseQuery<IMethodExecutionResultQuery> {
+export interface IMethodExecutionResult extends MethodExecutionResultCollections, MethodExecutionResultMethods, Base.IBaseQuery<IMethodExecutionResult, IMethodExecutionResultQuery> {
 
 }
 
@@ -349,7 +349,7 @@ export interface MethodExecutionResultMethods {
 /*********************************************
 * ITypeDescriptor
 **********************************************/
-export interface ITypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods, Base.IBaseQuery<ITypeDescriptorQuery> {
+export interface ITypeDescriptor extends TypeDescriptorCollections, TypeDescriptorMethods, Base.IBaseQuery<ITypeDescriptor, ITypeDescriptorQuery> {
 
 }
 
@@ -429,7 +429,7 @@ export interface TypeDescriptorMethods {
 /*********************************************
 * IEntityView
 **********************************************/
-export interface IEntityView extends EntityViewCollections, EntityViewMethods, Base.IBaseQuery<IEntityViewQuery> {
+export interface IEntityView extends EntityViewCollections, EntityViewMethods, Base.IBaseQuery<IEntityView, IEntityViewQuery> {
 
 }
 
@@ -504,7 +504,7 @@ export interface EntityViewMethods {
 /*********************************************
 * IAppBdcCatalog
 **********************************************/
-export interface IAppBdcCatalog extends AppBdcCatalogCollections, AppBdcCatalogMethods, Base.IBaseQuery<IAppBdcCatalogQuery> {
+export interface IAppBdcCatalog extends AppBdcCatalogCollections, AppBdcCatalogMethods, Base.IBaseQuery<IAppBdcCatalog, IAppBdcCatalogQuery> {
 
 }
 

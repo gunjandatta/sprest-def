@@ -3,7 +3,7 @@ import { Base } from "../../../../../";
 /*********************************************
 * IDDIAdapter
 **********************************************/
-export interface IDDIAdapter extends DDIAdapterCollections, DDIAdapterMethods, Base.IBaseQuery<IDDIAdapterQuery> {
+export interface IDDIAdapter extends DDIAdapterCollections, DDIAdapterMethods, Base.IBaseQuery<IDDIAdapter, IDDIAdapterQuery> {
 
 }
 

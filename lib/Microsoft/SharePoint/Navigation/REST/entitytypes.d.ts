@@ -4,7 +4,7 @@ import { SP } from "../../../../";
 /*********************************************
 * INavigationServiceRest
 **********************************************/
-export interface INavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods, Base.IBaseQuery<INavigationServiceRestQuery> {
+export interface INavigationServiceRest extends NavigationServiceRestCollections, NavigationServiceRestMethods, Base.IBaseQuery<INavigationServiceRest, INavigationServiceRestQuery> {
 
 }
 
