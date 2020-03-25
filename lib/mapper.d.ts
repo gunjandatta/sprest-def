@@ -3696,6 +3696,10 @@ export interface IMapper {
 		delete: IMapperMethod & {
 		},
 
+		update: IMapperMethod & {
+		argNames: [ "properties" ],
+		},
+
 	}
 
 	"SP.FieldLink.Collection": {

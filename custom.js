@@ -66,6 +66,15 @@ module.exports = {
         }
     ],
 
+    // Field Link
+    "SP.FieldLink": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
+
     // Field Types - Fix "update" method
     "SP.FieldCalculated": [
         {

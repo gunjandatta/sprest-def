@@ -1611,6 +1611,7 @@ export interface FieldLinkOData extends Base.IBaseResult, FieldLinkProps, FieldL
 **********************************************/
 export interface FieldLinkMethods {
 	delete(): Base.IBaseExecution<any>;
+	update(properties?: any): Base.IBaseExecution<any>;
 }
 
 /*********************************************

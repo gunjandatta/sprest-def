@@ -3536,6 +3536,10 @@ export const Mapper: IMapper = {
 		requestType: RequestType.Delete
 		},
 
+		update: {
+		argNames: [ "properties" ],
+		},
+
 	},
 
 	"SP.FieldLink.Collection": {
