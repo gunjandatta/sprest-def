@@ -436,7 +436,11 @@
                 <Property Name="ETagMatch" Type="Edm.String" />
             </ComplexType>
             <ComplexType Name="GroupCreationInformation">
+                <Property Name="AllowMembersEditMembership" Type="Edm.Boolean" />
+                <Property Name="AllowRequestToJoinLeave" Type="Edm.Boolean" />
+                <Property Name="AutoAcceptRequestToJoinLeave" Type="Edm.Boolean" />
                 <Property Name="Description" Type="Edm.String" />
+                <Property Name="OnlyAllowMembersViewMembership" Type="Edm.Boolean" />
                 <Property Name="Title" Type="Edm.String" />
             </ComplexType>
             <ComplexType Name="Hashtag">

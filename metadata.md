@@ -27,3 +27,12 @@ These are missing properties that are relevant to the SharePoint REST API.
 ```
 <NavigationProperty Name="RoleAssignments" Relationship="SP.SP_SecurableObject_RoleAssignments_SP_RoleAssignment_RoleAssignmentsPartner" ToRole="RoleAssignments" FromRole="RoleAssignmentsPartner" />
 ```
+
+###### ComplexType GroupCreationInformation
+
+```
+<Property Name="AllowMembersEditMembership" Type="Edm.Boolean" />
+<Property Name="AllowRequestToJoinLeave" Type="Edm.Boolean" />
+<Property Name="AutoAcceptRequestToJoinLeave" Type="Edm.Boolean" />
+<Property Name="OnlyAllowMembersViewMembership" Type="Edm.Boolean" />
+```

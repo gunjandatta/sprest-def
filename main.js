@@ -424,18 +424,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
         // Apply the methods to the directories object
         applyMethodsToDirectories(methods, directories);
 
-        // See if the lib directory exists
-        if (fs.existsSync("lib")) {
-            // Delete the directory
-            rmDir.sync("lib")
-        }
-
-        // Create the directory
-        fs.mkdir("lib", function (err) {
-            // Error creating the directory
-            return;
-        });
-
         // Parse the directories
         for (let dirName in directories) {
             // Create the directories

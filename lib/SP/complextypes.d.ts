@@ -1185,7 +1185,11 @@ export interface FolderDeleteParametersCollections {
 * GroupCreationInformation
 **********************************************/
 export interface GroupCreationInformation {
+	AllowMembersEditMembership?: boolean;
+	AllowRequestToJoinLeave?: boolean;
+	AutoAcceptRequestToJoinLeave?: boolean;
 	Description?: string;
+	OnlyAllowMembersViewMembership?: boolean;
 	Title?: string;
 }
 
