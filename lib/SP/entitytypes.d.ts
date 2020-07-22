@@ -606,12 +606,9 @@ export interface GroupProps {
 	CanCurrentUserManageGroup?: boolean;
 	CanCurrentUserViewMembership?: boolean;
 	Description?: string;
-	Id?: number;
-	IsHiddenInUI?: boolean;
 	OnlyAllowMembersViewMembership?: boolean;
 	OwnerTitle?: string;
 	RequestToJoinLeaveEmailSetting?: string;
-	Title?: string;
 }
 
 /*********************************************
