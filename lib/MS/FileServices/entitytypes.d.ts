@@ -90,7 +90,7 @@ export interface FileCollections extends FilePropMethods {
 /*********************************************
 * FileOData
 **********************************************/
-export interface FileOData extends MS.FileServices.FileSystemItem, Base.IBaseResult, FileProps, FileMethods {
+export interface FileOData extends MS.FileServices.FileSystemItemOData, Base.IBaseResult, FileProps, FileMethods {
 
 }
 
@@ -179,7 +179,7 @@ export interface FolderCollections extends FolderPropMethods {
 /*********************************************
 * FolderOData
 **********************************************/
-export interface FolderOData extends MS.FileServices.FileSystemItem, Base.IBaseResult, FolderProps, FolderMethods {
+export interface FolderOData extends MS.FileServices.FileSystemItemOData, Base.IBaseResult, FolderProps, FolderMethods {
 	Children: Base.IBaseResults<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
 }
 

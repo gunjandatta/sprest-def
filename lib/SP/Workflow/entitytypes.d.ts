@@ -218,7 +218,7 @@ export interface SPWorkflowTaskCollections extends SPWorkflowTaskPropMethods {
 /*********************************************
 * SPWorkflowTaskOData
 **********************************************/
-export interface SPWorkflowTaskOData extends SP.ListItem, Base.IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskMethods {
+export interface SPWorkflowTaskOData extends SP.ListItemOData, Base.IBaseResult, SPWorkflowTaskProps, SPWorkflowTaskMethods {
 
 }
 

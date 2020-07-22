@@ -670,7 +670,7 @@ export interface BaseCalendarExceptionCollections extends BaseCalendarExceptionP
 /*********************************************
 * BaseCalendarExceptionOData
 **********************************************/
-export interface BaseCalendarExceptionOData extends PS.CalendarException, Base.IBaseResult, BaseCalendarExceptionProps, BaseCalendarExceptionMethods {
+export interface BaseCalendarExceptionOData extends PS.CalendarExceptionOData, Base.IBaseResult, BaseCalendarExceptionProps, BaseCalendarExceptionMethods {
 
 }
 
@@ -1521,7 +1521,7 @@ export interface ProjectEngagementCollectionMethods {
 /*********************************************
 * ProjectEngagementOData
 **********************************************/
-export interface ProjectEngagementOData extends PS.Engagement, Base.IBaseResult, ProjectEngagementProps, ProjectEngagementMethods {
+export interface ProjectEngagementOData extends PS.EngagementOData, Base.IBaseResult, ProjectEngagementProps, ProjectEngagementMethods {
 
 }
 
@@ -2316,7 +2316,7 @@ export interface PublishedProjectCollectionMethods {
 /*********************************************
 * PublishedProjectOData
 **********************************************/
-export interface PublishedProjectOData extends PS.Project, Base.IBaseResult, PublishedProjectProps, PublishedProjectMethods {
+export interface PublishedProjectOData extends PS.ProjectOData, Base.IBaseResult, PublishedProjectProps, PublishedProjectMethods {
 	Assignments: Base.IBaseResults<PS.PublishedAssignment> & PS.PublishedAssignmentCollectionMethods;
 	Calendar: PS.Calendar & PS.CalendarCollections & PS.CalendarCollectionMethods;
 	Draft: PS.DraftProject & PS.DraftProjectCollections;
@@ -2498,7 +2498,7 @@ export interface PublishedProjectResourceCollectionMethods {
 /*********************************************
 * PublishedProjectResourceOData
 **********************************************/
-export interface PublishedProjectResourceOData extends PS.ProjectResource, Base.IBaseResult, PublishedProjectResourceProps, PublishedProjectResourceMethods {
+export interface PublishedProjectResourceOData extends PS.ProjectResourceOData, Base.IBaseResult, PublishedProjectResourceProps, PublishedProjectResourceMethods {
 	Assignments: Base.IBaseResults<PS.PublishedAssignment> & PS.PublishedAssignmentCollectionMethods;
 	DefaultAssignmentOwner: SP.User & SP.UserCollections & SP.UserCollectionMethods;
 }
@@ -2629,7 +2629,7 @@ export interface PublishedTaskCollectionMethods {
 /*********************************************
 * PublishedTaskOData
 **********************************************/
-export interface PublishedTaskOData extends PS.Task, Base.IBaseResult, PublishedTaskProps, PublishedTaskMethods {
+export interface PublishedTaskOData extends PS.TaskOData, Base.IBaseResult, PublishedTaskProps, PublishedTaskMethods {
 	Assignments: Base.IBaseResults<PS.PublishedAssignment> & PS.PublishedAssignmentCollectionMethods;
 	Calendar: PS.Calendar & PS.CalendarCollections & PS.CalendarCollectionMethods;
 	EntityLinks: Base.IBaseResults<PS.EntityLink> & PS.EntityLinkCollectionMethods;
@@ -2954,7 +2954,7 @@ export interface DraftProjectCollections extends DraftProjectPropMethods {
 /*********************************************
 * DraftProjectOData
 **********************************************/
-export interface DraftProjectOData extends PS.Project, Base.IBaseResult, DraftProjectProps, DraftProjectMethods {
+export interface DraftProjectOData extends PS.ProjectOData, Base.IBaseResult, DraftProjectProps, DraftProjectMethods {
 	Assignments: Base.IBaseResults<PS.DraftAssignment> & PS.DraftAssignmentCollectionMethods;
 	Calendar: PS.Calendar & PS.CalendarCollections & PS.CalendarCollectionMethods;
 	IncludeCustomFields: PS.DraftProject & PS.DraftProjectCollections;
@@ -3057,7 +3057,7 @@ export interface DraftProjectResourceCollectionMethods {
 /*********************************************
 * DraftProjectResourceOData
 **********************************************/
-export interface DraftProjectResourceOData extends PS.ProjectResource, Base.IBaseResult, DraftProjectResourceProps, DraftProjectResourceMethods {
+export interface DraftProjectResourceOData extends PS.ProjectResourceOData, Base.IBaseResult, DraftProjectResourceProps, DraftProjectResourceMethods {
 	Assignments: Base.IBaseResults<PS.DraftAssignment> & PS.DraftAssignmentCollectionMethods;
 	DefaultAssignmentOwner: SP.User & SP.UserCollections & SP.UserCollectionMethods;
 }
@@ -3222,7 +3222,7 @@ export interface DraftTaskCollectionMethods {
 /*********************************************
 * DraftTaskOData
 **********************************************/
-export interface DraftTaskOData extends PS.Task, Base.IBaseResult, DraftTaskProps, DraftTaskMethods {
+export interface DraftTaskOData extends PS.TaskOData, Base.IBaseResult, DraftTaskProps, DraftTaskMethods {
 	Assignments: Base.IBaseResults<PS.DraftAssignment> & PS.DraftAssignmentCollectionMethods;
 	Calendar: PS.Calendar & PS.CalendarCollections & PS.CalendarCollectionMethods;
 	Parent: PS.DraftTask & PS.DraftTaskCollections & PS.DraftTaskCollectionMethods;
@@ -3783,7 +3783,7 @@ export interface ResourceEngagementCollectionMethods {
 /*********************************************
 * ResourceEngagementOData
 **********************************************/
-export interface ResourceEngagementOData extends PS.Engagement, Base.IBaseResult, ResourceEngagementProps, ResourceEngagementMethods {
+export interface ResourceEngagementOData extends PS.EngagementOData, Base.IBaseResult, ResourceEngagementProps, ResourceEngagementMethods {
 
 }
 
@@ -4008,7 +4008,7 @@ export interface LookupCostCollections extends LookupCostPropMethods {
 /*********************************************
 * LookupCostOData
 **********************************************/
-export interface LookupCostOData extends PS.LookupEntry, Base.IBaseResult, LookupCostProps, LookupCostMethods {
+export interface LookupCostOData extends PS.LookupEntryOData, Base.IBaseResult, LookupCostProps, LookupCostMethods {
 
 }
 
@@ -4078,7 +4078,7 @@ export interface LookupDateCollections extends LookupDatePropMethods {
 /*********************************************
 * LookupDateOData
 **********************************************/
-export interface LookupDateOData extends PS.LookupEntry, Base.IBaseResult, LookupDateProps, LookupDateMethods {
+export interface LookupDateOData extends PS.LookupEntryOData, Base.IBaseResult, LookupDateProps, LookupDateMethods {
 
 }
 
@@ -4150,7 +4150,7 @@ export interface LookupDurationCollections extends LookupDurationPropMethods {
 /*********************************************
 * LookupDurationOData
 **********************************************/
-export interface LookupDurationOData extends PS.LookupEntry, Base.IBaseResult, LookupDurationProps, LookupDurationMethods {
+export interface LookupDurationOData extends PS.LookupEntryOData, Base.IBaseResult, LookupDurationProps, LookupDurationMethods {
 
 }
 
@@ -4220,7 +4220,7 @@ export interface LookupNumberCollections extends LookupNumberPropMethods {
 /*********************************************
 * LookupNumberOData
 **********************************************/
-export interface LookupNumberOData extends PS.LookupEntry, Base.IBaseResult, LookupNumberProps, LookupNumberMethods {
+export interface LookupNumberOData extends PS.LookupEntryOData, Base.IBaseResult, LookupNumberProps, LookupNumberMethods {
 
 }
 
@@ -4292,7 +4292,7 @@ export interface LookupTextCollections extends LookupTextPropMethods {
 /*********************************************
 * LookupTextOData
 **********************************************/
-export interface LookupTextOData extends PS.LookupEntry, Base.IBaseResult, LookupTextProps, LookupTextMethods {
+export interface LookupTextOData extends PS.LookupEntryOData, Base.IBaseResult, LookupTextProps, LookupTextMethods {
 	Parent: PS.LookupText & PS.LookupTextCollections;
 }
 
@@ -5310,7 +5310,7 @@ export interface ResourceCalendarExceptionCollections extends ResourceCalendarEx
 /*********************************************
 * ResourceCalendarExceptionOData
 **********************************************/
-export interface ResourceCalendarExceptionOData extends PS.CalendarException, Base.IBaseResult, ResourceCalendarExceptionProps, ResourceCalendarExceptionMethods {
+export interface ResourceCalendarExceptionOData extends PS.CalendarExceptionOData, Base.IBaseResult, ResourceCalendarExceptionProps, ResourceCalendarExceptionMethods {
 
 }
 

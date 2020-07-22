@@ -953,7 +953,7 @@ export interface SitePageCollectionMethods {
 /*********************************************
 * SitePageOData
 **********************************************/
-export interface SitePageOData extends SP.Publishing.SitePageMetadata, Base.IBaseResult, SitePageProps, SitePageMethods {
+export interface SitePageOData extends SP.Publishing.SitePageMetadataOData, Base.IBaseResult, SitePageProps, SitePageMethods {
 	Translations: SP.TranslationStatusCollection & SP.TranslationStatusCollectionCollections;
 }
 
@@ -1051,7 +1051,7 @@ export interface RepostPageCollectionMethods {
 /*********************************************
 * RepostPageOData
 **********************************************/
-export interface RepostPageOData extends SP.Publishing.SitePage, Base.IBaseResult, RepostPageProps, RepostPageMethods {
+export interface RepostPageOData extends SP.Publishing.SitePageOData, Base.IBaseResult, RepostPageProps, RepostPageMethods {
 
 }
 
@@ -1295,7 +1295,7 @@ export interface SitePage3DCollections extends SitePage3DPropMethods {
 /*********************************************
 * SitePage3DOData
 **********************************************/
-export interface SitePage3DOData extends SP.Publishing.SitePage, Base.IBaseResult, SitePage3DProps, SitePage3DMethods {
+export interface SitePage3DOData extends SP.Publishing.SitePageOData, Base.IBaseResult, SitePage3DProps, SitePage3DMethods {
 
 }
 

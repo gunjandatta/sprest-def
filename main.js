@@ -757,7 +757,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                         content.push(createInterface(name + "Collections", name + "PropMethods", collections.join('\n')));
                         collectionMethods.length > 0 ? content.push(createInterface(name + "CollectionMethods", null, collectionMethods.join('\n'))) : null;
                         if (baseTypes[1] == "Base.IBaseResult") {
-                            content.push(createInterface(name + "OData", [baseTypes[0], "Base.IBaseResult", name + "Props", name + "Methods"].join(', '), query.join('\n')));
+                            content.push(createInterface(name + "OData", [baseTypes[0] + "OData", "Base.IBaseResult", name + "Props", name + "Methods"].join(', '), query.join('\n')));
                         } else {
                             content.push(createInterface(name + "OData", ["Base.IBaseResult", name + "Props", name + "Methods"].join(', '), query.join('\n')));
                         }

@@ -84,7 +84,7 @@ export interface AllowedDataLocationCollectionMethods {
 /*********************************************
 * AllowedDataLocationOData
 **********************************************/
-export interface AllowedDataLocationOData extends Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationEntityData, Base.IBaseResult, AllowedDataLocationProps, AllowedDataLocationMethods {
+export interface AllowedDataLocationOData extends Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationEntityDataOData, Base.IBaseResult, AllowedDataLocationProps, AllowedDataLocationMethods {
 
 }
 
@@ -277,7 +277,7 @@ export interface CrossFarmSiteMoveJobCollectionMethods {
 /*********************************************
 * CrossFarmSiteMoveJobOData
 **********************************************/
-export interface CrossFarmSiteMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobEntityData, Base.IBaseResult, CrossFarmSiteMoveJobProps, CrossFarmSiteMoveJobMethods {
+export interface CrossFarmSiteMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobEntityDataOData, Base.IBaseResult, CrossFarmSiteMoveJobProps, CrossFarmSiteMoveJobMethods {
 
 }
 
@@ -388,7 +388,7 @@ export interface CrossFarmUserMoveJobCollectionMethods {
 /*********************************************
 * CrossFarmUserMoveJobOData
 **********************************************/
-export interface CrossFarmUserMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobEntityData, Base.IBaseResult, CrossFarmUserMoveJobProps, CrossFarmUserMoveJobMethods {
+export interface CrossFarmUserMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobEntityDataOData, Base.IBaseResult, CrossFarmUserMoveJobProps, CrossFarmUserMoveJobMethods {
 
 }
 
@@ -514,7 +514,7 @@ export interface CrossGeoTenantPropertyCollectionMethods {
 /*********************************************
 * CrossGeoTenantPropertyOData
 **********************************************/
-export interface CrossGeoTenantPropertyOData extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityData, Base.IBaseResult, CrossGeoTenantPropertyProps, CrossGeoTenantPropertyMethods {
+export interface CrossGeoTenantPropertyOData extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityDataOData, Base.IBaseResult, CrossGeoTenantPropertyProps, CrossGeoTenantPropertyMethods {
 
 }
 
@@ -842,7 +842,7 @@ export interface GroupMoveJobCollectionMethods {
 /*********************************************
 * GroupMoveJobOData
 **********************************************/
-export interface GroupMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobEntityData, Base.IBaseResult, GroupMoveJobProps, GroupMoveJobMethods {
+export interface GroupMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobEntityDataOData, Base.IBaseResult, GroupMoveJobProps, GroupMoveJobMethods {
 
 }
 
@@ -1094,7 +1094,7 @@ export interface SiteMoveJobCollectionMethods {
 /*********************************************
 * SiteMoveJobOData
 **********************************************/
-export interface SiteMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityData, Base.IBaseResult, SiteMoveJobProps, SiteMoveJobMethods {
+export interface SiteMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityDataOData, Base.IBaseResult, SiteMoveJobProps, SiteMoveJobMethods {
 
 }
 
@@ -1380,7 +1380,7 @@ export interface UserMoveJobCollectionMethods {
 /*********************************************
 * UserMoveJobOData
 **********************************************/
-export interface UserMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobEntityData, Base.IBaseResult, UserMoveJobProps, UserMoveJobMethods {
+export interface UserMoveJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobEntityDataOData, Base.IBaseResult, UserMoveJobProps, UserMoveJobMethods {
 
 }
 

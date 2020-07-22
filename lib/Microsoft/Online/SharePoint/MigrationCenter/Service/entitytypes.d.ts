@@ -78,7 +78,7 @@ export interface DeviceCollectionMethods {
 /*********************************************
 * DeviceOData
 **********************************************/
-export interface DeviceOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityData, Base.IBaseResult, DeviceProps, DeviceMethods {
+export interface DeviceOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityDataOData, Base.IBaseResult, DeviceProps, DeviceMethods {
 
 }
 
@@ -338,7 +338,7 @@ export interface MigrationTaskCollectionMethods {
 /*********************************************
 * MigrationTaskOData
 **********************************************/
-export interface MigrationTaskOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityData, Base.IBaseResult, MigrationTaskProps, MigrationTaskMethods {
+export interface MigrationTaskOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityDataOData, Base.IBaseResult, MigrationTaskProps, MigrationTaskMethods {
 
 }
 
@@ -419,7 +419,7 @@ export interface MigrationCredentialCollectionMethods {
 /*********************************************
 * MigrationCredentialOData
 **********************************************/
-export interface MigrationCredentialOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityData, Base.IBaseResult, MigrationCredentialProps, MigrationCredentialMethods {
+export interface MigrationCredentialOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityDataOData, Base.IBaseResult, MigrationCredentialProps, MigrationCredentialMethods {
 
 }
 

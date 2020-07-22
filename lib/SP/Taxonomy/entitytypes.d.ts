@@ -71,7 +71,7 @@ export interface TaxonomyFieldCollections extends TaxonomyFieldPropMethods {
 /*********************************************
 * TaxonomyFieldOData
 **********************************************/
-export interface TaxonomyFieldOData extends SP.FieldLookup, Base.IBaseResult, TaxonomyFieldProps, TaxonomyFieldMethods {
+export interface TaxonomyFieldOData extends SP.FieldLookupOData, Base.IBaseResult, TaxonomyFieldProps, TaxonomyFieldMethods {
 
 }
 
