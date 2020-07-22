@@ -2448,8 +2448,6 @@ export interface ListCollections extends ListPropMethods {
 	Forms(id: string | number): Base.IBaseQuery<SP.Form> & SP.FormCollections;
 	Items(): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
 	Items(id: string | number): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
-	RoleAssignments(): Base.IBaseCollection<SP.RoleAssignment, SP.RoleAssignmentOData, Base.IBaseExecution & SP.RoleAssignmentCollectionMethods> & Base.IBaseExecution & SP.RoleAssignmentCollectionMethods;
-	RoleAssignments(id: string | number): Base.IBaseQuery<SP.RoleAssignment, SP.RoleAssignmentOData> & SP.RoleAssignmentCollections & SP.RoleAssignmentMethods;
 	Subscriptions(): Base.IBaseCollection<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionCollectionMethods;
 	Subscriptions(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionCollections & Microsoft.SharePoint.Webhooks.SubscriptionMethods;
 	UserCustomActions(): Base.IBaseCollection<SP.UserCustomAction, SP.UserCustomActionOData, Base.IBaseExecution & SP.UserCustomActionCollectionMethods> & Base.IBaseExecution & SP.UserCustomActionCollectionMethods;
@@ -2488,7 +2486,6 @@ export interface ListOData extends SP.SecurableObject, Base.IBaseResult, ListPro
 	InformationRightsManagementSettings: SP.InformationRightsManagementSettings & SP.InformationRightsManagementSettingsCollections;
 	Items: Base.IBaseResults<SP.ListItem> & SP.ListItemCollectionMethods;
 	ParentWeb: SP.Web & SP.WebCollections & SP.WebCollectionMethods;
-	RoleAssignments: Base.IBaseResults<SP.RoleAssignment> & SP.RoleAssignmentCollectionMethods;
 	RootFolder: SP.Folder & SP.FolderCollections & SP.FolderCollectionMethods;
 	Subscriptions: Base.IBaseResults<Microsoft.SharePoint.Webhooks.Subscription> & Microsoft.SharePoint.Webhooks.SubscriptionCollectionMethods;
 	TitleResource: SP.UserResource & SP.UserResourceCollections;
@@ -3069,8 +3066,6 @@ export interface WebCollections extends WebPropMethods {
 	PushNotificationSubscribers(id: string | number): Base.IBaseQuery<SP.PushNotificationSubscriber, SP.PushNotificationSubscriberOData> & SP.PushNotificationSubscriberCollections & SP.PushNotificationSubscriberMethods;
 	RecycleBin(): Base.IBaseCollection<SP.RecycleBinItem, SP.RecycleBinItemOData, Base.IBaseExecution & SP.RecycleBinItemCollectionMethods> & Base.IBaseExecution & SP.RecycleBinItemCollectionMethods;
 	RecycleBin(id: string | number): Base.IBaseQuery<SP.RecycleBinItem, SP.RecycleBinItemOData> & SP.RecycleBinItemCollections & SP.RecycleBinItemMethods;
-	RoleAssignments(): Base.IBaseCollection<SP.RoleAssignment, SP.RoleAssignmentOData, Base.IBaseExecution & SP.RoleAssignmentCollectionMethods> & Base.IBaseExecution & SP.RoleAssignmentCollectionMethods;
-	RoleAssignments(id: string | number): Base.IBaseQuery<SP.RoleAssignment, SP.RoleAssignmentOData> & SP.RoleAssignmentCollections & SP.RoleAssignmentMethods;
 	RoleDefinitions(): Base.IBaseCollection<SP.RoleDefinition> & SP.RoleDefinitionCollectionMethods;
 	RoleDefinitions(id: string | number): Base.IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	SiteGroups(): Base.IBaseCollection<SP.Group, SP.GroupOData, Base.IBaseExecution & SP.GroupCollectionMethods> & Base.IBaseExecution & SP.GroupCollectionMethods;
@@ -3130,7 +3125,6 @@ export interface WebOData extends SP.SecurableObject, Base.IBaseResult, WebProps
 	PushNotificationSubscribers: Base.IBaseResults<SP.PushNotificationSubscriber> & SP.PushNotificationSubscriberCollectionMethods;
 	RecycleBin: Base.IBaseResults<SP.RecycleBinItem> & SP.RecycleBinItemCollectionMethods;
 	RegionalSettings: SP.RegionalSettings & SP.RegionalSettingsCollections;
-	RoleAssignments: Base.IBaseResults<SP.RoleAssignment> & SP.RoleAssignmentCollectionMethods;
 	RoleDefinitions: Base.IBaseResults<SP.RoleDefinition> & SP.RoleDefinitionCollectionMethods;
 	RootFolder: SP.Folder & SP.FolderCollections & SP.FolderCollectionMethods;
 	SiteCollectionAppCatalog: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessorCollections;

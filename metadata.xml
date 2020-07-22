@@ -1043,12 +1043,9 @@
                 <Property Name="CanCurrentUserManageGroup" Type="Edm.Boolean" Nullable="false" />
                 <Property Name="CanCurrentUserViewMembership" Type="Edm.Boolean" Nullable="false" />
                 <Property Name="Description" Type="Edm.String" />
-                <Property Name="Id" Type="Edm.Int32" Nullable="false" />
-                <Property Name="IsHiddenInUI" Type="Edm.Boolean" Nullable="false" />
                 <Property Name="OnlyAllowMembersViewMembership" Type="Edm.Boolean" Nullable="false" />
                 <Property Name="OwnerTitle" Type="Edm.String" />
                 <Property Name="RequestToJoinLeaveEmailSetting" Type="Edm.String" />
-                <Property Name="Title" Type="Edm.String"/>
                 <NavigationProperty Name="Owner" Relationship="SP.SP_Group_Owner_SP_Principal_OwnerPartner" ToRole="Owner" FromRole="OwnerPartner" />
                 <NavigationProperty Name="Users" Relationship="SP.SP_Group_Users_SP_User_UsersPartner" ToRole="Users" FromRole="UsersPartner" />
             </EntityType>
@@ -1504,7 +1501,6 @@
                 <NavigationProperty Name="InformationRightsManagementSettings" Relationship="SP.SP_List_InformationRightsManagementSettings_SP_InformationRightsManagementSettings_InformationRightsManagementSettingsPartner" ToRole="InformationRightsManagementSettings" FromRole="InformationRightsManagementSettingsPartner" />
                 <NavigationProperty Name="Items" Relationship="SP.SP_List_Items_SP_ListItem_ItemsPartner" ToRole="Items" FromRole="ItemsPartner" />
                 <NavigationProperty Name="ParentWeb" Relationship="SP.SP_List_ParentWeb_SP_Web_ParentWebPartner" ToRole="ParentWeb" FromRole="ParentWebPartner" />
-                <NavigationProperty Name="RoleAssignments" Relationship="SP.SP_SecurableObject_RoleAssignments_SP_RoleAssignment_RoleAssignmentsPartner" ToRole="RoleAssignments" FromRole="RoleAssignmentsPartner" />
                 <NavigationProperty Name="RootFolder" Relationship="SP.SP_List_RootFolder_SP_Folder_RootFolderPartner" ToRole="RootFolder" FromRole="RootFolderPartner" />
                 <NavigationProperty Name="Subscriptions" Relationship="Microsoft.SharePoint.Webhooks.SP_List_Subscriptions_Microsoft_SharePoint_Webhooks_Subscription_SubscriptionsPartner" ToRole="Subscriptions" FromRole="SubscriptionsPartner" />
                 <NavigationProperty Name="TitleResource" Relationship="SP.SP_List_TitleResource_SP_UserResource_TitleResourcePartner" ToRole="TitleResource" FromRole="TitleResourcePartner" />
@@ -1721,7 +1717,6 @@
                 <NavigationProperty Name="PushNotificationSubscribers" Relationship="SP.SP_Web_PushNotificationSubscribers_SP_PushNotificationSubscriber_PushNotificationSubscribersPartner" ToRole="PushNotificationSubscribers" FromRole="PushNotificationSubscribersPartner" />
                 <NavigationProperty Name="RecycleBin" Relationship="SP.SP_Web_RecycleBin_SP_RecycleBinItem_RecycleBinPartner" ToRole="RecycleBin" FromRole="RecycleBinPartner" />
                 <NavigationProperty Name="RegionalSettings" Relationship="SP.SP_Web_RegionalSettings_SP_RegionalSettings_RegionalSettingsPartner" ToRole="RegionalSettings" FromRole="RegionalSettingsPartner" />
-                <NavigationProperty Name="RoleAssignments" Relationship="SP.SP_SecurableObject_RoleAssignments_SP_RoleAssignment_RoleAssignmentsPartner" ToRole="RoleAssignments" FromRole="RoleAssignmentsPartner" />
                 <NavigationProperty Name="RoleDefinitions" Relationship="SP.SP_Web_RoleDefinitions_SP_RoleDefinition_RoleDefinitionsPartner" ToRole="RoleDefinitions" FromRole="RoleDefinitionsPartner" />
                 <NavigationProperty Name="RootFolder" Relationship="SP.SP_Web_RootFolder_SP_Folder_RootFolderPartner" ToRole="RootFolder" FromRole="RootFolderPartner" />
                 <NavigationProperty Name="SiteCollectionAppCatalog" Relationship="Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SP_Web_SiteCollectionAppCatalog_Microsoft_SharePoint_Marketplace_CorporateCuratedGallery_SiteCollectionCorporateCatalogAccessor_SiteCollectionAppCatalogPartner" ToRole="SiteCollectionAppCatalog" FromRole="SiteCollectionAppCatalogPartner" />
