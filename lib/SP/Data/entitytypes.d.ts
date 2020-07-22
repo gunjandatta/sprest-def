@@ -999,7 +999,7 @@ export interface Shared_x0020_DocumentsItemCollections extends Shared_x0020_Docu
 /*********************************************
 * Shared_x0020_DocumentsItemOData
 **********************************************/
-export interface Shared_x0020_DocumentsItemOData extends Base.IBaseResult, Shared_x0020_DocumentsItemProps, Shared_x0020_DocumentsItemMethods {
+export interface Shared_x0020_DocumentsItemOData extends SP.ListItem, Base.IBaseResult, Shared_x0020_DocumentsItemProps, Shared_x0020_DocumentsItemMethods {
 	SharedWithUsers: Base.IBaseResults<SP.Data.UserInfoItem>;
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
@@ -1611,7 +1611,7 @@ export interface PublishedFeedListItemCollections extends PublishedFeedListItemP
 /*********************************************
 * PublishedFeedListItemOData
 **********************************************/
-export interface PublishedFeedListItemOData extends Base.IBaseResult, PublishedFeedListItemProps, PublishedFeedListItemMethods {
+export interface PublishedFeedListItemOData extends SP.ListItem, Base.IBaseResult, PublishedFeedListItemProps, PublishedFeedListItemMethods {
 	LikedBy: Base.IBaseResults<SP.Data.UserInfoItem>;
 	TaxCatchAll: Base.IBaseResults<SP.Data.TaxonomyHiddenListListItem>;
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
@@ -2190,7 +2190,7 @@ export interface SitePagesItemCollections extends SitePagesItemPropMethods {
 /*********************************************
 * SitePagesItemOData
 **********************************************/
-export interface SitePagesItemOData extends Base.IBaseResult, SitePagesItemProps, SitePagesItemMethods {
+export interface SitePagesItemOData extends SP.ListItem, Base.IBaseResult, SitePagesItemProps, SitePagesItemMethods {
 	OData__AuthorByline: Base.IBaseResults<SP.Data.UserInfoItem>;
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;

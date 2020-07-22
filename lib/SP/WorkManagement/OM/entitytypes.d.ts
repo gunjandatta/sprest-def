@@ -338,7 +338,7 @@ export interface LocationOrientedSortableSessionCollections extends LocationOrie
 /*********************************************
 * LocationOrientedSortableSessionOData
 **********************************************/
-export interface LocationOrientedSortableSessionOData extends Base.IBaseResult, LocationOrientedSortableSessionProps, LocationOrientedSortableSessionMethods {
+export interface LocationOrientedSortableSessionOData extends SP.WorkManagement.OM.BaseSession, Base.IBaseResult, LocationOrientedSortableSessionProps, LocationOrientedSortableSessionMethods {
 
 }
 
@@ -426,7 +426,7 @@ export interface LocationOrientedUserOrderedSessionCollections extends LocationO
 /*********************************************
 * LocationOrientedUserOrderedSessionOData
 **********************************************/
-export interface LocationOrientedUserOrderedSessionOData extends Base.IBaseResult, LocationOrientedUserOrderedSessionProps, LocationOrientedUserOrderedSessionMethods {
+export interface LocationOrientedUserOrderedSessionOData extends SP.WorkManagement.OM.BaseSession, Base.IBaseResult, LocationOrientedUserOrderedSessionProps, LocationOrientedUserOrderedSessionMethods {
 
 }
 
@@ -1008,7 +1008,7 @@ export interface SortableSessionCollections extends SortableSessionPropMethods {
 /*********************************************
 * SortableSessionOData
 **********************************************/
-export interface SortableSessionOData extends Base.IBaseResult, SortableSessionProps, SortableSessionMethods {
+export interface SortableSessionOData extends SP.WorkManagement.OM.BaseSession, Base.IBaseResult, SortableSessionProps, SortableSessionMethods {
 
 }
 
@@ -1428,7 +1428,7 @@ export interface UserOrderedSessionCollections extends UserOrderedSessionPropMet
 /*********************************************
 * UserOrderedSessionOData
 **********************************************/
-export interface UserOrderedSessionOData extends Base.IBaseResult, UserOrderedSessionProps, UserOrderedSessionMethods {
+export interface UserOrderedSessionOData extends SP.WorkManagement.OM.BaseSession, Base.IBaseResult, UserOrderedSessionProps, UserOrderedSessionMethods {
 
 }
 

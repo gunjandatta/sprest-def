@@ -643,7 +643,7 @@ export interface GroupCollectionMethods {
 /*********************************************
 * GroupOData
 **********************************************/
-export interface GroupOData extends Base.IBaseResult, GroupProps, GroupMethods {
+export interface GroupOData extends SP.Principal, Base.IBaseResult, GroupProps, GroupMethods {
 	Owner: SP.Principal & SP.PrincipalCollections;
 	Users: Base.IBaseResults<SP.User> & SP.UserCollectionMethods;
 }
@@ -737,7 +737,7 @@ export interface UserCollectionMethods {
 /*********************************************
 * UserOData
 **********************************************/
-export interface UserOData extends Base.IBaseResult, UserProps, UserMethods {
+export interface UserOData extends SP.Principal, Base.IBaseResult, UserProps, UserMethods {
 	Alerts: Base.IBaseResults<SP.Alert> & SP.AlertCollectionMethods;
 	Groups: Base.IBaseResults<SP.Group> & SP.GroupCollectionMethods;
 }
@@ -1206,7 +1206,7 @@ export interface ListItemCollectionMethods {
 /*********************************************
 * ListItemOData
 **********************************************/
-export interface ListItemOData extends Base.IBaseResult, ListItemProps, ListItemMethods {
+export interface ListItemOData extends SP.SecurableObject, Base.IBaseResult, ListItemProps, ListItemMethods {
 	AttachmentFiles: Base.IBaseResults<SP.Attachment> & SP.AttachmentCollectionMethods;
 	ContentType: SP.ContentType & SP.ContentTypeCollections & SP.ContentTypeCollectionMethods;
 	GetDlpPolicyTip: SP.DlpPolicyTip & SP.DlpPolicyTipCollections;
@@ -2477,7 +2477,7 @@ export interface ListCollectionMethods {
 /*********************************************
 * ListOData
 **********************************************/
-export interface ListOData extends Base.IBaseResult, ListProps, ListMethods {
+export interface ListOData extends SP.SecurableObject, Base.IBaseResult, ListProps, ListMethods {
 	ContentTypes: Base.IBaseResults<SP.ContentType> & SP.ContentTypeCollectionMethods;
 	CreatablesInfo: SP.CreatablesInfo & SP.CreatablesInfoCollections;
 	DefaultView: SP.View & SP.ViewCollections & SP.ViewCollectionMethods;
@@ -3099,7 +3099,7 @@ export interface WebCollectionMethods {
 /*********************************************
 * WebOData
 **********************************************/
-export interface WebOData extends Base.IBaseResult, WebProps, WebMethods {
+export interface WebOData extends SP.SecurableObject, Base.IBaseResult, WebProps, WebMethods {
 	Activities: Base.IBaseResults<Microsoft.SharePoint.Activities.SPActivityEntity>;
 	ActivityLogger: Microsoft.SharePoint.Internal.ActivityLogger & Microsoft.SharePoint.Internal.ActivityLoggerCollections;
 	Alerts: Base.IBaseResults<SP.Alert> & SP.AlertCollectionMethods;
@@ -6042,7 +6042,7 @@ export interface FieldCalculatedCollections extends FieldCalculatedPropMethods {
 /*********************************************
 * FieldCalculatedOData
 **********************************************/
-export interface FieldCalculatedOData extends Base.IBaseResult, FieldCalculatedProps, FieldCalculatedMethods {
+export interface FieldCalculatedOData extends SP.Field, Base.IBaseResult, FieldCalculatedProps, FieldCalculatedMethods {
 
 }
 
@@ -6121,7 +6121,7 @@ export interface FieldMultiChoiceCollections extends FieldMultiChoicePropMethods
 /*********************************************
 * FieldMultiChoiceOData
 **********************************************/
-export interface FieldMultiChoiceOData extends Base.IBaseResult, FieldMultiChoiceProps, FieldMultiChoiceMethods {
+export interface FieldMultiChoiceOData extends SP.Field, Base.IBaseResult, FieldMultiChoiceProps, FieldMultiChoiceMethods {
 
 }
 
@@ -6198,7 +6198,7 @@ export interface FieldChoiceCollections extends FieldChoicePropMethods {
 /*********************************************
 * FieldChoiceOData
 **********************************************/
-export interface FieldChoiceOData extends Base.IBaseResult, FieldChoiceProps, FieldChoiceMethods {
+export interface FieldChoiceOData extends SP.FieldMultiChoice, Base.IBaseResult, FieldChoiceProps, FieldChoiceMethods {
 
 }
 
@@ -6275,7 +6275,7 @@ export interface FieldComputedCollections extends FieldComputedPropMethods {
 /*********************************************
 * FieldComputedOData
 **********************************************/
-export interface FieldComputedOData extends Base.IBaseResult, FieldComputedProps, FieldComputedMethods {
+export interface FieldComputedOData extends SP.Field, Base.IBaseResult, FieldComputedProps, FieldComputedMethods {
 
 }
 
@@ -6355,7 +6355,7 @@ export interface FieldNumberCollections extends FieldNumberPropMethods {
 /*********************************************
 * FieldNumberOData
 **********************************************/
-export interface FieldNumberOData extends Base.IBaseResult, FieldNumberProps, FieldNumberMethods {
+export interface FieldNumberOData extends SP.Field, Base.IBaseResult, FieldNumberProps, FieldNumberMethods {
 
 }
 
@@ -6432,7 +6432,7 @@ export interface FieldCurrencyCollections extends FieldCurrencyPropMethods {
 /*********************************************
 * FieldCurrencyOData
 **********************************************/
-export interface FieldCurrencyOData extends Base.IBaseResult, FieldCurrencyProps, FieldCurrencyMethods {
+export interface FieldCurrencyOData extends SP.FieldNumber, Base.IBaseResult, FieldCurrencyProps, FieldCurrencyMethods {
 
 }
 
@@ -6511,7 +6511,7 @@ export interface FieldDateTimeCollections extends FieldDateTimePropMethods {
 /*********************************************
 * FieldDateTimeOData
 **********************************************/
-export interface FieldDateTimeOData extends Base.IBaseResult, FieldDateTimeProps, FieldDateTimeMethods {
+export interface FieldDateTimeOData extends SP.Field, Base.IBaseResult, FieldDateTimeProps, FieldDateTimeMethods {
 
 }
 
@@ -6588,7 +6588,7 @@ export interface FieldGeolocationCollections extends FieldGeolocationPropMethods
 /*********************************************
 * FieldGeolocationOData
 **********************************************/
-export interface FieldGeolocationOData extends Base.IBaseResult, FieldGeolocationProps, FieldGeolocationMethods {
+export interface FieldGeolocationOData extends SP.Field, Base.IBaseResult, FieldGeolocationProps, FieldGeolocationMethods {
 
 }
 
@@ -6665,7 +6665,7 @@ export interface FieldGuidCollections extends FieldGuidPropMethods {
 /*********************************************
 * FieldGuidOData
 **********************************************/
-export interface FieldGuidOData extends Base.IBaseResult, FieldGuidProps, FieldGuidMethods {
+export interface FieldGuidOData extends SP.Field, Base.IBaseResult, FieldGuidProps, FieldGuidMethods {
 
 }
 
@@ -6748,7 +6748,7 @@ export interface FieldMultiLineTextCollections extends FieldMultiLineTextPropMet
 /*********************************************
 * FieldMultiLineTextOData
 **********************************************/
-export interface FieldMultiLineTextOData extends Base.IBaseResult, FieldMultiLineTextProps, FieldMultiLineTextMethods {
+export interface FieldMultiLineTextOData extends SP.Field, Base.IBaseResult, FieldMultiLineTextProps, FieldMultiLineTextMethods {
 
 }
 
@@ -6825,7 +6825,7 @@ export interface FieldLocationCollections extends FieldLocationPropMethods {
 /*********************************************
 * FieldLocationOData
 **********************************************/
-export interface FieldLocationOData extends Base.IBaseResult, FieldLocationProps, FieldLocationMethods {
+export interface FieldLocationOData extends SP.FieldMultiLineText, Base.IBaseResult, FieldLocationProps, FieldLocationMethods {
 
 }
 
@@ -6911,7 +6911,7 @@ export interface FieldLookupCollections extends FieldLookupPropMethods {
 /*********************************************
 * FieldLookupOData
 **********************************************/
-export interface FieldLookupOData extends Base.IBaseResult, FieldLookupProps, FieldLookupMethods {
+export interface FieldLookupOData extends SP.Field, Base.IBaseResult, FieldLookupProps, FieldLookupMethods {
 
 }
 
@@ -6994,7 +6994,7 @@ export interface FieldRatingScaleCollections extends FieldRatingScalePropMethods
 /*********************************************
 * FieldRatingScaleOData
 **********************************************/
-export interface FieldRatingScaleOData extends Base.IBaseResult, FieldRatingScaleProps, FieldRatingScaleMethods {
+export interface FieldRatingScaleOData extends SP.FieldMultiChoice, Base.IBaseResult, FieldRatingScaleProps, FieldRatingScaleMethods {
 
 }
 
@@ -7071,7 +7071,7 @@ export interface FieldTextCollections extends FieldTextPropMethods {
 /*********************************************
 * FieldTextOData
 **********************************************/
-export interface FieldTextOData extends Base.IBaseResult, FieldTextProps, FieldTextMethods {
+export interface FieldTextOData extends SP.Field, Base.IBaseResult, FieldTextProps, FieldTextMethods {
 
 }
 
@@ -7148,7 +7148,7 @@ export interface FieldThumbnailCollections extends FieldThumbnailPropMethods {
 /*********************************************
 * FieldThumbnailOData
 **********************************************/
-export interface FieldThumbnailOData extends Base.IBaseResult, FieldThumbnailProps, FieldThumbnailMethods {
+export interface FieldThumbnailOData extends SP.FieldMultiLineText, Base.IBaseResult, FieldThumbnailProps, FieldThumbnailMethods {
 
 }
 
@@ -7225,7 +7225,7 @@ export interface FieldUrlCollections extends FieldUrlPropMethods {
 /*********************************************
 * FieldUrlOData
 **********************************************/
-export interface FieldUrlOData extends Base.IBaseResult, FieldUrlProps, FieldUrlMethods {
+export interface FieldUrlOData extends SP.Field, Base.IBaseResult, FieldUrlProps, FieldUrlMethods {
 
 }
 
@@ -7305,7 +7305,7 @@ export interface FieldUserCollections extends FieldUserPropMethods {
 /*********************************************
 * FieldUserOData
 **********************************************/
-export interface FieldUserOData extends Base.IBaseResult, FieldUserProps, FieldUserMethods {
+export interface FieldUserOData extends SP.FieldLookup, Base.IBaseResult, FieldUserProps, FieldUserMethods {
 
 }
 
