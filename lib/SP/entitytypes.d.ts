@@ -1203,7 +1203,7 @@ export interface ListItemCollectionMethods {
 /*********************************************
 * ListItemOData
 **********************************************/
-export interface ListItemOData extends SP.SecurableObject, Base.IBaseResult, ListItemProps, ListItemMethods {
+export interface ListItemOData extends SP.SecurableObjectOData, Base.IBaseResult, ListItemProps, ListItemMethods {
 	AttachmentFiles: Base.IBaseResults<SP.Attachment> & SP.AttachmentCollectionMethods;
 	ContentType: SP.ContentType & SP.ContentTypeCollections & SP.ContentTypeCollectionMethods;
 	GetDlpPolicyTip: SP.DlpPolicyTip & SP.DlpPolicyTipCollections;
@@ -2472,7 +2472,7 @@ export interface ListCollectionMethods {
 /*********************************************
 * ListOData
 **********************************************/
-export interface ListOData extends SP.SecurableObject, Base.IBaseResult, ListProps, ListMethods {
+export interface ListOData extends SP.SecurableObjectOData, Base.IBaseResult, ListProps, ListMethods {
 	ContentTypes: Base.IBaseResults<SP.ContentType> & SP.ContentTypeCollectionMethods;
 	CreatablesInfo: SP.CreatablesInfo & SP.CreatablesInfoCollections;
 	DefaultView: SP.View & SP.ViewCollections & SP.ViewCollectionMethods;
@@ -3091,7 +3091,7 @@ export interface WebCollectionMethods {
 /*********************************************
 * WebOData
 **********************************************/
-export interface WebOData extends SP.SecurableObject, Base.IBaseResult, WebProps, WebMethods {
+export interface WebOData extends SP.SecurableObjectOData, Base.IBaseResult, WebProps, WebMethods {
 	Activities: Base.IBaseResults<Microsoft.SharePoint.Activities.SPActivityEntity>;
 	ActivityLogger: Microsoft.SharePoint.Internal.ActivityLogger & Microsoft.SharePoint.Internal.ActivityLoggerCollections;
 	Alerts: Base.IBaseResults<SP.Alert> & SP.AlertCollectionMethods;
