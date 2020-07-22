@@ -4,7 +4,7 @@ import { Microsoft } from "../../../../../";
 /*********************************************
 * IDevice
 **********************************************/
-export interface IDevice extends DeviceCollections, DeviceMethods, Base.IBaseQuery<Device, IDeviceQuery> {
+export interface IDevice extends Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityDataCollections, DeviceCollections, DeviceMethods, Base.IBaseQuery<Device, IDeviceQuery> {
 
 }
 
@@ -247,7 +247,7 @@ export interface MigrationCenterStorageMethods {
 /*********************************************
 * IMigrationTask
 **********************************************/
-export interface IMigrationTask extends MigrationTaskCollections, MigrationTaskMethods, Base.IBaseQuery<MigrationTask, IMigrationTaskQuery> {
+export interface IMigrationTask extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityDataCollections, MigrationTaskCollections, MigrationTaskMethods, Base.IBaseQuery<MigrationTask, IMigrationTaskQuery> {
 
 }
 
@@ -353,7 +353,7 @@ export interface MigrationTaskMethods {
 /*********************************************
 * IMigrationCredential
 **********************************************/
-export interface IMigrationCredential extends MigrationCredentialCollections, MigrationCredentialMethods, Base.IBaseQuery<MigrationCredential, IMigrationCredentialQuery> {
+export interface IMigrationCredential extends Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityDataCollections, MigrationCredentialCollections, MigrationCredentialMethods, Base.IBaseQuery<MigrationCredential, IMigrationCredentialQuery> {
 
 }
 

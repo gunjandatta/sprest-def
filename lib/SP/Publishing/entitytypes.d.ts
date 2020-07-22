@@ -871,7 +871,7 @@ export interface UserInfoCollections {
 /*********************************************
 * ISitePage
 **********************************************/
-export interface ISitePage extends SitePageCollections, SitePageMethods, Base.IBaseQuery<SitePage, ISitePageQuery> {
+export interface ISitePage extends SP.Publishing.SitePageMetadataCollections, SitePageCollections, SitePageMethods, Base.IBaseQuery<SitePage, ISitePageQuery> {
 
 }
 
@@ -982,7 +982,7 @@ export interface SitePageMethods {
 /*********************************************
 * IRepostPage
 **********************************************/
-export interface IRepostPage extends RepostPageCollections, RepostPageMethods, Base.IBaseQuery<RepostPage, IRepostPageQuery> {
+export interface IRepostPage extends SP.Publishing.SitePageCollections, RepostPageCollections, RepostPageMethods, Base.IBaseQuery<RepostPage, IRepostPageQuery> {
 
 }
 
@@ -1239,7 +1239,7 @@ export interface SharePointHomeServiceManagerMethods {
 /*********************************************
 * ISitePage3D
 **********************************************/
-export interface ISitePage3D extends SitePage3DCollections, SitePage3DMethods, Base.IBaseQuery<SitePage3D, ISitePage3DQuery> {
+export interface ISitePage3D extends SP.Publishing.SitePageCollections, SitePage3DCollections, SitePage3DMethods, Base.IBaseQuery<SitePage3D, ISitePage3DQuery> {
 
 }
 

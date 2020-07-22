@@ -614,7 +614,7 @@ export interface CalendarMethods {
 /*********************************************
 * IBaseCalendarException
 **********************************************/
-export interface IBaseCalendarException extends BaseCalendarExceptionCollections, BaseCalendarExceptionMethods, Base.IBaseQuery<BaseCalendarException, IBaseCalendarExceptionQuery> {
+export interface IBaseCalendarException extends PS.CalendarExceptionCollections, BaseCalendarExceptionCollections, BaseCalendarExceptionMethods, Base.IBaseQuery<BaseCalendarException, IBaseCalendarExceptionQuery> {
 
 }
 
@@ -1443,7 +1443,7 @@ export interface EngagementCommentCollectionMethods {
 /*********************************************
 * IProjectEngagement
 **********************************************/
-export interface IProjectEngagement extends ProjectEngagementCollections, ProjectEngagementMethods, Base.IBaseQuery<ProjectEngagement, IProjectEngagementQuery> {
+export interface IProjectEngagement extends PS.EngagementCollections, ProjectEngagementCollections, ProjectEngagementMethods, Base.IBaseQuery<ProjectEngagement, IProjectEngagementQuery> {
 
 }
 
@@ -2202,7 +2202,7 @@ export interface TaskMethods {
 /*********************************************
 * IPublishedProject
 **********************************************/
-export interface IPublishedProject extends PublishedProjectCollections, PublishedProjectMethods, Base.IBaseQuery<PublishedProject, IPublishedProjectQuery> {
+export interface IPublishedProject extends PS.ProjectCollections, PublishedProjectCollections, PublishedProjectMethods, Base.IBaseQuery<PublishedProject, IPublishedProjectQuery> {
 
 }
 
@@ -2417,7 +2417,7 @@ export interface PublishedAssignmentCollectionMethods {
 /*********************************************
 * IPublishedProjectResource
 **********************************************/
-export interface IPublishedProjectResource extends PublishedProjectResourceCollections, PublishedProjectResourceMethods, Base.IBaseQuery<PublishedProjectResource, IPublishedProjectResourceQuery> {
+export interface IPublishedProjectResource extends PS.ProjectResourceCollections, PublishedProjectResourceCollections, PublishedProjectResourceMethods, Base.IBaseQuery<PublishedProjectResource, IPublishedProjectResourceQuery> {
 
 }
 
@@ -2513,7 +2513,7 @@ export interface PublishedProjectResourceMethods {
 /*********************************************
 * IPublishedTask
 **********************************************/
-export interface IPublishedTask extends PublishedTaskCollections, PublishedTaskMethods, Base.IBaseQuery<PublishedTask, IPublishedTaskQuery> {
+export interface IPublishedTask extends PS.TaskCollections, PublishedTaskCollections, PublishedTaskMethods, Base.IBaseQuery<PublishedTask, IPublishedTaskQuery> {
 
 }
 
@@ -2857,7 +2857,7 @@ export interface TaskPlanLinkMethods {
 /*********************************************
 * IDraftProject
 **********************************************/
-export interface IDraftProject extends DraftProjectCollections, DraftProjectMethods, Base.IBaseQuery<DraftProject, IDraftProjectQuery> {
+export interface IDraftProject extends PS.ProjectCollections, DraftProjectCollections, DraftProjectMethods, Base.IBaseQuery<DraftProject, IDraftProjectQuery> {
 
 }
 
@@ -2974,7 +2974,7 @@ export interface DraftProjectMethods {
 /*********************************************
 * IDraftProjectResource
 **********************************************/
-export interface IDraftProjectResource extends DraftProjectResourceCollections, DraftProjectResourceMethods, Base.IBaseQuery<DraftProjectResource, IDraftProjectResourceQuery> {
+export interface IDraftProjectResource extends PS.ProjectResourceCollections, DraftProjectResourceCollections, DraftProjectResourceMethods, Base.IBaseQuery<DraftProjectResource, IDraftProjectResourceQuery> {
 
 }
 
@@ -3106,7 +3106,7 @@ export interface DraftTaskLinkCollectionMethods {
 /*********************************************
 * IDraftTask
 **********************************************/
-export interface IDraftTask extends DraftTaskCollections, DraftTaskMethods, Base.IBaseQuery<DraftTask, IDraftTaskQuery> {
+export interface IDraftTask extends PS.TaskCollections, DraftTaskCollections, DraftTaskMethods, Base.IBaseQuery<DraftTask, IDraftTaskQuery> {
 
 }
 
@@ -3707,7 +3707,7 @@ export interface EnterpriseResourceCostRateMethods {
 /*********************************************
 * IResourceEngagement
 **********************************************/
-export interface IResourceEngagement extends ResourceEngagementCollections, ResourceEngagementMethods, Base.IBaseQuery<ResourceEngagement, IResourceEngagementQuery> {
+export interface IResourceEngagement extends PS.EngagementCollections, ResourceEngagementCollections, ResourceEngagementMethods, Base.IBaseQuery<ResourceEngagement, IResourceEngagementQuery> {
 
 }
 
@@ -3952,7 +3952,7 @@ export interface EventHandlerMethods {
 /*********************************************
 * ILookupCost
 **********************************************/
-export interface ILookupCost extends LookupCostCollections, LookupCostMethods, Base.IBaseQuery<LookupCost, ILookupCostQuery> {
+export interface ILookupCost extends PS.LookupEntryCollections, LookupCostCollections, LookupCostMethods, Base.IBaseQuery<LookupCost, ILookupCostQuery> {
 
 }
 
@@ -4022,7 +4022,7 @@ export interface LookupCostMethods {
 /*********************************************
 * ILookupDate
 **********************************************/
-export interface ILookupDate extends LookupDateCollections, LookupDateMethods, Base.IBaseQuery<LookupDate, ILookupDateQuery> {
+export interface ILookupDate extends PS.LookupEntryCollections, LookupDateCollections, LookupDateMethods, Base.IBaseQuery<LookupDate, ILookupDateQuery> {
 
 }
 
@@ -4092,7 +4092,7 @@ export interface LookupDateMethods {
 /*********************************************
 * ILookupDuration
 **********************************************/
-export interface ILookupDuration extends LookupDurationCollections, LookupDurationMethods, Base.IBaseQuery<LookupDuration, ILookupDurationQuery> {
+export interface ILookupDuration extends PS.LookupEntryCollections, LookupDurationCollections, LookupDurationMethods, Base.IBaseQuery<LookupDuration, ILookupDurationQuery> {
 
 }
 
@@ -4164,7 +4164,7 @@ export interface LookupDurationMethods {
 /*********************************************
 * ILookupNumber
 **********************************************/
-export interface ILookupNumber extends LookupNumberCollections, LookupNumberMethods, Base.IBaseQuery<LookupNumber, ILookupNumberQuery> {
+export interface ILookupNumber extends PS.LookupEntryCollections, LookupNumberCollections, LookupNumberMethods, Base.IBaseQuery<LookupNumber, ILookupNumberQuery> {
 
 }
 
@@ -4234,7 +4234,7 @@ export interface LookupNumberMethods {
 /*********************************************
 * ILookupText
 **********************************************/
-export interface ILookupText extends LookupTextCollections, LookupTextMethods, Base.IBaseQuery<LookupText, ILookupTextQuery> {
+export interface ILookupText extends PS.LookupEntryCollections, LookupTextCollections, LookupTextMethods, Base.IBaseQuery<LookupText, ILookupTextQuery> {
 
 }
 
@@ -5254,7 +5254,7 @@ export interface WorkflowDesignerFieldMethods {
 /*********************************************
 * IResourceCalendarException
 **********************************************/
-export interface IResourceCalendarException extends ResourceCalendarExceptionCollections, ResourceCalendarExceptionMethods, Base.IBaseQuery<ResourceCalendarException, IResourceCalendarExceptionQuery> {
+export interface IResourceCalendarException extends PS.CalendarExceptionCollections, ResourceCalendarExceptionCollections, ResourceCalendarExceptionMethods, Base.IBaseQuery<ResourceCalendarException, IResourceCalendarExceptionQuery> {
 
 }
 

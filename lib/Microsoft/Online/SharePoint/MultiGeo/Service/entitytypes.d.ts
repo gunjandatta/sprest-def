@@ -21,7 +21,7 @@ export interface AllowedDataLocationEntityDataCollections {
 /*********************************************
 * IAllowedDataLocation
 **********************************************/
-export interface IAllowedDataLocation extends AllowedDataLocationCollections, AllowedDataLocationMethods, Base.IBaseQuery<AllowedDataLocation, IAllowedDataLocationQuery> {
+export interface IAllowedDataLocation extends Microsoft.Online.SharePoint.MultiGeo.Service.AllowedDataLocationEntityDataCollections, AllowedDataLocationCollections, AllowedDataLocationMethods, Base.IBaseQuery<AllowedDataLocation, IAllowedDataLocationQuery> {
 
 }
 
@@ -211,7 +211,7 @@ export interface CrossFarmSiteMoveJobEntityDataCollections {
 /*********************************************
 * ICrossFarmSiteMoveJob
 **********************************************/
-export interface ICrossFarmSiteMoveJob extends CrossFarmSiteMoveJobCollections, CrossFarmSiteMoveJobMethods, Base.IBaseQuery<CrossFarmSiteMoveJob, ICrossFarmSiteMoveJobQuery> {
+export interface ICrossFarmSiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmSiteMoveJobEntityDataCollections, CrossFarmSiteMoveJobCollections, CrossFarmSiteMoveJobMethods, Base.IBaseQuery<CrossFarmSiteMoveJob, ICrossFarmSiteMoveJobQuery> {
 
 }
 
@@ -322,7 +322,7 @@ export interface CrossFarmUserMoveJobEntityDataCollections {
 /*********************************************
 * ICrossFarmUserMoveJob
 **********************************************/
-export interface ICrossFarmUserMoveJob extends CrossFarmUserMoveJobCollections, CrossFarmUserMoveJobMethods, Base.IBaseQuery<CrossFarmUserMoveJob, ICrossFarmUserMoveJobQuery> {
+export interface ICrossFarmUserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobEntityDataCollections, CrossFarmUserMoveJobCollections, CrossFarmUserMoveJobMethods, Base.IBaseQuery<CrossFarmUserMoveJob, ICrossFarmUserMoveJobQuery> {
 
 }
 
@@ -450,7 +450,7 @@ export interface CrossGeoTenantPropertyEntityDataCollections {
 /*********************************************
 * ICrossGeoTenantProperty
 **********************************************/
-export interface ICrossGeoTenantProperty extends CrossGeoTenantPropertyCollections, CrossGeoTenantPropertyMethods, Base.IBaseQuery<CrossGeoTenantProperty, ICrossGeoTenantPropertyQuery> {
+export interface ICrossGeoTenantProperty extends Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyEntityDataCollections, CrossGeoTenantPropertyCollections, CrossGeoTenantPropertyMethods, Base.IBaseQuery<CrossGeoTenantProperty, ICrossGeoTenantPropertyQuery> {
 
 }
 
@@ -775,7 +775,7 @@ export interface GlobalAdminCheckCollections {
 /*********************************************
 * IGroupMoveJob
 **********************************************/
-export interface IGroupMoveJob extends GroupMoveJobCollections, GroupMoveJobMethods, Base.IBaseQuery<GroupMoveJob, IGroupMoveJobQuery> {
+export interface IGroupMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobEntityDataCollections, GroupMoveJobCollections, GroupMoveJobMethods, Base.IBaseQuery<GroupMoveJob, IGroupMoveJobQuery> {
 
 }
 
@@ -1027,7 +1027,7 @@ export interface MultiGeoServicesBetaMethods {
 /*********************************************
 * ISiteMoveJob
 **********************************************/
-export interface ISiteMoveJob extends SiteMoveJobCollections, SiteMoveJobMethods, Base.IBaseQuery<SiteMoveJob, ISiteMoveJobQuery> {
+export interface ISiteMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobEntityDataCollections, SiteMoveJobCollections, SiteMoveJobMethods, Base.IBaseQuery<SiteMoveJob, ISiteMoveJobQuery> {
 
 }
 
@@ -1310,7 +1310,7 @@ export interface UnifiedGroupCollectionMethods {
 /*********************************************
 * IUserMoveJob
 **********************************************/
-export interface IUserMoveJob extends UserMoveJobCollections, UserMoveJobMethods, Base.IBaseQuery<UserMoveJob, IUserMoveJobQuery> {
+export interface IUserMoveJob extends Microsoft.Online.SharePoint.MultiGeo.Service.UserMoveJobEntityDataCollections, UserMoveJobCollections, UserMoveJobMethods, Base.IBaseQuery<UserMoveJob, IUserMoveJobQuery> {
 
 }
 

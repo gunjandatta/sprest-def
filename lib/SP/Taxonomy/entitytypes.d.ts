@@ -4,7 +4,7 @@ import { SP } from "../../";
 /*********************************************
 * ITaxonomyField
 **********************************************/
-export interface ITaxonomyField extends TaxonomyFieldCollections, TaxonomyFieldMethods, Base.IBaseQuery<TaxonomyField, ITaxonomyFieldQuery> {
+export interface ITaxonomyField extends SP.FieldLookupCollections, TaxonomyFieldCollections, TaxonomyFieldMethods, Base.IBaseQuery<TaxonomyField, ITaxonomyFieldQuery> {
 
 }
 

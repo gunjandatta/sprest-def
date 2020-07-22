@@ -563,7 +563,7 @@ export interface PrincipalCollections {
 /*********************************************
 * IGroup
 **********************************************/
-export interface IGroup extends GroupCollections, GroupMethods, Base.IBaseQuery<Group, IGroupQuery> {
+export interface IGroup extends SP.PrincipalCollections, GroupCollections, GroupMethods, Base.IBaseQuery<Group, IGroupQuery> {
 
 }
 
@@ -656,7 +656,7 @@ export interface GroupMethods {
 /*********************************************
 * IUser
 **********************************************/
-export interface IUser extends UserCollections, UserMethods, Base.IBaseQuery<User, IUserQuery> {
+export interface IUser extends SP.PrincipalCollections, UserCollections, UserMethods, Base.IBaseQuery<User, IUserQuery> {
 
 }
 
@@ -1114,7 +1114,7 @@ export interface RoleDefinitionMethods {
 /*********************************************
 * IListItem
 **********************************************/
-export interface IListItem extends ListItemCollections, ListItemMethods, Base.IBaseQuery<ListItem, IListItemQuery> {
+export interface IListItem extends SP.SecurableObjectCollections, ListItemCollections, ListItemMethods, Base.IBaseQuery<ListItem, IListItemQuery> {
 
 }
 
@@ -2306,7 +2306,7 @@ export interface StorageMetricsCollections {
 /*********************************************
 * IList
 **********************************************/
-export interface IList extends ListCollections, ListMethods, Base.IBaseQuery<List, IListQuery> {
+export interface IList extends SP.SecurableObjectCollections, ListCollections, ListMethods, Base.IBaseQuery<List, IListQuery> {
 
 }
 
@@ -2880,7 +2880,7 @@ export interface InformationRightsManagementSettingsMethods {
 /*********************************************
 * IWeb
 **********************************************/
-export interface IWeb extends WebCollections, WebMethods, Base.IBaseQuery<Web, IWebQuery> {
+export interface IWeb extends SP.SecurableObjectCollections, WebCollections, WebMethods, Base.IBaseQuery<Web, IWebQuery> {
 
 }
 
@@ -5972,7 +5972,7 @@ export interface CurrencyListCollections {
 /*********************************************
 * IFieldCalculated
 **********************************************/
-export interface IFieldCalculated extends FieldCalculatedCollections, FieldCalculatedMethods, Base.IBaseQuery<FieldCalculated, IFieldCalculatedQuery> {
+export interface IFieldCalculated extends SP.FieldCollections, FieldCalculatedCollections, FieldCalculatedMethods, Base.IBaseQuery<FieldCalculated, IFieldCalculatedQuery> {
 
 }
 
@@ -6054,7 +6054,7 @@ export interface FieldCalculatedMethods {
 /*********************************************
 * IFieldMultiChoice
 **********************************************/
-export interface IFieldMultiChoice extends FieldMultiChoiceCollections, FieldMultiChoiceMethods, Base.IBaseQuery<FieldMultiChoice, IFieldMultiChoiceQuery> {
+export interface IFieldMultiChoice extends SP.FieldCollections, FieldMultiChoiceCollections, FieldMultiChoiceMethods, Base.IBaseQuery<FieldMultiChoice, IFieldMultiChoiceQuery> {
 
 }
 
@@ -6133,7 +6133,7 @@ export interface FieldMultiChoiceMethods {
 /*********************************************
 * IFieldChoice
 **********************************************/
-export interface IFieldChoice extends FieldChoiceCollections, FieldChoiceMethods, Base.IBaseQuery<FieldChoice, IFieldChoiceQuery> {
+export interface IFieldChoice extends SP.FieldMultiChoiceCollections, FieldChoiceCollections, FieldChoiceMethods, Base.IBaseQuery<FieldChoice, IFieldChoiceQuery> {
 
 }
 
@@ -6210,7 +6210,7 @@ export interface FieldChoiceMethods {
 /*********************************************
 * IFieldComputed
 **********************************************/
-export interface IFieldComputed extends FieldComputedCollections, FieldComputedMethods, Base.IBaseQuery<FieldComputed, IFieldComputedQuery> {
+export interface IFieldComputed extends SP.FieldCollections, FieldComputedCollections, FieldComputedMethods, Base.IBaseQuery<FieldComputed, IFieldComputedQuery> {
 
 }
 
@@ -6287,7 +6287,7 @@ export interface FieldComputedMethods {
 /*********************************************
 * IFieldNumber
 **********************************************/
-export interface IFieldNumber extends FieldNumberCollections, FieldNumberMethods, Base.IBaseQuery<FieldNumber, IFieldNumberQuery> {
+export interface IFieldNumber extends SP.FieldCollections, FieldNumberCollections, FieldNumberMethods, Base.IBaseQuery<FieldNumber, IFieldNumberQuery> {
 
 }
 
@@ -6367,7 +6367,7 @@ export interface FieldNumberMethods {
 /*********************************************
 * IFieldCurrency
 **********************************************/
-export interface IFieldCurrency extends FieldCurrencyCollections, FieldCurrencyMethods, Base.IBaseQuery<FieldCurrency, IFieldCurrencyQuery> {
+export interface IFieldCurrency extends SP.FieldNumberCollections, FieldCurrencyCollections, FieldCurrencyMethods, Base.IBaseQuery<FieldCurrency, IFieldCurrencyQuery> {
 
 }
 
@@ -6444,7 +6444,7 @@ export interface FieldCurrencyMethods {
 /*********************************************
 * IFieldDateTime
 **********************************************/
-export interface IFieldDateTime extends FieldDateTimeCollections, FieldDateTimeMethods, Base.IBaseQuery<FieldDateTime, IFieldDateTimeQuery> {
+export interface IFieldDateTime extends SP.FieldCollections, FieldDateTimeCollections, FieldDateTimeMethods, Base.IBaseQuery<FieldDateTime, IFieldDateTimeQuery> {
 
 }
 
@@ -6523,7 +6523,7 @@ export interface FieldDateTimeMethods {
 /*********************************************
 * IFieldGeolocation
 **********************************************/
-export interface IFieldGeolocation extends FieldGeolocationCollections, FieldGeolocationMethods, Base.IBaseQuery<FieldGeolocation, IFieldGeolocationQuery> {
+export interface IFieldGeolocation extends SP.FieldCollections, FieldGeolocationCollections, FieldGeolocationMethods, Base.IBaseQuery<FieldGeolocation, IFieldGeolocationQuery> {
 
 }
 
@@ -6600,7 +6600,7 @@ export interface FieldGeolocationMethods {
 /*********************************************
 * IFieldGuid
 **********************************************/
-export interface IFieldGuid extends FieldGuidCollections, FieldGuidMethods, Base.IBaseQuery<FieldGuid, IFieldGuidQuery> {
+export interface IFieldGuid extends SP.FieldCollections, FieldGuidCollections, FieldGuidMethods, Base.IBaseQuery<FieldGuid, IFieldGuidQuery> {
 
 }
 
@@ -6677,7 +6677,7 @@ export interface FieldGuidMethods {
 /*********************************************
 * IFieldMultiLineText
 **********************************************/
-export interface IFieldMultiLineText extends FieldMultiLineTextCollections, FieldMultiLineTextMethods, Base.IBaseQuery<FieldMultiLineText, IFieldMultiLineTextQuery> {
+export interface IFieldMultiLineText extends SP.FieldCollections, FieldMultiLineTextCollections, FieldMultiLineTextMethods, Base.IBaseQuery<FieldMultiLineText, IFieldMultiLineTextQuery> {
 
 }
 
@@ -6760,7 +6760,7 @@ export interface FieldMultiLineTextMethods {
 /*********************************************
 * IFieldLocation
 **********************************************/
-export interface IFieldLocation extends FieldLocationCollections, FieldLocationMethods, Base.IBaseQuery<FieldLocation, IFieldLocationQuery> {
+export interface IFieldLocation extends SP.FieldMultiLineTextCollections, FieldLocationCollections, FieldLocationMethods, Base.IBaseQuery<FieldLocation, IFieldLocationQuery> {
 
 }
 
@@ -6837,7 +6837,7 @@ export interface FieldLocationMethods {
 /*********************************************
 * IFieldLookup
 **********************************************/
-export interface IFieldLookup extends FieldLookupCollections, FieldLookupMethods, Base.IBaseQuery<FieldLookup, IFieldLookupQuery> {
+export interface IFieldLookup extends SP.FieldCollections, FieldLookupCollections, FieldLookupMethods, Base.IBaseQuery<FieldLookup, IFieldLookupQuery> {
 
 }
 
@@ -6923,7 +6923,7 @@ export interface FieldLookupMethods {
 /*********************************************
 * IFieldRatingScale
 **********************************************/
-export interface IFieldRatingScale extends FieldRatingScaleCollections, FieldRatingScaleMethods, Base.IBaseQuery<FieldRatingScale, IFieldRatingScaleQuery> {
+export interface IFieldRatingScale extends SP.FieldMultiChoiceCollections, FieldRatingScaleCollections, FieldRatingScaleMethods, Base.IBaseQuery<FieldRatingScale, IFieldRatingScaleQuery> {
 
 }
 
@@ -7006,7 +7006,7 @@ export interface FieldRatingScaleMethods {
 /*********************************************
 * IFieldText
 **********************************************/
-export interface IFieldText extends FieldTextCollections, FieldTextMethods, Base.IBaseQuery<FieldText, IFieldTextQuery> {
+export interface IFieldText extends SP.FieldCollections, FieldTextCollections, FieldTextMethods, Base.IBaseQuery<FieldText, IFieldTextQuery> {
 
 }
 
@@ -7083,7 +7083,7 @@ export interface FieldTextMethods {
 /*********************************************
 * IFieldThumbnail
 **********************************************/
-export interface IFieldThumbnail extends FieldThumbnailCollections, FieldThumbnailMethods, Base.IBaseQuery<FieldThumbnail, IFieldThumbnailQuery> {
+export interface IFieldThumbnail extends SP.FieldMultiLineTextCollections, FieldThumbnailCollections, FieldThumbnailMethods, Base.IBaseQuery<FieldThumbnail, IFieldThumbnailQuery> {
 
 }
 
@@ -7160,7 +7160,7 @@ export interface FieldThumbnailMethods {
 /*********************************************
 * IFieldUrl
 **********************************************/
-export interface IFieldUrl extends FieldUrlCollections, FieldUrlMethods, Base.IBaseQuery<FieldUrl, IFieldUrlQuery> {
+export interface IFieldUrl extends SP.FieldCollections, FieldUrlCollections, FieldUrlMethods, Base.IBaseQuery<FieldUrl, IFieldUrlQuery> {
 
 }
 
@@ -7237,7 +7237,7 @@ export interface FieldUrlMethods {
 /*********************************************
 * IFieldUser
 **********************************************/
-export interface IFieldUser extends FieldUserCollections, FieldUserMethods, Base.IBaseQuery<FieldUser, IFieldUserQuery> {
+export interface IFieldUser extends SP.FieldLookupCollections, FieldUserCollections, FieldUserMethods, Base.IBaseQuery<FieldUser, IFieldUserQuery> {
 
 }
 

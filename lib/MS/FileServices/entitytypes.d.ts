@@ -34,7 +34,7 @@ export interface FileSystemItemCollectionMethods {
 /*********************************************
 * IFile
 **********************************************/
-export interface IFile extends FileCollections, FileMethods, Base.IBaseQuery<File, IFileQuery> {
+export interface IFile extends MS.FileServices.FileSystemItemCollections, FileCollections, FileMethods, Base.IBaseQuery<File, IFileQuery> {
 
 }
 
@@ -122,7 +122,7 @@ export interface FileServiceCollections {
 /*********************************************
 * IFolder
 **********************************************/
-export interface IFolder extends FolderCollections, FolderMethods, Base.IBaseQuery<Folder, IFolderQuery> {
+export interface IFolder extends MS.FileServices.FileSystemItemCollections, FolderCollections, FolderMethods, Base.IBaseQuery<Folder, IFolderQuery> {
 
 }
 

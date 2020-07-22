@@ -162,7 +162,7 @@ export interface SPWorkflowManagerCollections {
 /*********************************************
 * ISPWorkflowTask
 **********************************************/
-export interface ISPWorkflowTask extends SPWorkflowTaskCollections, SPWorkflowTaskMethods, Base.IBaseQuery<SPWorkflowTask, ISPWorkflowTaskQuery> {
+export interface ISPWorkflowTask extends SP.ListItemCollections, SPWorkflowTaskCollections, SPWorkflowTaskMethods, Base.IBaseQuery<SPWorkflowTask, ISPWorkflowTaskQuery> {
 
 }
 

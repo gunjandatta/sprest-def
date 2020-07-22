@@ -282,7 +282,7 @@ export interface TaskCollections {
 /*********************************************
 * ILocationOrientedSortableSession
 **********************************************/
-export interface ILocationOrientedSortableSession extends LocationOrientedSortableSessionCollections, LocationOrientedSortableSessionMethods, Base.IBaseQuery<LocationOrientedSortableSession, ILocationOrientedSortableSessionQuery> {
+export interface ILocationOrientedSortableSession extends SP.WorkManagement.OM.BaseSessionCollections, LocationOrientedSortableSessionCollections, LocationOrientedSortableSessionMethods, Base.IBaseQuery<LocationOrientedSortableSession, ILocationOrientedSortableSessionQuery> {
 
 }
 
@@ -370,7 +370,7 @@ export interface LocationOrientedSortableSessionMethods {
 /*********************************************
 * ILocationOrientedUserOrderedSession
 **********************************************/
-export interface ILocationOrientedUserOrderedSession extends LocationOrientedUserOrderedSessionCollections, LocationOrientedUserOrderedSessionMethods, Base.IBaseQuery<LocationOrientedUserOrderedSession, ILocationOrientedUserOrderedSessionQuery> {
+export interface ILocationOrientedUserOrderedSession extends SP.WorkManagement.OM.BaseSessionCollections, LocationOrientedUserOrderedSessionCollections, LocationOrientedUserOrderedSessionMethods, Base.IBaseQuery<LocationOrientedUserOrderedSession, ILocationOrientedUserOrderedSessionQuery> {
 
 }
 
@@ -952,7 +952,7 @@ export interface SortableSessionManagerMethods {
 /*********************************************
 * ISortableSession
 **********************************************/
-export interface ISortableSession extends SortableSessionCollections, SortableSessionMethods, Base.IBaseQuery<SortableSession, ISortableSessionQuery> {
+export interface ISortableSession extends SP.WorkManagement.OM.BaseSessionCollections, SortableSessionCollections, SortableSessionMethods, Base.IBaseQuery<SortableSession, ISortableSessionQuery> {
 
 }
 
@@ -1372,7 +1372,7 @@ export interface UserOrderedSessionManagerMethods {
 /*********************************************
 * IUserOrderedSession
 **********************************************/
-export interface IUserOrderedSession extends UserOrderedSessionCollections, UserOrderedSessionMethods, Base.IBaseQuery<UserOrderedSession, IUserOrderedSessionQuery> {
+export interface IUserOrderedSession extends SP.WorkManagement.OM.BaseSessionCollections, UserOrderedSessionCollections, UserOrderedSessionMethods, Base.IBaseQuery<UserOrderedSession, IUserOrderedSessionQuery> {
 
 }
 
