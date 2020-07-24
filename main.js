@@ -539,6 +539,12 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             continue;
                         }
 
+                        // See if a base type exists
+                        let baseType = "";
+                        if (interface._BaseType) {
+                            baseType = interface._BaseType + "Collections & ";
+                        }
+
                         // See if this object contains collections
                         if (propName == "_Collections") {
                             // Parse the collections
@@ -555,12 +561,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
-                                        // See if a base type exists
-                                        let baseType = "";
-                                        if(interface._BaseType) {
-                                            baseType = interface._BaseType + "Collections & ";
-                                        }
-
                                         // Add the methods
                                         collections.push('\t' + collection + '(): ' + generateBaseCollection(methodType, hasCollections, hasCollectionMethods) + ';');
                                         collections.push('\t' + collection + '(id: string | number): ' + baseType + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
@@ -569,7 +569,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         // See if there is a query
                                         if (hasCollections[methodType]) {
                                             // Add the method
-                                            props.push('\t' + collection + '(): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
+                                            props.push('\t' + collection + '(): ' + baseType + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
                                         } else {
                                             // Add the method
                                             props.push('\t' + collection + '(): ' + 'Base.IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
@@ -622,7 +622,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Else, see if this is a "getBy" method
                                 else if (/^getBy/.test(methodInfo.name)) {
                                     // Set the type
-                                    methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
+                                    methodType = baseType + generateBaseQuery(methodType, hasCollections, hasMethods);
                                 } else {
                                     // Set the type
                                     methodType = 'Base.IBaseExecution<' + methodType + '>';
@@ -675,7 +675,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         updateReferences(fileImports, dirName, methodType);
 
                                         // Update the method type
-                                        methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
+                                        methodType = baseType + generateBaseQuery(methodType, hasCollections, hasMethods);
                                     } else {
                                         // Get the type
                                         methodType = getType(methodInfo.returnType);

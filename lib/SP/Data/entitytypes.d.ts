@@ -983,9 +983,9 @@ export interface Shared_x0020_DocumentsItemProps {
 * Shared_x0020_DocumentsItemPropMethods
 **********************************************/
 export interface Shared_x0020_DocumentsItemPropMethods {
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Author(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Editor(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	CheckoutUser(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -1594,8 +1594,8 @@ export interface PublishedFeedListItemProps {
 * PublishedFeedListItemPropMethods
 **********************************************/
 export interface PublishedFeedListItemPropMethods {
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Author(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Editor(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
@@ -2174,9 +2174,9 @@ export interface SitePagesItemProps {
 * SitePagesItemPropMethods
 **********************************************/
 export interface SitePagesItemPropMethods {
-	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
-	CheckoutUser(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Author(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Editor(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	CheckoutUser(): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
