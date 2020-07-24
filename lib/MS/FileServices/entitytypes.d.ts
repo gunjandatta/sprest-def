@@ -173,7 +173,7 @@ export interface FolderPropMethods {
 **********************************************/
 export interface FolderCollections extends FolderPropMethods {
 	Children(): Base.IBaseCollection<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollectionMethods;
-	Children(id: string | number): Base.IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
+	Children(id: string | number): MS.FileServices.FileSystemItemCollections & Base.IBaseQuery<MS.FileServices.FileSystemItem> & MS.FileServices.FileSystemItemCollections;
 }
 
 /*********************************************

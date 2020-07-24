@@ -555,9 +555,15 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
+                                        // See if a base type exists
+                                        let baseType = "";
+                                        if(interface._BaseType) {
+                                            baseType = interface._BaseType + "Collections & ";
+                                        }
+
                                         // Add the methods
                                         collections.push('\t' + collection + '(): ' + generateBaseCollection(methodType, hasCollections, hasCollectionMethods) + ';');
-                                        collections.push('\t' + collection + '(id: string | number): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
+                                        collections.push('\t' + collection + '(id: string | number): ' + baseType + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
                                         query.push('\t' + collection + ': Base.IBaseResults<' + methodType + '>' + (hasCollectionMethods[methodType] ? ' & ' + methodType + 'CollectionMethods' : '') + ';');
                                     } else {
                                         // See if there is a query

@@ -2291,15 +2291,15 @@ export interface PublishedProjectPropMethods {
 **********************************************/
 export interface PublishedProjectCollections extends PublishedProjectPropMethods {
 	Assignments(): Base.IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentOData, Base.IBaseExecution & PS.PublishedAssignmentCollectionMethods> & Base.IBaseExecution & PS.PublishedAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
+	Assignments(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
 	EntityLinks(): Base.IBaseCollection<PS.EntityLink> & PS.EntityLinkCollectionMethods;
-	EntityLinks(id: string | number): Base.IBaseQuery<PS.EntityLink> & PS.EntityLinkCollections & PS.EntityLinkMethods;
+	EntityLinks(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.EntityLink> & PS.EntityLinkCollections & PS.EntityLinkMethods;
 	ProjectResources(): Base.IBaseCollection<PS.PublishedProjectResource, PS.PublishedProjectResourceOData, Base.IBaseExecution & PS.PublishedProjectResourceCollectionMethods> & Base.IBaseExecution & PS.PublishedProjectResourceCollectionMethods;
-	ProjectResources(id: string | number): Base.IBaseQuery<PS.PublishedProjectResource, PS.PublishedProjectResourceOData> & PS.PublishedProjectResourceCollections;
+	ProjectResources(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.PublishedProjectResource, PS.PublishedProjectResourceOData> & PS.PublishedProjectResourceCollections;
 	TaskLinks(): Base.IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkOData, Base.IBaseExecution & PS.PublishedTaskLinkCollectionMethods> & Base.IBaseExecution & PS.PublishedTaskLinkCollectionMethods;
-	TaskLinks(id: string | number): Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
+	TaskLinks(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
 	Tasks(): Base.IBaseCollection<PS.PublishedTask, PS.PublishedTaskOData, Base.IBaseExecution & PS.PublishedTaskCollectionMethods> & Base.IBaseExecution & PS.PublishedTaskCollectionMethods;
-	Tasks(id: string | number): Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
+	Tasks(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
 }
 
 /*********************************************
@@ -2484,7 +2484,7 @@ export interface PublishedProjectResourcePropMethods {
 **********************************************/
 export interface PublishedProjectResourceCollections extends PublishedProjectResourcePropMethods {
 	Assignments(): Base.IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentOData, Base.IBaseExecution & PS.PublishedAssignmentCollectionMethods> & Base.IBaseExecution & PS.PublishedAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
+	Assignments(id: string | number): PS.ProjectResourceCollections & Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
 }
 
 /*********************************************
@@ -2609,13 +2609,13 @@ export interface PublishedTaskPropMethods {
 **********************************************/
 export interface PublishedTaskCollections extends PublishedTaskPropMethods {
 	Assignments(): Base.IBaseCollection<PS.PublishedAssignment, PS.PublishedAssignmentOData, Base.IBaseExecution & PS.PublishedAssignmentCollectionMethods> & Base.IBaseExecution & PS.PublishedAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
+	Assignments(id: string | number): PS.TaskCollections & Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
 	EntityLinks(): Base.IBaseCollection<PS.EntityLink> & PS.EntityLinkCollectionMethods;
-	EntityLinks(id: string | number): Base.IBaseQuery<PS.EntityLink> & PS.EntityLinkCollections & PS.EntityLinkMethods;
+	EntityLinks(id: string | number): PS.TaskCollections & Base.IBaseQuery<PS.EntityLink> & PS.EntityLinkCollections & PS.EntityLinkMethods;
 	Predecessors(): Base.IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkOData, Base.IBaseExecution & PS.PublishedTaskLinkCollectionMethods> & Base.IBaseExecution & PS.PublishedTaskLinkCollectionMethods;
-	Predecessors(id: string | number): Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
+	Predecessors(id: string | number): PS.TaskCollections & Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
 	Successors(): Base.IBaseCollection<PS.PublishedTaskLink, PS.PublishedTaskLinkOData, Base.IBaseExecution & PS.PublishedTaskLinkCollectionMethods> & Base.IBaseExecution & PS.PublishedTaskLinkCollectionMethods;
-	Successors(id: string | number): Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
+	Successors(id: string | number): PS.TaskCollections & Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
 }
 
 /*********************************************
@@ -2942,13 +2942,13 @@ export interface DraftProjectPropMethods {
 **********************************************/
 export interface DraftProjectCollections extends DraftProjectPropMethods {
 	Assignments(): Base.IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentOData, Base.IBaseExecution & PS.DraftAssignmentCollectionMethods> & Base.IBaseExecution & PS.DraftAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
+	Assignments(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 	ProjectResources(): Base.IBaseCollection<PS.DraftProjectResource, PS.DraftProjectResourceOData, Base.IBaseExecution & PS.DraftProjectResourceCollectionMethods> & Base.IBaseExecution & PS.DraftProjectResourceCollectionMethods;
-	ProjectResources(id: string | number): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
+	ProjectResources(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
 	TaskLinks(): Base.IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkOData, Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods> & Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods;
-	TaskLinks(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
+	TaskLinks(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 	Tasks(): Base.IBaseCollection<PS.DraftTask, PS.DraftTaskOData, Base.IBaseExecution & PS.DraftTaskCollectionMethods> & Base.IBaseExecution & PS.DraftTaskCollectionMethods;
-	Tasks(id: string | number): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
+	Tasks(id: string | number): PS.ProjectCollections & Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
 }
 
 /*********************************************
@@ -3041,7 +3041,7 @@ export interface DraftProjectResourcePropMethods {
 **********************************************/
 export interface DraftProjectResourceCollections extends DraftProjectResourcePropMethods {
 	Assignments(): Base.IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentOData, Base.IBaseExecution & PS.DraftAssignmentCollectionMethods> & Base.IBaseExecution & PS.DraftAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
+	Assignments(id: string | number): PS.ProjectResourceCollections & Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 }
 
 /*********************************************
@@ -3203,11 +3203,11 @@ export interface DraftTaskPropMethods {
 **********************************************/
 export interface DraftTaskCollections extends DraftTaskPropMethods {
 	Assignments(): Base.IBaseCollection<PS.DraftAssignment, PS.DraftAssignmentOData, Base.IBaseExecution & PS.DraftAssignmentCollectionMethods> & Base.IBaseExecution & PS.DraftAssignmentCollectionMethods;
-	Assignments(id: string | number): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
+	Assignments(id: string | number): PS.TaskCollections & Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 	Predecessors(): Base.IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkOData, Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods> & Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods;
-	Predecessors(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
+	Predecessors(id: string | number): PS.TaskCollections & Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 	Successors(): Base.IBaseCollection<PS.DraftTaskLink, PS.DraftTaskLinkOData, Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods> & Base.IBaseExecution & PS.DraftTaskLinkCollectionMethods;
-	Successors(id: string | number): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
+	Successors(id: string | number): PS.TaskCollections & Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 }
 
 /*********************************************
