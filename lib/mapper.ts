@@ -5716,6 +5716,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.RoleDefinition.Collection": {
+		add: {
+		argNames: [ "properties" ],
+		},
+
 		getById: {
 		argNames: [ "id" ],
 		},

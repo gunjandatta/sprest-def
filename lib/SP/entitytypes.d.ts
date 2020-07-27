@@ -1092,6 +1092,7 @@ export interface RoleDefinitionCollectionMethods {
 	getByName(name?: string): Base.IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	getByType(roleType?: number): Base.IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	recreateMissingDefaultRoleDefinitions(): Base.IBaseExecution<any>;
+	add(properties?: SP.RoleDefinitionCreationInformation): Base.IBaseExecution<any>;
 	getById(id?: number): Base.IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 }
 

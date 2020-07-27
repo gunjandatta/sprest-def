@@ -5944,6 +5944,10 @@ export interface IMapper {
 
 	"SP.RoleDefinition.Collection": {
 		properties?: Array<string>;
+		add: IMapperMethod & {
+		argNames: [ "properties" ],
+		},
+
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},

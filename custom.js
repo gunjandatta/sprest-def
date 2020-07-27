@@ -327,6 +327,11 @@ module.exports = {
 
     // Role Definitions
     "Collection(SP.RoleDefinition)": [
+        {
+            name: "add",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "SP.RoleDefinitionCreationInformation" } }]
+        },
         // Note - This is added due to it existing in the metadata twice.
         //        Need to see if it's removed in future updates.
         {
