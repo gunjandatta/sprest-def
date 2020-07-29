@@ -3732,6 +3732,7 @@ export interface NavigationNodeCollectionMethods {
 	getById(id?: number): Base.IBaseQuery<SP.NavigationNode, SP.NavigationNodeOData> & SP.NavigationNodeCollections & SP.NavigationNodeMethods;
 	getByIndex(index?: number): Base.IBaseQuery<SP.NavigationNode, SP.NavigationNodeOData> & SP.NavigationNodeCollections & SP.NavigationNodeMethods;
 	moveAfter(nodeId?: number, previousNodeId?: number): Base.IBaseExecution<any>;
+	add(properties?: SP.NavigationNodeCreationInformation): Base.IBaseExecution<any>;
 }
 
 /*********************************************

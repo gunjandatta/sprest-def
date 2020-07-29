@@ -307,6 +307,15 @@ module.exports = {
         }
     ],
 
+    // Navigation
+    "Collection(SP.NavigationNode)": [
+        {
+            name: "add",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "SP.NavigationNodeCreationInformation" } }]
+        }
+    ],
+
     // Role Assignment
     "SP.RoleAssignment": [
         {

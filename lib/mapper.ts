@@ -4871,6 +4871,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.NavigationNode.Collection": {
+		add: {
+		argNames: [ "properties" ],
+		},
+
 		getById: {
 		argNames: [ "id" ],
 		},
