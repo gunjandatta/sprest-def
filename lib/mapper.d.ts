@@ -5058,6 +5058,10 @@ export interface IMapper {
 
 	"SP.NavigationNode.Collection": {
 		properties?: Array<string>;
+		add: IMapperMethod & {
+		argNames: [ "properties" ],
+		},
+
 		getById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
