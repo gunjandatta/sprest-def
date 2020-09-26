@@ -274,6 +274,11 @@ module.exports = {
             params: [{ $: { Name: "camlQuery", Type: "string" } }]
         },
         {
+            name: "getUserEffectivePermissions",
+            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            params: [{ $: { Name: "userName", Type: "string" } }]
+        },
+        {
             name: "update",
             returnType: "any",
             params: [{ $: { Name: "properties", Type: "any" } }]
@@ -291,6 +296,11 @@ module.exports = {
 
     // List Item
     "SP.ListItem": [
+        {
+            name: "getUserEffectivePermissions",
+            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            params: [{ $: { Name: "userName", Type: "string" } }]
+        },
         {
             name: "update",
             returnType: "any",
@@ -448,6 +458,11 @@ module.exports = {
             ]
         },
         {
+            name: "getUserEffectivePermissions",
+            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            params: [{ $: { Name: "userName", Type: "string" } }]
+        },
+        {
             name: "update",
             returnType: "any",
             params: [{ $: { Name: "properties", Type: "any" } }]
@@ -456,6 +471,11 @@ module.exports = {
 
     // Workflow Task
     "SP.Workflow.SPWorkflowTask": [
+        {
+            name: "getUserEffectivePermissions",
+            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            params: [{ $: { Name: "userName", Type: "string" } }]
+        },
         {
             name: "update",
             returnType: "any",

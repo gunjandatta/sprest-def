@@ -1229,7 +1229,7 @@ export interface ListItemMethods {
 	deleteWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getHashtags(): Base.IBaseCollection<SP.Hashtag>;
-	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
+	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
 	getWOPIFrameUrl(action?: number): Base.IBaseExecution<string>;
 	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;
 	mediaServiceUpdateV2(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): Base.IBaseExecution<any>;
@@ -1250,6 +1250,7 @@ export interface ListItemMethods {
 	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): Base.IBaseCollection<SP.Hashtag>;
 	updateOverwriteVersion(): Base.IBaseExecution<any>;
 	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 
@@ -2521,7 +2522,7 @@ export interface ListMethods {
 	getMappedApps(visualizationAppTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getRelatedFields(): Base.IBaseCollection<SP.RelatedField, SP.RelatedFieldOData, Base.IBaseExecution & SP.RelatedFieldCollectionMethods> & Base.IBaseExecution & SP.RelatedFieldCollectionMethods;
 	getSpecialFolderUrl(type?: number, bForceCreate?: boolean, existingFolderGuid?: any): Base.IBaseExecution<string>;
-	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
+	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
 	getView(viewGuid?: any): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	getWebDavUrl(sourceUrl?: string): Base.IBaseExecution<string>;
 	publishMappedView(appId?: any, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
@@ -2545,6 +2546,7 @@ export interface ListMethods {
 	validateAppName(appDisplayName?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getItems(viewXML?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
 	getItemsByQuery(camlQuery?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 
@@ -3200,7 +3202,7 @@ export interface WebMethods {
 	getStorageEntity(key?: string): Base.IBaseExecution<Microsoft.SharePoint.ClientSideComponent.StorageEntity>;
 	getSubwebsFilteredForCurrentUser(nWebTemplateFilter?: number, nConfigurationFilter?: number): Base.IBaseCollection<SP.WebInformation> & SP.WebInformationCollectionMethods;
 	getUserById(userId?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
-	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
+	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
 	getViewFromPath(DecodedUrl?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	getViewFromUrl(listUrl?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	hubSiteData(forceRefresh?: boolean): Base.IBaseExecution<string>;
@@ -3227,6 +3229,7 @@ export interface WebMethods {
 	// update(): Base.IBaseExecution<any>;
 	uploadImage(listTitle?: string, imageName?: string, contentStream?: any): SP.SecurableObjectCollections & Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	doesUserHavePermissions(high?: number, low?: number): Base.IBaseExecution<boolean>;
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 
