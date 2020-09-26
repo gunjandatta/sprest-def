@@ -276,7 +276,7 @@ module.exports = {
         {
             name: "getUserEffectivePermissions",
             overwrite: true,
-            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
+            returnType: "Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
@@ -300,7 +300,7 @@ module.exports = {
         {
             name: "getUserEffectivePermissions",
             overwrite: true,
-            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
+            returnType: "Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
@@ -462,7 +462,7 @@ module.exports = {
         {
             name: "getUserEffectivePermissions",
             overwrite: true,
-            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
+            returnType: "Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
@@ -477,7 +477,7 @@ module.exports = {
         {
             name: "getUserEffectivePermissions",
             overwrite: true,
-            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
+            returnType: "Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {

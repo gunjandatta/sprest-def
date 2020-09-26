@@ -1250,7 +1250,7 @@ export interface ListItemMethods {
 	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): Base.IBaseCollection<SP.Hashtag>;
 	updateOverwriteVersion(): Base.IBaseExecution<any>;
 	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
-	getUserEffectivePermissions(userName?: string): { GetUserEffectivePermissions: SP.BasePermissions };
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 
@@ -2546,7 +2546,7 @@ export interface ListMethods {
 	validateAppName(appDisplayName?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getItems(viewXML?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
 	getItemsByQuery(camlQuery?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
-	getUserEffectivePermissions(userName?: string): { GetUserEffectivePermissions: SP.BasePermissions };
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 
@@ -3229,7 +3229,7 @@ export interface WebMethods {
 	// update(): Base.IBaseExecution<any>;
 	uploadImage(listTitle?: string, imageName?: string, contentStream?: any): SP.SecurableObjectCollections & Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	doesUserHavePermissions(high?: number, low?: number): Base.IBaseExecution<boolean>;
-	getUserEffectivePermissions(userName?: string): { GetUserEffectivePermissions: SP.BasePermissions };
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 

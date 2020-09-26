@@ -253,6 +253,6 @@ export interface SPWorkflowTaskMethods {
 	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): Base.IBaseCollection<SP.Hashtag>;
 	updateOverwriteVersion(): Base.IBaseExecution<any>;
 	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
-	getUserEffectivePermissions(userName?: string): { GetUserEffectivePermissions: SP.BasePermissions };
+	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
