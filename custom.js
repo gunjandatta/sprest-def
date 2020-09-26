@@ -275,7 +275,8 @@ module.exports = {
         },
         {
             name: "getUserEffectivePermissions",
-            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            overwrite: true,
+            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
@@ -298,7 +299,8 @@ module.exports = {
     "SP.ListItem": [
         {
             name: "getUserEffectivePermissions",
-            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            overwrite: true,
+            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
@@ -459,7 +461,8 @@ module.exports = {
         },
         {
             name: "getUserEffectivePermissions",
-            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            overwrite: true,
+            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
@@ -473,7 +476,8 @@ module.exports = {
     "SP.Workflow.SPWorkflowTask": [
         {
             name: "getUserEffectivePermissions",
-            returnType: "Base.IBaseExecution<{GetUserEffectivePermissions: SP.BasePermissions}>",
+            overwrite: true,
+            returnType: "{ GetUserEffectivePermissions: SP.BasePermissions }",
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
