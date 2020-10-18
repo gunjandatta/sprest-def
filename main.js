@@ -541,7 +541,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                         // See if a base type exists
                         let baseType = "";
-                        if (interface._BaseType) {
+                        if (interface._BaseType && interface._BaseType.match(/OData$/) == false) {
                             baseType = interface._BaseType + "Collections & ";
                         }
 
@@ -569,7 +569,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         // See if there is a query
                                         if (hasCollections[methodType]) {
                                             // Add the method
-                                            props.push('\t' + collection + '(): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
+                                            props.push('\t' + collection + '(): ' + baseType + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
                                         } else {
                                             // Add the method
                                             props.push('\t' + collection + '(): ' + 'Base.IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
