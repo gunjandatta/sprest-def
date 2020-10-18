@@ -962,18 +962,18 @@ export interface SitePageOData extends SP.Publishing.SitePageMetadataOData, Base
 **********************************************/
 export interface SitePageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
-	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	checkoutPage(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
-	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	discardPage(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getVersion(versionId?: number): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
-	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
@@ -1060,18 +1060,18 @@ export interface RepostPageOData extends SP.Publishing.SitePageOData, Base.IBase
 **********************************************/
 export interface RepostPageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
-	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	checkoutPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
-	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	discardPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getVersion(versionId?: number): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
-	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
@@ -1304,18 +1304,18 @@ export interface SitePage3DOData extends SP.Publishing.SitePageOData, Base.IBase
 **********************************************/
 export interface SitePage3DMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
-	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	checkoutPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
-	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	discardPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getVersion(versionId?: number): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
-	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;

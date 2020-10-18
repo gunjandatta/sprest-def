@@ -346,24 +346,24 @@ export interface LocationOrientedSortableSessionOData extends SP.WorkManagement.
 * LocationOrientedSortableSessionMethods
 **********************************************/
 export interface LocationOrientedSortableSessionMethods {
-	addAttributeToTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	addAttributeToTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	beginCacheRefresh(): Base.IBaseExecution<SP.WorkManagement.OM.CreateRefreshJobResult>;
 	beginExchangeSync(): Base.IBaseExecution<boolean>;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	deleteTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	deleteTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	getCalloutInfo(taskKey?: number): Base.IBaseExecution<SP.WorkManagement.OM.CalloutInfo>;
-	getRefreshHealthInfo(): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
-	getRefreshHistory(since?: any): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
-	getRefreshStatus(refreshId?: number): Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
+	getRefreshHealthInfo(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
+	getRefreshHistory(since?: any): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
+	getRefreshStatus(refreshId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
 	isExchangeJobPending(): Base.IBaseExecution<boolean>;
-	pinTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	readAllNonTaskData(): Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
-	refreshSingleTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	removePinOnTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	pinTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	readAllNonTaskData(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
+	refreshSingleTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
+	removeAttributeFromTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	removePinOnTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	movePersonalTaskToLocation(taskKey?: number, newLocationKey?: number): Base.IBaseExecution<boolean>;
 }
 
@@ -434,24 +434,24 @@ export interface LocationOrientedUserOrderedSessionOData extends SP.WorkManageme
 * LocationOrientedUserOrderedSessionMethods
 **********************************************/
 export interface LocationOrientedUserOrderedSessionMethods {
-	addAttributeToTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	addAttributeToTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	beginCacheRefresh(): Base.IBaseExecution<SP.WorkManagement.OM.CreateRefreshJobResult>;
 	beginExchangeSync(): Base.IBaseExecution<boolean>;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	deleteTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	deleteTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	getCalloutInfo(taskKey?: number): Base.IBaseExecution<SP.WorkManagement.OM.CalloutInfo>;
-	getRefreshHealthInfo(): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
-	getRefreshHistory(since?: any): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
-	getRefreshStatus(refreshId?: number): Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
+	getRefreshHealthInfo(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
+	getRefreshHistory(since?: any): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
+	getRefreshStatus(refreshId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
 	isExchangeJobPending(): Base.IBaseExecution<boolean>;
-	pinTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	readAllNonTaskData(): Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
-	refreshSingleTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	removePinOnTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	pinTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	readAllNonTaskData(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
+	refreshSingleTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
+	removeAttributeFromTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	removePinOnTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	movePersonalTaskToLocation(taskKey?: number, newLocationKey?: number): Base.IBaseExecution<boolean>;
 	reorderTask(taskKey?: number, newAfterTaskKey?: number): Base.IBaseExecution<any>;
 }
@@ -1016,24 +1016,24 @@ export interface SortableSessionOData extends SP.WorkManagement.OM.BaseSession, 
 * SortableSessionMethods
 **********************************************/
 export interface SortableSessionMethods {
-	addAttributeToTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	addAttributeToTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	beginCacheRefresh(): Base.IBaseExecution<SP.WorkManagement.OM.CreateRefreshJobResult>;
 	beginExchangeSync(): Base.IBaseExecution<boolean>;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	deleteTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	deleteTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	getCalloutInfo(taskKey?: number): Base.IBaseExecution<SP.WorkManagement.OM.CalloutInfo>;
-	getRefreshHealthInfo(): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
-	getRefreshHistory(since?: any): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
-	getRefreshStatus(refreshId?: number): Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
+	getRefreshHealthInfo(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
+	getRefreshHistory(since?: any): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
+	getRefreshStatus(refreshId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
 	isExchangeJobPending(): Base.IBaseExecution<boolean>;
-	pinTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	readAllNonTaskData(): Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
-	refreshSingleTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	removePinOnTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	pinTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	readAllNonTaskData(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
+	refreshSingleTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
+	removeAttributeFromTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	removePinOnTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 }
 
 /*********************************************
@@ -1436,24 +1436,24 @@ export interface UserOrderedSessionOData extends SP.WorkManagement.OM.BaseSessio
 * UserOrderedSessionMethods
 **********************************************/
 export interface UserOrderedSessionMethods {
-	addAttributeToTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	addAttributeToTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	beginCacheRefresh(): Base.IBaseExecution<SP.WorkManagement.OM.CreateRefreshJobResult>;
 	beginExchangeSync(): Base.IBaseExecution<boolean>;
-	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	deleteTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createPersonalTaskAndPromoteToProviderTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	createTask(taskName?: string, description?: string, localizedStartDate?: string, localizedDueDate?: string, completed?: boolean, pinned?: boolean, locationKey?: number, editUrl?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	deleteTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	getCalloutInfo(taskKey?: number): Base.IBaseExecution<SP.WorkManagement.OM.CalloutInfo>;
-	getRefreshHealthInfo(): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
-	getRefreshHistory(since?: any): Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
-	getRefreshStatus(refreshId?: number): Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
+	getRefreshHealthInfo(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHealthInfo, SP.WorkManagement.OM.RefreshHealthInfoOData> & SP.WorkManagement.OM.RefreshHealthInfoCollections;
+	getRefreshHistory(since?: any): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshHistory, SP.WorkManagement.OM.RefreshHistoryOData> & SP.WorkManagement.OM.RefreshHistoryCollections;
+	getRefreshStatus(refreshId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.RefreshResult, SP.WorkManagement.OM.RefreshResultOData> & SP.WorkManagement.OM.RefreshResultCollections;
 	isExchangeJobPending(): Base.IBaseExecution<boolean>;
-	pinTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	readAllNonTaskData(): Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
-	refreshSingleTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
-	removeAttributeFromTask(taskKey?: number, attribute?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	removePinOnTask(taskKey?: number): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
-	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	pinTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	promotePersonalTaskToProviderTaskInLocation(taskKey?: number, locationId?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	readAllNonTaskData(): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.NonTaskDataReadResult, SP.WorkManagement.OM.NonTaskDataReadResultOData> & SP.WorkManagement.OM.NonTaskDataReadResultCollections;
+	refreshSingleTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskRefreshResult, SP.WorkManagement.OM.TaskRefreshResultOData> & SP.WorkManagement.OM.TaskRefreshResultCollections;
+	removeAttributeFromTask(taskKey?: number, attribute?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	removePinOnTask(taskKey?: number): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
+	updateTaskWithLocalizedValue(taskKey?: number, field?: number, value?: string): SP.WorkManagement.OM.BaseSessionCollections & Base.IBaseQuery<SP.WorkManagement.OM.TaskWriteResult, SP.WorkManagement.OM.TaskWriteResultOData> & SP.WorkManagement.OM.TaskWriteResultCollections;
 	reorderTask(taskKey?: number, newAfterTaskKey?: number): Base.IBaseExecution<any>;
 }
 
