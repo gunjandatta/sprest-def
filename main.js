@@ -539,14 +539,14 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             continue;
                         }
 
-                        // See if a base type exists
-                        let baseType = "";
-                        if (interface._BaseType) {
-                            baseType = interface._BaseType + "Collections & ";
-                        }
-
                         // See if this object contains collections
                         if (propName == "_Collections") {
+                            // See if a base type exists
+                            let baseType = "";
+                            if (interface._BaseType) {
+                                baseType = interface._BaseType + "Collections & ";
+                            }
+
                             // Parse the collections
                             for (var collection in prop) {
                                 // Parse the roles
@@ -569,7 +569,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         // See if there is a query
                                         if (hasCollections[methodType]) {
                                             // Add the method
-                                            props.push('\t' + collection + '(): ' + baseType + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
+                                            props.push('\t' + collection + '(): ' + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
                                         } else {
                                             // Add the method
                                             props.push('\t' + collection + '(): ' + 'Base.IBaseExecution<' + methodType + '> & ' + methodType + 'Collections' + (hasMethods[methodType] ? ' & ' + methodType + 'Methods' : '') + ';');
@@ -622,7 +622,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                 // Else, see if this is a "getBy" method
                                 else if (/^getBy/.test(methodInfo.name)) {
                                     // Set the type
-                                    methodType = baseType + generateBaseQuery(methodType, hasCollections, hasMethods);
+                                    methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                 } else {
                                     // Set the type
                                     methodType = 'Base.IBaseExecution<' + methodType + '>';
@@ -675,7 +675,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         updateReferences(fileImports, dirName, methodType);
 
                                         // Update the method type
-                                        methodType = baseType + generateBaseQuery(methodType, hasCollections, hasMethods);
+                                        methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                     } else {
                                         // Get the type
                                         methodType = getType(methodInfo.returnType);
