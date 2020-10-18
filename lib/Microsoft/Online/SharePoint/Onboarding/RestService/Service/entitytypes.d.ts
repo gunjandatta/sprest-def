@@ -43,7 +43,7 @@ export interface SiteRenameJobCollections extends SiteRenameJobCollectionMethods
 * SiteRenameJobCollectionMethods
 **********************************************/
 export interface SiteRenameJobCollectionMethods {
-	getBySiteUrl(siteUrl?: string): Base.IBaseQuery<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollections;
+	getBySiteUrl(siteUrl?: string): Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollections;
 	getJobsByParentId(parentId?: any): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob>>;
 	getJobsByParentIdAndState(parentId?: any, state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob>>;
 	getJobsBySiteUrl(url?: string): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob>>;

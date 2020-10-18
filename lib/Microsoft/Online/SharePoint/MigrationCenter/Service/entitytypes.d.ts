@@ -72,7 +72,7 @@ export interface DeviceCollections extends DevicePropMethods {
 * DeviceCollectionMethods
 **********************************************/
 export interface DeviceCollectionMethods {
-	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.Device> & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceMethods;
+	getById(id?: any): Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.Device> & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceMethods;
 }
 
 /*********************************************
@@ -332,7 +332,7 @@ export interface MigrationTaskCollections extends MigrationTaskPropMethods {
 * MigrationTaskCollectionMethods
 **********************************************/
 export interface MigrationTaskCollectionMethods {
-	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskMethods;
+	getById(id?: any): Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskMethods;
 }
 
 /*********************************************
@@ -412,7 +412,7 @@ export interface MigrationCredentialCollections extends MigrationCredentialPropM
 * MigrationCredentialCollectionMethods
 **********************************************/
 export interface MigrationCredentialCollectionMethods {
-	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialMethods;
+	getById(id?: any): Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialMethods;
 	getCredentials(AccountName?: string, Type?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential>;
 }
 
