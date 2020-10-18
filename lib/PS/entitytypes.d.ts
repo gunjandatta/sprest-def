@@ -2333,16 +2333,16 @@ export interface PublishedProjectOData extends PS.ProjectOData, Base.IBaseResult
 * PublishedProjectMethods
 **********************************************/
 export interface PublishedProjectMethods {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): PS.ProjectCollections & Base.IBaseQuery<PS.ResourcePlan, PS.ResourcePlanOData> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
+	getResourcePlanByUrl(start?: string, end?: string, scale?: string): Base.IBaseQuery<PS.ResourcePlan, PS.ResourcePlanOData> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
 	leaveProjectStage(): Base.IBaseExecution<any>;
 	readyToLeaveProjectStage(): Base.IBaseExecution<number>;
 	updateIdeaListItemStatus(status?: string): Base.IBaseExecution<any>;
-	checkOut(): PS.ProjectCollections & Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
+	checkOut(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
 	createProjectSite(siteName?: string): Base.IBaseExecution<any>;
-	delete(): PS.ProjectCollections & Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
+	delete(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	submitToWorkflow(): Base.IBaseExecution<any>;
 	unlinkProjectSite(): Base.IBaseExecution<any>;
-	updateVisibilityCustomFields(): PS.ProjectCollections & Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
+	updateVisibilityCustomFields(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 }
 
 /*********************************************

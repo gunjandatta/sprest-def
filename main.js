@@ -539,14 +539,14 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             continue;
                         }
 
-                        // See if a base type exists
-                        let baseType = "";
-                        if (interface._BaseType) {
-                            baseType = interface._BaseType + "Collections & ";
-                        }
-
                         // See if this object contains collections
                         if (propName == "_Collections") {
+                            // See if a base type exists
+                            let baseType = "";
+                            if (interface._BaseType) {
+                                baseType = interface._BaseType + "Collections & ";
+                            }
+
                             // Parse the collections
                             for (var collection in prop) {
                                 // Parse the roles
@@ -675,7 +675,7 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                                         updateReferences(fileImports, dirName, methodType);
 
                                         // Update the method type
-                                        methodType = baseType + generateBaseQuery(methodType, hasCollections, hasMethods);
+                                        methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                     } else {
                                         // Get the type
                                         methodType = getType(methodInfo.returnType);
