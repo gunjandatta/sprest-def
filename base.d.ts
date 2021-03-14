@@ -62,7 +62,7 @@ export interface IBaseExecution<Type = any, Result = Type> {
      * Method to wait for the requests to complete.
      * @param resolve - The method to be executed after the request completes.
      */
-    done<T=Result>(resolve: (value?: T) => void);
+    done<T = Result>(resolve: (value?: T) => void);
 
     /**
      * Method to get the request information.
@@ -134,6 +134,7 @@ export interface IMapperMethod {
  * Method Information Settings
  */
 export interface IMethodInfo {
+    appendEndpointFl?: boolean;
     argNames?: Array<string>;
     argValues?: Array<any>;
     data?: any;
