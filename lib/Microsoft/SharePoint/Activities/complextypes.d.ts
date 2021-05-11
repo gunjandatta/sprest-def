@@ -6,6 +6,7 @@ import { SP } from "../../../";
 * ActionFacet
 **********************************************/
 export interface ActionFacet {
+	addToOneDrive?: Microsoft.SharePoint.Activities.AddToOneDriveFacet;
 	checkin?: Microsoft.SharePoint.Activities.CheckinFacet;
 	checkout?: Microsoft.SharePoint.Activities.CheckoutFacet;
 	comment?: Microsoft.SharePoint.Activities.GetCommentFacet;
@@ -20,7 +21,10 @@ export interface ActionFacet {
 	restore?: Microsoft.SharePoint.Activities.RestoreFacet;
 	restoreVersion?: Microsoft.SharePoint.Activities.RestoreVersionFacet;
 	share?: Microsoft.SharePoint.Activities.SharingFacet;
-	task?: Microsoft.SharePoint.Activities.TaskFacet;
+	taskCompleted?: Microsoft.SharePoint.Activities.TaskCompletedFacet;
+	taskCreated?: Microsoft.SharePoint.Activities.TaskCreatedFacet;
+	taskReassigned?: Microsoft.SharePoint.Activities.TaskReassignedFacet;
+	taskReopened?: Microsoft.SharePoint.Activities.TaskReopenedFacet;
 	version?: Microsoft.SharePoint.Activities.VersionFacet;
 }
 
@@ -28,6 +32,22 @@ export interface ActionFacet {
 * ActionFacetCollections
 **********************************************/
 export interface ActionFacetCollections {
+
+}
+
+/*********************************************
+* AddToOneDriveFacet
+**********************************************/
+export interface AddToOneDriveFacet {
+	addedDateTime?: string;
+	mountPointName?: string;
+	removedDateTime?: string;
+}
+
+/*********************************************
+* AddToOneDriveFacetCollections
+**********************************************/
+export interface AddToOneDriveFacetCollections {
 
 }
 
@@ -63,6 +83,7 @@ export interface CheckoutFacetCollections {
 * GetCommentFacet
 **********************************************/
 export interface GetCommentFacet {
+	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
 	commentId?: string;
 	isReply?: boolean;
 	parentAuthor?: Microsoft.SharePoint.Activities.ActivityIdentity;
@@ -81,6 +102,8 @@ export interface GetCommentFacetCollections {
 * ActivityIdentity
 **********************************************/
 export interface ActivityIdentity {
+	clientId?: string;
+	clientIdProvider?: string;
 	email?: string;
 	group?: Microsoft.SharePoint.Activities.ActivityIdentityItem;
 	name?: string;
@@ -99,6 +122,8 @@ export interface ActivityIdentityCollections {
 * ActivityIdentityItem
 **********************************************/
 export interface ActivityIdentityItem {
+	clientId?: string;
+	clientIdProvider?: string;
 	displayName?: string;
 	email?: string;
 	userPrincipalName?: string;
@@ -268,77 +293,63 @@ export interface SharingFacetCollections {
 }
 
 /*********************************************
-* TaskFacet
+* TaskCompletedFacet
 **********************************************/
-export interface TaskFacet {
-	assignee?: Microsoft.SharePoint.Activities.ActivityIdentity;
-	complete?: Microsoft.SharePoint.Activities.TaskCompleteFacet;
-	create?: Microsoft.SharePoint.Activities.TaskCreateFacet;
-	reassign?: Microsoft.SharePoint.Activities.TaskReassignFacet;
-	reopen?: Microsoft.SharePoint.Activities.TaskReopenFacet;
+export interface TaskCompletedFacet {
+	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
 	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
 }
 
 /*********************************************
-* TaskFacetCollections
+* TaskCompletedFacetCollections
 **********************************************/
-export interface TaskFacetCollections {
+export interface TaskCompletedFacetCollections {
 
 }
 
 /*********************************************
-* TaskCompleteFacet
+* TaskCreatedFacet
 **********************************************/
-export interface TaskCompleteFacet {
+export interface TaskCreatedFacet {
+	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
+}
+
+/*********************************************
+* TaskCreatedFacetCollections
+**********************************************/
+export interface TaskCreatedFacetCollections {
 
 }
 
 /*********************************************
-* TaskCompleteFacetCollections
+* TaskReassignedFacet
 **********************************************/
-export interface TaskCompleteFacetCollections {
+export interface TaskReassignedFacet {
+	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	previousAssignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
+}
+
+/*********************************************
+* TaskReassignedFacetCollections
+**********************************************/
+export interface TaskReassignedFacetCollections {
 
 }
 
 /*********************************************
-* TaskCreateFacet
+* TaskReopenedFacet
 **********************************************/
-export interface TaskCreateFacet {
-
+export interface TaskReopenedFacet {
+	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
 }
 
 /*********************************************
-* TaskCreateFacetCollections
+* TaskReopenedFacetCollections
 **********************************************/
-export interface TaskCreateFacetCollections {
-
-}
-
-/*********************************************
-* TaskReassignFacet
-**********************************************/
-export interface TaskReassignFacet {
-	lastAssignee?: Microsoft.SharePoint.Activities.ActivityIdentity;
-}
-
-/*********************************************
-* TaskReassignFacetCollections
-**********************************************/
-export interface TaskReassignFacetCollections {
-
-}
-
-/*********************************************
-* TaskReopenFacet
-**********************************************/
-export interface TaskReopenFacet {
-
-}
-
-/*********************************************
-* TaskReopenFacetCollections
-**********************************************/
-export interface TaskReopenFacetCollections {
+export interface TaskReopenedFacetCollections {
 
 }
 

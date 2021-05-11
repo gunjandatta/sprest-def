@@ -288,7 +288,9 @@ export interface ShareLinkSettings {
 	passwordProtected?: boolean;
 	restrictShareMembership?: boolean;
 	role?: number;
+	scope?: number;
 	shareId?: any;
+	trackLinkUsers?: boolean;
 	updatePassword?: boolean;
 }
 
@@ -318,6 +320,7 @@ export interface ShareLinkResponseCollections {
 **********************************************/
 export interface SharingAbilities {
 	anonymousLinkAbilities?: SP.Sharing.SharingLinkAbilities;
+	anyoneLinkAbilities?: SP.Sharing.SharingLinkAbilities;
 	directSharingAbilities?: SP.Sharing.DirectSharingAbilities;
 	organizationLinkAbilities?: SP.Sharing.SharingLinkAbilities;
 	peopleSharingLinkAbilities?: SP.Sharing.SharingLinkAbilities;
@@ -336,15 +339,18 @@ export interface SharingAbilitiesCollections {
 export interface SharingLinkAbilities {
 	canAddNewExternalPrincipals?: SP.Sharing.SharingAbilityStatus;
 	canGetEditLink?: SP.Sharing.SharingAbilityStatus;
+	canGetManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReadLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReviewLink?: SP.Sharing.SharingAbilityStatus;
 	canHaveExternalUsers?: SP.Sharing.SharingAbilityStatus;
 	canManageEditLink?: SP.Sharing.SharingAbilityStatus;
+	canManageManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canManageReadLink?: SP.Sharing.SharingAbilityStatus;
 	canManageReviewLink?: SP.Sharing.SharingAbilityStatus;
 	linkExpiration?: SP.Sharing.SharingLinkExpirationAbilityStatus;
 	passwordProtected?: SP.Sharing.SharingLinkPasswordAbilityStatus;
 	supportsRestrictedView?: SP.Sharing.SharingAbilityStatus;
+	trackLinkUsers?: SP.Sharing.SharingAbilityStatus;
 }
 
 /*********************************************
@@ -436,6 +442,7 @@ export interface SharingLinkDefaultTemplate {
 	role?: number;
 	scope?: number;
 	shareKind?: number;
+	trackLinkUsers?: boolean;
 }
 
 /*********************************************

@@ -118,12 +118,16 @@ export interface CorporateCatalogAppMetadataProps {
 	AppCatalogVersion?: string;
 	CanUpgrade?: boolean;
 	CDNLocation?: string;
+	ContainsTenantWideExtension?: boolean;
 	CurrentVersionDeployed?: boolean;
 	Deployed?: boolean;
+	ErrorMessage?: string;
 	ID?: string;
 	InstalledVersion?: string;
 	IsClientSideSolution?: boolean;
 	IsEnabled?: boolean;
+	IsPackageDefaultSkipFeatureDeployment?: boolean;
+	IsValidAppPackage?: boolean;
 	ProductId?: string;
 	ShortDescription?: string;
 	SkipDeploymentFeature?: boolean;
@@ -228,6 +232,8 @@ export interface TenantCorporateCatalogAccessorCollections extends TenantCorpora
 	AvailableApps(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataMethods;
 	SiteCollectionAppCatalogsSites(): Base.IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollectionMethods;
 	SiteCollectionAppCatalogsSites(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollections;
+	StoreApps(): Base.IBaseCollection<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
+	StoreApps(id: string | number): Base.IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataMethods;
 }
 
 /*********************************************
@@ -236,6 +242,7 @@ export interface TenantCorporateCatalogAccessorCollections extends TenantCorpora
 export interface TenantCorporateCatalogAccessorOData extends Base.IBaseResult, TenantCorporateCatalogAccessorProps, TenantCorporateCatalogAccessorMethods {
 	AvailableApps: Base.IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
 	SiteCollectionAppCatalogsSites: Base.IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollectionMethods;
+	StoreApps: Base.IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
 }
 
 /*********************************************
@@ -243,7 +250,16 @@ export interface TenantCorporateCatalogAccessorOData extends Base.IBaseResult, T
 **********************************************/
 export interface TenantCorporateCatalogAccessorMethods {
 	// add(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
-	syncSolutionToTeams(id?: number): Base.IBaseExecution<any>;
+	addAndDeployStoreAppById(CMU?: string, Overwrite?: boolean, SkipFeatureDeployment?: boolean, StoreAssetId?: string): Base.IBaseExecution<any>;
+	addStoreApp(Content?: any, Overwrite?: boolean, Url?: string, IconUrl?: string, ShortDescription?: string, StoreAssetId?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	appRequests(AppRequestInfo?: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppRequestInformation): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppResponseInformation>;
+	downloadTeamsSolution(id?: number): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload>;
+	downloadTeamsSolutionByUniqueId(id?: any): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload>;
+	getAppById(itemUniqueId?: string): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
+	isAppUpgradeAvailable(id?: number): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability>;
+	solutionContainsTeamsComponent(id?: any): Base.IBaseExecution<boolean>;
+	syncSolutionToTeams(id?: number): Base.IBaseExecution<number>;
+	syncSolutionToTeamsByUniqueId(id?: any): Base.IBaseExecution<any>;
 	upload(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseExecution<any>;
 	add(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
@@ -298,4 +314,74 @@ export interface SPCorporateCuratedGallerySettingsFactory {
 **********************************************/
 export interface SPCorporateCuratedGallerySettingsFactoryCollections {
 
+}
+
+/*********************************************
+* ITeamsPackageDownload
+**********************************************/
+export interface ITeamsPackageDownload extends TeamsPackageDownloadCollections, TeamsPackageDownloadMethods, Base.IBaseQuery<TeamsPackageDownload, ITeamsPackageDownloadQuery> {
+
+}
+
+/*********************************************
+* ITeamsPackageDownloadCollection
+**********************************************/
+export interface ITeamsPackageDownloadCollection extends Base.IBaseResults<TeamsPackageDownload> {
+	done?: (resolve: (value?: Array<TeamsPackageDownload>) => void) => void;
+}
+
+/*********************************************
+* ITeamsPackageDownloadQueryCollection
+**********************************************/
+export interface ITeamsPackageDownloadQueryCollection extends Base.IBaseResults<TeamsPackageDownloadOData> {
+	done?: (resolve: (value?: Array<TeamsPackageDownloadOData>) => void) => void;
+}
+
+/*********************************************
+* ITeamsPackageDownloadQuery
+**********************************************/
+export interface ITeamsPackageDownloadQuery extends TeamsPackageDownloadOData, TeamsPackageDownloadMethods {
+
+}
+
+/*********************************************
+* TeamsPackageDownload
+**********************************************/
+export interface TeamsPackageDownload extends Base.IBaseResult, TeamsPackageDownloadProps, TeamsPackageDownloadCollections, TeamsPackageDownloadMethods {
+
+}
+
+/*********************************************
+* TeamsPackageDownloadProps
+**********************************************/
+export interface TeamsPackageDownloadProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* TeamsPackageDownloadPropMethods
+**********************************************/
+export interface TeamsPackageDownloadPropMethods {
+
+}
+
+/*********************************************
+* TeamsPackageDownloadCollections
+**********************************************/
+export interface TeamsPackageDownloadCollections extends TeamsPackageDownloadPropMethods {
+
+}
+
+/*********************************************
+* TeamsPackageDownloadOData
+**********************************************/
+export interface TeamsPackageDownloadOData extends Base.IBaseResult, TeamsPackageDownloadProps, TeamsPackageDownloadMethods {
+
+}
+
+/*********************************************
+* TeamsPackageDownloadMethods
+**********************************************/
+export interface TeamsPackageDownloadMethods {
+	downloadTeams(): Base.IBaseExecution<any>;
 }

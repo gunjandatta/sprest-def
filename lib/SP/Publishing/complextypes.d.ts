@@ -20,6 +20,27 @@ export interface AcronymInformationCollections {
 }
 
 /*********************************************
+* BoostFieldsData
+**********************************************/
+export interface BoostFieldsData {
+	BoostOrderType?: number;
+	BoostUntilSeen?: boolean;
+	Expiry?: any;
+	Impressions?: number;
+	NextItemId?: number;
+	NextItemVersion?: number;
+	PreviousItemId?: number;
+	PreviousItemVersion?: number;
+}
+
+/*********************************************
+* BoostFieldsDataCollections
+**********************************************/
+export interface BoostFieldsDataCollections {
+
+}
+
+/*********************************************
 * ProfileDateTime
 **********************************************/
 export interface ProfileDateTime {
@@ -45,6 +66,20 @@ export interface DateTimeCustomProperty {
 * DateTimeCustomPropertyCollections
 **********************************************/
 export interface DateTimeCustomPropertyCollections {
+
+}
+
+/*********************************************
+* Error
+**********************************************/
+export interface Error {
+	Details?: Array<string>;
+}
+
+/*********************************************
+* ErrorCollections
+**********************************************/
+export interface ErrorCollections {
 
 }
 
@@ -239,6 +274,38 @@ export interface PersonMagazineUserProfileDataCollections {
 }
 
 /*********************************************
+* PortalHealthStatusDetails
+**********************************************/
+export interface PortalHealthStatusDetails {
+	ErrorReason?: string;
+	HelpLink?: string;
+	PortalHealthErrorCode?: number;
+	Status?: number;
+}
+
+/*********************************************
+* PortalHealthStatusDetailsCollections
+**********************************************/
+export interface PortalHealthStatusDetailsCollections {
+
+}
+
+/*********************************************
+* PortalHealthStatus
+**********************************************/
+export interface PortalHealthStatus {
+	Details?: Array<SP.Publishing.PortalHealthStatusDetails>;
+	Status?: number;
+}
+
+/*********************************************
+* PortalHealthStatusCollections
+**********************************************/
+export interface PortalHealthStatusCollections {
+
+}
+
+/*********************************************
 * ProfileCoreProperties
 **********************************************/
 export interface ProfileCoreProperties {
@@ -399,6 +466,7 @@ export interface SitePageFieldsData {
 	BannerImageUrl?: string;
 	CanvasContent1?: string;
 	CanvasJson1?: string;
+	Categories?: string;
 	Description?: string;
 	LayoutWebpartsContent?: string;
 	Modified?: any;
@@ -425,6 +493,42 @@ export interface RepostPageFieldsData {
 * RepostPageFieldsDataCollections
 **********************************************/
 export interface RepostPageFieldsDataCollections {
+
+}
+
+/*********************************************
+* RuleErrorDetails
+**********************************************/
+export interface RuleErrorDetails {
+	errorHeaders?: Array<string>;
+	errors?: Array<SP.Publishing.Error>;
+}
+
+/*********************************************
+* RuleErrorDetailsCollections
+**********************************************/
+export interface RuleErrorDetailsCollections {
+
+}
+
+/*********************************************
+* RuleResult
+**********************************************/
+export interface RuleResult {
+	ActionToTake?: string;
+	Details?: SP.Publishing.RuleErrorDetails;
+	description?: string;
+	LearnMoreLink?: string;
+	ResultCount?: number;
+	RuleType?: string;
+	Status?: number;
+	Title?: string;
+}
+
+/*********************************************
+* RuleResultCollections
+**********************************************/
+export interface RuleResultCollections {
 
 }
 
@@ -545,6 +649,22 @@ export interface TextValueWithLanguage {
 * TextValueWithLanguageCollections
 **********************************************/
 export interface TextValueWithLanguageCollections {
+
+}
+
+/*********************************************
+* TopicPageFieldsData
+**********************************************/
+export interface TopicPageFieldsData {
+	EntityId?: string;
+	EntityRelations?: string;
+	EntityType?: string;
+}
+
+/*********************************************
+* TopicPageFieldsDataCollections
+**********************************************/
+export interface TopicPageFieldsDataCollections {
 
 }
 

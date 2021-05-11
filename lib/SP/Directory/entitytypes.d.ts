@@ -241,12 +241,17 @@ export interface UserProps {
 	sharePointFiltersPaneFirstRun?: boolean;
 	sharePointFollowedDocumentsMigrated?: boolean;
 	sharePointFollowedSitesMigrated?: boolean;
+	sharePointFollowedSitesMigrated2?: boolean;
 	sharePointHomeCreateNewsTeachingBubble?: boolean;
 	sharePointHomeFirstRun?: boolean;
 	sharePointHomeMobileUpsell?: boolean;
 	sharePointHomeRefreshFirstRun?: boolean;
+	sharePointKnowledgeCenterFirstRun?: boolean;
+	sharePointKnowledgeManagementTopicPageFirstRun?: boolean;
 	sharePointLibrariesFirstRun?: boolean;
 	sharePointListsFirstRun?: boolean;
+	sharePointListsGoMobileFirstRun?: boolean;
+	sharePointListsHomeFirstRun?: boolean;
 	sharePointModernDocSetsFirstRun?: boolean;
 	sharePointModernHomepageFirstRun?: boolean;
 	sharePointNewsDigestTeachingBubble?: boolean;

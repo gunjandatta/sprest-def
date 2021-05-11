@@ -20,6 +20,7 @@ export interface ClientPeoplePickerQueryParameters {
 	SharePointGroupID?: number;
 	UrlZone?: number;
 	UrlZoneSpecified?: boolean;
+	UseSubstrateSearch?: boolean;
 	WebApplicationID?: any;
 }
 

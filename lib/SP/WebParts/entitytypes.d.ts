@@ -68,6 +68,7 @@ export interface LimitedWebPartManager extends Base.IBaseResult, LimitedWebPartM
 **********************************************/
 export interface LimitedWebPartManagerProps {
 	HasPersonalizedParts?: boolean;
+	HasWebPartConnections?: boolean;
 	Scope?: number;
 }
 

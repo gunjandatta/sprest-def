@@ -162,13 +162,22 @@ export interface GroupSiteManagerMethods {
 	createGroupForSite(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	delete(siteUrl?: string): Base.IBaseExecution<any>;
 	ensureTeamForGroup(): Base.IBaseExecution<string>;
+	ensureTeamForGroupEx(): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
+	getAllOrgLabels(pageNumber?: number): Base.IBaseExecution<Microsoft.SharePoint.Portal.OrgLabelsContextList>;
+	getCurrentUserSharedChannelMemberGroups(): Base.IBaseExecution<string>;
 	getGroupCreationContext(): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupCreationContext>;
 	getGroupSiteConversionData(): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteConversionInfo>;
+	getParentGroupForChannel(siteUrl?: string): Base.IBaseCollection<Microsoft.SharePoint.Portal.ParentGroup>;
+	getSharedChannelSharePointUrl(tenantId?: string, groupId?: any): Base.IBaseExecution<string>;
 	getSiteStatus(groupId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
+	getTeamChannelFilesUrl(teamId?: string, channelId?: string): Base.IBaseExecution<any>;
+	getTeamChannels(teamId?: string): Base.IBaseExecution<any>;
+	getUserSharedChannelMemberGroups(userName?: string): Base.IBaseExecution<string>;
 	getValidSiteUrlFromAlias(alias?: string, managedPath?: string, isTeamSite?: boolean): Base.IBaseExecution<string>;
 	hideTeamifyPrompt(siteUrl?: string): Base.IBaseExecution<any>;
 	isTeamifyPromptHidden(siteUrl?: string): Base.IBaseExecution<boolean>;
 	notebook(groupId?: any): Base.IBaseExecution<string>;
+	pinToTeam(requestParams?: Microsoft.SharePoint.Portal.PinToTeamParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.PinToTeamResponse>;
 }
 
 /*********************************************
@@ -291,6 +300,7 @@ export interface SharePointHomeServiceContextCollections {
 * SharePointHomeServiceContextOData
 **********************************************/
 export interface SharePointHomeServiceContextOData extends Base.IBaseResult, SharePointHomeServiceContext {
+	DWEngineToken: SP.OAuth.TokenResponse & SP.OAuth.TokenResponseCollections;
 	Token: SP.OAuth.TokenResponse & SP.OAuth.TokenResponseCollections;
 }
 
@@ -432,12 +442,15 @@ export interface SPSiteManagerOData extends Base.IBaseResult, SPSiteManagerProps
 **********************************************/
 export interface SPSiteManagerMethods {
 	archiveTeamChannelSite(siteId?: any, archive?: boolean): Base.IBaseExecution<any>;
+	areSegmentsCompatible(segments?: Array<any>): Base.IBaseExecution<boolean>;
 	canCreateHubJoinedSite(hubSiteId?: any): Base.IBaseExecution<boolean>;
 	create(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
 	delete(siteId?: any): Base.IBaseExecution<any>;
+	getCompatibleSegments(segments?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.Portal.IBSegmentInfo>;
 	getIBSegmentLabels(IBSegments?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.Portal.IBSegmentInfo>;
 	getTeamChannelSiteOwner(siteId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GetTeamChannelSiteOwnerResponse>;
 	restoreTeamsChannelSite(siteId?: any, relatedGroupId?: any): Base.IBaseExecution<any>;
+	setIBSegments(IBSegments?: Array<any>): Base.IBaseExecution<any>;
 	setTeamChannelSiteOwner(siteId?: any, logonName?: string, secondaryLogonName?: string): Base.IBaseExecution<any>;
 	siteUrl(siteId?: any): Base.IBaseExecution<string>;
 	status(url?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
@@ -511,7 +524,8 @@ export interface SiteIconManagerOData extends Base.IBaseResult, SiteIconManagerP
 * SiteIconManagerMethods
 **********************************************/
 export interface SiteIconManagerMethods {
-	getSiteLogo(siteUrl?: string): Base.IBaseExecution<any>;
+	getSiteLogo(siteUrl?: string, target?: number, type?: number, hash?: string): Base.IBaseExecution<any>;
+	setSiteLogo(relativeLogoUrl?: string, type?: number, aspect?: number, focalx?: number, focaly?: number, isFocalPatch?: boolean): Base.IBaseExecution<any>;
 }
 
 /*********************************************

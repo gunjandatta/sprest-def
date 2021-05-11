@@ -2,6 +2,8 @@ import * as Analytics from "./Analytics";
 export { Analytics }
 import * as BusinessData from "./BusinessData";
 export { BusinessData }
+import * as ComplianceFoundation from "./ComplianceFoundation";
+export { ComplianceFoundation }
 import * as CompliancePolicy from "./CompliancePolicy";
 export { CompliancePolicy }
 import * as Data from "./Data";

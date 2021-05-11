@@ -69,7 +69,10 @@ export interface NavigationServiceRestOData extends Base.IBaseResult, Navigation
 **********************************************/
 export interface NavigationServiceRestMethods {
 	getPublishingNavigationProviderType(mapProviderName?: string): Base.IBaseExecution<number>;
+	globalNav(source?: string): Base.IBaseExecution<SP.MenuState>;
+	globalNavEnabled(): Base.IBaseExecution<boolean>;
 	menuNodeKey(currentUrl?: string, mapProviderName?: string): Base.IBaseExecution<string>;
 	menuState(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): Base.IBaseExecution<SP.MenuState>;
 	saveMenuState(menuState?: SP.MenuState, mapProviderName?: string): Base.IBaseExecution<number>;
+	setGlobalNavEnabled(isEnabled?: boolean): Base.IBaseExecution<any>;
 }

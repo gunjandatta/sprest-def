@@ -7,6 +7,7 @@ import { Microsoft } from "../../../../../../";
 export interface TenantRenameJobEntityData {
 	IncludeGestures?: string;
 	JobId?: any;
+	ScheduledDateTimeInUtc?: any;
 	SkipDomainCheck?: boolean;
 	SourceAdminSiteUrl?: string;
 	SourceMySiteHostUrl?: string;
@@ -29,12 +30,18 @@ export interface TenantRenameJobEntityDataCollections {
 * TenantRenameJob
 **********************************************/
 export interface TenantRenameJob {
+	AttentionRequired?: number;
+	DateTimeFormat?: string;
 	FailedSitesCount?: number;
 	InprogressSitesCount?: number;
 	JobState?: string;
 	QueuedSitesCount?: number;
+	RenamedSitesCount?: number;
+	RequestedAt?: any;
+	ResponseMessages?: { results: Array<string> };
 	SuccessSitesCount?: number;
 	SuspendedSitesCount?: number;
+	TotalSitesCount?: number;
 	TriggeredBy?: string;
 }
 
@@ -49,7 +56,6 @@ export interface TenantRenameJobCollections extends TenantRenameJobCollectionMet
 * TenantRenameJobCollectionMethods
 **********************************************/
 export interface TenantRenameJobCollectionMethods {
-	getJobById(jobId?: any, loadProgressState?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
-	getJobsByState(state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>>;
-	getState(): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
+	get(): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
+	getWarningMessages(): Base.IBaseExecution<Array<string>>;
 }

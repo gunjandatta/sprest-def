@@ -1,22 +1,6 @@
 import { Base } from "../../../../../";
 
 /*********************************************
-* GeoCredentials
-**********************************************/
-export interface GeoCredentials {
-	AltDatabaseCredentials?: Array<string>;
-	FarmCredentials?: Array<string>;
-	FarmCredentialsExpirationTime?: any;
-}
-
-/*********************************************
-* GeoCredentialsCollections
-**********************************************/
-export interface GeoCredentialsCollections {
-
-}
-
-/*********************************************
 * GeoAdministratorEntityData
 **********************************************/
 export interface GeoAdministratorEntityData {

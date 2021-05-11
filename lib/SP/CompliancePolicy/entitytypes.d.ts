@@ -97,6 +97,7 @@ export interface SPPolicyStoreProxyMethods {
 	removeContainerSettings(externalId?: Array<string>): Base.IBaseExecution<any>;
 	retagReviewItems(itemIds?: Array<number>, newTag?: string, newTagIsRecord?: boolean, newTagBlockDelete?: boolean, newTagIsEventBased?: boolean): Base.IBaseCollection<number>;
 	retagReviewItemsWithMetas(itemIds?: Array<number>, newTagName?: string, newTagMetas?: Array<string>): Base.IBaseCollection<number>;
+	retagUnifiedReviewItemsWithMetas(itemIds?: Array<string>, originalTagName?: string, newTagName?: string, newTagMetas?: Array<string>): Base.IBaseCollection<string>;
 	setContainerRetentionPolicy(siteId?: string, defaultContainerLabel?: any): Base.IBaseExecution<any>;
 	updateContainerSetting(siteId?: string, externalId?: string, settingType?: number, setting?: string): Base.IBaseExecution<any>;
 }

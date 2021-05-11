@@ -31,6 +31,7 @@ export interface ComplianceTag {
 	EncryptionRMSTemplateId?: string;
 	HasRetentionAction?: boolean;
 	IsEventTag?: boolean;
+	MultiStageReviewerEmail?: string;
 	Notes?: string;
 	RequireSenderAuthenticationEnabled?: boolean;
 	ReviewerEmail?: string;

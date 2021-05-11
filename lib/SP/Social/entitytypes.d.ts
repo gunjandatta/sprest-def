@@ -176,6 +176,7 @@ export interface SocialFollowingManagerMethods {
 	getFollowers(): Base.IBaseCollection<SP.Social.SocialActor>;
 	getSuggestions(): Base.IBaseCollection<SP.Social.SocialActor>;
 	isFollowed(actor?: SP.Social.SocialActorInfo): Base.IBaseExecution<boolean>;
+	mergeFollowedSites(followedSites?: string): Base.IBaseExecution<string>;
 	stopFollowing(actor?: SP.Social.SocialActorInfo): Base.IBaseExecution<boolean>;
 }
 
@@ -477,6 +478,7 @@ export interface SocialRestFollowingManagerMethods {
 	followedCount(types?: number): Base.IBaseExecution<number>;
 	followers(): Base.IBaseCollection<SP.Social.SocialActor>;
 	isFollowed(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): Base.IBaseExecution<boolean>;
+	mergeFollowedSites(followedSites?: string): Base.IBaseExecution<string>;
 	my(): Base.IBaseExecution<SP.Social.SocialRestFollowingManager>;
 	stopFollowing(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): Base.IBaseExecution<any>;
 	suggestions(): Base.IBaseCollection<SP.Social.SocialActor>;

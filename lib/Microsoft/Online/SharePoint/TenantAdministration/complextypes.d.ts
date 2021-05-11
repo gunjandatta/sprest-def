@@ -17,6 +17,21 @@ export interface AutoQuotaEnabledCollections {
 }
 
 /*********************************************
+* CommentsOnSitePagesDisabled
+**********************************************/
+export interface CommentsOnSitePagesDisabled {
+	IsReadOnly?: boolean;
+	Value?: boolean;
+}
+
+/*********************************************
+* CommentsOnSitePagesDisabledCollections
+**********************************************/
+export interface CommentsOnSitePagesDisabledCollections {
+
+}
+
+/*********************************************
 * CustomFormUrl
 **********************************************/
 export interface CustomFormUrl {
@@ -43,6 +58,21 @@ export interface DisableGroupify {
 * DisableGroupifyCollections
 **********************************************/
 export interface DisableGroupifyCollections {
+
+}
+
+/*********************************************
+* EnableAutoNewsDigest
+**********************************************/
+export interface EnableAutoNewsDigest {
+	IsReadOnly?: boolean;
+	Value?: boolean;
+}
+
+/*********************************************
+* EnableAutoNewsDigestCollections
+**********************************************/
+export interface EnableAutoNewsDigestCollections {
 
 }
 
@@ -74,6 +104,36 @@ export interface HubSitePermission {
 * HubSitePermissionCollections
 **********************************************/
 export interface HubSitePermissionCollections {
+
+}
+
+/*********************************************
+* IBSegmentInfo
+**********************************************/
+export interface IBSegmentInfo {
+	DisplayName?: string;
+	ObjectId?: any;
+}
+
+/*********************************************
+* IBSegmentInfoCollections
+**********************************************/
+export interface IBSegmentInfoCollections {
+
+}
+
+/*********************************************
+* IncludeAtAGlanceInShareEmails
+**********************************************/
+export interface IncludeAtAGlanceInShareEmails {
+	IsReadOnly?: boolean;
+	Value?: boolean;
+}
+
+/*********************************************
+* IncludeAtAGlanceInShareEmailsCollections
+**********************************************/
+export interface IncludeAtAGlanceInShareEmailsCollections {
 
 }
 
@@ -228,6 +288,24 @@ export interface PolicyOptionCollections {
 }
 
 /*********************************************
+* PowerAppsEnvironment
+**********************************************/
+export interface PowerAppsEnvironment {
+	AllocatedAICredits?: number;
+	DisplayName?: string;
+	IsDefault?: boolean;
+	Name?: string;
+	PurchasedAICredits?: number;
+}
+
+/*********************************************
+* PowerAppsEnvironmentCollections
+**********************************************/
+export interface PowerAppsEnvironmentCollections {
+
+}
+
+/*********************************************
 * RequireSecondaryContact
 **********************************************/
 export interface RequireSecondaryContact {
@@ -308,6 +386,38 @@ export interface ShowSelfServiceSiteCreationCollections {
 }
 
 /*********************************************
+* SiteCohortsSummary
+**********************************************/
+export interface SiteCohortsSummary {
+	ExternallySharedSitesCount?: number;
+	GroupConnectedSitesCount?: number;
+	InactiveSitesCount?: number;
+	TotalSitesCount?: number;
+}
+
+/*********************************************
+* SiteCohortsSummaryCollections
+**********************************************/
+export interface SiteCohortsSummaryCollections {
+
+}
+
+/*********************************************
+* SiteCreationData
+**********************************************/
+export interface SiteCreationData {
+	Count?: number;
+	SiteCreationSourceGuid?: string;
+}
+
+/*********************************************
+* SiteCreationDataCollections
+**********************************************/
+export interface SiteCreationDataCollections {
+
+}
+
+/*********************************************
 * SiteCreationDefaultStorageQuota
 **********************************************/
 export interface SiteCreationDefaultStorageQuota {
@@ -362,6 +472,56 @@ export interface SiteCreationPropertiesCollections {
 }
 
 /*********************************************
+* SiteCreationSource
+**********************************************/
+export interface SiteCreationSource {
+	IsSyncThresholdLimitReached?: boolean;
+	LastRefreshTimeStamp?: any;
+	SiteCreationData?: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteCreationData>;
+	SyncThresholdLimit?: number;
+	TotalSitesCount?: number;
+}
+
+/*********************************************
+* SiteCreationSourceCollections
+**********************************************/
+export interface SiteCreationSourceCollections {
+
+}
+
+/*********************************************
+* SiteInfoForSitePicker
+**********************************************/
+export interface SiteInfoForSitePicker {
+	Error?: string;
+	SiteId?: any;
+	SiteName?: string;
+	Url?: string;
+}
+
+/*********************************************
+* SiteInfoForSitePickerCollections
+**********************************************/
+export interface SiteInfoForSitePickerCollections {
+
+}
+
+/*********************************************
+* SitePagesEnabled
+**********************************************/
+export interface SitePagesEnabled {
+	IsReadOnly?: boolean;
+	Value?: boolean;
+}
+
+/*********************************************
+* SitePagesEnabledCollections
+**********************************************/
+export interface SitePagesEnabledCollections {
+
+}
+
+/*********************************************
 * SPOSitePropertiesEnumerableFilter
 **********************************************/
 export interface SPOSitePropertiesEnumerableFilter {
@@ -412,6 +572,23 @@ export interface UserInfoCollections {
 }
 
 /*********************************************
+* SiteUserGroupsData
+**********************************************/
+export interface SiteUserGroupsData {
+	members?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
+	owners?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
+	siteId?: any;
+	visitors?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
+}
+
+/*********************************************
+* SiteUserGroupsDataCollections
+**********************************************/
+export interface SiteUserGroupsDataCollections {
+
+}
+
+/*********************************************
 * SmtpServer
 **********************************************/
 export interface SmtpServer {
@@ -443,6 +620,22 @@ export interface SPListModernUXOffCollections {
 }
 
 /*********************************************
+* SPOSiteCreationSource
+**********************************************/
+export interface SPOSiteCreationSource {
+	DisplayName?: string;
+	Id?: string;
+	Name?: string;
+}
+
+/*********************************************
+* SPOSiteCreationSourceCollections
+**********************************************/
+export interface SPOSiteCreationSourceCollections {
+
+}
+
+/*********************************************
 * TenantDefaultTimeZoneId
 **********************************************/
 export interface TenantDefaultTimeZoneId {
@@ -454,6 +647,21 @@ export interface TenantDefaultTimeZoneId {
 * TenantDefaultTimeZoneIdCollections
 **********************************************/
 export interface TenantDefaultTimeZoneIdCollections {
+
+}
+
+/*********************************************
+* UserVoiceForFeedbackEnabled
+**********************************************/
+export interface UserVoiceForFeedbackEnabled {
+	IsReadOnly?: boolean;
+	Value?: boolean;
+}
+
+/*********************************************
+* UserVoiceForFeedbackEnabledCollections
+**********************************************/
+export interface UserVoiceForFeedbackEnabledCollections {
 
 }
 

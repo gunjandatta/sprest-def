@@ -168,6 +168,7 @@ export interface QueryContext {
 	RoleIds?: Array<any>;
 	SpSiteId?: any;
 	SpWebId?: any;
+	TenantInstanceId?: any;
 }
 
 /*********************************************
@@ -352,6 +353,271 @@ export interface SpecialTermResult {
 * SpecialTermResultCollections
 **********************************************/
 export interface SpecialTermResultCollections {
+
+}
+
+/*********************************************
+* ReportAbandonedQueriesData
+**********************************************/
+export interface ReportAbandonedQueriesData {
+	AbandonedPercentage?: number;
+	QueryText?: string;
+	ResultSource?: string;
+	Total?: number;
+}
+
+/*********************************************
+* ReportAbandonedQueriesDataCollections
+**********************************************/
+export interface ReportAbandonedQueriesDataCollections {
+
+}
+
+/*********************************************
+* ReportAbandonedQueriesItem
+**********************************************/
+export interface ReportAbandonedQueriesItem {
+	Date?: string;
+	Report?: Array<Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesData>;
+}
+
+/*********************************************
+* ReportAbandonedQueriesItemCollections
+**********************************************/
+export interface ReportAbandonedQueriesItemCollections {
+
+}
+
+/*********************************************
+* ReportBase
+**********************************************/
+export interface ReportBase {
+	FarmId?: string;
+}
+
+/*********************************************
+* ReportBaseCollections
+**********************************************/
+export interface ReportBaseCollections {
+
+}
+
+/*********************************************
+* ReportAbandonedQueries
+**********************************************/
+export interface ReportAbandonedQueries {
+	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesItem>;
+}
+
+/*********************************************
+* ReportAbandonedQueriesCollections
+**********************************************/
+export interface ReportAbandonedQueriesCollections {
+
+}
+
+/*********************************************
+* ReportNoResultData
+**********************************************/
+export interface ReportNoResultData {
+	NoResultPercentage?: number;
+	QueryText?: string;
+	ResultSource?: string;
+	Total?: number;
+}
+
+/*********************************************
+* ReportNoResultDataCollections
+**********************************************/
+export interface ReportNoResultDataCollections {
+
+}
+
+/*********************************************
+* ReportNoResultItem
+**********************************************/
+export interface ReportNoResultItem {
+	Date?: string;
+	Report?: Array<Microsoft.Office.Server.Search.REST.ReportNoResultData>;
+}
+
+/*********************************************
+* ReportNoResultItemCollections
+**********************************************/
+export interface ReportNoResultItemCollections {
+
+}
+
+/*********************************************
+* ReportNoResultQueries
+**********************************************/
+export interface ReportNoResultQueries {
+	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportNoResultItem>;
+}
+
+/*********************************************
+* ReportNoResultQueriesCollections
+**********************************************/
+export interface ReportNoResultQueriesCollections {
+
+}
+
+/*********************************************
+* ReportNumberOfQueriesData
+**********************************************/
+export interface ReportNumberOfQueriesData {
+	Hits?: string;
+	ResultSource?: string;
+	TotalQueries?: string;
+}
+
+/*********************************************
+* ReportNumberOfQueriesDataCollections
+**********************************************/
+export interface ReportNumberOfQueriesDataCollections {
+
+}
+
+/*********************************************
+* ReportNumberOfQueriesItem
+**********************************************/
+export interface ReportNumberOfQueriesItem {
+	Date?: string;
+	Report?: Array<Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesData>;
+}
+
+/*********************************************
+* ReportNumberOfQueriesItemCollections
+**********************************************/
+export interface ReportNumberOfQueriesItemCollections {
+
+}
+
+/*********************************************
+* ReportNumberOfQueries
+**********************************************/
+export interface ReportNumberOfQueries {
+	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesItem>;
+}
+
+/*********************************************
+* ReportNumberOfQueriesCollections
+**********************************************/
+export interface ReportNumberOfQueriesCollections {
+
+}
+
+/*********************************************
+* ReportQueryRulesData
+**********************************************/
+export interface ReportQueryRulesData {
+	DictionaryTerms?: string;
+	OwnerType?: string;
+	PercentagePromotedResult?: string;
+	PromotedResultClicks?: string;
+	PromotedResultId?: string;
+	PromotedResultURL?: string;
+	PromotedResultURLName?: string;
+	QueryRule?: string;
+	QueryRuleId?: string;
+	ResultSource?: string;
+	TimesFired?: string;
+}
+
+/*********************************************
+* ReportQueryRulesDataCollections
+**********************************************/
+export interface ReportQueryRulesDataCollections {
+
+}
+
+/*********************************************
+* ReportQueryRulesItem
+**********************************************/
+export interface ReportQueryRulesItem {
+	Date?: string;
+	Report?: Array<Microsoft.Office.Server.Search.REST.ReportQueryRulesData>;
+}
+
+/*********************************************
+* ReportQueryRulesItemCollections
+**********************************************/
+export interface ReportQueryRulesItemCollections {
+
+}
+
+/*********************************************
+* ReportQueryRules
+**********************************************/
+export interface ReportQueryRules {
+	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportQueryRulesItem>;
+}
+
+/*********************************************
+* ReportQueryRulesCollections
+**********************************************/
+export interface ReportQueryRulesCollections {
+
+}
+
+/*********************************************
+* ReportTopQueriesData
+**********************************************/
+export interface ReportTopQueriesData {
+	QueryPercentage?: number;
+	QueryText?: string;
+	ResultSource?: string;
+	Total?: number;
+}
+
+/*********************************************
+* ReportTopQueriesDataCollections
+**********************************************/
+export interface ReportTopQueriesDataCollections {
+
+}
+
+/*********************************************
+* ReportTopQueriesItem
+**********************************************/
+export interface ReportTopQueriesItem {
+	Date?: string;
+	Report?: Array<Microsoft.Office.Server.Search.REST.ReportTopQueriesData>;
+}
+
+/*********************************************
+* ReportTopQueriesItemCollections
+**********************************************/
+export interface ReportTopQueriesItemCollections {
+
+}
+
+/*********************************************
+* ReportTopQueries
+**********************************************/
+export interface ReportTopQueries {
+	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportTopQueriesItem>;
+}
+
+/*********************************************
+* ReportTopQueriesCollections
+**********************************************/
+export interface ReportTopQueriesCollections {
+
+}
+
+/*********************************************
+* ScsEndpoint
+**********************************************/
+export interface ScsEndpoint {
+	FarmLabel?: string;
+	PushServiceLocation?: string;
+}
+
+/*********************************************
+* ScsEndpointCollections
+**********************************************/
+export interface ScsEndpointCollections {
 
 }
 

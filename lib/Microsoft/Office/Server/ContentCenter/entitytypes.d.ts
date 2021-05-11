@@ -1,5 +1,21 @@
 import { Base } from "../../../../";
 import { Microsoft } from "../../../../";
+import { SP } from "../../../../";
+
+/*********************************************
+* SPMachineLearningEnabled
+**********************************************/
+export interface SPMachineLearningEnabled {
+	MachineLearningCaptureEnabled?: boolean;
+	MachineLearningExperienceEnabled?: boolean;
+}
+
+/*********************************************
+* SPMachineLearningEnabledCollections
+**********************************************/
+export interface SPMachineLearningEnabledCollections {
+
+}
 
 /*********************************************
 * ISPMachineLearningHub
@@ -40,14 +56,15 @@ export interface SPMachineLearningHub extends Base.IBaseResult, SPMachineLearnin
 * SPMachineLearningHubProps
 **********************************************/
 export interface SPMachineLearningHubProps {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	IsDefaultContentCenter?: boolean;
+	MachineLearningCaptureEnabled?: boolean;
 }
 
 /*********************************************
 * SPMachineLearningHubPropMethods
 **********************************************/
 export interface SPMachineLearningHubPropMethods {
-
+	MachineLearningEnabled(): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled> & Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabledCollections;
 }
 
 /*********************************************
@@ -60,22 +77,31 @@ export interface SPMachineLearningHubCollections extends SPMachineLearningHubPro
 	Publications(id: string | number): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication> & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationMethods;
 	Samples(): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningSample> & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleCollectionMethods;
 	Samples(id: string | number): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningSample> & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleMethods;
+	WorkItems(): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollectionMethods;
+	WorkItems(id: string | number): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollections;
 }
 
 /*********************************************
 * SPMachineLearningHubOData
 **********************************************/
 export interface SPMachineLearningHubOData extends Base.IBaseResult, SPMachineLearningHubProps, SPMachineLearningHubMethods {
+	MachineLearningEnabled: Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled & Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabledCollections;
 	Models: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollectionMethods;
 	Publications: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication> & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollectionMethods;
 	Samples: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningSample> & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleCollectionMethods;
+	WorkItems: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollectionMethods;
 }
 
 /*********************************************
 * SPMachineLearningHubMethods
 **********************************************/
 export interface SPMachineLearningHubMethods {
-
+	createSite(siteCreationProperties?: Microsoft.Office.Server.ContentCenter.SiteCreationProperties): Base.IBaseExecution<any>;
+	getModelIdForContentType(contentTypeName?: string): Base.IBaseExecution<string>;
+	getModels(listId?: any, modelTypes?: number, publicationTypes?: number): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollectionMethods;
+	getRetentionLabel(retentionLabelId?: any): Base.IBaseExecution<SP.CompliancePolicy.ComplianceTag>;
+	getRetentionLabels(): Base.IBaseCollection<SP.CompliancePolicy.ComplianceTag>;
+	verifyModelUrls(urls?: Array<string>): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -117,17 +143,25 @@ export interface SPMachineLearningModel extends Base.IBaseResult, SPMachineLearn
 * SPMachineLearningModelProps
 **********************************************/
 export interface SPMachineLearningModelProps {
-	Accuracy?: any;
+	ConfidenceScore?: string;
 	ContentTypeGroup?: string;
 	ContentTypeId?: string;
 	ContentTypeName?: string;
+	Created?: any;
+	CreatedBy?: string;
 	DriveId?: string;
 	Explanations?: string;
 	ID?: number;
 	LastTrained?: any;
 	ListID?: any;
+	ModelSettings?: string;
+	ModelType?: number;
+	Modified?: any;
+	ModifiedBy?: string;
 	ObjectId?: string;
+	PublicationType?: number;
 	Schemas?: string;
+	SourceUrl?: string;
 	UniqueId?: any;
 }
 
@@ -149,8 +183,10 @@ export interface SPMachineLearningModelCollections extends SPMachineLearningMode
 * SPMachineLearningModelCollectionMethods
 **********************************************/
 export interface SPMachineLearningModelCollectionMethods {
+	ensureAzureCognitive(parameters?: Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
 	getByTitle(title?: string): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelMethods;
 	getByUniqueId(uniqueId?: any): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelMethods;
+	import(packageName?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
 }
 
 /*********************************************
@@ -164,7 +200,13 @@ export interface SPMachineLearningModelOData extends Base.IBaseResult, SPMachine
 * SPMachineLearningModelMethods
 **********************************************/
 export interface SPMachineLearningModelMethods {
+	copy(copyTo?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
+	delete(): Base.IBaseExecution<any>;
+	importMeta(): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
+	rename(renameTo?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
+	renameExtractor(fromExtractorName?: string, toExtractorName?: string, toColumnType?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
 	update(): Base.IBaseExecution<any>;
+	updateModelSettings(ModelSettings?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -206,14 +248,26 @@ export interface SPMachineLearningPublication extends Base.IBaseResult, SPMachin
 * SPMachineLearningPublicationProps
 **********************************************/
 export interface SPMachineLearningPublicationProps {
+	Created?: any;
+	CreatedBy?: string;
 	DriveId?: string;
 	ID?: number;
 	ModelId?: number;
+	ModelName?: string;
+	ModelType?: number;
 	ModelUniqueId?: any;
 	ModelVersion?: string;
+	Modified?: any;
+	ModifiedBy?: string;
 	ObjectId?: string;
+	PublicationType?: number;
+	TargetLibraryRemoved?: boolean;
+	TargetLibraryServerRelativeUrl?: string;
 	TargetLibraryUrl?: string;
+	TargetSiteUrl?: string;
+	TargetWebServerRelativeUrl?: string;
 	UniqueId?: any;
+	ViewOption?: string;
 }
 
 /*********************************************
@@ -293,12 +347,28 @@ export interface SPMachineLearningSample extends Base.IBaseResult, SPMachineLear
 * SPMachineLearningSampleProps
 **********************************************/
 export interface SPMachineLearningSampleProps {
+	Created?: any;
+	CreatedBy?: string;
+	CreatedByName?: string;
 	DriveId?: string;
+	Etag?: string;
 	ExtractedText?: string;
+	FileLeafRef?: string;
+	FileRef?: string;
+	FileType?: string;
+	FSObjType?: number;
 	ID?: number;
 	ListID?: any;
 	Markups?: string;
+	ModelIds?: { results: Array<number> };
+	Modified?: any;
+	ModifiedBy?: string;
+	ModifiedByName?: string;
 	ObjectId?: string;
+	ServerRedirectedEmbedUri?: string;
+	Title?: string;
+	TokenEndPosition?: { results: Array<number> };
+	TokenStartPosition?: { results: Array<number> };
 	UniqueId?: any;
 }
 
@@ -323,6 +393,8 @@ export interface SPMachineLearningSampleCollectionMethods {
 	getByModelId(modelID?: number): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningSample> & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleMethods;
 	getByTitle(title?: string): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningSample> & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleMethods;
 	getByUniqueId(uniqueId?: any): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningSample> & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleMethods;
+	getByUniqueIdWithTokenization(uniqueId?: any): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningSample> & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningSampleMethods;
+	getTemplateByModelId(modelID?: number): Base.IBaseExecution<Array<string>>;
 }
 
 /*********************************************
@@ -340,17 +412,54 @@ export interface SPMachineLearningSampleMethods {
 }
 
 /*********************************************
+* SPMachineLearningWorkItem
+**********************************************/
+export interface SPMachineLearningWorkItem {
+	Created?: any;
+	DeliverDate?: any;
+	ErrorMessage?: string;
+	ID?: any;
+	Status?: string;
+	StatusCode?: number;
+	TargetServerRelativeUrl?: string;
+	TargetSiteId?: any;
+	TargetSiteUrl?: string;
+	TargetUniqueId?: any;
+	TargetWebId?: any;
+	TargetWebServerRelativeUrl?: string;
+	Type?: any;
+}
+
+/*********************************************
+* SPMachineLearningWorkItemCollections
+**********************************************/
+export interface SPMachineLearningWorkItemCollections extends SPMachineLearningWorkItemCollectionMethods {
+
+}
+
+/*********************************************
+* SPMachineLearningWorkItemCollectionMethods
+**********************************************/
+export interface SPMachineLearningWorkItemCollectionMethods {
+	getByIdentifier(identifier?: string): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollections;
+}
+
+/*********************************************
 * SPMachineLearningModelEntityData
 **********************************************/
 export interface SPMachineLearningModelEntityData {
 	Accuracy?: any;
+	BaseContentTypeName?: string;
 	ColumnId?: string;
 	ColumnName?: string;
+	ColumnType?: string;
 	ContentTypeGroup?: string;
 	ContentTypeId?: string;
 	ContentTypeName?: string;
 	Explanations?: string;
 	LastTrained?: any;
+	ModelSettings?: string;
+	SampleFileUniqueIds?: { results: Array<any> };
 	Schemas?: string;
 }
 
@@ -366,13 +475,31 @@ export interface SPMachineLearningModelEntityDataCollections {
 **********************************************/
 export interface SPMachineLearningPublicationsEntityData {
 	Comment?: string;
+	Promote?: boolean;
 	Publications?: { results: Array<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData> };
+	PublicationType?: number;
 }
 
 /*********************************************
 * SPMachineLearningPublicationsEntityDataCollections
 **********************************************/
 export interface SPMachineLearningPublicationsEntityDataCollections {
+
+}
+
+/*********************************************
+* SPMachineLearningPublicationsResult
+**********************************************/
+export interface SPMachineLearningPublicationsResult {
+	Details?: { results: Array<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult> };
+	TotalFailures?: number;
+	TotalSuccesses?: number;
+}
+
+/*********************************************
+* SPMachineLearningPublicationsResultCollections
+**********************************************/
+export interface SPMachineLearningPublicationsResultCollections {
 
 }
 
@@ -392,17 +519,22 @@ export interface SPMachineLearningSampleEntityDataCollections {
 }
 
 /*********************************************
-* SPMachineLearningPublicationsResult
+* SPMachineLearningWorkItemEntityData
 **********************************************/
-export interface SPMachineLearningPublicationsResult {
-	Details?: { results: Array<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationResult> };
-	TotalFailures?: number;
-	TotalSuccesses?: number;
+export interface SPMachineLearningWorkItemEntityData {
+	IsFolder?: boolean;
+	TargetServerRelativeUrl?: string;
+	TargetSiteId?: any;
+	TargetSiteUrl?: string;
+	TargetUniqueId?: any;
+	TargetWebId?: any;
+	TargetWebServerRelativeUrl?: string;
+	Type?: any;
 }
 
 /*********************************************
-* SPMachineLearningPublicationsResultCollections
+* SPMachineLearningWorkItemEntityDataCollections
 **********************************************/
-export interface SPMachineLearningPublicationsResultCollections {
+export interface SPMachineLearningWorkItemEntityDataCollections {
 
 }

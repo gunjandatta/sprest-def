@@ -100,6 +100,7 @@ export interface SharedWithMeDocument {
 	VideoManifestUrl?: string;
 	WebId?: string;
 	WebTemplateId?: number;
+	WebUrl?: string;
 }
 
 /*********************************************

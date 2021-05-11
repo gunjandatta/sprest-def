@@ -143,11 +143,13 @@ export interface SiteProps {
 	AuditLogTrimmingRetention?: number;
 	CanSyncHubSitePermissions?: boolean;
 	CanUpgrade?: boolean;
+	ChannelGroupId?: any;
 	Classification?: string;
 	CommentsOnSitePagesDisabled?: boolean;
 	CompatibilityLevel?: number;
 	ComplianceAttribute?: string;
 	CurrentChangeToken?: SP.ChangeToken;
+	CustomizedFormsPages?: SP.CustomizedFormsPageCollection;
 	DisableAppViews?: boolean;
 	DisableCompanyWideSharingLinks?: boolean;
 	DisableFlows?: boolean;
@@ -171,6 +173,7 @@ export interface SiteProps {
 	SandboxedCodeActivationCapability?: number;
 	SearchBoxInNavBar?: number;
 	SearchBoxPlaceholderText?: string;
+	SensitivityLabelInfo?: SP.SensitivityLabelInfo;
 	ServerRelativePath?: SP.ResourcePath;
 	ServerRelativeUrl?: string;
 	ShareByEmailEnabled?: boolean;
@@ -246,8 +249,11 @@ export interface SiteMethods {
 	createMigrationJobEncrypted(gWebId?: any, azureContainerSourceUri?: string, azureContainerManifestUri?: string, azureQueueReportUri?: string, options?: SP.EncryptionOption): Base.IBaseExecution<any>;
 	createPreviewSPSite(upgrade?: boolean, sendemail?: boolean): Base.IBaseExecution<any>;
 	createSPAsyncReadJob(url?: string, readOptions?: SP.AsyncReadOptions, encryptionOption?: SP.EncryptionOption, azureContainerManifestUri?: string, azureQueueReportUri?: string): Base.IBaseExecution<SP.AsyncReadJobInfo>;
+	createSPAsyncReadJobWithMultiUrl(urls?: Array<string>, readOptions?: SP.AsyncReadOptions, encryptionOption?: SP.EncryptionOption, azureContainerManifestUri?: string, azureQueueReportUri?: string): Base.IBaseExecution<SP.AsyncReadJobInfo>;
 	deleteMigrationJob(id?: any): Base.IBaseExecution<boolean>;
+	enqueueApplySensitivityLabelWork(workItemInformation?: SP.AutoLabellingWorkInformation): Base.IBaseExecution<SP.EnqueueJobInformation>;
 	extendUpgradeReminderDate(): Base.IBaseExecution<any>;
+	getBringYourOwnKeyRecoveryKeyMode(): Base.IBaseExecution<number>;
 	getBringYourOwnKeySiteStatus(): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
 	getBringYourOwnKeyTenantStatus(): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
 	getCatalog(typeCatalog?: number): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
@@ -723,6 +729,7 @@ export interface UserCollections extends UserPropMethods {
 * UserCollectionMethods
 **********************************************/
 export interface UserCollectionMethods {
+	addUserById(id?: number): Base.IBaseExecution<SP.User>;
 	getByEmail(emailAddress?: string): SP.PrincipalCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	getById(id?: number): SP.PrincipalCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	getByLoginName(loginName?: string): SP.PrincipalCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
@@ -1228,7 +1235,7 @@ export interface ListItemMethods {
 	delete(): Base.IBaseExecution<any>;
 	deleteWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
-	getHashtags(): Base.IBaseCollection<SP.Hashtag>;
+	getComments(): Base.IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
 	getWOPIFrameUrl(action?: number): Base.IBaseExecution<string>;
 	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;
@@ -1247,9 +1254,9 @@ export interface ListItemMethods {
 	systemUpdate(): Base.IBaseExecution<any>;
 	// update(): Base.IBaseExecution<any>;
 	updateEx(parameters?: SP.ListItemUpdateParameters): Base.IBaseExecution<any>;
-	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): Base.IBaseCollection<SP.Hashtag>;
 	updateOverwriteVersion(): Base.IBaseExecution<any>;
-	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	validateUpdateFetchListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseExecution<SP.ListItemUpdateResults>;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
@@ -1378,6 +1385,7 @@ export interface ContentType extends Base.IBaseResult, ContentTypeProps, Content
 * ContentTypeProps
 **********************************************/
 export interface ContentTypeProps {
+	ClientFormCustomFormatter?: string;
 	Description?: string;
 	DisplayFormTemplateName?: string;
 	DisplayFormUrl?: string;
@@ -1429,6 +1437,7 @@ export interface ContentTypeCollections extends ContentTypePropMethods {
 **********************************************/
 export interface ContentTypeCollectionMethods {
 	addAvailableContentType(contentTypeId?: string): Base.IBaseExecution<SP.ContentType>;
+	create(parameters?: SP.ContentTypeEntityData): Base.IBaseExecution<SP.ContentType>;
 	getById(contentTypeId?: string): Base.IBaseQuery<SP.ContentType, SP.ContentTypeOData> & SP.ContentTypeCollections & SP.ContentTypeMethods;
 	add(parameters?: SP.ContentTypeCreationInformation): Base.IBaseExecution<SP.ContentType>;
 }
@@ -1522,6 +1531,7 @@ export interface UserResourceOData extends Base.IBaseResult, UserResourceProps, 
 * UserResourceMethods
 **********************************************/
 export interface UserResourceMethods {
+	getResourceEntries(): Base.IBaseCollection<SP.SPResourceEntry>;
 	getValueForUICulture(cultureName?: string): Base.IBaseExecution<string>;
 	setValueForUICulture(cultureName?: string, value?: string): Base.IBaseExecution<any>;
 }
@@ -1673,6 +1683,7 @@ export interface FieldProps {
 	Indexed?: boolean;
 	IndexStatus?: number;
 	InternalName?: string;
+	IsModern?: boolean;
 	JSLink?: string;
 	NoCrawl?: boolean;
 	PinnedToFiltersPane?: boolean;
@@ -1826,6 +1837,7 @@ export interface FileProps {
 	ListId?: any;
 	ETag?: string;
 	Exists?: boolean;
+	HasAlternateContentStreams?: boolean;
 	IrmEnabled?: boolean;
 	Length?: number;
 	Level?: any;
@@ -1835,6 +1847,7 @@ export interface FileProps {
 	MinorVersion?: number;
 	Name?: string;
 	PageRenderType?: number;
+	ServerRedirectedUrl?: string;
 	ServerRelativePath?: SP.ResourcePath;
 	ServerRelativeUrl?: string;
 	SiteId?: any;
@@ -1844,6 +1857,8 @@ export interface FileProps {
 	UIVersion?: number;
 	UIVersionLabel?: string;
 	UniqueId?: any;
+	VroomDriveID?: string;
+	VroomItemID?: string;
 	WebId?: any;
 }
 
@@ -1877,9 +1892,9 @@ export interface FileCollections extends FilePropMethods {
 export interface FileCollectionMethods {
 	// add(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseExecution<SP.File>;
 	addStub(urlOfFile?: string): Base.IBaseExecution<SP.File>;
-	addStubUsingPath(DecodedUrl?: string): Base.IBaseExecution<SP.File>;
+	addStubUsingPath(DecodedUrl?: string, AutoCheckoutOnInvalidData?: boolean, EnsureUniqueFileName?: boolean, Overwrite?: boolean, XorHash?: string): Base.IBaseExecution<SP.File>;
 	addTemplateFile(urlOfFile?: string, templateFileType?: number): Base.IBaseExecution<SP.File>;
-	addUsingPath(DecodedUrl?: string, AutoCheckoutOnInvalidData?: boolean, Overwrite?: boolean, XorHash?: string, contentStream?: any): Base.IBaseExecution<SP.File>;
+	addUsingPath(DecodedUrl?: string, AutoCheckoutOnInvalidData?: boolean, EnsureUniqueFileName?: boolean, Overwrite?: boolean, XorHash?: string, contentStream?: any): Base.IBaseExecution<SP.File>;
 	getByPathOrAddStub(DecodedUrl?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	getByUrl(url?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	getByUrlOrAddStub(urlOfFile?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
@@ -1925,6 +1940,7 @@ export interface FileMethods {
 	getImagePreviewUri(width?: number, height?: number, clientType?: string): Base.IBaseExecution<string>;
 	getImagePreviewUrl(width?: number, height?: number, clientType?: string): Base.IBaseExecution<string>;
 	getLimitedWebPartManager(scope?: number): Base.IBaseQuery<SP.WebParts.LimitedWebPartManager, SP.WebParts.LimitedWebPartManagerOData> & SP.WebParts.LimitedWebPartManagerCollections & SP.WebParts.LimitedWebPartManagerMethods;
+	getMediaServiceMetadata(): Base.IBaseExecution<SP.MediaServiceUpdateParameters>;
 	getPreAuthorizedAccessUrl(expirationHours?: number): Base.IBaseExecution<string>;
 	getPreAuthorizedAccessUrl2(expirationHours?: number, expirationMinuites?: number): Base.IBaseExecution<string>;
 	getUploadStatus(uploadId?: any): Base.IBaseExecution<SP.Utilities.UploadStatus>;
@@ -1939,11 +1955,15 @@ export interface FileMethods {
 	recycleWithParameters(parameters?: SP.FileDeleteParameters): Base.IBaseExecution<any>;
 	saveBinaryStream(file?: any): Base.IBaseExecution<any>;
 	setFileUserValue(key?: string, value?: string): Base.IBaseExecution<Microsoft.SharePoint.UserActions.officeFileUserValueResponse>;
+	setMediaServiceMetadata(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;
 	startUpload(uploadId?: any, stream?: any): Base.IBaseExecution<number>;
+	startUploadFile(uploadId?: any, stream?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	undoCheckOut(): Base.IBaseExecution<any>;
 	unPublish(comment?: string): Base.IBaseExecution<any>;
 	// update(): Base.IBaseExecution<any>;
 	updateVirusInfo(virusStatus?: any, virusMessage?: string, etagToCheck?: string): Base.IBaseExecution<any>;
+	upload(uploadId?: any, stream?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	uploadWithChecksum(uploadId?: any, checksum?: any, stream?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	content(): Base.IBaseExecution<any>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
@@ -2171,6 +2191,7 @@ export interface FileVersionOData extends Base.IBaseResult, FileVersionProps, Fi
 export interface FileVersionMethods {
 	delete(): Base.IBaseExecution<any>;
 	openBinaryStream(): Base.IBaseExecution<any>;
+	openBinaryStreamWithOptions(openOptions?: number): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -2252,7 +2273,7 @@ export interface FolderCollections extends FolderPropMethods {
 **********************************************/
 export interface FolderCollectionMethods {
 	add(url?: string): Base.IBaseExecution<SP.Folder>;
-	addUsingPath(DecodedUrl?: string, Overwrite?: boolean): Base.IBaseExecution<SP.Folder>;
+	addUsingPath(DecodedUrl?: string, EnsureUniqueFileName?: boolean, Overwrite?: boolean): Base.IBaseExecution<SP.Folder>;
 	addWithOverwrite(url?: string, overwrite?: boolean): Base.IBaseExecution<SP.Folder>;
 	getByPath(DecodedUrl?: string): Base.IBaseQuery<SP.Folder, SP.FolderOData> & SP.FolderCollections & SP.FolderMethods;
 	getByUrl(url?: string): Base.IBaseQuery<SP.Folder, SP.FolderOData> & SP.FolderCollections & SP.FolderMethods;
@@ -2274,7 +2295,7 @@ export interface FolderOData extends Base.IBaseResult, FolderProps, FolderMethod
 * FolderMethods
 **********************************************/
 export interface FolderMethods {
-	addSubFolder(leafName?: string): Base.IBaseExecution<any>;
+	addSubFolder(leafName?: string, updateParams?: SP.ListItemUpdateParameters): Base.IBaseExecution<any>;
 	addSubFolderUsingPath(DecodedUrl?: string): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
 	deleteWithParameters(parameters?: SP.FolderDeleteParameters): Base.IBaseExecution<any>;
@@ -2344,11 +2365,13 @@ export interface List extends SP.SecurableObject, Base.IBaseResult, ListProps, L
 * ListProps
 **********************************************/
 export interface ListProps {
+	AdditionalUXProperties?: string;
 	AllowContentTypes?: boolean;
 	AllowDeletion?: boolean;
 	BaseTemplate?: number;
 	BaseType?: number;
 	BrowserFileHandling?: number;
+	Color?: string;
 	ContentTypesEnabled?: boolean;
 	CrawlNonDefaultViews?: boolean;
 	Created?: any;
@@ -2358,12 +2381,14 @@ export interface ListProps {
 	DefaultContentApprovalWorkflowId?: any;
 	DefaultDisplayFormUrl?: string;
 	DefaultEditFormUrl?: string;
+	DefaultItemOpenInBrowser?: boolean;
 	DefaultItemOpenUseListSetting?: boolean;
 	DefaultNewFormUrl?: string;
 	DefaultViewPath?: SP.ResourcePath;
 	DefaultViewUrl?: string;
 	Description?: string;
 	Direction?: string;
+	DisableCommenting?: boolean;
 	DisableGridEditing?: boolean;
 	DocumentTemplateUrl?: string;
 	DraftVersionVisibility?: number;
@@ -2383,6 +2408,7 @@ export interface ListProps {
 	ForceCheckout?: boolean;
 	HasExternalDataSource?: boolean;
 	Hidden?: boolean;
+	Icon?: string;
 	Id?: any;
 	ImagePath?: SP.ResourcePath;
 	ImageUrl?: string;
@@ -2391,6 +2417,7 @@ export interface ListProps {
 	IrmReject?: boolean;
 	IsApplicationList?: boolean;
 	IsCatalog?: boolean;
+	IsDefaultDocumentLibrary?: boolean;
 	IsEnterpriseGalleryLibrary?: boolean;
 	IsPrivate?: boolean;
 	IsSiteAssetsLibrary?: boolean;
@@ -2400,7 +2427,9 @@ export interface ListProps {
 	LastItemModifiedDate?: any;
 	LastItemUserModifiedDate?: any;
 	ListExperienceOptions?: number;
+	ListFormCustomized?: boolean;
 	ListItemEntityTypeFullName?: string;
+	ListSchemaVersion?: number;
 	MajorVersionLimit?: number;
 	MajorWithMinorVersionsLimit?: number;
 	MultipleDataList?: boolean;
@@ -2414,6 +2443,7 @@ export interface ListProps {
 	SchemaXml?: string;
 	ServerTemplateCanCreateFolders?: boolean;
 	TemplateFeatureId?: any;
+	TemplateTypeId?: string;
 	Title?: string;
 	ValidationFormula?: string;
 	ValidationMessage?: string;
@@ -2424,6 +2454,7 @@ export interface ListProps {
 * ListPropMethods
 **********************************************/
 export interface ListPropMethods {
+	Author(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	CreatablesInfo(): Base.IBaseExecution<SP.CreatablesInfo> & SP.CreatablesInfoCollections;
 	DefaultView(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	DescriptionResource(): Base.IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
@@ -2475,6 +2506,7 @@ export interface ListCollectionMethods {
 * ListOData
 **********************************************/
 export interface ListOData extends SP.SecurableObjectOData, Base.IBaseResult, ListProps, ListMethods {
+	Author: SP.User & SP.UserCollections & SP.UserCollectionMethods;
 	ContentTypes: Base.IBaseResults<SP.ContentType> & SP.ContentTypeCollectionMethods;
 	CreatablesInfo: SP.CreatablesInfo & SP.CreatablesInfoCollections;
 	DefaultView: SP.View & SP.ViewCollections & SP.ViewCollectionMethods;
@@ -2499,18 +2531,27 @@ export interface ListOData extends SP.SecurableObjectOData, Base.IBaseResult, Li
 export interface ListMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): Base.IBaseExecution<any>;
 	resetRoleInheritance(): Base.IBaseExecution<any>;
+	addCustomOrderToView(viewId?: string, itemIds?: Array<number>, relativeItemId?: number, skipSaveView?: boolean): Base.IBaseExecution<string>;
 	addItem(parameters?: SP.ListItemCreationInformation): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	addItemUsingPath(parameters?: SP.ListItemCreationInformationUsingPath): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
-	addValidateUpdateItem(listItemCreateInfo?: SP.ListItemCreationInformation, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
-	addValidateUpdateItemUsingPath(listItemCreateInfo?: SP.ListItemCreationInformationUsingPath, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	addValidateUpdateItem(listItemCreateInfo?: SP.ListItemCreationInformation, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	addValidateUpdateItemUsingPath(listItemCreateInfo?: SP.ListItemCreationInformationUsingPath, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	bulkValidateUpdateListItems(itemIds?: Array<number>, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, folderPath?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	createDocumentAndGetEditLink(fileName?: string, folderPath?: string, documentTemplateType?: number, templateUrl?: string): Base.IBaseExecution<string>;
 	createDocumentWithDefaultName(folderPath?: string, extension?: string): Base.IBaseExecution<string>;
 	createMappedView(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
+	createRule(condition?: string, outcome?: string, title?: string, triggerType?: number, emailField?: string, actionType?: number): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
+	deleteRule(ruleId?: string): Base.IBaseExecution<any>;
+	enqueueAsyncActionTaskById(id?: any, parameters?: Array<SP.KeyValue>): Base.IBaseExecution<boolean>;
 	ensureSignoffStatusField(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Field, SP.FieldOData> & SP.FieldCollections & SP.FieldMethods;
+	getAllRules(): Base.IBaseCollection<SP.SPListRule>;
+	getAsyncActionConfig(id?: any): Base.IBaseCollection<SP.KeyValue>;
+	getAsyncActionTaskIds(): Base.IBaseCollection<any>;
 	getBloomFilter(startItemId?: number): Base.IBaseExecution<SP.ListBloomFilter>;
 	getBloomFilterWithCustomFields(listItemStartingID?: number, internalFieldNames?: Array<string>): Base.IBaseExecution<SP.ListBloomFilter>;
+	getBusinessAppMigrationInteractiveData(): Base.IBaseExecution<string>;
+	getBusinessAppOperationStatus(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getCheckedOutFiles(): Base.IBaseCollection<SP.CheckedOutFile, SP.CheckedOutFileOData, Base.IBaseExecution & SP.CheckedOutFileCollectionMethods> & Base.IBaseExecution & SP.CheckedOutFileCollectionMethods;
 	getItemById(id?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
@@ -2518,8 +2559,10 @@ export interface ListMethods {
 	getItemByUniqueId(uniqueId?: any): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	// getItems(query?: SP.CamlQuery): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
 	getListItemChangesSinceToken(query?: SP.ChangeLogItemQuery): Base.IBaseExecution<any>;
+	getLookupFieldChoices(targetFieldName?: string, pagingInfo?: string): Base.IBaseExecution<string>;
 	getMappedApp(appId?: any, visualizationAppTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getMappedApps(visualizationAppTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
+	getPlaceholdersMetadata(Name?: string): Base.IBaseCollection<SP.Placeholder>;
 	getRelatedFields(): Base.IBaseCollection<SP.RelatedField, SP.RelatedFieldOData, Base.IBaseExecution & SP.RelatedFieldCollectionMethods> & Base.IBaseExecution & SP.RelatedFieldCollectionMethods;
 	getSpecialFolderUrl(type?: number, bForceCreate?: boolean, existingFolderGuid?: any): Base.IBaseExecution<string>;
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
@@ -2530,19 +2573,23 @@ export interface ListMethods {
 	renderExtendedListFormData(itemId?: number, formId?: string, mode?: number, options?: number, cutoffVersion?: number): Base.IBaseExecution<string>;
 	renderListContextMenuData(CascDelWarnMessage?: string, CustomAction?: string, Field?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsXslView?: string, ItemId?: string, ListViewPageUrl?: string, OverrideScope?: string, RootFolder?: string, View?: string, ViewCount?: string): Base.IBaseExecution<any>;
 	renderListData(viewXml?: string): Base.IBaseExecution<string>;
-	renderListDataAsStream(parameters?: SP.RenderListDataParameters, CascDelWarnMessage?: string, CustomAction?: string, DrillDown?: string, Field?: string, FieldInternalName?: string, Filter?: string, FilterData?: string, FilterData1?: string, FilterData10?: string, FilterData2?: string, FilterData3?: string, FilterData4?: string, FilterData5?: string, FilterData6?: string, FilterData7?: string, FilterData8?: string, FilterData9?: string, FilterField?: string, FilterField1?: string, FilterField10?: string, FilterField2?: string, FilterField3?: string, FilterField4?: string, FilterField5?: string, FilterField6?: string, FilterField7?: string, FilterField8?: string, FilterField9?: string, FilterFields?: string, FilterFields1?: string, FilterFields10?: string, FilterFields2?: string, FilterFields3?: string, FilterFields4?: string, FilterFields5?: string, FilterFields6?: string, FilterFields7?: string, FilterFields8?: string, FilterFields9?: string, FilterLookupId?: string, FilterLookupId1?: string, FilterLookupId10?: string, FilterLookupId2?: string, FilterLookupId3?: string, FilterLookupId4?: string, FilterLookupId5?: string, FilterLookupId6?: string, FilterLookupId7?: string, FilterLookupId8?: string, FilterLookupId9?: string, FilterOp?: string, FilterOp1?: string, FilterOp10?: string, FilterOp2?: string, FilterOp3?: string, FilterOp4?: string, FilterOp5?: string, FilterOp6?: string, FilterOp7?: string, FilterOp8?: string, FilterOp9?: string, FilterValue?: string, FilterValue1?: string, FilterValue10?: string, FilterValue2?: string, FilterValue3?: string, FilterValue4?: string, FilterValue5?: string, FilterValue6?: string, FilterValue7?: string, FilterValue8?: string, FilterValue9?: string, FilterValues?: string, FilterValues1?: string, FilterValues10?: string, FilterValues2?: string, FilterValues3?: string, FilterValues4?: string, FilterValues5?: string, FilterValues6?: string, FilterValues7?: string, FilterValues8?: string, FilterValues9?: string, GroupString?: string, HasOverrideSelectCommand?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsGroupRender?: string, IsXslView?: string, ListViewPageUrl?: string, OverrideScope?: string, OverrideSelectCommand?: string, PageFirstRow?: string, PageLastRow?: string, RootFolder?: string, RootFolderUniqueId?: string, SortDir?: string, SortDir1?: string, SortDir10?: string, SortDir2?: string, SortDir3?: string, SortDir4?: string, SortDir5?: string, SortDir6?: string, SortDir7?: string, SortDir8?: string, SortDir9?: string, SortField?: string, SortField1?: string, SortField10?: string, SortField2?: string, SortField3?: string, SortField4?: string, SortField5?: string, SortField6?: string, SortField7?: string, SortField8?: string, SortField9?: string, SortFields?: string, SortFieldValues?: string, View?: string, ViewCount?: string, ViewId?: string, ViewPath?: string, WebPartId?: string): Base.IBaseExecution<any>;
-	renderListFilterData(ExcludeFieldFilteringHtml?: boolean, FieldInternalName?: string, OverrideScope?: string, ProcessQStringToCAML?: string, ViewId?: string): Base.IBaseExecution<any>;
+	renderListDataAsStream(parameters?: SP.RenderListDataParameters, CascDelWarnMessage?: string, CustomAction?: string, DrillDown?: string, Field?: string, FieldInternalName?: string, Filter?: string, FilterData?: string, FilterData1?: string, FilterData10?: string, FilterData2?: string, FilterData3?: string, FilterData4?: string, FilterData5?: string, FilterData6?: string, FilterData7?: string, FilterData8?: string, FilterData9?: string, FilterField?: string, FilterField1?: string, FilterField10?: string, FilterField2?: string, FilterField3?: string, FilterField4?: string, FilterField5?: string, FilterField6?: string, FilterField7?: string, FilterField8?: string, FilterField9?: string, FilterFields?: string, FilterFields1?: string, FilterFields10?: string, FilterFields2?: string, FilterFields3?: string, FilterFields4?: string, FilterFields5?: string, FilterFields6?: string, FilterFields7?: string, FilterFields8?: string, FilterFields9?: string, FilterLookupId?: string, FilterLookupId1?: string, FilterLookupId10?: string, FilterLookupId2?: string, FilterLookupId3?: string, FilterLookupId4?: string, FilterLookupId5?: string, FilterLookupId6?: string, FilterLookupId7?: string, FilterLookupId8?: string, FilterLookupId9?: string, FilterOp?: string, FilterOp1?: string, FilterOp10?: string, FilterOp2?: string, FilterOp3?: string, FilterOp4?: string, FilterOp5?: string, FilterOp6?: string, FilterOp7?: string, FilterOp8?: string, FilterOp9?: string, FilterValue?: string, FilterValue1?: string, FilterValue10?: string, FilterValue2?: string, FilterValue3?: string, FilterValue4?: string, FilterValue5?: string, FilterValue6?: string, FilterValue7?: string, FilterValue8?: string, FilterValue9?: string, FilterValues?: string, FilterValues1?: string, FilterValues10?: string, FilterValues2?: string, FilterValues3?: string, FilterValues4?: string, FilterValues5?: string, FilterValues6?: string, FilterValues7?: string, FilterValues8?: string, FilterValues9?: string, GroupString?: string, HasOverrideSelectCommand?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsGroupRender?: string, IsXslView?: string, ListViewPageUrl?: string, OverrideRowLimit?: string, OverrideScope?: string, OverrideSelectCommand?: string, PageFirstRow?: string, PageLastRow?: string, QueryParams?: Array<SP.KeyValue>, RootFolder?: string, RootFolderUniqueId?: string, SortDir?: string, SortDir1?: string, SortDir10?: string, SortDir2?: string, SortDir3?: string, SortDir4?: string, SortDir5?: string, SortDir6?: string, SortDir7?: string, SortDir8?: string, SortDir9?: string, SortField?: string, SortField1?: string, SortField10?: string, SortField2?: string, SortField3?: string, SortField4?: string, SortField5?: string, SortField6?: string, SortField7?: string, SortField8?: string, SortField9?: string, SortFields?: string, SortFieldValues?: string, View?: string, ViewCount?: string, ViewId?: string, ViewPath?: string, WebPartId?: string): Base.IBaseExecution<any>;
+	renderListFilterData(ExcludeFieldFilteringHtml?: boolean, FieldInternalName?: string, OverrideScope?: string, ProcessQStringToCAML?: string, ViewId?: string, ViewXml?: string): Base.IBaseExecution<any>;
 	renderListFormData(itemId?: number, formId?: string, mode?: number): Base.IBaseExecution<string>;
 	reserveListItemId(): Base.IBaseExecution<number>;
 	saveAsNewView(oldName?: string, newName?: string, privateView?: boolean, uri?: string): Base.IBaseExecution<string>;
 	saveAsTemplate(strFileName?: string, strName?: string, strDescription?: string, bSaveData?: boolean): Base.IBaseExecution<any>;
+	searchLookupFieldChoices(targetFieldName?: string, beginsWithSearchString?: string, pagingInfo?: string): Base.IBaseExecution<string>;
 	setExemptFromBlockDownloadOfNonViewableFiles(value?: boolean): Base.IBaseExecution<any>;
 	syncFlowCallbackUrl(flowId?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowInstance(flowID?: any): Base.IBaseExecution<SP.FlowSynchronizationResult>;
-	syncFlowInstances(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
+	syncFlowInstances(retrieveGroupFlows?: boolean): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowTemplates(category?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	unpublishMappedView(appId?: any, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	// update(): Base.IBaseExecution<any>;
+	updateFormProcessingModelRetentionLabel(retentionLabel?: string): Base.IBaseExecution<any>;
+	updatePlaceholdersMetadata(Name?: string, placeholders?: Array<SP.Placeholder>): Base.IBaseExecution<any>;
+	updateRule(ruleId?: string, condition?: string, outcome?: string, title?: string, emailField?: string, status?: number, actionType?: number): Base.IBaseExecution<any>;
 	validateAppName(appDisplayName?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getItems(viewXML?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
 	getItemsByQuery(camlQuery?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
@@ -2608,14 +2655,18 @@ export interface View extends Base.IBaseResult, ViewProps, ViewCollections, View
 export interface ViewProps {
 	Aggregations?: string;
 	AggregationsStatus?: string;
+	AssociatedContentTypeId?: string;
 	BaseViewId?: string;
+	CalendarViewStyles?: string;
 	ColumnWidth?: string;
 	ContentTypeId?: SP.ContentTypeId;
 	CustomFormatter?: string;
+	CustomOrder?: string;
 	DefaultView?: boolean;
 	DefaultViewForContentType?: boolean;
 	EditorModified?: boolean;
 	Formats?: string;
+	GridLayout?: string;
 	Hidden?: boolean;
 	HtmlSchemaXml?: string;
 	Id?: any;
@@ -2649,6 +2700,7 @@ export interface ViewProps {
 	ToolbarTemplateName?: string;
 	ViewType?: string;
 	ViewData?: string;
+	ViewType2?: string;
 	VisualizationInfo?: SP.Visualization;
 }
 
@@ -2939,7 +2991,9 @@ export interface WebProps {
 	CurrentChangeToken?: SP.ChangeToken;
 	CustomMasterUrl?: string;
 	CustomSiteActionsDisabled?: boolean;
+	DefaultNewPageTemplateId?: any;
 	Description?: string;
+	DescriptionTranslations?: { results: Array<SP.SPResourceEntry> };
 	DesignerDownloadUrlForCurrentUser?: string;
 	DesignPackageId?: any;
 	DisableAppViews?: boolean;
@@ -2952,21 +3006,26 @@ export interface WebProps {
 	FooterEmphasis?: number;
 	FooterEnabled?: boolean;
 	FooterLayout?: number;
+	HasWebTemplateExtension?: boolean;
 	HeaderEmphasis?: number;
 	HeaderLayout?: number;
+	HideTitleInHeader?: boolean;
 	HorizontalQuickLaunch?: boolean;
 	Id?: any;
 	IsHomepageModernized?: boolean;
 	IsMultilingual?: boolean;
 	IsProvisioningComplete?: boolean;
 	IsRevertHomepageLinkHidden?: boolean;
+	KeepFieldUserResources?: boolean;
 	Language?: number;
 	LastItemModifiedDate?: any;
 	LastItemUserModifiedDate?: any;
+	LogoAlignment?: number;
 	MasterUrl?: string;
 	MegaMenuEnabled?: boolean;
 	MembersCanShare?: boolean;
 	NavAudienceTargetingEnabled?: boolean;
+	NextStepsFirstRunEnabled?: boolean;
 	NoCrawl?: boolean;
 	NotificationsInOneDriveForBusinessEnabled?: boolean;
 	NotificationsInSharePointEnabled?: boolean;
@@ -2995,12 +3054,15 @@ export interface WebProps {
 	ThemedCssFolderUrl?: string;
 	ThirdPartyMdmEnabled?: boolean;
 	Title?: string;
+	TitleTranslations?: { results: Array<SP.SPResourceEntry> };
 	TreeViewEnabled?: boolean;
 	UIVersion?: number;
 	UIVersionConfigurationEnabled?: boolean;
 	Url?: string;
 	UseAccessRequestDefault?: boolean;
 	WebTemplate?: string;
+	WebTemplateConfiguration?: string;
+	WebTemplatesGalleryFirstRunEnabled?: boolean;
 	WelcomePage?: string;
 }
 
@@ -3008,12 +3070,14 @@ export interface WebProps {
 * WebPropMethods
 **********************************************/
 export interface WebPropMethods {
+	AccessRequestsList(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
 	ActivityLogger(): Base.IBaseExecution<Microsoft.SharePoint.Internal.ActivityLogger> & Microsoft.SharePoint.Internal.ActivityLoggerCollections & Microsoft.SharePoint.Internal.ActivityLoggerMethods;
 	AllProperties(): Base.IBaseExecution<SP.PropertyValues> & SP.PropertyValuesCollections;
 	AssociatedMemberGroup(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Group, SP.GroupOData> & SP.GroupCollections & SP.GroupMethods;
 	AssociatedOwnerGroup(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Group, SP.GroupOData> & SP.GroupCollections & SP.GroupMethods;
 	AssociatedVisitorGroup(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Group, SP.GroupOData> & SP.GroupCollections & SP.GroupMethods;
 	Author(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	CanModernizeHomepage(): Base.IBaseExecution<SP.ModernizeHomepageResult> & SP.ModernizeHomepageResultCollections;
 	CurrentUser(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	DataLeakagePreventionStatusInfo(): Base.IBaseExecution<SP.SPDataLeakagePreventionStatusInfo> & SP.SPDataLeakagePreventionStatusInfoCollections;
 	DescriptionResource(): Base.IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
@@ -3095,6 +3159,7 @@ export interface WebCollectionMethods {
 * WebOData
 **********************************************/
 export interface WebOData extends SP.SecurableObjectOData, Base.IBaseResult, WebProps, WebMethods {
+	AccessRequestsList: SP.List & SP.ListCollections & SP.ListCollectionMethods;
 	Activities: Base.IBaseResults<Microsoft.SharePoint.Activities.SPActivityEntity>;
 	ActivityLogger: Microsoft.SharePoint.Internal.ActivityLogger & Microsoft.SharePoint.Internal.ActivityLoggerCollections;
 	Alerts: Base.IBaseResults<SP.Alert> & SP.AlertCollectionMethods;
@@ -3106,6 +3171,7 @@ export interface WebOData extends SP.SecurableObjectOData, Base.IBaseResult, Web
 	Author: SP.User & SP.UserCollections & SP.UserCollectionMethods;
 	AvailableContentTypes: Base.IBaseResults<SP.ContentType> & SP.ContentTypeCollectionMethods;
 	AvailableFields: Base.IBaseResults<SP.Field> & SP.FieldCollectionMethods;
+	CanModernizeHomepage: SP.ModernizeHomepageResult & SP.ModernizeHomepageResultCollections;
 	ClientWebParts: Base.IBaseResults<SP.ClientWebPart> & SP.ClientWebPartCollectionMethods;
 	ContentTypes: Base.IBaseResults<SP.ContentType> & SP.ContentTypeCollectionMethods;
 	CurrentUser: SP.User & SP.UserCollections & SP.UserCollectionMethods;
@@ -3151,13 +3217,18 @@ export interface WebMethods {
 	addSupportedUILanguage(lcid?: number): Base.IBaseExecution<any>;
 	applyTheme(colorPaletteUrl?: string, fontSchemeUrl?: string, backgroundImageUrl?: string, shareGenerated?: boolean): Base.IBaseExecution<any>;
 	applyWebTemplate(webTemplate?: string): Base.IBaseExecution<any>;
+	authenticateAndReturnPageContext(): Base.IBaseExecution<any>;
 	createDefaultAssociatedGroups(userLogin?: string, userLogin2?: string, groupNameSeed?: string): Base.IBaseExecution<any>;
+	createGroupBasedEnvironment(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	defaultDocumentLibrary(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
 	delete(): Base.IBaseExecution<any>;
 	doesPushNotificationSubscriberExist(deviceAppInstanceId?: any): Base.IBaseExecution<boolean>;
 	// doesUserHavePermissions(permissionMask?: SP.BasePermissions): Base.IBaseExecution<boolean>;
+	ensureTenantAppCatalog(callerId?: string): Base.IBaseExecution<boolean>;
 	ensureUser(logonName?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	ensureUserByObjectId(objectId?: any, tenantId?: any, principalType?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	executeRemoteLOB(inputStream?: any): Base.IBaseExecution<any>;
+	getAdaptiveCardExtensions(includeErrors?: boolean, project?: any): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
 	getAllClientSideComponents(): Base.IBaseExecution<string>;
 	getAppBdcCatalog(): Base.IBaseExecution<SP.BusinessData.AppBdcCatalog>;
 	getAppBdcCatalogForAppInstance(appInstanceId?: any): Base.IBaseExecution<SP.BusinessData.AppBdcCatalog>;
@@ -3166,9 +3237,10 @@ export interface WebMethods {
 	getAvailableWebTemplates(lcid?: number, doIncludeCrossLanguage?: boolean): Base.IBaseCollection<SP.WebTemplate> & SP.WebTemplateCollectionMethods;
 	getCatalog(typeCatalog?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
-	getClientSideComponents(components?: Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier>): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
-	getClientSideComponentsById(componentIds?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
-	getClientSideWebParts(includeErrors?: boolean): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
+	getClientSideComponents(components?: Array<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentIdentifier>, project?: any): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
+	getClientSideComponentsByComponentType(componentTypesString?: string, supportedHostTypeValue?: number, includeErrors?: boolean, project?: any): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
+	getClientSideComponentsById(componentIds?: Array<any>, project?: any): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
+	getClientSideWebParts(includeErrors?: boolean, project?: any): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
 	getCustomListTemplates(): Base.IBaseCollection<SP.ListTemplate> & SP.ListTemplateCollectionMethods;
 	getEntity(namespace?: string, name?: string): Base.IBaseExecution<SP.BusinessData.Entity>;
 	getFileByGuestUrl(guestUrl?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
@@ -3185,6 +3257,7 @@ export interface WebMethods {
 	getFolderById(uniqueId?: any): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Folder, SP.FolderOData> & SP.FolderCollections & SP.FolderMethods;
 	getFolderByServerRelativePath(DecodedUrl?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Folder, SP.FolderOData> & SP.FolderCollections & SP.FolderMethods;
 	getFolderByServerRelativeUrl(serverRelativeUrl?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Folder, SP.FolderOData> & SP.FolderCollections & SP.FolderMethods;
+	getGroupBasedEnvironment(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	getList(strUrl?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
 	getListItem(strUrl?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	getListItemByResourceId(resourceId?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
@@ -3220,6 +3293,9 @@ export interface WebMethods {
 	removeStorageEntity(key?: string): Base.IBaseExecution<any>;
 	removeSupportedUILanguage(lcid?: number): Base.IBaseExecution<any>;
 	setAccessRequestSiteDescriptionAndUpdate(description?: string): Base.IBaseExecution<any>;
+	setChromeOptions(headerLayout?: number, headerEmphasis?: number, megaMenuEnabled?: boolean, footerEnabled?: boolean, footerLayout?: number, footerEmphasis?: number, hideTitleInHeader?: boolean, logoAlignment?: number): Base.IBaseExecution<any>;
+	setDefaultNewPageTemplateId(defaultNewPageTemplateId?: any): Base.IBaseExecution<any>;
+	setGlobalNavSettings(title?: string, source?: string): Base.IBaseExecution<any>;
 	setStorageEntity(key?: string, value?: string, description?: string, comments?: string): Base.IBaseExecution<any>;
 	setUseAccessRequestDefaultAndUpdate(useAccessRequestDefault?: boolean): Base.IBaseExecution<any>;
 	syncFlowInstances(targetWebUrl?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
@@ -3227,7 +3303,7 @@ export interface WebMethods {
 	syncHubSiteTheme(): Base.IBaseExecution<any>;
 	unregisterPushNotificationSubscriber(deviceAppInstanceId?: any): Base.IBaseExecution<any>;
 	// update(): Base.IBaseExecution<any>;
-	uploadImage(listTitle?: string, imageName?: string, contentStream?: any): SP.SecurableObjectCollections & Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	uploadImage(listTitle?: string, imageName?: string, contentStream?: any, listId?: string, itemId?: number, overwrite?: boolean): Base.IBaseExecution<SP.SPImageItem>;
 	doesUserHavePermissions(high?: number, low?: number): Base.IBaseExecution<boolean>;
 	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
@@ -3262,6 +3338,21 @@ export interface AppTile {
 * AppTileCollections
 **********************************************/
 export interface AppTileCollections {
+
+}
+
+/*********************************************
+* ModernizeHomepageResult
+**********************************************/
+export interface ModernizeHomepageResult {
+	CanModernizeHomepage?: boolean;
+	Reason?: string;
+}
+
+/*********************************************
+* ModernizeHomepageResultCollections
+**********************************************/
+export interface ModernizeHomepageResultCollections {
 
 }
 
@@ -3704,6 +3795,7 @@ export interface NavigationNode extends Base.IBaseResult, NavigationNodeProps, N
 **********************************************/
 export interface NavigationNodeProps {
 	AudienceIds?: { results: Array<any> };
+	CurrentLCID?: number;
 	Id?: number;
 	IsDocLib?: boolean;
 	IsExternal?: boolean;
@@ -3717,7 +3809,7 @@ export interface NavigationNodeProps {
 * NavigationNodePropMethods
 **********************************************/
 export interface NavigationNodePropMethods {
-
+	TitleResource(): Base.IBaseExecution<SP.UserResource> & SP.UserResourceCollections & SP.UserResourceMethods;
 }
 
 /*********************************************
@@ -3743,6 +3835,7 @@ export interface NavigationNodeCollectionMethods {
 **********************************************/
 export interface NavigationNodeOData extends Base.IBaseResult, NavigationNodeProps, NavigationNodeMethods {
 	Children: Base.IBaseResults<SP.NavigationNode> & SP.NavigationNodeCollectionMethods;
+	TitleResource: SP.UserResource & SP.UserResourceCollections;
 }
 
 /*********************************************
@@ -3949,7 +4042,7 @@ export interface RecycleBinItemCollectionMethods {
 	moveAllToSecondStage(): Base.IBaseExecution<any>;
 	moveToSecondStageByIds(ids?: Array<string>): Base.IBaseExecution<any>;
 	restoreAll(): Base.IBaseExecution<any>;
-	restoreByIds(ids?: Array<string>): Base.IBaseExecution<any>;
+	restoreByIds(ids?: Array<string>, bRenameExistingItems?: boolean): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -4219,6 +4312,7 @@ export interface TimeZoneOData extends Base.IBaseResult, TimeZoneProps, TimeZone
 **********************************************/
 export interface TimeZoneMethods {
 	localTimeToUTC(date?: any): Base.IBaseExecution<any>;
+	setId(id?: number): Base.IBaseExecution<any>;
 	uTCToLocalTime(date?: any): Base.IBaseExecution<any>;
 }
 
@@ -4550,6 +4644,7 @@ export interface TranslationStatusCollectionOData extends Base.IBaseResult, Tran
 **********************************************/
 export interface TranslationStatusCollectionMethods {
 	create(request?: SP.TranslationStatusCreationRequest): Base.IBaseExecution<SP.TranslationStatusCollection>;
+	set(request?: SP.TranslationStatusSetRequest): Base.IBaseExecution<SP.TranslationStatusCollection>;
 	updateTranslationLanguages(): Base.IBaseExecution<any>;
 }
 
@@ -4799,6 +4894,48 @@ export interface OrganizationNewsMethods {
 }
 
 /*********************************************
+* PinnedItems
+**********************************************/
+export interface PinnedItems {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PinnedItemsCollections
+**********************************************/
+export interface PinnedItemsCollections {
+
+}
+
+/*********************************************
+* FavoriteLists
+**********************************************/
+export interface FavoriteLists {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* FavoriteListsCollections
+**********************************************/
+export interface FavoriteListsCollections {
+
+}
+
+/*********************************************
+* FavoriteListsSubstrate
+**********************************************/
+export interface FavoriteListsSubstrate {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* FavoriteListsSubstrateCollections
+**********************************************/
+export interface FavoriteListsSubstrateCollections {
+
+}
+
+/*********************************************
 * IKnowledgeHub
 **********************************************/
 export interface IKnowledgeHub extends KnowledgeHubCollections, KnowledgeHubMethods, Base.IBaseQuery<KnowledgeHub, IKnowledgeHubQuery> {
@@ -4865,7 +5002,150 @@ export interface KnowledgeHubOData extends Base.IBaseResult, KnowledgeHubProps, 
 * KnowledgeHubMethods
 **********************************************/
 export interface KnowledgeHubMethods {
+	addOrUpdateSiteReference(knowledgeHubSiteUrl?: string): Base.IBaseExecution<any>;
 	siteReference(): Base.IBaseExecution<SP.KnowledgeHubSiteReference>;
+}
+
+/*********************************************
+* IAppConfiguration
+**********************************************/
+export interface IAppConfiguration extends AppConfigurationCollections, AppConfigurationMethods, Base.IBaseQuery<AppConfiguration, IAppConfigurationQuery> {
+
+}
+
+/*********************************************
+* IAppConfigurationCollection
+**********************************************/
+export interface IAppConfigurationCollection extends Base.IBaseResults<AppConfiguration> {
+	done?: (resolve: (value?: Array<AppConfiguration>) => void) => void;
+}
+
+/*********************************************
+* IAppConfigurationQueryCollection
+**********************************************/
+export interface IAppConfigurationQueryCollection extends Base.IBaseResults<AppConfigurationOData> {
+	done?: (resolve: (value?: Array<AppConfigurationOData>) => void) => void;
+}
+
+/*********************************************
+* IAppConfigurationQuery
+**********************************************/
+export interface IAppConfigurationQuery extends AppConfigurationOData, AppConfigurationMethods {
+
+}
+
+/*********************************************
+* AppConfiguration
+**********************************************/
+export interface AppConfiguration extends Base.IBaseResult, AppConfigurationProps, AppConfigurationCollections, AppConfigurationMethods {
+
+}
+
+/*********************************************
+* AppConfigurationProps
+**********************************************/
+export interface AppConfigurationProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	DashboardItems?: { results: Array<SP.DashboardItem> };
+	PivotItems?: { results: Array<SP.PivotItem> };
+}
+
+/*********************************************
+* AppConfigurationPropMethods
+**********************************************/
+export interface AppConfigurationPropMethods {
+
+}
+
+/*********************************************
+* AppConfigurationCollections
+**********************************************/
+export interface AppConfigurationCollections extends AppConfigurationPropMethods {
+
+}
+
+/*********************************************
+* AppConfigurationOData
+**********************************************/
+export interface AppConfigurationOData extends Base.IBaseResult, AppConfigurationProps, AppConfigurationMethods {
+
+}
+
+/*********************************************
+* AppConfigurationMethods
+**********************************************/
+export interface AppConfigurationMethods {
+	update(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* IEmployeeEngagement
+**********************************************/
+export interface IEmployeeEngagement extends EmployeeEngagementCollections, EmployeeEngagementMethods, Base.IBaseQuery<EmployeeEngagement, IEmployeeEngagementQuery> {
+
+}
+
+/*********************************************
+* IEmployeeEngagementCollection
+**********************************************/
+export interface IEmployeeEngagementCollection extends Base.IBaseResults<EmployeeEngagement> {
+	done?: (resolve: (value?: Array<EmployeeEngagement>) => void) => void;
+}
+
+/*********************************************
+* IEmployeeEngagementQueryCollection
+**********************************************/
+export interface IEmployeeEngagementQueryCollection extends Base.IBaseResults<EmployeeEngagementOData> {
+	done?: (resolve: (value?: Array<EmployeeEngagementOData>) => void) => void;
+}
+
+/*********************************************
+* IEmployeeEngagementQuery
+**********************************************/
+export interface IEmployeeEngagementQuery extends EmployeeEngagementOData, EmployeeEngagementMethods {
+
+}
+
+/*********************************************
+* EmployeeEngagement
+**********************************************/
+export interface EmployeeEngagement extends Base.IBaseResult, EmployeeEngagementProps, EmployeeEngagementCollections, EmployeeEngagementMethods {
+
+}
+
+/*********************************************
+* EmployeeEngagementProps
+**********************************************/
+export interface EmployeeEngagementProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* EmployeeEngagementPropMethods
+**********************************************/
+export interface EmployeeEngagementPropMethods {
+	AppConfiguration(): Base.IBaseExecution<SP.AppConfiguration> & SP.AppConfigurationCollections & SP.AppConfigurationMethods;
+}
+
+/*********************************************
+* EmployeeEngagementCollections
+**********************************************/
+export interface EmployeeEngagementCollections extends EmployeeEngagementPropMethods {
+
+}
+
+/*********************************************
+* EmployeeEngagementOData
+**********************************************/
+export interface EmployeeEngagementOData extends Base.IBaseResult, EmployeeEngagementProps, EmployeeEngagementMethods {
+	AppConfiguration: SP.AppConfiguration & SP.AppConfigurationCollections;
+}
+
+/*********************************************
+* EmployeeEngagementMethods
+**********************************************/
+export interface EmployeeEngagementMethods {
+	configuration(): Base.IBaseExecution<SP.ConfigurationData>;
 }
 
 /*********************************************
@@ -5027,6 +5307,66 @@ export interface AlternateUrlCollections {
 }
 
 /*********************************************
+* ListHomeItem2
+**********************************************/
+export interface ListHomeItem2 {
+	color?: string;
+	createdByName?: string;
+	createdByUpn?: string;
+	createdDate?: string;
+	icon?: string;
+	lastModifiedDate?: string;
+	lastViewDate?: string;
+	lastviewDateTime?: string;
+	listId?: string;
+	listTitle?: string;
+	listUrl?: string;
+	listViewCounts?: { results: Array<SP.CountByDate> };
+	shouldRemove?: boolean;
+	siteColor?: string;
+	siteId?: string;
+	siteTitle?: string;
+	siteUrl?: string;
+	webId?: string;
+	webTemplateConfiguration?: string;
+}
+
+/*********************************************
+* ListHomeItem2Collections
+**********************************************/
+export interface ListHomeItem2Collections {
+
+}
+
+/*********************************************
+* ListHomeItemCollection
+**********************************************/
+export interface ListHomeItemCollection {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ListHomeItemCollectionCollections
+**********************************************/
+export interface ListHomeItemCollectionCollections {
+
+}
+
+/*********************************************
+* NewsCollection
+**********************************************/
+export interface NewsCollection {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* NewsCollectionCollections
+**********************************************/
+export interface NewsCollectionCollections {
+
+}
+
+/*********************************************
 * IObjectSharingSettings
 **********************************************/
 export interface IObjectSharingSettings extends ObjectSharingSettingsCollections, ObjectSharingSettingsMethods, Base.IBaseQuery<ObjectSharingSettings, IObjectSharingSettingsQuery> {
@@ -5082,6 +5422,8 @@ export interface ObjectSharingSettingsProps {
 	CanShareFolder?: boolean;
 	DefaultShareLinkPermission?: number;
 	DefaultShareLinkType?: number;
+	EnforceIBSegmentFiltering?: boolean;
+	EnforceSPOSearch?: boolean;
 	GroupsList?: { results: Array<SP.KeyValue> };
 	HasEditRole?: boolean;
 	HasReadRole?: boolean;
@@ -5099,6 +5441,7 @@ export interface ObjectSharingSettingsProps {
 	ShareByEmailEnabled?: boolean;
 	ShowExternalSharingWarning?: boolean;
 	SimplifiedRoles?: { results: Array<SP.KeyValue> };
+	SiteIBSegmentIDs?: { results: Array<string> };
 	SupportsAclPropagation?: boolean;
 	WebUrl?: string;
 }
@@ -5302,6 +5645,7 @@ export interface PickerSettings {
 	PrincipalAccountType?: string;
 	PrincipalSource?: number;
 	QuerySettings?: SP.UI.ApplicationPages.PeoplePickerQuerySettings;
+	UseSubstrateSearch?: boolean;
 	VisibleSuggestions?: number;
 }
 
@@ -5332,6 +5676,20 @@ export interface SharingPermissionInformationCollections {
 }
 
 /*********************************************
+* QuickAccessItemCollection
+**********************************************/
+export interface QuickAccessItemCollection {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* QuickAccessItemCollectionCollections
+**********************************************/
+export interface QuickAccessItemCollectionCollections {
+
+}
+
+/*********************************************
 * RecentListCollection
 **********************************************/
 export interface RecentListCollection {
@@ -5349,11 +5707,25 @@ export interface RecentListCollectionCollections {
 * RecentList
 **********************************************/
 export interface RecentList {
+	color?: string;
+	createdByName?: string;
+	createdByUpn?: string;
+	createdDate?: string;
+	icon?: string;
+	lastModifiedDate?: string;
 	lastViewDate?: number;
+	lastviewDateTime?: string;
 	listId?: string;
 	listTitle?: string;
 	listUrl?: string;
 	listViewCounts?: { results: Array<SP.CountByDate> };
+	shouldRemove?: boolean;
+	siteColor?: string;
+	siteId?: string;
+	siteTitle?: string;
+	siteUrl?: string;
+	webId?: string;
+	webTemplateConfiguration?: string;
 }
 
 /*********************************************
@@ -5471,6 +5843,20 @@ export interface SharingResultOData extends Base.IBaseResult, SharingResultProps
 * SharingResultMethods
 **********************************************/
 export interface SharingResultMethods {
+
+}
+
+/*********************************************
+* SmartCache
+**********************************************/
+export interface SmartCache {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SmartCacheCollections
+**********************************************/
+export interface SmartCacheCollections {
 
 }
 
@@ -5662,6 +6048,8 @@ export interface ChangeItem {
 	ListId?: any;
 	ListTemplate?: number;
 	ListTitle?: string;
+	MoveWasForRecycle?: boolean;
+	MoveWasForRestore?: boolean;
 	ServerRelativeUrl?: string;
 	SharedByUser?: SP.SharedWithUser;
 	SharedWithUsers?: SP.SharedWithUserCollection;
@@ -5958,6 +6346,20 @@ export interface RequestContextOData extends Base.IBaseResult, RequestContextPro
 **********************************************/
 export interface RequestContextMethods {
 	getRemoteContext(): Base.IBaseQuery<SP.RequestContext, SP.RequestContextOData> & SP.RequestContextCollections & SP.RequestContextMethods;
+}
+
+/*********************************************
+* CopySourceInfo
+**********************************************/
+export interface CopySourceInfo {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* CopySourceInfoCollections
+**********************************************/
+export interface CopySourceInfoCollections {
+
 }
 
 /*********************************************
@@ -6328,10 +6730,14 @@ export interface FieldNumber extends SP.Field, Base.IBaseResult, FieldNumberProp
 * FieldNumberProps
 **********************************************/
 export interface FieldNumberProps {
+	CommaSeparator?: boolean;
+	CustomUnitName?: string;
+	CustomUnitOnRight?: boolean;
 	DisplayFormat?: number;
 	MaximumValue?: number;
 	MinimumValue?: number;
 	ShowAsPercentage?: boolean;
+	Unit?: string;
 }
 
 /*********************************************
@@ -6486,8 +6892,10 @@ export interface FieldDateTime extends SP.Field, Base.IBaseResult, FieldDateTime
 **********************************************/
 export interface FieldDateTimeProps {
 	DateTimeCalendarType?: number;
+	DateFormat?: string;
 	DisplayFormat?: number;
 	FriendlyDisplayFormat?: number;
+	TimeFormat?: string;
 }
 
 /*********************************************
@@ -6720,6 +7128,7 @@ export interface FieldMultiLineText extends SP.Field, Base.IBaseResult, FieldMul
 export interface FieldMultiLineTextProps {
 	AllowHyperlink?: boolean;
 	AppendOnly?: boolean;
+	IsLongHyperlink?: boolean;
 	NumberOfLines?: number;
 	RestrictedMode?: boolean;
 	RichText?: boolean;
@@ -7088,7 +7497,7 @@ export interface FieldTextMethods {
 /*********************************************
 * IFieldThumbnail
 **********************************************/
-export interface IFieldThumbnail extends SP.FieldMultiLineTextCollections, FieldThumbnailCollections, FieldThumbnailMethods, Base.IBaseQuery<FieldThumbnail, IFieldThumbnailQuery> {
+export interface IFieldThumbnail extends FieldThumbnailCollections, FieldThumbnailMethods, Base.IBaseQuery<FieldThumbnail, IFieldThumbnailQuery> {
 
 }
 
@@ -7116,7 +7525,7 @@ export interface IFieldThumbnailQuery extends FieldThumbnailOData, FieldThumbnai
 /*********************************************
 * FieldThumbnail
 **********************************************/
-export interface FieldThumbnail extends SP.FieldMultiLineText, Base.IBaseResult, FieldThumbnailProps, FieldThumbnailCollections, FieldThumbnailMethods {
+export interface FieldThumbnail extends Base.IBaseResult, FieldThumbnailProps, FieldThumbnailCollections, FieldThumbnailMethods {
 
 }
 
@@ -7124,7 +7533,7 @@ export interface FieldThumbnail extends SP.FieldMultiLineText, Base.IBaseResult,
 * FieldThumbnailProps
 **********************************************/
 export interface FieldThumbnailProps {
-
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
 /*********************************************
@@ -7144,7 +7553,7 @@ export interface FieldThumbnailCollections extends FieldThumbnailPropMethods {
 /*********************************************
 * FieldThumbnailOData
 **********************************************/
-export interface FieldThumbnailOData extends SP.FieldMultiLineText, Base.IBaseResult, FieldThumbnailProps, FieldThumbnailMethods {
+export interface FieldThumbnailOData extends Base.IBaseResult, FieldThumbnailProps, FieldThumbnailMethods {
 
 }
 
@@ -7152,13 +7561,6 @@ export interface FieldThumbnailOData extends SP.FieldMultiLineText, Base.IBaseRe
 * FieldThumbnailMethods
 **********************************************/
 export interface FieldThumbnailMethods {
-	delete(): Base.IBaseExecution<any>;
-	disableIndex(): Base.IBaseExecution<number>;
-	enableIndex(): Base.IBaseExecution<number>;
-	setShowInDisplayForm(value?: boolean): Base.IBaseExecution<any>;
-	setShowInEditForm(value?: boolean): Base.IBaseExecution<any>;
-	setShowInNewForm(value?: boolean): Base.IBaseExecution<any>;
-	// update(): Base.IBaseExecution<any>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 
@@ -7282,6 +7684,7 @@ export interface FieldUserProps {
 	Presence?: boolean;
 	SelectionGroup?: number;
 	SelectionMode?: number;
+	UserDisplayOptions?: string;
 }
 
 /*********************************************
@@ -7335,20 +7738,6 @@ export interface FlowSynchronizationResultCollections {
 }
 
 /*********************************************
-* HashtagStoreManager
-**********************************************/
-export interface HashtagStoreManager {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-}
-
-/*********************************************
-* HashtagStoreManagerCollections
-**********************************************/
-export interface HashtagStoreManagerCollections {
-
-}
-
-/*********************************************
 * IHubSite
 **********************************************/
 export interface IHubSite extends HubSiteCollections, HubSiteMethods, Base.IBaseQuery<HubSite, IHubSiteQuery> {
@@ -7389,11 +7778,13 @@ export interface HubSite extends Base.IBaseResult, HubSiteProps, HubSiteCollecti
 export interface HubSiteProps {
 	Description?: string;
 	EnablePermissionsSync?: boolean;
+	EnforcedECTs?: string;
+	EnforcedECTsVersion?: number;
 	HideNameInNavigation?: boolean;
 	ID?: any;
 	LogoUrl?: string;
 	ParentHubSiteId?: any;
-	RelatedHubSiteIds?: { results: Array<any> };
+	PermissionsSyncTag?: number;
 	RequiresJoinApproval?: boolean;
 	SiteDesignId?: any;
 	SiteId?: any;
@@ -7887,24 +8278,74 @@ export interface TenantAppUtilityCollections {
 }
 
 /*********************************************
+* ITenantSettings
+**********************************************/
+export interface ITenantSettings extends TenantSettingsCollections, TenantSettingsMethods, Base.IBaseQuery<TenantSettings, ITenantSettingsQuery> {
+
+}
+
+/*********************************************
+* ITenantSettingsCollection
+**********************************************/
+export interface ITenantSettingsCollection extends Base.IBaseResults<TenantSettings> {
+	done?: (resolve: (value?: Array<TenantSettings>) => void) => void;
+}
+
+/*********************************************
+* ITenantSettingsQueryCollection
+**********************************************/
+export interface ITenantSettingsQueryCollection extends Base.IBaseResults<TenantSettingsOData> {
+	done?: (resolve: (value?: Array<TenantSettingsOData>) => void) => void;
+}
+
+/*********************************************
+* ITenantSettingsQuery
+**********************************************/
+export interface ITenantSettingsQuery extends TenantSettingsOData, TenantSettingsMethods {
+
+}
+
+/*********************************************
 * TenantSettings
 **********************************************/
-export interface TenantSettings {
+export interface TenantSettings extends Base.IBaseResult, TenantSettingsProps, TenantSettingsCollections, TenantSettingsMethods {
+
+}
+
+/*********************************************
+* TenantSettingsProps
+**********************************************/
+export interface TenantSettingsProps {
 	CorporateCatalogUrl?: string;
+}
+
+/*********************************************
+* TenantSettingsPropMethods
+**********************************************/
+export interface TenantSettingsPropMethods {
+	Current(): Base.IBaseQuery<SP.TenantSettings, SP.TenantSettingsOData> & SP.TenantSettingsCollections & SP.TenantSettingsMethods;
 }
 
 /*********************************************
 * TenantSettingsCollections
 **********************************************/
-export interface TenantSettingsCollections {
+export interface TenantSettingsCollections extends TenantSettingsPropMethods {
 
 }
 
 /*********************************************
 * TenantSettingsOData
 **********************************************/
-export interface TenantSettingsOData extends Base.IBaseResult, TenantSettings {
+export interface TenantSettingsOData extends Base.IBaseResult, TenantSettingsProps, TenantSettingsMethods {
 	Current: SP.TenantSettings & SP.TenantSettingsCollections;
+}
+
+/*********************************************
+* TenantSettingsMethods
+**********************************************/
+export interface TenantSettingsMethods {
+	clearCorporateCatalog(): Base.IBaseExecution<any>;
+	setCorporateCatalog(url?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

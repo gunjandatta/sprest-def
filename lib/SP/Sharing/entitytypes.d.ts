@@ -68,6 +68,7 @@ export interface SharingInformation {
 	accessRequestSettings?: SP.Sharing.AccessRequestSettings;
 	addressBarLinkSettings?: SP.Sharing.AddressBarLinkSettings;
 	anonymousLinkExpirationRestrictionDays?: number;
+	anyoneLinkTrackUsers?: boolean;
 	blockPeoplePickerAndSharing?: boolean;
 	canAddExternalPrincipal?: boolean;
 	canAddInternalPrincipal?: boolean;
@@ -81,9 +82,10 @@ export interface SharingInformation {
 	defaultShareLinkScope?: number;
 	defaultShareLinkToExistingAccess?: boolean;
 	directUrl?: string;
-	doesUserHaveIBSegment?: boolean;
 	domainRestrictionSettings?: SP.Sharing.DomainRestrictionSettings;
-	effectiveLimitedAccessFileType?: number;
+	enforceIBSegmentFiltering?: boolean;
+	enforceSPOSearch?: boolean;
+	fileExtension?: string;
 	hasUniquePermissions?: boolean;
 	itemUniqueId?: any;
 	microserviceShareUiUrl?: string;

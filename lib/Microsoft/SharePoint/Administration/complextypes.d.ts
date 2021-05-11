@@ -41,6 +41,7 @@ export interface OrgAssetsLibraryCollections {
 **********************************************/
 export interface OrgAssets {
 	CentralAssetRepositoryLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
+	Domain?: SP.ResourcePath;
 	OrgAssetsLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
 	SiteId?: any;
 	Url?: SP.ResourcePath;

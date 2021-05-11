@@ -2,20 +2,6 @@ import { Base } from "../";
 import { PS } from "../";
 
 /*********************************************
-* EngagementSaveConflictException
-**********************************************/
-export interface EngagementSaveConflictException {
-
-}
-
-/*********************************************
-* EngagementSaveConflictExceptionCollections
-**********************************************/
-export interface EngagementSaveConflictExceptionCollections {
-
-}
-
-/*********************************************
 * AssignmentCreationInformation
 **********************************************/
 export interface AssignmentCreationInformation {
@@ -632,5 +618,19 @@ export interface TimeSheetWorkCreationInformation {
 * TimeSheetWorkCreationInformationCollections
 **********************************************/
 export interface TimeSheetWorkCreationInformationCollections {
+
+}
+
+/*********************************************
+* EngagementSaveConflictException
+**********************************************/
+export interface EngagementSaveConflictException {
+
+}
+
+/*********************************************
+* EngagementSaveConflictExceptionCollections
+**********************************************/
+export interface EngagementSaveConflictExceptionCollections {
 
 }

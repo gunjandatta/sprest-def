@@ -177,34 +177,54 @@ export interface Office365Tenant extends Base.IBaseResult, Office365TenantProps,
 **********************************************/
 export interface Office365TenantProps {
 	AddressbarLinkPermission?: number;
+	AIBuilderDefaultPowerAppsEnvironment?: string;
+	AIBuilderEnabled?: boolean;
+	AIBuilderSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
+	AIBuilderSiteList?: { results: Array<any> };
+	AIBuilderSiteListFileName?: string;
 	AllowCommentsTextOnEmailEnabled?: boolean;
 	AllowDownloadingNonWebViewableFiles?: boolean;
 	AllowedDomainListForSyncClient?: { results: Array<any> };
 	AllowEditing?: boolean;
 	AllowGuestUserShareToUsersNotInSiteCollection?: boolean;
 	AllowLimitedAccessOnUnmanagedDevices?: boolean;
+	AllowOverrideForBlockUserInfoVisibility?: boolean;
 	AllowSelectSGsInODBList?: { results: Array<string> };
+	AnyoneLinkTrackUsers?: boolean;
 	ApplyAppEnforcedRestrictionsToAdHocRecipients?: boolean;
 	BccExternalSharingInvitations?: boolean;
 	BccExternalSharingInvitationsList?: string;
 	BlockAccessOnUnmanagedDevices?: boolean;
+	BlockDownloadLinksFileType?: number;
 	BlockDownloadOfAllFilesForGuests?: boolean;
 	BlockDownloadOfAllFilesOnUnmanagedDevices?: boolean;
 	BlockDownloadOfViewableFilesForGuests?: boolean;
 	BlockDownloadOfViewableFilesOnUnmanagedDevices?: boolean;
 	BlockMacSync?: boolean;
+	BlockUserInfoVisibility?: string;
+	BlockUserInfoVisibilityInOneDrive?: number;
+	BlockUserInfoVisibilityInSharePoint?: number;
 	CommentsOnFilesDisabled?: boolean;
+	CommentsOnListItemsDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
 	ConditionalAccessPolicy?: number;
 	ConditionalAccessPolicyErrorHelpLink?: string;
 	ContentTypeSyncSiteTemplatesList?: { results: Array<string> };
 	CustomizedExternalSharingServiceUrl?: string;
+	DefaultContentCenterSite?: Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker;
 	DefaultLinkPermission?: number;
 	DefaultSharingLinkType?: number;
+	DisableAddToOneDrive?: boolean;
+	DisableBackToClassic?: boolean;
+	DisableCustomAppAuthentication?: boolean;
+	DisabledModernListTemplateIds?: { results: Array<any> };
+	DisablePersonalListCreation?: boolean;
+	DisableSpacesActivation?: boolean;
 	DisplayStartASiteOption?: boolean;
 	EmailAttestationEnabled?: boolean;
 	EmailAttestationReAuthDays?: number;
 	EmailAttestationRequired?: boolean;
+	EnableAutoNewsDigest?: boolean;
 	EnableAzureADB2BIntegration?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
 	EnablePromotedFileHandlers?: boolean;
@@ -217,7 +237,12 @@ export interface Office365TenantProps {
 	FolderAnonymousLinkType?: number;
 	GetOrgAssets?: Microsoft.SharePoint.Administration.OrgAssets;
 	GuestSharingGroupAllowList?: string;
+	HasAdminCompletedCUConfiguration?: boolean;
+	HideSyncButtonOnDocLib?: boolean;
 	HideSyncButtonOnODB?: boolean;
+	ImageTaggingOption?: number;
+	IncludeAtAGlanceInShareEmails?: boolean;
+	InformationBarriersSuspension?: boolean;
 	IPAddressAllowList?: string;
 	IPAddressEnforcement?: boolean;
 	IPAddressWACTokenLifetime?: number;
@@ -225,6 +250,7 @@ export interface Office365TenantProps {
 	IsUnmanagedSyncClientRestrictionFlightEnabled?: boolean;
 	LegacyAuthProtocolsEnabled?: boolean;
 	LimitedAccessFileType?: number;
+	MachineLearningCaptureEnabled?: boolean;
 	MobileFriendlyUrlEnabled?: boolean;
 	MySitesPublicEnabled?: boolean;
 	NotificationsInOneDriveForBusinessEnabled?: boolean;
@@ -257,12 +283,15 @@ export interface Office365TenantProps {
 	SignInAccelerationDomain?: string;
 	SocialBarOnSitePagesDisabled?: boolean;
 	StartASiteFormUrl?: string;
+	StopNew2010Workflows?: boolean;
 	SyncAadB2BManagementPolicy?: boolean;
 	SyncPrivacyProfileProperties?: boolean;
 	UseFindPeopleInPeoplePicker?: boolean;
 	UsePersistentCookiesForExplorerView?: boolean;
 	UserVoiceForFeedbackEnabled?: boolean;
 	WhoCanShareAllowList?: string;
+	Workflow2010Disabled?: boolean;
+	Workflows2013State?: number;
 }
 
 /*********************************************
@@ -294,7 +323,7 @@ export interface Office365TenantMethods {
 	addSdnProvider(identifier?: string, license?: string): Base.IBaseExecution<any>;
 	addTenantCdnOrigin(cdnType?: number, originUrl?: string): Base.IBaseExecution<any>;
 	addTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
-	addToOrgAssetsLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number): Base.IBaseExecution<any>;
+	addToOrgAssetsLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number, defaultOriginAdded?: boolean): Base.IBaseExecution<any>;
 	createTenantCdnDefaultOrigins(cdnType?: number): Base.IBaseExecution<any>;
 	deleteImportProfilePropertiesJob(jobId?: any): Base.IBaseExecution<boolean>;
 	deleteTenantTheme(name?: string): Base.IBaseExecution<any>;

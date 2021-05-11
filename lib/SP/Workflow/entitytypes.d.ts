@@ -1,5 +1,6 @@
 import { Base } from "../../";
 import { SP } from "../../";
+import { Microsoft } from "../../";
 
 /*********************************************
 * IWorkflowAssociation
@@ -56,6 +57,7 @@ export interface WorkflowAssociationProps {
 	ListId?: any;
 	Modified?: any;
 	Name?: string;
+	RunningInstances?: number;
 	TaskListTitle?: string;
 	WebId?: any;
 }
@@ -231,7 +233,7 @@ export interface SPWorkflowTaskMethods {
 	delete(): Base.IBaseExecution<any>;
 	deleteWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
-	getHashtags(): Base.IBaseCollection<SP.Hashtag>;
+	getComments(): Base.IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
 	getWOPIFrameUrl(action?: number): Base.IBaseExecution<string>;
 	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;
@@ -250,9 +252,9 @@ export interface SPWorkflowTaskMethods {
 	systemUpdate(): Base.IBaseExecution<any>;
 	// update(): Base.IBaseExecution<any>;
 	updateEx(parameters?: SP.ListItemUpdateParameters): Base.IBaseExecution<any>;
-	updateHashtags(hashtagsToAdd?: Array<SP.Hashtag>, hashtagsToRemove?: Array<SP.Hashtag>): Base.IBaseCollection<SP.Hashtag>;
 	updateOverwriteVersion(): Base.IBaseExecution<any>;
-	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	validateUpdateFetchListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseExecution<SP.ListItemUpdateResults>;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }

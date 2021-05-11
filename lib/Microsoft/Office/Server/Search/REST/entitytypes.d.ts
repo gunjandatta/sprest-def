@@ -148,9 +148,11 @@ export interface SearchSettingOData extends Base.IBaseResult, SearchSettingProps
 * SearchSettingMethods
 **********************************************/
 export interface SearchSettingMethods {
+	exportSearchReports(TenantId?: string, ReportType?: string, Interval?: string, StartDate?: string, EndDate?: string, SiteCollectionId?: string): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.ReportBase>;
 	getpromotedresultqueryrules(siteCollectionLevel?: boolean, offset?: number, numberOfRules?: number): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.PromotedResultsOperationsResult>;
-	getqueryconfiguration(callLocalSearchFarmsOnly?: boolean, skipGroupObjectIdLookup?: boolean): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.QueryConfiguration>;
+	getqueryconfiguration(callLocalSearchFarmsOnly?: boolean, skipGroupObjectIdLookup?: boolean, throwOnRemoteApiCheck?: boolean): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.QueryConfiguration>;
 	getxssearchpolicy(): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
 	pingadminendpoint(): Base.IBaseExecution<boolean>;
+	scspartialupdateendpointinfo(): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.ScsEndpoint>;
 	setxssearchpolicy(policy?: string): Base.IBaseExecution<Microsoft.Office.Server.Search.REST.XSSearchPolicy>;
 }

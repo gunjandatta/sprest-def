@@ -159,3 +159,73 @@ export interface TokenOData extends Base.IBaseResult, TokenProps, TokenMethods {
 export interface TokenMethods {
 	acquire(resource?: string, tokenType?: string): Base.IBaseExecution<SP.OAuth.TokenResponse>;
 }
+
+/*********************************************
+* IAuthentication
+**********************************************/
+export interface IAuthentication extends AuthenticationCollections, AuthenticationMethods, Base.IBaseQuery<Authentication, IAuthenticationQuery> {
+
+}
+
+/*********************************************
+* IAuthenticationCollection
+**********************************************/
+export interface IAuthenticationCollection extends Base.IBaseResults<Authentication> {
+	done?: (resolve: (value?: Array<Authentication>) => void) => void;
+}
+
+/*********************************************
+* IAuthenticationQueryCollection
+**********************************************/
+export interface IAuthenticationQueryCollection extends Base.IBaseResults<AuthenticationOData> {
+	done?: (resolve: (value?: Array<AuthenticationOData>) => void) => void;
+}
+
+/*********************************************
+* IAuthenticationQuery
+**********************************************/
+export interface IAuthenticationQuery extends AuthenticationOData, AuthenticationMethods {
+
+}
+
+/*********************************************
+* Authentication
+**********************************************/
+export interface Authentication extends Base.IBaseResult, AuthenticationProps, AuthenticationCollections, AuthenticationMethods {
+
+}
+
+/*********************************************
+* AuthenticationProps
+**********************************************/
+export interface AuthenticationProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AuthenticationPropMethods
+**********************************************/
+export interface AuthenticationPropMethods {
+
+}
+
+/*********************************************
+* AuthenticationCollections
+**********************************************/
+export interface AuthenticationCollections extends AuthenticationPropMethods {
+
+}
+
+/*********************************************
+* AuthenticationOData
+**********************************************/
+export interface AuthenticationOData extends Base.IBaseResult, AuthenticationProps, AuthenticationMethods {
+
+}
+
+/*********************************************
+* AuthenticationMethods
+**********************************************/
+export interface AuthenticationMethods {
+	getRenewalUrl(redirectUrl?: string): Base.IBaseExecution<string>;
+}

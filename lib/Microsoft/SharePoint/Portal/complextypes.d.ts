@@ -21,20 +21,42 @@ export interface CollaborationMailboxResponseCollections {
 }
 
 /*********************************************
+* EnsureTeamForGroupExResponse
+**********************************************/
+export interface EnsureTeamForGroupExResponse {
+	teamsId?: string;
+	teamsUrl?: string;
+}
+
+/*********************************************
+* EnsureTeamForGroupExResponseCollections
+**********************************************/
+export interface EnsureTeamForGroupExResponseCollections {
+
+}
+
+/*********************************************
 * GroupCreationContext
 **********************************************/
 export interface GroupCreationContext {
 	ClassificationDescriptions?: Array<SP.KeyValue>;
 	ClassificationDescriptionsNew?: Array<SP.KeyValue>;
-	ClassificationPrivacy?: Array<SP.KeyValue>;
+	ClassificationExtSharingValue?: Array<SP.KeyValue>;
+	ClassificationPrivacyValue?: Array<SP.KeyValue>;
 	CustomFormUrl?: string;
 	DataClassificationOptions?: Array<string>;
 	DataClassificationOptionsNew?: Array<SP.KeyValue>;
 	DefaultClassification?: string;
 	ExternalInvitationEnabled?: boolean;
+	MachineLearningCaptureEnabled?: boolean;
+	MachineLearningExperienceEnabled?: boolean;
 	PreferredLanguage?: number;
 	RequireSecondaryContact?: boolean;
+	SensitivityLabelPolicyMandatory?: boolean;
+	ShowSelfServiceSiteCreation?: boolean;
+	SiteCreationNewUX?: boolean;
 	SitePath?: string;
+	SiteSensitivityLabelId?: string;
 	UsageGuidelineUrl?: string;
 }
 
@@ -135,6 +157,99 @@ export interface LinkedSitesListContractCollections {
 }
 
 /*********************************************
+* M365TabItem
+**********************************************/
+export interface M365TabItem {
+	displayName?: string;
+	isDefault?: boolean;
+	itemType?: number;
+	url?: string;
+}
+
+/*********************************************
+* M365TabItemCollections
+**********************************************/
+export interface M365TabItemCollections {
+
+}
+
+/*********************************************
+* OrgLabelsContext
+**********************************************/
+export interface OrgLabelsContext {
+	DisplayName?: string;
+	LabelApplicableTo?: string;
+	ObjectId?: string;
+}
+
+/*********************************************
+* OrgLabelsContextCollections
+**********************************************/
+export interface OrgLabelsContextCollections {
+
+}
+
+/*********************************************
+* OrgLabelsContextList
+**********************************************/
+export interface OrgLabelsContextList {
+	IsLastPage?: boolean;
+	Labels?: Array<Microsoft.SharePoint.Portal.OrgLabelsContext>;
+}
+
+/*********************************************
+* OrgLabelsContextListCollections
+**********************************************/
+export interface OrgLabelsContextListCollections {
+
+}
+
+/*********************************************
+* ParentGroup
+**********************************************/
+export interface ParentGroup {
+	DisplayName?: string;
+	ID?: string;
+}
+
+/*********************************************
+* ParentGroupCollections
+**********************************************/
+export interface ParentGroupCollections {
+
+}
+
+/*********************************************
+* PinToTeamParams
+**********************************************/
+export interface PinToTeamParams {
+	tabs?: Array<Microsoft.SharePoint.Portal.M365TabItem>;
+	teamsId?: string;
+}
+
+/*********************************************
+* PinToTeamParamsCollections
+**********************************************/
+export interface PinToTeamParamsCollections {
+
+}
+
+/*********************************************
+* PinToTeamResponse
+**********************************************/
+export interface PinToTeamResponse {
+	FailedPinning?: Array<Microsoft.SharePoint.Portal.M365TabItem>;
+	SuccessfulPinning?: Array<Microsoft.SharePoint.Portal.M365TabItem>;
+}
+
+/*********************************************
+* PinToTeamResponseCollections
+**********************************************/
+export interface PinToTeamResponseCollections {
+
+}
+
+/*********************************************
 * SPSiteCreationResponse
 **********************************************/
 export interface SPSiteCreationResponse {
@@ -154,6 +269,7 @@ export interface SPSiteCreationResponseCollections {
 * SPSiteCreationRequest
 **********************************************/
 export interface SPSiteCreationRequest {
+	ChannelGroupId?: any;
 	Classification?: string;
 	Description?: string;
 	HubSiteId?: any;
@@ -164,6 +280,7 @@ export interface SPSiteCreationRequest {
 	SensitivityLabel2?: string;
 	ShareByEmailEnabled?: boolean;
 	SiteDesignId?: any;
+	TeamsChannelType?: number;
 	TimeZoneId?: number;
 	Title?: string;
 	Url?: string;

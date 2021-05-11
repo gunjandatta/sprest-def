@@ -1,4 +1,5 @@
 import { Base } from "../../../";
+import { SP } from "../../../";
 
 /*********************************************
 * IPortalNavigationCacheWrapper
@@ -70,4 +71,77 @@ export interface PortalNavigationCacheWrapperMethods {
 	disable(): Base.IBaseExecution<any>;
 	enable(): Base.IBaseExecution<any>;
 	refresh(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* IStructuralNavigationCacheWrapper
+**********************************************/
+export interface IStructuralNavigationCacheWrapper extends StructuralNavigationCacheWrapperCollections, StructuralNavigationCacheWrapperMethods, Base.IBaseQuery<StructuralNavigationCacheWrapper, IStructuralNavigationCacheWrapperQuery> {
+
+}
+
+/*********************************************
+* IStructuralNavigationCacheWrapperCollection
+**********************************************/
+export interface IStructuralNavigationCacheWrapperCollection extends Base.IBaseResults<StructuralNavigationCacheWrapper> {
+	done?: (resolve: (value?: Array<StructuralNavigationCacheWrapper>) => void) => void;
+}
+
+/*********************************************
+* IStructuralNavigationCacheWrapperQueryCollection
+**********************************************/
+export interface IStructuralNavigationCacheWrapperQueryCollection extends Base.IBaseResults<StructuralNavigationCacheWrapperOData> {
+	done?: (resolve: (value?: Array<StructuralNavigationCacheWrapperOData>) => void) => void;
+}
+
+/*********************************************
+* IStructuralNavigationCacheWrapperQuery
+**********************************************/
+export interface IStructuralNavigationCacheWrapperQuery extends StructuralNavigationCacheWrapperOData, StructuralNavigationCacheWrapperMethods {
+
+}
+
+/*********************************************
+* StructuralNavigationCacheWrapper
+**********************************************/
+export interface StructuralNavigationCacheWrapper extends Base.IBaseResult, StructuralNavigationCacheWrapperProps, StructuralNavigationCacheWrapperCollections, StructuralNavigationCacheWrapperMethods {
+
+}
+
+/*********************************************
+* StructuralNavigationCacheWrapperProps
+**********************************************/
+export interface StructuralNavigationCacheWrapperProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* StructuralNavigationCacheWrapperPropMethods
+**********************************************/
+export interface StructuralNavigationCacheWrapperPropMethods {
+
+}
+
+/*********************************************
+* StructuralNavigationCacheWrapperCollections
+**********************************************/
+export interface StructuralNavigationCacheWrapperCollections extends StructuralNavigationCacheWrapperPropMethods {
+
+}
+
+/*********************************************
+* StructuralNavigationCacheWrapperOData
+**********************************************/
+export interface StructuralNavigationCacheWrapperOData extends Base.IBaseResult, StructuralNavigationCacheWrapperProps, StructuralNavigationCacheWrapperMethods {
+
+}
+
+/*********************************************
+* StructuralNavigationCacheWrapperMethods
+**********************************************/
+export interface StructuralNavigationCacheWrapperMethods {
+	setSiteState(state?: SP.Publishing.Navigation.StructuralNavigationCacheState): Base.IBaseExecution<any>;
+	setWebState(state?: SP.Publishing.Navigation.StructuralNavigationCacheState): Base.IBaseExecution<any>;
+	siteState(): Base.IBaseExecution<SP.Publishing.Navigation.StructuralNavigationCacheState>;
+	webState(): Base.IBaseExecution<SP.Publishing.Navigation.StructuralNavigationCacheState>;
 }

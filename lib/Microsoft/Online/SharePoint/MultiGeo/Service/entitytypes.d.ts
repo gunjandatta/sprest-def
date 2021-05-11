@@ -114,6 +114,7 @@ export interface ContentDbSchemaVersionCollections {
 **********************************************/
 export interface MoveJobEntityData {
 	ApiVersion?: string;
+	BatchId?: any;
 	CancelTriggeredBy?: string;
 	DestinationDataLocation?: string;
 	Direction?: number;
@@ -182,8 +183,16 @@ export interface CrossFarmGroupMoveJobCollectionMethods {
 * SiteMoveJobEntityData
 **********************************************/
 export interface SiteMoveJobEntityData {
+	SourceCompanyId?: any;
+	SourceInstanceId?: any;
+	SourceSiteSubscriptionId?: any;
 	SourceSiteUrl?: string;
+	TargetCompanyId?: any;
+	TargetInstanceId?: any;
+	TargetSiteSubscriptionId?: any;
 	TargetSiteUrl?: string;
+	TenantMergeSourceMySiteHostUrl?: string;
+	TenantMergeTargetMySiteHostUrl?: string;
 }
 
 /*********************************************
@@ -527,6 +536,37 @@ export interface CrossGeoTenantPropertyMethods {
 }
 
 /*********************************************
+* CrossGeoUserPlacementJobEntityData
+**********************************************/
+export interface CrossGeoUserPlacementJobEntityData {
+	TenantMySiteUrl?: string;
+	UserObjectId?: any;
+	UserPrincipalName?: string;
+	WorkitemId?: any;
+}
+
+/*********************************************
+* CrossGeoUserPlacementJobEntityDataCollections
+**********************************************/
+export interface CrossGeoUserPlacementJobEntityDataCollections {
+
+}
+
+/*********************************************
+* CrossGeoUserPlacementJob
+**********************************************/
+export interface CrossGeoUserPlacementJob {
+
+}
+
+/*********************************************
+* CrossGeoUserPlacementJobCollections
+**********************************************/
+export interface CrossGeoUserPlacementJobCollections {
+
+}
+
+/*********************************************
 * DBSchemaCompatibilityCheck
 **********************************************/
 export interface DBSchemaCompatibilityCheck {
@@ -538,6 +578,99 @@ export interface DBSchemaCompatibilityCheck {
 **********************************************/
 export interface DBSchemaCompatibilityCheckCollections {
 
+}
+
+/*********************************************
+* DfDeprecationSiteEntityData
+**********************************************/
+export interface DfDeprecationSiteEntityData {
+	sourceSiteUrl?: string;
+	targetSiteUrl?: string;
+	validationResult?: boolean;
+}
+
+/*********************************************
+* DfDeprecationSiteEntityDataCollections
+**********************************************/
+export interface DfDeprecationSiteEntityDataCollections {
+
+}
+
+/*********************************************
+* IDfDeprecationJob
+**********************************************/
+export interface IDfDeprecationJob extends Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityDataCollections, DfDeprecationJobCollections, DfDeprecationJobMethods, Base.IBaseQuery<DfDeprecationJob, IDfDeprecationJobQuery> {
+
+}
+
+/*********************************************
+* IDfDeprecationJobCollection
+**********************************************/
+export interface IDfDeprecationJobCollection extends Base.IBaseResults<DfDeprecationJob>, DfDeprecationJobCollectionMethods {
+	done?: (resolve: (value?: Array<DfDeprecationJob>) => void) => void;
+}
+
+/*********************************************
+* IDfDeprecationJobQueryCollection
+**********************************************/
+export interface IDfDeprecationJobQueryCollection extends Base.IBaseResults<DfDeprecationJobOData>, DfDeprecationJobCollectionMethods {
+	done?: (resolve: (value?: Array<DfDeprecationJobOData>) => void) => void;
+}
+
+/*********************************************
+* IDfDeprecationJobQuery
+**********************************************/
+export interface IDfDeprecationJobQuery extends DfDeprecationJobOData, DfDeprecationJobMethods {
+
+}
+
+/*********************************************
+* DfDeprecationJob
+**********************************************/
+export interface DfDeprecationJob extends Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityData, Base.IBaseResult, DfDeprecationJobProps, DfDeprecationJobCollections, DfDeprecationJobMethods {
+
+}
+
+/*********************************************
+* DfDeprecationJobProps
+**********************************************/
+export interface DfDeprecationJobProps {
+
+}
+
+/*********************************************
+* DfDeprecationJobPropMethods
+**********************************************/
+export interface DfDeprecationJobPropMethods {
+
+}
+
+/*********************************************
+* DfDeprecationJobCollections
+**********************************************/
+export interface DfDeprecationJobCollections extends DfDeprecationJobPropMethods {
+
+}
+
+/*********************************************
+* DfDeprecationJobCollectionMethods
+**********************************************/
+export interface DfDeprecationJobCollectionMethods {
+	getBySiteUrl(sourceSiteUrl?: string, targetSiteUrl?: string): Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob> & Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJobMethods;
+}
+
+/*********************************************
+* DfDeprecationJobOData
+**********************************************/
+export interface DfDeprecationJobOData extends Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationSiteEntityData, Base.IBaseResult, DfDeprecationJobProps, DfDeprecationJobMethods {
+
+}
+
+/*********************************************
+* DfDeprecationJobMethods
+**********************************************/
+export interface DfDeprecationJobMethods {
+	delete(): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -694,6 +827,23 @@ export interface GeoExperienceOData extends Base.IBaseResult, GeoExperienceProps
 export interface GeoExperienceMethods {
 	upgradeAllInstancesToSPOMode(): Base.IBaseExecution<any>;
 	upgradeToSPOMode(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* GeoLocationData
+**********************************************/
+export interface GeoLocationData {
+	Code?: string;
+	Name?: string;
+	X?: number;
+	Y?: number;
+}
+
+/*********************************************
+* GeoLocationDataCollections
+**********************************************/
+export interface GeoLocationDataCollections {
+
 }
 
 /*********************************************
@@ -953,6 +1103,7 @@ export interface MultiGeoServicesBetaPropMethods {
 	CrossGeoTenantCompatibility(): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibilityCollections;
 	GeoExperience(): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperienceCollections & Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperienceMethods;
 	GlobalAdminCheck(): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheck> & Microsoft.Online.SharePoint.MultiGeo.Service.GlobalAdminCheckCollections;
+	SupportedGeoLocationsForTenant(): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenant> & Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenantCollections;
 	TaxonomyReplicationParameters(): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters> & Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParametersCollections & Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParametersMethods;
 }
 
@@ -970,6 +1121,10 @@ export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaPro
 	CrossFarmUserMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.CrossFarmUserMoveJobMethods;
 	CrossGeoTenantProperties(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyCollectionMethods;
 	CrossGeoTenantProperties(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyCollections & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyMethods;
+	CrossGeoUserPlacementJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJob>;
+	CrossGeoUserPlacementJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJob> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJobCollections;
+	DfDeprecationJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob> & Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJobCollectionMethods;
+	DfDeprecationJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob> & Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJobMethods;
 	GeoAdministrators(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorCollectionMethods;
 	GeoAdministrators(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorCollections & Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorMethods;
 	GeoTenantInstanceInformationCollection(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformationCollectionMethods;
@@ -980,6 +1135,8 @@ export interface MultiGeoServicesBetaCollections extends MultiGeoServicesBetaPro
 	SiteMoveJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollections & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobMethods;
 	StorageQuotas(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollectionMethods;
 	StorageQuotas(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollections & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaMethods;
+	supportedgeolocationsmapdata(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.GeoLocationData>;
+	supportedgeolocationsmapdata(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.GeoLocationData> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoLocationDataCollections;
 	TenantInformationCollection(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
 	TenantInformationCollection(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation> & Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformationCollections;
 	UnifiedGroups(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup> & Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroupCollectionMethods;
@@ -1000,6 +1157,8 @@ export interface MultiGeoServicesBetaOData extends Base.IBaseResult, MultiGeoSer
 	CrossGeoTenantBYOK: Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOK & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantBYOKCollections;
 	CrossGeoTenantCompatibility: Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibility & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantCompatibilityCollections;
 	CrossGeoTenantProperties: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantProperty> & Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoTenantPropertyCollectionMethods;
+	CrossGeoUserPlacementJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.CrossGeoUserPlacementJob>;
+	DfDeprecationJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJob> & Microsoft.Online.SharePoint.MultiGeo.Service.DfDeprecationJobCollectionMethods;
 	GeoAdministrators: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministrator> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoAdministratorCollectionMethods;
 	GeoExperience: Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperience & Microsoft.Online.SharePoint.MultiGeo.Service.GeoExperienceCollections;
 	GeoTenantInstanceInformationCollection: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformation> & Microsoft.Online.SharePoint.MultiGeo.Service.GeoTenantInstanceInformationCollectionMethods;
@@ -1007,6 +1166,8 @@ export interface MultiGeoServicesBetaOData extends Base.IBaseResult, MultiGeoSer
 	GroupMoveJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.GroupMoveJobCollectionMethods;
 	SiteMoveJobs: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob> & Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJobCollectionMethods;
 	StorageQuotas: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuota> & Microsoft.Online.SharePoint.MultiGeo.Service.StorageQuotaCollectionMethods;
+	SupportedGeoLocationsForTenant: Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenant & Microsoft.Online.SharePoint.MultiGeo.Service.SupportedGeoLocationsForTenantCollections;
+	supportedgeolocationsmapdata: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.GeoLocationData>;
 	TaxonomyReplicationParameters: Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParameters & Microsoft.Online.SharePoint.MultiGeo.Service.TaxonomyReplicationParametersCollections;
 	TenantInformationCollection: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.TenantInformation>;
 	UnifiedGroups: Base.IBaseResults<Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroup> & Microsoft.Online.SharePoint.MultiGeo.Service.UnifiedGroupCollectionMethods;
@@ -1017,9 +1178,11 @@ export interface MultiGeoServicesBetaOData extends Base.IBaseResult, MultiGeoSer
 * MultiGeoServicesBetaMethods
 **********************************************/
 export interface MultiGeoServicesBetaMethods {
-	crossGeoCredentials(siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.GeoCredentials>;
 	dBSchemaCompatibilityCheck(): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.DBSchemaCompatibilityCheck>;
 	geoMoveCompatibilityChecks(): Base.IBaseCollection<Microsoft.Online.SharePoint.MultiGeo.Service.GeoMoveTenantCompatibilityCheck>;
+	orgRelationGroupManagedPath(encodedNotificationQuery?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationGroupManagedPath>;
+	orgRelationNotification(encodedNotificationQuery?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationNotification>;
+	orgRelationVerification(encodedVerificationQuery?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification>;
 	userPersonalSiteId(userPrincipalName?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId>;
 	userPersonalSiteLocation(userPrincipalName?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation>;
 }
@@ -1190,6 +1353,21 @@ export interface StorageQuotaMethods {
 }
 
 /*********************************************
+* SupportedGeoLocationsForTenant
+**********************************************/
+export interface SupportedGeoLocationsForTenant {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+	Items?: { results: Array<string> };
+}
+
+/*********************************************
+* SupportedGeoLocationsForTenantCollections
+**********************************************/
+export interface SupportedGeoLocationsForTenantCollections {
+
+}
+
+/*********************************************
 * ITaxonomyReplicationParameters
 **********************************************/
 export interface ITaxonomyReplicationParameters extends TaxonomyReplicationParametersCollections, TaxonomyReplicationParametersMethods, Base.IBaseQuery<TaxonomyReplicationParameters, ITaxonomyReplicationParametersQuery> {
@@ -1267,6 +1445,7 @@ export interface TaxonomyReplicationParametersMethods {
 **********************************************/
 export interface TenantInformation {
 	GeoLocation?: string;
+	IsIBEnabled?: boolean;
 	MySiteHostDomain?: string;
 	PortalDomain?: string;
 	RootSiteDomain?: string;
@@ -1391,6 +1570,49 @@ export interface UserMoveJobMethods {
 	cancel(): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* OrgRelationGroupManagedPath
+**********************************************/
+export interface OrgRelationGroupManagedPath {
+	GroupManagedPath?: string;
+}
+
+/*********************************************
+* OrgRelationGroupManagedPathCollections
+**********************************************/
+export interface OrgRelationGroupManagedPathCollections {
+
+}
+
+/*********************************************
+* OrgRelationNotification
+**********************************************/
+export interface OrgRelationNotification {
+	NotificationSucceeded?: boolean;
+}
+
+/*********************************************
+* OrgRelationNotificationCollections
+**********************************************/
+export interface OrgRelationNotificationCollections {
+
+}
+
+/*********************************************
+* OrgRelationVerification
+**********************************************/
+export interface OrgRelationVerification {
+	PartnerSiteSubscriptionId?: any;
+	Result?: string;
+}
+
+/*********************************************
+* OrgRelationVerificationCollections
+**********************************************/
+export interface OrgRelationVerificationCollections {
+
 }
 
 /*********************************************

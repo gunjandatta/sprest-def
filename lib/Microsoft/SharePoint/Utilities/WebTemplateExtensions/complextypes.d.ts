@@ -7,10 +7,22 @@ import { Microsoft } from "../../../../";
 export interface SiteDesignCreationInfo {
 	Description?: string;
 	DesignPackageId?: any;
+	DesignType?: number;
 	IsDefault?: boolean;
+	IsOutOfBoxTemplate?: boolean;
+	IsTenantAdminOnly?: boolean;
+	ListColor?: number;
+	ListIcon?: number;
+	LogoUrl?: string;
 	PreviewImageAltText?: string;
 	PreviewImageUrl?: string;
+	RequiresGroupConnected?: boolean;
+	RequiresTeamsConnected?: boolean;
+	RequiresYammerConnected?: boolean;
 	SiteScriptIds?: Array<any>;
+	SupportedWebTemplates?: Array<string>;
+	TemplateFeatures?: Array<string>;
+	ThumbnailUrl?: string;
 	Title?: string;
 	WebTemplate?: string;
 }
@@ -27,6 +39,7 @@ export interface SiteDesignCreationInfoCollections {
 **********************************************/
 export interface SiteDesignMetadata {
 	Id?: any;
+	Order?: number;
 	Version?: number;
 }
 
@@ -41,8 +54,11 @@ export interface SiteDesignMetadataCollections {
 * SiteScriptActionResult
 **********************************************/
 export interface SiteScriptActionResult {
+	ErrorCode?: number;
 	Outcome?: number;
 	OutcomeText?: string;
+	Target?: string;
+	TargetId?: string;
 	Title?: string;
 }
 

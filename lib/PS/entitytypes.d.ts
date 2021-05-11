@@ -3,35 +3,6 @@ import { PS } from "../";
 import { SP } from "../";
 
 /*********************************************
-* EntityType
-**********************************************/
-export interface EntityType {
-	Name?: string;
-	ID?: any;
-}
-
-/*********************************************
-* EntityTypeCollections
-**********************************************/
-export interface EntityTypeCollections {
-
-}
-
-/*********************************************
-* LookupTables
-**********************************************/
-export interface LookupTables {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-}
-
-/*********************************************
-* LookupTablesCollections
-**********************************************/
-export interface LookupTablesCollections {
-
-}
-
-/*********************************************
 * IAssignment
 **********************************************/
 export interface IAssignment extends AssignmentCollections, AssignmentMethods, Base.IBaseQuery<Assignment, IAssignmentQuery> {
@@ -251,6 +222,21 @@ export interface CustomFieldOData extends Base.IBaseResult, CustomFieldProps, Cu
 **********************************************/
 export interface CustomFieldMethods {
 	delete(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* EntityType
+**********************************************/
+export interface EntityType {
+	Name?: string;
+	ID?: any;
+}
+
+/*********************************************
+* EntityTypeCollections
+**********************************************/
+export interface EntityTypeCollections {
+
 }
 
 /*********************************************
@@ -2753,7 +2739,9 @@ export interface PublishedTaskLink {
 	LinkLag?: number;
 	LinkLagDuration?: string;
 	LinkLagFmt?: number;
+	PredecessorTaskId?: any;
 	ProjUid?: any;
+	SuccessorTaskId?: any;
 }
 
 /*********************************************
@@ -3076,7 +3064,9 @@ export interface DraftTaskLink {
 	DependencyType?: number;
 	EndId?: any;
 	LinkLagDuration?: string;
+	PredecessorTaskId?: any;
 	StartId?: any;
+	SuccessorTaskId?: any;
 }
 
 /*********************************************
@@ -5574,5 +5564,19 @@ export interface TimePhaseOData extends Base.IBaseResult, TimePhaseProps, TimePh
 * TimePhaseMethods
 **********************************************/
 export interface TimePhaseMethods {
+
+}
+
+/*********************************************
+* LookupTables
+**********************************************/
+export interface LookupTables {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* LookupTablesCollections
+**********************************************/
+export interface LookupTablesCollections {
 
 }

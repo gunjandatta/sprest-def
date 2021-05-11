@@ -383,6 +383,7 @@ export interface WorkflowServicesManager extends Base.IBaseResult, WorkflowServi
 export interface WorkflowServicesManagerProps {
 	AppId?: string;
 	IsConnected?: boolean;
+	IsRegistered?: boolean;
 	ScopePath?: string;
 	ServiceHealthStatus?: number;
 }

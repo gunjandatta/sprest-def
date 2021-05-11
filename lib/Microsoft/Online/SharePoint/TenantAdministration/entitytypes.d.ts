@@ -255,10 +255,14 @@ export interface SiteCollectionManagementServiceOData extends Base.IBaseResult, 
 * SiteCollectionManagementServiceMethods
 **********************************************/
 export interface SiteCollectionManagementServiceMethods {
-	exportCSVFile(): Base.IBaseExecution<string>;
+	exportCSVFile(viewXml?: string): Base.IBaseExecution<string>;
+	getSiteCohortsSummary(view?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteCohortsSummary>;
+	getSiteCreationSource(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteCreationSource>;
 	getSiteDescription(siteId?: any): Base.IBaseExecution<string>;
+	getTrackViewFeatureAlwaysVisible(): Base.IBaseExecution<boolean>;
 	office365ProvidedSharepointSiteActivityDataReady(): Base.IBaseExecution<boolean>;
 	resetTimestampUpdateOffice365ProvidedSharepointSiteActivityData(): Base.IBaseExecution<any>;
+	setTrackViewFeatureAlwaysVisible(): Base.IBaseExecution<boolean>;
 	updateOffice365ProvidedSharepointSiteActivityData(oauthToken?: string): Base.IBaseExecution<boolean>;
 }
 
@@ -307,6 +311,7 @@ export interface SitePropertiesProps {
 	AnonymousLinkExpirationInDays?: number;
 	AuthContextStrength?: string;
 	AverageResourceUsage?: number;
+	BlockDownloadLinksFileType?: number;
 	CommentsOnSitePagesDisabled?: boolean;
 	CompatibilityLevel?: number;
 	ConditionalAccessPolicy?: number;
@@ -325,8 +330,10 @@ export interface SitePropertiesProps {
 	GroupOwnerLoginName?: string;
 	HasHolds?: boolean;
 	HubSiteId?: any;
-	IBSegmentDisplayNames?: string;
+	IBMode?: string;
 	IBSegments?: { results: Array<any> };
+	IBSegmentsToAdd?: { results: Array<any> };
+	IBSegmentsToRemove?: { results: Array<any> };
 	IsGroupOwnerSiteAdmin?: boolean;
 	IsHubSite?: boolean;
 	LastContentModifiedDate?: any;
@@ -334,6 +341,7 @@ export interface SitePropertiesProps {
 	LimitedAccessFileType?: number;
 	LockIssue?: string;
 	LockState?: string;
+	OverrideBlockUserInfoVisibility?: number;
 	OverrideTenantAnonymousLinkExpirationPolicy?: boolean;
 	OverrideTenantExternalUserExpirationPolicy?: boolean;
 	Owner?: string;
@@ -479,6 +487,20 @@ export interface SPOGroupMethods {
 }
 
 /*********************************************
+* SPOPortalLaunchValidator
+**********************************************/
+export interface SPOPortalLaunchValidator {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPOPortalLaunchValidatorCollections
+**********************************************/
+export interface SPOPortalLaunchValidatorCollections {
+
+}
+
+/*********************************************
 * SPOTenantCdnPolicy
 **********************************************/
 export interface SPOTenantCdnPolicy {
@@ -568,8 +590,11 @@ export interface TenantAdminSettingsServiceProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 	AutoQuotaEnabled?: Microsoft.Online.SharePoint.TenantAdministration.AutoQuotaEnabled;
 	AvailableManagedPathsForSiteCreation?: { results: Array<string> };
+	CommentsOnSitePagesDisabled?: Microsoft.Online.SharePoint.TenantAdministration.CommentsOnSitePagesDisabled;
 	CustomFormUrl?: Microsoft.Online.SharePoint.TenantAdministration.CustomFormUrl;
 	DisableGroupify?: Microsoft.Online.SharePoint.TenantAdministration.DisableGroupify;
+	EnableAutoNewsDigest?: Microsoft.Online.SharePoint.TenantAdministration.EnableAutoNewsDigest;
+	IncludeAtAGlanceInShareEmails?: Microsoft.Online.SharePoint.TenantAdministration.IncludeAtAGlanceInShareEmails;
 	MailFromAddress?: Microsoft.Online.SharePoint.TenantAdministration.MailFromAddress;
 	MobileNotificationIsEnabledForSharepoint?: Microsoft.Online.SharePoint.TenantAdministration.MobileNotificationIsEnabledForSharepoint;
 	NewPortalAsDefault?: Microsoft.Online.SharePoint.TenantAdministration.NewPortalAsDefault;
@@ -584,9 +609,11 @@ export interface TenantAdminSettingsServiceProps {
 	ShowSelfServiceSiteCreation?: Microsoft.Online.SharePoint.TenantAdministration.ShowSelfServiceSiteCreation;
 	SiteCreationDefaultStorageQuota?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationDefaultStorageQuota;
 	SiteCreationNewUX?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationNewUX;
+	SitePagesEnabled?: Microsoft.Online.SharePoint.TenantAdministration.SitePagesEnabled;
 	SmtpServer?: Microsoft.Online.SharePoint.TenantAdministration.SmtpServer;
 	SPListModernUXOff?: Microsoft.Online.SharePoint.TenantAdministration.SPListModernUXOff;
 	TenantDefaultTimeZoneId?: Microsoft.Online.SharePoint.TenantAdministration.TenantDefaultTimeZoneId;
+	UserVoiceForFeedbackEnabled?: Microsoft.Online.SharePoint.TenantAdministration.UserVoiceForFeedbackEnabled;
 }
 
 /*********************************************
@@ -658,33 +685,53 @@ export interface Tenant extends Base.IBaseResult, TenantProps, TenantCollections
 **********************************************/
 export interface TenantProps {
 	AddressbarLinkPermission?: number;
+	AIBuilderDefaultPowerAppsEnvironment?: string;
+	AIBuilderEnabled?: boolean;
+	AIBuilderSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
+	AIBuilderSiteList?: { results: Array<any> };
+	AIBuilderSiteListFileName?: string;
 	AllowCommentsTextOnEmailEnabled?: boolean;
 	AllowDownloadingNonWebViewableFiles?: boolean;
 	AllowedDomainListForSyncClient?: { results: Array<any> };
 	AllowEditing?: boolean;
 	AllowGuestUserShareToUsersNotInSiteCollection?: boolean;
 	AllowLimitedAccessOnUnmanagedDevices?: boolean;
+	AllowOverrideForBlockUserInfoVisibility?: boolean;
 	AllowSelectSGsInODBListInTenant?: { results: Array<string> };
+	AnyoneLinkTrackUsers?: boolean;
 	ApplyAppEnforcedRestrictionsToAdHocRecipients?: boolean;
 	BccExternalSharingInvitations?: boolean;
 	BccExternalSharingInvitationsList?: string;
 	BlockAccessOnUnmanagedDevices?: boolean;
+	BlockDownloadLinksFileType?: number;
 	BlockDownloadOfAllFilesForGuests?: boolean;
 	BlockDownloadOfAllFilesOnUnmanagedDevices?: boolean;
 	BlockDownloadOfViewableFilesForGuests?: boolean;
 	BlockDownloadOfViewableFilesOnUnmanagedDevices?: boolean;
 	BlockMacSync?: boolean;
+	BlockSendLabelMismatchEmail?: boolean;
+	BlockUserInfoVisibility?: string;
+	BlockUserInfoVisibilityInOneDrive?: number;
+	BlockUserInfoVisibilityInSharePoint?: number;
 	CommentsOnFilesDisabled?: boolean;
+	CommentsOnListItemsDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
 	CompatibilityRange?: string;
 	ConditionalAccessPolicy?: number;
 	ConditionalAccessPolicyErrorHelpLink?: string;
 	ContentTypeSyncSiteTemplatesList?: { results: Array<string> };
 	CustomizedExternalSharingServiceUrl?: string;
+	DefaultContentCenterSite?: Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker;
 	DefaultLinkPermission?: number;
 	DefaultSharingLinkType?: number;
+	DisableAddToOneDrive?: boolean;
+	DisableBackToClassic?: boolean;
+	DisableCustomAppAuthentication?: boolean;
+	DisabledModernListTemplateIds?: { results: Array<any> };
 	DisabledWebPartIds?: { results: Array<any> };
+	DisablePersonalListCreation?: boolean;
 	DisableReportProblemDialog?: boolean;
+	DisableSpacesActivation?: boolean;
 	DisallowInfectedFileDownload?: boolean;
 	DisplayNamesOfFileViewers?: boolean;
 	DisplayNamesOfFileViewersInSpo?: boolean;
@@ -693,6 +740,7 @@ export interface TenantProps {
 	EmailAttestationReAuthDays?: number;
 	EmailAttestationRequired?: boolean;
 	EnableAIPIntegration?: boolean;
+	EnableAutoNewsDigest?: boolean;
 	EnableAzureADB2BIntegration?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
 	EnableMinimumVersionRequirement?: boolean;
@@ -707,17 +755,30 @@ export interface TenantProps {
 	FolderAnonymousLinkType?: number;
 	GuestSharingGroupAllowListInTenant?: string;
 	GuestSharingGroupAllowListInTenantByPrincipalIdentity?: { results: Array<string> };
+	HasAdminCompletedCUConfiguration?: boolean;
+	HasIntelligentContentServicesCapability?: boolean;
+	HasTopicExperiencesCapability?: boolean;
 	HideDefaultThemes?: boolean;
+	HideSyncButtonOnDocLib?: boolean;
 	HideSyncButtonOnODB?: boolean;
+	ImageTaggingOption?: number;
+	IncludeAtAGlanceInShareEmails?: boolean;
+	InformationBarriersSuspension?: boolean;
 	IPAddressAllowList?: string;
 	IPAddressEnforcement?: boolean;
 	IPAddressWACTokenLifetime?: number;
+	IsAppBarTemporarilyDisabled?: boolean;
+	IsFluidEnabled?: boolean;
 	IsHubSitesMultiGeoFlightEnabled?: boolean;
+	IsMnAFlightEnabled?: boolean;
 	IsMultiGeo?: boolean;
 	IsUnmanagedSyncClientForTenantRestricted?: boolean;
 	IsUnmanagedSyncClientRestrictionFlightEnabled?: boolean;
+	IsWBFluidEnabled?: boolean;
+	LabelMismatchEmailHelpLink?: string;
 	LegacyAuthProtocolsEnabled?: boolean;
 	LimitedAccessFileType?: number;
+	MachineLearningCaptureEnabled?: boolean;
 	ManagedPathsForSiteCreation?: { results: Array<string> };
 	MarkNewFilesSensitiveByDefault?: number;
 	MobileFriendlyUrlEnabledInTenant?: boolean;
@@ -762,6 +823,7 @@ export interface TenantProps {
 	SocialBarOnSitePagesDisabled?: boolean;
 	SpecialCharactersStateInFileFolderNames?: number;
 	StartASiteFormUrl?: string;
+	StopNew2010Workflows?: boolean;
 	StorageQuota?: number;
 	StorageQuotaAllocated?: number;
 	SyncAadB2BManagementPolicy?: boolean;
@@ -771,6 +833,8 @@ export interface TenantProps {
 	UserVoiceForFeedbackEnabled?: boolean;
 	WhoCanShareAllowListInTenant?: string;
 	WhoCanShareAllowListInTenantByPrincipalIdentity?: { results: Array<string> };
+	Workflow2010Disabled?: boolean;
+	Workflows2013State?: number;
 }
 
 /*********************************************
@@ -804,26 +868,38 @@ export interface TenantMethods {
 	connectSiteToHubSiteById(siteUrl?: string, hubSiteId?: any): Base.IBaseExecution<any>;
 	createSite(siteCreationProperties?: Microsoft.Online.SharePoint.TenantAdministration.SiteCreationProperties): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	getIdleSessionSignOutForUnmanagedDevices(): Base.IBaseExecution<string>;
+	getPowerAppsEnvironments(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironment>;
+	getSiteHealthStatus(sourceUrl?: string): Base.IBaseExecution<SP.Publishing.PortalHealthStatus>;
 	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
 	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
+	getSiteSubscriptionId(): Base.IBaseExecution<any>;
 	getSPOAllWebTemplates(cultureName?: string, compatibilityLevel?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
+	getSPOSiteCreationSources(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SPOSiteCreationSource>;
 	getSPOTenantAllWebTemplates(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	getSPOTenantWebTemplates(localeId?: number, compatibilityLevel?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
+	getTenantAllOrCompatibleIBSegments(segments?: Array<any>): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo>;
 	grantHubSiteRightsById(hubSiteId?: any, principals?: Array<string>, grantedRights?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	hasValidEducationLicense(): Base.IBaseExecution<boolean>;
+	pftTestGetDrives(): Base.IBaseExecution<string>;
+	pftTestGetUrl(url?: string): Base.IBaseExecution<string>;
+	pftTestGetUrlEx(url?: string, realm?: string): Base.IBaseExecution<string>;
 	registerHubSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	registerHubSiteWithCreationInformation(siteUrl?: string, creationInformation?: SP.HubSiteCreationInformation): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	removeDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	removeDeletedSitePreferId(siteUrl?: string, siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	removeSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	renderIBSegmentListDataAsStream(parameters?: SP.RenderListDataParameters, segments?: Array<any>, overrideParameters?: SP.RenderListDataOverrideParameters): Base.IBaseExecution<any>;
 	restoreDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	restoreDeletedSitePreferId(siteUrl?: string, siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	revokeHubSiteRightsById(hubSiteId?: any, principals?: Array<string>): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
+	setIBSegmentsOnSite(siteId?: any, segments?: Array<any>): Base.IBaseExecution<any>;
 	setIdleSessionSignOutForUnmanagedDevices(enabled?: boolean, warnAfter?: any, signOutAfter?: any): Base.IBaseExecution<boolean>;
 	setSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseExecution<any>;
+	setSiteUserGroups(siteUserGroupsData?: Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData): Base.IBaseExecution<any>;
 	swapSite(sourceUrl?: string, targetUrl?: string, archiveUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	swapSiteWithSmartGestureOption(sourceUrl?: string, targetUrl?: string, archiveUrl?: string, includeSmartGestures?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	swapSiteWithSmartGestureOptionForce(sourceUrl?: string, targetUrl?: string, archiveUrl?: string, includeSmartGestures?: boolean, force?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	unregisterHubSite(siteUrl?: string): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
 }
