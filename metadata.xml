@@ -1270,7 +1270,6 @@
                 <Property Name="Title" Type="Edm.String" />
                 <Property Name="Client_Title" Type="Edm.String"/>
                 <NavigationProperty Name="AttachmentFiles" Relationship="SP.SP_ListItem_AttachmentFiles_SP_Attachment_AttachmentFilesPartner" ToRole="AttachmentFiles" FromRole="AttachmentFilesPartner"/>
-                <NavigationProperty Name="Comments" Relationship="PS.PS_Engagement_Comments_PS_EngagementComment_CommentsPartner" ToRole="Comments" FromRole="CommentsPartner"/>
                 <NavigationProperty Name="ContentType" Relationship="SP.SP_ListItem_ContentType_SP_ContentType_ContentTypePartner" ToRole="ContentType" FromRole="ContentTypePartner"/>
                 <NavigationProperty Name="GetDlpPolicyTip" Relationship="SP.SP_ListItem_GetDlpPolicyTip_SP_DlpPolicyTip_GetDlpPolicyTipPartner" ToRole="GetDlpPolicyTip" FromRole="GetDlpPolicyTipPartner"/>
                 <NavigationProperty Name="FieldValuesAsHtml" Relationship="SP.SP_ListItem_FieldValuesAsHtml_SP_FieldStringValues_FieldValuesAsHtmlPartner" ToRole="FieldValuesAsHtml" FromRole="FieldValuesAsHtmlPartner"/>
