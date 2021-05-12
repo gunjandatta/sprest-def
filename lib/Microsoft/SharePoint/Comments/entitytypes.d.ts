@@ -78,6 +78,7 @@ export interface commentCollections extends commentPropMethods {
 **********************************************/
 export interface commentCollectionMethods {
 	deleteAll(): Base.IBaseExecution<boolean>;
+	add(text?: SP.Microsoft.SharePoint.Comments.comment): Base.IBaseExecution<SP.Microsoft.SharePoint.Comments.comment>;
 }
 
 /*********************************************
@@ -94,6 +95,7 @@ export interface commentOData extends Base.IBaseResult, commentProps, commentMet
 export interface commentMethods {
 	like(): Base.IBaseExecution<any>;
 	unlike(): Base.IBaseExecution<any>;
+	delete(): Base.IBaseExecution<any>;
 }
 
 /*********************************************

@@ -1454,6 +1454,10 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.SharePoint.Comments.comment": {
+		delete: {
+		requestType: RequestType.Delete
+		},
+
 		like: {
 		},
 
@@ -1465,6 +1469,10 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.SharePoint.Comments.comment.Collection": {
+		add: {
+		argNames: [ "text" ],
+		},
+
 		deleteAll: {
 		},
 

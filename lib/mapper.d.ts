@@ -1525,6 +1525,9 @@ export interface IMapper {
 
 	"Microsoft.SharePoint.Comments.comment": {
 		properties?: Array<string>;
+		delete: IMapperMethod & {
+		},
+
 		like: IMapperMethod & {
 		},
 
@@ -1537,6 +1540,10 @@ export interface IMapper {
 
 	"Microsoft.SharePoint.Comments.comment.Collection": {
 		properties?: Array<string>;
+		add: IMapperMethod & {
+		argNames: [ "text" ],
+		},
+
 		deleteAll: IMapperMethod & {
 		},
 

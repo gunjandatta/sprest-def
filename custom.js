@@ -25,6 +25,24 @@ module.exports = {
         }
     ],
 
+    // Comments
+    "Microsoft.SharePoint.Comments.comment": [
+        {
+            name: "delete",
+            returnType: "any",
+            params: []
+        }
+    ],
+
+    // Comments
+    "Collection(Microsoft.SharePoint.Comments.comment)": [
+        {
+            name: "add",
+            returnType: "SP.Microsoft.SharePoint.Comments.comment",
+            params: [{ $: { Name: "text", Type: "SP.Microsoft.SharePoint.Comments.comment" } }]
+        }
+    ],
+
     // Content Type
     "SP.ContentType": [
         {
