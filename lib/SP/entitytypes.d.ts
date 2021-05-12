@@ -1,5 +1,6 @@
 import { Base } from "../";
 import { SP } from "../";
+import { PS } from "../";
 import { Microsoft } from "../";
 
 /*********************************************
@@ -1195,6 +1196,8 @@ export interface ListItemPropMethods {
 export interface ListItemCollections extends ListItemPropMethods {
 	AttachmentFiles(): Base.IBaseCollection<SP.Attachment> & SP.AttachmentCollectionMethods;
 	AttachmentFiles(id: string | number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.Attachment> & SP.AttachmentCollections & SP.AttachmentMethods;
+	Comments(): Base.IBaseCollection<PS.EngagementComment, PS.EngagementCommentOData, Base.IBaseExecution & PS.EngagementCommentCollectionMethods> & Base.IBaseExecution & PS.EngagementCommentCollectionMethods;
+	Comments(id: string | number): SP.SecurableObjectCollections & Base.IBaseQuery<PS.EngagementComment, PS.EngagementCommentOData> & PS.EngagementCommentCollections;
 	Versions(): Base.IBaseCollection<SP.ListItemVersion, SP.ListItemVersionOData, Base.IBaseExecution & SP.ListItemVersionCollectionMethods> & Base.IBaseExecution & SP.ListItemVersionCollectionMethods;
 	Versions(id: string | number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItemVersion, SP.ListItemVersionOData> & SP.ListItemVersionCollections & SP.ListItemVersionMethods;
 }
@@ -1213,6 +1216,7 @@ export interface ListItemCollectionMethods {
 **********************************************/
 export interface ListItemOData extends SP.SecurableObjectOData, Base.IBaseResult, ListItemProps, ListItemMethods {
 	AttachmentFiles: Base.IBaseResults<SP.Attachment> & SP.AttachmentCollectionMethods;
+	Comments: Base.IBaseResults<PS.EngagementComment> & PS.EngagementCommentCollectionMethods;
 	ContentType: SP.ContentType & SP.ContentTypeCollections & SP.ContentTypeCollectionMethods;
 	GetDlpPolicyTip: SP.DlpPolicyTip & SP.DlpPolicyTipCollections;
 	FieldValuesAsHtml: SP.FieldStringValues & SP.FieldStringValuesCollections;

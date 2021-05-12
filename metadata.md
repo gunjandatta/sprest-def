@@ -6,6 +6,7 @@ These are missing properties that are relevant to the SharePoint REST API.
 
 ```
 <Property Name="Title" Type="Edm.String" />
+<NavigationProperty Name="Comments" Relationship="PS.PS_Engagement_Comments_PS_EngagementComment_CommentsPartner" ToRole="Comments" FromRole="CommentsPartner"/>
 ```
 
 ###### ComplexType GroupCreationInformation
