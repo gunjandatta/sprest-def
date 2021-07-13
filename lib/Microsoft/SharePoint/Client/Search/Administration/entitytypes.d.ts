@@ -71,3 +71,73 @@ export interface DocumentCrawlLogMethods {
 	getCrawledUrls(getCountOnly?: boolean, maxRows?: number, queryString?: string, isLike?: boolean, contentSourceID?: number, errorLevel?: number, errorID?: number, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
 	getUnsuccesfulCrawledUrls(displayUrl?: string, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
 }
+
+/*********************************************
+* ISiteCrawlVersionInfoProvider
+**********************************************/
+export interface ISiteCrawlVersionInfoProvider extends SiteCrawlVersionInfoProviderCollections, SiteCrawlVersionInfoProviderMethods, Base.IBaseQuery<SiteCrawlVersionInfoProvider, ISiteCrawlVersionInfoProviderQuery> {
+
+}
+
+/*********************************************
+* ISiteCrawlVersionInfoProviderCollection
+**********************************************/
+export interface ISiteCrawlVersionInfoProviderCollection extends Base.IBaseResults<SiteCrawlVersionInfoProvider> {
+	done?: (resolve: (value?: Array<SiteCrawlVersionInfoProvider>) => void) => void;
+}
+
+/*********************************************
+* ISiteCrawlVersionInfoProviderQueryCollection
+**********************************************/
+export interface ISiteCrawlVersionInfoProviderQueryCollection extends Base.IBaseResults<SiteCrawlVersionInfoProviderOData> {
+	done?: (resolve: (value?: Array<SiteCrawlVersionInfoProviderOData>) => void) => void;
+}
+
+/*********************************************
+* ISiteCrawlVersionInfoProviderQuery
+**********************************************/
+export interface ISiteCrawlVersionInfoProviderQuery extends SiteCrawlVersionInfoProviderOData, SiteCrawlVersionInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteCrawlVersionInfoProvider
+**********************************************/
+export interface SiteCrawlVersionInfoProvider extends Base.IBaseResult, SiteCrawlVersionInfoProviderProps, SiteCrawlVersionInfoProviderCollections, SiteCrawlVersionInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteCrawlVersionInfoProviderProps
+**********************************************/
+export interface SiteCrawlVersionInfoProviderProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteCrawlVersionInfoProviderPropMethods
+**********************************************/
+export interface SiteCrawlVersionInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* SiteCrawlVersionInfoProviderCollections
+**********************************************/
+export interface SiteCrawlVersionInfoProviderCollections extends SiteCrawlVersionInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* SiteCrawlVersionInfoProviderOData
+**********************************************/
+export interface SiteCrawlVersionInfoProviderOData extends Base.IBaseResult, SiteCrawlVersionInfoProviderProps, SiteCrawlVersionInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteCrawlVersionInfoProviderMethods
+**********************************************/
+export interface SiteCrawlVersionInfoProviderMethods {
+	getSiteCrawlVersionStatus(): Base.IBaseExecution<SP.SimpleDataTable>;
+}

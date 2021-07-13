@@ -2448,6 +2448,7 @@ export interface SitePagesItemProps {
 	OData__OriginalSourceWebId?: any;
 	OData__OriginalSourceListId?: any;
 	OData__OriginalSourceItemId?: any;
+	OData__SPAssetFolderId?: number;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;

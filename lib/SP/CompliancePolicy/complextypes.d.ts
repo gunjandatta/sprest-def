@@ -26,6 +26,7 @@ export interface ComplianceTag {
 	AutoDelete?: boolean;
 	BlockDelete?: boolean;
 	BlockEdit?: boolean;
+	ComplianceFlags?: number;
 	ContainsSiteLabel?: boolean;
 	DisplayName?: string;
 	EncryptionRMSTemplateId?: string;
@@ -41,6 +42,7 @@ export interface ComplianceTag {
 	TagId?: any;
 	TagName?: string;
 	TagRetentionBasedOn?: string;
+	UnlockedAsDefault?: boolean;
 }
 
 /*********************************************

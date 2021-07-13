@@ -704,12 +704,16 @@ export interface MigrationTaskProps {
 	LogFilePath?: string;
 	ManagementStatus?: number;
 	MigratedFilesCount?: number;
+	NextScheduleTimeUtc?: any;
 	OverallProgressPercentage?: number;
 	ReportFileUrl?: string;
+	RunTimes?: number;
 	ScanDoneTimeUtc?: any;
+	ScheduledTimes?: number;
 	StartTimeUTC?: any;
 	Status?: number;
 	StatusUpdatedTimeUTC?: any;
+	TaskCreatedTimeUtc?: any;
 	TaskId?: any;
 	ToBeMigratedFilesCount?: number;
 	TotalBytes?: number;

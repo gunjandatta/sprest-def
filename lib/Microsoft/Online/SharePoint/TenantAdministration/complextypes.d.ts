@@ -541,6 +541,23 @@ export interface SPOSitePropertiesEnumerableFilterCollections {
 }
 
 /*********************************************
+* SiteStateProperties
+**********************************************/
+export interface SiteStateProperties {
+	GroupSiteRelationship?: number;
+	IsArchived?: boolean;
+	IsSiteOnHold?: boolean;
+	LockState?: number;
+}
+
+/*********************************************
+* SiteStatePropertiesCollections
+**********************************************/
+export interface SiteStatePropertiesCollections {
+
+}
+
+/*********************************************
 * SiteUserGroupInfo
 **********************************************/
 export interface SiteUserGroupInfo {

@@ -12,6 +12,13 @@ export interface SPAuthEvent {
 /*********************************************
 * SPAuthEventCollections
 **********************************************/
-export interface SPAuthEventCollections {
+export interface SPAuthEventCollections extends SPAuthEventCollectionMethods {
 
+}
+
+/*********************************************
+* SPAuthEventCollectionMethods
+**********************************************/
+export interface SPAuthEventCollectionMethods {
+	roleAssignmentMSGraphNotify(tenant?: string, action?: string, type?: string, resourcePayload?: Microsoft.SharePoint.AuthPolicy.Events.RoleAssignmentResourcePayload, id?: string): Base.IBaseExecution<Microsoft.SharePoint.AuthPolicy.Events.SPAuthEvent>;
 }

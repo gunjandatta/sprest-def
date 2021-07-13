@@ -4,15 +4,19 @@ import { Base } from "../../../";
 * SmartCacheItem
 **********************************************/
 export interface SmartCacheItem {
-	contentClass?: string;
+	accessUrl?: string;
+	containerTitle?: string;
+	isDefaultDocumentLibrary?: boolean;
 	lastAccessDateTime?: any;
 	listId?: any;
 	operation?: number;
+	pinOrder?: number;
 	siteId?: any;
 	spoId?: string;
-	spproperties?: string;
+	title?: string;
 	uniqueId?: any;
 	webId?: any;
+	webUrl?: string;
 }
 
 /*********************************************

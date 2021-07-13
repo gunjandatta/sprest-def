@@ -336,6 +336,8 @@ export interface SitePropertiesProps {
 	IBSegmentsToRemove?: { results: Array<any> };
 	IsGroupOwnerSiteAdmin?: boolean;
 	IsHubSite?: boolean;
+	IsTeamsChannelConnected?: boolean;
+	IsTeamsConnected?: boolean;
 	LastContentModifiedDate?: any;
 	Lcid?: number;
 	LimitedAccessFileType?: number;
@@ -367,6 +369,7 @@ export interface SitePropertiesProps {
 	StorageQuotaType?: string;
 	StorageUsage?: number;
 	StorageWarningLevel?: number;
+	TeamsChannelType?: number;
 	Template?: string;
 	TimeZoneId?: number;
 	Title?: string;
@@ -394,9 +397,11 @@ export interface SitePropertiesCollections extends SitePropertiesPropMethods {
 * SitePropertiesCollectionMethods
 **********************************************/
 export interface SitePropertiesCollectionMethods {
+	checkSiteIsArchivedById(siteId?: any): Base.IBaseExecution<boolean>;
 	getById(siteId?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollections & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesMethods;
 	getGroupSiteRelationship(siteId?: any): Base.IBaseExecution<number>;
 	getLockStateById(siteId?: any): Base.IBaseExecution<number>;
+	getSiteStateProperties(siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteStateProperties>;
 	getSiteUserGroups(siteId?: any, userGroupIds?: Array<number>): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupInfo>>;
 }
 
@@ -713,6 +718,7 @@ export interface TenantProps {
 	BlockUserInfoVisibility?: string;
 	BlockUserInfoVisibilityInOneDrive?: number;
 	BlockUserInfoVisibilityInSharePoint?: number;
+	ChannelMeetingRecordingPermission?: number;
 	CommentsOnFilesDisabled?: boolean;
 	CommentsOnListItemsDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
@@ -723,12 +729,14 @@ export interface TenantProps {
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultContentCenterSite?: Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker;
 	DefaultLinkPermission?: number;
+	DefaultODBMode?: string;
 	DefaultSharingLinkType?: number;
 	DisableAddToOneDrive?: boolean;
 	DisableBackToClassic?: boolean;
 	DisableCustomAppAuthentication?: boolean;
 	DisabledModernListTemplateIds?: { results: Array<any> };
 	DisabledWebPartIds?: { results: Array<any> };
+	DisableOutlookPSTVersionTrimming?: boolean;
 	DisablePersonalListCreation?: boolean;
 	DisableReportProblemDialog?: boolean;
 	DisableSpacesActivation?: boolean;
@@ -742,6 +750,7 @@ export interface TenantProps {
 	EnableAIPIntegration?: boolean;
 	EnableAutoNewsDigest?: boolean;
 	EnableAzureADB2BIntegration?: boolean;
+	EnabledFlightAllowAADB2BSkipCheckingOTP?: boolean;
 	EnableGuestSignInAcceleration?: boolean;
 	EnableMinimumVersionRequirement?: boolean;
 	EnableMipSiteLabel?: boolean;
@@ -768,6 +777,7 @@ export interface TenantProps {
 	IPAddressEnforcement?: boolean;
 	IPAddressWACTokenLifetime?: number;
 	IsAppBarTemporarilyDisabled?: boolean;
+	IsCollabMeetingNotesFluidEnabled?: boolean;
 	IsFluidEnabled?: boolean;
 	IsHubSitesMultiGeoFlightEnabled?: boolean;
 	IsMnAFlightEnabled?: boolean;
@@ -808,6 +818,7 @@ export interface TenantProps {
 	RequireAnonymousLinksExpireInDays?: number;
 	ResourceQuota?: number;
 	ResourceQuotaAllocated?: number;
+	RestrictedOneDriveLicense?: boolean;
 	RootSiteUrl?: string;
 	SearchResolveExactEmailOrUPN?: boolean;
 	SharingAllowedDomainList?: string;
@@ -824,8 +835,11 @@ export interface TenantProps {
 	SpecialCharactersStateInFileFolderNames?: number;
 	StartASiteFormUrl?: string;
 	StopNew2010Workflows?: boolean;
+	StopNew2013Workflows?: boolean;
 	StorageQuota?: number;
 	StorageQuotaAllocated?: number;
+	StreamLaunchConfig?: number;
+	StreamLaunchConfigLastUpdated?: any;
 	SyncAadB2BManagementPolicy?: boolean;
 	SyncPrivacyProfileProperties?: boolean;
 	UseFindPeopleInPeoplePicker?: boolean;
@@ -874,6 +888,7 @@ export interface TenantMethods {
 	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
 	getSiteSubscriptionId(): Base.IBaseExecution<any>;
+	getSPHSiteUrl(): Base.IBaseExecution<string>;
 	getSPOAllWebTemplates(cultureName?: string, compatibilityLevel?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
 	getSPOSiteCreationSources(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SPOSiteCreationSource>;
 	getSPOTenantAllWebTemplates(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOTenantWebTemplateCollection>;
@@ -881,22 +896,22 @@ export interface TenantMethods {
 	getTenantAllOrCompatibleIBSegments(segments?: Array<any>): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo>;
 	grantHubSiteRightsById(hubSiteId?: any, principals?: Array<string>, grantedRights?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	hasValidEducationLicense(): Base.IBaseExecution<boolean>;
-	pftTestGetDrives(): Base.IBaseExecution<string>;
-	pftTestGetUrl(url?: string): Base.IBaseExecution<string>;
-	pftTestGetUrlEx(url?: string, realm?: string): Base.IBaseExecution<string>;
 	registerHubSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	registerHubSiteWithCreationInformation(siteUrl?: string, creationInformation?: SP.HubSiteCreationInformation): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	removeDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	removeDeletedSitePreferId(siteUrl?: string, siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	removeSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
-	renderIBSegmentListDataAsStream(parameters?: SP.RenderListDataParameters, segments?: Array<any>, overrideParameters?: SP.RenderListDataOverrideParameters): Base.IBaseExecution<any>;
+	removeSPHSite(): Base.IBaseExecution<string>;
+	renderIBSegmentListDataAsStream(parameters?: SP.RenderListDataParameters, segments?: Array<any>, CascDelWarnMessage?: string, CustomAction?: string, DrillDown?: string, Field?: string, FieldInternalName?: string, Filter?: string, FilterData?: string, FilterData1?: string, FilterData10?: string, FilterData2?: string, FilterData3?: string, FilterData4?: string, FilterData5?: string, FilterData6?: string, FilterData7?: string, FilterData8?: string, FilterData9?: string, FilterField?: string, FilterField1?: string, FilterField10?: string, FilterField2?: string, FilterField3?: string, FilterField4?: string, FilterField5?: string, FilterField6?: string, FilterField7?: string, FilterField8?: string, FilterField9?: string, FilterFields?: string, FilterFields1?: string, FilterFields10?: string, FilterFields2?: string, FilterFields3?: string, FilterFields4?: string, FilterFields5?: string, FilterFields6?: string, FilterFields7?: string, FilterFields8?: string, FilterFields9?: string, FilterLookupId?: string, FilterLookupId1?: string, FilterLookupId10?: string, FilterLookupId2?: string, FilterLookupId3?: string, FilterLookupId4?: string, FilterLookupId5?: string, FilterLookupId6?: string, FilterLookupId7?: string, FilterLookupId8?: string, FilterLookupId9?: string, FilterOp?: string, FilterOp1?: string, FilterOp10?: string, FilterOp2?: string, FilterOp3?: string, FilterOp4?: string, FilterOp5?: string, FilterOp6?: string, FilterOp7?: string, FilterOp8?: string, FilterOp9?: string, FilterValue?: string, FilterValue1?: string, FilterValue10?: string, FilterValue2?: string, FilterValue3?: string, FilterValue4?: string, FilterValue5?: string, FilterValue6?: string, FilterValue7?: string, FilterValue8?: string, FilterValue9?: string, FilterValues?: string, FilterValues1?: string, FilterValues10?: string, FilterValues2?: string, FilterValues3?: string, FilterValues4?: string, FilterValues5?: string, FilterValues6?: string, FilterValues7?: string, FilterValues8?: string, FilterValues9?: string, GroupString?: string, HasOverrideSelectCommand?: string, ID?: string, InplaceFullListSearch?: string, InplaceSearchQuery?: string, IsCSR?: string, IsGroupRender?: string, IsXslView?: string, ListViewPageUrl?: string, OverrideRowLimit?: string, OverrideScope?: string, OverrideSelectCommand?: string, PageFirstRow?: string, PageLastRow?: string, QueryParams?: Array<SP.KeyValue>, RootFolder?: string, RootFolderUniqueId?: string, SortDir?: string, SortDir1?: string, SortDir10?: string, SortDir2?: string, SortDir3?: string, SortDir4?: string, SortDir5?: string, SortDir6?: string, SortDir7?: string, SortDir8?: string, SortDir9?: string, SortField?: string, SortField1?: string, SortField10?: string, SortField2?: string, SortField3?: string, SortField4?: string, SortField5?: string, SortField6?: string, SortField7?: string, SortField8?: string, SortField9?: string, SortFields?: string, SortFieldValues?: string, View?: string, ViewCount?: string, ViewId?: string, ViewPath?: string, WebPartId?: string): Base.IBaseExecution<any>;
+	renderIBSegmentListFilterData(parameters?: SP.RenderListFilterDataParameters): Base.IBaseExecution<any>;
 	restoreDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	restoreDeletedSitePreferId(siteUrl?: string, siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	revokeHubSiteRightsById(hubSiteId?: any, principals?: Array<string>): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
-	setIBSegmentsOnSite(siteId?: any, segments?: Array<any>): Base.IBaseExecution<any>;
+	setIBSegmentsOnSite(siteId?: any, segments?: Array<any>, ibMode?: string): Base.IBaseExecution<any>;
 	setIdleSessionSignOutForUnmanagedDevices(enabled?: boolean, warnAfter?: any, signOutAfter?: any): Base.IBaseExecution<boolean>;
 	setSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseExecution<any>;
 	setSiteUserGroups(siteUserGroupsData?: Microsoft.Online.SharePoint.TenantAdministration.SiteUserGroupsData): Base.IBaseExecution<any>;
+	setSPHSite(sphSiteUrl?: string): Base.IBaseExecution<string>;
 	swapSite(sourceUrl?: string, targetUrl?: string, archiveUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	swapSiteWithSmartGestureOption(sourceUrl?: string, targetUrl?: string, archiveUrl?: string, includeSmartGestures?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	swapSiteWithSmartGestureOptionForce(sourceUrl?: string, targetUrl?: string, archiveUrl?: string, includeSmartGestures?: boolean, force?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;

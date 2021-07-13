@@ -156,6 +156,7 @@ export interface GroupSiteManagerOData extends Base.IBaseResult, GroupSiteManage
 **********************************************/
 export interface GroupSiteManagerMethods {
 	canUserCreateGroup(): Base.IBaseExecution<boolean>;
+	clearCurrentUserTeamsCache(): Base.IBaseExecution<any>;
 	create(groupId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	createGroup(displayName?: string, alias?: string, isPublic?: boolean, ownerPrincipalNames?: Array<string>, description?: string, creationOptions?: Array<string>): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	createGroupEx(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
@@ -164,15 +165,19 @@ export interface GroupSiteManagerMethods {
 	ensureTeamForGroup(): Base.IBaseExecution<string>;
 	ensureTeamForGroupEx(): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
 	getAllOrgLabels(pageNumber?: number): Base.IBaseExecution<Microsoft.SharePoint.Portal.OrgLabelsContextList>;
+	getCurrentUserJoinedTeams(getLogoData?: boolean): Base.IBaseExecution<string>;
 	getCurrentUserSharedChannelMemberGroups(): Base.IBaseExecution<string>;
+	getCurrentUserTeamConnectedMemberGroups(): Base.IBaseExecution<string>;
 	getGroupCreationContext(): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupCreationContext>;
 	getGroupSiteConversionData(): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteConversionInfo>;
 	getParentGroupForChannel(siteUrl?: string): Base.IBaseCollection<Microsoft.SharePoint.Portal.ParentGroup>;
 	getSharedChannelSharePointUrl(tenantId?: string, groupId?: any): Base.IBaseExecution<string>;
 	getSiteStatus(groupId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	getTeamChannelFilesUrl(teamId?: string, channelId?: string): Base.IBaseExecution<any>;
-	getTeamChannels(teamId?: string): Base.IBaseExecution<any>;
+	getTeamChannels(teamId?: string, useStagingEndpoint?: boolean): Base.IBaseExecution<any>;
+	getTeamChannelsEx(teamId?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.ChannelInfoCollection>;
 	getUserSharedChannelMemberGroups(userName?: string): Base.IBaseExecution<string>;
+	getUserTeamConnectedMemberGroups(userName?: string): Base.IBaseExecution<string>;
 	getValidSiteUrlFromAlias(alias?: string, managedPath?: string, isTeamSite?: boolean): Base.IBaseExecution<string>;
 	hideTeamifyPrompt(siteUrl?: string): Base.IBaseExecution<any>;
 	isTeamifyPromptHidden(siteUrl?: string): Base.IBaseExecution<boolean>;

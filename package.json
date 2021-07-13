@@ -1,36 +1,36 @@
 {
-  "name": "gd-sprest-def",
-  "version": "1.0.2",
-  "description": "TypeScript definition files generated from the $metadata REST endpoint in SharePoint.",
-  "author": "Gunjan Datta <me@dattabase.com> (https://gunjandatta.github.io)",
-  "license": "MIT",
-  "main": "main.js",
-  "typings": "./lib/index.d.ts",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "build": "node clean.js && node main.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gunjandatta/sprest-def.git"
-  },
-  "keywords": [
-    "API",
-    "Definition",
-    "Microsoft",
-    "Office",
-    "REST",
-    "SharePoint",
-    "TypeScript"
-  ],
-  "bugs": {
-    "url": "https://github.com/gunjandatta/sprest-def/issues"
-  },
-  "homepage": "https://github.com/gunjandatta/sprest-def#readme",
-  "devDependencies": {
-    "rimraf": "^2.6.2",
-    "xml2js": "^0.4.19"
-  }
+    "name": "gd-sprest-def",
+    "version": "1.0.3",
+    "description": "TypeScript definition files generated from the $metadata REST endpoint in SharePoint.",
+    "author": "Gunjan Datta <me@dattabase.com> (https://gunjandatta.github.io)",
+    "license": "MIT",
+    "main": "main.js",
+    "typings": "./lib/index.d.ts",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "build": "node clean.js && node main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gunjandatta/sprest-def.git"
+    },
+    "keywords": [
+        "API",
+        "Definition",
+        "Microsoft",
+        "Office",
+        "REST",
+        "SharePoint",
+        "TypeScript"
+    ],
+    "bugs": {
+        "url": "https://github.com/gunjandatta/sprest-def/issues"
+    },
+    "homepage": "https://github.com/gunjandatta/sprest-def#readme",
+    "devDependencies": {
+        "rimraf": "^2.6.2",
+        "xml2js": "^0.4.19"
+    }
 }

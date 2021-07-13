@@ -126,6 +126,8 @@ export interface MigrationTaskSettingsCollections {
 **********************************************/
 export interface MMTaskSettings {
 	AgentGroupName?: string;
+	ScheduledTimeUtc?: any;
+	ScheduledType?: number;
 }
 
 /*********************************************

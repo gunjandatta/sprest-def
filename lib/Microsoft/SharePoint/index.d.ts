@@ -28,6 +28,8 @@ import * as Marketplace from "./Marketplace";
 export { Marketplace }
 import * as Navigation from "./Navigation";
 export { Navigation }
+import * as News from "./News";
+export { News }
 import * as OrgNewsSite from "./OrgNewsSite";
 export { OrgNewsSite }
 import * as Packaging from "./Packaging";
@@ -42,8 +44,6 @@ import * as QuotaManagement from "./QuotaManagement";
 export { QuotaManagement }
 import * as SmartCache from "./SmartCache";
 export { SmartCache }
-import * as Taxonomy from "./Taxonomy";
-export { Taxonomy }
 import * as TenantCdn from "./TenantCdn";
 export { TenantCdn }
 import * as UserActions from "./UserActions";

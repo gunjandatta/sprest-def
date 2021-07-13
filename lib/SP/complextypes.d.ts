@@ -230,6 +230,24 @@ export interface PivotItemCollections {
 }
 
 /*********************************************
+* VivaConnectionsUrlConfiguration
+**********************************************/
+export interface VivaConnectionsUrlConfiguration {
+	ContentUrl?: string;
+	DashboardNotConfiguredWarning?: string;
+	GlobalNavNotConfiguredWarning?: string;
+	NotHomeSiteUrlWarning?: string;
+	SearchUrl?: string;
+}
+
+/*********************************************
+* VivaConnectionsUrlConfigurationCollections
+**********************************************/
+export interface VivaConnectionsUrlConfigurationCollections {
+
+}
+
+/*********************************************
 * ContentTypeId
 **********************************************/
 export interface ContentTypeId {
@@ -269,6 +287,39 @@ export interface FieldUserValue {
 * FieldUserValueCollections
 **********************************************/
 export interface FieldUserValueCollections {
+
+}
+
+/*********************************************
+* ContentAssemblyFormAnswer
+**********************************************/
+export interface ContentAssemblyFormAnswer {
+	Answer?: string;
+	ContentControlTagName?: string;
+}
+
+/*********************************************
+* ContentAssemblyFormAnswerCollections
+**********************************************/
+export interface ContentAssemblyFormAnswerCollections {
+
+}
+
+/*********************************************
+* ContentControlInfo
+**********************************************/
+export interface ContentControlInfo {
+	ContentControlTagName?: string;
+	EndIndex?: number;
+	IsSingleParargaph?: boolean;
+	ParagraphIds?: Array<string>;
+	StartIndex?: number;
+}
+
+/*********************************************
+* ContentControlInfoCollections
+**********************************************/
+export interface ContentControlInfoCollections {
 
 }
 
@@ -613,6 +664,22 @@ export interface UserIdInfo {
 * UserIdInfoCollections
 **********************************************/
 export interface UserIdInfoCollections {
+
+}
+
+/*********************************************
+* SmartTemplateContentType
+**********************************************/
+export interface SmartTemplateContentType {
+	Id?: string;
+	Name?: string;
+	PublishStatus?: string;
+}
+
+/*********************************************
+* SmartTemplateContentTypeCollections
+**********************************************/
+export interface SmartTemplateContentTypeCollections {
 
 }
 
@@ -1096,8 +1163,8 @@ export interface CustomActionElementCollections {
 * CustomerKeyInfo
 **********************************************/
 export interface CustomerKeyInfo {
+	AvailabilityKeyVault?: SP.CustomerKeyVaultInfo;
 	PrimaryKeyVault?: SP.CustomerKeyVaultInfo;
-	RecoveryKeyVault?: SP.CustomerKeyVaultInfo;
 	SecondaryKeyVault?: SP.CustomerKeyVaultInfo;
 }
 
@@ -1116,6 +1183,7 @@ export interface CustomerKeyVaultInfo {
 	KeyVersion?: any;
 	ResourceGroupName?: string;
 	SubscriptionId?: any;
+	Uri?: string;
 	VaultName?: string;
 }
 
@@ -1130,6 +1198,7 @@ export interface CustomerKeyVaultInfoCollections {
 * CustomerKeyStatusInfo
 **********************************************/
 export interface CustomerKeyStatusInfo {
+	AvailabilityKeyVaultUri?: string;
 	PrimaryKeyVaultUri?: string;
 	RecoveryEnabled?: boolean;
 	SecondaryKeyVaultUri?: string;
@@ -1367,10 +1436,6 @@ export interface FolderDeleteParametersCollections {
 * GroupCreationInformation
 **********************************************/
 export interface GroupCreationInformation {
-	AllowMembersEditMembership?: boolean;
-	AllowRequestToJoinLeave?: boolean;
-	AutoAcceptRequestToJoinLeave?: boolean;
-	OnlyAllowMembersViewMembership?: boolean;
 	Description?: string;
 	Title?: string;
 }
@@ -1687,6 +1752,7 @@ export interface MediaServiceUpdateParameters {
 	MediaServiceEventHashCode?: string;
 	MediaServiceFastMetadata?: string;
 	MediaServiceGenerationTime?: string;
+	MediaServiceImageTags?: string;
 	MediaServiceKeyPoints?: string;
 	MediaServiceLocation?: string;
 	MediaServiceMetadata?: string;
@@ -1976,6 +2042,7 @@ export interface RenderListDataParameters {
 	FolderServerRelativeUrl?: string;
 	ImageFieldsToTryRewriteToCdnUrls?: string;
 	MergeDefaultView?: boolean;
+	ModernListBoot?: boolean;
 	OriginalDate?: boolean;
 	OverrideViewXml?: string;
 	Paging?: string;
@@ -2456,6 +2523,7 @@ export interface MenuNode {
 	Key?: string;
 	Nodes?: Array<SP.MenuNode>;
 	NodeType?: number;
+	OpenInNewWindow?: boolean;
 	SimpleUrl?: string;
 	Title?: string;
 	Translations?: Array<SP.SPResourceEntry>;

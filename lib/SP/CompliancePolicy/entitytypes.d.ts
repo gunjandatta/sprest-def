@@ -86,11 +86,10 @@ export interface SPPolicyStoreProxyOData extends Base.IBaseResult, SPPolicyStore
 * SPPolicyStoreProxyMethods
 **********************************************/
 export interface SPPolicyStoreProxyMethods {
-	addDynamicScopeBinding(identity?: string, siteId?: string): Base.IBaseExecution<any>;
 	bulkUpdateDynamicScopeBindings(scopesToAdd?: Array<string>, scopesToRemove?: Array<string>, siteId?: string): Base.IBaseExecution<any>;
-	deleteDynamicScopeBinding(identity?: string, siteId?: string): Base.IBaseExecution<any>;
 	extendReviewItemsRetention(itemIds?: Array<number>, extensionDate?: any): Base.IBaseCollection<number>;
 	getDynamicScopeBindingBySiteId(siteId?: string): Base.IBaseCollection<string>;
+	getSiteAdaptivePolicies(siteId?: string): Base.IBaseCollection<string>;
 	markReviewItemsForDeletion(itemIds?: Array<number>): Base.IBaseCollection<number>;
 	openBinaryStreamForOriginalItem(itemId?: number): Base.IBaseExecution<any>;
 	removeContainerRetentionPolicy(siteId?: string): Base.IBaseExecution<any>;
@@ -100,6 +99,7 @@ export interface SPPolicyStoreProxyMethods {
 	retagUnifiedReviewItemsWithMetas(itemIds?: Array<string>, originalTagName?: string, newTagName?: string, newTagMetas?: Array<string>): Base.IBaseCollection<string>;
 	setContainerRetentionPolicy(siteId?: string, defaultContainerLabel?: any): Base.IBaseExecution<any>;
 	updateContainerSetting(siteId?: string, externalId?: string, settingType?: number, setting?: string): Base.IBaseExecution<any>;
+	updateSiteAdaptivePolicies(policiesToAdd?: Array<string>, policiesToRemove?: Array<string>, siteId?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

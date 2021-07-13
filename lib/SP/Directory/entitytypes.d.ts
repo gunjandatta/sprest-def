@@ -242,6 +242,7 @@ export interface UserProps {
 	sharePointFollowedDocumentsMigrated?: boolean;
 	sharePointFollowedSitesMigrated?: boolean;
 	sharePointFollowedSitesMigrated2?: boolean;
+	sharePointFollowedSitesMigratedToSPO?: boolean;
 	sharePointHomeCreateNewsTeachingBubble?: boolean;
 	sharePointHomeFirstRun?: boolean;
 	sharePointHomeMobileUpsell?: boolean;

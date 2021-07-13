@@ -1,6 +1,40 @@
 import { Base } from "../../../";
-import { SP } from "../../../";
 import { Microsoft } from "../../../";
+import { SP } from "../../../";
+
+/*********************************************
+* ChannelInfoCollection
+**********************************************/
+export interface ChannelInfoCollection {
+	CacheUpdatedTime?: any;
+	value?: Array<Microsoft.SharePoint.Portal.ChannelInfo>;
+}
+
+/*********************************************
+* ChannelInfoCollectionCollections
+**********************************************/
+export interface ChannelInfoCollectionCollections {
+
+}
+
+/*********************************************
+* ChannelInfo
+**********************************************/
+export interface ChannelInfo {
+	description?: string;
+	displayName?: string;
+	filesFolderWebUrl?: string;
+	id?: string;
+	memberShipType?: number;
+	webUrl?: string;
+}
+
+/*********************************************
+* ChannelInfoCollections
+**********************************************/
+export interface ChannelInfoCollections {
+
+}
 
 /*********************************************
 * CollaborationMailboxResponse

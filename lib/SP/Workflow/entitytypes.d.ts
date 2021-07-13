@@ -243,10 +243,10 @@ export interface SPWorkflowTaskMethods {
 	recycle(): Base.IBaseExecution<any>;
 	recycleWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	setCommentsDisabled(value?: boolean): Base.IBaseExecution<any>;
-	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): Base.IBaseExecution<any>;
+	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean, isUnlockedAsDefault?: boolean): Base.IBaseExecution<any>;
 	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): Base.IBaseExecution<any>;
 	setComplianceTagWithHold(complianceTag?: string): Base.IBaseExecution<any>;
-	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): Base.IBaseExecution<any>;
+	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean, isRecordUnlockedAsDefault?: boolean): Base.IBaseExecution<any>;
 	setComplianceTagWithNoHold(complianceTag?: string): Base.IBaseExecution<any>;
 	setComplianceTagWithRecord(complianceTag?: string): Base.IBaseExecution<any>;
 	systemUpdate(): Base.IBaseExecution<any>;

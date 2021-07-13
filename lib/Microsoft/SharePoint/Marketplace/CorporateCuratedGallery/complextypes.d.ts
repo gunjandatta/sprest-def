@@ -38,6 +38,7 @@ export interface SPStoreAppCreateByIdInformationCollections {
 **********************************************/
 export interface StoreAppCreationInformation {
 	IconUrl?: string;
+	Publisher?: string;
 	ShortDescription?: string;
 	StoreAssetId?: string;
 }

@@ -87,8 +87,10 @@ export interface SharingInformation {
 	enforceSPOSearch?: boolean;
 	fileExtension?: string;
 	hasUniquePermissions?: boolean;
+	isStubFile?: boolean;
 	itemUniqueId?: any;
 	microserviceShareUiUrl?: string;
+	outlookEndpointHostUrl?: string;
 	permissionsInformation?: SP.Sharing.PermissionCollection;
 	sharedObjectType?: number;
 	shareUiUrl?: string;
@@ -96,7 +98,9 @@ export interface SharingInformation {
 	sharingLinkTemplates?: SP.Sharing.SharingLinkDefaultTemplatesCollection;
 	sharingStatus?: number;
 	showExternalSharingWarning?: boolean;
+	siteIBMode?: string;
 	siteIBSegmentIDs?: { results: Array<string> };
+	userIsSharingViaMCS?: string;
 	webTemplateId?: number;
 	webUrl?: string;
 }

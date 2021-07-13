@@ -17,6 +17,21 @@ export interface ColumnDefCollections {
 }
 
 /*********************************************
+* PrebuiltModelInfo
+**********************************************/
+export interface PrebuiltModelInfo {
+	FormRecognizerApiVersion?: string;
+	FormRecognizerPrebuiltModelName?: string;
+}
+
+/*********************************************
+* PrebuiltModelInfoCollections
+**********************************************/
+export interface PrebuiltModelInfoCollections {
+
+}
+
+/*********************************************
 * SiteCreationProperties
 **********************************************/
 export interface SiteCreationProperties {

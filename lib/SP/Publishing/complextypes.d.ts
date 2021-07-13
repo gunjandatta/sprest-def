@@ -84,6 +84,58 @@ export interface ErrorCollections {
 }
 
 /*********************************************
+* SitePageFieldsData
+**********************************************/
+export interface SitePageFieldsData {
+	AuthorByline?: Array<string>;
+	BannerImageUrl?: string;
+	CanvasContent1?: string;
+	CanvasJson1?: string;
+	Categories?: string;
+	Description?: string;
+	LayoutWebpartsContent?: string;
+	Modified?: any;
+	PublishStartDate?: any;
+	Title?: string;
+	TopicHeader?: string;
+}
+
+/*********************************************
+* SitePageFieldsDataCollections
+**********************************************/
+export interface SitePageFieldsDataCollections {
+
+}
+
+/*********************************************
+* RepostPageFieldsData
+**********************************************/
+export interface RepostPageFieldsData {
+
+}
+
+/*********************************************
+* RepostPageFieldsDataCollections
+**********************************************/
+export interface RepostPageFieldsDataCollections {
+
+}
+
+/*********************************************
+* FeedVideoPageFieldsData
+**********************************************/
+export interface FeedVideoPageFieldsData {
+
+}
+
+/*********************************************
+* FeedVideoPageFieldsDataCollections
+**********************************************/
+export interface FeedVideoPageFieldsDataCollections {
+
+}
+
+/*********************************************
 * ViewData
 **********************************************/
 export interface ViewData {
@@ -455,44 +507,6 @@ export interface PropertyValue {
 * PropertyValueCollections
 **********************************************/
 export interface PropertyValueCollections {
-
-}
-
-/*********************************************
-* SitePageFieldsData
-**********************************************/
-export interface SitePageFieldsData {
-	AuthorByline?: Array<string>;
-	BannerImageUrl?: string;
-	CanvasContent1?: string;
-	CanvasJson1?: string;
-	Categories?: string;
-	Description?: string;
-	LayoutWebpartsContent?: string;
-	Modified?: any;
-	PublishStartDate?: any;
-	Title?: string;
-	TopicHeader?: string;
-}
-
-/*********************************************
-* SitePageFieldsDataCollections
-**********************************************/
-export interface SitePageFieldsDataCollections {
-
-}
-
-/*********************************************
-* RepostPageFieldsData
-**********************************************/
-export interface RepostPageFieldsData {
-
-}
-
-/*********************************************
-* RepostPageFieldsDataCollections
-**********************************************/
-export interface RepostPageFieldsDataCollections {
 
 }
 

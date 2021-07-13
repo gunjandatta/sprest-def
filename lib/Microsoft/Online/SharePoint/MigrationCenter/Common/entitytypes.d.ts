@@ -97,6 +97,8 @@ export interface MigrationTaskEntityData {
 	ReplaceInvalidChars?: boolean;
 	ScanOnly?: boolean;
 	ScheduledStartTimeUTC?: any;
+	ScheduledTimeUtc?: any;
+	ScheduledType?: number;
 	SkipListWithAudienceEnabled?: boolean;
 	SourceListName?: string;
 	SourceListRelativePath?: string;

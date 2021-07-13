@@ -283,6 +283,7 @@ export interface SiteMethods {
 	rollTenantBringYourOwnKey(keyType?: number, keyVaultInfo?: SP.CustomerKeyVaultInfo): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
 	runHealthCheck(ruleId?: any, bRepair?: boolean, bRunAlways?: boolean): Base.IBaseExecution<SP.SiteHealth.SiteHealthSummary>;
 	runUpgradeSiteSession(versionUpgrade?: boolean, queueOnly?: boolean, sendEmail?: boolean): Base.IBaseExecution<any>;
+	setIsContributorOwnerEnabledPropertyForDefaultDocLib(propertyValue?: boolean, forceDocLibActivation?: boolean): Base.IBaseExecution<boolean>;
 	unregisterHubSite(): Base.IBaseExecution<any>;
 	updateClientObjectModelUseRemoteAPIsPermissionSetting(requireUseRemoteAPIs?: boolean): Base.IBaseExecution<any>;
 	validateHubSiteJoinApprovalToken(joiningSiteId?: any, approvalToken?: string): Base.IBaseExecution<boolean>;
@@ -700,6 +701,7 @@ export interface User extends SP.Principal, Base.IBaseResult, UserProps, UserCol
 export interface UserProps {
 	AadObjectId?: SP.UserIdInfo;
 	Email?: string;
+	EmailWithFallback?: string;
 	Expiration?: string;
 	IsEmailAuthenticationGuestUser?: boolean;
 	IsShareByEmailGuestUser?: boolean;
@@ -1169,7 +1171,6 @@ export interface ListItemProps {
 	Id?: number;
 	ServerRedirectedEmbedUri?: string;
 	ServerRedirectedEmbedUrl?: string;
-	Title?: string;
 	Client_Title?: string;
 }
 
@@ -1245,10 +1246,10 @@ export interface ListItemMethods {
 	recycle(): Base.IBaseExecution<any>;
 	recycleWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	setCommentsDisabled(value?: boolean): Base.IBaseExecution<any>;
-	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean): Base.IBaseExecution<any>;
+	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean, isUnlockedAsDefault?: boolean): Base.IBaseExecution<any>;
 	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): Base.IBaseExecution<any>;
 	setComplianceTagWithHold(complianceTag?: string): Base.IBaseExecution<any>;
-	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean): Base.IBaseExecution<any>;
+	setComplianceTagWithMetaInfo(complianceTag?: string, blockDelete?: boolean, blockEdit?: boolean, complianceTagWrittenTime?: any, userEmailAddress?: string, isTagSuperLock?: boolean, isRecordUnlockedAsDefault?: boolean): Base.IBaseExecution<any>;
 	setComplianceTagWithNoHold(complianceTag?: string): Base.IBaseExecution<any>;
 	setComplianceTagWithRecord(complianceTag?: string): Base.IBaseExecution<any>;
 	systemUpdate(): Base.IBaseExecution<any>;
@@ -1832,11 +1833,13 @@ export interface FileProps {
 	ActivityCapabilities?: Microsoft.SharePoint.Activities.ActivityCapabilities;
 	CheckInComment?: string;
 	CheckOutType?: number;
+	ComplianceInfo?: SP.ListItemComplianceInfo;
 	ContentTag?: string;
 	CustomizedPageStatus?: number;
 	ListId?: any;
 	ETag?: string;
 	Exists?: boolean;
+	ExpirationDate?: any;
 	HasAlternateContentStreams?: boolean;
 	IrmEnabled?: boolean;
 	Length?: number;
@@ -1954,6 +1957,7 @@ export interface FileMethods {
 	recycleWithETag(etagMatch?: string): Base.IBaseExecution<any>;
 	recycleWithParameters(parameters?: SP.FileDeleteParameters): Base.IBaseExecution<any>;
 	saveBinaryStream(file?: any): Base.IBaseExecution<any>;
+	setExpirationDate(expirationDate?: any): Base.IBaseExecution<any>;
 	setFileUserValue(key?: string, value?: string): Base.IBaseExecution<Microsoft.SharePoint.UserActions.officeFileUserValueResponse>;
 	setMediaServiceMetadata(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;
 	startUpload(uploadId?: any, stream?: any): Base.IBaseExecution<number>;
@@ -2442,6 +2446,7 @@ export interface ListProps {
 	ReadSecurity?: number;
 	SchemaXml?: string;
 	ServerTemplateCanCreateFolders?: boolean;
+	ShowHiddenFieldsInModernForm?: boolean;
 	TemplateFeatureId?: any;
 	TemplateTypeId?: string;
 	Title?: string;
@@ -2531,16 +2536,19 @@ export interface ListOData extends SP.SecurableObjectOData, Base.IBaseResult, Li
 export interface ListMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): Base.IBaseExecution<any>;
 	resetRoleInheritance(): Base.IBaseExecution<any>;
-	addCustomOrderToView(viewId?: string, itemIds?: Array<number>, relativeItemId?: number, skipSaveView?: boolean): Base.IBaseExecution<string>;
+	addCustomOrderToView(viewId?: string, itemIds?: Array<number>, relativeItemId?: number, insertAfter?: boolean, skipSaveView?: boolean): Base.IBaseExecution<string>;
 	addItem(parameters?: SP.ListItemCreationInformation): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	addItemUsingPath(parameters?: SP.ListItemCreationInformationUsingPath): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	addValidateUpdateItem(listItemCreateInfo?: SP.ListItemCreationInformation, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	addValidateUpdateItemUsingPath(listItemCreateInfo?: SP.ListItemCreationInformationUsingPath, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	bulkValidateUpdateListItems(itemIds?: Array<number>, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, folderPath?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	clearBusinessAppMigrationInteractiveData(): Base.IBaseExecution<any>;
 	createDocumentAndGetEditLink(fileName?: string, folderPath?: string, documentTemplateType?: number, templateUrl?: string): Base.IBaseExecution<string>;
+	createDocumentFromCAAETemplate(ContentTypName?: string, FileName?: string, contentAssemblyFormAnswers?: Array<SP.ContentAssemblyFormAnswer>): Base.IBaseExecution<any>;
 	createDocumentWithDefaultName(folderPath?: string, extension?: string): Base.IBaseExecution<string>;
 	createMappedView(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	createRule(condition?: string, outcome?: string, title?: string, triggerType?: number, emailField?: string, actionType?: number): Base.IBaseExecution<any>;
+	createSmartTemplateContentTypeAndAddToList(Name?: string, Description?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ContentType, SP.ContentTypeOData> & SP.ContentTypeCollections & SP.ContentTypeMethods;
 	delete(): Base.IBaseExecution<any>;
 	deleteRule(ruleId?: string): Base.IBaseExecution<any>;
 	enqueueAsyncActionTaskById(id?: any, parameters?: Array<SP.KeyValue>): Base.IBaseExecution<boolean>;
@@ -2551,7 +2559,8 @@ export interface ListMethods {
 	getBloomFilter(startItemId?: number): Base.IBaseExecution<SP.ListBloomFilter>;
 	getBloomFilterWithCustomFields(listItemStartingID?: number, internalFieldNames?: Array<string>): Base.IBaseExecution<SP.ListBloomFilter>;
 	getBusinessAppMigrationInteractiveData(): Base.IBaseExecution<string>;
-	getBusinessAppOperationStatus(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
+	getBusinessAppOperationStatus(): Base.IBaseExecution<number>;
+	getCAAESmartTemplateContentTypes(): Base.IBaseCollection<SP.SmartTemplateContentType>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getCheckedOutFiles(): Base.IBaseCollection<SP.CheckedOutFile, SP.CheckedOutFileOData, Base.IBaseExecution & SP.CheckedOutFileCollectionMethods> & Base.IBaseExecution & SP.CheckedOutFileCollectionMethods;
 	getItemById(id?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
@@ -2568,6 +2577,7 @@ export interface ListMethods {
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
 	getView(viewGuid?: any): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	getWebDavUrl(sourceUrl?: string): Base.IBaseExecution<string>;
+	parseDocumentTemplate(Name?: string): Base.IBaseExecution<string>;
 	publishMappedView(appId?: any, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	recycle(): Base.IBaseExecution<any>;
 	renderExtendedListFormData(itemId?: number, formId?: string, mode?: number, options?: number, cutoffVersion?: number): Base.IBaseExecution<string>;
@@ -2585,10 +2595,12 @@ export interface ListMethods {
 	syncFlowInstance(flowID?: any): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowInstances(retrieveGroupFlows?: boolean): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowTemplates(category?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
+	templatizeDocument(Name?: string, contentControlInfos?: Array<SP.ContentControlInfo>): Base.IBaseExecution<any>;
 	unpublishMappedView(appId?: any, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	// update(): Base.IBaseExecution<any>;
 	updateFormProcessingModelRetentionLabel(retentionLabel?: string): Base.IBaseExecution<any>;
-	updatePlaceholdersMetadata(Name?: string, placeholders?: Array<SP.Placeholder>): Base.IBaseExecution<any>;
+	updateFormProcessingModelSettings(retentionLabel?: string, linkedList?: string): Base.IBaseExecution<any>;
+	updatePlaceholdersMetadata(Name?: string, placeholders?: Array<SP.Placeholder>, IsPublishing?: boolean): Base.IBaseExecution<any>;
 	updateRule(ruleId?: string, condition?: string, outcome?: string, title?: string, emailField?: string, status?: number, actionType?: number): Base.IBaseExecution<any>;
 	validateAppName(appDisplayName?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getItems(viewXML?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
@@ -3217,7 +3229,6 @@ export interface WebMethods {
 	addSupportedUILanguage(lcid?: number): Base.IBaseExecution<any>;
 	applyTheme(colorPaletteUrl?: string, fontSchemeUrl?: string, backgroundImageUrl?: string, shareGenerated?: boolean): Base.IBaseExecution<any>;
 	applyWebTemplate(webTemplate?: string): Base.IBaseExecution<any>;
-	authenticateAndReturnPageContext(): Base.IBaseExecution<any>;
 	createDefaultAssociatedGroups(userLogin?: string, userLogin2?: string, groupNameSeed?: string): Base.IBaseExecution<any>;
 	createGroupBasedEnvironment(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	defaultDocumentLibrary(): SP.SecurableObjectCollections & Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
@@ -3293,7 +3304,7 @@ export interface WebMethods {
 	removeStorageEntity(key?: string): Base.IBaseExecution<any>;
 	removeSupportedUILanguage(lcid?: number): Base.IBaseExecution<any>;
 	setAccessRequestSiteDescriptionAndUpdate(description?: string): Base.IBaseExecution<any>;
-	setChromeOptions(headerLayout?: number, headerEmphasis?: number, megaMenuEnabled?: boolean, footerEnabled?: boolean, footerLayout?: number, footerEmphasis?: number, hideTitleInHeader?: boolean, logoAlignment?: number): Base.IBaseExecution<any>;
+	setChromeOptions(headerLayout?: number, headerEmphasis?: number, megaMenuEnabled?: boolean, footerEnabled?: boolean, footerLayout?: number, footerEmphasis?: number, hideTitleInHeader?: boolean, logoAlignment?: number, horizontalQuickLaunch?: boolean): Base.IBaseExecution<any>;
 	setDefaultNewPageTemplateId(defaultNewPageTemplateId?: any): Base.IBaseExecution<any>;
 	setGlobalNavSettings(title?: string, source?: string): Base.IBaseExecution<any>;
 	setStorageEntity(key?: string, value?: string, description?: string, comments?: string): Base.IBaseExecution<any>;
@@ -5146,6 +5157,8 @@ export interface EmployeeEngagementOData extends Base.IBaseResult, EmployeeEngag
 **********************************************/
 export interface EmployeeEngagementMethods {
 	configuration(): Base.IBaseExecution<SP.ConfigurationData>;
+	dashboardContent(): Base.IBaseExecution<string>;
+	vivaConnections(adminConfiguredUrl?: string): Base.IBaseExecution<SP.VivaConnectionsUrlConfiguration>;
 }
 
 /*********************************************
@@ -5441,6 +5454,7 @@ export interface ObjectSharingSettingsProps {
 	ShareByEmailEnabled?: boolean;
 	ShowExternalSharingWarning?: boolean;
 	SimplifiedRoles?: { results: Array<SP.KeyValue> };
+	SiteIBMode?: string;
 	SiteIBSegmentIDs?: { results: Array<string> };
 	SupportsAclPropagation?: boolean;
 	WebUrl?: string;
@@ -5700,6 +5714,20 @@ export interface RecentListCollection {
 * RecentListCollectionCollections
 **********************************************/
 export interface RecentListCollectionCollections {
+
+}
+
+/*********************************************
+* RecentListProxy
+**********************************************/
+export interface RecentListProxy {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RecentListProxyCollections
+**********************************************/
+export interface RecentListProxyCollections {
 
 }
 
@@ -8260,6 +8288,25 @@ export interface TeamChannel {
 * TeamChannelCollections
 **********************************************/
 export interface TeamChannelCollections {
+
+}
+
+/*********************************************
+* TeamSiteData
+**********************************************/
+export interface TeamSiteData {
+	ErrorTag?: number;
+	HeaderEmphasis?: number;
+	HubSiteId?: any;
+	SiteUrl?: string;
+	TenantInstanceId?: any;
+	ThemeToken?: string;
+}
+
+/*********************************************
+* TeamSiteDataCollections
+**********************************************/
+export interface TeamSiteDataCollections {
 
 }
 

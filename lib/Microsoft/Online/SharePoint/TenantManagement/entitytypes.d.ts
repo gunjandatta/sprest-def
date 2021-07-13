@@ -204,6 +204,7 @@ export interface Office365TenantProps {
 	BlockUserInfoVisibility?: string;
 	BlockUserInfoVisibilityInOneDrive?: number;
 	BlockUserInfoVisibilityInSharePoint?: number;
+	ChannelMeetingRecordingPermission?: number;
 	CommentsOnFilesDisabled?: boolean;
 	CommentsOnListItemsDisabled?: boolean;
 	CommentsOnSitePagesDisabled?: boolean;
@@ -213,11 +214,13 @@ export interface Office365TenantProps {
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultContentCenterSite?: Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker;
 	DefaultLinkPermission?: number;
+	DefaultODBMode?: string;
 	DefaultSharingLinkType?: number;
 	DisableAddToOneDrive?: boolean;
 	DisableBackToClassic?: boolean;
 	DisableCustomAppAuthentication?: boolean;
 	DisabledModernListTemplateIds?: { results: Array<any> };
+	DisableOutlookPSTVersionTrimming?: boolean;
 	DisablePersonalListCreation?: boolean;
 	DisableSpacesActivation?: boolean;
 	DisplayStartASiteOption?: boolean;
@@ -284,6 +287,9 @@ export interface Office365TenantProps {
 	SocialBarOnSitePagesDisabled?: boolean;
 	StartASiteFormUrl?: string;
 	StopNew2010Workflows?: boolean;
+	StopNew2013Workflows?: boolean;
+	StreamLaunchConfig?: number;
+	StreamLaunchConfigLastUpdated?: any;
 	SyncAadB2BManagementPolicy?: boolean;
 	SyncPrivacyProfileProperties?: boolean;
 	UseFindPeopleInPeoplePicker?: boolean;

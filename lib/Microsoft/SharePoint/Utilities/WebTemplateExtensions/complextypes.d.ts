@@ -13,7 +13,6 @@ export interface SiteDesignCreationInfo {
 	IsTenantAdminOnly?: boolean;
 	ListColor?: number;
 	ListIcon?: number;
-	LogoUrl?: string;
 	PreviewImageAltText?: string;
 	PreviewImageUrl?: string;
 	RequiresGroupConnected?: boolean;

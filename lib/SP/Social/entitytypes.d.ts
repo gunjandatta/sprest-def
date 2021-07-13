@@ -474,7 +474,7 @@ export interface SocialRestFollowingManagerOData extends Base.IBaseResult, Socia
 **********************************************/
 export interface SocialRestFollowingManagerMethods {
 	follow(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): Base.IBaseExecution<number>;
-	followed(types?: number): Base.IBaseCollection<SP.Social.SocialActor>;
+	followed(types?: number, count?: number): Base.IBaseCollection<SP.Social.SocialActor>;
 	followedCount(types?: number): Base.IBaseExecution<number>;
 	followers(): Base.IBaseCollection<SP.Social.SocialActor>;
 	isFollowed(AccountName?: string, ActorType?: number, ContentUri?: string, Id?: string, TagGuid?: any): Base.IBaseExecution<boolean>;

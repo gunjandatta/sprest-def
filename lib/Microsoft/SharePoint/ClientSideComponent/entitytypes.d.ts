@@ -69,7 +69,24 @@ export interface HostedAppsManagerOData extends Base.IBaseResult, HostedAppsMana
 **********************************************/
 export interface HostedAppsManagerMethods {
 	add(webPartDataAsJson?: string, hostType?: string): Base.IBaseExecution<number>;
+	addEx(webPartDataAsJson?: string, hostType?: string): Base.IBaseExecution<Microsoft.SharePoint.ClientSideComponent.HostedAppAddResponse>;
 	getById(id?: number): Base.IBaseExecution<Microsoft.SharePoint.ClientSideComponent.HostedApp>;
+}
+
+/*********************************************
+* HostedAppAddResponse
+**********************************************/
+export interface HostedAppAddResponse {
+	itemId?: number;
+	shareLinkUrl?: string;
+	shareWebPath?: string;
+}
+
+/*********************************************
+* HostedAppAddResponseCollections
+**********************************************/
+export interface HostedAppAddResponseCollections {
+
 }
 
 /*********************************************
