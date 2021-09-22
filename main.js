@@ -561,7 +561,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
 
                                     // See if this is a collection
                                     if (methodInfo.isCollection) {
-                                        if(collection == "Lists") { debugger; }
                                         // Add the methods
                                         collections.push('\t' + collection + '(): ' + generateBaseCollection(methodType, hasCollections, hasCollectionMethods) + ';');
                                         collections.push('\t' + collection + '(id: string | number): ' + baseType + generateBaseQuery(methodType, hasCollections, hasMethods) + ';');
