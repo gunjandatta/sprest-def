@@ -123,10 +123,6 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Office.Server.ContentCenter.SPMachineLearningModel.Collection": {
-		ensureAzureCognitive: {
-		argNames: [ "parameters" ],
-		},
-
 		getByTitle: {
 		argNames: [ "title" ],
 		},
@@ -143,6 +139,10 @@ export const Mapper: IMapper = {
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		setupContractsSolution: {
+		argNames: [ "contractLibraryName" ],
+		},
 
 	},
 
@@ -167,6 +167,9 @@ export const Mapper: IMapper = {
 
 		batchUnpromote: {
 		argNames: [ "promotions" ],
+		},
+
+		checkTenantPublishPermissions: {
 		},
 
 		getByModelUniqueId: {
@@ -694,6 +697,10 @@ export const Mapper: IMapper = {
 		argNames: [ "userPrincipalName" ],
 		},
 
+		xTenantMoveCompatibilityCheck: {
+		argNames: [ "targetTenantHostUrl" ],
+		},
+
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob": {
@@ -816,6 +823,9 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob.Collection": {
+		cancel: {
+		},
+
 		get: {
 		},
 
@@ -1042,6 +1052,14 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Tenant": {
+		addTenantAdminListItem: {
+		argNames: [ "columnValues", "listName" ],
+		},
+
+		addTenantAdminListView: {
+		argNames: [ "parameters" ],
+		},
+
 		checkTenantIntuneLicense: {
 		},
 
@@ -1057,6 +1075,13 @@ export const Mapper: IMapper = {
 		argNames: [ "siteCreationProperties" ],
 		},
 
+		getAdminListViews: {
+		},
+
+		getFilteredSPListItems: {
+		argNames: [ "columnName", "columnValue", "listName" ],
+		},
+
 		getIdleSessionSignOutForUnmanagedDevices: {
 		},
 
@@ -1064,6 +1089,14 @@ export const Mapper: IMapper = {
 		},
 
 		getSPHSiteUrl: {
+		},
+
+		getSPListItemCount: {
+		argNames: [ "listName" ],
+		},
+
+		getSPListRootFolderProperties: {
+		argNames: [ "listName" ],
 		},
 
 		getSPOAllWebTemplates: {
@@ -1099,8 +1132,16 @@ export const Mapper: IMapper = {
 		getSiteSubscriptionId: {
 		},
 
+		getSitesByState: {
+		argNames: [ "states" ],
+		},
+
 		getTenantAllOrCompatibleIBSegments: {
 		argNames: [ "segments" ],
+		},
+
+		getViewByDisplayName: {
+		argNames: [ "viewName", "listName" ],
 		},
 
 		grantHubSiteRightsById: {
@@ -1131,8 +1172,24 @@ export const Mapper: IMapper = {
 		removeSPHSite: {
 		},
 
+		removeSPListItem: {
+		argNames: [ "listItemId", "listName" ],
+		},
+
 		removeSite: {
 		argNames: [ "siteUrl" ],
+		},
+
+		removeTenantAdminListView: {
+		argNames: [ "viewId" ],
+		},
+
+		renderAdminListData: {
+		argNames: [ "parameters", "overrideParameters", "listName" ],
+		},
+
+		renderFilteredAdminListData: {
+		argNames: [ "parameters", "listName" ],
 		},
 
 		renderIBSegmentListDataAsStream: {
@@ -1153,6 +1210,10 @@ export const Mapper: IMapper = {
 
 		revokeHubSiteRightsById: {
 		argNames: [ "hubSiteId", "principals" ],
+		},
+
+		setDefaultView: {
+		argNames: [ "viewId", "listName" ],
 		},
 
 		setIBSegmentsOnSite: {
@@ -1192,6 +1253,14 @@ export const Mapper: IMapper = {
 		},
 
 		update: {
+		},
+
+		updateTenantAdminListItem: {
+		argNames: [ "listItemId", "columnValues", "listName" ],
+		},
+
+		updateTenantAdminListView: {
+		argNames: [ "viewId", "viewXml" ],
 		},
 
 	},
@@ -1358,6 +1427,10 @@ export const Mapper: IMapper = {
 		argNames: [ "name", "themeJson" ],
 		},
 
+		uploadCustomFontsAndCatalogLib: {
+		argNames: [ "customFontFiles", "libUrl" ],
+		},
+
 	},
 
 	"Microsoft.SharePoint.Administration.FeatureDefinition.Collection": {
@@ -1386,7 +1459,7 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		roleAssignmentMSGraphNotify: {
-		argNames: [ "tenant", "action", "type", "resourcePayload", "id" ],
+		argNames: [ "tenant", "action", "type", "resourcePayload", "id", "containerId" ],
 		},
 
 	},
@@ -1418,8 +1491,30 @@ export const Mapper: IMapper = {
 
 	},
 
-	"Microsoft.SharePoint.Client.Search.Administration.SiteCrawlVersionInfoProvider": {
+	"Microsoft.SharePoint.Client.Search.Administration.TenantCrawlVersionsInfoProvider": {
+		disableCrawlVersions: {
+		argNames: [ "siteId" ],
+		},
+
+		disableCrawlVersionsForTenant: {
+		},
+
+		enableCrawlVersions: {
+		argNames: [ "siteId" ],
+		},
+
+		enableCrawlVersionsForTenant: {
+		},
+
 		getSiteCrawlVersionStatus: {
+		argNames: [ "siteId" ],
+		},
+
+		isCrawlVersionsEnabled: {
+		argNames: [ "siteId" ],
+		},
+
+		isCrawlVersionsEnabledForTenant: {
 		},
 
 	},
@@ -1749,7 +1844,7 @@ export const Mapper: IMapper = {
 		},
 
 		getCurrentUserJoinedTeams: {
-		argNames: [ "getLogoData" ],
+		argNames: [ "getLogoData", "forceCacheUpdate" ],
 		},
 
 		getCurrentUserSharedChannelMemberGroups: {
@@ -1814,6 +1909,10 @@ export const Mapper: IMapper = {
 
 		pinToTeam: {
 		argNames: [ "requestParams" ],
+		},
+
+		recentAndJoinedTeams: {
+		argNames: [ "includeRecent", "includeTeams", "includePinned" ],
 		},
 
 	},
@@ -4819,7 +4918,7 @@ export const Mapper: IMapper = {
 		},
 
 		createDocumentFromCAAETemplate: {
-		argNames: [ "ContentTypName", "FileName", "contentAssemblyFormAnswers" ],
+		argNames: [ "ContentTypeName", "documentGenerationInfo" ],
 		},
 
 		createDocumentWithDefaultName: {
@@ -4880,6 +4979,10 @@ export const Mapper: IMapper = {
 		getCAAESmartTemplateContentTypes: {
 		},
 
+		getCAAETemplateMetadata: {
+		argNames: [ "Name", "Published" ],
+		},
+
 		getChanges: {
 		argNames: [ "query" ],
 		},
@@ -4921,10 +5024,6 @@ export const Mapper: IMapper = {
 
 		getMappedApps: {
 		argNames: [ "visualizationAppTarget" ],
-		},
-
-		getPlaceholdersMetadata: {
-		argNames: [ "Name" ],
 		},
 
 		getRelatedFields: {
@@ -5021,10 +5120,6 @@ export const Mapper: IMapper = {
 		argNames: [ "category" ],
 		},
 
-		templatizeDocument: {
-		argNames: [ "Name", "contentControlInfos" ],
-		},
-
 		unpublishMappedView: {
 		argNames: [ "appId", "visualizationTarget" ],
 		},
@@ -5033,16 +5128,16 @@ export const Mapper: IMapper = {
 		argNames: [ "properties" ],
 		},
 
+		updateCAAETemplate: {
+		argNames: [ "Name", "updateTemplateInfo" ],
+		},
+
 		updateFormProcessingModelRetentionLabel: {
 		argNames: [ "retentionLabel" ],
 		},
 
 		updateFormProcessingModelSettings: {
 		argNames: [ "retentionLabel", "linkedList" ],
-		},
-
-		updatePlaceholdersMetadata: {
-		argNames: [ "Name", "placeholders", "IsPublishing" ],
 		},
 
 		updateRule: {
@@ -5563,6 +5658,10 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyWithConfiguration: {
+		argNames: [ "sitePageFlags", "isNews" ],
+		},
+
 		createNewsCopy: {
 		},
 
@@ -5784,6 +5883,10 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyWithConfiguration: {
+		argNames: [ "sitePageFlags", "isNews" ],
+		},
+
 		createNewsCopy: {
 		},
 
@@ -5892,6 +5995,10 @@ export const Mapper: IMapper = {
 		},
 
 		copy: {
+		},
+
+		copyWithConfiguration: {
+		argNames: [ "sitePageFlags", "isNews" ],
 		},
 
 		createNewsCopy: {
@@ -6012,6 +6119,10 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyWithConfiguration: {
+		argNames: [ "sitePageFlags", "isNews" ],
+		},
+
 		createNewsCopy: {
 		},
 
@@ -6083,6 +6194,9 @@ export const Mapper: IMapper = {
 
 		addImageFromExternalUrl: {
 		argNames: [ "pageName", "imageFileName", "externalUrl", "subFolderName", "pageId" ],
+		},
+
+		canCreatePage: {
 		},
 
 		canCreatePromotedPage: {
@@ -6171,6 +6285,10 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyWithConfiguration: {
+		argNames: [ "sitePageFlags", "isNews" ],
+		},
+
 		createNewsCopy: {
 		},
 
@@ -6219,6 +6337,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.TopicSitePage.Collection": {
+		getByEntityId: {
+		argNames: [ "entityId" ],
+		},
+
 		isContentTypeAvailable: {
 		},
 
@@ -6741,6 +6863,9 @@ export const Mapper: IMapper = {
 		},
 
 		provisionMigrationQueue: {
+		},
+
+		provisionTemporaryAzureContainer: {
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },

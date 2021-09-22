@@ -3,6 +3,23 @@ import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
+* CustomFontsResource
+**********************************************/
+export interface CustomFontsResource {
+	byteArray?: any;
+	fileName?: string;
+	fullPath?: string;
+	type?: number;
+}
+
+/*********************************************
+* CustomFontsResourceCollections
+**********************************************/
+export interface CustomFontsResourceCollections {
+
+}
+
+/*********************************************
 * OrgAssetsLibraryCollection
 **********************************************/
 export interface OrgAssetsLibraryCollection {

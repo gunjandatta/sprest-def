@@ -467,6 +467,7 @@ export interface SitePageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): SP.Publishing.SitePageMetadataCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -566,6 +567,7 @@ export interface RepostPageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -660,6 +662,7 @@ export interface FeedVideoPageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): SP.Publishing.RepostPageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): SP.Publishing.RepostPageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): SP.Publishing.RepostPageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): SP.Publishing.RepostPageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): SP.Publishing.RepostPageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -1486,6 +1489,7 @@ export interface SitePage3DMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -1572,6 +1576,7 @@ export interface SitePageServiceOData extends Base.IBaseResult, SitePageServiceP
 export interface SitePageServiceMethods {
 	addImage(pageName?: string, imageFileName?: string, imageStream?: any, pageId?: number): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	addImageFromExternalUrl(pageName?: string, imageFileName?: string, externalUrl?: string, subFolderName?: string, pageId?: number): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	canCreatePage(): Base.IBaseExecution<boolean>;
 	canCreatePromotedPage(): Base.IBaseExecution<boolean>;
 	enableCategories(): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
@@ -2001,6 +2006,7 @@ export interface TopicSitePageCollections extends TopicSitePagePropMethods {
 * TopicSitePageCollectionMethods
 **********************************************/
 export interface TopicSitePageCollectionMethods {
+	getByEntityId(entityId?: string): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.TopicSitePage> & SP.Publishing.TopicSitePageCollections & SP.Publishing.TopicSitePageMethods;
 	isContentTypeAvailable(): Base.IBaseExecution<boolean>;
 }
 
@@ -2019,6 +2025,7 @@ export interface TopicSitePageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): SP.Publishing.SitePageCollections & Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;

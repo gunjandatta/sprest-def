@@ -2,7 +2,7 @@
 
 These are missing properties that are relevant to the SharePoint REST API.
 
-###### EntityType List Item
+###### EntityType ListItem
 
 ```
 <Property Name="Title" Type="Edm.String" />

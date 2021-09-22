@@ -73,71 +73,77 @@ export interface DocumentCrawlLogMethods {
 }
 
 /*********************************************
-* ISiteCrawlVersionInfoProvider
+* ITenantCrawlVersionsInfoProvider
 **********************************************/
-export interface ISiteCrawlVersionInfoProvider extends SiteCrawlVersionInfoProviderCollections, SiteCrawlVersionInfoProviderMethods, Base.IBaseQuery<SiteCrawlVersionInfoProvider, ISiteCrawlVersionInfoProviderQuery> {
+export interface ITenantCrawlVersionsInfoProvider extends TenantCrawlVersionsInfoProviderCollections, TenantCrawlVersionsInfoProviderMethods, Base.IBaseQuery<TenantCrawlVersionsInfoProvider, ITenantCrawlVersionsInfoProviderQuery> {
 
 }
 
 /*********************************************
-* ISiteCrawlVersionInfoProviderCollection
+* ITenantCrawlVersionsInfoProviderCollection
 **********************************************/
-export interface ISiteCrawlVersionInfoProviderCollection extends Base.IBaseResults<SiteCrawlVersionInfoProvider> {
-	done?: (resolve: (value?: Array<SiteCrawlVersionInfoProvider>) => void) => void;
+export interface ITenantCrawlVersionsInfoProviderCollection extends Base.IBaseResults<TenantCrawlVersionsInfoProvider> {
+	done?: (resolve: (value?: Array<TenantCrawlVersionsInfoProvider>) => void) => void;
 }
 
 /*********************************************
-* ISiteCrawlVersionInfoProviderQueryCollection
+* ITenantCrawlVersionsInfoProviderQueryCollection
 **********************************************/
-export interface ISiteCrawlVersionInfoProviderQueryCollection extends Base.IBaseResults<SiteCrawlVersionInfoProviderOData> {
-	done?: (resolve: (value?: Array<SiteCrawlVersionInfoProviderOData>) => void) => void;
+export interface ITenantCrawlVersionsInfoProviderQueryCollection extends Base.IBaseResults<TenantCrawlVersionsInfoProviderOData> {
+	done?: (resolve: (value?: Array<TenantCrawlVersionsInfoProviderOData>) => void) => void;
 }
 
 /*********************************************
-* ISiteCrawlVersionInfoProviderQuery
+* ITenantCrawlVersionsInfoProviderQuery
 **********************************************/
-export interface ISiteCrawlVersionInfoProviderQuery extends SiteCrawlVersionInfoProviderOData, SiteCrawlVersionInfoProviderMethods {
-
-}
-
-/*********************************************
-* SiteCrawlVersionInfoProvider
-**********************************************/
-export interface SiteCrawlVersionInfoProvider extends Base.IBaseResult, SiteCrawlVersionInfoProviderProps, SiteCrawlVersionInfoProviderCollections, SiteCrawlVersionInfoProviderMethods {
+export interface ITenantCrawlVersionsInfoProviderQuery extends TenantCrawlVersionsInfoProviderOData, TenantCrawlVersionsInfoProviderMethods {
 
 }
 
 /*********************************************
-* SiteCrawlVersionInfoProviderProps
+* TenantCrawlVersionsInfoProvider
 **********************************************/
-export interface SiteCrawlVersionInfoProviderProps {
+export interface TenantCrawlVersionsInfoProvider extends Base.IBaseResult, TenantCrawlVersionsInfoProviderProps, TenantCrawlVersionsInfoProviderCollections, TenantCrawlVersionsInfoProviderMethods {
+
+}
+
+/*********************************************
+* TenantCrawlVersionsInfoProviderProps
+**********************************************/
+export interface TenantCrawlVersionsInfoProviderProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
 }
 
 /*********************************************
-* SiteCrawlVersionInfoProviderPropMethods
+* TenantCrawlVersionsInfoProviderPropMethods
 **********************************************/
-export interface SiteCrawlVersionInfoProviderPropMethods {
+export interface TenantCrawlVersionsInfoProviderPropMethods {
 
 }
 
 /*********************************************
-* SiteCrawlVersionInfoProviderCollections
+* TenantCrawlVersionsInfoProviderCollections
 **********************************************/
-export interface SiteCrawlVersionInfoProviderCollections extends SiteCrawlVersionInfoProviderPropMethods {
+export interface TenantCrawlVersionsInfoProviderCollections extends TenantCrawlVersionsInfoProviderPropMethods {
 
 }
 
 /*********************************************
-* SiteCrawlVersionInfoProviderOData
+* TenantCrawlVersionsInfoProviderOData
 **********************************************/
-export interface SiteCrawlVersionInfoProviderOData extends Base.IBaseResult, SiteCrawlVersionInfoProviderProps, SiteCrawlVersionInfoProviderMethods {
+export interface TenantCrawlVersionsInfoProviderOData extends Base.IBaseResult, TenantCrawlVersionsInfoProviderProps, TenantCrawlVersionsInfoProviderMethods {
 
 }
 
 /*********************************************
-* SiteCrawlVersionInfoProviderMethods
+* TenantCrawlVersionsInfoProviderMethods
 **********************************************/
-export interface SiteCrawlVersionInfoProviderMethods {
-	getSiteCrawlVersionStatus(): Base.IBaseExecution<SP.SimpleDataTable>;
+export interface TenantCrawlVersionsInfoProviderMethods {
+	disableCrawlVersions(siteId?: any): Base.IBaseExecution<boolean>;
+	disableCrawlVersionsForTenant(): Base.IBaseExecution<boolean>;
+	enableCrawlVersions(siteId?: any): Base.IBaseExecution<boolean>;
+	enableCrawlVersionsForTenant(): Base.IBaseExecution<boolean>;
+	getSiteCrawlVersionStatus(siteId?: any): Base.IBaseCollection<SP.KeyValue>;
+	isCrawlVersionsEnabled(siteId?: any): Base.IBaseExecution<boolean>;
+	isCrawlVersionsEnabledForTenant(): Base.IBaseExecution<boolean>;
 }

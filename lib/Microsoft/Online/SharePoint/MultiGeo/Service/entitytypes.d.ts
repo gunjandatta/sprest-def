@@ -1185,6 +1185,7 @@ export interface MultiGeoServicesBetaMethods {
 	orgRelationVerification(encodedVerificationQuery?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.OrgRelationVerification>;
 	userPersonalSiteId(userPrincipalName?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteId>;
 	userPersonalSiteLocation(userPrincipalName?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.UserPersonalSiteLocation>;
+	xTenantMoveCompatibilityCheck(targetTenantHostUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MultiGeo.Service.XTenantMoveCompatibilityCheck>;
 }
 
 /*********************************************
@@ -1664,5 +1665,21 @@ export interface UserPersonalSiteLocation {
 * UserPersonalSiteLocationCollections
 **********************************************/
 export interface UserPersonalSiteLocationCollections {
+
+}
+
+/*********************************************
+* XTenantMoveCompatibilityCheck
+**********************************************/
+export interface XTenantMoveCompatibilityCheck {
+	SourceTenantHostUrl?: string;
+	TargetTenantHostUrl?: string;
+	XTenantMoveCompatibilityResult?: number;
+}
+
+/*********************************************
+* XTenantMoveCompatibilityCheckCollections
+**********************************************/
+export interface XTenantMoveCompatibilityCheckCollections {
 
 }

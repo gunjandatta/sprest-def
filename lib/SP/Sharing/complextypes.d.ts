@@ -338,6 +338,10 @@ export interface SharingAbilitiesCollections {
 **********************************************/
 export interface SharingLinkAbilities {
 	canAddNewExternalPrincipals?: SP.Sharing.SharingAbilityStatus;
+	canDeleteEditLink?: SP.Sharing.SharingAbilityStatus;
+	canDeleteManageListLink?: SP.Sharing.SharingAbilityStatus;
+	canDeleteReadLink?: SP.Sharing.SharingAbilityStatus;
+	canDeleteReviewLink?: SP.Sharing.SharingAbilityStatus;
 	canGetEditLink?: SP.Sharing.SharingAbilityStatus;
 	canGetManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReadLink?: SP.Sharing.SharingAbilityStatus;

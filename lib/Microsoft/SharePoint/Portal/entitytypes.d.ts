@@ -165,7 +165,7 @@ export interface GroupSiteManagerMethods {
 	ensureTeamForGroup(): Base.IBaseExecution<string>;
 	ensureTeamForGroupEx(): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
 	getAllOrgLabels(pageNumber?: number): Base.IBaseExecution<Microsoft.SharePoint.Portal.OrgLabelsContextList>;
-	getCurrentUserJoinedTeams(getLogoData?: boolean): Base.IBaseExecution<string>;
+	getCurrentUserJoinedTeams(getLogoData?: boolean, forceCacheUpdate?: boolean): Base.IBaseExecution<string>;
 	getCurrentUserSharedChannelMemberGroups(): Base.IBaseExecution<string>;
 	getCurrentUserTeamConnectedMemberGroups(): Base.IBaseExecution<string>;
 	getGroupCreationContext(): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupCreationContext>;
@@ -183,6 +183,7 @@ export interface GroupSiteManagerMethods {
 	isTeamifyPromptHidden(siteUrl?: string): Base.IBaseExecution<boolean>;
 	notebook(groupId?: any): Base.IBaseExecution<string>;
 	pinToTeam(requestParams?: Microsoft.SharePoint.Portal.PinToTeamParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.PinToTeamResponse>;
+	recentAndJoinedTeams(includeRecent?: boolean, includeTeams?: boolean, includePinned?: boolean): Base.IBaseExecution<Microsoft.SharePoint.Portal.RecentAndJoinedTeamsResponse>;
 }
 
 /*********************************************

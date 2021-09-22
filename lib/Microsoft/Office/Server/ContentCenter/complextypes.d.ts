@@ -5,6 +5,7 @@ import { Microsoft } from "../../../../";
 * ColumnDef
 **********************************************/
 export interface ColumnDef {
+	Id?: string;
 	Name?: string;
 	Type?: string;
 }
@@ -56,8 +57,10 @@ export interface SiteCreationPropertiesCollections {
 * SPAzureCognitiveModelEntityData
 **********************************************/
 export interface SPAzureCognitiveModelEntityData {
-	BaseContentTypeName?: string;
-	Columns?: Array<Microsoft.Office.Server.ContentCenter.ColumnDef>;
+	AzureCognitivePrebuiltModelName?: string;
+	ColumnId?: string;
+	ColumnName?: string;
+	ColumnType?: string;
 	ContentTypeGroup?: string;
 	ContentTypeName?: string;
 }

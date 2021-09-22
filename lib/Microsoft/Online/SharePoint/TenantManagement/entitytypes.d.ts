@@ -254,6 +254,7 @@ export interface Office365TenantProps {
 	LegacyAuthProtocolsEnabled?: boolean;
 	LimitedAccessFileType?: number;
 	MachineLearningCaptureEnabled?: boolean;
+	MediaTranscription?: number;
 	MobileFriendlyUrlEnabled?: boolean;
 	MySitesPublicEnabled?: boolean;
 	NotificationsInOneDriveForBusinessEnabled?: boolean;
@@ -295,6 +296,8 @@ export interface Office365TenantProps {
 	UseFindPeopleInPeoplePicker?: boolean;
 	UsePersistentCookiesForExplorerView?: boolean;
 	UserVoiceForFeedbackEnabled?: boolean;
+	ViewersCanCommentOnMediaDisabled?: boolean;
+	ViewInFileExplorerEnabled?: boolean;
 	WhoCanShareAllowList?: string;
 	Workflow2010Disabled?: boolean;
 	Workflows2013State?: number;
@@ -362,6 +365,7 @@ export interface Office365TenantMethods {
 	setTenantCdnEnabled(cdnType?: number, isEnabled?: boolean): Base.IBaseExecution<any>;
 	setTenantCdnPolicy(cdnType?: number, policy?: number, policyValue?: string): Base.IBaseExecution<any>;
 	updateTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
+	uploadCustomFontsAndCatalogLib(customFontFiles?: Array<Microsoft.SharePoint.Administration.CustomFontsResource>, libUrl?: SP.ResourcePath): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************

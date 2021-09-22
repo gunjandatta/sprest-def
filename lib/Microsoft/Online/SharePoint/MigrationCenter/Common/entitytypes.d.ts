@@ -96,7 +96,6 @@ export interface MigrationTaskEntityData {
 	PreserveUserPermissionForOnPrem?: boolean;
 	ReplaceInvalidChars?: boolean;
 	ScanOnly?: boolean;
-	ScheduledStartTimeUTC?: any;
 	ScheduledTimeUtc?: any;
 	ScheduledType?: number;
 	SkipListWithAudienceEnabled?: boolean;

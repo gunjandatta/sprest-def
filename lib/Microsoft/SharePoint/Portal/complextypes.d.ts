@@ -284,6 +284,28 @@ export interface PinToTeamResponseCollections {
 }
 
 /*********************************************
+* RecentAndJoinedTeamsResponse
+**********************************************/
+export interface RecentAndJoinedTeamsResponse {
+	joinedTeams?: string;
+	joinedTeamsError?: string;
+	joinedTeamsErrorCode?: number;
+	pinnedItems?: Array<Microsoft.SharePoint.ListHome.FavoriteListHomeItem>;
+	pinnedItemsError?: string;
+	pinnedItemsErrorCode?: number;
+	quickAccessItems?: string;
+	quickAccessItemsError?: string;
+	quickAccessItemsErrorCode?: number;
+}
+
+/*********************************************
+* RecentAndJoinedTeamsResponseCollections
+**********************************************/
+export interface RecentAndJoinedTeamsResponseCollections {
+
+}
+
+/*********************************************
 * SPSiteCreationResponse
 **********************************************/
 export interface SPSiteCreationResponse {

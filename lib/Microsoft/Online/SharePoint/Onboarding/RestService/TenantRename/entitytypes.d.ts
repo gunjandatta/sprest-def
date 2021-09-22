@@ -56,6 +56,7 @@ export interface TenantRenameJobCollections extends TenantRenameJobCollectionMet
 * TenantRenameJobCollectionMethods
 **********************************************/
 export interface TenantRenameJobCollectionMethods {
+	cancel(): Base.IBaseExecution<any>;
 	get(): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
 	getWarningMessages(): Base.IBaseExecution<Array<string>>;
 }

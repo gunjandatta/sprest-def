@@ -700,6 +700,7 @@ export interface MigrationTaskProps {
 	FriendlyClientName?: string;
 	IsRetryableFailure?: boolean;
 	IsScanDone?: boolean;
+	LastFinishedTimeUtc?: any;
 	LinkedDeviceId?: any;
 	LogFilePath?: string;
 	ManagementStatus?: number;

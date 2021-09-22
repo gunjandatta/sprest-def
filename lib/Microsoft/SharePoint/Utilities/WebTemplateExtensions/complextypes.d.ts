@@ -2,6 +2,21 @@ import { Base } from "../../../../";
 import { Microsoft } from "../../../../";
 
 /*********************************************
+* OutOfBoxSiteTemplateSettings
+**********************************************/
+export interface OutOfBoxSiteTemplateSettings {
+	Id?: any;
+	IsHidden?: boolean;
+}
+
+/*********************************************
+* OutOfBoxSiteTemplateSettingsCollections
+**********************************************/
+export interface OutOfBoxSiteTemplateSettingsCollections {
+
+}
+
+/*********************************************
 * SiteDesignCreationInfo
 **********************************************/
 export interface SiteDesignCreationInfo {

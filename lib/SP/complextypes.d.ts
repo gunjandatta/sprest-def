@@ -201,6 +201,23 @@ export interface ResourcePathCollections {
 }
 
 /*********************************************
+* DashboardItemInfo
+**********************************************/
+export interface DashboardItemInfo {
+	ItemId?: number;
+	ListId?: any;
+	SiteId?: any;
+	WebId?: any;
+}
+
+/*********************************************
+* DashboardItemInfoCollections
+**********************************************/
+export interface DashboardItemInfoCollections {
+
+}
+
+/*********************************************
 * DashboardItem
 **********************************************/
 export interface DashboardItem {
@@ -287,6 +304,21 @@ export interface FieldUserValue {
 * FieldUserValueCollections
 **********************************************/
 export interface FieldUserValueCollections {
+
+}
+
+/*********************************************
+* ContentAssemblyFileInfo
+**********************************************/
+export interface ContentAssemblyFileInfo {
+	FileUrl?: string;
+	ServerRedirectedEmbedUrl?: string;
+}
+
+/*********************************************
+* ContentAssemblyFileInfoCollections
+**********************************************/
+export interface ContentAssemblyFileInfoCollections {
 
 }
 
@@ -429,6 +461,23 @@ export interface CustomizedFormsPageCollections {
 }
 
 /*********************************************
+* DocumentGenerationInfo
+**********************************************/
+export interface DocumentGenerationInfo {
+	ContentAssemblyFormAnswers?: Array<SP.ContentAssemblyFormAnswer>;
+	FileName?: string;
+	IsTempFile?: boolean;
+	TempFileUrl?: string;
+}
+
+/*********************************************
+* DocumentGenerationInfoCollections
+**********************************************/
+export interface DocumentGenerationInfoCollections {
+
+}
+
+/*********************************************
 * EncryptionOption
 **********************************************/
 export interface EncryptionOption {
@@ -484,6 +533,7 @@ export interface Placeholder {
 	EndPosition?: number;
 	Id?: string;
 	Name?: string;
+	ParagraphId?: string;
 	QuestionTitle?: string;
 	Source?: string;
 	StartPosition?: number;
@@ -1087,6 +1137,7 @@ export interface CopyMigrationOptions {
 	AllowSmallerVersionLimitOnDestination?: boolean;
 	BypassSharedLock?: boolean;
 	ClientEtags?: Array<string>;
+	CustomizedItemName?: Array<string>;
 	ExcludeChildren?: boolean;
 	IgnoreVersionHistory?: boolean;
 	IncludeItemPermissions?: boolean;
@@ -1201,6 +1252,7 @@ export interface CustomerKeyStatusInfo {
 	AvailabilityKeyVaultUri?: string;
 	PrimaryKeyVaultUri?: string;
 	RecoveryEnabled?: boolean;
+	RegistrationProgress?: number;
 	SecondaryKeyVaultUri?: string;
 	Status?: number;
 }
@@ -1436,12 +1488,12 @@ export interface FolderDeleteParametersCollections {
 * GroupCreationInformation
 **********************************************/
 export interface GroupCreationInformation {
+	Description?: string;
+	Title?: string;
 	AllowMembersEditMembership?: boolean;
 	AllowRequestToJoinLeave?: boolean;
 	AutoAcceptRequestToJoinLeave?: boolean;
-	Description?: string;
 	OnlyAllowMembersViewMembership?: boolean;
-	Title?: string;
 }
 
 /*********************************************
@@ -1818,6 +1870,21 @@ export interface ProvisionedMigrationQueueInfo {
 * ProvisionedMigrationQueueInfoCollections
 **********************************************/
 export interface ProvisionedMigrationQueueInfoCollections {
+
+}
+
+/*********************************************
+* ProvisionedTemporaryAzureContainerInfo
+**********************************************/
+export interface ProvisionedTemporaryAzureContainerInfo {
+	EncryptionKey?: any;
+	Uri?: string;
+}
+
+/*********************************************
+* ProvisionedTemporaryAzureContainerInfoCollections
+**********************************************/
+export interface ProvisionedTemporaryAzureContainerInfoCollections {
 
 }
 
@@ -2425,6 +2492,21 @@ export interface XmlSchemaFieldCreationInformationCollections {
 }
 
 /*********************************************
+* TemplateMetaData
+**********************************************/
+export interface TemplateMetaData {
+	Placeholders?: Array<SP.Placeholder>;
+	ServerRedirectedEmbedUrl?: string;
+}
+
+/*********************************************
+* TemplateMetaDataCollections
+**********************************************/
+export interface TemplateMetaDataCollections {
+
+}
+
+/*********************************************
 * TranslationNotificationRecipientCollection
 **********************************************/
 export interface TranslationNotificationRecipientCollection {
@@ -2511,6 +2593,22 @@ export interface TranslationStatus {
 * TranslationStatusCollections
 **********************************************/
 export interface TranslationStatusCollections {
+
+}
+
+/*********************************************
+* UpdateTemplateInfo
+**********************************************/
+export interface UpdateTemplateInfo {
+	NewName?: string;
+	Operation?: number;
+	Placeholders?: Array<SP.Placeholder>;
+}
+
+/*********************************************
+* UpdateTemplateInfoCollections
+**********************************************/
+export interface UpdateTemplateInfoCollections {
 
 }
 

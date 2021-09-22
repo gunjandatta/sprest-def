@@ -29,6 +29,7 @@ export interface SocialActor {
 	ContentUri?: string;
 	EmailAddress?: string;
 	FollowedContentUri?: string;
+	GroupId?: any;
 	Id?: string;
 	ImageUri?: string;
 	IsFollowed?: boolean;

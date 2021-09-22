@@ -164,6 +164,7 @@ export interface SiteProps {
 	IsHubSite?: boolean;
 	LockIssue?: string;
 	MaxItemsPerThrottledOperation?: number;
+	MediaTranscriptionDisabled?: boolean;
 	NeedsB2BUpgrade?: boolean;
 	ResourcePath?: SP.ResourcePath;
 	PrimaryUri?: string;
@@ -180,6 +181,7 @@ export interface SiteProps {
 	ShareByLinkEnabled?: boolean;
 	ShowPeoplePickerSuggestionsForGuestUsers?: boolean;
 	ShowUrlStructure?: boolean;
+	SitePolicyEnabled?: boolean;
 	SocialBarOnSitePagesDisabled?: boolean;
 	StatusBarLink?: string;
 	StatusBarText?: string;
@@ -278,6 +280,7 @@ export interface SiteMethods {
 	openWebUsingPath(path?: SP.ResourcePath): Base.IBaseQuery<SP.Web, SP.WebOData> & SP.WebCollections & SP.WebMethods;
 	provisionMigrationContainers(): Base.IBaseExecution<SP.ProvisionedMigrationContainersInfo>;
 	provisionMigrationQueue(): Base.IBaseExecution<SP.ProvisionedMigrationQueueInfo>;
+	provisionTemporaryAzureContainer(): Base.IBaseExecution<SP.ProvisionedTemporaryAzureContainerInfo>;
 	recoverTenantForBringYourOwnKey(keyInfo?: SP.CustomerKeyInfo): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
 	registerHubSite(creationInformation?: SP.HubSiteCreationInformation): Base.IBaseExecution<SP.HubSite>;
 	rollTenantBringYourOwnKey(keyType?: number, keyVaultInfo?: SP.CustomerKeyVaultInfo): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
@@ -2417,6 +2420,7 @@ export interface ListProps {
 	Id?: any;
 	ImagePath?: SP.ResourcePath;
 	ImageUrl?: string;
+	DefaultSensitivityLabelForLibrary?: string;
 	IrmEnabled?: boolean;
 	IrmExpire?: boolean;
 	IrmReject?: boolean;
@@ -2545,7 +2549,7 @@ export interface ListMethods {
 	bulkValidateUpdateListItems(itemIds?: Array<number>, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, folderPath?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	clearBusinessAppMigrationInteractiveData(): Base.IBaseExecution<any>;
 	createDocumentAndGetEditLink(fileName?: string, folderPath?: string, documentTemplateType?: number, templateUrl?: string): Base.IBaseExecution<string>;
-	createDocumentFromCAAETemplate(ContentTypName?: string, FileName?: string, contentAssemblyFormAnswers?: Array<SP.ContentAssemblyFormAnswer>): Base.IBaseExecution<any>;
+	createDocumentFromCAAETemplate(ContentTypeName?: string, documentGenerationInfo?: SP.DocumentGenerationInfo): Base.IBaseExecution<SP.ContentAssemblyFileInfo>;
 	createDocumentWithDefaultName(folderPath?: string, extension?: string): Base.IBaseExecution<string>;
 	createMappedView(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	createRule(condition?: string, outcome?: string, title?: string, triggerType?: number, emailField?: string, actionType?: number): Base.IBaseExecution<any>;
@@ -2562,6 +2566,7 @@ export interface ListMethods {
 	getBusinessAppMigrationInteractiveData(): Base.IBaseExecution<string>;
 	getBusinessAppOperationStatus(): Base.IBaseExecution<number>;
 	getCAAESmartTemplateContentTypes(): Base.IBaseCollection<SP.SmartTemplateContentType>;
+	getCAAETemplateMetadata(Name?: string, Published?: boolean): Base.IBaseExecution<SP.TemplateMetaData>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getCheckedOutFiles(): Base.IBaseCollection<SP.CheckedOutFile, SP.CheckedOutFileOData, Base.IBaseExecution & SP.CheckedOutFileCollectionMethods> & Base.IBaseExecution & SP.CheckedOutFileCollectionMethods;
 	getItemById(id?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
@@ -2572,7 +2577,6 @@ export interface ListMethods {
 	getLookupFieldChoices(targetFieldName?: string, pagingInfo?: string): Base.IBaseExecution<string>;
 	getMappedApp(appId?: any, visualizationAppTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getMappedApps(visualizationAppTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
-	getPlaceholdersMetadata(Name?: string): Base.IBaseCollection<SP.Placeholder>;
 	getRelatedFields(): Base.IBaseCollection<SP.RelatedField, SP.RelatedFieldOData, Base.IBaseExecution & SP.RelatedFieldCollectionMethods> & Base.IBaseExecution & SP.RelatedFieldCollectionMethods;
 	getSpecialFolderUrl(type?: number, bForceCreate?: boolean, existingFolderGuid?: any): Base.IBaseExecution<string>;
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
@@ -2596,12 +2600,11 @@ export interface ListMethods {
 	syncFlowInstance(flowID?: any): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowInstances(retrieveGroupFlows?: boolean): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	syncFlowTemplates(category?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
-	templatizeDocument(Name?: string, contentControlInfos?: Array<SP.ContentControlInfo>): Base.IBaseExecution<any>;
 	unpublishMappedView(appId?: any, visualizationTarget?: number): SP.SecurableObjectCollections & Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	// update(): Base.IBaseExecution<any>;
+	updateCAAETemplate(Name?: string, updateTemplateInfo?: SP.UpdateTemplateInfo): Base.IBaseExecution<any>;
 	updateFormProcessingModelRetentionLabel(retentionLabel?: string): Base.IBaseExecution<any>;
 	updateFormProcessingModelSettings(retentionLabel?: string, linkedList?: string): Base.IBaseExecution<any>;
-	updatePlaceholdersMetadata(Name?: string, placeholders?: Array<SP.Placeholder>, IsPublishing?: boolean): Base.IBaseExecution<any>;
 	updateRule(ruleId?: string, condition?: string, outcome?: string, title?: string, emailField?: string, status?: number, actionType?: number): Base.IBaseExecution<any>;
 	validateAppName(appDisplayName?: string): SP.SecurableObjectCollections & Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getItems(viewXML?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
@@ -3029,7 +3032,6 @@ export interface WebProps {
 	IsMultilingual?: boolean;
 	IsProvisioningComplete?: boolean;
 	IsRevertHomepageLinkHidden?: boolean;
-	KeepFieldUserResources?: boolean;
 	Language?: number;
 	LastItemModifiedDate?: any;
 	LastItemUserModifiedDate?: any;

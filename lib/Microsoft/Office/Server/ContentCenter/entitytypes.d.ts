@@ -144,6 +144,7 @@ export interface SPMachineLearningModel extends Base.IBaseResult, SPMachineLearn
 * SPMachineLearningModelProps
 **********************************************/
 export interface SPMachineLearningModelProps {
+	AzureCognitivePrebuiltModelName?: string;
 	BaseContentTypeName?: string;
 	ConfidenceScore?: string;
 	ContentTypeGroup?: string;
@@ -188,11 +189,11 @@ export interface SPMachineLearningModelCollections extends SPMachineLearningMode
 * SPMachineLearningModelCollectionMethods
 **********************************************/
 export interface SPMachineLearningModelCollectionMethods {
-	ensureAzureCognitive(parameters?: Microsoft.Office.Server.ContentCenter.SPAzureCognitiveModelEntityData): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
 	getByTitle(title?: string): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelMethods;
 	getByUniqueId(uniqueId?: any): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelMethods;
 	getSupportedPrebuiltModels(): Base.IBaseExecution<Array<Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo>>;
 	import(packageName?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
+	setupContractsSolution(contractLibraryName?: string): Base.IBaseExecution<SP.List>;
 }
 
 /*********************************************
@@ -257,6 +258,7 @@ export interface SPMachineLearningPublicationProps {
 	Created?: any;
 	CreatedBy?: string;
 	DriveId?: string;
+	HasTargetSitePermission?: boolean;
 	ID?: number;
 	ModelId?: number;
 	ModelName?: string;
@@ -267,10 +269,14 @@ export interface SPMachineLearningPublicationProps {
 	ModifiedBy?: string;
 	ObjectId?: string;
 	PublicationType?: number;
+	TargetLibraryId?: any;
 	TargetLibraryRemoved?: boolean;
 	TargetLibraryServerRelativeUrl?: string;
 	TargetLibraryUrl?: string;
+	TargetSiteId?: any;
 	TargetSiteUrl?: string;
+	TargetWebId?: any;
+	TargetWebName?: string;
 	TargetWebServerRelativeUrl?: string;
 	UniqueId?: any;
 	ViewOption?: string;
@@ -297,6 +303,7 @@ export interface SPMachineLearningPublicationCollectionMethods {
 	batchDelete(publications?: Array<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData>): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult>;
 	batchRemove(modelSiteUrl?: string, modelWebServerRelativeUrl?: string, publications?: Array<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData>): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult>;
 	batchUnpromote(promotions?: Array<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationEntityData>): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationsResult>;
+	checkTenantPublishPermissions(): Base.IBaseExecution<boolean>;
 	getByModelUniqueId(modelUniqueId?: any): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication> & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationMethods;
 	getByModelUniqueIdAndPublicationType(modelUniqueId?: any, publicationType?: number): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication> & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationMethods;
 	getByUniqueId(uniqueId?: any): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication> & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationMethods;
@@ -458,9 +465,11 @@ export interface SPMachineLearningWorkItemCollectionMethods {
 **********************************************/
 export interface SPMachineLearningModelEntityData {
 	Accuracy?: any;
+	AzureCognitivePrebuiltModelName?: string;
 	BaseContentTypeName?: string;
 	ColumnId?: string;
 	ColumnName?: string;
+	Columns?: { results: Array<Microsoft.Office.Server.ContentCenter.ColumnDef> };
 	ColumnType?: string;
 	ContentTypeGroup?: string;
 	ContentTypeId?: string;
@@ -484,6 +493,7 @@ export interface SPMachineLearningModelEntityDataCollections {
 **********************************************/
 export interface SPMachineLearningPublicationsEntityData {
 	Comment?: string;
+	isTileViewEnabled?: boolean;
 	ModelSiteUrl?: string;
 	ModelWebServerRelativeUrl?: string;
 	Promote?: boolean;
