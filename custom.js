@@ -39,7 +39,7 @@ module.exports = {
         {
             name: "add",
             returnType: "Microsoft.SharePoint.Comments.comment",
-            params: [{ $: { Name: "text", Type: "Microsoft.SharePoint.Comments.comment" } }]
+            params: [{ $: { Name: "text", Type: "string" } }]
         }
     ],
 
