@@ -751,8 +751,8 @@ export interface DraftAssignmentOData extends Base.IBaseResult, DraftAssignment 
 **********************************************/
 export interface DraftAssignmentCollectionMethods {
 	add(parameters?: PS.AssignmentCreationInformation): Base.IBaseExecution<PS.DraftAssignment>;
-	getByGuid(uid?: any): PS.AssignmentCollections & Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
-	getById(objectId?: string): PS.AssignmentCollections & Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftAssignment, PS.DraftAssignmentOData> & PS.DraftAssignmentCollections;
 }
 
 /*********************************************
@@ -1499,8 +1499,8 @@ export interface ProjectEngagementCollections extends ProjectEngagementPropMetho
 **********************************************/
 export interface ProjectEngagementCollectionMethods {
 	add(parameters?: PS.ProjectEngagementCreationInformation): Base.IBaseExecution<PS.ProjectEngagement>;
-	getByGuid(uid?: any): PS.EngagementCollections & Base.IBaseQuery<PS.ProjectEngagement> & PS.ProjectEngagementCollections & PS.ProjectEngagementMethods;
-	getById(objectId?: string): PS.EngagementCollections & Base.IBaseQuery<PS.ProjectEngagement> & PS.ProjectEngagementCollections & PS.ProjectEngagementMethods;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.ProjectEngagement> & PS.ProjectEngagementCollections & PS.ProjectEngagementMethods;
+	getById(objectId?: string): Base.IBaseQuery<PS.ProjectEngagement> & PS.ProjectEngagementCollections & PS.ProjectEngagementMethods;
 	update(): Base.IBaseExecution<any>;
 }
 
@@ -2265,11 +2265,11 @@ export interface PublishedProjectProps {
 * PublishedProjectPropMethods
 **********************************************/
 export interface PublishedProjectPropMethods {
-	Calendar(): PS.ProjectCollections & Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
-	Draft(): PS.ProjectCollections & Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
-	IncludeCustomFields(): PS.ProjectCollections & Base.IBaseQuery<PS.PublishedProject, PS.PublishedProjectOData> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
-	Owner(): PS.ProjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
-	ProjectWorkflowInstance(): PS.ProjectCollections & Base.IBaseQuery<PS.ProjectWorkflowInstance, PS.ProjectWorkflowInstanceOData> & PS.ProjectWorkflowInstanceCollections & PS.ProjectWorkflowInstanceMethods;
+	Calendar(): Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
+	Draft(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
+	IncludeCustomFields(): Base.IBaseQuery<PS.PublishedProject, PS.PublishedProjectOData> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
+	Owner(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	ProjectWorkflowInstance(): Base.IBaseQuery<PS.ProjectWorkflowInstance, PS.ProjectWorkflowInstanceOData> & PS.ProjectWorkflowInstanceCollections & PS.ProjectWorkflowInstanceMethods;
 }
 
 /*********************************************
@@ -2293,8 +2293,8 @@ export interface PublishedProjectCollections extends PublishedProjectPropMethods
 **********************************************/
 export interface PublishedProjectCollectionMethods {
 	add(parameters?: PS.ProjectCreationInformation): Base.IBaseExecution<PS.PublishedProject>;
-	getByGuid(uid?: any): PS.ProjectCollections & Base.IBaseQuery<PS.PublishedProject, PS.PublishedProjectOData> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
-	getById(objectId?: string): PS.ProjectCollections & Base.IBaseQuery<PS.PublishedProject, PS.PublishedProjectOData> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.PublishedProject, PS.PublishedProjectOData> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
+	getById(objectId?: string): Base.IBaseQuery<PS.PublishedProject, PS.PublishedProjectOData> & PS.PublishedProjectCollections & PS.PublishedProjectMethods;
 	update(): Base.IBaseExecution<PS.QueueJob>;
 	validate(): Base.IBaseExecution<any>;
 }
@@ -2319,16 +2319,16 @@ export interface PublishedProjectOData extends PS.ProjectOData, Base.IBaseResult
 * PublishedProjectMethods
 **********************************************/
 export interface PublishedProjectMethods {
-	getResourcePlanByUrl(start?: string, end?: string, scale?: string): PS.ProjectCollections & Base.IBaseQuery<PS.ResourcePlan, PS.ResourcePlanOData> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
+	getResourcePlanByUrl(start?: string, end?: string, scale?: string): Base.IBaseQuery<PS.ResourcePlan, PS.ResourcePlanOData> & PS.ResourcePlanCollections & PS.ResourcePlanMethods;
 	leaveProjectStage(): Base.IBaseExecution<any>;
 	readyToLeaveProjectStage(): Base.IBaseExecution<number>;
 	updateIdeaListItemStatus(status?: string): Base.IBaseExecution<any>;
-	checkOut(): PS.ProjectCollections & Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
+	checkOut(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
 	createProjectSite(siteName?: string): Base.IBaseExecution<any>;
-	delete(): PS.ProjectCollections & Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
+	delete(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 	submitToWorkflow(): Base.IBaseExecution<any>;
 	unlinkProjectSite(): Base.IBaseExecution<any>;
-	updateVisibilityCustomFields(): PS.ProjectCollections & Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
+	updateVisibilityCustomFields(): Base.IBaseQuery<PS.QueueJob, PS.QueueJobOData> & PS.QueueJobCollections & PS.QueueJobMethods;
 }
 
 /*********************************************
@@ -2396,8 +2396,8 @@ export interface PublishedAssignmentOData extends Base.IBaseResult, PublishedAss
 * PublishedAssignmentCollectionMethods
 **********************************************/
 export interface PublishedAssignmentCollectionMethods {
-	getByGuid(uid?: any): PS.AssignmentCollections & Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
-	getById(objectId?: string): PS.AssignmentCollections & Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.PublishedAssignment, PS.PublishedAssignmentOData> & PS.PublishedAssignmentCollections;
 }
 
 /*********************************************
@@ -2462,7 +2462,7 @@ export interface PublishedProjectResourceProps {
 * PublishedProjectResourcePropMethods
 **********************************************/
 export interface PublishedProjectResourcePropMethods {
-	DefaultAssignmentOwner(): PS.ProjectResourceCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	DefaultAssignmentOwner(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -2477,8 +2477,8 @@ export interface PublishedProjectResourceCollections extends PublishedProjectRes
 * PublishedProjectResourceCollectionMethods
 **********************************************/
 export interface PublishedProjectResourceCollectionMethods {
-	getByGuid(uid?: any): PS.ProjectResourceCollections & Base.IBaseQuery<PS.PublishedProjectResource, PS.PublishedProjectResourceOData> & PS.PublishedProjectResourceCollections;
-	getById(objectId?: string): PS.ProjectResourceCollections & Base.IBaseQuery<PS.PublishedProjectResource, PS.PublishedProjectResourceOData> & PS.PublishedProjectResourceCollections;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.PublishedProjectResource, PS.PublishedProjectResourceOData> & PS.PublishedProjectResourceCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.PublishedProjectResource, PS.PublishedProjectResourceOData> & PS.PublishedProjectResourceCollections;
 }
 
 /*********************************************
@@ -2584,9 +2584,9 @@ export interface PublishedTaskProps {
 * PublishedTaskPropMethods
 **********************************************/
 export interface PublishedTaskPropMethods {
-	Calendar(): PS.TaskCollections & Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
-	Parent(): PS.TaskCollections & Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
-	StatusManager(): PS.TaskCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	Calendar(): Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
+	Parent(): Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
+	StatusManager(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	TaskPlanLink(): Base.IBaseExecution<PS.TaskPlanLink> & PS.TaskPlanLinkCollections & PS.TaskPlanLinkMethods;
 }
 
@@ -2608,8 +2608,8 @@ export interface PublishedTaskCollections extends PublishedTaskPropMethods {
 * PublishedTaskCollectionMethods
 **********************************************/
 export interface PublishedTaskCollectionMethods {
-	getByGuid(uid?: any): PS.TaskCollections & Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
-	getById(objectId?: string): PS.TaskCollections & Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
+	getById(objectId?: string): Base.IBaseQuery<PS.PublishedTask, PS.PublishedTaskOData> & PS.PublishedTaskCollections & PS.PublishedTaskMethods;
 }
 
 /*********************************************
@@ -2763,8 +2763,8 @@ export interface PublishedTaskLinkOData extends Base.IBaseResult, PublishedTaskL
 * PublishedTaskLinkCollectionMethods
 **********************************************/
 export interface PublishedTaskLinkCollectionMethods {
-	getByGuid(uid?: any): PS.TaskLinkCollections & Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
-	getById(objectId?: string): PS.TaskLinkCollections & Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.PublishedTaskLink, PS.PublishedTaskLinkOData> & PS.PublishedTaskLinkCollections;
 }
 
 /*********************************************
@@ -2920,9 +2920,9 @@ export interface DraftProjectProps {
 * DraftProjectPropMethods
 **********************************************/
 export interface DraftProjectPropMethods {
-	Calendar(): PS.ProjectCollections & Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
-	IncludeCustomFields(): PS.ProjectCollections & Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
-	Owner(): PS.ProjectCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	Calendar(): Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
+	IncludeCustomFields(): Base.IBaseQuery<PS.DraftProject, PS.DraftProjectOData> & PS.DraftProjectCollections;
+	Owner(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3021,7 +3021,7 @@ export interface DraftProjectResourceProps {
 * DraftProjectResourcePropMethods
 **********************************************/
 export interface DraftProjectResourcePropMethods {
-	DefaultAssignmentOwner(): PS.ProjectResourceCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	DefaultAssignmentOwner(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3038,8 +3038,8 @@ export interface DraftProjectResourceCollections extends DraftProjectResourcePro
 export interface DraftProjectResourceCollectionMethods {
 	add(parameters?: PS.ProjectResourceCreationInformation): Base.IBaseExecution<PS.DraftProjectResource>;
 	addEnterpriseResourceById(resourceId?: any): Base.IBaseExecution<PS.QueueJob>;
-	getByGuid(uid?: any): PS.ProjectResourceCollections & Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
-	getById(objectId?: string): PS.ProjectResourceCollections & Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftProjectResource, PS.DraftProjectResourceOData> & PS.DraftProjectResourceCollections;
 }
 
 /*********************************************
@@ -3089,8 +3089,8 @@ export interface DraftTaskLinkOData extends Base.IBaseResult, DraftTaskLink {
 **********************************************/
 export interface DraftTaskLinkCollectionMethods {
 	add(parameters?: PS.TaskLinkCreationInformation): Base.IBaseExecution<PS.DraftTaskLink>;
-	getByGuid(uid?: any): PS.TaskLinkCollections & Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
-	getById(objectId?: string): PS.TaskLinkCollections & Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftTaskLink, PS.DraftTaskLinkOData> & PS.DraftTaskLinkCollections;
 }
 
 /*********************************************
@@ -3183,9 +3183,9 @@ export interface DraftTaskProps {
 * DraftTaskPropMethods
 **********************************************/
 export interface DraftTaskPropMethods {
-	Calendar(): PS.TaskCollections & Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
-	Parent(): PS.TaskCollections & Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
-	StatusManager(): PS.TaskCollections & Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
+	Calendar(): Base.IBaseQuery<PS.Calendar, PS.CalendarOData> & PS.CalendarCollections & PS.CalendarMethods;
+	Parent(): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
+	StatusManager(): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 }
 
 /*********************************************
@@ -3205,8 +3205,8 @@ export interface DraftTaskCollections extends DraftTaskPropMethods {
 **********************************************/
 export interface DraftTaskCollectionMethods {
 	add(parameters?: PS.TaskCreationInformation): Base.IBaseExecution<PS.DraftTask>;
-	getByGuid(uid?: any): PS.TaskCollections & Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
-	getById(objectId?: string): PS.TaskCollections & Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
+	getById(objectId?: string): Base.IBaseQuery<PS.DraftTask, PS.DraftTaskOData> & PS.DraftTaskCollections;
 }
 
 /*********************************************
@@ -3765,8 +3765,8 @@ export interface ResourceEngagementCollections extends ResourceEngagementPropMet
 * ResourceEngagementCollectionMethods
 **********************************************/
 export interface ResourceEngagementCollectionMethods {
-	getByGuid(uid?: any): PS.EngagementCollections & Base.IBaseQuery<PS.ResourceEngagement> & PS.ResourceEngagementCollections & PS.ResourceEngagementMethods;
-	getById(objectId?: string): PS.EngagementCollections & Base.IBaseQuery<PS.ResourceEngagement> & PS.ResourceEngagementCollections & PS.ResourceEngagementMethods;
+	getByGuid(uid?: any): Base.IBaseQuery<PS.ResourceEngagement> & PS.ResourceEngagementCollections & PS.ResourceEngagementMethods;
+	getById(objectId?: string): Base.IBaseQuery<PS.ResourceEngagement> & PS.ResourceEngagementCollections & PS.ResourceEngagementMethods;
 	update(): Base.IBaseExecution<any>;
 }
 
@@ -4269,7 +4269,7 @@ export interface LookupTextProps {
 * LookupTextPropMethods
 **********************************************/
 export interface LookupTextPropMethods {
-	Parent(): PS.LookupEntryCollections & Base.IBaseQuery<PS.LookupText, PS.LookupTextOData> & PS.LookupTextCollections & PS.LookupTextMethods;
+	Parent(): Base.IBaseQuery<PS.LookupText, PS.LookupTextOData> & PS.LookupTextCollections & PS.LookupTextMethods;
 }
 
 /*********************************************
@@ -4464,7 +4464,7 @@ export interface ProjectEngagementTimephasedPeriodCollections extends ProjectEng
 * ProjectEngagementTimephasedPeriodCollectionMethods
 **********************************************/
 export interface ProjectEngagementTimephasedPeriodCollectionMethods {
-	getByStartUrl(start?: string): PS.EngagementTimephasedPeriodCollections & Base.IBaseQuery<PS.ProjectEngagementTimephasedPeriod> & PS.ProjectEngagementTimephasedPeriodCollections;
+	getByStartUrl(start?: string): Base.IBaseQuery<PS.ProjectEngagementTimephasedPeriod> & PS.ProjectEngagementTimephasedPeriodCollections;
 }
 
 /*********************************************
@@ -5343,7 +5343,7 @@ export interface ResourceEngagementTimephasedPeriodCollections extends ResourceE
 * ResourceEngagementTimephasedPeriodCollectionMethods
 **********************************************/
 export interface ResourceEngagementTimephasedPeriodCollectionMethods {
-	getByStartUrl(start?: string): PS.EngagementTimephasedPeriodCollections & Base.IBaseQuery<PS.ResourceEngagementTimephasedPeriod> & PS.ResourceEngagementTimephasedPeriodCollections;
+	getByStartUrl(start?: string): Base.IBaseQuery<PS.ResourceEngagementTimephasedPeriod> & PS.ResourceEngagementTimephasedPeriodCollections;
 }
 
 /*********************************************

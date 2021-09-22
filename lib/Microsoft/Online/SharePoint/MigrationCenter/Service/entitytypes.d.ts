@@ -67,7 +67,7 @@ export interface AgentGroupCollections extends AgentGroupPropMethods {
 export interface AgentGroupCollectionMethods {
 	createByName(Name?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup>;
 	deleteByName(Name?: string): Base.IBaseExecution<any>;
-	getByName(Name?: string): Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntityCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup> & Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroupCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroupMethods;
+	getByName(Name?: string): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup> & Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroupCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroupMethods;
 	getGroupList(): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup>>;
 }
 
@@ -163,7 +163,7 @@ export interface DeviceCollections extends DevicePropMethods {
 * DeviceCollectionMethods
 **********************************************/
 export interface DeviceCollectionMethods {
-	getById(id?: any): Microsoft.Online.SharePoint.MigrationCenter.Common.DeviceEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.Device> & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceMethods;
+	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.Device> & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.DeviceMethods;
 }
 
 /*********************************************
@@ -401,7 +401,7 @@ export interface PerformanceDataCollections extends PerformanceDataPropMethods {
 **********************************************/
 export interface PerformanceDataCollectionMethods {
 	addPerfDataTest(Count?: number, Bottleneck?: string, MaxDuration?: number, MaxTaskFiles?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData>>;
-	getById(id?: any): Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationPerformanceEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData> & Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDataCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDataMethods;
+	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceData> & Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDataCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDataMethods;
 	getData(StartTime?: any, EndTime?: any, AgentId?: any, TimeUnit?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Service.PerformanceDashboardData>;
 	getPerfDataTest(StartTime?: any, EndTime?: any, AgentId?: any): Base.IBaseExecution<string>;
 	getRawData(StartTime?: any, EndTime?: any, AgentId?: any): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationPerformanceEntityData>>;
@@ -745,7 +745,7 @@ export interface MigrationTaskCollectionMethods {
 	batchCreate(taskDefinitions?: Array<Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition>, taskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings, mmTaskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MMTaskSettings): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Common.BatchCreationResult>;
 	batchDelete(taskIdList?: Array<any>, deleteInProgressTask?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Common.BatchDeletionResult>;
 	createDuplicateTasks(taskDefinition?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition, taskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings, mmTaskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MMTaskSettings, taskCount?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask>;
-	getById(id?: any): Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskMethods;
+	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskMethods;
 }
 
 /*********************************************
@@ -897,7 +897,7 @@ export interface MigrationCredentialCollections extends MigrationCredentialPropM
 * MigrationCredentialCollectionMethods
 **********************************************/
 export interface MigrationCredentialCollectionMethods {
-	getById(id?: any): Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationCredentialEntityDataCollections & Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialMethods;
+	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredentialMethods;
 	getCredentials(AccountName?: string, Type?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationCredential>;
 }
 

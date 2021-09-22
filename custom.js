@@ -38,8 +38,8 @@ module.exports = {
     "Collection(Microsoft.SharePoint.Comments.comment)": [
         {
             name: "add",
-            returnType: "SP.Microsoft.SharePoint.Comments.comment",
-            params: [{ $: { Name: "text", Type: "SP.Microsoft.SharePoint.Comments.comment" } }]
+            returnType: "Microsoft.SharePoint.Comments.comment",
+            params: [{ $: { Name: "text", Type: "Microsoft.SharePoint.Comments.comment" } }]
         }
     ],
 

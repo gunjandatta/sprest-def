@@ -78,7 +78,7 @@ export interface commentCollections extends commentPropMethods {
 **********************************************/
 export interface commentCollectionMethods {
 	deleteAll(): Base.IBaseExecution<boolean>;
-	add(text?: SP.Microsoft.SharePoint.Comments.comment): Base.IBaseExecution<SP.Microsoft.SharePoint.Comments.comment>;
+	add(text?: Microsoft.SharePoint.Comments.comment): Base.IBaseExecution<Microsoft.SharePoint.Comments.comment>;
 }
 
 /*********************************************
