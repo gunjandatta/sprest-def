@@ -73,6 +73,7 @@ export interface SharedWithMeDocument {
 	ListId?: string;
 	ListItemId?: string;
 	LocalItemUniqueId?: string;
+	LocalItemUniqueIdCollection?: string;
 	MediaBaseUrl?: string;
 	Modified?: any;
 	ModifiedDateTimeUTC?: any;

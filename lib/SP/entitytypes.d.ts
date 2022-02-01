@@ -286,7 +286,7 @@ export interface SiteMethods {
 	rollTenantBringYourOwnKey(keyType?: number, keyVaultInfo?: SP.CustomerKeyVaultInfo): Base.IBaseExecution<SP.CustomerKeyStatusInfo>;
 	runHealthCheck(ruleId?: any, bRepair?: boolean, bRunAlways?: boolean): Base.IBaseExecution<SP.SiteHealth.SiteHealthSummary>;
 	runUpgradeSiteSession(versionUpgrade?: boolean, queueOnly?: boolean, sendEmail?: boolean): Base.IBaseExecution<any>;
-	setIsContributorOwnerEnabledPropertyForDefaultDocLib(propertyValue?: boolean, forceDocLibActivation?: boolean): Base.IBaseExecution<boolean>;
+	setIsContributorOwnerEnabledPropertyForDefaultDocLib(propertyValue?: boolean, forceDocLibActivation?: boolean, deleteIfDocLibAlreadyExists?: boolean): Base.IBaseExecution<boolean>;
 	unregisterHubSite(): Base.IBaseExecution<any>;
 	updateClientObjectModelUseRemoteAPIsPermissionSetting(requireUseRemoteAPIs?: boolean): Base.IBaseExecution<any>;
 	validateHubSiteJoinApprovalToken(joiningSiteId?: any, approvalToken?: string): Base.IBaseExecution<boolean>;
@@ -1175,7 +1175,6 @@ export interface ListItemProps {
 	ServerRedirectedEmbedUri?: string;
 	ServerRedirectedEmbedUrl?: string;
 	Client_Title?: string;
-	Title?: string;
 }
 
 /*********************************************
@@ -2548,6 +2547,7 @@ export interface ListMethods {
 	addValidateUpdateItemUsingPath(listItemCreateInfo?: SP.ListItemCreationInformationUsingPath, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	bulkValidateUpdateListItems(itemIds?: Array<number>, formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, folderPath?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	clearBusinessAppMigrationInteractiveData(): Base.IBaseExecution<any>;
+	copyTemplateAndGetMetadata(Id?: string): Base.IBaseExecution<SP.TemplatizationMetaData>;
 	createDocumentAndGetEditLink(fileName?: string, folderPath?: string, documentTemplateType?: number, templateUrl?: string): Base.IBaseExecution<string>;
 	createDocumentFromCAAETemplate(ContentTypeName?: string, documentGenerationInfo?: SP.DocumentGenerationInfo): Base.IBaseExecution<SP.ContentAssemblyFileInfo>;
 	createDocumentWithDefaultName(folderPath?: string, extension?: string): Base.IBaseExecution<string>;
@@ -2565,8 +2565,8 @@ export interface ListMethods {
 	getBloomFilterWithCustomFields(listItemStartingID?: number, internalFieldNames?: Array<string>): Base.IBaseExecution<SP.ListBloomFilter>;
 	getBusinessAppMigrationInteractiveData(): Base.IBaseExecution<string>;
 	getBusinessAppOperationStatus(): Base.IBaseExecution<number>;
-	getCAAESmartTemplateContentTypes(): Base.IBaseCollection<SP.SmartTemplateContentType>;
 	getCAAETemplateMetadata(Name?: string, Published?: boolean): Base.IBaseExecution<SP.TemplateMetaData>;
+	getCAAETemplateMetadataV2(Id?: string): Base.IBaseCollection<SP.PlaceholderV2>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getCheckedOutFiles(): Base.IBaseCollection<SP.CheckedOutFile, SP.CheckedOutFileOData, Base.IBaseExecution & SP.CheckedOutFileCollectionMethods> & Base.IBaseExecution & SP.CheckedOutFileCollectionMethods;
 	getItemById(id?: number): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
@@ -2603,6 +2603,7 @@ export interface ListMethods {
 	unpublishMappedView(appId?: any, visualizationTarget?: number): Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	// update(): Base.IBaseExecution<any>;
 	updateCAAETemplate(Name?: string, updateTemplateInfo?: SP.UpdateTemplateInfo): Base.IBaseExecution<any>;
+	updateCAAETemplateV2(Id?: string, updateTemplateInfo?: SP.UpdateTemplateInfoV2): Base.IBaseExecution<any>;
 	updateFormProcessingModelRetentionLabel(retentionLabel?: string): Base.IBaseExecution<any>;
 	updateFormProcessingModelSettings(retentionLabel?: string, linkedList?: string): Base.IBaseExecution<any>;
 	updateRule(ruleId?: string, condition?: string, outcome?: string, title?: string, emailField?: string, status?: number, actionType?: number): Base.IBaseExecution<any>;
@@ -3229,9 +3230,11 @@ export interface WebMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): Base.IBaseExecution<any>;
 	resetRoleInheritance(): Base.IBaseExecution<any>;
 	addCrossFarmMessage(messagePayloadBase64?: string): Base.IBaseExecution<boolean>;
+	addPlaceholderUser(listId?: string, placeholderText?: string): Base.IBaseExecution<any>;
 	addSupportedUILanguage(lcid?: number): Base.IBaseExecution<any>;
 	applyTheme(colorPaletteUrl?: string, fontSchemeUrl?: string, backgroundImageUrl?: string, shareGenerated?: boolean): Base.IBaseExecution<any>;
 	applyWebTemplate(webTemplate?: string): Base.IBaseExecution<any>;
+	consentToPowerPlatform(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	createDefaultAssociatedGroups(userLogin?: string, userLogin2?: string, groupNameSeed?: string): Base.IBaseExecution<any>;
 	createGroupBasedEnvironment(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	defaultDocumentLibrary(): Base.IBaseQuery<SP.List, SP.ListOData> & SP.ListCollections & SP.ListMethods;
@@ -3243,7 +3246,7 @@ export interface WebMethods {
 	ensureUserByObjectId(objectId?: any, tenantId?: any, principalType?: number): Base.IBaseQuery<SP.User, SP.UserOData> & SP.UserCollections & SP.UserMethods;
 	executeRemoteLOB(inputStream?: any): Base.IBaseExecution<any>;
 	getAdaptiveCardExtensions(includeErrors?: boolean, project?: any): Base.IBaseCollection<Microsoft.SharePoint.ClientSideComponent.SPClientSideComponentQueryResult>;
-	getAllClientSideComponents(): Base.IBaseExecution<string>;
+	getAllClientSideComponents(languages?: Array<string>, supportsMultiVersion?: boolean): Base.IBaseExecution<string>;
 	getAppBdcCatalog(): Base.IBaseExecution<SP.BusinessData.AppBdcCatalog>;
 	getAppBdcCatalogForAppInstance(appInstanceId?: any): Base.IBaseExecution<SP.BusinessData.AppBdcCatalog>;
 	getAppInstanceById(appInstanceId?: any): Base.IBaseExecution<SP.AppInstance>;
@@ -3295,6 +3298,7 @@ export interface WebMethods {
 	hubSiteData(forceRefresh?: boolean): Base.IBaseExecution<string>;
 	hubSiteDataAsStream(forceRefresh?: boolean): Base.IBaseExecution<any>;
 	incrementSiteClientTag(): Base.IBaseExecution<any>;
+	listPowerPlatformUserDetails(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	loadAndInstallApp(appPackageStream?: any): Base.IBaseExecution<SP.AppInstance>;
 	loadAndInstallAppInSpecifiedLocale(appPackageStream?: any, installationLocaleLCID?: number): Base.IBaseExecution<SP.AppInstance>;
 	loadApp(appPackageStream?: any, installationLocaleLCID?: number): Base.IBaseExecution<SP.AppInstance>;
@@ -3317,7 +3321,7 @@ export interface WebMethods {
 	syncHubSiteTheme(): Base.IBaseExecution<any>;
 	unregisterPushNotificationSubscriber(deviceAppInstanceId?: any): Base.IBaseExecution<any>;
 	// update(): Base.IBaseExecution<any>;
-	uploadImage(listTitle?: string, imageName?: string, contentStream?: any, listId?: string, itemId?: number, overwrite?: boolean): Base.IBaseExecution<SP.SPImageItem>;
+	uploadImage(listTitle?: string, imageName?: string, contentStream?: any, listId?: string, itemId?: number, fieldId?: string, overwrite?: boolean): Base.IBaseExecution<SP.SPImageItem>;
 	doesUserHavePermissions(high?: number, low?: number): Base.IBaseExecution<boolean>;
 	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
@@ -4835,6 +4839,25 @@ export interface SPHSiteOData extends Base.IBaseResult, SPHSiteProps, SPHSiteMet
 **********************************************/
 export interface SPHSiteMethods {
 	details(): Base.IBaseExecution<SP.SPHSiteReference>;
+}
+
+/*********************************************
+* HomeSitesDetails
+**********************************************/
+export interface HomeSitesDetails {
+	Audiences?: { results: Array<any> };
+	MatchingAudiences?: { results: Array<any> };
+	SiteId?: any;
+	Title?: string;
+	Url?: string;
+	WebId?: any;
+}
+
+/*********************************************
+* HomeSitesDetailsCollections
+**********************************************/
+export interface HomeSitesDetailsCollections {
+
 }
 
 /*********************************************
@@ -8161,6 +8184,76 @@ export interface TenantAppInstance {
 **********************************************/
 export interface TenantAppInstanceCollections {
 
+}
+
+/*********************************************
+* IUserExperienceState
+**********************************************/
+export interface IUserExperienceState extends UserExperienceStateCollections, UserExperienceStateMethods, Base.IBaseQuery<UserExperienceState, IUserExperienceStateQuery> {
+
+}
+
+/*********************************************
+* IUserExperienceStateCollection
+**********************************************/
+export interface IUserExperienceStateCollection extends Base.IBaseResults<UserExperienceState> {
+	done?: (resolve: (value?: Array<UserExperienceState>) => void) => void;
+}
+
+/*********************************************
+* IUserExperienceStateQueryCollection
+**********************************************/
+export interface IUserExperienceStateQueryCollection extends Base.IBaseResults<UserExperienceStateOData> {
+	done?: (resolve: (value?: Array<UserExperienceStateOData>) => void) => void;
+}
+
+/*********************************************
+* IUserExperienceStateQuery
+**********************************************/
+export interface IUserExperienceStateQuery extends UserExperienceStateOData, UserExperienceStateMethods {
+
+}
+
+/*********************************************
+* UserExperienceState
+**********************************************/
+export interface UserExperienceState extends Base.IBaseResult, UserExperienceStateProps, UserExperienceStateCollections, UserExperienceStateMethods {
+
+}
+
+/*********************************************
+* UserExperienceStateProps
+**********************************************/
+export interface UserExperienceStateProps {
+	Flags?: number;
+}
+
+/*********************************************
+* UserExperienceStatePropMethods
+**********************************************/
+export interface UserExperienceStatePropMethods {
+
+}
+
+/*********************************************
+* UserExperienceStateCollections
+**********************************************/
+export interface UserExperienceStateCollections extends UserExperienceStatePropMethods {
+
+}
+
+/*********************************************
+* UserExperienceStateOData
+**********************************************/
+export interface UserExperienceStateOData extends Base.IBaseResult, UserExperienceStateProps, UserExperienceStateMethods {
+
+}
+
+/*********************************************
+* UserExperienceStateMethods
+**********************************************/
+export interface UserExperienceStateMethods {
+	setFlag(flag?: number, reset?: boolean): Base.IBaseExecution<any>;
 }
 
 /*********************************************

@@ -419,6 +419,7 @@ export interface CurrencyInformationCollectionCollections {
 **********************************************/
 export interface CurrencyInformation {
 	DisplayString?: string;
+	LanguageCultureName?: string;
 	LCID?: string;
 }
 
@@ -522,6 +523,24 @@ export interface MultiGeoCopyParameters {
 * MultiGeoCopyParametersCollections
 **********************************************/
 export interface MultiGeoCopyParametersCollections {
+
+}
+
+/*********************************************
+* PlaceholderV2
+**********************************************/
+export interface PlaceholderV2 {
+	DataType?: string;
+	Id?: string;
+	Name?: string;
+	QuestionTitle?: string;
+	Source?: string;
+}
+
+/*********************************************
+* PlaceholderV2Collections
+**********************************************/
+export interface PlaceholderV2Collections {
 
 }
 
@@ -864,6 +883,7 @@ export interface AsyncReadJobInfoCollections {
 export interface AsyncReadOptions {
 	IncludeDirectDescendantsOnly?: boolean;
 	IncludeExtendedMetadata?: boolean;
+	IncludePermission?: boolean;
 	IncludeSecurity?: boolean;
 	IncludeVersions?: boolean;
 	StartChangeToken?: string;
@@ -1490,10 +1510,6 @@ export interface FolderDeleteParametersCollections {
 export interface GroupCreationInformation {
 	Description?: string;
 	Title?: string;
-	AllowMembersEditMembership?: boolean;
-	AllowRequestToJoinLeave?: boolean;
-	AutoAcceptRequestToJoinLeave?: boolean;
-	OnlyAllowMembersViewMembership?: boolean;
 }
 
 /*********************************************
@@ -1808,7 +1824,9 @@ export interface MediaServiceUpdateParameters {
 	MediaServiceEventHashCode?: string;
 	MediaServiceFastMetadata?: string;
 	MediaServiceGenerationTime?: string;
+	MediaServiceImageHeight?: number;
 	MediaServiceImageTags?: string;
+	MediaServiceImageWidth?: number;
 	MediaServiceKeyPoints?: string;
 	MediaServiceLocation?: string;
 	MediaServiceMetadata?: string;
@@ -2507,6 +2525,21 @@ export interface TemplateMetaDataCollections {
 }
 
 /*********************************************
+* TemplatizationMetaData
+**********************************************/
+export interface TemplatizationMetaData {
+	FileInfo?: SP.ContentAssemblyFileInfo;
+	Placeholders?: Array<SP.PlaceholderV2>;
+}
+
+/*********************************************
+* TemplatizationMetaDataCollections
+**********************************************/
+export interface TemplatizationMetaDataCollections {
+
+}
+
+/*********************************************
 * TranslationNotificationRecipientCollection
 **********************************************/
 export interface TranslationNotificationRecipientCollection {
@@ -2593,6 +2626,23 @@ export interface TranslationStatus {
 * TranslationStatusCollections
 **********************************************/
 export interface TranslationStatusCollections {
+
+}
+
+/*********************************************
+* UpdateTemplateInfoV2
+**********************************************/
+export interface UpdateTemplateInfoV2 {
+	NewName?: string;
+	Operation?: number;
+	Placeholders?: Array<SP.PlaceholderV2>;
+	Url?: string;
+}
+
+/*********************************************
+* UpdateTemplateInfoV2Collections
+**********************************************/
+export interface UpdateTemplateInfoV2Collections {
 
 }
 

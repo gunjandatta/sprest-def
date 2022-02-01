@@ -302,6 +302,7 @@ export interface SitePageMetadata {
 	AuthorByline?: { results: Array<string> };
 	BannerImageUrl?: string;
 	BannerThumbnailUrl?: string;
+	CallToAction?: string;
 	Categories?: string;
 	CommentCount?: number;
 	CommentsDisabled?: boolean;
@@ -1337,7 +1338,7 @@ export interface RichSharingOData extends Base.IBaseResult, RichSharingProps, Ri
 * RichSharingMethods
 **********************************************/
 export interface RichSharingMethods {
-	sharePageByEmail(url?: string, message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	sharePageByEmail(url?: string, message?: string, recipientEmails?: Array<string>, pageContent?: string): Base.IBaseExecution<any>;
 	shareSiteByEmail(CustomDescription?: string, CustomTitle?: string, Message?: string, Url?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 }
 
@@ -2007,6 +2008,7 @@ export interface TopicSitePageCollections extends TopicSitePagePropMethods {
 **********************************************/
 export interface TopicSitePageCollectionMethods {
 	getByEntityId(entityId?: string): Base.IBaseQuery<SP.Publishing.TopicSitePage> & SP.Publishing.TopicSitePageCollections & SP.Publishing.TopicSitePageMethods;
+	getByEntityIdAndCulture(id?: string, culture?: string): Base.IBaseQuery<SP.Publishing.TopicSitePage> & SP.Publishing.TopicSitePageCollections & SP.Publishing.TopicSitePageMethods;
 	isContentTypeAvailable(): Base.IBaseExecution<boolean>;
 }
 

@@ -176,6 +176,7 @@ export interface GroupSiteManagerMethods {
 	getTeamChannelFilesUrl(teamId?: string, channelId?: string): Base.IBaseExecution<any>;
 	getTeamChannels(teamId?: string, useStagingEndpoint?: boolean): Base.IBaseExecution<any>;
 	getTeamChannelsEx(teamId?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.ChannelInfoCollection>;
+	getTeamChannelsWithSiteUrl(siteUrl?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.ChannelInfoCollection>;
 	getUserSharedChannelMemberGroups(userName?: string): Base.IBaseExecution<string>;
 	getUserTeamConnectedMemberGroups(userName?: string): Base.IBaseExecution<string>;
 	getValidSiteUrlFromAlias(alias?: string, managedPath?: string, isTeamSite?: boolean): Base.IBaseExecution<string>;

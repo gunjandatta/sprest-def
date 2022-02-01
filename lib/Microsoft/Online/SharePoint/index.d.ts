@@ -6,8 +6,6 @@ import * as MultiGeo from "./MultiGeo";
 export { MultiGeo }
 import * as Onboarding from "./Onboarding";
 export { Onboarding }
-import * as PointPublishing from "./PointPublishing";
-export { PointPublishing }
 import * as SPLogger from "./SPLogger";
 export { SPLogger }
 import * as TenantAdmin from "./TenantAdmin";

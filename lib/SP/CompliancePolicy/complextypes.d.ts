@@ -33,6 +33,7 @@ export interface ComplianceTag {
 	HasRetentionAction?: boolean;
 	IsEventTag?: boolean;
 	MultiStageReviewerEmail?: string;
+	NextStageComplianceTag?: string;
 	Notes?: string;
 	RequireSenderAuthenticationEnabled?: boolean;
 	ReviewerEmail?: string;

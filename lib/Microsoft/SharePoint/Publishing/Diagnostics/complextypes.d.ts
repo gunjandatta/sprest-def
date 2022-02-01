@@ -35,6 +35,7 @@ export interface PageDetailsCollections {
 export interface PageDiagnosticsResult {
 	CreatedDate?: any;
 	PageDetails?: Microsoft.SharePoint.Publishing.Diagnostics.PageDetails;
+	ResultStatus?: number;
 	suggestions?: Array<SP.Publishing.RuleResult>;
 	Score?: number;
 	ToolDetails?: Microsoft.SharePoint.Publishing.Diagnostics.ToolDetails;

@@ -100,7 +100,9 @@ export interface SharingInformation {
 	showExternalSharingWarning?: boolean;
 	siteIBMode?: string;
 	siteIBSegmentIDs?: { results: Array<string> };
+	standardRolesModified?: boolean;
 	userIsSharingViaMCS?: string;
+	userPhotoCdnBaseUrl?: string;
 	webTemplateId?: number;
 	webUrl?: string;
 }

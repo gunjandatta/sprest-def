@@ -243,6 +243,7 @@ export interface OrgLabelsContextListCollections {
 **********************************************/
 export interface ParentGroup {
 	DisplayName?: string;
+	GroupSiteUrl?: string;
 	ID?: string;
 }
 

@@ -89,6 +89,7 @@ export interface ErrorCollections {
 export interface SitePageFieldsData {
 	AuthorByline?: Array<string>;
 	BannerImageUrl?: string;
+	CallToAction?: string;
 	CanvasContent1?: string;
 	CanvasJson1?: string;
 	Categories?: string;

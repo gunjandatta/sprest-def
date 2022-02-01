@@ -264,6 +264,7 @@ export interface PersonalCache extends Base.IBaseResult, PersonalCacheProps, Per
 * PersonalCacheProps
 **********************************************/
 export interface PersonalCacheProps {
+	CacheName?: string;
 	MySiteUrl?: string;
 }
 

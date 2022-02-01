@@ -668,6 +668,21 @@ export interface TenantDefaultTimeZoneIdCollections {
 }
 
 /*********************************************
+* UpdateGroupSitePropertiesParameters
+**********************************************/
+export interface UpdateGroupSitePropertiesParameters {
+	storageMaximumLevel?: number;
+	storageWarningLevel?: number;
+}
+
+/*********************************************
+* UpdateGroupSitePropertiesParametersCollections
+**********************************************/
+export interface UpdateGroupSitePropertiesParametersCollections {
+
+}
+
+/*********************************************
 * UserVoiceForFeedbackEnabled
 **********************************************/
 export interface UserVoiceForFeedbackEnabled {

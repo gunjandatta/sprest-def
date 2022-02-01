@@ -136,6 +136,10 @@ export interface IMapper {
 		argNames: [ "uniqueId" ],
 		},
 
+		getExtractorNames: IMapperMethod & {
+		argNames: [ "packageName" ],
+		},
+
 		getSupportedPrebuiltModels: IMapperMethod & {
 		},
 
@@ -146,7 +150,11 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		setupContractsSolution: IMapperMethod & {
-		argNames: [ "contractLibraryName" ],
+		argNames: [ "newLibraryName", "packageName" ],
+		},
+
+		setupPrimedLibrary: IMapperMethod & {
+		argNames: [ "primedLibraryName", "packageName" ],
 		},
 
 	}
@@ -877,21 +885,6 @@ export interface IMapper {
 
 	}
 
-	"Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin": {
-		properties?: Array<string>;
-		createTopicMagazine: IMapperMethod & {
-		argNames: [ "magazineName" ],
-		},
-
-		deleteTopicMagazine: IMapperMethod & {
-		argNames: [ "magazineId" ],
-		},
-
-		provisionPointPublishingAsync: IMapperMethod & {
-		},
-
-	}
-
 	"Microsoft.Online.SharePoint.SPLogger.LogExport": {
 		properties?: Array<string>;
 		getFiles: IMapperMethod & {
@@ -1108,6 +1101,10 @@ export interface IMapper {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Tenant": {
 		properties?: Array<string>;
+		addRecentAdminAction: IMapperMethod & {
+		argNames: [ "tenantAdminRecentAction" ],
+		},
+
 		addTenantAdminListItem: IMapperMethod & {
 		argNames: [ "columnValues", "listName" ],
 		},
@@ -1131,11 +1128,18 @@ export interface IMapper {
 		argNames: [ "siteCreationProperties" ],
 		},
 
+		exportToCSV: IMapperMethod & {
+		argNames: [ "viewXml" ],
+		},
+
 		getAdminListViews: IMapperMethod & {
 		},
 
 		getFilteredSPListItems: IMapperMethod & {
 		argNames: [ "columnName", "columnValue", "listName" ],
+		},
+
+		getHomeSitesDetails: IMapperMethod & {
 		},
 
 		getIdleSessionSignOutForUnmanagedDevices: IMapperMethod & {
@@ -1256,6 +1260,10 @@ export interface IMapper {
 		argNames: [ "parameters" ],
 		},
 
+		renderRecentAdminActions: IMapperMethod & {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
 		restoreDeletedSite: IMapperMethod & {
 		argNames: [ "siteUrl" ],
 		},
@@ -1309,6 +1317,14 @@ export interface IMapper {
 		},
 
 		update: IMapperMethod & {
+		},
+
+		updateGroupSiteProperties: IMapperMethod & {
+		argNames: [ "groupId", "siteId", "updateType", "parameters" ],
+		},
+
+		updateRecentAdminAction: IMapperMethod & {
+		argNames: [ "listItemId", "tenantAdminRecentAction" ],
 		},
 
 		updateTenantAdminListItem: IMapperMethod & {
@@ -1380,6 +1396,10 @@ export interface IMapper {
 		},
 
 		getAllTenantThemes: IMapperMethod & {
+		},
+
+		getCustomFontsMinorVersion: IMapperMethod & {
+		argNames: [ "libUrl" ],
 		},
 
 		getExternalUsers: IMapperMethod & {
@@ -1752,6 +1772,10 @@ export interface IMapper {
 		argNames: [ "absolutePath" ],
 		},
 
+		getById: IMapperMethod & {
+		argNames: [ "siteId" ],
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		remove: IMapperMethod & {
@@ -1827,6 +1851,10 @@ export interface IMapper {
 
 		syncSolutionToTeamsByUniqueId: IMapperMethod & {
 		argNames: [ "id" ],
+		},
+
+		updateMyRequestStatus: IMapperMethod & {
+		argNames: [ "RequestId", "Status" ],
 		},
 
 		upload: IMapperMethod & {
@@ -1964,6 +1992,10 @@ export interface IMapper {
 
 		getTeamChannelsEx: IMapperMethod & {
 		argNames: [ "teamId" ],
+		},
+
+		getTeamChannelsWithSiteUrl: IMapperMethod & {
+		argNames: [ "siteUrl" ],
 		},
 
 		getUserSharedChannelMemberGroups: IMapperMethod & {
@@ -5100,6 +5132,10 @@ export interface IMapper {
 		clearBusinessAppMigrationInteractiveData: IMapperMethod & {
 		},
 
+		copyTemplateAndGetMetadata: IMapperMethod & {
+		argNames: [ "Id" ],
+		},
+
 		createDocumentAndGetEditLink: IMapperMethod & {
 		argNames: [ "fileName", "folderPath", "documentTemplateType", "templateUrl" ],
 		},
@@ -5162,11 +5198,12 @@ export interface IMapper {
 		getBusinessAppOperationStatus: IMapperMethod & {
 		},
 
-		getCAAESmartTemplateContentTypes: IMapperMethod & {
-		},
-
 		getCAAETemplateMetadata: IMapperMethod & {
 		argNames: [ "Name", "Published" ],
+		},
+
+		getCAAETemplateMetadataV2: IMapperMethod & {
+		argNames: [ "Id" ],
 		},
 
 		getChanges: IMapperMethod & {
@@ -5316,6 +5353,10 @@ export interface IMapper {
 
 		updateCAAETemplate: IMapperMethod & {
 		argNames: [ "Name", "updateTemplateInfo" ],
+		},
+
+		updateCAAETemplateV2: IMapperMethod & {
+		argNames: [ "Id", "updateTemplateInfo" ],
 		},
 
 		updateFormProcessingModelRetentionLabel: IMapperMethod & {
@@ -6167,7 +6208,7 @@ export interface IMapper {
 	"SP.Publishing.RichSharing": {
 		properties?: Array<string>;
 		sharePageByEmail: IMapperMethod & {
-		argNames: [ "url", "message", "recipientEmails" ],
+		argNames: [ "url", "message", "recipientEmails", "pageContent" ],
 		},
 
 		shareSiteByEmail: IMapperMethod & {
@@ -6575,6 +6616,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		getByEntityId: IMapperMethod & {
 		argNames: [ "entityId" ],
+		},
+
+		getByEntityIdAndCulture: IMapperMethod & {
+		argNames: [ "id", "culture" ],
 		},
 
 		isContentTypeAvailable: IMapperMethod & {
@@ -7147,7 +7192,7 @@ export interface IMapper {
 		},
 
 		setIsContributorOwnerEnabledPropertyForDefaultDocLib: IMapperMethod & {
-		argNames: [ "propertyValue", "forceDocLibActivation" ],
+		argNames: [ "propertyValue", "forceDocLibActivation", "deleteIfDocLibAlreadyExists" ],
 		},
 
 		unregisterHubSite: IMapperMethod & {
@@ -7602,6 +7647,14 @@ export interface IMapper {
 
 	}
 
+	"SP.UserExperienceState": {
+		properties?: Array<string>;
+		setFlag: IMapperMethod & {
+		argNames: [ "flag", "reset" ],
+		},
+
+	}
+
 	"SP.UserProfiles.FollowedContent": {
 		properties?: Array<string>;
 		findAndUpdateFollowedGroup: IMapperMethod & {
@@ -8000,6 +8053,10 @@ export interface IMapper {
 		argNames: [ "messagePayloadBase64" ],
 		},
 
+		addPlaceholderUser: IMapperMethod & {
+		argNames: [ "listId", "placeholderText" ],
+		},
+
 		addSupportedUILanguage: IMapperMethod & {
 		argNames: [ "lcid" ],
 		},
@@ -8014,6 +8071,9 @@ export interface IMapper {
 
 		breakRoleInheritance: IMapperMethod & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
+		},
+
+		consentToPowerPlatform: IMapperMethod & {
 		},
 
 		createDefaultAssociatedGroups: IMapperMethod & {
@@ -8058,6 +8118,7 @@ export interface IMapper {
 		},
 
 		getAllClientSideComponents: IMapperMethod & {
+		argNames: [ "languages", "supportsMultiVersion" ],
 		},
 
 		getAppBdcCatalog: IMapperMethod & {
@@ -8258,6 +8319,9 @@ export interface IMapper {
 		incrementSiteClientTag: IMapperMethod & {
 		},
 
+		listPowerPlatformUserDetails: IMapperMethod & {
+		},
+
 		loadAndInstallApp: IMapperMethod & {
 		argNames: [ "appPackageStream" ],
 		},
@@ -8350,7 +8414,7 @@ export interface IMapper {
 		},
 
 		uploadImage: IMapperMethod & {
-		argNames: [ "listTitle", "imageName", "contentStream", "listId", "itemId", "overwrite" ],
+		argNames: [ "listTitle", "imageName", "contentStream", "listId", "itemId", "fieldId", "overwrite" ],
 		},
 
 	}

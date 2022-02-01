@@ -236,6 +236,7 @@ export interface UserProps {
 	principalName?: string;
 	responsibilities?: { results: Array<string> };
 	schools?: { results: Array<string> };
+	sharePointAddTopicHighlightFirstRun?: boolean;
 	sharePointContentBarViewsTeachingBubble?: boolean;
 	sharePointConversationsLinkFirstRun?: boolean;
 	sharePointFiltersPaneFirstRun?: boolean;
@@ -263,6 +264,11 @@ export interface UserProps {
 	sharePointProfileId?: any;
 	sharePointSaveForLaterTeachingBubble?: boolean;
 	sharePointTeamsTeachingBubble?: boolean;
+	sharePointTopicAutoHighlightFirstRun?: boolean;
+	sharePointTopicManualHighlightFirstRun?: boolean;
+	sharePointTopicPageEditFirstRun?: boolean;
+	sharePointTopicPagePrivacyPermissionFirstRun?: boolean;
+	sharePointTopicPagePublishFirstRun?: boolean;
 	skills?: { results: Array<string> };
 	tags?: { results: Array<string> };
 	tenantInstanceId?: any;

@@ -7,9 +7,12 @@ import { Microsoft } from "../../../";
 export interface ListHomeItem {
 	color?: string;
 	icon?: string;
+	isDefaultDocumentLibrary?: boolean;
 	isDocLib?: boolean;
 	listId?: string;
 	listUrl?: string;
+	siteAcronym?: string;
+	siteColor?: string;
 	siteIconUrl?: string;
 	siteId?: string;
 	siteTitle?: string;

@@ -260,6 +260,7 @@ export interface TenantCorporateCatalogAccessorMethods {
 	solutionContainsTeamsComponent(id?: any): Base.IBaseExecution<boolean>;
 	syncSolutionToTeams(id?: number): Base.IBaseExecution<number>;
 	syncSolutionToTeamsByUniqueId(id?: any): Base.IBaseExecution<any>;
+	updateMyRequestStatus(RequestId?: any, Status?: number): Base.IBaseExecution<any>;
 	upload(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseExecution<any>;
 	add(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
@@ -269,6 +270,7 @@ export interface TenantCorporateCatalogAccessorMethods {
 **********************************************/
 export interface SiteCollectionAppCatalogAllowedItem {
 	AbsoluteUrl?: string;
+	ErrorMessage?: string;
 	SiteID?: any;
 }
 
@@ -284,6 +286,7 @@ export interface SiteCollectionAppCatalogAllowedItemCollections extends SiteColl
 **********************************************/
 export interface SiteCollectionAppCatalogAllowedItemCollectionMethods {
 	add(absolutePath?: string): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem>;
+	getById(siteId?: any): Base.IBaseQuery<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollections;
 	remove(absolutePath?: string): Base.IBaseExecution<any>;
 	removeById(siteId?: any): Base.IBaseExecution<any>;
 }

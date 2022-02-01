@@ -9,6 +9,7 @@ export interface CustomFontsResource {
 	byteArray?: any;
 	fileName?: string;
 	fullPath?: string;
+	MajVer?: number;
 	type?: number;
 }
 

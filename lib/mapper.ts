@@ -131,6 +131,10 @@ export const Mapper: IMapper = {
 		argNames: [ "uniqueId" ],
 		},
 
+		getExtractorNames: {
+		argNames: [ "packageName" ],
+		},
+
 		getSupportedPrebuiltModels: {
 		},
 
@@ -141,7 +145,11 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		setupContractsSolution: {
-		argNames: [ "contractLibraryName" ],
+		argNames: [ "newLibraryName", "packageName" ],
+		},
+
+		setupPrimedLibrary: {
+		argNames: [ "primedLibraryName", "packageName" ],
 		},
 
 	},
@@ -836,20 +844,6 @@ export const Mapper: IMapper = {
 
 	},
 
-	"Microsoft.Online.SharePoint.PointPublishing.PointPublishingAdmin": {
-		createTopicMagazine: {
-		argNames: [ "magazineName" ],
-		},
-
-		deleteTopicMagazine: {
-		argNames: [ "magazineId" ],
-		},
-
-		provisionPointPublishingAsync: {
-		},
-
-	},
-
 	"Microsoft.Online.SharePoint.SPLogger.LogExport": {
 		getFiles: {
 		argNames: [ "partitionId", "logType" ],
@@ -1052,6 +1046,10 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Tenant": {
+		addRecentAdminAction: {
+		argNames: [ "tenantAdminRecentAction" ],
+		},
+
 		addTenantAdminListItem: {
 		argNames: [ "columnValues", "listName" ],
 		},
@@ -1075,11 +1073,18 @@ export const Mapper: IMapper = {
 		argNames: [ "siteCreationProperties" ],
 		},
 
+		exportToCSV: {
+		argNames: [ "viewXml" ],
+		},
+
 		getAdminListViews: {
 		},
 
 		getFilteredSPListItems: {
 		argNames: [ "columnName", "columnValue", "listName" ],
+		},
+
+		getHomeSitesDetails: {
 		},
 
 		getIdleSessionSignOutForUnmanagedDevices: {
@@ -1200,6 +1205,10 @@ export const Mapper: IMapper = {
 		argNames: [ "parameters" ],
 		},
 
+		renderRecentAdminActions: {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
 		restoreDeletedSite: {
 		argNames: [ "siteUrl" ],
 		},
@@ -1253,6 +1262,14 @@ export const Mapper: IMapper = {
 		},
 
 		update: {
+		},
+
+		updateGroupSiteProperties: {
+		argNames: [ "groupId", "siteId", "updateType", "parameters" ],
+		},
+
+		updateRecentAdminAction: {
+		argNames: [ "listItemId", "tenantAdminRecentAction" ],
 		},
 
 		updateTenantAdminListItem: {
@@ -1321,6 +1338,10 @@ export const Mapper: IMapper = {
 		},
 
 		getAllTenantThemes: {
+		},
+
+		getCustomFontsMinorVersion: {
+		argNames: [ "libUrl" ],
 		},
 
 		getExternalUsers: {
@@ -1675,6 +1696,10 @@ export const Mapper: IMapper = {
 		argNames: [ "absolutePath" ],
 		},
 
+		getById: {
+		argNames: [ "siteId" ],
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		remove: {
@@ -1747,6 +1772,10 @@ export const Mapper: IMapper = {
 
 		syncSolutionToTeamsByUniqueId: {
 		argNames: [ "id" ],
+		},
+
+		updateMyRequestStatus: {
+		argNames: [ "RequestId", "Status" ],
 		},
 
 		upload: {
@@ -1881,6 +1910,10 @@ export const Mapper: IMapper = {
 
 		getTeamChannelsEx: {
 		argNames: [ "teamId" ],
+		},
+
+		getTeamChannelsWithSiteUrl: {
+		argNames: [ "siteUrl" ],
 		},
 
 		getUserSharedChannelMemberGroups: {
@@ -4913,6 +4946,10 @@ export const Mapper: IMapper = {
 		clearBusinessAppMigrationInteractiveData: {
 		},
 
+		copyTemplateAndGetMetadata: {
+		argNames: [ "Id" ],
+		},
+
 		createDocumentAndGetEditLink: {
 		argNames: [ "fileName", "folderPath", "documentTemplateType", "templateUrl" ],
 		},
@@ -4976,11 +5013,12 @@ export const Mapper: IMapper = {
 		getBusinessAppOperationStatus: {
 		},
 
-		getCAAESmartTemplateContentTypes: {
-		},
-
 		getCAAETemplateMetadata: {
 		argNames: [ "Name", "Published" ],
+		},
+
+		getCAAETemplateMetadataV2: {
+		argNames: [ "Id" ],
 		},
 
 		getChanges: {
@@ -5130,6 +5168,10 @@ export const Mapper: IMapper = {
 
 		updateCAAETemplate: {
 		argNames: [ "Name", "updateTemplateInfo" ],
+		},
+
+		updateCAAETemplateV2: {
+		argNames: [ "Id", "updateTemplateInfo" ],
 		},
 
 		updateFormProcessingModelRetentionLabel: {
@@ -5944,7 +5986,7 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.RichSharing": {
 		sharePageByEmail: {
-		argNames: [ "url", "message", "recipientEmails" ],
+		argNames: [ "url", "message", "recipientEmails", "pageContent" ],
 		},
 
 		shareSiteByEmail: {
@@ -6339,6 +6381,10 @@ export const Mapper: IMapper = {
 	"SP.Publishing.TopicSitePage.Collection": {
 		getByEntityId: {
 		argNames: [ "entityId" ],
+		},
+
+		getByEntityIdAndCulture: {
+		argNames: [ "id", "culture" ],
 		},
 
 		isContentTypeAvailable: {
@@ -6891,7 +6937,7 @@ export const Mapper: IMapper = {
 		},
 
 		setIsContributorOwnerEnabledPropertyForDefaultDocLib: {
-		argNames: [ "propertyValue", "forceDocLibActivation" ],
+		argNames: [ "propertyValue", "forceDocLibActivation", "deleteIfDocLibAlreadyExists" ],
 		},
 
 		unregisterHubSite: {
@@ -7329,6 +7375,13 @@ export const Mapper: IMapper = {
 
 	},
 
+	"SP.UserExperienceState": {
+		setFlag: {
+		argNames: [ "flag", "reset" ],
+		},
+
+	},
+
 	"SP.UserProfiles.FollowedContent": {
 		findAndUpdateFollowedGroup: {
 		argNames: [ "groupId" ],
@@ -7714,6 +7767,10 @@ export const Mapper: IMapper = {
 		argNames: [ "messagePayloadBase64" ],
 		},
 
+		addPlaceholderUser: {
+		argNames: [ "listId", "placeholderText" ],
+		},
+
 		addSupportedUILanguage: {
 		argNames: [ "lcid" ],
 		},
@@ -7728,6 +7785,9 @@ export const Mapper: IMapper = {
 
 		breakRoleInheritance: {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
+		},
+
+		consentToPowerPlatform: {
 		},
 
 		createDefaultAssociatedGroups: {
@@ -7773,6 +7833,7 @@ export const Mapper: IMapper = {
 		},
 
 		getAllClientSideComponents: {
+		argNames: [ "languages", "supportsMultiVersion" ],
 		},
 
 		getAppBdcCatalog: {
@@ -7973,6 +8034,9 @@ export const Mapper: IMapper = {
 		incrementSiteClientTag: {
 		},
 
+		listPowerPlatformUserDetails: {
+		},
+
 		loadAndInstallApp: {
 		argNames: [ "appPackageStream" ],
 		},
@@ -8065,7 +8129,7 @@ export const Mapper: IMapper = {
 		},
 
 		uploadImage: {
-		argNames: [ "listTitle", "imageName", "contentStream", "listId", "itemId", "overwrite" ],
+		argNames: [ "listTitle", "imageName", "contentStream", "listId", "itemId", "fieldId", "overwrite" ],
 		},
 
 	},

@@ -10,6 +10,8 @@ export interface ExternalUser {
 	DisplayName?: string;
 	InvitedAs?: string;
 	InvitedBy?: string;
+	IsCrossTenant?: boolean;
+	LoginName?: string;
 	UniqueId?: string;
 	UserId?: number;
 	WhenCreated?: any;
@@ -192,6 +194,7 @@ export interface Office365TenantProps {
 	AllowSelectSGsInODBList?: { results: Array<string> };
 	AnyoneLinkTrackUsers?: boolean;
 	ApplyAppEnforcedRestrictionsToAdHocRecipients?: boolean;
+	AuthContextResilienceMode?: number;
 	BccExternalSharingInvitations?: boolean;
 	BccExternalSharingInvitationsList?: string;
 	BlockAccessOnUnmanagedDevices?: boolean;
@@ -211,6 +214,9 @@ export interface Office365TenantProps {
 	ConditionalAccessPolicy?: number;
 	ConditionalAccessPolicyErrorHelpLink?: string;
 	ContentTypeSyncSiteTemplatesList?: { results: Array<string> };
+	CoreLoopDefaultSharingLinkRole?: number;
+	CoreLoopDefaultSharingLinkScope?: number;
+	CoreLoopSharingCapability?: number;
 	CustomizedExternalSharingServiceUrl?: string;
 	DefaultContentCenterSite?: Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker;
 	DefaultLinkPermission?: number;
@@ -220,6 +226,7 @@ export interface Office365TenantProps {
 	DisableBackToClassic?: boolean;
 	DisableCustomAppAuthentication?: boolean;
 	DisabledModernListTemplateIds?: { results: Array<any> };
+	DisableListSync?: boolean;
 	DisableOutlookPSTVersionTrimming?: boolean;
 	DisablePersonalListCreation?: boolean;
 	DisableSpacesActivation?: boolean;
@@ -243,6 +250,7 @@ export interface Office365TenantProps {
 	HasAdminCompletedCUConfiguration?: boolean;
 	HideSyncButtonOnDocLib?: boolean;
 	HideSyncButtonOnODB?: boolean;
+	IBImplicitGroupBased?: boolean;
 	ImageTaggingOption?: number;
 	IncludeAtAGlanceInShareEmails?: boolean;
 	InformationBarriersSuspension?: boolean;
@@ -266,6 +274,9 @@ export interface Office365TenantProps {
 	ODBSharingCapability?: number;
 	OfficeClientADALDisabled?: boolean;
 	OneDriveForGuestsEnabled?: boolean;
+	OneDriveLoopDefaultSharingLinkRole?: number;
+	OneDriveLoopDefaultSharingLinkScope?: number;
+	OneDriveLoopSharingCapability?: number;
 	OwnerAnonymousNotification?: boolean;
 	PreventExternalUsersFromResharing?: boolean;
 	ProvisionSharedWithEveryoneFolder?: boolean;
@@ -291,6 +302,7 @@ export interface Office365TenantProps {
 	StopNew2013Workflows?: boolean;
 	StreamLaunchConfig?: number;
 	StreamLaunchConfigLastUpdated?: any;
+	StreamLaunchConfigUpdateCount?: number;
 	SyncAadB2BManagementPolicy?: boolean;
 	SyncPrivacyProfileProperties?: boolean;
 	UseFindPeopleInPeoplePicker?: boolean;
@@ -338,6 +350,7 @@ export interface Office365TenantMethods {
 	deleteTenantTheme(name?: string): Base.IBaseExecution<any>;
 	disableSharingForNonOwnersOfSite(siteUrl?: string): Base.IBaseExecution<any>;
 	getAllTenantThemes(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantManagement.ThemeProperties>;
+	getCustomFontsMinorVersion(libUrl?: SP.ResourcePath): Base.IBaseExecution<number>;
 	getExternalUsers(position?: number, pageSize?: number, filter?: string, sortOrder?: number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsOData> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
 	getExternalUsersForSite(siteUrl?: string, position?: number, pageSize?: number, filter?: string, sortOrder?: number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsOData> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;
 	getExternalUsersWithSortBy(position?: number, pageSize?: number, filter?: string, sortPropertyName?: string, sortOrder?: number): Base.IBaseQuery<Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResults, Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsOData> & Microsoft.Online.SharePoint.TenantManagement.GetExternalUsersResultsCollections;

@@ -1,11 +1,31 @@
 import { Base } from "../../../";
-import { SP } from "../../../";
+
+/*********************************************
+* ContentTypeInfo
+**********************************************/
+export interface ContentTypeInfo {
+	Description?: string;
+	Group?: string;
+	Id?: string;
+	IsHidden?: boolean;
+	IsSealed?: boolean;
+	Name?: string;
+	ParentName?: string;
+}
+
+/*********************************************
+* ContentTypeInfoCollections
+**********************************************/
+export interface ContentTypeInfoCollections {
+
+}
 
 /*********************************************
 * ContentTypeSyndicationResult
 **********************************************/
 export interface ContentTypeSyndicationResult {
-	FailedContentTypeIDs?: Array<SP.KeyValue>;
+	FailedContentTypeErrors?: Array<string>;
+	FailedContentTypeIDs?: Array<string>;
 	FailedReason?: number;
 	IsPassed?: boolean;
 }

@@ -8,6 +8,7 @@ import { SP } from "../../../../";
 export interface SPMachineLearningEnabled {
 	MachineLearningCaptureEnabled?: boolean;
 	MachineLearningExperienceEnabled?: boolean;
+	UserSyntexEnabled?: boolean;
 }
 
 /*********************************************
@@ -191,9 +192,11 @@ export interface SPMachineLearningModelCollections extends SPMachineLearningMode
 export interface SPMachineLearningModelCollectionMethods {
 	getByTitle(title?: string): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelMethods;
 	getByUniqueId(uniqueId?: any): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelMethods;
+	getExtractorNames(packageName?: string): Base.IBaseExecution<Array<string>>;
 	getSupportedPrebuiltModels(): Base.IBaseExecution<Array<Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo>>;
 	import(packageName?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
-	setupContractsSolution(contractLibraryName?: string): Base.IBaseExecution<SP.List>;
+	setupContractsSolution(newLibraryName?: string, packageName?: string): Base.IBaseExecution<SP.List>;
+	setupPrimedLibrary(primedLibraryName?: string, packageName?: string): Base.IBaseExecution<SP.List>;
 }
 
 /*********************************************

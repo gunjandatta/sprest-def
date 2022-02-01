@@ -35,6 +35,7 @@ export interface SiteDesignCreationInfo {
 	RequiresYammerConnected?: boolean;
 	SiteScriptIds?: Array<any>;
 	SupportedWebTemplates?: Array<string>;
+	TargetPlatforms?: Array<string>;
 	TemplateFeatures?: Array<string>;
 	ThumbnailUrl?: string;
 	Title?: string;
