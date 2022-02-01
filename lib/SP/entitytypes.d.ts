@@ -1175,6 +1175,7 @@ export interface ListItemProps {
 	ServerRedirectedEmbedUri?: string;
 	ServerRedirectedEmbedUrl?: string;
 	Client_Title?: string;
+	Title?: string;
 }
 
 /*********************************************
