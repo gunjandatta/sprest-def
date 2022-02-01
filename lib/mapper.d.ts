@@ -1816,7 +1816,7 @@ export interface IMapper {
 		},
 
 		addStoreApp: IMapperMethod & {
-		argNames: [ "Content", "Overwrite", "Url", "IconUrl", "Publisher", "ShortDescription", "StoreAssetId" ],
+		argNames: [ "Url", "Overwrite", "IconUrl", "Publisher", "ShortDescription", "StoreAssetId", "Content" ],
 		},
 
 		appRequests: IMapperMethod & {
@@ -1858,7 +1858,7 @@ export interface IMapper {
 		},
 
 		upload: IMapperMethod & {
-		argNames: [ "Content", "Overwrite", "Url" ],
+		argNames: [ "Url", "Overwrite", "Content" ],
 		},
 
 	}

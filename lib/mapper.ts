@@ -1737,7 +1737,7 @@ export const Mapper: IMapper = {
 		},
 
 		addStoreApp: {
-		argNames: [ "Content", "Overwrite", "Url", "IconUrl", "Publisher", "ShortDescription", "StoreAssetId" ],
+		argNames: [ "Url", "Overwrite", "IconUrl", "Publisher", "ShortDescription", "StoreAssetId", "Content" ],
 		},
 
 		appRequests: {
@@ -1779,7 +1779,7 @@ export const Mapper: IMapper = {
 		},
 
 		upload: {
-		argNames: [ "Content", "Overwrite", "Url" ],
+		argNames: [ "Url", "Overwrite", "Content" ],
 		},
 
 	},

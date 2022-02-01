@@ -251,7 +251,7 @@ export interface TenantCorporateCatalogAccessorOData extends Base.IBaseResult, T
 export interface TenantCorporateCatalogAccessorMethods {
 	// add(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	addAndDeployStoreAppById(CMU?: string, Overwrite?: boolean, SkipFeatureDeployment?: boolean, StoreAssetId?: string): Base.IBaseExecution<any>;
-	addStoreApp(Content?: any, Overwrite?: boolean, Url?: string, IconUrl?: string, Publisher?: string, ShortDescription?: string, StoreAssetId?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	// addStoreApp(Content?: any, Overwrite?: boolean, Url?: string, IconUrl?: string, Publisher?: string, ShortDescription?: string, StoreAssetId?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	appRequests(AppRequestInfo?: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppRequestInformation): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppResponseInformation>;
 	downloadTeamsSolution(id?: number): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload>;
 	downloadTeamsSolutionByUniqueId(id?: any): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload>;
@@ -261,8 +261,10 @@ export interface TenantCorporateCatalogAccessorMethods {
 	syncSolutionToTeams(id?: number): Base.IBaseExecution<number>;
 	syncSolutionToTeamsByUniqueId(id?: any): Base.IBaseExecution<any>;
 	updateMyRequestStatus(RequestId?: any, Status?: number): Base.IBaseExecution<any>;
-	upload(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseExecution<any>;
+	// upload(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseExecution<any>;
+	addStoreApp(Url?: string, Overwrite?: boolean, IconUrl?: string, Publisher?: string, ShortDescription?: string, StoreAssetId?: string, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	add(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	upload(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 
 /*********************************************

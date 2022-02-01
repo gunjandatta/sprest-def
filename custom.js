@@ -389,7 +389,7 @@ module.exports = {
         }
     ],
 
-    // Tenant App
+    // Site App Catalog
     "Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionCorporateCatalogAccessor": [
         {
             name: "add",
@@ -401,9 +401,33 @@ module.exports = {
             ]
         }
     ],
+
+    // Tenant App Catalog
     "Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor": [
         {
+            name: "addStoreApp",
+            returnType: "SP.File",
+            params: [
+                { $: { Name: "Url", Type: "string" } },
+                { $: { Name: "Overwrite", Type: "boolean" } },
+                { $: { Name: "IconUrl", Type: "string" } },
+                { $: { Name: "Publisher", Type: "string" } },
+                { $: { Name: "ShortDescription", Type: "string" } },
+                { $: { Name: "StoreAssetId", Type: "string" } },
+                { $: { Name: "Content", Type: "any" } }
+            ]
+        },
+        {
             name: "add",
+            returnType: "SP.File",
+            params: [
+                { $: { Name: "Url", Type: "string" } },
+                { $: { Name: "Overwrite", Type: "boolean" } },
+                { $: { Name: "Content", Type: "any" } }
+            ]
+        },
+        {
+            name: "upload",
             returnType: "SP.File",
             params: [
                 { $: { Name: "Url", Type: "string" } },
