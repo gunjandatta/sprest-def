@@ -402,6 +402,15 @@ module.exports = {
         }
     ],
 
+    // Site Pages
+    "Collection(SP.Publishing.SitePage)": [
+        {
+            name: "createAppPage",
+            returnType: "SP.Publishing.SitePage",
+            params: [{ $: { Name: "webPartDataAsJson", Type: "SP.Publishing.SitePageMetadata" } }]
+        }
+    ],
+
     // Tenant App Catalog
     "Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TenantCorporateCatalogAccessor": [
         {

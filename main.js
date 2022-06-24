@@ -363,7 +363,6 @@ fs.readFile("metadata.xml", "utf8", (err, xml) => {
                             // Validate the collection
                             let name = interface.$ ? interface.$.Name : null;
                             if (name) {
-                                if(name == "comment") { debugger; }
                                 // Add the interface
                                 directories[ns][collection][name] = {};
 

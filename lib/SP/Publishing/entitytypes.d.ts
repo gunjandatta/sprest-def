@@ -438,7 +438,7 @@ export interface SitePageCollections extends SitePagePropMethods {
 * SitePageCollectionMethods
 **********************************************/
 export interface SitePageCollectionMethods {
-	createAppPage(webPartDataAsJson?: string): Base.IBaseExecution<string>;
+	// createAppPage(webPartDataAsJson?: string): Base.IBaseExecution<string>;
 	ensureTitleResource(): Base.IBaseExecution<any>;
 	feed(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
 	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
@@ -451,6 +451,7 @@ export interface SitePageCollectionMethods {
 	templates(): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
 	updateAppPage(pageId?: number, webPartDataAsJson?: string, title?: string, includeInNavigation?: boolean): Base.IBaseExecution<string>;
 	updateFullPageApp(serverRelativeUrl?: string, webPartDataAsJson?: string): Base.IBaseExecution<any>;
+	createAppPage(webPartDataAsJson?: SP.Publishing.SitePageMetadata): Base.IBaseExecution<SP.Publishing.SitePage>;
 }
 
 /*********************************************
