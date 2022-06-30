@@ -12,17 +12,17 @@ export interface IBaseExecution<Type = any, Result = Type> {
     /**
      * Method to execute the request as a batch.
      * Currently available in SharePoint Online only.
-     * @param appendFl - Flag to execute the request as part of a change set.
+     * @param createFl - Flag to execute the request as part of a new change set.
      */
-    batch(appendFl?: boolean): Type;
+    batch(createFl?: boolean): Type;
 
     /**
      * Method to execute the request as a batch.
      * Currently available in SharePoint Online only.
      * @param resolve - The method to be executed after the request completes.
-     * @param appendFl - Flag to execute the request as part of a change set.
+     * @param createFl - Flag to execute the request as part of a new change set.
      */
-    batch(resolve: (value?: Result) => void, appendFl?: boolean): Type;
+    batch(createFl: (value?: Result) => void, appendFl?: boolean): Type;
 
     /**
      * Method to execute the request.
