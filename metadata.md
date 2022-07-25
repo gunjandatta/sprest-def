@@ -16,3 +16,8 @@ These are missing properties that are relevant to the SharePoint REST API.
 <Property Name="AutoAcceptRequestToJoinLeave" Type="Edm.Boolean" />
 <Property Name="OnlyAllowMembersViewMembership" Type="Edm.Boolean" />
 ```
+
+###### FunctionImport - Fix the ReturnType value
+```
+<FunctionImport Name="GetUserProfilePropertyFor" ReturnType="SP.UserProfiles.PersonProperties" IsSideEffecting="false" IsBindable="true">
+```
