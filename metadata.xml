@@ -6257,7 +6257,7 @@
                     <Parameter Name="this" Type="SP.UserProfiles.PeopleManager"/>
                     <Parameter Name="accountName" Type="Edm.String"/>
                 </FunctionImport>
-                <FunctionImport Name="GetUserProfilePropertyFor" ReturnType="SP.UserProfiles.PersonProperties" IsSideEffecting="false" IsBindable="true">
+                <FunctionImport Name="GetUserProfilePropertyFor" ReturnType="Edm.String" IsSideEffecting="false" IsBindable="true">
                     <Parameter Name="this" Type="SP.UserProfiles.PeopleManager"/>
                     <Parameter Name="accountName" Type="Edm.String"/>
                     <Parameter Name="propertyName" Type="Edm.String"/>

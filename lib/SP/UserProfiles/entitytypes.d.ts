@@ -212,7 +212,7 @@ export interface PeopleManagerMethods {
 	getSPUserInformation(accountName?: string, siteId?: any): Base.IBaseCollection<SP.KeyValue>;
 	getUserOneDriveQuotaMax(accountName?: string): Base.IBaseExecution<number>;
 	getUserProfileProperties(accountName?: string): Base.IBaseCollection<SP.KeyValue>;
-	getUserProfilePropertyFor(accountName?: string, propertyName?: string): Base.IBaseExecution<SP.UserProfiles.PersonProperties>;
+	// getUserProfilePropertyFor(accountName?: string, propertyName?: string): Base.IBaseExecution<string>;
 	hardDeleteUserProfile(accountName?: string, userId?: any): Base.IBaseExecution<boolean>;
 	hideSuggestion(accountName?: string): Base.IBaseExecution<any>;
 	removeSPUserInformation(accountName?: string, siteId?: any, redactName?: string): Base.IBaseCollection<SP.KeyValue>;
@@ -223,6 +223,7 @@ export interface PeopleManagerMethods {
 	setUserOneDriveQuota(accountName?: string, newQuota?: number, newQuotaWarning?: number): Base.IBaseExecution<string>;
 	stopFollowing(accountName?: string): Base.IBaseExecution<any>;
 	stopFollowingTag(value?: any): Base.IBaseExecution<any>;
+	getUserProfilePropertyFor(accountName?: string, propertyName?: string): Base.IBaseExecution<{ GetUserProfilePropertyFor: string }>;
 }
 
 /*********************************************

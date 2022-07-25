@@ -346,6 +346,18 @@ module.exports = {
         }
     ],
 
+    // People Manager
+    "SP.UserProfiles.PeopleManager": [
+        {
+            name: "getUserProfilePropertyFor",
+            returnType: "{ GetUserProfilePropertyFor: string }",
+            params: [
+                { $: { Name: "accountName", Type: "string" } },
+                { $: { Name: "propertyName", Type: "string" } }
+            ]
+        }
+    ],
+
     // Role Assignment
     "SP.RoleAssignment": [
         {
