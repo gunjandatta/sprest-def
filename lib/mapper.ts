@@ -6088,6 +6088,7 @@ export const Mapper: IMapper = {
 		},
 
 		update: {
+		argNames: [ "properties" ],
 		},
 
 	},

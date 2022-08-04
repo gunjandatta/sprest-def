@@ -414,6 +414,15 @@ module.exports = {
         }
     ],
 
+    // Site Page
+    "SP.Publishing.SitePage": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
+
     // Site Pages
     "Collection(SP.Publishing.SitePage)": [
         {

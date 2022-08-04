@@ -482,7 +482,8 @@ export interface SitePageMethods {
 	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
-	update(): Base.IBaseExecution<any>;
+	// update(): Base.IBaseExecution<any>;
+	update(properties?: any): Base.IBaseExecution<any>;
 }
 
 /*********************************************
