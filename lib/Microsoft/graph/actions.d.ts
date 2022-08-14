@@ -659,16 +659,16 @@ export interface reassignCollections {
 }
 
 /*********************************************
-* return
+* _return
 **********************************************/
-export interface return {
+export interface _return {
 
 }
 
 /*********************************************
-* returnCollections
+* _returnCollections
 **********************************************/
-export interface returnCollections {
+export interface _returnCollections {
 
 }
 
@@ -2451,16 +2451,16 @@ export interface factDoubleCollections {
 }
 
 /*********************************************
-* false
+* _false
 **********************************************/
-export interface false {
+export interface _false {
 
 }
 
 /*********************************************
-* falseCollections
+* _falseCollections
 **********************************************/
-export interface falseCollections {
+export interface _falseCollections {
 
 }
 
@@ -2885,16 +2885,16 @@ export interface hypGeom_DistCollections {
 }
 
 /*********************************************
-* if
+* _if
 **********************************************/
-export interface if {
+export interface _if {
 
 }
 
 /*********************************************
-* ifCollections
+* _ifCollections
 **********************************************/
-export interface ifCollections {
+export interface _ifCollections {
 
 }
 
@@ -5349,16 +5349,16 @@ export interface trimMeanCollections {
 }
 
 /*********************************************
-* true
+* _true
 **********************************************/
-export interface true {
+export interface _true {
 
 }
 
 /*********************************************
-* trueCollections
+* _trueCollections
 **********************************************/
-export interface trueCollections {
+export interface _trueCollections {
 
 }
 

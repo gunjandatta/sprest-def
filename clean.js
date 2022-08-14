@@ -54,8 +54,15 @@ https.get("https://graph.microsoft.com/v1.0/$metadata", (res) => {
 
     // Wait for the read to complete
     res.on("end", function () {
-        // Rename the "case" type. It will cause issues w/ TypeScript
-        let content = data.toString().replace('Name="case"', 'Name="_case"');
+        // Fix TypeScript Issues
+        // Rename the "case" type 
+        // Rename the "return" type
+        let content = data.toString()
+            .replace('Name="case"', 'Name="_case"')
+            .replace('Name="false"', 'Name="_false"')
+            .replace('Name="if"', 'Name="_if"')
+            .replace('Name="return"', 'Name="_return"')
+            .replace('Name="true"', 'Name="_true"');
 
         // Write the file
         fs.writeFileSync("graph.xml", content);
