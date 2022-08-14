@@ -54,8 +54,11 @@ https.get("https://graph.microsoft.com/v1.0/$metadata", (res) => {
 
     // Wait for the read to complete
     res.on("end", function () {
+        // Rename the "case" type. It will cause issues w/ TypeScript
+        let content = data.toString().replace('Name="case"', 'Name="_case"');
+
         // Write the file
-        fs.writeFileSync("graph.xml", data);
+        fs.writeFileSync("graph.xml", content);
 
         // Log
         console.log("Graph metadata updated.");

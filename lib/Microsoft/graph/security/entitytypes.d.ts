@@ -17,9 +17,9 @@ export interface casesRootCollections {
 }
 
 /*********************************************
-* case
+* _case
 **********************************************/
-export interface case {
+export interface _case {
 	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
@@ -29,9 +29,9 @@ export interface case {
 }
 
 /*********************************************
-* caseCollections
+* _caseCollections
 **********************************************/
-export interface caseCollections {
+export interface _caseCollections {
 
 }
 
