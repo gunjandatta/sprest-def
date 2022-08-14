@@ -43,7 +43,7 @@ export type operationResult = {
 export type provisioningAction = {
 	other: 0;
 	create: 1;
-	delete: 2;
+	_delete: 2;
 	disable: 3;
 	update: 4;
 	stagedDelete: 5;
@@ -69,7 +69,7 @@ export type provisioningStatusErrorCategory = {
 
 /** provisioningStepType types */
 export type provisioningStepType = {
-	import: 0;
+	_import: 0;
 	scoping: 1;
 	matching: 2;
 	processing: 3;

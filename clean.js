@@ -59,8 +59,10 @@ https.get("https://graph.microsoft.com/v1.0/$metadata", (res) => {
         // Rename the "return" type
         let content = data.toString()
             .replace('Name="case"', 'Name="_case"')
+            .replace('Name="delete"', 'Name="_delete"')
             .replace('Name="false"', 'Name="_false"')
             .replace('Name="if"', 'Name="_if"')
+            .replace('Name="import"', 'Name="_import"')
             .replace('Name="return"', 'Name="_return"')
             .replace('Name="true"', 'Name="_true"');
 

@@ -45,7 +45,7 @@ export const operationResult: GraphTypes.operationResult = {
 export const provisioningAction: GraphTypes.provisioningAction = {
 	other: 0,
 	create: 1,
-	delete: 2,
+	_delete: 2,
 	disable: 3,
 	update: 4,
 	stagedDelete: 5,
@@ -71,7 +71,7 @@ export const provisioningStatusErrorCategory: GraphTypes.provisioningStatusError
 
 /** provisioningStepType types */
 export const provisioningStepType: GraphTypes.provisioningStepType = {
-	import: 0,
+	_import: 0,
 	scoping: 1,
 	matching: 2,
 	processing: 3,

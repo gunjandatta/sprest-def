@@ -489,7 +489,7 @@ function processMetadata(schemas) {
 
     // Append the export of the enums
     fs.appendFileSync("lib/microsoft/graph/index.d.ts", [
-        'export * from "./enums";'
+        '\nexport * from "./enums";'
     ].join('\n'));
 
     // Create the graph enum types
