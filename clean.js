@@ -58,7 +58,7 @@ https.get("https://graph.microsoft.com/v1.0/$metadata", (res) => {
         // Rename the "case" type 
         // Rename the "return" type
         let content = data.toString()
-            .replace('<Action Name="case"', '<Action Name="_case"')
+            .replace('<EntityType Name="case"', '<EntityType Name="_case"')
             .replace('<Action Name="delete"', '<Action Name="_delete"')
             .replace('<Action Name="false"', '<Action Name="_false"')
             .replace('<Action Name="if"', '<Action Name="_if"')
