@@ -927,12 +927,12 @@ fs.readFile("metadata.xml", "utf8", function (err, rest) {
         parser(rest, function (err, restXML) {
             parser(graph, function (err, graphXML) {
                 // Combine the schemas
-                let schemas = restXML["edmx:Edmx"]["edmx:DataServices"][0].Schema.join(
+                let schemas = restXML["edmx:Edmx"]["edmx:DataServices"][0].Schema.concat(
                     graphXML["edmx:Edmx"]["edmx:DataServices"][0].Schema
                 );
 
                 // Process the metadata
-                processMetadata(restXML["edmx:Edmx"]["edmx:DataServices"][0].Schema);
+                processMetadata(schemas);
             });
         });
     });
