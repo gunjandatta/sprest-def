@@ -1,5 +1,4 @@
 import { Base } from "../../../";
-import { Edm } from "../../../";
 
 /*********************************************
 * ocrSettings
@@ -7,7 +6,7 @@ import { Edm } from "../../../";
 export interface ocrSettings {
 	isEnabled?: boolean;
 	maxImageSize?: number;
-	timeout?: Edm.Duration;
+	timeout?: number;
 }
 
 /*********************************************

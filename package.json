@@ -1,6 +1,6 @@
 {
     "name": "gd-sprest-def",
-    "version": "1.1.8",
+    "version": "1.1.9",
     "description": "TypeScript definition files generated from the $metadata REST endpoint in SharePoint.",
     "author": "Gunjan Datta <me@dattabase.com> (https://gunjandatta.github.io)",
     "license": "MIT",
@@ -10,7 +10,9 @@
         "lib": "lib"
     },
     "scripts": {
-        "build": "node clean.js && node main.js"
+        "build": "node main.js",
+        "clean": "node clean.js",
+        "package": "npm run clean && npm run build"
     },
     "repository": {
         "type": "git",

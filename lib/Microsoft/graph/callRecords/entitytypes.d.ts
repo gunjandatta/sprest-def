@@ -1,19 +1,19 @@
 import { Base } from "../../../";
-import { graph } from "../../../";
+import { graph } from "../../";
 import { microsoft } from "../../../";
 
 /*********************************************
 * callRecord
 **********************************************/
 export interface callRecord {
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	joinWebUrl?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	modalities?: { results: Array<microsoft.graph.callRecords.modality> };
 	organizer?: graph.identitySet;
 	participants?: { results: Array<graph.identitySet> };
-	startDateTime?: anyOffset;
-	type?: microsoft.graph.callRecords.callType;
+	startDateTime?: any;
+	type?: microsoft.graph.callType;
 	version?: number;
 }
 
@@ -30,10 +30,10 @@ export interface callRecordCollections {
 export interface session {
 	callee?: microsoft.graph.callRecords.endpoint;
 	caller?: microsoft.graph.callRecords.endpoint;
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	failureInfo?: microsoft.graph.callRecords.failureInfo;
 	modalities?: { results: Array<microsoft.graph.callRecords.modality> };
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 }
 
 /*********************************************
@@ -49,10 +49,10 @@ export interface sessionCollections {
 export interface segment {
 	callee?: microsoft.graph.callRecords.endpoint;
 	caller?: microsoft.graph.callRecords.endpoint;
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	failureInfo?: microsoft.graph.callRecords.failureInfo;
 	media?: { results: Array<microsoft.graph.callRecords.media> };
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 }
 
 /*********************************************

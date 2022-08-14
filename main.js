@@ -222,15 +222,25 @@ function generateIndexFiles(path) {
 };
 
 // Method to convert the type
-function getType(type = "any") {
+function getType(type = "any", enumInterfaces) {
+    if (type.indexOf("microsoft.graph") >= 0) {
+        let typeInfo = type.split('.');
+        let typeName = typeInfo[typeInfo.length - 1];
+        if (enumInterfaces[typeName]) {
+            return "microsoft.graph." + typeName;
+        }
+    }
+
     // Return the type
     return type
         .replace(/Edm\.Boolean/, 'boolean')
         .replace(/Edm\.Binary/, 'any')
         .replace(/Edm\.Byte/, 'any')
+        .replace(/Edm\.DateTimeOffset/, 'any')
         .replace(/Edm\.DateTime/, 'any')
         .replace(/Edm\.Decimal/, 'number')
         .replace(/Edm\.Double/, 'number')
+        .replace(/Edm\.Duration/, 'number')
         .replace(/Edm\.Guid/, 'any')
         .replace(/Edm\.Int16/, 'number')
         .replace(/Edm\.Int32/, 'number')
@@ -254,6 +264,12 @@ function updateReferences(fileImports, dirName, type) {
         // Set the root namespace
         let root = refType.split('.')[0];
 
+        // See if this is the graph
+        if (root == "graph") {
+            // Update the name
+            dirName = dirName.replace("microsoft.graph", "microsoftgraph");
+        }
+
         // Build the reference to the lib folder
         let refPath = "";
         for (let j = 0; j < dirName.split('.').length; j++) { refPath += "../"; }
@@ -266,12 +282,15 @@ function updateReferences(fileImports, dirName, type) {
 // Process the metadata
 function processMetadata(schemas) {
     let directories = {};
+    let enums = {};
+    let enumInterfaces = {};
     let methods = {};
     let methodTypes = {};
 
     // Parse the schemas
     for (let i = 0; i < schemas.length; i++) {
         let schema = schemas[i];
+        let isGraph = (schema.$ ? schema.$.Alias : null) == "graph";
 
         // Ensure a namespace name exists
         let ns = schema.$ ? schema.$.Namespace : null;
@@ -287,6 +306,39 @@ function processMetadata(schemas) {
 
             // Skip the attributes
             if (key == "$") { continue; }
+
+            // See if it's an enumerator
+            if (key == "EnumType") {
+                // Parse the enums
+                for (let j = 0; j < value.length; j++) {
+                    let enumInfo = value[j];
+                    let name = enumInfo.$.Name;
+
+                    // Add the interface and enum
+                    let enumInterface = "/** " + name + " types */\nexport type " + name + " = {\n";
+                    let enumDef = "/** " + name + " types */\nexport const " + name + ": GraphTypes." + name + " = {\n";
+
+                    // Parse the members
+                    for (let k = 0; k < enumInfo.Member.length; k++) {
+                        let member = enumInfo.Member[k];
+
+                        // Add the member
+                        enumInterface += "\t" + member.$.Name + ": " + member.$.Value + ";\n"
+                        enumDef += "\t" + member.$.Name + ": " + member.$.Value + ",\n"
+                    }
+
+                    // Close the interface and enum
+                    enumInterface += "}\n";
+                    enumDef += "}\n"
+
+                    // Add the enum
+                    enums[name] = enumDef;
+                    enumInterfaces[name] = enumInterface;
+                }
+
+                // Continue
+                continue;
+            }
 
             // See if this is a collection
             if (value.length > 0) {
@@ -343,7 +395,7 @@ function processMetadata(schemas) {
 
                             // Get the function information
                             let name = functionInfo.$.Name[0].toLowerCase() + functionInfo.$.Name.slice(1);
-                            let returnType = getType(functionInfo.$.ReturnType);
+                            let returnType = getType(functionInfo.$.ReturnType, enumInterfaces);
                             let parentName = functionInfo.Parameter[0].$.Type;
 
                             // Create an array for the methods
@@ -427,8 +479,23 @@ function processMetadata(schemas) {
     // Copy the base file
     fs.copyFile("base.d.ts", "lib/base.d.ts", err => { console.error(err); })
 
+    // Create the enum definitions
+    let enumContent = [];
+    for (let key in enumInterfaces) { enumContent.push(enumInterfaces[key]); }
+    fs.writeFileSync("lib/microsoft/graph/enums.d.ts", enumContent.join('\n'));
+
     // Generate the index files
     generateIndexFiles("lib");
+
+    // Append the export of the enums
+    fs.appendFileSync("lib/microsoft/graph/index.d.ts", [
+        'export * from "./enums";'
+    ].join('\n'));
+
+    // Create the graph enum types
+    enumContent = ["import * as GraphTypes from \"./microsoft/graph/enums.d\";\n"];
+    for (let key in enums) { enumContent.push(enums[key]); }
+    fs.writeFileSync("lib/enums.ts", enumContent.join('\n'));
 
     // Append the index file
     fs.appendFileSync("lib/index.d.ts", [
@@ -592,18 +659,18 @@ function processMetadata(schemas) {
                             let params = [];
                             for (let j = 0; j < methodInfo.params.length; j++) {
                                 let param = methodInfo.params[j].$;
-                                let paramType = getType(param.Type);
+                                let paramType = getType(param.Type, enumInterfaces);
 
                                 // Update the reference
                                 if (paramType.indexOf("SP.Microsoft") >= 0) { debugger; }
                                 paramType.indexOf('.') > 0 ? updateReferences(fileImports, dirName, paramType) : null;
 
                                 // Add the parameter
-                                params.push(param.Name + "?: " + getType(param.Type));
+                                params.push(param.Name + "?: " + getType(param.Type, enumInterfaces));
                             }
 
                             // Set the method type
-                            let methodType = getType(methodInfo.returnType)
+                            let methodType = getType(methodInfo.returnType, enumInterfaces)
 
                             // Ensure this method isn't being overridden
                             if (!methodInfo.name.startsWith('\/\/')) {
@@ -648,7 +715,7 @@ function processMetadata(schemas) {
                             let params = [];
                             for (let j = 0; j < methodInfo.params.length; j++) {
                                 let param = methodInfo.params[j].$;
-                                let paramType = getType(param.Type);
+                                let paramType = getType(param.Type, enumInterfaces);
 
                                 // Update the reference
                                 paramType.indexOf('.') > 0 ? updateReferences(fileImports, dirName, paramType) : null;
@@ -677,7 +744,7 @@ function processMetadata(schemas) {
                                     methodType = generateBaseQuery(methodType, hasCollections, hasMethods);
                                 } else {
                                     // Get the type
-                                    methodType = getType(methodInfo.returnType);
+                                    methodType = getType(methodInfo.returnType, enumInterfaces);
 
                                     // See if this is an array
                                     if (/^Array\<.*\>$/.test(methodType)) {
@@ -708,7 +775,7 @@ function processMetadata(schemas) {
                     }
 
                     // Update the type
-                    let type = getType(prop.Type);
+                    let type = getType(prop.Type, enumInterfaces);
 
                     // Update the references
                     updateReferences(fileImports, dirName, type);
@@ -933,6 +1000,7 @@ fs.readFile("metadata.xml", "utf8", function (err, rest) {
 
                 // Process the metadata
                 processMetadata(schemas);
+                //processMetadata(graphXML["edmx:Edmx"]["edmx:DataServices"][0].Schema);
             });
         });
     });

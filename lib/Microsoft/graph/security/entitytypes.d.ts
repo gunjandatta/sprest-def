@@ -1,5 +1,5 @@
 import { Base } from "../../../";
-import { graph } from "../../../";
+import { graph } from "../../";
 import { microsoft } from "../../../";
 
 /*********************************************
@@ -20,12 +20,12 @@ export interface casesRootCollections {
 * case
 **********************************************/
 export interface case {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
-	status?: microsoft.graph.security.caseStatus;
+	lastModifiedDateTime?: any;
+	status?: microsoft.graph.caseStatus;
 }
 
 /*********************************************
@@ -39,13 +39,13 @@ export interface caseCollections {
 * caseOperation
 **********************************************/
 export interface caseOperation {
-	action?: microsoft.graph.security.caseAction;
-	completedDateTime?: anyOffset;
+	action?: microsoft.graph.caseAction;
+	completedDateTime?: any;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	percentProgress?: number;
 	resultInfo?: graph.resultInfo;
-	status?: microsoft.graph.security.caseOperationStatus;
+	status?: microsoft.graph.caseOperationStatus;
 }
 
 /*********************************************
@@ -60,7 +60,7 @@ export interface caseOperationCollections {
 **********************************************/
 export interface ediscoveryCase {
 	closedBy?: graph.identitySet;
-	closedDateTime?: anyOffset;
+	closedDateTime?: any;
 	externalId?: string;
 }
 
@@ -76,7 +76,7 @@ export interface ediscoveryCaseCollections {
 **********************************************/
 export interface dataSet {
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
 }
 
@@ -92,9 +92,9 @@ export interface dataSetCollections {
 **********************************************/
 export interface dataSource {
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
-	holdStatus?: microsoft.graph.security.dataSourceHoldStatus;
+	holdStatus?: microsoft.graph.dataSourceHoldStatus;
 }
 
 /*********************************************
@@ -108,12 +108,12 @@ export interface dataSourceCollections {
 * dataSourceContainer
 **********************************************/
 export interface dataSourceContainer {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
-	holdStatus?: microsoft.graph.security.dataSourceHoldStatus;
-	lastModifiedDateTime?: anyOffset;
-	releasedDateTime?: anyOffset;
-	status?: microsoft.graph.security.dataSourceContainerStatus;
+	holdStatus?: microsoft.graph.dataSourceHoldStatus;
+	lastModifiedDateTime?: any;
+	releasedDateTime?: any;
+	status?: microsoft.graph.dataSourceContainerStatus;
 }
 
 /*********************************************
@@ -157,11 +157,11 @@ export interface ediscoveryReviewSetCollections {
 export interface search {
 	contentQuery?: string;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -175,7 +175,7 @@ export interface searchCollections {
 * ediscoverySearch
 **********************************************/
 export interface ediscoverySearch {
-	dataSourceScopes?: microsoft.graph.security.dataSourceScopes;
+	dataSourceScopes?: microsoft.graph.dataSourceScopes;
 }
 
 /*********************************************
@@ -189,7 +189,7 @@ export interface ediscoverySearchCollections {
 * ediscoveryCustodian
 **********************************************/
 export interface ediscoveryCustodian {
-	acknowledgedDateTime?: anyOffset;
+	acknowledgedDateTime?: any;
 	email?: string;
 }
 
@@ -237,7 +237,7 @@ export interface tag {
 	createdBy?: graph.identitySet;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -251,7 +251,7 @@ export interface tagCollections {
 * ediscoveryReviewTag
 **********************************************/
 export interface ediscoveryReviewTag {
-	childSelectability?: microsoft.graph.security.childSelectability;
+	childSelectability?: microsoft.graph.childSelectability;
 }
 
 /*********************************************
@@ -293,7 +293,7 @@ export interface siteSourceCollections {
 * unifiedGroupSource
 **********************************************/
 export interface unifiedGroupSource {
-	includedSources?: microsoft.graph.security.sourceType;
+	includedSources?: microsoft.graph.sourceType;
 }
 
 /*********************************************
@@ -308,7 +308,7 @@ export interface unifiedGroupSourceCollections {
 **********************************************/
 export interface userSource {
 	email?: string;
-	includedSources?: microsoft.graph.security.sourceType;
+	includedSources?: microsoft.graph.sourceType;
 	siteWebUrl?: string;
 }
 

@@ -1,5 +1,5 @@
 import { Base } from "../../../";
-import { graph } from "../../../";
+import { graph } from "../../";
 import { microsoft } from "../../../";
 
 /*********************************************
@@ -21,11 +21,11 @@ export interface storeCollections {
 * group
 **********************************************/
 export interface group {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	parentSiteId?: string;
-	scope?: microsoft.graph.termStore.termGroupScope;
+	scope?: microsoft.graph.termGroupScope;
 }
 
 /*********************************************
@@ -39,7 +39,7 @@ export interface groupCollections {
 * set
 **********************************************/
 export interface set {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	localizedNames?: { results: Array<microsoft.graph.termStore.localizedName> };
 	properties?: { results: Array<graph.keyValue> };
@@ -56,7 +56,7 @@ export interface setCollections {
 * relation
 **********************************************/
 export interface relation {
-	relationship?: microsoft.graph.termStore.relationType;
+	relationship?: microsoft.graph.relationType;
 }
 
 /*********************************************
@@ -70,10 +70,10 @@ export interface relationCollections {
 * term
 **********************************************/
 export interface term {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	descriptions?: { results: Array<microsoft.graph.termStore.localizedDescription> };
 	labels?: { results: Array<microsoft.graph.termStore.localizedLabel> };
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	properties?: { results: Array<graph.keyValue> };
 }
 

@@ -30,8 +30,11 @@ console.log("Cleaning the files...");
 // Delete the folder
 deleteDirectory("./lib");
 
-// Delete the file
-fs.unlinkSync("./graph.xml");
+// See if the file exists
+if (fs.existsSync("./graph.xml")) {
+    // Delete the file
+    fs.unlinkSync("./graph.xml");
+}
 
 // Create the folder
 fs.mkdirSync("./lib");

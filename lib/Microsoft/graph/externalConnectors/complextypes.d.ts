@@ -5,8 +5,8 @@ import { microsoft } from "../../../";
 * acl
 **********************************************/
 export interface acl {
-	accessType?: microsoft.graph.externalConnectors.accessType;
-	type?: microsoft.graph.externalConnectors.aclType;
+	accessType?: microsoft.graph.accessType;
+	type?: microsoft.graph.aclType;
 	value?: string;
 }
 
@@ -35,7 +35,7 @@ export interface configurationCollections {
 * externalItemContent
 **********************************************/
 export interface externalItemContent {
-	type?: microsoft.graph.externalConnectors.externalItemContentType;
+	type?: microsoft.graph.externalItemContentType;
 	value?: string;
 }
 
@@ -71,7 +71,7 @@ export interface property {
 	isSearchable?: boolean;
 	labels?: Array<microsoft.graph.externalConnectors.label>;
 	name?: string;
-	type?: microsoft.graph.externalConnectors.propertyType;
+	type?: microsoft.graph.propertyType;
 }
 
 /*********************************************

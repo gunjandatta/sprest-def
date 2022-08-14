@@ -1,5 +1,5 @@
 import { Base } from "../../";
-import { graph } from "../../";
+import { graph } from "../";
 import { Edm } from "../../";
 
 /*********************************************
@@ -34,7 +34,7 @@ export interface auditLogRootCollections {
 * directoryAudit
 **********************************************/
 export interface directoryAudit {
-	activityDateTime?: anyOffset;
+	activityDateTime?: any;
 	activityDisplayName?: string;
 	additionalDetails?: { results: Array<graph.keyValue> };
 	category?: string;
@@ -58,7 +58,7 @@ export interface directoryAuditCollections {
 * provisioningObjectSummary
 **********************************************/
 export interface provisioningObjectSummary {
-	activityDateTime?: anyOffset;
+	activityDateTime?: any;
 	changeId?: string;
 	cycleId?: string;
 	durationInMilliseconds?: number;
@@ -93,7 +93,7 @@ export interface signIn {
 	clientAppUsed?: string;
 	conditionalAccessStatus?: graph.conditionalAccessStatus;
 	correlationId?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	deviceDetail?: graph.deviceDetail;
 	ipAddress?: string;
 	isInteractive?: boolean;
@@ -158,7 +158,7 @@ export interface invitationCollections {
 * directoryObject
 **********************************************/
 export interface directoryObject {
-	deletedDateTime?: anyOffset;
+	deletedDateTime?: any;
 }
 
 /*********************************************
@@ -181,23 +181,23 @@ export interface user {
 	companyName?: string;
 	consentProvidedForMinor?: string;
 	country?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	creationType?: string;
 	department?: string;
 	displayName?: string;
-	employeeHireDate?: anyOffset;
+	employeeHireDate?: any;
 	employeeId?: string;
 	employeeOrgData?: graph.employeeOrgData;
 	employeeType?: string;
 	externalUserState?: string;
-	externalUserStateChangeDateTime?: anyOffset;
+	externalUserStateChangeDateTime?: any;
 	faxNumber?: string;
 	givenName?: string;
 	identities?: { results: Array<graph.objectIdentity> };
 	imAddresses?: { results: Array<string> };
 	isResourceAccount?: boolean;
 	jobTitle?: string;
-	lastPasswordChangeDateTime?: anyOffset;
+	lastPasswordChangeDateTime?: any;
 	legalAgeGroupClassification?: string;
 	licenseAssignmentStates?: { results: Array<graph.licenseAssignmentState> };
 	mail?: string;
@@ -208,7 +208,7 @@ export interface user {
 	onPremisesDomainName?: string;
 	onPremisesExtensionAttributes?: graph.onPremisesExtensionAttributes;
 	onPremisesImmutableId?: string;
-	onPremisesLastSyncDateTime?: anyOffset;
+	onPremisesLastSyncDateTime?: any;
 	onPremisesProvisioningErrors?: { results: Array<graph.onPremisesProvisioningError> };
 	onPremisesSamAccountName?: string;
 	onPremisesSecurityIdentifier?: string;
@@ -223,7 +223,7 @@ export interface user {
 	provisionedPlans?: { results: Array<graph.provisionedPlan> };
 	proxyAddresses?: { results: Array<string> };
 	showInAddressList?: boolean;
-	signInSessionsValidFromDateTime?: anyOffset;
+	signInSessionsValidFromDateTime?: any;
 	state?: string;
 	streetAddress?: string;
 	surname?: string;
@@ -233,8 +233,8 @@ export interface user {
 	mailboxSettings?: graph.mailboxSettings;
 	deviceEnrollmentLimit?: number;
 	aboutMe?: string;
-	birthday?: anyOffset;
-	hireDate?: anyOffset;
+	birthday?: any;
+	hireDate?: any;
 	interests?: { results: Array<string> };
 	mySite?: string;
 	pastProjects?: { results: Array<string> };
@@ -256,7 +256,7 @@ export interface userCollections {
 **********************************************/
 export interface appRoleAssignment {
 	appRoleId?: any;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	principalDisplayName?: string;
 	principalId?: any;
 	principalType?: string;
@@ -369,8 +369,8 @@ export interface calendarGroupCollections {
 export interface outlookItem {
 	categories?: { results: Array<string> };
 	changeKey?: string;
-	createdDateTime?: anyOffset;
-	lastModifiedDateTime?: anyOffset;
+	createdDateTime?: any;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -406,7 +406,7 @@ export interface event {
 	onlineMeetingUrl?: string;
 	organizer?: graph.recipient;
 	originalEndTimeZone?: string;
-	originalStart?: anyOffset;
+	originalStart?: any;
 	originalStartTimeZone?: string;
 	recurrence?: graph.patternedRecurrence;
 	reminderMinutesBeforeStart?: number;
@@ -449,7 +449,7 @@ export interface contactFolderCollections {
 **********************************************/
 export interface contact {
 	assistantName?: string;
-	birthday?: anyOffset;
+	birthday?: any;
 	businessAddress?: graph.physicalAddress;
 	businessHomePage?: string;
 	businessPhones?: { results: Array<string> };
@@ -545,10 +545,10 @@ export interface message {
 	isRead?: boolean;
 	isReadReceiptRequested?: boolean;
 	parentFolderId?: string;
-	receivedDateTime?: anyOffset;
+	receivedDateTime?: any;
 	replyTo?: { results: Array<graph.recipient> };
 	sender?: graph.recipient;
-	sentDateTime?: anyOffset;
+	sentDateTime?: any;
 	subject?: string;
 	toRecipients?: { results: Array<graph.recipient> };
 	uniqueBody?: graph.itemBody;
@@ -613,11 +613,11 @@ export interface personCollections {
 **********************************************/
 export interface baseItem {
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	eTag?: string;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	name?: string;
 	parentReference?: graph.itemReference;
 	webUrl?: string;
@@ -690,8 +690,8 @@ export interface agreementAcceptance {
 	deviceId?: string;
 	deviceOSType?: string;
 	deviceOSVersion?: string;
-	expirationDateTime?: anyOffset;
-	recordedDateTime?: anyOffset;
+	expirationDateTime?: any;
+	recordedDateTime?: any;
 	state?: graph.agreementAcceptanceState;
 	userDisplayName?: string;
 	userEmail?: string;
@@ -714,7 +714,7 @@ export interface managedDevice {
 	androidSecurityPatchLevel?: string;
 	azureADDeviceId?: string;
 	azureADRegistered?: boolean;
-	complianceGracePeriodExpirationDateTime?: anyOffset;
+	complianceGracePeriodExpirationDateTime?: any;
 	complianceState?: graph.complianceState;
 	configurationManagerClientEnabledFeatures?: graph.configurationManagerClientEnabledFeatures;
 	deviceActionResults?: { results: Array<graph.deviceActionResult> };
@@ -724,21 +724,21 @@ export interface managedDevice {
 	deviceName?: string;
 	deviceRegistrationState?: graph.deviceRegistrationState;
 	easActivated?: boolean;
-	easActivationDateTime?: anyOffset;
+	easActivationDateTime?: any;
 	easDeviceId?: string;
 	emailAddress?: string;
-	enrolledDateTime?: anyOffset;
+	enrolledDateTime?: any;
 	ethernetMacAddress?: string;
 	exchangeAccessState?: graph.deviceManagementExchangeAccessState;
 	exchangeAccessStateReason?: graph.deviceManagementExchangeAccessStateReason;
-	exchangeLastSuccessfulSyncDateTime?: anyOffset;
+	exchangeLastSuccessfulSyncDateTime?: any;
 	freeStorageSpaceInBytes?: number;
 	iccid?: string;
 	imei?: string;
 	isEncrypted?: boolean;
 	isSupervised?: boolean;
 	jailBroken?: string;
-	lastSyncDateTime?: anyOffset;
+	lastSyncDateTime?: any;
 	managedDeviceName?: string;
 	managedDeviceOwnerType?: graph.managedDeviceOwnerType;
 	managementAgent?: graph.managementAgentType;
@@ -776,12 +776,12 @@ export interface managedDeviceCollections {
 export interface managedAppRegistration {
 	appIdentifier?: graph.mobileAppIdentifier;
 	applicationVersion?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	deviceName?: string;
 	deviceTag?: string;
 	deviceType?: string;
 	flaggedReasons?: { results: Array<graph.managedAppFlaggedReason> };
-	lastSyncDateTime?: anyOffset;
+	lastSyncDateTime?: any;
 	managementSdkVersion?: string;
 	platformVersion?: string;
 	userId?: string;
@@ -800,7 +800,7 @@ export interface managedAppRegistrationCollections {
 **********************************************/
 export interface deviceManagementTroubleshootingEvent {
 	correlationId?: string;
-	eventDateTime?: anyOffset;
+	eventDateTime?: any;
 }
 
 /*********************************************
@@ -892,10 +892,10 @@ export interface userActivity {
 	appDisplayName?: string;
 	contentInfo?: graph.Json;
 	contentUrl?: string;
-	createdDateTime?: anyOffset;
-	expirationDateTime?: anyOffset;
+	createdDateTime?: any;
+	expirationDateTime?: any;
 	fallbackUrl?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	status?: graph.status;
 	userTimezone?: string;
 	visualElements?: graph.visualInfo;
@@ -921,8 +921,8 @@ export interface onlineMeeting {
 	audioConferencing?: graph.audioConferencing;
 	broadcastSettings?: graph.broadcastMeetingSettings;
 	chatInfo?: graph.chatInfo;
-	creationDateTime?: anyOffset;
-	endDateTime?: anyOffset;
+	creationDateTime?: any;
+	endDateTime?: any;
 	externalId?: string;
 	isBroadcast?: boolean;
 	isEntryExitAnnounced?: boolean;
@@ -931,7 +931,7 @@ export interface onlineMeeting {
 	lobbyBypassSettings?: graph.lobbyBypassSettings;
 	participants?: graph.meetingParticipants;
 	recordAutomatically?: boolean;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 	subject?: string;
 	videoTeleconferenceId?: string;
 }
@@ -977,8 +977,8 @@ export interface authenticationCollections {
 **********************************************/
 export interface chat {
 	chatType?: graph.chatType;
-	createdDateTime?: anyOffset;
-	lastUpdatedDateTime?: anyOffset;
+	createdDateTime?: any;
+	lastUpdatedDateTime?: any;
 	onlineMeetingInfo?: graph.teamworkOnlineMeetingInfo;
 	tenantId?: string;
 	topic?: string;
@@ -997,7 +997,7 @@ export interface chatCollections {
 **********************************************/
 export interface team {
 	classification?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	funSettings?: graph.teamFunSettings;
@@ -1058,7 +1058,7 @@ export interface application {
 	applicationTemplateId?: string;
 	appRoles?: { results: Array<graph.appRole> };
 	certification?: graph.certification;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	disabledByMicrosoftStatus?: string;
 	displayName?: string;
@@ -1336,7 +1336,7 @@ export interface authenticationMethodConfigurationCollections {
 export interface authenticationMethodsPolicy {
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	policyVersion?: string;
 	reconfirmationInDays?: number;
 	registrationEnforcement?: graph.registrationEnforcement;
@@ -1556,11 +1556,11 @@ export interface adminConsentRequestPolicyCollections {
 **********************************************/
 export interface conditionalAccessPolicy {
 	conditions?: graph.conditionalAccessConditionSet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	grantControls?: graph.conditionalAccessGrantControls;
-	modifiedDateTime?: anyOffset;
+	modifiedDateTime?: any;
 	sessionControls?: graph.conditionalAccessSessionControls;
 	state?: graph.conditionalAccessPolicyState;
 }
@@ -1594,7 +1594,7 @@ export interface unifiedRoleManagementPolicy {
 	displayName?: string;
 	isOrganizationDefault?: boolean;
 	lastModifiedBy?: graph.identity;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	scopeId?: string;
 	scopeType?: string;
 }
@@ -1659,7 +1659,7 @@ export interface bitlockerCollections {
 * bitlockerRecoveryKey
 **********************************************/
 export interface bitlockerRecoveryKey {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	deviceId?: string;
 	key?: string;
 	volumeType?: graph.volumeType;
@@ -1693,7 +1693,7 @@ export interface threatAssessmentRequest {
 	category?: graph.threatCategory;
 	contentType?: graph.threatAssessmentContentType;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	expectedAssessment?: graph.threatExpectedAssessment;
 	requestSource?: graph.threatAssessmentRequestSource;
 	status?: graph.threatAssessmentStatus;
@@ -1713,15 +1713,15 @@ export interface bookingAppointment {
 	additionalInformation?: string;
 	customers?: { results: Array<graph.bookingCustomerInformationBase> };
 	customerTimeZone?: string;
-	duration?: Edm.Duration;
+	duration?: number;
 	endDateTime?: graph.dateTimeTimeZone;
 	filledAttendeesCount?: number;
 	isLocationOnline?: boolean;
 	joinWebUrl?: string;
 	maximumAttendeesCount?: number;
 	optOutOfCustomerEmail?: boolean;
-	postBuffer?: Edm.Duration;
-	preBuffer?: Edm.Duration;
+	postBuffer?: number;
+	preBuffer?: number;
 	price?: number;
 	priceType?: graph.bookingPriceType;
 	reminders?: { results: Array<graph.bookingReminder> };
@@ -1802,7 +1802,7 @@ export interface bookingCustomQuestionCollections {
 export interface bookingService {
 	additionalInformation?: string;
 	customQuestions?: { results: Array<graph.bookingQuestionAssignment> };
-	defaultDuration?: Edm.Duration;
+	defaultDuration?: number;
 	defaultLocation?: graph.location;
 	defaultPrice?: number;
 	defaultPriceType?: graph.bookingPriceType;
@@ -1813,8 +1813,8 @@ export interface bookingService {
 	isLocationOnline?: boolean;
 	maximumAttendeesCount?: number;
 	notes?: string;
-	postBuffer?: Edm.Duration;
-	preBuffer?: Edm.Duration;
+	postBuffer?: number;
+	preBuffer?: number;
 	schedulingPolicy?: graph.bookingSchedulingPolicy;
 	smsNotificationsEnabled?: boolean;
 	staffMemberIds?: { results: Array<string> };
@@ -1913,7 +1913,7 @@ export interface solutionsRootCollections {
 export interface authoredNote {
 	author?: graph.identity;
 	content?: graph.itemBody;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 }
 
 /*********************************************
@@ -1942,18 +1942,18 @@ export interface privacyCollections {
 **********************************************/
 export interface subjectRightsRequest {
 	assignedTo?: graph.identity;
-	closedDateTime?: anyOffset;
+	closedDateTime?: any;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	dataSubject?: graph.dataSubject;
 	dataSubjectType?: graph.dataSubjectType;
 	description?: string;
 	displayName?: string;
 	history?: { results: Array<graph.subjectRightsRequestHistory> };
 	insight?: graph.subjectRightsRequestDetail;
-	internalDueDateTime?: anyOffset;
+	internalDueDateTime?: any;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	regulations?: { results: Array<string> };
 	stages?: { results: Array<graph.subjectRightsRequestStageDetail> };
 	status?: graph.subjectRightsRequestStatus;
@@ -1971,7 +1971,7 @@ export interface subjectRightsRequestCollections {
 * channel
 **********************************************/
 export interface channel {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	email?: string;
@@ -1995,10 +1995,10 @@ export interface group {
 	assignedLabels?: { results: Array<graph.assignedLabel> };
 	assignedLicenses?: { results: Array<graph.assignedLicense> };
 	classification?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
-	expirationDateTime?: anyOffset;
+	expirationDateTime?: any;
 	groupTypes?: { results: Array<string> };
 	hasMembersWithLicenseErrors?: boolean;
 	isAssignableToRole?: boolean;
@@ -2009,7 +2009,7 @@ export interface group {
 	membershipRule?: string;
 	membershipRuleProcessingState?: string;
 	onPremisesDomainName?: string;
-	onPremisesLastSyncDateTime?: anyOffset;
+	onPremisesLastSyncDateTime?: any;
 	onPremisesNetBiosName?: string;
 	onPremisesProvisioningErrors?: { results: Array<graph.onPremisesProvisioningError> };
 	onPremisesSamAccountName?: string;
@@ -2018,7 +2018,7 @@ export interface group {
 	preferredDataLocation?: string;
 	preferredLanguage?: string;
 	proxyAddresses?: { results: Array<string> };
-	renewedDateTime?: anyOffset;
+	renewedDateTime?: any;
 	securityEnabled?: boolean;
 	securityIdentifier?: string;
 	theme?: string;
@@ -2059,7 +2059,7 @@ export interface teamsAppInstallationCollections {
 export interface conversationMember {
 	displayName?: string;
 	roles?: { results: Array<string> };
-	visibleHistoryStartDateTime?: anyOffset;
+	visibleHistoryStartDateTime?: any;
 }
 
 /*********************************************
@@ -2074,9 +2074,9 @@ export interface conversationMemberCollections {
 **********************************************/
 export interface teamsAsyncOperation {
 	attemptsCount?: number;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	error?: graph.operationError;
-	lastActionDateTime?: anyOffset;
+	lastActionDateTime?: any;
 	operationType?: graph.teamsAsyncOperationType;
 	status?: graph.teamsAsyncOperationStatus;
 	targetResourceId?: string;
@@ -2180,7 +2180,7 @@ export interface groupSettingCollections {
 **********************************************/
 export interface conversation {
 	hasAttachments?: boolean;
-	lastDeliveredDateTime?: anyOffset;
+	lastDeliveredDateTime?: any;
 	preview?: string;
 	topic?: string;
 	uniqueSenders?: { results: Array<string> };
@@ -2200,7 +2200,7 @@ export interface conversationThread {
 	ccRecipients?: { results: Array<graph.recipient> };
 	hasAttachments?: boolean;
 	isLocked?: boolean;
-	lastDeliveredDateTime?: anyOffset;
+	lastDeliveredDateTime?: any;
 	preview?: string;
 	topic?: string;
 	toRecipients?: { results: Array<graph.recipient> };
@@ -2268,22 +2268,22 @@ export interface alert {
 	azureSubscriptionId?: string;
 	azureTenantId?: string;
 	category?: string;
-	closedDateTime?: anyOffset;
+	closedDateTime?: any;
 	cloudAppStates?: { results: Array<graph.cloudAppSecurityState> };
 	comments?: { results: Array<string> };
 	confidence?: number;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	detectionIds?: { results: Array<string> };
-	eventDateTime?: anyOffset;
+	eventDateTime?: any;
 	feedback?: graph.alertFeedback;
 	fileStates?: { results: Array<graph.fileSecurityState> };
 	historyStates?: { results: Array<graph.alertHistoryState> };
 	hostStates?: { results: Array<graph.hostSecurityState> };
 	incidentIds?: { results: Array<string> };
 	investigationSecurityStates?: { results: Array<graph.investigationSecurityState> };
-	lastEventDateTime?: anyOffset;
-	lastModifiedDateTime?: anyOffset;
+	lastEventDateTime?: any;
+	lastModifiedDateTime?: any;
 	malwareStates?: { results: Array<graph.malwareState> };
 	messageSecurityStates?: { results: Array<graph.messageSecurityState> };
 	networkConnections?: { results: Array<graph.networkConnection> };
@@ -2322,7 +2322,7 @@ export interface secureScoreControlProfile {
 	controlStateUpdates?: { results: Array<graph.secureScoreControlStateUpdate> };
 	deprecated?: boolean;
 	implementationCost?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	maxScore?: number;
 	rank?: number;
 	remediation?: string;
@@ -2350,7 +2350,7 @@ export interface secureScore {
 	averageComparativeScores?: { results: Array<graph.averageComparativeScore> };
 	azureTenantId?: string;
 	controlScores?: { results: Array<graph.controlScore> };
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	currentScore?: number;
 	enabledServices?: { results: Array<string> };
 	licensedUserCount?: number;
@@ -2471,8 +2471,8 @@ export interface listCollections {
 * longRunningOperation
 **********************************************/
 export interface longRunningOperation {
-	createdDateTime?: anyOffset;
-	lastActionDateTime?: anyOffset;
+	createdDateTime?: any;
+	lastActionDateTime?: any;
 	resourceLocation?: string;
 	status?: graph.longRunningOperationStatus;
 	statusDetail?: string;
@@ -2506,7 +2506,7 @@ export interface richLongRunningOperationCollections {
 * permission
 **********************************************/
 export interface permission {
-	expirationDateTime?: anyOffset;
+	expirationDateTime?: any;
 	grantedTo?: graph.identitySet;
 	grantedToIdentities?: { results: Array<graph.identitySet> };
 	grantedToIdentitiesV2?: { results: Array<graph.sharePointIdentitySet> };
@@ -2876,8 +2876,8 @@ export interface crossTenantAccessPolicyConfigurationPartnerCollections {
 export interface device {
 	accountEnabled?: boolean;
 	alternativeSecurityIds?: { results: Array<graph.alternativeSecurityId> };
-	approximateLastSignInDateTime?: anyOffset;
-	complianceExpirationDateTime?: anyOffset;
+	approximateLastSignInDateTime?: any;
+	complianceExpirationDateTime?: any;
 	deviceId?: string;
 	deviceMetadata?: string;
 	deviceVersion?: number;
@@ -2885,7 +2885,7 @@ export interface device {
 	isCompliant?: boolean;
 	isManaged?: boolean;
 	mdmAppId?: string;
-	onPremisesLastSyncDateTime?: anyOffset;
+	onPremisesLastSyncDateTime?: any;
 	onPremisesSyncEnabled?: boolean;
 	operatingSystem?: string;
 	operatingSystemVersion?: string;
@@ -3161,10 +3161,10 @@ export interface organization {
 	city?: string;
 	country?: string;
 	countryLetterCode?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
 	marketingNotificationEmails?: { results: Array<string> };
-	onPremisesLastSyncDateTime?: anyOffset;
+	onPremisesLastSyncDateTime?: any;
 	onPremisesSyncEnabled?: boolean;
 	postalCode?: string;
 	preferredLanguage?: string;
@@ -3250,7 +3250,7 @@ export interface orgContact {
 	jobTitle?: string;
 	mail?: string;
 	mailNickname?: string;
-	onPremisesLastSyncDateTime?: anyOffset;
+	onPremisesLastSyncDateTime?: any;
 	onPremisesProvisioningErrors?: { results: Array<graph.onPremisesProvisioningError> };
 	onPremisesSyncEnabled?: boolean;
 	phones?: { results: Array<graph.phone> };
@@ -3361,11 +3361,11 @@ export interface unifiedRoleScheduleInstanceBaseCollections {
 **********************************************/
 export interface unifiedRoleAssignmentScheduleInstance {
 	assignmentType?: string;
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	memberType?: string;
 	roleAssignmentOriginId?: string;
 	roleAssignmentScheduleId?: string;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 }
 
 /*********************************************
@@ -3380,9 +3380,9 @@ export interface unifiedRoleAssignmentScheduleInstanceCollections {
 **********************************************/
 export interface request {
 	approvalId?: string;
-	completedDateTime?: anyOffset;
+	completedDateTime?: any;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	customData?: string;
 	status?: string;
 }
@@ -3422,10 +3422,10 @@ export interface unifiedRoleAssignmentScheduleRequestCollections {
 **********************************************/
 export interface unifiedRoleScheduleBase {
 	appScopeId?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	createdUsing?: string;
 	directoryScopeId?: string;
-	modifiedDateTime?: anyOffset;
+	modifiedDateTime?: any;
 	principalId?: string;
 	roleDefinitionId?: string;
 	status?: string;
@@ -3458,10 +3458,10 @@ export interface unifiedRoleAssignmentScheduleCollections {
 * unifiedRoleEligibilityScheduleInstance
 **********************************************/
 export interface unifiedRoleEligibilityScheduleInstance {
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	memberType?: string;
 	roleEligibilityScheduleId?: string;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 }
 
 /*********************************************
@@ -3565,19 +3565,19 @@ export interface educationAssignment {
 	addToCalendarAction?: graph.educationAddToCalendarOptions;
 	allowLateSubmissions?: boolean;
 	allowStudentsToAddResourcesToSubmission?: boolean;
-	assignDateTime?: anyOffset;
-	assignedDateTime?: anyOffset;
+	assignDateTime?: any;
+	assignedDateTime?: any;
 	assignTo?: graph.educationAssignmentRecipient;
 	classId?: string;
-	closeDateTime?: anyOffset;
+	closeDateTime?: any;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
-	dueDateTime?: anyOffset;
+	dueDateTime?: any;
 	grading?: graph.educationAssignmentGradeType;
 	instructions?: graph.educationItemBody;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	notificationChannelUrl?: string;
 	resourcesFolderUrl?: string;
 	status?: graph.educationAssignmentStatus;
@@ -3625,12 +3625,12 @@ export interface educationAssignmentResourceCollections {
 **********************************************/
 export interface educationRubric {
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: graph.educationItemBody;
 	displayName?: string;
 	grading?: graph.educationAssignmentGradeType;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	levels?: { results: Array<graph.rubricLevel> };
 	qualities?: { results: Array<graph.rubricQuality> };
 }
@@ -3647,16 +3647,16 @@ export interface educationRubricCollections {
 **********************************************/
 export interface educationSubmission {
 	reassignedBy?: graph.identitySet;
-	reassignedDateTime?: anyOffset;
+	reassignedDateTime?: any;
 	recipient?: graph.educationSubmissionRecipient;
 	resourcesFolderUrl?: string;
 	returnedBy?: graph.identitySet;
-	returnedDateTime?: anyOffset;
+	returnedDateTime?: any;
 	status?: graph.educationSubmissionStatus;
 	submittedBy?: graph.identitySet;
-	submittedDateTime?: anyOffset;
+	submittedDateTime?: any;
 	unsubmittedBy?: graph.identitySet;
-	unsubmittedDateTime?: anyOffset;
+	unsubmittedDateTime?: any;
 }
 
 /*********************************************
@@ -3749,7 +3749,7 @@ export interface educationUser {
 	preferredLanguage?: string;
 	primaryRole?: graph.educationUserRole;
 	provisionedPlans?: { results: Array<graph.provisionedPlan> };
-	refreshTokensValidFromDateTime?: anyOffset;
+	refreshTokensValidFromDateTime?: any;
 	residenceAddress?: graph.physicalAddress;
 	showInAddressList?: boolean;
 	student?: graph.educationStudent;
@@ -3813,7 +3813,7 @@ export interface educationSchoolCollections {
 **********************************************/
 export interface educationOutcome {
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -3975,7 +3975,7 @@ export interface subscription {
 	creatorId?: string;
 	encryptionCertificate?: string;
 	encryptionCertificateId?: string;
-	expirationDateTime?: anyOffset;
+	expirationDateTime?: any;
 	includeResourceData?: boolean;
 	latestSupportedTlsVersion?: string;
 	lifecycleNotificationUrl?: string;
@@ -4014,7 +4014,7 @@ export interface thumbnailSetCollections {
 **********************************************/
 export interface baseItemVersion {
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	publication?: graph.publicationFacet;
 }
 
@@ -4823,7 +4823,7 @@ export interface roomListCollections {
 export interface attachment {
 	contentType?: string;
 	isInline?: boolean;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	name?: string;
 	size?: number;
 }
@@ -4908,7 +4908,7 @@ export interface post {
 	from?: graph.recipient;
 	hasAttachments?: boolean;
 	newParticipants?: { results: Array<graph.recipient> };
-	receivedDateTime?: anyOffset;
+	receivedDateTime?: any;
 	sender?: graph.recipient;
 }
 
@@ -5135,7 +5135,7 @@ export interface listItemVersionCollections {
 export interface documentSetVersion {
 	comment?: string;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	items?: { results: Array<graph.documentSetVersionItem> };
 	shouldCaptureMinorVersion?: boolean;
 }
@@ -5166,7 +5166,7 @@ export interface fieldValueSetCollections {
 **********************************************/
 export interface itemActivity {
 	access?: graph.accessAction;
-	activityDateTime?: anyOffset;
+	activityDateTime?: any;
 	actor?: graph.identitySet;
 }
 
@@ -5185,11 +5185,11 @@ export interface itemActivityStat {
 	create?: graph.itemActionStat;
 	delete?: graph.itemActionStat;
 	edit?: graph.itemActionStat;
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	incompleteData?: graph.incompleteData;
 	isTrending?: boolean;
 	move?: graph.itemActionStat;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 }
 
 /*********************************************
@@ -5283,11 +5283,11 @@ export interface callCollections {
 **********************************************/
 export interface accessReviewHistoryDefinition {
 	createdBy?: graph.userIdentity;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	decisions?: { results: Array<graph.accessReviewHistoryDecisionFilter> };
 	displayName?: string;
-	reviewHistoryPeriodEndDateTime?: anyOffset;
-	reviewHistoryPeriodStartDateTime?: anyOffset;
+	reviewHistoryPeriodEndDateTime?: any;
+	reviewHistoryPeriodStartDateTime?: any;
 	scheduleSettings?: graph.accessReviewHistoryScheduleSettings;
 	scopes?: { results: Array<graph.accessReviewScope> };
 	status?: graph.accessReviewHistoryStatus;
@@ -5305,11 +5305,11 @@ export interface accessReviewHistoryDefinitionCollections {
 **********************************************/
 export interface accessReviewHistoryInstance {
 	downloadUri?: string;
-	expirationDateTime?: anyOffset;
-	fulfilledDateTime?: anyOffset;
-	reviewHistoryPeriodEndDateTime?: anyOffset;
-	reviewHistoryPeriodStartDateTime?: anyOffset;
-	runDateTime?: anyOffset;
+	expirationDateTime?: any;
+	fulfilledDateTime?: any;
+	reviewHistoryPeriodEndDateTime?: any;
+	reviewHistoryPeriodStartDateTime?: any;
+	runDateTime?: any;
 	status?: graph.accessReviewHistoryStatus;
 }
 
@@ -5324,11 +5324,11 @@ export interface accessReviewHistoryInstanceCollections {
 * accessReviewInstance
 **********************************************/
 export interface accessReviewInstance {
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	fallbackReviewers?: { results: Array<graph.accessReviewReviewerScope> };
 	reviewers?: { results: Array<graph.accessReviewReviewerScope> };
 	scope?: graph.accessReviewScope;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 	status?: string;
 }
 
@@ -5343,7 +5343,7 @@ export interface accessReviewInstanceCollections {
 * accessReviewReviewer
 **********************************************/
 export interface accessReviewReviewer {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
 	userPrincipalName?: string;
 }
@@ -5361,7 +5361,7 @@ export interface accessReviewReviewerCollections {
 export interface accessReviewInstanceDecisionItem {
 	accessReviewId?: string;
 	appliedBy?: graph.userIdentity;
-	appliedDateTime?: anyOffset;
+	appliedDateTime?: any;
 	applyResult?: string;
 	decision?: string;
 	justification?: string;
@@ -5371,7 +5371,7 @@ export interface accessReviewInstanceDecisionItem {
 	resource?: graph.accessReviewInstanceDecisionItemResource;
 	resourceLink?: string;
 	reviewedBy?: graph.userIdentity;
-	reviewedDateTime?: anyOffset;
+	reviewedDateTime?: any;
 }
 
 /*********************************************
@@ -5385,10 +5385,10 @@ export interface accessReviewInstanceDecisionItemCollections {
 * accessReviewStage
 **********************************************/
 export interface accessReviewStage {
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	fallbackReviewers?: { results: Array<graph.accessReviewReviewerScope> };
 	reviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 	status?: string;
 }
 
@@ -5405,13 +5405,13 @@ export interface accessReviewStageCollections {
 export interface accessReviewScheduleDefinition {
 	additionalNotificationRecipients?: { results: Array<graph.accessReviewNotificationRecipientItem> };
 	createdBy?: graph.userIdentity;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	descriptionForAdmins?: string;
 	descriptionForReviewers?: string;
 	displayName?: string;
 	fallbackReviewers?: { results: Array<graph.accessReviewReviewerScope> };
 	instanceEnumerationScope?: graph.accessReviewScope;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	reviewers?: { results: Array<graph.accessReviewReviewerScope> };
 	scope?: graph.accessReviewScope;
 	settings?: graph.accessReviewScheduleSettings;
@@ -5506,7 +5506,7 @@ export interface approvalStage {
 	displayName?: string;
 	justification?: string;
 	reviewedBy?: graph.identity;
-	reviewedDateTime?: anyOffset;
+	reviewedDateTime?: any;
 	reviewResult?: string;
 	status?: string;
 }
@@ -5536,11 +5536,11 @@ export interface entitlementManagementCollections {
 * accessPackage
 **********************************************/
 export interface accessPackage {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	isHidden?: boolean;
-	modifiedDateTime?: anyOffset;
+	modifiedDateTime?: any;
 }
 
 /*********************************************
@@ -5556,11 +5556,11 @@ export interface accessPackageCollections {
 export interface accessPackageAssignmentPolicy {
 	allowedTargetScope?: graph.allowedTargetScope;
 	automaticRequestSettings?: graph.accessPackageAutomaticRequestSettings;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	expiration?: graph.expirationPattern;
-	modifiedDateTime?: anyOffset;
+	modifiedDateTime?: any;
 	requestApprovalSettings?: graph.accessPackageAssignmentApprovalSettings;
 	requestorSettings?: graph.accessPackageAssignmentRequestorSettings;
 	reviewSettings?: graph.accessPackageAssignmentReviewSettings;
@@ -5578,8 +5578,8 @@ export interface accessPackageAssignmentPolicyCollections {
 * accessPackageAssignmentRequest
 **********************************************/
 export interface accessPackageAssignmentRequest {
-	completedDateTime?: anyOffset;
-	createdDateTime?: anyOffset;
+	completedDateTime?: any;
+	createdDateTime?: any;
 	requestType?: graph.accessPackageRequestType;
 	schedule?: graph.entitlementManagementSchedule;
 	state?: graph.accessPackageRequestState;
@@ -5597,7 +5597,7 @@ export interface accessPackageAssignmentRequestCollections {
 * accessPackageAssignment
 **********************************************/
 export interface accessPackageAssignment {
-	expiredDateTime?: anyOffset;
+	expiredDateTime?: any;
 	schedule?: graph.entitlementManagementSchedule;
 	state?: graph.accessPackageAssignmentState;
 	status?: string;
@@ -5615,11 +5615,11 @@ export interface accessPackageAssignmentCollections {
 **********************************************/
 export interface accessPackageCatalog {
 	catalogType?: graph.accessPackageCatalogType;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	isExternallyVisible?: boolean;
-	modifiedDateTime?: anyOffset;
+	modifiedDateTime?: any;
 	state?: graph.accessPackageCatalogState;
 }
 
@@ -5634,11 +5634,11 @@ export interface accessPackageCatalogCollections {
 * connectedOrganization
 **********************************************/
 export interface connectedOrganization {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	identitySources?: { results: Array<graph.identitySource> };
-	modifiedDateTime?: anyOffset;
+	modifiedDateTime?: any;
 	state?: graph.connectedOrganizationState;
 }
 
@@ -5653,7 +5653,7 @@ export interface connectedOrganizationCollections {
 * entitlementManagementSettings
 **********************************************/
 export interface entitlementManagementSettings {
-	durationUntilExternalUserDeletedAfterBlocked?: Edm.Duration;
+	durationUntilExternalUserDeletedAfterBlocked?: number;
 	externalUserLifecycleAction?: graph.accessPackageExternalUserLifecycleAction;
 }
 
@@ -5700,7 +5700,7 @@ export interface agreement {
 	isPerDeviceAcceptanceRequired?: boolean;
 	isViewingBeforeAcceptanceRequired?: boolean;
 	termsExpiration?: graph.termsExpiration;
-	userReacceptRequiredFrequency?: Edm.Duration;
+	userReacceptRequiredFrequency?: number;
 }
 
 /*********************************************
@@ -5714,7 +5714,7 @@ export interface agreementCollections {
 * agreementFileProperties
 **********************************************/
 export interface agreementFileProperties {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
 	fileData?: graph.agreementFileData;
 	fileName?: string;
@@ -5776,9 +5776,9 @@ export interface agreementFileVersionCollections {
 * namedLocation
 **********************************************/
 export interface namedLocation {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
-	modifiedDateTime?: anyOffset;
+	modifiedDateTime?: any;
 }
 
 /*********************************************
@@ -5823,13 +5823,13 @@ export interface identityProtectionRootCollections {
 **********************************************/
 export interface riskDetection {
 	activity?: graph.activityType;
-	activityDateTime?: anyOffset;
+	activityDateTime?: any;
 	additionalInfo?: string;
 	correlationId?: string;
-	detectedDateTime?: anyOffset;
+	detectedDateTime?: any;
 	detectionTimingType?: graph.riskDetectionTimingType;
 	ipAddress?: string;
-	lastUpdatedDateTime?: anyOffset;
+	lastUpdatedDateTime?: any;
 	location?: graph.signInLocation;
 	requestId?: string;
 	riskDetail?: graph.riskDetail;
@@ -5857,7 +5857,7 @@ export interface riskyUser {
 	isDeleted?: boolean;
 	isProcessing?: boolean;
 	riskDetail?: graph.riskDetail;
-	riskLastUpdatedDateTime?: anyOffset;
+	riskLastUpdatedDateTime?: any;
 	riskLevel?: graph.riskLevel;
 	riskState?: graph.riskState;
 	userDisplayName?: string;
@@ -5925,14 +5925,14 @@ export interface accessPackageSubjectCollections {
 * mobileApp
 **********************************************/
 export interface mobileApp {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	developer?: string;
 	displayName?: string;
 	informationUrl?: string;
 	isFeatured?: boolean;
 	largeIcon?: graph.mimeContent;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	notes?: string;
 	owner?: string;
 	privacyInformationUrl?: string;
@@ -6002,8 +6002,8 @@ export interface androidStoreAppCollections {
 export interface deviceAppManagement {
 	isEnabledForMicrosoftStoreForBusiness?: boolean;
 	microsoftStoreForBusinessLanguage?: string;
-	microsoftStoreForBusinessLastCompletedApplicationSyncTime?: anyOffset;
-	microsoftStoreForBusinessLastSuccessfulSyncDateTime?: anyOffset;
+	microsoftStoreForBusinessLastCompletedApplicationSyncTime?: any;
+	microsoftStoreForBusinessLastSuccessfulSyncDateTime?: any;
 }
 
 /*********************************************
@@ -6017,14 +6017,14 @@ export interface deviceAppManagementCollections {
 * managedEBook
 **********************************************/
 export interface managedEBook {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
 	informationUrl?: string;
 	largeCover?: graph.mimeContent;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	privacyInformationUrl?: string;
-	publishedDateTime?: anyOffset;
+	publishedDateTime?: any;
 	publisher?: string;
 }
 
@@ -6040,7 +6040,7 @@ export interface managedEBookCollections {
 **********************************************/
 export interface mobileAppCategory {
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -6054,10 +6054,10 @@ export interface mobileAppCategoryCollections {
 * managedDeviceMobileAppConfiguration
 **********************************************/
 export interface managedDeviceMobileAppConfiguration {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	targetedMobileApps?: { results: Array<string> };
 	version?: number;
 }
@@ -6076,9 +6076,9 @@ export interface vppToken {
 	appleId?: string;
 	automaticallyUpdateApps?: boolean;
 	countryOrRegion?: string;
-	expirationDateTime?: anyOffset;
-	lastModifiedDateTime?: anyOffset;
-	lastSyncDateTime?: anyOffset;
+	expirationDateTime?: any;
+	lastModifiedDateTime?: any;
+	lastSyncDateTime?: any;
 	lastSyncStatus?: graph.vppTokenSyncStatus;
 	organizationName?: string;
 	state?: graph.vppTokenState;
@@ -6097,10 +6097,10 @@ export interface vppTokenCollections {
 * managedAppPolicy
 **********************************************/
 export interface managedAppPolicy {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	version?: string;
 }
 
@@ -6133,10 +6133,10 @@ export interface managedAppProtection {
 	minimumWarningAppVersion?: string;
 	minimumWarningOsVersion?: string;
 	organizationalCredentialsRequired?: boolean;
-	periodBeforePinReset?: Edm.Duration;
-	periodOfflineBeforeAccessCheck?: Edm.Duration;
-	periodOfflineBeforeWipeIsEnforced?: Edm.Duration;
-	periodOnlineBeforeAccessCheck?: Edm.Duration;
+	periodBeforePinReset?: number;
+	periodOfflineBeforeAccessCheck?: number;
+	periodOfflineBeforeWipeIsEnforced?: number;
+	periodOnlineBeforeAccessCheck?: number;
 	pinCharacterSet?: graph.managedAppPinCharacterSet;
 	pinRequired?: boolean;
 	printBlocked?: boolean;
@@ -6352,7 +6352,7 @@ export interface iosLobApp {
 	applicableDeviceType?: graph.iosDeviceType;
 	buildNumber?: string;
 	bundleId?: string;
-	expirationDateTime?: anyOffset;
+	expirationDateTime?: any;
 	minimumSupportedOperatingSystem?: graph.iosMinimumOperatingSystem;
 	versionNumber?: string;
 }
@@ -6404,7 +6404,7 @@ export interface iosVppApp {
 	appStoreUrl?: string;
 	bundleId?: string;
 	licensingType?: graph.vppLicensingType;
-	releaseDateTime?: anyOffset;
+	releaseDateTime?: any;
 	totalLicenseCount?: number;
 	usedLicenseCount?: number;
 	vppTokenAccountType?: graph.vppTokenAccountType;
@@ -6515,10 +6515,10 @@ export interface managedDeviceMobileAppConfigurationAssignmentCollections {
 * managedDeviceMobileAppConfigurationDeviceStatus
 **********************************************/
 export interface managedDeviceMobileAppConfigurationDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: anyOffset;
+	complianceGracePeriodExpirationDateTime?: any;
 	deviceDisplayName?: string;
 	deviceModel?: string;
-	lastReportedDateTime?: anyOffset;
+	lastReportedDateTime?: any;
 	status?: graph.complianceStatus;
 	userName?: string;
 	userPrincipalName?: string;
@@ -6538,7 +6538,7 @@ export interface managedDeviceMobileAppConfigurationDeviceSummary {
 	configurationVersion?: number;
 	errorCount?: number;
 	failedCount?: number;
-	lastUpdateDateTime?: anyOffset;
+	lastUpdateDateTime?: any;
 	notApplicableCount?: number;
 	pendingCount?: number;
 	successCount?: number;
@@ -6556,7 +6556,7 @@ export interface managedDeviceMobileAppConfigurationDeviceSummaryCollections {
 **********************************************/
 export interface managedDeviceMobileAppConfigurationUserStatus {
 	devicesCount?: number;
-	lastReportedDateTime?: anyOffset;
+	lastReportedDateTime?: any;
 	status?: graph.complianceStatus;
 	userDisplayName?: string;
 	userPrincipalName?: string;
@@ -6576,7 +6576,7 @@ export interface managedDeviceMobileAppConfigurationUserSummary {
 	configurationVersion?: number;
 	errorCount?: number;
 	failedCount?: number;
-	lastUpdateDateTime?: anyOffset;
+	lastUpdateDateTime?: any;
 	notApplicableCount?: number;
 	pendingCount?: number;
 	successCount?: number;
@@ -6596,7 +6596,7 @@ export interface managedIOSLobApp {
 	applicableDeviceType?: graph.iosDeviceType;
 	buildNumber?: string;
 	bundleId?: string;
-	expirationDateTime?: anyOffset;
+	expirationDateTime?: any;
 	minimumSupportedOperatingSystem?: graph.iosMinimumOperatingSystem;
 	versionNumber?: string;
 }
@@ -6678,8 +6678,8 @@ export interface mobileAppAssignmentCollections {
 **********************************************/
 export interface mobileAppContentFile {
 	azureStorageUri?: string;
-	azureStorageUriExpirationDateTime?: anyOffset;
-	createdDateTime?: anyOffset;
+	azureStorageUriExpirationDateTime?: any;
+	createdDateTime?: any;
 	isCommitted?: boolean;
 	manifest?: any;
 	name?: string;
@@ -6782,7 +6782,7 @@ export interface deviceInstallState {
 	deviceName?: string;
 	errorCode?: string;
 	installState?: graph.installState;
-	lastSyncDateTime?: anyOffset;
+	lastSyncDateTime?: any;
 	osDescription?: string;
 	osVersion?: string;
 	userName?: string;
@@ -6904,10 +6904,10 @@ export interface deviceManagementCollections {
 export interface termsAndConditions {
 	acceptanceStatement?: string;
 	bodyText?: string;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	title?: string;
 	version?: number;
 }
@@ -6923,10 +6923,10 @@ export interface termsAndConditionsCollections {
 * deviceCompliancePolicy
 **********************************************/
 export interface deviceCompliancePolicy {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	version?: number;
 }
 
@@ -7006,10 +7006,10 @@ export interface deviceConfigurationDeviceStateSummaryCollections {
 * deviceConfiguration
 **********************************************/
 export interface deviceConfiguration {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	version?: number;
 }
 
@@ -7024,12 +7024,12 @@ export interface deviceConfigurationCollections {
 * iosUpdateDeviceStatus
 **********************************************/
 export interface iosUpdateDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: anyOffset;
+	complianceGracePeriodExpirationDateTime?: any;
 	deviceDisplayName?: string;
 	deviceId?: string;
 	deviceModel?: string;
 	installStatus?: graph.iosUpdatesInstallStatus;
-	lastReportedDateTime?: anyOffset;
+	lastReportedDateTime?: any;
 	osVersion?: string;
 	status?: graph.complianceStatus;
 	userId?: string;
@@ -7081,7 +7081,7 @@ export interface complianceManagementPartner {
 	displayName?: string;
 	iosEnrollmentAssignments?: { results: Array<graph.complianceManagementPartnerAssignment> };
 	iosOnboarded?: boolean;
-	lastHeartbeatDateTime?: anyOffset;
+	lastHeartbeatDateTime?: any;
 	macOsEnrollmentAssignments?: { results: Array<graph.complianceManagementPartnerAssignment> };
 	macOsOnboarded?: boolean;
 	partnerState?: graph.deviceManagementPartnerTenantState;
@@ -7130,10 +7130,10 @@ export interface deviceCategoryCollections {
 * deviceEnrollmentConfiguration
 **********************************************/
 export interface deviceEnrollmentConfiguration {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	priority?: number;
 	version?: number;
 }
@@ -7151,12 +7151,12 @@ export interface deviceEnrollmentConfigurationCollections {
 export interface deviceManagementPartner {
 	displayName?: string;
 	isConfigured?: boolean;
-	lastHeartbeatDateTime?: anyOffset;
+	lastHeartbeatDateTime?: any;
 	partnerAppType?: graph.deviceManagementPartnerAppType;
 	partnerState?: graph.deviceManagementPartnerTenantState;
 	singleTenantAppId?: string;
-	whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime?: anyOffset;
-	whenPartnerDevicesWillBeRemovedDateTime?: anyOffset;
+	whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime?: any;
+	whenPartnerDevicesWillBeRemovedDateTime?: any;
 }
 
 /*********************************************
@@ -7174,7 +7174,7 @@ export interface deviceManagementExchangeConnector {
 	exchangeAlias?: string;
 	exchangeConnectorType?: graph.deviceManagementExchangeConnectorType;
 	exchangeOrganization?: string;
-	lastSyncDateTime?: anyOffset;
+	lastSyncDateTime?: any;
 	primarySmtpAddress?: string;
 	serverName?: string;
 	status?: graph.deviceManagementExchangeConnectorStatus;
@@ -7196,7 +7196,7 @@ export interface mobileThreatDefenseConnector {
 	androidEnabled?: boolean;
 	iosDeviceBlockedOnMissingPartnerData?: boolean;
 	iosEnabled?: boolean;
-	lastHeartbeatDateTime?: anyOffset;
+	lastHeartbeatDateTime?: any;
 	partnerState?: graph.mobileThreatPartnerTenantState;
 	partnerUnresponsivenessThresholdInDays?: number;
 	partnerUnsupportedOsVersionBlocked?: boolean;
@@ -7216,8 +7216,8 @@ export interface applePushNotificationCertificate {
 	appleIdentifier?: string;
 	certificate?: string;
 	certificateSerialNumber?: string;
-	expirationDateTime?: anyOffset;
-	lastModifiedDateTime?: anyOffset;
+	expirationDateTime?: any;
+	lastModifiedDateTime?: any;
 	topicIdentifier?: string;
 }
 
@@ -7292,7 +7292,7 @@ export interface windowsAutopilotDeviceIdentity {
 	displayName?: string;
 	enrollmentState?: graph.enrollmentState;
 	groupTag?: string;
-	lastContactedDateTime?: anyOffset;
+	lastContactedDateTime?: any;
 	managedDeviceId?: string;
 	manufacturer?: string;
 	model?: string;
@@ -7319,7 +7319,7 @@ export interface notificationMessageTemplate {
 	brandingOptions?: graph.notificationTemplateBrandingOptions;
 	defaultLocale?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -7397,7 +7397,7 @@ export interface roleDefinitionCollections {
 **********************************************/
 export interface remoteAssistancePartner {
 	displayName?: string;
-	lastConnectionDateTime?: anyOffset;
+	lastConnectionDateTime?: any;
 	onboardingStatus?: graph.remoteAssistanceOnboardingStatus;
 	onboardingUrl?: string;
 }
@@ -7430,7 +7430,7 @@ export interface telecomExpenseManagementPartner {
 	appAuthorized?: boolean;
 	displayName?: string;
 	enabled?: boolean;
-	lastConnectionDateTime?: anyOffset;
+	lastConnectionDateTime?: any;
 	url?: string;
 }
 
@@ -7476,7 +7476,7 @@ export interface windowsInformationProtectionNetworkLearningSummaryCollections {
 * termsAndConditionsAcceptanceStatus
 **********************************************/
 export interface termsAndConditionsAcceptanceStatus {
-	acceptedDateTime?: anyOffset;
+	acceptedDateTime?: any;
 	acceptedVersion?: number;
 	userDisplayName?: string;
 	userPrincipalName?: string;
@@ -7745,7 +7745,7 @@ export interface deviceComplianceDeviceOverview {
 	configurationVersion?: number;
 	errorCount?: number;
 	failedCount?: number;
-	lastUpdateDateTime?: anyOffset;
+	lastUpdateDateTime?: any;
 	notApplicableCount?: number;
 	pendingCount?: number;
 	successCount?: number;
@@ -7762,10 +7762,10 @@ export interface deviceComplianceDeviceOverviewCollections {
 * deviceComplianceDeviceStatus
 **********************************************/
 export interface deviceComplianceDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: anyOffset;
+	complianceGracePeriodExpirationDateTime?: any;
 	deviceDisplayName?: string;
 	deviceModel?: string;
-	lastReportedDateTime?: anyOffset;
+	lastReportedDateTime?: any;
 	status?: graph.complianceStatus;
 	userName?: string;
 	userPrincipalName?: string;
@@ -7833,7 +7833,7 @@ export interface deviceComplianceScheduledActionForRuleCollections {
 **********************************************/
 export interface deviceComplianceUserStatus {
 	devicesCount?: number;
-	lastReportedDateTime?: anyOffset;
+	lastReportedDateTime?: any;
 	status?: graph.complianceStatus;
 	userDisplayName?: string;
 	userPrincipalName?: string;
@@ -7853,7 +7853,7 @@ export interface deviceComplianceUserOverview {
 	configurationVersion?: number;
 	errorCount?: number;
 	failedCount?: number;
-	lastUpdateDateTime?: anyOffset;
+	lastUpdateDateTime?: any;
 	notApplicableCount?: number;
 	pendingCount?: number;
 	successCount?: number;
@@ -7870,7 +7870,7 @@ export interface deviceComplianceUserOverviewCollections {
 * deviceComplianceSettingState
 **********************************************/
 export interface deviceComplianceSettingState {
-	complianceGracePeriodExpirationDateTime?: anyOffset;
+	complianceGracePeriodExpirationDateTime?: any;
 	deviceId?: string;
 	deviceModel?: string;
 	deviceName?: string;
@@ -7927,10 +7927,10 @@ export interface deviceConfigurationAssignmentCollections {
 * deviceConfigurationDeviceStatus
 **********************************************/
 export interface deviceConfigurationDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: anyOffset;
+	complianceGracePeriodExpirationDateTime?: any;
 	deviceDisplayName?: string;
 	deviceModel?: string;
-	lastReportedDateTime?: anyOffset;
+	lastReportedDateTime?: any;
 	status?: graph.complianceStatus;
 	userName?: string;
 	userPrincipalName?: string;
@@ -7950,7 +7950,7 @@ export interface deviceConfigurationDeviceOverview {
 	configurationVersion?: number;
 	errorCount?: number;
 	failedCount?: number;
-	lastUpdateDateTime?: anyOffset;
+	lastUpdateDateTime?: any;
 	notApplicableCount?: number;
 	pendingCount?: number;
 	successCount?: number;
@@ -7968,7 +7968,7 @@ export interface deviceConfigurationDeviceOverviewCollections {
 **********************************************/
 export interface deviceConfigurationUserStatus {
 	devicesCount?: number;
-	lastReportedDateTime?: anyOffset;
+	lastReportedDateTime?: any;
 	status?: graph.complianceStatus;
 	userDisplayName?: string;
 	userPrincipalName?: string;
@@ -7988,7 +7988,7 @@ export interface deviceConfigurationUserOverview {
 	configurationVersion?: number;
 	errorCount?: number;
 	failedCount?: number;
-	lastUpdateDateTime?: anyOffset;
+	lastUpdateDateTime?: any;
 	notApplicableCount?: number;
 	pendingCount?: number;
 	successCount?: number;
@@ -9020,13 +9020,13 @@ export interface windowsUpdateForBusinessConfiguration {
 	driversExcluded?: boolean;
 	featureUpdatesDeferralPeriodInDays?: number;
 	featureUpdatesPaused?: boolean;
-	featureUpdatesPauseExpiryDateTime?: anyOffset;
+	featureUpdatesPauseExpiryDateTime?: any;
 	installationSchedule?: graph.windowsUpdateInstallScheduleType;
 	microsoftUpdateServiceAllowed?: boolean;
 	prereleaseFeatures?: graph.prereleaseFeatures;
 	qualityUpdatesDeferralPeriodInDays?: number;
 	qualityUpdatesPaused?: boolean;
-	qualityUpdatesPauseExpiryDateTime?: anyOffset;
+	qualityUpdatesPauseExpiryDateTime?: any;
 }
 
 /*********************************************
@@ -9144,7 +9144,7 @@ export interface userExperienceAnalyticsDevicePerformanceCollections {
 * importedWindowsAutopilotDeviceIdentityUpload
 **********************************************/
 export interface importedWindowsAutopilotDeviceIdentityUpload {
-	createdDateTimeUtc?: anyOffset;
+	createdDateTimeUtc?: any;
 	status?: graph.importedWindowsAutopilotDeviceIdentityUploadStatus;
 }
 
@@ -9177,7 +9177,7 @@ export interface managedAppPolicyDeploymentSummary {
 	configurationDeployedUserCount?: number;
 	configurationDeploymentSummaryPerApp?: { results: Array<graph.managedAppPolicyDeploymentSummaryPerApp> };
 	displayName?: string;
-	lastRefreshTime?: anyOffset;
+	lastRefreshTime?: any;
 	version?: string;
 }
 
@@ -9221,7 +9221,7 @@ export interface iosManagedAppRegistrationCollections {
 **********************************************/
 export interface managedAppOperation {
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	state?: string;
 	version?: string;
 }
@@ -9283,7 +9283,7 @@ export interface windowsInformationProtectionAppLockerFileCollections {
 **********************************************/
 export interface localizedNotificationMessage {
 	isDefault?: boolean;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	locale?: string;
 	messageTemplate?: string;
 	subject?: string;
@@ -9314,12 +9314,12 @@ export interface deviceAndAppManagementRoleDefinitionCollections {
 * deviceManagementExportJob
 **********************************************/
 export interface deviceManagementExportJob {
-	expirationDateTime?: anyOffset;
+	expirationDateTime?: any;
 	filter?: string;
 	format?: graph.deviceManagementReportFileFormat;
 	localizationType?: graph.deviceManagementExportJobLocalizationType;
 	reportName?: string;
-	requestDateTime?: anyOffset;
+	requestDateTime?: any;
 	select?: { results: Array<string> };
 	snapshotId?: string;
 	status?: graph.deviceManagementReportStatus;
@@ -9402,9 +9402,9 @@ export interface serviceHealthCollections {
 **********************************************/
 export interface serviceAnnouncementBase {
 	details?: { results: Array<graph.keyValuePair> };
-	endDateTime?: anyOffset;
-	lastModifiedDateTime?: anyOffset;
-	startDateTime?: anyOffset;
+	endDateTime?: any;
+	lastModifiedDateTime?: any;
+	startDateTime?: any;
 	title?: string;
 }
 
@@ -9441,7 +9441,7 @@ export interface serviceHealthIssueCollections {
 * serviceUpdateMessage
 **********************************************/
 export interface serviceUpdateMessage {
-	actionRequiredByDateTime?: anyOffset;
+	actionRequiredByDateTime?: any;
 	attachmentsArchive?: any;
 	body?: graph.itemBody;
 	category?: graph.serviceUpdateCategory;
@@ -9466,7 +9466,7 @@ export interface serviceUpdateMessageCollections {
 export interface serviceAnnouncementAttachment {
 	content?: any;
 	contentType?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	name?: string;
 	size?: number;
 }
@@ -9528,7 +9528,7 @@ export interface plannerBucketCollections {
 export interface plannerPlan {
 	container?: graph.plannerPlanContainer;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	owner?: string;
 	title?: string;
 }
@@ -9551,11 +9551,11 @@ export interface plannerTask {
 	bucketId?: string;
 	checklistItemCount?: number;
 	completedBy?: graph.identitySet;
-	completedDateTime?: anyOffset;
+	completedDateTime?: any;
 	conversationThreadId?: string;
 	createdBy?: graph.identitySet;
-	createdDateTime?: anyOffset;
-	dueDateTime?: anyOffset;
+	createdDateTime?: any;
+	dueDateTime?: any;
 	hasDescription?: boolean;
 	orderHint?: string;
 	percentComplete?: number;
@@ -9563,7 +9563,7 @@ export interface plannerTask {
 	previewType?: graph.plannerPreviewType;
 	priority?: number;
 	referenceCount?: number;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 	title?: string;
 }
 
@@ -9670,7 +9670,7 @@ export interface sharedInsightCollections {
 * trending
 **********************************************/
 export interface trending {
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	resourceReference?: graph.resourceReference;
 	resourceVisualization?: graph.resourceVisualization;
 	weight?: number;
@@ -9703,9 +9703,9 @@ export interface usedInsightCollections {
 * changeTrackedEntity
 **********************************************/
 export interface changeTrackedEntity {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -9747,7 +9747,7 @@ export interface onenoteEntityBaseModelCollections {
 * onenoteEntitySchemaObjectModel
 **********************************************/
 export interface onenoteEntitySchemaObjectModel {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 }
 
 /*********************************************
@@ -9764,7 +9764,7 @@ export interface onenoteEntityHierarchyModel {
 	createdBy?: graph.identitySet;
 	displayName?: string;
 	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 }
 
 /*********************************************
@@ -9828,8 +9828,8 @@ export interface onenoteSectionCollections {
 * operation
 **********************************************/
 export interface operation {
-	createdDateTime?: anyOffset;
-	lastActionDateTime?: anyOffset;
+	createdDateTime?: any;
+	lastActionDateTime?: any;
 	status?: graph.operationStatus;
 }
 
@@ -9864,7 +9864,7 @@ export interface onenotePage {
 	content?: any;
 	contentUrl?: string;
 	createdByAppId?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	level?: number;
 	links?: graph.pageLinks;
 	order?: number;
@@ -9956,7 +9956,7 @@ export interface unifiedRoleManagementPolicyEnablementRuleCollections {
 **********************************************/
 export interface unifiedRoleManagementPolicyExpirationRule {
 	isExpirationRequired?: boolean;
-	maximumDuration?: Edm.Duration;
+	maximumDuration?: number;
 }
 
 /*********************************************
@@ -10007,7 +10007,7 @@ export interface printConnector {
 	fullyQualifiedDomainName?: string;
 	location?: graph.printerLocation;
 	operatingSystem?: string;
-	registeredDateTime?: anyOffset;
+	registeredDateTime?: any;
 }
 
 /*********************************************
@@ -10021,7 +10021,7 @@ export interface printConnectorCollections {
 * printOperation
 **********************************************/
 export interface printOperation {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	status?: graph.printOperationStatus;
 }
 
@@ -10059,8 +10059,8 @@ export interface printerBaseCollections {
 export interface printer {
 	hasPhysicalDevice?: boolean;
 	isShared?: boolean;
-	lastSeenDateTime?: anyOffset;
-	registeredDateTime?: anyOffset;
+	lastSeenDateTime?: any;
+	registeredDateTime?: any;
 }
 
 /*********************************************
@@ -10089,7 +10089,7 @@ export interface printServiceCollections {
 **********************************************/
 export interface printerShare {
 	allowAllUsers?: boolean;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 }
 
 /*********************************************
@@ -10150,7 +10150,7 @@ export interface printTaskTriggerCollections {
 export interface printJob {
 	configuration?: graph.printJobConfiguration;
 	createdBy?: graph.userIdentity;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	isFetchable?: boolean;
 	redirectedFrom?: string;
 	redirectedTo?: string;
@@ -10213,11 +10213,11 @@ export interface printServiceEndpointCollections {
 **********************************************/
 export interface activityHistoryItem {
 	activeDurationSeconds?: number;
-	createdDateTime?: anyOffset;
-	expirationDateTime?: anyOffset;
-	lastActiveDateTime?: anyOffset;
-	lastModifiedDateTime?: anyOffset;
-	startedDateTime?: anyOffset;
+	createdDateTime?: any;
+	expirationDateTime?: any;
+	lastActiveDateTime?: any;
+	lastModifiedDateTime?: any;
+	startedDateTime?: any;
 	status?: graph.status;
 	userTimezone?: string;
 }
@@ -10233,11 +10233,11 @@ export interface activityHistoryItemCollections {
 * dataPolicyOperation
 **********************************************/
 export interface dataPolicyOperation {
-	completedDateTime?: anyOffset;
+	completedDateTime?: any;
 	progress?: number;
 	status?: graph.dataPolicyOperationStatus;
 	storageLocation?: string;
-	submittedDateTime?: anyOffset;
+	submittedDateTime?: any;
 	userId?: string;
 }
 
@@ -10349,8 +10349,8 @@ export interface inviteParticipantsOperationCollections {
 * meetingAttendanceReport
 **********************************************/
 export interface meetingAttendanceReport {
-	meetingEndDateTime?: anyOffset;
-	meetingStartDateTime?: anyOffset;
+	meetingEndDateTime?: any;
+	meetingStartDateTime?: any;
 	totalParticipantCount?: number;
 }
 
@@ -10537,7 +10537,7 @@ export interface fido2AuthenticationMethod {
 	aaGuid?: string;
 	attestationCertificates?: { results: Array<string> };
 	attestationLevel?: graph.attestationLevel;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
 	model?: string;
 }
@@ -10553,7 +10553,7 @@ export interface fido2AuthenticationMethodCollections {
 * microsoftAuthenticatorAuthenticationMethod
 **********************************************/
 export interface microsoftAuthenticatorAuthenticationMethod {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	deviceTag?: string;
 	displayName?: string;
 	phoneAppVersion?: string;
@@ -10570,7 +10570,7 @@ export interface microsoftAuthenticatorAuthenticationMethodCollections {
 * passwordAuthenticationMethod
 **********************************************/
 export interface passwordAuthenticationMethod {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	password?: string;
 }
 
@@ -10615,12 +10615,12 @@ export interface softwareOathAuthenticationMethodCollections {
 * temporaryAccessPassAuthenticationMethod
 **********************************************/
 export interface temporaryAccessPassAuthenticationMethod {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	isUsable?: boolean;
 	isUsableOnce?: boolean;
 	lifetimeInMinutes?: number;
 	methodUsabilityReason?: string;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 	temporaryAccessPass?: string;
 }
 
@@ -10635,7 +10635,7 @@ export interface temporaryAccessPassAuthenticationMethodCollections {
 * windowsHelloForBusinessAuthenticationMethod
 **********************************************/
 export interface windowsHelloForBusinessAuthenticationMethod {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	displayName?: string;
 	keyStrength?: graph.authenticationMethodKeyStrength;
 }
@@ -10730,14 +10730,14 @@ export interface chatMessage {
 	body?: graph.itemBody;
 	channelIdentity?: graph.channelIdentity;
 	chatId?: string;
-	createdDateTime?: anyOffset;
-	deletedDateTime?: anyOffset;
+	createdDateTime?: any;
+	deletedDateTime?: any;
 	etag?: string;
 	eventDetail?: graph.eventMessageDetail;
 	from?: graph.chatMessageFromIdentitySet;
 	importance?: graph.chatMessageImportance;
-	lastEditedDateTime?: anyOffset;
-	lastModifiedDateTime?: anyOffset;
+	lastEditedDateTime?: any;
+	lastModifiedDateTime?: any;
 	locale?: string;
 	mentions?: { results: Array<graph.chatMessageMention> };
 	messageType?: graph.chatMessageType;
@@ -10822,7 +10822,7 @@ export interface teamsAppDefinition {
 	createdBy?: graph.identitySet;
 	description?: string;
 	displayName?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	publishingState?: graph.teamsAppPublishingState;
 	shortDescription?: string;
 	teamsAppId?: string;
@@ -10902,10 +10902,10 @@ export interface userScopeTeamsAppInstallationCollections {
 **********************************************/
 export interface scheduleChangeRequest {
 	assignedTo?: graph.scheduleChangeRequestActor;
-	managerActionDateTime?: anyOffset;
+	managerActionDateTime?: any;
 	managerActionMessage?: string;
 	managerUserId?: string;
-	senderDateTime?: anyOffset;
+	senderDateTime?: any;
 	senderMessage?: string;
 	senderUserId?: string;
 	state?: graph.scheduleChangeState;
@@ -10922,7 +10922,7 @@ export interface scheduleChangeRequestCollections {
 * offerShiftRequest
 **********************************************/
 export interface offerShiftRequest {
-	recipientActionDateTime?: anyOffset;
+	recipientActionDateTime?: any;
 	recipientActionMessage?: string;
 	recipientUserId?: string;
 	senderShiftId?: string;
@@ -11032,8 +11032,8 @@ export interface timeOffReasonCollections {
 * timeOffRequest
 **********************************************/
 export interface timeOffRequest {
-	endDateTime?: anyOffset;
-	startDateTime?: anyOffset;
+	endDateTime?: any;
+	startDateTime?: any;
 	timeOffReasonId?: string;
 }
 
@@ -11111,7 +11111,7 @@ export interface mailAssessmentRequestCollections {
 * threatAssessmentResult
 **********************************************/
 export interface threatAssessmentResult {
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	message?: string;
 	resultType?: graph.threatAssessmentResultType;
 }
@@ -11142,7 +11142,7 @@ export interface urlAssessmentRequestCollections {
 **********************************************/
 export interface attachmentBase {
 	contentType?: string;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	name?: string;
 	size?: number;
 }
@@ -11159,7 +11159,7 @@ export interface attachmentBaseCollections {
 **********************************************/
 export interface attachmentSession {
 	content?: any;
-	expirationDateTime?: anyOffset;
+	expirationDateTime?: any;
 	nextExpectedRanges?: { results: Array<string> };
 }
 
@@ -11174,8 +11174,8 @@ export interface attachmentSessionCollections {
 * checklistItem
 **********************************************/
 export interface checklistItem {
-	checkedDateTime?: anyOffset;
-	createdDateTime?: anyOffset;
+	checkedDateTime?: any;
+	createdDateTime?: any;
 	displayName?: string;
 	isChecked?: boolean;
 }
@@ -11240,15 +11240,15 @@ export interface todoTaskListCollections {
 **********************************************/
 export interface todoTask {
 	body?: graph.itemBody;
-	bodyLastModifiedDateTime?: anyOffset;
+	bodyLastModifiedDateTime?: any;
 	categories?: { results: Array<string> };
 	completedDateTime?: graph.dateTimeTimeZone;
-	createdDateTime?: anyOffset;
+	createdDateTime?: any;
 	dueDateTime?: graph.dateTimeTimeZone;
 	hasAttachments?: boolean;
 	importance?: graph.importance;
 	isReminderOn?: boolean;
-	lastModifiedDateTime?: anyOffset;
+	lastModifiedDateTime?: any;
 	recurrence?: graph.patternedRecurrence;
 	reminderDateTime?: graph.dateTimeTimeZone;
 	startDateTime?: graph.dateTimeTimeZone;

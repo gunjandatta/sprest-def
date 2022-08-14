@@ -1,7 +1,6 @@
 import { Base } from "../../../";
 import { microsoft } from "../../../";
-import { Edm } from "../../../";
-import { graph } from "../../../";
+import { graph } from "../../";
 
 /*********************************************
 * userAgent
@@ -22,8 +21,8 @@ export interface userAgentCollections {
 * clientUserAgent
 **********************************************/
 export interface clientUserAgent {
-	platform?: microsoft.graph.callRecords.clientPlatform;
-	productFamily?: microsoft.graph.callRecords.productFamily;
+	platform?: microsoft.graph.clientPlatform;
+	productFamily?: microsoft.graph.productFamily;
 }
 
 /*********************************************
@@ -77,16 +76,16 @@ export interface directRoutingLogRow {
 	callType?: string;
 	correlationId?: string;
 	duration?: number;
-	endDateTime?: anyOffset;
-	failureDateTime?: anyOffset;
+	endDateTime?: any;
+	failureDateTime?: any;
 	finalSipCode?: number;
 	finalSipCodePhrase?: string;
 	id?: string;
-	inviteDateTime?: anyOffset;
+	inviteDateTime?: any;
 	mediaBypassEnabled?: boolean;
 	mediaPathLocation?: string;
 	signalingLocation?: string;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 	successfulCall?: boolean;
 	trunkFullyQualifiedDomainName?: string;
 	userDisplayName?: string;
@@ -120,7 +119,7 @@ export interface endpointCollections {
 **********************************************/
 export interface failureInfo {
 	reason?: string;
-	stage?: microsoft.graph.callRecords.failureStage;
+	stage?: microsoft.graph.failureStage;
 }
 
 /*********************************************
@@ -169,13 +168,13 @@ export interface mediaCollections {
 export interface networkInfo {
 	bandwidthLowEventRatio?: any;
 	basicServiceSetIdentifier?: string;
-	connectionType?: microsoft.graph.callRecords.networkConnectionType;
+	connectionType?: microsoft.graph.networkConnectionType;
 	delayEventRatio?: any;
 	dnsSuffix?: string;
 	ipAddress?: string;
 	linkSpeed?: number;
 	macAddress?: string;
-	networkTransportProtocol?: microsoft.graph.callRecords.networkTransportProtocol;
+	networkTransportProtocol?: microsoft.graph.networkTransportProtocol;
 	port?: number;
 	receivedQualityEventRatio?: any;
 	reflexiveIPAddress?: string;
@@ -184,12 +183,12 @@ export interface networkInfo {
 	sentQualityEventRatio?: any;
 	subnet?: string;
 	traceRouteHops?: Array<microsoft.graph.callRecords.traceRouteHop>;
-	wifiBand?: microsoft.graph.callRecords.wifiBand;
+	wifiBand?: microsoft.graph.wifiBand;
 	wifiBatteryCharge?: number;
 	wifiChannel?: number;
 	wifiMicrosoftDriver?: string;
 	wifiMicrosoftDriverVersion?: string;
-	wifiRadioType?: microsoft.graph.callRecords.wifiRadioType;
+	wifiRadioType?: microsoft.graph.wifiRadioType;
 	wifiSignalStrength?: number;
 	wifiVendorDriver?: string;
 	wifiVendorDriverVersion?: string;
@@ -206,32 +205,32 @@ export interface networkInfoCollections {
 * mediaStream
 **********************************************/
 export interface mediaStream {
-	audioCodec?: microsoft.graph.callRecords.audioCodec;
+	audioCodec?: microsoft.graph.audioCodec;
 	averageAudioDegradation?: any;
-	averageAudioNetworkJitter?: Edm.Duration;
+	averageAudioNetworkJitter?: number;
 	averageBandwidthEstimate?: number;
-	averageJitter?: Edm.Duration;
+	averageJitter?: number;
 	averagePacketLossRate?: any;
 	averageRatioOfConcealedSamples?: any;
 	averageReceivedFrameRate?: any;
-	averageRoundTripTime?: Edm.Duration;
+	averageRoundTripTime?: number;
 	averageVideoFrameLossPercentage?: any;
 	averageVideoFrameRate?: any;
 	averageVideoPacketLossRate?: any;
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	lowFrameRateRatio?: any;
 	lowVideoProcessingCapabilityRatio?: any;
-	maxAudioNetworkJitter?: Edm.Duration;
-	maxJitter?: Edm.Duration;
+	maxAudioNetworkJitter?: number;
+	maxJitter?: number;
 	maxPacketLossRate?: any;
 	maxRatioOfConcealedSamples?: any;
-	maxRoundTripTime?: Edm.Duration;
+	maxRoundTripTime?: number;
 	packetUtilization?: number;
 	postForwardErrorCorrectionPacketLossRate?: any;
-	startDateTime?: anyOffset;
-	streamDirection?: microsoft.graph.callRecords.mediaStreamDirection;
+	startDateTime?: any;
+	streamDirection?: microsoft.graph.mediaStreamDirection;
 	streamId?: string;
-	videoCodec?: microsoft.graph.callRecords.videoCodec;
+	videoCodec?: microsoft.graph.videoCodec;
 	wasMediaBypassed?: boolean;
 }
 
@@ -248,7 +247,7 @@ export interface mediaStreamCollections {
 export interface traceRouteHop {
 	hopCount?: number;
 	ipAddress?: string;
-	roundTripTime?: Edm.Duration;
+	roundTripTime?: number;
 }
 
 /*********************************************
@@ -277,7 +276,7 @@ export interface participantEndpointCollections {
 * userFeedback
 **********************************************/
 export interface userFeedback {
-	rating?: microsoft.graph.callRecords.userFeedbackRating;
+	rating?: microsoft.graph.userFeedbackRating;
 	text?: string;
 	tokens?: microsoft.graph.callRecords.feedbackTokenSet;
 }
@@ -293,7 +292,7 @@ export interface userFeedbackCollections {
 * pstnCallLogRow
 **********************************************/
 export interface pstnCallLogRow {
-	callDurationSource?: microsoft.graph.callRecords.pstnCallDurationSource;
+	callDurationSource?: microsoft.graph.pstnCallDurationSource;
 	calleeNumber?: string;
 	callerNumber?: string;
 	callId?: string;
@@ -305,12 +304,12 @@ export interface pstnCallLogRow {
 	destinationContext?: string;
 	destinationName?: string;
 	duration?: number;
-	endDateTime?: anyOffset;
+	endDateTime?: any;
 	id?: string;
 	inventoryType?: string;
 	licenseCapability?: string;
 	operator?: string;
-	startDateTime?: anyOffset;
+	startDateTime?: any;
 	tenantCountryCode?: string;
 	usageCountryCode?: string;
 	userDisplayName?: string;
@@ -343,7 +342,7 @@ export interface serviceEndpointCollections {
 * serviceUserAgent
 **********************************************/
 export interface serviceUserAgent {
-	role?: microsoft.graph.callRecords.serviceRole;
+	role?: microsoft.graph.serviceRole;
 }
 
 /*********************************************

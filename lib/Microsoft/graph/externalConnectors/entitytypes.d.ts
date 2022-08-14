@@ -1,5 +1,5 @@
 import { Base } from "../../../";
-import { graph } from "../../../";
+import { graph } from "../../";
 import { microsoft } from "../../../";
 
 /*********************************************
@@ -7,7 +7,7 @@ import { microsoft } from "../../../";
 **********************************************/
 export interface connectionOperation {
 	error?: graph.publicError;
-	status?: microsoft.graph.externalConnectors.connectionOperationStatus;
+	status?: microsoft.graph.connectionOperationStatus;
 }
 
 /*********************************************
@@ -38,7 +38,7 @@ export interface externalConnection {
 	configuration?: microsoft.graph.externalConnectors.configuration;
 	description?: string;
 	name?: string;
-	state?: microsoft.graph.externalConnectors.connectionState;
+	state?: microsoft.graph.connectionState;
 }
 
 /*********************************************
@@ -98,7 +98,7 @@ export interface schemaCollections {
 * identity
 **********************************************/
 export interface identity {
-	type?: microsoft.graph.externalConnectors.identityType;
+	type?: microsoft.graph.identityType;
 }
 
 /*********************************************
