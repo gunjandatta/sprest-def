@@ -6077,16 +6077,16 @@ export interface setSolidColorCollections {
 }
 
 /*********************************************
-* delete
+* _delete
 **********************************************/
-export interface delete {
+export interface _delete {
 
 }
 
 /*********************************************
-* deleteCollections
+* _deleteCollections
 **********************************************/
-export interface deleteCollections {
+export interface _deleteCollections {
 
 }
 
@@ -7323,16 +7323,16 @@ export interface updateDevicePropertiesCollections {
 }
 
 /*********************************************
-* import
+* _import
 **********************************************/
-export interface import {
+export interface _import {
 
 }
 
 /*********************************************
-* importCollections
+* _importCollections
 **********************************************/
-export interface importCollections {
+export interface _importCollections {
 
 }
 

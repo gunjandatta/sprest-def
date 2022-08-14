@@ -58,13 +58,13 @@ https.get("https://graph.microsoft.com/v1.0/$metadata", (res) => {
         // Rename the "case" type 
         // Rename the "return" type
         let content = data.toString()
-            .replace('Name="case"', 'Name="_case"')
-            .replace('Name="delete"', 'Name="_delete"')
-            .replace('Name="false"', 'Name="_false"')
-            .replace('Name="if"', 'Name="_if"')
-            .replace('Name="import"', 'Name="_import"')
-            .replace('Name="return"', 'Name="_return"')
-            .replace('Name="true"', 'Name="_true"');
+            .replace('<Action Name="case"', '<Action Name="_case"')
+            .replace('<Action Name="delete"', '<Action Name="_delete"')
+            .replace('<Action Name="false"', '<Action Name="_false"')
+            .replace('<Action Name="if"', '<Action Name="_if"')
+            .replace('<Action Name="import"', '<Action Name="_import"')
+            .replace('<Action Name="return"', '<Action Name="_return"')
+            .replace('<Action Name="true"', '<Action Name="_true"');
 
         // Write the file
         fs.writeFileSync("graph.xml", content);
