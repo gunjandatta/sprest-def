@@ -1,262 +1,262 @@
-import { IBaseResult } from "../../base";
+import { IBaseExecution } from "../../base";
 /*********************************************
 * invitations
 **********************************************/
-export interface invitations extends IBaseResult<EntityTypes.invitation> {
-	invitedUser: IBaseResult<users>;
+export interface invitations extends IBaseExecution<EntityTypes.invitation> {
+	invitedUser: IBaseExecution<users>;
 }
 /*********************************************
 * users
 **********************************************/
-export interface users extends IBaseResult<EntityTypes.user> {
-	createdObjects: IBaseResult<directoryObjects>;
-	directReports: IBaseResult<directoryObjects>;
-	manager: IBaseResult<directoryObjects>;
-	memberOf: IBaseResult<directoryObjects>;
-	ownedDevices: IBaseResult<directoryObjects>;
-	ownedObjects: IBaseResult<directoryObjects>;
-	registeredDevices: IBaseResult<directoryObjects>;
-	transitiveMemberOf: IBaseResult<directoryObjects>;
+export interface users extends IBaseExecution<EntityTypes.user> {
+	createdObjects: IBaseExecution<directoryObjects>;
+	directReports: IBaseExecution<directoryObjects>;
+	manager: IBaseExecution<directoryObjects>;
+	memberOf: IBaseExecution<directoryObjects>;
+	ownedDevices: IBaseExecution<directoryObjects>;
+	ownedObjects: IBaseExecution<directoryObjects>;
+	registeredDevices: IBaseExecution<directoryObjects>;
+	transitiveMemberOf: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * applicationTemplates
 **********************************************/
-export interface applicationTemplates extends IBaseResult<EntityTypes.applicationTemplate> {
+export interface applicationTemplates extends IBaseExecution<EntityTypes.applicationTemplate> {
 
 }
 /*********************************************
 * authenticationMethodConfigurations
 **********************************************/
-export interface authenticationMethodConfigurations extends IBaseResult<EntityTypes.authenticationMethodConfiguration> {
+export interface authenticationMethodConfigurations extends IBaseExecution<EntityTypes.authenticationMethodConfiguration> {
 
 }
 /*********************************************
 * identityProviders
 **********************************************/
-export interface identityProviders extends IBaseResult<EntityTypes.identityProvider> {
+export interface identityProviders extends IBaseExecution<EntityTypes.identityProvider> {
 
 }
 /*********************************************
 * applications
 **********************************************/
-export interface applications extends IBaseResult<EntityTypes.application> {
-	createdOnBehalfOf: IBaseResult<directoryObjects>;
-	owners: IBaseResult<directoryObjects>;
+export interface applications extends IBaseExecution<EntityTypes.application> {
+	createdOnBehalfOf: IBaseExecution<directoryObjects>;
+	owners: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * certificateBasedAuthConfiguration
 **********************************************/
-export interface certificateBasedAuthConfiguration extends IBaseResult<EntityTypes.certificateBasedAuthConfiguration> {
+export interface certificateBasedAuthConfiguration extends IBaseExecution<EntityTypes.certificateBasedAuthConfiguration> {
 
 }
 /*********************************************
 * contacts
 **********************************************/
-export interface contacts extends IBaseResult<EntityTypes.orgContact> {
-	directReports: IBaseResult<directoryObjects>;
-	manager: IBaseResult<directoryObjects>;
-	memberOf: IBaseResult<directoryObjects>;
-	transitiveMemberOf: IBaseResult<directoryObjects>;
+export interface contacts extends IBaseExecution<EntityTypes.orgContact> {
+	directReports: IBaseExecution<directoryObjects>;
+	manager: IBaseExecution<directoryObjects>;
+	memberOf: IBaseExecution<directoryObjects>;
+	transitiveMemberOf: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * contracts
 **********************************************/
-export interface contracts extends IBaseResult<EntityTypes.contract> {
+export interface contracts extends IBaseExecution<EntityTypes.contract> {
 
 }
 /*********************************************
 * devices
 **********************************************/
-export interface devices extends IBaseResult<EntityTypes.device> {
-	registeredOwners: IBaseResult<directoryObjects>;
-	registeredUsers: IBaseResult<directoryObjects>;
-	transitiveMemberOf: IBaseResult<directoryObjects>;
+export interface devices extends IBaseExecution<EntityTypes.device> {
+	registeredOwners: IBaseExecution<directoryObjects>;
+	registeredUsers: IBaseExecution<directoryObjects>;
+	transitiveMemberOf: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * directoryObjects
 **********************************************/
-export interface directoryObjects extends IBaseResult<EntityTypes.directoryObject> {
+export interface directoryObjects extends IBaseExecution<EntityTypes.directoryObject> {
 
 }
 /*********************************************
 * directoryRoles
 **********************************************/
-export interface directoryRoles extends IBaseResult<EntityTypes.directoryRole> {
-	members: IBaseResult<directoryObjects>;
+export interface directoryRoles extends IBaseExecution<EntityTypes.directoryRole> {
+	members: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * directoryRoleTemplates
 **********************************************/
-export interface directoryRoleTemplates extends IBaseResult<EntityTypes.directoryRoleTemplate> {
+export interface directoryRoleTemplates extends IBaseExecution<EntityTypes.directoryRoleTemplate> {
 
 }
 /*********************************************
 * domainDnsRecords
 **********************************************/
-export interface domainDnsRecords extends IBaseResult<EntityTypes.domainDnsRecord> {
+export interface domainDnsRecords extends IBaseExecution<EntityTypes.domainDnsRecord> {
 
 }
 /*********************************************
 * domains
 **********************************************/
-export interface domains extends IBaseResult<EntityTypes.domain> {
-	domainNameReferences: IBaseResult<directoryObjects>;
+export interface domains extends IBaseExecution<EntityTypes.domain> {
+	domainNameReferences: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * groups
 **********************************************/
-export interface groups extends IBaseResult<EntityTypes.group> {
-	createdOnBehalfOf: IBaseResult<directoryObjects>;
-	memberOf: IBaseResult<directoryObjects>;
-	members: IBaseResult<directoryObjects>;
-	owners: IBaseResult<directoryObjects>;
-	transitiveMemberOf: IBaseResult<directoryObjects>;
-	transitiveMembers: IBaseResult<directoryObjects>;
+export interface groups extends IBaseExecution<EntityTypes.group> {
+	createdOnBehalfOf: IBaseExecution<directoryObjects>;
+	memberOf: IBaseExecution<directoryObjects>;
+	members: IBaseExecution<directoryObjects>;
+	owners: IBaseExecution<directoryObjects>;
+	transitiveMemberOf: IBaseExecution<directoryObjects>;
+	transitiveMembers: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * groupSettings
 **********************************************/
-export interface groupSettings extends IBaseResult<EntityTypes.groupSetting> {
+export interface groupSettings extends IBaseExecution<EntityTypes.groupSetting> {
 
 }
 /*********************************************
 * groupSettingTemplates
 **********************************************/
-export interface groupSettingTemplates extends IBaseResult<EntityTypes.groupSettingTemplate> {
+export interface groupSettingTemplates extends IBaseExecution<EntityTypes.groupSettingTemplate> {
 
 }
 /*********************************************
 * localizations
 **********************************************/
-export interface localizations extends IBaseResult<EntityTypes.organizationalBrandingLocalization> {
+export interface localizations extends IBaseExecution<EntityTypes.organizationalBrandingLocalization> {
 
 }
 /*********************************************
 * oauth2PermissionGrants
 **********************************************/
-export interface oauth2PermissionGrants extends IBaseResult<EntityTypes.oAuth2PermissionGrant> {
+export interface oauth2PermissionGrants extends IBaseExecution<EntityTypes.oAuth2PermissionGrant> {
 
 }
 /*********************************************
 * organization
 **********************************************/
-export interface organization extends IBaseResult<EntityTypes.organization> {
-	certificateBasedAuthConfiguration: IBaseResult<EntityTypes.certificateBasedAuthConfiguration>;
+export interface organization extends IBaseExecution<EntityTypes.organization> {
+	certificateBasedAuthConfiguration: IBaseExecution<EntityTypes.certificateBasedAuthConfiguration>;
 }
 /*********************************************
 * permissionGrants
 **********************************************/
-export interface permissionGrants extends IBaseResult<EntityTypes.resourceSpecificPermissionGrant> {
+export interface permissionGrants extends IBaseExecution<EntityTypes.resourceSpecificPermissionGrant> {
 
 }
 /*********************************************
 * scopedRoleMemberships
 **********************************************/
-export interface scopedRoleMemberships extends IBaseResult<EntityTypes.scopedRoleMembership> {
+export interface scopedRoleMemberships extends IBaseExecution<EntityTypes.scopedRoleMembership> {
 
 }
 /*********************************************
 * servicePrincipals
 **********************************************/
-export interface servicePrincipals extends IBaseResult<EntityTypes.servicePrincipal> {
-	createdObjects: IBaseResult<directoryObjects>;
-	memberOf: IBaseResult<directoryObjects>;
-	oauth2PermissionGrants: IBaseResult<oauth2PermissionGrants>;
-	ownedObjects: IBaseResult<directoryObjects>;
-	owners: IBaseResult<directoryObjects>;
-	transitiveMemberOf: IBaseResult<directoryObjects>;
+export interface servicePrincipals extends IBaseExecution<EntityTypes.servicePrincipal> {
+	createdObjects: IBaseExecution<directoryObjects>;
+	memberOf: IBaseExecution<directoryObjects>;
+	oauth2PermissionGrants: IBaseExecution<oauth2PermissionGrants>;
+	ownedObjects: IBaseExecution<directoryObjects>;
+	owners: IBaseExecution<directoryObjects>;
+	transitiveMemberOf: IBaseExecution<directoryObjects>;
 }
 /*********************************************
 * subscribedSkus
 **********************************************/
-export interface subscribedSkus extends IBaseResult<EntityTypes.subscribedSku> {
+export interface subscribedSkus extends IBaseExecution<EntityTypes.subscribedSku> {
 
 }
 /*********************************************
 * places
 **********************************************/
-export interface places extends IBaseResult<EntityTypes.place> {
+export interface places extends IBaseExecution<EntityTypes.place> {
 
 }
 /*********************************************
 * drives
 **********************************************/
-export interface drives extends IBaseResult<EntityTypes.drive> {
+export interface drives extends IBaseExecution<EntityTypes.drive> {
 
 }
 /*********************************************
 * shares
 **********************************************/
-export interface shares extends IBaseResult<EntityTypes.sharedDriveItem> {
+export interface shares extends IBaseExecution<EntityTypes.sharedDriveItem> {
 
 }
 /*********************************************
 * sites
 **********************************************/
-export interface sites extends IBaseResult<EntityTypes.site> {
-	parentTerm: IBaseResult<terms>;
-	termSet: IBaseResult<sets>;
-	sharedColumns: IBaseResult<columns>;
-	welcomePageColumns: IBaseResult<columns>;
+export interface sites extends IBaseExecution<EntityTypes.site> {
+	parentTerm: IBaseExecution<terms>;
+	termSet: IBaseExecution<sets>;
+	sharedColumns: IBaseExecution<columns>;
+	welcomePageColumns: IBaseExecution<columns>;
 }
 /*********************************************
 * schemaExtensions
 **********************************************/
-export interface schemaExtensions extends IBaseResult<EntityTypes.schemaExtension> {
+export interface schemaExtensions extends IBaseExecution<EntityTypes.schemaExtension> {
 
 }
 /*********************************************
 * groupLifecyclePolicies
 **********************************************/
-export interface groupLifecyclePolicies extends IBaseResult<EntityTypes.groupLifecyclePolicy> {
+export interface groupLifecyclePolicies extends IBaseExecution<EntityTypes.groupLifecyclePolicy> {
 
 }
 /*********************************************
 * agreementAcceptances
 **********************************************/
-export interface agreementAcceptances extends IBaseResult<EntityTypes.agreementAcceptance> {
+export interface agreementAcceptances extends IBaseExecution<EntityTypes.agreementAcceptance> {
 
 }
 /*********************************************
 * agreements
 **********************************************/
-export interface agreements extends IBaseResult<EntityTypes.agreement> {
+export interface agreements extends IBaseExecution<EntityTypes.agreement> {
 
 }
 /*********************************************
 * dataPolicyOperations
 **********************************************/
-export interface dataPolicyOperations extends IBaseResult<EntityTypes.dataPolicyOperation> {
+export interface dataPolicyOperations extends IBaseExecution<EntityTypes.dataPolicyOperation> {
 
 }
 /*********************************************
 * subscriptions
 **********************************************/
-export interface subscriptions extends IBaseResult<EntityTypes.subscription> {
+export interface subscriptions extends IBaseExecution<EntityTypes.subscription> {
 
 }
 /*********************************************
 * connections
 **********************************************/
-export interface connections extends IBaseResult<EntityTypes.externalConnection> {
+export interface connections extends IBaseExecution<EntityTypes.externalConnection> {
 
 }
 /*********************************************
 * chats
 **********************************************/
-export interface chats extends IBaseResult<EntityTypes.chat> {
+export interface chats extends IBaseExecution<EntityTypes.chat> {
 
 }
 /*********************************************
 * teams
 **********************************************/
-export interface teams extends IBaseResult<EntityTypes.team> {
-	group: IBaseResult<groups>;
-	template: IBaseResult<teamsTemplates>;
+export interface teams extends IBaseExecution<EntityTypes.team> {
+	group: IBaseExecution<groups>;
+	template: IBaseExecution<teamsTemplates>;
 }
 /*********************************************
 * teamsTemplates
 **********************************************/
-export interface teamsTemplates extends IBaseResult<EntityTypes.teamsTemplate> {
+export interface teamsTemplates extends IBaseExecution<EntityTypes.teamsTemplate> {
 
 }

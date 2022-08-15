@@ -555,7 +555,7 @@ function processGraph(schemas) {
     if (fs.existsSync("lib/microsoft/Graph") == false) { fs.mkdirSync("lib/microsoft/Graph"); }
 
     // Create the endpoints
-    let content = ["import { IBaseResult } from \"../../base\";"];
+    let content = ["import { IBaseExecution } from \"../../base\";"];
     for (let name in endPoints) {
         let endPoint = endPoints[name];
 
@@ -563,14 +563,14 @@ function processGraph(schemas) {
         let methods = [];
         for (let method of endPoint.methods) {
             // Add the method
-            methods.push("\t" + method.name + ": IBaseResult<" + getGraphType(method.returnType) + ">;");
+            methods.push("\t" + method.name + ": IBaseExecution<" + getGraphType(method.returnType) + ">;");
         }
 
         // Add the endpoint
         content.push(`/*********************************************
 * ${name}
 **********************************************/
-export interface ${name} extends IBaseResult<${getGraphType(endPoint.returnType.replace("microsoft.graph.", "graph."))}> {
+export interface ${name} extends IBaseExecution<${getGraphType(endPoint.returnType.replace("microsoft.graph.", "graph."))}> {
 ${methods.join('\n')}
 }`);
     }
@@ -626,7 +626,7 @@ ${props.join('\n')}
 
     // Create the entities
     content = [
-        "import { IBaseResult } from \"../../base\";",
+        "import { IBaseExecution } from \"../../base\";",
         "import * as ComplexTypes from \"./complexTypes.d\";",
         "import * as EnumTypes from \"./enumTypes.d\";\n",
     ];
@@ -644,7 +644,7 @@ ${props.join('\n')}
         let methods = [];
         for (let method of entity.methods) {
             // Add the method
-            methods.push("\t" + method.name + ": IBaseResult<" + getGraphType(method.returnType) + ">;");
+            methods.push("\t" + method.name + ": IBaseExecution<" + getGraphType(method.returnType) + ">;");
         }
 
         // Add the endpoint

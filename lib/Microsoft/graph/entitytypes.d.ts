@@ -1,4 +1,4 @@
-import { IBaseResult } from "../../base";
+import { IBaseExecution } from "../../base";
 import * as ComplexTypes from "./complexTypes.d";
 import * as EnumTypes from "./enumTypes.d";
 
@@ -14,10 +14,10 @@ export interface entity  {
 **********************************************/
 export interface auditLogRoot  {
 
-	directoryAudits: IBaseResult<directoryAudit[]>;
-	provisioning: IBaseResult<provisioningObjectSummary[]>;
-	restrictedSignIns: IBaseResult<restrictedSignIn[]>;
-	signIns: IBaseResult<signIn[]>;
+	directoryAudits: IBaseExecution<directoryAudit[]>;
+	provisioning: IBaseExecution<provisioningObjectSummary[]>;
+	restrictedSignIns: IBaseExecution<restrictedSignIn[]>;
+	signIns: IBaseExecution<signIn[]>;
 }
 /*********************************************
 * directoryAudit
@@ -106,7 +106,7 @@ export interface invitation  {
 	inviteRedirectUrl: string;
 	sendInvitationMessage: boolean;
 	status: string;
-	invitedUser: IBaseResult<user>;
+	invitedUser: IBaseExecution<user>;
 }
 /*********************************************
 * directoryObject
@@ -189,52 +189,52 @@ export interface user  {
 	responsibilities: Array<string>[];
 	schools: Array<string>[];
 	skills: Array<string>[];
-	appRoleAssignments: IBaseResult<appRoleAssignment[]>;
-	createdObjects: IBaseResult<directoryObject[]>;
-	directReports: IBaseResult<directoryObject[]>;
-	licenseDetails: IBaseResult<licenseDetails[]>;
-	manager: IBaseResult<directoryObject>;
-	memberOf: IBaseResult<directoryObject[]>;
-	oauth2PermissionGrants: IBaseResult<oAuth2PermissionGrant[]>;
-	ownedDevices: IBaseResult<directoryObject[]>;
-	ownedObjects: IBaseResult<directoryObject[]>;
-	registeredDevices: IBaseResult<directoryObject[]>;
-	scopedRoleMemberOf: IBaseResult<scopedRoleMembership[]>;
-	transitiveMemberOf: IBaseResult<directoryObject[]>;
-	calendar: IBaseResult<calendar>;
-	calendarGroups: IBaseResult<calendarGroup[]>;
-	calendars: IBaseResult<calendar[]>;
-	calendarView: IBaseResult<event[]>;
-	contactFolders: IBaseResult<contactFolder[]>;
-	contacts: IBaseResult<contact[]>;
-	events: IBaseResult<event[]>;
-	inferenceClassification: IBaseResult<inferenceClassification>;
-	mailFolders: IBaseResult<mailFolder[]>;
-	messages: IBaseResult<message[]>;
-	outlook: IBaseResult<outlookUser>;
-	people: IBaseResult<person[]>;
-	drive: IBaseResult<drive>;
-	drives: IBaseResult<drive[]>;
-	followedSites: IBaseResult<site[]>;
-	extensions: IBaseResult<extension[]>;
-	agreementAcceptances: IBaseResult<agreementAcceptance[]>;
-	managedDevices: IBaseResult<managedDevice[]>;
-	managedAppRegistrations: IBaseResult<managedAppRegistration[]>;
-	deviceManagementTroubleshootingEvents: IBaseResult<deviceManagementTroubleshootingEvent[]>;
-	planner: IBaseResult<plannerUser>;
-	insights: IBaseResult<officeGraphInsights>;
-	settings: IBaseResult<userSettings>;
-	onenote: IBaseResult<onenote>;
-	photo: IBaseResult<profilePhoto>;
-	photos: IBaseResult<profilePhoto[]>;
-	activities: IBaseResult<userActivity[]>;
-	onlineMeetings: IBaseResult<onlineMeeting[]>;
-	presence: IBaseResult<presence>;
-	authentication: IBaseResult<authentication>;
-	chats: IBaseResult<chat[]>;
-	joinedTeams: IBaseResult<team[]>;
-	teamwork: IBaseResult<userTeamwork>;
-	todo: IBaseResult<todo>;
+	appRoleAssignments: IBaseExecution<appRoleAssignment[]>;
+	createdObjects: IBaseExecution<directoryObject[]>;
+	directReports: IBaseExecution<directoryObject[]>;
+	licenseDetails: IBaseExecution<licenseDetails[]>;
+	manager: IBaseExecution<directoryObject>;
+	memberOf: IBaseExecution<directoryObject[]>;
+	oauth2PermissionGrants: IBaseExecution<oAuth2PermissionGrant[]>;
+	ownedDevices: IBaseExecution<directoryObject[]>;
+	ownedObjects: IBaseExecution<directoryObject[]>;
+	registeredDevices: IBaseExecution<directoryObject[]>;
+	scopedRoleMemberOf: IBaseExecution<scopedRoleMembership[]>;
+	transitiveMemberOf: IBaseExecution<directoryObject[]>;
+	calendar: IBaseExecution<calendar>;
+	calendarGroups: IBaseExecution<calendarGroup[]>;
+	calendars: IBaseExecution<calendar[]>;
+	calendarView: IBaseExecution<event[]>;
+	contactFolders: IBaseExecution<contactFolder[]>;
+	contacts: IBaseExecution<contact[]>;
+	events: IBaseExecution<event[]>;
+	inferenceClassification: IBaseExecution<inferenceClassification>;
+	mailFolders: IBaseExecution<mailFolder[]>;
+	messages: IBaseExecution<message[]>;
+	outlook: IBaseExecution<outlookUser>;
+	people: IBaseExecution<person[]>;
+	drive: IBaseExecution<drive>;
+	drives: IBaseExecution<drive[]>;
+	followedSites: IBaseExecution<site[]>;
+	extensions: IBaseExecution<extension[]>;
+	agreementAcceptances: IBaseExecution<agreementAcceptance[]>;
+	managedDevices: IBaseExecution<managedDevice[]>;
+	managedAppRegistrations: IBaseExecution<managedAppRegistration[]>;
+	deviceManagementTroubleshootingEvents: IBaseExecution<deviceManagementTroubleshootingEvent[]>;
+	planner: IBaseExecution<plannerUser>;
+	insights: IBaseExecution<officeGraphInsights>;
+	settings: IBaseExecution<userSettings>;
+	onenote: IBaseExecution<onenote>;
+	photo: IBaseExecution<profilePhoto>;
+	photos: IBaseExecution<profilePhoto[]>;
+	activities: IBaseExecution<userActivity[]>;
+	onlineMeetings: IBaseExecution<onlineMeeting[]>;
+	presence: IBaseExecution<presence>;
+	authentication: IBaseExecution<authentication>;
+	chats: IBaseExecution<chat[]>;
+	joinedTeams: IBaseExecution<team[]>;
+	teamwork: IBaseExecution<userTeamwork>;
+	todo: IBaseExecution<todo>;
 }
 /*********************************************
 * appRoleAssignment
@@ -295,11 +295,11 @@ export interface calendar  {
 	isTallyingResponses: boolean;
 	name: string;
 	owner: ComplexTypes.emailAddress;
-	calendarPermissions: IBaseResult<calendarPermission[]>;
-	calendarView: IBaseResult<event[]>;
-	events: IBaseResult<event[]>;
-	multiValueExtendedProperties: IBaseResult<multiValueLegacyExtendedProperty[]>;
-	singleValueExtendedProperties: IBaseResult<singleValueLegacyExtendedProperty[]>;
+	calendarPermissions: IBaseExecution<calendarPermission[]>;
+	calendarView: IBaseExecution<event[]>;
+	events: IBaseExecution<event[]>;
+	multiValueExtendedProperties: IBaseExecution<multiValueLegacyExtendedProperty[]>;
+	singleValueExtendedProperties: IBaseExecution<singleValueLegacyExtendedProperty[]>;
 }
 /*********************************************
 * calendarGroup
@@ -308,7 +308,7 @@ export interface calendarGroup  {
 	changeKey: string;
 	classId: any;
 	name: string;
-	calendars: IBaseResult<calendar[]>;
+	calendars: IBaseExecution<calendar[]>;
 }
 /*********************************************
 * outlookItem
@@ -360,12 +360,12 @@ export interface event  {
 	transactionId: string;
 	type: EnumTypes.eventType;
 	webLink: string;
-	attachments: IBaseResult<attachment[]>;
-	calendar: IBaseResult<calendar>;
-	extensions: IBaseResult<extension[]>;
-	instances: IBaseResult<event[]>;
-	multiValueExtendedProperties: IBaseResult<multiValueLegacyExtendedProperty[]>;
-	singleValueExtendedProperties: IBaseResult<singleValueLegacyExtendedProperty[]>;
+	attachments: IBaseExecution<attachment[]>;
+	calendar: IBaseExecution<calendar>;
+	extensions: IBaseExecution<extension[]>;
+	instances: IBaseExecution<event[]>;
+	multiValueExtendedProperties: IBaseExecution<multiValueLegacyExtendedProperty[]>;
+	singleValueExtendedProperties: IBaseExecution<singleValueLegacyExtendedProperty[]>;
 }
 /*********************************************
 * contactFolder
@@ -373,10 +373,10 @@ export interface event  {
 export interface contactFolder  {
 	displayName: string;
 	parentFolderId: string;
-	childFolders: IBaseResult<contactFolder[]>;
-	contacts: IBaseResult<contact[]>;
-	multiValueExtendedProperties: IBaseResult<multiValueLegacyExtendedProperty[]>;
-	singleValueExtendedProperties: IBaseResult<singleValueLegacyExtendedProperty[]>;
+	childFolders: IBaseExecution<contactFolder[]>;
+	contacts: IBaseExecution<contact[]>;
+	multiValueExtendedProperties: IBaseExecution<multiValueLegacyExtendedProperty[]>;
+	singleValueExtendedProperties: IBaseExecution<singleValueLegacyExtendedProperty[]>;
 }
 /*********************************************
 * contact
@@ -415,17 +415,17 @@ export interface contact  {
 	yomiCompanyName: string;
 	yomiGivenName: string;
 	yomiSurname: string;
-	extensions: IBaseResult<extension[]>;
-	multiValueExtendedProperties: IBaseResult<multiValueLegacyExtendedProperty[]>;
-	photo: IBaseResult<profilePhoto>;
-	singleValueExtendedProperties: IBaseResult<singleValueLegacyExtendedProperty[]>;
+	extensions: IBaseExecution<extension[]>;
+	multiValueExtendedProperties: IBaseExecution<multiValueLegacyExtendedProperty[]>;
+	photo: IBaseExecution<profilePhoto>;
+	singleValueExtendedProperties: IBaseExecution<singleValueLegacyExtendedProperty[]>;
 }
 /*********************************************
 * inferenceClassification
 **********************************************/
 export interface inferenceClassification  {
 
-	overrides: IBaseResult<inferenceClassificationOverride[]>;
+	overrides: IBaseExecution<inferenceClassificationOverride[]>;
 }
 /*********************************************
 * mailFolder
@@ -437,11 +437,11 @@ export interface mailFolder  {
 	parentFolderId: string;
 	totalItemCount: number;
 	unreadItemCount: number;
-	childFolders: IBaseResult<mailFolder[]>;
-	messageRules: IBaseResult<messageRule[]>;
-	messages: IBaseResult<message[]>;
-	multiValueExtendedProperties: IBaseResult<multiValueLegacyExtendedProperty[]>;
-	singleValueExtendedProperties: IBaseResult<singleValueLegacyExtendedProperty[]>;
+	childFolders: IBaseExecution<mailFolder[]>;
+	messageRules: IBaseExecution<messageRule[]>;
+	messages: IBaseExecution<message[]>;
+	multiValueExtendedProperties: IBaseExecution<multiValueLegacyExtendedProperty[]>;
+	singleValueExtendedProperties: IBaseExecution<singleValueLegacyExtendedProperty[]>;
 }
 /*********************************************
 * message
@@ -473,17 +473,17 @@ export interface message  {
 	toRecipients: ComplexTypes.recipient[];
 	uniqueBody: ComplexTypes.itemBody;
 	webLink: string;
-	attachments: IBaseResult<attachment[]>;
-	extensions: IBaseResult<extension[]>;
-	multiValueExtendedProperties: IBaseResult<multiValueLegacyExtendedProperty[]>;
-	singleValueExtendedProperties: IBaseResult<singleValueLegacyExtendedProperty[]>;
+	attachments: IBaseExecution<attachment[]>;
+	extensions: IBaseExecution<extension[]>;
+	multiValueExtendedProperties: IBaseExecution<multiValueLegacyExtendedProperty[]>;
+	singleValueExtendedProperties: IBaseExecution<singleValueLegacyExtendedProperty[]>;
 }
 /*********************************************
 * outlookUser
 **********************************************/
 export interface outlookUser  {
 
-	masterCategories: IBaseResult<outlookCategory[]>;
+	masterCategories: IBaseExecution<outlookCategory[]>;
 }
 /*********************************************
 * person
@@ -523,8 +523,8 @@ export interface baseItem  {
 	name: string;
 	parentReference: ComplexTypes.itemReference;
 	webUrl: string;
-	createdByUser: IBaseResult<user>;
-	lastModifiedByUser: IBaseResult<user>;
+	createdByUser: IBaseExecution<user>;
+	lastModifiedByUser: IBaseExecution<user>;
 }
 /*********************************************
 * drive
@@ -535,12 +535,12 @@ export interface drive  {
 	quota: ComplexTypes.quota;
 	sharePointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.systemFacet;
-	bundles: IBaseResult<driveItem[]>;
-	following: IBaseResult<driveItem[]>;
-	items: IBaseResult<driveItem[]>;
-	list: IBaseResult<list>;
-	root: IBaseResult<driveItem>;
-	special: IBaseResult<driveItem[]>;
+	bundles: IBaseExecution<driveItem[]>;
+	following: IBaseExecution<driveItem[]>;
+	items: IBaseExecution<driveItem[]>;
+	list: IBaseExecution<list>;
+	root: IBaseExecution<driveItem>;
+	special: IBaseExecution<driveItem[]>;
 }
 /*********************************************
 * site
@@ -551,20 +551,20 @@ export interface site  {
 	root: ComplexTypes.root;
 	sharepointIds: ComplexTypes.sharepointIds;
 	siteCollection: ComplexTypes.siteCollection;
-	analytics: IBaseResult<itemAnalytics>;
-	columns: IBaseResult<columnDefinition[]>;
-	contentTypes: IBaseResult<contentType[]>;
-	drive: IBaseResult<drive>;
-	drives: IBaseResult<drive[]>;
-	externalColumns: IBaseResult<columnDefinition[]>;
-	items: IBaseResult<baseItem[]>;
-	lists: IBaseResult<list[]>;
-	operations: IBaseResult<richLongRunningOperation[]>;
-	permissions: IBaseResult<permission[]>;
-	sites: IBaseResult<site[]>;
-	termStore: IBaseResult<store>;
-	termStores: IBaseResult<store[]>;
-	onenote: IBaseResult<onenote>;
+	analytics: IBaseExecution<itemAnalytics>;
+	columns: IBaseExecution<columnDefinition[]>;
+	contentTypes: IBaseExecution<contentType[]>;
+	drive: IBaseExecution<drive>;
+	drives: IBaseExecution<drive[]>;
+	externalColumns: IBaseExecution<columnDefinition[]>;
+	items: IBaseExecution<baseItem[]>;
+	lists: IBaseExecution<list[]>;
+	operations: IBaseExecution<richLongRunningOperation[]>;
+	permissions: IBaseExecution<permission[]>;
+	sites: IBaseExecution<site[]>;
+	termStore: IBaseExecution<store>;
+	termStores: IBaseExecution<store[]>;
+	onenote: IBaseExecution<onenote>;
 }
 /*********************************************
 * extension
@@ -647,9 +647,9 @@ export interface managedDevice  {
 	userId: string;
 	userPrincipalName: string;
 	wiFiMacAddress: string;
-	deviceCompliancePolicyStates: IBaseResult<deviceCompliancePolicyState[]>;
-	deviceConfigurationStates: IBaseResult<deviceConfigurationState[]>;
-	deviceCategory: IBaseResult<deviceCategory>;
+	deviceCompliancePolicyStates: IBaseExecution<deviceCompliancePolicyState[]>;
+	deviceConfigurationStates: IBaseExecution<deviceConfigurationState[]>;
+	deviceCategory: IBaseExecution<deviceCategory>;
 }
 /*********************************************
 * managedAppRegistration
@@ -667,9 +667,9 @@ export interface managedAppRegistration  {
 	platformVersion: string;
 	userId: string;
 	version: string;
-	appliedPolicies: IBaseResult<managedAppPolicy[]>;
-	intendedPolicies: IBaseResult<managedAppPolicy[]>;
-	operations: IBaseResult<managedAppOperation[]>;
+	appliedPolicies: IBaseExecution<managedAppPolicy[]>;
+	intendedPolicies: IBaseExecution<managedAppPolicy[]>;
+	operations: IBaseExecution<managedAppOperation[]>;
 }
 /*********************************************
 * deviceManagementTroubleshootingEvent
@@ -684,17 +684,17 @@ export interface deviceManagementTroubleshootingEvent  {
 **********************************************/
 export interface plannerUser  {
 
-	plans: IBaseResult<plannerPlan[]>;
-	tasks: IBaseResult<plannerTask[]>;
+	plans: IBaseExecution<plannerPlan[]>;
+	tasks: IBaseExecution<plannerTask[]>;
 }
 /*********************************************
 * officeGraphInsights
 **********************************************/
 export interface officeGraphInsights  {
 
-	shared: IBaseResult<sharedInsight[]>;
-	trending: IBaseResult<trending[]>;
-	used: IBaseResult<usedInsight[]>;
+	shared: IBaseExecution<sharedInsight[]>;
+	trending: IBaseExecution<trending[]>;
+	used: IBaseExecution<usedInsight[]>;
 }
 /*********************************************
 * userSettings
@@ -702,19 +702,19 @@ export interface officeGraphInsights  {
 export interface userSettings  {
 	contributionToContentDiscoveryAsOrganizationDisabled: boolean;
 	contributionToContentDiscoveryDisabled: boolean;
-	shiftPreferences: IBaseResult<shiftPreferences>;
+	shiftPreferences: IBaseExecution<shiftPreferences>;
 }
 /*********************************************
 * onenote
 **********************************************/
 export interface onenote  {
 
-	notebooks: IBaseResult<notebook[]>;
-	operations: IBaseResult<onenoteOperation[]>;
-	pages: IBaseResult<onenotePage[]>;
-	resources: IBaseResult<onenoteResource[]>;
-	sectionGroups: IBaseResult<sectionGroup[]>;
-	sections: IBaseResult<onenoteSection[]>;
+	notebooks: IBaseExecution<notebook[]>;
+	operations: IBaseExecution<onenoteOperation[]>;
+	pages: IBaseExecution<onenotePage[]>;
+	resources: IBaseExecution<onenoteResource[]>;
+	sectionGroups: IBaseExecution<sectionGroup[]>;
+	sections: IBaseExecution<onenoteSection[]>;
 }
 /*********************************************
 * profilePhoto
@@ -741,7 +741,7 @@ export interface userActivity  {
 	status: EnumTypes.status;
 	userTimezone: string;
 	visualElements: ComplexTypes.visualInfo;
-	historyItems: IBaseResult<activityHistoryItem[]>;
+	historyItems: IBaseExecution<activityHistoryItem[]>;
 }
 /*********************************************
 * onlineMeeting
@@ -769,7 +769,7 @@ export interface onlineMeeting  {
 	startDateTime: any;
 	subject: string;
 	videoTeleconferenceId: string;
-	attendanceReports: IBaseResult<meetingAttendanceReport[]>;
+	attendanceReports: IBaseExecution<meetingAttendanceReport[]>;
 }
 /*********************************************
 * presence
@@ -784,16 +784,16 @@ export interface presence  {
 **********************************************/
 export interface authentication  {
 
-	emailMethods: IBaseResult<emailAuthenticationMethod[]>;
-	fido2Methods: IBaseResult<fido2AuthenticationMethod[]>;
-	methods: IBaseResult<authenticationMethod[]>;
-	microsoftAuthenticatorMethods: IBaseResult<microsoftAuthenticatorAuthenticationMethod[]>;
-	operations: IBaseResult<longRunningOperation[]>;
-	passwordMethods: IBaseResult<passwordAuthenticationMethod[]>;
-	phoneMethods: IBaseResult<phoneAuthenticationMethod[]>;
-	softwareOathMethods: IBaseResult<softwareOathAuthenticationMethod[]>;
-	temporaryAccessPassMethods: IBaseResult<temporaryAccessPassAuthenticationMethod[]>;
-	windowsHelloForBusinessMethods: IBaseResult<windowsHelloForBusinessAuthenticationMethod[]>;
+	emailMethods: IBaseExecution<emailAuthenticationMethod[]>;
+	fido2Methods: IBaseExecution<fido2AuthenticationMethod[]>;
+	methods: IBaseExecution<authenticationMethod[]>;
+	microsoftAuthenticatorMethods: IBaseExecution<microsoftAuthenticatorAuthenticationMethod[]>;
+	operations: IBaseExecution<longRunningOperation[]>;
+	passwordMethods: IBaseExecution<passwordAuthenticationMethod[]>;
+	phoneMethods: IBaseExecution<phoneAuthenticationMethod[]>;
+	softwareOathMethods: IBaseExecution<softwareOathAuthenticationMethod[]>;
+	temporaryAccessPassMethods: IBaseExecution<temporaryAccessPassAuthenticationMethod[]>;
+	windowsHelloForBusinessMethods: IBaseExecution<windowsHelloForBusinessAuthenticationMethod[]>;
 }
 /*********************************************
 * chat
@@ -806,10 +806,10 @@ export interface chat  {
 	tenantId: string;
 	topic: string;
 	webUrl: string;
-	installedApps: IBaseResult<teamsAppInstallation[]>;
-	members: IBaseResult<conversationMember[]>;
-	messages: IBaseResult<chatMessage[]>;
-	tabs: IBaseResult<teamsTab[]>;
+	installedApps: IBaseExecution<teamsAppInstallation[]>;
+	members: IBaseExecution<conversationMember[]>;
+	messages: IBaseExecution<chatMessage[]>;
+	tabs: IBaseExecution<teamsTab[]>;
 }
 /*********************************************
 * team
@@ -830,32 +830,32 @@ export interface team  {
 	tenantId: string;
 	visibility: EnumTypes.teamVisibilityType;
 	webUrl: string;
-	allChannels: IBaseResult<channel[]>;
-	channels: IBaseResult<channel[]>;
-	group: IBaseResult<group>;
-	incomingChannels: IBaseResult<channel[]>;
-	installedApps: IBaseResult<teamsAppInstallation[]>;
-	members: IBaseResult<conversationMember[]>;
-	operations: IBaseResult<teamsAsyncOperation[]>;
-	photo: IBaseResult<profilePhoto>;
-	primaryChannel: IBaseResult<channel>;
-	template: IBaseResult<teamsTemplate>;
-	schedule: IBaseResult<schedule>;
+	allChannels: IBaseExecution<channel[]>;
+	channels: IBaseExecution<channel[]>;
+	group: IBaseExecution<group>;
+	incomingChannels: IBaseExecution<channel[]>;
+	installedApps: IBaseExecution<teamsAppInstallation[]>;
+	members: IBaseExecution<conversationMember[]>;
+	operations: IBaseExecution<teamsAsyncOperation[]>;
+	photo: IBaseExecution<profilePhoto>;
+	primaryChannel: IBaseExecution<channel>;
+	template: IBaseExecution<teamsTemplate>;
+	schedule: IBaseExecution<schedule>;
 }
 /*********************************************
 * userTeamwork
 **********************************************/
 export interface userTeamwork  {
 
-	associatedTeams: IBaseResult<associatedTeamInfo[]>;
-	installedApps: IBaseResult<userScopeTeamsAppInstallation[]>;
+	associatedTeams: IBaseExecution<associatedTeamInfo[]>;
+	installedApps: IBaseExecution<userScopeTeamsAppInstallation[]>;
 }
 /*********************************************
 * todo
 **********************************************/
 export interface todo  {
 
-	lists: IBaseResult<todoTaskList[]>;
+	lists: IBaseExecution<todoTaskList[]>;
 }
 /*********************************************
 * application
@@ -894,13 +894,13 @@ export interface application  {
 	tokenEncryptionKeyId: any;
 	verifiedPublisher: ComplexTypes.verifiedPublisher;
 	web: ComplexTypes.webApplication;
-	createdOnBehalfOf: IBaseResult<directoryObject>;
-	extensionProperties: IBaseResult<extensionProperty[]>;
-	federatedIdentityCredentials: IBaseResult<federatedIdentityCredential[]>;
-	homeRealmDiscoveryPolicies: IBaseResult<homeRealmDiscoveryPolicy[]>;
-	owners: IBaseResult<directoryObject[]>;
-	tokenIssuancePolicies: IBaseResult<tokenIssuancePolicy[]>;
-	tokenLifetimePolicies: IBaseResult<tokenLifetimePolicy[]>;
+	createdOnBehalfOf: IBaseExecution<directoryObject>;
+	extensionProperties: IBaseExecution<extensionProperty[]>;
+	federatedIdentityCredentials: IBaseExecution<federatedIdentityCredential[]>;
+	homeRealmDiscoveryPolicies: IBaseExecution<homeRealmDiscoveryPolicy[]>;
+	owners: IBaseExecution<directoryObject[]>;
+	tokenIssuancePolicies: IBaseExecution<tokenIssuancePolicy[]>;
+	tokenLifetimePolicies: IBaseExecution<tokenLifetimePolicy[]>;
 }
 /*********************************************
 * servicePrincipal
@@ -938,21 +938,21 @@ export interface servicePrincipal  {
 	signInAudience: string;
 	tags: Array<string>[];
 	tokenEncryptionKeyId: any;
-	appRoleAssignedTo: IBaseResult<appRoleAssignment[]>;
-	appRoleAssignments: IBaseResult<appRoleAssignment[]>;
-	claimsMappingPolicies: IBaseResult<claimsMappingPolicy[]>;
-	createdObjects: IBaseResult<directoryObject[]>;
-	delegatedPermissionClassifications: IBaseResult<delegatedPermissionClassification[]>;
-	endpoints: IBaseResult<ComplexTypes.endpoint[]>;
-	federatedIdentityCredentials: IBaseResult<federatedIdentityCredential[]>;
-	homeRealmDiscoveryPolicies: IBaseResult<homeRealmDiscoveryPolicy[]>;
-	memberOf: IBaseResult<directoryObject[]>;
-	oauth2PermissionGrants: IBaseResult<oAuth2PermissionGrant[]>;
-	ownedObjects: IBaseResult<directoryObject[]>;
-	owners: IBaseResult<directoryObject[]>;
-	tokenIssuancePolicies: IBaseResult<tokenIssuancePolicy[]>;
-	tokenLifetimePolicies: IBaseResult<tokenLifetimePolicy[]>;
-	transitiveMemberOf: IBaseResult<directoryObject[]>;
+	appRoleAssignedTo: IBaseExecution<appRoleAssignment[]>;
+	appRoleAssignments: IBaseExecution<appRoleAssignment[]>;
+	claimsMappingPolicies: IBaseExecution<claimsMappingPolicy[]>;
+	createdObjects: IBaseExecution<directoryObject[]>;
+	delegatedPermissionClassifications: IBaseExecution<delegatedPermissionClassification[]>;
+	endpoints: IBaseExecution<ComplexTypes.endpoint[]>;
+	federatedIdentityCredentials: IBaseExecution<federatedIdentityCredential[]>;
+	homeRealmDiscoveryPolicies: IBaseExecution<homeRealmDiscoveryPolicy[]>;
+	memberOf: IBaseExecution<directoryObject[]>;
+	oauth2PermissionGrants: IBaseExecution<oAuth2PermissionGrant[]>;
+	ownedObjects: IBaseExecution<directoryObject[]>;
+	owners: IBaseExecution<directoryObject[]>;
+	tokenIssuancePolicies: IBaseExecution<tokenIssuancePolicy[]>;
+	tokenLifetimePolicies: IBaseExecution<tokenLifetimePolicy[]>;
+	transitiveMemberOf: IBaseExecution<directoryObject[]>;
 }
 /*********************************************
 * extensionProperty
@@ -990,7 +990,7 @@ export interface policyBase  {
 export interface stsPolicy  {
 	definition: Array<string>[];
 	isOrganizationDefault: boolean;
-	appliesTo: IBaseResult<directoryObject[]>;
+	appliesTo: IBaseExecution<directoryObject[]>;
 }
 /*********************************************
 * homeRealmDiscoveryPolicy
@@ -1071,7 +1071,7 @@ export interface authenticationMethodsPolicy  {
 	policyVersion: string;
 	reconfirmationInDays: number;
 	registrationEnforcement: ComplexTypes.registrationEnforcement;
-	authenticationMethodConfigurations: IBaseResult<authenticationMethodConfiguration[]>;
+	authenticationMethodConfigurations: IBaseExecution<authenticationMethodConfiguration[]>;
 }
 /*********************************************
 * authenticationMethodTarget
@@ -1086,7 +1086,7 @@ export interface authenticationMethodTarget  {
 **********************************************/
 export interface emailAuthenticationMethodConfiguration  {
 	allowExternalIdToUseEmailOtp: EnumTypes.externalEmailOtpState;
-	includeTargets: IBaseResult<authenticationMethodTarget[]>;
+	includeTargets: IBaseExecution<authenticationMethodTarget[]>;
 }
 /*********************************************
 * fido2AuthenticationMethodConfiguration
@@ -1095,14 +1095,14 @@ export interface fido2AuthenticationMethodConfiguration  {
 	isAttestationEnforced: boolean;
 	isSelfServiceRegistrationAllowed: boolean;
 	keyRestrictions: ComplexTypes.fido2KeyRestrictions;
-	includeTargets: IBaseResult<authenticationMethodTarget[]>;
+	includeTargets: IBaseExecution<authenticationMethodTarget[]>;
 }
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethodConfiguration
 **********************************************/
 export interface microsoftAuthenticatorAuthenticationMethodConfiguration  {
 
-	includeTargets: IBaseResult<microsoftAuthenticatorAuthenticationMethodTarget[]>;
+	includeTargets: IBaseExecution<microsoftAuthenticatorAuthenticationMethodTarget[]>;
 }
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethodTarget
@@ -1116,22 +1116,22 @@ export interface microsoftAuthenticatorAuthenticationMethodTarget  {
 **********************************************/
 export interface policyRoot  {
 
-	authenticationMethodsPolicy: IBaseResult<authenticationMethodsPolicy>;
-	authenticationFlowsPolicy: IBaseResult<authenticationFlowsPolicy>;
-	activityBasedTimeoutPolicies: IBaseResult<activityBasedTimeoutPolicy[]>;
-	authorizationPolicy: IBaseResult<authorizationPolicy>;
-	claimsMappingPolicies: IBaseResult<claimsMappingPolicy[]>;
-	crossTenantAccessPolicy: IBaseResult<crossTenantAccessPolicy>;
-	homeRealmDiscoveryPolicies: IBaseResult<homeRealmDiscoveryPolicy[]>;
-	permissionGrantPolicies: IBaseResult<permissionGrantPolicy[]>;
-	tokenIssuancePolicies: IBaseResult<tokenIssuancePolicy[]>;
-	tokenLifetimePolicies: IBaseResult<tokenLifetimePolicy[]>;
-	featureRolloutPolicies: IBaseResult<featureRolloutPolicy[]>;
-	adminConsentRequestPolicy: IBaseResult<adminConsentRequestPolicy>;
-	conditionalAccessPolicies: IBaseResult<conditionalAccessPolicy[]>;
-	identitySecurityDefaultsEnforcementPolicy: IBaseResult<identitySecurityDefaultsEnforcementPolicy>;
-	roleManagementPolicies: IBaseResult<unifiedRoleManagementPolicy[]>;
-	roleManagementPolicyAssignments: IBaseResult<unifiedRoleManagementPolicyAssignment[]>;
+	authenticationMethodsPolicy: IBaseExecution<authenticationMethodsPolicy>;
+	authenticationFlowsPolicy: IBaseExecution<authenticationFlowsPolicy>;
+	activityBasedTimeoutPolicies: IBaseExecution<activityBasedTimeoutPolicy[]>;
+	authorizationPolicy: IBaseExecution<authorizationPolicy>;
+	claimsMappingPolicies: IBaseExecution<claimsMappingPolicy[]>;
+	crossTenantAccessPolicy: IBaseExecution<crossTenantAccessPolicy>;
+	homeRealmDiscoveryPolicies: IBaseExecution<homeRealmDiscoveryPolicy[]>;
+	permissionGrantPolicies: IBaseExecution<permissionGrantPolicy[]>;
+	tokenIssuancePolicies: IBaseExecution<tokenIssuancePolicy[]>;
+	tokenLifetimePolicies: IBaseExecution<tokenLifetimePolicy[]>;
+	featureRolloutPolicies: IBaseExecution<featureRolloutPolicy[]>;
+	adminConsentRequestPolicy: IBaseExecution<adminConsentRequestPolicy>;
+	conditionalAccessPolicies: IBaseExecution<conditionalAccessPolicy[]>;
+	identitySecurityDefaultsEnforcementPolicy: IBaseExecution<identitySecurityDefaultsEnforcementPolicy>;
+	roleManagementPolicies: IBaseExecution<unifiedRoleManagementPolicy[]>;
+	roleManagementPolicyAssignments: IBaseExecution<unifiedRoleManagementPolicyAssignment[]>;
 }
 /*********************************************
 * authenticationFlowsPolicy
@@ -1167,16 +1167,16 @@ export interface authorizationPolicy  {
 **********************************************/
 export interface crossTenantAccessPolicy  {
 
-	default: IBaseResult<crossTenantAccessPolicyConfigurationDefault>;
-	partners: IBaseResult<crossTenantAccessPolicyConfigurationPartner[]>;
+	default: IBaseExecution<crossTenantAccessPolicyConfigurationDefault>;
+	partners: IBaseExecution<crossTenantAccessPolicyConfigurationPartner[]>;
 }
 /*********************************************
 * permissionGrantPolicy
 **********************************************/
 export interface permissionGrantPolicy  {
 
-	excludes: IBaseResult<permissionGrantConditionSet[]>;
-	includes: IBaseResult<permissionGrantConditionSet[]>;
+	excludes: IBaseExecution<permissionGrantConditionSet[]>;
+	includes: IBaseExecution<permissionGrantConditionSet[]>;
 }
 /*********************************************
 * featureRolloutPolicy
@@ -1187,7 +1187,7 @@ export interface featureRolloutPolicy  {
 	feature: EnumTypes.stagedFeatureName;
 	isAppliedToOrganization: boolean;
 	isEnabled: boolean;
-	appliesTo: IBaseResult<directoryObject[]>;
+	appliesTo: IBaseExecution<directoryObject[]>;
 }
 /*********************************************
 * adminConsentRequestPolicy
@@ -1233,8 +1233,8 @@ export interface unifiedRoleManagementPolicy  {
 	lastModifiedDateTime: any;
 	scopeId: string;
 	scopeType: string;
-	effectiveRules: IBaseResult<unifiedRoleManagementPolicyRule[]>;
-	rules: IBaseResult<unifiedRoleManagementPolicyRule[]>;
+	effectiveRules: IBaseExecution<unifiedRoleManagementPolicyRule[]>;
+	rules: IBaseExecution<unifiedRoleManagementPolicyRule[]>;
 }
 /*********************************************
 * unifiedRoleManagementPolicyAssignment
@@ -1244,7 +1244,7 @@ export interface unifiedRoleManagementPolicyAssignment  {
 	roleDefinitionId: string;
 	scopeId: string;
 	scopeType: string;
-	policy: IBaseResult<unifiedRoleManagementPolicy>;
+	policy: IBaseExecution<unifiedRoleManagementPolicy>;
 }
 /*********************************************
 * temporaryAccessPassAuthenticationMethodConfiguration
@@ -1255,14 +1255,14 @@ export interface temporaryAccessPassAuthenticationMethodConfiguration  {
 	isUsableOnce: boolean;
 	maximumLifetimeInMinutes: number;
 	minimumLifetimeInMinutes: number;
-	includeTargets: IBaseResult<authenticationMethodTarget[]>;
+	includeTargets: IBaseExecution<authenticationMethodTarget[]>;
 }
 /*********************************************
 * bitlocker
 **********************************************/
 export interface bitlocker  {
 
-	recoveryKeys: IBaseResult<bitlockerRecoveryKey[]>;
+	recoveryKeys: IBaseExecution<bitlockerRecoveryKey[]>;
 }
 /*********************************************
 * bitlockerRecoveryKey
@@ -1279,8 +1279,8 @@ export interface bitlockerRecoveryKey  {
 **********************************************/
 export interface informationProtection  {
 
-	bitlocker: IBaseResult<bitlocker>;
-	threatAssessmentRequests: IBaseResult<threatAssessmentRequest[]>;
+	bitlocker: IBaseExecution<bitlocker>;
+	threatAssessmentRequests: IBaseExecution<threatAssessmentRequest[]>;
 }
 /*********************************************
 * threatAssessmentRequest
@@ -1293,7 +1293,7 @@ export interface threatAssessmentRequest  {
 	expectedAssessment: EnumTypes.threatExpectedAssessment;
 	requestSource: EnumTypes.threatAssessmentRequestSource;
 	status: EnumTypes.threatAssessmentStatus;
-	results: IBaseResult<threatAssessmentResult[]>;
+	results: IBaseExecution<threatAssessmentResult[]>;
 }
 /*********************************************
 * bookingAppointment
@@ -1339,12 +1339,12 @@ export interface bookingBusiness  {
 	publicUrl: string;
 	schedulingPolicy: ComplexTypes.bookingSchedulingPolicy;
 	webSiteUrl: string;
-	appointments: IBaseResult<bookingAppointment[]>;
-	calendarView: IBaseResult<bookingAppointment[]>;
-	customers: IBaseResult<bookingCustomerBase[]>;
-	customQuestions: IBaseResult<bookingCustomQuestion[]>;
-	services: IBaseResult<bookingService[]>;
-	staffMembers: IBaseResult<bookingStaffMemberBase[]>;
+	appointments: IBaseExecution<bookingAppointment[]>;
+	calendarView: IBaseExecution<bookingAppointment[]>;
+	customers: IBaseExecution<bookingCustomerBase[]>;
+	customQuestions: IBaseExecution<bookingCustomQuestion[]>;
+	services: IBaseExecution<bookingService[]>;
+	staffMembers: IBaseExecution<bookingStaffMemberBase[]>;
 }
 /*********************************************
 * bookingCustomerBase
@@ -1429,8 +1429,8 @@ export interface bookingStaffMember  {
 **********************************************/
 export interface solutionsRoot  {
 
-	bookingBusinesses: IBaseResult<bookingBusiness[]>;
-	bookingCurrencies: IBaseResult<bookingCurrency[]>;
+	bookingBusinesses: IBaseExecution<bookingBusiness[]>;
+	bookingCurrencies: IBaseExecution<bookingCurrency[]>;
 }
 /*********************************************
 * authoredNote
@@ -1446,7 +1446,7 @@ export interface authoredNote  {
 **********************************************/
 export interface privacy  {
 
-	subjectRightsRequests: IBaseResult<subjectRightsRequest[]>;
+	subjectRightsRequests: IBaseExecution<subjectRightsRequest[]>;
 }
 /*********************************************
 * subjectRightsRequest
@@ -1469,8 +1469,8 @@ export interface subjectRightsRequest  {
 	stages: ComplexTypes.subjectRightsRequestStageDetail[];
 	status: EnumTypes.subjectRightsRequestStatus;
 	type: EnumTypes.subjectRightsRequestType;
-	notes: IBaseResult<authoredNote[]>;
-	team: IBaseResult<team>;
+	notes: IBaseExecution<authoredNote[]>;
+	team: IBaseExecution<team>;
 }
 /*********************************************
 * channel
@@ -1484,11 +1484,11 @@ export interface channel  {
 	membershipType: EnumTypes.channelMembershipType;
 	tenantId: string;
 	webUrl: string;
-	filesFolder: IBaseResult<driveItem>;
-	members: IBaseResult<conversationMember[]>;
-	messages: IBaseResult<chatMessage[]>;
-	sharedWithTeams: IBaseResult<sharedWithChannelTeamInfo[]>;
-	tabs: IBaseResult<teamsTab[]>;
+	filesFolder: IBaseExecution<driveItem>;
+	members: IBaseExecution<conversationMember[]>;
+	messages: IBaseExecution<chatMessage[]>;
+	sharedWithTeams: IBaseExecution<sharedWithChannelTeamInfo[]>;
+	tabs: IBaseExecution<teamsTab[]>;
 }
 /*********************************************
 * group
@@ -1499,15 +1499,15 @@ export interface group  {
 	displayName: string;
 	parentSiteId: string;
 	scope: EnumTypes.termGroupScope;
-	sets: IBaseResult<set[]>;
+	sets: IBaseExecution<set[]>;
 }
 /*********************************************
 * teamsAppInstallation
 **********************************************/
 export interface teamsAppInstallation  {
 
-	teamsApp: IBaseResult<teamsApp>;
-	teamsAppDefinition: IBaseResult<teamsAppDefinition>;
+	teamsApp: IBaseExecution<teamsApp>;
+	teamsAppDefinition: IBaseExecution<teamsAppDefinition>;
 }
 /*********************************************
 * conversationMember
@@ -1553,15 +1553,15 @@ export interface schedule  {
 	timeOffRequestsEnabled: boolean;
 	timeZone: string;
 	workforceIntegrationIds: Array<string>[];
-	offerShiftRequests: IBaseResult<offerShiftRequest[]>;
-	openShiftChangeRequests: IBaseResult<openShiftChangeRequest[]>;
-	openShifts: IBaseResult<openShift[]>;
-	schedulingGroups: IBaseResult<schedulingGroup[]>;
-	shifts: IBaseResult<shift[]>;
-	swapShiftsChangeRequests: IBaseResult<swapShiftsChangeRequest[]>;
-	timeOffReasons: IBaseResult<timeOffReason[]>;
-	timeOffRequests: IBaseResult<timeOffRequest[]>;
-	timesOff: IBaseResult<timeOff[]>;
+	offerShiftRequests: IBaseExecution<offerShiftRequest[]>;
+	openShiftChangeRequests: IBaseExecution<openShiftChangeRequest[]>;
+	openShifts: IBaseExecution<openShift[]>;
+	schedulingGroups: IBaseExecution<schedulingGroup[]>;
+	shifts: IBaseExecution<shift[]>;
+	swapShiftsChangeRequests: IBaseExecution<swapShiftsChangeRequest[]>;
+	timeOffReasons: IBaseExecution<timeOffReason[]>;
+	timeOffRequests: IBaseExecution<timeOffRequest[]>;
+	timesOff: IBaseExecution<timeOff[]>;
 }
 /*********************************************
 * compliance
@@ -1599,7 +1599,7 @@ export interface conversation  {
 	preview: string;
 	topic: string;
 	uniqueSenders: Array<string>[];
-	threads: IBaseResult<conversationThread[]>;
+	threads: IBaseExecution<conversationThread[]>;
 }
 /*********************************************
 * conversationThread
@@ -1613,7 +1613,7 @@ export interface conversationThread  {
 	topic: string;
 	toRecipients: ComplexTypes.recipient[];
 	uniqueSenders: Array<string>[];
-	posts: IBaseResult<post[]>;
+	posts: IBaseExecution<post[]>;
 }
 /*********************************************
 * groupLifecyclePolicy
@@ -1629,17 +1629,17 @@ export interface groupLifecyclePolicy  {
 **********************************************/
 export interface plannerGroup  {
 
-	plans: IBaseResult<plannerPlan[]>;
+	plans: IBaseExecution<plannerPlan[]>;
 }
 /*********************************************
 * security
 **********************************************/
 export interface security  {
 
-	cases: IBaseResult<casesRoot>;
-	alerts: IBaseResult<alert[]>;
-	secureScoreControlProfiles: IBaseResult<secureScoreControlProfile[]>;
-	secureScores: IBaseResult<secureScore[]>;
+	cases: IBaseExecution<casesRoot>;
+	alerts: IBaseExecution<alert[]>;
+	secureScoreControlProfiles: IBaseExecution<secureScoreControlProfile[]>;
+	secureScores: IBaseExecution<secureScore[]>;
 }
 /*********************************************
 * alert
@@ -1732,9 +1732,9 @@ export interface secureScore  {
 **********************************************/
 export interface itemAnalytics  {
 
-	allTime: IBaseResult<itemActivityStat>;
-	itemActivityStats: IBaseResult<itemActivityStat[]>;
-	lastSevenDays: IBaseResult<itemActivityStat>;
+	allTime: IBaseExecution<itemActivityStat>;
+	itemActivityStats: IBaseExecution<itemActivityStat[]>;
+	lastSevenDays: IBaseExecution<itemActivityStat>;
 }
 /*********************************************
 * columnDefinition
@@ -1771,7 +1771,7 @@ export interface columnDefinition  {
 	thumbnail: ComplexTypes.thumbnailColumn;
 	type: EnumTypes.columnTypes;
 	validation: ComplexTypes.columnValidation;
-	sourceColumn: IBaseResult<columnDefinition>;
+	sourceColumn: IBaseExecution<columnDefinition>;
 }
 /*********************************************
 * contentType
@@ -1791,11 +1791,11 @@ export interface contentType  {
 	propagateChanges: boolean;
 	readOnly: boolean;
 	sealed: boolean;
-	base: IBaseResult<contentType>;
-	baseTypes: IBaseResult<contentType[]>;
-	columnLinks: IBaseResult<columnLink[]>;
-	columnPositions: IBaseResult<columnDefinition[]>;
-	columns: IBaseResult<columnDefinition[]>;
+	base: IBaseExecution<contentType>;
+	baseTypes: IBaseExecution<contentType[]>;
+	columnLinks: IBaseExecution<columnLink[]>;
+	columnPositions: IBaseExecution<columnDefinition[]>;
+	columns: IBaseExecution<columnDefinition[]>;
 }
 /*********************************************
 * list
@@ -1805,12 +1805,12 @@ export interface list  {
 	list: ComplexTypes.listInfo;
 	sharepointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.systemFacet;
-	columns: IBaseResult<columnDefinition[]>;
-	contentTypes: IBaseResult<contentType[]>;
-	drive: IBaseResult<drive>;
-	items: IBaseResult<listItem[]>;
-	operations: IBaseResult<richLongRunningOperation[]>;
-	subscriptions: IBaseResult<subscription[]>;
+	columns: IBaseExecution<columnDefinition[]>;
+	contentTypes: IBaseExecution<contentType[]>;
+	drive: IBaseExecution<drive>;
+	items: IBaseExecution<listItem[]>;
+	operations: IBaseExecution<richLongRunningOperation[]>;
+	subscriptions: IBaseExecution<subscription[]>;
 }
 /*********************************************
 * longRunningOperation
@@ -1889,10 +1889,10 @@ export interface identityUserFlow  {
 **********************************************/
 export interface b2xIdentityUserFlow  {
 	apiConnectorConfiguration: ComplexTypes.userFlowApiConnectorConfiguration;
-	identityProviders: IBaseResult<identityProvider[]>;
-	languages: IBaseResult<userFlowLanguageConfiguration[]>;
-	userAttributeAssignments: IBaseResult<identityUserFlowAttributeAssignment[]>;
-	userFlowIdentityProviders: IBaseResult<identityProviderBase[]>;
+	identityProviders: IBaseExecution<identityProvider[]>;
+	languages: IBaseExecution<userFlowLanguageConfiguration[]>;
+	userAttributeAssignments: IBaseExecution<identityUserFlowAttributeAssignment[]>;
+	userFlowIdentityProviders: IBaseExecution<identityProviderBase[]>;
 }
 /*********************************************
 * identityProvider
@@ -1910,8 +1910,8 @@ export interface identityProvider  {
 export interface userFlowLanguageConfiguration  {
 	displayName: string;
 	isEnabled: boolean;
-	defaultPages: IBaseResult<userFlowLanguagePage[]>;
-	overridesPages: IBaseResult<userFlowLanguagePage[]>;
+	defaultPages: IBaseExecution<userFlowLanguagePage[]>;
+	overridesPages: IBaseExecution<userFlowLanguagePage[]>;
 }
 /*********************************************
 * identityUserFlowAttributeAssignment
@@ -1922,7 +1922,7 @@ export interface identityUserFlowAttributeAssignment  {
 	requiresVerification: boolean;
 	userAttributeValues: ComplexTypes.userAttributeValuesItem[];
 	userInputType: EnumTypes.identityUserFlowAttributeInputType;
-	userAttribute: IBaseResult<identityUserFlowAttribute>;
+	userAttribute: IBaseExecution<identityUserFlowAttribute>;
 }
 /*********************************************
 * builtInIdentityProvider
@@ -1953,19 +1953,19 @@ export interface identityBuiltInUserFlowAttribute  {
 **********************************************/
 export interface identityContainer  {
 
-	apiConnectors: IBaseResult<identityApiConnector[]>;
-	b2xUserFlows: IBaseResult<b2xIdentityUserFlow[]>;
-	identityProviders: IBaseResult<identityProviderBase[]>;
-	userFlowAttributes: IBaseResult<identityUserFlowAttribute[]>;
-	conditionalAccess: IBaseResult<conditionalAccessRoot>;
+	apiConnectors: IBaseExecution<identityApiConnector[]>;
+	b2xUserFlows: IBaseExecution<b2xIdentityUserFlow[]>;
+	identityProviders: IBaseExecution<identityProviderBase[]>;
+	userFlowAttributes: IBaseExecution<identityUserFlowAttribute[]>;
+	conditionalAccess: IBaseExecution<conditionalAccessRoot>;
 }
 /*********************************************
 * conditionalAccessRoot
 **********************************************/
 export interface conditionalAccessRoot  {
 
-	namedLocations: IBaseResult<namedLocation[]>;
-	policies: IBaseResult<conditionalAccessPolicy[]>;
+	namedLocations: IBaseExecution<namedLocation[]>;
+	policies: IBaseExecution<conditionalAccessPolicy[]>;
 }
 /*********************************************
 * identityCustomUserFlowAttribute
@@ -1997,9 +1997,9 @@ export interface administrativeUnit  {
 	description: string;
 	displayName: string;
 	visibility: string;
-	members: IBaseResult<directoryObject[]>;
-	scopedRoleMembers: IBaseResult<scopedRoleMembership[]>;
-	extensions: IBaseResult<extension[]>;
+	members: IBaseExecution<directoryObject[]>;
+	scopedRoleMembers: IBaseExecution<scopedRoleMembership[]>;
+	extensions: IBaseExecution<extension[]>;
 }
 /*********************************************
 * appScope
@@ -2074,20 +2074,20 @@ export interface device  {
 	profileType: string;
 	systemLabels: Array<string>[];
 	trustType: string;
-	memberOf: IBaseResult<directoryObject[]>;
-	registeredOwners: IBaseResult<directoryObject[]>;
-	registeredUsers: IBaseResult<directoryObject[]>;
-	transitiveMemberOf: IBaseResult<directoryObject[]>;
-	extensions: IBaseResult<extension[]>;
+	memberOf: IBaseExecution<directoryObject[]>;
+	registeredOwners: IBaseExecution<directoryObject[]>;
+	registeredUsers: IBaseExecution<directoryObject[]>;
+	transitiveMemberOf: IBaseExecution<directoryObject[]>;
+	extensions: IBaseExecution<extension[]>;
 }
 /*********************************************
 * directory
 **********************************************/
 export interface directory  {
 
-	administrativeUnits: IBaseResult<administrativeUnit[]>;
-	deletedItems: IBaseResult<directoryObject[]>;
-	federationConfigurations: IBaseResult<identityProviderBase[]>;
+	administrativeUnits: IBaseExecution<administrativeUnit[]>;
+	deletedItems: IBaseExecution<directoryObject[]>;
+	federationConfigurations: IBaseExecution<identityProviderBase[]>;
 }
 /*********************************************
 * directoryObjectPartnerReference
@@ -2106,8 +2106,8 @@ export interface directoryRole  {
 	description: string;
 	displayName: string;
 	roleTemplateId: string;
-	members: IBaseResult<directoryObject[]>;
-	scopedMembers: IBaseResult<scopedRoleMembership[]>;
+	members: IBaseExecution<directoryObject[]>;
+	scopedMembers: IBaseExecution<scopedRoleMembership[]>;
 }
 /*********************************************
 * directoryRoleTemplate
@@ -2134,10 +2134,10 @@ export interface domain  {
 	passwordValidityPeriodInDays: number;
 	state: ComplexTypes.domainState;
 	supportedServices: Array<string>[];
-	domainNameReferences: IBaseResult<directoryObject[]>;
-	federationConfiguration: IBaseResult<internalDomainFederation[]>;
-	serviceConfigurationRecords: IBaseResult<domainDnsRecord[]>;
-	verificationDnsRecords: IBaseResult<domainDnsRecord[]>;
+	domainNameReferences: IBaseExecution<directoryObject[]>;
+	federationConfiguration: IBaseExecution<internalDomainFederation[]>;
+	serviceConfigurationRecords: IBaseExecution<domainDnsRecord[]>;
+	verificationDnsRecords: IBaseExecution<domainDnsRecord[]>;
 }
 /*********************************************
 * samlOrWsFedProvider
@@ -2257,9 +2257,9 @@ export interface organization  {
 	tenantType: string;
 	verifiedDomains: ComplexTypes.verifiedDomain[];
 	mobileDeviceManagementAuthority: EnumTypes.mdmAuthority;
-	branding: IBaseResult<organizationalBranding>;
-	certificateBasedAuthConfiguration: IBaseResult<certificateBasedAuthConfiguration[]>;
-	extensions: IBaseResult<extension[]>;
+	branding: IBaseExecution<organizationalBranding>;
+	certificateBasedAuthConfiguration: IBaseExecution<certificateBasedAuthConfiguration[]>;
+	extensions: IBaseExecution<extension[]>;
 }
 /*********************************************
 * organizationalBrandingProperties
@@ -2282,7 +2282,7 @@ export interface organizationalBrandingProperties  {
 **********************************************/
 export interface organizationalBranding  {
 
-	localizations: IBaseResult<organizationalBrandingLocalization[]>;
+	localizations: IBaseExecution<organizationalBrandingLocalization[]>;
 }
 /*********************************************
 * organizationalBrandingLocalization
@@ -2309,10 +2309,10 @@ export interface orgContact  {
 	phones: ComplexTypes.phone[];
 	proxyAddresses: Array<string>[];
 	surname: string;
-	directReports: IBaseResult<directoryObject[]>;
-	manager: IBaseResult<directoryObject>;
-	memberOf: IBaseResult<directoryObject[]>;
-	transitiveMemberOf: IBaseResult<directoryObject[]>;
+	directReports: IBaseExecution<directoryObject[]>;
+	manager: IBaseExecution<directoryObject>;
+	memberOf: IBaseExecution<directoryObject[]>;
+	transitiveMemberOf: IBaseExecution<directoryObject[]>;
 }
 /*********************************************
 * permissionGrantConditionSet
@@ -2333,14 +2333,14 @@ export interface permissionGrantConditionSet  {
 **********************************************/
 export interface rbacApplication  {
 
-	roleAssignments: IBaseResult<unifiedRoleAssignment[]>;
-	roleDefinitions: IBaseResult<unifiedRoleDefinition[]>;
-	roleAssignmentScheduleInstances: IBaseResult<unifiedRoleAssignmentScheduleInstance[]>;
-	roleAssignmentScheduleRequests: IBaseResult<unifiedRoleAssignmentScheduleRequest[]>;
-	roleAssignmentSchedules: IBaseResult<unifiedRoleAssignmentSchedule[]>;
-	roleEligibilityScheduleInstances: IBaseResult<unifiedRoleEligibilityScheduleInstance[]>;
-	roleEligibilityScheduleRequests: IBaseResult<unifiedRoleEligibilityScheduleRequest[]>;
-	roleEligibilitySchedules: IBaseResult<unifiedRoleEligibilitySchedule[]>;
+	roleAssignments: IBaseExecution<unifiedRoleAssignment[]>;
+	roleDefinitions: IBaseExecution<unifiedRoleDefinition[]>;
+	roleAssignmentScheduleInstances: IBaseExecution<unifiedRoleAssignmentScheduleInstance[]>;
+	roleAssignmentScheduleRequests: IBaseExecution<unifiedRoleAssignmentScheduleRequest[]>;
+	roleAssignmentSchedules: IBaseExecution<unifiedRoleAssignmentSchedule[]>;
+	roleEligibilityScheduleInstances: IBaseExecution<unifiedRoleEligibilityScheduleInstance[]>;
+	roleEligibilityScheduleRequests: IBaseExecution<unifiedRoleEligibilityScheduleRequest[]>;
+	roleEligibilitySchedules: IBaseExecution<unifiedRoleEligibilitySchedule[]>;
 }
 /*********************************************
 * unifiedRoleAssignment
@@ -2351,10 +2351,10 @@ export interface unifiedRoleAssignment  {
 	directoryScopeId: string;
 	principalId: string;
 	roleDefinitionId: string;
-	appScope: IBaseResult<appScope>;
-	directoryScope: IBaseResult<directoryObject>;
-	principal: IBaseResult<directoryObject>;
-	roleDefinition: IBaseResult<unifiedRoleDefinition>;
+	appScope: IBaseExecution<appScope>;
+	directoryScope: IBaseExecution<directoryObject>;
+	principal: IBaseExecution<directoryObject>;
+	roleDefinition: IBaseExecution<unifiedRoleDefinition>;
 }
 /*********************************************
 * unifiedRoleDefinition
@@ -2368,7 +2368,7 @@ export interface unifiedRoleDefinition  {
 	rolePermissions: ComplexTypes.unifiedRolePermission[];
 	templateId: string;
 	version: string;
-	inheritsPermissionsFrom: IBaseResult<unifiedRoleDefinition[]>;
+	inheritsPermissionsFrom: IBaseExecution<unifiedRoleDefinition[]>;
 }
 /*********************************************
 * unifiedRoleScheduleInstanceBase
@@ -2378,10 +2378,10 @@ export interface unifiedRoleScheduleInstanceBase  {
 	directoryScopeId: string;
 	principalId: string;
 	roleDefinitionId: string;
-	appScope: IBaseResult<appScope>;
-	directoryScope: IBaseResult<directoryObject>;
-	principal: IBaseResult<directoryObject>;
-	roleDefinition: IBaseResult<unifiedRoleDefinition>;
+	appScope: IBaseExecution<appScope>;
+	directoryScope: IBaseExecution<directoryObject>;
+	principal: IBaseExecution<directoryObject>;
+	roleDefinition: IBaseExecution<unifiedRoleDefinition>;
 }
 /*********************************************
 * unifiedRoleAssignmentScheduleInstance
@@ -2393,7 +2393,7 @@ export interface unifiedRoleAssignmentScheduleInstance  {
 	roleAssignmentOriginId: string;
 	roleAssignmentScheduleId: string;
 	startDateTime: any;
-	activatedUsing: IBaseResult<unifiedRoleEligibilityScheduleInstance>;
+	activatedUsing: IBaseExecution<unifiedRoleEligibilityScheduleInstance>;
 }
 /*********************************************
 * request
@@ -2421,12 +2421,12 @@ export interface unifiedRoleAssignmentScheduleRequest  {
 	scheduleInfo: ComplexTypes.requestSchedule;
 	targetScheduleId: string;
 	ticketInfo: ComplexTypes.ticketInfo;
-	activatedUsing: IBaseResult<unifiedRoleEligibilitySchedule>;
-	appScope: IBaseResult<appScope>;
-	directoryScope: IBaseResult<directoryObject>;
-	principal: IBaseResult<directoryObject>;
-	roleDefinition: IBaseResult<unifiedRoleDefinition>;
-	targetSchedule: IBaseResult<unifiedRoleAssignmentSchedule>;
+	activatedUsing: IBaseExecution<unifiedRoleEligibilitySchedule>;
+	appScope: IBaseExecution<appScope>;
+	directoryScope: IBaseExecution<directoryObject>;
+	principal: IBaseExecution<directoryObject>;
+	roleDefinition: IBaseExecution<unifiedRoleDefinition>;
+	targetSchedule: IBaseExecution<unifiedRoleAssignmentSchedule>;
 }
 /*********************************************
 * unifiedRoleScheduleBase
@@ -2440,10 +2440,10 @@ export interface unifiedRoleScheduleBase  {
 	principalId: string;
 	roleDefinitionId: string;
 	status: string;
-	appScope: IBaseResult<appScope>;
-	directoryScope: IBaseResult<directoryObject>;
-	principal: IBaseResult<directoryObject>;
-	roleDefinition: IBaseResult<unifiedRoleDefinition>;
+	appScope: IBaseExecution<appScope>;
+	directoryScope: IBaseExecution<directoryObject>;
+	principal: IBaseExecution<directoryObject>;
+	roleDefinition: IBaseExecution<unifiedRoleDefinition>;
 }
 /*********************************************
 * unifiedRoleAssignmentSchedule
@@ -2452,7 +2452,7 @@ export interface unifiedRoleAssignmentSchedule  {
 	assignmentType: string;
 	memberType: string;
 	scheduleInfo: ComplexTypes.requestSchedule;
-	activatedUsing: IBaseResult<unifiedRoleEligibilitySchedule>;
+	activatedUsing: IBaseExecution<unifiedRoleEligibilitySchedule>;
 }
 /*********************************************
 * unifiedRoleEligibilityScheduleInstance
@@ -2478,11 +2478,11 @@ export interface unifiedRoleEligibilityScheduleRequest  {
 	scheduleInfo: ComplexTypes.requestSchedule;
 	targetScheduleId: string;
 	ticketInfo: ComplexTypes.ticketInfo;
-	appScope: IBaseResult<appScope>;
-	directoryScope: IBaseResult<directoryObject>;
-	principal: IBaseResult<directoryObject>;
-	roleDefinition: IBaseResult<unifiedRoleDefinition>;
-	targetSchedule: IBaseResult<unifiedRoleEligibilitySchedule>;
+	appScope: IBaseExecution<appScope>;
+	directoryScope: IBaseExecution<directoryObject>;
+	principal: IBaseExecution<directoryObject>;
+	roleDefinition: IBaseExecution<unifiedRoleDefinition>;
+	targetSchedule: IBaseExecution<unifiedRoleEligibilitySchedule>;
 }
 /*********************************************
 * unifiedRoleEligibilitySchedule
@@ -2497,15 +2497,15 @@ export interface unifiedRoleEligibilitySchedule  {
 **********************************************/
 export interface roleManagement  {
 
-	directory: IBaseResult<rbacApplication>;
-	entitlementManagement: IBaseResult<rbacApplication>;
+	directory: IBaseExecution<rbacApplication>;
+	entitlementManagement: IBaseExecution<rbacApplication>;
 }
 /*********************************************
 * samlOrWsFedExternalDomainFederation
 **********************************************/
 export interface samlOrWsFedExternalDomainFederation  {
 
-	domains: IBaseResult<externalDomainName[]>;
+	domains: IBaseExecution<externalDomainName[]>;
 }
 /*********************************************
 * subscribedSku
@@ -2545,10 +2545,10 @@ export interface educationAssignment  {
 	resourcesFolderUrl: string;
 	status: EnumTypes.educationAssignmentStatus;
 	webUrl: string;
-	categories: IBaseResult<educationCategory[]>;
-	resources: IBaseResult<educationAssignmentResource[]>;
-	rubric: IBaseResult<educationRubric>;
-	submissions: IBaseResult<educationSubmission[]>;
+	categories: IBaseExecution<educationCategory[]>;
+	resources: IBaseExecution<educationAssignmentResource[]>;
+	rubric: IBaseExecution<educationRubric>;
+	submissions: IBaseExecution<educationSubmission[]>;
 }
 /*********************************************
 * educationCategory
@@ -2595,9 +2595,9 @@ export interface educationSubmission  {
 	submittedDateTime: any;
 	unsubmittedBy: ComplexTypes.identitySet;
 	unsubmittedDateTime: any;
-	outcomes: IBaseResult<educationOutcome[]>;
-	resources: IBaseResult<educationSubmissionResource[]>;
-	submittedResources: IBaseResult<educationSubmissionResource[]>;
+	outcomes: IBaseExecution<educationOutcome[]>;
+	resources: IBaseExecution<educationSubmissionResource[]>;
+	submittedResources: IBaseExecution<educationSubmissionResource[]>;
 }
 /*********************************************
 * educationAssignmentDefaults
@@ -2632,14 +2632,14 @@ export interface educationClass  {
 	grade: string;
 	mailNickname: string;
 	term: ComplexTypes.educationTerm;
-	assignmentCategories: IBaseResult<educationCategory[]>;
-	assignmentDefaults: IBaseResult<educationAssignmentDefaults>;
-	assignments: IBaseResult<educationAssignment[]>;
-	assignmentSettings: IBaseResult<educationAssignmentSettings>;
-	group: IBaseResult<group>;
-	members: IBaseResult<educationUser[]>;
-	schools: IBaseResult<educationSchool[]>;
-	teachers: IBaseResult<educationUser[]>;
+	assignmentCategories: IBaseExecution<educationCategory[]>;
+	assignmentDefaults: IBaseExecution<educationAssignmentDefaults>;
+	assignments: IBaseExecution<educationAssignment[]>;
+	assignmentSettings: IBaseExecution<educationAssignmentSettings>;
+	group: IBaseExecution<group>;
+	members: IBaseExecution<educationUser[]>;
+	schools: IBaseExecution<educationSchool[]>;
+	teachers: IBaseExecution<educationUser[]>;
 }
 /*********************************************
 * educationUser
@@ -2677,12 +2677,12 @@ export interface educationUser  {
 	usageLocation: string;
 	userPrincipalName: string;
 	userType: string;
-	assignments: IBaseResult<educationAssignment[]>;
-	rubrics: IBaseResult<educationRubric[]>;
-	classes: IBaseResult<educationClass[]>;
-	schools: IBaseResult<educationSchool[]>;
-	taughtClasses: IBaseResult<educationClass[]>;
-	user: IBaseResult<user>;
+	assignments: IBaseExecution<educationAssignment[]>;
+	rubrics: IBaseExecution<educationRubric[]>;
+	classes: IBaseExecution<educationClass[]>;
+	schools: IBaseExecution<educationSchool[]>;
+	taughtClasses: IBaseExecution<educationClass[]>;
+	user: IBaseExecution<user>;
 }
 /*********************************************
 * educationOrganization
@@ -2709,9 +2709,9 @@ export interface educationSchool  {
 	principalEmail: string;
 	principalName: string;
 	schoolNumber: string;
-	administrativeUnit: IBaseResult<administrativeUnit>;
-	classes: IBaseResult<educationClass[]>;
-	users: IBaseResult<educationUser[]>;
+	administrativeUnit: IBaseExecution<administrativeUnit>;
+	classes: IBaseExecution<educationClass[]>;
+	users: IBaseExecution<educationUser[]>;
 }
 /*********************************************
 * educationOutcome
@@ -2742,10 +2742,10 @@ export interface educationPointsOutcome  {
 **********************************************/
 export interface educationRoot  {
 
-	classes: IBaseResult<educationClass[]>;
-	me: IBaseResult<educationUser>;
-	schools: IBaseResult<educationSchool[]>;
-	users: IBaseResult<educationUser[]>;
+	classes: IBaseExecution<educationClass[]>;
+	me: IBaseExecution<educationUser>;
+	schools: IBaseExecution<educationSchool[]>;
+	users: IBaseExecution<educationUser[]>;
 }
 /*********************************************
 * educationRubricOutcome
@@ -2793,27 +2793,27 @@ export interface driveItem  {
 	specialFolder: ComplexTypes.specialFolder;
 	video: ComplexTypes.video;
 	webDavUrl: string;
-	workbook: IBaseResult<workbook>;
-	analytics: IBaseResult<itemAnalytics>;
-	children: IBaseResult<driveItem[]>;
-	listItem: IBaseResult<listItem>;
-	permissions: IBaseResult<permission[]>;
-	subscriptions: IBaseResult<subscription[]>;
-	thumbnails: IBaseResult<thumbnailSet[]>;
-	versions: IBaseResult<driveItemVersion[]>;
+	workbook: IBaseExecution<workbook>;
+	analytics: IBaseExecution<itemAnalytics>;
+	children: IBaseExecution<driveItem[]>;
+	listItem: IBaseExecution<listItem>;
+	permissions: IBaseExecution<permission[]>;
+	subscriptions: IBaseExecution<subscription[]>;
+	thumbnails: IBaseExecution<thumbnailSet[]>;
+	versions: IBaseExecution<driveItemVersion[]>;
 }
 /*********************************************
 * workbook
 **********************************************/
 export interface workbook  {
 
-	application: IBaseResult<workbookApplication>;
-	comments: IBaseResult<workbookComment[]>;
-	functions: IBaseResult<workbookFunctions>;
-	names: IBaseResult<workbookNamedItem[]>;
-	operations: IBaseResult<workbookOperation[]>;
-	tables: IBaseResult<workbookTable[]>;
-	worksheets: IBaseResult<workbookWorksheet[]>;
+	application: IBaseExecution<workbookApplication>;
+	comments: IBaseExecution<workbookComment[]>;
+	functions: IBaseExecution<workbookFunctions>;
+	names: IBaseExecution<workbookNamedItem[]>;
+	operations: IBaseExecution<workbookOperation[]>;
+	tables: IBaseExecution<workbookTable[]>;
+	worksheets: IBaseExecution<workbookWorksheet[]>;
 }
 /*********************************************
 * listItem
@@ -2821,11 +2821,11 @@ export interface workbook  {
 export interface listItem  {
 	contentType: ComplexTypes.contentTypeInfo;
 	sharepointIds: ComplexTypes.sharepointIds;
-	analytics: IBaseResult<itemAnalytics>;
-	documentSetVersions: IBaseResult<documentSetVersion[]>;
-	driveItem: IBaseResult<driveItem>;
-	fields: IBaseResult<fieldValueSet>;
-	versions: IBaseResult<listItemVersion[]>;
+	analytics: IBaseExecution<itemAnalytics>;
+	documentSetVersions: IBaseExecution<documentSetVersion[]>;
+	driveItem: IBaseExecution<driveItem>;
+	fields: IBaseExecution<fieldValueSet>;
+	versions: IBaseExecution<listItemVersion[]>;
 }
 /*********************************************
 * subscription
@@ -2887,7 +2887,7 @@ export interface workbookApplication  {
 export interface workbookComment  {
 	content: string;
 	contentType: string;
-	replies: IBaseResult<workbookCommentReply[]>;
+	replies: IBaseExecution<workbookCommentReply[]>;
 }
 /*********************************************
 * workbookFunctions
@@ -2906,7 +2906,7 @@ export interface workbookNamedItem  {
 	type: string;
 	value: ComplexTypes.Json;
 	visible: boolean;
-	worksheet: IBaseResult<workbookWorksheet>;
+	worksheet: IBaseExecution<workbookWorksheet>;
 }
 /*********************************************
 * workbookOperation
@@ -2931,10 +2931,10 @@ export interface workbookTable  {
 	showHeaders: boolean;
 	showTotals: boolean;
 	style: string;
-	columns: IBaseResult<workbookTableColumn[]>;
-	rows: IBaseResult<workbookTableRow[]>;
-	sort: IBaseResult<workbookTableSort>;
-	worksheet: IBaseResult<workbookWorksheet>;
+	columns: IBaseExecution<workbookTableColumn[]>;
+	rows: IBaseExecution<workbookTableRow[]>;
+	sort: IBaseExecution<workbookTableSort>;
+	worksheet: IBaseExecution<workbookWorksheet>;
 }
 /*********************************************
 * workbookWorksheet
@@ -2943,11 +2943,11 @@ export interface workbookWorksheet  {
 	name: string;
 	position: number;
 	visibility: string;
-	charts: IBaseResult<workbookChart[]>;
-	names: IBaseResult<workbookNamedItem[]>;
-	pivotTables: IBaseResult<workbookPivotTable[]>;
-	protection: IBaseResult<workbookWorksheetProtection>;
-	tables: IBaseResult<workbookTable[]>;
+	charts: IBaseExecution<workbookChart[]>;
+	names: IBaseExecution<workbookNamedItem[]>;
+	pivotTables: IBaseExecution<workbookPivotTable[]>;
+	protection: IBaseExecution<workbookWorksheetProtection>;
+	tables: IBaseExecution<workbookTable[]>;
 }
 /*********************************************
 * workbookChart
@@ -2958,22 +2958,22 @@ export interface workbookChart  {
 	name: string;
 	top: number;
 	width: number;
-	axes: IBaseResult<workbookChartAxes>;
-	dataLabels: IBaseResult<workbookChartDataLabels>;
-	format: IBaseResult<workbookChartAreaFormat>;
-	legend: IBaseResult<workbookChartLegend>;
-	series: IBaseResult<workbookChartSeries[]>;
-	title: IBaseResult<workbookChartTitle>;
-	worksheet: IBaseResult<workbookWorksheet>;
+	axes: IBaseExecution<workbookChartAxes>;
+	dataLabels: IBaseExecution<workbookChartDataLabels>;
+	format: IBaseExecution<workbookChartAreaFormat>;
+	legend: IBaseExecution<workbookChartLegend>;
+	series: IBaseExecution<workbookChartSeries[]>;
+	title: IBaseExecution<workbookChartTitle>;
+	worksheet: IBaseExecution<workbookWorksheet>;
 }
 /*********************************************
 * workbookChartAxes
 **********************************************/
 export interface workbookChartAxes  {
 
-	categoryAxis: IBaseResult<workbookChartAxis>;
-	seriesAxis: IBaseResult<workbookChartAxis>;
-	valueAxis: IBaseResult<workbookChartAxis>;
+	categoryAxis: IBaseExecution<workbookChartAxis>;
+	seriesAxis: IBaseExecution<workbookChartAxis>;
+	valueAxis: IBaseExecution<workbookChartAxis>;
 }
 /*********************************************
 * workbookChartDataLabels
@@ -2987,15 +2987,15 @@ export interface workbookChartDataLabels  {
 	showPercentage: boolean;
 	showSeriesName: boolean;
 	showValue: boolean;
-	format: IBaseResult<workbookChartDataLabelFormat>;
+	format: IBaseExecution<workbookChartDataLabelFormat>;
 }
 /*********************************************
 * workbookChartAreaFormat
 **********************************************/
 export interface workbookChartAreaFormat  {
 
-	fill: IBaseResult<workbookChartFill>;
-	font: IBaseResult<workbookChartFont>;
+	fill: IBaseExecution<workbookChartFill>;
+	font: IBaseExecution<workbookChartFont>;
 }
 /*********************************************
 * workbookChartLegend
@@ -3004,15 +3004,15 @@ export interface workbookChartLegend  {
 	overlay: boolean;
 	position: string;
 	visible: boolean;
-	format: IBaseResult<workbookChartLegendFormat>;
+	format: IBaseExecution<workbookChartLegendFormat>;
 }
 /*********************************************
 * workbookChartSeries
 **********************************************/
 export interface workbookChartSeries  {
 	name: string;
-	format: IBaseResult<workbookChartSeriesFormat>;
-	points: IBaseResult<workbookChartPoint[]>;
+	format: IBaseExecution<workbookChartSeriesFormat>;
+	points: IBaseExecution<workbookChartPoint[]>;
 }
 /*********************************************
 * workbookChartTitle
@@ -3021,7 +3021,7 @@ export interface workbookChartTitle  {
 	overlay: boolean;
 	text: string;
 	visible: boolean;
-	format: IBaseResult<workbookChartTitleFormat>;
+	format: IBaseExecution<workbookChartTitleFormat>;
 }
 /*********************************************
 * workbookChartFill
@@ -3050,25 +3050,25 @@ export interface workbookChartAxis  {
 	maximum: ComplexTypes.Json;
 	minimum: ComplexTypes.Json;
 	minorUnit: ComplexTypes.Json;
-	format: IBaseResult<workbookChartAxisFormat>;
-	majorGridlines: IBaseResult<workbookChartGridlines>;
-	minorGridlines: IBaseResult<workbookChartGridlines>;
-	title: IBaseResult<workbookChartAxisTitle>;
+	format: IBaseExecution<workbookChartAxisFormat>;
+	majorGridlines: IBaseExecution<workbookChartGridlines>;
+	minorGridlines: IBaseExecution<workbookChartGridlines>;
+	title: IBaseExecution<workbookChartAxisTitle>;
 }
 /*********************************************
 * workbookChartAxisFormat
 **********************************************/
 export interface workbookChartAxisFormat  {
 
-	font: IBaseResult<workbookChartFont>;
-	line: IBaseResult<workbookChartLineFormat>;
+	font: IBaseExecution<workbookChartFont>;
+	line: IBaseExecution<workbookChartLineFormat>;
 }
 /*********************************************
 * workbookChartGridlines
 **********************************************/
 export interface workbookChartGridlines  {
 	visible: boolean;
-	format: IBaseResult<workbookChartGridlinesFormat>;
+	format: IBaseExecution<workbookChartGridlinesFormat>;
 }
 /*********************************************
 * workbookChartAxisTitle
@@ -3076,7 +3076,7 @@ export interface workbookChartGridlines  {
 export interface workbookChartAxisTitle  {
 	text: string;
 	visible: boolean;
-	format: IBaseResult<workbookChartAxisTitleFormat>;
+	format: IBaseExecution<workbookChartAxisTitleFormat>;
 }
 /*********************************************
 * workbookChartLineFormat
@@ -3090,60 +3090,60 @@ export interface workbookChartLineFormat  {
 **********************************************/
 export interface workbookChartAxisTitleFormat  {
 
-	font: IBaseResult<workbookChartFont>;
+	font: IBaseExecution<workbookChartFont>;
 }
 /*********************************************
 * workbookChartDataLabelFormat
 **********************************************/
 export interface workbookChartDataLabelFormat  {
 
-	fill: IBaseResult<workbookChartFill>;
-	font: IBaseResult<workbookChartFont>;
+	fill: IBaseExecution<workbookChartFill>;
+	font: IBaseExecution<workbookChartFont>;
 }
 /*********************************************
 * workbookChartGridlinesFormat
 **********************************************/
 export interface workbookChartGridlinesFormat  {
 
-	line: IBaseResult<workbookChartLineFormat>;
+	line: IBaseExecution<workbookChartLineFormat>;
 }
 /*********************************************
 * workbookChartLegendFormat
 **********************************************/
 export interface workbookChartLegendFormat  {
 
-	fill: IBaseResult<workbookChartFill>;
-	font: IBaseResult<workbookChartFont>;
+	fill: IBaseExecution<workbookChartFill>;
+	font: IBaseExecution<workbookChartFont>;
 }
 /*********************************************
 * workbookChartPoint
 **********************************************/
 export interface workbookChartPoint  {
 	value: ComplexTypes.Json;
-	format: IBaseResult<workbookChartPointFormat>;
+	format: IBaseExecution<workbookChartPointFormat>;
 }
 /*********************************************
 * workbookChartPointFormat
 **********************************************/
 export interface workbookChartPointFormat  {
 
-	fill: IBaseResult<workbookChartFill>;
+	fill: IBaseExecution<workbookChartFill>;
 }
 /*********************************************
 * workbookChartSeriesFormat
 **********************************************/
 export interface workbookChartSeriesFormat  {
 
-	fill: IBaseResult<workbookChartFill>;
-	line: IBaseResult<workbookChartLineFormat>;
+	fill: IBaseExecution<workbookChartFill>;
+	line: IBaseExecution<workbookChartLineFormat>;
 }
 /*********************************************
 * workbookChartTitleFormat
 **********************************************/
 export interface workbookChartTitleFormat  {
 
-	fill: IBaseResult<workbookChartFill>;
-	font: IBaseResult<workbookChartFont>;
+	fill: IBaseExecution<workbookChartFill>;
+	font: IBaseExecution<workbookChartFont>;
 }
 /*********************************************
 * workbookCommentReply
@@ -3181,7 +3181,7 @@ export interface workbookFunctionResult  {
 **********************************************/
 export interface workbookPivotTable  {
 	name: string;
-	worksheet: IBaseResult<workbookWorksheet>;
+	worksheet: IBaseExecution<workbookWorksheet>;
 }
 /*********************************************
 * workbookRange
@@ -3204,9 +3204,9 @@ export interface workbookRange  {
 	text: ComplexTypes.Json;
 	values: ComplexTypes.Json;
 	valueTypes: ComplexTypes.Json;
-	format: IBaseResult<workbookRangeFormat>;
-	sort: IBaseResult<workbookRangeSort>;
-	worksheet: IBaseResult<workbookWorksheet>;
+	format: IBaseExecution<workbookRangeFormat>;
+	sort: IBaseExecution<workbookRangeSort>;
+	worksheet: IBaseExecution<workbookWorksheet>;
 }
 /*********************************************
 * workbookRangeFormat
@@ -3217,10 +3217,10 @@ export interface workbookRangeFormat  {
 	rowHeight: number;
 	verticalAlignment: string;
 	wrapText: boolean;
-	borders: IBaseResult<workbookRangeBorder[]>;
-	fill: IBaseResult<workbookRangeFill>;
-	font: IBaseResult<workbookRangeFont>;
-	protection: IBaseResult<workbookFormatProtection>;
+	borders: IBaseExecution<workbookRangeBorder[]>;
+	fill: IBaseExecution<workbookRangeFill>;
+	font: IBaseExecution<workbookRangeFont>;
+	protection: IBaseExecution<workbookFormatProtection>;
 }
 /*********************************************
 * workbookRangeSort
@@ -3273,7 +3273,7 @@ export interface workbookRangeView  {
 	text: ComplexTypes.Json;
 	values: ComplexTypes.Json;
 	valueTypes: ComplexTypes.Json;
-	rows: IBaseResult<workbookRangeView[]>;
+	rows: IBaseExecution<workbookRangeView[]>;
 }
 /*********************************************
 * workbookTableColumn
@@ -3282,7 +3282,7 @@ export interface workbookTableColumn  {
 	index: number;
 	name: string;
 	values: ComplexTypes.Json;
-	filter: IBaseResult<workbookFilter>;
+	filter: IBaseExecution<workbookFilter>;
 }
 /*********************************************
 * workbookTableRow
@@ -3343,7 +3343,7 @@ export interface room  {
 **********************************************/
 export interface roomList  {
 	emailAddress: string;
-	rooms: IBaseResult<room[]>;
+	rooms: IBaseExecution<room[]>;
 }
 /*********************************************
 * attachment
@@ -3403,11 +3403,11 @@ export interface post  {
 	newParticipants: ComplexTypes.recipient[];
 	receivedDateTime: any;
 	sender: ComplexTypes.recipient;
-	attachments: IBaseResult<attachment[]>;
-	extensions: IBaseResult<extension[]>;
-	inReplyTo: IBaseResult<post>;
-	multiValueExtendedProperties: IBaseResult<multiValueLegacyExtendedProperty[]>;
-	singleValueExtendedProperties: IBaseResult<singleValueLegacyExtendedProperty[]>;
+	attachments: IBaseExecution<attachment[]>;
+	extensions: IBaseExecution<extension[]>;
+	inReplyTo: IBaseExecution<post>;
+	multiValueExtendedProperties: IBaseExecution<multiValueLegacyExtendedProperty[]>;
+	singleValueExtendedProperties: IBaseExecution<singleValueLegacyExtendedProperty[]>;
 }
 /*********************************************
 * eventMessage
@@ -3422,7 +3422,7 @@ export interface eventMessage  {
 	recurrence: ComplexTypes.patternedRecurrence;
 	startDateTime: ComplexTypes.dateTimeTimeZone;
 	type: EnumTypes.eventType;
-	event: IBaseResult<event>;
+	event: IBaseExecution<event>;
 }
 /*********************************************
 * eventMessageRequest
@@ -3466,7 +3466,7 @@ export interface inferenceClassificationOverride  {
 **********************************************/
 export interface itemAttachment  {
 
-	item: IBaseResult<outlookItem>;
+	item: IBaseExecution<outlookItem>;
 }
 /*********************************************
 * messageRule
@@ -3526,7 +3526,7 @@ export interface columnLink  {
 **********************************************/
 export interface listItemVersion  {
 
-	fields: IBaseResult<fieldValueSet>;
+	fields: IBaseExecution<fieldValueSet>;
 }
 /*********************************************
 * documentSetVersion
@@ -3553,7 +3553,7 @@ export interface itemActivity  {
 	access: ComplexTypes.accessAction;
 	activityDateTime: any;
 	actor: ComplexTypes.identitySet;
-	driveItem: IBaseResult<driveItem>;
+	driveItem: IBaseExecution<driveItem>;
 }
 /*********************************************
 * itemActivityStat
@@ -3568,20 +3568,20 @@ export interface itemActivityStat  {
 	isTrending: boolean;
 	move: ComplexTypes.itemActionStat;
 	startDateTime: any;
-	activities: IBaseResult<itemActivity[]>;
+	activities: IBaseExecution<itemActivity[]>;
 }
 /*********************************************
 * sharedDriveItem
 **********************************************/
 export interface sharedDriveItem  {
 	owner: ComplexTypes.identitySet;
-	driveItem: IBaseResult<driveItem>;
-	items: IBaseResult<driveItem[]>;
-	list: IBaseResult<list>;
-	listItem: IBaseResult<listItem>;
-	permission: IBaseResult<permission>;
-	root: IBaseResult<driveItem>;
-	site: IBaseResult<site>;
+	driveItem: IBaseExecution<driveItem>;
+	items: IBaseExecution<driveItem[]>;
+	list: IBaseExecution<list>;
+	listItem: IBaseExecution<listItem>;
+	permission: IBaseExecution<permission>;
+	root: IBaseExecution<driveItem>;
+	site: IBaseExecution<site>;
 }
 /*********************************************
 * schemaExtension
@@ -3599,10 +3599,10 @@ export interface schemaExtension  {
 **********************************************/
 export interface cloudCommunications  {
 
-	calls: IBaseResult<call[]>;
-	callRecords: IBaseResult<callRecord[]>;
-	onlineMeetings: IBaseResult<onlineMeeting[]>;
-	presences: IBaseResult<presence[]>;
+	calls: IBaseExecution<call[]>;
+	callRecords: IBaseExecution<callRecord[]>;
+	onlineMeetings: IBaseExecution<onlineMeeting[]>;
+	presences: IBaseExecution<presence[]>;
 }
 /*********************************************
 * call
@@ -3628,9 +3628,9 @@ export interface call  {
 	tenantId: string;
 	toneInfo: ComplexTypes.toneInfo;
 	transcription: ComplexTypes.callTranscriptionInfo;
-	audioRoutingGroups: IBaseResult<audioRoutingGroup[]>;
-	operations: IBaseResult<commsOperation[]>;
-	participants: IBaseResult<participant[]>;
+	audioRoutingGroups: IBaseExecution<audioRoutingGroup[]>;
+	operations: IBaseExecution<commsOperation[]>;
+	participants: IBaseExecution<participant[]>;
 }
 /*********************************************
 * accessReviewHistoryDefinition
@@ -3645,7 +3645,7 @@ export interface accessReviewHistoryDefinition  {
 	scheduleSettings: ComplexTypes.accessReviewHistoryScheduleSettings;
 	scopes: ComplexTypes.accessReviewScope[];
 	status: EnumTypes.accessReviewHistoryStatus;
-	instances: IBaseResult<accessReviewHistoryInstance[]>;
+	instances: IBaseExecution<accessReviewHistoryInstance[]>;
 }
 /*********************************************
 * accessReviewHistoryInstance
@@ -3670,9 +3670,9 @@ export interface accessReviewInstance  {
 	scope: ComplexTypes.accessReviewScope;
 	startDateTime: any;
 	status: string;
-	contactedReviewers: IBaseResult<accessReviewReviewer[]>;
-	decisions: IBaseResult<accessReviewInstanceDecisionItem[]>;
-	stages: IBaseResult<accessReviewStage[]>;
+	contactedReviewers: IBaseExecution<accessReviewReviewer[]>;
+	decisions: IBaseExecution<accessReviewInstanceDecisionItem[]>;
+	stages: IBaseExecution<accessReviewStage[]>;
 }
 /*********************************************
 * accessReviewReviewer
@@ -3711,7 +3711,7 @@ export interface accessReviewStage  {
 	reviewers: ComplexTypes.accessReviewReviewerScope[];
 	startDateTime: any;
 	status: string;
-	decisions: IBaseResult<accessReviewInstanceDecisionItem[]>;
+	decisions: IBaseExecution<accessReviewInstanceDecisionItem[]>;
 }
 /*********************************************
 * accessReviewScheduleDefinition
@@ -3731,22 +3731,22 @@ export interface accessReviewScheduleDefinition  {
 	settings: ComplexTypes.accessReviewScheduleSettings;
 	stageSettings: ComplexTypes.accessReviewStageSettings[];
 	status: string;
-	instances: IBaseResult<accessReviewInstance[]>;
+	instances: IBaseExecution<accessReviewInstance[]>;
 }
 /*********************************************
 * accessReviewSet
 **********************************************/
 export interface accessReviewSet  {
 
-	definitions: IBaseResult<accessReviewScheduleDefinition[]>;
-	historyDefinitions: IBaseResult<accessReviewHistoryDefinition[]>;
+	definitions: IBaseExecution<accessReviewScheduleDefinition[]>;
+	historyDefinitions: IBaseExecution<accessReviewHistoryDefinition[]>;
 }
 /*********************************************
 * appConsentApprovalRoute
 **********************************************/
 export interface appConsentApprovalRoute  {
 
-	appConsentRequests: IBaseResult<appConsentRequest[]>;
+	appConsentRequests: IBaseExecution<appConsentRequest[]>;
 }
 /*********************************************
 * appConsentRequest
@@ -3755,21 +3755,21 @@ export interface appConsentRequest  {
 	appDisplayName: string;
 	appId: string;
 	pendingScopes: ComplexTypes.appConsentRequestScope[];
-	userConsentRequests: IBaseResult<userConsentRequest[]>;
+	userConsentRequests: IBaseExecution<userConsentRequest[]>;
 }
 /*********************************************
 * userConsentRequest
 **********************************************/
 export interface userConsentRequest  {
 	reason: string;
-	approval: IBaseResult<approval>;
+	approval: IBaseExecution<approval>;
 }
 /*********************************************
 * approval
 **********************************************/
 export interface approval  {
 
-	stages: IBaseResult<approvalStage[]>;
+	stages: IBaseExecution<approvalStage[]>;
 }
 /*********************************************
 * approvalStage
@@ -3789,14 +3789,14 @@ export interface approvalStage  {
 **********************************************/
 export interface entitlementManagement  {
 
-	accessPackageAssignmentApprovals: IBaseResult<approval[]>;
-	accessPackages: IBaseResult<accessPackage[]>;
-	assignmentPolicies: IBaseResult<accessPackageAssignmentPolicy[]>;
-	assignmentRequests: IBaseResult<accessPackageAssignmentRequest[]>;
-	assignments: IBaseResult<accessPackageAssignment[]>;
-	catalogs: IBaseResult<accessPackageCatalog[]>;
-	connectedOrganizations: IBaseResult<connectedOrganization[]>;
-	settings: IBaseResult<entitlementManagementSettings>;
+	accessPackageAssignmentApprovals: IBaseExecution<approval[]>;
+	accessPackages: IBaseExecution<accessPackage[]>;
+	assignmentPolicies: IBaseExecution<accessPackageAssignmentPolicy[]>;
+	assignmentRequests: IBaseExecution<accessPackageAssignmentRequest[]>;
+	assignments: IBaseExecution<accessPackageAssignment[]>;
+	catalogs: IBaseExecution<accessPackageCatalog[]>;
+	connectedOrganizations: IBaseExecution<connectedOrganization[]>;
+	settings: IBaseExecution<entitlementManagementSettings>;
 }
 /*********************************************
 * accessPackage
@@ -3807,8 +3807,8 @@ export interface accessPackage  {
 	displayName: string;
 	isHidden: boolean;
 	modifiedDateTime: any;
-	assignmentPolicies: IBaseResult<accessPackageAssignmentPolicy[]>;
-	catalog: IBaseResult<accessPackageCatalog>;
+	assignmentPolicies: IBaseExecution<accessPackageAssignmentPolicy[]>;
+	catalog: IBaseExecution<accessPackageCatalog>;
 }
 /*********************************************
 * accessPackageAssignmentPolicy
@@ -3825,8 +3825,8 @@ export interface accessPackageAssignmentPolicy  {
 	requestorSettings: ComplexTypes.accessPackageAssignmentRequestorSettings;
 	reviewSettings: ComplexTypes.accessPackageAssignmentReviewSettings;
 	specificAllowedTargets: ComplexTypes.subjectSet[];
-	accessPackage: IBaseResult<accessPackage>;
-	catalog: IBaseResult<accessPackageCatalog>;
+	accessPackage: IBaseExecution<accessPackage>;
+	catalog: IBaseExecution<accessPackageCatalog>;
 }
 /*********************************************
 * accessPackageAssignmentRequest
@@ -3838,9 +3838,9 @@ export interface accessPackageAssignmentRequest  {
 	schedule: ComplexTypes.entitlementManagementSchedule;
 	state: EnumTypes.accessPackageRequestState;
 	status: string;
-	accessPackage: IBaseResult<accessPackage>;
-	assignment: IBaseResult<accessPackageAssignment>;
-	requestor: IBaseResult<accessPackageSubject>;
+	accessPackage: IBaseExecution<accessPackage>;
+	assignment: IBaseExecution<accessPackageAssignment>;
+	requestor: IBaseExecution<accessPackageSubject>;
 }
 /*********************************************
 * accessPackageAssignment
@@ -3850,9 +3850,9 @@ export interface accessPackageAssignment  {
 	schedule: ComplexTypes.entitlementManagementSchedule;
 	state: EnumTypes.accessPackageAssignmentState;
 	status: string;
-	accessPackage: IBaseResult<accessPackage>;
-	assignmentPolicy: IBaseResult<accessPackageAssignmentPolicy>;
-	target: IBaseResult<accessPackageSubject>;
+	accessPackage: IBaseExecution<accessPackage>;
+	assignmentPolicy: IBaseExecution<accessPackageAssignmentPolicy>;
+	target: IBaseExecution<accessPackageSubject>;
 }
 /*********************************************
 * accessPackageCatalog
@@ -3865,7 +3865,7 @@ export interface accessPackageCatalog  {
 	isExternallyVisible: boolean;
 	modifiedDateTime: any;
 	state: EnumTypes.accessPackageCatalogState;
-	accessPackages: IBaseResult<accessPackage[]>;
+	accessPackages: IBaseExecution<accessPackage[]>;
 }
 /*********************************************
 * connectedOrganization
@@ -3877,8 +3877,8 @@ export interface connectedOrganization  {
 	identitySources: ComplexTypes.identitySource[];
 	modifiedDateTime: any;
 	state: EnumTypes.connectedOrganizationState;
-	externalSponsors: IBaseResult<directoryObject[]>;
-	internalSponsors: IBaseResult<directoryObject[]>;
+	externalSponsors: IBaseExecution<directoryObject[]>;
+	internalSponsors: IBaseExecution<directoryObject[]>;
 }
 /*********************************************
 * entitlementManagementSettings
@@ -3893,18 +3893,18 @@ export interface entitlementManagementSettings  {
 **********************************************/
 export interface identityGovernance  {
 
-	accessReviews: IBaseResult<accessReviewSet>;
-	appConsent: IBaseResult<appConsentApprovalRoute>;
-	termsOfUse: IBaseResult<termsOfUseContainer>;
-	entitlementManagement: IBaseResult<entitlementManagement>;
+	accessReviews: IBaseExecution<accessReviewSet>;
+	appConsent: IBaseExecution<appConsentApprovalRoute>;
+	termsOfUse: IBaseExecution<termsOfUseContainer>;
+	entitlementManagement: IBaseExecution<entitlementManagement>;
 }
 /*********************************************
 * termsOfUseContainer
 **********************************************/
 export interface termsOfUseContainer  {
 
-	agreementAcceptances: IBaseResult<agreementAcceptance[]>;
-	agreements: IBaseResult<agreement[]>;
+	agreementAcceptances: IBaseExecution<agreementAcceptance[]>;
+	agreements: IBaseExecution<agreement[]>;
 }
 /*********************************************
 * agreement
@@ -3915,9 +3915,9 @@ export interface agreement  {
 	isViewingBeforeAcceptanceRequired: boolean;
 	termsExpiration: ComplexTypes.termsExpiration;
 	userReacceptRequiredFrequency: number;
-	acceptances: IBaseResult<agreementAcceptance[]>;
-	file: IBaseResult<agreementFile>;
-	files: IBaseResult<agreementFileLocalization[]>;
+	acceptances: IBaseExecution<agreementAcceptance[]>;
+	file: IBaseExecution<agreementFile>;
+	files: IBaseExecution<agreementFileLocalization[]>;
 }
 /*********************************************
 * agreementFileProperties
@@ -3937,14 +3937,14 @@ export interface agreementFileProperties  {
 **********************************************/
 export interface agreementFile  {
 
-	localizations: IBaseResult<agreementFileLocalization[]>;
+	localizations: IBaseExecution<agreementFileLocalization[]>;
 }
 /*********************************************
 * agreementFileLocalization
 **********************************************/
 export interface agreementFileLocalization  {
 
-	versions: IBaseResult<agreementFileVersion[]>;
+	versions: IBaseExecution<agreementFileVersion[]>;
 }
 /*********************************************
 * agreementFileVersion
@@ -3976,8 +3976,8 @@ export interface countryNamedLocation  {
 **********************************************/
 export interface identityProtectionRoot  {
 
-	riskDetections: IBaseResult<riskDetection[]>;
-	riskyUsers: IBaseResult<riskyUser[]>;
+	riskDetections: IBaseExecution<riskDetection[]>;
+	riskyUsers: IBaseExecution<riskyUser[]>;
 }
 /*********************************************
 * riskDetection
@@ -4016,7 +4016,7 @@ export interface riskyUser  {
 	riskState: EnumTypes.riskState;
 	userDisplayName: string;
 	userPrincipalName: string;
-	history: IBaseResult<riskyUserHistoryItem[]>;
+	history: IBaseExecution<riskyUserHistoryItem[]>;
 }
 /*********************************************
 * ipNamedLocation
@@ -4045,7 +4045,7 @@ export interface accessPackageSubject  {
 	onPremisesSecurityIdentifier: string;
 	principalName: string;
 	subjectType: EnumTypes.accessPackageSubjectType;
-	connectedOrganization: IBaseResult<connectedOrganization>;
+	connectedOrganization: IBaseExecution<connectedOrganization>;
 }
 /*********************************************
 * mobileApp
@@ -4064,8 +4064,8 @@ export interface mobileApp  {
 	privacyInformationUrl: string;
 	publisher: string;
 	publishingState: EnumTypes.mobileAppPublishingState;
-	assignments: IBaseResult<mobileAppAssignment[]>;
-	categories: IBaseResult<mobileAppCategory[]>;
+	assignments: IBaseExecution<mobileAppAssignment[]>;
+	categories: IBaseExecution<mobileAppCategory[]>;
 }
 /*********************************************
 * mobileLobApp
@@ -4074,7 +4074,7 @@ export interface mobileLobApp  {
 	committedContentVersion: string;
 	fileName: string;
 	size: number;
-	contentVersions: IBaseResult<mobileAppContent[]>;
+	contentVersions: IBaseExecution<mobileAppContent[]>;
 }
 /*********************************************
 * androidLobApp
@@ -4103,20 +4103,20 @@ export interface deviceAppManagement  {
 	microsoftStoreForBusinessLanguage: string;
 	microsoftStoreForBusinessLastCompletedApplicationSyncTime: any;
 	microsoftStoreForBusinessLastSuccessfulSyncDateTime: any;
-	managedEBooks: IBaseResult<managedEBook[]>;
-	mobileAppCategories: IBaseResult<mobileAppCategory[]>;
-	mobileAppConfigurations: IBaseResult<managedDeviceMobileAppConfiguration[]>;
-	mobileApps: IBaseResult<mobileApp[]>;
-	vppTokens: IBaseResult<vppToken[]>;
-	androidManagedAppProtections: IBaseResult<androidManagedAppProtection[]>;
-	defaultManagedAppProtections: IBaseResult<defaultManagedAppProtection[]>;
-	iosManagedAppProtections: IBaseResult<iosManagedAppProtection[]>;
-	managedAppPolicies: IBaseResult<managedAppPolicy[]>;
-	managedAppRegistrations: IBaseResult<managedAppRegistration[]>;
-	managedAppStatuses: IBaseResult<managedAppStatus[]>;
-	mdmWindowsInformationProtectionPolicies: IBaseResult<mdmWindowsInformationProtectionPolicy[]>;
-	targetedManagedAppConfigurations: IBaseResult<targetedManagedAppConfiguration[]>;
-	windowsInformationProtectionPolicies: IBaseResult<windowsInformationProtectionPolicy[]>;
+	managedEBooks: IBaseExecution<managedEBook[]>;
+	mobileAppCategories: IBaseExecution<mobileAppCategory[]>;
+	mobileAppConfigurations: IBaseExecution<managedDeviceMobileAppConfiguration[]>;
+	mobileApps: IBaseExecution<mobileApp[]>;
+	vppTokens: IBaseExecution<vppToken[]>;
+	androidManagedAppProtections: IBaseExecution<androidManagedAppProtection[]>;
+	defaultManagedAppProtections: IBaseExecution<defaultManagedAppProtection[]>;
+	iosManagedAppProtections: IBaseExecution<iosManagedAppProtection[]>;
+	managedAppPolicies: IBaseExecution<managedAppPolicy[]>;
+	managedAppRegistrations: IBaseExecution<managedAppRegistration[]>;
+	managedAppStatuses: IBaseExecution<managedAppStatus[]>;
+	mdmWindowsInformationProtectionPolicies: IBaseExecution<mdmWindowsInformationProtectionPolicy[]>;
+	targetedManagedAppConfigurations: IBaseExecution<targetedManagedAppConfiguration[]>;
+	windowsInformationProtectionPolicies: IBaseExecution<windowsInformationProtectionPolicy[]>;
 }
 /*********************************************
 * managedEBook
@@ -4131,10 +4131,10 @@ export interface managedEBook  {
 	privacyInformationUrl: string;
 	publishedDateTime: any;
 	publisher: string;
-	assignments: IBaseResult<managedEBookAssignment[]>;
-	deviceStates: IBaseResult<deviceInstallState[]>;
-	installSummary: IBaseResult<eBookInstallSummary>;
-	userStateSummary: IBaseResult<userInstallStateSummary[]>;
+	assignments: IBaseExecution<managedEBookAssignment[]>;
+	deviceStates: IBaseExecution<deviceInstallState[]>;
+	installSummary: IBaseExecution<eBookInstallSummary>;
+	userStateSummary: IBaseExecution<userInstallStateSummary[]>;
 }
 /*********************************************
 * mobileAppCategory
@@ -4154,11 +4154,11 @@ export interface managedDeviceMobileAppConfiguration  {
 	lastModifiedDateTime: any;
 	targetedMobileApps: Array<string>[];
 	version: number;
-	assignments: IBaseResult<managedDeviceMobileAppConfigurationAssignment[]>;
-	deviceStatuses: IBaseResult<managedDeviceMobileAppConfigurationDeviceStatus[]>;
-	deviceStatusSummary: IBaseResult<managedDeviceMobileAppConfigurationDeviceSummary>;
-	userStatuses: IBaseResult<managedDeviceMobileAppConfigurationUserStatus[]>;
-	userStatusSummary: IBaseResult<managedDeviceMobileAppConfigurationUserSummary>;
+	assignments: IBaseExecution<managedDeviceMobileAppConfigurationAssignment[]>;
+	deviceStatuses: IBaseExecution<managedDeviceMobileAppConfigurationDeviceStatus[]>;
+	deviceStatusSummary: IBaseExecution<managedDeviceMobileAppConfigurationDeviceSummary>;
+	userStatuses: IBaseExecution<managedDeviceMobileAppConfigurationUserStatus[]>;
+	userStatusSummary: IBaseExecution<managedDeviceMobileAppConfigurationUserSummary>;
 }
 /*********************************************
 * vppToken
@@ -4226,7 +4226,7 @@ export interface managedAppProtection  {
 **********************************************/
 export interface targetedManagedAppProtection  {
 	isAssigned: boolean;
-	assignments: IBaseResult<targetedManagedAppPolicyAssignment[]>;
+	assignments: IBaseExecution<targetedManagedAppPolicyAssignment[]>;
 }
 /*********************************************
 * androidManagedAppProtection
@@ -4240,8 +4240,8 @@ export interface androidManagedAppProtection  {
 	minimumRequiredPatchVersion: string;
 	minimumWarningPatchVersion: string;
 	screenCaptureBlocked: boolean;
-	apps: IBaseResult<managedMobileApp[]>;
-	deploymentSummary: IBaseResult<managedAppPolicyDeploymentSummary>;
+	apps: IBaseExecution<managedMobileApp[]>;
+	deploymentSummary: IBaseExecution<managedAppPolicyDeploymentSummary>;
 }
 /*********************************************
 * defaultManagedAppProtection
@@ -4257,8 +4257,8 @@ export interface defaultManagedAppProtection  {
 	minimumRequiredSdkVersion: string;
 	minimumWarningPatchVersion: string;
 	screenCaptureBlocked: boolean;
-	apps: IBaseResult<managedMobileApp[]>;
-	deploymentSummary: IBaseResult<managedAppPolicyDeploymentSummary>;
+	apps: IBaseExecution<managedMobileApp[]>;
+	deploymentSummary: IBaseExecution<managedAppPolicyDeploymentSummary>;
 }
 /*********************************************
 * iosManagedAppProtection
@@ -4269,8 +4269,8 @@ export interface iosManagedAppProtection  {
 	deployedAppCount: number;
 	faceIdBlocked: boolean;
 	minimumRequiredSdkVersion: string;
-	apps: IBaseResult<managedMobileApp[]>;
-	deploymentSummary: IBaseResult<managedAppPolicyDeploymentSummary>;
+	apps: IBaseExecution<managedMobileApp[]>;
+	deploymentSummary: IBaseExecution<managedAppPolicyDeploymentSummary>;
 }
 /*********************************************
 * managedAppStatus
@@ -4306,9 +4306,9 @@ export interface windowsInformationProtection  {
 	revokeOnUnenrollDisabled: boolean;
 	rightsManagementServicesTemplateId: any;
 	smbAutoEncryptedFileExtensions: ComplexTypes.windowsInformationProtectionResourceCollection[];
-	assignments: IBaseResult<targetedManagedAppPolicyAssignment[]>;
-	exemptAppLockerFiles: IBaseResult<windowsInformationProtectionAppLockerFile[]>;
-	protectedAppLockerFiles: IBaseResult<windowsInformationProtectionAppLockerFile[]>;
+	assignments: IBaseExecution<targetedManagedAppPolicyAssignment[]>;
+	exemptAppLockerFiles: IBaseExecution<windowsInformationProtectionAppLockerFile[]>;
+	protectedAppLockerFiles: IBaseExecution<windowsInformationProtectionAppLockerFile[]>;
 }
 /*********************************************
 * mdmWindowsInformationProtectionPolicy
@@ -4330,9 +4330,9 @@ export interface managedAppConfiguration  {
 export interface targetedManagedAppConfiguration  {
 	deployedAppCount: number;
 	isAssigned: boolean;
-	apps: IBaseResult<managedMobileApp[]>;
-	assignments: IBaseResult<targetedManagedAppPolicyAssignment[]>;
-	deploymentSummary: IBaseResult<managedAppPolicyDeploymentSummary>;
+	apps: IBaseExecution<managedMobileApp[]>;
+	assignments: IBaseExecution<targetedManagedAppPolicyAssignment[]>;
+	deploymentSummary: IBaseExecution<managedAppPolicyDeploymentSummary>;
 }
 /*********************************************
 * windowsInformationProtectionPolicy
@@ -4420,7 +4420,7 @@ export interface managedMobileLobApp  {
 	committedContentVersion: string;
 	fileName: string;
 	size: number;
-	contentVersions: IBaseResult<mobileAppContent[]>;
+	contentVersions: IBaseExecution<mobileAppContent[]>;
 }
 /*********************************************
 * managedAndroidLobApp
@@ -4525,7 +4525,7 @@ export interface managedIOSStoreApp  {
 **********************************************/
 export interface mobileAppContent  {
 
-	files: IBaseResult<mobileAppContentFile[]>;
+	files: IBaseExecution<mobileAppContentFile[]>;
 }
 /*********************************************
 * microsoftStoreForBusinessApp
@@ -4676,7 +4676,7 @@ export interface userInstallStateSummary  {
 	installedDeviceCount: number;
 	notInstalledDeviceCount: number;
 	userName: string;
-	deviceStates: IBaseResult<deviceInstallState[]>;
+	deviceStates: IBaseExecution<deviceInstallState[]>;
 }
 /*********************************************
 * deviceManagement
@@ -4686,37 +4686,37 @@ export interface deviceManagement  {
 	settings: ComplexTypes.deviceManagementSettings;
 	intuneBrand: ComplexTypes.intuneBrand;
 	subscriptionState: EnumTypes.deviceManagementSubscriptionState;
-	termsAndConditions: IBaseResult<termsAndConditions[]>;
-	deviceCompliancePolicies: IBaseResult<deviceCompliancePolicy[]>;
-	deviceCompliancePolicyDeviceStateSummary: IBaseResult<deviceCompliancePolicyDeviceStateSummary>;
-	deviceCompliancePolicySettingStateSummaries: IBaseResult<deviceCompliancePolicySettingStateSummary[]>;
-	deviceConfigurationDeviceStateSummaries: IBaseResult<deviceConfigurationDeviceStateSummary>;
-	deviceConfigurations: IBaseResult<deviceConfiguration[]>;
-	iosUpdateStatuses: IBaseResult<iosUpdateDeviceStatus[]>;
-	softwareUpdateStatusSummary: IBaseResult<softwareUpdateStatusSummary>;
-	complianceManagementPartners: IBaseResult<complianceManagementPartner[]>;
-	conditionalAccessSettings: IBaseResult<onPremisesConditionalAccessSettings>;
-	deviceCategories: IBaseResult<deviceCategory[]>;
-	deviceEnrollmentConfigurations: IBaseResult<deviceEnrollmentConfiguration[]>;
-	deviceManagementPartners: IBaseResult<deviceManagementPartner[]>;
-	exchangeConnectors: IBaseResult<deviceManagementExchangeConnector[]>;
-	mobileThreatDefenseConnectors: IBaseResult<mobileThreatDefenseConnector[]>;
-	applePushNotificationCertificate: IBaseResult<applePushNotificationCertificate>;
-	detectedApps: IBaseResult<detectedApp[]>;
-	managedDeviceOverview: IBaseResult<managedDeviceOverview>;
-	managedDevices: IBaseResult<managedDevice[]>;
-	importedWindowsAutopilotDeviceIdentities: IBaseResult<importedWindowsAutopilotDeviceIdentity[]>;
-	windowsAutopilotDeviceIdentities: IBaseResult<windowsAutopilotDeviceIdentity[]>;
-	notificationMessageTemplates: IBaseResult<notificationMessageTemplate[]>;
-	resourceOperations: IBaseResult<resourceOperation[]>;
-	roleAssignments: IBaseResult<deviceAndAppManagementRoleAssignment[]>;
-	roleDefinitions: IBaseResult<roleDefinition[]>;
-	remoteAssistancePartners: IBaseResult<remoteAssistancePartner[]>;
-	reports: IBaseResult<deviceManagementReports>;
-	telecomExpenseManagementPartners: IBaseResult<telecomExpenseManagementPartner[]>;
-	troubleshootingEvents: IBaseResult<deviceManagementTroubleshootingEvent[]>;
-	windowsInformationProtectionAppLearningSummaries: IBaseResult<windowsInformationProtectionAppLearningSummary[]>;
-	windowsInformationProtectionNetworkLearningSummaries: IBaseResult<windowsInformationProtectionNetworkLearningSummary[]>;
+	termsAndConditions: IBaseExecution<termsAndConditions[]>;
+	deviceCompliancePolicies: IBaseExecution<deviceCompliancePolicy[]>;
+	deviceCompliancePolicyDeviceStateSummary: IBaseExecution<deviceCompliancePolicyDeviceStateSummary>;
+	deviceCompliancePolicySettingStateSummaries: IBaseExecution<deviceCompliancePolicySettingStateSummary[]>;
+	deviceConfigurationDeviceStateSummaries: IBaseExecution<deviceConfigurationDeviceStateSummary>;
+	deviceConfigurations: IBaseExecution<deviceConfiguration[]>;
+	iosUpdateStatuses: IBaseExecution<iosUpdateDeviceStatus[]>;
+	softwareUpdateStatusSummary: IBaseExecution<softwareUpdateStatusSummary>;
+	complianceManagementPartners: IBaseExecution<complianceManagementPartner[]>;
+	conditionalAccessSettings: IBaseExecution<onPremisesConditionalAccessSettings>;
+	deviceCategories: IBaseExecution<deviceCategory[]>;
+	deviceEnrollmentConfigurations: IBaseExecution<deviceEnrollmentConfiguration[]>;
+	deviceManagementPartners: IBaseExecution<deviceManagementPartner[]>;
+	exchangeConnectors: IBaseExecution<deviceManagementExchangeConnector[]>;
+	mobileThreatDefenseConnectors: IBaseExecution<mobileThreatDefenseConnector[]>;
+	applePushNotificationCertificate: IBaseExecution<applePushNotificationCertificate>;
+	detectedApps: IBaseExecution<detectedApp[]>;
+	managedDeviceOverview: IBaseExecution<managedDeviceOverview>;
+	managedDevices: IBaseExecution<managedDevice[]>;
+	importedWindowsAutopilotDeviceIdentities: IBaseExecution<importedWindowsAutopilotDeviceIdentity[]>;
+	windowsAutopilotDeviceIdentities: IBaseExecution<windowsAutopilotDeviceIdentity[]>;
+	notificationMessageTemplates: IBaseExecution<notificationMessageTemplate[]>;
+	resourceOperations: IBaseExecution<resourceOperation[]>;
+	roleAssignments: IBaseExecution<deviceAndAppManagementRoleAssignment[]>;
+	roleDefinitions: IBaseExecution<roleDefinition[]>;
+	remoteAssistancePartners: IBaseExecution<remoteAssistancePartner[]>;
+	reports: IBaseExecution<deviceManagementReports>;
+	telecomExpenseManagementPartners: IBaseExecution<telecomExpenseManagementPartner[]>;
+	troubleshootingEvents: IBaseExecution<deviceManagementTroubleshootingEvent[]>;
+	windowsInformationProtectionAppLearningSummaries: IBaseExecution<windowsInformationProtectionAppLearningSummary[]>;
+	windowsInformationProtectionNetworkLearningSummaries: IBaseExecution<windowsInformationProtectionNetworkLearningSummary[]>;
 }
 /*********************************************
 * termsAndConditions
@@ -4730,8 +4730,8 @@ export interface termsAndConditions  {
 	lastModifiedDateTime: any;
 	title: string;
 	version: number;
-	acceptanceStatuses: IBaseResult<termsAndConditionsAcceptanceStatus[]>;
-	assignments: IBaseResult<termsAndConditionsAssignment[]>;
+	acceptanceStatuses: IBaseExecution<termsAndConditionsAcceptanceStatus[]>;
+	assignments: IBaseExecution<termsAndConditionsAssignment[]>;
 }
 /*********************************************
 * deviceCompliancePolicy
@@ -4742,13 +4742,13 @@ export interface deviceCompliancePolicy  {
 	displayName: string;
 	lastModifiedDateTime: any;
 	version: number;
-	assignments: IBaseResult<deviceCompliancePolicyAssignment[]>;
-	deviceSettingStateSummaries: IBaseResult<settingStateDeviceSummary[]>;
-	deviceStatuses: IBaseResult<deviceComplianceDeviceStatus[]>;
-	deviceStatusOverview: IBaseResult<deviceComplianceDeviceOverview>;
-	scheduledActionsForRule: IBaseResult<deviceComplianceScheduledActionForRule[]>;
-	userStatuses: IBaseResult<deviceComplianceUserStatus[]>;
-	userStatusOverview: IBaseResult<deviceComplianceUserOverview>;
+	assignments: IBaseExecution<deviceCompliancePolicyAssignment[]>;
+	deviceSettingStateSummaries: IBaseExecution<settingStateDeviceSummary[]>;
+	deviceStatuses: IBaseExecution<deviceComplianceDeviceStatus[]>;
+	deviceStatusOverview: IBaseExecution<deviceComplianceDeviceOverview>;
+	scheduledActionsForRule: IBaseExecution<deviceComplianceScheduledActionForRule[]>;
+	userStatuses: IBaseExecution<deviceComplianceUserStatus[]>;
+	userStatusOverview: IBaseExecution<deviceComplianceUserOverview>;
 }
 /*********************************************
 * deviceCompliancePolicyDeviceStateSummary
@@ -4779,7 +4779,7 @@ export interface deviceCompliancePolicySettingStateSummary  {
 	setting: string;
 	settingName: string;
 	unknownDeviceCount: number;
-	deviceComplianceSettingStates: IBaseResult<deviceComplianceSettingState[]>;
+	deviceComplianceSettingStates: IBaseExecution<deviceComplianceSettingState[]>;
 }
 /*********************************************
 * deviceConfigurationDeviceStateSummary
@@ -4803,12 +4803,12 @@ export interface deviceConfiguration  {
 	displayName: string;
 	lastModifiedDateTime: any;
 	version: number;
-	assignments: IBaseResult<deviceConfigurationAssignment[]>;
-	deviceSettingStateSummaries: IBaseResult<settingStateDeviceSummary[]>;
-	deviceStatuses: IBaseResult<deviceConfigurationDeviceStatus[]>;
-	deviceStatusOverview: IBaseResult<deviceConfigurationDeviceOverview>;
-	userStatuses: IBaseResult<deviceConfigurationUserStatus[]>;
-	userStatusOverview: IBaseResult<deviceConfigurationUserOverview>;
+	assignments: IBaseExecution<deviceConfigurationAssignment[]>;
+	deviceSettingStateSummaries: IBaseExecution<settingStateDeviceSummary[]>;
+	deviceStatuses: IBaseExecution<deviceConfigurationDeviceStatus[]>;
+	deviceStatusOverview: IBaseExecution<deviceConfigurationDeviceOverview>;
+	userStatuses: IBaseExecution<deviceConfigurationUserStatus[]>;
+	userStatusOverview: IBaseExecution<deviceConfigurationUserOverview>;
 }
 /*********************************************
 * iosUpdateDeviceStatus
@@ -4891,7 +4891,7 @@ export interface deviceEnrollmentConfiguration  {
 	lastModifiedDateTime: any;
 	priority: number;
 	version: number;
-	assignments: IBaseResult<enrollmentConfigurationAssignment[]>;
+	assignments: IBaseExecution<enrollmentConfigurationAssignment[]>;
 }
 /*********************************************
 * deviceManagementPartner
@@ -4956,7 +4956,7 @@ export interface detectedApp  {
 	displayName: string;
 	sizeInByte: number;
 	version: string;
-	managedDevices: IBaseResult<managedDevice[]>;
+	managedDevices: IBaseExecution<managedDevice[]>;
 }
 /*********************************************
 * managedDeviceOverview
@@ -5012,7 +5012,7 @@ export interface notificationMessageTemplate  {
 	defaultLocale: string;
 	displayName: string;
 	lastModifiedDateTime: any;
-	localizedNotificationMessages: IBaseResult<localizedNotificationMessage[]>;
+	localizedNotificationMessages: IBaseExecution<localizedNotificationMessage[]>;
 }
 /*********************************************
 * resourceOperation
@@ -5030,7 +5030,7 @@ export interface roleAssignment  {
 	description: string;
 	displayName: string;
 	resourceScopes: Array<string>[];
-	roleDefinition: IBaseResult<roleDefinition>;
+	roleDefinition: IBaseExecution<roleDefinition>;
 }
 /*********************************************
 * deviceAndAppManagementRoleAssignment
@@ -5047,7 +5047,7 @@ export interface roleDefinition  {
 	displayName: string;
 	isBuiltIn: boolean;
 	rolePermissions: ComplexTypes.rolePermission[];
-	roleAssignments: IBaseResult<roleAssignment[]>;
+	roleAssignments: IBaseExecution<roleAssignment[]>;
 }
 /*********************************************
 * remoteAssistancePartner
@@ -5064,7 +5064,7 @@ export interface remoteAssistancePartner  {
 **********************************************/
 export interface deviceManagementReports  {
 
-	exportJobs: IBaseResult<deviceManagementExportJob[]>;
+	exportJobs: IBaseExecution<deviceManagementExportJob[]>;
 }
 /*********************************************
 * telecomExpenseManagementPartner
@@ -5102,7 +5102,7 @@ export interface termsAndConditionsAcceptanceStatus  {
 	acceptedVersion: number;
 	userDisplayName: string;
 	userPrincipalName: string;
-	termsAndConditions: IBaseResult<termsAndConditions>;
+	termsAndConditions: IBaseExecution<termsAndConditions>;
 }
 /*********************************************
 * termsAndConditionsAssignment
@@ -5343,7 +5343,7 @@ export interface settingStateDeviceSummary  {
 **********************************************/
 export interface deviceComplianceScheduledActionForRule  {
 	ruleName: string;
-	scheduledActionConfigurations: IBaseResult<deviceComplianceActionItem[]>;
+	scheduledActionConfigurations: IBaseExecution<deviceComplianceActionItem[]>;
 }
 /*********************************************
 * deviceComplianceUserStatus
@@ -5733,10 +5733,10 @@ export interface macOSGeneralDeviceConfiguration  {
 **********************************************/
 export interface reportRoot  {
 
-	dailyPrintUsageByPrinter: IBaseResult<printUsageByPrinter[]>;
-	dailyPrintUsageByUser: IBaseResult<printUsageByUser[]>;
-	monthlyPrintUsageByPrinter: IBaseResult<printUsageByPrinter[]>;
-	monthlyPrintUsageByUser: IBaseResult<printUsageByUser[]>;
+	dailyPrintUsageByPrinter: IBaseExecution<printUsageByPrinter[]>;
+	dailyPrintUsageByUser: IBaseExecution<printUsageByUser[]>;
+	monthlyPrintUsageByPrinter: IBaseExecution<printUsageByPrinter[]>;
+	monthlyPrintUsageByUser: IBaseExecution<printUsageByUser[]>;
 }
 /*********************************************
 * printUsage
@@ -6344,7 +6344,7 @@ export interface userExperienceAnalyticsDevicePerformance  {
 export interface importedWindowsAutopilotDeviceIdentityUpload  {
 	createdDateTimeUtc: any;
 	status: EnumTypes.importedWindowsAutopilotDeviceIdentityUploadStatus;
-	deviceIdentities: IBaseResult<importedWindowsAutopilotDeviceIdentity[]>;
+	deviceIdentities: IBaseExecution<importedWindowsAutopilotDeviceIdentity[]>;
 }
 /*********************************************
 * managedMobileApp
@@ -6466,16 +6466,16 @@ export interface enrollmentTroubleshootingEvent  {
 **********************************************/
 export interface admin  {
 
-	serviceAnnouncement: IBaseResult<serviceAnnouncement>;
+	serviceAnnouncement: IBaseExecution<serviceAnnouncement>;
 }
 /*********************************************
 * serviceAnnouncement
 **********************************************/
 export interface serviceAnnouncement  {
 
-	healthOverviews: IBaseResult<serviceHealth[]>;
-	issues: IBaseResult<serviceHealthIssue[]>;
-	messages: IBaseResult<serviceUpdateMessage[]>;
+	healthOverviews: IBaseExecution<serviceHealth[]>;
+	issues: IBaseExecution<serviceHealthIssue[]>;
+	messages: IBaseExecution<serviceUpdateMessage[]>;
 }
 /*********************************************
 * serviceHealth
@@ -6483,7 +6483,7 @@ export interface serviceAnnouncement  {
 export interface serviceHealth  {
 	service: string;
 	status: EnumTypes.serviceHealthStatus;
-	issues: IBaseResult<serviceHealthIssue[]>;
+	issues: IBaseExecution<serviceHealthIssue[]>;
 }
 /*********************************************
 * serviceAnnouncementBase
@@ -6525,7 +6525,7 @@ export interface serviceUpdateMessage  {
 	severity: EnumTypes.serviceUpdateSeverity;
 	tags: Array<string>[];
 	viewPoint: ComplexTypes.serviceUpdateMessageViewpoint;
-	attachments: IBaseResult<serviceAnnouncementAttachment[]>;
+	attachments: IBaseExecution<serviceAnnouncementAttachment[]>;
 }
 /*********************************************
 * serviceAnnouncementAttachment
@@ -6550,9 +6550,9 @@ export interface searchEntity  {
 **********************************************/
 export interface planner  {
 
-	buckets: IBaseResult<plannerBucket[]>;
-	plans: IBaseResult<plannerPlan[]>;
-	tasks: IBaseResult<plannerTask[]>;
+	buckets: IBaseExecution<plannerBucket[]>;
+	plans: IBaseExecution<plannerPlan[]>;
+	tasks: IBaseExecution<plannerTask[]>;
 }
 /*********************************************
 * plannerBucket
@@ -6561,7 +6561,7 @@ export interface plannerBucket  {
 	name: string;
 	orderHint: string;
 	planId: string;
-	tasks: IBaseResult<plannerTask[]>;
+	tasks: IBaseExecution<plannerTask[]>;
 }
 /*********************************************
 * plannerPlan
@@ -6572,9 +6572,9 @@ export interface plannerPlan  {
 	createdDateTime: any;
 	owner: string;
 	title: string;
-	buckets: IBaseResult<plannerBucket[]>;
-	details: IBaseResult<plannerPlanDetails>;
-	tasks: IBaseResult<plannerTask[]>;
+	buckets: IBaseExecution<plannerBucket[]>;
+	details: IBaseExecution<plannerPlanDetails>;
+	tasks: IBaseExecution<plannerTask[]>;
 }
 /*********************************************
 * plannerTask
@@ -6601,10 +6601,10 @@ export interface plannerTask  {
 	referenceCount: number;
 	startDateTime: any;
 	title: string;
-	assignedToTaskBoardFormat: IBaseResult<plannerAssignedToTaskBoardTaskFormat>;
-	bucketTaskBoardFormat: IBaseResult<plannerBucketTaskBoardTaskFormat>;
-	details: IBaseResult<plannerTaskDetails>;
-	progressTaskBoardFormat: IBaseResult<plannerProgressTaskBoardTaskFormat>;
+	assignedToTaskBoardFormat: IBaseExecution<plannerAssignedToTaskBoardTaskFormat>;
+	bucketTaskBoardFormat: IBaseExecution<plannerBucketTaskBoardTaskFormat>;
+	details: IBaseExecution<plannerTaskDetails>;
+	progressTaskBoardFormat: IBaseExecution<plannerProgressTaskBoardTaskFormat>;
 }
 /*********************************************
 * plannerAssignedToTaskBoardTaskFormat
@@ -6654,8 +6654,8 @@ export interface sharedInsight  {
 	resourceReference: ComplexTypes.resourceReference;
 	resourceVisualization: ComplexTypes.resourceVisualization;
 	sharingHistory: ComplexTypes.sharingDetail[];
-	lastSharedMethod: IBaseResult<entity>;
-	resource: IBaseResult<entity>;
+	lastSharedMethod: IBaseExecution<entity>;
+	resource: IBaseExecution<entity>;
 }
 /*********************************************
 * trending
@@ -6665,7 +6665,7 @@ export interface trending  {
 	resourceReference: ComplexTypes.resourceReference;
 	resourceVisualization: ComplexTypes.resourceVisualization;
 	weight: number;
-	resource: IBaseResult<entity>;
+	resource: IBaseExecution<entity>;
 }
 /*********************************************
 * usedInsight
@@ -6674,7 +6674,7 @@ export interface usedInsight  {
 	lastUsed: ComplexTypes.usageDetails;
 	resourceReference: ComplexTypes.resourceReference;
 	resourceVisualization: ComplexTypes.resourceVisualization;
-	resource: IBaseResult<entity>;
+	resource: IBaseExecution<entity>;
 }
 /*********************************************
 * changeTrackedEntity
@@ -6726,8 +6726,8 @@ export interface notebook  {
 	sectionGroupsUrl: string;
 	sectionsUrl: string;
 	userRole: EnumTypes.onenoteUserRole;
-	sectionGroups: IBaseResult<sectionGroup[]>;
-	sections: IBaseResult<onenoteSection[]>;
+	sectionGroups: IBaseExecution<sectionGroup[]>;
+	sections: IBaseExecution<onenoteSection[]>;
 }
 /*********************************************
 * sectionGroup
@@ -6735,10 +6735,10 @@ export interface notebook  {
 export interface sectionGroup  {
 	sectionGroupsUrl: string;
 	sectionsUrl: string;
-	parentNotebook: IBaseResult<notebook>;
-	parentSectionGroup: IBaseResult<sectionGroup>;
-	sectionGroups: IBaseResult<sectionGroup[]>;
-	sections: IBaseResult<onenoteSection[]>;
+	parentNotebook: IBaseExecution<notebook>;
+	parentSectionGroup: IBaseExecution<sectionGroup>;
+	sectionGroups: IBaseExecution<sectionGroup[]>;
+	sections: IBaseExecution<onenoteSection[]>;
 }
 /*********************************************
 * onenoteSection
@@ -6747,9 +6747,9 @@ export interface onenoteSection  {
 	isDefault: boolean;
 	links: ComplexTypes.sectionLinks;
 	pagesUrl: string;
-	pages: IBaseResult<onenotePage[]>;
-	parentNotebook: IBaseResult<notebook>;
-	parentSectionGroup: IBaseResult<sectionGroup>;
+	pages: IBaseExecution<onenotePage[]>;
+	parentNotebook: IBaseExecution<notebook>;
+	parentSectionGroup: IBaseExecution<sectionGroup>;
 }
 /*********************************************
 * operation
@@ -6783,8 +6783,8 @@ export interface onenotePage  {
 	order: number;
 	title: string;
 	userTags: Array<string>[];
-	parentNotebook: IBaseResult<notebook>;
-	parentSection: IBaseResult<onenoteSection>;
+	parentNotebook: IBaseExecution<notebook>;
+	parentSection: IBaseExecution<onenoteSection>;
 }
 /*********************************************
 * onenoteResource
@@ -6847,12 +6847,12 @@ export interface unifiedRoleManagementPolicyNotificationRule  {
 **********************************************/
 export interface print  {
 	settings: ComplexTypes.printSettings;
-	connectors: IBaseResult<printConnector[]>;
-	operations: IBaseResult<printOperation[]>;
-	printers: IBaseResult<printer[]>;
-	services: IBaseResult<printService[]>;
-	shares: IBaseResult<printerShare[]>;
-	taskDefinitions: IBaseResult<printTaskDefinition[]>;
+	connectors: IBaseExecution<printConnector[]>;
+	operations: IBaseExecution<printOperation[]>;
+	printers: IBaseExecution<printer[]>;
+	services: IBaseExecution<printService[]>;
+	shares: IBaseExecution<printerShare[]>;
+	taskDefinitions: IBaseExecution<printTaskDefinition[]>;
 }
 /*********************************************
 * printConnector
@@ -6886,7 +6886,7 @@ export interface printerBase  {
 	manufacturer: string;
 	model: string;
 	status: ComplexTypes.printerStatus;
-	jobs: IBaseResult<printJob[]>;
+	jobs: IBaseExecution<printJob[]>;
 }
 /*********************************************
 * printer
@@ -6896,16 +6896,16 @@ export interface printer  {
 	isShared: boolean;
 	lastSeenDateTime: any;
 	registeredDateTime: any;
-	connectors: IBaseResult<printConnector[]>;
-	shares: IBaseResult<printerShare[]>;
-	taskTriggers: IBaseResult<printTaskTrigger[]>;
+	connectors: IBaseExecution<printConnector[]>;
+	shares: IBaseExecution<printerShare[]>;
+	taskTriggers: IBaseExecution<printTaskTrigger[]>;
 }
 /*********************************************
 * printService
 **********************************************/
 export interface printService  {
 
-	endpoints: IBaseResult<printServiceEndpoint[]>;
+	endpoints: IBaseExecution<printServiceEndpoint[]>;
 }
 /*********************************************
 * printerShare
@@ -6913,9 +6913,9 @@ export interface printService  {
 export interface printerShare  {
 	allowAllUsers: boolean;
 	createdDateTime: any;
-	allowedGroups: IBaseResult<group[]>;
-	allowedUsers: IBaseResult<user[]>;
-	printer: IBaseResult<printer>;
+	allowedGroups: IBaseExecution<group[]>;
+	allowedUsers: IBaseExecution<user[]>;
+	printer: IBaseExecution<printer>;
 }
 /*********************************************
 * printTaskDefinition
@@ -6923,7 +6923,7 @@ export interface printerShare  {
 export interface printTaskDefinition  {
 	createdBy: ComplexTypes.appIdentity;
 	displayName: string;
-	tasks: IBaseResult<printTask[]>;
+	tasks: IBaseExecution<printTask[]>;
 }
 /*********************************************
 * printDocument
@@ -6939,7 +6939,7 @@ export interface printDocument  {
 **********************************************/
 export interface printTaskTrigger  {
 	event: EnumTypes.printEvent;
-	definition: IBaseResult<printTaskDefinition>;
+	definition: IBaseExecution<printTaskDefinition>;
 }
 /*********************************************
 * printJob
@@ -6952,15 +6952,15 @@ export interface printJob  {
 	redirectedFrom: string;
 	redirectedTo: string;
 	status: ComplexTypes.printJobStatus;
-	documents: IBaseResult<printDocument[]>;
-	tasks: IBaseResult<printTask[]>;
+	documents: IBaseExecution<printDocument[]>;
+	tasks: IBaseExecution<printTask[]>;
 }
 /*********************************************
 * printerCreateOperation
 **********************************************/
 export interface printerCreateOperation  {
 	certificate: string;
-	printer: IBaseResult<printer>;
+	printer: IBaseExecution<printer>;
 }
 /*********************************************
 * printTask
@@ -6968,8 +6968,8 @@ export interface printerCreateOperation  {
 export interface printTask  {
 	parentUrl: string;
 	status: ComplexTypes.printTaskStatus;
-	definition: IBaseResult<printTaskDefinition>;
-	trigger: IBaseResult<printTaskTrigger>;
+	definition: IBaseExecution<printTaskDefinition>;
+	trigger: IBaseExecution<printTaskTrigger>;
 }
 /*********************************************
 * printServiceEndpoint
@@ -6991,7 +6991,7 @@ export interface activityHistoryItem  {
 	startedDateTime: any;
 	status: EnumTypes.status;
 	userTimezone: string;
-	activity: IBaseResult<userActivity>;
+	activity: IBaseExecution<userActivity>;
 }
 /*********************************************
 * dataPolicyOperation
@@ -7067,7 +7067,7 @@ export interface meetingAttendanceReport  {
 	meetingEndDateTime: any;
 	meetingStartDateTime: any;
 	totalParticipantCount: number;
-	attendanceRecords: IBaseResult<attendanceRecord[]>;
+	attendanceRecords: IBaseExecution<attendanceRecord[]>;
 }
 /*********************************************
 * muteParticipantOperation
@@ -7081,14 +7081,14 @@ export interface muteParticipantOperation  {
 **********************************************/
 export interface participantJoiningNotification  {
 
-	call: IBaseResult<call>;
+	call: IBaseExecution<call>;
 }
 /*********************************************
 * participantLeftNotification
 **********************************************/
 export interface participantLeftNotification  {
 	participantId: string;
-	call: IBaseResult<call>;
+	call: IBaseExecution<call>;
 }
 /*********************************************
 * playPromptOperation
@@ -7174,7 +7174,7 @@ export interface microsoftAuthenticatorAuthenticationMethod  {
 	deviceTag: string;
 	displayName: string;
 	phoneAppVersion: string;
-	device: IBaseResult<device>;
+	device: IBaseExecution<device>;
 }
 /*********************************************
 * passwordAuthenticationMethod
@@ -7220,7 +7220,7 @@ export interface windowsHelloForBusinessAuthenticationMethod  {
 	createdDateTime: any;
 	displayName: string;
 	keyStrength: EnumTypes.authenticationMethodKeyStrength;
-	device: IBaseResult<device>;
+	device: IBaseExecution<device>;
 }
 /*********************************************
 * aadUserConversationMember
@@ -7229,14 +7229,14 @@ export interface aadUserConversationMember  {
 	email: string;
 	tenantId: string;
 	userId: string;
-	user: IBaseResult<user>;
+	user: IBaseExecution<user>;
 }
 /*********************************************
 * appCatalogs
 **********************************************/
 export interface appCatalogs  {
 
-	teamsApps: IBaseResult<teamsApp[]>;
+	teamsApps: IBaseExecution<teamsApp[]>;
 }
 /*********************************************
 * teamsApp
@@ -7245,7 +7245,7 @@ export interface teamsApp  {
 	displayName: string;
 	distributionMethod: EnumTypes.teamsAppDistributionMethod;
 	externalId: string;
-	appDefinitions: IBaseResult<teamsAppDefinition[]>;
+	appDefinitions: IBaseExecution<teamsAppDefinition[]>;
 }
 /*********************************************
 * teamInfo
@@ -7253,7 +7253,7 @@ export interface teamsApp  {
 export interface teamInfo  {
 	displayName: string;
 	tenantId: string;
-	team: IBaseResult<team>;
+	team: IBaseExecution<team>;
 }
 /*********************************************
 * associatedTeamInfo
@@ -7287,15 +7287,15 @@ export interface chatMessage  {
 	subject: string;
 	summary: string;
 	webUrl: string;
-	hostedContents: IBaseResult<chatMessageHostedContent[]>;
-	replies: IBaseResult<chatMessage[]>;
+	hostedContents: IBaseExecution<chatMessageHostedContent[]>;
+	replies: IBaseExecution<chatMessage[]>;
 }
 /*********************************************
 * sharedWithChannelTeamInfo
 **********************************************/
 export interface sharedWithChannelTeamInfo  {
 	isHostTeam: boolean;
-	allowedMembers: IBaseResult<conversationMember[]>;
+	allowedMembers: IBaseExecution<conversationMember[]>;
 }
 /*********************************************
 * teamsTab
@@ -7304,7 +7304,7 @@ export interface teamsTab  {
 	configuration: ComplexTypes.teamsTabConfiguration;
 	displayName: string;
 	webUrl: string;
-	teamsApp: IBaseResult<teamsApp>;
+	teamsApp: IBaseExecution<teamsApp>;
 }
 /*********************************************
 * teamworkHostedContent
@@ -7333,7 +7333,7 @@ export interface teamsAppDefinition  {
 	shortDescription: string;
 	teamsAppId: string;
 	version: string;
-	bot: IBaseResult<teamworkBot>;
+	bot: IBaseExecution<teamworkBot>;
 }
 /*********************************************
 * teamworkBot
@@ -7347,7 +7347,7 @@ export interface teamworkBot  {
 **********************************************/
 export interface teamwork  {
 
-	workforceIntegrations: IBaseResult<workforceIntegration[]>;
+	workforceIntegrations: IBaseExecution<workforceIntegration[]>;
 }
 /*********************************************
 * workforceIntegration
@@ -7366,7 +7366,7 @@ export interface workforceIntegration  {
 **********************************************/
 export interface userScopeTeamsAppInstallation  {
 
-	chat: IBaseResult<chat>;
+	chat: IBaseExecution<chat>;
 }
 /*********************************************
 * scheduleChangeRequest
@@ -7557,8 +7557,8 @@ export interface todoTaskList  {
 	isOwner: boolean;
 	isShared: boolean;
 	wellknownListName: EnumTypes.wellknownListName;
-	extensions: IBaseResult<extension[]>;
-	tasks: IBaseResult<todoTask[]>;
+	extensions: IBaseExecution<extension[]>;
+	tasks: IBaseExecution<todoTask[]>;
 }
 /*********************************************
 * todoTask
@@ -7579,18 +7579,18 @@ export interface todoTask  {
 	startDateTime: ComplexTypes.dateTimeTimeZone;
 	status: EnumTypes.taskStatus;
 	title: string;
-	attachments: IBaseResult<attachmentBase[]>;
-	attachmentSessions: IBaseResult<attachmentSession[]>;
-	checklistItems: IBaseResult<checklistItem[]>;
-	extensions: IBaseResult<extension[]>;
-	linkedResources: IBaseResult<linkedResource[]>;
+	attachments: IBaseExecution<attachmentBase[]>;
+	attachmentSessions: IBaseExecution<attachmentSession[]>;
+	checklistItems: IBaseExecution<checklistItem[]>;
+	extensions: IBaseExecution<extension[]>;
+	linkedResources: IBaseExecution<linkedResource[]>;
 }
 /*********************************************
 * casesRoot
 **********************************************/
 export interface casesRoot  {
 
-	ediscoveryCases: IBaseResult<ediscoveryCase[]>;
+	ediscoveryCases: IBaseExecution<ediscoveryCase[]>;
 }
 /*********************************************
 * _case
@@ -7624,13 +7624,13 @@ export interface ediscoveryCase  {
 	closedBy: ComplexTypes.identitySet;
 	closedDateTime: any;
 	externalId: string;
-	custodians: IBaseResult<ediscoveryCustodian[]>;
-	noncustodialDataSources: IBaseResult<ediscoveryNoncustodialDataSource[]>;
-	operations: IBaseResult<caseOperation[]>;
-	reviewSets: IBaseResult<ediscoveryReviewSet[]>;
-	searches: IBaseResult<ediscoverySearch[]>;
-	settings: IBaseResult<ediscoveryCaseSettings>;
-	tags: IBaseResult<ediscoveryReviewTag[]>;
+	custodians: IBaseExecution<ediscoveryCustodian[]>;
+	noncustodialDataSources: IBaseExecution<ediscoveryNoncustodialDataSource[]>;
+	operations: IBaseExecution<caseOperation[]>;
+	reviewSets: IBaseExecution<ediscoveryReviewSet[]>;
+	searches: IBaseExecution<ediscoverySearch[]>;
+	settings: IBaseExecution<ediscoveryCaseSettings>;
+	tags: IBaseExecution<ediscoveryReviewTag[]>;
 }
 /*********************************************
 * dataSet
@@ -7668,15 +7668,15 @@ export interface dataSourceContainer  {
 **********************************************/
 export interface ediscoveryAddToReviewSetOperation  {
 
-	reviewSet: IBaseResult<ediscoveryReviewSet>;
-	search: IBaseResult<ediscoverySearch>;
+	reviewSet: IBaseExecution<ediscoveryReviewSet>;
+	search: IBaseExecution<ediscoverySearch>;
 }
 /*********************************************
 * ediscoveryReviewSet
 **********************************************/
 export interface ediscoveryReviewSet  {
 
-	queries: IBaseResult<ediscoveryReviewSetQuery[]>;
+	queries: IBaseExecution<ediscoveryReviewSetQuery[]>;
 }
 /*********************************************
 * search
@@ -7696,11 +7696,11 @@ export interface search  {
 **********************************************/
 export interface ediscoverySearch  {
 	dataSourceScopes: EnumTypes.dataSourceScopes;
-	additionalSources: IBaseResult<dataSource[]>;
-	addToReviewSetOperation: IBaseResult<ediscoveryAddToReviewSetOperation>;
-	custodianSources: IBaseResult<dataSource[]>;
-	lastEstimateStatisticsOperation: IBaseResult<ediscoveryEstimateOperation>;
-	noncustodialSources: IBaseResult<ediscoveryNoncustodialDataSource[]>;
+	additionalSources: IBaseExecution<dataSource[]>;
+	addToReviewSetOperation: IBaseExecution<ediscoveryAddToReviewSetOperation>;
+	custodianSources: IBaseExecution<dataSource[]>;
+	lastEstimateStatisticsOperation: IBaseExecution<ediscoveryEstimateOperation>;
+	noncustodialSources: IBaseExecution<ediscoveryNoncustodialDataSource[]>;
 }
 /*********************************************
 * ediscoveryCustodian
@@ -7708,18 +7708,18 @@ export interface ediscoverySearch  {
 export interface ediscoveryCustodian  {
 	acknowledgedDateTime: any;
 	email: string;
-	lastIndexOperation: IBaseResult<ediscoveryIndexOperation>;
-	siteSources: IBaseResult<siteSource[]>;
-	unifiedGroupSources: IBaseResult<unifiedGroupSource[]>;
-	userSources: IBaseResult<userSource[]>;
+	lastIndexOperation: IBaseExecution<ediscoveryIndexOperation>;
+	siteSources: IBaseExecution<siteSource[]>;
+	unifiedGroupSources: IBaseExecution<unifiedGroupSource[]>;
+	userSources: IBaseExecution<userSource[]>;
 }
 /*********************************************
 * ediscoveryNoncustodialDataSource
 **********************************************/
 export interface ediscoveryNoncustodialDataSource  {
 
-	dataSource: IBaseResult<dataSource>;
-	lastIndexOperation: IBaseResult<ediscoveryIndexOperation>;
+	dataSource: IBaseExecution<dataSource>;
+	lastIndexOperation: IBaseExecution<ediscoveryIndexOperation>;
 }
 /*********************************************
 * ediscoveryCaseSettings
@@ -7745,8 +7745,8 @@ export interface tag  {
 **********************************************/
 export interface ediscoveryReviewTag  {
 	childSelectability: EnumTypes.childSelectability;
-	childTags: IBaseResult<ediscoveryReviewTag[]>;
-	parent: IBaseResult<ediscoveryReviewTag>;
+	childTags: IBaseExecution<ediscoveryReviewTag[]>;
+	parent: IBaseExecution<ediscoveryReviewTag>;
 }
 /*********************************************
 * ediscoveryIndexOperation
@@ -7760,14 +7760,14 @@ export interface ediscoveryIndexOperation  {
 **********************************************/
 export interface siteSource  {
 
-	site: IBaseResult<site>;
+	site: IBaseExecution<site>;
 }
 /*********************************************
 * unifiedGroupSource
 **********************************************/
 export interface unifiedGroupSource  {
 	includedSources: EnumTypes.sourceType;
-	group: IBaseResult<group>;
+	group: IBaseExecution<group>;
 }
 /*********************************************
 * userSource
@@ -7788,7 +7788,7 @@ export interface ediscoveryEstimateOperation  {
 	siteCount: number;
 	unindexedItemCount: number;
 	unindexedItemsSize: number;
-	search: IBaseResult<ediscoverySearch>;
+	search: IBaseExecution<ediscoverySearch>;
 }
 /*********************************************
 * ediscoveryHoldOperation
@@ -7817,8 +7817,8 @@ export interface ediscoveryTagOperation  {
 export interface store  {
 	defaultLanguageTag: string;
 	languageTags: Array<string>[];
-	groups: IBaseResult<group[]>;
-	sets: IBaseResult<set[]>;
+	groups: IBaseExecution<group[]>;
+	sets: IBaseExecution<set[]>;
 }
 /*********************************************
 * set
@@ -7828,19 +7828,19 @@ export interface set  {
 	description: string;
 	localizedNames: ComplexTypes.localizedName[];
 	properties: ComplexTypes.keyValue[];
-	children: IBaseResult<term[]>;
-	parentGroup: IBaseResult<group>;
-	relations: IBaseResult<relation[]>;
-	terms: IBaseResult<term[]>;
+	children: IBaseExecution<term[]>;
+	parentGroup: IBaseExecution<group>;
+	relations: IBaseExecution<relation[]>;
+	terms: IBaseExecution<term[]>;
 }
 /*********************************************
 * relation
 **********************************************/
 export interface relation  {
 	relationship: EnumTypes.relationType;
-	fromTerm: IBaseResult<term>;
-	set: IBaseResult<set>;
-	toTerm: IBaseResult<term>;
+	fromTerm: IBaseExecution<term>;
+	set: IBaseExecution<set>;
+	toTerm: IBaseExecution<term>;
 }
 /*********************************************
 * term
@@ -7851,9 +7851,9 @@ export interface term  {
 	labels: ComplexTypes.localizedLabel[];
 	lastModifiedDateTime: any;
 	properties: ComplexTypes.keyValue[];
-	children: IBaseResult<term[]>;
-	relations: IBaseResult<relation[]>;
-	set: IBaseResult<set>;
+	children: IBaseExecution<term[]>;
+	relations: IBaseExecution<relation[]>;
+	set: IBaseExecution<set>;
 }
 /*********************************************
 * callRecord
@@ -7868,7 +7868,7 @@ export interface callRecord  {
 	startDateTime: any;
 	type: EnumTypes.callType;
 	version: number;
-	sessions: IBaseResult<session[]>;
+	sessions: IBaseExecution<session[]>;
 }
 /*********************************************
 * session
@@ -7880,7 +7880,7 @@ export interface session  {
 	failureInfo: ComplexTypes.failureInfo;
 	modalities: EnumTypes.modality[];
 	startDateTime: any;
-	segments: IBaseResult<segment[]>;
+	segments: IBaseExecution<segment[]>;
 }
 /*********************************************
 * segment
@@ -7907,7 +7907,7 @@ export interface connectionOperation  {
 **********************************************/
 export interface external  {
 
-	connections: IBaseResult<externalConnection[]>;
+	connections: IBaseExecution<externalConnection[]>;
 }
 /*********************************************
 * externalConnection
@@ -7917,10 +7917,10 @@ export interface externalConnection  {
 	description: string;
 	name: string;
 	state: EnumTypes.connectionState;
-	groups: IBaseResult<externalGroup[]>;
-	items: IBaseResult<externalItem[]>;
-	operations: IBaseResult<connectionOperation[]>;
-	schema: IBaseResult<schema>;
+	groups: IBaseExecution<externalGroup[]>;
+	items: IBaseExecution<externalItem[]>;
+	operations: IBaseExecution<connectionOperation[]>;
+	schema: IBaseExecution<schema>;
 }
 /*********************************************
 * externalGroup
@@ -7928,7 +7928,7 @@ export interface externalConnection  {
 export interface externalGroup  {
 	description: string;
 	displayName: string;
-	members: IBaseResult<ComplexTypes.identity[]>;
+	members: IBaseExecution<ComplexTypes.identity[]>;
 }
 /*********************************************
 * externalItem
