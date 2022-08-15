@@ -563,7 +563,7 @@ function processGraph(schemas) {
         let methods = [];
         for (let method of endPoint.methods) {
             // Add the method
-            methods.push("\t" + method.name + ": IBaseExecution<" + getGraphType(method.returnType) + ">;");
+            methods.push("\t" + method.name + ": () => IBaseExecution<" + getGraphType(method.returnType) + ">;");
         }
 
         // Add the endpoint
@@ -644,7 +644,7 @@ ${props.join('\n')}
         let methods = [];
         for (let method of entity.methods) {
             // Add the method
-            methods.push("\t" + method.name + ": IBaseExecution<" + getGraphType(method.returnType) + ">;");
+            methods.push("\t" + method.name + ": () => IBaseExecution<" + getGraphType(method.returnType) + ">;");
         }
 
         // Add the endpoint
