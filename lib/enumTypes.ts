@@ -1,4 +1,4 @@
-import * as GraphTypes from "./microsoft/graph/enums.d";
+import * as GraphTypes from "./microsoft/graph/enumTypes";
 
 /** appliedConditionalAccessPolicyResult types */
 export const appliedConditionalAccessPolicyResult: GraphTypes.appliedConditionalAccessPolicyResult = {

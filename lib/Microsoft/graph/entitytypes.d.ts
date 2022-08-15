@@ -1,11264 +1,6839 @@
-import { Base } from "../../";
-import { graph } from "../";
-import { Edm } from "../../";
+import * as ComplexTypes from "./complexTypes.d";
+import * as EnumTypes from "./enumTypes.d";
 
 /*********************************************
 * entity
 **********************************************/
-export interface entity {
-	id?: string;
+export interface entity  {
+	id: string;
 }
-
-/*********************************************
-* entityCollections
-**********************************************/
-export interface entityCollections {
-
-}
-
 /*********************************************
 * auditLogRoot
 **********************************************/
-export interface auditLogRoot {
+export interface auditLogRoot  {
 
 }
-
-/*********************************************
-* auditLogRootCollections
-**********************************************/
-export interface auditLogRootCollections {
-
-}
-
 /*********************************************
 * directoryAudit
 **********************************************/
-export interface directoryAudit {
-	activityDateTime?: any;
-	activityDisplayName?: string;
-	additionalDetails?: { results: Array<graph.keyValue> };
-	category?: string;
-	correlationId?: string;
-	initiatedBy?: graph.auditActivityInitiator;
-	loggedByService?: string;
-	operationType?: string;
-	result?: graph.operationResult;
-	resultReason?: string;
-	targetResources?: { results: Array<graph.targetResource> };
+export interface directoryAudit  {
+	activityDateTime: any;
+	activityDisplayName: string;
+	additionalDetails: ComplexTypes.keyValue[];
+	category: string;
+	correlationId: string;
+	initiatedBy: ComplexTypes.auditActivityInitiator;
+	loggedByService: string;
+	operationType: string;
+	result: EnumTypes.operationResult;
+	resultReason: string;
+	targetResources: ComplexTypes.targetResource[];
 }
-
-/*********************************************
-* directoryAuditCollections
-**********************************************/
-export interface directoryAuditCollections {
-
-}
-
 /*********************************************
 * provisioningObjectSummary
 **********************************************/
-export interface provisioningObjectSummary {
-	activityDateTime?: any;
-	changeId?: string;
-	cycleId?: string;
-	durationInMilliseconds?: number;
-	initiatedBy?: graph.initiator;
-	jobId?: string;
-	modifiedProperties?: { results: Array<graph.modifiedProperty> };
-	provisioningAction?: graph.provisioningAction;
-	provisioningStatusInfo?: graph.provisioningStatusInfo;
-	provisioningSteps?: { results: Array<graph.provisioningStep> };
-	servicePrincipal?: graph.provisioningServicePrincipal;
-	sourceIdentity?: graph.provisionedIdentity;
-	sourceSystem?: graph.provisioningSystem;
-	targetIdentity?: graph.provisionedIdentity;
-	targetSystem?: graph.provisioningSystem;
-	tenantId?: string;
+export interface provisioningObjectSummary  {
+	activityDateTime: any;
+	changeId: string;
+	cycleId: string;
+	durationInMilliseconds: number;
+	initiatedBy: ComplexTypes.initiator;
+	jobId: string;
+	modifiedProperties: ComplexTypes.modifiedProperty[];
+	provisioningAction: EnumTypes.provisioningAction;
+	provisioningStatusInfo: ComplexTypes.provisioningStatusInfo;
+	provisioningSteps: ComplexTypes.provisioningStep[];
+	servicePrincipal: ComplexTypes.provisioningServicePrincipal;
+	sourceIdentity: ComplexTypes.provisionedIdentity;
+	sourceSystem: ComplexTypes.provisioningSystem;
+	targetIdentity: ComplexTypes.provisionedIdentity;
+	targetSystem: ComplexTypes.provisioningSystem;
+	tenantId: string;
 }
-
-/*********************************************
-* provisioningObjectSummaryCollections
-**********************************************/
-export interface provisioningObjectSummaryCollections {
-
-}
-
 /*********************************************
 * signIn
 **********************************************/
-export interface signIn {
-	appDisplayName?: string;
-	appId?: string;
-	appliedConditionalAccessPolicies?: { results: Array<graph.appliedConditionalAccessPolicy> };
-	clientAppUsed?: string;
-	conditionalAccessStatus?: graph.conditionalAccessStatus;
-	correlationId?: string;
-	createdDateTime?: any;
-	deviceDetail?: graph.deviceDetail;
-	ipAddress?: string;
-	isInteractive?: boolean;
-	location?: graph.signInLocation;
-	resourceDisplayName?: string;
-	resourceId?: string;
-	riskDetail?: graph.riskDetail;
-	riskEventTypes?: { results: Array<graph.riskEventType> };
-	riskEventTypes_v2?: { results: Array<string> };
-	riskLevelAggregated?: graph.riskLevel;
-	riskLevelDuringSignIn?: graph.riskLevel;
-	riskState?: graph.riskState;
-	status?: graph.signInStatus;
-	userDisplayName?: string;
-	userId?: string;
-	userPrincipalName?: string;
+export interface signIn  {
+	appDisplayName: string;
+	appId: string;
+	appliedConditionalAccessPolicies: ComplexTypes.appliedConditionalAccessPolicy[];
+	clientAppUsed: string;
+	conditionalAccessStatus: EnumTypes.conditionalAccessStatus;
+	correlationId: string;
+	createdDateTime: any;
+	deviceDetail: ComplexTypes.deviceDetail;
+	ipAddress: string;
+	isInteractive: boolean;
+	location: ComplexTypes.signInLocation;
+	resourceDisplayName: string;
+	resourceId: string;
+	riskDetail: EnumTypes.riskDetail;
+	riskEventTypes: EnumTypes.riskEventType[];
+	riskEventTypes_v2: Array<string>[];
+	riskLevelAggregated: EnumTypes.riskLevel;
+	riskLevelDuringSignIn: EnumTypes.riskLevel;
+	riskState: EnumTypes.riskState;
+	status: ComplexTypes.signInStatus;
+	userDisplayName: string;
+	userId: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* signInCollections
-**********************************************/
-export interface signInCollections {
-
-}
-
 /*********************************************
 * restrictedSignIn
 **********************************************/
-export interface restrictedSignIn {
-	targetTenantId?: any;
+export interface restrictedSignIn  {
+	targetTenantId: any;
 }
-
-/*********************************************
-* restrictedSignInCollections
-**********************************************/
-export interface restrictedSignInCollections {
-
-}
-
 /*********************************************
 * invitation
 **********************************************/
-export interface invitation {
-	invitedUserDisplayName?: string;
-	invitedUserEmailAddress?: string;
-	invitedUserMessageInfo?: graph.invitedUserMessageInfo;
-	invitedUserType?: string;
-	inviteRedeemUrl?: string;
-	inviteRedirectUrl?: string;
-	sendInvitationMessage?: boolean;
-	status?: string;
+export interface invitation  {
+	invitedUserDisplayName: string;
+	invitedUserEmailAddress: string;
+	invitedUserMessageInfo: ComplexTypes.invitedUserMessageInfo;
+	invitedUserType: string;
+	inviteRedeemUrl: string;
+	inviteRedirectUrl: string;
+	sendInvitationMessage: boolean;
+	status: string;
 }
-
-/*********************************************
-* invitationCollections
-**********************************************/
-export interface invitationCollections {
-
-}
-
 /*********************************************
 * directoryObject
 **********************************************/
-export interface directoryObject {
-	deletedDateTime?: any;
+export interface directoryObject  {
+	deletedDateTime: any;
 }
-
-/*********************************************
-* directoryObjectCollections
-**********************************************/
-export interface directoryObjectCollections {
-
-}
-
 /*********************************************
 * user
 **********************************************/
-export interface user {
-	accountEnabled?: boolean;
-	ageGroup?: string;
-	assignedLicenses?: { results: Array<graph.assignedLicense> };
-	assignedPlans?: { results: Array<graph.assignedPlan> };
-	businessPhones?: { results: Array<string> };
-	city?: string;
-	companyName?: string;
-	consentProvidedForMinor?: string;
-	country?: string;
-	createdDateTime?: any;
-	creationType?: string;
-	department?: string;
-	displayName?: string;
-	employeeHireDate?: any;
-	employeeId?: string;
-	employeeOrgData?: graph.employeeOrgData;
-	employeeType?: string;
-	externalUserState?: string;
-	externalUserStateChangeDateTime?: any;
-	faxNumber?: string;
-	givenName?: string;
-	identities?: { results: Array<graph.objectIdentity> };
-	imAddresses?: { results: Array<string> };
-	isResourceAccount?: boolean;
-	jobTitle?: string;
-	lastPasswordChangeDateTime?: any;
-	legalAgeGroupClassification?: string;
-	licenseAssignmentStates?: { results: Array<graph.licenseAssignmentState> };
-	mail?: string;
-	mailNickname?: string;
-	mobilePhone?: string;
-	officeLocation?: string;
-	onPremisesDistinguishedName?: string;
-	onPremisesDomainName?: string;
-	onPremisesExtensionAttributes?: graph.onPremisesExtensionAttributes;
-	onPremisesImmutableId?: string;
-	onPremisesLastSyncDateTime?: any;
-	onPremisesProvisioningErrors?: { results: Array<graph.onPremisesProvisioningError> };
-	onPremisesSamAccountName?: string;
-	onPremisesSecurityIdentifier?: string;
-	onPremisesSyncEnabled?: boolean;
-	onPremisesUserPrincipalName?: string;
-	otherMails?: { results: Array<string> };
-	passwordPolicies?: string;
-	passwordProfile?: graph.passwordProfile;
-	postalCode?: string;
-	preferredDataLocation?: string;
-	preferredLanguage?: string;
-	provisionedPlans?: { results: Array<graph.provisionedPlan> };
-	proxyAddresses?: { results: Array<string> };
-	showInAddressList?: boolean;
-	signInSessionsValidFromDateTime?: any;
-	state?: string;
-	streetAddress?: string;
-	surname?: string;
-	usageLocation?: string;
-	userPrincipalName?: string;
-	userType?: string;
-	mailboxSettings?: graph.mailboxSettings;
-	deviceEnrollmentLimit?: number;
-	aboutMe?: string;
-	birthday?: any;
-	hireDate?: any;
-	interests?: { results: Array<string> };
-	mySite?: string;
-	pastProjects?: { results: Array<string> };
-	preferredName?: string;
-	responsibilities?: { results: Array<string> };
-	schools?: { results: Array<string> };
-	skills?: { results: Array<string> };
+export interface user  {
+	accountEnabled: boolean;
+	ageGroup: string;
+	assignedLicenses: ComplexTypes.assignedLicense[];
+	assignedPlans: ComplexTypes.assignedPlan[];
+	businessPhones: Array<string>[];
+	city: string;
+	companyName: string;
+	consentProvidedForMinor: string;
+	country: string;
+	createdDateTime: any;
+	creationType: string;
+	department: string;
+	displayName: string;
+	employeeHireDate: any;
+	employeeId: string;
+	employeeOrgData: ComplexTypes.employeeOrgData;
+	employeeType: string;
+	externalUserState: string;
+	externalUserStateChangeDateTime: any;
+	faxNumber: string;
+	givenName: string;
+	identities: ComplexTypes.objectIdentity[];
+	imAddresses: Array<string>[];
+	isResourceAccount: boolean;
+	jobTitle: string;
+	lastPasswordChangeDateTime: any;
+	legalAgeGroupClassification: string;
+	licenseAssignmentStates: ComplexTypes.licenseAssignmentState[];
+	mail: string;
+	mailNickname: string;
+	mobilePhone: string;
+	officeLocation: string;
+	onPremisesDistinguishedName: string;
+	onPremisesDomainName: string;
+	onPremisesExtensionAttributes: ComplexTypes.onPremisesExtensionAttributes;
+	onPremisesImmutableId: string;
+	onPremisesLastSyncDateTime: any;
+	onPremisesProvisioningErrors: ComplexTypes.onPremisesProvisioningError[];
+	onPremisesSamAccountName: string;
+	onPremisesSecurityIdentifier: string;
+	onPremisesSyncEnabled: boolean;
+	onPremisesUserPrincipalName: string;
+	otherMails: Array<string>[];
+	passwordPolicies: string;
+	passwordProfile: ComplexTypes.passwordProfile;
+	postalCode: string;
+	preferredDataLocation: string;
+	preferredLanguage: string;
+	provisionedPlans: ComplexTypes.provisionedPlan[];
+	proxyAddresses: Array<string>[];
+	showInAddressList: boolean;
+	signInSessionsValidFromDateTime: any;
+	state: string;
+	streetAddress: string;
+	surname: string;
+	usageLocation: string;
+	userPrincipalName: string;
+	userType: string;
+	mailboxSettings: ComplexTypes.mailboxSettings;
+	deviceEnrollmentLimit: number;
+	aboutMe: string;
+	birthday: any;
+	hireDate: any;
+	interests: Array<string>[];
+	mySite: string;
+	pastProjects: Array<string>[];
+	preferredName: string;
+	responsibilities: Array<string>[];
+	schools: Array<string>[];
+	skills: Array<string>[];
 }
-
-/*********************************************
-* userCollections
-**********************************************/
-export interface userCollections {
-
-}
-
 /*********************************************
 * appRoleAssignment
 **********************************************/
-export interface appRoleAssignment {
-	appRoleId?: any;
-	createdDateTime?: any;
-	principalDisplayName?: string;
-	principalId?: any;
-	principalType?: string;
-	resourceDisplayName?: string;
-	resourceId?: any;
+export interface appRoleAssignment  {
+	appRoleId: any;
+	createdDateTime: any;
+	principalDisplayName: string;
+	principalId: any;
+	principalType: string;
+	resourceDisplayName: string;
+	resourceId: any;
 }
-
-/*********************************************
-* appRoleAssignmentCollections
-**********************************************/
-export interface appRoleAssignmentCollections {
-
-}
-
 /*********************************************
 * licenseDetails
 **********************************************/
-export interface licenseDetails {
-	servicePlans?: { results: Array<graph.servicePlanInfo> };
-	skuId?: any;
-	skuPartNumber?: string;
+export interface licenseDetails  {
+	servicePlans: ComplexTypes.servicePlanInfo[];
+	skuId: any;
+	skuPartNumber: string;
 }
-
-/*********************************************
-* licenseDetailsCollections
-**********************************************/
-export interface licenseDetailsCollections {
-
-}
-
 /*********************************************
 * oAuth2PermissionGrant
 **********************************************/
-export interface oAuth2PermissionGrant {
-	clientId?: string;
-	consentType?: string;
-	principalId?: string;
-	resourceId?: string;
-	scope?: string;
+export interface oAuth2PermissionGrant  {
+	clientId: string;
+	consentType: string;
+	principalId: string;
+	resourceId: string;
+	scope: string;
 }
-
-/*********************************************
-* oAuth2PermissionGrantCollections
-**********************************************/
-export interface oAuth2PermissionGrantCollections {
-
-}
-
 /*********************************************
 * scopedRoleMembership
 **********************************************/
-export interface scopedRoleMembership {
-	administrativeUnitId?: string;
-	roleId?: string;
-	roleMemberInfo?: graph.identity;
+export interface scopedRoleMembership  {
+	administrativeUnitId: string;
+	roleId: string;
+	roleMemberInfo: ComplexTypes.identity;
 }
-
-/*********************************************
-* scopedRoleMembershipCollections
-**********************************************/
-export interface scopedRoleMembershipCollections {
-
-}
-
 /*********************************************
 * calendar
 **********************************************/
-export interface calendar {
-	allowedOnlineMeetingProviders?: { results: Array<graph.onlineMeetingProviderType> };
-	canEdit?: boolean;
-	canShare?: boolean;
-	canViewPrivateItems?: boolean;
-	changeKey?: string;
-	color?: graph.calendarColor;
-	defaultOnlineMeetingProvider?: graph.onlineMeetingProviderType;
-	hexColor?: string;
-	isDefaultCalendar?: boolean;
-	isRemovable?: boolean;
-	isTallyingResponses?: boolean;
-	name?: string;
-	owner?: graph.emailAddress;
+export interface calendar  {
+	allowedOnlineMeetingProviders: EnumTypes.onlineMeetingProviderType[];
+	canEdit: boolean;
+	canShare: boolean;
+	canViewPrivateItems: boolean;
+	changeKey: string;
+	color: EnumTypes.calendarColor;
+	defaultOnlineMeetingProvider: EnumTypes.onlineMeetingProviderType;
+	hexColor: string;
+	isDefaultCalendar: boolean;
+	isRemovable: boolean;
+	isTallyingResponses: boolean;
+	name: string;
+	owner: ComplexTypes.emailAddress;
 }
-
-/*********************************************
-* calendarCollections
-**********************************************/
-export interface calendarCollections {
-
-}
-
 /*********************************************
 * calendarGroup
 **********************************************/
-export interface calendarGroup {
-	changeKey?: string;
-	classId?: any;
-	name?: string;
+export interface calendarGroup  {
+	changeKey: string;
+	classId: any;
+	name: string;
 }
-
-/*********************************************
-* calendarGroupCollections
-**********************************************/
-export interface calendarGroupCollections {
-
-}
-
 /*********************************************
 * outlookItem
 **********************************************/
-export interface outlookItem {
-	categories?: { results: Array<string> };
-	changeKey?: string;
-	createdDateTime?: any;
-	lastModifiedDateTime?: any;
+export interface outlookItem  {
+	categories: Array<string>[];
+	changeKey: string;
+	createdDateTime: any;
+	lastModifiedDateTime: any;
 }
-
-/*********************************************
-* outlookItemCollections
-**********************************************/
-export interface outlookItemCollections {
-
-}
-
 /*********************************************
 * event
 **********************************************/
-export interface event {
-	allowNewTimeProposals?: boolean;
-	attendees?: { results: Array<graph.attendee> };
-	body?: graph.itemBody;
-	bodyPreview?: string;
-	end?: graph.dateTimeTimeZone;
-	hasAttachments?: boolean;
-	hideAttendees?: boolean;
-	iCalUId?: string;
-	importance?: graph.importance;
-	isAllDay?: boolean;
-	isCancelled?: boolean;
-	isDraft?: boolean;
-	isOnlineMeeting?: boolean;
-	isOrganizer?: boolean;
-	isReminderOn?: boolean;
-	location?: graph.location;
-	locations?: { results: Array<graph.location> };
-	onlineMeeting?: graph.onlineMeetingInfo;
-	onlineMeetingProvider?: graph.onlineMeetingProviderType;
-	onlineMeetingUrl?: string;
-	organizer?: graph.recipient;
-	originalEndTimeZone?: string;
-	originalStart?: any;
-	originalStartTimeZone?: string;
-	recurrence?: graph.patternedRecurrence;
-	reminderMinutesBeforeStart?: number;
-	responseRequested?: boolean;
-	responseStatus?: graph.responseStatus;
-	sensitivity?: graph.sensitivity;
-	seriesMasterId?: string;
-	showAs?: graph.freeBusyStatus;
-	start?: graph.dateTimeTimeZone;
-	subject?: string;
-	transactionId?: string;
-	type?: graph.eventType;
-	webLink?: string;
+export interface event  {
+	allowNewTimeProposals: boolean;
+	attendees: ComplexTypes.attendee[];
+	body: ComplexTypes.itemBody;
+	bodyPreview: string;
+	end: ComplexTypes.dateTimeTimeZone;
+	hasAttachments: boolean;
+	hideAttendees: boolean;
+	iCalUId: string;
+	importance: EnumTypes.importance;
+	isAllDay: boolean;
+	isCancelled: boolean;
+	isDraft: boolean;
+	isOnlineMeeting: boolean;
+	isOrganizer: boolean;
+	isReminderOn: boolean;
+	location: ComplexTypes.location;
+	locations: ComplexTypes.location[];
+	onlineMeeting: ComplexTypes.onlineMeetingInfo;
+	onlineMeetingProvider: EnumTypes.onlineMeetingProviderType;
+	onlineMeetingUrl: string;
+	organizer: ComplexTypes.recipient;
+	originalEndTimeZone: string;
+	originalStart: any;
+	originalStartTimeZone: string;
+	recurrence: ComplexTypes.patternedRecurrence;
+	reminderMinutesBeforeStart: number;
+	responseRequested: boolean;
+	responseStatus: ComplexTypes.responseStatus;
+	sensitivity: EnumTypes.sensitivity;
+	seriesMasterId: string;
+	showAs: EnumTypes.freeBusyStatus;
+	start: ComplexTypes.dateTimeTimeZone;
+	subject: string;
+	transactionId: string;
+	type: EnumTypes.eventType;
+	webLink: string;
 }
-
-/*********************************************
-* eventCollections
-**********************************************/
-export interface eventCollections {
-
-}
-
 /*********************************************
 * contactFolder
 **********************************************/
-export interface contactFolder {
-	displayName?: string;
-	parentFolderId?: string;
+export interface contactFolder  {
+	displayName: string;
+	parentFolderId: string;
 }
-
-/*********************************************
-* contactFolderCollections
-**********************************************/
-export interface contactFolderCollections {
-
-}
-
 /*********************************************
 * contact
 **********************************************/
-export interface contact {
-	assistantName?: string;
-	birthday?: any;
-	businessAddress?: graph.physicalAddress;
-	businessHomePage?: string;
-	businessPhones?: { results: Array<string> };
-	children?: { results: Array<string> };
-	companyName?: string;
-	department?: string;
-	displayName?: string;
-	emailAddresses?: { results: Array<graph.emailAddress> };
-	fileAs?: string;
-	generation?: string;
-	givenName?: string;
-	homeAddress?: graph.physicalAddress;
-	homePhones?: { results: Array<string> };
-	imAddresses?: { results: Array<string> };
-	initials?: string;
-	jobTitle?: string;
-	manager?: string;
-	middleName?: string;
-	mobilePhone?: string;
-	nickName?: string;
-	officeLocation?: string;
-	otherAddress?: graph.physicalAddress;
-	parentFolderId?: string;
-	personalNotes?: string;
-	profession?: string;
-	spouseName?: string;
-	surname?: string;
-	title?: string;
-	yomiCompanyName?: string;
-	yomiGivenName?: string;
-	yomiSurname?: string;
+export interface contact  {
+	assistantName: string;
+	birthday: any;
+	businessAddress: ComplexTypes.physicalAddress;
+	businessHomePage: string;
+	businessPhones: Array<string>[];
+	children: Array<string>[];
+	companyName: string;
+	department: string;
+	displayName: string;
+	emailAddresses: ComplexTypes.emailAddress[];
+	fileAs: string;
+	generation: string;
+	givenName: string;
+	homeAddress: ComplexTypes.physicalAddress;
+	homePhones: Array<string>[];
+	imAddresses: Array<string>[];
+	initials: string;
+	jobTitle: string;
+	manager: string;
+	middleName: string;
+	mobilePhone: string;
+	nickName: string;
+	officeLocation: string;
+	otherAddress: ComplexTypes.physicalAddress;
+	parentFolderId: string;
+	personalNotes: string;
+	profession: string;
+	spouseName: string;
+	surname: string;
+	title: string;
+	yomiCompanyName: string;
+	yomiGivenName: string;
+	yomiSurname: string;
 }
-
-/*********************************************
-* contactCollections
-**********************************************/
-export interface contactCollections {
-
-}
-
 /*********************************************
 * inferenceClassification
 **********************************************/
-export interface inferenceClassification {
+export interface inferenceClassification  {
 
 }
-
-/*********************************************
-* inferenceClassificationCollections
-**********************************************/
-export interface inferenceClassificationCollections {
-
-}
-
 /*********************************************
 * mailFolder
 **********************************************/
-export interface mailFolder {
-	childFolderCount?: number;
-	displayName?: string;
-	isHidden?: boolean;
-	parentFolderId?: string;
-	totalItemCount?: number;
-	unreadItemCount?: number;
+export interface mailFolder  {
+	childFolderCount: number;
+	displayName: string;
+	isHidden: boolean;
+	parentFolderId: string;
+	totalItemCount: number;
+	unreadItemCount: number;
 }
-
-/*********************************************
-* mailFolderCollections
-**********************************************/
-export interface mailFolderCollections {
-
-}
-
 /*********************************************
 * message
 **********************************************/
-export interface message {
-	bccRecipients?: { results: Array<graph.recipient> };
-	body?: graph.itemBody;
-	bodyPreview?: string;
-	ccRecipients?: { results: Array<graph.recipient> };
-	conversationId?: string;
-	conversationIndex?: any;
-	flag?: graph.followupFlag;
-	from?: graph.recipient;
-	hasAttachments?: boolean;
-	importance?: graph.importance;
-	inferenceClassification?: graph.inferenceClassificationType;
-	internetMessageHeaders?: { results: Array<graph.internetMessageHeader> };
-	internetMessageId?: string;
-	isDeliveryReceiptRequested?: boolean;
-	isDraft?: boolean;
-	isRead?: boolean;
-	isReadReceiptRequested?: boolean;
-	parentFolderId?: string;
-	receivedDateTime?: any;
-	replyTo?: { results: Array<graph.recipient> };
-	sender?: graph.recipient;
-	sentDateTime?: any;
-	subject?: string;
-	toRecipients?: { results: Array<graph.recipient> };
-	uniqueBody?: graph.itemBody;
-	webLink?: string;
+export interface message  {
+	bccRecipients: ComplexTypes.recipient[];
+	body: ComplexTypes.itemBody;
+	bodyPreview: string;
+	ccRecipients: ComplexTypes.recipient[];
+	conversationId: string;
+	conversationIndex: any;
+	flag: ComplexTypes.followupFlag;
+	from: ComplexTypes.recipient;
+	hasAttachments: boolean;
+	importance: EnumTypes.importance;
+	inferenceClassification: EnumTypes.inferenceClassificationType;
+	internetMessageHeaders: ComplexTypes.internetMessageHeader[];
+	internetMessageId: string;
+	isDeliveryReceiptRequested: boolean;
+	isDraft: boolean;
+	isRead: boolean;
+	isReadReceiptRequested: boolean;
+	parentFolderId: string;
+	receivedDateTime: any;
+	replyTo: ComplexTypes.recipient[];
+	sender: ComplexTypes.recipient;
+	sentDateTime: any;
+	subject: string;
+	toRecipients: ComplexTypes.recipient[];
+	uniqueBody: ComplexTypes.itemBody;
+	webLink: string;
 }
-
-/*********************************************
-* messageCollections
-**********************************************/
-export interface messageCollections {
-
-}
-
 /*********************************************
 * outlookUser
 **********************************************/
-export interface outlookUser {
+export interface outlookUser  {
 
 }
-
-/*********************************************
-* outlookUserCollections
-**********************************************/
-export interface outlookUserCollections {
-
-}
-
 /*********************************************
 * person
 **********************************************/
-export interface person {
-	birthday?: string;
-	companyName?: string;
-	department?: string;
-	displayName?: string;
-	givenName?: string;
-	imAddress?: string;
-	isFavorite?: boolean;
-	jobTitle?: string;
-	officeLocation?: string;
-	personNotes?: string;
-	personType?: graph.personType;
-	phones?: { results: Array<graph.phone> };
-	postalAddresses?: { results: Array<graph.location> };
-	profession?: string;
-	scoredEmailAddresses?: { results: Array<graph.scoredEmailAddress> };
-	surname?: string;
-	userPrincipalName?: string;
-	websites?: { results: Array<graph.website> };
-	yomiCompany?: string;
+export interface person  {
+	birthday: string;
+	companyName: string;
+	department: string;
+	displayName: string;
+	givenName: string;
+	imAddress: string;
+	isFavorite: boolean;
+	jobTitle: string;
+	officeLocation: string;
+	personNotes: string;
+	personType: ComplexTypes.personType;
+	phones: ComplexTypes.phone[];
+	postalAddresses: ComplexTypes.location[];
+	profession: string;
+	scoredEmailAddresses: ComplexTypes.scoredEmailAddress[];
+	surname: string;
+	userPrincipalName: string;
+	websites: ComplexTypes.website[];
+	yomiCompany: string;
 }
-
-/*********************************************
-* personCollections
-**********************************************/
-export interface personCollections {
-
-}
-
 /*********************************************
 * baseItem
 **********************************************/
-export interface baseItem {
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	description?: string;
-	eTag?: string;
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
-	name?: string;
-	parentReference?: graph.itemReference;
-	webUrl?: string;
+export interface baseItem  {
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	description: string;
+	eTag: string;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
+	name: string;
+	parentReference: ComplexTypes.itemReference;
+	webUrl: string;
 }
-
-/*********************************************
-* baseItemCollections
-**********************************************/
-export interface baseItemCollections {
-
-}
-
 /*********************************************
 * drive
 **********************************************/
-export interface drive {
-	driveType?: string;
-	owner?: graph.identitySet;
-	quota?: graph.quota;
-	sharePointIds?: graph.sharepointIds;
-	system?: graph.systemFacet;
+export interface drive  {
+	driveType: string;
+	owner: ComplexTypes.identitySet;
+	quota: ComplexTypes.quota;
+	sharePointIds: ComplexTypes.sharepointIds;
+	system: ComplexTypes.systemFacet;
 }
-
-/*********************************************
-* driveCollections
-**********************************************/
-export interface driveCollections {
-
-}
-
 /*********************************************
 * site
 **********************************************/
-export interface site {
-	displayName?: string;
-	error?: graph.publicError;
-	root?: graph.root;
-	sharepointIds?: graph.sharepointIds;
-	siteCollection?: graph.siteCollection;
+export interface site  {
+	displayName: string;
+	error: ComplexTypes.publicError;
+	root: ComplexTypes.root;
+	sharepointIds: ComplexTypes.sharepointIds;
+	siteCollection: ComplexTypes.siteCollection;
 }
-
-/*********************************************
-* siteCollections
-**********************************************/
-export interface siteCollections {
-
-}
-
 /*********************************************
 * extension
 **********************************************/
-export interface extension {
+export interface extension  {
 
 }
-
-/*********************************************
-* extensionCollections
-**********************************************/
-export interface extensionCollections {
-
-}
-
 /*********************************************
 * agreementAcceptance
 **********************************************/
-export interface agreementAcceptance {
-	agreementFileId?: string;
-	agreementId?: string;
-	deviceDisplayName?: string;
-	deviceId?: string;
-	deviceOSType?: string;
-	deviceOSVersion?: string;
-	expirationDateTime?: any;
-	recordedDateTime?: any;
-	state?: graph.agreementAcceptanceState;
-	userDisplayName?: string;
-	userEmail?: string;
-	userId?: string;
-	userPrincipalName?: string;
+export interface agreementAcceptance  {
+	agreementFileId: string;
+	agreementId: string;
+	deviceDisplayName: string;
+	deviceId: string;
+	deviceOSType: string;
+	deviceOSVersion: string;
+	expirationDateTime: any;
+	recordedDateTime: any;
+	state: EnumTypes.agreementAcceptanceState;
+	userDisplayName: string;
+	userEmail: string;
+	userId: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* agreementAcceptanceCollections
-**********************************************/
-export interface agreementAcceptanceCollections {
-
-}
-
 /*********************************************
 * managedDevice
 **********************************************/
-export interface managedDevice {
-	activationLockBypassCode?: string;
-	androidSecurityPatchLevel?: string;
-	azureADDeviceId?: string;
-	azureADRegistered?: boolean;
-	complianceGracePeriodExpirationDateTime?: any;
-	complianceState?: graph.complianceState;
-	configurationManagerClientEnabledFeatures?: graph.configurationManagerClientEnabledFeatures;
-	deviceActionResults?: { results: Array<graph.deviceActionResult> };
-	deviceCategoryDisplayName?: string;
-	deviceEnrollmentType?: graph.deviceEnrollmentType;
-	deviceHealthAttestationState?: graph.deviceHealthAttestationState;
-	deviceName?: string;
-	deviceRegistrationState?: graph.deviceRegistrationState;
-	easActivated?: boolean;
-	easActivationDateTime?: any;
-	easDeviceId?: string;
-	emailAddress?: string;
-	enrolledDateTime?: any;
-	ethernetMacAddress?: string;
-	exchangeAccessState?: graph.deviceManagementExchangeAccessState;
-	exchangeAccessStateReason?: graph.deviceManagementExchangeAccessStateReason;
-	exchangeLastSuccessfulSyncDateTime?: any;
-	freeStorageSpaceInBytes?: number;
-	iccid?: string;
-	imei?: string;
-	isEncrypted?: boolean;
-	isSupervised?: boolean;
-	jailBroken?: string;
-	lastSyncDateTime?: any;
-	managedDeviceName?: string;
-	managedDeviceOwnerType?: graph.managedDeviceOwnerType;
-	managementAgent?: graph.managementAgentType;
-	manufacturer?: string;
-	meid?: string;
-	model?: string;
-	notes?: string;
-	operatingSystem?: string;
-	osVersion?: string;
-	partnerReportedThreatState?: graph.managedDevicePartnerReportedHealthState;
-	phoneNumber?: string;
-	physicalMemoryInBytes?: number;
-	remoteAssistanceSessionErrorDetails?: string;
-	remoteAssistanceSessionUrl?: string;
-	serialNumber?: string;
-	subscriberCarrier?: string;
-	totalStorageSpaceInBytes?: number;
-	udid?: string;
-	userDisplayName?: string;
-	userId?: string;
-	userPrincipalName?: string;
-	wiFiMacAddress?: string;
+export interface managedDevice  {
+	activationLockBypassCode: string;
+	androidSecurityPatchLevel: string;
+	azureADDeviceId: string;
+	azureADRegistered: boolean;
+	complianceGracePeriodExpirationDateTime: any;
+	complianceState: EnumTypes.complianceState;
+	configurationManagerClientEnabledFeatures: ComplexTypes.configurationManagerClientEnabledFeatures;
+	deviceActionResults: ComplexTypes.deviceActionResult[];
+	deviceCategoryDisplayName: string;
+	deviceEnrollmentType: EnumTypes.deviceEnrollmentType;
+	deviceHealthAttestationState: ComplexTypes.deviceHealthAttestationState;
+	deviceName: string;
+	deviceRegistrationState: EnumTypes.deviceRegistrationState;
+	easActivated: boolean;
+	easActivationDateTime: any;
+	easDeviceId: string;
+	emailAddress: string;
+	enrolledDateTime: any;
+	ethernetMacAddress: string;
+	exchangeAccessState: EnumTypes.deviceManagementExchangeAccessState;
+	exchangeAccessStateReason: EnumTypes.deviceManagementExchangeAccessStateReason;
+	exchangeLastSuccessfulSyncDateTime: any;
+	freeStorageSpaceInBytes: number;
+	iccid: string;
+	imei: string;
+	isEncrypted: boolean;
+	isSupervised: boolean;
+	jailBroken: string;
+	lastSyncDateTime: any;
+	managedDeviceName: string;
+	managedDeviceOwnerType: EnumTypes.managedDeviceOwnerType;
+	managementAgent: EnumTypes.managementAgentType;
+	manufacturer: string;
+	meid: string;
+	model: string;
+	notes: string;
+	operatingSystem: string;
+	osVersion: string;
+	partnerReportedThreatState: EnumTypes.managedDevicePartnerReportedHealthState;
+	phoneNumber: string;
+	physicalMemoryInBytes: number;
+	remoteAssistanceSessionErrorDetails: string;
+	remoteAssistanceSessionUrl: string;
+	serialNumber: string;
+	subscriberCarrier: string;
+	totalStorageSpaceInBytes: number;
+	udid: string;
+	userDisplayName: string;
+	userId: string;
+	userPrincipalName: string;
+	wiFiMacAddress: string;
 }
-
-/*********************************************
-* managedDeviceCollections
-**********************************************/
-export interface managedDeviceCollections {
-
-}
-
 /*********************************************
 * managedAppRegistration
 **********************************************/
-export interface managedAppRegistration {
-	appIdentifier?: graph.mobileAppIdentifier;
-	applicationVersion?: string;
-	createdDateTime?: any;
-	deviceName?: string;
-	deviceTag?: string;
-	deviceType?: string;
-	flaggedReasons?: { results: Array<graph.managedAppFlaggedReason> };
-	lastSyncDateTime?: any;
-	managementSdkVersion?: string;
-	platformVersion?: string;
-	userId?: string;
-	version?: string;
+export interface managedAppRegistration  {
+	appIdentifier: ComplexTypes.mobileAppIdentifier;
+	applicationVersion: string;
+	createdDateTime: any;
+	deviceName: string;
+	deviceTag: string;
+	deviceType: string;
+	flaggedReasons: EnumTypes.managedAppFlaggedReason[];
+	lastSyncDateTime: any;
+	managementSdkVersion: string;
+	platformVersion: string;
+	userId: string;
+	version: string;
 }
-
-/*********************************************
-* managedAppRegistrationCollections
-**********************************************/
-export interface managedAppRegistrationCollections {
-
-}
-
 /*********************************************
 * deviceManagementTroubleshootingEvent
 **********************************************/
-export interface deviceManagementTroubleshootingEvent {
-	correlationId?: string;
-	eventDateTime?: any;
+export interface deviceManagementTroubleshootingEvent  {
+	correlationId: string;
+	eventDateTime: any;
 }
-
-/*********************************************
-* deviceManagementTroubleshootingEventCollections
-**********************************************/
-export interface deviceManagementTroubleshootingEventCollections {
-
-}
-
 /*********************************************
 * plannerUser
 **********************************************/
-export interface plannerUser {
+export interface plannerUser  {
 
 }
-
-/*********************************************
-* plannerUserCollections
-**********************************************/
-export interface plannerUserCollections {
-
-}
-
 /*********************************************
 * officeGraphInsights
 **********************************************/
-export interface officeGraphInsights {
+export interface officeGraphInsights  {
 
 }
-
-/*********************************************
-* officeGraphInsightsCollections
-**********************************************/
-export interface officeGraphInsightsCollections {
-
-}
-
 /*********************************************
 * userSettings
 **********************************************/
-export interface userSettings {
-	contributionToContentDiscoveryAsOrganizationDisabled?: boolean;
-	contributionToContentDiscoveryDisabled?: boolean;
+export interface userSettings  {
+	contributionToContentDiscoveryAsOrganizationDisabled: boolean;
+	contributionToContentDiscoveryDisabled: boolean;
 }
-
-/*********************************************
-* userSettingsCollections
-**********************************************/
-export interface userSettingsCollections {
-
-}
-
 /*********************************************
 * onenote
 **********************************************/
-export interface onenote {
+export interface onenote  {
 
 }
-
-/*********************************************
-* onenoteCollections
-**********************************************/
-export interface onenoteCollections {
-
-}
-
 /*********************************************
 * profilePhoto
 **********************************************/
-export interface profilePhoto {
-	height?: number;
-	width?: number;
+export interface profilePhoto  {
+	height: number;
+	width: number;
 }
-
-/*********************************************
-* profilePhotoCollections
-**********************************************/
-export interface profilePhotoCollections {
-
-}
-
 /*********************************************
 * userActivity
 **********************************************/
-export interface userActivity {
-	activationUrl?: string;
-	activitySourceHost?: string;
-	appActivityId?: string;
-	appDisplayName?: string;
-	contentInfo?: graph.Json;
-	contentUrl?: string;
-	createdDateTime?: any;
-	expirationDateTime?: any;
-	fallbackUrl?: string;
-	lastModifiedDateTime?: any;
-	status?: graph.status;
-	userTimezone?: string;
-	visualElements?: graph.visualInfo;
+export interface userActivity  {
+	activationUrl: string;
+	activitySourceHost: string;
+	appActivityId: string;
+	appDisplayName: string;
+	contentInfo: ComplexTypes.Json;
+	contentUrl: string;
+	createdDateTime: any;
+	expirationDateTime: any;
+	fallbackUrl: string;
+	lastModifiedDateTime: any;
+	status: EnumTypes.status;
+	userTimezone: string;
+	visualElements: ComplexTypes.visualInfo;
 }
-
-/*********************************************
-* userActivityCollections
-**********************************************/
-export interface userActivityCollections {
-
-}
-
 /*********************************************
 * onlineMeeting
 **********************************************/
-export interface onlineMeeting {
-	allowAttendeeToEnableCamera?: boolean;
-	allowAttendeeToEnableMic?: boolean;
-	allowedPresenters?: graph.onlineMeetingPresenters;
-	allowMeetingChat?: graph.meetingChatMode;
-	allowTeamworkReactions?: boolean;
-	attendeeReport?: any;
-	audioConferencing?: graph.audioConferencing;
-	broadcastSettings?: graph.broadcastMeetingSettings;
-	chatInfo?: graph.chatInfo;
-	creationDateTime?: any;
-	endDateTime?: any;
-	externalId?: string;
-	isBroadcast?: boolean;
-	isEntryExitAnnounced?: boolean;
-	joinInformation?: graph.itemBody;
-	joinWebUrl?: string;
-	lobbyBypassSettings?: graph.lobbyBypassSettings;
-	participants?: graph.meetingParticipants;
-	recordAutomatically?: boolean;
-	startDateTime?: any;
-	subject?: string;
-	videoTeleconferenceId?: string;
+export interface onlineMeeting  {
+	allowAttendeeToEnableCamera: boolean;
+	allowAttendeeToEnableMic: boolean;
+	allowedPresenters: EnumTypes.onlineMeetingPresenters;
+	allowMeetingChat: EnumTypes.meetingChatMode;
+	allowTeamworkReactions: boolean;
+	attendeeReport: any;
+	audioConferencing: ComplexTypes.audioConferencing;
+	broadcastSettings: ComplexTypes.broadcastMeetingSettings;
+	chatInfo: ComplexTypes.chatInfo;
+	creationDateTime: any;
+	endDateTime: any;
+	externalId: string;
+	isBroadcast: boolean;
+	isEntryExitAnnounced: boolean;
+	joinInformation: ComplexTypes.itemBody;
+	joinWebUrl: string;
+	lobbyBypassSettings: ComplexTypes.lobbyBypassSettings;
+	participants: ComplexTypes.meetingParticipants;
+	recordAutomatically: boolean;
+	startDateTime: any;
+	subject: string;
+	videoTeleconferenceId: string;
 }
-
-/*********************************************
-* onlineMeetingCollections
-**********************************************/
-export interface onlineMeetingCollections {
-
-}
-
 /*********************************************
 * presence
 **********************************************/
-export interface presence {
-	activity?: string;
-	availability?: string;
+export interface presence  {
+	activity: string;
+	availability: string;
 }
-
-/*********************************************
-* presenceCollections
-**********************************************/
-export interface presenceCollections {
-
-}
-
 /*********************************************
 * authentication
 **********************************************/
-export interface authentication {
+export interface authentication  {
 
 }
-
-/*********************************************
-* authenticationCollections
-**********************************************/
-export interface authenticationCollections {
-
-}
-
 /*********************************************
 * chat
 **********************************************/
-export interface chat {
-	chatType?: graph.chatType;
-	createdDateTime?: any;
-	lastUpdatedDateTime?: any;
-	onlineMeetingInfo?: graph.teamworkOnlineMeetingInfo;
-	tenantId?: string;
-	topic?: string;
-	webUrl?: string;
+export interface chat  {
+	chatType: EnumTypes.chatType;
+	createdDateTime: any;
+	lastUpdatedDateTime: any;
+	onlineMeetingInfo: ComplexTypes.teamworkOnlineMeetingInfo;
+	tenantId: string;
+	topic: string;
+	webUrl: string;
 }
-
-/*********************************************
-* chatCollections
-**********************************************/
-export interface chatCollections {
-
-}
-
 /*********************************************
 * team
 **********************************************/
-export interface team {
-	classification?: string;
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	funSettings?: graph.teamFunSettings;
-	guestSettings?: graph.teamGuestSettings;
-	internalId?: string;
-	isArchived?: boolean;
-	memberSettings?: graph.teamMemberSettings;
-	messagingSettings?: graph.teamMessagingSettings;
-	specialization?: graph.teamSpecialization;
-	summary?: graph.teamSummary;
-	tenantId?: string;
-	visibility?: graph.teamVisibilityType;
-	webUrl?: string;
+export interface team  {
+	classification: string;
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	funSettings: ComplexTypes.teamFunSettings;
+	guestSettings: ComplexTypes.teamGuestSettings;
+	internalId: string;
+	isArchived: boolean;
+	memberSettings: ComplexTypes.teamMemberSettings;
+	messagingSettings: ComplexTypes.teamMessagingSettings;
+	specialization: EnumTypes.teamSpecialization;
+	summary: ComplexTypes.teamSummary;
+	tenantId: string;
+	visibility: EnumTypes.teamVisibilityType;
+	webUrl: string;
 }
-
-/*********************************************
-* teamCollections
-**********************************************/
-export interface teamCollections {
-
-}
-
 /*********************************************
 * userTeamwork
 **********************************************/
-export interface userTeamwork {
+export interface userTeamwork  {
 
 }
-
-/*********************************************
-* userTeamworkCollections
-**********************************************/
-export interface userTeamworkCollections {
-
-}
-
 /*********************************************
 * todo
 **********************************************/
-export interface todo {
+export interface todo  {
 
 }
-
-/*********************************************
-* todoCollections
-**********************************************/
-export interface todoCollections {
-
-}
-
 /*********************************************
 * application
 **********************************************/
-export interface application {
-	addIns?: { results: Array<graph.addIn> };
-	api?: graph.apiApplication;
-	appId?: string;
-	applicationTemplateId?: string;
-	appRoles?: { results: Array<graph.appRole> };
-	certification?: graph.certification;
-	createdDateTime?: any;
-	description?: string;
-	disabledByMicrosoftStatus?: string;
-	displayName?: string;
-	groupMembershipClaims?: string;
-	identifierUris?: { results: Array<string> };
-	info?: graph.informationalUrl;
-	isDeviceOnlyAuthSupported?: boolean;
-	isFallbackPublicClient?: boolean;
-	keyCredentials?: { results: Array<graph.keyCredential> };
-	logo?: any;
-	notes?: string;
-	oauth2RequirePostResponse?: boolean;
-	optionalClaims?: graph.optionalClaims;
-	parentalControlSettings?: graph.parentalControlSettings;
-	passwordCredentials?: { results: Array<graph.passwordCredential> };
-	publicClient?: graph.publicClientApplication;
-	publisherDomain?: string;
-	requiredResourceAccess?: { results: Array<graph.requiredResourceAccess> };
-	samlMetadataUrl?: string;
-	serviceManagementReference?: string;
-	signInAudience?: string;
-	spa?: graph.spaApplication;
-	tags?: { results: Array<string> };
-	tokenEncryptionKeyId?: any;
-	verifiedPublisher?: graph.verifiedPublisher;
-	web?: graph.webApplication;
+export interface application  {
+	addIns: ComplexTypes.addIn[];
+	api: ComplexTypes.apiApplication;
+	appId: string;
+	applicationTemplateId: string;
+	appRoles: ComplexTypes.appRole[];
+	certification: ComplexTypes.certification;
+	createdDateTime: any;
+	description: string;
+	disabledByMicrosoftStatus: string;
+	displayName: string;
+	groupMembershipClaims: string;
+	identifierUris: Array<string>[];
+	info: ComplexTypes.informationalUrl;
+	isDeviceOnlyAuthSupported: boolean;
+	isFallbackPublicClient: boolean;
+	keyCredentials: ComplexTypes.keyCredential[];
+	logo: any;
+	notes: string;
+	oauth2RequirePostResponse: boolean;
+	optionalClaims: ComplexTypes.optionalClaims;
+	parentalControlSettings: ComplexTypes.parentalControlSettings;
+	passwordCredentials: ComplexTypes.passwordCredential[];
+	publicClient: ComplexTypes.publicClientApplication;
+	publisherDomain: string;
+	requiredResourceAccess: ComplexTypes.requiredResourceAccess[];
+	samlMetadataUrl: string;
+	serviceManagementReference: string;
+	signInAudience: string;
+	spa: ComplexTypes.spaApplication;
+	tags: Array<string>[];
+	tokenEncryptionKeyId: any;
+	verifiedPublisher: ComplexTypes.verifiedPublisher;
+	web: ComplexTypes.webApplication;
 }
-
-/*********************************************
-* applicationCollections
-**********************************************/
-export interface applicationCollections {
-
-}
-
 /*********************************************
 * servicePrincipal
 **********************************************/
-export interface servicePrincipal {
-	accountEnabled?: boolean;
-	addIns?: { results: Array<graph.addIn> };
-	alternativeNames?: { results: Array<string> };
-	appDescription?: string;
-	appDisplayName?: string;
-	appId?: string;
-	applicationTemplateId?: string;
-	appOwnerOrganizationId?: any;
-	appRoleAssignmentRequired?: boolean;
-	appRoles?: { results: Array<graph.appRole> };
-	description?: string;
-	disabledByMicrosoftStatus?: string;
-	displayName?: string;
-	homepage?: string;
-	info?: graph.informationalUrl;
-	keyCredentials?: { results: Array<graph.keyCredential> };
-	loginUrl?: string;
-	logoutUrl?: string;
-	notes?: string;
-	notificationEmailAddresses?: { results: Array<string> };
-	oauth2PermissionScopes?: { results: Array<graph.permissionScope> };
-	passwordCredentials?: { results: Array<graph.passwordCredential> };
-	preferredSingleSignOnMode?: string;
-	preferredTokenSigningKeyThumbprint?: string;
-	replyUrls?: { results: Array<string> };
-	resourceSpecificApplicationPermissions?: { results: Array<graph.resourceSpecificPermission> };
-	samlSingleSignOnSettings?: graph.samlSingleSignOnSettings;
-	servicePrincipalNames?: { results: Array<string> };
-	servicePrincipalType?: string;
-	signInAudience?: string;
-	tags?: { results: Array<string> };
-	tokenEncryptionKeyId?: any;
+export interface servicePrincipal  {
+	accountEnabled: boolean;
+	addIns: ComplexTypes.addIn[];
+	alternativeNames: Array<string>[];
+	appDescription: string;
+	appDisplayName: string;
+	appId: string;
+	applicationTemplateId: string;
+	appOwnerOrganizationId: any;
+	appRoleAssignmentRequired: boolean;
+	appRoles: ComplexTypes.appRole[];
+	description: string;
+	disabledByMicrosoftStatus: string;
+	displayName: string;
+	homepage: string;
+	info: ComplexTypes.informationalUrl;
+	keyCredentials: ComplexTypes.keyCredential[];
+	loginUrl: string;
+	logoutUrl: string;
+	notes: string;
+	notificationEmailAddresses: Array<string>[];
+	oauth2PermissionScopes: ComplexTypes.permissionScope[];
+	passwordCredentials: ComplexTypes.passwordCredential[];
+	preferredSingleSignOnMode: string;
+	preferredTokenSigningKeyThumbprint: string;
+	replyUrls: Array<string>[];
+	resourceSpecificApplicationPermissions: ComplexTypes.resourceSpecificPermission[];
+	samlSingleSignOnSettings: ComplexTypes.samlSingleSignOnSettings;
+	servicePrincipalNames: Array<string>[];
+	servicePrincipalType: string;
+	signInAudience: string;
+	tags: Array<string>[];
+	tokenEncryptionKeyId: any;
 }
-
-/*********************************************
-* servicePrincipalCollections
-**********************************************/
-export interface servicePrincipalCollections {
-
-}
-
 /*********************************************
 * extensionProperty
 **********************************************/
-export interface extensionProperty {
-	appDisplayName?: string;
-	dataType?: string;
-	isSyncedFromOnPremises?: boolean;
-	name?: string;
-	targetObjects?: { results: Array<string> };
+export interface extensionProperty  {
+	appDisplayName: string;
+	dataType: string;
+	isSyncedFromOnPremises: boolean;
+	name: string;
+	targetObjects: Array<string>[];
 }
-
-/*********************************************
-* extensionPropertyCollections
-**********************************************/
-export interface extensionPropertyCollections {
-
-}
-
 /*********************************************
 * federatedIdentityCredential
 **********************************************/
-export interface federatedIdentityCredential {
-	audiences?: { results: Array<string> };
-	description?: string;
-	issuer?: string;
-	name?: string;
-	subject?: string;
+export interface federatedIdentityCredential  {
+	audiences: Array<string>[];
+	description: string;
+	issuer: string;
+	name: string;
+	subject: string;
 }
-
-/*********************************************
-* federatedIdentityCredentialCollections
-**********************************************/
-export interface federatedIdentityCredentialCollections {
-
-}
-
 /*********************************************
 * policyBase
 **********************************************/
-export interface policyBase {
-	description?: string;
-	displayName?: string;
+export interface policyBase  {
+	description: string;
+	displayName: string;
 }
-
-/*********************************************
-* policyBaseCollections
-**********************************************/
-export interface policyBaseCollections {
-
-}
-
 /*********************************************
 * stsPolicy
 **********************************************/
-export interface stsPolicy {
-	definition?: { results: Array<string> };
-	isOrganizationDefault?: boolean;
+export interface stsPolicy  {
+	definition: Array<string>[];
+	isOrganizationDefault: boolean;
 }
-
-/*********************************************
-* stsPolicyCollections
-**********************************************/
-export interface stsPolicyCollections {
-
-}
-
 /*********************************************
 * homeRealmDiscoveryPolicy
 **********************************************/
-export interface homeRealmDiscoveryPolicy {
+export interface homeRealmDiscoveryPolicy  {
 
 }
-
-/*********************************************
-* homeRealmDiscoveryPolicyCollections
-**********************************************/
-export interface homeRealmDiscoveryPolicyCollections {
-
-}
-
 /*********************************************
 * tokenIssuancePolicy
 **********************************************/
-export interface tokenIssuancePolicy {
+export interface tokenIssuancePolicy  {
 
 }
-
-/*********************************************
-* tokenIssuancePolicyCollections
-**********************************************/
-export interface tokenIssuancePolicyCollections {
-
-}
-
 /*********************************************
 * tokenLifetimePolicy
 **********************************************/
-export interface tokenLifetimePolicy {
+export interface tokenLifetimePolicy  {
 
 }
-
-/*********************************************
-* tokenLifetimePolicyCollections
-**********************************************/
-export interface tokenLifetimePolicyCollections {
-
-}
-
 /*********************************************
 * applicationTemplate
 **********************************************/
-export interface applicationTemplate {
-	categories?: { results: Array<string> };
-	description?: string;
-	displayName?: string;
-	homePageUrl?: string;
-	logoUrl?: string;
-	publisher?: string;
-	supportedProvisioningTypes?: { results: Array<string> };
-	supportedSingleSignOnModes?: { results: Array<string> };
+export interface applicationTemplate  {
+	categories: Array<string>[];
+	description: string;
+	displayName: string;
+	homePageUrl: string;
+	logoUrl: string;
+	publisher: string;
+	supportedProvisioningTypes: Array<string>[];
+	supportedSingleSignOnModes: Array<string>[];
 }
-
-/*********************************************
-* applicationTemplateCollections
-**********************************************/
-export interface applicationTemplateCollections {
-
-}
-
 /*********************************************
 * claimsMappingPolicy
 **********************************************/
-export interface claimsMappingPolicy {
+export interface claimsMappingPolicy  {
 
 }
-
-/*********************************************
-* claimsMappingPolicyCollections
-**********************************************/
-export interface claimsMappingPolicyCollections {
-
-}
-
 /*********************************************
 * delegatedPermissionClassification
 **********************************************/
-export interface delegatedPermissionClassification {
-	classification?: graph.permissionClassificationType;
-	permissionId?: string;
-	permissionName?: string;
+export interface delegatedPermissionClassification  {
+	classification: EnumTypes.permissionClassificationType;
+	permissionId: string;
+	permissionName: string;
 }
-
-/*********************************************
-* delegatedPermissionClassificationCollections
-**********************************************/
-export interface delegatedPermissionClassificationCollections {
-
-}
-
 /*********************************************
 * endpoint
 **********************************************/
-export interface endpoint {
-	capability?: string;
-	providerId?: string;
-	providerName?: string;
-	providerResourceId?: string;
-	uri?: string;
+export interface endpoint  {
+	capability: string;
+	providerId: string;
+	providerName: string;
+	providerResourceId: string;
+	uri: string;
 }
-
-/*********************************************
-* endpointCollections
-**********************************************/
-export interface endpointCollections {
-
-}
-
 /*********************************************
 * authenticationMethodConfiguration
 **********************************************/
-export interface authenticationMethodConfiguration {
-	state?: graph.authenticationMethodState;
+export interface authenticationMethodConfiguration  {
+	state: EnumTypes.authenticationMethodState;
 }
-
-/*********************************************
-* authenticationMethodConfigurationCollections
-**********************************************/
-export interface authenticationMethodConfigurationCollections {
-
-}
-
 /*********************************************
 * authenticationMethodsPolicy
 **********************************************/
-export interface authenticationMethodsPolicy {
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	policyVersion?: string;
-	reconfirmationInDays?: number;
-	registrationEnforcement?: graph.registrationEnforcement;
+export interface authenticationMethodsPolicy  {
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	policyVersion: string;
+	reconfirmationInDays: number;
+	registrationEnforcement: ComplexTypes.registrationEnforcement;
 }
-
-/*********************************************
-* authenticationMethodsPolicyCollections
-**********************************************/
-export interface authenticationMethodsPolicyCollections {
-
-}
-
 /*********************************************
 * authenticationMethodTarget
 **********************************************/
-export interface authenticationMethodTarget {
-	isRegistrationRequired?: boolean;
-	targetType?: graph.authenticationMethodTargetType;
+export interface authenticationMethodTarget  {
+	isRegistrationRequired: boolean;
+	targetType: EnumTypes.authenticationMethodTargetType;
 }
-
-/*********************************************
-* authenticationMethodTargetCollections
-**********************************************/
-export interface authenticationMethodTargetCollections {
-
-}
-
 /*********************************************
 * emailAuthenticationMethodConfiguration
 **********************************************/
-export interface emailAuthenticationMethodConfiguration {
-	allowExternalIdToUseEmailOtp?: graph.externalEmailOtpState;
+export interface emailAuthenticationMethodConfiguration  {
+	allowExternalIdToUseEmailOtp: EnumTypes.externalEmailOtpState;
 }
-
-/*********************************************
-* emailAuthenticationMethodConfigurationCollections
-**********************************************/
-export interface emailAuthenticationMethodConfigurationCollections {
-
-}
-
 /*********************************************
 * fido2AuthenticationMethodConfiguration
 **********************************************/
-export interface fido2AuthenticationMethodConfiguration {
-	isAttestationEnforced?: boolean;
-	isSelfServiceRegistrationAllowed?: boolean;
-	keyRestrictions?: graph.fido2KeyRestrictions;
+export interface fido2AuthenticationMethodConfiguration  {
+	isAttestationEnforced: boolean;
+	isSelfServiceRegistrationAllowed: boolean;
+	keyRestrictions: ComplexTypes.fido2KeyRestrictions;
 }
-
-/*********************************************
-* fido2AuthenticationMethodConfigurationCollections
-**********************************************/
-export interface fido2AuthenticationMethodConfigurationCollections {
-
-}
-
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethodConfiguration
 **********************************************/
-export interface microsoftAuthenticatorAuthenticationMethodConfiguration {
+export interface microsoftAuthenticatorAuthenticationMethodConfiguration  {
 
 }
-
-/*********************************************
-* microsoftAuthenticatorAuthenticationMethodConfigurationCollections
-**********************************************/
-export interface microsoftAuthenticatorAuthenticationMethodConfigurationCollections {
-
-}
-
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethodTarget
 **********************************************/
-export interface microsoftAuthenticatorAuthenticationMethodTarget {
-	authenticationMode?: graph.microsoftAuthenticatorAuthenticationMode;
+export interface microsoftAuthenticatorAuthenticationMethodTarget  {
+	authenticationMode: EnumTypes.microsoftAuthenticatorAuthenticationMode;
 }
-
-/*********************************************
-* microsoftAuthenticatorAuthenticationMethodTargetCollections
-**********************************************/
-export interface microsoftAuthenticatorAuthenticationMethodTargetCollections {
-
-}
-
 /*********************************************
 * policyRoot
 **********************************************/
-export interface policyRoot {
+export interface policyRoot  {
 
 }
-
-/*********************************************
-* policyRootCollections
-**********************************************/
-export interface policyRootCollections {
-
-}
-
 /*********************************************
 * authenticationFlowsPolicy
 **********************************************/
-export interface authenticationFlowsPolicy {
-	description?: string;
-	displayName?: string;
-	selfServiceSignUp?: graph.selfServiceSignUpAuthenticationFlowConfiguration;
+export interface authenticationFlowsPolicy  {
+	description: string;
+	displayName: string;
+	selfServiceSignUp: ComplexTypes.selfServiceSignUpAuthenticationFlowConfiguration;
 }
-
-/*********************************************
-* authenticationFlowsPolicyCollections
-**********************************************/
-export interface authenticationFlowsPolicyCollections {
-
-}
-
 /*********************************************
 * activityBasedTimeoutPolicy
 **********************************************/
-export interface activityBasedTimeoutPolicy {
+export interface activityBasedTimeoutPolicy  {
 
 }
-
-/*********************************************
-* activityBasedTimeoutPolicyCollections
-**********************************************/
-export interface activityBasedTimeoutPolicyCollections {
-
-}
-
 /*********************************************
 * authorizationPolicy
 **********************************************/
-export interface authorizationPolicy {
-	allowedToSignUpEmailBasedSubscriptions?: boolean;
-	allowedToUseSSPR?: boolean;
-	allowEmailVerifiedUsersToJoinOrganization?: boolean;
-	allowInvitesFrom?: graph.allowInvitesFrom;
-	blockMsolPowerShell?: boolean;
-	defaultUserRolePermissions?: graph.defaultUserRolePermissions;
-	guestUserRoleId?: any;
+export interface authorizationPolicy  {
+	allowedToSignUpEmailBasedSubscriptions: boolean;
+	allowedToUseSSPR: boolean;
+	allowEmailVerifiedUsersToJoinOrganization: boolean;
+	allowInvitesFrom: EnumTypes.allowInvitesFrom;
+	blockMsolPowerShell: boolean;
+	defaultUserRolePermissions: ComplexTypes.defaultUserRolePermissions;
+	guestUserRoleId: any;
 }
-
-/*********************************************
-* authorizationPolicyCollections
-**********************************************/
-export interface authorizationPolicyCollections {
-
-}
-
 /*********************************************
 * crossTenantAccessPolicy
 **********************************************/
-export interface crossTenantAccessPolicy {
+export interface crossTenantAccessPolicy  {
 
 }
-
-/*********************************************
-* crossTenantAccessPolicyCollections
-**********************************************/
-export interface crossTenantAccessPolicyCollections {
-
-}
-
 /*********************************************
 * permissionGrantPolicy
 **********************************************/
-export interface permissionGrantPolicy {
+export interface permissionGrantPolicy  {
 
 }
-
-/*********************************************
-* permissionGrantPolicyCollections
-**********************************************/
-export interface permissionGrantPolicyCollections {
-
-}
-
 /*********************************************
 * featureRolloutPolicy
 **********************************************/
-export interface featureRolloutPolicy {
-	description?: string;
-	displayName?: string;
-	feature?: graph.stagedFeatureName;
-	isAppliedToOrganization?: boolean;
-	isEnabled?: boolean;
+export interface featureRolloutPolicy  {
+	description: string;
+	displayName: string;
+	feature: EnumTypes.stagedFeatureName;
+	isAppliedToOrganization: boolean;
+	isEnabled: boolean;
 }
-
-/*********************************************
-* featureRolloutPolicyCollections
-**********************************************/
-export interface featureRolloutPolicyCollections {
-
-}
-
 /*********************************************
 * adminConsentRequestPolicy
 **********************************************/
-export interface adminConsentRequestPolicy {
-	isEnabled?: boolean;
-	notifyReviewers?: boolean;
-	remindersEnabled?: boolean;
-	requestDurationInDays?: number;
-	reviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	version?: number;
+export interface adminConsentRequestPolicy  {
+	isEnabled: boolean;
+	notifyReviewers: boolean;
+	remindersEnabled: boolean;
+	requestDurationInDays: number;
+	reviewers: ComplexTypes.accessReviewReviewerScope[];
+	version: number;
 }
-
-/*********************************************
-* adminConsentRequestPolicyCollections
-**********************************************/
-export interface adminConsentRequestPolicyCollections {
-
-}
-
 /*********************************************
 * conditionalAccessPolicy
 **********************************************/
-export interface conditionalAccessPolicy {
-	conditions?: graph.conditionalAccessConditionSet;
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	grantControls?: graph.conditionalAccessGrantControls;
-	modifiedDateTime?: any;
-	sessionControls?: graph.conditionalAccessSessionControls;
-	state?: graph.conditionalAccessPolicyState;
+export interface conditionalAccessPolicy  {
+	conditions: ComplexTypes.conditionalAccessConditionSet;
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	grantControls: ComplexTypes.conditionalAccessGrantControls;
+	modifiedDateTime: any;
+	sessionControls: ComplexTypes.conditionalAccessSessionControls;
+	state: EnumTypes.conditionalAccessPolicyState;
 }
-
-/*********************************************
-* conditionalAccessPolicyCollections
-**********************************************/
-export interface conditionalAccessPolicyCollections {
-
-}
-
 /*********************************************
 * identitySecurityDefaultsEnforcementPolicy
 **********************************************/
-export interface identitySecurityDefaultsEnforcementPolicy {
-	isEnabled?: boolean;
+export interface identitySecurityDefaultsEnforcementPolicy  {
+	isEnabled: boolean;
 }
-
-/*********************************************
-* identitySecurityDefaultsEnforcementPolicyCollections
-**********************************************/
-export interface identitySecurityDefaultsEnforcementPolicyCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicy
 **********************************************/
-export interface unifiedRoleManagementPolicy {
-	description?: string;
-	displayName?: string;
-	isOrganizationDefault?: boolean;
-	lastModifiedBy?: graph.identity;
-	lastModifiedDateTime?: any;
-	scopeId?: string;
-	scopeType?: string;
+export interface unifiedRoleManagementPolicy  {
+	description: string;
+	displayName: string;
+	isOrganizationDefault: boolean;
+	lastModifiedBy: ComplexTypes.identity;
+	lastModifiedDateTime: any;
+	scopeId: string;
+	scopeType: string;
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicyAssignment
 **********************************************/
-export interface unifiedRoleManagementPolicyAssignment {
-	policyId?: string;
-	roleDefinitionId?: string;
-	scopeId?: string;
-	scopeType?: string;
+export interface unifiedRoleManagementPolicyAssignment  {
+	policyId: string;
+	roleDefinitionId: string;
+	scopeId: string;
+	scopeType: string;
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyAssignmentCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyAssignmentCollections {
-
-}
-
 /*********************************************
 * temporaryAccessPassAuthenticationMethodConfiguration
 **********************************************/
-export interface temporaryAccessPassAuthenticationMethodConfiguration {
-	defaultLength?: number;
-	defaultLifetimeInMinutes?: number;
-	isUsableOnce?: boolean;
-	maximumLifetimeInMinutes?: number;
-	minimumLifetimeInMinutes?: number;
+export interface temporaryAccessPassAuthenticationMethodConfiguration  {
+	defaultLength: number;
+	defaultLifetimeInMinutes: number;
+	isUsableOnce: boolean;
+	maximumLifetimeInMinutes: number;
+	minimumLifetimeInMinutes: number;
 }
-
-/*********************************************
-* temporaryAccessPassAuthenticationMethodConfigurationCollections
-**********************************************/
-export interface temporaryAccessPassAuthenticationMethodConfigurationCollections {
-
-}
-
 /*********************************************
 * bitlocker
 **********************************************/
-export interface bitlocker {
+export interface bitlocker  {
 
 }
-
-/*********************************************
-* bitlockerCollections
-**********************************************/
-export interface bitlockerCollections {
-
-}
-
 /*********************************************
 * bitlockerRecoveryKey
 **********************************************/
-export interface bitlockerRecoveryKey {
-	createdDateTime?: any;
-	deviceId?: string;
-	key?: string;
-	volumeType?: graph.volumeType;
+export interface bitlockerRecoveryKey  {
+	createdDateTime: any;
+	deviceId: string;
+	key: string;
+	volumeType: EnumTypes.volumeType;
 }
-
-/*********************************************
-* bitlockerRecoveryKeyCollections
-**********************************************/
-export interface bitlockerRecoveryKeyCollections {
-
-}
-
 /*********************************************
 * informationProtection
 **********************************************/
-export interface informationProtection {
+export interface informationProtection  {
 
 }
-
-/*********************************************
-* informationProtectionCollections
-**********************************************/
-export interface informationProtectionCollections {
-
-}
-
 /*********************************************
 * threatAssessmentRequest
 **********************************************/
-export interface threatAssessmentRequest {
-	category?: graph.threatCategory;
-	contentType?: graph.threatAssessmentContentType;
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	expectedAssessment?: graph.threatExpectedAssessment;
-	requestSource?: graph.threatAssessmentRequestSource;
-	status?: graph.threatAssessmentStatus;
+export interface threatAssessmentRequest  {
+	category: EnumTypes.threatCategory;
+	contentType: EnumTypes.threatAssessmentContentType;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	expectedAssessment: EnumTypes.threatExpectedAssessment;
+	requestSource: EnumTypes.threatAssessmentRequestSource;
+	status: EnumTypes.threatAssessmentStatus;
 }
-
-/*********************************************
-* threatAssessmentRequestCollections
-**********************************************/
-export interface threatAssessmentRequestCollections {
-
-}
-
 /*********************************************
 * bookingAppointment
 **********************************************/
-export interface bookingAppointment {
-	additionalInformation?: string;
-	customers?: { results: Array<graph.bookingCustomerInformationBase> };
-	customerTimeZone?: string;
-	duration?: number;
-	endDateTime?: graph.dateTimeTimeZone;
-	filledAttendeesCount?: number;
-	isLocationOnline?: boolean;
-	joinWebUrl?: string;
-	maximumAttendeesCount?: number;
-	optOutOfCustomerEmail?: boolean;
-	postBuffer?: number;
-	preBuffer?: number;
-	price?: number;
-	priceType?: graph.bookingPriceType;
-	reminders?: { results: Array<graph.bookingReminder> };
-	selfServiceAppointmentId?: string;
-	serviceId?: string;
-	serviceLocation?: graph.location;
-	serviceName?: string;
-	serviceNotes?: string;
-	smsNotificationsEnabled?: boolean;
-	staffMemberIds?: { results: Array<string> };
-	startDateTime?: graph.dateTimeTimeZone;
+export interface bookingAppointment  {
+	additionalInformation: string;
+	customers: ComplexTypes.bookingCustomerInformationBase[];
+	customerTimeZone: string;
+	duration: number;
+	endDateTime: ComplexTypes.dateTimeTimeZone;
+	filledAttendeesCount: number;
+	isLocationOnline: boolean;
+	joinWebUrl: string;
+	maximumAttendeesCount: number;
+	optOutOfCustomerEmail: boolean;
+	postBuffer: number;
+	preBuffer: number;
+	price: number;
+	priceType: EnumTypes.bookingPriceType;
+	reminders: ComplexTypes.bookingReminder[];
+	selfServiceAppointmentId: string;
+	serviceId: string;
+	serviceLocation: ComplexTypes.location;
+	serviceName: string;
+	serviceNotes: string;
+	smsNotificationsEnabled: boolean;
+	staffMemberIds: Array<string>[];
+	startDateTime: ComplexTypes.dateTimeTimeZone;
 }
-
-/*********************************************
-* bookingAppointmentCollections
-**********************************************/
-export interface bookingAppointmentCollections {
-
-}
-
 /*********************************************
 * bookingBusiness
 **********************************************/
-export interface bookingBusiness {
-	address?: graph.physicalAddress;
-	businessHours?: { results: Array<graph.bookingWorkHours> };
-	businessType?: string;
-	defaultCurrencyIso?: string;
-	displayName?: string;
-	email?: string;
-	isPublished?: boolean;
-	phone?: string;
-	publicUrl?: string;
-	schedulingPolicy?: graph.bookingSchedulingPolicy;
-	webSiteUrl?: string;
+export interface bookingBusiness  {
+	address: ComplexTypes.physicalAddress;
+	businessHours: ComplexTypes.bookingWorkHours[];
+	businessType: string;
+	defaultCurrencyIso: string;
+	displayName: string;
+	email: string;
+	isPublished: boolean;
+	phone: string;
+	publicUrl: string;
+	schedulingPolicy: ComplexTypes.bookingSchedulingPolicy;
+	webSiteUrl: string;
 }
-
-/*********************************************
-* bookingBusinessCollections
-**********************************************/
-export interface bookingBusinessCollections {
-
-}
-
 /*********************************************
 * bookingCustomerBase
 **********************************************/
-export interface bookingCustomerBase {
+export interface bookingCustomerBase  {
 
 }
-
-/*********************************************
-* bookingCustomerBaseCollections
-**********************************************/
-export interface bookingCustomerBaseCollections {
-
-}
-
 /*********************************************
 * bookingCustomQuestion
 **********************************************/
-export interface bookingCustomQuestion {
-	answerInputType?: graph.answerInputType;
-	answerOptions?: { results: Array<string> };
-	displayName?: string;
+export interface bookingCustomQuestion  {
+	answerInputType: EnumTypes.answerInputType;
+	answerOptions: Array<string>[];
+	displayName: string;
 }
-
-/*********************************************
-* bookingCustomQuestionCollections
-**********************************************/
-export interface bookingCustomQuestionCollections {
-
-}
-
 /*********************************************
 * bookingService
 **********************************************/
-export interface bookingService {
-	additionalInformation?: string;
-	customQuestions?: { results: Array<graph.bookingQuestionAssignment> };
-	defaultDuration?: number;
-	defaultLocation?: graph.location;
-	defaultPrice?: number;
-	defaultPriceType?: graph.bookingPriceType;
-	defaultReminders?: { results: Array<graph.bookingReminder> };
-	description?: string;
-	displayName?: string;
-	isHiddenFromCustomers?: boolean;
-	isLocationOnline?: boolean;
-	maximumAttendeesCount?: number;
-	notes?: string;
-	postBuffer?: number;
-	preBuffer?: number;
-	schedulingPolicy?: graph.bookingSchedulingPolicy;
-	smsNotificationsEnabled?: boolean;
-	staffMemberIds?: { results: Array<string> };
-	webUrl?: string;
+export interface bookingService  {
+	additionalInformation: string;
+	customQuestions: ComplexTypes.bookingQuestionAssignment[];
+	defaultDuration: number;
+	defaultLocation: ComplexTypes.location;
+	defaultPrice: number;
+	defaultPriceType: EnumTypes.bookingPriceType;
+	defaultReminders: ComplexTypes.bookingReminder[];
+	description: string;
+	displayName: string;
+	isHiddenFromCustomers: boolean;
+	isLocationOnline: boolean;
+	maximumAttendeesCount: number;
+	notes: string;
+	postBuffer: number;
+	preBuffer: number;
+	schedulingPolicy: ComplexTypes.bookingSchedulingPolicy;
+	smsNotificationsEnabled: boolean;
+	staffMemberIds: Array<string>[];
+	webUrl: string;
 }
-
-/*********************************************
-* bookingServiceCollections
-**********************************************/
-export interface bookingServiceCollections {
-
-}
-
 /*********************************************
 * bookingStaffMemberBase
 **********************************************/
-export interface bookingStaffMemberBase {
+export interface bookingStaffMemberBase  {
 
 }
-
-/*********************************************
-* bookingStaffMemberBaseCollections
-**********************************************/
-export interface bookingStaffMemberBaseCollections {
-
-}
-
 /*********************************************
 * bookingCurrency
 **********************************************/
-export interface bookingCurrency {
-	symbol?: string;
+export interface bookingCurrency  {
+	symbol: string;
 }
-
-/*********************************************
-* bookingCurrencyCollections
-**********************************************/
-export interface bookingCurrencyCollections {
-
-}
-
 /*********************************************
 * bookingCustomer
 **********************************************/
-export interface bookingCustomer {
-	addresses?: { results: Array<graph.physicalAddress> };
-	displayName?: string;
-	emailAddress?: string;
-	phones?: { results: Array<graph.phone> };
+export interface bookingCustomer  {
+	addresses: ComplexTypes.physicalAddress[];
+	displayName: string;
+	emailAddress: string;
+	phones: ComplexTypes.phone[];
 }
-
-/*********************************************
-* bookingCustomerCollections
-**********************************************/
-export interface bookingCustomerCollections {
-
-}
-
 /*********************************************
 * bookingStaffMember
 **********************************************/
-export interface bookingStaffMember {
-	availabilityIsAffectedByPersonalCalendar?: boolean;
-	displayName?: string;
-	emailAddress?: string;
-	role?: graph.bookingStaffRole;
-	timeZone?: string;
-	useBusinessHours?: boolean;
-	workingHours?: { results: Array<graph.bookingWorkHours> };
+export interface bookingStaffMember  {
+	availabilityIsAffectedByPersonalCalendar: boolean;
+	displayName: string;
+	emailAddress: string;
+	role: EnumTypes.bookingStaffRole;
+	timeZone: string;
+	useBusinessHours: boolean;
+	workingHours: ComplexTypes.bookingWorkHours[];
 }
-
-/*********************************************
-* bookingStaffMemberCollections
-**********************************************/
-export interface bookingStaffMemberCollections {
-
-}
-
 /*********************************************
 * solutionsRoot
 **********************************************/
-export interface solutionsRoot {
+export interface solutionsRoot  {
 
 }
-
-/*********************************************
-* solutionsRootCollections
-**********************************************/
-export interface solutionsRootCollections {
-
-}
-
 /*********************************************
 * authoredNote
 **********************************************/
-export interface authoredNote {
-	author?: graph.identity;
-	content?: graph.itemBody;
-	createdDateTime?: any;
+export interface authoredNote  {
+	author: ComplexTypes.identity;
+	content: ComplexTypes.itemBody;
+	createdDateTime: any;
 }
-
-/*********************************************
-* authoredNoteCollections
-**********************************************/
-export interface authoredNoteCollections {
-
-}
-
 /*********************************************
 * privacy
 **********************************************/
-export interface privacy {
+export interface privacy  {
 
 }
-
-/*********************************************
-* privacyCollections
-**********************************************/
-export interface privacyCollections {
-
-}
-
 /*********************************************
 * subjectRightsRequest
 **********************************************/
-export interface subjectRightsRequest {
-	assignedTo?: graph.identity;
-	closedDateTime?: any;
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	dataSubject?: graph.dataSubject;
-	dataSubjectType?: graph.dataSubjectType;
-	description?: string;
-	displayName?: string;
-	history?: { results: Array<graph.subjectRightsRequestHistory> };
-	insight?: graph.subjectRightsRequestDetail;
-	internalDueDateTime?: any;
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
-	regulations?: { results: Array<string> };
-	stages?: { results: Array<graph.subjectRightsRequestStageDetail> };
-	status?: graph.subjectRightsRequestStatus;
-	type?: graph.subjectRightsRequestType;
+export interface subjectRightsRequest  {
+	assignedTo: ComplexTypes.identity;
+	closedDateTime: any;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	dataSubject: ComplexTypes.dataSubject;
+	dataSubjectType: EnumTypes.dataSubjectType;
+	description: string;
+	displayName: string;
+	history: ComplexTypes.subjectRightsRequestHistory[];
+	insight: ComplexTypes.subjectRightsRequestDetail;
+	internalDueDateTime: any;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
+	regulations: Array<string>[];
+	stages: ComplexTypes.subjectRightsRequestStageDetail[];
+	status: EnumTypes.subjectRightsRequestStatus;
+	type: EnumTypes.subjectRightsRequestType;
 }
-
-/*********************************************
-* subjectRightsRequestCollections
-**********************************************/
-export interface subjectRightsRequestCollections {
-
-}
-
 /*********************************************
 * channel
 **********************************************/
-export interface channel {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	email?: string;
-	isFavoriteByDefault?: boolean;
-	membershipType?: graph.channelMembershipType;
-	tenantId?: string;
-	webUrl?: string;
+export interface channel  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	email: string;
+	isFavoriteByDefault: boolean;
+	membershipType: EnumTypes.channelMembershipType;
+	tenantId: string;
+	webUrl: string;
 }
-
-/*********************************************
-* channelCollections
-**********************************************/
-export interface channelCollections {
-
-}
-
 /*********************************************
 * group
 **********************************************/
-export interface group {
-	assignedLabels?: { results: Array<graph.assignedLabel> };
-	assignedLicenses?: { results: Array<graph.assignedLicense> };
-	classification?: string;
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	expirationDateTime?: any;
-	groupTypes?: { results: Array<string> };
-	hasMembersWithLicenseErrors?: boolean;
-	isAssignableToRole?: boolean;
-	licenseProcessingState?: graph.licenseProcessingState;
-	mail?: string;
-	mailEnabled?: boolean;
-	mailNickname?: string;
-	membershipRule?: string;
-	membershipRuleProcessingState?: string;
-	onPremisesDomainName?: string;
-	onPremisesLastSyncDateTime?: any;
-	onPremisesNetBiosName?: string;
-	onPremisesProvisioningErrors?: { results: Array<graph.onPremisesProvisioningError> };
-	onPremisesSamAccountName?: string;
-	onPremisesSecurityIdentifier?: string;
-	onPremisesSyncEnabled?: boolean;
-	preferredDataLocation?: string;
-	preferredLanguage?: string;
-	proxyAddresses?: { results: Array<string> };
-	renewedDateTime?: any;
-	securityEnabled?: boolean;
-	securityIdentifier?: string;
-	theme?: string;
-	visibility?: string;
-	allowExternalSenders?: boolean;
-	autoSubscribeNewMembers?: boolean;
-	hideFromAddressLists?: boolean;
-	hideFromOutlookClients?: boolean;
-	isSubscribedByMail?: boolean;
-	unseenCount?: number;
-	isArchived?: boolean;
+export interface group  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	parentSiteId: string;
+	scope: EnumTypes.termGroupScope;
 }
-
-/*********************************************
-* groupCollections
-**********************************************/
-export interface groupCollections {
-
-}
-
 /*********************************************
 * teamsAppInstallation
 **********************************************/
-export interface teamsAppInstallation {
+export interface teamsAppInstallation  {
 
 }
-
-/*********************************************
-* teamsAppInstallationCollections
-**********************************************/
-export interface teamsAppInstallationCollections {
-
-}
-
 /*********************************************
 * conversationMember
 **********************************************/
-export interface conversationMember {
-	displayName?: string;
-	roles?: { results: Array<string> };
-	visibleHistoryStartDateTime?: any;
+export interface conversationMember  {
+	displayName: string;
+	roles: Array<string>[];
+	visibleHistoryStartDateTime: any;
 }
-
-/*********************************************
-* conversationMemberCollections
-**********************************************/
-export interface conversationMemberCollections {
-
-}
-
 /*********************************************
 * teamsAsyncOperation
 **********************************************/
-export interface teamsAsyncOperation {
-	attemptsCount?: number;
-	createdDateTime?: any;
-	error?: graph.operationError;
-	lastActionDateTime?: any;
-	operationType?: graph.teamsAsyncOperationType;
-	status?: graph.teamsAsyncOperationStatus;
-	targetResourceId?: string;
-	targetResourceLocation?: string;
+export interface teamsAsyncOperation  {
+	attemptsCount: number;
+	createdDateTime: any;
+	error: ComplexTypes.operationError;
+	lastActionDateTime: any;
+	operationType: EnumTypes.teamsAsyncOperationType;
+	status: EnumTypes.teamsAsyncOperationStatus;
+	targetResourceId: string;
+	targetResourceLocation: string;
 }
-
-/*********************************************
-* teamsAsyncOperationCollections
-**********************************************/
-export interface teamsAsyncOperationCollections {
-
-}
-
 /*********************************************
 * teamsTemplate
 **********************************************/
-export interface teamsTemplate {
+export interface teamsTemplate  {
 
 }
-
-/*********************************************
-* teamsTemplateCollections
-**********************************************/
-export interface teamsTemplateCollections {
-
-}
-
 /*********************************************
 * schedule
 **********************************************/
-export interface schedule {
-	enabled?: boolean;
-	offerShiftRequestsEnabled?: boolean;
-	openShiftsEnabled?: boolean;
-	provisionStatus?: graph.operationStatus;
-	provisionStatusCode?: string;
-	swapShiftsRequestsEnabled?: boolean;
-	timeClockEnabled?: boolean;
-	timeOffRequestsEnabled?: boolean;
-	timeZone?: string;
-	workforceIntegrationIds?: { results: Array<string> };
+export interface schedule  {
+	enabled: boolean;
+	offerShiftRequestsEnabled: boolean;
+	openShiftsEnabled: boolean;
+	provisionStatus: EnumTypes.operationStatus;
+	provisionStatusCode: string;
+	swapShiftsRequestsEnabled: boolean;
+	timeClockEnabled: boolean;
+	timeOffRequestsEnabled: boolean;
+	timeZone: string;
+	workforceIntegrationIds: Array<string>[];
 }
-
-/*********************************************
-* scheduleCollections
-**********************************************/
-export interface scheduleCollections {
-
-}
-
 /*********************************************
 * compliance
 **********************************************/
-export interface compliance {
+export interface compliance  {
 
 }
-
-/*********************************************
-* complianceCollections
-**********************************************/
-export interface complianceCollections {
-
-}
-
 /*********************************************
 * resourceSpecificPermissionGrant
 **********************************************/
-export interface resourceSpecificPermissionGrant {
-	clientAppId?: string;
-	clientId?: string;
-	permission?: string;
-	permissionType?: string;
-	resourceAppId?: string;
+export interface resourceSpecificPermissionGrant  {
+	clientAppId: string;
+	clientId: string;
+	permission: string;
+	permissionType: string;
+	resourceAppId: string;
 }
-
-/*********************************************
-* resourceSpecificPermissionGrantCollections
-**********************************************/
-export interface resourceSpecificPermissionGrantCollections {
-
-}
-
 /*********************************************
 * groupSetting
 **********************************************/
-export interface groupSetting {
-	displayName?: string;
-	templateId?: string;
-	values?: { results: Array<graph.settingValue> };
+export interface groupSetting  {
+	displayName: string;
+	templateId: string;
+	values: ComplexTypes.settingValue[];
 }
-
-/*********************************************
-* groupSettingCollections
-**********************************************/
-export interface groupSettingCollections {
-
-}
-
 /*********************************************
 * conversation
 **********************************************/
-export interface conversation {
-	hasAttachments?: boolean;
-	lastDeliveredDateTime?: any;
-	preview?: string;
-	topic?: string;
-	uniqueSenders?: { results: Array<string> };
+export interface conversation  {
+	hasAttachments: boolean;
+	lastDeliveredDateTime: any;
+	preview: string;
+	topic: string;
+	uniqueSenders: Array<string>[];
 }
-
-/*********************************************
-* conversationCollections
-**********************************************/
-export interface conversationCollections {
-
-}
-
 /*********************************************
 * conversationThread
 **********************************************/
-export interface conversationThread {
-	ccRecipients?: { results: Array<graph.recipient> };
-	hasAttachments?: boolean;
-	isLocked?: boolean;
-	lastDeliveredDateTime?: any;
-	preview?: string;
-	topic?: string;
-	toRecipients?: { results: Array<graph.recipient> };
-	uniqueSenders?: { results: Array<string> };
+export interface conversationThread  {
+	ccRecipients: ComplexTypes.recipient[];
+	hasAttachments: boolean;
+	isLocked: boolean;
+	lastDeliveredDateTime: any;
+	preview: string;
+	topic: string;
+	toRecipients: ComplexTypes.recipient[];
+	uniqueSenders: Array<string>[];
 }
-
-/*********************************************
-* conversationThreadCollections
-**********************************************/
-export interface conversationThreadCollections {
-
-}
-
 /*********************************************
 * groupLifecyclePolicy
 **********************************************/
-export interface groupLifecyclePolicy {
-	alternateNotificationEmails?: string;
-	groupLifetimeInDays?: number;
-	managedGroupTypes?: string;
+export interface groupLifecyclePolicy  {
+	alternateNotificationEmails: string;
+	groupLifetimeInDays: number;
+	managedGroupTypes: string;
 }
-
-/*********************************************
-* groupLifecyclePolicyCollections
-**********************************************/
-export interface groupLifecyclePolicyCollections {
-
-}
-
 /*********************************************
 * plannerGroup
 **********************************************/
-export interface plannerGroup {
+export interface plannerGroup  {
 
 }
-
-/*********************************************
-* plannerGroupCollections
-**********************************************/
-export interface plannerGroupCollections {
-
-}
-
 /*********************************************
 * security
 **********************************************/
-export interface security {
+export interface security  {
 
 }
-
-/*********************************************
-* securityCollections
-**********************************************/
-export interface securityCollections {
-
-}
-
 /*********************************************
 * alert
 **********************************************/
-export interface alert {
-	activityGroupName?: string;
-	alertDetections?: { results: Array<graph.alertDetection> };
-	assignedTo?: string;
-	azureSubscriptionId?: string;
-	azureTenantId?: string;
-	category?: string;
-	closedDateTime?: any;
-	cloudAppStates?: { results: Array<graph.cloudAppSecurityState> };
-	comments?: { results: Array<string> };
-	confidence?: number;
-	createdDateTime?: any;
-	description?: string;
-	detectionIds?: { results: Array<string> };
-	eventDateTime?: any;
-	feedback?: graph.alertFeedback;
-	fileStates?: { results: Array<graph.fileSecurityState> };
-	historyStates?: { results: Array<graph.alertHistoryState> };
-	hostStates?: { results: Array<graph.hostSecurityState> };
-	incidentIds?: { results: Array<string> };
-	investigationSecurityStates?: { results: Array<graph.investigationSecurityState> };
-	lastEventDateTime?: any;
-	lastModifiedDateTime?: any;
-	malwareStates?: { results: Array<graph.malwareState> };
-	messageSecurityStates?: { results: Array<graph.messageSecurityState> };
-	networkConnections?: { results: Array<graph.networkConnection> };
-	processes?: { results: Array<graph.process> };
-	recommendedActions?: { results: Array<string> };
-	registryKeyStates?: { results: Array<graph.registryKeyState> };
-	securityResources?: { results: Array<graph.securityResource> };
-	severity?: graph.alertSeverity;
-	sourceMaterials?: { results: Array<string> };
-	status?: graph.alertStatus;
-	tags?: { results: Array<string> };
-	title?: string;
-	triggers?: { results: Array<graph.alertTrigger> };
-	uriClickSecurityStates?: { results: Array<graph.uriClickSecurityState> };
-	userStates?: { results: Array<graph.userSecurityState> };
-	vendorInformation?: graph.securityVendorInformation;
-	vulnerabilityStates?: { results: Array<graph.vulnerabilityState> };
+export interface alert  {
+	activityGroupName: string;
+	alertDetections: ComplexTypes.alertDetection[];
+	assignedTo: string;
+	azureSubscriptionId: string;
+	azureTenantId: string;
+	category: string;
+	closedDateTime: any;
+	cloudAppStates: ComplexTypes.cloudAppSecurityState[];
+	comments: Array<string>[];
+	confidence: number;
+	createdDateTime: any;
+	description: string;
+	detectionIds: Array<string>[];
+	eventDateTime: any;
+	feedback: EnumTypes.alertFeedback;
+	fileStates: ComplexTypes.fileSecurityState[];
+	historyStates: ComplexTypes.alertHistoryState[];
+	hostStates: ComplexTypes.hostSecurityState[];
+	incidentIds: Array<string>[];
+	investigationSecurityStates: ComplexTypes.investigationSecurityState[];
+	lastEventDateTime: any;
+	lastModifiedDateTime: any;
+	malwareStates: ComplexTypes.malwareState[];
+	messageSecurityStates: ComplexTypes.messageSecurityState[];
+	networkConnections: ComplexTypes.networkConnection[];
+	processes: ComplexTypes.process[];
+	recommendedActions: Array<string>[];
+	registryKeyStates: ComplexTypes.registryKeyState[];
+	securityResources: ComplexTypes.securityResource[];
+	severity: EnumTypes.alertSeverity;
+	sourceMaterials: Array<string>[];
+	status: EnumTypes.alertStatus;
+	tags: Array<string>[];
+	title: string;
+	triggers: ComplexTypes.alertTrigger[];
+	uriClickSecurityStates: ComplexTypes.uriClickSecurityState[];
+	userStates: ComplexTypes.userSecurityState[];
+	vendorInformation: ComplexTypes.securityVendorInformation;
+	vulnerabilityStates: ComplexTypes.vulnerabilityState[];
 }
-
-/*********************************************
-* alertCollections
-**********************************************/
-export interface alertCollections {
-
-}
-
 /*********************************************
 * secureScoreControlProfile
 **********************************************/
-export interface secureScoreControlProfile {
-	actionType?: string;
-	actionUrl?: string;
-	azureTenantId?: string;
-	complianceInformation?: { results: Array<graph.complianceInformation> };
-	controlCategory?: string;
-	controlStateUpdates?: { results: Array<graph.secureScoreControlStateUpdate> };
-	deprecated?: boolean;
-	implementationCost?: string;
-	lastModifiedDateTime?: any;
-	maxScore?: number;
-	rank?: number;
-	remediation?: string;
-	remediationImpact?: string;
-	service?: string;
-	threats?: { results: Array<string> };
-	tier?: string;
-	title?: string;
-	userImpact?: string;
-	vendorInformation?: graph.securityVendorInformation;
+export interface secureScoreControlProfile  {
+	actionType: string;
+	actionUrl: string;
+	azureTenantId: string;
+	complianceInformation: ComplexTypes.complianceInformation[];
+	controlCategory: string;
+	controlStateUpdates: ComplexTypes.secureScoreControlStateUpdate[];
+	deprecated: boolean;
+	implementationCost: string;
+	lastModifiedDateTime: any;
+	maxScore: number;
+	rank: number;
+	remediation: string;
+	remediationImpact: string;
+	service: string;
+	threats: Array<string>[];
+	tier: string;
+	title: string;
+	userImpact: string;
+	vendorInformation: ComplexTypes.securityVendorInformation;
 }
-
-/*********************************************
-* secureScoreControlProfileCollections
-**********************************************/
-export interface secureScoreControlProfileCollections {
-
-}
-
 /*********************************************
 * secureScore
 **********************************************/
-export interface secureScore {
-	activeUserCount?: number;
-	averageComparativeScores?: { results: Array<graph.averageComparativeScore> };
-	azureTenantId?: string;
-	controlScores?: { results: Array<graph.controlScore> };
-	createdDateTime?: any;
-	currentScore?: number;
-	enabledServices?: { results: Array<string> };
-	licensedUserCount?: number;
-	maxScore?: number;
-	vendorInformation?: graph.securityVendorInformation;
+export interface secureScore  {
+	activeUserCount: number;
+	averageComparativeScores: ComplexTypes.averageComparativeScore[];
+	azureTenantId: string;
+	controlScores: ComplexTypes.controlScore[];
+	createdDateTime: any;
+	currentScore: number;
+	enabledServices: Array<string>[];
+	licensedUserCount: number;
+	maxScore: number;
+	vendorInformation: ComplexTypes.securityVendorInformation;
 }
-
-/*********************************************
-* secureScoreCollections
-**********************************************/
-export interface secureScoreCollections {
-
-}
-
 /*********************************************
 * itemAnalytics
 **********************************************/
-export interface itemAnalytics {
+export interface itemAnalytics  {
 
 }
-
-/*********************************************
-* itemAnalyticsCollections
-**********************************************/
-export interface itemAnalyticsCollections {
-
-}
-
 /*********************************************
 * columnDefinition
 **********************************************/
-export interface columnDefinition {
-	boolean?: graph.booleanColumn;
-	calculated?: graph.calculatedColumn;
-	choice?: graph.choiceColumn;
-	columnGroup?: string;
-	contentApprovalStatus?: graph.contentApprovalStatusColumn;
-	currency?: graph.currencyColumn;
-	dateTime?: graph.dateTimeColumn;
-	defaultValue?: graph.defaultColumnValue;
-	description?: string;
-	displayName?: string;
-	enforceUniqueValues?: boolean;
-	geolocation?: graph.geolocationColumn;
-	hidden?: boolean;
-	hyperlinkOrPicture?: graph.hyperlinkOrPictureColumn;
-	indexed?: boolean;
-	isDeletable?: boolean;
-	isReorderable?: boolean;
-	isSealed?: boolean;
-	lookup?: graph.lookupColumn;
-	name?: string;
-	number?: graph.numberColumn;
-	personOrGroup?: graph.personOrGroupColumn;
-	propagateChanges?: boolean;
-	readOnly?: boolean;
-	required?: boolean;
-	sourceContentType?: graph.contentTypeInfo;
-	term?: graph.termColumn;
-	text?: graph.textColumn;
-	thumbnail?: graph.thumbnailColumn;
-	type?: graph.columnTypes;
-	validation?: graph.columnValidation;
+export interface columnDefinition  {
+	boolean: ComplexTypes.booleanColumn;
+	calculated: ComplexTypes.calculatedColumn;
+	choice: ComplexTypes.choiceColumn;
+	columnGroup: string;
+	contentApprovalStatus: ComplexTypes.contentApprovalStatusColumn;
+	currency: ComplexTypes.currencyColumn;
+	dateTime: ComplexTypes.dateTimeColumn;
+	defaultValue: ComplexTypes.defaultColumnValue;
+	description: string;
+	displayName: string;
+	enforceUniqueValues: boolean;
+	geolocation: ComplexTypes.geolocationColumn;
+	hidden: boolean;
+	hyperlinkOrPicture: ComplexTypes.hyperlinkOrPictureColumn;
+	indexed: boolean;
+	isDeletable: boolean;
+	isReorderable: boolean;
+	isSealed: boolean;
+	lookup: ComplexTypes.lookupColumn;
+	name: string;
+	number: ComplexTypes.numberColumn;
+	personOrGroup: ComplexTypes.personOrGroupColumn;
+	propagateChanges: boolean;
+	readOnly: boolean;
+	required: boolean;
+	sourceContentType: ComplexTypes.contentTypeInfo;
+	term: ComplexTypes.termColumn;
+	text: ComplexTypes.textColumn;
+	thumbnail: ComplexTypes.thumbnailColumn;
+	type: EnumTypes.columnTypes;
+	validation: ComplexTypes.columnValidation;
 }
-
-/*********************************************
-* columnDefinitionCollections
-**********************************************/
-export interface columnDefinitionCollections {
-
-}
-
 /*********************************************
 * contentType
 **********************************************/
-export interface contentType {
-	associatedHubsUrls?: { results: Array<string> };
-	description?: string;
-	documentSet?: graph.documentSet;
-	documentTemplate?: graph.documentSetContent;
-	group?: string;
-	hidden?: boolean;
-	inheritedFrom?: graph.itemReference;
-	isBuiltIn?: boolean;
-	name?: string;
-	order?: graph.contentTypeOrder;
-	parentId?: string;
-	propagateChanges?: boolean;
-	readOnly?: boolean;
-	sealed?: boolean;
+export interface contentType  {
+	associatedHubsUrls: Array<string>[];
+	description: string;
+	documentSet: ComplexTypes.documentSet;
+	documentTemplate: ComplexTypes.documentSetContent;
+	group: string;
+	hidden: boolean;
+	inheritedFrom: ComplexTypes.itemReference;
+	isBuiltIn: boolean;
+	name: string;
+	order: ComplexTypes.contentTypeOrder;
+	parentId: string;
+	propagateChanges: boolean;
+	readOnly: boolean;
+	sealed: boolean;
 }
-
-/*********************************************
-* contentTypeCollections
-**********************************************/
-export interface contentTypeCollections {
-
-}
-
 /*********************************************
 * list
 **********************************************/
-export interface list {
-	displayName?: string;
-	list?: graph.listInfo;
-	sharepointIds?: graph.sharepointIds;
-	system?: graph.systemFacet;
+export interface list  {
+	displayName: string;
+	list: ComplexTypes.listInfo;
+	sharepointIds: ComplexTypes.sharepointIds;
+	system: ComplexTypes.systemFacet;
 }
-
-/*********************************************
-* listCollections
-**********************************************/
-export interface listCollections {
-
-}
-
 /*********************************************
 * longRunningOperation
 **********************************************/
-export interface longRunningOperation {
-	createdDateTime?: any;
-	lastActionDateTime?: any;
-	resourceLocation?: string;
-	status?: graph.longRunningOperationStatus;
-	statusDetail?: string;
+export interface longRunningOperation  {
+	createdDateTime: any;
+	lastActionDateTime: any;
+	resourceLocation: string;
+	status: EnumTypes.longRunningOperationStatus;
+	statusDetail: string;
 }
-
-/*********************************************
-* longRunningOperationCollections
-**********************************************/
-export interface longRunningOperationCollections {
-
-}
-
 /*********************************************
 * richLongRunningOperation
 **********************************************/
-export interface richLongRunningOperation {
-	error?: graph.publicError;
-	percentageComplete?: number;
-	resourceId?: string;
-	type?: string;
+export interface richLongRunningOperation  {
+	error: ComplexTypes.publicError;
+	percentageComplete: number;
+	resourceId: string;
+	type: string;
 }
-
-/*********************************************
-* richLongRunningOperationCollections
-**********************************************/
-export interface richLongRunningOperationCollections {
-
-}
-
 /*********************************************
 * permission
 **********************************************/
-export interface permission {
-	expirationDateTime?: any;
-	grantedTo?: graph.identitySet;
-	grantedToIdentities?: { results: Array<graph.identitySet> };
-	grantedToIdentitiesV2?: { results: Array<graph.sharePointIdentitySet> };
-	grantedToV2?: graph.sharePointIdentitySet;
-	hasPassword?: boolean;
-	inheritedFrom?: graph.itemReference;
-	invitation?: graph.sharingInvitation;
-	link?: graph.sharingLink;
-	roles?: { results: Array<string> };
-	shareId?: string;
+export interface permission  {
+	expirationDateTime: any;
+	grantedTo: ComplexTypes.identitySet;
+	grantedToIdentities: ComplexTypes.identitySet[];
+	grantedToIdentitiesV2: ComplexTypes.sharePointIdentitySet[];
+	grantedToV2: ComplexTypes.sharePointIdentitySet;
+	hasPassword: boolean;
+	inheritedFrom: ComplexTypes.itemReference;
+	invitation: ComplexTypes.sharingInvitation;
+	link: ComplexTypes.sharingLink;
+	roles: Array<string>[];
+	shareId: string;
 }
-
-/*********************************************
-* permissionCollections
-**********************************************/
-export interface permissionCollections {
-
-}
-
 /*********************************************
 * identityApiConnector
 **********************************************/
-export interface identityApiConnector {
-	authenticationConfiguration?: graph.apiAuthenticationConfigurationBase;
-	displayName?: string;
-	targetUrl?: string;
+export interface identityApiConnector  {
+	authenticationConfiguration: ComplexTypes.apiAuthenticationConfigurationBase;
+	displayName: string;
+	targetUrl: string;
 }
-
-/*********************************************
-* identityApiConnectorCollections
-**********************************************/
-export interface identityApiConnectorCollections {
-
-}
-
 /*********************************************
 * identityProviderBase
 **********************************************/
-export interface identityProviderBase {
-	displayName?: string;
+export interface identityProviderBase  {
+	displayName: string;
 }
-
-/*********************************************
-* identityProviderBaseCollections
-**********************************************/
-export interface identityProviderBaseCollections {
-
-}
-
 /*********************************************
 * appleManagedIdentityProvider
 **********************************************/
-export interface appleManagedIdentityProvider {
-	certificateData?: string;
-	developerId?: string;
-	keyId?: string;
-	serviceId?: string;
+export interface appleManagedIdentityProvider  {
+	certificateData: string;
+	developerId: string;
+	keyId: string;
+	serviceId: string;
 }
-
-/*********************************************
-* appleManagedIdentityProviderCollections
-**********************************************/
-export interface appleManagedIdentityProviderCollections {
-
-}
-
 /*********************************************
 * identityUserFlow
 **********************************************/
-export interface identityUserFlow {
-	userFlowType?: graph.userFlowType;
-	userFlowTypeVersion?: any;
+export interface identityUserFlow  {
+	userFlowType: EnumTypes.userFlowType;
+	userFlowTypeVersion: any;
 }
-
-/*********************************************
-* identityUserFlowCollections
-**********************************************/
-export interface identityUserFlowCollections {
-
-}
-
 /*********************************************
 * b2xIdentityUserFlow
 **********************************************/
-export interface b2xIdentityUserFlow {
-	apiConnectorConfiguration?: graph.userFlowApiConnectorConfiguration;
+export interface b2xIdentityUserFlow  {
+	apiConnectorConfiguration: ComplexTypes.userFlowApiConnectorConfiguration;
 }
-
-/*********************************************
-* b2xIdentityUserFlowCollections
-**********************************************/
-export interface b2xIdentityUserFlowCollections {
-
-}
-
 /*********************************************
 * identityProvider
 **********************************************/
-export interface identityProvider {
-	clientId?: string;
-	clientSecret?: string;
-	name?: string;
-	type?: string;
+export interface identityProvider  {
+	clientId: string;
+	clientSecret: string;
+	name: string;
+	type: string;
 }
-
-/*********************************************
-* identityProviderCollections
-**********************************************/
-export interface identityProviderCollections {
-
-}
-
 /*********************************************
 * userFlowLanguageConfiguration
 **********************************************/
-export interface userFlowLanguageConfiguration {
-	displayName?: string;
-	isEnabled?: boolean;
+export interface userFlowLanguageConfiguration  {
+	displayName: string;
+	isEnabled: boolean;
 }
-
-/*********************************************
-* userFlowLanguageConfigurationCollections
-**********************************************/
-export interface userFlowLanguageConfigurationCollections {
-
-}
-
 /*********************************************
 * identityUserFlowAttributeAssignment
 **********************************************/
-export interface identityUserFlowAttributeAssignment {
-	displayName?: string;
-	isOptional?: boolean;
-	requiresVerification?: boolean;
-	userAttributeValues?: { results: Array<graph.userAttributeValuesItem> };
-	userInputType?: graph.identityUserFlowAttributeInputType;
+export interface identityUserFlowAttributeAssignment  {
+	displayName: string;
+	isOptional: boolean;
+	requiresVerification: boolean;
+	userAttributeValues: ComplexTypes.userAttributeValuesItem[];
+	userInputType: EnumTypes.identityUserFlowAttributeInputType;
 }
-
-/*********************************************
-* identityUserFlowAttributeAssignmentCollections
-**********************************************/
-export interface identityUserFlowAttributeAssignmentCollections {
-
-}
-
 /*********************************************
 * builtInIdentityProvider
 **********************************************/
-export interface builtInIdentityProvider {
-	identityProviderType?: string;
+export interface builtInIdentityProvider  {
+	identityProviderType: string;
 }
-
-/*********************************************
-* builtInIdentityProviderCollections
-**********************************************/
-export interface builtInIdentityProviderCollections {
-
-}
-
 /*********************************************
 * identityUserFlowAttribute
 **********************************************/
-export interface identityUserFlowAttribute {
-	dataType?: graph.identityUserFlowAttributeDataType;
-	description?: string;
-	displayName?: string;
-	userFlowAttributeType?: graph.identityUserFlowAttributeType;
+export interface identityUserFlowAttribute  {
+	dataType: EnumTypes.identityUserFlowAttributeDataType;
+	description: string;
+	displayName: string;
+	userFlowAttributeType: EnumTypes.identityUserFlowAttributeType;
 }
-
-/*********************************************
-* identityUserFlowAttributeCollections
-**********************************************/
-export interface identityUserFlowAttributeCollections {
-
-}
-
 /*********************************************
 * identityBuiltInUserFlowAttribute
 **********************************************/
-export interface identityBuiltInUserFlowAttribute {
+export interface identityBuiltInUserFlowAttribute  {
 
 }
-
-/*********************************************
-* identityBuiltInUserFlowAttributeCollections
-**********************************************/
-export interface identityBuiltInUserFlowAttributeCollections {
-
-}
-
 /*********************************************
 * identityContainer
 **********************************************/
-export interface identityContainer {
+export interface identityContainer  {
 
 }
-
-/*********************************************
-* identityContainerCollections
-**********************************************/
-export interface identityContainerCollections {
-
-}
-
 /*********************************************
 * conditionalAccessRoot
 **********************************************/
-export interface conditionalAccessRoot {
+export interface conditionalAccessRoot  {
 
 }
-
-/*********************************************
-* conditionalAccessRootCollections
-**********************************************/
-export interface conditionalAccessRootCollections {
-
-}
-
 /*********************************************
 * identityCustomUserFlowAttribute
 **********************************************/
-export interface identityCustomUserFlowAttribute {
+export interface identityCustomUserFlowAttribute  {
 
 }
-
-/*********************************************
-* identityCustomUserFlowAttributeCollections
-**********************************************/
-export interface identityCustomUserFlowAttributeCollections {
-
-}
-
 /*********************************************
 * socialIdentityProvider
 **********************************************/
-export interface socialIdentityProvider {
-	clientId?: string;
-	clientSecret?: string;
-	identityProviderType?: string;
+export interface socialIdentityProvider  {
+	clientId: string;
+	clientSecret: string;
+	identityProviderType: string;
 }
-
-/*********************************************
-* socialIdentityProviderCollections
-**********************************************/
-export interface socialIdentityProviderCollections {
-
-}
-
 /*********************************************
 * userFlowLanguagePage
 **********************************************/
-export interface userFlowLanguagePage {
+export interface userFlowLanguagePage  {
 
 }
-
-/*********************************************
-* userFlowLanguagePageCollections
-**********************************************/
-export interface userFlowLanguagePageCollections {
-
-}
-
 /*********************************************
 * administrativeUnit
 **********************************************/
-export interface administrativeUnit {
-	description?: string;
-	displayName?: string;
-	visibility?: string;
+export interface administrativeUnit  {
+	description: string;
+	displayName: string;
+	visibility: string;
 }
-
-/*********************************************
-* administrativeUnitCollections
-**********************************************/
-export interface administrativeUnitCollections {
-
-}
-
 /*********************************************
 * appScope
 **********************************************/
-export interface appScope {
-	displayName?: string;
-	type?: string;
+export interface appScope  {
+	displayName: string;
+	type: string;
 }
-
-/*********************************************
-* appScopeCollections
-**********************************************/
-export interface appScopeCollections {
-
-}
-
 /*********************************************
 * certificateBasedAuthConfiguration
 **********************************************/
-export interface certificateBasedAuthConfiguration {
-	certificateAuthorities?: { results: Array<graph.certificateAuthority> };
+export interface certificateBasedAuthConfiguration  {
+	certificateAuthorities: ComplexTypes.certificateAuthority[];
 }
-
-/*********************************************
-* certificateBasedAuthConfigurationCollections
-**********************************************/
-export interface certificateBasedAuthConfigurationCollections {
-
-}
-
 /*********************************************
 * contract
 **********************************************/
-export interface contract {
-	contractType?: string;
-	customerId?: any;
-	defaultDomainName?: string;
-	displayName?: string;
+export interface contract  {
+	contractType: string;
+	customerId: any;
+	defaultDomainName: string;
+	displayName: string;
 }
-
-/*********************************************
-* contractCollections
-**********************************************/
-export interface contractCollections {
-
-}
-
 /*********************************************
 * crossTenantAccessPolicyConfigurationDefault
 **********************************************/
-export interface crossTenantAccessPolicyConfigurationDefault {
-	b2bCollaborationInbound?: graph.crossTenantAccessPolicyB2BSetting;
-	b2bCollaborationOutbound?: graph.crossTenantAccessPolicyB2BSetting;
-	b2bDirectConnectInbound?: graph.crossTenantAccessPolicyB2BSetting;
-	b2bDirectConnectOutbound?: graph.crossTenantAccessPolicyB2BSetting;
-	inboundTrust?: graph.crossTenantAccessPolicyInboundTrust;
-	isServiceDefault?: boolean;
+export interface crossTenantAccessPolicyConfigurationDefault  {
+	b2bCollaborationInbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	b2bCollaborationOutbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	b2bDirectConnectInbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	b2bDirectConnectOutbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	inboundTrust: ComplexTypes.crossTenantAccessPolicyInboundTrust;
+	isServiceDefault: boolean;
 }
-
-/*********************************************
-* crossTenantAccessPolicyConfigurationDefaultCollections
-**********************************************/
-export interface crossTenantAccessPolicyConfigurationDefaultCollections {
-
-}
-
 /*********************************************
 * crossTenantAccessPolicyConfigurationPartner
 **********************************************/
-export interface crossTenantAccessPolicyConfigurationPartner {
-	b2bCollaborationInbound?: graph.crossTenantAccessPolicyB2BSetting;
-	b2bCollaborationOutbound?: graph.crossTenantAccessPolicyB2BSetting;
-	b2bDirectConnectInbound?: graph.crossTenantAccessPolicyB2BSetting;
-	b2bDirectConnectOutbound?: graph.crossTenantAccessPolicyB2BSetting;
-	inboundTrust?: graph.crossTenantAccessPolicyInboundTrust;
-	isServiceProvider?: boolean;
-	tenantId?: string;
+export interface crossTenantAccessPolicyConfigurationPartner  {
+	b2bCollaborationInbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	b2bCollaborationOutbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	b2bDirectConnectInbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	b2bDirectConnectOutbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
+	inboundTrust: ComplexTypes.crossTenantAccessPolicyInboundTrust;
+	isServiceProvider: boolean;
+	tenantId: string;
 }
-
-/*********************************************
-* crossTenantAccessPolicyConfigurationPartnerCollections
-**********************************************/
-export interface crossTenantAccessPolicyConfigurationPartnerCollections {
-
-}
-
 /*********************************************
 * device
 **********************************************/
-export interface device {
-	accountEnabled?: boolean;
-	alternativeSecurityIds?: { results: Array<graph.alternativeSecurityId> };
-	approximateLastSignInDateTime?: any;
-	complianceExpirationDateTime?: any;
-	deviceId?: string;
-	deviceMetadata?: string;
-	deviceVersion?: number;
-	displayName?: string;
-	isCompliant?: boolean;
-	isManaged?: boolean;
-	mdmAppId?: string;
-	onPremisesLastSyncDateTime?: any;
-	onPremisesSyncEnabled?: boolean;
-	operatingSystem?: string;
-	operatingSystemVersion?: string;
-	physicalIds?: { results: Array<string> };
-	profileType?: string;
-	systemLabels?: { results: Array<string> };
-	trustType?: string;
+export interface device  {
+	accountEnabled: boolean;
+	alternativeSecurityIds: ComplexTypes.alternativeSecurityId[];
+	approximateLastSignInDateTime: any;
+	complianceExpirationDateTime: any;
+	deviceId: string;
+	deviceMetadata: string;
+	deviceVersion: number;
+	displayName: string;
+	isCompliant: boolean;
+	isManaged: boolean;
+	mdmAppId: string;
+	onPremisesLastSyncDateTime: any;
+	onPremisesSyncEnabled: boolean;
+	operatingSystem: string;
+	operatingSystemVersion: string;
+	physicalIds: Array<string>[];
+	profileType: string;
+	systemLabels: Array<string>[];
+	trustType: string;
 }
-
-/*********************************************
-* deviceCollections
-**********************************************/
-export interface deviceCollections {
-
-}
-
 /*********************************************
 * directory
 **********************************************/
-export interface directory {
+export interface directory  {
 
 }
-
-/*********************************************
-* directoryCollections
-**********************************************/
-export interface directoryCollections {
-
-}
-
 /*********************************************
 * directoryObjectPartnerReference
 **********************************************/
-export interface directoryObjectPartnerReference {
-	description?: string;
-	displayName?: string;
-	externalPartnerTenantId?: any;
-	objectType?: string;
+export interface directoryObjectPartnerReference  {
+	description: string;
+	displayName: string;
+	externalPartnerTenantId: any;
+	objectType: string;
 }
-
-/*********************************************
-* directoryObjectPartnerReferenceCollections
-**********************************************/
-export interface directoryObjectPartnerReferenceCollections {
-
-}
-
 /*********************************************
 * directoryRole
 **********************************************/
-export interface directoryRole {
-	description?: string;
-	displayName?: string;
-	roleTemplateId?: string;
+export interface directoryRole  {
+	description: string;
+	displayName: string;
+	roleTemplateId: string;
 }
-
-/*********************************************
-* directoryRoleCollections
-**********************************************/
-export interface directoryRoleCollections {
-
-}
-
 /*********************************************
 * directoryRoleTemplate
 **********************************************/
-export interface directoryRoleTemplate {
-	description?: string;
-	displayName?: string;
+export interface directoryRoleTemplate  {
+	description: string;
+	displayName: string;
 }
-
-/*********************************************
-* directoryRoleTemplateCollections
-**********************************************/
-export interface directoryRoleTemplateCollections {
-
-}
-
 /*********************************************
 * domain
 **********************************************/
-export interface domain {
-	authenticationType?: string;
-	availabilityStatus?: string;
-	isAdminManaged?: boolean;
-	isDefault?: boolean;
-	isInitial?: boolean;
-	isRoot?: boolean;
-	isVerified?: boolean;
-	manufacturer?: string;
-	model?: string;
-	passwordNotificationWindowInDays?: number;
-	passwordValidityPeriodInDays?: number;
-	state?: graph.domainState;
-	supportedServices?: { results: Array<string> };
+export interface domain  {
+	authenticationType: string;
+	availabilityStatus: string;
+	isAdminManaged: boolean;
+	isDefault: boolean;
+	isInitial: boolean;
+	isRoot: boolean;
+	isVerified: boolean;
+	manufacturer: string;
+	model: string;
+	passwordNotificationWindowInDays: number;
+	passwordValidityPeriodInDays: number;
+	state: ComplexTypes.domainState;
+	supportedServices: Array<string>[];
 }
-
-/*********************************************
-* domainCollections
-**********************************************/
-export interface domainCollections {
-
-}
-
 /*********************************************
 * samlOrWsFedProvider
 **********************************************/
-export interface samlOrWsFedProvider {
-	issuerUri?: string;
-	metadataExchangeUri?: string;
-	passiveSignInUri?: string;
-	preferredAuthenticationProtocol?: graph.authenticationProtocol;
-	signingCertificate?: string;
+export interface samlOrWsFedProvider  {
+	issuerUri: string;
+	metadataExchangeUri: string;
+	passiveSignInUri: string;
+	preferredAuthenticationProtocol: EnumTypes.authenticationProtocol;
+	signingCertificate: string;
 }
-
-/*********************************************
-* samlOrWsFedProviderCollections
-**********************************************/
-export interface samlOrWsFedProviderCollections {
-
-}
-
 /*********************************************
 * internalDomainFederation
 **********************************************/
-export interface internalDomainFederation {
-	activeSignInUri?: string;
-	federatedIdpMfaBehavior?: graph.federatedIdpMfaBehavior;
-	isSignedAuthenticationRequestRequired?: boolean;
-	nextSigningCertificate?: string;
-	promptLoginBehavior?: graph.promptLoginBehavior;
-	signingCertificateUpdateStatus?: graph.signingCertificateUpdateStatus;
-	signOutUri?: string;
+export interface internalDomainFederation  {
+	activeSignInUri: string;
+	federatedIdpMfaBehavior: EnumTypes.federatedIdpMfaBehavior;
+	isSignedAuthenticationRequestRequired: boolean;
+	nextSigningCertificate: string;
+	promptLoginBehavior: EnumTypes.promptLoginBehavior;
+	signingCertificateUpdateStatus: ComplexTypes.signingCertificateUpdateStatus;
+	signOutUri: string;
 }
-
-/*********************************************
-* internalDomainFederationCollections
-**********************************************/
-export interface internalDomainFederationCollections {
-
-}
-
 /*********************************************
 * domainDnsRecord
 **********************************************/
-export interface domainDnsRecord {
-	isOptional?: boolean;
-	label?: string;
-	recordType?: string;
-	supportedService?: string;
-	ttl?: number;
+export interface domainDnsRecord  {
+	isOptional: boolean;
+	label: string;
+	recordType: string;
+	supportedService: string;
+	ttl: number;
 }
-
-/*********************************************
-* domainDnsRecordCollections
-**********************************************/
-export interface domainDnsRecordCollections {
-
-}
-
 /*********************************************
 * domainDnsCnameRecord
 **********************************************/
-export interface domainDnsCnameRecord {
-	canonicalName?: string;
+export interface domainDnsCnameRecord  {
+	canonicalName: string;
 }
-
-/*********************************************
-* domainDnsCnameRecordCollections
-**********************************************/
-export interface domainDnsCnameRecordCollections {
-
-}
-
 /*********************************************
 * domainDnsMxRecord
 **********************************************/
-export interface domainDnsMxRecord {
-	mailExchange?: string;
-	preference?: number;
+export interface domainDnsMxRecord  {
+	mailExchange: string;
+	preference: number;
 }
-
-/*********************************************
-* domainDnsMxRecordCollections
-**********************************************/
-export interface domainDnsMxRecordCollections {
-
-}
-
 /*********************************************
 * domainDnsSrvRecord
 **********************************************/
-export interface domainDnsSrvRecord {
-	nameTarget?: string;
-	port?: number;
-	priority?: number;
-	protocol?: string;
-	service?: string;
-	weight?: number;
+export interface domainDnsSrvRecord  {
+	nameTarget: string;
+	port: number;
+	priority: number;
+	protocol: string;
+	service: string;
+	weight: number;
 }
-
-/*********************************************
-* domainDnsSrvRecordCollections
-**********************************************/
-export interface domainDnsSrvRecordCollections {
-
-}
-
 /*********************************************
 * domainDnsTxtRecord
 **********************************************/
-export interface domainDnsTxtRecord {
-	text?: string;
+export interface domainDnsTxtRecord  {
+	text: string;
 }
-
-/*********************************************
-* domainDnsTxtRecordCollections
-**********************************************/
-export interface domainDnsTxtRecordCollections {
-
-}
-
 /*********************************************
 * domainDnsUnavailableRecord
 **********************************************/
-export interface domainDnsUnavailableRecord {
-	description?: string;
+export interface domainDnsUnavailableRecord  {
+	description: string;
 }
-
-/*********************************************
-* domainDnsUnavailableRecordCollections
-**********************************************/
-export interface domainDnsUnavailableRecordCollections {
-
-}
-
 /*********************************************
 * externalDomainName
 **********************************************/
-export interface externalDomainName {
+export interface externalDomainName  {
 
 }
-
-/*********************************************
-* externalDomainNameCollections
-**********************************************/
-export interface externalDomainNameCollections {
-
-}
-
 /*********************************************
 * groupSettingTemplate
 **********************************************/
-export interface groupSettingTemplate {
-	description?: string;
-	displayName?: string;
-	values?: { results: Array<graph.settingTemplateValue> };
+export interface groupSettingTemplate  {
+	description: string;
+	displayName: string;
+	values: ComplexTypes.settingTemplateValue[];
 }
-
-/*********************************************
-* groupSettingTemplateCollections
-**********************************************/
-export interface groupSettingTemplateCollections {
-
-}
-
 /*********************************************
 * organization
 **********************************************/
-export interface organization {
-	assignedPlans?: { results: Array<graph.assignedPlan> };
-	businessPhones?: { results: Array<string> };
-	city?: string;
-	country?: string;
-	countryLetterCode?: string;
-	createdDateTime?: any;
-	displayName?: string;
-	marketingNotificationEmails?: { results: Array<string> };
-	onPremisesLastSyncDateTime?: any;
-	onPremisesSyncEnabled?: boolean;
-	postalCode?: string;
-	preferredLanguage?: string;
-	privacyProfile?: graph.privacyProfile;
-	provisionedPlans?: { results: Array<graph.provisionedPlan> };
-	securityComplianceNotificationMails?: { results: Array<string> };
-	securityComplianceNotificationPhones?: { results: Array<string> };
-	state?: string;
-	street?: string;
-	technicalNotificationMails?: { results: Array<string> };
-	tenantType?: string;
-	verifiedDomains?: { results: Array<graph.verifiedDomain> };
-	mobileDeviceManagementAuthority?: graph.mdmAuthority;
+export interface organization  {
+	assignedPlans: ComplexTypes.assignedPlan[];
+	businessPhones: Array<string>[];
+	city: string;
+	country: string;
+	countryLetterCode: string;
+	createdDateTime: any;
+	displayName: string;
+	marketingNotificationEmails: Array<string>[];
+	onPremisesLastSyncDateTime: any;
+	onPremisesSyncEnabled: boolean;
+	postalCode: string;
+	preferredLanguage: string;
+	privacyProfile: ComplexTypes.privacyProfile;
+	provisionedPlans: ComplexTypes.provisionedPlan[];
+	securityComplianceNotificationMails: Array<string>[];
+	securityComplianceNotificationPhones: Array<string>[];
+	state: string;
+	street: string;
+	technicalNotificationMails: Array<string>[];
+	tenantType: string;
+	verifiedDomains: ComplexTypes.verifiedDomain[];
+	mobileDeviceManagementAuthority: EnumTypes.mdmAuthority;
 }
-
-/*********************************************
-* organizationCollections
-**********************************************/
-export interface organizationCollections {
-
-}
-
 /*********************************************
 * organizationalBrandingProperties
 **********************************************/
-export interface organizationalBrandingProperties {
-	backgroundColor?: string;
-	backgroundImage?: any;
-	backgroundImageRelativeUrl?: string;
-	bannerLogo?: any;
-	bannerLogoRelativeUrl?: string;
-	cdnList?: { results: Array<string> };
-	signInPageText?: string;
-	squareLogo?: any;
-	squareLogoRelativeUrl?: string;
-	usernameHintText?: string;
+export interface organizationalBrandingProperties  {
+	backgroundColor: string;
+	backgroundImage: any;
+	backgroundImageRelativeUrl: string;
+	bannerLogo: any;
+	bannerLogoRelativeUrl: string;
+	cdnList: Array<string>[];
+	signInPageText: string;
+	squareLogo: any;
+	squareLogoRelativeUrl: string;
+	usernameHintText: string;
 }
-
-/*********************************************
-* organizationalBrandingPropertiesCollections
-**********************************************/
-export interface organizationalBrandingPropertiesCollections {
-
-}
-
 /*********************************************
 * organizationalBranding
 **********************************************/
-export interface organizationalBranding {
+export interface organizationalBranding  {
 
 }
-
-/*********************************************
-* organizationalBrandingCollections
-**********************************************/
-export interface organizationalBrandingCollections {
-
-}
-
 /*********************************************
 * organizationalBrandingLocalization
 **********************************************/
-export interface organizationalBrandingLocalization {
+export interface organizationalBrandingLocalization  {
 
 }
-
-/*********************************************
-* organizationalBrandingLocalizationCollections
-**********************************************/
-export interface organizationalBrandingLocalizationCollections {
-
-}
-
 /*********************************************
 * orgContact
 **********************************************/
-export interface orgContact {
-	addresses?: { results: Array<graph.physicalOfficeAddress> };
-	companyName?: string;
-	department?: string;
-	displayName?: string;
-	givenName?: string;
-	jobTitle?: string;
-	mail?: string;
-	mailNickname?: string;
-	onPremisesLastSyncDateTime?: any;
-	onPremisesProvisioningErrors?: { results: Array<graph.onPremisesProvisioningError> };
-	onPremisesSyncEnabled?: boolean;
-	phones?: { results: Array<graph.phone> };
-	proxyAddresses?: { results: Array<string> };
-	surname?: string;
+export interface orgContact  {
+	addresses: ComplexTypes.physicalOfficeAddress[];
+	companyName: string;
+	department: string;
+	displayName: string;
+	givenName: string;
+	jobTitle: string;
+	mail: string;
+	mailNickname: string;
+	onPremisesLastSyncDateTime: any;
+	onPremisesProvisioningErrors: ComplexTypes.onPremisesProvisioningError[];
+	onPremisesSyncEnabled: boolean;
+	phones: ComplexTypes.phone[];
+	proxyAddresses: Array<string>[];
+	surname: string;
 }
-
-/*********************************************
-* orgContactCollections
-**********************************************/
-export interface orgContactCollections {
-
-}
-
 /*********************************************
 * permissionGrantConditionSet
 **********************************************/
-export interface permissionGrantConditionSet {
-	clientApplicationIds?: { results: Array<string> };
-	clientApplicationPublisherIds?: { results: Array<string> };
-	clientApplicationsFromVerifiedPublisherOnly?: boolean;
-	clientApplicationTenantIds?: { results: Array<string> };
-	permissionClassification?: string;
-	permissions?: { results: Array<string> };
-	permissionType?: graph.permissionType;
-	resourceApplication?: string;
+export interface permissionGrantConditionSet  {
+	clientApplicationIds: Array<string>[];
+	clientApplicationPublisherIds: Array<string>[];
+	clientApplicationsFromVerifiedPublisherOnly: boolean;
+	clientApplicationTenantIds: Array<string>[];
+	permissionClassification: string;
+	permissions: Array<string>[];
+	permissionType: EnumTypes.permissionType;
+	resourceApplication: string;
 }
-
-/*********************************************
-* permissionGrantConditionSetCollections
-**********************************************/
-export interface permissionGrantConditionSetCollections {
-
-}
-
 /*********************************************
 * rbacApplication
 **********************************************/
-export interface rbacApplication {
+export interface rbacApplication  {
 
 }
-
-/*********************************************
-* rbacApplicationCollections
-**********************************************/
-export interface rbacApplicationCollections {
-
-}
-
 /*********************************************
 * unifiedRoleAssignment
 **********************************************/
-export interface unifiedRoleAssignment {
-	appScopeId?: string;
-	condition?: string;
-	directoryScopeId?: string;
-	principalId?: string;
-	roleDefinitionId?: string;
+export interface unifiedRoleAssignment  {
+	appScopeId: string;
+	condition: string;
+	directoryScopeId: string;
+	principalId: string;
+	roleDefinitionId: string;
 }
-
-/*********************************************
-* unifiedRoleAssignmentCollections
-**********************************************/
-export interface unifiedRoleAssignmentCollections {
-
-}
-
 /*********************************************
 * unifiedRoleDefinition
 **********************************************/
-export interface unifiedRoleDefinition {
-	description?: string;
-	displayName?: string;
-	isBuiltIn?: boolean;
-	isEnabled?: boolean;
-	resourceScopes?: { results: Array<string> };
-	rolePermissions?: { results: Array<graph.unifiedRolePermission> };
-	templateId?: string;
-	version?: string;
+export interface unifiedRoleDefinition  {
+	description: string;
+	displayName: string;
+	isBuiltIn: boolean;
+	isEnabled: boolean;
+	resourceScopes: Array<string>[];
+	rolePermissions: ComplexTypes.unifiedRolePermission[];
+	templateId: string;
+	version: string;
 }
-
-/*********************************************
-* unifiedRoleDefinitionCollections
-**********************************************/
-export interface unifiedRoleDefinitionCollections {
-
-}
-
 /*********************************************
 * unifiedRoleScheduleInstanceBase
 **********************************************/
-export interface unifiedRoleScheduleInstanceBase {
-	appScopeId?: string;
-	directoryScopeId?: string;
-	principalId?: string;
-	roleDefinitionId?: string;
+export interface unifiedRoleScheduleInstanceBase  {
+	appScopeId: string;
+	directoryScopeId: string;
+	principalId: string;
+	roleDefinitionId: string;
 }
-
-/*********************************************
-* unifiedRoleScheduleInstanceBaseCollections
-**********************************************/
-export interface unifiedRoleScheduleInstanceBaseCollections {
-
-}
-
 /*********************************************
 * unifiedRoleAssignmentScheduleInstance
 **********************************************/
-export interface unifiedRoleAssignmentScheduleInstance {
-	assignmentType?: string;
-	endDateTime?: any;
-	memberType?: string;
-	roleAssignmentOriginId?: string;
-	roleAssignmentScheduleId?: string;
-	startDateTime?: any;
+export interface unifiedRoleAssignmentScheduleInstance  {
+	assignmentType: string;
+	endDateTime: any;
+	memberType: string;
+	roleAssignmentOriginId: string;
+	roleAssignmentScheduleId: string;
+	startDateTime: any;
 }
-
-/*********************************************
-* unifiedRoleAssignmentScheduleInstanceCollections
-**********************************************/
-export interface unifiedRoleAssignmentScheduleInstanceCollections {
-
-}
-
 /*********************************************
 * request
 **********************************************/
-export interface request {
-	approvalId?: string;
-	completedDateTime?: any;
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	customData?: string;
-	status?: string;
+export interface request  {
+	approvalId: string;
+	completedDateTime: any;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	customData: string;
+	status: string;
 }
-
-/*********************************************
-* requestCollections
-**********************************************/
-export interface requestCollections {
-
-}
-
 /*********************************************
 * unifiedRoleAssignmentScheduleRequest
 **********************************************/
-export interface unifiedRoleAssignmentScheduleRequest {
-	action?: graph.unifiedRoleScheduleRequestActions;
-	appScopeId?: string;
-	directoryScopeId?: string;
-	isValidationOnly?: boolean;
-	justification?: string;
-	principalId?: string;
-	roleDefinitionId?: string;
-	scheduleInfo?: graph.requestSchedule;
-	targetScheduleId?: string;
-	ticketInfo?: graph.ticketInfo;
+export interface unifiedRoleAssignmentScheduleRequest  {
+	action: EnumTypes.unifiedRoleScheduleRequestActions;
+	appScopeId: string;
+	directoryScopeId: string;
+	isValidationOnly: boolean;
+	justification: string;
+	principalId: string;
+	roleDefinitionId: string;
+	scheduleInfo: ComplexTypes.requestSchedule;
+	targetScheduleId: string;
+	ticketInfo: ComplexTypes.ticketInfo;
 }
-
-/*********************************************
-* unifiedRoleAssignmentScheduleRequestCollections
-**********************************************/
-export interface unifiedRoleAssignmentScheduleRequestCollections {
-
-}
-
 /*********************************************
 * unifiedRoleScheduleBase
 **********************************************/
-export interface unifiedRoleScheduleBase {
-	appScopeId?: string;
-	createdDateTime?: any;
-	createdUsing?: string;
-	directoryScopeId?: string;
-	modifiedDateTime?: any;
-	principalId?: string;
-	roleDefinitionId?: string;
-	status?: string;
+export interface unifiedRoleScheduleBase  {
+	appScopeId: string;
+	createdDateTime: any;
+	createdUsing: string;
+	directoryScopeId: string;
+	modifiedDateTime: any;
+	principalId: string;
+	roleDefinitionId: string;
+	status: string;
 }
-
-/*********************************************
-* unifiedRoleScheduleBaseCollections
-**********************************************/
-export interface unifiedRoleScheduleBaseCollections {
-
-}
-
 /*********************************************
 * unifiedRoleAssignmentSchedule
 **********************************************/
-export interface unifiedRoleAssignmentSchedule {
-	assignmentType?: string;
-	memberType?: string;
-	scheduleInfo?: graph.requestSchedule;
+export interface unifiedRoleAssignmentSchedule  {
+	assignmentType: string;
+	memberType: string;
+	scheduleInfo: ComplexTypes.requestSchedule;
 }
-
-/*********************************************
-* unifiedRoleAssignmentScheduleCollections
-**********************************************/
-export interface unifiedRoleAssignmentScheduleCollections {
-
-}
-
 /*********************************************
 * unifiedRoleEligibilityScheduleInstance
 **********************************************/
-export interface unifiedRoleEligibilityScheduleInstance {
-	endDateTime?: any;
-	memberType?: string;
-	roleEligibilityScheduleId?: string;
-	startDateTime?: any;
+export interface unifiedRoleEligibilityScheduleInstance  {
+	endDateTime: any;
+	memberType: string;
+	roleEligibilityScheduleId: string;
+	startDateTime: any;
 }
-
-/*********************************************
-* unifiedRoleEligibilityScheduleInstanceCollections
-**********************************************/
-export interface unifiedRoleEligibilityScheduleInstanceCollections {
-
-}
-
 /*********************************************
 * unifiedRoleEligibilityScheduleRequest
 **********************************************/
-export interface unifiedRoleEligibilityScheduleRequest {
-	action?: graph.unifiedRoleScheduleRequestActions;
-	appScopeId?: string;
-	directoryScopeId?: string;
-	isValidationOnly?: boolean;
-	justification?: string;
-	principalId?: string;
-	roleDefinitionId?: string;
-	scheduleInfo?: graph.requestSchedule;
-	targetScheduleId?: string;
-	ticketInfo?: graph.ticketInfo;
+export interface unifiedRoleEligibilityScheduleRequest  {
+	action: EnumTypes.unifiedRoleScheduleRequestActions;
+	appScopeId: string;
+	directoryScopeId: string;
+	isValidationOnly: boolean;
+	justification: string;
+	principalId: string;
+	roleDefinitionId: string;
+	scheduleInfo: ComplexTypes.requestSchedule;
+	targetScheduleId: string;
+	ticketInfo: ComplexTypes.ticketInfo;
 }
-
-/*********************************************
-* unifiedRoleEligibilityScheduleRequestCollections
-**********************************************/
-export interface unifiedRoleEligibilityScheduleRequestCollections {
-
-}
-
 /*********************************************
 * unifiedRoleEligibilitySchedule
 **********************************************/
-export interface unifiedRoleEligibilitySchedule {
-	memberType?: string;
-	scheduleInfo?: graph.requestSchedule;
+export interface unifiedRoleEligibilitySchedule  {
+	memberType: string;
+	scheduleInfo: ComplexTypes.requestSchedule;
 }
-
-/*********************************************
-* unifiedRoleEligibilityScheduleCollections
-**********************************************/
-export interface unifiedRoleEligibilityScheduleCollections {
-
-}
-
 /*********************************************
 * roleManagement
 **********************************************/
-export interface roleManagement {
+export interface roleManagement  {
 
 }
-
-/*********************************************
-* roleManagementCollections
-**********************************************/
-export interface roleManagementCollections {
-
-}
-
 /*********************************************
 * samlOrWsFedExternalDomainFederation
 **********************************************/
-export interface samlOrWsFedExternalDomainFederation {
+export interface samlOrWsFedExternalDomainFederation  {
 
 }
-
-/*********************************************
-* samlOrWsFedExternalDomainFederationCollections
-**********************************************/
-export interface samlOrWsFedExternalDomainFederationCollections {
-
-}
-
 /*********************************************
 * subscribedSku
 **********************************************/
-export interface subscribedSku {
-	appliesTo?: string;
-	capabilityStatus?: string;
-	consumedUnits?: number;
-	prepaidUnits?: graph.licenseUnitsDetail;
-	servicePlans?: { results: Array<graph.servicePlanInfo> };
-	skuId?: any;
-	skuPartNumber?: string;
+export interface subscribedSku  {
+	appliesTo: string;
+	capabilityStatus: string;
+	consumedUnits: number;
+	prepaidUnits: ComplexTypes.licenseUnitsDetail;
+	servicePlans: ComplexTypes.servicePlanInfo[];
+	skuId: any;
+	skuPartNumber: string;
 }
-
-/*********************************************
-* subscribedSkuCollections
-**********************************************/
-export interface subscribedSkuCollections {
-
-}
-
 /*********************************************
 * educationAssignment
 **********************************************/
-export interface educationAssignment {
-	addedStudentAction?: graph.educationAddedStudentAction;
-	addToCalendarAction?: graph.educationAddToCalendarOptions;
-	allowLateSubmissions?: boolean;
-	allowStudentsToAddResourcesToSubmission?: boolean;
-	assignDateTime?: any;
-	assignedDateTime?: any;
-	assignTo?: graph.educationAssignmentRecipient;
-	classId?: string;
-	closeDateTime?: any;
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	displayName?: string;
-	dueDateTime?: any;
-	grading?: graph.educationAssignmentGradeType;
-	instructions?: graph.educationItemBody;
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
-	notificationChannelUrl?: string;
-	resourcesFolderUrl?: string;
-	status?: graph.educationAssignmentStatus;
-	webUrl?: string;
+export interface educationAssignment  {
+	addedStudentAction: EnumTypes.educationAddedStudentAction;
+	addToCalendarAction: EnumTypes.educationAddToCalendarOptions;
+	allowLateSubmissions: boolean;
+	allowStudentsToAddResourcesToSubmission: boolean;
+	assignDateTime: any;
+	assignedDateTime: any;
+	assignTo: ComplexTypes.educationAssignmentRecipient;
+	classId: string;
+	closeDateTime: any;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	displayName: string;
+	dueDateTime: any;
+	grading: ComplexTypes.educationAssignmentGradeType;
+	instructions: ComplexTypes.educationItemBody;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
+	notificationChannelUrl: string;
+	resourcesFolderUrl: string;
+	status: EnumTypes.educationAssignmentStatus;
+	webUrl: string;
 }
-
-/*********************************************
-* educationAssignmentCollections
-**********************************************/
-export interface educationAssignmentCollections {
-
-}
-
 /*********************************************
 * educationCategory
 **********************************************/
-export interface educationCategory {
-	displayName?: string;
+export interface educationCategory  {
+	displayName: string;
 }
-
-/*********************************************
-* educationCategoryCollections
-**********************************************/
-export interface educationCategoryCollections {
-
-}
-
 /*********************************************
 * educationAssignmentResource
 **********************************************/
-export interface educationAssignmentResource {
-	distributeForStudentWork?: boolean;
-	resource?: graph.educationResource;
+export interface educationAssignmentResource  {
+	distributeForStudentWork: boolean;
+	resource: ComplexTypes.educationResource;
 }
-
-/*********************************************
-* educationAssignmentResourceCollections
-**********************************************/
-export interface educationAssignmentResourceCollections {
-
-}
-
 /*********************************************
 * educationRubric
 **********************************************/
-export interface educationRubric {
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	description?: graph.educationItemBody;
-	displayName?: string;
-	grading?: graph.educationAssignmentGradeType;
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
-	levels?: { results: Array<graph.rubricLevel> };
-	qualities?: { results: Array<graph.rubricQuality> };
+export interface educationRubric  {
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	description: ComplexTypes.educationItemBody;
+	displayName: string;
+	grading: ComplexTypes.educationAssignmentGradeType;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
+	levels: ComplexTypes.rubricLevel[];
+	qualities: ComplexTypes.rubricQuality[];
 }
-
-/*********************************************
-* educationRubricCollections
-**********************************************/
-export interface educationRubricCollections {
-
-}
-
 /*********************************************
 * educationSubmission
 **********************************************/
-export interface educationSubmission {
-	reassignedBy?: graph.identitySet;
-	reassignedDateTime?: any;
-	recipient?: graph.educationSubmissionRecipient;
-	resourcesFolderUrl?: string;
-	returnedBy?: graph.identitySet;
-	returnedDateTime?: any;
-	status?: graph.educationSubmissionStatus;
-	submittedBy?: graph.identitySet;
-	submittedDateTime?: any;
-	unsubmittedBy?: graph.identitySet;
-	unsubmittedDateTime?: any;
+export interface educationSubmission  {
+	reassignedBy: ComplexTypes.identitySet;
+	reassignedDateTime: any;
+	recipient: ComplexTypes.educationSubmissionRecipient;
+	resourcesFolderUrl: string;
+	returnedBy: ComplexTypes.identitySet;
+	returnedDateTime: any;
+	status: EnumTypes.educationSubmissionStatus;
+	submittedBy: ComplexTypes.identitySet;
+	submittedDateTime: any;
+	unsubmittedBy: ComplexTypes.identitySet;
+	unsubmittedDateTime: any;
 }
-
-/*********************************************
-* educationSubmissionCollections
-**********************************************/
-export interface educationSubmissionCollections {
-
-}
-
 /*********************************************
 * educationAssignmentDefaults
 **********************************************/
-export interface educationAssignmentDefaults {
-	addedStudentAction?: graph.educationAddedStudentAction;
-	addToCalendarAction?: graph.educationAddToCalendarOptions;
-	dueTime?: anyOfDay;
-	notificationChannelUrl?: string;
+export interface educationAssignmentDefaults  {
+	addedStudentAction: EnumTypes.educationAddedStudentAction;
+	addToCalendarAction: EnumTypes.educationAddToCalendarOptions;
+	dueTime: any;
+	notificationChannelUrl: string;
 }
-
-/*********************************************
-* educationAssignmentDefaultsCollections
-**********************************************/
-export interface educationAssignmentDefaultsCollections {
-
-}
-
 /*********************************************
 * educationAssignmentSettings
 **********************************************/
-export interface educationAssignmentSettings {
-	submissionAnimationDisabled?: boolean;
+export interface educationAssignmentSettings  {
+	submissionAnimationDisabled: boolean;
 }
-
-/*********************************************
-* educationAssignmentSettingsCollections
-**********************************************/
-export interface educationAssignmentSettingsCollections {
-
-}
-
 /*********************************************
 * educationClass
 **********************************************/
-export interface educationClass {
-	classCode?: string;
-	course?: graph.educationCourse;
-	createdBy?: graph.identitySet;
-	description?: string;
-	displayName?: string;
-	externalId?: string;
-	externalName?: string;
-	externalSource?: graph.educationExternalSource;
-	externalSourceDetail?: string;
-	grade?: string;
-	mailNickname?: string;
-	term?: graph.educationTerm;
+export interface educationClass  {
+	classCode: string;
+	course: ComplexTypes.educationCourse;
+	createdBy: ComplexTypes.identitySet;
+	description: string;
+	displayName: string;
+	externalId: string;
+	externalName: string;
+	externalSource: EnumTypes.educationExternalSource;
+	externalSourceDetail: string;
+	grade: string;
+	mailNickname: string;
+	term: ComplexTypes.educationTerm;
 }
-
-/*********************************************
-* educationClassCollections
-**********************************************/
-export interface educationClassCollections {
-
-}
-
 /*********************************************
 * educationUser
 **********************************************/
-export interface educationUser {
-	relatedContacts?: { results: Array<graph.relatedContact> };
-	accountEnabled?: boolean;
-	assignedLicenses?: { results: Array<graph.assignedLicense> };
-	assignedPlans?: { results: Array<graph.assignedPlan> };
-	businessPhones?: { results: Array<string> };
-	createdBy?: graph.identitySet;
-	department?: string;
-	displayName?: string;
-	externalSource?: graph.educationExternalSource;
-	externalSourceDetail?: string;
-	givenName?: string;
-	mail?: string;
-	mailingAddress?: graph.physicalAddress;
-	mailNickname?: string;
-	middleName?: string;
-	mobilePhone?: string;
-	officeLocation?: string;
-	onPremisesInfo?: graph.educationOnPremisesInfo;
-	passwordPolicies?: string;
-	passwordProfile?: graph.passwordProfile;
-	preferredLanguage?: string;
-	primaryRole?: graph.educationUserRole;
-	provisionedPlans?: { results: Array<graph.provisionedPlan> };
-	refreshTokensValidFromDateTime?: any;
-	residenceAddress?: graph.physicalAddress;
-	showInAddressList?: boolean;
-	student?: graph.educationStudent;
-	surname?: string;
-	teacher?: graph.educationTeacher;
-	usageLocation?: string;
-	userPrincipalName?: string;
-	userType?: string;
+export interface educationUser  {
+	relatedContacts: ComplexTypes.relatedContact[];
+	accountEnabled: boolean;
+	assignedLicenses: ComplexTypes.assignedLicense[];
+	assignedPlans: ComplexTypes.assignedPlan[];
+	businessPhones: Array<string>[];
+	createdBy: ComplexTypes.identitySet;
+	department: string;
+	displayName: string;
+	externalSource: EnumTypes.educationExternalSource;
+	externalSourceDetail: string;
+	givenName: string;
+	mail: string;
+	mailingAddress: ComplexTypes.physicalAddress;
+	mailNickname: string;
+	middleName: string;
+	mobilePhone: string;
+	officeLocation: string;
+	onPremisesInfo: ComplexTypes.educationOnPremisesInfo;
+	passwordPolicies: string;
+	passwordProfile: ComplexTypes.passwordProfile;
+	preferredLanguage: string;
+	primaryRole: EnumTypes.educationUserRole;
+	provisionedPlans: ComplexTypes.provisionedPlan[];
+	refreshTokensValidFromDateTime: any;
+	residenceAddress: ComplexTypes.physicalAddress;
+	showInAddressList: boolean;
+	student: ComplexTypes.educationStudent;
+	surname: string;
+	teacher: ComplexTypes.educationTeacher;
+	usageLocation: string;
+	userPrincipalName: string;
+	userType: string;
 }
-
-/*********************************************
-* educationUserCollections
-**********************************************/
-export interface educationUserCollections {
-
-}
-
 /*********************************************
 * educationOrganization
 **********************************************/
-export interface educationOrganization {
-	description?: string;
-	displayName?: string;
-	externalSource?: graph.educationExternalSource;
-	externalSourceDetail?: string;
+export interface educationOrganization  {
+	description: string;
+	displayName: string;
+	externalSource: EnumTypes.educationExternalSource;
+	externalSourceDetail: string;
 }
-
-/*********************************************
-* educationOrganizationCollections
-**********************************************/
-export interface educationOrganizationCollections {
-
-}
-
 /*********************************************
 * educationSchool
 **********************************************/
-export interface educationSchool {
-	address?: graph.physicalAddress;
-	createdBy?: graph.identitySet;
-	externalId?: string;
-	externalPrincipalId?: string;
-	fax?: string;
-	highestGrade?: string;
-	lowestGrade?: string;
-	phone?: string;
-	principalEmail?: string;
-	principalName?: string;
-	schoolNumber?: string;
+export interface educationSchool  {
+	address: ComplexTypes.physicalAddress;
+	createdBy: ComplexTypes.identitySet;
+	externalId: string;
+	externalPrincipalId: string;
+	fax: string;
+	highestGrade: string;
+	lowestGrade: string;
+	phone: string;
+	principalEmail: string;
+	principalName: string;
+	schoolNumber: string;
 }
-
-/*********************************************
-* educationSchoolCollections
-**********************************************/
-export interface educationSchoolCollections {
-
-}
-
 /*********************************************
 * educationOutcome
 **********************************************/
-export interface educationOutcome {
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
+export interface educationOutcome  {
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
 }
-
-/*********************************************
-* educationOutcomeCollections
-**********************************************/
-export interface educationOutcomeCollections {
-
-}
-
 /*********************************************
 * educationFeedbackOutcome
 **********************************************/
-export interface educationFeedbackOutcome {
-	feedback?: graph.educationFeedback;
-	publishedFeedback?: graph.educationFeedback;
+export interface educationFeedbackOutcome  {
+	feedback: ComplexTypes.educationFeedback;
+	publishedFeedback: ComplexTypes.educationFeedback;
 }
-
-/*********************************************
-* educationFeedbackOutcomeCollections
-**********************************************/
-export interface educationFeedbackOutcomeCollections {
-
-}
-
 /*********************************************
 * educationPointsOutcome
 **********************************************/
-export interface educationPointsOutcome {
-	points?: graph.educationAssignmentPointsGrade;
-	publishedPoints?: graph.educationAssignmentPointsGrade;
+export interface educationPointsOutcome  {
+	points: ComplexTypes.educationAssignmentPointsGrade;
+	publishedPoints: ComplexTypes.educationAssignmentPointsGrade;
 }
-
-/*********************************************
-* educationPointsOutcomeCollections
-**********************************************/
-export interface educationPointsOutcomeCollections {
-
-}
-
 /*********************************************
 * educationRoot
 **********************************************/
-export interface educationRoot {
+export interface educationRoot  {
 
 }
-
-/*********************************************
-* educationRootCollections
-**********************************************/
-export interface educationRootCollections {
-
-}
-
 /*********************************************
 * educationRubricOutcome
 **********************************************/
-export interface educationRubricOutcome {
-	publishedRubricQualityFeedback?: { results: Array<graph.rubricQualityFeedbackModel> };
-	publishedRubricQualitySelectedLevels?: { results: Array<graph.rubricQualitySelectedColumnModel> };
-	rubricQualityFeedback?: { results: Array<graph.rubricQualityFeedbackModel> };
-	rubricQualitySelectedLevels?: { results: Array<graph.rubricQualitySelectedColumnModel> };
+export interface educationRubricOutcome  {
+	publishedRubricQualityFeedback: ComplexTypes.rubricQualityFeedbackModel[];
+	publishedRubricQualitySelectedLevels: ComplexTypes.rubricQualitySelectedColumnModel[];
+	rubricQualityFeedback: ComplexTypes.rubricQualityFeedbackModel[];
+	rubricQualitySelectedLevels: ComplexTypes.rubricQualitySelectedColumnModel[];
 }
-
-/*********************************************
-* educationRubricOutcomeCollections
-**********************************************/
-export interface educationRubricOutcomeCollections {
-
-}
-
 /*********************************************
 * educationSubmissionResource
 **********************************************/
-export interface educationSubmissionResource {
-	assignmentResourceUrl?: string;
-	resource?: graph.educationResource;
+export interface educationSubmissionResource  {
+	assignmentResourceUrl: string;
+	resource: ComplexTypes.educationResource;
 }
-
-/*********************************************
-* educationSubmissionResourceCollections
-**********************************************/
-export interface educationSubmissionResourceCollections {
-
-}
-
 /*********************************************
 * driveItem
 **********************************************/
-export interface driveItem {
-	audio?: graph.audio;
-	bundle?: graph.bundle;
-	content?: any;
-	cTag?: string;
-	deleted?: graph.deleted;
-	file?: graph.file;
-	fileSystemInfo?: graph.fileSystemInfo;
-	folder?: graph.folder;
-	image?: graph.image;
-	location?: graph.geoCoordinates;
-	malware?: graph.malware;
-	package?: graph.package;
-	pendingOperations?: graph.pendingOperations;
-	photo?: graph.photo;
-	publication?: graph.publicationFacet;
-	remoteItem?: graph.remoteItem;
-	root?: graph.root;
-	searchResult?: graph.searchResult;
-	shared?: graph.shared;
-	sharepointIds?: graph.sharepointIds;
-	size?: number;
-	specialFolder?: graph.specialFolder;
-	video?: graph.video;
-	webDavUrl?: string;
+export interface driveItem  {
+	audio: ComplexTypes.audio;
+	bundle: ComplexTypes.bundle;
+	content: any;
+	cTag: string;
+	deleted: ComplexTypes.deleted;
+	file: ComplexTypes.file;
+	fileSystemInfo: ComplexTypes.fileSystemInfo;
+	folder: ComplexTypes.folder;
+	image: ComplexTypes.image;
+	location: ComplexTypes.geoCoordinates;
+	malware: ComplexTypes.malware;
+	package: ComplexTypes.package;
+	pendingOperations: ComplexTypes.pendingOperations;
+	photo: ComplexTypes.photo;
+	publication: ComplexTypes.publicationFacet;
+	remoteItem: ComplexTypes.remoteItem;
+	root: ComplexTypes.root;
+	searchResult: ComplexTypes.searchResult;
+	shared: ComplexTypes.shared;
+	sharepointIds: ComplexTypes.sharepointIds;
+	size: number;
+	specialFolder: ComplexTypes.specialFolder;
+	video: ComplexTypes.video;
+	webDavUrl: string;
 }
-
-/*********************************************
-* driveItemCollections
-**********************************************/
-export interface driveItemCollections {
-
-}
-
 /*********************************************
 * workbook
 **********************************************/
-export interface workbook {
+export interface workbook  {
 
 }
-
-/*********************************************
-* workbookCollections
-**********************************************/
-export interface workbookCollections {
-
-}
-
 /*********************************************
 * listItem
 **********************************************/
-export interface listItem {
-	contentType?: graph.contentTypeInfo;
-	sharepointIds?: graph.sharepointIds;
+export interface listItem  {
+	contentType: ComplexTypes.contentTypeInfo;
+	sharepointIds: ComplexTypes.sharepointIds;
 }
-
-/*********************************************
-* listItemCollections
-**********************************************/
-export interface listItemCollections {
-
-}
-
 /*********************************************
 * subscription
 **********************************************/
-export interface subscription {
-	applicationId?: string;
-	changeType?: string;
-	clientState?: string;
-	creatorId?: string;
-	encryptionCertificate?: string;
-	encryptionCertificateId?: string;
-	expirationDateTime?: any;
-	includeResourceData?: boolean;
-	latestSupportedTlsVersion?: string;
-	lifecycleNotificationUrl?: string;
-	notificationQueryOptions?: string;
-	notificationUrl?: string;
-	notificationUrlAppId?: string;
-	resource?: string;
+export interface subscription  {
+	applicationId: string;
+	changeType: string;
+	clientState: string;
+	creatorId: string;
+	encryptionCertificate: string;
+	encryptionCertificateId: string;
+	expirationDateTime: any;
+	includeResourceData: boolean;
+	latestSupportedTlsVersion: string;
+	lifecycleNotificationUrl: string;
+	notificationQueryOptions: string;
+	notificationUrl: string;
+	notificationUrlAppId: string;
+	resource: string;
 }
-
-/*********************************************
-* subscriptionCollections
-**********************************************/
-export interface subscriptionCollections {
-
-}
-
 /*********************************************
 * thumbnailSet
 **********************************************/
-export interface thumbnailSet {
-	large?: graph.thumbnail;
-	medium?: graph.thumbnail;
-	small?: graph.thumbnail;
-	source?: graph.thumbnail;
+export interface thumbnailSet  {
+	large: ComplexTypes.thumbnail;
+	medium: ComplexTypes.thumbnail;
+	small: ComplexTypes.thumbnail;
+	source: ComplexTypes.thumbnail;
 }
-
-/*********************************************
-* thumbnailSetCollections
-**********************************************/
-export interface thumbnailSetCollections {
-
-}
-
 /*********************************************
 * baseItemVersion
 **********************************************/
-export interface baseItemVersion {
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
-	publication?: graph.publicationFacet;
+export interface baseItemVersion  {
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
+	publication: ComplexTypes.publicationFacet;
 }
-
-/*********************************************
-* baseItemVersionCollections
-**********************************************/
-export interface baseItemVersionCollections {
-
-}
-
 /*********************************************
 * driveItemVersion
 **********************************************/
-export interface driveItemVersion {
-	content?: any;
-	size?: number;
+export interface driveItemVersion  {
+	content: any;
+	size: number;
 }
-
-/*********************************************
-* driveItemVersionCollections
-**********************************************/
-export interface driveItemVersionCollections {
-
-}
-
 /*********************************************
 * workbookApplication
 **********************************************/
-export interface workbookApplication {
-	calculationMode?: string;
+export interface workbookApplication  {
+	calculationMode: string;
 }
-
-/*********************************************
-* workbookApplicationCollections
-**********************************************/
-export interface workbookApplicationCollections {
-
-}
-
 /*********************************************
 * workbookComment
 **********************************************/
-export interface workbookComment {
-	content?: string;
-	contentType?: string;
+export interface workbookComment  {
+	content: string;
+	contentType: string;
 }
-
-/*********************************************
-* workbookCommentCollections
-**********************************************/
-export interface workbookCommentCollections {
-
-}
-
 /*********************************************
 * workbookFunctions
 **********************************************/
-export interface workbookFunctions {
+export interface workbookFunctions  {
 
 }
-
-/*********************************************
-* workbookFunctionsCollections
-**********************************************/
-export interface workbookFunctionsCollections {
-
-}
-
 /*********************************************
 * workbookNamedItem
 **********************************************/
-export interface workbookNamedItem {
-	comment?: string;
-	name?: string;
-	scope?: string;
-	type?: string;
-	value?: graph.Json;
-	visible?: boolean;
+export interface workbookNamedItem  {
+	comment: string;
+	name: string;
+	scope: string;
+	type: string;
+	value: ComplexTypes.Json;
+	visible: boolean;
 }
-
-/*********************************************
-* workbookNamedItemCollections
-**********************************************/
-export interface workbookNamedItemCollections {
-
-}
-
 /*********************************************
 * workbookOperation
 **********************************************/
-export interface workbookOperation {
-	error?: graph.workbookOperationError;
-	resourceLocation?: string;
-	status?: graph.workbookOperationStatus;
+export interface workbookOperation  {
+	error: ComplexTypes.workbookOperationError;
+	resourceLocation: string;
+	status: EnumTypes.workbookOperationStatus;
 }
-
-/*********************************************
-* workbookOperationCollections
-**********************************************/
-export interface workbookOperationCollections {
-
-}
-
 /*********************************************
 * workbookTable
 **********************************************/
-export interface workbookTable {
-	highlightFirstColumn?: boolean;
-	highlightLastColumn?: boolean;
-	legacyId?: string;
-	name?: string;
-	showBandedColumns?: boolean;
-	showBandedRows?: boolean;
-	showFilterButton?: boolean;
-	showHeaders?: boolean;
-	showTotals?: boolean;
-	style?: string;
+export interface workbookTable  {
+	highlightFirstColumn: boolean;
+	highlightLastColumn: boolean;
+	legacyId: string;
+	name: string;
+	showBandedColumns: boolean;
+	showBandedRows: boolean;
+	showFilterButton: boolean;
+	showHeaders: boolean;
+	showTotals: boolean;
+	style: string;
 }
-
-/*********************************************
-* workbookTableCollections
-**********************************************/
-export interface workbookTableCollections {
-
-}
-
 /*********************************************
 * workbookWorksheet
 **********************************************/
-export interface workbookWorksheet {
-	name?: string;
-	position?: number;
-	visibility?: string;
+export interface workbookWorksheet  {
+	name: string;
+	position: number;
+	visibility: string;
 }
-
-/*********************************************
-* workbookWorksheetCollections
-**********************************************/
-export interface workbookWorksheetCollections {
-
-}
-
 /*********************************************
 * workbookChart
 **********************************************/
-export interface workbookChart {
-	height?: number;
-	left?: number;
-	name?: string;
-	top?: number;
-	width?: number;
+export interface workbookChart  {
+	height: number;
+	left: number;
+	name: string;
+	top: number;
+	width: number;
 }
-
-/*********************************************
-* workbookChartCollections
-**********************************************/
-export interface workbookChartCollections {
-
-}
-
 /*********************************************
 * workbookChartAxes
 **********************************************/
-export interface workbookChartAxes {
+export interface workbookChartAxes  {
 
 }
-
-/*********************************************
-* workbookChartAxesCollections
-**********************************************/
-export interface workbookChartAxesCollections {
-
-}
-
 /*********************************************
 * workbookChartDataLabels
 **********************************************/
-export interface workbookChartDataLabels {
-	position?: string;
-	separator?: string;
-	showBubbleSize?: boolean;
-	showCategoryName?: boolean;
-	showLegendKey?: boolean;
-	showPercentage?: boolean;
-	showSeriesName?: boolean;
-	showValue?: boolean;
+export interface workbookChartDataLabels  {
+	position: string;
+	separator: string;
+	showBubbleSize: boolean;
+	showCategoryName: boolean;
+	showLegendKey: boolean;
+	showPercentage: boolean;
+	showSeriesName: boolean;
+	showValue: boolean;
 }
-
-/*********************************************
-* workbookChartDataLabelsCollections
-**********************************************/
-export interface workbookChartDataLabelsCollections {
-
-}
-
 /*********************************************
 * workbookChartAreaFormat
 **********************************************/
-export interface workbookChartAreaFormat {
+export interface workbookChartAreaFormat  {
 
 }
-
-/*********************************************
-* workbookChartAreaFormatCollections
-**********************************************/
-export interface workbookChartAreaFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartLegend
 **********************************************/
-export interface workbookChartLegend {
-	overlay?: boolean;
-	position?: string;
-	visible?: boolean;
+export interface workbookChartLegend  {
+	overlay: boolean;
+	position: string;
+	visible: boolean;
 }
-
-/*********************************************
-* workbookChartLegendCollections
-**********************************************/
-export interface workbookChartLegendCollections {
-
-}
-
 /*********************************************
 * workbookChartSeries
 **********************************************/
-export interface workbookChartSeries {
-	name?: string;
+export interface workbookChartSeries  {
+	name: string;
 }
-
-/*********************************************
-* workbookChartSeriesCollections
-**********************************************/
-export interface workbookChartSeriesCollections {
-
-}
-
 /*********************************************
 * workbookChartTitle
 **********************************************/
-export interface workbookChartTitle {
-	overlay?: boolean;
-	text?: string;
-	visible?: boolean;
+export interface workbookChartTitle  {
+	overlay: boolean;
+	text: string;
+	visible: boolean;
 }
-
-/*********************************************
-* workbookChartTitleCollections
-**********************************************/
-export interface workbookChartTitleCollections {
-
-}
-
 /*********************************************
 * workbookChartFill
 **********************************************/
-export interface workbookChartFill {
+export interface workbookChartFill  {
 
 }
-
-/*********************************************
-* workbookChartFillCollections
-**********************************************/
-export interface workbookChartFillCollections {
-
-}
-
 /*********************************************
 * workbookChartFont
 **********************************************/
-export interface workbookChartFont {
-	bold?: boolean;
-	color?: string;
-	italic?: boolean;
-	name?: string;
-	size?: number;
-	underline?: string;
+export interface workbookChartFont  {
+	bold: boolean;
+	color: string;
+	italic: boolean;
+	name: string;
+	size: number;
+	underline: string;
 }
-
-/*********************************************
-* workbookChartFontCollections
-**********************************************/
-export interface workbookChartFontCollections {
-
-}
-
 /*********************************************
 * workbookChartAxis
 **********************************************/
-export interface workbookChartAxis {
-	majorUnit?: graph.Json;
-	maximum?: graph.Json;
-	minimum?: graph.Json;
-	minorUnit?: graph.Json;
+export interface workbookChartAxis  {
+	majorUnit: ComplexTypes.Json;
+	maximum: ComplexTypes.Json;
+	minimum: ComplexTypes.Json;
+	minorUnit: ComplexTypes.Json;
 }
-
-/*********************************************
-* workbookChartAxisCollections
-**********************************************/
-export interface workbookChartAxisCollections {
-
-}
-
 /*********************************************
 * workbookChartAxisFormat
 **********************************************/
-export interface workbookChartAxisFormat {
+export interface workbookChartAxisFormat  {
 
 }
-
-/*********************************************
-* workbookChartAxisFormatCollections
-**********************************************/
-export interface workbookChartAxisFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartGridlines
 **********************************************/
-export interface workbookChartGridlines {
-	visible?: boolean;
+export interface workbookChartGridlines  {
+	visible: boolean;
 }
-
-/*********************************************
-* workbookChartGridlinesCollections
-**********************************************/
-export interface workbookChartGridlinesCollections {
-
-}
-
 /*********************************************
 * workbookChartAxisTitle
 **********************************************/
-export interface workbookChartAxisTitle {
-	text?: string;
-	visible?: boolean;
+export interface workbookChartAxisTitle  {
+	text: string;
+	visible: boolean;
 }
-
-/*********************************************
-* workbookChartAxisTitleCollections
-**********************************************/
-export interface workbookChartAxisTitleCollections {
-
-}
-
 /*********************************************
 * workbookChartLineFormat
 **********************************************/
-export interface workbookChartLineFormat {
-	color?: string;
+export interface workbookChartLineFormat  {
+	color: string;
 }
-
-/*********************************************
-* workbookChartLineFormatCollections
-**********************************************/
-export interface workbookChartLineFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartAxisTitleFormat
 **********************************************/
-export interface workbookChartAxisTitleFormat {
+export interface workbookChartAxisTitleFormat  {
 
 }
-
-/*********************************************
-* workbookChartAxisTitleFormatCollections
-**********************************************/
-export interface workbookChartAxisTitleFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartDataLabelFormat
 **********************************************/
-export interface workbookChartDataLabelFormat {
+export interface workbookChartDataLabelFormat  {
 
 }
-
-/*********************************************
-* workbookChartDataLabelFormatCollections
-**********************************************/
-export interface workbookChartDataLabelFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartGridlinesFormat
 **********************************************/
-export interface workbookChartGridlinesFormat {
+export interface workbookChartGridlinesFormat  {
 
 }
-
-/*********************************************
-* workbookChartGridlinesFormatCollections
-**********************************************/
-export interface workbookChartGridlinesFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartLegendFormat
 **********************************************/
-export interface workbookChartLegendFormat {
+export interface workbookChartLegendFormat  {
 
 }
-
-/*********************************************
-* workbookChartLegendFormatCollections
-**********************************************/
-export interface workbookChartLegendFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartPoint
 **********************************************/
-export interface workbookChartPoint {
-	value?: graph.Json;
+export interface workbookChartPoint  {
+	value: ComplexTypes.Json;
 }
-
-/*********************************************
-* workbookChartPointCollections
-**********************************************/
-export interface workbookChartPointCollections {
-
-}
-
 /*********************************************
 * workbookChartPointFormat
 **********************************************/
-export interface workbookChartPointFormat {
+export interface workbookChartPointFormat  {
 
 }
-
-/*********************************************
-* workbookChartPointFormatCollections
-**********************************************/
-export interface workbookChartPointFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartSeriesFormat
 **********************************************/
-export interface workbookChartSeriesFormat {
+export interface workbookChartSeriesFormat  {
 
 }
-
-/*********************************************
-* workbookChartSeriesFormatCollections
-**********************************************/
-export interface workbookChartSeriesFormatCollections {
-
-}
-
 /*********************************************
 * workbookChartTitleFormat
 **********************************************/
-export interface workbookChartTitleFormat {
+export interface workbookChartTitleFormat  {
 
 }
-
-/*********************************************
-* workbookChartTitleFormatCollections
-**********************************************/
-export interface workbookChartTitleFormatCollections {
-
-}
-
 /*********************************************
 * workbookCommentReply
 **********************************************/
-export interface workbookCommentReply {
-	content?: string;
-	contentType?: string;
+export interface workbookCommentReply  {
+	content: string;
+	contentType: string;
 }
-
-/*********************************************
-* workbookCommentReplyCollections
-**********************************************/
-export interface workbookCommentReplyCollections {
-
-}
-
 /*********************************************
 * workbookFilter
 **********************************************/
-export interface workbookFilter {
-	criteria?: graph.workbookFilterCriteria;
+export interface workbookFilter  {
+	criteria: ComplexTypes.workbookFilterCriteria;
 }
-
-/*********************************************
-* workbookFilterCollections
-**********************************************/
-export interface workbookFilterCollections {
-
-}
-
 /*********************************************
 * workbookFormatProtection
 **********************************************/
-export interface workbookFormatProtection {
-	formulaHidden?: boolean;
-	locked?: boolean;
+export interface workbookFormatProtection  {
+	formulaHidden: boolean;
+	locked: boolean;
 }
-
-/*********************************************
-* workbookFormatProtectionCollections
-**********************************************/
-export interface workbookFormatProtectionCollections {
-
-}
-
 /*********************************************
 * workbookFunctionResult
 **********************************************/
-export interface workbookFunctionResult {
-	error?: string;
-	value?: graph.Json;
+export interface workbookFunctionResult  {
+	error: string;
+	value: ComplexTypes.Json;
 }
-
-/*********************************************
-* workbookFunctionResultCollections
-**********************************************/
-export interface workbookFunctionResultCollections {
-
-}
-
 /*********************************************
 * workbookPivotTable
 **********************************************/
-export interface workbookPivotTable {
-	name?: string;
+export interface workbookPivotTable  {
+	name: string;
 }
-
-/*********************************************
-* workbookPivotTableCollections
-**********************************************/
-export interface workbookPivotTableCollections {
-
-}
-
 /*********************************************
 * workbookRange
 **********************************************/
-export interface workbookRange {
-	address?: string;
-	addressLocal?: string;
-	cellCount?: number;
-	columnCount?: number;
-	columnHidden?: boolean;
-	columnIndex?: number;
-	formulas?: graph.Json;
-	formulasLocal?: graph.Json;
-	formulasR1C1?: graph.Json;
-	hidden?: boolean;
-	numberFormat?: graph.Json;
-	rowCount?: number;
-	rowHidden?: boolean;
-	rowIndex?: number;
-	text?: graph.Json;
-	values?: graph.Json;
-	valueTypes?: graph.Json;
+export interface workbookRange  {
+	address: string;
+	addressLocal: string;
+	cellCount: number;
+	columnCount: number;
+	columnHidden: boolean;
+	columnIndex: number;
+	formulas: ComplexTypes.Json;
+	formulasLocal: ComplexTypes.Json;
+	formulasR1C1: ComplexTypes.Json;
+	hidden: boolean;
+	numberFormat: ComplexTypes.Json;
+	rowCount: number;
+	rowHidden: boolean;
+	rowIndex: number;
+	text: ComplexTypes.Json;
+	values: ComplexTypes.Json;
+	valueTypes: ComplexTypes.Json;
 }
-
-/*********************************************
-* workbookRangeCollections
-**********************************************/
-export interface workbookRangeCollections {
-
-}
-
 /*********************************************
 * workbookRangeFormat
 **********************************************/
-export interface workbookRangeFormat {
-	columnWidth?: number;
-	horizontalAlignment?: string;
-	rowHeight?: number;
-	verticalAlignment?: string;
-	wrapText?: boolean;
+export interface workbookRangeFormat  {
+	columnWidth: number;
+	horizontalAlignment: string;
+	rowHeight: number;
+	verticalAlignment: string;
+	wrapText: boolean;
 }
-
-/*********************************************
-* workbookRangeFormatCollections
-**********************************************/
-export interface workbookRangeFormatCollections {
-
-}
-
 /*********************************************
 * workbookRangeSort
 **********************************************/
-export interface workbookRangeSort {
+export interface workbookRangeSort  {
 
 }
-
-/*********************************************
-* workbookRangeSortCollections
-**********************************************/
-export interface workbookRangeSortCollections {
-
-}
-
 /*********************************************
 * workbookRangeBorder
 **********************************************/
-export interface workbookRangeBorder {
-	color?: string;
-	sideIndex?: string;
-	style?: string;
-	weight?: string;
+export interface workbookRangeBorder  {
+	color: string;
+	sideIndex: string;
+	style: string;
+	weight: string;
 }
-
-/*********************************************
-* workbookRangeBorderCollections
-**********************************************/
-export interface workbookRangeBorderCollections {
-
-}
-
 /*********************************************
 * workbookRangeFill
 **********************************************/
-export interface workbookRangeFill {
-	color?: string;
+export interface workbookRangeFill  {
+	color: string;
 }
-
-/*********************************************
-* workbookRangeFillCollections
-**********************************************/
-export interface workbookRangeFillCollections {
-
-}
-
 /*********************************************
 * workbookRangeFont
 **********************************************/
-export interface workbookRangeFont {
-	bold?: boolean;
-	color?: string;
-	italic?: boolean;
-	name?: string;
-	size?: number;
-	underline?: string;
+export interface workbookRangeFont  {
+	bold: boolean;
+	color: string;
+	italic: boolean;
+	name: string;
+	size: number;
+	underline: string;
 }
-
-/*********************************************
-* workbookRangeFontCollections
-**********************************************/
-export interface workbookRangeFontCollections {
-
-}
-
 /*********************************************
 * workbookRangeView
 **********************************************/
-export interface workbookRangeView {
-	cellAddresses?: graph.Json;
-	columnCount?: number;
-	formulas?: graph.Json;
-	formulasLocal?: graph.Json;
-	formulasR1C1?: graph.Json;
-	index?: number;
-	numberFormat?: graph.Json;
-	rowCount?: number;
-	text?: graph.Json;
-	values?: graph.Json;
-	valueTypes?: graph.Json;
+export interface workbookRangeView  {
+	cellAddresses: ComplexTypes.Json;
+	columnCount: number;
+	formulas: ComplexTypes.Json;
+	formulasLocal: ComplexTypes.Json;
+	formulasR1C1: ComplexTypes.Json;
+	index: number;
+	numberFormat: ComplexTypes.Json;
+	rowCount: number;
+	text: ComplexTypes.Json;
+	values: ComplexTypes.Json;
+	valueTypes: ComplexTypes.Json;
 }
-
-/*********************************************
-* workbookRangeViewCollections
-**********************************************/
-export interface workbookRangeViewCollections {
-
-}
-
 /*********************************************
 * workbookTableColumn
 **********************************************/
-export interface workbookTableColumn {
-	index?: number;
-	name?: string;
-	values?: graph.Json;
+export interface workbookTableColumn  {
+	index: number;
+	name: string;
+	values: ComplexTypes.Json;
 }
-
-/*********************************************
-* workbookTableColumnCollections
-**********************************************/
-export interface workbookTableColumnCollections {
-
-}
-
 /*********************************************
 * workbookTableRow
 **********************************************/
-export interface workbookTableRow {
-	index?: number;
-	values?: graph.Json;
+export interface workbookTableRow  {
+	index: number;
+	values: ComplexTypes.Json;
 }
-
-/*********************************************
-* workbookTableRowCollections
-**********************************************/
-export interface workbookTableRowCollections {
-
-}
-
 /*********************************************
 * workbookTableSort
 **********************************************/
-export interface workbookTableSort {
-	fields?: { results: Array<graph.workbookSortField> };
-	matchCase?: boolean;
-	method?: string;
+export interface workbookTableSort  {
+	fields: ComplexTypes.workbookSortField[];
+	matchCase: boolean;
+	method: string;
 }
-
-/*********************************************
-* workbookTableSortCollections
-**********************************************/
-export interface workbookTableSortCollections {
-
-}
-
 /*********************************************
 * workbookWorksheetProtection
 **********************************************/
-export interface workbookWorksheetProtection {
-	options?: graph.workbookWorksheetProtectionOptions;
-	protected?: boolean;
+export interface workbookWorksheetProtection  {
+	options: ComplexTypes.workbookWorksheetProtectionOptions;
+	protected: boolean;
 }
-
-/*********************************************
-* workbookWorksheetProtectionCollections
-**********************************************/
-export interface workbookWorksheetProtectionCollections {
-
-}
-
 /*********************************************
 * place
 **********************************************/
-export interface place {
-	address?: graph.physicalAddress;
-	displayName?: string;
-	geoCoordinates?: graph.outlookGeoCoordinates;
-	phone?: string;
+export interface place  {
+	address: ComplexTypes.physicalAddress;
+	displayName: string;
+	geoCoordinates: ComplexTypes.outlookGeoCoordinates;
+	phone: string;
 }
-
-/*********************************************
-* placeCollections
-**********************************************/
-export interface placeCollections {
-
-}
-
 /*********************************************
 * room
 **********************************************/
-export interface room {
-	audioDeviceName?: string;
-	bookingType?: graph.bookingType;
-	building?: string;
-	capacity?: number;
-	displayDeviceName?: string;
-	emailAddress?: string;
-	floorLabel?: string;
-	floorNumber?: number;
-	isWheelChairAccessible?: boolean;
-	label?: string;
-	nickname?: string;
-	tags?: { results: Array<string> };
-	videoDeviceName?: string;
+export interface room  {
+	audioDeviceName: string;
+	bookingType: EnumTypes.bookingType;
+	building: string;
+	capacity: number;
+	displayDeviceName: string;
+	emailAddress: string;
+	floorLabel: string;
+	floorNumber: number;
+	isWheelChairAccessible: boolean;
+	label: string;
+	nickname: string;
+	tags: Array<string>[];
+	videoDeviceName: string;
 }
-
-/*********************************************
-* roomCollections
-**********************************************/
-export interface roomCollections {
-
-}
-
 /*********************************************
 * roomList
 **********************************************/
-export interface roomList {
-	emailAddress?: string;
+export interface roomList  {
+	emailAddress: string;
 }
-
-/*********************************************
-* roomListCollections
-**********************************************/
-export interface roomListCollections {
-
-}
-
 /*********************************************
 * attachment
 **********************************************/
-export interface attachment {
-	contentType?: string;
-	isInline?: boolean;
-	lastModifiedDateTime?: any;
-	name?: string;
-	size?: number;
+export interface attachment  {
+	contentType: string;
+	isInline: boolean;
+	lastModifiedDateTime: any;
+	name: string;
+	size: number;
 }
-
-/*********************************************
-* attachmentCollections
-**********************************************/
-export interface attachmentCollections {
-
-}
-
 /*********************************************
 * calendarPermission
 **********************************************/
-export interface calendarPermission {
-	allowedRoles?: { results: Array<graph.calendarRoleType> };
-	emailAddress?: graph.emailAddress;
-	isInsideOrganization?: boolean;
-	isRemovable?: boolean;
-	role?: graph.calendarRoleType;
+export interface calendarPermission  {
+	allowedRoles: EnumTypes.calendarRoleType[];
+	emailAddress: ComplexTypes.emailAddress;
+	isInsideOrganization: boolean;
+	isRemovable: boolean;
+	role: EnumTypes.calendarRoleType;
 }
-
-/*********************************************
-* calendarPermissionCollections
-**********************************************/
-export interface calendarPermissionCollections {
-
-}
-
 /*********************************************
 * multiValueLegacyExtendedProperty
 **********************************************/
-export interface multiValueLegacyExtendedProperty {
-	value?: { results: Array<string> };
+export interface multiValueLegacyExtendedProperty  {
+	value: Array<string>[];
 }
-
-/*********************************************
-* multiValueLegacyExtendedPropertyCollections
-**********************************************/
-export interface multiValueLegacyExtendedPropertyCollections {
-
-}
-
 /*********************************************
 * singleValueLegacyExtendedProperty
 **********************************************/
-export interface singleValueLegacyExtendedProperty {
-	value?: string;
+export interface singleValueLegacyExtendedProperty  {
+	value: string;
 }
-
-/*********************************************
-* singleValueLegacyExtendedPropertyCollections
-**********************************************/
-export interface singleValueLegacyExtendedPropertyCollections {
-
-}
-
 /*********************************************
 * calendarSharingMessage
 **********************************************/
-export interface calendarSharingMessage {
-	canAccept?: boolean;
-	sharingMessageAction?: graph.calendarSharingMessageAction;
-	sharingMessageActions?: { results: Array<graph.calendarSharingMessageAction> };
-	suggestedCalendarName?: string;
+export interface calendarSharingMessage  {
+	canAccept: boolean;
+	sharingMessageAction: ComplexTypes.calendarSharingMessageAction;
+	sharingMessageActions: ComplexTypes.calendarSharingMessageAction[];
+	suggestedCalendarName: string;
 }
-
-/*********************************************
-* calendarSharingMessageCollections
-**********************************************/
-export interface calendarSharingMessageCollections {
-
-}
-
 /*********************************************
 * post
 **********************************************/
-export interface post {
-	body?: graph.itemBody;
-	conversationId?: string;
-	conversationThreadId?: string;
-	from?: graph.recipient;
-	hasAttachments?: boolean;
-	newParticipants?: { results: Array<graph.recipient> };
-	receivedDateTime?: any;
-	sender?: graph.recipient;
+export interface post  {
+	body: ComplexTypes.itemBody;
+	conversationId: string;
+	conversationThreadId: string;
+	from: ComplexTypes.recipient;
+	hasAttachments: boolean;
+	newParticipants: ComplexTypes.recipient[];
+	receivedDateTime: any;
+	sender: ComplexTypes.recipient;
 }
-
-/*********************************************
-* postCollections
-**********************************************/
-export interface postCollections {
-
-}
-
 /*********************************************
 * eventMessage
 **********************************************/
-export interface eventMessage {
-	endDateTime?: graph.dateTimeTimeZone;
-	isAllDay?: boolean;
-	isDelegated?: boolean;
-	isOutOfDate?: boolean;
-	location?: graph.location;
-	meetingMessageType?: graph.meetingMessageType;
-	recurrence?: graph.patternedRecurrence;
-	startDateTime?: graph.dateTimeTimeZone;
-	type?: graph.eventType;
+export interface eventMessage  {
+	endDateTime: ComplexTypes.dateTimeTimeZone;
+	isAllDay: boolean;
+	isDelegated: boolean;
+	isOutOfDate: boolean;
+	location: ComplexTypes.location;
+	meetingMessageType: EnumTypes.meetingMessageType;
+	recurrence: ComplexTypes.patternedRecurrence;
+	startDateTime: ComplexTypes.dateTimeTimeZone;
+	type: EnumTypes.eventType;
 }
-
-/*********************************************
-* eventMessageCollections
-**********************************************/
-export interface eventMessageCollections {
-
-}
-
 /*********************************************
 * eventMessageRequest
 **********************************************/
-export interface eventMessageRequest {
-	allowNewTimeProposals?: boolean;
-	meetingRequestType?: graph.meetingRequestType;
-	previousEndDateTime?: graph.dateTimeTimeZone;
-	previousLocation?: graph.location;
-	previousStartDateTime?: graph.dateTimeTimeZone;
-	responseRequested?: boolean;
+export interface eventMessageRequest  {
+	allowNewTimeProposals: boolean;
+	meetingRequestType: EnumTypes.meetingRequestType;
+	previousEndDateTime: ComplexTypes.dateTimeTimeZone;
+	previousLocation: ComplexTypes.location;
+	previousStartDateTime: ComplexTypes.dateTimeTimeZone;
+	responseRequested: boolean;
 }
-
-/*********************************************
-* eventMessageRequestCollections
-**********************************************/
-export interface eventMessageRequestCollections {
-
-}
-
 /*********************************************
 * eventMessageResponse
 **********************************************/
-export interface eventMessageResponse {
-	proposedNewTime?: graph.timeSlot;
-	responseType?: graph.responseType;
+export interface eventMessageResponse  {
+	proposedNewTime: ComplexTypes.timeSlot;
+	responseType: EnumTypes.responseType;
 }
-
-/*********************************************
-* eventMessageResponseCollections
-**********************************************/
-export interface eventMessageResponseCollections {
-
-}
-
 /*********************************************
 * fileAttachment
 **********************************************/
-export interface fileAttachment {
-	contentBytes?: any;
-	contentId?: string;
-	contentLocation?: string;
+export interface fileAttachment  {
+	contentBytes: any;
+	contentId: string;
+	contentLocation: string;
 }
-
-/*********************************************
-* fileAttachmentCollections
-**********************************************/
-export interface fileAttachmentCollections {
-
-}
-
 /*********************************************
 * inferenceClassificationOverride
 **********************************************/
-export interface inferenceClassificationOverride {
-	classifyAs?: graph.inferenceClassificationType;
-	senderEmailAddress?: graph.emailAddress;
+export interface inferenceClassificationOverride  {
+	classifyAs: EnumTypes.inferenceClassificationType;
+	senderEmailAddress: ComplexTypes.emailAddress;
 }
-
-/*********************************************
-* inferenceClassificationOverrideCollections
-**********************************************/
-export interface inferenceClassificationOverrideCollections {
-
-}
-
 /*********************************************
 * itemAttachment
 **********************************************/
-export interface itemAttachment {
+export interface itemAttachment  {
 
 }
-
-/*********************************************
-* itemAttachmentCollections
-**********************************************/
-export interface itemAttachmentCollections {
-
-}
-
 /*********************************************
 * messageRule
 **********************************************/
-export interface messageRule {
-	actions?: graph.messageRuleActions;
-	conditions?: graph.messageRulePredicates;
-	displayName?: string;
-	exceptions?: graph.messageRulePredicates;
-	hasError?: boolean;
-	isEnabled?: boolean;
-	isReadOnly?: boolean;
-	sequence?: number;
+export interface messageRule  {
+	actions: ComplexTypes.messageRuleActions;
+	conditions: ComplexTypes.messageRulePredicates;
+	displayName: string;
+	exceptions: ComplexTypes.messageRulePredicates;
+	hasError: boolean;
+	isEnabled: boolean;
+	isReadOnly: boolean;
+	sequence: number;
 }
-
-/*********************************************
-* messageRuleCollections
-**********************************************/
-export interface messageRuleCollections {
-
-}
-
 /*********************************************
 * mailSearchFolder
 **********************************************/
-export interface mailSearchFolder {
-	filterQuery?: string;
-	includeNestedFolders?: boolean;
-	isSupported?: boolean;
-	sourceFolderIds?: { results: Array<string> };
+export interface mailSearchFolder  {
+	filterQuery: string;
+	includeNestedFolders: boolean;
+	isSupported: boolean;
+	sourceFolderIds: Array<string>[];
 }
-
-/*********************************************
-* mailSearchFolderCollections
-**********************************************/
-export interface mailSearchFolderCollections {
-
-}
-
 /*********************************************
 * openTypeExtension
 **********************************************/
-export interface openTypeExtension {
-	extensionName?: string;
+export interface openTypeExtension  {
+	extensionName: string;
 }
-
-/*********************************************
-* openTypeExtensionCollections
-**********************************************/
-export interface openTypeExtensionCollections {
-
-}
-
 /*********************************************
 * outlookCategory
 **********************************************/
-export interface outlookCategory {
-	color?: graph.categoryColor;
-	displayName?: string;
+export interface outlookCategory  {
+	color: EnumTypes.categoryColor;
+	displayName: string;
 }
-
-/*********************************************
-* outlookCategoryCollections
-**********************************************/
-export interface outlookCategoryCollections {
-
-}
-
 /*********************************************
 * referenceAttachment
 **********************************************/
-export interface referenceAttachment {
+export interface referenceAttachment  {
 
 }
-
-/*********************************************
-* referenceAttachmentCollections
-**********************************************/
-export interface referenceAttachmentCollections {
-
-}
-
 /*********************************************
 * columnLink
 **********************************************/
-export interface columnLink {
-	name?: string;
+export interface columnLink  {
+	name: string;
 }
-
-/*********************************************
-* columnLinkCollections
-**********************************************/
-export interface columnLinkCollections {
-
-}
-
 /*********************************************
 * listItemVersion
 **********************************************/
-export interface listItemVersion {
+export interface listItemVersion  {
 
 }
-
-/*********************************************
-* listItemVersionCollections
-**********************************************/
-export interface listItemVersionCollections {
-
-}
-
 /*********************************************
 * documentSetVersion
 **********************************************/
-export interface documentSetVersion {
-	comment?: string;
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	items?: { results: Array<graph.documentSetVersionItem> };
-	shouldCaptureMinorVersion?: boolean;
+export interface documentSetVersion  {
+	comment: string;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	items: ComplexTypes.documentSetVersionItem[];
+	shouldCaptureMinorVersion: boolean;
 }
-
-/*********************************************
-* documentSetVersionCollections
-**********************************************/
-export interface documentSetVersionCollections {
-
-}
-
 /*********************************************
 * fieldValueSet
 **********************************************/
-export interface fieldValueSet {
+export interface fieldValueSet  {
 
 }
-
-/*********************************************
-* fieldValueSetCollections
-**********************************************/
-export interface fieldValueSetCollections {
-
-}
-
 /*********************************************
 * itemActivity
 **********************************************/
-export interface itemActivity {
-	access?: graph.accessAction;
-	activityDateTime?: any;
-	actor?: graph.identitySet;
+export interface itemActivity  {
+	access: ComplexTypes.accessAction;
+	activityDateTime: any;
+	actor: ComplexTypes.identitySet;
 }
-
-/*********************************************
-* itemActivityCollections
-**********************************************/
-export interface itemActivityCollections {
-
-}
-
 /*********************************************
 * itemActivityStat
 **********************************************/
-export interface itemActivityStat {
-	access?: graph.itemActionStat;
-	create?: graph.itemActionStat;
-	delete?: graph.itemActionStat;
-	edit?: graph.itemActionStat;
-	endDateTime?: any;
-	incompleteData?: graph.incompleteData;
-	isTrending?: boolean;
-	move?: graph.itemActionStat;
-	startDateTime?: any;
+export interface itemActivityStat  {
+	access: ComplexTypes.itemActionStat;
+	create: ComplexTypes.itemActionStat;
+	delete: ComplexTypes.itemActionStat;
+	edit: ComplexTypes.itemActionStat;
+	endDateTime: any;
+	incompleteData: ComplexTypes.incompleteData;
+	isTrending: boolean;
+	move: ComplexTypes.itemActionStat;
+	startDateTime: any;
 }
-
-/*********************************************
-* itemActivityStatCollections
-**********************************************/
-export interface itemActivityStatCollections {
-
-}
-
 /*********************************************
 * sharedDriveItem
 **********************************************/
-export interface sharedDriveItem {
-	owner?: graph.identitySet;
+export interface sharedDriveItem  {
+	owner: ComplexTypes.identitySet;
 }
-
-/*********************************************
-* sharedDriveItemCollections
-**********************************************/
-export interface sharedDriveItemCollections {
-
-}
-
 /*********************************************
 * schemaExtension
 **********************************************/
-export interface schemaExtension {
-	description?: string;
-	owner?: string;
-	properties?: { results: Array<graph.extensionSchemaProperty> };
-	status?: string;
-	targetTypes?: { results: Array<string> };
+export interface schemaExtension  {
+	description: string;
+	owner: string;
+	properties: ComplexTypes.extensionSchemaProperty[];
+	status: string;
+	targetTypes: Array<string>[];
 }
-
-/*********************************************
-* schemaExtensionCollections
-**********************************************/
-export interface schemaExtensionCollections {
-
-}
-
 /*********************************************
 * cloudCommunications
 **********************************************/
-export interface cloudCommunications {
+export interface cloudCommunications  {
 
 }
-
-/*********************************************
-* cloudCommunicationsCollections
-**********************************************/
-export interface cloudCommunicationsCollections {
-
-}
-
 /*********************************************
 * call
 **********************************************/
-export interface call {
-	callbackUri?: string;
-	callChainId?: string;
-	callOptions?: graph.callOptions;
-	callRoutes?: { results: Array<graph.callRoute> };
-	chatInfo?: graph.chatInfo;
-	direction?: graph.callDirection;
-	incomingContext?: graph.incomingContext;
-	mediaConfig?: graph.mediaConfig;
-	mediaState?: graph.callMediaState;
-	meetingInfo?: graph.meetingInfo;
-	myParticipantId?: string;
-	requestedModalities?: { results: Array<graph.modality> };
-	resultInfo?: graph.resultInfo;
-	source?: graph.participantInfo;
-	state?: graph.callState;
-	subject?: string;
-	targets?: { results: Array<graph.invitationParticipantInfo> };
-	tenantId?: string;
-	toneInfo?: graph.toneInfo;
-	transcription?: graph.callTranscriptionInfo;
+export interface call  {
+	callbackUri: string;
+	callChainId: string;
+	callOptions: ComplexTypes.callOptions;
+	callRoutes: ComplexTypes.callRoute[];
+	chatInfo: ComplexTypes.chatInfo;
+	direction: EnumTypes.callDirection;
+	incomingContext: ComplexTypes.incomingContext;
+	mediaConfig: ComplexTypes.mediaConfig;
+	mediaState: ComplexTypes.callMediaState;
+	meetingInfo: ComplexTypes.meetingInfo;
+	myParticipantId: string;
+	requestedModalities: EnumTypes.modality[];
+	resultInfo: ComplexTypes.resultInfo;
+	source: ComplexTypes.participantInfo;
+	state: EnumTypes.callState;
+	subject: string;
+	targets: ComplexTypes.invitationParticipantInfo[];
+	tenantId: string;
+	toneInfo: ComplexTypes.toneInfo;
+	transcription: ComplexTypes.callTranscriptionInfo;
 }
-
-/*********************************************
-* callCollections
-**********************************************/
-export interface callCollections {
-
-}
-
 /*********************************************
 * accessReviewHistoryDefinition
 **********************************************/
-export interface accessReviewHistoryDefinition {
-	createdBy?: graph.userIdentity;
-	createdDateTime?: any;
-	decisions?: { results: Array<graph.accessReviewHistoryDecisionFilter> };
-	displayName?: string;
-	reviewHistoryPeriodEndDateTime?: any;
-	reviewHistoryPeriodStartDateTime?: any;
-	scheduleSettings?: graph.accessReviewHistoryScheduleSettings;
-	scopes?: { results: Array<graph.accessReviewScope> };
-	status?: graph.accessReviewHistoryStatus;
+export interface accessReviewHistoryDefinition  {
+	createdBy: ComplexTypes.userIdentity;
+	createdDateTime: any;
+	decisions: EnumTypes.accessReviewHistoryDecisionFilter[];
+	displayName: string;
+	reviewHistoryPeriodEndDateTime: any;
+	reviewHistoryPeriodStartDateTime: any;
+	scheduleSettings: ComplexTypes.accessReviewHistoryScheduleSettings;
+	scopes: ComplexTypes.accessReviewScope[];
+	status: EnumTypes.accessReviewHistoryStatus;
 }
-
-/*********************************************
-* accessReviewHistoryDefinitionCollections
-**********************************************/
-export interface accessReviewHistoryDefinitionCollections {
-
-}
-
 /*********************************************
 * accessReviewHistoryInstance
 **********************************************/
-export interface accessReviewHistoryInstance {
-	downloadUri?: string;
-	expirationDateTime?: any;
-	fulfilledDateTime?: any;
-	reviewHistoryPeriodEndDateTime?: any;
-	reviewHistoryPeriodStartDateTime?: any;
-	runDateTime?: any;
-	status?: graph.accessReviewHistoryStatus;
+export interface accessReviewHistoryInstance  {
+	downloadUri: string;
+	expirationDateTime: any;
+	fulfilledDateTime: any;
+	reviewHistoryPeriodEndDateTime: any;
+	reviewHistoryPeriodStartDateTime: any;
+	runDateTime: any;
+	status: EnumTypes.accessReviewHistoryStatus;
 }
-
-/*********************************************
-* accessReviewHistoryInstanceCollections
-**********************************************/
-export interface accessReviewHistoryInstanceCollections {
-
-}
-
 /*********************************************
 * accessReviewInstance
 **********************************************/
-export interface accessReviewInstance {
-	endDateTime?: any;
-	fallbackReviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	reviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	scope?: graph.accessReviewScope;
-	startDateTime?: any;
-	status?: string;
+export interface accessReviewInstance  {
+	endDateTime: any;
+	fallbackReviewers: ComplexTypes.accessReviewReviewerScope[];
+	reviewers: ComplexTypes.accessReviewReviewerScope[];
+	scope: ComplexTypes.accessReviewScope;
+	startDateTime: any;
+	status: string;
 }
-
-/*********************************************
-* accessReviewInstanceCollections
-**********************************************/
-export interface accessReviewInstanceCollections {
-
-}
-
 /*********************************************
 * accessReviewReviewer
 **********************************************/
-export interface accessReviewReviewer {
-	createdDateTime?: any;
-	displayName?: string;
-	userPrincipalName?: string;
+export interface accessReviewReviewer  {
+	createdDateTime: any;
+	displayName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* accessReviewReviewerCollections
-**********************************************/
-export interface accessReviewReviewerCollections {
-
-}
-
 /*********************************************
 * accessReviewInstanceDecisionItem
 **********************************************/
-export interface accessReviewInstanceDecisionItem {
-	accessReviewId?: string;
-	appliedBy?: graph.userIdentity;
-	appliedDateTime?: any;
-	applyResult?: string;
-	decision?: string;
-	justification?: string;
-	principal?: graph.identity;
-	principalLink?: string;
-	recommendation?: string;
-	resource?: graph.accessReviewInstanceDecisionItemResource;
-	resourceLink?: string;
-	reviewedBy?: graph.userIdentity;
-	reviewedDateTime?: any;
+export interface accessReviewInstanceDecisionItem  {
+	accessReviewId: string;
+	appliedBy: ComplexTypes.userIdentity;
+	appliedDateTime: any;
+	applyResult: string;
+	decision: string;
+	justification: string;
+	principal: ComplexTypes.identity;
+	principalLink: string;
+	recommendation: string;
+	resource: ComplexTypes.accessReviewInstanceDecisionItemResource;
+	resourceLink: string;
+	reviewedBy: ComplexTypes.userIdentity;
+	reviewedDateTime: any;
 }
-
-/*********************************************
-* accessReviewInstanceDecisionItemCollections
-**********************************************/
-export interface accessReviewInstanceDecisionItemCollections {
-
-}
-
 /*********************************************
 * accessReviewStage
 **********************************************/
-export interface accessReviewStage {
-	endDateTime?: any;
-	fallbackReviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	reviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	startDateTime?: any;
-	status?: string;
+export interface accessReviewStage  {
+	endDateTime: any;
+	fallbackReviewers: ComplexTypes.accessReviewReviewerScope[];
+	reviewers: ComplexTypes.accessReviewReviewerScope[];
+	startDateTime: any;
+	status: string;
 }
-
-/*********************************************
-* accessReviewStageCollections
-**********************************************/
-export interface accessReviewStageCollections {
-
-}
-
 /*********************************************
 * accessReviewScheduleDefinition
 **********************************************/
-export interface accessReviewScheduleDefinition {
-	additionalNotificationRecipients?: { results: Array<graph.accessReviewNotificationRecipientItem> };
-	createdBy?: graph.userIdentity;
-	createdDateTime?: any;
-	descriptionForAdmins?: string;
-	descriptionForReviewers?: string;
-	displayName?: string;
-	fallbackReviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	instanceEnumerationScope?: graph.accessReviewScope;
-	lastModifiedDateTime?: any;
-	reviewers?: { results: Array<graph.accessReviewReviewerScope> };
-	scope?: graph.accessReviewScope;
-	settings?: graph.accessReviewScheduleSettings;
-	stageSettings?: { results: Array<graph.accessReviewStageSettings> };
-	status?: string;
+export interface accessReviewScheduleDefinition  {
+	additionalNotificationRecipients: ComplexTypes.accessReviewNotificationRecipientItem[];
+	createdBy: ComplexTypes.userIdentity;
+	createdDateTime: any;
+	descriptionForAdmins: string;
+	descriptionForReviewers: string;
+	displayName: string;
+	fallbackReviewers: ComplexTypes.accessReviewReviewerScope[];
+	instanceEnumerationScope: ComplexTypes.accessReviewScope;
+	lastModifiedDateTime: any;
+	reviewers: ComplexTypes.accessReviewReviewerScope[];
+	scope: ComplexTypes.accessReviewScope;
+	settings: ComplexTypes.accessReviewScheduleSettings;
+	stageSettings: ComplexTypes.accessReviewStageSettings[];
+	status: string;
 }
-
-/*********************************************
-* accessReviewScheduleDefinitionCollections
-**********************************************/
-export interface accessReviewScheduleDefinitionCollections {
-
-}
-
 /*********************************************
 * accessReviewSet
 **********************************************/
-export interface accessReviewSet {
+export interface accessReviewSet  {
 
 }
-
-/*********************************************
-* accessReviewSetCollections
-**********************************************/
-export interface accessReviewSetCollections {
-
-}
-
 /*********************************************
 * appConsentApprovalRoute
 **********************************************/
-export interface appConsentApprovalRoute {
+export interface appConsentApprovalRoute  {
 
 }
-
-/*********************************************
-* appConsentApprovalRouteCollections
-**********************************************/
-export interface appConsentApprovalRouteCollections {
-
-}
-
 /*********************************************
 * appConsentRequest
 **********************************************/
-export interface appConsentRequest {
-	appDisplayName?: string;
-	appId?: string;
-	pendingScopes?: { results: Array<graph.appConsentRequestScope> };
+export interface appConsentRequest  {
+	appDisplayName: string;
+	appId: string;
+	pendingScopes: ComplexTypes.appConsentRequestScope[];
 }
-
-/*********************************************
-* appConsentRequestCollections
-**********************************************/
-export interface appConsentRequestCollections {
-
-}
-
 /*********************************************
 * userConsentRequest
 **********************************************/
-export interface userConsentRequest {
-	reason?: string;
+export interface userConsentRequest  {
+	reason: string;
 }
-
-/*********************************************
-* userConsentRequestCollections
-**********************************************/
-export interface userConsentRequestCollections {
-
-}
-
 /*********************************************
 * approval
 **********************************************/
-export interface approval {
+export interface approval  {
 
 }
-
-/*********************************************
-* approvalCollections
-**********************************************/
-export interface approvalCollections {
-
-}
-
 /*********************************************
 * approvalStage
 **********************************************/
-export interface approvalStage {
-	assignedToMe?: boolean;
-	displayName?: string;
-	justification?: string;
-	reviewedBy?: graph.identity;
-	reviewedDateTime?: any;
-	reviewResult?: string;
-	status?: string;
+export interface approvalStage  {
+	assignedToMe: boolean;
+	displayName: string;
+	justification: string;
+	reviewedBy: ComplexTypes.identity;
+	reviewedDateTime: any;
+	reviewResult: string;
+	status: string;
 }
-
-/*********************************************
-* approvalStageCollections
-**********************************************/
-export interface approvalStageCollections {
-
-}
-
 /*********************************************
 * entitlementManagement
 **********************************************/
-export interface entitlementManagement {
+export interface entitlementManagement  {
 
 }
-
-/*********************************************
-* entitlementManagementCollections
-**********************************************/
-export interface entitlementManagementCollections {
-
-}
-
 /*********************************************
 * accessPackage
 **********************************************/
-export interface accessPackage {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	isHidden?: boolean;
-	modifiedDateTime?: any;
+export interface accessPackage  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	isHidden: boolean;
+	modifiedDateTime: any;
 }
-
-/*********************************************
-* accessPackageCollections
-**********************************************/
-export interface accessPackageCollections {
-
-}
-
 /*********************************************
 * accessPackageAssignmentPolicy
 **********************************************/
-export interface accessPackageAssignmentPolicy {
-	allowedTargetScope?: graph.allowedTargetScope;
-	automaticRequestSettings?: graph.accessPackageAutomaticRequestSettings;
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	expiration?: graph.expirationPattern;
-	modifiedDateTime?: any;
-	requestApprovalSettings?: graph.accessPackageAssignmentApprovalSettings;
-	requestorSettings?: graph.accessPackageAssignmentRequestorSettings;
-	reviewSettings?: graph.accessPackageAssignmentReviewSettings;
-	specificAllowedTargets?: { results: Array<graph.subjectSet> };
+export interface accessPackageAssignmentPolicy  {
+	allowedTargetScope: EnumTypes.allowedTargetScope;
+	automaticRequestSettings: ComplexTypes.accessPackageAutomaticRequestSettings;
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	expiration: ComplexTypes.expirationPattern;
+	modifiedDateTime: any;
+	requestApprovalSettings: ComplexTypes.accessPackageAssignmentApprovalSettings;
+	requestorSettings: ComplexTypes.accessPackageAssignmentRequestorSettings;
+	reviewSettings: ComplexTypes.accessPackageAssignmentReviewSettings;
+	specificAllowedTargets: ComplexTypes.subjectSet[];
 }
-
-/*********************************************
-* accessPackageAssignmentPolicyCollections
-**********************************************/
-export interface accessPackageAssignmentPolicyCollections {
-
-}
-
 /*********************************************
 * accessPackageAssignmentRequest
 **********************************************/
-export interface accessPackageAssignmentRequest {
-	completedDateTime?: any;
-	createdDateTime?: any;
-	requestType?: graph.accessPackageRequestType;
-	schedule?: graph.entitlementManagementSchedule;
-	state?: graph.accessPackageRequestState;
-	status?: string;
+export interface accessPackageAssignmentRequest  {
+	completedDateTime: any;
+	createdDateTime: any;
+	requestType: EnumTypes.accessPackageRequestType;
+	schedule: ComplexTypes.entitlementManagementSchedule;
+	state: EnumTypes.accessPackageRequestState;
+	status: string;
 }
-
-/*********************************************
-* accessPackageAssignmentRequestCollections
-**********************************************/
-export interface accessPackageAssignmentRequestCollections {
-
-}
-
 /*********************************************
 * accessPackageAssignment
 **********************************************/
-export interface accessPackageAssignment {
-	expiredDateTime?: any;
-	schedule?: graph.entitlementManagementSchedule;
-	state?: graph.accessPackageAssignmentState;
-	status?: string;
+export interface accessPackageAssignment  {
+	expiredDateTime: any;
+	schedule: ComplexTypes.entitlementManagementSchedule;
+	state: EnumTypes.accessPackageAssignmentState;
+	status: string;
 }
-
-/*********************************************
-* accessPackageAssignmentCollections
-**********************************************/
-export interface accessPackageAssignmentCollections {
-
-}
-
 /*********************************************
 * accessPackageCatalog
 **********************************************/
-export interface accessPackageCatalog {
-	catalogType?: graph.accessPackageCatalogType;
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	isExternallyVisible?: boolean;
-	modifiedDateTime?: any;
-	state?: graph.accessPackageCatalogState;
+export interface accessPackageCatalog  {
+	catalogType: EnumTypes.accessPackageCatalogType;
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	isExternallyVisible: boolean;
+	modifiedDateTime: any;
+	state: EnumTypes.accessPackageCatalogState;
 }
-
-/*********************************************
-* accessPackageCatalogCollections
-**********************************************/
-export interface accessPackageCatalogCollections {
-
-}
-
 /*********************************************
 * connectedOrganization
 **********************************************/
-export interface connectedOrganization {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	identitySources?: { results: Array<graph.identitySource> };
-	modifiedDateTime?: any;
-	state?: graph.connectedOrganizationState;
+export interface connectedOrganization  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	identitySources: ComplexTypes.identitySource[];
+	modifiedDateTime: any;
+	state: EnumTypes.connectedOrganizationState;
 }
-
-/*********************************************
-* connectedOrganizationCollections
-**********************************************/
-export interface connectedOrganizationCollections {
-
-}
-
 /*********************************************
 * entitlementManagementSettings
 **********************************************/
-export interface entitlementManagementSettings {
-	durationUntilExternalUserDeletedAfterBlocked?: number;
-	externalUserLifecycleAction?: graph.accessPackageExternalUserLifecycleAction;
+export interface entitlementManagementSettings  {
+	durationUntilExternalUserDeletedAfterBlocked: number;
+	externalUserLifecycleAction: EnumTypes.accessPackageExternalUserLifecycleAction;
 }
-
-/*********************************************
-* entitlementManagementSettingsCollections
-**********************************************/
-export interface entitlementManagementSettingsCollections {
-
-}
-
 /*********************************************
 * identityGovernance
 **********************************************/
-export interface identityGovernance {
+export interface identityGovernance  {
 
 }
-
-/*********************************************
-* identityGovernanceCollections
-**********************************************/
-export interface identityGovernanceCollections {
-
-}
-
 /*********************************************
 * termsOfUseContainer
 **********************************************/
-export interface termsOfUseContainer {
+export interface termsOfUseContainer  {
 
 }
-
-/*********************************************
-* termsOfUseContainerCollections
-**********************************************/
-export interface termsOfUseContainerCollections {
-
-}
-
 /*********************************************
 * agreement
 **********************************************/
-export interface agreement {
-	displayName?: string;
-	isPerDeviceAcceptanceRequired?: boolean;
-	isViewingBeforeAcceptanceRequired?: boolean;
-	termsExpiration?: graph.termsExpiration;
-	userReacceptRequiredFrequency?: number;
+export interface agreement  {
+	displayName: string;
+	isPerDeviceAcceptanceRequired: boolean;
+	isViewingBeforeAcceptanceRequired: boolean;
+	termsExpiration: ComplexTypes.termsExpiration;
+	userReacceptRequiredFrequency: number;
 }
-
-/*********************************************
-* agreementCollections
-**********************************************/
-export interface agreementCollections {
-
-}
-
 /*********************************************
 * agreementFileProperties
 **********************************************/
-export interface agreementFileProperties {
-	createdDateTime?: any;
-	displayName?: string;
-	fileData?: graph.agreementFileData;
-	fileName?: string;
-	isDefault?: boolean;
-	isMajorVersion?: boolean;
-	language?: string;
+export interface agreementFileProperties  {
+	createdDateTime: any;
+	displayName: string;
+	fileData: ComplexTypes.agreementFileData;
+	fileName: string;
+	isDefault: boolean;
+	isMajorVersion: boolean;
+	language: string;
 }
-
-/*********************************************
-* agreementFilePropertiesCollections
-**********************************************/
-export interface agreementFilePropertiesCollections {
-
-}
-
 /*********************************************
 * agreementFile
 **********************************************/
-export interface agreementFile {
+export interface agreementFile  {
 
 }
-
-/*********************************************
-* agreementFileCollections
-**********************************************/
-export interface agreementFileCollections {
-
-}
-
 /*********************************************
 * agreementFileLocalization
 **********************************************/
-export interface agreementFileLocalization {
+export interface agreementFileLocalization  {
 
 }
-
-/*********************************************
-* agreementFileLocalizationCollections
-**********************************************/
-export interface agreementFileLocalizationCollections {
-
-}
-
 /*********************************************
 * agreementFileVersion
 **********************************************/
-export interface agreementFileVersion {
+export interface agreementFileVersion  {
 
 }
-
-/*********************************************
-* agreementFileVersionCollections
-**********************************************/
-export interface agreementFileVersionCollections {
-
-}
-
 /*********************************************
 * namedLocation
 **********************************************/
-export interface namedLocation {
-	createdDateTime?: any;
-	displayName?: string;
-	modifiedDateTime?: any;
+export interface namedLocation  {
+	createdDateTime: any;
+	displayName: string;
+	modifiedDateTime: any;
 }
-
-/*********************************************
-* namedLocationCollections
-**********************************************/
-export interface namedLocationCollections {
-
-}
-
 /*********************************************
 * countryNamedLocation
 **********************************************/
-export interface countryNamedLocation {
-	countriesAndRegions?: { results: Array<string> };
-	countryLookupMethod?: graph.countryLookupMethodType;
-	includeUnknownCountriesAndRegions?: boolean;
+export interface countryNamedLocation  {
+	countriesAndRegions: Array<string>[];
+	countryLookupMethod: EnumTypes.countryLookupMethodType;
+	includeUnknownCountriesAndRegions: boolean;
 }
-
-/*********************************************
-* countryNamedLocationCollections
-**********************************************/
-export interface countryNamedLocationCollections {
-
-}
-
 /*********************************************
 * identityProtectionRoot
 **********************************************/
-export interface identityProtectionRoot {
+export interface identityProtectionRoot  {
 
 }
-
-/*********************************************
-* identityProtectionRootCollections
-**********************************************/
-export interface identityProtectionRootCollections {
-
-}
-
 /*********************************************
 * riskDetection
 **********************************************/
-export interface riskDetection {
-	activity?: graph.activityType;
-	activityDateTime?: any;
-	additionalInfo?: string;
-	correlationId?: string;
-	detectedDateTime?: any;
-	detectionTimingType?: graph.riskDetectionTimingType;
-	ipAddress?: string;
-	lastUpdatedDateTime?: any;
-	location?: graph.signInLocation;
-	requestId?: string;
-	riskDetail?: graph.riskDetail;
-	riskEventType?: string;
-	riskLevel?: graph.riskLevel;
-	riskState?: graph.riskState;
-	source?: string;
-	tokenIssuerType?: graph.tokenIssuerType;
-	userDisplayName?: string;
-	userId?: string;
-	userPrincipalName?: string;
+export interface riskDetection  {
+	activity: EnumTypes.activityType;
+	activityDateTime: any;
+	additionalInfo: string;
+	correlationId: string;
+	detectedDateTime: any;
+	detectionTimingType: EnumTypes.riskDetectionTimingType;
+	ipAddress: string;
+	lastUpdatedDateTime: any;
+	location: ComplexTypes.signInLocation;
+	requestId: string;
+	riskDetail: EnumTypes.riskDetail;
+	riskEventType: string;
+	riskLevel: EnumTypes.riskLevel;
+	riskState: EnumTypes.riskState;
+	source: string;
+	tokenIssuerType: EnumTypes.tokenIssuerType;
+	userDisplayName: string;
+	userId: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* riskDetectionCollections
-**********************************************/
-export interface riskDetectionCollections {
-
-}
-
 /*********************************************
 * riskyUser
 **********************************************/
-export interface riskyUser {
-	isDeleted?: boolean;
-	isProcessing?: boolean;
-	riskDetail?: graph.riskDetail;
-	riskLastUpdatedDateTime?: any;
-	riskLevel?: graph.riskLevel;
-	riskState?: graph.riskState;
-	userDisplayName?: string;
-	userPrincipalName?: string;
+export interface riskyUser  {
+	isDeleted: boolean;
+	isProcessing: boolean;
+	riskDetail: EnumTypes.riskDetail;
+	riskLastUpdatedDateTime: any;
+	riskLevel: EnumTypes.riskLevel;
+	riskState: EnumTypes.riskState;
+	userDisplayName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* riskyUserCollections
-**********************************************/
-export interface riskyUserCollections {
-
-}
-
 /*********************************************
 * ipNamedLocation
 **********************************************/
-export interface ipNamedLocation {
-	ipRanges?: { results: Array<graph.ipRange> };
-	isTrusted?: boolean;
+export interface ipNamedLocation  {
+	ipRanges: ComplexTypes.ipRange[];
+	isTrusted: boolean;
 }
-
-/*********************************************
-* ipNamedLocationCollections
-**********************************************/
-export interface ipNamedLocationCollections {
-
-}
-
 /*********************************************
 * riskyUserHistoryItem
 **********************************************/
-export interface riskyUserHistoryItem {
-	activity?: graph.riskUserActivity;
-	initiatedBy?: string;
-	userId?: string;
+export interface riskyUserHistoryItem  {
+	activity: ComplexTypes.riskUserActivity;
+	initiatedBy: string;
+	userId: string;
 }
-
-/*********************************************
-* riskyUserHistoryItemCollections
-**********************************************/
-export interface riskyUserHistoryItemCollections {
-
-}
-
 /*********************************************
 * accessPackageSubject
 **********************************************/
-export interface accessPackageSubject {
-	displayName?: string;
-	email?: string;
-	objectId?: string;
-	onPremisesSecurityIdentifier?: string;
-	principalName?: string;
-	subjectType?: graph.accessPackageSubjectType;
+export interface accessPackageSubject  {
+	displayName: string;
+	email: string;
+	objectId: string;
+	onPremisesSecurityIdentifier: string;
+	principalName: string;
+	subjectType: EnumTypes.accessPackageSubjectType;
 }
-
-/*********************************************
-* accessPackageSubjectCollections
-**********************************************/
-export interface accessPackageSubjectCollections {
-
-}
-
 /*********************************************
 * mobileApp
 **********************************************/
-export interface mobileApp {
-	createdDateTime?: any;
-	description?: string;
-	developer?: string;
-	displayName?: string;
-	informationUrl?: string;
-	isFeatured?: boolean;
-	largeIcon?: graph.mimeContent;
-	lastModifiedDateTime?: any;
-	notes?: string;
-	owner?: string;
-	privacyInformationUrl?: string;
-	publisher?: string;
-	publishingState?: graph.mobileAppPublishingState;
+export interface mobileApp  {
+	createdDateTime: any;
+	description: string;
+	developer: string;
+	displayName: string;
+	informationUrl: string;
+	isFeatured: boolean;
+	largeIcon: ComplexTypes.mimeContent;
+	lastModifiedDateTime: any;
+	notes: string;
+	owner: string;
+	privacyInformationUrl: string;
+	publisher: string;
+	publishingState: EnumTypes.mobileAppPublishingState;
 }
-
-/*********************************************
-* mobileAppCollections
-**********************************************/
-export interface mobileAppCollections {
-
-}
-
 /*********************************************
 * mobileLobApp
 **********************************************/
-export interface mobileLobApp {
-	committedContentVersion?: string;
-	fileName?: string;
-	size?: number;
+export interface mobileLobApp  {
+	committedContentVersion: string;
+	fileName: string;
+	size: number;
 }
-
-/*********************************************
-* mobileLobAppCollections
-**********************************************/
-export interface mobileLobAppCollections {
-
-}
-
 /*********************************************
 * androidLobApp
 **********************************************/
-export interface androidLobApp {
-	minimumSupportedOperatingSystem?: graph.androidMinimumOperatingSystem;
-	packageId?: string;
-	versionCode?: string;
-	versionName?: string;
+export interface androidLobApp  {
+	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
+	packageId: string;
+	versionCode: string;
+	versionName: string;
 }
-
-/*********************************************
-* androidLobAppCollections
-**********************************************/
-export interface androidLobAppCollections {
-
-}
-
 /*********************************************
 * androidStoreApp
 **********************************************/
-export interface androidStoreApp {
-	appStoreUrl?: string;
-	minimumSupportedOperatingSystem?: graph.androidMinimumOperatingSystem;
-	packageId?: string;
+export interface androidStoreApp  {
+	appStoreUrl: string;
+	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
+	packageId: string;
 }
-
-/*********************************************
-* androidStoreAppCollections
-**********************************************/
-export interface androidStoreAppCollections {
-
-}
-
 /*********************************************
 * deviceAppManagement
 **********************************************/
-export interface deviceAppManagement {
-	isEnabledForMicrosoftStoreForBusiness?: boolean;
-	microsoftStoreForBusinessLanguage?: string;
-	microsoftStoreForBusinessLastCompletedApplicationSyncTime?: any;
-	microsoftStoreForBusinessLastSuccessfulSyncDateTime?: any;
+export interface deviceAppManagement  {
+	isEnabledForMicrosoftStoreForBusiness: boolean;
+	microsoftStoreForBusinessLanguage: string;
+	microsoftStoreForBusinessLastCompletedApplicationSyncTime: any;
+	microsoftStoreForBusinessLastSuccessfulSyncDateTime: any;
 }
-
-/*********************************************
-* deviceAppManagementCollections
-**********************************************/
-export interface deviceAppManagementCollections {
-
-}
-
 /*********************************************
 * managedEBook
 **********************************************/
-export interface managedEBook {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	informationUrl?: string;
-	largeCover?: graph.mimeContent;
-	lastModifiedDateTime?: any;
-	privacyInformationUrl?: string;
-	publishedDateTime?: any;
-	publisher?: string;
+export interface managedEBook  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	informationUrl: string;
+	largeCover: ComplexTypes.mimeContent;
+	lastModifiedDateTime: any;
+	privacyInformationUrl: string;
+	publishedDateTime: any;
+	publisher: string;
 }
-
-/*********************************************
-* managedEBookCollections
-**********************************************/
-export interface managedEBookCollections {
-
-}
-
 /*********************************************
 * mobileAppCategory
 **********************************************/
-export interface mobileAppCategory {
-	displayName?: string;
-	lastModifiedDateTime?: any;
+export interface mobileAppCategory  {
+	displayName: string;
+	lastModifiedDateTime: any;
 }
-
-/*********************************************
-* mobileAppCategoryCollections
-**********************************************/
-export interface mobileAppCategoryCollections {
-
-}
-
 /*********************************************
 * managedDeviceMobileAppConfiguration
 **********************************************/
-export interface managedDeviceMobileAppConfiguration {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	targetedMobileApps?: { results: Array<string> };
-	version?: number;
+export interface managedDeviceMobileAppConfiguration  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	targetedMobileApps: Array<string>[];
+	version: number;
 }
-
-/*********************************************
-* managedDeviceMobileAppConfigurationCollections
-**********************************************/
-export interface managedDeviceMobileAppConfigurationCollections {
-
-}
-
 /*********************************************
 * vppToken
 **********************************************/
-export interface vppToken {
-	appleId?: string;
-	automaticallyUpdateApps?: boolean;
-	countryOrRegion?: string;
-	expirationDateTime?: any;
-	lastModifiedDateTime?: any;
-	lastSyncDateTime?: any;
-	lastSyncStatus?: graph.vppTokenSyncStatus;
-	organizationName?: string;
-	state?: graph.vppTokenState;
-	token?: string;
-	vppTokenAccountType?: graph.vppTokenAccountType;
+export interface vppToken  {
+	appleId: string;
+	automaticallyUpdateApps: boolean;
+	countryOrRegion: string;
+	expirationDateTime: any;
+	lastModifiedDateTime: any;
+	lastSyncDateTime: any;
+	lastSyncStatus: EnumTypes.vppTokenSyncStatus;
+	organizationName: string;
+	state: EnumTypes.vppTokenState;
+	token: string;
+	vppTokenAccountType: EnumTypes.vppTokenAccountType;
 }
-
-/*********************************************
-* vppTokenCollections
-**********************************************/
-export interface vppTokenCollections {
-
-}
-
 /*********************************************
 * managedAppPolicy
 **********************************************/
-export interface managedAppPolicy {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	version?: string;
+export interface managedAppPolicy  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	version: string;
 }
-
-/*********************************************
-* managedAppPolicyCollections
-**********************************************/
-export interface managedAppPolicyCollections {
-
-}
-
 /*********************************************
 * managedAppProtection
 **********************************************/
-export interface managedAppProtection {
-	allowedDataStorageLocations?: { results: Array<graph.managedAppDataStorageLocation> };
-	allowedInboundDataTransferSources?: graph.managedAppDataTransferLevel;
-	allowedOutboundClipboardSharingLevel?: graph.managedAppClipboardSharingLevel;
-	allowedOutboundDataTransferDestinations?: graph.managedAppDataTransferLevel;
-	contactSyncBlocked?: boolean;
-	dataBackupBlocked?: boolean;
-	deviceComplianceRequired?: boolean;
-	disableAppPinIfDevicePinIsSet?: boolean;
-	fingerprintBlocked?: boolean;
-	managedBrowser?: graph.managedBrowserType;
-	managedBrowserToOpenLinksRequired?: boolean;
-	maximumPinRetries?: number;
-	minimumPinLength?: number;
-	minimumRequiredAppVersion?: string;
-	minimumRequiredOsVersion?: string;
-	minimumWarningAppVersion?: string;
-	minimumWarningOsVersion?: string;
-	organizationalCredentialsRequired?: boolean;
-	periodBeforePinReset?: number;
-	periodOfflineBeforeAccessCheck?: number;
-	periodOfflineBeforeWipeIsEnforced?: number;
-	periodOnlineBeforeAccessCheck?: number;
-	pinCharacterSet?: graph.managedAppPinCharacterSet;
-	pinRequired?: boolean;
-	printBlocked?: boolean;
-	saveAsBlocked?: boolean;
-	simplePinBlocked?: boolean;
+export interface managedAppProtection  {
+	allowedDataStorageLocations: EnumTypes.managedAppDataStorageLocation[];
+	allowedInboundDataTransferSources: EnumTypes.managedAppDataTransferLevel;
+	allowedOutboundClipboardSharingLevel: EnumTypes.managedAppClipboardSharingLevel;
+	allowedOutboundDataTransferDestinations: EnumTypes.managedAppDataTransferLevel;
+	contactSyncBlocked: boolean;
+	dataBackupBlocked: boolean;
+	deviceComplianceRequired: boolean;
+	disableAppPinIfDevicePinIsSet: boolean;
+	fingerprintBlocked: boolean;
+	managedBrowser: EnumTypes.managedBrowserType;
+	managedBrowserToOpenLinksRequired: boolean;
+	maximumPinRetries: number;
+	minimumPinLength: number;
+	minimumRequiredAppVersion: string;
+	minimumRequiredOsVersion: string;
+	minimumWarningAppVersion: string;
+	minimumWarningOsVersion: string;
+	organizationalCredentialsRequired: boolean;
+	periodBeforePinReset: number;
+	periodOfflineBeforeAccessCheck: number;
+	periodOfflineBeforeWipeIsEnforced: number;
+	periodOnlineBeforeAccessCheck: number;
+	pinCharacterSet: EnumTypes.managedAppPinCharacterSet;
+	pinRequired: boolean;
+	printBlocked: boolean;
+	saveAsBlocked: boolean;
+	simplePinBlocked: boolean;
 }
-
-/*********************************************
-* managedAppProtectionCollections
-**********************************************/
-export interface managedAppProtectionCollections {
-
-}
-
 /*********************************************
 * targetedManagedAppProtection
 **********************************************/
-export interface targetedManagedAppProtection {
-	isAssigned?: boolean;
+export interface targetedManagedAppProtection  {
+	isAssigned: boolean;
 }
-
-/*********************************************
-* targetedManagedAppProtectionCollections
-**********************************************/
-export interface targetedManagedAppProtectionCollections {
-
-}
-
 /*********************************************
 * androidManagedAppProtection
 **********************************************/
-export interface androidManagedAppProtection {
-	customBrowserDisplayName?: string;
-	customBrowserPackageId?: string;
-	deployedAppCount?: number;
-	disableAppEncryptionIfDeviceEncryptionIsEnabled?: boolean;
-	encryptAppData?: boolean;
-	minimumRequiredPatchVersion?: string;
-	minimumWarningPatchVersion?: string;
-	screenCaptureBlocked?: boolean;
+export interface androidManagedAppProtection  {
+	customBrowserDisplayName: string;
+	customBrowserPackageId: string;
+	deployedAppCount: number;
+	disableAppEncryptionIfDeviceEncryptionIsEnabled: boolean;
+	encryptAppData: boolean;
+	minimumRequiredPatchVersion: string;
+	minimumWarningPatchVersion: string;
+	screenCaptureBlocked: boolean;
 }
-
-/*********************************************
-* androidManagedAppProtectionCollections
-**********************************************/
-export interface androidManagedAppProtectionCollections {
-
-}
-
 /*********************************************
 * defaultManagedAppProtection
 **********************************************/
-export interface defaultManagedAppProtection {
-	appDataEncryptionType?: graph.managedAppDataEncryptionType;
-	customSettings?: { results: Array<graph.keyValuePair> };
-	deployedAppCount?: number;
-	disableAppEncryptionIfDeviceEncryptionIsEnabled?: boolean;
-	encryptAppData?: boolean;
-	faceIdBlocked?: boolean;
-	minimumRequiredPatchVersion?: string;
-	minimumRequiredSdkVersion?: string;
-	minimumWarningPatchVersion?: string;
-	screenCaptureBlocked?: boolean;
+export interface defaultManagedAppProtection  {
+	appDataEncryptionType: EnumTypes.managedAppDataEncryptionType;
+	customSettings: ComplexTypes.keyValuePair[];
+	deployedAppCount: number;
+	disableAppEncryptionIfDeviceEncryptionIsEnabled: boolean;
+	encryptAppData: boolean;
+	faceIdBlocked: boolean;
+	minimumRequiredPatchVersion: string;
+	minimumRequiredSdkVersion: string;
+	minimumWarningPatchVersion: string;
+	screenCaptureBlocked: boolean;
 }
-
-/*********************************************
-* defaultManagedAppProtectionCollections
-**********************************************/
-export interface defaultManagedAppProtectionCollections {
-
-}
-
 /*********************************************
 * iosManagedAppProtection
 **********************************************/
-export interface iosManagedAppProtection {
-	appDataEncryptionType?: graph.managedAppDataEncryptionType;
-	customBrowserProtocol?: string;
-	deployedAppCount?: number;
-	faceIdBlocked?: boolean;
-	minimumRequiredSdkVersion?: string;
+export interface iosManagedAppProtection  {
+	appDataEncryptionType: EnumTypes.managedAppDataEncryptionType;
+	customBrowserProtocol: string;
+	deployedAppCount: number;
+	faceIdBlocked: boolean;
+	minimumRequiredSdkVersion: string;
 }
-
-/*********************************************
-* iosManagedAppProtectionCollections
-**********************************************/
-export interface iosManagedAppProtectionCollections {
-
-}
-
 /*********************************************
 * managedAppStatus
 **********************************************/
-export interface managedAppStatus {
-	displayName?: string;
-	version?: string;
+export interface managedAppStatus  {
+	displayName: string;
+	version: string;
 }
-
-/*********************************************
-* managedAppStatusCollections
-**********************************************/
-export interface managedAppStatusCollections {
-
-}
-
 /*********************************************
 * windowsInformationProtection
 **********************************************/
-export interface windowsInformationProtection {
-	azureRightsManagementServicesAllowed?: boolean;
-	dataRecoveryCertificate?: graph.windowsInformationProtectionDataRecoveryCertificate;
-	enforcementLevel?: graph.windowsInformationProtectionEnforcementLevel;
-	enterpriseDomain?: string;
-	enterpriseInternalProxyServers?: { results: Array<graph.windowsInformationProtectionResourceCollection> };
-	enterpriseIPRanges?: { results: Array<graph.windowsInformationProtectionIPRangeCollection> };
-	enterpriseIPRangesAreAuthoritative?: boolean;
-	enterpriseNetworkDomainNames?: { results: Array<graph.windowsInformationProtectionResourceCollection> };
-	enterpriseProtectedDomainNames?: { results: Array<graph.windowsInformationProtectionResourceCollection> };
-	enterpriseProxiedDomains?: { results: Array<graph.windowsInformationProtectionProxiedDomainCollection> };
-	enterpriseProxyServers?: { results: Array<graph.windowsInformationProtectionResourceCollection> };
-	enterpriseProxyServersAreAuthoritative?: boolean;
-	exemptApps?: { results: Array<graph.windowsInformationProtectionApp> };
-	iconsVisible?: boolean;
-	indexingEncryptedStoresOrItemsBlocked?: boolean;
-	isAssigned?: boolean;
-	neutralDomainResources?: { results: Array<graph.windowsInformationProtectionResourceCollection> };
-	protectedApps?: { results: Array<graph.windowsInformationProtectionApp> };
-	protectionUnderLockConfigRequired?: boolean;
-	revokeOnUnenrollDisabled?: boolean;
-	rightsManagementServicesTemplateId?: any;
-	smbAutoEncryptedFileExtensions?: { results: Array<graph.windowsInformationProtectionResourceCollection> };
+export interface windowsInformationProtection  {
+	azureRightsManagementServicesAllowed: boolean;
+	dataRecoveryCertificate: ComplexTypes.windowsInformationProtectionDataRecoveryCertificate;
+	enforcementLevel: EnumTypes.windowsInformationProtectionEnforcementLevel;
+	enterpriseDomain: string;
+	enterpriseInternalProxyServers: ComplexTypes.windowsInformationProtectionResourceCollection[];
+	enterpriseIPRanges: ComplexTypes.windowsInformationProtectionIPRangeCollection[];
+	enterpriseIPRangesAreAuthoritative: boolean;
+	enterpriseNetworkDomainNames: ComplexTypes.windowsInformationProtectionResourceCollection[];
+	enterpriseProtectedDomainNames: ComplexTypes.windowsInformationProtectionResourceCollection[];
+	enterpriseProxiedDomains: ComplexTypes.windowsInformationProtectionProxiedDomainCollection[];
+	enterpriseProxyServers: ComplexTypes.windowsInformationProtectionResourceCollection[];
+	enterpriseProxyServersAreAuthoritative: boolean;
+	exemptApps: ComplexTypes.windowsInformationProtectionApp[];
+	iconsVisible: boolean;
+	indexingEncryptedStoresOrItemsBlocked: boolean;
+	isAssigned: boolean;
+	neutralDomainResources: ComplexTypes.windowsInformationProtectionResourceCollection[];
+	protectedApps: ComplexTypes.windowsInformationProtectionApp[];
+	protectionUnderLockConfigRequired: boolean;
+	revokeOnUnenrollDisabled: boolean;
+	rightsManagementServicesTemplateId: any;
+	smbAutoEncryptedFileExtensions: ComplexTypes.windowsInformationProtectionResourceCollection[];
 }
-
-/*********************************************
-* windowsInformationProtectionCollections
-**********************************************/
-export interface windowsInformationProtectionCollections {
-
-}
-
 /*********************************************
 * mdmWindowsInformationProtectionPolicy
 **********************************************/
-export interface mdmWindowsInformationProtectionPolicy {
+export interface mdmWindowsInformationProtectionPolicy  {
 
 }
-
-/*********************************************
-* mdmWindowsInformationProtectionPolicyCollections
-**********************************************/
-export interface mdmWindowsInformationProtectionPolicyCollections {
-
-}
-
 /*********************************************
 * managedAppConfiguration
 **********************************************/
-export interface managedAppConfiguration {
-	customSettings?: { results: Array<graph.keyValuePair> };
+export interface managedAppConfiguration  {
+	customSettings: ComplexTypes.keyValuePair[];
 }
-
-/*********************************************
-* managedAppConfigurationCollections
-**********************************************/
-export interface managedAppConfigurationCollections {
-
-}
-
 /*********************************************
 * targetedManagedAppConfiguration
 **********************************************/
-export interface targetedManagedAppConfiguration {
-	deployedAppCount?: number;
-	isAssigned?: boolean;
+export interface targetedManagedAppConfiguration  {
+	deployedAppCount: number;
+	isAssigned: boolean;
 }
-
-/*********************************************
-* targetedManagedAppConfigurationCollections
-**********************************************/
-export interface targetedManagedAppConfigurationCollections {
-
-}
-
 /*********************************************
 * windowsInformationProtectionPolicy
 **********************************************/
-export interface windowsInformationProtectionPolicy {
-	daysWithoutContactBeforeUnenroll?: number;
-	mdmEnrollmentUrl?: string;
-	minutesOfInactivityBeforeDeviceLock?: number;
-	numberOfPastPinsRemembered?: number;
-	passwordMaximumAttemptCount?: number;
-	pinExpirationDays?: number;
-	pinLowercaseLetters?: graph.windowsInformationProtectionPinCharacterRequirements;
-	pinMinimumLength?: number;
-	pinSpecialCharacters?: graph.windowsInformationProtectionPinCharacterRequirements;
-	pinUppercaseLetters?: graph.windowsInformationProtectionPinCharacterRequirements;
-	revokeOnMdmHandoffDisabled?: boolean;
-	windowsHelloForBusinessBlocked?: boolean;
+export interface windowsInformationProtectionPolicy  {
+	daysWithoutContactBeforeUnenroll: number;
+	mdmEnrollmentUrl: string;
+	minutesOfInactivityBeforeDeviceLock: number;
+	numberOfPastPinsRemembered: number;
+	passwordMaximumAttemptCount: number;
+	pinExpirationDays: number;
+	pinLowercaseLetters: EnumTypes.windowsInformationProtectionPinCharacterRequirements;
+	pinMinimumLength: number;
+	pinSpecialCharacters: EnumTypes.windowsInformationProtectionPinCharacterRequirements;
+	pinUppercaseLetters: EnumTypes.windowsInformationProtectionPinCharacterRequirements;
+	revokeOnMdmHandoffDisabled: boolean;
+	windowsHelloForBusinessBlocked: boolean;
 }
-
-/*********************************************
-* windowsInformationProtectionPolicyCollections
-**********************************************/
-export interface windowsInformationProtectionPolicyCollections {
-
-}
-
 /*********************************************
 * iosLobApp
 **********************************************/
-export interface iosLobApp {
-	applicableDeviceType?: graph.iosDeviceType;
-	buildNumber?: string;
-	bundleId?: string;
-	expirationDateTime?: any;
-	minimumSupportedOperatingSystem?: graph.iosMinimumOperatingSystem;
-	versionNumber?: string;
+export interface iosLobApp  {
+	applicableDeviceType: ComplexTypes.iosDeviceType;
+	buildNumber: string;
+	bundleId: string;
+	expirationDateTime: any;
+	minimumSupportedOperatingSystem: ComplexTypes.iosMinimumOperatingSystem;
+	versionNumber: string;
 }
-
-/*********************************************
-* iosLobAppCollections
-**********************************************/
-export interface iosLobAppCollections {
-
-}
-
 /*********************************************
 * iosMobileAppConfiguration
 **********************************************/
-export interface iosMobileAppConfiguration {
-	encodedSettingXml?: any;
-	settings?: { results: Array<graph.appConfigurationSettingItem> };
+export interface iosMobileAppConfiguration  {
+	encodedSettingXml: any;
+	settings: ComplexTypes.appConfigurationSettingItem[];
 }
-
-/*********************************************
-* iosMobileAppConfigurationCollections
-**********************************************/
-export interface iosMobileAppConfigurationCollections {
-
-}
-
 /*********************************************
 * iosStoreApp
 **********************************************/
-export interface iosStoreApp {
-	applicableDeviceType?: graph.iosDeviceType;
-	appStoreUrl?: string;
-	bundleId?: string;
-	minimumSupportedOperatingSystem?: graph.iosMinimumOperatingSystem;
+export interface iosStoreApp  {
+	applicableDeviceType: ComplexTypes.iosDeviceType;
+	appStoreUrl: string;
+	bundleId: string;
+	minimumSupportedOperatingSystem: ComplexTypes.iosMinimumOperatingSystem;
 }
-
-/*********************************************
-* iosStoreAppCollections
-**********************************************/
-export interface iosStoreAppCollections {
-
-}
-
 /*********************************************
 * iosVppApp
 **********************************************/
-export interface iosVppApp {
-	applicableDeviceType?: graph.iosDeviceType;
-	appStoreUrl?: string;
-	bundleId?: string;
-	licensingType?: graph.vppLicensingType;
-	releaseDateTime?: any;
-	totalLicenseCount?: number;
-	usedLicenseCount?: number;
-	vppTokenAccountType?: graph.vppTokenAccountType;
-	vppTokenAppleId?: string;
-	vppTokenOrganizationName?: string;
+export interface iosVppApp  {
+	applicableDeviceType: ComplexTypes.iosDeviceType;
+	appStoreUrl: string;
+	bundleId: string;
+	licensingType: ComplexTypes.vppLicensingType;
+	releaseDateTime: any;
+	totalLicenseCount: number;
+	usedLicenseCount: number;
+	vppTokenAccountType: EnumTypes.vppTokenAccountType;
+	vppTokenAppleId: string;
+	vppTokenOrganizationName: string;
 }
-
-/*********************************************
-* iosVppAppCollections
-**********************************************/
-export interface iosVppAppCollections {
-
-}
-
 /*********************************************
 * macOSOfficeSuiteApp
 **********************************************/
-export interface macOSOfficeSuiteApp {
+export interface macOSOfficeSuiteApp  {
 
 }
-
-/*********************************************
-* macOSOfficeSuiteAppCollections
-**********************************************/
-export interface macOSOfficeSuiteAppCollections {
-
-}
-
 /*********************************************
 * managedApp
 **********************************************/
-export interface managedApp {
-	appAvailability?: graph.managedAppAvailability;
-	version?: string;
+export interface managedApp  {
+	appAvailability: EnumTypes.managedAppAvailability;
+	version: string;
 }
-
-/*********************************************
-* managedAppCollections
-**********************************************/
-export interface managedAppCollections {
-
-}
-
 /*********************************************
 * managedMobileLobApp
 **********************************************/
-export interface managedMobileLobApp {
-	committedContentVersion?: string;
-	fileName?: string;
-	size?: number;
+export interface managedMobileLobApp  {
+	committedContentVersion: string;
+	fileName: string;
+	size: number;
 }
-
-/*********************************************
-* managedMobileLobAppCollections
-**********************************************/
-export interface managedMobileLobAppCollections {
-
-}
-
 /*********************************************
 * managedAndroidLobApp
 **********************************************/
-export interface managedAndroidLobApp {
-	minimumSupportedOperatingSystem?: graph.androidMinimumOperatingSystem;
-	packageId?: string;
-	versionCode?: string;
-	versionName?: string;
+export interface managedAndroidLobApp  {
+	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
+	packageId: string;
+	versionCode: string;
+	versionName: string;
 }
-
-/*********************************************
-* managedAndroidLobAppCollections
-**********************************************/
-export interface managedAndroidLobAppCollections {
-
-}
-
 /*********************************************
 * managedAndroidStoreApp
 **********************************************/
-export interface managedAndroidStoreApp {
-	appStoreUrl?: string;
-	minimumSupportedOperatingSystem?: graph.androidMinimumOperatingSystem;
-	packageId?: string;
+export interface managedAndroidStoreApp  {
+	appStoreUrl: string;
+	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
+	packageId: string;
 }
-
-/*********************************************
-* managedAndroidStoreAppCollections
-**********************************************/
-export interface managedAndroidStoreAppCollections {
-
-}
-
 /*********************************************
 * managedDeviceMobileAppConfigurationAssignment
 **********************************************/
-export interface managedDeviceMobileAppConfigurationAssignment {
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface managedDeviceMobileAppConfigurationAssignment  {
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* managedDeviceMobileAppConfigurationAssignmentCollections
-**********************************************/
-export interface managedDeviceMobileAppConfigurationAssignmentCollections {
-
-}
-
 /*********************************************
 * managedDeviceMobileAppConfigurationDeviceStatus
 **********************************************/
-export interface managedDeviceMobileAppConfigurationDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: any;
-	deviceDisplayName?: string;
-	deviceModel?: string;
-	lastReportedDateTime?: any;
-	status?: graph.complianceStatus;
-	userName?: string;
-	userPrincipalName?: string;
+export interface managedDeviceMobileAppConfigurationDeviceStatus  {
+	complianceGracePeriodExpirationDateTime: any;
+	deviceDisplayName: string;
+	deviceModel: string;
+	lastReportedDateTime: any;
+	status: EnumTypes.complianceStatus;
+	userName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* managedDeviceMobileAppConfigurationDeviceStatusCollections
-**********************************************/
-export interface managedDeviceMobileAppConfigurationDeviceStatusCollections {
-
-}
-
 /*********************************************
 * managedDeviceMobileAppConfigurationDeviceSummary
 **********************************************/
-export interface managedDeviceMobileAppConfigurationDeviceSummary {
-	configurationVersion?: number;
-	errorCount?: number;
-	failedCount?: number;
-	lastUpdateDateTime?: any;
-	notApplicableCount?: number;
-	pendingCount?: number;
-	successCount?: number;
+export interface managedDeviceMobileAppConfigurationDeviceSummary  {
+	configurationVersion: number;
+	errorCount: number;
+	failedCount: number;
+	lastUpdateDateTime: any;
+	notApplicableCount: number;
+	pendingCount: number;
+	successCount: number;
 }
-
-/*********************************************
-* managedDeviceMobileAppConfigurationDeviceSummaryCollections
-**********************************************/
-export interface managedDeviceMobileAppConfigurationDeviceSummaryCollections {
-
-}
-
 /*********************************************
 * managedDeviceMobileAppConfigurationUserStatus
 **********************************************/
-export interface managedDeviceMobileAppConfigurationUserStatus {
-	devicesCount?: number;
-	lastReportedDateTime?: any;
-	status?: graph.complianceStatus;
-	userDisplayName?: string;
-	userPrincipalName?: string;
+export interface managedDeviceMobileAppConfigurationUserStatus  {
+	devicesCount: number;
+	lastReportedDateTime: any;
+	status: EnumTypes.complianceStatus;
+	userDisplayName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* managedDeviceMobileAppConfigurationUserStatusCollections
-**********************************************/
-export interface managedDeviceMobileAppConfigurationUserStatusCollections {
-
-}
-
 /*********************************************
 * managedDeviceMobileAppConfigurationUserSummary
 **********************************************/
-export interface managedDeviceMobileAppConfigurationUserSummary {
-	configurationVersion?: number;
-	errorCount?: number;
-	failedCount?: number;
-	lastUpdateDateTime?: any;
-	notApplicableCount?: number;
-	pendingCount?: number;
-	successCount?: number;
+export interface managedDeviceMobileAppConfigurationUserSummary  {
+	configurationVersion: number;
+	errorCount: number;
+	failedCount: number;
+	lastUpdateDateTime: any;
+	notApplicableCount: number;
+	pendingCount: number;
+	successCount: number;
 }
-
-/*********************************************
-* managedDeviceMobileAppConfigurationUserSummaryCollections
-**********************************************/
-export interface managedDeviceMobileAppConfigurationUserSummaryCollections {
-
-}
-
 /*********************************************
 * managedIOSLobApp
 **********************************************/
-export interface managedIOSLobApp {
-	applicableDeviceType?: graph.iosDeviceType;
-	buildNumber?: string;
-	bundleId?: string;
-	expirationDateTime?: any;
-	minimumSupportedOperatingSystem?: graph.iosMinimumOperatingSystem;
-	versionNumber?: string;
+export interface managedIOSLobApp  {
+	applicableDeviceType: ComplexTypes.iosDeviceType;
+	buildNumber: string;
+	bundleId: string;
+	expirationDateTime: any;
+	minimumSupportedOperatingSystem: ComplexTypes.iosMinimumOperatingSystem;
+	versionNumber: string;
 }
-
-/*********************************************
-* managedIOSLobAppCollections
-**********************************************/
-export interface managedIOSLobAppCollections {
-
-}
-
 /*********************************************
 * managedIOSStoreApp
 **********************************************/
-export interface managedIOSStoreApp {
-	applicableDeviceType?: graph.iosDeviceType;
-	appStoreUrl?: string;
-	bundleId?: string;
-	minimumSupportedOperatingSystem?: graph.iosMinimumOperatingSystem;
+export interface managedIOSStoreApp  {
+	applicableDeviceType: ComplexTypes.iosDeviceType;
+	appStoreUrl: string;
+	bundleId: string;
+	minimumSupportedOperatingSystem: ComplexTypes.iosMinimumOperatingSystem;
 }
-
-/*********************************************
-* managedIOSStoreAppCollections
-**********************************************/
-export interface managedIOSStoreAppCollections {
-
-}
-
 /*********************************************
 * mobileAppContent
 **********************************************/
-export interface mobileAppContent {
+export interface mobileAppContent  {
 
 }
-
-/*********************************************
-* mobileAppContentCollections
-**********************************************/
-export interface mobileAppContentCollections {
-
-}
-
 /*********************************************
 * microsoftStoreForBusinessApp
 **********************************************/
-export interface microsoftStoreForBusinessApp {
-	licenseType?: graph.microsoftStoreForBusinessLicenseType;
-	packageIdentityName?: string;
-	productKey?: string;
-	totalLicenseCount?: number;
-	usedLicenseCount?: number;
+export interface microsoftStoreForBusinessApp  {
+	licenseType: EnumTypes.microsoftStoreForBusinessLicenseType;
+	packageIdentityName: string;
+	productKey: string;
+	totalLicenseCount: number;
+	usedLicenseCount: number;
 }
-
-/*********************************************
-* microsoftStoreForBusinessAppCollections
-**********************************************/
-export interface microsoftStoreForBusinessAppCollections {
-
-}
-
 /*********************************************
 * mobileAppAssignment
 **********************************************/
-export interface mobileAppAssignment {
-	intent?: graph.installIntent;
-	settings?: graph.mobileAppAssignmentSettings;
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface mobileAppAssignment  {
+	intent: EnumTypes.installIntent;
+	settings: ComplexTypes.mobileAppAssignmentSettings;
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* mobileAppAssignmentCollections
-**********************************************/
-export interface mobileAppAssignmentCollections {
-
-}
-
 /*********************************************
 * mobileAppContentFile
 **********************************************/
-export interface mobileAppContentFile {
-	azureStorageUri?: string;
-	azureStorageUriExpirationDateTime?: any;
-	createdDateTime?: any;
-	isCommitted?: boolean;
-	manifest?: any;
-	name?: string;
-	size?: number;
-	sizeEncrypted?: number;
-	uploadState?: graph.mobileAppContentFileUploadState;
+export interface mobileAppContentFile  {
+	azureStorageUri: string;
+	azureStorageUriExpirationDateTime: any;
+	createdDateTime: any;
+	isCommitted: boolean;
+	manifest: any;
+	name: string;
+	size: number;
+	sizeEncrypted: number;
+	uploadState: EnumTypes.mobileAppContentFileUploadState;
 }
-
-/*********************************************
-* mobileAppContentFileCollections
-**********************************************/
-export interface mobileAppContentFileCollections {
-
-}
-
 /*********************************************
 * webApp
 **********************************************/
-export interface webApp {
-	appUrl?: string;
-	useManagedBrowser?: boolean;
+export interface webApp  {
+	appUrl: string;
+	useManagedBrowser: boolean;
 }
-
-/*********************************************
-* webAppCollections
-**********************************************/
-export interface webAppCollections {
-
-}
-
 /*********************************************
 * win32LobApp
 **********************************************/
-export interface win32LobApp {
-	applicableArchitectures?: graph.windowsArchitecture;
-	installCommandLine?: string;
-	installExperience?: graph.win32LobAppInstallExperience;
-	minimumCpuSpeedInMHz?: number;
-	minimumFreeDiskSpaceInMB?: number;
-	minimumMemoryInMB?: number;
-	minimumNumberOfProcessors?: number;
-	minimumSupportedWindowsRelease?: string;
-	msiInformation?: graph.win32LobAppMsiInformation;
-	returnCodes?: { results: Array<graph.win32LobAppReturnCode> };
-	rules?: { results: Array<graph.win32LobAppRule> };
-	setupFilePath?: string;
-	uninstallCommandLine?: string;
+export interface win32LobApp  {
+	applicableArchitectures: EnumTypes.windowsArchitecture;
+	installCommandLine: string;
+	installExperience: ComplexTypes.win32LobAppInstallExperience;
+	minimumCpuSpeedInMHz: number;
+	minimumFreeDiskSpaceInMB: number;
+	minimumMemoryInMB: number;
+	minimumNumberOfProcessors: number;
+	minimumSupportedWindowsRelease: string;
+	msiInformation: ComplexTypes.win32LobAppMsiInformation;
+	returnCodes: ComplexTypes.win32LobAppReturnCode[];
+	rules: ComplexTypes.win32LobAppRule[];
+	setupFilePath: string;
+	uninstallCommandLine: string;
 }
-
-/*********************************************
-* win32LobAppCollections
-**********************************************/
-export interface win32LobAppCollections {
-
-}
-
 /*********************************************
 * windowsMobileMSI
 **********************************************/
-export interface windowsMobileMSI {
-	commandLine?: string;
-	ignoreVersionDetection?: boolean;
-	productCode?: string;
-	productVersion?: string;
+export interface windowsMobileMSI  {
+	commandLine: string;
+	ignoreVersionDetection: boolean;
+	productCode: string;
+	productVersion: string;
 }
-
-/*********************************************
-* windowsMobileMSICollections
-**********************************************/
-export interface windowsMobileMSICollections {
-
-}
-
 /*********************************************
 * windowsUniversalAppX
 **********************************************/
-export interface windowsUniversalAppX {
-	applicableArchitectures?: graph.windowsArchitecture;
-	applicableDeviceTypes?: graph.windowsDeviceType;
-	identityName?: string;
-	identityPublisherHash?: string;
-	identityResourceIdentifier?: string;
-	identityVersion?: string;
-	isBundle?: boolean;
-	minimumSupportedOperatingSystem?: graph.windowsMinimumOperatingSystem;
+export interface windowsUniversalAppX  {
+	applicableArchitectures: EnumTypes.windowsArchitecture;
+	applicableDeviceTypes: EnumTypes.windowsDeviceType;
+	identityName: string;
+	identityPublisherHash: string;
+	identityResourceIdentifier: string;
+	identityVersion: string;
+	isBundle: boolean;
+	minimumSupportedOperatingSystem: ComplexTypes.windowsMinimumOperatingSystem;
 }
-
-/*********************************************
-* windowsUniversalAppXCollections
-**********************************************/
-export interface windowsUniversalAppXCollections {
-
-}
-
 /*********************************************
 * deviceInstallState
 **********************************************/
-export interface deviceInstallState {
-	deviceId?: string;
-	deviceName?: string;
-	errorCode?: string;
-	installState?: graph.installState;
-	lastSyncDateTime?: any;
-	osDescription?: string;
-	osVersion?: string;
-	userName?: string;
+export interface deviceInstallState  {
+	deviceId: string;
+	deviceName: string;
+	errorCode: string;
+	installState: EnumTypes.installState;
+	lastSyncDateTime: any;
+	osDescription: string;
+	osVersion: string;
+	userName: string;
 }
-
-/*********************************************
-* deviceInstallStateCollections
-**********************************************/
-export interface deviceInstallStateCollections {
-
-}
-
 /*********************************************
 * eBookInstallSummary
 **********************************************/
-export interface eBookInstallSummary {
-	failedDeviceCount?: number;
-	failedUserCount?: number;
-	installedDeviceCount?: number;
-	installedUserCount?: number;
-	notInstalledDeviceCount?: number;
-	notInstalledUserCount?: number;
+export interface eBookInstallSummary  {
+	failedDeviceCount: number;
+	failedUserCount: number;
+	installedDeviceCount: number;
+	installedUserCount: number;
+	notInstalledDeviceCount: number;
+	notInstalledUserCount: number;
 }
-
-/*********************************************
-* eBookInstallSummaryCollections
-**********************************************/
-export interface eBookInstallSummaryCollections {
-
-}
-
 /*********************************************
 * iosVppEBook
 **********************************************/
-export interface iosVppEBook {
-	appleId?: string;
-	genres?: { results: Array<string> };
-	language?: string;
-	seller?: string;
-	totalLicenseCount?: number;
-	usedLicenseCount?: number;
-	vppOrganizationName?: string;
-	vppTokenId?: any;
+export interface iosVppEBook  {
+	appleId: string;
+	genres: Array<string>[];
+	language: string;
+	seller: string;
+	totalLicenseCount: number;
+	usedLicenseCount: number;
+	vppOrganizationName: string;
+	vppTokenId: any;
 }
-
-/*********************************************
-* iosVppEBookCollections
-**********************************************/
-export interface iosVppEBookCollections {
-
-}
-
 /*********************************************
 * managedEBookAssignment
 **********************************************/
-export interface managedEBookAssignment {
-	installIntent?: graph.installIntent;
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface managedEBookAssignment  {
+	installIntent: EnumTypes.installIntent;
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* managedEBookAssignmentCollections
-**********************************************/
-export interface managedEBookAssignmentCollections {
-
-}
-
 /*********************************************
 * iosVppEBookAssignment
 **********************************************/
-export interface iosVppEBookAssignment {
+export interface iosVppEBookAssignment  {
 
 }
-
-/*********************************************
-* iosVppEBookAssignmentCollections
-**********************************************/
-export interface iosVppEBookAssignmentCollections {
-
-}
-
 /*********************************************
 * userInstallStateSummary
 **********************************************/
-export interface userInstallStateSummary {
-	failedDeviceCount?: number;
-	installedDeviceCount?: number;
-	notInstalledDeviceCount?: number;
-	userName?: string;
+export interface userInstallStateSummary  {
+	failedDeviceCount: number;
+	installedDeviceCount: number;
+	notInstalledDeviceCount: number;
+	userName: string;
 }
-
-/*********************************************
-* userInstallStateSummaryCollections
-**********************************************/
-export interface userInstallStateSummaryCollections {
-
-}
-
 /*********************************************
 * deviceManagement
 **********************************************/
-export interface deviceManagement {
-	intuneAccountId?: any;
-	settings?: graph.deviceManagementSettings;
-	intuneBrand?: graph.intuneBrand;
-	subscriptionState?: graph.deviceManagementSubscriptionState;
+export interface deviceManagement  {
+	intuneAccountId: any;
+	settings: ComplexTypes.deviceManagementSettings;
+	intuneBrand: ComplexTypes.intuneBrand;
+	subscriptionState: EnumTypes.deviceManagementSubscriptionState;
 }
-
-/*********************************************
-* deviceManagementCollections
-**********************************************/
-export interface deviceManagementCollections {
-
-}
-
 /*********************************************
 * termsAndConditions
 **********************************************/
-export interface termsAndConditions {
-	acceptanceStatement?: string;
-	bodyText?: string;
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	title?: string;
-	version?: number;
+export interface termsAndConditions  {
+	acceptanceStatement: string;
+	bodyText: string;
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	title: string;
+	version: number;
 }
-
-/*********************************************
-* termsAndConditionsCollections
-**********************************************/
-export interface termsAndConditionsCollections {
-
-}
-
 /*********************************************
 * deviceCompliancePolicy
 **********************************************/
-export interface deviceCompliancePolicy {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	version?: number;
+export interface deviceCompliancePolicy  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	version: number;
 }
-
-/*********************************************
-* deviceCompliancePolicyCollections
-**********************************************/
-export interface deviceCompliancePolicyCollections {
-
-}
-
 /*********************************************
 * deviceCompliancePolicyDeviceStateSummary
 **********************************************/
-export interface deviceCompliancePolicyDeviceStateSummary {
-	compliantDeviceCount?: number;
-	configManagerCount?: number;
-	conflictDeviceCount?: number;
-	errorDeviceCount?: number;
-	inGracePeriodCount?: number;
-	nonCompliantDeviceCount?: number;
-	notApplicableDeviceCount?: number;
-	remediatedDeviceCount?: number;
-	unknownDeviceCount?: number;
+export interface deviceCompliancePolicyDeviceStateSummary  {
+	compliantDeviceCount: number;
+	configManagerCount: number;
+	conflictDeviceCount: number;
+	errorDeviceCount: number;
+	inGracePeriodCount: number;
+	nonCompliantDeviceCount: number;
+	notApplicableDeviceCount: number;
+	remediatedDeviceCount: number;
+	unknownDeviceCount: number;
 }
-
-/*********************************************
-* deviceCompliancePolicyDeviceStateSummaryCollections
-**********************************************/
-export interface deviceCompliancePolicyDeviceStateSummaryCollections {
-
-}
-
 /*********************************************
 * deviceCompliancePolicySettingStateSummary
 **********************************************/
-export interface deviceCompliancePolicySettingStateSummary {
-	compliantDeviceCount?: number;
-	conflictDeviceCount?: number;
-	errorDeviceCount?: number;
-	nonCompliantDeviceCount?: number;
-	notApplicableDeviceCount?: number;
-	platformType?: graph.policyPlatformType;
-	remediatedDeviceCount?: number;
-	setting?: string;
-	settingName?: string;
-	unknownDeviceCount?: number;
+export interface deviceCompliancePolicySettingStateSummary  {
+	compliantDeviceCount: number;
+	conflictDeviceCount: number;
+	errorDeviceCount: number;
+	nonCompliantDeviceCount: number;
+	notApplicableDeviceCount: number;
+	platformType: EnumTypes.policyPlatformType;
+	remediatedDeviceCount: number;
+	setting: string;
+	settingName: string;
+	unknownDeviceCount: number;
 }
-
-/*********************************************
-* deviceCompliancePolicySettingStateSummaryCollections
-**********************************************/
-export interface deviceCompliancePolicySettingStateSummaryCollections {
-
-}
-
 /*********************************************
 * deviceConfigurationDeviceStateSummary
 **********************************************/
-export interface deviceConfigurationDeviceStateSummary {
-	compliantDeviceCount?: number;
-	conflictDeviceCount?: number;
-	errorDeviceCount?: number;
-	nonCompliantDeviceCount?: number;
-	notApplicableDeviceCount?: number;
-	remediatedDeviceCount?: number;
-	unknownDeviceCount?: number;
+export interface deviceConfigurationDeviceStateSummary  {
+	compliantDeviceCount: number;
+	conflictDeviceCount: number;
+	errorDeviceCount: number;
+	nonCompliantDeviceCount: number;
+	notApplicableDeviceCount: number;
+	remediatedDeviceCount: number;
+	unknownDeviceCount: number;
 }
-
-/*********************************************
-* deviceConfigurationDeviceStateSummaryCollections
-**********************************************/
-export interface deviceConfigurationDeviceStateSummaryCollections {
-
-}
-
 /*********************************************
 * deviceConfiguration
 **********************************************/
-export interface deviceConfiguration {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	version?: number;
+export interface deviceConfiguration  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	version: number;
 }
-
-/*********************************************
-* deviceConfigurationCollections
-**********************************************/
-export interface deviceConfigurationCollections {
-
-}
-
 /*********************************************
 * iosUpdateDeviceStatus
 **********************************************/
-export interface iosUpdateDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: any;
-	deviceDisplayName?: string;
-	deviceId?: string;
-	deviceModel?: string;
-	installStatus?: graph.iosUpdatesInstallStatus;
-	lastReportedDateTime?: any;
-	osVersion?: string;
-	status?: graph.complianceStatus;
-	userId?: string;
-	userName?: string;
-	userPrincipalName?: string;
+export interface iosUpdateDeviceStatus  {
+	complianceGracePeriodExpirationDateTime: any;
+	deviceDisplayName: string;
+	deviceId: string;
+	deviceModel: string;
+	installStatus: EnumTypes.iosUpdatesInstallStatus;
+	lastReportedDateTime: any;
+	osVersion: string;
+	status: EnumTypes.complianceStatus;
+	userId: string;
+	userName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* iosUpdateDeviceStatusCollections
-**********************************************/
-export interface iosUpdateDeviceStatusCollections {
-
-}
-
 /*********************************************
 * softwareUpdateStatusSummary
 **********************************************/
-export interface softwareUpdateStatusSummary {
-	compliantDeviceCount?: number;
-	compliantUserCount?: number;
-	conflictDeviceCount?: number;
-	conflictUserCount?: number;
-	displayName?: string;
-	errorDeviceCount?: number;
-	errorUserCount?: number;
-	nonCompliantDeviceCount?: number;
-	nonCompliantUserCount?: number;
-	notApplicableDeviceCount?: number;
-	notApplicableUserCount?: number;
-	remediatedDeviceCount?: number;
-	remediatedUserCount?: number;
-	unknownDeviceCount?: number;
-	unknownUserCount?: number;
+export interface softwareUpdateStatusSummary  {
+	compliantDeviceCount: number;
+	compliantUserCount: number;
+	conflictDeviceCount: number;
+	conflictUserCount: number;
+	displayName: string;
+	errorDeviceCount: number;
+	errorUserCount: number;
+	nonCompliantDeviceCount: number;
+	nonCompliantUserCount: number;
+	notApplicableDeviceCount: number;
+	notApplicableUserCount: number;
+	remediatedDeviceCount: number;
+	remediatedUserCount: number;
+	unknownDeviceCount: number;
+	unknownUserCount: number;
 }
-
-/*********************************************
-* softwareUpdateStatusSummaryCollections
-**********************************************/
-export interface softwareUpdateStatusSummaryCollections {
-
-}
-
 /*********************************************
 * complianceManagementPartner
 **********************************************/
-export interface complianceManagementPartner {
-	androidEnrollmentAssignments?: { results: Array<graph.complianceManagementPartnerAssignment> };
-	androidOnboarded?: boolean;
-	displayName?: string;
-	iosEnrollmentAssignments?: { results: Array<graph.complianceManagementPartnerAssignment> };
-	iosOnboarded?: boolean;
-	lastHeartbeatDateTime?: any;
-	macOsEnrollmentAssignments?: { results: Array<graph.complianceManagementPartnerAssignment> };
-	macOsOnboarded?: boolean;
-	partnerState?: graph.deviceManagementPartnerTenantState;
+export interface complianceManagementPartner  {
+	androidEnrollmentAssignments: ComplexTypes.complianceManagementPartnerAssignment[];
+	androidOnboarded: boolean;
+	displayName: string;
+	iosEnrollmentAssignments: ComplexTypes.complianceManagementPartnerAssignment[];
+	iosOnboarded: boolean;
+	lastHeartbeatDateTime: any;
+	macOsEnrollmentAssignments: ComplexTypes.complianceManagementPartnerAssignment[];
+	macOsOnboarded: boolean;
+	partnerState: EnumTypes.deviceManagementPartnerTenantState;
 }
-
-/*********************************************
-* complianceManagementPartnerCollections
-**********************************************/
-export interface complianceManagementPartnerCollections {
-
-}
-
 /*********************************************
 * onPremisesConditionalAccessSettings
 **********************************************/
-export interface onPremisesConditionalAccessSettings {
-	enabled?: boolean;
-	excludedGroups?: { results: Array<any> };
-	includedGroups?: { results: Array<any> };
-	overrideDefaultRule?: boolean;
+export interface onPremisesConditionalAccessSettings  {
+	enabled: boolean;
+	excludedGroups: Array<any>[];
+	includedGroups: Array<any>[];
+	overrideDefaultRule: boolean;
 }
-
-/*********************************************
-* onPremisesConditionalAccessSettingsCollections
-**********************************************/
-export interface onPremisesConditionalAccessSettingsCollections {
-
-}
-
 /*********************************************
 * deviceCategory
 **********************************************/
-export interface deviceCategory {
-	description?: string;
-	displayName?: string;
+export interface deviceCategory  {
+	description: string;
+	displayName: string;
 }
-
-/*********************************************
-* deviceCategoryCollections
-**********************************************/
-export interface deviceCategoryCollections {
-
-}
-
 /*********************************************
 * deviceEnrollmentConfiguration
 **********************************************/
-export interface deviceEnrollmentConfiguration {
-	createdDateTime?: any;
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	priority?: number;
-	version?: number;
+export interface deviceEnrollmentConfiguration  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	priority: number;
+	version: number;
 }
-
-/*********************************************
-* deviceEnrollmentConfigurationCollections
-**********************************************/
-export interface deviceEnrollmentConfigurationCollections {
-
-}
-
 /*********************************************
 * deviceManagementPartner
 **********************************************/
-export interface deviceManagementPartner {
-	displayName?: string;
-	isConfigured?: boolean;
-	lastHeartbeatDateTime?: any;
-	partnerAppType?: graph.deviceManagementPartnerAppType;
-	partnerState?: graph.deviceManagementPartnerTenantState;
-	singleTenantAppId?: string;
-	whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime?: any;
-	whenPartnerDevicesWillBeRemovedDateTime?: any;
+export interface deviceManagementPartner  {
+	displayName: string;
+	isConfigured: boolean;
+	lastHeartbeatDateTime: any;
+	partnerAppType: EnumTypes.deviceManagementPartnerAppType;
+	partnerState: EnumTypes.deviceManagementPartnerTenantState;
+	singleTenantAppId: string;
+	whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime: any;
+	whenPartnerDevicesWillBeRemovedDateTime: any;
 }
-
-/*********************************************
-* deviceManagementPartnerCollections
-**********************************************/
-export interface deviceManagementPartnerCollections {
-
-}
-
 /*********************************************
 * deviceManagementExchangeConnector
 **********************************************/
-export interface deviceManagementExchangeConnector {
-	connectorServerName?: string;
-	exchangeAlias?: string;
-	exchangeConnectorType?: graph.deviceManagementExchangeConnectorType;
-	exchangeOrganization?: string;
-	lastSyncDateTime?: any;
-	primarySmtpAddress?: string;
-	serverName?: string;
-	status?: graph.deviceManagementExchangeConnectorStatus;
-	version?: string;
+export interface deviceManagementExchangeConnector  {
+	connectorServerName: string;
+	exchangeAlias: string;
+	exchangeConnectorType: EnumTypes.deviceManagementExchangeConnectorType;
+	exchangeOrganization: string;
+	lastSyncDateTime: any;
+	primarySmtpAddress: string;
+	serverName: string;
+	status: EnumTypes.deviceManagementExchangeConnectorStatus;
+	version: string;
 }
-
-/*********************************************
-* deviceManagementExchangeConnectorCollections
-**********************************************/
-export interface deviceManagementExchangeConnectorCollections {
-
-}
-
 /*********************************************
 * mobileThreatDefenseConnector
 **********************************************/
-export interface mobileThreatDefenseConnector {
-	androidDeviceBlockedOnMissingPartnerData?: boolean;
-	androidEnabled?: boolean;
-	iosDeviceBlockedOnMissingPartnerData?: boolean;
-	iosEnabled?: boolean;
-	lastHeartbeatDateTime?: any;
-	partnerState?: graph.mobileThreatPartnerTenantState;
-	partnerUnresponsivenessThresholdInDays?: number;
-	partnerUnsupportedOsVersionBlocked?: boolean;
+export interface mobileThreatDefenseConnector  {
+	androidDeviceBlockedOnMissingPartnerData: boolean;
+	androidEnabled: boolean;
+	iosDeviceBlockedOnMissingPartnerData: boolean;
+	iosEnabled: boolean;
+	lastHeartbeatDateTime: any;
+	partnerState: EnumTypes.mobileThreatPartnerTenantState;
+	partnerUnresponsivenessThresholdInDays: number;
+	partnerUnsupportedOsVersionBlocked: boolean;
 }
-
-/*********************************************
-* mobileThreatDefenseConnectorCollections
-**********************************************/
-export interface mobileThreatDefenseConnectorCollections {
-
-}
-
 /*********************************************
 * applePushNotificationCertificate
 **********************************************/
-export interface applePushNotificationCertificate {
-	appleIdentifier?: string;
-	certificate?: string;
-	certificateSerialNumber?: string;
-	expirationDateTime?: any;
-	lastModifiedDateTime?: any;
-	topicIdentifier?: string;
+export interface applePushNotificationCertificate  {
+	appleIdentifier: string;
+	certificate: string;
+	certificateSerialNumber: string;
+	expirationDateTime: any;
+	lastModifiedDateTime: any;
+	topicIdentifier: string;
 }
-
-/*********************************************
-* applePushNotificationCertificateCollections
-**********************************************/
-export interface applePushNotificationCertificateCollections {
-
-}
-
 /*********************************************
 * detectedApp
 **********************************************/
-export interface detectedApp {
-	deviceCount?: number;
-	displayName?: string;
-	sizeInByte?: number;
-	version?: string;
+export interface detectedApp  {
+	deviceCount: number;
+	displayName: string;
+	sizeInByte: number;
+	version: string;
 }
-
-/*********************************************
-* detectedAppCollections
-**********************************************/
-export interface detectedAppCollections {
-
-}
-
 /*********************************************
 * managedDeviceOverview
 **********************************************/
-export interface managedDeviceOverview {
-	deviceExchangeAccessStateSummary?: graph.deviceExchangeAccessStateSummary;
-	deviceOperatingSystemSummary?: graph.deviceOperatingSystemSummary;
-	dualEnrolledDeviceCount?: number;
-	enrolledDeviceCount?: number;
-	mdmEnrolledCount?: number;
+export interface managedDeviceOverview  {
+	deviceExchangeAccessStateSummary: ComplexTypes.deviceExchangeAccessStateSummary;
+	deviceOperatingSystemSummary: ComplexTypes.deviceOperatingSystemSummary;
+	dualEnrolledDeviceCount: number;
+	enrolledDeviceCount: number;
+	mdmEnrolledCount: number;
 }
-
-/*********************************************
-* managedDeviceOverviewCollections
-**********************************************/
-export interface managedDeviceOverviewCollections {
-
-}
-
 /*********************************************
 * importedWindowsAutopilotDeviceIdentity
 **********************************************/
-export interface importedWindowsAutopilotDeviceIdentity {
-	assignedUserPrincipalName?: string;
-	groupTag?: string;
-	hardwareIdentifier?: any;
-	importId?: string;
-	productKey?: string;
-	serialNumber?: string;
-	state?: graph.importedWindowsAutopilotDeviceIdentityState;
+export interface importedWindowsAutopilotDeviceIdentity  {
+	assignedUserPrincipalName: string;
+	groupTag: string;
+	hardwareIdentifier: any;
+	importId: string;
+	productKey: string;
+	serialNumber: string;
+	state: ComplexTypes.importedWindowsAutopilotDeviceIdentityState;
 }
-
-/*********************************************
-* importedWindowsAutopilotDeviceIdentityCollections
-**********************************************/
-export interface importedWindowsAutopilotDeviceIdentityCollections {
-
-}
-
 /*********************************************
 * windowsAutopilotDeviceIdentity
 **********************************************/
-export interface windowsAutopilotDeviceIdentity {
-	addressableUserName?: string;
-	azureActiveDirectoryDeviceId?: string;
-	displayName?: string;
-	enrollmentState?: graph.enrollmentState;
-	groupTag?: string;
-	lastContactedDateTime?: any;
-	managedDeviceId?: string;
-	manufacturer?: string;
-	model?: string;
-	productKey?: string;
-	purchaseOrderIdentifier?: string;
-	resourceName?: string;
-	serialNumber?: string;
-	skuNumber?: string;
-	systemFamily?: string;
-	userPrincipalName?: string;
+export interface windowsAutopilotDeviceIdentity  {
+	addressableUserName: string;
+	azureActiveDirectoryDeviceId: string;
+	displayName: string;
+	enrollmentState: EnumTypes.enrollmentState;
+	groupTag: string;
+	lastContactedDateTime: any;
+	managedDeviceId: string;
+	manufacturer: string;
+	model: string;
+	productKey: string;
+	purchaseOrderIdentifier: string;
+	resourceName: string;
+	serialNumber: string;
+	skuNumber: string;
+	systemFamily: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* windowsAutopilotDeviceIdentityCollections
-**********************************************/
-export interface windowsAutopilotDeviceIdentityCollections {
-
-}
-
 /*********************************************
 * notificationMessageTemplate
 **********************************************/
-export interface notificationMessageTemplate {
-	brandingOptions?: graph.notificationTemplateBrandingOptions;
-	defaultLocale?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
+export interface notificationMessageTemplate  {
+	brandingOptions: EnumTypes.notificationTemplateBrandingOptions;
+	defaultLocale: string;
+	displayName: string;
+	lastModifiedDateTime: any;
 }
-
-/*********************************************
-* notificationMessageTemplateCollections
-**********************************************/
-export interface notificationMessageTemplateCollections {
-
-}
-
 /*********************************************
 * resourceOperation
 **********************************************/
-export interface resourceOperation {
-	actionName?: string;
-	description?: string;
-	resourceName?: string;
+export interface resourceOperation  {
+	actionName: string;
+	description: string;
+	resourceName: string;
 }
-
-/*********************************************
-* resourceOperationCollections
-**********************************************/
-export interface resourceOperationCollections {
-
-}
-
 /*********************************************
 * roleAssignment
 **********************************************/
-export interface roleAssignment {
-	description?: string;
-	displayName?: string;
-	resourceScopes?: { results: Array<string> };
+export interface roleAssignment  {
+	description: string;
+	displayName: string;
+	resourceScopes: Array<string>[];
 }
-
-/*********************************************
-* roleAssignmentCollections
-**********************************************/
-export interface roleAssignmentCollections {
-
-}
-
 /*********************************************
 * deviceAndAppManagementRoleAssignment
 **********************************************/
-export interface deviceAndAppManagementRoleAssignment {
-	members?: { results: Array<string> };
+export interface deviceAndAppManagementRoleAssignment  {
+	members: Array<string>[];
 }
-
-/*********************************************
-* deviceAndAppManagementRoleAssignmentCollections
-**********************************************/
-export interface deviceAndAppManagementRoleAssignmentCollections {
-
-}
-
 /*********************************************
 * roleDefinition
 **********************************************/
-export interface roleDefinition {
-	description?: string;
-	displayName?: string;
-	isBuiltIn?: boolean;
-	rolePermissions?: { results: Array<graph.rolePermission> };
+export interface roleDefinition  {
+	description: string;
+	displayName: string;
+	isBuiltIn: boolean;
+	rolePermissions: ComplexTypes.rolePermission[];
 }
-
-/*********************************************
-* roleDefinitionCollections
-**********************************************/
-export interface roleDefinitionCollections {
-
-}
-
 /*********************************************
 * remoteAssistancePartner
 **********************************************/
-export interface remoteAssistancePartner {
-	displayName?: string;
-	lastConnectionDateTime?: any;
-	onboardingStatus?: graph.remoteAssistanceOnboardingStatus;
-	onboardingUrl?: string;
+export interface remoteAssistancePartner  {
+	displayName: string;
+	lastConnectionDateTime: any;
+	onboardingStatus: EnumTypes.remoteAssistanceOnboardingStatus;
+	onboardingUrl: string;
 }
-
-/*********************************************
-* remoteAssistancePartnerCollections
-**********************************************/
-export interface remoteAssistancePartnerCollections {
-
-}
-
 /*********************************************
 * deviceManagementReports
 **********************************************/
-export interface deviceManagementReports {
+export interface deviceManagementReports  {
 
 }
-
-/*********************************************
-* deviceManagementReportsCollections
-**********************************************/
-export interface deviceManagementReportsCollections {
-
-}
-
 /*********************************************
 * telecomExpenseManagementPartner
 **********************************************/
-export interface telecomExpenseManagementPartner {
-	appAuthorized?: boolean;
-	displayName?: string;
-	enabled?: boolean;
-	lastConnectionDateTime?: any;
-	url?: string;
+export interface telecomExpenseManagementPartner  {
+	appAuthorized: boolean;
+	displayName: string;
+	enabled: boolean;
+	lastConnectionDateTime: any;
+	url: string;
 }
-
-/*********************************************
-* telecomExpenseManagementPartnerCollections
-**********************************************/
-export interface telecomExpenseManagementPartnerCollections {
-
-}
-
 /*********************************************
 * windowsInformationProtectionAppLearningSummary
 **********************************************/
-export interface windowsInformationProtectionAppLearningSummary {
-	applicationName?: string;
-	applicationType?: graph.applicationType;
-	deviceCount?: number;
+export interface windowsInformationProtectionAppLearningSummary  {
+	applicationName: string;
+	applicationType: EnumTypes.applicationType;
+	deviceCount: number;
 }
-
-/*********************************************
-* windowsInformationProtectionAppLearningSummaryCollections
-**********************************************/
-export interface windowsInformationProtectionAppLearningSummaryCollections {
-
-}
-
 /*********************************************
 * windowsInformationProtectionNetworkLearningSummary
 **********************************************/
-export interface windowsInformationProtectionNetworkLearningSummary {
-	deviceCount?: number;
-	url?: string;
+export interface windowsInformationProtectionNetworkLearningSummary  {
+	deviceCount: number;
+	url: string;
 }
-
-/*********************************************
-* windowsInformationProtectionNetworkLearningSummaryCollections
-**********************************************/
-export interface windowsInformationProtectionNetworkLearningSummaryCollections {
-
-}
-
 /*********************************************
 * termsAndConditionsAcceptanceStatus
 **********************************************/
-export interface termsAndConditionsAcceptanceStatus {
-	acceptedDateTime?: any;
-	acceptedVersion?: number;
-	userDisplayName?: string;
-	userPrincipalName?: string;
+export interface termsAndConditionsAcceptanceStatus  {
+	acceptedDateTime: any;
+	acceptedVersion: number;
+	userDisplayName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* termsAndConditionsAcceptanceStatusCollections
-**********************************************/
-export interface termsAndConditionsAcceptanceStatusCollections {
-
-}
-
 /*********************************************
 * termsAndConditionsAssignment
 **********************************************/
-export interface termsAndConditionsAssignment {
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface termsAndConditionsAssignment  {
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* termsAndConditionsAssignmentCollections
-**********************************************/
-export interface termsAndConditionsAssignmentCollections {
-
-}
-
 /*********************************************
 * androidCompliancePolicy
 **********************************************/
-export interface androidCompliancePolicy {
-	deviceThreatProtectionEnabled?: boolean;
-	deviceThreatProtectionRequiredSecurityLevel?: graph.deviceThreatProtectionLevel;
-	minAndroidSecurityPatchLevel?: string;
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passwordExpirationDays?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.androidRequiredPasswordType;
-	securityBlockJailbrokenDevices?: boolean;
-	securityDisableUsbDebugging?: boolean;
-	securityPreventInstallAppsFromUnknownSources?: boolean;
-	securityRequireCompanyPortalAppIntegrity?: boolean;
-	securityRequireGooglePlayServices?: boolean;
-	securityRequireSafetyNetAttestationBasicIntegrity?: boolean;
-	securityRequireSafetyNetAttestationCertifiedDevice?: boolean;
-	securityRequireUpToDateSecurityProviders?: boolean;
-	securityRequireVerifyApps?: boolean;
-	storageRequireEncryption?: boolean;
+export interface androidCompliancePolicy  {
+	deviceThreatProtectionEnabled: boolean;
+	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
+	minAndroidSecurityPatchLevel: string;
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passwordExpirationDays: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.androidRequiredPasswordType;
+	securityBlockJailbrokenDevices: boolean;
+	securityDisableUsbDebugging: boolean;
+	securityPreventInstallAppsFromUnknownSources: boolean;
+	securityRequireCompanyPortalAppIntegrity: boolean;
+	securityRequireGooglePlayServices: boolean;
+	securityRequireSafetyNetAttestationBasicIntegrity: boolean;
+	securityRequireSafetyNetAttestationCertifiedDevice: boolean;
+	securityRequireUpToDateSecurityProviders: boolean;
+	securityRequireVerifyApps: boolean;
+	storageRequireEncryption: boolean;
 }
-
-/*********************************************
-* androidCompliancePolicyCollections
-**********************************************/
-export interface androidCompliancePolicyCollections {
-
-}
-
 /*********************************************
 * androidCustomConfiguration
 **********************************************/
-export interface androidCustomConfiguration {
-	omaSettings?: { results: Array<graph.omaSetting> };
+export interface androidCustomConfiguration  {
+	omaSettings: ComplexTypes.omaSetting[];
 }
-
-/*********************************************
-* androidCustomConfigurationCollections
-**********************************************/
-export interface androidCustomConfigurationCollections {
-
-}
-
 /*********************************************
 * androidGeneralDeviceConfiguration
 **********************************************/
-export interface androidGeneralDeviceConfiguration {
-	appsBlockClipboardSharing?: boolean;
-	appsBlockCopyPaste?: boolean;
-	appsBlockYouTube?: boolean;
-	appsHideList?: { results: Array<graph.appListItem> };
-	appsInstallAllowList?: { results: Array<graph.appListItem> };
-	appsLaunchBlockList?: { results: Array<graph.appListItem> };
-	bluetoothBlocked?: boolean;
-	cameraBlocked?: boolean;
-	cellularBlockDataRoaming?: boolean;
-	cellularBlockMessaging?: boolean;
-	cellularBlockVoiceRoaming?: boolean;
-	cellularBlockWiFiTethering?: boolean;
-	compliantAppListType?: graph.appListType;
-	compliantAppsList?: { results: Array<graph.appListItem> };
-	deviceSharingAllowed?: boolean;
-	diagnosticDataBlockSubmission?: boolean;
-	factoryResetBlocked?: boolean;
-	googleAccountBlockAutoSync?: boolean;
-	googlePlayStoreBlocked?: boolean;
-	kioskModeApps?: { results: Array<graph.appListItem> };
-	kioskModeBlockSleepButton?: boolean;
-	kioskModeBlockVolumeButtons?: boolean;
-	locationServicesBlocked?: boolean;
-	nfcBlocked?: boolean;
-	passwordBlockFingerprintUnlock?: boolean;
-	passwordBlockTrustAgents?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeScreenTimeout?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.androidRequiredPasswordType;
-	passwordSignInFailureCountBeforeFactoryReset?: number;
-	powerOffBlocked?: boolean;
-	screenCaptureBlocked?: boolean;
-	securityRequireVerifyApps?: boolean;
-	storageBlockGoogleBackup?: boolean;
-	storageBlockRemovableStorage?: boolean;
-	storageRequireDeviceEncryption?: boolean;
-	storageRequireRemovableStorageEncryption?: boolean;
-	voiceAssistantBlocked?: boolean;
-	voiceDialingBlocked?: boolean;
-	webBrowserBlockAutofill?: boolean;
-	webBrowserBlocked?: boolean;
-	webBrowserBlockJavaScript?: boolean;
-	webBrowserBlockPopups?: boolean;
-	webBrowserCookieSettings?: graph.webBrowserCookieSettings;
-	wiFiBlocked?: boolean;
+export interface androidGeneralDeviceConfiguration  {
+	appsBlockClipboardSharing: boolean;
+	appsBlockCopyPaste: boolean;
+	appsBlockYouTube: boolean;
+	appsHideList: ComplexTypes.appListItem[];
+	appsInstallAllowList: ComplexTypes.appListItem[];
+	appsLaunchBlockList: ComplexTypes.appListItem[];
+	bluetoothBlocked: boolean;
+	cameraBlocked: boolean;
+	cellularBlockDataRoaming: boolean;
+	cellularBlockMessaging: boolean;
+	cellularBlockVoiceRoaming: boolean;
+	cellularBlockWiFiTethering: boolean;
+	compliantAppListType: EnumTypes.appListType;
+	compliantAppsList: ComplexTypes.appListItem[];
+	deviceSharingAllowed: boolean;
+	diagnosticDataBlockSubmission: boolean;
+	factoryResetBlocked: boolean;
+	googleAccountBlockAutoSync: boolean;
+	googlePlayStoreBlocked: boolean;
+	kioskModeApps: ComplexTypes.appListItem[];
+	kioskModeBlockSleepButton: boolean;
+	kioskModeBlockVolumeButtons: boolean;
+	locationServicesBlocked: boolean;
+	nfcBlocked: boolean;
+	passwordBlockFingerprintUnlock: boolean;
+	passwordBlockTrustAgents: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeScreenTimeout: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.androidRequiredPasswordType;
+	passwordSignInFailureCountBeforeFactoryReset: number;
+	powerOffBlocked: boolean;
+	screenCaptureBlocked: boolean;
+	securityRequireVerifyApps: boolean;
+	storageBlockGoogleBackup: boolean;
+	storageBlockRemovableStorage: boolean;
+	storageRequireDeviceEncryption: boolean;
+	storageRequireRemovableStorageEncryption: boolean;
+	voiceAssistantBlocked: boolean;
+	voiceDialingBlocked: boolean;
+	webBrowserBlockAutofill: boolean;
+	webBrowserBlocked: boolean;
+	webBrowserBlockJavaScript: boolean;
+	webBrowserBlockPopups: boolean;
+	webBrowserCookieSettings: EnumTypes.webBrowserCookieSettings;
+	wiFiBlocked: boolean;
 }
-
-/*********************************************
-* androidGeneralDeviceConfigurationCollections
-**********************************************/
-export interface androidGeneralDeviceConfigurationCollections {
-
-}
-
 /*********************************************
 * androidWorkProfileCompliancePolicy
 **********************************************/
-export interface androidWorkProfileCompliancePolicy {
-	deviceThreatProtectionEnabled?: boolean;
-	deviceThreatProtectionRequiredSecurityLevel?: graph.deviceThreatProtectionLevel;
-	minAndroidSecurityPatchLevel?: string;
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passwordExpirationDays?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.androidRequiredPasswordType;
-	securityBlockJailbrokenDevices?: boolean;
-	securityDisableUsbDebugging?: boolean;
-	securityPreventInstallAppsFromUnknownSources?: boolean;
-	securityRequireCompanyPortalAppIntegrity?: boolean;
-	securityRequireGooglePlayServices?: boolean;
-	securityRequireSafetyNetAttestationBasicIntegrity?: boolean;
-	securityRequireSafetyNetAttestationCertifiedDevice?: boolean;
-	securityRequireUpToDateSecurityProviders?: boolean;
-	securityRequireVerifyApps?: boolean;
-	storageRequireEncryption?: boolean;
+export interface androidWorkProfileCompliancePolicy  {
+	deviceThreatProtectionEnabled: boolean;
+	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
+	minAndroidSecurityPatchLevel: string;
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passwordExpirationDays: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.androidRequiredPasswordType;
+	securityBlockJailbrokenDevices: boolean;
+	securityDisableUsbDebugging: boolean;
+	securityPreventInstallAppsFromUnknownSources: boolean;
+	securityRequireCompanyPortalAppIntegrity: boolean;
+	securityRequireGooglePlayServices: boolean;
+	securityRequireSafetyNetAttestationBasicIntegrity: boolean;
+	securityRequireSafetyNetAttestationCertifiedDevice: boolean;
+	securityRequireUpToDateSecurityProviders: boolean;
+	securityRequireVerifyApps: boolean;
+	storageRequireEncryption: boolean;
 }
-
-/*********************************************
-* androidWorkProfileCompliancePolicyCollections
-**********************************************/
-export interface androidWorkProfileCompliancePolicyCollections {
-
-}
-
 /*********************************************
 * androidWorkProfileCustomConfiguration
 **********************************************/
-export interface androidWorkProfileCustomConfiguration {
-	omaSettings?: { results: Array<graph.omaSetting> };
+export interface androidWorkProfileCustomConfiguration  {
+	omaSettings: ComplexTypes.omaSetting[];
 }
-
-/*********************************************
-* androidWorkProfileCustomConfigurationCollections
-**********************************************/
-export interface androidWorkProfileCustomConfigurationCollections {
-
-}
-
 /*********************************************
 * androidWorkProfileGeneralDeviceConfiguration
 **********************************************/
-export interface androidWorkProfileGeneralDeviceConfiguration {
-	passwordBlockFingerprintUnlock?: boolean;
-	passwordBlockTrustAgents?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeScreenTimeout?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequiredType?: graph.androidWorkProfileRequiredPasswordType;
-	passwordSignInFailureCountBeforeFactoryReset?: number;
-	securityRequireVerifyApps?: boolean;
-	workProfileBlockAddingAccounts?: boolean;
-	workProfileBlockCamera?: boolean;
-	workProfileBlockCrossProfileCallerId?: boolean;
-	workProfileBlockCrossProfileContactsSearch?: boolean;
-	workProfileBlockCrossProfileCopyPaste?: boolean;
-	workProfileBlockNotificationsWhileDeviceLocked?: boolean;
-	workProfileBlockScreenCapture?: boolean;
-	workProfileBluetoothEnableContactSharing?: boolean;
-	workProfileDataSharingType?: graph.androidWorkProfileCrossProfileDataSharingType;
-	workProfileDefaultAppPermissionPolicy?: graph.androidWorkProfileDefaultAppPermissionPolicyType;
-	workProfilePasswordBlockFingerprintUnlock?: boolean;
-	workProfilePasswordBlockTrustAgents?: boolean;
-	workProfilePasswordExpirationDays?: number;
-	workProfilePasswordMinimumLength?: number;
-	workProfilePasswordMinLetterCharacters?: number;
-	workProfilePasswordMinLowerCaseCharacters?: number;
-	workProfilePasswordMinNonLetterCharacters?: number;
-	workProfilePasswordMinNumericCharacters?: number;
-	workProfilePasswordMinSymbolCharacters?: number;
-	workProfilePasswordMinUpperCaseCharacters?: number;
-	workProfilePasswordMinutesOfInactivityBeforeScreenTimeout?: number;
-	workProfilePasswordPreviousPasswordBlockCount?: number;
-	workProfilePasswordRequiredType?: graph.androidWorkProfileRequiredPasswordType;
-	workProfilePasswordSignInFailureCountBeforeFactoryReset?: number;
-	workProfileRequirePassword?: boolean;
+export interface androidWorkProfileGeneralDeviceConfiguration  {
+	passwordBlockFingerprintUnlock: boolean;
+	passwordBlockTrustAgents: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeScreenTimeout: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequiredType: EnumTypes.androidWorkProfileRequiredPasswordType;
+	passwordSignInFailureCountBeforeFactoryReset: number;
+	securityRequireVerifyApps: boolean;
+	workProfileBlockAddingAccounts: boolean;
+	workProfileBlockCamera: boolean;
+	workProfileBlockCrossProfileCallerId: boolean;
+	workProfileBlockCrossProfileContactsSearch: boolean;
+	workProfileBlockCrossProfileCopyPaste: boolean;
+	workProfileBlockNotificationsWhileDeviceLocked: boolean;
+	workProfileBlockScreenCapture: boolean;
+	workProfileBluetoothEnableContactSharing: boolean;
+	workProfileDataSharingType: EnumTypes.androidWorkProfileCrossProfileDataSharingType;
+	workProfileDefaultAppPermissionPolicy: EnumTypes.androidWorkProfileDefaultAppPermissionPolicyType;
+	workProfilePasswordBlockFingerprintUnlock: boolean;
+	workProfilePasswordBlockTrustAgents: boolean;
+	workProfilePasswordExpirationDays: number;
+	workProfilePasswordMinimumLength: number;
+	workProfilePasswordMinLetterCharacters: number;
+	workProfilePasswordMinLowerCaseCharacters: number;
+	workProfilePasswordMinNonLetterCharacters: number;
+	workProfilePasswordMinNumericCharacters: number;
+	workProfilePasswordMinSymbolCharacters: number;
+	workProfilePasswordMinUpperCaseCharacters: number;
+	workProfilePasswordMinutesOfInactivityBeforeScreenTimeout: number;
+	workProfilePasswordPreviousPasswordBlockCount: number;
+	workProfilePasswordRequiredType: EnumTypes.androidWorkProfileRequiredPasswordType;
+	workProfilePasswordSignInFailureCountBeforeFactoryReset: number;
+	workProfileRequirePassword: boolean;
 }
-
-/*********************************************
-* androidWorkProfileGeneralDeviceConfigurationCollections
-**********************************************/
-export interface androidWorkProfileGeneralDeviceConfigurationCollections {
-
-}
-
 /*********************************************
 * appleDeviceFeaturesConfigurationBase
 **********************************************/
-export interface appleDeviceFeaturesConfigurationBase {
+export interface appleDeviceFeaturesConfigurationBase  {
 
 }
-
-/*********************************************
-* appleDeviceFeaturesConfigurationBaseCollections
-**********************************************/
-export interface appleDeviceFeaturesConfigurationBaseCollections {
-
-}
-
 /*********************************************
 * deviceComplianceActionItem
 **********************************************/
-export interface deviceComplianceActionItem {
-	actionType?: graph.deviceComplianceActionType;
-	gracePeriodHours?: number;
-	notificationMessageCCList?: { results: Array<string> };
-	notificationTemplateId?: string;
+export interface deviceComplianceActionItem  {
+	actionType: EnumTypes.deviceComplianceActionType;
+	gracePeriodHours: number;
+	notificationMessageCCList: Array<string>[];
+	notificationTemplateId: string;
 }
-
-/*********************************************
-* deviceComplianceActionItemCollections
-**********************************************/
-export interface deviceComplianceActionItemCollections {
-
-}
-
 /*********************************************
 * deviceComplianceDeviceOverview
 **********************************************/
-export interface deviceComplianceDeviceOverview {
-	configurationVersion?: number;
-	errorCount?: number;
-	failedCount?: number;
-	lastUpdateDateTime?: any;
-	notApplicableCount?: number;
-	pendingCount?: number;
-	successCount?: number;
+export interface deviceComplianceDeviceOverview  {
+	configurationVersion: number;
+	errorCount: number;
+	failedCount: number;
+	lastUpdateDateTime: any;
+	notApplicableCount: number;
+	pendingCount: number;
+	successCount: number;
 }
-
-/*********************************************
-* deviceComplianceDeviceOverviewCollections
-**********************************************/
-export interface deviceComplianceDeviceOverviewCollections {
-
-}
-
 /*********************************************
 * deviceComplianceDeviceStatus
 **********************************************/
-export interface deviceComplianceDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: any;
-	deviceDisplayName?: string;
-	deviceModel?: string;
-	lastReportedDateTime?: any;
-	status?: graph.complianceStatus;
-	userName?: string;
-	userPrincipalName?: string;
+export interface deviceComplianceDeviceStatus  {
+	complianceGracePeriodExpirationDateTime: any;
+	deviceDisplayName: string;
+	deviceModel: string;
+	lastReportedDateTime: any;
+	status: EnumTypes.complianceStatus;
+	userName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* deviceComplianceDeviceStatusCollections
-**********************************************/
-export interface deviceComplianceDeviceStatusCollections {
-
-}
-
 /*********************************************
 * deviceCompliancePolicyAssignment
 **********************************************/
-export interface deviceCompliancePolicyAssignment {
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface deviceCompliancePolicyAssignment  {
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* deviceCompliancePolicyAssignmentCollections
-**********************************************/
-export interface deviceCompliancePolicyAssignmentCollections {
-
-}
-
 /*********************************************
 * settingStateDeviceSummary
 **********************************************/
-export interface settingStateDeviceSummary {
-	compliantDeviceCount?: number;
-	conflictDeviceCount?: number;
-	errorDeviceCount?: number;
-	instancePath?: string;
-	nonCompliantDeviceCount?: number;
-	notApplicableDeviceCount?: number;
-	remediatedDeviceCount?: number;
-	settingName?: string;
-	unknownDeviceCount?: number;
+export interface settingStateDeviceSummary  {
+	compliantDeviceCount: number;
+	conflictDeviceCount: number;
+	errorDeviceCount: number;
+	instancePath: string;
+	nonCompliantDeviceCount: number;
+	notApplicableDeviceCount: number;
+	remediatedDeviceCount: number;
+	settingName: string;
+	unknownDeviceCount: number;
 }
-
-/*********************************************
-* settingStateDeviceSummaryCollections
-**********************************************/
-export interface settingStateDeviceSummaryCollections {
-
-}
-
 /*********************************************
 * deviceComplianceScheduledActionForRule
 **********************************************/
-export interface deviceComplianceScheduledActionForRule {
-	ruleName?: string;
+export interface deviceComplianceScheduledActionForRule  {
+	ruleName: string;
 }
-
-/*********************************************
-* deviceComplianceScheduledActionForRuleCollections
-**********************************************/
-export interface deviceComplianceScheduledActionForRuleCollections {
-
-}
-
 /*********************************************
 * deviceComplianceUserStatus
 **********************************************/
-export interface deviceComplianceUserStatus {
-	devicesCount?: number;
-	lastReportedDateTime?: any;
-	status?: graph.complianceStatus;
-	userDisplayName?: string;
-	userPrincipalName?: string;
+export interface deviceComplianceUserStatus  {
+	devicesCount: number;
+	lastReportedDateTime: any;
+	status: EnumTypes.complianceStatus;
+	userDisplayName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* deviceComplianceUserStatusCollections
-**********************************************/
-export interface deviceComplianceUserStatusCollections {
-
-}
-
 /*********************************************
 * deviceComplianceUserOverview
 **********************************************/
-export interface deviceComplianceUserOverview {
-	configurationVersion?: number;
-	errorCount?: number;
-	failedCount?: number;
-	lastUpdateDateTime?: any;
-	notApplicableCount?: number;
-	pendingCount?: number;
-	successCount?: number;
+export interface deviceComplianceUserOverview  {
+	configurationVersion: number;
+	errorCount: number;
+	failedCount: number;
+	lastUpdateDateTime: any;
+	notApplicableCount: number;
+	pendingCount: number;
+	successCount: number;
 }
-
-/*********************************************
-* deviceComplianceUserOverviewCollections
-**********************************************/
-export interface deviceComplianceUserOverviewCollections {
-
-}
-
 /*********************************************
 * deviceComplianceSettingState
 **********************************************/
-export interface deviceComplianceSettingState {
-	complianceGracePeriodExpirationDateTime?: any;
-	deviceId?: string;
-	deviceModel?: string;
-	deviceName?: string;
-	setting?: string;
-	settingName?: string;
-	state?: graph.complianceStatus;
-	userEmail?: string;
-	userId?: string;
-	userName?: string;
-	userPrincipalName?: string;
+export interface deviceComplianceSettingState  {
+	complianceGracePeriodExpirationDateTime: any;
+	deviceId: string;
+	deviceModel: string;
+	deviceName: string;
+	setting: string;
+	settingName: string;
+	state: EnumTypes.complianceStatus;
+	userEmail: string;
+	userId: string;
+	userName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* deviceComplianceSettingStateCollections
-**********************************************/
-export interface deviceComplianceSettingStateCollections {
-
-}
-
 /*********************************************
 * deviceCompliancePolicyState
 **********************************************/
-export interface deviceCompliancePolicyState {
-	displayName?: string;
-	platformType?: graph.policyPlatformType;
-	settingCount?: number;
-	settingStates?: { results: Array<graph.deviceCompliancePolicySettingState> };
-	state?: graph.complianceStatus;
-	version?: number;
+export interface deviceCompliancePolicyState  {
+	displayName: string;
+	platformType: EnumTypes.policyPlatformType;
+	settingCount: number;
+	settingStates: ComplexTypes.deviceCompliancePolicySettingState[];
+	state: EnumTypes.complianceStatus;
+	version: number;
 }
-
-/*********************************************
-* deviceCompliancePolicyStateCollections
-**********************************************/
-export interface deviceCompliancePolicyStateCollections {
-
-}
-
 /*********************************************
 * deviceConfigurationAssignment
 **********************************************/
-export interface deviceConfigurationAssignment {
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface deviceConfigurationAssignment  {
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* deviceConfigurationAssignmentCollections
-**********************************************/
-export interface deviceConfigurationAssignmentCollections {
-
-}
-
 /*********************************************
 * deviceConfigurationDeviceStatus
 **********************************************/
-export interface deviceConfigurationDeviceStatus {
-	complianceGracePeriodExpirationDateTime?: any;
-	deviceDisplayName?: string;
-	deviceModel?: string;
-	lastReportedDateTime?: any;
-	status?: graph.complianceStatus;
-	userName?: string;
-	userPrincipalName?: string;
+export interface deviceConfigurationDeviceStatus  {
+	complianceGracePeriodExpirationDateTime: any;
+	deviceDisplayName: string;
+	deviceModel: string;
+	lastReportedDateTime: any;
+	status: EnumTypes.complianceStatus;
+	userName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* deviceConfigurationDeviceStatusCollections
-**********************************************/
-export interface deviceConfigurationDeviceStatusCollections {
-
-}
-
 /*********************************************
 * deviceConfigurationDeviceOverview
 **********************************************/
-export interface deviceConfigurationDeviceOverview {
-	configurationVersion?: number;
-	errorCount?: number;
-	failedCount?: number;
-	lastUpdateDateTime?: any;
-	notApplicableCount?: number;
-	pendingCount?: number;
-	successCount?: number;
+export interface deviceConfigurationDeviceOverview  {
+	configurationVersion: number;
+	errorCount: number;
+	failedCount: number;
+	lastUpdateDateTime: any;
+	notApplicableCount: number;
+	pendingCount: number;
+	successCount: number;
 }
-
-/*********************************************
-* deviceConfigurationDeviceOverviewCollections
-**********************************************/
-export interface deviceConfigurationDeviceOverviewCollections {
-
-}
-
 /*********************************************
 * deviceConfigurationUserStatus
 **********************************************/
-export interface deviceConfigurationUserStatus {
-	devicesCount?: number;
-	lastReportedDateTime?: any;
-	status?: graph.complianceStatus;
-	userDisplayName?: string;
-	userPrincipalName?: string;
+export interface deviceConfigurationUserStatus  {
+	devicesCount: number;
+	lastReportedDateTime: any;
+	status: EnumTypes.complianceStatus;
+	userDisplayName: string;
+	userPrincipalName: string;
 }
-
-/*********************************************
-* deviceConfigurationUserStatusCollections
-**********************************************/
-export interface deviceConfigurationUserStatusCollections {
-
-}
-
 /*********************************************
 * deviceConfigurationUserOverview
 **********************************************/
-export interface deviceConfigurationUserOverview {
-	configurationVersion?: number;
-	errorCount?: number;
-	failedCount?: number;
-	lastUpdateDateTime?: any;
-	notApplicableCount?: number;
-	pendingCount?: number;
-	successCount?: number;
+export interface deviceConfigurationUserOverview  {
+	configurationVersion: number;
+	errorCount: number;
+	failedCount: number;
+	lastUpdateDateTime: any;
+	notApplicableCount: number;
+	pendingCount: number;
+	successCount: number;
 }
-
-/*********************************************
-* deviceConfigurationUserOverviewCollections
-**********************************************/
-export interface deviceConfigurationUserOverviewCollections {
-
-}
-
 /*********************************************
 * deviceConfigurationState
 **********************************************/
-export interface deviceConfigurationState {
-	displayName?: string;
-	platformType?: graph.policyPlatformType;
-	settingCount?: number;
-	settingStates?: { results: Array<graph.deviceConfigurationSettingState> };
-	state?: graph.complianceStatus;
-	version?: number;
+export interface deviceConfigurationState  {
+	displayName: string;
+	platformType: EnumTypes.policyPlatformType;
+	settingCount: number;
+	settingStates: ComplexTypes.deviceConfigurationSettingState[];
+	state: EnumTypes.complianceStatus;
+	version: number;
 }
-
-/*********************************************
-* deviceConfigurationStateCollections
-**********************************************/
-export interface deviceConfigurationStateCollections {
-
-}
-
 /*********************************************
 * editionUpgradeConfiguration
 **********************************************/
-export interface editionUpgradeConfiguration {
-	license?: string;
-	licenseType?: graph.editionUpgradeLicenseType;
-	productKey?: string;
-	targetEdition?: graph.windows10EditionType;
+export interface editionUpgradeConfiguration  {
+	license: string;
+	licenseType: EnumTypes.editionUpgradeLicenseType;
+	productKey: string;
+	targetEdition: EnumTypes.windows10EditionType;
 }
-
-/*********************************************
-* editionUpgradeConfigurationCollections
-**********************************************/
-export interface editionUpgradeConfigurationCollections {
-
-}
-
 /*********************************************
 * iosCertificateProfile
 **********************************************/
-export interface iosCertificateProfile {
+export interface iosCertificateProfile  {
 
 }
-
-/*********************************************
-* iosCertificateProfileCollections
-**********************************************/
-export interface iosCertificateProfileCollections {
-
-}
-
 /*********************************************
 * iosCompliancePolicy
 **********************************************/
-export interface iosCompliancePolicy {
-	deviceThreatProtectionEnabled?: boolean;
-	deviceThreatProtectionRequiredSecurityLevel?: graph.deviceThreatProtectionLevel;
-	managedEmailProfileRequired?: boolean;
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passcodeBlockSimple?: boolean;
-	passcodeExpirationDays?: number;
-	passcodeMinimumCharacterSetCount?: number;
-	passcodeMinimumLength?: number;
-	passcodeMinutesOfInactivityBeforeLock?: number;
-	passcodePreviousPasscodeBlockCount?: number;
-	passcodeRequired?: boolean;
-	passcodeRequiredType?: graph.requiredPasswordType;
-	securityBlockJailbrokenDevices?: boolean;
+export interface iosCompliancePolicy  {
+	deviceThreatProtectionEnabled: boolean;
+	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
+	managedEmailProfileRequired: boolean;
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passcodeBlockSimple: boolean;
+	passcodeExpirationDays: number;
+	passcodeMinimumCharacterSetCount: number;
+	passcodeMinimumLength: number;
+	passcodeMinutesOfInactivityBeforeLock: number;
+	passcodePreviousPasscodeBlockCount: number;
+	passcodeRequired: boolean;
+	passcodeRequiredType: EnumTypes.requiredPasswordType;
+	securityBlockJailbrokenDevices: boolean;
 }
-
-/*********************************************
-* iosCompliancePolicyCollections
-**********************************************/
-export interface iosCompliancePolicyCollections {
-
-}
-
 /*********************************************
 * iosCustomConfiguration
 **********************************************/
-export interface iosCustomConfiguration {
-	payload?: any;
-	payloadFileName?: string;
-	payloadName?: string;
+export interface iosCustomConfiguration  {
+	payload: any;
+	payloadFileName: string;
+	payloadName: string;
 }
-
-/*********************************************
-* iosCustomConfigurationCollections
-**********************************************/
-export interface iosCustomConfigurationCollections {
-
-}
-
 /*********************************************
 * iosDeviceFeaturesConfiguration
 **********************************************/
-export interface iosDeviceFeaturesConfiguration {
-	assetTagTemplate?: string;
-	homeScreenDockIcons?: { results: Array<graph.iosHomeScreenItem> };
-	homeScreenPages?: { results: Array<graph.iosHomeScreenPage> };
-	lockScreenFootnote?: string;
-	notificationSettings?: { results: Array<graph.iosNotificationSettings> };
+export interface iosDeviceFeaturesConfiguration  {
+	assetTagTemplate: string;
+	homeScreenDockIcons: ComplexTypes.iosHomeScreenItem[];
+	homeScreenPages: ComplexTypes.iosHomeScreenPage[];
+	lockScreenFootnote: string;
+	notificationSettings: ComplexTypes.iosNotificationSettings[];
 }
-
-/*********************************************
-* iosDeviceFeaturesConfigurationCollections
-**********************************************/
-export interface iosDeviceFeaturesConfigurationCollections {
-
-}
-
 /*********************************************
 * iosGeneralDeviceConfiguration
 **********************************************/
-export interface iosGeneralDeviceConfiguration {
-	accountBlockModification?: boolean;
-	activationLockAllowWhenSupervised?: boolean;
-	airDropBlocked?: boolean;
-	airDropForceUnmanagedDropTarget?: boolean;
-	airPlayForcePairingPasswordForOutgoingRequests?: boolean;
-	appleNewsBlocked?: boolean;
-	appleWatchBlockPairing?: boolean;
-	appleWatchForceWristDetection?: boolean;
-	appsSingleAppModeList?: { results: Array<graph.appListItem> };
-	appStoreBlockAutomaticDownloads?: boolean;
-	appStoreBlocked?: boolean;
-	appStoreBlockInAppPurchases?: boolean;
-	appStoreBlockUIAppInstallation?: boolean;
-	appStoreRequirePassword?: boolean;
-	appsVisibilityList?: { results: Array<graph.appListItem> };
-	appsVisibilityListType?: graph.appListType;
-	bluetoothBlockModification?: boolean;
-	cameraBlocked?: boolean;
-	cellularBlockDataRoaming?: boolean;
-	cellularBlockGlobalBackgroundFetchWhileRoaming?: boolean;
-	cellularBlockPerAppDataModification?: boolean;
-	cellularBlockPersonalHotspot?: boolean;
-	cellularBlockVoiceRoaming?: boolean;
-	certificatesBlockUntrustedTlsCertificates?: boolean;
-	classroomAppBlockRemoteScreenObservation?: boolean;
-	classroomAppForceUnpromptedScreenObservation?: boolean;
-	compliantAppListType?: graph.appListType;
-	compliantAppsList?: { results: Array<graph.appListItem> };
-	configurationProfileBlockChanges?: boolean;
-	definitionLookupBlocked?: boolean;
-	deviceBlockEnableRestrictions?: boolean;
-	deviceBlockEraseContentAndSettings?: boolean;
-	deviceBlockNameModification?: boolean;
-	diagnosticDataBlockSubmission?: boolean;
-	diagnosticDataBlockSubmissionModification?: boolean;
-	documentsBlockManagedDocumentsInUnmanagedApps?: boolean;
-	documentsBlockUnmanagedDocumentsInManagedApps?: boolean;
-	emailInDomainSuffixes?: { results: Array<string> };
-	enterpriseAppBlockTrust?: boolean;
-	enterpriseAppBlockTrustModification?: boolean;
-	faceTimeBlocked?: boolean;
-	findMyFriendsBlocked?: boolean;
-	gameCenterBlocked?: boolean;
-	gamingBlockGameCenterFriends?: boolean;
-	gamingBlockMultiplayer?: boolean;
-	hostPairingBlocked?: boolean;
-	iBooksStoreBlocked?: boolean;
-	iBooksStoreBlockErotica?: boolean;
-	iCloudBlockActivityContinuation?: boolean;
-	iCloudBlockBackup?: boolean;
-	iCloudBlockDocumentSync?: boolean;
-	iCloudBlockManagedAppsSync?: boolean;
-	iCloudBlockPhotoLibrary?: boolean;
-	iCloudBlockPhotoStreamSync?: boolean;
-	iCloudBlockSharedPhotoStream?: boolean;
-	iCloudRequireEncryptedBackup?: boolean;
-	iTunesBlockExplicitContent?: boolean;
-	iTunesBlockMusicService?: boolean;
-	iTunesBlockRadio?: boolean;
-	keyboardBlockAutoCorrect?: boolean;
-	keyboardBlockDictation?: boolean;
-	keyboardBlockPredictive?: boolean;
-	keyboardBlockShortcuts?: boolean;
-	keyboardBlockSpellCheck?: boolean;
-	kioskModeAllowAssistiveSpeak?: boolean;
-	kioskModeAllowAssistiveTouchSettings?: boolean;
-	kioskModeAllowAutoLock?: boolean;
-	kioskModeAllowColorInversionSettings?: boolean;
-	kioskModeAllowRingerSwitch?: boolean;
-	kioskModeAllowScreenRotation?: boolean;
-	kioskModeAllowSleepButton?: boolean;
-	kioskModeAllowTouchscreen?: boolean;
-	kioskModeAllowVoiceOverSettings?: boolean;
-	kioskModeAllowVolumeButtons?: boolean;
-	kioskModeAllowZoomSettings?: boolean;
-	kioskModeAppStoreUrl?: string;
-	kioskModeBuiltInAppId?: string;
-	kioskModeManagedAppId?: string;
-	kioskModeRequireAssistiveTouch?: boolean;
-	kioskModeRequireColorInversion?: boolean;
-	kioskModeRequireMonoAudio?: boolean;
-	kioskModeRequireVoiceOver?: boolean;
-	kioskModeRequireZoom?: boolean;
-	lockScreenBlockControlCenter?: boolean;
-	lockScreenBlockNotificationView?: boolean;
-	lockScreenBlockPassbook?: boolean;
-	lockScreenBlockTodayView?: boolean;
-	mediaContentRatingApps?: graph.ratingAppsType;
-	mediaContentRatingAustralia?: graph.mediaContentRatingAustralia;
-	mediaContentRatingCanada?: graph.mediaContentRatingCanada;
-	mediaContentRatingFrance?: graph.mediaContentRatingFrance;
-	mediaContentRatingGermany?: graph.mediaContentRatingGermany;
-	mediaContentRatingIreland?: graph.mediaContentRatingIreland;
-	mediaContentRatingJapan?: graph.mediaContentRatingJapan;
-	mediaContentRatingNewZealand?: graph.mediaContentRatingNewZealand;
-	mediaContentRatingUnitedKingdom?: graph.mediaContentRatingUnitedKingdom;
-	mediaContentRatingUnitedStates?: graph.mediaContentRatingUnitedStates;
-	messagesBlocked?: boolean;
-	networkUsageRules?: { results: Array<graph.iosNetworkUsageRule> };
-	notificationsBlockSettingsModification?: boolean;
-	passcodeBlockFingerprintModification?: boolean;
-	passcodeBlockFingerprintUnlock?: boolean;
-	passcodeBlockModification?: boolean;
-	passcodeBlockSimple?: boolean;
-	passcodeExpirationDays?: number;
-	passcodeMinimumCharacterSetCount?: number;
-	passcodeMinimumLength?: number;
-	passcodeMinutesOfInactivityBeforeLock?: number;
-	passcodeMinutesOfInactivityBeforeScreenTimeout?: number;
-	passcodePreviousPasscodeBlockCount?: number;
-	passcodeRequired?: boolean;
-	passcodeRequiredType?: graph.requiredPasswordType;
-	passcodeSignInFailureCountBeforeWipe?: number;
-	podcastsBlocked?: boolean;
-	safariBlockAutofill?: boolean;
-	safariBlocked?: boolean;
-	safariBlockJavaScript?: boolean;
-	safariBlockPopups?: boolean;
-	safariCookieSettings?: graph.webBrowserCookieSettings;
-	safariManagedDomains?: { results: Array<string> };
-	safariPasswordAutoFillDomains?: { results: Array<string> };
-	safariRequireFraudWarning?: boolean;
-	screenCaptureBlocked?: boolean;
-	siriBlocked?: boolean;
-	siriBlockedWhenLocked?: boolean;
-	siriBlockUserGeneratedContent?: boolean;
-	siriRequireProfanityFilter?: boolean;
-	spotlightBlockInternetResults?: boolean;
-	voiceDialingBlocked?: boolean;
-	wallpaperBlockModification?: boolean;
-	wiFiConnectOnlyToConfiguredNetworks?: boolean;
+export interface iosGeneralDeviceConfiguration  {
+	accountBlockModification: boolean;
+	activationLockAllowWhenSupervised: boolean;
+	airDropBlocked: boolean;
+	airDropForceUnmanagedDropTarget: boolean;
+	airPlayForcePairingPasswordForOutgoingRequests: boolean;
+	appleNewsBlocked: boolean;
+	appleWatchBlockPairing: boolean;
+	appleWatchForceWristDetection: boolean;
+	appsSingleAppModeList: ComplexTypes.appListItem[];
+	appStoreBlockAutomaticDownloads: boolean;
+	appStoreBlocked: boolean;
+	appStoreBlockInAppPurchases: boolean;
+	appStoreBlockUIAppInstallation: boolean;
+	appStoreRequirePassword: boolean;
+	appsVisibilityList: ComplexTypes.appListItem[];
+	appsVisibilityListType: EnumTypes.appListType;
+	bluetoothBlockModification: boolean;
+	cameraBlocked: boolean;
+	cellularBlockDataRoaming: boolean;
+	cellularBlockGlobalBackgroundFetchWhileRoaming: boolean;
+	cellularBlockPerAppDataModification: boolean;
+	cellularBlockPersonalHotspot: boolean;
+	cellularBlockVoiceRoaming: boolean;
+	certificatesBlockUntrustedTlsCertificates: boolean;
+	classroomAppBlockRemoteScreenObservation: boolean;
+	classroomAppForceUnpromptedScreenObservation: boolean;
+	compliantAppListType: EnumTypes.appListType;
+	compliantAppsList: ComplexTypes.appListItem[];
+	configurationProfileBlockChanges: boolean;
+	definitionLookupBlocked: boolean;
+	deviceBlockEnableRestrictions: boolean;
+	deviceBlockEraseContentAndSettings: boolean;
+	deviceBlockNameModification: boolean;
+	diagnosticDataBlockSubmission: boolean;
+	diagnosticDataBlockSubmissionModification: boolean;
+	documentsBlockManagedDocumentsInUnmanagedApps: boolean;
+	documentsBlockUnmanagedDocumentsInManagedApps: boolean;
+	emailInDomainSuffixes: Array<string>[];
+	enterpriseAppBlockTrust: boolean;
+	enterpriseAppBlockTrustModification: boolean;
+	faceTimeBlocked: boolean;
+	findMyFriendsBlocked: boolean;
+	gameCenterBlocked: boolean;
+	gamingBlockGameCenterFriends: boolean;
+	gamingBlockMultiplayer: boolean;
+	hostPairingBlocked: boolean;
+	iBooksStoreBlocked: boolean;
+	iBooksStoreBlockErotica: boolean;
+	iCloudBlockActivityContinuation: boolean;
+	iCloudBlockBackup: boolean;
+	iCloudBlockDocumentSync: boolean;
+	iCloudBlockManagedAppsSync: boolean;
+	iCloudBlockPhotoLibrary: boolean;
+	iCloudBlockPhotoStreamSync: boolean;
+	iCloudBlockSharedPhotoStream: boolean;
+	iCloudRequireEncryptedBackup: boolean;
+	iTunesBlockExplicitContent: boolean;
+	iTunesBlockMusicService: boolean;
+	iTunesBlockRadio: boolean;
+	keyboardBlockAutoCorrect: boolean;
+	keyboardBlockDictation: boolean;
+	keyboardBlockPredictive: boolean;
+	keyboardBlockShortcuts: boolean;
+	keyboardBlockSpellCheck: boolean;
+	kioskModeAllowAssistiveSpeak: boolean;
+	kioskModeAllowAssistiveTouchSettings: boolean;
+	kioskModeAllowAutoLock: boolean;
+	kioskModeAllowColorInversionSettings: boolean;
+	kioskModeAllowRingerSwitch: boolean;
+	kioskModeAllowScreenRotation: boolean;
+	kioskModeAllowSleepButton: boolean;
+	kioskModeAllowTouchscreen: boolean;
+	kioskModeAllowVoiceOverSettings: boolean;
+	kioskModeAllowVolumeButtons: boolean;
+	kioskModeAllowZoomSettings: boolean;
+	kioskModeAppStoreUrl: string;
+	kioskModeBuiltInAppId: string;
+	kioskModeManagedAppId: string;
+	kioskModeRequireAssistiveTouch: boolean;
+	kioskModeRequireColorInversion: boolean;
+	kioskModeRequireMonoAudio: boolean;
+	kioskModeRequireVoiceOver: boolean;
+	kioskModeRequireZoom: boolean;
+	lockScreenBlockControlCenter: boolean;
+	lockScreenBlockNotificationView: boolean;
+	lockScreenBlockPassbook: boolean;
+	lockScreenBlockTodayView: boolean;
+	mediaContentRatingApps: EnumTypes.ratingAppsType;
+	mediaContentRatingAustralia: ComplexTypes.mediaContentRatingAustralia;
+	mediaContentRatingCanada: ComplexTypes.mediaContentRatingCanada;
+	mediaContentRatingFrance: ComplexTypes.mediaContentRatingFrance;
+	mediaContentRatingGermany: ComplexTypes.mediaContentRatingGermany;
+	mediaContentRatingIreland: ComplexTypes.mediaContentRatingIreland;
+	mediaContentRatingJapan: ComplexTypes.mediaContentRatingJapan;
+	mediaContentRatingNewZealand: ComplexTypes.mediaContentRatingNewZealand;
+	mediaContentRatingUnitedKingdom: ComplexTypes.mediaContentRatingUnitedKingdom;
+	mediaContentRatingUnitedStates: ComplexTypes.mediaContentRatingUnitedStates;
+	messagesBlocked: boolean;
+	networkUsageRules: ComplexTypes.iosNetworkUsageRule[];
+	notificationsBlockSettingsModification: boolean;
+	passcodeBlockFingerprintModification: boolean;
+	passcodeBlockFingerprintUnlock: boolean;
+	passcodeBlockModification: boolean;
+	passcodeBlockSimple: boolean;
+	passcodeExpirationDays: number;
+	passcodeMinimumCharacterSetCount: number;
+	passcodeMinimumLength: number;
+	passcodeMinutesOfInactivityBeforeLock: number;
+	passcodeMinutesOfInactivityBeforeScreenTimeout: number;
+	passcodePreviousPasscodeBlockCount: number;
+	passcodeRequired: boolean;
+	passcodeRequiredType: EnumTypes.requiredPasswordType;
+	passcodeSignInFailureCountBeforeWipe: number;
+	podcastsBlocked: boolean;
+	safariBlockAutofill: boolean;
+	safariBlocked: boolean;
+	safariBlockJavaScript: boolean;
+	safariBlockPopups: boolean;
+	safariCookieSettings: EnumTypes.webBrowserCookieSettings;
+	safariManagedDomains: Array<string>[];
+	safariPasswordAutoFillDomains: Array<string>[];
+	safariRequireFraudWarning: boolean;
+	screenCaptureBlocked: boolean;
+	siriBlocked: boolean;
+	siriBlockedWhenLocked: boolean;
+	siriBlockUserGeneratedContent: boolean;
+	siriRequireProfanityFilter: boolean;
+	spotlightBlockInternetResults: boolean;
+	voiceDialingBlocked: boolean;
+	wallpaperBlockModification: boolean;
+	wiFiConnectOnlyToConfiguredNetworks: boolean;
 }
-
-/*********************************************
-* iosGeneralDeviceConfigurationCollections
-**********************************************/
-export interface iosGeneralDeviceConfigurationCollections {
-
-}
-
 /*********************************************
 * iosUpdateConfiguration
 **********************************************/
-export interface iosUpdateConfiguration {
-	activeHoursEnd?: anyOfDay;
-	activeHoursStart?: anyOfDay;
-	scheduledInstallDays?: { results: Array<graph.dayOfWeek> };
-	utcTimeOffsetInMinutes?: number;
+export interface iosUpdateConfiguration  {
+	activeHoursEnd: any;
+	activeHoursStart: any;
+	scheduledInstallDays: EnumTypes.dayOfWeek[];
+	utcTimeOffsetInMinutes: number;
 }
-
-/*********************************************
-* iosUpdateConfigurationCollections
-**********************************************/
-export interface iosUpdateConfigurationCollections {
-
-}
-
 /*********************************************
 * macOSCompliancePolicy
 **********************************************/
-export interface macOSCompliancePolicy {
-	deviceThreatProtectionEnabled?: boolean;
-	deviceThreatProtectionRequiredSecurityLevel?: graph.deviceThreatProtectionLevel;
-	firewallBlockAllIncoming?: boolean;
-	firewallEnabled?: boolean;
-	firewallEnableStealthMode?: boolean;
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
-	storageRequireEncryption?: boolean;
-	systemIntegrityProtectionEnabled?: boolean;
+export interface macOSCompliancePolicy  {
+	deviceThreatProtectionEnabled: boolean;
+	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
+	firewallBlockAllIncoming: boolean;
+	firewallEnabled: boolean;
+	firewallEnableStealthMode: boolean;
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	storageRequireEncryption: boolean;
+	systemIntegrityProtectionEnabled: boolean;
 }
-
-/*********************************************
-* macOSCompliancePolicyCollections
-**********************************************/
-export interface macOSCompliancePolicyCollections {
-
-}
-
 /*********************************************
 * macOSCustomConfiguration
 **********************************************/
-export interface macOSCustomConfiguration {
-	payload?: any;
-	payloadFileName?: string;
-	payloadName?: string;
+export interface macOSCustomConfiguration  {
+	payload: any;
+	payloadFileName: string;
+	payloadName: string;
 }
-
-/*********************************************
-* macOSCustomConfigurationCollections
-**********************************************/
-export interface macOSCustomConfigurationCollections {
-
-}
-
 /*********************************************
 * macOSDeviceFeaturesConfiguration
 **********************************************/
-export interface macOSDeviceFeaturesConfiguration {
+export interface macOSDeviceFeaturesConfiguration  {
 
 }
-
-/*********************************************
-* macOSDeviceFeaturesConfigurationCollections
-**********************************************/
-export interface macOSDeviceFeaturesConfigurationCollections {
-
-}
-
 /*********************************************
 * macOSGeneralDeviceConfiguration
 **********************************************/
-export interface macOSGeneralDeviceConfiguration {
-	compliantAppListType?: graph.appListType;
-	compliantAppsList?: { results: Array<graph.appListItem> };
-	emailInDomainSuffixes?: { results: Array<string> };
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordMinutesOfInactivityBeforeScreenTimeout?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
+export interface macOSGeneralDeviceConfiguration  {
+	compliantAppListType: EnumTypes.appListType;
+	compliantAppsList: ComplexTypes.appListItem[];
+	emailInDomainSuffixes: Array<string>[];
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordMinutesOfInactivityBeforeScreenTimeout: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
 }
-
-/*********************************************
-* macOSGeneralDeviceConfigurationCollections
-**********************************************/
-export interface macOSGeneralDeviceConfigurationCollections {
-
-}
-
 /*********************************************
 * reportRoot
 **********************************************/
-export interface reportRoot {
+export interface reportRoot  {
 
 }
-
-/*********************************************
-* reportRootCollections
-**********************************************/
-export interface reportRootCollections {
-
-}
-
 /*********************************************
 * printUsage
 **********************************************/
-export interface printUsage {
-	completedBlackAndWhiteJobCount?: number;
-	completedColorJobCount?: number;
-	incompleteJobCount?: number;
-	usageDate?: Edm.Date;
+export interface printUsage  {
+	completedBlackAndWhiteJobCount: number;
+	completedColorJobCount: number;
+	incompleteJobCount: number;
+	usageDate: any;
 }
-
-/*********************************************
-* printUsageCollections
-**********************************************/
-export interface printUsageCollections {
-
-}
-
 /*********************************************
 * printUsageByPrinter
 **********************************************/
-export interface printUsageByPrinter {
-	printerId?: string;
+export interface printUsageByPrinter  {
+	printerId: string;
 }
-
-/*********************************************
-* printUsageByPrinterCollections
-**********************************************/
-export interface printUsageByPrinterCollections {
-
-}
-
 /*********************************************
 * printUsageByUser
 **********************************************/
-export interface printUsageByUser {
-	userPrincipalName?: string;
+export interface printUsageByUser  {
+	userPrincipalName: string;
 }
-
-/*********************************************
-* printUsageByUserCollections
-**********************************************/
-export interface printUsageByUserCollections {
-
-}
-
 /*********************************************
 * sharedPCConfiguration
 **********************************************/
-export interface sharedPCConfiguration {
-	accountManagerPolicy?: graph.sharedPCAccountManagerPolicy;
-	allowedAccounts?: graph.sharedPCAllowedAccountType;
-	allowLocalStorage?: boolean;
-	disableAccountManager?: boolean;
-	disableEduPolicies?: boolean;
-	disablePowerPolicies?: boolean;
-	disableSignInOnResume?: boolean;
-	enabled?: boolean;
-	idleTimeBeforeSleepInSeconds?: number;
-	kioskAppDisplayName?: string;
-	kioskAppUserModelId?: string;
-	maintenanceStartTime?: anyOfDay;
+export interface sharedPCConfiguration  {
+	accountManagerPolicy: ComplexTypes.sharedPCAccountManagerPolicy;
+	allowedAccounts: EnumTypes.sharedPCAllowedAccountType;
+	allowLocalStorage: boolean;
+	disableAccountManager: boolean;
+	disableEduPolicies: boolean;
+	disablePowerPolicies: boolean;
+	disableSignInOnResume: boolean;
+	enabled: boolean;
+	idleTimeBeforeSleepInSeconds: number;
+	kioskAppDisplayName: string;
+	kioskAppUserModelId: string;
+	maintenanceStartTime: any;
 }
-
-/*********************************************
-* sharedPCConfigurationCollections
-**********************************************/
-export interface sharedPCConfigurationCollections {
-
-}
-
 /*********************************************
 * windows10CompliancePolicy
 **********************************************/
-export interface windows10CompliancePolicy {
-	bitLockerEnabled?: boolean;
-	codeIntegrityEnabled?: boolean;
-	earlyLaunchAntiMalwareDriverEnabled?: boolean;
-	mobileOsMaximumVersion?: string;
-	mobileOsMinimumVersion?: string;
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredToUnlockFromIdle?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
-	requireHealthyDeviceReport?: boolean;
-	secureBootEnabled?: boolean;
-	storageRequireEncryption?: boolean;
+export interface windows10CompliancePolicy  {
+	bitLockerEnabled: boolean;
+	codeIntegrityEnabled: boolean;
+	earlyLaunchAntiMalwareDriverEnabled: boolean;
+	mobileOsMaximumVersion: string;
+	mobileOsMinimumVersion: string;
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredToUnlockFromIdle: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	requireHealthyDeviceReport: boolean;
+	secureBootEnabled: boolean;
+	storageRequireEncryption: boolean;
 }
-
-/*********************************************
-* windows10CompliancePolicyCollections
-**********************************************/
-export interface windows10CompliancePolicyCollections {
-
-}
-
 /*********************************************
 * windows10CustomConfiguration
 **********************************************/
-export interface windows10CustomConfiguration {
-	omaSettings?: { results: Array<graph.omaSetting> };
+export interface windows10CustomConfiguration  {
+	omaSettings: ComplexTypes.omaSetting[];
 }
-
-/*********************************************
-* windows10CustomConfigurationCollections
-**********************************************/
-export interface windows10CustomConfigurationCollections {
-
-}
-
 /*********************************************
 * windows10EndpointProtectionConfiguration
 **********************************************/
-export interface windows10EndpointProtectionConfiguration {
-	applicationGuardAllowPersistence?: boolean;
-	applicationGuardAllowPrintToLocalPrinters?: boolean;
-	applicationGuardAllowPrintToNetworkPrinters?: boolean;
-	applicationGuardAllowPrintToPDF?: boolean;
-	applicationGuardAllowPrintToXPS?: boolean;
-	applicationGuardBlockClipboardSharing?: graph.applicationGuardBlockClipboardSharingType;
-	applicationGuardBlockFileTransfer?: graph.applicationGuardBlockFileTransferType;
-	applicationGuardBlockNonEnterpriseContent?: boolean;
-	applicationGuardEnabled?: boolean;
-	applicationGuardForceAuditing?: boolean;
-	appLockerApplicationControl?: graph.appLockerApplicationControlType;
-	bitLockerDisableWarningForOtherDiskEncryption?: boolean;
-	bitLockerEnableStorageCardEncryptionOnMobile?: boolean;
-	bitLockerEncryptDevice?: boolean;
-	bitLockerRemovableDrivePolicy?: graph.bitLockerRemovableDrivePolicy;
-	defenderAdditionalGuardedFolders?: { results: Array<string> };
-	defenderAttackSurfaceReductionExcludedPaths?: { results: Array<string> };
-	defenderExploitProtectionXml?: any;
-	defenderExploitProtectionXmlFileName?: string;
-	defenderGuardedFoldersAllowedAppPaths?: { results: Array<string> };
-	defenderSecurityCenterBlockExploitProtectionOverride?: boolean;
-	firewallBlockStatefulFTP?: boolean;
-	firewallCertificateRevocationListCheckMethod?: graph.firewallCertificateRevocationListCheckMethodType;
-	firewallIdleTimeoutForSecurityAssociationInSeconds?: number;
-	firewallIPSecExemptionsAllowDHCP?: boolean;
-	firewallIPSecExemptionsAllowICMP?: boolean;
-	firewallIPSecExemptionsAllowNeighborDiscovery?: boolean;
-	firewallIPSecExemptionsAllowRouterDiscovery?: boolean;
-	firewallMergeKeyingModuleSettings?: boolean;
-	firewallPacketQueueingMethod?: graph.firewallPacketQueueingMethodType;
-	firewallPreSharedKeyEncodingMethod?: graph.firewallPreSharedKeyEncodingMethodType;
-	firewallProfileDomain?: graph.windowsFirewallNetworkProfile;
-	firewallProfilePrivate?: graph.windowsFirewallNetworkProfile;
-	firewallProfilePublic?: graph.windowsFirewallNetworkProfile;
-	smartScreenBlockOverrideForFiles?: boolean;
-	smartScreenEnableInShell?: boolean;
+export interface windows10EndpointProtectionConfiguration  {
+	applicationGuardAllowPersistence: boolean;
+	applicationGuardAllowPrintToLocalPrinters: boolean;
+	applicationGuardAllowPrintToNetworkPrinters: boolean;
+	applicationGuardAllowPrintToPDF: boolean;
+	applicationGuardAllowPrintToXPS: boolean;
+	applicationGuardBlockClipboardSharing: EnumTypes.applicationGuardBlockClipboardSharingType;
+	applicationGuardBlockFileTransfer: EnumTypes.applicationGuardBlockFileTransferType;
+	applicationGuardBlockNonEnterpriseContent: boolean;
+	applicationGuardEnabled: boolean;
+	applicationGuardForceAuditing: boolean;
+	appLockerApplicationControl: EnumTypes.appLockerApplicationControlType;
+	bitLockerDisableWarningForOtherDiskEncryption: boolean;
+	bitLockerEnableStorageCardEncryptionOnMobile: boolean;
+	bitLockerEncryptDevice: boolean;
+	bitLockerRemovableDrivePolicy: ComplexTypes.bitLockerRemovableDrivePolicy;
+	defenderAdditionalGuardedFolders: Array<string>[];
+	defenderAttackSurfaceReductionExcludedPaths: Array<string>[];
+	defenderExploitProtectionXml: any;
+	defenderExploitProtectionXmlFileName: string;
+	defenderGuardedFoldersAllowedAppPaths: Array<string>[];
+	defenderSecurityCenterBlockExploitProtectionOverride: boolean;
+	firewallBlockStatefulFTP: boolean;
+	firewallCertificateRevocationListCheckMethod: EnumTypes.firewallCertificateRevocationListCheckMethodType;
+	firewallIdleTimeoutForSecurityAssociationInSeconds: number;
+	firewallIPSecExemptionsAllowDHCP: boolean;
+	firewallIPSecExemptionsAllowICMP: boolean;
+	firewallIPSecExemptionsAllowNeighborDiscovery: boolean;
+	firewallIPSecExemptionsAllowRouterDiscovery: boolean;
+	firewallMergeKeyingModuleSettings: boolean;
+	firewallPacketQueueingMethod: EnumTypes.firewallPacketQueueingMethodType;
+	firewallPreSharedKeyEncodingMethod: EnumTypes.firewallPreSharedKeyEncodingMethodType;
+	firewallProfileDomain: ComplexTypes.windowsFirewallNetworkProfile;
+	firewallProfilePrivate: ComplexTypes.windowsFirewallNetworkProfile;
+	firewallProfilePublic: ComplexTypes.windowsFirewallNetworkProfile;
+	smartScreenBlockOverrideForFiles: boolean;
+	smartScreenEnableInShell: boolean;
 }
-
-/*********************************************
-* windows10EndpointProtectionConfigurationCollections
-**********************************************/
-export interface windows10EndpointProtectionConfigurationCollections {
-
-}
-
 /*********************************************
 * windows10EnterpriseModernAppManagementConfiguration
 **********************************************/
-export interface windows10EnterpriseModernAppManagementConfiguration {
-	uninstallBuiltInApps?: boolean;
+export interface windows10EnterpriseModernAppManagementConfiguration  {
+	uninstallBuiltInApps: boolean;
 }
-
-/*********************************************
-* windows10EnterpriseModernAppManagementConfigurationCollections
-**********************************************/
-export interface windows10EnterpriseModernAppManagementConfigurationCollections {
-
-}
-
 /*********************************************
 * windows10GeneralConfiguration
 **********************************************/
-export interface windows10GeneralConfiguration {
-	accountsBlockAddingNonMicrosoftAccountEmail?: boolean;
-	antiTheftModeBlocked?: boolean;
-	appsAllowTrustedAppsSideloading?: graph.stateManagementSetting;
-	appsBlockWindowsStoreOriginatedApps?: boolean;
-	bluetoothAllowedServices?: { results: Array<string> };
-	bluetoothBlockAdvertising?: boolean;
-	bluetoothBlockDiscoverableMode?: boolean;
-	bluetoothBlocked?: boolean;
-	bluetoothBlockPrePairing?: boolean;
-	cameraBlocked?: boolean;
-	cellularBlockDataWhenRoaming?: boolean;
-	cellularBlockVpn?: boolean;
-	cellularBlockVpnWhenRoaming?: boolean;
-	certificatesBlockManualRootCertificateInstallation?: boolean;
-	connectedDevicesServiceBlocked?: boolean;
-	copyPasteBlocked?: boolean;
-	cortanaBlocked?: boolean;
-	defenderBlockEndUserAccess?: boolean;
-	defenderCloudBlockLevel?: graph.defenderCloudBlockLevelType;
-	defenderDaysBeforeDeletingQuarantinedMalware?: number;
-	defenderDetectedMalwareActions?: graph.defenderDetectedMalwareActions;
-	defenderFileExtensionsToExclude?: { results: Array<string> };
-	defenderFilesAndFoldersToExclude?: { results: Array<string> };
-	defenderMonitorFileActivity?: graph.defenderMonitorFileActivity;
-	defenderProcessesToExclude?: { results: Array<string> };
-	defenderPromptForSampleSubmission?: graph.defenderPromptForSampleSubmission;
-	defenderRequireBehaviorMonitoring?: boolean;
-	defenderRequireCloudProtection?: boolean;
-	defenderRequireNetworkInspectionSystem?: boolean;
-	defenderRequireRealTimeMonitoring?: boolean;
-	defenderScanArchiveFiles?: boolean;
-	defenderScanDownloads?: boolean;
-	defenderScanIncomingMail?: boolean;
-	defenderScanMappedNetworkDrivesDuringFullScan?: boolean;
-	defenderScanMaxCpu?: number;
-	defenderScanNetworkFiles?: boolean;
-	defenderScanRemovableDrivesDuringFullScan?: boolean;
-	defenderScanScriptsLoadedInInternetExplorer?: boolean;
-	defenderScanType?: graph.defenderScanType;
-	defenderScheduledQuickScanTime?: anyOfDay;
-	defenderScheduledScanTime?: anyOfDay;
-	defenderSignatureUpdateIntervalInHours?: number;
-	defenderSystemScanSchedule?: graph.weeklySchedule;
-	developerUnlockSetting?: graph.stateManagementSetting;
-	deviceManagementBlockFactoryResetOnMobile?: boolean;
-	deviceManagementBlockManualUnenroll?: boolean;
-	diagnosticsDataSubmissionMode?: graph.diagnosticDataSubmissionMode;
-	edgeAllowStartPagesModification?: boolean;
-	edgeBlockAccessToAboutFlags?: boolean;
-	edgeBlockAddressBarDropdown?: boolean;
-	edgeBlockAutofill?: boolean;
-	edgeBlockCompatibilityList?: boolean;
-	edgeBlockDeveloperTools?: boolean;
-	edgeBlocked?: boolean;
-	edgeBlockExtensions?: boolean;
-	edgeBlockInPrivateBrowsing?: boolean;
-	edgeBlockJavaScript?: boolean;
-	edgeBlockLiveTileDataCollection?: boolean;
-	edgeBlockPasswordManager?: boolean;
-	edgeBlockPopups?: boolean;
-	edgeBlockSearchSuggestions?: boolean;
-	edgeBlockSendingDoNotTrackHeader?: boolean;
-	edgeBlockSendingIntranetTrafficToInternetExplorer?: boolean;
-	edgeClearBrowsingDataOnExit?: boolean;
-	edgeCookiePolicy?: graph.edgeCookiePolicy;
-	edgeDisableFirstRunPage?: boolean;
-	edgeEnterpriseModeSiteListLocation?: string;
-	edgeFirstRunUrl?: string;
-	edgeHomepageUrls?: { results: Array<string> };
-	edgeRequireSmartScreen?: boolean;
-	edgeSearchEngine?: graph.edgeSearchEngineBase;
-	edgeSendIntranetTrafficToInternetExplorer?: boolean;
-	edgeSyncFavoritesWithInternetExplorer?: boolean;
-	enterpriseCloudPrintDiscoveryEndPoint?: string;
-	enterpriseCloudPrintDiscoveryMaxLimit?: number;
-	enterpriseCloudPrintMopriaDiscoveryResourceIdentifier?: string;
-	enterpriseCloudPrintOAuthAuthority?: string;
-	enterpriseCloudPrintOAuthClientIdentifier?: string;
-	enterpriseCloudPrintResourceIdentifier?: string;
-	experienceBlockDeviceDiscovery?: boolean;
-	experienceBlockErrorDialogWhenNoSIM?: boolean;
-	experienceBlockTaskSwitcher?: boolean;
-	gameDvrBlocked?: boolean;
-	internetSharingBlocked?: boolean;
-	locationServicesBlocked?: boolean;
-	lockScreenAllowTimeoutConfiguration?: boolean;
-	lockScreenBlockActionCenterNotifications?: boolean;
-	lockScreenBlockCortana?: boolean;
-	lockScreenBlockToastNotifications?: boolean;
-	lockScreenTimeoutInSeconds?: number;
-	logonBlockFastUserSwitching?: boolean;
-	microsoftAccountBlocked?: boolean;
-	microsoftAccountBlockSettingsSync?: boolean;
-	networkProxyApplySettingsDeviceWide?: boolean;
-	networkProxyAutomaticConfigurationUrl?: string;
-	networkProxyDisableAutoDetect?: boolean;
-	networkProxyServer?: graph.windows10NetworkProxyServer;
-	nfcBlocked?: boolean;
-	oneDriveDisableFileSync?: boolean;
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeScreenTimeout?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
-	passwordRequireWhenResumeFromIdleState?: boolean;
-	passwordSignInFailureCountBeforeFactoryReset?: number;
-	personalizationDesktopImageUrl?: string;
-	personalizationLockScreenImageUrl?: string;
-	privacyAdvertisingId?: graph.stateManagementSetting;
-	privacyAutoAcceptPairingAndConsentPrompts?: boolean;
-	privacyBlockInputPersonalization?: boolean;
-	resetProtectionModeBlocked?: boolean;
-	safeSearchFilter?: graph.safeSearchFilterType;
-	screenCaptureBlocked?: boolean;
-	searchBlockDiacritics?: boolean;
-	searchDisableAutoLanguageDetection?: boolean;
-	searchDisableIndexerBackoff?: boolean;
-	searchDisableIndexingEncryptedItems?: boolean;
-	searchDisableIndexingRemovableDrive?: boolean;
-	searchEnableAutomaticIndexSizeManangement?: boolean;
-	searchEnableRemoteQueries?: boolean;
-	settingsBlockAccountsPage?: boolean;
-	settingsBlockAddProvisioningPackage?: boolean;
-	settingsBlockAppsPage?: boolean;
-	settingsBlockChangeLanguage?: boolean;
-	settingsBlockChangePowerSleep?: boolean;
-	settingsBlockChangeRegion?: boolean;
-	settingsBlockChangeSystemTime?: boolean;
-	settingsBlockDevicesPage?: boolean;
-	settingsBlockEaseOfAccessPage?: boolean;
-	settingsBlockEditDeviceName?: boolean;
-	settingsBlockGamingPage?: boolean;
-	settingsBlockNetworkInternetPage?: boolean;
-	settingsBlockPersonalizationPage?: boolean;
-	settingsBlockPrivacyPage?: boolean;
-	settingsBlockRemoveProvisioningPackage?: boolean;
-	settingsBlockSettingsApp?: boolean;
-	settingsBlockSystemPage?: boolean;
-	settingsBlockTimeLanguagePage?: boolean;
-	settingsBlockUpdateSecurityPage?: boolean;
-	sharedUserAppDataAllowed?: boolean;
-	smartScreenBlockPromptOverride?: boolean;
-	smartScreenBlockPromptOverrideForFiles?: boolean;
-	smartScreenEnableAppInstallControl?: boolean;
-	startBlockUnpinningAppsFromTaskbar?: boolean;
-	startMenuAppListVisibility?: graph.windowsStartMenuAppListVisibilityType;
-	startMenuHideChangeAccountSettings?: boolean;
-	startMenuHideFrequentlyUsedApps?: boolean;
-	startMenuHideHibernate?: boolean;
-	startMenuHideLock?: boolean;
-	startMenuHidePowerButton?: boolean;
-	startMenuHideRecentJumpLists?: boolean;
-	startMenuHideRecentlyAddedApps?: boolean;
-	startMenuHideRestartOptions?: boolean;
-	startMenuHideShutDown?: boolean;
-	startMenuHideSignOut?: boolean;
-	startMenuHideSleep?: boolean;
-	startMenuHideSwitchAccount?: boolean;
-	startMenuHideUserTile?: boolean;
-	startMenuLayoutEdgeAssetsXml?: any;
-	startMenuLayoutXml?: any;
-	startMenuMode?: graph.windowsStartMenuModeType;
-	startMenuPinnedFolderDocuments?: graph.visibilitySetting;
-	startMenuPinnedFolderDownloads?: graph.visibilitySetting;
-	startMenuPinnedFolderFileExplorer?: graph.visibilitySetting;
-	startMenuPinnedFolderHomeGroup?: graph.visibilitySetting;
-	startMenuPinnedFolderMusic?: graph.visibilitySetting;
-	startMenuPinnedFolderNetwork?: graph.visibilitySetting;
-	startMenuPinnedFolderPersonalFolder?: graph.visibilitySetting;
-	startMenuPinnedFolderPictures?: graph.visibilitySetting;
-	startMenuPinnedFolderSettings?: graph.visibilitySetting;
-	startMenuPinnedFolderVideos?: graph.visibilitySetting;
-	storageBlockRemovableStorage?: boolean;
-	storageRequireMobileDeviceEncryption?: boolean;
-	storageRestrictAppDataToSystemVolume?: boolean;
-	storageRestrictAppInstallToSystemVolume?: boolean;
-	tenantLockdownRequireNetworkDuringOutOfBoxExperience?: boolean;
-	usbBlocked?: boolean;
-	voiceRecordingBlocked?: boolean;
-	webRtcBlockLocalhostIpAddress?: boolean;
-	wiFiBlockAutomaticConnectHotspots?: boolean;
-	wiFiBlocked?: boolean;
-	wiFiBlockManualConfiguration?: boolean;
-	wiFiScanInterval?: number;
-	windowsSpotlightBlockConsumerSpecificFeatures?: boolean;
-	windowsSpotlightBlocked?: boolean;
-	windowsSpotlightBlockOnActionCenter?: boolean;
-	windowsSpotlightBlockTailoredExperiences?: boolean;
-	windowsSpotlightBlockThirdPartyNotifications?: boolean;
-	windowsSpotlightBlockWelcomeExperience?: boolean;
-	windowsSpotlightBlockWindowsTips?: boolean;
-	windowsSpotlightConfigureOnLockScreen?: graph.windowsSpotlightEnablementSettings;
-	windowsStoreBlockAutoUpdate?: boolean;
-	windowsStoreBlocked?: boolean;
-	windowsStoreEnablePrivateStoreOnly?: boolean;
-	wirelessDisplayBlockProjectionToThisDevice?: boolean;
-	wirelessDisplayBlockUserInputFromReceiver?: boolean;
-	wirelessDisplayRequirePinForPairing?: boolean;
+export interface windows10GeneralConfiguration  {
+	accountsBlockAddingNonMicrosoftAccountEmail: boolean;
+	antiTheftModeBlocked: boolean;
+	appsAllowTrustedAppsSideloading: EnumTypes.stateManagementSetting;
+	appsBlockWindowsStoreOriginatedApps: boolean;
+	bluetoothAllowedServices: Array<string>[];
+	bluetoothBlockAdvertising: boolean;
+	bluetoothBlockDiscoverableMode: boolean;
+	bluetoothBlocked: boolean;
+	bluetoothBlockPrePairing: boolean;
+	cameraBlocked: boolean;
+	cellularBlockDataWhenRoaming: boolean;
+	cellularBlockVpn: boolean;
+	cellularBlockVpnWhenRoaming: boolean;
+	certificatesBlockManualRootCertificateInstallation: boolean;
+	connectedDevicesServiceBlocked: boolean;
+	copyPasteBlocked: boolean;
+	cortanaBlocked: boolean;
+	defenderBlockEndUserAccess: boolean;
+	defenderCloudBlockLevel: EnumTypes.defenderCloudBlockLevelType;
+	defenderDaysBeforeDeletingQuarantinedMalware: number;
+	defenderDetectedMalwareActions: ComplexTypes.defenderDetectedMalwareActions;
+	defenderFileExtensionsToExclude: Array<string>[];
+	defenderFilesAndFoldersToExclude: Array<string>[];
+	defenderMonitorFileActivity: EnumTypes.defenderMonitorFileActivity;
+	defenderProcessesToExclude: Array<string>[];
+	defenderPromptForSampleSubmission: EnumTypes.defenderPromptForSampleSubmission;
+	defenderRequireBehaviorMonitoring: boolean;
+	defenderRequireCloudProtection: boolean;
+	defenderRequireNetworkInspectionSystem: boolean;
+	defenderRequireRealTimeMonitoring: boolean;
+	defenderScanArchiveFiles: boolean;
+	defenderScanDownloads: boolean;
+	defenderScanIncomingMail: boolean;
+	defenderScanMappedNetworkDrivesDuringFullScan: boolean;
+	defenderScanMaxCpu: number;
+	defenderScanNetworkFiles: boolean;
+	defenderScanRemovableDrivesDuringFullScan: boolean;
+	defenderScanScriptsLoadedInInternetExplorer: boolean;
+	defenderScanType: EnumTypes.defenderScanType;
+	defenderScheduledQuickScanTime: any;
+	defenderScheduledScanTime: any;
+	defenderSignatureUpdateIntervalInHours: number;
+	defenderSystemScanSchedule: EnumTypes.weeklySchedule;
+	developerUnlockSetting: EnumTypes.stateManagementSetting;
+	deviceManagementBlockFactoryResetOnMobile: boolean;
+	deviceManagementBlockManualUnenroll: boolean;
+	diagnosticsDataSubmissionMode: EnumTypes.diagnosticDataSubmissionMode;
+	edgeAllowStartPagesModification: boolean;
+	edgeBlockAccessToAboutFlags: boolean;
+	edgeBlockAddressBarDropdown: boolean;
+	edgeBlockAutofill: boolean;
+	edgeBlockCompatibilityList: boolean;
+	edgeBlockDeveloperTools: boolean;
+	edgeBlocked: boolean;
+	edgeBlockExtensions: boolean;
+	edgeBlockInPrivateBrowsing: boolean;
+	edgeBlockJavaScript: boolean;
+	edgeBlockLiveTileDataCollection: boolean;
+	edgeBlockPasswordManager: boolean;
+	edgeBlockPopups: boolean;
+	edgeBlockSearchSuggestions: boolean;
+	edgeBlockSendingDoNotTrackHeader: boolean;
+	edgeBlockSendingIntranetTrafficToInternetExplorer: boolean;
+	edgeClearBrowsingDataOnExit: boolean;
+	edgeCookiePolicy: EnumTypes.edgeCookiePolicy;
+	edgeDisableFirstRunPage: boolean;
+	edgeEnterpriseModeSiteListLocation: string;
+	edgeFirstRunUrl: string;
+	edgeHomepageUrls: Array<string>[];
+	edgeRequireSmartScreen: boolean;
+	edgeSearchEngine: ComplexTypes.edgeSearchEngineBase;
+	edgeSendIntranetTrafficToInternetExplorer: boolean;
+	edgeSyncFavoritesWithInternetExplorer: boolean;
+	enterpriseCloudPrintDiscoveryEndPoint: string;
+	enterpriseCloudPrintDiscoveryMaxLimit: number;
+	enterpriseCloudPrintMopriaDiscoveryResourceIdentifier: string;
+	enterpriseCloudPrintOAuthAuthority: string;
+	enterpriseCloudPrintOAuthClientIdentifier: string;
+	enterpriseCloudPrintResourceIdentifier: string;
+	experienceBlockDeviceDiscovery: boolean;
+	experienceBlockErrorDialogWhenNoSIM: boolean;
+	experienceBlockTaskSwitcher: boolean;
+	gameDvrBlocked: boolean;
+	internetSharingBlocked: boolean;
+	locationServicesBlocked: boolean;
+	lockScreenAllowTimeoutConfiguration: boolean;
+	lockScreenBlockActionCenterNotifications: boolean;
+	lockScreenBlockCortana: boolean;
+	lockScreenBlockToastNotifications: boolean;
+	lockScreenTimeoutInSeconds: number;
+	logonBlockFastUserSwitching: boolean;
+	microsoftAccountBlocked: boolean;
+	microsoftAccountBlockSettingsSync: boolean;
+	networkProxyApplySettingsDeviceWide: boolean;
+	networkProxyAutomaticConfigurationUrl: string;
+	networkProxyDisableAutoDetect: boolean;
+	networkProxyServer: ComplexTypes.windows10NetworkProxyServer;
+	nfcBlocked: boolean;
+	oneDriveDisableFileSync: boolean;
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeScreenTimeout: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	passwordRequireWhenResumeFromIdleState: boolean;
+	passwordSignInFailureCountBeforeFactoryReset: number;
+	personalizationDesktopImageUrl: string;
+	personalizationLockScreenImageUrl: string;
+	privacyAdvertisingId: EnumTypes.stateManagementSetting;
+	privacyAutoAcceptPairingAndConsentPrompts: boolean;
+	privacyBlockInputPersonalization: boolean;
+	resetProtectionModeBlocked: boolean;
+	safeSearchFilter: EnumTypes.safeSearchFilterType;
+	screenCaptureBlocked: boolean;
+	searchBlockDiacritics: boolean;
+	searchDisableAutoLanguageDetection: boolean;
+	searchDisableIndexerBackoff: boolean;
+	searchDisableIndexingEncryptedItems: boolean;
+	searchDisableIndexingRemovableDrive: boolean;
+	searchEnableAutomaticIndexSizeManangement: boolean;
+	searchEnableRemoteQueries: boolean;
+	settingsBlockAccountsPage: boolean;
+	settingsBlockAddProvisioningPackage: boolean;
+	settingsBlockAppsPage: boolean;
+	settingsBlockChangeLanguage: boolean;
+	settingsBlockChangePowerSleep: boolean;
+	settingsBlockChangeRegion: boolean;
+	settingsBlockChangeSystemTime: boolean;
+	settingsBlockDevicesPage: boolean;
+	settingsBlockEaseOfAccessPage: boolean;
+	settingsBlockEditDeviceName: boolean;
+	settingsBlockGamingPage: boolean;
+	settingsBlockNetworkInternetPage: boolean;
+	settingsBlockPersonalizationPage: boolean;
+	settingsBlockPrivacyPage: boolean;
+	settingsBlockRemoveProvisioningPackage: boolean;
+	settingsBlockSettingsApp: boolean;
+	settingsBlockSystemPage: boolean;
+	settingsBlockTimeLanguagePage: boolean;
+	settingsBlockUpdateSecurityPage: boolean;
+	sharedUserAppDataAllowed: boolean;
+	smartScreenBlockPromptOverride: boolean;
+	smartScreenBlockPromptOverrideForFiles: boolean;
+	smartScreenEnableAppInstallControl: boolean;
+	startBlockUnpinningAppsFromTaskbar: boolean;
+	startMenuAppListVisibility: EnumTypes.windowsStartMenuAppListVisibilityType;
+	startMenuHideChangeAccountSettings: boolean;
+	startMenuHideFrequentlyUsedApps: boolean;
+	startMenuHideHibernate: boolean;
+	startMenuHideLock: boolean;
+	startMenuHidePowerButton: boolean;
+	startMenuHideRecentJumpLists: boolean;
+	startMenuHideRecentlyAddedApps: boolean;
+	startMenuHideRestartOptions: boolean;
+	startMenuHideShutDown: boolean;
+	startMenuHideSignOut: boolean;
+	startMenuHideSleep: boolean;
+	startMenuHideSwitchAccount: boolean;
+	startMenuHideUserTile: boolean;
+	startMenuLayoutEdgeAssetsXml: any;
+	startMenuLayoutXml: any;
+	startMenuMode: EnumTypes.windowsStartMenuModeType;
+	startMenuPinnedFolderDocuments: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderDownloads: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderFileExplorer: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderHomeGroup: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderMusic: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderNetwork: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderPersonalFolder: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderPictures: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderSettings: EnumTypes.visibilitySetting;
+	startMenuPinnedFolderVideos: EnumTypes.visibilitySetting;
+	storageBlockRemovableStorage: boolean;
+	storageRequireMobileDeviceEncryption: boolean;
+	storageRestrictAppDataToSystemVolume: boolean;
+	storageRestrictAppInstallToSystemVolume: boolean;
+	tenantLockdownRequireNetworkDuringOutOfBoxExperience: boolean;
+	usbBlocked: boolean;
+	voiceRecordingBlocked: boolean;
+	webRtcBlockLocalhostIpAddress: boolean;
+	wiFiBlockAutomaticConnectHotspots: boolean;
+	wiFiBlocked: boolean;
+	wiFiBlockManualConfiguration: boolean;
+	wiFiScanInterval: number;
+	windowsSpotlightBlockConsumerSpecificFeatures: boolean;
+	windowsSpotlightBlocked: boolean;
+	windowsSpotlightBlockOnActionCenter: boolean;
+	windowsSpotlightBlockTailoredExperiences: boolean;
+	windowsSpotlightBlockThirdPartyNotifications: boolean;
+	windowsSpotlightBlockWelcomeExperience: boolean;
+	windowsSpotlightBlockWindowsTips: boolean;
+	windowsSpotlightConfigureOnLockScreen: EnumTypes.windowsSpotlightEnablementSettings;
+	windowsStoreBlockAutoUpdate: boolean;
+	windowsStoreBlocked: boolean;
+	windowsStoreEnablePrivateStoreOnly: boolean;
+	wirelessDisplayBlockProjectionToThisDevice: boolean;
+	wirelessDisplayBlockUserInputFromReceiver: boolean;
+	wirelessDisplayRequirePinForPairing: boolean;
 }
-
-/*********************************************
-* windows10GeneralConfigurationCollections
-**********************************************/
-export interface windows10GeneralConfigurationCollections {
-
-}
-
 /*********************************************
 * windows10MobileCompliancePolicy
 **********************************************/
-export interface windows10MobileCompliancePolicy {
-	bitLockerEnabled?: boolean;
-	codeIntegrityEnabled?: boolean;
-	earlyLaunchAntiMalwareDriverEnabled?: boolean;
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
-	passwordRequireToUnlockFromIdle?: boolean;
-	secureBootEnabled?: boolean;
-	storageRequireEncryption?: boolean;
+export interface windows10MobileCompliancePolicy  {
+	bitLockerEnabled: boolean;
+	codeIntegrityEnabled: boolean;
+	earlyLaunchAntiMalwareDriverEnabled: boolean;
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	passwordRequireToUnlockFromIdle: boolean;
+	secureBootEnabled: boolean;
+	storageRequireEncryption: boolean;
 }
-
-/*********************************************
-* windows10MobileCompliancePolicyCollections
-**********************************************/
-export interface windows10MobileCompliancePolicyCollections {
-
-}
-
 /*********************************************
 * windows10SecureAssessmentConfiguration
 **********************************************/
-export interface windows10SecureAssessmentConfiguration {
-	allowPrinting?: boolean;
-	allowScreenCapture?: boolean;
-	allowTextSuggestion?: boolean;
-	configurationAccount?: string;
-	launchUri?: string;
+export interface windows10SecureAssessmentConfiguration  {
+	allowPrinting: boolean;
+	allowScreenCapture: boolean;
+	allowTextSuggestion: boolean;
+	configurationAccount: string;
+	launchUri: string;
 }
-
-/*********************************************
-* windows10SecureAssessmentConfigurationCollections
-**********************************************/
-export interface windows10SecureAssessmentConfigurationCollections {
-
-}
-
 /*********************************************
 * windows10TeamGeneralConfiguration
 **********************************************/
-export interface windows10TeamGeneralConfiguration {
-	azureOperationalInsightsBlockTelemetry?: boolean;
-	azureOperationalInsightsWorkspaceId?: string;
-	azureOperationalInsightsWorkspaceKey?: string;
-	connectAppBlockAutoLaunch?: boolean;
-	maintenanceWindowBlocked?: boolean;
-	maintenanceWindowDurationInHours?: number;
-	maintenanceWindowStartTime?: anyOfDay;
-	miracastBlocked?: boolean;
-	miracastChannel?: graph.miracastChannel;
-	miracastRequirePin?: boolean;
-	settingsBlockMyMeetingsAndFiles?: boolean;
-	settingsBlockSessionResume?: boolean;
-	settingsBlockSigninSuggestions?: boolean;
-	settingsDefaultVolume?: number;
-	settingsScreenTimeoutInMinutes?: number;
-	settingsSessionTimeoutInMinutes?: number;
-	settingsSleepTimeoutInMinutes?: number;
-	welcomeScreenBackgroundImageUrl?: string;
-	welcomeScreenBlockAutomaticWakeUp?: boolean;
-	welcomeScreenMeetingInformation?: graph.welcomeScreenMeetingInformation;
+export interface windows10TeamGeneralConfiguration  {
+	azureOperationalInsightsBlockTelemetry: boolean;
+	azureOperationalInsightsWorkspaceId: string;
+	azureOperationalInsightsWorkspaceKey: string;
+	connectAppBlockAutoLaunch: boolean;
+	maintenanceWindowBlocked: boolean;
+	maintenanceWindowDurationInHours: number;
+	maintenanceWindowStartTime: any;
+	miracastBlocked: boolean;
+	miracastChannel: EnumTypes.miracastChannel;
+	miracastRequirePin: boolean;
+	settingsBlockMyMeetingsAndFiles: boolean;
+	settingsBlockSessionResume: boolean;
+	settingsBlockSigninSuggestions: boolean;
+	settingsDefaultVolume: number;
+	settingsScreenTimeoutInMinutes: number;
+	settingsSessionTimeoutInMinutes: number;
+	settingsSleepTimeoutInMinutes: number;
+	welcomeScreenBackgroundImageUrl: string;
+	welcomeScreenBlockAutomaticWakeUp: boolean;
+	welcomeScreenMeetingInformation: EnumTypes.welcomeScreenMeetingInformation;
 }
-
-/*********************************************
-* windows10TeamGeneralConfigurationCollections
-**********************************************/
-export interface windows10TeamGeneralConfigurationCollections {
-
-}
-
 /*********************************************
 * windows81CompliancePolicy
 **********************************************/
-export interface windows81CompliancePolicy {
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
-	storageRequireEncryption?: boolean;
+export interface windows81CompliancePolicy  {
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	storageRequireEncryption: boolean;
 }
-
-/*********************************************
-* windows81CompliancePolicyCollections
-**********************************************/
-export interface windows81CompliancePolicyCollections {
-
-}
-
 /*********************************************
 * windows81GeneralConfiguration
 **********************************************/
-export interface windows81GeneralConfiguration {
-	accountsBlockAddingNonMicrosoftAccountEmail?: boolean;
-	applyOnlyToWindows81?: boolean;
-	browserBlockAutofill?: boolean;
-	browserBlockAutomaticDetectionOfIntranetSites?: boolean;
-	browserBlockEnterpriseModeAccess?: boolean;
-	browserBlockJavaScript?: boolean;
-	browserBlockPlugins?: boolean;
-	browserBlockPopups?: boolean;
-	browserBlockSendingDoNotTrackHeader?: boolean;
-	browserBlockSingleWordEntryOnIntranetSites?: boolean;
-	browserEnterpriseModeSiteListLocation?: string;
-	browserInternetSecurityLevel?: graph.internetSiteSecurityLevel;
-	browserIntranetSecurityLevel?: graph.siteSecurityLevel;
-	browserLoggingReportLocation?: string;
-	browserRequireFirewall?: boolean;
-	browserRequireFraudWarning?: boolean;
-	browserRequireHighSecurityForRestrictedSites?: boolean;
-	browserRequireSmartScreen?: boolean;
-	browserTrustedSitesSecurityLevel?: graph.siteSecurityLevel;
-	cellularBlockDataRoaming?: boolean;
-	diagnosticsBlockDataSubmission?: boolean;
-	passwordBlockPicturePasswordAndPin?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeScreenTimeout?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequiredType?: graph.requiredPasswordType;
-	passwordSignInFailureCountBeforeFactoryReset?: number;
-	storageRequireDeviceEncryption?: boolean;
-	updatesRequireAutomaticUpdates?: boolean;
-	userAccountControlSettings?: graph.windowsUserAccountControlSettings;
-	workFoldersUrl?: string;
+export interface windows81GeneralConfiguration  {
+	accountsBlockAddingNonMicrosoftAccountEmail: boolean;
+	applyOnlyToWindows81: boolean;
+	browserBlockAutofill: boolean;
+	browserBlockAutomaticDetectionOfIntranetSites: boolean;
+	browserBlockEnterpriseModeAccess: boolean;
+	browserBlockJavaScript: boolean;
+	browserBlockPlugins: boolean;
+	browserBlockPopups: boolean;
+	browserBlockSendingDoNotTrackHeader: boolean;
+	browserBlockSingleWordEntryOnIntranetSites: boolean;
+	browserEnterpriseModeSiteListLocation: string;
+	browserInternetSecurityLevel: EnumTypes.internetSiteSecurityLevel;
+	browserIntranetSecurityLevel: EnumTypes.siteSecurityLevel;
+	browserLoggingReportLocation: string;
+	browserRequireFirewall: boolean;
+	browserRequireFraudWarning: boolean;
+	browserRequireHighSecurityForRestrictedSites: boolean;
+	browserRequireSmartScreen: boolean;
+	browserTrustedSitesSecurityLevel: EnumTypes.siteSecurityLevel;
+	cellularBlockDataRoaming: boolean;
+	diagnosticsBlockDataSubmission: boolean;
+	passwordBlockPicturePasswordAndPin: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeScreenTimeout: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	passwordSignInFailureCountBeforeFactoryReset: number;
+	storageRequireDeviceEncryption: boolean;
+	updatesRequireAutomaticUpdates: boolean;
+	userAccountControlSettings: EnumTypes.windowsUserAccountControlSettings;
+	workFoldersUrl: string;
 }
-
-/*********************************************
-* windows81GeneralConfigurationCollections
-**********************************************/
-export interface windows81GeneralConfigurationCollections {
-
-}
-
 /*********************************************
 * windowsDefenderAdvancedThreatProtectionConfiguration
 **********************************************/
-export interface windowsDefenderAdvancedThreatProtectionConfiguration {
-	allowSampleSharing?: boolean;
-	enableExpeditedTelemetryReporting?: boolean;
+export interface windowsDefenderAdvancedThreatProtectionConfiguration  {
+	allowSampleSharing: boolean;
+	enableExpeditedTelemetryReporting: boolean;
 }
-
-/*********************************************
-* windowsDefenderAdvancedThreatProtectionConfigurationCollections
-**********************************************/
-export interface windowsDefenderAdvancedThreatProtectionConfigurationCollections {
-
-}
-
 /*********************************************
 * windowsPhone81CompliancePolicy
 **********************************************/
-export interface windowsPhone81CompliancePolicy {
-	osMaximumVersion?: string;
-	osMinimumVersion?: string;
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeLock?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
-	storageRequireEncryption?: boolean;
+export interface windowsPhone81CompliancePolicy  {
+	osMaximumVersion: string;
+	osMinimumVersion: string;
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeLock: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	storageRequireEncryption: boolean;
 }
-
-/*********************************************
-* windowsPhone81CompliancePolicyCollections
-**********************************************/
-export interface windowsPhone81CompliancePolicyCollections {
-
-}
-
 /*********************************************
 * windowsPhone81CustomConfiguration
 **********************************************/
-export interface windowsPhone81CustomConfiguration {
-	omaSettings?: { results: Array<graph.omaSetting> };
+export interface windowsPhone81CustomConfiguration  {
+	omaSettings: ComplexTypes.omaSetting[];
 }
-
-/*********************************************
-* windowsPhone81CustomConfigurationCollections
-**********************************************/
-export interface windowsPhone81CustomConfigurationCollections {
-
-}
-
 /*********************************************
 * windowsPhone81GeneralConfiguration
 **********************************************/
-export interface windowsPhone81GeneralConfiguration {
-	applyOnlyToWindowsPhone81?: boolean;
-	appsBlockCopyPaste?: boolean;
-	bluetoothBlocked?: boolean;
-	cameraBlocked?: boolean;
-	cellularBlockWifiTethering?: boolean;
-	compliantAppListType?: graph.appListType;
-	compliantAppsList?: { results: Array<graph.appListItem> };
-	diagnosticDataBlockSubmission?: boolean;
-	emailBlockAddingAccounts?: boolean;
-	locationServicesBlocked?: boolean;
-	microsoftAccountBlocked?: boolean;
-	nfcBlocked?: boolean;
-	passwordBlockSimple?: boolean;
-	passwordExpirationDays?: number;
-	passwordMinimumCharacterSetCount?: number;
-	passwordMinimumLength?: number;
-	passwordMinutesOfInactivityBeforeScreenTimeout?: number;
-	passwordPreviousPasswordBlockCount?: number;
-	passwordRequired?: boolean;
-	passwordRequiredType?: graph.requiredPasswordType;
-	passwordSignInFailureCountBeforeFactoryReset?: number;
-	screenCaptureBlocked?: boolean;
-	storageBlockRemovableStorage?: boolean;
-	storageRequireEncryption?: boolean;
-	webBrowserBlocked?: boolean;
-	wifiBlockAutomaticConnectHotspots?: boolean;
-	wifiBlocked?: boolean;
-	wifiBlockHotspotReporting?: boolean;
-	windowsStoreBlocked?: boolean;
+export interface windowsPhone81GeneralConfiguration  {
+	applyOnlyToWindowsPhone81: boolean;
+	appsBlockCopyPaste: boolean;
+	bluetoothBlocked: boolean;
+	cameraBlocked: boolean;
+	cellularBlockWifiTethering: boolean;
+	compliantAppListType: EnumTypes.appListType;
+	compliantAppsList: ComplexTypes.appListItem[];
+	diagnosticDataBlockSubmission: boolean;
+	emailBlockAddingAccounts: boolean;
+	locationServicesBlocked: boolean;
+	microsoftAccountBlocked: boolean;
+	nfcBlocked: boolean;
+	passwordBlockSimple: boolean;
+	passwordExpirationDays: number;
+	passwordMinimumCharacterSetCount: number;
+	passwordMinimumLength: number;
+	passwordMinutesOfInactivityBeforeScreenTimeout: number;
+	passwordPreviousPasswordBlockCount: number;
+	passwordRequired: boolean;
+	passwordRequiredType: EnumTypes.requiredPasswordType;
+	passwordSignInFailureCountBeforeFactoryReset: number;
+	screenCaptureBlocked: boolean;
+	storageBlockRemovableStorage: boolean;
+	storageRequireEncryption: boolean;
+	webBrowserBlocked: boolean;
+	wifiBlockAutomaticConnectHotspots: boolean;
+	wifiBlocked: boolean;
+	wifiBlockHotspotReporting: boolean;
+	windowsStoreBlocked: boolean;
 }
-
-/*********************************************
-* windowsPhone81GeneralConfigurationCollections
-**********************************************/
-export interface windowsPhone81GeneralConfigurationCollections {
-
-}
-
 /*********************************************
 * windowsUpdateForBusinessConfiguration
 **********************************************/
-export interface windowsUpdateForBusinessConfiguration {
-	automaticUpdateMode?: graph.automaticUpdateMode;
-	businessReadyUpdatesOnly?: graph.windowsUpdateType;
-	deliveryOptimizationMode?: graph.windowsDeliveryOptimizationMode;
-	driversExcluded?: boolean;
-	featureUpdatesDeferralPeriodInDays?: number;
-	featureUpdatesPaused?: boolean;
-	featureUpdatesPauseExpiryDateTime?: any;
-	installationSchedule?: graph.windowsUpdateInstallScheduleType;
-	microsoftUpdateServiceAllowed?: boolean;
-	prereleaseFeatures?: graph.prereleaseFeatures;
-	qualityUpdatesDeferralPeriodInDays?: number;
-	qualityUpdatesPaused?: boolean;
-	qualityUpdatesPauseExpiryDateTime?: any;
+export interface windowsUpdateForBusinessConfiguration  {
+	automaticUpdateMode: EnumTypes.automaticUpdateMode;
+	businessReadyUpdatesOnly: EnumTypes.windowsUpdateType;
+	deliveryOptimizationMode: EnumTypes.windowsDeliveryOptimizationMode;
+	driversExcluded: boolean;
+	featureUpdatesDeferralPeriodInDays: number;
+	featureUpdatesPaused: boolean;
+	featureUpdatesPauseExpiryDateTime: any;
+	installationSchedule: ComplexTypes.windowsUpdateInstallScheduleType;
+	microsoftUpdateServiceAllowed: boolean;
+	prereleaseFeatures: EnumTypes.prereleaseFeatures;
+	qualityUpdatesDeferralPeriodInDays: number;
+	qualityUpdatesPaused: boolean;
+	qualityUpdatesPauseExpiryDateTime: any;
 }
-
-/*********************************************
-* windowsUpdateForBusinessConfigurationCollections
-**********************************************/
-export interface windowsUpdateForBusinessConfigurationCollections {
-
-}
-
 /*********************************************
 * enrollmentConfigurationAssignment
 **********************************************/
-export interface enrollmentConfigurationAssignment {
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface enrollmentConfigurationAssignment  {
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* enrollmentConfigurationAssignmentCollections
-**********************************************/
-export interface enrollmentConfigurationAssignmentCollections {
-
-}
-
 /*********************************************
 * deviceEnrollmentLimitConfiguration
 **********************************************/
-export interface deviceEnrollmentLimitConfiguration {
-	limit?: number;
+export interface deviceEnrollmentLimitConfiguration  {
+	limit: number;
 }
-
-/*********************************************
-* deviceEnrollmentLimitConfigurationCollections
-**********************************************/
-export interface deviceEnrollmentLimitConfigurationCollections {
-
-}
-
 /*********************************************
 * deviceEnrollmentPlatformRestrictionsConfiguration
 **********************************************/
-export interface deviceEnrollmentPlatformRestrictionsConfiguration {
-	androidRestriction?: graph.deviceEnrollmentPlatformRestriction;
-	iosRestriction?: graph.deviceEnrollmentPlatformRestriction;
-	macOSRestriction?: graph.deviceEnrollmentPlatformRestriction;
-	windowsMobileRestriction?: graph.deviceEnrollmentPlatformRestriction;
-	windowsRestriction?: graph.deviceEnrollmentPlatformRestriction;
+export interface deviceEnrollmentPlatformRestrictionsConfiguration  {
+	androidRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
+	iosRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
+	macOSRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
+	windowsMobileRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
+	windowsRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
 }
-
-/*********************************************
-* deviceEnrollmentPlatformRestrictionsConfigurationCollections
-**********************************************/
-export interface deviceEnrollmentPlatformRestrictionsConfigurationCollections {
-
-}
-
 /*********************************************
 * deviceEnrollmentWindowsHelloForBusinessConfiguration
 **********************************************/
-export interface deviceEnrollmentWindowsHelloForBusinessConfiguration {
-	enhancedBiometricsState?: graph.enablement;
-	pinExpirationInDays?: number;
-	pinLowercaseCharactersUsage?: graph.windowsHelloForBusinessPinUsage;
-	pinMaximumLength?: number;
-	pinMinimumLength?: number;
-	pinPreviousBlockCount?: number;
-	pinSpecialCharactersUsage?: graph.windowsHelloForBusinessPinUsage;
-	pinUppercaseCharactersUsage?: graph.windowsHelloForBusinessPinUsage;
-	remotePassportEnabled?: boolean;
-	securityDeviceRequired?: boolean;
-	state?: graph.enablement;
-	unlockWithBiometricsEnabled?: boolean;
+export interface deviceEnrollmentWindowsHelloForBusinessConfiguration  {
+	enhancedBiometricsState: EnumTypes.enablement;
+	pinExpirationInDays: number;
+	pinLowercaseCharactersUsage: EnumTypes.windowsHelloForBusinessPinUsage;
+	pinMaximumLength: number;
+	pinMinimumLength: number;
+	pinPreviousBlockCount: number;
+	pinSpecialCharactersUsage: EnumTypes.windowsHelloForBusinessPinUsage;
+	pinUppercaseCharactersUsage: EnumTypes.windowsHelloForBusinessPinUsage;
+	remotePassportEnabled: boolean;
+	securityDeviceRequired: boolean;
+	state: EnumTypes.enablement;
+	unlockWithBiometricsEnabled: boolean;
 }
-
-/*********************************************
-* deviceEnrollmentWindowsHelloForBusinessConfigurationCollections
-**********************************************/
-export interface deviceEnrollmentWindowsHelloForBusinessConfigurationCollections {
-
-}
-
 /*********************************************
 * userExperienceAnalyticsDevicePerformance
 **********************************************/
-export interface userExperienceAnalyticsDevicePerformance {
-	averageBlueScreens?: number;
-	averageRestarts?: number;
-	blueScreenCount?: number;
-	bootScore?: number;
-	coreBootTimeInMs?: number;
-	coreLoginTimeInMs?: number;
-	deviceCount?: number;
-	deviceName?: string;
-	diskType?: graph.diskType;
-	groupPolicyBootTimeInMs?: number;
-	groupPolicyLoginTimeInMs?: number;
-	healthStatus?: graph.userExperienceAnalyticsHealthState;
-	loginScore?: number;
-	manufacturer?: string;
-	model?: string;
-	modelStartupPerformanceScore?: number;
-	operatingSystemVersion?: string;
-	responsiveDesktopTimeInMs?: number;
-	restartCount?: number;
-	startupPerformanceScore?: number;
+export interface userExperienceAnalyticsDevicePerformance  {
+	averageBlueScreens: number;
+	averageRestarts: number;
+	blueScreenCount: number;
+	bootScore: number;
+	coreBootTimeInMs: number;
+	coreLoginTimeInMs: number;
+	deviceCount: number;
+	deviceName: string;
+	diskType: EnumTypes.diskType;
+	groupPolicyBootTimeInMs: number;
+	groupPolicyLoginTimeInMs: number;
+	healthStatus: EnumTypes.userExperienceAnalyticsHealthState;
+	loginScore: number;
+	manufacturer: string;
+	model: string;
+	modelStartupPerformanceScore: number;
+	operatingSystemVersion: string;
+	responsiveDesktopTimeInMs: number;
+	restartCount: number;
+	startupPerformanceScore: number;
 }
-
-/*********************************************
-* userExperienceAnalyticsDevicePerformanceCollections
-**********************************************/
-export interface userExperienceAnalyticsDevicePerformanceCollections {
-
-}
-
 /*********************************************
 * importedWindowsAutopilotDeviceIdentityUpload
 **********************************************/
-export interface importedWindowsAutopilotDeviceIdentityUpload {
-	createdDateTimeUtc?: any;
-	status?: graph.importedWindowsAutopilotDeviceIdentityUploadStatus;
+export interface importedWindowsAutopilotDeviceIdentityUpload  {
+	createdDateTimeUtc: any;
+	status: EnumTypes.importedWindowsAutopilotDeviceIdentityUploadStatus;
 }
-
-/*********************************************
-* importedWindowsAutopilotDeviceIdentityUploadCollections
-**********************************************/
-export interface importedWindowsAutopilotDeviceIdentityUploadCollections {
-
-}
-
 /*********************************************
 * managedMobileApp
 **********************************************/
-export interface managedMobileApp {
-	mobileAppIdentifier?: graph.mobileAppIdentifier;
-	version?: string;
+export interface managedMobileApp  {
+	mobileAppIdentifier: ComplexTypes.mobileAppIdentifier;
+	version: string;
 }
-
-/*********************************************
-* managedMobileAppCollections
-**********************************************/
-export interface managedMobileAppCollections {
-
-}
-
 /*********************************************
 * managedAppPolicyDeploymentSummary
 **********************************************/
-export interface managedAppPolicyDeploymentSummary {
-	configurationDeployedUserCount?: number;
-	configurationDeploymentSummaryPerApp?: { results: Array<graph.managedAppPolicyDeploymentSummaryPerApp> };
-	displayName?: string;
-	lastRefreshTime?: any;
-	version?: string;
+export interface managedAppPolicyDeploymentSummary  {
+	configurationDeployedUserCount: number;
+	configurationDeploymentSummaryPerApp: ComplexTypes.managedAppPolicyDeploymentSummaryPerApp[];
+	displayName: string;
+	lastRefreshTime: any;
+	version: string;
 }
-
-/*********************************************
-* managedAppPolicyDeploymentSummaryCollections
-**********************************************/
-export interface managedAppPolicyDeploymentSummaryCollections {
-
-}
-
 /*********************************************
 * androidManagedAppRegistration
 **********************************************/
-export interface androidManagedAppRegistration {
+export interface androidManagedAppRegistration  {
 
 }
-
-/*********************************************
-* androidManagedAppRegistrationCollections
-**********************************************/
-export interface androidManagedAppRegistrationCollections {
-
-}
-
 /*********************************************
 * iosManagedAppRegistration
 **********************************************/
-export interface iosManagedAppRegistration {
+export interface iosManagedAppRegistration  {
 
 }
-
-/*********************************************
-* iosManagedAppRegistrationCollections
-**********************************************/
-export interface iosManagedAppRegistrationCollections {
-
-}
-
 /*********************************************
 * managedAppOperation
 **********************************************/
-export interface managedAppOperation {
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	state?: string;
-	version?: string;
+export interface managedAppOperation  {
+	displayName: string;
+	lastModifiedDateTime: any;
+	state: string;
+	version: string;
 }
-
-/*********************************************
-* managedAppOperationCollections
-**********************************************/
-export interface managedAppOperationCollections {
-
-}
-
 /*********************************************
 * managedAppStatusRaw
 **********************************************/
-export interface managedAppStatusRaw {
-	content?: graph.Json;
+export interface managedAppStatusRaw  {
+	content: ComplexTypes.Json;
 }
-
-/*********************************************
-* managedAppStatusRawCollections
-**********************************************/
-export interface managedAppStatusRawCollections {
-
-}
-
 /*********************************************
 * targetedManagedAppPolicyAssignment
 **********************************************/
-export interface targetedManagedAppPolicyAssignment {
-	target?: graph.deviceAndAppManagementAssignmentTarget;
+export interface targetedManagedAppPolicyAssignment  {
+	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
-
-/*********************************************
-* targetedManagedAppPolicyAssignmentCollections
-**********************************************/
-export interface targetedManagedAppPolicyAssignmentCollections {
-
-}
-
 /*********************************************
 * windowsInformationProtectionAppLockerFile
 **********************************************/
-export interface windowsInformationProtectionAppLockerFile {
-	displayName?: string;
-	file?: any;
-	fileHash?: string;
-	version?: string;
+export interface windowsInformationProtectionAppLockerFile  {
+	displayName: string;
+	file: any;
+	fileHash: string;
+	version: string;
 }
-
-/*********************************************
-* windowsInformationProtectionAppLockerFileCollections
-**********************************************/
-export interface windowsInformationProtectionAppLockerFileCollections {
-
-}
-
 /*********************************************
 * localizedNotificationMessage
 **********************************************/
-export interface localizedNotificationMessage {
-	isDefault?: boolean;
-	lastModifiedDateTime?: any;
-	locale?: string;
-	messageTemplate?: string;
-	subject?: string;
+export interface localizedNotificationMessage  {
+	isDefault: boolean;
+	lastModifiedDateTime: any;
+	locale: string;
+	messageTemplate: string;
+	subject: string;
 }
-
-/*********************************************
-* localizedNotificationMessageCollections
-**********************************************/
-export interface localizedNotificationMessageCollections {
-
-}
-
 /*********************************************
 * deviceAndAppManagementRoleDefinition
 **********************************************/
-export interface deviceAndAppManagementRoleDefinition {
+export interface deviceAndAppManagementRoleDefinition  {
 
 }
-
-/*********************************************
-* deviceAndAppManagementRoleDefinitionCollections
-**********************************************/
-export interface deviceAndAppManagementRoleDefinitionCollections {
-
-}
-
 /*********************************************
 * deviceManagementExportJob
 **********************************************/
-export interface deviceManagementExportJob {
-	expirationDateTime?: any;
-	filter?: string;
-	format?: graph.deviceManagementReportFileFormat;
-	localizationType?: graph.deviceManagementExportJobLocalizationType;
-	reportName?: string;
-	requestDateTime?: any;
-	select?: { results: Array<string> };
-	snapshotId?: string;
-	status?: graph.deviceManagementReportStatus;
-	url?: string;
+export interface deviceManagementExportJob  {
+	expirationDateTime: any;
+	filter: string;
+	format: EnumTypes.deviceManagementReportFileFormat;
+	localizationType: EnumTypes.deviceManagementExportJobLocalizationType;
+	reportName: string;
+	requestDateTime: any;
+	select: Array<string>[];
+	snapshotId: string;
+	status: EnumTypes.deviceManagementReportStatus;
+	url: string;
 }
-
-/*********************************************
-* deviceManagementExportJobCollections
-**********************************************/
-export interface deviceManagementExportJobCollections {
-
-}
-
 /*********************************************
 * enrollmentTroubleshootingEvent
 **********************************************/
-export interface enrollmentTroubleshootingEvent {
-	deviceId?: string;
-	enrollmentType?: graph.deviceEnrollmentType;
-	failureCategory?: graph.deviceEnrollmentFailureReason;
-	failureReason?: string;
-	managedDeviceIdentifier?: string;
-	operatingSystem?: string;
-	osVersion?: string;
-	userId?: string;
+export interface enrollmentTroubleshootingEvent  {
+	deviceId: string;
+	enrollmentType: EnumTypes.deviceEnrollmentType;
+	failureCategory: EnumTypes.deviceEnrollmentFailureReason;
+	failureReason: string;
+	managedDeviceIdentifier: string;
+	operatingSystem: string;
+	osVersion: string;
+	userId: string;
 }
-
-/*********************************************
-* enrollmentTroubleshootingEventCollections
-**********************************************/
-export interface enrollmentTroubleshootingEventCollections {
-
-}
-
 /*********************************************
 * admin
 **********************************************/
-export interface admin {
+export interface admin  {
 
 }
-
-/*********************************************
-* adminCollections
-**********************************************/
-export interface adminCollections {
-
-}
-
 /*********************************************
 * serviceAnnouncement
 **********************************************/
-export interface serviceAnnouncement {
+export interface serviceAnnouncement  {
 
 }
-
-/*********************************************
-* serviceAnnouncementCollections
-**********************************************/
-export interface serviceAnnouncementCollections {
-
-}
-
 /*********************************************
 * serviceHealth
 **********************************************/
-export interface serviceHealth {
-	service?: string;
-	status?: graph.serviceHealthStatus;
+export interface serviceHealth  {
+	service: string;
+	status: EnumTypes.serviceHealthStatus;
 }
-
-/*********************************************
-* serviceHealthCollections
-**********************************************/
-export interface serviceHealthCollections {
-
-}
-
 /*********************************************
 * serviceAnnouncementBase
 **********************************************/
-export interface serviceAnnouncementBase {
-	details?: { results: Array<graph.keyValuePair> };
-	endDateTime?: any;
-	lastModifiedDateTime?: any;
-	startDateTime?: any;
-	title?: string;
+export interface serviceAnnouncementBase  {
+	details: ComplexTypes.keyValuePair[];
+	endDateTime: any;
+	lastModifiedDateTime: any;
+	startDateTime: any;
+	title: string;
 }
-
-/*********************************************
-* serviceAnnouncementBaseCollections
-**********************************************/
-export interface serviceAnnouncementBaseCollections {
-
-}
-
 /*********************************************
 * serviceHealthIssue
 **********************************************/
-export interface serviceHealthIssue {
-	classification?: graph.serviceHealthClassificationType;
-	feature?: string;
-	featureGroup?: string;
-	impactDescription?: string;
-	isResolved?: boolean;
-	origin?: graph.serviceHealthOrigin;
-	posts?: { results: Array<graph.serviceHealthIssuePost> };
-	service?: string;
-	status?: graph.serviceHealthStatus;
+export interface serviceHealthIssue  {
+	classification: EnumTypes.serviceHealthClassificationType;
+	feature: string;
+	featureGroup: string;
+	impactDescription: string;
+	isResolved: boolean;
+	origin: EnumTypes.serviceHealthOrigin;
+	posts: ComplexTypes.serviceHealthIssuePost[];
+	service: string;
+	status: EnumTypes.serviceHealthStatus;
 }
-
-/*********************************************
-* serviceHealthIssueCollections
-**********************************************/
-export interface serviceHealthIssueCollections {
-
-}
-
 /*********************************************
 * serviceUpdateMessage
 **********************************************/
-export interface serviceUpdateMessage {
-	actionRequiredByDateTime?: any;
-	attachmentsArchive?: any;
-	body?: graph.itemBody;
-	category?: graph.serviceUpdateCategory;
-	hasAttachments?: boolean;
-	isMajorChange?: boolean;
-	services?: { results: Array<string> };
-	severity?: graph.serviceUpdateSeverity;
-	tags?: { results: Array<string> };
-	viewPoint?: graph.serviceUpdateMessageViewpoint;
+export interface serviceUpdateMessage  {
+	actionRequiredByDateTime: any;
+	attachmentsArchive: any;
+	body: ComplexTypes.itemBody;
+	category: EnumTypes.serviceUpdateCategory;
+	hasAttachments: boolean;
+	isMajorChange: boolean;
+	services: Array<string>[];
+	severity: EnumTypes.serviceUpdateSeverity;
+	tags: Array<string>[];
+	viewPoint: ComplexTypes.serviceUpdateMessageViewpoint;
 }
-
-/*********************************************
-* serviceUpdateMessageCollections
-**********************************************/
-export interface serviceUpdateMessageCollections {
-
-}
-
 /*********************************************
 * serviceAnnouncementAttachment
 **********************************************/
-export interface serviceAnnouncementAttachment {
-	content?: any;
-	contentType?: string;
-	lastModifiedDateTime?: any;
-	name?: string;
-	size?: number;
+export interface serviceAnnouncementAttachment  {
+	content: any;
+	contentType: string;
+	lastModifiedDateTime: any;
+	name: string;
+	size: number;
 }
-
-/*********************************************
-* serviceAnnouncementAttachmentCollections
-**********************************************/
-export interface serviceAnnouncementAttachmentCollections {
-
-}
-
 /*********************************************
 * searchEntity
 **********************************************/
-export interface searchEntity {
+export interface searchEntity  {
 
 }
-
-/*********************************************
-* searchEntityCollections
-**********************************************/
-export interface searchEntityCollections {
-
-}
-
 /*********************************************
 * planner
 **********************************************/
-export interface planner {
+export interface planner  {
 
 }
-
-/*********************************************
-* plannerCollections
-**********************************************/
-export interface plannerCollections {
-
-}
-
 /*********************************************
 * plannerBucket
 **********************************************/
-export interface plannerBucket {
-	name?: string;
-	orderHint?: string;
-	planId?: string;
+export interface plannerBucket  {
+	name: string;
+	orderHint: string;
+	planId: string;
 }
-
-/*********************************************
-* plannerBucketCollections
-**********************************************/
-export interface plannerBucketCollections {
-
-}
-
 /*********************************************
 * plannerPlan
 **********************************************/
-export interface plannerPlan {
-	container?: graph.plannerPlanContainer;
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	owner?: string;
-	title?: string;
+export interface plannerPlan  {
+	container: ComplexTypes.plannerPlanContainer;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	owner: string;
+	title: string;
 }
-
-/*********************************************
-* plannerPlanCollections
-**********************************************/
-export interface plannerPlanCollections {
-
-}
-
 /*********************************************
 * plannerTask
 **********************************************/
-export interface plannerTask {
-	activeChecklistItemCount?: number;
-	appliedCategories?: graph.plannerAppliedCategories;
-	assigneePriority?: string;
-	assignments?: graph.plannerAssignments;
-	bucketId?: string;
-	checklistItemCount?: number;
-	completedBy?: graph.identitySet;
-	completedDateTime?: any;
-	conversationThreadId?: string;
-	createdBy?: graph.identitySet;
-	createdDateTime?: any;
-	dueDateTime?: any;
-	hasDescription?: boolean;
-	orderHint?: string;
-	percentComplete?: number;
-	planId?: string;
-	previewType?: graph.plannerPreviewType;
-	priority?: number;
-	referenceCount?: number;
-	startDateTime?: any;
-	title?: string;
+export interface plannerTask  {
+	activeChecklistItemCount: number;
+	appliedCategories: ComplexTypes.plannerAppliedCategories;
+	assigneePriority: string;
+	assignments: ComplexTypes.plannerAssignments;
+	bucketId: string;
+	checklistItemCount: number;
+	completedBy: ComplexTypes.identitySet;
+	completedDateTime: any;
+	conversationThreadId: string;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	dueDateTime: any;
+	hasDescription: boolean;
+	orderHint: string;
+	percentComplete: number;
+	planId: string;
+	previewType: EnumTypes.plannerPreviewType;
+	priority: number;
+	referenceCount: number;
+	startDateTime: any;
+	title: string;
 }
-
-/*********************************************
-* plannerTaskCollections
-**********************************************/
-export interface plannerTaskCollections {
-
-}
-
 /*********************************************
 * plannerAssignedToTaskBoardTaskFormat
 **********************************************/
-export interface plannerAssignedToTaskBoardTaskFormat {
-	orderHintsByAssignee?: graph.plannerOrderHintsByAssignee;
-	unassignedOrderHint?: string;
+export interface plannerAssignedToTaskBoardTaskFormat  {
+	orderHintsByAssignee: ComplexTypes.plannerOrderHintsByAssignee;
+	unassignedOrderHint: string;
 }
-
-/*********************************************
-* plannerAssignedToTaskBoardTaskFormatCollections
-**********************************************/
-export interface plannerAssignedToTaskBoardTaskFormatCollections {
-
-}
-
 /*********************************************
 * plannerBucketTaskBoardTaskFormat
 **********************************************/
-export interface plannerBucketTaskBoardTaskFormat {
-	orderHint?: string;
+export interface plannerBucketTaskBoardTaskFormat  {
+	orderHint: string;
 }
-
-/*********************************************
-* plannerBucketTaskBoardTaskFormatCollections
-**********************************************/
-export interface plannerBucketTaskBoardTaskFormatCollections {
-
-}
-
 /*********************************************
 * plannerPlanDetails
 **********************************************/
-export interface plannerPlanDetails {
-	categoryDescriptions?: graph.plannerCategoryDescriptions;
-	sharedWith?: graph.plannerUserIds;
+export interface plannerPlanDetails  {
+	categoryDescriptions: ComplexTypes.plannerCategoryDescriptions;
+	sharedWith: ComplexTypes.plannerUserIds;
 }
-
-/*********************************************
-* plannerPlanDetailsCollections
-**********************************************/
-export interface plannerPlanDetailsCollections {
-
-}
-
 /*********************************************
 * plannerProgressTaskBoardTaskFormat
 **********************************************/
-export interface plannerProgressTaskBoardTaskFormat {
-	orderHint?: string;
+export interface plannerProgressTaskBoardTaskFormat  {
+	orderHint: string;
 }
-
-/*********************************************
-* plannerProgressTaskBoardTaskFormatCollections
-**********************************************/
-export interface plannerProgressTaskBoardTaskFormatCollections {
-
-}
-
 /*********************************************
 * plannerTaskDetails
 **********************************************/
-export interface plannerTaskDetails {
-	checklist?: graph.plannerChecklistItems;
-	description?: string;
-	previewType?: graph.plannerPreviewType;
-	references?: graph.plannerExternalReferences;
+export interface plannerTaskDetails  {
+	checklist: ComplexTypes.plannerChecklistItems;
+	description: string;
+	previewType: EnumTypes.plannerPreviewType;
+	references: ComplexTypes.plannerExternalReferences;
 }
-
-/*********************************************
-* plannerTaskDetailsCollections
-**********************************************/
-export interface plannerTaskDetailsCollections {
-
-}
-
 /*********************************************
 * sharedInsight
 **********************************************/
-export interface sharedInsight {
-	lastShared?: graph.sharingDetail;
-	resourceReference?: graph.resourceReference;
-	resourceVisualization?: graph.resourceVisualization;
-	sharingHistory?: { results: Array<graph.sharingDetail> };
+export interface sharedInsight  {
+	lastShared: ComplexTypes.sharingDetail;
+	resourceReference: ComplexTypes.resourceReference;
+	resourceVisualization: ComplexTypes.resourceVisualization;
+	sharingHistory: ComplexTypes.sharingDetail[];
 }
-
-/*********************************************
-* sharedInsightCollections
-**********************************************/
-export interface sharedInsightCollections {
-
-}
-
 /*********************************************
 * trending
 **********************************************/
-export interface trending {
-	lastModifiedDateTime?: any;
-	resourceReference?: graph.resourceReference;
-	resourceVisualization?: graph.resourceVisualization;
-	weight?: number;
+export interface trending  {
+	lastModifiedDateTime: any;
+	resourceReference: ComplexTypes.resourceReference;
+	resourceVisualization: ComplexTypes.resourceVisualization;
+	weight: number;
 }
-
-/*********************************************
-* trendingCollections
-**********************************************/
-export interface trendingCollections {
-
-}
-
 /*********************************************
 * usedInsight
 **********************************************/
-export interface usedInsight {
-	lastUsed?: graph.usageDetails;
-	resourceReference?: graph.resourceReference;
-	resourceVisualization?: graph.resourceVisualization;
+export interface usedInsight  {
+	lastUsed: ComplexTypes.usageDetails;
+	resourceReference: ComplexTypes.resourceReference;
+	resourceVisualization: ComplexTypes.resourceVisualization;
 }
-
-/*********************************************
-* usedInsightCollections
-**********************************************/
-export interface usedInsightCollections {
-
-}
-
 /*********************************************
 * changeTrackedEntity
 **********************************************/
-export interface changeTrackedEntity {
-	createdDateTime?: any;
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
+export interface changeTrackedEntity  {
+	createdDateTime: any;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
 }
-
-/*********************************************
-* changeTrackedEntityCollections
-**********************************************/
-export interface changeTrackedEntityCollections {
-
-}
-
 /*********************************************
 * shiftPreferences
 **********************************************/
-export interface shiftPreferences {
-	availability?: { results: Array<graph.shiftAvailability> };
+export interface shiftPreferences  {
+	availability: ComplexTypes.shiftAvailability[];
 }
-
-/*********************************************
-* shiftPreferencesCollections
-**********************************************/
-export interface shiftPreferencesCollections {
-
-}
-
 /*********************************************
 * onenoteEntityBaseModel
 **********************************************/
-export interface onenoteEntityBaseModel {
-	self?: string;
+export interface onenoteEntityBaseModel  {
+	self: string;
 }
-
-/*********************************************
-* onenoteEntityBaseModelCollections
-**********************************************/
-export interface onenoteEntityBaseModelCollections {
-
-}
-
 /*********************************************
 * onenoteEntitySchemaObjectModel
 **********************************************/
-export interface onenoteEntitySchemaObjectModel {
-	createdDateTime?: any;
+export interface onenoteEntitySchemaObjectModel  {
+	createdDateTime: any;
 }
-
-/*********************************************
-* onenoteEntitySchemaObjectModelCollections
-**********************************************/
-export interface onenoteEntitySchemaObjectModelCollections {
-
-}
-
 /*********************************************
 * onenoteEntityHierarchyModel
 **********************************************/
-export interface onenoteEntityHierarchyModel {
-	createdBy?: graph.identitySet;
-	displayName?: string;
-	lastModifiedBy?: graph.identitySet;
-	lastModifiedDateTime?: any;
+export interface onenoteEntityHierarchyModel  {
+	createdBy: ComplexTypes.identitySet;
+	displayName: string;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
 }
-
-/*********************************************
-* onenoteEntityHierarchyModelCollections
-**********************************************/
-export interface onenoteEntityHierarchyModelCollections {
-
-}
-
 /*********************************************
 * notebook
 **********************************************/
-export interface notebook {
-	isDefault?: boolean;
-	isShared?: boolean;
-	links?: graph.notebookLinks;
-	sectionGroupsUrl?: string;
-	sectionsUrl?: string;
-	userRole?: graph.onenoteUserRole;
+export interface notebook  {
+	isDefault: boolean;
+	isShared: boolean;
+	links: ComplexTypes.notebookLinks;
+	sectionGroupsUrl: string;
+	sectionsUrl: string;
+	userRole: EnumTypes.onenoteUserRole;
 }
-
-/*********************************************
-* notebookCollections
-**********************************************/
-export interface notebookCollections {
-
-}
-
 /*********************************************
 * sectionGroup
 **********************************************/
-export interface sectionGroup {
-	sectionGroupsUrl?: string;
-	sectionsUrl?: string;
+export interface sectionGroup  {
+	sectionGroupsUrl: string;
+	sectionsUrl: string;
 }
-
-/*********************************************
-* sectionGroupCollections
-**********************************************/
-export interface sectionGroupCollections {
-
-}
-
 /*********************************************
 * onenoteSection
 **********************************************/
-export interface onenoteSection {
-	isDefault?: boolean;
-	links?: graph.sectionLinks;
-	pagesUrl?: string;
+export interface onenoteSection  {
+	isDefault: boolean;
+	links: ComplexTypes.sectionLinks;
+	pagesUrl: string;
 }
-
-/*********************************************
-* onenoteSectionCollections
-**********************************************/
-export interface onenoteSectionCollections {
-
-}
-
 /*********************************************
 * operation
 **********************************************/
-export interface operation {
-	createdDateTime?: any;
-	lastActionDateTime?: any;
-	status?: graph.operationStatus;
+export interface operation  {
+	createdDateTime: any;
+	lastActionDateTime: any;
+	status: EnumTypes.operationStatus;
 }
-
-/*********************************************
-* operationCollections
-**********************************************/
-export interface operationCollections {
-
-}
-
 /*********************************************
 * onenoteOperation
 **********************************************/
-export interface onenoteOperation {
-	error?: graph.onenoteOperationError;
-	percentComplete?: string;
-	resourceId?: string;
-	resourceLocation?: string;
+export interface onenoteOperation  {
+	error: ComplexTypes.onenoteOperationError;
+	percentComplete: string;
+	resourceId: string;
+	resourceLocation: string;
 }
-
-/*********************************************
-* onenoteOperationCollections
-**********************************************/
-export interface onenoteOperationCollections {
-
-}
-
 /*********************************************
 * onenotePage
 **********************************************/
-export interface onenotePage {
-	content?: any;
-	contentUrl?: string;
-	createdByAppId?: string;
-	lastModifiedDateTime?: any;
-	level?: number;
-	links?: graph.pageLinks;
-	order?: number;
-	title?: string;
-	userTags?: { results: Array<string> };
+export interface onenotePage  {
+	content: any;
+	contentUrl: string;
+	createdByAppId: string;
+	lastModifiedDateTime: any;
+	level: number;
+	links: ComplexTypes.pageLinks;
+	order: number;
+	title: string;
+	userTags: Array<string>[];
 }
-
-/*********************************************
-* onenotePageCollections
-**********************************************/
-export interface onenotePageCollections {
-
-}
-
 /*********************************************
 * onenoteResource
 **********************************************/
-export interface onenoteResource {
-	content?: any;
-	contentUrl?: string;
+export interface onenoteResource  {
+	content: any;
+	contentUrl: string;
 }
-
-/*********************************************
-* onenoteResourceCollections
-**********************************************/
-export interface onenoteResourceCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicyRule
 **********************************************/
-export interface unifiedRoleManagementPolicyRule {
-	target?: graph.unifiedRoleManagementPolicyRuleTarget;
+export interface unifiedRoleManagementPolicyRule  {
+	target: ComplexTypes.unifiedRoleManagementPolicyRuleTarget;
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyRuleCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyRuleCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicyApprovalRule
 **********************************************/
-export interface unifiedRoleManagementPolicyApprovalRule {
-	setting?: graph.approvalSettings;
+export interface unifiedRoleManagementPolicyApprovalRule  {
+	setting: ComplexTypes.approvalSettings;
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyApprovalRuleCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyApprovalRuleCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicyAuthenticationContextRule
 **********************************************/
-export interface unifiedRoleManagementPolicyAuthenticationContextRule {
-	claimValue?: string;
-	isEnabled?: boolean;
+export interface unifiedRoleManagementPolicyAuthenticationContextRule  {
+	claimValue: string;
+	isEnabled: boolean;
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyAuthenticationContextRuleCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyAuthenticationContextRuleCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicyEnablementRule
 **********************************************/
-export interface unifiedRoleManagementPolicyEnablementRule {
-	enabledRules?: { results: Array<string> };
+export interface unifiedRoleManagementPolicyEnablementRule  {
+	enabledRules: Array<string>[];
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyEnablementRuleCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyEnablementRuleCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicyExpirationRule
 **********************************************/
-export interface unifiedRoleManagementPolicyExpirationRule {
-	isExpirationRequired?: boolean;
-	maximumDuration?: number;
+export interface unifiedRoleManagementPolicyExpirationRule  {
+	isExpirationRequired: boolean;
+	maximumDuration: number;
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyExpirationRuleCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyExpirationRuleCollections {
-
-}
-
 /*********************************************
 * unifiedRoleManagementPolicyNotificationRule
 **********************************************/
-export interface unifiedRoleManagementPolicyNotificationRule {
-	isDefaultRecipientsEnabled?: boolean;
-	notificationLevel?: string;
-	notificationRecipients?: { results: Array<string> };
-	notificationType?: string;
-	recipientType?: string;
+export interface unifiedRoleManagementPolicyNotificationRule  {
+	isDefaultRecipientsEnabled: boolean;
+	notificationLevel: string;
+	notificationRecipients: Array<string>[];
+	notificationType: string;
+	recipientType: string;
 }
-
-/*********************************************
-* unifiedRoleManagementPolicyNotificationRuleCollections
-**********************************************/
-export interface unifiedRoleManagementPolicyNotificationRuleCollections {
-
-}
-
 /*********************************************
 * print
 **********************************************/
-export interface print {
-	settings?: graph.printSettings;
+export interface print  {
+	settings: ComplexTypes.printSettings;
 }
-
-/*********************************************
-* printCollections
-**********************************************/
-export interface printCollections {
-
-}
-
 /*********************************************
 * printConnector
 **********************************************/
-export interface printConnector {
-	appVersion?: string;
-	displayName?: string;
-	fullyQualifiedDomainName?: string;
-	location?: graph.printerLocation;
-	operatingSystem?: string;
-	registeredDateTime?: any;
+export interface printConnector  {
+	appVersion: string;
+	displayName: string;
+	fullyQualifiedDomainName: string;
+	location: ComplexTypes.printerLocation;
+	operatingSystem: string;
+	registeredDateTime: any;
 }
-
-/*********************************************
-* printConnectorCollections
-**********************************************/
-export interface printConnectorCollections {
-
-}
-
 /*********************************************
 * printOperation
 **********************************************/
-export interface printOperation {
-	createdDateTime?: any;
-	status?: graph.printOperationStatus;
+export interface printOperation  {
+	createdDateTime: any;
+	status: ComplexTypes.printOperationStatus;
 }
-
-/*********************************************
-* printOperationCollections
-**********************************************/
-export interface printOperationCollections {
-
-}
-
 /*********************************************
 * printerBase
 **********************************************/
-export interface printerBase {
-	capabilities?: graph.printerCapabilities;
-	defaults?: graph.printerDefaults;
-	displayName?: string;
-	isAcceptingJobs?: boolean;
-	location?: graph.printerLocation;
-	manufacturer?: string;
-	model?: string;
-	status?: graph.printerStatus;
+export interface printerBase  {
+	capabilities: ComplexTypes.printerCapabilities;
+	defaults: ComplexTypes.printerDefaults;
+	displayName: string;
+	isAcceptingJobs: boolean;
+	location: ComplexTypes.printerLocation;
+	manufacturer: string;
+	model: string;
+	status: ComplexTypes.printerStatus;
 }
-
-/*********************************************
-* printerBaseCollections
-**********************************************/
-export interface printerBaseCollections {
-
-}
-
 /*********************************************
 * printer
 **********************************************/
-export interface printer {
-	hasPhysicalDevice?: boolean;
-	isShared?: boolean;
-	lastSeenDateTime?: any;
-	registeredDateTime?: any;
+export interface printer  {
+	hasPhysicalDevice: boolean;
+	isShared: boolean;
+	lastSeenDateTime: any;
+	registeredDateTime: any;
 }
-
-/*********************************************
-* printerCollections
-**********************************************/
-export interface printerCollections {
-
-}
-
 /*********************************************
 * printService
 **********************************************/
-export interface printService {
+export interface printService  {
 
 }
-
-/*********************************************
-* printServiceCollections
-**********************************************/
-export interface printServiceCollections {
-
-}
-
 /*********************************************
 * printerShare
 **********************************************/
-export interface printerShare {
-	allowAllUsers?: boolean;
-	createdDateTime?: any;
+export interface printerShare  {
+	allowAllUsers: boolean;
+	createdDateTime: any;
 }
-
-/*********************************************
-* printerShareCollections
-**********************************************/
-export interface printerShareCollections {
-
-}
-
 /*********************************************
 * printTaskDefinition
 **********************************************/
-export interface printTaskDefinition {
-	createdBy?: graph.appIdentity;
-	displayName?: string;
+export interface printTaskDefinition  {
+	createdBy: ComplexTypes.appIdentity;
+	displayName: string;
 }
-
-/*********************************************
-* printTaskDefinitionCollections
-**********************************************/
-export interface printTaskDefinitionCollections {
-
-}
-
 /*********************************************
 * printDocument
 **********************************************/
-export interface printDocument {
-	contentType?: string;
-	displayName?: string;
-	size?: number;
+export interface printDocument  {
+	contentType: string;
+	displayName: string;
+	size: number;
 }
-
-/*********************************************
-* printDocumentCollections
-**********************************************/
-export interface printDocumentCollections {
-
-}
-
 /*********************************************
 * printTaskTrigger
 **********************************************/
-export interface printTaskTrigger {
-	event?: graph.printEvent;
+export interface printTaskTrigger  {
+	event: EnumTypes.printEvent;
 }
-
-/*********************************************
-* printTaskTriggerCollections
-**********************************************/
-export interface printTaskTriggerCollections {
-
-}
-
 /*********************************************
 * printJob
 **********************************************/
-export interface printJob {
-	configuration?: graph.printJobConfiguration;
-	createdBy?: graph.userIdentity;
-	createdDateTime?: any;
-	isFetchable?: boolean;
-	redirectedFrom?: string;
-	redirectedTo?: string;
-	status?: graph.printJobStatus;
+export interface printJob  {
+	configuration: ComplexTypes.printJobConfiguration;
+	createdBy: ComplexTypes.userIdentity;
+	createdDateTime: any;
+	isFetchable: boolean;
+	redirectedFrom: string;
+	redirectedTo: string;
+	status: ComplexTypes.printJobStatus;
 }
-
-/*********************************************
-* printJobCollections
-**********************************************/
-export interface printJobCollections {
-
-}
-
 /*********************************************
 * printerCreateOperation
 **********************************************/
-export interface printerCreateOperation {
-	certificate?: string;
+export interface printerCreateOperation  {
+	certificate: string;
 }
-
-/*********************************************
-* printerCreateOperationCollections
-**********************************************/
-export interface printerCreateOperationCollections {
-
-}
-
 /*********************************************
 * printTask
 **********************************************/
-export interface printTask {
-	parentUrl?: string;
-	status?: graph.printTaskStatus;
+export interface printTask  {
+	parentUrl: string;
+	status: ComplexTypes.printTaskStatus;
 }
-
-/*********************************************
-* printTaskCollections
-**********************************************/
-export interface printTaskCollections {
-
-}
-
 /*********************************************
 * printServiceEndpoint
 **********************************************/
-export interface printServiceEndpoint {
-	displayName?: string;
-	uri?: string;
+export interface printServiceEndpoint  {
+	displayName: string;
+	uri: string;
 }
-
-/*********************************************
-* printServiceEndpointCollections
-**********************************************/
-export interface printServiceEndpointCollections {
-
-}
-
 /*********************************************
 * activityHistoryItem
 **********************************************/
-export interface activityHistoryItem {
-	activeDurationSeconds?: number;
-	createdDateTime?: any;
-	expirationDateTime?: any;
-	lastActiveDateTime?: any;
-	lastModifiedDateTime?: any;
-	startedDateTime?: any;
-	status?: graph.status;
-	userTimezone?: string;
+export interface activityHistoryItem  {
+	activeDurationSeconds: number;
+	createdDateTime: any;
+	expirationDateTime: any;
+	lastActiveDateTime: any;
+	lastModifiedDateTime: any;
+	startedDateTime: any;
+	status: EnumTypes.status;
+	userTimezone: string;
 }
-
-/*********************************************
-* activityHistoryItemCollections
-**********************************************/
-export interface activityHistoryItemCollections {
-
-}
-
 /*********************************************
 * dataPolicyOperation
 **********************************************/
-export interface dataPolicyOperation {
-	completedDateTime?: any;
-	progress?: number;
-	status?: graph.dataPolicyOperationStatus;
-	storageLocation?: string;
-	submittedDateTime?: any;
-	userId?: string;
+export interface dataPolicyOperation  {
+	completedDateTime: any;
+	progress: number;
+	status: EnumTypes.dataPolicyOperationStatus;
+	storageLocation: string;
+	submittedDateTime: any;
+	userId: string;
 }
-
-/*********************************************
-* dataPolicyOperationCollections
-**********************************************/
-export interface dataPolicyOperationCollections {
-
-}
-
 /*********************************************
 * attendanceRecord
 **********************************************/
-export interface attendanceRecord {
-	attendanceIntervals?: { results: Array<graph.attendanceInterval> };
-	emailAddress?: string;
-	identity?: graph.identity;
-	role?: string;
-	totalAttendanceInSeconds?: number;
+export interface attendanceRecord  {
+	attendanceIntervals: ComplexTypes.attendanceInterval[];
+	emailAddress: string;
+	identity: ComplexTypes.identity;
+	role: string;
+	totalAttendanceInSeconds: number;
 }
-
-/*********************************************
-* attendanceRecordCollections
-**********************************************/
-export interface attendanceRecordCollections {
-
-}
-
 /*********************************************
 * audioRoutingGroup
 **********************************************/
-export interface audioRoutingGroup {
-	receivers?: { results: Array<string> };
-	routingMode?: graph.routingMode;
-	sources?: { results: Array<string> };
+export interface audioRoutingGroup  {
+	receivers: Array<string>[];
+	routingMode: EnumTypes.routingMode;
+	sources: Array<string>[];
 }
-
-/*********************************************
-* audioRoutingGroupCollections
-**********************************************/
-export interface audioRoutingGroupCollections {
-
-}
-
 /*********************************************
 * commsOperation
 **********************************************/
-export interface commsOperation {
-	clientContext?: string;
-	resultInfo?: graph.resultInfo;
-	status?: graph.operationStatus;
+export interface commsOperation  {
+	clientContext: string;
+	resultInfo: ComplexTypes.resultInfo;
+	status: EnumTypes.operationStatus;
 }
-
-/*********************************************
-* commsOperationCollections
-**********************************************/
-export interface commsOperationCollections {
-
-}
-
 /*********************************************
 * participant
 **********************************************/
-export interface participant {
-	info?: graph.participantInfo;
-	isInLobby?: boolean;
-	isMuted?: boolean;
-	mediaStreams?: { results: Array<graph.mediaStream> };
-	metadata?: string;
-	recordingInfo?: graph.recordingInfo;
+export interface participant  {
+	info: ComplexTypes.participantInfo;
+	isInLobby: boolean;
+	isMuted: boolean;
+	mediaStreams: ComplexTypes.mediaStream[];
+	metadata: string;
+	recordingInfo: ComplexTypes.recordingInfo;
 }
-
-/*********************************************
-* participantCollections
-**********************************************/
-export interface participantCollections {
-
-}
-
 /*********************************************
 * cancelMediaProcessingOperation
 **********************************************/
-export interface cancelMediaProcessingOperation {
+export interface cancelMediaProcessingOperation  {
 
 }
-
-/*********************************************
-* cancelMediaProcessingOperationCollections
-**********************************************/
-export interface cancelMediaProcessingOperationCollections {
-
-}
-
 /*********************************************
 * inviteParticipantsOperation
 **********************************************/
-export interface inviteParticipantsOperation {
-	participants?: { results: Array<graph.invitationParticipantInfo> };
+export interface inviteParticipantsOperation  {
+	participants: ComplexTypes.invitationParticipantInfo[];
 }
-
-/*********************************************
-* inviteParticipantsOperationCollections
-**********************************************/
-export interface inviteParticipantsOperationCollections {
-
-}
-
 /*********************************************
 * meetingAttendanceReport
 **********************************************/
-export interface meetingAttendanceReport {
-	meetingEndDateTime?: any;
-	meetingStartDateTime?: any;
-	totalParticipantCount?: number;
+export interface meetingAttendanceReport  {
+	meetingEndDateTime: any;
+	meetingStartDateTime: any;
+	totalParticipantCount: number;
 }
-
-/*********************************************
-* meetingAttendanceReportCollections
-**********************************************/
-export interface meetingAttendanceReportCollections {
-
-}
-
 /*********************************************
 * muteParticipantOperation
 **********************************************/
-export interface muteParticipantOperation {
+export interface muteParticipantOperation  {
 
 }
-
-/*********************************************
-* muteParticipantOperationCollections
-**********************************************/
-export interface muteParticipantOperationCollections {
-
-}
-
 /*********************************************
 * participantJoiningNotification
 **********************************************/
-export interface participantJoiningNotification {
+export interface participantJoiningNotification  {
 
 }
-
-/*********************************************
-* participantJoiningNotificationCollections
-**********************************************/
-export interface participantJoiningNotificationCollections {
-
-}
-
 /*********************************************
 * participantLeftNotification
 **********************************************/
-export interface participantLeftNotification {
-	participantId?: string;
+export interface participantLeftNotification  {
+	participantId: string;
 }
-
-/*********************************************
-* participantLeftNotificationCollections
-**********************************************/
-export interface participantLeftNotificationCollections {
-
-}
-
 /*********************************************
 * playPromptOperation
 **********************************************/
-export interface playPromptOperation {
+export interface playPromptOperation  {
 
 }
-
-/*********************************************
-* playPromptOperationCollections
-**********************************************/
-export interface playPromptOperationCollections {
-
-}
-
 /*********************************************
 * recordOperation
 **********************************************/
-export interface recordOperation {
-	recordingAccessToken?: string;
-	recordingLocation?: string;
+export interface recordOperation  {
+	recordingAccessToken: string;
+	recordingLocation: string;
 }
-
-/*********************************************
-* recordOperationCollections
-**********************************************/
-export interface recordOperationCollections {
-
-}
-
 /*********************************************
 * startHoldMusicOperation
 **********************************************/
-export interface startHoldMusicOperation {
+export interface startHoldMusicOperation  {
 
 }
-
-/*********************************************
-* startHoldMusicOperationCollections
-**********************************************/
-export interface startHoldMusicOperationCollections {
-
-}
-
 /*********************************************
 * stopHoldMusicOperation
 **********************************************/
-export interface stopHoldMusicOperation {
+export interface stopHoldMusicOperation  {
 
 }
-
-/*********************************************
-* stopHoldMusicOperationCollections
-**********************************************/
-export interface stopHoldMusicOperationCollections {
-
-}
-
 /*********************************************
 * subscribeToToneOperation
 **********************************************/
-export interface subscribeToToneOperation {
+export interface subscribeToToneOperation  {
 
 }
-
-/*********************************************
-* subscribeToToneOperationCollections
-**********************************************/
-export interface subscribeToToneOperationCollections {
-
-}
-
 /*********************************************
 * unmuteParticipantOperation
 **********************************************/
-export interface unmuteParticipantOperation {
+export interface unmuteParticipantOperation  {
 
 }
-
-/*********************************************
-* unmuteParticipantOperationCollections
-**********************************************/
-export interface unmuteParticipantOperationCollections {
-
-}
-
 /*********************************************
 * updateRecordingStatusOperation
 **********************************************/
-export interface updateRecordingStatusOperation {
+export interface updateRecordingStatusOperation  {
 
 }
-
-/*********************************************
-* updateRecordingStatusOperationCollections
-**********************************************/
-export interface updateRecordingStatusOperationCollections {
-
-}
-
 /*********************************************
 * authenticationMethod
 **********************************************/
-export interface authenticationMethod {
+export interface authenticationMethod  {
 
 }
-
-/*********************************************
-* authenticationMethodCollections
-**********************************************/
-export interface authenticationMethodCollections {
-
-}
-
 /*********************************************
 * emailAuthenticationMethod
 **********************************************/
-export interface emailAuthenticationMethod {
-	emailAddress?: string;
+export interface emailAuthenticationMethod  {
+	emailAddress: string;
 }
-
-/*********************************************
-* emailAuthenticationMethodCollections
-**********************************************/
-export interface emailAuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * fido2AuthenticationMethod
 **********************************************/
-export interface fido2AuthenticationMethod {
-	aaGuid?: string;
-	attestationCertificates?: { results: Array<string> };
-	attestationLevel?: graph.attestationLevel;
-	createdDateTime?: any;
-	displayName?: string;
-	model?: string;
+export interface fido2AuthenticationMethod  {
+	aaGuid: string;
+	attestationCertificates: Array<string>[];
+	attestationLevel: EnumTypes.attestationLevel;
+	createdDateTime: any;
+	displayName: string;
+	model: string;
 }
-
-/*********************************************
-* fido2AuthenticationMethodCollections
-**********************************************/
-export interface fido2AuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethod
 **********************************************/
-export interface microsoftAuthenticatorAuthenticationMethod {
-	createdDateTime?: any;
-	deviceTag?: string;
-	displayName?: string;
-	phoneAppVersion?: string;
+export interface microsoftAuthenticatorAuthenticationMethod  {
+	createdDateTime: any;
+	deviceTag: string;
+	displayName: string;
+	phoneAppVersion: string;
 }
-
-/*********************************************
-* microsoftAuthenticatorAuthenticationMethodCollections
-**********************************************/
-export interface microsoftAuthenticatorAuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * passwordAuthenticationMethod
 **********************************************/
-export interface passwordAuthenticationMethod {
-	createdDateTime?: any;
-	password?: string;
+export interface passwordAuthenticationMethod  {
+	createdDateTime: any;
+	password: string;
 }
-
-/*********************************************
-* passwordAuthenticationMethodCollections
-**********************************************/
-export interface passwordAuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * phoneAuthenticationMethod
 **********************************************/
-export interface phoneAuthenticationMethod {
-	phoneNumber?: string;
-	phoneType?: graph.authenticationPhoneType;
-	smsSignInState?: graph.authenticationMethodSignInState;
+export interface phoneAuthenticationMethod  {
+	phoneNumber: string;
+	phoneType: EnumTypes.authenticationPhoneType;
+	smsSignInState: EnumTypes.authenticationMethodSignInState;
 }
-
-/*********************************************
-* phoneAuthenticationMethodCollections
-**********************************************/
-export interface phoneAuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * softwareOathAuthenticationMethod
 **********************************************/
-export interface softwareOathAuthenticationMethod {
-	secretKey?: string;
+export interface softwareOathAuthenticationMethod  {
+	secretKey: string;
 }
-
-/*********************************************
-* softwareOathAuthenticationMethodCollections
-**********************************************/
-export interface softwareOathAuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * temporaryAccessPassAuthenticationMethod
 **********************************************/
-export interface temporaryAccessPassAuthenticationMethod {
-	createdDateTime?: any;
-	isUsable?: boolean;
-	isUsableOnce?: boolean;
-	lifetimeInMinutes?: number;
-	methodUsabilityReason?: string;
-	startDateTime?: any;
-	temporaryAccessPass?: string;
+export interface temporaryAccessPassAuthenticationMethod  {
+	createdDateTime: any;
+	isUsable: boolean;
+	isUsableOnce: boolean;
+	lifetimeInMinutes: number;
+	methodUsabilityReason: string;
+	startDateTime: any;
+	temporaryAccessPass: string;
 }
-
-/*********************************************
-* temporaryAccessPassAuthenticationMethodCollections
-**********************************************/
-export interface temporaryAccessPassAuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * windowsHelloForBusinessAuthenticationMethod
 **********************************************/
-export interface windowsHelloForBusinessAuthenticationMethod {
-	createdDateTime?: any;
-	displayName?: string;
-	keyStrength?: graph.authenticationMethodKeyStrength;
+export interface windowsHelloForBusinessAuthenticationMethod  {
+	createdDateTime: any;
+	displayName: string;
+	keyStrength: EnumTypes.authenticationMethodKeyStrength;
 }
-
-/*********************************************
-* windowsHelloForBusinessAuthenticationMethodCollections
-**********************************************/
-export interface windowsHelloForBusinessAuthenticationMethodCollections {
-
-}
-
 /*********************************************
 * aadUserConversationMember
 **********************************************/
-export interface aadUserConversationMember {
-	email?: string;
-	tenantId?: string;
-	userId?: string;
+export interface aadUserConversationMember  {
+	email: string;
+	tenantId: string;
+	userId: string;
 }
-
-/*********************************************
-* aadUserConversationMemberCollections
-**********************************************/
-export interface aadUserConversationMemberCollections {
-
-}
-
 /*********************************************
 * appCatalogs
 **********************************************/
-export interface appCatalogs {
+export interface appCatalogs  {
 
 }
-
-/*********************************************
-* appCatalogsCollections
-**********************************************/
-export interface appCatalogsCollections {
-
-}
-
 /*********************************************
 * teamsApp
 **********************************************/
-export interface teamsApp {
-	displayName?: string;
-	distributionMethod?: graph.teamsAppDistributionMethod;
-	externalId?: string;
+export interface teamsApp  {
+	displayName: string;
+	distributionMethod: EnumTypes.teamsAppDistributionMethod;
+	externalId: string;
 }
-
-/*********************************************
-* teamsAppCollections
-**********************************************/
-export interface teamsAppCollections {
-
-}
-
 /*********************************************
 * teamInfo
 **********************************************/
-export interface teamInfo {
-	displayName?: string;
-	tenantId?: string;
+export interface teamInfo  {
+	displayName: string;
+	tenantId: string;
 }
-
-/*********************************************
-* teamInfoCollections
-**********************************************/
-export interface teamInfoCollections {
-
-}
-
 /*********************************************
 * associatedTeamInfo
 **********************************************/
-export interface associatedTeamInfo {
+export interface associatedTeamInfo  {
 
 }
-
-/*********************************************
-* associatedTeamInfoCollections
-**********************************************/
-export interface associatedTeamInfoCollections {
-
-}
-
 /*********************************************
 * chatMessage
 **********************************************/
-export interface chatMessage {
-	attachments?: { results: Array<graph.chatMessageAttachment> };
-	body?: graph.itemBody;
-	channelIdentity?: graph.channelIdentity;
-	chatId?: string;
-	createdDateTime?: any;
-	deletedDateTime?: any;
-	etag?: string;
-	eventDetail?: graph.eventMessageDetail;
-	from?: graph.chatMessageFromIdentitySet;
-	importance?: graph.chatMessageImportance;
-	lastEditedDateTime?: any;
-	lastModifiedDateTime?: any;
-	locale?: string;
-	mentions?: { results: Array<graph.chatMessageMention> };
-	messageType?: graph.chatMessageType;
-	policyViolation?: graph.chatMessagePolicyViolation;
-	reactions?: { results: Array<graph.chatMessageReaction> };
-	replyToId?: string;
-	subject?: string;
-	summary?: string;
-	webUrl?: string;
+export interface chatMessage  {
+	attachments: ComplexTypes.chatMessageAttachment[];
+	body: ComplexTypes.itemBody;
+	channelIdentity: ComplexTypes.channelIdentity;
+	chatId: string;
+	createdDateTime: any;
+	deletedDateTime: any;
+	etag: string;
+	eventDetail: ComplexTypes.eventMessageDetail;
+	from: ComplexTypes.chatMessageFromIdentitySet;
+	importance: EnumTypes.chatMessageImportance;
+	lastEditedDateTime: any;
+	lastModifiedDateTime: any;
+	locale: string;
+	mentions: ComplexTypes.chatMessageMention[];
+	messageType: EnumTypes.chatMessageType;
+	policyViolation: ComplexTypes.chatMessagePolicyViolation;
+	reactions: ComplexTypes.chatMessageReaction[];
+	replyToId: string;
+	subject: string;
+	summary: string;
+	webUrl: string;
 }
-
-/*********************************************
-* chatMessageCollections
-**********************************************/
-export interface chatMessageCollections {
-
-}
-
 /*********************************************
 * sharedWithChannelTeamInfo
 **********************************************/
-export interface sharedWithChannelTeamInfo {
-	isHostTeam?: boolean;
+export interface sharedWithChannelTeamInfo  {
+	isHostTeam: boolean;
 }
-
-/*********************************************
-* sharedWithChannelTeamInfoCollections
-**********************************************/
-export interface sharedWithChannelTeamInfoCollections {
-
-}
-
 /*********************************************
 * teamsTab
 **********************************************/
-export interface teamsTab {
-	configuration?: graph.teamsTabConfiguration;
-	displayName?: string;
-	webUrl?: string;
+export interface teamsTab  {
+	configuration: ComplexTypes.teamsTabConfiguration;
+	displayName: string;
+	webUrl: string;
 }
-
-/*********************************************
-* teamsTabCollections
-**********************************************/
-export interface teamsTabCollections {
-
-}
-
 /*********************************************
 * teamworkHostedContent
 **********************************************/
-export interface teamworkHostedContent {
-	contentBytes?: any;
-	contentType?: string;
+export interface teamworkHostedContent  {
+	contentBytes: any;
+	contentType: string;
 }
-
-/*********************************************
-* teamworkHostedContentCollections
-**********************************************/
-export interface teamworkHostedContentCollections {
-
-}
-
 /*********************************************
 * chatMessageHostedContent
 **********************************************/
-export interface chatMessageHostedContent {
+export interface chatMessageHostedContent  {
 
 }
-
-/*********************************************
-* chatMessageHostedContentCollections
-**********************************************/
-export interface chatMessageHostedContentCollections {
-
-}
-
 /*********************************************
 * teamsAppDefinition
 **********************************************/
-export interface teamsAppDefinition {
-	createdBy?: graph.identitySet;
-	description?: string;
-	displayName?: string;
-	lastModifiedDateTime?: any;
-	publishingState?: graph.teamsAppPublishingState;
-	shortDescription?: string;
-	teamsAppId?: string;
-	version?: string;
+export interface teamsAppDefinition  {
+	createdBy: ComplexTypes.identitySet;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+	publishingState: EnumTypes.teamsAppPublishingState;
+	shortDescription: string;
+	teamsAppId: string;
+	version: string;
 }
-
-/*********************************************
-* teamsAppDefinitionCollections
-**********************************************/
-export interface teamsAppDefinitionCollections {
-
-}
-
 /*********************************************
 * teamworkBot
 **********************************************/
-export interface teamworkBot {
+export interface teamworkBot  {
 
 }
-
-/*********************************************
-* teamworkBotCollections
-**********************************************/
-export interface teamworkBotCollections {
-
-}
-
 /*********************************************
 * teamwork
 **********************************************/
-export interface teamwork {
+export interface teamwork  {
 
 }
-
-/*********************************************
-* teamworkCollections
-**********************************************/
-export interface teamworkCollections {
-
-}
-
 /*********************************************
 * workforceIntegration
 **********************************************/
-export interface workforceIntegration {
-	apiVersion?: number;
-	displayName?: string;
-	encryption?: graph.workforceIntegrationEncryption;
-	isActive?: boolean;
-	supportedEntities?: graph.workforceIntegrationSupportedEntities;
-	url?: string;
+export interface workforceIntegration  {
+	apiVersion: number;
+	displayName: string;
+	encryption: ComplexTypes.workforceIntegrationEncryption;
+	isActive: boolean;
+	supportedEntities: EnumTypes.workforceIntegrationSupportedEntities;
+	url: string;
 }
-
-/*********************************************
-* workforceIntegrationCollections
-**********************************************/
-export interface workforceIntegrationCollections {
-
-}
-
 /*********************************************
 * userScopeTeamsAppInstallation
 **********************************************/
-export interface userScopeTeamsAppInstallation {
+export interface userScopeTeamsAppInstallation  {
 
 }
-
-/*********************************************
-* userScopeTeamsAppInstallationCollections
-**********************************************/
-export interface userScopeTeamsAppInstallationCollections {
-
-}
-
 /*********************************************
 * scheduleChangeRequest
 **********************************************/
-export interface scheduleChangeRequest {
-	assignedTo?: graph.scheduleChangeRequestActor;
-	managerActionDateTime?: any;
-	managerActionMessage?: string;
-	managerUserId?: string;
-	senderDateTime?: any;
-	senderMessage?: string;
-	senderUserId?: string;
-	state?: graph.scheduleChangeState;
+export interface scheduleChangeRequest  {
+	assignedTo: EnumTypes.scheduleChangeRequestActor;
+	managerActionDateTime: any;
+	managerActionMessage: string;
+	managerUserId: string;
+	senderDateTime: any;
+	senderMessage: string;
+	senderUserId: string;
+	state: EnumTypes.scheduleChangeState;
 }
-
-/*********************************************
-* scheduleChangeRequestCollections
-**********************************************/
-export interface scheduleChangeRequestCollections {
-
-}
-
 /*********************************************
 * offerShiftRequest
 **********************************************/
-export interface offerShiftRequest {
-	recipientActionDateTime?: any;
-	recipientActionMessage?: string;
-	recipientUserId?: string;
-	senderShiftId?: string;
+export interface offerShiftRequest  {
+	recipientActionDateTime: any;
+	recipientActionMessage: string;
+	recipientUserId: string;
+	senderShiftId: string;
 }
-
-/*********************************************
-* offerShiftRequestCollections
-**********************************************/
-export interface offerShiftRequestCollections {
-
-}
-
 /*********************************************
 * openShift
 **********************************************/
-export interface openShift {
-	draftOpenShift?: graph.openShiftItem;
-	schedulingGroupId?: string;
-	sharedOpenShift?: graph.openShiftItem;
+export interface openShift  {
+	draftOpenShift: ComplexTypes.openShiftItem;
+	schedulingGroupId: string;
+	sharedOpenShift: ComplexTypes.openShiftItem;
 }
-
-/*********************************************
-* openShiftCollections
-**********************************************/
-export interface openShiftCollections {
-
-}
-
 /*********************************************
 * openShiftChangeRequest
 **********************************************/
-export interface openShiftChangeRequest {
-	openShiftId?: string;
+export interface openShiftChangeRequest  {
+	openShiftId: string;
 }
-
-/*********************************************
-* openShiftChangeRequestCollections
-**********************************************/
-export interface openShiftChangeRequestCollections {
-
-}
-
 /*********************************************
 * schedulingGroup
 **********************************************/
-export interface schedulingGroup {
-	displayName?: string;
-	isActive?: boolean;
-	userIds?: { results: Array<string> };
+export interface schedulingGroup  {
+	displayName: string;
+	isActive: boolean;
+	userIds: Array<string>[];
 }
-
-/*********************************************
-* schedulingGroupCollections
-**********************************************/
-export interface schedulingGroupCollections {
-
-}
-
 /*********************************************
 * shift
 **********************************************/
-export interface shift {
-	draftShift?: graph.shiftItem;
-	schedulingGroupId?: string;
-	sharedShift?: graph.shiftItem;
-	userId?: string;
+export interface shift  {
+	draftShift: ComplexTypes.shiftItem;
+	schedulingGroupId: string;
+	sharedShift: ComplexTypes.shiftItem;
+	userId: string;
 }
-
-/*********************************************
-* shiftCollections
-**********************************************/
-export interface shiftCollections {
-
-}
-
 /*********************************************
 * swapShiftsChangeRequest
 **********************************************/
-export interface swapShiftsChangeRequest {
-	recipientShiftId?: string;
+export interface swapShiftsChangeRequest  {
+	recipientShiftId: string;
 }
-
-/*********************************************
-* swapShiftsChangeRequestCollections
-**********************************************/
-export interface swapShiftsChangeRequestCollections {
-
-}
-
 /*********************************************
 * timeOffReason
 **********************************************/
-export interface timeOffReason {
-	displayName?: string;
-	iconType?: graph.timeOffReasonIconType;
-	isActive?: boolean;
+export interface timeOffReason  {
+	displayName: string;
+	iconType: EnumTypes.timeOffReasonIconType;
+	isActive: boolean;
 }
-
-/*********************************************
-* timeOffReasonCollections
-**********************************************/
-export interface timeOffReasonCollections {
-
-}
-
 /*********************************************
 * timeOffRequest
 **********************************************/
-export interface timeOffRequest {
-	endDateTime?: any;
-	startDateTime?: any;
-	timeOffReasonId?: string;
+export interface timeOffRequest  {
+	endDateTime: any;
+	startDateTime: any;
+	timeOffReasonId: string;
 }
-
-/*********************************************
-* timeOffRequestCollections
-**********************************************/
-export interface timeOffRequestCollections {
-
-}
-
 /*********************************************
 * timeOff
 **********************************************/
-export interface timeOff {
-	draftTimeOff?: graph.timeOffItem;
-	sharedTimeOff?: graph.timeOffItem;
-	userId?: string;
+export interface timeOff  {
+	draftTimeOff: ComplexTypes.timeOffItem;
+	sharedTimeOff: ComplexTypes.timeOffItem;
+	userId: string;
 }
-
-/*********************************************
-* timeOffCollections
-**********************************************/
-export interface timeOffCollections {
-
-}
-
 /*********************************************
 * emailFileAssessmentRequest
 **********************************************/
-export interface emailFileAssessmentRequest {
-	contentData?: string;
-	destinationRoutingReason?: graph.mailDestinationRoutingReason;
-	recipientEmail?: string;
+export interface emailFileAssessmentRequest  {
+	contentData: string;
+	destinationRoutingReason: EnumTypes.mailDestinationRoutingReason;
+	recipientEmail: string;
 }
-
-/*********************************************
-* emailFileAssessmentRequestCollections
-**********************************************/
-export interface emailFileAssessmentRequestCollections {
-
-}
-
 /*********************************************
 * fileAssessmentRequest
 **********************************************/
-export interface fileAssessmentRequest {
-	contentData?: string;
-	fileName?: string;
+export interface fileAssessmentRequest  {
+	contentData: string;
+	fileName: string;
 }
-
-/*********************************************
-* fileAssessmentRequestCollections
-**********************************************/
-export interface fileAssessmentRequestCollections {
-
-}
-
 /*********************************************
 * mailAssessmentRequest
 **********************************************/
-export interface mailAssessmentRequest {
-	destinationRoutingReason?: graph.mailDestinationRoutingReason;
-	messageUri?: string;
-	recipientEmail?: string;
+export interface mailAssessmentRequest  {
+	destinationRoutingReason: EnumTypes.mailDestinationRoutingReason;
+	messageUri: string;
+	recipientEmail: string;
 }
-
-/*********************************************
-* mailAssessmentRequestCollections
-**********************************************/
-export interface mailAssessmentRequestCollections {
-
-}
-
 /*********************************************
 * threatAssessmentResult
 **********************************************/
-export interface threatAssessmentResult {
-	createdDateTime?: any;
-	message?: string;
-	resultType?: graph.threatAssessmentResultType;
+export interface threatAssessmentResult  {
+	createdDateTime: any;
+	message: string;
+	resultType: EnumTypes.threatAssessmentResultType;
 }
-
-/*********************************************
-* threatAssessmentResultCollections
-**********************************************/
-export interface threatAssessmentResultCollections {
-
-}
-
 /*********************************************
 * urlAssessmentRequest
 **********************************************/
-export interface urlAssessmentRequest {
-	url?: string;
+export interface urlAssessmentRequest  {
+	url: string;
 }
-
-/*********************************************
-* urlAssessmentRequestCollections
-**********************************************/
-export interface urlAssessmentRequestCollections {
-
-}
-
 /*********************************************
 * attachmentBase
 **********************************************/
-export interface attachmentBase {
-	contentType?: string;
-	lastModifiedDateTime?: any;
-	name?: string;
-	size?: number;
+export interface attachmentBase  {
+	contentType: string;
+	lastModifiedDateTime: any;
+	name: string;
+	size: number;
 }
-
-/*********************************************
-* attachmentBaseCollections
-**********************************************/
-export interface attachmentBaseCollections {
-
-}
-
 /*********************************************
 * attachmentSession
 **********************************************/
-export interface attachmentSession {
-	content?: any;
-	expirationDateTime?: any;
-	nextExpectedRanges?: { results: Array<string> };
+export interface attachmentSession  {
+	content: any;
+	expirationDateTime: any;
+	nextExpectedRanges: Array<string>[];
 }
-
-/*********************************************
-* attachmentSessionCollections
-**********************************************/
-export interface attachmentSessionCollections {
-
-}
-
 /*********************************************
 * checklistItem
 **********************************************/
-export interface checklistItem {
-	checkedDateTime?: any;
-	createdDateTime?: any;
-	displayName?: string;
-	isChecked?: boolean;
+export interface checklistItem  {
+	checkedDateTime: any;
+	createdDateTime: any;
+	displayName: string;
+	isChecked: boolean;
 }
-
-/*********************************************
-* checklistItemCollections
-**********************************************/
-export interface checklistItemCollections {
-
-}
-
 /*********************************************
 * linkedResource
 **********************************************/
-export interface linkedResource {
-	applicationName?: string;
-	displayName?: string;
-	externalId?: string;
-	webUrl?: string;
+export interface linkedResource  {
+	applicationName: string;
+	displayName: string;
+	externalId: string;
+	webUrl: string;
 }
-
-/*********************************************
-* linkedResourceCollections
-**********************************************/
-export interface linkedResourceCollections {
-
-}
-
 /*********************************************
 * taskFileAttachment
 **********************************************/
-export interface taskFileAttachment {
-	contentBytes?: any;
+export interface taskFileAttachment  {
+	contentBytes: any;
 }
-
-/*********************************************
-* taskFileAttachmentCollections
-**********************************************/
-export interface taskFileAttachmentCollections {
-
-}
-
 /*********************************************
 * todoTaskList
 **********************************************/
-export interface todoTaskList {
-	displayName?: string;
-	isOwner?: boolean;
-	isShared?: boolean;
-	wellknownListName?: graph.wellknownListName;
+export interface todoTaskList  {
+	displayName: string;
+	isOwner: boolean;
+	isShared: boolean;
+	wellknownListName: EnumTypes.wellknownListName;
 }
-
-/*********************************************
-* todoTaskListCollections
-**********************************************/
-export interface todoTaskListCollections {
-
-}
-
 /*********************************************
 * todoTask
 **********************************************/
-export interface todoTask {
-	body?: graph.itemBody;
-	bodyLastModifiedDateTime?: any;
-	categories?: { results: Array<string> };
-	completedDateTime?: graph.dateTimeTimeZone;
-	createdDateTime?: any;
-	dueDateTime?: graph.dateTimeTimeZone;
-	hasAttachments?: boolean;
-	importance?: graph.importance;
-	isReminderOn?: boolean;
-	lastModifiedDateTime?: any;
-	recurrence?: graph.patternedRecurrence;
-	reminderDateTime?: graph.dateTimeTimeZone;
-	startDateTime?: graph.dateTimeTimeZone;
-	status?: graph.taskStatus;
-	title?: string;
+export interface todoTask  {
+	body: ComplexTypes.itemBody;
+	bodyLastModifiedDateTime: any;
+	categories: Array<string>[];
+	completedDateTime: ComplexTypes.dateTimeTimeZone;
+	createdDateTime: any;
+	dueDateTime: ComplexTypes.dateTimeTimeZone;
+	hasAttachments: boolean;
+	importance: EnumTypes.importance;
+	isReminderOn: boolean;
+	lastModifiedDateTime: any;
+	recurrence: ComplexTypes.patternedRecurrence;
+	reminderDateTime: ComplexTypes.dateTimeTimeZone;
+	startDateTime: ComplexTypes.dateTimeTimeZone;
+	status: EnumTypes.taskStatus;
+	title: string;
 }
-
 /*********************************************
-* todoTaskCollections
+* casesRoot
 **********************************************/
-export interface todoTaskCollections {
+export interface casesRoot  {
 
+}
+/*********************************************
+* _case
+**********************************************/
+export interface _case  {
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
+	status: EnumTypes.caseStatus;
+}
+/*********************************************
+* caseOperation
+**********************************************/
+export interface caseOperation  {
+	action: EnumTypes.caseAction;
+	completedDateTime: any;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	percentProgress: number;
+	resultInfo: ComplexTypes.resultInfo;
+	status: EnumTypes.caseOperationStatus;
+}
+/*********************************************
+* ediscoveryCase
+**********************************************/
+export interface ediscoveryCase  {
+	closedBy: ComplexTypes.identitySet;
+	closedDateTime: any;
+	externalId: string;
+}
+/*********************************************
+* dataSet
+**********************************************/
+export interface dataSet  {
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	displayName: string;
+}
+/*********************************************
+* dataSource
+**********************************************/
+export interface dataSource  {
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	displayName: string;
+	holdStatus: EnumTypes.dataSourceHoldStatus;
+}
+/*********************************************
+* dataSourceContainer
+**********************************************/
+export interface dataSourceContainer  {
+	createdDateTime: any;
+	displayName: string;
+	holdStatus: EnumTypes.dataSourceHoldStatus;
+	lastModifiedDateTime: any;
+	releasedDateTime: any;
+	status: EnumTypes.dataSourceContainerStatus;
+}
+/*********************************************
+* ediscoveryAddToReviewSetOperation
+**********************************************/
+export interface ediscoveryAddToReviewSetOperation  {
+
+}
+/*********************************************
+* ediscoveryReviewSet
+**********************************************/
+export interface ediscoveryReviewSet  {
+
+}
+/*********************************************
+* search
+**********************************************/
+export interface search  {
+	contentQuery: string;
+	createdBy: ComplexTypes.identitySet;
+	createdDateTime: any;
+	description: string;
+	displayName: string;
+	lastModifiedBy: ComplexTypes.identitySet;
+	lastModifiedDateTime: any;
+}
+/*********************************************
+* ediscoverySearch
+**********************************************/
+export interface ediscoverySearch  {
+	dataSourceScopes: EnumTypes.dataSourceScopes;
+}
+/*********************************************
+* ediscoveryCustodian
+**********************************************/
+export interface ediscoveryCustodian  {
+	acknowledgedDateTime: any;
+	email: string;
+}
+/*********************************************
+* ediscoveryNoncustodialDataSource
+**********************************************/
+export interface ediscoveryNoncustodialDataSource  {
+
+}
+/*********************************************
+* ediscoveryCaseSettings
+**********************************************/
+export interface ediscoveryCaseSettings  {
+	ocr: ComplexTypes.ocrSettings;
+	redundancyDetection: ComplexTypes.redundancyDetectionSettings;
+	topicModeling: ComplexTypes.topicModelingSettings;
+}
+/*********************************************
+* tag
+**********************************************/
+export interface tag  {
+	createdBy: ComplexTypes.identitySet;
+	description: string;
+	displayName: string;
+	lastModifiedDateTime: any;
+}
+/*********************************************
+* ediscoveryReviewTag
+**********************************************/
+export interface ediscoveryReviewTag  {
+	childSelectability: EnumTypes.childSelectability;
+}
+/*********************************************
+* ediscoveryIndexOperation
+**********************************************/
+export interface ediscoveryIndexOperation  {
+
+}
+/*********************************************
+* siteSource
+**********************************************/
+export interface siteSource  {
+
+}
+/*********************************************
+* unifiedGroupSource
+**********************************************/
+export interface unifiedGroupSource  {
+	includedSources: EnumTypes.sourceType;
+}
+/*********************************************
+* userSource
+**********************************************/
+export interface userSource  {
+	email: string;
+	includedSources: EnumTypes.sourceType;
+	siteWebUrl: string;
+}
+/*********************************************
+* ediscoveryEstimateOperation
+**********************************************/
+export interface ediscoveryEstimateOperation  {
+	indexedItemCount: number;
+	indexedItemsSize: number;
+	mailboxCount: number;
+	siteCount: number;
+	unindexedItemCount: number;
+	unindexedItemsSize: number;
+}
+/*********************************************
+* ediscoveryHoldOperation
+**********************************************/
+export interface ediscoveryHoldOperation  {
+
+}
+/*********************************************
+* ediscoveryReviewSetQuery
+**********************************************/
+export interface ediscoveryReviewSetQuery  {
+
+}
+/*********************************************
+* ediscoveryTagOperation
+**********************************************/
+export interface ediscoveryTagOperation  {
+
+}
+/*********************************************
+* store
+**********************************************/
+export interface store  {
+	defaultLanguageTag: string;
+	languageTags: Array<string>[];
+}
+/*********************************************
+* set
+**********************************************/
+export interface set  {
+	createdDateTime: any;
+	description: string;
+	localizedNames: ComplexTypes.localizedName[];
+	properties: ComplexTypes.keyValue[];
+}
+/*********************************************
+* relation
+**********************************************/
+export interface relation  {
+	relationship: EnumTypes.relationType;
+}
+/*********************************************
+* term
+**********************************************/
+export interface term  {
+	createdDateTime: any;
+	descriptions: ComplexTypes.localizedDescription[];
+	labels: ComplexTypes.localizedLabel[];
+	lastModifiedDateTime: any;
+	properties: ComplexTypes.keyValue[];
+}
+/*********************************************
+* callRecord
+**********************************************/
+export interface callRecord  {
+	endDateTime: any;
+	joinWebUrl: string;
+	lastModifiedDateTime: any;
+	modalities: EnumTypes.modality[];
+	organizer: ComplexTypes.identitySet;
+	participants: ComplexTypes.identitySet[];
+	startDateTime: any;
+	type: EnumTypes.callType;
+	version: number;
+}
+/*********************************************
+* session
+**********************************************/
+export interface session  {
+	callee: ComplexTypes.endpoint;
+	caller: ComplexTypes.endpoint;
+	endDateTime: any;
+	failureInfo: ComplexTypes.failureInfo;
+	modalities: EnumTypes.modality[];
+	startDateTime: any;
+}
+/*********************************************
+* segment
+**********************************************/
+export interface segment  {
+	callee: ComplexTypes.endpoint;
+	caller: ComplexTypes.endpoint;
+	endDateTime: any;
+	failureInfo: ComplexTypes.failureInfo;
+	media: ComplexTypes.media[];
+	startDateTime: any;
+}
+/*********************************************
+* connectionOperation
+**********************************************/
+export interface connectionOperation  {
+	error: ComplexTypes.publicError;
+	status: EnumTypes.connectionOperationStatus;
+}
+/*********************************************
+* external
+**********************************************/
+export interface external  {
+
+}
+/*********************************************
+* externalConnection
+**********************************************/
+export interface externalConnection  {
+	configuration: ComplexTypes.configuration;
+	description: string;
+	name: string;
+	state: EnumTypes.connectionState;
+}
+/*********************************************
+* externalGroup
+**********************************************/
+export interface externalGroup  {
+	description: string;
+	displayName: string;
+}
+/*********************************************
+* externalItem
+**********************************************/
+export interface externalItem  {
+	acl: ComplexTypes.acl[];
+	content: ComplexTypes.externalItemContent;
+	properties: ComplexTypes.properties;
+}
+/*********************************************
+* schema
+**********************************************/
+export interface schema  {
+	baseType: string;
+	properties: ComplexTypes.property[];
+}
+/*********************************************
+* identity
+**********************************************/
+export interface identity  {
+	type: EnumTypes.identityType;
 }

@@ -229,6 +229,12 @@ function getType(type = "any", enumInterfaces) {
         if (enumInterfaces[typeName]) {
             return "microsoft.graph." + typeName;
         }
+    } else if (type.indexOf("graph.") >= 0) {
+        let typeInfo = type.split('.');
+        let typeName = typeInfo[typeInfo.length - 1];
+        if (enumInterfaces[typeName]) {
+            return "graph." + typeName;
+        }
     }
 
     // Return the type
@@ -238,6 +244,7 @@ function getType(type = "any", enumInterfaces) {
         .replace(/Edm\.Byte/, 'any')
         .replace(/Edm\.DateTimeOffset/, 'any')
         .replace(/Edm\.DateTime/, 'any')
+        .replace(/Edm\.Date/, 'any')
         .replace(/Edm\.Decimal/, 'number')
         .replace(/Edm\.Double/, 'number')
         .replace(/Edm\.Duration/, 'number')
@@ -248,6 +255,7 @@ function getType(type = "any", enumInterfaces) {
         .replace(/Edm\.Single/, 'any')
         .replace(/Edm\.Stream/, 'any')
         .replace(/Edm\.String/, 'string')
+        .replace(/Edm\.TimeOfDay/, 'any')
         .replace(/Edm\.Time/, 'any')
         .replace(/^Collection\(/, 'Array<')
         .replace(/\)$/, '>');
@@ -279,26 +287,18 @@ function updateReferences(fileImports, dirName, type) {
     }
 }
 
-// Process the metadata
-function processMetadata(schemas) {
-    let directories = {};
+// Process the Graph metadata
+function processGraph(schemas) {
+    let complexTypes = {};
+    let endPoints = {};
     let enums = {};
     let enumInterfaces = {};
-    let methods = {};
-    let methodTypes = {};
+    let entities = {};
+    let graphEndPoints = {};
 
     // Parse the schemas
     for (let i = 0; i < schemas.length; i++) {
         let schema = schemas[i];
-        let isGraph = (schema.$ ? schema.$.Alias : null) == "graph";
-
-        // Ensure a namespace name exists
-        let ns = schema.$ ? schema.$.Namespace : null;
-        if (ns) {
-            // Set the directory name
-            directories[ns] = directories[ns] || {};
-            directories[ns]._api = [];
-        } else { continue; }
 
         // Parse the schema
         for (let key in schema) {
@@ -307,11 +307,20 @@ function processMetadata(schemas) {
             // Skip the attributes
             if (key == "$") { continue; }
 
+            // See if it's an
+            if (key == "Annotations") {
+                // Parse the annotations
+                for (let annotation of value) {
+                }
+
+                // Continue
+                continue;
+            }
+
             // See if it's an enumerator
             if (key == "EnumType") {
                 // Parse the enums
-                for (let j = 0; j < value.length; j++) {
-                    let enumInfo = value[j];
+                for (let enumInfo of value) {
                     let name = enumInfo.$.Name;
 
                     // Add the interface and enum
@@ -319,9 +328,7 @@ function processMetadata(schemas) {
                     let enumDef = "/** " + name + " types */\nexport const " + name + ": GraphTypes." + name + " = {\n";
 
                     // Parse the members
-                    for (let k = 0; k < enumInfo.Member.length; k++) {
-                        let member = enumInfo.Member[k];
-
+                    for (let member of enumInfo.Member) {
                         // Add the member
                         enumInterface += "\t" + member.$.Name + ": " + member.$.Value + ";\n"
                         enumDef += "\t" + member.$.Name + ": " + member.$.Value + ",\n"
@@ -339,6 +346,312 @@ function processMetadata(schemas) {
                 // Continue
                 continue;
             }
+
+            // See if this is a complex type
+            if (key == "ComplexType") {
+                // Parse the values
+                for (let complexType of value) {
+                    let name = complexType.$.Name;
+                    let returnType = complexType.BaseType;
+
+                    // Parse the properties
+                    let props = [];
+                    let complexTypesProps = complexType.Property || [];
+                    for (let prop of complexTypesProps) {
+                        // Add the property
+                        props.push({ name: prop.$.Name, returnType: prop.$.Type, nullable: prop.$.Nullable });
+                    }
+
+                    // Add the entity type
+                    complexTypes[name] = { name, returnType, props };
+                }
+            }
+
+            // See if this is an entity type
+            if (key == "EntityType") {
+                // Parse the values
+                for (let entityType of value) {
+                    let name = entityType.$.Name;
+                    let returnType = entityType.BaseType;
+
+                    // Parse the properties
+                    let props = [];
+                    let entityProps = entityType.Property || [];
+                    for (let prop of entityProps) {
+                        // Add the property
+                        props.push({ name: prop.$.Name, returnType: prop.$.Type, nullable: prop.$.Nullable });
+                    }
+
+                    // Add the entity type
+                    entities[name] = { name, returnType, props };
+                }
+
+                // Continue
+                continue;
+            }
+
+            // See if this is an entity container
+            if (key == "EntityContainer") {
+                // Parse the values
+                for (let val of value) {
+                    // Parse the entity types
+                    let entitySets = val.EntitySet || [];
+                    for (let i = 0; i < entitySets.length; i++) {
+                        let entitySet = entitySets[i];
+                        let name = entitySet.$.Name;
+                        let returnType = entitySet.$.EntityType;
+
+                        // Parse the methods
+                        let methods = [];
+                        let subMethods = entitySet.NavigationPropertyBinding || [];
+                        for (let subMethod of subMethods) {
+                            // Set the method name
+                            let name = subMethod.$.Path;
+                            let nameInfo = name.split('/');
+                            if (nameInfo.length > 1) {
+                                name = nameInfo[nameInfo.length - 1];
+                            }
+
+                            // Set the return type
+                            let returnType = subMethod.$.Target;
+                            let returnTypeInfo = returnType.split('/');
+                            if (returnTypeInfo.length > 1) {
+                                returnType = returnTypeInfo[returnTypeInfo.length - 1];
+                            }
+
+
+                            // Add the method
+                            methods.push({ name, returnType });
+                        }
+
+                        // Add the endpoint
+                        endPoints[name] = { name: name, returnType, methods };
+                    }
+
+                    // Parse the singletons
+                    let singletons = val.Singleton || [];
+                    for (let singleton of singletons) {
+                        let name = singleton.$.Name;
+                        let returnType = singleton.$.Type;
+
+                        // Parse the methods
+                        let methods = [];
+                        let subMethods = singleton.NavigationPropertyBinding || [];
+                        for (let subMethod of subMethods) {
+                            // Set the method name
+                            let name = subMethod.$.Path;
+                            let nameInfo = name.split('/');
+                            if (nameInfo.length > 1) {
+                                name = nameInfo[nameInfo.length - 1];
+                            }
+
+                            // Set the return type
+                            let returnType = subMethod.$.Target;
+                            let returnTypeInfo = returnType.split('/');
+                            if (returnTypeInfo.length > 1) {
+                                returnType = returnTypeInfo[returnTypeInfo.length - 1];
+                            }
+
+
+                            // Add the method
+                            methods.push({ name, returnType });
+                        }
+
+                        // Add the endpoint
+                        graphEndPoints[name] = { name, returnType, methods };
+
+                        // Continue
+                        continue;
+                    }
+                }
+
+                // Continue
+                continue;
+            }
+        }
+    }
+
+    // Method to get the type
+    let getGraphType = (returnType = "") => {
+        // See if the return type is in not an Edm
+        if (returnType.indexOf("graph." == 0)) {
+            // Set the return type information
+            let isCollection = returnType.indexOf("Collection(") == 0;
+            let info = (isCollection ? returnType.replace("Collection(", "").replace(")", "") : returnType).split('.');
+
+            // See if this is a collection using "s" at the end
+            let name = info[info.length - 1];
+            let name2 = null;
+            if (!isCollection && name[name.length - 1] == "s") {
+                // Set the name
+                name2 = name.substring(name.length - 1);
+            }
+
+            // See if it's a complex type
+            if (complexTypes[name]) {
+                // Set the return type
+                returnType = "ComplexTypes." + name;
+            } else if (complexTypes[name2]) {
+                // Set the return type
+                returnType = "ComplexTypes." + name2 + "[]";
+            }
+            // Else, see if it's an entity
+            else if (entities[name]) {
+                // Set the return type
+                returnType = "EntityTypes." + name;
+            }
+            // Else, see if it's an entity
+            else if (entities[name2]) {
+                // Set the return type
+                returnType = "EntityTypes." + name2 + "[]";
+            }
+            // Else, see if it's an enum
+            else if (enums[name]) {
+                // Set the return type
+                returnType = "EnumTypes." + name;
+            }
+            // Else, see if it's an enum
+            else if (enums[name2]) {
+                // Set the return type
+                returnType = "EnumTypes." + name2 + "[]";
+            }
+            // Else, see if it's a basic type
+            else if (info[0] == "Edm") {
+                returnType = getType(returnType);
+            }
+
+            // Update the collection
+            isCollection ? returnType += "[]" : null;
+        }
+
+        // Return the type
+        return returnType;
+    }
+
+    // Make the graph directory
+    if (fs.existsSync("lib/microsoft/Graph") == false) { fs.mkdirSync("lib/microsoft/Graph"); }
+
+    // Create the endpoints
+    let content = ["import { IBaseResult } from \"../../base\";"];
+    for (let name in endPoints) {
+        let endPoint = endPoints[name];
+
+        // Parse the methods
+        let methods = [];
+        for (let method of endPoint.methods) {
+            // Add the method
+            methods.push("\t" + method.name + ": IBaseResult<" + getGraphType(method.returnType) + ">;");
+        }
+
+        // Add the endpoint
+        content.push(`/*********************************************
+* ${name}
+**********************************************/
+export interface ${name} extends IBaseResult<${getGraphType(endPoint.returnType.replace("microsoft.graph.", "graph."))}> {
+${methods.join('\n')}
+}`);
+    }
+    fs.writeFileSync("lib/microsoft/graph/api.d.ts", content.join('\n'));
+
+    // Create the enum definitions
+    content = [];
+    for (let key in enumInterfaces) { content.push(enumInterfaces[key]); }
+    fs.writeFileSync("lib/microsoft/graph/enumTypes.d.ts", content.join('\n'));
+
+    // Append the export of the enums
+    fs.appendFileSync("lib/microsoft/graph/index.d.ts", [
+        'export * as API from "./api";',
+        'export * as ComplexTypes from "./complexTypes";',
+        'export * as EntityTypes from "./entityTypes";',
+        'export * as Enums from "./enumTypes";'
+    ].join('\n'));
+
+    // Append the graph endpoint
+    fs.appendFileSync("lib/Microsoft/index.d.ts", [
+        '\nimport * as Graph from "./Graph";',
+        'export { Graph }'
+    ].join('\n'));
+
+    // Create the graph enum types
+    content = ["import * as GraphTypes from \"./microsoft/graph/enumTypes\";\n"];
+    for (let key in enums) { content.push(enums[key]); }
+    fs.writeFileSync("lib/enumTypes.ts", content.join('\n'));
+
+    // Create the complex types
+    content = [
+        "import * as EnumTypes from \"./enumTypes.d\";",
+    ];
+    for (let name in complexTypes) {
+        let complexType = complexTypes[name];
+
+        // Parse the properties
+        let props = [];
+        for (let prop of complexType.props) {
+            // Add the property
+            props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
+        }
+
+        // Add the endpoint
+        content.push(`/*********************************************
+* ${name}
+**********************************************/
+export interface ${name} ${complexType.returnType ? "extends " + complexType.returnType : ""} {
+${props.join('\n')}
+}`);
+    }
+    fs.writeFileSync("lib/microsoft/graph/complexTypes.d.ts", content.join('\n').replace(/ComplexTypes./g, ""));
+
+    // Create the entities
+    content = [
+        "import * as ComplexTypes from \"./complexTypes.d\";",
+        "import * as EnumTypes from \"./enumTypes.d\";\n",
+    ];
+    for (let name in entities) {
+        let entity = entities[name];
+
+        // Parse the properties
+        let props = [];
+        for (let prop of entity.props) {
+            // Add the property
+            props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
+        }
+
+        // Add the endpoint
+        content.push(`/*********************************************
+* ${name}
+**********************************************/
+export interface ${name} ${entity.returnType ? "extends " + entity.returnType : ""} {
+${props.join('\n')}
+}`);
+    }
+    fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n'));
+}
+
+// Process the REST metadata
+function processREST(schemas) {
+    let directories = {};
+    let enumInterfaces = {};
+    let methods = {};
+    let methodTypes = {};
+
+    // Parse the schemas
+    for (let i = 0; i < schemas.length; i++) {
+        let schema = schemas[i];
+
+        // Ensure a namespace name exists
+        let ns = schema.$ ? schema.$.Namespace : null;
+        if (ns) {
+            // Set the directory name
+            directories[ns] = directories[ns] || {};
+            directories[ns]._api = [];
+        } else { continue; }
+
+        // Parse the schema
+        for (let key in schema) {
+            let value = schema[key];
+
+            // Skip the attributes
+            if (key == "$") { continue; }
 
             // See if this is a collection
             if (value.length > 0) {
@@ -479,23 +792,8 @@ function processMetadata(schemas) {
     // Copy the base file
     fs.copyFile("base.d.ts", "lib/base.d.ts", err => { console.error(err); })
 
-    // Create the enum definitions
-    let enumContent = [];
-    for (let key in enumInterfaces) { enumContent.push(enumInterfaces[key]); }
-    fs.writeFileSync("lib/microsoft/graph/enums.d.ts", enumContent.join('\n'));
-
     // Generate the index files
     generateIndexFiles("lib");
-
-    // Append the export of the enums
-    fs.appendFileSync("lib/microsoft/graph/index.d.ts", [
-        '\nexport * from "./enums";'
-    ].join('\n'));
-
-    // Create the graph enum types
-    enumContent = ["import * as GraphTypes from \"./microsoft/graph/enums.d\";\n"];
-    for (let key in enums) { enumContent.push(enums[key]); }
-    fs.writeFileSync("lib/enums.ts", enumContent.join('\n'));
 
     // Append the index file
     fs.appendFileSync("lib/index.d.ts", [
@@ -992,15 +1290,13 @@ fs.readFile("metadata.xml", "utf8", function (err, rest) {
 
         // Parse the xml
         parser(rest, function (err, restXML) {
-            parser(graph, function (err, graphXML) {
-                // Combine the schemas
-                let schemas = restXML["edmx:Edmx"]["edmx:DataServices"][0].Schema.concat(
-                    graphXML["edmx:Edmx"]["edmx:DataServices"][0].Schema
-                );
+            // Process the REST metadata
+            processREST(restXML["edmx:Edmx"]["edmx:DataServices"][0].Schema);
 
-                // Process the metadata
-                processMetadata(schemas);
-                //processMetadata(graphXML["edmx:Edmx"]["edmx:DataServices"][0].Schema);
+            // Parse the xml
+            parser(graph, function (err, graphXML) {
+                // Process the Graph metadata
+                processGraph(graphXML["edmx:Edmx"]["edmx:DataServices"][0].Schema);
             });
         });
     });

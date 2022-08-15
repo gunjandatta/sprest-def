@@ -12,7 +12,8 @@
     "scripts": {
         "build": "node main.js",
         "clean": "node clean.js",
-        "package": "npm run clean && npm run build"
+        "package": "npm run clean && npm run build",
+        "update": "node update.js"
     },
     "repository": {
         "type": "git",
