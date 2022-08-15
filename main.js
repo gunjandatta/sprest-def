@@ -382,8 +382,31 @@ function processGraph(schemas) {
                         props.push({ name: prop.$.Name, returnType: prop.$.Type, nullable: prop.$.Nullable });
                     }
 
+                    // Parse the methods
+                    let methods = [];
+                    let subMethods = entityType.NavigationProperty || [];
+                    for (let subMethod of subMethods) {
+                        // Set the method name
+                        let name = subMethod.$.Name;
+                        let nameInfo = name.split('/');
+                        if (nameInfo.length > 1) {
+                            name = nameInfo[nameInfo.length - 1];
+                        }
+
+                        // Set the return type
+                        let returnType = subMethod.$.Type;
+                        let returnTypeInfo = returnType.split('/');
+                        if (returnTypeInfo.length > 1) {
+                            returnType = returnTypeInfo[returnTypeInfo.length - 1];
+                        }
+
+
+                        // Add the method
+                        methods.push({ name, returnType });
+                    }
+
                     // Add the entity type
-                    entities[name] = { name, returnType, props };
+                    entities[name] = { name, returnType, props, methods };
                 }
 
                 // Continue
@@ -603,6 +626,7 @@ ${props.join('\n')}
 
     // Create the entities
     content = [
+        "import { IBaseResult } from \"../../base\";",
         "import * as ComplexTypes from \"./complexTypes.d\";",
         "import * as EnumTypes from \"./enumTypes.d\";\n",
     ];
@@ -616,15 +640,23 @@ ${props.join('\n')}
             props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
         }
 
+        // Parse the methods
+        let methods = [];
+        for (let method of entity.methods) {
+            // Add the method
+            methods.push("\t" + method.name + ": IBaseResult<" + getGraphType(method.returnType) + ">;");
+        }
+
         // Add the endpoint
         content.push(`/*********************************************
 * ${name}
 **********************************************/
 export interface ${name} ${entity.returnType ? "extends " + entity.returnType : ""} {
 ${props.join('\n')}
+${methods.join('\n')}
 }`);
     }
-    fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n'));
+    fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n').replace(/EntityTypes./g, ""));
 }
 
 // Process the REST metadata
