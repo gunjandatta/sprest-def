@@ -74,8 +74,8 @@ function applyMethodsToDirectories(methods, directories) {
         let idx = name.lastIndexOf('.');
 
         // Set the lib and obj name
-        let lib = name.substr(0, idx);
-        let obj = name.substr(idx + 1);
+        let lib = name.substring(0, idx);
+        let obj = name.substring(idx + 1);
 
         // See if a file name exists for this object
         if (directories[lib] && directories[lib].EntityTypes && directories[lib].EntityTypes[obj]) {
@@ -267,7 +267,7 @@ function updateReferences(fileImports, dirName, type) {
     if (type && type.indexOf('.') > 0) {
         // Get the last index of it
         let refType = type.replace(/^Array\<|\>$/g, '');
-        refType = refType.substr(0, refType.lastIndexOf('.'));
+        refType = refType.substring(0, refType.lastIndexOf('.'));
 
         // Set the root namespace
         let root = refType.split('.')[0];
@@ -400,7 +400,6 @@ function processGraph(schemas) {
                             returnType = returnTypeInfo[returnTypeInfo.length - 1];
                         }
 
-
                         // Add the method
                         methods.push({ name, returnType });
                     }
@@ -507,7 +506,7 @@ function processGraph(schemas) {
             let name2 = null;
             if (!isCollection && name[name.length - 1] == "s") {
                 // Set the name
-                name2 = name.substring(name.length - 1);
+                name2 = name.substring(0, name.length - 1);
             }
 
             // See if it's a complex type
@@ -555,7 +554,10 @@ function processGraph(schemas) {
     if (fs.existsSync("lib/microsoft/Graph") == false) { fs.mkdirSync("lib/microsoft/Graph"); }
 
     // Create the endpoints
-    let content = ["import { IBaseExecution } from \"../../base\";"];
+    let content = [
+        "import { IBaseExecution } from \"../../base\";",
+        "import * as EntityTypes from \"./entityTypes.d\"\n"
+    ];
     for (let name in endPoints) {
         let endPoint = endPoints[name];
 
@@ -889,7 +891,7 @@ function processREST(schemas) {
                     else if (hasMethods[endpoint.ReturnType]) {
                         // Update the return type
                         let idx = endpoint.ReturnType.lastIndexOf('.');
-                        endpoint.ReturnType = endpoint.ReturnType.substr(0, idx) + '.I' + endpoint.ReturnType.substr(idx + 1);
+                        endpoint.ReturnType = endpoint.ReturnType.substring(0, idx) + '.I' + endpoint.ReturnType.substring(idx + 1);
                     }
 
                     // Update the imports

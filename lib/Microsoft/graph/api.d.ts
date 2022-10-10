@@ -1,22 +1,24 @@
 import { IBaseExecution } from "../../base";
+import * as EntityTypes from "./entityTypes.d"
+
 /*********************************************
 * invitations
 **********************************************/
 export interface invitations extends IBaseExecution<EntityTypes.invitation> {
-	invitedUser: () => IBaseExecution<users>;
+	invitedUser: () => IBaseExecution<EntityTypes.user[]>;
 }
 /*********************************************
 * users
 **********************************************/
 export interface users extends IBaseExecution<EntityTypes.user> {
-	createdObjects: () => IBaseExecution<directoryObjects>;
-	directReports: () => IBaseExecution<directoryObjects>;
-	manager: () => IBaseExecution<directoryObjects>;
-	memberOf: () => IBaseExecution<directoryObjects>;
-	ownedDevices: () => IBaseExecution<directoryObjects>;
-	ownedObjects: () => IBaseExecution<directoryObjects>;
-	registeredDevices: () => IBaseExecution<directoryObjects>;
-	transitiveMemberOf: () => IBaseExecution<directoryObjects>;
+	createdObjects: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	directReports: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	manager: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	memberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	ownedDevices: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	ownedObjects: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	registeredDevices: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	transitiveMemberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * applicationTemplates
@@ -40,8 +42,8 @@ export interface identityProviders extends IBaseExecution<EntityTypes.identityPr
 * applications
 **********************************************/
 export interface applications extends IBaseExecution<EntityTypes.application> {
-	createdOnBehalfOf: () => IBaseExecution<directoryObjects>;
-	owners: () => IBaseExecution<directoryObjects>;
+	createdOnBehalfOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	owners: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * certificateBasedAuthConfiguration
@@ -53,10 +55,10 @@ export interface certificateBasedAuthConfiguration extends IBaseExecution<Entity
 * contacts
 **********************************************/
 export interface contacts extends IBaseExecution<EntityTypes.orgContact> {
-	directReports: () => IBaseExecution<directoryObjects>;
-	manager: () => IBaseExecution<directoryObjects>;
-	memberOf: () => IBaseExecution<directoryObjects>;
-	transitiveMemberOf: () => IBaseExecution<directoryObjects>;
+	directReports: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	manager: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	memberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	transitiveMemberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * contracts
@@ -68,9 +70,9 @@ export interface contracts extends IBaseExecution<EntityTypes.contract> {
 * devices
 **********************************************/
 export interface devices extends IBaseExecution<EntityTypes.device> {
-	registeredOwners: () => IBaseExecution<directoryObjects>;
-	registeredUsers: () => IBaseExecution<directoryObjects>;
-	transitiveMemberOf: () => IBaseExecution<directoryObjects>;
+	registeredOwners: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	registeredUsers: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	transitiveMemberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * directoryObjects
@@ -82,7 +84,7 @@ export interface directoryObjects extends IBaseExecution<EntityTypes.directoryOb
 * directoryRoles
 **********************************************/
 export interface directoryRoles extends IBaseExecution<EntityTypes.directoryRole> {
-	members: () => IBaseExecution<directoryObjects>;
+	members: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * directoryRoleTemplates
@@ -100,18 +102,18 @@ export interface domainDnsRecords extends IBaseExecution<EntityTypes.domainDnsRe
 * domains
 **********************************************/
 export interface domains extends IBaseExecution<EntityTypes.domain> {
-	domainNameReferences: () => IBaseExecution<directoryObjects>;
+	domainNameReferences: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * groups
 **********************************************/
 export interface groups extends IBaseExecution<EntityTypes.group> {
-	createdOnBehalfOf: () => IBaseExecution<directoryObjects>;
-	memberOf: () => IBaseExecution<directoryObjects>;
-	members: () => IBaseExecution<directoryObjects>;
-	owners: () => IBaseExecution<directoryObjects>;
-	transitiveMemberOf: () => IBaseExecution<directoryObjects>;
-	transitiveMembers: () => IBaseExecution<directoryObjects>;
+	createdOnBehalfOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	memberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	members: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	owners: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	transitiveMemberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	transitiveMembers: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * groupSettings
@@ -159,12 +161,12 @@ export interface scopedRoleMemberships extends IBaseExecution<EntityTypes.scoped
 * servicePrincipals
 **********************************************/
 export interface servicePrincipals extends IBaseExecution<EntityTypes.servicePrincipal> {
-	createdObjects: () => IBaseExecution<directoryObjects>;
-	memberOf: () => IBaseExecution<directoryObjects>;
+	createdObjects: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	memberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
 	oauth2PermissionGrants: () => IBaseExecution<oauth2PermissionGrants>;
-	ownedObjects: () => IBaseExecution<directoryObjects>;
-	owners: () => IBaseExecution<directoryObjects>;
-	transitiveMemberOf: () => IBaseExecution<directoryObjects>;
+	ownedObjects: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	owners: () => IBaseExecution<EntityTypes.directoryObject[]>;
+	transitiveMemberOf: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
 * subscribedSkus
@@ -194,8 +196,8 @@ export interface shares extends IBaseExecution<EntityTypes.sharedDriveItem> {
 * sites
 **********************************************/
 export interface sites extends IBaseExecution<EntityTypes.site> {
-	parentTerm: () => IBaseExecution<terms>;
-	termSet: () => IBaseExecution<sets>;
+	parentTerm: () => IBaseExecution<EntityTypes.term[]>;
+	termSet: () => IBaseExecution<EntityTypes.set[]>;
 	sharedColumns: () => IBaseExecution<columns>;
 	welcomePageColumns: () => IBaseExecution<columns>;
 }
@@ -251,8 +253,8 @@ export interface chats extends IBaseExecution<EntityTypes.chat> {
 * teams
 **********************************************/
 export interface teams extends IBaseExecution<EntityTypes.team> {
-	group: () => IBaseExecution<groups>;
-	template: () => IBaseExecution<teamsTemplates>;
+	group: () => IBaseExecution<EntityTypes.group[]>;
+	template: () => IBaseExecution<EntityTypes.teamsTemplate[]>;
 }
 /*********************************************
 * teamsTemplates
