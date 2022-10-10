@@ -1,4 +1,5 @@
-export * as API from "./api";
-export * as ComplexTypes from "./complexTypes";
+import * as API from "./api";
+import * as ComplexTypes from "./complexTypes";
+import * as Enums from "./enumTypes";
+export { API, ComplexTypes, Enums }
 export * from "./entityTypes";
-export * as Enums from "./enumTypes";

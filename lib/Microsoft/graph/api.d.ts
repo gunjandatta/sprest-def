@@ -1,5 +1,5 @@
 import { IBaseExecution } from "../../base";
-import * as EntityTypes from "./entityTypes.d"
+import * as EntityTypes from "./entityTypes.d";
 
 /*********************************************
 * invitations
@@ -198,8 +198,8 @@ export interface shares extends IBaseExecution<EntityTypes.sharedDriveItem> {
 export interface sites extends IBaseExecution<EntityTypes.site> {
 	parentTerm: () => IBaseExecution<EntityTypes.term[]>;
 	termSet: () => IBaseExecution<EntityTypes.set[]>;
-	sharedColumns: () => IBaseExecution<columns>;
-	welcomePageColumns: () => IBaseExecution<columns>;
+	sharedColumns: () => IBaseExecution<ComplexTypes.columnDefinition[]>;
+	welcomePageColumns: () => IBaseExecution<ComplexTypes.columnDefinition[]>;
 }
 /*********************************************
 * schemaExtensions

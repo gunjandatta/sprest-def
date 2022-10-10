@@ -541,6 +541,14 @@ function processGraph(schemas) {
             else if (info[0] == "Edm") {
                 returnType = getType(returnType);
             }
+            // Else, see if this is a column
+            else if (name == "column") {
+                returnType = "ComplexTypes.columnDefinition";
+            }
+            // Else, see if this is a column array
+            else if (name == "columns") {
+                returnType = "ComplexTypes.columnDefinition[]";
+            }
 
             // Update the collection
             isCollection ? returnType += "[]" : null;
@@ -556,7 +564,7 @@ function processGraph(schemas) {
     // Create the endpoints
     let content = [
         "import { IBaseExecution } from \"../../base\";",
-        "import * as EntityTypes from \"./entityTypes.d\"\n"
+        "import * as EntityTypes from \"./entityTypes.d\";\n"
     ];
     for (let name in endPoints) {
         let endPoint = endPoints[name];
@@ -585,10 +593,11 @@ ${methods.join('\n')}
 
     // Append the export of the enums
     fs.appendFileSync("lib/microsoft/graph/index.d.ts", [
-        'export * as API from "./api";',
-        'export * as ComplexTypes from "./complexTypes";',
+        'import * as API from "./api";',
+        'import * as ComplexTypes from "./complexTypes";',
+        'import * as Enums from "./enumTypes";',
+        'export { API, ComplexTypes, Enums }',
         'export * from "./entityTypes";',
-        'export * as Enums from "./enumTypes";'
     ].join('\n'));
 
     // Append the graph endpoint
