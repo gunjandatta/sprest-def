@@ -34,6 +34,6 @@
     "homepage": "https://github.com/gunjandatta/sprest-def#readme",
     "devDependencies": {
         "rimraf": "^2.6.2",
-        "xml2js": "^0.4.19"
+        "xml2js": "^0.5.0"
     }
 }
