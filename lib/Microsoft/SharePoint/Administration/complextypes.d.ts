@@ -24,7 +24,7 @@ export interface CustomFontsResourceCollections {
 * OrgAssetsLibraryCollection
 **********************************************/
 export interface OrgAssetsLibraryCollection {
-	Items?: Array<Microsoft.SharePoint.Administration.OrgAssetsLibrary>;
+	Items?: { results: Array<Microsoft.SharePoint.Administration.OrgAssetsLibrary> };
 }
 
 /*********************************************

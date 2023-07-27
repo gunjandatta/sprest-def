@@ -205,7 +205,7 @@ export interface SPOSiteReferenceCollections {
 * ItemsList
 **********************************************/
 export interface ItemsList {
-	items?: Array<Microsoft.SharePoint.News.DataModel.Item>;
+	items?: { results: Array<Microsoft.SharePoint.News.DataModel.Item> };
 }
 
 /*********************************************

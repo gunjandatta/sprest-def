@@ -21,7 +21,7 @@ export interface KeyValueCollections {
 * SimpleDataRow
 **********************************************/
 export interface SimpleDataRow {
-	Cells?: Array<SP.KeyValue>;
+	Cells?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
@@ -35,7 +35,7 @@ export interface SimpleDataRowCollections {
 * SimpleDataTable
 **********************************************/
 export interface SimpleDataTable {
-	Rows?: Array<SP.SimpleDataRow>;
+	Rows?: { results: Array<SP.SimpleDataRow> };
 }
 
 /*********************************************
@@ -51,7 +51,7 @@ export interface SimpleDataTableCollections {
 export interface MethodInformation {
 	IsBeta?: boolean;
 	Name?: string;
-	Parameters?: Array<SP.ParameterInformation>;
+	Parameters?: { results: Array<SP.ParameterInformation> };
 	ReturnTypeFullName?: string;
 }
 
@@ -235,7 +235,7 @@ export interface DashboardItemCollections {
 * PivotItem
 **********************************************/
 export interface PivotItem {
-	Audiences?: Array<string>;
+	Audiences?: { results: Array<string> };
 	Name?: string;
 }
 
@@ -344,7 +344,7 @@ export interface ContentControlInfo {
 	ContentControlTagName?: string;
 	EndIndex?: number;
 	IsSingleParargaph?: boolean;
-	ParagraphIds?: Array<string>;
+	ParagraphIds?: { results: Array<string> };
 	StartIndex?: number;
 }
 
@@ -374,7 +374,7 @@ export interface CountByDateCollections {
 * CreatableItemInfoCollection
 **********************************************/
 export interface CreatableItemInfoCollection {
-	Items?: Array<SP.CreatableItemInfo>;
+	Items?: { results: Array<SP.CreatableItemInfo> };
 }
 
 /*********************************************
@@ -404,7 +404,7 @@ export interface CreatableItemInfoCollections {
 * CurrencyInformationCollection
 **********************************************/
 export interface CurrencyInformationCollection {
-	Items?: Array<SP.CurrencyInformation>;
+	Items?: { results: Array<SP.CurrencyInformation> };
 }
 
 /*********************************************
@@ -434,7 +434,7 @@ export interface CurrencyInformationCollections {
 * CustomizedFormsPageCollection
 **********************************************/
 export interface CustomizedFormsPageCollection {
-	Items?: Array<SP.CustomizedFormsPage>;
+	Items?: { results: Array<SP.CustomizedFormsPage> };
 }
 
 /*********************************************
@@ -465,7 +465,7 @@ export interface CustomizedFormsPageCollections {
 * DocumentGenerationInfo
 **********************************************/
 export interface DocumentGenerationInfo {
-	ContentAssemblyFormAnswers?: Array<SP.ContentAssemblyFormAnswer>;
+	ContentAssemblyFormAnswers?: { results: Array<SP.ContentAssemblyFormAnswer> };
 	FileName?: string;
 	IsTempFile?: boolean;
 	TempFileUrl?: string;
@@ -617,7 +617,7 @@ export interface ScriptSafeDomainEntityDataCollections {
 * SharedWithUserCollection
 **********************************************/
 export interface SharedWithUserCollection {
-	Items?: Array<SP.SharedWithUser>;
+	Items?: { results: Array<SP.SharedWithUser> };
 }
 
 /*********************************************
@@ -687,7 +687,7 @@ export interface SharingLinkInfo {
 	Embeddable?: boolean;
 	Expiration?: string;
 	HasExternalGuestInvitees?: boolean;
-	Invitations?: Array<SP.Sharing.LinkInvitation>;
+	Invitations?: { results: Array<SP.Sharing.LinkInvitation> };
 	IsActive?: boolean;
 	IsAddressBarLink?: boolean;
 	IsCreateOnlyLink?: boolean;
@@ -703,7 +703,7 @@ export interface SharingLinkInfo {
 	LinkKind?: number;
 	PasswordLastModified?: string;
 	PasswordLastModifiedBy?: SP.Sharing.Principal;
-	RedeemedUsers?: Array<SP.Sharing.LinkInvitation>;
+	RedeemedUsers?: { results: Array<SP.Sharing.LinkInvitation> };
 	RequiresPassword?: boolean;
 	RestrictedShareMembership?: boolean;
 	Scope?: number;
@@ -765,7 +765,7 @@ export interface AlertCreationInformation {
 	EventType?: number;
 	EventTypeBitmask?: number;
 	Filter?: string;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 	Status?: number;
 	Title?: string;
 }
@@ -781,7 +781,7 @@ export interface AlertCreationInformationCollections {
 * AppLicenseCollection
 **********************************************/
 export interface AppLicenseCollection {
-	Items?: Array<SP.AppLicense>;
+	Items?: { results: Array<SP.AppLicense> };
 }
 
 /*********************************************
@@ -1031,7 +1031,7 @@ export interface ChangeTokenCollections {
 export interface ClassificationResult {
 	ConfidenceScore?: number;
 	ContentTypeId?: string;
-	Metas?: Array<SP.KeyValue>;
+	Metas?: { results: Array<SP.KeyValue> };
 	ModelId?: string;
 	ModelVersion?: string;
 	RetentionLabelFlags?: number;
@@ -1106,7 +1106,7 @@ export interface ContextWebInformation {
 	FormDigestValue?: string;
 	LibraryVersion?: string;
 	SiteFullUrl?: string;
-	SupportedSchemaVersions?: Array<string>;
+	SupportedSchemaVersions?: { results: Array<string> };
 	WebFullUrl?: string;
 }
 
@@ -1122,7 +1122,7 @@ export interface ContextWebInformationCollections {
 **********************************************/
 export interface CopyJobProgress {
 	JobState?: number;
-	Logs?: Array<string>;
+	Logs?: { results: Array<string> };
 }
 
 /*********************************************
@@ -1139,7 +1139,7 @@ export interface CopyMigrationInfo {
 	EncryptionKey?: any;
 	JobId?: any;
 	JobQueueUri?: string;
-	SourceListItemUniqueIds?: Array<any>;
+	SourceListItemUniqueIds?: { results: Array<any> };
 }
 
 /*********************************************
@@ -1156,8 +1156,8 @@ export interface CopyMigrationOptions {
 	AllowSchemaMismatch?: boolean;
 	AllowSmallerVersionLimitOnDestination?: boolean;
 	BypassSharedLock?: boolean;
-	ClientEtags?: Array<string>;
-	CustomizedItemName?: Array<string>;
+	ClientEtags?: { results: Array<string> };
+	CustomizedItemName?: { results: Array<string> };
 	ExcludeChildren?: boolean;
 	IgnoreVersionHistory?: boolean;
 	IncludeItemPermissions?: boolean;
@@ -1179,7 +1179,7 @@ export interface CopyMigrationOptionsCollections {
 * SPMoveAndShareFileInfo
 **********************************************/
 export interface SPMoveAndShareFileInfo {
-	ItemPermissionableUserIds?: Array<number>;
+	ItemPermissionableUserIds?: { results: Array<number> };
 }
 
 /*********************************************
@@ -1193,7 +1193,7 @@ export interface SPMoveAndShareFileInfoCollections {
 * CustomActionElementCollection
 **********************************************/
 export interface CustomActionElementCollection {
-	Items?: Array<SP.CustomActionElement>;
+	Items?: { results: Array<SP.CustomActionElement> };
 }
 
 /*********************************************
@@ -1377,7 +1377,7 @@ export interface FieldCalculatedErrorValueCollections {
 * FieldCreationInformation
 **********************************************/
 export interface FieldCreationInformation {
-	Choices?: Array<string>;
+	Choices?: { results: Array<string> };
 	IsCompactName?: boolean;
 	LookupFieldName?: string;
 	LookupListId?: any;
@@ -1621,7 +1621,7 @@ export interface LanguageCollections {
 **********************************************/
 export interface ListCreationInformation {
 	CustomSchemaXml?: string;
-	DataSourceProperties?: Array<SP.KeyValue>;
+	DataSourceProperties?: { results: Array<SP.KeyValue> };
 	Description?: string;
 	DocumentTemplateType?: number;
 	QuickLaunchOption?: number;
@@ -1642,7 +1642,7 @@ export interface ListCreationInformationCollections {
 * ListDataSource
 **********************************************/
 export interface ListDataSource {
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
@@ -1656,7 +1656,7 @@ export interface ListDataSourceCollections {
 * ListDataValidationExceptionValue
 **********************************************/
 export interface ListDataValidationExceptionValue {
-	FieldFailures?: Array<SP.ListDataValidationFailure>;
+	FieldFailures?: { results: Array<SP.ListDataValidationFailure> };
 	ItemFailure?: SP.ListDataValidationFailure;
 }
 
@@ -1766,7 +1766,7 @@ export interface ListItemUpdateParametersCollections {
 **********************************************/
 export interface ListItemUpdateResults {
 	UpdatedData?: string;
-	UpdateResults?: Array<SP.ListItemFormUpdateValue>;
+	UpdateResults?: { results: Array<SP.ListItemFormUpdateValue> };
 }
 
 /*********************************************
@@ -2076,7 +2076,7 @@ export interface RenderListDataOverrideParameters {
 	OverrideSelectCommand?: string;
 	PageFirstRow?: string;
 	PageLastRow?: string;
-	QueryParams?: Array<SP.KeyValue>;
+	QueryParams?: { results: Array<SP.KeyValue> };
 	RootFolder?: string;
 	RootFolderUniqueId?: string;
 	SortDir?: string;
@@ -2348,7 +2348,7 @@ export interface ViewCreationInformation {
 	SetAsDefaultView?: boolean;
 	Title?: string;
 	ViewData?: string;
-	ViewFields?: Array<string>;
+	ViewFields?: { results: Array<string> };
 	ViewTypeKind?: number;
 	ViewType2?: string;
 }
@@ -2397,7 +2397,7 @@ export interface VisualizationFieldCollections {
 export interface VisualizationStyleSet {
 	AspectRatio?: string;
 	BackgroundColor?: string;
-	Fields?: Array<SP.VisualizationField>;
+	Fields?: { results: Array<SP.VisualizationField> };
 	MinHeight?: string;
 }
 
@@ -2470,7 +2470,7 @@ export interface WebInfoCreationInformationCollections {
 **********************************************/
 export interface WebRequestInfo {
 	Body?: string;
-	Headers?: Array<SP.KeyValue>;
+	Headers?: { results: Array<SP.KeyValue> };
 	Method?: string;
 	Url?: string;
 }
@@ -2487,7 +2487,7 @@ export interface WebRequestInfoCollections {
 **********************************************/
 export interface WebResponseInfo {
 	Body?: string;
-	Headers?: Array<SP.KeyValue>;
+	Headers?: { results: Array<SP.KeyValue> };
 	StatusCode?: number;
 }
 
@@ -2517,7 +2517,7 @@ export interface XmlSchemaFieldCreationInformationCollections {
 * TemplateMetaData
 **********************************************/
 export interface TemplateMetaData {
-	Placeholders?: Array<SP.Placeholder>;
+	Placeholders?: { results: Array<SP.Placeholder> };
 	ServerRedirectedEmbedUrl?: string;
 }
 
@@ -2533,7 +2533,7 @@ export interface TemplateMetaDataCollections {
 **********************************************/
 export interface TemplatizationMetaData {
 	FileInfo?: SP.ContentAssemblyFileInfo;
-	Placeholders?: Array<SP.PlaceholderV2>;
+	Placeholders?: { results: Array<SP.PlaceholderV2> };
 }
 
 /*********************************************
@@ -2548,7 +2548,7 @@ export interface TemplatizationMetaDataCollections {
 **********************************************/
 export interface TranslationNotificationRecipientCollection {
 	LanguageCode?: string;
-	Recipients?: Array<SP.TranslationNotificationRecipient>;
+	Recipients?: { results: Array<SP.TranslationNotificationRecipient> };
 }
 
 /*********************************************
@@ -2576,7 +2576,7 @@ export interface TranslationNotificationRecipientCollections {
 * TranslationNotificationRecipientSetRequest
 **********************************************/
 export interface TranslationNotificationRecipientSetRequest {
-	NotificationRecipients?: Array<SP.TranslationNotificationRecipientCollection>;
+	NotificationRecipients?: { results: Array<SP.TranslationNotificationRecipientCollection> };
 }
 
 /*********************************************
@@ -2590,7 +2590,7 @@ export interface TranslationNotificationRecipientSetRequestCollections {
 * TranslationStatusCreationRequest
 **********************************************/
 export interface TranslationStatusCreationRequest {
-	LanguageCodes?: Array<string>;
+	LanguageCodes?: { results: Array<string> };
 }
 
 /*********************************************
@@ -2604,7 +2604,7 @@ export interface TranslationStatusCreationRequestCollections {
 * TranslationStatusSetRequest
 **********************************************/
 export interface TranslationStatusSetRequest {
-	RequestedTranslations?: Array<SP.RequestedTranslation>;
+	RequestedTranslations?: { results: Array<SP.RequestedTranslation> };
 }
 
 /*********************************************
@@ -2639,7 +2639,7 @@ export interface TranslationStatusCollections {
 export interface UpdateTemplateInfoV2 {
 	NewName?: string;
 	Operation?: number;
-	Placeholders?: Array<SP.PlaceholderV2>;
+	Placeholders?: { results: Array<SP.PlaceholderV2> };
 	Url?: string;
 }
 
@@ -2656,7 +2656,7 @@ export interface UpdateTemplateInfoV2Collections {
 export interface UpdateTemplateInfo {
 	NewName?: string;
 	Operation?: number;
-	Placeholders?: Array<SP.Placeholder>;
+	Placeholders?: { results: Array<SP.Placeholder> };
 }
 
 /*********************************************
@@ -2670,19 +2670,19 @@ export interface UpdateTemplateInfoCollections {
 * MenuNode
 **********************************************/
 export interface MenuNode {
-	AudienceIds?: Array<any>;
+	AudienceIds?: { results: Array<any> };
 	CurrentLCID?: number;
-	CustomProperties?: Array<SP.KeyValue>;
+	CustomProperties?: { results: Array<SP.KeyValue> };
 	FriendlyUrlSegment?: string;
 	IsDeleted?: boolean;
 	IsHidden?: boolean;
 	Key?: string;
-	Nodes?: Array<SP.MenuNode>;
+	Nodes?: { results: Array<SP.MenuNode> };
 	NodeType?: number;
 	OpenInNewWindow?: boolean;
 	SimpleUrl?: string;
 	Title?: string;
-	Translations?: Array<SP.SPResourceEntry>;
+	Translations?: { results: Array<SP.SPResourceEntry> };
 }
 
 /*********************************************
@@ -2696,10 +2696,10 @@ export interface MenuNodeCollections {
 * MenuState
 **********************************************/
 export interface MenuState {
-	AudienceIds?: Array<any>;
+	AudienceIds?: { results: Array<any> };
 	FriendlyUrlPrefix?: string;
 	IsAudienceTargetEnabledForGlobalNav?: boolean;
-	Nodes?: Array<SP.MenuNode>;
+	Nodes?: { results: Array<SP.MenuNode> };
 	SimpleUrl?: string;
 	SPSitePrefix?: string;
 	SPWebPrefix?: string;

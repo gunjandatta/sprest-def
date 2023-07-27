@@ -7,7 +7,7 @@ import { SP } from "../../../";
 **********************************************/
 export interface ChannelInfoCollection {
 	CacheUpdatedTime?: any;
-	value?: Array<Microsoft.SharePoint.Portal.ChannelInfo>;
+	value?: { results: Array<Microsoft.SharePoint.Portal.ChannelInfo> };
 }
 
 /*********************************************
@@ -73,13 +73,13 @@ export interface EnsureTeamForGroupExResponseCollections {
 * GroupCreationContext
 **********************************************/
 export interface GroupCreationContext {
-	ClassificationDescriptions?: Array<SP.KeyValue>;
-	ClassificationDescriptionsNew?: Array<SP.KeyValue>;
-	ClassificationExtSharingValue?: Array<SP.KeyValue>;
-	ClassificationPrivacyValue?: Array<SP.KeyValue>;
+	ClassificationDescriptions?: { results: Array<SP.KeyValue> };
+	ClassificationDescriptionsNew?: { results: Array<SP.KeyValue> };
+	ClassificationExtSharingValue?: { results: Array<SP.KeyValue> };
+	ClassificationPrivacyValue?: { results: Array<SP.KeyValue> };
 	CustomFormUrl?: string;
-	DataClassificationOptions?: Array<string>;
-	DataClassificationOptionsNew?: Array<SP.KeyValue>;
+	DataClassificationOptions?: { results: Array<string> };
+	DataClassificationOptionsNew?: { results: Array<SP.KeyValue> };
 	DefaultClassification?: string;
 	ExternalInvitationEnabled?: boolean;
 	MachineLearningCaptureEnabled?: boolean;
@@ -106,9 +106,9 @@ export interface GroupCreationContextCollections {
 **********************************************/
 export interface GroupCreationParams {
 	Classification?: string;
-	CreationOptions?: Array<string>;
+	CreationOptions?: { results: Array<string> };
 	Description?: string;
-	Owners?: Array<string>;
+	Owners?: { results: Array<string> };
 	PreferredDataLocation?: string;
 }
 
@@ -127,9 +127,9 @@ export interface GroupSiteConversionInfo {
 	IsGroupifyDisabled?: boolean;
 	IsRegionRestricted?: boolean;
 	IsWrongPdl?: boolean;
-	SuggestedMembers?: Array<string>;
-	SuggestedOwners?: Array<string>;
-	UnsuggestablePrincipals?: Array<string>;
+	SuggestedMembers?: { results: Array<string> };
+	SuggestedOwners?: { results: Array<string> };
+	UnsuggestablePrincipals?: { results: Array<string> };
 }
 
 /*********************************************
@@ -180,7 +180,7 @@ export interface LinkedSiteContractCollections {
 * LinkedSitesListContract
 **********************************************/
 export interface LinkedSitesListContract {
-	LinkedSites?: Array<Microsoft.SharePoint.Portal.LinkedSiteContract>;
+	LinkedSites?: { results: Array<Microsoft.SharePoint.Portal.LinkedSiteContract> };
 }
 
 /*********************************************
@@ -228,7 +228,7 @@ export interface OrgLabelsContextCollections {
 **********************************************/
 export interface OrgLabelsContextList {
 	IsLastPage?: boolean;
-	Labels?: Array<Microsoft.SharePoint.Portal.OrgLabelsContext>;
+	Labels?: { results: Array<Microsoft.SharePoint.Portal.OrgLabelsContext> };
 }
 
 /*********************************************
@@ -258,7 +258,7 @@ export interface ParentGroupCollections {
 * PinToTeamParams
 **********************************************/
 export interface PinToTeamParams {
-	tabs?: Array<Microsoft.SharePoint.Portal.M365TabItem>;
+	tabs?: { results: Array<Microsoft.SharePoint.Portal.M365TabItem> };
 	teamsId?: string;
 }
 
@@ -273,8 +273,8 @@ export interface PinToTeamParamsCollections {
 * PinToTeamResponse
 **********************************************/
 export interface PinToTeamResponse {
-	FailedPinning?: Array<Microsoft.SharePoint.Portal.M365TabItem>;
-	SuccessfulPinning?: Array<Microsoft.SharePoint.Portal.M365TabItem>;
+	FailedPinning?: { results: Array<Microsoft.SharePoint.Portal.M365TabItem> };
+	SuccessfulPinning?: { results: Array<Microsoft.SharePoint.Portal.M365TabItem> };
 }
 
 /*********************************************
@@ -291,7 +291,7 @@ export interface RecentAndJoinedTeamsResponse {
 	joinedTeams?: string;
 	joinedTeamsError?: string;
 	joinedTeamsErrorCode?: number;
-	pinnedItems?: Array<Microsoft.SharePoint.ListHome.FavoriteListHomeItem>;
+	pinnedItems?: { results: Array<Microsoft.SharePoint.ListHome.FavoriteListHomeItem> };
 	pinnedItemsError?: string;
 	pinnedItemsErrorCode?: number;
 	quickAccessItems?: string;

@@ -23,7 +23,7 @@ export interface ContextConditionCollections {
 export interface CustomResult {
 	GroupTemplateId?: string;
 	ItemTemplateId?: string;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 	ResultTitle?: string;
 	ResultTitleUrl?: string;
 	Table?: SP.SimpleDataTable;
@@ -41,7 +41,7 @@ export interface CustomResultCollections {
 * ExpandedQueryParameters
 **********************************************/
 export interface ExpandedQueryParameters {
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 }
 
 /*********************************************
@@ -56,14 +56,14 @@ export interface ExpandedQueryParametersCollections {
 **********************************************/
 export interface PromotedResultQueryRule {
 	Contact?: string;
-	ContextConditions?: Array<Microsoft.Office.Server.Search.REST.ContextCondition>;
+	ContextConditions?: { results: Array<Microsoft.Office.Server.Search.REST.ContextCondition> };
 	CreationDate?: any;
 	DisplayName?: string;
 	EndDate?: any;
 	IsPromotedResultsOnly?: boolean;
 	LastModifiedDate?: any;
-	PromotedResults?: Array<Microsoft.Office.Server.Search.REST.PromotedResults>;
-	QueryConditions?: Array<Microsoft.Office.Server.Search.REST.QueryCondition>;
+	PromotedResults?: { results: Array<Microsoft.Office.Server.Search.REST.PromotedResults> };
+	QueryConditions?: { results: Array<Microsoft.Office.Server.Search.REST.QueryCondition> };
 	ReviewDate?: any;
 	StartDate?: any;
 }
@@ -101,7 +101,7 @@ export interface QueryCondition {
 	MatchingOptions?: string;
 	QueryConditionType?: string;
 	SubjectTermsOrigin?: string;
-	Terms?: Array<string>;
+	Terms?: { results: Array<string> };
 }
 
 /*********************************************
@@ -115,7 +115,7 @@ export interface QueryConditionCollections {
 * PromotedResultsOperationsResult
 **********************************************/
 export interface PromotedResultsOperationsResult {
-	Result?: Array<Microsoft.Office.Server.Search.REST.PromotedResultQueryRule>;
+	Result?: { results: Array<Microsoft.Office.Server.Search.REST.PromotedResultQueryRule> };
 	SearchObjectOwner?: Microsoft.Office.Server.Search.REST.SearchObjectOwnerResult;
 }
 
@@ -163,9 +163,9 @@ export interface QueryConfigurationCollections {
 * QueryContext
 **********************************************/
 export interface QueryContext {
-	GroupObjectIds?: Array<any>;
+	GroupObjectIds?: { results: Array<any> };
 	PortalUrl?: string;
-	RoleIds?: Array<any>;
+	RoleIds?: { results: Array<any> };
 	SpSiteId?: any;
 	SpWebId?: any;
 	TenantInstanceId?: any;
@@ -183,7 +183,7 @@ export interface QueryContextCollections {
 **********************************************/
 export interface QueryRoutingInfo {
 	QueryState?: number;
-	SearchEndpoints?: Array<Microsoft.Office.Server.Search.REST.SearchEndpoints>;
+	SearchEndpoints?: { results: Array<Microsoft.Office.Server.Search.REST.SearchEndpoints> };
 }
 
 /*********************************************
@@ -230,7 +230,7 @@ export interface QueryPropertyCollections {
 * QueryResult
 **********************************************/
 export interface QueryResult {
-	CustomResults?: Array<Microsoft.Office.Server.Search.REST.CustomResult>;
+	CustomResults?: { results: Array<Microsoft.Office.Server.Search.REST.CustomResult> };
 	QueryId?: string;
 	QueryRuleId?: any;
 	RefinementResults?: Microsoft.Office.Server.Search.REST.RefinementResults;
@@ -251,8 +251,8 @@ export interface QueryResultCollections {
 export interface RefinementResults {
 	GroupTemplateId?: string;
 	ItemTemplateId?: string;
-	Properties?: Array<SP.KeyValue>;
-	Refiners?: Array<Microsoft.Office.Server.Search.REST.Refiner>;
+	Properties?: { results: Array<SP.KeyValue> };
+	Refiners?: { results: Array<Microsoft.Office.Server.Search.REST.Refiner> };
 	ResultTitle?: string;
 	ResultTitleUrl?: string;
 }
@@ -268,7 +268,7 @@ export interface RefinementResultsCollections {
 * Refiner
 **********************************************/
 export interface Refiner {
-	Entries?: Array<Microsoft.Office.Server.Search.REST.RefinerEntry>;
+	Entries?: { results: Array<Microsoft.Office.Server.Search.REST.RefinerEntry> };
 	Name?: string;
 }
 
@@ -302,7 +302,7 @@ export interface RefinerEntryCollections {
 export interface RelevantResults {
 	GroupTemplateId?: string;
 	ItemTemplateId?: string;
-	Properties?: Array<SP.KeyValue>;
+	Properties?: { results: Array<SP.KeyValue> };
 	ResultTitle?: string;
 	ResultTitleUrl?: string;
 	RowCount?: number;
@@ -324,8 +324,8 @@ export interface RelevantResultsCollections {
 export interface SpecialTermResults {
 	GroupTemplateId?: string;
 	ItemTemplateId?: string;
-	Properties?: Array<SP.KeyValue>;
-	Results?: Array<Microsoft.Office.Server.Search.REST.SpecialTermResult>;
+	Properties?: { results: Array<SP.KeyValue> };
+	Results?: { results: Array<Microsoft.Office.Server.Search.REST.SpecialTermResult> };
 	ResultTitle?: string;
 	ResultTitleUrl?: string;
 }
@@ -378,7 +378,7 @@ export interface ReportAbandonedQueriesDataCollections {
 **********************************************/
 export interface ReportAbandonedQueriesItem {
 	Date?: string;
-	Report?: Array<Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesData>;
+	Report?: { results: Array<Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesData> };
 }
 
 /*********************************************
@@ -406,7 +406,7 @@ export interface ReportBaseCollections {
 * ReportAbandonedQueries
 **********************************************/
 export interface ReportAbandonedQueries {
-	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesItem>;
+	Reports?: { results: Array<Microsoft.Office.Server.Search.REST.ReportAbandonedQueriesItem> };
 }
 
 /*********************************************
@@ -438,7 +438,7 @@ export interface ReportNoResultDataCollections {
 **********************************************/
 export interface ReportNoResultItem {
 	Date?: string;
-	Report?: Array<Microsoft.Office.Server.Search.REST.ReportNoResultData>;
+	Report?: { results: Array<Microsoft.Office.Server.Search.REST.ReportNoResultData> };
 }
 
 /*********************************************
@@ -452,7 +452,7 @@ export interface ReportNoResultItemCollections {
 * ReportNoResultQueries
 **********************************************/
 export interface ReportNoResultQueries {
-	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportNoResultItem>;
+	Reports?: { results: Array<Microsoft.Office.Server.Search.REST.ReportNoResultItem> };
 }
 
 /*********************************************
@@ -483,7 +483,7 @@ export interface ReportNumberOfQueriesDataCollections {
 **********************************************/
 export interface ReportNumberOfQueriesItem {
 	Date?: string;
-	Report?: Array<Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesData>;
+	Report?: { results: Array<Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesData> };
 }
 
 /*********************************************
@@ -497,7 +497,7 @@ export interface ReportNumberOfQueriesItemCollections {
 * ReportNumberOfQueries
 **********************************************/
 export interface ReportNumberOfQueries {
-	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesItem>;
+	Reports?: { results: Array<Microsoft.Office.Server.Search.REST.ReportNumberOfQueriesItem> };
 }
 
 /*********************************************
@@ -536,7 +536,7 @@ export interface ReportQueryRulesDataCollections {
 **********************************************/
 export interface ReportQueryRulesItem {
 	Date?: string;
-	Report?: Array<Microsoft.Office.Server.Search.REST.ReportQueryRulesData>;
+	Report?: { results: Array<Microsoft.Office.Server.Search.REST.ReportQueryRulesData> };
 }
 
 /*********************************************
@@ -550,7 +550,7 @@ export interface ReportQueryRulesItemCollections {
 * ReportQueryRules
 **********************************************/
 export interface ReportQueryRules {
-	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportQueryRulesItem>;
+	Reports?: { results: Array<Microsoft.Office.Server.Search.REST.ReportQueryRulesItem> };
 }
 
 /*********************************************
@@ -582,7 +582,7 @@ export interface ReportTopQueriesDataCollections {
 **********************************************/
 export interface ReportTopQueriesItem {
 	Date?: string;
-	Report?: Array<Microsoft.Office.Server.Search.REST.ReportTopQueriesData>;
+	Report?: { results: Array<Microsoft.Office.Server.Search.REST.ReportTopQueriesData> };
 }
 
 /*********************************************
@@ -596,7 +596,7 @@ export interface ReportTopQueriesItemCollections {
 * ReportTopQueries
 **********************************************/
 export interface ReportTopQueries {
-	Reports?: Array<Microsoft.Office.Server.Search.REST.ReportTopQueriesItem>;
+	Reports?: { results: Array<Microsoft.Office.Server.Search.REST.ReportTopQueriesItem> };
 }
 
 /*********************************************
@@ -642,28 +642,28 @@ export interface SearchRequest {
 	GenerateBlockRankLog?: boolean;
 	HiddenConstraints?: string;
 	HitHighlightedMultivaluePropertyLimit?: number;
-	HitHighlightedProperties?: Array<string>;
+	HitHighlightedProperties?: { results: Array<string> };
 	ImpressionId?: string;
 	MaxSnippetLength?: number;
 	OLSQuerySession?: string;
 	PersonalizationData?: any;
 	ProcessBestBets?: boolean;
 	ProcessPersonalFavorites?: boolean;
-	Properties?: Array<Microsoft.Office.Server.Search.REST.QueryProperty>;
-	PropertiesToGenerateAcronyms?: Array<string>;
+	Properties?: { results: Array<Microsoft.Office.Server.Search.REST.QueryProperty> };
+	PropertiesToGenerateAcronyms?: { results: Array<string> };
 	QueryTag?: string;
 	QueryTemplate?: string;
 	QueryTemplatePropertiesUrl?: string;
 	Querytext?: string;
 	RankingModelId?: string;
-	RefinementFilters?: Array<string>;
+	RefinementFilters?: { results: Array<string> };
 	Refiners?: string;
-	ReorderingRules?: Array<Microsoft.SharePoint.Client.Search.Query.ReorderingRule>;
+	ReorderingRules?: { results: Array<Microsoft.SharePoint.Client.Search.Query.ReorderingRule> };
 	ResultsUrl?: string;
 	RowLimit?: number;
 	RowsPerPage?: number;
-	SelectProperties?: Array<string>;
-	SortList?: Array<Microsoft.SharePoint.Client.Search.Query.Sort>;
+	SelectProperties?: { results: Array<string> };
+	SortList?: { results: Array<Microsoft.SharePoint.Client.Search.Query.Sort> };
 	SourceId?: any;
 	StartRow?: number;
 	SummaryLength?: number;
@@ -689,10 +689,10 @@ export interface SearchRequestCollections {
 export interface SearchResult {
 	ElapsedTime?: number;
 	PrimaryQueryResult?: Microsoft.Office.Server.Search.REST.QueryResult;
-	Properties?: Array<SP.KeyValue>;
-	SecondaryQueryResults?: Array<Microsoft.Office.Server.Search.REST.QueryResult>;
+	Properties?: { results: Array<SP.KeyValue> };
+	SecondaryQueryResults?: { results: Array<Microsoft.Office.Server.Search.REST.QueryResult> };
 	SpellingSuggestion?: string;
-	TriggeredRules?: Array<any>;
+	TriggeredRules?: { results: Array<any> };
 }
 
 /*********************************************

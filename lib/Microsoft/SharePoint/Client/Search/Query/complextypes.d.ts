@@ -8,7 +8,7 @@ export interface QueryPropertyValue {
 	BoolVal?: boolean;
 	IntVal?: number;
 	QueryPropertyValueTypeIndex?: number;
-	StrArray?: Array<string>;
+	StrArray?: { results: Array<string> };
 	StrVal?: string;
 }
 
@@ -94,7 +94,7 @@ export interface QueryAutoCompletionMatchCollections {
 export interface QueryAutoCompletionResults {
 	CoreExecutionTimeMs?: number;
 	CorrelationId?: string;
-	Queries?: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletion>;
+	Queries?: { results: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletion> };
 }
 
 /*********************************************
@@ -108,7 +108,7 @@ export interface QueryAutoCompletionResultsCollections {
 * QueryAutoCompletion
 **********************************************/
 export interface QueryAutoCompletion {
-	Matches?: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletionMatch>;
+	Matches?: { results: Array<Microsoft.SharePoint.Client.Search.Query.QueryAutoCompletionMatch> };
 	Query?: string;
 	Score?: number;
 	Source?: string;
@@ -155,10 +155,10 @@ export interface QuerySuggestionRangeCollections {
 * QuerySuggestionResults
 **********************************************/
 export interface QuerySuggestionResults {
-	PeopleNames?: Array<string>;
-	PersonalResults?: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion>;
-	PopularResults?: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion>;
-	Queries?: Array<Microsoft.SharePoint.Client.Search.Query.QuerySuggestionQuery>;
+	PeopleNames?: { results: Array<string> };
+	PersonalResults?: { results: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion> };
+	PopularResults?: { results: Array<Microsoft.SharePoint.Client.Search.Query.PersonalResultSuggestion> };
+	Queries?: { results: Array<Microsoft.SharePoint.Client.Search.Query.QuerySuggestionQuery> };
 }
 
 /*********************************************
@@ -172,8 +172,8 @@ export interface QuerySuggestionResultsCollections {
 * TenantCustomQuerySuggestions
 **********************************************/
 export interface TenantCustomQuerySuggestions {
-	AlwaysSuggest?: Array<Microsoft.SharePoint.Client.Search.Query.CustomQuerySuggestions>;
-	NeverSuggest?: Array<Microsoft.SharePoint.Client.Search.Query.CustomQuerySuggestions>;
+	AlwaysSuggest?: { results: Array<Microsoft.SharePoint.Client.Search.Query.CustomQuerySuggestions> };
+	NeverSuggest?: { results: Array<Microsoft.SharePoint.Client.Search.Query.CustomQuerySuggestions> };
 }
 
 /*********************************************
@@ -188,7 +188,7 @@ export interface TenantCustomQuerySuggestionsCollections {
 **********************************************/
 export interface CustomQuerySuggestions {
 	LCID?: number;
-	Queries?: Array<string>;
+	Queries?: { results: Array<string> };
 }
 
 /*********************************************

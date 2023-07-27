@@ -73,7 +73,7 @@ export interface DateTimeCustomPropertyCollections {
 * Error
 **********************************************/
 export interface Error {
-	Details?: Array<string>;
+	Details?: { results: Array<string> };
 }
 
 /*********************************************
@@ -87,7 +87,7 @@ export interface ErrorCollections {
 * SitePageFieldsData
 **********************************************/
 export interface SitePageFieldsData {
-	AuthorByline?: Array<string>;
+	AuthorByline?: { results: Array<string> };
 	BannerImageUrl?: string;
 	CallToAction?: string;
 	CanvasContent1?: string;
@@ -155,8 +155,8 @@ export interface ViewDataCollections {
 * ItemViewsAnalyticsData
 **********************************************/
 export interface ItemViewsAnalyticsData {
-	Days?: Array<SP.Publishing.TimeFrameStatistics>;
-	Months?: Array<SP.Publishing.TimeFrameStatistics>;
+	Days?: { results: Array<SP.Publishing.TimeFrameStatistics> };
+	Months?: { results: Array<SP.Publishing.TimeFrameStatistics> };
 }
 
 /*********************************************
@@ -255,7 +255,7 @@ export interface PersonMagazineDataCollections {
 * PersonMagazineUserProfileDirectsData
 **********************************************/
 export interface PersonMagazineUserProfileDirectsData {
-	DirectReports?: Array<SP.Publishing.PersonMagazineUserProfile>;
+	DirectReports?: { results: Array<SP.Publishing.PersonMagazineUserProfile> };
 }
 
 /*********************************************
@@ -275,7 +275,7 @@ export interface PersonMagazineUserProfile {
 	Assistant?: SP.Publishing.PersonCore;
 	BirthDate?: SP.Publishing.ProfileDateTime;
 	Birthday?: string;
-	DateTimeCustomProperties?: Array<SP.Publishing.DateTimeCustomProperty>;
+	DateTimeCustomProperties?: { results: Array<SP.Publishing.DateTimeCustomProperty> };
 	DepartmentName?: string;
 	DisplayName?: string;
 	Email?: string;
@@ -290,7 +290,7 @@ export interface PersonMagazineUserProfile {
 	OfficeLocation?: string;
 	OneDriveUrl?: string;
 	PastProjects?: string;
-	PersonTypeCustomProperties?: Array<SP.Publishing.PersonCustomProperty>;
+	PersonTypeCustomProperties?: { results: Array<SP.Publishing.PersonCustomProperty> };
 	Phone?: string;
 	PictureUrl?: string;
 	PointPublishingPersonalSiteUrl?: string;
@@ -299,7 +299,7 @@ export interface PersonMagazineUserProfile {
 	Skills?: string;
 	SpsDepartment?: string;
 	SpsJobTitle?: string;
-	StringCustomProperties?: Array<SP.KeyValue>;
+	StringCustomProperties?: { results: Array<SP.KeyValue> };
 	Title?: string;
 	UserName?: string;
 }
@@ -315,7 +315,7 @@ export interface PersonMagazineUserProfileCollections {
 * PersonMagazineUserProfileData
 **********************************************/
 export interface PersonMagazineUserProfileData {
-	ManagerChain?: Array<SP.Publishing.PersonMagazineUserProfile>;
+	ManagerChain?: { results: Array<SP.Publishing.PersonMagazineUserProfile> };
 	Primary?: SP.Publishing.PersonMagazineUserProfile;
 }
 
@@ -347,7 +347,7 @@ export interface PortalHealthStatusDetailsCollections {
 * PortalHealthStatus
 **********************************************/
 export interface PortalHealthStatus {
-	Details?: Array<SP.Publishing.PortalHealthStatusDetails>;
+	Details?: { results: Array<SP.Publishing.PortalHealthStatusDetails> };
 	Status?: number;
 }
 
@@ -377,7 +377,7 @@ export interface ProfileCorePropertiesCollections {
 * ProfileDirectsData
 **********************************************/
 export interface ProfileDirectsData {
-	DirectReports?: Array<SP.Publishing.ProfileCoreProperties>;
+	DirectReports?: { results: Array<SP.Publishing.ProfileCoreProperties> };
 }
 
 /*********************************************
@@ -391,7 +391,7 @@ export interface ProfileDirectsDataCollections {
 * ProfileData
 **********************************************/
 export interface ProfileData {
-	ManagerChain?: Array<SP.Publishing.ProfileCoreProperties>;
+	ManagerChain?: { results: Array<SP.Publishing.ProfileCoreProperties> };
 	Primary?: SP.Publishing.PersonMagazineUserProfile;
 }
 
@@ -515,8 +515,8 @@ export interface PropertyValueCollections {
 * RuleErrorDetails
 **********************************************/
 export interface RuleErrorDetails {
-	errorHeaders?: Array<string>;
-	errors?: Array<SP.Publishing.Error>;
+	errorHeaders?: { results: Array<string> };
+	errors?: { results: Array<SP.Publishing.Error> };
 }
 
 /*********************************************
@@ -552,7 +552,7 @@ export interface RuleResultCollections {
 **********************************************/
 export interface SharePagePreviewByEmailFieldsData {
 	message?: string;
-	recipientEmails?: Array<string>;
+	recipientEmails?: { results: Array<string> };
 }
 
 /*********************************************
@@ -612,11 +612,11 @@ export interface SiteSharingEmailContextCollections {
 * TaxonomicProperties
 **********************************************/
 export interface TaxonomicProperties {
-	Interest?: Array<SP.Publishing.PropertyValue>;
-	PastProjects?: Array<SP.Publishing.PropertyValue>;
-	Responsibilities?: Array<SP.Publishing.PropertyValue>;
-	Schools?: Array<SP.Publishing.PropertyValue>;
-	Skills?: Array<SP.Publishing.PropertyValue>;
+	Interest?: { results: Array<SP.Publishing.PropertyValue> };
+	PastProjects?: { results: Array<SP.Publishing.PropertyValue> };
+	Responsibilities?: { results: Array<SP.Publishing.PropertyValue> };
+	Schools?: { results: Array<SP.Publishing.PropertyValue> };
+	Skills?: { results: Array<SP.Publishing.PropertyValue> };
 }
 
 /*********************************************

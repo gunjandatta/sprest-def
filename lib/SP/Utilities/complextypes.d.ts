@@ -5,13 +5,13 @@ import { SP } from "../../";
 * EmailProperties
 **********************************************/
 export interface EmailProperties {
-	AdditionalHeaders?: Array<SP.KeyValue>;
-	BCC?: Array<string>;
+	AdditionalHeaders?: { results: Array<SP.KeyValue> };
+	BCC?: { results: Array<string> };
 	Body?: string;
-	CC?: Array<string>;
+	CC?: { results: Array<string> };
 	From?: string;
 	Subject?: string;
-	To?: Array<string>;
+	To?: { results: Array<string> };
 }
 
 /*********************************************
@@ -103,7 +103,7 @@ export interface PrincipalInfoCollections {
 **********************************************/
 export interface WebAppUrlsByAction {
 	Action?: string;
-	UrlsByExt?: Array<SP.Utilities.WebAppExtUrlPair>;
+	UrlsByExt?: { results: Array<SP.Utilities.WebAppExtUrlPair> };
 }
 
 /*********************************************
@@ -149,7 +149,7 @@ export interface WikiPageCreationInformationCollections {
 export interface WopiWebAppProperties {
 	App?: string;
 	BootstrapperUrl?: string;
-	ListByAction?: Array<SP.Utilities.WebAppUrlsByAction>;
+	ListByAction?: { results: Array<SP.Utilities.WebAppUrlsByAction> };
 }
 
 /*********************************************
@@ -164,7 +164,7 @@ export interface WopiWebAppPropertiesCollections {
 **********************************************/
 export interface ThemingOptions {
 	hideDefaultThemes?: boolean;
-	themePreviews?: Array<SP.Utilities.JsonTheme>;
+	themePreviews?: { results: Array<SP.Utilities.JsonTheme> };
 }
 
 /*********************************************

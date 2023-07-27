@@ -83,12 +83,12 @@ export interface CheckoutFacetCollections {
 * GetCommentFacet
 **********************************************/
 export interface GetCommentFacet {
-	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	assignees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 	commentId?: string;
 	isReply?: boolean;
 	parentAuthor?: Microsoft.SharePoint.Activities.ActivityIdentity;
 	parentCommentId?: string;
-	participants?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	participants?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 }
 
 /*********************************************
@@ -196,7 +196,7 @@ export interface EditFacetCollections {
 * GetMentionFacet
 **********************************************/
 export interface GetMentionFacet {
-	mentionees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	mentionees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 }
 
 /*********************************************
@@ -281,7 +281,7 @@ export interface RestoreVersionFacetCollections {
 * SharingFacet
 **********************************************/
 export interface SharingFacet {
-	recipients?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	recipients?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 	sharingType?: string;
 }
 
@@ -296,7 +296,7 @@ export interface SharingFacetCollections {
 * TaskCompletedFacet
 **********************************************/
 export interface TaskCompletedFacet {
-	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	assignees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
 }
 
@@ -311,7 +311,7 @@ export interface TaskCompletedFacetCollections {
 * TaskCreatedFacet
 **********************************************/
 export interface TaskCreatedFacet {
-	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	assignees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
 }
 
@@ -326,8 +326,8 @@ export interface TaskCreatedFacetCollections {
 * TaskReassignedFacet
 **********************************************/
 export interface TaskReassignedFacet {
-	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
-	previousAssignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	assignees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
+	previousAssignees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
 }
 
@@ -342,7 +342,7 @@ export interface TaskReassignedFacetCollections {
 * TaskReopenedFacet
 **********************************************/
 export interface TaskReopenedFacet {
-	assignees?: Array<Microsoft.SharePoint.Activities.ActivityIdentity>;
+	assignees?: { results: Array<Microsoft.SharePoint.Activities.ActivityIdentity> };
 	taskCreator?: Microsoft.SharePoint.Activities.ActivityIdentity;
 }
 
@@ -420,7 +420,7 @@ export interface CoalescedFacetCollections {
 export interface CommentFacet {
 	commentText?: string;
 	parentAuthor?: Microsoft.SharePoint.Activities.ActivityClientIdentity;
-	participants?: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity>;
+	participants?: { results: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity> };
 }
 
 /*********************************************
@@ -450,7 +450,7 @@ export interface InDocFacetCollections {
 **********************************************/
 export interface MentionFacet {
 	commentContentId?: string;
-	mentionees?: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity>;
+	mentionees?: { results: Array<Microsoft.SharePoint.Activities.ActivityClientIdentity> };
 }
 
 /*********************************************
@@ -503,7 +503,7 @@ export interface RevisionInfoCollections {
 **********************************************/
 export interface RevisionSetFacet {
 	author?: Microsoft.SharePoint.Activities.ActivityClientIdentity;
-	revisions?: Array<Microsoft.SharePoint.Activities.RevisionInfo>;
+	revisions?: { results: Array<Microsoft.SharePoint.Activities.RevisionInfo> };
 }
 
 /*********************************************

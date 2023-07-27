@@ -324,8 +324,8 @@ export interface RequireSecondaryContactCollections {
 * SecondaryAdministratorsFieldsData
 **********************************************/
 export interface SecondaryAdministratorsFieldsData {
-	secondaryAdministratorEmails?: Array<string>;
-	secondaryAdministratorLoginNames?: Array<string>;
+	secondaryAdministratorEmails?: { results: Array<string> };
+	secondaryAdministratorLoginNames?: { results: Array<string> };
 	siteId?: any;
 }
 
@@ -477,7 +477,7 @@ export interface SiteCreationPropertiesCollections {
 export interface SiteCreationSource {
 	IsSyncThresholdLimitReached?: boolean;
 	LastRefreshTimeStamp?: any;
-	SiteCreationData?: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteCreationData>;
+	SiteCreationData?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteCreationData> };
 	SyncThresholdLimit?: number;
 	TotalSitesCount?: number;
 }
@@ -561,7 +561,7 @@ export interface SiteStatePropertiesCollections {
 * SiteUserGroupInfo
 **********************************************/
 export interface SiteUserGroupInfo {
-	userGroup?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
+	userGroup?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo> };
 }
 
 /*********************************************
@@ -592,10 +592,10 @@ export interface UserInfoCollections {
 * SiteUserGroupsData
 **********************************************/
 export interface SiteUserGroupsData {
-	members?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
-	owners?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
+	members?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo> };
+	owners?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo> };
 	siteId?: any;
-	visitors?: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo>;
+	visitors?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.UserInfo> };
 }
 
 /*********************************************

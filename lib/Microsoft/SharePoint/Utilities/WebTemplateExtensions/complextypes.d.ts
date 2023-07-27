@@ -33,10 +33,10 @@ export interface SiteDesignCreationInfo {
 	RequiresGroupConnected?: boolean;
 	RequiresTeamsConnected?: boolean;
 	RequiresYammerConnected?: boolean;
-	SiteScriptIds?: Array<any>;
-	SupportedWebTemplates?: Array<string>;
-	TargetPlatforms?: Array<string>;
-	TemplateFeatures?: Array<string>;
+	SiteScriptIds?: { results: Array<any> };
+	SupportedWebTemplates?: { results: Array<string> };
+	TargetPlatforms?: { results: Array<string> };
+	TemplateFeatures?: { results: Array<string> };
 	ThumbnailUrl?: string;
 	Title?: string;
 	WebTemplate?: string;
@@ -124,7 +124,7 @@ export interface SiteScriptMetadataCollections {
 **********************************************/
 export interface SiteScriptSerializationInfo {
 	IncludeBranding?: boolean;
-	IncludedLists?: Array<string>;
+	IncludedLists?: { results: Array<string> };
 	IncludeLinksToExportedItems?: boolean;
 	IncludeRegionalSettings?: boolean;
 	IncludeSiteExternalSharingCapability?: boolean;
@@ -143,7 +143,7 @@ export interface SiteScriptSerializationInfoCollections {
 **********************************************/
 export interface SiteScriptSerializationResult {
 	JSON?: string;
-	Warnings?: Array<string>;
+	Warnings?: { results: Array<string> };
 }
 
 /*********************************************
@@ -213,7 +213,7 @@ export interface SiteScriptActionStatusCollections {
 * SPSiteScriptStatusAndSchema
 **********************************************/
 export interface SPSiteScriptStatusAndSchema {
-	ActionStatus?: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus>;
+	ActionStatus?: { results: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteScriptActionStatus> };
 	Schema?: string;
 }
 

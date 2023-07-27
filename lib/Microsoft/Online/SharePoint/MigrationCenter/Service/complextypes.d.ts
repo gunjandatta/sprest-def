@@ -21,9 +21,9 @@ export interface MigrationPropertyCollections {
 * PerformanceDashboardData
 **********************************************/
 export interface PerformanceDashboardData {
-	BottleneckList?: Array<string>;
-	RecommendationList?: Array<string>;
-	ThroughputTrend?: Array<Microsoft.Online.SharePoint.MigrationCenter.Service.ThroughputData>;
+	BottleneckList?: { results: Array<string> };
+	RecommendationList?: { results: Array<string> };
+	ThroughputTrend?: { results: Array<Microsoft.Online.SharePoint.MigrationCenter.Service.ThroughputData> };
 }
 
 /*********************************************

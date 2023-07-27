@@ -7,7 +7,7 @@ import { SP } from "../../";
 export interface CrossGeoSyncUserDataBatch {
 	LastEventId?: number;
 	LastRecordId?: number;
-	Properties?: Array<SP.UserProfiles.CrossGeoSyncUserProperty>;
+	Properties?: { results: Array<SP.UserProfiles.CrossGeoSyncUserProperty> };
 }
 
 /*********************************************
@@ -40,7 +40,7 @@ export interface CrossGeoSyncUserPropertyCollections {
 * FollowedItem
 **********************************************/
 export interface FollowedItem {
-	Data?: Array<SP.KeyValue>;
+	Data?: { results: Array<SP.KeyValue> };
 	FileType?: string;
 	FileTypeProgid?: string;
 	Flags?: string;

@@ -5,7 +5,7 @@ import { Microsoft } from "../../../../";
 * SharePointHomeDataCacheCollection
 **********************************************/
 export interface SharePointHomeDataCacheCollection {
-	Items?: Array<Microsoft.SharePoint.Portal.Home.SharePointHomeDataCache>;
+	Items?: { results: Array<Microsoft.SharePoint.Portal.Home.SharePointHomeDataCache> };
 }
 
 /*********************************************
@@ -67,7 +67,7 @@ export interface SharePointHomeDataCacheContextCollections {
 * SharePointHomePageContext
 **********************************************/
 export interface SharePointHomePageContext {
-	ActiveFlights?: Array<string>;
+	ActiveFlights?: { results: Array<string> };
 	AlternateWebAppHost?: string;
 	ExperienceState?: number;
 	IsGraphEnabled?: boolean;
@@ -80,7 +80,7 @@ export interface SharePointHomePageContext {
 	IsSelfServiceSiteCreationEnabled?: boolean;
 	IsUserVoiceEnabled?: boolean;
 	LoadSuiteNav?: boolean;
-	MicroserviceFlights?: Array<string>;
+	MicroserviceFlights?: { results: Array<string> };
 	MicroserviceUrl?: string;
 	MySiteUrl?: string;
 	SearchCenterUrl?: string;

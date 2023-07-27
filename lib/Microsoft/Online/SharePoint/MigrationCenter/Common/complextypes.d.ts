@@ -6,7 +6,7 @@ import { Microsoft } from "../../../../../";
 **********************************************/
 export interface BatchCreationResult {
 	CreatedCount?: number;
-	CreatedTaskIdList?: Array<any>;
+	CreatedTaskIdList?: { results: Array<any> };
 	ErrorCode?: string;
 	ErrorMessage?: string;
 	FieldError?: string;
@@ -26,11 +26,11 @@ export interface BatchCreationResultCollections {
 **********************************************/
 export interface BatchDeletionResult {
 	DeletedCount?: number;
-	DeletedTaskIdList?: Array<any>;
+	DeletedTaskIdList?: { results: Array<any> };
 	ErrorCode?: string;
 	ErrorMessage?: string;
 	NotDeletedCount?: number;
-	NotDeletedTaskIdList?: Array<any>;
+	NotDeletedTaskIdList?: { results: Array<any> };
 	ProcessingMilliseconds?: number;
 }
 
@@ -162,7 +162,7 @@ export interface SPListInformation {
 	AbsoluteUrl?: string;
 	BaseTemplate?: number;
 	DisplayTitle?: string;
-	FolderInfoList?: Array<Microsoft.Online.SharePoint.MigrationCenter.Common.SPFolderInformation>;
+	FolderInfoList?: { results: Array<Microsoft.Online.SharePoint.MigrationCenter.Common.SPFolderInformation> };
 	ID?: any;
 	IsListPathUsedAsTitle?: boolean;
 	IsMySiteDocumentLibrary?: boolean;

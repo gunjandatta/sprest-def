@@ -26,11 +26,11 @@ export interface MyRecsCacheBlobCollections {
 **********************************************/
 export interface MyRecsQueryInfo {
 	Category?: number;
-	ExpertiseTags?: Array<string>;
-	FollowedUrls?: Array<string>;
-	InterestTags?: Array<string>;
+	ExpertiseTags?: { results: Array<string> };
+	FollowedUrls?: { results: Array<string> };
+	InterestTags?: { results: Array<string> };
 	QueryInfoExists?: boolean;
-	SuggestedTags?: Array<string>;
+	SuggestedTags?: { results: Array<string> };
 }
 
 /*********************************************

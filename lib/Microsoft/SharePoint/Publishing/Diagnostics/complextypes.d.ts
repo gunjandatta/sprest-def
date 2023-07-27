@@ -36,7 +36,7 @@ export interface PageDiagnosticsResult {
 	CreatedDate?: any;
 	PageDetails?: Microsoft.SharePoint.Publishing.Diagnostics.PageDetails;
 	ResultStatus?: number;
-	suggestions?: Array<SP.Publishing.RuleResult>;
+	suggestions?: { results: Array<SP.Publishing.RuleResult> };
 	Score?: number;
 	ToolDetails?: Microsoft.SharePoint.Publishing.Diagnostics.ToolDetails;
 }
@@ -70,7 +70,7 @@ export interface PageDiagnostics {
 	LatestDraftVersion?: string;
 	LatestPublishedVersion?: string;
 	PageFileName?: string;
-	Results?: Array<Microsoft.SharePoint.Publishing.Diagnostics.PageDiagnosticsResult>;
+	Results?: { results: Array<Microsoft.SharePoint.Publishing.Diagnostics.PageDiagnosticsResult> };
 }
 
 /*********************************************

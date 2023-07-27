@@ -42,14 +42,14 @@ export interface PortalLaunchWaveSetup {
 	IsPaused?: boolean;
 	ModifiedOn?: any;
 	NewSiteUrl?: string;
-	OwnersAndEditors?: Array<SP.KeyValue>;
+	OwnersAndEditors?: { results: Array<SP.KeyValue> };
 	PauseAtWave?: number;
 	RedirectionType?: number;
 	RedirectUrl?: string;
 	SiteId?: any;
 	Status?: number;
 	WaveOverrideUsers?: string;
-	Waves?: Array<SP.Publishing.PortalLaunch.PortalLaunchWave>;
+	Waves?: { results: Array<SP.Publishing.PortalLaunch.PortalLaunchWave> };
 }
 
 /*********************************************
@@ -63,7 +63,7 @@ export interface PortalLaunchWaveSetupCollections {
 * PortalLaunchWave
 **********************************************/
 export interface PortalLaunchWave {
-	Groups?: Array<SP.Publishing.PortalLaunch.PortalLaunchWaveGroup>;
+	Groups?: { results: Array<SP.Publishing.PortalLaunch.PortalLaunchWaveGroup> };
 	LaunchDateUtc?: any;
 	Name?: string;
 	Order?: number;

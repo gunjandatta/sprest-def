@@ -114,7 +114,7 @@ export interface SocialDataItemCollections {
 * SocialDataOverlay
 **********************************************/
 export interface SocialDataOverlay {
-	ActorIndexes?: Array<number>;
+	ActorIndexes?: { results: Array<number> };
 	Index?: number;
 	Length?: number;
 	LinkUri?: string;
@@ -170,7 +170,7 @@ export interface SocialFeed {
 	Attributes?: number;
 	NewestProcessed?: any;
 	OldestProcessed?: any;
-	Threads?: Array<SP.Social.SocialThread>;
+	Threads?: { results: Array<SP.Social.SocialThread> };
 	UnreadMentionCount?: number;
 }
 
@@ -185,13 +185,13 @@ export interface SocialFeedCollections {
 * SocialThread
 **********************************************/
 export interface SocialThread {
-	Actors?: Array<SP.Social.SocialActor>;
+	Actors?: { results: Array<SP.Social.SocialActor> };
 	Attributes?: number;
 	Id?: string;
 	OwnerIndex?: number;
 	Permalink?: string;
 	PostReference?: SP.Social.SocialPostReference;
-	Replies?: Array<SP.Social.SocialPost>;
+	Replies?: { results: Array<SP.Social.SocialPost> };
 	RootPost?: SP.Social.SocialPost;
 	Status?: number;
 	ThreadType?: number;
@@ -233,7 +233,7 @@ export interface SocialPost {
 	Id?: string;
 	LikerInfo?: SP.Social.SocialPostActorInfo;
 	ModifiedTime?: any;
-	Overlays?: Array<SP.Social.SocialDataOverlay>;
+	Overlays?: { results: Array<SP.Social.SocialDataOverlay> };
 	PostType?: number;
 	PreferredImageUri?: string;
 	Source?: SP.Social.SocialLink;
@@ -252,7 +252,7 @@ export interface SocialPostCollections {
 **********************************************/
 export interface SocialPostActorInfo {
 	IncludesCurrentUser?: boolean;
-	Indexes?: Array<number>;
+	Indexes?: { results: Array<number> };
 	TotalCount?: number;
 }
 
@@ -283,10 +283,10 @@ export interface SocialLinkCollections {
 **********************************************/
 export interface SocialPostCreationData {
 	Attachment?: SP.Social.SocialAttachment;
-	ContentItems?: Array<SP.Social.SocialDataItem>;
+	ContentItems?: { results: Array<SP.Social.SocialDataItem> };
 	ContentText?: string;
 	DefinitionData?: SP.Social.SocialPostDefinitionData;
-	SecurityUris?: Array<string>;
+	SecurityUris?: { results: Array<string> };
 	Source?: SP.Social.SocialLink;
 	UpdateStatusText?: boolean;
 }
@@ -302,7 +302,7 @@ export interface SocialPostCreationDataCollections {
 * SocialPostDefinitionData
 **********************************************/
 export interface SocialPostDefinitionData {
-	Items?: Array<SP.Social.SocialPostDefinitionDataItem>;
+	Items?: { results: Array<SP.Social.SocialPostDefinitionDataItem> };
 	Name?: string;
 }
 

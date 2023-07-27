@@ -5,11 +5,11 @@ import { Base } from "../../../";
 **********************************************/
 export interface GetRemoteItemInfoRequest {
 	IsCreateMountPointFlow?: boolean;
-	MountedRemoteItemUniqueIds?: Array<any>;
+	MountedRemoteItemUniqueIds?: { results: Array<any> };
 	RemoteItemListId?: any;
 	RemoteItemSiteId?: any;
 	RemoteItemSiteUrl?: string;
-	RemoteItemUniqueIds?: Array<any>;
+	RemoteItemUniqueIds?: { results: Array<any> };
 	RemoteItemWebId?: any;
 	UserEmail?: string;
 	UserLoginName?: string;
@@ -26,7 +26,7 @@ export interface GetRemoteItemInfoRequestCollections {
 * NotifyChangeToMountPointsRequest
 **********************************************/
 export interface NotifyChangeToMountPointsRequest {
-	MountPointUniqueIds?: Array<any>;
+	MountPointUniqueIds?: { results: Array<any> };
 }
 
 /*********************************************

@@ -24,8 +24,8 @@ export interface ContentTypeInfoCollections {
 * ContentTypeSyndicationResult
 **********************************************/
 export interface ContentTypeSyndicationResult {
-	FailedContentTypeErrors?: Array<string>;
-	FailedContentTypeIDs?: Array<string>;
+	FailedContentTypeErrors?: { results: Array<string> };
+	FailedContentTypeIDs?: { results: Array<string> };
 	FailedReason?: number;
 	IsPassed?: boolean;
 }
