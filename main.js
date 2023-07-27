@@ -264,7 +264,7 @@ function getType(type = "any", enumInterfaces) {
 // Method to update the references
 function updateReferences(fileImports, dirName, type) {
     // See if the type requires an import
-    if (type && type.indexOf('.') > 0) {
+    if (!type.startsWith('{') && type && type.indexOf('.') > 0) {
         // Get the last index of it
         let refType = type.replace(/^Array\<|\>$/g, '');
         refType = refType.substring(0, refType.lastIndexOf('.'));

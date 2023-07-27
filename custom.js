@@ -2,17 +2,6 @@
  * Custom Methods
  */
 module.exports = {
-    // Search
-    "Microsoft.Office.Server.Search.REST.SearchService": [
-        {
-            name: "searchquery",
-            returnType: "Microsoft.Office.Server.Search.REST.SearchResult",
-            params: [
-                { $: { Name: "request", Type: "Microsoft.Office.Server.Search.REST.SearchRequest" } }
-            ]
-        }
-    ],
-
     // Attachments
     "Collection(SP.Attachment)": [
         {
@@ -389,6 +378,24 @@ module.exports = {
             name: "getById",
             returnType: "SP.RoleDefinition",
             params: [{ $: { Name: "id", Type: "number" } }]
+        }
+    ],
+
+    // Search
+    "Microsoft.Office.Server.Search.REST.SearchService": [
+        {
+            name: "searchquery",
+            returnType: "{ query: Microsoft.Office.Server.Search.REST.SearchResult }",
+            params: [
+                { $: { Name: "request", Type: "Microsoft.Office.Server.Search.REST.SearchRequest" } }
+            ]
+        },
+        {
+            name: "postquery",
+            returnType: "{ postquery: Microsoft.Office.Server.Search.REST.SearchResult }",
+            params: [
+                { $: { Name: "request", Type: "Microsoft.Office.Server.Search.REST.SearchRequest" } }
+            ]
         }
     ],
 
