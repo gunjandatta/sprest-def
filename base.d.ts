@@ -91,6 +91,9 @@ export interface IBaseResult {
     /** The response */
     response: string;
 
+    /** The request status value */
+    status: number;
+
     /**
      * Method to stringify the object.
      */
