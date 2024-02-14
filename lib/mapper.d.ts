@@ -66,12 +66,20 @@ export interface IMapper {
 
 	"Microsoft.Office.Server.ContentCenter.SPMachineLearningHub": {
 		properties?: Array<string>;
-		createSite: IMapperMethod & {
-		argNames: [ "siteCreationProperties" ],
+		checkAIBuilderAccess: IMapperMethod & {
+		argNames: [ "environmentName", "isTestEnvironment", "userId" ],
 		},
 
 		getByContentTypeId: IMapperMethod & {
 		argNames: [ "contentTypeId" ],
+		},
+
+		getCDSMetadata: IMapperMethod & {
+		argNames: [ "environmentName", "isTestEnvironment" ],
+		},
+
+		getMachineLearningFlags: IMapperMethod & {
+		argNames: [ "docLibId" ],
 		},
 
 		getModelIdForContentType: IMapperMethod & {
@@ -79,7 +87,7 @@ export interface IMapper {
 		},
 
 		getModels: IMapperMethod & {
-		argNames: [ "listId", "modelTypes", "publicationTypes" ],
+		argNames: [ "listId", "modelTypes", "publicationTypes", "includeManagementNotAllowedModels" ],
 		},
 
 		getRetentionLabel: IMapperMethod & {
@@ -89,7 +97,26 @@ export interface IMapper {
 		getRetentionLabels: IMapperMethod & {
 		},
 
+		getSyntexPoweredColumnPrompts: IMapperMethod & {
+		argNames: [ "docLibId" ],
+		},
+
+		invokeDataverseQuery: IMapperMethod & {
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
+
+		setMachineLearningFlags: IMapperMethod & {
+		argNames: [ "docLibId", "machineLearningFlags" ],
+		},
+
+		setSyntexPoweredColumnPrompts: IMapperMethod & {
+		argNames: [ "docLibId", "syntexPoweredColumnPrompts" ],
+		},
+
+		setSyntexPoweredColumns: IMapperMethod & {
+		argNames: [ "listId", "itemId", "columnIdAndValues" ],
+		},
 
 		verifyModelUrls: IMapperMethod & {
 		argNames: [ "urls" ],
@@ -109,6 +136,9 @@ export interface IMapper {
 		importMeta: IMapperMethod & {
 		},
 
+		invokeConnectorQuery: IMapperMethod & {
+		},
+
 		rename: IMapperMethod & {
 		argNames: [ "renameTo" ],
 		},
@@ -117,11 +147,18 @@ export interface IMapper {
 		argNames: [ "fromExtractorName", "toExtractorName", "toColumnType" ],
 		},
 
+		setAsModelAuthor: IMapperMethod & {
+		},
+
 		update: IMapperMethod & {
 		},
 
 		updateModelSettings: IMapperMethod & {
 		argNames: [ "ModelSettings" ],
+		},
+
+		updateModelTypeSpecificSettings: IMapperMethod & {
+		argNames: [ "Settings" ],
 		},
 
 	}
@@ -149,12 +186,12 @@ export interface IMapper {
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
-		setupContractsSolution: IMapperMethod & {
-		argNames: [ "newLibraryName", "packageName" ],
+		setupPrimedLibrary: IMapperMethod & {
+		argNames: [ "primedLibraryName", "packageName", "isTileViewEnabled", "serverRelativeLibraryPath" ],
 		},
 
-		setupPrimedLibrary: IMapperMethod & {
-		argNames: [ "primedLibraryName", "packageName" ],
+		unbindModelFromContentType: IMapperMethod & {
+		argNames: [ "contentTypeId" ],
 		},
 
 	}
@@ -327,6 +364,29 @@ export interface IMapper {
 
 	}
 
+	"Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationUrlParser": {
+		properties?: Array<string>;
+		parseUrl: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Common.UrlParseResult": {
+		properties?: Array<string>;
+		setDisplayUrl: IMapperMethod & {
+		argNames: [ "displayUrl" ],
+		},
+
+		setSPListInformation: IMapperMethod & {
+		argNames: [ "spListInformationList" ],
+		},
+
+		updateSiteProvisionInformation: IMapperMethod & {
+		argNames: [ "spListInformation", "uri", "originalUrl", "errorCode", "message", "freeSiteStorageBytes", "isCurrentUserSiteAdmin" ],
+		},
+
+	}
+
 	"Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup": {
 		properties?: Array<string>;
 		delete: IMapperMethod & {
@@ -483,6 +543,10 @@ export interface IMapper {
 
 		batchDelete: IMapperMethod & {
 		argNames: [ "taskIdList", "deleteInProgressTask" ],
+		},
+
+		batchUpdate: IMapperMethod & {
+		argNames: [ "tasks" ],
 		},
 
 		createDuplicateTasks: IMapperMethod & {
@@ -710,10 +774,22 @@ export interface IMapper {
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta": {
 		properties?: Array<string>;
+		compatibleDB: IMapperMethod & {
+		argNames: [ "dbSchemaVersion", "siteSubscriptionId", "siteUrl" ],
+		},
+
 		dBSchemaCompatibilityCheck: IMapperMethod & {
 		},
 
 		geoMoveCompatibilityChecks: IMapperMethod & {
+		},
+
+		hasMnALicense: IMapperMethod & {
+		argNames: [ "mnALicenseType" ],
+		},
+
+		mnAGroupMoveValidationResult: IMapperMethod & {
+		argNames: [ "encodedQuery" ],
 		},
 
 		orgRelationGroupManagedPath: IMapperMethod & {
@@ -729,6 +805,14 @@ export interface IMapper {
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
+
+		restoreWorkflowCount: IMapperMethod & {
+		argNames: [ "isCrossTenant" ],
+		},
+
+		userMnAODMoveValidationResult: IMapperMethod & {
+		argNames: [ "encodedQuery" ],
+		},
 
 		userPersonalSiteId: IMapperMethod & {
 		argNames: [ "userPrincipalName" ],
@@ -761,6 +845,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		getByUrl: IMapperMethod & {
 		argNames: [ "url" ],
+		},
+
+		getMoveJobByUrl: IMapperMethod & {
+		argNames: [ "SourceSiteUrl", "SubscriptionId", "SourceDataLocation", "EnableSiteToMoveDatastore" ],
 		},
 
 		getMoveReport: IMapperMethod & {
@@ -838,6 +926,19 @@ export interface IMapper {
 
 		getMoveReport: IMapperMethod & {
 		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+	}
+
+	"Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob.Collection": {
+		properties?: Array<string>;
+		cancel: IMapperMethod & {
+		argNames: [ "url" ],
+		},
+
+		get: IMapperMethod & {
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -951,9 +1052,33 @@ export interface IMapper {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipal": {
 		properties?: Array<string>;
+		getIsolatedAppDomainsByAppId: IMapperMethod & {
+		argNames: [ "appIds" ],
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		removeAppsToDelete: IMapperMethod & {
+		argNames: [ "domainsToDelete" ],
+		},
+
 		update: IMapperMethod & {
+		},
+
+		updateSpfxClientSecret: IMapperMethod & {
+		argNames: [ "secretValue" ],
+		},
+
+		updateSpfxThirdPartyAppId: IMapperMethod & {
+		argNames: [ "appId" ],
+		},
+
+		updateSpfxThirdPartyIsolatedComponentFields: IMapperMethod & {
+		argNames: [ "catalogItemId", "apAppObjectId", "spObjectId", "appId" ],
+		},
+
+		updateSpfxThirdPartyIsolatedSecret: IMapperMethod & {
+		argNames: [ "servicePrincipalId", "secretValue" ],
 		},
 
 	}
@@ -1013,8 +1138,32 @@ export interface IMapper {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.SPOGroup": {
 		properties?: Array<string>;
+		addAsGroupOwnerAndMember: IMapperMethod & {
+		argNames: [ "groupId", "userId", "userPrincipalName" ],
+		},
+
+		addGroupMember: IMapperMethod & {
+		argNames: [ "groupId", "memberId", "memberPrincipalName" ],
+		},
+
+		addGroupOwner: IMapperMethod & {
+		argNames: [ "groupId", "ownerId", "ownerPrincipalName" ],
+		},
+
 		getGroupInfo: IMapperMethod & {
 		argNames: [ "groupId" ],
+		},
+
+		removeAsGroupOwnerAndMember: IMapperMethod & {
+		argNames: [ "groupId", "userId" ],
+		},
+
+		removeGroupMember: IMapperMethod & {
+		argNames: [ "groupId", "memberId" ],
+		},
+
+		removeGroupOwner: IMapperMethod & {
+		argNames: [ "groupId", "ownerId" ],
 		},
 
 		updateGroupProperties: IMapperMethod & {
@@ -1027,10 +1176,37 @@ export interface IMapper {
 
 	}
 
+	"Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile": {
+		properties?: Array<string>;
+		getMalwareFileStream: IMapperMethod & {
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+	}
+
+	"Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic": {
+		properties?: Array<string>;
+		addCustomSpfx3rdPartyAppPrincipal: IMapperMethod & {
+		argNames: [ "appId", "appUri", "clientSecret" ],
+		},
+
+		getCustomSpfx3rdPartyAppPrincipal: IMapperMethod & {
+		},
+
+		removeCustomSpfx3rdPartyAppPrincipal: IMapperMethod & {
+		},
+
+		updateCustomSpfx3rdPartyAppPrincipalClientSecret: IMapperMethod & {
+		argNames: [ "clientSecret" ],
+		},
+
+	}
+
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService": {
 		properties?: Array<string>;
 		exportCSVFile: IMapperMethod & {
-		argNames: [ "viewXml" ],
+		argNames: [ "viewXml", "timeZoneId" ],
 		},
 
 		getSiteCohortsSummary: IMapperMethod & {
@@ -1054,10 +1230,6 @@ export interface IMapper {
 		},
 
 		setTrackViewFeatureAlwaysVisible: IMapperMethod & {
-		},
-
-		updateOffice365ProvidedSharepointSiteActivityData: IMapperMethod & {
-		argNames: [ "oauthToken" ],
 		},
 
 	}
@@ -1101,8 +1273,31 @@ export interface IMapper {
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Tenant": {
 		properties?: Array<string>;
+		acceptSyntexRepositoryTermsOfService: IMapperMethod & {
+		},
+
+		addBrandFontPackage: IMapperMethod & {
+		argNames: [ "creationInformation" ],
+		},
+
+		addHomeSite: IMapperMethod & {
+		argNames: [ "homeSiteUrl", "order", "audiences" ],
+		},
+
 		addRecentAdminAction: IMapperMethod & {
-		argNames: [ "tenantAdminRecentAction" ],
+		argNames: [ "payload" ],
+		},
+
+		addRecentAdminActionReport: IMapperMethod & {
+		argNames: [ "payload" ],
+		},
+
+		addRecentAdminActions: IMapperMethod & {
+		argNames: [ "payload" ],
+		},
+
+		addSPORestrictedSearchAllowedList: IMapperMethod & {
+		argNames: [ "siteIds" ],
 		},
 
 		addTenantAdminListItem: IMapperMethod & {
@@ -1113,6 +1308,21 @@ export interface IMapper {
 		argNames: [ "parameters" ],
 		},
 
+		addToOrgAssetsLibAndCdnV2: IMapperMethod & {
+		argNames: [ "cdnType", "libUrl", "thumbnailUrl", "orgAssetType", "defaultOriginAdded" ],
+		},
+
+		addToOrgAssetsLibAndCdnWithType: IMapperMethod & {
+		argNames: [ "cdnType", "libUrl", "thumbnailUrl", "orgAssetType" ],
+		},
+
+		archiveSiteById: IMapperMethod & {
+		argNames: [ "siteId" ],
+		},
+
+		bootstrapPolicyAutomationResources: IMapperMethod & {
+		},
+
 		checkTenantIntuneLicense: IMapperMethod & {
 		},
 
@@ -1120,32 +1330,142 @@ export interface IMapper {
 		argNames: [ "licenses" ],
 		},
 
+		clearRestrictedAccessControlOneDrive: IMapperMethod & {
+		},
+
+		clearRestrictedAccessControlSharePoint: IMapperMethod & {
+		},
+
 		connectSiteToHubSiteById: IMapperMethod & {
 		argNames: [ "siteUrl", "hubSiteId" ],
+		},
+
+		createPolicyDefinition: IMapperMethod & {
+		argNames: [ "policyInputParameters" ],
 		},
 
 		createSite: IMapperMethod & {
 		argNames: [ "siteCreationProperties" ],
 		},
 
+		deletePolicyDefinition: IMapperMethod & {
+		argNames: [ "itemId" ],
+		},
+
+		deleteRecentAdminActionReport: IMapperMethod & {
+		argNames: [ "reportId" ],
+		},
+
+		deleteSPOContainerTypeById: IMapperMethod & {
+		argNames: [ "containerTypeId" ],
+		},
+
+		disableCollaborationInsightsDataCollection: IMapperMethod & {
+		},
+
+		downloadRansomwareImpactedAssetsReport: IMapperMethod & {
+		argNames: [ "driveId", "fileName", "reportNameType" ],
+		},
+
+		downloadSPOContainers: IMapperMethod & {
+		argNames: [ "active" ],
+		},
+
+		downloadSharingInsights: IMapperMethod & {
+		argNames: [ "queryMode", "insightsType" ],
+		},
+
+		enableCollaborationInsightsDataCollection: IMapperMethod & {
+		},
+
+		ensureBrandCenterFeature: IMapperMethod & {
+		},
+
+		exportAdminListToCSV: IMapperMethod & {
+		argNames: [ "viewXml", "listName" ],
+		},
+
+		exportCSVFile: IMapperMethod & {
+		argNames: [ "timeZoneId" ],
+		},
+
 		exportToCSV: IMapperMethod & {
-		argNames: [ "viewXml" ],
+		argNames: [ "viewXml", "timeZoneId" ],
+		},
+
+		exportUnlicensedOneDriveForBusinessListToCSV: IMapperMethod & {
 		},
 
 		getAdminListViews: IMapperMethod & {
 		},
 
+		getBrandCenterConfiguration: IMapperMethod & {
+		},
+
+		getBrandFontPackages: IMapperMethod & {
+		},
+
+		getChatGptResponse: IMapperMethod & {
+		argNames: [ "requestOptions" ],
+		},
+
+		getCollaborationInsightsData: IMapperMethod & {
+		},
+
+		getCollaborationInsightsOverview: IMapperMethod & {
+		},
+
 		getFilteredSPListItems: IMapperMethod & {
-		argNames: [ "columnName", "columnValue", "listName" ],
+		argNames: [ "columnName", "columnValue", "columnType", "listName" ],
+		},
+
+		getGptEmbeddings: IMapperMethod & {
+		argNames: [ "requestOptions" ],
+		},
+
+		getGptResponse: IMapperMethod & {
+		argNames: [ "requestOptions" ],
+		},
+
+		getHomeSites: IMapperMethod & {
 		},
 
 		getHomeSitesDetails: IMapperMethod & {
 		},
 
+		getIBVersionForTenant: IMapperMethod & {
+		},
+
 		getIdleSessionSignOutForUnmanagedDevices: IMapperMethod & {
 		},
 
+		getInsightsSummary: IMapperMethod & {
+		argNames: [ "insightsScenario", "dataFileName", "content", "pageIndex" ],
+		},
+
+		getOneDriveSiteSharingInsights: IMapperMethod & {
+		argNames: [ "queryMode" ],
+		},
+
+		getOrgAssets: IMapperMethod & {
+		},
+
 		getPowerAppsEnvironments: IMapperMethod & {
+		},
+
+		getRansomwareActivities: IMapperMethod & {
+		argNames: [ "parameters" ],
+		},
+
+		getRansomwareActivitiesOverview: IMapperMethod & {
+		argNames: [ "eventId" ],
+		},
+
+		getRansomwareEvents: IMapperMethod & {
+		argNames: [ "parameters" ],
+		},
+
+		getRansomwareEventsOverview: IMapperMethod & {
 		},
 
 		getSPHSiteUrl: IMapperMethod & {
@@ -1163,7 +1483,47 @@ export interface IMapper {
 		argNames: [ "cultureName", "compatibilityLevel" ],
 		},
 
+		getSPOContainerByContainerId: IMapperMethod & {
+		argNames: [ "containerId" ],
+		},
+
+		getSPOContainerByContainerSiteUrl: IMapperMethod & {
+		argNames: [ "containerSiteUrl" ],
+		},
+
+		getSPOContainerTypeById: IMapperMethod & {
+		argNames: [ "containerTypeId", "containerTenantType" ],
+		},
+
+		getSPOContainerTypeConfigurationByContainerTypeId: IMapperMethod & {
+		argNames: [ "containerTypeId" ],
+		},
+
+		getSPOContainerTypes: IMapperMethod & {
+		argNames: [ "containerTenantType" ],
+		},
+
+		getSPOContainersByApplicationId: IMapperMethod & {
+		argNames: [ "owningApplicationId", "paged", "pagingToken" ],
+		},
+
+		getSPODeletedContainers: IMapperMethod & {
+		},
+
+		getSPORestrictedSearchAllowedList: IMapperMethod & {
+		},
+
+		getSPORestrictedSearchMode: IMapperMethod & {
+		},
+
 		getSPOSiteCreationSources: IMapperMethod & {
+		},
+
+		getSPOSyntexApplications: IMapperMethod & {
+		},
+
+		getSPOSyntexConsumingApplications: IMapperMethod & {
+		argNames: [ "owningApplicationId", "applicationId" ],
 		},
 
 		getSPOTenantAllWebTemplates: IMapperMethod & {
@@ -1171,6 +1531,14 @@ export interface IMapper {
 
 		getSPOTenantWebTemplates: IMapperMethod & {
 		argNames: [ "localeId", "compatibilityLevel" ],
+		},
+
+		getSharePointSiteSharingInsights: IMapperMethod & {
+		argNames: [ "queryMode" ],
+		},
+
+		getSiteAdministrators: IMapperMethod & {
+		argNames: [ "siteId" ],
 		},
 
 		getSiteHealthStatus: IMapperMethod & {
@@ -1192,16 +1560,34 @@ export interface IMapper {
 		getSiteSubscriptionId: IMapperMethod & {
 		},
 
+		getSiteThumbnailLogo: IMapperMethod & {
+		argNames: [ "siteUrl" ],
+		},
+
 		getSitesByState: IMapperMethod & {
 		argNames: [ "states" ],
+		},
+
+		getTargetedSitesDetails: IMapperMethod & {
+		},
+
+		getTargetedSitesDetailsByUserId: IMapperMethod & {
+		argNames: [ "userId" ],
 		},
 
 		getTenantAllOrCompatibleIBSegments: IMapperMethod & {
 		argNames: [ "segments" ],
 		},
 
+		getTopFilesSharingInsights: IMapperMethod & {
+		argNames: [ "queryMode" ],
+		},
+
 		getViewByDisplayName: IMapperMethod & {
 		argNames: [ "viewName", "listName" ],
+		},
+
+		getVivaConnectionsLicense: IMapperMethod & {
 		},
 
 		grantHubSiteRightsById: IMapperMethod & {
@@ -1211,7 +1597,29 @@ export interface IMapper {
 		hasValidEducationLicense: IMapperMethod & {
 		},
 
+		isSyntexRepositoryTermsOfServiceAccepted: IMapperMethod & {
+		},
+
+		newSPOContainerType: IMapperMethod & {
+		argNames: [ "containerTypeProperties" ],
+		},
+
+		purgeContainer: IMapperMethod & {
+		argNames: [ "containerId" ],
+		},
+
+		purgeSPODeletedContainerByContainerId: IMapperMethod & {
+		argNames: [ "containerId" ],
+		},
+
+		purgeSPODeletedContainerByContainerSiteUrl: IMapperMethod & {
+		argNames: [ "containerSiteUrl" ],
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
+
+		recentAdminActionReportIsAuditEnabled: IMapperMethod & {
+		},
 
 		registerHubSite: IMapperMethod & {
 		argNames: [ "siteUrl" ],
@@ -1219,6 +1627,10 @@ export interface IMapper {
 
 		registerHubSiteWithCreationInformation: IMapperMethod & {
 		argNames: [ "siteUrl", "creationInformation" ],
+		},
+
+		removeContainer: IMapperMethod & {
+		argNames: [ "containerId" ],
 		},
 
 		removeDeletedSite: IMapperMethod & {
@@ -1229,6 +1641,14 @@ export interface IMapper {
 		argNames: [ "siteUrl", "siteId" ],
 		},
 
+		removeFromOrgAssets: IMapperMethod & {
+		argNames: [ "libUrl", "listId" ],
+		},
+
+		removeHomeSite: IMapperMethod & {
+		argNames: [ "homeSiteUrl" ],
+		},
+
 		removeSPHSite: IMapperMethod & {
 		},
 
@@ -1236,48 +1656,128 @@ export interface IMapper {
 		argNames: [ "listItemId", "listName" ],
 		},
 
+		removeSPOContainerByContainerId: IMapperMethod & {
+		argNames: [ "containerId" ],
+		},
+
+		removeSPOContainerByContainerSiteUrl: IMapperMethod & {
+		argNames: [ "containerSiteUrl" ],
+		},
+
+		removeSPOContainerType: IMapperMethod & {
+		argNames: [ "spDeletedContainerTypeProperties" ],
+		},
+
+		removeSPORestrictedSearchAllowedList: IMapperMethod & {
+		argNames: [ "siteIds" ],
+		},
+
 		removeSite: IMapperMethod & {
 		argNames: [ "siteUrl" ],
+		},
+
+		removeTargetedSite: IMapperMethod & {
+		argNames: [ "siteId" ],
 		},
 
 		removeTenantAdminListView: IMapperMethod & {
 		argNames: [ "viewId" ],
 		},
 
+		renderActiveContainers: IMapperMethod & {
+		argNames: [ "containerId", "viewXml" ],
+		},
+
 		renderAdminListData: IMapperMethod & {
 		argNames: [ "parameters", "overrideParameters", "listName" ],
+		},
+
+		renderDeletedContainers: IMapperMethod & {
+		argNames: [ "viewXml" ],
 		},
 
 		renderFilteredAdminListData: IMapperMethod & {
 		argNames: [ "parameters", "listName" ],
 		},
 
+		renderFilteredAdminListDataByGroupId: IMapperMethod & {
+		argNames: [ "groupId" ],
+		},
+
 		renderIBSegmentListDataAsStream: IMapperMethod & {
-		argNames: [ "parameters", "segments", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideRowLimit", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "QueryParams", "RootFolder", "RootFolderUniqueId", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId" ],
+		argNames: [ "parameters", "segments", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideRowLimit", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "QueryParams", "RootFolder", "RootFolderUniqueId", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId", "FilterIBSegmentsBasedOnAndCondition" ],
 		},
 
 		renderIBSegmentListFilterData: IMapperMethod & {
 		argNames: [ "parameters" ],
 		},
 
-		renderRecentAdminActions: IMapperMethod & {
+		renderOwnershipPolicyStorageSPList: IMapperMethod & {
 		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderPolicyDefinitionList: IMapperMethod & {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderPolicyExecutionsHistory: IMapperMethod & {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderPolicyReport: IMapperMethod & {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderRecentAdminActionReport: IMapperMethod & {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderRecentAdminActions: IMapperMethod & {
+		argNames: [ "parameters", "overrideParameters", "isAutoRefresh" ],
+		},
+
+		reorderTargetedSites: IMapperMethod & {
+		argNames: [ "siteIds" ],
+		},
+
+		restoreContainer: IMapperMethod & {
+		argNames: [ "containerId" ],
 		},
 
 		restoreDeletedSite: IMapperMethod & {
 		argNames: [ "siteUrl" ],
 		},
 
+		restoreDeletedSiteById: IMapperMethod & {
+		argNames: [ "siteId" ],
+		},
+
 		restoreDeletedSitePreferId: IMapperMethod & {
 		argNames: [ "siteUrl", "siteId" ],
+		},
+
+		restoreSPODeletedContainerByContainerId: IMapperMethod & {
+		argNames: [ "containerId" ],
+		},
+
+		restoreSPODeletedContainerByContainerSiteUrl: IMapperMethod & {
+		argNames: [ "containerSiteUrl" ],
 		},
 
 		revokeHubSiteRightsById: IMapperMethod & {
 		argNames: [ "hubSiteId", "principals" ],
 		},
 
+		sendEmail: IMapperMethod & {
+		argNames: [ "siteUrl", "status", "customizedEmail" ],
+		},
+
 		setDefaultView: IMapperMethod & {
 		argNames: [ "viewId", "listName" ],
+		},
+
+		setFileVersionPolicy: IMapperMethod & {
+		argNames: [ "isAutoTrimEnabled", "majorVersionLimit", "expireVersionsAfterDays" ],
 		},
 
 		setIBSegmentsOnSite: IMapperMethod & {
@@ -1288,8 +1788,40 @@ export interface IMapper {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
 		},
 
+		setJitDlpPolicyData: IMapperMethod & {
+		argNames: [ "markAllFilesAsSensitiveByDefault", "odbSensitivityRefreshWindowInHours" ],
+		},
+
+		setOrgAssetsWithType: IMapperMethod & {
+		argNames: [ "libUrl", "thumbnailUrl", "orgAssetType" ],
+		},
+
 		setSPHSite: IMapperMethod & {
 		argNames: [ "sphSiteUrl" ],
+		},
+
+		setSPHSiteWithConfiguration: IMapperMethod & {
+		argNames: [ "sphSiteUrl", "configuration" ],
+		},
+
+		setSPOContainerProperties: IMapperMethod & {
+		argNames: [ "spContainerProperties" ],
+		},
+
+		setSPOContainerType: IMapperMethod & {
+		argNames: [ "containerTypeProperties" ],
+		},
+
+		setSPOContainerTypeConfiguration: IMapperMethod & {
+		argNames: [ "spContainerTypeConfigurationProperties" ],
+		},
+
+		setSPORestrictedSearchMode: IMapperMethod & {
+		argNames: [ "mode" ],
+		},
+
+		setSiteAdministrators: IMapperMethod & {
+		argNames: [ "siteAdministratorsFieldsData" ],
 		},
 
 		setSiteSecondaryAdministrators: IMapperMethod & {
@@ -1298,6 +1830,10 @@ export interface IMapper {
 
 		setSiteUserGroups: IMapperMethod & {
 		argNames: [ "siteUserGroupsData" ],
+		},
+
+		setSyntexPaygFeatureActivation: IMapperMethod & {
+		argNames: [ "featureName", "activationStatus" ],
 		},
 
 		swapSite: IMapperMethod & {
@@ -1312,6 +1848,10 @@ export interface IMapper {
 		argNames: [ "sourceUrl", "targetUrl", "archiveUrl", "includeSmartGestures", "force" ],
 		},
 
+		unarchiveSiteById: IMapperMethod & {
+		argNames: [ "siteId" ],
+		},
+
 		unregisterHubSite: IMapperMethod & {
 		argNames: [ "siteUrl" ],
 		},
@@ -1319,12 +1859,31 @@ export interface IMapper {
 		update: IMapperMethod & {
 		},
 
+		updateFileSearchVisibility: IMapperMethod & {
+		argNames: [ "url", "isHidden" ],
+		},
+
 		updateGroupSiteProperties: IMapperMethod & {
 		argNames: [ "groupId", "siteId", "updateType", "parameters" ],
 		},
 
-		updateRecentAdminAction: IMapperMethod & {
-		argNames: [ "listItemId", "tenantAdminRecentAction" ],
+		updatePolicyDefinition: IMapperMethod & {
+		argNames: [ "itemId", "policyInputParameters", "policyOperation" ],
+		},
+
+		updateRansomwareActivity: IMapperMethod & {
+		argNames: [ "listItemId", "columnValues" ],
+		},
+
+		updateRansomwareEvent: IMapperMethod & {
+		argNames: [ "listItemId", "columnValues", "forceResolveActivity" ],
+		},
+
+		updateSiteActivityData: IMapperMethod & {
+		},
+
+		updateTargetedSite: IMapperMethod & {
+		argNames: [ "siteUrl", "configurationParam" ],
 		},
 
 		updateTenantAdminListItem: IMapperMethod & {
@@ -1333,6 +1892,14 @@ export interface IMapper {
 
 		updateTenantAdminListView: IMapperMethod & {
 		argNames: [ "viewId", "viewXml" ],
+		},
+
+		validateHomeSite: IMapperMethod & {
+		argNames: [ "validationActionType", "siteUrl" ],
+		},
+
+		validateMultipleHomeSitesParameterExists: IMapperMethod & {
+		argNames: [ "hasParameters" ],
 		},
 
 	}
@@ -1443,8 +2010,16 @@ export interface IMapper {
 		argNames: [ "name" ],
 		},
 
+		incrementCustomFontsMinorVersion: IMapperMethod & {
+		argNames: [ "libUrl" ],
+		},
+
 		isSharingDisabledForNonOwnersOfSite: IMapperMethod & {
 		argNames: [ "siteUrl" ],
+		},
+
+		logCustomFontsLargeUpload: IMapperMethod & {
+		argNames: [ "numCatalogs", "numFonts", "totalExpectedFiles" ],
 		},
 
 		queueImportProfileProperties: IMapperMethod & {
@@ -1461,6 +2036,10 @@ export interface IMapper {
 
 		removeFromOrgAssetsAndCdn: IMapperMethod & {
 		argNames: [ "remove", "cdnType", "libUrl" ],
+		},
+
+		removePreviousCustomFontUpload: IMapperMethod & {
+		argNames: [ "majVersions", "libUrl" ],
 		},
 
 		removePublicCdnOrigin: IMapperMethod & {
@@ -1482,12 +2061,24 @@ export interface IMapper {
 		argNames: [ "puidList" ],
 		},
 
+		setBlockDownloadFileTypePolicyData: IMapperMethod & {
+		argNames: [ "blockDownloadFileTypePolicy", "fileTypeIds", "excludedBlockDownloadGroupIds" ],
+		},
+
+		setBlockDownloadFileTypePolicyExclusionList: IMapperMethod & {
+		argNames: [ "excludedBlockDownloadGroupIds" ],
+		},
+
 		setHideDefaultThemes: IMapperMethod & {
 		argNames: [ "hideDefaultThemes" ],
 		},
 
 		setIdleSessionSignOutForUnmanagedDevices: IMapperMethod & {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
+		},
+
+		setJitDlpPolicyData: IMapperMethod & {
+		argNames: [ "markAllFilesAsSensitiveByDefault", "odbSensitivityRefreshWindowInHours" ],
 		},
 
 		setOrgAssetsLib: IMapperMethod & {
@@ -1500,6 +2091,9 @@ export interface IMapper {
 
 		setTenantCdnPolicy: IMapperMethod & {
 		argNames: [ "cdnType", "policy", "policyValue" ],
+		},
+
+		syncAadB2BManagementPolicy: IMapperMethod & {
 		},
 
 		updateTenantTheme: IMapperMethod & {
@@ -1553,7 +2147,7 @@ export interface IMapper {
 		},
 
 		getReportById: IMapperMethod & {
-		argNames: [ "ReportId" ],
+		argNames: [ "ReportId", "ShowIncompatibleSegmentsPairsAndInvalidSegmentsFilesContents" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -1572,6 +2166,17 @@ export interface IMapper {
 
 		getUnsuccesfulCrawledUrls: IMapperMethod & {
 		argNames: [ "displayUrl", "startDateTime", "endDateTime" ],
+		},
+
+	}
+
+	"Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider": {
+		properties?: Array<string>;
+		getAzureContainerToken: IMapperMethod & {
+		},
+
+		reportContentProcessingStatus: IMapperMethod & {
+		argNames: [ "webId", "listId", "uniqueId", "azureContainerTokenUri", "encryptionKey", "priority", "errorCode", "errorDescription" ],
 		},
 
 	}
@@ -1601,6 +2206,19 @@ export interface IMapper {
 		},
 
 		isCrawlVersionsEnabledForTenant: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider": {
+		properties?: Array<string>;
+		disableRecycleBinDiscoverabilityForTenant: IMapperMethod & {
+		},
+
+		enableRecycleBinDiscoverabilityForTenant: IMapperMethod & {
+		},
+
+		isRecycleBinDiscoverabilityEnabledForTenant: IMapperMethod & {
 		},
 
 	}
@@ -1717,6 +2335,94 @@ export interface IMapper {
 
 	}
 
+	"Microsoft.SharePoint.Convergence.ConsumerPermissions": {
+		properties?: Array<string>;
+		grantConsumerSitePermissions: IMapperMethod & {
+		},
+
+		revokeConsumerSitePermissions: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.Convergence.MigrationCompleteStateApi": {
+		properties?: Array<string>;
+		addState: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.Convergence.OdcMetadataCleanedUpApi": {
+		properties?: Array<string>;
+		addState: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.EmployeeEngagement.VivaHome": {
+		properties?: Array<string>;
+		addImage: IMapperMethod & {
+		argNames: [ "fileName", "imageStream" ],
+		},
+
+		addImageFromExternalUrl: IMapperMethod & {
+		argNames: [ "fileName", "externalUrl" ],
+		},
+
+		titleRegion: IMapperMethod & {
+		argNames: [ "vivaHomeTitleRegion" ],
+		},
+
+	}
+
+	"Microsoft.SharePoint.EmployeeEngagement.VivaResources": {
+		properties?: Array<string>;
+		addLink: IMapperMethod & {
+		argNames: [ "newLink" ],
+		},
+
+		getLinks: IMapperMethod & {
+		},
+
+		removeLink: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		reorderLink: IMapperMethod & {
+		argNames: [ "linkId", "prevLinkId" ],
+		},
+
+		updateLink: IMapperMethod & {
+		argNames: [ "updatedLink" ],
+		},
+
+	}
+
+	"Microsoft.SharePoint.IR.IRMigration": {
+		properties?: Array<string>;
+		deleteAndRecreateIRList: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager": {
+		properties?: Array<string>;
+		createReport: IMapperMethod & {
+		},
+
+		getAllReportsMetadata: IMapperMethod & {
+		},
+
+		getReport: IMapperMethod & {
+		argNames: [ "reportId", "siteType" ],
+		},
+
+		getReportData: IMapperMethod & {
+		argNames: [ "reportId", "siteType", "section" ],
+		},
+
+	}
+
 	"Microsoft.SharePoint.Internal.ActivityLogger": {
 		properties?: Array<string>;
 		feedbackDirect: IMapperMethod & {
@@ -1728,7 +2434,19 @@ export interface IMapper {
 		},
 
 		logActivity: IMapperMethod & {
-		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType" ],
+		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "AuditCreationTime", "IsOffline" ],
+		},
+
+	}
+
+	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns": {
+		properties?: Array<string>;
+		add: IMapperMethod & {
+		argNames: [ "description", "id", "serializedProperties", "showInToolbox", "title" ],
+		},
+
+		update: IMapperMethod & {
+		argNames: [ "description", "id", "serializedProperties", "showInToolbox", "title" ],
 		},
 
 	}
@@ -1736,7 +2454,7 @@ export interface IMapper {
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata": {
 		properties?: Array<string>;
 		deploy: IMapperMethod & {
-		argNames: [ "skipFeatureDeployment" ],
+		argNames: [ "skipFeatureDeployment", "isUpdatingApp" ],
 		},
 
 		install: IMapperMethod & {
@@ -1812,7 +2530,7 @@ export interface IMapper {
 		},
 
 		addAndDeployStoreAppById: IMapperMethod & {
-		argNames: [ "CMU", "Overwrite", "SkipFeatureDeployment", "StoreAssetId" ],
+		argNames: [ "CallerId", "CMU", "isUpdatingApp", "Overwrite", "SkipFeatureDeployment", "StoreAssetId" ],
 		},
 
 		addStoreApp: IMapperMethod & {
@@ -1841,6 +2559,10 @@ export interface IMapper {
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		sendAppRequestStatusNotificationEmail: IMapperMethod & {
+		argNames: [ "RequestGuid" ],
+		},
+
 		solutionContainsTeamsComponent: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -1863,17 +2585,36 @@ export interface IMapper {
 
 	}
 
+	"Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings": {
+		properties?: Array<string>;
+		enableGlobalNavigation: IMapperMethod & {
+		argNames: [ "isEnabled" ],
+		},
+
+		update: IMapperMethod & {
+		},
+
+	}
+
 	"Microsoft.SharePoint.Navigation.REST.NavigationServiceRest": {
 		properties?: Array<string>;
+		currentResourcesNav: IMapperMethod & {
+		argNames: [ "source", "includeVivaResources" ],
+		},
+
 		getPublishingNavigationProviderType: IMapperMethod & {
 		argNames: [ "mapProviderName" ],
 		},
 
 		globalNav: IMapperMethod & {
-		argNames: [ "source" ],
+		argNames: [ "source", "includeVivaResources" ],
 		},
 
 		globalNavEnabled: IMapperMethod & {
+		},
+
+		homeSiteNavigation: IMapperMethod & {
+		argNames: [ "source" ],
 		},
 
 		menuNodeKey: IMapperMethod & {
@@ -1883,6 +2624,8 @@ export interface IMapper {
 		menuState: IMapperMethod & {
 		argNames: [ "menuNodeKey", "mapProviderName", "depth", "customProperties" ],
 		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
 
 		saveMenuState: IMapperMethod & {
 		argNames: [ "menuState", "mapProviderName" ],
@@ -1897,6 +2640,13 @@ export interface IMapper {
 	"Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi": {
 		properties?: Array<string>;
 		details: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.Photos.PhotosMigration": {
+		properties?: Array<string>;
+		migratePhotosData: IMapperMethod & {
 		},
 
 	}
@@ -1918,6 +2668,10 @@ export interface IMapper {
 
 	"Microsoft.SharePoint.Portal.GroupSiteManager": {
 		properties?: Array<string>;
+		cacheCurrentUserJoinedTeamsResult: IMapperMethod & {
+		argNames: [ "joinedTeams" ],
+		},
+
 		canUserCreateGroup: IMapperMethod & {
 		},
 
@@ -1945,9 +2699,11 @@ export interface IMapper {
 		},
 
 		ensureTeamForGroup: IMapperMethod & {
+		argNames: [ "altGroupId", "teamTemplate" ],
 		},
 
 		ensureTeamForGroupEx: IMapperMethod & {
+		argNames: [ "altGroupId", "teamTemplate" ],
 		},
 
 		getAllOrgLabels: IMapperMethod & {
@@ -1990,6 +2746,10 @@ export interface IMapper {
 		argNames: [ "teamId", "useStagingEndpoint" ],
 		},
 
+		getTeamChannelsDirect: IMapperMethod & {
+		argNames: [ "teamId" ],
+		},
+
 		getTeamChannelsEx: IMapperMethod & {
 		argNames: [ "teamId" ],
 		},
@@ -2027,7 +2787,7 @@ export interface IMapper {
 		},
 
 		recentAndJoinedTeams: IMapperMethod & {
-		argNames: [ "includeRecent", "includeTeams", "includePinned" ],
+		argNames: [ "includeRecent", "includeTeams", "includePinned", "existingJoinedTeamsData" ],
 		},
 
 	}
@@ -2073,6 +2833,10 @@ export interface IMapper {
 		argNames: [ "siteId" ],
 		},
 
+		landingSiteUrlFromName: IMapperMethod & {
+		argNames: [ "siteName" ],
+		},
+
 		restoreTeamsChannelSite: IMapperMethod & {
 		argNames: [ "siteId", "relatedGroupId" ],
 		},
@@ -2095,6 +2859,10 @@ export interface IMapper {
 
 		updateWorkflow2013Endpoint: IMapperMethod & {
 		argNames: [ "workflowServiceAddress", "workflowHostname" ],
+		},
+
+		vivaBackendSiteUrlFromName: IMapperMethod & {
+		argNames: [ "siteName" ],
 		},
 
 	}
@@ -2133,10 +2901,43 @@ export interface IMapper {
 
 	}
 
+	"Microsoft.SharePoint.Portal.VivaSiteManager": {
+		properties?: Array<string>;
+		ensureVivaSite: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaBackfillApi": {
+		properties?: Array<string>;
+		backfillNonQuota: IMapperMethod & {
+		argNames: [ "backfillUserfacts" ],
+		},
+
+	}
+
+	"Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi": {
+		properties?: Array<string>;
+		migrateNonQuota: IMapperMethod & {
+		},
+
+	}
+
 	"Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi": {
 		properties?: Array<string>;
 		migrateQuota: IMapperMethod & {
 		argNames: [ "IsMaxQuotaCall" ],
+		},
+
+	}
+
+	"Microsoft.SharePoint.SectionDesignIdeas.SectionDesignIdeasApi": {
+		properties?: Array<string>;
+		getSectionDesignIdeas: IMapperMethod & {
+		argNames: [ "title", "subTitle" ],
+		},
+
+		ping: IMapperMethod & {
 		},
 
 	}
@@ -3546,6 +4347,19 @@ export interface IMapper {
 
 	}
 
+	"SP.BrandCenter": {
+		properties?: Array<string>;
+		configuration: IMapperMethod & {
+		},
+
+		ensureBrandFontsLibraryFeature: IMapperMethod & {
+		},
+
+		orgAssets: IMapperMethod & {
+		},
+
+	}
+
 	"SP.BusinessData.AppBdcCatalog": {
 		properties?: Array<string>;
 		getConnectionId: IMapperMethod & {
@@ -4024,12 +4838,57 @@ export interface IMapper {
 		},
 
 		dashboardContent: IMapperMethod & {
+		argNames: [ "overrideLanguageCode" ],
+		},
+
+		dashboardOOBContent: IMapperMethod & {
+		argNames: [ "oobContentChoice" ],
+		},
+
+		fullDashboardContent: IMapperMethod & {
+		},
+
+		getDashboardPersonalization: IMapperMethod & {
+		},
+
+		getTargetedSitesAsEditor: IMapperMethod & {
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		setDashboardPersonalization: IMapperMethod & {
+		argNames: [ "isEnabled" ],
+		},
+
 		vivaConnections: IMapperMethod & {
 		argNames: [ "adminConfiguredUrl" ],
+		},
+
+		vivaHome: IMapperMethod & {
+		},
+
+		vivaHomeConfiguration: IMapperMethod & {
+		argNames: [ "shouldByPassCache" ],
+		},
+
+	}
+
+	"SP.EmployeeExperienceController": {
+		properties?: Array<string>;
+		dashboard: IMapperMethod & {
+		argNames: [ "formFactor", "dashboardId", "mySiteUrl" ],
+		},
+
+		getAnnouncementsState: IMapperMethod & {
+		argNames: [ "mySiteUrl" ],
+		},
+
+		saveDashboard: IMapperMethod & {
+		argNames: [ "employeeExperienceDashboardData", "mySiteUrl" ],
+		},
+
+		setAnnouncementState: IMapperMethod & {
+		argNames: [ "announcementStates", "mySiteUrl" ],
 		},
 
 	}
@@ -4657,6 +5516,10 @@ export interface IMapper {
 		argNames: [ "uploadId" ],
 		},
 
+		changeContentStorageSchema: IMapperMethod & {
+		argNames: [ "desiredSchema" ],
+		},
+
 		checkAccessAndPostViewAuditEvent: IMapperMethod & {
 		},
 
@@ -4702,7 +5565,7 @@ export interface IMapper {
 		},
 
 		finishUploadWithChecksum: IMapperMethod & {
-		argNames: [ "uploadId", "fileOffset", "checksum", "stream" ],
+		argNames: [ "uploadId", "fileOffset", "checksum", "stream", "sandboxId" ],
 		},
 
 		getFileUserValue: IMapperMethod & {
@@ -4873,6 +5736,10 @@ export interface IMapper {
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		setExpirationDate: IMapperMethod & {
+		argNames: [ "expirationDate" ],
+		},
+
 	}
 
 	"SP.FileVersion.Collection": {
@@ -4950,6 +5817,9 @@ export interface IMapper {
 		argNames: [ "parameters" ],
 		},
 
+		startDelete: IMapperMethod & {
+		},
+
 		update: IMapperMethod & {
 		argNames: [ "properties" ],
 		},
@@ -4976,6 +5846,65 @@ export interface IMapper {
 
 		getByUrl: IMapperMethod & {
 		argNames: [ "url" ],
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+	}
+
+	"SP.FolderColoring": {
+		properties?: Array<string>;
+		createFolder: IMapperMethod & {
+		argNames: [ "DecodedUrl", "EnsureUniqueFileName", "Overwrite", "coloringInformation" ],
+		},
+
+		renameFolder: IMapperMethod & {
+		argNames: [ "DecodedUrl", "newName", "coloringInformation" ],
+		},
+
+		stampColor: IMapperMethod & {
+		argNames: [ "DecodedUrl", "coloringInformation" ],
+		},
+
+	}
+
+	"SP.FontPackage": {
+		properties?: Array<string>;
+		apply: IMapperMethod & {
+		},
+
+		delete: IMapperMethod & {
+		},
+
+		update: IMapperMethod & {
+		},
+
+	}
+
+	"SP.FontPackage.Collection": {
+		properties?: Array<string>;
+		getById: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		getById: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		getById: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		getByTitle: IMapperMethod & {
+		argNames: [ "title" ],
+		},
+
+		getByTitle: IMapperMethod & {
+		argNames: [ "title" ],
+		},
+
+		getByTitle: IMapperMethod & {
+		argNames: [ "title" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -5129,6 +6058,16 @@ export interface IMapper {
 		argNames: [ "itemIds", "formValues", "bNewDocumentUpdate", "checkInComment", "folderPath" ],
 		},
 
+		cAAECreateTempFolder: IMapperMethod & {
+		},
+
+		cAAERenameFileInTemporaryFolder: IMapperMethod & {
+		argNames: [ "Path", "UpdatedName" ],
+		},
+
+		cancelDeleteFileVersions: IMapperMethod & {
+		},
+
 		clearBusinessAppMigrationInteractiveData: IMapperMethod & {
 		},
 
@@ -5144,6 +6083,14 @@ export interface IMapper {
 		argNames: [ "ContentTypeName", "documentGenerationInfo" ],
 		},
 
+		createDocumentFromCAAETemplateV2: IMapperMethod & {
+		argNames: [ "Id", "documentGenerationInfo" ],
+		},
+
+		createDocumentFromContentAssemblyTemplate: IMapperMethod & {
+		argNames: [ "TemplateUrl", "documentGenerationInfo" ],
+		},
+
 		createDocumentWithDefaultName: IMapperMethod & {
 		argNames: [ "folderPath", "extension" ],
 		},
@@ -5153,11 +6100,19 @@ export interface IMapper {
 		},
 
 		createRule: IMapperMethod & {
-		argNames: [ "condition", "outcome", "title", "triggerType", "emailField", "actionType" ],
+		argNames: [ "condition", "outcome", "title", "triggerType", "emailField", "actionType", "ruleTemplateId" ],
+		},
+
+		createRuleEx: IMapperMethod & {
+		argNames: [ "condition", "title", "triggerType", "action", "ruleTemplateId" ],
 		},
 
 		createSmartTemplateContentTypeAndAddToList: IMapperMethod & {
 		argNames: [ "Name", "Description" ],
+		},
+
+		createSmartTemplateContentTypeAndAddToListV2: IMapperMethod & {
+		argNames: [ "Name", "Description", "TemplatePath", "Status" ],
 		},
 
 		delete: IMapperMethod & {
@@ -5165,6 +6120,9 @@ export interface IMapper {
 
 		deleteRule: IMapperMethod & {
 		argNames: [ "ruleId" ],
+		},
+
+		enableQueryableColumns: IMapperMethod & {
 		},
 
 		enqueueAsyncActionTaskById: IMapperMethod & {
@@ -5213,6 +6171,14 @@ export interface IMapper {
 		getCheckedOutFiles: IMapperMethod & {
 		},
 
+		getContentAssemblyDocumentFieldValues: IMapperMethod & {
+		argNames: [ "DocumentUrl" ],
+		},
+
+		getContentAssemblyTemplateFields: IMapperMethod & {
+		argNames: [ "TemplateUrl" ],
+		},
+
 		getItemById: IMapperMethod & {
 		argNames: [ "id" ],
 		},
@@ -5249,6 +6215,10 @@ export interface IMapper {
 		argNames: [ "visualizationAppTarget" ],
 		},
 
+		getProgressForFileVersionExpirationReport: IMapperMethod & {
+		argNames: [ "reportFileUrl" ],
+		},
+
 		getRelatedFields: IMapperMethod & {
 		},
 
@@ -5264,8 +6234,11 @@ export interface IMapper {
 		argNames: [ "viewGuid" ],
 		},
 
-		getWebDavUrl: IMapperMethod & {
-		argNames: [ "sourceUrl" ],
+		isSyntexAIFeaturesFlightEnabled: IMapperMethod & {
+		},
+
+		lockSmartTemplate: IMapperMethod & {
+		argNames: [ "Id" ],
 		},
 
 		parseDocumentTemplate: IMapperMethod & {
@@ -5276,9 +6249,21 @@ export interface IMapper {
 		argNames: [ "appId", "visualizationTarget" ],
 		},
 
+		publishModernTemplate: IMapperMethod & {
+		argNames: [ "publishModernTemplatePayload" ],
+		},
+
+		publishSnippet: IMapperMethod & {
+		argNames: [ "publishSnippetPayload" ],
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		recycle: IMapperMethod & {
+		},
+
+		refreshLockSmartTemplate: IMapperMethod & {
+		argNames: [ "Id", "LockId" ],
 		},
 
 		renderExtendedListFormData: IMapperMethod & {
@@ -5323,8 +6308,31 @@ export interface IMapper {
 		argNames: [ "targetFieldName", "beginsWithSearchString", "pagingInfo" ],
 		},
 
+		setContentAssemblyTemplateReadOnly: IMapperMethod & {
+		argNames: [ "Id" ],
+		},
+
 		setExemptFromBlockDownloadOfNonViewableFiles: IMapperMethod & {
 		argNames: [ "value" ],
+		},
+
+		setItemsOrder: IMapperMethod & {
+		argNames: [ "itemIds", "lowerOrderItemId", "higherOrderItemId" ],
+		},
+
+		setListCustomOrderFlag: IMapperMethod & {
+		argNames: [ "value" ],
+		},
+
+		startDeleteFileVersions: IMapperMethod & {
+		argNames: [ "deleteOlderThanDays" ],
+		},
+
+		startFileVersionExpirationReport: IMapperMethod & {
+		argNames: [ "reportFileUrl" ],
+		},
+
+		startRecycle: IMapperMethod & {
 		},
 
 		syncFlowCallbackUrl: IMapperMethod & {
@@ -5343,8 +6351,16 @@ export interface IMapper {
 		argNames: [ "category" ],
 		},
 
+		unlockSmartTemplate: IMapperMethod & {
+		argNames: [ "Id", "LockId" ],
+		},
+
 		unpublishMappedView: IMapperMethod & {
 		argNames: [ "appId", "visualizationTarget" ],
+		},
+
+		unsetContentAssemblyTemplateReadOnly: IMapperMethod & {
+		argNames: [ "Id" ],
 		},
 
 		update: IMapperMethod & {
@@ -5359,6 +6375,10 @@ export interface IMapper {
 		argNames: [ "Id", "updateTemplateInfo" ],
 		},
 
+		updateContentAssemblyDocument: IMapperMethod & {
+		argNames: [ "TemplateUrl", "contentAssemblyFormAnswers" ],
+		},
+
 		updateFormProcessingModelRetentionLabel: IMapperMethod & {
 		argNames: [ "retentionLabel" ],
 		},
@@ -5368,7 +6388,11 @@ export interface IMapper {
 		},
 
 		updateRule: IMapperMethod & {
-		argNames: [ "ruleId", "condition", "outcome", "title", "emailField", "status", "actionType" ],
+		argNames: [ "ruleId", "condition", "outcome", "title", "emailField", "status", "actionType", "triggerType" ],
+		},
+
+		updateRuleEx: IMapperMethod & {
+		argNames: [ "ruleId", "condition", "title", "status", "action", "triggerType" ],
 		},
 
 		validateAppName: IMapperMethod & {
@@ -5409,6 +6433,14 @@ export interface IMapper {
 
 	"SP.ListItem": {
 		properties?: Array<string>;
+		addThumbnailFieldData: IMapperMethod & {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
+		attachImage: IMapperMethod & {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
 		breakRoleInheritance: IMapperMethod & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -5429,6 +6461,10 @@ export interface IMapper {
 
 		getUserEffectivePermissions: IMapperMethod & {
 		argNames: [ "userName" ],
+		},
+
+		getVersions: IMapperMethod & {
+		argNames: [ "getVersionsParams" ],
 		},
 
 		getWOPIFrameUrl: IMapperMethod & {
@@ -5509,8 +6545,12 @@ export interface IMapper {
 		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
 		},
 
+		validateUpdateFetchListItemInFolder: IMapperMethod & {
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "rootFolder" ],
+		},
+
 		validateUpdateListItem: IMapperMethod & {
-		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "sharedLockId" ],
 		},
 
 	}
@@ -5540,15 +6580,28 @@ export interface IMapper {
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		recycle: IMapperMethod & {
+		},
+
 	}
 
 	"SP.ListItemVersion.Collection": {
 		properties?: Array<string>;
+		deleteAll: IMapperMethod & {
+		},
+
 		getById: IMapperMethod & {
 		argNames: [ "versionId" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
+
+		recycleAll: IMapperMethod & {
+		},
+
+		restoreByID: IMapperMethod & {
+		argNames: [ "versionId" ],
+		},
 
 	}
 
@@ -5869,6 +6922,189 @@ export interface IMapper {
 
 	}
 
+	"SP.Publishing.AnnouncementsController": {
+		properties?: Array<string>;
+		active: IMapperMethod & {
+		},
+
+		channel: IMapperMethod & {
+		},
+
+		flwPropertyFilteringMapping: IMapperMethod & {
+		argNames: [ "flwPropertyFilteringMapping" ],
+		},
+
+	}
+
+	"SP.Publishing.CampaignPublication": {
+		properties?: Array<string>;
+		approveApprovalRequest: IMapperMethod & {
+		argNames: [ "comment" ],
+		},
+
+		boostNews: IMapperMethod & {
+		argNames: [ "SitePageBoost" ],
+		},
+
+		cancelApprovalRequest: IMapperMethod & {
+		},
+
+		cancelSchedulePublication: IMapperMethod & {
+		},
+
+		checkOut: IMapperMethod & {
+		},
+
+		checkoutPage: IMapperMethod & {
+		},
+
+		copy: IMapperMethod & {
+		},
+
+		copyTo: IMapperMethod & {
+		argNames: [ "copyToParams" ],
+		},
+
+		copyWithConfiguration: IMapperMethod & {
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
+		},
+
+		createApprovalRequest: IMapperMethod & {
+		argNames: [ "creationInfo" ],
+		},
+
+		createNewsCopy: IMapperMethod & {
+		},
+
+		delete: IMapperMethod & {
+		},
+
+		deletePublication: IMapperMethod & {
+		},
+
+		demoteFromNews: IMapperMethod & {
+		},
+
+		discardPage: IMapperMethod & {
+		},
+
+		getDependencyMetadata: IMapperMethod & {
+		},
+
+		getHighlightsInfo: IMapperMethod & {
+		},
+
+		getLatestVersionsInDescendingOrder: IMapperMethod & {
+		argNames: [ "numVersions" ],
+		},
+
+		getPrePublishValidationStatus: IMapperMethod & {
+		},
+
+		getPublishingStatus: IMapperMethod & {
+		},
+
+		getVersion: IMapperMethod & {
+		argNames: [ "versionId" ],
+		},
+
+		loadMailDraft: IMapperMethod & {
+		argNames: [ "requestParam" ],
+		},
+
+		move: IMapperMethod & {
+		argNames: [ "pageMoveParams" ],
+		},
+
+		promoteToNews: IMapperMethod & {
+		},
+
+		publish: IMapperMethod & {
+		},
+
+		publishCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
+		publishPublication: IMapperMethod & {
+		},
+
+		rejectApprovalRequest: IMapperMethod & {
+		argNames: [ "comment" ],
+		},
+
+		resetEndpoint: IMapperMethod & {
+		argNames: [ "requestParam" ],
+		},
+
+		sPSiteValidator: IMapperMethod & {
+		argNames: [ "siteUrl" ],
+		},
+
+		saveDraft: IMapperMethod & {
+		argNames: [ "sitePage" ],
+		},
+
+		saveMailDraft: IMapperMethod & {
+		argNames: [ "requestParam" ],
+		},
+
+		savePage: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
+		savePageAsDraft: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
+		savePageAsTemplate: IMapperMethod & {
+		},
+
+		savePageAsTemplate2: IMapperMethod & {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: IMapperMethod & {
+		},
+
+		savePageCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
+		schedulePublication: IMapperMethod & {
+		argNames: [ "publishStartDate" ],
+		},
+
+		schedulePublish: IMapperMethod & {
+		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: IMapperMethod & {
+		},
+
+		sendTestTeamsMessage: IMapperMethod & {
+		argNames: [ "audienceId" ],
+		},
+
+		sharePagePreviewByEmail: IMapperMethod & {
+		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: IMapperMethod & {
+		},
+
+		syncApprovalRequest: IMapperMethod & {
+		},
+
+		update: IMapperMethod & {
+		},
+
+		updateSharePointPublishingStatus: IMapperMethod & {
+		argNames: [ "destinationSiteId", "destinationUrl", "sharePointPublishingStatus", "sharePointPublishingErrorCode" ],
+		},
+
+	}
+
 	"SP.Publishing.CommunicationSite": {
 		properties?: Array<string>;
 		create: IMapperMethod & {
@@ -5908,8 +7144,12 @@ export interface IMapper {
 		copy: IMapperMethod & {
 		},
 
+		copyTo: IMapperMethod & {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: IMapperMethod & {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: IMapperMethod & {
@@ -5921,14 +7161,32 @@ export interface IMapper {
 		discardPage: IMapperMethod & {
 		},
 
+		getDependencyMetadata: IMapperMethod & {
+		},
+
+		getHighlightsInfo: IMapperMethod & {
+		},
+
+		getLatestVersionsInDescendingOrder: IMapperMethod & {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: IMapperMethod & {
 		argNames: [ "versionId" ],
+		},
+
+		move: IMapperMethod & {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: IMapperMethod & {
 		},
 
 		publish: IMapperMethod & {
+		},
+
+		publishCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: IMapperMethod & {
@@ -5946,12 +7204,26 @@ export interface IMapper {
 		savePageAsTemplate: IMapperMethod & {
 		},
 
+		savePageAsTemplate2: IMapperMethod & {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: IMapperMethod & {
+		},
+
+		savePageCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: IMapperMethod & {
 		},
 
 		update: IMapperMethod & {
@@ -6145,8 +7417,12 @@ export interface IMapper {
 		copy: IMapperMethod & {
 		},
 
+		copyTo: IMapperMethod & {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: IMapperMethod & {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: IMapperMethod & {
@@ -6158,14 +7434,32 @@ export interface IMapper {
 		discardPage: IMapperMethod & {
 		},
 
+		getDependencyMetadata: IMapperMethod & {
+		},
+
+		getHighlightsInfo: IMapperMethod & {
+		},
+
+		getLatestVersionsInDescendingOrder: IMapperMethod & {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: IMapperMethod & {
 		argNames: [ "versionId" ],
+		},
+
+		move: IMapperMethod & {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: IMapperMethod & {
 		},
 
 		publish: IMapperMethod & {
+		},
+
+		publishCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: IMapperMethod & {
@@ -6183,12 +7477,26 @@ export interface IMapper {
 		savePageAsTemplate: IMapperMethod & {
 		},
 
+		savePageAsTemplate2: IMapperMethod & {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: IMapperMethod & {
+		},
+
+		savePageCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: IMapperMethod & {
 		},
 
 		update: IMapperMethod & {
@@ -6208,7 +7516,7 @@ export interface IMapper {
 	"SP.Publishing.RichSharing": {
 		properties?: Array<string>;
 		sharePageByEmail: IMapperMethod & {
-		argNames: [ "url", "message", "recipientEmails", "pageContent" ],
+		argNames: [ "url", "message", "recipientEmails", "pageContent", "subject", "ccEmails", "bccEmails" ],
 		},
 
 		shareSiteByEmail: IMapperMethod & {
@@ -6264,8 +7572,12 @@ export interface IMapper {
 		copy: IMapperMethod & {
 		},
 
+		copyTo: IMapperMethod & {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: IMapperMethod & {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: IMapperMethod & {
@@ -6277,14 +7589,32 @@ export interface IMapper {
 		discardPage: IMapperMethod & {
 		},
 
+		getDependencyMetadata: IMapperMethod & {
+		},
+
+		getHighlightsInfo: IMapperMethod & {
+		},
+
+		getLatestVersionsInDescendingOrder: IMapperMethod & {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: IMapperMethod & {
 		argNames: [ "versionId" ],
+		},
+
+		move: IMapperMethod & {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: IMapperMethod & {
 		},
 
 		publish: IMapperMethod & {
+		},
+
+		publishCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -6304,12 +7634,26 @@ export interface IMapper {
 		savePageAsTemplate: IMapperMethod & {
 		},
 
+		savePageAsTemplate2: IMapperMethod & {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: IMapperMethod & {
+		},
+
+		savePageCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: IMapperMethod & {
 		},
 
 		update: IMapperMethod & {
@@ -6320,6 +7664,10 @@ export interface IMapper {
 
 	"SP.Publishing.SitePage.Collection": {
 		properties?: Array<string>;
+		copyToStatus: IMapperMethod & {
+		argNames: [ "workItemId" ],
+		},
+
 		createAppPage: IMapperMethod & {
 		argNames: [ "webPartDataAsJson" ],
 		},
@@ -6359,7 +7707,19 @@ export interface IMapper {
 		argNames: [ "url" ],
 		},
 
+		pageMoveStatus: IMapperMethod & {
+		argNames: [ "workItemId" ],
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
+
+		setMultilingual: IMapperMethod & {
+		argNames: [ "enabled" ],
+		},
+
+		setScheduling: IMapperMethod & {
+		argNames: [ "enabled" ],
+		},
 
 		templates: IMapperMethod & {
 		},
@@ -6389,8 +7749,12 @@ export interface IMapper {
 		copy: IMapperMethod & {
 		},
 
+		copyTo: IMapperMethod & {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: IMapperMethod & {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: IMapperMethod & {
@@ -6402,14 +7766,32 @@ export interface IMapper {
 		discardPage: IMapperMethod & {
 		},
 
+		getDependencyMetadata: IMapperMethod & {
+		},
+
+		getHighlightsInfo: IMapperMethod & {
+		},
+
+		getLatestVersionsInDescendingOrder: IMapperMethod & {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: IMapperMethod & {
 		argNames: [ "versionId" ],
+		},
+
+		move: IMapperMethod & {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: IMapperMethod & {
 		},
 
 		publish: IMapperMethod & {
+		},
+
+		publishCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: IMapperMethod & {
@@ -6427,12 +7809,26 @@ export interface IMapper {
 		savePageAsTemplate: IMapperMethod & {
 		},
 
+		savePageAsTemplate2: IMapperMethod & {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: IMapperMethod & {
+		},
+
+		savePageCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: IMapperMethod & {
 		},
 
 		update: IMapperMethod & {
@@ -6475,7 +7871,18 @@ export interface IMapper {
 		canCreatePromotedPage: IMapperMethod & {
 		},
 
+		enableAnnouncements: IMapperMethod & {
+		},
+
 		enableCategories: IMapperMethod & {
+		},
+
+		pagesInLib: IMapperMethod & {
+		argNames: [ "id" ],
+		},
+
+		pagesInLibByName: IMapperMethod & {
+		argNames: [ "name" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -6562,8 +7969,12 @@ export interface IMapper {
 		copy: IMapperMethod & {
 		},
 
+		copyTo: IMapperMethod & {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: IMapperMethod & {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: IMapperMethod & {
@@ -6575,14 +7986,32 @@ export interface IMapper {
 		discardPage: IMapperMethod & {
 		},
 
+		getDependencyMetadata: IMapperMethod & {
+		},
+
+		getHighlightsInfo: IMapperMethod & {
+		},
+
+		getLatestVersionsInDescendingOrder: IMapperMethod & {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: IMapperMethod & {
 		argNames: [ "versionId" ],
+		},
+
+		move: IMapperMethod & {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: IMapperMethod & {
 		},
 
 		publish: IMapperMethod & {
+		},
+
+		publishCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: IMapperMethod & {
@@ -6600,12 +8029,26 @@ export interface IMapper {
 		savePageAsTemplate: IMapperMethod & {
 		},
 
+		savePageAsTemplate2: IMapperMethod & {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: IMapperMethod & {
+		},
+
+		savePageCoAuth: IMapperMethod & {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: IMapperMethod & {
 		},
 
 		update: IMapperMethod & {
@@ -6621,6 +8064,10 @@ export interface IMapper {
 
 		getByEntityIdAndCulture: IMapperMethod & {
 		argNames: [ "id", "culture" ],
+		},
+
+		getPagesByEntityId: IMapperMethod & {
+		argNames: [ "entityId" ],
 		},
 
 		isContentTypeAvailable: IMapperMethod & {
@@ -6991,7 +8438,16 @@ export interface IMapper {
 
 	"SP.SPHSite": {
 		properties?: Array<string>;
+		addHomeSite: IMapperMethod & {
+		argNames: [ "siteUrl", "order", "audiences", "vivaConnectionsDefaultStart", "isInDraftMode" ],
+		},
+
 		details: IMapperMethod & {
+		argNames: [ "includeVivaSites" ],
+		},
+
+		setSPHSite: IMapperMethod & {
+		argNames: [ "siteUrl", "vivaConnectionsDefaultStart", "isInDraftMode" ],
 		},
 
 	}
@@ -7032,6 +8488,12 @@ export interface IMapper {
 
 	"SP.Site": {
 		properties?: Array<string>;
+		cancelDeleteFileVersions: IMapperMethod & {
+		},
+
+		cancelSetVersionPolicyForDocLibs: IMapperMethod & {
+		},
+
 		createCopyJob: IMapperMethod & {
 		argNames: [ "exportObjectUris", "destinationUri", "options" ],
 		},
@@ -7106,6 +8568,17 @@ export interface IMapper {
 		getMigrationStatus: IMapperMethod & {
 		},
 
+		getProgressForExpireFileVersionsBySchedule: IMapperMethod & {
+		argNames: [ "scheduleFilePath" ],
+		},
+
+		getProgressForFileVersionExpirationReport: IMapperMethod & {
+		argNames: [ "reportFileUrl" ],
+		},
+
+		getProgressForSetVersionPolicyForDocLibs: IMapperMethod & {
+		},
+
 		getRecycleBinItems: IMapperMethod & {
 		argNames: [ "pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState" ],
 		},
@@ -7161,6 +8634,9 @@ export interface IMapper {
 		argNames: [ "path" ],
 		},
 
+		processStorageMetricsChanges: IMapperMethod & {
+		},
+
 		provisionMigrationContainers: IMapperMethod & {
 		},
 
@@ -7196,6 +8672,22 @@ export interface IMapper {
 		argNames: [ "propertyValue", "forceDocLibActivation", "deleteIfDocLibAlreadyExists" ],
 		},
 
+		startDeleteFileVersions: IMapperMethod & {
+		argNames: [ "deleteOlderThanDays" ],
+		},
+
+		startExpireFileVersionsBySchedule: IMapperMethod & {
+		argNames: [ "scheduleFilePath" ],
+		},
+
+		startFileVersionExpirationReport: IMapperMethod & {
+		argNames: [ "reportFileUrl" ],
+		},
+
+		startSetVersionPolicyForDocLibs: IMapperMethod & {
+		argNames: [ "enableAutoTrim", "majorVersionLimit", "majorWithMinorVersionsLimit", "expireAfterDays" ],
+		},
+
 		unregisterHubSite: IMapperMethod & {
 		},
 
@@ -7207,8 +8699,32 @@ export interface IMapper {
 		argNames: [ "requireUseRemoteAPIs" ],
 		},
 
+		updateInactiveSiteProperties: IMapperMethod & {
+		argNames: [ "operation", "executionId" ],
+		},
+
 		validateHubSiteJoinApprovalToken: IMapperMethod & {
 		argNames: [ "joiningSiteId", "approvalToken" ],
+		},
+
+	}
+
+	"SP.SiteVersionPolicyManager": {
+		properties?: Array<string>;
+		inheritTenantSettings: IMapperMethod & {
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+		setAutoExpiration: IMapperMethod & {
+		},
+
+		setExpireAfter: IMapperMethod & {
+		argNames: [ "majorVersionLimit", "expireAfterDays" ],
+		},
+
+		setNoExpiration: IMapperMethod & {
+		argNames: [ "majorVersionLimit" ],
 		},
 
 	}
@@ -7475,6 +8991,9 @@ export interface IMapper {
 		clearCorporateCatalog: IMapperMethod & {
 		},
 
+		getDataAccessGovernanceReportConfig: IMapperMethod & {
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		setCorporateCatalog: IMapperMethod & {
@@ -7604,6 +9123,14 @@ export interface IMapper {
 
 		getByLoginName: IMapperMethod & {
 		argNames: [ "loginName" ],
+		},
+
+		getByObjectId: IMapperMethod & {
+		argNames: [ "objectId" ],
+		},
+
+		getByPuid: IMapperMethod & {
+		argNames: [ "puid" ],
 		},
 
 		query: IMapperMethod & { argNames: ["oData"] },
@@ -7827,6 +9354,9 @@ export interface IMapper {
 
 		deleteCacheItemsAsync2: IMapperMethod & {
 		argNames: [ "cacheItems", "mySiteUrl" ],
+		},
+
+		dispose: IMapperMethod & {
 		},
 
 		loadUserProfile: IMapperMethod & {
@@ -8062,12 +9592,20 @@ export interface IMapper {
 		argNames: [ "lcid" ],
 		},
 
+		addinPermissions: IMapperMethod & {
+		argNames: [ "addins" ],
+		},
+
 		applyTheme: IMapperMethod & {
 		argNames: [ "colorPaletteUrl", "fontSchemeUrl", "backgroundImageUrl", "shareGenerated" ],
 		},
 
 		applyWebTemplate: IMapperMethod & {
 		argNames: [ "webTemplate" ],
+		},
+
+		availableAddins: IMapperMethod & {
+		argNames: [ "serverRelativeUrls" ],
 		},
 
 		breakRoleInheritance: IMapperMethod & {
@@ -8084,6 +9622,10 @@ export interface IMapper {
 		createGroupBasedEnvironment: IMapperMethod & {
 		},
 
+		createSitePage: IMapperMethod & {
+		argNames: [ "pageMetaData" ],
+		},
+
 		defaultDocumentLibrary: IMapperMethod & {
 		},
 
@@ -8096,6 +9638,14 @@ export interface IMapper {
 
 		doesUserHavePermissions: IMapperMethod & {
 		argNames: [ "high", "low" ],
+		},
+
+		ensureEduClassSetup: IMapperMethod & {
+		argNames: [ "byPassForAutomation" ],
+		},
+
+		ensureSolutioningEnvironment: IMapperMethod & {
+		argNames: [ "ensureCdsInstance" ],
 		},
 
 		ensureTenantAppCatalog: IMapperMethod & {
@@ -8114,12 +9664,24 @@ export interface IMapper {
 		argNames: [ "inputStream" ],
 		},
 
+		getACSServicePrincipals: IMapperMethod & {
+		argNames: [ "appIds" ],
+		},
+
 		getAdaptiveCardExtensions: IMapperMethod & {
 		argNames: [ "includeErrors", "project" ],
 		},
 
+		getAddinPrincipalsHavingPermissionsInSites: IMapperMethod & {
+		argNames: [ "serverRelativeUrls" ],
+		},
+
+		getAddinUninstallJobDetail: IMapperMethod & {
+		argNames: [ "jobId", "serverRelativeUrl" ],
+		},
+
 		getAllClientSideComponents: IMapperMethod & {
-		argNames: [ "languages", "supportsMultiVersion" ],
+		argNames: [ "languages" ],
 		},
 
 		getAppBdcCatalog: IMapperMethod & {
@@ -8154,7 +9716,7 @@ export interface IMapper {
 		},
 
 		getClientSideComponentsByComponentType: IMapperMethod & {
-		argNames: [ "componentTypesString", "supportedHostTypeValue", "includeErrors", "project" ],
+		argNames: [ "componentTypesString", "supportedHostTypeValue", "includeErrors", "project", "includeManifestActivatedTime" ],
 		},
 
 		getClientSideComponentsById: IMapperMethod & {
@@ -8200,6 +9762,10 @@ export interface IMapper {
 		argNames: [ "serverRelativeUrl" ],
 		},
 
+		getFileByStreamFrameUrl: IMapperMethod & {
+		argNames: [ "streamFrameUrl" ],
+		},
+
 		getFileByUrl: IMapperMethod & {
 		argNames: [ "fileUrl" ],
 		},
@@ -8235,6 +9801,10 @@ export interface IMapper {
 		argNames: [ "strUrl" ],
 		},
 
+		getListByTitle: IMapperMethod & {
+		argNames: [ "title" ],
+		},
+
 		getListItem: IMapperMethod & {
 		argNames: [ "strUrl" ],
 		},
@@ -8247,8 +9817,16 @@ export interface IMapper {
 		argNames: [ "DecodedUrl" ],
 		},
 
+		getListOperation: IMapperMethod & {
+		argNames: [ "listId", "operationId" ],
+		},
+
 		getListUsingPath: IMapperMethod & {
 		argNames: [ "DecodedUrl" ],
+		},
+
+		getLists: IMapperMethod & {
+		argNames: [ "getListsParams" ],
 		},
 
 		getNewsList: IMapperMethod & {
@@ -8283,6 +9861,18 @@ export interface IMapper {
 
 		getSharingLinkData: IMapperMethod & {
 		argNames: [ "linkUrl" ],
+		},
+
+		getSitePageCopyToStatus: IMapperMethod & {
+		argNames: [ "workItemId" ],
+		},
+
+		getSitePageMoveStatus: IMapperMethod & {
+		argNames: [ "workItemId" ],
+		},
+
+		getSiteUserIncludingDeletedByPuid: IMapperMethod & {
+		argNames: [ "puid" ],
 		},
 
 		getStorageEntity: IMapperMethod & {
@@ -8337,6 +9927,9 @@ export interface IMapper {
 
 		mapToIcon: IMapperMethod & {
 		argNames: [ "fileName", "progId", "size" ],
+		},
+
+		markReplyUrisUpdated: IMapperMethod & {
 		},
 
 		pageContextCore: IMapperMethod & {
@@ -8406,8 +9999,19 @@ export interface IMapper {
 		syncHubSiteTheme: IMapperMethod & {
 		},
 
+		syncTeamsComponent: IMapperMethod & {
+		argNames: [ "teamsComponent" ],
+		},
+
+		uninstallAddins: IMapperMethod & {
+		argNames: [ "uninstallAddins" ],
+		},
+
 		unregisterPushNotificationSubscriber: IMapperMethod & {
 		argNames: [ "deviceAppInstanceId" ],
+		},
+
+		unsetIsEduClassProvisionPending: IMapperMethod & {
 		},
 
 		update: IMapperMethod & {
@@ -8929,6 +10533,14 @@ export interface IMapper {
 
 	"SP.Workflow.SPWorkflowTask": {
 		properties?: Array<string>;
+		addThumbnailFieldData: IMapperMethod & {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
+		attachImage: IMapperMethod & {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
 		breakRoleInheritance: IMapperMethod & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -8949,6 +10561,10 @@ export interface IMapper {
 
 		getUserEffectivePermissions: IMapperMethod & {
 		argNames: [ "userName" ],
+		},
+
+		getVersions: IMapperMethod & {
+		argNames: [ "getVersionsParams" ],
 		},
 
 		getWOPIFrameUrl: IMapperMethod & {
@@ -9027,8 +10643,12 @@ export interface IMapper {
 		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
 		},
 
+		validateUpdateFetchListItemInFolder: IMapperMethod & {
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "rootFolder" ],
+		},
+
 		validateUpdateListItem: IMapperMethod & {
-		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "sharedLockId" ],
 		},
 
 	}

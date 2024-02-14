@@ -91,6 +91,7 @@ export interface GroupCreationContext {
 	SiteCreationNewUX?: boolean;
 	SitePath?: string;
 	SiteSensitivityLabelId?: string;
+	URLForCustomHelpPageSensitivityLabel?: string;
 	UsageGuidelineUrl?: string;
 }
 
@@ -307,6 +308,21 @@ export interface RecentAndJoinedTeamsResponseCollections {
 }
 
 /*********************************************
+* VivaSiteRequestInfo
+**********************************************/
+export interface VivaSiteRequestInfo {
+	IsAlreadyAdded?: boolean;
+	SiteUrl?: string;
+}
+
+/*********************************************
+* VivaSiteRequestInfoCollections
+**********************************************/
+export interface VivaSiteRequestInfoCollections {
+
+}
+
+/*********************************************
 * SPSiteCreationResponse
 **********************************************/
 export interface SPSiteCreationResponse {
@@ -326,6 +342,8 @@ export interface SPSiteCreationResponseCollections {
 * SPSiteCreationRequest
 **********************************************/
 export interface SPSiteCreationRequest {
+	AdditionalSiteFeatureIds?: { results: Array<any> };
+	AdditionalWebFeatureIds?: { results: Array<any> };
 	ChannelGroupId?: any;
 	Classification?: string;
 	Description?: string;

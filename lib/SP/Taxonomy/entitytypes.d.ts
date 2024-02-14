@@ -43,6 +43,8 @@ export interface TaxonomyFieldProps {
 	AnchorId?: any;
 	CreateValuesInEditForm?: boolean;
 	IsAnchorValid?: boolean;
+	IsDocTagsEnabled?: boolean;
+	IsEnhancedImageTaggingEnabled?: boolean;
 	IsKeyword?: boolean;
 	IsPathRendered?: boolean;
 	IsTermSetValid?: boolean;

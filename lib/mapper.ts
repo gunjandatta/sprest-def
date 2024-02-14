@@ -62,12 +62,20 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Office.Server.ContentCenter.SPMachineLearningHub": {
-		createSite: {
-		argNames: [ "siteCreationProperties" ],
+		checkAIBuilderAccess: {
+		argNames: [ "environmentName", "isTestEnvironment", "userId" ],
 		},
 
 		getByContentTypeId: {
 		argNames: [ "contentTypeId" ],
+		},
+
+		getCDSMetadata: {
+		argNames: [ "environmentName", "isTestEnvironment" ],
+		},
+
+		getMachineLearningFlags: {
+		argNames: [ "docLibId" ],
 		},
 
 		getModelIdForContentType: {
@@ -75,7 +83,7 @@ export const Mapper: IMapper = {
 		},
 
 		getModels: {
-		argNames: [ "listId", "modelTypes", "publicationTypes" ],
+		argNames: [ "listId", "modelTypes", "publicationTypes", "includeManagementNotAllowedModels" ],
 		},
 
 		getRetentionLabel: {
@@ -85,7 +93,26 @@ export const Mapper: IMapper = {
 		getRetentionLabels: {
 		},
 
+		getSyntexPoweredColumnPrompts: {
+		argNames: [ "docLibId" ],
+		},
+
+		invokeDataverseQuery: {
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		setMachineLearningFlags: {
+		argNames: [ "docLibId", "machineLearningFlags" ],
+		},
+
+		setSyntexPoweredColumnPrompts: {
+		argNames: [ "docLibId", "syntexPoweredColumnPrompts" ],
+		},
+
+		setSyntexPoweredColumns: {
+		argNames: [ "listId", "itemId", "columnIdAndValues" ],
+		},
 
 		verifyModelUrls: {
 		argNames: [ "urls" ],
@@ -105,6 +132,9 @@ export const Mapper: IMapper = {
 		importMeta: {
 		},
 
+		invokeConnectorQuery: {
+		},
+
 		rename: {
 		argNames: [ "renameTo" ],
 		},
@@ -113,11 +143,18 @@ export const Mapper: IMapper = {
 		argNames: [ "fromExtractorName", "toExtractorName", "toColumnType" ],
 		},
 
+		setAsModelAuthor: {
+		},
+
 		update: {
 		},
 
 		updateModelSettings: {
 		argNames: [ "ModelSettings" ],
+		},
+
+		updateModelTypeSpecificSettings: {
+		argNames: [ "Settings" ],
 		},
 
 	},
@@ -144,12 +181,12 @@ export const Mapper: IMapper = {
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
-		setupContractsSolution: {
-		argNames: [ "newLibraryName", "packageName" ],
+		setupPrimedLibrary: {
+		argNames: [ "primedLibraryName", "packageName", "isTileViewEnabled", "serverRelativeLibraryPath" ],
 		},
 
-		setupPrimedLibrary: {
-		argNames: [ "primedLibraryName", "packageName" ],
+		unbindModelFromContentType: {
+		argNames: [ "contentTypeId" ],
 		},
 
 	},
@@ -315,6 +352,27 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationUrlParser": {
+		parseUrl: {
+		},
+
+	},
+
+	"Microsoft.Online.SharePoint.MigrationCenter.Common.UrlParseResult": {
+		setDisplayUrl: {
+		argNames: [ "displayUrl" ],
+		},
+
+		setSPListInformation: {
+		argNames: [ "spListInformationList" ],
+		},
+
+		updateSiteProvisionInformation: {
+		argNames: [ "spListInformation", "uri", "originalUrl", "errorCode", "message", "freeSiteStorageBytes", "isCurrentUserSiteAdmin" ],
+		},
+
+	},
+
 	"Microsoft.Online.SharePoint.MigrationCenter.Service.AgentGroup": {
 		delete: {
 		requestType: RequestType.Delete
@@ -464,6 +522,10 @@ export const Mapper: IMapper = {
 
 		batchDelete: {
 		argNames: [ "taskIdList", "deleteInProgressTask" ],
+		},
+
+		batchUpdate: {
+		argNames: [ "tasks" ],
 		},
 
 		createDuplicateTasks: {
@@ -677,10 +739,22 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Online.SharePoint.MultiGeo.Service.MultiGeoServicesBeta": {
+		compatibleDB: {
+		argNames: [ "dbSchemaVersion", "siteSubscriptionId", "siteUrl" ],
+		},
+
 		dBSchemaCompatibilityCheck: {
 		},
 
 		geoMoveCompatibilityChecks: {
+		},
+
+		hasMnALicense: {
+		argNames: [ "mnALicenseType" ],
+		},
+
+		mnAGroupMoveValidationResult: {
+		argNames: [ "encodedQuery" ],
 		},
 
 		orgRelationGroupManagedPath: {
@@ -696,6 +770,14 @@ export const Mapper: IMapper = {
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		restoreWorkflowCount: {
+		argNames: [ "isCrossTenant" ],
+		},
+
+		userMnAODMoveValidationResult: {
+		argNames: [ "encodedQuery" ],
+		},
 
 		userPersonalSiteId: {
 		argNames: [ "userPrincipalName" ],
@@ -727,6 +809,10 @@ export const Mapper: IMapper = {
 	"Microsoft.Online.SharePoint.MultiGeo.Service.SiteMoveJob.Collection": {
 		getByUrl: {
 		argNames: [ "url" ],
+		},
+
+		getMoveJobByUrl: {
+		argNames: [ "SourceSiteUrl", "SubscriptionId", "SourceDataLocation", "EnableSiteToMoveDatastore" ],
 		},
 
 		getMoveReport: {
@@ -799,6 +885,18 @@ export const Mapper: IMapper = {
 
 		getMoveReport: {
 		argNames: [ "moveState", "moveDirection", "limit", "startTime", "endTime" ],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+
+	"Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob.Collection": {
+		cancel: {
+		argNames: [ "url" ],
+		},
+
+		get: {
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -905,9 +1003,33 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Internal.SPOWebAppServicePrincipal": {
+		getIsolatedAppDomainsByAppId: {
+		argNames: [ "appIds" ],
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+		removeAppsToDelete: {
+		argNames: [ "domainsToDelete" ],
+		},
+
 		update: {
+		},
+
+		updateSpfxClientSecret: {
+		argNames: [ "secretValue" ],
+		},
+
+		updateSpfxThirdPartyAppId: {
+		argNames: [ "appId" ],
+		},
+
+		updateSpfxThirdPartyIsolatedComponentFields: {
+		argNames: [ "catalogItemId", "apAppObjectId", "spObjectId", "appId" ],
+		},
+
+		updateSpfxThirdPartyIsolatedSecret: {
+		argNames: [ "servicePrincipalId", "secretValue" ],
 		},
 
 	},
@@ -962,8 +1084,32 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.SPOGroup": {
+		addAsGroupOwnerAndMember: {
+		argNames: [ "groupId", "userId", "userPrincipalName" ],
+		},
+
+		addGroupMember: {
+		argNames: [ "groupId", "memberId", "memberPrincipalName" ],
+		},
+
+		addGroupOwner: {
+		argNames: [ "groupId", "ownerId", "ownerPrincipalName" ],
+		},
+
 		getGroupInfo: {
 		argNames: [ "groupId" ],
+		},
+
+		removeAsGroupOwnerAndMember: {
+		argNames: [ "groupId", "userId" ],
+		},
+
+		removeGroupMember: {
+		argNames: [ "groupId", "memberId" ],
+		},
+
+		removeGroupOwner: {
+		argNames: [ "groupId", "ownerId" ],
 		},
 
 		updateGroupProperties: {
@@ -976,9 +1122,34 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.Online.SharePoint.TenantAdministration.SPOMalwareFile": {
+		getMalwareFileStream: {
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+
+	"Microsoft.Online.SharePoint.TenantAdministration.SPOWebAppServicePrincipalPublic": {
+		addCustomSpfx3rdPartyAppPrincipal: {
+		argNames: [ "appId", "appUri", "clientSecret" ],
+		},
+
+		getCustomSpfx3rdPartyAppPrincipal: {
+		},
+
+		removeCustomSpfx3rdPartyAppPrincipal: {
+		},
+
+		updateCustomSpfx3rdPartyAppPrincipalClientSecret: {
+		argNames: [ "clientSecret" ],
+		},
+
+	},
+
 	"Microsoft.Online.SharePoint.TenantAdministration.SiteCollectionManagementService": {
 		exportCSVFile: {
-		argNames: [ "viewXml" ],
+		argNames: [ "viewXml", "timeZoneId" ],
 		},
 
 		getSiteCohortsSummary: {
@@ -1002,10 +1173,6 @@ export const Mapper: IMapper = {
 		},
 
 		setTrackViewFeatureAlwaysVisible: {
-		},
-
-		updateOffice365ProvidedSharepointSiteActivityData: {
-		argNames: [ "oauthToken" ],
 		},
 
 	},
@@ -1046,8 +1213,31 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.Online.SharePoint.TenantAdministration.Tenant": {
+		acceptSyntexRepositoryTermsOfService: {
+		},
+
+		addBrandFontPackage: {
+		argNames: [ "creationInformation" ],
+		},
+
+		addHomeSite: {
+		argNames: [ "homeSiteUrl", "order", "audiences" ],
+		},
+
 		addRecentAdminAction: {
-		argNames: [ "tenantAdminRecentAction" ],
+		argNames: [ "payload" ],
+		},
+
+		addRecentAdminActionReport: {
+		argNames: [ "payload" ],
+		},
+
+		addRecentAdminActions: {
+		argNames: [ "payload" ],
+		},
+
+		addSPORestrictedSearchAllowedList: {
+		argNames: [ "siteIds" ],
 		},
 
 		addTenantAdminListItem: {
@@ -1058,6 +1248,21 @@ export const Mapper: IMapper = {
 		argNames: [ "parameters" ],
 		},
 
+		addToOrgAssetsLibAndCdnV2: {
+		argNames: [ "cdnType", "libUrl", "thumbnailUrl", "orgAssetType", "defaultOriginAdded" ],
+		},
+
+		addToOrgAssetsLibAndCdnWithType: {
+		argNames: [ "cdnType", "libUrl", "thumbnailUrl", "orgAssetType" ],
+		},
+
+		archiveSiteById: {
+		argNames: [ "siteId" ],
+		},
+
+		bootstrapPolicyAutomationResources: {
+		},
+
 		checkTenantIntuneLicense: {
 		},
 
@@ -1065,32 +1270,142 @@ export const Mapper: IMapper = {
 		argNames: [ "licenses" ],
 		},
 
+		clearRestrictedAccessControlOneDrive: {
+		},
+
+		clearRestrictedAccessControlSharePoint: {
+		},
+
 		connectSiteToHubSiteById: {
 		argNames: [ "siteUrl", "hubSiteId" ],
+		},
+
+		createPolicyDefinition: {
+		argNames: [ "policyInputParameters" ],
 		},
 
 		createSite: {
 		argNames: [ "siteCreationProperties" ],
 		},
 
+		deletePolicyDefinition: {
+		argNames: [ "itemId" ],
+		},
+
+		deleteRecentAdminActionReport: {
+		argNames: [ "reportId" ],
+		},
+
+		deleteSPOContainerTypeById: {
+		argNames: [ "containerTypeId" ],
+		},
+
+		disableCollaborationInsightsDataCollection: {
+		},
+
+		downloadRansomwareImpactedAssetsReport: {
+		argNames: [ "driveId", "fileName", "reportNameType" ],
+		},
+
+		downloadSPOContainers: {
+		argNames: [ "active" ],
+		},
+
+		downloadSharingInsights: {
+		argNames: [ "queryMode", "insightsType" ],
+		},
+
+		enableCollaborationInsightsDataCollection: {
+		},
+
+		ensureBrandCenterFeature: {
+		},
+
+		exportAdminListToCSV: {
+		argNames: [ "viewXml", "listName" ],
+		},
+
+		exportCSVFile: {
+		argNames: [ "timeZoneId" ],
+		},
+
 		exportToCSV: {
-		argNames: [ "viewXml" ],
+		argNames: [ "viewXml", "timeZoneId" ],
+		},
+
+		exportUnlicensedOneDriveForBusinessListToCSV: {
 		},
 
 		getAdminListViews: {
 		},
 
+		getBrandCenterConfiguration: {
+		},
+
+		getBrandFontPackages: {
+		},
+
+		getChatGptResponse: {
+		argNames: [ "requestOptions" ],
+		},
+
+		getCollaborationInsightsData: {
+		},
+
+		getCollaborationInsightsOverview: {
+		},
+
 		getFilteredSPListItems: {
-		argNames: [ "columnName", "columnValue", "listName" ],
+		argNames: [ "columnName", "columnValue", "columnType", "listName" ],
+		},
+
+		getGptEmbeddings: {
+		argNames: [ "requestOptions" ],
+		},
+
+		getGptResponse: {
+		argNames: [ "requestOptions" ],
+		},
+
+		getHomeSites: {
 		},
 
 		getHomeSitesDetails: {
 		},
 
+		getIBVersionForTenant: {
+		},
+
 		getIdleSessionSignOutForUnmanagedDevices: {
 		},
 
+		getInsightsSummary: {
+		argNames: [ "insightsScenario", "dataFileName", "content", "pageIndex" ],
+		},
+
+		getOneDriveSiteSharingInsights: {
+		argNames: [ "queryMode" ],
+		},
+
+		getOrgAssets: {
+		},
+
 		getPowerAppsEnvironments: {
+		},
+
+		getRansomwareActivities: {
+		argNames: [ "parameters" ],
+		},
+
+		getRansomwareActivitiesOverview: {
+		argNames: [ "eventId" ],
+		},
+
+		getRansomwareEvents: {
+		argNames: [ "parameters" ],
+		},
+
+		getRansomwareEventsOverview: {
 		},
 
 		getSPHSiteUrl: {
@@ -1108,7 +1423,47 @@ export const Mapper: IMapper = {
 		argNames: [ "cultureName", "compatibilityLevel" ],
 		},
 
+		getSPOContainerByContainerId: {
+		argNames: [ "containerId" ],
+		},
+
+		getSPOContainerByContainerSiteUrl: {
+		argNames: [ "containerSiteUrl" ],
+		},
+
+		getSPOContainerTypeById: {
+		argNames: [ "containerTypeId", "containerTenantType" ],
+		},
+
+		getSPOContainerTypeConfigurationByContainerTypeId: {
+		argNames: [ "containerTypeId" ],
+		},
+
+		getSPOContainerTypes: {
+		argNames: [ "containerTenantType" ],
+		},
+
+		getSPOContainersByApplicationId: {
+		argNames: [ "owningApplicationId", "paged", "pagingToken" ],
+		},
+
+		getSPODeletedContainers: {
+		},
+
+		getSPORestrictedSearchAllowedList: {
+		},
+
+		getSPORestrictedSearchMode: {
+		},
+
 		getSPOSiteCreationSources: {
+		},
+
+		getSPOSyntexApplications: {
+		},
+
+		getSPOSyntexConsumingApplications: {
+		argNames: [ "owningApplicationId", "applicationId" ],
 		},
 
 		getSPOTenantAllWebTemplates: {
@@ -1116,6 +1471,14 @@ export const Mapper: IMapper = {
 
 		getSPOTenantWebTemplates: {
 		argNames: [ "localeId", "compatibilityLevel" ],
+		},
+
+		getSharePointSiteSharingInsights: {
+		argNames: [ "queryMode" ],
+		},
+
+		getSiteAdministrators: {
+		argNames: [ "siteId" ],
 		},
 
 		getSiteHealthStatus: {
@@ -1137,16 +1500,34 @@ export const Mapper: IMapper = {
 		getSiteSubscriptionId: {
 		},
 
+		getSiteThumbnailLogo: {
+		argNames: [ "siteUrl" ],
+		},
+
 		getSitesByState: {
 		argNames: [ "states" ],
+		},
+
+		getTargetedSitesDetails: {
+		},
+
+		getTargetedSitesDetailsByUserId: {
+		argNames: [ "userId" ],
 		},
 
 		getTenantAllOrCompatibleIBSegments: {
 		argNames: [ "segments" ],
 		},
 
+		getTopFilesSharingInsights: {
+		argNames: [ "queryMode" ],
+		},
+
 		getViewByDisplayName: {
 		argNames: [ "viewName", "listName" ],
+		},
+
+		getVivaConnectionsLicense: {
 		},
 
 		grantHubSiteRightsById: {
@@ -1156,7 +1537,29 @@ export const Mapper: IMapper = {
 		hasValidEducationLicense: {
 		},
 
+		isSyntexRepositoryTermsOfServiceAccepted: {
+		},
+
+		newSPOContainerType: {
+		argNames: [ "containerTypeProperties" ],
+		},
+
+		purgeContainer: {
+		argNames: [ "containerId" ],
+		},
+
+		purgeSPODeletedContainerByContainerId: {
+		argNames: [ "containerId" ],
+		},
+
+		purgeSPODeletedContainerByContainerSiteUrl: {
+		argNames: [ "containerSiteUrl" ],
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		recentAdminActionReportIsAuditEnabled: {
+		},
 
 		registerHubSite: {
 		argNames: [ "siteUrl" ],
@@ -1164,6 +1567,10 @@ export const Mapper: IMapper = {
 
 		registerHubSiteWithCreationInformation: {
 		argNames: [ "siteUrl", "creationInformation" ],
+		},
+
+		removeContainer: {
+		argNames: [ "containerId" ],
 		},
 
 		removeDeletedSite: {
@@ -1174,6 +1581,14 @@ export const Mapper: IMapper = {
 		argNames: [ "siteUrl", "siteId" ],
 		},
 
+		removeFromOrgAssets: {
+		argNames: [ "libUrl", "listId" ],
+		},
+
+		removeHomeSite: {
+		argNames: [ "homeSiteUrl" ],
+		},
+
 		removeSPHSite: {
 		},
 
@@ -1181,48 +1596,128 @@ export const Mapper: IMapper = {
 		argNames: [ "listItemId", "listName" ],
 		},
 
+		removeSPOContainerByContainerId: {
+		argNames: [ "containerId" ],
+		},
+
+		removeSPOContainerByContainerSiteUrl: {
+		argNames: [ "containerSiteUrl" ],
+		},
+
+		removeSPOContainerType: {
+		argNames: [ "spDeletedContainerTypeProperties" ],
+		},
+
+		removeSPORestrictedSearchAllowedList: {
+		argNames: [ "siteIds" ],
+		},
+
 		removeSite: {
 		argNames: [ "siteUrl" ],
+		},
+
+		removeTargetedSite: {
+		argNames: [ "siteId" ],
 		},
 
 		removeTenantAdminListView: {
 		argNames: [ "viewId" ],
 		},
 
+		renderActiveContainers: {
+		argNames: [ "containerId", "viewXml" ],
+		},
+
 		renderAdminListData: {
 		argNames: [ "parameters", "overrideParameters", "listName" ],
+		},
+
+		renderDeletedContainers: {
+		argNames: [ "viewXml" ],
 		},
 
 		renderFilteredAdminListData: {
 		argNames: [ "parameters", "listName" ],
 		},
 
+		renderFilteredAdminListDataByGroupId: {
+		argNames: [ "groupId" ],
+		},
+
 		renderIBSegmentListDataAsStream: {
-		argNames: [ "parameters", "segments", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideRowLimit", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "QueryParams", "RootFolder", "RootFolderUniqueId", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId" ],
+		argNames: [ "parameters", "segments", "CascDelWarnMessage", "CustomAction", "DrillDown", "Field", "FieldInternalName", "Filter", "FilterData", "FilterData1", "FilterData10", "FilterData2", "FilterData3", "FilterData4", "FilterData5", "FilterData6", "FilterData7", "FilterData8", "FilterData9", "FilterField", "FilterField1", "FilterField10", "FilterField2", "FilterField3", "FilterField4", "FilterField5", "FilterField6", "FilterField7", "FilterField8", "FilterField9", "FilterFields", "FilterFields1", "FilterFields10", "FilterFields2", "FilterFields3", "FilterFields4", "FilterFields5", "FilterFields6", "FilterFields7", "FilterFields8", "FilterFields9", "FilterLookupId", "FilterLookupId1", "FilterLookupId10", "FilterLookupId2", "FilterLookupId3", "FilterLookupId4", "FilterLookupId5", "FilterLookupId6", "FilterLookupId7", "FilterLookupId8", "FilterLookupId9", "FilterOp", "FilterOp1", "FilterOp10", "FilterOp2", "FilterOp3", "FilterOp4", "FilterOp5", "FilterOp6", "FilterOp7", "FilterOp8", "FilterOp9", "FilterValue", "FilterValue1", "FilterValue10", "FilterValue2", "FilterValue3", "FilterValue4", "FilterValue5", "FilterValue6", "FilterValue7", "FilterValue8", "FilterValue9", "FilterValues", "FilterValues1", "FilterValues10", "FilterValues2", "FilterValues3", "FilterValues4", "FilterValues5", "FilterValues6", "FilterValues7", "FilterValues8", "FilterValues9", "GroupString", "HasOverrideSelectCommand", "ID", "InplaceFullListSearch", "InplaceSearchQuery", "IsCSR", "IsGroupRender", "IsXslView", "ListViewPageUrl", "OverrideRowLimit", "OverrideScope", "OverrideSelectCommand", "PageFirstRow", "PageLastRow", "QueryParams", "RootFolder", "RootFolderUniqueId", "SortDir", "SortDir1", "SortDir10", "SortDir2", "SortDir3", "SortDir4", "SortDir5", "SortDir6", "SortDir7", "SortDir8", "SortDir9", "SortField", "SortField1", "SortField10", "SortField2", "SortField3", "SortField4", "SortField5", "SortField6", "SortField7", "SortField8", "SortField9", "SortFields", "SortFieldValues", "View", "ViewCount", "ViewId", "ViewPath", "WebPartId", "FilterIBSegmentsBasedOnAndCondition" ],
 		},
 
 		renderIBSegmentListFilterData: {
 		argNames: [ "parameters" ],
 		},
 
-		renderRecentAdminActions: {
+		renderOwnershipPolicyStorageSPList: {
 		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderPolicyDefinitionList: {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderPolicyExecutionsHistory: {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderPolicyReport: {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderRecentAdminActionReport: {
+		argNames: [ "parameters", "overrideParameters" ],
+		},
+
+		renderRecentAdminActions: {
+		argNames: [ "parameters", "overrideParameters", "isAutoRefresh" ],
+		},
+
+		reorderTargetedSites: {
+		argNames: [ "siteIds" ],
+		},
+
+		restoreContainer: {
+		argNames: [ "containerId" ],
 		},
 
 		restoreDeletedSite: {
 		argNames: [ "siteUrl" ],
 		},
 
+		restoreDeletedSiteById: {
+		argNames: [ "siteId" ],
+		},
+
 		restoreDeletedSitePreferId: {
 		argNames: [ "siteUrl", "siteId" ],
+		},
+
+		restoreSPODeletedContainerByContainerId: {
+		argNames: [ "containerId" ],
+		},
+
+		restoreSPODeletedContainerByContainerSiteUrl: {
+		argNames: [ "containerSiteUrl" ],
 		},
 
 		revokeHubSiteRightsById: {
 		argNames: [ "hubSiteId", "principals" ],
 		},
 
+		sendEmail: {
+		argNames: [ "siteUrl", "status", "customizedEmail" ],
+		},
+
 		setDefaultView: {
 		argNames: [ "viewId", "listName" ],
+		},
+
+		setFileVersionPolicy: {
+		argNames: [ "isAutoTrimEnabled", "majorVersionLimit", "expireVersionsAfterDays" ],
 		},
 
 		setIBSegmentsOnSite: {
@@ -1233,8 +1728,40 @@ export const Mapper: IMapper = {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
 		},
 
+		setJitDlpPolicyData: {
+		argNames: [ "markAllFilesAsSensitiveByDefault", "odbSensitivityRefreshWindowInHours" ],
+		},
+
+		setOrgAssetsWithType: {
+		argNames: [ "libUrl", "thumbnailUrl", "orgAssetType" ],
+		},
+
 		setSPHSite: {
 		argNames: [ "sphSiteUrl" ],
+		},
+
+		setSPHSiteWithConfiguration: {
+		argNames: [ "sphSiteUrl", "configuration" ],
+		},
+
+		setSPOContainerProperties: {
+		argNames: [ "spContainerProperties" ],
+		},
+
+		setSPOContainerType: {
+		argNames: [ "containerTypeProperties" ],
+		},
+
+		setSPOContainerTypeConfiguration: {
+		argNames: [ "spContainerTypeConfigurationProperties" ],
+		},
+
+		setSPORestrictedSearchMode: {
+		argNames: [ "mode" ],
+		},
+
+		setSiteAdministrators: {
+		argNames: [ "siteAdministratorsFieldsData" ],
 		},
 
 		setSiteSecondaryAdministrators: {
@@ -1243,6 +1770,10 @@ export const Mapper: IMapper = {
 
 		setSiteUserGroups: {
 		argNames: [ "siteUserGroupsData" ],
+		},
+
+		setSyntexPaygFeatureActivation: {
+		argNames: [ "featureName", "activationStatus" ],
 		},
 
 		swapSite: {
@@ -1257,6 +1788,10 @@ export const Mapper: IMapper = {
 		argNames: [ "sourceUrl", "targetUrl", "archiveUrl", "includeSmartGestures", "force" ],
 		},
 
+		unarchiveSiteById: {
+		argNames: [ "siteId" ],
+		},
+
 		unregisterHubSite: {
 		argNames: [ "siteUrl" ],
 		},
@@ -1264,12 +1799,31 @@ export const Mapper: IMapper = {
 		update: {
 		},
 
+		updateFileSearchVisibility: {
+		argNames: [ "url", "isHidden" ],
+		},
+
 		updateGroupSiteProperties: {
 		argNames: [ "groupId", "siteId", "updateType", "parameters" ],
 		},
 
-		updateRecentAdminAction: {
-		argNames: [ "listItemId", "tenantAdminRecentAction" ],
+		updatePolicyDefinition: {
+		argNames: [ "itemId", "policyInputParameters", "policyOperation" ],
+		},
+
+		updateRansomwareActivity: {
+		argNames: [ "listItemId", "columnValues" ],
+		},
+
+		updateRansomwareEvent: {
+		argNames: [ "listItemId", "columnValues", "forceResolveActivity" ],
+		},
+
+		updateSiteActivityData: {
+		},
+
+		updateTargetedSite: {
+		argNames: [ "siteUrl", "configurationParam" ],
 		},
 
 		updateTenantAdminListItem: {
@@ -1278,6 +1832,14 @@ export const Mapper: IMapper = {
 
 		updateTenantAdminListView: {
 		argNames: [ "viewId", "viewXml" ],
+		},
+
+		validateHomeSite: {
+		argNames: [ "validationActionType", "siteUrl" ],
+		},
+
+		validateMultipleHomeSitesParameterExists: {
+		argNames: [ "hasParameters" ],
 		},
 
 	},
@@ -1385,8 +1947,16 @@ export const Mapper: IMapper = {
 		argNames: [ "name" ],
 		},
 
+		incrementCustomFontsMinorVersion: {
+		argNames: [ "libUrl" ],
+		},
+
 		isSharingDisabledForNonOwnersOfSite: {
 		argNames: [ "siteUrl" ],
+		},
+
+		logCustomFontsLargeUpload: {
+		argNames: [ "numCatalogs", "numFonts", "totalExpectedFiles" ],
 		},
 
 		queueImportProfileProperties: {
@@ -1403,6 +1973,10 @@ export const Mapper: IMapper = {
 
 		removeFromOrgAssetsAndCdn: {
 		argNames: [ "remove", "cdnType", "libUrl" ],
+		},
+
+		removePreviousCustomFontUpload: {
+		argNames: [ "majVersions", "libUrl" ],
 		},
 
 		removePublicCdnOrigin: {
@@ -1424,12 +1998,24 @@ export const Mapper: IMapper = {
 		argNames: [ "puidList" ],
 		},
 
+		setBlockDownloadFileTypePolicyData: {
+		argNames: [ "blockDownloadFileTypePolicy", "fileTypeIds", "excludedBlockDownloadGroupIds" ],
+		},
+
+		setBlockDownloadFileTypePolicyExclusionList: {
+		argNames: [ "excludedBlockDownloadGroupIds" ],
+		},
+
 		setHideDefaultThemes: {
 		argNames: [ "hideDefaultThemes" ],
 		},
 
 		setIdleSessionSignOutForUnmanagedDevices: {
 		argNames: [ "enabled", "warnAfter", "signOutAfter" ],
+		},
+
+		setJitDlpPolicyData: {
+		argNames: [ "markAllFilesAsSensitiveByDefault", "odbSensitivityRefreshWindowInHours" ],
 		},
 
 		setOrgAssetsLib: {
@@ -1442,6 +2028,9 @@ export const Mapper: IMapper = {
 
 		setTenantCdnPolicy: {
 		argNames: [ "cdnType", "policy", "policyValue" ],
+		},
+
+		syncAadB2BManagementPolicy: {
 		},
 
 		updateTenantTheme: {
@@ -1490,7 +2079,7 @@ export const Mapper: IMapper = {
 		},
 
 		getReportById: {
-		argNames: [ "ReportId" ],
+		argNames: [ "ReportId", "ShowIncompatibleSegmentsPairsAndInvalidSegmentsFilesContents" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1508,6 +2097,16 @@ export const Mapper: IMapper = {
 
 		getUnsuccesfulCrawledUrls: {
 		argNames: [ "displayUrl", "startDateTime", "endDateTime" ],
+		},
+
+	},
+
+	"Microsoft.SharePoint.Client.Search.Administration.SiteContentProcessingInfoProvider": {
+		getAzureContainerToken: {
+		},
+
+		reportContentProcessingStatus: {
+		argNames: [ "webId", "listId", "uniqueId", "azureContainerTokenUri", "encryptionKey", "priority", "errorCode", "errorDescription" ],
 		},
 
 	},
@@ -1536,6 +2135,18 @@ export const Mapper: IMapper = {
 		},
 
 		isCrawlVersionsEnabledForTenant: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.Client.Search.Administration.TenantRecycleBinInfoProvider": {
+		disableRecycleBinDiscoverabilityForTenant: {
+		},
+
+		enableRecycleBinDiscoverabilityForTenant: {
+		},
+
+		isRecycleBinDiscoverabilityEnabledForTenant: {
 		},
 
 	},
@@ -1645,6 +2256,87 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.SharePoint.Convergence.ConsumerPermissions": {
+		grantConsumerSitePermissions: {
+		},
+
+		revokeConsumerSitePermissions: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.Convergence.MigrationCompleteStateApi": {
+		addState: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.Convergence.OdcMetadataCleanedUpApi": {
+		addState: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.EmployeeEngagement.VivaHome": {
+		addImage: {
+		argNames: [ "fileName", "imageStream" ],
+		},
+
+		addImageFromExternalUrl: {
+		argNames: [ "fileName", "externalUrl" ],
+		},
+
+		titleRegion: {
+		argNames: [ "vivaHomeTitleRegion" ],
+		},
+
+	},
+
+	"Microsoft.SharePoint.EmployeeEngagement.VivaResources": {
+		addLink: {
+		argNames: [ "newLink" ],
+		},
+
+		getLinks: {
+		},
+
+		removeLink: {
+		argNames: [ "id" ],
+		},
+
+		reorderLink: {
+		argNames: [ "linkId", "prevLinkId" ],
+		},
+
+		updateLink: {
+		argNames: [ "updatedLink" ],
+		},
+
+	},
+
+	"Microsoft.SharePoint.IR.IRMigration": {
+		deleteAndRecreateIRList: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.Insights.SPTenantIBInsightsReportManager": {
+		createReport: {
+		},
+
+		getAllReportsMetadata: {
+		},
+
+		getReport: {
+		argNames: [ "reportId", "siteType" ],
+		},
+
+		getReportData: {
+		argNames: [ "reportId", "siteType", "section" ],
+		},
+
+	},
+
 	"Microsoft.SharePoint.Internal.ActivityLogger": {
 		feedbackDirect: {
 		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "json" ],
@@ -1655,14 +2347,25 @@ export const Mapper: IMapper = {
 		},
 
 		logActivity: {
-		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType" ],
+		argNames: [ "Operation", "ListId", "ListItemUniqueId", "AffectedResourceUrl", "ItemType", "AuditCreationTime", "IsOffline" ],
+		},
+
+	},
+
+	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns": {
+		add: {
+		argNames: [ "description", "id", "serializedProperties", "showInToolbox", "title" ],
+		},
+
+		update: {
+		argNames: [ "description", "id", "serializedProperties", "showInToolbox", "title" ],
 		},
 
 	},
 
 	"Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata": {
 		deploy: {
-		argNames: [ "skipFeatureDeployment" ],
+		argNames: [ "skipFeatureDeployment", "isUpdatingApp" ],
 		},
 
 		install: {
@@ -1733,7 +2436,7 @@ export const Mapper: IMapper = {
 		},
 
 		addAndDeployStoreAppById: {
-		argNames: [ "CMU", "Overwrite", "SkipFeatureDeployment", "StoreAssetId" ],
+		argNames: [ "CallerId", "CMU", "isUpdatingApp", "Overwrite", "SkipFeatureDeployment", "StoreAssetId" ],
 		},
 
 		addStoreApp: {
@@ -1762,6 +2465,10 @@ export const Mapper: IMapper = {
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+		sendAppRequestStatusNotificationEmail: {
+		argNames: [ "RequestGuid" ],
+		},
+
 		solutionContainsTeamsComponent: {
 		argNames: [ "id" ],
 		},
@@ -1784,16 +2491,34 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings": {
+		enableGlobalNavigation: {
+		argNames: [ "isEnabled" ],
+		},
+
+		update: {
+		},
+
+	},
+
 	"Microsoft.SharePoint.Navigation.REST.NavigationServiceRest": {
+		currentResourcesNav: {
+		argNames: [ "source", "includeVivaResources" ],
+		},
+
 		getPublishingNavigationProviderType: {
 		argNames: [ "mapProviderName" ],
 		},
 
 		globalNav: {
-		argNames: [ "source" ],
+		argNames: [ "source", "includeVivaResources" ],
 		},
 
 		globalNavEnabled: {
+		},
+
+		homeSiteNavigation: {
+		argNames: [ "source" ],
 		},
 
 		menuNodeKey: {
@@ -1803,6 +2528,8 @@ export const Mapper: IMapper = {
 		menuState: {
 		argNames: [ "menuNodeKey", "mapProviderName", "depth", "customProperties" ],
 		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		saveMenuState: {
 		argNames: [ "menuState", "mapProviderName" ],
@@ -1816,6 +2543,12 @@ export const Mapper: IMapper = {
 
 	"Microsoft.SharePoint.OrgNewsSite.OrgNewsSiteApi": {
 		details: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.Photos.PhotosMigration": {
+		migratePhotosData: {
 		},
 
 	},
@@ -1835,6 +2568,10 @@ export const Mapper: IMapper = {
 	},
 
 	"Microsoft.SharePoint.Portal.GroupSiteManager": {
+		cacheCurrentUserJoinedTeamsResult: {
+		argNames: [ "joinedTeams" ],
+		},
+
 		canUserCreateGroup: {
 		},
 
@@ -1863,9 +2600,11 @@ export const Mapper: IMapper = {
 		},
 
 		ensureTeamForGroup: {
+		argNames: [ "altGroupId", "teamTemplate" ],
 		},
 
 		ensureTeamForGroupEx: {
+		argNames: [ "altGroupId", "teamTemplate" ],
 		},
 
 		getAllOrgLabels: {
@@ -1908,6 +2647,10 @@ export const Mapper: IMapper = {
 		argNames: [ "teamId", "useStagingEndpoint" ],
 		},
 
+		getTeamChannelsDirect: {
+		argNames: [ "teamId" ],
+		},
+
 		getTeamChannelsEx: {
 		argNames: [ "teamId" ],
 		},
@@ -1945,7 +2688,7 @@ export const Mapper: IMapper = {
 		},
 
 		recentAndJoinedTeams: {
-		argNames: [ "includeRecent", "includeTeams", "includePinned" ],
+		argNames: [ "includeRecent", "includeTeams", "includePinned", "existingJoinedTeamsData" ],
 		},
 
 	},
@@ -1990,6 +2733,10 @@ export const Mapper: IMapper = {
 		argNames: [ "siteId" ],
 		},
 
+		landingSiteUrlFromName: {
+		argNames: [ "siteName" ],
+		},
+
 		restoreTeamsChannelSite: {
 		argNames: [ "siteId", "relatedGroupId" ],
 		},
@@ -2012,6 +2759,10 @@ export const Mapper: IMapper = {
 
 		updateWorkflow2013Endpoint: {
 		argNames: [ "workflowServiceAddress", "workflowHostname" ],
+		},
+
+		vivaBackendSiteUrlFromName: {
+		argNames: [ "siteName" ],
 		},
 
 	},
@@ -2047,9 +2798,38 @@ export const Mapper: IMapper = {
 
 	},
 
+	"Microsoft.SharePoint.Portal.VivaSiteManager": {
+		ensureVivaSite: {
+		},
+
+	},
+
+	"Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaBackfillApi": {
+		backfillNonQuota: {
+		argNames: [ "backfillUserfacts" ],
+		},
+
+	},
+
+	"Microsoft.SharePoint.QuotaManagement.Consumer.NonQuotaMigrationApi": {
+		migrateNonQuota: {
+		},
+
+	},
+
 	"Microsoft.SharePoint.QuotaManagement.Consumer.QuotaMigrationApi": {
 		migrateQuota: {
 		argNames: [ "IsMaxQuotaCall" ],
+		},
+
+	},
+
+	"Microsoft.SharePoint.SectionDesignIdeas.SectionDesignIdeasApi": {
+		getSectionDesignIdeas: {
+		argNames: [ "title", "subTitle" ],
+		},
+
+		ping: {
 		},
 
 	},
@@ -3399,6 +4179,18 @@ export const Mapper: IMapper = {
 
 	},
 
+	"SP.BrandCenter": {
+		configuration: {
+		},
+
+		ensureBrandFontsLibraryFeature: {
+		},
+
+		orgAssets: {
+		},
+
+	},
+
 	"SP.BusinessData.AppBdcCatalog": {
 		getConnectionId: {
 		argNames: [ "lobSystemName", "lobSystemInstanceName" ],
@@ -3855,12 +4647,56 @@ export const Mapper: IMapper = {
 		},
 
 		dashboardContent: {
+		argNames: [ "overrideLanguageCode" ],
+		},
+
+		dashboardOOBContent: {
+		argNames: [ "oobContentChoice" ],
+		},
+
+		fullDashboardContent: {
+		},
+
+		getDashboardPersonalization: {
+		},
+
+		getTargetedSitesAsEditor: {
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+		setDashboardPersonalization: {
+		argNames: [ "isEnabled" ],
+		},
+
 		vivaConnections: {
 		argNames: [ "adminConfiguredUrl" ],
+		},
+
+		vivaHome: {
+		},
+
+		vivaHomeConfiguration: {
+		argNames: [ "shouldByPassCache" ],
+		},
+
+	},
+
+	"SP.EmployeeExperienceController": {
+		dashboard: {
+		argNames: [ "formFactor", "dashboardId", "mySiteUrl" ],
+		},
+
+		getAnnouncementsState: {
+		argNames: [ "mySiteUrl" ],
+		},
+
+		saveDashboard: {
+		argNames: [ "employeeExperienceDashboardData", "mySiteUrl" ],
+		},
+
+		setAnnouncementState: {
+		argNames: [ "announcementStates", "mySiteUrl" ],
 		},
 
 	},
@@ -4482,6 +5318,10 @@ export const Mapper: IMapper = {
 		argNames: [ "uploadId" ],
 		},
 
+		changeContentStorageSchema: {
+		argNames: [ "desiredSchema" ],
+		},
+
 		checkAccessAndPostViewAuditEvent: {
 		},
 
@@ -4528,7 +5368,7 @@ export const Mapper: IMapper = {
 		},
 
 		finishUploadWithChecksum: {
-		argNames: [ "uploadId", "fileOffset", "checksum", "stream" ],
+		argNames: [ "uploadId", "fileOffset", "checksum", "stream", "sandboxId" ],
 		},
 
 		getFileUserValue: {
@@ -4698,6 +5538,10 @@ export const Mapper: IMapper = {
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+		setExpirationDate: {
+		argNames: [ "expirationDate" ],
+		},
+
 	},
 
 	"SP.FileVersion.Collection": {
@@ -4774,6 +5618,9 @@ export const Mapper: IMapper = {
 		argNames: [ "parameters" ],
 		},
 
+		startDelete: {
+		},
+
 		update: {
 		argNames: [ "properties" ],
 		},
@@ -4799,6 +5646,63 @@ export const Mapper: IMapper = {
 
 		getByUrl: {
 		argNames: [ "url" ],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+
+	"SP.FolderColoring": {
+		createFolder: {
+		argNames: [ "DecodedUrl", "EnsureUniqueFileName", "Overwrite", "coloringInformation" ],
+		},
+
+		renameFolder: {
+		argNames: [ "DecodedUrl", "newName", "coloringInformation" ],
+		},
+
+		stampColor: {
+		argNames: [ "DecodedUrl", "coloringInformation" ],
+		},
+
+	},
+
+	"SP.FontPackage": {
+		apply: {
+		},
+
+		delete: {
+		requestType: RequestType.Delete
+		},
+
+		update: {
+		},
+
+	},
+
+	"SP.FontPackage.Collection": {
+		getById: {
+		argNames: [ "id" ],
+		},
+
+		getById: {
+		argNames: [ "id" ],
+		},
+
+		getById: {
+		argNames: [ "id" ],
+		},
+
+		getByTitle: {
+		argNames: [ "title" ],
+		},
+
+		getByTitle: {
+		argNames: [ "title" ],
+		},
+
+		getByTitle: {
+		argNames: [ "title" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4943,6 +5847,16 @@ export const Mapper: IMapper = {
 		argNames: [ "itemIds", "formValues", "bNewDocumentUpdate", "checkInComment", "folderPath" ],
 		},
 
+		cAAECreateTempFolder: {
+		},
+
+		cAAERenameFileInTemporaryFolder: {
+		argNames: [ "Path", "UpdatedName" ],
+		},
+
+		cancelDeleteFileVersions: {
+		},
+
 		clearBusinessAppMigrationInteractiveData: {
 		},
 
@@ -4958,6 +5872,14 @@ export const Mapper: IMapper = {
 		argNames: [ "ContentTypeName", "documentGenerationInfo" ],
 		},
 
+		createDocumentFromCAAETemplateV2: {
+		argNames: [ "Id", "documentGenerationInfo" ],
+		},
+
+		createDocumentFromContentAssemblyTemplate: {
+		argNames: [ "TemplateUrl", "documentGenerationInfo" ],
+		},
+
 		createDocumentWithDefaultName: {
 		argNames: [ "folderPath", "extension" ],
 		},
@@ -4967,11 +5889,19 @@ export const Mapper: IMapper = {
 		},
 
 		createRule: {
-		argNames: [ "condition", "outcome", "title", "triggerType", "emailField", "actionType" ],
+		argNames: [ "condition", "outcome", "title", "triggerType", "emailField", "actionType", "ruleTemplateId" ],
+		},
+
+		createRuleEx: {
+		argNames: [ "condition", "title", "triggerType", "action", "ruleTemplateId" ],
 		},
 
 		createSmartTemplateContentTypeAndAddToList: {
 		argNames: [ "Name", "Description" ],
+		},
+
+		createSmartTemplateContentTypeAndAddToListV2: {
+		argNames: [ "Name", "Description", "TemplatePath", "Status" ],
 		},
 
 		delete: {
@@ -4980,6 +5910,9 @@ export const Mapper: IMapper = {
 
 		deleteRule: {
 		argNames: [ "ruleId" ],
+		},
+
+		enableQueryableColumns: {
 		},
 
 		enqueueAsyncActionTaskById: {
@@ -5028,6 +5961,14 @@ export const Mapper: IMapper = {
 		getCheckedOutFiles: {
 		},
 
+		getContentAssemblyDocumentFieldValues: {
+		argNames: [ "DocumentUrl" ],
+		},
+
+		getContentAssemblyTemplateFields: {
+		argNames: [ "TemplateUrl" ],
+		},
+
 		getItemById: {
 		argNames: [ "id" ],
 		},
@@ -5064,6 +6005,10 @@ export const Mapper: IMapper = {
 		argNames: [ "visualizationAppTarget" ],
 		},
 
+		getProgressForFileVersionExpirationReport: {
+		argNames: [ "reportFileUrl" ],
+		},
+
 		getRelatedFields: {
 		},
 
@@ -5079,8 +6024,11 @@ export const Mapper: IMapper = {
 		argNames: [ "viewGuid" ],
 		},
 
-		getWebDavUrl: {
-		argNames: [ "sourceUrl" ],
+		isSyntexAIFeaturesFlightEnabled: {
+		},
+
+		lockSmartTemplate: {
+		argNames: [ "Id" ],
 		},
 
 		parseDocumentTemplate: {
@@ -5091,9 +6039,21 @@ export const Mapper: IMapper = {
 		argNames: [ "appId", "visualizationTarget" ],
 		},
 
+		publishModernTemplate: {
+		argNames: [ "publishModernTemplatePayload" ],
+		},
+
+		publishSnippet: {
+		argNames: [ "publishSnippetPayload" ],
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		recycle: {
+		},
+
+		refreshLockSmartTemplate: {
+		argNames: [ "Id", "LockId" ],
 		},
 
 		renderExtendedListFormData: {
@@ -5138,8 +6098,31 @@ export const Mapper: IMapper = {
 		argNames: [ "targetFieldName", "beginsWithSearchString", "pagingInfo" ],
 		},
 
+		setContentAssemblyTemplateReadOnly: {
+		argNames: [ "Id" ],
+		},
+
 		setExemptFromBlockDownloadOfNonViewableFiles: {
 		argNames: [ "value" ],
+		},
+
+		setItemsOrder: {
+		argNames: [ "itemIds", "lowerOrderItemId", "higherOrderItemId" ],
+		},
+
+		setListCustomOrderFlag: {
+		argNames: [ "value" ],
+		},
+
+		startDeleteFileVersions: {
+		argNames: [ "deleteOlderThanDays" ],
+		},
+
+		startFileVersionExpirationReport: {
+		argNames: [ "reportFileUrl" ],
+		},
+
+		startRecycle: {
 		},
 
 		syncFlowCallbackUrl: {
@@ -5158,8 +6141,16 @@ export const Mapper: IMapper = {
 		argNames: [ "category" ],
 		},
 
+		unlockSmartTemplate: {
+		argNames: [ "Id", "LockId" ],
+		},
+
 		unpublishMappedView: {
 		argNames: [ "appId", "visualizationTarget" ],
+		},
+
+		unsetContentAssemblyTemplateReadOnly: {
+		argNames: [ "Id" ],
 		},
 
 		update: {
@@ -5174,6 +6165,10 @@ export const Mapper: IMapper = {
 		argNames: [ "Id", "updateTemplateInfo" ],
 		},
 
+		updateContentAssemblyDocument: {
+		argNames: [ "TemplateUrl", "contentAssemblyFormAnswers" ],
+		},
+
 		updateFormProcessingModelRetentionLabel: {
 		argNames: [ "retentionLabel" ],
 		},
@@ -5183,7 +6178,11 @@ export const Mapper: IMapper = {
 		},
 
 		updateRule: {
-		argNames: [ "ruleId", "condition", "outcome", "title", "emailField", "status", "actionType" ],
+		argNames: [ "ruleId", "condition", "outcome", "title", "emailField", "status", "actionType", "triggerType" ],
+		},
+
+		updateRuleEx: {
+		argNames: [ "ruleId", "condition", "title", "status", "action", "triggerType" ],
 		},
 
 		validateAppName: {
@@ -5222,6 +6221,14 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.ListItem": {
+		addThumbnailFieldData: {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
+		attachImage: {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
 		breakRoleInheritance: {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -5243,6 +6250,10 @@ export const Mapper: IMapper = {
 
 		getUserEffectivePermissions: {
 		argNames: [ "userName" ],
+		},
+
+		getVersions: {
+		argNames: [ "getVersionsParams" ],
 		},
 
 		getWOPIFrameUrl: {
@@ -5323,8 +6334,12 @@ export const Mapper: IMapper = {
 		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
 		},
 
+		validateUpdateFetchListItemInFolder: {
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "rootFolder" ],
+		},
+
 		validateUpdateListItem: {
-		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "sharedLockId" ],
 		},
 
 	},
@@ -5353,14 +6368,27 @@ export const Mapper: IMapper = {
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+		recycle: {
+		},
+
 	},
 
 	"SP.ListItemVersion.Collection": {
+		deleteAll: {
+		},
+
 		getById: {
 		argNames: [ "versionId" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		recycleAll: {
+		},
+
+		restoreByID: {
+		argNames: [ "versionId" ],
+		},
 
 	},
 
@@ -5664,6 +6692,188 @@ export const Mapper: IMapper = {
 
 	},
 
+	"SP.Publishing.AnnouncementsController": {
+		active: {
+		},
+
+		channel: {
+		},
+
+		flwPropertyFilteringMapping: {
+		argNames: [ "flwPropertyFilteringMapping" ],
+		},
+
+	},
+
+	"SP.Publishing.CampaignPublication": {
+		approveApprovalRequest: {
+		argNames: [ "comment" ],
+		},
+
+		boostNews: {
+		argNames: [ "SitePageBoost" ],
+		},
+
+		cancelApprovalRequest: {
+		},
+
+		cancelSchedulePublication: {
+		},
+
+		checkOut: {
+		},
+
+		checkoutPage: {
+		},
+
+		copy: {
+		},
+
+		copyTo: {
+		argNames: [ "copyToParams" ],
+		},
+
+		copyWithConfiguration: {
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
+		},
+
+		createApprovalRequest: {
+		argNames: [ "creationInfo" ],
+		},
+
+		createNewsCopy: {
+		},
+
+		delete: {
+		requestType: RequestType.Delete
+		},
+
+		deletePublication: {
+		},
+
+		demoteFromNews: {
+		},
+
+		discardPage: {
+		},
+
+		getDependencyMetadata: {
+		},
+
+		getHighlightsInfo: {
+		},
+
+		getLatestVersionsInDescendingOrder: {
+		argNames: [ "numVersions" ],
+		},
+
+		getPrePublishValidationStatus: {
+		},
+
+		getPublishingStatus: {
+		},
+
+		getVersion: {
+		argNames: [ "versionId" ],
+		},
+
+		loadMailDraft: {
+		argNames: [ "requestParam" ],
+		},
+
+		move: {
+		argNames: [ "pageMoveParams" ],
+		},
+
+		promoteToNews: {
+		},
+
+		publish: {
+		},
+
+		publishCoAuth: {
+		argNames: [ "pageStream" ],
+		},
+
+		publishPublication: {
+		},
+
+		rejectApprovalRequest: {
+		argNames: [ "comment" ],
+		},
+
+		resetEndpoint: {
+		argNames: [ "requestParam" ],
+		},
+
+		sPSiteValidator: {
+		argNames: [ "siteUrl" ],
+		},
+
+		saveDraft: {
+		argNames: [ "sitePage" ],
+		},
+
+		saveMailDraft: {
+		argNames: [ "requestParam" ],
+		},
+
+		savePage: {
+		argNames: [ "pageStream" ],
+		},
+
+		savePageAsDraft: {
+		argNames: [ "pageStream" ],
+		},
+
+		savePageAsTemplate: {
+		},
+
+		savePageAsTemplate2: {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: {
+		},
+
+		savePageCoAuth: {
+		argNames: [ "pageStream" ],
+		},
+
+		schedulePublication: {
+		argNames: [ "publishStartDate" ],
+		},
+
+		schedulePublish: {
+		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: {
+		},
+
+		sendTestTeamsMessage: {
+		argNames: [ "audienceId" ],
+		},
+
+		sharePagePreviewByEmail: {
+		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: {
+		},
+
+		syncApprovalRequest: {
+		},
+
+		update: {
+		},
+
+		updateSharePointPublishingStatus: {
+		argNames: [ "destinationSiteId", "destinationUrl", "sharePointPublishingStatus", "sharePointPublishingErrorCode" ],
+		},
+
+	},
+
 	"SP.Publishing.CommunicationSite": {
 		create: {
 		argNames: [ "request" ],
@@ -5700,8 +6910,12 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyTo: {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: {
@@ -5713,14 +6927,32 @@ export const Mapper: IMapper = {
 		discardPage: {
 		},
 
+		getDependencyMetadata: {
+		},
+
+		getHighlightsInfo: {
+		},
+
+		getLatestVersionsInDescendingOrder: {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: {
 		argNames: [ "versionId" ],
+		},
+
+		move: {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: {
 		},
 
 		publish: {
+		},
+
+		publishCoAuth: {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: {
@@ -5738,12 +6970,26 @@ export const Mapper: IMapper = {
 		savePageAsTemplate: {
 		},
 
+		savePageAsTemplate2: {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: {
+		},
+
+		savePageCoAuth: {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: {
 		},
 
 		update: {
@@ -5925,8 +7171,12 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyTo: {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: {
@@ -5938,14 +7188,32 @@ export const Mapper: IMapper = {
 		discardPage: {
 		},
 
+		getDependencyMetadata: {
+		},
+
+		getHighlightsInfo: {
+		},
+
+		getLatestVersionsInDescendingOrder: {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: {
 		argNames: [ "versionId" ],
+		},
+
+		move: {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: {
 		},
 
 		publish: {
+		},
+
+		publishCoAuth: {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: {
@@ -5963,12 +7231,26 @@ export const Mapper: IMapper = {
 		savePageAsTemplate: {
 		},
 
+		savePageAsTemplate2: {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: {
+		},
+
+		savePageCoAuth: {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: {
 		},
 
 		update: {
@@ -5986,7 +7268,7 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.RichSharing": {
 		sharePageByEmail: {
-		argNames: [ "url", "message", "recipientEmails", "pageContent" ],
+		argNames: [ "url", "message", "recipientEmails", "pageContent", "subject", "ccEmails", "bccEmails" ],
 		},
 
 		shareSiteByEmail: {
@@ -6039,8 +7321,12 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyTo: {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: {
@@ -6052,14 +7338,32 @@ export const Mapper: IMapper = {
 		discardPage: {
 		},
 
+		getDependencyMetadata: {
+		},
+
+		getHighlightsInfo: {
+		},
+
+		getLatestVersionsInDescendingOrder: {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: {
 		argNames: [ "versionId" ],
+		},
+
+		move: {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: {
 		},
 
 		publish: {
+		},
+
+		publishCoAuth: {
+		argNames: [ "pageStream" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6079,12 +7383,26 @@ export const Mapper: IMapper = {
 		savePageAsTemplate: {
 		},
 
+		savePageAsTemplate2: {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: {
+		},
+
+		savePageCoAuth: {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: {
 		},
 
 		update: {
@@ -6094,6 +7412,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.SitePage.Collection": {
+		copyToStatus: {
+		argNames: [ "workItemId" ],
+		},
+
 		createAppPage: {
 		argNames: [ "webPartDataAsJson" ],
 		},
@@ -6133,7 +7455,19 @@ export const Mapper: IMapper = {
 		argNames: [ "url" ],
 		},
 
+		pageMoveStatus: {
+		argNames: [ "workItemId" ],
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		setMultilingual: {
+		argNames: [ "enabled" ],
+		},
+
+		setScheduling: {
+		argNames: [ "enabled" ],
+		},
 
 		templates: {
 		},
@@ -6162,8 +7496,12 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyTo: {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: {
@@ -6175,14 +7513,32 @@ export const Mapper: IMapper = {
 		discardPage: {
 		},
 
+		getDependencyMetadata: {
+		},
+
+		getHighlightsInfo: {
+		},
+
+		getLatestVersionsInDescendingOrder: {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: {
 		argNames: [ "versionId" ],
+		},
+
+		move: {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: {
 		},
 
 		publish: {
+		},
+
+		publishCoAuth: {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: {
@@ -6200,12 +7556,26 @@ export const Mapper: IMapper = {
 		savePageAsTemplate: {
 		},
 
+		savePageAsTemplate2: {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: {
+		},
+
+		savePageCoAuth: {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: {
 		},
 
 		update: {
@@ -6245,7 +7615,18 @@ export const Mapper: IMapper = {
 		canCreatePromotedPage: {
 		},
 
+		enableAnnouncements: {
+		},
+
 		enableCategories: {
+		},
+
+		pagesInLib: {
+		argNames: [ "id" ],
+		},
+
+		pagesInLibByName: {
+		argNames: [ "name" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6328,8 +7709,12 @@ export const Mapper: IMapper = {
 		copy: {
 		},
 
+		copyTo: {
+		argNames: [ "copyToParams" ],
+		},
+
 		copyWithConfiguration: {
-		argNames: [ "sitePageFlags", "isNews" ],
+		argNames: [ "sitePageFlags", "isNews", "creationMode" ],
 		},
 
 		createNewsCopy: {
@@ -6341,14 +7726,32 @@ export const Mapper: IMapper = {
 		discardPage: {
 		},
 
+		getDependencyMetadata: {
+		},
+
+		getHighlightsInfo: {
+		},
+
+		getLatestVersionsInDescendingOrder: {
+		argNames: [ "numVersions" ],
+		},
+
 		getVersion: {
 		argNames: [ "versionId" ],
+		},
+
+		move: {
+		argNames: [ "pageMoveParams" ],
 		},
 
 		promoteToNews: {
 		},
 
 		publish: {
+		},
+
+		publishCoAuth: {
+		argNames: [ "pageStream" ],
 		},
 
 		saveDraft: {
@@ -6366,12 +7769,26 @@ export const Mapper: IMapper = {
 		savePageAsTemplate: {
 		},
 
+		savePageAsTemplate2: {
+		argNames: [ "creationMode" ],
+		},
+
+		savePageAsTemplateOnMySite: {
+		},
+
+		savePageCoAuth: {
+		argNames: [ "pageStream" ],
+		},
+
 		schedulePublish: {
 		argNames: [ "sitePage" ],
 		},
 
 		sharePagePreviewByEmail: {
 		argNames: [ "message", "recipientEmails" ],
+		},
+
+		startCoAuth: {
 		},
 
 		update: {
@@ -6386,6 +7803,10 @@ export const Mapper: IMapper = {
 
 		getByEntityIdAndCulture: {
 		argNames: [ "id", "culture" ],
+		},
+
+		getPagesByEntityId: {
+		argNames: [ "entityId" ],
 		},
 
 		isContentTypeAvailable: {
@@ -6739,7 +8160,16 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.SPHSite": {
+		addHomeSite: {
+		argNames: [ "siteUrl", "order", "audiences", "vivaConnectionsDefaultStart", "isInDraftMode" ],
+		},
+
 		details: {
+		argNames: [ "includeVivaSites" ],
+		},
+
+		setSPHSite: {
+		argNames: [ "siteUrl", "vivaConnectionsDefaultStart", "isInDraftMode" ],
 		},
 
 	},
@@ -6777,6 +8207,12 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Site": {
+		cancelDeleteFileVersions: {
+		},
+
+		cancelSetVersionPolicyForDocLibs: {
+		},
+
 		createCopyJob: {
 		argNames: [ "exportObjectUris", "destinationUri", "options" ],
 		},
@@ -6851,6 +8287,17 @@ export const Mapper: IMapper = {
 		getMigrationStatus: {
 		},
 
+		getProgressForExpireFileVersionsBySchedule: {
+		argNames: [ "scheduleFilePath" ],
+		},
+
+		getProgressForFileVersionExpirationReport: {
+		argNames: [ "reportFileUrl" ],
+		},
+
+		getProgressForSetVersionPolicyForDocLibs: {
+		},
+
 		getRecycleBinItems: {
 		argNames: [ "pagingInfo", "rowLimit", "isAscending", "orderBy", "itemState" ],
 		},
@@ -6906,6 +8353,9 @@ export const Mapper: IMapper = {
 		argNames: [ "path" ],
 		},
 
+		processStorageMetricsChanges: {
+		},
+
 		provisionMigrationContainers: {
 		},
 
@@ -6941,6 +8391,22 @@ export const Mapper: IMapper = {
 		argNames: [ "propertyValue", "forceDocLibActivation", "deleteIfDocLibAlreadyExists" ],
 		},
 
+		startDeleteFileVersions: {
+		argNames: [ "deleteOlderThanDays" ],
+		},
+
+		startExpireFileVersionsBySchedule: {
+		argNames: [ "scheduleFilePath" ],
+		},
+
+		startFileVersionExpirationReport: {
+		argNames: [ "reportFileUrl" ],
+		},
+
+		startSetVersionPolicyForDocLibs: {
+		argNames: [ "enableAutoTrim", "majorVersionLimit", "majorWithMinorVersionsLimit", "expireAfterDays" ],
+		},
+
 		unregisterHubSite: {
 		},
 
@@ -6952,8 +8418,31 @@ export const Mapper: IMapper = {
 		argNames: [ "requireUseRemoteAPIs" ],
 		},
 
+		updateInactiveSiteProperties: {
+		argNames: [ "operation", "executionId" ],
+		},
+
 		validateHubSiteJoinApprovalToken: {
 		argNames: [ "joiningSiteId", "approvalToken" ],
+		},
+
+	},
+
+	"SP.SiteVersionPolicyManager": {
+		inheritTenantSettings: {
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		setAutoExpiration: {
+		},
+
+		setExpireAfter: {
+		argNames: [ "majorVersionLimit", "expireAfterDays" ],
+		},
+
+		setNoExpiration: {
+		argNames: [ "majorVersionLimit" ],
 		},
 
 	},
@@ -7213,6 +8702,9 @@ export const Mapper: IMapper = {
 		clearCorporateCatalog: {
 		},
 
+		getDataAccessGovernanceReportConfig: {
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		setCorporateCatalog: {
@@ -7333,6 +8825,14 @@ export const Mapper: IMapper = {
 
 		getByLoginName: {
 		argNames: [ "loginName" ],
+		},
+
+		getByObjectId: {
+		argNames: [ "objectId" ],
+		},
+
+		getByPuid: {
+		argNames: [ "puid" ],
 		},
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7551,6 +9051,9 @@ export const Mapper: IMapper = {
 
 		deleteCacheItemsAsync2: {
 		argNames: [ "cacheItems", "mySiteUrl" ],
+		},
+
+		dispose: {
 		},
 
 		loadUserProfile: {
@@ -7776,12 +9279,20 @@ export const Mapper: IMapper = {
 		argNames: [ "lcid" ],
 		},
 
+		addinPermissions: {
+		argNames: [ "addins" ],
+		},
+
 		applyTheme: {
 		argNames: [ "colorPaletteUrl", "fontSchemeUrl", "backgroundImageUrl", "shareGenerated" ],
 		},
 
 		applyWebTemplate: {
 		argNames: [ "webTemplate" ],
+		},
+
+		availableAddins: {
+		argNames: [ "serverRelativeUrls" ],
 		},
 
 		breakRoleInheritance: {
@@ -7798,6 +9309,10 @@ export const Mapper: IMapper = {
 		createGroupBasedEnvironment: {
 		},
 
+		createSitePage: {
+		argNames: [ "pageMetaData" ],
+		},
+
 		defaultDocumentLibrary: {
 		},
 
@@ -7811,6 +9326,14 @@ export const Mapper: IMapper = {
 
 		doesUserHavePermissions: {
 		argNames: [ "high", "low" ],
+		},
+
+		ensureEduClassSetup: {
+		argNames: [ "byPassForAutomation" ],
+		},
+
+		ensureSolutioningEnvironment: {
+		argNames: [ "ensureCdsInstance" ],
 		},
 
 		ensureTenantAppCatalog: {
@@ -7829,12 +9352,24 @@ export const Mapper: IMapper = {
 		argNames: [ "inputStream" ],
 		},
 
+		getACSServicePrincipals: {
+		argNames: [ "appIds" ],
+		},
+
 		getAdaptiveCardExtensions: {
 		argNames: [ "includeErrors", "project" ],
 		},
 
+		getAddinPrincipalsHavingPermissionsInSites: {
+		argNames: [ "serverRelativeUrls" ],
+		},
+
+		getAddinUninstallJobDetail: {
+		argNames: [ "jobId", "serverRelativeUrl" ],
+		},
+
 		getAllClientSideComponents: {
-		argNames: [ "languages", "supportsMultiVersion" ],
+		argNames: [ "languages" ],
 		},
 
 		getAppBdcCatalog: {
@@ -7869,7 +9404,7 @@ export const Mapper: IMapper = {
 		},
 
 		getClientSideComponentsByComponentType: {
-		argNames: [ "componentTypesString", "supportedHostTypeValue", "includeErrors", "project" ],
+		argNames: [ "componentTypesString", "supportedHostTypeValue", "includeErrors", "project", "includeManifestActivatedTime" ],
 		},
 
 		getClientSideComponentsById: {
@@ -7915,6 +9450,10 @@ export const Mapper: IMapper = {
 		argNames: [ "serverRelativeUrl" ],
 		},
 
+		getFileByStreamFrameUrl: {
+		argNames: [ "streamFrameUrl" ],
+		},
+
 		getFileByUrl: {
 		argNames: [ "fileUrl" ],
 		},
@@ -7950,6 +9489,10 @@ export const Mapper: IMapper = {
 		argNames: [ "strUrl" ],
 		},
 
+		getListByTitle: {
+		argNames: [ "title" ],
+		},
+
 		getListItem: {
 		argNames: [ "strUrl" ],
 		},
@@ -7962,8 +9505,16 @@ export const Mapper: IMapper = {
 		argNames: [ "DecodedUrl" ],
 		},
 
+		getListOperation: {
+		argNames: [ "listId", "operationId" ],
+		},
+
 		getListUsingPath: {
 		argNames: [ "DecodedUrl" ],
+		},
+
+		getLists: {
+		argNames: [ "getListsParams" ],
 		},
 
 		getNewsList: {
@@ -7998,6 +9549,18 @@ export const Mapper: IMapper = {
 
 		getSharingLinkData: {
 		argNames: [ "linkUrl" ],
+		},
+
+		getSitePageCopyToStatus: {
+		argNames: [ "workItemId" ],
+		},
+
+		getSitePageMoveStatus: {
+		argNames: [ "workItemId" ],
+		},
+
+		getSiteUserIncludingDeletedByPuid: {
+		argNames: [ "puid" ],
 		},
 
 		getStorageEntity: {
@@ -8052,6 +9615,9 @@ export const Mapper: IMapper = {
 
 		mapToIcon: {
 		argNames: [ "fileName", "progId", "size" ],
+		},
+
+		markReplyUrisUpdated: {
 		},
 
 		pageContextCore: {
@@ -8121,8 +9687,19 @@ export const Mapper: IMapper = {
 		syncHubSiteTheme: {
 		},
 
+		syncTeamsComponent: {
+		argNames: [ "teamsComponent" ],
+		},
+
+		uninstallAddins: {
+		argNames: [ "uninstallAddins" ],
+		},
+
 		unregisterPushNotificationSubscriber: {
 		argNames: [ "deviceAppInstanceId" ],
+		},
+
+		unsetIsEduClassProvisionPending: {
 		},
 
 		update: {
@@ -8629,6 +10206,14 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Workflow.SPWorkflowTask": {
+		addThumbnailFieldData: {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
+		attachImage: {
+		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
+		},
+
 		breakRoleInheritance: {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -8650,6 +10235,10 @@ export const Mapper: IMapper = {
 
 		getUserEffectivePermissions: {
 		argNames: [ "userName" ],
+		},
+
+		getVersions: {
+		argNames: [ "getVersionsParams" ],
 		},
 
 		getWOPIFrameUrl: {
@@ -8728,8 +10317,12 @@ export const Mapper: IMapper = {
 		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
 		},
 
+		validateUpdateFetchListItemInFolder: {
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "rootFolder" ],
+		},
+
 		validateUpdateListItem: {
-		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture" ],
+		argNames: [ "formValues", "bNewDocumentUpdate", "checkInComment", "datesInUTC", "numberInInvariantCulture", "sharedLockId" ],
 		},
 
 	},

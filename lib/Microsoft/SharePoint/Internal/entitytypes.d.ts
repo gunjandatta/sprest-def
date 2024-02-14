@@ -69,7 +69,7 @@ export interface ActivityLoggerOData extends Base.IBaseResult, ActivityLoggerPro
 export interface ActivityLoggerMethods {
 	feedbackDirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): Base.IBaseExecution<any>;
 	feedbackIndirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): Base.IBaseExecution<any>;
-	logActivity(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string): Base.IBaseExecution<any>;
+	logActivity(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, AuditCreationTime?: string, IsOffline?: boolean): Base.IBaseExecution<any>;
 }
 
 /*********************************************

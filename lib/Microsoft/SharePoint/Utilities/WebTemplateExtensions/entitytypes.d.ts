@@ -36,6 +36,7 @@ export interface SiteDesignPrincipalCollections {
 * SiteDesignRun
 **********************************************/
 export interface SiteDesignRun {
+	ActionTrigger?: number;
 	ID?: any;
 	InvokedBy?: string;
 	SiteDesignID?: any;

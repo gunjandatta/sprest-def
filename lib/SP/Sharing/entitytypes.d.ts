@@ -5,13 +5,17 @@ import { SP } from "../../";
 * SharedDocumentInfo
 **********************************************/
 export interface SharedDocumentInfo {
+	Activity?: string;
 	Author?: SP.Sharing.Principal;
 	CallerStack?: string;
+	ColorHex?: string;
+	ColorTag?: string;
 	ContentTypeId?: SP.ContentTypeId;
 	DriveAccessToken?: string;
 	DriveAccessTokenV21?: string;
 	DriveUrl?: string;
 	Editor?: SP.Sharing.Principal;
+	Emoji?: string;
 	Extension?: string;
 	FileLeafRef?: string;
 	FileRef?: string;
@@ -67,6 +71,7 @@ export interface PersonalWebCollections {
 export interface SharingInformation {
 	accessRequestSettings?: SP.Sharing.AccessRequestSettings;
 	addressBarLinkSettings?: SP.Sharing.AddressBarLinkSettings;
+	ageGroup?: number;
 	anonymousLinkExpirationRestrictionDays?: number;
 	anyoneLinkTrackUsers?: boolean;
 	blockPeoplePickerAndSharing?: boolean;
@@ -82,16 +87,22 @@ export interface SharingInformation {
 	defaultShareLinkScope?: number;
 	defaultShareLinkToExistingAccess?: boolean;
 	directUrl?: string;
+	displayName?: string;
 	domainRestrictionSettings?: SP.Sharing.DomainRestrictionSettings;
 	enforceIBSegmentFiltering?: boolean;
 	enforceSPOSearch?: boolean;
 	fileExtension?: string;
 	hasUniquePermissions?: boolean;
+	isConsumerFiles?: boolean;
+	isPremium?: boolean;
 	isStubFile?: boolean;
 	itemUniqueId?: any;
+	itemUrl?: string;
 	microserviceShareUiUrl?: string;
 	outlookEndpointHostUrl?: string;
 	permissionsInformation?: SP.Sharing.PermissionCollection;
+	recipientLimits?: SP.Sharing.RecipientLimits;
+	sensitivityLabelInformation?: SP.Sharing.SensitivityLabelInformation;
 	sharedObjectType?: number;
 	shareUiUrl?: string;
 	sharingAbilities?: SP.Sharing.SharingAbilities;
@@ -100,7 +111,11 @@ export interface SharingInformation {
 	showExternalSharingWarning?: boolean;
 	siteIBMode?: string;
 	siteIBSegmentIDs?: { results: Array<string> };
+	siteId?: any;
 	standardRolesModified?: boolean;
+	substrateFileId?: string;
+	tenantDisplayName?: string;
+	tenantId?: string;
 	userIsSharingViaMCS?: string;
 	userPhotoCdnBaseUrl?: string;
 	webTemplateId?: number;

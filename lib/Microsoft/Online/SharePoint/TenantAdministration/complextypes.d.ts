@@ -32,6 +32,28 @@ export interface CommentsOnSitePagesDisabledCollections {
 }
 
 /*********************************************
+* CreatePolicyRequest
+**********************************************/
+export interface CreatePolicyRequest {
+	isPreviewRun?: boolean;
+	policyCustomName?: string;
+	policyDefinitionDetails?: string;
+	policyDescription?: string;
+	policyFrequencyUnit?: number;
+	policyFrequencyValue?: number;
+	policyId?: any;
+	policyTemplate?: number;
+	policyType?: number;
+}
+
+/*********************************************
+* CreatePolicyRequestCollections
+**********************************************/
+export interface CreatePolicyRequestCollections {
+
+}
+
+/*********************************************
 * CustomFormUrl
 **********************************************/
 export interface CustomFormUrl {
@@ -62,6 +84,21 @@ export interface DisableGroupifyCollections {
 }
 
 /*********************************************
+* DisableSelfServiceSiteCreation
+**********************************************/
+export interface DisableSelfServiceSiteCreation {
+	IsReadOnly?: boolean;
+	Value?: boolean;
+}
+
+/*********************************************
+* DisableSelfServiceSiteCreationCollections
+**********************************************/
+export interface DisableSelfServiceSiteCreationCollections {
+
+}
+
+/*********************************************
 * EnableAutoNewsDigest
 **********************************************/
 export interface EnableAutoNewsDigest {
@@ -73,6 +110,21 @@ export interface EnableAutoNewsDigest {
 * EnableAutoNewsDigestCollections
 **********************************************/
 export interface EnableAutoNewsDigestCollections {
+
+}
+
+/*********************************************
+* EsignatureThirdPartyProvidersInfo
+**********************************************/
+export interface EsignatureThirdPartyProvidersInfo {
+	IsEnabled?: boolean;
+	ProviderName?: string;
+}
+
+/*********************************************
+* EsignatureThirdPartyProvidersInfoCollections
+**********************************************/
+export interface EsignatureThirdPartyProvidersInfoCollections {
 
 }
 
@@ -179,21 +231,6 @@ export interface MobileNotificationIsEnabledForSharepoint {
 * MobileNotificationIsEnabledForSharepointCollections
 **********************************************/
 export interface MobileNotificationIsEnabledForSharepointCollections {
-
-}
-
-/*********************************************
-* NewPortalAsDefault
-**********************************************/
-export interface NewPortalAsDefault {
-	IsReadOnly?: boolean;
-	Value?: boolean;
-}
-
-/*********************************************
-* NewPortalAsDefaultCollections
-**********************************************/
-export interface NewPortalAsDefaultCollections {
 
 }
 
@@ -306,6 +343,26 @@ export interface PowerAppsEnvironmentCollections {
 }
 
 /*********************************************
+* RecentAdminActionReportPayload
+**********************************************/
+export interface RecentAdminActionReportPayload {
+	actions?: string;
+	name?: string;
+	queryEndDate?: any;
+	queryStartDate?: any;
+	reportType?: number;
+	sites?: string;
+	users?: string;
+}
+
+/*********************************************
+* RecentAdminActionReportPayloadCollections
+**********************************************/
+export interface RecentAdminActionReportPayloadCollections {
+
+}
+
+/*********************************************
 * RequireSecondaryContact
 **********************************************/
 export interface RequireSecondaryContact {
@@ -382,6 +439,38 @@ export interface ShowSelfServiceSiteCreation {
 * ShowSelfServiceSiteCreationCollections
 **********************************************/
 export interface ShowSelfServiceSiteCreationCollections {
+
+}
+
+/*********************************************
+* SiteAdministratorsFieldsData
+**********************************************/
+export interface SiteAdministratorsFieldsData {
+	siteAdministrators?: { results: Array<string> };
+	siteId?: any;
+}
+
+/*********************************************
+* SiteAdministratorsFieldsDataCollections
+**********************************************/
+export interface SiteAdministratorsFieldsDataCollections {
+
+}
+
+/*********************************************
+* SiteAdministratorsInfo
+**********************************************/
+export interface SiteAdministratorsInfo {
+	email?: string;
+	loginName?: string;
+	name?: string;
+	userPrincipalName?: string;
+}
+
+/*********************************************
+* SiteAdministratorsInfoCollections
+**********************************************/
+export interface SiteAdministratorsInfoCollections {
 
 }
 
@@ -525,6 +614,7 @@ export interface SitePagesEnabledCollections {
 * SPOSitePropertiesEnumerableFilter
 **********************************************/
 export interface SPOSitePropertiesEnumerableFilter {
+	ArchiveStatus?: string;
 	Filter?: string;
 	GroupIdDefined?: number;
 	IncludeDetail?: boolean;
@@ -621,6 +711,139 @@ export interface SmtpServerCollections {
 }
 
 /*********************************************
+* SPContainerCollection
+**********************************************/
+export interface SPContainerCollection {
+	ContainerCollection?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SPContainerProperties> };
+	PagingToken?: string;
+}
+
+/*********************************************
+* SPContainerCollectionCollections
+**********************************************/
+export interface SPContainerCollectionCollections {
+
+}
+
+/*********************************************
+* SPContainerProperties
+**********************************************/
+export interface SPContainerProperties {
+	AllowEditing?: boolean;
+	AuthenticationContextName?: string;
+	BlockDownloadPolicy?: boolean;
+	ConditionalAccessPolicy?: number;
+	ContainerApiUrl?: string;
+	ContainerId?: string;
+	ContainerName?: string;
+	ContainerSiteUrl?: string;
+	ContainerTypeId?: any;
+	CreatedBy?: string;
+	CreatedOn?: any;
+	Description?: string;
+	ExcludeBlockDownloadPolicyContainerOwners?: boolean;
+	LimitedAccessFileType?: number;
+	Managers?: { results: Array<string> };
+	Owners?: { results: Array<string> };
+	OwningApplicationId?: any;
+	OwningApplicationName?: string;
+	Readers?: { results: Array<string> };
+	ReadOnlyForBlockDownloadPolicy?: boolean;
+	ReadOnlyForUnmanagedDevices?: boolean;
+	SensitivityLabel?: string;
+	SharingAllowedDomainList?: string;
+	SharingBlockedDomainList?: string;
+	SharingDomainRestrictionMode?: number;
+	Status?: string;
+	StorageUsed?: number;
+	Writers?: { results: Array<string> };
+}
+
+/*********************************************
+* SPContainerPropertiesCollections
+**********************************************/
+export interface SPContainerPropertiesCollections {
+
+}
+
+/*********************************************
+* SPContainerTypeConfigurationProperties
+**********************************************/
+export interface SPContainerTypeConfigurationProperties {
+	ApplicationRedirectUrl?: string;
+	Classification?: number;
+	ContainerTypeId?: any;
+	ContainerTypeName?: string;
+	IsDiscoverablilityDisabled?: boolean;
+	IsMoveDisabled?: boolean;
+	IsRenameDisabled?: boolean;
+	IsSharingRestricted?: boolean;
+	OwningAppId?: any;
+}
+
+/*********************************************
+* SPContainerTypeConfigurationPropertiesCollections
+**********************************************/
+export interface SPContainerTypeConfigurationPropertiesCollections {
+
+}
+
+/*********************************************
+* SPContainerTypeProperties
+**********************************************/
+export interface SPContainerTypeProperties {
+	AzureSubscriptionId?: any;
+	ContainerTypeId?: any;
+	CreationDate?: string;
+	DisplayName?: string;
+	ExpiryDate?: string;
+	IsBillingProfileRequired?: boolean;
+	OwningAppId?: any;
+	OwningTenantId?: any;
+	Region?: string;
+	ResourceGroup?: string;
+	SPContainerTypeBillingClassification?: number;
+}
+
+/*********************************************
+* SPContainerTypePropertiesCollections
+**********************************************/
+export interface SPContainerTypePropertiesCollections {
+
+}
+
+/*********************************************
+* SPDeletedContainerProperties
+**********************************************/
+export interface SPDeletedContainerProperties {
+	ContainerId?: string;
+	ContainerName?: string;
+	CreatedOn?: any;
+	DeletedOn?: any;
+}
+
+/*********************************************
+* SPDeletedContainerPropertiesCollections
+**********************************************/
+export interface SPDeletedContainerPropertiesCollections {
+
+}
+
+/*********************************************
+* SPDeletedContainerTypeProperties
+**********************************************/
+export interface SPDeletedContainerTypeProperties {
+	ContainerTypeId?: any;
+}
+
+/*********************************************
+* SPDeletedContainerTypePropertiesCollections
+**********************************************/
+export interface SPDeletedContainerTypePropertiesCollections {
+
+}
+
+/*********************************************
 * SPListModernUXOff
 **********************************************/
 export interface SPListModernUXOff {
@@ -649,6 +872,95 @@ export interface SPOSiteCreationSource {
 * SPOSiteCreationSourceCollections
 **********************************************/
 export interface SPOSiteCreationSourceCollections {
+
+}
+
+/*********************************************
+* SPSyntexApplicationProperties
+**********************************************/
+export interface SPSyntexApplicationProperties {
+	ApplicationId?: any;
+	ApplicationName?: string;
+	Applications?: { results: Array<any> };
+	AppOnlyPermissions?: { results: Array<string> };
+	DelegatedPermissions?: { results: Array<string> };
+	OwningApplicationId?: any;
+	OwningApplicationName?: string;
+}
+
+/*********************************************
+* SPSyntexApplicationPropertiesCollections
+**********************************************/
+export interface SPSyntexApplicationPropertiesCollections {
+
+}
+
+/*********************************************
+* SyntexBillingContext
+**********************************************/
+export interface SyntexBillingContext {
+	ActivationStatus?: number;
+	AzureResourceId?: string;
+	AzureSubscriptionState?: number;
+	EnabledFeatures?: number;
+	Location?: string;
+	Updated?: any;
+}
+
+/*********************************************
+* SyntexBillingContextCollections
+**********************************************/
+export interface SyntexBillingContextCollections {
+
+}
+
+/*********************************************
+* SyntexPowerAppsEnvironmentsContext
+**********************************************/
+export interface SyntexPowerAppsEnvironmentsContext {
+	Environments?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.PowerAppsEnvironmentContext> };
+	TimerJobSyncDisabled?: boolean;
+}
+
+/*********************************************
+* SyntexPowerAppsEnvironmentsContextCollections
+**********************************************/
+export interface SyntexPowerAppsEnvironmentsContextCollections {
+
+}
+
+/*********************************************
+* PowerAppsEnvironmentContext
+**********************************************/
+export interface PowerAppsEnvironmentContext {
+	DataverseInstanceUrl?: string;
+	DisplayName?: string;
+	IsTestEnvironment?: boolean;
+	LastGetEnvironmentError?: string;
+	Name?: string;
+	UpdatedUTC?: any;
+}
+
+/*********************************************
+* PowerAppsEnvironmentContextCollections
+**********************************************/
+export interface PowerAppsEnvironmentContextCollections {
+
+}
+
+/*********************************************
+* SyntexPremiumFeatureSettings
+**********************************************/
+export interface SyntexPremiumFeatureSettings {
+	SiteList?: { results: Array<any> };
+	SiteListFileName?: string;
+	Status?: number;
+}
+
+/*********************************************
+* SyntexPremiumFeatureSettingsCollections
+**********************************************/
+export interface SyntexPremiumFeatureSettingsCollections {
 
 }
 

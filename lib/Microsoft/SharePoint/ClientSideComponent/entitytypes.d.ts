@@ -74,6 +74,22 @@ export interface HostedAppsManagerMethods {
 }
 
 /*********************************************
+* Spfx3rdPartyCustomPrincipalInfo
+**********************************************/
+export interface Spfx3rdPartyCustomPrincipalInfo {
+	AppId?: string;
+	AppUri?: string;
+	ClientSecret?: string;
+}
+
+/*********************************************
+* Spfx3rdPartyCustomPrincipalInfoCollections
+**********************************************/
+export interface Spfx3rdPartyCustomPrincipalInfoCollections {
+
+}
+
+/*********************************************
 * HostedAppAddResponse
 **********************************************/
 export interface HostedAppAddResponse {

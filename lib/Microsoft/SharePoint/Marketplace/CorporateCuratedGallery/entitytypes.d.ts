@@ -3,6 +3,77 @@ import { Microsoft } from "../../../../";
 import { SP } from "../../../../";
 
 /*********************************************
+* ICardDesigns
+**********************************************/
+export interface ICardDesigns extends CardDesignsCollections, CardDesignsMethods, Base.IBaseQuery<CardDesigns, ICardDesignsQuery> {
+
+}
+
+/*********************************************
+* ICardDesignsCollection
+**********************************************/
+export interface ICardDesignsCollection extends Base.IBaseResults<CardDesigns> {
+	done?: (resolve: (value?: Array<CardDesigns>) => void) => void;
+}
+
+/*********************************************
+* ICardDesignsQueryCollection
+**********************************************/
+export interface ICardDesignsQueryCollection extends Base.IBaseResults<CardDesignsOData> {
+	done?: (resolve: (value?: Array<CardDesignsOData>) => void) => void;
+}
+
+/*********************************************
+* ICardDesignsQuery
+**********************************************/
+export interface ICardDesignsQuery extends CardDesignsOData, CardDesignsMethods {
+
+}
+
+/*********************************************
+* CardDesigns
+**********************************************/
+export interface CardDesigns extends Base.IBaseResult, CardDesignsProps, CardDesignsCollections, CardDesignsMethods {
+
+}
+
+/*********************************************
+* CardDesignsProps
+**********************************************/
+export interface CardDesignsProps {
+
+}
+
+/*********************************************
+* CardDesignsPropMethods
+**********************************************/
+export interface CardDesignsPropMethods {
+
+}
+
+/*********************************************
+* CardDesignsCollections
+**********************************************/
+export interface CardDesignsCollections extends CardDesignsPropMethods {
+
+}
+
+/*********************************************
+* CardDesignsOData
+**********************************************/
+export interface CardDesignsOData extends Base.IBaseResult, CardDesignsProps, CardDesignsMethods {
+
+}
+
+/*********************************************
+* CardDesignsMethods
+**********************************************/
+export interface CardDesignsMethods {
+	add(description?: string, id?: any, serializedProperties?: string, showInToolbox?: boolean, title?: string): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign>;
+	update(description?: string, id?: any, serializedProperties?: string, showInToolbox?: boolean, title?: string): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesign>;
+}
+
+/*********************************************
 * ISiteCollectionCorporateCatalogAccessor
 **********************************************/
 export interface ISiteCollectionCorporateCatalogAccessor extends SiteCollectionCorporateCatalogAccessorCollections, SiteCollectionCorporateCatalogAccessorMethods, Base.IBaseQuery<SiteCollectionCorporateCatalogAccessor, ISiteCollectionCorporateCatalogAccessorQuery> {
@@ -70,7 +141,7 @@ export interface SiteCollectionCorporateCatalogAccessorOData extends Base.IBaseR
 * SiteCollectionCorporateCatalogAccessorMethods
 **********************************************/
 export interface SiteCollectionCorporateCatalogAccessorMethods {
-	// add(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	// add(Content?: any, Overwrite?: boolean, Url?: string, XorHash?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	add(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 }
 
@@ -131,6 +202,8 @@ export interface CorporateCatalogAppMetadataProps {
 	ProductId?: string;
 	ShortDescription?: string;
 	SkipDeploymentFeature?: boolean;
+	StoreAssetId?: string;
+	SupportsTeamsTabs?: boolean;
 	ThumbnailUrl?: string;
 	Title?: string;
 }
@@ -167,7 +240,7 @@ export interface CorporateCatalogAppMetadataOData extends Base.IBaseResult, Corp
 * CorporateCatalogAppMetadataMethods
 **********************************************/
 export interface CorporateCatalogAppMetadataMethods {
-	deploy(skipFeatureDeployment?: boolean): Base.IBaseExecution<any>;
+	deploy(skipFeatureDeployment?: boolean, isUpdatingApp?: boolean): Base.IBaseExecution<any>;
 	install(): Base.IBaseExecution<any>;
 	remove(): Base.IBaseExecution<any>;
 	retract(): Base.IBaseExecution<any>;
@@ -221,7 +294,7 @@ export interface TenantCorporateCatalogAccessorProps {
 * TenantCorporateCatalogAccessorPropMethods
 **********************************************/
 export interface TenantCorporateCatalogAccessorPropMethods {
-
+	CardDesigns(): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignsCollections & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignsMethods;
 }
 
 /*********************************************
@@ -240,6 +313,7 @@ export interface TenantCorporateCatalogAccessorCollections extends TenantCorpora
 * TenantCorporateCatalogAccessorOData
 **********************************************/
 export interface TenantCorporateCatalogAccessorOData extends Base.IBaseResult, TenantCorporateCatalogAccessorProps, TenantCorporateCatalogAccessorMethods {
+	CardDesigns: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesigns & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CardDesignsCollections;
 	AvailableApps: Base.IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
 	SiteCollectionAppCatalogsSites: Base.IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItem> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SiteCollectionAppCatalogAllowedItemCollectionMethods;
 	StoreApps: Base.IBaseResults<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata> & Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadataCollectionMethods;
@@ -249,19 +323,20 @@ export interface TenantCorporateCatalogAccessorOData extends Base.IBaseResult, T
 * TenantCorporateCatalogAccessorMethods
 **********************************************/
 export interface TenantCorporateCatalogAccessorMethods {
-	// add(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
-	addAndDeployStoreAppById(CMU?: string, Overwrite?: boolean, SkipFeatureDeployment?: boolean, StoreAssetId?: string): Base.IBaseExecution<any>;
-	// addStoreApp(Content?: any, Overwrite?: boolean, Url?: string, IconUrl?: string, Publisher?: string, ShortDescription?: string, StoreAssetId?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	// add(Content?: any, Overwrite?: boolean, Url?: string, XorHash?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	addAndDeployStoreAppById(CallerId?: string, CMU?: string, isUpdatingApp?: boolean, Overwrite?: boolean, SkipFeatureDeployment?: boolean, StoreAssetId?: string): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPAppAddAndDeployResponseInfomation>;
+	// addStoreApp(Content?: any, Overwrite?: boolean, Url?: string, XorHash?: string, IconUrl?: string, Publisher?: string, ShortDescription?: string, StoreAssetId?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	appRequests(AppRequestInfo?: Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppRequestInformation): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPStoreAppResponseInformation>;
 	downloadTeamsSolution(id?: number): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload>;
 	downloadTeamsSolutionByUniqueId(id?: any): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.TeamsPackageDownload>;
 	getAppById(itemUniqueId?: string): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.CorporateCatalogAppMetadata>;
 	isAppUpgradeAvailable(id?: number): Base.IBaseExecution<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.AppUpgradeAvailability>;
+	sendAppRequestStatusNotificationEmail(RequestGuid?: any): Base.IBaseExecution<any>;
 	solutionContainsTeamsComponent(id?: any): Base.IBaseExecution<boolean>;
 	syncSolutionToTeams(id?: number): Base.IBaseExecution<number>;
 	syncSolutionToTeamsByUniqueId(id?: any): Base.IBaseExecution<any>;
 	updateMyRequestStatus(RequestId?: any, Status?: number): Base.IBaseExecution<any>;
-	// upload(Content?: any, Overwrite?: boolean, Url?: string): Base.IBaseExecution<any>;
+	// upload(Content?: any, Overwrite?: boolean, Url?: string, XorHash?: string): Base.IBaseExecution<any>;
 	addStoreApp(Url?: string, Overwrite?: boolean, IconUrl?: string, Publisher?: string, ShortDescription?: string, StoreAssetId?: string, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	add(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	upload(Url?: string, Overwrite?: boolean, Content?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;

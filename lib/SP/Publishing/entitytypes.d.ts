@@ -3,6 +3,432 @@ import { SP } from "../../";
 import { Microsoft } from "../../";
 
 /*********************************************
+* IAnnouncementsController
+**********************************************/
+export interface IAnnouncementsController extends AnnouncementsControllerCollections, AnnouncementsControllerMethods, Base.IBaseQuery<AnnouncementsController, IAnnouncementsControllerQuery> {
+
+}
+
+/*********************************************
+* IAnnouncementsControllerCollection
+**********************************************/
+export interface IAnnouncementsControllerCollection extends Base.IBaseResults<AnnouncementsController> {
+	done?: (resolve: (value?: Array<AnnouncementsController>) => void) => void;
+}
+
+/*********************************************
+* IAnnouncementsControllerQueryCollection
+**********************************************/
+export interface IAnnouncementsControllerQueryCollection extends Base.IBaseResults<AnnouncementsControllerOData> {
+	done?: (resolve: (value?: Array<AnnouncementsControllerOData>) => void) => void;
+}
+
+/*********************************************
+* IAnnouncementsControllerQuery
+**********************************************/
+export interface IAnnouncementsControllerQuery extends AnnouncementsControllerOData, AnnouncementsControllerMethods {
+
+}
+
+/*********************************************
+* AnnouncementsController
+**********************************************/
+export interface AnnouncementsController extends Base.IBaseResult, AnnouncementsControllerProps, AnnouncementsControllerCollections, AnnouncementsControllerMethods {
+
+}
+
+/*********************************************
+* AnnouncementsControllerProps
+**********************************************/
+export interface AnnouncementsControllerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AnnouncementsControllerPropMethods
+**********************************************/
+export interface AnnouncementsControllerPropMethods {
+
+}
+
+/*********************************************
+* AnnouncementsControllerCollections
+**********************************************/
+export interface AnnouncementsControllerCollections extends AnnouncementsControllerPropMethods {
+
+}
+
+/*********************************************
+* AnnouncementsControllerOData
+**********************************************/
+export interface AnnouncementsControllerOData extends Base.IBaseResult, AnnouncementsControllerProps, AnnouncementsControllerMethods {
+
+}
+
+/*********************************************
+* AnnouncementsControllerMethods
+**********************************************/
+export interface AnnouncementsControllerMethods {
+	active(): Base.IBaseCollection<SP.Publishing.AnnouncementsData>;
+	channel(): Base.IBaseCollection<SP.Publishing.ChannelAnnouncement>;
+	flwPropertyFilteringMapping(flwPropertyFilteringMapping?: string): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* SitePageMetadata
+**********************************************/
+export interface SitePageMetadata {
+	AbsoluteUrl?: string;
+	AssetFolderId?: number;
+	AuthorByline?: { results: Array<string> };
+	BannerImageUrl?: string;
+	BannerThumbnailUrl?: string;
+	CallToAction?: string;
+	Categories?: string;
+	CommentCount?: number;
+	CommentsDisabled?: boolean;
+	ContentTypeId?: string;
+	Description?: string;
+	DoesUserHaveEditPermission?: boolean;
+	FileName?: string;
+	FirstPublished?: any;
+	FirstPublishedRelativeTime?: string;
+	Id?: number;
+	IsPageCheckedOutToCurrentUser?: boolean;
+	IsWebWelcomePage?: boolean;
+	LikeCount?: number;
+	ListId?: any;
+	Modified?: any;
+	ModifiedRelativeTime?: string;
+	PageLayoutType?: string;
+	Path?: SP.ResourcePath;
+	PromotedState?: number;
+	PublishStartDate?: any;
+	SocialBarOnSitePagesDisabled?: boolean;
+	Title?: string;
+	TopicHeader?: string;
+	UniqueId?: any;
+	Url?: string;
+	Version?: string;
+	VersionInfo?: SP.Publishing.SitePageVersionInfo;
+}
+
+/*********************************************
+* SitePageMetadataCollections
+**********************************************/
+export interface SitePageMetadataCollections extends SitePageMetadataCollectionMethods {
+
+}
+
+/*********************************************
+* SitePageMetadataOData
+**********************************************/
+export interface SitePageMetadataOData extends Base.IBaseResult, SitePageMetadata {
+	CreatedBy: SP.Publishing.UserInfo & SP.Publishing.UserInfoCollections;
+	LastModifiedBy: SP.Publishing.UserInfo & SP.Publishing.UserInfoCollections;
+}
+
+/*********************************************
+* SitePageMetadataCollectionMethods
+**********************************************/
+export interface SitePageMetadataCollectionMethods {
+	getById(id?: number): Base.IBaseQuery<SP.Publishing.SitePageMetadata, SP.Publishing.SitePageMetadataOData> & SP.Publishing.SitePageMetadataCollections;
+}
+
+/*********************************************
+* UserInfo
+**********************************************/
+export interface UserInfo {
+	AccountName?: string;
+	Acronym?: string;
+	Color?: string;
+	Name?: string;
+}
+
+/*********************************************
+* UserInfoCollections
+**********************************************/
+export interface UserInfoCollections {
+
+}
+
+/*********************************************
+* ISitePage
+**********************************************/
+export interface ISitePage extends SP.Publishing.SitePageMetadataCollections, SitePageCollections, SitePageMethods, Base.IBaseQuery<SitePage, ISitePageQuery> {
+
+}
+
+/*********************************************
+* ISitePageCollection
+**********************************************/
+export interface ISitePageCollection extends Base.IBaseResults<SitePage>, SitePageCollectionMethods {
+	done?: (resolve: (value?: Array<SitePage>) => void) => void;
+}
+
+/*********************************************
+* ISitePageQueryCollection
+**********************************************/
+export interface ISitePageQueryCollection extends Base.IBaseResults<SitePageOData>, SitePageCollectionMethods {
+	done?: (resolve: (value?: Array<SitePageOData>) => void) => void;
+}
+
+/*********************************************
+* ISitePageQuery
+**********************************************/
+export interface ISitePageQuery extends SitePageOData, SitePageMethods {
+
+}
+
+/*********************************************
+* SitePage
+**********************************************/
+export interface SitePage extends SP.Publishing.SitePageMetadata, Base.IBaseResult, SitePageProps, SitePageCollections, SitePageMethods {
+
+}
+
+/*********************************************
+* SitePageProps
+**********************************************/
+export interface SitePageProps {
+	AlternativeUrlMap?: string;
+	AuthoringMetadata?: SP.Publishing.SitePageAuthoringMetadata;
+	BoostProperties?: SP.Publishing.SitePageBoostProperties;
+	CanvasContent1?: string;
+	CanvasJson1?: string;
+	CheckIn?: boolean;
+	CoAuthState?: SP.Publishing.SitePageCoAuthState;
+	Collaborators?: { results: Array<SP.Publishing.SitePageCollaborator> };
+	CreationMode?: number;
+	IsLikedByCurrentUser?: boolean;
+	IsTemplate?: boolean;
+	Language?: string;
+	LayoutWebpartsContent?: string;
+	Name?: string;
+	SitePageFlags?: string;
+	TranspileContent?: string;
+}
+
+/*********************************************
+* SitePagePropMethods
+**********************************************/
+export interface SitePagePropMethods {
+	Translations(): Base.IBaseExecution<SP.TranslationStatusCollection> & SP.TranslationStatusCollectionCollections & SP.TranslationStatusCollectionMethods;
+}
+
+/*********************************************
+* SitePageCollections
+**********************************************/
+export interface SitePageCollections extends SitePagePropMethods {
+
+}
+
+/*********************************************
+* SitePageCollectionMethods
+**********************************************/
+export interface SitePageCollectionMethods {
+	copyToStatus(workItemId?: any): Base.IBaseExecution<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse>;
+	// createAppPage(webPartDataAsJson?: string): Base.IBaseExecution<string>;
+	ensureTitleResource(): Base.IBaseExecution<any>;
+	feed(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
+	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
+	getById(id?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getByUniqueId(uniqueId?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getByUrl(url?: string): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getPageColumnState(url?: string): Base.IBaseExecution<number>;
+	getTranslations(sourceItemId?: any): Base.IBaseExecution<SP.TranslationStatusCollection>;
+	isSitePage(url?: string): Base.IBaseExecution<boolean>;
+	pageMoveStatus(workItemId?: any): Base.IBaseExecution<SP.Publishing.PageMoveResponse>;
+	setMultilingual(enabled?: boolean): Base.IBaseExecution<any>;
+	setScheduling(enabled?: boolean): Base.IBaseExecution<any>;
+	templates(): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
+	updateAppPage(pageId?: number, webPartDataAsJson?: string, title?: string, includeInNavigation?: boolean): Base.IBaseExecution<string>;
+	updateFullPageApp(serverRelativeUrl?: string, webPartDataAsJson?: string): Base.IBaseExecution<any>;
+	createAppPage(webPartDataAsJson?: SP.Publishing.SitePageMetadata): Base.IBaseExecution<SP.Publishing.SitePage>;
+}
+
+/*********************************************
+* SitePageOData
+**********************************************/
+export interface SitePageOData extends SP.Publishing.SitePageMetadataOData, Base.IBaseResult, SitePageProps, SitePageMethods {
+	Translations: SP.TranslationStatusCollection & SP.TranslationStatusCollectionCollections;
+}
+
+/*********************************************
+* SitePageMethods
+**********************************************/
+export interface SitePageMethods {
+	boostNews(SitePageBoost?: SP.Publishing.BoostFieldsData): Base.IBaseExecution<any>;
+	checkOut(): Base.IBaseExecution<boolean>;
+	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyTo(copyToParams?: SP.Publishing.CopyToParams): Base.IBaseExecution<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse>;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
+	getHighlightsInfo(): Base.IBaseExecution<SP.Publishing.HighlightsInfo>;
+	getLatestVersionsInDescendingOrder(numVersions?: number): Base.IBaseCollection<SP.Publishing.SitePageVersionInfoCollection>;
+	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	move(pageMoveParams?: SP.Publishing.PageMoveParams): Base.IBaseExecution<SP.Publishing.PageMoveResponse>;
+	promoteToNews(): Base.IBaseExecution<boolean>;
+	publish(): Base.IBaseExecution<boolean>;
+	publishCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
+	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
+	savePage(pageStream?: any): Base.IBaseExecution<any>;
+	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
+	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
+	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
+	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	startCoAuth(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	// update(): Base.IBaseExecution<any>;
+	update(properties?: any): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* ICampaignPublication
+**********************************************/
+export interface ICampaignPublication extends SP.Publishing.SitePageCollections, CampaignPublicationCollections, CampaignPublicationMethods, Base.IBaseQuery<CampaignPublication, ICampaignPublicationQuery> {
+
+}
+
+/*********************************************
+* ICampaignPublicationCollection
+**********************************************/
+export interface ICampaignPublicationCollection extends Base.IBaseResults<CampaignPublication> {
+	done?: (resolve: (value?: Array<CampaignPublication>) => void) => void;
+}
+
+/*********************************************
+* ICampaignPublicationQueryCollection
+**********************************************/
+export interface ICampaignPublicationQueryCollection extends Base.IBaseResults<CampaignPublicationOData> {
+	done?: (resolve: (value?: Array<CampaignPublicationOData>) => void) => void;
+}
+
+/*********************************************
+* ICampaignPublicationQuery
+**********************************************/
+export interface ICampaignPublicationQuery extends CampaignPublicationOData, CampaignPublicationMethods {
+
+}
+
+/*********************************************
+* CampaignPublication
+**********************************************/
+export interface CampaignPublication extends SP.Publishing.SitePage, Base.IBaseResult, CampaignPublicationProps, CampaignPublicationCollections, CampaignPublicationMethods {
+
+}
+
+/*********************************************
+* CampaignPublicationProps
+**********************************************/
+export interface CampaignPublicationProps {
+	EmailEndpoint?: string;
+	PublicationMetadata?: string;
+	PublicationStatus?: number;
+	SharePointEndpoint?: string;
+	TeamsEndpoint?: string;
+	VivaEngageEndpoint?: string;
+	YammerEndpoint?: string;
+}
+
+/*********************************************
+* CampaignPublicationPropMethods
+**********************************************/
+export interface CampaignPublicationPropMethods {
+
+}
+
+/*********************************************
+* CampaignPublicationCollections
+**********************************************/
+export interface CampaignPublicationCollections extends CampaignPublicationPropMethods {
+
+}
+
+/*********************************************
+* CampaignPublicationOData
+**********************************************/
+export interface CampaignPublicationOData extends SP.Publishing.SitePageOData, Base.IBaseResult, CampaignPublicationProps, CampaignPublicationMethods {
+
+}
+
+/*********************************************
+* CampaignPublicationMethods
+**********************************************/
+export interface CampaignPublicationMethods {
+	boostNews(SitePageBoost?: SP.Publishing.BoostFieldsData): Base.IBaseExecution<any>;
+	checkOut(): Base.IBaseExecution<boolean>;
+	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyTo(copyToParams?: SP.Publishing.CopyToParams): Base.IBaseExecution<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse>;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	delete(): Base.IBaseExecution<any>;
+	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
+	getHighlightsInfo(): Base.IBaseExecution<SP.Publishing.HighlightsInfo>;
+	getLatestVersionsInDescendingOrder(numVersions?: number): Base.IBaseCollection<SP.Publishing.SitePageVersionInfoCollection>;
+	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	move(pageMoveParams?: SP.Publishing.PageMoveParams): Base.IBaseExecution<SP.Publishing.PageMoveResponse>;
+	promoteToNews(): Base.IBaseExecution<boolean>;
+	publish(): Base.IBaseExecution<boolean>;
+	publishCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
+	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
+	savePage(pageStream?: any): Base.IBaseExecution<any>;
+	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
+	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
+	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
+	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	startCoAuth(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	update(): Base.IBaseExecution<any>;
+	approveApprovalRequest(comment?: string): Base.IBaseExecution<SP.Publishing.ApprovalRequestResponse>;
+	cancelApprovalRequest(): Base.IBaseExecution<SP.Publishing.ApprovalRequestResponse>;
+	cancelSchedulePublication(): Base.IBaseExecution<SP.Publishing.SchedulePublicationResponse>;
+	createApprovalRequest(creationInfo?: SP.Publishing.ApprovalRequestCreationInfo): Base.IBaseExecution<SP.Publishing.ApprovalRequestResponse>;
+	deletePublication(): Base.IBaseExecution<any>;
+	getPrePublishValidationStatus(): Base.IBaseExecution<SP.Publishing.PrePublishValidationsResponse>;
+	getPublishingStatus(): Base.IBaseExecution<SP.Publishing.PublishingStatusResponse>;
+	loadMailDraft(requestParam?: SP.Publishing.CampaignPublicationLoadMailDraftParam): Base.IBaseExecution<SP.Publishing.CampaignPublicationMailDraftData>;
+	publishPublication(): Base.IBaseExecution<SP.Publishing.PublishPublicationResponse>;
+	rejectApprovalRequest(comment?: string): Base.IBaseExecution<SP.Publishing.ApprovalRequestResponse>;
+	resetEndpoint(requestParam?: SP.Publishing.CampaignPublicationResetEndpointParam): Base.IBaseExecution<boolean>;
+	saveMailDraft(requestParam?: SP.Publishing.CampaignPublicationSaveMailDraftParam): Base.IBaseExecution<SP.Publishing.CampaignPublicationMailDraftData>;
+	schedulePublication(publishStartDate?: any): Base.IBaseExecution<SP.Publishing.SchedulePublicationResponse>;
+	sendTestEmail(): Base.IBaseExecution<SP.Publishing.SendTestEmailResponse>;
+	sendTestTeamsMessage(audienceId?: string): Base.IBaseExecution<SP.Publishing.SendTestTeamsMessageResponse>;
+	sPSiteValidator(siteUrl?: string): Base.IBaseCollection<number>;
+	syncApprovalRequest(): Base.IBaseExecution<SP.Publishing.ApprovalRequestSyncResponse>;
+	updateSharePointPublishingStatus(destinationSiteId?: string, destinationUrl?: string, sharePointPublishingStatus?: number, sharePointPublishingErrorCode?: number): Base.IBaseExecution<boolean>;
+}
+
+/*********************************************
+* CanCreatePageResponse
+**********************************************/
+export interface CanCreatePageResponse {
+	CanCreatePage?: boolean;
+	CanCreatePromotedPage?: boolean;
+	EnableModeration?: boolean;
+	SiteUrl?: string;
+}
+
+/*********************************************
+* CanCreatePageResponseCollections
+**********************************************/
+export interface CanCreatePageResponseCollections {
+
+}
+
+/*********************************************
 * ICommunicationSite
 **********************************************/
 export interface ICommunicationSite extends CommunicationSiteCollections, CommunicationSiteMethods, Base.IBaseQuery<CommunicationSite, ICommunicationSiteQuery> {
@@ -294,199 +720,6 @@ export interface VideoItemMethods {
 }
 
 /*********************************************
-* SitePageMetadata
-**********************************************/
-export interface SitePageMetadata {
-	AbsoluteUrl?: string;
-	AssetFolderId?: number;
-	AuthorByline?: { results: Array<string> };
-	BannerImageUrl?: string;
-	BannerThumbnailUrl?: string;
-	CallToAction?: string;
-	Categories?: string;
-	CommentCount?: number;
-	CommentsDisabled?: boolean;
-	ContentTypeId?: string;
-	Description?: string;
-	DoesUserHaveEditPermission?: boolean;
-	FileName?: string;
-	FirstPublished?: any;
-	FirstPublishedRelativeTime?: string;
-	Id?: number;
-	IsPageCheckedOutToCurrentUser?: boolean;
-	IsWebWelcomePage?: boolean;
-	LikeCount?: number;
-	ListId?: any;
-	Modified?: any;
-	ModifiedRelativeTime?: string;
-	PageLayoutType?: string;
-	Path?: SP.ResourcePath;
-	PromotedState?: number;
-	PublishStartDate?: any;
-	SocialBarOnSitePagesDisabled?: boolean;
-	Title?: string;
-	TopicHeader?: string;
-	UniqueId?: any;
-	Url?: string;
-	Version?: string;
-	VersionInfo?: SP.Publishing.SitePageVersionInfo;
-}
-
-/*********************************************
-* SitePageMetadataCollections
-**********************************************/
-export interface SitePageMetadataCollections extends SitePageMetadataCollectionMethods {
-
-}
-
-/*********************************************
-* SitePageMetadataOData
-**********************************************/
-export interface SitePageMetadataOData extends Base.IBaseResult, SitePageMetadata {
-	CreatedBy: SP.Publishing.UserInfo & SP.Publishing.UserInfoCollections;
-	LastModifiedBy: SP.Publishing.UserInfo & SP.Publishing.UserInfoCollections;
-}
-
-/*********************************************
-* SitePageMetadataCollectionMethods
-**********************************************/
-export interface SitePageMetadataCollectionMethods {
-	getById(id?: number): Base.IBaseQuery<SP.Publishing.SitePageMetadata, SP.Publishing.SitePageMetadataOData> & SP.Publishing.SitePageMetadataCollections;
-}
-
-/*********************************************
-* UserInfo
-**********************************************/
-export interface UserInfo {
-	AccountName?: string;
-	Acronym?: string;
-	Color?: string;
-	Name?: string;
-}
-
-/*********************************************
-* UserInfoCollections
-**********************************************/
-export interface UserInfoCollections {
-
-}
-
-/*********************************************
-* ISitePage
-**********************************************/
-export interface ISitePage extends SP.Publishing.SitePageMetadataCollections, SitePageCollections, SitePageMethods, Base.IBaseQuery<SitePage, ISitePageQuery> {
-
-}
-
-/*********************************************
-* ISitePageCollection
-**********************************************/
-export interface ISitePageCollection extends Base.IBaseResults<SitePage>, SitePageCollectionMethods {
-	done?: (resolve: (value?: Array<SitePage>) => void) => void;
-}
-
-/*********************************************
-* ISitePageQueryCollection
-**********************************************/
-export interface ISitePageQueryCollection extends Base.IBaseResults<SitePageOData>, SitePageCollectionMethods {
-	done?: (resolve: (value?: Array<SitePageOData>) => void) => void;
-}
-
-/*********************************************
-* ISitePageQuery
-**********************************************/
-export interface ISitePageQuery extends SitePageOData, SitePageMethods {
-
-}
-
-/*********************************************
-* SitePage
-**********************************************/
-export interface SitePage extends SP.Publishing.SitePageMetadata, Base.IBaseResult, SitePageProps, SitePageCollections, SitePageMethods {
-
-}
-
-/*********************************************
-* SitePageProps
-**********************************************/
-export interface SitePageProps {
-	AlternativeUrlMap?: string;
-	CanvasContent1?: string;
-	CanvasJson1?: string;
-	IsLikedByCurrentUser?: boolean;
-	IsTemplate?: boolean;
-	LayoutWebpartsContent?: string;
-	Name?: string;
-	SitePageFlags?: string;
-}
-
-/*********************************************
-* SitePagePropMethods
-**********************************************/
-export interface SitePagePropMethods {
-	Translations(): Base.IBaseExecution<SP.TranslationStatusCollection> & SP.TranslationStatusCollectionCollections & SP.TranslationStatusCollectionMethods;
-}
-
-/*********************************************
-* SitePageCollections
-**********************************************/
-export interface SitePageCollections extends SitePagePropMethods {
-
-}
-
-/*********************************************
-* SitePageCollectionMethods
-**********************************************/
-export interface SitePageCollectionMethods {
-	// createAppPage(webPartDataAsJson?: string): Base.IBaseExecution<string>;
-	ensureTitleResource(): Base.IBaseExecution<any>;
-	feed(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
-	feedTargeted(promotedState?: number, published?: boolean, metadataFilter?: string, languageOverride?: string): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
-	getById(id?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getByUniqueId(uniqueId?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getByUrl(url?: string): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getPageColumnState(url?: string): Base.IBaseExecution<number>;
-	getTranslations(sourceItemId?: any): Base.IBaseExecution<SP.TranslationStatusCollection>;
-	isSitePage(url?: string): Base.IBaseExecution<boolean>;
-	templates(): Base.IBaseExecution<Array<SP.Publishing.SitePageMetadata>>;
-	updateAppPage(pageId?: number, webPartDataAsJson?: string, title?: string, includeInNavigation?: boolean): Base.IBaseExecution<string>;
-	updateFullPageApp(serverRelativeUrl?: string, webPartDataAsJson?: string): Base.IBaseExecution<any>;
-	createAppPage(webPartDataAsJson?: SP.Publishing.SitePageMetadata): Base.IBaseExecution<SP.Publishing.SitePage>;
-}
-
-/*********************************************
-* SitePageOData
-**********************************************/
-export interface SitePageOData extends SP.Publishing.SitePageMetadataOData, Base.IBaseResult, SitePageProps, SitePageMethods {
-	Translations: SP.TranslationStatusCollection & SP.TranslationStatusCollectionCollections;
-}
-
-/*********************************************
-* SitePageMethods
-**********************************************/
-export interface SitePageMethods {
-	boostNews(SitePageBoost?: SP.Publishing.BoostFieldsData): Base.IBaseExecution<any>;
-	checkOut(): Base.IBaseExecution<boolean>;
-	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	demoteFromNews(): Base.IBaseExecution<boolean>;
-	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	promoteToNews(): Base.IBaseExecution<boolean>;
-	publish(): Base.IBaseExecution<boolean>;
-	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
-	savePage(pageStream?: any): Base.IBaseExecution<any>;
-	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
-	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
-	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
-	// update(): Base.IBaseExecution<any>;
-	update(properties?: any): Base.IBaseExecution<any>;
-}
-
-/*********************************************
 * IRepostPage
 **********************************************/
 export interface IRepostPage extends SP.Publishing.SitePageCollections, RepostPageCollections, RepostPageMethods, Base.IBaseQuery<RepostPage, IRepostPageQuery> {
@@ -570,19 +803,29 @@ export interface RepostPageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyTo(copyToParams?: SP.Publishing.CopyToParams): Base.IBaseExecution<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse>;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
+	getHighlightsInfo(): Base.IBaseExecution<SP.Publishing.HighlightsInfo>;
+	getLatestVersionsInDescendingOrder(numVersions?: number): Base.IBaseCollection<SP.Publishing.SitePageVersionInfoCollection>;
 	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	move(pageMoveParams?: SP.Publishing.PageMoveParams): Base.IBaseExecution<SP.Publishing.PageMoveResponse>;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
+	publishCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
 	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	startCoAuth(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	update(): Base.IBaseExecution<any>;
 }
 
@@ -665,20 +908,45 @@ export interface FeedVideoPageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyTo(copyToParams?: SP.Publishing.CopyToParams): Base.IBaseExecution<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse>;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
+	getHighlightsInfo(): Base.IBaseExecution<SP.Publishing.HighlightsInfo>;
+	getLatestVersionsInDescendingOrder(numVersions?: number): Base.IBaseCollection<SP.Publishing.SitePageVersionInfoCollection>;
 	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	move(pageMoveParams?: SP.Publishing.PageMoveParams): Base.IBaseExecution<SP.Publishing.PageMoveResponse>;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
+	publishCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
 	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	startCoAuth(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	update(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* HighlightsInfo
+**********************************************/
+export interface HighlightsInfo {
+	HiddenHighlights?: string;
+	HideListEditor?: string;
+}
+
+/*********************************************
+* HighlightsInfoCollections
+**********************************************/
+export interface HighlightsInfoCollections {
+
 }
 
 /*********************************************
@@ -750,6 +1018,28 @@ export interface PageDiagnosticsControllerOData extends Base.IBaseResult, PageDi
 export interface PageDiagnosticsControllerMethods {
 	byPage(pageRelativeFilePath?: string): Base.IBaseExecution<Microsoft.SharePoint.Publishing.Diagnostics.PageDiagnostics>;
 	save(pageDiagnosticsResult?: string): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* PageMoveResponse
+**********************************************/
+export interface PageMoveResponse {
+	CompletedAssets?: { results: Array<string> };
+	ErrorMessage?: string;
+	ErrorType?: number;
+	JobState?: number;
+	NewPageUniqueId?: any;
+	NewPageUrl?: string;
+	TotalAssetsToMove?: number;
+	Warnings?: { results: Array<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageDeepCopyWarning> };
+	WorkItemId?: any;
+}
+
+/*********************************************
+* PageMoveResponseCollections
+**********************************************/
+export interface PageMoveResponseCollections {
+
 }
 
 /*********************************************
@@ -1340,7 +1630,7 @@ export interface RichSharingOData extends Base.IBaseResult, RichSharingProps, Ri
 * RichSharingMethods
 **********************************************/
 export interface RichSharingMethods {
-	sharePageByEmail(url?: string, message?: string, recipientEmails?: Array<string>, pageContent?: string): Base.IBaseExecution<any>;
+	sharePageByEmail(url?: string, message?: string, recipientEmails?: Array<string>, pageContent?: string, subject?: string, ccEmails?: Array<string>, bccEmails?: Array<string>): Base.IBaseExecution<any>;
 	shareSiteByEmail(CustomDescription?: string, CustomTitle?: string, Message?: string, Url?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 }
 
@@ -1492,19 +1782,29 @@ export interface SitePage3DMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyTo(copyToParams?: SP.Publishing.CopyToParams): Base.IBaseExecution<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse>;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
+	getHighlightsInfo(): Base.IBaseExecution<SP.Publishing.HighlightsInfo>;
+	getLatestVersionsInDescendingOrder(numVersions?: number): Base.IBaseCollection<SP.Publishing.SitePageVersionInfoCollection>;
 	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	move(pageMoveParams?: SP.Publishing.PageMoveParams): Base.IBaseExecution<SP.Publishing.PageMoveResponse>;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
+	publishCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
 	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	startCoAuth(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	update(): Base.IBaseExecution<any>;
 }
 
@@ -1581,7 +1881,10 @@ export interface SitePageServiceMethods {
 	addImageFromExternalUrl(pageName?: string, imageFileName?: string, externalUrl?: string, subFolderName?: string, pageId?: number): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	canCreatePage(): Base.IBaseExecution<boolean>;
 	canCreatePromotedPage(): Base.IBaseExecution<boolean>;
+	enableAnnouncements(): Base.IBaseExecution<any>;
 	enableCategories(): Base.IBaseExecution<any>;
+	pagesInLib(id?: any): Base.IBaseCollection<SP.Publishing.SitePage, SP.Publishing.SitePageOData, Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods> & Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods;
+	pagesInLibByName(name?: string): Base.IBaseCollection<SP.Publishing.SitePage, SP.Publishing.SitePageOData, Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods> & Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods;
 	update(): Base.IBaseExecution<any>;
 }
 
@@ -1989,6 +2292,7 @@ export interface TopicSitePageProps {
 	EntityId?: string;
 	EntityRelations?: string;
 	EntityType?: string;
+	VerifiedTopicAllowedEditors?: string;
 }
 
 /*********************************************
@@ -2011,6 +2315,7 @@ export interface TopicSitePageCollections extends TopicSitePagePropMethods {
 export interface TopicSitePageCollectionMethods {
 	getByEntityId(entityId?: string): Base.IBaseQuery<SP.Publishing.TopicSitePage> & SP.Publishing.TopicSitePageCollections & SP.Publishing.TopicSitePageMethods;
 	getByEntityIdAndCulture(id?: string, culture?: string): Base.IBaseQuery<SP.Publishing.TopicSitePage> & SP.Publishing.TopicSitePageCollections & SP.Publishing.TopicSitePageMethods;
+	getPagesByEntityId(entityId?: string): Base.IBaseExecution<Array<SP.Publishing.TopicSitePage>>;
 	isContentTypeAvailable(): Base.IBaseExecution<boolean>;
 }
 
@@ -2029,19 +2334,29 @@ export interface TopicSitePageMethods {
 	checkOut(): Base.IBaseExecution<boolean>;
 	checkoutPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	copy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
-	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	copyTo(copyToParams?: SP.Publishing.CopyToParams): Base.IBaseExecution<Microsoft.SharePoint.Publishing.PageCopyWithAssets.PageCopyResponse>;
+	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
+	getHighlightsInfo(): Base.IBaseExecution<SP.Publishing.HighlightsInfo>;
+	getLatestVersionsInDescendingOrder(numVersions?: number): Base.IBaseCollection<SP.Publishing.SitePageVersionInfoCollection>;
 	getVersion(versionId?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	move(pageMoveParams?: SP.Publishing.PageMoveParams): Base.IBaseExecution<SP.Publishing.PageMoveResponse>;
 	promoteToNews(): Base.IBaseExecution<boolean>;
 	publish(): Base.IBaseExecution<boolean>;
+	publishCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	saveDraft(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<boolean>;
 	savePage(pageStream?: any): Base.IBaseExecution<any>;
 	savePageAsDraft(pageStream?: any): Base.IBaseExecution<boolean>;
 	savePageAsTemplate(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
+	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
+	startCoAuth(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	update(): Base.IBaseExecution<any>;
 }
 
@@ -2279,4 +2594,19 @@ export interface VideoThumbnailCollections extends VideoThumbnailCollectionMetho
 **********************************************/
 export interface VideoThumbnailCollectionMethods {
 	getByIndex(choice?: number): Base.IBaseQuery<SP.Publishing.VideoThumbnail> & SP.Publishing.VideoThumbnailCollections;
+}
+
+/*********************************************
+* ApprovalRequestSyncResponse
+**********************************************/
+export interface ApprovalRequestSyncResponse {
+	ApprovalRequest?: string;
+	PublicationStatus?: number;
+}
+
+/*********************************************
+* ApprovalRequestSyncResponseCollections
+**********************************************/
+export interface ApprovalRequestSyncResponseCollections {
+
 }

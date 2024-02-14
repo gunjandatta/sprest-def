@@ -69,6 +69,8 @@ export interface OnboardingServicesBetaPropMethods {
 * OnboardingServicesBetaCollections
 **********************************************/
 export interface OnboardingServicesBetaCollections extends OnboardingServicesBetaPropMethods {
+	PrioritySiteRenameJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJobCollectionMethods;
+	PrioritySiteRenameJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJobCollections;
 	SiteRenameJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollectionMethods;
 	SiteRenameJobs(id: string | number): Base.IBaseQuery<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollections;
 	TenantRenameJobs(): Base.IBaseCollection<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobCollectionMethods;
@@ -79,6 +81,7 @@ export interface OnboardingServicesBetaCollections extends OnboardingServicesBet
 * OnboardingServicesBetaOData
 **********************************************/
 export interface OnboardingServicesBetaOData extends Base.IBaseResult, OnboardingServicesBetaProps, OnboardingServicesBetaMethods {
+	PrioritySiteRenameJobs: Base.IBaseResults<Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.PrioritySiteRename.PrioritySiteRenameJobCollectionMethods;
 	SiteRenameJobs: Base.IBaseResults<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobCollectionMethods;
 	TenantRenameJobs: Base.IBaseResults<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob> & Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJobCollectionMethods;
 }

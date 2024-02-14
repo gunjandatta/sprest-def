@@ -3,12 +3,49 @@ import { Microsoft } from "../../../../";
 import { SP } from "../../../../";
 
 /*********************************************
+* CDSMetadata
+**********************************************/
+export interface CDSMetadata {
+	FriendlyName?: string;
+	InstanceUrl?: string;
+	ResourceId?: string;
+}
+
+/*********************************************
+* CDSMetadataCollections
+**********************************************/
+export interface CDSMetadataCollections {
+
+}
+
+/*********************************************
+* DefaultContentCenterSiteInfo
+**********************************************/
+export interface DefaultContentCenterSiteInfo {
+	SiteId?: any;
+	SiteName?: string;
+	Url?: string;
+	WebId?: any;
+}
+
+/*********************************************
+* DefaultContentCenterSiteInfoCollections
+**********************************************/
+export interface DefaultContentCenterSiteInfoCollections {
+
+}
+
+/*********************************************
 * SPMachineLearningEnabled
 **********************************************/
 export interface SPMachineLearningEnabled {
+	IsSyntexPAYGEnabled?: boolean;
 	MachineLearningCaptureEnabled?: boolean;
 	MachineLearningExperienceEnabled?: boolean;
+	TenantSyntexEnabled?: boolean;
+	TenantSyntexV2Enabled?: boolean;
 	UserSyntexEnabled?: boolean;
+	UserSyntexV2Enabled?: boolean;
 }
 
 /*********************************************
@@ -65,6 +102,7 @@ export interface SPMachineLearningHubProps {
 * SPMachineLearningHubPropMethods
 **********************************************/
 export interface SPMachineLearningHubPropMethods {
+	DefaultContentCenter(): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.DefaultContentCenterSiteInfo> & Microsoft.Office.Server.ContentCenter.DefaultContentCenterSiteInfoCollections;
 	MachineLearningEnabled(): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled> & Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabledCollections;
 }
 
@@ -86,6 +124,7 @@ export interface SPMachineLearningHubCollections extends SPMachineLearningHubPro
 * SPMachineLearningHubOData
 **********************************************/
 export interface SPMachineLearningHubOData extends Base.IBaseResult, SPMachineLearningHubProps, SPMachineLearningHubMethods {
+	DefaultContentCenter: Microsoft.Office.Server.ContentCenter.DefaultContentCenterSiteInfo & Microsoft.Office.Server.ContentCenter.DefaultContentCenterSiteInfoCollections;
 	MachineLearningEnabled: Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled & Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabledCollections;
 	Models: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollectionMethods;
 	Publications: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication> & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollectionMethods;
@@ -97,12 +136,19 @@ export interface SPMachineLearningHubOData extends Base.IBaseResult, SPMachineLe
 * SPMachineLearningHubMethods
 **********************************************/
 export interface SPMachineLearningHubMethods {
-	createSite(siteCreationProperties?: Microsoft.Office.Server.ContentCenter.SiteCreationProperties): Base.IBaseExecution<any>;
+	checkAIBuilderAccess(environmentName?: string, isTestEnvironment?: boolean, userId?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	getByContentTypeId(contentTypeId?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo>;
+	getCDSMetadata(environmentName?: string, isTestEnvironment?: boolean): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.CDSMetadata>;
+	getMachineLearningFlags(docLibId?: any): Base.IBaseExecution<number>;
 	getModelIdForContentType(contentTypeName?: string): Base.IBaseExecution<string>;
-	getModels(listId?: any, modelTypes?: number, publicationTypes?: number): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollectionMethods;
+	getModels(listId?: any, modelTypes?: number, publicationTypes?: number, includeManagementNotAllowedModels?: boolean): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollectionMethods;
 	getRetentionLabel(retentionLabelId?: any): Base.IBaseExecution<SP.CompliancePolicy.ComplianceTag>;
 	getRetentionLabels(): Base.IBaseCollection<SP.CompliancePolicy.ComplianceTag>;
+	getSyntexPoweredColumnPrompts(docLibId?: any): Base.IBaseExecution<string>;
+	invokeDataverseQuery(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
+	setMachineLearningFlags(docLibId?: any, machineLearningFlags?: number): Base.IBaseExecution<any>;
+	setSyntexPoweredColumnPrompts(docLibId?: any, syntexPoweredColumnPrompts?: string): Base.IBaseExecution<any>;
+	setSyntexPoweredColumns(listId?: any, itemId?: number, columnIdAndValues?: string): Base.IBaseQuery<SP.ListItem, SP.ListItemOData> & SP.ListItemCollections & SP.ListItemMethods;
 	verifyModelUrls(urls?: Array<string>): Base.IBaseExecution<any>;
 }
 
@@ -145,6 +191,7 @@ export interface SPMachineLearningModel extends Base.IBaseResult, SPMachineLearn
 * SPMachineLearningModelProps
 **********************************************/
 export interface SPMachineLearningModelProps {
+	AIBuilderHybridModelType?: string;
 	AzureCognitivePrebuiltModelName?: string;
 	BaseContentTypeName?: string;
 	ConfidenceScore?: string;
@@ -153,14 +200,20 @@ export interface SPMachineLearningModelProps {
 	ContentTypeName?: string;
 	Created?: any;
 	CreatedBy?: string;
+	ModelDependencies?: Microsoft.Office.Server.ContentCenter.SPModelDependencies;
 	DriveId?: string;
 	Explanations?: string;
+	ExtractorFieldMapping?: string;
 	ID?: number;
 	LastTrained?: any;
 	ListID?: any;
 	ManagementAllowed?: boolean;
+	ModelName?: string;
+	ModelPublishConfig?: Microsoft.Office.Server.ContentCenter.SPModelPublishConfig;
 	ModelSettings?: string;
 	ModelType?: number;
+	ModelTypeAsString?: string;
+	ModelTypeInternalName?: string;
 	Modified?: any;
 	ModifiedBy?: string;
 	ObjectId?: string;
@@ -195,8 +248,8 @@ export interface SPMachineLearningModelCollectionMethods {
 	getExtractorNames(packageName?: string): Base.IBaseExecution<Array<string>>;
 	getSupportedPrebuiltModels(): Base.IBaseExecution<Array<Microsoft.Office.Server.ContentCenter.PrebuiltModelInfo>>;
 	import(packageName?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
-	setupContractsSolution(newLibraryName?: string, packageName?: string): Base.IBaseExecution<SP.List>;
-	setupPrimedLibrary(primedLibraryName?: string, packageName?: string): Base.IBaseExecution<SP.List>;
+	setupPrimedLibrary(primedLibraryName?: string, packageName?: string, isTileViewEnabled?: boolean, serverRelativeLibraryPath?: string): Base.IBaseExecution<SP.List>;
+	unbindModelFromContentType(contentTypeId?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -213,10 +266,13 @@ export interface SPMachineLearningModelMethods {
 	copy(copyTo?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
 	delete(): Base.IBaseExecution<any>;
 	importMeta(): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
+	invokeConnectorQuery(): Base.IBaseExecution<any>;
 	rename(renameTo?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
 	renameExtractor(fromExtractorName?: string, toExtractorName?: string, toColumnType?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel>;
+	setAsModelAuthor(): Base.IBaseExecution<boolean>;
 	update(): Base.IBaseExecution<any>;
 	updateModelSettings(ModelSettings?: string): Base.IBaseExecution<any>;
+	updateModelTypeSpecificSettings(Settings?: Array<SP.KeyValue>): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -273,11 +329,17 @@ export interface SPMachineLearningPublicationProps {
 	ObjectId?: string;
 	PublicationType?: number;
 	TargetLibraryId?: any;
+	TargetLibraryName?: string;
 	TargetLibraryRemoved?: boolean;
 	TargetLibraryServerRelativeUrl?: string;
 	TargetLibraryUrl?: string;
 	TargetSiteId?: any;
 	TargetSiteUrl?: string;
+	TargetTableListId?: any;
+	TargetTableListName?: string;
+	TargetTableListRemoved?: boolean;
+	TargetTableListServerRelativeUrl?: string;
+	TargetTableListUrl?: string;
 	TargetWebId?: any;
 	TargetWebName?: string;
 	TargetWebServerRelativeUrl?: string;
@@ -468,8 +530,12 @@ export interface SPMachineLearningWorkItemCollectionMethods {
 **********************************************/
 export interface SPMachineLearningModelEntityData {
 	Accuracy?: any;
+	AIBuilderHybridModelEnvironment?: string;
+	AIBuilderHybridModelHostName?: string;
+	AIBuilderHybridModelInTestEnvironment?: boolean;
 	AzureCognitivePrebuiltModelName?: string;
 	BaseContentTypeName?: string;
+	AIBuilderHybridModelType?: string;
 	ColumnId?: string;
 	ColumnName?: string;
 	Columns?: { results: Array<Microsoft.Office.Server.ContentCenter.ColumnDef> };
@@ -479,7 +545,9 @@ export interface SPMachineLearningModelEntityData {
 	ContentTypeName?: string;
 	Explanations?: string;
 	LastTrained?: any;
+	ModelName?: string;
 	ModelSettings?: string;
+	ModelType?: string;
 	SampleFileUniqueIds?: { results: Array<any> };
 	Schemas?: string;
 }
@@ -546,7 +614,9 @@ export interface SPMachineLearningSampleEntityDataCollections {
 * SPMachineLearningWorkItemEntityData
 **********************************************/
 export interface SPMachineLearningWorkItemEntityData {
+	ExtraPropertyList?: string;
 	IsFolder?: boolean;
+	ProfileName?: string;
 	TargetServerRelativeUrl?: string;
 	TargetSiteId?: any;
 	TargetSiteUrl?: string;

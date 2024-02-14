@@ -9,6 +9,7 @@ export interface SubscriptionInformation {
 	notificationUrl?: string;
 	resource?: string;
 	resourceData?: string;
+	scenarios?: { results: Array<string> };
 }
 
 /*********************************************

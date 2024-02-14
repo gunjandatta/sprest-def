@@ -46,6 +46,7 @@ export interface SubscriptionProps {
 	notificationUrl?: string;
 	resource?: string;
 	resourceData?: string;
+	scenarios?: { results: Array<string> };
 }
 
 /*********************************************

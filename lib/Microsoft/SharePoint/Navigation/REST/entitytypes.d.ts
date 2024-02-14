@@ -1,5 +1,77 @@
 import { Base } from "../../../../";
+import { Microsoft } from "../../../../";
 import { SP } from "../../../../";
+
+/*********************************************
+* IHomeSiteNavigationSettings
+**********************************************/
+export interface IHomeSiteNavigationSettings extends HomeSiteNavigationSettingsCollections, HomeSiteNavigationSettingsMethods, Base.IBaseQuery<HomeSiteNavigationSettings, IHomeSiteNavigationSettingsQuery> {
+
+}
+
+/*********************************************
+* IHomeSiteNavigationSettingsCollection
+**********************************************/
+export interface IHomeSiteNavigationSettingsCollection extends Base.IBaseResults<HomeSiteNavigationSettings> {
+	done?: (resolve: (value?: Array<HomeSiteNavigationSettings>) => void) => void;
+}
+
+/*********************************************
+* IHomeSiteNavigationSettingsQueryCollection
+**********************************************/
+export interface IHomeSiteNavigationSettingsQueryCollection extends Base.IBaseResults<HomeSiteNavigationSettingsOData> {
+	done?: (resolve: (value?: Array<HomeSiteNavigationSettingsOData>) => void) => void;
+}
+
+/*********************************************
+* IHomeSiteNavigationSettingsQuery
+**********************************************/
+export interface IHomeSiteNavigationSettingsQuery extends HomeSiteNavigationSettingsOData, HomeSiteNavigationSettingsMethods {
+
+}
+
+/*********************************************
+* HomeSiteNavigationSettings
+**********************************************/
+export interface HomeSiteNavigationSettings extends Base.IBaseResult, HomeSiteNavigationSettingsProps, HomeSiteNavigationSettingsCollections, HomeSiteNavigationSettingsMethods {
+
+}
+
+/*********************************************
+* HomeSiteNavigationSettingsProps
+**********************************************/
+export interface HomeSiteNavigationSettingsProps {
+	IsEnabled?: boolean;
+}
+
+/*********************************************
+* HomeSiteNavigationSettingsPropMethods
+**********************************************/
+export interface HomeSiteNavigationSettingsPropMethods {
+
+}
+
+/*********************************************
+* HomeSiteNavigationSettingsCollections
+**********************************************/
+export interface HomeSiteNavigationSettingsCollections extends HomeSiteNavigationSettingsPropMethods {
+
+}
+
+/*********************************************
+* HomeSiteNavigationSettingsOData
+**********************************************/
+export interface HomeSiteNavigationSettingsOData extends Base.IBaseResult, HomeSiteNavigationSettingsProps, HomeSiteNavigationSettingsMethods {
+
+}
+
+/*********************************************
+* HomeSiteNavigationSettingsMethods
+**********************************************/
+export interface HomeSiteNavigationSettingsMethods {
+	enableGlobalNavigation(isEnabled?: boolean): Base.IBaseExecution<any>;
+	update(): Base.IBaseExecution<any>;
+}
 
 /*********************************************
 * INavigationServiceRest
@@ -47,7 +119,7 @@ export interface NavigationServiceRestProps {
 * NavigationServiceRestPropMethods
 **********************************************/
 export interface NavigationServiceRestPropMethods {
-
+	HomeSiteSettings(): Base.IBaseExecution<Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings> & Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettingsCollections & Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettingsMethods;
 }
 
 /*********************************************
@@ -61,16 +133,18 @@ export interface NavigationServiceRestCollections extends NavigationServiceRestP
 * NavigationServiceRestOData
 **********************************************/
 export interface NavigationServiceRestOData extends Base.IBaseResult, NavigationServiceRestProps, NavigationServiceRestMethods {
-
+	HomeSiteSettings: Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettings & Microsoft.SharePoint.Navigation.REST.HomeSiteNavigationSettingsCollections;
 }
 
 /*********************************************
 * NavigationServiceRestMethods
 **********************************************/
 export interface NavigationServiceRestMethods {
+	currentResourcesNav(source?: number, includeVivaResources?: boolean): Base.IBaseExecution<SP.MenuState>;
 	getPublishingNavigationProviderType(mapProviderName?: string): Base.IBaseExecution<number>;
-	globalNav(source?: string): Base.IBaseExecution<SP.MenuState>;
+	globalNav(source?: string, includeVivaResources?: boolean): Base.IBaseExecution<SP.MenuState>;
 	globalNavEnabled(): Base.IBaseExecution<boolean>;
+	homeSiteNavigation(source?: number): Base.IBaseExecution<SP.MenuState>;
 	menuNodeKey(currentUrl?: string, mapProviderName?: string): Base.IBaseExecution<string>;
 	menuState(menuNodeKey?: string, mapProviderName?: string, depth?: number, customProperties?: string): Base.IBaseExecution<SP.MenuState>;
 	saveMenuState(menuState?: SP.MenuState, mapProviderName?: string): Base.IBaseExecution<number>;

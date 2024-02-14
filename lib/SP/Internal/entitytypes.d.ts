@@ -27,3 +27,17 @@ export interface FormsCustomization {
 export interface FormsCustomizationCollections {
 
 }
+
+/*********************************************
+* ApprovalsManager
+**********************************************/
+export interface ApprovalsManager {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* ApprovalsManagerCollections
+**********************************************/
+export interface ApprovalsManagerCollections {
+
+}

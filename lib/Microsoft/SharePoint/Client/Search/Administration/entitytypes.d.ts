@@ -73,6 +73,77 @@ export interface DocumentCrawlLogMethods {
 }
 
 /*********************************************
+* ISiteContentProcessingInfoProvider
+**********************************************/
+export interface ISiteContentProcessingInfoProvider extends SiteContentProcessingInfoProviderCollections, SiteContentProcessingInfoProviderMethods, Base.IBaseQuery<SiteContentProcessingInfoProvider, ISiteContentProcessingInfoProviderQuery> {
+
+}
+
+/*********************************************
+* ISiteContentProcessingInfoProviderCollection
+**********************************************/
+export interface ISiteContentProcessingInfoProviderCollection extends Base.IBaseResults<SiteContentProcessingInfoProvider> {
+	done?: (resolve: (value?: Array<SiteContentProcessingInfoProvider>) => void) => void;
+}
+
+/*********************************************
+* ISiteContentProcessingInfoProviderQueryCollection
+**********************************************/
+export interface ISiteContentProcessingInfoProviderQueryCollection extends Base.IBaseResults<SiteContentProcessingInfoProviderOData> {
+	done?: (resolve: (value?: Array<SiteContentProcessingInfoProviderOData>) => void) => void;
+}
+
+/*********************************************
+* ISiteContentProcessingInfoProviderQuery
+**********************************************/
+export interface ISiteContentProcessingInfoProviderQuery extends SiteContentProcessingInfoProviderOData, SiteContentProcessingInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteContentProcessingInfoProvider
+**********************************************/
+export interface SiteContentProcessingInfoProvider extends Base.IBaseResult, SiteContentProcessingInfoProviderProps, SiteContentProcessingInfoProviderCollections, SiteContentProcessingInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteContentProcessingInfoProviderProps
+**********************************************/
+export interface SiteContentProcessingInfoProviderProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteContentProcessingInfoProviderPropMethods
+**********************************************/
+export interface SiteContentProcessingInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* SiteContentProcessingInfoProviderCollections
+**********************************************/
+export interface SiteContentProcessingInfoProviderCollections extends SiteContentProcessingInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* SiteContentProcessingInfoProviderOData
+**********************************************/
+export interface SiteContentProcessingInfoProviderOData extends Base.IBaseResult, SiteContentProcessingInfoProviderProps, SiteContentProcessingInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteContentProcessingInfoProviderMethods
+**********************************************/
+export interface SiteContentProcessingInfoProviderMethods {
+	getAzureContainerToken(): Base.IBaseExecution<string>;
+	reportContentProcessingStatus(webId?: any, listId?: any, uniqueId?: any, azureContainerTokenUri?: string, encryptionKey?: any, priority?: number, errorCode?: number, errorDescription?: string): Base.IBaseExecution<any>;
+}
+
+/*********************************************
 * ITenantCrawlVersionsInfoProvider
 **********************************************/
 export interface ITenantCrawlVersionsInfoProvider extends TenantCrawlVersionsInfoProviderCollections, TenantCrawlVersionsInfoProviderMethods, Base.IBaseQuery<TenantCrawlVersionsInfoProvider, ITenantCrawlVersionsInfoProviderQuery> {
@@ -146,4 +217,76 @@ export interface TenantCrawlVersionsInfoProviderMethods {
 	getSiteCrawlVersionStatus(siteId?: any): Base.IBaseCollection<SP.KeyValue>;
 	isCrawlVersionsEnabled(siteId?: any): Base.IBaseExecution<boolean>;
 	isCrawlVersionsEnabledForTenant(): Base.IBaseExecution<boolean>;
+}
+
+/*********************************************
+* ITenantRecycleBinInfoProvider
+**********************************************/
+export interface ITenantRecycleBinInfoProvider extends TenantRecycleBinInfoProviderCollections, TenantRecycleBinInfoProviderMethods, Base.IBaseQuery<TenantRecycleBinInfoProvider, ITenantRecycleBinInfoProviderQuery> {
+
+}
+
+/*********************************************
+* ITenantRecycleBinInfoProviderCollection
+**********************************************/
+export interface ITenantRecycleBinInfoProviderCollection extends Base.IBaseResults<TenantRecycleBinInfoProvider> {
+	done?: (resolve: (value?: Array<TenantRecycleBinInfoProvider>) => void) => void;
+}
+
+/*********************************************
+* ITenantRecycleBinInfoProviderQueryCollection
+**********************************************/
+export interface ITenantRecycleBinInfoProviderQueryCollection extends Base.IBaseResults<TenantRecycleBinInfoProviderOData> {
+	done?: (resolve: (value?: Array<TenantRecycleBinInfoProviderOData>) => void) => void;
+}
+
+/*********************************************
+* ITenantRecycleBinInfoProviderQuery
+**********************************************/
+export interface ITenantRecycleBinInfoProviderQuery extends TenantRecycleBinInfoProviderOData, TenantRecycleBinInfoProviderMethods {
+
+}
+
+/*********************************************
+* TenantRecycleBinInfoProvider
+**********************************************/
+export interface TenantRecycleBinInfoProvider extends Base.IBaseResult, TenantRecycleBinInfoProviderProps, TenantRecycleBinInfoProviderCollections, TenantRecycleBinInfoProviderMethods {
+
+}
+
+/*********************************************
+* TenantRecycleBinInfoProviderProps
+**********************************************/
+export interface TenantRecycleBinInfoProviderProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* TenantRecycleBinInfoProviderPropMethods
+**********************************************/
+export interface TenantRecycleBinInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* TenantRecycleBinInfoProviderCollections
+**********************************************/
+export interface TenantRecycleBinInfoProviderCollections extends TenantRecycleBinInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* TenantRecycleBinInfoProviderOData
+**********************************************/
+export interface TenantRecycleBinInfoProviderOData extends Base.IBaseResult, TenantRecycleBinInfoProviderProps, TenantRecycleBinInfoProviderMethods {
+
+}
+
+/*********************************************
+* TenantRecycleBinInfoProviderMethods
+**********************************************/
+export interface TenantRecycleBinInfoProviderMethods {
+	disableRecycleBinDiscoverabilityForTenant(): Base.IBaseExecution<boolean>;
+	enableRecycleBinDiscoverabilityForTenant(): Base.IBaseExecution<boolean>;
+	isRecycleBinDiscoverabilityEnabledForTenant(): Base.IBaseExecution<boolean>;
 }

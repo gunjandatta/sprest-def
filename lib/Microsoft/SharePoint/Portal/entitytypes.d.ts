@@ -155,6 +155,7 @@ export interface GroupSiteManagerOData extends Base.IBaseResult, GroupSiteManage
 * GroupSiteManagerMethods
 **********************************************/
 export interface GroupSiteManagerMethods {
+	cacheCurrentUserJoinedTeamsResult(joinedTeams?: string): Base.IBaseExecution<string>;
 	canUserCreateGroup(): Base.IBaseExecution<boolean>;
 	clearCurrentUserTeamsCache(): Base.IBaseExecution<any>;
 	create(groupId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
@@ -162,8 +163,8 @@ export interface GroupSiteManagerMethods {
 	createGroupEx(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	createGroupForSite(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	delete(siteUrl?: string): Base.IBaseExecution<any>;
-	ensureTeamForGroup(): Base.IBaseExecution<string>;
-	ensureTeamForGroupEx(): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
+	ensureTeamForGroup(altGroupId?: string, teamTemplate?: string): Base.IBaseExecution<string>;
+	ensureTeamForGroupEx(altGroupId?: string, teamTemplate?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
 	getAllOrgLabels(pageNumber?: number): Base.IBaseExecution<Microsoft.SharePoint.Portal.OrgLabelsContextList>;
 	getCurrentUserJoinedTeams(getLogoData?: boolean, forceCacheUpdate?: boolean): Base.IBaseExecution<string>;
 	getCurrentUserSharedChannelMemberGroups(): Base.IBaseExecution<string>;
@@ -175,6 +176,7 @@ export interface GroupSiteManagerMethods {
 	getSiteStatus(groupId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	getTeamChannelFilesUrl(teamId?: string, channelId?: string): Base.IBaseExecution<any>;
 	getTeamChannels(teamId?: string, useStagingEndpoint?: boolean): Base.IBaseExecution<any>;
+	getTeamChannelsDirect(teamId?: string): Base.IBaseExecution<string>;
 	getTeamChannelsEx(teamId?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.ChannelInfoCollection>;
 	getTeamChannelsWithSiteUrl(siteUrl?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.ChannelInfoCollection>;
 	getUserSharedChannelMemberGroups(userName?: string): Base.IBaseExecution<string>;
@@ -184,7 +186,7 @@ export interface GroupSiteManagerMethods {
 	isTeamifyPromptHidden(siteUrl?: string): Base.IBaseExecution<boolean>;
 	notebook(groupId?: any): Base.IBaseExecution<string>;
 	pinToTeam(requestParams?: Microsoft.SharePoint.Portal.PinToTeamParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.PinToTeamResponse>;
-	recentAndJoinedTeams(includeRecent?: boolean, includeTeams?: boolean, includePinned?: boolean): Base.IBaseExecution<Microsoft.SharePoint.Portal.RecentAndJoinedTeamsResponse>;
+	recentAndJoinedTeams(includeRecent?: boolean, includeTeams?: boolean, includePinned?: boolean, existingJoinedTeamsData?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.RecentAndJoinedTeamsResponse>;
 }
 
 /*********************************************
@@ -198,6 +200,20 @@ export interface CommunityModeration {
 * CommunityModerationCollections
 **********************************************/
 export interface CommunityModerationCollections {
+
+}
+
+/*********************************************
+* RatingSettings
+**********************************************/
+export interface RatingSettings {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* RatingSettingsCollections
+**********************************************/
+export interface RatingSettingsCollections {
 
 }
 
@@ -289,7 +305,6 @@ export interface SharePointHomeServiceContextBuilderMethods {
 * SharePointHomeServiceContext
 **********************************************/
 export interface SharePointHomeServiceContext {
-	CompanyPortalContext?: string;
 	HomePageCache?: Microsoft.SharePoint.Portal.Home.SharePointHomeDataCacheCollection;
 	HomePageContext?: Microsoft.SharePoint.Portal.Home.SharePointHomePageContext;
 	Payload?: string;
@@ -456,12 +471,14 @@ export interface SPSiteManagerMethods {
 	getCompatibleSegments(segments?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.Portal.IBSegmentInfo>;
 	getIBSegmentLabels(IBSegments?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.Portal.IBSegmentInfo>;
 	getTeamChannelSiteOwner(siteId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GetTeamChannelSiteOwnerResponse>;
+	landingSiteUrlFromName(siteName?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.VivaSiteRequestInfo>;
 	restoreTeamsChannelSite(siteId?: any, relatedGroupId?: any): Base.IBaseExecution<any>;
 	setIBSegments(IBSegments?: Array<any>): Base.IBaseExecution<any>;
 	setTeamChannelSiteOwner(siteId?: any, logonName?: string, secondaryLogonName?: string): Base.IBaseExecution<any>;
 	siteUrl(siteId?: any): Base.IBaseExecution<string>;
 	status(url?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
 	updateWorkflow2013Endpoint(workflowServiceAddress?: string, workflowHostname?: string): Base.IBaseExecution<any>;
+	vivaBackendSiteUrlFromName(siteName?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.VivaSiteRequestInfo>;
 }
 
 /*********************************************
@@ -605,6 +622,76 @@ export interface SiteLinkingManagerMethods {
 	getSiteLinks(): Base.IBaseExecution<Microsoft.SharePoint.Portal.LinkedSitesListContract>;
 	linkGroup(groupId?: any): Base.IBaseExecution<boolean>;
 	unlinkGroup(groupId?: any): Base.IBaseExecution<boolean>;
+}
+
+/*********************************************
+* IVivaSiteManager
+**********************************************/
+export interface IVivaSiteManager extends VivaSiteManagerCollections, VivaSiteManagerMethods, Base.IBaseQuery<VivaSiteManager, IVivaSiteManagerQuery> {
+
+}
+
+/*********************************************
+* IVivaSiteManagerCollection
+**********************************************/
+export interface IVivaSiteManagerCollection extends Base.IBaseResults<VivaSiteManager> {
+	done?: (resolve: (value?: Array<VivaSiteManager>) => void) => void;
+}
+
+/*********************************************
+* IVivaSiteManagerQueryCollection
+**********************************************/
+export interface IVivaSiteManagerQueryCollection extends Base.IBaseResults<VivaSiteManagerOData> {
+	done?: (resolve: (value?: Array<VivaSiteManagerOData>) => void) => void;
+}
+
+/*********************************************
+* IVivaSiteManagerQuery
+**********************************************/
+export interface IVivaSiteManagerQuery extends VivaSiteManagerOData, VivaSiteManagerMethods {
+
+}
+
+/*********************************************
+* VivaSiteManager
+**********************************************/
+export interface VivaSiteManager extends Base.IBaseResult, VivaSiteManagerProps, VivaSiteManagerCollections, VivaSiteManagerMethods {
+
+}
+
+/*********************************************
+* VivaSiteManagerProps
+**********************************************/
+export interface VivaSiteManagerProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* VivaSiteManagerPropMethods
+**********************************************/
+export interface VivaSiteManagerPropMethods {
+
+}
+
+/*********************************************
+* VivaSiteManagerCollections
+**********************************************/
+export interface VivaSiteManagerCollections extends VivaSiteManagerPropMethods {
+
+}
+
+/*********************************************
+* VivaSiteManagerOData
+**********************************************/
+export interface VivaSiteManagerOData extends Base.IBaseResult, VivaSiteManagerProps, VivaSiteManagerMethods {
+
+}
+
+/*********************************************
+* VivaSiteManagerMethods
+**********************************************/
+export interface VivaSiteManagerMethods {
+	ensureVivaSite(): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
 }
 
 /*********************************************

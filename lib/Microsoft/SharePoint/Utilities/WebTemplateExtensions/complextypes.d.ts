@@ -23,6 +23,8 @@ export interface SiteDesignCreationInfo {
 	Description?: string;
 	DesignPackageId?: any;
 	DesignType?: number;
+	ExpandedPreviewImages?: { results: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignImage> };
+	InternalName?: string;
 	IsDefault?: boolean;
 	IsOutOfBoxTemplate?: boolean;
 	IsTenantAdminOnly?: boolean;
@@ -30,12 +32,15 @@ export interface SiteDesignCreationInfo {
 	ListIcon?: number;
 	PreviewImageAltText?: string;
 	PreviewImageUrl?: string;
+	RequiresClassConnected?: boolean;
 	RequiresGroupConnected?: boolean;
+	RequiresSyntexLicense?: boolean;
 	RequiresTeamsConnected?: boolean;
 	RequiresYammerConnected?: boolean;
 	SiteScriptIds?: { results: Array<any> };
 	SupportedWebTemplates?: { results: Array<string> };
 	TargetPlatforms?: { results: Array<string> };
+	TemplateAssets?: { results: Array<string> };
 	TemplateFeatures?: { results: Array<string> };
 	ThumbnailUrl?: string;
 	Title?: string;
@@ -46,6 +51,21 @@ export interface SiteDesignCreationInfo {
 * SiteDesignCreationInfoCollections
 **********************************************/
 export interface SiteDesignCreationInfoCollections {
+
+}
+
+/*********************************************
+* SiteDesignImage
+**********************************************/
+export interface SiteDesignImage {
+	DisplayName?: string;
+	ImageUrl?: string;
+}
+
+/*********************************************
+* SiteDesignImageCollections
+**********************************************/
+export interface SiteDesignImageCollections {
 
 }
 
@@ -175,6 +195,7 @@ export interface SiteDesignTask {
 	ID?: any;
 	LogonName?: string;
 	SiteDesignID?: any;
+	SiteDesignStore?: number;
 	SiteID?: any;
 	WebID?: any;
 }

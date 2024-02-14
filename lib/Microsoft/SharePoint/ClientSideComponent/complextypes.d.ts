@@ -1,6 +1,26 @@
 import { Base } from "../../../";
 
 /*********************************************
+* SPClientSideComponentQueryResult
+**********************************************/
+export interface SPClientSideComponentQueryResult {
+	ComponentType?: number;
+	Id?: string;
+	Manifest?: string;
+	ManifestActivatedTime?: any;
+	ManifestType?: number;
+	Name?: string;
+	Status?: number;
+}
+
+/*********************************************
+* SPClientSideComponentQueryResultCollections
+**********************************************/
+export interface SPClientSideComponentQueryResultCollections {
+
+}
+
+/*********************************************
 * SPClientSideComponentIdentifier
 **********************************************/
 export interface SPClientSideComponentIdentifier {
@@ -16,20 +36,27 @@ export interface SPClientSideComponentIdentifierCollections {
 }
 
 /*********************************************
-* SPClientSideComponentQueryResult
+* SPTeamsAppComponent
 **********************************************/
-export interface SPClientSideComponentQueryResult {
-	ComponentType?: number;
-	Id?: string;
-	Manifest?: string;
-	ManifestType?: number;
-	Name?: string;
-	Status?: number;
+export interface SPTeamsAppComponent {
+	appDescription?: string;
+	appId?: string;
+	appName?: string;
+	botId?: string;
+	componentId?: string;
+	defaultSize?: string;
+	description?: string;
+	externalAppId?: string;
+	groupId?: string;
+	iconUrl?: string;
+	name?: string;
+	officeUIFabricIconName?: string;
+	version?: string;
 }
 
 /*********************************************
-* SPClientSideComponentQueryResultCollections
+* SPTeamsAppComponentCollections
 **********************************************/
-export interface SPClientSideComponentQueryResultCollections {
+export interface SPTeamsAppComponentCollections {
 
 }

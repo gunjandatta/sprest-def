@@ -230,11 +230,14 @@ export interface SPWorkflowTaskOData extends SP.ListItemOData, Base.IBaseResult,
 export interface SPWorkflowTaskMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): Base.IBaseExecution<any>;
 	resetRoleInheritance(): Base.IBaseExecution<any>;
+	addThumbnailFieldData(imageStream?: any, imageName?: string, fieldInternalName?: string): Base.IBaseExecution<SP.SPImageItem>;
+	attachImage(imageStream?: any, imageName?: string, fieldInternalName?: string): Base.IBaseExecution<SP.SPImageItem>;
 	delete(): Base.IBaseExecution<any>;
 	deleteWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getComments(): Base.IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
+	getVersions(getVersionsParams?: SP.GetListItemVersionsParameters): Base.IBaseCollection<SP.ListItemVersion, SP.ListItemVersionOData, Base.IBaseExecution & SP.ListItemVersionCollectionMethods> & Base.IBaseExecution & SP.ListItemVersionCollectionMethods;
 	getWOPIFrameUrl(action?: number): Base.IBaseExecution<string>;
 	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;
 	mediaServiceUpdateV2(parameters?: SP.MediaServiceUpdateParameters, eventFiringEnabled?: boolean): Base.IBaseExecution<any>;
@@ -254,7 +257,8 @@ export interface SPWorkflowTaskMethods {
 	updateEx(parameters?: SP.ListItemUpdateParameters): Base.IBaseExecution<any>;
 	updateOverwriteVersion(): Base.IBaseExecution<any>;
 	validateUpdateFetchListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseExecution<SP.ListItemUpdateResults>;
-	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
+	validateUpdateFetchListItemInFolder(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean, rootFolder?: string): Base.IBaseExecution<SP.ListItemUpdateResults>;
+	validateUpdateListItem(formValues?: Array<SP.ListItemFormUpdateValue>, bNewDocumentUpdate?: boolean, checkInComment?: string, datesInUTC?: boolean, numberInInvariantCulture?: boolean, sharedLockId?: string): Base.IBaseCollection<SP.ListItemFormUpdateValue>;
 	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }

@@ -5,6 +5,7 @@ import { SP } from "../../";
 * Principal
 **********************************************/
 export interface Principal {
+	directoryObjectId?: string;
 	email?: string;
 	expiration?: string;
 	id?: number;
@@ -158,18 +159,122 @@ export interface EntityPermissionCollections {
 }
 
 /*********************************************
+* EphemeralLinkRequest
+**********************************************/
+export interface EphemeralLinkRequest {
+	meetingId?: string;
+	peoplePickerInput?: string;
+	settings?: SP.Sharing.ShareLinkSettings;
+}
+
+/*********************************************
+* EphemeralLinkRequestCollections
+**********************************************/
+export interface EphemeralLinkRequestCollections {
+
+}
+
+/*********************************************
+* ShareLinkSettings
+**********************************************/
+export interface ShareLinkSettings {
+	allowAnonymousAccess?: boolean;
+	applicationLink?: boolean;
+	description?: string;
+	embeddable?: boolean;
+	expiration?: string;
+	inviteesToRemove?: { results: Array<SP.Sharing.Principal> };
+	limitUseToApplication?: boolean;
+	linkKind?: number;
+	nav?: string;
+	nonDefaultLink?: boolean;
+	password?: string;
+	passwordProtected?: boolean;
+	restrictShareMembership?: boolean;
+	restrictToExistingRelationships?: boolean;
+	role?: number;
+	scope?: number;
+	shareId?: any;
+	trackLinkUsers?: boolean;
+	updatePassword?: boolean;
+}
+
+/*********************************************
+* ShareLinkSettingsCollections
+**********************************************/
+export interface ShareLinkSettingsCollections {
+
+}
+
+/*********************************************
+* InheritedFrom
+**********************************************/
+export interface InheritedFrom {
+	driveId?: string;
+	driveType?: string;
+	id?: string;
+	name?: string;
+	path?: string;
+	shareId?: string;
+	sharepointIds?: SP.Sharing.SharePointIds;
+}
+
+/*********************************************
+* InheritedFromCollections
+**********************************************/
+export interface InheritedFromCollections {
+
+}
+
+/*********************************************
+* SharePointIds
+**********************************************/
+export interface SharePointIds {
+	listId?: string;
+	listItemId?: string;
+	listItemUniqueId?: string;
+	siteId?: string;
+	siteUrl?: string;
+	tenantId?: string;
+	webId?: string;
+}
+
+/*********************************************
+* SharePointIdsCollections
+**********************************************/
+export interface SharePointIdsCollections {
+
+}
+
+/*********************************************
 * LinkInfo
 **********************************************/
 export interface LinkInfo {
+	inheritedFrom?: SP.Sharing.InheritedFrom;
 	isInherited?: boolean;
 	linkDetails?: SP.SharingLinkInfo;
 	linkMembers?: { results: Array<SP.Sharing.Principal> };
+	totalLinkMembersCount?: number;
 }
 
 /*********************************************
 * LinkInfoCollections
 **********************************************/
 export interface LinkInfoCollections {
+
+}
+
+/*********************************************
+* LinkParameters
+**********************************************/
+export interface LinkParameters {
+	nav?: string;
+}
+
+/*********************************************
+* LinkParametersCollections
+**********************************************/
+export interface LinkParametersCollections {
 
 }
 
@@ -209,6 +314,8 @@ export interface PermissionCollectionCollections {
 * PrincipalInfo
 **********************************************/
 export interface PrincipalInfo {
+	inheritedFrom?: SP.Sharing.InheritedFrom;
+	isInherited?: boolean;
 	principal?: SP.Sharing.Principal;
 	role?: number;
 }
@@ -217,6 +324,23 @@ export interface PrincipalInfo {
 * PrincipalInfoCollections
 **********************************************/
 export interface PrincipalInfoCollections {
+
+}
+
+/*********************************************
+* RecipientLimits
+**********************************************/
+export interface RecipientLimits {
+	checkPermissions?: SP.RecipientLimitsInfo;
+	grantDirectAccess?: SP.RecipientLimitsInfo;
+	shareLink?: SP.RecipientLimitsInfo;
+	shareLinkWithDeferRedeem?: SP.RecipientLimitsInfo;
+}
+
+/*********************************************
+* RecipientLimitsCollections
+**********************************************/
+export interface RecipientLimitsCollections {
 
 }
 
@@ -237,6 +361,24 @@ export interface RecipientCollections {
 }
 
 /*********************************************
+* SensitivityLabelInformation
+**********************************************/
+export interface SensitivityLabelInformation {
+	color?: string;
+	displayName?: string;
+	hasIRMProtection?: boolean;
+	id?: string;
+	tooltip?: string;
+}
+
+/*********************************************
+* SensitivityLabelInformationCollections
+**********************************************/
+export interface SensitivityLabelInformationCollections {
+
+}
+
+/*********************************************
 * SharedWithMeViewItemRemovalResult
 **********************************************/
 export interface SharedWithMeViewItemRemovalResult {
@@ -249,6 +391,64 @@ export interface SharedWithMeViewItemRemovalResult {
 * SharedWithMeViewItemRemovalResultCollections
 **********************************************/
 export interface SharedWithMeViewItemRemovalResultCollections {
+
+}
+
+/*********************************************
+* ShareLinkResponse
+**********************************************/
+export interface ShareLinkResponse {
+	sharingLinkInfo?: SP.SharingLinkInfo;
+}
+
+/*********************************************
+* ShareLinkResponseCollections
+**********************************************/
+export interface ShareLinkResponseCollections {
+
+}
+
+/*********************************************
+* ShareLinkPartialSuccessResponse
+**********************************************/
+export interface ShareLinkPartialSuccessResponse {
+	entityResults?: { results: Array<SP.Sharing.SharingEntityResult> };
+}
+
+/*********************************************
+* ShareLinkPartialSuccessResponseCollections
+**********************************************/
+export interface ShareLinkPartialSuccessResponseCollections {
+
+}
+
+/*********************************************
+* SharingEntityResult
+**********************************************/
+export interface SharingEntityResult {
+	Description?: SP.Sharing.SharingEntityResultDescription;
+	Key?: string;
+}
+
+/*********************************************
+* SharingEntityResultCollections
+**********************************************/
+export interface SharingEntityResultCollections {
+
+}
+
+/*********************************************
+* SharingEntityResultDescription
+**********************************************/
+export interface SharingEntityResultDescription {
+	Result?: number;
+	ResultString?: string;
+}
+
+/*********************************************
+* SharingEntityResultDescriptionCollections
+**********************************************/
+export interface SharingEntityResultDescriptionCollections {
 
 }
 
@@ -272,55 +472,12 @@ export interface ShareLinkRequestCollections {
 }
 
 /*********************************************
-* ShareLinkSettings
-**********************************************/
-export interface ShareLinkSettings {
-	allowAnonymousAccess?: boolean;
-	applicationLink?: boolean;
-	description?: string;
-	embeddable?: boolean;
-	expiration?: string;
-	inviteesToRemove?: { results: Array<SP.Sharing.Principal> };
-	limitUseToApplication?: boolean;
-	linkKind?: number;
-	nonDefaultLink?: boolean;
-	password?: string;
-	passwordProtected?: boolean;
-	restrictShareMembership?: boolean;
-	role?: number;
-	scope?: number;
-	shareId?: any;
-	trackLinkUsers?: boolean;
-	updatePassword?: boolean;
-}
-
-/*********************************************
-* ShareLinkSettingsCollections
-**********************************************/
-export interface ShareLinkSettingsCollections {
-
-}
-
-/*********************************************
-* ShareLinkResponse
-**********************************************/
-export interface ShareLinkResponse {
-	sharingLinkInfo?: SP.SharingLinkInfo;
-}
-
-/*********************************************
-* ShareLinkResponseCollections
-**********************************************/
-export interface ShareLinkResponseCollections {
-
-}
-
-/*********************************************
 * SharingAbilities
 **********************************************/
 export interface SharingAbilities {
 	anonymousLinkAbilities?: SP.Sharing.SharingLinkAbilities;
 	anyoneLinkAbilities?: SP.Sharing.SharingLinkAbilities;
+	canStopSharing?: boolean;
 	directSharingAbilities?: SP.Sharing.DirectSharingAbilities;
 	organizationLinkAbilities?: SP.Sharing.SharingLinkAbilities;
 	peopleSharingLinkAbilities?: SP.Sharing.SharingLinkAbilities;
@@ -342,18 +499,23 @@ export interface SharingLinkAbilities {
 	canDeleteManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canDeleteReadLink?: SP.Sharing.SharingAbilityStatus;
 	canDeleteReviewLink?: SP.Sharing.SharingAbilityStatus;
+	canDeleteSubmitOnlyLink?: SP.Sharing.SharingAbilityStatus;
 	canGetEditLink?: SP.Sharing.SharingAbilityStatus;
 	canGetManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReadLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReviewLink?: SP.Sharing.SharingAbilityStatus;
+	canGetSubmitOnlyLink?: SP.Sharing.SharingAbilityStatus;
 	canHaveExternalUsers?: SP.Sharing.SharingAbilityStatus;
 	canManageEditLink?: SP.Sharing.SharingAbilityStatus;
 	canManageManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canManageReadLink?: SP.Sharing.SharingAbilityStatus;
 	canManageReviewLink?: SP.Sharing.SharingAbilityStatus;
+	canManageSubmitOnlyLink?: SP.Sharing.SharingAbilityStatus;
 	linkExpiration?: SP.Sharing.SharingLinkExpirationAbilityStatus;
 	passwordProtected?: SP.Sharing.SharingLinkPasswordAbilityStatus;
+	submitOnlylinkExpiration?: SP.Sharing.SharingLinkExpirationAbilityStatus;
 	supportsRestrictedView?: SP.Sharing.SharingAbilityStatus;
+	supportsRestrictToExistingRelationships?: SP.Sharing.SharingAbilityStatus;
 	trackLinkUsers?: SP.Sharing.SharingAbilityStatus;
 }
 
@@ -389,6 +551,21 @@ export interface SharingLinkPasswordAbilityStatus {
 * SharingLinkPasswordAbilityStatusCollections
 **********************************************/
 export interface SharingLinkPasswordAbilityStatusCollections {
+
+}
+
+/*********************************************
+* SharingEntityResultSettingPolicyReason
+**********************************************/
+export interface SharingEntityResultSettingPolicyReason {
+	SettingPolicyResult?: number;
+	SettingPolicyResultString?: string;
+}
+
+/*********************************************
+* SharingEntityResultSettingPolicyReasonCollections
+**********************************************/
+export interface SharingEntityResultSettingPolicyReasonCollections {
 
 }
 
@@ -463,6 +640,7 @@ export interface SharingLinkTemplate {
 	passwordProtected?: boolean;
 	role?: number;
 	scope?: number;
+	variant?: number;
 }
 
 /*********************************************
@@ -565,6 +743,7 @@ export interface UserSharingResult {
 	InvitationLink?: string;
 	IsUserKnown?: boolean;
 	Message?: string;
+	OtherMails?: string;
 	Status?: boolean;
 	User?: string;
 }

@@ -7,6 +7,7 @@ export interface ShortcutInformation {
 	AddedById?: number;
 	Id?: any;
 	Name?: string;
+	Scenario?: number;
 	TimeCreated?: any;
 	TimeLastModified?: any;
 }

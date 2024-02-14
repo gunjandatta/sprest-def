@@ -5,6 +5,7 @@ import { Microsoft } from "../../../../";
 * ColumnDef
 **********************************************/
 export interface ColumnDef {
+	CustomFormatter?: string;
 	Id?: string;
 	Name?: string;
 	Type?: string;
@@ -54,21 +55,82 @@ export interface SiteCreationPropertiesCollections {
 }
 
 /*********************************************
-* SPAzureCognitiveModelEntityData
+* SPClassificationPublishConfig
 **********************************************/
-export interface SPAzureCognitiveModelEntityData {
-	AzureCognitivePrebuiltModelName?: string;
-	ColumnId?: string;
+export interface SPClassificationPublishConfig {
+	ClassifierId?: any;
 	ColumnName?: string;
 	ColumnType?: string;
-	ContentTypeGroup?: string;
-	ContentTypeName?: string;
+	ContentType?: string;
+	Kind?: string;
+	ModelClassification?: string;
 }
 
 /*********************************************
-* SPAzureCognitiveModelEntityDataCollections
+* SPClassificationPublishConfigCollections
 **********************************************/
-export interface SPAzureCognitiveModelEntityDataCollections {
+export interface SPClassificationPublishConfigCollections {
+
+}
+
+/*********************************************
+* SPDependentModel
+**********************************************/
+export interface SPDependentModel {
+	LastRefereshedTimeUtc?: any;
+	ModelId?: string;
+	ModelType?: string;
+}
+
+/*********************************************
+* SPDependentModelCollections
+**********************************************/
+export interface SPDependentModelCollections {
+
+}
+
+/*********************************************
+* SPExtractorPublishConfig
+**********************************************/
+export interface SPExtractorPublishConfig {
+	ColumnName?: string;
+	ColumnType?: string;
+	ExtractorId?: any;
+}
+
+/*********************************************
+* SPExtractorPublishConfigCollections
+**********************************************/
+export interface SPExtractorPublishConfigCollections {
+
+}
+
+/*********************************************
+* SPModelDependencies
+**********************************************/
+export interface SPModelDependencies {
+	DependentModels?: { results: Array<Microsoft.Office.Server.ContentCenter.SPDependentModel> };
+}
+
+/*********************************************
+* SPModelDependenciesCollections
+**********************************************/
+export interface SPModelDependenciesCollections {
+
+}
+
+/*********************************************
+* SPModelPublishConfig
+**********************************************/
+export interface SPModelPublishConfig {
+	ClassificationPublishConfigs?: { results: Array<Microsoft.Office.Server.ContentCenter.SPClassificationPublishConfig> };
+	ExtractorPublishConfigs?: { results: Array<Microsoft.Office.Server.ContentCenter.SPExtractorPublishConfig> };
+}
+
+/*********************************************
+* SPModelPublishConfigCollections
+**********************************************/
+export interface SPModelPublishConfigCollections {
 
 }
 
@@ -77,8 +139,10 @@ export interface SPAzureCognitiveModelEntityDataCollections {
 **********************************************/
 export interface SPMachineLearningPublicationEntityData {
 	ModelUniqueId?: any;
+	RemoveSitePromotionEnabled?: boolean;
 	TargetLibraryServerRelativeUrl?: string;
 	TargetSiteUrl?: string;
+	TargetTableListServerRelativeUrl?: string;
 	TargetWebServerRelativeUrl?: string;
 	ViewOption?: string;
 }

@@ -1,5 +1,6 @@
 import { Base } from "../../../../../";
 import { Microsoft } from "../../../../../";
+import { SP } from "../../../../../";
 
 /*********************************************
 * SPO3rdPartyAADPermissionGrant
@@ -152,8 +153,12 @@ export interface SPOWebAppServicePrincipalPermissionRequest extends Base.IBaseRe
 * SPOWebAppServicePrincipalPermissionRequestProps
 **********************************************/
 export interface SPOWebAppServicePrincipalPermissionRequestProps {
+	ClientComponentItemUniqueId?: string;
 	Id?: any;
 	IsDomainIsolated?: boolean;
+	IsolatedDomainUrl?: string;
+	MultiTenantAppId?: string;
+	MultiTenantAppReplyUrl?: string;
 	PackageApproverName?: string;
 	PackageName?: string;
 	PackageVersion?: string;
@@ -242,6 +247,7 @@ export interface SPOWebAppServicePrincipalProps {
 	AccountEnabled?: boolean;
 	AppHelperId?: string;
 	AppId?: string;
+	AppsToDelete?: { results: Array<string> };
 	ReplyUrls?: { results: Array<string> };
 	ServicePrincipalObjectIds?: { results: Array<any> };
 }
@@ -278,5 +284,11 @@ export interface SPOWebAppServicePrincipalOData extends Base.IBaseResult, SPOWeb
 * SPOWebAppServicePrincipalMethods
 **********************************************/
 export interface SPOWebAppServicePrincipalMethods {
+	getIsolatedAppDomainsByAppId(appIds?: Array<string>): Base.IBaseCollection<SP.KeyValue>;
+	removeAppsToDelete(domainsToDelete?: Array<string>): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
+	updateSpfxClientSecret(secretValue?: string): Base.IBaseExecution<any>;
+	updateSpfxThirdPartyAppId(appId?: string): Base.IBaseExecution<any>;
+	updateSpfxThirdPartyIsolatedComponentFields(catalogItemId?: string, apAppObjectId?: string, spObjectId?: string, appId?: string): Base.IBaseExecution<any>;
+	updateSpfxThirdPartyIsolatedSecret(servicePrincipalId?: string, secretValue?: string): Base.IBaseExecution<any>;
 }

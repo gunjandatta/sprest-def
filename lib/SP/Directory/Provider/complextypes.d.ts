@@ -92,6 +92,7 @@ export interface DirectoryObjectData {
 	ChangeMarker?: string;
 	DirectoryObjectSubType?: number;
 	DirectoryObjectType?: number;
+	DirectorySessionData?: SP.Directory.Provider.DirectorySessionData;
 	Id?: any;
 	IsNew?: boolean;
 	LastModifiedTime?: any;
@@ -103,6 +104,21 @@ export interface DirectoryObjectData {
 * DirectoryObjectDataCollections
 **********************************************/
 export interface DirectoryObjectDataCollections {
+
+}
+
+/*********************************************
+* DirectorySessionData
+**********************************************/
+export interface DirectorySessionData {
+	ClientType?: string;
+	SessionOptions?: string;
+}
+
+/*********************************************
+* DirectorySessionDataCollections
+**********************************************/
+export interface DirectorySessionDataCollections {
 
 }
 
@@ -129,6 +145,7 @@ export interface SchemaDataCollections {
 **********************************************/
 export interface ExtendedAttributeData {
 	Value?: any;
+	ValueJsonString?: string;
 }
 
 /*********************************************
@@ -157,6 +174,7 @@ export interface PropertyCollectionDataCollections {
 **********************************************/
 export interface PropertyData {
 	Value?: any;
+	ValueJsonString?: string;
 }
 
 /*********************************************
@@ -175,6 +193,7 @@ export interface RelationData {
 	TargetObjectSubtype?: number;
 	TargetObjectType?: number;
 	Value?: any;
+	ValueJsonString?: string;
 }
 
 /*********************************************
@@ -207,6 +226,7 @@ export interface ResourceData {
 	ResourceAction?: number;
 	State?: number;
 	Value?: any;
+	ValueJsonString?: string;
 }
 
 /*********************************************
@@ -222,6 +242,7 @@ export interface ResourceDataCollections {
 export interface StateData {
 	AdapterName?: string;
 	Value?: any;
+	ValueJsonString?: string;
 }
 
 /*********************************************

@@ -8,17 +8,47 @@ export interface GetRemoteItemInfoRequest {
 	MountedRemoteItemUniqueIds?: { results: Array<any> };
 	RemoteItemListId?: any;
 	RemoteItemSiteId?: any;
-	RemoteItemSiteUrl?: string;
 	RemoteItemUniqueIds?: { results: Array<any> };
 	RemoteItemWebId?: any;
-	UserEmail?: string;
-	UserLoginName?: string;
 }
 
 /*********************************************
 * GetRemoteItemInfoRequestCollections
 **********************************************/
 export interface GetRemoteItemInfoRequestCollections {
+
+}
+
+/*********************************************
+* GetSourceItemMetadataForODCMountPointRequest
+**********************************************/
+export interface GetSourceItemMetadataForODCMountPointRequest {
+	IsCreateMountPointFlow?: boolean;
+	MountedRemoteItemUniqueIds?: { results: Array<any> };
+	RemoteItemListId?: any;
+	RemoteItemSiteId?: any;
+	RemoteItemUniqueIds?: { results: Array<any> };
+	RemoteItemWebId?: any;
+}
+
+/*********************************************
+* GetSourceItemMetadataForODCMountPointRequestCollections
+**********************************************/
+export interface GetSourceItemMetadataForODCMountPointRequestCollections {
+
+}
+
+/*********************************************
+* GetSourceItemMetadataForODCMountPointResponse
+**********************************************/
+export interface GetSourceItemMetadataForODCMountPointResponse {
+
+}
+
+/*********************************************
+* GetSourceItemMetadataForODCMountPointResponseCollections
+**********************************************/
+export interface GetSourceItemMetadataForODCMountPointResponseCollections {
 
 }
 
@@ -41,7 +71,6 @@ export interface NotifyChangeToMountPointsRequestCollections {
 **********************************************/
 export interface PlacesUserEntity {
 	email?: string;
-	id?: number;
 	loginName?: string;
 	name?: string;
 }

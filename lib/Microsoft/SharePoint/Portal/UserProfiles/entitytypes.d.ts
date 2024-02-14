@@ -57,7 +57,9 @@ export interface SharedWithMeDocument {
 	CallerStack?: string;
 	ChildCount?: number;
 	ClickThroughId?: string;
+	CommentCount?: number;
 	ContentTypeId?: SP.ContentTypeId;
+	CoverPhotoId?: string;
 	CreatedDateTime?: any;
 	CreatedDateTimeUTC?: any;
 	DocId?: string;
@@ -68,6 +70,8 @@ export interface SharedWithMeDocument {
 	Id?: number;
 	IsContainer?: boolean;
 	IsMyDocument?: boolean;
+	ItemDescription?: string;
+	ItemResourceId?: string;
 	ItemSize?: number;
 	LinkingUrl?: string;
 	ListId?: string;
@@ -79,14 +83,18 @@ export interface SharedWithMeDocument {
 	ModifiedDateTimeUTC?: any;
 	OfficeBundleGenerate?: string;
 	OfficeBundleGetFragment?: string;
+	Owner?: Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser;
 	ParentId?: string;
 	ParentLink?: string;
 	PdfConversionUrl?: string;
 	ProgId?: string;
+	RemoteItemPermMask?: number;
 	ServerRedirectedEmbedUrl?: string;
 	ServerRedirectedPreviewUrl?: string;
 	ServerRedirectedUrl?: string;
 	SharedDateTimeUTC?: any;
+	SharedToGroupGroupDisplayName?: string;
+	SharedToGroupGroupId?: string;
 	SharedWithInternal?: { results: Array<Microsoft.SharePoint.Portal.UserProfiles.SharedWithMeDocumentUser> };
 	SiteId?: string;
 	SiteUrl?: string;

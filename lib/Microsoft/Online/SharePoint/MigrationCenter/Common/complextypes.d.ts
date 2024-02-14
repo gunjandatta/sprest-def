@@ -42,6 +42,54 @@ export interface BatchDeletionResultCollections {
 }
 
 /*********************************************
+* BatchUpdatePayload
+**********************************************/
+export interface BatchUpdatePayload {
+	Tags?: { results: Array<string> };
+	TaskId?: any;
+}
+
+/*********************************************
+* BatchUpdatePayloadCollections
+**********************************************/
+export interface BatchUpdatePayloadCollections {
+
+}
+
+/*********************************************
+* BatchUpdateResult
+**********************************************/
+export interface BatchUpdateResult {
+	ErrorCode?: string;
+	FailCount?: number;
+	ProcessingMilliseconds?: number;
+	ResultList?: { results: Array<Microsoft.Online.SharePoint.MigrationCenter.Common.TaskUpdateResult> };
+	SuccessCount?: number;
+}
+
+/*********************************************
+* BatchUpdateResultCollections
+**********************************************/
+export interface BatchUpdateResultCollections {
+
+}
+
+/*********************************************
+* TaskUpdateResult
+**********************************************/
+export interface TaskUpdateResult {
+	ErrorCode?: string;
+	TaskId?: any;
+}
+
+/*********************************************
+* TaskUpdateResultCollections
+**********************************************/
+export interface TaskUpdateResultCollections {
+
+}
+
+/*********************************************
 * MigrationStorageSettings
 **********************************************/
 export interface MigrationStorageSettings {
@@ -106,6 +154,7 @@ export interface MigrationTaskSettings {
 	ScanOnly?: boolean;
 	SkipListWithAudienceEnabled?: boolean;
 	StartMigrationAutomaticallyWhenNoScanIssue?: boolean;
+	Tags?: { results: Array<string> };
 	TurnOnDateCreatedFilter?: boolean;
 	TurnOnDateModifiedFilter?: boolean;
 	TurnOnExtensionFilter?: boolean;
@@ -128,6 +177,7 @@ export interface MMTaskSettings {
 	AgentGroupName?: string;
 	ScheduledTimeUtc?: any;
 	ScheduledType?: number;
+	Tags?: { results: Array<string> };
 }
 
 /*********************************************

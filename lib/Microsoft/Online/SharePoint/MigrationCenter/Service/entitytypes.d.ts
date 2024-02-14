@@ -744,6 +744,7 @@ export interface MigrationTaskCollections extends MigrationTaskPropMethods {
 export interface MigrationTaskCollectionMethods {
 	batchCreate(taskDefinitions?: Array<Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition>, taskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings, mmTaskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MMTaskSettings): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Common.BatchCreationResult>;
 	batchDelete(taskIdList?: Array<any>, deleteInProgressTask?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Common.BatchDeletionResult>;
+	batchUpdate(tasks?: Array<Microsoft.Online.SharePoint.MigrationCenter.Common.BatchUpdatePayload>): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Common.BatchUpdateResult>;
 	createDuplicateTasks(taskDefinition?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskDefinition, taskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationTaskSettings, mmTaskSettings?: Microsoft.Online.SharePoint.MigrationCenter.Common.MMTaskSettings, taskCount?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask>;
 	getById(id?: any): Base.IBaseQuery<Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTask> & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskCollections & Microsoft.Online.SharePoint.MigrationCenter.Service.MigrationTaskMethods;
 }

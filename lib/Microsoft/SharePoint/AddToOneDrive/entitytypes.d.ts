@@ -73,6 +73,7 @@ export interface placesInformationProps {
 	placesCount?: string;
 	itemSourceListTitle?: string;
 	itemSourcePath?: string;
+	itemSourceSiteOwnerIdentity?: Microsoft.SharePoint.AddToOneDrive.PlacesUserEntity;
 	itemSourceSiteTemplateId?: string;
 	itemSourceSiteTitle?: string;
 }
