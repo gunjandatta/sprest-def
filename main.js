@@ -289,6 +289,7 @@ function updateReferences(fileImports, dirName, type) {
 
 // Process the Graph metadata
 function processGraph(schemas) {
+    let collections = {};
     let complexTypes = {};
     let endPoints = {};
     let enums = {};
@@ -409,6 +410,13 @@ function processGraph(schemas) {
 
                         // Add the method
                         methods.push({ name, returnType });
+
+                        // See if this is a collection
+                        if (returnType.startsWith("Collection(")) {
+                            let collectionType = returnType.replace("Collection(", "").replace(")", "");
+                            collectionType = collectionType.split('.')[1];
+                            collections[collectionType] = returnType;
+                        }
                     }
 
                     // Add the entity type
@@ -501,7 +509,7 @@ function processGraph(schemas) {
     }
 
     // Method to get the type
-    let getGraphType = (returnType = "") => {
+    let getGraphType = (returnType = "", isMethod = false) => {
         // See if the return type is in not an Edm
         if (returnType.indexOf("graph." == 0)) {
             // Set the return type information
@@ -557,8 +565,10 @@ function processGraph(schemas) {
                 returnType = "ComplexTypes.columnDefinition[]";
             }
 
-            // Update the collection
-            isCollection ? returnType += "[]" : null;
+            // See if this is a collection
+            if (isCollection) {
+                returnType += isMethod ? "Collection" : "[]";
+            }
         }
 
         // Return the type
@@ -662,7 +672,7 @@ ${props.join('\n')}
         let methods = [];
         for (let method of entity.methods) {
             // Add the method
-            methods.push("\t" + method.name + ": () => IBaseExecution<" + getGraphType(method.returnType) + ">;");
+            methods.push("\t" + method.name + ": () => IBaseExecution<" + getGraphType(method.returnType, true) + ">;");
         }
 
         // Add the endpoint
@@ -673,6 +683,16 @@ export interface ${name} ${entity.returnType ? "extends " + entity.returnType : 
 ${props.join('\n')}
 ${methods.join('\n')}
 }`);
+
+        // See if there is a collection required for this
+        if(collections[name]) {
+            content.push(`/*********************************************
+* ${name}
+**********************************************/
+export interface ${name}Collection {
+    results: ${name}[];
+}`);
+        }
     }
     fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n').replace(/EntityTypes./g, ""));
 }

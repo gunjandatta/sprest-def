@@ -12,14 +12,20 @@ export interface drive  {
 	quota: ComplexTypes.quota;
 	sharePointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.system;
-	activities: () => IBaseExecution<activityEntity[]>;
-	activitycounts: () => IBaseExecution<itemActivityStatEntity[]>;
-	apps: () => IBaseExecution<driveApp[]>;
+	activities: () => IBaseExecution<activityEntityCollection>;
+	activitycounts: () => IBaseExecution<itemActivityStatEntityCollection>;
+	apps: () => IBaseExecution<driveAppCollection>;
 	commands: () => IBaseExecution<ComplexTypes.command[]>;
-	items: () => IBaseExecution<item[]>;
+	items: () => IBaseExecution<itemCollection>;
 	list: () => IBaseExecution<list>;
-	special: () => IBaseExecution<item[]>;
-	trackedItems: () => IBaseExecution<item[]>;
+	special: () => IBaseExecution<itemCollection>;
+	trackedItems: () => IBaseExecution<itemCollection>;
+}
+/*********************************************
+* drive
+**********************************************/
+export interface driveCollection {
+    results: drive[];
 }
 /*********************************************
 * share
@@ -70,16 +76,22 @@ export interface item  {
 	formats: ComplexTypes.formats;
 	media: ComplexTypes.media;
 	source: ComplexTypes.driveItemSource;
-	permissions: () => IBaseExecution<permission[]>;
-	children: () => IBaseExecution<item[]>;
-	subscriptions: () => IBaseExecution<subscription[]>;
-	thumbnails: () => IBaseExecution<thumbnailSet[]>;
-	activities: () => IBaseExecution<activityEntity[]>;
+	permissions: () => IBaseExecution<permissionCollection>;
+	children: () => IBaseExecution<itemCollection>;
+	subscriptions: () => IBaseExecution<subscriptionCollection>;
+	thumbnails: () => IBaseExecution<thumbnailSetCollection>;
+	activities: () => IBaseExecution<activityEntityCollection>;
 	analytics: () => IBaseExecution<analytics>;
 	commands: () => IBaseExecution<ComplexTypes.command[]>;
 	featureStatus: () => IBaseExecution<featureStatus>;
 	listItem: () => IBaseExecution<listItem>;
-	versions: () => IBaseExecution<driveItemVersion[]>;
+	versions: () => IBaseExecution<driveItemVersionCollection>;
+}
+/*********************************************
+* item
+**********************************************/
+export interface itemCollection {
+    results: item[];
 }
 /*********************************************
 * permission
@@ -96,6 +108,12 @@ export interface permission  {
 
 }
 /*********************************************
+* permission
+**********************************************/
+export interface permissionCollection {
+    results: permission[];
+}
+/*********************************************
 * subscription
 **********************************************/
 export interface subscription  {
@@ -108,6 +126,12 @@ export interface subscription  {
 
 }
 /*********************************************
+* subscription
+**********************************************/
+export interface subscriptionCollection {
+    results: subscription[];
+}
+/*********************************************
 * thumbnailSet
 **********************************************/
 export interface thumbnailSet  {
@@ -116,6 +140,12 @@ export interface thumbnailSet  {
 	medium: ComplexTypes.thumbnail;
 	small: ComplexTypes.thumbnail;
 
+}
+/*********************************************
+* thumbnailSet
+**********************************************/
+export interface thumbnailSetCollection {
+    results: thumbnailSet[];
 }
 /*********************************************
 * activityEntity
@@ -129,6 +159,12 @@ export interface activityEntity  {
 	times: ComplexTypes.activityTimes;
 	driveItem: () => IBaseExecution<item>;
 	listItem: () => IBaseExecution<listItem>;
+}
+/*********************************************
+* activityEntity
+**********************************************/
+export interface activityEntityCollection {
+    results: activityEntity[];
 }
 /*********************************************
 * analytics
@@ -161,11 +197,17 @@ export interface featureStatus  {
 export interface listItem extends baseItem {
 	contentType: ComplexTypes.contentTypeFacet;
 	sharepointIds: ComplexTypes.sharepointIds;
-	activities: () => IBaseExecution<activityEntity[]>;
+	activities: () => IBaseExecution<activityEntityCollection>;
 	analytics: () => IBaseExecution<analytics>;
 	driveItem: () => IBaseExecution<item>;
 	fields: () => IBaseExecution<fieldValueSet>;
-	versions: () => IBaseExecution<listItemVersion[]>;
+	versions: () => IBaseExecution<listItemVersionCollection>;
+}
+/*********************************************
+* listItem
+**********************************************/
+export interface listItemCollection {
+    results: listItem[];
 }
 /*********************************************
 * fieldValueSet
@@ -192,11 +234,23 @@ export interface listItemVersion extends baseItemVersion {
 	fields: () => IBaseExecution<fieldValueSet>;
 }
 /*********************************************
+* listItemVersion
+**********************************************/
+export interface listItemVersionCollection {
+    results: listItemVersion[];
+}
+/*********************************************
 * driveItemVersion
 **********************************************/
 export interface driveItemVersion extends baseItemVersion {
 	size: number;
-	streams: () => IBaseExecution<stream[]>;
+	streams: () => IBaseExecution<streamCollection>;
+}
+/*********************************************
+* driveItemVersion
+**********************************************/
+export interface driveItemVersionCollection {
+    results: driveItemVersion[];
 }
 /*********************************************
 * stream
@@ -207,6 +261,12 @@ export interface stream  {
 	size: number;
 	url: string;
 
+}
+/*********************************************
+* stream
+**********************************************/
+export interface streamCollection {
+    results: stream[];
 }
 /*********************************************
 * columnDefinition
@@ -236,6 +296,12 @@ export interface columnDefinition  {
 
 }
 /*********************************************
+* columnDefinition
+**********************************************/
+export interface columnDefinitionCollection {
+    results: columnDefinition[];
+}
+/*********************************************
 * contentType
 **********************************************/
 export interface contentType  {
@@ -249,7 +315,13 @@ export interface contentType  {
 	parentId: string;
 	readOnly: boolean;
 	sealed: boolean;
-	columnLinks: () => IBaseExecution<columnLink[]>;
+	columnLinks: () => IBaseExecution<columnLinkCollection>;
+}
+/*********************************************
+* contentType
+**********************************************/
+export interface contentTypeCollection {
+    results: contentType[];
 }
 /*********************************************
 * columnLink
@@ -258,6 +330,12 @@ export interface columnLink  {
 	id: string;
 	name: string;
 
+}
+/*********************************************
+* columnLink
+**********************************************/
+export interface columnLinkCollection {
+    results: columnLink[];
 }
 /*********************************************
 * itemActivityStatEntity
@@ -269,13 +347,25 @@ export interface itemActivityStatEntity  {
 
 }
 /*********************************************
+* itemActivityStatEntity
+**********************************************/
+export interface itemActivityStatEntityCollection {
+    results: itemActivityStatEntity[];
+}
+/*********************************************
 * driveApp
 **********************************************/
 export interface driveApp  {
 	application: ComplexTypes.identity;
 	fileHandler: ComplexTypes.fileHandler;
 	id: string;
-	actions: () => IBaseExecution<driveAppAction[]>;
+	actions: () => IBaseExecution<driveAppActionCollection>;
+}
+/*********************************************
+* driveApp
+**********************************************/
+export interface driveAppCollection {
+    results: driveApp[];
 }
 /*********************************************
 * driveAppAction
@@ -290,6 +380,12 @@ export interface driveAppAction  {
 
 }
 /*********************************************
+* driveAppAction
+**********************************************/
+export interface driveAppActionCollection {
+    results: driveAppAction[];
+}
+/*********************************************
 * list
 **********************************************/
 export interface list extends baseItem {
@@ -297,11 +393,17 @@ export interface list extends baseItem {
 	list: ComplexTypes.listInfo;
 	sharepointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.system;
-	activities: () => IBaseExecution<activityEntity[]>;
-	columns: () => IBaseExecution<columnDefinition[]>;
-	contentTypes: () => IBaseExecution<contentType[]>;
+	activities: () => IBaseExecution<activityEntityCollection>;
+	columns: () => IBaseExecution<columnDefinitionCollection>;
+	contentTypes: () => IBaseExecution<contentTypeCollection>;
 	drive: () => IBaseExecution<drive>;
-	items: () => IBaseExecution<listItem[]>;
+	items: () => IBaseExecution<listItemCollection>;
+}
+/*********************************************
+* list
+**********************************************/
+export interface listCollection {
+    results: list[];
 }
 /*********************************************
 * baseItem
@@ -320,6 +422,12 @@ export interface baseItem  {
 
 }
 /*********************************************
+* baseItem
+**********************************************/
+export interface baseItemCollection {
+    results: baseItem[];
+}
+/*********************************************
 * site
 **********************************************/
 export interface site extends baseItem {
@@ -328,13 +436,19 @@ export interface site extends baseItem {
 	siteCollection: ComplexTypes.siteCollection;
 	title: string;
 	analytics: () => IBaseExecution<analytics>;
-	columns: () => IBaseExecution<columnDefinition[]>;
-	contentTypes: () => IBaseExecution<contentType[]>;
+	columns: () => IBaseExecution<columnDefinitionCollection>;
+	contentTypes: () => IBaseExecution<contentTypeCollection>;
 	drive: () => IBaseExecution<drive>;
-	drives: () => IBaseExecution<drive[]>;
-	items: () => IBaseExecution<baseItem[]>;
-	lists: () => IBaseExecution<list[]>;
-	sites: () => IBaseExecution<site[]>;
+	drives: () => IBaseExecution<driveCollection>;
+	items: () => IBaseExecution<baseItemCollection>;
+	lists: () => IBaseExecution<listCollection>;
+	sites: () => IBaseExecution<siteCollection>;
+}
+/*********************************************
+* site
+**********************************************/
+export interface siteCollection {
+    results: site[];
 }
 /*********************************************
 * sharePoint
@@ -342,5 +456,5 @@ export interface site extends baseItem {
 export interface sharePoint  {
 
 	site: () => IBaseExecution<site>;
-	sites: () => IBaseExecution<site[]>;
+	sites: () => IBaseExecution<siteCollection>;
 }
