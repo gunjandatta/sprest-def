@@ -1128,10 +1128,6 @@ function processREST(schemas) {
                     // Update the references
                     updateReferences(fileImports, dirName, type);
 
-                    if (propName == "Cells") {
-                        console.log(propName);
-                        console.log(type);
-                    }
                     // See if this type is a collection and this is the complex or entity types
                     if ((filename == "ComplexTypes" || filename == "EntityTypes") && /^Array\<.*\>$/.test(type)) {
                         // Ensure it's a results type
