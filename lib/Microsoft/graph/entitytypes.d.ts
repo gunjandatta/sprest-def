@@ -12,27 +12,39 @@ export interface drive  {
 	quota: ComplexTypes.quota;
 	sharePointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.system;
-	activities: () => IBaseExecution<activityEntityCollection>;
-	activitycounts: () => IBaseExecution<itemActivityStatEntityCollection>;
-	apps: () => IBaseExecution<driveAppCollection>;
-	commands: () => IBaseExecution<ComplexTypes.command[]>;
-	items: () => IBaseExecution<itemCollection>;
-	list: () => IBaseExecution<list>;
-	special: () => IBaseExecution<itemCollection>;
-	trackedItems: () => IBaseExecution<itemCollection>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	activitycounts(): IBaseExecution<itemActivityStatEntityCollection>;
+	activitycounts(id: string | number): IBaseExecution<itemActivityStatEntity>;
+	apps(): IBaseExecution<driveAppCollection>;
+	apps(id: string | number): IBaseExecution<driveApp>;
+	commands(): IBaseExecution<ComplexTypes.command[]>;
+	items(): IBaseExecution<itemCollection>;
+	items(id: string | number): IBaseExecution<item>;
+	list(): IBaseExecution<list>;
+	special(): IBaseExecution<itemCollection>;
+	special(id: string | number): IBaseExecution<item>;
+	trackedItems(): IBaseExecution<itemCollection>;
+	trackedItems(id: string | number): IBaseExecution<item>;
 }
 /*********************************************
 * drive Methods
 **********************************************/
 export interface driveMethods {
-	activities: () => IBaseExecution<activityEntityCollection>;
-	activitycounts: () => IBaseExecution<itemActivityStatEntityCollection>;
-	apps: () => IBaseExecution<driveAppCollection>;
-	commands: () => IBaseExecution<ComplexTypes.command[]>;
-	items: () => IBaseExecution<itemCollection>;
-	list: () => IBaseExecution<list>;
-	special: () => IBaseExecution<itemCollection>;
-	trackedItems: () => IBaseExecution<itemCollection>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	activitycounts(): IBaseExecution<itemActivityStatEntityCollection>;
+	activitycounts(id: string | number): IBaseExecution<itemActivityStatEntity>;
+	apps(): IBaseExecution<driveAppCollection>;
+	apps(id: string | number): IBaseExecution<driveApp>;
+	commands(): IBaseExecution<ComplexTypes.command[]>;
+	items(): IBaseExecution<itemCollection>;
+	items(id: string | number): IBaseExecution<item>;
+	list(): IBaseExecution<list>;
+	special(): IBaseExecution<itemCollection>;
+	special(id: string | number): IBaseExecution<item>;
+	trackedItems(): IBaseExecution<itemCollection>;
+	trackedItems(id: string | number): IBaseExecution<item>;
 }
 /*********************************************
 * drive Collection
@@ -47,11 +59,11 @@ export interface driveCollection {
 export interface share  {
 	id: string;
 	name: string;
-	driveItem: () => IBaseExecution<item>;
-	list: () => IBaseExecution<list>;
-	listItem: () => IBaseExecution<listItem>;
-	root: () => IBaseExecution<item>;
-	site: () => IBaseExecution<site>;
+	driveItem(): IBaseExecution<item>;
+	list(): IBaseExecution<list>;
+	listItem(): IBaseExecution<listItem>;
+	root(): IBaseExecution<item>;
+	site(): IBaseExecution<site>;
 }
 /*********************************************
 * item
@@ -90,31 +102,43 @@ export interface item  {
 	formats: ComplexTypes.formats;
 	media: ComplexTypes.media;
 	source: ComplexTypes.driveItemSource;
-	permissions: () => IBaseExecution<permissionCollection>;
-	children: () => IBaseExecution<itemCollection>;
-	subscriptions: () => IBaseExecution<subscriptionCollection>;
-	thumbnails: () => IBaseExecution<thumbnailSetCollection>;
-	activities: () => IBaseExecution<activityEntityCollection>;
-	analytics: () => IBaseExecution<analytics>;
-	commands: () => IBaseExecution<ComplexTypes.command[]>;
-	featureStatus: () => IBaseExecution<featureStatus>;
-	listItem: () => IBaseExecution<listItem>;
-	versions: () => IBaseExecution<driveItemVersionCollection>;
+	permissions(): IBaseExecution<permissionCollection>;
+	permissions(id: string | number): IBaseExecution<permission>;
+	children(): IBaseExecution<itemCollection>;
+	children(id: string | number): IBaseExecution<item>;
+	subscriptions(): IBaseExecution<subscriptionCollection>;
+	subscriptions(id: string | number): IBaseExecution<subscription>;
+	thumbnails(): IBaseExecution<thumbnailSetCollection>;
+	thumbnails(id: string | number): IBaseExecution<thumbnailSet>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	analytics(): IBaseExecution<analytics>;
+	commands(): IBaseExecution<ComplexTypes.command[]>;
+	featureStatus(): IBaseExecution<featureStatus>;
+	listItem(): IBaseExecution<listItem>;
+	versions(): IBaseExecution<driveItemVersionCollection>;
+	versions(id: string | number): IBaseExecution<driveItemVersion>;
 }
 /*********************************************
 * item Methods
 **********************************************/
 export interface itemMethods {
-	permissions: () => IBaseExecution<permissionCollection>;
-	children: () => IBaseExecution<itemCollection>;
-	subscriptions: () => IBaseExecution<subscriptionCollection>;
-	thumbnails: () => IBaseExecution<thumbnailSetCollection>;
-	activities: () => IBaseExecution<activityEntityCollection>;
-	analytics: () => IBaseExecution<analytics>;
-	commands: () => IBaseExecution<ComplexTypes.command[]>;
-	featureStatus: () => IBaseExecution<featureStatus>;
-	listItem: () => IBaseExecution<listItem>;
-	versions: () => IBaseExecution<driveItemVersionCollection>;
+	permissions(): IBaseExecution<permissionCollection>;
+	permissions(id: string | number): IBaseExecution<permission>;
+	children(): IBaseExecution<itemCollection>;
+	children(id: string | number): IBaseExecution<item>;
+	subscriptions(): IBaseExecution<subscriptionCollection>;
+	subscriptions(id: string | number): IBaseExecution<subscription>;
+	thumbnails(): IBaseExecution<thumbnailSetCollection>;
+	thumbnails(id: string | number): IBaseExecution<thumbnailSet>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	analytics(): IBaseExecution<analytics>;
+	commands(): IBaseExecution<ComplexTypes.command[]>;
+	featureStatus(): IBaseExecution<featureStatus>;
+	listItem(): IBaseExecution<listItem>;
+	versions(): IBaseExecution<driveItemVersionCollection>;
+	versions(id: string | number): IBaseExecution<driveItemVersion>;
 }
 /*********************************************
 * item Collection
@@ -135,20 +159,20 @@ export interface permission  {
 	roles: Array<string>[];
 	expirationDateTime: any;
 	grantedToIdentities: ComplexTypes.identitySet[];
-	update: (values: any) => IBaseExecution<void>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * permission Methods
 **********************************************/
 export interface permissionMethods {
-	update: (values: any) => IBaseExecution<void>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * permission Collection
 **********************************************/
 export interface permissionCollection {
     results: permission[];
-    add: (values: any) => IBaseExecution<permission>;
+    add(values: any): IBaseExecution<permission>;
 }
 /*********************************************
 * subscription
@@ -208,15 +232,15 @@ export interface activityEntity  {
 	driveItemId: string;
 	id: string;
 	times: ComplexTypes.activityTimes;
-	driveItem: () => IBaseExecution<item>;
-	listItem: () => IBaseExecution<listItem>;
+	driveItem(): IBaseExecution<item>;
+	listItem(): IBaseExecution<listItem>;
 }
 /*********************************************
 * activityEntity Methods
 **********************************************/
 export interface activityEntityMethods {
-	driveItem: () => IBaseExecution<item>;
-	listItem: () => IBaseExecution<listItem>;
+	driveItem(): IBaseExecution<item>;
+	listItem(): IBaseExecution<listItem>;
 }
 /*********************************************
 * activityEntity Collection
@@ -256,30 +280,34 @@ export interface featureStatus  {
 export interface listItem extends baseItem {
 	contentType: ComplexTypes.contentTypeFacet;
 	sharepointIds: ComplexTypes.sharepointIds;
-	activities: () => IBaseExecution<activityEntityCollection>;
-	analytics: () => IBaseExecution<analytics>;
-	driveItem: () => IBaseExecution<item>;
-	fields: () => IBaseExecution<fieldValueSet>;
-	versions: () => IBaseExecution<listItemVersionCollection>;
-	update: (values: any) => IBaseExecution<void>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	analytics(): IBaseExecution<analytics>;
+	driveItem(): IBaseExecution<item>;
+	fields(): IBaseExecution<fieldValueSet>;
+	versions(): IBaseExecution<listItemVersionCollection>;
+	versions(id: string | number): IBaseExecution<listItemVersion>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * listItem Methods
 **********************************************/
 export interface listItemMethods {
-	activities: () => IBaseExecution<activityEntityCollection>;
-	analytics: () => IBaseExecution<analytics>;
-	driveItem: () => IBaseExecution<item>;
-	fields: () => IBaseExecution<fieldValueSet>;
-	versions: () => IBaseExecution<listItemVersionCollection>;
-	update: (values: any) => IBaseExecution<void>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	analytics(): IBaseExecution<analytics>;
+	driveItem(): IBaseExecution<item>;
+	fields(): IBaseExecution<fieldValueSet>;
+	versions(): IBaseExecution<listItemVersionCollection>;
+	versions(id: string | number): IBaseExecution<listItemVersion>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * listItem Collection
 **********************************************/
 export interface listItemCollection {
     results: listItem[];
-    add: (values: any) => IBaseExecution<item>;
+    add(values: any): IBaseExecution<item>;
 }
 /*********************************************
 * fieldValueSet
@@ -303,13 +331,13 @@ export interface baseItemVersion  {
 **********************************************/
 export interface listItemVersion extends baseItemVersion {
 
-	fields: () => IBaseExecution<fieldValueSet>;
+	fields(): IBaseExecution<fieldValueSet>;
 }
 /*********************************************
 * listItemVersion Methods
 **********************************************/
 export interface listItemVersionMethods {
-	fields: () => IBaseExecution<fieldValueSet>;
+	fields(): IBaseExecution<fieldValueSet>;
 }
 /*********************************************
 * listItemVersion Collection
@@ -323,13 +351,15 @@ export interface listItemVersionCollection {
 **********************************************/
 export interface driveItemVersion extends baseItemVersion {
 	size: number;
-	streams: () => IBaseExecution<streamCollection>;
+	streams(): IBaseExecution<streamCollection>;
+	streams(id: string | number): IBaseExecution<stream>;
 }
 /*********************************************
 * driveItemVersion Methods
 **********************************************/
 export interface driveItemVersionMethods {
-	streams: () => IBaseExecution<streamCollection>;
+	streams(): IBaseExecution<streamCollection>;
+	streams(id: string | number): IBaseExecution<stream>;
 }
 /*********************************************
 * driveItemVersion Collection
@@ -386,20 +416,20 @@ export interface columnDefinition  {
 	readOnly: boolean;
 	required: boolean;
 	text: ComplexTypes.textColumn;
-	update: (values: any) => IBaseExecution<void>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * columnDefinition Methods
 **********************************************/
 export interface columnDefinitionMethods {
-	update: (values: any) => IBaseExecution<void>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * columnDefinition Collection
 **********************************************/
 export interface columnDefinitionCollection {
     results: columnDefinition[];
-    add: (values: any) => IBaseExecution<ComplexTypes.columnDefinition>;
+    add(values: any): IBaseExecution<ComplexTypes.columnDefinition>;
 }
 /*********************************************
 * contentType
@@ -415,22 +445,24 @@ export interface contentType  {
 	parentId: string;
 	readOnly: boolean;
 	sealed: boolean;
-	columnLinks: () => IBaseExecution<columnLinkCollection>;
-	update: (values: any) => IBaseExecution<void>;
+	columnLinks(): IBaseExecution<columnLinkCollection>;
+	columnLinks(id: string | number): IBaseExecution<columnLink>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * contentType Methods
 **********************************************/
 export interface contentTypeMethods {
-	columnLinks: () => IBaseExecution<columnLinkCollection>;
-	update: (values: any) => IBaseExecution<void>;
+	columnLinks(): IBaseExecution<columnLinkCollection>;
+	columnLinks(id: string | number): IBaseExecution<columnLink>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * contentType Collection
 **********************************************/
 export interface contentTypeCollection {
     results: contentType[];
-    add: (values: any) => IBaseExecution<contentType>;
+    add(values: any): IBaseExecution<contentType>;
 }
 /*********************************************
 * columnLink
@@ -482,13 +514,15 @@ export interface driveApp  {
 	application: ComplexTypes.identity;
 	fileHandler: ComplexTypes.fileHandler;
 	id: string;
-	actions: () => IBaseExecution<driveAppActionCollection>;
+	actions(): IBaseExecution<driveAppActionCollection>;
+	actions(id: string | number): IBaseExecution<driveAppAction>;
 }
 /*********************************************
 * driveApp Methods
 **********************************************/
 export interface driveAppMethods {
-	actions: () => IBaseExecution<driveAppActionCollection>;
+	actions(): IBaseExecution<driveAppActionCollection>;
+	actions(id: string | number): IBaseExecution<driveAppAction>;
 }
 /*********************************************
 * driveApp Collection
@@ -530,30 +564,38 @@ export interface list extends baseItem {
 	list: ComplexTypes.listInfo;
 	sharepointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.system;
-	activities: () => IBaseExecution<activityEntityCollection>;
-	columns: () => IBaseExecution<columnDefinitionCollection>;
-	contentTypes: () => IBaseExecution<contentTypeCollection>;
-	drive: () => IBaseExecution<drive>;
-	items: () => IBaseExecution<listItemCollection>;
-	update: (values: any) => IBaseExecution<void>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	columns(): IBaseExecution<columnDefinitionCollection>;
+	columns(id: string | number): IBaseExecution<columnDefinition>;
+	contentTypes(): IBaseExecution<contentTypeCollection>;
+	contentTypes(id: string | number): IBaseExecution<contentType>;
+	drive(): IBaseExecution<drive>;
+	items(): IBaseExecution<listItemCollection>;
+	items(id: string | number): IBaseExecution<listItem>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * list Methods
 **********************************************/
 export interface listMethods {
-	activities: () => IBaseExecution<activityEntityCollection>;
-	columns: () => IBaseExecution<columnDefinitionCollection>;
-	contentTypes: () => IBaseExecution<contentTypeCollection>;
-	drive: () => IBaseExecution<drive>;
-	items: () => IBaseExecution<listItemCollection>;
-	update: (values: any) => IBaseExecution<void>;
+	activities(): IBaseExecution<activityEntityCollection>;
+	activities(id: string | number): IBaseExecution<activityEntity>;
+	columns(): IBaseExecution<columnDefinitionCollection>;
+	columns(id: string | number): IBaseExecution<columnDefinition>;
+	contentTypes(): IBaseExecution<contentTypeCollection>;
+	contentTypes(id: string | number): IBaseExecution<contentType>;
+	drive(): IBaseExecution<drive>;
+	items(): IBaseExecution<listItemCollection>;
+	items(id: string | number): IBaseExecution<listItem>;
+	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
 * list Collection
 **********************************************/
 export interface listCollection {
     results: list[];
-    add: (values: any) => IBaseExecution<list>;
+    add(values: any): IBaseExecution<list>;
 }
 /*********************************************
 * baseItem
@@ -592,40 +634,53 @@ export interface site extends baseItem {
 	sharepointIds: ComplexTypes.sharepointIds;
 	siteCollection: ComplexTypes.siteCollection;
 	title: string;
-	analytics: () => IBaseExecution<analytics>;
-	columns: () => IBaseExecution<columnDefinitionCollection>;
-	contentTypes: () => IBaseExecution<contentTypeCollection>;
-	drive: () => IBaseExecution<drive>;
-	drives: () => IBaseExecution<driveCollection>;
-	items: () => IBaseExecution<baseItemCollection>;
-	lists: () => IBaseExecution<listCollection>;
-	sites: () => IBaseExecution<siteCollection>;
+	analytics(): IBaseExecution<analytics>;
+	columns(): IBaseExecution<columnDefinitionCollection>;
+	columns(id: string | number): IBaseExecution<columnDefinition>;
+	contentTypes(): IBaseExecution<contentTypeCollection>;
+	contentTypes(id: string | number): IBaseExecution<contentType>;
+	drive(): IBaseExecution<drive>;
+	drives(): IBaseExecution<driveCollection>;
+	drives(id: string | number): IBaseExecution<drive>;
+	items(): IBaseExecution<baseItemCollection>;
+	items(id: string | number): IBaseExecution<baseItem>;
+	lists(): IBaseExecution<listCollection>;
+	lists(id: string | number): IBaseExecution<list>;
+	sites(): IBaseExecution<siteCollection>;
+	sites(id: string | number): IBaseExecution<site>;
 }
 /*********************************************
 * site Methods
 **********************************************/
 export interface siteMethods {
-	analytics: () => IBaseExecution<analytics>;
-	columns: () => IBaseExecution<columnDefinitionCollection>;
-	contentTypes: () => IBaseExecution<contentTypeCollection>;
-	drive: () => IBaseExecution<drive>;
-	drives: () => IBaseExecution<driveCollection>;
-	items: () => IBaseExecution<baseItemCollection>;
-	lists: () => IBaseExecution<listCollection>;
-	sites: () => IBaseExecution<siteCollection>;
+	analytics(): IBaseExecution<analytics>;
+	columns(): IBaseExecution<columnDefinitionCollection>;
+	columns(id: string | number): IBaseExecution<columnDefinition>;
+	contentTypes(): IBaseExecution<contentTypeCollection>;
+	contentTypes(id: string | number): IBaseExecution<contentType>;
+	drive(): IBaseExecution<drive>;
+	drives(): IBaseExecution<driveCollection>;
+	drives(id: string | number): IBaseExecution<drive>;
+	items(): IBaseExecution<baseItemCollection>;
+	items(id: string | number): IBaseExecution<baseItem>;
+	lists(): IBaseExecution<listCollection>;
+	lists(id: string | number): IBaseExecution<list>;
+	sites(): IBaseExecution<siteCollection>;
+	sites(id: string | number): IBaseExecution<site>;
 }
 /*********************************************
 * site Collection
 **********************************************/
 export interface siteCollection {
     results: site[];
-    add: (values: any) => IBaseExecution<site>;
+    add(values: any): IBaseExecution<site>;
 }
 /*********************************************
 * sharePoint
 **********************************************/
 export interface sharePoint  {
 
-	site: () => IBaseExecution<site>;
-	sites: () => IBaseExecution<siteCollection>;
+	site(): IBaseExecution<site>;
+	sites(): IBaseExecution<siteCollection>;
+	sites(id: string | number): IBaseExecution<site>;
 }

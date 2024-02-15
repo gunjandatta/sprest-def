@@ -417,6 +417,9 @@ function processGraph(schemas) {
                             let collectionType = returnType.replace("Collection(", "").replace(")", "");
                             collectionType = collectionType.split('.')[1];
                             collections[collectionType] = returnType;
+
+                            // Add a method to get an object from the collection by its id
+                            methods.push({ name, returnType: collectionType, argNames: [{ name: "id", type: "string | number", returnType: collectionType }] });
                         }
                     }
 
@@ -693,7 +696,7 @@ ${props.join('\n')}
                 let argName = argNames[i];
                 argStrings.push(argName.name + ": " + argName.type);
             }
-            methods.push("\t" + method.name + ": (" + argStrings.join(", ") + ") => IBaseExecution<" + getGraphType(method.returnType, true) + ">;");
+            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(method.returnType, true) + ">;");
         }
 
         // Add the endpoint
@@ -719,7 +722,7 @@ ${methods.join('\n')}
                     let argName = argNames[i];
                     argStrings.push(argName.name + ": " + argName.type);
                 }
-                customMethods.push(customProp.name + ": (" + argStrings.join(", ") + ") => IBaseExecution<" + getGraphType(customProp.returnType, true) + ">;");
+                customMethods.push(customProp.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(customProp.returnType, true) + ">;");
             }
             content.push(`/*********************************************
 * ${name} Methods
