@@ -2,6 +2,7 @@ let fs = require("fs");
 let parser = require("xml2js").parseString;
 let rmDir = require("rimraf");
 let custom = require("./custom");
+let customV2 = require("./customV2");
 
 // Method to analyze the interfaces
 function analyzeCollections(directories) {
@@ -658,6 +659,20 @@ ${props.join('\n')}
         "import * as ComplexTypes from \"./complexTypes.d\";",
         "import * as EnumTypes from \"./enumTypes.d\";\n",
     ];
+
+    // Parse the custom methods
+    for (let name in customV2) {
+        // See if it exists
+        if (entities[name]) {
+            // Append the methods
+            entities[name].methods = entities[name].methods.concat(customV2[name]);
+        }
+        else if (collections[name.replace("Collection", "")] == null) {
+            // Add the entry
+            entities[name] = { props: [], methods: customV2[name] }
+        }
+    }
+
     for (let name in entities) {
         let entity = entities[name];
 
@@ -672,7 +687,13 @@ ${props.join('\n')}
         let methods = [];
         for (let method of entity.methods) {
             // Add the method
-            methods.push("\t" + method.name + ": () => IBaseExecution<" + getGraphType(method.returnType, true) + ">;");
+            let argNames = method.argNames || [];
+            let argStrings = [];
+            for (let i = 0; i < argNames.length; i++) {
+                let argName = argNames[i];
+                argStrings.push(argName.name + ": " + argName.type);
+            }
+            methods.push("\t" + method.name + ": (" + argStrings.join(", ") + ") => IBaseExecution<" + getGraphType(method.returnType, true) + ">;");
         }
 
         // Add the endpoint
@@ -685,7 +706,21 @@ ${methods.join('\n')}
 }`);
 
         // See if there is a collection required for this
-        if(collections[name]) {
+        if (collections[name]) {
+            let customMethods = [];
+            let customProps = customV2[name + "Collection"] || [];
+            for (let i = 0; i < customProps.length; i++) {
+                let customProp = customProps[i];
+
+                // Add the method
+                let argNames = customProp.argNames || [];
+                let argStrings = [];
+                for (let i = 0; i < argNames.length; i++) {
+                    let argName = argNames[i];
+                    argStrings.push(argName.name + ": " + argName.type);
+                }
+                customMethods.push(customProp.name + ": (" + argStrings.join(", ") + ") => IBaseExecution<" + getGraphType(customProp.returnType, true) + ">;");
+            }
             content.push(`/*********************************************
 * ${name} Methods
 **********************************************/
@@ -697,6 +732,7 @@ ${methods.join('\n')}
 **********************************************/
 export interface ${name}Collection {
     results: ${name}[];
+    ${customMethods.join(",")}
 }`);
         }
     }
