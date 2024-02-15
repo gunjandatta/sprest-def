@@ -687,7 +687,13 @@ ${methods.join('\n')}
         // See if there is a collection required for this
         if(collections[name]) {
             content.push(`/*********************************************
-* ${name}
+* ${name} Methods
+**********************************************/
+export interface ${name}Methods {
+${methods.join('\n')}
+}`);
+            content.push(`/*********************************************
+* ${name} Collection
 **********************************************/
 export interface ${name}Collection {
     results: ${name}[];

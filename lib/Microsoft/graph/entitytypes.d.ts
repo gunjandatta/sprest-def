@@ -22,7 +22,20 @@ export interface drive  {
 	trackedItems: () => IBaseExecution<itemCollection>;
 }
 /*********************************************
-* drive
+* drive Methods
+**********************************************/
+export interface driveMethods {
+	activities: () => IBaseExecution<activityEntityCollection>;
+	activitycounts: () => IBaseExecution<itemActivityStatEntityCollection>;
+	apps: () => IBaseExecution<driveAppCollection>;
+	commands: () => IBaseExecution<ComplexTypes.command[]>;
+	items: () => IBaseExecution<itemCollection>;
+	list: () => IBaseExecution<list>;
+	special: () => IBaseExecution<itemCollection>;
+	trackedItems: () => IBaseExecution<itemCollection>;
+}
+/*********************************************
+* drive Collection
 **********************************************/
 export interface driveCollection {
     results: drive[];
@@ -88,7 +101,22 @@ export interface item  {
 	versions: () => IBaseExecution<driveItemVersionCollection>;
 }
 /*********************************************
-* item
+* item Methods
+**********************************************/
+export interface itemMethods {
+	permissions: () => IBaseExecution<permissionCollection>;
+	children: () => IBaseExecution<itemCollection>;
+	subscriptions: () => IBaseExecution<subscriptionCollection>;
+	thumbnails: () => IBaseExecution<thumbnailSetCollection>;
+	activities: () => IBaseExecution<activityEntityCollection>;
+	analytics: () => IBaseExecution<analytics>;
+	commands: () => IBaseExecution<ComplexTypes.command[]>;
+	featureStatus: () => IBaseExecution<featureStatus>;
+	listItem: () => IBaseExecution<listItem>;
+	versions: () => IBaseExecution<driveItemVersionCollection>;
+}
+/*********************************************
+* item Collection
 **********************************************/
 export interface itemCollection {
     results: item[];
@@ -108,7 +136,13 @@ export interface permission  {
 
 }
 /*********************************************
-* permission
+* permission Methods
+**********************************************/
+export interface permissionMethods {
+
+}
+/*********************************************
+* permission Collection
 **********************************************/
 export interface permissionCollection {
     results: permission[];
@@ -126,7 +160,13 @@ export interface subscription  {
 
 }
 /*********************************************
-* subscription
+* subscription Methods
+**********************************************/
+export interface subscriptionMethods {
+
+}
+/*********************************************
+* subscription Collection
 **********************************************/
 export interface subscriptionCollection {
     results: subscription[];
@@ -142,7 +182,13 @@ export interface thumbnailSet  {
 
 }
 /*********************************************
-* thumbnailSet
+* thumbnailSet Methods
+**********************************************/
+export interface thumbnailSetMethods {
+
+}
+/*********************************************
+* thumbnailSet Collection
 **********************************************/
 export interface thumbnailSetCollection {
     results: thumbnailSet[];
@@ -161,7 +207,14 @@ export interface activityEntity  {
 	listItem: () => IBaseExecution<listItem>;
 }
 /*********************************************
-* activityEntity
+* activityEntity Methods
+**********************************************/
+export interface activityEntityMethods {
+	driveItem: () => IBaseExecution<item>;
+	listItem: () => IBaseExecution<listItem>;
+}
+/*********************************************
+* activityEntity Collection
 **********************************************/
 export interface activityEntityCollection {
     results: activityEntity[];
@@ -204,7 +257,17 @@ export interface listItem extends baseItem {
 	versions: () => IBaseExecution<listItemVersionCollection>;
 }
 /*********************************************
-* listItem
+* listItem Methods
+**********************************************/
+export interface listItemMethods {
+	activities: () => IBaseExecution<activityEntityCollection>;
+	analytics: () => IBaseExecution<analytics>;
+	driveItem: () => IBaseExecution<item>;
+	fields: () => IBaseExecution<fieldValueSet>;
+	versions: () => IBaseExecution<listItemVersionCollection>;
+}
+/*********************************************
+* listItem Collection
 **********************************************/
 export interface listItemCollection {
     results: listItem[];
@@ -234,7 +297,13 @@ export interface listItemVersion extends baseItemVersion {
 	fields: () => IBaseExecution<fieldValueSet>;
 }
 /*********************************************
-* listItemVersion
+* listItemVersion Methods
+**********************************************/
+export interface listItemVersionMethods {
+	fields: () => IBaseExecution<fieldValueSet>;
+}
+/*********************************************
+* listItemVersion Collection
 **********************************************/
 export interface listItemVersionCollection {
     results: listItemVersion[];
@@ -247,7 +316,13 @@ export interface driveItemVersion extends baseItemVersion {
 	streams: () => IBaseExecution<streamCollection>;
 }
 /*********************************************
-* driveItemVersion
+* driveItemVersion Methods
+**********************************************/
+export interface driveItemVersionMethods {
+	streams: () => IBaseExecution<streamCollection>;
+}
+/*********************************************
+* driveItemVersion Collection
 **********************************************/
 export interface driveItemVersionCollection {
     results: driveItemVersion[];
@@ -263,7 +338,13 @@ export interface stream  {
 
 }
 /*********************************************
-* stream
+* stream Methods
+**********************************************/
+export interface streamMethods {
+
+}
+/*********************************************
+* stream Collection
 **********************************************/
 export interface streamCollection {
     results: stream[];
@@ -296,7 +377,13 @@ export interface columnDefinition  {
 
 }
 /*********************************************
-* columnDefinition
+* columnDefinition Methods
+**********************************************/
+export interface columnDefinitionMethods {
+
+}
+/*********************************************
+* columnDefinition Collection
 **********************************************/
 export interface columnDefinitionCollection {
     results: columnDefinition[];
@@ -318,7 +405,13 @@ export interface contentType  {
 	columnLinks: () => IBaseExecution<columnLinkCollection>;
 }
 /*********************************************
-* contentType
+* contentType Methods
+**********************************************/
+export interface contentTypeMethods {
+	columnLinks: () => IBaseExecution<columnLinkCollection>;
+}
+/*********************************************
+* contentType Collection
 **********************************************/
 export interface contentTypeCollection {
     results: contentType[];
@@ -332,7 +425,13 @@ export interface columnLink  {
 
 }
 /*********************************************
-* columnLink
+* columnLink Methods
+**********************************************/
+export interface columnLinkMethods {
+
+}
+/*********************************************
+* columnLink Collection
 **********************************************/
 export interface columnLinkCollection {
     results: columnLink[];
@@ -347,7 +446,13 @@ export interface itemActivityStatEntity  {
 
 }
 /*********************************************
-* itemActivityStatEntity
+* itemActivityStatEntity Methods
+**********************************************/
+export interface itemActivityStatEntityMethods {
+
+}
+/*********************************************
+* itemActivityStatEntity Collection
 **********************************************/
 export interface itemActivityStatEntityCollection {
     results: itemActivityStatEntity[];
@@ -362,7 +467,13 @@ export interface driveApp  {
 	actions: () => IBaseExecution<driveAppActionCollection>;
 }
 /*********************************************
-* driveApp
+* driveApp Methods
+**********************************************/
+export interface driveAppMethods {
+	actions: () => IBaseExecution<driveAppActionCollection>;
+}
+/*********************************************
+* driveApp Collection
 **********************************************/
 export interface driveAppCollection {
     results: driveApp[];
@@ -380,7 +491,13 @@ export interface driveAppAction  {
 
 }
 /*********************************************
-* driveAppAction
+* driveAppAction Methods
+**********************************************/
+export interface driveAppActionMethods {
+
+}
+/*********************************************
+* driveAppAction Collection
 **********************************************/
 export interface driveAppActionCollection {
     results: driveAppAction[];
@@ -400,7 +517,17 @@ export interface list extends baseItem {
 	items: () => IBaseExecution<listItemCollection>;
 }
 /*********************************************
-* list
+* list Methods
+**********************************************/
+export interface listMethods {
+	activities: () => IBaseExecution<activityEntityCollection>;
+	columns: () => IBaseExecution<columnDefinitionCollection>;
+	contentTypes: () => IBaseExecution<contentTypeCollection>;
+	drive: () => IBaseExecution<drive>;
+	items: () => IBaseExecution<listItemCollection>;
+}
+/*********************************************
+* list Collection
 **********************************************/
 export interface listCollection {
     results: list[];
@@ -422,7 +549,13 @@ export interface baseItem  {
 
 }
 /*********************************************
-* baseItem
+* baseItem Methods
+**********************************************/
+export interface baseItemMethods {
+
+}
+/*********************************************
+* baseItem Collection
 **********************************************/
 export interface baseItemCollection {
     results: baseItem[];
@@ -445,7 +578,20 @@ export interface site extends baseItem {
 	sites: () => IBaseExecution<siteCollection>;
 }
 /*********************************************
-* site
+* site Methods
+**********************************************/
+export interface siteMethods {
+	analytics: () => IBaseExecution<analytics>;
+	columns: () => IBaseExecution<columnDefinitionCollection>;
+	contentTypes: () => IBaseExecution<contentTypeCollection>;
+	drive: () => IBaseExecution<drive>;
+	drives: () => IBaseExecution<driveCollection>;
+	items: () => IBaseExecution<baseItemCollection>;
+	lists: () => IBaseExecution<listCollection>;
+	sites: () => IBaseExecution<siteCollection>;
+}
+/*********************************************
+* site Collection
 **********************************************/
 export interface siteCollection {
     results: site[];
