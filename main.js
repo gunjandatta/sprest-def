@@ -378,8 +378,7 @@ function processGraph(schemas) {
                     if (returnType) {
                         // Update the return type
                         let values = returnType.split(".");
-                        values.length > 0 ? values.slice(0, 1) : null;
-                        returnType = values.join(".");
+                        returnType = values[1];
                     }
 
                     // Parse the properties
