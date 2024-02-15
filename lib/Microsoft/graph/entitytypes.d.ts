@@ -100,7 +100,6 @@ export interface item  {
 	featureStatus: () => IBaseExecution<featureStatus>;
 	listItem: () => IBaseExecution<listItem>;
 	versions: () => IBaseExecution<driveItemVersionCollection>;
-	update: (values: any) => IBaseExecution<void>;
 }
 /*********************************************
 * item Methods
@@ -116,14 +115,13 @@ export interface itemMethods {
 	featureStatus: () => IBaseExecution<featureStatus>;
 	listItem: () => IBaseExecution<listItem>;
 	versions: () => IBaseExecution<driveItemVersionCollection>;
-	update: (values: any) => IBaseExecution<void>;
 }
 /*********************************************
 * item Collection
 **********************************************/
 export interface itemCollection {
     results: item[];
-    add: (values: any) => IBaseExecution<item>;
+    
 }
 /*********************************************
 * permission
@@ -263,6 +261,7 @@ export interface listItem extends baseItem {
 	driveItem: () => IBaseExecution<item>;
 	fields: () => IBaseExecution<fieldValueSet>;
 	versions: () => IBaseExecution<listItemVersionCollection>;
+	update: (values: any) => IBaseExecution<void>;
 }
 /*********************************************
 * listItem Methods
@@ -273,13 +272,14 @@ export interface listItemMethods {
 	driveItem: () => IBaseExecution<item>;
 	fields: () => IBaseExecution<fieldValueSet>;
 	versions: () => IBaseExecution<listItemVersionCollection>;
+	update: (values: any) => IBaseExecution<void>;
 }
 /*********************************************
 * listItem Collection
 **********************************************/
 export interface listItemCollection {
     results: listItem[];
-    
+    add: (values: any) => IBaseExecution<item>;
 }
 /*********************************************
 * fieldValueSet
@@ -386,20 +386,20 @@ export interface columnDefinition  {
 	readOnly: boolean;
 	required: boolean;
 	text: ComplexTypes.textColumn;
-
+	update: (values: any) => IBaseExecution<void>;
 }
 /*********************************************
 * columnDefinition Methods
 **********************************************/
 export interface columnDefinitionMethods {
-
+	update: (values: any) => IBaseExecution<void>;
 }
 /*********************************************
 * columnDefinition Collection
 **********************************************/
 export interface columnDefinitionCollection {
     results: columnDefinition[];
-    
+    add: (values: any) => IBaseExecution<ComplexTypes.columnDefinition>;
 }
 /*********************************************
 * contentType
@@ -628,18 +628,4 @@ export interface sharePoint  {
 
 	site: () => IBaseExecution<site>;
 	sites: () => IBaseExecution<siteCollection>;
-}
-/*********************************************
-* column
-**********************************************/
-export interface column  {
-
-	update: (values: any) => IBaseExecution<void>;
-}
-/*********************************************
-* columnCollection
-**********************************************/
-export interface columnCollection  {
-
-	add: (values: any) => IBaseExecution<column>;
 }

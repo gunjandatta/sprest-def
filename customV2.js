@@ -2,14 +2,14 @@
  * Custom Methods for the v2 rest api
  */
 module.exports = {
-    column: [
+    columnDefinition: [
         {
             name: "update",
             returnType: "void",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
-    columnCollection: [
+    columnDefinitionCollection: [
         {
             name: "add",
             returnType: "column",
@@ -30,14 +30,14 @@ module.exports = {
             argNames: [{ name: "values", type: "any" }]
         }
     ],
-    item: [
+    listItem: [
         {
             name: "update",
             returnType: "void",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
-    itemCollection: [
+    listItemCollection: [
         {
             name: "add",
             returnType: "item",
