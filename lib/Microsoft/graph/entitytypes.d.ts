@@ -158,7 +158,7 @@ export interface featureStatus  {
 /*********************************************
 * listItem
 **********************************************/
-export interface listItem  {
+export interface listItem extends oneDrive.baseItem {
 	contentType: ComplexTypes.contentTypeFacet;
 	sharepointIds: ComplexTypes.sharepointIds;
 	activities: () => IBaseExecution<activityEntity[]>;
@@ -187,14 +187,14 @@ export interface baseItemVersion  {
 /*********************************************
 * listItemVersion
 **********************************************/
-export interface listItemVersion  {
+export interface listItemVersion extends oneDrive.baseItemVersion {
 
 	fields: () => IBaseExecution<fieldValueSet>;
 }
 /*********************************************
 * driveItemVersion
 **********************************************/
-export interface driveItemVersion  {
+export interface driveItemVersion extends oneDrive.baseItemVersion {
 	size: number;
 	streams: () => IBaseExecution<stream[]>;
 }
@@ -292,7 +292,7 @@ export interface driveAppAction  {
 /*********************************************
 * list
 **********************************************/
-export interface list  {
+export interface list extends oneDrive.baseItem {
 	displayName: string;
 	list: ComplexTypes.listInfo;
 	sharepointIds: ComplexTypes.sharepointIds;
@@ -322,7 +322,7 @@ export interface baseItem  {
 /*********************************************
 * site
 **********************************************/
-export interface site  {
+export interface site extends oneDrive.baseItem {
 	root: ComplexTypes.root;
 	sharepointIds: ComplexTypes.sharepointIds;
 	siteCollection: ComplexTypes.siteCollection;

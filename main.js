@@ -372,7 +372,15 @@ function processGraph(schemas) {
                 // Parse the values
                 for (let entityType of value) {
                     let name = entityType.$.Name;
-                    let returnType = entityType.BaseType;
+                    let returnType = entityType.$.BaseType;
+
+                    // See if the return type exists
+                    if (returnType) {
+                        // Update the return type
+                        let values = returnType.split(".");
+                        values.length > 0 ? values.slice(0, 1) : null;
+                        returnType = values.join(".");
+                    }
 
                     // Parse the properties
                     let props = [];
@@ -1121,7 +1129,7 @@ function processREST(schemas) {
                     // Update the references
                     updateReferences(fileImports, dirName, type);
 
-                    if(propName == "Cells") {
+                    if (propName == "Cells") {
                         console.log(propName);
                         console.log(type);
                     }
