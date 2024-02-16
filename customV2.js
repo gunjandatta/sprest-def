@@ -56,6 +56,16 @@ module.exports = {
             name: "add",
             returnType: "list",
             argNames: [{ name: "values", type: "any" }]
+        },
+        {
+            name: "getById",
+            returnType: "list",
+            argNames: [{ name: "id", type: "string" }]
+        },
+        {
+            name: "getByTitle",
+            returnType: "list",
+            argNames: [{ name: "title", type: "string" }]
         }
     ],
     permission: [
