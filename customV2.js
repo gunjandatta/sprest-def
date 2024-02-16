@@ -82,6 +82,12 @@ module.exports = {
             argNames: [{ name: "values", type: "any" }]
         }
     ],
+    site: [
+        {
+            name: "permissions",
+            returnType: "permissionCollection"
+        }
+    ],
     siteCollection: [
         {
             name: "add",

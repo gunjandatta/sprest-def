@@ -731,7 +731,7 @@ ${methods.join('\n')}
                     let argName = argNames[i];
                     argStrings.push(argName.name + ": " + argName.type);
                 }
-                customMethods.push(customProp.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(customProp.returnType, true) + ">;");
+                customMethods.push("\t" + customProp.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(customProp.returnType, true) + ">;");
             }
             content.push(`/*********************************************
 * ${name} Methods
@@ -744,7 +744,7 @@ ${methods.join('\n')}
 **********************************************/
 export interface ${name}Collection {
     results: ${name}[];
-    ${customMethods.join(",")}
+${customMethods.join("\n")}
 }`);
         }
     }

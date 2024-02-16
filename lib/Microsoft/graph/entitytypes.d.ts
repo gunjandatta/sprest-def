@@ -51,7 +51,7 @@ export interface driveMethods {
 **********************************************/
 export interface driveCollection {
     results: drive[];
-    
+
 }
 /*********************************************
 * share
@@ -145,7 +145,7 @@ export interface itemMethods {
 **********************************************/
 export interface itemCollection {
     results: item[];
-    
+
 }
 /*********************************************
 * permission
@@ -172,7 +172,7 @@ export interface permissionMethods {
 **********************************************/
 export interface permissionCollection {
     results: permission[];
-    add(values: any): IBaseExecution<permission>;
+	add(values: any): IBaseExecution<permission>;
 }
 /*********************************************
 * subscription
@@ -197,7 +197,7 @@ export interface subscriptionMethods {
 **********************************************/
 export interface subscriptionCollection {
     results: subscription[];
-    
+
 }
 /*********************************************
 * thumbnailSet
@@ -220,7 +220,7 @@ export interface thumbnailSetMethods {
 **********************************************/
 export interface thumbnailSetCollection {
     results: thumbnailSet[];
-    
+
 }
 /*********************************************
 * activityEntity
@@ -247,7 +247,7 @@ export interface activityEntityMethods {
 **********************************************/
 export interface activityEntityCollection {
     results: activityEntity[];
-    
+
 }
 /*********************************************
 * analytics
@@ -307,7 +307,7 @@ export interface listItemMethods {
 **********************************************/
 export interface listItemCollection {
     results: listItem[];
-    add(values: any): IBaseExecution<item>;
+	add(values: any): IBaseExecution<item>;
 }
 /*********************************************
 * fieldValueSet
@@ -344,7 +344,7 @@ export interface listItemVersionMethods {
 **********************************************/
 export interface listItemVersionCollection {
     results: listItemVersion[];
-    
+
 }
 /*********************************************
 * driveItemVersion
@@ -366,7 +366,7 @@ export interface driveItemVersionMethods {
 **********************************************/
 export interface driveItemVersionCollection {
     results: driveItemVersion[];
-    
+
 }
 /*********************************************
 * stream
@@ -389,7 +389,7 @@ export interface streamMethods {
 **********************************************/
 export interface streamCollection {
     results: stream[];
-    
+
 }
 /*********************************************
 * columnDefinition
@@ -429,7 +429,7 @@ export interface columnDefinitionMethods {
 **********************************************/
 export interface columnDefinitionCollection {
     results: columnDefinition[];
-    add(values: any): IBaseExecution<ComplexTypes.columnDefinition>;
+	add(values: any): IBaseExecution<ComplexTypes.columnDefinition>;
 }
 /*********************************************
 * contentType
@@ -462,7 +462,7 @@ export interface contentTypeMethods {
 **********************************************/
 export interface contentTypeCollection {
     results: contentType[];
-    add(values: any): IBaseExecution<contentType>;
+	add(values: any): IBaseExecution<contentType>;
 }
 /*********************************************
 * columnLink
@@ -483,7 +483,7 @@ export interface columnLinkMethods {
 **********************************************/
 export interface columnLinkCollection {
     results: columnLink[];
-    
+
 }
 /*********************************************
 * itemActivityStatEntity
@@ -505,7 +505,7 @@ export interface itemActivityStatEntityMethods {
 **********************************************/
 export interface itemActivityStatEntityCollection {
     results: itemActivityStatEntity[];
-    
+
 }
 /*********************************************
 * driveApp
@@ -529,7 +529,7 @@ export interface driveAppMethods {
 **********************************************/
 export interface driveAppCollection {
     results: driveApp[];
-    
+
 }
 /*********************************************
 * driveAppAction
@@ -554,7 +554,7 @@ export interface driveAppActionMethods {
 **********************************************/
 export interface driveAppActionCollection {
     results: driveAppAction[];
-    
+
 }
 /*********************************************
 * list
@@ -595,7 +595,9 @@ export interface listMethods {
 **********************************************/
 export interface listCollection {
     results: list[];
-    add(values: any): IBaseExecution<list>;
+	add(values: any): IBaseExecution<list>;
+	getById(id: string): IBaseExecution<list>;
+	getByTitle(title: string): IBaseExecution<list>;
 }
 /*********************************************
 * baseItem
@@ -624,7 +626,7 @@ export interface baseItemMethods {
 **********************************************/
 export interface baseItemCollection {
     results: baseItem[];
-    
+
 }
 /*********************************************
 * site
@@ -648,6 +650,7 @@ export interface site extends baseItem {
 	lists(id: string | number): IBaseExecution<list> & listMethods;
 	sites(): IBaseExecution<siteCollection>;
 	sites(id: string | number): IBaseExecution<site> & siteMethods;
+	permissions(): IBaseExecution<permissionCollection>;
 }
 /*********************************************
 * site Methods
@@ -667,13 +670,14 @@ export interface siteMethods {
 	lists(id: string | number): IBaseExecution<list> & listMethods;
 	sites(): IBaseExecution<siteCollection>;
 	sites(id: string | number): IBaseExecution<site> & siteMethods;
+	permissions(): IBaseExecution<permissionCollection>;
 }
 /*********************************************
 * site Collection
 **********************************************/
 export interface siteCollection {
     results: site[];
-    add(values: any): IBaseExecution<site>;
+	add(values: any): IBaseExecution<site>;
 }
 /*********************************************
 * sharePoint
