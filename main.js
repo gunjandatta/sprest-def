@@ -419,7 +419,16 @@ function processGraph(schemas) {
                             collections[collectionType] = returnType;
 
                             // Add a method to get an object from the collection by its id
-                            methods.push({ name, returnType: collectionType, argNames: [{ name: "id", type: "string | number", returnType: collectionType }] });
+                            methods.push({
+                                name,
+                                returnType: collectionType,
+                                returnType2: name + "Methods",
+                                argNames: [{
+                                    name: "id",
+                                    type: "string | number",
+                                    returnType: collectionType
+                                }]
+                            });
                         }
                     }
 
@@ -696,7 +705,7 @@ ${props.join('\n')}
                 let argName = argNames[i];
                 argStrings.push(argName.name + ": " + argName.type);
             }
-            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(method.returnType, true) + ">;");
+            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(method.returnType, true) + ">" + (method.returnType2 ? " & " + method.returnType2 : "") + ";");
         }
 
         // Add the endpoint
