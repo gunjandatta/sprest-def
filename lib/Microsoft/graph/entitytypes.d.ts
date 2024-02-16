@@ -13,38 +13,38 @@ export interface drive  {
 	sharePointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.system;
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	activitycounts(): IBaseExecution<itemActivityStatEntityCollection>;
-	activitycounts(id: string | number): IBaseExecution<itemActivityStatEntity> & activitycountsMethods;
+	activitycounts(id: string | number): IBaseExecution<itemActivityStatEntity> & itemActivityStatEntityMethods;
 	apps(): IBaseExecution<driveAppCollection>;
-	apps(id: string | number): IBaseExecution<driveApp> & appsMethods;
+	apps(id: string | number): IBaseExecution<driveApp> & driveAppMethods;
 	commands(): IBaseExecution<ComplexTypes.command[]>;
 	items(): IBaseExecution<itemCollection>;
-	items(id: string | number): IBaseExecution<item> & itemsMethods;
+	items(id: string | number): IBaseExecution<item> & itemMethods;
 	list(): IBaseExecution<list>;
 	special(): IBaseExecution<itemCollection>;
-	special(id: string | number): IBaseExecution<item> & specialMethods;
+	special(id: string | number): IBaseExecution<item> & itemMethods;
 	trackedItems(): IBaseExecution<itemCollection>;
-	trackedItems(id: string | number): IBaseExecution<item> & trackedItemsMethods;
+	trackedItems(id: string | number): IBaseExecution<item> & itemMethods;
 }
 /*********************************************
 * drive Methods
 **********************************************/
 export interface driveMethods {
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	activitycounts(): IBaseExecution<itemActivityStatEntityCollection>;
-	activitycounts(id: string | number): IBaseExecution<itemActivityStatEntity> & activitycountsMethods;
+	activitycounts(id: string | number): IBaseExecution<itemActivityStatEntity> & itemActivityStatEntityMethods;
 	apps(): IBaseExecution<driveAppCollection>;
-	apps(id: string | number): IBaseExecution<driveApp> & appsMethods;
+	apps(id: string | number): IBaseExecution<driveApp> & driveAppMethods;
 	commands(): IBaseExecution<ComplexTypes.command[]>;
 	items(): IBaseExecution<itemCollection>;
-	items(id: string | number): IBaseExecution<item> & itemsMethods;
+	items(id: string | number): IBaseExecution<item> & itemMethods;
 	list(): IBaseExecution<list>;
 	special(): IBaseExecution<itemCollection>;
-	special(id: string | number): IBaseExecution<item> & specialMethods;
+	special(id: string | number): IBaseExecution<item> & itemMethods;
 	trackedItems(): IBaseExecution<itemCollection>;
-	trackedItems(id: string | number): IBaseExecution<item> & trackedItemsMethods;
+	trackedItems(id: string | number): IBaseExecution<item> & itemMethods;
 }
 /*********************************************
 * drive Collection
@@ -103,42 +103,42 @@ export interface item  {
 	media: ComplexTypes.media;
 	source: ComplexTypes.driveItemSource;
 	permissions(): IBaseExecution<permissionCollection>;
-	permissions(id: string | number): IBaseExecution<permission> & permissionsMethods;
+	permissions(id: string | number): IBaseExecution<permission> & permissionMethods;
 	children(): IBaseExecution<itemCollection>;
-	children(id: string | number): IBaseExecution<item> & childrenMethods;
+	children(id: string | number): IBaseExecution<item> & itemMethods;
 	subscriptions(): IBaseExecution<subscriptionCollection>;
-	subscriptions(id: string | number): IBaseExecution<subscription> & subscriptionsMethods;
+	subscriptions(id: string | number): IBaseExecution<subscription> & subscriptionMethods;
 	thumbnails(): IBaseExecution<thumbnailSetCollection>;
-	thumbnails(id: string | number): IBaseExecution<thumbnailSet> & thumbnailsMethods;
+	thumbnails(id: string | number): IBaseExecution<thumbnailSet> & thumbnailSetMethods;
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	analytics(): IBaseExecution<analytics>;
 	commands(): IBaseExecution<ComplexTypes.command[]>;
 	featureStatus(): IBaseExecution<featureStatus>;
 	listItem(): IBaseExecution<listItem>;
 	versions(): IBaseExecution<driveItemVersionCollection>;
-	versions(id: string | number): IBaseExecution<driveItemVersion> & versionsMethods;
+	versions(id: string | number): IBaseExecution<driveItemVersion> & driveItemVersionMethods;
 }
 /*********************************************
 * item Methods
 **********************************************/
 export interface itemMethods {
 	permissions(): IBaseExecution<permissionCollection>;
-	permissions(id: string | number): IBaseExecution<permission> & permissionsMethods;
+	permissions(id: string | number): IBaseExecution<permission> & permissionMethods;
 	children(): IBaseExecution<itemCollection>;
-	children(id: string | number): IBaseExecution<item> & childrenMethods;
+	children(id: string | number): IBaseExecution<item> & itemMethods;
 	subscriptions(): IBaseExecution<subscriptionCollection>;
-	subscriptions(id: string | number): IBaseExecution<subscription> & subscriptionsMethods;
+	subscriptions(id: string | number): IBaseExecution<subscription> & subscriptionMethods;
 	thumbnails(): IBaseExecution<thumbnailSetCollection>;
-	thumbnails(id: string | number): IBaseExecution<thumbnailSet> & thumbnailsMethods;
+	thumbnails(id: string | number): IBaseExecution<thumbnailSet> & thumbnailSetMethods;
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	analytics(): IBaseExecution<analytics>;
 	commands(): IBaseExecution<ComplexTypes.command[]>;
 	featureStatus(): IBaseExecution<featureStatus>;
 	listItem(): IBaseExecution<listItem>;
 	versions(): IBaseExecution<driveItemVersionCollection>;
-	versions(id: string | number): IBaseExecution<driveItemVersion> & versionsMethods;
+	versions(id: string | number): IBaseExecution<driveItemVersion> & driveItemVersionMethods;
 }
 /*********************************************
 * item Collection
@@ -281,12 +281,12 @@ export interface listItem extends baseItem {
 	contentType: ComplexTypes.contentTypeFacet;
 	sharepointIds: ComplexTypes.sharepointIds;
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	analytics(): IBaseExecution<analytics>;
 	driveItem(): IBaseExecution<item>;
 	fields(): IBaseExecution<fieldValueSet>;
 	versions(): IBaseExecution<listItemVersionCollection>;
-	versions(id: string | number): IBaseExecution<listItemVersion> & versionsMethods;
+	versions(id: string | number): IBaseExecution<listItemVersion> & listItemVersionMethods;
 	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
@@ -294,12 +294,12 @@ export interface listItem extends baseItem {
 **********************************************/
 export interface listItemMethods {
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	analytics(): IBaseExecution<analytics>;
 	driveItem(): IBaseExecution<item>;
 	fields(): IBaseExecution<fieldValueSet>;
 	versions(): IBaseExecution<listItemVersionCollection>;
-	versions(id: string | number): IBaseExecution<listItemVersion> & versionsMethods;
+	versions(id: string | number): IBaseExecution<listItemVersion> & listItemVersionMethods;
 	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
@@ -352,14 +352,14 @@ export interface listItemVersionCollection {
 export interface driveItemVersion extends baseItemVersion {
 	size: number;
 	streams(): IBaseExecution<streamCollection>;
-	streams(id: string | number): IBaseExecution<stream> & streamsMethods;
+	streams(id: string | number): IBaseExecution<stream> & streamMethods;
 }
 /*********************************************
 * driveItemVersion Methods
 **********************************************/
 export interface driveItemVersionMethods {
 	streams(): IBaseExecution<streamCollection>;
-	streams(id: string | number): IBaseExecution<stream> & streamsMethods;
+	streams(id: string | number): IBaseExecution<stream> & streamMethods;
 }
 /*********************************************
 * driveItemVersion Collection
@@ -446,7 +446,7 @@ export interface contentType  {
 	readOnly: boolean;
 	sealed: boolean;
 	columnLinks(): IBaseExecution<columnLinkCollection>;
-	columnLinks(id: string | number): IBaseExecution<columnLink> & columnLinksMethods;
+	columnLinks(id: string | number): IBaseExecution<columnLink> & columnLinkMethods;
 	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
@@ -454,7 +454,7 @@ export interface contentType  {
 **********************************************/
 export interface contentTypeMethods {
 	columnLinks(): IBaseExecution<columnLinkCollection>;
-	columnLinks(id: string | number): IBaseExecution<columnLink> & columnLinksMethods;
+	columnLinks(id: string | number): IBaseExecution<columnLink> & columnLinkMethods;
 	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
@@ -515,14 +515,14 @@ export interface driveApp  {
 	fileHandler: ComplexTypes.fileHandler;
 	id: string;
 	actions(): IBaseExecution<driveAppActionCollection>;
-	actions(id: string | number): IBaseExecution<driveAppAction> & actionsMethods;
+	actions(id: string | number): IBaseExecution<driveAppAction> & driveAppActionMethods;
 }
 /*********************************************
 * driveApp Methods
 **********************************************/
 export interface driveAppMethods {
 	actions(): IBaseExecution<driveAppActionCollection>;
-	actions(id: string | number): IBaseExecution<driveAppAction> & actionsMethods;
+	actions(id: string | number): IBaseExecution<driveAppAction> & driveAppActionMethods;
 }
 /*********************************************
 * driveApp Collection
@@ -565,14 +565,14 @@ export interface list extends baseItem {
 	sharepointIds: ComplexTypes.sharepointIds;
 	system: ComplexTypes.system;
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	columns(): IBaseExecution<columnDefinitionCollection>;
-	columns(id: string | number): IBaseExecution<columnDefinition> & columnsMethods;
+	columns(id: string | number): IBaseExecution<columnDefinition> & columnDefinitionMethods;
 	contentTypes(): IBaseExecution<contentTypeCollection>;
-	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypesMethods;
+	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypeMethods;
 	drive(): IBaseExecution<drive>;
 	items(): IBaseExecution<listItemCollection>;
-	items(id: string | number): IBaseExecution<listItem> & itemsMethods;
+	items(id: string | number): IBaseExecution<listItem> & listItemMethods;
 	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
@@ -580,14 +580,14 @@ export interface list extends baseItem {
 **********************************************/
 export interface listMethods {
 	activities(): IBaseExecution<activityEntityCollection>;
-	activities(id: string | number): IBaseExecution<activityEntity> & activitiesMethods;
+	activities(id: string | number): IBaseExecution<activityEntity> & activityEntityMethods;
 	columns(): IBaseExecution<columnDefinitionCollection>;
-	columns(id: string | number): IBaseExecution<columnDefinition> & columnsMethods;
+	columns(id: string | number): IBaseExecution<columnDefinition> & columnDefinitionMethods;
 	contentTypes(): IBaseExecution<contentTypeCollection>;
-	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypesMethods;
+	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypeMethods;
 	drive(): IBaseExecution<drive>;
 	items(): IBaseExecution<listItemCollection>;
-	items(id: string | number): IBaseExecution<listItem> & itemsMethods;
+	items(id: string | number): IBaseExecution<listItem> & listItemMethods;
 	update(values: any): IBaseExecution<void>;
 }
 /*********************************************
@@ -636,18 +636,18 @@ export interface site extends baseItem {
 	title: string;
 	analytics(): IBaseExecution<analytics>;
 	columns(): IBaseExecution<columnDefinitionCollection>;
-	columns(id: string | number): IBaseExecution<columnDefinition> & columnsMethods;
+	columns(id: string | number): IBaseExecution<columnDefinition> & columnDefinitionMethods;
 	contentTypes(): IBaseExecution<contentTypeCollection>;
-	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypesMethods;
+	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypeMethods;
 	drive(): IBaseExecution<drive>;
 	drives(): IBaseExecution<driveCollection>;
-	drives(id: string | number): IBaseExecution<drive> & drivesMethods;
+	drives(id: string | number): IBaseExecution<drive> & driveMethods;
 	items(): IBaseExecution<baseItemCollection>;
-	items(id: string | number): IBaseExecution<baseItem> & itemsMethods;
+	items(id: string | number): IBaseExecution<baseItem> & baseItemMethods;
 	lists(): IBaseExecution<listCollection>;
-	lists(id: string | number): IBaseExecution<list> & listsMethods;
+	lists(id: string | number): IBaseExecution<list> & listMethods;
 	sites(): IBaseExecution<siteCollection>;
-	sites(id: string | number): IBaseExecution<site> & sitesMethods;
+	sites(id: string | number): IBaseExecution<site> & siteMethods;
 }
 /*********************************************
 * site Methods
@@ -655,18 +655,18 @@ export interface site extends baseItem {
 export interface siteMethods {
 	analytics(): IBaseExecution<analytics>;
 	columns(): IBaseExecution<columnDefinitionCollection>;
-	columns(id: string | number): IBaseExecution<columnDefinition> & columnsMethods;
+	columns(id: string | number): IBaseExecution<columnDefinition> & columnDefinitionMethods;
 	contentTypes(): IBaseExecution<contentTypeCollection>;
-	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypesMethods;
+	contentTypes(id: string | number): IBaseExecution<contentType> & contentTypeMethods;
 	drive(): IBaseExecution<drive>;
 	drives(): IBaseExecution<driveCollection>;
-	drives(id: string | number): IBaseExecution<drive> & drivesMethods;
+	drives(id: string | number): IBaseExecution<drive> & driveMethods;
 	items(): IBaseExecution<baseItemCollection>;
-	items(id: string | number): IBaseExecution<baseItem> & itemsMethods;
+	items(id: string | number): IBaseExecution<baseItem> & baseItemMethods;
 	lists(): IBaseExecution<listCollection>;
-	lists(id: string | number): IBaseExecution<list> & listsMethods;
+	lists(id: string | number): IBaseExecution<list> & listMethods;
 	sites(): IBaseExecution<siteCollection>;
-	sites(id: string | number): IBaseExecution<site> & sitesMethods;
+	sites(id: string | number): IBaseExecution<site> & siteMethods;
 }
 /*********************************************
 * site Collection
@@ -682,5 +682,5 @@ export interface sharePoint  {
 
 	site(): IBaseExecution<site>;
 	sites(): IBaseExecution<siteCollection>;
-	sites(id: string | number): IBaseExecution<site> & sitesMethods;
+	sites(id: string | number): IBaseExecution<site> & siteMethods;
 }

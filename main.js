@@ -422,7 +422,7 @@ function processGraph(schemas) {
                             methods.push({
                                 name,
                                 returnType: collectionType,
-                                returnType2: name + "Methods",
+                                returnType2: collectionType + "Methods",
                                 argNames: [{
                                     name: "id",
                                     type: "string | number",
