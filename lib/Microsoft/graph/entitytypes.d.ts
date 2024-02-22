@@ -651,6 +651,7 @@ export interface site extends baseItem {
 	sites(): IBaseExecution<siteCollection>;
 	sites(id: string | number): IBaseExecution<site> & siteMethods;
 	permissions(): IBaseExecution<permissionCollection>;
+	permissions(id: string): IBaseExecution<permission>;
 }
 /*********************************************
 * site Methods
@@ -671,6 +672,7 @@ export interface siteMethods {
 	sites(): IBaseExecution<siteCollection>;
 	sites(id: string | number): IBaseExecution<site> & siteMethods;
 	permissions(): IBaseExecution<permissionCollection>;
+	permissions(id: string): IBaseExecution<permission>;
 }
 /*********************************************
 * site Collection

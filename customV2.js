@@ -86,6 +86,11 @@ module.exports = {
         {
             name: "permissions",
             returnType: "permissionCollection"
+        },
+        {
+            name: "permissions",
+            returnType: "permission",
+            argNames: [{ name: "id", type: "string" }]
         }
     ],
     siteCollection: [
