@@ -138,6 +138,7 @@ export interface IMapperMethod {
  */
 export interface IMethodInfo {
     appendEndpointFl?: boolean;
+    appendRequest?: boolean;
     argNames?: Array<string>;
     argValues?: Array<any>;
     data?: any;
