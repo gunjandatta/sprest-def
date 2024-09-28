@@ -105,9 +105,11 @@ export interface HashTagCollections {
 export interface PersonalCacheItem {
 	AltTitle?: string;
 	CacheKey?: string;
+	CacheName?: string;
 	CacheValue?: string;
 	CacheValueHash?: string;
 	CacheVersion?: string;
+	ContainerUrl?: string;
 	ListItemId?: number;
 	ListItemUniqueId?: string;
 	ModifiedTimeUtc?: any;

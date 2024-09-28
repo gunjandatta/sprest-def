@@ -79,7 +79,15 @@ export interface AddressBarLinkSettingsCollections {
 export interface DirectSharingAbilities {
 	canAddExternalPrincipal?: SP.Sharing.SharingAbilityStatus;
 	canAddInternalPrincipal?: SP.Sharing.SharingAbilityStatus;
+	canAddNewExternalPrincipal?: SP.Sharing.SharingAbilityStatus;
 	canRequestGrantAccess?: SP.Sharing.SharingAbilityStatus;
+	canRequestGrantAccessForExistingExternalPrincipal?: SP.Sharing.SharingAbilityStatus;
+	canRequestGrantAccessForInternalPrincipal?: SP.Sharing.SharingAbilityStatus;
+	canRequestGrantAccessForNewExternalPrincipal?: SP.Sharing.SharingAbilityStatus;
+	supportsEditPermission?: SP.Sharing.SharingAbilityStatus;
+	supportsManageListPermission?: SP.Sharing.SharingAbilityStatus;
+	supportsReadPermission?: SP.Sharing.SharingAbilityStatus;
+	supportsRestrictedViewPermission?: SP.Sharing.SharingAbilityStatus;
 	supportsReviewPermission?: SP.Sharing.SharingAbilityStatus;
 }
 
@@ -254,6 +262,7 @@ export interface LinkInfo {
 	isInherited?: boolean;
 	linkDetails?: SP.SharingLinkInfo;
 	linkMembers?: { results: Array<SP.Sharing.Principal> };
+	linkStatus?: SP.Sharing.SharingAbilityStatus;
 	totalLinkMembersCount?: number;
 }
 
@@ -297,10 +306,12 @@ export interface OversharedWebInfoCollections {
 * PermissionCollection
 **********************************************/
 export interface PermissionCollection {
+	appConsentPrincipals?: { results: Array<SP.Sharing.PrincipalInfo> };
 	hasInheritedLinks?: boolean;
 	links?: { results: Array<SP.Sharing.LinkInfo> };
 	principals?: { results: Array<SP.Sharing.PrincipalInfo> };
 	siteAdmins?: { results: Array<SP.Sharing.PrincipalInfo> };
+	totalNumberOfPrincipals?: number;
 }
 
 /*********************************************
@@ -314,8 +325,10 @@ export interface PermissionCollectionCollections {
 * PrincipalInfo
 **********************************************/
 export interface PrincipalInfo {
+	ExpirationDateTimeOnACE?: any;
 	inheritedFrom?: SP.Sharing.InheritedFrom;
 	isInherited?: boolean;
+	members?: { results: Array<SP.Sharing.Principal> };
 	principal?: SP.Sharing.Principal;
 	role?: number;
 }
@@ -498,17 +511,20 @@ export interface SharingLinkAbilities {
 	canDeleteEditLink?: SP.Sharing.SharingAbilityStatus;
 	canDeleteManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canDeleteReadLink?: SP.Sharing.SharingAbilityStatus;
+	canDeleteRestrictedViewLink?: SP.Sharing.SharingAbilityStatus;
 	canDeleteReviewLink?: SP.Sharing.SharingAbilityStatus;
 	canDeleteSubmitOnlyLink?: SP.Sharing.SharingAbilityStatus;
 	canGetEditLink?: SP.Sharing.SharingAbilityStatus;
 	canGetManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReadLink?: SP.Sharing.SharingAbilityStatus;
+	canGetRestrictedViewLink?: SP.Sharing.SharingAbilityStatus;
 	canGetReviewLink?: SP.Sharing.SharingAbilityStatus;
 	canGetSubmitOnlyLink?: SP.Sharing.SharingAbilityStatus;
 	canHaveExternalUsers?: SP.Sharing.SharingAbilityStatus;
 	canManageEditLink?: SP.Sharing.SharingAbilityStatus;
 	canManageManageListLink?: SP.Sharing.SharingAbilityStatus;
 	canManageReadLink?: SP.Sharing.SharingAbilityStatus;
+	canManageRestrictedViewLink?: SP.Sharing.SharingAbilityStatus;
 	canManageReviewLink?: SP.Sharing.SharingAbilityStatus;
 	canManageSubmitOnlyLink?: SP.Sharing.SharingAbilityStatus;
 	linkExpiration?: SP.Sharing.SharingLinkExpirationAbilityStatus;
@@ -574,6 +590,7 @@ export interface SharingEntityResultSettingPolicyReasonCollections {
 **********************************************/
 export interface SharingInformationRequest {
 	clientSupportedFeatures?: string;
+	maxLinkMembersToReturn?: number;
 	maxPrincipalsToReturn?: number;
 	populateInheritedLinks?: boolean;
 }
@@ -740,6 +757,7 @@ export interface UserSharingResult {
 	CurrentRole?: number;
 	DisplayName?: string;
 	Email?: string;
+	ExpirationDateTimeOnACE?: any;
 	InvitationLink?: string;
 	IsUserKnown?: boolean;
 	Message?: string;

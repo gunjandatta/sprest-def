@@ -74,6 +74,20 @@ export interface HostedAppsManagerMethods {
 }
 
 /*********************************************
+* DependencyPropertyMetadata
+**********************************************/
+export interface DependencyPropertyMetadata {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* DependencyPropertyMetadataCollections
+**********************************************/
+export interface DependencyPropertyMetadataCollections {
+
+}
+
+/*********************************************
 * Spfx3rdPartyCustomPrincipalInfo
 **********************************************/
 export interface Spfx3rdPartyCustomPrincipalInfo {

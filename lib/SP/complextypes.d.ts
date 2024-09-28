@@ -1,5 +1,6 @@
 import { Base } from "../";
 import { SP } from "../";
+import { Microsoft } from "../";
 
 /*********************************************
 * KeyValue
@@ -366,24 +367,6 @@ export interface PivotItemCollections {
 }
 
 /*********************************************
-* VivaConnectionsUrlConfiguration
-**********************************************/
-export interface VivaConnectionsUrlConfiguration {
-	ContentUrl?: string;
-	DashboardNotConfiguredWarning?: string;
-	GlobalNavNotConfiguredWarning?: string;
-	NotHomeSiteUrlWarning?: string;
-	SearchUrl?: string;
-}
-
-/*********************************************
-* VivaConnectionsUrlConfigurationCollections
-**********************************************/
-export interface VivaConnectionsUrlConfigurationCollections {
-
-}
-
-/*********************************************
 * VivaHomeTitleRegion
 **********************************************/
 export interface VivaHomeTitleRegion {
@@ -400,6 +383,24 @@ export interface VivaHomeTitleRegion {
 * VivaHomeTitleRegionCollections
 **********************************************/
 export interface VivaHomeTitleRegionCollections {
+
+}
+
+/*********************************************
+* VivaConnectionsUrlConfiguration
+**********************************************/
+export interface VivaConnectionsUrlConfiguration {
+	ContentUrl?: string;
+	DashboardNotConfiguredWarning?: string;
+	GlobalNavNotConfiguredWarning?: string;
+	NotHomeSiteUrlWarning?: string;
+	SearchUrl?: string;
+}
+
+/*********************************************
+* VivaConnectionsUrlConfigurationCollections
+**********************************************/
+export interface VivaConnectionsUrlConfigurationCollections {
 
 }
 
@@ -422,8 +423,13 @@ export interface UserIdInfoCollections {
 * BrandCenterConfiguration
 **********************************************/
 export interface BrandCenterConfiguration {
+	BrandColorsListId?: any;
+	BrandColorsListUrl?: SP.ResourcePath;
+	BrandFontLibraryId?: any;
+	BrandFontLibraryUrl?: SP.ResourcePath;
 	IsBrandCenterSiteFeatureEnabled?: boolean;
 	IsPublicCdnEnabled?: boolean;
+	OrgAssets?: Microsoft.SharePoint.Administration.OrgAssets;
 	SiteId?: any;
 	SiteUrl?: string;
 }
@@ -511,6 +517,165 @@ export interface AdditionalAccessStatusResponseCollections {
 }
 
 /*********************************************
+* AgreementAttributeDTO
+**********************************************/
+export interface AgreementAttributeDTO {
+	ReviewCompleteDate?: any;
+	Reviewer?: SP.UserDTO;
+	ReviewId?: string;
+	ReviewStartDate?: any;
+	State?: number;
+}
+
+/*********************************************
+* AgreementAttributeDTOCollections
+**********************************************/
+export interface AgreementAttributeDTOCollections {
+
+}
+
+/*********************************************
+* UserDTO
+**********************************************/
+export interface UserDTO {
+	Email?: string;
+	LoginName?: string;
+}
+
+/*********************************************
+* UserDTOCollections
+**********************************************/
+export interface UserDTOCollections {
+
+}
+
+/*********************************************
+* AgreementAttributeRequestDTO
+**********************************************/
+export interface AgreementAttributeRequestDTO {
+	DocumentUri?: string;
+}
+
+/*********************************************
+* AgreementAttributeRequestDTOCollections
+**********************************************/
+export interface AgreementAttributeRequestDTOCollections {
+
+}
+
+/*********************************************
+* AgreementCountryResponse
+**********************************************/
+export interface AgreementCountryResponse {
+	CountryKey?: string;
+	DisplayName?: string;
+}
+
+/*********************************************
+* AgreementCountryResponseCollections
+**********************************************/
+export interface AgreementCountryResponseCollections {
+
+}
+
+/*********************************************
+* AgreementDataPair
+**********************************************/
+export interface AgreementDataPair {
+	Count?: number;
+	Name?: string;
+}
+
+/*********************************************
+* AgreementDataPairCollections
+**********************************************/
+export interface AgreementDataPairCollections {
+
+}
+
+/*********************************************
+* AgreementDocumentsInfo
+**********************************************/
+export interface AgreementDocumentsInfo {
+	Documents?: { results: Array<SP.AgreementDocument> };
+}
+
+/*********************************************
+* AgreementDocumentsInfoCollections
+**********************************************/
+export interface AgreementDocumentsInfoCollections {
+
+}
+
+/*********************************************
+* AgreementDocument
+**********************************************/
+export interface AgreementDocument {
+	DocumentType?: string;
+	DocumentUrl?: string;
+	IsActive?: boolean;
+	LinkedPDFs?: { results: Array<string> };
+	State?: string;
+}
+
+/*********************************************
+* AgreementDocumentCollections
+**********************************************/
+export interface AgreementDocumentCollections {
+
+}
+
+/*********************************************
+* AgreementESignStatusUpdatedPayload
+**********************************************/
+export interface AgreementESignStatusUpdatedPayload {
+	AgreementId?: any;
+	ExternalReference?: any;
+	SignedDocId?: any;
+	Status?: string;
+}
+
+/*********************************************
+* AgreementESignStatusUpdatedPayloadCollections
+**********************************************/
+export interface AgreementESignStatusUpdatedPayloadCollections {
+
+}
+
+/*********************************************
+* AgreementLocationData
+**********************************************/
+export interface AgreementLocationData {
+	LibraryId?: string;
+	SiteId?: string;
+	WebId?: string;
+}
+
+/*********************************************
+* AgreementLocationDataCollections
+**********************************************/
+export interface AgreementLocationDataCollections {
+
+}
+
+/*********************************************
+* AgreementLocation
+**********************************************/
+export interface AgreementLocation {
+	CategoryLabel?: string;
+	LibraryId?: any;
+	SiteId?: any;
+	WebId?: any;
+}
+
+/*********************************************
+* AgreementLocationCollections
+**********************************************/
+export interface AgreementLocationCollections {
+
+}
+
+/*********************************************
 * AgreementMetaData
 **********************************************/
 export interface AgreementMetaData {
@@ -519,16 +684,20 @@ export interface AgreementMetaData {
 	Country?: string;
 	CreatedBy?: string;
 	CreatedTime?: string;
+	Documents?: { results: Array<SP.AgreementDocument> };
 	EndDate?: string;
 	FirstParty?: string;
 	Language?: string;
 	Name?: string;
 	Owner?: string;
 	SecondParty?: string;
+	SiteId?: string;
 	StartDate?: string;
 	State?: string;
 	TotalValue?: string;
 	Url?: string;
+	WebId?: string;
+	WebUrl?: string;
 }
 
 /*********************************************
@@ -539,9 +708,49 @@ export interface AgreementMetaDataCollections {
 }
 
 /*********************************************
+* AgreementReportBaseData
+**********************************************/
+export interface AgreementReportBaseData {
+	ByExpirationStatus?: { results: Array<SP.AgreementDataPair> };
+	ErrorMessage?: string;
+	Expired?: number;
+	InEffect?: number;
+	InProgressByState?: { results: Array<SP.AgreementDataPair> };
+	NearExpiration?: number;
+}
+
+/*********************************************
+* AgreementReportBaseDataCollections
+**********************************************/
+export interface AgreementReportBaseDataCollections {
+
+}
+
+/*********************************************
+* AgreementReportFilter
+**********************************************/
+export interface AgreementReportFilter {
+	Category?: string;
+	FirstParty?: string;
+	Language?: string;
+	Location?: string;
+	Owner?: string;
+	SecondParty?: string;
+	State?: string;
+}
+
+/*********************************************
+* AgreementReportFilterCollections
+**********************************************/
+export interface AgreementReportFilterCollections {
+
+}
+
+/*********************************************
 * AgreementSearchParameters
 **********************************************/
 export interface AgreementSearchParameters {
+	AgreementNumber?: string;
 	Category?: string;
 	Owner?: string;
 	RowLimit?: number;
@@ -557,6 +766,25 @@ export interface AgreementSearchParametersCollections {
 }
 
 /*********************************************
+* AgreementSummaryData
+**********************************************/
+export interface AgreementSummaryData {
+	ByCategory?: { results: Array<SP.AgreementDataPair> };
+	ByExpirationYear?: { results: Array<SP.AgreementDataPair> };
+	ByFirstParty?: { results: Array<SP.AgreementDataPair> };
+	ByRenewalYear?: { results: Array<SP.AgreementDataPair> };
+	BySecondParty?: { results: Array<SP.AgreementDataPair> };
+	Evergreen?: number;
+}
+
+/*********************************************
+* AgreementSummaryDataCollections
+**********************************************/
+export interface AgreementSummaryDataCollections {
+
+}
+
+/*********************************************
 * ApprovalsCreateRequestParameters
 **********************************************/
 export interface ApprovalsCreateRequestParameters {
@@ -566,6 +794,7 @@ export interface ApprovalsCreateRequestParameters {
 	itemId?: string;
 	itemUrlType?: number;
 	listId?: string;
+	markDocAsFinal?: boolean;
 	title?: string;
 	url?: string;
 	version?: string;
@@ -692,6 +921,47 @@ export interface ContentAssemblyFormAnswerCollections {
 }
 
 /*********************************************
+* ContentAssemblyModernTemplateColumnsMappingInfo
+**********************************************/
+export interface ContentAssemblyModernTemplateColumnsMappingInfo {
+	DestinationListContentTypeId?: string;
+	DestinationSiteContentTypeId?: string;
+	Placeholders?: { results: Array<SP.PlaceholderV2> };
+}
+
+/*********************************************
+* ContentAssemblyModernTemplateColumnsMappingInfoCollections
+**********************************************/
+export interface ContentAssemblyModernTemplateColumnsMappingInfoCollections {
+
+}
+
+/*********************************************
+* PlaceholderV2
+**********************************************/
+export interface PlaceholderV2 {
+	AdditionalFieldsData?: string;
+	ColumnId?: string;
+	ColumnInternalName?: string;
+	DataType?: string;
+	FieldLibraryMappedId?: string;
+	FieldLibraryMappedVersion?: string;
+	Id?: string;
+	IsColumnMappingActive?: boolean;
+	IsMandatory?: boolean;
+	Name?: string;
+	QuestionTitle?: string;
+	Source?: string;
+}
+
+/*********************************************
+* PlaceholderV2Collections
+**********************************************/
+export interface PlaceholderV2Collections {
+
+}
+
+/*********************************************
 * ContentControlInfo
 **********************************************/
 export interface ContentControlInfo {
@@ -751,6 +1021,36 @@ export interface CreatableItemInfo {
 * CreatableItemInfoCollections
 **********************************************/
 export interface CreatableItemInfoCollections {
+
+}
+
+/*********************************************
+* CreateAgreementFolderInfo
+**********************************************/
+export interface CreateAgreementFolderInfo {
+	AgreementFolderServerRelativeUrl?: string;
+	AgreementNumber?: string;
+}
+
+/*********************************************
+* CreateAgreementFolderInfoCollections
+**********************************************/
+export interface CreateAgreementFolderInfoCollections {
+
+}
+
+/*********************************************
+* CreateReviewRequestDTO
+**********************************************/
+export interface CreateReviewRequestDTO {
+	DocumentUri?: string;
+	Reviewer?: string;
+}
+
+/*********************************************
+* CreateReviewRequestDTOCollections
+**********************************************/
+export interface CreateReviewRequestDTOCollections {
 
 }
 
@@ -821,11 +1121,13 @@ export interface CustomizedFormsPageCollections {
 export interface DocumentGenerationInfo {
 	ConditionalFieldsToBeDeleted?: { results: Array<string> };
 	ContentAssemblyFormAnswers?: { results: Array<SP.ContentAssemblyFormAnswer> };
+	CopyFieldsFromExistingDocument?: boolean;
 	FileName?: string;
 	FolderUrl?: string;
 	Format?: number;
 	IsTempFile?: boolean;
 	TempFileUrl?: string;
+	UpdateFolderPermissions?: boolean;
 }
 
 /*********************************************
@@ -865,6 +1167,22 @@ export interface FieldValuesWithUrlCollections {
 }
 
 /*********************************************
+* GridInitInfoType
+**********************************************/
+export interface GridInitInfoType {
+	ControllerId?: string;
+	GridSerializer?: string;
+	JsInitObj?: string;
+}
+
+/*********************************************
+* GridInitInfoTypeCollections
+**********************************************/
+export interface GridInitInfoTypeCollections {
+
+}
+
+/*********************************************
 * HTMLFieldSecuritySetting
 **********************************************/
 export interface HTMLFieldSecuritySetting {
@@ -894,6 +1212,22 @@ export interface IngestionTaskKey {
 * IngestionTaskKeyCollections
 **********************************************/
 export interface IngestionTaskKeyCollections {
+
+}
+
+/*********************************************
+* ItemOrderUpdateValue
+**********************************************/
+export interface ItemOrderUpdateValue {
+	HasException?: boolean;
+	ItemId?: number;
+	UpdatedOrder?: any;
+}
+
+/*********************************************
+* ItemOrderUpdateValueCollections
+**********************************************/
+export interface ItemOrderUpdateValueCollections {
 
 }
 
@@ -929,30 +1263,6 @@ export interface MultiGeoCopyParametersCollections {
 }
 
 /*********************************************
-* PlaceholderV2
-**********************************************/
-export interface PlaceholderV2 {
-	AdditionalFieldsData?: string;
-	ColumnId?: string;
-	DataType?: string;
-	FieldLibraryMappedId?: string;
-	FieldLibraryMappedVersion?: string;
-	Id?: string;
-	IsColumnMappingActive?: boolean;
-	IsMandatory?: boolean;
-	Name?: string;
-	QuestionTitle?: string;
-	Source?: string;
-}
-
-/*********************************************
-* PlaceholderV2Collections
-**********************************************/
-export interface PlaceholderV2Collections {
-
-}
-
-/*********************************************
 * Placeholder
 **********************************************/
 export interface Placeholder {
@@ -977,6 +1287,7 @@ export interface PlaceholderCollections {
 * PublishModernTemplatePayload
 **********************************************/
 export interface PublishModernTemplatePayload {
+	DisableSearchAndApprovals?: boolean;
 	Placeholders?: { results: Array<SP.PlaceholderV2> };
 	Snippets?: { results: Array<SP.Snippet> };
 	Url?: string;
@@ -1019,6 +1330,24 @@ export interface PublishSnippetPayload {
 * PublishSnippetPayloadCollections
 **********************************************/
 export interface PublishSnippetPayloadCollections {
+
+}
+
+/*********************************************
+* PublishTemplateV2Payload
+**********************************************/
+export interface PublishTemplateV2Payload {
+	DestinationListContentTypeId?: string;
+	DestinationSiteContentTypeId?: string;
+	Placeholders?: { results: Array<SP.PlaceholderV2> };
+	Snippets?: { results: Array<SP.Snippet> };
+	Url?: string;
+}
+
+/*********************************************
+* PublishTemplateV2PayloadCollections
+**********************************************/
+export interface PublishTemplateV2PayloadCollections {
 
 }
 
@@ -1086,6 +1415,71 @@ export interface ResourceVisualization {
 * ResourceVisualizationCollections
 **********************************************/
 export interface ResourceVisualizationCollections {
+
+}
+
+/*********************************************
+* ReviewConfigurationPayload
+**********************************************/
+export interface ReviewConfigurationPayload {
+	CategoryId?: string;
+	Reviewers?: { results: Array<string> };
+	ReviewType?: string;
+}
+
+/*********************************************
+* ReviewConfigurationPayloadCollections
+**********************************************/
+export interface ReviewConfigurationPayloadCollections {
+
+}
+
+/*********************************************
+* ReviewConfigurationResponse
+**********************************************/
+export interface ReviewConfigurationResponse {
+	Action?: string;
+	ContractCategory?: string;
+	ContractCategoryId?: string;
+	Reviewers?: { results: Array<SP.UserDTO> };
+	ReviewType?: string;
+}
+
+/*********************************************
+* ReviewConfigurationResponseCollections
+**********************************************/
+export interface ReviewConfigurationResponseCollections {
+
+}
+
+/*********************************************
+* ReviewDeletionConfigurationResponse
+**********************************************/
+export interface ReviewDeletionConfigurationResponse {
+	Action?: string;
+	ContractCategoryId?: string;
+	Message?: string;
+}
+
+/*********************************************
+* ReviewDeletionConfigurationResponseCollections
+**********************************************/
+export interface ReviewDeletionConfigurationResponseCollections {
+
+}
+
+/*********************************************
+* ReviewWorkFlowResponseDTO
+**********************************************/
+export interface ReviewWorkFlowResponseDTO {
+	Action?: string;
+	Status?: string;
+}
+
+/*********************************************
+* ReviewWorkFlowResponseDTOCollections
+**********************************************/
+export interface ReviewWorkFlowResponseDTOCollections {
 
 }
 
@@ -1158,6 +1552,7 @@ export interface SharingLinkData {
 	Embeddable?: boolean;
 	Expiration?: string;
 	HasExternalGuestInvitees?: boolean;
+	IsAddressBarLink?: boolean;
 	IsAnonymous?: boolean;
 	IsCreateOnlyLink?: boolean;
 	IsFormsLink?: boolean;
@@ -1501,6 +1896,7 @@ export interface ChangeQuery {
 	Activity?: boolean;
 	Add?: boolean;
 	Alert?: boolean;
+	AppConsentPrincipal?: boolean;
 	ChangeTokenEnd?: SP.ChangeToken;
 	ChangeTokenStart?: SP.ChangeToken;
 	ContentType?: boolean;
@@ -1563,6 +1959,7 @@ export interface ChangeTokenCollections {
 export interface ClassificationResult {
 	ConfidenceScore?: number;
 	ContentTypeId?: string;
+	ContentTypeName?: string;
 	Error?: string;
 	Metas?: { results: Array<SP.KeyValue> };
 	ModelId?: string;
@@ -2008,6 +2405,23 @@ export interface FileDeleteParametersCollections {
 }
 
 /*********************************************
+* FileVersionBatchDeleteParameters
+**********************************************/
+export interface FileVersionBatchDeleteParameters {
+	BatchDeleteMode?: number;
+	DeleteOlderThanDays?: number;
+	MajorVersionLimit?: number;
+	MajorWithMinorVersionsLimit?: number;
+}
+
+/*********************************************
+* FileVersionBatchDeleteParametersCollections
+**********************************************/
+export interface FileVersionBatchDeleteParametersCollections {
+
+}
+
+/*********************************************
 * FolderColoringInformation
 **********************************************/
 export interface FolderColoringInformation {
@@ -2403,6 +2817,22 @@ export interface ListItemUpdateResultsCollections {
 }
 
 /*********************************************
+* SPListItemVersionChange
+**********************************************/
+export interface SPListItemVersionChange {
+	FieldTitle?: string;
+	NewValue?: string;
+	PreviousValue?: string;
+}
+
+/*********************************************
+* SPListItemVersionChangeCollections
+**********************************************/
+export interface SPListItemVersionChangeCollections {
+
+}
+
+/*********************************************
 * SPListRule
 **********************************************/
 export interface SPListRule {
@@ -2462,9 +2892,12 @@ export interface MachineLearningSampleMetaCollections {
 **********************************************/
 export interface MediaServiceUpdateParameters {
 	AIPLabelExtractionStatus?: number;
+	ChiSquareDistribution?: string;
 	ClassificationResult?: SP.ClassificationResult;
 	ContentVersion?: number;
+	Entropy?: string;
 	ETag?: string;
+	IsLowPriorityRequest?: boolean;
 	IsMediaServiceRequest?: boolean;
 	MachineLearningSampleMeta?: SP.MachineLearningSampleMeta;
 	MediaLengthInSeconds?: number;
@@ -2488,8 +2921,12 @@ export interface MediaServiceUpdateParameters {
 	MediaServiceSearchProperties?: string;
 	MediaServiceSystemTags?: string;
 	MediaServiceTranscript?: string;
+	MonteCarloApproximation?: string;
 	SensitivityLabel?: string;
 	SensitivityLabelAssignmentMethod?: number;
+	SkipSearchReindex?: boolean;
+	VirusInfo?: string;
+	VirusStatus?: string;
 	XTenantLabelInfo?: string;
 }
 
@@ -3183,6 +3620,21 @@ export interface XmlSchemaFieldCreationInformationCollections {
 }
 
 /*********************************************
+* SystemSiteLockExpirationResult
+**********************************************/
+export interface SystemSiteLockExpirationResult {
+	Error?: number;
+	Expiration?: any;
+}
+
+/*********************************************
+* SystemSiteLockExpirationResultCollections
+**********************************************/
+export interface SystemSiteLockExpirationResultCollections {
+
+}
+
+/*********************************************
 * TemplateMetaData
 **********************************************/
 export interface TemplateMetaData {
@@ -3321,6 +3773,73 @@ export interface TranslationStatusCollections {
 }
 
 /*********************************************
+* UpdateAgreementESignConfigPayload
+**********************************************/
+export interface UpdateAgreementESignConfigPayload {
+	AgreementId?: string;
+	AgreementUrl?: string;
+	DocumentId?: string;
+	eSignStatus?: string;
+	RequestorEmail?: string;
+	SignersEmail?: { results: Array<string> };
+}
+
+/*********************************************
+* UpdateAgreementESignConfigPayloadCollections
+**********************************************/
+export interface UpdateAgreementESignConfigPayloadCollections {
+
+}
+
+/*********************************************
+* UpdateAgreementMetaDataPayload
+**********************************************/
+export interface UpdateAgreementMetaDataPayload {
+	FileUrl?: string;
+	MarkAsTerminationLetter?: boolean;
+}
+
+/*********************************************
+* UpdateAgreementMetaDataPayloadCollections
+**********************************************/
+export interface UpdateAgreementMetaDataPayloadCollections {
+
+}
+
+/*********************************************
+* UpdateAgreementStatePayload
+**********************************************/
+export interface UpdateAgreementStatePayload {
+	AgreementUrl?: string;
+	CurrentState?: number;
+	NextState?: number;
+}
+
+/*********************************************
+* UpdateAgreementStatePayloadCollections
+**********************************************/
+export interface UpdateAgreementStatePayloadCollections {
+
+}
+
+/*********************************************
+* UpdateReviewRequestDTO
+**********************************************/
+export interface UpdateReviewRequestDTO {
+	Action?: string;
+	Comments?: string;
+	DocumentUri?: string;
+	ReviewerEmailOrUPN?: string;
+}
+
+/*********************************************
+* UpdateReviewRequestDTOCollections
+**********************************************/
+export interface UpdateReviewRequestDTOCollections {
+
+}
+
+/*********************************************
 * UpdateTemplateInfoV2
 **********************************************/
 export interface UpdateTemplateInfoV2 {
@@ -3352,6 +3871,74 @@ export interface UpdateTemplateInfo {
 * UpdateTemplateInfoCollections
 **********************************************/
 export interface UpdateTemplateInfoCollections {
+
+}
+
+/*********************************************
+* UpdateUploadedAgreementMetadataPayload
+**********************************************/
+export interface UpdateUploadedAgreementMetadataPayload {
+	AgreementNumber?: string;
+	AgreementUrl?: string;
+	Category?: string;
+	Country?: string;
+	IsDraft?: boolean;
+	IsExistingAgreement?: boolean;
+	Language?: string;
+	State?: string;
+}
+
+/*********************************************
+* UpdateUploadedAgreementMetadataPayloadCollections
+**********************************************/
+export interface UpdateUploadedAgreementMetadataPayloadCollections {
+
+}
+
+/*********************************************
+* SiteThemes
+**********************************************/
+export interface SiteThemes {
+	themeData?: { results: Array<SP.ThemeData> };
+}
+
+/*********************************************
+* SiteThemesCollections
+**********************************************/
+export interface SiteThemesCollections {
+
+}
+
+/*********************************************
+* ThemeData
+**********************************************/
+export interface ThemeData {
+	id?: number;
+	isVisible?: boolean;
+	name?: string;
+	source?: number;
+	themeJson?: string;
+}
+
+/*********************************************
+* ThemeDataCollections
+**********************************************/
+export interface ThemeDataCollections {
+
+}
+
+/*********************************************
+* TenantThemes
+**********************************************/
+export interface TenantThemes {
+	hideDefaultThemes?: boolean;
+	themeData?: { results: Array<SP.ThemeData> };
+}
+
+/*********************************************
+* TenantThemesCollections
+**********************************************/
+export interface TenantThemesCollections {
 
 }
 
@@ -3423,9 +4010,81 @@ export interface NavigationNodeCreationInformationCollections {
 }
 
 /*********************************************
+* ConfiguredUserInfo
+**********************************************/
+export interface ConfiguredUserInfo {
+	Email?: string;
+	LoginName?: string;
+	Name?: string;
+	ProfilePicUrl?: string;
+	UserId?: number;
+}
+
+/*********************************************
+* ConfiguredUserInfoCollections
+**********************************************/
+export interface ConfiguredUserInfoCollections {
+
+}
+
+/*********************************************
+* WorkflowConfigurationResponse
+**********************************************/
+export interface WorkflowConfigurationResponse {
+	Approvers?: { results: Array<SP.ConfiguredUserInfo> };
+	CategoryID?: string;
+	CategoryName?: string;
+	ConfigurationID?: number;
+	Country?: string;
+	ESignNeeded?: boolean;
+	Language?: string;
+	Reviewers?: { results: Array<SP.ConfiguredUserInfo> };
+	Source?: string;
+	Type?: string;
+}
+
+/*********************************************
+* WorkflowConfigurationResponseCollections
+**********************************************/
+export interface WorkflowConfigurationResponseCollections {
+
+}
+
+/*********************************************
+* DeviationAnalysisRule
+**********************************************/
+export interface DeviationAnalysisRule {
+	Definition?: string;
+	FallbackClauses?: { results: Array<string> };
+	Id?: any;
+	IsAcceptable?: boolean;
+	Notes?: { results: Array<string> };
+	RuleName?: string;
+	SendForApproval?: boolean;
+	SnippetPath?: string;
+}
+
+/*********************************************
+* DeviationAnalysisRuleCollections
+**********************************************/
+export interface DeviationAnalysisRuleCollections {
+
+}
+
+/*********************************************
 * RulesDefinition
 **********************************************/
 export interface RulesDefinition {
+	ActionForInvalidRules?: string;
+	CategoryID?: string;
+	CreatedByUser?: SP.ReviewerInfo;
+	CreatedDateTime?: string;
+	IsActive?: boolean;
+	IsManual?: boolean;
+	ModifiedByUser?: SP.ReviewerInfo;
+	ModifiedDateTime?: string;
+	Properties?: { results: Array<SP.RulesProperties> };
+	Risk?: number;
 	RuleGroup?: string;
 	RuleId?: number;
 	RuleStatement?: string;
@@ -3439,18 +4098,33 @@ export interface RulesDefinitionCollections {
 }
 
 /*********************************************
-* RulesAssignmentModelResponse
+* ReviewerInfo
 **********************************************/
-export interface RulesAssignmentModelResponse {
-	CategoryTermGuid?: any;
-	IsActive?: boolean;
-	Rules?: { results: Array<SP.RulesDefinition> };
+export interface ReviewerInfo {
+	Email?: string;
+	Name?: string;
+	ReviewerId?: number;
 }
 
 /*********************************************
-* RulesAssignmentModelResponseCollections
+* ReviewerInfoCollections
 **********************************************/
-export interface RulesAssignmentModelResponseCollections {
+export interface ReviewerInfoCollections {
+
+}
+
+/*********************************************
+* RulesProperties
+**********************************************/
+export interface RulesProperties {
+	RulesKey?: string;
+	RulesValue?: string;
+}
+
+/*********************************************
+* RulesPropertiesCollections
+**********************************************/
+export interface RulesPropertiesCollections {
 
 }
 
@@ -3474,6 +4148,7 @@ export interface RulesDefinitionGroupCollections {
 **********************************************/
 export interface RulesValidationEntryResponse {
 	Action?: number;
+	AISuggestionText?: string;
 	BusinessJustification?: string;
 	LastUpdatedDateTime?: any;
 	Reviewer?: SP.ReviewerInfo;
@@ -3484,21 +4159,5 @@ export interface RulesValidationEntryResponse {
 * RulesValidationEntryResponseCollections
 **********************************************/
 export interface RulesValidationEntryResponseCollections {
-
-}
-
-/*********************************************
-* ReviewerInfo
-**********************************************/
-export interface ReviewerInfo {
-	Email?: string;
-	Name?: string;
-	ReviewerId?: number;
-}
-
-/*********************************************
-* ReviewerInfoCollections
-**********************************************/
-export interface ReviewerInfoCollections {
 
 }

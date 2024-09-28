@@ -157,6 +157,7 @@ export interface SPOWebAppServicePrincipalPermissionRequestProps {
 	Id?: any;
 	IsDomainIsolated?: boolean;
 	IsolatedDomainUrl?: string;
+	IsPreauthorizedPermission?: boolean;
 	MultiTenantAppId?: string;
 	MultiTenantAppReplyUrl?: string;
 	PackageApproverName?: string;

@@ -3,20 +3,21 @@ import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
-* CustomFontsResource
+* OrgAssets
 **********************************************/
-export interface CustomFontsResource {
-	byteArray?: any;
-	fileName?: string;
-	fullPath?: string;
-	MajVer?: number;
-	type?: number;
+export interface OrgAssets {
+	CentralAssetRepositoryLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
+	Domain?: SP.ResourcePath;
+	OrgAssetsLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
+	SiteId?: any;
+	Url?: SP.ResourcePath;
+	WebId?: any;
 }
 
 /*********************************************
-* CustomFontsResourceCollections
+* OrgAssetsCollections
 **********************************************/
-export interface CustomFontsResourceCollections {
+export interface OrgAssetsCollections {
 
 }
 
@@ -24,6 +25,7 @@ export interface CustomFontsResourceCollections {
 * OrgAssetsLibraryCollection
 **********************************************/
 export interface OrgAssetsLibraryCollection {
+	OrgAssetsLibraries?: { results: Array<Microsoft.SharePoint.Administration.OrgAssetsLibrary> };
 	Items?: { results: Array<Microsoft.SharePoint.Administration.OrgAssetsLibrary> };
 }
 
@@ -42,6 +44,7 @@ export interface OrgAssetsLibrary {
 	FileType?: string;
 	LibraryUrl?: SP.ResourcePath;
 	ListId?: any;
+	OrgAssetFlags?: number;
 	OrgAssetType?: number;
 	ThumbnailUrl?: SP.ResourcePath;
 	UniqueId?: any;
@@ -55,21 +58,20 @@ export interface OrgAssetsLibraryCollections {
 }
 
 /*********************************************
-* OrgAssets
+* CustomFontsResource
 **********************************************/
-export interface OrgAssets {
-	CentralAssetRepositoryLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
-	Domain?: SP.ResourcePath;
-	OrgAssetsLibraries?: Microsoft.SharePoint.Administration.OrgAssetsLibraryCollection;
-	SiteId?: any;
-	Url?: SP.ResourcePath;
-	WebId?: any;
+export interface CustomFontsResource {
+	byteArray?: any;
+	fileName?: string;
+	fullPath?: string;
+	MajVer?: number;
+	type?: number;
 }
 
 /*********************************************
-* OrgAssetsCollections
+* CustomFontsResourceCollections
 **********************************************/
-export interface OrgAssetsCollections {
+export interface CustomFontsResourceCollections {
 
 }
 

@@ -139,6 +139,7 @@ export interface MigrationCompleteStateApiOData extends Base.IBaseResult, Migrat
 **********************************************/
 export interface MigrationCompleteStateApiMethods {
 	addState(): Base.IBaseExecution<any>;
+	isDoclibContributorOwnerEnabled(): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************

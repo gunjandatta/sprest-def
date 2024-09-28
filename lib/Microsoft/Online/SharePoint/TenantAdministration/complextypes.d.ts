@@ -42,6 +42,7 @@ export interface CreatePolicyRequest {
 	policyFrequencyUnit?: number;
 	policyFrequencyValue?: number;
 	policyId?: any;
+	policyTags?: string;
 	policyTemplate?: number;
 	policyType?: number;
 }
@@ -114,6 +115,21 @@ export interface EnableAutoNewsDigestCollections {
 }
 
 /*********************************************
+* ErrorFacet
+**********************************************/
+export interface ErrorFacet {
+	Code?: string;
+	Message?: string;
+}
+
+/*********************************************
+* ErrorFacetCollections
+**********************************************/
+export interface ErrorFacetCollections {
+
+}
+
+/*********************************************
 * EsignatureThirdPartyProvidersInfo
 **********************************************/
 export interface EsignatureThirdPartyProvidersInfo {
@@ -125,6 +141,21 @@ export interface EsignatureThirdPartyProvidersInfo {
 * EsignatureThirdPartyProvidersInfoCollections
 **********************************************/
 export interface EsignatureThirdPartyProvidersInfoCollections {
+
+}
+
+/*********************************************
+* columnsInfo
+**********************************************/
+export interface columnsInfo {
+	columnName?: string;
+	viewFieldName?: string;
+}
+
+/*********************************************
+* columnsInfoCollections
+**********************************************/
+export interface columnsInfoCollections {
 
 }
 
@@ -411,6 +442,25 @@ export interface SecondaryAdministratorsInfoCollections {
 }
 
 /*********************************************
+* SettingDataProperty
+**********************************************/
+export interface SettingDataProperty {
+	AvailableInGraph?: boolean;
+	AvailableInPowerShell?: boolean;
+	AvailableInSharePointAdminCenter?: boolean;
+	Description?: string;
+	SettingName?: string;
+	SettingValue?: string;
+}
+
+/*********************************************
+* SettingDataPropertyCollections
+**********************************************/
+export interface SettingDataPropertyCollections {
+
+}
+
+/*********************************************
 * ShowNextGenerationSyncClientOnTeamSite
 **********************************************/
 export interface ShowNextGenerationSyncClientOnTeamSite {
@@ -541,6 +591,7 @@ export interface SiteCreationNewUXCollections {
 **********************************************/
 export interface SiteCreationProperties {
 	CompatibilityLevel?: number;
+	EnableAgreementsSolution?: boolean;
 	Lcid?: number;
 	Owner?: string;
 	StorageMaximumLevel?: number;
@@ -614,6 +665,8 @@ export interface SitePagesEnabledCollections {
 * SPOSitePropertiesEnumerableFilter
 **********************************************/
 export interface SPOSitePropertiesEnumerableFilter {
+	ArchivedBy?: string;
+	ArchivedTime?: any;
 	ArchiveStatus?: string;
 	Filter?: string;
 	GroupIdDefined?: number;
@@ -711,6 +764,22 @@ export interface SmtpServerCollections {
 }
 
 /*********************************************
+* SPContainerApplicationProperties
+**********************************************/
+export interface SPContainerApplicationProperties {
+	ContainerTypeId?: any;
+	OwningApplicationId?: any;
+	OwningApplicationName?: string;
+}
+
+/*********************************************
+* SPContainerApplicationPropertiesCollections
+**********************************************/
+export interface SPContainerApplicationPropertiesCollections {
+
+}
+
+/*********************************************
 * SPContainerCollection
 **********************************************/
 export interface SPContainerCollection {
@@ -745,6 +814,7 @@ export interface SPContainerProperties {
 	LimitedAccessFileType?: number;
 	Managers?: { results: Array<string> };
 	Owners?: { results: Array<string> };
+	OwnersCount?: number;
 	OwningApplicationId?: any;
 	OwningApplicationName?: string;
 	Readers?: { results: Array<string> };
@@ -767,6 +837,55 @@ export interface SPContainerPropertiesCollections {
 }
 
 /*********************************************
+* SPContainerFilterOrder
+**********************************************/
+export interface SPContainerFilterOrder {
+	CreatedBeforeDays?: number;
+	FilteringApplicationId?: string;
+	FilteringApplicationName?: string;
+	FilteringContainerTypeId?: string;
+	FilteringField?: number;
+	OwnersCount?: number;
+	PublisherName?: string;
+}
+
+/*********************************************
+* SPContainerFilterOrderCollections
+**********************************************/
+export interface SPContainerFilterOrderCollections {
+
+}
+
+/*********************************************
+* SPContainerSearchParameters
+**********************************************/
+export interface SPContainerSearchParameters {
+	SearchText?: string;
+}
+
+/*********************************************
+* SPContainerSearchParametersCollections
+**********************************************/
+export interface SPContainerSearchParametersCollections {
+
+}
+
+/*********************************************
+* SPContainerSortOrder
+**********************************************/
+export interface SPContainerSortOrder {
+	Ascending?: boolean;
+	SortingField?: number;
+}
+
+/*********************************************
+* SPContainerSortOrderCollections
+**********************************************/
+export interface SPContainerSortOrderCollections {
+
+}
+
+/*********************************************
 * SPContainerTypeConfigurationProperties
 **********************************************/
 export interface SPContainerTypeConfigurationProperties {
@@ -774,10 +893,10 @@ export interface SPContainerTypeConfigurationProperties {
 	Classification?: number;
 	ContainerTypeId?: any;
 	ContainerTypeName?: string;
-	IsDiscoverablilityDisabled?: boolean;
-	IsMoveDisabled?: boolean;
-	IsRenameDisabled?: boolean;
-	IsSharingRestricted?: boolean;
+	IsDiscoverablilityDisabled?: number;
+	IsMoveDisabled?: number;
+	IsRenameDisabled?: number;
+	IsSharingRestricted?: number;
 	OwningAppId?: any;
 }
 
@@ -792,6 +911,7 @@ export interface SPContainerTypeConfigurationPropertiesCollections {
 * SPContainerTypeProperties
 **********************************************/
 export interface SPContainerTypeProperties {
+	ApplicationRedirectUrl?: string;
 	AzureSubscriptionId?: any;
 	ContainerTypeId?: any;
 	CreationDate?: string;
@@ -809,6 +929,108 @@ export interface SPContainerTypeProperties {
 * SPContainerTypePropertiesCollections
 **********************************************/
 export interface SPContainerTypePropertiesCollections {
+
+}
+
+/*********************************************
+* SPDataGovernanceInsightMetadata
+**********************************************/
+export interface SPDataGovernanceInsightMetadata {
+	ReportId?: any;
+	Status?: string;
+}
+
+/*********************************************
+* SPDataGovernanceInsightMetadataCollections
+**********************************************/
+export interface SPDataGovernanceInsightMetadataCollections {
+
+}
+
+/*********************************************
+* SPDataGovernanceInsightResponse
+**********************************************/
+export interface SPDataGovernanceInsightResponse {
+	CreatedDateTime?: string;
+	EEEUType?: string;
+	LabelId?: any;
+	LabelName?: string;
+	PrivacyEEEU?: { results: Array<string> };
+	PrivacySitePermissions?: string;
+	ReportEndTimeEEEU?: string;
+	ReportEndTimeSharingLink?: string;
+	ReportEntity?: string;
+	ReportFormat?: string;
+	ReportId?: any;
+	ReportNameEEEU?: string;
+	ReportNameSitePermissions?: string;
+	ReportStartTimeEEEU?: string;
+	ReportStartTimeSharingLink?: string;
+	ReportType?: string;
+	SensitivityEEEU?: { results: Array<string> };
+	SensitivitySitePermissions?: { results: Array<string> };
+	SharingLinkType?: string;
+	SitesFoundEEEU?: number;
+	SitesFoundSharingLink?: number;
+	Status?: string;
+	TemplatesEEEU?: { results: Array<string> };
+	TemplatesSitePermissions?: { results: Array<string> };
+	TriggeredDateTime?: string;
+	UserLimit?: number;
+	Version?: string;
+	Workload?: string;
+}
+
+/*********************************************
+* SPDataGovernanceInsightResponseCollections
+**********************************************/
+export interface SPDataGovernanceInsightResponseCollections {
+
+}
+
+/*********************************************
+* SPDataGovernanceSARStartSiteReviewResponse
+**********************************************/
+export interface SPDataGovernanceSARStartSiteReviewResponse {
+	AdminComment?: string;
+	Error?: Microsoft.Online.SharePoint.TenantAdministration.ErrorFacet;
+	ReportEntity?: number;
+	ReviewId?: any;
+	ReviewInitiatedDateTime?: any;
+	SiteId?: any;
+	SiteName?: string;
+	Status?: string;
+}
+
+/*********************************************
+* SPDataGovernanceSARStartSiteReviewResponseCollections
+**********************************************/
+export interface SPDataGovernanceSARStartSiteReviewResponseCollections {
+
+}
+
+/*********************************************
+* SPDataGovernanceSiteReviewsResponse
+**********************************************/
+export interface SPDataGovernanceSiteReviewsResponse {
+	AdminComment?: string;
+	ReportCreatedDateTime?: any;
+	ReportEndDateTime?: any;
+	ReportEntity?: number;
+	ReviewCompletedDateTime?: any;
+	ReviewerComment?: string;
+	ReviewerEmail?: string;
+	ReviewId?: any;
+	ReviewInitiatedDateTime?: any;
+	SiteId?: any;
+	SiteName?: string;
+	Status?: string;
+}
+
+/*********************************************
+* SPDataGovernanceSiteReviewsResponseCollections
+**********************************************/
+export interface SPDataGovernanceSiteReviewsResponseCollections {
 
 }
 
@@ -860,6 +1082,154 @@ export interface SPListModernUXOffCollections {
 }
 
 /*********************************************
+* SPOAppBillingProperties
+**********************************************/
+export interface SPOAppBillingProperties {
+	ApplicationId?: any;
+	AzureRegion?: string;
+	IsActivated?: boolean;
+	ResourceGroup?: string;
+	SubscriptionId?: any;
+	SubscriptionState?: string;
+	UsageCharges?: string;
+}
+
+/*********************************************
+* SPOAppBillingPropertiesCollections
+**********************************************/
+export interface SPOAppBillingPropertiesCollections {
+
+}
+
+/*********************************************
+* SPOContentSecurityPolicyEntry
+**********************************************/
+export interface SPOContentSecurityPolicyEntry {
+	Source?: string;
+}
+
+/*********************************************
+* SPOContentSecurityPolicyEntryCollections
+**********************************************/
+export interface SPOContentSecurityPolicyEntryCollections {
+
+}
+
+/*********************************************
+* SPOFileVersionBatchDeleteJobProgress
+**********************************************/
+export interface SPOFileVersionBatchDeleteJobProgress {
+	BatchDeleteMode?: number;
+	CompleteTimeInUTC?: any;
+	DeleteOlderThan?: any;
+	ErrorMessage?: string;
+	FilesProcessed?: number;
+	LastProcessTimeInUTC?: any;
+	MajorVersionLimit?: number;
+	MajorWithMinorVersionsLimit?: number;
+	RequestTimeInUTC?: any;
+	Status?: string;
+	StorageReleasedInBytes?: number;
+	Url?: string;
+	VersionsDeleted?: number;
+	VersionsFailed?: number;
+	VersionsProcessed?: number;
+	WorkItemId?: any;
+}
+
+/*********************************************
+* SPOFileVersionBatchDeleteJobProgressCollections
+**********************************************/
+export interface SPOFileVersionBatchDeleteJobProgressCollections {
+
+}
+
+/*********************************************
+* SPOFileVersionExpirationReportJobProgress
+**********************************************/
+export interface SPOFileVersionExpirationReportJobProgress {
+	ErrorMessage?: string;
+	ReportUrl?: string;
+	Status?: string;
+	Url?: string;
+}
+
+/*********************************************
+* SPOFileVersionExpirationReportJobProgressCollections
+**********************************************/
+export interface SPOFileVersionExpirationReportJobProgressCollections {
+
+}
+
+/*********************************************
+* SPOFileVersionPolicySettings
+**********************************************/
+export interface SPOFileVersionPolicySettings {
+	EnableAutoExpirationVersionTrim?: boolean;
+	ExpireVersionsAfterDays?: number;
+	MajorVersionLimit?: number;
+	MajorWithMinorVersionsLimit?: number;
+	MinorVersionsEnabled?: boolean;
+	VersioningEnabled?: boolean;
+}
+
+/*********************************************
+* SPOFileVersionPolicySettingsCollections
+**********************************************/
+export interface SPOFileVersionPolicySettingsCollections {
+
+}
+
+/*********************************************
+* SPOInsightsReportMetadata
+**********************************************/
+export interface SPOInsightsReportMetadata {
+	CreatedDateTimeInUtc?: string;
+	Id?: any;
+	Status?: number;
+}
+
+/*********************************************
+* SPOInsightsReportMetadataCollections
+**********************************************/
+export interface SPOInsightsReportMetadataCollections {
+
+}
+
+/*********************************************
+* SPOListParameters
+**********************************************/
+export interface SPOListParameters {
+	Id?: any;
+	Title?: string;
+}
+
+/*********************************************
+* SPOListParametersCollections
+**********************************************/
+export interface SPOListParametersCollections {
+
+}
+
+/*********************************************
+* SPORestrictedContentDiscoverabilitySiteDetails
+**********************************************/
+export interface SPORestrictedContentDiscoverabilitySiteDetails {
+	LastModified?: any;
+	SiteOwnerEmail?: string;
+	SiteTitle?: string;
+	SiteUrl?: string;
+	TimeCreated?: any;
+}
+
+/*********************************************
+* SPORestrictedContentDiscoverabilitySiteDetailsCollections
+**********************************************/
+export interface SPORestrictedContentDiscoverabilitySiteDetailsCollections {
+
+}
+
+/*********************************************
 * SPOSiteCreationSource
 **********************************************/
 export interface SPOSiteCreationSource {
@@ -876,6 +1246,44 @@ export interface SPOSiteCreationSourceCollections {
 }
 
 /*********************************************
+* SPSitePageCopyJobProgress
+**********************************************/
+export interface SPSitePageCopyJobProgress {
+	ErrorMessage?: string;
+	JobState?: string;
+	NewPageUrl?: string;
+	SourcePageName?: string;
+	StatusMessage?: string;
+	WorkItemId?: any;
+}
+
+/*********************************************
+* SPSitePageCopyJobProgressCollections
+**********************************************/
+export interface SPSitePageCopyJobProgressCollections {
+
+}
+
+/*********************************************
+* SPSitePage
+**********************************************/
+export interface SPSitePage {
+	CreatedBy?: string;
+	CreatedDateTime?: any;
+	LastModifiedDateTime?: any;
+	Name?: string;
+	Title?: string;
+	UniqueId?: any;
+}
+
+/*********************************************
+* SPSitePageCollections
+**********************************************/
+export interface SPSitePageCollections {
+
+}
+
+/*********************************************
 * SPSyntexApplicationProperties
 **********************************************/
 export interface SPSyntexApplicationProperties {
@@ -884,8 +1292,10 @@ export interface SPSyntexApplicationProperties {
 	Applications?: { results: Array<any> };
 	AppOnlyPermissions?: { results: Array<string> };
 	DelegatedPermissions?: { results: Array<string> };
+	OverrideTenantSharingCapability?: boolean;
 	OwningApplicationId?: any;
 	OwningApplicationName?: string;
+	SharingCapability?: number;
 }
 
 /*********************************************
@@ -911,6 +1321,51 @@ export interface SyntexBillingContext {
 * SyntexBillingContextCollections
 **********************************************/
 export interface SyntexBillingContextCollections {
+
+}
+
+/*********************************************
+* SyntexCheckManagementAllowedResponse
+**********************************************/
+export interface SyntexCheckManagementAllowedResponse {
+	allowedBillingOnly?: boolean;
+	allowedLicenseOrBilling?: boolean;
+}
+
+/*********************************************
+* SyntexCheckManagementAllowedResponseCollections
+**********************************************/
+export interface SyntexCheckManagementAllowedResponseCollections {
+
+}
+
+/*********************************************
+* SyntexFeatureScopeSettingsValues
+**********************************************/
+export interface SyntexFeatureScopeSettingsValues {
+	Enabled?: boolean;
+	FileName?: string;
+}
+
+/*********************************************
+* SyntexFeatureScopeSettingsValuesCollections
+**********************************************/
+export interface SyntexFeatureScopeSettingsValuesCollections {
+
+}
+
+/*********************************************
+* SyntexGetModifiedListResponse
+**********************************************/
+export interface SyntexGetModifiedListResponse {
+	IgnoredUrlsList?: { results: Array<string> };
+	ModifiedSelectedSitesList?: { results: Array<any> };
+}
+
+/*********************************************
+* SyntexGetModifiedListResponseCollections
+**********************************************/
+export interface SyntexGetModifiedListResponseCollections {
 
 }
 
@@ -991,21 +1446,6 @@ export interface UpdateGroupSitePropertiesParameters {
 * UpdateGroupSitePropertiesParametersCollections
 **********************************************/
 export interface UpdateGroupSitePropertiesParametersCollections {
-
-}
-
-/*********************************************
-* UserVoiceForFeedbackEnabled
-**********************************************/
-export interface UserVoiceForFeedbackEnabled {
-	IsReadOnly?: boolean;
-	Value?: boolean;
-}
-
-/*********************************************
-* UserVoiceForFeedbackEnabledCollections
-**********************************************/
-export interface UserVoiceForFeedbackEnabledCollections {
 
 }
 

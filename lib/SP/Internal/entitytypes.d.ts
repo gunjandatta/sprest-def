@@ -29,6 +29,20 @@ export interface FormsCustomizationCollections {
 }
 
 /*********************************************
+* AgreementsESignManager
+**********************************************/
+export interface AgreementsESignManager {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AgreementsESignManagerCollections
+**********************************************/
+export interface AgreementsESignManagerCollections {
+
+}
+
+/*********************************************
 * ApprovalsManager
 **********************************************/
 export interface ApprovalsManager {

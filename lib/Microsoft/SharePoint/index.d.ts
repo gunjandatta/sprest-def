@@ -6,12 +6,16 @@ import * as AddToOneDrive from "./AddToOneDrive";
 export { AddToOneDrive }
 import * as Administration from "./Administration";
 export { Administration }
+import * as Agreements from "./Agreements";
+export { Agreements }
 import * as AppManagement from "./AppManagement";
 export { AppManagement }
 import * as Authentication from "./Authentication";
 export { Authentication }
 import * as AuthPolicy from "./AuthPolicy";
 export { AuthPolicy }
+import * as BrandCenter from "./BrandCenter";
+export { BrandCenter }
 import * as CampaignAnalytics from "./CampaignAnalytics";
 export { CampaignAnalytics }
 import * as Campaigns from "./Campaigns";
@@ -26,6 +30,8 @@ import * as Containers from "./Containers";
 export { Containers }
 import * as Convergence from "./Convergence";
 export { Convergence }
+import * as Copilot from "./Copilot";
+export { Copilot }
 import * as Deployment from "./Deployment";
 export { Deployment }
 import * as EmployeeEngagement from "./EmployeeEngagement";
@@ -48,6 +54,8 @@ import * as ListHome from "./ListHome";
 export { ListHome }
 import * as Marketplace from "./Marketplace";
 export { Marketplace }
+import * as MultiGeo from "./MultiGeo";
+export { MultiGeo }
 import * as Navigation from "./Navigation";
 export { Navigation }
 import * as News from "./News";
@@ -70,6 +78,8 @@ import * as QuotaManagement from "./QuotaManagement";
 export { QuotaManagement }
 import * as SectionDesignIdeas from "./SectionDesignIdeas";
 export { SectionDesignIdeas }
+import * as Sharing from "./Sharing";
+export { Sharing }
 import * as SmartCache from "./SmartCache";
 export { SmartCache }
 import * as SPStart from "./SPStart";

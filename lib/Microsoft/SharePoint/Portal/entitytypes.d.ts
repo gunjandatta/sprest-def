@@ -163,8 +163,8 @@ export interface GroupSiteManagerMethods {
 	createGroupEx(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	createGroupForSite(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	delete(siteUrl?: string): Base.IBaseExecution<any>;
-	ensureTeamForGroup(altGroupId?: string, teamTemplate?: string): Base.IBaseExecution<string>;
-	ensureTeamForGroupEx(altGroupId?: string, teamTemplate?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
+	ensureTeamForGroup(siteUrl?: string, teamTemplate?: string): Base.IBaseExecution<string>;
+	ensureTeamForGroupEx(siteUrl?: string, teamTemplate?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
 	getAllOrgLabels(pageNumber?: number): Base.IBaseExecution<Microsoft.SharePoint.Portal.OrgLabelsContextList>;
 	getCurrentUserJoinedTeams(getLogoData?: boolean, forceCacheUpdate?: boolean): Base.IBaseExecution<string>;
 	getCurrentUserSharedChannelMemberGroups(): Base.IBaseExecution<string>;

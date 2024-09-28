@@ -35,6 +35,20 @@ export interface CancelAgreementModelCollections {
 }
 
 /*********************************************
+* CompleteAgreementModelV4
+**********************************************/
+export interface CompleteAgreementModelV4 {
+	documentId?: any;
+}
+
+/*********************************************
+* CompleteAgreementModelV4Collections
+**********************************************/
+export interface CompleteAgreementModelV4Collections {
+
+}
+
+/*********************************************
 * CompleteAgreementModel
 **********************************************/
 export interface CompleteAgreementModel {
@@ -51,10 +65,11 @@ export interface CompleteAgreementModelCollections {
 }
 
 /*********************************************
-* CreateAgreementModel
+* CreateAgreementModelV2
 **********************************************/
-export interface CreateAgreementModel {
+export interface CreateAgreementModelV2 {
 	agreementId?: any;
+	agreementSource?: string;
 	documents?: string;
 	expirationDateTime?: any;
 	formFieldSets?: string;
@@ -62,6 +77,31 @@ export interface CreateAgreementModel {
 	message?: string;
 	name?: string;
 	recipientSets?: string;
+	signingMode?: string;
+	targetFolderUri?: string;
+}
+
+/*********************************************
+* CreateAgreementModelV2Collections
+**********************************************/
+export interface CreateAgreementModelV2Collections {
+
+}
+
+/*********************************************
+* CreateAgreementModel
+**********************************************/
+export interface CreateAgreementModel {
+	agreementId?: any;
+	agreementSource?: string;
+	documents?: string;
+	expirationDateTime?: any;
+	formFieldSets?: string;
+	locale?: string;
+	message?: string;
+	name?: string;
+	recipientSets?: string;
+	signingMode?: string;
 }
 
 /*********************************************

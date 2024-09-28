@@ -3,6 +3,77 @@ import { Microsoft } from "../../../";
 import { SP } from "../../../";
 
 /*********************************************
+* IVivaConnectionsPage
+**********************************************/
+export interface IVivaConnectionsPage extends VivaConnectionsPageCollections, VivaConnectionsPageMethods, Base.IBaseQuery<VivaConnectionsPage, IVivaConnectionsPageQuery> {
+
+}
+
+/*********************************************
+* IVivaConnectionsPageCollection
+**********************************************/
+export interface IVivaConnectionsPageCollection extends Base.IBaseResults<VivaConnectionsPage> {
+	done?: (resolve: (value?: Array<VivaConnectionsPage>) => void) => void;
+}
+
+/*********************************************
+* IVivaConnectionsPageQueryCollection
+**********************************************/
+export interface IVivaConnectionsPageQueryCollection extends Base.IBaseResults<VivaConnectionsPageOData> {
+	done?: (resolve: (value?: Array<VivaConnectionsPageOData>) => void) => void;
+}
+
+/*********************************************
+* IVivaConnectionsPageQuery
+**********************************************/
+export interface IVivaConnectionsPageQuery extends VivaConnectionsPageOData, VivaConnectionsPageMethods {
+
+}
+
+/*********************************************
+* VivaConnectionsPage
+**********************************************/
+export interface VivaConnectionsPage extends Base.IBaseResult, VivaConnectionsPageProps, VivaConnectionsPageCollections, VivaConnectionsPageMethods {
+
+}
+
+/*********************************************
+* VivaConnectionsPageProps
+**********************************************/
+export interface VivaConnectionsPageProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* VivaConnectionsPagePropMethods
+**********************************************/
+export interface VivaConnectionsPagePropMethods {
+
+}
+
+/*********************************************
+* VivaConnectionsPageCollections
+**********************************************/
+export interface VivaConnectionsPageCollections extends VivaConnectionsPagePropMethods {
+
+}
+
+/*********************************************
+* VivaConnectionsPageOData
+**********************************************/
+export interface VivaConnectionsPageOData extends Base.IBaseResult, VivaConnectionsPageProps, VivaConnectionsPageMethods {
+
+}
+
+/*********************************************
+* VivaConnectionsPageMethods
+**********************************************/
+export interface VivaConnectionsPageMethods {
+	getData(): Base.IBaseExecution<Microsoft.SharePoint.EmployeeEngagement.ConnectionsConfigurationAndData>;
+	setSpotlightConfiguration(configuration?: Microsoft.SharePoint.EmployeeEngagement.SpotlightConfiguration): Base.IBaseExecution<Microsoft.SharePoint.EmployeeEngagement.ConnectionsConfigurationAndData>;
+}
+
+/*********************************************
 * IVivaResources
 **********************************************/
 export interface IVivaResources extends VivaResourcesCollections, VivaResourcesMethods, Base.IBaseQuery<VivaResources, IVivaResourcesQuery> {
@@ -74,6 +145,7 @@ export interface VivaResourcesMethods {
 	removeLink(id?: number): Base.IBaseExecution<any>;
 	reorderLink(linkId?: number, prevLinkId?: number): Base.IBaseExecution<any>;
 	updateLink(updatedLink?: Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink): Base.IBaseExecution<any>;
+	updateLinks(links?: Array<Microsoft.SharePoint.EmployeeEngagement.VivaResourceLink>): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -146,6 +218,7 @@ export interface VivaHomeMethods {
 	addImage(fileName?: string, imageStream?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	addImageFromExternalUrl(fileName?: string, externalUrl?: string): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	titleRegion(vivaHomeTitleRegion?: SP.VivaHomeTitleRegion): Base.IBaseExecution<any>;
+	updateGoToVCButtonFlag(isGoBackToConnectionsButtonDisabled?: boolean): Base.IBaseExecution<SP.TargetedSiteDetails>;
 }
 
 /*********************************************

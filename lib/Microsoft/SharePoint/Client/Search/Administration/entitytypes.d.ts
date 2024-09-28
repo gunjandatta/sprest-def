@@ -140,6 +140,7 @@ export interface SiteContentProcessingInfoProviderOData extends Base.IBaseResult
 **********************************************/
 export interface SiteContentProcessingInfoProviderMethods {
 	getAzureContainerToken(): Base.IBaseExecution<string>;
+	notifyContentProcessingStatus(webId?: any, listId?: any, uniqueId?: any, properties?: Array<SP.KeyValue>): Base.IBaseExecution<any>;
 	reportContentProcessingStatus(webId?: any, listId?: any, uniqueId?: any, azureContainerTokenUri?: string, encryptionKey?: any, priority?: number, errorCode?: number, errorDescription?: string): Base.IBaseExecution<any>;
 }
 

@@ -60,6 +60,7 @@ export interface AnnouncementsDataCollections {
 * CallToAction
 **********************************************/
 export interface CallToAction {
+	IsTranspileReady?: boolean;
 	Text?: string;
 	Url?: string;
 }
@@ -98,6 +99,21 @@ export interface SitePageAuthoringMetadata {
 * SitePageAuthoringMetadataCollections
 **********************************************/
 export interface SitePageAuthoringMetadataCollections {
+
+}
+
+/*********************************************
+* AuthoringSchemaFeatureVersion
+**********************************************/
+export interface AuthoringSchemaFeatureVersion {
+	Name?: string;
+	Version?: string;
+}
+
+/*********************************************
+* AuthoringSchemaFeatureVersionCollections
+**********************************************/
+export interface AuthoringSchemaFeatureVersionCollections {
 
 }
 
@@ -164,6 +180,7 @@ export interface SitePageFieldsData {
 	TeamsTranspileContent?: string;
 	Title?: string;
 	TopicHeader?: string;
+	WebTranspileContent?: string;
 }
 
 /*********************************************
@@ -178,8 +195,10 @@ export interface SitePageFieldsDataCollections {
 **********************************************/
 export interface SitePageCoAuthState {
 	Action?: number;
+	AuthoringSchemaFeatureVersions?: { results: Array<SP.Publishing.AuthoringSchemaFeatureVersion> };
 	HasReachedMinorVersionsLimit?: boolean;
 	IsNewSession?: boolean;
+	IsPartitionFlushed?: boolean;
 	LockAction?: number;
 	LockDuration?: number;
 	OverwriteExistingVersion?: boolean;
@@ -278,6 +297,7 @@ export interface CopyToParams {
 	CreateCopyForEdit?: boolean;
 	CreateIfMissing?: boolean;
 	DeleteSourcePage?: boolean;
+	DependencyPropertyTypesToDeepCopy?: { results: Array<number> };
 	DestinationPageUniqueId?: any;
 	DestinationType?: number;
 	DestinationWebUrl?: string;
@@ -653,12 +673,29 @@ export interface PrePublishValidationsErrorCodesForSharePointSiteCollections {
 export interface PrePublishValidationsErrorCodesForTeams {
 	AudienceId?: string;
 	ErrorCodes?: { results: Array<number> };
+	NumberOfImagesInPayload?: number;
 }
 
 /*********************************************
 * PrePublishValidationsErrorCodesForTeamsCollections
 **********************************************/
 export interface PrePublishValidationsErrorCodesForTeamsCollections {
+
+}
+
+/*********************************************
+* PrePublishValidationsErrorCodesForVivaEngage
+**********************************************/
+export interface PrePublishValidationsErrorCodesForVivaEngage {
+	DestinationName?: string;
+	DestinationType?: number;
+	ErrorCodes?: { results: Array<number> };
+}
+
+/*********************************************
+* PrePublishValidationsErrorCodesForVivaEngageCollections
+**********************************************/
+export interface PrePublishValidationsErrorCodesForVivaEngageCollections {
 
 }
 
@@ -670,6 +707,7 @@ export interface PrePublishValidationsResponse {
 	PrePublishValidationsErrorCodesForEmails?: { results: Array<SP.Publishing.PrePublishValidationsErrorCodesForEmail> };
 	PrePublishValidationsErrorCodesForSharePointSites?: { results: Array<SP.Publishing.PrePublishValidationsErrorCodesForSharePointSite> };
 	PrePublishValidationsErrorCodesForTeams?: { results: Array<SP.Publishing.PrePublishValidationsErrorCodesForTeams> };
+	PrePublishValidationsErrorCodesForVivaEngage?: SP.Publishing.PrePublishValidationsErrorCodesForVivaEngage;
 }
 
 /*********************************************
@@ -1098,6 +1136,35 @@ export interface WebPartDetailsWrapperCollections {
 }
 
 /*********************************************
+* SitePageStreamContent
+**********************************************/
+export interface SitePageStreamContent {
+
+}
+
+/*********************************************
+* SitePageStreamContentCollections
+**********************************************/
+export interface SitePageStreamContentCollections {
+
+}
+
+/*********************************************
+* SitePagStreamData
+**********************************************/
+export interface SitePagStreamData {
+	CoAuthState?: SP.Publishing.SitePageCoAuthState;
+	StreamContents?: { results: Array<SP.Publishing.SitePageStreamContent> };
+}
+
+/*********************************************
+* SitePagStreamDataCollections
+**********************************************/
+export interface SitePagStreamDataCollections {
+
+}
+
+/*********************************************
 * SitePageVersionInfoCollection
 **********************************************/
 export interface SitePageVersionInfoCollection {
@@ -1141,6 +1208,22 @@ export interface SiteSharingEmailContext {
 * SiteSharingEmailContextCollections
 **********************************************/
 export interface SiteSharingEmailContextCollections {
+
+}
+
+/*********************************************
+* StartCoAuthMetaData
+**********************************************/
+export interface StartCoAuthMetaData {
+	AuthoringSchemaFeatureVersions?: { results: Array<SP.Publishing.AuthoringSchemaFeatureVersion> };
+	ForceCheckin?: boolean;
+	IsUserConsentProvidedForModerationStatus?: boolean;
+}
+
+/*********************************************
+* StartCoAuthMetaDataCollections
+**********************************************/
+export interface StartCoAuthMetaDataCollections {
 
 }
 
@@ -1288,6 +1371,7 @@ export interface CampaignPublicationLoadMailDraftParamCollections {
 **********************************************/
 export interface CampaignPublicationResetEndpointParam {
 	EmailTranspileContent?: string;
+	EngageTranspileContent?: string;
 	ResetEndpoint?: { results: Array<string> };
 	TeamsTranspileContent?: string;
 }

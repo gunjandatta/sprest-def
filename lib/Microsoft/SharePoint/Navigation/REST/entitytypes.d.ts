@@ -70,7 +70,6 @@ export interface HomeSiteNavigationSettingsOData extends Base.IBaseResult, HomeS
 **********************************************/
 export interface HomeSiteNavigationSettingsMethods {
 	enableGlobalNavigation(isEnabled?: boolean): Base.IBaseExecution<any>;
-	update(): Base.IBaseExecution<any>;
 }
 
 /*********************************************

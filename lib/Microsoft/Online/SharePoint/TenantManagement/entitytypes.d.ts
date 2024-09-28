@@ -190,6 +190,7 @@ export interface Office365TenantProps {
 	AllowOverrideForBlockUserInfoVisibility?: boolean;
 	AllowSelectSecurityGroupsInSPSitesList?: { results: Array<string> };
 	AllowSelectSGsInODBList?: { results: Array<string> };
+	AllowSharingOutsideRestrictedAccessControlGroups?: boolean;
 	AnyoneLinkTrackUsers?: boolean;
 	AppBypassInformationBarriers?: boolean;
 	ApplyAppEnforcedRestrictionsToAdHocRecipients?: boolean;
@@ -216,12 +217,6 @@ export interface Office365TenantProps {
 	CommentsOnSitePagesDisabled?: boolean;
 	ConditionalAccessPolicy?: number;
 	ConditionalAccessPolicyErrorHelpLink?: string;
-	ContainerDefaultLinkToExistingAccess?: boolean;
-	ContainerDefaultShareLinkRole?: number;
-	ContainerDefaultShareLinkScope?: number;
-	ContainerLoopDefaultShareLinkRole?: number;
-	ContainerLoopDefaultShareLinkScope?: number;
-	ContainerSharingCapability?: number;
 	ContentTypeSyncSiteTemplatesList?: { results: Array<string> };
 	CoreBlockGuestsAsSiteAdmin?: number;
 	CoreDefaultLinkToExistingAccess?: boolean;
@@ -229,7 +224,6 @@ export interface Office365TenantProps {
 	CoreDefaultShareLinkScope?: number;
 	CoreLoopDefaultSharingLinkRole?: number;
 	CoreLoopDefaultSharingLinkScope?: number;
-	CoreLoopSharingCapability?: number;
 	CoreRequestFilesLinkEnabled?: boolean;
 	CoreRequestFilesLinkExpirationInDays?: number;
 	CoreSharingCapability?: number;
@@ -258,6 +252,7 @@ export interface Office365TenantProps {
 	EnableGuestSignInAcceleration?: boolean;
 	EnablePromotedFileHandlers?: boolean;
 	EnableRestrictedAccessControl?: boolean;
+	EnableVersionExpirationSetting?: boolean;
 	ESignatureEnabled?: boolean;
 	ESignatureSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
 	ESignatureSiteList?: { results: Array<any> };
@@ -306,7 +301,6 @@ export interface Office365TenantProps {
 	MySitesPublicEnabled?: boolean;
 	NotificationsInOneDriveForBusinessEnabled?: boolean;
 	NotificationsInSharePointEnabled?: boolean;
-	NotifyOwnersWhenInvitationsAccepted?: boolean;
 	NotifyOwnersWhenItemsReshared?: boolean;
 	ODBAccessRequests?: number;
 	ODBMembersCanShare?: number;
@@ -320,7 +314,6 @@ export interface Office365TenantProps {
 	OneDriveForGuestsEnabled?: boolean;
 	OneDriveLoopDefaultSharingLinkRole?: number;
 	OneDriveLoopDefaultSharingLinkScope?: number;
-	OneDriveLoopSharingCapability?: number;
 	OneDriveRequestFilesLinkEnabled?: boolean;
 	OneDriveRequestFilesLinkExpirationInDays?: number;
 	OwnerAnonymousNotification?: boolean;
@@ -332,9 +325,11 @@ export interface Office365TenantProps {
 	RecycleBinRetentionPeriod?: number;
 	ReduceTempTokenLifetimeEnabled?: boolean;
 	ReduceTempTokenLifetimeValue?: number;
-	RequireAcceptingAccountMatchInvitedAccount?: boolean;
 	RequireAnonymousLinksExpireInDays?: number;
+	RestrictedAccessControlForOneDriveErrorHelpLink?: string;
+	RestrictedAccessControlforSitesErrorHelpLink?: string;
 	SearchResolveExactEmailOrUPN?: boolean;
+	SelfServiceSiteCreationDisabled?: boolean;
 	SharingAllowedDomainList?: string;
 	SharingBlockedDomainList?: string;
 	SharingCapability?: number;
@@ -349,6 +344,7 @@ export interface Office365TenantProps {
 	SignInAccelerationDomain?: string;
 	SiteOwnerManageLegacyServicePrincipalEnabled?: boolean;
 	SocialBarOnSitePagesDisabled?: boolean;
+	SPJitDlpPolicyData?: Microsoft.SharePoint.AuthPolicy.SPJitDlpPolicyData;
 	StartASiteFormUrl?: string;
 	StopNew2010Workflows?: boolean;
 	StopNew2013Workflows?: boolean;
@@ -357,21 +353,14 @@ export interface Office365TenantProps {
 	StreamLaunchConfigUpdateCount?: number;
 	SyncPrivacyProfileProperties?: boolean;
 	SyntexBillingSubscriptionSettings?: Microsoft.Online.SharePoint.TenantAdministration.SyntexBillingContext;
-	SyntexExternalVideoSharingSettings?: Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings;
-	SyntexHighResolutionPlaybackSettings?: Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings;
 	SyntexInternalFeatureFlags?: { results: Array<SP.KeyValue> };
 	SyntexMediaAnalyticsSettings?: Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings;
 	SyntexPaygFeatureActivations?: { results: Array<SP.KeyValue> };
 	SyntexPlaybackTranscriptTranslationSettings?: Microsoft.Online.SharePoint.TenantAdministration.SyntexPremiumFeatureSettings;
 	SyntexPowerAppsEnvironmentsContext?: Microsoft.Online.SharePoint.TenantAdministration.SyntexPowerAppsEnvironmentsContext;
-	TaxonomyTaggingEnabled?: boolean;
-	TaxonomyTaggingSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
-	TaxonomyTaggingSiteList?: { results: Array<any> };
-	TaxonomyTaggingSiteListFileName?: string;
 	TlsTokenBindingPolicyValue?: number;
 	UseFindPeopleInPeoplePicker?: boolean;
 	UsePersistentCookiesForExplorerView?: boolean;
-	UserVoiceForFeedbackEnabled?: boolean;
 	ViewersCanCommentOnMediaDisabled?: boolean;
 	ViewInFileExplorerEnabled?: boolean;
 	WhoCanShareAllowList?: string;
@@ -409,6 +398,7 @@ export interface Office365TenantMethods {
 	addTenantCdnOrigin(cdnType?: number, originUrl?: string): Base.IBaseExecution<any>;
 	addTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
 	addToOrgAssetsLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number, defaultOriginAdded?: boolean): Base.IBaseExecution<any>;
+	addToOrgAssetsWithConfig(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number, defaultOriginAdded?: boolean, configParam?: Microsoft.SharePoint.BrandCenter.OrgAssetsLibraryConfigParam): Base.IBaseExecution<any>;
 	createTenantCdnDefaultOrigins(cdnType?: number): Base.IBaseExecution<any>;
 	deleteImportProfilePropertiesJob(jobId?: any): Base.IBaseExecution<boolean>;
 	deleteTenantTheme(name?: string): Base.IBaseExecution<any>;
@@ -443,8 +433,9 @@ export interface Office365TenantMethods {
 	setBlockDownloadFileTypePolicyExclusionList(excludedBlockDownloadGroupIds?: Array<any>): Base.IBaseExecution<any>;
 	setHideDefaultThemes(hideDefaultThemes?: boolean): Base.IBaseExecution<boolean>;
 	setIdleSessionSignOutForUnmanagedDevices(enabled?: boolean, warnAfter?: any, signOutAfter?: any): Base.IBaseExecution<boolean>;
-	setJitDlpPolicyData(markAllFilesAsSensitiveByDefault?: boolean, odbSensitivityRefreshWindowInHours?: number): Base.IBaseExecution<any>;
+	setJitDlpPolicyData(markAllFilesAsSensitiveByDefault?: boolean, odbSensitivityRefreshWindowInHours?: number, executionMode?: number): Base.IBaseExecution<any>;
 	setOrgAssetsLib(libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number): Base.IBaseExecution<any>;
+	setOrgAssetsLibWithConfig(libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number, configParam?: Microsoft.SharePoint.BrandCenter.OrgAssetsLibraryConfigParam): Base.IBaseExecution<any>;
 	setTenantCdnEnabled(cdnType?: number, isEnabled?: boolean): Base.IBaseExecution<any>;
 	setTenantCdnPolicy(cdnType?: number, policy?: number, policyValue?: string): Base.IBaseExecution<any>;
 	syncAadB2BManagementPolicy(): Base.IBaseExecution<any>;

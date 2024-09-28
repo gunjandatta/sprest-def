@@ -567,6 +567,9 @@ export interface CalendarListItemProps {
 	Participants?: string;
 	BannerUrl?: SP.FieldUrlValue;
 	BannerImageUrl?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -612,9 +615,6 @@ export interface CalendarListItemProps {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -746,6 +746,9 @@ export interface ContentTypeSyncLogListItem {
 	Failure_x0020_Stage?: string;
 	Failure_x0020_Message?: string;
 	Failure_x0020_Time?: any;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -791,9 +794,6 @@ export interface ContentTypeSyncLogListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -809,6 +809,87 @@ export interface ContentTypeSyncLogListItemCollections {
 * ContentTypeSyncLogListItemOData
 **********************************************/
 export interface ContentTypeSyncLogListItemOData extends Base.IBaseResult, ContentTypeSyncLogListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* ContentTypeOperationLogsListItem
+**********************************************/
+export interface ContentTypeOperationLogsListItem {
+	ID?: number;
+	ContentTypeId?: string;
+	Title?: string;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	OData__ModerationComments?: string;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	UniqueId?: any;
+	File_x0020_Type?: string;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+	ComplianceAssetId?: string;
+	IsWeb?: boolean;
+	TargetId?: any;
+	ContentTypeId0?: string;
+	UserId?: number;
+	State?: number;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	BaseName?: string;
+	OData__IsRecord?: string;
+}
+
+/*********************************************
+* ContentTypeOperationLogsListItemCollections
+**********************************************/
+export interface ContentTypeOperationLogsListItemCollections {
+
+}
+
+/*********************************************
+* ContentTypeOperationLogsListItemOData
+**********************************************/
+export interface ContentTypeOperationLogsListItemOData extends Base.IBaseResult, ContentTypeOperationLogsListItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
@@ -910,6 +991,9 @@ export interface CustomFormsDemoListItem {
 	File_x0020_Type?: string;
 	ComplianceAssetId?: string;
 	SessionsLUId?: number;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -955,9 +1039,6 @@ export interface CustomFormsDemoListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -991,6 +1072,9 @@ export interface SessionsListItem {
 	SessionTime?: string;
 	SessionCapacity?: number;
 	SessionInfo?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -1036,9 +1120,6 @@ export interface SessionsListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -1059,9 +1140,44 @@ export interface SessionsListItemOData extends Base.IBaseResult, SessionsListIte
 }
 
 /*********************************************
+* IDashboardListItem
+**********************************************/
+export interface IDashboardListItem extends SP.ListItemCollections, DashboardListItemCollections, DashboardListItemMethods, Base.IBaseQuery<DashboardListItem, IDashboardListItemQuery> {
+
+}
+
+/*********************************************
+* IDashboardListItemCollection
+**********************************************/
+export interface IDashboardListItemCollection extends Base.IBaseResults<DashboardListItem> {
+	done?: (resolve: (value?: Array<DashboardListItem>) => void) => void;
+}
+
+/*********************************************
+* IDashboardListItemQueryCollection
+**********************************************/
+export interface IDashboardListItemQueryCollection extends Base.IBaseResults<DashboardListItemOData> {
+	done?: (resolve: (value?: Array<DashboardListItemOData>) => void) => void;
+}
+
+/*********************************************
+* IDashboardListItemQuery
+**********************************************/
+export interface IDashboardListItemQuery extends DashboardListItemOData, DashboardListItemMethods {
+
+}
+
+/*********************************************
 * DashboardListItem
 **********************************************/
-export interface DashboardListItem {
+export interface DashboardListItem extends SP.ListItem, Base.IBaseResult, DashboardListItemProps, DashboardListItemCollections, DashboardListItemMethods {
+
+}
+
+/*********************************************
+* DashboardListItemProps
+**********************************************/
+export interface DashboardListItemProps {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
@@ -1078,6 +1194,8 @@ export interface DashboardListItem {
 	OData__Emoji?: string;
 	Test?: string;
 	Cost?: number;
+	MyLookupId?: { results: Array<number> };
+	MyLookup_x003a_NumberOfItemsId?: { results: Array<number> };
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -1128,17 +1246,113 @@ export interface DashboardListItem {
 }
 
 /*********************************************
+* DashboardListItemPropMethods
+**********************************************/
+export interface DashboardListItemPropMethods {
+	AssignedTo(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
 * DashboardListItemCollections
 **********************************************/
-export interface DashboardListItemCollections {
-
+export interface DashboardListItemCollections extends DashboardListItemPropMethods {
+	MyLookup(): Base.IBaseCollection<SP.Data.LargeListListItem, SP.Data.LargeListListItemOData>;
+	MyLookup(id: string | number): SP.ListItemCollections & Base.IBaseQuery<SP.Data.LargeListListItem, SP.Data.LargeListListItemOData> & SP.Data.LargeListListItemCollections;
 }
 
 /*********************************************
 * DashboardListItemOData
 **********************************************/
-export interface DashboardListItemOData extends Base.IBaseResult, DashboardListItem {
+export interface DashboardListItemOData extends SP.ListItemOData, Base.IBaseResult, DashboardListItemProps, DashboardListItemMethods {
 	AssignedTo: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	MyLookup: Base.IBaseResults<SP.Data.LargeListListItem>;
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* DashboardListItemMethods
+**********************************************/
+export interface DashboardListItemMethods {
+
+}
+
+/*********************************************
+* LargeListListItem
+**********************************************/
+export interface LargeListListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	ComplianceAssetId?: string;
+	NumberOfItems?: number;
+	ExpirationDate?: any;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	Modified?: any;
+	ID?: number;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* LargeListListItemCollections
+**********************************************/
+export interface LargeListListItemCollections {
+
+}
+
+/*********************************************
+* LargeListListItemOData
+**********************************************/
+export interface LargeListListItemOData extends Base.IBaseResult, LargeListListItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
@@ -1153,6 +1367,9 @@ export interface DemoListListItem {
 	File_x0020_Type?: string;
 	ComplianceAssetId?: string;
 	Description?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -1198,9 +1415,6 @@ export interface DemoListListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -1315,6 +1529,9 @@ export interface Dev_x0020_EventsListItemProps {
 	Capacity?: number;
 	Location?: string;
 	Notes?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	PrincipalCount?: string;
 	FileLeafRef?: string;
 	LinkFilenameNoMenu?: string;
@@ -1322,9 +1539,6 @@ export interface Dev_x0020_EventsListItemProps {
 	LinkFilename2?: string;
 	BaseName?: string;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 }
 
 /*********************************************
@@ -1443,6 +1657,164 @@ export interface DevLibListItemOData extends Base.IBaseResult, DevLibListItem {
 }
 
 /*********************************************
+* DevTestListItem
+**********************************************/
+export interface DevTestListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	ItemType?: string;
+	Status?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* DevTestListItemCollections
+**********************************************/
+export interface DevTestListItemCollections {
+
+}
+
+/*********************************************
+* DevTestListItemOData
+**********************************************/
+export interface DevTestListItemOData extends Base.IBaseResult, DevTestListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* DO_x005f_NOT_x005f_DELETE_x005f_SPLIST_x005f_SITECOLLECTION_x005f_AGGREGATED_x005f_CONListItem
+**********************************************/
+export interface DO_x005f_NOT_x005f_DELETE_x005f_SPLIST_x005f_SITECOLLECTION_x005f_AGGREGATED_x005f_CONListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	Name?: string;
+	Group?: string;
+	Parent?: string;
+	Source?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* DO_x005f_NOT_x005f_DELETE_x005f_SPLIST_x005f_SITECOLLECTION_x005f_AGGREGATED_x005f_CONListItemCollections
+**********************************************/
+export interface DO_x005f_NOT_x005f_DELETE_x005f_SPLIST_x005f_SITECOLLECTION_x005f_AGGREGATED_x005f_CONListItemCollections {
+
+}
+
+/*********************************************
+* DO_x005f_NOT_x005f_DELETE_x005f_SPLIST_x005f_SITECOLLECTION_x005f_AGGREGATED_x005f_CONListItemOData
+**********************************************/
+export interface DO_x005f_NOT_x005f_DELETE_x005f_SPLIST_x005f_SITECOLLECTION_x005f_AGGREGATED_x005f_CONListItemOData extends Base.IBaseResult, DO_x005f_NOT_x005f_DELETE_x005f_SPLIST_x005f_SITECOLLECTION_x005f_AGGREGATED_x005f_CONListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
 * DocSetDemoItem
 **********************************************/
 export interface DocSetDemoItem {
@@ -1469,6 +1841,12 @@ export interface DocSetDemoItem {
 	MediaServiceFastMetadata?: string;
 	OData__ExtendedDescription?: string;
 	TriggerFlowInfo?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	MediaGeneratedMetadata?: string;
+	MediaUserMetadata?: string;
+	OData__EffectiveIpLabelDisplayName?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -1503,11 +1881,6 @@ export interface DocSetDemoItem {
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
 	OData__DisplayName?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
-	MediaGeneratedMetadata?: string;
-	MediaUserMetadata?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	SelectTitle?: string;
@@ -1524,7 +1897,6 @@ export interface DocSetDemoItem {
 	Combine?: string;
 	RepairDocument?: string;
 	PolicyDisabledUICapabilities?: string;
-	OData__EffectiveIpLabelDisplayName?: string;
 }
 
 /*********************************************
@@ -1755,6 +2127,14 @@ export interface FormServerTemplatesItem {
 	CustomContentTypeId?: string;
 	ShowInCatalog?: boolean;
 	LinkTemplateName?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	MediaGeneratedMetadata?: string;
+	MediaUserMetadata?: string;
+	OData__EffectiveIpLabelDisplayName?: string;
+	OData__ExtendedDescription?: string;
+	TriggerFlowInfo?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -1789,11 +2169,6 @@ export interface FormServerTemplatesItem {
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
 	OData__DisplayName?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
-	MediaGeneratedMetadata?: string;
-	MediaUserMetadata?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 	SelectTitle?: string;
@@ -1810,9 +2185,6 @@ export interface FormServerTemplatesItem {
 	Combine?: string;
 	RepairDocument?: string;
 	PolicyDisabledUICapabilities?: string;
-	OData__EffectiveIpLabelDisplayName?: string;
-	OData__ExtendedDescription?: string;
-	TriggerFlowInfo?: string;
 }
 
 /*********************************************
@@ -2077,16 +2449,56 @@ export interface JSLinkDemoListItemOData extends Base.IBaseResult, JSLinkDemoLis
 }
 
 /*********************************************
-* LargeListListItem
+* IJSONDevListItem
 **********************************************/
-export interface LargeListListItem {
+export interface IJSONDevListItem extends SP.ListItemCollections, JSONDevListItemCollections, JSONDevListItemMethods, Base.IBaseQuery<JSONDevListItem, IJSONDevListItemQuery> {
+
+}
+
+/*********************************************
+* IJSONDevListItemCollection
+**********************************************/
+export interface IJSONDevListItemCollection extends Base.IBaseResults<JSONDevListItem> {
+	done?: (resolve: (value?: Array<JSONDevListItem>) => void) => void;
+}
+
+/*********************************************
+* IJSONDevListItemQueryCollection
+**********************************************/
+export interface IJSONDevListItemQueryCollection extends Base.IBaseResults<JSONDevListItemOData> {
+	done?: (resolve: (value?: Array<JSONDevListItemOData>) => void) => void;
+}
+
+/*********************************************
+* IJSONDevListItemQuery
+**********************************************/
+export interface IJSONDevListItemQuery extends JSONDevListItemOData, JSONDevListItemMethods {
+
+}
+
+/*********************************************
+* JSONDevListItem
+**********************************************/
+export interface JSONDevListItem extends SP.ListItem, Base.IBaseResult, JSONDevListItemProps, JSONDevListItemCollections, JSONDevListItemMethods {
+
+}
+
+/*********************************************
+* JSONDevListItemProps
+**********************************************/
+export interface JSONDevListItemProps {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
 	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ComplianceAssetId?: string;
-	NumberOfItems?: number;
-	ExpirationDate?: any;
+	AttendeesId?: { results: Array<number> };
+	AttendeesStringId?: { results: Array<string> };
+	FlowButton?: string;
+	MaxAllowed?: number;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -2132,26 +2544,40 @@ export interface LargeListListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
 
 /*********************************************
-* LargeListListItemCollections
+* JSONDevListItemPropMethods
 **********************************************/
-export interface LargeListListItemCollections {
-
+export interface JSONDevListItemPropMethods {
+	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************
-* LargeListListItemOData
+* JSONDevListItemCollections
 **********************************************/
-export interface LargeListListItemOData extends Base.IBaseResult, LargeListListItem {
+export interface JSONDevListItemCollections extends JSONDevListItemPropMethods {
+	Attendees(): Base.IBaseCollection<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData>;
+	Attendees(id: string | number): SP.ListItemCollections & Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* JSONDevListItemOData
+**********************************************/
+export interface JSONDevListItemOData extends SP.ListItemOData, Base.IBaseResult, JSONDevListItemProps, JSONDevListItemMethods {
+	Attendees: Base.IBaseResults<SP.Data.UserInfoItem>;
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* JSONDevListItemMethods
+**********************************************/
+export interface JSONDevListItemMethods {
+
 }
 
 /*********************************************
@@ -2730,6 +3156,9 @@ export interface TaxonomyHiddenListListItem {
 	Path1027?: string;
 	Term1048?: string;
 	Path1048?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -2775,9 +3204,6 @@ export interface TaxonomyHiddenListListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -2817,6 +3243,9 @@ export interface ProjectPolicyItemListItem {
 	ProjectTeamMailBoxId?: string;
 	ProjectTeamMailBoxWorkItemId?: any;
 	OData__dlc_ExpireDate?: any;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -2862,9 +3291,6 @@ export interface ProjectPolicyItemListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -2880,6 +3306,178 @@ export interface ProjectPolicyItemListItemCollections {
 * ProjectPolicyItemListItemOData
 **********************************************/
 export interface ProjectPolicyItemListItemOData extends Base.IBaseResult, ProjectPolicyItemListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* SCAMasterListItem
+**********************************************/
+export interface SCAMasterListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	CSSTMemberId?: number;
+	CSSTMemberStringId?: string;
+	EmployeeNameId?: number;
+	EmployeeNameStringId?: string;
+	Environment1?: string;
+	Environment2?: string;
+	Environment3?: string;
+	GovernanceForm?: boolean;
+	Role?: string;
+	SCAOrientationDate?: any;
+	Site1?: SP.FieldUrlValue;
+	Site2?: SP.FieldUrlValue;
+	Site3?: SP.FieldUrlValue;
+	UpdateType?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* SCAMasterListItemCollections
+**********************************************/
+export interface SCAMasterListItemCollections {
+
+}
+
+/*********************************************
+* SCAMasterListItemOData
+**********************************************/
+export interface SCAMasterListItemOData extends Base.IBaseResult, SCAMasterListItem {
+	CSSTMember: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	EmployeeName: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* Sharing_x0020_LinksItem
+**********************************************/
+export interface Sharing_x0020_LinksItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	SharingDocId?: any;
+	CurrentLink?: number;
+	AvailableLinks?: string;
+	Migrated?: boolean;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* Sharing_x0020_LinksItemCollections
+**********************************************/
+export interface Sharing_x0020_LinksItemCollections {
+
+}
+
+/*********************************************
+* Sharing_x0020_LinksItemOData
+**********************************************/
+export interface Sharing_x0020_LinksItemOData extends Base.IBaseResult, Sharing_x0020_LinksItem {
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
@@ -3121,6 +3719,11 @@ export interface SitePagesItemProps {
 	OData__Emoji?: string;
 	MediaGeneratedMetadata?: string;
 	MediaUserMetadata?: string;
+	OData__SPAuthoringMetadata?: string;
+	OData__SPCollaborators?: string;
+	OData__SPHiddenHighlightsMetadata?: string;
+	OData__SPHideListEditorMetadataId?: number;
+	_SPHideListEditorMetadataStringId?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -3174,6 +3777,7 @@ export interface SitePagesItemProps {
 * SitePagesItemPropMethods
 **********************************************/
 export interface SitePagesItemPropMethods {
+	OData__SPHideListEditorMetadata(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 	Author(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 	Editor(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
 	CheckoutUser(): Base.IBaseQuery<SP.Data.UserInfoItem, SP.Data.UserInfoItemOData> & SP.Data.UserInfoItemCollections;
@@ -3192,6 +3796,7 @@ export interface SitePagesItemCollections extends SitePagesItemPropMethods {
 **********************************************/
 export interface SitePagesItemOData extends SP.ListItemOData, Base.IBaseResult, SitePagesItemProps, SitePagesItemMethods {
 	OData__AuthorByline: Base.IBaseResults<SP.Data.UserInfoItem>;
+	OData__SPHideListEditorMetadata: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 	CheckoutUser: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
@@ -3552,6 +4157,84 @@ export interface Style_x0020_LibraryItemOData extends Base.IBaseResult, Style_x0
 }
 
 /*********************************************
+* SurveyFormsListItem
+**********************************************/
+export interface SurveyFormsListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	Status?: string;
+	Comments?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* SurveyFormsListItemCollections
+**********************************************/
+export interface SurveyFormsListItemCollections {
+
+}
+
+/*********************************************
+* SurveyFormsListItemOData
+**********************************************/
+export interface SurveyFormsListItemOData extends Base.IBaseResult, SurveyFormsListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
 * ITasksListItem
 **********************************************/
 export interface ITasksListItem extends SP.ListItemCollections, TasksListItemCollections, TasksListItemMethods, Base.IBaseQuery<TasksListItem, ITasksListItemQuery> {
@@ -3625,6 +4308,9 @@ export interface TasksListItemProps {
 	ExtendedProperties?: string;
 	GUID?: any;
 	WorkflowInstanceID?: any;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -3668,9 +4354,6 @@ export interface TasksListItemProps {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -3969,6 +4652,7 @@ export interface OData__x005f_catalogs_x002f_wteItem {
 	ErrorCode?: number;
 	SiteDesignInvokerLogonName?: string;
 	ActionTrigger?: number;
+	ActionVerb?: string;
 }
 
 /*********************************************
@@ -4323,6 +5007,9 @@ export interface Workflow_x0020_TasksListItemProps {
 	PreviouslyAssignedToStringId?: { results: Array<string> };
 	TaskOutcome?: string;
 	WF4InstanceId?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -4368,9 +5055,6 @@ export interface Workflow_x0020_TasksListItemProps {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }
@@ -4427,6 +5111,9 @@ export interface WorkflowTestListItem {
 	SetByWorkflow?: string;
 	Set_x0020_Default_x0020_Value?: SP.FieldUrlValue;
 	SetValue?: number;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
 	ID?: number;
 	Modified?: any;
 	Created?: any;
@@ -4472,9 +5159,6 @@ export interface WorkflowTestListItem {
 	OData__Level?: number;
 	OData__IsCurrentVersion?: boolean;
 	OData__IsRecord?: string;
-	OData__ColorHex?: string;
-	OData__ColorTag?: string;
-	OData__Emoji?: string;
 	AppAuthorId?: number;
 	AppEditorId?: number;
 }

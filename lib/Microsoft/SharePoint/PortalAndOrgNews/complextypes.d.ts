@@ -6,6 +6,7 @@ import { Base } from "../../../";
 export interface HomeSiteConfigurationParam {
 	Audiences?: { results: Array<any> };
 	IsAudiencesPresent?: boolean;
+	isGoBackToConnectionsButtonDisabled?: boolean;
 	isInDraftMode?: boolean;
 	IsInDraftModePresent?: boolean;
 	IsOrderPresent?: boolean;

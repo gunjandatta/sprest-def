@@ -24,7 +24,9 @@ export interface SP_API {
 	machinelearning: Microsoft.Office.Server.ContentCenter.ISPMachineLearningHub;
 	me: SP.RequestUserContext;
 	microservicemanager: SP.MicroService.IMicroServiceManager;
+	MigrationCompleteStateApi: Microsoft.SharePoint.Convergence.IMigrationCompleteStateApi;
 	models: Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections;
+	MultiGeoProxy: Microsoft.SharePoint.MultiGeo.ISPMultiGeoProxy;
 	OrgNews: SP.IOrganizationNews;
 	OrgNewsSite: Microsoft.SharePoint.OrgNewsSite.IOrgNewsSiteApi;
 	outofboxfontpackages: SP.FontPackageCollections;
@@ -33,10 +35,12 @@ export interface SP_API {
 	PortalNavigationCache: SP.Publishing.Navigation.IPortalNavigationCacheWrapper;
 	publications: Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollections;
 	site: SP.ISite;
+	sitefontpackages: SP.FontPackageCollections;
 	SiteIconManager: Microsoft.SharePoint.Portal.ISiteIconManager;
 	sitelinkingmanager: Microsoft.SharePoint.Portal.ISiteLinkingManager;
 	sphomeservice: Microsoft.SharePoint.Portal.ISharePointHomeServiceContextBuilder;
 	SPHSite: SP.ISPHSite;
+	SPOInternalUseOnly.TenantSharingRestrictions: Microsoft.SharePoint.Sharing.Internal.ISharingRestrictions;
 	spsitemanager: Microsoft.SharePoint.Portal.ISPSiteManager;
 	StructuralNavigationCache: SP.Publishing.Navigation.IStructuralNavigationCacheWrapper;
 	thememanager: SP.Utilities.IThemeManager;
