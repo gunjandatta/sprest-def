@@ -386,6 +386,7 @@ export interface WorkflowServicesManagerProps {
 	IsRegistered?: boolean;
 	ScopePath?: string;
 	ServiceHealthStatus?: number;
+	Workflow2013Retired?: boolean;
 }
 
 /*********************************************

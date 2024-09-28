@@ -72,9 +72,11 @@ export interface SharingInformation {
 	accessRequestSettings?: SP.Sharing.AccessRequestSettings;
 	addressBarLinkSettings?: SP.Sharing.AddressBarLinkSettings;
 	ageGroup?: number;
+	allOrganizationSecurityGroupId?: any;
 	anonymousLinkExpirationRestrictionDays?: number;
 	anyoneLinkTrackUsers?: boolean;
 	blockPeoplePickerAndSharing?: boolean;
+	canAddExistingExternalPrincipal?: boolean;
 	canAddExternalPrincipal?: boolean;
 	canAddInternalPrincipal?: boolean;
 	canRequestAccessForGrantAccess?: boolean;
@@ -87,6 +89,7 @@ export interface SharingInformation {
 	defaultShareLinkScope?: number;
 	defaultShareLinkToExistingAccess?: boolean;
 	directUrl?: string;
+	discoverableByOrganizationEnabled?: boolean;
 	displayName?: string;
 	domainRestrictionSettings?: SP.Sharing.DomainRestrictionSettings;
 	enforceIBSegmentFiltering?: boolean;

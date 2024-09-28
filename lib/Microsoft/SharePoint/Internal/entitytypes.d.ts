@@ -1,4 +1,5 @@
 import { Base } from "../../../";
+import { Microsoft } from "../../../";
 
 /*********************************************
 * IActivityLogger
@@ -69,7 +70,8 @@ export interface ActivityLoggerOData extends Base.IBaseResult, ActivityLoggerPro
 export interface ActivityLoggerMethods {
 	feedbackDirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): Base.IBaseExecution<any>;
 	feedbackIndirect(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, json?: string): Base.IBaseExecution<any>;
-	logActivity(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, AuditCreationTime?: string, IsOffline?: boolean): Base.IBaseExecution<any>;
+	logActivity(Operation?: string, ListId?: any, ListItemUniqueId?: any, AffectedResourceUrl?: string, ItemType?: string, ExtraProperties?: Microsoft.SharePoint.Internal.LogActivityExtraProperties, AuditCreationTime?: string, IsOffline?: boolean): Base.IBaseExecution<any>;
+	logActivityBulk(Operation?: string, SiteId?: any, WebId?: any, ListId?: any, Requests?: Array<Microsoft.SharePoint.Internal.LogActivityRequest>): Base.IBaseExecution<any>;
 }
 
 /*********************************************

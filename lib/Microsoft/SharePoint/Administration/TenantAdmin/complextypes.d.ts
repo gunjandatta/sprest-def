@@ -1,6 +1,45 @@
 import { Base } from "../../../../";
-import { Microsoft } from "../../../../";
 import { SP } from "../../../../";
+import { Microsoft } from "../../../../";
+
+/*********************************************
+* PolicyResourceStorage
+**********************************************/
+export interface PolicyResourceStorage {
+	createdOn?: any;
+	lastScopedOn?: any;
+	lookupSiteId?: SP.FieldLookupValue;
+	notificationData?: string;
+	notificationStatus?: number;
+	policyActionLog?: string;
+	resourceId?: any;
+	resourceState?: number;
+	resourceStateTransitionData?: string;
+	resourceType?: number;
+	updatedOn?: any;
+	userResponses?: string;
+}
+
+/*********************************************
+* PolicyResourceStorageCollections
+**********************************************/
+export interface PolicyResourceStorageCollections {
+
+}
+
+/*********************************************
+* AttestationPolicyResourceStorage
+**********************************************/
+export interface AttestationPolicyResourceStorage {
+
+}
+
+/*********************************************
+* AttestationPolicyResourceStorageCollections
+**********************************************/
+export interface AttestationPolicyResourceStorageCollections {
+
+}
 
 /*********************************************
 * AuditData
@@ -211,21 +250,6 @@ export interface CollaborationInsightsOverviewCollections {
 }
 
 /*********************************************
-* CopilotRestrictedSearchSetting
-**********************************************/
-export interface CopilotRestrictedSearchSetting {
-	AllowedSiteIds?: { results: Array<any> };
-	Stage?: number;
-}
-
-/*********************************************
-* CopilotRestrictedSearchSettingCollections
-**********************************************/
-export interface CopilotRestrictedSearchSettingCollections {
-
-}
-
-/*********************************************
 * GroupSitesActivityDetail
 **********************************************/
 export interface GroupSitesActivityDetail {
@@ -246,11 +270,16 @@ export interface GroupSitesActivityDetailCollections {
 export interface InactiveSitePolicyResourceStorage {
 	createdOn?: any;
 	lastScopedOn?: any;
+	lastTransitionedOn?: any;
 	lookupSiteId?: SP.FieldLookupValue;
+	notificationData?: string;
+	notificationStatus?: number;
 	resourceId?: any;
-	resourceStatus?: number;
+	resourceState?: number;
+	resourceStateTransitionData?: string;
 	resourceType?: number;
 	updatedOn?: any;
+	userResponses?: string;
 }
 
 /*********************************************
@@ -284,9 +313,10 @@ export interface OwnershipPolicyResourceStorage {
 	lookupSiteId?: SP.FieldLookupValue;
 	notificationData?: string;
 	notificationStatus?: number;
+	policyActionLog?: string;
 	resourceId?: any;
+	resourceState?: number;
 	resourceStateTransitionData?: string;
-	resourceStatus?: number;
 	resourceType?: number;
 	updatedOn?: any;
 	userResponses?: string;
@@ -332,6 +362,8 @@ export interface RansomwareProperties {
 	impactedDocLibName?: string;
 	impactedSiteType?: number;
 	lastActivity?: any;
+	ransomwareDetectionReason?: string;
+	ransomwareDetectionScore?: number;
 	siteLabelId?: string;
 	siteLabelName?: string;
 	siteName?: string;
@@ -375,6 +407,21 @@ export interface RecentAdminActionReport {
 * RecentAdminActionReportCollections
 **********************************************/
 export interface RecentAdminActionReportCollections {
+
+}
+
+/*********************************************
+* SPContentEventsCustomEmailProperty
+**********************************************/
+export interface SPContentEventsCustomEmailProperty {
+	Category?: number;
+	EmailAddresses?: { results: Array<string> };
+}
+
+/*********************************************
+* SPContentEventsCustomEmailPropertyCollections
+**********************************************/
+export interface SPContentEventsCustomEmailPropertyCollections {
 
 }
 
@@ -431,11 +478,13 @@ export interface TenantAdminPolicyDefinition {
 	policyCreatedTime?: any;
 	policyCustomName?: string;
 	policyDefinitionDetails?: string;
+	policyDeleteReason?: string;
 	policyDescription?: string;
 	policyFrequencyUnit?: number;
 	policyFrequencyValue?: number;
 	policyId?: any;
 	policyState?: number;
+	policyTags?: string;
 	policyTemplate?: number;
 	policyType?: number;
 	policyVersion?: number;
@@ -512,6 +561,8 @@ export interface TenantAdminRansomwareActivity {
 	investigationState?: number;
 	lastActivity?: any;
 	lastUpdatedTime?: any;
+	ransomwareDetectionReason?: string;
+	RansomwareDetectionScore?: number;
 	siteId?: any;
 	siteName?: string;
 	siteOwner?: string;
@@ -555,6 +606,7 @@ export interface TenantAdminRansomwareEvent {
 	classification?: number;
 	createdTime?: any;
 	eventId?: any;
+	firstOccurrence?: any;
 	investigationState?: number;
 	lastOccurrence?: any;
 	lastUpdatedTime?: any;

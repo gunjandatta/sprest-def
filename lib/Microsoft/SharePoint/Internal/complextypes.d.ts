@@ -205,6 +205,36 @@ export interface GptResponseCollections {
 }
 
 /*********************************************
+* LogActivityExtraProperties
+**********************************************/
+export interface LogActivityExtraProperties {
+	CampaignMetadata?: string;
+	LinkUrlClicked?: string;
+}
+
+/*********************************************
+* LogActivityExtraPropertiesCollections
+**********************************************/
+export interface LogActivityExtraPropertiesCollections {
+
+}
+
+/*********************************************
+* LogActivityRequest
+**********************************************/
+export interface LogActivityRequest {
+	LastAccessTime?: string;
+	ListItemUniqueId?: any;
+}
+
+/*********************************************
+* LogActivityRequestCollections
+**********************************************/
+export interface LogActivityRequestCollections {
+
+}
+
+/*********************************************
 * TrackedItemUpdatesRequest
 **********************************************/
 export interface TrackedItemUpdatesRequest {

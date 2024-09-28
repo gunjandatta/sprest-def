@@ -42,6 +42,7 @@ export interface comment extends Base.IBaseResult, commentProps, commentCollecti
 **********************************************/
 export interface commentProps {
 	author?: SP.Sharing.Principal;
+	contentAnchor?: Microsoft.SharePoint.Comments.ContentAnchor;
 	createdDate?: any;
 	id?: string;
 	isLikedByUser?: boolean;

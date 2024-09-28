@@ -31,6 +31,7 @@ export interface SPActiveContainerProperties {
 	DeletedOn?: string;
 	Description?: string;
 	Owners?: { results: Array<Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties> };
+	OwnersCount?: number;
 	OwningApplicationId?: any;
 	PublisherName?: string;
 	Readers?: { results: Array<Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties> };

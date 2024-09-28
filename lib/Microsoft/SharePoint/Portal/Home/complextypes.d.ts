@@ -49,6 +49,7 @@ export interface SharePointHomeDataCacheEntryCollections {
 * SharePointHomeDataCacheContext
 **********************************************/
 export interface SharePointHomeDataCacheContext {
+	CacheKey?: string;
 	Hash?: string;
 	ListItemId?: number;
 	MySiteUrl?: string;

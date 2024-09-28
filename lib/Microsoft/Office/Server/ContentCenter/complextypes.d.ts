@@ -19,21 +19,6 @@ export interface ColumnDefCollections {
 }
 
 /*********************************************
-* PrebuiltModelInfo
-**********************************************/
-export interface PrebuiltModelInfo {
-	FormRecognizerApiVersion?: string;
-	FormRecognizerPrebuiltModelName?: string;
-}
-
-/*********************************************
-* PrebuiltModelInfoCollections
-**********************************************/
-export interface PrebuiltModelInfoCollections {
-
-}
-
-/*********************************************
 * SiteCreationProperties
 **********************************************/
 export interface SiteCreationProperties {
@@ -64,12 +49,44 @@ export interface SPClassificationPublishConfig {
 	ContentType?: string;
 	Kind?: string;
 	ModelClassification?: string;
+	RetentionLabel?: Microsoft.Office.Server.ContentCenter.SPRetentionLabelConfig;
+	SensitivityLabel?: Microsoft.Office.Server.ContentCenter.SPSensitivityLabelConfig;
 }
 
 /*********************************************
 * SPClassificationPublishConfigCollections
 **********************************************/
 export interface SPClassificationPublishConfigCollections {
+
+}
+
+/*********************************************
+* SPRetentionLabelConfig
+**********************************************/
+export interface SPRetentionLabelConfig {
+	Id?: string;
+	Name?: string;
+}
+
+/*********************************************
+* SPRetentionLabelConfigCollections
+**********************************************/
+export interface SPRetentionLabelConfigCollections {
+
+}
+
+/*********************************************
+* SPSensitivityLabelConfig
+**********************************************/
+export interface SPSensitivityLabelConfig {
+	Id?: string;
+	Name?: string;
+}
+
+/*********************************************
+* SPSensitivityLabelConfigCollections
+**********************************************/
+export interface SPSensitivityLabelConfigCollections {
 
 }
 
@@ -93,6 +110,7 @@ export interface SPDependentModelCollections {
 * SPExtractorPublishConfig
 **********************************************/
 export interface SPExtractorPublishConfig {
+	ColumnInternalName?: string;
 	ColumnName?: string;
 	ColumnType?: string;
 	ExtractorId?: any;

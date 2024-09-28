@@ -2,6 +2,23 @@ import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
+* AutofillColumnInfo
+**********************************************/
+export interface AutofillColumnInfo {
+	ColumnDataType?: string;
+	columnName?: string;
+	isEnabled?: boolean;
+	prompt?: string;
+}
+
+/*********************************************
+* AutofillColumnInfoCollections
+**********************************************/
+export interface AutofillColumnInfoCollections {
+
+}
+
+/*********************************************
 * EmailProperties
 **********************************************/
 export interface EmailProperties {
@@ -33,6 +50,21 @@ export interface JsonTheme {
 * JsonThemeCollections
 **********************************************/
 export interface JsonThemeCollections {
+
+}
+
+/*********************************************
+* LLMColumnInfo
+**********************************************/
+export interface LLMColumnInfo {
+	IsEnabled?: boolean;
+	Prompt?: string;
+}
+
+/*********************************************
+* LLMColumnInfoCollections
+**********************************************/
+export interface LLMColumnInfoCollections {
 
 }
 

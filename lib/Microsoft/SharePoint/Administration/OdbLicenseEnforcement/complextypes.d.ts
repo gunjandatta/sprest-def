@@ -12,6 +12,8 @@ export interface UnlicensedOdbTenantMetrics {
 	invalidLicenseCount?: number;
 	invalidLicenseSizeBytes?: number;
 	lastRefreshOn?: any;
+	restoredByTenantAdminCount?: number;
+	restoredByTenantAdminSizeBytes?: number;
 	retentionPeriodCount?: number;
 	retentionPeriodSizeBytes?: number;
 	sizeBytes?: number;

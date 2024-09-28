@@ -76,6 +76,7 @@ export interface SPAddinPermissionFailedInfoCollections {
 * SPAddinPermissionInfo
 **********************************************/
 export interface SPAddinPermissionInfo {
+	absoluteUrl?: string;
 	allowAppOnly?: boolean;
 	appIdentifier?: string;
 	serverRelativeUrl?: string;
@@ -130,6 +131,7 @@ export interface SPTenantScopedPermissionInfoCollections {
 export interface SPAddinPermissionRequest {
 	appIdentifiers?: { results: Array<string> };
 	serverRelativeUrl?: string;
+	url?: string;
 }
 
 /*********************************************
@@ -158,6 +160,7 @@ export interface SPAddinPermissionResponseCollections {
 * SPAddinPrincipalInfo
 **********************************************/
 export interface SPAddinPrincipalInfo {
+	absoluteUrl?: string;
 	appIdentifier?: string;
 	serverRelativeUrl?: string;
 	title?: string;
@@ -360,6 +363,7 @@ export interface SPStoreAppResponseInformationCollections {
 * SPTriggeredUninstallAddinJobResponse
 **********************************************/
 export interface SPTriggeredUninstallAddinJobResponse {
+	absoluteUrl?: string;
 	appInstanceId?: any;
 	serverRelativeUrl?: string;
 	uninstallJobId?: any;
@@ -394,6 +398,7 @@ export interface SPUninstallAddinErrorDetailCollections {
 * SPUninstallAddinJobDetail
 **********************************************/
 export interface SPUninstallAddinJobDetail {
+	absoluteUrl?: string;
 	appInstanceId?: any;
 	errorDetails?: { results: Array<Microsoft.SharePoint.Marketplace.CorporateCuratedGallery.SPUninstallAddinErrorDetail> };
 	jobId?: any;
@@ -415,6 +420,7 @@ export interface SPUninstallAddinJobDetailCollections {
 export interface SPUninstallAddinRequest {
 	appInstanceIds?: { results: Array<any> };
 	serverRelativeUrl?: string;
+	url?: string;
 }
 
 /*********************************************

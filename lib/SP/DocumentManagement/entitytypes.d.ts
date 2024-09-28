@@ -69,4 +69,5 @@ export interface DocumentIdOData extends Base.IBaseResult, DocumentIdProps, Docu
 export interface DocumentIdMethods {
 	resetDocIdByServerRelativePath(DecodedUrl?: string): Base.IBaseExecution<any>;
 	resetDocIdsInLibrary(DecodedUrl?: string, contentTypeId?: string): Base.IBaseExecution<any>;
+	setDocIdSitePrefix(prefix?: string, scheduleAssignment?: boolean, overwriteExistingIds?: boolean): Base.IBaseExecution<any>;
 }

@@ -40,6 +40,11 @@ export interface SiteDesignCreationInfo {
 	SiteScriptIds?: { results: Array<any> };
 	SupportedWebTemplates?: { results: Array<string> };
 	TargetPlatforms?: { results: Array<string> };
+	TeamChannels?: { results: Array<string> };
+	TeamImageAltText?: string;
+	TeamImageUrl?: string;
+	TeamInstalledApps?: { results: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.TeamAppInfo> };
+	TeamTemplate?: string;
 	TemplateAssets?: { results: Array<string> };
 	TemplateFeatures?: { results: Array<string> };
 	ThumbnailUrl?: string;
@@ -70,6 +75,21 @@ export interface SiteDesignImageCollections {
 }
 
 /*********************************************
+* TeamAppInfo
+**********************************************/
+export interface TeamAppInfo {
+	Children?: { results: Array<string> };
+	Name?: string;
+}
+
+/*********************************************
+* TeamAppInfoCollections
+**********************************************/
+export interface TeamAppInfoCollections {
+
+}
+
+/*********************************************
 * SiteDesignMetadata
 **********************************************/
 export interface SiteDesignMetadata {
@@ -95,6 +115,7 @@ export interface SiteScriptActionResult {
 	Target?: string;
 	TargetId?: string;
 	Title?: string;
+	Verb?: string;
 }
 
 /*********************************************
@@ -145,6 +166,7 @@ export interface SiteScriptMetadataCollections {
 export interface SiteScriptSerializationInfo {
 	IncludeBranding?: boolean;
 	IncludedLists?: { results: Array<string> };
+	IncludedPages?: { results: Array<string> };
 	IncludeLinksToExportedItems?: boolean;
 	IncludeRegionalSettings?: boolean;
 	IncludeSiteExternalSharingCapability?: boolean;
@@ -214,6 +236,7 @@ export interface SiteScriptActionStatus {
 	ActionIndex?: number;
 	ActionKey?: any;
 	ActionTitle?: string;
+	ActionVerb?: string;
 	LastModified?: number;
 	OrdinalIndex?: number;
 	OutcomeCode?: number;
