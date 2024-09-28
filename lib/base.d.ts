@@ -98,6 +98,9 @@ export interface IBaseResult {
      * Method to stringify the object.
      */
     stringify(): string;
+
+    /** Updates the request digest value. */
+    updateRequestDigest(value: string);
 }
 
 /**
