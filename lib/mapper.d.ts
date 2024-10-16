@@ -9520,6 +9520,10 @@ export interface IMapper {
 		argNames: [ "value" ],
 		},
 
+		update: IMapperMethod & {
+		argNames: [ "properties" ],
+		},
+
 	}
 
 	"SP.TenantSettings": {

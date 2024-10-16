@@ -202,6 +202,13 @@ module.exports = {
             params: [{ $: { Name: "properties", Type: "any" } }]
         }
     ],
+    "SP.Taxonomy.TaxonomyField": [
+        {
+            name: "update",
+            returnType: "any",
+            params: [{ $: { Name: "properties", Type: "any" } }]
+        }
+    ],
 
     // Fields
     "Collection(SP.Field)": [

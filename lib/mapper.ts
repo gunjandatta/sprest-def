@@ -9222,6 +9222,10 @@ export const Mapper: IMapper = {
 		argNames: [ "value" ],
 		},
 
+		update: {
+		argNames: [ "properties" ],
+		},
+
 	},
 
 	"SP.TenantSettings": {
