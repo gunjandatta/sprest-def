@@ -3450,7 +3450,6 @@ export interface WebMethods {
 	uploadImage(listTitle?: string, imageName?: string, contentStream?: any, listId?: string, itemId?: number, fieldId?: string, overwrite?: boolean): Base.IBaseExecution<SP.SPImageItem>;
 	doesUserHavePermissions(high?: number, low?: number): Base.IBaseExecution<boolean>;
 	getUserEffectivePermissions(userName?: string): Base.IBaseExecution<{ GetUserEffectivePermissions: SP.BasePermissions }>;
-	setProperty(key?: string, value?: string): Base.IBaseExecution<Base.IBaseExecution<{ Property: SP.PropertyValue }>>;
 	update(properties?: any): Base.IBaseExecution<any>;
 }
 

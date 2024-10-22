@@ -10198,10 +10198,6 @@ export const Mapper: IMapper = {
 		argNames: [ "title", "source" ],
 		},
 
-		setProperty: {
-		argNames: [ "key", "value" ],
-		},
-
 		setStorageEntity: {
 		argNames: [ "key", "value", "description", "comments" ],
 		},
