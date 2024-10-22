@@ -10520,6 +10520,10 @@ export interface IMapper {
 		argNames: [ "title", "source" ],
 		},
 
+		setProperty: IMapperMethod & {
+		argNames: [ "key", "value" ],
+		},
+
 		setStorageEntity: IMapperMethod & {
 		argNames: [ "key", "value", "description", "comments" ],
 		},

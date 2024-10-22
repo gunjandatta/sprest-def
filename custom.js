@@ -552,6 +552,14 @@ module.exports = {
             params: [{ $: { Name: "userName", Type: "string" } }]
         },
         {
+            name: "setProperty",
+            returnType: "Base.IBaseExecution<{ Property: SP.PropertyValue }>",
+            params: [
+                { $: { Name: "key", Type: "string" } },
+                { $: { Name: "value", Type: "string" } }
+            ]
+        },
+        {
             name: "update",
             returnType: "any",
             params: [{ $: { Name: "properties", Type: "any" } }]
