@@ -85,6 +85,9 @@ export interface IBaseQuery<Type = any, Result = Type> extends IBaseExecution<Ty
  * Base Result
  */
 export interface IBaseResult {
+    /** The etag value from the object's metadata. */
+    etag?: string;
+
     /** True, if the object exists, false otherwise. */
     existsFl: boolean;
 
