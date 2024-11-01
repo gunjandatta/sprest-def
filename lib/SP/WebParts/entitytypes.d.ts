@@ -25,7 +25,7 @@ export interface WebPartCollections {
 * WebPartOData
 **********************************************/
 export interface WebPartOData extends Base.IBaseResult, WebPart {
-	Properties: SP.PropertyValues & SP.PropertyValuesCollections;
+	Properties: SP.PropertyValues & SP.PropertyValuesCollections & SP.PropertyValuesCollectionMethods;
 }
 
 /*********************************************

@@ -7337,6 +7337,20 @@ export interface IMapper {
 
 	}
 
+	"SP.PropertyValues.Collection": {
+		properties?: Array<string>;
+		add: IMapperMethod & {
+		argNames: [ "key", "value" ],
+		},
+
+		query: IMapperMethod & { argNames: ["oData"] },
+
+		remove: IMapperMethod & {
+		argNames: [ "key" ],
+		},
+
+	}
+
 	"SP.Publishing.AnnouncementsController": {
 		properties?: Array<string>;
 		active: IMapperMethod & {

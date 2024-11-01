@@ -875,7 +875,7 @@ export interface AlertCollectionMethods {
 * AlertOData
 **********************************************/
 export interface AlertOData extends Base.IBaseResult, AlertProps, AlertMethods {
-	AllProperties: SP.PropertyValues & SP.PropertyValuesCollections;
+	AllProperties: SP.PropertyValues & SP.PropertyValuesCollections & SP.PropertyValuesCollectionMethods;
 	Item: SP.ListItem & SP.ListItemCollections & SP.ListItemCollectionMethods;
 	List: SP.List & SP.ListCollections & SP.ListCollectionMethods;
 	User: SP.User & SP.UserCollections & SP.UserCollectionMethods;
@@ -898,8 +898,16 @@ export interface PropertyValues {
 /*********************************************
 * PropertyValuesCollections
 **********************************************/
-export interface PropertyValuesCollections {
+export interface PropertyValuesCollections extends PropertyValuesCollectionMethods {
 
+}
+
+/*********************************************
+* PropertyValuesCollectionMethods
+**********************************************/
+export interface PropertyValuesCollectionMethods {
+	add(key?: string, value?: string): Base.IBaseExecution<any>;
+	remove(key?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************
@@ -1253,7 +1261,7 @@ export interface ListItemOData extends SP.SecurableObjectOData, Base.IBaseResult
 	Folder: SP.Folder & SP.FolderCollections & SP.FolderCollectionMethods;
 	LikedByInformation: Microsoft.SharePoint.Likes.likedByInformation & Microsoft.SharePoint.Likes.likedByInformationCollections;
 	ParentList: SP.List & SP.ListCollections & SP.ListCollectionMethods;
-	Properties: SP.PropertyValues & SP.PropertyValuesCollections;
+	Properties: SP.PropertyValues & SP.PropertyValuesCollections & SP.PropertyValuesCollectionMethods;
 	Versions: Base.IBaseResults<SP.ListItemVersion> & SP.ListItemVersionCollectionMethods;
 }
 
@@ -1966,7 +1974,7 @@ export interface FileOData extends Base.IBaseResult, FileProps, FileMethods {
 	ListItemAllFields: SP.ListItem & SP.ListItemCollections & SP.ListItemCollectionMethods;
 	LockedByUser: SP.User & SP.UserCollections & SP.UserCollectionMethods;
 	ModifiedBy: SP.User & SP.UserCollections & SP.UserCollectionMethods;
-	Properties: SP.PropertyValues & SP.PropertyValuesCollections;
+	Properties: SP.PropertyValues & SP.PropertyValuesCollections & SP.PropertyValuesCollectionMethods;
 	VersionEvents: Base.IBaseResults<SP.FileVersionEvent>;
 	VersionExpirationReport: Base.IBaseResults<SP.FileVersion> & SP.FileVersionCollectionMethods;
 	Versions: Base.IBaseResults<SP.FileVersion> & SP.FileVersionCollectionMethods;
@@ -2349,7 +2357,7 @@ export interface FolderOData extends Base.IBaseResult, FolderProps, FolderMethod
 	Files: Base.IBaseResults<SP.File> & SP.FileCollectionMethods;
 	ListItemAllFields: SP.ListItem & SP.ListItemCollections & SP.ListItemCollectionMethods;
 	ParentFolder: SP.Folder & SP.FolderCollections & SP.FolderCollectionMethods;
-	Properties: SP.PropertyValues & SP.PropertyValuesCollections;
+	Properties: SP.PropertyValues & SP.PropertyValuesCollections & SP.PropertyValuesCollectionMethods;
 	StorageMetrics: SP.StorageMetrics & SP.StorageMetricsCollections;
 	Folders: Base.IBaseResults<SP.Folder> & SP.FolderCollectionMethods;
 }
@@ -3285,7 +3293,7 @@ export interface WebOData extends SP.SecurableObjectOData, Base.IBaseResult, Web
 	Activities: Base.IBaseResults<Microsoft.SharePoint.Activities.SPActivityEntity>;
 	ActivityLogger: Microsoft.SharePoint.Internal.ActivityLogger & Microsoft.SharePoint.Internal.ActivityLoggerCollections;
 	Alerts: Base.IBaseResults<SP.Alert> & SP.AlertCollectionMethods;
-	AllProperties: SP.PropertyValues & SP.PropertyValuesCollections;
+	AllProperties: SP.PropertyValues & SP.PropertyValuesCollections & SP.PropertyValuesCollectionMethods;
 	AppTiles: Base.IBaseResults<SP.AppTile>;
 	AssociatedMemberGroup: SP.Group & SP.GroupCollections & SP.GroupCollectionMethods;
 	AssociatedOwnerGroup: SP.Group & SP.GroupCollections & SP.GroupCollectionMethods;

@@ -2,6 +2,25 @@
  * Custom Methods
  */
 module.exports = {
+    // All Properties (Property Bag)
+    "Collection(SP.PropertyValues)": [
+        {
+            name: "add",
+            returnType: "any",
+            params: [
+                { $: { Name: "key", Type: "string" }, },
+                { $: { Name: "value", Type: "string" }, }
+            ]
+        },
+        {
+            name: "remove",
+            returnType: "any",
+            params: [
+                { $: { Name: "key", Type: "string" }, }
+            ]
+        }
+    ],
+
     // Attachments
     "Collection(SP.Attachment)": [
         {

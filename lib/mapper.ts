@@ -7097,6 +7097,19 @@ export const Mapper: IMapper = {
 
 	},
 
+	"SP.PropertyValues.Collection": {
+		add: {
+		argNames: [ "key", "value" ],
+		},
+
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+		remove: {
+		argNames: [ "key" ],
+		},
+
+	},
+
 	"SP.Publishing.AnnouncementsController": {
 		active: {
 		},
