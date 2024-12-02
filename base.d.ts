@@ -91,6 +91,9 @@ export interface IBaseResult {
     /** True, if the object exists, false otherwise. */
     existsFl: boolean;
 
+    /** Gets the request digest value. */
+    getRequestDigest(): string;
+
     /** The response */
     response: string;
 
