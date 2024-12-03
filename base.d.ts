@@ -159,6 +159,7 @@ export interface IMethodInfo {
     requestMethod?: string;
     requestType?: number;
     returnType?: string;
+    useToken?: boolean;
 }
 
 /**
