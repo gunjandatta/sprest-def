@@ -667,9 +667,8 @@ ${props.join('\n')}
 
     // Create the entities
     content = [
-        "import { IBaseExecution } from \"../../base\";",
-        "import * as ComplexTypes from \"./complexTypes.d\";",
-        "import * as EnumTypes from \"./enumTypes.d\";\n",
+        "import { IBaseExecution, IBaseQuery } from \"../../base\";",
+        "import * as ComplexTypes from \"./complexTypes.d\";"
     ];
 
     // Parse the custom methods
@@ -705,7 +704,7 @@ ${props.join('\n')}
                 let argName = argNames[i];
                 argStrings.push(argName.name + ": " + argName.type);
             }
-            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(method.returnType, true) + ">" + (method.returnType2 ? " & " + method.returnType2 : "") + ";");
+            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + getGraphType(method.returnType, true) + ">" + (method.returnType2 ? " & " + method.returnType2 : "") + ";");
         }
 
         // Add the endpoint
