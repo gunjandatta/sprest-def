@@ -116,6 +116,9 @@ export interface item  {
 	listItem(): IBaseQuery<listItem>;
 	versions(): IBaseQuery<driveItemVersionCollection>;
 	versions(id: string | number): IBaseQuery<driveItemVersion> & driveItemVersionMethods;
+	extractSensitivityLabel(values: any): IBaseQuery<void>;
+	setSensitivityLabel(values: any): IBaseQuery<void>;
+	update(values: any): IBaseQuery<void>;
 }
 /*********************************************
 * item Methods
@@ -137,6 +140,9 @@ export interface itemMethods {
 	listItem(): IBaseQuery<listItem>;
 	versions(): IBaseQuery<driveItemVersionCollection>;
 	versions(id: string | number): IBaseQuery<driveItemVersion> & driveItemVersionMethods;
+	extractSensitivityLabel(values: any): IBaseQuery<void>;
+	setSensitivityLabel(values: any): IBaseQuery<void>;
+	update(values: any): IBaseQuery<void>;
 }
 /*********************************************
 * item Collection
@@ -285,6 +291,8 @@ export interface listItem extends baseItem {
 	fields(): IBaseQuery<fieldValueSet>;
 	versions(): IBaseQuery<listItemVersionCollection>;
 	versions(id: string | number): IBaseQuery<listItemVersion> & listItemVersionMethods;
+	extractSensitivityLabel(values: any): IBaseQuery<void>;
+	setSensitivityLabel(values: any): IBaseQuery<void>;
 	update(values: any): IBaseQuery<void>;
 }
 /*********************************************
@@ -298,6 +306,8 @@ export interface listItemMethods {
 	fields(): IBaseQuery<fieldValueSet>;
 	versions(): IBaseQuery<listItemVersionCollection>;
 	versions(id: string | number): IBaseQuery<listItemVersion> & listItemVersionMethods;
+	extractSensitivityLabel(values: any): IBaseQuery<void>;
+	setSensitivityLabel(values: any): IBaseQuery<void>;
 	update(values: any): IBaseQuery<void>;
 }
 /*********************************************
@@ -427,7 +437,7 @@ export interface columnDefinitionMethods {
 **********************************************/
 export interface columnDefinitionCollection {
     results: columnDefinition[];
-	add(values: any): IBaseExecution<ComplexTypes.columnDefinition>;
+	add(values: any): IBaseExecution<columnDefinition>;
 }
 /*********************************************
 * contentType

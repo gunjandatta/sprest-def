@@ -12,7 +12,7 @@ module.exports = {
     columnDefinitionCollection: [
         {
             name: "add",
-            returnType: "column",
+            returnType: "columnDefinition",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
@@ -30,7 +30,34 @@ module.exports = {
             argNames: [{ name: "values", type: "any" }]
         }
     ],
+    item: [
+        {
+            name: "extractSensitivityLabel",
+            returnType: "void",
+            argNames: [{ name: "values", type: "any" }]
+        },
+        {
+            name: "setSensitivityLabel",
+            returnType: "void",
+            argNames: [{ name: "values", type: "any" }]
+        },
+        {
+            name: "update",
+            returnType: "void",
+            argNames: [{ name: "values", type: "any" }]
+        }
+    ],
     listItem: [
+        {
+            name: "extractSensitivityLabel",
+            returnType: "void",
+            argNames: [{ name: "values", type: "any" }]
+        },
+        {
+            name: "setSensitivityLabel",
+            returnType: "void",
+            argNames: [{ name: "values", type: "any" }]
+        },
         {
             name: "update",
             returnType: "void",
