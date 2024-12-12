@@ -381,6 +381,7 @@ export interface SensitivityLabelInformation {
 	displayName?: string;
 	hasIRMProtection?: boolean;
 	id?: string;
+	sensitivityLabelProtectionType?: string;
 	tooltip?: string;
 }
 
@@ -714,6 +715,36 @@ export interface SiteSharingReportStatus {
 * SiteSharingReportStatusCollections
 **********************************************/
 export interface SiteSharingReportStatusCollections {
+
+}
+
+/*********************************************
+* UniqueAccessGroupInfo
+**********************************************/
+export interface UniqueAccessGroupInfo {
+	enabled?: boolean;
+	creationDate?: any;
+	groupId?: any;
+}
+
+/*********************************************
+* UniqueAccessGroupInfoCollections
+**********************************************/
+export interface UniqueAccessGroupInfoCollections {
+
+}
+
+/*********************************************
+* UniqueAccessGroupsWrapper
+**********************************************/
+export interface UniqueAccessGroupsWrapper {
+	discoverableByOrganization?: SP.Sharing.UniqueAccessGroupInfo;
+}
+
+/*********************************************
+* UniqueAccessGroupsWrapperCollections
+**********************************************/
+export interface UniqueAccessGroupsWrapperCollections {
 
 }
 

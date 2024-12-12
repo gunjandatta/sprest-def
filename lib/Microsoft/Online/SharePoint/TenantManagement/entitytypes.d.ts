@@ -191,6 +191,7 @@ export interface Office365TenantProps {
 	AllowSelectSecurityGroupsInSPSitesList?: { results: Array<string> };
 	AllowSelectSGsInODBList?: { results: Array<string> };
 	AllowSharingOutsideRestrictedAccessControlGroups?: boolean;
+	AllowWebPropertyBagUpdateWhenDenyAddAndCustomizePagesIsEnabled?: boolean;
 	AnyoneLinkTrackUsers?: boolean;
 	AppBypassInformationBarriers?: boolean;
 	ApplyAppEnforcedRestrictionsToAdHocRecipients?: boolean;
@@ -253,6 +254,7 @@ export interface Office365TenantProps {
 	EnablePromotedFileHandlers?: boolean;
 	EnableRestrictedAccessControl?: boolean;
 	EnableVersionExpirationSetting?: boolean;
+	ESignatureAppList?: { results: Array<string> };
 	ESignatureEnabled?: boolean;
 	ESignatureSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
 	ESignatureSiteList?: { results: Array<any> };

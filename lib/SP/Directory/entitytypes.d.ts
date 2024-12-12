@@ -222,8 +222,11 @@ export interface UserProps {
 	accountEnabled?: boolean;
 	alias?: string;
 	birthday?: any;
+	cellPhone?: string;
 	displayName?: string;
+	fax?: string;
 	hireDate?: any;
+	homePhone?: string;
 	id?: any;
 	interests?: { results: Array<string> };
 	mail?: string;

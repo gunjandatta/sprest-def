@@ -91,6 +91,7 @@ export interface IconCollections {
 * SitePageAuthoringMetadata
 **********************************************/
 export interface SitePageAuthoringMetadata {
+	FluidContainerCustomId?: any;
 	SequenceId?: number;
 	SessionId?: any;
 }
@@ -295,6 +296,7 @@ export interface CopyToParams {
 	CanvasContentOnly?: boolean;
 	ComponentJSONString?: string;
 	CreateCopyForEdit?: boolean;
+	CreateCopyWithTitleSuffix?: boolean;
 	CreateIfMissing?: boolean;
 	DeleteSourcePage?: boolean;
 	DependencyPropertyTypesToDeepCopy?: { results: Array<number> };

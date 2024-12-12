@@ -208,6 +208,7 @@ export interface SiteMoveJobEntityData {
 	SourceSiteSubscriptionId?: any;
 	SourceSiteUrl?: string;
 	TargetCompanyId?: any;
+	TargetFarmId?: string;
 	TargetInstanceId?: any;
 	TargetSiteSubscriptionId?: any;
 	TargetSiteUrl?: string;

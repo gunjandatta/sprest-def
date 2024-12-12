@@ -465,6 +465,10 @@ export interface IMapper {
 		delete: IMapperMethod & {
 		},
 
+		file: IMapperMethod & {
+		argNames: [ "folderName", "fileName", "file", "overwrite" ],
+		},
+
 		parseUrl: IMapperMethod & {
 		argNames: [ "destinationUrl", "retrieveAllLists", "retrieveFoldersForAllLists", "forceMySiteDefaultList", "migrationType" ],
 		},
@@ -1184,6 +1188,10 @@ export interface IMapper {
 		argNames: [ "reportId" ],
 		},
 
+		getSPODataAccessGovernanceInsightV2: IMapperMethod & {
+		argNames: [ "reportEntity" ],
+		},
+
 		removeDataAccessGovernanceReport: IMapperMethod & {
 		argNames: [ "reportId" ],
 		},
@@ -1210,6 +1218,10 @@ export interface IMapper {
 
 		remove: IMapperMethod & {
 		argNames: [ "source" ],
+		},
+
+		updateScriptSources: IMapperMethod & {
+		argNames: [ "added", "removed" ],
 		},
 
 	}
@@ -1391,9 +1403,6 @@ export interface IMapper {
 
 		addToOrgAssetsLibWithConfig: IMapperMethod & {
 		argNames: [ "cdnType", "libUrl", "thumbnailUrl", "orgAssetType", "defaultOriginAdded", "configParam" ],
-		},
-
-		appHasAdminSitePermission: IMapperMethod & {
 		},
 
 		archiveSiteById: IMapperMethod & {
@@ -1690,6 +1699,9 @@ export interface IMapper {
 
 		getTenantAllOrCompatibleIBSegments: IMapperMethod & {
 		argNames: [ "segments" ],
+		},
+
+		getTenantSendFromAddress: IMapperMethod & {
 		},
 
 		getTenantSiteCreationSource: IMapperMethod & {
@@ -2061,11 +2073,11 @@ export interface IMapper {
 		},
 
 		updateRansomwareActivity: IMapperMethod & {
-		argNames: [ "listItemId", "columnValues" ],
+		argNames: [ "listItemId", "columnValues", "category" ],
 		},
 
 		updateRansomwareEvent: IMapperMethod & {
-		argNames: [ "listItemId", "columnValues", "forceResolveActivity" ],
+		argNames: [ "listItemId", "columnValues", "forceResolveActivity", "category" ],
 		},
 
 		updateSPOContainerUserRole: IMapperMethod & {
@@ -2338,15 +2350,20 @@ export interface IMapper {
 		argNames: [ "lockRequestor", "lockType", "leaseDurationInMinutes" ],
 		},
 
-		clearState: IMapperMethod & {
+		clearSiteRelocationMarker: IMapperMethod & {
 		},
 
 		extendSystemSiteLockExpiration: IMapperMethod & {
 		argNames: [ "leaseDurationInMinute" ],
 		},
 
-		getChecksumForTable: IMapperMethod & {
-		argNames: [ "schemaName", "tableName", "partitionColumnName", "columnsToChecksum" ],
+		getCPSChangeToken: IMapperMethod & {
+		},
+
+		getCPSSiteDeleteReason: IMapperMethod & {
+		},
+
+		getDataChunks: IMapperMethod & {
 		},
 
 		getDataReader: IMapperMethod & {
@@ -2356,11 +2373,22 @@ export interface IMapper {
 		getDatabaseProperties: IMapperMethod & {
 		},
 
-		getMarker: IMapperMethod & {
+		getEventCacheDataChunk: IMapperMethod & {
+		argNames: [ "lastCopiedId", "searchChangeToken" ],
 		},
 
-		getRowCountForTable: IMapperMethod & {
-		argNames: [ "schemaName", "tableName", "partitionColumnName" ],
+		getEventCacheExColumns: IMapperMethod & {
+		},
+
+		getEventCacheExDataChunk: IMapperMethod & {
+		argNames: [ "lastCopiedId" ],
+		},
+
+		getEventCacheIds: IMapperMethod & {
+		argNames: [ "lastCopiedId" ],
+		},
+
+		getMarker: IMapperMethod & {
 		},
 
 		getScalarValue: IMapperMethod & {
@@ -2376,11 +2404,21 @@ export interface IMapper {
 		getTenantWorkflows: IMapperMethod & {
 		},
 
+		getValidationChunks: IMapperMethod & {
+		},
+
 		isDbReadOnly: IMapperMethod & {
 		},
 
 		isSystemSiteLocked: IMapperMethod & {
 		argNames: [ "lockRequestor" ],
+		},
+
+		lockSite: IMapperMethod & {
+		},
+
+		pauseCrawling: IMapperMethod & {
+		argNames: [ "originalCPSDeleteReason" ],
 		},
 
 		processStorageMetricsChanges: IMapperMethod & {
@@ -2390,8 +2428,16 @@ export interface IMapper {
 		argNames: [ "lockRequestor" ],
 		},
 
+		resumeCrawling: IMapperMethod & {
+		argNames: [ "originalCPSDeleteReason" ],
+		},
+
 		sourceCleanupAfterMove: IMapperMethod & {
 		argNames: [ "isDeleted" ],
+		},
+
+		unlockSiteOnFailure: IMapperMethod & {
+		argNames: [ "originalLockFlags" ],
 		},
 
 	}
@@ -2633,6 +2679,9 @@ export interface IMapper {
 		isDoclibContributorOwnerEnabled: IMapperMethod & {
 		},
 
+		isSuspended: IMapperMethod & {
+		},
+
 	}
 
 	"Microsoft.SharePoint.Convergence.OdcMetadataCleanedUpApi": {
@@ -2703,6 +2752,13 @@ export interface IMapper {
 	"Microsoft.SharePoint.IR.IRMigration": {
 		properties?: Array<string>;
 		deleteAndRecreateIRList: IMapperMethod & {
+		},
+
+	}
+
+	"Microsoft.SharePoint.IdentityModel.SPAllOrgSGManager": {
+		properties?: Array<string>;
+		createAllOrgSecurityGroup: IMapperMethod & {
 		},
 
 	}
@@ -4723,6 +4779,10 @@ export interface IMapper {
 		argNames: [ "themeData" ],
 		},
 
+		validateSiteThemeName: IMapperMethod & {
+		argNames: [ "name" ],
+		},
+
 		validateTenantThemeName: IMapperMethod & {
 		argNames: [ "name" ],
 		},
@@ -6489,10 +6549,6 @@ export interface IMapper {
 		argNames: [ "appViewCreationInfo", "visualizationTarget" ],
 		},
 
-		createRule: IMapperMethod & {
-		argNames: [ "condition", "outcome", "title", "triggerType", "emailField", "actionType", "ruleTemplateId" ],
-		},
-
 		createRuleEx: IMapperMethod & {
 		argNames: [ "condition", "title", "triggerType", "action", "ruleTemplateId" ],
 		},
@@ -6790,10 +6846,6 @@ export interface IMapper {
 
 		updateFormProcessingModelSettings: IMapperMethod & {
 		argNames: [ "retentionLabel", "linkedList" ],
-		},
-
-		updateRule: IMapperMethod & {
-		argNames: [ "ruleId", "condition", "outcome", "title", "emailField", "status", "actionType", "triggerType" ],
 		},
 
 		updateRuleEx: IMapperMethod & {
@@ -7414,6 +7466,10 @@ export interface IMapper {
 		demoteFromNews: IMapperMethod & {
 		},
 
+		discardCoAuth: IMapperMethod & {
+		argNames: [ "lockId" ],
+		},
+
 		discardPage: IMapperMethod & {
 		},
 
@@ -7452,6 +7508,10 @@ export interface IMapper {
 		},
 
 		publish: IMapperMethod & {
+		},
+
+		publishAsBot: IMapperMethod & {
+		argNames: [ "tenantId", "channelIds", "message" ],
 		},
 
 		publishCoAuth: IMapperMethod & {
@@ -7504,7 +7564,7 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream" ],
+		argNames: [ "contentStream", "sharedLockId" ],
 		},
 
 		schedulePublication: IMapperMethod & {
@@ -7548,6 +7608,9 @@ export interface IMapper {
 
 		updateSharePointPublishingStatus: IMapperMethod & {
 		argNames: [ "destinationSiteId", "destinationUrl", "sharePointPublishingStatus", "sharePointPublishingErrorCode" ],
+		},
+
+		validate: IMapperMethod & {
 		},
 
 	}
@@ -7605,6 +7668,10 @@ export interface IMapper {
 		demoteFromNews: IMapperMethod & {
 		},
 
+		discardCoAuth: IMapperMethod & {
+		argNames: [ "lockId" ],
+		},
+
 		discardPage: IMapperMethod & {
 		},
 
@@ -7666,7 +7733,7 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream" ],
+		argNames: [ "contentStream", "sharedLockId" ],
 		},
 
 		schedulePublish: IMapperMethod & {
@@ -7895,6 +7962,10 @@ export interface IMapper {
 		demoteFromNews: IMapperMethod & {
 		},
 
+		discardCoAuth: IMapperMethod & {
+		argNames: [ "lockId" ],
+		},
+
 		discardPage: IMapperMethod & {
 		},
 
@@ -7956,7 +8027,7 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream" ],
+		argNames: [ "contentStream", "sharedLockId" ],
 		},
 
 		schedulePublish: IMapperMethod & {
@@ -8067,6 +8138,10 @@ export interface IMapper {
 		demoteFromNews: IMapperMethod & {
 		},
 
+		discardCoAuth: IMapperMethod & {
+		argNames: [ "lockId" ],
+		},
+
 		discardPage: IMapperMethod & {
 		},
 
@@ -8130,7 +8205,7 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream" ],
+		argNames: [ "contentStream", "sharedLockId" ],
 		},
 
 		schedulePublish: IMapperMethod & {
@@ -8261,6 +8336,10 @@ export interface IMapper {
 		demoteFromNews: IMapperMethod & {
 		},
 
+		discardCoAuth: IMapperMethod & {
+		argNames: [ "lockId" ],
+		},
+
 		discardPage: IMapperMethod & {
 		},
 
@@ -8322,7 +8401,7 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream" ],
+		argNames: [ "contentStream", "sharedLockId" ],
 		},
 
 		schedulePublish: IMapperMethod & {
@@ -8384,6 +8463,9 @@ export interface IMapper {
 		},
 
 		canCreatePromotedPage: IMapperMethod & {
+		},
+
+		enableAmplifyFromAnywhere: IMapperMethod & {
 		},
 
 		enableAnnouncements: IMapperMethod & {
@@ -8498,6 +8580,10 @@ export interface IMapper {
 		demoteFromNews: IMapperMethod & {
 		},
 
+		discardCoAuth: IMapperMethod & {
+		argNames: [ "lockId" ],
+		},
+
 		discardPage: IMapperMethod & {
 		},
 
@@ -8559,7 +8645,7 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream" ],
+		argNames: [ "contentStream", "sharedLockId" ],
 		},
 
 		schedulePublish: IMapperMethod & {
@@ -10523,7 +10609,7 @@ export interface IMapper {
 		},
 
 		setChromeOptions: IMapperMethod & {
-		argNames: [ "headerLayout", "headerEmphasis", "megaMenuEnabled", "footerEnabled", "footerLayout", "footerEmphasis", "hideTitleInHeader", "logoAlignment", "horizontalQuickLaunch" ],
+		argNames: [ "headerLayout", "headerEmphasis", "megaMenuEnabled", "footerEnabled", "footerLayout", "footerEmphasis", "hideTitleInHeader", "logoAlignment", "horizontalQuickLaunch", "headerColorIndexInLightMode", "headerColorIndexInDarkMode", "footerColorIndexInLightMode", "footerColorIndexInDarkMode" ],
 		},
 
 		setDefaultNewPageTemplateId: IMapperMethod & {

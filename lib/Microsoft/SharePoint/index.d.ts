@@ -40,6 +40,8 @@ import * as ESign from "./ESign";
 export { ESign }
 import * as Flighting from "./Flighting";
 export { Flighting }
+import * as IdentityModel from "./IdentityModel";
+export { IdentityModel }
 import * as Insights from "./Insights";
 export { Insights }
 import * as Internal from "./Internal";

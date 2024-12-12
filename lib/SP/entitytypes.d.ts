@@ -165,6 +165,8 @@ export interface SiteProps {
 	IsHubSite?: boolean;
 	IsRestrictContentOrgWideSearchPolicyEnforcedOnSite?: boolean;
 	IsRestrictedAccessControlPolicyEnforcedOnSite?: boolean;
+	IsRubySite?: boolean;
+	IsUnlicensedOdb?: boolean;
 	LockIssue?: string;
 	MaxItemsPerThrottledOperation?: number;
 	MediaTranscriptionDisabled?: boolean;
@@ -192,6 +194,8 @@ export interface SiteProps {
 	ThicketSupportDisabled?: boolean;
 	TrimAuditLog?: boolean;
 	UIVersionConfigurationEnabled?: boolean;
+	UnifiedDomainUrl?: string;
+	UnlicensedOdbLicenseEnforcementWarningContext?: Microsoft.SharePoint.Administration.OdbLicenseEnforcement.UnlicensedOdbLicenseEnforcementWarningContext;
 	UpgradeInfo?: SP.UpgradeInfo;
 	UpgradeReminderDate?: any;
 	UpgradeScheduled?: boolean;
@@ -1209,7 +1213,6 @@ export interface ListItemProps {
 	ServerRedirectedEmbedUri?: string;
 	ServerRedirectedEmbedUrl?: string;
 	Client_Title?: string;
-	Title?: string;
 }
 
 /*********************************************
@@ -2477,6 +2480,7 @@ export interface ListProps {
 	EnableVersioning?: boolean;
 	EntityTypeName?: string;
 	ExcludeFromOfflineClient?: boolean;
+	ExcludeFromOfflineMode?: boolean;
 	ExemptFromBlockDownloadOfNonViewableFiles?: boolean;
 	FileSavePostProcessingEnabled?: boolean;
 	ForceCheckout?: boolean;
@@ -2634,7 +2638,6 @@ export interface ListMethods {
 	createDocumentWithDefaultName(folderPath?: string, extension?: string): Base.IBaseExecution<string>;
 	createHVCSItemApprovalRequest(createItemRequestPayload?: SP.ApprovalsCreateRequestParameters): Base.IBaseExecution<string>;
 	createMappedView(appViewCreationInfo?: SP.AppViewCreationInfo, visualizationTarget?: number): Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
-	createRule(condition?: string, outcome?: string, title?: string, triggerType?: number, emailField?: string, actionType?: number, ruleTemplateId?: string): Base.IBaseExecution<any>;
 	createRuleEx(condition?: string, title?: string, triggerType?: number, action?: SP.SPRuleAction, ruleTemplateId?: string): Base.IBaseExecution<any>;
 	createSmartTemplateContentTypeAndAddToList(Name?: string, Description?: string): Base.IBaseQuery<SP.ContentType, SP.ContentTypeOData> & SP.ContentTypeCollections & SP.ContentTypeMethods;
 	createSmartTemplateContentTypeAndAddToListV2(Name?: string, Description?: string, TemplatePath?: string, Status?: string): Base.IBaseQuery<SP.ContentType, SP.ContentTypeOData> & SP.ContentTypeCollections & SP.ContentTypeMethods;
@@ -2711,7 +2714,6 @@ export interface ListMethods {
 	updateContentAssemblyDocument(TemplateUrl?: string, contentAssemblyFormAnswers?: Array<SP.ContentAssemblyFormAnswer>): Base.IBaseExecution<SP.ContentAssemblyFileInfo>;
 	updateFormProcessingModelRetentionLabel(retentionLabel?: string): Base.IBaseExecution<any>;
 	updateFormProcessingModelSettings(retentionLabel?: string, linkedList?: string): Base.IBaseExecution<any>;
-	updateRule(ruleId?: string, condition?: string, outcome?: string, title?: string, emailField?: string, status?: number, actionType?: number, triggerType?: number): Base.IBaseExecution<any>;
 	updateRuleEx(ruleId?: string, condition?: string, title?: string, status?: number, action?: SP.SPRuleAction, triggerType?: number): Base.IBaseExecution<any>;
 	validateAppName(appDisplayName?: string): Base.IBaseQuery<SP.VisualizationAppSynchronizationResult, SP.VisualizationAppSynchronizationResultOData> & SP.VisualizationAppSynchronizationResultCollections;
 	getItems(viewXML?: string): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
@@ -3128,10 +3130,14 @@ export interface WebProps {
 	EffectiveBasePermissions?: SP.BasePermissions;
 	EnableMinimalDownload?: boolean;
 	ExcludeFromOfflineClient?: boolean;
+	FooterColorIndexInDarkMode?: number;
+	FooterColorIndexInLightMode?: number;
 	FooterEmphasis?: number;
 	FooterEnabled?: boolean;
 	FooterLayout?: number;
 	HasWebTemplateExtension?: boolean;
+	HeaderColorIndexInDarkMode?: number;
+	HeaderColorIndexInLightMode?: number;
 	HeaderEmphasis?: number;
 	HeaderLayout?: number;
 	HideTitleInHeader?: boolean;
@@ -3442,7 +3448,7 @@ export interface WebMethods {
 	removeStorageEntity(key?: string): Base.IBaseExecution<any>;
 	removeSupportedUILanguage(lcid?: number): Base.IBaseExecution<any>;
 	setAccessRequestSiteDescriptionAndUpdate(description?: string): Base.IBaseExecution<any>;
-	setChromeOptions(headerLayout?: number, headerEmphasis?: number, megaMenuEnabled?: boolean, footerEnabled?: boolean, footerLayout?: number, footerEmphasis?: number, hideTitleInHeader?: boolean, logoAlignment?: number, horizontalQuickLaunch?: boolean): Base.IBaseExecution<any>;
+	setChromeOptions(headerLayout?: number, headerEmphasis?: number, megaMenuEnabled?: boolean, footerEnabled?: boolean, footerLayout?: number, footerEmphasis?: number, hideTitleInHeader?: boolean, logoAlignment?: number, horizontalQuickLaunch?: boolean, headerColorIndexInLightMode?: number, headerColorIndexInDarkMode?: number, footerColorIndexInLightMode?: number, footerColorIndexInDarkMode?: number): Base.IBaseExecution<any>;
 	setDefaultNewPageTemplateId(defaultNewPageTemplateId?: any): Base.IBaseExecution<any>;
 	setGlobalNavSettings(title?: string, source?: string): Base.IBaseExecution<any>;
 	setStorageEntity(key?: string, value?: string, description?: string, comments?: string): Base.IBaseExecution<any>;
@@ -5594,6 +5600,7 @@ export interface BrandCenterMethods {
 	orgAssetsWithCacheFlag(shouldUseCache?: boolean): Base.IBaseExecution<Microsoft.SharePoint.Administration.OrgAssets>;
 	updateSiteTheme(themeData?: SP.ThemeData): Base.IBaseExecution<SP.ThemeData>;
 	updateTenantTheme(themeData?: SP.ThemeData): Base.IBaseExecution<SP.ThemeData>;
+	validateSiteThemeName(name?: string): Base.IBaseExecution<boolean>;
 	validateTenantThemeName(name?: string): Base.IBaseExecution<boolean>;
 }
 
@@ -6208,6 +6215,20 @@ export interface SharingPermissionInformation {
 * SharingPermissionInformationCollections
 **********************************************/
 export interface SharingPermissionInformationCollections {
+
+}
+
+/*********************************************
+* PeopleCollection
+**********************************************/
+export interface PeopleCollection {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PeopleCollectionCollections
+**********************************************/
+export interface PeopleCollectionCollections {
 
 }
 

@@ -74,7 +74,7 @@ export interface AgentGroupCollectionMethods {
 /*********************************************
 * AgentGroupOData
 **********************************************/
-export interface AgentGroupOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntity, Base.IBaseResult, AgentGroupProps, AgentGroupMethods {
+export interface AgentGroupOData extends Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntityOData, Base.IBaseResult, AgentGroupProps, AgentGroupMethods {
 
 }
 
@@ -643,6 +643,7 @@ export interface MigrationCenterStorageOData extends Base.IBaseResult, Migration
 export interface MigrationCenterStorageMethods {
 	create(config?: Microsoft.Online.SharePoint.MigrationCenter.Common.MigrationStorageSettings): Base.IBaseExecution<any>;
 	delete(): Base.IBaseExecution<any>;
+	file(folderName?: string, fileName?: string, file?: any, overwrite?: boolean): Base.IBaseExecution<any>;
 	parseUrl(destinationUrl?: string, retrieveAllLists?: boolean, retrieveFoldersForAllLists?: boolean, forceMySiteDefaultList?: boolean, migrationType?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.MigrationCenter.Common.UrlParseResult>;
 	update(): Base.IBaseExecution<any>;
 }

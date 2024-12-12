@@ -119,6 +119,7 @@ export interface SharingInformation {
 	substrateFileId?: string;
 	tenantDisplayName?: string;
 	tenantId?: string;
+	uniqueAccessGroups?: SP.Sharing.UniqueAccessGroupsWrapper;
 	userIsSharingViaMCS?: string;
 	userPhotoCdnBaseUrl?: string;
 	webTemplateId?: number;

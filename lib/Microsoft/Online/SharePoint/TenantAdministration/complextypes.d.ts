@@ -841,11 +841,15 @@ export interface SPContainerPropertiesCollections {
 **********************************************/
 export interface SPContainerFilterOrder {
 	CreatedBeforeDays?: number;
+	DeletedBeforeDays?: number;
 	FilteringApplicationId?: string;
 	FilteringApplicationName?: string;
 	FilteringContainerTypeId?: string;
 	FilteringField?: number;
+	OpticalCharacterRecognitionEnabled?: boolean;
 	OwnersCount?: number;
+	OwnershipType?: number;
+	PrincipalOwnerIdentifier?: string;
 	PublisherName?: string;
 }
 
@@ -951,6 +955,8 @@ export interface SPDataGovernanceInsightMetadataCollections {
 * SPDataGovernanceInsightResponse
 **********************************************/
 export interface SPDataGovernanceInsightResponse {
+	CountOfSitesInReport?: number;
+	CountOfSitesInTenant?: number;
 	CreatedDateTime?: string;
 	EEEUType?: string;
 	LabelId?: any;
@@ -1105,6 +1111,8 @@ export interface SPOAppBillingPropertiesCollections {
 * SPOContentSecurityPolicyEntry
 **********************************************/
 export interface SPOContentSecurityPolicyEntry {
+	Manual?: boolean;
+	Modified?: any;
 	Source?: string;
 }
 

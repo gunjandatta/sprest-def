@@ -70,22 +70,32 @@ export interface SiteMoveServiceOData extends Base.IBaseResult, SiteMoveServiceP
 **********************************************/
 export interface SiteMoveServiceMethods {
 	acquireSystemSiteLock(lockRequestor?: string, lockType?: any, leaseDurationInMinutes?: number): Base.IBaseExecution<SP.SystemSiteLockExpirationResult>;
-	clearState(): Base.IBaseExecution<any>;
+	clearSiteRelocationMarker(): Base.IBaseExecution<any>;
 	extendSystemSiteLockExpiration(leaseDurationInMinute?: number): Base.IBaseExecution<SP.SystemSiteLockExpirationResult>;
-	getChecksumForTable(schemaName?: string, tableName?: string, partitionColumnName?: string, columnsToChecksum?: Array<string>): Base.IBaseExecution<number>;
+	getCPSChangeToken(): Base.IBaseExecution<number>;
+	getCPSSiteDeleteReason(): Base.IBaseExecution<number>;
 	getDatabaseProperties(): Base.IBaseExecution<string>;
+	getDataChunks(): Base.IBaseExecution<string>;
 	getDataReader(sqlCommandText?: string): Base.IBaseExecution<string>;
+	getEventCacheDataChunk(lastCopiedId?: number, searchChangeToken?: number): Base.IBaseExecution<string>;
+	getEventCacheExColumns(): Base.IBaseExecution<string>;
+	getEventCacheExDataChunk(lastCopiedId?: number): Base.IBaseExecution<string>;
+	getEventCacheIds(lastCopiedId?: number): Base.IBaseExecution<string>;
 	getMarker(): Base.IBaseExecution<string>;
-	getRowCountForTable(schemaName?: string, tableName?: string, partitionColumnName?: string): Base.IBaseExecution<number>;
 	getScalarValue(sqlCommandText?: string): Base.IBaseExecution<number>;
 	getServiceInfo(): Base.IBaseExecution<Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveServiceInfo>;
 	getSiteProperties(): Base.IBaseExecution<string>;
 	getTenantWorkflows(): Base.IBaseCollection<string>;
+	getValidationChunks(): Base.IBaseExecution<string>;
 	isDbReadOnly(): Base.IBaseExecution<boolean>;
 	isSystemSiteLocked(lockRequestor?: string): Base.IBaseExecution<boolean>;
+	lockSite(): Base.IBaseExecution<number>;
+	pauseCrawling(originalCPSDeleteReason?: number): Base.IBaseExecution<any>;
 	processStorageMetricsChanges(): Base.IBaseExecution<any>;
 	releaseSystemSiteLock(lockRequestor?: string): Base.IBaseExecution<number>;
+	resumeCrawling(originalCPSDeleteReason?: number): Base.IBaseExecution<any>;
 	sourceCleanupAfterMove(isDeleted?: boolean): Base.IBaseExecution<any>;
+	unlockSiteOnFailure(originalLockFlags?: number): Base.IBaseExecution<any>;
 }
 
 /*********************************************

@@ -1,3 +1,5 @@
+import * as Amplify from "./Amplify";
+export { Amplify }
 import * as Diagnostics from "./Diagnostics";
 export { Diagnostics }
 import * as PageCopyWithAssets from "./PageCopyWithAssets";

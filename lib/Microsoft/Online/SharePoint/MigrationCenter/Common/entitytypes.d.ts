@@ -17,6 +17,13 @@ export interface AgentGroupEntityCollections {
 }
 
 /*********************************************
+* AgentGroupEntityOData
+**********************************************/
+export interface AgentGroupEntityOData extends Base.IBaseResult, AgentGroupEntity {
+	Default: Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntity & Microsoft.Online.SharePoint.MigrationCenter.Common.AgentGroupEntityCollections;
+}
+
+/*********************************************
 * DeviceEntityData
 **********************************************/
 export interface DeviceEntityData {

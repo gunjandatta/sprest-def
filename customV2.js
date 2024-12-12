@@ -39,7 +39,7 @@ module.exports = {
         {
             name: "setSensitivityLabel",
             returnType: "void",
-            argNames: [{ name: "values", type: "any" }]
+            argNames: [{ name: "values", type: "{ actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }" }]
         },
         {
             name: "update",
@@ -56,7 +56,7 @@ module.exports = {
         {
             name: "setSensitivityLabel",
             returnType: "void",
-            argNames: [{ name: "values", type: "any" }]
+            argNames: [{ name: "values", type: "{ actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }" }]
         },
         {
             name: "update",

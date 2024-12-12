@@ -359,17 +359,21 @@ export interface RansomwareProperties {
 	driveId?: string;
 	firstActivity?: any;
 	impactedAssetLocation?: string;
+	impactedAssetsCount?: number;
 	impactedDocLibName?: string;
 	impactedSiteType?: number;
 	lastActivity?: any;
+	processedStatus?: number;
 	ransomwareDetectionReason?: string;
 	ransomwareDetectionScore?: number;
+	runId?: any;
 	siteLabelId?: string;
 	siteLabelName?: string;
 	siteName?: string;
 	siteOwnerName?: string;
 	siteSubscriptionId?: any;
 	siteUrl?: string;
+	userName?: string;
 }
 
 /*********************************************
@@ -522,12 +526,14 @@ export interface TenantAdminPolicyReportCollections {
 * TenantAdminRansomwareActivitiesOverview
 **********************************************/
 export interface TenantAdminRansomwareActivitiesOverview {
+	categoryThresholdLimit?: number;
 	firstActivityTime?: any;
 	impactedAssetsCount?: number;
 	lastActivityTime?: any;
 	oneDriveActivityCount?: number;
 	sharePointActivityCount?: number;
 	totalActivitiesCount?: number;
+	totalHighVolumeComponentActivityDetectionCount?: number;
 	unresolvedActivitiesCount?: number;
 	usersCount?: number;
 }
@@ -561,8 +567,10 @@ export interface TenantAdminRansomwareActivity {
 	investigationState?: number;
 	lastActivity?: any;
 	lastUpdatedTime?: any;
+	processedStatus?: number;
 	ransomwareDetectionReason?: string;
 	RansomwareDetectionScore?: number;
+	runId?: any;
 	siteId?: any;
 	siteName?: string;
 	siteOwner?: string;
@@ -572,6 +580,7 @@ export interface TenantAdminRansomwareActivity {
 	syncStatus?: number;
 	tagId?: string;
 	updatedBy?: string;
+	userName?: string;
 	webId?: any;
 }
 
@@ -603,7 +612,9 @@ export interface TenantAdminRansomwareEventsOverviewCollections {
 export interface TenantAdminRansomwareEvent {
 	assignedTo?: string;
 	category?: number;
+	categoryThresholdLimit?: number;
 	classification?: number;
+	consolidatedReportLocation?: string;
 	createdTime?: any;
 	eventId?: any;
 	firstOccurrence?: any;
@@ -613,6 +624,7 @@ export interface TenantAdminRansomwareEvent {
 	severity?: number;
 	status?: number;
 	tagId?: string;
+	totalHighVolumeComponentActivityDetectionCount?: number;
 	updatedBy?: string;
 }
 

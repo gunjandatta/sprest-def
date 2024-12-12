@@ -2393,6 +2393,7 @@ export interface FileCollectionAddParametersCollections {
 * FileDeleteParameters
 **********************************************/
 export interface FileDeleteParameters {
+	BypassCheckedOut?: boolean;
 	BypassSharedLock?: boolean;
 	ETagMatch?: string;
 }
@@ -2456,6 +2457,7 @@ export interface FolderCollectionAddParametersCollections {
 * FolderDeleteParameters
 **********************************************/
 export interface FolderDeleteParameters {
+	BypassCheckedOut?: boolean;
 	BypassSharedLock?: boolean;
 	DeleteIfEmpty?: boolean;
 	ETagMatch?: string;
@@ -2549,10 +2551,6 @@ export interface ListCollectionPositionCollections {
 export interface GroupCreationInformation {
 	Description?: string;
 	Title?: string;
-	AllowMembersEditMembership?: boolean;
-	AllowRequestToJoinLeave?: boolean;
-	AutoAcceptRequestToJoinLeave?: boolean;
-	OnlyAllowMembersViewMembership?: boolean;
 }
 
 /*********************************************
@@ -2897,12 +2895,14 @@ export interface MediaServiceUpdateParameters {
 	ContentVersion?: number;
 	Entropy?: string;
 	ETag?: string;
+	FieldValues?: { results: Array<SP.KeyValue> };
 	IsLowPriorityRequest?: boolean;
 	IsMediaServiceRequest?: boolean;
 	MachineLearningSampleMeta?: SP.MachineLearningSampleMeta;
 	MediaLengthInSeconds?: number;
 	MediaServiceAutoKeyPoints?: string;
 	MediaServiceAutoTags?: string;
+	MediaServiceBillingMetadata?: string;
 	MediaServiceDateTaken?: string;
 	MediaServiceDocTags?: string;
 	MediaServiceEventHashCode?: string;

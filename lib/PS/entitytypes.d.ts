@@ -2086,7 +2086,6 @@ export interface TaskProps {
 	FinishVariance?: string;
 	FinishVarianceMilliseconds?: number;
 	FinishVarianceTimeSpan?: any;
-	FixedCostAccrual?: number;
 	FreeSlack?: string;
 	FreeSlackMilliseconds?: number;
 	FreeSlackTimeSpan?: any;
@@ -2555,6 +2554,7 @@ export interface PublishedTaskProps {
 	Finish?: any;
 	FinishText?: string;
 	FixedCost?: number;
+	FixedCostAccrual?: number;
 	IsActive?: boolean;
 	IsEffortDriven?: boolean;
 	IsLockedByManager?: boolean;
@@ -3153,6 +3153,7 @@ export interface DraftTaskProps {
 	Finish?: any;
 	FinishText?: string;
 	FixedCost?: number;
+	FixedCostAccrual?: number;
 	IsActive?: boolean;
 	IsEffortDriven?: boolean;
 	IsLockedByManager?: boolean;
@@ -3332,6 +3333,7 @@ export interface ProjectSummaryTask {
 	DurationTimeSpan?: any;
 	Finish?: any;
 	FinishText?: string;
+	FixedCostAccrual?: number;
 	Name?: string;
 	PercentComplete?: number;
 	Priority?: number;

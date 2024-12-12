@@ -652,6 +652,87 @@ export interface CalendarListItemMethods {
 }
 
 /*********************************************
+* CompanyList006e2221e1df45c0875383a98de5ecf1ListItem
+**********************************************/
+export interface CompanyList006e2221e1df45c0875383a98de5ecf1ListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	Resource_x0020_Link_x0020_Url?: SP.FieldUrlValue;
+	Resource_x0020_Link_x0020_Icon?: string;
+	Resource_x0020_Link_x0020_Order?: number;
+	Audiences?: { results: Array<string> };
+	ResourceLinkThumbnailOption?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* CompanyList006e2221e1df45c0875383a98de5ecf1ListItemCollections
+**********************************************/
+export interface CompanyList006e2221e1df45c0875383a98de5ecf1ListItemCollections {
+
+}
+
+/*********************************************
+* CompanyList006e2221e1df45c0875383a98de5ecf1ListItemOData
+**********************************************/
+export interface CompanyList006e2221e1df45c0875383a98de5ecf1ListItemOData extends Base.IBaseResult, CompanyList006e2221e1df45c0875383a98de5ecf1ListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
 * OData__x005f_catalogs_x002f_designItem
 **********************************************/
 export interface OData__x005f_catalogs_x002f_designItem {
@@ -1949,6 +2030,8 @@ export interface Shared_x0020_DocumentsItem {
 	OData__EffectiveIpLabelDisplayName?: string;
 	MediaGeneratedMetadata?: string;
 	MediaUserMetadata?: string;
+	MediaServiceSearchProperties?: string;
+	MediaServiceObjectDetectorVersions?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -3556,6 +3639,9 @@ export interface SiteAssetsItemProps {
 	OData__EffectiveIpLabelDisplayName?: string;
 	MediaGeneratedMetadata?: string;
 	MediaUserMetadata?: string;
+	MediaServiceSearchProperties?: string;
+	MediaServiceDateTaken?: string;
+	MediaServiceObjectDetectorVersions?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -4392,6 +4478,82 @@ export interface TasksListItemOData extends SP.ListItemOData, Base.IBaseResult, 
 **********************************************/
 export interface TasksListItemMethods {
 
+}
+
+/*********************************************
+* TestersListItem
+**********************************************/
+export interface TestersListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	LinkTitle?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* TestersListItemCollections
+**********************************************/
+export interface TestersListItemCollections {
+
+}
+
+/*********************************************
+* TestersListItemOData
+**********************************************/
+export interface TestersListItemOData extends Base.IBaseResult, TestersListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
 }
 
 /*********************************************

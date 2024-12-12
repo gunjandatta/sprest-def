@@ -234,7 +234,7 @@ function getType(type = "any", enumInterfaces) {
         let typeInfo = type.split('.');
         let typeName = typeInfo[typeInfo.length - 1];
         if (enumInterfaces[typeName]) {
-            return "graph." + typeName;
+            return typeName;
         }
     }
 
@@ -297,6 +297,27 @@ function processGraph(schemas) {
     let enumInterfaces = {};
     let entities = {};
     let graphEndPoints = {};
+
+    // Returns the return type
+    let convertReturnType = (returnType) => {
+        // See if this is an edm value, and do nothing
+        if (returnType.indexOf("Edm") >= 0) { return returnType; }
+
+        // Remove microsoft.graph
+        if (returnType.indexOf("microsoft.graph") >= 0) {
+            let isCollection = returnType.indexOf("Collection(") == 0;
+            let info = returnType.split(".")
+            //return returnType.replace("microsoft.graph.", "").replace(".", "_");
+            return (isCollection ? "Collection(" : "") + info[info.length - 1];
+        }
+
+        // Remove graph.
+        if (returnType.indexOf("graph.") == 0) {
+            return returnType.replace("graph.", "");
+        }
+
+        return returnType;
+    }
 
     // Parse the schemas
     for (let i = 0; i < schemas.length; i++) {
@@ -379,8 +400,9 @@ function processGraph(schemas) {
                     // See if the return type exists
                     if (returnType) {
                         // Update the return type
-                        let values = returnType.split(".");
-                        returnType = values[1];
+                        //let values = returnType.split(".");
+                        //returnType = values[1] || values[0];
+                        returnType = convertReturnType(returnType);
                     }
 
                     // Parse the properties
@@ -388,7 +410,7 @@ function processGraph(schemas) {
                     let entityProps = entityType.Property || [];
                     for (let prop of entityProps) {
                         // Add the property
-                        props.push({ name: prop.$.Name, returnType: prop.$.Type, nullable: prop.$.Nullable });
+                        props.push({ name: prop.$.Name, returnType: convertReturnType(prop.$.Type), nullable: prop.$.Nullable });
                     }
 
                     // Parse the methods
@@ -403,6 +425,7 @@ function processGraph(schemas) {
                         }
 
                         // Set the return type
+                        //let returnType = convertReturnType(subMethod.$.Type);
                         let returnType = subMethod.$.Type;
                         let returnTypeInfo = returnType.split('/');
                         if (returnTypeInfo.length > 1) {
@@ -415,14 +438,14 @@ function processGraph(schemas) {
                         // See if this is a collection
                         if (returnType.startsWith("Collection(")) {
                             let collectionType = returnType.replace("Collection(", "").replace(")", "");
-                            collectionType = collectionType.split('.')[1];
+                            //collectionType = collectionType.split('.')[1];
                             collections[collectionType] = returnType;
 
                             // Add a method to get an object from the collection by its id
                             methods.push({
                                 name,
                                 returnType: collectionType,
-                                returnType2: collectionType + "Methods",
+                                //returnType2: collectionType + "Methods",
                                 argNames: [{
                                     name: "id",
                                     type: "string | number",
@@ -449,7 +472,7 @@ function processGraph(schemas) {
                     for (let i = 0; i < entitySets.length; i++) {
                         let entitySet = entitySets[i];
                         let name = entitySet.$.Name;
-                        let returnType = entitySet.$.EntityType;
+                        let returnType = entitySet.$.EntityType.replace("microsoft.graph", "").replace(".", "_");
 
                         // Parse the methods
                         let methods = [];
@@ -522,12 +545,13 @@ function processGraph(schemas) {
     }
 
     // Method to get the type
-    let getGraphType = (returnType = "", isMethod = false) => {
+    let getGraphType = (returnType = "") => {
         // See if the return type is in not an Edm
         if (returnType.indexOf("graph." == 0)) {
             // Set the return type information
             let isCollection = returnType.indexOf("Collection(") == 0;
-            let info = (isCollection ? returnType.replace("Collection(", "").replace(")", "") : returnType).split('.');
+            let info = (isCollection ? returnType.replace("Collection(", "").replace(")", "") : returnType);
+            info = info.indexOf(".") >= 0 ? info.split('.') : info.split('_');
 
             // See if this is a collection using "s" at the end
             let name = info[info.length - 1];
@@ -566,7 +590,7 @@ function processGraph(schemas) {
                 returnType = "EnumTypes." + name2 + "[]";
             }
             // Else, see if it's a basic type
-            else if (info[0] == "Edm") {
+            else if (info[0] == "Edm" || returnType.indexOf("Edm.") == 0) {
                 returnType = getType(returnType);
             }
             // Else, see if this is a column
@@ -576,11 +600,13 @@ function processGraph(schemas) {
             // Else, see if this is a column array
             else if (name == "columns") {
                 returnType = "ComplexTypes.columnDefinition[]";
+            } else {
+                return null;
             }
 
             // See if this is a collection
             if (isCollection) {
-                returnType += isMethod ? "Collection" : "[]";
+                returnType += "[]";
             }
         }
 
@@ -668,7 +694,8 @@ ${props.join('\n')}
     // Create the entities
     content = [
         "import { IBaseExecution, IBaseQuery } from \"../../base\";",
-        "import * as ComplexTypes from \"./complexTypes.d\";"
+        "import * as ComplexTypes from \"./complexTypes.d\";",
+        "import * as EnumTypes from \"./enumTypes.d\";"
     ];
 
     // Parse the custom methods
@@ -704,14 +731,14 @@ ${props.join('\n')}
                 let argName = argNames[i];
                 argStrings.push(argName.name + ": " + argName.type);
             }
-            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + getGraphType(method.returnType, true) + ">" + (method.returnType2 ? " & " + method.returnType2 : "") + ";");
+            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + getGraphType(method.returnType, true) + ">" + (method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : "") + ";");
         }
 
         // Add the endpoint
         content.push(`/*********************************************
 * ${name}
 **********************************************/
-export interface ${name} ${entity.returnType ? "extends " + entity.returnType : ""} {
+export interface ${name} ${entity.returnType && getGraphType(entity.returnType) ? "extends " + getGraphType(entity.returnType) : ""} {
 ${props.join('\n')}
 ${methods.join('\n')}
 }`);
@@ -1083,7 +1110,6 @@ function processREST(schemas) {
                                 let paramType = getType(param.Type, enumInterfaces);
 
                                 // Update the reference
-                                if (paramType.indexOf("SP.Microsoft") >= 0) { debugger; }
                                 paramType.indexOf('.') > 0 ? updateReferences(fileImports, dirName, paramType) : null;
 
                                 // Add the parameter

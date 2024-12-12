@@ -88,6 +88,7 @@ export interface SitePageMetadata {
 	CommentCount?: number;
 	CommentsDisabled?: boolean;
 	ContentTypeId?: string;
+	Created?: any;
 	Description?: string;
 	DoesUserHaveEditPermission?: boolean;
 	FileName?: string;
@@ -207,6 +208,7 @@ export interface SitePageProps {
 	LayoutWebpartsContent?: string;
 	Name?: string;
 	PublicationMetadata?: string;
+	PublicationRecipients?: string;
 	SitePageFlags?: string;
 }
 
@@ -267,6 +269,7 @@ export interface SitePageMethods {
 	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardCoAuth(lockId?: string): Base.IBaseExecution<any>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	extendSessionCoAuth(): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
@@ -284,7 +287,7 @@ export interface SitePageMethods {
 	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
-	saveStreams(contentStream?: any): Base.IBaseExecution<any>;
+	saveStreams(contentStream?: any, sharedLockId?: string): Base.IBaseExecution<any>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	startCoAuth(paramsStream?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -376,6 +379,7 @@ export interface CampaignPublicationMethods {
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	delete(): Base.IBaseExecution<any>;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardCoAuth(lockId?: string): Base.IBaseExecution<any>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	extendSessionCoAuth(): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
@@ -393,7 +397,7 @@ export interface CampaignPublicationMethods {
 	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
-	saveStreams(contentStream?: any): Base.IBaseExecution<any>;
+	saveStreams(contentStream?: any, sharedLockId?: string): Base.IBaseExecution<any>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	startCoAuth(paramsStream?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -409,6 +413,7 @@ export interface CampaignPublicationMethods {
 	getPrePublishValidationStatus(): Base.IBaseExecution<SP.Publishing.PrePublishValidationsResponse>;
 	getPublishingStatus(): Base.IBaseExecution<SP.Publishing.PublishingStatusResponse>;
 	loadMailDraft(requestParam?: SP.Publishing.CampaignPublicationLoadMailDraftParam): Base.IBaseExecution<SP.Publishing.CampaignPublicationMailDraftData>;
+	publishAsBot(tenantId?: string, channelIds?: Array<string>, message?: string): Base.IBaseExecution<string>;
 	publishPublication(): Base.IBaseExecution<SP.Publishing.PublishPublicationResponse>;
 	rejectApprovalRequest(comment?: string): Base.IBaseExecution<SP.Publishing.ApprovalRequestResponse>;
 	resetEndpoint(requestParam?: SP.Publishing.CampaignPublicationResetEndpointParam): Base.IBaseExecution<boolean>;
@@ -419,6 +424,7 @@ export interface CampaignPublicationMethods {
 	sPSiteValidator(siteUrl?: string): Base.IBaseCollection<number>;
 	syncApprovalRequest(): Base.IBaseExecution<SP.Publishing.ApprovalRequestSyncResponse>;
 	updateSharePointPublishingStatus(destinationSiteId?: string, destinationUrl?: string, sharePointPublishingStatus?: number, sharePointPublishingErrorCode?: number): Base.IBaseExecution<boolean>;
+	validate(): Base.IBaseExecution<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyResults>;
 }
 
 /*********************************************
@@ -817,6 +823,7 @@ export interface RepostPageMethods {
 	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardCoAuth(lockId?: string): Base.IBaseExecution<any>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	extendSessionCoAuth(): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
@@ -834,7 +841,7 @@ export interface RepostPageMethods {
 	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
-	saveStreams(contentStream?: any): Base.IBaseExecution<any>;
+	saveStreams(contentStream?: any, sharedLockId?: string): Base.IBaseExecution<any>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	startCoAuth(paramsStream?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -927,6 +934,7 @@ export interface FeedVideoPageMethods {
 	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardCoAuth(lockId?: string): Base.IBaseExecution<any>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	extendSessionCoAuth(): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
@@ -944,7 +952,7 @@ export interface FeedVideoPageMethods {
 	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
-	saveStreams(contentStream?: any): Base.IBaseExecution<any>;
+	saveStreams(contentStream?: any, sharedLockId?: string): Base.IBaseExecution<any>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	startCoAuth(paramsStream?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -1806,6 +1814,7 @@ export interface SitePage3DMethods {
 	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardCoAuth(lockId?: string): Base.IBaseExecution<any>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	extendSessionCoAuth(): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
@@ -1823,7 +1832,7 @@ export interface SitePage3DMethods {
 	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
-	saveStreams(contentStream?: any): Base.IBaseExecution<any>;
+	saveStreams(contentStream?: any, sharedLockId?: string): Base.IBaseExecution<any>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	startCoAuth(paramsStream?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
@@ -1906,6 +1915,7 @@ export interface SitePageServiceMethods {
 	addImageFromExternalUrl(pageName?: string, imageFileName?: string, externalUrl?: string, subFolderName?: string, pageId?: number): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	canCreatePage(): Base.IBaseExecution<boolean>;
 	canCreatePromotedPage(): Base.IBaseExecution<boolean>;
+	enableAmplifyFromAnywhere(): Base.IBaseExecution<any>;
 	enableAnnouncements(): Base.IBaseExecution<any>;
 	enableCategories(): Base.IBaseExecution<any>;
 	pagesInLib(id?: any): Base.IBaseCollection<SP.Publishing.SitePage, SP.Publishing.SitePageOData, Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods> & Base.IBaseExecution & SP.Publishing.SitePageCollectionMethods;
@@ -2363,6 +2373,7 @@ export interface TopicSitePageMethods {
 	copyWithConfiguration(sitePageFlags?: string, isNews?: boolean, creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	createNewsCopy(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	demoteFromNews(): Base.IBaseExecution<boolean>;
+	discardCoAuth(lockId?: string): Base.IBaseExecution<any>;
 	discardPage(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	extendSessionCoAuth(): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
 	getDependencyMetadata(): Base.IBaseCollection<SP.Publishing.SitePageDependencyMetadata>;
@@ -2380,7 +2391,7 @@ export interface TopicSitePageMethods {
 	savePageAsTemplate2(creationMode?: number): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageAsTemplateOnMySite(): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;
 	savePageCoAuth(pageStream?: any): Base.IBaseExecution<SP.Publishing.SitePageCoAuthState>;
-	saveStreams(contentStream?: any): Base.IBaseExecution<any>;
+	saveStreams(contentStream?: any, sharedLockId?: string): Base.IBaseExecution<any>;
 	schedulePublish(sitePage?: SP.Publishing.SitePageFieldsData): Base.IBaseExecution<string>;
 	sharePagePreviewByEmail(message?: string, recipientEmails?: Array<string>): Base.IBaseExecution<any>;
 	startCoAuth(paramsStream?: any): Base.IBaseQuery<SP.Publishing.SitePage, SP.Publishing.SitePageOData> & SP.Publishing.SitePageCollections & SP.Publishing.SitePageMethods;

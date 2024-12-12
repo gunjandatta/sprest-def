@@ -30,9 +30,12 @@ export interface SPActiveContainerProperties {
 	CreatedOn?: string;
 	DeletedOn?: string;
 	Description?: string;
+	OpticalCharacterRecognitionEnabled?: boolean;
 	Owners?: { results: Array<Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties> };
 	OwnersCount?: number;
+	OwnershipType?: string;
 	OwningApplicationId?: any;
+	PrincipalOwnerIdentifier?: string;
 	PublisherName?: string;
 	Readers?: { results: Array<Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties> };
 	SensitivityLabel?: string;

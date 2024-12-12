@@ -1,6 +1,21 @@
 import { Base } from "../../../../";
 
 /*********************************************
+* UnlicensedOdbLicenseEnforcementWarningContext
+**********************************************/
+export interface UnlicensedOdbLicenseEnforcementWarningContext {
+	WarningStatus?: number;
+	WarningStatusEffectiveUntil?: any;
+}
+
+/*********************************************
+* UnlicensedOdbLicenseEnforcementWarningContextCollections
+**********************************************/
+export interface UnlicensedOdbLicenseEnforcementWarningContextCollections {
+
+}
+
+/*********************************************
 * UnlicensedOdbTenantMetrics
 **********************************************/
 export interface UnlicensedOdbTenantMetrics {

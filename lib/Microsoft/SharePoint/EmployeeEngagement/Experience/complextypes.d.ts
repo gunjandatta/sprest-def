@@ -9,6 +9,7 @@ export interface DashboardContent {
 	DashboardFormFactor?: string;
 	DashboardId?: string;
 	LastModifiedDate?: any;
+	UserACECards?: string;
 }
 
 /*********************************************
