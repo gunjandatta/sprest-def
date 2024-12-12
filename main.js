@@ -713,7 +713,6 @@ ${props.join('\n')}
 
     for (let name in entities) {
         let entity = entities[name];
-        if (name == "list") { debugger; }
 
         // Parse the properties
         let props = [];
@@ -733,8 +732,7 @@ ${props.join('\n')}
                 argStrings.push(argName.name + ": " + argName.type);
             }
             let returnType = getGraphType(method.returnType, true) || "void";
-            let methodsType = returnType == "void" || returnType.indexOf('.') > 0 ? "" : " & " + returnType.replace(/\[\]$/, '') + "Methods[]";
-            if (method.name == "items") { debugger; }
+            let methodsType = returnType == "void" || returnType.indexOf("ComplexTypes.") == 0 || returnType.indexOf("[]") > 0 ? "" : " & " + returnType.replace(/\[\]$/, '') + "Methods";
             methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + returnType + ">" + methodsType + (method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : "") + ";");
         }
 
