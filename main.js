@@ -714,6 +714,7 @@ ${props.join('\n')}
 
     for (let name in entities) {
         let entity = entities[name];
+        let baseType = entity.returnType && getGraphType(entity.returnType) ? getGraphType(entity.returnType) + " & " : "";
 
         // Parse the properties
         let props = [];
@@ -739,7 +740,7 @@ ${props.join('\n')}
             let isComplexType = returnType.indexOf("ComplexTypes.") == 0;
             let returnTypeName = returnType.replace(/\[\]$/, '');
             let methodsType = returnType == "void" || isComplexType || isCollection ? "" : " & " + returnTypeName + "Methods";
-            let methodString = `\t${method.name}(${argStrings.join(", ")}): ${isCollection ? "IBaseCollection" : "IBaseQuery"}<${returnTypeName}${isCollection && !isComplexType ? ", " + returnTypeName + "OData & " + returnTypeName + "Props" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`;
+            let methodString = `\t${method.name}(${argStrings.join(", ")}): ${isCollection ? "IBaseCollection" : "IBaseQuery"}<${returnTypeName}${isCollection && !isComplexType ? ", " + baseType + returnTypeName + "OData & " + returnTypeName + "Props" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`;
             methods.push(methodString);
 
             // Ensure we haven't already added it
