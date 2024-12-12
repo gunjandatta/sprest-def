@@ -1124,7 +1124,11 @@ function processREST(schemas) {
                                 // Add the mapper
                                 let mapperKey = dirName + '.' + name + '.Collection';
                                 mapper[mapperKey] = mapper[mapperKey] || [];
-                                mapper[mapperKey].push(methodInfo);
+
+                                // Prevent duplicates
+                                if (mapper[mapperKey].find(a => { return a.name == methodInfo.name; }) == null) {
+                                    mapper[mapperKey].push(methodInfo);
+                                }
                             }
 
                             // See if we are overwriting the type
@@ -1141,8 +1145,12 @@ function processREST(schemas) {
                                 methodType = 'Base.IBaseExecution<' + methodType + '>';
                             }
 
-                            // Add the method
-                            collectionMethods.push('\t' + methodInfo.name + '(' + params.join(', ') + '): ' + methodType + ';');
+                            // Prevent duplicates
+                            let collectionMethod = '\t' + methodInfo.name + '(' + params.join(', ') + '): ' + methodType + ';';
+                            if (collectionMethods.indexOf(collectionMethod) < 0) {
+                                // Add the method
+                                collectionMethods.push(collectionMethod);
+                            }
                         }
 
                         // Continue the loop

@@ -1138,7 +1138,6 @@ export interface RoleDefinitionCollections extends RoleDefinitionPropMethods {
 export interface RoleDefinitionCollectionMethods {
 	// getById(id?: number): Base.IBaseExecution<SP.RoleDefinition>;
 	removeAll(): Base.IBaseExecution<any>;
-	// getById(id?: number): Base.IBaseExecution<SP.RoleDefinition>;
 	getByName(name?: string): Base.IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	getByType(roleType?: number): Base.IBaseQuery<SP.RoleDefinition> & SP.RoleDefinitionCollections & SP.RoleDefinitionMethods;
 	recreateMissingDefaultRoleDefinitions(): Base.IBaseExecution<any>;
@@ -1213,6 +1212,7 @@ export interface ListItemProps {
 	ServerRedirectedEmbedUri?: string;
 	ServerRedirectedEmbedUrl?: string;
 	Client_Title?: string;
+	Title?: string;
 }
 
 /*********************************************
@@ -8520,12 +8520,6 @@ export interface FontPackageCollections extends FontPackagePropMethods {
 * FontPackageCollectionMethods
 **********************************************/
 export interface FontPackageCollectionMethods {
-	getById(id?: any): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
-	getByTitle(title?: string): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
-	getById(id?: any): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
-	getByTitle(title?: string): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
-	getById(id?: any): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
-	getByTitle(title?: string): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
 	getById(id?: any): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
 	getByTitle(title?: string): Base.IBaseQuery<SP.FontPackage> & SP.FontPackageCollections & SP.FontPackageMethods;
 }

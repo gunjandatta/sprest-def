@@ -6329,30 +6329,6 @@ export interface IMapper {
 		argNames: [ "id" ],
 		},
 
-		getById: IMapperMethod & {
-		argNames: [ "id" ],
-		},
-
-		getById: IMapperMethod & {
-		argNames: [ "id" ],
-		},
-
-		getById: IMapperMethod & {
-		argNames: [ "id" ],
-		},
-
-		getByTitle: IMapperMethod & {
-		argNames: [ "title" ],
-		},
-
-		getByTitle: IMapperMethod & {
-		argNames: [ "title" ],
-		},
-
-		getByTitle: IMapperMethod & {
-		argNames: [ "title" ],
-		},
-
 		getByTitle: IMapperMethod & {
 		argNames: [ "title" ],
 		},

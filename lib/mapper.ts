@@ -6116,30 +6116,6 @@ export const Mapper: IMapper = {
 		argNames: [ "id" ],
 		},
 
-		getById: {
-		argNames: [ "id" ],
-		},
-
-		getById: {
-		argNames: [ "id" ],
-		},
-
-		getById: {
-		argNames: [ "id" ],
-		},
-
-		getByTitle: {
-		argNames: [ "title" ],
-		},
-
-		getByTitle: {
-		argNames: [ "title" ],
-		},
-
-		getByTitle: {
-		argNames: [ "title" ],
-		},
-
 		getByTitle: {
 		argNames: [ "title" ],
 		},
