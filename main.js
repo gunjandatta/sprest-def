@@ -731,15 +731,20 @@ ${props.join('\n')}
                 let argName = argNames[i];
                 argStrings.push(argName.name + ": " + argName.type);
             }
-            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + getGraphType(method.returnType, true) + ">" + (method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : "") + ";");
+            let methodType = getGraphType(method.returnType, true) || "void";
+            let methodsType = methodType == "void" || methodType.indexOf('.') > 0 ? "" : " & " + methodType.replace(/\[\]$/, '') + "Methods[]";
+            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + methodType + ">" + methodsType + (method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : "") + ";");
         }
 
         // Add the endpoint
         content.push(`/*********************************************
 * ${name}
 **********************************************/
-export interface ${name} ${entity.returnType && getGraphType(entity.returnType) ? "extends " + getGraphType(entity.returnType) : ""} {
+export interface ${name} extends ${name}Props, ${name}Methods ${entity.returnType && getGraphType(entity.returnType) ? ", " + getGraphType(entity.returnType) : ""} { }
+export interface ${name}Props {
 ${props.join('\n')}
+}
+export interface ${name}Methods {
 ${methods.join('\n')}
 }`);
 
