@@ -693,7 +693,7 @@ ${props.join('\n')}
 
     // Create the entities
     content = [
-        "import { IBaseCollection, IBaseQuery } from \"../../base\";",
+        "import { IBaseCollection, IBaseQuery, IBaseResults } from \"../../base\";",
         "import * as ComplexTypes from \"./complexTypes.d\";",
         "import * as EnumTypes from \"./enumTypes.d\";"
     ];
@@ -723,6 +723,7 @@ ${props.join('\n')}
 
         // Parse the methods
         let methods = [];
+        let odataMethods = [];
         for (let method of entity.methods) {
             // Add the method
             let argNames = method.argNames || [];
@@ -732,8 +733,16 @@ ${props.join('\n')}
                 argStrings.push(argName.name + ": " + argName.type);
             }
             let returnType = getGraphType(method.returnType, true) || "void";
-            let methodsType = returnType == "void" || returnType.indexOf("ComplexTypes.") == 0 || returnType.indexOf("[]") > 0 ? "" : " & " + returnType.replace(/\[\]$/, '') + "Methods";
-            methods.push(`\t${method.name}(${argStrings.join(", ")}): ${returnType.indexOf("[]") > 0 ? "IBaseCollection" : "IBaseQuery"}<${returnType.replace(/\[\]$/, '')}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`);
+            let isCollection = returnType.indexOf("[]") > 0;
+            let isComplexType = returnType.indexOf("ComplexTypes.") == 0;
+            let returnTypeName = returnType.replace(/\[\]$/, '');
+            let methodsType = returnType == "void" || isComplexType || isCollection ? "" : " & " + returnTypeName + "Methods";
+            methods.push(`\t${method.name}(${argStrings.join(", ")}): ${isCollection ? "IBaseCollection" : "IBaseQuery"}<${returnTypeName}${isCollection && !isComplexType ? ", " + returnTypeName + "OData" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`);
+
+            // See if this is a collection
+            if (isCollection) {
+                odataMethods.push(`\t${method.name}: ${isCollection ? "IBaseResults<" : ""}${returnTypeName}${isCollection ? ">" : ""};`);
+            }
         }
 
         // Add the endpoint
@@ -746,6 +755,9 @@ ${props.join('\n')}
 }
 export interface ${name}Methods {
 ${methods.join('\n')}
+}
+export interface ${name}OData {
+${odataMethods.join('\n')}
 }`);
     }
     fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n').replace(/EntityTypes./g, ""));

@@ -1,4 +1,4 @@
-import { IBaseCollection, IBaseQuery } from "../../base";
+import { IBaseCollection, IBaseQuery, IBaseResults } from "../../base";
 import * as ComplexTypes from "./complexTypes.d";
 import * as EnumTypes from "./enumTypes.d";
 /*********************************************
@@ -18,8 +18,11 @@ export interface workflowBaseProps {
 export interface workflowBaseMethods {
 	createdBy(): IBaseQuery<user> & userMethods;
 	lastModifiedBy(): IBaseQuery<user> & userMethods;
-	tasks(): IBaseCollection<task>;
+	tasks(): IBaseCollection<task, taskOData>;
 	tasks(id: string | number): IBaseQuery<task> & taskMethods;
+}
+export interface workflowBaseOData {
+	tasks: IBaseResults<task>;
 }
 /*********************************************
 * workflow
@@ -32,16 +35,23 @@ export interface workflowProps {
 	version: number;
 }
 export interface workflowMethods {
-	executionScope(): IBaseCollection<userProcessingResult>;
+	executionScope(): IBaseCollection<userProcessingResult, userProcessingResultOData>;
 	executionScope(id: string | number): IBaseQuery<userProcessingResult> & userProcessingResultMethods;
-	runs(): IBaseCollection<run>;
+	runs(): IBaseCollection<run, runOData>;
 	runs(id: string | number): IBaseQuery<run> & runMethods;
-	taskReports(): IBaseCollection<taskReport>;
+	taskReports(): IBaseCollection<taskReport, taskReportOData>;
 	taskReports(id: string | number): IBaseQuery<taskReport> & taskReportMethods;
-	userProcessingResults(): IBaseCollection<userProcessingResult>;
+	userProcessingResults(): IBaseCollection<userProcessingResult, userProcessingResultOData>;
 	userProcessingResults(id: string | number): IBaseQuery<userProcessingResult> & userProcessingResultMethods;
-	versions(): IBaseCollection<workflowVersion>;
+	versions(): IBaseCollection<workflowVersion, workflowVersionOData>;
 	versions(id: string | number): IBaseQuery<workflowVersion> & workflowVersionMethods;
+}
+export interface workflowOData {
+	executionScope: IBaseResults<userProcessingResult>;
+	runs: IBaseResults<run>;
+	taskReports: IBaseResults<taskReport>;
+	userProcessingResults: IBaseResults<userProcessingResult>;
+	versions: IBaseResults<workflowVersion>;
 }
 /*********************************************
 * lifecycleWorkflowsContainer
@@ -51,17 +61,23 @@ export interface lifecycleWorkflowsContainerProps {
 
 }
 export interface lifecycleWorkflowsContainerMethods {
-	customTaskExtensions(): IBaseCollection<customTaskExtension>;
+	customTaskExtensions(): IBaseCollection<customTaskExtension, customTaskExtensionOData>;
 	customTaskExtensions(id: string | number): IBaseQuery<customTaskExtension> & customTaskExtensionMethods;
 	deletedItems(): IBaseQuery<deletedItemContainer> & deletedItemContainerMethods;
 	insights(): IBaseQuery<insights> & insightsMethods;
 	settings(): IBaseQuery<lifecycleManagementSettings> & lifecycleManagementSettingsMethods;
-	taskDefinitions(): IBaseCollection<taskDefinition>;
+	taskDefinitions(): IBaseCollection<taskDefinition, taskDefinitionOData>;
 	taskDefinitions(id: string | number): IBaseQuery<taskDefinition> & taskDefinitionMethods;
-	workflows(): IBaseCollection<workflow>;
+	workflows(): IBaseCollection<workflow, workflowOData>;
 	workflows(id: string | number): IBaseQuery<workflow> & workflowMethods;
-	workflowTemplates(): IBaseCollection<workflowTemplate>;
+	workflowTemplates(): IBaseCollection<workflowTemplate, workflowTemplateOData>;
 	workflowTemplates(id: string | number): IBaseQuery<workflowTemplate> & workflowTemplateMethods;
+}
+export interface lifecycleWorkflowsContainerOData {
+	customTaskExtensions: IBaseResults<customTaskExtension>;
+	taskDefinitions: IBaseResults<taskDefinition>;
+	workflows: IBaseResults<workflow>;
+	workflowTemplates: IBaseResults<workflowTemplate>;
 }
 /*********************************************
 * task
@@ -78,8 +94,11 @@ export interface taskProps {
 	taskDefinitionId: string;
 }
 export interface taskMethods {
-	taskProcessingResults(): IBaseCollection<taskProcessingResult>;
+	taskProcessingResults(): IBaseCollection<taskProcessingResult, taskProcessingResultOData>;
 	taskProcessingResults(id: string | number): IBaseQuery<taskProcessingResult> & taskProcessingResultMethods;
+}
+export interface taskOData {
+	taskProcessingResults: IBaseResults<taskProcessingResult>;
 }
 /*********************************************
 * taskProcessingResult
@@ -96,6 +115,9 @@ export interface taskProcessingResultMethods {
 	subject(): IBaseQuery<user> & userMethods;
 	task(): IBaseQuery<task> & taskMethods;
 }
+export interface taskProcessingResultOData {
+
+}
 /*********************************************
 * customTaskExtension
 **********************************************/
@@ -109,6 +131,9 @@ export interface customTaskExtensionMethods {
 	createdBy(): IBaseQuery<user> & userMethods;
 	lastModifiedBy(): IBaseQuery<user> & userMethods;
 }
+export interface customTaskExtensionOData {
+
+}
 /*********************************************
 * insights
 **********************************************/
@@ -117,6 +142,9 @@ export interface insightsProps {
 
 }
 export interface insightsMethods {
+
+}
+export interface insightsOData {
 
 }
 /*********************************************
@@ -128,6 +156,9 @@ export interface lifecycleManagementSettingsProps {
 	workflowScheduleIntervalInHours: number;
 }
 export interface lifecycleManagementSettingsMethods {
+
+}
+export interface lifecycleManagementSettingsOData {
 
 }
 /*********************************************
@@ -145,6 +176,9 @@ export interface taskDefinitionProps {
 export interface taskDefinitionMethods {
 
 }
+export interface taskDefinitionOData {
+
+}
 /*********************************************
 * workflowTemplate
 **********************************************/
@@ -156,8 +190,11 @@ export interface workflowTemplateProps {
 	executionConditions: ComplexTypes.workflowExecutionConditions;
 }
 export interface workflowTemplateMethods {
-	tasks(): IBaseCollection<task>;
+	tasks(): IBaseCollection<task, taskOData>;
 	tasks(id: string | number): IBaseQuery<task> & taskMethods;
+}
+export interface workflowTemplateOData {
+	tasks: IBaseResults<task>;
 }
 /*********************************************
 * run
@@ -178,10 +215,14 @@ export interface runProps {
 	workflowExecutionType: EnumTypes.workflowExecutionType;
 }
 export interface runMethods {
-	taskProcessingResults(): IBaseCollection<taskProcessingResult>;
+	taskProcessingResults(): IBaseCollection<taskProcessingResult, taskProcessingResultOData>;
 	taskProcessingResults(id: string | number): IBaseQuery<taskProcessingResult> & taskProcessingResultMethods;
-	userProcessingResults(): IBaseCollection<userProcessingResult>;
+	userProcessingResults(): IBaseCollection<userProcessingResult, userProcessingResultOData>;
 	userProcessingResults(id: string | number): IBaseQuery<userProcessingResult> & userProcessingResultMethods;
+}
+export interface runOData {
+	taskProcessingResults: IBaseResults<taskProcessingResult>;
+	userProcessingResults: IBaseResults<userProcessingResult>;
 }
 /*********************************************
 * userProcessingResult
@@ -200,8 +241,11 @@ export interface userProcessingResultProps {
 }
 export interface userProcessingResultMethods {
 	subject(): IBaseQuery<user> & userMethods;
-	taskProcessingResults(): IBaseCollection<taskProcessingResult>;
+	taskProcessingResults(): IBaseCollection<taskProcessingResult, taskProcessingResultOData>;
 	taskProcessingResults(id: string | number): IBaseQuery<taskProcessingResult> & taskProcessingResultMethods;
+}
+export interface userProcessingResultOData {
+	taskProcessingResults: IBaseResults<taskProcessingResult>;
 }
 /*********************************************
 * taskReport
@@ -221,8 +265,11 @@ export interface taskReportProps {
 export interface taskReportMethods {
 	task(): IBaseQuery<task> & taskMethods;
 	taskDefinition(): IBaseQuery<taskDefinition> & taskDefinitionMethods;
-	taskProcessingResults(): IBaseCollection<taskProcessingResult>;
+	taskProcessingResults(): IBaseCollection<taskProcessingResult, taskProcessingResultOData>;
 	taskProcessingResults(id: string | number): IBaseQuery<taskProcessingResult> & taskProcessingResultMethods;
+}
+export interface taskReportOData {
+	taskProcessingResults: IBaseResults<taskProcessingResult>;
 }
 /*********************************************
 * workflowVersion
@@ -232,6 +279,9 @@ export interface workflowVersionProps {
 	versionNumber: number;
 }
 export interface workflowVersionMethods {
+
+}
+export interface workflowVersionOData {
 
 }
 /*********************************************
@@ -244,6 +294,9 @@ export interface entityProps {
 export interface entityMethods {
 
 }
+export interface entityOData {
+
+}
 /*********************************************
 * directoryObject
 **********************************************/
@@ -252,6 +305,9 @@ export interface directoryObjectProps {
 	deletedDateTime: any;
 }
 export interface directoryObjectMethods {
+
+}
+export interface directoryObjectOData {
 
 }
 /*********************************************
@@ -299,22 +355,31 @@ export interface applicationProps {
 	web: ComplexTypes.webApplication;
 }
 export interface applicationMethods {
-	appManagementPolicies(): IBaseCollection<appManagementPolicy>;
+	appManagementPolicies(): IBaseCollection<appManagementPolicy, appManagementPolicyOData>;
 	appManagementPolicies(id: string | number): IBaseQuery<appManagementPolicy> & appManagementPolicyMethods;
 	createdOnBehalfOf(): IBaseQuery<directoryObject> & directoryObjectMethods;
-	extensionProperties(): IBaseCollection<extensionProperty>;
+	extensionProperties(): IBaseCollection<extensionProperty, extensionPropertyOData>;
 	extensionProperties(id: string | number): IBaseQuery<extensionProperty> & extensionPropertyMethods;
-	federatedIdentityCredentials(): IBaseCollection<federatedIdentityCredential>;
+	federatedIdentityCredentials(): IBaseCollection<federatedIdentityCredential, federatedIdentityCredentialOData>;
 	federatedIdentityCredentials(id: string | number): IBaseQuery<federatedIdentityCredential> & federatedIdentityCredentialMethods;
-	homeRealmDiscoveryPolicies(): IBaseCollection<homeRealmDiscoveryPolicy>;
+	homeRealmDiscoveryPolicies(): IBaseCollection<homeRealmDiscoveryPolicy, homeRealmDiscoveryPolicyOData>;
 	homeRealmDiscoveryPolicies(id: string | number): IBaseQuery<homeRealmDiscoveryPolicy> & homeRealmDiscoveryPolicyMethods;
-	owners(): IBaseCollection<directoryObject>;
+	owners(): IBaseCollection<directoryObject, directoryObjectOData>;
 	owners(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	tokenIssuancePolicies(): IBaseCollection<tokenIssuancePolicy>;
+	tokenIssuancePolicies(): IBaseCollection<tokenIssuancePolicy, tokenIssuancePolicyOData>;
 	tokenIssuancePolicies(id: string | number): IBaseQuery<tokenIssuancePolicy> & tokenIssuancePolicyMethods;
-	tokenLifetimePolicies(): IBaseCollection<tokenLifetimePolicy>;
+	tokenLifetimePolicies(): IBaseCollection<tokenLifetimePolicy, tokenLifetimePolicyOData>;
 	tokenLifetimePolicies(id: string | number): IBaseQuery<tokenLifetimePolicy> & tokenLifetimePolicyMethods;
 	synchronization(): IBaseQuery<synchronization> & synchronizationMethods;
+}
+export interface applicationOData {
+	appManagementPolicies: IBaseResults<appManagementPolicy>;
+	extensionProperties: IBaseResults<extensionProperty>;
+	federatedIdentityCredentials: IBaseResults<federatedIdentityCredential>;
+	homeRealmDiscoveryPolicies: IBaseResults<homeRealmDiscoveryPolicy>;
+	owners: IBaseResults<directoryObject>;
+	tokenIssuancePolicies: IBaseResults<tokenIssuancePolicy>;
+	tokenLifetimePolicies: IBaseResults<tokenLifetimePolicy>;
 }
 /*********************************************
 * policyBase
@@ -327,6 +392,9 @@ export interface policyBaseProps {
 export interface policyBaseMethods {
 
 }
+export interface policyBaseOData {
+
+}
 /*********************************************
 * appManagementPolicy
 **********************************************/
@@ -336,8 +404,11 @@ export interface appManagementPolicyProps {
 	restrictions: ComplexTypes.customAppManagementConfiguration;
 }
 export interface appManagementPolicyMethods {
-	appliesTo(): IBaseCollection<directoryObject>;
+	appliesTo(): IBaseCollection<directoryObject, directoryObjectOData>;
 	appliesTo(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface appManagementPolicyOData {
+	appliesTo: IBaseResults<directoryObject>;
 }
 /*********************************************
 * extensionProperty
@@ -354,6 +425,9 @@ export interface extensionPropertyProps {
 export interface extensionPropertyMethods {
 
 }
+export interface extensionPropertyOData {
+
+}
 /*********************************************
 * federatedIdentityCredential
 **********************************************/
@@ -368,6 +442,9 @@ export interface federatedIdentityCredentialProps {
 export interface federatedIdentityCredentialMethods {
 
 }
+export interface federatedIdentityCredentialOData {
+
+}
 /*********************************************
 * stsPolicy
 **********************************************/
@@ -377,8 +454,11 @@ export interface stsPolicyProps {
 	isOrganizationDefault: boolean;
 }
 export interface stsPolicyMethods {
-	appliesTo(): IBaseCollection<directoryObject>;
+	appliesTo(): IBaseCollection<directoryObject, directoryObjectOData>;
 	appliesTo(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface stsPolicyOData {
+	appliesTo: IBaseResults<directoryObject>;
 }
 /*********************************************
 * homeRealmDiscoveryPolicy
@@ -388,6 +468,9 @@ export interface homeRealmDiscoveryPolicyProps {
 
 }
 export interface homeRealmDiscoveryPolicyMethods {
+
+}
+export interface homeRealmDiscoveryPolicyOData {
 
 }
 /*********************************************
@@ -400,6 +483,9 @@ export interface tokenIssuancePolicyProps {
 export interface tokenIssuancePolicyMethods {
 
 }
+export interface tokenIssuancePolicyOData {
+
+}
 /*********************************************
 * tokenLifetimePolicy
 **********************************************/
@@ -410,6 +496,9 @@ export interface tokenLifetimePolicyProps {
 export interface tokenLifetimePolicyMethods {
 
 }
+export interface tokenLifetimePolicyOData {
+
+}
 /*********************************************
 * synchronization
 **********************************************/
@@ -418,10 +507,14 @@ export interface synchronizationProps {
 	secrets: ComplexTypes.synchronizationSecretKeyStringValuePair[];
 }
 export interface synchronizationMethods {
-	jobs(): IBaseCollection<synchronizationJob>;
+	jobs(): IBaseCollection<synchronizationJob, synchronizationJobOData>;
 	jobs(id: string | number): IBaseQuery<synchronizationJob> & synchronizationJobMethods;
-	templates(): IBaseCollection<synchronizationTemplate>;
+	templates(): IBaseCollection<synchronizationTemplate, synchronizationTemplateOData>;
 	templates(id: string | number): IBaseQuery<synchronizationTemplate> & synchronizationTemplateMethods;
+}
+export interface synchronizationOData {
+	jobs: IBaseResults<synchronizationJob>;
+	templates: IBaseResults<synchronizationTemplate>;
 }
 /*********************************************
 * customCalloutExtension
@@ -437,6 +530,9 @@ export interface customCalloutExtensionProps {
 export interface customCalloutExtensionMethods {
 
 }
+export interface customCalloutExtensionOData {
+
+}
 /*********************************************
 * deletedItemContainer
 **********************************************/
@@ -445,8 +541,11 @@ export interface deletedItemContainerProps {
 
 }
 export interface deletedItemContainerMethods {
-	workflows(): IBaseCollection<workflow>;
+	workflows(): IBaseCollection<workflow, workflowOData>;
 	workflows(id: string | number): IBaseQuery<workflow> & workflowMethods;
+}
+export interface deletedItemContainerOData {
+	workflows: IBaseResults<workflow>;
 }
 /*********************************************
 * group
@@ -460,8 +559,11 @@ export interface groupProps {
 	scope: EnumTypes.termGroupScope;
 }
 export interface groupMethods {
-	sets(): IBaseCollection<set>;
+	sets(): IBaseCollection<set, setOData>;
 	sets(id: string | number): IBaseQuery<set> & setMethods;
+}
+export interface groupOData {
+	sets: IBaseResults<set>;
 }
 /*********************************************
 * appRoleAssignment
@@ -479,6 +581,9 @@ export interface appRoleAssignmentProps {
 export interface appRoleAssignmentMethods {
 
 }
+export interface appRoleAssignmentOData {
+
+}
 /*********************************************
 * resourceSpecificPermissionGrant
 **********************************************/
@@ -493,6 +598,9 @@ export interface resourceSpecificPermissionGrantProps {
 export interface resourceSpecificPermissionGrantMethods {
 
 }
+export interface resourceSpecificPermissionGrantOData {
+
+}
 /*********************************************
 * groupSetting
 **********************************************/
@@ -503,6 +611,9 @@ export interface groupSettingProps {
 	values: ComplexTypes.settingValue[];
 }
 export interface groupSettingMethods {
+
+}
+export interface groupSettingOData {
 
 }
 /*********************************************
@@ -525,16 +636,23 @@ export interface calendarProps {
 	owner: ComplexTypes.emailAddress;
 }
 export interface calendarMethods {
-	calendarPermissions(): IBaseCollection<calendarPermission>;
+	calendarPermissions(): IBaseCollection<calendarPermission, calendarPermissionOData>;
 	calendarPermissions(id: string | number): IBaseQuery<calendarPermission> & calendarPermissionMethods;
-	calendarView(): IBaseCollection<event>;
+	calendarView(): IBaseCollection<event, eventOData>;
 	calendarView(id: string | number): IBaseQuery<event> & eventMethods;
-	events(): IBaseCollection<event>;
+	events(): IBaseCollection<event, eventOData>;
 	events(id: string | number): IBaseQuery<event> & eventMethods;
-	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty>;
+	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData>;
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
-	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty>;
+	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData>;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+}
+export interface calendarOData {
+	calendarPermissions: IBaseResults<calendarPermission>;
+	calendarView: IBaseResults<event>;
+	events: IBaseResults<event>;
+	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
+	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * outlookItem
@@ -547,6 +665,9 @@ export interface outlookItemProps {
 	lastModifiedDateTime: any;
 }
 export interface outlookItemMethods {
+
+}
+export interface outlookItemOData {
 
 }
 /*********************************************
@@ -592,17 +713,24 @@ export interface eventProps {
 	webLink: string;
 }
 export interface eventMethods {
-	attachments(): IBaseCollection<attachment>;
+	attachments(): IBaseCollection<attachment, attachmentOData>;
 	attachments(id: string | number): IBaseQuery<attachment> & attachmentMethods;
 	calendar(): IBaseQuery<calendar> & calendarMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
-	instances(): IBaseCollection<event>;
+	instances(): IBaseCollection<event, eventOData>;
 	instances(id: string | number): IBaseQuery<event> & eventMethods;
-	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty>;
+	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData>;
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
-	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty>;
+	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData>;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+}
+export interface eventOData {
+	attachments: IBaseResults<attachment>;
+	extensions: IBaseResults<extension>;
+	instances: IBaseResults<event>;
+	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
+	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * conversation
@@ -616,8 +744,11 @@ export interface conversationProps {
 	uniqueSenders: Array<string>[];
 }
 export interface conversationMethods {
-	threads(): IBaseCollection<conversationThread>;
+	threads(): IBaseCollection<conversationThread, conversationThreadOData>;
 	threads(id: string | number): IBaseQuery<conversationThread> & conversationThreadMethods;
+}
+export interface conversationOData {
+	threads: IBaseResults<conversationThread>;
 }
 /*********************************************
 * conversationThread
@@ -634,8 +765,11 @@ export interface conversationThreadProps {
 	uniqueSenders: Array<string>[];
 }
 export interface conversationThreadMethods {
-	posts(): IBaseCollection<post>;
+	posts(): IBaseCollection<post, postOData>;
 	posts(id: string | number): IBaseQuery<post> & postMethods;
+}
+export interface conversationThreadOData {
+	posts: IBaseResults<post>;
 }
 /*********************************************
 * baseItem
@@ -656,6 +790,9 @@ export interface baseItemMethods {
 	createdByUser(): IBaseQuery<user> & userMethods;
 	lastModifiedByUser(): IBaseQuery<user> & userMethods;
 }
+export interface baseItemOData {
+
+}
 /*********************************************
 * drive
 **********************************************/
@@ -668,16 +805,22 @@ export interface driveProps {
 	system: ComplexTypes.systemFacet;
 }
 export interface driveMethods {
-	bundles(): IBaseCollection<driveItem>;
+	bundles(): IBaseCollection<driveItem, driveItemOData>;
 	bundles(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
-	following(): IBaseCollection<driveItem>;
+	following(): IBaseCollection<driveItem, driveItemOData>;
 	following(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
-	items(): IBaseCollection<driveItem>;
+	items(): IBaseCollection<driveItem, driveItemOData>;
 	items(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
 	list(): IBaseQuery<list> & listMethods;
 	root(): IBaseQuery<driveItem> & driveItemMethods;
-	special(): IBaseCollection<driveItem>;
+	special(): IBaseCollection<driveItem, driveItemOData>;
 	special(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
+}
+export interface driveOData {
+	bundles: IBaseResults<driveItem>;
+	following: IBaseResults<driveItem>;
+	items: IBaseResults<driveItem>;
+	special: IBaseResults<driveItem>;
 }
 /*********************************************
 * site
@@ -693,31 +836,44 @@ export interface siteProps {
 }
 export interface siteMethods {
 	analytics(): IBaseQuery<itemAnalytics> & itemAnalyticsMethods;
-	columns(): IBaseCollection<columnDefinition>;
+	columns(): IBaseCollection<columnDefinition, columnDefinitionOData>;
 	columns(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
-	contentTypes(): IBaseCollection<contentType>;
+	contentTypes(): IBaseCollection<contentType, contentTypeOData>;
 	contentTypes(id: string | number): IBaseQuery<contentType> & contentTypeMethods;
 	drive(): IBaseQuery<drive> & driveMethods;
-	drives(): IBaseCollection<drive>;
+	drives(): IBaseCollection<drive, driveOData>;
 	drives(id: string | number): IBaseQuery<drive> & driveMethods;
-	externalColumns(): IBaseCollection<columnDefinition>;
+	externalColumns(): IBaseCollection<columnDefinition, columnDefinitionOData>;
 	externalColumns(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
-	items(): IBaseCollection<baseItem>;
+	items(): IBaseCollection<baseItem, baseItemOData>;
 	items(id: string | number): IBaseQuery<baseItem> & baseItemMethods;
-	lists(): IBaseCollection<list>;
+	lists(): IBaseCollection<list, listOData>;
 	lists(id: string | number): IBaseQuery<list> & listMethods;
-	operations(): IBaseCollection<richLongRunningOperation>;
+	operations(): IBaseCollection<richLongRunningOperation, richLongRunningOperationOData>;
 	operations(id: string | number): IBaseQuery<richLongRunningOperation> & richLongRunningOperationMethods;
-	pages(): IBaseCollection<baseSitePage>;
+	pages(): IBaseCollection<baseSitePage, baseSitePageOData>;
 	pages(id: string | number): IBaseQuery<baseSitePage> & baseSitePageMethods;
-	permissions(): IBaseCollection<permission>;
+	permissions(): IBaseCollection<permission, permissionOData>;
 	permissions(id: string | number): IBaseQuery<permission> & permissionMethods;
-	sites(): IBaseCollection<site>;
+	sites(): IBaseCollection<site, siteOData>;
 	sites(id: string | number): IBaseQuery<site> & siteMethods;
 	termStore(): IBaseQuery<store> & storeMethods;
-	termStores(): IBaseCollection<store>;
+	termStores(): IBaseCollection<store, storeOData>;
 	termStores(id: string | number): IBaseQuery<store> & storeMethods;
 	onenote(): IBaseQuery<onenote> & onenoteMethods;
+}
+export interface siteOData {
+	columns: IBaseResults<columnDefinition>;
+	contentTypes: IBaseResults<contentType>;
+	drives: IBaseResults<drive>;
+	externalColumns: IBaseResults<columnDefinition>;
+	items: IBaseResults<baseItem>;
+	lists: IBaseResults<list>;
+	operations: IBaseResults<richLongRunningOperation>;
+	pages: IBaseResults<baseSitePage>;
+	permissions: IBaseResults<permission>;
+	sites: IBaseResults<site>;
+	termStores: IBaseResults<store>;
 }
 /*********************************************
 * extension
@@ -727,6 +883,9 @@ export interface extensionProps {
 
 }
 export interface extensionMethods {
+
+}
+export interface extensionOData {
 
 }
 /*********************************************
@@ -741,6 +900,9 @@ export interface groupLifecyclePolicyProps {
 export interface groupLifecyclePolicyMethods {
 
 }
+export interface groupLifecyclePolicyOData {
+
+}
 /*********************************************
 * plannerGroup
 **********************************************/
@@ -749,8 +911,11 @@ export interface plannerGroupProps {
 
 }
 export interface plannerGroupMethods {
-	plans(): IBaseCollection<plannerPlan>;
+	plans(): IBaseCollection<plannerPlan, plannerPlanOData>;
 	plans(id: string | number): IBaseQuery<plannerPlan> & plannerPlanMethods;
+}
+export interface plannerGroupOData {
+	plans: IBaseResults<plannerPlan>;
 }
 /*********************************************
 * onenote
@@ -760,18 +925,26 @@ export interface onenoteProps {
 
 }
 export interface onenoteMethods {
-	notebooks(): IBaseCollection<notebook>;
+	notebooks(): IBaseCollection<notebook, notebookOData>;
 	notebooks(id: string | number): IBaseQuery<notebook> & notebookMethods;
-	operations(): IBaseCollection<onenoteOperation>;
+	operations(): IBaseCollection<onenoteOperation, onenoteOperationOData>;
 	operations(id: string | number): IBaseQuery<onenoteOperation> & onenoteOperationMethods;
-	pages(): IBaseCollection<onenotePage>;
+	pages(): IBaseCollection<onenotePage, onenotePageOData>;
 	pages(id: string | number): IBaseQuery<onenotePage> & onenotePageMethods;
-	resources(): IBaseCollection<onenoteResource>;
+	resources(): IBaseCollection<onenoteResource, onenoteResourceOData>;
 	resources(id: string | number): IBaseQuery<onenoteResource> & onenoteResourceMethods;
-	sectionGroups(): IBaseCollection<sectionGroup>;
+	sectionGroups(): IBaseCollection<sectionGroup, sectionGroupOData>;
 	sectionGroups(id: string | number): IBaseQuery<sectionGroup> & sectionGroupMethods;
-	sections(): IBaseCollection<onenoteSection>;
+	sections(): IBaseCollection<onenoteSection, onenoteSectionOData>;
 	sections(id: string | number): IBaseQuery<onenoteSection> & onenoteSectionMethods;
+}
+export interface onenoteOData {
+	notebooks: IBaseResults<notebook>;
+	operations: IBaseResults<onenoteOperation>;
+	pages: IBaseResults<onenotePage>;
+	resources: IBaseResults<onenoteResource>;
+	sectionGroups: IBaseResults<sectionGroup>;
+	sections: IBaseResults<onenoteSection>;
 }
 /*********************************************
 * profilePhoto
@@ -782,6 +955,9 @@ export interface profilePhotoProps {
 	width: number;
 }
 export interface profilePhotoMethods {
+
+}
+export interface profilePhotoOData {
 
 }
 /*********************************************
@@ -806,27 +982,37 @@ export interface teamProps {
 	webUrl: string;
 }
 export interface teamMethods {
-	allChannels(): IBaseCollection<channel>;
+	allChannels(): IBaseCollection<channel, channelOData>;
 	allChannels(id: string | number): IBaseQuery<channel> & channelMethods;
-	channels(): IBaseCollection<channel>;
+	channels(): IBaseCollection<channel, channelOData>;
 	channels(id: string | number): IBaseQuery<channel> & channelMethods;
 	group(): IBaseQuery<group> & groupMethods;
-	incomingChannels(): IBaseCollection<channel>;
+	incomingChannels(): IBaseCollection<channel, channelOData>;
 	incomingChannels(id: string | number): IBaseQuery<channel> & channelMethods;
-	installedApps(): IBaseCollection<teamsAppInstallation>;
+	installedApps(): IBaseCollection<teamsAppInstallation, teamsAppInstallationOData>;
 	installedApps(id: string | number): IBaseQuery<teamsAppInstallation> & teamsAppInstallationMethods;
-	members(): IBaseCollection<conversationMember>;
+	members(): IBaseCollection<conversationMember, conversationMemberOData>;
 	members(id: string | number): IBaseQuery<conversationMember> & conversationMemberMethods;
-	operations(): IBaseCollection<teamsAsyncOperation>;
+	operations(): IBaseCollection<teamsAsyncOperation, teamsAsyncOperationOData>;
 	operations(id: string | number): IBaseQuery<teamsAsyncOperation> & teamsAsyncOperationMethods;
-	permissionGrants(): IBaseCollection<resourceSpecificPermissionGrant>;
+	permissionGrants(): IBaseCollection<resourceSpecificPermissionGrant, resourceSpecificPermissionGrantOData>;
 	permissionGrants(id: string | number): IBaseQuery<resourceSpecificPermissionGrant> & resourceSpecificPermissionGrantMethods;
 	photo(): IBaseQuery<profilePhoto> & profilePhotoMethods;
 	primaryChannel(): IBaseQuery<channel> & channelMethods;
-	tags(): IBaseCollection<teamworkTag>;
+	tags(): IBaseCollection<teamworkTag, teamworkTagOData>;
 	tags(id: string | number): IBaseQuery<teamworkTag> & teamworkTagMethods;
 	template(): IBaseQuery<teamsTemplate> & teamsTemplateMethods;
 	schedule(): IBaseQuery<schedule> & scheduleMethods;
+}
+export interface teamOData {
+	allChannels: IBaseResults<channel>;
+	channels: IBaseResults<channel>;
+	incomingChannels: IBaseResults<channel>;
+	installedApps: IBaseResults<teamsAppInstallation>;
+	members: IBaseResults<conversationMember>;
+	operations: IBaseResults<teamsAsyncOperation>;
+	permissionGrants: IBaseResults<resourceSpecificPermissionGrant>;
+	tags: IBaseResults<teamworkTag>;
 }
 /*********************************************
 * identityGovernance
@@ -843,6 +1029,9 @@ export interface identityGovernanceMethods {
 	entitlementManagement(): IBaseQuery<entitlementManagement> & entitlementManagementMethods;
 	privilegedAccess(): IBaseQuery<privilegedAccessRoot> & privilegedAccessRootMethods;
 }
+export interface identityGovernanceOData {
+
+}
 /*********************************************
 * accessReviewSet
 **********************************************/
@@ -851,10 +1040,14 @@ export interface accessReviewSetProps {
 
 }
 export interface accessReviewSetMethods {
-	definitions(): IBaseCollection<accessReviewScheduleDefinition>;
+	definitions(): IBaseCollection<accessReviewScheduleDefinition, accessReviewScheduleDefinitionOData>;
 	definitions(id: string | number): IBaseQuery<accessReviewScheduleDefinition> & accessReviewScheduleDefinitionMethods;
-	historyDefinitions(): IBaseCollection<accessReviewHistoryDefinition>;
+	historyDefinitions(): IBaseCollection<accessReviewHistoryDefinition, accessReviewHistoryDefinitionOData>;
 	historyDefinitions(id: string | number): IBaseQuery<accessReviewHistoryDefinition> & accessReviewHistoryDefinitionMethods;
+}
+export interface accessReviewSetOData {
+	definitions: IBaseResults<accessReviewScheduleDefinition>;
+	historyDefinitions: IBaseResults<accessReviewHistoryDefinition>;
 }
 /*********************************************
 * appConsentApprovalRoute
@@ -864,8 +1057,11 @@ export interface appConsentApprovalRouteProps {
 
 }
 export interface appConsentApprovalRouteMethods {
-	appConsentRequests(): IBaseCollection<appConsentRequest>;
+	appConsentRequests(): IBaseCollection<appConsentRequest, appConsentRequestOData>;
 	appConsentRequests(id: string | number): IBaseQuery<appConsentRequest> & appConsentRequestMethods;
+}
+export interface appConsentApprovalRouteOData {
+	appConsentRequests: IBaseResults<appConsentRequest>;
 }
 /*********************************************
 * termsOfUseContainer
@@ -875,10 +1071,14 @@ export interface termsOfUseContainerProps {
 
 }
 export interface termsOfUseContainerMethods {
-	agreementAcceptances(): IBaseCollection<agreementAcceptance>;
+	agreementAcceptances(): IBaseCollection<agreementAcceptance, agreementAcceptanceOData>;
 	agreementAcceptances(id: string | number): IBaseQuery<agreementAcceptance> & agreementAcceptanceMethods;
-	agreements(): IBaseCollection<agreement>;
+	agreements(): IBaseCollection<agreement, agreementOData>;
 	agreements(id: string | number): IBaseQuery<agreement> & agreementMethods;
+}
+export interface termsOfUseContainerOData {
+	agreementAcceptances: IBaseResults<agreementAcceptance>;
+	agreements: IBaseResults<agreement>;
 }
 /*********************************************
 * entitlementManagement
@@ -888,29 +1088,42 @@ export interface entitlementManagementProps {
 
 }
 export interface entitlementManagementMethods {
-	accessPackageAssignmentApprovals(): IBaseCollection<approval>;
+	accessPackageAssignmentApprovals(): IBaseCollection<approval, approvalOData>;
 	accessPackageAssignmentApprovals(id: string | number): IBaseQuery<approval> & approvalMethods;
-	accessPackages(): IBaseCollection<accessPackage>;
+	accessPackages(): IBaseCollection<accessPackage, accessPackageOData>;
 	accessPackages(id: string | number): IBaseQuery<accessPackage> & accessPackageMethods;
-	assignmentPolicies(): IBaseCollection<accessPackageAssignmentPolicy>;
+	assignmentPolicies(): IBaseCollection<accessPackageAssignmentPolicy, accessPackageAssignmentPolicyOData>;
 	assignmentPolicies(id: string | number): IBaseQuery<accessPackageAssignmentPolicy> & accessPackageAssignmentPolicyMethods;
-	assignmentRequests(): IBaseCollection<accessPackageAssignmentRequest>;
+	assignmentRequests(): IBaseCollection<accessPackageAssignmentRequest, accessPackageAssignmentRequestOData>;
 	assignmentRequests(id: string | number): IBaseQuery<accessPackageAssignmentRequest> & accessPackageAssignmentRequestMethods;
-	assignments(): IBaseCollection<accessPackageAssignment>;
+	assignments(): IBaseCollection<accessPackageAssignment, accessPackageAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<accessPackageAssignment> & accessPackageAssignmentMethods;
-	catalogs(): IBaseCollection<accessPackageCatalog>;
+	catalogs(): IBaseCollection<accessPackageCatalog, accessPackageCatalogOData>;
 	catalogs(id: string | number): IBaseQuery<accessPackageCatalog> & accessPackageCatalogMethods;
-	connectedOrganizations(): IBaseCollection<connectedOrganization>;
+	connectedOrganizations(): IBaseCollection<connectedOrganization, connectedOrganizationOData>;
 	connectedOrganizations(id: string | number): IBaseQuery<connectedOrganization> & connectedOrganizationMethods;
-	resourceEnvironments(): IBaseCollection<accessPackageResourceEnvironment>;
+	resourceEnvironments(): IBaseCollection<accessPackageResourceEnvironment, accessPackageResourceEnvironmentOData>;
 	resourceEnvironments(id: string | number): IBaseQuery<accessPackageResourceEnvironment> & accessPackageResourceEnvironmentMethods;
-	resourceRequests(): IBaseCollection<accessPackageResourceRequest>;
+	resourceRequests(): IBaseCollection<accessPackageResourceRequest, accessPackageResourceRequestOData>;
 	resourceRequests(id: string | number): IBaseQuery<accessPackageResourceRequest> & accessPackageResourceRequestMethods;
-	resourceRoleScopes(): IBaseCollection<accessPackageResourceRoleScope>;
+	resourceRoleScopes(): IBaseCollection<accessPackageResourceRoleScope, accessPackageResourceRoleScopeOData>;
 	resourceRoleScopes(id: string | number): IBaseQuery<accessPackageResourceRoleScope> & accessPackageResourceRoleScopeMethods;
-	resources(): IBaseCollection<accessPackageResource>;
+	resources(): IBaseCollection<accessPackageResource, accessPackageResourceOData>;
 	resources(id: string | number): IBaseQuery<accessPackageResource> & accessPackageResourceMethods;
 	settings(): IBaseQuery<entitlementManagementSettings> & entitlementManagementSettingsMethods;
+}
+export interface entitlementManagementOData {
+	accessPackageAssignmentApprovals: IBaseResults<approval>;
+	accessPackages: IBaseResults<accessPackage>;
+	assignmentPolicies: IBaseResults<accessPackageAssignmentPolicy>;
+	assignmentRequests: IBaseResults<accessPackageAssignmentRequest>;
+	assignments: IBaseResults<accessPackageAssignment>;
+	catalogs: IBaseResults<accessPackageCatalog>;
+	connectedOrganizations: IBaseResults<connectedOrganization>;
+	resourceEnvironments: IBaseResults<accessPackageResourceEnvironment>;
+	resourceRequests: IBaseResults<accessPackageResourceRequest>;
+	resourceRoleScopes: IBaseResults<accessPackageResourceRoleScope>;
+	resources: IBaseResults<accessPackageResource>;
 }
 /*********************************************
 * privilegedAccessRoot
@@ -921,6 +1134,9 @@ export interface privilegedAccessRootProps {
 }
 export interface privilegedAccessRootMethods {
 	group(): IBaseQuery<privilegedAccessGroup> & privilegedAccessGroupMethods;
+}
+export interface privilegedAccessRootOData {
+
 }
 /*********************************************
 * user
@@ -1007,66 +1223,66 @@ export interface userProps {
 	skills: Array<string>[];
 }
 export interface userMethods {
-	appRoleAssignments(): IBaseCollection<appRoleAssignment>;
+	appRoleAssignments(): IBaseCollection<appRoleAssignment, appRoleAssignmentOData>;
 	appRoleAssignments(id: string | number): IBaseQuery<appRoleAssignment> & appRoleAssignmentMethods;
-	createdObjects(): IBaseCollection<directoryObject>;
+	createdObjects(): IBaseCollection<directoryObject, directoryObjectOData>;
 	createdObjects(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	directReports(): IBaseCollection<directoryObject>;
+	directReports(): IBaseCollection<directoryObject, directoryObjectOData>;
 	directReports(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	licenseDetails(): IBaseCollection<licenseDetails>;
+	licenseDetails(): IBaseCollection<licenseDetails, licenseDetailsOData>;
 	licenseDetails(id: string | number): IBaseQuery<licenseDetails> & licenseDetailsMethods;
 	manager(): IBaseQuery<directoryObject> & directoryObjectMethods;
-	memberOf(): IBaseCollection<directoryObject>;
+	memberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	memberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	oauth2PermissionGrants(): IBaseCollection<oAuth2PermissionGrant>;
+	oauth2PermissionGrants(): IBaseCollection<oAuth2PermissionGrant, oAuth2PermissionGrantOData>;
 	oauth2PermissionGrants(id: string | number): IBaseQuery<oAuth2PermissionGrant> & oAuth2PermissionGrantMethods;
-	ownedDevices(): IBaseCollection<directoryObject>;
+	ownedDevices(): IBaseCollection<directoryObject, directoryObjectOData>;
 	ownedDevices(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	ownedObjects(): IBaseCollection<directoryObject>;
+	ownedObjects(): IBaseCollection<directoryObject, directoryObjectOData>;
 	ownedObjects(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	registeredDevices(): IBaseCollection<directoryObject>;
+	registeredDevices(): IBaseCollection<directoryObject, directoryObjectOData>;
 	registeredDevices(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	scopedRoleMemberOf(): IBaseCollection<scopedRoleMembership>;
+	scopedRoleMemberOf(): IBaseCollection<scopedRoleMembership, scopedRoleMembershipOData>;
 	scopedRoleMemberOf(id: string | number): IBaseQuery<scopedRoleMembership> & scopedRoleMembershipMethods;
-	sponsors(): IBaseCollection<directoryObject>;
+	sponsors(): IBaseCollection<directoryObject, directoryObjectOData>;
 	sponsors(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	transitiveMemberOf(): IBaseCollection<directoryObject>;
+	transitiveMemberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	transitiveMemberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
 	calendar(): IBaseQuery<calendar> & calendarMethods;
-	calendarGroups(): IBaseCollection<calendarGroup>;
+	calendarGroups(): IBaseCollection<calendarGroup, calendarGroupOData>;
 	calendarGroups(id: string | number): IBaseQuery<calendarGroup> & calendarGroupMethods;
-	calendars(): IBaseCollection<calendar>;
+	calendars(): IBaseCollection<calendar, calendarOData>;
 	calendars(id: string | number): IBaseQuery<calendar> & calendarMethods;
-	calendarView(): IBaseCollection<event>;
+	calendarView(): IBaseCollection<event, eventOData>;
 	calendarView(id: string | number): IBaseQuery<event> & eventMethods;
-	contactFolders(): IBaseCollection<contactFolder>;
+	contactFolders(): IBaseCollection<contactFolder, contactFolderOData>;
 	contactFolders(id: string | number): IBaseQuery<contactFolder> & contactFolderMethods;
-	contacts(): IBaseCollection<contact>;
+	contacts(): IBaseCollection<contact, contactOData>;
 	contacts(id: string | number): IBaseQuery<contact> & contactMethods;
-	events(): IBaseCollection<event>;
+	events(): IBaseCollection<event, eventOData>;
 	events(id: string | number): IBaseQuery<event> & eventMethods;
 	inferenceClassification(): IBaseQuery<inferenceClassification> & inferenceClassificationMethods;
-	mailFolders(): IBaseCollection<mailFolder>;
+	mailFolders(): IBaseCollection<mailFolder, mailFolderOData>;
 	mailFolders(id: string | number): IBaseQuery<mailFolder> & mailFolderMethods;
-	messages(): IBaseCollection<message>;
+	messages(): IBaseCollection<message, messageOData>;
 	messages(id: string | number): IBaseQuery<message> & messageMethods;
 	outlook(): IBaseQuery<outlookUser> & outlookUserMethods;
-	people(): IBaseCollection<person>;
+	people(): IBaseCollection<person, personOData>;
 	people(id: string | number): IBaseQuery<person> & personMethods;
 	drive(): IBaseQuery<drive> & driveMethods;
-	drives(): IBaseCollection<drive>;
+	drives(): IBaseCollection<drive, driveOData>;
 	drives(id: string | number): IBaseQuery<drive> & driveMethods;
-	followedSites(): IBaseCollection<site>;
+	followedSites(): IBaseCollection<site, siteOData>;
 	followedSites(id: string | number): IBaseQuery<site> & siteMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
-	agreementAcceptances(): IBaseCollection<agreementAcceptance>;
+	agreementAcceptances(): IBaseCollection<agreementAcceptance, agreementAcceptanceOData>;
 	agreementAcceptances(id: string | number): IBaseQuery<agreementAcceptance> & agreementAcceptanceMethods;
-	managedDevices(): IBaseCollection<managedDevice>;
+	managedDevices(): IBaseCollection<managedDevice, managedDeviceOData>;
 	managedDevices(id: string | number): IBaseQuery<managedDevice> & managedDeviceMethods;
-	managedAppRegistrations(): IBaseCollection<managedAppRegistration>;
+	managedAppRegistrations(): IBaseCollection<managedAppRegistration, managedAppRegistrationOData>;
 	managedAppRegistrations(id: string | number): IBaseQuery<managedAppRegistration> & managedAppRegistrationMethods;
-	deviceManagementTroubleshootingEvents(): IBaseCollection<deviceManagementTroubleshootingEvent>;
+	deviceManagementTroubleshootingEvents(): IBaseCollection<deviceManagementTroubleshootingEvent, deviceManagementTroubleshootingEventOData>;
 	deviceManagementTroubleshootingEvents(id: string | number): IBaseQuery<deviceManagementTroubleshootingEvent> & deviceManagementTroubleshootingEventMethods;
 	planner(): IBaseQuery<plannerUser> & plannerUserMethods;
 	insights(): IBaseQuery<itemInsights> & itemInsightsMethods;
@@ -1074,24 +1290,60 @@ export interface userMethods {
 	onenote(): IBaseQuery<onenote> & onenoteMethods;
 	cloudClipboard(): IBaseQuery<cloudClipboardRoot> & cloudClipboardRootMethods;
 	photo(): IBaseQuery<profilePhoto> & profilePhotoMethods;
-	photos(): IBaseCollection<profilePhoto>;
+	photos(): IBaseCollection<profilePhoto, profilePhotoOData>;
 	photos(id: string | number): IBaseQuery<profilePhoto> & profilePhotoMethods;
-	activities(): IBaseCollection<userActivity>;
+	activities(): IBaseCollection<userActivity, userActivityOData>;
 	activities(id: string | number): IBaseQuery<userActivity> & userActivityMethods;
-	onlineMeetings(): IBaseCollection<onlineMeeting>;
+	onlineMeetings(): IBaseCollection<onlineMeeting, onlineMeetingOData>;
 	onlineMeetings(id: string | number): IBaseQuery<onlineMeeting> & onlineMeetingMethods;
 	presence(): IBaseQuery<presence> & presenceMethods;
 	authentication(): IBaseQuery<authentication> & authenticationMethods;
-	chats(): IBaseCollection<chat>;
+	chats(): IBaseCollection<chat, chatOData>;
 	chats(id: string | number): IBaseQuery<chat> & chatMethods;
-	joinedTeams(): IBaseCollection<team>;
+	joinedTeams(): IBaseCollection<team, teamOData>;
 	joinedTeams(id: string | number): IBaseQuery<team> & teamMethods;
-	permissionGrants(): IBaseCollection<resourceSpecificPermissionGrant>;
+	permissionGrants(): IBaseCollection<resourceSpecificPermissionGrant, resourceSpecificPermissionGrantOData>;
 	permissionGrants(id: string | number): IBaseQuery<resourceSpecificPermissionGrant> & resourceSpecificPermissionGrantMethods;
 	teamwork(): IBaseQuery<userTeamwork> & userTeamworkMethods;
 	solutions(): IBaseQuery<userSolutionRoot> & userSolutionRootMethods;
 	todo(): IBaseQuery<todo> & todoMethods;
 	employeeExperience(): IBaseQuery<employeeExperienceUser> & employeeExperienceUserMethods;
+}
+export interface userOData {
+	appRoleAssignments: IBaseResults<appRoleAssignment>;
+	createdObjects: IBaseResults<directoryObject>;
+	directReports: IBaseResults<directoryObject>;
+	licenseDetails: IBaseResults<licenseDetails>;
+	memberOf: IBaseResults<directoryObject>;
+	oauth2PermissionGrants: IBaseResults<oAuth2PermissionGrant>;
+	ownedDevices: IBaseResults<directoryObject>;
+	ownedObjects: IBaseResults<directoryObject>;
+	registeredDevices: IBaseResults<directoryObject>;
+	scopedRoleMemberOf: IBaseResults<scopedRoleMembership>;
+	sponsors: IBaseResults<directoryObject>;
+	transitiveMemberOf: IBaseResults<directoryObject>;
+	calendarGroups: IBaseResults<calendarGroup>;
+	calendars: IBaseResults<calendar>;
+	calendarView: IBaseResults<event>;
+	contactFolders: IBaseResults<contactFolder>;
+	contacts: IBaseResults<contact>;
+	events: IBaseResults<event>;
+	mailFolders: IBaseResults<mailFolder>;
+	messages: IBaseResults<message>;
+	people: IBaseResults<person>;
+	drives: IBaseResults<drive>;
+	followedSites: IBaseResults<site>;
+	extensions: IBaseResults<extension>;
+	agreementAcceptances: IBaseResults<agreementAcceptance>;
+	managedDevices: IBaseResults<managedDevice>;
+	managedAppRegistrations: IBaseResults<managedAppRegistration>;
+	deviceManagementTroubleshootingEvents: IBaseResults<deviceManagementTroubleshootingEvent>;
+	photos: IBaseResults<profilePhoto>;
+	activities: IBaseResults<userActivity>;
+	onlineMeetings: IBaseResults<onlineMeeting>;
+	chats: IBaseResults<chat>;
+	joinedTeams: IBaseResults<team>;
+	permissionGrants: IBaseResults<resourceSpecificPermissionGrant>;
 }
 /*********************************************
 * licenseDetails
@@ -1103,6 +1355,9 @@ export interface licenseDetailsProps {
 	skuPartNumber: string;
 }
 export interface licenseDetailsMethods {
+
+}
+export interface licenseDetailsOData {
 
 }
 /*********************************************
@@ -1119,6 +1374,9 @@ export interface oAuth2PermissionGrantProps {
 export interface oAuth2PermissionGrantMethods {
 
 }
+export interface oAuth2PermissionGrantOData {
+
+}
 /*********************************************
 * scopedRoleMembership
 **********************************************/
@@ -1131,6 +1389,9 @@ export interface scopedRoleMembershipProps {
 export interface scopedRoleMembershipMethods {
 
 }
+export interface scopedRoleMembershipOData {
+
+}
 /*********************************************
 * calendarGroup
 **********************************************/
@@ -1141,8 +1402,11 @@ export interface calendarGroupProps {
 	name: string;
 }
 export interface calendarGroupMethods {
-	calendars(): IBaseCollection<calendar>;
+	calendars(): IBaseCollection<calendar, calendarOData>;
 	calendars(id: string | number): IBaseQuery<calendar> & calendarMethods;
+}
+export interface calendarGroupOData {
+	calendars: IBaseResults<calendar>;
 }
 /*********************************************
 * contactFolder
@@ -1153,14 +1417,20 @@ export interface contactFolderProps {
 	parentFolderId: string;
 }
 export interface contactFolderMethods {
-	childFolders(): IBaseCollection<contactFolder>;
+	childFolders(): IBaseCollection<contactFolder, contactFolderOData>;
 	childFolders(id: string | number): IBaseQuery<contactFolder> & contactFolderMethods;
-	contacts(): IBaseCollection<contact>;
+	contacts(): IBaseCollection<contact, contactOData>;
 	contacts(id: string | number): IBaseQuery<contact> & contactMethods;
-	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty>;
+	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData>;
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
-	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty>;
+	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData>;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+}
+export interface contactFolderOData {
+	childFolders: IBaseResults<contactFolder>;
+	contacts: IBaseResults<contact>;
+	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
+	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * contact
@@ -1202,13 +1472,18 @@ export interface contactProps {
 	yomiSurname: string;
 }
 export interface contactMethods {
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
-	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty>;
+	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData>;
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
 	photo(): IBaseQuery<profilePhoto> & profilePhotoMethods;
-	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty>;
+	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData>;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+}
+export interface contactOData {
+	extensions: IBaseResults<extension>;
+	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
+	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * inferenceClassification
@@ -1218,8 +1493,11 @@ export interface inferenceClassificationProps {
 
 }
 export interface inferenceClassificationMethods {
-	overrides(): IBaseCollection<inferenceClassificationOverride>;
+	overrides(): IBaseCollection<inferenceClassificationOverride, inferenceClassificationOverrideOData>;
 	overrides(id: string | number): IBaseQuery<inferenceClassificationOverride> & inferenceClassificationOverrideMethods;
+}
+export interface inferenceClassificationOData {
+	overrides: IBaseResults<inferenceClassificationOverride>;
 }
 /*********************************************
 * mailFolder
@@ -1234,16 +1512,23 @@ export interface mailFolderProps {
 	unreadItemCount: number;
 }
 export interface mailFolderMethods {
-	childFolders(): IBaseCollection<mailFolder>;
+	childFolders(): IBaseCollection<mailFolder, mailFolderOData>;
 	childFolders(id: string | number): IBaseQuery<mailFolder> & mailFolderMethods;
-	messageRules(): IBaseCollection<messageRule>;
+	messageRules(): IBaseCollection<messageRule, messageRuleOData>;
 	messageRules(id: string | number): IBaseQuery<messageRule> & messageRuleMethods;
-	messages(): IBaseCollection<message>;
+	messages(): IBaseCollection<message, messageOData>;
 	messages(id: string | number): IBaseQuery<message> & messageMethods;
-	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty>;
+	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData>;
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
-	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty>;
+	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData>;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+}
+export interface mailFolderOData {
+	childFolders: IBaseResults<mailFolder>;
+	messageRules: IBaseResults<messageRule>;
+	messages: IBaseResults<message>;
+	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
+	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * message
@@ -1278,14 +1563,20 @@ export interface messageProps {
 	webLink: string;
 }
 export interface messageMethods {
-	attachments(): IBaseCollection<attachment>;
+	attachments(): IBaseCollection<attachment, attachmentOData>;
 	attachments(id: string | number): IBaseQuery<attachment> & attachmentMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
-	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty>;
+	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData>;
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
-	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty>;
+	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData>;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+}
+export interface messageOData {
+	attachments: IBaseResults<attachment>;
+	extensions: IBaseResults<extension>;
+	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
+	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * outlookUser
@@ -1295,8 +1586,11 @@ export interface outlookUserProps {
 
 }
 export interface outlookUserMethods {
-	masterCategories(): IBaseCollection<outlookCategory>;
+	masterCategories(): IBaseCollection<outlookCategory, outlookCategoryOData>;
 	masterCategories(id: string | number): IBaseQuery<outlookCategory> & outlookCategoryMethods;
+}
+export interface outlookUserOData {
+	masterCategories: IBaseResults<outlookCategory>;
 }
 /*********************************************
 * person
@@ -1326,6 +1620,9 @@ export interface personProps {
 export interface personMethods {
 
 }
+export interface personOData {
+
+}
 /*********************************************
 * agreementAcceptance
 **********************************************/
@@ -1346,6 +1643,9 @@ export interface agreementAcceptanceProps {
 	userPrincipalName: string;
 }
 export interface agreementAcceptanceMethods {
+
+}
+export interface agreementAcceptanceOData {
 
 }
 /*********************************************
@@ -1409,16 +1709,22 @@ export interface managedDeviceProps {
 	wiFiMacAddress: string;
 }
 export interface managedDeviceMethods {
-	deviceCompliancePolicyStates(): IBaseCollection<deviceCompliancePolicyState>;
+	deviceCompliancePolicyStates(): IBaseCollection<deviceCompliancePolicyState, deviceCompliancePolicyStateOData>;
 	deviceCompliancePolicyStates(id: string | number): IBaseQuery<deviceCompliancePolicyState> & deviceCompliancePolicyStateMethods;
-	deviceConfigurationStates(): IBaseCollection<deviceConfigurationState>;
+	deviceConfigurationStates(): IBaseCollection<deviceConfigurationState, deviceConfigurationStateOData>;
 	deviceConfigurationStates(id: string | number): IBaseQuery<deviceConfigurationState> & deviceConfigurationStateMethods;
 	deviceCategory(): IBaseQuery<deviceCategory> & deviceCategoryMethods;
-	logCollectionRequests(): IBaseCollection<deviceLogCollectionResponse>;
+	logCollectionRequests(): IBaseCollection<deviceLogCollectionResponse, deviceLogCollectionResponseOData>;
 	logCollectionRequests(id: string | number): IBaseQuery<deviceLogCollectionResponse> & deviceLogCollectionResponseMethods;
-	users(): IBaseCollection<user>;
+	users(): IBaseCollection<user, userOData>;
 	users(id: string | number): IBaseQuery<user> & userMethods;
 	windowsProtectionState(): IBaseQuery<windowsProtectionState> & windowsProtectionStateMethods;
+}
+export interface managedDeviceOData {
+	deviceCompliancePolicyStates: IBaseResults<deviceCompliancePolicyState>;
+	deviceConfigurationStates: IBaseResults<deviceConfigurationState>;
+	logCollectionRequests: IBaseResults<deviceLogCollectionResponse>;
+	users: IBaseResults<user>;
 }
 /*********************************************
 * managedAppRegistration
@@ -1439,12 +1745,17 @@ export interface managedAppRegistrationProps {
 	version: string;
 }
 export interface managedAppRegistrationMethods {
-	appliedPolicies(): IBaseCollection<managedAppPolicy>;
+	appliedPolicies(): IBaseCollection<managedAppPolicy, managedAppPolicyOData>;
 	appliedPolicies(id: string | number): IBaseQuery<managedAppPolicy> & managedAppPolicyMethods;
-	intendedPolicies(): IBaseCollection<managedAppPolicy>;
+	intendedPolicies(): IBaseCollection<managedAppPolicy, managedAppPolicyOData>;
 	intendedPolicies(id: string | number): IBaseQuery<managedAppPolicy> & managedAppPolicyMethods;
-	operations(): IBaseCollection<managedAppOperation>;
+	operations(): IBaseCollection<managedAppOperation, managedAppOperationOData>;
 	operations(id: string | number): IBaseQuery<managedAppOperation> & managedAppOperationMethods;
+}
+export interface managedAppRegistrationOData {
+	appliedPolicies: IBaseResults<managedAppPolicy>;
+	intendedPolicies: IBaseResults<managedAppPolicy>;
+	operations: IBaseResults<managedAppOperation>;
 }
 /*********************************************
 * deviceManagementTroubleshootingEvent
@@ -1457,6 +1768,9 @@ export interface deviceManagementTroubleshootingEventProps {
 export interface deviceManagementTroubleshootingEventMethods {
 
 }
+export interface deviceManagementTroubleshootingEventOData {
+
+}
 /*********************************************
 * plannerUser
 **********************************************/
@@ -1465,10 +1779,14 @@ export interface plannerUserProps {
 
 }
 export interface plannerUserMethods {
-	plans(): IBaseCollection<plannerPlan>;
+	plans(): IBaseCollection<plannerPlan, plannerPlanOData>;
 	plans(id: string | number): IBaseQuery<plannerPlan> & plannerPlanMethods;
-	tasks(): IBaseCollection<plannerTask>;
+	tasks(): IBaseCollection<plannerTask, plannerTaskOData>;
 	tasks(id: string | number): IBaseQuery<plannerTask> & plannerTaskMethods;
+}
+export interface plannerUserOData {
+	plans: IBaseResults<plannerPlan>;
+	tasks: IBaseResults<plannerTask>;
 }
 /*********************************************
 * officeGraphInsights
@@ -1478,12 +1796,17 @@ export interface officeGraphInsightsProps {
 
 }
 export interface officeGraphInsightsMethods {
-	shared(): IBaseCollection<sharedInsight>;
+	shared(): IBaseCollection<sharedInsight, sharedInsightOData>;
 	shared(id: string | number): IBaseQuery<sharedInsight> & sharedInsightMethods;
-	trending(): IBaseCollection<trending>;
+	trending(): IBaseCollection<trending, trendingOData>;
 	trending(id: string | number): IBaseQuery<trending> & trendingMethods;
-	used(): IBaseCollection<usedInsight>;
+	used(): IBaseCollection<usedInsight, usedInsightOData>;
 	used(id: string | number): IBaseQuery<usedInsight> & usedInsightMethods;
+}
+export interface officeGraphInsightsOData {
+	shared: IBaseResults<sharedInsight>;
+	trending: IBaseResults<trending>;
+	used: IBaseResults<usedInsight>;
 }
 /*********************************************
 * itemInsights
@@ -1493,6 +1816,9 @@ export interface itemInsightsProps {
 
 }
 export interface itemInsightsMethods {
+
+}
+export interface itemInsightsOData {
 
 }
 /*********************************************
@@ -1505,10 +1831,13 @@ export interface userSettingsProps {
 }
 export interface userSettingsMethods {
 	itemInsights(): IBaseQuery<userInsightsSettings> & userInsightsSettingsMethods;
-	windows(): IBaseCollection<windowsSetting>;
+	windows(): IBaseCollection<windowsSetting, windowsSettingOData>;
 	windows(id: string | number): IBaseQuery<windowsSetting> & windowsSettingMethods;
 	shiftPreferences(): IBaseQuery<shiftPreferences> & shiftPreferencesMethods;
 	storage(): IBaseQuery<userStorage> & userStorageMethods;
+}
+export interface userSettingsOData {
+	windows: IBaseResults<windowsSetting>;
 }
 /*********************************************
 * cloudClipboardRoot
@@ -1518,8 +1847,11 @@ export interface cloudClipboardRootProps {
 
 }
 export interface cloudClipboardRootMethods {
-	items(): IBaseCollection<cloudClipboardItem>;
+	items(): IBaseCollection<cloudClipboardItem, cloudClipboardItemOData>;
 	items(id: string | number): IBaseQuery<cloudClipboardItem> & cloudClipboardItemMethods;
+}
+export interface cloudClipboardRootOData {
+	items: IBaseResults<cloudClipboardItem>;
 }
 /*********************************************
 * userActivity
@@ -1541,8 +1873,11 @@ export interface userActivityProps {
 	visualElements: ComplexTypes.visualInfo;
 }
 export interface userActivityMethods {
-	historyItems(): IBaseCollection<activityHistoryItem>;
+	historyItems(): IBaseCollection<activityHistoryItem, activityHistoryItemOData>;
 	historyItems(id: string | number): IBaseQuery<activityHistoryItem> & activityHistoryItemMethods;
+}
+export interface userActivityOData {
+	historyItems: IBaseResults<activityHistoryItem>;
 }
 /*********************************************
 * onlineMeetingBase
@@ -1569,8 +1904,11 @@ export interface onlineMeetingBaseProps {
 	watermarkProtection: ComplexTypes.watermarkProtectionValues;
 }
 export interface onlineMeetingBaseMethods {
-	attendanceReports(): IBaseCollection<meetingAttendanceReport>;
+	attendanceReports(): IBaseCollection<meetingAttendanceReport, meetingAttendanceReportOData>;
 	attendanceReports(id: string | number): IBaseQuery<meetingAttendanceReport> & meetingAttendanceReportMethods;
+}
+export interface onlineMeetingBaseOData {
+	attendanceReports: IBaseResults<meetingAttendanceReport>;
 }
 /*********************************************
 * onlineMeeting
@@ -1587,10 +1925,14 @@ export interface onlineMeetingProps {
 	startDateTime: any;
 }
 export interface onlineMeetingMethods {
-	recordings(): IBaseCollection<callRecording>;
+	recordings(): IBaseCollection<callRecording, callRecordingOData>;
 	recordings(id: string | number): IBaseQuery<callRecording> & callRecordingMethods;
-	transcripts(): IBaseCollection<callTranscript>;
+	transcripts(): IBaseCollection<callTranscript, callTranscriptOData>;
 	transcripts(id: string | number): IBaseQuery<callTranscript> & callTranscriptMethods;
+}
+export interface onlineMeetingOData {
+	recordings: IBaseResults<callRecording>;
+	transcripts: IBaseResults<callTranscript>;
 }
 /*********************************************
 * presence
@@ -1604,6 +1946,9 @@ export interface presenceProps {
 export interface presenceMethods {
 
 }
+export interface presenceOData {
+
+}
 /*********************************************
 * authentication
 **********************************************/
@@ -1612,26 +1957,38 @@ export interface authenticationProps {
 
 }
 export interface authenticationMethods {
-	emailMethods(): IBaseCollection<emailAuthenticationMethod>;
+	emailMethods(): IBaseCollection<emailAuthenticationMethod, emailAuthenticationMethodOData>;
 	emailMethods(id: string | number): IBaseQuery<emailAuthenticationMethod> & emailAuthenticationMethodMethods;
-	fido2Methods(): IBaseCollection<fido2AuthenticationMethod>;
+	fido2Methods(): IBaseCollection<fido2AuthenticationMethod, fido2AuthenticationMethodOData>;
 	fido2Methods(id: string | number): IBaseQuery<fido2AuthenticationMethod> & fido2AuthenticationMethodMethods;
-	methods(): IBaseCollection<authenticationMethod>;
+	methods(): IBaseCollection<authenticationMethod, authenticationMethodOData>;
 	methods(id: string | number): IBaseQuery<authenticationMethod> & authenticationMethodMethods;
-	microsoftAuthenticatorMethods(): IBaseCollection<microsoftAuthenticatorAuthenticationMethod>;
+	microsoftAuthenticatorMethods(): IBaseCollection<microsoftAuthenticatorAuthenticationMethod, microsoftAuthenticatorAuthenticationMethodOData>;
 	microsoftAuthenticatorMethods(id: string | number): IBaseQuery<microsoftAuthenticatorAuthenticationMethod> & microsoftAuthenticatorAuthenticationMethodMethods;
-	operations(): IBaseCollection<longRunningOperation>;
+	operations(): IBaseCollection<longRunningOperation, longRunningOperationOData>;
 	operations(id: string | number): IBaseQuery<longRunningOperation> & longRunningOperationMethods;
-	passwordMethods(): IBaseCollection<passwordAuthenticationMethod>;
+	passwordMethods(): IBaseCollection<passwordAuthenticationMethod, passwordAuthenticationMethodOData>;
 	passwordMethods(id: string | number): IBaseQuery<passwordAuthenticationMethod> & passwordAuthenticationMethodMethods;
-	phoneMethods(): IBaseCollection<phoneAuthenticationMethod>;
+	phoneMethods(): IBaseCollection<phoneAuthenticationMethod, phoneAuthenticationMethodOData>;
 	phoneMethods(id: string | number): IBaseQuery<phoneAuthenticationMethod> & phoneAuthenticationMethodMethods;
-	softwareOathMethods(): IBaseCollection<softwareOathAuthenticationMethod>;
+	softwareOathMethods(): IBaseCollection<softwareOathAuthenticationMethod, softwareOathAuthenticationMethodOData>;
 	softwareOathMethods(id: string | number): IBaseQuery<softwareOathAuthenticationMethod> & softwareOathAuthenticationMethodMethods;
-	temporaryAccessPassMethods(): IBaseCollection<temporaryAccessPassAuthenticationMethod>;
+	temporaryAccessPassMethods(): IBaseCollection<temporaryAccessPassAuthenticationMethod, temporaryAccessPassAuthenticationMethodOData>;
 	temporaryAccessPassMethods(id: string | number): IBaseQuery<temporaryAccessPassAuthenticationMethod> & temporaryAccessPassAuthenticationMethodMethods;
-	windowsHelloForBusinessMethods(): IBaseCollection<windowsHelloForBusinessAuthenticationMethod>;
+	windowsHelloForBusinessMethods(): IBaseCollection<windowsHelloForBusinessAuthenticationMethod, windowsHelloForBusinessAuthenticationMethodOData>;
 	windowsHelloForBusinessMethods(id: string | number): IBaseQuery<windowsHelloForBusinessAuthenticationMethod> & windowsHelloForBusinessAuthenticationMethodMethods;
+}
+export interface authenticationOData {
+	emailMethods: IBaseResults<emailAuthenticationMethod>;
+	fido2Methods: IBaseResults<fido2AuthenticationMethod>;
+	methods: IBaseResults<authenticationMethod>;
+	microsoftAuthenticatorMethods: IBaseResults<microsoftAuthenticatorAuthenticationMethod>;
+	operations: IBaseResults<longRunningOperation>;
+	passwordMethods: IBaseResults<passwordAuthenticationMethod>;
+	phoneMethods: IBaseResults<phoneAuthenticationMethod>;
+	softwareOathMethods: IBaseResults<softwareOathAuthenticationMethod>;
+	temporaryAccessPassMethods: IBaseResults<temporaryAccessPassAuthenticationMethod>;
+	windowsHelloForBusinessMethods: IBaseResults<windowsHelloForBusinessAuthenticationMethod>;
 }
 /*********************************************
 * chat
@@ -1648,19 +2005,27 @@ export interface chatProps {
 	webUrl: string;
 }
 export interface chatMethods {
-	installedApps(): IBaseCollection<teamsAppInstallation>;
+	installedApps(): IBaseCollection<teamsAppInstallation, teamsAppInstallationOData>;
 	installedApps(id: string | number): IBaseQuery<teamsAppInstallation> & teamsAppInstallationMethods;
 	lastMessagePreview(): IBaseQuery<chatMessageInfo> & chatMessageInfoMethods;
-	members(): IBaseCollection<conversationMember>;
+	members(): IBaseCollection<conversationMember, conversationMemberOData>;
 	members(id: string | number): IBaseQuery<conversationMember> & conversationMemberMethods;
-	messages(): IBaseCollection<chatMessage>;
+	messages(): IBaseCollection<chatMessage, chatMessageOData>;
 	messages(id: string | number): IBaseQuery<chatMessage> & chatMessageMethods;
-	permissionGrants(): IBaseCollection<resourceSpecificPermissionGrant>;
+	permissionGrants(): IBaseCollection<resourceSpecificPermissionGrant, resourceSpecificPermissionGrantOData>;
 	permissionGrants(id: string | number): IBaseQuery<resourceSpecificPermissionGrant> & resourceSpecificPermissionGrantMethods;
-	pinnedMessages(): IBaseCollection<pinnedChatMessageInfo>;
+	pinnedMessages(): IBaseCollection<pinnedChatMessageInfo, pinnedChatMessageInfoOData>;
 	pinnedMessages(id: string | number): IBaseQuery<pinnedChatMessageInfo> & pinnedChatMessageInfoMethods;
-	tabs(): IBaseCollection<teamsTab>;
+	tabs(): IBaseCollection<teamsTab, teamsTabOData>;
 	tabs(id: string | number): IBaseQuery<teamsTab> & teamsTabMethods;
+}
+export interface chatOData {
+	installedApps: IBaseResults<teamsAppInstallation>;
+	members: IBaseResults<conversationMember>;
+	messages: IBaseResults<chatMessage>;
+	permissionGrants: IBaseResults<resourceSpecificPermissionGrant>;
+	pinnedMessages: IBaseResults<pinnedChatMessageInfo>;
+	tabs: IBaseResults<teamsTab>;
 }
 /*********************************************
 * userTeamwork
@@ -1671,10 +2036,14 @@ export interface userTeamworkProps {
 	region: string;
 }
 export interface userTeamworkMethods {
-	associatedTeams(): IBaseCollection<associatedTeamInfo>;
+	associatedTeams(): IBaseCollection<associatedTeamInfo, associatedTeamInfoOData>;
 	associatedTeams(id: string | number): IBaseQuery<associatedTeamInfo> & associatedTeamInfoMethods;
-	installedApps(): IBaseCollection<userScopeTeamsAppInstallation>;
+	installedApps(): IBaseCollection<userScopeTeamsAppInstallation, userScopeTeamsAppInstallationOData>;
 	installedApps(id: string | number): IBaseQuery<userScopeTeamsAppInstallation> & userScopeTeamsAppInstallationMethods;
+}
+export interface userTeamworkOData {
+	associatedTeams: IBaseResults<associatedTeamInfo>;
+	installedApps: IBaseResults<userScopeTeamsAppInstallation>;
 }
 /*********************************************
 * userSolutionRoot
@@ -1686,6 +2055,9 @@ export interface userSolutionRootProps {
 export interface userSolutionRootMethods {
 	workingTimeSchedule(): IBaseQuery<workingTimeSchedule> & workingTimeScheduleMethods;
 }
+export interface userSolutionRootOData {
+
+}
 /*********************************************
 * todo
 **********************************************/
@@ -1694,8 +2066,11 @@ export interface todoProps {
 
 }
 export interface todoMethods {
-	lists(): IBaseCollection<todoTaskList>;
+	lists(): IBaseCollection<todoTaskList, todoTaskListOData>;
 	lists(id: string | number): IBaseQuery<todoTaskList> & todoTaskListMethods;
+}
+export interface todoOData {
+	lists: IBaseResults<todoTaskList>;
 }
 /*********************************************
 * employeeExperienceUser
@@ -1705,8 +2080,11 @@ export interface employeeExperienceUserProps {
 
 }
 export interface employeeExperienceUserMethods {
-	learningCourseActivities(): IBaseCollection<learningCourseActivity>;
+	learningCourseActivities(): IBaseCollection<learningCourseActivity, learningCourseActivityOData>;
 	learningCourseActivities(id: string | number): IBaseQuery<learningCourseActivity> & learningCourseActivityMethods;
+}
+export interface employeeExperienceUserOData {
+	learningCourseActivities: IBaseResults<learningCourseActivity>;
 }
 /*********************************************
 * auditLogRoot
@@ -1716,12 +2094,17 @@ export interface auditLogRootProps {
 
 }
 export interface auditLogRootMethods {
-	directoryAudits(): IBaseCollection<directoryAudit>;
+	directoryAudits(): IBaseCollection<directoryAudit, directoryAuditOData>;
 	directoryAudits(id: string | number): IBaseQuery<directoryAudit> & directoryAuditMethods;
-	provisioning(): IBaseCollection<provisioningObjectSummary>;
+	provisioning(): IBaseCollection<provisioningObjectSummary, provisioningObjectSummaryOData>;
 	provisioning(id: string | number): IBaseQuery<provisioningObjectSummary> & provisioningObjectSummaryMethods;
-	signIns(): IBaseCollection<signIn>;
+	signIns(): IBaseCollection<signIn, signInOData>;
 	signIns(id: string | number): IBaseQuery<signIn> & signInMethods;
+}
+export interface auditLogRootOData {
+	directoryAudits: IBaseResults<directoryAudit>;
+	provisioning: IBaseResults<provisioningObjectSummary>;
+	signIns: IBaseResults<signIn>;
 }
 /*********************************************
 * directoryAudit
@@ -1741,6 +2124,9 @@ export interface directoryAuditProps {
 	targetResources: ComplexTypes.targetResource[];
 }
 export interface directoryAuditMethods {
+
+}
+export interface directoryAuditOData {
 
 }
 /*********************************************
@@ -1766,6 +2152,9 @@ export interface provisioningObjectSummaryProps {
 	tenantId: string;
 }
 export interface provisioningObjectSummaryMethods {
+
+}
+export interface provisioningObjectSummaryOData {
 
 }
 /*********************************************
@@ -1800,6 +2189,9 @@ export interface signInProps {
 export interface signInMethods {
 
 }
+export interface signInOData {
+
+}
 /*********************************************
 * authenticationMethodsRoot
 **********************************************/
@@ -1808,8 +2200,11 @@ export interface authenticationMethodsRootProps {
 
 }
 export interface authenticationMethodsRootMethods {
-	userRegistrationDetails(): IBaseCollection<userRegistrationDetails>;
+	userRegistrationDetails(): IBaseCollection<userRegistrationDetails, userRegistrationDetailsOData>;
 	userRegistrationDetails(id: string | number): IBaseQuery<userRegistrationDetails> & userRegistrationDetailsMethods;
+}
+export interface authenticationMethodsRootOData {
+	userRegistrationDetails: IBaseResults<userRegistrationDetails>;
 }
 /*********************************************
 * userRegistrationDetails
@@ -1835,6 +2230,9 @@ export interface userRegistrationDetailsProps {
 export interface userRegistrationDetailsMethods {
 
 }
+export interface userRegistrationDetailsOData {
+
+}
 /*********************************************
 * governanceInsight
 **********************************************/
@@ -1843,6 +2241,9 @@ export interface governanceInsightProps {
 	insightCreatedDateTime: any;
 }
 export interface governanceInsightMethods {
+
+}
+export interface governanceInsightOData {
 
 }
 /*********************************************
@@ -1859,6 +2260,9 @@ export interface membershipOutlierInsightMethods {
 	container(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	lastModifiedBy(): IBaseQuery<user> & userMethods;
 	member(): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface membershipOutlierInsightOData {
+
 }
 /*********************************************
 * relyingPartyDetailedSummary
@@ -1880,6 +2284,9 @@ export interface relyingPartyDetailedSummaryProps {
 export interface relyingPartyDetailedSummaryMethods {
 
 }
+export interface relyingPartyDetailedSummaryOData {
+
+}
 /*********************************************
 * reportRoot
 **********************************************/
@@ -1890,15 +2297,21 @@ export interface reportRootProps {
 export interface reportRootMethods {
 	authenticationMethods(): IBaseQuery<authenticationMethodsRoot> & authenticationMethodsRootMethods;
 	partners(): IBaseQuery<partners> & partnersMethods;
-	dailyPrintUsageByPrinter(): IBaseCollection<printUsageByPrinter>;
+	dailyPrintUsageByPrinter(): IBaseCollection<printUsageByPrinter, printUsageByPrinterOData>;
 	dailyPrintUsageByPrinter(id: string | number): IBaseQuery<printUsageByPrinter> & printUsageByPrinterMethods;
-	dailyPrintUsageByUser(): IBaseCollection<printUsageByUser>;
+	dailyPrintUsageByUser(): IBaseCollection<printUsageByUser, printUsageByUserOData>;
 	dailyPrintUsageByUser(id: string | number): IBaseQuery<printUsageByUser> & printUsageByUserMethods;
-	monthlyPrintUsageByPrinter(): IBaseCollection<printUsageByPrinter>;
+	monthlyPrintUsageByPrinter(): IBaseCollection<printUsageByPrinter, printUsageByPrinterOData>;
 	monthlyPrintUsageByPrinter(id: string | number): IBaseQuery<printUsageByPrinter> & printUsageByPrinterMethods;
-	monthlyPrintUsageByUser(): IBaseCollection<printUsageByUser>;
+	monthlyPrintUsageByUser(): IBaseCollection<printUsageByUser, printUsageByUserOData>;
 	monthlyPrintUsageByUser(id: string | number): IBaseQuery<printUsageByUser> & printUsageByUserMethods;
 	security(): IBaseQuery<securityReportsRoot> & securityReportsRootMethods;
+}
+export interface reportRootOData {
+	dailyPrintUsageByPrinter: IBaseResults<printUsageByPrinter>;
+	dailyPrintUsageByUser: IBaseResults<printUsageByUser>;
+	monthlyPrintUsageByPrinter: IBaseResults<printUsageByPrinter>;
+	monthlyPrintUsageByUser: IBaseResults<printUsageByUser>;
 }
 /*********************************************
 * partners
@@ -1909,6 +2322,9 @@ export interface partnersProps {
 }
 export interface partnersMethods {
 	billing(): IBaseQuery<billing> & billingMethods;
+}
+export interface partnersOData {
+
 }
 /*********************************************
 * printUsage
@@ -1930,6 +2346,9 @@ export interface printUsageProps {
 export interface printUsageMethods {
 
 }
+export interface printUsageOData {
+
+}
 /*********************************************
 * printUsageByPrinter
 **********************************************/
@@ -1939,6 +2358,9 @@ export interface printUsageByPrinterProps {
 	printerName: string;
 }
 export interface printUsageByPrinterMethods {
+
+}
+export interface printUsageByPrinterOData {
 
 }
 /*********************************************
@@ -1951,6 +2373,9 @@ export interface printUsageByUserProps {
 export interface printUsageByUserMethods {
 
 }
+export interface printUsageByUserOData {
+
+}
 /*********************************************
 * securityReportsRoot
 **********************************************/
@@ -1959,6 +2384,9 @@ export interface securityReportsRootProps {
 
 }
 export interface securityReportsRootMethods {
+
+}
+export interface securityReportsRootOData {
 
 }
 /*********************************************
@@ -1978,8 +2406,11 @@ export interface invitationProps {
 }
 export interface invitationMethods {
 	invitedUser(): IBaseQuery<user> & userMethods;
-	invitedUserSponsors(): IBaseCollection<directoryObject>;
+	invitedUserSponsors(): IBaseCollection<directoryObject, directoryObjectOData>;
 	invitedUserSponsors(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface invitationOData {
+	invitedUserSponsors: IBaseResults<directoryObject>;
 }
 /*********************************************
 * servicePrincipal
@@ -2022,40 +2453,58 @@ export interface servicePrincipalProps {
 	verifiedPublisher: ComplexTypes.verifiedPublisher;
 }
 export interface servicePrincipalMethods {
-	appManagementPolicies(): IBaseCollection<appManagementPolicy>;
+	appManagementPolicies(): IBaseCollection<appManagementPolicy, appManagementPolicyOData>;
 	appManagementPolicies(id: string | number): IBaseQuery<appManagementPolicy> & appManagementPolicyMethods;
-	appRoleAssignedTo(): IBaseCollection<appRoleAssignment>;
+	appRoleAssignedTo(): IBaseCollection<appRoleAssignment, appRoleAssignmentOData>;
 	appRoleAssignedTo(id: string | number): IBaseQuery<appRoleAssignment> & appRoleAssignmentMethods;
-	appRoleAssignments(): IBaseCollection<appRoleAssignment>;
+	appRoleAssignments(): IBaseCollection<appRoleAssignment, appRoleAssignmentOData>;
 	appRoleAssignments(id: string | number): IBaseQuery<appRoleAssignment> & appRoleAssignmentMethods;
-	claimsMappingPolicies(): IBaseCollection<claimsMappingPolicy>;
+	claimsMappingPolicies(): IBaseCollection<claimsMappingPolicy, claimsMappingPolicyOData>;
 	claimsMappingPolicies(id: string | number): IBaseQuery<claimsMappingPolicy> & claimsMappingPolicyMethods;
-	createdObjects(): IBaseCollection<directoryObject>;
+	createdObjects(): IBaseCollection<directoryObject, directoryObjectOData>;
 	createdObjects(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	delegatedPermissionClassifications(): IBaseCollection<delegatedPermissionClassification>;
+	delegatedPermissionClassifications(): IBaseCollection<delegatedPermissionClassification, delegatedPermissionClassificationOData>;
 	delegatedPermissionClassifications(id: string | number): IBaseQuery<delegatedPermissionClassification> & delegatedPermissionClassificationMethods;
 	endpoints(): IBaseCollection<ComplexTypes.endpoint>;
 	endpoints(id: string | number): IBaseQuery<ComplexTypes.endpoint>;
-	federatedIdentityCredentials(): IBaseCollection<federatedIdentityCredential>;
+	federatedIdentityCredentials(): IBaseCollection<federatedIdentityCredential, federatedIdentityCredentialOData>;
 	federatedIdentityCredentials(id: string | number): IBaseQuery<federatedIdentityCredential> & federatedIdentityCredentialMethods;
-	homeRealmDiscoveryPolicies(): IBaseCollection<homeRealmDiscoveryPolicy>;
+	homeRealmDiscoveryPolicies(): IBaseCollection<homeRealmDiscoveryPolicy, homeRealmDiscoveryPolicyOData>;
 	homeRealmDiscoveryPolicies(id: string | number): IBaseQuery<homeRealmDiscoveryPolicy> & homeRealmDiscoveryPolicyMethods;
-	memberOf(): IBaseCollection<directoryObject>;
+	memberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	memberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	oauth2PermissionGrants(): IBaseCollection<oAuth2PermissionGrant>;
+	oauth2PermissionGrants(): IBaseCollection<oAuth2PermissionGrant, oAuth2PermissionGrantOData>;
 	oauth2PermissionGrants(id: string | number): IBaseQuery<oAuth2PermissionGrant> & oAuth2PermissionGrantMethods;
-	ownedObjects(): IBaseCollection<directoryObject>;
+	ownedObjects(): IBaseCollection<directoryObject, directoryObjectOData>;
 	ownedObjects(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	owners(): IBaseCollection<directoryObject>;
+	owners(): IBaseCollection<directoryObject, directoryObjectOData>;
 	owners(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
 	remoteDesktopSecurityConfiguration(): IBaseQuery<remoteDesktopSecurityConfiguration> & remoteDesktopSecurityConfigurationMethods;
-	tokenIssuancePolicies(): IBaseCollection<tokenIssuancePolicy>;
+	tokenIssuancePolicies(): IBaseCollection<tokenIssuancePolicy, tokenIssuancePolicyOData>;
 	tokenIssuancePolicies(id: string | number): IBaseQuery<tokenIssuancePolicy> & tokenIssuancePolicyMethods;
-	tokenLifetimePolicies(): IBaseCollection<tokenLifetimePolicy>;
+	tokenLifetimePolicies(): IBaseCollection<tokenLifetimePolicy, tokenLifetimePolicyOData>;
 	tokenLifetimePolicies(id: string | number): IBaseQuery<tokenLifetimePolicy> & tokenLifetimePolicyMethods;
-	transitiveMemberOf(): IBaseCollection<directoryObject>;
+	transitiveMemberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	transitiveMemberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
 	synchronization(): IBaseQuery<synchronization> & synchronizationMethods;
+}
+export interface servicePrincipalOData {
+	appManagementPolicies: IBaseResults<appManagementPolicy>;
+	appRoleAssignedTo: IBaseResults<appRoleAssignment>;
+	appRoleAssignments: IBaseResults<appRoleAssignment>;
+	claimsMappingPolicies: IBaseResults<claimsMappingPolicy>;
+	createdObjects: IBaseResults<directoryObject>;
+	delegatedPermissionClassifications: IBaseResults<delegatedPermissionClassification>;
+	endpoints: IBaseResults<ComplexTypes.endpoint>;
+	federatedIdentityCredentials: IBaseResults<federatedIdentityCredential>;
+	homeRealmDiscoveryPolicies: IBaseResults<homeRealmDiscoveryPolicy>;
+	memberOf: IBaseResults<directoryObject>;
+	oauth2PermissionGrants: IBaseResults<oAuth2PermissionGrant>;
+	ownedObjects: IBaseResults<directoryObject>;
+	owners: IBaseResults<directoryObject>;
+	tokenIssuancePolicies: IBaseResults<tokenIssuancePolicy>;
+	tokenLifetimePolicies: IBaseResults<tokenLifetimePolicy>;
+	transitiveMemberOf: IBaseResults<directoryObject>;
 }
 /*********************************************
 * applicationTemplate
@@ -2074,6 +2523,9 @@ export interface applicationTemplateProps {
 export interface applicationTemplateMethods {
 
 }
+export interface applicationTemplateOData {
+
+}
 /*********************************************
 * claimsMappingPolicy
 **********************************************/
@@ -2082,6 +2534,9 @@ export interface claimsMappingPolicyProps {
 
 }
 export interface claimsMappingPolicyMethods {
+
+}
+export interface claimsMappingPolicyOData {
 
 }
 /*********************************************
@@ -2094,6 +2549,9 @@ export interface delegatedPermissionClassificationProps {
 	permissionName: string;
 }
 export interface delegatedPermissionClassificationMethods {
+
+}
+export interface delegatedPermissionClassificationOData {
 
 }
 /*********************************************
@@ -2110,6 +2568,9 @@ export interface endpointProps {
 export interface endpointMethods {
 
 }
+export interface endpointOData {
+
+}
 /*********************************************
 * remoteDesktopSecurityConfiguration
 **********************************************/
@@ -2118,8 +2579,11 @@ export interface remoteDesktopSecurityConfigurationProps {
 	isRemoteDesktopProtocolEnabled: boolean;
 }
 export interface remoteDesktopSecurityConfigurationMethods {
-	targetDeviceGroups(): IBaseCollection<targetDeviceGroup>;
+	targetDeviceGroups(): IBaseCollection<targetDeviceGroup, targetDeviceGroupOData>;
 	targetDeviceGroups(id: string | number): IBaseQuery<targetDeviceGroup> & targetDeviceGroupMethods;
+}
+export interface remoteDesktopSecurityConfigurationOData {
+	targetDeviceGroups: IBaseResults<targetDeviceGroup>;
 }
 /*********************************************
 * authenticationCombinationConfiguration
@@ -2129,6 +2593,9 @@ export interface authenticationCombinationConfigurationProps {
 	appliesToCombinations: EnumTypes.authenticationMethodModes[];
 }
 export interface authenticationCombinationConfigurationMethods {
+
+}
+export interface authenticationCombinationConfigurationOData {
 
 }
 /*********************************************
@@ -2142,6 +2609,9 @@ export interface authenticationMethodConfigurationProps {
 export interface authenticationMethodConfigurationMethods {
 
 }
+export interface authenticationMethodConfigurationOData {
+
+}
 /*********************************************
 * authenticationMethodModeDetail
 **********************************************/
@@ -2151,6 +2621,9 @@ export interface authenticationMethodModeDetailProps {
 	displayName: string;
 }
 export interface authenticationMethodModeDetailMethods {
+
+}
+export interface authenticationMethodModeDetailOData {
 
 }
 /*********************************************
@@ -2167,8 +2640,11 @@ export interface authenticationMethodsPolicyProps {
 	registrationEnforcement: ComplexTypes.registrationEnforcement;
 }
 export interface authenticationMethodsPolicyMethods {
-	authenticationMethodConfigurations(): IBaseCollection<authenticationMethodConfiguration>;
+	authenticationMethodConfigurations(): IBaseCollection<authenticationMethodConfiguration, authenticationMethodConfigurationOData>;
 	authenticationMethodConfigurations(id: string | number): IBaseQuery<authenticationMethodConfiguration> & authenticationMethodConfigurationMethods;
+}
+export interface authenticationMethodsPolicyOData {
+	authenticationMethodConfigurations: IBaseResults<authenticationMethodConfiguration>;
 }
 /*********************************************
 * authenticationMethodTarget
@@ -2179,6 +2655,9 @@ export interface authenticationMethodTargetProps {
 	targetType: EnumTypes.authenticationMethodTargetType;
 }
 export interface authenticationMethodTargetMethods {
+
+}
+export interface authenticationMethodTargetOData {
 
 }
 /*********************************************
@@ -2195,8 +2674,11 @@ export interface authenticationStrengthPolicyProps {
 	requirementsSatisfied: EnumTypes.authenticationStrengthRequirements;
 }
 export interface authenticationStrengthPolicyMethods {
-	combinationConfigurations(): IBaseCollection<authenticationCombinationConfiguration>;
+	combinationConfigurations(): IBaseCollection<authenticationCombinationConfiguration, authenticationCombinationConfigurationOData>;
 	combinationConfigurations(id: string | number): IBaseQuery<authenticationCombinationConfiguration> & authenticationCombinationConfigurationMethods;
+}
+export interface authenticationStrengthPolicyOData {
+	combinationConfigurations: IBaseResults<authenticationCombinationConfiguration>;
 }
 /*********************************************
 * authenticationStrengthRoot
@@ -2206,10 +2688,14 @@ export interface authenticationStrengthRootProps {
 	combinations: EnumTypes.authenticationMethodModes[];
 }
 export interface authenticationStrengthRootMethods {
-	authenticationMethodModes(): IBaseCollection<authenticationMethodModeDetail>;
+	authenticationMethodModes(): IBaseCollection<authenticationMethodModeDetail, authenticationMethodModeDetailOData>;
 	authenticationMethodModes(id: string | number): IBaseQuery<authenticationMethodModeDetail> & authenticationMethodModeDetailMethods;
-	policies(): IBaseCollection<authenticationStrengthPolicy>;
+	policies(): IBaseCollection<authenticationStrengthPolicy, authenticationStrengthPolicyOData>;
 	policies(id: string | number): IBaseQuery<authenticationStrengthPolicy> & authenticationStrengthPolicyMethods;
+}
+export interface authenticationStrengthRootOData {
+	authenticationMethodModes: IBaseResults<authenticationMethodModeDetail>;
+	policies: IBaseResults<authenticationStrengthPolicy>;
 }
 /*********************************************
 * conditionalAccessRoot
@@ -2220,14 +2706,20 @@ export interface conditionalAccessRootProps {
 }
 export interface conditionalAccessRootMethods {
 	authenticationStrength(): IBaseQuery<authenticationStrengthRoot> & authenticationStrengthRootMethods;
-	authenticationContextClassReferences(): IBaseCollection<authenticationContextClassReference>;
+	authenticationContextClassReferences(): IBaseCollection<authenticationContextClassReference, authenticationContextClassReferenceOData>;
 	authenticationContextClassReferences(id: string | number): IBaseQuery<authenticationContextClassReference> & authenticationContextClassReferenceMethods;
-	namedLocations(): IBaseCollection<namedLocation>;
+	namedLocations(): IBaseCollection<namedLocation, namedLocationOData>;
 	namedLocations(id: string | number): IBaseQuery<namedLocation> & namedLocationMethods;
-	policies(): IBaseCollection<conditionalAccessPolicy>;
+	policies(): IBaseCollection<conditionalAccessPolicy, conditionalAccessPolicyOData>;
 	policies(id: string | number): IBaseQuery<conditionalAccessPolicy> & conditionalAccessPolicyMethods;
-	templates(): IBaseCollection<conditionalAccessTemplate>;
+	templates(): IBaseCollection<conditionalAccessTemplate, conditionalAccessTemplateOData>;
 	templates(id: string | number): IBaseQuery<conditionalAccessTemplate> & conditionalAccessTemplateMethods;
+}
+export interface conditionalAccessRootOData {
+	authenticationContextClassReferences: IBaseResults<authenticationContextClassReference>;
+	namedLocations: IBaseResults<namedLocation>;
+	policies: IBaseResults<conditionalAccessPolicy>;
+	templates: IBaseResults<conditionalAccessTemplate>;
 }
 /*********************************************
 * authenticationContextClassReference
@@ -2241,6 +2733,9 @@ export interface authenticationContextClassReferenceProps {
 export interface authenticationContextClassReferenceMethods {
 
 }
+export interface authenticationContextClassReferenceOData {
+
+}
 /*********************************************
 * namedLocation
 **********************************************/
@@ -2251,6 +2746,9 @@ export interface namedLocationProps {
 	modifiedDateTime: any;
 }
 export interface namedLocationMethods {
+
+}
+export interface namedLocationOData {
 
 }
 /*********************************************
@@ -2271,6 +2769,9 @@ export interface conditionalAccessPolicyProps {
 export interface conditionalAccessPolicyMethods {
 
 }
+export interface conditionalAccessPolicyOData {
+
+}
 /*********************************************
 * conditionalAccessTemplate
 **********************************************/
@@ -2284,6 +2785,9 @@ export interface conditionalAccessTemplateProps {
 export interface conditionalAccessTemplateMethods {
 
 }
+export interface conditionalAccessTemplateOData {
+
+}
 /*********************************************
 * emailAuthenticationMethodConfiguration
 **********************************************/
@@ -2292,8 +2796,11 @@ export interface emailAuthenticationMethodConfigurationProps {
 	allowExternalIdToUseEmailOtp: EnumTypes.externalEmailOtpState;
 }
 export interface emailAuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<authenticationMethodTarget>;
+	includeTargets(): IBaseCollection<authenticationMethodTarget, authenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<authenticationMethodTarget> & authenticationMethodTargetMethods;
+}
+export interface emailAuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<authenticationMethodTarget>;
 }
 /*********************************************
 * fido2AuthenticationMethodConfiguration
@@ -2305,8 +2812,11 @@ export interface fido2AuthenticationMethodConfigurationProps {
 	keyRestrictions: ComplexTypes.fido2KeyRestrictions;
 }
 export interface fido2AuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<authenticationMethodTarget>;
+	includeTargets(): IBaseCollection<authenticationMethodTarget, authenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<authenticationMethodTarget> & authenticationMethodTargetMethods;
+}
+export interface fido2AuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<authenticationMethodTarget>;
 }
 /*********************************************
 * fido2CombinationConfiguration
@@ -2318,6 +2828,9 @@ export interface fido2CombinationConfigurationProps {
 export interface fido2CombinationConfigurationMethods {
 
 }
+export interface fido2CombinationConfigurationOData {
+
+}
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethodConfiguration
 **********************************************/
@@ -2327,8 +2840,11 @@ export interface microsoftAuthenticatorAuthenticationMethodConfigurationProps {
 	isSoftwareOathEnabled: boolean;
 }
 export interface microsoftAuthenticatorAuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<microsoftAuthenticatorAuthenticationMethodTarget>;
+	includeTargets(): IBaseCollection<microsoftAuthenticatorAuthenticationMethodTarget, microsoftAuthenticatorAuthenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<microsoftAuthenticatorAuthenticationMethodTarget> & microsoftAuthenticatorAuthenticationMethodTargetMethods;
+}
+export interface microsoftAuthenticatorAuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<microsoftAuthenticatorAuthenticationMethodTarget>;
 }
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethodTarget
@@ -2340,6 +2856,9 @@ export interface microsoftAuthenticatorAuthenticationMethodTargetProps {
 export interface microsoftAuthenticatorAuthenticationMethodTargetMethods {
 
 }
+export interface microsoftAuthenticatorAuthenticationMethodTargetOData {
+
+}
 /*********************************************
 * policyRoot
 **********************************************/
@@ -2349,37 +2868,51 @@ export interface policyRootProps {
 }
 export interface policyRootMethods {
 	authenticationMethodsPolicy(): IBaseQuery<authenticationMethodsPolicy> & authenticationMethodsPolicyMethods;
-	authenticationStrengthPolicies(): IBaseCollection<authenticationStrengthPolicy>;
+	authenticationStrengthPolicies(): IBaseCollection<authenticationStrengthPolicy, authenticationStrengthPolicyOData>;
 	authenticationStrengthPolicies(id: string | number): IBaseQuery<authenticationStrengthPolicy> & authenticationStrengthPolicyMethods;
 	authenticationFlowsPolicy(): IBaseQuery<authenticationFlowsPolicy> & authenticationFlowsPolicyMethods;
 	deviceRegistrationPolicy(): IBaseQuery<deviceRegistrationPolicy> & deviceRegistrationPolicyMethods;
-	activityBasedTimeoutPolicies(): IBaseCollection<activityBasedTimeoutPolicy>;
+	activityBasedTimeoutPolicies(): IBaseCollection<activityBasedTimeoutPolicy, activityBasedTimeoutPolicyOData>;
 	activityBasedTimeoutPolicies(id: string | number): IBaseQuery<activityBasedTimeoutPolicy> & activityBasedTimeoutPolicyMethods;
-	appManagementPolicies(): IBaseCollection<appManagementPolicy>;
+	appManagementPolicies(): IBaseCollection<appManagementPolicy, appManagementPolicyOData>;
 	appManagementPolicies(id: string | number): IBaseQuery<appManagementPolicy> & appManagementPolicyMethods;
 	authorizationPolicy(): IBaseQuery<authorizationPolicy> & authorizationPolicyMethods;
-	claimsMappingPolicies(): IBaseCollection<claimsMappingPolicy>;
+	claimsMappingPolicies(): IBaseCollection<claimsMappingPolicy, claimsMappingPolicyOData>;
 	claimsMappingPolicies(id: string | number): IBaseQuery<claimsMappingPolicy> & claimsMappingPolicyMethods;
 	crossTenantAccessPolicy(): IBaseQuery<crossTenantAccessPolicy> & crossTenantAccessPolicyMethods;
 	defaultAppManagementPolicy(): IBaseQuery<tenantAppManagementPolicy> & tenantAppManagementPolicyMethods;
-	homeRealmDiscoveryPolicies(): IBaseCollection<homeRealmDiscoveryPolicy>;
+	homeRealmDiscoveryPolicies(): IBaseCollection<homeRealmDiscoveryPolicy, homeRealmDiscoveryPolicyOData>;
 	homeRealmDiscoveryPolicies(id: string | number): IBaseQuery<homeRealmDiscoveryPolicy> & homeRealmDiscoveryPolicyMethods;
-	permissionGrantPolicies(): IBaseCollection<permissionGrantPolicy>;
+	permissionGrantPolicies(): IBaseCollection<permissionGrantPolicy, permissionGrantPolicyOData>;
 	permissionGrantPolicies(id: string | number): IBaseQuery<permissionGrantPolicy> & permissionGrantPolicyMethods;
-	tokenIssuancePolicies(): IBaseCollection<tokenIssuancePolicy>;
+	tokenIssuancePolicies(): IBaseCollection<tokenIssuancePolicy, tokenIssuancePolicyOData>;
 	tokenIssuancePolicies(id: string | number): IBaseQuery<tokenIssuancePolicy> & tokenIssuancePolicyMethods;
-	tokenLifetimePolicies(): IBaseCollection<tokenLifetimePolicy>;
+	tokenLifetimePolicies(): IBaseCollection<tokenLifetimePolicy, tokenLifetimePolicyOData>;
 	tokenLifetimePolicies(id: string | number): IBaseQuery<tokenLifetimePolicy> & tokenLifetimePolicyMethods;
-	featureRolloutPolicies(): IBaseCollection<featureRolloutPolicy>;
+	featureRolloutPolicies(): IBaseCollection<featureRolloutPolicy, featureRolloutPolicyOData>;
 	featureRolloutPolicies(id: string | number): IBaseQuery<featureRolloutPolicy> & featureRolloutPolicyMethods;
 	adminConsentRequestPolicy(): IBaseQuery<adminConsentRequestPolicy> & adminConsentRequestPolicyMethods;
-	conditionalAccessPolicies(): IBaseCollection<conditionalAccessPolicy>;
+	conditionalAccessPolicies(): IBaseCollection<conditionalAccessPolicy, conditionalAccessPolicyOData>;
 	conditionalAccessPolicies(id: string | number): IBaseQuery<conditionalAccessPolicy> & conditionalAccessPolicyMethods;
 	identitySecurityDefaultsEnforcementPolicy(): IBaseQuery<identitySecurityDefaultsEnforcementPolicy> & identitySecurityDefaultsEnforcementPolicyMethods;
-	roleManagementPolicies(): IBaseCollection<unifiedRoleManagementPolicy>;
+	roleManagementPolicies(): IBaseCollection<unifiedRoleManagementPolicy, unifiedRoleManagementPolicyOData>;
 	roleManagementPolicies(id: string | number): IBaseQuery<unifiedRoleManagementPolicy> & unifiedRoleManagementPolicyMethods;
-	roleManagementPolicyAssignments(): IBaseCollection<unifiedRoleManagementPolicyAssignment>;
+	roleManagementPolicyAssignments(): IBaseCollection<unifiedRoleManagementPolicyAssignment, unifiedRoleManagementPolicyAssignmentOData>;
 	roleManagementPolicyAssignments(id: string | number): IBaseQuery<unifiedRoleManagementPolicyAssignment> & unifiedRoleManagementPolicyAssignmentMethods;
+}
+export interface policyRootOData {
+	authenticationStrengthPolicies: IBaseResults<authenticationStrengthPolicy>;
+	activityBasedTimeoutPolicies: IBaseResults<activityBasedTimeoutPolicy>;
+	appManagementPolicies: IBaseResults<appManagementPolicy>;
+	claimsMappingPolicies: IBaseResults<claimsMappingPolicy>;
+	homeRealmDiscoveryPolicies: IBaseResults<homeRealmDiscoveryPolicy>;
+	permissionGrantPolicies: IBaseResults<permissionGrantPolicy>;
+	tokenIssuancePolicies: IBaseResults<tokenIssuancePolicy>;
+	tokenLifetimePolicies: IBaseResults<tokenLifetimePolicy>;
+	featureRolloutPolicies: IBaseResults<featureRolloutPolicy>;
+	conditionalAccessPolicies: IBaseResults<conditionalAccessPolicy>;
+	roleManagementPolicies: IBaseResults<unifiedRoleManagementPolicy>;
+	roleManagementPolicyAssignments: IBaseResults<unifiedRoleManagementPolicyAssignment>;
 }
 /*********************************************
 * authenticationFlowsPolicy
@@ -2391,6 +2924,9 @@ export interface authenticationFlowsPolicyProps {
 	selfServiceSignUp: ComplexTypes.selfServiceSignUpAuthenticationFlowConfiguration;
 }
 export interface authenticationFlowsPolicyMethods {
+
+}
+export interface authenticationFlowsPolicyOData {
 
 }
 /*********************************************
@@ -2409,6 +2945,9 @@ export interface deviceRegistrationPolicyProps {
 export interface deviceRegistrationPolicyMethods {
 
 }
+export interface deviceRegistrationPolicyOData {
+
+}
 /*********************************************
 * activityBasedTimeoutPolicy
 **********************************************/
@@ -2417,6 +2956,9 @@ export interface activityBasedTimeoutPolicyProps {
 
 }
 export interface activityBasedTimeoutPolicyMethods {
+
+}
+export interface activityBasedTimeoutPolicyOData {
 
 }
 /*********************************************
@@ -2436,6 +2978,9 @@ export interface authorizationPolicyProps {
 export interface authorizationPolicyMethods {
 
 }
+export interface authorizationPolicyOData {
+
+}
 /*********************************************
 * crossTenantAccessPolicy
 **********************************************/
@@ -2445,9 +2990,12 @@ export interface crossTenantAccessPolicyProps {
 }
 export interface crossTenantAccessPolicyMethods {
 	default(): IBaseQuery<crossTenantAccessPolicyConfigurationDefault> & crossTenantAccessPolicyConfigurationDefaultMethods;
-	partners(): IBaseCollection<crossTenantAccessPolicyConfigurationPartner>;
+	partners(): IBaseCollection<crossTenantAccessPolicyConfigurationPartner, crossTenantAccessPolicyConfigurationPartnerOData>;
 	partners(id: string | number): IBaseQuery<crossTenantAccessPolicyConfigurationPartner> & crossTenantAccessPolicyConfigurationPartnerMethods;
 	templates(): IBaseQuery<policyTemplate> & policyTemplateMethods;
+}
+export interface crossTenantAccessPolicyOData {
+	partners: IBaseResults<crossTenantAccessPolicyConfigurationPartner>;
 }
 /*********************************************
 * tenantAppManagementPolicy
@@ -2461,6 +3009,9 @@ export interface tenantAppManagementPolicyProps {
 export interface tenantAppManagementPolicyMethods {
 
 }
+export interface tenantAppManagementPolicyOData {
+
+}
 /*********************************************
 * permissionGrantPolicy
 **********************************************/
@@ -2469,10 +3020,14 @@ export interface permissionGrantPolicyProps {
 
 }
 export interface permissionGrantPolicyMethods {
-	excludes(): IBaseCollection<permissionGrantConditionSet>;
+	excludes(): IBaseCollection<permissionGrantConditionSet, permissionGrantConditionSetOData>;
 	excludes(id: string | number): IBaseQuery<permissionGrantConditionSet> & permissionGrantConditionSetMethods;
-	includes(): IBaseCollection<permissionGrantConditionSet>;
+	includes(): IBaseCollection<permissionGrantConditionSet, permissionGrantConditionSetOData>;
 	includes(id: string | number): IBaseQuery<permissionGrantConditionSet> & permissionGrantConditionSetMethods;
+}
+export interface permissionGrantPolicyOData {
+	excludes: IBaseResults<permissionGrantConditionSet>;
+	includes: IBaseResults<permissionGrantConditionSet>;
 }
 /*********************************************
 * featureRolloutPolicy
@@ -2486,8 +3041,11 @@ export interface featureRolloutPolicyProps {
 	isEnabled: boolean;
 }
 export interface featureRolloutPolicyMethods {
-	appliesTo(): IBaseCollection<directoryObject>;
+	appliesTo(): IBaseCollection<directoryObject, directoryObjectOData>;
 	appliesTo(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface featureRolloutPolicyOData {
+	appliesTo: IBaseResults<directoryObject>;
 }
 /*********************************************
 * adminConsentRequestPolicy
@@ -2504,6 +3062,9 @@ export interface adminConsentRequestPolicyProps {
 export interface adminConsentRequestPolicyMethods {
 
 }
+export interface adminConsentRequestPolicyOData {
+
+}
 /*********************************************
 * identitySecurityDefaultsEnforcementPolicy
 **********************************************/
@@ -2512,6 +3073,9 @@ export interface identitySecurityDefaultsEnforcementPolicyProps {
 	isEnabled: boolean;
 }
 export interface identitySecurityDefaultsEnforcementPolicyMethods {
+
+}
+export interface identitySecurityDefaultsEnforcementPolicyOData {
 
 }
 /*********************************************
@@ -2528,10 +3092,14 @@ export interface unifiedRoleManagementPolicyProps {
 	scopeType: string;
 }
 export interface unifiedRoleManagementPolicyMethods {
-	effectiveRules(): IBaseCollection<unifiedRoleManagementPolicyRule>;
+	effectiveRules(): IBaseCollection<unifiedRoleManagementPolicyRule, unifiedRoleManagementPolicyRuleOData>;
 	effectiveRules(id: string | number): IBaseQuery<unifiedRoleManagementPolicyRule> & unifiedRoleManagementPolicyRuleMethods;
-	rules(): IBaseCollection<unifiedRoleManagementPolicyRule>;
+	rules(): IBaseCollection<unifiedRoleManagementPolicyRule, unifiedRoleManagementPolicyRuleOData>;
 	rules(id: string | number): IBaseQuery<unifiedRoleManagementPolicyRule> & unifiedRoleManagementPolicyRuleMethods;
+}
+export interface unifiedRoleManagementPolicyOData {
+	effectiveRules: IBaseResults<unifiedRoleManagementPolicyRule>;
+	rules: IBaseResults<unifiedRoleManagementPolicyRule>;
 }
 /*********************************************
 * unifiedRoleManagementPolicyAssignment
@@ -2546,6 +3114,9 @@ export interface unifiedRoleManagementPolicyAssignmentProps {
 export interface unifiedRoleManagementPolicyAssignmentMethods {
 	policy(): IBaseQuery<unifiedRoleManagementPolicy> & unifiedRoleManagementPolicyMethods;
 }
+export interface unifiedRoleManagementPolicyAssignmentOData {
+
+}
 /*********************************************
 * smsAuthenticationMethodConfiguration
 **********************************************/
@@ -2554,8 +3125,11 @@ export interface smsAuthenticationMethodConfigurationProps {
 
 }
 export interface smsAuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<smsAuthenticationMethodTarget>;
+	includeTargets(): IBaseCollection<smsAuthenticationMethodTarget, smsAuthenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<smsAuthenticationMethodTarget> & smsAuthenticationMethodTargetMethods;
+}
+export interface smsAuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<smsAuthenticationMethodTarget>;
 }
 /*********************************************
 * smsAuthenticationMethodTarget
@@ -2567,6 +3141,9 @@ export interface smsAuthenticationMethodTargetProps {
 export interface smsAuthenticationMethodTargetMethods {
 
 }
+export interface smsAuthenticationMethodTargetOData {
+
+}
 /*********************************************
 * softwareOathAuthenticationMethodConfiguration
 **********************************************/
@@ -2575,8 +3152,11 @@ export interface softwareOathAuthenticationMethodConfigurationProps {
 
 }
 export interface softwareOathAuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<authenticationMethodTarget>;
+	includeTargets(): IBaseCollection<authenticationMethodTarget, authenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<authenticationMethodTarget> & authenticationMethodTargetMethods;
+}
+export interface softwareOathAuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<authenticationMethodTarget>;
 }
 /*********************************************
 * temporaryAccessPassAuthenticationMethodConfiguration
@@ -2590,8 +3170,11 @@ export interface temporaryAccessPassAuthenticationMethodConfigurationProps {
 	minimumLifetimeInMinutes: number;
 }
 export interface temporaryAccessPassAuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<authenticationMethodTarget>;
+	includeTargets(): IBaseCollection<authenticationMethodTarget, authenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<authenticationMethodTarget> & authenticationMethodTargetMethods;
+}
+export interface temporaryAccessPassAuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<authenticationMethodTarget>;
 }
 /*********************************************
 * voiceAuthenticationMethodConfiguration
@@ -2601,8 +3184,11 @@ export interface voiceAuthenticationMethodConfigurationProps {
 	isOfficePhoneAllowed: boolean;
 }
 export interface voiceAuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<authenticationMethodTarget>;
+	includeTargets(): IBaseCollection<authenticationMethodTarget, authenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<authenticationMethodTarget> & authenticationMethodTargetMethods;
+}
+export interface voiceAuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<authenticationMethodTarget>;
 }
 /*********************************************
 * x509CertificateAuthenticationMethodConfiguration
@@ -2613,8 +3199,11 @@ export interface x509CertificateAuthenticationMethodConfigurationProps {
 	certificateUserBindings: ComplexTypes.x509CertificateUserBinding[];
 }
 export interface x509CertificateAuthenticationMethodConfigurationMethods {
-	includeTargets(): IBaseCollection<authenticationMethodTarget>;
+	includeTargets(): IBaseCollection<authenticationMethodTarget, authenticationMethodTargetOData>;
 	includeTargets(id: string | number): IBaseQuery<authenticationMethodTarget> & authenticationMethodTargetMethods;
+}
+export interface x509CertificateAuthenticationMethodConfigurationOData {
+	includeTargets: IBaseResults<authenticationMethodTarget>;
 }
 /*********************************************
 * x509CertificateCombinationConfiguration
@@ -2627,6 +3216,9 @@ export interface x509CertificateCombinationConfigurationProps {
 export interface x509CertificateCombinationConfigurationMethods {
 
 }
+export interface x509CertificateCombinationConfigurationOData {
+
+}
 /*********************************************
 * bitlocker
 **********************************************/
@@ -2635,8 +3227,11 @@ export interface bitlockerProps {
 
 }
 export interface bitlockerMethods {
-	recoveryKeys(): IBaseCollection<bitlockerRecoveryKey>;
+	recoveryKeys(): IBaseCollection<bitlockerRecoveryKey, bitlockerRecoveryKeyOData>;
 	recoveryKeys(id: string | number): IBaseQuery<bitlockerRecoveryKey> & bitlockerRecoveryKeyMethods;
+}
+export interface bitlockerOData {
+	recoveryKeys: IBaseResults<bitlockerRecoveryKey>;
 }
 /*********************************************
 * bitlockerRecoveryKey
@@ -2651,6 +3246,9 @@ export interface bitlockerRecoveryKeyProps {
 export interface bitlockerRecoveryKeyMethods {
 
 }
+export interface bitlockerRecoveryKeyOData {
+
+}
 /*********************************************
 * informationProtection
 **********************************************/
@@ -2660,8 +3258,11 @@ export interface informationProtectionProps {
 }
 export interface informationProtectionMethods {
 	bitlocker(): IBaseQuery<bitlocker> & bitlockerMethods;
-	threatAssessmentRequests(): IBaseCollection<threatAssessmentRequest>;
+	threatAssessmentRequests(): IBaseCollection<threatAssessmentRequest, threatAssessmentRequestOData>;
 	threatAssessmentRequests(id: string | number): IBaseQuery<threatAssessmentRequest> & threatAssessmentRequestMethods;
+}
+export interface informationProtectionOData {
+	threatAssessmentRequests: IBaseResults<threatAssessmentRequest>;
 }
 /*********************************************
 * threatAssessmentRequest
@@ -2677,8 +3278,11 @@ export interface threatAssessmentRequestProps {
 	status: EnumTypes.threatAssessmentStatus;
 }
 export interface threatAssessmentRequestMethods {
-	results(): IBaseCollection<threatAssessmentResult>;
+	results(): IBaseCollection<threatAssessmentResult, threatAssessmentResultOData>;
 	results(id: string | number): IBaseQuery<threatAssessmentResult> & threatAssessmentResultMethods;
+}
+export interface threatAssessmentRequestOData {
+	results: IBaseResults<threatAssessmentResult>;
 }
 /*********************************************
 * bookingAppointment
@@ -2721,6 +3325,9 @@ export interface bookingAppointmentProps {
 export interface bookingAppointmentMethods {
 
 }
+export interface bookingAppointmentOData {
+
+}
 /*********************************************
 * bookingBusiness
 **********************************************/
@@ -2743,18 +3350,26 @@ export interface bookingBusinessProps {
 	webSiteUrl: string;
 }
 export interface bookingBusinessMethods {
-	appointments(): IBaseCollection<bookingAppointment>;
+	appointments(): IBaseCollection<bookingAppointment, bookingAppointmentOData>;
 	appointments(id: string | number): IBaseQuery<bookingAppointment> & bookingAppointmentMethods;
-	calendarView(): IBaseCollection<bookingAppointment>;
+	calendarView(): IBaseCollection<bookingAppointment, bookingAppointmentOData>;
 	calendarView(id: string | number): IBaseQuery<bookingAppointment> & bookingAppointmentMethods;
-	customers(): IBaseCollection<bookingCustomerBase>;
+	customers(): IBaseCollection<bookingCustomerBase, bookingCustomerBaseOData>;
 	customers(id: string | number): IBaseQuery<bookingCustomerBase> & bookingCustomerBaseMethods;
-	customQuestions(): IBaseCollection<bookingCustomQuestion>;
+	customQuestions(): IBaseCollection<bookingCustomQuestion, bookingCustomQuestionOData>;
 	customQuestions(id: string | number): IBaseQuery<bookingCustomQuestion> & bookingCustomQuestionMethods;
-	services(): IBaseCollection<bookingService>;
+	services(): IBaseCollection<bookingService, bookingServiceOData>;
 	services(id: string | number): IBaseQuery<bookingService> & bookingServiceMethods;
-	staffMembers(): IBaseCollection<bookingStaffMemberBase>;
+	staffMembers(): IBaseCollection<bookingStaffMemberBase, bookingStaffMemberBaseOData>;
 	staffMembers(id: string | number): IBaseQuery<bookingStaffMemberBase> & bookingStaffMemberBaseMethods;
+}
+export interface bookingBusinessOData {
+	appointments: IBaseResults<bookingAppointment>;
+	calendarView: IBaseResults<bookingAppointment>;
+	customers: IBaseResults<bookingCustomerBase>;
+	customQuestions: IBaseResults<bookingCustomQuestion>;
+	services: IBaseResults<bookingService>;
+	staffMembers: IBaseResults<bookingStaffMemberBase>;
 }
 /*********************************************
 * bookingCustomerBase
@@ -2764,6 +3379,9 @@ export interface bookingCustomerBaseProps {
 
 }
 export interface bookingCustomerBaseMethods {
+
+}
+export interface bookingCustomerBaseOData {
 
 }
 /*********************************************
@@ -2778,6 +3396,9 @@ export interface bookingCustomQuestionProps {
 	lastUpdatedDateTime: any;
 }
 export interface bookingCustomQuestionMethods {
+
+}
+export interface bookingCustomQuestionOData {
 
 }
 /*********************************************
@@ -2813,6 +3434,9 @@ export interface bookingServiceProps {
 export interface bookingServiceMethods {
 
 }
+export interface bookingServiceOData {
+
+}
 /*********************************************
 * bookingStaffMemberBase
 **********************************************/
@@ -2823,6 +3447,9 @@ export interface bookingStaffMemberBaseProps {
 export interface bookingStaffMemberBaseMethods {
 
 }
+export interface bookingStaffMemberBaseOData {
+
+}
 /*********************************************
 * bookingCurrency
 **********************************************/
@@ -2831,6 +3458,9 @@ export interface bookingCurrencyProps {
 	symbol: string;
 }
 export interface bookingCurrencyMethods {
+
+}
+export interface bookingCurrencyOData {
 
 }
 /*********************************************
@@ -2846,6 +3476,9 @@ export interface bookingCustomerProps {
 	phones: ComplexTypes.phone[];
 }
 export interface bookingCustomerMethods {
+
+}
+export interface bookingCustomerOData {
 
 }
 /*********************************************
@@ -2868,6 +3501,9 @@ export interface bookingStaffMemberProps {
 export interface bookingStaffMemberMethods {
 
 }
+export interface bookingStaffMemberOData {
+
+}
 /*********************************************
 * solutionsRoot
 **********************************************/
@@ -2876,12 +3512,16 @@ export interface solutionsRootProps {
 
 }
 export interface solutionsRootMethods {
-	bookingBusinesses(): IBaseCollection<bookingBusiness>;
+	bookingBusinesses(): IBaseCollection<bookingBusiness, bookingBusinessOData>;
 	bookingBusinesses(id: string | number): IBaseQuery<bookingBusiness> & bookingBusinessMethods;
-	bookingCurrencies(): IBaseCollection<bookingCurrency>;
+	bookingCurrencies(): IBaseCollection<bookingCurrency, bookingCurrencyOData>;
 	bookingCurrencies(id: string | number): IBaseQuery<bookingCurrency> & bookingCurrencyMethods;
 	backupRestore(): IBaseQuery<backupRestoreRoot> & backupRestoreRootMethods;
 	virtualEvents(): IBaseQuery<virtualEventsRoot> & virtualEventsRootMethods;
+}
+export interface solutionsRootOData {
+	bookingBusinesses: IBaseResults<bookingBusiness>;
+	bookingCurrencies: IBaseResults<bookingCurrency>;
 }
 /*********************************************
 * backupRestoreRoot
@@ -2891,40 +3531,59 @@ export interface backupRestoreRootProps {
 	serviceStatus: ComplexTypes.serviceStatus;
 }
 export interface backupRestoreRootMethods {
-	driveInclusionRules(): IBaseCollection<driveProtectionRule>;
+	driveInclusionRules(): IBaseCollection<driveProtectionRule, driveProtectionRuleOData>;
 	driveInclusionRules(id: string | number): IBaseQuery<driveProtectionRule> & driveProtectionRuleMethods;
-	driveProtectionUnits(): IBaseCollection<driveProtectionUnit>;
+	driveProtectionUnits(): IBaseCollection<driveProtectionUnit, driveProtectionUnitOData>;
 	driveProtectionUnits(id: string | number): IBaseQuery<driveProtectionUnit> & driveProtectionUnitMethods;
-	exchangeProtectionPolicies(): IBaseCollection<exchangeProtectionPolicy>;
+	exchangeProtectionPolicies(): IBaseCollection<exchangeProtectionPolicy, exchangeProtectionPolicyOData>;
 	exchangeProtectionPolicies(id: string | number): IBaseQuery<exchangeProtectionPolicy> & exchangeProtectionPolicyMethods;
-	exchangeRestoreSessions(): IBaseCollection<exchangeRestoreSession>;
+	exchangeRestoreSessions(): IBaseCollection<exchangeRestoreSession, exchangeRestoreSessionOData>;
 	exchangeRestoreSessions(id: string | number): IBaseQuery<exchangeRestoreSession> & exchangeRestoreSessionMethods;
-	mailboxInclusionRules(): IBaseCollection<mailboxProtectionRule>;
+	mailboxInclusionRules(): IBaseCollection<mailboxProtectionRule, mailboxProtectionRuleOData>;
 	mailboxInclusionRules(id: string | number): IBaseQuery<mailboxProtectionRule> & mailboxProtectionRuleMethods;
-	mailboxProtectionUnits(): IBaseCollection<mailboxProtectionUnit>;
+	mailboxProtectionUnits(): IBaseCollection<mailboxProtectionUnit, mailboxProtectionUnitOData>;
 	mailboxProtectionUnits(id: string | number): IBaseQuery<mailboxProtectionUnit> & mailboxProtectionUnitMethods;
-	oneDriveForBusinessProtectionPolicies(): IBaseCollection<oneDriveForBusinessProtectionPolicy>;
+	oneDriveForBusinessProtectionPolicies(): IBaseCollection<oneDriveForBusinessProtectionPolicy, oneDriveForBusinessProtectionPolicyOData>;
 	oneDriveForBusinessProtectionPolicies(id: string | number): IBaseQuery<oneDriveForBusinessProtectionPolicy> & oneDriveForBusinessProtectionPolicyMethods;
-	oneDriveForBusinessRestoreSessions(): IBaseCollection<oneDriveForBusinessRestoreSession>;
+	oneDriveForBusinessRestoreSessions(): IBaseCollection<oneDriveForBusinessRestoreSession, oneDriveForBusinessRestoreSessionOData>;
 	oneDriveForBusinessRestoreSessions(id: string | number): IBaseQuery<oneDriveForBusinessRestoreSession> & oneDriveForBusinessRestoreSessionMethods;
-	protectionPolicies(): IBaseCollection<protectionPolicyBase>;
+	protectionPolicies(): IBaseCollection<protectionPolicyBase, protectionPolicyBaseOData>;
 	protectionPolicies(id: string | number): IBaseQuery<protectionPolicyBase> & protectionPolicyBaseMethods;
-	protectionUnits(): IBaseCollection<protectionUnitBase>;
+	protectionUnits(): IBaseCollection<protectionUnitBase, protectionUnitBaseOData>;
 	protectionUnits(id: string | number): IBaseQuery<protectionUnitBase> & protectionUnitBaseMethods;
-	restorePoints(): IBaseCollection<restorePoint>;
+	restorePoints(): IBaseCollection<restorePoint, restorePointOData>;
 	restorePoints(id: string | number): IBaseQuery<restorePoint> & restorePointMethods;
-	restoreSessions(): IBaseCollection<restoreSessionBase>;
+	restoreSessions(): IBaseCollection<restoreSessionBase, restoreSessionBaseOData>;
 	restoreSessions(id: string | number): IBaseQuery<restoreSessionBase> & restoreSessionBaseMethods;
-	serviceApps(): IBaseCollection<serviceApp>;
+	serviceApps(): IBaseCollection<serviceApp, serviceAppOData>;
 	serviceApps(id: string | number): IBaseQuery<serviceApp> & serviceAppMethods;
-	sharePointProtectionPolicies(): IBaseCollection<sharePointProtectionPolicy>;
+	sharePointProtectionPolicies(): IBaseCollection<sharePointProtectionPolicy, sharePointProtectionPolicyOData>;
 	sharePointProtectionPolicies(id: string | number): IBaseQuery<sharePointProtectionPolicy> & sharePointProtectionPolicyMethods;
-	sharePointRestoreSessions(): IBaseCollection<sharePointRestoreSession>;
+	sharePointRestoreSessions(): IBaseCollection<sharePointRestoreSession, sharePointRestoreSessionOData>;
 	sharePointRestoreSessions(id: string | number): IBaseQuery<sharePointRestoreSession> & sharePointRestoreSessionMethods;
-	siteInclusionRules(): IBaseCollection<siteProtectionRule>;
+	siteInclusionRules(): IBaseCollection<siteProtectionRule, siteProtectionRuleOData>;
 	siteInclusionRules(id: string | number): IBaseQuery<siteProtectionRule> & siteProtectionRuleMethods;
-	siteProtectionUnits(): IBaseCollection<siteProtectionUnit>;
+	siteProtectionUnits(): IBaseCollection<siteProtectionUnit, siteProtectionUnitOData>;
 	siteProtectionUnits(id: string | number): IBaseQuery<siteProtectionUnit> & siteProtectionUnitMethods;
+}
+export interface backupRestoreRootOData {
+	driveInclusionRules: IBaseResults<driveProtectionRule>;
+	driveProtectionUnits: IBaseResults<driveProtectionUnit>;
+	exchangeProtectionPolicies: IBaseResults<exchangeProtectionPolicy>;
+	exchangeRestoreSessions: IBaseResults<exchangeRestoreSession>;
+	mailboxInclusionRules: IBaseResults<mailboxProtectionRule>;
+	mailboxProtectionUnits: IBaseResults<mailboxProtectionUnit>;
+	oneDriveForBusinessProtectionPolicies: IBaseResults<oneDriveForBusinessProtectionPolicy>;
+	oneDriveForBusinessRestoreSessions: IBaseResults<oneDriveForBusinessRestoreSession>;
+	protectionPolicies: IBaseResults<protectionPolicyBase>;
+	protectionUnits: IBaseResults<protectionUnitBase>;
+	restorePoints: IBaseResults<restorePoint>;
+	restoreSessions: IBaseResults<restoreSessionBase>;
+	serviceApps: IBaseResults<serviceApp>;
+	sharePointProtectionPolicies: IBaseResults<sharePointProtectionPolicy>;
+	sharePointRestoreSessions: IBaseResults<sharePointRestoreSession>;
+	siteInclusionRules: IBaseResults<siteProtectionRule>;
+	siteProtectionUnits: IBaseResults<siteProtectionUnit>;
 }
 /*********************************************
 * virtualEventsRoot
@@ -2934,12 +3593,17 @@ export interface virtualEventsRootProps {
 
 }
 export interface virtualEventsRootMethods {
-	events(): IBaseCollection<virtualEvent>;
+	events(): IBaseCollection<virtualEvent, virtualEventOData>;
 	events(id: string | number): IBaseQuery<virtualEvent> & virtualEventMethods;
-	townhalls(): IBaseCollection<virtualEventTownhall>;
+	townhalls(): IBaseCollection<virtualEventTownhall, virtualEventTownhallOData>;
 	townhalls(id: string | number): IBaseQuery<virtualEventTownhall> & virtualEventTownhallMethods;
-	webinars(): IBaseCollection<virtualEventWebinar>;
+	webinars(): IBaseCollection<virtualEventWebinar, virtualEventWebinarOData>;
 	webinars(id: string | number): IBaseQuery<virtualEventWebinar> & virtualEventWebinarMethods;
+}
+export interface virtualEventsRootOData {
+	events: IBaseResults<virtualEvent>;
+	townhalls: IBaseResults<virtualEventTownhall>;
+	webinars: IBaseResults<virtualEventWebinar>;
 }
 /*********************************************
 * cloudPC
@@ -2964,6 +3628,9 @@ export interface cloudPCProps {
 export interface cloudPCMethods {
 
 }
+export interface cloudPCOData {
+
+}
 /*********************************************
 * cloudPcAuditEvent
 **********************************************/
@@ -2982,6 +3649,9 @@ export interface cloudPcAuditEventProps {
 	resources: ComplexTypes.cloudPcAuditResource[];
 }
 export interface cloudPcAuditEventMethods {
+
+}
+export interface cloudPcAuditEventOData {
 
 }
 /*********************************************
@@ -3003,6 +3673,9 @@ export interface cloudPcDeviceImageProps {
 export interface cloudPcDeviceImageMethods {
 
 }
+export interface cloudPcDeviceImageOData {
+
+}
 /*********************************************
 * cloudPcGalleryImage
 **********************************************/
@@ -3019,6 +3692,9 @@ export interface cloudPcGalleryImageProps {
 	status: EnumTypes.cloudPcGalleryImageStatus;
 }
 export interface cloudPcGalleryImageMethods {
+
+}
+export interface cloudPcGalleryImageOData {
 
 }
 /*********************************************
@@ -3046,6 +3722,9 @@ export interface cloudPcOnPremisesConnectionProps {
 export interface cloudPcOnPremisesConnectionMethods {
 
 }
+export interface cloudPcOnPremisesConnectionOData {
+
+}
 /*********************************************
 * cloudPcProvisioningPolicy
 **********************************************/
@@ -3068,8 +3747,11 @@ export interface cloudPcProvisioningPolicyProps {
 	windowsSetting: ComplexTypes.cloudPcWindowsSetting;
 }
 export interface cloudPcProvisioningPolicyMethods {
-	assignments(): IBaseCollection<cloudPcProvisioningPolicyAssignment>;
+	assignments(): IBaseCollection<cloudPcProvisioningPolicyAssignment, cloudPcProvisioningPolicyAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<cloudPcProvisioningPolicyAssignment> & cloudPcProvisioningPolicyAssignmentMethods;
+}
+export interface cloudPcProvisioningPolicyOData {
+	assignments: IBaseResults<cloudPcProvisioningPolicyAssignment>;
 }
 /*********************************************
 * cloudPcProvisioningPolicyAssignment
@@ -3079,8 +3761,11 @@ export interface cloudPcProvisioningPolicyAssignmentProps {
 	target: ComplexTypes.cloudPcManagementAssignmentTarget;
 }
 export interface cloudPcProvisioningPolicyAssignmentMethods {
-	assignedUsers(): IBaseCollection<user>;
+	assignedUsers(): IBaseCollection<user, userOData>;
 	assignedUsers(id: string | number): IBaseQuery<user> & userMethods;
+}
+export interface cloudPcProvisioningPolicyAssignmentOData {
+	assignedUsers: IBaseResults<user>;
 }
 /*********************************************
 * cloudPcUserSetting
@@ -3095,8 +3780,11 @@ export interface cloudPcUserSettingProps {
 	restorePointSetting: ComplexTypes.cloudPcRestorePointSetting;
 }
 export interface cloudPcUserSettingMethods {
-	assignments(): IBaseCollection<cloudPcUserSettingAssignment>;
+	assignments(): IBaseCollection<cloudPcUserSettingAssignment, cloudPcUserSettingAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<cloudPcUserSettingAssignment> & cloudPcUserSettingAssignmentMethods;
+}
+export interface cloudPcUserSettingOData {
+	assignments: IBaseResults<cloudPcUserSettingAssignment>;
 }
 /*********************************************
 * cloudPcUserSettingAssignment
@@ -3107,6 +3795,9 @@ export interface cloudPcUserSettingAssignmentProps {
 	target: ComplexTypes.cloudPcManagementAssignmentTarget;
 }
 export interface cloudPcUserSettingAssignmentMethods {
+
+}
+export interface cloudPcUserSettingAssignmentOData {
 
 }
 /*********************************************
@@ -3123,111 +3814,160 @@ export interface deviceManagementProps {
 	windowsMalwareOverview: ComplexTypes.windowsMalwareOverview;
 }
 export interface deviceManagementMethods {
-	auditEvents(): IBaseCollection<auditEvent>;
+	auditEvents(): IBaseCollection<auditEvent, auditEventOData>;
 	auditEvents(id: string | number): IBaseQuery<auditEvent> & auditEventMethods;
 	virtualEndpoint(): IBaseQuery<virtualEndpoint> & virtualEndpointMethods;
-	termsAndConditions(): IBaseCollection<termsAndConditions>;
+	termsAndConditions(): IBaseCollection<termsAndConditions, termsAndConditionsOData>;
 	termsAndConditions(id: string | number): IBaseQuery<termsAndConditions> & termsAndConditionsMethods;
-	deviceCompliancePolicies(): IBaseCollection<deviceCompliancePolicy>;
+	deviceCompliancePolicies(): IBaseCollection<deviceCompliancePolicy, deviceCompliancePolicyOData>;
 	deviceCompliancePolicies(id: string | number): IBaseQuery<deviceCompliancePolicy> & deviceCompliancePolicyMethods;
 	deviceCompliancePolicyDeviceStateSummary(): IBaseQuery<deviceCompliancePolicyDeviceStateSummary> & deviceCompliancePolicyDeviceStateSummaryMethods;
-	deviceCompliancePolicySettingStateSummaries(): IBaseCollection<deviceCompliancePolicySettingStateSummary>;
+	deviceCompliancePolicySettingStateSummaries(): IBaseCollection<deviceCompliancePolicySettingStateSummary, deviceCompliancePolicySettingStateSummaryOData>;
 	deviceCompliancePolicySettingStateSummaries(id: string | number): IBaseQuery<deviceCompliancePolicySettingStateSummary> & deviceCompliancePolicySettingStateSummaryMethods;
 	deviceConfigurationDeviceStateSummaries(): IBaseQuery<deviceConfigurationDeviceStateSummary> & deviceConfigurationDeviceStateSummaryMethods;
-	deviceConfigurations(): IBaseCollection<deviceConfiguration>;
+	deviceConfigurations(): IBaseCollection<deviceConfiguration, deviceConfigurationOData>;
 	deviceConfigurations(id: string | number): IBaseQuery<deviceConfiguration> & deviceConfigurationMethods;
-	iosUpdateStatuses(): IBaseCollection<iosUpdateDeviceStatus>;
+	iosUpdateStatuses(): IBaseCollection<iosUpdateDeviceStatus, iosUpdateDeviceStatusOData>;
 	iosUpdateStatuses(id: string | number): IBaseQuery<iosUpdateDeviceStatus> & iosUpdateDeviceStatusMethods;
 	softwareUpdateStatusSummary(): IBaseQuery<softwareUpdateStatusSummary> & softwareUpdateStatusSummaryMethods;
-	complianceManagementPartners(): IBaseCollection<complianceManagementPartner>;
+	complianceManagementPartners(): IBaseCollection<complianceManagementPartner, complianceManagementPartnerOData>;
 	complianceManagementPartners(id: string | number): IBaseQuery<complianceManagementPartner> & complianceManagementPartnerMethods;
 	conditionalAccessSettings(): IBaseQuery<onPremisesConditionalAccessSettings> & onPremisesConditionalAccessSettingsMethods;
-	deviceCategories(): IBaseCollection<deviceCategory>;
+	deviceCategories(): IBaseCollection<deviceCategory, deviceCategoryOData>;
 	deviceCategories(id: string | number): IBaseQuery<deviceCategory> & deviceCategoryMethods;
-	deviceEnrollmentConfigurations(): IBaseCollection<deviceEnrollmentConfiguration>;
+	deviceEnrollmentConfigurations(): IBaseCollection<deviceEnrollmentConfiguration, deviceEnrollmentConfigurationOData>;
 	deviceEnrollmentConfigurations(id: string | number): IBaseQuery<deviceEnrollmentConfiguration> & deviceEnrollmentConfigurationMethods;
-	deviceManagementPartners(): IBaseCollection<deviceManagementPartner>;
+	deviceManagementPartners(): IBaseCollection<deviceManagementPartner, deviceManagementPartnerOData>;
 	deviceManagementPartners(id: string | number): IBaseQuery<deviceManagementPartner> & deviceManagementPartnerMethods;
-	exchangeConnectors(): IBaseCollection<deviceManagementExchangeConnector>;
+	exchangeConnectors(): IBaseCollection<deviceManagementExchangeConnector, deviceManagementExchangeConnectorOData>;
 	exchangeConnectors(id: string | number): IBaseQuery<deviceManagementExchangeConnector> & deviceManagementExchangeConnectorMethods;
-	mobileThreatDefenseConnectors(): IBaseCollection<mobileThreatDefenseConnector>;
+	mobileThreatDefenseConnectors(): IBaseCollection<mobileThreatDefenseConnector, mobileThreatDefenseConnectorOData>;
 	mobileThreatDefenseConnectors(id: string | number): IBaseQuery<mobileThreatDefenseConnector> & mobileThreatDefenseConnectorMethods;
 	applePushNotificationCertificate(): IBaseQuery<applePushNotificationCertificate> & applePushNotificationCertificateMethods;
-	detectedApps(): IBaseCollection<detectedApp>;
+	detectedApps(): IBaseCollection<detectedApp, detectedAppOData>;
 	detectedApps(id: string | number): IBaseQuery<detectedApp> & detectedAppMethods;
 	managedDeviceOverview(): IBaseQuery<managedDeviceOverview> & managedDeviceOverviewMethods;
-	managedDevices(): IBaseCollection<managedDevice>;
+	managedDevices(): IBaseCollection<managedDevice, managedDeviceOData>;
 	managedDevices(id: string | number): IBaseQuery<managedDevice> & managedDeviceMethods;
-	mobileAppTroubleshootingEvents(): IBaseCollection<mobileAppTroubleshootingEvent>;
+	mobileAppTroubleshootingEvents(): IBaseCollection<mobileAppTroubleshootingEvent, mobileAppTroubleshootingEventOData>;
 	mobileAppTroubleshootingEvents(id: string | number): IBaseQuery<mobileAppTroubleshootingEvent> & mobileAppTroubleshootingEventMethods;
-	userExperienceAnalyticsAppHealthApplicationPerformance(): IBaseCollection<userExperienceAnalyticsAppHealthApplicationPerformance>;
+	userExperienceAnalyticsAppHealthApplicationPerformance(): IBaseCollection<userExperienceAnalyticsAppHealthApplicationPerformance, userExperienceAnalyticsAppHealthApplicationPerformanceOData>;
 	userExperienceAnalyticsAppHealthApplicationPerformance(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthApplicationPerformance> & userExperienceAnalyticsAppHealthApplicationPerformanceMethods;
-	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails(): IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>;
+	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails(): IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsOData>;
 	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails> & userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsMethods;
-	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId(): IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>;
+	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId(): IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdOData>;
 	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId> & userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdMethods;
-	userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion(): IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByOSVersion>;
+	userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion(): IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByOSVersion, userExperienceAnalyticsAppHealthAppPerformanceByOSVersionOData>;
 	userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthAppPerformanceByOSVersion> & userExperienceAnalyticsAppHealthAppPerformanceByOSVersionMethods;
-	userExperienceAnalyticsAppHealthDeviceModelPerformance(): IBaseCollection<userExperienceAnalyticsAppHealthDeviceModelPerformance>;
+	userExperienceAnalyticsAppHealthDeviceModelPerformance(): IBaseCollection<userExperienceAnalyticsAppHealthDeviceModelPerformance, userExperienceAnalyticsAppHealthDeviceModelPerformanceOData>;
 	userExperienceAnalyticsAppHealthDeviceModelPerformance(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthDeviceModelPerformance> & userExperienceAnalyticsAppHealthDeviceModelPerformanceMethods;
-	userExperienceAnalyticsAppHealthDevicePerformance(): IBaseCollection<userExperienceAnalyticsAppHealthDevicePerformance>;
+	userExperienceAnalyticsAppHealthDevicePerformance(): IBaseCollection<userExperienceAnalyticsAppHealthDevicePerformance, userExperienceAnalyticsAppHealthDevicePerformanceOData>;
 	userExperienceAnalyticsAppHealthDevicePerformance(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthDevicePerformance> & userExperienceAnalyticsAppHealthDevicePerformanceMethods;
-	userExperienceAnalyticsAppHealthDevicePerformanceDetails(): IBaseCollection<userExperienceAnalyticsAppHealthDevicePerformanceDetails>;
+	userExperienceAnalyticsAppHealthDevicePerformanceDetails(): IBaseCollection<userExperienceAnalyticsAppHealthDevicePerformanceDetails, userExperienceAnalyticsAppHealthDevicePerformanceDetailsOData>;
 	userExperienceAnalyticsAppHealthDevicePerformanceDetails(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthDevicePerformanceDetails> & userExperienceAnalyticsAppHealthDevicePerformanceDetailsMethods;
-	userExperienceAnalyticsAppHealthOSVersionPerformance(): IBaseCollection<userExperienceAnalyticsAppHealthOSVersionPerformance>;
+	userExperienceAnalyticsAppHealthOSVersionPerformance(): IBaseCollection<userExperienceAnalyticsAppHealthOSVersionPerformance, userExperienceAnalyticsAppHealthOSVersionPerformanceOData>;
 	userExperienceAnalyticsAppHealthOSVersionPerformance(id: string | number): IBaseQuery<userExperienceAnalyticsAppHealthOSVersionPerformance> & userExperienceAnalyticsAppHealthOSVersionPerformanceMethods;
 	userExperienceAnalyticsAppHealthOverview(): IBaseQuery<userExperienceAnalyticsCategory> & userExperienceAnalyticsCategoryMethods;
-	userExperienceAnalyticsBaselines(): IBaseCollection<userExperienceAnalyticsBaseline>;
+	userExperienceAnalyticsBaselines(): IBaseCollection<userExperienceAnalyticsBaseline, userExperienceAnalyticsBaselineOData>;
 	userExperienceAnalyticsBaselines(id: string | number): IBaseQuery<userExperienceAnalyticsBaseline> & userExperienceAnalyticsBaselineMethods;
-	userExperienceAnalyticsCategories(): IBaseCollection<userExperienceAnalyticsCategory>;
+	userExperienceAnalyticsCategories(): IBaseCollection<userExperienceAnalyticsCategory, userExperienceAnalyticsCategoryOData>;
 	userExperienceAnalyticsCategories(id: string | number): IBaseQuery<userExperienceAnalyticsCategory> & userExperienceAnalyticsCategoryMethods;
-	userExperienceAnalyticsDevicePerformance(): IBaseCollection<userExperienceAnalyticsDevicePerformance>;
+	userExperienceAnalyticsDevicePerformance(): IBaseCollection<userExperienceAnalyticsDevicePerformance, userExperienceAnalyticsDevicePerformanceOData>;
 	userExperienceAnalyticsDevicePerformance(id: string | number): IBaseQuery<userExperienceAnalyticsDevicePerformance> & userExperienceAnalyticsDevicePerformanceMethods;
-	userExperienceAnalyticsDeviceScores(): IBaseCollection<userExperienceAnalyticsDeviceScores>;
+	userExperienceAnalyticsDeviceScores(): IBaseCollection<userExperienceAnalyticsDeviceScores, userExperienceAnalyticsDeviceScoresOData>;
 	userExperienceAnalyticsDeviceScores(id: string | number): IBaseQuery<userExperienceAnalyticsDeviceScores> & userExperienceAnalyticsDeviceScoresMethods;
-	userExperienceAnalyticsDeviceStartupHistory(): IBaseCollection<userExperienceAnalyticsDeviceStartupHistory>;
+	userExperienceAnalyticsDeviceStartupHistory(): IBaseCollection<userExperienceAnalyticsDeviceStartupHistory, userExperienceAnalyticsDeviceStartupHistoryOData>;
 	userExperienceAnalyticsDeviceStartupHistory(id: string | number): IBaseQuery<userExperienceAnalyticsDeviceStartupHistory> & userExperienceAnalyticsDeviceStartupHistoryMethods;
-	userExperienceAnalyticsDeviceStartupProcesses(): IBaseCollection<userExperienceAnalyticsDeviceStartupProcess>;
+	userExperienceAnalyticsDeviceStartupProcesses(): IBaseCollection<userExperienceAnalyticsDeviceStartupProcess, userExperienceAnalyticsDeviceStartupProcessOData>;
 	userExperienceAnalyticsDeviceStartupProcesses(id: string | number): IBaseQuery<userExperienceAnalyticsDeviceStartupProcess> & userExperienceAnalyticsDeviceStartupProcessMethods;
-	userExperienceAnalyticsDeviceStartupProcessPerformance(): IBaseCollection<userExperienceAnalyticsDeviceStartupProcessPerformance>;
+	userExperienceAnalyticsDeviceStartupProcessPerformance(): IBaseCollection<userExperienceAnalyticsDeviceStartupProcessPerformance, userExperienceAnalyticsDeviceStartupProcessPerformanceOData>;
 	userExperienceAnalyticsDeviceStartupProcessPerformance(id: string | number): IBaseQuery<userExperienceAnalyticsDeviceStartupProcessPerformance> & userExperienceAnalyticsDeviceStartupProcessPerformanceMethods;
-	userExperienceAnalyticsMetricHistory(): IBaseCollection<userExperienceAnalyticsMetricHistory>;
+	userExperienceAnalyticsMetricHistory(): IBaseCollection<userExperienceAnalyticsMetricHistory, userExperienceAnalyticsMetricHistoryOData>;
 	userExperienceAnalyticsMetricHistory(id: string | number): IBaseQuery<userExperienceAnalyticsMetricHistory> & userExperienceAnalyticsMetricHistoryMethods;
-	userExperienceAnalyticsModelScores(): IBaseCollection<userExperienceAnalyticsModelScores>;
+	userExperienceAnalyticsModelScores(): IBaseCollection<userExperienceAnalyticsModelScores, userExperienceAnalyticsModelScoresOData>;
 	userExperienceAnalyticsModelScores(id: string | number): IBaseQuery<userExperienceAnalyticsModelScores> & userExperienceAnalyticsModelScoresMethods;
 	userExperienceAnalyticsOverview(): IBaseQuery<userExperienceAnalyticsOverview> & userExperienceAnalyticsOverviewMethods;
-	userExperienceAnalyticsScoreHistory(): IBaseCollection<userExperienceAnalyticsScoreHistory>;
+	userExperienceAnalyticsScoreHistory(): IBaseCollection<userExperienceAnalyticsScoreHistory, userExperienceAnalyticsScoreHistoryOData>;
 	userExperienceAnalyticsScoreHistory(id: string | number): IBaseQuery<userExperienceAnalyticsScoreHistory> & userExperienceAnalyticsScoreHistoryMethods;
 	userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric(): IBaseQuery<userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric> & userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricMethods;
-	userExperienceAnalyticsWorkFromAnywhereMetrics(): IBaseCollection<userExperienceAnalyticsWorkFromAnywhereMetric>;
+	userExperienceAnalyticsWorkFromAnywhereMetrics(): IBaseCollection<userExperienceAnalyticsWorkFromAnywhereMetric, userExperienceAnalyticsWorkFromAnywhereMetricOData>;
 	userExperienceAnalyticsWorkFromAnywhereMetrics(id: string | number): IBaseQuery<userExperienceAnalyticsWorkFromAnywhereMetric> & userExperienceAnalyticsWorkFromAnywhereMetricMethods;
-	userExperienceAnalyticsWorkFromAnywhereModelPerformance(): IBaseCollection<userExperienceAnalyticsWorkFromAnywhereModelPerformance>;
+	userExperienceAnalyticsWorkFromAnywhereModelPerformance(): IBaseCollection<userExperienceAnalyticsWorkFromAnywhereModelPerformance, userExperienceAnalyticsWorkFromAnywhereModelPerformanceOData>;
 	userExperienceAnalyticsWorkFromAnywhereModelPerformance(id: string | number): IBaseQuery<userExperienceAnalyticsWorkFromAnywhereModelPerformance> & userExperienceAnalyticsWorkFromAnywhereModelPerformanceMethods;
-	windowsMalwareInformation(): IBaseCollection<windowsMalwareInformation>;
+	windowsMalwareInformation(): IBaseCollection<windowsMalwareInformation, windowsMalwareInformationOData>;
 	windowsMalwareInformation(id: string | number): IBaseQuery<windowsMalwareInformation> & windowsMalwareInformationMethods;
-	importedWindowsAutopilotDeviceIdentities(): IBaseCollection<importedWindowsAutopilotDeviceIdentity>;
+	importedWindowsAutopilotDeviceIdentities(): IBaseCollection<importedWindowsAutopilotDeviceIdentity, importedWindowsAutopilotDeviceIdentityOData>;
 	importedWindowsAutopilotDeviceIdentities(id: string | number): IBaseQuery<importedWindowsAutopilotDeviceIdentity> & importedWindowsAutopilotDeviceIdentityMethods;
-	windowsAutopilotDeviceIdentities(): IBaseCollection<windowsAutopilotDeviceIdentity>;
+	windowsAutopilotDeviceIdentities(): IBaseCollection<windowsAutopilotDeviceIdentity, windowsAutopilotDeviceIdentityOData>;
 	windowsAutopilotDeviceIdentities(id: string | number): IBaseQuery<windowsAutopilotDeviceIdentity> & windowsAutopilotDeviceIdentityMethods;
-	notificationMessageTemplates(): IBaseCollection<notificationMessageTemplate>;
+	notificationMessageTemplates(): IBaseCollection<notificationMessageTemplate, notificationMessageTemplateOData>;
 	notificationMessageTemplates(id: string | number): IBaseQuery<notificationMessageTemplate> & notificationMessageTemplateMethods;
-	resourceOperations(): IBaseCollection<resourceOperation>;
+	resourceOperations(): IBaseCollection<resourceOperation, resourceOperationOData>;
 	resourceOperations(id: string | number): IBaseQuery<resourceOperation> & resourceOperationMethods;
-	roleAssignments(): IBaseCollection<deviceAndAppManagementRoleAssignment>;
+	roleAssignments(): IBaseCollection<deviceAndAppManagementRoleAssignment, deviceAndAppManagementRoleAssignmentOData>;
 	roleAssignments(id: string | number): IBaseQuery<deviceAndAppManagementRoleAssignment> & deviceAndAppManagementRoleAssignmentMethods;
-	roleDefinitions(): IBaseCollection<roleDefinition>;
+	roleDefinitions(): IBaseCollection<roleDefinition, roleDefinitionOData>;
 	roleDefinitions(id: string | number): IBaseQuery<roleDefinition> & roleDefinitionMethods;
-	remoteAssistancePartners(): IBaseCollection<remoteAssistancePartner>;
+	remoteAssistancePartners(): IBaseCollection<remoteAssistancePartner, remoteAssistancePartnerOData>;
 	remoteAssistancePartners(id: string | number): IBaseQuery<remoteAssistancePartner> & remoteAssistancePartnerMethods;
 	reports(): IBaseQuery<deviceManagementReports> & deviceManagementReportsMethods;
-	telecomExpenseManagementPartners(): IBaseCollection<telecomExpenseManagementPartner>;
+	telecomExpenseManagementPartners(): IBaseCollection<telecomExpenseManagementPartner, telecomExpenseManagementPartnerOData>;
 	telecomExpenseManagementPartners(id: string | number): IBaseQuery<telecomExpenseManagementPartner> & telecomExpenseManagementPartnerMethods;
-	troubleshootingEvents(): IBaseCollection<deviceManagementTroubleshootingEvent>;
+	troubleshootingEvents(): IBaseCollection<deviceManagementTroubleshootingEvent, deviceManagementTroubleshootingEventOData>;
 	troubleshootingEvents(id: string | number): IBaseQuery<deviceManagementTroubleshootingEvent> & deviceManagementTroubleshootingEventMethods;
-	windowsInformationProtectionAppLearningSummaries(): IBaseCollection<windowsInformationProtectionAppLearningSummary>;
+	windowsInformationProtectionAppLearningSummaries(): IBaseCollection<windowsInformationProtectionAppLearningSummary, windowsInformationProtectionAppLearningSummaryOData>;
 	windowsInformationProtectionAppLearningSummaries(id: string | number): IBaseQuery<windowsInformationProtectionAppLearningSummary> & windowsInformationProtectionAppLearningSummaryMethods;
-	windowsInformationProtectionNetworkLearningSummaries(): IBaseCollection<windowsInformationProtectionNetworkLearningSummary>;
+	windowsInformationProtectionNetworkLearningSummaries(): IBaseCollection<windowsInformationProtectionNetworkLearningSummary, windowsInformationProtectionNetworkLearningSummaryOData>;
 	windowsInformationProtectionNetworkLearningSummaries(id: string | number): IBaseQuery<windowsInformationProtectionNetworkLearningSummary> & windowsInformationProtectionNetworkLearningSummaryMethods;
+}
+export interface deviceManagementOData {
+	auditEvents: IBaseResults<auditEvent>;
+	termsAndConditions: IBaseResults<termsAndConditions>;
+	deviceCompliancePolicies: IBaseResults<deviceCompliancePolicy>;
+	deviceCompliancePolicySettingStateSummaries: IBaseResults<deviceCompliancePolicySettingStateSummary>;
+	deviceConfigurations: IBaseResults<deviceConfiguration>;
+	iosUpdateStatuses: IBaseResults<iosUpdateDeviceStatus>;
+	complianceManagementPartners: IBaseResults<complianceManagementPartner>;
+	deviceCategories: IBaseResults<deviceCategory>;
+	deviceEnrollmentConfigurations: IBaseResults<deviceEnrollmentConfiguration>;
+	deviceManagementPartners: IBaseResults<deviceManagementPartner>;
+	exchangeConnectors: IBaseResults<deviceManagementExchangeConnector>;
+	mobileThreatDefenseConnectors: IBaseResults<mobileThreatDefenseConnector>;
+	detectedApps: IBaseResults<detectedApp>;
+	managedDevices: IBaseResults<managedDevice>;
+	mobileAppTroubleshootingEvents: IBaseResults<mobileAppTroubleshootingEvent>;
+	userExperienceAnalyticsAppHealthApplicationPerformance: IBaseResults<userExperienceAnalyticsAppHealthApplicationPerformance>;
+	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails: IBaseResults<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>;
+	userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId: IBaseResults<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>;
+	userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion: IBaseResults<userExperienceAnalyticsAppHealthAppPerformanceByOSVersion>;
+	userExperienceAnalyticsAppHealthDeviceModelPerformance: IBaseResults<userExperienceAnalyticsAppHealthDeviceModelPerformance>;
+	userExperienceAnalyticsAppHealthDevicePerformance: IBaseResults<userExperienceAnalyticsAppHealthDevicePerformance>;
+	userExperienceAnalyticsAppHealthDevicePerformanceDetails: IBaseResults<userExperienceAnalyticsAppHealthDevicePerformanceDetails>;
+	userExperienceAnalyticsAppHealthOSVersionPerformance: IBaseResults<userExperienceAnalyticsAppHealthOSVersionPerformance>;
+	userExperienceAnalyticsBaselines: IBaseResults<userExperienceAnalyticsBaseline>;
+	userExperienceAnalyticsCategories: IBaseResults<userExperienceAnalyticsCategory>;
+	userExperienceAnalyticsDevicePerformance: IBaseResults<userExperienceAnalyticsDevicePerformance>;
+	userExperienceAnalyticsDeviceScores: IBaseResults<userExperienceAnalyticsDeviceScores>;
+	userExperienceAnalyticsDeviceStartupHistory: IBaseResults<userExperienceAnalyticsDeviceStartupHistory>;
+	userExperienceAnalyticsDeviceStartupProcesses: IBaseResults<userExperienceAnalyticsDeviceStartupProcess>;
+	userExperienceAnalyticsDeviceStartupProcessPerformance: IBaseResults<userExperienceAnalyticsDeviceStartupProcessPerformance>;
+	userExperienceAnalyticsMetricHistory: IBaseResults<userExperienceAnalyticsMetricHistory>;
+	userExperienceAnalyticsModelScores: IBaseResults<userExperienceAnalyticsModelScores>;
+	userExperienceAnalyticsScoreHistory: IBaseResults<userExperienceAnalyticsScoreHistory>;
+	userExperienceAnalyticsWorkFromAnywhereMetrics: IBaseResults<userExperienceAnalyticsWorkFromAnywhereMetric>;
+	userExperienceAnalyticsWorkFromAnywhereModelPerformance: IBaseResults<userExperienceAnalyticsWorkFromAnywhereModelPerformance>;
+	windowsMalwareInformation: IBaseResults<windowsMalwareInformation>;
+	importedWindowsAutopilotDeviceIdentities: IBaseResults<importedWindowsAutopilotDeviceIdentity>;
+	windowsAutopilotDeviceIdentities: IBaseResults<windowsAutopilotDeviceIdentity>;
+	notificationMessageTemplates: IBaseResults<notificationMessageTemplate>;
+	resourceOperations: IBaseResults<resourceOperation>;
+	roleAssignments: IBaseResults<deviceAndAppManagementRoleAssignment>;
+	roleDefinitions: IBaseResults<roleDefinition>;
+	remoteAssistancePartners: IBaseResults<remoteAssistancePartner>;
+	telecomExpenseManagementPartners: IBaseResults<telecomExpenseManagementPartner>;
+	troubleshootingEvents: IBaseResults<deviceManagementTroubleshootingEvent>;
+	windowsInformationProtectionAppLearningSummaries: IBaseResults<windowsInformationProtectionAppLearningSummary>;
+	windowsInformationProtectionNetworkLearningSummaries: IBaseResults<windowsInformationProtectionNetworkLearningSummary>;
 }
 /*********************************************
 * auditEvent
@@ -3249,6 +3989,9 @@ export interface auditEventProps {
 export interface auditEventMethods {
 
 }
+export interface auditEventOData {
+
+}
 /*********************************************
 * virtualEndpoint
 **********************************************/
@@ -3257,20 +4000,29 @@ export interface virtualEndpointProps {
 
 }
 export interface virtualEndpointMethods {
-	auditEvents(): IBaseCollection<cloudPcAuditEvent>;
+	auditEvents(): IBaseCollection<cloudPcAuditEvent, cloudPcAuditEventOData>;
 	auditEvents(id: string | number): IBaseQuery<cloudPcAuditEvent> & cloudPcAuditEventMethods;
-	cloudPCs(): IBaseCollection<cloudPC>;
+	cloudPCs(): IBaseCollection<cloudPC, cloudPCOData>;
 	cloudPCs(id: string | number): IBaseQuery<cloudPC> & cloudPCMethods;
-	deviceImages(): IBaseCollection<cloudPcDeviceImage>;
+	deviceImages(): IBaseCollection<cloudPcDeviceImage, cloudPcDeviceImageOData>;
 	deviceImages(id: string | number): IBaseQuery<cloudPcDeviceImage> & cloudPcDeviceImageMethods;
-	galleryImages(): IBaseCollection<cloudPcGalleryImage>;
+	galleryImages(): IBaseCollection<cloudPcGalleryImage, cloudPcGalleryImageOData>;
 	galleryImages(id: string | number): IBaseQuery<cloudPcGalleryImage> & cloudPcGalleryImageMethods;
-	onPremisesConnections(): IBaseCollection<cloudPcOnPremisesConnection>;
+	onPremisesConnections(): IBaseCollection<cloudPcOnPremisesConnection, cloudPcOnPremisesConnectionOData>;
 	onPremisesConnections(id: string | number): IBaseQuery<cloudPcOnPremisesConnection> & cloudPcOnPremisesConnectionMethods;
-	provisioningPolicies(): IBaseCollection<cloudPcProvisioningPolicy>;
+	provisioningPolicies(): IBaseCollection<cloudPcProvisioningPolicy, cloudPcProvisioningPolicyOData>;
 	provisioningPolicies(id: string | number): IBaseQuery<cloudPcProvisioningPolicy> & cloudPcProvisioningPolicyMethods;
-	userSettings(): IBaseCollection<cloudPcUserSetting>;
+	userSettings(): IBaseCollection<cloudPcUserSetting, cloudPcUserSettingOData>;
 	userSettings(id: string | number): IBaseQuery<cloudPcUserSetting> & cloudPcUserSettingMethods;
+}
+export interface virtualEndpointOData {
+	auditEvents: IBaseResults<cloudPcAuditEvent>;
+	cloudPCs: IBaseResults<cloudPC>;
+	deviceImages: IBaseResults<cloudPcDeviceImage>;
+	galleryImages: IBaseResults<cloudPcGalleryImage>;
+	onPremisesConnections: IBaseResults<cloudPcOnPremisesConnection>;
+	provisioningPolicies: IBaseResults<cloudPcProvisioningPolicy>;
+	userSettings: IBaseResults<cloudPcUserSetting>;
 }
 /*********************************************
 * termsAndConditions
@@ -3287,10 +4039,14 @@ export interface termsAndConditionsProps {
 	version: number;
 }
 export interface termsAndConditionsMethods {
-	acceptanceStatuses(): IBaseCollection<termsAndConditionsAcceptanceStatus>;
+	acceptanceStatuses(): IBaseCollection<termsAndConditionsAcceptanceStatus, termsAndConditionsAcceptanceStatusOData>;
 	acceptanceStatuses(id: string | number): IBaseQuery<termsAndConditionsAcceptanceStatus> & termsAndConditionsAcceptanceStatusMethods;
-	assignments(): IBaseCollection<termsAndConditionsAssignment>;
+	assignments(): IBaseCollection<termsAndConditionsAssignment, termsAndConditionsAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<termsAndConditionsAssignment> & termsAndConditionsAssignmentMethods;
+}
+export interface termsAndConditionsOData {
+	acceptanceStatuses: IBaseResults<termsAndConditionsAcceptanceStatus>;
+	assignments: IBaseResults<termsAndConditionsAssignment>;
 }
 /*********************************************
 * deviceCompliancePolicy
@@ -3304,18 +4060,25 @@ export interface deviceCompliancePolicyProps {
 	version: number;
 }
 export interface deviceCompliancePolicyMethods {
-	assignments(): IBaseCollection<deviceCompliancePolicyAssignment>;
+	assignments(): IBaseCollection<deviceCompliancePolicyAssignment, deviceCompliancePolicyAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<deviceCompliancePolicyAssignment> & deviceCompliancePolicyAssignmentMethods;
-	deviceSettingStateSummaries(): IBaseCollection<settingStateDeviceSummary>;
+	deviceSettingStateSummaries(): IBaseCollection<settingStateDeviceSummary, settingStateDeviceSummaryOData>;
 	deviceSettingStateSummaries(id: string | number): IBaseQuery<settingStateDeviceSummary> & settingStateDeviceSummaryMethods;
-	deviceStatuses(): IBaseCollection<deviceComplianceDeviceStatus>;
+	deviceStatuses(): IBaseCollection<deviceComplianceDeviceStatus, deviceComplianceDeviceStatusOData>;
 	deviceStatuses(id: string | number): IBaseQuery<deviceComplianceDeviceStatus> & deviceComplianceDeviceStatusMethods;
 	deviceStatusOverview(): IBaseQuery<deviceComplianceDeviceOverview> & deviceComplianceDeviceOverviewMethods;
-	scheduledActionsForRule(): IBaseCollection<deviceComplianceScheduledActionForRule>;
+	scheduledActionsForRule(): IBaseCollection<deviceComplianceScheduledActionForRule, deviceComplianceScheduledActionForRuleOData>;
 	scheduledActionsForRule(id: string | number): IBaseQuery<deviceComplianceScheduledActionForRule> & deviceComplianceScheduledActionForRuleMethods;
-	userStatuses(): IBaseCollection<deviceComplianceUserStatus>;
+	userStatuses(): IBaseCollection<deviceComplianceUserStatus, deviceComplianceUserStatusOData>;
 	userStatuses(id: string | number): IBaseQuery<deviceComplianceUserStatus> & deviceComplianceUserStatusMethods;
 	userStatusOverview(): IBaseQuery<deviceComplianceUserOverview> & deviceComplianceUserOverviewMethods;
+}
+export interface deviceCompliancePolicyOData {
+	assignments: IBaseResults<deviceCompliancePolicyAssignment>;
+	deviceSettingStateSummaries: IBaseResults<settingStateDeviceSummary>;
+	deviceStatuses: IBaseResults<deviceComplianceDeviceStatus>;
+	scheduledActionsForRule: IBaseResults<deviceComplianceScheduledActionForRule>;
+	userStatuses: IBaseResults<deviceComplianceUserStatus>;
 }
 /*********************************************
 * deviceCompliancePolicyDeviceStateSummary
@@ -3335,6 +4098,9 @@ export interface deviceCompliancePolicyDeviceStateSummaryProps {
 export interface deviceCompliancePolicyDeviceStateSummaryMethods {
 
 }
+export interface deviceCompliancePolicyDeviceStateSummaryOData {
+
+}
 /*********************************************
 * deviceCompliancePolicySettingStateSummary
 **********************************************/
@@ -3352,8 +4118,11 @@ export interface deviceCompliancePolicySettingStateSummaryProps {
 	unknownDeviceCount: number;
 }
 export interface deviceCompliancePolicySettingStateSummaryMethods {
-	deviceComplianceSettingStates(): IBaseCollection<deviceComplianceSettingState>;
+	deviceComplianceSettingStates(): IBaseCollection<deviceComplianceSettingState, deviceComplianceSettingStateOData>;
 	deviceComplianceSettingStates(id: string | number): IBaseQuery<deviceComplianceSettingState> & deviceComplianceSettingStateMethods;
+}
+export interface deviceCompliancePolicySettingStateSummaryOData {
+	deviceComplianceSettingStates: IBaseResults<deviceComplianceSettingState>;
 }
 /*********************************************
 * deviceConfigurationDeviceStateSummary
@@ -3371,6 +4140,9 @@ export interface deviceConfigurationDeviceStateSummaryProps {
 export interface deviceConfigurationDeviceStateSummaryMethods {
 
 }
+export interface deviceConfigurationDeviceStateSummaryOData {
+
+}
 /*********************************************
 * deviceConfiguration
 **********************************************/
@@ -3383,16 +4155,22 @@ export interface deviceConfigurationProps {
 	version: number;
 }
 export interface deviceConfigurationMethods {
-	assignments(): IBaseCollection<deviceConfigurationAssignment>;
+	assignments(): IBaseCollection<deviceConfigurationAssignment, deviceConfigurationAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<deviceConfigurationAssignment> & deviceConfigurationAssignmentMethods;
-	deviceSettingStateSummaries(): IBaseCollection<settingStateDeviceSummary>;
+	deviceSettingStateSummaries(): IBaseCollection<settingStateDeviceSummary, settingStateDeviceSummaryOData>;
 	deviceSettingStateSummaries(id: string | number): IBaseQuery<settingStateDeviceSummary> & settingStateDeviceSummaryMethods;
-	deviceStatuses(): IBaseCollection<deviceConfigurationDeviceStatus>;
+	deviceStatuses(): IBaseCollection<deviceConfigurationDeviceStatus, deviceConfigurationDeviceStatusOData>;
 	deviceStatuses(id: string | number): IBaseQuery<deviceConfigurationDeviceStatus> & deviceConfigurationDeviceStatusMethods;
 	deviceStatusOverview(): IBaseQuery<deviceConfigurationDeviceOverview> & deviceConfigurationDeviceOverviewMethods;
-	userStatuses(): IBaseCollection<deviceConfigurationUserStatus>;
+	userStatuses(): IBaseCollection<deviceConfigurationUserStatus, deviceConfigurationUserStatusOData>;
 	userStatuses(id: string | number): IBaseQuery<deviceConfigurationUserStatus> & deviceConfigurationUserStatusMethods;
 	userStatusOverview(): IBaseQuery<deviceConfigurationUserOverview> & deviceConfigurationUserOverviewMethods;
+}
+export interface deviceConfigurationOData {
+	assignments: IBaseResults<deviceConfigurationAssignment>;
+	deviceSettingStateSummaries: IBaseResults<settingStateDeviceSummary>;
+	deviceStatuses: IBaseResults<deviceConfigurationDeviceStatus>;
+	userStatuses: IBaseResults<deviceConfigurationUserStatus>;
 }
 /*********************************************
 * iosUpdateDeviceStatus
@@ -3412,6 +4190,9 @@ export interface iosUpdateDeviceStatusProps {
 	userPrincipalName: string;
 }
 export interface iosUpdateDeviceStatusMethods {
+
+}
+export interface iosUpdateDeviceStatusOData {
 
 }
 /*********************************************
@@ -3438,6 +4219,9 @@ export interface softwareUpdateStatusSummaryProps {
 export interface softwareUpdateStatusSummaryMethods {
 
 }
+export interface softwareUpdateStatusSummaryOData {
+
+}
 /*********************************************
 * complianceManagementPartner
 **********************************************/
@@ -3456,6 +4240,9 @@ export interface complianceManagementPartnerProps {
 export interface complianceManagementPartnerMethods {
 
 }
+export interface complianceManagementPartnerOData {
+
+}
 /*********************************************
 * onPremisesConditionalAccessSettings
 **********************************************/
@@ -3469,6 +4256,9 @@ export interface onPremisesConditionalAccessSettingsProps {
 export interface onPremisesConditionalAccessSettingsMethods {
 
 }
+export interface onPremisesConditionalAccessSettingsOData {
+
+}
 /*********************************************
 * deviceCategory
 **********************************************/
@@ -3478,6 +4268,9 @@ export interface deviceCategoryProps {
 	displayName: string;
 }
 export interface deviceCategoryMethods {
+
+}
+export interface deviceCategoryOData {
 
 }
 /*********************************************
@@ -3493,8 +4286,11 @@ export interface deviceEnrollmentConfigurationProps {
 	version: number;
 }
 export interface deviceEnrollmentConfigurationMethods {
-	assignments(): IBaseCollection<enrollmentConfigurationAssignment>;
+	assignments(): IBaseCollection<enrollmentConfigurationAssignment, enrollmentConfigurationAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<enrollmentConfigurationAssignment> & enrollmentConfigurationAssignmentMethods;
+}
+export interface deviceEnrollmentConfigurationOData {
+	assignments: IBaseResults<enrollmentConfigurationAssignment>;
 }
 /*********************************************
 * deviceManagementPartner
@@ -3514,6 +4310,9 @@ export interface deviceManagementPartnerProps {
 export interface deviceManagementPartnerMethods {
 
 }
+export interface deviceManagementPartnerOData {
+
+}
 /*********************************************
 * deviceManagementExchangeConnector
 **********************************************/
@@ -3530,6 +4329,9 @@ export interface deviceManagementExchangeConnectorProps {
 	version: string;
 }
 export interface deviceManagementExchangeConnectorMethods {
+
+}
+export interface deviceManagementExchangeConnectorOData {
 
 }
 /*********************************************
@@ -3556,6 +4358,9 @@ export interface mobileThreatDefenseConnectorProps {
 export interface mobileThreatDefenseConnectorMethods {
 
 }
+export interface mobileThreatDefenseConnectorOData {
+
+}
 /*********************************************
 * applePushNotificationCertificate
 **********************************************/
@@ -3573,6 +4378,9 @@ export interface applePushNotificationCertificateProps {
 export interface applePushNotificationCertificateMethods {
 
 }
+export interface applePushNotificationCertificateOData {
+
+}
 /*********************************************
 * detectedApp
 **********************************************/
@@ -3586,8 +4394,11 @@ export interface detectedAppProps {
 	version: string;
 }
 export interface detectedAppMethods {
-	managedDevices(): IBaseCollection<managedDevice>;
+	managedDevices(): IBaseCollection<managedDevice, managedDeviceOData>;
 	managedDevices(id: string | number): IBaseQuery<managedDevice> & managedDeviceMethods;
+}
+export interface detectedAppOData {
+	managedDevices: IBaseResults<managedDevice>;
 }
 /*********************************************
 * managedDeviceOverview
@@ -3603,6 +4414,9 @@ export interface managedDeviceOverviewProps {
 export interface managedDeviceOverviewMethods {
 
 }
+export interface managedDeviceOverviewOData {
+
+}
 /*********************************************
 * mobileAppTroubleshootingEvent
 **********************************************/
@@ -3611,8 +4425,11 @@ export interface mobileAppTroubleshootingEventProps {
 
 }
 export interface mobileAppTroubleshootingEventMethods {
-	appLogCollectionRequests(): IBaseCollection<appLogCollectionRequest>;
+	appLogCollectionRequests(): IBaseCollection<appLogCollectionRequest, appLogCollectionRequestOData>;
 	appLogCollectionRequests(id: string | number): IBaseQuery<appLogCollectionRequest> & appLogCollectionRequestMethods;
+}
+export interface mobileAppTroubleshootingEventOData {
+	appLogCollectionRequests: IBaseResults<appLogCollectionRequest>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthApplicationPerformance
@@ -3632,6 +4449,9 @@ export interface userExperienceAnalyticsAppHealthApplicationPerformanceProps {
 export interface userExperienceAnalyticsAppHealthApplicationPerformanceMethods {
 
 }
+export interface userExperienceAnalyticsAppHealthApplicationPerformanceOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
 **********************************************/
@@ -3649,6 +4469,9 @@ export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetai
 export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsMethods {
 
 }
+export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
 **********************************************/
@@ -3664,6 +4487,9 @@ export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDevic
 	processedDateTime: any;
 }
 export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdMethods {
+
+}
+export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdOData {
 
 }
 /*********************************************
@@ -3684,6 +4510,9 @@ export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersionProps 
 export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersionMethods {
 
 }
+export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersionOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsAppHealthDeviceModelPerformance
 **********************************************/
@@ -3697,6 +4526,9 @@ export interface userExperienceAnalyticsAppHealthDeviceModelPerformanceProps {
 	modelAppHealthScore: number;
 }
 export interface userExperienceAnalyticsAppHealthDeviceModelPerformanceMethods {
+
+}
+export interface userExperienceAnalyticsAppHealthDeviceModelPerformanceOData {
 
 }
 /*********************************************
@@ -3719,6 +4551,9 @@ export interface userExperienceAnalyticsAppHealthDevicePerformanceProps {
 export interface userExperienceAnalyticsAppHealthDevicePerformanceMethods {
 
 }
+export interface userExperienceAnalyticsAppHealthDevicePerformanceOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsAppHealthDevicePerformanceDetails
 **********************************************/
@@ -3735,6 +4570,9 @@ export interface userExperienceAnalyticsAppHealthDevicePerformanceDetailsProps {
 export interface userExperienceAnalyticsAppHealthDevicePerformanceDetailsMethods {
 
 }
+export interface userExperienceAnalyticsAppHealthDevicePerformanceDetailsOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsAppHealthOSVersionPerformance
 **********************************************/
@@ -3749,6 +4587,9 @@ export interface userExperienceAnalyticsAppHealthOSVersionPerformanceProps {
 export interface userExperienceAnalyticsAppHealthOSVersionPerformanceMethods {
 
 }
+export interface userExperienceAnalyticsAppHealthOSVersionPerformanceOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsCategory
 **********************************************/
@@ -3757,8 +4598,11 @@ export interface userExperienceAnalyticsCategoryProps {
 	insights: ComplexTypes.userExperienceAnalyticsInsight[];
 }
 export interface userExperienceAnalyticsCategoryMethods {
-	metricValues(): IBaseCollection<userExperienceAnalyticsMetric>;
+	metricValues(): IBaseCollection<userExperienceAnalyticsMetric, userExperienceAnalyticsMetricOData>;
 	metricValues(id: string | number): IBaseQuery<userExperienceAnalyticsMetric> & userExperienceAnalyticsMetricMethods;
+}
+export interface userExperienceAnalyticsCategoryOData {
+	metricValues: IBaseResults<userExperienceAnalyticsMetric>;
 }
 /*********************************************
 * userExperienceAnalyticsBaseline
@@ -3777,6 +4621,9 @@ export interface userExperienceAnalyticsBaselineMethods {
 	rebootAnalyticsMetrics(): IBaseQuery<userExperienceAnalyticsCategory> & userExperienceAnalyticsCategoryMethods;
 	resourcePerformanceMetrics(): IBaseQuery<userExperienceAnalyticsCategory> & userExperienceAnalyticsCategoryMethods;
 	workFromAnywhereMetrics(): IBaseQuery<userExperienceAnalyticsCategory> & userExperienceAnalyticsCategoryMethods;
+}
+export interface userExperienceAnalyticsBaselineOData {
+
 }
 /*********************************************
 * userExperienceAnalyticsDevicePerformance
@@ -3807,6 +4654,9 @@ export interface userExperienceAnalyticsDevicePerformanceProps {
 export interface userExperienceAnalyticsDevicePerformanceMethods {
 
 }
+export interface userExperienceAnalyticsDevicePerformanceOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsDeviceScores
 **********************************************/
@@ -3823,6 +4673,9 @@ export interface userExperienceAnalyticsDeviceScoresProps {
 	workFromAnywhereScore: number;
 }
 export interface userExperienceAnalyticsDeviceScoresMethods {
+
+}
+export interface userExperienceAnalyticsDeviceScoresOData {
 
 }
 /*********************************************
@@ -3850,6 +4703,9 @@ export interface userExperienceAnalyticsDeviceStartupHistoryProps {
 export interface userExperienceAnalyticsDeviceStartupHistoryMethods {
 
 }
+export interface userExperienceAnalyticsDeviceStartupHistoryOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsDeviceStartupProcess
 **********************************************/
@@ -3862,6 +4718,9 @@ export interface userExperienceAnalyticsDeviceStartupProcessProps {
 	startupImpactInMs: number;
 }
 export interface userExperienceAnalyticsDeviceStartupProcessMethods {
+
+}
+export interface userExperienceAnalyticsDeviceStartupProcessOData {
 
 }
 /*********************************************
@@ -3879,6 +4738,9 @@ export interface userExperienceAnalyticsDeviceStartupProcessPerformanceProps {
 export interface userExperienceAnalyticsDeviceStartupProcessPerformanceMethods {
 
 }
+export interface userExperienceAnalyticsDeviceStartupProcessPerformanceOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsMetricHistory
 **********************************************/
@@ -3889,6 +4751,9 @@ export interface userExperienceAnalyticsMetricHistoryProps {
 	metricType: string;
 }
 export interface userExperienceAnalyticsMetricHistoryMethods {
+
+}
+export interface userExperienceAnalyticsMetricHistoryOData {
 
 }
 /*********************************************
@@ -3909,6 +4774,9 @@ export interface userExperienceAnalyticsModelScoresProps {
 export interface userExperienceAnalyticsModelScoresMethods {
 
 }
+export interface userExperienceAnalyticsModelScoresOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsOverview
 **********************************************/
@@ -3919,6 +4787,9 @@ export interface userExperienceAnalyticsOverviewProps {
 export interface userExperienceAnalyticsOverviewMethods {
 
 }
+export interface userExperienceAnalyticsOverviewOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsScoreHistory
 **********************************************/
@@ -3927,6 +4798,9 @@ export interface userExperienceAnalyticsScoreHistoryProps {
 	startupDateTime: any;
 }
 export interface userExperienceAnalyticsScoreHistoryMethods {
+
+}
+export interface userExperienceAnalyticsScoreHistoryOData {
 
 }
 /*********************************************
@@ -3949,6 +4823,9 @@ export interface userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricP
 export interface userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricMethods {
 
 }
+export interface userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsWorkFromAnywhereMetric
 **********************************************/
@@ -3957,8 +4834,11 @@ export interface userExperienceAnalyticsWorkFromAnywhereMetricProps {
 
 }
 export interface userExperienceAnalyticsWorkFromAnywhereMetricMethods {
-	metricDevices(): IBaseCollection<userExperienceAnalyticsWorkFromAnywhereDevice>;
+	metricDevices(): IBaseCollection<userExperienceAnalyticsWorkFromAnywhereDevice, userExperienceAnalyticsWorkFromAnywhereDeviceOData>;
 	metricDevices(id: string | number): IBaseQuery<userExperienceAnalyticsWorkFromAnywhereDevice> & userExperienceAnalyticsWorkFromAnywhereDeviceMethods;
+}
+export interface userExperienceAnalyticsWorkFromAnywhereMetricOData {
+	metricDevices: IBaseResults<userExperienceAnalyticsWorkFromAnywhereDevice>;
 }
 /*********************************************
 * userExperienceAnalyticsWorkFromAnywhereModelPerformance
@@ -3978,6 +4858,9 @@ export interface userExperienceAnalyticsWorkFromAnywhereModelPerformanceProps {
 export interface userExperienceAnalyticsWorkFromAnywhereModelPerformanceMethods {
 
 }
+export interface userExperienceAnalyticsWorkFromAnywhereModelPerformanceOData {
+
+}
 /*********************************************
 * windowsMalwareInformation
 **********************************************/
@@ -3990,8 +4873,11 @@ export interface windowsMalwareInformationProps {
 	severity: EnumTypes.windowsMalwareSeverity;
 }
 export interface windowsMalwareInformationMethods {
-	deviceMalwareStates(): IBaseCollection<malwareStateForWindowsDevice>;
+	deviceMalwareStates(): IBaseCollection<malwareStateForWindowsDevice, malwareStateForWindowsDeviceOData>;
 	deviceMalwareStates(id: string | number): IBaseQuery<malwareStateForWindowsDevice> & malwareStateForWindowsDeviceMethods;
+}
+export interface windowsMalwareInformationOData {
+	deviceMalwareStates: IBaseResults<malwareStateForWindowsDevice>;
 }
 /*********************************************
 * importedWindowsAutopilotDeviceIdentity
@@ -4007,6 +4893,9 @@ export interface importedWindowsAutopilotDeviceIdentityProps {
 	state: ComplexTypes.importedWindowsAutopilotDeviceIdentityState;
 }
 export interface importedWindowsAutopilotDeviceIdentityMethods {
+
+}
+export interface importedWindowsAutopilotDeviceIdentityOData {
 
 }
 /*********************************************
@@ -4034,6 +4923,9 @@ export interface windowsAutopilotDeviceIdentityProps {
 export interface windowsAutopilotDeviceIdentityMethods {
 
 }
+export interface windowsAutopilotDeviceIdentityOData {
+
+}
 /*********************************************
 * notificationMessageTemplate
 **********************************************/
@@ -4046,8 +4938,11 @@ export interface notificationMessageTemplateProps {
 	roleScopeTagIds: Array<string>[];
 }
 export interface notificationMessageTemplateMethods {
-	localizedNotificationMessages(): IBaseCollection<localizedNotificationMessage>;
+	localizedNotificationMessages(): IBaseCollection<localizedNotificationMessage, localizedNotificationMessageOData>;
 	localizedNotificationMessages(id: string | number): IBaseQuery<localizedNotificationMessage> & localizedNotificationMessageMethods;
+}
+export interface notificationMessageTemplateOData {
+	localizedNotificationMessages: IBaseResults<localizedNotificationMessage>;
 }
 /*********************************************
 * resourceOperation
@@ -4059,6 +4954,9 @@ export interface resourceOperationProps {
 	resourceName: string;
 }
 export interface resourceOperationMethods {
+
+}
+export interface resourceOperationOData {
 
 }
 /*********************************************
@@ -4073,6 +4971,9 @@ export interface roleAssignmentProps {
 export interface roleAssignmentMethods {
 	roleDefinition(): IBaseQuery<roleDefinition> & roleDefinitionMethods;
 }
+export interface roleAssignmentOData {
+
+}
 /*********************************************
 * deviceAndAppManagementRoleAssignment
 **********************************************/
@@ -4081,6 +4982,9 @@ export interface deviceAndAppManagementRoleAssignmentProps {
 	members: Array<string>[];
 }
 export interface deviceAndAppManagementRoleAssignmentMethods {
+
+}
+export interface deviceAndAppManagementRoleAssignmentOData {
 
 }
 /*********************************************
@@ -4094,8 +4998,11 @@ export interface roleDefinitionProps {
 	rolePermissions: ComplexTypes.rolePermission[];
 }
 export interface roleDefinitionMethods {
-	roleAssignments(): IBaseCollection<roleAssignment>;
+	roleAssignments(): IBaseCollection<roleAssignment, roleAssignmentOData>;
 	roleAssignments(id: string | number): IBaseQuery<roleAssignment> & roleAssignmentMethods;
+}
+export interface roleDefinitionOData {
+	roleAssignments: IBaseResults<roleAssignment>;
 }
 /*********************************************
 * remoteAssistancePartner
@@ -4110,6 +5017,9 @@ export interface remoteAssistancePartnerProps {
 export interface remoteAssistancePartnerMethods {
 
 }
+export interface remoteAssistancePartnerOData {
+
+}
 /*********************************************
 * deviceManagementReports
 **********************************************/
@@ -4118,8 +5028,11 @@ export interface deviceManagementReportsProps {
 
 }
 export interface deviceManagementReportsMethods {
-	exportJobs(): IBaseCollection<deviceManagementExportJob>;
+	exportJobs(): IBaseCollection<deviceManagementExportJob, deviceManagementExportJobOData>;
 	exportJobs(id: string | number): IBaseQuery<deviceManagementExportJob> & deviceManagementExportJobMethods;
+}
+export interface deviceManagementReportsOData {
+	exportJobs: IBaseResults<deviceManagementExportJob>;
 }
 /*********************************************
 * telecomExpenseManagementPartner
@@ -4135,6 +5048,9 @@ export interface telecomExpenseManagementPartnerProps {
 export interface telecomExpenseManagementPartnerMethods {
 
 }
+export interface telecomExpenseManagementPartnerOData {
+
+}
 /*********************************************
 * windowsInformationProtectionAppLearningSummary
 **********************************************/
@@ -4147,6 +5063,9 @@ export interface windowsInformationProtectionAppLearningSummaryProps {
 export interface windowsInformationProtectionAppLearningSummaryMethods {
 
 }
+export interface windowsInformationProtectionAppLearningSummaryOData {
+
+}
 /*********************************************
 * windowsInformationProtectionNetworkLearningSummary
 **********************************************/
@@ -4156,6 +5075,9 @@ export interface windowsInformationProtectionNetworkLearningSummaryProps {
 	url: string;
 }
 export interface windowsInformationProtectionNetworkLearningSummaryMethods {
+
+}
+export interface windowsInformationProtectionNetworkLearningSummaryOData {
 
 }
 /*********************************************
@@ -4170,6 +5092,9 @@ export interface authoredNoteProps {
 export interface authoredNoteMethods {
 
 }
+export interface authoredNoteOData {
+
+}
 /*********************************************
 * privacy
 **********************************************/
@@ -4178,8 +5103,11 @@ export interface privacyProps {
 
 }
 export interface privacyMethods {
-	subjectRightsRequests(): IBaseCollection<subjectRightsRequest>;
+	subjectRightsRequests(): IBaseCollection<subjectRightsRequest, subjectRightsRequestOData>;
 	subjectRightsRequests(id: string | number): IBaseQuery<subjectRightsRequest> & subjectRightsRequestMethods;
+}
+export interface privacyOData {
+	subjectRightsRequests: IBaseResults<subjectRightsRequest>;
 }
 /*********************************************
 * subjectRightsRequest
@@ -4212,13 +5140,18 @@ export interface subjectRightsRequestProps {
 	type: EnumTypes.subjectRightsRequestType;
 }
 export interface subjectRightsRequestMethods {
-	approvers(): IBaseCollection<user>;
+	approvers(): IBaseCollection<user, userOData>;
 	approvers(id: string | number): IBaseQuery<user> & userMethods;
-	collaborators(): IBaseCollection<user>;
+	collaborators(): IBaseCollection<user, userOData>;
 	collaborators(id: string | number): IBaseQuery<user> & userMethods;
-	notes(): IBaseCollection<authoredNote>;
+	notes(): IBaseCollection<authoredNote, authoredNoteOData>;
 	notes(id: string | number): IBaseQuery<authoredNote> & authoredNoteMethods;
 	team(): IBaseQuery<team> & teamMethods;
+}
+export interface subjectRightsRequestOData {
+	approvers: IBaseResults<user>;
+	collaborators: IBaseResults<user>;
+	notes: IBaseResults<authoredNote>;
 }
 /*********************************************
 * security
@@ -4228,25 +5161,33 @@ export interface securityProps {
 
 }
 export interface securityMethods {
-	subjectRightsRequests(): IBaseCollection<subjectRightsRequest>;
+	subjectRightsRequests(): IBaseCollection<subjectRightsRequest, subjectRightsRequestOData>;
 	subjectRightsRequests(id: string | number): IBaseQuery<subjectRightsRequest> & subjectRightsRequestMethods;
 	cases(): IBaseQuery<casesRoot> & casesRootMethods;
 	identities(): IBaseQuery<identityContainer> & identityContainerMethods;
-	alerts_v2(): IBaseCollection<alert>;
+	alerts_v2(): IBaseCollection<alert, alertOData>;
 	alerts_v2(id: string | number): IBaseQuery<alert> & alertMethods;
-	incidents(): IBaseCollection<incident>;
+	incidents(): IBaseCollection<incident, incidentOData>;
 	incidents(id: string | number): IBaseQuery<incident> & incidentMethods;
 	attackSimulation(): IBaseQuery<attackSimulationRoot> & attackSimulationRootMethods;
 	labels(): IBaseQuery<labelsRoot> & labelsRootMethods;
 	triggers(): IBaseQuery<triggersRoot> & triggersRootMethods;
 	triggerTypes(): IBaseQuery<triggerTypesRoot> & triggerTypesRootMethods;
-	alerts(): IBaseCollection<alert>;
+	alerts(): IBaseCollection<alert, alertOData>;
 	alerts(id: string | number): IBaseQuery<alert> & alertMethods;
-	secureScoreControlProfiles(): IBaseCollection<secureScoreControlProfile>;
+	secureScoreControlProfiles(): IBaseCollection<secureScoreControlProfile, secureScoreControlProfileOData>;
 	secureScoreControlProfiles(id: string | number): IBaseQuery<secureScoreControlProfile> & secureScoreControlProfileMethods;
-	secureScores(): IBaseCollection<secureScore>;
+	secureScores(): IBaseCollection<secureScore, secureScoreOData>;
 	secureScores(id: string | number): IBaseQuery<secureScore> & secureScoreMethods;
 	threatIntelligence(): IBaseQuery<threatIntelligence> & threatIntelligenceMethods;
+}
+export interface securityOData {
+	subjectRightsRequests: IBaseResults<subjectRightsRequest>;
+	alerts_v2: IBaseResults<alert>;
+	incidents: IBaseResults<incident>;
+	alerts: IBaseResults<alert>;
+	secureScoreControlProfiles: IBaseResults<secureScoreControlProfile>;
+	secureScores: IBaseResults<secureScore>;
 }
 /*********************************************
 * attackSimulationRoot
@@ -4256,22 +5197,32 @@ export interface attackSimulationRootProps {
 
 }
 export interface attackSimulationRootMethods {
-	endUserNotifications(): IBaseCollection<endUserNotification>;
+	endUserNotifications(): IBaseCollection<endUserNotification, endUserNotificationOData>;
 	endUserNotifications(id: string | number): IBaseQuery<endUserNotification> & endUserNotificationMethods;
-	landingPages(): IBaseCollection<landingPage>;
+	landingPages(): IBaseCollection<landingPage, landingPageOData>;
 	landingPages(id: string | number): IBaseQuery<landingPage> & landingPageMethods;
-	loginPages(): IBaseCollection<loginPage>;
+	loginPages(): IBaseCollection<loginPage, loginPageOData>;
 	loginPages(id: string | number): IBaseQuery<loginPage> & loginPageMethods;
-	operations(): IBaseCollection<attackSimulationOperation>;
+	operations(): IBaseCollection<attackSimulationOperation, attackSimulationOperationOData>;
 	operations(id: string | number): IBaseQuery<attackSimulationOperation> & attackSimulationOperationMethods;
-	payloads(): IBaseCollection<payload>;
+	payloads(): IBaseCollection<payload, payloadOData>;
 	payloads(id: string | number): IBaseQuery<payload> & payloadMethods;
-	simulationAutomations(): IBaseCollection<simulationAutomation>;
+	simulationAutomations(): IBaseCollection<simulationAutomation, simulationAutomationOData>;
 	simulationAutomations(id: string | number): IBaseQuery<simulationAutomation> & simulationAutomationMethods;
-	simulations(): IBaseCollection<simulation>;
+	simulations(): IBaseCollection<simulation, simulationOData>;
 	simulations(id: string | number): IBaseQuery<simulation> & simulationMethods;
-	trainings(): IBaseCollection<training>;
+	trainings(): IBaseCollection<training, trainingOData>;
 	trainings(id: string | number): IBaseQuery<training> & trainingMethods;
+}
+export interface attackSimulationRootOData {
+	endUserNotifications: IBaseResults<endUserNotification>;
+	landingPages: IBaseResults<landingPage>;
+	loginPages: IBaseResults<loginPage>;
+	operations: IBaseResults<attackSimulationOperation>;
+	payloads: IBaseResults<payload>;
+	simulationAutomations: IBaseResults<simulationAutomation>;
+	simulations: IBaseResults<simulation>;
+	trainings: IBaseResults<training>;
 }
 /*********************************************
 * alert
@@ -4314,6 +5265,9 @@ export interface alertProps {
 export interface alertMethods {
 
 }
+export interface alertOData {
+
+}
 /*********************************************
 * secureScoreControlProfile
 **********************************************/
@@ -4342,6 +5296,9 @@ export interface secureScoreControlProfileProps {
 export interface secureScoreControlProfileMethods {
 
 }
+export interface secureScoreControlProfileOData {
+
+}
 /*********************************************
 * secureScore
 **********************************************/
@@ -4359,6 +5316,9 @@ export interface secureScoreProps {
 	vendorInformation: ComplexTypes.securityVendorInformation;
 }
 export interface secureScoreMethods {
+
+}
+export interface secureScoreOData {
 
 }
 /*********************************************
@@ -4379,14 +5339,20 @@ export interface channelProps {
 }
 export interface channelMethods {
 	filesFolder(): IBaseQuery<driveItem> & driveItemMethods;
-	members(): IBaseCollection<conversationMember>;
+	members(): IBaseCollection<conversationMember, conversationMemberOData>;
 	members(id: string | number): IBaseQuery<conversationMember> & conversationMemberMethods;
-	messages(): IBaseCollection<chatMessage>;
+	messages(): IBaseCollection<chatMessage, chatMessageOData>;
 	messages(id: string | number): IBaseQuery<chatMessage> & chatMessageMethods;
-	sharedWithTeams(): IBaseCollection<sharedWithChannelTeamInfo>;
+	sharedWithTeams(): IBaseCollection<sharedWithChannelTeamInfo, sharedWithChannelTeamInfoOData>;
 	sharedWithTeams(id: string | number): IBaseQuery<sharedWithChannelTeamInfo> & sharedWithChannelTeamInfoMethods;
-	tabs(): IBaseCollection<teamsTab>;
+	tabs(): IBaseCollection<teamsTab, teamsTabOData>;
 	tabs(id: string | number): IBaseQuery<teamsTab> & teamsTabMethods;
+}
+export interface channelOData {
+	members: IBaseResults<conversationMember>;
+	messages: IBaseResults<chatMessage>;
+	sharedWithTeams: IBaseResults<sharedWithChannelTeamInfo>;
+	tabs: IBaseResults<teamsTab>;
 }
 /*********************************************
 * teamsAppInstallation
@@ -4399,6 +5365,9 @@ export interface teamsAppInstallationMethods {
 	teamsApp(): IBaseQuery<teamsApp> & teamsAppMethods;
 	teamsAppDefinition(): IBaseQuery<teamsAppDefinition> & teamsAppDefinitionMethods;
 }
+export interface teamsAppInstallationOData {
+
+}
 /*********************************************
 * conversationMember
 **********************************************/
@@ -4409,6 +5378,9 @@ export interface conversationMemberProps {
 	visibleHistoryStartDateTime: any;
 }
 export interface conversationMemberMethods {
+
+}
+export interface conversationMemberOData {
 
 }
 /*********************************************
@@ -4428,6 +5400,9 @@ export interface teamsAsyncOperationProps {
 export interface teamsAsyncOperationMethods {
 
 }
+export interface teamsAsyncOperationOData {
+
+}
 /*********************************************
 * teamworkTag
 **********************************************/
@@ -4440,8 +5415,11 @@ export interface teamworkTagProps {
 	teamId: string;
 }
 export interface teamworkTagMethods {
-	members(): IBaseCollection<teamworkTagMember>;
+	members(): IBaseCollection<teamworkTagMember, teamworkTagMemberOData>;
 	members(id: string | number): IBaseQuery<teamworkTagMember> & teamworkTagMemberMethods;
+}
+export interface teamworkTagOData {
+	members: IBaseResults<teamworkTagMember>;
 }
 /*********************************************
 * teamsTemplate
@@ -4451,6 +5429,9 @@ export interface teamsTemplateProps {
 
 }
 export interface teamsTemplateMethods {
+
+}
+export interface teamsTemplateOData {
 
 }
 /*********************************************
@@ -4470,24 +5451,35 @@ export interface scheduleProps {
 	workforceIntegrationIds: Array<string>[];
 }
 export interface scheduleMethods {
-	offerShiftRequests(): IBaseCollection<offerShiftRequest>;
+	offerShiftRequests(): IBaseCollection<offerShiftRequest, offerShiftRequestOData>;
 	offerShiftRequests(id: string | number): IBaseQuery<offerShiftRequest> & offerShiftRequestMethods;
-	openShiftChangeRequests(): IBaseCollection<openShiftChangeRequest>;
+	openShiftChangeRequests(): IBaseCollection<openShiftChangeRequest, openShiftChangeRequestOData>;
 	openShiftChangeRequests(id: string | number): IBaseQuery<openShiftChangeRequest> & openShiftChangeRequestMethods;
-	openShifts(): IBaseCollection<openShift>;
+	openShifts(): IBaseCollection<openShift, openShiftOData>;
 	openShifts(id: string | number): IBaseQuery<openShift> & openShiftMethods;
-	schedulingGroups(): IBaseCollection<schedulingGroup>;
+	schedulingGroups(): IBaseCollection<schedulingGroup, schedulingGroupOData>;
 	schedulingGroups(id: string | number): IBaseQuery<schedulingGroup> & schedulingGroupMethods;
-	shifts(): IBaseCollection<shift>;
+	shifts(): IBaseCollection<shift, shiftOData>;
 	shifts(id: string | number): IBaseQuery<shift> & shiftMethods;
-	swapShiftsChangeRequests(): IBaseCollection<swapShiftsChangeRequest>;
+	swapShiftsChangeRequests(): IBaseCollection<swapShiftsChangeRequest, swapShiftsChangeRequestOData>;
 	swapShiftsChangeRequests(id: string | number): IBaseQuery<swapShiftsChangeRequest> & swapShiftsChangeRequestMethods;
-	timeOffReasons(): IBaseCollection<timeOffReason>;
+	timeOffReasons(): IBaseCollection<timeOffReason, timeOffReasonOData>;
 	timeOffReasons(id: string | number): IBaseQuery<timeOffReason> & timeOffReasonMethods;
-	timeOffRequests(): IBaseCollection<timeOffRequest>;
+	timeOffRequests(): IBaseCollection<timeOffRequest, timeOffRequestOData>;
 	timeOffRequests(id: string | number): IBaseQuery<timeOffRequest> & timeOffRequestMethods;
-	timesOff(): IBaseCollection<timeOff>;
+	timesOff(): IBaseCollection<timeOff, timeOffOData>;
 	timesOff(id: string | number): IBaseQuery<timeOff> & timeOffMethods;
+}
+export interface scheduleOData {
+	offerShiftRequests: IBaseResults<offerShiftRequest>;
+	openShiftChangeRequests: IBaseResults<openShiftChangeRequest>;
+	openShifts: IBaseResults<openShift>;
+	schedulingGroups: IBaseResults<schedulingGroup>;
+	shifts: IBaseResults<shift>;
+	swapShiftsChangeRequests: IBaseResults<swapShiftsChangeRequest>;
+	timeOffReasons: IBaseResults<timeOffReason>;
+	timeOffRequests: IBaseResults<timeOffRequest>;
+	timesOff: IBaseResults<timeOff>;
 }
 /*********************************************
 * compliance
@@ -4499,6 +5491,9 @@ export interface complianceProps {
 export interface complianceMethods {
 
 }
+export interface complianceOData {
+
+}
 /*********************************************
 * itemAnalytics
 **********************************************/
@@ -4508,9 +5503,12 @@ export interface itemAnalyticsProps {
 }
 export interface itemAnalyticsMethods {
 	allTime(): IBaseQuery<itemActivityStat> & itemActivityStatMethods;
-	itemActivityStats(): IBaseCollection<itemActivityStat>;
+	itemActivityStats(): IBaseCollection<itemActivityStat, itemActivityStatOData>;
 	itemActivityStats(id: string | number): IBaseQuery<itemActivityStat> & itemActivityStatMethods;
 	lastSevenDays(): IBaseQuery<itemActivityStat> & itemActivityStatMethods;
+}
+export interface itemAnalyticsOData {
+	itemActivityStats: IBaseResults<itemActivityStat>;
 }
 /*********************************************
 * columnDefinition
@@ -4553,6 +5551,9 @@ export interface columnDefinitionMethods {
 	sourceColumn(): IBaseQuery<columnDefinition> & columnDefinitionMethods;
 	update(values: any): IBaseQuery<void>;
 }
+export interface columnDefinitionOData {
+
+}
 /*********************************************
 * contentType
 **********************************************/
@@ -4575,15 +5576,21 @@ export interface contentTypeProps {
 }
 export interface contentTypeMethods {
 	base(): IBaseQuery<contentType> & contentTypeMethods;
-	baseTypes(): IBaseCollection<contentType>;
+	baseTypes(): IBaseCollection<contentType, contentTypeOData>;
 	baseTypes(id: string | number): IBaseQuery<contentType> & contentTypeMethods;
-	columnLinks(): IBaseCollection<columnLink>;
+	columnLinks(): IBaseCollection<columnLink, columnLinkOData>;
 	columnLinks(id: string | number): IBaseQuery<columnLink> & columnLinkMethods;
-	columnPositions(): IBaseCollection<columnDefinition>;
+	columnPositions(): IBaseCollection<columnDefinition, columnDefinitionOData>;
 	columnPositions(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
-	columns(): IBaseCollection<columnDefinition>;
+	columns(): IBaseCollection<columnDefinition, columnDefinitionOData>;
 	columns(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
 	update(values: any): IBaseQuery<void>;
+}
+export interface contentTypeOData {
+	baseTypes: IBaseResults<contentType>;
+	columnLinks: IBaseResults<columnLink>;
+	columnPositions: IBaseResults<columnDefinition>;
+	columns: IBaseResults<columnDefinition>;
 }
 /*********************************************
 * list
@@ -4596,18 +5603,25 @@ export interface listProps {
 	system: ComplexTypes.systemFacet;
 }
 export interface listMethods {
-	columns(): IBaseCollection<columnDefinition>;
+	columns(): IBaseCollection<columnDefinition, columnDefinitionOData>;
 	columns(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
-	contentTypes(): IBaseCollection<contentType>;
+	contentTypes(): IBaseCollection<contentType, contentTypeOData>;
 	contentTypes(id: string | number): IBaseQuery<contentType> & contentTypeMethods;
 	drive(): IBaseQuery<drive> & driveMethods;
-	items(): IBaseCollection<listItem>;
+	items(): IBaseCollection<listItem, listItemOData>;
 	items(id: string | number): IBaseQuery<listItem> & listItemMethods;
-	operations(): IBaseCollection<richLongRunningOperation>;
+	operations(): IBaseCollection<richLongRunningOperation, richLongRunningOperationOData>;
 	operations(id: string | number): IBaseQuery<richLongRunningOperation> & richLongRunningOperationMethods;
-	subscriptions(): IBaseCollection<subscription>;
+	subscriptions(): IBaseCollection<subscription, subscriptionOData>;
 	subscriptions(id: string | number): IBaseQuery<subscription> & subscriptionMethods;
 	update(values: any): IBaseQuery<void>;
+}
+export interface listOData {
+	columns: IBaseResults<columnDefinition>;
+	contentTypes: IBaseResults<contentType>;
+	items: IBaseResults<listItem>;
+	operations: IBaseResults<richLongRunningOperation>;
+	subscriptions: IBaseResults<subscription>;
 }
 /*********************************************
 * longRunningOperation
@@ -4623,6 +5637,9 @@ export interface longRunningOperationProps {
 export interface longRunningOperationMethods {
 
 }
+export interface longRunningOperationOData {
+
+}
 /*********************************************
 * richLongRunningOperation
 **********************************************/
@@ -4636,6 +5653,9 @@ export interface richLongRunningOperationProps {
 export interface richLongRunningOperationMethods {
 
 }
+export interface richLongRunningOperationOData {
+
+}
 /*********************************************
 * baseSitePage
 **********************************************/
@@ -4646,6 +5666,9 @@ export interface baseSitePageProps {
 	title: string;
 }
 export interface baseSitePageMethods {
+
+}
+export interface baseSitePageOData {
 
 }
 /*********************************************
@@ -4668,6 +5691,9 @@ export interface permissionProps {
 export interface permissionMethods {
 	update(values: any): IBaseQuery<void>;
 }
+export interface permissionOData {
+
+}
 /*********************************************
 * authenticationConditionApplication
 **********************************************/
@@ -4676,6 +5702,9 @@ export interface authenticationConditionApplicationProps {
 	appId: string;
 }
 export interface authenticationConditionApplicationMethods {
+
+}
+export interface authenticationConditionApplicationOData {
 
 }
 /*********************************************
@@ -4691,6 +5720,9 @@ export interface identityUserFlowAttributeProps {
 export interface identityUserFlowAttributeMethods {
 
 }
+export interface identityUserFlowAttributeOData {
+
+}
 /*********************************************
 * identityProviderBase
 **********************************************/
@@ -4699,6 +5731,9 @@ export interface identityProviderBaseProps {
 	displayName: string;
 }
 export interface identityProviderBaseMethods {
+
+}
+export interface identityProviderBaseOData {
 
 }
 /*********************************************
@@ -4711,6 +5746,9 @@ export interface customAuthenticationExtensionProps {
 export interface customAuthenticationExtensionMethods {
 
 }
+export interface customAuthenticationExtensionOData {
+
+}
 /*********************************************
 * onTokenIssuanceStartCustomExtension
 **********************************************/
@@ -4719,6 +5757,9 @@ export interface onTokenIssuanceStartCustomExtensionProps {
 	claimsForTokenConfiguration: ComplexTypes.onTokenIssuanceStartReturnClaim[];
 }
 export interface onTokenIssuanceStartCustomExtensionMethods {
+
+}
+export interface onTokenIssuanceStartCustomExtensionOData {
 
 }
 /*********************************************
@@ -4731,6 +5772,9 @@ export interface identityApiConnectorProps {
 	targetUrl: string;
 }
 export interface identityApiConnectorMethods {
+
+}
+export interface identityApiConnectorOData {
 
 }
 /*********************************************
@@ -4746,6 +5790,9 @@ export interface appleManagedIdentityProviderProps {
 export interface appleManagedIdentityProviderMethods {
 
 }
+export interface appleManagedIdentityProviderOData {
+
+}
 /*********************************************
 * authenticationEventListener
 **********************************************/
@@ -4755,6 +5802,9 @@ export interface authenticationEventListenerProps {
 	conditions: ComplexTypes.authenticationConditions;
 }
 export interface authenticationEventListenerMethods {
+
+}
+export interface authenticationEventListenerOData {
 
 }
 /*********************************************
@@ -4769,6 +5819,9 @@ export interface authenticationEventsFlowProps {
 export interface authenticationEventsFlowMethods {
 
 }
+export interface authenticationEventsFlowOData {
+
+}
 /*********************************************
 * identityUserFlow
 **********************************************/
@@ -4780,6 +5833,9 @@ export interface identityUserFlowProps {
 export interface identityUserFlowMethods {
 
 }
+export interface identityUserFlowOData {
+
+}
 /*********************************************
 * b2xIdentityUserFlow
 **********************************************/
@@ -4788,14 +5844,20 @@ export interface b2xIdentityUserFlowProps {
 	apiConnectorConfiguration: ComplexTypes.userFlowApiConnectorConfiguration;
 }
 export interface b2xIdentityUserFlowMethods {
-	identityProviders(): IBaseCollection<identityProvider>;
+	identityProviders(): IBaseCollection<identityProvider, identityProviderOData>;
 	identityProviders(id: string | number): IBaseQuery<identityProvider> & identityProviderMethods;
-	languages(): IBaseCollection<userFlowLanguageConfiguration>;
+	languages(): IBaseCollection<userFlowLanguageConfiguration, userFlowLanguageConfigurationOData>;
 	languages(id: string | number): IBaseQuery<userFlowLanguageConfiguration> & userFlowLanguageConfigurationMethods;
-	userAttributeAssignments(): IBaseCollection<identityUserFlowAttributeAssignment>;
+	userAttributeAssignments(): IBaseCollection<identityUserFlowAttributeAssignment, identityUserFlowAttributeAssignmentOData>;
 	userAttributeAssignments(id: string | number): IBaseQuery<identityUserFlowAttributeAssignment> & identityUserFlowAttributeAssignmentMethods;
-	userFlowIdentityProviders(): IBaseCollection<identityProviderBase>;
+	userFlowIdentityProviders(): IBaseCollection<identityProviderBase, identityProviderBaseOData>;
 	userFlowIdentityProviders(id: string | number): IBaseQuery<identityProviderBase> & identityProviderBaseMethods;
+}
+export interface b2xIdentityUserFlowOData {
+	identityProviders: IBaseResults<identityProvider>;
+	languages: IBaseResults<userFlowLanguageConfiguration>;
+	userAttributeAssignments: IBaseResults<identityUserFlowAttributeAssignment>;
+	userFlowIdentityProviders: IBaseResults<identityProviderBase>;
 }
 /*********************************************
 * identityProvider
@@ -4810,6 +5872,9 @@ export interface identityProviderProps {
 export interface identityProviderMethods {
 
 }
+export interface identityProviderOData {
+
+}
 /*********************************************
 * userFlowLanguageConfiguration
 **********************************************/
@@ -4819,10 +5884,14 @@ export interface userFlowLanguageConfigurationProps {
 	isEnabled: boolean;
 }
 export interface userFlowLanguageConfigurationMethods {
-	defaultPages(): IBaseCollection<userFlowLanguagePage>;
+	defaultPages(): IBaseCollection<userFlowLanguagePage, userFlowLanguagePageOData>;
 	defaultPages(id: string | number): IBaseQuery<userFlowLanguagePage> & userFlowLanguagePageMethods;
-	overridesPages(): IBaseCollection<userFlowLanguagePage>;
+	overridesPages(): IBaseCollection<userFlowLanguagePage, userFlowLanguagePageOData>;
 	overridesPages(id: string | number): IBaseQuery<userFlowLanguagePage> & userFlowLanguagePageMethods;
+}
+export interface userFlowLanguageConfigurationOData {
+	defaultPages: IBaseResults<userFlowLanguagePage>;
+	overridesPages: IBaseResults<userFlowLanguagePage>;
 }
 /*********************************************
 * identityUserFlowAttributeAssignment
@@ -4838,6 +5907,9 @@ export interface identityUserFlowAttributeAssignmentProps {
 export interface identityUserFlowAttributeAssignmentMethods {
 	userAttribute(): IBaseQuery<identityUserFlowAttribute> & identityUserFlowAttributeMethods;
 }
+export interface identityUserFlowAttributeAssignmentOData {
+
+}
 /*********************************************
 * builtInIdentityProvider
 **********************************************/
@@ -4846,6 +5918,9 @@ export interface builtInIdentityProviderProps {
 	identityProviderType: string;
 }
 export interface builtInIdentityProviderMethods {
+
+}
+export interface builtInIdentityProviderOData {
 
 }
 /*********************************************
@@ -4861,6 +5936,9 @@ export interface externalUsersSelfServiceSignUpEventsFlowProps {
 export interface externalUsersSelfServiceSignUpEventsFlowMethods {
 
 }
+export interface externalUsersSelfServiceSignUpEventsFlowOData {
+
+}
 /*********************************************
 * identityBuiltInUserFlowAttribute
 **********************************************/
@@ -4871,6 +5949,9 @@ export interface identityBuiltInUserFlowAttributeProps {
 export interface identityBuiltInUserFlowAttributeMethods {
 
 }
+export interface identityBuiltInUserFlowAttributeOData {
+
+}
 /*********************************************
 * identityContainer
 **********************************************/
@@ -4879,10 +5960,14 @@ export interface identityContainerProps {
 
 }
 export interface identityContainerMethods {
-	healthIssues(): IBaseCollection<healthIssue>;
+	healthIssues(): IBaseCollection<healthIssue, healthIssueOData>;
 	healthIssues(id: string | number): IBaseQuery<healthIssue> & healthIssueMethods;
-	sensors(): IBaseCollection<sensor>;
+	sensors(): IBaseCollection<sensor, sensorOData>;
 	sensors(id: string | number): IBaseQuery<sensor> & sensorMethods;
+}
+export interface identityContainerOData {
+	healthIssues: IBaseResults<healthIssue>;
+	sensors: IBaseResults<sensor>;
 }
 /*********************************************
 * identityCustomUserFlowAttribute
@@ -4892,6 +5977,9 @@ export interface identityCustomUserFlowAttributeProps {
 
 }
 export interface identityCustomUserFlowAttributeMethods {
+
+}
+export interface identityCustomUserFlowAttributeOData {
 
 }
 /*********************************************
@@ -4904,6 +5992,9 @@ export interface onAttributeCollectionListenerProps {
 export interface onAttributeCollectionListenerMethods {
 
 }
+export interface onAttributeCollectionListenerOData {
+
+}
 /*********************************************
 * onAuthenticationMethodLoadStartListener
 **********************************************/
@@ -4912,6 +6003,9 @@ export interface onAuthenticationMethodLoadStartListenerProps {
 	handler: ComplexTypes.onAuthenticationMethodLoadStartHandler;
 }
 export interface onAuthenticationMethodLoadStartListenerMethods {
+
+}
+export interface onAuthenticationMethodLoadStartListenerOData {
 
 }
 /*********************************************
@@ -4924,6 +6018,9 @@ export interface onInteractiveAuthFlowStartListenerProps {
 export interface onInteractiveAuthFlowStartListenerMethods {
 
 }
+export interface onInteractiveAuthFlowStartListenerOData {
+
+}
 /*********************************************
 * onTokenIssuanceStartListener
 **********************************************/
@@ -4934,6 +6031,9 @@ export interface onTokenIssuanceStartListenerProps {
 export interface onTokenIssuanceStartListenerMethods {
 
 }
+export interface onTokenIssuanceStartListenerOData {
+
+}
 /*********************************************
 * onUserCreateStartListener
 **********************************************/
@@ -4942,6 +6042,9 @@ export interface onUserCreateStartListenerProps {
 	handler: ComplexTypes.onUserCreateStartHandler;
 }
 export interface onUserCreateStartListenerMethods {
+
+}
+export interface onUserCreateStartListenerOData {
 
 }
 /*********************************************
@@ -4956,6 +6059,9 @@ export interface socialIdentityProviderProps {
 export interface socialIdentityProviderMethods {
 
 }
+export interface socialIdentityProviderOData {
+
+}
 /*********************************************
 * userFlowLanguagePage
 **********************************************/
@@ -4964,6 +6070,9 @@ export interface userFlowLanguagePageProps {
 
 }
 export interface userFlowLanguagePageMethods {
+
+}
+export interface userFlowLanguagePageOData {
 
 }
 /*********************************************
@@ -4979,6 +6088,9 @@ export interface deviceLocalCredentialInfoProps {
 export interface deviceLocalCredentialInfoMethods {
 
 }
+export interface deviceLocalCredentialInfoOData {
+
+}
 /*********************************************
 * directory
 **********************************************/
@@ -4987,22 +6099,32 @@ export interface directoryProps {
 
 }
 export interface directoryMethods {
-	deviceLocalCredentials(): IBaseCollection<deviceLocalCredentialInfo>;
+	deviceLocalCredentials(): IBaseCollection<deviceLocalCredentialInfo, deviceLocalCredentialInfoOData>;
 	deviceLocalCredentials(id: string | number): IBaseQuery<deviceLocalCredentialInfo> & deviceLocalCredentialInfoMethods;
-	administrativeUnits(): IBaseCollection<administrativeUnit>;
+	administrativeUnits(): IBaseCollection<administrativeUnit, administrativeUnitOData>;
 	administrativeUnits(id: string | number): IBaseQuery<administrativeUnit> & administrativeUnitMethods;
-	attributeSets(): IBaseCollection<attributeSet>;
+	attributeSets(): IBaseCollection<attributeSet, attributeSetOData>;
 	attributeSets(id: string | number): IBaseQuery<attributeSet> & attributeSetMethods;
-	customSecurityAttributeDefinitions(): IBaseCollection<customSecurityAttributeDefinition>;
+	customSecurityAttributeDefinitions(): IBaseCollection<customSecurityAttributeDefinition, customSecurityAttributeDefinitionOData>;
 	customSecurityAttributeDefinitions(id: string | number): IBaseQuery<customSecurityAttributeDefinition> & customSecurityAttributeDefinitionMethods;
-	deletedItems(): IBaseCollection<directoryObject>;
+	deletedItems(): IBaseCollection<directoryObject, directoryObjectOData>;
 	deletedItems(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	federationConfigurations(): IBaseCollection<identityProviderBase>;
+	federationConfigurations(): IBaseCollection<identityProviderBase, identityProviderBaseOData>;
 	federationConfigurations(id: string | number): IBaseQuery<identityProviderBase> & identityProviderBaseMethods;
-	onPremisesSynchronization(): IBaseCollection<onPremisesDirectorySynchronization>;
+	onPremisesSynchronization(): IBaseCollection<onPremisesDirectorySynchronization, onPremisesDirectorySynchronizationOData>;
 	onPremisesSynchronization(id: string | number): IBaseQuery<onPremisesDirectorySynchronization> & onPremisesDirectorySynchronizationMethods;
-	subscriptions(): IBaseCollection<companySubscription>;
+	subscriptions(): IBaseCollection<companySubscription, companySubscriptionOData>;
 	subscriptions(id: string | number): IBaseQuery<companySubscription> & companySubscriptionMethods;
+}
+export interface directoryOData {
+	deviceLocalCredentials: IBaseResults<deviceLocalCredentialInfo>;
+	administrativeUnits: IBaseResults<administrativeUnit>;
+	attributeSets: IBaseResults<attributeSet>;
+	customSecurityAttributeDefinitions: IBaseResults<customSecurityAttributeDefinition>;
+	deletedItems: IBaseResults<directoryObject>;
+	federationConfigurations: IBaseResults<identityProviderBase>;
+	onPremisesSynchronization: IBaseResults<onPremisesDirectorySynchronization>;
+	subscriptions: IBaseResults<companySubscription>;
 }
 /*********************************************
 * administrativeUnit
@@ -5018,12 +6140,17 @@ export interface administrativeUnitProps {
 	visibility: string;
 }
 export interface administrativeUnitMethods {
-	members(): IBaseCollection<directoryObject>;
+	members(): IBaseCollection<directoryObject, directoryObjectOData>;
 	members(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	scopedRoleMembers(): IBaseCollection<scopedRoleMembership>;
+	scopedRoleMembers(): IBaseCollection<scopedRoleMembership, scopedRoleMembershipOData>;
 	scopedRoleMembers(id: string | number): IBaseQuery<scopedRoleMembership> & scopedRoleMembershipMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
+}
+export interface administrativeUnitOData {
+	members: IBaseResults<directoryObject>;
+	scopedRoleMembers: IBaseResults<scopedRoleMembership>;
+	extensions: IBaseResults<extension>;
 }
 /*********************************************
 * attributeSet
@@ -5034,6 +6161,9 @@ export interface attributeSetProps {
 	maxAttributesPerSet: number;
 }
 export interface attributeSetMethods {
+
+}
+export interface attributeSetOData {
 
 }
 /*********************************************
@@ -5051,8 +6181,11 @@ export interface customSecurityAttributeDefinitionProps {
 	usePreDefinedValuesOnly: boolean;
 }
 export interface customSecurityAttributeDefinitionMethods {
-	allowedValues(): IBaseCollection<allowedValue>;
+	allowedValues(): IBaseCollection<allowedValue, allowedValueOData>;
 	allowedValues(id: string | number): IBaseQuery<allowedValue> & allowedValueMethods;
+}
+export interface customSecurityAttributeDefinitionOData {
+	allowedValues: IBaseResults<allowedValue>;
 }
 /*********************************************
 * onPremisesDirectorySynchronization
@@ -5063,6 +6196,9 @@ export interface onPremisesDirectorySynchronizationProps {
 	features: ComplexTypes.onPremisesDirectorySynchronizationFeature;
 }
 export interface onPremisesDirectorySynchronizationMethods {
+
+}
+export interface onPremisesDirectorySynchronizationOData {
 
 }
 /*********************************************
@@ -5086,6 +6222,9 @@ export interface companySubscriptionProps {
 export interface companySubscriptionMethods {
 
 }
+export interface companySubscriptionOData {
+
+}
 /*********************************************
 * allowedValue
 **********************************************/
@@ -5094,6 +6233,9 @@ export interface allowedValueProps {
 	isActive: boolean;
 }
 export interface allowedValueMethods {
+
+}
+export interface allowedValueOData {
 
 }
 /*********************************************
@@ -5107,6 +6249,9 @@ export interface appScopeProps {
 export interface appScopeMethods {
 
 }
+export interface appScopeOData {
+
+}
 /*********************************************
 * certificateBasedAuthConfiguration
 **********************************************/
@@ -5115,6 +6260,9 @@ export interface certificateBasedAuthConfigurationProps {
 	certificateAuthorities: ComplexTypes.certificateAuthority[];
 }
 export interface certificateBasedAuthConfigurationMethods {
+
+}
+export interface certificateBasedAuthConfigurationOData {
 
 }
 /*********************************************
@@ -5128,6 +6276,9 @@ export interface contractProps {
 	displayName: string;
 }
 export interface contractMethods {
+
+}
+export interface contractOData {
 
 }
 /*********************************************
@@ -5146,6 +6297,9 @@ export interface crossTenantAccessPolicyConfigurationDefaultProps {
 	tenantRestrictions: ComplexTypes.crossTenantAccessPolicyTenantRestrictions;
 }
 export interface crossTenantAccessPolicyConfigurationDefaultMethods {
+
+}
+export interface crossTenantAccessPolicyConfigurationDefaultOData {
 
 }
 /*********************************************
@@ -5167,6 +6321,9 @@ export interface crossTenantAccessPolicyConfigurationPartnerProps {
 export interface crossTenantAccessPolicyConfigurationPartnerMethods {
 	identitySynchronization(): IBaseQuery<crossTenantIdentitySyncPolicyPartner> & crossTenantIdentitySyncPolicyPartnerMethods;
 }
+export interface crossTenantAccessPolicyConfigurationPartnerOData {
+
+}
 /*********************************************
 * policyTemplate
 **********************************************/
@@ -5178,6 +6335,9 @@ export interface policyTemplateMethods {
 	multiTenantOrganizationIdentitySynchronization(): IBaseQuery<multiTenantOrganizationIdentitySyncPolicyTemplate> & multiTenantOrganizationIdentitySyncPolicyTemplateMethods;
 	multiTenantOrganizationPartnerConfiguration(): IBaseQuery<multiTenantOrganizationPartnerConfigurationTemplate> & multiTenantOrganizationPartnerConfigurationTemplateMethods;
 }
+export interface policyTemplateOData {
+
+}
 /*********************************************
 * crossTenantIdentitySyncPolicyPartner
 **********************************************/
@@ -5188,6 +6348,9 @@ export interface crossTenantIdentitySyncPolicyPartnerProps {
 	userSyncInbound: ComplexTypes.crossTenantUserSyncInbound;
 }
 export interface crossTenantIdentitySyncPolicyPartnerMethods {
+
+}
+export interface crossTenantIdentitySyncPolicyPartnerOData {
 
 }
 /*********************************************
@@ -5227,16 +6390,23 @@ export interface deviceProps {
 	trustType: string;
 }
 export interface deviceMethods {
-	memberOf(): IBaseCollection<directoryObject>;
+	memberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	memberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	registeredOwners(): IBaseCollection<directoryObject>;
+	registeredOwners(): IBaseCollection<directoryObject, directoryObjectOData>;
 	registeredOwners(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	registeredUsers(): IBaseCollection<directoryObject>;
+	registeredUsers(): IBaseCollection<directoryObject, directoryObjectOData>;
 	registeredUsers(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	transitiveMemberOf(): IBaseCollection<directoryObject>;
+	transitiveMemberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	transitiveMemberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
+}
+export interface deviceOData {
+	memberOf: IBaseResults<directoryObject>;
+	registeredOwners: IBaseResults<directoryObject>;
+	registeredUsers: IBaseResults<directoryObject>;
+	transitiveMemberOf: IBaseResults<directoryObject>;
+	extensions: IBaseResults<extension>;
 }
 /*********************************************
 * directoryObjectPartnerReference
@@ -5251,6 +6421,9 @@ export interface directoryObjectPartnerReferenceProps {
 export interface directoryObjectPartnerReferenceMethods {
 
 }
+export interface directoryObjectPartnerReferenceOData {
+
+}
 /*********************************************
 * directoryRole
 **********************************************/
@@ -5261,10 +6434,14 @@ export interface directoryRoleProps {
 	roleTemplateId: string;
 }
 export interface directoryRoleMethods {
-	members(): IBaseCollection<directoryObject>;
+	members(): IBaseCollection<directoryObject, directoryObjectOData>;
 	members(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	scopedMembers(): IBaseCollection<scopedRoleMembership>;
+	scopedMembers(): IBaseCollection<scopedRoleMembership, scopedRoleMembershipOData>;
 	scopedMembers(id: string | number): IBaseQuery<scopedRoleMembership> & scopedRoleMembershipMethods;
+}
+export interface directoryRoleOData {
+	members: IBaseResults<directoryObject>;
+	scopedMembers: IBaseResults<scopedRoleMembership>;
 }
 /*********************************************
 * directoryRoleTemplate
@@ -5275,6 +6452,9 @@ export interface directoryRoleTemplateProps {
 	displayName: string;
 }
 export interface directoryRoleTemplateMethods {
+
+}
+export interface directoryRoleTemplateOData {
 
 }
 /*********************************************
@@ -5297,15 +6477,21 @@ export interface domainProps {
 	supportedServices: Array<string>[];
 }
 export interface domainMethods {
-	domainNameReferences(): IBaseCollection<directoryObject>;
+	domainNameReferences(): IBaseCollection<directoryObject, directoryObjectOData>;
 	domainNameReferences(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	federationConfiguration(): IBaseCollection<internalDomainFederation>;
+	federationConfiguration(): IBaseCollection<internalDomainFederation, internalDomainFederationOData>;
 	federationConfiguration(id: string | number): IBaseQuery<internalDomainFederation> & internalDomainFederationMethods;
 	rootDomain(): IBaseQuery<domain> & domainMethods;
-	serviceConfigurationRecords(): IBaseCollection<domainDnsRecord>;
+	serviceConfigurationRecords(): IBaseCollection<domainDnsRecord, domainDnsRecordOData>;
 	serviceConfigurationRecords(id: string | number): IBaseQuery<domainDnsRecord> & domainDnsRecordMethods;
-	verificationDnsRecords(): IBaseCollection<domainDnsRecord>;
+	verificationDnsRecords(): IBaseCollection<domainDnsRecord, domainDnsRecordOData>;
 	verificationDnsRecords(id: string | number): IBaseQuery<domainDnsRecord> & domainDnsRecordMethods;
+}
+export interface domainOData {
+	domainNameReferences: IBaseResults<directoryObject>;
+	federationConfiguration: IBaseResults<internalDomainFederation>;
+	serviceConfigurationRecords: IBaseResults<domainDnsRecord>;
+	verificationDnsRecords: IBaseResults<domainDnsRecord>;
 }
 /*********************************************
 * samlOrWsFedProvider
@@ -5319,6 +6505,9 @@ export interface samlOrWsFedProviderProps {
 	signingCertificate: string;
 }
 export interface samlOrWsFedProviderMethods {
+
+}
+export interface samlOrWsFedProviderOData {
 
 }
 /*********************************************
@@ -5337,6 +6526,9 @@ export interface internalDomainFederationProps {
 export interface internalDomainFederationMethods {
 
 }
+export interface internalDomainFederationOData {
+
+}
 /*********************************************
 * domainDnsRecord
 **********************************************/
@@ -5351,6 +6543,9 @@ export interface domainDnsRecordProps {
 export interface domainDnsRecordMethods {
 
 }
+export interface domainDnsRecordOData {
+
+}
 /*********************************************
 * domainDnsCnameRecord
 **********************************************/
@@ -5359,6 +6554,9 @@ export interface domainDnsCnameRecordProps {
 	canonicalName: string;
 }
 export interface domainDnsCnameRecordMethods {
+
+}
+export interface domainDnsCnameRecordOData {
 
 }
 /*********************************************
@@ -5370,6 +6568,9 @@ export interface domainDnsMxRecordProps {
 	preference: number;
 }
 export interface domainDnsMxRecordMethods {
+
+}
+export interface domainDnsMxRecordOData {
 
 }
 /*********************************************
@@ -5387,6 +6588,9 @@ export interface domainDnsSrvRecordProps {
 export interface domainDnsSrvRecordMethods {
 
 }
+export interface domainDnsSrvRecordOData {
+
+}
 /*********************************************
 * domainDnsTxtRecord
 **********************************************/
@@ -5395,6 +6599,9 @@ export interface domainDnsTxtRecordProps {
 	text: string;
 }
 export interface domainDnsTxtRecordMethods {
+
+}
+export interface domainDnsTxtRecordOData {
 
 }
 /*********************************************
@@ -5407,6 +6614,9 @@ export interface domainDnsUnavailableRecordProps {
 export interface domainDnsUnavailableRecordMethods {
 
 }
+export interface domainDnsUnavailableRecordOData {
+
+}
 /*********************************************
 * externalDomainName
 **********************************************/
@@ -5415,6 +6625,9 @@ export interface externalDomainNameProps {
 
 }
 export interface externalDomainNameMethods {
+
+}
+export interface externalDomainNameOData {
 
 }
 /*********************************************
@@ -5429,6 +6642,9 @@ export interface groupSettingTemplateProps {
 export interface groupSettingTemplateMethods {
 
 }
+export interface groupSettingTemplateOData {
+
+}
 /*********************************************
 * multiTenantOrganization
 **********************************************/
@@ -5441,8 +6657,11 @@ export interface multiTenantOrganizationProps {
 }
 export interface multiTenantOrganizationMethods {
 	joinRequest(): IBaseQuery<multiTenantOrganizationJoinRequestRecord> & multiTenantOrganizationJoinRequestRecordMethods;
-	tenants(): IBaseCollection<multiTenantOrganizationMember>;
+	tenants(): IBaseCollection<multiTenantOrganizationMember, multiTenantOrganizationMemberOData>;
 	tenants(id: string | number): IBaseQuery<multiTenantOrganizationMember> & multiTenantOrganizationMemberMethods;
+}
+export interface multiTenantOrganizationOData {
+	tenants: IBaseResults<multiTenantOrganizationMember>;
 }
 /*********************************************
 * multiTenantOrganizationJoinRequestRecord
@@ -5455,6 +6674,9 @@ export interface multiTenantOrganizationJoinRequestRecordProps {
 	transitionDetails: ComplexTypes.multiTenantOrganizationJoinRequestTransitionDetails;
 }
 export interface multiTenantOrganizationJoinRequestRecordMethods {
+
+}
+export interface multiTenantOrganizationJoinRequestRecordOData {
 
 }
 /*********************************************
@@ -5474,6 +6696,9 @@ export interface multiTenantOrganizationMemberProps {
 export interface multiTenantOrganizationMemberMethods {
 
 }
+export interface multiTenantOrganizationMemberOData {
+
+}
 /*********************************************
 * multiTenantOrganizationIdentitySyncPolicyTemplate
 **********************************************/
@@ -5483,6 +6708,9 @@ export interface multiTenantOrganizationIdentitySyncPolicyTemplateProps {
 	userSyncInbound: ComplexTypes.crossTenantUserSyncInbound;
 }
 export interface multiTenantOrganizationIdentitySyncPolicyTemplateMethods {
+
+}
+export interface multiTenantOrganizationIdentitySyncPolicyTemplateOData {
 
 }
 /*********************************************
@@ -5499,6 +6727,9 @@ export interface multiTenantOrganizationPartnerConfigurationTemplateProps {
 	templateApplicationLevel: EnumTypes.templateApplicationLevel;
 }
 export interface multiTenantOrganizationPartnerConfigurationTemplateMethods {
+
+}
+export interface multiTenantOrganizationPartnerConfigurationTemplateOData {
 
 }
 /*********************************************
@@ -5533,10 +6764,14 @@ export interface organizationProps {
 }
 export interface organizationMethods {
 	branding(): IBaseQuery<organizationalBranding> & organizationalBrandingMethods;
-	certificateBasedAuthConfiguration(): IBaseCollection<certificateBasedAuthConfiguration>;
+	certificateBasedAuthConfiguration(): IBaseCollection<certificateBasedAuthConfiguration, certificateBasedAuthConfigurationOData>;
 	certificateBasedAuthConfiguration(id: string | number): IBaseQuery<certificateBasedAuthConfiguration> & certificateBasedAuthConfigurationMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
+}
+export interface organizationOData {
+	certificateBasedAuthConfiguration: IBaseResults<certificateBasedAuthConfiguration>;
+	extensions: IBaseResults<extension>;
 }
 /*********************************************
 * organizationalBrandingProperties
@@ -5578,6 +6813,9 @@ export interface organizationalBrandingPropertiesProps {
 export interface organizationalBrandingPropertiesMethods {
 
 }
+export interface organizationalBrandingPropertiesOData {
+
+}
 /*********************************************
 * organizationalBranding
 **********************************************/
@@ -5586,8 +6824,11 @@ export interface organizationalBrandingProps {
 
 }
 export interface organizationalBrandingMethods {
-	localizations(): IBaseCollection<organizationalBrandingLocalization>;
+	localizations(): IBaseCollection<organizationalBrandingLocalization, organizationalBrandingLocalizationOData>;
 	localizations(id: string | number): IBaseQuery<organizationalBrandingLocalization> & organizationalBrandingLocalizationMethods;
+}
+export interface organizationalBrandingOData {
+	localizations: IBaseResults<organizationalBrandingLocalization>;
 }
 /*********************************************
 * organizationalBrandingLocalization
@@ -5597,6 +6838,9 @@ export interface organizationalBrandingLocalizationProps {
 
 }
 export interface organizationalBrandingLocalizationMethods {
+
+}
+export interface organizationalBrandingLocalizationOData {
 
 }
 /*********************************************
@@ -5621,13 +6865,18 @@ export interface orgContactProps {
 	surname: string;
 }
 export interface orgContactMethods {
-	directReports(): IBaseCollection<directoryObject>;
+	directReports(): IBaseCollection<directoryObject, directoryObjectOData>;
 	directReports(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
 	manager(): IBaseQuery<directoryObject> & directoryObjectMethods;
-	memberOf(): IBaseCollection<directoryObject>;
+	memberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	memberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	transitiveMemberOf(): IBaseCollection<directoryObject>;
+	transitiveMemberOf(): IBaseCollection<directoryObject, directoryObjectOData>;
 	transitiveMemberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface orgContactOData {
+	directReports: IBaseResults<directoryObject>;
+	memberOf: IBaseResults<directoryObject>;
+	transitiveMemberOf: IBaseResults<directoryObject>;
 }
 /*********************************************
 * permissionGrantConditionSet
@@ -5646,6 +6895,9 @@ export interface permissionGrantConditionSetProps {
 export interface permissionGrantConditionSetMethods {
 
 }
+export interface permissionGrantConditionSetOData {
+
+}
 /*********************************************
 * rbacApplication
 **********************************************/
@@ -5654,24 +6906,35 @@ export interface rbacApplicationProps {
 
 }
 export interface rbacApplicationMethods {
-	resourceNamespaces(): IBaseCollection<unifiedRbacResourceNamespace>;
+	resourceNamespaces(): IBaseCollection<unifiedRbacResourceNamespace, unifiedRbacResourceNamespaceOData>;
 	resourceNamespaces(id: string | number): IBaseQuery<unifiedRbacResourceNamespace> & unifiedRbacResourceNamespaceMethods;
-	roleAssignments(): IBaseCollection<unifiedRoleAssignment>;
+	roleAssignments(): IBaseCollection<unifiedRoleAssignment, unifiedRoleAssignmentOData>;
 	roleAssignments(id: string | number): IBaseQuery<unifiedRoleAssignment> & unifiedRoleAssignmentMethods;
-	roleDefinitions(): IBaseCollection<unifiedRoleDefinition>;
+	roleDefinitions(): IBaseCollection<unifiedRoleDefinition, unifiedRoleDefinitionOData>;
 	roleDefinitions(id: string | number): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
-	roleAssignmentScheduleInstances(): IBaseCollection<unifiedRoleAssignmentScheduleInstance>;
+	roleAssignmentScheduleInstances(): IBaseCollection<unifiedRoleAssignmentScheduleInstance, unifiedRoleAssignmentScheduleInstanceOData>;
 	roleAssignmentScheduleInstances(id: string | number): IBaseQuery<unifiedRoleAssignmentScheduleInstance> & unifiedRoleAssignmentScheduleInstanceMethods;
-	roleAssignmentScheduleRequests(): IBaseCollection<unifiedRoleAssignmentScheduleRequest>;
+	roleAssignmentScheduleRequests(): IBaseCollection<unifiedRoleAssignmentScheduleRequest, unifiedRoleAssignmentScheduleRequestOData>;
 	roleAssignmentScheduleRequests(id: string | number): IBaseQuery<unifiedRoleAssignmentScheduleRequest> & unifiedRoleAssignmentScheduleRequestMethods;
-	roleAssignmentSchedules(): IBaseCollection<unifiedRoleAssignmentSchedule>;
+	roleAssignmentSchedules(): IBaseCollection<unifiedRoleAssignmentSchedule, unifiedRoleAssignmentScheduleOData>;
 	roleAssignmentSchedules(id: string | number): IBaseQuery<unifiedRoleAssignmentSchedule> & unifiedRoleAssignmentScheduleMethods;
-	roleEligibilityScheduleInstances(): IBaseCollection<unifiedRoleEligibilityScheduleInstance>;
+	roleEligibilityScheduleInstances(): IBaseCollection<unifiedRoleEligibilityScheduleInstance, unifiedRoleEligibilityScheduleInstanceOData>;
 	roleEligibilityScheduleInstances(id: string | number): IBaseQuery<unifiedRoleEligibilityScheduleInstance> & unifiedRoleEligibilityScheduleInstanceMethods;
-	roleEligibilityScheduleRequests(): IBaseCollection<unifiedRoleEligibilityScheduleRequest>;
+	roleEligibilityScheduleRequests(): IBaseCollection<unifiedRoleEligibilityScheduleRequest, unifiedRoleEligibilityScheduleRequestOData>;
 	roleEligibilityScheduleRequests(id: string | number): IBaseQuery<unifiedRoleEligibilityScheduleRequest> & unifiedRoleEligibilityScheduleRequestMethods;
-	roleEligibilitySchedules(): IBaseCollection<unifiedRoleEligibilitySchedule>;
+	roleEligibilitySchedules(): IBaseCollection<unifiedRoleEligibilitySchedule, unifiedRoleEligibilityScheduleOData>;
 	roleEligibilitySchedules(id: string | number): IBaseQuery<unifiedRoleEligibilitySchedule> & unifiedRoleEligibilityScheduleMethods;
+}
+export interface rbacApplicationOData {
+	resourceNamespaces: IBaseResults<unifiedRbacResourceNamespace>;
+	roleAssignments: IBaseResults<unifiedRoleAssignment>;
+	roleDefinitions: IBaseResults<unifiedRoleDefinition>;
+	roleAssignmentScheduleInstances: IBaseResults<unifiedRoleAssignmentScheduleInstance>;
+	roleAssignmentScheduleRequests: IBaseResults<unifiedRoleAssignmentScheduleRequest>;
+	roleAssignmentSchedules: IBaseResults<unifiedRoleAssignmentSchedule>;
+	roleEligibilityScheduleInstances: IBaseResults<unifiedRoleEligibilityScheduleInstance>;
+	roleEligibilityScheduleRequests: IBaseResults<unifiedRoleEligibilityScheduleRequest>;
+	roleEligibilitySchedules: IBaseResults<unifiedRoleEligibilitySchedule>;
 }
 /*********************************************
 * unifiedRbacResourceNamespace
@@ -5681,8 +6944,11 @@ export interface unifiedRbacResourceNamespaceProps {
 	name: string;
 }
 export interface unifiedRbacResourceNamespaceMethods {
-	resourceActions(): IBaseCollection<unifiedRbacResourceAction>;
+	resourceActions(): IBaseCollection<unifiedRbacResourceAction, unifiedRbacResourceActionOData>;
 	resourceActions(id: string | number): IBaseQuery<unifiedRbacResourceAction> & unifiedRbacResourceActionMethods;
+}
+export interface unifiedRbacResourceNamespaceOData {
+	resourceActions: IBaseResults<unifiedRbacResourceAction>;
 }
 /*********************************************
 * unifiedRoleAssignment
@@ -5701,6 +6967,9 @@ export interface unifiedRoleAssignmentMethods {
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	roleDefinition(): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
 }
+export interface unifiedRoleAssignmentOData {
+
+}
 /*********************************************
 * unifiedRoleDefinition
 **********************************************/
@@ -5716,8 +6985,11 @@ export interface unifiedRoleDefinitionProps {
 	version: string;
 }
 export interface unifiedRoleDefinitionMethods {
-	inheritsPermissionsFrom(): IBaseCollection<unifiedRoleDefinition>;
+	inheritsPermissionsFrom(): IBaseCollection<unifiedRoleDefinition, unifiedRoleDefinitionOData>;
 	inheritsPermissionsFrom(id: string | number): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
+}
+export interface unifiedRoleDefinitionOData {
+	inheritsPermissionsFrom: IBaseResults<unifiedRoleDefinition>;
 }
 /*********************************************
 * unifiedRoleScheduleInstanceBase
@@ -5735,6 +7007,9 @@ export interface unifiedRoleScheduleInstanceBaseMethods {
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	roleDefinition(): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
 }
+export interface unifiedRoleScheduleInstanceBaseOData {
+
+}
 /*********************************************
 * unifiedRoleAssignmentScheduleInstance
 **********************************************/
@@ -5750,6 +7025,9 @@ export interface unifiedRoleAssignmentScheduleInstanceProps {
 export interface unifiedRoleAssignmentScheduleInstanceMethods {
 	activatedUsing(): IBaseQuery<unifiedRoleEligibilityScheduleInstance> & unifiedRoleEligibilityScheduleInstanceMethods;
 }
+export interface unifiedRoleAssignmentScheduleInstanceOData {
+
+}
 /*********************************************
 * request
 **********************************************/
@@ -5763,6 +7041,9 @@ export interface requestProps {
 	status: string;
 }
 export interface requestMethods {
+
+}
+export interface requestOData {
 
 }
 /*********************************************
@@ -5789,6 +7070,9 @@ export interface unifiedRoleAssignmentScheduleRequestMethods {
 	roleDefinition(): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
 	targetSchedule(): IBaseQuery<unifiedRoleAssignmentSchedule> & unifiedRoleAssignmentScheduleMethods;
 }
+export interface unifiedRoleAssignmentScheduleRequestOData {
+
+}
 /*********************************************
 * unifiedRoleScheduleBase
 **********************************************/
@@ -5809,6 +7093,9 @@ export interface unifiedRoleScheduleBaseMethods {
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	roleDefinition(): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
 }
+export interface unifiedRoleScheduleBaseOData {
+
+}
 /*********************************************
 * unifiedRoleAssignmentSchedule
 **********************************************/
@@ -5821,6 +7108,9 @@ export interface unifiedRoleAssignmentScheduleProps {
 export interface unifiedRoleAssignmentScheduleMethods {
 	activatedUsing(): IBaseQuery<unifiedRoleEligibilitySchedule> & unifiedRoleEligibilityScheduleMethods;
 }
+export interface unifiedRoleAssignmentScheduleOData {
+
+}
 /*********************************************
 * unifiedRoleEligibilityScheduleInstance
 **********************************************/
@@ -5832,6 +7122,9 @@ export interface unifiedRoleEligibilityScheduleInstanceProps {
 	startDateTime: any;
 }
 export interface unifiedRoleEligibilityScheduleInstanceMethods {
+
+}
+export interface unifiedRoleEligibilityScheduleInstanceOData {
 
 }
 /*********************************************
@@ -5857,6 +7150,9 @@ export interface unifiedRoleEligibilityScheduleRequestMethods {
 	roleDefinition(): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
 	targetSchedule(): IBaseQuery<unifiedRoleEligibilitySchedule> & unifiedRoleEligibilityScheduleMethods;
 }
+export interface unifiedRoleEligibilityScheduleRequestOData {
+
+}
 /*********************************************
 * unifiedRoleEligibilitySchedule
 **********************************************/
@@ -5868,6 +7164,9 @@ export interface unifiedRoleEligibilityScheduleProps {
 export interface unifiedRoleEligibilityScheduleMethods {
 
 }
+export interface unifiedRoleEligibilityScheduleOData {
+
+}
 /*********************************************
 * targetDeviceGroup
 **********************************************/
@@ -5876,6 +7175,9 @@ export interface targetDeviceGroupProps {
 	displayName: string;
 }
 export interface targetDeviceGroupMethods {
+
+}
+export interface targetDeviceGroupOData {
 
 }
 /*********************************************
@@ -5889,6 +7191,9 @@ export interface roleManagementMethods {
 	directory(): IBaseQuery<rbacApplication> & rbacApplicationMethods;
 	entitlementManagement(): IBaseQuery<rbacApplication> & rbacApplicationMethods;
 }
+export interface roleManagementOData {
+
+}
 /*********************************************
 * samlOrWsFedExternalDomainFederation
 **********************************************/
@@ -5897,8 +7202,11 @@ export interface samlOrWsFedExternalDomainFederationProps {
 
 }
 export interface samlOrWsFedExternalDomainFederationMethods {
-	domains(): IBaseCollection<externalDomainName>;
+	domains(): IBaseCollection<externalDomainName, externalDomainNameOData>;
 	domains(id: string | number): IBaseQuery<externalDomainName> & externalDomainNameMethods;
+}
+export interface samlOrWsFedExternalDomainFederationOData {
+	domains: IBaseResults<externalDomainName>;
 }
 /*********************************************
 * subscribedSku
@@ -5919,6 +7227,9 @@ export interface subscribedSkuProps {
 export interface subscribedSkuMethods {
 
 }
+export interface subscribedSkuOData {
+
+}
 /*********************************************
 * tenantRelationship
 **********************************************/
@@ -5928,10 +7239,14 @@ export interface tenantRelationshipProps {
 }
 export interface tenantRelationshipMethods {
 	multiTenantOrganization(): IBaseQuery<multiTenantOrganization> & multiTenantOrganizationMethods;
-	delegatedAdminCustomers(): IBaseCollection<delegatedAdminCustomer>;
+	delegatedAdminCustomers(): IBaseCollection<delegatedAdminCustomer, delegatedAdminCustomerOData>;
 	delegatedAdminCustomers(id: string | number): IBaseQuery<delegatedAdminCustomer> & delegatedAdminCustomerMethods;
-	delegatedAdminRelationships(): IBaseCollection<delegatedAdminRelationship>;
+	delegatedAdminRelationships(): IBaseCollection<delegatedAdminRelationship, delegatedAdminRelationshipOData>;
 	delegatedAdminRelationships(id: string | number): IBaseQuery<delegatedAdminRelationship> & delegatedAdminRelationshipMethods;
+}
+export interface tenantRelationshipOData {
+	delegatedAdminCustomers: IBaseResults<delegatedAdminCustomer>;
+	delegatedAdminRelationships: IBaseResults<delegatedAdminRelationship>;
 }
 /*********************************************
 * delegatedAdminCustomer
@@ -5942,8 +7257,11 @@ export interface delegatedAdminCustomerProps {
 	tenantId: string;
 }
 export interface delegatedAdminCustomerMethods {
-	serviceManagementDetails(): IBaseCollection<delegatedAdminServiceManagementDetail>;
+	serviceManagementDetails(): IBaseCollection<delegatedAdminServiceManagementDetail, delegatedAdminServiceManagementDetailOData>;
 	serviceManagementDetails(id: string | number): IBaseQuery<delegatedAdminServiceManagementDetail> & delegatedAdminServiceManagementDetailMethods;
+}
+export interface delegatedAdminCustomerOData {
+	serviceManagementDetails: IBaseResults<delegatedAdminServiceManagementDetail>;
 }
 /*********************************************
 * delegatedAdminRelationship
@@ -5962,12 +7280,17 @@ export interface delegatedAdminRelationshipProps {
 	status: EnumTypes.delegatedAdminRelationshipStatus;
 }
 export interface delegatedAdminRelationshipMethods {
-	accessAssignments(): IBaseCollection<delegatedAdminAccessAssignment>;
+	accessAssignments(): IBaseCollection<delegatedAdminAccessAssignment, delegatedAdminAccessAssignmentOData>;
 	accessAssignments(id: string | number): IBaseQuery<delegatedAdminAccessAssignment> & delegatedAdminAccessAssignmentMethods;
-	operations(): IBaseCollection<delegatedAdminRelationshipOperation>;
+	operations(): IBaseCollection<delegatedAdminRelationshipOperation, delegatedAdminRelationshipOperationOData>;
 	operations(id: string | number): IBaseQuery<delegatedAdminRelationshipOperation> & delegatedAdminRelationshipOperationMethods;
-	requests(): IBaseCollection<delegatedAdminRelationshipRequest>;
+	requests(): IBaseCollection<delegatedAdminRelationshipRequest, delegatedAdminRelationshipRequestOData>;
 	requests(id: string | number): IBaseQuery<delegatedAdminRelationshipRequest> & delegatedAdminRelationshipRequestMethods;
+}
+export interface delegatedAdminRelationshipOData {
+	accessAssignments: IBaseResults<delegatedAdminAccessAssignment>;
+	operations: IBaseResults<delegatedAdminRelationshipOperation>;
+	requests: IBaseResults<delegatedAdminRelationshipRequest>;
 }
 /*********************************************
 * unifiedRbacResourceAction
@@ -5982,6 +7305,9 @@ export interface unifiedRbacResourceActionProps {
 	resourceScopeId: string;
 }
 export interface unifiedRbacResourceActionMethods {
+
+}
+export interface unifiedRbacResourceActionOData {
 
 }
 /*********************************************
@@ -5999,6 +7325,9 @@ export interface adminMethods {
 	reportSettings(): IBaseQuery<adminReportSettings> & adminReportSettingsMethods;
 	people(): IBaseQuery<peopleAdminSettings> & peopleAdminSettingsMethods;
 }
+export interface adminOData {
+
+}
 /*********************************************
 * edge
 **********************************************/
@@ -6008,6 +7337,9 @@ export interface edgeProps {
 }
 export interface edgeMethods {
 	internetExplorerMode(): IBaseQuery<internetExplorerMode> & internetExplorerModeMethods;
+}
+export interface edgeOData {
+
 }
 /*********************************************
 * sharepoint
@@ -6019,6 +7351,9 @@ export interface sharepointProps {
 export interface sharepointMethods {
 	settings(): IBaseQuery<sharepointSettings> & sharepointSettingsMethods;
 }
+export interface sharepointOData {
+
+}
 /*********************************************
 * adminMicrosoft365Apps
 **********************************************/
@@ -6029,6 +7364,9 @@ export interface adminMicrosoft365AppsProps {
 export interface adminMicrosoft365AppsMethods {
 	installationOptions(): IBaseQuery<m365AppsInstallationOptions> & m365AppsInstallationOptionsMethods;
 }
+export interface adminMicrosoft365AppsOData {
+
+}
 /*********************************************
 * serviceAnnouncement
 **********************************************/
@@ -6037,12 +7375,17 @@ export interface serviceAnnouncementProps {
 
 }
 export interface serviceAnnouncementMethods {
-	healthOverviews(): IBaseCollection<serviceHealth>;
+	healthOverviews(): IBaseCollection<serviceHealth, serviceHealthOData>;
 	healthOverviews(id: string | number): IBaseQuery<serviceHealth> & serviceHealthMethods;
-	issues(): IBaseCollection<serviceHealthIssue>;
+	issues(): IBaseCollection<serviceHealthIssue, serviceHealthIssueOData>;
 	issues(id: string | number): IBaseQuery<serviceHealthIssue> & serviceHealthIssueMethods;
-	messages(): IBaseCollection<serviceUpdateMessage>;
+	messages(): IBaseCollection<serviceUpdateMessage, serviceUpdateMessageOData>;
 	messages(id: string | number): IBaseQuery<serviceUpdateMessage> & serviceUpdateMessageMethods;
+}
+export interface serviceAnnouncementOData {
+	healthOverviews: IBaseResults<serviceHealth>;
+	issues: IBaseResults<serviceHealthIssue>;
+	messages: IBaseResults<serviceUpdateMessage>;
 }
 /*********************************************
 * adminReportSettings
@@ -6054,6 +7397,9 @@ export interface adminReportSettingsProps {
 export interface adminReportSettingsMethods {
 
 }
+export interface adminReportSettingsOData {
+
+}
 /*********************************************
 * peopleAdminSettings
 **********************************************/
@@ -6062,10 +7408,13 @@ export interface peopleAdminSettingsProps {
 
 }
 export interface peopleAdminSettingsMethods {
-	profileCardProperties(): IBaseCollection<profileCardProperty>;
+	profileCardProperties(): IBaseCollection<profileCardProperty, profileCardPropertyOData>;
 	profileCardProperties(id: string | number): IBaseQuery<profileCardProperty> & profileCardPropertyMethods;
 	pronouns(): IBaseQuery<pronounsSettings> & pronounsSettingsMethods;
 	itemInsights(): IBaseQuery<insightsSettings> & insightsSettingsMethods;
+}
+export interface peopleAdminSettingsOData {
+	profileCardProperties: IBaseResults<profileCardProperty>;
 }
 /*********************************************
 * browserSharedCookie
@@ -6086,6 +7435,9 @@ export interface browserSharedCookieProps {
 	status: EnumTypes.browserSharedCookieStatus;
 }
 export interface browserSharedCookieMethods {
+
+}
+export interface browserSharedCookieOData {
 
 }
 /*********************************************
@@ -6109,6 +7461,9 @@ export interface browserSiteProps {
 export interface browserSiteMethods {
 
 }
+export interface browserSiteOData {
+
+}
 /*********************************************
 * browserSiteList
 **********************************************/
@@ -6124,10 +7479,14 @@ export interface browserSiteListProps {
 	status: EnumTypes.browserSiteListStatus;
 }
 export interface browserSiteListMethods {
-	sharedCookies(): IBaseCollection<browserSharedCookie>;
+	sharedCookies(): IBaseCollection<browserSharedCookie, browserSharedCookieOData>;
 	sharedCookies(id: string | number): IBaseQuery<browserSharedCookie> & browserSharedCookieMethods;
-	sites(): IBaseCollection<browserSite>;
+	sites(): IBaseCollection<browserSite, browserSiteOData>;
 	sites(id: string | number): IBaseQuery<browserSite> & browserSiteMethods;
+}
+export interface browserSiteListOData {
+	sharedCookies: IBaseResults<browserSharedCookie>;
+	sites: IBaseResults<browserSite>;
 }
 /*********************************************
 * internetExplorerMode
@@ -6137,8 +7496,11 @@ export interface internetExplorerModeProps {
 
 }
 export interface internetExplorerModeMethods {
-	siteLists(): IBaseCollection<browserSiteList>;
+	siteLists(): IBaseCollection<browserSiteList, browserSiteListOData>;
 	siteLists(id: string | number): IBaseQuery<browserSiteList> & browserSiteListMethods;
+}
+export interface internetExplorerModeOData {
+	siteLists: IBaseResults<browserSiteList>;
 }
 /*********************************************
 * educationAssignment
@@ -6170,14 +7532,19 @@ export interface educationAssignmentProps {
 	webUrl: string;
 }
 export interface educationAssignmentMethods {
-	categories(): IBaseCollection<educationCategory>;
+	categories(): IBaseCollection<educationCategory, educationCategoryOData>;
 	categories(id: string | number): IBaseQuery<educationCategory> & educationCategoryMethods;
 	gradingCategory(): IBaseQuery<educationGradingCategory> & educationGradingCategoryMethods;
-	resources(): IBaseCollection<educationAssignmentResource>;
+	resources(): IBaseCollection<educationAssignmentResource, educationAssignmentResourceOData>;
 	resources(id: string | number): IBaseQuery<educationAssignmentResource> & educationAssignmentResourceMethods;
 	rubric(): IBaseQuery<educationRubric> & educationRubricMethods;
-	submissions(): IBaseCollection<educationSubmission>;
+	submissions(): IBaseCollection<educationSubmission, educationSubmissionOData>;
 	submissions(id: string | number): IBaseQuery<educationSubmission> & educationSubmissionMethods;
+}
+export interface educationAssignmentOData {
+	categories: IBaseResults<educationCategory>;
+	resources: IBaseResults<educationAssignmentResource>;
+	submissions: IBaseResults<educationSubmission>;
 }
 /*********************************************
 * educationCategory
@@ -6187,6 +7554,9 @@ export interface educationCategoryProps {
 	displayName: string;
 }
 export interface educationCategoryMethods {
+
+}
+export interface educationCategoryOData {
 
 }
 /*********************************************
@@ -6200,6 +7570,9 @@ export interface educationGradingCategoryProps {
 export interface educationGradingCategoryMethods {
 
 }
+export interface educationGradingCategoryOData {
+
+}
 /*********************************************
 * educationAssignmentResource
 **********************************************/
@@ -6209,6 +7582,9 @@ export interface educationAssignmentResourceProps {
 	resource: ComplexTypes.educationResource;
 }
 export interface educationAssignmentResourceMethods {
+
+}
+export interface educationAssignmentResourceOData {
 
 }
 /*********************************************
@@ -6227,6 +7603,9 @@ export interface educationRubricProps {
 	qualities: ComplexTypes.rubricQuality[];
 }
 export interface educationRubricMethods {
+
+}
+export interface educationRubricOData {
 
 }
 /*********************************************
@@ -6250,12 +7629,17 @@ export interface educationSubmissionProps {
 	webUrl: string;
 }
 export interface educationSubmissionMethods {
-	outcomes(): IBaseCollection<educationOutcome>;
+	outcomes(): IBaseCollection<educationOutcome, educationOutcomeOData>;
 	outcomes(id: string | number): IBaseQuery<educationOutcome> & educationOutcomeMethods;
-	resources(): IBaseCollection<educationSubmissionResource>;
+	resources(): IBaseCollection<educationSubmissionResource, educationSubmissionResourceOData>;
 	resources(id: string | number): IBaseQuery<educationSubmissionResource> & educationSubmissionResourceMethods;
-	submittedResources(): IBaseCollection<educationSubmissionResource>;
+	submittedResources(): IBaseCollection<educationSubmissionResource, educationSubmissionResourceOData>;
 	submittedResources(id: string | number): IBaseQuery<educationSubmissionResource> & educationSubmissionResourceMethods;
+}
+export interface educationSubmissionOData {
+	outcomes: IBaseResults<educationOutcome>;
+	resources: IBaseResults<educationSubmissionResource>;
+	submittedResources: IBaseResults<educationSubmissionResource>;
 }
 /*********************************************
 * educationAssignmentDefaults
@@ -6270,6 +7654,9 @@ export interface educationAssignmentDefaultsProps {
 export interface educationAssignmentDefaultsMethods {
 
 }
+export interface educationAssignmentDefaultsOData {
+
+}
 /*********************************************
 * educationAssignmentSettings
 **********************************************/
@@ -6278,8 +7665,11 @@ export interface educationAssignmentSettingsProps {
 	submissionAnimationDisabled: boolean;
 }
 export interface educationAssignmentSettingsMethods {
-	gradingCategories(): IBaseCollection<educationGradingCategory>;
+	gradingCategories(): IBaseCollection<educationGradingCategory, educationGradingCategoryOData>;
 	gradingCategories(id: string | number): IBaseQuery<educationGradingCategory> & educationGradingCategoryMethods;
+}
+export interface educationAssignmentSettingsOData {
+	gradingCategories: IBaseResults<educationGradingCategory>;
 }
 /*********************************************
 * educationClass
@@ -6300,21 +7690,29 @@ export interface educationClassProps {
 	term: ComplexTypes.educationTerm;
 }
 export interface educationClassMethods {
-	assignmentCategories(): IBaseCollection<educationCategory>;
+	assignmentCategories(): IBaseCollection<educationCategory, educationCategoryOData>;
 	assignmentCategories(id: string | number): IBaseQuery<educationCategory> & educationCategoryMethods;
 	assignmentDefaults(): IBaseQuery<educationAssignmentDefaults> & educationAssignmentDefaultsMethods;
-	assignments(): IBaseCollection<educationAssignment>;
+	assignments(): IBaseCollection<educationAssignment, educationAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<educationAssignment> & educationAssignmentMethods;
 	assignmentSettings(): IBaseQuery<educationAssignmentSettings> & educationAssignmentSettingsMethods;
-	modules(): IBaseCollection<educationModule>;
+	modules(): IBaseCollection<educationModule, educationModuleOData>;
 	modules(id: string | number): IBaseQuery<educationModule> & educationModuleMethods;
 	group(): IBaseQuery<group> & groupMethods;
-	members(): IBaseCollection<educationUser>;
+	members(): IBaseCollection<educationUser, educationUserOData>;
 	members(id: string | number): IBaseQuery<educationUser> & educationUserMethods;
-	schools(): IBaseCollection<educationSchool>;
+	schools(): IBaseCollection<educationSchool, educationSchoolOData>;
 	schools(id: string | number): IBaseQuery<educationSchool> & educationSchoolMethods;
-	teachers(): IBaseCollection<educationUser>;
+	teachers(): IBaseCollection<educationUser, educationUserOData>;
 	teachers(id: string | number): IBaseQuery<educationUser> & educationUserMethods;
+}
+export interface educationClassOData {
+	assignmentCategories: IBaseResults<educationCategory>;
+	assignments: IBaseResults<educationAssignment>;
+	modules: IBaseResults<educationModule>;
+	members: IBaseResults<educationUser>;
+	schools: IBaseResults<educationSchool>;
+	teachers: IBaseResults<educationUser>;
 }
 /*********************************************
 * educationModule
@@ -6332,8 +7730,11 @@ export interface educationModuleProps {
 	status: EnumTypes.educationModuleStatus;
 }
 export interface educationModuleMethods {
-	resources(): IBaseCollection<educationModuleResource>;
+	resources(): IBaseCollection<educationModuleResource, educationModuleResourceOData>;
 	resources(id: string | number): IBaseQuery<educationModuleResource> & educationModuleResourceMethods;
+}
+export interface educationModuleOData {
+	resources: IBaseResults<educationModuleResource>;
 }
 /*********************************************
 * educationUser
@@ -6374,17 +7775,24 @@ export interface educationUserProps {
 	userType: string;
 }
 export interface educationUserMethods {
-	assignments(): IBaseCollection<educationAssignment>;
+	assignments(): IBaseCollection<educationAssignment, educationAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<educationAssignment> & educationAssignmentMethods;
-	rubrics(): IBaseCollection<educationRubric>;
+	rubrics(): IBaseCollection<educationRubric, educationRubricOData>;
 	rubrics(id: string | number): IBaseQuery<educationRubric> & educationRubricMethods;
-	classes(): IBaseCollection<educationClass>;
+	classes(): IBaseCollection<educationClass, educationClassOData>;
 	classes(id: string | number): IBaseQuery<educationClass> & educationClassMethods;
-	schools(): IBaseCollection<educationSchool>;
+	schools(): IBaseCollection<educationSchool, educationSchoolOData>;
 	schools(id: string | number): IBaseQuery<educationSchool> & educationSchoolMethods;
-	taughtClasses(): IBaseCollection<educationClass>;
+	taughtClasses(): IBaseCollection<educationClass, educationClassOData>;
 	taughtClasses(id: string | number): IBaseQuery<educationClass> & educationClassMethods;
 	user(): IBaseQuery<user> & userMethods;
+}
+export interface educationUserOData {
+	assignments: IBaseResults<educationAssignment>;
+	rubrics: IBaseResults<educationRubric>;
+	classes: IBaseResults<educationClass>;
+	schools: IBaseResults<educationSchool>;
+	taughtClasses: IBaseResults<educationClass>;
 }
 /*********************************************
 * educationOrganization
@@ -6397,6 +7805,9 @@ export interface educationOrganizationProps {
 	externalSourceDetail: string;
 }
 export interface educationOrganizationMethods {
+
+}
+export interface educationOrganizationOData {
 
 }
 /*********************************************
@@ -6418,10 +7829,14 @@ export interface educationSchoolProps {
 }
 export interface educationSchoolMethods {
 	administrativeUnit(): IBaseQuery<administrativeUnit> & administrativeUnitMethods;
-	classes(): IBaseCollection<educationClass>;
+	classes(): IBaseCollection<educationClass, educationClassOData>;
 	classes(id: string | number): IBaseQuery<educationClass> & educationClassMethods;
-	users(): IBaseCollection<educationUser>;
+	users(): IBaseCollection<educationUser, educationUserOData>;
 	users(id: string | number): IBaseQuery<educationUser> & educationUserMethods;
+}
+export interface educationSchoolOData {
+	classes: IBaseResults<educationClass>;
+	users: IBaseResults<educationUser>;
 }
 /*********************************************
 * educationOutcome
@@ -6432,6 +7847,9 @@ export interface educationOutcomeProps {
 	lastModifiedDateTime: any;
 }
 export interface educationOutcomeMethods {
+
+}
+export interface educationOutcomeOData {
 
 }
 /*********************************************
@@ -6445,6 +7863,9 @@ export interface educationFeedbackOutcomeProps {
 export interface educationFeedbackOutcomeMethods {
 
 }
+export interface educationFeedbackOutcomeOData {
+
+}
 /*********************************************
 * educationFeedbackResourceOutcome
 **********************************************/
@@ -6456,6 +7877,9 @@ export interface educationFeedbackResourceOutcomeProps {
 export interface educationFeedbackResourceOutcomeMethods {
 
 }
+export interface educationFeedbackResourceOutcomeOData {
+
+}
 /*********************************************
 * educationModuleResource
 **********************************************/
@@ -6464,6 +7888,9 @@ export interface educationModuleResourceProps {
 	resource: ComplexTypes.educationResource;
 }
 export interface educationModuleResourceMethods {
+
+}
+export interface educationModuleResourceOData {
 
 }
 /*********************************************
@@ -6477,6 +7904,9 @@ export interface educationPointsOutcomeProps {
 export interface educationPointsOutcomeMethods {
 
 }
+export interface educationPointsOutcomeOData {
+
+}
 /*********************************************
 * educationRoot
 **********************************************/
@@ -6485,13 +7915,18 @@ export interface educationRootProps {
 
 }
 export interface educationRootMethods {
-	classes(): IBaseCollection<educationClass>;
+	classes(): IBaseCollection<educationClass, educationClassOData>;
 	classes(id: string | number): IBaseQuery<educationClass> & educationClassMethods;
 	me(): IBaseQuery<educationUser> & educationUserMethods;
-	schools(): IBaseCollection<educationSchool>;
+	schools(): IBaseCollection<educationSchool, educationSchoolOData>;
 	schools(id: string | number): IBaseQuery<educationSchool> & educationSchoolMethods;
-	users(): IBaseCollection<educationUser>;
+	users(): IBaseCollection<educationUser, educationUserOData>;
 	users(id: string | number): IBaseQuery<educationUser> & educationUserMethods;
+}
+export interface educationRootOData {
+	classes: IBaseResults<educationClass>;
+	schools: IBaseResults<educationSchool>;
+	users: IBaseResults<educationUser>;
 }
 /*********************************************
 * educationRubricOutcome
@@ -6506,6 +7941,9 @@ export interface educationRubricOutcomeProps {
 export interface educationRubricOutcomeMethods {
 
 }
+export interface educationRubricOutcomeOData {
+
+}
 /*********************************************
 * educationSubmissionResource
 **********************************************/
@@ -6515,6 +7953,9 @@ export interface educationSubmissionResourceProps {
 	resource: ComplexTypes.educationResource;
 }
 export interface educationSubmissionResourceMethods {
+
+}
+export interface educationSubmissionResourceOData {
 
 }
 /*********************************************
@@ -6528,6 +7969,9 @@ export interface restorePointProps {
 }
 export interface restorePointMethods {
 	protectionUnit(): IBaseQuery<protectionUnitBase> & protectionUnitBaseMethods;
+}
+export interface restorePointOData {
+
 }
 /*********************************************
 * protectionRuleBase
@@ -6545,6 +7989,9 @@ export interface protectionRuleBaseProps {
 export interface protectionRuleBaseMethods {
 
 }
+export interface protectionRuleBaseOData {
+
+}
 /*********************************************
 * driveProtectionRule
 **********************************************/
@@ -6553,6 +8000,9 @@ export interface driveProtectionRuleProps {
 	driveExpression: string;
 }
 export interface driveProtectionRuleMethods {
+
+}
+export interface driveProtectionRuleOData {
 
 }
 /*********************************************
@@ -6571,6 +8021,9 @@ export interface protectionUnitBaseProps {
 export interface protectionUnitBaseMethods {
 
 }
+export interface protectionUnitBaseOData {
+
+}
 /*********************************************
 * driveProtectionUnit
 **********************************************/
@@ -6581,6 +8034,9 @@ export interface driveProtectionUnitProps {
 	email: string;
 }
 export interface driveProtectionUnitMethods {
+
+}
+export interface driveProtectionUnitOData {
 
 }
 /*********************************************
@@ -6599,6 +8055,9 @@ export interface protectionPolicyBaseProps {
 export interface protectionPolicyBaseMethods {
 
 }
+export interface protectionPolicyBaseOData {
+
+}
 /*********************************************
 * exchangeProtectionPolicy
 **********************************************/
@@ -6607,10 +8066,14 @@ export interface exchangeProtectionPolicyProps {
 
 }
 export interface exchangeProtectionPolicyMethods {
-	mailboxInclusionRules(): IBaseCollection<mailboxProtectionRule>;
+	mailboxInclusionRules(): IBaseCollection<mailboxProtectionRule, mailboxProtectionRuleOData>;
 	mailboxInclusionRules(id: string | number): IBaseQuery<mailboxProtectionRule> & mailboxProtectionRuleMethods;
-	mailboxProtectionUnits(): IBaseCollection<mailboxProtectionUnit>;
+	mailboxProtectionUnits(): IBaseCollection<mailboxProtectionUnit, mailboxProtectionUnitOData>;
 	mailboxProtectionUnits(id: string | number): IBaseQuery<mailboxProtectionUnit> & mailboxProtectionUnitMethods;
+}
+export interface exchangeProtectionPolicyOData {
+	mailboxInclusionRules: IBaseResults<mailboxProtectionRule>;
+	mailboxProtectionUnits: IBaseResults<mailboxProtectionUnit>;
 }
 /*********************************************
 * restoreSessionBase
@@ -6628,6 +8091,9 @@ export interface restoreSessionBaseProps {
 export interface restoreSessionBaseMethods {
 
 }
+export interface restoreSessionBaseOData {
+
+}
 /*********************************************
 * exchangeRestoreSession
 **********************************************/
@@ -6636,10 +8102,14 @@ export interface exchangeRestoreSessionProps {
 
 }
 export interface exchangeRestoreSessionMethods {
-	granularMailboxRestoreArtifacts(): IBaseCollection<granularMailboxRestoreArtifact>;
+	granularMailboxRestoreArtifacts(): IBaseCollection<granularMailboxRestoreArtifact, granularMailboxRestoreArtifactOData>;
 	granularMailboxRestoreArtifacts(id: string | number): IBaseQuery<granularMailboxRestoreArtifact> & granularMailboxRestoreArtifactMethods;
-	mailboxRestoreArtifacts(): IBaseCollection<mailboxRestoreArtifact>;
+	mailboxRestoreArtifacts(): IBaseCollection<mailboxRestoreArtifact, mailboxRestoreArtifactOData>;
 	mailboxRestoreArtifacts(id: string | number): IBaseQuery<mailboxRestoreArtifact> & mailboxRestoreArtifactMethods;
+}
+export interface exchangeRestoreSessionOData {
+	granularMailboxRestoreArtifacts: IBaseResults<granularMailboxRestoreArtifact>;
+	mailboxRestoreArtifacts: IBaseResults<mailboxRestoreArtifact>;
 }
 /*********************************************
 * mailboxProtectionRule
@@ -6649,6 +8119,9 @@ export interface mailboxProtectionRuleProps {
 	mailboxExpression: string;
 }
 export interface mailboxProtectionRuleMethods {
+
+}
+export interface mailboxProtectionRuleOData {
 
 }
 /*********************************************
@@ -6663,6 +8136,9 @@ export interface mailboxProtectionUnitProps {
 export interface mailboxProtectionUnitMethods {
 
 }
+export interface mailboxProtectionUnitOData {
+
+}
 /*********************************************
 * oneDriveForBusinessProtectionPolicy
 **********************************************/
@@ -6671,10 +8147,14 @@ export interface oneDriveForBusinessProtectionPolicyProps {
 
 }
 export interface oneDriveForBusinessProtectionPolicyMethods {
-	driveInclusionRules(): IBaseCollection<driveProtectionRule>;
+	driveInclusionRules(): IBaseCollection<driveProtectionRule, driveProtectionRuleOData>;
 	driveInclusionRules(id: string | number): IBaseQuery<driveProtectionRule> & driveProtectionRuleMethods;
-	driveProtectionUnits(): IBaseCollection<driveProtectionUnit>;
+	driveProtectionUnits(): IBaseCollection<driveProtectionUnit, driveProtectionUnitOData>;
 	driveProtectionUnits(id: string | number): IBaseQuery<driveProtectionUnit> & driveProtectionUnitMethods;
+}
+export interface oneDriveForBusinessProtectionPolicyOData {
+	driveInclusionRules: IBaseResults<driveProtectionRule>;
+	driveProtectionUnits: IBaseResults<driveProtectionUnit>;
 }
 /*********************************************
 * oneDriveForBusinessRestoreSession
@@ -6684,8 +8164,11 @@ export interface oneDriveForBusinessRestoreSessionProps {
 
 }
 export interface oneDriveForBusinessRestoreSessionMethods {
-	driveRestoreArtifacts(): IBaseCollection<driveRestoreArtifact>;
+	driveRestoreArtifacts(): IBaseCollection<driveRestoreArtifact, driveRestoreArtifactOData>;
 	driveRestoreArtifacts(id: string | number): IBaseQuery<driveRestoreArtifact> & driveRestoreArtifactMethods;
+}
+export interface oneDriveForBusinessRestoreSessionOData {
+	driveRestoreArtifacts: IBaseResults<driveRestoreArtifact>;
 }
 /*********************************************
 * serviceApp
@@ -6702,6 +8185,9 @@ export interface serviceAppProps {
 export interface serviceAppMethods {
 
 }
+export interface serviceAppOData {
+
+}
 /*********************************************
 * sharePointProtectionPolicy
 **********************************************/
@@ -6710,10 +8196,14 @@ export interface sharePointProtectionPolicyProps {
 
 }
 export interface sharePointProtectionPolicyMethods {
-	siteInclusionRules(): IBaseCollection<siteProtectionRule>;
+	siteInclusionRules(): IBaseCollection<siteProtectionRule, siteProtectionRuleOData>;
 	siteInclusionRules(id: string | number): IBaseQuery<siteProtectionRule> & siteProtectionRuleMethods;
-	siteProtectionUnits(): IBaseCollection<siteProtectionUnit>;
+	siteProtectionUnits(): IBaseCollection<siteProtectionUnit, siteProtectionUnitOData>;
 	siteProtectionUnits(id: string | number): IBaseQuery<siteProtectionUnit> & siteProtectionUnitMethods;
+}
+export interface sharePointProtectionPolicyOData {
+	siteInclusionRules: IBaseResults<siteProtectionRule>;
+	siteProtectionUnits: IBaseResults<siteProtectionUnit>;
 }
 /*********************************************
 * sharePointRestoreSession
@@ -6723,8 +8213,11 @@ export interface sharePointRestoreSessionProps {
 
 }
 export interface sharePointRestoreSessionMethods {
-	siteRestoreArtifacts(): IBaseCollection<siteRestoreArtifact>;
+	siteRestoreArtifacts(): IBaseCollection<siteRestoreArtifact, siteRestoreArtifactOData>;
 	siteRestoreArtifacts(id: string | number): IBaseQuery<siteRestoreArtifact> & siteRestoreArtifactMethods;
+}
+export interface sharePointRestoreSessionOData {
+	siteRestoreArtifacts: IBaseResults<siteRestoreArtifact>;
 }
 /*********************************************
 * siteProtectionRule
@@ -6734,6 +8227,9 @@ export interface siteProtectionRuleProps {
 	siteExpression: string;
 }
 export interface siteProtectionRuleMethods {
+
+}
+export interface siteProtectionRuleOData {
 
 }
 /*********************************************
@@ -6746,6 +8242,9 @@ export interface siteProtectionUnitProps {
 	siteWebUrl: string;
 }
 export interface siteProtectionUnitMethods {
+
+}
+export interface siteProtectionUnitOData {
 
 }
 /*********************************************
@@ -6762,6 +8261,9 @@ export interface restoreArtifactBaseProps {
 export interface restoreArtifactBaseMethods {
 	restorePoint(): IBaseQuery<restorePoint> & restorePointMethods;
 }
+export interface restoreArtifactBaseOData {
+
+}
 /*********************************************
 * driveRestoreArtifact
 **********************************************/
@@ -6772,6 +8274,9 @@ export interface driveRestoreArtifactProps {
 	restoredSiteWebUrl: string;
 }
 export interface driveRestoreArtifactMethods {
+
+}
+export interface driveRestoreArtifactOData {
 
 }
 /*********************************************
@@ -6785,6 +8290,9 @@ export interface mailboxRestoreArtifactProps {
 export interface mailboxRestoreArtifactMethods {
 
 }
+export interface mailboxRestoreArtifactOData {
+
+}
 /*********************************************
 * granularMailboxRestoreArtifact
 **********************************************/
@@ -6794,6 +8302,9 @@ export interface granularMailboxRestoreArtifactProps {
 	searchResponseId: string;
 }
 export interface granularMailboxRestoreArtifactMethods {
+
+}
+export interface granularMailboxRestoreArtifactOData {
 
 }
 /*********************************************
@@ -6806,6 +8317,9 @@ export interface siteRestoreArtifactProps {
 	restoredSiteWebUrl: string;
 }
 export interface siteRestoreArtifactMethods {
+
+}
+export interface siteRestoreArtifactOData {
 
 }
 /*********************************************
@@ -6841,18 +8355,25 @@ export interface driveItemProps {
 export interface driveItemMethods {
 	workbook(): IBaseQuery<workbook> & workbookMethods;
 	analytics(): IBaseQuery<itemAnalytics> & itemAnalyticsMethods;
-	children(): IBaseCollection<driveItem>;
+	children(): IBaseCollection<driveItem, driveItemOData>;
 	children(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
 	listItem(): IBaseQuery<listItem> & listItemMethods;
-	permissions(): IBaseCollection<permission>;
+	permissions(): IBaseCollection<permission, permissionOData>;
 	permissions(id: string | number): IBaseQuery<permission> & permissionMethods;
 	retentionLabel(): IBaseQuery<itemRetentionLabel> & itemRetentionLabelMethods;
-	subscriptions(): IBaseCollection<subscription>;
+	subscriptions(): IBaseCollection<subscription, subscriptionOData>;
 	subscriptions(id: string | number): IBaseQuery<subscription> & subscriptionMethods;
-	thumbnails(): IBaseCollection<thumbnailSet>;
+	thumbnails(): IBaseCollection<thumbnailSet, thumbnailSetOData>;
 	thumbnails(id: string | number): IBaseQuery<thumbnailSet> & thumbnailSetMethods;
-	versions(): IBaseCollection<driveItemVersion>;
+	versions(): IBaseCollection<driveItemVersion, driveItemVersionOData>;
 	versions(id: string | number): IBaseQuery<driveItemVersion> & driveItemVersionMethods;
+}
+export interface driveItemOData {
+	children: IBaseResults<driveItem>;
+	permissions: IBaseResults<permission>;
+	subscriptions: IBaseResults<subscription>;
+	thumbnails: IBaseResults<thumbnailSet>;
+	versions: IBaseResults<driveItemVersion>;
 }
 /*********************************************
 * workbook
@@ -6863,17 +8384,24 @@ export interface workbookProps {
 }
 export interface workbookMethods {
 	application(): IBaseQuery<workbookApplication> & workbookApplicationMethods;
-	comments(): IBaseCollection<workbookComment>;
+	comments(): IBaseCollection<workbookComment, workbookCommentOData>;
 	comments(id: string | number): IBaseQuery<workbookComment> & workbookCommentMethods;
 	functions(): IBaseQuery<workbookFunctions> & workbookFunctionsMethods;
-	names(): IBaseCollection<workbookNamedItem>;
+	names(): IBaseCollection<workbookNamedItem, workbookNamedItemOData>;
 	names(id: string | number): IBaseQuery<workbookNamedItem> & workbookNamedItemMethods;
-	operations(): IBaseCollection<workbookOperation>;
+	operations(): IBaseCollection<workbookOperation, workbookOperationOData>;
 	operations(id: string | number): IBaseQuery<workbookOperation> & workbookOperationMethods;
-	tables(): IBaseCollection<workbookTable>;
+	tables(): IBaseCollection<workbookTable, workbookTableOData>;
 	tables(id: string | number): IBaseQuery<workbookTable> & workbookTableMethods;
-	worksheets(): IBaseCollection<workbookWorksheet>;
+	worksheets(): IBaseCollection<workbookWorksheet, workbookWorksheetOData>;
 	worksheets(id: string | number): IBaseQuery<workbookWorksheet> & workbookWorksheetMethods;
+}
+export interface workbookOData {
+	comments: IBaseResults<workbookComment>;
+	names: IBaseResults<workbookNamedItem>;
+	operations: IBaseResults<workbookOperation>;
+	tables: IBaseResults<workbookTable>;
+	worksheets: IBaseResults<workbookWorksheet>;
 }
 /*********************************************
 * listItem
@@ -6885,15 +8413,19 @@ export interface listItemProps {
 }
 export interface listItemMethods {
 	analytics(): IBaseQuery<itemAnalytics> & itemAnalyticsMethods;
-	documentSetVersions(): IBaseCollection<documentSetVersion>;
+	documentSetVersions(): IBaseCollection<documentSetVersion, documentSetVersionOData>;
 	documentSetVersions(id: string | number): IBaseQuery<documentSetVersion> & documentSetVersionMethods;
 	driveItem(): IBaseQuery<driveItem> & driveItemMethods;
 	fields(): IBaseQuery<fieldValueSet> & fieldValueSetMethods;
-	versions(): IBaseCollection<listItemVersion>;
+	versions(): IBaseCollection<listItemVersion, listItemVersionOData>;
 	versions(id: string | number): IBaseQuery<listItemVersion> & listItemVersionMethods;
 	extractSensitivityLabel(values: any): IBaseQuery<void>;
 	setSensitivityLabel(values: { actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }): IBaseQuery<void>;
 	update(values: any): IBaseQuery<void>;
+}
+export interface listItemOData {
+	documentSetVersions: IBaseResults<documentSetVersion>;
+	versions: IBaseResults<listItemVersion>;
 }
 /*********************************************
 * itemRetentionLabel
@@ -6907,6 +8439,9 @@ export interface itemRetentionLabelProps {
 	retentionSettings: ComplexTypes.retentionLabelSettings;
 }
 export interface itemRetentionLabelMethods {
+
+}
+export interface itemRetentionLabelOData {
 
 }
 /*********************************************
@@ -6932,6 +8467,9 @@ export interface subscriptionProps {
 export interface subscriptionMethods {
 
 }
+export interface subscriptionOData {
+
+}
 /*********************************************
 * thumbnailSet
 **********************************************/
@@ -6943,6 +8481,9 @@ export interface thumbnailSetProps {
 	source: ComplexTypes.thumbnail;
 }
 export interface thumbnailSetMethods {
+
+}
+export interface thumbnailSetOData {
 
 }
 /*********************************************
@@ -6957,6 +8498,9 @@ export interface baseItemVersionProps {
 export interface baseItemVersionMethods {
 
 }
+export interface baseItemVersionOData {
+
+}
 /*********************************************
 * driveItemVersion
 **********************************************/
@@ -6966,6 +8510,9 @@ export interface driveItemVersionProps {
 	size: number;
 }
 export interface driveItemVersionMethods {
+
+}
+export interface driveItemVersionOData {
 
 }
 /*********************************************
@@ -6978,6 +8525,9 @@ export interface workbookApplicationProps {
 export interface workbookApplicationMethods {
 
 }
+export interface workbookApplicationOData {
+
+}
 /*********************************************
 * workbookComment
 **********************************************/
@@ -6987,8 +8537,11 @@ export interface workbookCommentProps {
 	contentType: string;
 }
 export interface workbookCommentMethods {
-	replies(): IBaseCollection<workbookCommentReply>;
+	replies(): IBaseCollection<workbookCommentReply, workbookCommentReplyOData>;
 	replies(id: string | number): IBaseQuery<workbookCommentReply> & workbookCommentReplyMethods;
+}
+export interface workbookCommentOData {
+	replies: IBaseResults<workbookCommentReply>;
 }
 /*********************************************
 * workbookFunctions
@@ -6998,6 +8551,9 @@ export interface workbookFunctionsProps {
 
 }
 export interface workbookFunctionsMethods {
+
+}
+export interface workbookFunctionsOData {
 
 }
 /*********************************************
@@ -7015,6 +8571,9 @@ export interface workbookNamedItemProps {
 export interface workbookNamedItemMethods {
 	worksheet(): IBaseQuery<workbookWorksheet> & workbookWorksheetMethods;
 }
+export interface workbookNamedItemOData {
+
+}
 /*********************************************
 * workbookOperation
 **********************************************/
@@ -7025,6 +8584,9 @@ export interface workbookOperationProps {
 	status: EnumTypes.workbookOperationStatus;
 }
 export interface workbookOperationMethods {
+
+}
+export interface workbookOperationOData {
 
 }
 /*********************************************
@@ -7044,12 +8606,16 @@ export interface workbookTableProps {
 	style: string;
 }
 export interface workbookTableMethods {
-	columns(): IBaseCollection<workbookTableColumn>;
+	columns(): IBaseCollection<workbookTableColumn, workbookTableColumnOData>;
 	columns(id: string | number): IBaseQuery<workbookTableColumn> & workbookTableColumnMethods;
-	rows(): IBaseCollection<workbookTableRow>;
+	rows(): IBaseCollection<workbookTableRow, workbookTableRowOData>;
 	rows(id: string | number): IBaseQuery<workbookTableRow> & workbookTableRowMethods;
 	sort(): IBaseQuery<workbookTableSort> & workbookTableSortMethods;
 	worksheet(): IBaseQuery<workbookWorksheet> & workbookWorksheetMethods;
+}
+export interface workbookTableOData {
+	columns: IBaseResults<workbookTableColumn>;
+	rows: IBaseResults<workbookTableRow>;
 }
 /*********************************************
 * workbookWorksheet
@@ -7061,15 +8627,21 @@ export interface workbookWorksheetProps {
 	visibility: string;
 }
 export interface workbookWorksheetMethods {
-	charts(): IBaseCollection<workbookChart>;
+	charts(): IBaseCollection<workbookChart, workbookChartOData>;
 	charts(id: string | number): IBaseQuery<workbookChart> & workbookChartMethods;
-	names(): IBaseCollection<workbookNamedItem>;
+	names(): IBaseCollection<workbookNamedItem, workbookNamedItemOData>;
 	names(id: string | number): IBaseQuery<workbookNamedItem> & workbookNamedItemMethods;
-	pivotTables(): IBaseCollection<workbookPivotTable>;
+	pivotTables(): IBaseCollection<workbookPivotTable, workbookPivotTableOData>;
 	pivotTables(id: string | number): IBaseQuery<workbookPivotTable> & workbookPivotTableMethods;
 	protection(): IBaseQuery<workbookWorksheetProtection> & workbookWorksheetProtectionMethods;
-	tables(): IBaseCollection<workbookTable>;
+	tables(): IBaseCollection<workbookTable, workbookTableOData>;
 	tables(id: string | number): IBaseQuery<workbookTable> & workbookTableMethods;
+}
+export interface workbookWorksheetOData {
+	charts: IBaseResults<workbookChart>;
+	names: IBaseResults<workbookNamedItem>;
+	pivotTables: IBaseResults<workbookPivotTable>;
+	tables: IBaseResults<workbookTable>;
 }
 /*********************************************
 * workbookChart
@@ -7087,10 +8659,13 @@ export interface workbookChartMethods {
 	dataLabels(): IBaseQuery<workbookChartDataLabels> & workbookChartDataLabelsMethods;
 	format(): IBaseQuery<workbookChartAreaFormat> & workbookChartAreaFormatMethods;
 	legend(): IBaseQuery<workbookChartLegend> & workbookChartLegendMethods;
-	series(): IBaseCollection<workbookChartSeries>;
+	series(): IBaseCollection<workbookChartSeries, workbookChartSeriesOData>;
 	series(id: string | number): IBaseQuery<workbookChartSeries> & workbookChartSeriesMethods;
 	title(): IBaseQuery<workbookChartTitle> & workbookChartTitleMethods;
 	worksheet(): IBaseQuery<workbookWorksheet> & workbookWorksheetMethods;
+}
+export interface workbookChartOData {
+	series: IBaseResults<workbookChartSeries>;
 }
 /*********************************************
 * workbookChartAxes
@@ -7103,6 +8678,9 @@ export interface workbookChartAxesMethods {
 	categoryAxis(): IBaseQuery<workbookChartAxis> & workbookChartAxisMethods;
 	seriesAxis(): IBaseQuery<workbookChartAxis> & workbookChartAxisMethods;
 	valueAxis(): IBaseQuery<workbookChartAxis> & workbookChartAxisMethods;
+}
+export interface workbookChartAxesOData {
+
 }
 /*********************************************
 * workbookChartDataLabels
@@ -7121,6 +8699,9 @@ export interface workbookChartDataLabelsProps {
 export interface workbookChartDataLabelsMethods {
 	format(): IBaseQuery<workbookChartDataLabelFormat> & workbookChartDataLabelFormatMethods;
 }
+export interface workbookChartDataLabelsOData {
+
+}
 /*********************************************
 * workbookChartAreaFormat
 **********************************************/
@@ -7131,6 +8712,9 @@ export interface workbookChartAreaFormatProps {
 export interface workbookChartAreaFormatMethods {
 	fill(): IBaseQuery<workbookChartFill> & workbookChartFillMethods;
 	font(): IBaseQuery<workbookChartFont> & workbookChartFontMethods;
+}
+export interface workbookChartAreaFormatOData {
+
 }
 /*********************************************
 * workbookChartLegend
@@ -7144,6 +8728,9 @@ export interface workbookChartLegendProps {
 export interface workbookChartLegendMethods {
 	format(): IBaseQuery<workbookChartLegendFormat> & workbookChartLegendFormatMethods;
 }
+export interface workbookChartLegendOData {
+
+}
 /*********************************************
 * workbookChartSeries
 **********************************************/
@@ -7153,8 +8740,11 @@ export interface workbookChartSeriesProps {
 }
 export interface workbookChartSeriesMethods {
 	format(): IBaseQuery<workbookChartSeriesFormat> & workbookChartSeriesFormatMethods;
-	points(): IBaseCollection<workbookChartPoint>;
+	points(): IBaseCollection<workbookChartPoint, workbookChartPointOData>;
 	points(id: string | number): IBaseQuery<workbookChartPoint> & workbookChartPointMethods;
+}
+export interface workbookChartSeriesOData {
+	points: IBaseResults<workbookChartPoint>;
 }
 /*********************************************
 * workbookChartTitle
@@ -7168,6 +8758,9 @@ export interface workbookChartTitleProps {
 export interface workbookChartTitleMethods {
 	format(): IBaseQuery<workbookChartTitleFormat> & workbookChartTitleFormatMethods;
 }
+export interface workbookChartTitleOData {
+
+}
 /*********************************************
 * workbookChartFill
 **********************************************/
@@ -7176,6 +8769,9 @@ export interface workbookChartFillProps {
 
 }
 export interface workbookChartFillMethods {
+
+}
+export interface workbookChartFillOData {
 
 }
 /*********************************************
@@ -7191,6 +8787,9 @@ export interface workbookChartFontProps {
 	underline: string;
 }
 export interface workbookChartFontMethods {
+
+}
+export interface workbookChartFontOData {
 
 }
 /*********************************************
@@ -7209,6 +8808,9 @@ export interface workbookChartAxisMethods {
 	minorGridlines(): IBaseQuery<workbookChartGridlines> & workbookChartGridlinesMethods;
 	title(): IBaseQuery<workbookChartAxisTitle> & workbookChartAxisTitleMethods;
 }
+export interface workbookChartAxisOData {
+
+}
 /*********************************************
 * workbookChartAxisFormat
 **********************************************/
@@ -7220,6 +8822,9 @@ export interface workbookChartAxisFormatMethods {
 	font(): IBaseQuery<workbookChartFont> & workbookChartFontMethods;
 	line(): IBaseQuery<workbookChartLineFormat> & workbookChartLineFormatMethods;
 }
+export interface workbookChartAxisFormatOData {
+
+}
 /*********************************************
 * workbookChartGridlines
 **********************************************/
@@ -7229,6 +8834,9 @@ export interface workbookChartGridlinesProps {
 }
 export interface workbookChartGridlinesMethods {
 	format(): IBaseQuery<workbookChartGridlinesFormat> & workbookChartGridlinesFormatMethods;
+}
+export interface workbookChartGridlinesOData {
+
 }
 /*********************************************
 * workbookChartAxisTitle
@@ -7241,6 +8849,9 @@ export interface workbookChartAxisTitleProps {
 export interface workbookChartAxisTitleMethods {
 	format(): IBaseQuery<workbookChartAxisTitleFormat> & workbookChartAxisTitleFormatMethods;
 }
+export interface workbookChartAxisTitleOData {
+
+}
 /*********************************************
 * workbookChartLineFormat
 **********************************************/
@@ -7249,6 +8860,9 @@ export interface workbookChartLineFormatProps {
 	color: string;
 }
 export interface workbookChartLineFormatMethods {
+
+}
+export interface workbookChartLineFormatOData {
 
 }
 /*********************************************
@@ -7261,6 +8875,9 @@ export interface workbookChartAxisTitleFormatProps {
 export interface workbookChartAxisTitleFormatMethods {
 	font(): IBaseQuery<workbookChartFont> & workbookChartFontMethods;
 }
+export interface workbookChartAxisTitleFormatOData {
+
+}
 /*********************************************
 * workbookChartDataLabelFormat
 **********************************************/
@@ -7272,6 +8889,9 @@ export interface workbookChartDataLabelFormatMethods {
 	fill(): IBaseQuery<workbookChartFill> & workbookChartFillMethods;
 	font(): IBaseQuery<workbookChartFont> & workbookChartFontMethods;
 }
+export interface workbookChartDataLabelFormatOData {
+
+}
 /*********************************************
 * workbookChartGridlinesFormat
 **********************************************/
@@ -7281,6 +8901,9 @@ export interface workbookChartGridlinesFormatProps {
 }
 export interface workbookChartGridlinesFormatMethods {
 	line(): IBaseQuery<workbookChartLineFormat> & workbookChartLineFormatMethods;
+}
+export interface workbookChartGridlinesFormatOData {
+
 }
 /*********************************************
 * workbookChartLegendFormat
@@ -7293,6 +8916,9 @@ export interface workbookChartLegendFormatMethods {
 	fill(): IBaseQuery<workbookChartFill> & workbookChartFillMethods;
 	font(): IBaseQuery<workbookChartFont> & workbookChartFontMethods;
 }
+export interface workbookChartLegendFormatOData {
+
+}
 /*********************************************
 * workbookChartPoint
 **********************************************/
@@ -7303,6 +8929,9 @@ export interface workbookChartPointProps {
 export interface workbookChartPointMethods {
 	format(): IBaseQuery<workbookChartPointFormat> & workbookChartPointFormatMethods;
 }
+export interface workbookChartPointOData {
+
+}
 /*********************************************
 * workbookChartPointFormat
 **********************************************/
@@ -7312,6 +8941,9 @@ export interface workbookChartPointFormatProps {
 }
 export interface workbookChartPointFormatMethods {
 	fill(): IBaseQuery<workbookChartFill> & workbookChartFillMethods;
+}
+export interface workbookChartPointFormatOData {
+
 }
 /*********************************************
 * workbookChartSeriesFormat
@@ -7324,6 +8956,9 @@ export interface workbookChartSeriesFormatMethods {
 	fill(): IBaseQuery<workbookChartFill> & workbookChartFillMethods;
 	line(): IBaseQuery<workbookChartLineFormat> & workbookChartLineFormatMethods;
 }
+export interface workbookChartSeriesFormatOData {
+
+}
 /*********************************************
 * workbookChartTitleFormat
 **********************************************/
@@ -7334,6 +8969,9 @@ export interface workbookChartTitleFormatProps {
 export interface workbookChartTitleFormatMethods {
 	fill(): IBaseQuery<workbookChartFill> & workbookChartFillMethods;
 	font(): IBaseQuery<workbookChartFont> & workbookChartFontMethods;
+}
+export interface workbookChartTitleFormatOData {
+
 }
 /*********************************************
 * workbookCommentReply
@@ -7346,6 +8984,9 @@ export interface workbookCommentReplyProps {
 export interface workbookCommentReplyMethods {
 
 }
+export interface workbookCommentReplyOData {
+
+}
 /*********************************************
 * workbookFilter
 **********************************************/
@@ -7354,6 +8995,9 @@ export interface workbookFilterProps {
 	criteria: ComplexTypes.workbookFilterCriteria;
 }
 export interface workbookFilterMethods {
+
+}
+export interface workbookFilterOData {
 
 }
 /*********************************************
@@ -7367,6 +9011,9 @@ export interface workbookFormatProtectionProps {
 export interface workbookFormatProtectionMethods {
 
 }
+export interface workbookFormatProtectionOData {
+
+}
 /*********************************************
 * workbookFunctionResult
 **********************************************/
@@ -7378,6 +9025,9 @@ export interface workbookFunctionResultProps {
 export interface workbookFunctionResultMethods {
 
 }
+export interface workbookFunctionResultOData {
+
+}
 /*********************************************
 * workbookPivotTable
 **********************************************/
@@ -7387,6 +9037,9 @@ export interface workbookPivotTableProps {
 }
 export interface workbookPivotTableMethods {
 	worksheet(): IBaseQuery<workbookWorksheet> & workbookWorksheetMethods;
+}
+export interface workbookPivotTableOData {
+
 }
 /*********************************************
 * workbookRange
@@ -7416,6 +9069,9 @@ export interface workbookRangeMethods {
 	sort(): IBaseQuery<workbookRangeSort> & workbookRangeSortMethods;
 	worksheet(): IBaseQuery<workbookWorksheet> & workbookWorksheetMethods;
 }
+export interface workbookRangeOData {
+
+}
 /*********************************************
 * workbookRangeFormat
 **********************************************/
@@ -7428,11 +9084,14 @@ export interface workbookRangeFormatProps {
 	wrapText: boolean;
 }
 export interface workbookRangeFormatMethods {
-	borders(): IBaseCollection<workbookRangeBorder>;
+	borders(): IBaseCollection<workbookRangeBorder, workbookRangeBorderOData>;
 	borders(id: string | number): IBaseQuery<workbookRangeBorder> & workbookRangeBorderMethods;
 	fill(): IBaseQuery<workbookRangeFill> & workbookRangeFillMethods;
 	font(): IBaseQuery<workbookRangeFont> & workbookRangeFontMethods;
 	protection(): IBaseQuery<workbookFormatProtection> & workbookFormatProtectionMethods;
+}
+export interface workbookRangeFormatOData {
+	borders: IBaseResults<workbookRangeBorder>;
 }
 /*********************************************
 * workbookRangeSort
@@ -7442,6 +9101,9 @@ export interface workbookRangeSortProps {
 
 }
 export interface workbookRangeSortMethods {
+
+}
+export interface workbookRangeSortOData {
 
 }
 /*********************************************
@@ -7457,6 +9119,9 @@ export interface workbookRangeBorderProps {
 export interface workbookRangeBorderMethods {
 
 }
+export interface workbookRangeBorderOData {
+
+}
 /*********************************************
 * workbookRangeFill
 **********************************************/
@@ -7465,6 +9130,9 @@ export interface workbookRangeFillProps {
 	color: string;
 }
 export interface workbookRangeFillMethods {
+
+}
+export interface workbookRangeFillOData {
 
 }
 /*********************************************
@@ -7480,6 +9148,9 @@ export interface workbookRangeFontProps {
 	underline: string;
 }
 export interface workbookRangeFontMethods {
+
+}
+export interface workbookRangeFontOData {
 
 }
 /*********************************************
@@ -7500,8 +9171,11 @@ export interface workbookRangeViewProps {
 	valueTypes: ComplexTypes.Json;
 }
 export interface workbookRangeViewMethods {
-	rows(): IBaseCollection<workbookRangeView>;
+	rows(): IBaseCollection<workbookRangeView, workbookRangeViewOData>;
 	rows(id: string | number): IBaseQuery<workbookRangeView> & workbookRangeViewMethods;
+}
+export interface workbookRangeViewOData {
+	rows: IBaseResults<workbookRangeView>;
 }
 /*********************************************
 * workbookTableColumn
@@ -7515,6 +9189,9 @@ export interface workbookTableColumnProps {
 export interface workbookTableColumnMethods {
 	filter(): IBaseQuery<workbookFilter> & workbookFilterMethods;
 }
+export interface workbookTableColumnOData {
+
+}
 /*********************************************
 * workbookTableRow
 **********************************************/
@@ -7524,6 +9201,9 @@ export interface workbookTableRowProps {
 	values: ComplexTypes.Json;
 }
 export interface workbookTableRowMethods {
+
+}
+export interface workbookTableRowOData {
 
 }
 /*********************************************
@@ -7538,6 +9218,9 @@ export interface workbookTableSortProps {
 export interface workbookTableSortMethods {
 
 }
+export interface workbookTableSortOData {
+
+}
 /*********************************************
 * workbookWorksheetProtection
 **********************************************/
@@ -7547,6 +9230,9 @@ export interface workbookWorksheetProtectionProps {
 	protected: boolean;
 }
 export interface workbookWorksheetProtectionMethods {
+
+}
+export interface workbookWorksheetProtectionOData {
 
 }
 /*********************************************
@@ -7560,6 +9246,9 @@ export interface placeProps {
 	phone: string;
 }
 export interface placeMethods {
+
+}
+export interface placeOData {
 
 }
 /*********************************************
@@ -7584,6 +9273,9 @@ export interface roomProps {
 export interface roomMethods {
 
 }
+export interface roomOData {
+
+}
 /*********************************************
 * roomList
 **********************************************/
@@ -7592,8 +9284,11 @@ export interface roomListProps {
 	emailAddress: string;
 }
 export interface roomListMethods {
-	rooms(): IBaseCollection<room>;
+	rooms(): IBaseCollection<room, roomOData>;
 	rooms(id: string | number): IBaseQuery<room> & roomMethods;
+}
+export interface roomListOData {
+	rooms: IBaseResults<room>;
 }
 /*********************************************
 * attachment
@@ -7607,6 +9302,9 @@ export interface attachmentProps {
 	size: number;
 }
 export interface attachmentMethods {
+
+}
+export interface attachmentOData {
 
 }
 /*********************************************
@@ -7623,6 +9321,9 @@ export interface calendarPermissionProps {
 export interface calendarPermissionMethods {
 
 }
+export interface calendarPermissionOData {
+
+}
 /*********************************************
 * multiValueLegacyExtendedProperty
 **********************************************/
@@ -7633,6 +9334,9 @@ export interface multiValueLegacyExtendedPropertyProps {
 export interface multiValueLegacyExtendedPropertyMethods {
 
 }
+export interface multiValueLegacyExtendedPropertyOData {
+
+}
 /*********************************************
 * singleValueLegacyExtendedProperty
 **********************************************/
@@ -7641,6 +9345,9 @@ export interface singleValueLegacyExtendedPropertyProps {
 	value: string;
 }
 export interface singleValueLegacyExtendedPropertyMethods {
+
+}
+export interface singleValueLegacyExtendedPropertyOData {
 
 }
 /*********************************************
@@ -7654,6 +9361,9 @@ export interface calendarSharingMessageProps {
 	suggestedCalendarName: string;
 }
 export interface calendarSharingMessageMethods {
+
+}
+export interface calendarSharingMessageOData {
 
 }
 /*********************************************
@@ -7671,15 +9381,21 @@ export interface postProps {
 	sender: ComplexTypes.recipient;
 }
 export interface postMethods {
-	attachments(): IBaseCollection<attachment>;
+	attachments(): IBaseCollection<attachment, attachmentOData>;
 	attachments(id: string | number): IBaseQuery<attachment> & attachmentMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
 	inReplyTo(): IBaseQuery<post> & postMethods;
-	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty>;
+	multiValueExtendedProperties(): IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData>;
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
-	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty>;
+	singleValueExtendedProperties(): IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData>;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+}
+export interface postOData {
+	attachments: IBaseResults<attachment>;
+	extensions: IBaseResults<extension>;
+	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
+	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * eventMessage
@@ -7699,6 +9415,9 @@ export interface eventMessageProps {
 export interface eventMessageMethods {
 	event(): IBaseQuery<event> & eventMethods;
 }
+export interface eventMessageOData {
+
+}
 /*********************************************
 * eventMessageRequest
 **********************************************/
@@ -7714,6 +9433,9 @@ export interface eventMessageRequestProps {
 export interface eventMessageRequestMethods {
 
 }
+export interface eventMessageRequestOData {
+
+}
 /*********************************************
 * eventMessageResponse
 **********************************************/
@@ -7723,6 +9445,9 @@ export interface eventMessageResponseProps {
 	responseType: EnumTypes.responseType;
 }
 export interface eventMessageResponseMethods {
+
+}
+export interface eventMessageResponseOData {
 
 }
 /*********************************************
@@ -7737,6 +9462,9 @@ export interface fileAttachmentProps {
 export interface fileAttachmentMethods {
 
 }
+export interface fileAttachmentOData {
+
+}
 /*********************************************
 * inferenceClassificationOverride
 **********************************************/
@@ -7748,6 +9476,9 @@ export interface inferenceClassificationOverrideProps {
 export interface inferenceClassificationOverrideMethods {
 
 }
+export interface inferenceClassificationOverrideOData {
+
+}
 /*********************************************
 * itemAttachment
 **********************************************/
@@ -7757,6 +9488,9 @@ export interface itemAttachmentProps {
 }
 export interface itemAttachmentMethods {
 	item(): IBaseQuery<outlookItem> & outlookItemMethods;
+}
+export interface itemAttachmentOData {
+
 }
 /*********************************************
 * messageRule
@@ -7775,6 +9509,9 @@ export interface messageRuleProps {
 export interface messageRuleMethods {
 
 }
+export interface messageRuleOData {
+
+}
 /*********************************************
 * mailSearchFolder
 **********************************************/
@@ -7788,6 +9525,9 @@ export interface mailSearchFolderProps {
 export interface mailSearchFolderMethods {
 
 }
+export interface mailSearchFolderOData {
+
+}
 /*********************************************
 * openTypeExtension
 **********************************************/
@@ -7796,6 +9536,9 @@ export interface openTypeExtensionProps {
 	extensionName: string;
 }
 export interface openTypeExtensionMethods {
+
+}
+export interface openTypeExtensionOData {
 
 }
 /*********************************************
@@ -7809,6 +9552,9 @@ export interface outlookCategoryProps {
 export interface outlookCategoryMethods {
 
 }
+export interface outlookCategoryOData {
+
+}
 /*********************************************
 * referenceAttachment
 **********************************************/
@@ -7819,6 +9565,9 @@ export interface referenceAttachmentProps {
 export interface referenceAttachmentMethods {
 
 }
+export interface referenceAttachmentOData {
+
+}
 /*********************************************
 * fileStorage
 **********************************************/
@@ -7827,8 +9576,11 @@ export interface fileStorageProps {
 
 }
 export interface fileStorageMethods {
-	containers(): IBaseCollection<fileStorageContainer>;
+	containers(): IBaseCollection<fileStorageContainer, fileStorageContainerOData>;
 	containers(id: string | number): IBaseQuery<fileStorageContainer> & fileStorageContainerMethods;
+}
+export interface fileStorageOData {
+	containers: IBaseResults<fileStorageContainer>;
 }
 /*********************************************
 * fileStorageContainer
@@ -7846,8 +9598,11 @@ export interface fileStorageContainerProps {
 }
 export interface fileStorageContainerMethods {
 	drive(): IBaseQuery<drive> & driveMethods;
-	permissions(): IBaseCollection<permission>;
+	permissions(): IBaseCollection<permission, permissionOData>;
 	permissions(id: string | number): IBaseQuery<permission> & permissionMethods;
+}
+export interface fileStorageContainerOData {
+	permissions: IBaseResults<permission>;
 }
 /*********************************************
 * sharepointSettings
@@ -7887,6 +9642,9 @@ export interface sharepointSettingsProps {
 export interface sharepointSettingsMethods {
 
 }
+export interface sharepointSettingsOData {
+
+}
 /*********************************************
 * storage
 **********************************************/
@@ -7898,6 +9656,9 @@ export interface storageMethods {
 	fileStorage(): IBaseQuery<fileStorage> & fileStorageMethods;
 	settings(): IBaseQuery<storageSettings> & storageSettingsMethods;
 }
+export interface storageOData {
+
+}
 /*********************************************
 * storageSettings
 **********************************************/
@@ -7908,6 +9669,9 @@ export interface storageSettingsProps {
 export interface storageSettingsMethods {
 	quota(): IBaseQuery<unifiedStorageQuota> & unifiedStorageQuotaMethods;
 }
+export interface storageSettingsOData {
+
+}
 /*********************************************
 * canvasLayout
 **********************************************/
@@ -7916,9 +9680,12 @@ export interface canvasLayoutProps {
 
 }
 export interface canvasLayoutMethods {
-	horizontalSections(): IBaseCollection<horizontalSection>;
+	horizontalSections(): IBaseCollection<horizontalSection, horizontalSectionOData>;
 	horizontalSections(id: string | number): IBaseQuery<horizontalSection> & horizontalSectionMethods;
 	verticalSection(): IBaseQuery<verticalSection> & verticalSectionMethods;
+}
+export interface canvasLayoutOData {
+	horizontalSections: IBaseResults<horizontalSection>;
 }
 /*********************************************
 * horizontalSection
@@ -7929,8 +9696,11 @@ export interface horizontalSectionProps {
 	layout: EnumTypes.horizontalSectionLayoutType;
 }
 export interface horizontalSectionMethods {
-	columns(): IBaseCollection<horizontalSectionColumn>;
+	columns(): IBaseCollection<horizontalSectionColumn, horizontalSectionColumnOData>;
 	columns(id: string | number): IBaseQuery<horizontalSectionColumn> & horizontalSectionColumnMethods;
+}
+export interface horizontalSectionOData {
+	columns: IBaseResults<horizontalSectionColumn>;
 }
 /*********************************************
 * verticalSection
@@ -7940,8 +9710,11 @@ export interface verticalSectionProps {
 	emphasis: EnumTypes.sectionEmphasisType;
 }
 export interface verticalSectionMethods {
-	webparts(): IBaseCollection<webPart>;
+	webparts(): IBaseCollection<webPart, webPartOData>;
 	webparts(id: string | number): IBaseQuery<webPart> & webPartMethods;
+}
+export interface verticalSectionOData {
+	webparts: IBaseResults<webPart>;
 }
 /*********************************************
 * columnLink
@@ -7953,6 +9726,9 @@ export interface columnLinkProps {
 export interface columnLinkMethods {
 
 }
+export interface columnLinkOData {
+
+}
 /*********************************************
 * listItemVersion
 **********************************************/
@@ -7962,6 +9738,9 @@ export interface listItemVersionProps {
 }
 export interface listItemVersionMethods {
 	fields(): IBaseQuery<fieldValueSet> & fieldValueSetMethods;
+}
+export interface listItemVersionOData {
+
 }
 /*********************************************
 * documentSetVersion
@@ -7977,6 +9756,9 @@ export interface documentSetVersionProps {
 export interface documentSetVersionMethods {
 
 }
+export interface documentSetVersionOData {
+
+}
 /*********************************************
 * fieldValueSet
 **********************************************/
@@ -7987,6 +9769,9 @@ export interface fieldValueSetProps {
 export interface fieldValueSetMethods {
 
 }
+export interface fieldValueSetOData {
+
+}
 /*********************************************
 * horizontalSectionColumn
 **********************************************/
@@ -7995,8 +9780,11 @@ export interface horizontalSectionColumnProps {
 	width: number;
 }
 export interface horizontalSectionColumnMethods {
-	webparts(): IBaseCollection<webPart>;
+	webparts(): IBaseCollection<webPart, webPartOData>;
 	webparts(id: string | number): IBaseQuery<webPart> & webPartMethods;
+}
+export interface horizontalSectionColumnOData {
+	webparts: IBaseResults<webPart>;
 }
 /*********************************************
 * webPart
@@ -8006,6 +9794,9 @@ export interface webPartProps {
 
 }
 export interface webPartMethods {
+
+}
+export interface webPartOData {
 
 }
 /*********************************************
@@ -8019,6 +9810,9 @@ export interface itemActivityProps {
 }
 export interface itemActivityMethods {
 	driveItem(): IBaseQuery<driveItem> & driveItemMethods;
+}
+export interface itemActivityOData {
+
 }
 /*********************************************
 * itemActivityStat
@@ -8036,8 +9830,11 @@ export interface itemActivityStatProps {
 	startDateTime: any;
 }
 export interface itemActivityStatMethods {
-	activities(): IBaseCollection<itemActivity>;
+	activities(): IBaseCollection<itemActivity, itemActivityOData>;
 	activities(id: string | number): IBaseQuery<itemActivity> & itemActivityMethods;
+}
+export interface itemActivityStatOData {
+	activities: IBaseResults<itemActivity>;
 }
 /*********************************************
 * sharedDriveItem
@@ -8048,13 +9845,16 @@ export interface sharedDriveItemProps {
 }
 export interface sharedDriveItemMethods {
 	driveItem(): IBaseQuery<driveItem> & driveItemMethods;
-	items(): IBaseCollection<driveItem>;
+	items(): IBaseCollection<driveItem, driveItemOData>;
 	items(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
 	list(): IBaseQuery<list> & listMethods;
 	listItem(): IBaseQuery<listItem> & listItemMethods;
 	permission(): IBaseQuery<permission> & permissionMethods;
 	root(): IBaseQuery<driveItem> & driveItemMethods;
 	site(): IBaseQuery<site> & siteMethods;
+}
+export interface sharedDriveItemOData {
+	items: IBaseResults<driveItem>;
 }
 /*********************************************
 * sitePage
@@ -8070,8 +9870,11 @@ export interface sitePageProps {
 }
 export interface sitePageMethods {
 	canvasLayout(): IBaseQuery<canvasLayout> & canvasLayoutMethods;
-	webParts(): IBaseCollection<webPart>;
+	webParts(): IBaseCollection<webPart, webPartOData>;
 	webParts(id: string | number): IBaseQuery<webPart> & webPartMethods;
+}
+export interface sitePageOData {
+	webParts: IBaseResults<webPart>;
 }
 /*********************************************
 * standardWebPart
@@ -8085,6 +9888,9 @@ export interface standardWebPartProps {
 export interface standardWebPartMethods {
 
 }
+export interface standardWebPartOData {
+
+}
 /*********************************************
 * textWebPart
 **********************************************/
@@ -8093,6 +9899,9 @@ export interface textWebPartProps {
 	innerHtml: string;
 }
 export interface textWebPartMethods {
+
+}
+export interface textWebPartOData {
 
 }
 /*********************************************
@@ -8110,6 +9919,9 @@ export interface callRecordingProps {
 	recordingContentUrl: string;
 }
 export interface callRecordingMethods {
+
+}
+export interface callRecordingOData {
 
 }
 /*********************************************
@@ -8130,6 +9942,9 @@ export interface callTranscriptProps {
 export interface callTranscriptMethods {
 
 }
+export interface callTranscriptOData {
+
+}
 /*********************************************
 * schemaExtension
 **********************************************/
@@ -8144,6 +9959,9 @@ export interface schemaExtensionProps {
 export interface schemaExtensionMethods {
 
 }
+export interface schemaExtensionOData {
+
+}
 /*********************************************
 * attributeMappingFunctionSchema
 **********************************************/
@@ -8154,6 +9972,9 @@ export interface attributeMappingFunctionSchemaProps {
 export interface attributeMappingFunctionSchemaMethods {
 
 }
+export interface attributeMappingFunctionSchemaOData {
+
+}
 /*********************************************
 * bulkUpload
 **********************************************/
@@ -8162,6 +9983,9 @@ export interface bulkUploadProps {
 
 }
 export interface bulkUploadMethods {
+
+}
+export interface bulkUploadOData {
 
 }
 /*********************************************
@@ -8179,6 +10003,9 @@ export interface directoryDefinitionProps {
 export interface directoryDefinitionMethods {
 
 }
+export interface directoryDefinitionOData {
+
+}
 /*********************************************
 * filterOperatorSchema
 **********************************************/
@@ -8189,6 +10016,9 @@ export interface filterOperatorSchemaProps {
 	supportedAttributeTypes: EnumTypes.attributeType[];
 }
 export interface filterOperatorSchemaMethods {
+
+}
+export interface filterOperatorSchemaOData {
 
 }
 /*********************************************
@@ -8205,6 +10035,9 @@ export interface synchronizationJobMethods {
 	bulkUpload(): IBaseQuery<bulkUpload> & bulkUploadMethods;
 	schema(): IBaseQuery<synchronizationSchema> & synchronizationSchemaMethods;
 }
+export interface synchronizationJobOData {
+
+}
 /*********************************************
 * synchronizationTemplate
 **********************************************/
@@ -8220,6 +10053,9 @@ export interface synchronizationTemplateProps {
 export interface synchronizationTemplateMethods {
 	schema(): IBaseQuery<synchronizationSchema> & synchronizationSchemaMethods;
 }
+export interface synchronizationTemplateOData {
+
+}
 /*********************************************
 * synchronizationSchema
 **********************************************/
@@ -8229,8 +10065,11 @@ export interface synchronizationSchemaProps {
 	version: string;
 }
 export interface synchronizationSchemaMethods {
-	directories(): IBaseCollection<directoryDefinition>;
+	directories(): IBaseCollection<directoryDefinition, directoryDefinitionOData>;
 	directories(id: string | number): IBaseQuery<directoryDefinition> & directoryDefinitionMethods;
+}
+export interface synchronizationSchemaOData {
+	directories: IBaseResults<directoryDefinition>;
 }
 /*********************************************
 * cloudCommunications
@@ -8240,14 +10079,20 @@ export interface cloudCommunicationsProps {
 
 }
 export interface cloudCommunicationsMethods {
-	callRecords(): IBaseCollection<callRecord>;
+	callRecords(): IBaseCollection<callRecord, callRecordOData>;
 	callRecords(id: string | number): IBaseQuery<callRecord> & callRecordMethods;
-	calls(): IBaseCollection<call>;
+	calls(): IBaseCollection<call, callOData>;
 	calls(id: string | number): IBaseQuery<call> & callMethods;
-	onlineMeetings(): IBaseCollection<onlineMeeting>;
+	onlineMeetings(): IBaseCollection<onlineMeeting, onlineMeetingOData>;
 	onlineMeetings(id: string | number): IBaseQuery<onlineMeeting> & onlineMeetingMethods;
-	presences(): IBaseCollection<presence>;
+	presences(): IBaseCollection<presence, presenceOData>;
 	presences(id: string | number): IBaseQuery<presence> & presenceMethods;
+}
+export interface cloudCommunicationsOData {
+	callRecords: IBaseResults<callRecord>;
+	calls: IBaseResults<call>;
+	onlineMeetings: IBaseResults<onlineMeeting>;
+	presences: IBaseResults<presence>;
 }
 /*********************************************
 * call
@@ -8276,14 +10121,20 @@ export interface callProps {
 	transcription: ComplexTypes.callTranscriptionInfo;
 }
 export interface callMethods {
-	audioRoutingGroups(): IBaseCollection<audioRoutingGroup>;
+	audioRoutingGroups(): IBaseCollection<audioRoutingGroup, audioRoutingGroupOData>;
 	audioRoutingGroups(id: string | number): IBaseQuery<audioRoutingGroup> & audioRoutingGroupMethods;
-	contentSharingSessions(): IBaseCollection<contentSharingSession>;
+	contentSharingSessions(): IBaseCollection<contentSharingSession, contentSharingSessionOData>;
 	contentSharingSessions(id: string | number): IBaseQuery<contentSharingSession> & contentSharingSessionMethods;
-	operations(): IBaseCollection<commsOperation>;
+	operations(): IBaseCollection<commsOperation, commsOperationOData>;
 	operations(id: string | number): IBaseQuery<commsOperation> & commsOperationMethods;
-	participants(): IBaseCollection<participant>;
+	participants(): IBaseCollection<participant, participantOData>;
 	participants(id: string | number): IBaseQuery<participant> & participantMethods;
+}
+export interface callOData {
+	audioRoutingGroups: IBaseResults<audioRoutingGroup>;
+	contentSharingSessions: IBaseResults<contentSharingSession>;
+	operations: IBaseResults<commsOperation>;
+	participants: IBaseResults<participant>;
 }
 /*********************************************
 * accessReviewHistoryDefinition
@@ -8301,8 +10152,11 @@ export interface accessReviewHistoryDefinitionProps {
 	status: EnumTypes.accessReviewHistoryStatus;
 }
 export interface accessReviewHistoryDefinitionMethods {
-	instances(): IBaseCollection<accessReviewHistoryInstance>;
+	instances(): IBaseCollection<accessReviewHistoryInstance, accessReviewHistoryInstanceOData>;
 	instances(id: string | number): IBaseQuery<accessReviewHistoryInstance> & accessReviewHistoryInstanceMethods;
+}
+export interface accessReviewHistoryDefinitionOData {
+	instances: IBaseResults<accessReviewHistoryInstance>;
 }
 /*********************************************
 * accessReviewHistoryInstance
@@ -8320,6 +10174,9 @@ export interface accessReviewHistoryInstanceProps {
 export interface accessReviewHistoryInstanceMethods {
 
 }
+export interface accessReviewHistoryInstanceOData {
+
+}
 /*********************************************
 * accessReviewInstance
 **********************************************/
@@ -8333,12 +10190,17 @@ export interface accessReviewInstanceProps {
 	status: string;
 }
 export interface accessReviewInstanceMethods {
-	contactedReviewers(): IBaseCollection<accessReviewReviewer>;
+	contactedReviewers(): IBaseCollection<accessReviewReviewer, accessReviewReviewerOData>;
 	contactedReviewers(id: string | number): IBaseQuery<accessReviewReviewer> & accessReviewReviewerMethods;
-	decisions(): IBaseCollection<accessReviewInstanceDecisionItem>;
+	decisions(): IBaseCollection<accessReviewInstanceDecisionItem, accessReviewInstanceDecisionItemOData>;
 	decisions(id: string | number): IBaseQuery<accessReviewInstanceDecisionItem> & accessReviewInstanceDecisionItemMethods;
-	stages(): IBaseCollection<accessReviewStage>;
+	stages(): IBaseCollection<accessReviewStage, accessReviewStageOData>;
 	stages(id: string | number): IBaseQuery<accessReviewStage> & accessReviewStageMethods;
+}
+export interface accessReviewInstanceOData {
+	contactedReviewers: IBaseResults<accessReviewReviewer>;
+	decisions: IBaseResults<accessReviewInstanceDecisionItem>;
+	stages: IBaseResults<accessReviewStage>;
 }
 /*********************************************
 * accessReviewReviewer
@@ -8350,6 +10212,9 @@ export interface accessReviewReviewerProps {
 	userPrincipalName: string;
 }
 export interface accessReviewReviewerMethods {
+
+}
+export interface accessReviewReviewerOData {
 
 }
 /*********************************************
@@ -8372,8 +10237,11 @@ export interface accessReviewInstanceDecisionItemProps {
 	reviewedDateTime: any;
 }
 export interface accessReviewInstanceDecisionItemMethods {
-	insights(): IBaseCollection<governanceInsight>;
+	insights(): IBaseCollection<governanceInsight, governanceInsightOData>;
 	insights(id: string | number): IBaseQuery<governanceInsight> & governanceInsightMethods;
+}
+export interface accessReviewInstanceDecisionItemOData {
+	insights: IBaseResults<governanceInsight>;
 }
 /*********************************************
 * accessReviewStage
@@ -8387,8 +10255,11 @@ export interface accessReviewStageProps {
 	status: string;
 }
 export interface accessReviewStageMethods {
-	decisions(): IBaseCollection<accessReviewInstanceDecisionItem>;
+	decisions(): IBaseCollection<accessReviewInstanceDecisionItem, accessReviewInstanceDecisionItemOData>;
 	decisions(id: string | number): IBaseQuery<accessReviewInstanceDecisionItem> & accessReviewInstanceDecisionItemMethods;
+}
+export interface accessReviewStageOData {
+	decisions: IBaseResults<accessReviewInstanceDecisionItem>;
 }
 /*********************************************
 * accessReviewScheduleDefinition
@@ -8411,8 +10282,11 @@ export interface accessReviewScheduleDefinitionProps {
 	status: string;
 }
 export interface accessReviewScheduleDefinitionMethods {
-	instances(): IBaseCollection<accessReviewInstance>;
+	instances(): IBaseCollection<accessReviewInstance, accessReviewInstanceOData>;
 	instances(id: string | number): IBaseQuery<accessReviewInstance> & accessReviewInstanceMethods;
+}
+export interface accessReviewScheduleDefinitionOData {
+	instances: IBaseResults<accessReviewInstance>;
 }
 /*********************************************
 * appConsentRequest
@@ -8424,8 +10298,11 @@ export interface appConsentRequestProps {
 	pendingScopes: ComplexTypes.appConsentRequestScope[];
 }
 export interface appConsentRequestMethods {
-	userConsentRequests(): IBaseCollection<userConsentRequest>;
+	userConsentRequests(): IBaseCollection<userConsentRequest, userConsentRequestOData>;
 	userConsentRequests(id: string | number): IBaseQuery<userConsentRequest> & userConsentRequestMethods;
+}
+export interface appConsentRequestOData {
+	userConsentRequests: IBaseResults<userConsentRequest>;
 }
 /*********************************************
 * userConsentRequest
@@ -8437,6 +10314,9 @@ export interface userConsentRequestProps {
 export interface userConsentRequestMethods {
 	approval(): IBaseQuery<approval> & approvalMethods;
 }
+export interface userConsentRequestOData {
+
+}
 /*********************************************
 * approval
 **********************************************/
@@ -8445,8 +10325,11 @@ export interface approvalProps {
 
 }
 export interface approvalMethods {
-	stages(): IBaseCollection<approvalStage>;
+	stages(): IBaseCollection<approvalStage, approvalStageOData>;
 	stages(id: string | number): IBaseQuery<approvalStage> & approvalStageMethods;
+}
+export interface approvalOData {
+	stages: IBaseResults<approvalStage>;
 }
 /*********************************************
 * approvalStage
@@ -8464,6 +10347,9 @@ export interface approvalStageProps {
 export interface approvalStageMethods {
 
 }
+export interface approvalStageOData {
+
+}
 /*********************************************
 * accessPackage
 **********************************************/
@@ -8476,17 +10362,24 @@ export interface accessPackageProps {
 	modifiedDateTime: any;
 }
 export interface accessPackageMethods {
-	accessPackagesIncompatibleWith(): IBaseCollection<accessPackage>;
+	accessPackagesIncompatibleWith(): IBaseCollection<accessPackage, accessPackageOData>;
 	accessPackagesIncompatibleWith(id: string | number): IBaseQuery<accessPackage> & accessPackageMethods;
-	assignmentPolicies(): IBaseCollection<accessPackageAssignmentPolicy>;
+	assignmentPolicies(): IBaseCollection<accessPackageAssignmentPolicy, accessPackageAssignmentPolicyOData>;
 	assignmentPolicies(id: string | number): IBaseQuery<accessPackageAssignmentPolicy> & accessPackageAssignmentPolicyMethods;
 	catalog(): IBaseQuery<accessPackageCatalog> & accessPackageCatalogMethods;
-	incompatibleAccessPackages(): IBaseCollection<accessPackage>;
+	incompatibleAccessPackages(): IBaseCollection<accessPackage, accessPackageOData>;
 	incompatibleAccessPackages(id: string | number): IBaseQuery<accessPackage> & accessPackageMethods;
-	incompatibleGroups(): IBaseCollection<group>;
+	incompatibleGroups(): IBaseCollection<group, groupOData>;
 	incompatibleGroups(id: string | number): IBaseQuery<group> & groupMethods;
-	resourceRoleScopes(): IBaseCollection<accessPackageResourceRoleScope>;
+	resourceRoleScopes(): IBaseCollection<accessPackageResourceRoleScope, accessPackageResourceRoleScopeOData>;
 	resourceRoleScopes(id: string | number): IBaseQuery<accessPackageResourceRoleScope> & accessPackageResourceRoleScopeMethods;
+}
+export interface accessPackageOData {
+	accessPackagesIncompatibleWith: IBaseResults<accessPackage>;
+	assignmentPolicies: IBaseResults<accessPackageAssignmentPolicy>;
+	incompatibleAccessPackages: IBaseResults<accessPackage>;
+	incompatibleGroups: IBaseResults<group>;
+	resourceRoleScopes: IBaseResults<accessPackageResourceRoleScope>;
 }
 /*********************************************
 * accessPackageAssignmentPolicy
@@ -8508,10 +10401,14 @@ export interface accessPackageAssignmentPolicyProps {
 export interface accessPackageAssignmentPolicyMethods {
 	accessPackage(): IBaseQuery<accessPackage> & accessPackageMethods;
 	catalog(): IBaseQuery<accessPackageCatalog> & accessPackageCatalogMethods;
-	customExtensionStageSettings(): IBaseCollection<customExtensionStageSetting>;
+	customExtensionStageSettings(): IBaseCollection<customExtensionStageSetting, customExtensionStageSettingOData>;
 	customExtensionStageSettings(id: string | number): IBaseQuery<customExtensionStageSetting> & customExtensionStageSettingMethods;
-	questions(): IBaseCollection<accessPackageQuestion>;
+	questions(): IBaseCollection<accessPackageQuestion, accessPackageQuestionOData>;
 	questions(id: string | number): IBaseQuery<accessPackageQuestion> & accessPackageQuestionMethods;
+}
+export interface accessPackageAssignmentPolicyOData {
+	customExtensionStageSettings: IBaseResults<customExtensionStageSetting>;
+	questions: IBaseResults<accessPackageQuestion>;
 }
 /*********************************************
 * accessPackageAssignmentRequest
@@ -8532,6 +10429,9 @@ export interface accessPackageAssignmentRequestMethods {
 	assignment(): IBaseQuery<accessPackageAssignment> & accessPackageAssignmentMethods;
 	requestor(): IBaseQuery<accessPackageSubject> & accessPackageSubjectMethods;
 }
+export interface accessPackageAssignmentRequestOData {
+
+}
 /*********************************************
 * accessPackageAssignment
 **********************************************/
@@ -8548,6 +10448,9 @@ export interface accessPackageAssignmentMethods {
 	assignmentPolicy(): IBaseQuery<accessPackageAssignmentPolicy> & accessPackageAssignmentPolicyMethods;
 	target(): IBaseQuery<accessPackageSubject> & accessPackageSubjectMethods;
 }
+export interface accessPackageAssignmentOData {
+
+}
 /*********************************************
 * accessPackageCatalog
 **********************************************/
@@ -8562,16 +10465,23 @@ export interface accessPackageCatalogProps {
 	state: EnumTypes.accessPackageCatalogState;
 }
 export interface accessPackageCatalogMethods {
-	accessPackages(): IBaseCollection<accessPackage>;
+	accessPackages(): IBaseCollection<accessPackage, accessPackageOData>;
 	accessPackages(id: string | number): IBaseQuery<accessPackage> & accessPackageMethods;
-	customWorkflowExtensions(): IBaseCollection<customCalloutExtension>;
+	customWorkflowExtensions(): IBaseCollection<customCalloutExtension, customCalloutExtensionOData>;
 	customWorkflowExtensions(id: string | number): IBaseQuery<customCalloutExtension> & customCalloutExtensionMethods;
-	resourceRoles(): IBaseCollection<accessPackageResourceRole>;
+	resourceRoles(): IBaseCollection<accessPackageResourceRole, accessPackageResourceRoleOData>;
 	resourceRoles(id: string | number): IBaseQuery<accessPackageResourceRole> & accessPackageResourceRoleMethods;
-	resources(): IBaseCollection<accessPackageResource>;
+	resources(): IBaseCollection<accessPackageResource, accessPackageResourceOData>;
 	resources(id: string | number): IBaseQuery<accessPackageResource> & accessPackageResourceMethods;
-	resourceScopes(): IBaseCollection<accessPackageResourceScope>;
+	resourceScopes(): IBaseCollection<accessPackageResourceScope, accessPackageResourceScopeOData>;
 	resourceScopes(id: string | number): IBaseQuery<accessPackageResourceScope> & accessPackageResourceScopeMethods;
+}
+export interface accessPackageCatalogOData {
+	accessPackages: IBaseResults<accessPackage>;
+	customWorkflowExtensions: IBaseResults<customCalloutExtension>;
+	resourceRoles: IBaseResults<accessPackageResourceRole>;
+	resources: IBaseResults<accessPackageResource>;
+	resourceScopes: IBaseResults<accessPackageResourceScope>;
 }
 /*********************************************
 * connectedOrganization
@@ -8586,10 +10496,14 @@ export interface connectedOrganizationProps {
 	state: EnumTypes.connectedOrganizationState;
 }
 export interface connectedOrganizationMethods {
-	externalSponsors(): IBaseCollection<directoryObject>;
+	externalSponsors(): IBaseCollection<directoryObject, directoryObjectOData>;
 	externalSponsors(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
-	internalSponsors(): IBaseCollection<directoryObject>;
+	internalSponsors(): IBaseCollection<directoryObject, directoryObjectOData>;
 	internalSponsors(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface connectedOrganizationOData {
+	externalSponsors: IBaseResults<directoryObject>;
+	internalSponsors: IBaseResults<directoryObject>;
 }
 /*********************************************
 * accessPackageResourceEnvironment
@@ -8606,8 +10520,11 @@ export interface accessPackageResourceEnvironmentProps {
 	originSystem: string;
 }
 export interface accessPackageResourceEnvironmentMethods {
-	resources(): IBaseCollection<accessPackageResource>;
+	resources(): IBaseCollection<accessPackageResource, accessPackageResourceOData>;
 	resources(id: string | number): IBaseQuery<accessPackageResource> & accessPackageResourceMethods;
+}
+export interface accessPackageResourceEnvironmentOData {
+	resources: IBaseResults<accessPackageResource>;
 }
 /*********************************************
 * accessPackageResourceRequest
@@ -8622,6 +10539,9 @@ export interface accessPackageResourceRequestMethods {
 	catalog(): IBaseQuery<accessPackageCatalog> & accessPackageCatalogMethods;
 	resource(): IBaseQuery<accessPackageResource> & accessPackageResourceMethods;
 }
+export interface accessPackageResourceRequestOData {
+
+}
 /*********************************************
 * accessPackageResourceRoleScope
 **********************************************/
@@ -8632,6 +10552,9 @@ export interface accessPackageResourceRoleScopeProps {
 export interface accessPackageResourceRoleScopeMethods {
 	role(): IBaseQuery<accessPackageResourceRole> & accessPackageResourceRoleMethods;
 	scope(): IBaseQuery<accessPackageResourceScope> & accessPackageResourceScopeMethods;
+}
+export interface accessPackageResourceRoleScopeOData {
+
 }
 /*********************************************
 * accessPackageResource
@@ -8648,10 +10571,14 @@ export interface accessPackageResourceProps {
 }
 export interface accessPackageResourceMethods {
 	environment(): IBaseQuery<accessPackageResourceEnvironment> & accessPackageResourceEnvironmentMethods;
-	roles(): IBaseCollection<accessPackageResourceRole>;
+	roles(): IBaseCollection<accessPackageResourceRole, accessPackageResourceRoleOData>;
 	roles(id: string | number): IBaseQuery<accessPackageResourceRole> & accessPackageResourceRoleMethods;
-	scopes(): IBaseCollection<accessPackageResourceScope>;
+	scopes(): IBaseCollection<accessPackageResourceScope, accessPackageResourceScopeOData>;
 	scopes(id: string | number): IBaseQuery<accessPackageResourceScope> & accessPackageResourceScopeMethods;
+}
+export interface accessPackageResourceOData {
+	roles: IBaseResults<accessPackageResourceRole>;
+	scopes: IBaseResults<accessPackageResourceScope>;
 }
 /*********************************************
 * entitlementManagementSettings
@@ -8664,6 +10591,9 @@ export interface entitlementManagementSettingsProps {
 export interface entitlementManagementSettingsMethods {
 
 }
+export interface entitlementManagementSettingsOData {
+
+}
 /*********************************************
 * privilegedAccessGroup
 **********************************************/
@@ -8672,20 +10602,29 @@ export interface privilegedAccessGroupProps {
 
 }
 export interface privilegedAccessGroupMethods {
-	assignmentApprovals(): IBaseCollection<approval>;
+	assignmentApprovals(): IBaseCollection<approval, approvalOData>;
 	assignmentApprovals(id: string | number): IBaseQuery<approval> & approvalMethods;
-	assignmentScheduleInstances(): IBaseCollection<privilegedAccessGroupAssignmentScheduleInstance>;
+	assignmentScheduleInstances(): IBaseCollection<privilegedAccessGroupAssignmentScheduleInstance, privilegedAccessGroupAssignmentScheduleInstanceOData>;
 	assignmentScheduleInstances(id: string | number): IBaseQuery<privilegedAccessGroupAssignmentScheduleInstance> & privilegedAccessGroupAssignmentScheduleInstanceMethods;
-	assignmentScheduleRequests(): IBaseCollection<privilegedAccessGroupAssignmentScheduleRequest>;
+	assignmentScheduleRequests(): IBaseCollection<privilegedAccessGroupAssignmentScheduleRequest, privilegedAccessGroupAssignmentScheduleRequestOData>;
 	assignmentScheduleRequests(id: string | number): IBaseQuery<privilegedAccessGroupAssignmentScheduleRequest> & privilegedAccessGroupAssignmentScheduleRequestMethods;
-	assignmentSchedules(): IBaseCollection<privilegedAccessGroupAssignmentSchedule>;
+	assignmentSchedules(): IBaseCollection<privilegedAccessGroupAssignmentSchedule, privilegedAccessGroupAssignmentScheduleOData>;
 	assignmentSchedules(id: string | number): IBaseQuery<privilegedAccessGroupAssignmentSchedule> & privilegedAccessGroupAssignmentScheduleMethods;
-	eligibilityScheduleInstances(): IBaseCollection<privilegedAccessGroupEligibilityScheduleInstance>;
+	eligibilityScheduleInstances(): IBaseCollection<privilegedAccessGroupEligibilityScheduleInstance, privilegedAccessGroupEligibilityScheduleInstanceOData>;
 	eligibilityScheduleInstances(id: string | number): IBaseQuery<privilegedAccessGroupEligibilityScheduleInstance> & privilegedAccessGroupEligibilityScheduleInstanceMethods;
-	eligibilityScheduleRequests(): IBaseCollection<privilegedAccessGroupEligibilityScheduleRequest>;
+	eligibilityScheduleRequests(): IBaseCollection<privilegedAccessGroupEligibilityScheduleRequest, privilegedAccessGroupEligibilityScheduleRequestOData>;
 	eligibilityScheduleRequests(id: string | number): IBaseQuery<privilegedAccessGroupEligibilityScheduleRequest> & privilegedAccessGroupEligibilityScheduleRequestMethods;
-	eligibilitySchedules(): IBaseCollection<privilegedAccessGroupEligibilitySchedule>;
+	eligibilitySchedules(): IBaseCollection<privilegedAccessGroupEligibilitySchedule, privilegedAccessGroupEligibilityScheduleOData>;
 	eligibilitySchedules(id: string | number): IBaseQuery<privilegedAccessGroupEligibilitySchedule> & privilegedAccessGroupEligibilityScheduleMethods;
+}
+export interface privilegedAccessGroupOData {
+	assignmentApprovals: IBaseResults<approval>;
+	assignmentScheduleInstances: IBaseResults<privilegedAccessGroupAssignmentScheduleInstance>;
+	assignmentScheduleRequests: IBaseResults<privilegedAccessGroupAssignmentScheduleRequest>;
+	assignmentSchedules: IBaseResults<privilegedAccessGroupAssignmentSchedule>;
+	eligibilityScheduleInstances: IBaseResults<privilegedAccessGroupEligibilityScheduleInstance>;
+	eligibilityScheduleRequests: IBaseResults<privilegedAccessGroupEligibilityScheduleRequest>;
+	eligibilitySchedules: IBaseResults<privilegedAccessGroupEligibilitySchedule>;
 }
 /*********************************************
 * privilegedAccessScheduleInstance
@@ -8696,6 +10635,9 @@ export interface privilegedAccessScheduleInstanceProps {
 	startDateTime: any;
 }
 export interface privilegedAccessScheduleInstanceMethods {
+
+}
+export interface privilegedAccessScheduleInstanceOData {
 
 }
 /*********************************************
@@ -8715,6 +10657,9 @@ export interface privilegedAccessGroupAssignmentScheduleInstanceMethods {
 	group(): IBaseQuery<group> & groupMethods;
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 }
+export interface privilegedAccessGroupAssignmentScheduleInstanceOData {
+
+}
 /*********************************************
 * privilegedAccessScheduleRequest
 **********************************************/
@@ -8727,6 +10672,9 @@ export interface privilegedAccessScheduleRequestProps {
 	ticketInfo: ComplexTypes.ticketInfo;
 }
 export interface privilegedAccessScheduleRequestMethods {
+
+}
+export interface privilegedAccessScheduleRequestOData {
 
 }
 /*********************************************
@@ -8745,6 +10693,9 @@ export interface privilegedAccessGroupAssignmentScheduleRequestMethods {
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	targetSchedule(): IBaseQuery<privilegedAccessGroupEligibilitySchedule> & privilegedAccessGroupEligibilityScheduleMethods;
 }
+export interface privilegedAccessGroupAssignmentScheduleRequestOData {
+
+}
 /*********************************************
 * privilegedAccessSchedule
 **********************************************/
@@ -8757,6 +10708,9 @@ export interface privilegedAccessScheduleProps {
 	status: string;
 }
 export interface privilegedAccessScheduleMethods {
+
+}
+export interface privilegedAccessScheduleOData {
 
 }
 /*********************************************
@@ -8775,6 +10729,9 @@ export interface privilegedAccessGroupAssignmentScheduleMethods {
 	group(): IBaseQuery<group> & groupMethods;
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 }
+export interface privilegedAccessGroupAssignmentScheduleOData {
+
+}
 /*********************************************
 * privilegedAccessGroupEligibilityScheduleInstance
 **********************************************/
@@ -8789,6 +10746,9 @@ export interface privilegedAccessGroupEligibilityScheduleInstanceProps {
 export interface privilegedAccessGroupEligibilityScheduleInstanceMethods {
 	group(): IBaseQuery<group> & groupMethods;
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
+}
+export interface privilegedAccessGroupEligibilityScheduleInstanceOData {
+
 }
 /*********************************************
 * privilegedAccessGroupEligibilityScheduleRequest
@@ -8805,6 +10765,9 @@ export interface privilegedAccessGroupEligibilityScheduleRequestMethods {
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	targetSchedule(): IBaseQuery<privilegedAccessGroupEligibilitySchedule> & privilegedAccessGroupEligibilityScheduleMethods;
 }
+export interface privilegedAccessGroupEligibilityScheduleRequestOData {
+
+}
 /*********************************************
 * privilegedAccessGroupEligibilitySchedule
 **********************************************/
@@ -8819,6 +10782,9 @@ export interface privilegedAccessGroupEligibilityScheduleMethods {
 	group(): IBaseQuery<group> & groupMethods;
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 }
+export interface privilegedAccessGroupEligibilityScheduleOData {
+
+}
 /*********************************************
 * userSignInInsight
 **********************************************/
@@ -8827,6 +10793,9 @@ export interface userSignInInsightProps {
 	lastSignInDateTime: any;
 }
 export interface userSignInInsightMethods {
+
+}
+export interface userSignInInsightOData {
 
 }
 /*********************************************
@@ -8841,11 +10810,15 @@ export interface agreementProps {
 	userReacceptRequiredFrequency: number;
 }
 export interface agreementMethods {
-	acceptances(): IBaseCollection<agreementAcceptance>;
+	acceptances(): IBaseCollection<agreementAcceptance, agreementAcceptanceOData>;
 	acceptances(id: string | number): IBaseQuery<agreementAcceptance> & agreementAcceptanceMethods;
 	file(): IBaseQuery<agreementFile> & agreementFileMethods;
-	files(): IBaseCollection<agreementFileLocalization>;
+	files(): IBaseCollection<agreementFileLocalization, agreementFileLocalizationOData>;
 	files(id: string | number): IBaseQuery<agreementFileLocalization> & agreementFileLocalizationMethods;
+}
+export interface agreementOData {
+	acceptances: IBaseResults<agreementAcceptance>;
+	files: IBaseResults<agreementFileLocalization>;
 }
 /*********************************************
 * agreementFileProperties
@@ -8863,6 +10836,9 @@ export interface agreementFilePropertiesProps {
 export interface agreementFilePropertiesMethods {
 
 }
+export interface agreementFilePropertiesOData {
+
+}
 /*********************************************
 * agreementFile
 **********************************************/
@@ -8871,8 +10847,11 @@ export interface agreementFileProps {
 
 }
 export interface agreementFileMethods {
-	localizations(): IBaseCollection<agreementFileLocalization>;
+	localizations(): IBaseCollection<agreementFileLocalization, agreementFileLocalizationOData>;
 	localizations(id: string | number): IBaseQuery<agreementFileLocalization> & agreementFileLocalizationMethods;
+}
+export interface agreementFileOData {
+	localizations: IBaseResults<agreementFileLocalization>;
 }
 /*********************************************
 * agreementFileLocalization
@@ -8882,8 +10861,11 @@ export interface agreementFileLocalizationProps {
 
 }
 export interface agreementFileLocalizationMethods {
-	versions(): IBaseCollection<agreementFileVersion>;
+	versions(): IBaseCollection<agreementFileVersion, agreementFileVersionOData>;
 	versions(id: string | number): IBaseQuery<agreementFileVersion> & agreementFileVersionMethods;
+}
+export interface agreementFileLocalizationOData {
+	versions: IBaseResults<agreementFileVersion>;
 }
 /*********************************************
 * agreementFileVersion
@@ -8893,6 +10875,9 @@ export interface agreementFileVersionProps {
 
 }
 export interface agreementFileVersionMethods {
+
+}
+export interface agreementFileVersionOData {
 
 }
 /*********************************************
@@ -8907,6 +10892,9 @@ export interface countryNamedLocationProps {
 export interface countryNamedLocationMethods {
 
 }
+export interface countryNamedLocationOData {
+
+}
 /*********************************************
 * identityProtectionRoot
 **********************************************/
@@ -8915,14 +10903,20 @@ export interface identityProtectionRootProps {
 
 }
 export interface identityProtectionRootMethods {
-	riskDetections(): IBaseCollection<riskDetection>;
+	riskDetections(): IBaseCollection<riskDetection, riskDetectionOData>;
 	riskDetections(id: string | number): IBaseQuery<riskDetection> & riskDetectionMethods;
-	riskyServicePrincipals(): IBaseCollection<riskyServicePrincipal>;
+	riskyServicePrincipals(): IBaseCollection<riskyServicePrincipal, riskyServicePrincipalOData>;
 	riskyServicePrincipals(id: string | number): IBaseQuery<riskyServicePrincipal> & riskyServicePrincipalMethods;
-	riskyUsers(): IBaseCollection<riskyUser>;
+	riskyUsers(): IBaseCollection<riskyUser, riskyUserOData>;
 	riskyUsers(id: string | number): IBaseQuery<riskyUser> & riskyUserMethods;
-	servicePrincipalRiskDetections(): IBaseCollection<servicePrincipalRiskDetection>;
+	servicePrincipalRiskDetections(): IBaseCollection<servicePrincipalRiskDetection, servicePrincipalRiskDetectionOData>;
 	servicePrincipalRiskDetections(id: string | number): IBaseQuery<servicePrincipalRiskDetection> & servicePrincipalRiskDetectionMethods;
+}
+export interface identityProtectionRootOData {
+	riskDetections: IBaseResults<riskDetection>;
+	riskyServicePrincipals: IBaseResults<riskyServicePrincipal>;
+	riskyUsers: IBaseResults<riskyUser>;
+	servicePrincipalRiskDetections: IBaseResults<servicePrincipalRiskDetection>;
 }
 /*********************************************
 * riskDetection
@@ -8952,6 +10946,9 @@ export interface riskDetectionProps {
 export interface riskDetectionMethods {
 
 }
+export interface riskDetectionOData {
+
+}
 /*********************************************
 * riskyServicePrincipal
 **********************************************/
@@ -8968,8 +10965,11 @@ export interface riskyServicePrincipalProps {
 	servicePrincipalType: string;
 }
 export interface riskyServicePrincipalMethods {
-	history(): IBaseCollection<riskyServicePrincipalHistoryItem>;
+	history(): IBaseCollection<riskyServicePrincipalHistoryItem, riskyServicePrincipalHistoryItemOData>;
 	history(id: string | number): IBaseQuery<riskyServicePrincipalHistoryItem> & riskyServicePrincipalHistoryItemMethods;
+}
+export interface riskyServicePrincipalOData {
+	history: IBaseResults<riskyServicePrincipalHistoryItem>;
 }
 /*********************************************
 * riskyUser
@@ -8986,8 +10986,11 @@ export interface riskyUserProps {
 	userPrincipalName: string;
 }
 export interface riskyUserMethods {
-	history(): IBaseCollection<riskyUserHistoryItem>;
+	history(): IBaseCollection<riskyUserHistoryItem, riskyUserHistoryItemOData>;
 	history(id: string | number): IBaseQuery<riskyUserHistoryItem> & riskyUserHistoryItemMethods;
+}
+export interface riskyUserOData {
+	history: IBaseResults<riskyUserHistoryItem>;
 }
 /*********************************************
 * servicePrincipalRiskDetection
@@ -9018,6 +11021,9 @@ export interface servicePrincipalRiskDetectionProps {
 export interface servicePrincipalRiskDetectionMethods {
 
 }
+export interface servicePrincipalRiskDetectionOData {
+
+}
 /*********************************************
 * ipNamedLocation
 **********************************************/
@@ -9029,6 +11035,9 @@ export interface ipNamedLocationProps {
 export interface ipNamedLocationMethods {
 
 }
+export interface ipNamedLocationOData {
+
+}
 /*********************************************
 * riskyServicePrincipalHistoryItem
 **********************************************/
@@ -9038,6 +11047,9 @@ export interface riskyServicePrincipalHistoryItemProps {
 	initiatedBy: string;
 }
 export interface riskyServicePrincipalHistoryItemMethods {
+
+}
+export interface riskyServicePrincipalHistoryItemOData {
 
 }
 /*********************************************
@@ -9052,6 +11064,9 @@ export interface riskyUserHistoryItemProps {
 export interface riskyUserHistoryItemMethods {
 
 }
+export interface riskyUserHistoryItemOData {
+
+}
 /*********************************************
 * accessPackageQuestion
 **********************************************/
@@ -9064,6 +11079,9 @@ export interface accessPackageQuestionProps {
 	text: string;
 }
 export interface accessPackageQuestionMethods {
+
+}
+export interface accessPackageQuestionOData {
 
 }
 /*********************************************
@@ -9081,6 +11099,9 @@ export interface accessPackageSubjectProps {
 export interface accessPackageSubjectMethods {
 	connectedOrganization(): IBaseQuery<connectedOrganization> & connectedOrganizationMethods;
 }
+export interface accessPackageSubjectOData {
+
+}
 /*********************************************
 * customExtensionStageSetting
 **********************************************/
@@ -9090,6 +11111,9 @@ export interface customExtensionStageSettingProps {
 }
 export interface customExtensionStageSettingMethods {
 	customExtension(): IBaseQuery<customCalloutExtension> & customCalloutExtensionMethods;
+}
+export interface customExtensionStageSettingOData {
+
 }
 /*********************************************
 * accessPackageAssignmentRequestWorkflowExtension
@@ -9103,6 +11127,9 @@ export interface accessPackageAssignmentRequestWorkflowExtensionProps {
 	lastModifiedDateTime: any;
 }
 export interface accessPackageAssignmentRequestWorkflowExtensionMethods {
+
+}
+export interface accessPackageAssignmentRequestWorkflowExtensionOData {
 
 }
 /*********************************************
@@ -9119,6 +11146,9 @@ export interface accessPackageAssignmentWorkflowExtensionProps {
 export interface accessPackageAssignmentWorkflowExtensionMethods {
 
 }
+export interface accessPackageAssignmentWorkflowExtensionOData {
+
+}
 /*********************************************
 * accessPackageResourceRole
 **********************************************/
@@ -9131,6 +11161,9 @@ export interface accessPackageResourceRoleProps {
 }
 export interface accessPackageResourceRoleMethods {
 	resource(): IBaseQuery<accessPackageResource> & accessPackageResourceMethods;
+}
+export interface accessPackageResourceRoleOData {
+
 }
 /*********************************************
 * accessPackageResourceScope
@@ -9146,6 +11179,9 @@ export interface accessPackageResourceScopeProps {
 export interface accessPackageResourceScopeMethods {
 	resource(): IBaseQuery<accessPackageResource> & accessPackageResourceMethods;
 }
+export interface accessPackageResourceScopeOData {
+
+}
 /*********************************************
 * accessPackageMultipleChoiceQuestion
 **********************************************/
@@ -9157,6 +11193,9 @@ export interface accessPackageMultipleChoiceQuestionProps {
 export interface accessPackageMultipleChoiceQuestionMethods {
 
 }
+export interface accessPackageMultipleChoiceQuestionOData {
+
+}
 /*********************************************
 * accessPackageTextInputQuestion
 **********************************************/
@@ -9166,6 +11205,9 @@ export interface accessPackageTextInputQuestionProps {
 	regexPattern: string;
 }
 export interface accessPackageTextInputQuestionMethods {
+
+}
+export interface accessPackageTextInputQuestionOData {
 
 }
 /*********************************************
@@ -9188,10 +11230,14 @@ export interface mobileAppProps {
 	publishingState: EnumTypes.mobileAppPublishingState;
 }
 export interface mobileAppMethods {
-	assignments(): IBaseCollection<mobileAppAssignment>;
+	assignments(): IBaseCollection<mobileAppAssignment, mobileAppAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<mobileAppAssignment> & mobileAppAssignmentMethods;
-	categories(): IBaseCollection<mobileAppCategory>;
+	categories(): IBaseCollection<mobileAppCategory, mobileAppCategoryOData>;
 	categories(id: string | number): IBaseQuery<mobileAppCategory> & mobileAppCategoryMethods;
+}
+export interface mobileAppOData {
+	assignments: IBaseResults<mobileAppAssignment>;
+	categories: IBaseResults<mobileAppCategory>;
 }
 /*********************************************
 * mobileLobApp
@@ -9203,8 +11249,11 @@ export interface mobileLobAppProps {
 	size: number;
 }
 export interface mobileLobAppMethods {
-	contentVersions(): IBaseCollection<mobileAppContent>;
+	contentVersions(): IBaseCollection<mobileAppContent, mobileAppContentOData>;
 	contentVersions(id: string | number): IBaseQuery<mobileAppContent> & mobileAppContentMethods;
+}
+export interface mobileLobAppOData {
+	contentVersions: IBaseResults<mobileAppContent>;
 }
 /*********************************************
 * androidLobApp
@@ -9219,6 +11268,9 @@ export interface androidLobAppProps {
 export interface androidLobAppMethods {
 
 }
+export interface androidLobAppOData {
+
+}
 /*********************************************
 * androidStoreApp
 **********************************************/
@@ -9229,6 +11281,9 @@ export interface androidStoreAppProps {
 	packageId: string;
 }
 export interface androidStoreAppMethods {
+
+}
+export interface androidStoreAppOData {
 
 }
 /*********************************************
@@ -9242,34 +11297,50 @@ export interface deviceAppManagementProps {
 	microsoftStoreForBusinessLastSuccessfulSyncDateTime: any;
 }
 export interface deviceAppManagementMethods {
-	managedEBooks(): IBaseCollection<managedEBook>;
+	managedEBooks(): IBaseCollection<managedEBook, managedEBookOData>;
 	managedEBooks(id: string | number): IBaseQuery<managedEBook> & managedEBookMethods;
-	mobileAppCategories(): IBaseCollection<mobileAppCategory>;
+	mobileAppCategories(): IBaseCollection<mobileAppCategory, mobileAppCategoryOData>;
 	mobileAppCategories(id: string | number): IBaseQuery<mobileAppCategory> & mobileAppCategoryMethods;
-	mobileAppConfigurations(): IBaseCollection<managedDeviceMobileAppConfiguration>;
+	mobileAppConfigurations(): IBaseCollection<managedDeviceMobileAppConfiguration, managedDeviceMobileAppConfigurationOData>;
 	mobileAppConfigurations(id: string | number): IBaseQuery<managedDeviceMobileAppConfiguration> & managedDeviceMobileAppConfigurationMethods;
-	mobileApps(): IBaseCollection<mobileApp>;
+	mobileApps(): IBaseCollection<mobileApp, mobileAppOData>;
 	mobileApps(id: string | number): IBaseQuery<mobileApp> & mobileAppMethods;
-	vppTokens(): IBaseCollection<vppToken>;
+	vppTokens(): IBaseCollection<vppToken, vppTokenOData>;
 	vppTokens(id: string | number): IBaseQuery<vppToken> & vppTokenMethods;
-	androidManagedAppProtections(): IBaseCollection<androidManagedAppProtection>;
+	androidManagedAppProtections(): IBaseCollection<androidManagedAppProtection, androidManagedAppProtectionOData>;
 	androidManagedAppProtections(id: string | number): IBaseQuery<androidManagedAppProtection> & androidManagedAppProtectionMethods;
-	defaultManagedAppProtections(): IBaseCollection<defaultManagedAppProtection>;
+	defaultManagedAppProtections(): IBaseCollection<defaultManagedAppProtection, defaultManagedAppProtectionOData>;
 	defaultManagedAppProtections(id: string | number): IBaseQuery<defaultManagedAppProtection> & defaultManagedAppProtectionMethods;
-	iosManagedAppProtections(): IBaseCollection<iosManagedAppProtection>;
+	iosManagedAppProtections(): IBaseCollection<iosManagedAppProtection, iosManagedAppProtectionOData>;
 	iosManagedAppProtections(id: string | number): IBaseQuery<iosManagedAppProtection> & iosManagedAppProtectionMethods;
-	managedAppPolicies(): IBaseCollection<managedAppPolicy>;
+	managedAppPolicies(): IBaseCollection<managedAppPolicy, managedAppPolicyOData>;
 	managedAppPolicies(id: string | number): IBaseQuery<managedAppPolicy> & managedAppPolicyMethods;
-	managedAppRegistrations(): IBaseCollection<managedAppRegistration>;
+	managedAppRegistrations(): IBaseCollection<managedAppRegistration, managedAppRegistrationOData>;
 	managedAppRegistrations(id: string | number): IBaseQuery<managedAppRegistration> & managedAppRegistrationMethods;
-	managedAppStatuses(): IBaseCollection<managedAppStatus>;
+	managedAppStatuses(): IBaseCollection<managedAppStatus, managedAppStatusOData>;
 	managedAppStatuses(id: string | number): IBaseQuery<managedAppStatus> & managedAppStatusMethods;
-	mdmWindowsInformationProtectionPolicies(): IBaseCollection<mdmWindowsInformationProtectionPolicy>;
+	mdmWindowsInformationProtectionPolicies(): IBaseCollection<mdmWindowsInformationProtectionPolicy, mdmWindowsInformationProtectionPolicyOData>;
 	mdmWindowsInformationProtectionPolicies(id: string | number): IBaseQuery<mdmWindowsInformationProtectionPolicy> & mdmWindowsInformationProtectionPolicyMethods;
-	targetedManagedAppConfigurations(): IBaseCollection<targetedManagedAppConfiguration>;
+	targetedManagedAppConfigurations(): IBaseCollection<targetedManagedAppConfiguration, targetedManagedAppConfigurationOData>;
 	targetedManagedAppConfigurations(id: string | number): IBaseQuery<targetedManagedAppConfiguration> & targetedManagedAppConfigurationMethods;
-	windowsInformationProtectionPolicies(): IBaseCollection<windowsInformationProtectionPolicy>;
+	windowsInformationProtectionPolicies(): IBaseCollection<windowsInformationProtectionPolicy, windowsInformationProtectionPolicyOData>;
 	windowsInformationProtectionPolicies(id: string | number): IBaseQuery<windowsInformationProtectionPolicy> & windowsInformationProtectionPolicyMethods;
+}
+export interface deviceAppManagementOData {
+	managedEBooks: IBaseResults<managedEBook>;
+	mobileAppCategories: IBaseResults<mobileAppCategory>;
+	mobileAppConfigurations: IBaseResults<managedDeviceMobileAppConfiguration>;
+	mobileApps: IBaseResults<mobileApp>;
+	vppTokens: IBaseResults<vppToken>;
+	androidManagedAppProtections: IBaseResults<androidManagedAppProtection>;
+	defaultManagedAppProtections: IBaseResults<defaultManagedAppProtection>;
+	iosManagedAppProtections: IBaseResults<iosManagedAppProtection>;
+	managedAppPolicies: IBaseResults<managedAppPolicy>;
+	managedAppRegistrations: IBaseResults<managedAppRegistration>;
+	managedAppStatuses: IBaseResults<managedAppStatus>;
+	mdmWindowsInformationProtectionPolicies: IBaseResults<mdmWindowsInformationProtectionPolicy>;
+	targetedManagedAppConfigurations: IBaseResults<targetedManagedAppConfiguration>;
+	windowsInformationProtectionPolicies: IBaseResults<windowsInformationProtectionPolicy>;
 }
 /*********************************************
 * managedEBook
@@ -9287,13 +11358,18 @@ export interface managedEBookProps {
 	publisher: string;
 }
 export interface managedEBookMethods {
-	assignments(): IBaseCollection<managedEBookAssignment>;
+	assignments(): IBaseCollection<managedEBookAssignment, managedEBookAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<managedEBookAssignment> & managedEBookAssignmentMethods;
-	deviceStates(): IBaseCollection<deviceInstallState>;
+	deviceStates(): IBaseCollection<deviceInstallState, deviceInstallStateOData>;
 	deviceStates(id: string | number): IBaseQuery<deviceInstallState> & deviceInstallStateMethods;
 	installSummary(): IBaseQuery<eBookInstallSummary> & eBookInstallSummaryMethods;
-	userStateSummary(): IBaseCollection<userInstallStateSummary>;
+	userStateSummary(): IBaseCollection<userInstallStateSummary, userInstallStateSummaryOData>;
 	userStateSummary(id: string | number): IBaseQuery<userInstallStateSummary> & userInstallStateSummaryMethods;
+}
+export interface managedEBookOData {
+	assignments: IBaseResults<managedEBookAssignment>;
+	deviceStates: IBaseResults<deviceInstallState>;
+	userStateSummary: IBaseResults<userInstallStateSummary>;
 }
 /*********************************************
 * mobileAppCategory
@@ -9304,6 +11380,9 @@ export interface mobileAppCategoryProps {
 	lastModifiedDateTime: any;
 }
 export interface mobileAppCategoryMethods {
+
+}
+export interface mobileAppCategoryOData {
 
 }
 /*********************************************
@@ -9319,14 +11398,19 @@ export interface managedDeviceMobileAppConfigurationProps {
 	version: number;
 }
 export interface managedDeviceMobileAppConfigurationMethods {
-	assignments(): IBaseCollection<managedDeviceMobileAppConfigurationAssignment>;
+	assignments(): IBaseCollection<managedDeviceMobileAppConfigurationAssignment, managedDeviceMobileAppConfigurationAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<managedDeviceMobileAppConfigurationAssignment> & managedDeviceMobileAppConfigurationAssignmentMethods;
-	deviceStatuses(): IBaseCollection<managedDeviceMobileAppConfigurationDeviceStatus>;
+	deviceStatuses(): IBaseCollection<managedDeviceMobileAppConfigurationDeviceStatus, managedDeviceMobileAppConfigurationDeviceStatusOData>;
 	deviceStatuses(id: string | number): IBaseQuery<managedDeviceMobileAppConfigurationDeviceStatus> & managedDeviceMobileAppConfigurationDeviceStatusMethods;
 	deviceStatusSummary(): IBaseQuery<managedDeviceMobileAppConfigurationDeviceSummary> & managedDeviceMobileAppConfigurationDeviceSummaryMethods;
-	userStatuses(): IBaseCollection<managedDeviceMobileAppConfigurationUserStatus>;
+	userStatuses(): IBaseCollection<managedDeviceMobileAppConfigurationUserStatus, managedDeviceMobileAppConfigurationUserStatusOData>;
 	userStatuses(id: string | number): IBaseQuery<managedDeviceMobileAppConfigurationUserStatus> & managedDeviceMobileAppConfigurationUserStatusMethods;
 	userStatusSummary(): IBaseQuery<managedDeviceMobileAppConfigurationUserSummary> & managedDeviceMobileAppConfigurationUserSummaryMethods;
+}
+export interface managedDeviceMobileAppConfigurationOData {
+	assignments: IBaseResults<managedDeviceMobileAppConfigurationAssignment>;
+	deviceStatuses: IBaseResults<managedDeviceMobileAppConfigurationDeviceStatus>;
+	userStatuses: IBaseResults<managedDeviceMobileAppConfigurationUserStatus>;
 }
 /*********************************************
 * vppToken
@@ -9348,6 +11432,9 @@ export interface vppTokenProps {
 export interface vppTokenMethods {
 
 }
+export interface vppTokenOData {
+
+}
 /*********************************************
 * managedAppPolicy
 **********************************************/
@@ -9360,6 +11447,9 @@ export interface managedAppPolicyProps {
 	version: string;
 }
 export interface managedAppPolicyMethods {
+
+}
+export interface managedAppPolicyOData {
 
 }
 /*********************************************
@@ -9398,6 +11488,9 @@ export interface managedAppProtectionProps {
 export interface managedAppProtectionMethods {
 
 }
+export interface managedAppProtectionOData {
+
+}
 /*********************************************
 * targetedManagedAppProtection
 **********************************************/
@@ -9406,8 +11499,11 @@ export interface targetedManagedAppProtectionProps {
 	isAssigned: boolean;
 }
 export interface targetedManagedAppProtectionMethods {
-	assignments(): IBaseCollection<targetedManagedAppPolicyAssignment>;
+	assignments(): IBaseCollection<targetedManagedAppPolicyAssignment, targetedManagedAppPolicyAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<targetedManagedAppPolicyAssignment> & targetedManagedAppPolicyAssignmentMethods;
+}
+export interface targetedManagedAppProtectionOData {
+	assignments: IBaseResults<targetedManagedAppPolicyAssignment>;
 }
 /*********************************************
 * androidManagedAppProtection
@@ -9424,9 +11520,12 @@ export interface androidManagedAppProtectionProps {
 	screenCaptureBlocked: boolean;
 }
 export interface androidManagedAppProtectionMethods {
-	apps(): IBaseCollection<managedMobileApp>;
+	apps(): IBaseCollection<managedMobileApp, managedMobileAppOData>;
 	apps(id: string | number): IBaseQuery<managedMobileApp> & managedMobileAppMethods;
 	deploymentSummary(): IBaseQuery<managedAppPolicyDeploymentSummary> & managedAppPolicyDeploymentSummaryMethods;
+}
+export interface androidManagedAppProtectionOData {
+	apps: IBaseResults<managedMobileApp>;
 }
 /*********************************************
 * defaultManagedAppProtection
@@ -9445,9 +11544,12 @@ export interface defaultManagedAppProtectionProps {
 	screenCaptureBlocked: boolean;
 }
 export interface defaultManagedAppProtectionMethods {
-	apps(): IBaseCollection<managedMobileApp>;
+	apps(): IBaseCollection<managedMobileApp, managedMobileAppOData>;
 	apps(id: string | number): IBaseQuery<managedMobileApp> & managedMobileAppMethods;
 	deploymentSummary(): IBaseQuery<managedAppPolicyDeploymentSummary> & managedAppPolicyDeploymentSummaryMethods;
+}
+export interface defaultManagedAppProtectionOData {
+	apps: IBaseResults<managedMobileApp>;
 }
 /*********************************************
 * iosManagedAppProtection
@@ -9461,9 +11563,12 @@ export interface iosManagedAppProtectionProps {
 	minimumRequiredSdkVersion: string;
 }
 export interface iosManagedAppProtectionMethods {
-	apps(): IBaseCollection<managedMobileApp>;
+	apps(): IBaseCollection<managedMobileApp, managedMobileAppOData>;
 	apps(id: string | number): IBaseQuery<managedMobileApp> & managedMobileAppMethods;
 	deploymentSummary(): IBaseQuery<managedAppPolicyDeploymentSummary> & managedAppPolicyDeploymentSummaryMethods;
+}
+export interface iosManagedAppProtectionOData {
+	apps: IBaseResults<managedMobileApp>;
 }
 /*********************************************
 * managedAppStatus
@@ -9474,6 +11579,9 @@ export interface managedAppStatusProps {
 	version: string;
 }
 export interface managedAppStatusMethods {
+
+}
+export interface managedAppStatusOData {
 
 }
 /*********************************************
@@ -9505,12 +11613,17 @@ export interface windowsInformationProtectionProps {
 	smbAutoEncryptedFileExtensions: ComplexTypes.windowsInformationProtectionResourceCollection[];
 }
 export interface windowsInformationProtectionMethods {
-	assignments(): IBaseCollection<targetedManagedAppPolicyAssignment>;
+	assignments(): IBaseCollection<targetedManagedAppPolicyAssignment, targetedManagedAppPolicyAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<targetedManagedAppPolicyAssignment> & targetedManagedAppPolicyAssignmentMethods;
-	exemptAppLockerFiles(): IBaseCollection<windowsInformationProtectionAppLockerFile>;
+	exemptAppLockerFiles(): IBaseCollection<windowsInformationProtectionAppLockerFile, windowsInformationProtectionAppLockerFileOData>;
 	exemptAppLockerFiles(id: string | number): IBaseQuery<windowsInformationProtectionAppLockerFile> & windowsInformationProtectionAppLockerFileMethods;
-	protectedAppLockerFiles(): IBaseCollection<windowsInformationProtectionAppLockerFile>;
+	protectedAppLockerFiles(): IBaseCollection<windowsInformationProtectionAppLockerFile, windowsInformationProtectionAppLockerFileOData>;
 	protectedAppLockerFiles(id: string | number): IBaseQuery<windowsInformationProtectionAppLockerFile> & windowsInformationProtectionAppLockerFileMethods;
+}
+export interface windowsInformationProtectionOData {
+	assignments: IBaseResults<targetedManagedAppPolicyAssignment>;
+	exemptAppLockerFiles: IBaseResults<windowsInformationProtectionAppLockerFile>;
+	protectedAppLockerFiles: IBaseResults<windowsInformationProtectionAppLockerFile>;
 }
 /*********************************************
 * mdmWindowsInformationProtectionPolicy
@@ -9520,6 +11633,9 @@ export interface mdmWindowsInformationProtectionPolicyProps {
 
 }
 export interface mdmWindowsInformationProtectionPolicyMethods {
+
+}
+export interface mdmWindowsInformationProtectionPolicyOData {
 
 }
 /*********************************************
@@ -9532,6 +11648,9 @@ export interface managedAppConfigurationProps {
 export interface managedAppConfigurationMethods {
 
 }
+export interface managedAppConfigurationOData {
+
+}
 /*********************************************
 * targetedManagedAppConfiguration
 **********************************************/
@@ -9541,11 +11660,15 @@ export interface targetedManagedAppConfigurationProps {
 	isAssigned: boolean;
 }
 export interface targetedManagedAppConfigurationMethods {
-	apps(): IBaseCollection<managedMobileApp>;
+	apps(): IBaseCollection<managedMobileApp, managedMobileAppOData>;
 	apps(id: string | number): IBaseQuery<managedMobileApp> & managedMobileAppMethods;
-	assignments(): IBaseCollection<targetedManagedAppPolicyAssignment>;
+	assignments(): IBaseCollection<targetedManagedAppPolicyAssignment, targetedManagedAppPolicyAssignmentOData>;
 	assignments(id: string | number): IBaseQuery<targetedManagedAppPolicyAssignment> & targetedManagedAppPolicyAssignmentMethods;
 	deploymentSummary(): IBaseQuery<managedAppPolicyDeploymentSummary> & managedAppPolicyDeploymentSummaryMethods;
+}
+export interface targetedManagedAppConfigurationOData {
+	apps: IBaseResults<managedMobileApp>;
+	assignments: IBaseResults<targetedManagedAppPolicyAssignment>;
 }
 /*********************************************
 * windowsInformationProtectionPolicy
@@ -9568,6 +11691,9 @@ export interface windowsInformationProtectionPolicyProps {
 export interface windowsInformationProtectionPolicyMethods {
 
 }
+export interface windowsInformationProtectionPolicyOData {
+
+}
 /*********************************************
 * deviceManagementExportJob
 **********************************************/
@@ -9587,6 +11713,9 @@ export interface deviceManagementExportJobProps {
 export interface deviceManagementExportJobMethods {
 
 }
+export interface deviceManagementExportJobOData {
+
+}
 /*********************************************
 * enterpriseCodeSigningCertificate
 **********************************************/
@@ -9604,6 +11733,9 @@ export interface enterpriseCodeSigningCertificateProps {
 export interface enterpriseCodeSigningCertificateMethods {
 
 }
+export interface enterpriseCodeSigningCertificateOData {
+
+}
 /*********************************************
 * iosiPadOSWebClip
 **********************************************/
@@ -9613,6 +11745,9 @@ export interface iosiPadOSWebClipProps {
 	useManagedBrowser: boolean;
 }
 export interface iosiPadOSWebClipMethods {
+
+}
+export interface iosiPadOSWebClipOData {
 
 }
 /*********************************************
@@ -9630,6 +11765,9 @@ export interface iosLobAppProps {
 export interface iosLobAppMethods {
 
 }
+export interface iosLobAppOData {
+
+}
 /*********************************************
 * iosLobAppProvisioningConfigurationAssignment
 **********************************************/
@@ -9638,6 +11776,9 @@ export interface iosLobAppProvisioningConfigurationAssignmentProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface iosLobAppProvisioningConfigurationAssignmentMethods {
+
+}
+export interface iosLobAppProvisioningConfigurationAssignmentOData {
 
 }
 /*********************************************
@@ -9651,6 +11792,9 @@ export interface iosMobileAppConfigurationProps {
 export interface iosMobileAppConfigurationMethods {
 
 }
+export interface iosMobileAppConfigurationOData {
+
+}
 /*********************************************
 * iosStoreApp
 **********************************************/
@@ -9662,6 +11806,9 @@ export interface iosStoreAppProps {
 	minimumSupportedOperatingSystem: ComplexTypes.iosMinimumOperatingSystem;
 }
 export interface iosStoreAppMethods {
+
+}
+export interface iosStoreAppOData {
 
 }
 /*********************************************
@@ -9683,6 +11830,9 @@ export interface iosVppAppProps {
 export interface iosVppAppMethods {
 
 }
+export interface iosVppAppOData {
+
+}
 /*********************************************
 * macOSDmgApp
 **********************************************/
@@ -9695,6 +11845,9 @@ export interface macOSDmgAppProps {
 	primaryBundleVersion: string;
 }
 export interface macOSDmgAppMethods {
+
+}
+export interface macOSDmgAppOData {
 
 }
 /*********************************************
@@ -9715,6 +11868,9 @@ export interface macOSLobAppProps {
 export interface macOSLobAppMethods {
 
 }
+export interface macOSLobAppOData {
+
+}
 /*********************************************
 * macOSMicrosoftDefenderApp
 **********************************************/
@@ -9723,6 +11879,9 @@ export interface macOSMicrosoftDefenderAppProps {
 
 }
 export interface macOSMicrosoftDefenderAppMethods {
+
+}
+export interface macOSMicrosoftDefenderAppOData {
 
 }
 /*********************************************
@@ -9735,6 +11894,9 @@ export interface macOSMicrosoftEdgeAppProps {
 export interface macOSMicrosoftEdgeAppMethods {
 
 }
+export interface macOSMicrosoftEdgeAppOData {
+
+}
 /*********************************************
 * macOSOfficeSuiteApp
 **********************************************/
@@ -9743,6 +11905,9 @@ export interface macOSOfficeSuiteAppProps {
 
 }
 export interface macOSOfficeSuiteAppMethods {
+
+}
+export interface macOSOfficeSuiteAppOData {
 
 }
 /*********************************************
@@ -9756,6 +11921,9 @@ export interface managedAppProps {
 export interface managedAppMethods {
 
 }
+export interface managedAppOData {
+
+}
 /*********************************************
 * managedMobileLobApp
 **********************************************/
@@ -9766,8 +11934,11 @@ export interface managedMobileLobAppProps {
 	size: number;
 }
 export interface managedMobileLobAppMethods {
-	contentVersions(): IBaseCollection<mobileAppContent>;
+	contentVersions(): IBaseCollection<mobileAppContent, mobileAppContentOData>;
 	contentVersions(id: string | number): IBaseQuery<mobileAppContent> & mobileAppContentMethods;
+}
+export interface managedMobileLobAppOData {
+	contentVersions: IBaseResults<mobileAppContent>;
 }
 /*********************************************
 * managedAndroidLobApp
@@ -9782,6 +11953,9 @@ export interface managedAndroidLobAppProps {
 export interface managedAndroidLobAppMethods {
 
 }
+export interface managedAndroidLobAppOData {
+
+}
 /*********************************************
 * managedAndroidStoreApp
 **********************************************/
@@ -9794,6 +11968,9 @@ export interface managedAndroidStoreAppProps {
 export interface managedAndroidStoreAppMethods {
 
 }
+export interface managedAndroidStoreAppOData {
+
+}
 /*********************************************
 * managedDeviceMobileAppConfigurationAssignment
 **********************************************/
@@ -9802,6 +11979,9 @@ export interface managedDeviceMobileAppConfigurationAssignmentProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface managedDeviceMobileAppConfigurationAssignmentMethods {
+
+}
+export interface managedDeviceMobileAppConfigurationAssignmentOData {
 
 }
 /*********************************************
@@ -9820,6 +12000,9 @@ export interface managedDeviceMobileAppConfigurationDeviceStatusProps {
 export interface managedDeviceMobileAppConfigurationDeviceStatusMethods {
 
 }
+export interface managedDeviceMobileAppConfigurationDeviceStatusOData {
+
+}
 /*********************************************
 * managedDeviceMobileAppConfigurationDeviceSummary
 **********************************************/
@@ -9836,6 +12019,9 @@ export interface managedDeviceMobileAppConfigurationDeviceSummaryProps {
 export interface managedDeviceMobileAppConfigurationDeviceSummaryMethods {
 
 }
+export interface managedDeviceMobileAppConfigurationDeviceSummaryOData {
+
+}
 /*********************************************
 * managedDeviceMobileAppConfigurationUserStatus
 **********************************************/
@@ -9848,6 +12034,9 @@ export interface managedDeviceMobileAppConfigurationUserStatusProps {
 	userPrincipalName: string;
 }
 export interface managedDeviceMobileAppConfigurationUserStatusMethods {
+
+}
+export interface managedDeviceMobileAppConfigurationUserStatusOData {
 
 }
 /*********************************************
@@ -9866,6 +12055,9 @@ export interface managedDeviceMobileAppConfigurationUserSummaryProps {
 export interface managedDeviceMobileAppConfigurationUserSummaryMethods {
 
 }
+export interface managedDeviceMobileAppConfigurationUserSummaryOData {
+
+}
 /*********************************************
 * managedIOSLobApp
 **********************************************/
@@ -9881,6 +12073,9 @@ export interface managedIOSLobAppProps {
 export interface managedIOSLobAppMethods {
 
 }
+export interface managedIOSLobAppOData {
+
+}
 /*********************************************
 * managedIOSStoreApp
 **********************************************/
@@ -9894,6 +12089,9 @@ export interface managedIOSStoreAppProps {
 export interface managedIOSStoreAppMethods {
 
 }
+export interface managedIOSStoreAppOData {
+
+}
 /*********************************************
 * mobileAppContent
 **********************************************/
@@ -9902,10 +12100,14 @@ export interface mobileAppContentProps {
 
 }
 export interface mobileAppContentMethods {
-	containedApps(): IBaseCollection<mobileContainedApp>;
+	containedApps(): IBaseCollection<mobileContainedApp, mobileContainedAppOData>;
 	containedApps(id: string | number): IBaseQuery<mobileContainedApp> & mobileContainedAppMethods;
-	files(): IBaseCollection<mobileAppContentFile>;
+	files(): IBaseCollection<mobileAppContentFile, mobileAppContentFileOData>;
 	files(id: string | number): IBaseQuery<mobileAppContentFile> & mobileAppContentFileMethods;
+}
+export interface mobileAppContentOData {
+	containedApps: IBaseResults<mobileContainedApp>;
+	files: IBaseResults<mobileAppContentFile>;
 }
 /*********************************************
 * microsoftStoreForBusinessApp
@@ -9921,6 +12123,9 @@ export interface microsoftStoreForBusinessAppProps {
 export interface microsoftStoreForBusinessAppMethods {
 
 }
+export interface microsoftStoreForBusinessAppOData {
+
+}
 /*********************************************
 * mobileAppAssignment
 **********************************************/
@@ -9933,6 +12138,9 @@ export interface mobileAppAssignmentProps {
 export interface mobileAppAssignmentMethods {
 
 }
+export interface mobileAppAssignmentOData {
+
+}
 /*********************************************
 * mobileContainedApp
 **********************************************/
@@ -9941,6 +12149,9 @@ export interface mobileContainedAppProps {
 
 }
 export interface mobileContainedAppMethods {
+
+}
+export interface mobileContainedAppOData {
 
 }
 /*********************************************
@@ -9962,6 +12173,9 @@ export interface mobileAppContentFileProps {
 export interface mobileAppContentFileMethods {
 
 }
+export interface mobileAppContentFileOData {
+
+}
 /*********************************************
 * webApp
 **********************************************/
@@ -9971,6 +12185,9 @@ export interface webAppProps {
 	useManagedBrowser: boolean;
 }
 export interface webAppMethods {
+
+}
+export interface webAppOData {
 
 }
 /*********************************************
@@ -9995,6 +12212,9 @@ export interface win32LobAppProps {
 export interface win32LobAppMethods {
 
 }
+export interface win32LobAppOData {
+
+}
 /*********************************************
 * windowsAppX
 **********************************************/
@@ -10011,6 +12231,9 @@ export interface windowsAppXProps {
 export interface windowsAppXMethods {
 
 }
+export interface windowsAppXOData {
+
+}
 /*********************************************
 * windowsMicrosoftEdgeApp
 **********************************************/
@@ -10020,6 +12243,9 @@ export interface windowsMicrosoftEdgeAppProps {
 	displayLanguageLocale: string;
 }
 export interface windowsMicrosoftEdgeAppMethods {
+
+}
+export interface windowsMicrosoftEdgeAppOData {
 
 }
 /*********************************************
@@ -10033,6 +12259,9 @@ export interface windowsMobileMSIProps {
 	productVersion: string;
 }
 export interface windowsMobileMSIMethods {
+
+}
+export interface windowsMobileMSIOData {
 
 }
 /*********************************************
@@ -10050,8 +12279,11 @@ export interface windowsUniversalAppXProps {
 	minimumSupportedOperatingSystem: ComplexTypes.windowsMinimumOperatingSystem;
 }
 export interface windowsUniversalAppXMethods {
-	committedContainedApps(): IBaseCollection<mobileContainedApp>;
+	committedContainedApps(): IBaseCollection<mobileContainedApp, mobileContainedAppOData>;
 	committedContainedApps(id: string | number): IBaseQuery<mobileContainedApp> & mobileContainedAppMethods;
+}
+export interface windowsUniversalAppXOData {
+	committedContainedApps: IBaseResults<mobileContainedApp>;
 }
 /*********************************************
 * windowsUniversalAppXContainedApp
@@ -10063,6 +12295,9 @@ export interface windowsUniversalAppXContainedAppProps {
 export interface windowsUniversalAppXContainedAppMethods {
 
 }
+export interface windowsUniversalAppXContainedAppOData {
+
+}
 /*********************************************
 * windowsWebApp
 **********************************************/
@@ -10071,6 +12306,9 @@ export interface windowsWebAppProps {
 	appUrl: string;
 }
 export interface windowsWebAppMethods {
+
+}
+export interface windowsWebAppOData {
 
 }
 /*********************************************
@@ -10090,6 +12328,9 @@ export interface deviceInstallStateProps {
 export interface deviceInstallStateMethods {
 
 }
+export interface deviceInstallStateOData {
+
+}
 /*********************************************
 * eBookInstallSummary
 **********************************************/
@@ -10103,6 +12344,9 @@ export interface eBookInstallSummaryProps {
 	notInstalledUserCount: number;
 }
 export interface eBookInstallSummaryMethods {
+
+}
+export interface eBookInstallSummaryOData {
 
 }
 /*********************************************
@@ -10122,6 +12366,9 @@ export interface iosVppEBookProps {
 export interface iosVppEBookMethods {
 
 }
+export interface iosVppEBookOData {
+
+}
 /*********************************************
 * managedEBookAssignment
 **********************************************/
@@ -10133,6 +12380,9 @@ export interface managedEBookAssignmentProps {
 export interface managedEBookAssignmentMethods {
 
 }
+export interface managedEBookAssignmentOData {
+
+}
 /*********************************************
 * iosVppEBookAssignment
 **********************************************/
@@ -10141,6 +12391,9 @@ export interface iosVppEBookAssignmentProps {
 
 }
 export interface iosVppEBookAssignmentMethods {
+
+}
+export interface iosVppEBookAssignmentOData {
 
 }
 /*********************************************
@@ -10154,8 +12407,11 @@ export interface userInstallStateSummaryProps {
 	userName: string;
 }
 export interface userInstallStateSummaryMethods {
-	deviceStates(): IBaseCollection<deviceInstallState>;
+	deviceStates(): IBaseCollection<deviceInstallState, deviceInstallStateOData>;
 	deviceStates(id: string | number): IBaseQuery<deviceInstallState> & deviceInstallStateMethods;
+}
+export interface userInstallStateSummaryOData {
+	deviceStates: IBaseResults<deviceInstallState>;
 }
 /*********************************************
 * termsAndConditionsAcceptanceStatus
@@ -10170,6 +12426,9 @@ export interface termsAndConditionsAcceptanceStatusProps {
 export interface termsAndConditionsAcceptanceStatusMethods {
 	termsAndConditions(): IBaseQuery<termsAndConditions> & termsAndConditionsMethods;
 }
+export interface termsAndConditionsAcceptanceStatusOData {
+
+}
 /*********************************************
 * termsAndConditionsAssignment
 **********************************************/
@@ -10178,6 +12437,9 @@ export interface termsAndConditionsAssignmentProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface termsAndConditionsAssignmentMethods {
+
+}
+export interface termsAndConditionsAssignmentOData {
 
 }
 /*********************************************
@@ -10210,6 +12472,9 @@ export interface androidCompliancePolicyProps {
 export interface androidCompliancePolicyMethods {
 
 }
+export interface androidCompliancePolicyOData {
+
+}
 /*********************************************
 * androidCustomConfiguration
 **********************************************/
@@ -10218,6 +12483,9 @@ export interface androidCustomConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface androidCustomConfigurationMethods {
+
+}
+export interface androidCustomConfigurationOData {
 
 }
 /*********************************************
@@ -10277,6 +12545,9 @@ export interface androidGeneralDeviceConfigurationProps {
 export interface androidGeneralDeviceConfigurationMethods {
 
 }
+export interface androidGeneralDeviceConfigurationOData {
+
+}
 /*********************************************
 * androidWorkProfileCompliancePolicy
 **********************************************/
@@ -10307,6 +12578,9 @@ export interface androidWorkProfileCompliancePolicyProps {
 export interface androidWorkProfileCompliancePolicyMethods {
 
 }
+export interface androidWorkProfileCompliancePolicyOData {
+
+}
 /*********************************************
 * androidWorkProfileCustomConfiguration
 **********************************************/
@@ -10315,6 +12589,9 @@ export interface androidWorkProfileCustomConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface androidWorkProfileCustomConfigurationMethods {
+
+}
+export interface androidWorkProfileCustomConfigurationOData {
 
 }
 /*********************************************
@@ -10360,6 +12637,9 @@ export interface androidWorkProfileGeneralDeviceConfigurationProps {
 export interface androidWorkProfileGeneralDeviceConfigurationMethods {
 
 }
+export interface androidWorkProfileGeneralDeviceConfigurationOData {
+
+}
 /*********************************************
 * appleDeviceFeaturesConfigurationBase
 **********************************************/
@@ -10368,6 +12648,9 @@ export interface appleDeviceFeaturesConfigurationBaseProps {
 
 }
 export interface appleDeviceFeaturesConfigurationBaseMethods {
+
+}
+export interface appleDeviceFeaturesConfigurationBaseOData {
 
 }
 /*********************************************
@@ -10381,6 +12664,9 @@ export interface deviceComplianceActionItemProps {
 	notificationTemplateId: string;
 }
 export interface deviceComplianceActionItemMethods {
+
+}
+export interface deviceComplianceActionItemOData {
 
 }
 /*********************************************
@@ -10399,6 +12685,9 @@ export interface deviceComplianceDeviceOverviewProps {
 export interface deviceComplianceDeviceOverviewMethods {
 
 }
+export interface deviceComplianceDeviceOverviewOData {
+
+}
 /*********************************************
 * deviceComplianceDeviceStatus
 **********************************************/
@@ -10415,6 +12704,9 @@ export interface deviceComplianceDeviceStatusProps {
 export interface deviceComplianceDeviceStatusMethods {
 
 }
+export interface deviceComplianceDeviceStatusOData {
+
+}
 /*********************************************
 * deviceCompliancePolicyAssignment
 **********************************************/
@@ -10423,6 +12715,9 @@ export interface deviceCompliancePolicyAssignmentProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface deviceCompliancePolicyAssignmentMethods {
+
+}
+export interface deviceCompliancePolicyAssignmentOData {
 
 }
 /*********************************************
@@ -10443,6 +12738,9 @@ export interface settingStateDeviceSummaryProps {
 export interface settingStateDeviceSummaryMethods {
 
 }
+export interface settingStateDeviceSummaryOData {
+
+}
 /*********************************************
 * deviceComplianceScheduledActionForRule
 **********************************************/
@@ -10451,8 +12749,11 @@ export interface deviceComplianceScheduledActionForRuleProps {
 	ruleName: string;
 }
 export interface deviceComplianceScheduledActionForRuleMethods {
-	scheduledActionConfigurations(): IBaseCollection<deviceComplianceActionItem>;
+	scheduledActionConfigurations(): IBaseCollection<deviceComplianceActionItem, deviceComplianceActionItemOData>;
 	scheduledActionConfigurations(id: string | number): IBaseQuery<deviceComplianceActionItem> & deviceComplianceActionItemMethods;
+}
+export interface deviceComplianceScheduledActionForRuleOData {
+	scheduledActionConfigurations: IBaseResults<deviceComplianceActionItem>;
 }
 /*********************************************
 * deviceComplianceUserStatus
@@ -10466,6 +12767,9 @@ export interface deviceComplianceUserStatusProps {
 	userPrincipalName: string;
 }
 export interface deviceComplianceUserStatusMethods {
+
+}
+export interface deviceComplianceUserStatusOData {
 
 }
 /*********************************************
@@ -10482,6 +12786,9 @@ export interface deviceComplianceUserOverviewProps {
 	successCount: number;
 }
 export interface deviceComplianceUserOverviewMethods {
+
+}
+export interface deviceComplianceUserOverviewOData {
 
 }
 /*********************************************
@@ -10504,6 +12811,9 @@ export interface deviceComplianceSettingStateProps {
 export interface deviceComplianceSettingStateMethods {
 
 }
+export interface deviceComplianceSettingStateOData {
+
+}
 /*********************************************
 * deviceCompliancePolicyState
 **********************************************/
@@ -10519,6 +12829,9 @@ export interface deviceCompliancePolicyStateProps {
 export interface deviceCompliancePolicyStateMethods {
 
 }
+export interface deviceCompliancePolicyStateOData {
+
+}
 /*********************************************
 * deviceConfigurationAssignment
 **********************************************/
@@ -10527,6 +12840,9 @@ export interface deviceConfigurationAssignmentProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface deviceConfigurationAssignmentMethods {
+
+}
+export interface deviceConfigurationAssignmentOData {
 
 }
 /*********************************************
@@ -10545,6 +12861,9 @@ export interface deviceConfigurationDeviceStatusProps {
 export interface deviceConfigurationDeviceStatusMethods {
 
 }
+export interface deviceConfigurationDeviceStatusOData {
+
+}
 /*********************************************
 * deviceConfigurationDeviceOverview
 **********************************************/
@@ -10561,6 +12880,9 @@ export interface deviceConfigurationDeviceOverviewProps {
 export interface deviceConfigurationDeviceOverviewMethods {
 
 }
+export interface deviceConfigurationDeviceOverviewOData {
+
+}
 /*********************************************
 * deviceConfigurationUserStatus
 **********************************************/
@@ -10573,6 +12895,9 @@ export interface deviceConfigurationUserStatusProps {
 	userPrincipalName: string;
 }
 export interface deviceConfigurationUserStatusMethods {
+
+}
+export interface deviceConfigurationUserStatusOData {
 
 }
 /*********************************************
@@ -10591,6 +12916,9 @@ export interface deviceConfigurationUserOverviewProps {
 export interface deviceConfigurationUserOverviewMethods {
 
 }
+export interface deviceConfigurationUserOverviewOData {
+
+}
 /*********************************************
 * deviceConfigurationState
 **********************************************/
@@ -10606,6 +12934,9 @@ export interface deviceConfigurationStateProps {
 export interface deviceConfigurationStateMethods {
 
 }
+export interface deviceConfigurationStateOData {
+
+}
 /*********************************************
 * editionUpgradeConfiguration
 **********************************************/
@@ -10619,6 +12950,9 @@ export interface editionUpgradeConfigurationProps {
 export interface editionUpgradeConfigurationMethods {
 
 }
+export interface editionUpgradeConfigurationOData {
+
+}
 /*********************************************
 * iosCertificateProfile
 **********************************************/
@@ -10627,6 +12961,9 @@ export interface iosCertificateProfileProps {
 
 }
 export interface iosCertificateProfileMethods {
+
+}
+export interface iosCertificateProfileOData {
 
 }
 /*********************************************
@@ -10652,6 +12989,9 @@ export interface iosCompliancePolicyProps {
 export interface iosCompliancePolicyMethods {
 
 }
+export interface iosCompliancePolicyOData {
+
+}
 /*********************************************
 * iosCustomConfiguration
 **********************************************/
@@ -10662,6 +13002,9 @@ export interface iosCustomConfigurationProps {
 	payloadName: string;
 }
 export interface iosCustomConfigurationMethods {
+
+}
+export interface iosCustomConfigurationOData {
 
 }
 /*********************************************
@@ -10676,6 +13019,9 @@ export interface iosDeviceFeaturesConfigurationProps {
 	notificationSettings: ComplexTypes.iosNotificationSettings[];
 }
 export interface iosDeviceFeaturesConfigurationMethods {
+
+}
+export interface iosDeviceFeaturesConfigurationOData {
 
 }
 /*********************************************
@@ -10818,6 +13164,9 @@ export interface iosGeneralDeviceConfigurationProps {
 export interface iosGeneralDeviceConfigurationMethods {
 
 }
+export interface iosGeneralDeviceConfigurationOData {
+
+}
 /*********************************************
 * iosUpdateConfiguration
 **********************************************/
@@ -10829,6 +13178,9 @@ export interface iosUpdateConfigurationProps {
 	utcTimeOffsetInMinutes: number;
 }
 export interface iosUpdateConfigurationMethods {
+
+}
+export interface iosUpdateConfigurationOData {
 
 }
 /*********************************************
@@ -10857,6 +13209,9 @@ export interface macOSCompliancePolicyProps {
 export interface macOSCompliancePolicyMethods {
 
 }
+export interface macOSCompliancePolicyOData {
+
+}
 /*********************************************
 * macOSCustomConfiguration
 **********************************************/
@@ -10869,6 +13224,9 @@ export interface macOSCustomConfigurationProps {
 export interface macOSCustomConfigurationMethods {
 
 }
+export interface macOSCustomConfigurationOData {
+
+}
 /*********************************************
 * macOSDeviceFeaturesConfiguration
 **********************************************/
@@ -10877,6 +13235,9 @@ export interface macOSDeviceFeaturesConfigurationProps {
 
 }
 export interface macOSDeviceFeaturesConfigurationMethods {
+
+}
+export interface macOSDeviceFeaturesConfigurationOData {
 
 }
 /*********************************************
@@ -10900,6 +13261,9 @@ export interface macOSGeneralDeviceConfigurationProps {
 export interface macOSGeneralDeviceConfigurationMethods {
 
 }
+export interface macOSGeneralDeviceConfigurationOData {
+
+}
 /*********************************************
 * deviceLogCollectionResponse
 **********************************************/
@@ -10915,6 +13279,9 @@ export interface deviceLogCollectionResponseProps {
 	status: EnumTypes.appLogUploadState;
 }
 export interface deviceLogCollectionResponseMethods {
+
+}
+export interface deviceLogCollectionResponseOData {
 
 }
 /*********************************************
@@ -10944,8 +13311,11 @@ export interface windowsProtectionStateProps {
 	tamperProtectionEnabled: boolean;
 }
 export interface windowsProtectionStateMethods {
-	detectedMalwareState(): IBaseCollection<windowsDeviceMalwareState>;
+	detectedMalwareState(): IBaseCollection<windowsDeviceMalwareState, windowsDeviceMalwareStateOData>;
 	detectedMalwareState(id: string | number): IBaseQuery<windowsDeviceMalwareState> & windowsDeviceMalwareStateMethods;
+}
+export interface windowsProtectionStateOData {
+	detectedMalwareState: IBaseResults<windowsDeviceMalwareState>;
 }
 /*********************************************
 * sharedPCConfiguration
@@ -10966,6 +13336,9 @@ export interface sharedPCConfigurationProps {
 	maintenanceStartTime: any;
 }
 export interface sharedPCConfigurationMethods {
+
+}
+export interface sharedPCConfigurationOData {
 
 }
 /*********************************************
@@ -10996,6 +13369,9 @@ export interface windows10CompliancePolicyProps {
 export interface windows10CompliancePolicyMethods {
 
 }
+export interface windows10CompliancePolicyOData {
+
+}
 /*********************************************
 * windows10CustomConfiguration
 **********************************************/
@@ -11004,6 +13380,9 @@ export interface windows10CustomConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface windows10CustomConfigurationMethods {
+
+}
+export interface windows10CustomConfigurationOData {
 
 }
 /*********************************************
@@ -11051,6 +13430,9 @@ export interface windows10EndpointProtectionConfigurationProps {
 export interface windows10EndpointProtectionConfigurationMethods {
 
 }
+export interface windows10EndpointProtectionConfigurationOData {
+
+}
 /*********************************************
 * windows10EnterpriseModernAppManagementConfiguration
 **********************************************/
@@ -11059,6 +13441,9 @@ export interface windows10EnterpriseModernAppManagementConfigurationProps {
 	uninstallBuiltInApps: boolean;
 }
 export interface windows10EnterpriseModernAppManagementConfigurationMethods {
+
+}
+export interface windows10EnterpriseModernAppManagementConfigurationOData {
 
 }
 /*********************************************
@@ -11271,6 +13656,9 @@ export interface windows10GeneralConfigurationProps {
 export interface windows10GeneralConfigurationMethods {
 
 }
+export interface windows10GeneralConfigurationOData {
+
+}
 /*********************************************
 * windows10MobileCompliancePolicy
 **********************************************/
@@ -11296,6 +13684,9 @@ export interface windows10MobileCompliancePolicyProps {
 export interface windows10MobileCompliancePolicyMethods {
 
 }
+export interface windows10MobileCompliancePolicyOData {
+
+}
 /*********************************************
 * windows10SecureAssessmentConfiguration
 **********************************************/
@@ -11308,6 +13699,9 @@ export interface windows10SecureAssessmentConfigurationProps {
 	launchUri: string;
 }
 export interface windows10SecureAssessmentConfigurationMethods {
+
+}
+export interface windows10SecureAssessmentConfigurationOData {
 
 }
 /*********************************************
@@ -11339,6 +13733,9 @@ export interface windows10TeamGeneralConfigurationProps {
 export interface windows10TeamGeneralConfigurationMethods {
 
 }
+export interface windows10TeamGeneralConfigurationOData {
+
+}
 /*********************************************
 * windows81CompliancePolicy
 **********************************************/
@@ -11357,6 +13754,9 @@ export interface windows81CompliancePolicyProps {
 	storageRequireEncryption: boolean;
 }
 export interface windows81CompliancePolicyMethods {
+
+}
+export interface windows81CompliancePolicyOData {
 
 }
 /*********************************************
@@ -11401,6 +13801,9 @@ export interface windows81GeneralConfigurationProps {
 export interface windows81GeneralConfigurationMethods {
 
 }
+export interface windows81GeneralConfigurationOData {
+
+}
 /*********************************************
 * windowsDefenderAdvancedThreatProtectionConfiguration
 **********************************************/
@@ -11410,6 +13813,9 @@ export interface windowsDefenderAdvancedThreatProtectionConfigurationProps {
 	enableExpeditedTelemetryReporting: boolean;
 }
 export interface windowsDefenderAdvancedThreatProtectionConfigurationMethods {
+
+}
+export interface windowsDefenderAdvancedThreatProtectionConfigurationOData {
 
 }
 /*********************************************
@@ -11432,6 +13838,9 @@ export interface windowsPhone81CompliancePolicyProps {
 export interface windowsPhone81CompliancePolicyMethods {
 
 }
+export interface windowsPhone81CompliancePolicyOData {
+
+}
 /*********************************************
 * windowsPhone81CustomConfiguration
 **********************************************/
@@ -11440,6 +13849,9 @@ export interface windowsPhone81CustomConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface windowsPhone81CustomConfigurationMethods {
+
+}
+export interface windowsPhone81CustomConfigurationOData {
 
 }
 /*********************************************
@@ -11478,6 +13890,9 @@ export interface windowsPhone81GeneralConfigurationProps {
 	windowsStoreBlocked: boolean;
 }
 export interface windowsPhone81GeneralConfigurationMethods {
+
+}
+export interface windowsPhone81GeneralConfigurationOData {
 
 }
 /*********************************************
@@ -11525,6 +13940,9 @@ export interface windowsUpdateForBusinessConfigurationProps {
 export interface windowsUpdateForBusinessConfigurationMethods {
 
 }
+export interface windowsUpdateForBusinessConfigurationOData {
+
+}
 /*********************************************
 * enrollmentConfigurationAssignment
 **********************************************/
@@ -11535,6 +13953,9 @@ export interface enrollmentConfigurationAssignmentProps {
 export interface enrollmentConfigurationAssignmentMethods {
 
 }
+export interface enrollmentConfigurationAssignmentOData {
+
+}
 /*********************************************
 * deviceEnrollmentLimitConfiguration
 **********************************************/
@@ -11543,6 +13964,9 @@ export interface deviceEnrollmentLimitConfigurationProps {
 	limit: number;
 }
 export interface deviceEnrollmentLimitConfigurationMethods {
+
+}
+export interface deviceEnrollmentLimitConfigurationOData {
 
 }
 /*********************************************
@@ -11557,6 +13981,9 @@ export interface deviceEnrollmentPlatformRestrictionsConfigurationProps {
 	windowsRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
 }
 export interface deviceEnrollmentPlatformRestrictionsConfigurationMethods {
+
+}
+export interface deviceEnrollmentPlatformRestrictionsConfigurationOData {
 
 }
 /*********************************************
@@ -11580,6 +14007,9 @@ export interface deviceEnrollmentWindowsHelloForBusinessConfigurationProps {
 export interface deviceEnrollmentWindowsHelloForBusinessConfigurationMethods {
 
 }
+export interface deviceEnrollmentWindowsHelloForBusinessConfigurationOData {
+
+}
 /*********************************************
 * windows10EnrollmentCompletionPageConfiguration
 **********************************************/
@@ -11588,6 +14018,9 @@ export interface windows10EnrollmentCompletionPageConfigurationProps {
 	allowNonBlockingAppInstallation: boolean;
 }
 export interface windows10EnrollmentCompletionPageConfigurationMethods {
+
+}
+export interface windows10EnrollmentCompletionPageConfigurationOData {
 
 }
 /*********************************************
@@ -11601,6 +14034,9 @@ export interface appLogCollectionRequestProps {
 	status: EnumTypes.appLogUploadState;
 }
 export interface appLogCollectionRequestMethods {
+
+}
+export interface appLogCollectionRequestOData {
 
 }
 /*********************************************
@@ -11618,6 +14054,9 @@ export interface malwareStateForWindowsDeviceProps {
 export interface malwareStateForWindowsDeviceMethods {
 
 }
+export interface malwareStateForWindowsDeviceOData {
+
+}
 /*********************************************
 * userExperienceAnalyticsMetric
 **********************************************/
@@ -11627,6 +14066,9 @@ export interface userExperienceAnalyticsMetricProps {
 	value: number;
 }
 export interface userExperienceAnalyticsMetricMethods {
+
+}
+export interface userExperienceAnalyticsMetricOData {
 
 }
 /*********************************************
@@ -11672,6 +14114,9 @@ export interface userExperienceAnalyticsWorkFromAnywhereDeviceProps {
 export interface userExperienceAnalyticsWorkFromAnywhereDeviceMethods {
 
 }
+export interface userExperienceAnalyticsWorkFromAnywhereDeviceOData {
+
+}
 /*********************************************
 * windowsDeviceMalwareState
 **********************************************/
@@ -11691,6 +14136,9 @@ export interface windowsDeviceMalwareStateProps {
 export interface windowsDeviceMalwareStateMethods {
 
 }
+export interface windowsDeviceMalwareStateOData {
+
+}
 /*********************************************
 * importedWindowsAutopilotDeviceIdentityUpload
 **********************************************/
@@ -11700,8 +14148,11 @@ export interface importedWindowsAutopilotDeviceIdentityUploadProps {
 	status: EnumTypes.importedWindowsAutopilotDeviceIdentityUploadStatus;
 }
 export interface importedWindowsAutopilotDeviceIdentityUploadMethods {
-	deviceIdentities(): IBaseCollection<importedWindowsAutopilotDeviceIdentity>;
+	deviceIdentities(): IBaseCollection<importedWindowsAutopilotDeviceIdentity, importedWindowsAutopilotDeviceIdentityOData>;
 	deviceIdentities(id: string | number): IBaseQuery<importedWindowsAutopilotDeviceIdentity> & importedWindowsAutopilotDeviceIdentityMethods;
+}
+export interface importedWindowsAutopilotDeviceIdentityUploadOData {
+	deviceIdentities: IBaseResults<importedWindowsAutopilotDeviceIdentity>;
 }
 /*********************************************
 * windowsAutopilotDeploymentProfile
@@ -11722,8 +14173,11 @@ export interface windowsAutopilotDeploymentProfileProps {
 	roleScopeTagIds: Array<string>[];
 }
 export interface windowsAutopilotDeploymentProfileMethods {
-	assignedDevices(): IBaseCollection<windowsAutopilotDeviceIdentity>;
+	assignedDevices(): IBaseCollection<windowsAutopilotDeviceIdentity, windowsAutopilotDeviceIdentityOData>;
 	assignedDevices(id: string | number): IBaseQuery<windowsAutopilotDeviceIdentity> & windowsAutopilotDeviceIdentityMethods;
+}
+export interface windowsAutopilotDeploymentProfileOData {
+	assignedDevices: IBaseResults<windowsAutopilotDeviceIdentity>;
 }
 /*********************************************
 * windowsAutopilotDeploymentProfileAssignment
@@ -11735,6 +14189,9 @@ export interface windowsAutopilotDeploymentProfileAssignmentProps {
 export interface windowsAutopilotDeploymentProfileAssignmentMethods {
 
 }
+export interface windowsAutopilotDeploymentProfileAssignmentOData {
+
+}
 /*********************************************
 * managedMobileApp
 **********************************************/
@@ -11744,6 +14201,9 @@ export interface managedMobileAppProps {
 	version: string;
 }
 export interface managedMobileAppMethods {
+
+}
+export interface managedMobileAppOData {
 
 }
 /*********************************************
@@ -11760,6 +14220,9 @@ export interface managedAppPolicyDeploymentSummaryProps {
 export interface managedAppPolicyDeploymentSummaryMethods {
 
 }
+export interface managedAppPolicyDeploymentSummaryOData {
+
+}
 /*********************************************
 * androidManagedAppRegistration
 **********************************************/
@@ -11770,6 +14233,9 @@ export interface androidManagedAppRegistrationProps {
 export interface androidManagedAppRegistrationMethods {
 
 }
+export interface androidManagedAppRegistrationOData {
+
+}
 /*********************************************
 * iosManagedAppRegistration
 **********************************************/
@@ -11778,6 +14244,9 @@ export interface iosManagedAppRegistrationProps {
 
 }
 export interface iosManagedAppRegistrationMethods {
+
+}
+export interface iosManagedAppRegistrationOData {
 
 }
 /*********************************************
@@ -11793,6 +14262,9 @@ export interface managedAppOperationProps {
 export interface managedAppOperationMethods {
 
 }
+export interface managedAppOperationOData {
+
+}
 /*********************************************
 * managedAppStatusRaw
 **********************************************/
@@ -11803,6 +14275,9 @@ export interface managedAppStatusRawProps {
 export interface managedAppStatusRawMethods {
 
 }
+export interface managedAppStatusRawOData {
+
+}
 /*********************************************
 * targetedManagedAppPolicyAssignment
 **********************************************/
@@ -11811,6 +14286,9 @@ export interface targetedManagedAppPolicyAssignmentProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface targetedManagedAppPolicyAssignmentMethods {
+
+}
+export interface targetedManagedAppPolicyAssignmentOData {
 
 }
 /*********************************************
@@ -11824,6 +14302,9 @@ export interface windowsInformationProtectionAppLockerFileProps {
 	version: string;
 }
 export interface windowsInformationProtectionAppLockerFileMethods {
+
+}
+export interface windowsInformationProtectionAppLockerFileOData {
 
 }
 /*********************************************
@@ -11840,6 +14321,9 @@ export interface localizedNotificationMessageProps {
 export interface localizedNotificationMessageMethods {
 
 }
+export interface localizedNotificationMessageOData {
+
+}
 /*********************************************
 * deviceAndAppManagementRoleDefinition
 **********************************************/
@@ -11850,6 +14334,9 @@ export interface deviceAndAppManagementRoleDefinitionProps {
 export interface deviceAndAppManagementRoleDefinitionMethods {
 
 }
+export interface deviceAndAppManagementRoleDefinitionOData {
+
+}
 /*********************************************
 * deviceManagementCachedReportConfiguration
 **********************************************/
@@ -11858,6 +14345,9 @@ export interface deviceManagementCachedReportConfigurationProps {
 
 }
 export interface deviceManagementCachedReportConfigurationMethods {
+
+}
+export interface deviceManagementCachedReportConfigurationOData {
 
 }
 /*********************************************
@@ -11877,6 +14367,9 @@ export interface enrollmentTroubleshootingEventProps {
 export interface enrollmentTroubleshootingEventMethods {
 
 }
+export interface enrollmentTroubleshootingEventOData {
+
+}
 /*********************************************
 * m365AppsInstallationOptions
 **********************************************/
@@ -11889,6 +14382,9 @@ export interface m365AppsInstallationOptionsProps {
 export interface m365AppsInstallationOptionsMethods {
 
 }
+export interface m365AppsInstallationOptionsOData {
+
+}
 /*********************************************
 * serviceHealth
 **********************************************/
@@ -11898,8 +14394,11 @@ export interface serviceHealthProps {
 	status: EnumTypes.serviceHealthStatus;
 }
 export interface serviceHealthMethods {
-	issues(): IBaseCollection<serviceHealthIssue>;
+	issues(): IBaseCollection<serviceHealthIssue, serviceHealthIssueOData>;
 	issues(id: string | number): IBaseQuery<serviceHealthIssue> & serviceHealthIssueMethods;
+}
+export interface serviceHealthOData {
+	issues: IBaseResults<serviceHealthIssue>;
 }
 /*********************************************
 * serviceAnnouncementBase
@@ -11913,6 +14412,9 @@ export interface serviceAnnouncementBaseProps {
 	title: string;
 }
 export interface serviceAnnouncementBaseMethods {
+
+}
+export interface serviceAnnouncementBaseOData {
 
 }
 /*********************************************
@@ -11933,6 +14435,9 @@ export interface serviceHealthIssueProps {
 export interface serviceHealthIssueMethods {
 
 }
+export interface serviceHealthIssueOData {
+
+}
 /*********************************************
 * serviceUpdateMessage
 **********************************************/
@@ -11950,8 +14455,11 @@ export interface serviceUpdateMessageProps {
 	viewPoint: ComplexTypes.serviceUpdateMessageViewpoint;
 }
 export interface serviceUpdateMessageMethods {
-	attachments(): IBaseCollection<serviceAnnouncementAttachment>;
+	attachments(): IBaseCollection<serviceAnnouncementAttachment, serviceAnnouncementAttachmentOData>;
 	attachments(id: string | number): IBaseQuery<serviceAnnouncementAttachment> & serviceAnnouncementAttachmentMethods;
+}
+export interface serviceUpdateMessageOData {
+	attachments: IBaseResults<serviceAnnouncementAttachment>;
 }
 /*********************************************
 * serviceAnnouncementAttachment
@@ -11967,6 +14475,9 @@ export interface serviceAnnouncementAttachmentProps {
 export interface serviceAnnouncementAttachmentMethods {
 
 }
+export interface serviceAnnouncementAttachmentOData {
+
+}
 /*********************************************
 * searchEntity
 **********************************************/
@@ -11975,12 +14486,17 @@ export interface searchEntityProps {
 
 }
 export interface searchEntityMethods {
-	acronyms(): IBaseCollection<acronym>;
+	acronyms(): IBaseCollection<acronym, acronymOData>;
 	acronyms(id: string | number): IBaseQuery<acronym> & acronymMethods;
-	bookmarks(): IBaseCollection<bookmark>;
+	bookmarks(): IBaseCollection<bookmark, bookmarkOData>;
 	bookmarks(id: string | number): IBaseQuery<bookmark> & bookmarkMethods;
-	qnas(): IBaseCollection<qna>;
+	qnas(): IBaseCollection<qna, qnaOData>;
 	qnas(id: string | number): IBaseQuery<qna> & qnaMethods;
+}
+export interface searchEntityOData {
+	acronyms: IBaseResults<acronym>;
+	bookmarks: IBaseResults<bookmark>;
+	qnas: IBaseResults<qna>;
 }
 /*********************************************
 * planner
@@ -11990,12 +14506,17 @@ export interface plannerProps {
 
 }
 export interface plannerMethods {
-	buckets(): IBaseCollection<plannerBucket>;
+	buckets(): IBaseCollection<plannerBucket, plannerBucketOData>;
 	buckets(id: string | number): IBaseQuery<plannerBucket> & plannerBucketMethods;
-	plans(): IBaseCollection<plannerPlan>;
+	plans(): IBaseCollection<plannerPlan, plannerPlanOData>;
 	plans(id: string | number): IBaseQuery<plannerPlan> & plannerPlanMethods;
-	tasks(): IBaseCollection<plannerTask>;
+	tasks(): IBaseCollection<plannerTask, plannerTaskOData>;
 	tasks(id: string | number): IBaseQuery<plannerTask> & plannerTaskMethods;
+}
+export interface plannerOData {
+	buckets: IBaseResults<plannerBucket>;
+	plans: IBaseResults<plannerPlan>;
+	tasks: IBaseResults<plannerTask>;
 }
 /*********************************************
 * plannerBucket
@@ -12007,8 +14528,11 @@ export interface plannerBucketProps {
 	planId: string;
 }
 export interface plannerBucketMethods {
-	tasks(): IBaseCollection<plannerTask>;
+	tasks(): IBaseCollection<plannerTask, plannerTaskOData>;
 	tasks(id: string | number): IBaseQuery<plannerTask> & plannerTaskMethods;
+}
+export interface plannerBucketOData {
+	tasks: IBaseResults<plannerTask>;
 }
 /*********************************************
 * plannerPlan
@@ -12022,11 +14546,15 @@ export interface plannerPlanProps {
 	title: string;
 }
 export interface plannerPlanMethods {
-	buckets(): IBaseCollection<plannerBucket>;
+	buckets(): IBaseCollection<plannerBucket, plannerBucketOData>;
 	buckets(id: string | number): IBaseQuery<plannerBucket> & plannerBucketMethods;
 	details(): IBaseQuery<plannerPlanDetails> & plannerPlanDetailsMethods;
-	tasks(): IBaseCollection<plannerTask>;
+	tasks(): IBaseCollection<plannerTask, plannerTaskOData>;
 	tasks(id: string | number): IBaseQuery<plannerTask> & plannerTaskMethods;
+}
+export interface plannerPlanOData {
+	buckets: IBaseResults<plannerBucket>;
+	tasks: IBaseResults<plannerTask>;
 }
 /*********************************************
 * plannerTask
@@ -12061,6 +14589,9 @@ export interface plannerTaskMethods {
 	details(): IBaseQuery<plannerTaskDetails> & plannerTaskDetailsMethods;
 	progressTaskBoardFormat(): IBaseQuery<plannerProgressTaskBoardTaskFormat> & plannerProgressTaskBoardTaskFormatMethods;
 }
+export interface plannerTaskOData {
+
+}
 /*********************************************
 * plannerAssignedToTaskBoardTaskFormat
 **********************************************/
@@ -12072,6 +14603,9 @@ export interface plannerAssignedToTaskBoardTaskFormatProps {
 export interface plannerAssignedToTaskBoardTaskFormatMethods {
 
 }
+export interface plannerAssignedToTaskBoardTaskFormatOData {
+
+}
 /*********************************************
 * plannerBucketTaskBoardTaskFormat
 **********************************************/
@@ -12080,6 +14614,9 @@ export interface plannerBucketTaskBoardTaskFormatProps {
 	orderHint: string;
 }
 export interface plannerBucketTaskBoardTaskFormatMethods {
+
+}
+export interface plannerBucketTaskBoardTaskFormatOData {
 
 }
 /*********************************************
@@ -12093,6 +14630,9 @@ export interface plannerPlanDetailsProps {
 export interface plannerPlanDetailsMethods {
 
 }
+export interface plannerPlanDetailsOData {
+
+}
 /*********************************************
 * plannerProgressTaskBoardTaskFormat
 **********************************************/
@@ -12101,6 +14641,9 @@ export interface plannerProgressTaskBoardTaskFormatProps {
 	orderHint: string;
 }
 export interface plannerProgressTaskBoardTaskFormatMethods {
+
+}
+export interface plannerProgressTaskBoardTaskFormatOData {
 
 }
 /*********************************************
@@ -12114,6 +14657,9 @@ export interface plannerTaskDetailsProps {
 	references: ComplexTypes.plannerExternalReferences;
 }
 export interface plannerTaskDetailsMethods {
+
+}
+export interface plannerTaskDetailsOData {
 
 }
 /*********************************************
@@ -12130,6 +14676,9 @@ export interface sharedInsightMethods {
 	lastSharedMethod(): IBaseQuery<entity> & entityMethods;
 	resource(): IBaseQuery<entity> & entityMethods;
 }
+export interface sharedInsightOData {
+
+}
 /*********************************************
 * trending
 **********************************************/
@@ -12143,6 +14692,9 @@ export interface trendingProps {
 export interface trendingMethods {
 	resource(): IBaseQuery<entity> & entityMethods;
 }
+export interface trendingOData {
+
+}
 /*********************************************
 * usedInsight
 **********************************************/
@@ -12155,6 +14707,9 @@ export interface usedInsightProps {
 export interface usedInsightMethods {
 	resource(): IBaseQuery<entity> & entityMethods;
 }
+export interface usedInsightOData {
+
+}
 /*********************************************
 * userInsightsSettings
 **********************************************/
@@ -12163,6 +14718,9 @@ export interface userInsightsSettingsProps {
 	isEnabled: boolean;
 }
 export interface userInsightsSettingsMethods {
+
+}
+export interface userInsightsSettingsOData {
 
 }
 /*********************************************
@@ -12175,8 +14733,11 @@ export interface windowsSettingProps {
 	windowsDeviceId: string;
 }
 export interface windowsSettingMethods {
-	instances(): IBaseCollection<windowsSettingInstance>;
+	instances(): IBaseCollection<windowsSettingInstance, windowsSettingInstanceOData>;
 	instances(id: string | number): IBaseQuery<windowsSettingInstance> & windowsSettingInstanceMethods;
+}
+export interface windowsSettingOData {
+	instances: IBaseResults<windowsSettingInstance>;
 }
 /*********************************************
 * changeTrackedEntity
@@ -12190,6 +14751,9 @@ export interface changeTrackedEntityProps {
 export interface changeTrackedEntityMethods {
 
 }
+export interface changeTrackedEntityOData {
+
+}
 /*********************************************
 * shiftPreferences
 **********************************************/
@@ -12198,6 +14762,9 @@ export interface shiftPreferencesProps {
 	availability: ComplexTypes.shiftAvailability[];
 }
 export interface shiftPreferencesMethods {
+
+}
+export interface shiftPreferencesOData {
 
 }
 /*********************************************
@@ -12210,6 +14777,9 @@ export interface userStorageProps {
 export interface userStorageMethods {
 	quota(): IBaseQuery<unifiedStorageQuota> & unifiedStorageQuotaMethods;
 }
+export interface userStorageOData {
+
+}
 /*********************************************
 * onenoteEntityBaseModel
 **********************************************/
@@ -12220,6 +14790,9 @@ export interface onenoteEntityBaseModelProps {
 export interface onenoteEntityBaseModelMethods {
 
 }
+export interface onenoteEntityBaseModelOData {
+
+}
 /*********************************************
 * onenoteEntitySchemaObjectModel
 **********************************************/
@@ -12228,6 +14801,9 @@ export interface onenoteEntitySchemaObjectModelProps {
 	createdDateTime: any;
 }
 export interface onenoteEntitySchemaObjectModelMethods {
+
+}
+export interface onenoteEntitySchemaObjectModelOData {
 
 }
 /*********************************************
@@ -12243,6 +14819,9 @@ export interface onenoteEntityHierarchyModelProps {
 export interface onenoteEntityHierarchyModelMethods {
 
 }
+export interface onenoteEntityHierarchyModelOData {
+
+}
 /*********************************************
 * notebook
 **********************************************/
@@ -12256,10 +14835,14 @@ export interface notebookProps {
 	userRole: EnumTypes.onenoteUserRole;
 }
 export interface notebookMethods {
-	sectionGroups(): IBaseCollection<sectionGroup>;
+	sectionGroups(): IBaseCollection<sectionGroup, sectionGroupOData>;
 	sectionGroups(id: string | number): IBaseQuery<sectionGroup> & sectionGroupMethods;
-	sections(): IBaseCollection<onenoteSection>;
+	sections(): IBaseCollection<onenoteSection, onenoteSectionOData>;
 	sections(id: string | number): IBaseQuery<onenoteSection> & onenoteSectionMethods;
+}
+export interface notebookOData {
+	sectionGroups: IBaseResults<sectionGroup>;
+	sections: IBaseResults<onenoteSection>;
 }
 /*********************************************
 * sectionGroup
@@ -12272,10 +14855,14 @@ export interface sectionGroupProps {
 export interface sectionGroupMethods {
 	parentNotebook(): IBaseQuery<notebook> & notebookMethods;
 	parentSectionGroup(): IBaseQuery<sectionGroup> & sectionGroupMethods;
-	sectionGroups(): IBaseCollection<sectionGroup>;
+	sectionGroups(): IBaseCollection<sectionGroup, sectionGroupOData>;
 	sectionGroups(id: string | number): IBaseQuery<sectionGroup> & sectionGroupMethods;
-	sections(): IBaseCollection<onenoteSection>;
+	sections(): IBaseCollection<onenoteSection, onenoteSectionOData>;
 	sections(id: string | number): IBaseQuery<onenoteSection> & onenoteSectionMethods;
+}
+export interface sectionGroupOData {
+	sectionGroups: IBaseResults<sectionGroup>;
+	sections: IBaseResults<onenoteSection>;
 }
 /*********************************************
 * onenoteSection
@@ -12287,10 +14874,13 @@ export interface onenoteSectionProps {
 	pagesUrl: string;
 }
 export interface onenoteSectionMethods {
-	pages(): IBaseCollection<onenotePage>;
+	pages(): IBaseCollection<onenotePage, onenotePageOData>;
 	pages(id: string | number): IBaseQuery<onenotePage> & onenotePageMethods;
 	parentNotebook(): IBaseQuery<notebook> & notebookMethods;
 	parentSectionGroup(): IBaseQuery<sectionGroup> & sectionGroupMethods;
+}
+export interface onenoteSectionOData {
+	pages: IBaseResults<onenotePage>;
 }
 /*********************************************
 * operation
@@ -12304,6 +14894,9 @@ export interface operationProps {
 export interface operationMethods {
 
 }
+export interface operationOData {
+
+}
 /*********************************************
 * onenoteOperation
 **********************************************/
@@ -12315,6 +14908,9 @@ export interface onenoteOperationProps {
 	resourceLocation: string;
 }
 export interface onenoteOperationMethods {
+
+}
+export interface onenoteOperationOData {
 
 }
 /*********************************************
@@ -12336,6 +14932,9 @@ export interface onenotePageMethods {
 	parentNotebook(): IBaseQuery<notebook> & notebookMethods;
 	parentSection(): IBaseQuery<onenoteSection> & onenoteSectionMethods;
 }
+export interface onenotePageOData {
+
+}
 /*********************************************
 * onenoteResource
 **********************************************/
@@ -12345,6 +14944,9 @@ export interface onenoteResourceProps {
 	contentUrl: string;
 }
 export interface onenoteResourceMethods {
+
+}
+export interface onenoteResourceOData {
 
 }
 /*********************************************
@@ -12361,6 +14963,9 @@ export interface delegatedAdminAccessAssignmentProps {
 export interface delegatedAdminAccessAssignmentMethods {
 
 }
+export interface delegatedAdminAccessAssignmentOData {
+
+}
 /*********************************************
 * delegatedAdminServiceManagementDetail
 **********************************************/
@@ -12370,6 +14975,9 @@ export interface delegatedAdminServiceManagementDetailProps {
 	serviceName: string;
 }
 export interface delegatedAdminServiceManagementDetailMethods {
+
+}
+export interface delegatedAdminServiceManagementDetailOData {
 
 }
 /*********************************************
@@ -12386,6 +14994,9 @@ export interface delegatedAdminRelationshipOperationProps {
 export interface delegatedAdminRelationshipOperationMethods {
 
 }
+export interface delegatedAdminRelationshipOperationOData {
+
+}
 /*********************************************
 * delegatedAdminRelationshipRequest
 **********************************************/
@@ -12399,6 +15010,9 @@ export interface delegatedAdminRelationshipRequestProps {
 export interface delegatedAdminRelationshipRequestMethods {
 
 }
+export interface delegatedAdminRelationshipRequestOData {
+
+}
 /*********************************************
 * resellerDelegatedAdminRelationship
 **********************************************/
@@ -12408,6 +15022,9 @@ export interface resellerDelegatedAdminRelationshipProps {
 	isPartnerConsentPending: boolean;
 }
 export interface resellerDelegatedAdminRelationshipMethods {
+
+}
+export interface resellerDelegatedAdminRelationshipOData {
 
 }
 /*********************************************
@@ -12423,6 +15040,9 @@ export interface cloudClipboardItemProps {
 export interface cloudClipboardItemMethods {
 
 }
+export interface cloudClipboardItemOData {
+
+}
 /*********************************************
 * windowsSettingInstance
 **********************************************/
@@ -12436,6 +15056,9 @@ export interface windowsSettingInstanceProps {
 export interface windowsSettingInstanceMethods {
 
 }
+export interface windowsSettingInstanceOData {
+
+}
 /*********************************************
 * profileCardProperty
 **********************************************/
@@ -12447,6 +15070,9 @@ export interface profileCardPropertyProps {
 export interface profileCardPropertyMethods {
 
 }
+export interface profileCardPropertyOData {
+
+}
 /*********************************************
 * pronounsSettings
 **********************************************/
@@ -12455,6 +15081,9 @@ export interface pronounsSettingsProps {
 	isEnabledInOrganization: boolean;
 }
 export interface pronounsSettingsMethods {
+
+}
+export interface pronounsSettingsOData {
 
 }
 /*********************************************
@@ -12468,6 +15097,9 @@ export interface insightsSettingsProps {
 export interface insightsSettingsMethods {
 
 }
+export interface insightsSettingsOData {
+
+}
 /*********************************************
 * unifiedRoleManagementPolicyRule
 **********************************************/
@@ -12478,6 +15110,9 @@ export interface unifiedRoleManagementPolicyRuleProps {
 export interface unifiedRoleManagementPolicyRuleMethods {
 
 }
+export interface unifiedRoleManagementPolicyRuleOData {
+
+}
 /*********************************************
 * unifiedRoleManagementPolicyApprovalRule
 **********************************************/
@@ -12486,6 +15121,9 @@ export interface unifiedRoleManagementPolicyApprovalRuleProps {
 	setting: ComplexTypes.approvalSettings;
 }
 export interface unifiedRoleManagementPolicyApprovalRuleMethods {
+
+}
+export interface unifiedRoleManagementPolicyApprovalRuleOData {
 
 }
 /*********************************************
@@ -12499,6 +15137,9 @@ export interface unifiedRoleManagementPolicyAuthenticationContextRuleProps {
 export interface unifiedRoleManagementPolicyAuthenticationContextRuleMethods {
 
 }
+export interface unifiedRoleManagementPolicyAuthenticationContextRuleOData {
+
+}
 /*********************************************
 * unifiedRoleManagementPolicyEnablementRule
 **********************************************/
@@ -12507,6 +15148,9 @@ export interface unifiedRoleManagementPolicyEnablementRuleProps {
 	enabledRules: Array<string>[];
 }
 export interface unifiedRoleManagementPolicyEnablementRuleMethods {
+
+}
+export interface unifiedRoleManagementPolicyEnablementRuleOData {
 
 }
 /*********************************************
@@ -12518,6 +15162,9 @@ export interface unifiedRoleManagementPolicyExpirationRuleProps {
 	maximumDuration: number;
 }
 export interface unifiedRoleManagementPolicyExpirationRuleMethods {
+
+}
+export interface unifiedRoleManagementPolicyExpirationRuleOData {
 
 }
 /*********************************************
@@ -12532,6 +15179,9 @@ export interface unifiedRoleManagementPolicyNotificationRuleProps {
 	recipientType: string;
 }
 export interface unifiedRoleManagementPolicyNotificationRuleMethods {
+
+}
+export interface unifiedRoleManagementPolicyNotificationRuleOData {
 
 }
 /*********************************************
@@ -12549,8 +15199,11 @@ export interface printerBaseProps {
 	status: ComplexTypes.printerStatus;
 }
 export interface printerBaseMethods {
-	jobs(): IBaseCollection<printJob>;
+	jobs(): IBaseCollection<printJob, printJobOData>;
 	jobs(id: string | number): IBaseQuery<printJob> & printJobMethods;
+}
+export interface printerBaseOData {
+	jobs: IBaseResults<printJob>;
 }
 /*********************************************
 * printerShare
@@ -12562,11 +15215,15 @@ export interface printerShareProps {
 	viewPoint: ComplexTypes.printerShareViewpoint;
 }
 export interface printerShareMethods {
-	allowedGroups(): IBaseCollection<group>;
+	allowedGroups(): IBaseCollection<group, groupOData>;
 	allowedGroups(id: string | number): IBaseQuery<group> & groupMethods;
-	allowedUsers(): IBaseCollection<user>;
+	allowedUsers(): IBaseCollection<user, userOData>;
 	allowedUsers(id: string | number): IBaseQuery<user> & userMethods;
 	printer(): IBaseQuery<printer> & printerMethods;
+}
+export interface printerShareOData {
+	allowedGroups: IBaseResults<group>;
+	allowedUsers: IBaseResults<user>;
 }
 /*********************************************
 * print
@@ -12576,18 +15233,26 @@ export interface printProps {
 	settings: ComplexTypes.printSettings;
 }
 export interface printMethods {
-	connectors(): IBaseCollection<printConnector>;
+	connectors(): IBaseCollection<printConnector, printConnectorOData>;
 	connectors(id: string | number): IBaseQuery<printConnector> & printConnectorMethods;
-	operations(): IBaseCollection<printOperation>;
+	operations(): IBaseCollection<printOperation, printOperationOData>;
 	operations(id: string | number): IBaseQuery<printOperation> & printOperationMethods;
-	printers(): IBaseCollection<printer>;
+	printers(): IBaseCollection<printer, printerOData>;
 	printers(id: string | number): IBaseQuery<printer> & printerMethods;
-	services(): IBaseCollection<printService>;
+	services(): IBaseCollection<printService, printServiceOData>;
 	services(id: string | number): IBaseQuery<printService> & printServiceMethods;
-	shares(): IBaseCollection<printerShare>;
+	shares(): IBaseCollection<printerShare, printerShareOData>;
 	shares(id: string | number): IBaseQuery<printerShare> & printerShareMethods;
-	taskDefinitions(): IBaseCollection<printTaskDefinition>;
+	taskDefinitions(): IBaseCollection<printTaskDefinition, printTaskDefinitionOData>;
 	taskDefinitions(id: string | number): IBaseQuery<printTaskDefinition> & printTaskDefinitionMethods;
+}
+export interface printOData {
+	connectors: IBaseResults<printConnector>;
+	operations: IBaseResults<printOperation>;
+	printers: IBaseResults<printer>;
+	services: IBaseResults<printService>;
+	shares: IBaseResults<printerShare>;
+	taskDefinitions: IBaseResults<printTaskDefinition>;
 }
 /*********************************************
 * printConnector
@@ -12604,6 +15269,9 @@ export interface printConnectorProps {
 export interface printConnectorMethods {
 
 }
+export interface printConnectorOData {
+
+}
 /*********************************************
 * printOperation
 **********************************************/
@@ -12613,6 +15281,9 @@ export interface printOperationProps {
 	status: ComplexTypes.printOperationStatus;
 }
 export interface printOperationMethods {
+
+}
+export interface printOperationOData {
 
 }
 /*********************************************
@@ -12626,12 +15297,17 @@ export interface printerProps {
 	registeredDateTime: any;
 }
 export interface printerMethods {
-	connectors(): IBaseCollection<printConnector>;
+	connectors(): IBaseCollection<printConnector, printConnectorOData>;
 	connectors(id: string | number): IBaseQuery<printConnector> & printConnectorMethods;
-	shares(): IBaseCollection<printerShare>;
+	shares(): IBaseCollection<printerShare, printerShareOData>;
 	shares(id: string | number): IBaseQuery<printerShare> & printerShareMethods;
-	taskTriggers(): IBaseCollection<printTaskTrigger>;
+	taskTriggers(): IBaseCollection<printTaskTrigger, printTaskTriggerOData>;
 	taskTriggers(id: string | number): IBaseQuery<printTaskTrigger> & printTaskTriggerMethods;
+}
+export interface printerOData {
+	connectors: IBaseResults<printConnector>;
+	shares: IBaseResults<printerShare>;
+	taskTriggers: IBaseResults<printTaskTrigger>;
 }
 /*********************************************
 * printService
@@ -12641,8 +15317,11 @@ export interface printServiceProps {
 
 }
 export interface printServiceMethods {
-	endpoints(): IBaseCollection<printServiceEndpoint>;
+	endpoints(): IBaseCollection<printServiceEndpoint, printServiceEndpointOData>;
 	endpoints(id: string | number): IBaseQuery<printServiceEndpoint> & printServiceEndpointMethods;
+}
+export interface printServiceOData {
+	endpoints: IBaseResults<printServiceEndpoint>;
 }
 /*********************************************
 * printTaskDefinition
@@ -12653,8 +15332,11 @@ export interface printTaskDefinitionProps {
 	displayName: string;
 }
 export interface printTaskDefinitionMethods {
-	tasks(): IBaseCollection<printTask>;
+	tasks(): IBaseCollection<printTask, printTaskOData>;
 	tasks(id: string | number): IBaseQuery<printTask> & printTaskMethods;
+}
+export interface printTaskDefinitionOData {
+	tasks: IBaseResults<printTask>;
 }
 /*********************************************
 * printDocument
@@ -12668,6 +15350,9 @@ export interface printDocumentProps {
 export interface printDocumentMethods {
 
 }
+export interface printDocumentOData {
+
+}
 /*********************************************
 * printTaskTrigger
 **********************************************/
@@ -12677,6 +15362,9 @@ export interface printTaskTriggerProps {
 }
 export interface printTaskTriggerMethods {
 	definition(): IBaseQuery<printTaskDefinition> & printTaskDefinitionMethods;
+}
+export interface printTaskTriggerOData {
+
 }
 /*********************************************
 * printJob
@@ -12692,10 +15380,14 @@ export interface printJobProps {
 	status: ComplexTypes.printJobStatus;
 }
 export interface printJobMethods {
-	documents(): IBaseCollection<printDocument>;
+	documents(): IBaseCollection<printDocument, printDocumentOData>;
 	documents(id: string | number): IBaseQuery<printDocument> & printDocumentMethods;
-	tasks(): IBaseCollection<printTask>;
+	tasks(): IBaseCollection<printTask, printTaskOData>;
 	tasks(id: string | number): IBaseQuery<printTask> & printTaskMethods;
+}
+export interface printJobOData {
+	documents: IBaseResults<printDocument>;
+	tasks: IBaseResults<printTask>;
 }
 /*********************************************
 * printerCreateOperation
@@ -12706,6 +15398,9 @@ export interface printerCreateOperationProps {
 }
 export interface printerCreateOperationMethods {
 	printer(): IBaseQuery<printer> & printerMethods;
+}
+export interface printerCreateOperationOData {
+
 }
 /*********************************************
 * printTask
@@ -12719,6 +15414,9 @@ export interface printTaskMethods {
 	definition(): IBaseQuery<printTaskDefinition> & printTaskDefinitionMethods;
 	trigger(): IBaseQuery<printTaskTrigger> & printTaskTriggerMethods;
 }
+export interface printTaskOData {
+
+}
 /*********************************************
 * printServiceEndpoint
 **********************************************/
@@ -12728,6 +15426,9 @@ export interface printServiceEndpointProps {
 	uri: string;
 }
 export interface printServiceEndpointMethods {
+
+}
+export interface printServiceEndpointOData {
 
 }
 /*********************************************
@@ -12747,6 +15448,9 @@ export interface activityHistoryItemProps {
 export interface activityHistoryItemMethods {
 	activity(): IBaseQuery<userActivity> & userActivityMethods;
 }
+export interface activityHistoryItemOData {
+
+}
 /*********************************************
 * dataPolicyOperation
 **********************************************/
@@ -12760,6 +15464,9 @@ export interface dataPolicyOperationProps {
 	userId: string;
 }
 export interface dataPolicyOperationMethods {
+
+}
+export interface dataPolicyOperationOData {
 
 }
 /*********************************************
@@ -12779,8 +15486,11 @@ export interface endUserNotificationProps {
 	supportedLocales: Array<string>[];
 }
 export interface endUserNotificationMethods {
-	details(): IBaseCollection<endUserNotificationDetail>;
+	details(): IBaseCollection<endUserNotificationDetail, endUserNotificationDetailOData>;
 	details(id: string | number): IBaseQuery<endUserNotificationDetail> & endUserNotificationDetailMethods;
+}
+export interface endUserNotificationOData {
+	details: IBaseResults<endUserNotificationDetail>;
 }
 /*********************************************
 * training
@@ -12802,8 +15512,11 @@ export interface trainingProps {
 	type: EnumTypes.trainingType;
 }
 export interface trainingMethods {
-	languageDetails(): IBaseCollection<trainingLanguageDetail>;
+	languageDetails(): IBaseCollection<trainingLanguageDetail, trainingLanguageDetailOData>;
 	languageDetails(id: string | number): IBaseQuery<trainingLanguageDetail> & trainingLanguageDetailMethods;
+}
+export interface trainingOData {
+	languageDetails: IBaseResults<trainingLanguageDetail>;
 }
 /*********************************************
 * attackSimulationOperation
@@ -12815,6 +15528,9 @@ export interface attackSimulationOperationProps {
 	type: EnumTypes.attackSimulationOperationType;
 }
 export interface attackSimulationOperationMethods {
+
+}
+export interface attackSimulationOperationOData {
 
 }
 /*********************************************
@@ -12834,8 +15550,11 @@ export interface landingPageProps {
 	supportedLocales: Array<string>[];
 }
 export interface landingPageMethods {
-	details(): IBaseCollection<landingPageDetail>;
+	details(): IBaseCollection<landingPageDetail, landingPageDetailOData>;
 	details(id: string | number): IBaseQuery<landingPageDetail> & landingPageDetailMethods;
+}
+export interface landingPageOData {
+	details: IBaseResults<landingPageDetail>;
 }
 /*********************************************
 * loginPage
@@ -12854,6 +15573,9 @@ export interface loginPageProps {
 	status: EnumTypes.simulationContentStatus;
 }
 export interface loginPageMethods {
+
+}
+export interface loginPageOData {
 
 }
 /*********************************************
@@ -12887,6 +15609,9 @@ export interface payloadProps {
 export interface payloadMethods {
 
 }
+export interface payloadOData {
+
+}
 /*********************************************
 * simulationAutomation
 **********************************************/
@@ -12903,8 +15628,11 @@ export interface simulationAutomationProps {
 	status: EnumTypes.simulationAutomationStatus;
 }
 export interface simulationAutomationMethods {
-	runs(): IBaseCollection<simulationAutomationRun>;
+	runs(): IBaseCollection<simulationAutomationRun, simulationAutomationRunOData>;
 	runs(id: string | number): IBaseQuery<simulationAutomationRun> & simulationAutomationRunMethods;
+}
+export interface simulationAutomationOData {
+	runs: IBaseResults<simulationAutomationRun>;
 }
 /*********************************************
 * simulation
@@ -12938,6 +15666,9 @@ export interface simulationMethods {
 	loginPage(): IBaseQuery<loginPage> & loginPageMethods;
 	payload(): IBaseQuery<payload> & payloadMethods;
 }
+export interface simulationOData {
+
+}
 /*********************************************
 * endUserNotificationDetail
 **********************************************/
@@ -12953,6 +15684,9 @@ export interface endUserNotificationDetailProps {
 export interface endUserNotificationDetailMethods {
 
 }
+export interface endUserNotificationDetailOData {
+
+}
 /*********************************************
 * landingPageDetail
 **********************************************/
@@ -12963,6 +15697,9 @@ export interface landingPageDetailProps {
 	language: string;
 }
 export interface landingPageDetailMethods {
+
+}
+export interface landingPageDetailOData {
 
 }
 /*********************************************
@@ -12976,6 +15713,9 @@ export interface simulationAutomationRunProps {
 	status: EnumTypes.simulationAutomationRunStatus;
 }
 export interface simulationAutomationRunMethods {
+
+}
+export interface simulationAutomationRunOData {
 
 }
 /*********************************************
@@ -12996,6 +15736,9 @@ export interface trainingLanguageDetailProps {
 export interface trainingLanguageDetailMethods {
 
 }
+export interface trainingLanguageDetailOData {
+
+}
 /*********************************************
 * commsOperation
 **********************************************/
@@ -13008,6 +15751,9 @@ export interface commsOperationProps {
 export interface commsOperationMethods {
 
 }
+export interface commsOperationOData {
+
+}
 /*********************************************
 * addLargeGalleryViewOperation
 **********************************************/
@@ -13016,6 +15762,9 @@ export interface addLargeGalleryViewOperationProps {
 
 }
 export interface addLargeGalleryViewOperationMethods {
+
+}
+export interface addLargeGalleryViewOperationOData {
 
 }
 /*********************************************
@@ -13032,6 +15781,9 @@ export interface attendanceRecordProps {
 export interface attendanceRecordMethods {
 
 }
+export interface attendanceRecordOData {
+
+}
 /*********************************************
 * audioRoutingGroup
 **********************************************/
@@ -13044,6 +15796,9 @@ export interface audioRoutingGroupProps {
 export interface audioRoutingGroupMethods {
 
 }
+export interface audioRoutingGroupOData {
+
+}
 /*********************************************
 * contentSharingSession
 **********************************************/
@@ -13052,6 +15807,9 @@ export interface contentSharingSessionProps {
 
 }
 export interface contentSharingSessionMethods {
+
+}
+export interface contentSharingSessionOData {
 
 }
 /*********************************************
@@ -13064,6 +15822,9 @@ export interface participantProps {
 export interface participantMethods {
 
 }
+export interface participantOData {
+
+}
 /*********************************************
 * cancelMediaProcessingOperation
 **********************************************/
@@ -13074,6 +15835,9 @@ export interface cancelMediaProcessingOperationProps {
 export interface cancelMediaProcessingOperationMethods {
 
 }
+export interface cancelMediaProcessingOperationOData {
+
+}
 /*********************************************
 * deltaParticipants
 **********************************************/
@@ -13082,8 +15846,11 @@ export interface deltaParticipantsProps {
 	sequenceNumber: number;
 }
 export interface deltaParticipantsMethods {
-	participants(): IBaseCollection<participant>;
+	participants(): IBaseCollection<participant, participantOData>;
 	participants(id: string | number): IBaseQuery<participant> & participantMethods;
+}
+export interface deltaParticipantsOData {
+	participants: IBaseResults<participant>;
 }
 /*********************************************
 * inviteParticipantsOperation
@@ -13093,6 +15860,9 @@ export interface inviteParticipantsOperationProps {
 	participants: ComplexTypes.invitationParticipantInfo[];
 }
 export interface inviteParticipantsOperationMethods {
+
+}
+export interface inviteParticipantsOperationOData {
 
 }
 /*********************************************
@@ -13105,8 +15875,11 @@ export interface meetingAttendanceReportProps {
 	totalParticipantCount: number;
 }
 export interface meetingAttendanceReportMethods {
-	attendanceRecords(): IBaseCollection<attendanceRecord>;
+	attendanceRecords(): IBaseCollection<attendanceRecord, attendanceRecordOData>;
 	attendanceRecords(id: string | number): IBaseQuery<attendanceRecord> & attendanceRecordMethods;
+}
+export interface meetingAttendanceReportOData {
+	attendanceRecords: IBaseResults<attendanceRecord>;
 }
 /*********************************************
 * muteParticipantOperation
@@ -13116,6 +15889,9 @@ export interface muteParticipantOperationProps {
 
 }
 export interface muteParticipantOperationMethods {
+
+}
+export interface muteParticipantOperationOData {
 
 }
 /*********************************************
@@ -13128,6 +15904,9 @@ export interface participantJoiningNotificationProps {
 export interface participantJoiningNotificationMethods {
 	call(): IBaseQuery<call> & callMethods;
 }
+export interface participantJoiningNotificationOData {
+
+}
 /*********************************************
 * participantLeftNotification
 **********************************************/
@@ -13138,6 +15917,9 @@ export interface participantLeftNotificationProps {
 export interface participantLeftNotificationMethods {
 	call(): IBaseQuery<call> & callMethods;
 }
+export interface participantLeftNotificationOData {
+
+}
 /*********************************************
 * playPromptOperation
 **********************************************/
@@ -13146,6 +15928,9 @@ export interface playPromptOperationProps {
 
 }
 export interface playPromptOperationMethods {
+
+}
+export interface playPromptOperationOData {
 
 }
 /*********************************************
@@ -13159,6 +15944,9 @@ export interface recordOperationProps {
 export interface recordOperationMethods {
 
 }
+export interface recordOperationOData {
+
+}
 /*********************************************
 * sendDtmfTonesOperation
 **********************************************/
@@ -13167,6 +15955,9 @@ export interface sendDtmfTonesOperationProps {
 	completionReason: EnumTypes.sendDtmfCompletionReason;
 }
 export interface sendDtmfTonesOperationMethods {
+
+}
+export interface sendDtmfTonesOperationOData {
 
 }
 /*********************************************
@@ -13179,6 +15970,9 @@ export interface startHoldMusicOperationProps {
 export interface startHoldMusicOperationMethods {
 
 }
+export interface startHoldMusicOperationOData {
+
+}
 /*********************************************
 * stopHoldMusicOperation
 **********************************************/
@@ -13187,6 +15981,9 @@ export interface stopHoldMusicOperationProps {
 
 }
 export interface stopHoldMusicOperationMethods {
+
+}
+export interface stopHoldMusicOperationOData {
 
 }
 /*********************************************
@@ -13199,6 +15996,9 @@ export interface subscribeToToneOperationProps {
 export interface subscribeToToneOperationMethods {
 
 }
+export interface subscribeToToneOperationOData {
+
+}
 /*********************************************
 * unmuteParticipantOperation
 **********************************************/
@@ -13209,6 +16009,9 @@ export interface unmuteParticipantOperationProps {
 export interface unmuteParticipantOperationMethods {
 
 }
+export interface unmuteParticipantOperationOData {
+
+}
 /*********************************************
 * updateRecordingStatusOperation
 **********************************************/
@@ -13217,6 +16020,9 @@ export interface updateRecordingStatusOperationProps {
 
 }
 export interface updateRecordingStatusOperationMethods {
+
+}
+export interface updateRecordingStatusOperationOData {
 
 }
 /*********************************************
@@ -13233,10 +16039,14 @@ export interface virtualEventProps {
 	status: EnumTypes.virtualEventStatus;
 }
 export interface virtualEventMethods {
-	presenters(): IBaseCollection<virtualEventPresenter>;
+	presenters(): IBaseCollection<virtualEventPresenter, virtualEventPresenterOData>;
 	presenters(id: string | number): IBaseQuery<virtualEventPresenter> & virtualEventPresenterMethods;
-	sessions(): IBaseCollection<virtualEventSession>;
+	sessions(): IBaseCollection<virtualEventSession, virtualEventSessionOData>;
 	sessions(id: string | number): IBaseQuery<virtualEventSession> & virtualEventSessionMethods;
+}
+export interface virtualEventOData {
+	presenters: IBaseResults<virtualEventPresenter>;
+	sessions: IBaseResults<virtualEventSession>;
 }
 /*********************************************
 * virtualEventPresenter
@@ -13250,6 +16060,9 @@ export interface virtualEventPresenterProps {
 export interface virtualEventPresenterMethods {
 
 }
+export interface virtualEventPresenterOData {
+
+}
 /*********************************************
 * virtualEventSession
 **********************************************/
@@ -13259,6 +16072,9 @@ export interface virtualEventSessionProps {
 	startDateTime: ComplexTypes.dateTimeTimeZone;
 }
 export interface virtualEventSessionMethods {
+
+}
+export interface virtualEventSessionOData {
 
 }
 /*********************************************
@@ -13278,8 +16094,11 @@ export interface virtualEventRegistrationProps {
 	userId: string;
 }
 export interface virtualEventRegistrationMethods {
-	sessions(): IBaseCollection<virtualEventSession>;
+	sessions(): IBaseCollection<virtualEventSession, virtualEventSessionOData>;
 	sessions(id: string | number): IBaseQuery<virtualEventSession> & virtualEventSessionMethods;
+}
+export interface virtualEventRegistrationOData {
+	sessions: IBaseResults<virtualEventSession>;
 }
 /*********************************************
 * virtualEventRegistrationConfiguration
@@ -13290,8 +16109,11 @@ export interface virtualEventRegistrationConfigurationProps {
 	registrationWebUrl: string;
 }
 export interface virtualEventRegistrationConfigurationMethods {
-	questions(): IBaseCollection<virtualEventRegistrationQuestionBase>;
+	questions(): IBaseCollection<virtualEventRegistrationQuestionBase, virtualEventRegistrationQuestionBaseOData>;
 	questions(id: string | number): IBaseQuery<virtualEventRegistrationQuestionBase> & virtualEventRegistrationQuestionBaseMethods;
+}
+export interface virtualEventRegistrationConfigurationOData {
+	questions: IBaseResults<virtualEventRegistrationQuestionBase>;
 }
 /*********************************************
 * virtualEventRegistrationQuestionBase
@@ -13302,6 +16124,9 @@ export interface virtualEventRegistrationQuestionBaseProps {
 	isRequired: boolean;
 }
 export interface virtualEventRegistrationQuestionBaseMethods {
+
+}
+export interface virtualEventRegistrationQuestionBaseOData {
 
 }
 /*********************************************
@@ -13315,6 +16140,9 @@ export interface virtualEventRegistrationCustomQuestionProps {
 export interface virtualEventRegistrationCustomQuestionMethods {
 
 }
+export interface virtualEventRegistrationCustomQuestionOData {
+
+}
 /*********************************************
 * virtualEventRegistrationPredefinedQuestion
 **********************************************/
@@ -13323,6 +16151,9 @@ export interface virtualEventRegistrationPredefinedQuestionProps {
 	label: EnumTypes.virtualEventRegistrationPredefinedQuestionLabel;
 }
 export interface virtualEventRegistrationPredefinedQuestionMethods {
+
+}
+export interface virtualEventRegistrationPredefinedQuestionOData {
 
 }
 /*********************************************
@@ -13338,6 +16169,9 @@ export interface virtualEventTownhallProps {
 export interface virtualEventTownhallMethods {
 
 }
+export interface virtualEventTownhallOData {
+
+}
 /*********************************************
 * virtualEventWebinar
 **********************************************/
@@ -13348,8 +16182,11 @@ export interface virtualEventWebinarProps {
 }
 export interface virtualEventWebinarMethods {
 	registrationConfiguration(): IBaseQuery<virtualEventWebinarRegistrationConfiguration> & virtualEventWebinarRegistrationConfigurationMethods;
-	registrations(): IBaseCollection<virtualEventRegistration>;
+	registrations(): IBaseCollection<virtualEventRegistration, virtualEventRegistrationOData>;
 	registrations(id: string | number): IBaseQuery<virtualEventRegistration> & virtualEventRegistrationMethods;
+}
+export interface virtualEventWebinarOData {
+	registrations: IBaseResults<virtualEventRegistration>;
 }
 /*********************************************
 * virtualEventWebinarRegistrationConfiguration
@@ -13362,6 +16199,9 @@ export interface virtualEventWebinarRegistrationConfigurationProps {
 export interface virtualEventWebinarRegistrationConfigurationMethods {
 
 }
+export interface virtualEventWebinarRegistrationConfigurationOData {
+
+}
 /*********************************************
 * authenticationMethod
 **********************************************/
@@ -13372,6 +16212,9 @@ export interface authenticationMethodProps {
 export interface authenticationMethodMethods {
 
 }
+export interface authenticationMethodOData {
+
+}
 /*********************************************
 * emailAuthenticationMethod
 **********************************************/
@@ -13380,6 +16223,9 @@ export interface emailAuthenticationMethodProps {
 	emailAddress: string;
 }
 export interface emailAuthenticationMethodMethods {
+
+}
+export interface emailAuthenticationMethodOData {
 
 }
 /*********************************************
@@ -13397,6 +16243,9 @@ export interface fido2AuthenticationMethodProps {
 export interface fido2AuthenticationMethodMethods {
 
 }
+export interface fido2AuthenticationMethodOData {
+
+}
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethod
 **********************************************/
@@ -13410,6 +16259,9 @@ export interface microsoftAuthenticatorAuthenticationMethodProps {
 export interface microsoftAuthenticatorAuthenticationMethodMethods {
 	device(): IBaseQuery<device> & deviceMethods;
 }
+export interface microsoftAuthenticatorAuthenticationMethodOData {
+
+}
 /*********************************************
 * passwordAuthenticationMethod
 **********************************************/
@@ -13419,6 +16271,9 @@ export interface passwordAuthenticationMethodProps {
 	password: string;
 }
 export interface passwordAuthenticationMethodMethods {
+
+}
+export interface passwordAuthenticationMethodOData {
 
 }
 /*********************************************
@@ -13433,6 +16288,9 @@ export interface phoneAuthenticationMethodProps {
 export interface phoneAuthenticationMethodMethods {
 
 }
+export interface phoneAuthenticationMethodOData {
+
+}
 /*********************************************
 * softwareOathAuthenticationMethod
 **********************************************/
@@ -13441,6 +16299,9 @@ export interface softwareOathAuthenticationMethodProps {
 	secretKey: string;
 }
 export interface softwareOathAuthenticationMethodMethods {
+
+}
+export interface softwareOathAuthenticationMethodOData {
 
 }
 /*********************************************
@@ -13459,6 +16320,9 @@ export interface temporaryAccessPassAuthenticationMethodProps {
 export interface temporaryAccessPassAuthenticationMethodMethods {
 
 }
+export interface temporaryAccessPassAuthenticationMethodOData {
+
+}
 /*********************************************
 * windowsHelloForBusinessAuthenticationMethod
 **********************************************/
@@ -13470,6 +16334,9 @@ export interface windowsHelloForBusinessAuthenticationMethodProps {
 }
 export interface windowsHelloForBusinessAuthenticationMethodMethods {
 	device(): IBaseQuery<device> & deviceMethods;
+}
+export interface windowsHelloForBusinessAuthenticationMethodOData {
+
 }
 /*********************************************
 * aadUserConversationMember
@@ -13483,6 +16350,9 @@ export interface aadUserConversationMemberProps {
 export interface aadUserConversationMemberMethods {
 	user(): IBaseQuery<user> & userMethods;
 }
+export interface aadUserConversationMemberOData {
+
+}
 /*********************************************
 * anonymousGuestConversationMember
 **********************************************/
@@ -13493,6 +16363,9 @@ export interface anonymousGuestConversationMemberProps {
 export interface anonymousGuestConversationMemberMethods {
 
 }
+export interface anonymousGuestConversationMemberOData {
+
+}
 /*********************************************
 * appCatalogs
 **********************************************/
@@ -13501,8 +16374,11 @@ export interface appCatalogsProps {
 
 }
 export interface appCatalogsMethods {
-	teamsApps(): IBaseCollection<teamsApp>;
+	teamsApps(): IBaseCollection<teamsApp, teamsAppOData>;
 	teamsApps(id: string | number): IBaseQuery<teamsApp> & teamsAppMethods;
+}
+export interface appCatalogsOData {
+	teamsApps: IBaseResults<teamsApp>;
 }
 /*********************************************
 * teamsApp
@@ -13514,8 +16390,11 @@ export interface teamsAppProps {
 	externalId: string;
 }
 export interface teamsAppMethods {
-	appDefinitions(): IBaseCollection<teamsAppDefinition>;
+	appDefinitions(): IBaseCollection<teamsAppDefinition, teamsAppDefinitionOData>;
 	appDefinitions(id: string | number): IBaseQuery<teamsAppDefinition> & teamsAppDefinitionMethods;
+}
+export interface teamsAppOData {
+	appDefinitions: IBaseResults<teamsAppDefinition>;
 }
 /*********************************************
 * teamInfo
@@ -13528,6 +16407,9 @@ export interface teamInfoProps {
 export interface teamInfoMethods {
 	team(): IBaseQuery<team> & teamMethods;
 }
+export interface teamInfoOData {
+
+}
 /*********************************************
 * associatedTeamInfo
 **********************************************/
@@ -13538,6 +16420,9 @@ export interface associatedTeamInfoProps {
 export interface associatedTeamInfoMethods {
 
 }
+export interface associatedTeamInfoOData {
+
+}
 /*********************************************
 * azureCommunicationServicesUserConversationMember
 **********************************************/
@@ -13546,6 +16431,9 @@ export interface azureCommunicationServicesUserConversationMemberProps {
 	azureCommunicationServicesId: string;
 }
 export interface azureCommunicationServicesUserConversationMemberMethods {
+
+}
+export interface azureCommunicationServicesUserConversationMemberOData {
 
 }
 /*********************************************
@@ -13577,10 +16465,14 @@ export interface chatMessageProps {
 	webUrl: string;
 }
 export interface chatMessageMethods {
-	hostedContents(): IBaseCollection<chatMessageHostedContent>;
+	hostedContents(): IBaseCollection<chatMessageHostedContent, chatMessageHostedContentOData>;
 	hostedContents(id: string | number): IBaseQuery<chatMessageHostedContent> & chatMessageHostedContentMethods;
-	replies(): IBaseCollection<chatMessage>;
+	replies(): IBaseCollection<chatMessage, chatMessageOData>;
 	replies(id: string | number): IBaseQuery<chatMessage> & chatMessageMethods;
+}
+export interface chatMessageOData {
+	hostedContents: IBaseResults<chatMessageHostedContent>;
+	replies: IBaseResults<chatMessage>;
 }
 /*********************************************
 * sharedWithChannelTeamInfo
@@ -13590,8 +16482,11 @@ export interface sharedWithChannelTeamInfoProps {
 	isHostTeam: boolean;
 }
 export interface sharedWithChannelTeamInfoMethods {
-	allowedMembers(): IBaseCollection<conversationMember>;
+	allowedMembers(): IBaseCollection<conversationMember, conversationMemberOData>;
 	allowedMembers(id: string | number): IBaseQuery<conversationMember> & conversationMemberMethods;
+}
+export interface sharedWithChannelTeamInfoOData {
+	allowedMembers: IBaseResults<conversationMember>;
 }
 /*********************************************
 * teamsTab
@@ -13604,6 +16499,9 @@ export interface teamsTabProps {
 }
 export interface teamsTabMethods {
 	teamsApp(): IBaseQuery<teamsApp> & teamsAppMethods;
+}
+export interface teamsTabOData {
+
 }
 /*********************************************
 * chatMessageInfo
@@ -13620,6 +16518,9 @@ export interface chatMessageInfoProps {
 export interface chatMessageInfoMethods {
 
 }
+export interface chatMessageInfoOData {
+
+}
 /*********************************************
 * pinnedChatMessageInfo
 **********************************************/
@@ -13629,6 +16530,9 @@ export interface pinnedChatMessageInfoProps {
 }
 export interface pinnedChatMessageInfoMethods {
 	message(): IBaseQuery<chatMessage> & chatMessageMethods;
+}
+export interface pinnedChatMessageInfoOData {
+
 }
 /*********************************************
 * teamworkHostedContent
@@ -13641,6 +16545,9 @@ export interface teamworkHostedContentProps {
 export interface teamworkHostedContentMethods {
 
 }
+export interface teamworkHostedContentOData {
+
+}
 /*********************************************
 * chatMessageHostedContent
 **********************************************/
@@ -13649,6 +16556,9 @@ export interface chatMessageHostedContentProps {
 
 }
 export interface chatMessageHostedContentMethods {
+
+}
+export interface chatMessageHostedContentOData {
 
 }
 /*********************************************
@@ -13661,6 +16571,9 @@ export interface deletedChatProps {
 export interface deletedChatMethods {
 
 }
+export interface deletedChatOData {
+
+}
 /*********************************************
 * deletedTeam
 **********************************************/
@@ -13669,8 +16582,11 @@ export interface deletedTeamProps {
 
 }
 export interface deletedTeamMethods {
-	channels(): IBaseCollection<channel>;
+	channels(): IBaseCollection<channel, channelOData>;
 	channels(id: string | number): IBaseQuery<channel> & channelMethods;
+}
+export interface deletedTeamOData {
+	channels: IBaseResults<channel>;
 }
 /*********************************************
 * microsoftAccountUserConversationMember
@@ -13680,6 +16596,9 @@ export interface microsoftAccountUserConversationMemberProps {
 	userId: string;
 }
 export interface microsoftAccountUserConversationMemberMethods {
+
+}
+export interface microsoftAccountUserConversationMemberOData {
 
 }
 /*********************************************
@@ -13693,6 +16612,9 @@ export interface skypeForBusinessUserConversationMemberProps {
 export interface skypeForBusinessUserConversationMemberMethods {
 
 }
+export interface skypeForBusinessUserConversationMemberOData {
+
+}
 /*********************************************
 * skypeUserConversationMember
 **********************************************/
@@ -13701,6 +16623,9 @@ export interface skypeUserConversationMemberProps {
 	skypeId: string;
 }
 export interface skypeUserConversationMemberMethods {
+
+}
+export interface skypeUserConversationMemberOData {
 
 }
 /*********************************************
@@ -13721,6 +16646,9 @@ export interface teamsAppDefinitionProps {
 export interface teamsAppDefinitionMethods {
 	bot(): IBaseQuery<teamworkBot> & teamworkBotMethods;
 }
+export interface teamsAppDefinitionOData {
+
+}
 /*********************************************
 * teamworkBot
 **********************************************/
@@ -13729,6 +16657,9 @@ export interface teamworkBotProps {
 
 }
 export interface teamworkBotMethods {
+
+}
+export interface teamworkBotOData {
 
 }
 /*********************************************
@@ -13742,6 +16673,9 @@ export interface teamsAppSettingsProps {
 export interface teamsAppSettingsMethods {
 
 }
+export interface teamsAppSettingsOData {
+
+}
 /*********************************************
 * teamwork
 **********************************************/
@@ -13751,13 +16685,18 @@ export interface teamworkProps {
 	region: string;
 }
 export interface teamworkMethods {
-	workforceIntegrations(): IBaseCollection<workforceIntegration>;
+	workforceIntegrations(): IBaseCollection<workforceIntegration, workforceIntegrationOData>;
 	workforceIntegrations(id: string | number): IBaseQuery<workforceIntegration> & workforceIntegrationMethods;
-	deletedChats(): IBaseCollection<deletedChat>;
+	deletedChats(): IBaseCollection<deletedChat, deletedChatOData>;
 	deletedChats(id: string | number): IBaseQuery<deletedChat> & deletedChatMethods;
-	deletedTeams(): IBaseCollection<deletedTeam>;
+	deletedTeams(): IBaseCollection<deletedTeam, deletedTeamOData>;
 	deletedTeams(id: string | number): IBaseQuery<deletedTeam> & deletedTeamMethods;
 	teamsAppSettings(): IBaseQuery<teamsAppSettings> & teamsAppSettingsMethods;
+}
+export interface teamworkOData {
+	workforceIntegrations: IBaseResults<workforceIntegration>;
+	deletedChats: IBaseResults<deletedChat>;
+	deletedTeams: IBaseResults<deletedTeam>;
 }
 /*********************************************
 * workforceIntegration
@@ -13774,6 +16713,9 @@ export interface workforceIntegrationProps {
 export interface workforceIntegrationMethods {
 
 }
+export interface workforceIntegrationOData {
+
+}
 /*********************************************
 * teamworkTagMember
 **********************************************/
@@ -13786,6 +16728,9 @@ export interface teamworkTagMemberProps {
 export interface teamworkTagMemberMethods {
 
 }
+export interface teamworkTagMemberOData {
+
+}
 /*********************************************
 * userScopeTeamsAppInstallation
 **********************************************/
@@ -13795,6 +16740,9 @@ export interface userScopeTeamsAppInstallationProps {
 }
 export interface userScopeTeamsAppInstallationMethods {
 	chat(): IBaseQuery<chat> & chatMethods;
+}
+export interface userScopeTeamsAppInstallationOData {
+
 }
 /*********************************************
 * scheduleChangeRequest
@@ -13813,6 +16761,9 @@ export interface scheduleChangeRequestProps {
 export interface scheduleChangeRequestMethods {
 
 }
+export interface scheduleChangeRequestOData {
+
+}
 /*********************************************
 * offerShiftRequest
 **********************************************/
@@ -13824,6 +16775,9 @@ export interface offerShiftRequestProps {
 	senderShiftId: string;
 }
 export interface offerShiftRequestMethods {
+
+}
+export interface offerShiftRequestOData {
 
 }
 /*********************************************
@@ -13838,6 +16792,9 @@ export interface openShiftProps {
 export interface openShiftMethods {
 
 }
+export interface openShiftOData {
+
+}
 /*********************************************
 * openShiftChangeRequest
 **********************************************/
@@ -13846,6 +16803,9 @@ export interface openShiftChangeRequestProps {
 	openShiftId: string;
 }
 export interface openShiftChangeRequestMethods {
+
+}
+export interface openShiftChangeRequestOData {
 
 }
 /*********************************************
@@ -13858,6 +16818,9 @@ export interface schedulingGroupProps {
 	userIds: Array<string>[];
 }
 export interface schedulingGroupMethods {
+
+}
+export interface schedulingGroupOData {
 
 }
 /*********************************************
@@ -13873,6 +16836,9 @@ export interface shiftProps {
 export interface shiftMethods {
 
 }
+export interface shiftOData {
+
+}
 /*********************************************
 * swapShiftsChangeRequest
 **********************************************/
@@ -13881,6 +16847,9 @@ export interface swapShiftsChangeRequestProps {
 	recipientShiftId: string;
 }
 export interface swapShiftsChangeRequestMethods {
+
+}
+export interface swapShiftsChangeRequestOData {
 
 }
 /*********************************************
@@ -13895,6 +16864,9 @@ export interface timeOffReasonProps {
 export interface timeOffReasonMethods {
 
 }
+export interface timeOffReasonOData {
+
+}
 /*********************************************
 * timeOffRequest
 **********************************************/
@@ -13905,6 +16877,9 @@ export interface timeOffRequestProps {
 	timeOffReasonId: string;
 }
 export interface timeOffRequestMethods {
+
+}
+export interface timeOffRequestOData {
 
 }
 /*********************************************
@@ -13919,6 +16894,9 @@ export interface timeOffProps {
 export interface timeOffMethods {
 
 }
+export interface timeOffOData {
+
+}
 /*********************************************
 * workingTimeSchedule
 **********************************************/
@@ -13927,6 +16905,9 @@ export interface workingTimeScheduleProps {
 
 }
 export interface workingTimeScheduleMethods {
+
+}
+export interface workingTimeScheduleOData {
 
 }
 /*********************************************
@@ -13941,6 +16922,9 @@ export interface emailFileAssessmentRequestProps {
 export interface emailFileAssessmentRequestMethods {
 
 }
+export interface emailFileAssessmentRequestOData {
+
+}
 /*********************************************
 * fileAssessmentRequest
 **********************************************/
@@ -13950,6 +16934,9 @@ export interface fileAssessmentRequestProps {
 	fileName: string;
 }
 export interface fileAssessmentRequestMethods {
+
+}
+export interface fileAssessmentRequestOData {
 
 }
 /*********************************************
@@ -13964,6 +16951,9 @@ export interface mailAssessmentRequestProps {
 export interface mailAssessmentRequestMethods {
 
 }
+export interface mailAssessmentRequestOData {
+
+}
 /*********************************************
 * threatAssessmentResult
 **********************************************/
@@ -13976,6 +16966,9 @@ export interface threatAssessmentResultProps {
 export interface threatAssessmentResultMethods {
 
 }
+export interface threatAssessmentResultOData {
+
+}
 /*********************************************
 * urlAssessmentRequest
 **********************************************/
@@ -13984,6 +16977,9 @@ export interface urlAssessmentRequestProps {
 	url: string;
 }
 export interface urlAssessmentRequestMethods {
+
+}
+export interface urlAssessmentRequestOData {
 
 }
 /*********************************************
@@ -13999,6 +16995,9 @@ export interface attachmentBaseProps {
 export interface attachmentBaseMethods {
 
 }
+export interface attachmentBaseOData {
+
+}
 /*********************************************
 * attachmentSession
 **********************************************/
@@ -14009,6 +17008,9 @@ export interface attachmentSessionProps {
 	nextExpectedRanges: Array<string>[];
 }
 export interface attachmentSessionMethods {
+
+}
+export interface attachmentSessionOData {
 
 }
 /*********************************************
@@ -14024,6 +17026,9 @@ export interface checklistItemProps {
 export interface checklistItemMethods {
 
 }
+export interface checklistItemOData {
+
+}
 /*********************************************
 * linkedResource
 **********************************************/
@@ -14037,6 +17042,9 @@ export interface linkedResourceProps {
 export interface linkedResourceMethods {
 
 }
+export interface linkedResourceOData {
+
+}
 /*********************************************
 * taskFileAttachment
 **********************************************/
@@ -14045,6 +17053,9 @@ export interface taskFileAttachmentProps {
 	contentBytes: any;
 }
 export interface taskFileAttachmentMethods {
+
+}
+export interface taskFileAttachmentOData {
 
 }
 /*********************************************
@@ -14058,10 +17069,14 @@ export interface todoTaskListProps {
 	wellknownListName: EnumTypes.wellknownListName;
 }
 export interface todoTaskListMethods {
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
-	tasks(): IBaseCollection<todoTask>;
+	tasks(): IBaseCollection<todoTask, todoTaskOData>;
 	tasks(id: string | number): IBaseQuery<todoTask> & todoTaskMethods;
+}
+export interface todoTaskListOData {
+	extensions: IBaseResults<extension>;
+	tasks: IBaseResults<todoTask>;
 }
 /*********************************************
 * todoTask
@@ -14085,16 +17100,23 @@ export interface todoTaskProps {
 	title: string;
 }
 export interface todoTaskMethods {
-	attachments(): IBaseCollection<attachmentBase>;
+	attachments(): IBaseCollection<attachmentBase, attachmentBaseOData>;
 	attachments(id: string | number): IBaseQuery<attachmentBase> & attachmentBaseMethods;
-	attachmentSessions(): IBaseCollection<attachmentSession>;
+	attachmentSessions(): IBaseCollection<attachmentSession, attachmentSessionOData>;
 	attachmentSessions(id: string | number): IBaseQuery<attachmentSession> & attachmentSessionMethods;
-	checklistItems(): IBaseCollection<checklistItem>;
+	checklistItems(): IBaseCollection<checklistItem, checklistItemOData>;
 	checklistItems(id: string | number): IBaseQuery<checklistItem> & checklistItemMethods;
-	extensions(): IBaseCollection<extension>;
+	extensions(): IBaseCollection<extension, extensionOData>;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
-	linkedResources(): IBaseCollection<linkedResource>;
+	linkedResources(): IBaseCollection<linkedResource, linkedResourceOData>;
 	linkedResources(id: string | number): IBaseQuery<linkedResource> & linkedResourceMethods;
+}
+export interface todoTaskOData {
+	attachments: IBaseResults<attachmentBase>;
+	attachmentSessions: IBaseResults<attachmentSession>;
+	checklistItems: IBaseResults<checklistItem>;
+	extensions: IBaseResults<extension>;
+	linkedResources: IBaseResults<linkedResource>;
 }
 /*********************************************
 * storageQuotaBreakdown
@@ -14108,6 +17130,9 @@ export interface storageQuotaBreakdownProps {
 export interface storageQuotaBreakdownMethods {
 
 }
+export interface storageQuotaBreakdownOData {
+
+}
 /*********************************************
 * serviceStorageQuotaBreakdown
 **********************************************/
@@ -14116,6 +17141,9 @@ export interface serviceStorageQuotaBreakdownProps {
 
 }
 export interface serviceStorageQuotaBreakdownMethods {
+
+}
+export interface serviceStorageQuotaBreakdownOData {
 
 }
 /*********************************************
@@ -14131,8 +17159,11 @@ export interface unifiedStorageQuotaProps {
 	used: number;
 }
 export interface unifiedStorageQuotaMethods {
-	services(): IBaseCollection<serviceStorageQuotaBreakdown>;
+	services(): IBaseCollection<serviceStorageQuotaBreakdown, serviceStorageQuotaBreakdownOData>;
 	services(id: string | number): IBaseQuery<serviceStorageQuotaBreakdown> & serviceStorageQuotaBreakdownMethods;
+}
+export interface unifiedStorageQuotaOData {
+	services: IBaseResults<serviceStorageQuotaBreakdown>;
 }
 /*********************************************
 * community
@@ -14146,8 +17177,11 @@ export interface communityProps {
 }
 export interface communityMethods {
 	group(): IBaseQuery<group> & groupMethods;
-	owners(): IBaseCollection<user>;
+	owners(): IBaseCollection<user, userOData>;
 	owners(id: string | number): IBaseQuery<user> & userMethods;
+}
+export interface communityOData {
+	owners: IBaseResults<user>;
 }
 /*********************************************
 * employeeExperience
@@ -14157,14 +17191,20 @@ export interface employeeExperienceProps {
 
 }
 export interface employeeExperienceMethods {
-	communities(): IBaseCollection<community>;
+	communities(): IBaseCollection<community, communityOData>;
 	communities(id: string | number): IBaseQuery<community> & communityMethods;
-	engagementAsyncOperations(): IBaseCollection<engagementAsyncOperation>;
+	engagementAsyncOperations(): IBaseCollection<engagementAsyncOperation, engagementAsyncOperationOData>;
 	engagementAsyncOperations(id: string | number): IBaseQuery<engagementAsyncOperation> & engagementAsyncOperationMethods;
-	learningCourseActivities(): IBaseCollection<learningCourseActivity>;
+	learningCourseActivities(): IBaseCollection<learningCourseActivity, learningCourseActivityOData>;
 	learningCourseActivities(id: string | number): IBaseQuery<learningCourseActivity> & learningCourseActivityMethods;
-	learningProviders(): IBaseCollection<learningProvider>;
+	learningProviders(): IBaseCollection<learningProvider, learningProviderOData>;
 	learningProviders(id: string | number): IBaseQuery<learningProvider> & learningProviderMethods;
+}
+export interface employeeExperienceOData {
+	communities: IBaseResults<community>;
+	engagementAsyncOperations: IBaseResults<engagementAsyncOperation>;
+	learningCourseActivities: IBaseResults<learningCourseActivity>;
+	learningProviders: IBaseResults<learningProvider>;
 }
 /*********************************************
 * engagementAsyncOperation
@@ -14175,6 +17215,9 @@ export interface engagementAsyncOperationProps {
 	resourceId: string;
 }
 export interface engagementAsyncOperationMethods {
+
+}
+export interface engagementAsyncOperationOData {
 
 }
 /*********************************************
@@ -14193,6 +17236,9 @@ export interface learningCourseActivityProps {
 export interface learningCourseActivityMethods {
 
 }
+export interface learningCourseActivityOData {
+
+}
 /*********************************************
 * learningProvider
 **********************************************/
@@ -14207,10 +17253,14 @@ export interface learningProviderProps {
 	squareLogoWebUrlForLightTheme: string;
 }
 export interface learningProviderMethods {
-	learningContents(): IBaseCollection<learningContent>;
+	learningContents(): IBaseCollection<learningContent, learningContentOData>;
 	learningContents(id: string | number): IBaseQuery<learningContent> & learningContentMethods;
-	learningCourseActivities(): IBaseCollection<learningCourseActivity>;
+	learningCourseActivities(): IBaseCollection<learningCourseActivity, learningCourseActivityOData>;
 	learningCourseActivities(id: string | number): IBaseQuery<learningCourseActivity> & learningCourseActivityMethods;
+}
+export interface learningProviderOData {
+	learningContents: IBaseResults<learningContent>;
+	learningCourseActivities: IBaseResults<learningCourseActivity>;
 }
 /*********************************************
 * learningAssignment
@@ -14224,6 +17274,9 @@ export interface learningAssignmentProps {
 	notes: ComplexTypes.itemBody;
 }
 export interface learningAssignmentMethods {
+
+}
+export interface learningAssignmentOData {
 
 }
 /*********************************************
@@ -14254,6 +17307,9 @@ export interface learningContentProps {
 export interface learningContentMethods {
 
 }
+export interface learningContentOData {
+
+}
 /*********************************************
 * learningSelfInitiatedCourse
 **********************************************/
@@ -14264,6 +17320,9 @@ export interface learningSelfInitiatedCourseProps {
 export interface learningSelfInitiatedCourseMethods {
 
 }
+export interface learningSelfInitiatedCourseOData {
+
+}
 /*********************************************
 * casesRoot
 **********************************************/
@@ -14272,8 +17331,11 @@ export interface casesRootProps {
 
 }
 export interface casesRootMethods {
-	ediscoveryCases(): IBaseCollection<ediscoveryCase>;
+	ediscoveryCases(): IBaseCollection<ediscoveryCase, ediscoveryCaseOData>;
 	ediscoveryCases(id: string | number): IBaseQuery<ediscoveryCase> & ediscoveryCaseMethods;
+}
+export interface casesRootOData {
+	ediscoveryCases: IBaseResults<ediscoveryCase>;
 }
 /*********************************************
 * incident
@@ -14300,8 +17362,11 @@ export interface incidentProps {
 	tenantId: string;
 }
 export interface incidentMethods {
-	alerts(): IBaseCollection<alert>;
+	alerts(): IBaseCollection<alert, alertOData>;
 	alerts(id: string | number): IBaseQuery<alert> & alertMethods;
+}
+export interface incidentOData {
+	alerts: IBaseResults<alert>;
 }
 /*********************************************
 * labelsRoot
@@ -14311,18 +17376,26 @@ export interface labelsRootProps {
 
 }
 export interface labelsRootMethods {
-	authorities(): IBaseCollection<authorityTemplate>;
+	authorities(): IBaseCollection<authorityTemplate, authorityTemplateOData>;
 	authorities(id: string | number): IBaseQuery<authorityTemplate> & authorityTemplateMethods;
-	categories(): IBaseCollection<categoryTemplate>;
+	categories(): IBaseCollection<categoryTemplate, categoryTemplateOData>;
 	categories(id: string | number): IBaseQuery<categoryTemplate> & categoryTemplateMethods;
-	citations(): IBaseCollection<citationTemplate>;
+	citations(): IBaseCollection<citationTemplate, citationTemplateOData>;
 	citations(id: string | number): IBaseQuery<citationTemplate> & citationTemplateMethods;
-	departments(): IBaseCollection<departmentTemplate>;
+	departments(): IBaseCollection<departmentTemplate, departmentTemplateOData>;
 	departments(id: string | number): IBaseQuery<departmentTemplate> & departmentTemplateMethods;
-	filePlanReferences(): IBaseCollection<filePlanReferenceTemplate>;
+	filePlanReferences(): IBaseCollection<filePlanReferenceTemplate, filePlanReferenceTemplateOData>;
 	filePlanReferences(id: string | number): IBaseQuery<filePlanReferenceTemplate> & filePlanReferenceTemplateMethods;
-	retentionLabels(): IBaseCollection<retentionLabel>;
+	retentionLabels(): IBaseCollection<retentionLabel, retentionLabelOData>;
 	retentionLabels(id: string | number): IBaseQuery<retentionLabel> & retentionLabelMethods;
+}
+export interface labelsRootOData {
+	authorities: IBaseResults<authorityTemplate>;
+	categories: IBaseResults<categoryTemplate>;
+	citations: IBaseResults<citationTemplate>;
+	departments: IBaseResults<departmentTemplate>;
+	filePlanReferences: IBaseResults<filePlanReferenceTemplate>;
+	retentionLabels: IBaseResults<retentionLabel>;
 }
 /*********************************************
 * triggersRoot
@@ -14332,8 +17405,11 @@ export interface triggersRootProps {
 
 }
 export interface triggersRootMethods {
-	retentionEvents(): IBaseCollection<retentionEvent>;
+	retentionEvents(): IBaseCollection<retentionEvent, retentionEventOData>;
 	retentionEvents(id: string | number): IBaseQuery<retentionEvent> & retentionEventMethods;
+}
+export interface triggersRootOData {
+	retentionEvents: IBaseResults<retentionEvent>;
 }
 /*********************************************
 * triggerTypesRoot
@@ -14343,8 +17419,11 @@ export interface triggerTypesRootProps {
 
 }
 export interface triggerTypesRootMethods {
-	retentionEventTypes(): IBaseCollection<retentionEventType>;
+	retentionEventTypes(): IBaseCollection<retentionEventType, retentionEventTypeOData>;
 	retentionEventTypes(id: string | number): IBaseQuery<retentionEventType> & retentionEventTypeMethods;
+}
+export interface triggerTypesRootOData {
+	retentionEventTypes: IBaseResults<retentionEventType>;
 }
 /*********************************************
 * threatIntelligence
@@ -14354,40 +17433,59 @@ export interface threatIntelligenceProps {
 
 }
 export interface threatIntelligenceMethods {
-	articleIndicators(): IBaseCollection<articleIndicator>;
+	articleIndicators(): IBaseCollection<articleIndicator, articleIndicatorOData>;
 	articleIndicators(id: string | number): IBaseQuery<articleIndicator> & articleIndicatorMethods;
-	articles(): IBaseCollection<article>;
+	articles(): IBaseCollection<article, articleOData>;
 	articles(id: string | number): IBaseQuery<article> & articleMethods;
-	hostComponents(): IBaseCollection<hostComponent>;
+	hostComponents(): IBaseCollection<hostComponent, hostComponentOData>;
 	hostComponents(id: string | number): IBaseQuery<hostComponent> & hostComponentMethods;
-	hostCookies(): IBaseCollection<hostCookie>;
+	hostCookies(): IBaseCollection<hostCookie, hostCookieOData>;
 	hostCookies(id: string | number): IBaseQuery<hostCookie> & hostCookieMethods;
-	hostPairs(): IBaseCollection<hostPair>;
+	hostPairs(): IBaseCollection<hostPair, hostPairOData>;
 	hostPairs(id: string | number): IBaseQuery<hostPair> & hostPairMethods;
-	hostPorts(): IBaseCollection<hostPort>;
+	hostPorts(): IBaseCollection<hostPort, hostPortOData>;
 	hostPorts(id: string | number): IBaseQuery<hostPort> & hostPortMethods;
-	hosts(): IBaseCollection<host>;
+	hosts(): IBaseCollection<host, hostOData>;
 	hosts(id: string | number): IBaseQuery<host> & hostMethods;
-	hostSslCertificates(): IBaseCollection<hostSslCertificate>;
+	hostSslCertificates(): IBaseCollection<hostSslCertificate, hostSslCertificateOData>;
 	hostSslCertificates(id: string | number): IBaseQuery<hostSslCertificate> & hostSslCertificateMethods;
-	hostTrackers(): IBaseCollection<hostTracker>;
+	hostTrackers(): IBaseCollection<hostTracker, hostTrackerOData>;
 	hostTrackers(id: string | number): IBaseQuery<hostTracker> & hostTrackerMethods;
-	intelligenceProfileIndicators(): IBaseCollection<intelligenceProfileIndicator>;
+	intelligenceProfileIndicators(): IBaseCollection<intelligenceProfileIndicator, intelligenceProfileIndicatorOData>;
 	intelligenceProfileIndicators(id: string | number): IBaseQuery<intelligenceProfileIndicator> & intelligenceProfileIndicatorMethods;
-	intelProfiles(): IBaseCollection<intelligenceProfile>;
+	intelProfiles(): IBaseCollection<intelligenceProfile, intelligenceProfileOData>;
 	intelProfiles(id: string | number): IBaseQuery<intelligenceProfile> & intelligenceProfileMethods;
-	passiveDnsRecords(): IBaseCollection<passiveDnsRecord>;
+	passiveDnsRecords(): IBaseCollection<passiveDnsRecord, passiveDnsRecordOData>;
 	passiveDnsRecords(id: string | number): IBaseQuery<passiveDnsRecord> & passiveDnsRecordMethods;
-	sslCertificates(): IBaseCollection<sslCertificate>;
+	sslCertificates(): IBaseCollection<sslCertificate, sslCertificateOData>;
 	sslCertificates(id: string | number): IBaseQuery<sslCertificate> & sslCertificateMethods;
-	subdomains(): IBaseCollection<subdomain>;
+	subdomains(): IBaseCollection<subdomain, subdomainOData>;
 	subdomains(id: string | number): IBaseQuery<subdomain> & subdomainMethods;
-	vulnerabilities(): IBaseCollection<vulnerability>;
+	vulnerabilities(): IBaseCollection<vulnerability, vulnerabilityOData>;
 	vulnerabilities(id: string | number): IBaseQuery<vulnerability> & vulnerabilityMethods;
-	whoisHistoryRecords(): IBaseCollection<whoisHistoryRecord>;
+	whoisHistoryRecords(): IBaseCollection<whoisHistoryRecord, whoisHistoryRecordOData>;
 	whoisHistoryRecords(id: string | number): IBaseQuery<whoisHistoryRecord> & whoisHistoryRecordMethods;
-	whoisRecords(): IBaseCollection<whoisRecord>;
+	whoisRecords(): IBaseCollection<whoisRecord, whoisRecordOData>;
 	whoisRecords(id: string | number): IBaseQuery<whoisRecord> & whoisRecordMethods;
+}
+export interface threatIntelligenceOData {
+	articleIndicators: IBaseResults<articleIndicator>;
+	articles: IBaseResults<article>;
+	hostComponents: IBaseResults<hostComponent>;
+	hostCookies: IBaseResults<hostCookie>;
+	hostPairs: IBaseResults<hostPair>;
+	hostPorts: IBaseResults<hostPort>;
+	hosts: IBaseResults<host>;
+	hostSslCertificates: IBaseResults<hostSslCertificate>;
+	hostTrackers: IBaseResults<hostTracker>;
+	intelligenceProfileIndicators: IBaseResults<intelligenceProfileIndicator>;
+	intelProfiles: IBaseResults<intelligenceProfile>;
+	passiveDnsRecords: IBaseResults<passiveDnsRecord>;
+	sslCertificates: IBaseResults<sslCertificate>;
+	subdomains: IBaseResults<subdomain>;
+	vulnerabilities: IBaseResults<vulnerability>;
+	whoisHistoryRecords: IBaseResults<whoisHistoryRecord>;
+	whoisRecords: IBaseResults<whoisRecord>;
 }
 /*********************************************
 * _case
@@ -14402,6 +17500,9 @@ export interface _caseProps {
 	status: EnumTypes.caseStatus;
 }
 export interface _caseMethods {
+
+}
+export interface _caseOData {
 
 }
 /*********************************************
@@ -14420,6 +17521,9 @@ export interface caseOperationProps {
 export interface caseOperationMethods {
 
 }
+export interface caseOperationOData {
+
+}
 /*********************************************
 * ediscoveryCase
 **********************************************/
@@ -14430,19 +17534,27 @@ export interface ediscoveryCaseProps {
 	externalId: string;
 }
 export interface ediscoveryCaseMethods {
-	custodians(): IBaseCollection<ediscoveryCustodian>;
+	custodians(): IBaseCollection<ediscoveryCustodian, ediscoveryCustodianOData>;
 	custodians(id: string | number): IBaseQuery<ediscoveryCustodian> & ediscoveryCustodianMethods;
-	noncustodialDataSources(): IBaseCollection<ediscoveryNoncustodialDataSource>;
+	noncustodialDataSources(): IBaseCollection<ediscoveryNoncustodialDataSource, ediscoveryNoncustodialDataSourceOData>;
 	noncustodialDataSources(id: string | number): IBaseQuery<ediscoveryNoncustodialDataSource> & ediscoveryNoncustodialDataSourceMethods;
-	operations(): IBaseCollection<caseOperation>;
+	operations(): IBaseCollection<caseOperation, caseOperationOData>;
 	operations(id: string | number): IBaseQuery<caseOperation> & caseOperationMethods;
-	reviewSets(): IBaseCollection<ediscoveryReviewSet>;
+	reviewSets(): IBaseCollection<ediscoveryReviewSet, ediscoveryReviewSetOData>;
 	reviewSets(id: string | number): IBaseQuery<ediscoveryReviewSet> & ediscoveryReviewSetMethods;
-	searches(): IBaseCollection<ediscoverySearch>;
+	searches(): IBaseCollection<ediscoverySearch, ediscoverySearchOData>;
 	searches(id: string | number): IBaseQuery<ediscoverySearch> & ediscoverySearchMethods;
 	settings(): IBaseQuery<ediscoveryCaseSettings> & ediscoveryCaseSettingsMethods;
-	tags(): IBaseCollection<ediscoveryReviewTag>;
+	tags(): IBaseCollection<ediscoveryReviewTag, ediscoveryReviewTagOData>;
 	tags(id: string | number): IBaseQuery<ediscoveryReviewTag> & ediscoveryReviewTagMethods;
+}
+export interface ediscoveryCaseOData {
+	custodians: IBaseResults<ediscoveryCustodian>;
+	noncustodialDataSources: IBaseResults<ediscoveryNoncustodialDataSource>;
+	operations: IBaseResults<caseOperation>;
+	reviewSets: IBaseResults<ediscoveryReviewSet>;
+	searches: IBaseResults<ediscoverySearch>;
+	tags: IBaseResults<ediscoveryReviewTag>;
 }
 /*********************************************
 * dataSet
@@ -14457,6 +17569,9 @@ export interface dataSetProps {
 export interface dataSetMethods {
 
 }
+export interface dataSetOData {
+
+}
 /*********************************************
 * dataSource
 **********************************************/
@@ -14468,6 +17583,9 @@ export interface dataSourceProps {
 	holdStatus: EnumTypes.dataSourceHoldStatus;
 }
 export interface dataSourceMethods {
+
+}
+export interface dataSourceOData {
 
 }
 /*********************************************
@@ -14485,6 +17603,9 @@ export interface dataSourceContainerProps {
 export interface dataSourceContainerMethods {
 
 }
+export interface dataSourceContainerOData {
+
+}
 /*********************************************
 * ediscoveryAddToReviewSetOperation
 **********************************************/
@@ -14496,6 +17617,9 @@ export interface ediscoveryAddToReviewSetOperationMethods {
 	reviewSet(): IBaseQuery<ediscoveryReviewSet> & ediscoveryReviewSetMethods;
 	search(): IBaseQuery<ediscoverySearch> & ediscoverySearchMethods;
 }
+export interface ediscoveryAddToReviewSetOperationOData {
+
+}
 /*********************************************
 * ediscoveryReviewSet
 **********************************************/
@@ -14504,8 +17628,11 @@ export interface ediscoveryReviewSetProps {
 
 }
 export interface ediscoveryReviewSetMethods {
-	queries(): IBaseCollection<ediscoveryReviewSetQuery>;
+	queries(): IBaseCollection<ediscoveryReviewSetQuery, ediscoveryReviewSetQueryOData>;
 	queries(id: string | number): IBaseQuery<ediscoveryReviewSetQuery> & ediscoveryReviewSetQueryMethods;
+}
+export interface ediscoveryReviewSetOData {
+	queries: IBaseResults<ediscoveryReviewSetQuery>;
 }
 /*********************************************
 * search
@@ -14523,6 +17650,9 @@ export interface searchProps {
 export interface searchMethods {
 
 }
+export interface searchOData {
+
+}
 /*********************************************
 * ediscoverySearch
 **********************************************/
@@ -14531,14 +17661,19 @@ export interface ediscoverySearchProps {
 	dataSourceScopes: EnumTypes.dataSourceScopes;
 }
 export interface ediscoverySearchMethods {
-	additionalSources(): IBaseCollection<dataSource>;
+	additionalSources(): IBaseCollection<dataSource, dataSourceOData>;
 	additionalSources(id: string | number): IBaseQuery<dataSource> & dataSourceMethods;
 	addToReviewSetOperation(): IBaseQuery<ediscoveryAddToReviewSetOperation> & ediscoveryAddToReviewSetOperationMethods;
-	custodianSources(): IBaseCollection<dataSource>;
+	custodianSources(): IBaseCollection<dataSource, dataSourceOData>;
 	custodianSources(id: string | number): IBaseQuery<dataSource> & dataSourceMethods;
 	lastEstimateStatisticsOperation(): IBaseQuery<ediscoveryEstimateOperation> & ediscoveryEstimateOperationMethods;
-	noncustodialSources(): IBaseCollection<ediscoveryNoncustodialDataSource>;
+	noncustodialSources(): IBaseCollection<ediscoveryNoncustodialDataSource, ediscoveryNoncustodialDataSourceOData>;
 	noncustodialSources(id: string | number): IBaseQuery<ediscoveryNoncustodialDataSource> & ediscoveryNoncustodialDataSourceMethods;
+}
+export interface ediscoverySearchOData {
+	additionalSources: IBaseResults<dataSource>;
+	custodianSources: IBaseResults<dataSource>;
+	noncustodialSources: IBaseResults<ediscoveryNoncustodialDataSource>;
 }
 /*********************************************
 * ediscoveryCustodian
@@ -14550,12 +17685,17 @@ export interface ediscoveryCustodianProps {
 }
 export interface ediscoveryCustodianMethods {
 	lastIndexOperation(): IBaseQuery<ediscoveryIndexOperation> & ediscoveryIndexOperationMethods;
-	siteSources(): IBaseCollection<siteSource>;
+	siteSources(): IBaseCollection<siteSource, siteSourceOData>;
 	siteSources(id: string | number): IBaseQuery<siteSource> & siteSourceMethods;
-	unifiedGroupSources(): IBaseCollection<unifiedGroupSource>;
+	unifiedGroupSources(): IBaseCollection<unifiedGroupSource, unifiedGroupSourceOData>;
 	unifiedGroupSources(id: string | number): IBaseQuery<unifiedGroupSource> & unifiedGroupSourceMethods;
-	userSources(): IBaseCollection<userSource>;
+	userSources(): IBaseCollection<userSource, userSourceOData>;
 	userSources(id: string | number): IBaseQuery<userSource> & userSourceMethods;
+}
+export interface ediscoveryCustodianOData {
+	siteSources: IBaseResults<siteSource>;
+	unifiedGroupSources: IBaseResults<unifiedGroupSource>;
+	userSources: IBaseResults<userSource>;
 }
 /*********************************************
 * ediscoveryNoncustodialDataSource
@@ -14568,6 +17708,9 @@ export interface ediscoveryNoncustodialDataSourceMethods {
 	dataSource(): IBaseQuery<dataSource> & dataSourceMethods;
 	lastIndexOperation(): IBaseQuery<ediscoveryIndexOperation> & ediscoveryIndexOperationMethods;
 }
+export interface ediscoveryNoncustodialDataSourceOData {
+
+}
 /*********************************************
 * ediscoveryCaseSettings
 **********************************************/
@@ -14578,6 +17721,9 @@ export interface ediscoveryCaseSettingsProps {
 	topicModeling: ComplexTypes.topicModelingSettings;
 }
 export interface ediscoveryCaseSettingsMethods {
+
+}
+export interface ediscoveryCaseSettingsOData {
 
 }
 /*********************************************
@@ -14593,6 +17739,9 @@ export interface tagProps {
 export interface tagMethods {
 
 }
+export interface tagOData {
+
+}
 /*********************************************
 * ediscoveryReviewTag
 **********************************************/
@@ -14601,9 +17750,12 @@ export interface ediscoveryReviewTagProps {
 	childSelectability: EnumTypes.childSelectability;
 }
 export interface ediscoveryReviewTagMethods {
-	childTags(): IBaseCollection<ediscoveryReviewTag>;
+	childTags(): IBaseCollection<ediscoveryReviewTag, ediscoveryReviewTagOData>;
 	childTags(id: string | number): IBaseQuery<ediscoveryReviewTag> & ediscoveryReviewTagMethods;
 	parent(): IBaseQuery<ediscoveryReviewTag> & ediscoveryReviewTagMethods;
+}
+export interface ediscoveryReviewTagOData {
+	childTags: IBaseResults<ediscoveryReviewTag>;
 }
 /*********************************************
 * ediscoveryIndexOperation
@@ -14613,6 +17765,9 @@ export interface ediscoveryIndexOperationProps {
 
 }
 export interface ediscoveryIndexOperationMethods {
+
+}
+export interface ediscoveryIndexOperationOData {
 
 }
 /*********************************************
@@ -14625,6 +17780,9 @@ export interface siteSourceProps {
 export interface siteSourceMethods {
 	site(): IBaseQuery<site> & siteMethods;
 }
+export interface siteSourceOData {
+
+}
 /*********************************************
 * unifiedGroupSource
 **********************************************/
@@ -14634,6 +17792,9 @@ export interface unifiedGroupSourceProps {
 }
 export interface unifiedGroupSourceMethods {
 	group(): IBaseQuery<group> & groupMethods;
+}
+export interface unifiedGroupSourceOData {
+
 }
 /*********************************************
 * userSource
@@ -14645,6 +17806,9 @@ export interface userSourceProps {
 	siteWebUrl: string;
 }
 export interface userSourceMethods {
+
+}
+export interface userSourceOData {
 
 }
 /*********************************************
@@ -14662,6 +17826,9 @@ export interface ediscoveryEstimateOperationProps {
 export interface ediscoveryEstimateOperationMethods {
 	search(): IBaseQuery<ediscoverySearch> & ediscoverySearchMethods;
 }
+export interface ediscoveryEstimateOperationOData {
+
+}
 /*********************************************
 * ediscoveryExportOperation
 **********************************************/
@@ -14677,6 +17844,9 @@ export interface ediscoveryExportOperationMethods {
 	reviewSet(): IBaseQuery<ediscoveryReviewSet> & ediscoveryReviewSetMethods;
 	reviewSetQuery(): IBaseQuery<ediscoveryReviewSetQuery> & ediscoveryReviewSetQueryMethods;
 }
+export interface ediscoveryExportOperationOData {
+
+}
 /*********************************************
 * ediscoveryReviewSetQuery
 **********************************************/
@@ -14685,6 +17855,9 @@ export interface ediscoveryReviewSetQueryProps {
 
 }
 export interface ediscoveryReviewSetQueryMethods {
+
+}
+export interface ediscoveryReviewSetQueryOData {
 
 }
 /*********************************************
@@ -14697,6 +17870,9 @@ export interface ediscoveryHoldOperationProps {
 export interface ediscoveryHoldOperationMethods {
 
 }
+export interface ediscoveryHoldOperationOData {
+
+}
 /*********************************************
 * ediscoveryPurgeDataOperation
 **********************************************/
@@ -14705,6 +17881,9 @@ export interface ediscoveryPurgeDataOperationProps {
 
 }
 export interface ediscoveryPurgeDataOperationMethods {
+
+}
+export interface ediscoveryPurgeDataOperationOData {
 
 }
 /*********************************************
@@ -14724,6 +17903,9 @@ export interface ediscoverySearchExportOperationProps {
 export interface ediscoverySearchExportOperationMethods {
 	search(): IBaseQuery<ediscoverySearch> & ediscoverySearchMethods;
 }
+export interface ediscoverySearchExportOperationOData {
+
+}
 /*********************************************
 * ediscoveryTagOperation
 **********************************************/
@@ -14732,6 +17914,9 @@ export interface ediscoveryTagOperationProps {
 
 }
 export interface ediscoveryTagOperationMethods {
+
+}
+export interface ediscoveryTagOperationOData {
 
 }
 /*********************************************
@@ -14743,6 +17928,9 @@ export interface networkAdapterProps {
 	name: string;
 }
 export interface networkAdapterMethods {
+
+}
+export interface networkAdapterOData {
 
 }
 /*********************************************
@@ -14767,6 +17955,9 @@ export interface healthIssueProps {
 export interface healthIssueMethods {
 
 }
+export interface healthIssueOData {
+
+}
 /*********************************************
 * sensor
 **********************************************/
@@ -14783,8 +17974,11 @@ export interface sensorProps {
 	version: string;
 }
 export interface sensorMethods {
-	healthIssues(): IBaseCollection<healthIssue>;
+	healthIssues(): IBaseCollection<healthIssue, healthIssueOData>;
 	healthIssues(id: string | number): IBaseQuery<healthIssue> & healthIssueMethods;
+}
+export interface sensorOData {
+	healthIssues: IBaseResults<healthIssue>;
 }
 /*********************************************
 * filePlanDescriptorTemplate
@@ -14798,6 +17992,9 @@ export interface filePlanDescriptorTemplateProps {
 export interface filePlanDescriptorTemplateMethods {
 
 }
+export interface filePlanDescriptorTemplateOData {
+
+}
 /*********************************************
 * authorityTemplate
 **********************************************/
@@ -14808,6 +18005,9 @@ export interface authorityTemplateProps {
 export interface authorityTemplateMethods {
 
 }
+export interface authorityTemplateOData {
+
+}
 /*********************************************
 * categoryTemplate
 **********************************************/
@@ -14816,8 +18016,11 @@ export interface categoryTemplateProps {
 
 }
 export interface categoryTemplateMethods {
-	subcategories(): IBaseCollection<subcategoryTemplate>;
+	subcategories(): IBaseCollection<subcategoryTemplate, subcategoryTemplateOData>;
 	subcategories(id: string | number): IBaseQuery<subcategoryTemplate> & subcategoryTemplateMethods;
+}
+export interface categoryTemplateOData {
+	subcategories: IBaseResults<subcategoryTemplate>;
 }
 /*********************************************
 * subcategoryTemplate
@@ -14827,6 +18030,9 @@ export interface subcategoryTemplateProps {
 
 }
 export interface subcategoryTemplateMethods {
+
+}
+export interface subcategoryTemplateOData {
 
 }
 /*********************************************
@@ -14840,6 +18046,9 @@ export interface citationTemplateProps {
 export interface citationTemplateMethods {
 
 }
+export interface citationTemplateOData {
+
+}
 /*********************************************
 * departmentTemplate
 **********************************************/
@@ -14848,6 +18057,9 @@ export interface departmentTemplateProps {
 
 }
 export interface departmentTemplateMethods {
+
+}
+export interface departmentTemplateOData {
 
 }
 /*********************************************
@@ -14860,6 +18072,9 @@ export interface dispositionReviewStageProps {
 	stageNumber: string;
 }
 export interface dispositionReviewStageMethods {
+
+}
+export interface dispositionReviewStageOData {
 
 }
 /*********************************************
@@ -14880,6 +18095,9 @@ export interface filePlanDescriptorMethods {
 	departmentTemplate(): IBaseQuery<departmentTemplate> & departmentTemplateMethods;
 	filePlanReferenceTemplate(): IBaseQuery<filePlanReferenceTemplate> & filePlanReferenceTemplateMethods;
 }
+export interface filePlanDescriptorOData {
+
+}
 /*********************************************
 * filePlanReferenceTemplate
 **********************************************/
@@ -14888,6 +18106,9 @@ export interface filePlanReferenceTemplateProps {
 
 }
 export interface filePlanReferenceTemplateMethods {
+
+}
+export interface filePlanReferenceTemplateOData {
 
 }
 /*********************************************
@@ -14912,9 +18133,12 @@ export interface retentionLabelProps {
 }
 export interface retentionLabelMethods {
 	descriptors(): IBaseQuery<filePlanDescriptor> & filePlanDescriptorMethods;
-	dispositionReviewStages(): IBaseCollection<dispositionReviewStage>;
+	dispositionReviewStages(): IBaseCollection<dispositionReviewStage, dispositionReviewStageOData>;
 	dispositionReviewStages(id: string | number): IBaseQuery<dispositionReviewStage> & dispositionReviewStageMethods;
 	retentionEventType(): IBaseQuery<retentionEventType> & retentionEventTypeMethods;
+}
+export interface retentionLabelOData {
+	dispositionReviewStages: IBaseResults<dispositionReviewStage>;
 }
 /*********************************************
 * retentionEvent
@@ -14936,6 +18160,9 @@ export interface retentionEventProps {
 export interface retentionEventMethods {
 	retentionEventType(): IBaseQuery<retentionEventType> & retentionEventTypeMethods;
 }
+export interface retentionEventOData {
+
+}
 /*********************************************
 * retentionEventType
 **********************************************/
@@ -14951,6 +18178,9 @@ export interface retentionEventTypeProps {
 export interface retentionEventTypeMethods {
 
 }
+export interface retentionEventTypeOData {
+
+}
 /*********************************************
 * artifact
 **********************************************/
@@ -14959,6 +18189,9 @@ export interface artifactProps {
 
 }
 export interface artifactMethods {
+
+}
+export interface artifactOData {
 
 }
 /*********************************************
@@ -14975,6 +18208,9 @@ export interface hostComponentProps {
 export interface hostComponentMethods {
 	host(): IBaseQuery<host> & hostMethods;
 }
+export interface hostComponentOData {
+
+}
 /*********************************************
 * host
 **********************************************/
@@ -14984,30 +18220,43 @@ export interface hostProps {
 	lastSeenDateTime: any;
 }
 export interface hostMethods {
-	childHostPairs(): IBaseCollection<hostPair>;
+	childHostPairs(): IBaseCollection<hostPair, hostPairOData>;
 	childHostPairs(id: string | number): IBaseQuery<hostPair> & hostPairMethods;
-	components(): IBaseCollection<hostComponent>;
+	components(): IBaseCollection<hostComponent, hostComponentOData>;
 	components(id: string | number): IBaseQuery<hostComponent> & hostComponentMethods;
-	cookies(): IBaseCollection<hostCookie>;
+	cookies(): IBaseCollection<hostCookie, hostCookieOData>;
 	cookies(id: string | number): IBaseQuery<hostCookie> & hostCookieMethods;
-	hostPairs(): IBaseCollection<hostPair>;
+	hostPairs(): IBaseCollection<hostPair, hostPairOData>;
 	hostPairs(id: string | number): IBaseQuery<hostPair> & hostPairMethods;
-	parentHostPairs(): IBaseCollection<hostPair>;
+	parentHostPairs(): IBaseCollection<hostPair, hostPairOData>;
 	parentHostPairs(id: string | number): IBaseQuery<hostPair> & hostPairMethods;
-	passiveDns(): IBaseCollection<passiveDnsRecord>;
+	passiveDns(): IBaseCollection<passiveDnsRecord, passiveDnsRecordOData>;
 	passiveDns(id: string | number): IBaseQuery<passiveDnsRecord> & passiveDnsRecordMethods;
-	passiveDnsReverse(): IBaseCollection<passiveDnsRecord>;
+	passiveDnsReverse(): IBaseCollection<passiveDnsRecord, passiveDnsRecordOData>;
 	passiveDnsReverse(id: string | number): IBaseQuery<passiveDnsRecord> & passiveDnsRecordMethods;
-	ports(): IBaseCollection<hostPort>;
+	ports(): IBaseCollection<hostPort, hostPortOData>;
 	ports(id: string | number): IBaseQuery<hostPort> & hostPortMethods;
 	reputation(): IBaseQuery<hostReputation> & hostReputationMethods;
-	sslCertificates(): IBaseCollection<hostSslCertificate>;
+	sslCertificates(): IBaseCollection<hostSslCertificate, hostSslCertificateOData>;
 	sslCertificates(id: string | number): IBaseQuery<hostSslCertificate> & hostSslCertificateMethods;
-	subdomains(): IBaseCollection<subdomain>;
+	subdomains(): IBaseCollection<subdomain, subdomainOData>;
 	subdomains(id: string | number): IBaseQuery<subdomain> & subdomainMethods;
-	trackers(): IBaseCollection<hostTracker>;
+	trackers(): IBaseCollection<hostTracker, hostTrackerOData>;
 	trackers(id: string | number): IBaseQuery<hostTracker> & hostTrackerMethods;
 	whois(): IBaseQuery<whoisRecord> & whoisRecordMethods;
+}
+export interface hostOData {
+	childHostPairs: IBaseResults<hostPair>;
+	components: IBaseResults<hostComponent>;
+	cookies: IBaseResults<hostCookie>;
+	hostPairs: IBaseResults<hostPair>;
+	parentHostPairs: IBaseResults<hostPair>;
+	passiveDns: IBaseResults<passiveDnsRecord>;
+	passiveDnsReverse: IBaseResults<passiveDnsRecord>;
+	ports: IBaseResults<hostPort>;
+	sslCertificates: IBaseResults<hostSslCertificate>;
+	subdomains: IBaseResults<subdomain>;
+	trackers: IBaseResults<hostTracker>;
 }
 /*********************************************
 * article
@@ -15024,8 +18273,11 @@ export interface articleProps {
 	title: string;
 }
 export interface articleMethods {
-	indicators(): IBaseCollection<articleIndicator>;
+	indicators(): IBaseCollection<articleIndicator, articleIndicatorOData>;
 	indicators(id: string | number): IBaseQuery<articleIndicator> & articleIndicatorMethods;
+}
+export interface articleOData {
+	indicators: IBaseResults<articleIndicator>;
 }
 /*********************************************
 * indicator
@@ -15037,6 +18289,9 @@ export interface indicatorProps {
 export interface indicatorMethods {
 	artifact(): IBaseQuery<artifact> & artifactMethods;
 }
+export interface indicatorOData {
+
+}
 /*********************************************
 * articleIndicator
 **********************************************/
@@ -15045,6 +18300,9 @@ export interface articleIndicatorProps {
 
 }
 export interface articleIndicatorMethods {
+
+}
+export interface articleIndicatorOData {
 
 }
 /*********************************************
@@ -15060,6 +18318,9 @@ export interface hostPairMethods {
 	childHost(): IBaseQuery<host> & hostMethods;
 	parentHost(): IBaseQuery<host> & hostMethods;
 }
+export interface hostPairOData {
+
+}
 /*********************************************
 * hostCookie
 **********************************************/
@@ -15072,6 +18333,9 @@ export interface hostCookieProps {
 }
 export interface hostCookieMethods {
 	host(): IBaseQuery<host> & hostMethods;
+}
+export interface hostCookieOData {
+
 }
 /*********************************************
 * passiveDnsRecord
@@ -15086,6 +18350,9 @@ export interface passiveDnsRecordProps {
 export interface passiveDnsRecordMethods {
 	artifact(): IBaseQuery<artifact> & artifactMethods;
 	parentHost(): IBaseQuery<host> & hostMethods;
+}
+export interface passiveDnsRecordOData {
+
 }
 /*********************************************
 * hostPort
@@ -15106,6 +18373,9 @@ export interface hostPortMethods {
 	host(): IBaseQuery<host> & hostMethods;
 	mostRecentSslCertificate(): IBaseQuery<sslCertificate> & sslCertificateMethods;
 }
+export interface hostPortOData {
+
+}
 /*********************************************
 * hostReputation
 **********************************************/
@@ -15116,6 +18386,9 @@ export interface hostReputationProps {
 	score: number;
 }
 export interface hostReputationMethods {
+
+}
+export interface hostReputationOData {
 
 }
 /*********************************************
@@ -15131,6 +18404,9 @@ export interface hostSslCertificateMethods {
 	host(): IBaseQuery<host> & hostMethods;
 	sslCertificate(): IBaseQuery<sslCertificate> & sslCertificateMethods;
 }
+export interface hostSslCertificateOData {
+
+}
 /*********************************************
 * subdomain
 **********************************************/
@@ -15140,6 +18416,9 @@ export interface subdomainProps {
 }
 export interface subdomainMethods {
 	host(): IBaseQuery<host> & hostMethods;
+}
+export interface subdomainOData {
+
 }
 /*********************************************
 * hostTracker
@@ -15153,6 +18432,9 @@ export interface hostTrackerProps {
 }
 export interface hostTrackerMethods {
 	host(): IBaseQuery<host> & hostMethods;
+}
+export interface hostTrackerOData {
+
 }
 /*********************************************
 * whoisBaseRecord
@@ -15180,6 +18462,9 @@ export interface whoisBaseRecordProps {
 export interface whoisBaseRecordMethods {
 	host(): IBaseQuery<host> & hostMethods;
 }
+export interface whoisBaseRecordOData {
+
+}
 /*********************************************
 * whoisRecord
 **********************************************/
@@ -15188,8 +18473,11 @@ export interface whoisRecordProps {
 
 }
 export interface whoisRecordMethods {
-	history(): IBaseCollection<whoisHistoryRecord>;
+	history(): IBaseCollection<whoisHistoryRecord, whoisHistoryRecordOData>;
 	history(id: string | number): IBaseQuery<whoisHistoryRecord> & whoisHistoryRecordMethods;
+}
+export interface whoisRecordOData {
+	history: IBaseResults<whoisHistoryRecord>;
 }
 /*********************************************
 * hostname
@@ -15200,6 +18488,9 @@ export interface hostnameProps {
 	registrar: string;
 }
 export interface hostnameMethods {
+
+}
+export interface hostnameOData {
 
 }
 /*********************************************
@@ -15218,8 +18509,11 @@ export interface sslCertificateProps {
 	subject: ComplexTypes.sslCertificateEntity;
 }
 export interface sslCertificateMethods {
-	relatedHosts(): IBaseCollection<host>;
+	relatedHosts(): IBaseCollection<host, hostOData>;
 	relatedHosts(id: string | number): IBaseQuery<host> & hostMethods;
+}
+export interface sslCertificateOData {
+	relatedHosts: IBaseResults<host>;
 }
 /*********************************************
 * intelligenceProfile
@@ -15237,8 +18531,11 @@ export interface intelligenceProfileProps {
 	tradecraft: ComplexTypes.formattedContent;
 }
 export interface intelligenceProfileMethods {
-	indicators(): IBaseCollection<intelligenceProfileIndicator>;
+	indicators(): IBaseCollection<intelligenceProfileIndicator, intelligenceProfileIndicatorOData>;
 	indicators(id: string | number): IBaseQuery<intelligenceProfileIndicator> & intelligenceProfileIndicatorMethods;
+}
+export interface intelligenceProfileOData {
+	indicators: IBaseResults<intelligenceProfileIndicator>;
 }
 /*********************************************
 * intelligenceProfileIndicator
@@ -15249,6 +18546,9 @@ export interface intelligenceProfileIndicatorProps {
 	lastSeenDateTime: any;
 }
 export interface intelligenceProfileIndicatorMethods {
+
+}
+export interface intelligenceProfileIndicatorOData {
 
 }
 /*********************************************
@@ -15262,6 +18562,9 @@ export interface ipAddressProps {
 	netblock: string;
 }
 export interface ipAddressMethods {
+
+}
+export interface ipAddressOData {
 
 }
 /*********************************************
@@ -15286,10 +18589,14 @@ export interface vulnerabilityProps {
 	severity: EnumTypes.vulnerabilitySeverity;
 }
 export interface vulnerabilityMethods {
-	articles(): IBaseCollection<article>;
+	articles(): IBaseCollection<article, articleOData>;
 	articles(id: string | number): IBaseQuery<article> & articleMethods;
-	components(): IBaseCollection<vulnerabilityComponent>;
+	components(): IBaseCollection<vulnerabilityComponent, vulnerabilityComponentOData>;
 	components(id: string | number): IBaseQuery<vulnerabilityComponent> & vulnerabilityComponentMethods;
+}
+export interface vulnerabilityOData {
+	articles: IBaseResults<article>;
+	components: IBaseResults<vulnerabilityComponent>;
 }
 /*********************************************
 * whoisHistoryRecord
@@ -15299,6 +18606,9 @@ export interface whoisHistoryRecordProps {
 
 }
 export interface whoisHistoryRecordMethods {
+
+}
+export interface whoisHistoryRecordOData {
 
 }
 /*********************************************
@@ -15312,6 +18622,9 @@ export interface unclassifiedArtifactProps {
 export interface unclassifiedArtifactMethods {
 
 }
+export interface unclassifiedArtifactOData {
+
+}
 /*********************************************
 * vulnerabilityComponent
 **********************************************/
@@ -15320,6 +18633,9 @@ export interface vulnerabilityComponentProps {
 	name: string;
 }
 export interface vulnerabilityComponentMethods {
+
+}
+export interface vulnerabilityComponentOData {
 
 }
 /*********************************************
@@ -15331,10 +18647,14 @@ export interface storeProps {
 	languageTags: Array<string>[];
 }
 export interface storeMethods {
-	groups(): IBaseCollection<group>;
+	groups(): IBaseCollection<group, groupOData>;
 	groups(id: string | number): IBaseQuery<group> & groupMethods;
-	sets(): IBaseCollection<set>;
+	sets(): IBaseCollection<set, setOData>;
 	sets(id: string | number): IBaseQuery<set> & setMethods;
+}
+export interface storeOData {
+	groups: IBaseResults<group>;
+	sets: IBaseResults<set>;
 }
 /*********************************************
 * set
@@ -15347,13 +18667,18 @@ export interface setProps {
 	properties: ComplexTypes.keyValue[];
 }
 export interface setMethods {
-	children(): IBaseCollection<term>;
+	children(): IBaseCollection<term, termOData>;
 	children(id: string | number): IBaseQuery<term> & termMethods;
 	parentGroup(): IBaseQuery<group> & groupMethods;
-	relations(): IBaseCollection<relation>;
+	relations(): IBaseCollection<relation, relationOData>;
 	relations(id: string | number): IBaseQuery<relation> & relationMethods;
-	terms(): IBaseCollection<term>;
+	terms(): IBaseCollection<term, termOData>;
 	terms(id: string | number): IBaseQuery<term> & termMethods;
+}
+export interface setOData {
+	children: IBaseResults<term>;
+	relations: IBaseResults<relation>;
+	terms: IBaseResults<term>;
 }
 /*********************************************
 * relation
@@ -15367,6 +18692,9 @@ export interface relationMethods {
 	set(): IBaseQuery<set> & setMethods;
 	toTerm(): IBaseQuery<term> & termMethods;
 }
+export interface relationOData {
+
+}
 /*********************************************
 * term
 **********************************************/
@@ -15379,11 +18707,15 @@ export interface termProps {
 	properties: ComplexTypes.keyValue[];
 }
 export interface termMethods {
-	children(): IBaseCollection<term>;
+	children(): IBaseCollection<term, termOData>;
 	children(id: string | number): IBaseQuery<term> & termMethods;
-	relations(): IBaseCollection<relation>;
+	relations(): IBaseCollection<relation, relationOData>;
 	relations(id: string | number): IBaseQuery<relation> & relationMethods;
 	set(): IBaseQuery<set> & setMethods;
+}
+export interface termOData {
+	children: IBaseResults<term>;
+	relations: IBaseResults<relation>;
 }
 /*********************************************
 * callRecord
@@ -15402,10 +18734,14 @@ export interface callRecordProps {
 }
 export interface callRecordMethods {
 	organizer_v2(): IBaseQuery<organizer> & organizerMethods;
-	participants_v2(): IBaseCollection<participant>;
+	participants_v2(): IBaseCollection<participant, participantOData>;
 	participants_v2(id: string | number): IBaseQuery<participant> & participantMethods;
-	sessions(): IBaseCollection<session>;
+	sessions(): IBaseCollection<session, sessionOData>;
 	sessions(id: string | number): IBaseQuery<session> & sessionMethods;
+}
+export interface callRecordOData {
+	participants_v2: IBaseResults<participant>;
+	sessions: IBaseResults<session>;
 }
 /*********************************************
 * participantBase
@@ -15418,6 +18754,9 @@ export interface participantBaseProps {
 export interface participantBaseMethods {
 
 }
+export interface participantBaseOData {
+
+}
 /*********************************************
 * organizer
 **********************************************/
@@ -15426,6 +18765,9 @@ export interface organizerProps {
 
 }
 export interface organizerMethods {
+
+}
+export interface organizerOData {
 
 }
 /*********************************************
@@ -15442,8 +18784,11 @@ export interface sessionProps {
 	startDateTime: any;
 }
 export interface sessionMethods {
-	segments(): IBaseCollection<segment>;
+	segments(): IBaseCollection<segment, segmentOData>;
 	segments(id: string | number): IBaseQuery<segment> & segmentMethods;
+}
+export interface sessionOData {
+	segments: IBaseResults<segment>;
 }
 /*********************************************
 * segment
@@ -15460,6 +18805,9 @@ export interface segmentProps {
 export interface segmentMethods {
 
 }
+export interface segmentOData {
+
+}
 /*********************************************
 * billing
 **********************************************/
@@ -15468,12 +18816,16 @@ export interface billingProps {
 
 }
 export interface billingMethods {
-	manifests(): IBaseCollection<manifest>;
+	manifests(): IBaseCollection<manifest, manifestOData>;
 	manifests(id: string | number): IBaseQuery<manifest> & manifestMethods;
-	operations(): IBaseCollection<operation>;
+	operations(): IBaseCollection<operation, operationOData>;
 	operations(id: string | number): IBaseQuery<operation> & operationMethods;
 	reconciliation(): IBaseQuery<billingReconciliation> & billingReconciliationMethods;
 	usage(): IBaseQuery<azureUsage> & azureUsageMethods;
+}
+export interface billingOData {
+	manifests: IBaseResults<manifest>;
+	operations: IBaseResults<operation>;
 }
 /*********************************************
 * azureUsage
@@ -15486,6 +18838,9 @@ export interface azureUsageMethods {
 	billed(): IBaseQuery<billedUsage> & billedUsageMethods;
 	unbilled(): IBaseQuery<unbilledUsage> & unbilledUsageMethods;
 }
+export interface azureUsageOData {
+
+}
 /*********************************************
 * billedUsage
 **********************************************/
@@ -15494,6 +18849,9 @@ export interface billedUsageProps {
 
 }
 export interface billedUsageMethods {
+
+}
+export interface billedUsageOData {
 
 }
 /*********************************************
@@ -15506,6 +18864,9 @@ export interface unbilledUsageProps {
 export interface unbilledUsageMethods {
 
 }
+export interface unbilledUsageOData {
+
+}
 /*********************************************
 * billedReconciliation
 **********************************************/
@@ -15514,6 +18875,9 @@ export interface billedReconciliationProps {
 
 }
 export interface billedReconciliationMethods {
+
+}
+export interface billedReconciliationOData {
 
 }
 /*********************************************
@@ -15535,6 +18899,9 @@ export interface manifestProps {
 export interface manifestMethods {
 
 }
+export interface manifestOData {
+
+}
 /*********************************************
 * billingReconciliation
 **********************************************/
@@ -15544,6 +18911,9 @@ export interface billingReconciliationProps {
 }
 export interface billingReconciliationMethods {
 	billed(): IBaseQuery<billedReconciliation> & billedReconciliationMethods;
+}
+export interface billingReconciliationOData {
+
 }
 /*********************************************
 * exportSuccessOperation
@@ -15555,6 +18925,9 @@ export interface exportSuccessOperationProps {
 export interface exportSuccessOperationMethods {
 	resourceLocation(): IBaseQuery<manifest> & manifestMethods;
 }
+export interface exportSuccessOperationOData {
+
+}
 /*********************************************
 * failedOperation
 **********************************************/
@@ -15565,6 +18938,9 @@ export interface failedOperationProps {
 export interface failedOperationMethods {
 
 }
+export interface failedOperationOData {
+
+}
 /*********************************************
 * runningOperation
 **********************************************/
@@ -15573,6 +18949,9 @@ export interface runningOperationProps {
 
 }
 export interface runningOperationMethods {
+
+}
+export interface runningOperationOData {
 
 }
 /*********************************************
@@ -15589,6 +18968,9 @@ export interface searchAnswerProps {
 export interface searchAnswerMethods {
 
 }
+export interface searchAnswerOData {
+
+}
 /*********************************************
 * acronym
 **********************************************/
@@ -15598,6 +18980,9 @@ export interface acronymProps {
 	state: EnumTypes.answerState;
 }
 export interface acronymMethods {
+
+}
+export interface acronymOData {
 
 }
 /*********************************************
@@ -15620,6 +19005,9 @@ export interface bookmarkProps {
 export interface bookmarkMethods {
 
 }
+export interface bookmarkOData {
+
+}
 /*********************************************
 * qna
 **********************************************/
@@ -15638,6 +19026,9 @@ export interface qnaProps {
 export interface qnaMethods {
 
 }
+export interface qnaOData {
+
+}
 /*********************************************
 * connectionOperation
 **********************************************/
@@ -15649,6 +19040,9 @@ export interface connectionOperationProps {
 export interface connectionOperationMethods {
 
 }
+export interface connectionOperationOData {
+
+}
 /*********************************************
 * external
 **********************************************/
@@ -15657,8 +19051,11 @@ export interface externalProps {
 
 }
 export interface externalMethods {
-	connections(): IBaseCollection<externalConnection>;
+	connections(): IBaseCollection<externalConnection, externalConnectionOData>;
 	connections(id: string | number): IBaseQuery<externalConnection> & externalConnectionMethods;
+}
+export interface externalOData {
+	connections: IBaseResults<externalConnection>;
 }
 /*********************************************
 * externalConnection
@@ -15674,13 +19071,18 @@ export interface externalConnectionProps {
 	state: EnumTypes.connectionState;
 }
 export interface externalConnectionMethods {
-	groups(): IBaseCollection<externalGroup>;
+	groups(): IBaseCollection<externalGroup, externalGroupOData>;
 	groups(id: string | number): IBaseQuery<externalGroup> & externalGroupMethods;
-	items(): IBaseCollection<externalItem>;
+	items(): IBaseCollection<externalItem, externalItemOData>;
 	items(id: string | number): IBaseQuery<externalItem> & externalItemMethods;
-	operations(): IBaseCollection<connectionOperation>;
+	operations(): IBaseCollection<connectionOperation, connectionOperationOData>;
 	operations(id: string | number): IBaseQuery<connectionOperation> & connectionOperationMethods;
 	schema(): IBaseQuery<schema> & schemaMethods;
+}
+export interface externalConnectionOData {
+	groups: IBaseResults<externalGroup>;
+	items: IBaseResults<externalItem>;
+	operations: IBaseResults<connectionOperation>;
 }
 /*********************************************
 * externalActivity
@@ -15693,6 +19095,9 @@ export interface externalActivityProps {
 export interface externalActivityMethods {
 	performedBy(): IBaseQuery<ComplexTypes.identity>;
 }
+export interface externalActivityOData {
+
+}
 /*********************************************
 * identity
 **********************************************/
@@ -15703,6 +19108,9 @@ export interface identityProps {
 export interface identityMethods {
 
 }
+export interface identityOData {
+
+}
 /*********************************************
 * externalActivityResult
 **********************************************/
@@ -15711,6 +19119,9 @@ export interface externalActivityResultProps {
 	error: ComplexTypes.publicError;
 }
 export interface externalActivityResultMethods {
+
+}
+export interface externalActivityResultOData {
 
 }
 /*********************************************
@@ -15725,6 +19136,9 @@ export interface externalGroupMethods {
 	members(): IBaseCollection<ComplexTypes.identity>;
 	members(id: string | number): IBaseQuery<ComplexTypes.identity>;
 }
+export interface externalGroupOData {
+	members: IBaseResults<ComplexTypes.identity>;
+}
 /*********************************************
 * externalItem
 **********************************************/
@@ -15735,8 +19149,11 @@ export interface externalItemProps {
 	properties: ComplexTypes.properties;
 }
 export interface externalItemMethods {
-	activities(): IBaseCollection<externalActivity>;
+	activities(): IBaseCollection<externalActivity, externalActivityOData>;
 	activities(id: string | number): IBaseQuery<externalActivity> & externalActivityMethods;
+}
+export interface externalItemOData {
+	activities: IBaseResults<externalActivity>;
 }
 /*********************************************
 * schema
@@ -15747,5 +19164,8 @@ export interface schemaProps {
 	properties: ComplexTypes.property[];
 }
 export interface schemaMethods {
+
+}
+export interface schemaOData {
 
 }
