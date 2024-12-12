@@ -723,7 +723,8 @@ ${props.join('\n')}
 
         // Parse the methods
         let methods = [];
-        let odataMethods = [];
+        let odataResults = [];
+        let prevName = null;
         for (let method of entity.methods) {
             // Add the method
             let argNames = method.argNames || [];
@@ -737,12 +738,23 @@ ${props.join('\n')}
             let isComplexType = returnType.indexOf("ComplexTypes.") == 0;
             let returnTypeName = returnType.replace(/\[\]$/, '');
             let methodsType = returnType == "void" || isComplexType || isCollection ? "" : " & " + returnTypeName + "Methods";
-            methods.push(`\t${method.name}(${argStrings.join(", ")}): ${isCollection ? "IBaseCollection" : "IBaseQuery"}<${returnTypeName}${isCollection && !isComplexType ? ", " + returnTypeName + "OData" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`);
+            let methodString = `\t${method.name}(${argStrings.join(", ")}): ${isCollection ? "IBaseCollection" : "IBaseQuery"}<${returnTypeName}${isCollection && !isComplexType ? ", " + returnTypeName + "OData & " + returnTypeName + "Props" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`;
+            methods.push(methodString);
 
-            // See if this is a collection
-            if (isCollection) {
-                odataMethods.push(`\t${method.name}: ${isCollection ? "IBaseResults<" : ""}${returnTypeName}${isCollection ? ">" : ""};`);
+            // Ensure we haven't already added it
+            if (method.name != prevName) {
+                // See if it has args
+                if (argStrings.length > 0) {
+                    // Add the odata result
+                    odataResults.push(methodString);
+                } else {
+                    // Add the odata result
+                    odataResults.push(`\t${method.name}: ${isCollection ? "IBaseResults<" : ""}${returnTypeName}${isCollection ? ">" : ""};`);
+                }
             }
+
+            // Set the previous name
+            prevName = method.name;
         }
 
         // Add the endpoint
@@ -757,7 +769,7 @@ export interface ${name}Methods {
 ${methods.join('\n')}
 }
 export interface ${name}OData {
-${odataMethods.join('\n')}
+${odataResults.join('\n')}
 }`);
     }
     fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n').replace(/EntityTypes./g, ""));
