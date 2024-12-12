@@ -396,6 +396,7 @@ function processGraph(schemas) {
                 for (let entityType of value) {
                     let name = entityType.$.Name;
                     let returnType = entityType.$.BaseType;
+                    if (name == "drive") { debugger; }
 
                     // See if the return type exists
                     if (returnType) {
@@ -761,7 +762,7 @@ ${props.join('\n')}
         content.push(`/*********************************************
 * ${name}
 **********************************************/
-export interface ${name} extends ${name}Props, ${name}Methods ${entity.returnType && getGraphType(entity.returnType) ? ", " + getGraphType(entity.returnType) : ""} { }
+export interface ${name} extends ${name}Props, ${name}Methods${entity.returnType && getGraphType(entity.returnType) ? ", " + getGraphType(entity.returnType) : ""} { }
 export interface ${name}Props {
 ${props.join('\n')}
 }
