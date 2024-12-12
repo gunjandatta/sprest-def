@@ -718,8 +718,6 @@ export interface siteMethods {
 	termStores(): IBaseQuery<store[]>;
 	termStores(id: string | number): IBaseQuery<store>;
 	onenote(): IBaseQuery<onenote>;
-	permissions(): IBaseQuery<permissionCollection>;
-	permissions(id: string): IBaseQuery<permission>;
 }
 /*********************************************
 * extension
@@ -15750,78 +15748,4 @@ export interface schemaProps {
 }
 export interface schemaMethods {
 
-}
-/*********************************************
-* columnDefinitionCollection
-**********************************************/
-export interface columnDefinitionCollection extends columnDefinitionCollectionProps, columnDefinitionCollectionMethods  { }
-export interface columnDefinitionCollectionProps {
-
-}
-export interface columnDefinitionCollectionMethods {
-	add(values: any): IBaseQuery<columnDefinition>;
-}
-/*********************************************
-* contentTypeCollection
-**********************************************/
-export interface contentTypeCollection extends contentTypeCollectionProps, contentTypeCollectionMethods  { }
-export interface contentTypeCollectionProps {
-
-}
-export interface contentTypeCollectionMethods {
-	add(values: any): IBaseQuery<contentType>;
-}
-/*********************************************
-* item
-**********************************************/
-export interface item extends itemProps, itemMethods  { }
-export interface itemProps {
-
-}
-export interface itemMethods {
-	extractSensitivityLabel(values: any): IBaseQuery<void>;
-	setSensitivityLabel(values: { actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }): IBaseQuery<void>;
-	update(values: any): IBaseQuery<void>;
-}
-/*********************************************
-* listItemCollection
-**********************************************/
-export interface listItemCollection extends listItemCollectionProps, listItemCollectionMethods  { }
-export interface listItemCollectionProps {
-
-}
-export interface listItemCollectionMethods {
-	add(values: any): IBaseQuery<item>;
-}
-/*********************************************
-* listCollection
-**********************************************/
-export interface listCollection extends listCollectionProps, listCollectionMethods  { }
-export interface listCollectionProps {
-
-}
-export interface listCollectionMethods {
-	add(values: any): IBaseQuery<list>;
-	getById(id: string): IBaseQuery<list>;
-	getByTitle(title: string): IBaseQuery<list>;
-}
-/*********************************************
-* permissionCollection
-**********************************************/
-export interface permissionCollection extends permissionCollectionProps, permissionCollectionMethods  { }
-export interface permissionCollectionProps {
-
-}
-export interface permissionCollectionMethods {
-	add(values: any): IBaseQuery<permission>;
-}
-/*********************************************
-* siteCollection
-**********************************************/
-export interface siteCollection extends siteCollectionProps, siteCollectionMethods  { }
-export interface siteCollectionProps {
-
-}
-export interface siteCollectionMethods {
-	add(values: any): IBaseQuery<site>;
 }

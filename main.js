@@ -713,6 +713,7 @@ ${props.join('\n')}
 
     for (let name in entities) {
         let entity = entities[name];
+        if (name == "list") { debugger; }
 
         // Parse the properties
         let props = [];
@@ -731,9 +732,10 @@ ${props.join('\n')}
                 let argName = argNames[i];
                 argStrings.push(argName.name + ": " + argName.type);
             }
-            let methodType = getGraphType(method.returnType, true) || "void";
-            let methodsType = methodType == "void" || methodType.indexOf('.') > 0 ? "" : " & " + methodType.replace(/\[\]$/, '') + "Methods[]";
-            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + methodType + ">" + methodsType + (method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : "") + ";");
+            let returnType = getGraphType(method.returnType, true) || "void";
+            let methodsType = returnType == "void" || returnType.indexOf('.') > 0 ? "" : " & " + returnType.replace(/\[\]$/, '') + "Methods[]";
+            if (method.name == "items") { debugger; }
+            methods.push("\t" + method.name + "(" + argStrings.join(", ") + "): IBaseQuery<" + returnType + ">" + methodsType + (method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : "") + ";");
         }
 
         // Add the endpoint
@@ -747,37 +749,6 @@ ${props.join('\n')}
 export interface ${name}Methods {
 ${methods.join('\n')}
 }`);
-
-        // See if there is a collection required for this
-        if (collections[name]) {
-            let customMethods = [];
-            let customProps = customV2[name + "Collection"] || [];
-            for (let i = 0; i < customProps.length; i++) {
-                let customProp = customProps[i];
-
-                // Add the method
-                let argNames = customProp.argNames || [];
-                let argStrings = [];
-                for (let i = 0; i < argNames.length; i++) {
-                    let argName = argNames[i];
-                    argStrings.push(argName.name + ": " + argName.type);
-                }
-                customMethods.push("\t" + customProp.name + "(" + argStrings.join(", ") + "): IBaseExecution<" + getGraphType(customProp.returnType, true) + ">;");
-            }
-            content.push(`/*********************************************
-* ${name} Methods
-**********************************************/
-export interface ${name}Methods {
-${methods.join('\n')}
-}`);
-            content.push(`/*********************************************
-* ${name} Collection
-**********************************************/
-export interface ${name}Collection {
-    results: ${name}[];
-${customMethods.join("\n")}
-}`);
-        }
     }
     fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n').replace(/EntityTypes./g, ""));
 }

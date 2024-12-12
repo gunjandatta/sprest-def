@@ -9,13 +9,6 @@ module.exports = {
             argNames: [{ name: "values", type: "any" }]
         }
     ],
-    columnDefinitionCollection: [
-        {
-            name: "add",
-            returnType: "columnDefinition",
-            argNames: [{ name: "values", type: "any" }]
-        }
-    ],
     contentType: [
         {
             name: "update",
@@ -23,24 +16,14 @@ module.exports = {
             argNames: [{ name: "values", type: "any" }]
         }
     ],
-    contentTypeCollection: [
+    list: [
         {
-            name: "add",
-            returnType: "contentType",
+            name: "update",
+            returnType: "void",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
-    item: [
-        {
-            name: "extractSensitivityLabel",
-            returnType: "void",
-            argNames: [{ name: "values", type: "any" }]
-        },
-        {
-            name: "setSensitivityLabel",
-            returnType: "void",
-            argNames: [{ name: "values", type: "{ actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }" }]
-        },
+    permission: [
         {
             name: "update",
             returnType: "void",
@@ -63,68 +46,5 @@ module.exports = {
             returnType: "void",
             argNames: [{ name: "values", type: "any" }]
         }
-    ],
-    listItemCollection: [
-        {
-            name: "add",
-            returnType: "item",
-            argNames: [{ name: "values", type: "any" }]
-        }
-    ],
-    list: [
-        {
-            name: "update",
-            returnType: "void",
-            argNames: [{ name: "values", type: "any" }]
-        }
-    ],
-    listCollection: [
-        {
-            name: "add",
-            returnType: "list",
-            argNames: [{ name: "values", type: "any" }]
-        },
-        {
-            name: "getById",
-            returnType: "list",
-            argNames: [{ name: "id", type: "string" }]
-        },
-        {
-            name: "getByTitle",
-            returnType: "list",
-            argNames: [{ name: "title", type: "string" }]
-        }
-    ],
-    permission: [
-        {
-            name: "update",
-            returnType: "void",
-            argNames: [{ name: "values", type: "any" }]
-        }
-    ],
-    permissionCollection: [
-        {
-            name: "add",
-            returnType: "permission",
-            argNames: [{ name: "values", type: "any" }]
-        }
-    ],
-    site: [
-        {
-            name: "permissions",
-            returnType: "permissionCollection"
-        },
-        {
-            name: "permissions",
-            returnType: "permission",
-            argNames: [{ name: "id", type: "string" }]
-        }
-    ],
-    siteCollection: [
-        {
-            name: "add",
-            returnType: "site",
-            argNames: [{ name: "values", type: "any" }]
-        }
-    ],
+    ]
 }
