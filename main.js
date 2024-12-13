@@ -396,7 +396,6 @@ function processGraph(schemas) {
                 for (let entityType of value) {
                     let name = entityType.$.Name;
                     let returnType = entityType.$.BaseType;
-                    if (name == "drive") { debugger; }
 
                     // See if the return type exists
                     if (returnType) {
@@ -699,6 +698,10 @@ ${props.join('\n')}
         "import * as EnumTypes from \"./enumTypes.d\";"
     ];
 
+    // Create the mapper content
+    let contentMapper = [];
+    let contentMapperDef = [];
+
     // Parse the custom methods
     for (let name in customV2) {
         // See if it exists
@@ -712,7 +715,14 @@ ${props.join('\n')}
         }
     }
 
-    for (let name in entities) {
+    // Get the entity names
+    let entityNames = [];
+    for (let name in entities) { entityNames.push(name); }
+    entityNames = entityNames.sort();
+
+    // Parse the entity names
+    for (let i = 0; i < entityNames.length; i++) {
+        let name = entityNames[i];
         let entity = entities[name];
         let baseType = entity.returnType && getGraphType(entity.returnType) ? getGraphType(entity.returnType) + " & " : "";
 
@@ -723,7 +733,10 @@ ${props.join('\n')}
             props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
         }
 
+        if (name == "columnDefinition") { debugger; }
         // Parse the methods
+        let mapper = [];
+        let mapperDef = [];
         let methods = [];
         let odataResults = [];
         let prevName = null;
@@ -731,8 +744,10 @@ ${props.join('\n')}
             // Add the method
             let argNames = method.argNames || [];
             let argStrings = [];
+            let argsMapper = [];
             for (let i = 0; i < argNames.length; i++) {
                 let argName = argNames[i];
+                argsMapper.push(argName.name);
                 argStrings.push(argName.name + ": " + argName.type);
             }
             let returnType = getGraphType(method.returnType, true) || "void";
@@ -745,6 +760,13 @@ ${props.join('\n')}
 
             // Ensure we haven't already added it
             if (method.name != prevName) {
+                // Add the mapper
+                let mapperReturnType = returnTypeName.split('.');
+                mapperReturnType = mapperReturnType[mapperReturnType.length - 1];
+                argsMapperStr = argsMapper.length > 0 ? `"${argsMapper.join('", "')}"` : "";
+                mapper.push(`\t\t${method.name}: {\n${argsMapperStr ? "\t\t\argNames: [" + argsMapperStr + "],\n" : ""}${mapperReturnType != "void" ? "\t\t\treturnType: \"" + mapperReturnType + "\"\n" : ""}\t\t},`)
+                mapperDef.push(`\t\t${method.name}: IMapperMethod${argsMapperStr ? " & {\n\t\t\targNames: [" + argsMapperStr + "]\n\t\t}" : ""},`);
+
                 // See if it has args
                 if (argStrings.length > 0) {
                     // Add the odata result
@@ -773,8 +795,34 @@ ${methods.join('\n')}
 export interface ${name}OData {
 ${odataResults.join('\n')}
 }`);
+
+        // Add the mapper
+        contentMapper.push(`\t${name}: {
+${mapper.join('\n')}
+\t},`);
+
+        // Add the mapper
+        contentMapperDef.push(`\t${name}: {
+\t\tproperties?: Array<string>;
+${mapperDef.join('\n')}
+\t},`);
     }
     fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n').replace(/EntityTypes./g, ""));
+
+    // Create the mapper files
+    fs.appendFileSync('lib/mapperv2.d.ts', [
+        'import { IMapperMethod } from "./base";\n\n',
+        '/** Mapper */',
+        'export interface IMapper {',
+        contentMapperDef.join('\n'),
+        '}'
+    ].join('\n'));
+    fs.appendFileSync('lib/mapperv2.ts', [
+        'import { IMapper } from "./mapperv2.d";',
+        'export const Mapper: IMapper = {',
+        contentMapper.join('\n'),
+        '};'
+    ].join('\n'));
 }
 
 // Process the REST metadata
