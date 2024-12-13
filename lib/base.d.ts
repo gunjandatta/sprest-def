@@ -184,6 +184,9 @@ export interface IODataQuery {
     /** The order by fields. */
     OrderBy?: Array<string>;
 
+    /** The search query for graph. */
+    Search?: string;
+
     /** The fields to select. */
     Select?: Array<string>;
 
