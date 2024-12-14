@@ -798,12 +798,14 @@ ${odataResults.join('\n')}
 
         // Add the mapper
         contentMapper.push(`\t${name}: {
+\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },
 ${mapper.join('\n')}
 \t},`);
 
         // Add the mapper
         contentMapperDef.push(`\t${name}: {
 \t\tproperties?: Array<string>;
+\t\tquery: IMapperMethod & { argNames: ["oData"] }
 ${mapperDef.join('\n')}
 \t},`);
     }
@@ -819,6 +821,7 @@ ${mapperDef.join('\n')}
     ].join('\n'));
     fs.appendFileSync('lib/mapperv2.ts', [
         'import { IMapper } from "./mapperv2.d";',
+        'import { RequestType } from "../utils";',
         'export const Mapper: IMapper = {',
         contentMapper.join('\n'),
         '};'
