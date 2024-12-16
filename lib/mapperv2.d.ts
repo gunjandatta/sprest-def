@@ -23,12 +23,20 @@ export interface IMapper {
 		incompatibleGroups: IMapperMethod,
 		resourceRoleScopes: IMapperMethod,
 	},
+	accessPackages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessPackageAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		accessPackage: IMapperMethod,
 		assignmentPolicy: IMapperMethod,
 		target: IMapperMethod,
+	},
+	accessPackageAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessPackageAssignmentPolicy: {
 		properties?: Array<string>;
@@ -38,12 +46,20 @@ export interface IMapper {
 		customExtensionStageSettings: IMapperMethod,
 		questions: IMapperMethod,
 	},
+	accessPackageAssignmentPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessPackageAssignmentRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		accessPackage: IMapperMethod,
 		assignment: IMapperMethod,
 		requestor: IMapperMethod,
+	},
+	accessPackageAssignmentRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessPackageAssignmentRequestWorkflowExtension: {
 		properties?: Array<string>;
@@ -64,6 +80,10 @@ export interface IMapper {
 		resources: IMapperMethod,
 		resourceScopes: IMapperMethod,
 	},
+	accessPackageCatalogs: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessPackageMultipleChoiceQuestion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -74,6 +94,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	accessPackageQuestions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessPackageResource: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -81,10 +105,18 @@ export interface IMapper {
 		roles: IMapperMethod,
 		scopes: IMapperMethod,
 	},
+	accessPackageResources: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessPackageResourceEnvironment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resources: IMapperMethod,
+	},
+	accessPackageResourceEnvironments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessPackageResourceRequest: {
 		properties?: Array<string>;
@@ -92,10 +124,18 @@ export interface IMapper {
 		catalog: IMapperMethod,
 		resource: IMapperMethod,
 	},
+	accessPackageResourceRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessPackageResourceRole: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resource: IMapperMethod,
+	},
+	accessPackageResourceRoles: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessPackageResourceRoleScope: {
 		properties?: Array<string>;
@@ -103,10 +143,18 @@ export interface IMapper {
 		role: IMapperMethod,
 		scope: IMapperMethod,
 	},
+	accessPackageResourceRoleScopes: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessPackageResourceScope: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resource: IMapperMethod,
+	},
+	accessPackageResourceScopes: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessPackageSubject: {
 		properties?: Array<string>;
@@ -123,10 +171,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		instances: IMapperMethod,
 	},
+	accessReviewHistoryDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessReviewHistoryInstance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	accessReviewHistoryInstances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessReviewInstance: {
 		properties?: Array<string>;
@@ -135,20 +191,36 @@ export interface IMapper {
 		decisions: IMapperMethod,
 		stages: IMapperMethod,
 	},
+	accessReviewInstances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessReviewInstanceDecisionItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		insights: IMapperMethod,
+	},
+	accessReviewInstanceDecisionItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessReviewReviewer: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	accessReviewReviewers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	accessReviewScheduleDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		instances: IMapperMethod,
+	},
+	accessReviewScheduleDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	accessReviewSet: {
 		properties?: Array<string>;
@@ -161,6 +233,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		decisions: IMapperMethod,
 	},
+	accessReviewStages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	acronym: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -171,10 +247,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	activityBasedTimeoutPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	activityHistoryItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		activity: IMapperMethod,
+	},
+	activityHistoryItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	addLargeGalleryViewOperation: {
 		properties?: Array<string>;
@@ -213,6 +297,10 @@ export interface IMapper {
 		scopedRoleMembers: IMapperMethod,
 		extensions: IMapperMethod,
 	},
+	administrativeUnits: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	agreement: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -220,10 +308,18 @@ export interface IMapper {
 		file: IMapperMethod,
 		files: IMapperMethod,
 	},
+	agreements: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	agreementAcceptance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	agreementAcceptances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	agreementFile: {
 		properties?: Array<string>;
@@ -235,6 +331,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		versions: IMapperMethod,
 	},
+	agreementFileLocalizations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	agreementFileProperties: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -245,15 +345,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	agreementFileVersions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	alert: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	alerts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	allowedValue: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	allowedValues: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	androidCompliancePolicy: {
 		properties?: Array<string>;
@@ -280,6 +392,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		apps: IMapperMethod,
 		deploymentSummary: IMapperMethod,
+	},
+	androidManagedAppProtections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	androidManagedAppRegistration: {
 		properties?: Array<string>;
@@ -326,20 +442,36 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		userConsentRequests: IMapperMethod,
 	},
+	appConsentRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	appLogCollectionRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	appLogCollectionRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	appManagementPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		appliesTo: IMapperMethod,
 	},
+	appManagementPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	appRoleAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	appRoleAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	appScope: {
 		properties?: Array<string>;
@@ -384,10 +516,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		stages: IMapperMethod,
 	},
+	approvals: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	approvalStage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	approvalStages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	article: {
 		properties?: Array<string>;
@@ -409,25 +549,45 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	associatedTeamInfos: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	attachment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	attachments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	attachmentBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	attachmentBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	attachmentSession: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	attachmentSessions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	attackSimulationOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	attackSimulationOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	attackSimulationRoot: {
 		properties?: Array<string>;
@@ -446,6 +606,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	attendanceRecords: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	attributeMappingFunctionSchema: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -456,15 +620,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	attributeSets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	audioRoutingGroup: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	audioRoutingGroups: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	auditEvent: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	auditEvents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	auditLogRoot: {
 		properties?: Array<string>;
@@ -492,6 +668,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	authenticationCombinationConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	authenticationConditionApplication: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -502,15 +682,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	authenticationContextClassReferences: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	authenticationEventListener: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	authenticationEventListeners: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	authenticationEventsFlow: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	authenticationEventsFlows: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	authenticationFlowsPolicy: {
 		properties?: Array<string>;
@@ -522,20 +714,36 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	authenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	authenticationMethodConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	authenticationMethodConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	authenticationMethodModeDetail: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	authenticationMethodModeDetails: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	authenticationMethodTarget: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	authenticationMethodTargets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	authenticationMethodsPolicy: {
 		properties?: Array<string>;
@@ -552,6 +760,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		combinationConfigurations: IMapperMethod,
 	},
+	authenticationStrengthPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	authenticationStrengthRoot: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -562,6 +774,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	authoredNotes: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	authorityTemplate: {
 		properties?: Array<string>;
@@ -592,6 +808,10 @@ export interface IMapper {
 		userAttributeAssignments: IMapperMethod,
 		userFlowIdentityProviders: IMapperMethod,
 	},
+	b2xIdentityUserFlows: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	backupRestoreRoot: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -619,6 +839,10 @@ export interface IMapper {
 		createdByUser: IMapperMethod,
 		lastModifiedByUser: IMapperMethod,
 	},
+	baseItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	baseItemVersion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -628,6 +852,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	baseSitePages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	billedReconciliation: {
 		properties?: Array<string>;
@@ -662,10 +890,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	bitlockerRecoveryKeys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	bookingAppointment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	bookingAppointments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	bookingBusiness: {
 		properties?: Array<string>;
@@ -677,15 +913,27 @@ export interface IMapper {
 		services: IMapperMethod,
 		staffMembers: IMapperMethod,
 	},
+	bookingBusinesss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	bookingCurrency: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	bookingCurrencys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	bookingCustomQuestion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	bookingCustomQuestions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	bookingCustomer: {
 		properties?: Array<string>;
@@ -697,10 +945,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	bookingCustomerBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	bookingService: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	bookingServices: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	bookingStaffMember: {
 		properties?: Array<string>;
@@ -712,6 +968,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	bookingStaffMemberBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	bookmark: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -722,16 +982,28 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	browserSharedCookies: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	browserSite: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	browserSites: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	browserSiteList: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		sharedCookies: IMapperMethod,
 		sites: IMapperMethod,
+	},
+	browserSiteLists: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	builtInIdentityProvider: {
 		properties?: Array<string>;
@@ -752,15 +1024,27 @@ export interface IMapper {
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
 	},
+	calendars: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	calendarGroup: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		calendars: IMapperMethod,
 	},
+	calendarGroups: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	calendarPermission: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	calendarPermissions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	calendarSharingMessage: {
 		properties?: Array<string>;
@@ -775,6 +1059,10 @@ export interface IMapper {
 		operations: IMapperMethod,
 		participants: IMapperMethod,
 	},
+	calls: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	callRecord: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -787,10 +1075,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	callRecordings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	callTranscript: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	callTranscripts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	cancelMediaProcessingOperation: {
 		properties?: Array<string>;
@@ -823,6 +1119,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	certificateBasedAuthConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	changeTrackedEntity: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -837,6 +1137,10 @@ export interface IMapper {
 		sharedWithTeams: IMapperMethod,
 		tabs: IMapperMethod,
 	},
+	channels: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	chat: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -848,16 +1152,28 @@ export interface IMapper {
 		pinnedMessages: IMapperMethod,
 		tabs: IMapperMethod,
 	},
+	chats: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	chatMessage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		hostedContents: IMapperMethod,
 		replies: IMapperMethod,
 	},
+	chatMessages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	chatMessageHostedContent: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	chatMessageHostedContents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	chatMessageInfo: {
 		properties?: Array<string>;
@@ -869,6 +1185,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	checklistItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	citationTemplate: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -879,10 +1199,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	claimsMappingPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	cloudClipboardItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	cloudClipboardItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	cloudClipboardRoot: {
 		properties?: Array<string>;
@@ -902,45 +1230,81 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	cloudPCs: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	cloudPcAuditEvent: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	cloudPcAuditEvents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	cloudPcDeviceImage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	cloudPcDeviceImages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	cloudPcGalleryImage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	cloudPcGalleryImages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	cloudPcOnPremisesConnection: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	cloudPcOnPremisesConnections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	cloudPcProvisioningPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
+	},
+	cloudPcProvisioningPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	cloudPcProvisioningPolicyAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignedUsers: IMapperMethod,
 	},
+	cloudPcProvisioningPolicyAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	cloudPcUserSetting: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
 	},
+	cloudPcUserSettings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	cloudPcUserSettingAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	cloudPcUserSettingAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	columnDefinition: {
 		properties?: Array<string>;
@@ -950,15 +1314,27 @@ export interface IMapper {
 			argNames: ["values"]
 		},
 	},
+	columnDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	columnLink: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	columnLinks: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	commsOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	commsOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	community: {
 		properties?: Array<string>;
@@ -966,10 +1342,18 @@ export interface IMapper {
 		group: IMapperMethod,
 		owners: IMapperMethod,
 	},
+	communitys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	companySubscription: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	companySubscriptions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	compliance: {
 		properties?: Array<string>;
@@ -981,10 +1365,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	complianceManagementPartners: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	conditionalAccessPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	conditionalAccessPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	conditionalAccessRoot: {
 		properties?: Array<string>;
@@ -1000,11 +1392,19 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	conditionalAccessTemplates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	connectedOrganization: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		externalSponsors: IMapperMethod,
 		internalSponsors: IMapperMethod,
+	},
+	connectedOrganizations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	connectionOperation: {
 		properties?: Array<string>;
@@ -1019,6 +1419,10 @@ export interface IMapper {
 		photo: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
 	},
+	contacts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	contactFolder: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1027,10 +1431,18 @@ export interface IMapper {
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
 	},
+	contactFolders: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	contentSharingSession: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	contentSharingSessions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	contentType: {
 		properties?: Array<string>;
@@ -1044,6 +1456,10 @@ export interface IMapper {
 			argNames: ["values"]
 		},
 	},
+	contentTypes: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	contract: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1054,15 +1470,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		threads: IMapperMethod,
 	},
+	conversations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	conversationMember: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	conversationMembers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	conversationThread: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		posts: IMapperMethod,
+	},
+	conversationThreads: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	countryNamedLocation: {
 		properties?: Array<string>;
@@ -1096,20 +1524,36 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	customAuthenticationExtensions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	customCalloutExtension: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	customCalloutExtensions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	customExtensionStageSetting: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		customExtension: IMapperMethod,
 	},
+	customExtensionStageSettings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	customSecurityAttributeDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		allowedValues: IMapperMethod,
+	},
+	customSecurityAttributeDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	customTaskExtension: {
 		properties?: Array<string>;
@@ -1143,15 +1587,27 @@ export interface IMapper {
 		apps: IMapperMethod,
 		deploymentSummary: IMapperMethod,
 	},
+	defaultManagedAppProtections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	delegatedAdminAccessAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	delegatedAdminAccessAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	delegatedAdminCustomer: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		serviceManagementDetails: IMapperMethod,
+	},
+	delegatedAdminCustomers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	delegatedAdminRelationship: {
 		properties?: Array<string>;
@@ -1160,30 +1616,54 @@ export interface IMapper {
 		operations: IMapperMethod,
 		requests: IMapperMethod,
 	},
+	delegatedAdminRelationships: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	delegatedAdminRelationshipOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	delegatedAdminRelationshipOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	delegatedAdminRelationshipRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	delegatedAdminRelationshipRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	delegatedAdminServiceManagementDetail: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	delegatedAdminServiceManagementDetails: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	delegatedPermissionClassification: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	delegatedPermissionClassifications: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deletedChat: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deletedChats: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deletedItemContainer: {
 		properties?: Array<string>;
@@ -1194,6 +1674,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		channels: IMapperMethod,
+	},
+	deletedTeams: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deltaParticipants: {
 		properties?: Array<string>;
@@ -1210,6 +1694,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		managedDevices: IMapperMethod,
 	},
+	detectedApps: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	device: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1223,6 +1711,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceAndAppManagementRoleAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceAndAppManagementRoleDefinition: {
 		properties?: Array<string>;
@@ -1252,10 +1744,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceCategorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceComplianceActionItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceComplianceActionItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceComplianceDeviceOverview: {
 		properties?: Array<string>;
@@ -1266,6 +1766,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceComplianceDeviceStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceCompliancePolicy: {
 		properties?: Array<string>;
@@ -1278,10 +1782,18 @@ export interface IMapper {
 		userStatuses: IMapperMethod,
 		userStatusOverview: IMapperMethod,
 	},
+	deviceCompliancePolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceCompliancePolicyAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceCompliancePolicyAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceCompliancePolicyDeviceStateSummary: {
 		properties?: Array<string>;
@@ -1293,20 +1805,36 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		deviceComplianceSettingStates: IMapperMethod,
 	},
+	deviceCompliancePolicySettingStateSummarys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceCompliancePolicyState: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceCompliancePolicyStates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceComplianceScheduledActionForRule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		scheduledActionConfigurations: IMapperMethod,
 	},
+	deviceComplianceScheduledActionForRules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceComplianceSettingState: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceComplianceSettingStates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceComplianceUserOverview: {
 		properties?: Array<string>;
@@ -1318,6 +1846,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceComplianceUserStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1328,10 +1860,18 @@ export interface IMapper {
 		userStatuses: IMapperMethod,
 		userStatusOverview: IMapperMethod,
 	},
+	deviceConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceConfigurationAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceConfigurationAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceConfigurationDeviceOverview: {
 		properties?: Array<string>;
@@ -1348,10 +1888,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceConfigurationDeviceStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceConfigurationState: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceConfigurationStates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceConfigurationUserOverview: {
 		properties?: Array<string>;
@@ -1363,10 +1911,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceConfigurationUserStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceEnrollmentConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
+	},
+	deviceEnrollmentConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceEnrollmentLimitConfiguration: {
 		properties?: Array<string>;
@@ -1388,15 +1944,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceInstallStates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceLocalCredentialInfo: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceLocalCredentialInfos: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceLogCollectionResponse: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceLogCollectionResponses: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceManagement: {
 		properties?: Array<string>;
@@ -1470,15 +2038,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceManagementExchangeConnectors: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceManagementExportJob: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	deviceManagementExportJobs: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	deviceManagementPartner: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceManagementPartners: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceManagementReports: {
 		properties?: Array<string>;
@@ -1489,6 +2069,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	deviceManagementTroubleshootingEvents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	deviceRegistrationPolicy: {
 		properties?: Array<string>;
@@ -1512,15 +2096,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	directoryAudits: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	directoryDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	directoryDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	directoryObject: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	directoryObjects: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	directoryObjectPartnerReference: {
 		properties?: Array<string>;
@@ -1548,6 +2144,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	documentSetVersions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	domain: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1571,6 +2171,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	domainDnsRecords: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	domainDnsSrvRecord: {
 		properties?: Array<string>;
@@ -1597,6 +2201,10 @@ export interface IMapper {
 		root: IMapperMethod,
 		special: IMapperMethod,
 	},
+	drives: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	driveItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1610,25 +2218,45 @@ export interface IMapper {
 		thumbnails: IMapperMethod,
 		versions: IMapperMethod,
 	},
+	driveItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	driveItemVersion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	driveItemVersions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	driveProtectionRule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	driveProtectionRules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	driveProtectionUnit: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	driveProtectionUnits: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	driveRestoreArtifact: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	driveRestoreArtifacts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	eBookInstallSummary: {
 		properties?: Array<string>;
@@ -1751,6 +2379,10 @@ export interface IMapper {
 		rubric: IMapperMethod,
 		submissions: IMapperMethod,
 	},
+	educationAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	educationAssignmentDefaults: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1761,6 +2393,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	educationAssignmentResources: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	educationAssignmentSettings: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1770,6 +2406,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	educationCategorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	educationClass: {
 		properties?: Array<string>;
@@ -1783,6 +2423,10 @@ export interface IMapper {
 		members: IMapperMethod,
 		schools: IMapperMethod,
 		teachers: IMapperMethod,
+	},
+	educationClasss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	educationFeedbackOutcome: {
 		properties?: Array<string>;
@@ -1799,15 +2443,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	educationGradingCategorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	educationModule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resources: IMapperMethod,
 	},
+	educationModules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	educationModuleResource: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	educationModuleResources: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	educationOrganization: {
 		properties?: Array<string>;
@@ -1818,6 +2474,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	educationOutcomes: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	educationPointsOutcome: {
 		properties?: Array<string>;
@@ -1837,6 +2497,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	educationRubrics: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	educationRubricOutcome: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1849,6 +2513,10 @@ export interface IMapper {
 		classes: IMapperMethod,
 		users: IMapperMethod,
 	},
+	educationSchools: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	educationSubmission: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1856,10 +2524,18 @@ export interface IMapper {
 		resources: IMapperMethod,
 		submittedResources: IMapperMethod,
 	},
+	educationSubmissions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	educationSubmissionResource: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	educationSubmissionResources: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	educationUser: {
 		properties?: Array<string>;
@@ -1871,10 +2547,18 @@ export interface IMapper {
 		taughtClasses: IMapperMethod,
 		user: IMapperMethod,
 	},
+	educationUsers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	emailAuthenticationMethod: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	emailAuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	emailAuthenticationMethodConfiguration: {
 		properties?: Array<string>;
@@ -1904,25 +2588,45 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		details: IMapperMethod,
 	},
+	endUserNotifications: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	endUserNotificationDetail: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	endUserNotificationDetails: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	endpoint: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	endpoints: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	engagementAsyncOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	engagementAsyncOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	enrollmentConfigurationAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	enrollmentConfigurationAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	enrollmentTroubleshootingEvent: {
 		properties?: Array<string>;
@@ -1970,6 +2674,10 @@ export interface IMapper {
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
 	},
+	events: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	eventMessage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -1991,11 +2699,19 @@ export interface IMapper {
 		mailboxInclusionRules: IMapperMethod,
 		mailboxProtectionUnits: IMapperMethod,
 	},
+	exchangeProtectionPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	exchangeRestoreSession: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		granularMailboxRestoreArtifacts: IMapperMethod,
 		mailboxRestoreArtifacts: IMapperMethod,
+	},
+	exchangeRestoreSessions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	exportSuccessOperation: {
 		properties?: Array<string>;
@@ -2007,10 +2723,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	extensions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	extensionProperty: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	extensionPropertys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	external: {
 		properties?: Array<string>;
@@ -2040,6 +2764,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	externalDomainNames: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	externalGroup: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2065,15 +2793,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		appliesTo: IMapperMethod,
 	},
+	featureRolloutPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	federatedIdentityCredential: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	federatedIdentityCredentials: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	fido2AuthenticationMethod: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	fido2AuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	fido2AuthenticationMethodConfiguration: {
 		properties?: Array<string>;
@@ -2130,6 +2870,10 @@ export interface IMapper {
 		drive: IMapperMethod,
 		permissions: IMapperMethod,
 	},
+	fileStorageContainers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	filterOperatorSchema: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2140,25 +2884,45 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	governanceInsights: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	granularMailboxRestoreArtifact: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	granularMailboxRestoreArtifacts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	group: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		sets: IMapperMethod,
 	},
+	groups: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	groupLifecyclePolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	groupLifecyclePolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	groupSetting: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	groupSettings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	groupSettingTemplate: {
 		properties?: Array<string>;
@@ -2175,15 +2939,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	homeRealmDiscoveryPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	horizontalSection: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		columns: IMapperMethod,
 	},
+	horizontalSections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	horizontalSectionColumn: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		webparts: IMapperMethod,
+	},
+	horizontalSectionColumns: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	host: {
 		properties?: Array<string>;
@@ -2255,6 +3031,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	identityApiConnectors: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	identityBuiltInUserFlowAttribute: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2294,10 +3074,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	identityProviders: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	identityProviderBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	identityProviderBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	identitySecurityDefaultsEnforcementPolicy: {
 		properties?: Array<string>;
@@ -2314,15 +3102,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	identityUserFlowAttributes: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	identityUserFlowAttributeAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		userAttribute: IMapperMethod,
 	},
+	identityUserFlowAttributeAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	importedWindowsAutopilotDeviceIdentity: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	importedWindowsAutopilotDeviceIdentitys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	importedWindowsAutopilotDeviceIdentityUpload: {
 		properties?: Array<string>;
@@ -2348,6 +3148,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	inferenceClassificationOverrides: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	informationProtection: {
 		properties?: Array<string>;
@@ -2379,6 +3183,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	internalDomainFederations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	internetExplorerMode: {
 		properties?: Array<string>;
@@ -2437,6 +3245,10 @@ export interface IMapper {
 		apps: IMapperMethod,
 		deploymentSummary: IMapperMethod,
 	},
+	iosManagedAppProtections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	iosManagedAppRegistration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2461,6 +3273,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	iosUpdateDeviceStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	iosVppApp: {
 		properties?: Array<string>;
@@ -2497,10 +3313,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		driveItem: IMapperMethod,
 	},
+	itemActivitys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	itemActivityStat: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		activities: IMapperMethod,
+	},
+	itemActivityStats: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	itemAnalytics: {
 		properties?: Array<string>;
@@ -2539,10 +3363,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		details: IMapperMethod,
 	},
+	landingPages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	landingPageDetail: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	landingPageDetails: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	learningAssignment: {
 		properties?: Array<string>;
@@ -2554,16 +3386,28 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	learningContents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	learningCourseActivity: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	learningCourseActivitys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	learningProvider: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		learningContents: IMapperMethod,
 		learningCourseActivities: IMapperMethod,
+	},
+	learningProviders: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	learningSelfInitiatedCourse: {
 		properties?: Array<string>;
@@ -2574,6 +3418,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	licenseDetailss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	lifecycleManagementSettings: {
 		properties?: Array<string>;
@@ -2596,6 +3444,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	linkedResources: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	list: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2608,6 +3460,10 @@ export interface IMapper {
 		update: IMapperMethod & {
 			argNames: ["values"]
 		},
+	},
+	lists: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	listItem: {
 		properties?: Array<string>;
@@ -2627,25 +3483,45 @@ export interface IMapper {
 			argNames: ["values"]
 		},
 	},
+	listItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	listItemVersion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		fields: IMapperMethod,
+	},
+	listItemVersions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	localizedNotificationMessage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	localizedNotificationMessages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	loginPage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	loginPages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	longRunningOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	longRunningOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	m365AppsInstallationOptions: {
 		properties?: Array<string>;
@@ -2711,6 +3587,10 @@ export interface IMapper {
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
 	},
+	mailFolders: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	mailSearchFolder: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2721,20 +3601,36 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	mailboxProtectionRules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	mailboxProtectionUnit: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	mailboxProtectionUnits: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	mailboxRestoreArtifact: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	mailboxRestoreArtifacts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	malwareStateForWindowsDevice: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	malwareStateForWindowsDevices: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	managedAndroidLobApp: {
 		properties?: Array<string>;
@@ -2761,10 +3657,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	managedAppOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	managedAppPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	managedAppPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	managedAppPolicyDeploymentSummary: {
 		properties?: Array<string>;
@@ -2783,10 +3687,18 @@ export interface IMapper {
 		intendedPolicies: IMapperMethod,
 		operations: IMapperMethod,
 	},
+	managedAppRegistrations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	managedAppStatus: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	managedAppStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	managedAppStatusRaw: {
 		properties?: Array<string>;
@@ -2803,6 +3715,10 @@ export interface IMapper {
 		users: IMapperMethod,
 		windowsProtectionState: IMapperMethod,
 	},
+	managedDevices: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	managedDeviceMobileAppConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2812,15 +3728,27 @@ export interface IMapper {
 		userStatuses: IMapperMethod,
 		userStatusSummary: IMapperMethod,
 	},
+	managedDeviceMobileAppConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	managedDeviceMobileAppConfigurationAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	managedDeviceMobileAppConfigurationAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	managedDeviceMobileAppConfigurationDeviceStatus: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	managedDeviceMobileAppConfigurationDeviceStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	managedDeviceMobileAppConfigurationDeviceSummary: {
 		properties?: Array<string>;
@@ -2831,6 +3759,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	managedDeviceMobileAppConfigurationUserStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	managedDeviceMobileAppConfigurationUserSummary: {
 		properties?: Array<string>;
@@ -2850,10 +3782,18 @@ export interface IMapper {
 		installSummary: IMapperMethod,
 		userStateSummary: IMapperMethod,
 	},
+	managedEBooks: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	managedEBookAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	managedEBookAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	managedIOSLobApp: {
 		properties?: Array<string>;
@@ -2870,6 +3810,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	managedMobileApps: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	managedMobileLobApp: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2885,10 +3829,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	mdmWindowsInformationProtectionPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	meetingAttendanceReport: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		attendanceRecords: IMapperMethod,
+	},
+	meetingAttendanceReports: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	membershipOutlierInsight: {
 		properties?: Array<string>;
@@ -2905,10 +3857,18 @@ export interface IMapper {
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
 	},
+	messages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	messageRule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	messageRules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	microsoftAccountUserConversationMember: {
 		properties?: Array<string>;
@@ -2920,6 +3880,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		device: IMapperMethod,
 	},
+	microsoftAuthenticatorAuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	microsoftAuthenticatorAuthenticationMethodConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -2929,6 +3893,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	microsoftAuthenticatorAuthenticationMethodTargets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	microsoftStoreForBusinessApp: {
 		properties?: Array<string>;
@@ -2941,15 +3909,27 @@ export interface IMapper {
 		assignments: IMapperMethod,
 		categories: IMapperMethod,
 	},
+	mobileApps: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	mobileAppAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	mobileAppAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	mobileAppCategory: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	mobileAppCategorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	mobileAppContent: {
 		properties?: Array<string>;
@@ -2957,20 +3937,36 @@ export interface IMapper {
 		containedApps: IMapperMethod,
 		files: IMapperMethod,
 	},
+	mobileAppContents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	mobileAppContentFile: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	mobileAppContentFiles: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	mobileAppTroubleshootingEvent: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		appLogCollectionRequests: IMapperMethod,
 	},
+	mobileAppTroubleshootingEvents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	mobileContainedApp: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	mobileContainedApps: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	mobileLobApp: {
 		properties?: Array<string>;
@@ -2981,6 +3977,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	mobileThreatDefenseConnectors: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	multiTenantOrganization: {
 		properties?: Array<string>;
@@ -3003,6 +4003,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	multiTenantOrganizationMembers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	multiTenantOrganizationPartnerConfigurationTemplate: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3013,6 +4017,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	multiValueLegacyExtendedPropertys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	muteParticipantOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3022,6 +4030,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	namedLocations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	networkAdapter: {
 		properties?: Array<string>;
@@ -3034,20 +4046,36 @@ export interface IMapper {
 		sectionGroups: IMapperMethod,
 		sections: IMapperMethod,
 	},
+	notebooks: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	notificationMessageTemplate: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		localizedNotificationMessages: IMapperMethod,
+	},
+	notificationMessageTemplates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	oAuth2PermissionGrant: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	oAuth2PermissionGrants: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	offerShiftRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	offerShiftRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	officeGraphInsights: {
 		properties?: Array<string>;
@@ -3081,6 +4109,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	onPremisesDirectorySynchronizations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	onTokenIssuanceStartCustomExtension: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3102,10 +4134,18 @@ export interface IMapper {
 		driveInclusionRules: IMapperMethod,
 		driveProtectionUnits: IMapperMethod,
 	},
+	oneDriveForBusinessProtectionPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	oneDriveForBusinessRestoreSession: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		driveRestoreArtifacts: IMapperMethod,
+	},
+	oneDriveForBusinessRestoreSessions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	onenote: {
 		properties?: Array<string>;
@@ -3137,16 +4177,28 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	onenoteOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	onenotePage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		parentNotebook: IMapperMethod,
 		parentSection: IMapperMethod,
 	},
+	onenotePages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	onenoteResource: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	onenoteResources: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	onenoteSection: {
 		properties?: Array<string>;
@@ -3155,11 +4207,19 @@ export interface IMapper {
 		parentNotebook: IMapperMethod,
 		parentSectionGroup: IMapperMethod,
 	},
+	onenoteSections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	onlineMeeting: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		recordings: IMapperMethod,
 		transcripts: IMapperMethod,
+	},
+	onlineMeetings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	onlineMeetingBase: {
 		properties?: Array<string>;
@@ -3171,10 +4231,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	openShifts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	openShiftChangeRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	openShiftChangeRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	openTypeExtension: {
 		properties?: Array<string>;
@@ -3211,6 +4279,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	organizationalBrandingLocalizations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	organizationalBrandingProperties: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3226,6 +4298,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	outlookCategorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	outlookItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3240,6 +4316,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	participants: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	participantBase: {
 		properties?: Array<string>;
@@ -3272,10 +4352,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	passwordAuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	payload: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	payloads: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	peopleAdminSettings: {
 		properties?: Array<string>;
@@ -3291,10 +4379,18 @@ export interface IMapper {
 			argNames: ["values"]
 		},
 	},
+	permissions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	permissionGrantConditionSet: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	permissionGrantConditionSets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	permissionGrantPolicy: {
 		properties?: Array<string>;
@@ -3302,20 +4398,36 @@ export interface IMapper {
 		excludes: IMapperMethod,
 		includes: IMapperMethod,
 	},
+	permissionGrantPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	person: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	persons: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	phoneAuthenticationMethod: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	phoneAuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	pinnedChatMessageInfo: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		message: IMapperMethod,
+	},
+	pinnedChatMessageInfos: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	place: {
 		properties?: Array<string>;
@@ -3339,6 +4451,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		tasks: IMapperMethod,
 	},
+	plannerBuckets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	plannerBucketTaskBoardTaskFormat: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3355,6 +4471,10 @@ export interface IMapper {
 		buckets: IMapperMethod,
 		details: IMapperMethod,
 		tasks: IMapperMethod,
+	},
+	plannerPlans: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	plannerPlanDetails: {
 		properties?: Array<string>;
@@ -3373,6 +4493,10 @@ export interface IMapper {
 		bucketTaskBoardFormat: IMapperMethod,
 		details: IMapperMethod,
 		progressTaskBoardFormat: IMapperMethod,
+	},
+	plannerTasks: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	plannerTaskDetails: {
 		properties?: Array<string>;
@@ -3434,10 +4558,18 @@ export interface IMapper {
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
 	},
+	posts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	presence: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	presences: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	print: {
 		properties?: Array<string>;
@@ -3454,10 +4586,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	printConnectors: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	printDocument: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	printDocuments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	printJob: {
 		properties?: Array<string>;
@@ -3465,20 +4605,36 @@ export interface IMapper {
 		documents: IMapperMethod,
 		tasks: IMapperMethod,
 	},
+	printJobs: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	printOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	printOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	printService: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		endpoints: IMapperMethod,
 	},
+	printServices: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	printServiceEndpoint: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	printServiceEndpoints: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	printTask: {
 		properties?: Array<string>;
@@ -3486,15 +4642,27 @@ export interface IMapper {
 		definition: IMapperMethod,
 		trigger: IMapperMethod,
 	},
+	printTasks: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	printTaskDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		tasks: IMapperMethod,
 	},
+	printTaskDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	printTaskTrigger: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		definition: IMapperMethod,
+	},
+	printTaskTriggers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	printUsage: {
 		properties?: Array<string>;
@@ -3506,10 +4674,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	printUsageByPrinters: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	printUsageByUser: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	printUsageByUsers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	printer: {
 		properties?: Array<string>;
@@ -3517,6 +4693,10 @@ export interface IMapper {
 		connectors: IMapperMethod,
 		shares: IMapperMethod,
 		taskTriggers: IMapperMethod,
+	},
+	printers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	printerBase: {
 		properties?: Array<string>;
@@ -3534,6 +4714,10 @@ export interface IMapper {
 		allowedGroups: IMapperMethod,
 		allowedUsers: IMapperMethod,
 		printer: IMapperMethod,
+	},
+	printerShares: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	privacy: {
 		properties?: Array<string>;
@@ -3558,12 +4742,20 @@ export interface IMapper {
 		group: IMapperMethod,
 		principal: IMapperMethod,
 	},
+	privilegedAccessGroupAssignmentSchedules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	privilegedAccessGroupAssignmentScheduleInstance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		activatedUsing: IMapperMethod,
 		group: IMapperMethod,
 		principal: IMapperMethod,
+	},
+	privilegedAccessGroupAssignmentScheduleInstances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	privilegedAccessGroupAssignmentScheduleRequest: {
 		properties?: Array<string>;
@@ -3573,11 +4765,19 @@ export interface IMapper {
 		principal: IMapperMethod,
 		targetSchedule: IMapperMethod,
 	},
+	privilegedAccessGroupAssignmentScheduleRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	privilegedAccessGroupEligibilitySchedule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		group: IMapperMethod,
 		principal: IMapperMethod,
+	},
+	privilegedAccessGroupEligibilitySchedules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	privilegedAccessGroupEligibilityScheduleInstance: {
 		properties?: Array<string>;
@@ -3585,12 +4785,20 @@ export interface IMapper {
 		group: IMapperMethod,
 		principal: IMapperMethod,
 	},
+	privilegedAccessGroupEligibilityScheduleInstances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	privilegedAccessGroupEligibilityScheduleRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		group: IMapperMethod,
 		principal: IMapperMethod,
 		targetSchedule: IMapperMethod,
+	},
+	privilegedAccessGroupEligibilityScheduleRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	privilegedAccessRoot: {
 		properties?: Array<string>;
@@ -3617,10 +4825,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	profileCardPropertys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	profilePhoto: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	profilePhotos: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	pronounsSettings: {
 		properties?: Array<string>;
@@ -3632,6 +4848,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	protectionPolicyBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	protectionRuleBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3642,10 +4862,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	protectionUnitBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	provisioningObjectSummary: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	provisioningObjectSummarys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	qna: {
 		properties?: Array<string>;
@@ -3692,6 +4920,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	remoteAssistancePartners: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	remoteDesktopSecurityConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3723,10 +4955,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	resourceOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	resourceSpecificPermissionGrant: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	resourceSpecificPermissionGrants: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	restoreArtifactBase: {
 		properties?: Array<string>;
@@ -3738,10 +4978,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		protectionUnit: IMapperMethod,
 	},
+	restorePoints: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	restoreSessionBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	restoreSessionBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	retentionEvent: {
 		properties?: Array<string>;
@@ -3765,40 +5013,72 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	richLongRunningOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	riskDetection: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	riskDetections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	riskyServicePrincipal: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		history: IMapperMethod,
 	},
+	riskyServicePrincipals: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	riskyServicePrincipalHistoryItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	riskyServicePrincipalHistoryItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	riskyUser: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		history: IMapperMethod,
 	},
+	riskyUsers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	riskyUserHistoryItem: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	riskyUserHistoryItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	roleAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		roleDefinition: IMapperMethod,
 	},
+	roleAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	roleDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		roleAssignments: IMapperMethod,
+	},
+	roleDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	roleManagement: {
 		properties?: Array<string>;
@@ -3810,6 +5090,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	rooms: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	roomList: {
 		properties?: Array<string>;
@@ -3860,6 +5144,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	schedulingGroups: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	schema: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3874,6 +5162,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	scopedRoleMemberships: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	search: {
 		properties?: Array<string>;
@@ -3900,15 +5192,27 @@ export interface IMapper {
 		sectionGroups: IMapperMethod,
 		sections: IMapperMethod,
 	},
+	sectionGroups: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	secureScore: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	secureScores: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	secureScoreControlProfile: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	secureScoreControlProfiles: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	security: {
 		properties?: Array<string>;
@@ -3959,6 +5263,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	serviceAnnouncementAttachments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	serviceAnnouncementBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -3969,15 +5277,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	serviceApps: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	serviceHealth: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		issues: IMapperMethod,
 	},
+	serviceHealths: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	serviceHealthIssue: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	serviceHealthIssues: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	servicePrincipal: {
 		properties?: Array<string>;
@@ -4006,15 +5326,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	servicePrincipalRiskDetections: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	serviceStorageQuotaBreakdown: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	serviceStorageQuotaBreakdowns: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	serviceUpdateMessage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		attachments: IMapperMethod,
+	},
+	serviceUpdateMessages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	session: {
 		properties?: Array<string>;
@@ -4034,16 +5366,28 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	settingStateDeviceSummarys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	sharePointProtectionPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		siteInclusionRules: IMapperMethod,
 		siteProtectionUnits: IMapperMethod,
 	},
+	sharePointProtectionPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	sharePointRestoreSession: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		siteRestoreArtifacts: IMapperMethod,
+	},
+	sharePointRestoreSessions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	sharedDriveItem: {
 		properties?: Array<string>;
@@ -4062,6 +5406,10 @@ export interface IMapper {
 		lastSharedMethod: IMapperMethod,
 		resource: IMapperMethod,
 	},
+	sharedInsights: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	sharedPCConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4071,6 +5419,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		allowedMembers: IMapperMethod,
+	},
+	sharedWithChannelTeamInfos: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	sharepoint: {
 		properties?: Array<string>;
@@ -4087,6 +5439,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	shifts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	shiftPreferences: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4097,6 +5453,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	signIns: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	simulation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4104,20 +5464,36 @@ export interface IMapper {
 		loginPage: IMapperMethod,
 		payload: IMapperMethod,
 	},
+	simulations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	simulationAutomation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		runs: IMapperMethod,
+	},
+	simulationAutomations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	simulationAutomationRun: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	simulationAutomationRuns: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	singleValueLegacyExtendedProperty: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	singleValueLegacyExtendedPropertys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	site: {
 		properties?: Array<string>;
@@ -4149,15 +5525,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	siteProtectionRules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	siteProtectionUnit: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	siteProtectionUnits: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	siteRestoreArtifact: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	siteRestoreArtifacts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	siteSource: {
 		properties?: Array<string>;
@@ -4191,6 +5579,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	smsAuthenticationMethodTargets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	socialIdentityProvider: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4200,6 +5592,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	softwareOathAuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	softwareOathAuthenticationMethodConfiguration: {
 		properties?: Array<string>;
@@ -4284,6 +5680,10 @@ export interface IMapper {
 		notes: IMapperMethod,
 		team: IMapperMethod,
 	},
+	subjectRightsRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	subscribeToToneOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4299,10 +5699,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	subscriptions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	swapShiftsChangeRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	swapShiftsChangeRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	synchronization: {
 		properties?: Array<string>;
@@ -4316,6 +5724,10 @@ export interface IMapper {
 		bulkUpload: IMapperMethod,
 		schema: IMapperMethod,
 	},
+	synchronizationJobs: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	synchronizationSchema: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4325,6 +5737,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		schema: IMapperMethod,
+	},
+	synchronizationTemplates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	tag: {
 		properties?: Array<string>;
@@ -4336,6 +5752,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	targetDeviceGroups: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	targetedManagedAppConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4343,10 +5763,18 @@ export interface IMapper {
 		assignments: IMapperMethod,
 		deploymentSummary: IMapperMethod,
 	},
+	targetedManagedAppConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	targetedManagedAppPolicyAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	targetedManagedAppPolicyAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	targetedManagedAppProtection: {
 		properties?: Array<string>;
@@ -4398,6 +5826,10 @@ export interface IMapper {
 		template: IMapperMethod,
 		schedule: IMapperMethod,
 	},
+	teams: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	teamInfo: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -4408,16 +5840,28 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		appDefinitions: IMapperMethod,
 	},
+	teamsApps: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	teamsAppDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		bot: IMapperMethod,
+	},
+	teamsAppDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	teamsAppInstallation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		teamsApp: IMapperMethod,
 		teamsAppDefinition: IMapperMethod,
+	},
+	teamsAppInstallations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	teamsAppSettings: {
 		properties?: Array<string>;
@@ -4429,10 +5873,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	teamsAsyncOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	teamsTab: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		teamsApp: IMapperMethod,
+	},
+	teamsTabs: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	teamsTemplate: {
 		properties?: Array<string>;
@@ -4462,20 +5914,36 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		members: IMapperMethod,
 	},
+	teamworkTags: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	teamworkTagMember: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	teamworkTagMembers: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	telecomExpenseManagementPartner: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	telecomExpenseManagementPartners: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	temporaryAccessPassAuthenticationMethod: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	temporaryAccessPassAuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	temporaryAccessPassAuthenticationMethodConfiguration: {
 		properties?: Array<string>;
@@ -4507,15 +5975,27 @@ export interface IMapper {
 		acceptanceStatuses: IMapperMethod,
 		assignments: IMapperMethod,
 	},
+	termsAndConditionss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	termsAndConditionsAcceptanceStatus: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		termsAndConditions: IMapperMethod,
 	},
+	termsAndConditionsAcceptanceStatuss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	termsAndConditionsAssignment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	termsAndConditionsAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	termsOfUseContainer: {
 		properties?: Array<string>;
@@ -4533,10 +6013,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		results: IMapperMethod,
 	},
+	threatAssessmentRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	threatAssessmentResult: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	threatAssessmentResults: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	threatIntelligence: {
 		properties?: Array<string>;
@@ -4564,20 +6052,36 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	thumbnailSets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	timeOff: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	timeOffs: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	timeOffReason: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	timeOffReasons: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	timeOffRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	timeOffRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	todo: {
 		properties?: Array<string>;
@@ -4593,36 +6097,64 @@ export interface IMapper {
 		extensions: IMapperMethod,
 		linkedResources: IMapperMethod,
 	},
+	todoTasks: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	todoTaskList: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		extensions: IMapperMethod,
 		tasks: IMapperMethod,
 	},
+	todoTaskLists: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	tokenIssuancePolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	tokenIssuancePolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	tokenLifetimePolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	tokenLifetimePolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	training: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		languageDetails: IMapperMethod,
+	},
+	trainings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	trainingLanguageDetail: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	trainingLanguageDetails: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	trending: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resource: IMapperMethod,
+	},
+	trendings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	triggerTypesRoot: {
 		properties?: Array<string>;
@@ -4654,10 +6186,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	unifiedRbacResourceActions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	unifiedRbacResourceNamespace: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resourceActions: IMapperMethod,
+	},
+	unifiedRbacResourceNamespaces: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	unifiedRoleAssignment: {
 		properties?: Array<string>;
@@ -4667,15 +6207,27 @@ export interface IMapper {
 		principal: IMapperMethod,
 		roleDefinition: IMapperMethod,
 	},
+	unifiedRoleAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	unifiedRoleAssignmentSchedule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		activatedUsing: IMapperMethod,
 	},
+	unifiedRoleAssignmentSchedules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	unifiedRoleAssignmentScheduleInstance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		activatedUsing: IMapperMethod,
+	},
+	unifiedRoleAssignmentScheduleInstances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	unifiedRoleAssignmentScheduleRequest: {
 		properties?: Array<string>;
@@ -4687,20 +6239,36 @@ export interface IMapper {
 		roleDefinition: IMapperMethod,
 		targetSchedule: IMapperMethod,
 	},
+	unifiedRoleAssignmentScheduleRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	unifiedRoleDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		inheritsPermissionsFrom: IMapperMethod,
+	},
+	unifiedRoleDefinitions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	unifiedRoleEligibilitySchedule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	unifiedRoleEligibilitySchedules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	unifiedRoleEligibilityScheduleInstance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	unifiedRoleEligibilityScheduleInstances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	unifiedRoleEligibilityScheduleRequest: {
 		properties?: Array<string>;
@@ -4711,11 +6279,19 @@ export interface IMapper {
 		roleDefinition: IMapperMethod,
 		targetSchedule: IMapperMethod,
 	},
+	unifiedRoleEligibilityScheduleRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	unifiedRoleManagementPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		effectiveRules: IMapperMethod,
 		rules: IMapperMethod,
+	},
+	unifiedRoleManagementPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	unifiedRoleManagementPolicyApprovalRule: {
 		properties?: Array<string>;
@@ -4726,6 +6302,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		policy: IMapperMethod,
+	},
+	unifiedRoleManagementPolicyAssignments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	unifiedRoleManagementPolicyAuthenticationContextRule: {
 		properties?: Array<string>;
@@ -4751,6 +6331,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	unifiedRoleManagementPolicyRules: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	unifiedRoleScheduleBase: {
 		properties?: Array<string>;
@@ -4792,6 +6376,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resource: IMapperMethod,
+	},
+	usedInsights: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	user: {
 		properties?: Array<string>;
@@ -4848,55 +6436,99 @@ export interface IMapper {
 		todo: IMapperMethod,
 		employeeExperience: IMapperMethod,
 	},
+	users: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userActivity: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		historyItems: IMapperMethod,
+	},
+	userActivitys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userConsentRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		approval: IMapperMethod,
 	},
+	userConsentRequests: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIds: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsAppHealthAppPerformanceByOSVersion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsAppHealthAppPerformanceByOSVersions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsAppHealthApplicationPerformance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsAppHealthApplicationPerformances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsAppHealthDeviceModelPerformance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsAppHealthDeviceModelPerformances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsAppHealthDevicePerformance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsAppHealthDevicePerformances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsAppHealthDevicePerformanceDetails: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsAppHealthDevicePerformanceDetailss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsAppHealthOSVersionPerformance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsAppHealthOSVersionPerformances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsBaseline: {
 		properties?: Array<string>;
@@ -4909,50 +6541,90 @@ export interface IMapper {
 		resourcePerformanceMetrics: IMapperMethod,
 		workFromAnywhereMetrics: IMapperMethod,
 	},
+	userExperienceAnalyticsBaselines: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsCategory: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		metricValues: IMapperMethod,
+	},
+	userExperienceAnalyticsCategorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsDevicePerformance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsDevicePerformances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsDeviceScores: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsDeviceScoress: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsDeviceStartupHistory: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsDeviceStartupHistorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsDeviceStartupProcess: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsDeviceStartupProcesss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsDeviceStartupProcessPerformance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsDeviceStartupProcessPerformances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsMetric: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsMetrics: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsMetricHistory: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsMetricHistorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsModelScores: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsModelScoress: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsOverview: {
 		properties?: Array<string>;
@@ -4964,10 +6636,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userExperienceAnalyticsScoreHistorys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsWorkFromAnywhereDevice: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsWorkFromAnywhereDevices: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric: {
 		properties?: Array<string>;
@@ -4979,10 +6659,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		metricDevices: IMapperMethod,
 	},
+	userExperienceAnalyticsWorkFromAnywhereMetrics: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userExperienceAnalyticsWorkFromAnywhereModelPerformance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userExperienceAnalyticsWorkFromAnywhereModelPerformances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userFlowLanguageConfiguration: {
 		properties?: Array<string>;
@@ -4990,10 +6678,18 @@ export interface IMapper {
 		defaultPages: IMapperMethod,
 		overridesPages: IMapperMethod,
 	},
+	userFlowLanguageConfigurations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userFlowLanguagePage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	userFlowLanguagePages: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userInsightsSettings: {
 		properties?: Array<string>;
@@ -5004,6 +6700,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		deviceStates: IMapperMethod,
+	},
+	userInstallStateSummarys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userProcessingResult: {
 		properties?: Array<string>;
@@ -5016,10 +6716,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	userRegistrationDetailss: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	userScopeTeamsAppInstallation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		chat: IMapperMethod,
+	},
+	userScopeTeamsAppInstallations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	userSettings: {
 		properties?: Array<string>;
@@ -5077,15 +6785,27 @@ export interface IMapper {
 		presenters: IMapperMethod,
 		sessions: IMapperMethod,
 	},
+	virtualEvents: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	virtualEventPresenter: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	virtualEventPresenters: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	virtualEventRegistration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		sessions: IMapperMethod,
+	},
+	virtualEventRegistrations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	virtualEventRegistrationConfiguration: {
 		properties?: Array<string>;
@@ -5107,21 +6827,37 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	virtualEventRegistrationQuestionBases: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	virtualEventSession: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	virtualEventSessions: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	virtualEventTownhall: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	virtualEventTownhalls: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	virtualEventWebinar: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		registrationConfiguration: IMapperMethod,
 		registrations: IMapperMethod,
+	},
+	virtualEventWebinars: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	virtualEventWebinarRegistrationConfiguration: {
 		properties?: Array<string>;
@@ -5145,6 +6881,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	vppTokens: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	vulnerability: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -5165,6 +6905,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	webParts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	whoisBaseRecord: {
 		properties?: Array<string>;
@@ -5261,6 +7005,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	windowsAutopilotDeviceIdentitys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	windowsDefenderAdvancedThreatProtectionConfiguration: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -5271,10 +7019,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	windowsDeviceMalwareStates: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	windowsHelloForBusinessAuthenticationMethod: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		device: IMapperMethod,
+	},
+	windowsHelloForBusinessAuthenticationMethods: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	windowsInformationProtection: {
 		properties?: Array<string>;
@@ -5288,25 +7044,45 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	windowsInformationProtectionAppLearningSummarys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	windowsInformationProtectionAppLockerFile: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	windowsInformationProtectionAppLockerFiles: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	windowsInformationProtectionNetworkLearningSummary: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	windowsInformationProtectionNetworkLearningSummarys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	windowsInformationProtectionPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	windowsInformationProtectionPolicys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	windowsMalwareInformation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		deviceMalwareStates: IMapperMethod,
+	},
+	windowsMalwareInformations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	windowsMicrosoftEdgeApp: {
 		properties?: Array<string>;
@@ -5343,10 +7119,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		instances: IMapperMethod,
 	},
+	windowsSettings: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	windowsSettingInstance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	windowsSettingInstances: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	windowsUniversalAppX: {
 		properties?: Array<string>;
@@ -5394,6 +7178,10 @@ export interface IMapper {
 		series: IMapperMethod,
 		title: IMapperMethod,
 		worksheet: IMapperMethod,
+	},
+	workbookCharts: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workbookChartAreaFormat: {
 		properties?: Array<string>;
@@ -5484,6 +7272,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		format: IMapperMethod,
 	},
+	workbookChartPoints: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	workbookChartPointFormat: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -5494,6 +7286,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		format: IMapperMethod,
 		points: IMapperMethod,
+	},
+	workbookChartSeriess: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workbookChartSeriesFormat: {
 		properties?: Array<string>;
@@ -5517,10 +7313,18 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		replies: IMapperMethod,
 	},
+	workbookComments: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	workbookCommentReply: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	workbookCommentReplys: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workbookFilter: {
 		properties?: Array<string>;
@@ -5547,15 +7351,27 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		worksheet: IMapperMethod,
 	},
+	workbookNamedItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	workbookOperation: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
 	},
+	workbookOperations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	workbookPivotTable: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		worksheet: IMapperMethod,
+	},
+	workbookPivotTables: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workbookRange: {
 		properties?: Array<string>;
@@ -5568,6 +7384,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	workbookRangeBorders: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workbookRangeFill: {
 		properties?: Array<string>;
@@ -5597,6 +7417,10 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		rows: IMapperMethod,
 	},
+	workbookRangeViews: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	workbookTable: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
@@ -5605,15 +7429,27 @@ export interface IMapper {
 		sort: IMapperMethod,
 		worksheet: IMapperMethod,
 	},
+	workbookTables: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	workbookTableColumn: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		filter: IMapperMethod,
 	},
+	workbookTableColumns: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	workbookTableRow: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	workbookTableRows: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workbookTableSort: {
 		properties?: Array<string>;
@@ -5628,6 +7464,10 @@ export interface IMapper {
 		pivotTables: IMapperMethod,
 		protection: IMapperMethod,
 		tables: IMapperMethod,
+	},
+	workbookWorksheets: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workbookWorksheetProtection: {
 		properties?: Array<string>;
@@ -5664,6 +7504,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 
+	},
+	workforceIntegrations: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	workingTimeSchedule: {
 		properties?: Array<string>;

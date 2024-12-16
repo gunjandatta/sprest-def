@@ -14,23 +14,26 @@ export const Mapper: IMapper = {
 	accessPackage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackagesIncompatibleWith: {
-			returnType: "accessPackage"
+			returnType: "accessPackages"
 		},
 		assignmentPolicies: {
-			returnType: "accessPackageAssignmentPolicy"
+			returnType: "accessPackageAssignmentPolicys"
 		},
 		catalog: {
 			returnType: "accessPackageCatalog"
 		},
 		incompatibleAccessPackages: {
-			returnType: "accessPackage"
+			returnType: "accessPackages"
 		},
 		incompatibleGroups: {
-			returnType: "group"
+			returnType: "groups"
 		},
 		resourceRoleScopes: {
-			returnType: "accessPackageResourceRoleScope"
+			returnType: "accessPackageResourceRoleScopes"
 		},
+	},
+	accessPackages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -44,6 +47,9 @@ export const Mapper: IMapper = {
 			returnType: "accessPackageSubject"
 		},
 	},
+	accessPackageAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	accessPackageAssignmentPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackage: {
@@ -53,11 +59,14 @@ export const Mapper: IMapper = {
 			returnType: "accessPackageCatalog"
 		},
 		customExtensionStageSettings: {
-			returnType: "customExtensionStageSetting"
+			returnType: "customExtensionStageSettings"
 		},
 		questions: {
-			returnType: "accessPackageQuestion"
+			returnType: "accessPackageQuestions"
 		},
+	},
+	accessPackageAssignmentPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageAssignmentRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -71,6 +80,9 @@ export const Mapper: IMapper = {
 			returnType: "accessPackageSubject"
 		},
 	},
+	accessPackageAssignmentRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	accessPackageAssignmentRequestWorkflowExtension: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -82,20 +94,23 @@ export const Mapper: IMapper = {
 	accessPackageCatalog: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackages: {
-			returnType: "accessPackage"
+			returnType: "accessPackages"
 		},
 		customWorkflowExtensions: {
-			returnType: "customCalloutExtension"
+			returnType: "customCalloutExtensions"
 		},
 		resourceRoles: {
-			returnType: "accessPackageResourceRole"
+			returnType: "accessPackageResourceRoles"
 		},
 		resources: {
-			returnType: "accessPackageResource"
+			returnType: "accessPackageResources"
 		},
 		resourceScopes: {
-			returnType: "accessPackageResourceScope"
+			returnType: "accessPackageResourceScopes"
 		},
+	},
+	accessPackageCatalogs: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageMultipleChoiceQuestion: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -105,23 +120,32 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	accessPackageQuestions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	accessPackageResource: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		environment: {
 			returnType: "accessPackageResourceEnvironment"
 		},
 		roles: {
-			returnType: "accessPackageResourceRole"
+			returnType: "accessPackageResourceRoles"
 		},
 		scopes: {
-			returnType: "accessPackageResourceScope"
+			returnType: "accessPackageResourceScopes"
 		},
+	},
+	accessPackageResources: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceEnvironment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resources: {
-			returnType: "accessPackageResource"
+			returnType: "accessPackageResources"
 		},
+	},
+	accessPackageResourceEnvironments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -132,11 +156,17 @@ export const Mapper: IMapper = {
 			returnType: "accessPackageResource"
 		},
 	},
+	accessPackageResourceRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	accessPackageResourceRole: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resource: {
 			returnType: "accessPackageResource"
 		},
+	},
+	accessPackageResourceRoles: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceRoleScope: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -147,11 +177,17 @@ export const Mapper: IMapper = {
 			returnType: "accessPackageResourceScope"
 		},
 	},
+	accessPackageResourceRoleScopes: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	accessPackageResourceScope: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resource: {
 			returnType: "accessPackageResource"
 		},
+	},
+	accessPackageResourceScopes: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageSubject: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -166,55 +202,76 @@ export const Mapper: IMapper = {
 	accessReviewHistoryDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		instances: {
-			returnType: "accessReviewHistoryInstance"
+			returnType: "accessReviewHistoryInstances"
 		},
+	},
+	accessReviewHistoryDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewHistoryInstance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	accessReviewHistoryInstances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	accessReviewInstance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		contactedReviewers: {
-			returnType: "accessReviewReviewer"
+			returnType: "accessReviewReviewers"
 		},
 		decisions: {
-			returnType: "accessReviewInstanceDecisionItem"
+			returnType: "accessReviewInstanceDecisionItems"
 		},
 		stages: {
-			returnType: "accessReviewStage"
+			returnType: "accessReviewStages"
 		},
+	},
+	accessReviewInstances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewInstanceDecisionItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		insights: {
-			returnType: "governanceInsight"
+			returnType: "governanceInsights"
 		},
+	},
+	accessReviewInstanceDecisionItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewReviewer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	accessReviewReviewers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	accessReviewScheduleDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		instances: {
-			returnType: "accessReviewInstance"
+			returnType: "accessReviewInstances"
 		},
+	},
+	accessReviewScheduleDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewSet: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		definitions: {
-			returnType: "accessReviewScheduleDefinition"
+			returnType: "accessReviewScheduleDefinitions"
 		},
 		historyDefinitions: {
-			returnType: "accessReviewHistoryDefinition"
+			returnType: "accessReviewHistoryDefinitions"
 		},
 	},
 	accessReviewStage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		decisions: {
-			returnType: "accessReviewInstanceDecisionItem"
+			returnType: "accessReviewInstanceDecisionItems"
 		},
+	},
+	accessReviewStages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	acronym: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -224,11 +281,17 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	activityBasedTimeoutPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	activityHistoryItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activity: {
 			returnType: "userActivity"
 		},
+	},
+	activityHistoryItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	addLargeGalleryViewOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -272,42 +335,54 @@ export const Mapper: IMapper = {
 	administrativeUnit: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		scopedRoleMembers: {
-			returnType: "scopedRoleMembership"
+			returnType: "scopedRoleMemberships"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
+	},
+	administrativeUnits: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	agreement: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		acceptances: {
-			returnType: "agreementAcceptance"
+			returnType: "agreementAcceptances"
 		},
 		file: {
 			returnType: "agreementFile"
 		},
 		files: {
-			returnType: "agreementFileLocalization"
+			returnType: "agreementFileLocalizations"
 		},
+	},
+	agreements: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	agreementAcceptance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	agreementAcceptances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	agreementFile: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		localizations: {
-			returnType: "agreementFileLocalization"
+			returnType: "agreementFileLocalizations"
 		},
 	},
 	agreementFileLocalization: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		versions: {
-			returnType: "agreementFileVersion"
+			returnType: "agreementFileVersions"
 		},
+	},
+	agreementFileLocalizations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	agreementFileProperties: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -317,13 +392,22 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	agreementFileVersions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	alert: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	alerts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	allowedValue: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	allowedValues: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	androidCompliancePolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -344,11 +428,14 @@ export const Mapper: IMapper = {
 	androidManagedAppProtection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
-			returnType: "managedMobileApp"
+			returnType: "managedMobileApps"
 		},
 		deploymentSummary: {
 			returnType: "managedAppPolicyDeploymentSummary"
 		},
+	},
+	androidManagedAppProtections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	androidManagedAppRegistration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -377,34 +464,46 @@ export const Mapper: IMapper = {
 	appCatalogs: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		teamsApps: {
-			returnType: "teamsApp"
+			returnType: "teamsApps"
 		},
 	},
 	appConsentApprovalRoute: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appConsentRequests: {
-			returnType: "appConsentRequest"
+			returnType: "appConsentRequests"
 		},
 	},
 	appConsentRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		userConsentRequests: {
-			returnType: "userConsentRequest"
+			returnType: "userConsentRequests"
 		},
+	},
+	appConsentRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	appLogCollectionRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	appLogCollectionRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	appManagementPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliesTo: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
+	},
+	appManagementPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	appRoleAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	appRoleAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	appScope: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -425,28 +524,28 @@ export const Mapper: IMapper = {
 	application: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appManagementPolicies: {
-			returnType: "appManagementPolicy"
+			returnType: "appManagementPolicys"
 		},
 		createdOnBehalfOf: {
 			returnType: "directoryObject"
 		},
 		extensionProperties: {
-			returnType: "extensionProperty"
+			returnType: "extensionPropertys"
 		},
 		federatedIdentityCredentials: {
-			returnType: "federatedIdentityCredential"
+			returnType: "federatedIdentityCredentials"
 		},
 		homeRealmDiscoveryPolicies: {
-			returnType: "homeRealmDiscoveryPolicy"
+			returnType: "homeRealmDiscoveryPolicys"
 		},
 		owners: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		tokenIssuancePolicies: {
-			returnType: "tokenIssuancePolicy"
+			returnType: "tokenIssuancePolicys"
 		},
 		tokenLifetimePolicies: {
-			returnType: "tokenLifetimePolicy"
+			returnType: "tokenLifetimePolicys"
 		},
 		synchronization: {
 			returnType: "synchronization"
@@ -459,17 +558,23 @@ export const Mapper: IMapper = {
 	approval: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		stages: {
-			returnType: "approvalStage"
+			returnType: "approvalStages"
 		},
+	},
+	approvals: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	approvalStage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	approvalStages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	article: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		indicators: {
-			returnType: "articleIndicator"
+			returnType: "articleIndicators"
 		},
 	},
 	articleIndicator: {
@@ -484,52 +589,70 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	associatedTeamInfos: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	attachment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	attachments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attachmentBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	attachmentBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	attachmentSession: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	attachmentSessions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attackSimulationOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	attackSimulationOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	attackSimulationRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		endUserNotifications: {
-			returnType: "endUserNotification"
+			returnType: "endUserNotifications"
 		},
 		landingPages: {
-			returnType: "landingPage"
+			returnType: "landingPages"
 		},
 		loginPages: {
-			returnType: "loginPage"
+			returnType: "loginPages"
 		},
 		operations: {
-			returnType: "attackSimulationOperation"
+			returnType: "attackSimulationOperations"
 		},
 		payloads: {
-			returnType: "payload"
+			returnType: "payloads"
 		},
 		simulationAutomations: {
-			returnType: "simulationAutomation"
+			returnType: "simulationAutomations"
 		},
 		simulations: {
-			returnType: "simulation"
+			returnType: "simulations"
 		},
 		trainings: {
-			returnType: "training"
+			returnType: "trainings"
 		},
 	},
 	attendanceRecord: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	attendanceRecords: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attributeMappingFunctionSchema: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -539,62 +662,74 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	attributeSets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	audioRoutingGroup: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	audioRoutingGroups: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	auditEvent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	auditEvents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	auditLogRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		directoryAudits: {
-			returnType: "directoryAudit"
+			returnType: "directoryAudits"
 		},
 		provisioning: {
-			returnType: "provisioningObjectSummary"
+			returnType: "provisioningObjectSummarys"
 		},
 		signIns: {
-			returnType: "signIn"
+			returnType: "signIns"
 		},
 	},
 	authentication: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		emailMethods: {
-			returnType: "emailAuthenticationMethod"
+			returnType: "emailAuthenticationMethods"
 		},
 		fido2Methods: {
-			returnType: "fido2AuthenticationMethod"
+			returnType: "fido2AuthenticationMethods"
 		},
 		methods: {
-			returnType: "authenticationMethod"
+			returnType: "authenticationMethods"
 		},
 		microsoftAuthenticatorMethods: {
-			returnType: "microsoftAuthenticatorAuthenticationMethod"
+			returnType: "microsoftAuthenticatorAuthenticationMethods"
 		},
 		operations: {
-			returnType: "longRunningOperation"
+			returnType: "longRunningOperations"
 		},
 		passwordMethods: {
-			returnType: "passwordAuthenticationMethod"
+			returnType: "passwordAuthenticationMethods"
 		},
 		phoneMethods: {
-			returnType: "phoneAuthenticationMethod"
+			returnType: "phoneAuthenticationMethods"
 		},
 		softwareOathMethods: {
-			returnType: "softwareOathAuthenticationMethod"
+			returnType: "softwareOathAuthenticationMethods"
 		},
 		temporaryAccessPassMethods: {
-			returnType: "temporaryAccessPassAuthenticationMethod"
+			returnType: "temporaryAccessPassAuthenticationMethods"
 		},
 		windowsHelloForBusinessMethods: {
-			returnType: "windowsHelloForBusinessAuthenticationMethod"
+			returnType: "windowsHelloForBusinessAuthenticationMethods"
 		},
 	},
 	authenticationCombinationConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	authenticationCombinationConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationConditionApplication: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -604,13 +739,22 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	authenticationContextClassReferences: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	authenticationEventListener: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	authenticationEventListeners: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	authenticationEventsFlow: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	authenticationEventsFlows: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationFlowsPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -620,48 +764,66 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	authenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	authenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	authenticationMethodConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationMethodModeDetail: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	authenticationMethodModeDetails: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	authenticationMethodTarget: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	authenticationMethodTargets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	authenticationMethodsPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authenticationMethodConfigurations: {
-			returnType: "authenticationMethodConfiguration"
+			returnType: "authenticationMethodConfigurations"
 		},
 	},
 	authenticationMethodsRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		userRegistrationDetails: {
-			returnType: "userRegistrationDetails"
+			returnType: "userRegistrationDetailss"
 		},
 	},
 	authenticationStrengthPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		combinationConfigurations: {
-			returnType: "authenticationCombinationConfiguration"
+			returnType: "authenticationCombinationConfigurations"
 		},
+	},
+	authenticationStrengthPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationStrengthRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authenticationMethodModes: {
-			returnType: "authenticationMethodModeDetail"
+			returnType: "authenticationMethodModeDetails"
 		},
 		policies: {
-			returnType: "authenticationStrengthPolicy"
+			returnType: "authenticationStrengthPolicys"
 		},
 	},
 	authoredNote: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	authoredNotes: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authorityTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -687,70 +849,73 @@ export const Mapper: IMapper = {
 	b2xIdentityUserFlow: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		identityProviders: {
-			returnType: "identityProvider"
+			returnType: "identityProviders"
 		},
 		languages: {
-			returnType: "userFlowLanguageConfiguration"
+			returnType: "userFlowLanguageConfigurations"
 		},
 		userAttributeAssignments: {
-			returnType: "identityUserFlowAttributeAssignment"
+			returnType: "identityUserFlowAttributeAssignments"
 		},
 		userFlowIdentityProviders: {
-			returnType: "identityProviderBase"
+			returnType: "identityProviderBases"
 		},
+	},
+	b2xIdentityUserFlows: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	backupRestoreRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveInclusionRules: {
-			returnType: "driveProtectionRule"
+			returnType: "driveProtectionRules"
 		},
 		driveProtectionUnits: {
-			returnType: "driveProtectionUnit"
+			returnType: "driveProtectionUnits"
 		},
 		exchangeProtectionPolicies: {
-			returnType: "exchangeProtectionPolicy"
+			returnType: "exchangeProtectionPolicys"
 		},
 		exchangeRestoreSessions: {
-			returnType: "exchangeRestoreSession"
+			returnType: "exchangeRestoreSessions"
 		},
 		mailboxInclusionRules: {
-			returnType: "mailboxProtectionRule"
+			returnType: "mailboxProtectionRules"
 		},
 		mailboxProtectionUnits: {
-			returnType: "mailboxProtectionUnit"
+			returnType: "mailboxProtectionUnits"
 		},
 		oneDriveForBusinessProtectionPolicies: {
-			returnType: "oneDriveForBusinessProtectionPolicy"
+			returnType: "oneDriveForBusinessProtectionPolicys"
 		},
 		oneDriveForBusinessRestoreSessions: {
-			returnType: "oneDriveForBusinessRestoreSession"
+			returnType: "oneDriveForBusinessRestoreSessions"
 		},
 		protectionPolicies: {
-			returnType: "protectionPolicyBase"
+			returnType: "protectionPolicyBases"
 		},
 		protectionUnits: {
-			returnType: "protectionUnitBase"
+			returnType: "protectionUnitBases"
 		},
 		restorePoints: {
-			returnType: "restorePoint"
+			returnType: "restorePoints"
 		},
 		restoreSessions: {
-			returnType: "restoreSessionBase"
+			returnType: "restoreSessionBases"
 		},
 		serviceApps: {
-			returnType: "serviceApp"
+			returnType: "serviceApps"
 		},
 		sharePointProtectionPolicies: {
-			returnType: "sharePointProtectionPolicy"
+			returnType: "sharePointProtectionPolicys"
 		},
 		sharePointRestoreSessions: {
-			returnType: "sharePointRestoreSession"
+			returnType: "sharePointRestoreSessions"
 		},
 		siteInclusionRules: {
-			returnType: "siteProtectionRule"
+			returnType: "siteProtectionRules"
 		},
 		siteProtectionUnits: {
-			returnType: "siteProtectionUnit"
+			returnType: "siteProtectionUnits"
 		},
 	},
 	baseItem: {
@@ -762,6 +927,9 @@ export const Mapper: IMapper = {
 			returnType: "user"
 		},
 	},
+	baseItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	baseItemVersion: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -769,6 +937,9 @@ export const Mapper: IMapper = {
 	baseSitePage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	baseSitePages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	billedReconciliation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -781,10 +952,10 @@ export const Mapper: IMapper = {
 	billing: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		manifests: {
-			returnType: "manifest"
+			returnType: "manifests"
 		},
 		operations: {
-			returnType: "operation"
+			returnType: "operations"
 		},
 		reconciliation: {
 			returnType: "billingReconciliation"
@@ -802,45 +973,60 @@ export const Mapper: IMapper = {
 	bitlocker: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		recoveryKeys: {
-			returnType: "bitlockerRecoveryKey"
+			returnType: "bitlockerRecoveryKeys"
 		},
 	},
 	bitlockerRecoveryKey: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	bitlockerRecoveryKeys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	bookingAppointment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	bookingAppointments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	bookingBusiness: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appointments: {
-			returnType: "bookingAppointment"
+			returnType: "bookingAppointments"
 		},
 		calendarView: {
-			returnType: "bookingAppointment"
+			returnType: "bookingAppointments"
 		},
 		customers: {
-			returnType: "bookingCustomerBase"
+			returnType: "bookingCustomerBases"
 		},
 		customQuestions: {
-			returnType: "bookingCustomQuestion"
+			returnType: "bookingCustomQuestions"
 		},
 		services: {
-			returnType: "bookingService"
+			returnType: "bookingServices"
 		},
 		staffMembers: {
-			returnType: "bookingStaffMemberBase"
+			returnType: "bookingStaffMemberBases"
 		},
+	},
+	bookingBusinesss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingCurrency: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	bookingCurrencys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	bookingCustomQuestion: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	bookingCustomQuestions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingCustomer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -850,9 +1036,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	bookingCustomerBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	bookingService: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	bookingServices: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingStaffMember: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -862,6 +1054,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	bookingStaffMemberBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	bookmark: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -870,18 +1065,27 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	browserSharedCookies: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	browserSite: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	browserSites: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	browserSiteList: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sharedCookies: {
-			returnType: "browserSharedCookie"
+			returnType: "browserSharedCookies"
 		},
 		sites: {
-			returnType: "browserSite"
+			returnType: "browserSites"
 		},
+	},
+	browserSiteLists: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	builtInIdentityProvider: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -894,30 +1098,39 @@ export const Mapper: IMapper = {
 	calendar: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		calendarPermissions: {
-			returnType: "calendarPermission"
+			returnType: "calendarPermissions"
 		},
 		calendarView: {
-			returnType: "event"
+			returnType: "events"
 		},
 		events: {
-			returnType: "event"
+			returnType: "events"
 		},
 		multiValueExtendedProperties: {
-			returnType: "multiValueLegacyExtendedProperty"
+			returnType: "multiValueLegacyExtendedPropertys"
 		},
 		singleValueExtendedProperties: {
-			returnType: "singleValueLegacyExtendedProperty"
+			returnType: "singleValueLegacyExtendedPropertys"
 		},
+	},
+	calendars: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	calendarGroup: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		calendars: {
-			returnType: "calendar"
+			returnType: "calendars"
 		},
+	},
+	calendarGroups: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	calendarPermission: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	calendarPermissions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	calendarSharingMessage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -926,17 +1139,20 @@ export const Mapper: IMapper = {
 	call: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		audioRoutingGroups: {
-			returnType: "audioRoutingGroup"
+			returnType: "audioRoutingGroups"
 		},
 		contentSharingSessions: {
-			returnType: "contentSharingSession"
+			returnType: "contentSharingSessions"
 		},
 		operations: {
-			returnType: "commsOperation"
+			returnType: "commsOperations"
 		},
 		participants: {
-			returnType: "participant"
+			returnType: "participants"
 		},
+	},
+	calls: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	callRecord: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -944,19 +1160,25 @@ export const Mapper: IMapper = {
 			returnType: "organizer"
 		},
 		participants_v2: {
-			returnType: "participant"
+			returnType: "participants"
 		},
 		sessions: {
-			returnType: "session"
+			returnType: "sessions"
 		},
 	},
 	callRecording: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	callRecordings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	callTranscript: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	callTranscripts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cancelMediaProcessingOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -965,7 +1187,7 @@ export const Mapper: IMapper = {
 	canvasLayout: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		horizontalSections: {
-			returnType: "horizontalSection"
+			returnType: "horizontalSections"
 		},
 		verticalSection: {
 			returnType: "verticalSection"
@@ -978,18 +1200,21 @@ export const Mapper: IMapper = {
 	casesRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		ediscoveryCases: {
-			returnType: "ediscoveryCase"
+			returnType: "ediscoveryCases"
 		},
 	},
 	categoryTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subcategories: {
-			returnType: "subcategoryTemplate"
+			returnType: "subcategoryTemplates"
 		},
 	},
 	certificateBasedAuthConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	certificateBasedAuthConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	changeTrackedEntity: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1001,54 +1226,66 @@ export const Mapper: IMapper = {
 			returnType: "driveItem"
 		},
 		members: {
-			returnType: "conversationMember"
+			returnType: "conversationMembers"
 		},
 		messages: {
-			returnType: "chatMessage"
+			returnType: "chatMessages"
 		},
 		sharedWithTeams: {
-			returnType: "sharedWithChannelTeamInfo"
+			returnType: "sharedWithChannelTeamInfos"
 		},
 		tabs: {
-			returnType: "teamsTab"
+			returnType: "teamsTabs"
 		},
+	},
+	channels: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		installedApps: {
-			returnType: "teamsAppInstallation"
+			returnType: "teamsAppInstallations"
 		},
 		lastMessagePreview: {
 			returnType: "chatMessageInfo"
 		},
 		members: {
-			returnType: "conversationMember"
+			returnType: "conversationMembers"
 		},
 		messages: {
-			returnType: "chatMessage"
+			returnType: "chatMessages"
 		},
 		permissionGrants: {
-			returnType: "resourceSpecificPermissionGrant"
+			returnType: "resourceSpecificPermissionGrants"
 		},
 		pinnedMessages: {
-			returnType: "pinnedChatMessageInfo"
+			returnType: "pinnedChatMessageInfos"
 		},
 		tabs: {
-			returnType: "teamsTab"
+			returnType: "teamsTabs"
 		},
+	},
+	chats: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chatMessage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		hostedContents: {
-			returnType: "chatMessageHostedContent"
+			returnType: "chatMessageHostedContents"
 		},
 		replies: {
-			returnType: "chatMessage"
+			returnType: "chatMessages"
 		},
+	},
+	chatMessages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chatMessageHostedContent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	chatMessageHostedContents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chatMessageInfo: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1058,6 +1295,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	checklistItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	citationTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -1066,72 +1306,105 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	claimsMappingPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	cloudClipboardItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	cloudClipboardItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	cloudClipboardRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		items: {
-			returnType: "cloudClipboardItem"
+			returnType: "cloudClipboardItems"
 		},
 	},
 	cloudCommunications: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		callRecords: {
-			returnType: "callRecord"
+			returnType: "callRecords"
 		},
 		calls: {
-			returnType: "call"
+			returnType: "calls"
 		},
 		onlineMeetings: {
-			returnType: "onlineMeeting"
+			returnType: "onlineMeetings"
 		},
 		presences: {
-			returnType: "presence"
+			returnType: "presences"
 		},
 	},
 	cloudPC: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	cloudPCs: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	cloudPcAuditEvent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	cloudPcAuditEvents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcDeviceImage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	cloudPcDeviceImages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	cloudPcGalleryImage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	cloudPcGalleryImages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcOnPremisesConnection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	cloudPcOnPremisesConnections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	cloudPcProvisioningPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "cloudPcProvisioningPolicyAssignment"
+			returnType: "cloudPcProvisioningPolicyAssignments"
 		},
+	},
+	cloudPcProvisioningPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcProvisioningPolicyAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignedUsers: {
-			returnType: "user"
+			returnType: "users"
 		},
+	},
+	cloudPcProvisioningPolicyAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcUserSetting: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "cloudPcUserSettingAssignment"
+			returnType: "cloudPcUserSettingAssignments"
 		},
+	},
+	cloudPcUserSettings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcUserSettingAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	cloudPcUserSettingAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	columnDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1142,13 +1415,22 @@ export const Mapper: IMapper = {
 		argNames: ["values"],
 		},
 	},
+	columnDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	columnLink: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	columnLinks: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	commsOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	commsOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	community: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1156,12 +1438,18 @@ export const Mapper: IMapper = {
 			returnType: "group"
 		},
 		owners: {
-			returnType: "user"
+			returnType: "users"
 		},
+	},
+	communitys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	companySubscription: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	companySubscriptions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	compliance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1171,9 +1459,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	complianceManagementPartners: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	conditionalAccessPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	conditionalAccessPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	conditionalAccessRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1181,30 +1475,36 @@ export const Mapper: IMapper = {
 			returnType: "authenticationStrengthRoot"
 		},
 		authenticationContextClassReferences: {
-			returnType: "authenticationContextClassReference"
+			returnType: "authenticationContextClassReferences"
 		},
 		namedLocations: {
-			returnType: "namedLocation"
+			returnType: "namedLocations"
 		},
 		policies: {
-			returnType: "conditionalAccessPolicy"
+			returnType: "conditionalAccessPolicys"
 		},
 		templates: {
-			returnType: "conditionalAccessTemplate"
+			returnType: "conditionalAccessTemplates"
 		},
 	},
 	conditionalAccessTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	conditionalAccessTemplates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	connectedOrganization: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		externalSponsors: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		internalSponsors: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
+	},
+	connectedOrganizations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	connectionOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1213,36 +1513,45 @@ export const Mapper: IMapper = {
 	contact: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 		multiValueExtendedProperties: {
-			returnType: "multiValueLegacyExtendedProperty"
+			returnType: "multiValueLegacyExtendedPropertys"
 		},
 		photo: {
 			returnType: "profilePhoto"
 		},
 		singleValueExtendedProperties: {
-			returnType: "singleValueLegacyExtendedProperty"
+			returnType: "singleValueLegacyExtendedPropertys"
 		},
+	},
+	contacts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contactFolder: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childFolders: {
-			returnType: "contactFolder"
+			returnType: "contactFolders"
 		},
 		contacts: {
-			returnType: "contact"
+			returnType: "contacts"
 		},
 		multiValueExtendedProperties: {
-			returnType: "multiValueLegacyExtendedProperty"
+			returnType: "multiValueLegacyExtendedPropertys"
 		},
 		singleValueExtendedProperties: {
-			returnType: "singleValueLegacyExtendedProperty"
+			returnType: "singleValueLegacyExtendedPropertys"
 		},
+	},
+	contactFolders: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contentSharingSession: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	contentSharingSessions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contentType: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1250,20 +1559,23 @@ export const Mapper: IMapper = {
 			returnType: "contentType"
 		},
 		baseTypes: {
-			returnType: "contentType"
+			returnType: "contentTypes"
 		},
 		columnLinks: {
-			returnType: "columnLink"
+			returnType: "columnLinks"
 		},
 		columnPositions: {
-			returnType: "columnDefinition"
+			returnType: "columnDefinitions"
 		},
 		columns: {
-			returnType: "columnDefinition"
+			returnType: "columnDefinitions"
 		},
 		update: {
 		argNames: ["values"],
 		},
+	},
+	contentTypes: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contract: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1272,18 +1584,27 @@ export const Mapper: IMapper = {
 	conversation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		threads: {
-			returnType: "conversationThread"
+			returnType: "conversationThreads"
 		},
+	},
+	conversations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	conversationMember: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	conversationMembers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	conversationThread: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		posts: {
-			returnType: "post"
+			returnType: "posts"
 		},
+	},
+	conversationThreads: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	countryNamedLocation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1295,7 +1616,7 @@ export const Mapper: IMapper = {
 			returnType: "crossTenantAccessPolicyConfigurationDefault"
 		},
 		partners: {
-			returnType: "crossTenantAccessPolicyConfigurationPartner"
+			returnType: "crossTenantAccessPolicyConfigurationPartners"
 		},
 		templates: {
 			returnType: "policyTemplate"
@@ -1319,9 +1640,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	customAuthenticationExtensions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	customCalloutExtension: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	customCalloutExtensions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	customExtensionStageSetting: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1329,11 +1656,17 @@ export const Mapper: IMapper = {
 			returnType: "customCalloutExtension"
 		},
 	},
+	customExtensionStageSettings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	customSecurityAttributeDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allowedValues: {
-			returnType: "allowedValue"
+			returnType: "allowedValues"
 		},
+	},
+	customSecurityAttributeDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	customTaskExtension: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1363,70 +1696,100 @@ export const Mapper: IMapper = {
 	defaultManagedAppProtection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
-			returnType: "managedMobileApp"
+			returnType: "managedMobileApps"
 		},
 		deploymentSummary: {
 			returnType: "managedAppPolicyDeploymentSummary"
 		},
 	},
+	defaultManagedAppProtections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	delegatedAdminAccessAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	delegatedAdminAccessAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	delegatedAdminCustomer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		serviceManagementDetails: {
-			returnType: "delegatedAdminServiceManagementDetail"
+			returnType: "delegatedAdminServiceManagementDetails"
 		},
+	},
+	delegatedAdminCustomers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminRelationship: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessAssignments: {
-			returnType: "delegatedAdminAccessAssignment"
+			returnType: "delegatedAdminAccessAssignments"
 		},
 		operations: {
-			returnType: "delegatedAdminRelationshipOperation"
+			returnType: "delegatedAdminRelationshipOperations"
 		},
 		requests: {
-			returnType: "delegatedAdminRelationshipRequest"
+			returnType: "delegatedAdminRelationshipRequests"
 		},
+	},
+	delegatedAdminRelationships: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminRelationshipOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	delegatedAdminRelationshipOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	delegatedAdminRelationshipRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	delegatedAdminRelationshipRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminServiceManagementDetail: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	delegatedAdminServiceManagementDetails: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	delegatedPermissionClassification: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	delegatedPermissionClassifications: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deletedChat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deletedChats: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deletedItemContainer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		workflows: {
-			returnType: "workflow"
+			returnType: "workflows"
 		},
 	},
 	deletedTeam: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		channels: {
-			returnType: "channel"
+			returnType: "channels"
 		},
+	},
+	deletedTeams: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deltaParticipants: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		participants: {
-			returnType: "participant"
+			returnType: "participants"
 		},
 	},
 	departmentTemplate: {
@@ -1436,30 +1799,36 @@ export const Mapper: IMapper = {
 	detectedApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		managedDevices: {
-			returnType: "managedDevice"
+			returnType: "managedDevices"
 		},
+	},
+	detectedApps: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	device: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		memberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		registeredOwners: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		registeredUsers: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		transitiveMemberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 	},
 	deviceAndAppManagementRoleAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceAndAppManagementRoleAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceAndAppManagementRoleDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1468,55 +1837,61 @@ export const Mapper: IMapper = {
 	deviceAppManagement: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		managedEBooks: {
-			returnType: "managedEBook"
+			returnType: "managedEBooks"
 		},
 		mobileAppCategories: {
-			returnType: "mobileAppCategory"
+			returnType: "mobileAppCategorys"
 		},
 		mobileAppConfigurations: {
-			returnType: "managedDeviceMobileAppConfiguration"
+			returnType: "managedDeviceMobileAppConfigurations"
 		},
 		mobileApps: {
-			returnType: "mobileApp"
+			returnType: "mobileApps"
 		},
 		vppTokens: {
-			returnType: "vppToken"
+			returnType: "vppTokens"
 		},
 		androidManagedAppProtections: {
-			returnType: "androidManagedAppProtection"
+			returnType: "androidManagedAppProtections"
 		},
 		defaultManagedAppProtections: {
-			returnType: "defaultManagedAppProtection"
+			returnType: "defaultManagedAppProtections"
 		},
 		iosManagedAppProtections: {
-			returnType: "iosManagedAppProtection"
+			returnType: "iosManagedAppProtections"
 		},
 		managedAppPolicies: {
-			returnType: "managedAppPolicy"
+			returnType: "managedAppPolicys"
 		},
 		managedAppRegistrations: {
-			returnType: "managedAppRegistration"
+			returnType: "managedAppRegistrations"
 		},
 		managedAppStatuses: {
-			returnType: "managedAppStatus"
+			returnType: "managedAppStatuss"
 		},
 		mdmWindowsInformationProtectionPolicies: {
-			returnType: "mdmWindowsInformationProtectionPolicy"
+			returnType: "mdmWindowsInformationProtectionPolicys"
 		},
 		targetedManagedAppConfigurations: {
-			returnType: "targetedManagedAppConfiguration"
+			returnType: "targetedManagedAppConfigurations"
 		},
 		windowsInformationProtectionPolicies: {
-			returnType: "windowsInformationProtectionPolicy"
+			returnType: "windowsInformationProtectionPolicys"
 		},
 	},
 	deviceCategory: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceCategorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceComplianceActionItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceComplianceActionItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceDeviceOverview: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1526,33 +1901,42 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceComplianceDeviceStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceCompliancePolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "deviceCompliancePolicyAssignment"
+			returnType: "deviceCompliancePolicyAssignments"
 		},
 		deviceSettingStateSummaries: {
-			returnType: "settingStateDeviceSummary"
+			returnType: "settingStateDeviceSummarys"
 		},
 		deviceStatuses: {
-			returnType: "deviceComplianceDeviceStatus"
+			returnType: "deviceComplianceDeviceStatuss"
 		},
 		deviceStatusOverview: {
 			returnType: "deviceComplianceDeviceOverview"
 		},
 		scheduledActionsForRule: {
-			returnType: "deviceComplianceScheduledActionForRule"
+			returnType: "deviceComplianceScheduledActionForRules"
 		},
 		userStatuses: {
-			returnType: "deviceComplianceUserStatus"
+			returnType: "deviceComplianceUserStatuss"
 		},
 		userStatusOverview: {
 			returnType: "deviceComplianceUserOverview"
 		},
 	},
+	deviceCompliancePolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceCompliancePolicyAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceCompliancePolicyAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceCompliancePolicyDeviceStateSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1561,22 +1945,34 @@ export const Mapper: IMapper = {
 	deviceCompliancePolicySettingStateSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceComplianceSettingStates: {
-			returnType: "deviceComplianceSettingState"
+			returnType: "deviceComplianceSettingStates"
 		},
+	},
+	deviceCompliancePolicySettingStateSummarys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceCompliancePolicyState: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceCompliancePolicyStates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceComplianceScheduledActionForRule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		scheduledActionConfigurations: {
-			returnType: "deviceComplianceActionItem"
+			returnType: "deviceComplianceActionItems"
 		},
+	},
+	deviceComplianceScheduledActionForRules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceSettingState: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceComplianceSettingStates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceUserOverview: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1586,30 +1982,39 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceComplianceUserStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "deviceConfigurationAssignment"
+			returnType: "deviceConfigurationAssignments"
 		},
 		deviceSettingStateSummaries: {
-			returnType: "settingStateDeviceSummary"
+			returnType: "settingStateDeviceSummarys"
 		},
 		deviceStatuses: {
-			returnType: "deviceConfigurationDeviceStatus"
+			returnType: "deviceConfigurationDeviceStatuss"
 		},
 		deviceStatusOverview: {
 			returnType: "deviceConfigurationDeviceOverview"
 		},
 		userStatuses: {
-			returnType: "deviceConfigurationUserStatus"
+			returnType: "deviceConfigurationUserStatuss"
 		},
 		userStatusOverview: {
 			returnType: "deviceConfigurationUserOverview"
 		},
 	},
+	deviceConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceConfigurationAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceConfigurationAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceConfigurationDeviceOverview: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1623,9 +2028,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceConfigurationDeviceStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceConfigurationState: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceConfigurationStates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceConfigurationUserOverview: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1635,11 +2046,17 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceConfigurationUserStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceEnrollmentConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "enrollmentConfigurationAssignment"
+			returnType: "enrollmentConfigurationAssignments"
 		},
+	},
+	deviceEnrollmentConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceEnrollmentLimitConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1657,189 +2074,198 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceInstallStates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceLocalCredentialInfo: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceLocalCredentialInfos: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceLogCollectionResponse: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceLogCollectionResponses: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceManagement: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		auditEvents: {
-			returnType: "auditEvent"
+			returnType: "auditEvents"
 		},
 		virtualEndpoint: {
 			returnType: "virtualEndpoint"
 		},
 		termsAndConditions: {
-			returnType: "termsAndConditions"
+			returnType: "termsAndConditionss"
 		},
 		deviceCompliancePolicies: {
-			returnType: "deviceCompliancePolicy"
+			returnType: "deviceCompliancePolicys"
 		},
 		deviceCompliancePolicyDeviceStateSummary: {
 			returnType: "deviceCompliancePolicyDeviceStateSummary"
 		},
 		deviceCompliancePolicySettingStateSummaries: {
-			returnType: "deviceCompliancePolicySettingStateSummary"
+			returnType: "deviceCompliancePolicySettingStateSummarys"
 		},
 		deviceConfigurationDeviceStateSummaries: {
 			returnType: "deviceConfigurationDeviceStateSummary"
 		},
 		deviceConfigurations: {
-			returnType: "deviceConfiguration"
+			returnType: "deviceConfigurations"
 		},
 		iosUpdateStatuses: {
-			returnType: "iosUpdateDeviceStatus"
+			returnType: "iosUpdateDeviceStatuss"
 		},
 		softwareUpdateStatusSummary: {
 			returnType: "softwareUpdateStatusSummary"
 		},
 		complianceManagementPartners: {
-			returnType: "complianceManagementPartner"
+			returnType: "complianceManagementPartners"
 		},
 		conditionalAccessSettings: {
 			returnType: "onPremisesConditionalAccessSettings"
 		},
 		deviceCategories: {
-			returnType: "deviceCategory"
+			returnType: "deviceCategorys"
 		},
 		deviceEnrollmentConfigurations: {
-			returnType: "deviceEnrollmentConfiguration"
+			returnType: "deviceEnrollmentConfigurations"
 		},
 		deviceManagementPartners: {
-			returnType: "deviceManagementPartner"
+			returnType: "deviceManagementPartners"
 		},
 		exchangeConnectors: {
-			returnType: "deviceManagementExchangeConnector"
+			returnType: "deviceManagementExchangeConnectors"
 		},
 		mobileThreatDefenseConnectors: {
-			returnType: "mobileThreatDefenseConnector"
+			returnType: "mobileThreatDefenseConnectors"
 		},
 		applePushNotificationCertificate: {
 			returnType: "applePushNotificationCertificate"
 		},
 		detectedApps: {
-			returnType: "detectedApp"
+			returnType: "detectedApps"
 		},
 		managedDeviceOverview: {
 			returnType: "managedDeviceOverview"
 		},
 		managedDevices: {
-			returnType: "managedDevice"
+			returnType: "managedDevices"
 		},
 		mobileAppTroubleshootingEvents: {
-			returnType: "mobileAppTroubleshootingEvent"
+			returnType: "mobileAppTroubleshootingEvents"
 		},
 		userExperienceAnalyticsAppHealthApplicationPerformance: {
-			returnType: "userExperienceAnalyticsAppHealthApplicationPerformance"
+			returnType: "userExperienceAnalyticsAppHealthApplicationPerformances"
 		},
 		userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails: {
-			returnType: "userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails"
+			returnType: "userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailss"
 		},
 		userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId: {
-			returnType: "userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId"
+			returnType: "userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIds"
 		},
 		userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion: {
-			returnType: "userExperienceAnalyticsAppHealthAppPerformanceByOSVersion"
+			returnType: "userExperienceAnalyticsAppHealthAppPerformanceByOSVersions"
 		},
 		userExperienceAnalyticsAppHealthDeviceModelPerformance: {
-			returnType: "userExperienceAnalyticsAppHealthDeviceModelPerformance"
+			returnType: "userExperienceAnalyticsAppHealthDeviceModelPerformances"
 		},
 		userExperienceAnalyticsAppHealthDevicePerformance: {
-			returnType: "userExperienceAnalyticsAppHealthDevicePerformance"
+			returnType: "userExperienceAnalyticsAppHealthDevicePerformances"
 		},
 		userExperienceAnalyticsAppHealthDevicePerformanceDetails: {
-			returnType: "userExperienceAnalyticsAppHealthDevicePerformanceDetails"
+			returnType: "userExperienceAnalyticsAppHealthDevicePerformanceDetailss"
 		},
 		userExperienceAnalyticsAppHealthOSVersionPerformance: {
-			returnType: "userExperienceAnalyticsAppHealthOSVersionPerformance"
+			returnType: "userExperienceAnalyticsAppHealthOSVersionPerformances"
 		},
 		userExperienceAnalyticsAppHealthOverview: {
 			returnType: "userExperienceAnalyticsCategory"
 		},
 		userExperienceAnalyticsBaselines: {
-			returnType: "userExperienceAnalyticsBaseline"
+			returnType: "userExperienceAnalyticsBaselines"
 		},
 		userExperienceAnalyticsCategories: {
-			returnType: "userExperienceAnalyticsCategory"
+			returnType: "userExperienceAnalyticsCategorys"
 		},
 		userExperienceAnalyticsDevicePerformance: {
-			returnType: "userExperienceAnalyticsDevicePerformance"
+			returnType: "userExperienceAnalyticsDevicePerformances"
 		},
 		userExperienceAnalyticsDeviceScores: {
-			returnType: "userExperienceAnalyticsDeviceScores"
+			returnType: "userExperienceAnalyticsDeviceScoress"
 		},
 		userExperienceAnalyticsDeviceStartupHistory: {
-			returnType: "userExperienceAnalyticsDeviceStartupHistory"
+			returnType: "userExperienceAnalyticsDeviceStartupHistorys"
 		},
 		userExperienceAnalyticsDeviceStartupProcesses: {
-			returnType: "userExperienceAnalyticsDeviceStartupProcess"
+			returnType: "userExperienceAnalyticsDeviceStartupProcesss"
 		},
 		userExperienceAnalyticsDeviceStartupProcessPerformance: {
-			returnType: "userExperienceAnalyticsDeviceStartupProcessPerformance"
+			returnType: "userExperienceAnalyticsDeviceStartupProcessPerformances"
 		},
 		userExperienceAnalyticsMetricHistory: {
-			returnType: "userExperienceAnalyticsMetricHistory"
+			returnType: "userExperienceAnalyticsMetricHistorys"
 		},
 		userExperienceAnalyticsModelScores: {
-			returnType: "userExperienceAnalyticsModelScores"
+			returnType: "userExperienceAnalyticsModelScoress"
 		},
 		userExperienceAnalyticsOverview: {
 			returnType: "userExperienceAnalyticsOverview"
 		},
 		userExperienceAnalyticsScoreHistory: {
-			returnType: "userExperienceAnalyticsScoreHistory"
+			returnType: "userExperienceAnalyticsScoreHistorys"
 		},
 		userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric: {
 			returnType: "userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"
 		},
 		userExperienceAnalyticsWorkFromAnywhereMetrics: {
-			returnType: "userExperienceAnalyticsWorkFromAnywhereMetric"
+			returnType: "userExperienceAnalyticsWorkFromAnywhereMetrics"
 		},
 		userExperienceAnalyticsWorkFromAnywhereModelPerformance: {
-			returnType: "userExperienceAnalyticsWorkFromAnywhereModelPerformance"
+			returnType: "userExperienceAnalyticsWorkFromAnywhereModelPerformances"
 		},
 		windowsMalwareInformation: {
-			returnType: "windowsMalwareInformation"
+			returnType: "windowsMalwareInformations"
 		},
 		importedWindowsAutopilotDeviceIdentities: {
-			returnType: "importedWindowsAutopilotDeviceIdentity"
+			returnType: "importedWindowsAutopilotDeviceIdentitys"
 		},
 		windowsAutopilotDeviceIdentities: {
-			returnType: "windowsAutopilotDeviceIdentity"
+			returnType: "windowsAutopilotDeviceIdentitys"
 		},
 		notificationMessageTemplates: {
-			returnType: "notificationMessageTemplate"
+			returnType: "notificationMessageTemplates"
 		},
 		resourceOperations: {
-			returnType: "resourceOperation"
+			returnType: "resourceOperations"
 		},
 		roleAssignments: {
-			returnType: "deviceAndAppManagementRoleAssignment"
+			returnType: "deviceAndAppManagementRoleAssignments"
 		},
 		roleDefinitions: {
-			returnType: "roleDefinition"
+			returnType: "roleDefinitions"
 		},
 		remoteAssistancePartners: {
-			returnType: "remoteAssistancePartner"
+			returnType: "remoteAssistancePartners"
 		},
 		reports: {
 			returnType: "deviceManagementReports"
 		},
 		telecomExpenseManagementPartners: {
-			returnType: "telecomExpenseManagementPartner"
+			returnType: "telecomExpenseManagementPartners"
 		},
 		troubleshootingEvents: {
-			returnType: "deviceManagementTroubleshootingEvent"
+			returnType: "deviceManagementTroubleshootingEvents"
 		},
 		windowsInformationProtectionAppLearningSummaries: {
-			returnType: "windowsInformationProtectionAppLearningSummary"
+			returnType: "windowsInformationProtectionAppLearningSummarys"
 		},
 		windowsInformationProtectionNetworkLearningSummaries: {
-			returnType: "windowsInformationProtectionNetworkLearningSummary"
+			returnType: "windowsInformationProtectionNetworkLearningSummarys"
 		},
 	},
 	deviceManagementCachedReportConfiguration: {
@@ -1850,23 +2276,35 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceManagementExchangeConnectors: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceManagementExportJob: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceManagementExportJobs: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceManagementPartner: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	deviceManagementPartners: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	deviceManagementReports: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		exportJobs: {
-			returnType: "deviceManagementExportJob"
+			returnType: "deviceManagementExportJobs"
 		},
 	},
 	deviceManagementTroubleshootingEvent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	deviceManagementTroubleshootingEvents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceRegistrationPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1875,41 +2313,50 @@ export const Mapper: IMapper = {
 	directory: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceLocalCredentials: {
-			returnType: "deviceLocalCredentialInfo"
+			returnType: "deviceLocalCredentialInfos"
 		},
 		administrativeUnits: {
-			returnType: "administrativeUnit"
+			returnType: "administrativeUnits"
 		},
 		attributeSets: {
-			returnType: "attributeSet"
+			returnType: "attributeSets"
 		},
 		customSecurityAttributeDefinitions: {
-			returnType: "customSecurityAttributeDefinition"
+			returnType: "customSecurityAttributeDefinitions"
 		},
 		deletedItems: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		federationConfigurations: {
-			returnType: "identityProviderBase"
+			returnType: "identityProviderBases"
 		},
 		onPremisesSynchronization: {
-			returnType: "onPremisesDirectorySynchronization"
+			returnType: "onPremisesDirectorySynchronizations"
 		},
 		subscriptions: {
-			returnType: "companySubscription"
+			returnType: "companySubscriptions"
 		},
 	},
 	directoryAudit: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	directoryAudits: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	directoryDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	directoryDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	directoryObject: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	directoryObjects: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	directoryObjectPartnerReference: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1918,10 +2365,10 @@ export const Mapper: IMapper = {
 	directoryRole: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		scopedMembers: {
-			returnType: "scopedRoleMembership"
+			returnType: "scopedRoleMemberships"
 		},
 	},
 	directoryRoleTemplate: {
@@ -1936,22 +2383,25 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	documentSetVersions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	domain: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		domainNameReferences: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		federationConfiguration: {
-			returnType: "internalDomainFederation"
+			returnType: "internalDomainFederations"
 		},
 		rootDomain: {
 			returnType: "domain"
 		},
 		serviceConfigurationRecords: {
-			returnType: "domainDnsRecord"
+			returnType: "domainDnsRecords"
 		},
 		verificationDnsRecords: {
-			returnType: "domainDnsRecord"
+			returnType: "domainDnsRecords"
 		},
 	},
 	domainDnsCnameRecord: {
@@ -1965,6 +2415,9 @@ export const Mapper: IMapper = {
 	domainDnsRecord: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	domainDnsRecords: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	domainDnsSrvRecord: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1981,13 +2434,13 @@ export const Mapper: IMapper = {
 	drive: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bundles: {
-			returnType: "driveItem"
+			returnType: "driveItems"
 		},
 		following: {
-			returnType: "driveItem"
+			returnType: "driveItems"
 		},
 		items: {
-			returnType: "driveItem"
+			returnType: "driveItems"
 		},
 		list: {
 			returnType: "list"
@@ -1996,8 +2449,11 @@ export const Mapper: IMapper = {
 			returnType: "driveItem"
 		},
 		special: {
-			returnType: "driveItem"
+			returnType: "driveItems"
 		},
+	},
+	drives: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2008,42 +2464,57 @@ export const Mapper: IMapper = {
 			returnType: "itemAnalytics"
 		},
 		children: {
-			returnType: "driveItem"
+			returnType: "driveItems"
 		},
 		listItem: {
 			returnType: "listItem"
 		},
 		permissions: {
-			returnType: "permission"
+			returnType: "permissions"
 		},
 		retentionLabel: {
 			returnType: "itemRetentionLabel"
 		},
 		subscriptions: {
-			returnType: "subscription"
+			returnType: "subscriptions"
 		},
 		thumbnails: {
-			returnType: "thumbnailSet"
+			returnType: "thumbnailSets"
 		},
 		versions: {
-			returnType: "driveItemVersion"
+			returnType: "driveItemVersions"
 		},
+	},
+	driveItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveItemVersion: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	driveItemVersions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	driveProtectionRule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	driveProtectionRules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveProtectionUnit: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	driveProtectionUnits: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	driveRestoreArtifact: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	driveRestoreArtifacts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	eBookInstallSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2067,25 +2538,25 @@ export const Mapper: IMapper = {
 	ediscoveryCase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		custodians: {
-			returnType: "ediscoveryCustodian"
+			returnType: "ediscoveryCustodians"
 		},
 		noncustodialDataSources: {
-			returnType: "ediscoveryNoncustodialDataSource"
+			returnType: "ediscoveryNoncustodialDataSources"
 		},
 		operations: {
-			returnType: "caseOperation"
+			returnType: "caseOperations"
 		},
 		reviewSets: {
-			returnType: "ediscoveryReviewSet"
+			returnType: "ediscoveryReviewSets"
 		},
 		searches: {
-			returnType: "ediscoverySearch"
+			returnType: "ediscoverySearchs"
 		},
 		settings: {
 			returnType: "ediscoveryCaseSettings"
 		},
 		tags: {
-			returnType: "ediscoveryReviewTag"
+			returnType: "ediscoveryReviewTags"
 		},
 	},
 	ediscoveryCaseSettings: {
@@ -2098,13 +2569,13 @@ export const Mapper: IMapper = {
 			returnType: "ediscoveryIndexOperation"
 		},
 		siteSources: {
-			returnType: "siteSource"
+			returnType: "siteSources"
 		},
 		unifiedGroupSources: {
-			returnType: "unifiedGroupSource"
+			returnType: "unifiedGroupSources"
 		},
 		userSources: {
-			returnType: "userSource"
+			returnType: "userSources"
 		},
 	},
 	ediscoveryEstimateOperation: {
@@ -2146,7 +2617,7 @@ export const Mapper: IMapper = {
 	ediscoveryReviewSet: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		queries: {
-			returnType: "ediscoveryReviewSetQuery"
+			returnType: "ediscoveryReviewSetQuerys"
 		},
 	},
 	ediscoveryReviewSetQuery: {
@@ -2156,7 +2627,7 @@ export const Mapper: IMapper = {
 	ediscoveryReviewTag: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childTags: {
-			returnType: "ediscoveryReviewTag"
+			returnType: "ediscoveryReviewTags"
 		},
 		parent: {
 			returnType: "ediscoveryReviewTag"
@@ -2165,19 +2636,19 @@ export const Mapper: IMapper = {
 	ediscoverySearch: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		additionalSources: {
-			returnType: "dataSource"
+			returnType: "dataSources"
 		},
 		addToReviewSetOperation: {
 			returnType: "ediscoveryAddToReviewSetOperation"
 		},
 		custodianSources: {
-			returnType: "dataSource"
+			returnType: "dataSources"
 		},
 		lastEstimateStatisticsOperation: {
 			returnType: "ediscoveryEstimateOperation"
 		},
 		noncustodialSources: {
-			returnType: "ediscoveryNoncustodialDataSource"
+			returnType: "ediscoveryNoncustodialDataSources"
 		},
 	},
 	ediscoverySearchExportOperation: {
@@ -2197,20 +2668,23 @@ export const Mapper: IMapper = {
 	educationAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		categories: {
-			returnType: "educationCategory"
+			returnType: "educationCategorys"
 		},
 		gradingCategory: {
 			returnType: "educationGradingCategory"
 		},
 		resources: {
-			returnType: "educationAssignmentResource"
+			returnType: "educationAssignmentResources"
 		},
 		rubric: {
 			returnType: "educationRubric"
 		},
 		submissions: {
-			returnType: "educationSubmission"
+			returnType: "educationSubmissions"
 		},
+	},
+	educationAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationAssignmentDefaults: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2220,45 +2694,54 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	educationAssignmentResources: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	educationAssignmentSettings: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		gradingCategories: {
-			returnType: "educationGradingCategory"
+			returnType: "educationGradingCategorys"
 		},
 	},
 	educationCategory: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	educationCategorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	educationClass: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignmentCategories: {
-			returnType: "educationCategory"
+			returnType: "educationCategorys"
 		},
 		assignmentDefaults: {
 			returnType: "educationAssignmentDefaults"
 		},
 		assignments: {
-			returnType: "educationAssignment"
+			returnType: "educationAssignments"
 		},
 		assignmentSettings: {
 			returnType: "educationAssignmentSettings"
 		},
 		modules: {
-			returnType: "educationModule"
+			returnType: "educationModules"
 		},
 		group: {
 			returnType: "group"
 		},
 		members: {
-			returnType: "educationUser"
+			returnType: "educationUsers"
 		},
 		schools: {
-			returnType: "educationSchool"
+			returnType: "educationSchools"
 		},
 		teachers: {
-			returnType: "educationUser"
+			returnType: "educationUsers"
 		},
+	},
+	educationClasss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationFeedbackOutcome: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2272,15 +2755,24 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	educationGradingCategorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	educationModule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resources: {
-			returnType: "educationModuleResource"
+			returnType: "educationModuleResources"
 		},
+	},
+	educationModules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationModuleResource: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	educationModuleResources: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationOrganization: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2290,6 +2782,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	educationOutcomes: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	educationPointsOutcome: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -2297,21 +2792,24 @@ export const Mapper: IMapper = {
 	educationRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		classes: {
-			returnType: "educationClass"
+			returnType: "educationClasss"
 		},
 		me: {
 			returnType: "educationUser"
 		},
 		schools: {
-			returnType: "educationSchool"
+			returnType: "educationSchools"
 		},
 		users: {
-			returnType: "educationUser"
+			returnType: "educationUsers"
 		},
 	},
 	educationRubric: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	educationRubrics: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationRubricOutcome: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2323,57 +2821,72 @@ export const Mapper: IMapper = {
 			returnType: "administrativeUnit"
 		},
 		classes: {
-			returnType: "educationClass"
+			returnType: "educationClasss"
 		},
 		users: {
-			returnType: "educationUser"
+			returnType: "educationUsers"
 		},
+	},
+	educationSchools: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationSubmission: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		outcomes: {
-			returnType: "educationOutcome"
+			returnType: "educationOutcomes"
 		},
 		resources: {
-			returnType: "educationSubmissionResource"
+			returnType: "educationSubmissionResources"
 		},
 		submittedResources: {
-			returnType: "educationSubmissionResource"
+			returnType: "educationSubmissionResources"
 		},
+	},
+	educationSubmissions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationSubmissionResource: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	educationSubmissionResources: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	educationUser: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "educationAssignment"
+			returnType: "educationAssignments"
 		},
 		rubrics: {
-			returnType: "educationRubric"
+			returnType: "educationRubrics"
 		},
 		classes: {
-			returnType: "educationClass"
+			returnType: "educationClasss"
 		},
 		schools: {
-			returnType: "educationSchool"
+			returnType: "educationSchools"
 		},
 		taughtClasses: {
-			returnType: "educationClass"
+			returnType: "educationClasss"
 		},
 		user: {
 			returnType: "user"
 		},
 	},
+	educationUsers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	emailAuthenticationMethod: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	emailAuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	emailAuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "authenticationMethodTarget"
+			returnType: "authenticationMethodTargets"
 		},
 	},
 	emailFileAssessmentRequest: {
@@ -2383,45 +2896,60 @@ export const Mapper: IMapper = {
 	employeeExperience: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		communities: {
-			returnType: "community"
+			returnType: "communitys"
 		},
 		engagementAsyncOperations: {
-			returnType: "engagementAsyncOperation"
+			returnType: "engagementAsyncOperations"
 		},
 		learningCourseActivities: {
-			returnType: "learningCourseActivity"
+			returnType: "learningCourseActivitys"
 		},
 		learningProviders: {
-			returnType: "learningProvider"
+			returnType: "learningProviders"
 		},
 	},
 	employeeExperienceUser: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		learningCourseActivities: {
-			returnType: "learningCourseActivity"
+			returnType: "learningCourseActivitys"
 		},
 	},
 	endUserNotification: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		details: {
-			returnType: "endUserNotificationDetail"
+			returnType: "endUserNotificationDetails"
 		},
+	},
+	endUserNotifications: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	endUserNotificationDetail: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	endUserNotificationDetails: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	endpoint: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	endpoints: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	engagementAsyncOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	engagementAsyncOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	enrollmentConfigurationAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	enrollmentConfigurationAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	enrollmentTroubleshootingEvent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2434,37 +2962,37 @@ export const Mapper: IMapper = {
 	entitlementManagement: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackageAssignmentApprovals: {
-			returnType: "approval"
+			returnType: "approvals"
 		},
 		accessPackages: {
-			returnType: "accessPackage"
+			returnType: "accessPackages"
 		},
 		assignmentPolicies: {
-			returnType: "accessPackageAssignmentPolicy"
+			returnType: "accessPackageAssignmentPolicys"
 		},
 		assignmentRequests: {
-			returnType: "accessPackageAssignmentRequest"
+			returnType: "accessPackageAssignmentRequests"
 		},
 		assignments: {
-			returnType: "accessPackageAssignment"
+			returnType: "accessPackageAssignments"
 		},
 		catalogs: {
-			returnType: "accessPackageCatalog"
+			returnType: "accessPackageCatalogs"
 		},
 		connectedOrganizations: {
-			returnType: "connectedOrganization"
+			returnType: "connectedOrganizations"
 		},
 		resourceEnvironments: {
-			returnType: "accessPackageResourceEnvironment"
+			returnType: "accessPackageResourceEnvironments"
 		},
 		resourceRequests: {
-			returnType: "accessPackageResourceRequest"
+			returnType: "accessPackageResourceRequests"
 		},
 		resourceRoleScopes: {
-			returnType: "accessPackageResourceRoleScope"
+			returnType: "accessPackageResourceRoleScopes"
 		},
 		resources: {
-			returnType: "accessPackageResource"
+			returnType: "accessPackageResources"
 		},
 		settings: {
 			returnType: "entitlementManagementSettings"
@@ -2481,23 +3009,26 @@ export const Mapper: IMapper = {
 	event: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
-			returnType: "attachment"
+			returnType: "attachments"
 		},
 		calendar: {
 			returnType: "calendar"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 		instances: {
-			returnType: "event"
+			returnType: "events"
 		},
 		multiValueExtendedProperties: {
-			returnType: "multiValueLegacyExtendedProperty"
+			returnType: "multiValueLegacyExtendedPropertys"
 		},
 		singleValueExtendedProperties: {
-			returnType: "singleValueLegacyExtendedProperty"
+			returnType: "singleValueLegacyExtendedPropertys"
 		},
+	},
+	events: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	eventMessage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2516,20 +3047,26 @@ export const Mapper: IMapper = {
 	exchangeProtectionPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		mailboxInclusionRules: {
-			returnType: "mailboxProtectionRule"
+			returnType: "mailboxProtectionRules"
 		},
 		mailboxProtectionUnits: {
-			returnType: "mailboxProtectionUnit"
+			returnType: "mailboxProtectionUnits"
 		},
+	},
+	exchangeProtectionPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	exchangeRestoreSession: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		granularMailboxRestoreArtifacts: {
-			returnType: "granularMailboxRestoreArtifact"
+			returnType: "granularMailboxRestoreArtifacts"
 		},
 		mailboxRestoreArtifacts: {
-			returnType: "mailboxRestoreArtifact"
+			returnType: "mailboxRestoreArtifacts"
 		},
+	},
+	exchangeRestoreSessions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	exportSuccessOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2541,14 +3078,20 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	extensions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	extensionProperty: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	extensionPropertys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	external: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		connections: {
-			returnType: "externalConnection"
+			returnType: "externalConnections"
 		},
 	},
 	externalActivity: {
@@ -2564,13 +3107,13 @@ export const Mapper: IMapper = {
 	externalConnection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		groups: {
-			returnType: "externalGroup"
+			returnType: "externalGroups"
 		},
 		items: {
-			returnType: "externalItem"
+			returnType: "externalItems"
 		},
 		operations: {
-			returnType: "connectionOperation"
+			returnType: "connectionOperations"
 		},
 		schema: {
 			returnType: "schema"
@@ -2580,16 +3123,19 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	externalDomainNames: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	externalGroup: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
-			returnType: "identity"
+			returnType: "identitys"
 		},
 	},
 	externalItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activities: {
-			returnType: "externalActivity"
+			returnType: "externalActivitys"
 		},
 	},
 	externalUsersSelfServiceSignUpEventsFlow: {
@@ -2603,21 +3149,30 @@ export const Mapper: IMapper = {
 	featureRolloutPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliesTo: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
+	},
+	featureRolloutPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	federatedIdentityCredential: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	federatedIdentityCredentials: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	fido2AuthenticationMethod: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	fido2AuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	fido2AuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "authenticationMethodTarget"
+			returnType: "authenticationMethodTargets"
 		},
 	},
 	fido2CombinationConfiguration: {
@@ -2665,7 +3220,7 @@ export const Mapper: IMapper = {
 	fileStorage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		containers: {
-			returnType: "fileStorageContainer"
+			returnType: "fileStorageContainers"
 		},
 	},
 	fileStorageContainer: {
@@ -2674,8 +3229,11 @@ export const Mapper: IMapper = {
 			returnType: "drive"
 		},
 		permissions: {
-			returnType: "permission"
+			returnType: "permissions"
 		},
+	},
+	fileStorageContainers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	filterOperatorSchema: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2685,23 +3243,38 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	governanceInsights: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	granularMailboxRestoreArtifact: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	granularMailboxRestoreArtifacts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	group: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sets: {
-			returnType: "set"
+			returnType: "sets"
 		},
+	},
+	groups: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	groupLifecyclePolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	groupLifecyclePolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	groupSetting: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	groupSettings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	groupSettingTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2715,55 +3288,64 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	homeRealmDiscoveryPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	horizontalSection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		columns: {
-			returnType: "horizontalSectionColumn"
+			returnType: "horizontalSectionColumns"
 		},
+	},
+	horizontalSections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	horizontalSectionColumn: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		webparts: {
-			returnType: "webPart"
+			returnType: "webParts"
 		},
+	},
+	horizontalSectionColumns: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	host: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childHostPairs: {
-			returnType: "hostPair"
+			returnType: "hostPairs"
 		},
 		components: {
-			returnType: "hostComponent"
+			returnType: "hostComponents"
 		},
 		cookies: {
-			returnType: "hostCookie"
+			returnType: "hostCookies"
 		},
 		hostPairs: {
-			returnType: "hostPair"
+			returnType: "hostPairs"
 		},
 		parentHostPairs: {
-			returnType: "hostPair"
+			returnType: "hostPairs"
 		},
 		passiveDns: {
-			returnType: "passiveDnsRecord"
+			returnType: "passiveDnsRecords"
 		},
 		passiveDnsReverse: {
-			returnType: "passiveDnsRecord"
+			returnType: "passiveDnsRecords"
 		},
 		ports: {
-			returnType: "hostPort"
+			returnType: "hostPorts"
 		},
 		reputation: {
 			returnType: "hostReputation"
 		},
 		sslCertificates: {
-			returnType: "hostSslCertificate"
+			returnType: "hostSslCertificates"
 		},
 		subdomains: {
-			returnType: "subdomain"
+			returnType: "subdomains"
 		},
 		trackers: {
-			returnType: "hostTracker"
+			returnType: "hostTrackers"
 		},
 		whois: {
 			returnType: "whoisRecord"
@@ -2830,6 +3412,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	identityApiConnectors: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	identityBuiltInUserFlowAttribute: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -2837,10 +3422,10 @@ export const Mapper: IMapper = {
 	identityContainer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		healthIssues: {
-			returnType: "healthIssue"
+			returnType: "healthIssues"
 		},
 		sensors: {
-			returnType: "sensor"
+			returnType: "sensors"
 		},
 	},
 	identityCustomUserFlowAttribute: {
@@ -2871,25 +3456,31 @@ export const Mapper: IMapper = {
 	identityProtectionRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		riskDetections: {
-			returnType: "riskDetection"
+			returnType: "riskDetections"
 		},
 		riskyServicePrincipals: {
-			returnType: "riskyServicePrincipal"
+			returnType: "riskyServicePrincipals"
 		},
 		riskyUsers: {
-			returnType: "riskyUser"
+			returnType: "riskyUsers"
 		},
 		servicePrincipalRiskDetections: {
-			returnType: "servicePrincipalRiskDetection"
+			returnType: "servicePrincipalRiskDetections"
 		},
 	},
 	identityProvider: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	identityProviders: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	identityProviderBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	identityProviderBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	identitySecurityDefaultsEnforcementPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2903,26 +3494,35 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	identityUserFlowAttributes: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	identityUserFlowAttributeAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		userAttribute: {
 			returnType: "identityUserFlowAttribute"
 		},
 	},
+	identityUserFlowAttributeAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	importedWindowsAutopilotDeviceIdentity: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	importedWindowsAutopilotDeviceIdentitys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	importedWindowsAutopilotDeviceIdentityUpload: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceIdentities: {
-			returnType: "importedWindowsAutopilotDeviceIdentity"
+			returnType: "importedWindowsAutopilotDeviceIdentitys"
 		},
 	},
 	incident: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		alerts: {
-			returnType: "alert"
+			returnType: "alerts"
 		},
 	},
 	indicator: {
@@ -2934,12 +3534,15 @@ export const Mapper: IMapper = {
 	inferenceClassification: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		overrides: {
-			returnType: "inferenceClassificationOverride"
+			returnType: "inferenceClassificationOverrides"
 		},
 	},
 	inferenceClassificationOverride: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	inferenceClassificationOverrides: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	informationProtection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2947,7 +3550,7 @@ export const Mapper: IMapper = {
 			returnType: "bitlocker"
 		},
 		threatAssessmentRequests: {
-			returnType: "threatAssessmentRequest"
+			returnType: "threatAssessmentRequests"
 		},
 	},
 	insights: {
@@ -2961,7 +3564,7 @@ export const Mapper: IMapper = {
 	intelligenceProfile: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		indicators: {
-			returnType: "intelligenceProfileIndicator"
+			returnType: "intelligenceProfileIndicators"
 		},
 	},
 	intelligenceProfileIndicator: {
@@ -2972,10 +3575,13 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	internalDomainFederations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	internetExplorerMode: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		siteLists: {
-			returnType: "browserSiteList"
+			returnType: "browserSiteLists"
 		},
 	},
 	invitation: {
@@ -2984,7 +3590,7 @@ export const Mapper: IMapper = {
 			returnType: "user"
 		},
 		invitedUserSponsors: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 	},
 	inviteParticipantsOperation: {
@@ -3022,11 +3628,14 @@ export const Mapper: IMapper = {
 	iosManagedAppProtection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
-			returnType: "managedMobileApp"
+			returnType: "managedMobileApps"
 		},
 		deploymentSummary: {
 			returnType: "managedAppPolicyDeploymentSummary"
 		},
+	},
+	iosManagedAppProtections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	iosManagedAppRegistration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3047,6 +3656,9 @@ export const Mapper: IMapper = {
 	iosUpdateDeviceStatus: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	iosUpdateDeviceStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	iosVppApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3078,11 +3690,17 @@ export const Mapper: IMapper = {
 			returnType: "driveItem"
 		},
 	},
+	itemActivitys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	itemActivityStat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activities: {
-			returnType: "itemActivity"
+			returnType: "itemActivitys"
 		},
+	},
+	itemActivityStats: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	itemAnalytics: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3090,7 +3708,7 @@ export const Mapper: IMapper = {
 			returnType: "itemActivityStat"
 		},
 		itemActivityStats: {
-			returnType: "itemActivityStat"
+			returnType: "itemActivityStats"
 		},
 		lastSevenDays: {
 			returnType: "itemActivityStat"
@@ -3113,33 +3731,39 @@ export const Mapper: IMapper = {
 	labelsRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authorities: {
-			returnType: "authorityTemplate"
+			returnType: "authorityTemplates"
 		},
 		categories: {
-			returnType: "categoryTemplate"
+			returnType: "categoryTemplates"
 		},
 		citations: {
-			returnType: "citationTemplate"
+			returnType: "citationTemplates"
 		},
 		departments: {
-			returnType: "departmentTemplate"
+			returnType: "departmentTemplates"
 		},
 		filePlanReferences: {
-			returnType: "filePlanReferenceTemplate"
+			returnType: "filePlanReferenceTemplates"
 		},
 		retentionLabels: {
-			returnType: "retentionLabel"
+			returnType: "retentionLabels"
 		},
 	},
 	landingPage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		details: {
-			returnType: "landingPageDetail"
+			returnType: "landingPageDetails"
 		},
+	},
+	landingPages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	landingPageDetail: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	landingPageDetails: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	learningAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3149,18 +3773,27 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	learningContents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	learningCourseActivity: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	learningCourseActivitys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	learningProvider: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		learningContents: {
-			returnType: "learningContent"
+			returnType: "learningContents"
 		},
 		learningCourseActivities: {
-			returnType: "learningCourseActivity"
+			returnType: "learningCourseActivitys"
 		},
+	},
+	learningProviders: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	learningSelfInitiatedCourse: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3170,6 +3803,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	licenseDetailss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	lifecycleManagementSettings: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -3177,7 +3813,7 @@ export const Mapper: IMapper = {
 	lifecycleWorkflowsContainer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		customTaskExtensions: {
-			returnType: "customTaskExtension"
+			returnType: "customTaskExtensions"
 		},
 		deletedItems: {
 			returnType: "deletedItemContainer"
@@ -3189,42 +3825,48 @@ export const Mapper: IMapper = {
 			returnType: "lifecycleManagementSettings"
 		},
 		taskDefinitions: {
-			returnType: "taskDefinition"
+			returnType: "taskDefinitions"
 		},
 		workflows: {
-			returnType: "workflow"
+			returnType: "workflows"
 		},
 		workflowTemplates: {
-			returnType: "workflowTemplate"
+			returnType: "workflowTemplates"
 		},
 	},
 	linkedResource: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	linkedResources: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	list: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		columns: {
-			returnType: "columnDefinition"
+			returnType: "columnDefinitions"
 		},
 		contentTypes: {
-			returnType: "contentType"
+			returnType: "contentTypes"
 		},
 		drive: {
 			returnType: "drive"
 		},
 		items: {
-			returnType: "listItem"
+			returnType: "listItems"
 		},
 		operations: {
-			returnType: "richLongRunningOperation"
+			returnType: "richLongRunningOperations"
 		},
 		subscriptions: {
-			returnType: "subscription"
+			returnType: "subscriptions"
 		},
 		update: {
 		argNames: ["values"],
 		},
+	},
+	lists: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	listItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3232,7 +3874,7 @@ export const Mapper: IMapper = {
 			returnType: "itemAnalytics"
 		},
 		documentSetVersions: {
-			returnType: "documentSetVersion"
+			returnType: "documentSetVersions"
 		},
 		driveItem: {
 			returnType: "driveItem"
@@ -3241,7 +3883,7 @@ export const Mapper: IMapper = {
 			returnType: "fieldValueSet"
 		},
 		versions: {
-			returnType: "listItemVersion"
+			returnType: "listItemVersions"
 		},
 		extractSensitivityLabel: {
 		argNames: ["values"],
@@ -3253,23 +3895,38 @@ export const Mapper: IMapper = {
 		argNames: ["values"],
 		},
 	},
+	listItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	listItemVersion: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fields: {
 			returnType: "fieldValueSet"
 		},
 	},
+	listItemVersions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	localizedNotificationMessage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	localizedNotificationMessages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	loginPage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	loginPages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	longRunningOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	longRunningOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	m365AppsInstallationOptions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3318,20 +3975,23 @@ export const Mapper: IMapper = {
 	mailFolder: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childFolders: {
-			returnType: "mailFolder"
+			returnType: "mailFolders"
 		},
 		messageRules: {
-			returnType: "messageRule"
+			returnType: "messageRules"
 		},
 		messages: {
-			returnType: "message"
+			returnType: "messages"
 		},
 		multiValueExtendedProperties: {
-			returnType: "multiValueLegacyExtendedProperty"
+			returnType: "multiValueLegacyExtendedPropertys"
 		},
 		singleValueExtendedProperties: {
-			returnType: "singleValueLegacyExtendedProperty"
+			returnType: "singleValueLegacyExtendedPropertys"
 		},
+	},
+	mailFolders: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mailSearchFolder: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3341,17 +4001,29 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	mailboxProtectionRules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	mailboxProtectionUnit: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	mailboxProtectionUnits: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mailboxRestoreArtifact: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	mailboxRestoreArtifacts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	malwareStateForWindowsDevice: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	malwareStateForWindowsDevices: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAndroidLobApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3373,9 +4045,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	managedAppOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	managedAppPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	managedAppPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAppPolicyDeploymentSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3388,18 +4066,24 @@ export const Mapper: IMapper = {
 	managedAppRegistration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliedPolicies: {
-			returnType: "managedAppPolicy"
+			returnType: "managedAppPolicys"
 		},
 		intendedPolicies: {
-			returnType: "managedAppPolicy"
+			returnType: "managedAppPolicys"
 		},
 		operations: {
-			returnType: "managedAppOperation"
+			returnType: "managedAppOperations"
 		},
+	},
+	managedAppRegistrations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAppStatus: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	managedAppStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAppStatusRaw: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3408,49 +4092,61 @@ export const Mapper: IMapper = {
 	managedDevice: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceCompliancePolicyStates: {
-			returnType: "deviceCompliancePolicyState"
+			returnType: "deviceCompliancePolicyStates"
 		},
 		deviceConfigurationStates: {
-			returnType: "deviceConfigurationState"
+			returnType: "deviceConfigurationStates"
 		},
 		deviceCategory: {
 			returnType: "deviceCategory"
 		},
 		logCollectionRequests: {
-			returnType: "deviceLogCollectionResponse"
+			returnType: "deviceLogCollectionResponses"
 		},
 		users: {
-			returnType: "user"
+			returnType: "users"
 		},
 		windowsProtectionState: {
 			returnType: "windowsProtectionState"
 		},
 	},
+	managedDevices: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	managedDeviceMobileAppConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "managedDeviceMobileAppConfigurationAssignment"
+			returnType: "managedDeviceMobileAppConfigurationAssignments"
 		},
 		deviceStatuses: {
-			returnType: "managedDeviceMobileAppConfigurationDeviceStatus"
+			returnType: "managedDeviceMobileAppConfigurationDeviceStatuss"
 		},
 		deviceStatusSummary: {
 			returnType: "managedDeviceMobileAppConfigurationDeviceSummary"
 		},
 		userStatuses: {
-			returnType: "managedDeviceMobileAppConfigurationUserStatus"
+			returnType: "managedDeviceMobileAppConfigurationUserStatuss"
 		},
 		userStatusSummary: {
 			returnType: "managedDeviceMobileAppConfigurationUserSummary"
 		},
 	},
+	managedDeviceMobileAppConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	managedDeviceMobileAppConfigurationAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	managedDeviceMobileAppConfigurationAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	managedDeviceMobileAppConfigurationDeviceStatus: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	managedDeviceMobileAppConfigurationDeviceStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedDeviceMobileAppConfigurationDeviceSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3459,6 +4155,9 @@ export const Mapper: IMapper = {
 	managedDeviceMobileAppConfigurationUserStatus: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	managedDeviceMobileAppConfigurationUserStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedDeviceMobileAppConfigurationUserSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3471,21 +4170,27 @@ export const Mapper: IMapper = {
 	managedEBook: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "managedEBookAssignment"
+			returnType: "managedEBookAssignments"
 		},
 		deviceStates: {
-			returnType: "deviceInstallState"
+			returnType: "deviceInstallStates"
 		},
 		installSummary: {
 			returnType: "eBookInstallSummary"
 		},
 		userStateSummary: {
-			returnType: "userInstallStateSummary"
+			returnType: "userInstallStateSummarys"
 		},
+	},
+	managedEBooks: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedEBookAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	managedEBookAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedIOSLobApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3499,10 +4204,13 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	managedMobileApps: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	managedMobileLobApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		contentVersions: {
-			returnType: "mobileAppContent"
+			returnType: "mobileAppContents"
 		},
 	},
 	manifest: {
@@ -3513,11 +4221,17 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	mdmWindowsInformationProtectionPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	meetingAttendanceReport: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attendanceRecords: {
-			returnType: "attendanceRecord"
+			returnType: "attendanceRecords"
 		},
+	},
+	meetingAttendanceReports: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	membershipOutlierInsight: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3534,21 +4248,27 @@ export const Mapper: IMapper = {
 	message: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
-			returnType: "attachment"
+			returnType: "attachments"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 		multiValueExtendedProperties: {
-			returnType: "multiValueLegacyExtendedProperty"
+			returnType: "multiValueLegacyExtendedPropertys"
 		},
 		singleValueExtendedProperties: {
-			returnType: "singleValueLegacyExtendedProperty"
+			returnType: "singleValueLegacyExtendedPropertys"
 		},
+	},
+	messages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	messageRule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	messageRules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	microsoftAccountUserConversationMember: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3560,15 +4280,21 @@ export const Mapper: IMapper = {
 			returnType: "device"
 		},
 	},
+	microsoftAuthenticatorAuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	microsoftAuthenticatorAuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "microsoftAuthenticatorAuthenticationMethodTarget"
+			returnType: "microsoftAuthenticatorAuthenticationMethodTargets"
 		},
 	},
 	microsoftAuthenticatorAuthenticationMethodTarget: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	microsoftAuthenticatorAuthenticationMethodTargets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	microsoftStoreForBusinessApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3577,52 +4303,76 @@ export const Mapper: IMapper = {
 	mobileApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "mobileAppAssignment"
+			returnType: "mobileAppAssignments"
 		},
 		categories: {
-			returnType: "mobileAppCategory"
+			returnType: "mobileAppCategorys"
 		},
+	},
+	mobileApps: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileAppAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	mobileAppAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	mobileAppCategory: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	mobileAppCategorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	mobileAppContent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		containedApps: {
-			returnType: "mobileContainedApp"
+			returnType: "mobileContainedApps"
 		},
 		files: {
-			returnType: "mobileAppContentFile"
+			returnType: "mobileAppContentFiles"
 		},
+	},
+	mobileAppContents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileAppContentFile: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	mobileAppContentFiles: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	mobileAppTroubleshootingEvent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appLogCollectionRequests: {
-			returnType: "appLogCollectionRequest"
+			returnType: "appLogCollectionRequests"
 		},
+	},
+	mobileAppTroubleshootingEvents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileContainedApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	mobileContainedApps: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	mobileLobApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		contentVersions: {
-			returnType: "mobileAppContent"
+			returnType: "mobileAppContents"
 		},
 	},
 	mobileThreatDefenseConnector: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	mobileThreatDefenseConnectors: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	multiTenantOrganization: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3630,7 +4380,7 @@ export const Mapper: IMapper = {
 			returnType: "multiTenantOrganizationJoinRequestRecord"
 		},
 		tenants: {
-			returnType: "multiTenantOrganizationMember"
+			returnType: "multiTenantOrganizationMembers"
 		},
 	},
 	multiTenantOrganizationIdentitySyncPolicyTemplate: {
@@ -3645,6 +4395,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	multiTenantOrganizationMembers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	multiTenantOrganizationPartnerConfigurationTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -3652,6 +4405,9 @@ export const Mapper: IMapper = {
 	multiValueLegacyExtendedProperty: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	multiValueLegacyExtendedPropertys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	muteParticipantOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3661,6 +4417,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	namedLocations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	networkAdapter: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -3668,36 +4427,48 @@ export const Mapper: IMapper = {
 	notebook: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sectionGroups: {
-			returnType: "sectionGroup"
+			returnType: "sectionGroups"
 		},
 		sections: {
-			returnType: "onenoteSection"
+			returnType: "onenoteSections"
 		},
+	},
+	notebooks: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	notificationMessageTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		localizedNotificationMessages: {
-			returnType: "localizedNotificationMessage"
+			returnType: "localizedNotificationMessages"
 		},
+	},
+	notificationMessageTemplates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	oAuth2PermissionGrant: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	oAuth2PermissionGrants: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	offerShiftRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	offerShiftRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	officeGraphInsights: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		shared: {
-			returnType: "sharedInsight"
+			returnType: "sharedInsights"
 		},
 		trending: {
-			returnType: "trending"
+			returnType: "trendings"
 		},
 		used: {
-			returnType: "usedInsight"
+			returnType: "usedInsights"
 		},
 	},
 	onAttributeCollectionListener: {
@@ -3720,6 +4491,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	onPremisesDirectorySynchronizations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	onTokenIssuanceStartCustomExtension: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -3735,37 +4509,43 @@ export const Mapper: IMapper = {
 	oneDriveForBusinessProtectionPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveInclusionRules: {
-			returnType: "driveProtectionRule"
+			returnType: "driveProtectionRules"
 		},
 		driveProtectionUnits: {
-			returnType: "driveProtectionUnit"
+			returnType: "driveProtectionUnits"
 		},
+	},
+	oneDriveForBusinessProtectionPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	oneDriveForBusinessRestoreSession: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveRestoreArtifacts: {
-			returnType: "driveRestoreArtifact"
+			returnType: "driveRestoreArtifacts"
 		},
+	},
+	oneDriveForBusinessRestoreSessions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onenote: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		notebooks: {
-			returnType: "notebook"
+			returnType: "notebooks"
 		},
 		operations: {
-			returnType: "onenoteOperation"
+			returnType: "onenoteOperations"
 		},
 		pages: {
-			returnType: "onenotePage"
+			returnType: "onenotePages"
 		},
 		resources: {
-			returnType: "onenoteResource"
+			returnType: "onenoteResources"
 		},
 		sectionGroups: {
-			returnType: "sectionGroup"
+			returnType: "sectionGroups"
 		},
 		sections: {
-			returnType: "onenoteSection"
+			returnType: "onenoteSections"
 		},
 	},
 	onenoteEntityBaseModel: {
@@ -3784,6 +4564,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	onenoteOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	onenotePage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		parentNotebook: {
@@ -3793,14 +4576,20 @@ export const Mapper: IMapper = {
 			returnType: "onenoteSection"
 		},
 	},
+	onenotePages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	onenoteResource: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	onenoteResources: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	onenoteSection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		pages: {
-			returnType: "onenotePage"
+			returnType: "onenotePages"
 		},
 		parentNotebook: {
 			returnType: "notebook"
@@ -3809,28 +4598,40 @@ export const Mapper: IMapper = {
 			returnType: "sectionGroup"
 		},
 	},
+	onenoteSections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	onlineMeeting: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		recordings: {
-			returnType: "callRecording"
+			returnType: "callRecordings"
 		},
 		transcripts: {
-			returnType: "callTranscript"
+			returnType: "callTranscripts"
 		},
+	},
+	onlineMeetings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onlineMeetingBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attendanceReports: {
-			returnType: "meetingAttendanceReport"
+			returnType: "meetingAttendanceReports"
 		},
 	},
 	openShift: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	openShifts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	openShiftChangeRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	openShiftChangeRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	openTypeExtension: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3843,16 +4644,16 @@ export const Mapper: IMapper = {
 	orgContact: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		directReports: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		manager: {
 			returnType: "directoryObject"
 		},
 		memberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		transitiveMemberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 	},
 	organization: {
@@ -3861,21 +4662,24 @@ export const Mapper: IMapper = {
 			returnType: "organizationalBranding"
 		},
 		certificateBasedAuthConfiguration: {
-			returnType: "certificateBasedAuthConfiguration"
+			returnType: "certificateBasedAuthConfigurations"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 	},
 	organizationalBranding: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		localizations: {
-			returnType: "organizationalBrandingLocalization"
+			returnType: "organizationalBrandingLocalizations"
 		},
 	},
 	organizationalBrandingLocalization: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	organizationalBrandingLocalizations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	organizationalBrandingProperties: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3889,6 +4693,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	outlookCategorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	outlookItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -3896,12 +4703,15 @@ export const Mapper: IMapper = {
 	outlookUser: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		masterCategories: {
-			returnType: "outlookCategory"
+			returnType: "outlookCategorys"
 		},
 	},
 	participant: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	participants: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	participantBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3938,14 +4748,20 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	passwordAuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	payload: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	payloads: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	peopleAdminSettings: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		profileCardProperties: {
-			returnType: "profileCardProperty"
+			returnType: "profileCardPropertys"
 		},
 		pronouns: {
 			returnType: "pronounsSettings"
@@ -3960,32 +4776,50 @@ export const Mapper: IMapper = {
 		argNames: ["values"],
 		},
 	},
+	permissions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	permissionGrantConditionSet: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	permissionGrantConditionSets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	permissionGrantPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		excludes: {
-			returnType: "permissionGrantConditionSet"
+			returnType: "permissionGrantConditionSets"
 		},
 		includes: {
-			returnType: "permissionGrantConditionSet"
+			returnType: "permissionGrantConditionSets"
 		},
+	},
+	permissionGrantPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	person: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	persons: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	phoneAuthenticationMethod: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	phoneAuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	pinnedChatMessageInfo: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		message: {
 			returnType: "chatMessage"
 		},
+	},
+	pinnedChatMessageInfos: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	place: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3994,13 +4828,13 @@ export const Mapper: IMapper = {
 	planner: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		buckets: {
-			returnType: "plannerBucket"
+			returnType: "plannerBuckets"
 		},
 		plans: {
-			returnType: "plannerPlan"
+			returnType: "plannerPlans"
 		},
 		tasks: {
-			returnType: "plannerTask"
+			returnType: "plannerTasks"
 		},
 	},
 	plannerAssignedToTaskBoardTaskFormat: {
@@ -4010,8 +4844,11 @@ export const Mapper: IMapper = {
 	plannerBucket: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		tasks: {
-			returnType: "plannerTask"
+			returnType: "plannerTasks"
 		},
+	},
+	plannerBuckets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	plannerBucketTaskBoardTaskFormat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4020,20 +4857,23 @@ export const Mapper: IMapper = {
 	plannerGroup: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		plans: {
-			returnType: "plannerPlan"
+			returnType: "plannerPlans"
 		},
 	},
 	plannerPlan: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		buckets: {
-			returnType: "plannerBucket"
+			returnType: "plannerBuckets"
 		},
 		details: {
 			returnType: "plannerPlanDetails"
 		},
 		tasks: {
-			returnType: "plannerTask"
+			returnType: "plannerTasks"
 		},
+	},
+	plannerPlans: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	plannerPlanDetails: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4058,6 +4898,9 @@ export const Mapper: IMapper = {
 			returnType: "plannerProgressTaskBoardTaskFormat"
 		},
 	},
+	plannerTasks: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	plannerTaskDetails: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -4065,10 +4908,10 @@ export const Mapper: IMapper = {
 	plannerUser: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		plans: {
-			returnType: "plannerPlan"
+			returnType: "plannerPlans"
 		},
 		tasks: {
-			returnType: "plannerTask"
+			returnType: "plannerTasks"
 		},
 	},
 	playPromptOperation: {
@@ -4085,7 +4928,7 @@ export const Mapper: IMapper = {
 			returnType: "authenticationMethodsPolicy"
 		},
 		authenticationStrengthPolicies: {
-			returnType: "authenticationStrengthPolicy"
+			returnType: "authenticationStrengthPolicys"
 		},
 		authenticationFlowsPolicy: {
 			returnType: "authenticationFlowsPolicy"
@@ -4094,16 +4937,16 @@ export const Mapper: IMapper = {
 			returnType: "deviceRegistrationPolicy"
 		},
 		activityBasedTimeoutPolicies: {
-			returnType: "activityBasedTimeoutPolicy"
+			returnType: "activityBasedTimeoutPolicys"
 		},
 		appManagementPolicies: {
-			returnType: "appManagementPolicy"
+			returnType: "appManagementPolicys"
 		},
 		authorizationPolicy: {
 			returnType: "authorizationPolicy"
 		},
 		claimsMappingPolicies: {
-			returnType: "claimsMappingPolicy"
+			returnType: "claimsMappingPolicys"
 		},
 		crossTenantAccessPolicy: {
 			returnType: "crossTenantAccessPolicy"
@@ -4112,34 +4955,34 @@ export const Mapper: IMapper = {
 			returnType: "tenantAppManagementPolicy"
 		},
 		homeRealmDiscoveryPolicies: {
-			returnType: "homeRealmDiscoveryPolicy"
+			returnType: "homeRealmDiscoveryPolicys"
 		},
 		permissionGrantPolicies: {
-			returnType: "permissionGrantPolicy"
+			returnType: "permissionGrantPolicys"
 		},
 		tokenIssuancePolicies: {
-			returnType: "tokenIssuancePolicy"
+			returnType: "tokenIssuancePolicys"
 		},
 		tokenLifetimePolicies: {
-			returnType: "tokenLifetimePolicy"
+			returnType: "tokenLifetimePolicys"
 		},
 		featureRolloutPolicies: {
-			returnType: "featureRolloutPolicy"
+			returnType: "featureRolloutPolicys"
 		},
 		adminConsentRequestPolicy: {
 			returnType: "adminConsentRequestPolicy"
 		},
 		conditionalAccessPolicies: {
-			returnType: "conditionalAccessPolicy"
+			returnType: "conditionalAccessPolicys"
 		},
 		identitySecurityDefaultsEnforcementPolicy: {
 			returnType: "identitySecurityDefaultsEnforcementPolicy"
 		},
 		roleManagementPolicies: {
-			returnType: "unifiedRoleManagementPolicy"
+			returnType: "unifiedRoleManagementPolicys"
 		},
 		roleManagementPolicyAssignments: {
-			returnType: "unifiedRoleManagementPolicyAssignment"
+			returnType: "unifiedRoleManagementPolicyAssignments"
 		},
 	},
 	policyTemplate: {
@@ -4154,76 +4997,100 @@ export const Mapper: IMapper = {
 	post: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
-			returnType: "attachment"
+			returnType: "attachments"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 		inReplyTo: {
 			returnType: "post"
 		},
 		multiValueExtendedProperties: {
-			returnType: "multiValueLegacyExtendedProperty"
+			returnType: "multiValueLegacyExtendedPropertys"
 		},
 		singleValueExtendedProperties: {
-			returnType: "singleValueLegacyExtendedProperty"
+			returnType: "singleValueLegacyExtendedPropertys"
 		},
+	},
+	posts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	presence: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	presences: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	print: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		connectors: {
-			returnType: "printConnector"
+			returnType: "printConnectors"
 		},
 		operations: {
-			returnType: "printOperation"
+			returnType: "printOperations"
 		},
 		printers: {
-			returnType: "printer"
+			returnType: "printers"
 		},
 		services: {
-			returnType: "printService"
+			returnType: "printServices"
 		},
 		shares: {
-			returnType: "printerShare"
+			returnType: "printerShares"
 		},
 		taskDefinitions: {
-			returnType: "printTaskDefinition"
+			returnType: "printTaskDefinitions"
 		},
 	},
 	printConnector: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	printConnectors: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	printDocument: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	printDocuments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	printJob: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		documents: {
-			returnType: "printDocument"
+			returnType: "printDocuments"
 		},
 		tasks: {
-			returnType: "printTask"
+			returnType: "printTasks"
 		},
+	},
+	printJobs: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	printOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	printService: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		endpoints: {
-			returnType: "printServiceEndpoint"
+			returnType: "printServiceEndpoints"
 		},
+	},
+	printServices: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printServiceEndpoint: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	printServiceEndpoints: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printTask: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4234,17 +5101,26 @@ export const Mapper: IMapper = {
 			returnType: "printTaskTrigger"
 		},
 	},
+	printTasks: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	printTaskDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		tasks: {
-			returnType: "printTask"
+			returnType: "printTasks"
 		},
+	},
+	printTaskDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printTaskTrigger: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		definition: {
 			returnType: "printTaskDefinition"
 		},
+	},
+	printTaskTriggers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printUsage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4254,26 +5130,35 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	printUsageByPrinters: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	printUsageByUser: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	printUsageByUsers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	printer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		connectors: {
-			returnType: "printConnector"
+			returnType: "printConnectors"
 		},
 		shares: {
-			returnType: "printerShare"
+			returnType: "printerShares"
 		},
 		taskTriggers: {
-			returnType: "printTaskTrigger"
+			returnType: "printTaskTriggers"
 		},
+	},
+	printers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printerBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		jobs: {
-			returnType: "printJob"
+			returnType: "printJobs"
 		},
 	},
 	printerCreateOperation: {
@@ -4285,43 +5170,46 @@ export const Mapper: IMapper = {
 	printerShare: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allowedGroups: {
-			returnType: "group"
+			returnType: "groups"
 		},
 		allowedUsers: {
-			returnType: "user"
+			returnType: "users"
 		},
 		printer: {
 			returnType: "printer"
 		},
 	},
+	printerShares: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	privacy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subjectRightsRequests: {
-			returnType: "subjectRightsRequest"
+			returnType: "subjectRightsRequests"
 		},
 	},
 	privilegedAccessGroup: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignmentApprovals: {
-			returnType: "approval"
+			returnType: "approvals"
 		},
 		assignmentScheduleInstances: {
-			returnType: "privilegedAccessGroupAssignmentScheduleInstance"
+			returnType: "privilegedAccessGroupAssignmentScheduleInstances"
 		},
 		assignmentScheduleRequests: {
-			returnType: "privilegedAccessGroupAssignmentScheduleRequest"
+			returnType: "privilegedAccessGroupAssignmentScheduleRequests"
 		},
 		assignmentSchedules: {
-			returnType: "privilegedAccessGroupAssignmentSchedule"
+			returnType: "privilegedAccessGroupAssignmentSchedules"
 		},
 		eligibilityScheduleInstances: {
-			returnType: "privilegedAccessGroupEligibilityScheduleInstance"
+			returnType: "privilegedAccessGroupEligibilityScheduleInstances"
 		},
 		eligibilityScheduleRequests: {
-			returnType: "privilegedAccessGroupEligibilityScheduleRequest"
+			returnType: "privilegedAccessGroupEligibilityScheduleRequests"
 		},
 		eligibilitySchedules: {
-			returnType: "privilegedAccessGroupEligibilitySchedule"
+			returnType: "privilegedAccessGroupEligibilitySchedules"
 		},
 	},
 	privilegedAccessGroupAssignmentSchedule: {
@@ -4336,6 +5224,9 @@ export const Mapper: IMapper = {
 			returnType: "directoryObject"
 		},
 	},
+	privilegedAccessGroupAssignmentSchedules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	privilegedAccessGroupAssignmentScheduleInstance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
@@ -4347,6 +5238,9 @@ export const Mapper: IMapper = {
 		principal: {
 			returnType: "directoryObject"
 		},
+	},
+	privilegedAccessGroupAssignmentScheduleInstances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessGroupAssignmentScheduleRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4363,6 +5257,9 @@ export const Mapper: IMapper = {
 			returnType: "privilegedAccessGroupEligibilitySchedule"
 		},
 	},
+	privilegedAccessGroupAssignmentScheduleRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	privilegedAccessGroupEligibilitySchedule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
@@ -4372,6 +5269,9 @@ export const Mapper: IMapper = {
 			returnType: "directoryObject"
 		},
 	},
+	privilegedAccessGroupEligibilitySchedules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	privilegedAccessGroupEligibilityScheduleInstance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
@@ -4380,6 +5280,9 @@ export const Mapper: IMapper = {
 		principal: {
 			returnType: "directoryObject"
 		},
+	},
+	privilegedAccessGroupEligibilityScheduleInstances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessGroupEligibilityScheduleRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4392,6 +5295,9 @@ export const Mapper: IMapper = {
 		targetSchedule: {
 			returnType: "privilegedAccessGroupEligibilitySchedule"
 		},
+	},
+	privilegedAccessGroupEligibilityScheduleRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4415,9 +5321,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	profileCardPropertys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	profilePhoto: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	profilePhotos: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	pronounsSettings: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4427,6 +5339,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	protectionPolicyBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	protectionRuleBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -4435,9 +5350,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	protectionUnitBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	provisioningObjectSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	provisioningObjectSummarys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	qna: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4446,31 +5367,31 @@ export const Mapper: IMapper = {
 	rbacApplication: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resourceNamespaces: {
-			returnType: "unifiedRbacResourceNamespace"
+			returnType: "unifiedRbacResourceNamespaces"
 		},
 		roleAssignments: {
-			returnType: "unifiedRoleAssignment"
+			returnType: "unifiedRoleAssignments"
 		},
 		roleDefinitions: {
-			returnType: "unifiedRoleDefinition"
+			returnType: "unifiedRoleDefinitions"
 		},
 		roleAssignmentScheduleInstances: {
-			returnType: "unifiedRoleAssignmentScheduleInstance"
+			returnType: "unifiedRoleAssignmentScheduleInstances"
 		},
 		roleAssignmentScheduleRequests: {
-			returnType: "unifiedRoleAssignmentScheduleRequest"
+			returnType: "unifiedRoleAssignmentScheduleRequests"
 		},
 		roleAssignmentSchedules: {
-			returnType: "unifiedRoleAssignmentSchedule"
+			returnType: "unifiedRoleAssignmentSchedules"
 		},
 		roleEligibilityScheduleInstances: {
-			returnType: "unifiedRoleEligibilityScheduleInstance"
+			returnType: "unifiedRoleEligibilityScheduleInstances"
 		},
 		roleEligibilityScheduleRequests: {
-			returnType: "unifiedRoleEligibilityScheduleRequest"
+			returnType: "unifiedRoleEligibilityScheduleRequests"
 		},
 		roleEligibilitySchedules: {
-			returnType: "unifiedRoleEligibilitySchedule"
+			returnType: "unifiedRoleEligibilitySchedules"
 		},
 	},
 	recordOperation: {
@@ -4501,10 +5422,13 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	remoteAssistancePartners: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	remoteDesktopSecurityConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetDeviceGroups: {
-			returnType: "targetDeviceGroup"
+			returnType: "targetDeviceGroups"
 		},
 	},
 	reportRoot: {
@@ -4516,16 +5440,16 @@ export const Mapper: IMapper = {
 			returnType: "partners"
 		},
 		dailyPrintUsageByPrinter: {
-			returnType: "printUsageByPrinter"
+			returnType: "printUsageByPrinters"
 		},
 		dailyPrintUsageByUser: {
-			returnType: "printUsageByUser"
+			returnType: "printUsageByUsers"
 		},
 		monthlyPrintUsageByPrinter: {
-			returnType: "printUsageByPrinter"
+			returnType: "printUsageByPrinters"
 		},
 		monthlyPrintUsageByUser: {
-			returnType: "printUsageByUser"
+			returnType: "printUsageByUsers"
 		},
 		security: {
 			returnType: "securityReportsRoot"
@@ -4543,9 +5467,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	resourceOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	resourceSpecificPermissionGrant: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	resourceSpecificPermissionGrants: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	restoreArtifactBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4559,9 +5489,15 @@ export const Mapper: IMapper = {
 			returnType: "protectionUnitBase"
 		},
 	},
+	restorePoints: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	restoreSessionBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	restoreSessionBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	retentionEvent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4579,7 +5515,7 @@ export const Mapper: IMapper = {
 			returnType: "filePlanDescriptor"
 		},
 		dispositionReviewStages: {
-			returnType: "dispositionReviewStage"
+			returnType: "dispositionReviewStages"
 		},
 		retentionEventType: {
 			returnType: "retentionEventType"
@@ -4589,29 +5525,47 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	richLongRunningOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	riskDetection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	riskDetections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	riskyServicePrincipal: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		history: {
-			returnType: "riskyServicePrincipalHistoryItem"
+			returnType: "riskyServicePrincipalHistoryItems"
 		},
+	},
+	riskyServicePrincipals: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	riskyServicePrincipalHistoryItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	riskyServicePrincipalHistoryItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	riskyUser: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		history: {
-			returnType: "riskyUserHistoryItem"
+			returnType: "riskyUserHistoryItems"
 		},
+	},
+	riskyUsers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	riskyUserHistoryItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	riskyUserHistoryItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	roleAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4619,11 +5573,17 @@ export const Mapper: IMapper = {
 			returnType: "roleDefinition"
 		},
 	},
+	roleAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	roleDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		roleAssignments: {
-			returnType: "roleAssignment"
+			returnType: "roleAssignments"
 		},
+	},
+	roleDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	roleManagement: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4638,19 +5598,22 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	rooms: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	roomList: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		rooms: {
-			returnType: "room"
+			returnType: "rooms"
 		},
 	},
 	run: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		taskProcessingResults: {
-			returnType: "taskProcessingResult"
+			returnType: "taskProcessingResults"
 		},
 		userProcessingResults: {
-			returnType: "userProcessingResult"
+			returnType: "userProcessingResults"
 		},
 	},
 	runningOperation: {
@@ -4660,7 +5623,7 @@ export const Mapper: IMapper = {
 	samlOrWsFedExternalDomainFederation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		domains: {
-			returnType: "externalDomainName"
+			returnType: "externalDomainNames"
 		},
 	},
 	samlOrWsFedProvider: {
@@ -4670,31 +5633,31 @@ export const Mapper: IMapper = {
 	schedule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		offerShiftRequests: {
-			returnType: "offerShiftRequest"
+			returnType: "offerShiftRequests"
 		},
 		openShiftChangeRequests: {
-			returnType: "openShiftChangeRequest"
+			returnType: "openShiftChangeRequests"
 		},
 		openShifts: {
-			returnType: "openShift"
+			returnType: "openShifts"
 		},
 		schedulingGroups: {
-			returnType: "schedulingGroup"
+			returnType: "schedulingGroups"
 		},
 		shifts: {
-			returnType: "shift"
+			returnType: "shifts"
 		},
 		swapShiftsChangeRequests: {
-			returnType: "swapShiftsChangeRequest"
+			returnType: "swapShiftsChangeRequests"
 		},
 		timeOffReasons: {
-			returnType: "timeOffReason"
+			returnType: "timeOffReasons"
 		},
 		timeOffRequests: {
-			returnType: "timeOffRequest"
+			returnType: "timeOffRequests"
 		},
 		timesOff: {
-			returnType: "timeOff"
+			returnType: "timeOffs"
 		},
 	},
 	scheduleChangeRequest: {
@@ -4704,6 +5667,9 @@ export const Mapper: IMapper = {
 	schedulingGroup: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	schedulingGroups: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	schema: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4717,6 +5683,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	scopedRoleMemberships: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	search: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -4728,13 +5697,13 @@ export const Mapper: IMapper = {
 	searchEntity: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		acronyms: {
-			returnType: "acronym"
+			returnType: "acronyms"
 		},
 		bookmarks: {
-			returnType: "bookmark"
+			returnType: "bookmarks"
 		},
 		qnas: {
-			returnType: "qna"
+			returnType: "qnas"
 		},
 	},
 	sectionGroup: {
@@ -4746,24 +5715,33 @@ export const Mapper: IMapper = {
 			returnType: "sectionGroup"
 		},
 		sectionGroups: {
-			returnType: "sectionGroup"
+			returnType: "sectionGroups"
 		},
 		sections: {
-			returnType: "onenoteSection"
+			returnType: "onenoteSections"
 		},
+	},
+	sectionGroups: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	secureScore: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	secureScores: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	secureScoreControlProfile: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	secureScoreControlProfiles: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	security: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subjectRightsRequests: {
-			returnType: "subjectRightsRequest"
+			returnType: "subjectRightsRequests"
 		},
 		cases: {
 			returnType: "casesRoot"
@@ -4772,10 +5750,10 @@ export const Mapper: IMapper = {
 			returnType: "identityContainer"
 		},
 		alerts_v2: {
-			returnType: "alert"
+			returnType: "alerts"
 		},
 		incidents: {
-			returnType: "incident"
+			returnType: "incidents"
 		},
 		attackSimulation: {
 			returnType: "attackSimulationRoot"
@@ -4790,13 +5768,13 @@ export const Mapper: IMapper = {
 			returnType: "triggerTypesRoot"
 		},
 		alerts: {
-			returnType: "alert"
+			returnType: "alerts"
 		},
 		secureScoreControlProfiles: {
-			returnType: "secureScoreControlProfile"
+			returnType: "secureScoreControlProfiles"
 		},
 		secureScores: {
-			returnType: "secureScore"
+			returnType: "secureScores"
 		},
 		threatIntelligence: {
 			returnType: "threatIntelligence"
@@ -4817,24 +5795,27 @@ export const Mapper: IMapper = {
 	sensor: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		healthIssues: {
-			returnType: "healthIssue"
+			returnType: "healthIssues"
 		},
 	},
 	serviceAnnouncement: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		healthOverviews: {
-			returnType: "serviceHealth"
+			returnType: "serviceHealths"
 		},
 		issues: {
-			returnType: "serviceHealthIssue"
+			returnType: "serviceHealthIssues"
 		},
 		messages: {
-			returnType: "serviceUpdateMessage"
+			returnType: "serviceUpdateMessages"
 		},
 	},
 	serviceAnnouncementAttachment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	serviceAnnouncementAttachments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	serviceAnnouncementBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4844,68 +5825,77 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	serviceApps: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	serviceHealth: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		issues: {
-			returnType: "serviceHealthIssue"
+			returnType: "serviceHealthIssues"
 		},
+	},
+	serviceHealths: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	serviceHealthIssue: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	serviceHealthIssues: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	servicePrincipal: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appManagementPolicies: {
-			returnType: "appManagementPolicy"
+			returnType: "appManagementPolicys"
 		},
 		appRoleAssignedTo: {
-			returnType: "appRoleAssignment"
+			returnType: "appRoleAssignments"
 		},
 		appRoleAssignments: {
-			returnType: "appRoleAssignment"
+			returnType: "appRoleAssignments"
 		},
 		claimsMappingPolicies: {
-			returnType: "claimsMappingPolicy"
+			returnType: "claimsMappingPolicys"
 		},
 		createdObjects: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		delegatedPermissionClassifications: {
-			returnType: "delegatedPermissionClassification"
+			returnType: "delegatedPermissionClassifications"
 		},
 		endpoints: {
-			returnType: "endpoint"
+			returnType: "endpoints"
 		},
 		federatedIdentityCredentials: {
-			returnType: "federatedIdentityCredential"
+			returnType: "federatedIdentityCredentials"
 		},
 		homeRealmDiscoveryPolicies: {
-			returnType: "homeRealmDiscoveryPolicy"
+			returnType: "homeRealmDiscoveryPolicys"
 		},
 		memberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		oauth2PermissionGrants: {
-			returnType: "oAuth2PermissionGrant"
+			returnType: "oAuth2PermissionGrants"
 		},
 		ownedObjects: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		owners: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		remoteDesktopSecurityConfiguration: {
 			returnType: "remoteDesktopSecurityConfiguration"
 		},
 		tokenIssuancePolicies: {
-			returnType: "tokenIssuancePolicy"
+			returnType: "tokenIssuancePolicys"
 		},
 		tokenLifetimePolicies: {
-			returnType: "tokenLifetimePolicy"
+			returnType: "tokenLifetimePolicys"
 		},
 		transitiveMemberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		synchronization: {
 			returnType: "synchronization"
@@ -4915,55 +5905,73 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	servicePrincipalRiskDetections: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	serviceStorageQuotaBreakdown: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	serviceStorageQuotaBreakdowns: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	serviceUpdateMessage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
-			returnType: "serviceAnnouncementAttachment"
+			returnType: "serviceAnnouncementAttachments"
 		},
+	},
+	serviceUpdateMessages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	session: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		segments: {
-			returnType: "segment"
+			returnType: "segments"
 		},
 	},
 	set: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		children: {
-			returnType: "term"
+			returnType: "terms"
 		},
 		parentGroup: {
 			returnType: "group"
 		},
 		relations: {
-			returnType: "relation"
+			returnType: "relations"
 		},
 		terms: {
-			returnType: "term"
+			returnType: "terms"
 		},
 	},
 	settingStateDeviceSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	settingStateDeviceSummarys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	sharePointProtectionPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		siteInclusionRules: {
-			returnType: "siteProtectionRule"
+			returnType: "siteProtectionRules"
 		},
 		siteProtectionUnits: {
-			returnType: "siteProtectionUnit"
+			returnType: "siteProtectionUnits"
 		},
+	},
+	sharePointProtectionPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharePointRestoreSession: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		siteRestoreArtifacts: {
-			returnType: "siteRestoreArtifact"
+			returnType: "siteRestoreArtifacts"
 		},
+	},
+	sharePointRestoreSessions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharedDriveItem: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4971,7 +5979,7 @@ export const Mapper: IMapper = {
 			returnType: "driveItem"
 		},
 		items: {
-			returnType: "driveItem"
+			returnType: "driveItems"
 		},
 		list: {
 			returnType: "list"
@@ -4998,6 +6006,9 @@ export const Mapper: IMapper = {
 			returnType: "entity"
 		},
 	},
+	sharedInsights: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	sharedPCConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -5005,8 +6016,11 @@ export const Mapper: IMapper = {
 	sharedWithChannelTeamInfo: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allowedMembers: {
-			returnType: "conversationMember"
+			returnType: "conversationMembers"
 		},
+	},
+	sharedWithChannelTeamInfos: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharepoint: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5022,6 +6036,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	shifts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	shiftPreferences: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -5029,6 +6046,9 @@ export const Mapper: IMapper = {
 	signIn: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	signIns: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	simulation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5042,19 +6062,31 @@ export const Mapper: IMapper = {
 			returnType: "payload"
 		},
 	},
+	simulations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	simulationAutomation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		runs: {
-			returnType: "simulationAutomationRun"
+			returnType: "simulationAutomationRuns"
 		},
+	},
+	simulationAutomations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	simulationAutomationRun: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	simulationAutomationRuns: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	singleValueLegacyExtendedProperty: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	singleValueLegacyExtendedPropertys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	site: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5062,43 +6094,43 @@ export const Mapper: IMapper = {
 			returnType: "itemAnalytics"
 		},
 		columns: {
-			returnType: "columnDefinition"
+			returnType: "columnDefinitions"
 		},
 		contentTypes: {
-			returnType: "contentType"
+			returnType: "contentTypes"
 		},
 		drive: {
 			returnType: "drive"
 		},
 		drives: {
-			returnType: "drive"
+			returnType: "drives"
 		},
 		externalColumns: {
-			returnType: "columnDefinition"
+			returnType: "columnDefinitions"
 		},
 		items: {
-			returnType: "baseItem"
+			returnType: "baseItems"
 		},
 		lists: {
-			returnType: "list"
+			returnType: "lists"
 		},
 		operations: {
-			returnType: "richLongRunningOperation"
+			returnType: "richLongRunningOperations"
 		},
 		pages: {
-			returnType: "baseSitePage"
+			returnType: "baseSitePages"
 		},
 		permissions: {
-			returnType: "permission"
+			returnType: "permissions"
 		},
 		sites: {
-			returnType: "site"
+			returnType: "sites"
 		},
 		termStore: {
 			returnType: "store"
 		},
 		termStores: {
-			returnType: "store"
+			returnType: "stores"
 		},
 		onenote: {
 			returnType: "onenote"
@@ -5110,20 +6142,29 @@ export const Mapper: IMapper = {
 			returnType: "canvasLayout"
 		},
 		webParts: {
-			returnType: "webPart"
+			returnType: "webParts"
 		},
 	},
 	siteProtectionRule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	siteProtectionRules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	siteProtectionUnit: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	siteProtectionUnits: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	siteRestoreArtifact: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	siteRestoreArtifacts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	siteSource: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5148,12 +6189,15 @@ export const Mapper: IMapper = {
 	smsAuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "smsAuthenticationMethodTarget"
+			returnType: "smsAuthenticationMethodTargets"
 		},
 	},
 	smsAuthenticationMethodTarget: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	smsAuthenticationMethodTargets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	socialIdentityProvider: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5163,10 +6207,13 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	softwareOathAuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	softwareOathAuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "authenticationMethodTarget"
+			returnType: "authenticationMethodTargets"
 		},
 	},
 	softwareUpdateStatusSummary: {
@@ -5176,10 +6223,10 @@ export const Mapper: IMapper = {
 	solutionsRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bookingBusinesses: {
-			returnType: "bookingBusiness"
+			returnType: "bookingBusinesss"
 		},
 		bookingCurrencies: {
-			returnType: "bookingCurrency"
+			returnType: "bookingCurrencys"
 		},
 		backupRestore: {
 			returnType: "backupRestoreRoot"
@@ -5191,7 +6238,7 @@ export const Mapper: IMapper = {
 	sslCertificate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		relatedHosts: {
-			returnType: "host"
+			returnType: "hosts"
 		},
 	},
 	standardWebPart: {
@@ -5228,16 +6275,16 @@ export const Mapper: IMapper = {
 	store: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		groups: {
-			returnType: "group"
+			returnType: "groups"
 		},
 		sets: {
-			returnType: "set"
+			returnType: "sets"
 		},
 	},
 	stsPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliesTo: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 	},
 	subcategoryTemplate: {
@@ -5253,17 +6300,20 @@ export const Mapper: IMapper = {
 	subjectRightsRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		approvers: {
-			returnType: "user"
+			returnType: "users"
 		},
 		collaborators: {
-			returnType: "user"
+			returnType: "users"
 		},
 		notes: {
-			returnType: "authoredNote"
+			returnType: "authoredNotes"
 		},
 		team: {
 			returnType: "team"
 		},
+	},
+	subjectRightsRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	subscribeToToneOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5277,17 +6327,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	subscriptions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	swapShiftsChangeRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	swapShiftsChangeRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	synchronization: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		jobs: {
-			returnType: "synchronizationJob"
+			returnType: "synchronizationJobs"
 		},
 		templates: {
-			returnType: "synchronizationTemplate"
+			returnType: "synchronizationTemplates"
 		},
 	},
 	synchronizationJob: {
@@ -5299,10 +6355,13 @@ export const Mapper: IMapper = {
 			returnType: "synchronizationSchema"
 		},
 	},
+	synchronizationJobs: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	synchronizationSchema: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		directories: {
-			returnType: "directoryDefinition"
+			returnType: "directoryDefinitions"
 		},
 	},
 	synchronizationTemplate: {
@@ -5310,6 +6369,9 @@ export const Mapper: IMapper = {
 		schema: {
 			returnType: "synchronizationSchema"
 		},
+	},
+	synchronizationTemplates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	tag: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5319,32 +6381,41 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	targetDeviceGroups: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	targetedManagedAppConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
-			returnType: "managedMobileApp"
+			returnType: "managedMobileApps"
 		},
 		assignments: {
-			returnType: "targetedManagedAppPolicyAssignment"
+			returnType: "targetedManagedAppPolicyAssignments"
 		},
 		deploymentSummary: {
 			returnType: "managedAppPolicyDeploymentSummary"
 		},
 	},
+	targetedManagedAppConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	targetedManagedAppPolicyAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	targetedManagedAppPolicyAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	targetedManagedAppProtection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "targetedManagedAppPolicyAssignment"
+			returnType: "targetedManagedAppPolicyAssignments"
 		},
 	},
 	task: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		taskProcessingResults: {
-			returnType: "taskProcessingResult"
+			returnType: "taskProcessingResults"
 		},
 	},
 	taskDefinition: {
@@ -5373,34 +6444,34 @@ export const Mapper: IMapper = {
 			returnType: "taskDefinition"
 		},
 		taskProcessingResults: {
-			returnType: "taskProcessingResult"
+			returnType: "taskProcessingResults"
 		},
 	},
 	team: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allChannels: {
-			returnType: "channel"
+			returnType: "channels"
 		},
 		channels: {
-			returnType: "channel"
+			returnType: "channels"
 		},
 		group: {
 			returnType: "group"
 		},
 		incomingChannels: {
-			returnType: "channel"
+			returnType: "channels"
 		},
 		installedApps: {
-			returnType: "teamsAppInstallation"
+			returnType: "teamsAppInstallations"
 		},
 		members: {
-			returnType: "conversationMember"
+			returnType: "conversationMembers"
 		},
 		operations: {
-			returnType: "teamsAsyncOperation"
+			returnType: "teamsAsyncOperations"
 		},
 		permissionGrants: {
-			returnType: "resourceSpecificPermissionGrant"
+			returnType: "resourceSpecificPermissionGrants"
 		},
 		photo: {
 			returnType: "profilePhoto"
@@ -5409,7 +6480,7 @@ export const Mapper: IMapper = {
 			returnType: "channel"
 		},
 		tags: {
-			returnType: "teamworkTag"
+			returnType: "teamworkTags"
 		},
 		template: {
 			returnType: "teamsTemplate"
@@ -5417,6 +6488,9 @@ export const Mapper: IMapper = {
 		schedule: {
 			returnType: "schedule"
 		},
+	},
+	teams: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamInfo: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5427,14 +6501,20 @@ export const Mapper: IMapper = {
 	teamsApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appDefinitions: {
-			returnType: "teamsAppDefinition"
+			returnType: "teamsAppDefinitions"
 		},
+	},
+	teamsApps: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsAppDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bot: {
 			returnType: "teamworkBot"
 		},
+	},
+	teamsAppDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsAppInstallation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5445,6 +6525,9 @@ export const Mapper: IMapper = {
 			returnType: "teamsAppDefinition"
 		},
 	},
+	teamsAppInstallations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	teamsAppSettings: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -5453,11 +6536,17 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	teamsAsyncOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	teamsTab: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		teamsApp: {
 			returnType: "teamsApp"
 		},
+	},
+	teamsTabs: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5466,13 +6555,13 @@ export const Mapper: IMapper = {
 	teamwork: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		workforceIntegrations: {
-			returnType: "workforceIntegration"
+			returnType: "workforceIntegrations"
 		},
 		deletedChats: {
-			returnType: "deletedChat"
+			returnType: "deletedChats"
 		},
 		deletedTeams: {
-			returnType: "deletedTeam"
+			returnType: "deletedTeams"
 		},
 		teamsAppSettings: {
 			returnType: "teamsAppSettings"
@@ -5489,25 +6578,37 @@ export const Mapper: IMapper = {
 	teamworkTag: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
-			returnType: "teamworkTagMember"
+			returnType: "teamworkTagMembers"
 		},
+	},
+	teamworkTags: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamworkTagMember: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	teamworkTagMembers: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	telecomExpenseManagementPartner: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	telecomExpenseManagementPartners: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	temporaryAccessPassAuthenticationMethod: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	temporaryAccessPassAuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	temporaryAccessPassAuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "authenticationMethodTarget"
+			returnType: "authenticationMethodTargets"
 		},
 	},
 	tenantAppManagementPolicy: {
@@ -5520,19 +6621,19 @@ export const Mapper: IMapper = {
 			returnType: "multiTenantOrganization"
 		},
 		delegatedAdminCustomers: {
-			returnType: "delegatedAdminCustomer"
+			returnType: "delegatedAdminCustomers"
 		},
 		delegatedAdminRelationships: {
-			returnType: "delegatedAdminRelationship"
+			returnType: "delegatedAdminRelationships"
 		},
 	},
 	term: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		children: {
-			returnType: "term"
+			returnType: "terms"
 		},
 		relations: {
-			returnType: "relation"
+			returnType: "relations"
 		},
 		set: {
 			returnType: "set"
@@ -5541,11 +6642,14 @@ export const Mapper: IMapper = {
 	termsAndConditions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		acceptanceStatuses: {
-			returnType: "termsAndConditionsAcceptanceStatus"
+			returnType: "termsAndConditionsAcceptanceStatuss"
 		},
 		assignments: {
-			returnType: "termsAndConditionsAssignment"
+			returnType: "termsAndConditionsAssignments"
 		},
+	},
+	termsAndConditionss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	termsAndConditionsAcceptanceStatus: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5553,17 +6657,23 @@ export const Mapper: IMapper = {
 			returnType: "termsAndConditions"
 		},
 	},
+	termsAndConditionsAcceptanceStatuss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	termsAndConditionsAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	termsAndConditionsAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	termsOfUseContainer: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		agreementAcceptances: {
-			returnType: "agreementAcceptance"
+			returnType: "agreementAcceptances"
 		},
 		agreements: {
-			returnType: "agreement"
+			returnType: "agreements"
 		},
 	},
 	textWebPart: {
@@ -5573,133 +6683,169 @@ export const Mapper: IMapper = {
 	threatAssessmentRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		results: {
-			returnType: "threatAssessmentResult"
+			returnType: "threatAssessmentResults"
 		},
+	},
+	threatAssessmentRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	threatAssessmentResult: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	threatAssessmentResults: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	threatIntelligence: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		articleIndicators: {
-			returnType: "articleIndicator"
+			returnType: "articleIndicators"
 		},
 		articles: {
-			returnType: "article"
+			returnType: "articles"
 		},
 		hostComponents: {
-			returnType: "hostComponent"
+			returnType: "hostComponents"
 		},
 		hostCookies: {
-			returnType: "hostCookie"
+			returnType: "hostCookies"
 		},
 		hostPairs: {
-			returnType: "hostPair"
+			returnType: "hostPairs"
 		},
 		hostPorts: {
-			returnType: "hostPort"
+			returnType: "hostPorts"
 		},
 		hosts: {
-			returnType: "host"
+			returnType: "hosts"
 		},
 		hostSslCertificates: {
-			returnType: "hostSslCertificate"
+			returnType: "hostSslCertificates"
 		},
 		hostTrackers: {
-			returnType: "hostTracker"
+			returnType: "hostTrackers"
 		},
 		intelligenceProfileIndicators: {
-			returnType: "intelligenceProfileIndicator"
+			returnType: "intelligenceProfileIndicators"
 		},
 		intelProfiles: {
-			returnType: "intelligenceProfile"
+			returnType: "intelligenceProfiles"
 		},
 		passiveDnsRecords: {
-			returnType: "passiveDnsRecord"
+			returnType: "passiveDnsRecords"
 		},
 		sslCertificates: {
-			returnType: "sslCertificate"
+			returnType: "sslCertificates"
 		},
 		subdomains: {
-			returnType: "subdomain"
+			returnType: "subdomains"
 		},
 		vulnerabilities: {
-			returnType: "vulnerability"
+			returnType: "vulnerabilitys"
 		},
 		whoisHistoryRecords: {
-			returnType: "whoisHistoryRecord"
+			returnType: "whoisHistoryRecords"
 		},
 		whoisRecords: {
-			returnType: "whoisRecord"
+			returnType: "whoisRecords"
 		},
 	},
 	thumbnailSet: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	thumbnailSets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	timeOff: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	timeOffs: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	timeOffReason: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	timeOffReasons: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	timeOffRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	timeOffRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	todo: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		lists: {
-			returnType: "todoTaskList"
+			returnType: "todoTaskLists"
 		},
 	},
 	todoTask: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
-			returnType: "attachmentBase"
+			returnType: "attachmentBases"
 		},
 		attachmentSessions: {
-			returnType: "attachmentSession"
+			returnType: "attachmentSessions"
 		},
 		checklistItems: {
-			returnType: "checklistItem"
+			returnType: "checklistItems"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 		linkedResources: {
-			returnType: "linkedResource"
+			returnType: "linkedResources"
 		},
+	},
+	todoTasks: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	todoTaskList: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 		tasks: {
-			returnType: "todoTask"
+			returnType: "todoTasks"
 		},
+	},
+	todoTaskLists: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	tokenIssuancePolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	tokenIssuancePolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	tokenLifetimePolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	tokenLifetimePolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	training: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		languageDetails: {
-			returnType: "trainingLanguageDetail"
+			returnType: "trainingLanguageDetails"
 		},
+	},
+	trainings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	trainingLanguageDetail: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	trainingLanguageDetails: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	trending: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5707,16 +6853,19 @@ export const Mapper: IMapper = {
 			returnType: "entity"
 		},
 	},
+	trendings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	triggerTypesRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		retentionEventTypes: {
-			returnType: "retentionEventType"
+			returnType: "retentionEventTypes"
 		},
 	},
 	triggersRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		retentionEvents: {
-			returnType: "retentionEvent"
+			returnType: "retentionEvents"
 		},
 	},
 	unbilledUsage: {
@@ -5737,11 +6886,17 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	unifiedRbacResourceActions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	unifiedRbacResourceNamespace: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resourceActions: {
-			returnType: "unifiedRbacResourceAction"
+			returnType: "unifiedRbacResourceActions"
 		},
+	},
+	unifiedRbacResourceNamespaces: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleAssignment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5758,17 +6913,26 @@ export const Mapper: IMapper = {
 			returnType: "unifiedRoleDefinition"
 		},
 	},
+	unifiedRoleAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	unifiedRoleAssignmentSchedule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "unifiedRoleEligibilitySchedule"
 		},
 	},
+	unifiedRoleAssignmentSchedules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	unifiedRoleAssignmentScheduleInstance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "unifiedRoleEligibilityScheduleInstance"
 		},
+	},
+	unifiedRoleAssignmentScheduleInstances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleAssignmentScheduleRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5791,19 +6955,31 @@ export const Mapper: IMapper = {
 			returnType: "unifiedRoleAssignmentSchedule"
 		},
 	},
+	unifiedRoleAssignmentScheduleRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	unifiedRoleDefinition: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		inheritsPermissionsFrom: {
-			returnType: "unifiedRoleDefinition"
+			returnType: "unifiedRoleDefinitions"
 		},
+	},
+	unifiedRoleDefinitions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleEligibilitySchedule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	unifiedRoleEligibilitySchedules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	unifiedRoleEligibilityScheduleInstance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	unifiedRoleEligibilityScheduleInstances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleEligibilityScheduleRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5823,14 +6999,20 @@ export const Mapper: IMapper = {
 			returnType: "unifiedRoleEligibilitySchedule"
 		},
 	},
+	unifiedRoleEligibilityScheduleRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	unifiedRoleManagementPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		effectiveRules: {
-			returnType: "unifiedRoleManagementPolicyRule"
+			returnType: "unifiedRoleManagementPolicyRules"
 		},
 		rules: {
-			returnType: "unifiedRoleManagementPolicyRule"
+			returnType: "unifiedRoleManagementPolicyRules"
 		},
+	},
+	unifiedRoleManagementPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleManagementPolicyApprovalRule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5841,6 +7023,9 @@ export const Mapper: IMapper = {
 		policy: {
 			returnType: "unifiedRoleManagementPolicy"
 		},
+	},
+	unifiedRoleManagementPolicyAssignments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleManagementPolicyAuthenticationContextRule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5861,6 +7046,9 @@ export const Mapper: IMapper = {
 	unifiedRoleManagementPolicyRule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	unifiedRoleManagementPolicyRules: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleScheduleBase: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5895,7 +7083,7 @@ export const Mapper: IMapper = {
 	unifiedStorageQuota: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		services: {
-			returnType: "serviceStorageQuotaBreakdown"
+			returnType: "serviceStorageQuotaBreakdowns"
 		},
 	},
 	unmuteParticipantOperation: {
@@ -5916,106 +7104,109 @@ export const Mapper: IMapper = {
 			returnType: "entity"
 		},
 	},
+	usedInsights: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	user: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appRoleAssignments: {
-			returnType: "appRoleAssignment"
+			returnType: "appRoleAssignments"
 		},
 		createdObjects: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		directReports: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		licenseDetails: {
-			returnType: "licenseDetails"
+			returnType: "licenseDetailss"
 		},
 		manager: {
 			returnType: "directoryObject"
 		},
 		memberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		oauth2PermissionGrants: {
-			returnType: "oAuth2PermissionGrant"
+			returnType: "oAuth2PermissionGrants"
 		},
 		ownedDevices: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		ownedObjects: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		registeredDevices: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		scopedRoleMemberOf: {
-			returnType: "scopedRoleMembership"
+			returnType: "scopedRoleMemberships"
 		},
 		sponsors: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		transitiveMemberOf: {
-			returnType: "directoryObject"
+			returnType: "directoryObjects"
 		},
 		calendar: {
 			returnType: "calendar"
 		},
 		calendarGroups: {
-			returnType: "calendarGroup"
+			returnType: "calendarGroups"
 		},
 		calendars: {
-			returnType: "calendar"
+			returnType: "calendars"
 		},
 		calendarView: {
-			returnType: "event"
+			returnType: "events"
 		},
 		contactFolders: {
-			returnType: "contactFolder"
+			returnType: "contactFolders"
 		},
 		contacts: {
-			returnType: "contact"
+			returnType: "contacts"
 		},
 		events: {
-			returnType: "event"
+			returnType: "events"
 		},
 		inferenceClassification: {
 			returnType: "inferenceClassification"
 		},
 		mailFolders: {
-			returnType: "mailFolder"
+			returnType: "mailFolders"
 		},
 		messages: {
-			returnType: "message"
+			returnType: "messages"
 		},
 		outlook: {
 			returnType: "outlookUser"
 		},
 		people: {
-			returnType: "person"
+			returnType: "persons"
 		},
 		drive: {
 			returnType: "drive"
 		},
 		drives: {
-			returnType: "drive"
+			returnType: "drives"
 		},
 		followedSites: {
-			returnType: "site"
+			returnType: "sites"
 		},
 		extensions: {
-			returnType: "extension"
+			returnType: "extensions"
 		},
 		agreementAcceptances: {
-			returnType: "agreementAcceptance"
+			returnType: "agreementAcceptances"
 		},
 		managedDevices: {
-			returnType: "managedDevice"
+			returnType: "managedDevices"
 		},
 		managedAppRegistrations: {
-			returnType: "managedAppRegistration"
+			returnType: "managedAppRegistrations"
 		},
 		deviceManagementTroubleshootingEvents: {
-			returnType: "deviceManagementTroubleshootingEvent"
+			returnType: "deviceManagementTroubleshootingEvents"
 		},
 		planner: {
 			returnType: "plannerUser"
@@ -6036,13 +7227,13 @@ export const Mapper: IMapper = {
 			returnType: "profilePhoto"
 		},
 		photos: {
-			returnType: "profilePhoto"
+			returnType: "profilePhotos"
 		},
 		activities: {
-			returnType: "userActivity"
+			returnType: "userActivitys"
 		},
 		onlineMeetings: {
-			returnType: "onlineMeeting"
+			returnType: "onlineMeetings"
 		},
 		presence: {
 			returnType: "presence"
@@ -6051,13 +7242,13 @@ export const Mapper: IMapper = {
 			returnType: "authentication"
 		},
 		chats: {
-			returnType: "chat"
+			returnType: "chats"
 		},
 		joinedTeams: {
-			returnType: "team"
+			returnType: "teams"
 		},
 		permissionGrants: {
-			returnType: "resourceSpecificPermissionGrant"
+			returnType: "resourceSpecificPermissionGrants"
 		},
 		teamwork: {
 			returnType: "userTeamwork"
@@ -6072,11 +7263,17 @@ export const Mapper: IMapper = {
 			returnType: "employeeExperienceUser"
 		},
 	},
+	users: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userActivity: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		historyItems: {
-			returnType: "activityHistoryItem"
+			returnType: "activityHistoryItems"
 		},
+	},
+	userActivitys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userConsentRequest: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6084,37 +7281,64 @@ export const Mapper: IMapper = {
 			returnType: "approval"
 		},
 	},
+	userConsentRequests: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIds: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsAppHealthAppPerformanceByOSVersion: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsAppHealthAppPerformanceByOSVersions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthApplicationPerformance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsAppHealthApplicationPerformances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsAppHealthDeviceModelPerformance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsAppHealthDeviceModelPerformances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthDevicePerformance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsAppHealthDevicePerformances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsAppHealthDevicePerformanceDetails: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsAppHealthDevicePerformanceDetailss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsAppHealthOSVersionPerformance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsAppHealthOSVersionPerformances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsBaseline: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6140,43 +7364,73 @@ export const Mapper: IMapper = {
 			returnType: "userExperienceAnalyticsCategory"
 		},
 	},
+	userExperienceAnalyticsBaselines: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsCategory: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		metricValues: {
-			returnType: "userExperienceAnalyticsMetric"
+			returnType: "userExperienceAnalyticsMetrics"
 		},
+	},
+	userExperienceAnalyticsCategorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDevicePerformance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsDevicePerformances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsDeviceScores: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsDeviceScoress: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDeviceStartupHistory: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsDeviceStartupHistorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsDeviceStartupProcess: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsDeviceStartupProcesss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDeviceStartupProcessPerformance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsDeviceStartupProcessPerformances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsMetric: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsMetrics: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsMetricHistory: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsMetricHistorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsModelScores: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsModelScoress: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsOverview: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6186,9 +7440,15 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsScoreHistorys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userExperienceAnalyticsWorkFromAnywhereDevice: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userExperienceAnalyticsWorkFromAnywhereDevices: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6197,25 +7457,37 @@ export const Mapper: IMapper = {
 	userExperienceAnalyticsWorkFromAnywhereMetric: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		metricDevices: {
-			returnType: "userExperienceAnalyticsWorkFromAnywhereDevice"
+			returnType: "userExperienceAnalyticsWorkFromAnywhereDevices"
 		},
+	},
+	userExperienceAnalyticsWorkFromAnywhereMetrics: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsWorkFromAnywhereModelPerformance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	userExperienceAnalyticsWorkFromAnywhereModelPerformances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userFlowLanguageConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		defaultPages: {
-			returnType: "userFlowLanguagePage"
+			returnType: "userFlowLanguagePages"
 		},
 		overridesPages: {
-			returnType: "userFlowLanguagePage"
+			returnType: "userFlowLanguagePages"
 		},
+	},
+	userFlowLanguageConfigurations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userFlowLanguagePage: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userFlowLanguagePages: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userInsightsSettings: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6224,8 +7496,11 @@ export const Mapper: IMapper = {
 	userInstallStateSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceStates: {
-			returnType: "deviceInstallState"
+			returnType: "deviceInstallStates"
 		},
+	},
+	userInstallStateSummarys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userProcessingResult: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6233,12 +7508,15 @@ export const Mapper: IMapper = {
 			returnType: "user"
 		},
 		taskProcessingResults: {
-			returnType: "taskProcessingResult"
+			returnType: "taskProcessingResults"
 		},
 	},
 	userRegistrationDetails: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	userRegistrationDetailss: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userScopeTeamsAppInstallation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6246,13 +7524,16 @@ export const Mapper: IMapper = {
 			returnType: "chat"
 		},
 	},
+	userScopeTeamsAppInstallations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	userSettings: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		itemInsights: {
 			returnType: "userInsightsSettings"
 		},
 		windows: {
-			returnType: "windowsSetting"
+			returnType: "windowsSettings"
 		},
 		shiftPreferences: {
 			returnType: "shiftPreferences"
@@ -6284,65 +7565,74 @@ export const Mapper: IMapper = {
 	userTeamwork: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		associatedTeams: {
-			returnType: "associatedTeamInfo"
+			returnType: "associatedTeamInfos"
 		},
 		installedApps: {
-			returnType: "userScopeTeamsAppInstallation"
+			returnType: "userScopeTeamsAppInstallations"
 		},
 	},
 	verticalSection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		webparts: {
-			returnType: "webPart"
+			returnType: "webParts"
 		},
 	},
 	virtualEndpoint: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		auditEvents: {
-			returnType: "cloudPcAuditEvent"
+			returnType: "cloudPcAuditEvents"
 		},
 		cloudPCs: {
-			returnType: "cloudPC"
+			returnType: "cloudPCs"
 		},
 		deviceImages: {
-			returnType: "cloudPcDeviceImage"
+			returnType: "cloudPcDeviceImages"
 		},
 		galleryImages: {
-			returnType: "cloudPcGalleryImage"
+			returnType: "cloudPcGalleryImages"
 		},
 		onPremisesConnections: {
-			returnType: "cloudPcOnPremisesConnection"
+			returnType: "cloudPcOnPremisesConnections"
 		},
 		provisioningPolicies: {
-			returnType: "cloudPcProvisioningPolicy"
+			returnType: "cloudPcProvisioningPolicys"
 		},
 		userSettings: {
-			returnType: "cloudPcUserSetting"
+			returnType: "cloudPcUserSettings"
 		},
 	},
 	virtualEvent: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		presenters: {
-			returnType: "virtualEventPresenter"
+			returnType: "virtualEventPresenters"
 		},
 		sessions: {
-			returnType: "virtualEventSession"
+			returnType: "virtualEventSessions"
 		},
+	},
+	virtualEvents: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventPresenter: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	virtualEventPresenters: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	virtualEventRegistration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sessions: {
-			returnType: "virtualEventSession"
+			returnType: "virtualEventSessions"
 		},
+	},
+	virtualEventRegistrations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventRegistrationConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		questions: {
-			returnType: "virtualEventRegistrationQuestionBase"
+			returnType: "virtualEventRegistrationQuestionBases"
 		},
 	},
 	virtualEventRegistrationCustomQuestion: {
@@ -6357,13 +7647,22 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	virtualEventRegistrationQuestionBases: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	virtualEventSession: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	virtualEventSessions: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	virtualEventTownhall: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	virtualEventTownhalls: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventWebinar: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6371,8 +7670,11 @@ export const Mapper: IMapper = {
 			returnType: "virtualEventWebinarRegistrationConfiguration"
 		},
 		registrations: {
-			returnType: "virtualEventRegistration"
+			returnType: "virtualEventRegistrations"
 		},
+	},
+	virtualEventWebinars: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventWebinarRegistrationConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6381,32 +7683,35 @@ export const Mapper: IMapper = {
 	virtualEventsRoot: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		events: {
-			returnType: "virtualEvent"
+			returnType: "virtualEvents"
 		},
 		townhalls: {
-			returnType: "virtualEventTownhall"
+			returnType: "virtualEventTownhalls"
 		},
 		webinars: {
-			returnType: "virtualEventWebinar"
+			returnType: "virtualEventWebinars"
 		},
 	},
 	voiceAuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "authenticationMethodTarget"
+			returnType: "authenticationMethodTargets"
 		},
 	},
 	vppToken: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	vppTokens: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	vulnerability: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		articles: {
-			returnType: "article"
+			returnType: "articles"
 		},
 		components: {
-			returnType: "vulnerabilityComponent"
+			returnType: "vulnerabilityComponents"
 		},
 	},
 	vulnerabilityComponent: {
@@ -6421,6 +7726,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	webParts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	whoisBaseRecord: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
@@ -6434,7 +7742,7 @@ export const Mapper: IMapper = {
 	whoisRecord: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		history: {
-			returnType: "whoisHistoryRecord"
+			returnType: "whoisHistoryRecords"
 		},
 	},
 	win32LobApp: {
@@ -6492,7 +7800,7 @@ export const Mapper: IMapper = {
 	windowsAutopilotDeploymentProfile: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignedDevices: {
-			returnType: "windowsAutopilotDeviceIdentity"
+			returnType: "windowsAutopilotDeviceIdentitys"
 		},
 	},
 	windowsAutopilotDeploymentProfileAssignment: {
@@ -6503,6 +7811,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	windowsAutopilotDeviceIdentitys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	windowsDefenderAdvancedThreatProtectionConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -6511,45 +7822,66 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	windowsDeviceMalwareStates: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	windowsHelloForBusinessAuthenticationMethod: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		device: {
 			returnType: "device"
 		},
 	},
+	windowsHelloForBusinessAuthenticationMethods: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	windowsInformationProtection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
-			returnType: "targetedManagedAppPolicyAssignment"
+			returnType: "targetedManagedAppPolicyAssignments"
 		},
 		exemptAppLockerFiles: {
-			returnType: "windowsInformationProtectionAppLockerFile"
+			returnType: "windowsInformationProtectionAppLockerFiles"
 		},
 		protectedAppLockerFiles: {
-			returnType: "windowsInformationProtectionAppLockerFile"
+			returnType: "windowsInformationProtectionAppLockerFiles"
 		},
 	},
 	windowsInformationProtectionAppLearningSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	windowsInformationProtectionAppLearningSummarys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	windowsInformationProtectionAppLockerFile: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	windowsInformationProtectionAppLockerFiles: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsInformationProtectionNetworkLearningSummary: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	windowsInformationProtectionNetworkLearningSummarys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	windowsInformationProtectionPolicy: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	windowsInformationProtectionPolicys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	windowsMalwareInformation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceMalwareStates: {
-			returnType: "malwareStateForWindowsDevice"
+			returnType: "malwareStateForWindowsDevices"
 		},
+	},
+	windowsMalwareInformations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsMicrosoftEdgeApp: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6574,23 +7906,29 @@ export const Mapper: IMapper = {
 	windowsProtectionState: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		detectedMalwareState: {
-			returnType: "windowsDeviceMalwareState"
+			returnType: "windowsDeviceMalwareStates"
 		},
 	},
 	windowsSetting: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		instances: {
-			returnType: "windowsSettingInstance"
+			returnType: "windowsSettingInstances"
 		},
+	},
+	windowsSettings: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsSettingInstance: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	windowsSettingInstances: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	windowsUniversalAppX: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		committedContainedApps: {
-			returnType: "mobileContainedApp"
+			returnType: "mobileContainedApps"
 		},
 	},
 	windowsUniversalAppXContainedApp: {
@@ -6611,22 +7949,22 @@ export const Mapper: IMapper = {
 			returnType: "workbookApplication"
 		},
 		comments: {
-			returnType: "workbookComment"
+			returnType: "workbookComments"
 		},
 		functions: {
 			returnType: "workbookFunctions"
 		},
 		names: {
-			returnType: "workbookNamedItem"
+			returnType: "workbookNamedItems"
 		},
 		operations: {
-			returnType: "workbookOperation"
+			returnType: "workbookOperations"
 		},
 		tables: {
-			returnType: "workbookTable"
+			returnType: "workbookTables"
 		},
 		worksheets: {
-			returnType: "workbookWorksheet"
+			returnType: "workbookWorksheets"
 		},
 	},
 	workbookApplication: {
@@ -6648,7 +7986,7 @@ export const Mapper: IMapper = {
 			returnType: "workbookChartLegend"
 		},
 		series: {
-			returnType: "workbookChartSeries"
+			returnType: "workbookChartSeriess"
 		},
 		title: {
 			returnType: "workbookChartTitle"
@@ -6656,6 +7994,9 @@ export const Mapper: IMapper = {
 		worksheet: {
 			returnType: "workbookWorksheet"
 		},
+	},
+	workbookCharts: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookChartAreaFormat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6774,6 +8115,9 @@ export const Mapper: IMapper = {
 			returnType: "workbookChartPointFormat"
 		},
 	},
+	workbookChartPoints: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	workbookChartPointFormat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fill: {
@@ -6786,8 +8130,11 @@ export const Mapper: IMapper = {
 			returnType: "workbookChartSeriesFormat"
 		},
 		points: {
-			returnType: "workbookChartPoint"
+			returnType: "workbookChartPoints"
 		},
+	},
+	workbookChartSeriess: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookChartSeriesFormat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6816,12 +8163,18 @@ export const Mapper: IMapper = {
 	workbookComment: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		replies: {
-			returnType: "workbookCommentReply"
+			returnType: "workbookCommentReplys"
 		},
+	},
+	workbookComments: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookCommentReply: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	workbookCommentReplys: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookFilter: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6845,15 +8198,24 @@ export const Mapper: IMapper = {
 			returnType: "workbookWorksheet"
 		},
 	},
+	workbookNamedItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	workbookOperation: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	workbookOperations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookPivotTable: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		worksheet: {
 			returnType: "workbookWorksheet"
 		},
+	},
+	workbookPivotTables: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookRange: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6871,6 +8233,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	workbookRangeBorders: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	workbookRangeFill: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -6882,7 +8247,7 @@ export const Mapper: IMapper = {
 	workbookRangeFormat: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		borders: {
-			returnType: "workbookRangeBorder"
+			returnType: "workbookRangeBorders"
 		},
 		fill: {
 			returnType: "workbookRangeFill"
@@ -6901,16 +8266,19 @@ export const Mapper: IMapper = {
 	workbookRangeView: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		rows: {
-			returnType: "workbookRangeView"
+			returnType: "workbookRangeViews"
 		},
+	},
+	workbookRangeViews: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookTable: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		columns: {
-			returnType: "workbookTableColumn"
+			returnType: "workbookTableColumns"
 		},
 		rows: {
-			returnType: "workbookTableRow"
+			returnType: "workbookTableRows"
 		},
 		sort: {
 			returnType: "workbookTableSort"
@@ -6919,15 +8287,24 @@ export const Mapper: IMapper = {
 			returnType: "workbookWorksheet"
 		},
 	},
+	workbookTables: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	workbookTableColumn: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		filter: {
 			returnType: "workbookFilter"
 		},
 	},
+	workbookTableColumns: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	workbookTableRow: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	workbookTableRows: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookTableSort: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6936,20 +8313,23 @@ export const Mapper: IMapper = {
 	workbookWorksheet: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		charts: {
-			returnType: "workbookChart"
+			returnType: "workbookCharts"
 		},
 		names: {
-			returnType: "workbookNamedItem"
+			returnType: "workbookNamedItems"
 		},
 		pivotTables: {
-			returnType: "workbookPivotTable"
+			returnType: "workbookPivotTables"
 		},
 		protection: {
 			returnType: "workbookWorksheetProtection"
 		},
 		tables: {
-			returnType: "workbookTable"
+			returnType: "workbookTables"
 		},
+	},
+	workbookWorksheets: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookWorksheetProtection: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6958,19 +8338,19 @@ export const Mapper: IMapper = {
 	workflow: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		executionScope: {
-			returnType: "userProcessingResult"
+			returnType: "userProcessingResults"
 		},
 		runs: {
-			returnType: "run"
+			returnType: "runs"
 		},
 		taskReports: {
-			returnType: "taskReport"
+			returnType: "taskReports"
 		},
 		userProcessingResults: {
-			returnType: "userProcessingResult"
+			returnType: "userProcessingResults"
 		},
 		versions: {
-			returnType: "workflowVersion"
+			returnType: "workflowVersions"
 		},
 	},
 	workflowBase: {
@@ -6982,13 +8362,13 @@ export const Mapper: IMapper = {
 			returnType: "user"
 		},
 		tasks: {
-			returnType: "task"
+			returnType: "tasks"
 		},
 	},
 	workflowTemplate: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		tasks: {
-			returnType: "task"
+			returnType: "tasks"
 		},
 	},
 	workflowVersion: {
@@ -6999,6 +8379,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	workforceIntegrations: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	workingTimeSchedule: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
@@ -7006,7 +8389,7 @@ export const Mapper: IMapper = {
 	x509CertificateAuthenticationMethodConfiguration: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
-			returnType: "authenticationMethodTarget"
+			returnType: "authenticationMethodTargets"
 		},
 	},
 	x509CertificateCombinationConfiguration: {

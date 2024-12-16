@@ -793,7 +793,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 let mapperReturnType = returnTypeName.split('.');
                 mapperReturnType = mapperReturnType[mapperReturnType.length - 1];
                 argsMapperStr = argsMapper.length > 0 ? `"${argsMapper.join('", "')}"` : "";
-                mapper.push(`\t\t${method.name}: {\n${argsMapperStr ? "\t\t\argNames: [" + argsMapperStr + "],\n" : ""}${mapperReturnType != "void" ? "\t\t\treturnType: \"" + mapperReturnType + "\"\n" : ""}\t\t},`)
+                mapper.push(`\t\t${method.name}: {\n${argsMapperStr ? "\t\t\argNames: [" + argsMapperStr + "],\n" : ""}${mapperReturnType != "void" ? "\t\t\treturnType: \"" + mapperReturnType + (isCollection ? "s" : "") + "\"\n" : ""}\t\t},`)
                 mapperDef.push(`\t\t${method.name}: IMapperMethod${argsMapperStr ? " & {\n\t\t\targNames: [" + argsMapperStr + "]\n\t\t}" : ""},`);
 
                 // See if it has args
@@ -837,6 +837,18 @@ ${mapper.join('\n')}
 \t\tquery: IMapperMethod & { argNames: ["oData"] }
 ${mapperDef.join('\n')}
 \t},`);
+
+        // See if this is a collection
+        if (collectionInterface && name != "site") {
+            // Add the collection to the mapper
+            contentMapper.push(`\t${name}s: {
+\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },
+\t},`)
+            contentMapperDef.push(`\t${name}s: {
+\t\tproperties?: Array<string>;
+\t\tquery: IMapperMethod & { argNames: ["oData"] }
+\t},`);
+        }
     }
     fs.writeFileSync("lib/microsoft/graph/entityTypes.d.ts", content.join('\n').replace(/EntityTypes./g, ""));
 
