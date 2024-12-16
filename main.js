@@ -737,9 +737,15 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
 
         // Parse the properties
         let props = [];
+        let parentReference = null;
         for (let prop of entity.props) {
-            // Add the property
-            props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
+            if (prop.name == "parentReference") {
+                // Set the parent reference
+                parentReference = getGraphType(prop.returnType);
+            } else {
+                // Add the property
+                props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
+            }
         }
 
         // Parse the methods
@@ -805,7 +811,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
 * ${name}
 **********************************************/
 export interface ${name} extends ${name}Props, ${name}Methods${entity.returnType && getGraphType(entity.returnType) ? ", " + getGraphType(entity.returnType) : ""} { }
-export interface ${name}Props {
+export interface ${name}Props${parentReference ? " extends " + parentReference : ""} {
 ${props.join('\n')}
 }
 export interface ${name}Methods {

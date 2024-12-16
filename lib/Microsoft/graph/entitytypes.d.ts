@@ -2272,7 +2272,7 @@ export interface backupRestoreRootOData {
 * baseItem
 **********************************************/
 export interface baseItem extends baseItemProps, baseItemMethods, entity { }
-export interface baseItemProps {
+export interface baseItemProps extends ComplexTypes.itemReference {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	description: string;
@@ -2280,7 +2280,6 @@ export interface baseItemProps {
 	lastModifiedBy: ComplexTypes.identitySet;
 	lastModifiedDateTime: any;
 	name: string;
-	parentReference: ComplexTypes.itemReference;
 	webUrl: string;
 }
 export interface baseItemMethods {
