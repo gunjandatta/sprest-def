@@ -693,7 +693,7 @@ ${props.join('\n')}
 
     // Create the entities
     content = [
-        "import { IBaseCollection, IBaseQuery, IBaseResults } from \"../../base\";",
+        "import { IBaseCollection, IBaseExecution, IBaseQuery, IBaseResults } from \"../../base\";",
         "import * as ComplexTypes from \"./complexTypes.d\";",
         "import * as EnumTypes from \"./enumTypes.d\";"
     ];
@@ -733,7 +733,6 @@ ${props.join('\n')}
             props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
         }
 
-        if (name == "columnDefinition") { debugger; }
         // Parse the methods
         let mapper = [];
         let mapperDef = [];
