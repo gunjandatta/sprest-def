@@ -862,10 +862,10 @@ ${mapperDef.join('\n')}
     ].join('\n'));
     fs.appendFileSync('lib/mapperv2.ts', [
         'import { IMapper } from "./mapperv2.d";',
-        'import { RequestType } from "../utils";',
+        '//import { RequestType } from "../utils";',
         'export const Mapper: IMapper = {',
         contentMapper.join('\n'),
-        '};'
+        '}'
     ].join('\n'));
 }
 
