@@ -726,6 +726,15 @@ ${props.join('\n')}
         let entity = entities[name];
         let baseType = entity.returnType && getGraphType(entity.returnType) ? getGraphType(entity.returnType) + " & " : "";
 
+        // See if a collection exists
+        let collectionInterface = null;
+        if (collections["graph." + name] && baseType) {
+            collectionInterface = `
+export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData & ${name}Props> {
+    add(values?: any): IBaseExecution<${name}>;
+}`;
+        }
+
         // Parse the properties
         let props = [];
         for (let prop of entity.props) {
@@ -754,7 +763,18 @@ ${props.join('\n')}
             let isComplexType = returnType.indexOf("ComplexTypes.") == 0;
             let returnTypeName = returnType.replace(/\[\]$/, '');
             let methodsType = returnType == "void" || isComplexType || isCollection ? "" : " & " + returnTypeName + "Methods";
-            let methodString = `\t${method.name}(${argStrings.join(", ")}): ${isCollection ? "IBaseCollection" : "IBaseQuery"}<${returnTypeName}${isCollection && !isComplexType ? ", " + baseType + returnTypeName + "OData & " + returnTypeName + "Props" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`;
+            let methodString = `\t${method.name}(${argStrings.join(", ")}): `
+            if (isCollection) {
+                let collectionType = returnTypeName.split('.');
+                collectionType = collectionType[collectionType.length - 1];
+                if (collections["graph." + collectionType] && getGraphType(entities[collectionType].returnType)) {
+                    methodString += `${collectionType}Collection;`;
+                } else {
+                    methodString += `IBaseCollection<${returnTypeName}${!isComplexType ? ", " + baseType + returnTypeName + "OData & " + returnTypeName + "Props" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`
+                }
+            } else {
+                methodString += `IBaseQuery<${returnTypeName}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`
+            };
             methods.push(methodString);
 
             // Ensure we haven't already added it
@@ -793,7 +813,7 @@ ${methods.join('\n')}
 }
 export interface ${name}OData {
 ${odataResults.join('\n')}
-}`);
+}${collectionInterface || ""}`);
 
         // Add the mapper
         contentMapper.push(`\t${name}: {
