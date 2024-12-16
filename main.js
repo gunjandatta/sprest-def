@@ -793,7 +793,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 let mapperReturnType = returnTypeName.split('.');
                 mapperReturnType = mapperReturnType[mapperReturnType.length - 1];
                 argsMapperStr = argsMapper.length > 0 ? `"${argsMapper.join('", "')}"` : "";
-                mapper.push(`\t\t${method.name}: {\n${argsMapperStr ? "\t\t\argNames: [" + argsMapperStr + "],\n" : ""}${mapperReturnType != "void" ? "\t\t\treturnType: \"" + mapperReturnType + (isCollection ? "s" : "") + "\"\n" : ""}\t\t},`)
+                mapper.push(`\t\t${method.name}: {\n${argsMapperStr ? "\t\t\targNames: [" + argsMapperStr + "],\n" : ""}${isCollection ? "\t\t\trequestType: RequestType.Get,\n" : ""}${mapperReturnType != "void" ? "\t\t\treturnType: \"" + mapperReturnType + (isCollection ? "s" : "") + "\"\n" : ""}\t\t},`)
                 mapperDef.push(`\t\t${method.name}: IMapperMethod${argsMapperStr ? " & {\n\t\t\targNames: [" + argsMapperStr + "]\n\t\t}" : ""},`);
 
                 // See if it has args
@@ -862,7 +862,7 @@ ${mapperDef.join('\n')}
     ].join('\n'));
     fs.appendFileSync('lib/mapperv2.ts', [
         'import { IMapper } from "./mapperv2.d";',
-        '//import { RequestType } from "../utils";',
+        'import { RequestType } from "../utils";',
         'export const Mapper: IMapper = {',
         contentMapper.join('\n'),
         '}'
