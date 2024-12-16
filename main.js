@@ -735,6 +735,10 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
 }`;
         }
 
+        // Get the base return type
+        let baseReturnType = null;
+        if (entity.returnType) { baseReturnType = getGraphType(entity.returnType); }
+
         // Parse the properties
         let props = [];
         let parentReference = null;
@@ -810,14 +814,14 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
         content.push(`/*********************************************
 * ${name}
 **********************************************/
-export interface ${name} extends ${name}Props, ${name}Methods${entity.returnType && getGraphType(entity.returnType) ? ", " + getGraphType(entity.returnType) : ""} { }
-export interface ${name}Props${parentReference ? " extends " + parentReference : ""} {
+export interface ${name} extends ${name}Props, ${name}Methods { }
+export interface ${name}Props${parentReference || baseReturnType ? " extends" : ""} ${parentReference ? parentReference : ""} ${parentReference && baseReturnType ? ", " : ""}${baseReturnType ? baseReturnType + "Props" : ""} {
 ${props.join('\n')}
 }
-export interface ${name}Methods {
+export interface ${name}Methods${baseReturnType ? " extends " + baseReturnType + "Methods" : ""} {
 ${methods.join('\n')}
 }
-export interface ${name}OData {
+export interface ${name}OData${baseReturnType ? " extends " + baseReturnType + "OData" : ""} {
 ${odataResults.join('\n')}
 }${collectionInterface || ""}`);
 
