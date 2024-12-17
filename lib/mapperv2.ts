@@ -2,16 +2,25 @@ import { IMapper } from "./mapperv2.d";
 import { RequestType } from "../utils";
 export const Mapper: IMapper = {
 	_case: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	aadUserConversationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		user: {
 			returnType: "user"
 		},
 	},
 	accessPackage: {
+		properties: [
+			"accessPackagesIncompatibleWith|accessPackages|/[Name]|accessPackage", "assignmentPolicies|accessPackageAssignmentPolicys|/[Name]|accessPackageAssignmentPolicy", "incompatibleAccessPackages|accessPackages|/[Name]|accessPackage", "incompatibleGroups|groups|/[Name]|group", "resourceRoleScopes|accessPackageResourceRoleScopes|/[Name]|accessPackageResourceRoleScope"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackagesIncompatibleWith: {
 			requestType: RequestType.Get,
@@ -41,6 +50,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackage: {
 			returnType: "accessPackage"
@@ -56,6 +68,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageAssignmentPolicy: {
+		properties: [
+			"customExtensionStageSettings|customExtensionStageSettings|/[Name]|customExtensionStageSetting", "questions|accessPackageQuestions|/[Name]|accessPackageQuestion"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackage: {
 			returnType: "accessPackage"
@@ -76,6 +91,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageAssignmentRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackage: {
 			returnType: "accessPackage"
@@ -91,14 +109,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageAssignmentRequestWorkflowExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	accessPackageAssignmentWorkflowExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	accessPackageCatalog: {
+		properties: [
+			"accessPackages|accessPackages|/[Name]|accessPackage", "customWorkflowExtensions|customCalloutExtensions|/[Name]|customCalloutExtension", "resourceRoles|accessPackageResourceRoles|/[Name]|accessPackageResourceRole", "resources|accessPackageResources|/[Name]|accessPackageResource", "resourceScopes|accessPackageResourceScopes|/[Name]|accessPackageResourceScope"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackages: {
 			requestType: RequestType.Get,
@@ -125,10 +152,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageMultipleChoiceQuestion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	accessPackageQuestion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -136,6 +169,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResource: {
+		properties: [
+			"roles|accessPackageResourceRoles|/[Name]|accessPackageResourceRole", "scopes|accessPackageResourceScopes|/[Name]|accessPackageResourceScope"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		environment: {
 			returnType: "accessPackageResourceEnvironment"
@@ -153,6 +189,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceEnvironment: {
+		properties: [
+			"resources|accessPackageResources|/[Name]|accessPackageResource"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resources: {
 			requestType: RequestType.Get,
@@ -163,6 +202,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		catalog: {
 			returnType: "accessPackageCatalog"
@@ -175,6 +217,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceRole: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resource: {
 			returnType: "accessPackageResource"
@@ -184,6 +229,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceRoleScope: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		role: {
 			returnType: "accessPackageResourceRole"
@@ -196,6 +244,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageResourceScope: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resource: {
 			returnType: "accessPackageResource"
@@ -205,16 +256,25 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessPackageSubject: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		connectedOrganization: {
 			returnType: "connectedOrganization"
 		},
 	},
 	accessPackageTextInputQuestion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	accessReviewHistoryDefinition: {
+		properties: [
+			"instances|accessReviewHistoryInstances|/[Name]|accessReviewHistoryInstance"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		instances: {
 			requestType: RequestType.Get,
@@ -225,6 +285,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewHistoryInstance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -232,6 +295,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewInstance: {
+		properties: [
+			"contactedReviewers|accessReviewReviewers|/[Name]|accessReviewReviewer", "decisions|accessReviewInstanceDecisionItems|/[Name]|accessReviewInstanceDecisionItem", "stages|accessReviewStages|/[Name]|accessReviewStage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		contactedReviewers: {
 			requestType: RequestType.Get,
@@ -250,6 +316,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewInstanceDecisionItem: {
+		properties: [
+			"insights|governanceInsights|/[Name]|governanceInsight"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		insights: {
 			requestType: RequestType.Get,
@@ -260,6 +329,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewReviewer: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -267,6 +339,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewScheduleDefinition: {
+		properties: [
+			"instances|accessReviewInstances|/[Name]|accessReviewInstance"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		instances: {
 			requestType: RequestType.Get,
@@ -277,6 +352,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	accessReviewSet: {
+		properties: [
+			"definitions|accessReviewScheduleDefinitions|/[Name]|accessReviewScheduleDefinition", "historyDefinitions|accessReviewHistoryDefinitions|/[Name]|accessReviewHistoryDefinition"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		definitions: {
 			requestType: RequestType.Get,
@@ -288,6 +366,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	accessReviewStage: {
+		properties: [
+			"decisions|accessReviewInstanceDecisionItems|/[Name]|accessReviewInstanceDecisionItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		decisions: {
 			requestType: RequestType.Get,
@@ -298,10 +379,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	acronym: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	activityBasedTimeoutPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -309,6 +396,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	activityHistoryItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activity: {
 			returnType: "userActivity"
@@ -318,10 +408,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	addLargeGalleryViewOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	admin: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		edge: {
 			returnType: "edge"
@@ -343,20 +439,32 @@ export const Mapper: IMapper = {
 		},
 	},
 	adminConsentRequestPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	adminMicrosoft365Apps: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		installationOptions: {
 			returnType: "m365AppsInstallationOptions"
 		},
 	},
 	adminReportSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	administrativeUnit: {
+		properties: [
+			"members|directoryObjects|/[Name]|directoryObject", "scopedRoleMembers|scopedRoleMemberships|/[Name]|scopedRoleMembership", "extensions|extensions|/[Name]|extension"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
 			requestType: RequestType.Get,
@@ -375,6 +483,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	agreement: {
+		properties: [
+			"acceptances|agreementAcceptances|/[Name]|agreementAcceptance", "files|agreementFileLocalizations|/[Name]|agreementFileLocalization"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		acceptances: {
 			requestType: RequestType.Get,
@@ -392,6 +503,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	agreementAcceptance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -399,6 +513,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	agreementFile: {
+		properties: [
+			"localizations|agreementFileLocalizations|/[Name]|agreementFileLocalization"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		localizations: {
 			requestType: RequestType.Get,
@@ -406,6 +523,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	agreementFileLocalization: {
+		properties: [
+			"versions|agreementFileVersions|/[Name]|agreementFileVersion"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		versions: {
 			requestType: RequestType.Get,
@@ -416,10 +536,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	agreementFileProperties: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	agreementFileVersion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -427,6 +553,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	alert: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -434,6 +563,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	allowedValue: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -441,22 +573,37 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	androidCompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidCustomConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidGeneralDeviceConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidLobApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidManagedAppProtection: {
+		properties: [
+			"apps|managedMobileApps|/[Name]|managedMobileApp"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
 			requestType: RequestType.Get,
@@ -470,30 +617,51 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	androidManagedAppRegistration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidStoreApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidWorkProfileCompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidWorkProfileCustomConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	androidWorkProfileGeneralDeviceConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	anonymousGuestConversationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	appCatalogs: {
+		properties: [
+			"teamsApps|teamsApps|/[Name]|teamsApp"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		teamsApps: {
 			requestType: RequestType.Get,
@@ -501,6 +669,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	appConsentApprovalRoute: {
+		properties: [
+			"appConsentRequests|appConsentRequests|/[Name]|appConsentRequest"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appConsentRequests: {
 			requestType: RequestType.Get,
@@ -508,6 +679,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	appConsentRequest: {
+		properties: [
+			"userConsentRequests|userConsentRequests|/[Name]|userConsentRequest"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		userConsentRequests: {
 			requestType: RequestType.Get,
@@ -518,6 +692,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	appLogCollectionRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -525,6 +702,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	appManagementPolicy: {
+		properties: [
+			"appliesTo|directoryObjects|/[Name]|directoryObject"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliesTo: {
 			requestType: RequestType.Get,
@@ -535,6 +715,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	appRoleAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -542,22 +725,37 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	appScope: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	appleDeviceFeaturesConfigurationBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	appleManagedIdentityProvider: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	applePushNotificationCertificate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	application: {
+		properties: [
+			"appManagementPolicies|appManagementPolicys|/[Name]|appManagementPolicy", "extensionProperties|extensionPropertys|/[Name]|extensionProperty", "federatedIdentityCredentials|federatedIdentityCredentials|/[Name]|federatedIdentityCredential", "homeRealmDiscoveryPolicies|homeRealmDiscoveryPolicys|/[Name]|homeRealmDiscoveryPolicy", "owners|directoryObjects|/[Name]|directoryObject", "tokenIssuancePolicies|tokenIssuancePolicys|/[Name]|tokenIssuancePolicy", "tokenLifetimePolicies|tokenLifetimePolicys|/[Name]|tokenLifetimePolicy"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appManagementPolicies: {
 			requestType: RequestType.Get,
@@ -595,10 +793,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	applicationTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	approval: {
+		properties: [
+			"stages|approvalStages|/[Name]|approvalStage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		stages: {
 			requestType: RequestType.Get,
@@ -609,6 +813,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	approvalStage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -616,6 +823,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	article: {
+		properties: [
+			"indicators|articleIndicators|/[Name]|articleIndicator"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		indicators: {
 			requestType: RequestType.Get,
@@ -623,14 +833,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	articleIndicator: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	artifact: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	associatedTeamInfo: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -638,6 +857,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attachment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -645,6 +867,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attachmentBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -652,6 +877,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attachmentSession: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -659,6 +887,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attackSimulationOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -666,6 +897,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attackSimulationRoot: {
+		properties: [
+			"endUserNotifications|endUserNotifications|/[Name]|endUserNotification", "landingPages|landingPages|/[Name]|landingPage", "loginPages|loginPages|/[Name]|loginPage", "operations|attackSimulationOperations|/[Name]|attackSimulationOperation", "payloads|payloads|/[Name]|payload", "simulationAutomations|simulationAutomations|/[Name]|simulationAutomation", "simulations|simulations|/[Name]|simulation", "trainings|trainings|/[Name]|training"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		endUserNotifications: {
 			requestType: RequestType.Get,
@@ -701,6 +935,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	attendanceRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -708,10 +945,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	attributeMappingFunctionSchema: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	attributeSet: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -719,6 +962,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	audioRoutingGroup: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -726,6 +972,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	auditEvent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -733,6 +982,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	auditLogRoot: {
+		properties: [
+			"directoryAudits|directoryAudits|/[Name]|directoryAudit", "provisioning|provisioningObjectSummarys|/[Name]|provisioningObjectSummary", "signIns|signIns|/[Name]|signIn"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		directoryAudits: {
 			requestType: RequestType.Get,
@@ -748,6 +1000,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	authentication: {
+		properties: [
+			"emailMethods|emailAuthenticationMethods|/[Name]|emailAuthenticationMethod", "fido2Methods|fido2AuthenticationMethods|/[Name]|fido2AuthenticationMethod", "methods|authenticationMethods|/[Name]|authenticationMethod", "microsoftAuthenticatorMethods|microsoftAuthenticatorAuthenticationMethods|/[Name]|microsoftAuthenticatorAuthenticationMethod", "operations|longRunningOperations|/[Name]|longRunningOperation", "passwordMethods|passwordAuthenticationMethods|/[Name]|passwordAuthenticationMethod", "phoneMethods|phoneAuthenticationMethods|/[Name]|phoneAuthenticationMethod", "softwareOathMethods|softwareOathAuthenticationMethods|/[Name]|softwareOathAuthenticationMethod", "temporaryAccessPassMethods|temporaryAccessPassAuthenticationMethods|/[Name]|temporaryAccessPassAuthenticationMethod", "windowsHelloForBusinessMethods|windowsHelloForBusinessAuthenticationMethods|/[Name]|windowsHelloForBusinessAuthenticationMethod"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		emailMethods: {
 			requestType: RequestType.Get,
@@ -791,6 +1046,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	authenticationCombinationConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -798,10 +1056,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationConditionApplication: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	authenticationContextClassReference: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -809,6 +1073,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationEventListener: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -816,6 +1083,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationEventsFlow: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -823,10 +1093,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationFlowsPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	authenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -834,6 +1110,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationMethodConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -841,6 +1120,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationMethodModeDetail: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -848,6 +1130,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationMethodTarget: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -855,6 +1140,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationMethodsPolicy: {
+		properties: [
+			"authenticationMethodConfigurations|authenticationMethodConfigurations|/[Name]|authenticationMethodConfiguration"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authenticationMethodConfigurations: {
 			requestType: RequestType.Get,
@@ -862,6 +1150,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	authenticationMethodsRoot: {
+		properties: [
+			"userRegistrationDetails|userRegistrationDetailss|/[Name]|userRegistrationDetails"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		userRegistrationDetails: {
 			requestType: RequestType.Get,
@@ -869,6 +1160,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	authenticationStrengthPolicy: {
+		properties: [
+			"combinationConfigurations|authenticationCombinationConfigurations|/[Name]|authenticationCombinationConfiguration"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		combinationConfigurations: {
 			requestType: RequestType.Get,
@@ -879,6 +1173,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authenticationStrengthRoot: {
+		properties: [
+			"authenticationMethodModes|authenticationMethodModeDetails|/[Name]|authenticationMethodModeDetail", "policies|authenticationStrengthPolicys|/[Name]|authenticationStrengthPolicy"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authenticationMethodModes: {
 			requestType: RequestType.Get,
@@ -890,6 +1187,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	authoredNote: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -897,18 +1197,30 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	authorityTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	authorizationPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	azureCommunicationServicesUserConversationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	azureUsage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		billed: {
 			returnType: "billedUsage"
@@ -918,6 +1230,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	b2xIdentityUserFlow: {
+		properties: [
+			"identityProviders|identityProviders|/[Name]|identityProvider", "languages|userFlowLanguageConfigurations|/[Name]|userFlowLanguageConfiguration", "userAttributeAssignments|identityUserFlowAttributeAssignments|/[Name]|identityUserFlowAttributeAssignment", "userFlowIdentityProviders|identityProviderBases|/[Name]|identityProviderBase"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		identityProviders: {
 			requestType: RequestType.Get,
@@ -940,6 +1255,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	backupRestoreRoot: {
+		properties: [
+			"driveInclusionRules|driveProtectionRules|/[Name]|driveProtectionRule", "driveProtectionUnits|driveProtectionUnits|/[Name]|driveProtectionUnit", "exchangeProtectionPolicies|exchangeProtectionPolicys|/[Name]|exchangeProtectionPolicy", "exchangeRestoreSessions|exchangeRestoreSessions|/[Name]|exchangeRestoreSession", "mailboxInclusionRules|mailboxProtectionRules|/[Name]|mailboxProtectionRule", "mailboxProtectionUnits|mailboxProtectionUnits|/[Name]|mailboxProtectionUnit", "oneDriveForBusinessProtectionPolicies|oneDriveForBusinessProtectionPolicys|/[Name]|oneDriveForBusinessProtectionPolicy", "oneDriveForBusinessRestoreSessions|oneDriveForBusinessRestoreSessions|/[Name]|oneDriveForBusinessRestoreSession", "protectionPolicies|protectionPolicyBases|/[Name]|protectionPolicyBase", "protectionUnits|protectionUnitBases|/[Name]|protectionUnitBase", "restorePoints|restorePoints|/[Name]|restorePoint", "restoreSessions|restoreSessionBases|/[Name]|restoreSessionBase", "serviceApps|serviceApps|/[Name]|serviceApp", "sharePointProtectionPolicies|sharePointProtectionPolicys|/[Name]|sharePointProtectionPolicy", "sharePointRestoreSessions|sharePointRestoreSessions|/[Name]|sharePointRestoreSession", "siteInclusionRules|siteProtectionRules|/[Name]|siteProtectionRule", "siteProtectionUnits|siteProtectionUnits|/[Name]|siteProtectionUnit"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveInclusionRules: {
 			requestType: RequestType.Get,
@@ -1011,6 +1329,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	baseItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		createdByUser: {
 			returnType: "user"
@@ -1023,10 +1344,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	baseItemVersion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	baseSitePage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1034,14 +1361,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	billedReconciliation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	billedUsage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	billing: {
+		properties: [
+			"manifests|manifests|/[Name]|manifest", "operations|operations|/[Name]|operation"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		manifests: {
 			requestType: RequestType.Get,
@@ -1059,12 +1395,18 @@ export const Mapper: IMapper = {
 		},
 	},
 	billingReconciliation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		billed: {
 			returnType: "billedReconciliation"
 		},
 	},
 	bitlocker: {
+		properties: [
+			"recoveryKeys|bitlockerRecoveryKeys|/[Name]|bitlockerRecoveryKey"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		recoveryKeys: {
 			requestType: RequestType.Get,
@@ -1072,6 +1414,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	bitlockerRecoveryKey: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1079,6 +1424,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingAppointment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1086,6 +1434,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingBusiness: {
+		properties: [
+			"appointments|bookingAppointments|/[Name]|bookingAppointment", "calendarView|bookingAppointments|/[Name]|bookingAppointment", "customers|bookingCustomerBases|/[Name]|bookingCustomerBase", "customQuestions|bookingCustomQuestions|/[Name]|bookingCustomQuestion", "services|bookingServices|/[Name]|bookingService", "staffMembers|bookingStaffMemberBases|/[Name]|bookingStaffMemberBase"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appointments: {
 			requestType: RequestType.Get,
@@ -1116,6 +1467,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingCurrency: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1123,6 +1477,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingCustomQuestion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1130,10 +1487,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingCustomer: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	bookingCustomerBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1141,6 +1504,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingService: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1148,10 +1514,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookingStaffMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	bookingStaffMemberBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1159,10 +1531,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	bookmark: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	browserSharedCookie: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1170,6 +1548,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	browserSite: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1177,6 +1558,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	browserSiteList: {
+		properties: [
+			"sharedCookies|browserSharedCookies|/[Name]|browserSharedCookie", "sites|browserSites|/[Name]|browserSite"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sharedCookies: {
 			requestType: RequestType.Get,
@@ -1191,14 +1575,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	builtInIdentityProvider: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	bulkUpload: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	calendar: {
+		properties: [
+			"calendarPermissions|calendarPermissions|/[Name]|calendarPermission", "calendarView|events|/[Name]|event", "events|events|/[Name]|event", "multiValueExtendedProperties|multiValueLegacyExtendedPropertys|/[Name]|multiValueLegacyExtendedProperty", "singleValueExtendedProperties|singleValueLegacyExtendedPropertys|/[Name]|singleValueLegacyExtendedProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		calendarPermissions: {
 			requestType: RequestType.Get,
@@ -1225,6 +1618,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	calendarGroup: {
+		properties: [
+			"calendars|calendars|/[Name]|calendar"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		calendars: {
 			requestType: RequestType.Get,
@@ -1235,6 +1631,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	calendarPermission: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1242,10 +1641,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	calendarSharingMessage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	call: {
+		properties: [
+			"audioRoutingGroups|audioRoutingGroups|/[Name]|audioRoutingGroup", "contentSharingSessions|contentSharingSessions|/[Name]|contentSharingSession", "operations|commsOperations|/[Name]|commsOperation", "participants|participants|/[Name]|participant"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		audioRoutingGroups: {
 			requestType: RequestType.Get,
@@ -1268,6 +1673,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	callRecord: {
+		properties: [
+			"participants_v2|participants|/[Name]|participant", "sessions|sessions|/[Name]|session"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		organizer_v2: {
 			returnType: "organizer"
@@ -1282,6 +1690,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	callRecording: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1289,6 +1700,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	callTranscript: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1296,10 +1710,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cancelMediaProcessingOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	canvasLayout: {
+		properties: [
+			"horizontalSections|horizontalSections|/[Name]|horizontalSection"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		horizontalSections: {
 			requestType: RequestType.Get,
@@ -1310,10 +1730,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	caseOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	casesRoot: {
+		properties: [
+			"ediscoveryCases|ediscoveryCases|/[Name]|ediscoveryCase"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		ediscoveryCases: {
 			requestType: RequestType.Get,
@@ -1321,6 +1747,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	categoryTemplate: {
+		properties: [
+			"subcategories|subcategoryTemplates|/[Name]|subcategoryTemplate"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subcategories: {
 			requestType: RequestType.Get,
@@ -1328,6 +1757,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	certificateBasedAuthConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1335,10 +1767,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	changeTrackedEntity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	channel: {
+		properties: [
+			"members|conversationMembers|/[Name]|conversationMember", "messages|chatMessages|/[Name]|chatMessage", "sharedWithTeams|sharedWithChannelTeamInfos|/[Name]|sharedWithChannelTeamInfo", "tabs|teamsTabs|/[Name]|teamsTab"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		filesFolder: {
 			returnType: "driveItem"
@@ -1364,6 +1802,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chat: {
+		properties: [
+			"installedApps|teamsAppInstallations|/[Name]|teamsAppInstallation", "members|conversationMembers|/[Name]|conversationMember", "messages|chatMessages|/[Name]|chatMessage", "permissionGrants|resourceSpecificPermissionGrants|/[Name]|resourceSpecificPermissionGrant", "pinnedMessages|pinnedChatMessageInfos|/[Name]|pinnedChatMessageInfo", "tabs|teamsTabs|/[Name]|teamsTab"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		installedApps: {
 			requestType: RequestType.Get,
@@ -1397,6 +1838,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chatMessage: {
+		properties: [
+			"hostedContents|chatMessageHostedContents|/[Name]|chatMessageHostedContent", "replies|chatMessages|/[Name]|chatMessage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		hostedContents: {
 			requestType: RequestType.Get,
@@ -1411,6 +1855,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chatMessageHostedContent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1418,10 +1865,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	chatMessageInfo: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	checklistItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1429,10 +1882,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	citationTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	claimsMappingPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1440,6 +1899,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudClipboardItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1447,6 +1909,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudClipboardRoot: {
+		properties: [
+			"items|cloudClipboardItems|/[Name]|cloudClipboardItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		items: {
 			requestType: RequestType.Get,
@@ -1454,6 +1919,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	cloudCommunications: {
+		properties: [
+			"callRecords|callRecords|/[Name]|callRecord", "calls|calls|/[Name]|call", "onlineMeetings|onlineMeetings|/[Name]|onlineMeeting", "presences|presences|/[Name]|presence"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		callRecords: {
 			requestType: RequestType.Get,
@@ -1473,6 +1941,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	cloudPC: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1480,6 +1951,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcAuditEvent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1487,6 +1961,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcDeviceImage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1494,6 +1971,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcGalleryImage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1501,6 +1981,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcOnPremisesConnection: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1508,6 +1991,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcProvisioningPolicy: {
+		properties: [
+			"assignments|cloudPcProvisioningPolicyAssignments|/[Name]|cloudPcProvisioningPolicyAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -1518,6 +2004,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcProvisioningPolicyAssignment: {
+		properties: [
+			"assignedUsers|users|/[Name]|user"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignedUsers: {
 			requestType: RequestType.Get,
@@ -1528,6 +2017,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcUserSetting: {
+		properties: [
+			"assignments|cloudPcUserSettingAssignments|/[Name]|cloudPcUserSettingAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -1538,6 +2030,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	cloudPcUserSettingAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1545,6 +2040,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	columnDefinition: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sourceColumn: {
 			returnType: "columnDefinition"
@@ -1557,6 +2055,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	columnLink: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1564,6 +2065,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	commsOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1571,6 +2075,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	community: {
+		properties: [
+			"owners|users|/[Name]|user"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
 			returnType: "group"
@@ -1584,6 +2091,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	companySubscription: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1591,10 +2101,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	compliance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	complianceManagementPartner: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1602,6 +2118,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	conditionalAccessPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1609,6 +2128,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	conditionalAccessRoot: {
+		properties: [
+			"authenticationContextClassReferences|authenticationContextClassReferences|/[Name]|authenticationContextClassReference", "namedLocations|namedLocations|/[Name]|namedLocation", "policies|conditionalAccessPolicys|/[Name]|conditionalAccessPolicy", "templates|conditionalAccessTemplates|/[Name]|conditionalAccessTemplate"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authenticationStrength: {
 			returnType: "authenticationStrengthRoot"
@@ -1631,6 +2153,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	conditionalAccessTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1638,6 +2163,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	connectedOrganization: {
+		properties: [
+			"externalSponsors|directoryObjects|/[Name]|directoryObject", "internalSponsors|directoryObjects|/[Name]|directoryObject"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		externalSponsors: {
 			requestType: RequestType.Get,
@@ -1652,10 +2180,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	connectionOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	contact: {
+		properties: [
+			"extensions|extensions|/[Name]|extension", "multiValueExtendedProperties|multiValueLegacyExtendedPropertys|/[Name]|multiValueLegacyExtendedProperty", "singleValueExtendedProperties|singleValueLegacyExtendedPropertys|/[Name]|singleValueLegacyExtendedProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		extensions: {
 			requestType: RequestType.Get,
@@ -1677,6 +2211,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contactFolder: {
+		properties: [
+			"childFolders|contactFolders|/[Name]|contactFolder", "contacts|contacts|/[Name]|contact", "multiValueExtendedProperties|multiValueLegacyExtendedPropertys|/[Name]|multiValueLegacyExtendedProperty", "singleValueExtendedProperties|singleValueLegacyExtendedPropertys|/[Name]|singleValueLegacyExtendedProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childFolders: {
 			requestType: RequestType.Get,
@@ -1699,6 +2236,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contentSharingSession: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1706,6 +2246,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contentType: {
+		properties: [
+			"baseTypes|contentTypes|/[Name]|contentType", "columnLinks|columnLinks|/[Name]|columnLink", "columnPositions|columnDefinitions|/[Name]|columnDefinition", "columns|columnDefinitions|/[Name]|columnDefinition"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		base: {
 			returnType: "contentType"
@@ -1734,10 +2277,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	contract: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	conversation: {
+		properties: [
+			"threads|conversationThreads|/[Name]|conversationThread"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		threads: {
 			requestType: RequestType.Get,
@@ -1748,6 +2297,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	conversationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1755,6 +2307,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	conversationThread: {
+		properties: [
+			"posts|posts|/[Name]|post"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		posts: {
 			requestType: RequestType.Get,
@@ -1765,10 +2320,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	countryNamedLocation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	crossTenantAccessPolicy: {
+		properties: [
+			"partners|crossTenantAccessPolicyConfigurationPartners|/[Name]|crossTenantAccessPolicyConfigurationPartner"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		default: {
 			returnType: "crossTenantAccessPolicyConfigurationDefault"
@@ -1782,20 +2343,32 @@ export const Mapper: IMapper = {
 		},
 	},
 	crossTenantAccessPolicyConfigurationDefault: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	crossTenantAccessPolicyConfigurationPartner: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		identitySynchronization: {
 			returnType: "crossTenantIdentitySyncPolicyPartner"
 		},
 	},
 	crossTenantIdentitySyncPolicyPartner: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	customAuthenticationExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1803,6 +2376,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	customCalloutExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1810,6 +2386,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	customExtensionStageSetting: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		customExtension: {
 			returnType: "customCalloutExtension"
@@ -1819,6 +2398,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	customSecurityAttributeDefinition: {
+		properties: [
+			"allowedValues|allowedValues|/[Name]|allowedValue"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allowedValues: {
 			requestType: RequestType.Get,
@@ -1829,6 +2411,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	customTaskExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		createdBy: {
 			returnType: "user"
@@ -1838,22 +2423,37 @@ export const Mapper: IMapper = {
 		},
 	},
 	dataPolicyOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	dataSet: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	dataSource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	dataSourceContainer: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	defaultManagedAppProtection: {
+		properties: [
+			"apps|managedMobileApps|/[Name]|managedMobileApp"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
 			requestType: RequestType.Get,
@@ -1867,6 +2467,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminAccessAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1874,6 +2477,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminCustomer: {
+		properties: [
+			"serviceManagementDetails|delegatedAdminServiceManagementDetails|/[Name]|delegatedAdminServiceManagementDetail"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		serviceManagementDetails: {
 			requestType: RequestType.Get,
@@ -1884,6 +2490,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminRelationship: {
+		properties: [
+			"accessAssignments|delegatedAdminAccessAssignments|/[Name]|delegatedAdminAccessAssignment", "operations|delegatedAdminRelationshipOperations|/[Name]|delegatedAdminRelationshipOperation", "requests|delegatedAdminRelationshipRequests|/[Name]|delegatedAdminRelationshipRequest"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessAssignments: {
 			requestType: RequestType.Get,
@@ -1902,6 +2511,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminRelationshipOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1909,6 +2521,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminRelationshipRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1916,6 +2531,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedAdminServiceManagementDetail: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1923,6 +2541,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	delegatedPermissionClassification: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1930,6 +2551,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deletedChat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -1937,6 +2561,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deletedItemContainer: {
+		properties: [
+			"workflows|workflows|/[Name]|workflow"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		workflows: {
 			requestType: RequestType.Get,
@@ -1944,6 +2571,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	deletedTeam: {
+		properties: [
+			"channels|channels|/[Name]|channel"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		channels: {
 			requestType: RequestType.Get,
@@ -1954,6 +2584,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deltaParticipants: {
+		properties: [
+			"participants|participants|/[Name]|participant"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		participants: {
 			requestType: RequestType.Get,
@@ -1961,10 +2594,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	departmentTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	detectedApp: {
+		properties: [
+			"managedDevices|managedDevices|/[Name]|managedDevice"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		managedDevices: {
 			requestType: RequestType.Get,
@@ -1975,6 +2614,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	device: {
+		properties: [
+			"memberOf|directoryObjects|/[Name]|directoryObject", "registeredOwners|directoryObjects|/[Name]|directoryObject", "registeredUsers|directoryObjects|/[Name]|directoryObject", "transitiveMemberOf|directoryObjects|/[Name]|directoryObject", "extensions|extensions|/[Name]|extension"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		memberOf: {
 			requestType: RequestType.Get,
@@ -1998,6 +2640,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	deviceAndAppManagementRoleAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2005,10 +2650,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceAndAppManagementRoleDefinition: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceAppManagement: {
+		properties: [
+			"managedEBooks|managedEBooks|/[Name]|managedEBook", "mobileAppCategories|mobileAppCategorys|/[Name]|mobileAppCategory", "mobileAppConfigurations|managedDeviceMobileAppConfigurations|/[Name]|managedDeviceMobileAppConfiguration", "mobileApps|mobileApps|/[Name]|mobileApp", "vppTokens|vppTokens|/[Name]|vppToken", "androidManagedAppProtections|androidManagedAppProtections|/[Name]|androidManagedAppProtection", "defaultManagedAppProtections|defaultManagedAppProtections|/[Name]|defaultManagedAppProtection", "iosManagedAppProtections|iosManagedAppProtections|/[Name]|iosManagedAppProtection", "managedAppPolicies|managedAppPolicys|/[Name]|managedAppPolicy", "managedAppRegistrations|managedAppRegistrations|/[Name]|managedAppRegistration", "managedAppStatuses|managedAppStatuss|/[Name]|managedAppStatus", "mdmWindowsInformationProtectionPolicies|mdmWindowsInformationProtectionPolicys|/[Name]|mdmWindowsInformationProtectionPolicy", "targetedManagedAppConfigurations|targetedManagedAppConfigurations|/[Name]|targetedManagedAppConfiguration", "windowsInformationProtectionPolicies|windowsInformationProtectionPolicys|/[Name]|windowsInformationProtectionPolicy"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		managedEBooks: {
 			requestType: RequestType.Get,
@@ -2068,6 +2719,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	deviceCategory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2075,6 +2729,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceActionItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2082,10 +2739,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceDeviceOverview: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceComplianceDeviceStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2093,6 +2756,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceCompliancePolicy: {
+		properties: [
+			"assignments|deviceCompliancePolicyAssignments|/[Name]|deviceCompliancePolicyAssignment", "deviceSettingStateSummaries|settingStateDeviceSummarys|/[Name]|settingStateDeviceSummary", "deviceStatuses|deviceComplianceDeviceStatuss|/[Name]|deviceComplianceDeviceStatus", "scheduledActionsForRule|deviceComplianceScheduledActionForRules|/[Name]|deviceComplianceScheduledActionForRule", "userStatuses|deviceComplianceUserStatuss|/[Name]|deviceComplianceUserStatus"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -2125,6 +2791,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceCompliancePolicyAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2132,10 +2801,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceCompliancePolicyDeviceStateSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceCompliancePolicySettingStateSummary: {
+		properties: [
+			"deviceComplianceSettingStates|deviceComplianceSettingStates|/[Name]|deviceComplianceSettingState"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceComplianceSettingStates: {
 			requestType: RequestType.Get,
@@ -2146,6 +2821,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceCompliancePolicyState: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2153,6 +2831,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceScheduledActionForRule: {
+		properties: [
+			"scheduledActionConfigurations|deviceComplianceActionItems|/[Name]|deviceComplianceActionItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		scheduledActionConfigurations: {
 			requestType: RequestType.Get,
@@ -2163,6 +2844,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceSettingState: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2170,10 +2854,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceComplianceUserOverview: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceComplianceUserStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2181,6 +2871,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceConfiguration: {
+		properties: [
+			"assignments|deviceConfigurationAssignments|/[Name]|deviceConfigurationAssignment", "deviceSettingStateSummaries|settingStateDeviceSummarys|/[Name]|settingStateDeviceSummary", "deviceStatuses|deviceConfigurationDeviceStatuss|/[Name]|deviceConfigurationDeviceStatus", "userStatuses|deviceConfigurationUserStatuss|/[Name]|deviceConfigurationUserStatus"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -2209,6 +2902,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceConfigurationAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2216,14 +2912,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceConfigurationDeviceOverview: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceConfigurationDeviceStateSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceConfigurationDeviceStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2231,6 +2936,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceConfigurationState: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2238,10 +2946,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceConfigurationUserOverview: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceConfigurationUserStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2249,6 +2963,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceEnrollmentConfiguration: {
+		properties: [
+			"assignments|enrollmentConfigurationAssignments|/[Name]|enrollmentConfigurationAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -2259,18 +2976,30 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceEnrollmentLimitConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceEnrollmentPlatformRestrictionsConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceEnrollmentWindowsHelloForBusinessConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceInstallState: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2278,6 +3007,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceLocalCredentialInfo: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2285,6 +3017,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceLogCollectionResponse: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2292,6 +3027,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceManagement: {
+		properties: [
+			"auditEvents|auditEvents|/[Name]|auditEvent", "termsAndConditions|termsAndConditionss|/[Name]|termsAndConditions", "deviceCompliancePolicies|deviceCompliancePolicys|/[Name]|deviceCompliancePolicy", "deviceCompliancePolicySettingStateSummaries|deviceCompliancePolicySettingStateSummarys|/[Name]|deviceCompliancePolicySettingStateSummary", "deviceConfigurations|deviceConfigurations|/[Name]|deviceConfiguration", "iosUpdateStatuses|iosUpdateDeviceStatuss|/[Name]|iosUpdateDeviceStatus", "complianceManagementPartners|complianceManagementPartners|/[Name]|complianceManagementPartner", "deviceCategories|deviceCategorys|/[Name]|deviceCategory", "deviceEnrollmentConfigurations|deviceEnrollmentConfigurations|/[Name]|deviceEnrollmentConfiguration", "deviceManagementPartners|deviceManagementPartners|/[Name]|deviceManagementPartner", "exchangeConnectors|deviceManagementExchangeConnectors|/[Name]|deviceManagementExchangeConnector", "mobileThreatDefenseConnectors|mobileThreatDefenseConnectors|/[Name]|mobileThreatDefenseConnector", "detectedApps|detectedApps|/[Name]|detectedApp", "managedDevices|managedDevices|/[Name]|managedDevice", "mobileAppTroubleshootingEvents|mobileAppTroubleshootingEvents|/[Name]|mobileAppTroubleshootingEvent", "userExperienceAnalyticsAppHealthApplicationPerformance|userExperienceAnalyticsAppHealthApplicationPerformances|/[Name]|userExperienceAnalyticsAppHealthApplicationPerformance", "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails|userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailss|/[Name]|userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails", "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId|userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIds|/[Name]|userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId", "userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion|userExperienceAnalyticsAppHealthAppPerformanceByOSVersions|/[Name]|userExperienceAnalyticsAppHealthAppPerformanceByOSVersion", "userExperienceAnalyticsAppHealthDeviceModelPerformance|userExperienceAnalyticsAppHealthDeviceModelPerformances|/[Name]|userExperienceAnalyticsAppHealthDeviceModelPerformance", "userExperienceAnalyticsAppHealthDevicePerformance|userExperienceAnalyticsAppHealthDevicePerformances|/[Name]|userExperienceAnalyticsAppHealthDevicePerformance", "userExperienceAnalyticsAppHealthDevicePerformanceDetails|userExperienceAnalyticsAppHealthDevicePerformanceDetailss|/[Name]|userExperienceAnalyticsAppHealthDevicePerformanceDetails", "userExperienceAnalyticsAppHealthOSVersionPerformance|userExperienceAnalyticsAppHealthOSVersionPerformances|/[Name]|userExperienceAnalyticsAppHealthOSVersionPerformance", "userExperienceAnalyticsBaselines|userExperienceAnalyticsBaselines|/[Name]|userExperienceAnalyticsBaseline", "userExperienceAnalyticsCategories|userExperienceAnalyticsCategorys|/[Name]|userExperienceAnalyticsCategory", "userExperienceAnalyticsDevicePerformance|userExperienceAnalyticsDevicePerformances|/[Name]|userExperienceAnalyticsDevicePerformance", "userExperienceAnalyticsDeviceScores|userExperienceAnalyticsDeviceScoress|/[Name]|userExperienceAnalyticsDeviceScores", "userExperienceAnalyticsDeviceStartupHistory|userExperienceAnalyticsDeviceStartupHistorys|/[Name]|userExperienceAnalyticsDeviceStartupHistory", "userExperienceAnalyticsDeviceStartupProcesses|userExperienceAnalyticsDeviceStartupProcesss|/[Name]|userExperienceAnalyticsDeviceStartupProcess", "userExperienceAnalyticsDeviceStartupProcessPerformance|userExperienceAnalyticsDeviceStartupProcessPerformances|/[Name]|userExperienceAnalyticsDeviceStartupProcessPerformance", "userExperienceAnalyticsMetricHistory|userExperienceAnalyticsMetricHistorys|/[Name]|userExperienceAnalyticsMetricHistory", "userExperienceAnalyticsModelScores|userExperienceAnalyticsModelScoress|/[Name]|userExperienceAnalyticsModelScores", "userExperienceAnalyticsScoreHistory|userExperienceAnalyticsScoreHistorys|/[Name]|userExperienceAnalyticsScoreHistory", "userExperienceAnalyticsWorkFromAnywhereMetrics|userExperienceAnalyticsWorkFromAnywhereMetrics|/[Name]|userExperienceAnalyticsWorkFromAnywhereMetric", "userExperienceAnalyticsWorkFromAnywhereModelPerformance|userExperienceAnalyticsWorkFromAnywhereModelPerformances|/[Name]|userExperienceAnalyticsWorkFromAnywhereModelPerformance", "windowsMalwareInformation|windowsMalwareInformations|/[Name]|windowsMalwareInformation", "importedWindowsAutopilotDeviceIdentities|importedWindowsAutopilotDeviceIdentitys|/[Name]|importedWindowsAutopilotDeviceIdentity", "windowsAutopilotDeviceIdentities|windowsAutopilotDeviceIdentitys|/[Name]|windowsAutopilotDeviceIdentity", "notificationMessageTemplates|notificationMessageTemplates|/[Name]|notificationMessageTemplate", "resourceOperations|resourceOperations|/[Name]|resourceOperation", "roleAssignments|deviceAndAppManagementRoleAssignments|/[Name]|deviceAndAppManagementRoleAssignment", "roleDefinitions|roleDefinitions|/[Name]|roleDefinition", "remoteAssistancePartners|remoteAssistancePartners|/[Name]|remoteAssistancePartner", "telecomExpenseManagementPartners|telecomExpenseManagementPartners|/[Name]|telecomExpenseManagementPartner", "troubleshootingEvents|deviceManagementTroubleshootingEvents|/[Name]|deviceManagementTroubleshootingEvent", "windowsInformationProtectionAppLearningSummaries|windowsInformationProtectionAppLearningSummarys|/[Name]|windowsInformationProtectionAppLearningSummary", "windowsInformationProtectionNetworkLearningSummaries|windowsInformationProtectionNetworkLearningSummarys|/[Name]|windowsInformationProtectionNetworkLearningSummary"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		auditEvents: {
 			requestType: RequestType.Get,
@@ -2516,10 +3254,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	deviceManagementCachedReportConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	deviceManagementExchangeConnector: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2527,6 +3271,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceManagementExportJob: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2534,6 +3281,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceManagementPartner: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2541,6 +3291,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceManagementReports: {
+		properties: [
+			"exportJobs|deviceManagementExportJobs|/[Name]|deviceManagementExportJob"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		exportJobs: {
 			requestType: RequestType.Get,
@@ -2548,6 +3301,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	deviceManagementTroubleshootingEvent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2555,10 +3311,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	deviceRegistrationPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	directory: {
+		properties: [
+			"deviceLocalCredentials|deviceLocalCredentialInfos|/[Name]|deviceLocalCredentialInfo", "administrativeUnits|administrativeUnits|/[Name]|administrativeUnit", "attributeSets|attributeSets|/[Name]|attributeSet", "customSecurityAttributeDefinitions|customSecurityAttributeDefinitions|/[Name]|customSecurityAttributeDefinition", "deletedItems|directoryObjects|/[Name]|directoryObject", "federationConfigurations|identityProviderBases|/[Name]|identityProviderBase", "onPremisesSynchronization|onPremisesDirectorySynchronizations|/[Name]|onPremisesDirectorySynchronization", "subscriptions|companySubscriptions|/[Name]|companySubscription"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceLocalCredentials: {
 			requestType: RequestType.Get,
@@ -2594,6 +3356,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	directoryAudit: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2601,6 +3366,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	directoryDefinition: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2608,6 +3376,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	directoryObject: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2615,10 +3386,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	directoryObjectPartnerReference: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	directoryRole: {
+		properties: [
+			"members|directoryObjects|/[Name]|directoryObject", "scopedMembers|scopedRoleMemberships|/[Name]|scopedRoleMembership"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
 			requestType: RequestType.Get,
@@ -2630,14 +3407,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	directoryRoleTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	dispositionReviewStage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	documentSetVersion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2645,6 +3431,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	domain: {
+		properties: [
+			"domainNameReferences|directoryObjects|/[Name]|directoryObject", "federationConfiguration|internalDomainFederations|/[Name]|internalDomainFederation", "serviceConfigurationRecords|domainDnsRecords|/[Name]|domainDnsRecord", "verificationDnsRecords|domainDnsRecords|/[Name]|domainDnsRecord"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		domainNameReferences: {
 			requestType: RequestType.Get,
@@ -2667,14 +3456,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	domainDnsCnameRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	domainDnsMxRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	domainDnsRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2682,18 +3480,30 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	domainDnsSrvRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	domainDnsTxtRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	domainDnsUnavailableRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	drive: {
+		properties: [
+			"bundles|driveItems|/[Name]|driveItem", "following|driveItems|/[Name]|driveItem", "items|driveItems|/[Name]|driveItem", "special|driveItems|/[Name]|driveItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bundles: {
 			requestType: RequestType.Get,
@@ -2722,6 +3532,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveItem: {
+		properties: [
+			"children|driveItems|/[Name]|driveItem", "permissions|permissions|/[Name]|permission", "subscriptions|subscriptions|/[Name]|subscription", "thumbnails|thumbnailSets|/[Name]|thumbnailSet", "versions|driveItemVersions|/[Name]|driveItemVersion"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		workbook: {
 			returnType: "workbook"
@@ -2760,6 +3573,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveItemVersion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2767,6 +3583,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveProtectionRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2774,6 +3593,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveProtectionUnit: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2781,6 +3603,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	driveRestoreArtifact: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2788,16 +3613,25 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	eBookInstallSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	edge: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		internetExplorerMode: {
 			returnType: "internetExplorerMode"
 		},
 	},
 	ediscoveryAddToReviewSetOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		reviewSet: {
 			returnType: "ediscoveryReviewSet"
@@ -2807,6 +3641,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoveryCase: {
+		properties: [
+			"custodians|ediscoveryCustodians|/[Name]|ediscoveryCustodian", "noncustodialDataSources|ediscoveryNoncustodialDataSources|/[Name]|ediscoveryNoncustodialDataSource", "operations|caseOperations|/[Name]|caseOperation", "reviewSets|ediscoveryReviewSets|/[Name]|ediscoveryReviewSet", "searches|ediscoverySearchs|/[Name]|ediscoverySearch", "tags|ediscoveryReviewTags|/[Name]|ediscoveryReviewTag"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		custodians: {
 			requestType: RequestType.Get,
@@ -2837,10 +3674,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoveryCaseSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	ediscoveryCustodian: {
+		properties: [
+			"siteSources|siteSources|/[Name]|siteSource", "unifiedGroupSources|unifiedGroupSources|/[Name]|unifiedGroupSource", "userSources|userSources|/[Name]|userSource"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		lastIndexOperation: {
 			returnType: "ediscoveryIndexOperation"
@@ -2859,12 +3702,18 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoveryEstimateOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		search: {
 			returnType: "ediscoverySearch"
 		},
 	},
 	ediscoveryExportOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		reviewSet: {
 			returnType: "ediscoveryReviewSet"
@@ -2874,14 +3723,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoveryHoldOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	ediscoveryIndexOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	ediscoveryNoncustodialDataSource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		dataSource: {
 			returnType: "dataSource"
@@ -2891,10 +3749,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoveryPurgeDataOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	ediscoveryReviewSet: {
+		properties: [
+			"queries|ediscoveryReviewSetQuerys|/[Name]|ediscoveryReviewSetQuery"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		queries: {
 			requestType: RequestType.Get,
@@ -2902,10 +3766,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoveryReviewSetQuery: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	ediscoveryReviewTag: {
+		properties: [
+			"childTags|ediscoveryReviewTags|/[Name]|ediscoveryReviewTag"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childTags: {
 			requestType: RequestType.Get,
@@ -2916,6 +3786,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoverySearch: {
+		properties: [
+			"additionalSources|dataSources|/[Name]|dataSource", "custodianSources|dataSources|/[Name]|dataSource", "noncustodialSources|ediscoveryNoncustodialDataSources|/[Name]|ediscoveryNoncustodialDataSource"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		additionalSources: {
 			requestType: RequestType.Get,
@@ -2937,20 +3810,32 @@ export const Mapper: IMapper = {
 		},
 	},
 	ediscoverySearchExportOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		search: {
 			returnType: "ediscoverySearch"
 		},
 	},
 	ediscoveryTagOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	editionUpgradeConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	educationAssignment: {
+		properties: [
+			"categories|educationCategorys|/[Name]|educationCategory", "resources|educationAssignmentResources|/[Name]|educationAssignmentResource", "submissions|educationSubmissions|/[Name]|educationSubmission"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		categories: {
 			requestType: RequestType.Get,
@@ -2975,10 +3860,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationAssignmentDefaults: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	educationAssignmentResource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -2986,6 +3877,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationAssignmentSettings: {
+		properties: [
+			"gradingCategories|educationGradingCategorys|/[Name]|educationGradingCategory"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		gradingCategories: {
 			requestType: RequestType.Get,
@@ -2993,6 +3887,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	educationCategory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3000,6 +3897,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationClass: {
+		properties: [
+			"assignmentCategories|educationCategorys|/[Name]|educationCategory", "assignments|educationAssignments|/[Name]|educationAssignment", "modules|educationModules|/[Name]|educationModule", "members|educationUsers|/[Name]|educationUser", "schools|educationSchools|/[Name]|educationSchool", "teachers|educationUsers|/[Name]|educationUser"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignmentCategories: {
 			requestType: RequestType.Get,
@@ -3039,14 +3939,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationFeedbackOutcome: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	educationFeedbackResourceOutcome: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	educationGradingCategory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3054,6 +3963,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationModule: {
+		properties: [
+			"resources|educationModuleResources|/[Name]|educationModuleResource"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resources: {
 			requestType: RequestType.Get,
@@ -3064,6 +3976,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationModuleResource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3071,10 +3986,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationOrganization: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	educationOutcome: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3082,10 +4003,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationPointsOutcome: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	educationRoot: {
+		properties: [
+			"classes|educationClasss|/[Name]|educationClass", "schools|educationSchools|/[Name]|educationSchool", "users|educationUsers|/[Name]|educationUser"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		classes: {
 			requestType: RequestType.Get,
@@ -3104,6 +4031,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	educationRubric: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3111,10 +4041,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationRubricOutcome: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	educationSchool: {
+		properties: [
+			"classes|educationClasss|/[Name]|educationClass", "users|educationUsers|/[Name]|educationUser"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		administrativeUnit: {
 			returnType: "administrativeUnit"
@@ -3132,6 +4068,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationSubmission: {
+		properties: [
+			"outcomes|educationOutcomes|/[Name]|educationOutcome", "resources|educationSubmissionResources|/[Name]|educationSubmissionResource", "submittedResources|educationSubmissionResources|/[Name]|educationSubmissionResource"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		outcomes: {
 			requestType: RequestType.Get,
@@ -3150,6 +4089,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationSubmissionResource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3157,6 +4099,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	educationUser: {
+		properties: [
+			"assignments|educationAssignments|/[Name]|educationAssignment", "rubrics|educationRubrics|/[Name]|educationRubric", "classes|educationClasss|/[Name]|educationClass", "schools|educationSchools|/[Name]|educationSchool", "taughtClasses|educationClasss|/[Name]|educationClass"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -3186,6 +4131,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	emailAuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3193,6 +4141,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	emailAuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|authenticationMethodTargets|/[Name]|authenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -3200,10 +4151,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	emailFileAssessmentRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	employeeExperience: {
+		properties: [
+			"communities|communitys|/[Name]|community", "engagementAsyncOperations|engagementAsyncOperations|/[Name]|engagementAsyncOperation", "learningCourseActivities|learningCourseActivitys|/[Name]|learningCourseActivity", "learningProviders|learningProviders|/[Name]|learningProvider"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		communities: {
 			requestType: RequestType.Get,
@@ -3223,6 +4180,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	employeeExperienceUser: {
+		properties: [
+			"learningCourseActivities|learningCourseActivitys|/[Name]|learningCourseActivity"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		learningCourseActivities: {
 			requestType: RequestType.Get,
@@ -3230,6 +4190,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	endUserNotification: {
+		properties: [
+			"details|endUserNotificationDetails|/[Name]|endUserNotificationDetail"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		details: {
 			requestType: RequestType.Get,
@@ -3240,6 +4203,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	endUserNotificationDetail: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3247,6 +4213,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	endpoint: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3254,6 +4223,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	engagementAsyncOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3261,6 +4233,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	enrollmentConfigurationAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3268,14 +4243,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	enrollmentTroubleshootingEvent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	enterpriseCodeSigningCertificate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	entitlementManagement: {
+		properties: [
+			"accessPackageAssignmentApprovals|approvals|/[Name]|approval", "accessPackages|accessPackages|/[Name]|accessPackage", "assignmentPolicies|accessPackageAssignmentPolicys|/[Name]|accessPackageAssignmentPolicy", "assignmentRequests|accessPackageAssignmentRequests|/[Name]|accessPackageAssignmentRequest", "assignments|accessPackageAssignments|/[Name]|accessPackageAssignment", "catalogs|accessPackageCatalogs|/[Name]|accessPackageCatalog", "connectedOrganizations|connectedOrganizations|/[Name]|connectedOrganization", "resourceEnvironments|accessPackageResourceEnvironments|/[Name]|accessPackageResourceEnvironment", "resourceRequests|accessPackageResourceRequests|/[Name]|accessPackageResourceRequest", "resourceRoleScopes|accessPackageResourceRoleScopes|/[Name]|accessPackageResourceRoleScope", "resources|accessPackageResources|/[Name]|accessPackageResource"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		accessPackageAssignmentApprovals: {
 			requestType: RequestType.Get,
@@ -3326,14 +4310,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	entitlementManagementSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	entity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	event: {
+		properties: [
+			"attachments|attachments|/[Name]|attachment", "extensions|extensions|/[Name]|extension", "instances|events|/[Name]|event", "multiValueExtendedProperties|multiValueLegacyExtendedPropertys|/[Name]|multiValueLegacyExtendedProperty", "singleValueExtendedProperties|singleValueLegacyExtendedPropertys|/[Name]|singleValueLegacyExtendedProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
 			requestType: RequestType.Get,
@@ -3363,20 +4356,32 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	eventMessage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		event: {
 			returnType: "event"
 		},
 	},
 	eventMessageRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	eventMessageResponse: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	exchangeProtectionPolicy: {
+		properties: [
+			"mailboxInclusionRules|mailboxProtectionRules|/[Name]|mailboxProtectionRule", "mailboxProtectionUnits|mailboxProtectionUnits|/[Name]|mailboxProtectionUnit"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		mailboxInclusionRules: {
 			requestType: RequestType.Get,
@@ -3391,6 +4396,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	exchangeRestoreSession: {
+		properties: [
+			"granularMailboxRestoreArtifacts|granularMailboxRestoreArtifacts|/[Name]|granularMailboxRestoreArtifact", "mailboxRestoreArtifacts|mailboxRestoreArtifacts|/[Name]|mailboxRestoreArtifact"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		granularMailboxRestoreArtifacts: {
 			requestType: RequestType.Get,
@@ -3405,12 +4413,18 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	exportSuccessOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resourceLocation: {
 			returnType: "manifest"
 		},
 	},
 	extension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3418,6 +4432,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	extensionProperty: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3425,6 +4442,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	external: {
+		properties: [
+			"connections|externalConnections|/[Name]|externalConnection"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		connections: {
 			requestType: RequestType.Get,
@@ -3432,16 +4452,25 @@ export const Mapper: IMapper = {
 		},
 	},
 	externalActivity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		performedBy: {
 			returnType: "identity"
 		},
 	},
 	externalActivityResult: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	externalConnection: {
+		properties: [
+			"groups|externalGroups|/[Name]|externalGroup", "items|externalItems|/[Name]|externalItem", "operations|connectionOperations|/[Name]|connectionOperation"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		groups: {
 			requestType: RequestType.Get,
@@ -3460,6 +4489,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	externalDomainName: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3467,6 +4499,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	externalGroup: {
+		properties: [
+			"members|identitys|/[Name]|identity"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
 			requestType: RequestType.Get,
@@ -3474,6 +4509,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	externalItem: {
+		properties: [
+			"activities|externalActivitys|/[Name]|externalActivity"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activities: {
 			requestType: RequestType.Get,
@@ -3481,14 +4519,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	externalUsersSelfServiceSignUpEventsFlow: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	failedOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	featureRolloutPolicy: {
+		properties: [
+			"appliesTo|directoryObjects|/[Name]|directoryObject"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliesTo: {
 			requestType: RequestType.Get,
@@ -3499,6 +4546,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	federatedIdentityCredential: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3506,6 +4556,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	fido2AuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3513,6 +4566,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	fido2AuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|authenticationMethodTargets|/[Name]|authenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -3520,22 +4576,37 @@ export const Mapper: IMapper = {
 		},
 	},
 	fido2CombinationConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	fieldValueSet: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	fileAssessmentRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	fileAttachment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	filePlanDescriptor: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authorityTemplate: {
 			returnType: "authorityTemplate"
@@ -3554,14 +4625,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	filePlanDescriptorTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	filePlanReferenceTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	fileStorage: {
+		properties: [
+			"containers|fileStorageContainers|/[Name]|fileStorageContainer"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		containers: {
 			requestType: RequestType.Get,
@@ -3569,6 +4649,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	fileStorageContainer: {
+		properties: [
+			"permissions|permissions|/[Name]|permission"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		drive: {
 			returnType: "drive"
@@ -3582,10 +4665,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	filterOperatorSchema: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	governanceInsight: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3593,6 +4682,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	granularMailboxRestoreArtifact: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3600,6 +4692,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	group: {
+		properties: [
+			"sets|sets|/[Name]|set"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sets: {
 			requestType: RequestType.Get,
@@ -3610,6 +4705,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	groupLifecyclePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3617,6 +4715,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	groupSetting: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3624,14 +4725,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	groupSettingTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	healthIssue: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	homeRealmDiscoveryPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3639,6 +4749,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	horizontalSection: {
+		properties: [
+			"columns|horizontalSectionColumns|/[Name]|horizontalSectionColumn"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		columns: {
 			requestType: RequestType.Get,
@@ -3649,6 +4762,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	horizontalSectionColumn: {
+		properties: [
+			"webparts|webParts|/[Name]|webPart"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		webparts: {
 			requestType: RequestType.Get,
@@ -3659,6 +4775,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	host: {
+		properties: [
+			"childHostPairs|hostPairs|/[Name]|hostPair", "components|hostComponents|/[Name]|hostComponent", "cookies|hostCookies|/[Name]|hostCookie", "hostPairs|hostPairs|/[Name]|hostPair", "parentHostPairs|hostPairs|/[Name]|hostPair", "passiveDns|passiveDnsRecords|/[Name]|passiveDnsRecord", "passiveDnsReverse|passiveDnsRecords|/[Name]|passiveDnsRecord", "ports|hostPorts|/[Name]|hostPort", "sslCertificates|hostSslCertificates|/[Name]|hostSslCertificate", "subdomains|subdomains|/[Name]|subdomain", "trackers|hostTrackers|/[Name]|hostTracker"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childHostPairs: {
 			requestType: RequestType.Get,
@@ -3712,18 +4831,27 @@ export const Mapper: IMapper = {
 		},
 	},
 	hostComponent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
 			returnType: "host"
 		},
 	},
 	hostCookie: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
 			returnType: "host"
 		},
 	},
 	hostPair: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childHost: {
 			returnType: "host"
@@ -3733,6 +4861,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	hostPort: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
 			returnType: "host"
@@ -3742,10 +4873,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	hostReputation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	hostSslCertificate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
 			returnType: "host"
@@ -3755,20 +4892,32 @@ export const Mapper: IMapper = {
 		},
 	},
 	hostTracker: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
 			returnType: "host"
 		},
 	},
 	hostname: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	identity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	identityApiConnector: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3776,10 +4925,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	identityBuiltInUserFlowAttribute: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	identityContainer: {
+		properties: [
+			"healthIssues|healthIssues|/[Name]|healthIssue", "sensors|sensors|/[Name]|sensor"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		healthIssues: {
 			requestType: RequestType.Get,
@@ -3791,10 +4946,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	identityCustomUserFlowAttribute: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	identityGovernance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		lifecycleWorkflows: {
 			returnType: "lifecycleWorkflowsContainer"
@@ -3816,6 +4977,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	identityProtectionRoot: {
+		properties: [
+			"riskDetections|riskDetections|/[Name]|riskDetection", "riskyServicePrincipals|riskyServicePrincipals|/[Name]|riskyServicePrincipal", "riskyUsers|riskyUsers|/[Name]|riskyUser", "servicePrincipalRiskDetections|servicePrincipalRiskDetections|/[Name]|servicePrincipalRiskDetection"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		riskDetections: {
 			requestType: RequestType.Get,
@@ -3835,6 +4999,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	identityProvider: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3842,6 +5009,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	identityProviderBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3849,14 +5019,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	identitySecurityDefaultsEnforcementPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	identityUserFlow: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	identityUserFlowAttribute: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3864,6 +5043,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	identityUserFlowAttributeAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		userAttribute: {
 			returnType: "identityUserFlowAttribute"
@@ -3873,6 +5055,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	importedWindowsAutopilotDeviceIdentity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3880,6 +5065,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	importedWindowsAutopilotDeviceIdentityUpload: {
+		properties: [
+			"deviceIdentities|importedWindowsAutopilotDeviceIdentitys|/[Name]|importedWindowsAutopilotDeviceIdentity"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceIdentities: {
 			requestType: RequestType.Get,
@@ -3887,6 +5075,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	incident: {
+		properties: [
+			"alerts|alerts|/[Name]|alert"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		alerts: {
 			requestType: RequestType.Get,
@@ -3894,12 +5085,18 @@ export const Mapper: IMapper = {
 		},
 	},
 	indicator: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		artifact: {
 			returnType: "artifact"
 		},
 	},
 	inferenceClassification: {
+		properties: [
+			"overrides|inferenceClassificationOverrides|/[Name]|inferenceClassificationOverride"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		overrides: {
 			requestType: RequestType.Get,
@@ -3907,6 +5104,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	inferenceClassificationOverride: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3914,6 +5114,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	informationProtection: {
+		properties: [
+			"threatAssessmentRequests|threatAssessmentRequests|/[Name]|threatAssessmentRequest"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bitlocker: {
 			returnType: "bitlocker"
@@ -3924,14 +5127,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	insights: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	insightsSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	intelligenceProfile: {
+		properties: [
+			"indicators|intelligenceProfileIndicators|/[Name]|intelligenceProfileIndicator"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		indicators: {
 			requestType: RequestType.Get,
@@ -3939,10 +5151,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	intelligenceProfileIndicator: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	internalDomainFederation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -3950,6 +5168,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	internetExplorerMode: {
+		properties: [
+			"siteLists|browserSiteLists|/[Name]|browserSiteList"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		siteLists: {
 			requestType: RequestType.Get,
@@ -3957,6 +5178,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	invitation: {
+		properties: [
+			"invitedUserSponsors|directoryObjects|/[Name]|directoryObject"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		invitedUser: {
 			returnType: "user"
@@ -3967,38 +5191,65 @@ export const Mapper: IMapper = {
 		},
 	},
 	inviteParticipantsOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosCertificateProfile: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosCompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosCustomConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosDeviceFeaturesConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosGeneralDeviceConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosLobApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosLobAppProvisioningConfigurationAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosManagedAppProtection: {
+		properties: [
+			"apps|managedMobileApps|/[Name]|managedMobileApp"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
 			requestType: RequestType.Get,
@@ -4012,22 +5263,37 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	iosManagedAppRegistration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosMobileAppConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosStoreApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosUpdateConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosUpdateDeviceStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4035,30 +5301,51 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	iosVppApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosVppEBook: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosVppEBookAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	iosiPadOSWebClip: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	ipAddress: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	ipNamedLocation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	itemActivity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveItem: {
 			returnType: "driveItem"
@@ -4068,6 +5355,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	itemActivityStat: {
+		properties: [
+			"activities|itemActivitys|/[Name]|itemActivity"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activities: {
 			requestType: RequestType.Get,
@@ -4078,6 +5368,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	itemAnalytics: {
+		properties: [
+			"itemActivityStats|itemActivityStats|/[Name]|itemActivityStat"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allTime: {
 			returnType: "itemActivityStat"
@@ -4091,20 +5384,32 @@ export const Mapper: IMapper = {
 		},
 	},
 	itemAttachment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		item: {
 			returnType: "outlookItem"
 		},
 	},
 	itemInsights: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	itemRetentionLabel: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	labelsRoot: {
+		properties: [
+			"authorities|authorityTemplates|/[Name]|authorityTemplate", "categories|categoryTemplates|/[Name]|categoryTemplate", "citations|citationTemplates|/[Name]|citationTemplate", "departments|departmentTemplates|/[Name]|departmentTemplate", "filePlanReferences|filePlanReferenceTemplates|/[Name]|filePlanReferenceTemplate", "retentionLabels|retentionLabels|/[Name]|retentionLabel"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authorities: {
 			requestType: RequestType.Get,
@@ -4132,6 +5437,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	landingPage: {
+		properties: [
+			"details|landingPageDetails|/[Name]|landingPageDetail"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		details: {
 			requestType: RequestType.Get,
@@ -4142,6 +5450,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	landingPageDetail: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4149,10 +5460,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	learningAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	learningContent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4160,6 +5477,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	learningCourseActivity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4167,6 +5487,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	learningProvider: {
+		properties: [
+			"learningContents|learningContents|/[Name]|learningContent", "learningCourseActivities|learningCourseActivitys|/[Name]|learningCourseActivity"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		learningContents: {
 			requestType: RequestType.Get,
@@ -4181,10 +5504,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	learningSelfInitiatedCourse: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	licenseDetails: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4192,10 +5521,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	lifecycleManagementSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	lifecycleWorkflowsContainer: {
+		properties: [
+			"customTaskExtensions|customTaskExtensions|/[Name]|customTaskExtension", "taskDefinitions|taskDefinitions|/[Name]|taskDefinition", "workflows|workflows|/[Name]|workflow", "workflowTemplates|workflowTemplates|/[Name]|workflowTemplate"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		customTaskExtensions: {
 			requestType: RequestType.Get,
@@ -4224,6 +5559,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	linkedResource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4231,6 +5569,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	list: {
+		properties: [
+			"columns|columnDefinitions|/[Name]|columnDefinition", "contentTypes|contentTypes|/[Name]|contentType", "items|listItems|/[Name]|listItem", "operations|richLongRunningOperations|/[Name]|richLongRunningOperation", "subscriptions|subscriptions|/[Name]|subscription"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		columns: {
 			requestType: RequestType.Get,
@@ -4263,6 +5604,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	listItem: {
+		properties: [
+			"documentSetVersions|documentSetVersions|/[Name]|documentSetVersion", "versions|listItemVersions|/[Name]|listItemVersion"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		analytics: {
 			returnType: "itemAnalytics"
@@ -4295,6 +5639,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	listItemVersion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fields: {
 			returnType: "fieldValueSet"
@@ -4304,6 +5651,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	localizedNotificationMessage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4311,6 +5661,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	loginPage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4318,6 +5671,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	longRunningOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4325,50 +5681,86 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	m365AppsInstallationOptions: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSCompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSCustomConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSDeviceFeaturesConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSDmgApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSGeneralDeviceConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSLobApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSMicrosoftDefenderApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSMicrosoftEdgeApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	macOSOfficeSuiteApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	mailAssessmentRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	mailFolder: {
+		properties: [
+			"childFolders|mailFolders|/[Name]|mailFolder", "messageRules|messageRules|/[Name]|messageRule", "messages|messages|/[Name]|message", "multiValueExtendedProperties|multiValueLegacyExtendedPropertys|/[Name]|multiValueLegacyExtendedProperty", "singleValueExtendedProperties|singleValueLegacyExtendedPropertys|/[Name]|singleValueLegacyExtendedProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		childFolders: {
 			requestType: RequestType.Get,
@@ -4395,10 +5787,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mailSearchFolder: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	mailboxProtectionRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4406,6 +5804,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mailboxProtectionUnit: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4413,6 +5814,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mailboxRestoreArtifact: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4420,6 +5824,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	malwareStateForWindowsDevice: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4427,22 +5834,37 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAndroidLobApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedAndroidStoreApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedAppConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedAppOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4450,6 +5872,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAppPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4457,14 +5882,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAppPolicyDeploymentSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedAppProtection: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedAppRegistration: {
+		properties: [
+			"appliedPolicies|managedAppPolicys|/[Name]|managedAppPolicy", "intendedPolicies|managedAppPolicys|/[Name]|managedAppPolicy", "operations|managedAppOperations|/[Name]|managedAppOperation"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliedPolicies: {
 			requestType: RequestType.Get,
@@ -4483,6 +5917,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAppStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4490,10 +5927,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedAppStatusRaw: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedDevice: {
+		properties: [
+			"deviceCompliancePolicyStates|deviceCompliancePolicyStates|/[Name]|deviceCompliancePolicyState", "deviceConfigurationStates|deviceConfigurationStates|/[Name]|deviceConfigurationState", "logCollectionRequests|deviceLogCollectionResponses|/[Name]|deviceLogCollectionResponse", "users|users|/[Name]|user"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceCompliancePolicyStates: {
 			requestType: RequestType.Get,
@@ -4522,6 +5965,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedDeviceMobileAppConfiguration: {
+		properties: [
+			"assignments|managedDeviceMobileAppConfigurationAssignments|/[Name]|managedDeviceMobileAppConfigurationAssignment", "deviceStatuses|managedDeviceMobileAppConfigurationDeviceStatuss|/[Name]|managedDeviceMobileAppConfigurationDeviceStatus", "userStatuses|managedDeviceMobileAppConfigurationUserStatuss|/[Name]|managedDeviceMobileAppConfigurationUserStatus"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -4546,6 +5992,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedDeviceMobileAppConfigurationAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4553,6 +6002,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedDeviceMobileAppConfigurationDeviceStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4560,10 +6012,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedDeviceMobileAppConfigurationDeviceSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedDeviceMobileAppConfigurationUserStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4571,14 +6029,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedDeviceMobileAppConfigurationUserSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedDeviceOverview: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedEBook: {
+		properties: [
+			"assignments|managedEBookAssignments|/[Name]|managedEBookAssignment", "deviceStates|deviceInstallStates|/[Name]|deviceInstallState", "userStateSummary|userInstallStateSummarys|/[Name]|userInstallStateSummary"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -4600,6 +6067,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedEBookAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4607,14 +6077,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedIOSLobApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedIOSStoreApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	managedMobileApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4622,6 +6101,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	managedMobileLobApp: {
+		properties: [
+			"contentVersions|mobileAppContents|/[Name]|mobileAppContent"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		contentVersions: {
 			requestType: RequestType.Get,
@@ -4629,10 +6111,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	manifest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	mdmWindowsInformationProtectionPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4640,6 +6128,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	meetingAttendanceReport: {
+		properties: [
+			"attendanceRecords|attendanceRecords|/[Name]|attendanceRecord"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attendanceRecords: {
 			requestType: RequestType.Get,
@@ -4650,6 +6141,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	membershipOutlierInsight: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		container: {
 			returnType: "directoryObject"
@@ -4662,6 +6156,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	message: {
+		properties: [
+			"attachments|attachments|/[Name]|attachment", "extensions|extensions|/[Name]|extension", "multiValueExtendedProperties|multiValueLegacyExtendedPropertys|/[Name]|multiValueLegacyExtendedProperty", "singleValueExtendedProperties|singleValueLegacyExtendedPropertys|/[Name]|singleValueLegacyExtendedProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
 			requestType: RequestType.Get,
@@ -4684,6 +6181,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	messageRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4691,10 +6191,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	microsoftAccountUserConversationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	microsoftAuthenticatorAuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		device: {
 			returnType: "device"
@@ -4704,6 +6210,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	microsoftAuthenticatorAuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|microsoftAuthenticatorAuthenticationMethodTargets|/[Name]|microsoftAuthenticatorAuthenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -4711,6 +6220,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	microsoftAuthenticatorAuthenticationMethodTarget: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4718,10 +6230,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	microsoftStoreForBusinessApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	mobileApp: {
+		properties: [
+			"assignments|mobileAppAssignments|/[Name]|mobileAppAssignment", "categories|mobileAppCategorys|/[Name]|mobileAppCategory"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -4736,6 +6254,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileAppAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4743,6 +6264,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileAppCategory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4750,6 +6274,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileAppContent: {
+		properties: [
+			"containedApps|mobileContainedApps|/[Name]|mobileContainedApp", "files|mobileAppContentFiles|/[Name]|mobileAppContentFile"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		containedApps: {
 			requestType: RequestType.Get,
@@ -4764,6 +6291,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileAppContentFile: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4771,6 +6301,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileAppTroubleshootingEvent: {
+		properties: [
+			"appLogCollectionRequests|appLogCollectionRequests|/[Name]|appLogCollectionRequest"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appLogCollectionRequests: {
 			requestType: RequestType.Get,
@@ -4781,6 +6314,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileContainedApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4788,6 +6324,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	mobileLobApp: {
+		properties: [
+			"contentVersions|mobileAppContents|/[Name]|mobileAppContent"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		contentVersions: {
 			requestType: RequestType.Get,
@@ -4795,6 +6334,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	mobileThreatDefenseConnector: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4802,6 +6344,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	multiTenantOrganization: {
+		properties: [
+			"tenants|multiTenantOrganizationMembers|/[Name]|multiTenantOrganizationMember"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		joinRequest: {
 			returnType: "multiTenantOrganizationJoinRequestRecord"
@@ -4812,14 +6357,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	multiTenantOrganizationIdentitySyncPolicyTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	multiTenantOrganizationJoinRequestRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	multiTenantOrganizationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4827,10 +6381,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	multiTenantOrganizationPartnerConfigurationTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	multiValueLegacyExtendedProperty: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4838,10 +6398,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	muteParticipantOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	namedLocation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4849,10 +6415,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	networkAdapter: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	notebook: {
+		properties: [
+			"sectionGroups|sectionGroups|/[Name]|sectionGroup", "sections|onenoteSections|/[Name]|onenoteSection"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sectionGroups: {
 			requestType: RequestType.Get,
@@ -4867,6 +6439,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	notificationMessageTemplate: {
+		properties: [
+			"localizedNotificationMessages|localizedNotificationMessages|/[Name]|localizedNotificationMessage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		localizedNotificationMessages: {
 			requestType: RequestType.Get,
@@ -4877,6 +6452,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	oAuth2PermissionGrant: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4884,6 +6462,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	offerShiftRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4891,6 +6472,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	officeGraphInsights: {
+		properties: [
+			"shared|sharedInsights|/[Name]|sharedInsight", "trending|trendings|/[Name]|trending", "used|usedInsights|/[Name]|usedInsight"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		shared: {
 			requestType: RequestType.Get,
@@ -4906,22 +6490,37 @@ export const Mapper: IMapper = {
 		},
 	},
 	onAttributeCollectionListener: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onAuthenticationMethodLoadStartListener: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onInteractiveAuthFlowStartListener: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onPremisesConditionalAccessSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onPremisesDirectorySynchronization: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -4929,18 +6528,30 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onTokenIssuanceStartCustomExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onTokenIssuanceStartListener: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onUserCreateStartListener: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	oneDriveForBusinessProtectionPolicy: {
+		properties: [
+			"driveInclusionRules|driveProtectionRules|/[Name]|driveProtectionRule", "driveProtectionUnits|driveProtectionUnits|/[Name]|driveProtectionUnit"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveInclusionRules: {
 			requestType: RequestType.Get,
@@ -4955,6 +6566,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	oneDriveForBusinessRestoreSession: {
+		properties: [
+			"driveRestoreArtifacts|driveRestoreArtifacts|/[Name]|driveRestoreArtifact"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveRestoreArtifacts: {
 			requestType: RequestType.Get,
@@ -4965,6 +6579,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onenote: {
+		properties: [
+			"notebooks|notebooks|/[Name]|notebook", "operations|onenoteOperations|/[Name]|onenoteOperation", "pages|onenotePages|/[Name]|onenotePage", "resources|onenoteResources|/[Name]|onenoteResource", "sectionGroups|sectionGroups|/[Name]|sectionGroup", "sections|onenoteSections|/[Name]|onenoteSection"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		notebooks: {
 			requestType: RequestType.Get,
@@ -4992,18 +6609,30 @@ export const Mapper: IMapper = {
 		},
 	},
 	onenoteEntityBaseModel: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onenoteEntityHierarchyModel: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onenoteEntitySchemaObjectModel: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	onenoteOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5011,6 +6640,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onenotePage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		parentNotebook: {
 			returnType: "notebook"
@@ -5023,6 +6655,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onenoteResource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5030,6 +6665,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onenoteSection: {
+		properties: [
+			"pages|onenotePages|/[Name]|onenotePage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		pages: {
 			requestType: RequestType.Get,
@@ -5046,6 +6684,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onlineMeeting: {
+		properties: [
+			"recordings|callRecordings|/[Name]|callRecording", "transcripts|callTranscripts|/[Name]|callTranscript"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		recordings: {
 			requestType: RequestType.Get,
@@ -5060,6 +6701,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	onlineMeetingBase: {
+		properties: [
+			"attendanceReports|meetingAttendanceReports|/[Name]|meetingAttendanceReport"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attendanceReports: {
 			requestType: RequestType.Get,
@@ -5067,6 +6711,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	openShift: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5074,6 +6721,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	openShiftChangeRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5081,14 +6731,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	openTypeExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	operation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	orgContact: {
+		properties: [
+			"directReports|directoryObjects|/[Name]|directoryObject", "memberOf|directoryObjects|/[Name]|directoryObject", "transitiveMemberOf|directoryObjects|/[Name]|directoryObject"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		directReports: {
 			requestType: RequestType.Get,
@@ -5107,6 +6766,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	organization: {
+		properties: [
+			"certificateBasedAuthConfiguration|certificateBasedAuthConfigurations|/[Name]|certificateBasedAuthConfiguration", "extensions|extensions|/[Name]|extension"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		branding: {
 			returnType: "organizationalBranding"
@@ -5121,6 +6783,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	organizationalBranding: {
+		properties: [
+			"localizations|organizationalBrandingLocalizations|/[Name]|organizationalBrandingLocalization"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		localizations: {
 			requestType: RequestType.Get,
@@ -5128,6 +6793,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	organizationalBrandingLocalization: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5135,14 +6803,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	organizationalBrandingProperties: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	organizer: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	outlookCategory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5150,10 +6827,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	outlookItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	outlookUser: {
+		properties: [
+			"masterCategories|outlookCategorys|/[Name]|outlookCategory"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		masterCategories: {
 			requestType: RequestType.Get,
@@ -5161,6 +6844,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	participant: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5168,28 +6854,43 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	participantBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	participantJoiningNotification: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		call: {
 			returnType: "call"
 		},
 	},
 	participantLeftNotification: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		call: {
 			returnType: "call"
 		},
 	},
 	partners: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		billing: {
 			returnType: "billing"
 		},
 	},
 	passiveDnsRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		artifact: {
 			returnType: "artifact"
@@ -5199,6 +6900,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	passwordAuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5206,6 +6910,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	payload: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5213,6 +6920,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	peopleAdminSettings: {
+		properties: [
+			"profileCardProperties|profileCardPropertys|/[Name]|profileCardProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		profileCardProperties: {
 			requestType: RequestType.Get,
@@ -5226,6 +6936,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	permission: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		update: {
 			argNames: ["values"],
@@ -5235,6 +6948,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	permissionGrantConditionSet: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5242,6 +6958,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	permissionGrantPolicy: {
+		properties: [
+			"excludes|permissionGrantConditionSets|/[Name]|permissionGrantConditionSet", "includes|permissionGrantConditionSets|/[Name]|permissionGrantConditionSet"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		excludes: {
 			requestType: RequestType.Get,
@@ -5256,6 +6975,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	person: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5263,6 +6985,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	phoneAuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5270,6 +6995,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	pinnedChatMessageInfo: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		message: {
 			returnType: "chatMessage"
@@ -5279,10 +7007,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	place: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	planner: {
+		properties: [
+			"buckets|plannerBuckets|/[Name]|plannerBucket", "plans|plannerPlans|/[Name]|plannerPlan", "tasks|plannerTasks|/[Name]|plannerTask"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		buckets: {
 			requestType: RequestType.Get,
@@ -5298,10 +7032,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	plannerAssignedToTaskBoardTaskFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	plannerBucket: {
+		properties: [
+			"tasks|plannerTasks|/[Name]|plannerTask"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		tasks: {
 			requestType: RequestType.Get,
@@ -5312,10 +7052,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	plannerBucketTaskBoardTaskFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	plannerGroup: {
+		properties: [
+			"plans|plannerPlans|/[Name]|plannerPlan"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		plans: {
 			requestType: RequestType.Get,
@@ -5323,6 +7069,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	plannerPlan: {
+		properties: [
+			"buckets|plannerBuckets|/[Name]|plannerBucket", "tasks|plannerTasks|/[Name]|plannerTask"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		buckets: {
 			requestType: RequestType.Get,
@@ -5340,14 +7089,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	plannerPlanDetails: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	plannerProgressTaskBoardTaskFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	plannerTask: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignedToTaskBoardFormat: {
 			returnType: "plannerAssignedToTaskBoardTaskFormat"
@@ -5366,10 +7124,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	plannerTaskDetails: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	plannerUser: {
+		properties: [
+			"plans|plannerPlans|/[Name]|plannerPlan", "tasks|plannerTasks|/[Name]|plannerTask"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		plans: {
 			requestType: RequestType.Get,
@@ -5381,14 +7145,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	playPromptOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	policyBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	policyRoot: {
+		properties: [
+			"authenticationStrengthPolicies|authenticationStrengthPolicys|/[Name]|authenticationStrengthPolicy", "activityBasedTimeoutPolicies|activityBasedTimeoutPolicys|/[Name]|activityBasedTimeoutPolicy", "appManagementPolicies|appManagementPolicys|/[Name]|appManagementPolicy", "claimsMappingPolicies|claimsMappingPolicys|/[Name]|claimsMappingPolicy", "homeRealmDiscoveryPolicies|homeRealmDiscoveryPolicys|/[Name]|homeRealmDiscoveryPolicy", "permissionGrantPolicies|permissionGrantPolicys|/[Name]|permissionGrantPolicy", "tokenIssuancePolicies|tokenIssuancePolicys|/[Name]|tokenIssuancePolicy", "tokenLifetimePolicies|tokenLifetimePolicys|/[Name]|tokenLifetimePolicy", "featureRolloutPolicies|featureRolloutPolicys|/[Name]|featureRolloutPolicy", "conditionalAccessPolicies|conditionalAccessPolicys|/[Name]|conditionalAccessPolicy", "roleManagementPolicies|unifiedRoleManagementPolicys|/[Name]|unifiedRoleManagementPolicy", "roleManagementPolicyAssignments|unifiedRoleManagementPolicyAssignments|/[Name]|unifiedRoleManagementPolicyAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authenticationMethodsPolicy: {
 			returnType: "authenticationMethodsPolicy"
@@ -5464,6 +7237,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	policyTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		multiTenantOrganizationIdentitySynchronization: {
 			returnType: "multiTenantOrganizationIdentitySyncPolicyTemplate"
@@ -5473,6 +7249,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	post: {
+		properties: [
+			"attachments|attachments|/[Name]|attachment", "extensions|extensions|/[Name]|extension", "multiValueExtendedProperties|multiValueLegacyExtendedPropertys|/[Name]|multiValueLegacyExtendedProperty", "singleValueExtendedProperties|singleValueLegacyExtendedPropertys|/[Name]|singleValueLegacyExtendedProperty"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
 			requestType: RequestType.Get,
@@ -5498,6 +7277,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	presence: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5505,6 +7287,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	print: {
+		properties: [
+			"connectors|printConnectors|/[Name]|printConnector", "operations|printOperations|/[Name]|printOperation", "printers|printers|/[Name]|printer", "services|printServices|/[Name]|printService", "shares|printerShares|/[Name]|printerShare", "taskDefinitions|printTaskDefinitions|/[Name]|printTaskDefinition"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		connectors: {
 			requestType: RequestType.Get,
@@ -5532,6 +7317,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	printConnector: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5539,6 +7327,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printDocument: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5546,6 +7337,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printJob: {
+		properties: [
+			"documents|printDocuments|/[Name]|printDocument", "tasks|printTasks|/[Name]|printTask"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		documents: {
 			requestType: RequestType.Get,
@@ -5560,6 +7354,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5567,6 +7364,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printService: {
+		properties: [
+			"endpoints|printServiceEndpoints|/[Name]|printServiceEndpoint"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		endpoints: {
 			requestType: RequestType.Get,
@@ -5577,6 +7377,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printServiceEndpoint: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5584,6 +7387,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printTask: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		definition: {
 			returnType: "printTaskDefinition"
@@ -5596,6 +7402,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printTaskDefinition: {
+		properties: [
+			"tasks|printTasks|/[Name]|printTask"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		tasks: {
 			requestType: RequestType.Get,
@@ -5606,6 +7415,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printTaskTrigger: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		definition: {
 			returnType: "printTaskDefinition"
@@ -5615,10 +7427,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printUsage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	printUsageByPrinter: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5626,6 +7444,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printUsageByUser: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5633,6 +7454,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printer: {
+		properties: [
+			"connectors|printConnectors|/[Name]|printConnector", "shares|printerShares|/[Name]|printerShare", "taskTriggers|printTaskTriggers|/[Name]|printTaskTrigger"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		connectors: {
 			requestType: RequestType.Get,
@@ -5651,6 +7475,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	printerBase: {
+		properties: [
+			"jobs|printJobs|/[Name]|printJob"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		jobs: {
 			requestType: RequestType.Get,
@@ -5658,12 +7485,18 @@ export const Mapper: IMapper = {
 		},
 	},
 	printerCreateOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		printer: {
 			returnType: "printer"
 		},
 	},
 	printerShare: {
+		properties: [
+			"allowedGroups|groups|/[Name]|group", "allowedUsers|users|/[Name]|user"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allowedGroups: {
 			requestType: RequestType.Get,
@@ -5681,6 +7514,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privacy: {
+		properties: [
+			"subjectRightsRequests|subjectRightsRequests|/[Name]|subjectRightsRequest"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subjectRightsRequests: {
 			requestType: RequestType.Get,
@@ -5688,6 +7524,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	privilegedAccessGroup: {
+		properties: [
+			"assignmentApprovals|approvals|/[Name]|approval", "assignmentScheduleInstances|privilegedAccessGroupAssignmentScheduleInstances|/[Name]|privilegedAccessGroupAssignmentScheduleInstance", "assignmentScheduleRequests|privilegedAccessGroupAssignmentScheduleRequests|/[Name]|privilegedAccessGroupAssignmentScheduleRequest", "assignmentSchedules|privilegedAccessGroupAssignmentSchedules|/[Name]|privilegedAccessGroupAssignmentSchedule", "eligibilityScheduleInstances|privilegedAccessGroupEligibilityScheduleInstances|/[Name]|privilegedAccessGroupEligibilityScheduleInstance", "eligibilityScheduleRequests|privilegedAccessGroupEligibilityScheduleRequests|/[Name]|privilegedAccessGroupEligibilityScheduleRequest", "eligibilitySchedules|privilegedAccessGroupEligibilitySchedules|/[Name]|privilegedAccessGroupEligibilitySchedule"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignmentApprovals: {
 			requestType: RequestType.Get,
@@ -5719,6 +7558,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	privilegedAccessGroupAssignmentSchedule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "privilegedAccessGroupEligibilitySchedule"
@@ -5734,6 +7576,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessGroupAssignmentScheduleInstance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "privilegedAccessGroupEligibilityScheduleInstance"
@@ -5749,6 +7594,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessGroupAssignmentScheduleRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "privilegedAccessGroupEligibilitySchedule"
@@ -5767,6 +7615,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessGroupEligibilitySchedule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
 			returnType: "group"
@@ -5779,6 +7630,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessGroupEligibilityScheduleInstance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
 			returnType: "group"
@@ -5791,6 +7645,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessGroupEligibilityScheduleRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
 			returnType: "group"
@@ -5806,24 +7663,39 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	privilegedAccessRoot: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
 			returnType: "privilegedAccessGroup"
 		},
 	},
 	privilegedAccessSchedule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	privilegedAccessScheduleInstance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	privilegedAccessScheduleRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	profileCardProperty: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5831,6 +7703,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	profilePhoto: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5838,10 +7713,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	pronounsSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	protectionPolicyBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5849,10 +7730,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	protectionRuleBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	protectionUnitBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5860,6 +7747,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	provisioningObjectSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5867,10 +7757,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	qna: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	rbacApplication: {
+		properties: [
+			"resourceNamespaces|unifiedRbacResourceNamespaces|/[Name]|unifiedRbacResourceNamespace", "roleAssignments|unifiedRoleAssignments|/[Name]|unifiedRoleAssignment", "roleDefinitions|unifiedRoleDefinitions|/[Name]|unifiedRoleDefinition", "roleAssignmentScheduleInstances|unifiedRoleAssignmentScheduleInstances|/[Name]|unifiedRoleAssignmentScheduleInstance", "roleAssignmentScheduleRequests|unifiedRoleAssignmentScheduleRequests|/[Name]|unifiedRoleAssignmentScheduleRequest", "roleAssignmentSchedules|unifiedRoleAssignmentSchedules|/[Name]|unifiedRoleAssignmentSchedule", "roleEligibilityScheduleInstances|unifiedRoleEligibilityScheduleInstances|/[Name]|unifiedRoleEligibilityScheduleInstance", "roleEligibilityScheduleRequests|unifiedRoleEligibilityScheduleRequests|/[Name]|unifiedRoleEligibilityScheduleRequest", "roleEligibilitySchedules|unifiedRoleEligibilitySchedules|/[Name]|unifiedRoleEligibilitySchedule"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resourceNamespaces: {
 			requestType: RequestType.Get,
@@ -5910,14 +7806,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	recordOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	referenceAttachment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	relation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fromTerm: {
 			returnType: "term"
@@ -5930,10 +7835,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	relyingPartyDetailedSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	remoteAssistancePartner: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5941,6 +7852,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	remoteDesktopSecurityConfiguration: {
+		properties: [
+			"targetDeviceGroups|targetDeviceGroups|/[Name]|targetDeviceGroup"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetDeviceGroups: {
 			requestType: RequestType.Get,
@@ -5948,6 +7862,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	reportRoot: {
+		properties: [
+			"dailyPrintUsageByPrinter|printUsageByPrinters|/[Name]|printUsageByPrinter", "dailyPrintUsageByUser|printUsageByUsers|/[Name]|printUsageByUser", "monthlyPrintUsageByPrinter|printUsageByPrinters|/[Name]|printUsageByPrinter", "monthlyPrintUsageByUser|printUsageByUsers|/[Name]|printUsageByUser"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		authenticationMethods: {
 			returnType: "authenticationMethodsRoot"
@@ -5976,14 +7893,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	request: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	resellerDelegatedAdminRelationship: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	resourceOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5991,6 +7917,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	resourceSpecificPermissionGrant: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -5998,12 +7927,18 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	restoreArtifactBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		restorePoint: {
 			returnType: "restorePoint"
 		},
 	},
 	restorePoint: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		protectionUnit: {
 			returnType: "protectionUnitBase"
@@ -6013,6 +7948,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	restoreSessionBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6020,16 +7958,25 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	retentionEvent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		retentionEventType: {
 			returnType: "retentionEventType"
 		},
 	},
 	retentionEventType: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	retentionLabel: {
+		properties: [
+			"dispositionReviewStages|dispositionReviewStages|/[Name]|dispositionReviewStage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		descriptors: {
 			returnType: "filePlanDescriptor"
@@ -6043,6 +7990,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	richLongRunningOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6050,6 +8000,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	riskDetection: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6057,6 +8010,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	riskyServicePrincipal: {
+		properties: [
+			"history|riskyServicePrincipalHistoryItems|/[Name]|riskyServicePrincipalHistoryItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		history: {
 			requestType: RequestType.Get,
@@ -6067,6 +8023,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	riskyServicePrincipalHistoryItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6074,6 +8033,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	riskyUser: {
+		properties: [
+			"history|riskyUserHistoryItems|/[Name]|riskyUserHistoryItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		history: {
 			requestType: RequestType.Get,
@@ -6084,6 +8046,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	riskyUserHistoryItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6091,6 +8056,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	roleAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		roleDefinition: {
 			returnType: "roleDefinition"
@@ -6100,6 +8068,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	roleDefinition: {
+		properties: [
+			"roleAssignments|roleAssignments|/[Name]|roleAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		roleAssignments: {
 			requestType: RequestType.Get,
@@ -6110,6 +8081,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	roleManagement: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		directory: {
 			returnType: "rbacApplication"
@@ -6119,6 +8093,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	room: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6126,6 +8103,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	roomList: {
+		properties: [
+			"rooms|rooms|/[Name]|room"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		rooms: {
 			requestType: RequestType.Get,
@@ -6133,6 +8113,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	run: {
+		properties: [
+			"taskProcessingResults|taskProcessingResults|/[Name]|taskProcessingResult", "userProcessingResults|userProcessingResults|/[Name]|userProcessingResult"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		taskProcessingResults: {
 			requestType: RequestType.Get,
@@ -6144,10 +8127,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	runningOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	samlOrWsFedExternalDomainFederation: {
+		properties: [
+			"domains|externalDomainNames|/[Name]|externalDomainName"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		domains: {
 			requestType: RequestType.Get,
@@ -6155,10 +8144,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	samlOrWsFedProvider: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	schedule: {
+		properties: [
+			"offerShiftRequests|offerShiftRequests|/[Name]|offerShiftRequest", "openShiftChangeRequests|openShiftChangeRequests|/[Name]|openShiftChangeRequest", "openShifts|openShifts|/[Name]|openShift", "schedulingGroups|schedulingGroups|/[Name]|schedulingGroup", "shifts|shifts|/[Name]|shift", "swapShiftsChangeRequests|swapShiftsChangeRequests|/[Name]|swapShiftsChangeRequest", "timeOffReasons|timeOffReasons|/[Name]|timeOffReason", "timeOffRequests|timeOffRequests|/[Name]|timeOffRequest", "timesOff|timeOffs|/[Name]|timeOff"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		offerShiftRequests: {
 			requestType: RequestType.Get,
@@ -6198,10 +8193,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	scheduleChangeRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	schedulingGroup: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6209,14 +8210,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	schema: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	schemaExtension: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	scopedRoleMembership: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6224,14 +8234,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	search: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	searchAnswer: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	searchEntity: {
+		properties: [
+			"acronyms|acronyms|/[Name]|acronym", "bookmarks|bookmarks|/[Name]|bookmark", "qnas|qnas|/[Name]|qna"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		acronyms: {
 			requestType: RequestType.Get,
@@ -6247,6 +8266,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	sectionGroup: {
+		properties: [
+			"sectionGroups|sectionGroups|/[Name]|sectionGroup", "sections|onenoteSections|/[Name]|onenoteSection"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		parentNotebook: {
 			returnType: "notebook"
@@ -6267,6 +8289,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	secureScore: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6274,6 +8299,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	secureScoreControlProfile: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6281,6 +8309,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	security: {
+		properties: [
+			"subjectRightsRequests|subjectRightsRequests|/[Name]|subjectRightsRequest", "alerts_v2|alerts|/[Name]|alert", "incidents|incidents|/[Name]|incident", "alerts|alerts|/[Name]|alert", "secureScoreControlProfiles|secureScoreControlProfiles|/[Name]|secureScoreControlProfile", "secureScores|secureScores|/[Name]|secureScore"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subjectRightsRequests: {
 			requestType: RequestType.Get,
@@ -6329,18 +8360,30 @@ export const Mapper: IMapper = {
 		},
 	},
 	securityReportsRoot: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	segment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	sendDtmfTonesOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	sensor: {
+		properties: [
+			"healthIssues|healthIssues|/[Name]|healthIssue"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		healthIssues: {
 			requestType: RequestType.Get,
@@ -6348,6 +8391,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	serviceAnnouncement: {
+		properties: [
+			"healthOverviews|serviceHealths|/[Name]|serviceHealth", "issues|serviceHealthIssues|/[Name]|serviceHealthIssue", "messages|serviceUpdateMessages|/[Name]|serviceUpdateMessage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		healthOverviews: {
 			requestType: RequestType.Get,
@@ -6363,6 +8409,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	serviceAnnouncementAttachment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6370,10 +8419,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	serviceAnnouncementBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	serviceApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6381,6 +8436,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	serviceHealth: {
+		properties: [
+			"issues|serviceHealthIssues|/[Name]|serviceHealthIssue"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		issues: {
 			requestType: RequestType.Get,
@@ -6391,6 +8449,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	serviceHealthIssue: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6398,6 +8459,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	servicePrincipal: {
+		properties: [
+			"appManagementPolicies|appManagementPolicys|/[Name]|appManagementPolicy", "appRoleAssignedTo|appRoleAssignments|/[Name]|appRoleAssignment", "appRoleAssignments|appRoleAssignments|/[Name]|appRoleAssignment", "claimsMappingPolicies|claimsMappingPolicys|/[Name]|claimsMappingPolicy", "createdObjects|directoryObjects|/[Name]|directoryObject", "delegatedPermissionClassifications|delegatedPermissionClassifications|/[Name]|delegatedPermissionClassification", "endpoints|endpoints|/[Name]|endpoint", "federatedIdentityCredentials|federatedIdentityCredentials|/[Name]|federatedIdentityCredential", "homeRealmDiscoveryPolicies|homeRealmDiscoveryPolicys|/[Name]|homeRealmDiscoveryPolicy", "memberOf|directoryObjects|/[Name]|directoryObject", "oauth2PermissionGrants|oAuth2PermissionGrants|/[Name]|oAuth2PermissionGrant", "ownedObjects|directoryObjects|/[Name]|directoryObject", "owners|directoryObjects|/[Name]|directoryObject", "tokenIssuancePolicies|tokenIssuancePolicys|/[Name]|tokenIssuancePolicy", "tokenLifetimePolicies|tokenLifetimePolicys|/[Name]|tokenLifetimePolicy", "transitiveMemberOf|directoryObjects|/[Name]|directoryObject"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appManagementPolicies: {
 			requestType: RequestType.Get,
@@ -6471,6 +8535,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	servicePrincipalRiskDetection: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6478,6 +8545,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	serviceStorageQuotaBreakdown: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6485,6 +8555,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	serviceUpdateMessage: {
+		properties: [
+			"attachments|serviceAnnouncementAttachments|/[Name]|serviceAnnouncementAttachment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
 			requestType: RequestType.Get,
@@ -6495,6 +8568,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	session: {
+		properties: [
+			"segments|segments|/[Name]|segment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		segments: {
 			requestType: RequestType.Get,
@@ -6502,6 +8578,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	set: {
+		properties: [
+			"children|terms|/[Name]|term", "relations|relations|/[Name]|relation", "terms|terms|/[Name]|term"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		children: {
 			requestType: RequestType.Get,
@@ -6520,6 +8599,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	settingStateDeviceSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6527,6 +8609,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharePointProtectionPolicy: {
+		properties: [
+			"siteInclusionRules|siteProtectionRules|/[Name]|siteProtectionRule", "siteProtectionUnits|siteProtectionUnits|/[Name]|siteProtectionUnit"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		siteInclusionRules: {
 			requestType: RequestType.Get,
@@ -6541,6 +8626,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharePointRestoreSession: {
+		properties: [
+			"siteRestoreArtifacts|siteRestoreArtifacts|/[Name]|siteRestoreArtifact"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		siteRestoreArtifacts: {
 			requestType: RequestType.Get,
@@ -6551,6 +8639,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharedDriveItem: {
+		properties: [
+			"items|driveItems|/[Name]|driveItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		driveItem: {
 			returnType: "driveItem"
@@ -6576,6 +8667,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	sharedInsight: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		lastSharedMethod: {
 			returnType: "entity"
@@ -6588,10 +8682,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharedPCConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	sharedWithChannelTeamInfo: {
+		properties: [
+			"allowedMembers|conversationMembers|/[Name]|conversationMember"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allowedMembers: {
 			requestType: RequestType.Get,
@@ -6602,16 +8702,25 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	sharepoint: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		settings: {
 			returnType: "sharepointSettings"
 		},
 	},
 	sharepointSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	shift: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6619,10 +8728,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	shiftPreferences: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	signIn: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6630,6 +8745,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	simulation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		landingPage: {
 			returnType: "landingPage"
@@ -6645,6 +8763,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	simulationAutomation: {
+		properties: [
+			"runs|simulationAutomationRuns|/[Name]|simulationAutomationRun"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		runs: {
 			requestType: RequestType.Get,
@@ -6655,6 +8776,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	simulationAutomationRun: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6662,6 +8786,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	singleValueLegacyExtendedProperty: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6669,6 +8796,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	site: {
+		properties: [
+			"columns|columnDefinitions|/[Name]|columnDefinition", "contentTypes|contentTypes|/[Name]|contentType", "drives|drives|/[Name]|drive", "externalColumns|columnDefinitions|/[Name]|columnDefinition", "items|baseItems|/[Name]|baseItem", "lists|lists|/[Name]|list", "operations|richLongRunningOperations|/[Name]|richLongRunningOperation", "pages|baseSitePages|/[Name]|baseSitePage", "permissions|permissions|/[Name]|permission", "sites|sites|/[Name]|site", "termStores|stores|/[Name]|store"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		analytics: {
 			returnType: "itemAnalytics"
@@ -6728,6 +8858,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	sitePage: {
+		properties: [
+			"webParts|webParts|/[Name]|webPart"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		canvasLayout: {
 			returnType: "canvasLayout"
@@ -6738,6 +8871,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	siteProtectionRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6745,6 +8881,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	siteProtectionUnit: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6752,6 +8891,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	siteRestoreArtifact: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6759,26 +8901,41 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	siteSource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		site: {
 			returnType: "site"
 		},
 	},
 	sites: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		add: {
 			argNames: ["values"],
 		},
 	},
 	skypeForBusinessUserConversationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	skypeUserConversationMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	smsAuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|smsAuthenticationMethodTargets|/[Name]|smsAuthenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -6786,6 +8943,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	smsAuthenticationMethodTarget: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6793,10 +8953,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	socialIdentityProvider: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	softwareOathAuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6804,6 +8970,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	softwareOathAuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|authenticationMethodTargets|/[Name]|authenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -6811,10 +8980,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	softwareUpdateStatusSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	solutionsRoot: {
+		properties: [
+			"bookingBusinesses|bookingBusinesss|/[Name]|bookingBusiness", "bookingCurrencies|bookingCurrencys|/[Name]|bookingCurrency"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bookingBusinesses: {
 			requestType: RequestType.Get,
@@ -6832,6 +9007,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	sslCertificate: {
+		properties: [
+			"relatedHosts|hosts|/[Name]|host"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		relatedHosts: {
 			requestType: RequestType.Get,
@@ -6839,18 +9017,30 @@ export const Mapper: IMapper = {
 		},
 	},
 	standardWebPart: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	startHoldMusicOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	stopHoldMusicOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	storage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fileStorage: {
 			returnType: "fileStorage"
@@ -6860,16 +9050,25 @@ export const Mapper: IMapper = {
 		},
 	},
 	storageQuotaBreakdown: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	storageSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		quota: {
 			returnType: "unifiedStorageQuota"
 		},
 	},
 	store: {
+		properties: [
+			"groups|groups|/[Name]|group", "sets|sets|/[Name]|set"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		groups: {
 			requestType: RequestType.Get,
@@ -6881,6 +9080,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	stsPolicy: {
+		properties: [
+			"appliesTo|directoryObjects|/[Name]|directoryObject"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appliesTo: {
 			requestType: RequestType.Get,
@@ -6888,16 +9090,25 @@ export const Mapper: IMapper = {
 		},
 	},
 	subcategoryTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	subdomain: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
 			returnType: "host"
 		},
 	},
 	subjectRightsRequest: {
+		properties: [
+			"approvers|users|/[Name]|user", "collaborators|users|/[Name]|user", "notes|authoredNotes|/[Name]|authoredNote"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		approvers: {
 			requestType: RequestType.Get,
@@ -6919,14 +9130,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	subscribeToToneOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	subscribedSku: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	subscription: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6934,6 +9154,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	swapShiftsChangeRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6941,6 +9164,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	synchronization: {
+		properties: [
+			"jobs|synchronizationJobs|/[Name]|synchronizationJob", "templates|synchronizationTemplates|/[Name]|synchronizationTemplate"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		jobs: {
 			requestType: RequestType.Get,
@@ -6952,6 +9178,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	synchronizationJob: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bulkUpload: {
 			returnType: "bulkUpload"
@@ -6964,6 +9193,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	synchronizationSchema: {
+		properties: [
+			"directories|directoryDefinitions|/[Name]|directoryDefinition"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		directories: {
 			requestType: RequestType.Get,
@@ -6971,6 +9203,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	synchronizationTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		schema: {
 			returnType: "synchronizationSchema"
@@ -6980,10 +9215,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	tag: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	targetDeviceGroup: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -6991,6 +9232,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	targetedManagedAppConfiguration: {
+		properties: [
+			"apps|managedMobileApps|/[Name]|managedMobileApp", "assignments|targetedManagedAppPolicyAssignments|/[Name]|targetedManagedAppPolicyAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		apps: {
 			requestType: RequestType.Get,
@@ -7008,6 +9252,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	targetedManagedAppPolicyAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7015,6 +9262,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	targetedManagedAppProtection: {
+		properties: [
+			"assignments|targetedManagedAppPolicyAssignments|/[Name]|targetedManagedAppPolicyAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -7022,6 +9272,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	task: {
+		properties: [
+			"taskProcessingResults|taskProcessingResults|/[Name]|taskProcessingResult"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		taskProcessingResults: {
 			requestType: RequestType.Get,
@@ -7029,14 +9282,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	taskDefinition: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	taskFileAttachment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	taskProcessingResult: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subject: {
 			returnType: "user"
@@ -7046,6 +9308,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	taskReport: {
+		properties: [
+			"taskProcessingResults|taskProcessingResults|/[Name]|taskProcessingResult"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		task: {
 			returnType: "task"
@@ -7059,6 +9324,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	team: {
+		properties: [
+			"allChannels|channels|/[Name]|channel", "channels|channels|/[Name]|channel", "incomingChannels|channels|/[Name]|channel", "installedApps|teamsAppInstallations|/[Name]|teamsAppInstallation", "members|conversationMembers|/[Name]|conversationMember", "operations|teamsAsyncOperations|/[Name]|teamsAsyncOperation", "permissionGrants|resourceSpecificPermissionGrants|/[Name]|resourceSpecificPermissionGrant", "tags|teamworkTags|/[Name]|teamworkTag"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		allChannels: {
 			requestType: RequestType.Get,
@@ -7112,12 +9380,18 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamInfo: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		team: {
 			returnType: "team"
 		},
 	},
 	teamsApp: {
+		properties: [
+			"appDefinitions|teamsAppDefinitions|/[Name]|teamsAppDefinition"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appDefinitions: {
 			requestType: RequestType.Get,
@@ -7128,6 +9402,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsAppDefinition: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		bot: {
 			returnType: "teamworkBot"
@@ -7137,6 +9414,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsAppInstallation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		teamsApp: {
 			returnType: "teamsApp"
@@ -7149,10 +9429,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsAppSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	teamsAsyncOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7160,6 +9446,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsTab: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		teamsApp: {
 			returnType: "teamsApp"
@@ -7169,10 +9458,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamsTemplate: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	teamwork: {
+		properties: [
+			"workforceIntegrations|workforceIntegrations|/[Name]|workforceIntegration", "deletedChats|deletedChats|/[Name]|deletedChat", "deletedTeams|deletedTeams|/[Name]|deletedTeam"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		workforceIntegrations: {
 			requestType: RequestType.Get,
@@ -7191,14 +9486,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	teamworkBot: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	teamworkHostedContent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	teamworkTag: {
+		properties: [
+			"members|teamworkTagMembers|/[Name]|teamworkTagMember"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		members: {
 			requestType: RequestType.Get,
@@ -7209,6 +9513,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	teamworkTagMember: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7216,6 +9523,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	telecomExpenseManagementPartner: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7223,6 +9533,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	temporaryAccessPassAuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7230,6 +9543,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	temporaryAccessPassAuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|authenticationMethodTargets|/[Name]|authenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -7237,10 +9553,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	tenantAppManagementPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	tenantRelationship: {
+		properties: [
+			"delegatedAdminCustomers|delegatedAdminCustomers|/[Name]|delegatedAdminCustomer", "delegatedAdminRelationships|delegatedAdminRelationships|/[Name]|delegatedAdminRelationship"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		multiTenantOrganization: {
 			returnType: "multiTenantOrganization"
@@ -7255,6 +9577,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	term: {
+		properties: [
+			"children|terms|/[Name]|term", "relations|relations|/[Name]|relation"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		children: {
 			requestType: RequestType.Get,
@@ -7269,6 +9594,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	termsAndConditions: {
+		properties: [
+			"acceptanceStatuses|termsAndConditionsAcceptanceStatuss|/[Name]|termsAndConditionsAcceptanceStatus", "assignments|termsAndConditionsAssignments|/[Name]|termsAndConditionsAssignment"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		acceptanceStatuses: {
 			requestType: RequestType.Get,
@@ -7283,6 +9611,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	termsAndConditionsAcceptanceStatus: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		termsAndConditions: {
 			returnType: "termsAndConditions"
@@ -7292,6 +9623,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	termsAndConditionsAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7299,6 +9633,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	termsOfUseContainer: {
+		properties: [
+			"agreementAcceptances|agreementAcceptances|/[Name]|agreementAcceptance", "agreements|agreements|/[Name]|agreement"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		agreementAcceptances: {
 			requestType: RequestType.Get,
@@ -7310,10 +9647,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	textWebPart: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	threatAssessmentRequest: {
+		properties: [
+			"results|threatAssessmentResults|/[Name]|threatAssessmentResult"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		results: {
 			requestType: RequestType.Get,
@@ -7324,6 +9667,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	threatAssessmentResult: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7331,6 +9677,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	threatIntelligence: {
+		properties: [
+			"articleIndicators|articleIndicators|/[Name]|articleIndicator", "articles|articles|/[Name]|article", "hostComponents|hostComponents|/[Name]|hostComponent", "hostCookies|hostCookies|/[Name]|hostCookie", "hostPairs|hostPairs|/[Name]|hostPair", "hostPorts|hostPorts|/[Name]|hostPort", "hosts|hosts|/[Name]|host", "hostSslCertificates|hostSslCertificates|/[Name]|hostSslCertificate", "hostTrackers|hostTrackers|/[Name]|hostTracker", "intelligenceProfileIndicators|intelligenceProfileIndicators|/[Name]|intelligenceProfileIndicator", "intelProfiles|intelligenceProfiles|/[Name]|intelligenceProfile", "passiveDnsRecords|passiveDnsRecords|/[Name]|passiveDnsRecord", "sslCertificates|sslCertificates|/[Name]|sslCertificate", "subdomains|subdomains|/[Name]|subdomain", "vulnerabilities|vulnerabilitys|/[Name]|vulnerability", "whoisHistoryRecords|whoisHistoryRecords|/[Name]|whoisHistoryRecord", "whoisRecords|whoisRecords|/[Name]|whoisRecord"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		articleIndicators: {
 			requestType: RequestType.Get,
@@ -7402,6 +9751,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	thumbnailSet: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7409,6 +9761,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	timeOff: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7416,6 +9771,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	timeOffReason: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7423,6 +9781,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	timeOffRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7430,6 +9791,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	todo: {
+		properties: [
+			"lists|todoTaskLists|/[Name]|todoTaskList"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		lists: {
 			requestType: RequestType.Get,
@@ -7437,6 +9801,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	todoTask: {
+		properties: [
+			"attachments|attachmentBases|/[Name]|attachmentBase", "attachmentSessions|attachmentSessions|/[Name]|attachmentSession", "checklistItems|checklistItems|/[Name]|checklistItem", "extensions|extensions|/[Name]|extension", "linkedResources|linkedResources|/[Name]|linkedResource"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		attachments: {
 			requestType: RequestType.Get,
@@ -7463,6 +9830,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	todoTaskList: {
+		properties: [
+			"extensions|extensions|/[Name]|extension", "tasks|todoTasks|/[Name]|todoTask"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		extensions: {
 			requestType: RequestType.Get,
@@ -7477,6 +9847,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	tokenIssuancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7484,6 +9857,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	tokenLifetimePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7491,6 +9867,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	training: {
+		properties: [
+			"languageDetails|trainingLanguageDetails|/[Name]|trainingLanguageDetail"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		languageDetails: {
 			requestType: RequestType.Get,
@@ -7501,6 +9880,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	trainingLanguageDetail: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7508,6 +9890,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	trending: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resource: {
 			returnType: "entity"
@@ -7517,6 +9902,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	triggerTypesRoot: {
+		properties: [
+			"retentionEventTypes|retentionEventTypes|/[Name]|retentionEventType"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		retentionEventTypes: {
 			requestType: RequestType.Get,
@@ -7524,6 +9912,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	triggersRoot: {
+		properties: [
+			"retentionEvents|retentionEvents|/[Name]|retentionEvent"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		retentionEvents: {
 			requestType: RequestType.Get,
@@ -7531,20 +9922,32 @@ export const Mapper: IMapper = {
 		},
 	},
 	unbilledUsage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	unclassifiedArtifact: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	unifiedGroupSource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		group: {
 			returnType: "group"
 		},
 	},
 	unifiedRbacResourceAction: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7552,6 +9955,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRbacResourceNamespace: {
+		properties: [
+			"resourceActions|unifiedRbacResourceActions|/[Name]|unifiedRbacResourceAction"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resourceActions: {
 			requestType: RequestType.Get,
@@ -7562,6 +9968,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appScope: {
 			returnType: "appScope"
@@ -7580,6 +9989,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleAssignmentSchedule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "unifiedRoleEligibilitySchedule"
@@ -7589,6 +10001,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleAssignmentScheduleInstance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "unifiedRoleEligibilityScheduleInstance"
@@ -7598,6 +10013,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleAssignmentScheduleRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		activatedUsing: {
 			returnType: "unifiedRoleEligibilitySchedule"
@@ -7622,6 +10040,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleDefinition: {
+		properties: [
+			"inheritsPermissionsFrom|unifiedRoleDefinitions|/[Name]|unifiedRoleDefinition"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		inheritsPermissionsFrom: {
 			requestType: RequestType.Get,
@@ -7632,6 +10053,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleEligibilitySchedule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7639,6 +10063,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleEligibilityScheduleInstance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7646,6 +10073,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleEligibilityScheduleRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appScope: {
 			returnType: "appScope"
@@ -7667,6 +10097,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleManagementPolicy: {
+		properties: [
+			"effectiveRules|unifiedRoleManagementPolicyRules|/[Name]|unifiedRoleManagementPolicyRule", "rules|unifiedRoleManagementPolicyRules|/[Name]|unifiedRoleManagementPolicyRule"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		effectiveRules: {
 			requestType: RequestType.Get,
@@ -7681,10 +10114,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleManagementPolicyApprovalRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	unifiedRoleManagementPolicyAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		policy: {
 			returnType: "unifiedRoleManagementPolicy"
@@ -7694,22 +10133,37 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleManagementPolicyAuthenticationContextRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	unifiedRoleManagementPolicyEnablementRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	unifiedRoleManagementPolicyExpirationRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	unifiedRoleManagementPolicyNotificationRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	unifiedRoleManagementPolicyRule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7717,6 +10171,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	unifiedRoleScheduleBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appScope: {
 			returnType: "appScope"
@@ -7732,6 +10189,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	unifiedRoleScheduleInstanceBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appScope: {
 			returnType: "appScope"
@@ -7747,6 +10207,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	unifiedStorageQuota: {
+		properties: [
+			"services|serviceStorageQuotaBreakdowns|/[Name]|serviceStorageQuotaBreakdown"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		services: {
 			requestType: RequestType.Get,
@@ -7754,18 +10217,30 @@ export const Mapper: IMapper = {
 		},
 	},
 	unmuteParticipantOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	updateRecordingStatusOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	urlAssessmentRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	usedInsight: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resource: {
 			returnType: "entity"
@@ -7775,6 +10250,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	user: {
+		properties: [
+			"appRoleAssignments|appRoleAssignments|/[Name]|appRoleAssignment", "createdObjects|directoryObjects|/[Name]|directoryObject", "directReports|directoryObjects|/[Name]|directoryObject", "licenseDetails|licenseDetailss|/[Name]|licenseDetails", "memberOf|directoryObjects|/[Name]|directoryObject", "oauth2PermissionGrants|oAuth2PermissionGrants|/[Name]|oAuth2PermissionGrant", "ownedDevices|directoryObjects|/[Name]|directoryObject", "ownedObjects|directoryObjects|/[Name]|directoryObject", "registeredDevices|directoryObjects|/[Name]|directoryObject", "scopedRoleMemberOf|scopedRoleMemberships|/[Name]|scopedRoleMembership", "sponsors|directoryObjects|/[Name]|directoryObject", "transitiveMemberOf|directoryObjects|/[Name]|directoryObject", "calendarGroups|calendarGroups|/[Name]|calendarGroup", "calendars|calendars|/[Name]|calendar", "calendarView|events|/[Name]|event", "contactFolders|contactFolders|/[Name]|contactFolder", "contacts|contacts|/[Name]|contact", "events|events|/[Name]|event", "mailFolders|mailFolders|/[Name]|mailFolder", "messages|messages|/[Name]|message", "people|persons|/[Name]|person", "drives|drives|/[Name]|drive", "followedSites|sites|/[Name]|site", "extensions|extensions|/[Name]|extension", "agreementAcceptances|agreementAcceptances|/[Name]|agreementAcceptance", "managedDevices|managedDevices|/[Name]|managedDevice", "managedAppRegistrations|managedAppRegistrations|/[Name]|managedAppRegistration", "deviceManagementTroubleshootingEvents|deviceManagementTroubleshootingEvents|/[Name]|deviceManagementTroubleshootingEvent", "photos|profilePhotos|/[Name]|profilePhoto", "activities|userActivitys|/[Name]|userActivity", "onlineMeetings|onlineMeetings|/[Name]|onlineMeeting", "chats|chats|/[Name]|chat", "joinedTeams|teams|/[Name]|team", "permissionGrants|resourceSpecificPermissionGrants|/[Name]|resourceSpecificPermissionGrant"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appRoleAssignments: {
 			requestType: RequestType.Get,
@@ -7968,6 +10446,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userActivity: {
+		properties: [
+			"historyItems|activityHistoryItems|/[Name]|activityHistoryItem"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		historyItems: {
 			requestType: RequestType.Get,
@@ -7978,6 +10459,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userConsentRequest: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		approval: {
 			returnType: "approval"
@@ -7987,6 +10471,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -7994,6 +10481,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8001,6 +10491,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthAppPerformanceByOSVersion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8008,6 +10501,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthApplicationPerformance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8015,6 +10511,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthDeviceModelPerformance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8022,6 +10521,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthDevicePerformance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8029,6 +10531,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthDevicePerformanceDetails: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8036,6 +10541,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsAppHealthOSVersionPerformance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8043,6 +10551,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsBaseline: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		appHealthMetrics: {
 			returnType: "userExperienceAnalyticsCategory"
@@ -8070,6 +10581,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsCategory: {
+		properties: [
+			"metricValues|userExperienceAnalyticsMetrics|/[Name]|userExperienceAnalyticsMetric"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		metricValues: {
 			requestType: RequestType.Get,
@@ -8080,6 +10594,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDevicePerformance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8087,6 +10604,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDeviceScores: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8094,6 +10614,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDeviceStartupHistory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8101,6 +10624,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDeviceStartupProcess: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8108,6 +10634,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsDeviceStartupProcessPerformance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8115,6 +10644,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsMetric: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8122,6 +10654,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsMetricHistory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8129,6 +10664,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsModelScores: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8136,10 +10674,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsOverview: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	userExperienceAnalyticsScoreHistory: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8147,6 +10691,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsWorkFromAnywhereDevice: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8154,10 +10701,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	userExperienceAnalyticsWorkFromAnywhereMetric: {
+		properties: [
+			"metricDevices|userExperienceAnalyticsWorkFromAnywhereDevices|/[Name]|userExperienceAnalyticsWorkFromAnywhereDevice"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		metricDevices: {
 			requestType: RequestType.Get,
@@ -8168,6 +10721,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userExperienceAnalyticsWorkFromAnywhereModelPerformance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8175,6 +10731,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userFlowLanguageConfiguration: {
+		properties: [
+			"defaultPages|userFlowLanguagePages|/[Name]|userFlowLanguagePage", "overridesPages|userFlowLanguagePages|/[Name]|userFlowLanguagePage"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		defaultPages: {
 			requestType: RequestType.Get,
@@ -8189,6 +10748,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userFlowLanguagePage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8196,10 +10758,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userInsightsSettings: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	userInstallStateSummary: {
+		properties: [
+			"deviceStates|deviceInstallStates|/[Name]|deviceInstallState"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceStates: {
 			requestType: RequestType.Get,
@@ -8210,6 +10778,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userProcessingResult: {
+		properties: [
+			"taskProcessingResults|taskProcessingResults|/[Name]|taskProcessingResult"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		subject: {
 			returnType: "user"
@@ -8220,6 +10791,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	userRegistrationDetails: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8227,6 +10801,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userScopeTeamsAppInstallation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		chat: {
 			returnType: "chat"
@@ -8236,6 +10813,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	userSettings: {
+		properties: [
+			"windows|windowsSettings|/[Name]|windowsSetting"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		itemInsights: {
 			returnType: "userInsightsSettings"
@@ -8252,26 +10832,41 @@ export const Mapper: IMapper = {
 		},
 	},
 	userSignInInsight: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	userSolutionRoot: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		workingTimeSchedule: {
 			returnType: "workingTimeSchedule"
 		},
 	},
 	userSource: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	userStorage: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		quota: {
 			returnType: "unifiedStorageQuota"
 		},
 	},
 	userTeamwork: {
+		properties: [
+			"associatedTeams|associatedTeamInfos|/[Name]|associatedTeamInfo", "installedApps|userScopeTeamsAppInstallations|/[Name]|userScopeTeamsAppInstallation"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		associatedTeams: {
 			requestType: RequestType.Get,
@@ -8283,6 +10878,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	verticalSection: {
+		properties: [
+			"webparts|webParts|/[Name]|webPart"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		webparts: {
 			requestType: RequestType.Get,
@@ -8290,6 +10888,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	virtualEndpoint: {
+		properties: [
+			"auditEvents|cloudPcAuditEvents|/[Name]|cloudPcAuditEvent", "cloudPCs|cloudPCs|/[Name]|cloudPC", "deviceImages|cloudPcDeviceImages|/[Name]|cloudPcDeviceImage", "galleryImages|cloudPcGalleryImages|/[Name]|cloudPcGalleryImage", "onPremisesConnections|cloudPcOnPremisesConnections|/[Name]|cloudPcOnPremisesConnection", "provisioningPolicies|cloudPcProvisioningPolicys|/[Name]|cloudPcProvisioningPolicy", "userSettings|cloudPcUserSettings|/[Name]|cloudPcUserSetting"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		auditEvents: {
 			requestType: RequestType.Get,
@@ -8321,6 +10922,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	virtualEvent: {
+		properties: [
+			"presenters|virtualEventPresenters|/[Name]|virtualEventPresenter", "sessions|virtualEventSessions|/[Name]|virtualEventSession"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		presenters: {
 			requestType: RequestType.Get,
@@ -8335,6 +10939,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventPresenter: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8342,6 +10949,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventRegistration: {
+		properties: [
+			"sessions|virtualEventSessions|/[Name]|virtualEventSession"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		sessions: {
 			requestType: RequestType.Get,
@@ -8352,6 +10962,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventRegistrationConfiguration: {
+		properties: [
+			"questions|virtualEventRegistrationQuestionBases|/[Name]|virtualEventRegistrationQuestionBase"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		questions: {
 			requestType: RequestType.Get,
@@ -8359,14 +10972,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	virtualEventRegistrationCustomQuestion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	virtualEventRegistrationPredefinedQuestion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	virtualEventRegistrationQuestionBase: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8374,6 +10996,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventSession: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8381,6 +11006,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventTownhall: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8388,6 +11016,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventWebinar: {
+		properties: [
+			"registrations|virtualEventRegistrations|/[Name]|virtualEventRegistration"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		registrationConfiguration: {
 			returnType: "virtualEventWebinarRegistrationConfiguration"
@@ -8401,10 +11032,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	virtualEventWebinarRegistrationConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	virtualEventsRoot: {
+		properties: [
+			"events|virtualEvents|/[Name]|virtualEvent", "townhalls|virtualEventTownhalls|/[Name]|virtualEventTownhall", "webinars|virtualEventWebinars|/[Name]|virtualEventWebinar"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		events: {
 			requestType: RequestType.Get,
@@ -8420,6 +11057,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	voiceAuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|authenticationMethodTargets|/[Name]|authenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -8427,6 +11067,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	vppToken: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8434,6 +11077,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	vulnerability: {
+		properties: [
+			"articles|articles|/[Name]|article", "components|vulnerabilityComponents|/[Name]|vulnerabilityComponent"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		articles: {
 			requestType: RequestType.Get,
@@ -8445,14 +11091,23 @@ export const Mapper: IMapper = {
 		},
 	},
 	vulnerabilityComponent: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	webApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	webPart: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8460,16 +11115,25 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	whoisBaseRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		host: {
 			returnType: "host"
 		},
 	},
 	whoisHistoryRecord: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	whoisRecord: {
+		properties: [
+			"history|whoisHistoryRecords|/[Name]|whoisHistoryRecord"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		history: {
 			requestType: RequestType.Get,
@@ -8477,58 +11141,100 @@ export const Mapper: IMapper = {
 		},
 	},
 	win32LobApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10CompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10CustomConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10EndpointProtectionConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10EnrollmentCompletionPageConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10EnterpriseModernAppManagementConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10GeneralConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10MobileCompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10SecureAssessmentConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows10TeamGeneralConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows81CompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windows81GeneralConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsAppX: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsAutopilotDeploymentProfile: {
+		properties: [
+			"assignedDevices|windowsAutopilotDeviceIdentitys|/[Name]|windowsAutopilotDeviceIdentity"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignedDevices: {
 			requestType: RequestType.Get,
@@ -8536,10 +11242,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	windowsAutopilotDeploymentProfileAssignment: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsAutopilotDeviceIdentity: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8547,10 +11259,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsDefenderAdvancedThreatProtectionConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsDeviceMalwareState: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8558,6 +11276,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsHelloForBusinessAuthenticationMethod: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		device: {
 			returnType: "device"
@@ -8567,6 +11288,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsInformationProtection: {
+		properties: [
+			"assignments|targetedManagedAppPolicyAssignments|/[Name]|targetedManagedAppPolicyAssignment", "exemptAppLockerFiles|windowsInformationProtectionAppLockerFiles|/[Name]|windowsInformationProtectionAppLockerFile", "protectedAppLockerFiles|windowsInformationProtectionAppLockerFiles|/[Name]|windowsInformationProtectionAppLockerFile"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		assignments: {
 			requestType: RequestType.Get,
@@ -8582,6 +11306,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	windowsInformationProtectionAppLearningSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8589,6 +11316,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsInformationProtectionAppLockerFile: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8596,6 +11326,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsInformationProtectionNetworkLearningSummary: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8603,6 +11336,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsInformationProtectionPolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8610,6 +11346,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsMalwareInformation: {
+		properties: [
+			"deviceMalwareStates|malwareStateForWindowsDevices|/[Name]|malwareStateForWindowsDevice"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		deviceMalwareStates: {
 			requestType: RequestType.Get,
@@ -8620,26 +11359,44 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsMicrosoftEdgeApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsMobileMSI: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsPhone81CompliancePolicy: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsPhone81CustomConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsPhone81GeneralConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsProtectionState: {
+		properties: [
+			"detectedMalwareState|windowsDeviceMalwareStates|/[Name]|windowsDeviceMalwareState"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		detectedMalwareState: {
 			requestType: RequestType.Get,
@@ -8647,6 +11404,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	windowsSetting: {
+		properties: [
+			"instances|windowsSettingInstances|/[Name]|windowsSettingInstance"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		instances: {
 			requestType: RequestType.Get,
@@ -8657,6 +11417,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsSettingInstance: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8664,6 +11427,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	windowsUniversalAppX: {
+		properties: [
+			"committedContainedApps|mobileContainedApps|/[Name]|mobileContainedApp"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		committedContainedApps: {
 			requestType: RequestType.Get,
@@ -8671,18 +11437,30 @@ export const Mapper: IMapper = {
 		},
 	},
 	windowsUniversalAppXContainedApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsUpdateForBusinessConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	windowsWebApp: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbook: {
+		properties: [
+			"comments|workbookComments|/[Name]|workbookComment", "names|workbookNamedItems|/[Name]|workbookNamedItem", "operations|workbookOperations|/[Name]|workbookOperation", "tables|workbookTables|/[Name]|workbookTable", "worksheets|workbookWorksheets|/[Name]|workbookWorksheet"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		application: {
 			returnType: "workbookApplication"
@@ -8712,10 +11490,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookApplication: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookChart: {
+		properties: [
+			"series|workbookChartSeriess|/[Name]|workbookChartSeries"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		axes: {
 			returnType: "workbookChartAxes"
@@ -8744,6 +11528,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookChartAreaFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fill: {
 			returnType: "workbookChartFill"
@@ -8753,6 +11540,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookChartAxes: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		categoryAxis: {
 			returnType: "workbookChartAxis"
@@ -8765,6 +11555,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookChartAxis: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartAxisFormat"
@@ -8780,6 +11573,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookChartAxisFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		font: {
 			returnType: "workbookChartFont"
@@ -8789,18 +11585,27 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookChartAxisTitle: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartAxisTitleFormat"
 		},
 	},
 	workbookChartAxisTitleFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		font: {
 			returnType: "workbookChartFont"
 		},
 	},
 	workbookChartDataLabelFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fill: {
 			returnType: "workbookChartFill"
@@ -8810,38 +11615,59 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookChartDataLabels: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartDataLabelFormat"
 		},
 	},
 	workbookChartFill: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookChartFont: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookChartGridlines: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartGridlinesFormat"
 		},
 	},
 	workbookChartGridlinesFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		line: {
 			returnType: "workbookChartLineFormat"
 		},
 	},
 	workbookChartLegend: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartLegendFormat"
 		},
 	},
 	workbookChartLegendFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fill: {
 			returnType: "workbookChartFill"
@@ -8851,10 +11677,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookChartLineFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookChartPoint: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartPointFormat"
@@ -8864,12 +11696,18 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookChartPointFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fill: {
 			returnType: "workbookChartFill"
 		},
 	},
 	workbookChartSeries: {
+		properties: [
+			"points|workbookChartPoints|/[Name]|workbookChartPoint"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartSeriesFormat"
@@ -8883,6 +11721,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookChartSeriesFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fill: {
 			returnType: "workbookChartFill"
@@ -8892,12 +11733,18 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookChartTitle: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookChartTitleFormat"
 		},
 	},
 	workbookChartTitleFormat: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fill: {
 			returnType: "workbookChartFill"
@@ -8907,6 +11754,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookComment: {
+		properties: [
+			"replies|workbookCommentReplys|/[Name]|workbookCommentReply"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		replies: {
 			requestType: RequestType.Get,
@@ -8917,6 +11767,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookCommentReply: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8924,22 +11777,37 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookFilter: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookFormatProtection: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookFunctionResult: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookFunctions: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookNamedItem: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		worksheet: {
 			returnType: "workbookWorksheet"
@@ -8949,6 +11817,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookOperation: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8956,6 +11827,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookPivotTable: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		worksheet: {
 			returnType: "workbookWorksheet"
@@ -8965,6 +11839,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookRange: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		format: {
 			returnType: "workbookRangeFormat"
@@ -8977,6 +11854,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookRangeBorder: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -8984,14 +11864,23 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookRangeFill: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookRangeFont: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookRangeFormat: {
+		properties: [
+			"borders|workbookRangeBorders|/[Name]|workbookRangeBorder"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		borders: {
 			requestType: RequestType.Get,
@@ -9008,10 +11897,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	workbookRangeSort: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookRangeView: {
+		properties: [
+			"rows|workbookRangeViews|/[Name]|workbookRangeView"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		rows: {
 			requestType: RequestType.Get,
@@ -9022,6 +11917,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookTable: {
+		properties: [
+			"columns|workbookTableColumns|/[Name]|workbookTableColumn", "rows|workbookTableRows|/[Name]|workbookTableRow"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		columns: {
 			requestType: RequestType.Get,
@@ -9042,6 +11940,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookTableColumn: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		filter: {
 			returnType: "workbookFilter"
@@ -9051,6 +11952,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookTableRow: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -9058,10 +11962,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookTableSort: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workbookWorksheet: {
+		properties: [
+			"charts|workbookCharts|/[Name]|workbookChart", "names|workbookNamedItems|/[Name]|workbookNamedItem", "pivotTables|workbookPivotTables|/[Name]|workbookPivotTable", "tables|workbookTables|/[Name]|workbookTable"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		charts: {
 			requestType: RequestType.Get,
@@ -9087,10 +11997,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workbookWorksheetProtection: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workflow: {
+		properties: [
+			"executionScope|userProcessingResults|/[Name]|userProcessingResult", "runs|runs|/[Name]|run", "taskReports|taskReports|/[Name]|taskReport", "userProcessingResults|userProcessingResults|/[Name]|userProcessingResult", "versions|workflowVersions|/[Name]|workflowVersion"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		executionScope: {
 			requestType: RequestType.Get,
@@ -9114,6 +12030,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	workflowBase: {
+		properties: [
+			"tasks|tasks|/[Name]|task"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		createdBy: {
 			returnType: "user"
@@ -9127,6 +12046,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	workflowTemplate: {
+		properties: [
+			"tasks|tasks|/[Name]|task"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		tasks: {
 			requestType: RequestType.Get,
@@ -9134,10 +12056,16 @@ export const Mapper: IMapper = {
 		},
 	},
 	workflowVersion: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	workforceIntegration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
@@ -9145,10 +12073,16 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	workingTimeSchedule: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
 	x509CertificateAuthenticationMethodConfiguration: {
+		properties: [
+			"includeTargets|authenticationMethodTargets|/[Name]|authenticationMethodTarget"
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		includeTargets: {
 			requestType: RequestType.Get,
@@ -9156,6 +12090,9 @@ export const Mapper: IMapper = {
 		},
 	},
 	x509CertificateCombinationConfiguration: {
+		properties: [
+
+		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},

@@ -753,6 +753,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
         }
 
         // Parse the methods
+        let contentProperties = [];
         let mapper = [];
         let mapperDef = [];
         let methods = [];
@@ -805,6 +806,14 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                     odataResults.push(`\t${method.name}: ${isCollection ? "IBaseResults<" : ""}${returnTypeName}${isCollection ? ">" : ""};`);
                 }
             }
+            // Else, see if this is a collection property
+            else if (argNames.length == 1) {
+                let mapperReturnType = returnTypeName.split('.');
+                mapperReturnType = mapperReturnType[mapperReturnType.length - 1];
+
+                // Add the collection property
+                contentProperties.push(`${method.name}|${mapperReturnType}s|/[Name]|${mapperReturnType}`);
+            }
 
             // Set the previous name
             prevName = method.name;
@@ -827,6 +836,9 @@ ${odataResults.join('\n')}
 
         // Add the mapper
         contentMapper.push(`\t${name}: {
+\t\tproperties: [
+${contentProperties.length > 0 ? '\t\t\t"' + contentProperties.join('", "') + '"' : ""}
+\t\t],
 \t\tquery: { argNames: ["oData"], requestType: RequestType.OData },
 ${mapper.join('\n')}
 \t},`);
