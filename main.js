@@ -845,7 +845,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 mapperReturnType = mapperReturnType[mapperReturnType.length - 1];
                 argsMapperStr = argsMapper.length > 0 ? `"${argsMapper.join('", "')}"` : "";
                 mapper.push(`\t\t${method.name}: {\n${argsMapperStr ? "\t\t\targNames: [" + argsMapperStr + "],\n" : ""}${isCollection ? "\t\t\trequestType: RequestType.Get,\n" : ""}${mapperReturnType != "void" ? "\t\t\treturnType: \"" + mapperReturnType + (isCollection ? "s" : "") + "\"\n" : ""}\t\t},`)
-                mapperDef.push(`\t\t${method.name}: IMapperMethod${argsMapperStr ? " & {\n\t\t\targNames: [" + argsMapperStr + "]\n\t\t}" : ""},`);
+                mapperDef.push(`\t\t${method.name}: IMapperMethod${argsMapperStr ? " & {\n\t\t\targNames: [" + argsMapperStr + "]\n\t\t}" : ""};`);
 
                 // See if it has args
                 if (argStrings.length > 0) {
@@ -891,7 +891,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
 
                 // Add the method to the mapper and definition
                 let strMapper = `\t\t${entityAction.name}: {\n${params.length > 0 ? "\t\t\targNames: [\"" + params.join('", "') + "\"],\n" : ""}\t\t\trequestType: RequestType.Post,\n${returnType ? "\t\t\treturnType: \"" + returnType + "\"\n" : ""}\t\t},`;
-                let strMapperDef = `\t\t${entityAction.name}: IMapperMethod${params.length > 0 ? " & {\n\t\t\targNames: [\"" + params.join('", "') + "\"]\n\t\t}" : ""},`;
+                let strMapperDef = `\t\t${entityAction.name}: IMapperMethod${params.length > 0 ? " & {\n\t\t\targNames: [\"" + params.join('", "') + "\"]\n\t\t}" : ""};`;
                 if (prevMatch) {
                     mapper[mapper.length - 1] = strMapper;
                     mapperDef[mapperDef.length - 1] = strMapperDef;
@@ -928,7 +928,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
 
                 // Add the method to the mapper and definition
                 let strMapper = `\t\t${entityFunction.name}: {\n${params.length > 0 ? "\t\t\targNames: [\"" + params.join('", "') + "\"],\n" : ""}\t\t\trequestType: RequestType.Get,\n${returnType ? "\t\t\treturnType: \"" + returnType + "\"\n" : ""}\t\t},`;
-                let strMapperDef = `\t\t${entityFunction.name}: IMapperMethod${params.length > 0 ? " & {\n\t\t\targNames: [\"" + params.join('", "') + "\"]\n\t\t}" : ""},`;
+                let strMapperDef = `\t\t${entityFunction.name}: IMapperMethod${params.length > 0 ? " & {\n\t\t\targNames: [\"" + params.join('", "') + "\"]\n\t\t}" : ""};`;
                 if (prevMatch) {
                     mapper[mapper.length - 1] = strMapper;
                     mapperDef[mapperDef.length - 1] = strMapperDef;
@@ -971,7 +971,7 @@ ${mapper.join('\n')}
         // Add the mapper
         contentMapperDef.push(`\t${name}: {
 \t\tproperties?: Array<string>;
-\t\tquery: IMapperMethod & { argNames: ["oData"] }
+${name != "searchEntity" ? '\t\tquery: IMapperMethod & { argNames: ["oData"] };' : ""}
 ${mapperDef.join('\n')}
 \t},`);
 
