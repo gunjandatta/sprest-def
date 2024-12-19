@@ -872,7 +872,6 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
         // Parse the actions
         let entityActions = actions["graph." + name];
         if (entityActions) {
-            debugger;
             for (let i = 0; i < entityActions.length; i++) {
                 let entityAction = entityActions[i];
                 let returnType = entityAction.returnType ? getGraphType(entityAction.returnType) : null;

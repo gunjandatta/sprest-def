@@ -10398,12 +10398,10 @@ export interface managedAppPolicyProps extends  entityProps {
 	version: string;
 }
 export interface managedAppPolicyMethods extends entityMethods {
-	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface managedAppPolicyOData extends entityOData {
-	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface managedAppPolicyCollection extends IBaseCollection<managedAppPolicy, managedAppPolicyOData & managedAppPolicyProps> {
     add(values?: any): IBaseExecution<managedAppPolicy>;
@@ -10459,12 +10457,10 @@ export interface managedAppProtectionProps extends  managedAppPolicyProps {
 	simplePinBlocked: boolean;
 }
 export interface managedAppProtectionMethods extends managedAppPolicyMethods {
-	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface managedAppProtectionOData extends managedAppPolicyOData {
-	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 /*********************************************
 * managedAppRegistration

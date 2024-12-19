@@ -6611,9 +6611,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetApps: {
 			argNames: ["apps", "appGroupType"],
-		},
-		targetApps: {
-			argNames: ["apps"],
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},
@@ -6634,9 +6631,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetApps: {
 			argNames: ["apps", "appGroupType"],
-		},
-		targetApps: {
-			argNames: ["apps"],
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},

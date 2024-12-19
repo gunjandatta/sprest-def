@@ -31,23 +31,5 @@ module.exports = {
             name: "update",
             argNames: [{ name: "values", type: "any" }]
         }
-    ],
-    managedAppPolicy: [
-        {
-            name: "targetApps",
-            argNames: [
-                { name: "apps", type: "any" },
-                { name: "appGroupType", type: "any" }
-            ]
-        }
-    ],
-    managedAppProtection: [
-        {
-            name: "targetApps",
-            argNames: [
-                { name: "apps", type: "any" },
-                { name: "appGroupType", type: "any" }
-            ]
-        }
     ]
 }

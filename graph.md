@@ -1,18 +1,5 @@
-##### Missing Properties
+###### Missing Properties
 
-These are missing properties that are relevant to the SharePoint v2 REST API.
+The targetApps action needs to add this property:
 
-###### EntityType ListItem
-
-```
-<Property Name="Title" Type="Edm.String" />
-```
-
-###### ComplexType GroupCreationInformation
-
-```
-<Property Name="AllowMembersEditMembership" Type="Edm.Boolean" />
-<Property Name="AllowRequestToJoinLeave" Type="Edm.Boolean" />
-<Property Name="AutoAcceptRequestToJoinLeave" Type="Edm.Boolean" />
-<Property Name="OnlyAllowMembersViewMembership" Type="Edm.Boolean" />
-```
+<Parameter Name="appGroupType" Type="graph.targetedManagedAppGroupType" />

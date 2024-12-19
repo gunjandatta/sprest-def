@@ -4042,9 +4042,6 @@ export interface IMapper {
 		targetApps: IMapperMethod & {
 			argNames: ["apps", "appGroupType"]
 		};
-		targetApps: IMapperMethod & {
-			argNames: ["apps"]
-		};
 	},
 	managedAppPolicys: {
 		properties?: Array<string>;
@@ -4060,9 +4057,6 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] };
 		targetApps: IMapperMethod & {
 			argNames: ["apps", "appGroupType"]
-		};
-		targetApps: IMapperMethod & {
-			argNames: ["apps"]
 		};
 	},
 	managedAppRegistration: {
