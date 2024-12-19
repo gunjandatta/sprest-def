@@ -4075,6 +4075,9 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "driveItemVersions"
 		},
+		setSensitivityLabel: {
+			argNames: ["actionSource", "assignmentMethod", "id", "justificationText"],
+		},
 		restore: {
 			argNames: ["parentReference", "name"],
 			requestType: RequestType.PostWithArgsInBody,

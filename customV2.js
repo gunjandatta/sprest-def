@@ -14,6 +14,17 @@ module.exports = {
             argNames: [{ name: "values", type: "any" }]
         }
     ],
+    driveItem: [
+        {
+            name: "setSensitivityLabel",
+            argNames: [
+                { name: "actionSource", type: "string" },
+                { name: "assignmentMethod", type: "string" },
+                { name: "id", type: "string" },
+                { name: "justificationText", type: "string" }
+            ]
+        }
+    ],
     list: [
         {
             name: "update",

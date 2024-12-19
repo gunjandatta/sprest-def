@@ -2489,6 +2489,9 @@ export interface IMapper {
 		subscriptions: IMapperMethod;
 		thumbnails: IMapperMethod;
 		versions: IMapperMethod;
+		setSensitivityLabel: IMapperMethod & {
+			argNames: ["actionSource", "assignmentMethod", "id", "justificationText"]
+		};
 		restore: IMapperMethod & {
 			argNames: ["parentReference", "name"]
 		};
