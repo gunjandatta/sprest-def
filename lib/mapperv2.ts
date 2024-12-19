@@ -9556,7 +9556,7 @@ export const Mapper: IMapper = {
 		properties: [
 			"acronyms|acronyms|/[Name]|acronym", "bookmarks|bookmarks|/[Name]|bookmark", "qnas|qnas|/[Name]|qna"
 		],
-		query: { argNames: ["oData"], requestType: RequestType.OData },
+
 		acronyms: {
 			requestType: RequestType.Get,
 			returnType: "acronyms"

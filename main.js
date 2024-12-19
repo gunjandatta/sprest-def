@@ -964,7 +964,7 @@ ${odataResults.join('\n')}
 \t\tproperties: [
 ${contentProperties.length > 0 ? '\t\t\t"' + contentProperties.join('", "') + '"' : ""}
 \t\t],
-\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },
+${name != "searchEntity" ? '\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },' : ""}
 ${mapper.join('\n')}
 \t},`);
 
