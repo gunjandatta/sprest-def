@@ -57,6 +57,7 @@ export interface accessPackageMethods extends entityMethods {
 	incompatibleGroups(id: string | number): IBaseQuery<group> & groupMethods;
 	resourceRoleScopes(): accessPackageResourceRoleScopeCollection;
 	resourceRoleScopes(id: string | number): IBaseQuery<accessPackageResourceRoleScope> & accessPackageResourceRoleScopeMethods;
+	getApplicablePolicyRequirements(): IBaseExecution<ComplexTypes.accessPackageAssignmentRequestRequirements[]>;
 }
 export interface accessPackageOData extends entityOData {
 	accessPackagesIncompatibleWith: IBaseResults<accessPackage>;
@@ -65,6 +66,7 @@ export interface accessPackageOData extends entityOData {
 	incompatibleAccessPackages: IBaseResults<accessPackage>;
 	incompatibleGroups: IBaseResults<group>;
 	resourceRoleScopes: IBaseResults<accessPackageResourceRoleScope>;
+	getApplicablePolicyRequirements(): IBaseExecution<ComplexTypes.accessPackageAssignmentRequestRequirements[]>;
 }
 export interface accessPackageCollection extends IBaseCollection<accessPackage, accessPackageOData & accessPackageProps> {
     add(values?: any): IBaseExecution<accessPackage>;
@@ -84,11 +86,13 @@ export interface accessPackageAssignmentMethods extends entityMethods {
 	accessPackage(): IBaseQuery<accessPackage> & accessPackageMethods;
 	assignmentPolicy(): IBaseQuery<accessPackageAssignmentPolicy> & accessPackageAssignmentPolicyMethods;
 	target(): IBaseQuery<accessPackageSubject> & accessPackageSubjectMethods;
+	reprocess(): IBaseExecution<void>;
 }
 export interface accessPackageAssignmentOData extends entityOData {
 	accessPackage: accessPackage;
 	assignmentPolicy: accessPackageAssignmentPolicy;
 	target: accessPackageSubject;
+	reprocess(): IBaseExecution<void>;
 }
 export interface accessPackageAssignmentCollection extends IBaseCollection<accessPackageAssignment, accessPackageAssignmentOData & accessPackageAssignmentProps> {
     add(values?: any): IBaseExecution<accessPackageAssignment>;
@@ -145,11 +149,17 @@ export interface accessPackageAssignmentRequestMethods extends entityMethods {
 	accessPackage(): IBaseQuery<accessPackage> & accessPackageMethods;
 	assignment(): IBaseQuery<accessPackageAssignment> & accessPackageAssignmentMethods;
 	requestor(): IBaseQuery<accessPackageSubject> & accessPackageSubjectMethods;
+	cancel(): IBaseExecution<void>;
+	reprocess(): IBaseExecution<void>;
+	resume(source, type, data): IBaseExecution<void>;
 }
 export interface accessPackageAssignmentRequestOData extends entityOData {
 	accessPackage: accessPackage;
 	assignment: accessPackageAssignment;
 	requestor: accessPackageSubject;
+	cancel(): IBaseExecution<void>;
+	reprocess(): IBaseExecution<void>;
+	resume(source, type, data): IBaseExecution<void>;
 }
 export interface accessPackageAssignmentRequestCollection extends IBaseCollection<accessPackageAssignmentRequest, accessPackageAssignmentRequestOData & accessPackageAssignmentRequestProps> {
     add(values?: any): IBaseExecution<accessPackageAssignmentRequest>;
@@ -457,10 +467,10 @@ export interface accessReviewHistoryInstanceProps extends  entityProps {
 	status: EnumTypes.accessReviewHistoryStatus;
 }
 export interface accessReviewHistoryInstanceMethods extends entityMethods {
-
+	generateDownloadUri(): IBaseExecution<accessReviewHistoryInstance>;
 }
 export interface accessReviewHistoryInstanceOData extends entityOData {
-
+	generateDownloadUri(): IBaseExecution<accessReviewHistoryInstance>;
 }
 export interface accessReviewHistoryInstanceCollection extends IBaseCollection<accessReviewHistoryInstance, accessReviewHistoryInstanceOData & accessReviewHistoryInstanceProps> {
     add(values?: any): IBaseExecution<accessReviewHistoryInstance>;
@@ -484,11 +494,23 @@ export interface accessReviewInstanceMethods extends entityMethods {
 	decisions(id: string | number): IBaseQuery<accessReviewInstanceDecisionItem> & accessReviewInstanceDecisionItemMethods;
 	stages(): accessReviewStageCollection;
 	stages(id: string | number): IBaseQuery<accessReviewStage> & accessReviewStageMethods;
+	acceptRecommendations(): IBaseExecution<void>;
+	applyDecisions(): IBaseExecution<void>;
+	batchRecordDecisions(decision, justification, principalId, resourceId): IBaseExecution<void>;
+	resetDecisions(): IBaseExecution<void>;
+	sendReminder(): IBaseExecution<void>;
+	stop(): IBaseExecution<void>;
 }
 export interface accessReviewInstanceOData extends entityOData {
 	contactedReviewers: IBaseResults<accessReviewReviewer>;
 	decisions: IBaseResults<accessReviewInstanceDecisionItem>;
 	stages: IBaseResults<accessReviewStage>;
+	acceptRecommendations(): IBaseExecution<void>;
+	applyDecisions(): IBaseExecution<void>;
+	batchRecordDecisions(decision, justification, principalId, resourceId): IBaseExecution<void>;
+	resetDecisions(): IBaseExecution<void>;
+	sendReminder(): IBaseExecution<void>;
+	stop(): IBaseExecution<void>;
 }
 export interface accessReviewInstanceCollection extends IBaseCollection<accessReviewInstance, accessReviewInstanceOData & accessReviewInstanceProps> {
     add(values?: any): IBaseExecution<accessReviewInstance>;
@@ -563,9 +585,11 @@ export interface accessReviewScheduleDefinitionProps extends  entityProps {
 export interface accessReviewScheduleDefinitionMethods extends entityMethods {
 	instances(): accessReviewInstanceCollection;
 	instances(id: string | number): IBaseQuery<accessReviewInstance> & accessReviewInstanceMethods;
+	stop(): IBaseExecution<void>;
 }
 export interface accessReviewScheduleDefinitionOData extends entityOData {
 	instances: IBaseResults<accessReviewInstance>;
+	stop(): IBaseExecution<void>;
 }
 export interface accessReviewScheduleDefinitionCollection extends IBaseCollection<accessReviewScheduleDefinition, accessReviewScheduleDefinitionOData & accessReviewScheduleDefinitionProps> {
     add(values?: any): IBaseExecution<accessReviewScheduleDefinition>;
@@ -601,9 +625,11 @@ export interface accessReviewStageProps extends  entityProps {
 export interface accessReviewStageMethods extends entityMethods {
 	decisions(): accessReviewInstanceDecisionItemCollection;
 	decisions(id: string | number): IBaseQuery<accessReviewInstanceDecisionItem> & accessReviewInstanceDecisionItemMethods;
+	stop(): IBaseExecution<void>;
 }
 export interface accessReviewStageOData extends entityOData {
 	decisions: IBaseResults<accessReviewInstanceDecisionItem>;
+	stop(): IBaseExecution<void>;
 }
 export interface accessReviewStageCollection extends IBaseCollection<accessReviewStage, accessReviewStageOData & accessReviewStageProps> {
     add(values?: any): IBaseExecution<accessReviewStage>;
@@ -1292,10 +1318,10 @@ export interface appLogCollectionRequestProps extends  entityProps {
 	status: EnumTypes.appLogUploadState;
 }
 export interface appLogCollectionRequestMethods extends entityMethods {
-
+	createDownloadUrl(): IBaseExecution<ComplexTypes.appLogCollectionDownloadDetails>;
 }
 export interface appLogCollectionRequestOData extends entityOData {
-
+	createDownloadUrl(): IBaseExecution<ComplexTypes.appLogCollectionDownloadDetails>;
 }
 export interface appLogCollectionRequestCollection extends IBaseCollection<appLogCollectionRequest, appLogCollectionRequestOData & appLogCollectionRequestProps> {
     add(values?: any): IBaseExecution<appLogCollectionRequest>;
@@ -1398,10 +1424,10 @@ export interface applePushNotificationCertificateProps extends  entityProps {
 	topicIdentifier: string;
 }
 export interface applePushNotificationCertificateMethods extends entityMethods {
-
+	downloadApplePushNotificationCertificateSigningRequest(): string;
 }
 export interface applePushNotificationCertificateOData extends entityOData {
-
+	downloadApplePushNotificationCertificateSigningRequest(): string;
 }
 /*********************************************
 * application
@@ -1464,6 +1490,12 @@ export interface applicationMethods extends directoryObjectMethods {
 	tokenLifetimePolicies(): tokenLifetimePolicyCollection;
 	tokenLifetimePolicies(id: string | number): IBaseQuery<tokenLifetimePolicy> & tokenLifetimePolicyMethods;
 	synchronization(): IBaseQuery<synchronization> & synchronizationMethods;
+	setVerifiedPublisher(verifiedPublisherId): IBaseExecution<void>;
+	unsetVerifiedPublisher(): IBaseExecution<void>;
+	addKey(keyCredential, passwordCredential, proof): IBaseExecution<ComplexTypes.keyCredential>;
+	addPassword(passwordCredential): IBaseExecution<ComplexTypes.passwordCredential>;
+	removeKey(keyId, proof): IBaseExecution<void>;
+	removePassword(keyId): IBaseExecution<void>;
 }
 export interface applicationOData extends directoryObjectOData {
 	appManagementPolicies: IBaseResults<appManagementPolicy>;
@@ -1475,6 +1507,12 @@ export interface applicationOData extends directoryObjectOData {
 	tokenIssuancePolicies: IBaseResults<tokenIssuancePolicy>;
 	tokenLifetimePolicies: IBaseResults<tokenLifetimePolicy>;
 	synchronization: synchronization;
+	setVerifiedPublisher(verifiedPublisherId): IBaseExecution<void>;
+	unsetVerifiedPublisher(): IBaseExecution<void>;
+	addKey(keyCredential, passwordCredential, proof): IBaseExecution<ComplexTypes.keyCredential>;
+	addPassword(passwordCredential): IBaseExecution<ComplexTypes.passwordCredential>;
+	removeKey(keyId, proof): IBaseExecution<void>;
+	removePassword(keyId): IBaseExecution<void>;
 }
 /*********************************************
 * applicationTemplate
@@ -1491,10 +1529,10 @@ export interface applicationTemplateProps extends  entityProps {
 	supportedSingleSignOnModes: Array<string>[];
 }
 export interface applicationTemplateMethods extends entityMethods {
-
+	instantiate(displayName, serviceManagementReference): IBaseExecution<ComplexTypes.applicationServicePrincipal>;
 }
 export interface applicationTemplateOData extends entityOData {
-
+	instantiate(displayName, serviceManagementReference): IBaseExecution<ComplexTypes.applicationServicePrincipal>;
 }
 /*********************************************
 * approval
@@ -1968,10 +2006,10 @@ export interface authenticationMethodProps extends  entityProps {
 
 }
 export interface authenticationMethodMethods extends entityMethods {
-
+	resetPassword(newPassword): IBaseExecution<ComplexTypes.passwordResetResponse>;
 }
 export interface authenticationMethodOData extends entityOData {
-
+	resetPassword(newPassword): IBaseExecution<ComplexTypes.passwordResetResponse>;
 }
 export interface authenticationMethodCollection extends IBaseCollection<authenticationMethod, authenticationMethodOData & authenticationMethodProps> {
     add(values?: any): IBaseExecution<authenticationMethod>;
@@ -2057,9 +2095,17 @@ export interface authenticationMethodsRootProps extends  entityProps {
 export interface authenticationMethodsRootMethods extends entityMethods {
 	userRegistrationDetails(): userRegistrationDetailsCollection;
 	userRegistrationDetails(id: string | number): IBaseQuery<userRegistrationDetails> & userRegistrationDetailsMethods;
+	usersRegisteredByFeature(): ComplexTypes.userRegistrationFeatureSummary;
+	usersRegisteredByFeature(includedUserTypes, includedUserRoles): ComplexTypes.userRegistrationFeatureSummary;
+	usersRegisteredByMethod(): ComplexTypes.userRegistrationMethodSummary;
+	usersRegisteredByMethod(includedUserTypes, includedUserRoles): ComplexTypes.userRegistrationMethodSummary;
 }
 export interface authenticationMethodsRootOData extends entityOData {
 	userRegistrationDetails: IBaseResults<userRegistrationDetails>;
+	usersRegisteredByFeature(): ComplexTypes.userRegistrationFeatureSummary;
+	usersRegisteredByFeature(includedUserTypes, includedUserRoles): ComplexTypes.userRegistrationFeatureSummary;
+	usersRegisteredByMethod(): ComplexTypes.userRegistrationMethodSummary;
+	usersRegisteredByMethod(includedUserTypes, includedUserRoles): ComplexTypes.userRegistrationMethodSummary;
 }
 /*********************************************
 * authenticationStrengthPolicy
@@ -2077,9 +2123,13 @@ export interface authenticationStrengthPolicyProps extends  entityProps {
 export interface authenticationStrengthPolicyMethods extends entityMethods {
 	combinationConfigurations(): authenticationCombinationConfigurationCollection;
 	combinationConfigurations(id: string | number): IBaseQuery<authenticationCombinationConfiguration> & authenticationCombinationConfigurationMethods;
+	updateAllowedCombinations(allowedCombinations): IBaseExecution<ComplexTypes.updateAllowedCombinationsResult>;
+	usage(): ComplexTypes.authenticationStrengthUsage;
 }
 export interface authenticationStrengthPolicyOData extends entityOData {
 	combinationConfigurations: IBaseResults<authenticationCombinationConfiguration>;
+	updateAllowedCombinations(allowedCombinations): IBaseExecution<ComplexTypes.updateAllowedCombinationsResult>;
+	usage(): ComplexTypes.authenticationStrengthUsage;
 }
 export interface authenticationStrengthPolicyCollection extends IBaseCollection<authenticationStrengthPolicy, authenticationStrengthPolicyOData & authenticationStrengthPolicyProps> {
     add(values?: any): IBaseExecution<authenticationStrengthPolicy>;
@@ -2248,6 +2298,7 @@ export interface backupRestoreRootMethods extends entityMethods {
 	siteInclusionRules(id: string | number): IBaseQuery<siteProtectionRule> & siteProtectionRuleMethods;
 	siteProtectionUnits(): siteProtectionUnitCollection;
 	siteProtectionUnits(id: string | number): IBaseQuery<siteProtectionUnit> & siteProtectionUnitMethods;
+	enable(appOwnerTenantId): IBaseExecution<ComplexTypes.serviceStatus>;
 }
 export interface backupRestoreRootOData extends entityOData {
 	driveInclusionRules: IBaseResults<driveProtectionRule>;
@@ -2267,6 +2318,7 @@ export interface backupRestoreRootOData extends entityOData {
 	sharePointRestoreSessions: IBaseResults<sharePointRestoreSession>;
 	siteInclusionRules: IBaseResults<siteProtectionRule>;
 	siteProtectionUnits: IBaseResults<siteProtectionUnit>;
+	enable(appOwnerTenantId): IBaseExecution<ComplexTypes.serviceStatus>;
 }
 /*********************************************
 * baseItem
@@ -2756,10 +2808,12 @@ export interface browserSiteListMethods extends entityMethods {
 	sharedCookies(id: string | number): IBaseQuery<browserSharedCookie> & browserSharedCookieMethods;
 	sites(): browserSiteCollection;
 	sites(id: string | number): IBaseQuery<browserSite> & browserSiteMethods;
+	publish(revision, sites, sharedCookies): IBaseExecution<browserSiteList>;
 }
 export interface browserSiteListOData extends entityOData {
 	sharedCookies: IBaseResults<browserSharedCookie>;
 	sites: IBaseResults<browserSite>;
+	publish(revision, sites, sharedCookies): IBaseExecution<browserSiteList>;
 }
 export interface browserSiteListCollection extends IBaseCollection<browserSiteList, browserSiteListOData & browserSiteListProps> {
     add(values?: any): IBaseExecution<browserSiteList>;
@@ -2820,6 +2874,7 @@ export interface calendarMethods extends entityMethods {
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
 	singleValueExtendedProperties(): singleValueLegacyExtendedPropertyCollection;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+	getSchedule(Schedules, EndTime, StartTime, AvailabilityViewInterval): IBaseExecution<ComplexTypes.scheduleInformation[]>;
 }
 export interface calendarOData extends entityOData {
 	calendarPermissions: IBaseResults<calendarPermission>;
@@ -2827,6 +2882,7 @@ export interface calendarOData extends entityOData {
 	events: IBaseResults<event>;
 	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
 	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
+	getSchedule(Schedules, EndTime, StartTime, AvailabilityViewInterval): IBaseExecution<ComplexTypes.scheduleInformation[]>;
 }
 export interface calendarCollection extends IBaseCollection<calendar, calendarOData & calendarProps> {
     add(values?: any): IBaseExecution<calendar>;
@@ -2881,10 +2937,10 @@ export interface calendarSharingMessageProps extends  messageProps {
 	suggestedCalendarName: string;
 }
 export interface calendarSharingMessageMethods extends messageMethods {
-
+	accept(): IBaseExecution<calendar>;
 }
 export interface calendarSharingMessageOData extends messageOData {
-
+	accept(): IBaseExecution<calendar>;
 }
 /*********************************************
 * call
@@ -2921,12 +2977,42 @@ export interface callMethods extends entityMethods {
 	operations(id: string | number): IBaseQuery<commsOperation> & commsOperationMethods;
 	participants(): participantCollection;
 	participants(id: string | number): IBaseQuery<participant> & participantMethods;
+	redirect(targets, timeout, callbackUri): IBaseExecution<void>;
+	addLargeGalleryView(clientContext): IBaseExecution<addLargeGalleryViewOperation>;
+	answer(callbackUri, mediaConfig, acceptedModalities, participantCapacity, callOptions): IBaseExecution<void>;
+	cancelMediaProcessing(clientContext): IBaseExecution<cancelMediaProcessingOperation>;
+	changeScreenSharingRole(role): IBaseExecution<void>;
+	keepAlive(): IBaseExecution<void>;
+	mute(clientContext): IBaseExecution<muteParticipantOperation>;
+	playPrompt(prompts, clientContext): IBaseExecution<playPromptOperation>;
+	recordResponse(prompts, bargeInAllowed, initialSilenceTimeoutInSeconds, maxSilenceTimeoutInSeconds, maxRecordDurationInSeconds, playBeep, stopTones, clientContext): IBaseExecution<recordOperation>;
+	reject(reason, callbackUri): IBaseExecution<void>;
+	sendDtmfTones(tones, delayBetweenTonesMs, clientContext): IBaseExecution<sendDtmfTonesOperation>;
+	subscribeToTone(clientContext): IBaseExecution<subscribeToToneOperation>;
+	transfer(transferTarget, transferee): IBaseExecution<void>;
+	unmute(clientContext): IBaseExecution<unmuteParticipantOperation>;
+	updateRecordingStatus(status, clientContext): IBaseExecution<updateRecordingStatusOperation>;
 }
 export interface callOData extends entityOData {
 	audioRoutingGroups: IBaseResults<audioRoutingGroup>;
 	contentSharingSessions: IBaseResults<contentSharingSession>;
 	operations: IBaseResults<commsOperation>;
 	participants: IBaseResults<participant>;
+	redirect(targets, timeout, callbackUri): IBaseExecution<void>;
+	addLargeGalleryView(clientContext): IBaseExecution<addLargeGalleryViewOperation>;
+	answer(callbackUri, mediaConfig, acceptedModalities, participantCapacity, callOptions): IBaseExecution<void>;
+	cancelMediaProcessing(clientContext): IBaseExecution<cancelMediaProcessingOperation>;
+	changeScreenSharingRole(role): IBaseExecution<void>;
+	keepAlive(): IBaseExecution<void>;
+	mute(clientContext): IBaseExecution<muteParticipantOperation>;
+	playPrompt(prompts, clientContext): IBaseExecution<playPromptOperation>;
+	recordResponse(prompts, bargeInAllowed, initialSilenceTimeoutInSeconds, maxSilenceTimeoutInSeconds, maxRecordDurationInSeconds, playBeep, stopTones, clientContext): IBaseExecution<recordOperation>;
+	reject(reason, callbackUri): IBaseExecution<void>;
+	sendDtmfTones(tones, delayBetweenTonesMs, clientContext): IBaseExecution<sendDtmfTonesOperation>;
+	subscribeToTone(clientContext): IBaseExecution<subscribeToToneOperation>;
+	transfer(transferTarget, transferee): IBaseExecution<void>;
+	unmute(clientContext): IBaseExecution<unmuteParticipantOperation>;
+	updateRecordingStatus(status, clientContext): IBaseExecution<updateRecordingStatusOperation>;
 }
 export interface callCollection extends IBaseCollection<call, callOData & callProps> {
     add(values?: any): IBaseExecution<call>;
@@ -3138,6 +3224,12 @@ export interface channelMethods extends entityMethods {
 	sharedWithTeams(id: string | number): IBaseQuery<sharedWithChannelTeamInfo> & sharedWithChannelTeamInfoMethods;
 	tabs(): teamsTabCollection;
 	tabs(id: string | number): IBaseQuery<teamsTab> & teamsTabMethods;
+	archive(shouldSetSpoSiteReadOnlyForMembers): IBaseExecution<void>;
+	unarchive(): IBaseExecution<void>;
+	completeMigration(): IBaseExecution<void>;
+	provisionEmail(): IBaseExecution<ComplexTypes.provisionChannelEmailResult>;
+	removeEmail(): IBaseExecution<void>;
+	doesUserHaveAccess(userId, tenantId, userPrincipalName): boolean;
 }
 export interface channelOData extends entityOData {
 	filesFolder: driveItem;
@@ -3145,6 +3237,12 @@ export interface channelOData extends entityOData {
 	messages: IBaseResults<chatMessage>;
 	sharedWithTeams: IBaseResults<sharedWithChannelTeamInfo>;
 	tabs: IBaseResults<teamsTab>;
+	archive(shouldSetSpoSiteReadOnlyForMembers): IBaseExecution<void>;
+	unarchive(): IBaseExecution<void>;
+	completeMigration(): IBaseExecution<void>;
+	provisionEmail(): IBaseExecution<ComplexTypes.provisionChannelEmailResult>;
+	removeEmail(): IBaseExecution<void>;
+	doesUserHaveAccess(userId, tenantId, userPrincipalName): boolean;
 }
 export interface channelCollection extends IBaseCollection<channel, channelOData & channelProps> {
     add(values?: any): IBaseExecution<channel>;
@@ -3177,6 +3275,11 @@ export interface chatMethods extends entityMethods {
 	pinnedMessages(id: string | number): IBaseQuery<pinnedChatMessageInfo> & pinnedChatMessageInfoMethods;
 	tabs(): teamsTabCollection;
 	tabs(id: string | number): IBaseQuery<teamsTab> & teamsTabMethods;
+	sendActivityNotification(topic, activityType, chainId, previewText, teamsAppId, templateParameters, recipient): IBaseExecution<void>;
+	hideForUser(user): IBaseExecution<void>;
+	markChatReadForUser(user): IBaseExecution<void>;
+	markChatUnreadForUser(user, lastMessageReadDateTime): IBaseExecution<void>;
+	unhideForUser(user): IBaseExecution<void>;
 }
 export interface chatOData extends entityOData {
 	installedApps: IBaseResults<teamsAppInstallation>;
@@ -3186,6 +3289,11 @@ export interface chatOData extends entityOData {
 	permissionGrants: IBaseResults<resourceSpecificPermissionGrant>;
 	pinnedMessages: IBaseResults<pinnedChatMessageInfo>;
 	tabs: IBaseResults<teamsTab>;
+	sendActivityNotification(topic, activityType, chainId, previewText, teamsAppId, templateParameters, recipient): IBaseExecution<void>;
+	hideForUser(user): IBaseExecution<void>;
+	markChatReadForUser(user): IBaseExecution<void>;
+	markChatUnreadForUser(user, lastMessageReadDateTime): IBaseExecution<void>;
+	unhideForUser(user): IBaseExecution<void>;
 }
 export interface chatCollection extends IBaseCollection<chat, chatOData & chatProps> {
     add(values?: any): IBaseExecution<chat>;
@@ -3223,10 +3331,18 @@ export interface chatMessageMethods extends entityMethods {
 	hostedContents(id: string | number): IBaseQuery<chatMessageHostedContent> & chatMessageHostedContentMethods;
 	replies(): chatMessageCollection;
 	replies(id: string | number): IBaseQuery<chatMessage> & chatMessageMethods;
+	setReaction(reactionType): IBaseExecution<void>;
+	softDelete(): IBaseExecution<void>;
+	undoSoftDelete(): IBaseExecution<void>;
+	unsetReaction(reactionType): IBaseExecution<void>;
 }
 export interface chatMessageOData extends entityOData {
 	hostedContents: IBaseResults<chatMessageHostedContent>;
 	replies: IBaseResults<chatMessage>;
+	setReaction(reactionType): IBaseExecution<void>;
+	softDelete(): IBaseExecution<void>;
+	undoSoftDelete(): IBaseExecution<void>;
+	unsetReaction(reactionType): IBaseExecution<void>;
 }
 export interface chatMessageCollection extends IBaseCollection<chatMessage, chatMessageOData & chatMessageProps> {
     add(values?: any): IBaseExecution<chatMessage>;
@@ -3363,12 +3479,14 @@ export interface cloudCommunicationsMethods {
 	onlineMeetings(id: string | number): IBaseQuery<onlineMeeting> & onlineMeetingMethods;
 	presences(): presenceCollection;
 	presences(id: string | number): IBaseQuery<presence> & presenceMethods;
+	getPresencesByUserId(ids): IBaseExecution<presence[]>;
 }
 export interface cloudCommunicationsOData {
 	callRecords: IBaseResults<callRecord>;
 	calls: IBaseResults<call>;
 	onlineMeetings: IBaseResults<onlineMeeting>;
 	presences: IBaseResults<presence>;
+	getPresencesByUserId(ids): IBaseExecution<presence[]>;
 }
 /*********************************************
 * cloudPC
@@ -3391,10 +3509,18 @@ export interface cloudPCProps extends  entityProps {
 	userPrincipalName: string;
 }
 export interface cloudPCMethods extends entityMethods {
-
+	endGracePeriod(): IBaseExecution<void>;
+	reboot(): IBaseExecution<void>;
+	rename(displayName): IBaseExecution<void>;
+	restore(cloudPcSnapshotId): IBaseExecution<void>;
+	troubleshoot(): IBaseExecution<void>;
 }
 export interface cloudPCOData extends entityOData {
-
+	endGracePeriod(): IBaseExecution<void>;
+	reboot(): IBaseExecution<void>;
+	rename(displayName): IBaseExecution<void>;
+	restore(cloudPcSnapshotId): IBaseExecution<void>;
+	troubleshoot(): IBaseExecution<void>;
 }
 export interface cloudPCCollection extends IBaseCollection<cloudPC, cloudPCOData & cloudPCProps> {
     add(values?: any): IBaseExecution<cloudPC>;
@@ -3497,10 +3623,10 @@ export interface cloudPcOnPremisesConnectionProps extends  entityProps {
 	virtualNetworkLocation: string;
 }
 export interface cloudPcOnPremisesConnectionMethods extends entityMethods {
-
+	runHealthChecks(): IBaseExecution<void>;
 }
 export interface cloudPcOnPremisesConnectionOData extends entityOData {
-
+	runHealthChecks(): IBaseExecution<void>;
 }
 export interface cloudPcOnPremisesConnectionCollection extends IBaseCollection<cloudPcOnPremisesConnection, cloudPcOnPremisesConnectionOData & cloudPcOnPremisesConnectionProps> {
     add(values?: any): IBaseExecution<cloudPcOnPremisesConnection>;
@@ -3529,9 +3655,11 @@ export interface cloudPcProvisioningPolicyProps extends  entityProps {
 export interface cloudPcProvisioningPolicyMethods extends entityMethods {
 	assignments(): cloudPcProvisioningPolicyAssignmentCollection;
 	assignments(id: string | number): IBaseQuery<cloudPcProvisioningPolicyAssignment> & cloudPcProvisioningPolicyAssignmentMethods;
+	assign(assignments): IBaseExecution<void>;
 }
 export interface cloudPcProvisioningPolicyOData extends entityOData {
 	assignments: IBaseResults<cloudPcProvisioningPolicyAssignment>;
+	assign(assignments): IBaseExecution<void>;
 }
 export interface cloudPcProvisioningPolicyCollection extends IBaseCollection<cloudPcProvisioningPolicy, cloudPcProvisioningPolicyOData & cloudPcProvisioningPolicyProps> {
     add(values?: any): IBaseExecution<cloudPcProvisioningPolicy>;
@@ -3568,9 +3696,11 @@ export interface cloudPcUserSettingProps extends  entityProps {
 export interface cloudPcUserSettingMethods extends entityMethods {
 	assignments(): cloudPcUserSettingAssignmentCollection;
 	assignments(id: string | number): IBaseQuery<cloudPcUserSettingAssignment> & cloudPcUserSettingAssignmentMethods;
+	assign(assignments): IBaseExecution<void>;
 }
 export interface cloudPcUserSettingOData extends entityOData {
 	assignments: IBaseResults<cloudPcUserSettingAssignment>;
+	assign(assignments): IBaseExecution<void>;
 }
 export interface cloudPcUserSettingCollection extends IBaseCollection<cloudPcUserSetting, cloudPcUserSettingOData & cloudPcUserSettingProps> {
     add(values?: any): IBaseExecution<cloudPcUserSetting>;
@@ -3998,6 +4128,11 @@ export interface contentTypeMethods extends entityMethods {
 	columns(): columnDefinitionCollection;
 	columns(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
 	update(values: any): IBaseQuery<void>;
+	publish(): IBaseExecution<void>;
+	unpublish(): IBaseExecution<void>;
+	associateWithHubSites(hubSiteUrls, propagateToExistingLists): IBaseExecution<void>;
+	copyToDefaultContentLocation(sourceFile, destinationFileName): IBaseExecution<void>;
+	isPublished(): boolean;
 }
 export interface contentTypeOData extends entityOData {
 	base: contentType;
@@ -4006,6 +4141,11 @@ export interface contentTypeOData extends entityOData {
 	columnPositions: IBaseResults<columnDefinition>;
 	columns: IBaseResults<columnDefinition>;
 	update(values: any): IBaseQuery<void>;
+	publish(): IBaseExecution<void>;
+	unpublish(): IBaseExecution<void>;
+	associateWithHubSites(hubSiteUrls, propagateToExistingLists): IBaseExecution<void>;
+	copyToDefaultContentLocation(sourceFile, destinationFileName): IBaseExecution<void>;
+	isPublished(): boolean;
 }
 export interface contentTypeCollection extends IBaseCollection<contentType, contentTypeOData & contentTypeProps> {
     add(values?: any): IBaseExecution<contentType>;
@@ -4082,9 +4222,11 @@ export interface conversationThreadProps extends  entityProps {
 export interface conversationThreadMethods extends entityMethods {
 	posts(): postCollection;
 	posts(id: string | number): IBaseQuery<post> & postMethods;
+	reply(Post): IBaseExecution<void>;
 }
 export interface conversationThreadOData extends entityOData {
 	posts: IBaseResults<post>;
+	reply(Post): IBaseExecution<void>;
 }
 export interface conversationThreadCollection extends IBaseCollection<conversationThread, conversationThreadOData & conversationThreadProps> {
     add(values?: any): IBaseExecution<conversationThread>;
@@ -4138,10 +4280,10 @@ export interface crossTenantAccessPolicyConfigurationDefaultProps extends  entit
 	tenantRestrictions: ComplexTypes.crossTenantAccessPolicyTenantRestrictions;
 }
 export interface crossTenantAccessPolicyConfigurationDefaultMethods extends entityMethods {
-
+	resetToSystemDefault(): IBaseExecution<void>;
 }
 export interface crossTenantAccessPolicyConfigurationDefaultOData extends entityOData {
-
+	resetToSystemDefault(): IBaseExecution<void>;
 }
 /*********************************************
 * crossTenantAccessPolicyConfigurationPartner
@@ -4188,10 +4330,10 @@ export interface customAuthenticationExtensionProps extends  customCalloutExtens
 
 }
 export interface customAuthenticationExtensionMethods extends customCalloutExtensionMethods {
-
+	validateAuthenticationConfiguration(): IBaseExecution<ComplexTypes.authenticationConfigurationValidation>;
 }
 export interface customAuthenticationExtensionOData extends customCalloutExtensionOData {
-
+	validateAuthenticationConfiguration(): IBaseExecution<ComplexTypes.authenticationConfigurationValidation>;
 }
 export interface customAuthenticationExtensionCollection extends IBaseCollection<customAuthenticationExtension, customAuthenticationExtensionOData & customAuthenticationExtensionProps> {
     add(values?: any): IBaseExecution<customAuthenticationExtension>;
@@ -4521,10 +4663,10 @@ export interface deletedChatProps extends  entityProps {
 
 }
 export interface deletedChatMethods extends entityMethods {
-
+	undoDelete(): IBaseExecution<void>;
 }
 export interface deletedChatOData extends entityOData {
-
+	undoDelete(): IBaseExecution<void>;
 }
 export interface deletedChatCollection extends IBaseCollection<deletedChat, deletedChatOData & deletedChatProps> {
     add(values?: any): IBaseExecution<deletedChat>;
@@ -4732,6 +4874,7 @@ export interface deviceAppManagementMethods extends entityMethods {
 	targetedManagedAppConfigurations(id: string | number): IBaseQuery<targetedManagedAppConfiguration> & targetedManagedAppConfigurationMethods;
 	windowsInformationProtectionPolicies(): windowsInformationProtectionPolicyCollection;
 	windowsInformationProtectionPolicies(id: string | number): IBaseQuery<windowsInformationProtectionPolicy> & windowsInformationProtectionPolicyMethods;
+	syncMicrosoftStoreForBusinessApps(): IBaseExecution<void>;
 }
 export interface deviceAppManagementOData extends entityOData {
 	managedEBooks: IBaseResults<managedEBook>;
@@ -4748,6 +4891,7 @@ export interface deviceAppManagementOData extends entityOData {
 	mdmWindowsInformationProtectionPolicies: IBaseResults<mdmWindowsInformationProtectionPolicy>;
 	targetedManagedAppConfigurations: IBaseResults<targetedManagedAppConfiguration>;
 	windowsInformationProtectionPolicies: IBaseResults<windowsInformationProtectionPolicy>;
+	syncMicrosoftStoreForBusinessApps(): IBaseExecution<void>;
 }
 /*********************************************
 * deviceCategory
@@ -4850,6 +4994,8 @@ export interface deviceCompliancePolicyMethods extends entityMethods {
 	userStatuses(): deviceComplianceUserStatusCollection;
 	userStatuses(id: string | number): IBaseQuery<deviceComplianceUserStatus> & deviceComplianceUserStatusMethods;
 	userStatusOverview(): IBaseQuery<deviceComplianceUserOverview> & deviceComplianceUserOverviewMethods;
+	assign(assignments): IBaseExecution<deviceCompliancePolicyAssignment[]>;
+	scheduleActionsForRules(deviceComplianceScheduledActionForRules): IBaseExecution<void>;
 }
 export interface deviceCompliancePolicyOData extends entityOData {
 	assignments: IBaseResults<deviceCompliancePolicyAssignment>;
@@ -4859,6 +5005,8 @@ export interface deviceCompliancePolicyOData extends entityOData {
 	scheduledActionsForRule: IBaseResults<deviceComplianceScheduledActionForRule>;
 	userStatuses: IBaseResults<deviceComplianceUserStatus>;
 	userStatusOverview: deviceComplianceUserOverview;
+	assign(assignments): IBaseExecution<deviceCompliancePolicyAssignment[]>;
+	scheduleActionsForRules(deviceComplianceScheduledActionForRules): IBaseExecution<void>;
 }
 export interface deviceCompliancePolicyCollection extends IBaseCollection<deviceCompliancePolicy, deviceCompliancePolicyOData & deviceCompliancePolicyProps> {
     add(values?: any): IBaseExecution<deviceCompliancePolicy>;
@@ -5051,6 +5199,8 @@ export interface deviceConfigurationMethods extends entityMethods {
 	userStatuses(): deviceConfigurationUserStatusCollection;
 	userStatuses(id: string | number): IBaseQuery<deviceConfigurationUserStatus> & deviceConfigurationUserStatusMethods;
 	userStatusOverview(): IBaseQuery<deviceConfigurationUserOverview> & deviceConfigurationUserOverviewMethods;
+	assign(assignments): IBaseExecution<deviceConfigurationAssignment[]>;
+	getOmaSettingPlainTextValue(secretReferenceValueId): string;
 }
 export interface deviceConfigurationOData extends entityOData {
 	assignments: IBaseResults<deviceConfigurationAssignment>;
@@ -5059,6 +5209,8 @@ export interface deviceConfigurationOData extends entityOData {
 	deviceStatusOverview: deviceConfigurationDeviceOverview;
 	userStatuses: IBaseResults<deviceConfigurationUserStatus>;
 	userStatusOverview: deviceConfigurationUserOverview;
+	assign(assignments): IBaseExecution<deviceConfigurationAssignment[]>;
+	getOmaSettingPlainTextValue(secretReferenceValueId): string;
 }
 export interface deviceConfigurationCollection extends IBaseCollection<deviceConfiguration, deviceConfigurationOData & deviceConfigurationProps> {
     add(values?: any): IBaseExecution<deviceConfiguration>;
@@ -5214,9 +5366,13 @@ export interface deviceEnrollmentConfigurationProps extends  entityProps {
 export interface deviceEnrollmentConfigurationMethods extends entityMethods {
 	assignments(): enrollmentConfigurationAssignmentCollection;
 	assignments(id: string | number): IBaseQuery<enrollmentConfigurationAssignment> & enrollmentConfigurationAssignmentMethods;
+	assign(enrollmentConfigurationAssignments): IBaseExecution<void>;
+	setPriority(priority): IBaseExecution<void>;
 }
 export interface deviceEnrollmentConfigurationOData extends entityOData {
 	assignments: IBaseResults<enrollmentConfigurationAssignment>;
+	assign(enrollmentConfigurationAssignments): IBaseExecution<void>;
+	setPriority(priority): IBaseExecution<void>;
 }
 export interface deviceEnrollmentConfigurationCollection extends IBaseCollection<deviceEnrollmentConfiguration, deviceEnrollmentConfigurationOData & deviceEnrollmentConfigurationProps> {
     add(values?: any): IBaseExecution<deviceEnrollmentConfiguration>;
@@ -5332,10 +5488,10 @@ export interface deviceLogCollectionResponseProps extends  entityProps {
 	status: EnumTypes.appLogUploadState;
 }
 export interface deviceLogCollectionResponseMethods extends entityMethods {
-
+	createDownloadUrl(): IBaseExecution<string>;
 }
 export interface deviceLogCollectionResponseOData extends entityOData {
-
+	createDownloadUrl(): IBaseExecution<string>;
 }
 export interface deviceLogCollectionResponseCollection extends IBaseCollection<deviceLogCollectionResponse, deviceLogCollectionResponseOData & deviceLogCollectionResponseProps> {
     add(values?: any): IBaseExecution<deviceLogCollectionResponse>;
@@ -5459,6 +5615,9 @@ export interface deviceManagementMethods extends entityMethods {
 	windowsInformationProtectionAppLearningSummaries(id: string | number): IBaseQuery<windowsInformationProtectionAppLearningSummary> & windowsInformationProtectionAppLearningSummaryMethods;
 	windowsInformationProtectionNetworkLearningSummaries(): windowsInformationProtectionNetworkLearningSummaryCollection;
 	windowsInformationProtectionNetworkLearningSummaries(id: string | number): IBaseQuery<windowsInformationProtectionNetworkLearningSummary> & windowsInformationProtectionNetworkLearningSummaryMethods;
+	verifyWindowsEnrollmentAutoDiscovery(domainName): boolean;
+	userExperienceAnalyticsSummarizeWorkFromAnywhereDevices(): ComplexTypes.userExperienceAnalyticsWorkFromAnywhereDevicesSummary;
+	getEffectivePermissions(scope): ComplexTypes.rolePermission[];
 }
 export interface deviceManagementOData extends entityOData {
 	auditEvents: IBaseResults<auditEvent>;
@@ -5519,6 +5678,9 @@ export interface deviceManagementOData extends entityOData {
 	troubleshootingEvents: IBaseResults<deviceManagementTroubleshootingEvent>;
 	windowsInformationProtectionAppLearningSummaries: IBaseResults<windowsInformationProtectionAppLearningSummary>;
 	windowsInformationProtectionNetworkLearningSummaries: IBaseResults<windowsInformationProtectionNetworkLearningSummary>;
+	verifyWindowsEnrollmentAutoDiscovery(domainName): boolean;
+	userExperienceAnalyticsSummarizeWorkFromAnywhereDevices(): ComplexTypes.userExperienceAnalyticsWorkFromAnywhereDevicesSummary;
+	getEffectivePermissions(scope): ComplexTypes.rolePermission[];
 }
 /*********************************************
 * deviceManagementCachedReportConfiguration
@@ -5549,10 +5711,10 @@ export interface deviceManagementExchangeConnectorProps extends  entityProps {
 	version: string;
 }
 export interface deviceManagementExchangeConnectorMethods extends entityMethods {
-
+	sync(syncType): IBaseExecution<void>;
 }
 export interface deviceManagementExchangeConnectorOData extends entityOData {
-
+	sync(syncType): IBaseExecution<void>;
 }
 export interface deviceManagementExchangeConnectorCollection extends IBaseCollection<deviceManagementExchangeConnector, deviceManagementExchangeConnectorOData & deviceManagementExchangeConnectorProps> {
     add(values?: any): IBaseExecution<deviceManagementExchangeConnector>;
@@ -5598,10 +5760,10 @@ export interface deviceManagementPartnerProps extends  entityProps {
 	whenPartnerDevicesWillBeRemovedDateTime: any;
 }
 export interface deviceManagementPartnerMethods extends entityMethods {
-
+	terminate(): IBaseExecution<void>;
 }
 export interface deviceManagementPartnerOData extends entityOData {
-
+	terminate(): IBaseExecution<void>;
 }
 export interface deviceManagementPartnerCollection extends IBaseCollection<deviceManagementPartner, deviceManagementPartnerOData & deviceManagementPartnerProps> {
     add(values?: any): IBaseExecution<deviceManagementPartner>;
@@ -5616,9 +5778,47 @@ export interface deviceManagementReportsProps extends  entityProps {
 export interface deviceManagementReportsMethods extends entityMethods {
 	exportJobs(): deviceManagementExportJobCollection;
 	exportJobs(id: string | number): IBaseQuery<deviceManagementExportJob> & deviceManagementExportJobMethods;
+	retrieveDeviceAppInstallationStatusReport(name, select, search, groupBy, orderBy, skip, top, sessionId, filter): IBaseExecution<any>;
+	getCachedReport(id, select, groupBy, orderBy, search, skip, top): IBaseExecution<any>;
+	getCompliancePolicyNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getCompliancePolicyNonComplianceSummaryReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getComplianceSettingNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getConfigurationPolicyNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getConfigurationPolicyNonComplianceSummaryReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getConfigurationSettingNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDeviceManagementIntentPerSettingContributingProfiles(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDeviceManagementIntentSettingsReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDeviceNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDevicesWithoutCompliancePolicyReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getHistoricalReport(name, select, groupBy, orderBy, search, skip, top, filter): IBaseExecution<any>;
+	getNoncompliantDevicesAndSettingsReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getPolicyNonComplianceMetadata(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getPolicyNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getPolicyNonComplianceSummaryReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getReportFilters(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getSettingNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
 }
 export interface deviceManagementReportsOData extends entityOData {
 	exportJobs: IBaseResults<deviceManagementExportJob>;
+	retrieveDeviceAppInstallationStatusReport(name, select, search, groupBy, orderBy, skip, top, sessionId, filter): IBaseExecution<any>;
+	getCachedReport(id, select, groupBy, orderBy, search, skip, top): IBaseExecution<any>;
+	getCompliancePolicyNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getCompliancePolicyNonComplianceSummaryReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getComplianceSettingNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getConfigurationPolicyNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getConfigurationPolicyNonComplianceSummaryReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getConfigurationSettingNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDeviceManagementIntentPerSettingContributingProfiles(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDeviceManagementIntentSettingsReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDeviceNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getDevicesWithoutCompliancePolicyReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getHistoricalReport(name, select, groupBy, orderBy, search, skip, top, filter): IBaseExecution<any>;
+	getNoncompliantDevicesAndSettingsReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getPolicyNonComplianceMetadata(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getPolicyNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getPolicyNonComplianceSummaryReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getReportFilters(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
+	getSettingNonComplianceReport(name, select, groupBy, orderBy, search, skip, top, sessionId, filter): IBaseExecution<any>;
 }
 /*********************************************
 * deviceManagementTroubleshootingEvent
@@ -5730,10 +5930,10 @@ export interface directoryDefinitionProps extends  entityProps {
 	version: string;
 }
 export interface directoryDefinitionMethods extends entityMethods {
-
+	discover(): IBaseExecution<directoryDefinition>;
 }
 export interface directoryDefinitionOData extends entityOData {
-
+	discover(): IBaseExecution<directoryDefinition>;
 }
 export interface directoryDefinitionCollection extends IBaseCollection<directoryDefinition, directoryDefinitionOData & directoryDefinitionProps> {
     add(values?: any): IBaseExecution<directoryDefinition>;
@@ -5746,10 +5946,18 @@ export interface directoryObjectProps extends  entityProps {
 	deletedDateTime: any;
 }
 export interface directoryObjectMethods extends entityMethods {
-
+	restore(autoReconcileProxyConflict): IBaseExecution<directoryObject>;
+	checkMemberGroups(groupIds): IBaseExecution<Array<string>[]>;
+	checkMemberObjects(ids): IBaseExecution<Array<string>[]>;
+	getMemberGroups(securityEnabledOnly): IBaseExecution<Array<string>[]>;
+	getMemberObjects(securityEnabledOnly): IBaseExecution<Array<string>[]>;
 }
 export interface directoryObjectOData extends entityOData {
-
+	restore(autoReconcileProxyConflict): IBaseExecution<directoryObject>;
+	checkMemberGroups(groupIds): IBaseExecution<Array<string>[]>;
+	checkMemberObjects(ids): IBaseExecution<Array<string>[]>;
+	getMemberGroups(securityEnabledOnly): IBaseExecution<Array<string>[]>;
+	getMemberObjects(securityEnabledOnly): IBaseExecution<Array<string>[]>;
 }
 export interface directoryObjectCollection extends IBaseCollection<directoryObject, directoryObjectOData & directoryObjectProps> {
     add(values?: any): IBaseExecution<directoryObject>;
@@ -5830,10 +6038,10 @@ export interface documentSetVersionProps extends  listItemVersionProps {
 	shouldCaptureMinorVersion: boolean;
 }
 export interface documentSetVersionMethods extends listItemVersionMethods {
-
+	restore(): IBaseExecution<void>;
 }
 export interface documentSetVersionOData extends listItemVersionOData {
-
+	restore(): IBaseExecution<void>;
 }
 export interface documentSetVersionCollection extends IBaseCollection<documentSetVersion, documentSetVersionOData & documentSetVersionProps> {
     add(values?: any): IBaseExecution<documentSetVersion>;
@@ -5867,6 +6075,9 @@ export interface domainMethods extends entityMethods {
 	serviceConfigurationRecords(id: string | number): IBaseQuery<domainDnsRecord> & domainDnsRecordMethods;
 	verificationDnsRecords(): domainDnsRecordCollection;
 	verificationDnsRecords(id: string | number): IBaseQuery<domainDnsRecord> & domainDnsRecordMethods;
+	forceDelete(disableUserAccounts): IBaseExecution<void>;
+	promote(): IBaseExecution<boolean>;
+	verify(forceTakeover): IBaseExecution<domain>;
 }
 export interface domainOData extends entityOData {
 	domainNameReferences: IBaseResults<directoryObject>;
@@ -5874,6 +6085,9 @@ export interface domainOData extends entityOData {
 	rootDomain: domain;
 	serviceConfigurationRecords: IBaseResults<domainDnsRecord>;
 	verificationDnsRecords: IBaseResults<domainDnsRecord>;
+	forceDelete(disableUserAccounts): IBaseExecution<void>;
+	promote(): IBaseExecution<boolean>;
+	verify(forceTakeover): IBaseExecution<domain>;
 }
 /*********************************************
 * domainDnsCnameRecord
@@ -5988,6 +6202,9 @@ export interface driveMethods extends baseItemMethods {
 	root(): IBaseQuery<driveItem> & driveItemMethods;
 	special(): driveItemCollection;
 	special(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
+	search(q): driveItem[];
+	recent(): driveItem[];
+	sharedWithMe(): driveItem[];
 }
 export interface driveOData extends baseItemOData {
 	bundles: IBaseResults<driveItem>;
@@ -5996,6 +6213,9 @@ export interface driveOData extends baseItemOData {
 	list: list;
 	root: driveItem;
 	special: IBaseResults<driveItem>;
+	search(q): driveItem[];
+	recent(): driveItem[];
+	sharedWithMe(): driveItem[];
 }
 export interface driveCollection extends IBaseCollection<drive, driveOData & driveProps> {
     add(values?: any): IBaseExecution<drive>;
@@ -6045,6 +6265,24 @@ export interface driveItemMethods extends baseItemMethods {
 	thumbnails(id: string | number): IBaseQuery<thumbnailSet> & thumbnailSetMethods;
 	versions(): driveItemVersionCollection;
 	versions(id: string | number): IBaseQuery<driveItemVersion> & driveItemVersionMethods;
+	restore(parentReference, name): IBaseExecution<driveItem>;
+	copy(name, parentReference): IBaseExecution<driveItem>;
+	createUploadSession(item, deferCommit): IBaseExecution<ComplexTypes.uploadSession>;
+	permanentDelete(): IBaseExecution<void>;
+	assignSensitivityLabel(sensitivityLabelId, assignmentMethod, justificationText): IBaseExecution<void>;
+	checkin(checkInAs, comment): IBaseExecution<void>;
+	checkout(): IBaseExecution<void>;
+	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
+	follow(): IBaseExecution<driveItem>;
+	invite(requireSignIn, roles, sendInvitation, message, recipients, retainInheritedPermissions, expirationDateTime, password): IBaseExecution<permission[]>;
+	preview(page, zoom): IBaseExecution<ComplexTypes.itemPreviewInfo>;
+	unfollow(): IBaseExecution<void>;
+	validatePermission(challengeToken, password): IBaseExecution<void>;
+	delta(): driveItem[];
+	delta(token): driveItem[];
+	search(q): driveItem[];
+	getActivitiesByInterval(): itemActivityStat[];
+	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
 }
 export interface driveItemOData extends baseItemOData {
 	workbook: workbook;
@@ -6056,6 +6294,24 @@ export interface driveItemOData extends baseItemOData {
 	subscriptions: IBaseResults<subscription>;
 	thumbnails: IBaseResults<thumbnailSet>;
 	versions: IBaseResults<driveItemVersion>;
+	restore(parentReference, name): IBaseExecution<driveItem>;
+	copy(name, parentReference): IBaseExecution<driveItem>;
+	createUploadSession(item, deferCommit): IBaseExecution<ComplexTypes.uploadSession>;
+	permanentDelete(): IBaseExecution<void>;
+	assignSensitivityLabel(sensitivityLabelId, assignmentMethod, justificationText): IBaseExecution<void>;
+	checkin(checkInAs, comment): IBaseExecution<void>;
+	checkout(): IBaseExecution<void>;
+	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
+	follow(): IBaseExecution<driveItem>;
+	invite(requireSignIn, roles, sendInvitation, message, recipients, retainInheritedPermissions, expirationDateTime, password): IBaseExecution<permission[]>;
+	preview(page, zoom): IBaseExecution<ComplexTypes.itemPreviewInfo>;
+	unfollow(): IBaseExecution<void>;
+	validatePermission(challengeToken, password): IBaseExecution<void>;
+	delta(): driveItem[];
+	delta(token): driveItem[];
+	search(q): driveItem[];
+	getActivitiesByInterval(): itemActivityStat[];
+	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
 }
 export interface driveItemCollection extends IBaseCollection<driveItem, driveItemOData & driveItemProps> {
     add(values?: any): IBaseExecution<driveItem>;
@@ -6069,10 +6325,10 @@ export interface driveItemVersionProps extends  baseItemVersionProps {
 	size: number;
 }
 export interface driveItemVersionMethods extends baseItemVersionMethods {
-
+	restoreVersion(): IBaseExecution<void>;
 }
 export interface driveItemVersionOData extends baseItemVersionOData {
-
+	restoreVersion(): IBaseExecution<void>;
 }
 export interface driveItemVersionCollection extends IBaseCollection<driveItemVersion, driveItemVersionOData & driveItemVersionProps> {
     add(values?: any): IBaseExecution<driveItemVersion>;
@@ -6491,6 +6747,11 @@ export interface educationAssignmentMethods extends entityMethods {
 	rubric(): IBaseQuery<educationRubric> & educationRubricMethods;
 	submissions(): educationSubmissionCollection;
 	submissions(id: string | number): IBaseQuery<educationSubmission> & educationSubmissionMethods;
+	publish(): IBaseExecution<educationAssignment>;
+	activate(): IBaseExecution<educationAssignment>;
+	deactivate(): IBaseExecution<educationAssignment>;
+	setUpFeedbackResourcesFolder(): IBaseExecution<educationAssignment>;
+	setUpResourcesFolder(): IBaseExecution<educationAssignment>;
 }
 export interface educationAssignmentOData extends entityOData {
 	categories: IBaseResults<educationCategory>;
@@ -6498,6 +6759,11 @@ export interface educationAssignmentOData extends entityOData {
 	resources: IBaseResults<educationAssignmentResource>;
 	rubric: educationRubric;
 	submissions: IBaseResults<educationSubmission>;
+	publish(): IBaseExecution<educationAssignment>;
+	activate(): IBaseExecution<educationAssignment>;
+	deactivate(): IBaseExecution<educationAssignment>;
+	setUpFeedbackResourcesFolder(): IBaseExecution<educationAssignment>;
+	setUpResourcesFolder(): IBaseExecution<educationAssignment>;
 }
 export interface educationAssignmentCollection extends IBaseCollection<educationAssignment, educationAssignmentOData & educationAssignmentProps> {
     add(values?: any): IBaseExecution<educationAssignment>;
@@ -6677,9 +6943,17 @@ export interface educationModuleProps extends  entityProps {
 export interface educationModuleMethods extends entityMethods {
 	resources(): educationModuleResourceCollection;
 	resources(id: string | number): IBaseQuery<educationModuleResource> & educationModuleResourceMethods;
+	publish(): IBaseExecution<educationModule>;
+	setUpResourcesFolder(): IBaseExecution<educationModule>;
+	pin(): IBaseExecution<educationModule>;
+	unpin(): IBaseExecution<educationModule>;
 }
 export interface educationModuleOData extends entityOData {
 	resources: IBaseResults<educationModuleResource>;
+	publish(): IBaseExecution<educationModule>;
+	setUpResourcesFolder(): IBaseExecution<educationModule>;
+	pin(): IBaseExecution<educationModule>;
+	unpin(): IBaseExecution<educationModule>;
 }
 export interface educationModuleCollection extends IBaseCollection<educationModule, educationModuleOData & educationModuleProps> {
     add(values?: any): IBaseExecution<educationModule>;
@@ -6868,11 +7142,23 @@ export interface educationSubmissionMethods extends entityMethods {
 	resources(id: string | number): IBaseQuery<educationSubmissionResource> & educationSubmissionResourceMethods;
 	submittedResources(): educationSubmissionResourceCollection;
 	submittedResources(id: string | number): IBaseQuery<educationSubmissionResource> & educationSubmissionResourceMethods;
+	setUpResourcesFolder(): IBaseExecution<educationSubmission>;
+	excuse(): IBaseExecution<educationSubmission>;
+	reassign(): IBaseExecution<educationSubmission>;
+	_return(): IBaseExecution<educationSubmission>;
+	submit(): IBaseExecution<educationSubmission>;
+	unsubmit(): IBaseExecution<educationSubmission>;
 }
 export interface educationSubmissionOData extends entityOData {
 	outcomes: IBaseResults<educationOutcome>;
 	resources: IBaseResults<educationSubmissionResource>;
 	submittedResources: IBaseResults<educationSubmissionResource>;
+	setUpResourcesFolder(): IBaseExecution<educationSubmission>;
+	excuse(): IBaseExecution<educationSubmission>;
+	reassign(): IBaseExecution<educationSubmission>;
+	_return(): IBaseExecution<educationSubmission>;
+	submit(): IBaseExecution<educationSubmission>;
+	unsubmit(): IBaseExecution<educationSubmission>;
 }
 export interface educationSubmissionCollection extends IBaseCollection<educationSubmission, educationSubmissionOData & educationSubmissionProps> {
     add(values?: any): IBaseExecution<educationSubmission>;
@@ -7305,6 +7591,13 @@ export interface eventMethods extends outlookItemMethods {
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
 	singleValueExtendedProperties(): singleValueLegacyExtendedPropertyCollection;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+	cancel(Comment): IBaseExecution<void>;
+	accept(SendResponse, Comment): IBaseExecution<void>;
+	decline(ProposedNewTime, SendResponse, Comment): IBaseExecution<void>;
+	dismissReminder(): IBaseExecution<void>;
+	forward(ToRecipients, Comment): IBaseExecution<void>;
+	snoozeReminder(NewReminderTime): IBaseExecution<void>;
+	tentativelyAccept(ProposedNewTime, SendResponse, Comment): IBaseExecution<void>;
 }
 export interface eventOData extends outlookItemOData {
 	attachments: IBaseResults<attachment>;
@@ -7313,6 +7606,13 @@ export interface eventOData extends outlookItemOData {
 	instances: IBaseResults<event>;
 	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
 	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
+	cancel(Comment): IBaseExecution<void>;
+	accept(SendResponse, Comment): IBaseExecution<void>;
+	decline(ProposedNewTime, SendResponse, Comment): IBaseExecution<void>;
+	dismissReminder(): IBaseExecution<void>;
+	forward(ToRecipients, Comment): IBaseExecution<void>;
+	snoozeReminder(NewReminderTime): IBaseExecution<void>;
+	tentativelyAccept(ProposedNewTime, SendResponse, Comment): IBaseExecution<void>;
 }
 export interface eventCollection extends IBaseCollection<event, eventOData & eventProps> {
     add(values?: any): IBaseExecution<event>;
@@ -7823,10 +8123,12 @@ export interface fileStorageContainerMethods extends entityMethods {
 	drive(): IBaseQuery<drive> & driveMethods;
 	permissions(): permissionCollection;
 	permissions(id: string | number): IBaseQuery<permission> & permissionMethods;
+	permanentDelete(): IBaseExecution<void>;
 }
 export interface fileStorageContainerOData extends entityOData {
 	drive: drive;
 	permissions: IBaseResults<permission>;
+	permanentDelete(): IBaseExecution<void>;
 }
 export interface fileStorageContainerCollection extends IBaseCollection<fileStorageContainer, fileStorageContainerOData & fileStorageContainerProps> {
     add(values?: any): IBaseExecution<fileStorageContainer>;
@@ -7893,9 +8195,29 @@ export interface groupProps extends  entityProps {
 export interface groupMethods extends entityMethods {
 	sets(): IBaseCollection<set, entity & setOData & setProps>;
 	sets(id: string | number): IBaseQuery<set> & setMethods;
+	assignLicense(addLicenses, removeLicenses): IBaseExecution<group>;
+	retryServiceProvisioning(): IBaseExecution<void>;
+	checkGrantedPermissionsForApp(): IBaseExecution<resourceSpecificPermissionGrant[]>;
+	validateProperties(displayName, mailNickname, onBehalfOfUserId): IBaseExecution<void>;
+	addFavorite(): IBaseExecution<void>;
+	removeFavorite(): IBaseExecution<void>;
+	resetUnseenCount(): IBaseExecution<void>;
+	subscribeByMail(): IBaseExecution<void>;
+	unsubscribeByMail(): IBaseExecution<void>;
+	renew(): IBaseExecution<void>;
 }
 export interface groupOData extends entityOData {
 	sets: IBaseResults<set>;
+	assignLicense(addLicenses, removeLicenses): IBaseExecution<group>;
+	retryServiceProvisioning(): IBaseExecution<void>;
+	checkGrantedPermissionsForApp(): IBaseExecution<resourceSpecificPermissionGrant[]>;
+	validateProperties(displayName, mailNickname, onBehalfOfUserId): IBaseExecution<void>;
+	addFavorite(): IBaseExecution<void>;
+	removeFavorite(): IBaseExecution<void>;
+	resetUnseenCount(): IBaseExecution<void>;
+	subscribeByMail(): IBaseExecution<void>;
+	unsubscribeByMail(): IBaseExecution<void>;
+	renew(): IBaseExecution<void>;
 }
 export interface groupCollection extends IBaseCollection<group, groupOData & groupProps> {
     add(values?: any): IBaseExecution<group>;
@@ -7910,10 +8232,12 @@ export interface groupLifecyclePolicyProps extends  entityProps {
 	managedGroupTypes: string;
 }
 export interface groupLifecyclePolicyMethods extends entityMethods {
-
+	addGroup(groupId): IBaseExecution<boolean>;
+	removeGroup(groupId): IBaseExecution<boolean>;
 }
 export interface groupLifecyclePolicyOData extends entityOData {
-
+	addGroup(groupId): IBaseExecution<boolean>;
+	removeGroup(groupId): IBaseExecution<boolean>;
 }
 export interface groupLifecyclePolicyCollection extends IBaseCollection<groupLifecyclePolicy, groupLifecyclePolicyOData & groupLifecyclePolicyProps> {
     add(values?: any): IBaseExecution<groupLifecyclePolicy>;
@@ -8234,10 +8558,10 @@ export interface identityApiConnectorProps extends  entityProps {
 	targetUrl: string;
 }
 export interface identityApiConnectorMethods extends entityMethods {
-
+	uploadClientCertificate(pkcs12Value, password): IBaseExecution<identityApiConnector>;
 }
 export interface identityApiConnectorOData extends entityOData {
-
+	uploadClientCertificate(pkcs12Value, password): IBaseExecution<identityApiConnector>;
 }
 export interface identityApiConnectorCollection extends IBaseCollection<identityApiConnector, identityApiConnectorOData & identityApiConnectorProps> {
     add(values?: any): IBaseExecution<identityApiConnector>;
@@ -9569,9 +9893,10 @@ export interface listItemMethods extends baseItemMethods {
 	fields(): IBaseQuery<fieldValueSet> & fieldValueSetMethods;
 	versions(): listItemVersionCollection;
 	versions(id: string | number): IBaseQuery<listItemVersion> & listItemVersionMethods;
-	extractSensitivityLabel(values: any): IBaseQuery<void>;
-	setSensitivityLabel(values: { actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }): IBaseQuery<void>;
 	update(values: any): IBaseQuery<void>;
+	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
+	getActivitiesByInterval(): itemActivityStat[];
+	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
 }
 export interface listItemOData extends baseItemOData {
 	analytics: itemAnalytics;
@@ -9579,9 +9904,10 @@ export interface listItemOData extends baseItemOData {
 	driveItem: driveItem;
 	fields: fieldValueSet;
 	versions: IBaseResults<listItemVersion>;
-	extractSensitivityLabel(values: any): IBaseQuery<void>;
-	setSensitivityLabel(values: { actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }): IBaseQuery<void>;
 	update(values: any): IBaseQuery<void>;
+	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
+	getActivitiesByInterval(): itemActivityStat[];
+	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
 }
 export interface listItemCollection extends IBaseCollection<listItem, listItemOData & listItemProps> {
     add(values?: any): IBaseExecution<listItem>;
@@ -9595,9 +9921,11 @@ export interface listItemVersionProps extends  baseItemVersionProps {
 }
 export interface listItemVersionMethods extends baseItemVersionMethods {
 	fields(): IBaseQuery<fieldValueSet> & fieldValueSetMethods;
+	restoreVersion(): IBaseExecution<void>;
 }
 export interface listItemVersionOData extends baseItemVersionOData {
 	fields: fieldValueSet;
+	restoreVersion(): IBaseExecution<void>;
 }
 export interface listItemVersionCollection extends IBaseCollection<listItemVersion, listItemVersionOData & listItemVersionProps> {
     add(values?: any): IBaseExecution<listItemVersion>;
@@ -9878,6 +10206,8 @@ export interface mailFolderMethods extends entityMethods {
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
 	singleValueExtendedProperties(): singleValueLegacyExtendedPropertyCollection;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+	copy(DestinationId): IBaseExecution<mailFolder>;
+	move(DestinationId): IBaseExecution<mailFolder>;
 }
 export interface mailFolderOData extends entityOData {
 	childFolders: IBaseResults<mailFolder>;
@@ -9885,6 +10215,8 @@ export interface mailFolderOData extends entityOData {
 	messages: IBaseResults<message>;
 	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
 	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
+	copy(DestinationId): IBaseExecution<mailFolder>;
+	move(DestinationId): IBaseExecution<mailFolder>;
 }
 export interface mailFolderCollection extends IBaseCollection<mailFolder, mailFolderOData & mailFolderProps> {
     add(values?: any): IBaseExecution<mailFolder>;
@@ -10066,10 +10398,12 @@ export interface managedAppPolicyProps extends  entityProps {
 	version: string;
 }
 export interface managedAppPolicyMethods extends entityMethods {
-
+	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 export interface managedAppPolicyOData extends entityOData {
-
+	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 export interface managedAppPolicyCollection extends IBaseCollection<managedAppPolicy, managedAppPolicyOData & managedAppPolicyProps> {
     add(values?: any): IBaseExecution<managedAppPolicy>;
@@ -10125,10 +10459,12 @@ export interface managedAppProtectionProps extends  managedAppPolicyProps {
 	simplePinBlocked: boolean;
 }
 export interface managedAppProtectionMethods extends managedAppPolicyMethods {
-
+	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 export interface managedAppProtectionOData extends managedAppPolicyOData {
-
+	targetApps(apps: any, appGroupType: any): IBaseQuery<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 /*********************************************
 * managedAppRegistration
@@ -10265,6 +10601,24 @@ export interface managedDeviceMethods extends entityMethods {
 	users(): userCollection;
 	users(id: string | number): IBaseQuery<user> & userMethods;
 	windowsProtectionState(): IBaseQuery<windowsProtectionState> & windowsProtectionStateMethods;
+	bypassActivationLock(): IBaseExecution<void>;
+	cleanWindowsDevice(keepUserData): IBaseExecution<void>;
+	deleteUserFromSharedAppleDevice(userPrincipalName): IBaseExecution<void>;
+	disableLostMode(): IBaseExecution<void>;
+	locateDevice(): IBaseExecution<void>;
+	logoutSharedAppleDeviceActiveUser(): IBaseExecution<void>;
+	rebootNow(): IBaseExecution<void>;
+	recoverPasscode(): IBaseExecution<void>;
+	remoteLock(): IBaseExecution<void>;
+	requestRemoteAssistance(): IBaseExecution<void>;
+	resetPasscode(): IBaseExecution<void>;
+	retire(): IBaseExecution<void>;
+	shutDown(): IBaseExecution<void>;
+	syncDevice(): IBaseExecution<void>;
+	updateWindowsDeviceAccount(updateWindowsDeviceAccountActionParameter): IBaseExecution<void>;
+	windowsDefenderScan(quickScan): IBaseExecution<void>;
+	windowsDefenderUpdateSignatures(): IBaseExecution<void>;
+	wipe(keepEnrollmentData, keepUserData, macOsUnlockCode, persistEsimDataPlan): IBaseExecution<void>;
 }
 export interface managedDeviceOData extends entityOData {
 	deviceCompliancePolicyStates: IBaseResults<deviceCompliancePolicyState>;
@@ -10273,6 +10627,24 @@ export interface managedDeviceOData extends entityOData {
 	logCollectionRequests: IBaseResults<deviceLogCollectionResponse>;
 	users: IBaseResults<user>;
 	windowsProtectionState: windowsProtectionState;
+	bypassActivationLock(): IBaseExecution<void>;
+	cleanWindowsDevice(keepUserData): IBaseExecution<void>;
+	deleteUserFromSharedAppleDevice(userPrincipalName): IBaseExecution<void>;
+	disableLostMode(): IBaseExecution<void>;
+	locateDevice(): IBaseExecution<void>;
+	logoutSharedAppleDeviceActiveUser(): IBaseExecution<void>;
+	rebootNow(): IBaseExecution<void>;
+	recoverPasscode(): IBaseExecution<void>;
+	remoteLock(): IBaseExecution<void>;
+	requestRemoteAssistance(): IBaseExecution<void>;
+	resetPasscode(): IBaseExecution<void>;
+	retire(): IBaseExecution<void>;
+	shutDown(): IBaseExecution<void>;
+	syncDevice(): IBaseExecution<void>;
+	updateWindowsDeviceAccount(updateWindowsDeviceAccountActionParameter): IBaseExecution<void>;
+	windowsDefenderScan(quickScan): IBaseExecution<void>;
+	windowsDefenderUpdateSignatures(): IBaseExecution<void>;
+	wipe(keepEnrollmentData, keepUserData, macOsUnlockCode, persistEsimDataPlan): IBaseExecution<void>;
 }
 export interface managedDeviceCollection extends IBaseCollection<managedDevice, managedDeviceOData & managedDeviceProps> {
     add(values?: any): IBaseExecution<managedDevice>;
@@ -10298,6 +10670,7 @@ export interface managedDeviceMobileAppConfigurationMethods extends entityMethod
 	userStatuses(): managedDeviceMobileAppConfigurationUserStatusCollection;
 	userStatuses(id: string | number): IBaseQuery<managedDeviceMobileAppConfigurationUserStatus> & managedDeviceMobileAppConfigurationUserStatusMethods;
 	userStatusSummary(): IBaseQuery<managedDeviceMobileAppConfigurationUserSummary> & managedDeviceMobileAppConfigurationUserSummaryMethods;
+	assign(assignments): IBaseExecution<void>;
 }
 export interface managedDeviceMobileAppConfigurationOData extends entityOData {
 	assignments: IBaseResults<managedDeviceMobileAppConfigurationAssignment>;
@@ -10305,6 +10678,7 @@ export interface managedDeviceMobileAppConfigurationOData extends entityOData {
 	deviceStatusSummary: managedDeviceMobileAppConfigurationDeviceSummary;
 	userStatuses: IBaseResults<managedDeviceMobileAppConfigurationUserStatus>;
 	userStatusSummary: managedDeviceMobileAppConfigurationUserSummary;
+	assign(assignments): IBaseExecution<void>;
 }
 export interface managedDeviceMobileAppConfigurationCollection extends IBaseCollection<managedDeviceMobileAppConfiguration, managedDeviceMobileAppConfigurationOData & managedDeviceMobileAppConfigurationProps> {
     add(values?: any): IBaseExecution<managedDeviceMobileAppConfiguration>;
@@ -10445,12 +10819,14 @@ export interface managedEBookMethods extends entityMethods {
 	installSummary(): IBaseQuery<eBookInstallSummary> & eBookInstallSummaryMethods;
 	userStateSummary(): userInstallStateSummaryCollection;
 	userStateSummary(id: string | number): IBaseQuery<userInstallStateSummary> & userInstallStateSummaryMethods;
+	assign(managedEBookAssignments): IBaseExecution<void>;
 }
 export interface managedEBookOData extends entityOData {
 	assignments: IBaseResults<managedEBookAssignment>;
 	deviceStates: IBaseResults<deviceInstallState>;
 	installSummary: eBookInstallSummary;
 	userStateSummary: IBaseResults<userInstallStateSummary>;
+	assign(managedEBookAssignments): IBaseExecution<void>;
 }
 export interface managedEBookCollection extends IBaseCollection<managedEBook, managedEBookOData & managedEBookProps> {
     add(values?: any): IBaseExecution<managedEBook>;
@@ -10657,12 +11033,30 @@ export interface messageMethods extends outlookItemMethods {
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
 	singleValueExtendedProperties(): singleValueLegacyExtendedPropertyCollection;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+	forward(ToRecipients, Message, Comment): IBaseExecution<void>;
+	copy(DestinationId): IBaseExecution<message>;
+	move(DestinationId): IBaseExecution<message>;
+	createForward(ToRecipients, Message, Comment): IBaseExecution<message>;
+	createReply(Message, Comment): IBaseExecution<message>;
+	createReplyAll(Message, Comment): IBaseExecution<message>;
+	reply(Message, Comment): IBaseExecution<void>;
+	replyAll(Message, Comment): IBaseExecution<void>;
+	send(): IBaseExecution<void>;
 }
 export interface messageOData extends outlookItemOData {
 	attachments: IBaseResults<attachment>;
 	extensions: IBaseResults<extension>;
 	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
 	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
+	forward(ToRecipients, Message, Comment): IBaseExecution<void>;
+	copy(DestinationId): IBaseExecution<message>;
+	move(DestinationId): IBaseExecution<message>;
+	createForward(ToRecipients, Message, Comment): IBaseExecution<message>;
+	createReply(Message, Comment): IBaseExecution<message>;
+	createReplyAll(Message, Comment): IBaseExecution<message>;
+	reply(Message, Comment): IBaseExecution<void>;
+	replyAll(Message, Comment): IBaseExecution<void>;
+	send(): IBaseExecution<void>;
 }
 export interface messageCollection extends IBaseCollection<message, messageOData & messageProps> {
     add(values?: any): IBaseExecution<message>;
@@ -10794,10 +11188,12 @@ export interface mobileAppMethods extends entityMethods {
 	assignments(id: string | number): IBaseQuery<mobileAppAssignment> & mobileAppAssignmentMethods;
 	categories(): mobileAppCategoryCollection;
 	categories(id: string | number): IBaseQuery<mobileAppCategory> & mobileAppCategoryMethods;
+	assign(mobileAppAssignments): IBaseExecution<void>;
 }
 export interface mobileAppOData extends entityOData {
 	assignments: IBaseResults<mobileAppAssignment>;
 	categories: IBaseResults<mobileAppCategory>;
+	assign(mobileAppAssignments): IBaseExecution<void>;
 }
 export interface mobileAppCollection extends IBaseCollection<mobileApp, mobileAppOData & mobileAppProps> {
     add(values?: any): IBaseExecution<mobileApp>;
@@ -10874,10 +11270,12 @@ export interface mobileAppContentFileProps extends  entityProps {
 	uploadState: EnumTypes.mobileAppContentFileUploadState;
 }
 export interface mobileAppContentFileMethods extends entityMethods {
-
+	commit(fileEncryptionInfo): IBaseExecution<void>;
+	renewUpload(): IBaseExecution<void>;
 }
 export interface mobileAppContentFileOData extends entityOData {
-
+	commit(fileEncryptionInfo): IBaseExecution<void>;
+	renewUpload(): IBaseExecution<void>;
 }
 export interface mobileAppContentFileCollection extends IBaseCollection<mobileAppContentFile, mobileAppContentFileOData & mobileAppContentFileProps> {
     add(values?: any): IBaseExecution<mobileAppContentFile>;
@@ -11130,10 +11528,12 @@ export interface notebookMethods extends onenoteEntityHierarchyModelMethods {
 	sectionGroups(id: string | number): IBaseQuery<sectionGroup> & sectionGroupMethods;
 	sections(): onenoteSectionCollection;
 	sections(id: string | number): IBaseQuery<onenoteSection> & onenoteSectionMethods;
+	copyNotebook(groupId, renameAs, notebookFolder, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
 }
 export interface notebookOData extends onenoteEntityHierarchyModelOData {
 	sectionGroups: IBaseResults<sectionGroup>;
 	sections: IBaseResults<onenoteSection>;
+	copyNotebook(groupId, renameAs, notebookFolder, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
 }
 export interface notebookCollection extends IBaseCollection<notebook, notebookOData & notebookProps> {
     add(values?: any): IBaseExecution<notebook>;
@@ -11152,9 +11552,11 @@ export interface notificationMessageTemplateProps extends  entityProps {
 export interface notificationMessageTemplateMethods extends entityMethods {
 	localizedNotificationMessages(): localizedNotificationMessageCollection;
 	localizedNotificationMessages(id: string | number): IBaseQuery<localizedNotificationMessage> & localizedNotificationMessageMethods;
+	sendTestMessage(): IBaseExecution<void>;
 }
 export interface notificationMessageTemplateOData extends entityOData {
 	localizedNotificationMessages: IBaseResults<localizedNotificationMessage>;
+	sendTestMessage(): IBaseExecution<void>;
 }
 export interface notificationMessageTemplateCollection extends IBaseCollection<notificationMessageTemplate, notificationMessageTemplateOData & notificationMessageTemplateProps> {
     add(values?: any): IBaseExecution<notificationMessageTemplate>;
@@ -11474,10 +11876,16 @@ export interface onenotePageProps extends  onenoteEntitySchemaObjectModelProps {
 export interface onenotePageMethods extends onenoteEntitySchemaObjectModelMethods {
 	parentNotebook(): IBaseQuery<notebook> & notebookMethods;
 	parentSection(): IBaseQuery<onenoteSection> & onenoteSectionMethods;
+	copyToSection(id, groupId, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
+	onenotePatchContent(commands): IBaseExecution<void>;
+	preview(): ComplexTypes.onenotePagePreview;
 }
 export interface onenotePageOData extends onenoteEntitySchemaObjectModelOData {
 	parentNotebook: notebook;
 	parentSection: onenoteSection;
+	copyToSection(id, groupId, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
+	onenotePatchContent(commands): IBaseExecution<void>;
+	preview(): ComplexTypes.onenotePagePreview;
 }
 export interface onenotePageCollection extends IBaseCollection<onenotePage, onenotePageOData & onenotePageProps> {
     add(values?: any): IBaseExecution<onenotePage>;
@@ -11513,11 +11921,15 @@ export interface onenoteSectionMethods extends onenoteEntityHierarchyModelMethod
 	pages(id: string | number): IBaseQuery<onenotePage> & onenotePageMethods;
 	parentNotebook(): IBaseQuery<notebook> & notebookMethods;
 	parentSectionGroup(): IBaseQuery<sectionGroup> & sectionGroupMethods;
+	copyToNotebook(id, groupId, renameAs, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
+	copyToSectionGroup(id, groupId, renameAs, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
 }
 export interface onenoteSectionOData extends onenoteEntityHierarchyModelOData {
 	pages: IBaseResults<onenotePage>;
 	parentNotebook: notebook;
 	parentSectionGroup: sectionGroup;
+	copyToNotebook(id, groupId, renameAs, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
+	copyToSectionGroup(id, groupId, renameAs, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
 }
 export interface onenoteSectionCollection extends IBaseCollection<onenoteSection, onenoteSectionOData & onenoteSectionProps> {
     add(values?: any): IBaseExecution<onenoteSection>;
@@ -11541,10 +11953,16 @@ export interface onlineMeetingMethods extends onlineMeetingBaseMethods {
 	recordings(id: string | number): IBaseQuery<callRecording> & callRecordingMethods;
 	transcripts(): callTranscriptCollection;
 	transcripts(id: string | number): IBaseQuery<callTranscript> & callTranscriptMethods;
+	sendVirtualAppointmentReminderSms(remindBeforeTimeInMinutesType, attendees): IBaseExecution<void>;
+	sendVirtualAppointmentSms(messageType, attendees): IBaseExecution<void>;
+	getVirtualAppointmentJoinWebUrl(): string;
 }
 export interface onlineMeetingOData extends onlineMeetingBaseOData {
 	recordings: IBaseResults<callRecording>;
 	transcripts: IBaseResults<callTranscript>;
+	sendVirtualAppointmentReminderSms(remindBeforeTimeInMinutesType, attendees): IBaseExecution<void>;
+	sendVirtualAppointmentSms(messageType, attendees): IBaseExecution<void>;
+	getVirtualAppointmentJoinWebUrl(): string;
 }
 export interface onlineMeetingCollection extends IBaseCollection<onlineMeeting, onlineMeetingOData & onlineMeetingProps> {
     add(values?: any): IBaseExecution<onlineMeeting>;
@@ -11671,12 +12089,14 @@ export interface orgContactMethods extends directoryObjectMethods {
 	memberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
 	transitiveMemberOf(): directoryObjectCollection;
 	transitiveMemberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
+	retryServiceProvisioning(): IBaseExecution<void>;
 }
 export interface orgContactOData extends directoryObjectOData {
 	directReports: IBaseResults<directoryObject>;
 	manager: directoryObject;
 	memberOf: IBaseResults<directoryObject>;
 	transitiveMemberOf: IBaseResults<directoryObject>;
+	retryServiceProvisioning(): IBaseExecution<void>;
 }
 /*********************************************
 * organization
@@ -11714,11 +12134,13 @@ export interface organizationMethods extends directoryObjectMethods {
 	certificateBasedAuthConfiguration(id: string | number): IBaseQuery<certificateBasedAuthConfiguration> & certificateBasedAuthConfigurationMethods;
 	extensions(): extensionCollection;
 	extensions(id: string | number): IBaseQuery<extension> & extensionMethods;
+	setMobileDeviceManagementAuthority(): IBaseExecution<number>;
 }
 export interface organizationOData extends directoryObjectOData {
 	branding: organizationalBranding;
 	certificateBasedAuthConfiguration: IBaseResults<certificateBasedAuthConfiguration>;
 	extensions: IBaseResults<extension>;
+	setMobileDeviceManagementAuthority(): IBaseExecution<number>;
 }
 /*********************************************
 * organizationalBranding
@@ -11861,10 +12283,14 @@ export interface participantProps extends  participantBaseProps {
 
 }
 export interface participantMethods extends participantBaseMethods {
-
+	mute(clientContext): IBaseExecution<muteParticipantOperation>;
+	startHoldMusic(customPrompt, clientContext): IBaseExecution<startHoldMusicOperation>;
+	stopHoldMusic(clientContext): IBaseExecution<stopHoldMusicOperation>;
 }
 export interface participantOData extends participantBaseOData {
-
+	mute(clientContext): IBaseExecution<muteParticipantOperation>;
+	startHoldMusic(customPrompt, clientContext): IBaseExecution<startHoldMusicOperation>;
+	stopHoldMusic(clientContext): IBaseExecution<stopHoldMusicOperation>;
 }
 export interface participantCollection extends IBaseCollection<participant, participantOData & participantProps> {
     add(values?: any): IBaseExecution<participant>;
@@ -12031,9 +12457,11 @@ export interface permissionProps extends  entityProps {
 }
 export interface permissionMethods extends entityMethods {
 	update(values: any): IBaseQuery<void>;
+	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionOData extends entityOData {
 	update(values: any): IBaseQuery<void>;
+	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionCollection extends IBaseCollection<permission, permissionOData & permissionProps> {
     add(values?: any): IBaseExecution<permission>;
@@ -12125,10 +12553,12 @@ export interface phoneAuthenticationMethodProps extends  authenticationMethodPro
 	smsSignInState: EnumTypes.authenticationMethodSignInState;
 }
 export interface phoneAuthenticationMethodMethods extends authenticationMethodMethods {
-
+	disableSmsSignIn(): IBaseExecution<void>;
+	enableSmsSignIn(): IBaseExecution<void>;
 }
 export interface phoneAuthenticationMethodOData extends authenticationMethodOData {
-
+	disableSmsSignIn(): IBaseExecution<void>;
+	enableSmsSignIn(): IBaseExecution<void>;
 }
 export interface phoneAuthenticationMethodCollection extends IBaseCollection<phoneAuthenticationMethod, phoneAuthenticationMethodOData & phoneAuthenticationMethodProps> {
     add(values?: any): IBaseExecution<phoneAuthenticationMethod>;
@@ -12502,6 +12932,8 @@ export interface postMethods extends outlookItemMethods {
 	multiValueExtendedProperties(id: string | number): IBaseQuery<multiValueLegacyExtendedProperty> & multiValueLegacyExtendedPropertyMethods;
 	singleValueExtendedProperties(): singleValueLegacyExtendedPropertyCollection;
 	singleValueExtendedProperties(id: string | number): IBaseQuery<singleValueLegacyExtendedProperty> & singleValueLegacyExtendedPropertyMethods;
+	forward(Comment, ToRecipients): IBaseExecution<void>;
+	reply(Post): IBaseExecution<void>;
 }
 export interface postOData extends outlookItemOData {
 	attachments: IBaseResults<attachment>;
@@ -12509,6 +12941,8 @@ export interface postOData extends outlookItemOData {
 	inReplyTo: post;
 	multiValueExtendedProperties: IBaseResults<multiValueLegacyExtendedProperty>;
 	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
+	forward(Comment, ToRecipients): IBaseExecution<void>;
+	reply(Post): IBaseExecution<void>;
 }
 export interface postCollection extends IBaseCollection<post, postOData & postProps> {
     add(values?: any): IBaseExecution<post>;
@@ -12523,10 +12957,18 @@ export interface presenceProps extends  entityProps {
 	statusMessage: ComplexTypes.presenceStatusMessage;
 }
 export interface presenceMethods extends entityMethods {
-
+	clearPresence(sessionId): IBaseExecution<void>;
+	clearUserPreferredPresence(): IBaseExecution<void>;
+	setPresence(sessionId, availability, activity, expirationDuration): IBaseExecution<void>;
+	setStatusMessage(statusMessage): IBaseExecution<void>;
+	setUserPreferredPresence(availability, activity, expirationDuration): IBaseExecution<void>;
 }
 export interface presenceOData extends entityOData {
-
+	clearPresence(sessionId): IBaseExecution<void>;
+	clearUserPreferredPresence(): IBaseExecution<void>;
+	setPresence(sessionId, availability, activity, expirationDuration): IBaseExecution<void>;
+	setStatusMessage(statusMessage): IBaseExecution<void>;
+	setUserPreferredPresence(availability, activity, expirationDuration): IBaseExecution<void>;
 }
 export interface presenceCollection extends IBaseCollection<presence, presenceOData & presenceProps> {
     add(values?: any): IBaseExecution<presence>;
@@ -12591,10 +13033,10 @@ export interface printDocumentProps extends  entityProps {
 	size: number;
 }
 export interface printDocumentMethods extends entityMethods {
-
+	createUploadSession(properties): IBaseExecution<ComplexTypes.uploadSession>;
 }
 export interface printDocumentOData extends entityOData {
-
+	createUploadSession(properties): IBaseExecution<ComplexTypes.uploadSession>;
 }
 export interface printDocumentCollection extends IBaseCollection<printDocument, printDocumentOData & printDocumentProps> {
     add(values?: any): IBaseExecution<printDocument>;
@@ -12617,10 +13059,18 @@ export interface printJobMethods extends entityMethods {
 	documents(id: string | number): IBaseQuery<printDocument> & printDocumentMethods;
 	tasks(): printTaskCollection;
 	tasks(id: string | number): IBaseQuery<printTask> & printTaskMethods;
+	cancel(): IBaseExecution<void>;
+	start(): IBaseExecution<ComplexTypes.printJobStatus>;
+	abort(reason): IBaseExecution<void>;
+	redirect(destinationPrinterId, configuration): IBaseExecution<printJob>;
 }
 export interface printJobOData extends entityOData {
 	documents: IBaseResults<printDocument>;
 	tasks: IBaseResults<printTask>;
+	cancel(): IBaseExecution<void>;
+	start(): IBaseExecution<ComplexTypes.printJobStatus>;
+	abort(reason): IBaseExecution<void>;
+	redirect(destinationPrinterId, configuration): IBaseExecution<printJob>;
 }
 export interface printJobCollection extends IBaseCollection<printJob, printJobOData & printJobProps> {
     add(values?: any): IBaseExecution<printJob>;
@@ -12802,11 +13252,13 @@ export interface printerMethods extends printerBaseMethods {
 	shares(id: string | number): IBaseQuery<printerShare> & printerShareMethods;
 	taskTriggers(): printTaskTriggerCollection;
 	taskTriggers(id: string | number): IBaseQuery<printTaskTrigger> & printTaskTriggerMethods;
+	restoreFactoryDefaults(): IBaseExecution<void>;
 }
 export interface printerOData extends printerBaseOData {
 	connectors: IBaseResults<printConnector>;
 	shares: IBaseResults<printerShare>;
 	taskTriggers: IBaseResults<printTaskTrigger>;
+	restoreFactoryDefaults(): IBaseExecution<void>;
 }
 export interface printerCollection extends IBaseCollection<printer, printerOData & printerProps> {
     add(values?: any): IBaseExecution<printer>;
@@ -12979,12 +13431,14 @@ export interface privilegedAccessGroupAssignmentScheduleRequestMethods extends p
 	group(): IBaseQuery<group> & groupMethods;
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	targetSchedule(): IBaseQuery<privilegedAccessGroupEligibilitySchedule> & privilegedAccessGroupEligibilityScheduleMethods;
+	cancel(): IBaseExecution<void>;
 }
 export interface privilegedAccessGroupAssignmentScheduleRequestOData extends privilegedAccessScheduleRequestOData {
 	activatedUsing: privilegedAccessGroupEligibilitySchedule;
 	group: group;
 	principal: directoryObject;
 	targetSchedule: privilegedAccessGroupEligibilitySchedule;
+	cancel(): IBaseExecution<void>;
 }
 export interface privilegedAccessGroupAssignmentScheduleRequestCollection extends IBaseCollection<privilegedAccessGroupAssignmentScheduleRequest, privilegedAccessGroupAssignmentScheduleRequestOData & privilegedAccessGroupAssignmentScheduleRequestProps> {
     add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentScheduleRequest>;
@@ -13046,11 +13500,13 @@ export interface privilegedAccessGroupEligibilityScheduleRequestMethods extends 
 	group(): IBaseQuery<group> & groupMethods;
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	targetSchedule(): IBaseQuery<privilegedAccessGroupEligibilitySchedule> & privilegedAccessGroupEligibilityScheduleMethods;
+	cancel(): IBaseExecution<void>;
 }
 export interface privilegedAccessGroupEligibilityScheduleRequestOData extends privilegedAccessScheduleRequestOData {
 	group: group;
 	principal: directoryObject;
 	targetSchedule: privilegedAccessGroupEligibilitySchedule;
+	cancel(): IBaseExecution<void>;
 }
 export interface privilegedAccessGroupEligibilityScheduleRequestCollection extends IBaseCollection<privilegedAccessGroupEligibilityScheduleRequest, privilegedAccessGroupEligibilityScheduleRequestOData & privilegedAccessGroupEligibilityScheduleRequestProps> {
     add(values?: any): IBaseExecution<privilegedAccessGroupEligibilityScheduleRequest>;
@@ -13177,10 +13633,12 @@ export interface protectionPolicyBaseProps extends  entityProps {
 	status: EnumTypes.protectionPolicyStatus;
 }
 export interface protectionPolicyBaseMethods extends entityMethods {
-
+	activate(): IBaseExecution<protectionPolicyBase>;
+	deactivate(): IBaseExecution<protectionPolicyBase>;
 }
 export interface protectionPolicyBaseOData extends entityOData {
-
+	activate(): IBaseExecution<protectionPolicyBase>;
+	deactivate(): IBaseExecution<protectionPolicyBase>;
 }
 export interface protectionPolicyBaseCollection extends IBaseCollection<protectionPolicyBase, protectionPolicyBaseOData & protectionPolicyBaseProps> {
     add(values?: any): IBaseExecution<protectionPolicyBase>;
@@ -13199,10 +13657,10 @@ export interface protectionRuleBaseProps extends  entityProps {
 	status: EnumTypes.protectionRuleStatus;
 }
 export interface protectionRuleBaseMethods extends entityMethods {
-
+	run(): IBaseExecution<protectionRuleBase>;
 }
 export interface protectionRuleBaseOData extends entityOData {
-
+	run(): IBaseExecution<protectionRuleBase>;
 }
 /*********************************************
 * protectionUnitBase
@@ -13394,10 +13852,12 @@ export interface remoteAssistancePartnerProps extends  entityProps {
 	onboardingUrl: string;
 }
 export interface remoteAssistancePartnerMethods extends entityMethods {
-
+	beginOnboarding(): IBaseExecution<void>;
+	disconnect(): IBaseExecution<void>;
 }
 export interface remoteAssistancePartnerOData extends entityOData {
-
+	beginOnboarding(): IBaseExecution<void>;
+	disconnect(): IBaseExecution<void>;
 }
 export interface remoteAssistancePartnerCollection extends IBaseCollection<remoteAssistancePartner, remoteAssistancePartnerOData & remoteAssistancePartnerProps> {
     add(values?: any): IBaseExecution<remoteAssistancePartner>;
@@ -13435,6 +13895,77 @@ export interface reportRootMethods {
 	monthlyPrintUsageByUser(): printUsageByUserCollection;
 	monthlyPrintUsageByUser(id: string | number): IBaseQuery<printUsageByUser> & printUsageByUserMethods;
 	security(): IBaseQuery<securityReportsRoot> & securityReportsRootMethods;
+	deviceConfigurationDeviceActivity(): ComplexTypes.report;
+	deviceConfigurationUserActivity(): ComplexTypes.report;
+	managedDeviceEnrollmentFailureDetails(): ComplexTypes.report;
+	managedDeviceEnrollmentFailureDetails(skip, top, filter, skipToken): ComplexTypes.report;
+	managedDeviceEnrollmentTopFailures(): ComplexTypes.report;
+	managedDeviceEnrollmentTopFailures(period): ComplexTypes.report;
+	getOffice365ActivationCounts(): ComplexTypes.report;
+	getOffice365ActivationsUserCounts(): ComplexTypes.report;
+	getOffice365ActivationsUserDetail(): ComplexTypes.report;
+	getOffice365ActiveUserCounts(period): ComplexTypes.report;
+	getOffice365ActiveUserDetail(date): ComplexTypes.report;
+	getOffice365ActiveUserDetail(period): ComplexTypes.report;
+	getOffice365GroupsActivityCounts(period): ComplexTypes.report;
+	getOffice365GroupsActivityDetail(date): ComplexTypes.report;
+	getOffice365GroupsActivityDetail(period): ComplexTypes.report;
+	getOffice365GroupsActivityFileCounts(period): ComplexTypes.report;
+	getOffice365GroupsActivityGroupCounts(period): ComplexTypes.report;
+	getOffice365GroupsActivityStorage(period): ComplexTypes.report;
+	getOffice365ServicesUserCounts(period): ComplexTypes.report;
+	getOneDriveActivityFileCounts(period): ComplexTypes.report;
+	getOneDriveActivityUserCounts(period): ComplexTypes.report;
+	getOneDriveActivityUserDetail(date): ComplexTypes.report;
+	getOneDriveActivityUserDetail(period): ComplexTypes.report;
+	getOneDriveUsageAccountCounts(period): ComplexTypes.report;
+	getOneDriveUsageAccountDetail(date): ComplexTypes.report;
+	getOneDriveUsageAccountDetail(period): ComplexTypes.report;
+	getOneDriveUsageFileCounts(period): ComplexTypes.report;
+	getOneDriveUsageStorage(period): ComplexTypes.report;
+	getSharePointActivityFileCounts(period): ComplexTypes.report;
+	getSharePointActivityPages(period): ComplexTypes.report;
+	getSharePointActivityUserCounts(period): ComplexTypes.report;
+	getSharePointActivityUserDetail(date): ComplexTypes.report;
+	getSharePointActivityUserDetail(period): ComplexTypes.report;
+	getSharePointSiteUsageDetail(date): ComplexTypes.report;
+	getSharePointSiteUsageDetail(period): ComplexTypes.report;
+	getSharePointSiteUsageFileCounts(period): ComplexTypes.report;
+	getSharePointSiteUsagePages(period): ComplexTypes.report;
+	getSharePointSiteUsageSiteCounts(period): ComplexTypes.report;
+	getSharePointSiteUsageStorage(period): ComplexTypes.report;
+	getSkypeForBusinessActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessActivityUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessActivityUserDetail(date): ComplexTypes.report;
+	getSkypeForBusinessActivityUserDetail(period): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageDistributionUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageUserDetail(date): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageUserDetail(period): ComplexTypes.report;
+	getSkypeForBusinessOrganizerActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessOrganizerActivityMinuteCounts(period): ComplexTypes.report;
+	getSkypeForBusinessOrganizerActivityUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessParticipantActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessParticipantActivityMinuteCounts(period): ComplexTypes.report;
+	getSkypeForBusinessParticipantActivityUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessPeerToPeerActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessPeerToPeerActivityMinuteCounts(period): ComplexTypes.report;
+	getSkypeForBusinessPeerToPeerActivityUserCounts(period): ComplexTypes.report;
+	getYammerActivityCounts(period): ComplexTypes.report;
+	getYammerActivityUserCounts(period): ComplexTypes.report;
+	getYammerActivityUserDetail(date): ComplexTypes.report;
+	getYammerActivityUserDetail(period): ComplexTypes.report;
+	getYammerDeviceUsageDistributionUserCounts(period): ComplexTypes.report;
+	getYammerDeviceUsageUserCounts(period): ComplexTypes.report;
+	getYammerDeviceUsageUserDetail(date): ComplexTypes.report;
+	getYammerDeviceUsageUserDetail(period): ComplexTypes.report;
+	getYammerGroupsActivityCounts(period): ComplexTypes.report;
+	getYammerGroupsActivityDetail(date): ComplexTypes.report;
+	getYammerGroupsActivityDetail(period): ComplexTypes.report;
+	getYammerGroupsActivityGroupCounts(period): ComplexTypes.report;
+	getGroupArchivedPrintJobs(groupId, startDateTime, endDateTime): ComplexTypes.archivedPrintJob[];
+	getPrinterArchivedPrintJobs(printerId, startDateTime, endDateTime): ComplexTypes.archivedPrintJob[];
+	getUserArchivedPrintJobs(userId, startDateTime, endDateTime): ComplexTypes.archivedPrintJob[];
 }
 export interface reportRootOData {
 	authenticationMethods: authenticationMethodsRoot;
@@ -13444,6 +13975,77 @@ export interface reportRootOData {
 	monthlyPrintUsageByPrinter: IBaseResults<printUsageByPrinter>;
 	monthlyPrintUsageByUser: IBaseResults<printUsageByUser>;
 	security: securityReportsRoot;
+	deviceConfigurationDeviceActivity(): ComplexTypes.report;
+	deviceConfigurationUserActivity(): ComplexTypes.report;
+	managedDeviceEnrollmentFailureDetails(): ComplexTypes.report;
+	managedDeviceEnrollmentFailureDetails(skip, top, filter, skipToken): ComplexTypes.report;
+	managedDeviceEnrollmentTopFailures(): ComplexTypes.report;
+	managedDeviceEnrollmentTopFailures(period): ComplexTypes.report;
+	getOffice365ActivationCounts(): ComplexTypes.report;
+	getOffice365ActivationsUserCounts(): ComplexTypes.report;
+	getOffice365ActivationsUserDetail(): ComplexTypes.report;
+	getOffice365ActiveUserCounts(period): ComplexTypes.report;
+	getOffice365ActiveUserDetail(date): ComplexTypes.report;
+	getOffice365ActiveUserDetail(period): ComplexTypes.report;
+	getOffice365GroupsActivityCounts(period): ComplexTypes.report;
+	getOffice365GroupsActivityDetail(date): ComplexTypes.report;
+	getOffice365GroupsActivityDetail(period): ComplexTypes.report;
+	getOffice365GroupsActivityFileCounts(period): ComplexTypes.report;
+	getOffice365GroupsActivityGroupCounts(period): ComplexTypes.report;
+	getOffice365GroupsActivityStorage(period): ComplexTypes.report;
+	getOffice365ServicesUserCounts(period): ComplexTypes.report;
+	getOneDriveActivityFileCounts(period): ComplexTypes.report;
+	getOneDriveActivityUserCounts(period): ComplexTypes.report;
+	getOneDriveActivityUserDetail(date): ComplexTypes.report;
+	getOneDriveActivityUserDetail(period): ComplexTypes.report;
+	getOneDriveUsageAccountCounts(period): ComplexTypes.report;
+	getOneDriveUsageAccountDetail(date): ComplexTypes.report;
+	getOneDriveUsageAccountDetail(period): ComplexTypes.report;
+	getOneDriveUsageFileCounts(period): ComplexTypes.report;
+	getOneDriveUsageStorage(period): ComplexTypes.report;
+	getSharePointActivityFileCounts(period): ComplexTypes.report;
+	getSharePointActivityPages(period): ComplexTypes.report;
+	getSharePointActivityUserCounts(period): ComplexTypes.report;
+	getSharePointActivityUserDetail(date): ComplexTypes.report;
+	getSharePointActivityUserDetail(period): ComplexTypes.report;
+	getSharePointSiteUsageDetail(date): ComplexTypes.report;
+	getSharePointSiteUsageDetail(period): ComplexTypes.report;
+	getSharePointSiteUsageFileCounts(period): ComplexTypes.report;
+	getSharePointSiteUsagePages(period): ComplexTypes.report;
+	getSharePointSiteUsageSiteCounts(period): ComplexTypes.report;
+	getSharePointSiteUsageStorage(period): ComplexTypes.report;
+	getSkypeForBusinessActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessActivityUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessActivityUserDetail(date): ComplexTypes.report;
+	getSkypeForBusinessActivityUserDetail(period): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageDistributionUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageUserDetail(date): ComplexTypes.report;
+	getSkypeForBusinessDeviceUsageUserDetail(period): ComplexTypes.report;
+	getSkypeForBusinessOrganizerActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessOrganizerActivityMinuteCounts(period): ComplexTypes.report;
+	getSkypeForBusinessOrganizerActivityUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessParticipantActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessParticipantActivityMinuteCounts(period): ComplexTypes.report;
+	getSkypeForBusinessParticipantActivityUserCounts(period): ComplexTypes.report;
+	getSkypeForBusinessPeerToPeerActivityCounts(period): ComplexTypes.report;
+	getSkypeForBusinessPeerToPeerActivityMinuteCounts(period): ComplexTypes.report;
+	getSkypeForBusinessPeerToPeerActivityUserCounts(period): ComplexTypes.report;
+	getYammerActivityCounts(period): ComplexTypes.report;
+	getYammerActivityUserCounts(period): ComplexTypes.report;
+	getYammerActivityUserDetail(date): ComplexTypes.report;
+	getYammerActivityUserDetail(period): ComplexTypes.report;
+	getYammerDeviceUsageDistributionUserCounts(period): ComplexTypes.report;
+	getYammerDeviceUsageUserCounts(period): ComplexTypes.report;
+	getYammerDeviceUsageUserDetail(date): ComplexTypes.report;
+	getYammerDeviceUsageUserDetail(period): ComplexTypes.report;
+	getYammerGroupsActivityCounts(period): ComplexTypes.report;
+	getYammerGroupsActivityDetail(date): ComplexTypes.report;
+	getYammerGroupsActivityDetail(period): ComplexTypes.report;
+	getYammerGroupsActivityGroupCounts(period): ComplexTypes.report;
+	getGroupArchivedPrintJobs(groupId, startDateTime, endDateTime): ComplexTypes.archivedPrintJob[];
+	getPrinterArchivedPrintJobs(printerId, startDateTime, endDateTime): ComplexTypes.archivedPrintJob[];
+	getUserArchivedPrintJobs(userId, startDateTime, endDateTime): ComplexTypes.archivedPrintJob[];
 }
 /*********************************************
 * request
@@ -13564,10 +14166,10 @@ export interface restoreSessionBaseProps extends  entityProps {
 	status: EnumTypes.restoreSessionStatus;
 }
 export interface restoreSessionBaseMethods extends entityMethods {
-
+	activate(): IBaseExecution<restoreSessionBase>;
 }
 export interface restoreSessionBaseOData extends entityOData {
-
+	activate(): IBaseExecution<restoreSessionBase>;
 }
 export interface restoreSessionBaseCollection extends IBaseCollection<restoreSessionBase, restoreSessionBaseOData & restoreSessionBaseProps> {
     add(values?: any): IBaseExecution<restoreSessionBase>;
@@ -13983,6 +14585,7 @@ export interface scheduleMethods extends entityMethods {
 	timeOffRequests(id: string | number): IBaseQuery<timeOffRequest> & timeOffRequestMethods;
 	timesOff(): timeOffCollection;
 	timesOff(id: string | number): IBaseQuery<timeOff> & timeOffMethods;
+	share(notifyTeam, startDateTime, endDateTime): IBaseExecution<void>;
 }
 export interface scheduleOData extends entityOData {
 	offerShiftRequests: IBaseResults<offerShiftRequest>;
@@ -13994,6 +14597,7 @@ export interface scheduleOData extends entityOData {
 	timeOffReasons: IBaseResults<timeOffReason>;
 	timeOffRequests: IBaseResults<timeOffRequest>;
 	timesOff: IBaseResults<timeOff>;
+	share(notifyTeam, startDateTime, endDateTime): IBaseExecution<void>;
 }
 /*********************************************
 * scheduleChangeRequest
@@ -14010,10 +14614,12 @@ export interface scheduleChangeRequestProps extends  changeTrackedEntityProps {
 	state: EnumTypes.scheduleChangeState;
 }
 export interface scheduleChangeRequestMethods extends changeTrackedEntityMethods {
-
+	decline(message): IBaseExecution<void>;
+	approve(message): IBaseExecution<void>;
 }
 export interface scheduleChangeRequestOData extends changeTrackedEntityOData {
-
+	decline(message): IBaseExecution<void>;
+	approve(message): IBaseExecution<void>;
 }
 /*********************************************
 * schedulingGroup
@@ -14132,11 +14738,13 @@ export interface searchEntityMethods extends entityMethods {
 	bookmarks(id: string | number): IBaseQuery<bookmark> & bookmarkMethods;
 	qnas(): IBaseCollection<qna, entity & qnaOData & qnaProps>;
 	qnas(id: string | number): IBaseQuery<qna> & qnaMethods;
+	query(requests): IBaseExecution<ComplexTypes.searchResponse[]>;
 }
 export interface searchEntityOData extends entityOData {
 	acronyms: IBaseResults<acronym>;
 	bookmarks: IBaseResults<bookmark>;
 	qnas: IBaseResults<qna>;
+	query(requests): IBaseExecution<ComplexTypes.searchResponse[]>;
 }
 /*********************************************
 * sectionGroup
@@ -14249,6 +14857,7 @@ export interface securityMethods {
 	secureScores(): secureScoreCollection;
 	secureScores(id: string | number): IBaseQuery<secureScore> & secureScoreMethods;
 	threatIntelligence(): IBaseQuery<threatIntelligence> & threatIntelligenceMethods;
+	runHuntingQuery(query, timespan): IBaseExecution<ComplexTypes.huntingQueryResults>;
 }
 export interface securityOData {
 	subjectRightsRequests: IBaseResults<subjectRightsRequest>;
@@ -14264,6 +14873,7 @@ export interface securityOData {
 	secureScoreControlProfiles: IBaseResults<secureScoreControlProfile>;
 	secureScores: IBaseResults<secureScore>;
 	threatIntelligence: threatIntelligence;
+	runHuntingQuery(query, timespan): IBaseExecution<ComplexTypes.huntingQueryResults>;
 }
 /*********************************************
 * securityReportsRoot
@@ -14273,10 +14883,14 @@ export interface securityReportsRootProps extends  entityProps {
 
 }
 export interface securityReportsRootMethods extends entityMethods {
-
+	getAttackSimulationRepeatOffenders(): ComplexTypes.attackSimulationRepeatOffender[];
+	getAttackSimulationSimulationUserCoverage(): ComplexTypes.attackSimulationSimulationUserCoverage[];
+	getAttackSimulationTrainingUserCoverage(): ComplexTypes.attackSimulationTrainingUserCoverage[];
 }
 export interface securityReportsRootOData extends entityOData {
-
+	getAttackSimulationRepeatOffenders(): ComplexTypes.attackSimulationRepeatOffender[];
+	getAttackSimulationSimulationUserCoverage(): ComplexTypes.attackSimulationSimulationUserCoverage[];
+	getAttackSimulationTrainingUserCoverage(): ComplexTypes.attackSimulationTrainingUserCoverage[];
 }
 /*********************************************
 * segment
@@ -14401,10 +15015,12 @@ export interface serviceAppProps extends  entityProps {
 	status: EnumTypes.serviceAppStatus;
 }
 export interface serviceAppMethods extends entityMethods {
-
+	activate(effectiveDateTime): IBaseExecution<serviceApp>;
+	deactivate(): IBaseExecution<serviceApp>;
 }
 export interface serviceAppOData extends entityOData {
-
+	activate(effectiveDateTime): IBaseExecution<serviceApp>;
+	deactivate(): IBaseExecution<serviceApp>;
 }
 export interface serviceAppCollection extends IBaseCollection<serviceApp, serviceAppOData & serviceAppProps> {
     add(values?: any): IBaseExecution<serviceApp>;
@@ -14443,10 +15059,10 @@ export interface serviceHealthIssueProps extends  serviceAnnouncementBaseProps {
 	status: EnumTypes.serviceHealthStatus;
 }
 export interface serviceHealthIssueMethods extends serviceAnnouncementBaseMethods {
-
+	incidentReport(): any;
 }
 export interface serviceHealthIssueOData extends serviceAnnouncementBaseOData {
-
+	incidentReport(): any;
 }
 export interface serviceHealthIssueCollection extends IBaseCollection<serviceHealthIssue, serviceHealthIssueOData & serviceHealthIssueProps> {
     add(values?: any): IBaseExecution<serviceHealthIssue>;
@@ -14526,6 +15142,11 @@ export interface servicePrincipalMethods extends directoryObjectMethods {
 	transitiveMemberOf(): directoryObjectCollection;
 	transitiveMemberOf(id: string | number): IBaseQuery<directoryObject> & directoryObjectMethods;
 	synchronization(): IBaseQuery<synchronization> & synchronizationMethods;
+	addKey(keyCredential, passwordCredential, proof): IBaseExecution<ComplexTypes.keyCredential>;
+	addPassword(passwordCredential): IBaseExecution<ComplexTypes.passwordCredential>;
+	removeKey(keyId, proof): IBaseExecution<void>;
+	removePassword(keyId): IBaseExecution<void>;
+	addTokenSigningCertificate(displayName, endDateTime): IBaseExecution<ComplexTypes.selfSignedCertificate>;
 }
 export interface servicePrincipalOData extends directoryObjectOData {
 	appManagementPolicies: IBaseResults<appManagementPolicy>;
@@ -14546,6 +15167,11 @@ export interface servicePrincipalOData extends directoryObjectOData {
 	tokenLifetimePolicies: IBaseResults<tokenLifetimePolicy>;
 	transitiveMemberOf: IBaseResults<directoryObject>;
 	synchronization: synchronization;
+	addKey(keyCredential, passwordCredential, proof): IBaseExecution<ComplexTypes.keyCredential>;
+	addPassword(passwordCredential): IBaseExecution<ComplexTypes.passwordCredential>;
+	removeKey(keyId, proof): IBaseExecution<void>;
+	removePassword(keyId): IBaseExecution<void>;
+	addTokenSigningCertificate(displayName, endDateTime): IBaseExecution<ComplexTypes.selfSignedCertificate>;
 }
 /*********************************************
 * servicePrincipalRiskDetection
@@ -15081,6 +15707,10 @@ export interface siteMethods extends baseItemMethods {
 	termStores(): IBaseCollection<store, baseItem & storeOData & storeProps>;
 	termStores(id: string | number): IBaseQuery<store> & storeMethods;
 	onenote(): IBaseQuery<onenote> & onenoteMethods;
+	getActivitiesByInterval(): itemActivityStat[];
+	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
+	getApplicableContentTypesForList(listId): contentType[];
+	getByPath(path): site;
 }
 export interface siteOData extends baseItemOData {
 	analytics: itemAnalytics;
@@ -15098,6 +15728,10 @@ export interface siteOData extends baseItemOData {
 	termStore: store;
 	termStores: IBaseResults<store>;
 	onenote: onenote;
+	getActivitiesByInterval(): itemActivityStat[];
+	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
+	getApplicableContentTypesForList(listId): contentType[];
+	getByPath(path): site;
 }
 export interface siteCollection extends IBaseCollection<site, siteOData & siteProps> {
     add(values?: any): IBaseExecution<site>;
@@ -15118,10 +15752,14 @@ export interface sitePageMethods extends baseSitePageMethods {
 	canvasLayout(): IBaseQuery<canvasLayout> & canvasLayoutMethods;
 	webParts(): webPartCollection;
 	webParts(id: string | number): IBaseQuery<webPart> & webPartMethods;
+	publish(): IBaseExecution<void>;
+	getWebPartsByPosition(webPartIndex, horizontalSectionId, isInVerticalSection, columnId): IBaseExecution<webPart[]>;
 }
 export interface sitePageOData extends baseSitePageOData {
 	canvasLayout: canvasLayout;
 	webParts: IBaseResults<webPart>;
+	publish(): IBaseExecution<void>;
+	getWebPartsByPosition(webPartIndex, horizontalSectionId, isInVerticalSection, columnId): IBaseExecution<webPart[]>;
 }
 /*********************************************
 * siteProtectionRule
@@ -15187,19 +15825,6 @@ export interface siteSourceMethods extends dataSourceMethods {
 }
 export interface siteSourceOData extends dataSourceOData {
 	site: site;
-}
-/*********************************************
-* sites
-**********************************************/
-export interface sites extends sitesProps, sitesMethods { }
-export interface sitesProps   {
-
-}
-export interface sitesMethods {
-	add(values: any): IBaseQuery<void>;
-}
-export interface sitesOData {
-	add(values: any): IBaseQuery<void>;
 }
 /*********************************************
 * skypeForBusinessUserConversationMember
@@ -15554,12 +16179,16 @@ export interface subjectRightsRequestMethods extends entityMethods {
 	notes(): authoredNoteCollection;
 	notes(id: string | number): IBaseQuery<authoredNote> & authoredNoteMethods;
 	team(): IBaseQuery<team> & teamMethods;
+	getFinalAttachment(): any;
+	getFinalReport(): any;
 }
 export interface subjectRightsRequestOData extends entityOData {
 	approvers: IBaseResults<user>;
 	collaborators: IBaseResults<user>;
 	notes: IBaseResults<authoredNote>;
 	team: team;
+	getFinalAttachment(): any;
+	getFinalReport(): any;
 }
 export interface subjectRightsRequestCollection extends IBaseCollection<subjectRightsRequest, subjectRightsRequestOData & subjectRightsRequestProps> {
     add(values?: any): IBaseExecution<subjectRightsRequest>;
@@ -15620,10 +16249,10 @@ export interface subscriptionProps extends  entityProps {
 	resource: string;
 }
 export interface subscriptionMethods extends entityMethods {
-
+	reauthorize(): IBaseExecution<void>;
 }
 export interface subscriptionOData extends entityOData {
-
+	reauthorize(): IBaseExecution<void>;
 }
 export interface subscriptionCollection extends IBaseCollection<subscription, subscriptionOData & subscriptionProps> {
     add(values?: any): IBaseExecution<subscription>;
@@ -15656,10 +16285,12 @@ export interface synchronizationMethods extends entityMethods {
 	jobs(id: string | number): IBaseQuery<synchronizationJob> & synchronizationJobMethods;
 	templates(): synchronizationTemplateCollection;
 	templates(id: string | number): IBaseQuery<synchronizationTemplate> & synchronizationTemplateMethods;
+	acquireAccessToken(credentials): IBaseExecution<void>;
 }
 export interface synchronizationOData extends entityOData {
 	jobs: IBaseResults<synchronizationJob>;
 	templates: IBaseResults<synchronizationTemplate>;
+	acquireAccessToken(credentials): IBaseExecution<void>;
 }
 /*********************************************
 * synchronizationJob
@@ -15674,10 +16305,20 @@ export interface synchronizationJobProps extends  entityProps {
 export interface synchronizationJobMethods extends entityMethods {
 	bulkUpload(): IBaseQuery<bulkUpload> & bulkUploadMethods;
 	schema(): IBaseQuery<synchronizationSchema> & synchronizationSchemaMethods;
+	pause(): IBaseExecution<void>;
+	provisionOnDemand(parameters): IBaseExecution<ComplexTypes.stringKeyStringValuePair>;
+	restart(criteria): IBaseExecution<void>;
+	start(): IBaseExecution<void>;
+	validateCredentials(applicationIdentifier, templateId, useSavedCredentials, credentials): IBaseExecution<void>;
 }
 export interface synchronizationJobOData extends entityOData {
 	bulkUpload: bulkUpload;
 	schema: synchronizationSchema;
+	pause(): IBaseExecution<void>;
+	provisionOnDemand(parameters): IBaseExecution<ComplexTypes.stringKeyStringValuePair>;
+	restart(criteria): IBaseExecution<void>;
+	start(): IBaseExecution<void>;
+	validateCredentials(applicationIdentifier, templateId, useSavedCredentials, credentials): IBaseExecution<void>;
 }
 export interface synchronizationJobCollection extends IBaseCollection<synchronizationJob, synchronizationJobOData & synchronizationJobProps> {
     add(values?: any): IBaseExecution<synchronizationJob>;
@@ -15693,9 +16334,15 @@ export interface synchronizationSchemaProps extends  entityProps {
 export interface synchronizationSchemaMethods extends entityMethods {
 	directories(): directoryDefinitionCollection;
 	directories(id: string | number): IBaseQuery<directoryDefinition> & directoryDefinitionMethods;
+	parseExpression(expression, testInputObject, targetAttributeDefinition): IBaseExecution<ComplexTypes.parseExpressionResponse>;
+	filterOperators(): filterOperatorSchema[];
+	functions(): attributeMappingFunctionSchema[];
 }
 export interface synchronizationSchemaOData extends entityOData {
 	directories: IBaseResults<directoryDefinition>;
+	parseExpression(expression, testInputObject, targetAttributeDefinition): IBaseExecution<ComplexTypes.parseExpressionResponse>;
+	filterOperators(): filterOperatorSchema[];
+	functions(): attributeMappingFunctionSchema[];
 }
 /*********************************************
 * synchronizationTemplate
@@ -15764,11 +16411,15 @@ export interface targetedManagedAppConfigurationMethods extends managedAppConfig
 	assignments(): targetedManagedAppPolicyAssignmentCollection;
 	assignments(id: string | number): IBaseQuery<targetedManagedAppPolicyAssignment> & targetedManagedAppPolicyAssignmentMethods;
 	deploymentSummary(): IBaseQuery<managedAppPolicyDeploymentSummary> & managedAppPolicyDeploymentSummaryMethods;
+	assign(assignments): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface targetedManagedAppConfigurationOData extends managedAppConfigurationOData {
 	apps: IBaseResults<managedMobileApp>;
 	assignments: IBaseResults<targetedManagedAppPolicyAssignment>;
 	deploymentSummary: managedAppPolicyDeploymentSummary;
+	assign(assignments): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface targetedManagedAppConfigurationCollection extends IBaseCollection<targetedManagedAppConfiguration, targetedManagedAppConfigurationOData & targetedManagedAppConfigurationProps> {
     add(values?: any): IBaseExecution<targetedManagedAppConfiguration>;
@@ -15799,9 +16450,13 @@ export interface targetedManagedAppProtectionProps extends  managedAppProtection
 export interface targetedManagedAppProtectionMethods extends managedAppProtectionMethods {
 	assignments(): targetedManagedAppPolicyAssignmentCollection;
 	assignments(id: string | number): IBaseQuery<targetedManagedAppPolicyAssignment> & targetedManagedAppPolicyAssignmentMethods;
+	assign(assignments): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface targetedManagedAppProtectionOData extends managedAppProtectionOData {
 	assignments: IBaseResults<targetedManagedAppPolicyAssignment>;
+	assign(assignments): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 /*********************************************
 * task
@@ -15943,6 +16598,11 @@ export interface teamMethods extends entityMethods {
 	tags(id: string | number): IBaseQuery<teamworkTag> & teamworkTagMethods;
 	template(): IBaseQuery<teamsTemplate> & teamsTemplateMethods;
 	schedule(): IBaseQuery<schedule> & scheduleMethods;
+	archive(shouldSetSpoSiteReadOnlyForMembers): IBaseExecution<void>;
+	unarchive(): IBaseExecution<void>;
+	completeMigration(): IBaseExecution<void>;
+	clone(displayName, description, mailNickname, classification, visibility, partsToClone): IBaseExecution<void>;
+	sendActivityNotification(topic, activityType, chainId, previewText, teamsAppId, templateParameters, recipient): IBaseExecution<void>;
 }
 export interface teamOData extends entityOData {
 	allChannels: IBaseResults<channel>;
@@ -15958,6 +16618,11 @@ export interface teamOData extends entityOData {
 	tags: IBaseResults<teamworkTag>;
 	template: teamsTemplate;
 	schedule: schedule;
+	archive(shouldSetSpoSiteReadOnlyForMembers): IBaseExecution<void>;
+	unarchive(): IBaseExecution<void>;
+	completeMigration(): IBaseExecution<void>;
+	clone(displayName, description, mailNickname, classification, visibility, partsToClone): IBaseExecution<void>;
+	sendActivityNotification(topic, activityType, chainId, previewText, teamsAppId, templateParameters, recipient): IBaseExecution<void>;
 }
 export interface teamCollection extends IBaseCollection<team, teamOData & teamProps> {
     add(values?: any): IBaseExecution<team>;
@@ -16029,10 +16694,12 @@ export interface teamsAppInstallationProps extends  entityProps {
 export interface teamsAppInstallationMethods extends entityMethods {
 	teamsApp(): IBaseQuery<teamsApp> & teamsAppMethods;
 	teamsAppDefinition(): IBaseQuery<teamsAppDefinition> & teamsAppDefinitionMethods;
+	upgrade(consentedPermissionSet): IBaseExecution<void>;
 }
 export interface teamsAppInstallationOData extends entityOData {
 	teamsApp: teamsApp;
 	teamsAppDefinition: teamsAppDefinition;
+	upgrade(consentedPermissionSet): IBaseExecution<void>;
 }
 export interface teamsAppInstallationCollection extends IBaseCollection<teamsAppInstallation, teamsAppInstallationOData & teamsAppInstallationProps> {
     add(values?: any): IBaseExecution<teamsAppInstallation>;
@@ -16121,12 +16788,14 @@ export interface teamworkMethods extends entityMethods {
 	deletedTeams(): deletedTeamCollection;
 	deletedTeams(id: string | number): IBaseQuery<deletedTeam> & deletedTeamMethods;
 	teamsAppSettings(): IBaseQuery<teamsAppSettings> & teamsAppSettingsMethods;
+	sendActivityNotificationToRecipients(topic, activityType, chainId, previewText, teamsAppId, templateParameters, recipients): IBaseExecution<void>;
 }
 export interface teamworkOData extends entityOData {
 	workforceIntegrations: IBaseResults<workforceIntegration>;
 	deletedChats: IBaseResults<deletedChat>;
 	deletedTeams: IBaseResults<deletedTeam>;
 	teamsAppSettings: teamsAppSettings;
+	sendActivityNotificationToRecipients(topic, activityType, chainId, previewText, teamsAppId, templateParameters, recipients): IBaseExecution<void>;
 }
 /*********************************************
 * teamworkBot
@@ -16282,11 +16951,15 @@ export interface tenantRelationshipMethods {
 	delegatedAdminCustomers(id: string | number): IBaseQuery<delegatedAdminCustomer> & delegatedAdminCustomerMethods;
 	delegatedAdminRelationships(): delegatedAdminRelationshipCollection;
 	delegatedAdminRelationships(id: string | number): IBaseQuery<delegatedAdminRelationship> & delegatedAdminRelationshipMethods;
+	findTenantInformationByDomainName(domainName): ComplexTypes.tenantInformation;
+	findTenantInformationByTenantId(tenantId): ComplexTypes.tenantInformation;
 }
 export interface tenantRelationshipOData {
 	multiTenantOrganization: multiTenantOrganization;
 	delegatedAdminCustomers: IBaseResults<delegatedAdminCustomer>;
 	delegatedAdminRelationships: IBaseResults<delegatedAdminRelationship>;
+	findTenantInformationByDomainName(domainName): ComplexTypes.tenantInformation;
+	findTenantInformationByTenantId(tenantId): ComplexTypes.tenantInformation;
 }
 /*********************************************
 * term
@@ -16957,6 +17630,7 @@ export interface unifiedRoleAssignmentScheduleRequestMethods extends requestMeth
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	roleDefinition(): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
 	targetSchedule(): IBaseQuery<unifiedRoleAssignmentSchedule> & unifiedRoleAssignmentScheduleMethods;
+	cancel(): IBaseExecution<void>;
 }
 export interface unifiedRoleAssignmentScheduleRequestOData extends requestOData {
 	activatedUsing: unifiedRoleEligibilitySchedule;
@@ -16965,6 +17639,7 @@ export interface unifiedRoleAssignmentScheduleRequestOData extends requestOData 
 	principal: directoryObject;
 	roleDefinition: unifiedRoleDefinition;
 	targetSchedule: unifiedRoleAssignmentSchedule;
+	cancel(): IBaseExecution<void>;
 }
 export interface unifiedRoleAssignmentScheduleRequestCollection extends IBaseCollection<unifiedRoleAssignmentScheduleRequest, unifiedRoleAssignmentScheduleRequestOData & unifiedRoleAssignmentScheduleRequestProps> {
     add(values?: any): IBaseExecution<unifiedRoleAssignmentScheduleRequest>;
@@ -17051,6 +17726,7 @@ export interface unifiedRoleEligibilityScheduleRequestMethods extends requestMet
 	principal(): IBaseQuery<directoryObject> & directoryObjectMethods;
 	roleDefinition(): IBaseQuery<unifiedRoleDefinition> & unifiedRoleDefinitionMethods;
 	targetSchedule(): IBaseQuery<unifiedRoleEligibilitySchedule> & unifiedRoleEligibilityScheduleMethods;
+	cancel(): IBaseExecution<void>;
 }
 export interface unifiedRoleEligibilityScheduleRequestOData extends requestOData {
 	appScope: appScope;
@@ -17058,6 +17734,7 @@ export interface unifiedRoleEligibilityScheduleRequestOData extends requestOData
 	principal: directoryObject;
 	roleDefinition: unifiedRoleDefinition;
 	targetSchedule: unifiedRoleEligibilitySchedule;
+	cancel(): IBaseExecution<void>;
 }
 export interface unifiedRoleEligibilityScheduleRequestCollection extends IBaseCollection<unifiedRoleEligibilityScheduleRequest, unifiedRoleEligibilityScheduleRequestOData & unifiedRoleEligibilityScheduleRequestProps> {
     add(values?: any): IBaseExecution<unifiedRoleEligibilityScheduleRequest>;
@@ -17488,6 +18165,23 @@ export interface userMethods extends directoryObjectMethods {
 	solutions(): IBaseQuery<userSolutionRoot> & userSolutionRootMethods;
 	todo(): IBaseQuery<todo> & todoMethods;
 	employeeExperience(): IBaseQuery<employeeExperienceUser> & employeeExperienceUserMethods;
+	assignLicense(addLicenses, removeLicenses): IBaseExecution<user>;
+	changePassword(currentPassword, newPassword): IBaseExecution<void>;
+	reprocessLicenseAssignment(): IBaseExecution<user>;
+	retryServiceProvisioning(): IBaseExecution<void>;
+	revokeSignInSessions(): IBaseExecution<boolean>;
+	findMeetingTimes(attendees, locationConstraint, timeConstraint, meetingDuration, maxCandidates, isOrganizerOptional, returnSuggestionReasons, minimumAttendeePercentage): IBaseExecution<ComplexTypes.meetingTimeSuggestionsResult>;
+	getMailTips(EmailAddresses, MailTipsOptions): IBaseExecution<ComplexTypes.mailTips[]>;
+	sendMail(Message, SaveToSentItems): IBaseExecution<void>;
+	translateExchangeIds(InputIds, TargetIdType, SourceIdType): IBaseExecution<ComplexTypes.convertIdResult[]>;
+	removeAllDevicesFromManagement(): IBaseExecution<void>;
+	wipeManagedAppRegistrationsByDeviceTag(deviceTag): IBaseExecution<void>;
+	exportPersonalData(storageLocation): IBaseExecution<void>;
+	exportDeviceAndAppManagementData(): ComplexTypes.deviceAndAppManagementData;
+	exportDeviceAndAppManagementData(skip, top): ComplexTypes.deviceAndAppManagementData;
+	getManagedAppDiagnosticStatuses(): ComplexTypes.managedAppDiagnosticStatus[];
+	getManagedAppPolicies(): managedAppPolicy[];
+	getManagedDevicesWithAppFailures(): Array<string>[];
 }
 export interface userOData extends directoryObjectOData {
 	appRoleAssignments: IBaseResults<appRoleAssignment>;
@@ -17541,6 +18235,23 @@ export interface userOData extends directoryObjectOData {
 	solutions: userSolutionRoot;
 	todo: todo;
 	employeeExperience: employeeExperienceUser;
+	assignLicense(addLicenses, removeLicenses): IBaseExecution<user>;
+	changePassword(currentPassword, newPassword): IBaseExecution<void>;
+	reprocessLicenseAssignment(): IBaseExecution<user>;
+	retryServiceProvisioning(): IBaseExecution<void>;
+	revokeSignInSessions(): IBaseExecution<boolean>;
+	findMeetingTimes(attendees, locationConstraint, timeConstraint, meetingDuration, maxCandidates, isOrganizerOptional, returnSuggestionReasons, minimumAttendeePercentage): IBaseExecution<ComplexTypes.meetingTimeSuggestionsResult>;
+	getMailTips(EmailAddresses, MailTipsOptions): IBaseExecution<ComplexTypes.mailTips[]>;
+	sendMail(Message, SaveToSentItems): IBaseExecution<void>;
+	translateExchangeIds(InputIds, TargetIdType, SourceIdType): IBaseExecution<ComplexTypes.convertIdResult[]>;
+	removeAllDevicesFromManagement(): IBaseExecution<void>;
+	wipeManagedAppRegistrationsByDeviceTag(deviceTag): IBaseExecution<void>;
+	exportPersonalData(storageLocation): IBaseExecution<void>;
+	exportDeviceAndAppManagementData(): ComplexTypes.deviceAndAppManagementData;
+	exportDeviceAndAppManagementData(skip, top): ComplexTypes.deviceAndAppManagementData;
+	getManagedAppDiagnosticStatuses(): ComplexTypes.managedAppDiagnosticStatus[];
+	getManagedAppPolicies(): managedAppPolicy[];
+	getManagedDevicesWithAppFailures(): Array<string>[];
 }
 export interface userCollection extends IBaseCollection<user, userOData & userProps> {
     add(values?: any): IBaseExecution<user>;
@@ -18380,10 +19091,12 @@ export interface userTeamworkMethods extends entityMethods {
 	associatedTeams(id: string | number): IBaseQuery<associatedTeamInfo> & associatedTeamInfoMethods;
 	installedApps(): userScopeTeamsAppInstallationCollection;
 	installedApps(id: string | number): IBaseQuery<userScopeTeamsAppInstallation> & userScopeTeamsAppInstallationMethods;
+	sendActivityNotification(topic, activityType, chainId, previewText, teamsAppId, templateParameters): IBaseExecution<void>;
 }
 export interface userTeamworkOData extends entityOData {
 	associatedTeams: IBaseResults<associatedTeamInfo>;
 	installedApps: IBaseResults<userScopeTeamsAppInstallation>;
+	sendActivityNotification(topic, activityType, chainId, previewText, teamsAppId, templateParameters): IBaseExecution<void>;
 }
 /*********************************************
 * verticalSection
@@ -18449,10 +19162,14 @@ export interface virtualEventMethods extends entityMethods {
 	presenters(id: string | number): IBaseQuery<virtualEventPresenter> & virtualEventPresenterMethods;
 	sessions(): virtualEventSessionCollection;
 	sessions(id: string | number): IBaseQuery<virtualEventSession> & virtualEventSessionMethods;
+	cancel(): IBaseExecution<void>;
+	publish(): IBaseExecution<void>;
 }
 export interface virtualEventOData extends entityOData {
 	presenters: IBaseResults<virtualEventPresenter>;
 	sessions: IBaseResults<virtualEventSession>;
+	cancel(): IBaseExecution<void>;
+	publish(): IBaseExecution<void>;
 }
 export interface virtualEventCollection extends IBaseCollection<virtualEvent, virtualEventOData & virtualEventProps> {
     add(values?: any): IBaseExecution<virtualEvent>;
@@ -18494,9 +19211,11 @@ export interface virtualEventRegistrationProps extends  entityProps {
 export interface virtualEventRegistrationMethods extends entityMethods {
 	sessions(): virtualEventSessionCollection;
 	sessions(id: string | number): IBaseQuery<virtualEventSession> & virtualEventSessionMethods;
+	cancel(): IBaseExecution<void>;
 }
 export interface virtualEventRegistrationOData extends entityOData {
 	sessions: IBaseResults<virtualEventSession>;
+	cancel(): IBaseExecution<void>;
 }
 export interface virtualEventRegistrationCollection extends IBaseCollection<virtualEventRegistration, virtualEventRegistrationOData & virtualEventRegistrationProps> {
     add(values?: any): IBaseExecution<virtualEventRegistration>;
@@ -18682,10 +19401,10 @@ export interface vppTokenProps extends  entityProps {
 	vppTokenAccountType: EnumTypes.vppTokenAccountType;
 }
 export interface vppTokenMethods extends entityMethods {
-
+	syncLicenses(): IBaseExecution<vppToken>;
 }
 export interface vppTokenOData extends entityOData {
-
+	syncLicenses(): IBaseExecution<vppToken>;
 }
 export interface vppTokenCollection extends IBaseCollection<vppToken, vppTokenOData & vppTokenProps> {
     add(values?: any): IBaseExecution<vppToken>;
@@ -18756,10 +19475,10 @@ export interface webPartProps extends  entityProps {
 
 }
 export interface webPartMethods extends entityMethods {
-
+	getPositionOfWebPart(): IBaseExecution<ComplexTypes.webPartPosition>;
 }
 export interface webPartOData extends entityOData {
-
+	getPositionOfWebPart(): IBaseExecution<ComplexTypes.webPartPosition>;
 }
 export interface webPartCollection extends IBaseCollection<webPart, webPartOData & webPartProps> {
     add(values?: any): IBaseExecution<webPart>;
@@ -19401,10 +20120,14 @@ export interface windowsAutopilotDeviceIdentityProps extends  entityProps {
 	userPrincipalName: string;
 }
 export interface windowsAutopilotDeviceIdentityMethods extends entityMethods {
-
+	assignUserToDevice(userPrincipalName, addressableUserName): IBaseExecution<void>;
+	unassignUserFromDevice(): IBaseExecution<void>;
+	updateDeviceProperties(userPrincipalName, addressableUserName, groupTag, displayName): IBaseExecution<void>;
 }
 export interface windowsAutopilotDeviceIdentityOData extends entityOData {
-
+	assignUserToDevice(userPrincipalName, addressableUserName): IBaseExecution<void>;
+	unassignUserFromDevice(): IBaseExecution<void>;
+	updateDeviceProperties(userPrincipalName, addressableUserName, groupTag, displayName): IBaseExecution<void>;
 }
 export interface windowsAutopilotDeviceIdentityCollection extends IBaseCollection<windowsAutopilotDeviceIdentity, windowsAutopilotDeviceIdentityOData & windowsAutopilotDeviceIdentityProps> {
     add(values?: any): IBaseExecution<windowsAutopilotDeviceIdentity>;
@@ -19501,11 +20224,13 @@ export interface windowsInformationProtectionMethods extends managedAppPolicyMet
 	exemptAppLockerFiles(id: string | number): IBaseQuery<windowsInformationProtectionAppLockerFile> & windowsInformationProtectionAppLockerFileMethods;
 	protectedAppLockerFiles(): windowsInformationProtectionAppLockerFileCollection;
 	protectedAppLockerFiles(id: string | number): IBaseQuery<windowsInformationProtectionAppLockerFile> & windowsInformationProtectionAppLockerFileMethods;
+	assign(assignments): IBaseExecution<void>;
 }
 export interface windowsInformationProtectionOData extends managedAppPolicyOData {
 	assignments: IBaseResults<targetedManagedAppPolicyAssignment>;
 	exemptAppLockerFiles: IBaseResults<windowsInformationProtectionAppLockerFile>;
 	protectedAppLockerFiles: IBaseResults<windowsInformationProtectionAppLockerFile>;
+	assign(assignments): IBaseExecution<void>;
 }
 /*********************************************
 * windowsInformationProtectionAppLearningSummary

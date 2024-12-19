@@ -22,6 +22,7 @@ export interface IMapper {
 		incompatibleAccessPackages: IMapperMethod,
 		incompatibleGroups: IMapperMethod,
 		resourceRoleScopes: IMapperMethod,
+		getApplicablePolicyRequirements: IMapperMethod,
 	},
 	accessPackages: {
 		properties?: Array<string>;
@@ -33,6 +34,7 @@ export interface IMapper {
 		accessPackage: IMapperMethod,
 		assignmentPolicy: IMapperMethod,
 		target: IMapperMethod,
+		reprocess: IMapperMethod,
 	},
 	accessPackageAssignments: {
 		properties?: Array<string>;
@@ -56,6 +58,11 @@ export interface IMapper {
 		accessPackage: IMapperMethod,
 		assignment: IMapperMethod,
 		requestor: IMapperMethod,
+		cancel: IMapperMethod,
+		reprocess: IMapperMethod,
+		resume: IMapperMethod & {
+			argNames: ["source", "type", "data"]
+		},
 	},
 	accessPackageAssignmentRequests: {
 		properties?: Array<string>;
@@ -178,7 +185,7 @@ export interface IMapper {
 	accessReviewHistoryInstance: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		generateDownloadUri: IMapperMethod,
 	},
 	accessReviewHistoryInstances: {
 		properties?: Array<string>;
@@ -190,6 +197,14 @@ export interface IMapper {
 		contactedReviewers: IMapperMethod,
 		decisions: IMapperMethod,
 		stages: IMapperMethod,
+		acceptRecommendations: IMapperMethod,
+		applyDecisions: IMapperMethod,
+		batchRecordDecisions: IMapperMethod & {
+			argNames: ["decision", "justification", "principalId", "resourceId"]
+		},
+		resetDecisions: IMapperMethod,
+		sendReminder: IMapperMethod,
+		stop: IMapperMethod,
 	},
 	accessReviewInstances: {
 		properties?: Array<string>;
@@ -217,6 +232,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		instances: IMapperMethod,
+		stop: IMapperMethod,
 	},
 	accessReviewScheduleDefinitions: {
 		properties?: Array<string>;
@@ -232,6 +248,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		decisions: IMapperMethod,
+		stop: IMapperMethod,
 	},
 	accessReviewStages: {
 		properties?: Array<string>;
@@ -449,7 +466,7 @@ export interface IMapper {
 	appLogCollectionRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		createDownloadUrl: IMapperMethod,
 	},
 	appLogCollectionRequests: {
 		properties?: Array<string>;
@@ -491,7 +508,7 @@ export interface IMapper {
 	applePushNotificationCertificate: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		downloadApplePushNotificationCertificateSigningRequest: IMapperMethod,
 	},
 	application: {
 		properties?: Array<string>;
@@ -505,11 +522,29 @@ export interface IMapper {
 		tokenIssuancePolicies: IMapperMethod,
 		tokenLifetimePolicies: IMapperMethod,
 		synchronization: IMapperMethod,
+		setVerifiedPublisher: IMapperMethod & {
+			argNames: ["verifiedPublisherId"]
+		},
+		unsetVerifiedPublisher: IMapperMethod,
+		addKey: IMapperMethod & {
+			argNames: ["keyCredential", "passwordCredential", "proof"]
+		},
+		addPassword: IMapperMethod & {
+			argNames: ["passwordCredential"]
+		},
+		removeKey: IMapperMethod & {
+			argNames: ["keyId", "proof"]
+		},
+		removePassword: IMapperMethod & {
+			argNames: ["keyId"]
+		},
 	},
 	applicationTemplate: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		instantiate: IMapperMethod & {
+			argNames: ["displayName", "serviceManagementReference"]
+		},
 	},
 	approval: {
 		properties?: Array<string>;
@@ -712,7 +747,9 @@ export interface IMapper {
 	authenticationMethod: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		resetPassword: IMapperMethod & {
+			argNames: ["newPassword"]
+		},
 	},
 	authenticationMethods: {
 		properties?: Array<string>;
@@ -754,11 +791,21 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		userRegistrationDetails: IMapperMethod,
+		usersRegisteredByFeature: IMapperMethod & {
+			argNames: ["includedUserTypes", "includedUserRoles"]
+		},
+		usersRegisteredByMethod: IMapperMethod & {
+			argNames: ["includedUserTypes", "includedUserRoles"]
+		},
 	},
 	authenticationStrengthPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		combinationConfigurations: IMapperMethod,
+		updateAllowedCombinations: IMapperMethod & {
+			argNames: ["allowedCombinations"]
+		},
+		usage: IMapperMethod,
 	},
 	authenticationStrengthPolicys: {
 		properties?: Array<string>;
@@ -832,6 +879,9 @@ export interface IMapper {
 		sharePointRestoreSessions: IMapperMethod,
 		siteInclusionRules: IMapperMethod,
 		siteProtectionUnits: IMapperMethod,
+		enable: IMapperMethod & {
+			argNames: ["appOwnerTenantId"]
+		},
 	},
 	baseItem: {
 		properties?: Array<string>;
@@ -1000,6 +1050,9 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		sharedCookies: IMapperMethod,
 		sites: IMapperMethod,
+		publish: IMapperMethod & {
+			argNames: ["revision", "sites", "sharedCookies"]
+		},
 	},
 	browserSiteLists: {
 		properties?: Array<string>;
@@ -1023,6 +1076,9 @@ export interface IMapper {
 		events: IMapperMethod,
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
+		getSchedule: IMapperMethod & {
+			argNames: ["Schedules", "EndTime", "StartTime", "AvailabilityViewInterval"]
+		},
 	},
 	calendars: {
 		properties?: Array<string>;
@@ -1049,7 +1105,7 @@ export interface IMapper {
 	calendarSharingMessage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		accept: IMapperMethod,
 	},
 	call: {
 		properties?: Array<string>;
@@ -1058,6 +1114,49 @@ export interface IMapper {
 		contentSharingSessions: IMapperMethod,
 		operations: IMapperMethod,
 		participants: IMapperMethod,
+		redirect: IMapperMethod & {
+			argNames: ["targets", "timeout", "callbackUri"]
+		},
+		addLargeGalleryView: IMapperMethod & {
+			argNames: ["clientContext"]
+		},
+		answer: IMapperMethod & {
+			argNames: ["callbackUri", "mediaConfig", "acceptedModalities", "participantCapacity", "callOptions"]
+		},
+		cancelMediaProcessing: IMapperMethod & {
+			argNames: ["clientContext"]
+		},
+		changeScreenSharingRole: IMapperMethod & {
+			argNames: ["role"]
+		},
+		keepAlive: IMapperMethod,
+		mute: IMapperMethod & {
+			argNames: ["clientContext"]
+		},
+		playPrompt: IMapperMethod & {
+			argNames: ["prompts", "clientContext"]
+		},
+		recordResponse: IMapperMethod & {
+			argNames: ["prompts", "bargeInAllowed", "initialSilenceTimeoutInSeconds", "maxSilenceTimeoutInSeconds", "maxRecordDurationInSeconds", "playBeep", "stopTones", "clientContext"]
+		},
+		reject: IMapperMethod & {
+			argNames: ["reason", "callbackUri"]
+		},
+		sendDtmfTones: IMapperMethod & {
+			argNames: ["tones", "delayBetweenTonesMs", "clientContext"]
+		},
+		subscribeToTone: IMapperMethod & {
+			argNames: ["clientContext"]
+		},
+		transfer: IMapperMethod & {
+			argNames: ["transferTarget", "transferee"]
+		},
+		unmute: IMapperMethod & {
+			argNames: ["clientContext"]
+		},
+		updateRecordingStatus: IMapperMethod & {
+			argNames: ["status", "clientContext"]
+		},
 	},
 	calls: {
 		properties?: Array<string>;
@@ -1136,6 +1235,16 @@ export interface IMapper {
 		messages: IMapperMethod,
 		sharedWithTeams: IMapperMethod,
 		tabs: IMapperMethod,
+		archive: IMapperMethod & {
+			argNames: ["shouldSetSpoSiteReadOnlyForMembers"]
+		},
+		unarchive: IMapperMethod,
+		completeMigration: IMapperMethod,
+		provisionEmail: IMapperMethod,
+		removeEmail: IMapperMethod,
+		doesUserHaveAccess: IMapperMethod & {
+			argNames: ["userId", "tenantId", "userPrincipalName"]
+		},
 	},
 	channels: {
 		properties?: Array<string>;
@@ -1151,6 +1260,21 @@ export interface IMapper {
 		permissionGrants: IMapperMethod,
 		pinnedMessages: IMapperMethod,
 		tabs: IMapperMethod,
+		sendActivityNotification: IMapperMethod & {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipient"]
+		},
+		hideForUser: IMapperMethod & {
+			argNames: ["user"]
+		},
+		markChatReadForUser: IMapperMethod & {
+			argNames: ["user"]
+		},
+		markChatUnreadForUser: IMapperMethod & {
+			argNames: ["user", "lastMessageReadDateTime"]
+		},
+		unhideForUser: IMapperMethod & {
+			argNames: ["user"]
+		},
 	},
 	chats: {
 		properties?: Array<string>;
@@ -1161,6 +1285,14 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		hostedContents: IMapperMethod,
 		replies: IMapperMethod,
+		setReaction: IMapperMethod & {
+			argNames: ["reactionType"]
+		},
+		softDelete: IMapperMethod,
+		undoSoftDelete: IMapperMethod,
+		unsetReaction: IMapperMethod & {
+			argNames: ["reactionType"]
+		},
 	},
 	chatMessages: {
 		properties?: Array<string>;
@@ -1224,11 +1356,22 @@ export interface IMapper {
 		calls: IMapperMethod,
 		onlineMeetings: IMapperMethod,
 		presences: IMapperMethod,
+		getPresencesByUserId: IMapperMethod & {
+			argNames: ["ids"]
+		},
 	},
 	cloudPC: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		endGracePeriod: IMapperMethod,
+		reboot: IMapperMethod,
+		rename: IMapperMethod & {
+			argNames: ["displayName"]
+		},
+		restore: IMapperMethod & {
+			argNames: ["cloudPcSnapshotId"]
+		},
+		troubleshoot: IMapperMethod,
 	},
 	cloudPCs: {
 		properties?: Array<string>;
@@ -1264,7 +1407,7 @@ export interface IMapper {
 	cloudPcOnPremisesConnection: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		runHealthChecks: IMapperMethod,
 	},
 	cloudPcOnPremisesConnections: {
 		properties?: Array<string>;
@@ -1274,6 +1417,9 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
 	},
 	cloudPcProvisioningPolicys: {
 		properties?: Array<string>;
@@ -1292,6 +1438,9 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
 	},
 	cloudPcUserSettings: {
 		properties?: Array<string>;
@@ -1455,6 +1604,15 @@ export interface IMapper {
 		update: IMapperMethod & {
 			argNames: ["values"]
 		},
+		publish: IMapperMethod,
+		unpublish: IMapperMethod,
+		associateWithHubSites: IMapperMethod & {
+			argNames: ["hubSiteUrls", "propagateToExistingLists"]
+		},
+		copyToDefaultContentLocation: IMapperMethod & {
+			argNames: ["sourceFile", "destinationFileName"]
+		},
+		isPublished: IMapperMethod,
 	},
 	contentTypes: {
 		properties?: Array<string>;
@@ -1487,6 +1645,9 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		posts: IMapperMethod,
+		reply: IMapperMethod & {
+			argNames: ["Post"]
+		},
 	},
 	conversationThreads: {
 		properties?: Array<string>;
@@ -1507,7 +1668,7 @@ export interface IMapper {
 	crossTenantAccessPolicyConfigurationDefault: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		resetToSystemDefault: IMapperMethod,
 	},
 	crossTenantAccessPolicyConfigurationPartner: {
 		properties?: Array<string>;
@@ -1522,7 +1683,7 @@ export interface IMapper {
 	customAuthenticationExtension: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		validateAuthenticationConfiguration: IMapperMethod,
 	},
 	customAuthenticationExtensions: {
 		properties?: Array<string>;
@@ -1659,7 +1820,7 @@ export interface IMapper {
 	deletedChat: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		undoDelete: IMapperMethod,
 	},
 	deletedChats: {
 		properties?: Array<string>;
@@ -1738,6 +1899,7 @@ export interface IMapper {
 		mdmWindowsInformationProtectionPolicies: IMapperMethod,
 		targetedManagedAppConfigurations: IMapperMethod,
 		windowsInformationProtectionPolicies: IMapperMethod,
+		syncMicrosoftStoreForBusinessApps: IMapperMethod,
 	},
 	deviceCategory: {
 		properties?: Array<string>;
@@ -1781,6 +1943,12 @@ export interface IMapper {
 		scheduledActionsForRule: IMapperMethod,
 		userStatuses: IMapperMethod,
 		userStatusOverview: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
+		scheduleActionsForRules: IMapperMethod & {
+			argNames: ["deviceComplianceScheduledActionForRules"]
+		},
 	},
 	deviceCompliancePolicys: {
 		properties?: Array<string>;
@@ -1859,6 +2027,12 @@ export interface IMapper {
 		deviceStatusOverview: IMapperMethod,
 		userStatuses: IMapperMethod,
 		userStatusOverview: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
+		getOmaSettingPlainTextValue: IMapperMethod & {
+			argNames: ["secretReferenceValueId"]
+		},
 	},
 	deviceConfigurations: {
 		properties?: Array<string>;
@@ -1919,6 +2093,12 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["enrollmentConfigurationAssignments"]
+		},
+		setPriority: IMapperMethod & {
+			argNames: ["priority"]
+		},
 	},
 	deviceEnrollmentConfigurations: {
 		properties?: Array<string>;
@@ -1960,7 +2140,7 @@ export interface IMapper {
 	deviceLogCollectionResponse: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		createDownloadUrl: IMapperMethod,
 	},
 	deviceLogCollectionResponses: {
 		properties?: Array<string>;
@@ -2027,6 +2207,13 @@ export interface IMapper {
 		troubleshootingEvents: IMapperMethod,
 		windowsInformationProtectionAppLearningSummaries: IMapperMethod,
 		windowsInformationProtectionNetworkLearningSummaries: IMapperMethod,
+		verifyWindowsEnrollmentAutoDiscovery: IMapperMethod & {
+			argNames: ["domainName"]
+		},
+		userExperienceAnalyticsSummarizeWorkFromAnywhereDevices: IMapperMethod,
+		getEffectivePermissions: IMapperMethod & {
+			argNames: ["scope"]
+		},
 	},
 	deviceManagementCachedReportConfiguration: {
 		properties?: Array<string>;
@@ -2036,7 +2223,9 @@ export interface IMapper {
 	deviceManagementExchangeConnector: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		sync: IMapperMethod & {
+			argNames: ["syncType"]
+		},
 	},
 	deviceManagementExchangeConnectors: {
 		properties?: Array<string>;
@@ -2054,7 +2243,7 @@ export interface IMapper {
 	deviceManagementPartner: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		terminate: IMapperMethod,
 	},
 	deviceManagementPartners: {
 		properties?: Array<string>;
@@ -2064,6 +2253,63 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		exportJobs: IMapperMethod,
+		retrieveDeviceAppInstallationStatusReport: IMapperMethod & {
+			argNames: ["name", "select", "search", "groupBy", "orderBy", "skip", "top", "sessionId", "filter"]
+		},
+		getCachedReport: IMapperMethod & {
+			argNames: ["id", "select", "groupBy", "orderBy", "search", "skip", "top"]
+		},
+		getCompliancePolicyNonComplianceReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getCompliancePolicyNonComplianceSummaryReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getComplianceSettingNonComplianceReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getConfigurationPolicyNonComplianceReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getConfigurationPolicyNonComplianceSummaryReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getConfigurationSettingNonComplianceReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getDeviceManagementIntentPerSettingContributingProfiles: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getDeviceManagementIntentSettingsReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getDeviceNonComplianceReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getDevicesWithoutCompliancePolicyReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getHistoricalReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "filter"]
+		},
+		getNoncompliantDevicesAndSettingsReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getPolicyNonComplianceMetadata: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getPolicyNonComplianceReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getPolicyNonComplianceSummaryReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getReportFilters: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
+		getSettingNonComplianceReport: IMapperMethod & {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"]
+		},
 	},
 	deviceManagementTroubleshootingEvent: {
 		properties?: Array<string>;
@@ -2103,7 +2349,7 @@ export interface IMapper {
 	directoryDefinition: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		discover: IMapperMethod,
 	},
 	directoryDefinitions: {
 		properties?: Array<string>;
@@ -2112,7 +2358,21 @@ export interface IMapper {
 	directoryObject: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		restore: IMapperMethod & {
+			argNames: ["autoReconcileProxyConflict"]
+		},
+		checkMemberGroups: IMapperMethod & {
+			argNames: ["groupIds"]
+		},
+		checkMemberObjects: IMapperMethod & {
+			argNames: ["ids"]
+		},
+		getMemberGroups: IMapperMethod & {
+			argNames: ["securityEnabledOnly"]
+		},
+		getMemberObjects: IMapperMethod & {
+			argNames: ["securityEnabledOnly"]
+		},
 	},
 	directoryObjects: {
 		properties?: Array<string>;
@@ -2142,7 +2402,7 @@ export interface IMapper {
 	documentSetVersion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		restore: IMapperMethod,
 	},
 	documentSetVersions: {
 		properties?: Array<string>;
@@ -2156,6 +2416,13 @@ export interface IMapper {
 		rootDomain: IMapperMethod,
 		serviceConfigurationRecords: IMapperMethod,
 		verificationDnsRecords: IMapperMethod,
+		forceDelete: IMapperMethod & {
+			argNames: ["disableUserAccounts"]
+		},
+		promote: IMapperMethod,
+		verify: IMapperMethod & {
+			argNames: ["forceTakeover"]
+		},
 	},
 	domainDnsCnameRecord: {
 		properties?: Array<string>;
@@ -2200,6 +2467,11 @@ export interface IMapper {
 		list: IMapperMethod,
 		root: IMapperMethod,
 		special: IMapperMethod,
+		search: IMapperMethod & {
+			argNames: ["q"]
+		},
+		recent: IMapperMethod,
+		sharedWithMe: IMapperMethod,
 	},
 	drives: {
 		properties?: Array<string>;
@@ -2217,6 +2489,46 @@ export interface IMapper {
 		subscriptions: IMapperMethod,
 		thumbnails: IMapperMethod,
 		versions: IMapperMethod,
+		restore: IMapperMethod & {
+			argNames: ["parentReference", "name"]
+		},
+		copy: IMapperMethod & {
+			argNames: ["name", "parentReference"]
+		},
+		createUploadSession: IMapperMethod & {
+			argNames: ["item", "deferCommit"]
+		},
+		permanentDelete: IMapperMethod,
+		assignSensitivityLabel: IMapperMethod & {
+			argNames: ["sensitivityLabelId", "assignmentMethod", "justificationText"]
+		},
+		checkin: IMapperMethod & {
+			argNames: ["checkInAs", "comment"]
+		},
+		checkout: IMapperMethod,
+		createLink: IMapperMethod & {
+			argNames: ["type", "scope", "expirationDateTime", "password", "message", "recipients", "retainInheritedPermissions", "sendNotification"]
+		},
+		follow: IMapperMethod,
+		invite: IMapperMethod & {
+			argNames: ["requireSignIn", "roles", "sendInvitation", "message", "recipients", "retainInheritedPermissions", "expirationDateTime", "password"]
+		},
+		preview: IMapperMethod & {
+			argNames: ["page", "zoom"]
+		},
+		unfollow: IMapperMethod,
+		validatePermission: IMapperMethod & {
+			argNames: ["challengeToken", "password"]
+		},
+		delta: IMapperMethod & {
+			argNames: ["token"]
+		},
+		search: IMapperMethod & {
+			argNames: ["q"]
+		},
+		getActivitiesByInterval: IMapperMethod & {
+			argNames: ["startDateTime", "endDateTime", "interval"]
+		},
 	},
 	driveItems: {
 		properties?: Array<string>;
@@ -2225,7 +2537,7 @@ export interface IMapper {
 	driveItemVersion: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		restoreVersion: IMapperMethod,
 	},
 	driveItemVersions: {
 		properties?: Array<string>;
@@ -2378,6 +2690,11 @@ export interface IMapper {
 		resources: IMapperMethod,
 		rubric: IMapperMethod,
 		submissions: IMapperMethod,
+		publish: IMapperMethod,
+		activate: IMapperMethod,
+		deactivate: IMapperMethod,
+		setUpFeedbackResourcesFolder: IMapperMethod,
+		setUpResourcesFolder: IMapperMethod,
 	},
 	educationAssignments: {
 		properties?: Array<string>;
@@ -2451,6 +2768,10 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		resources: IMapperMethod,
+		publish: IMapperMethod,
+		setUpResourcesFolder: IMapperMethod,
+		pin: IMapperMethod,
+		unpin: IMapperMethod,
 	},
 	educationModules: {
 		properties?: Array<string>;
@@ -2523,6 +2844,12 @@ export interface IMapper {
 		outcomes: IMapperMethod,
 		resources: IMapperMethod,
 		submittedResources: IMapperMethod,
+		setUpResourcesFolder: IMapperMethod,
+		excuse: IMapperMethod,
+		reassign: IMapperMethod,
+		_return: IMapperMethod,
+		submit: IMapperMethod,
+		unsubmit: IMapperMethod,
 	},
 	educationSubmissions: {
 		properties?: Array<string>;
@@ -2673,6 +3000,25 @@ export interface IMapper {
 		instances: IMapperMethod,
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
+		cancel: IMapperMethod & {
+			argNames: ["Comment"]
+		},
+		accept: IMapperMethod & {
+			argNames: ["SendResponse", "Comment"]
+		},
+		decline: IMapperMethod & {
+			argNames: ["ProposedNewTime", "SendResponse", "Comment"]
+		},
+		dismissReminder: IMapperMethod,
+		forward: IMapperMethod & {
+			argNames: ["ToRecipients", "Comment"]
+		},
+		snoozeReminder: IMapperMethod & {
+			argNames: ["NewReminderTime"]
+		},
+		tentativelyAccept: IMapperMethod & {
+			argNames: ["ProposedNewTime", "SendResponse", "Comment"]
+		},
 	},
 	events: {
 		properties?: Array<string>;
@@ -2869,6 +3215,7 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		drive: IMapperMethod,
 		permissions: IMapperMethod,
+		permanentDelete: IMapperMethod,
 	},
 	fileStorageContainers: {
 		properties?: Array<string>;
@@ -2901,6 +3248,20 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		sets: IMapperMethod,
+		assignLicense: IMapperMethod & {
+			argNames: ["addLicenses", "removeLicenses"]
+		},
+		retryServiceProvisioning: IMapperMethod,
+		checkGrantedPermissionsForApp: IMapperMethod,
+		validateProperties: IMapperMethod & {
+			argNames: ["displayName", "mailNickname", "onBehalfOfUserId"]
+		},
+		addFavorite: IMapperMethod,
+		removeFavorite: IMapperMethod,
+		resetUnseenCount: IMapperMethod,
+		subscribeByMail: IMapperMethod,
+		unsubscribeByMail: IMapperMethod,
+		renew: IMapperMethod,
 	},
 	groups: {
 		properties?: Array<string>;
@@ -2909,7 +3270,12 @@ export interface IMapper {
 	groupLifecyclePolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		addGroup: IMapperMethod & {
+			argNames: ["groupId"]
+		},
+		removeGroup: IMapperMethod & {
+			argNames: ["groupId"]
+		},
 	},
 	groupLifecyclePolicys: {
 		properties?: Array<string>;
@@ -3029,7 +3395,9 @@ export interface IMapper {
 	identityApiConnector: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		uploadClientCertificate: IMapperMethod & {
+			argNames: ["pkcs12Value", "password"]
+		},
 	},
 	identityApiConnectors: {
 		properties?: Array<string>;
@@ -3473,14 +3841,14 @@ export interface IMapper {
 		driveItem: IMapperMethod,
 		fields: IMapperMethod,
 		versions: IMapperMethod,
-		extractSensitivityLabel: IMapperMethod & {
-			argNames: ["values"]
-		},
-		setSensitivityLabel: IMapperMethod & {
-			argNames: ["values"]
-		},
 		update: IMapperMethod & {
 			argNames: ["values"]
+		},
+		createLink: IMapperMethod & {
+			argNames: ["type", "scope", "expirationDateTime", "password", "message", "recipients", "retainInheritedPermissions", "sendNotification"]
+		},
+		getActivitiesByInterval: IMapperMethod & {
+			argNames: ["startDateTime", "endDateTime", "interval"]
 		},
 	},
 	listItems: {
@@ -3491,6 +3859,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		fields: IMapperMethod,
+		restoreVersion: IMapperMethod,
 	},
 	listItemVersions: {
 		properties?: Array<string>;
@@ -3586,6 +3955,12 @@ export interface IMapper {
 		messages: IMapperMethod,
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
+		copy: IMapperMethod & {
+			argNames: ["DestinationId"]
+		},
+		move: IMapperMethod & {
+			argNames: ["DestinationId"]
+		},
 	},
 	mailFolders: {
 		properties?: Array<string>;
@@ -3664,7 +4039,12 @@ export interface IMapper {
 	managedAppPolicy: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		targetApps: IMapperMethod & {
+			argNames: ["apps", "appGroupType"]
+		},
+		targetApps: IMapperMethod & {
+			argNames: ["apps"]
+		},
 	},
 	managedAppPolicys: {
 		properties?: Array<string>;
@@ -3678,7 +4058,12 @@ export interface IMapper {
 	managedAppProtection: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		targetApps: IMapperMethod & {
+			argNames: ["apps", "appGroupType"]
+		},
+		targetApps: IMapperMethod & {
+			argNames: ["apps"]
+		},
 	},
 	managedAppRegistration: {
 		properties?: Array<string>;
@@ -3714,6 +4099,34 @@ export interface IMapper {
 		logCollectionRequests: IMapperMethod,
 		users: IMapperMethod,
 		windowsProtectionState: IMapperMethod,
+		bypassActivationLock: IMapperMethod,
+		cleanWindowsDevice: IMapperMethod & {
+			argNames: ["keepUserData"]
+		},
+		deleteUserFromSharedAppleDevice: IMapperMethod & {
+			argNames: ["userPrincipalName"]
+		},
+		disableLostMode: IMapperMethod,
+		locateDevice: IMapperMethod,
+		logoutSharedAppleDeviceActiveUser: IMapperMethod,
+		rebootNow: IMapperMethod,
+		recoverPasscode: IMapperMethod,
+		remoteLock: IMapperMethod,
+		requestRemoteAssistance: IMapperMethod,
+		resetPasscode: IMapperMethod,
+		retire: IMapperMethod,
+		shutDown: IMapperMethod,
+		syncDevice: IMapperMethod,
+		updateWindowsDeviceAccount: IMapperMethod & {
+			argNames: ["updateWindowsDeviceAccountActionParameter"]
+		},
+		windowsDefenderScan: IMapperMethod & {
+			argNames: ["quickScan"]
+		},
+		windowsDefenderUpdateSignatures: IMapperMethod,
+		wipe: IMapperMethod & {
+			argNames: ["keepEnrollmentData", "keepUserData", "macOsUnlockCode", "persistEsimDataPlan"]
+		},
 	},
 	managedDevices: {
 		properties?: Array<string>;
@@ -3727,6 +4140,9 @@ export interface IMapper {
 		deviceStatusSummary: IMapperMethod,
 		userStatuses: IMapperMethod,
 		userStatusSummary: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
 	},
 	managedDeviceMobileAppConfigurations: {
 		properties?: Array<string>;
@@ -3781,6 +4197,9 @@ export interface IMapper {
 		deviceStates: IMapperMethod,
 		installSummary: IMapperMethod,
 		userStateSummary: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["managedEBookAssignments"]
+		},
 	},
 	managedEBooks: {
 		properties?: Array<string>;
@@ -3856,6 +4275,31 @@ export interface IMapper {
 		extensions: IMapperMethod,
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
+		forward: IMapperMethod & {
+			argNames: ["ToRecipients", "Message", "Comment"]
+		},
+		copy: IMapperMethod & {
+			argNames: ["DestinationId"]
+		},
+		move: IMapperMethod & {
+			argNames: ["DestinationId"]
+		},
+		createForward: IMapperMethod & {
+			argNames: ["ToRecipients", "Message", "Comment"]
+		},
+		createReply: IMapperMethod & {
+			argNames: ["Message", "Comment"]
+		},
+		createReplyAll: IMapperMethod & {
+			argNames: ["Message", "Comment"]
+		},
+		reply: IMapperMethod & {
+			argNames: ["Message", "Comment"]
+		},
+		replyAll: IMapperMethod & {
+			argNames: ["Message", "Comment"]
+		},
+		send: IMapperMethod,
 	},
 	messages: {
 		properties?: Array<string>;
@@ -3908,6 +4352,9 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
 		categories: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["mobileAppAssignments"]
+		},
 	},
 	mobileApps: {
 		properties?: Array<string>;
@@ -3944,7 +4391,10 @@ export interface IMapper {
 	mobileAppContentFile: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		commit: IMapperMethod & {
+			argNames: ["fileEncryptionInfo"]
+		},
+		renewUpload: IMapperMethod,
 	},
 	mobileAppContentFiles: {
 		properties?: Array<string>;
@@ -4045,6 +4495,9 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		sectionGroups: IMapperMethod,
 		sections: IMapperMethod,
+		copyNotebook: IMapperMethod & {
+			argNames: ["groupId", "renameAs", "notebookFolder", "siteCollectionId", "siteId"]
+		},
 	},
 	notebooks: {
 		properties?: Array<string>;
@@ -4054,6 +4507,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		localizedNotificationMessages: IMapperMethod,
+		sendTestMessage: IMapperMethod,
 	},
 	notificationMessageTemplates: {
 		properties?: Array<string>;
@@ -4186,6 +4640,13 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		parentNotebook: IMapperMethod,
 		parentSection: IMapperMethod,
+		copyToSection: IMapperMethod & {
+			argNames: ["id", "groupId", "siteCollectionId", "siteId"]
+		},
+		onenotePatchContent: IMapperMethod & {
+			argNames: ["commands"]
+		},
+		preview: IMapperMethod,
 	},
 	onenotePages: {
 		properties?: Array<string>;
@@ -4206,6 +4667,12 @@ export interface IMapper {
 		pages: IMapperMethod,
 		parentNotebook: IMapperMethod,
 		parentSectionGroup: IMapperMethod,
+		copyToNotebook: IMapperMethod & {
+			argNames: ["id", "groupId", "renameAs", "siteCollectionId", "siteId"]
+		},
+		copyToSectionGroup: IMapperMethod & {
+			argNames: ["id", "groupId", "renameAs", "siteCollectionId", "siteId"]
+		},
 	},
 	onenoteSections: {
 		properties?: Array<string>;
@@ -4216,6 +4683,13 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		recordings: IMapperMethod,
 		transcripts: IMapperMethod,
+		sendVirtualAppointmentReminderSms: IMapperMethod & {
+			argNames: ["remindBeforeTimeInMinutesType", "attendees"]
+		},
+		sendVirtualAppointmentSms: IMapperMethod & {
+			argNames: ["messageType", "attendees"]
+		},
+		getVirtualAppointmentJoinWebUrl: IMapperMethod,
 	},
 	onlineMeetings: {
 		properties?: Array<string>;
@@ -4261,6 +4735,7 @@ export interface IMapper {
 		manager: IMapperMethod,
 		memberOf: IMapperMethod,
 		transitiveMemberOf: IMapperMethod,
+		retryServiceProvisioning: IMapperMethod,
 	},
 	organization: {
 		properties?: Array<string>;
@@ -4268,6 +4743,7 @@ export interface IMapper {
 		branding: IMapperMethod,
 		certificateBasedAuthConfiguration: IMapperMethod,
 		extensions: IMapperMethod,
+		setMobileDeviceManagementAuthority: IMapperMethod,
 	},
 	organizationalBranding: {
 		properties?: Array<string>;
@@ -4315,7 +4791,15 @@ export interface IMapper {
 	participant: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		mute: IMapperMethod & {
+			argNames: ["clientContext"]
+		},
+		startHoldMusic: IMapperMethod & {
+			argNames: ["customPrompt", "clientContext"]
+		},
+		stopHoldMusic: IMapperMethod & {
+			argNames: ["clientContext"]
+		},
 	},
 	participants: {
 		properties?: Array<string>;
@@ -4378,6 +4862,9 @@ export interface IMapper {
 		update: IMapperMethod & {
 			argNames: ["values"]
 		},
+		grant: IMapperMethod & {
+			argNames: ["roles", "recipients"]
+		},
 	},
 	permissions: {
 		properties?: Array<string>;
@@ -4414,7 +4901,8 @@ export interface IMapper {
 	phoneAuthenticationMethod: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		disableSmsSignIn: IMapperMethod,
+		enableSmsSignIn: IMapperMethod,
 	},
 	phoneAuthenticationMethods: {
 		properties?: Array<string>;
@@ -4557,6 +5045,12 @@ export interface IMapper {
 		inReplyTo: IMapperMethod,
 		multiValueExtendedProperties: IMapperMethod,
 		singleValueExtendedProperties: IMapperMethod,
+		forward: IMapperMethod & {
+			argNames: ["Comment", "ToRecipients"]
+		},
+		reply: IMapperMethod & {
+			argNames: ["Post"]
+		},
 	},
 	posts: {
 		properties?: Array<string>;
@@ -4565,7 +5059,19 @@ export interface IMapper {
 	presence: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		clearPresence: IMapperMethod & {
+			argNames: ["sessionId"]
+		},
+		clearUserPreferredPresence: IMapperMethod,
+		setPresence: IMapperMethod & {
+			argNames: ["sessionId", "availability", "activity", "expirationDuration"]
+		},
+		setStatusMessage: IMapperMethod & {
+			argNames: ["statusMessage"]
+		},
+		setUserPreferredPresence: IMapperMethod & {
+			argNames: ["availability", "activity", "expirationDuration"]
+		},
 	},
 	presences: {
 		properties?: Array<string>;
@@ -4593,7 +5099,9 @@ export interface IMapper {
 	printDocument: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		createUploadSession: IMapperMethod & {
+			argNames: ["properties"]
+		},
 	},
 	printDocuments: {
 		properties?: Array<string>;
@@ -4604,6 +5112,14 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		documents: IMapperMethod,
 		tasks: IMapperMethod,
+		cancel: IMapperMethod,
+		start: IMapperMethod,
+		abort: IMapperMethod & {
+			argNames: ["reason"]
+		},
+		redirect: IMapperMethod & {
+			argNames: ["destinationPrinterId", "configuration"]
+		},
 	},
 	printJobs: {
 		properties?: Array<string>;
@@ -4693,6 +5209,7 @@ export interface IMapper {
 		connectors: IMapperMethod,
 		shares: IMapperMethod,
 		taskTriggers: IMapperMethod,
+		restoreFactoryDefaults: IMapperMethod,
 	},
 	printers: {
 		properties?: Array<string>;
@@ -4764,6 +5281,7 @@ export interface IMapper {
 		group: IMapperMethod,
 		principal: IMapperMethod,
 		targetSchedule: IMapperMethod,
+		cancel: IMapperMethod,
 	},
 	privilegedAccessGroupAssignmentScheduleRequests: {
 		properties?: Array<string>;
@@ -4795,6 +5313,7 @@ export interface IMapper {
 		group: IMapperMethod,
 		principal: IMapperMethod,
 		targetSchedule: IMapperMethod,
+		cancel: IMapperMethod,
 	},
 	privilegedAccessGroupEligibilityScheduleRequests: {
 		properties?: Array<string>;
@@ -4846,7 +5365,8 @@ export interface IMapper {
 	protectionPolicyBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		activate: IMapperMethod,
+		deactivate: IMapperMethod,
 	},
 	protectionPolicyBases: {
 		properties?: Array<string>;
@@ -4855,7 +5375,7 @@ export interface IMapper {
 	protectionRuleBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		run: IMapperMethod,
 	},
 	protectionUnitBase: {
 		properties?: Array<string>;
@@ -4918,7 +5438,8 @@ export interface IMapper {
 	remoteAssistancePartner: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		beginOnboarding: IMapperMethod,
+		disconnect: IMapperMethod,
 	},
 	remoteAssistancePartners: {
 		properties?: Array<string>;
@@ -4939,6 +5460,170 @@ export interface IMapper {
 		monthlyPrintUsageByPrinter: IMapperMethod,
 		monthlyPrintUsageByUser: IMapperMethod,
 		security: IMapperMethod,
+		deviceConfigurationDeviceActivity: IMapperMethod,
+		deviceConfigurationUserActivity: IMapperMethod,
+		managedDeviceEnrollmentFailureDetails: IMapperMethod & {
+			argNames: ["skip", "top", "filter", "skipToken"]
+		},
+		managedDeviceEnrollmentTopFailures: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365ActivationCounts: IMapperMethod,
+		getOffice365ActivationsUserCounts: IMapperMethod,
+		getOffice365ActivationsUserDetail: IMapperMethod,
+		getOffice365ActiveUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365ActiveUserDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365GroupsActivityCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365GroupsActivityDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365GroupsActivityFileCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365GroupsActivityGroupCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365GroupsActivityStorage: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOffice365ServicesUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOneDriveActivityFileCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOneDriveActivityUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOneDriveActivityUserDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOneDriveUsageAccountCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOneDriveUsageAccountDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOneDriveUsageFileCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getOneDriveUsageStorage: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointActivityFileCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointActivityPages: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointActivityUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointActivityUserDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointSiteUsageDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointSiteUsageFileCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointSiteUsagePages: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointSiteUsageSiteCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSharePointSiteUsageStorage: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessActivityCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessActivityUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessActivityUserDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessDeviceUsageDistributionUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessDeviceUsageUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessDeviceUsageUserDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessOrganizerActivityCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessOrganizerActivityMinuteCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessOrganizerActivityUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessParticipantActivityCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessParticipantActivityMinuteCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessParticipantActivityUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessPeerToPeerActivityCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessPeerToPeerActivityMinuteCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getSkypeForBusinessPeerToPeerActivityUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerActivityCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerActivityUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerActivityUserDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerDeviceUsageDistributionUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerDeviceUsageUserCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerDeviceUsageUserDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerGroupsActivityCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerGroupsActivityDetail: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getYammerGroupsActivityGroupCounts: IMapperMethod & {
+			argNames: ["period"]
+		},
+		getGroupArchivedPrintJobs: IMapperMethod & {
+			argNames: ["groupId", "startDateTime", "endDateTime"]
+		},
+		getPrinterArchivedPrintJobs: IMapperMethod & {
+			argNames: ["printerId", "startDateTime", "endDateTime"]
+		},
+		getUserArchivedPrintJobs: IMapperMethod & {
+			argNames: ["userId", "startDateTime", "endDateTime"]
+		},
 	},
 	request: {
 		properties?: Array<string>;
@@ -4985,7 +5670,7 @@ export interface IMapper {
 	restoreSessionBase: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		activate: IMapperMethod,
 	},
 	restoreSessionBases: {
 		properties?: Array<string>;
@@ -5133,11 +5818,19 @@ export interface IMapper {
 		timeOffReasons: IMapperMethod,
 		timeOffRequests: IMapperMethod,
 		timesOff: IMapperMethod,
+		share: IMapperMethod & {
+			argNames: ["notifyTeam", "startDateTime", "endDateTime"]
+		},
 	},
 	scheduleChangeRequest: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		decline: IMapperMethod & {
+			argNames: ["message"]
+		},
+		approve: IMapperMethod & {
+			argNames: ["message"]
+		},
 	},
 	schedulingGroup: {
 		properties?: Array<string>;
@@ -5183,6 +5876,9 @@ export interface IMapper {
 		acronyms: IMapperMethod,
 		bookmarks: IMapperMethod,
 		qnas: IMapperMethod,
+		query: IMapperMethod & {
+			argNames: ["requests"]
+		},
 	},
 	sectionGroup: {
 		properties?: Array<string>;
@@ -5230,11 +5926,16 @@ export interface IMapper {
 		secureScoreControlProfiles: IMapperMethod,
 		secureScores: IMapperMethod,
 		threatIntelligence: IMapperMethod,
+		runHuntingQuery: IMapperMethod & {
+			argNames: ["query", "timespan"]
+		},
 	},
 	securityReportsRoot: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		getAttackSimulationRepeatOffenders: IMapperMethod,
+		getAttackSimulationSimulationUserCoverage: IMapperMethod,
+		getAttackSimulationTrainingUserCoverage: IMapperMethod,
 	},
 	segment: {
 		properties?: Array<string>;
@@ -5275,7 +5976,10 @@ export interface IMapper {
 	serviceApp: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		activate: IMapperMethod & {
+			argNames: ["effectiveDateTime"]
+		},
+		deactivate: IMapperMethod,
 	},
 	serviceApps: {
 		properties?: Array<string>;
@@ -5293,7 +5997,7 @@ export interface IMapper {
 	serviceHealthIssue: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		incidentReport: IMapperMethod,
 	},
 	serviceHealthIssues: {
 		properties?: Array<string>;
@@ -5320,6 +6024,21 @@ export interface IMapper {
 		tokenLifetimePolicies: IMapperMethod,
 		transitiveMemberOf: IMapperMethod,
 		synchronization: IMapperMethod,
+		addKey: IMapperMethod & {
+			argNames: ["keyCredential", "passwordCredential", "proof"]
+		},
+		addPassword: IMapperMethod & {
+			argNames: ["passwordCredential"]
+		},
+		removeKey: IMapperMethod & {
+			argNames: ["keyId", "proof"]
+		},
+		removePassword: IMapperMethod & {
+			argNames: ["keyId"]
+		},
+		addTokenSigningCertificate: IMapperMethod & {
+			argNames: ["displayName", "endDateTime"]
+		},
 	},
 	servicePrincipalRiskDetection: {
 		properties?: Array<string>;
@@ -5513,12 +6232,25 @@ export interface IMapper {
 		termStore: IMapperMethod,
 		termStores: IMapperMethod,
 		onenote: IMapperMethod,
+		getActivitiesByInterval: IMapperMethod & {
+			argNames: ["startDateTime", "endDateTime", "interval"]
+		},
+		getApplicableContentTypesForList: IMapperMethod & {
+			argNames: ["listId"]
+		},
+		getByPath: IMapperMethod & {
+			argNames: ["path"]
+		},
 	},
 	sitePage: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		canvasLayout: IMapperMethod,
 		webParts: IMapperMethod,
+		publish: IMapperMethod,
+		getWebPartsByPosition: IMapperMethod & {
+			argNames: ["webPartIndex", "horizontalSectionId", "isInVerticalSection", "columnId"]
+		},
 	},
 	siteProtectionRule: {
 		properties?: Array<string>;
@@ -5551,13 +6283,6 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		site: IMapperMethod,
-	},
-	sites: {
-		properties?: Array<string>;
-		query: IMapperMethod & { argNames: ["oData"] }
-		add: IMapperMethod & {
-			argNames: ["values"]
-		},
 	},
 	skypeForBusinessUserConversationMember: {
 		properties?: Array<string>;
@@ -5679,6 +6404,8 @@ export interface IMapper {
 		collaborators: IMapperMethod,
 		notes: IMapperMethod,
 		team: IMapperMethod,
+		getFinalAttachment: IMapperMethod,
+		getFinalReport: IMapperMethod,
 	},
 	subjectRightsRequests: {
 		properties?: Array<string>;
@@ -5697,7 +6424,7 @@ export interface IMapper {
 	subscription: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		reauthorize: IMapperMethod,
 	},
 	subscriptions: {
 		properties?: Array<string>;
@@ -5717,12 +6444,26 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		jobs: IMapperMethod,
 		templates: IMapperMethod,
+		acquireAccessToken: IMapperMethod & {
+			argNames: ["credentials"]
+		},
 	},
 	synchronizationJob: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		bulkUpload: IMapperMethod,
 		schema: IMapperMethod,
+		pause: IMapperMethod,
+		provisionOnDemand: IMapperMethod & {
+			argNames: ["parameters"]
+		},
+		restart: IMapperMethod & {
+			argNames: ["criteria"]
+		},
+		start: IMapperMethod,
+		validateCredentials: IMapperMethod & {
+			argNames: ["applicationIdentifier", "templateId", "useSavedCredentials", "credentials"]
+		},
 	},
 	synchronizationJobs: {
 		properties?: Array<string>;
@@ -5732,6 +6473,11 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		directories: IMapperMethod,
+		parseExpression: IMapperMethod & {
+			argNames: ["expression", "testInputObject", "targetAttributeDefinition"]
+		},
+		filterOperators: IMapperMethod,
+		functions: IMapperMethod,
 	},
 	synchronizationTemplate: {
 		properties?: Array<string>;
@@ -5762,6 +6508,12 @@ export interface IMapper {
 		apps: IMapperMethod,
 		assignments: IMapperMethod,
 		deploymentSummary: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
+		targetApps: IMapperMethod & {
+			argNames: ["apps", "appGroupType"]
+		},
 	},
 	targetedManagedAppConfigurations: {
 		properties?: Array<string>;
@@ -5780,6 +6532,12 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		assignments: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
+		targetApps: IMapperMethod & {
+			argNames: ["apps", "appGroupType"]
+		},
 	},
 	task: {
 		properties?: Array<string>;
@@ -5825,6 +6583,17 @@ export interface IMapper {
 		tags: IMapperMethod,
 		template: IMapperMethod,
 		schedule: IMapperMethod,
+		archive: IMapperMethod & {
+			argNames: ["shouldSetSpoSiteReadOnlyForMembers"]
+		},
+		unarchive: IMapperMethod,
+		completeMigration: IMapperMethod,
+		clone: IMapperMethod & {
+			argNames: ["displayName", "description", "mailNickname", "classification", "visibility", "partsToClone"]
+		},
+		sendActivityNotification: IMapperMethod & {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipient"]
+		},
 	},
 	teams: {
 		properties?: Array<string>;
@@ -5858,6 +6627,9 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		teamsApp: IMapperMethod,
 		teamsAppDefinition: IMapperMethod,
+		upgrade: IMapperMethod & {
+			argNames: ["consentedPermissionSet"]
+		},
 	},
 	teamsAppInstallations: {
 		properties?: Array<string>;
@@ -5898,6 +6670,9 @@ export interface IMapper {
 		deletedChats: IMapperMethod,
 		deletedTeams: IMapperMethod,
 		teamsAppSettings: IMapperMethod,
+		sendActivityNotificationToRecipients: IMapperMethod & {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipients"]
+		},
 	},
 	teamworkBot: {
 		properties?: Array<string>;
@@ -5961,6 +6736,12 @@ export interface IMapper {
 		multiTenantOrganization: IMapperMethod,
 		delegatedAdminCustomers: IMapperMethod,
 		delegatedAdminRelationships: IMapperMethod,
+		findTenantInformationByDomainName: IMapperMethod & {
+			argNames: ["domainName"]
+		},
+		findTenantInformationByTenantId: IMapperMethod & {
+			argNames: ["tenantId"]
+		},
 	},
 	term: {
 		properties?: Array<string>;
@@ -6238,6 +7019,7 @@ export interface IMapper {
 		principal: IMapperMethod,
 		roleDefinition: IMapperMethod,
 		targetSchedule: IMapperMethod,
+		cancel: IMapperMethod,
 	},
 	unifiedRoleAssignmentScheduleRequests: {
 		properties?: Array<string>;
@@ -6278,6 +7060,7 @@ export interface IMapper {
 		principal: IMapperMethod,
 		roleDefinition: IMapperMethod,
 		targetSchedule: IMapperMethod,
+		cancel: IMapperMethod,
 	},
 	unifiedRoleEligibilityScheduleRequests: {
 		properties?: Array<string>;
@@ -6435,6 +7218,40 @@ export interface IMapper {
 		solutions: IMapperMethod,
 		todo: IMapperMethod,
 		employeeExperience: IMapperMethod,
+		assignLicense: IMapperMethod & {
+			argNames: ["addLicenses", "removeLicenses"]
+		},
+		changePassword: IMapperMethod & {
+			argNames: ["currentPassword", "newPassword"]
+		},
+		reprocessLicenseAssignment: IMapperMethod,
+		retryServiceProvisioning: IMapperMethod,
+		revokeSignInSessions: IMapperMethod,
+		findMeetingTimes: IMapperMethod & {
+			argNames: ["attendees", "locationConstraint", "timeConstraint", "meetingDuration", "maxCandidates", "isOrganizerOptional", "returnSuggestionReasons", "minimumAttendeePercentage"]
+		},
+		getMailTips: IMapperMethod & {
+			argNames: ["EmailAddresses", "MailTipsOptions"]
+		},
+		sendMail: IMapperMethod & {
+			argNames: ["Message", "SaveToSentItems"]
+		},
+		translateExchangeIds: IMapperMethod & {
+			argNames: ["InputIds", "TargetIdType", "SourceIdType"]
+		},
+		removeAllDevicesFromManagement: IMapperMethod,
+		wipeManagedAppRegistrationsByDeviceTag: IMapperMethod & {
+			argNames: ["deviceTag"]
+		},
+		exportPersonalData: IMapperMethod & {
+			argNames: ["storageLocation"]
+		},
+		exportDeviceAndAppManagementData: IMapperMethod & {
+			argNames: ["skip", "top"]
+		},
+		getManagedAppDiagnosticStatuses: IMapperMethod,
+		getManagedAppPolicies: IMapperMethod,
+		getManagedDevicesWithAppFailures: IMapperMethod,
 	},
 	users: {
 		properties?: Array<string>;
@@ -6762,6 +7579,9 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		associatedTeams: IMapperMethod,
 		installedApps: IMapperMethod,
+		sendActivityNotification: IMapperMethod & {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters"]
+		},
 	},
 	verticalSection: {
 		properties?: Array<string>;
@@ -6784,6 +7604,8 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] }
 		presenters: IMapperMethod,
 		sessions: IMapperMethod,
+		cancel: IMapperMethod,
+		publish: IMapperMethod,
 	},
 	virtualEvents: {
 		properties?: Array<string>;
@@ -6802,6 +7624,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 		sessions: IMapperMethod,
+		cancel: IMapperMethod,
 	},
 	virtualEventRegistrations: {
 		properties?: Array<string>;
@@ -6879,7 +7702,7 @@ export interface IMapper {
 	vppToken: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		syncLicenses: IMapperMethod,
 	},
 	vppTokens: {
 		properties?: Array<string>;
@@ -6904,7 +7727,7 @@ export interface IMapper {
 	webPart: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		getPositionOfWebPart: IMapperMethod,
 	},
 	webParts: {
 		properties?: Array<string>;
@@ -7003,7 +7826,13 @@ export interface IMapper {
 	windowsAutopilotDeviceIdentity: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
-
+		assignUserToDevice: IMapperMethod & {
+			argNames: ["userPrincipalName", "addressableUserName"]
+		},
+		unassignUserFromDevice: IMapperMethod,
+		updateDeviceProperties: IMapperMethod & {
+			argNames: ["userPrincipalName", "addressableUserName", "groupTag", "displayName"]
+		},
 	},
 	windowsAutopilotDeviceIdentitys: {
 		properties?: Array<string>;
@@ -7038,6 +7867,9 @@ export interface IMapper {
 		assignments: IMapperMethod,
 		exemptAppLockerFiles: IMapperMethod,
 		protectedAppLockerFiles: IMapperMethod,
+		assign: IMapperMethod & {
+			argNames: ["assignments"]
+		},
 	},
 	windowsInformationProtectionAppLearningSummary: {
 		properties?: Array<string>;

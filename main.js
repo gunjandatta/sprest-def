@@ -290,6 +290,8 @@ function updateReferences(fileImports, dirName, type) {
 
 // Process the Graph metadata
 function processGraph(schemas) {
+    let actions = {};
+    let functions = {};
     let collections = {};
     let complexTypes = {};
     let endPoints = {};
@@ -540,6 +542,54 @@ function processGraph(schemas) {
 
                 // Continue
                 continue;
+            }
+
+            // See if this is an action/function
+            if (key == "Action" || key == "Function") {
+                // Parse the values
+                for (let methodInfo of value) {
+                    let bindingParam = null;
+                    let methodName = methodInfo.$.Name;
+                    let methodParams = [];
+                    let methodReturnType = null;
+
+                    // Get the parameters
+                    let params = methodInfo.Parameter || [];
+                    for (let i = 0; i < params.length; i++) {
+                        let param = params[i];
+
+                        if (param.$.Name == "bindingParameter") {
+                            bindingParam = param.$.Type;
+                        } else {
+                            methodParams.push(param);
+                        }
+                    }
+
+                    // Get the return type
+                    if (methodInfo.ReturnType && methodInfo.ReturnType[0]) {
+                        methodReturnType = methodInfo.ReturnType[0].$.Type;
+                    }
+
+                    // Ensure a binding parameter exists
+                    if (bindingParam) {
+                        // See if this is an action
+                        if (key == "Action") {
+                            actions[bindingParam] = actions[bindingParam] || [];
+                            actions[bindingParam].push({
+                                name: methodName,
+                                params: methodParams,
+                                returnType: methodReturnType
+                            });
+                        } else {
+                            functions[bindingParam] = functions[bindingParam] || [];
+                            functions[bindingParam].push({
+                                name: methodName,
+                                params: methodParams,
+                                returnType: methodReturnType
+                            });
+                        }
+                    }
+                }
             }
         }
     }
@@ -817,6 +867,81 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
 
             // Set the previous name
             prevName = method.name;
+        }
+
+        // Parse the actions
+        let entityActions = actions["graph." + name];
+        if (entityActions) {
+            debugger;
+            for (let i = 0; i < entityActions.length; i++) {
+                let entityAction = entityActions[i];
+                let returnType = entityAction.returnType ? getGraphType(entityAction.returnType) : "void";
+                let prevMatch = i > 0 && entityActions[i - 1].name == entityAction.name ? true : false;
+
+                // Parse the arguments
+                let params = [];
+                let paramDefs = [];
+                for (let j = 0; j < entityAction.params.length; j++) {
+                    let param = entityAction.params[j];
+
+                    // Add the parameter
+                    params.push(param.$.Name);
+                    paramDefs.push(`${param.$.Name}: ${getGraphType(param.$.Type)}`);
+                }
+
+                // Add the method to the mapper and definition
+                let strMapper = `\t\t${entityAction.name}: {\n${params.length > 0 ? "\t\t\targNames: [\"" + params.join('", "') + "\"],\n" : ""}\t\t\trequestType: RequestType.Post,\n${returnType ? "\t\t\treturnType: \"" + returnType + "\"\n" : ""}\t\t},`;
+                let strMapperDef = `\t\t${entityAction.name}: IMapperMethod${params.length > 0 ? " & {\n\t\t\targNames: [\"" + params.join('", "') + "\"]\n\t\t}" : ""},`;
+                if (prevMatch) {
+                    mapper[mapper.length - 1] = strMapper;
+                    mapperDef[mapperDef.length - 1] = strMapperDef;
+                } else {
+                    mapper.push(strMapper);
+                    mapperDef.push(strMapperDef);
+                }
+
+                // Add the method
+                let strMethod = `\t${entityAction.name}(${params.join(", ")}): IBaseExecution<${returnType}>;`;
+                methods.push(strMethod);
+                odataResults.push(strMethod);
+            }
+        }
+
+        // Parse the functions
+        let entityFunctions = functions["graph." + name];
+        if (entityFunctions) {
+            for (let i = 0; i < entityFunctions.length; i++) {
+                let entityFunction = entityFunctions[i];
+                let returnType = getGraphType(entityFunction.returnType);
+                let prevMatch = i > 0 && entityFunctions[i - 1].name == entityFunction.name ? true : false;
+
+                // Parse the arguments
+                let params = [];
+                let paramDefs = [];
+                for (let j = 0; j < entityFunction.params.length; j++) {
+                    let param = entityFunction.params[j];
+
+                    // Add the parameter
+                    params.push(param.$.Name);
+                    paramDefs.push(`${param.$.Name}: ${getGraphType(param.$.Type)}`);
+                }
+
+                // Add the method to the mapper and definition
+                let strMapper = `\t\t${entityFunction.name}: {\n${params.length > 0 ? "\t\t\targNames: [\"" + params.join('", "') + "\"],\n" : ""}\t\t\trequestType: RequestType.Get,\n${returnType ? "\t\t\treturnType: \"" + returnType + "\"\n" : ""}\t\t},`;
+                let strMapperDef = `\t\t${entityFunction.name}: IMapperMethod${params.length > 0 ? " & {\n\t\t\targNames: [\"" + params.join('", "') + "\"]\n\t\t}" : ""},`;
+                if (prevMatch) {
+                    mapper[mapper.length - 1] = strMapper;
+                    mapperDef[mapperDef.length - 1] = strMapperDef;
+                } else {
+                    mapper.push(strMapper);
+                    mapperDef.push(strMapperDef);
+                }
+
+                // Add the method
+                let strMethod = `\t${entityFunction.name}(${params.join(", ")}): ${returnType};`;
+                methods.push(strMethod);
+                odataResults.push(strMethod);
+            }
         }
 
         // Add the endpoint

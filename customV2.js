@@ -28,22 +28,26 @@ module.exports = {
     ],
     listItem: [
         {
-            name: "extractSensitivityLabel",
-            argNames: [{ name: "values", type: "any" }]
-        },
-        {
-            name: "setSensitivityLabel",
-            argNames: [{ name: "values", type: "{ actionSource?: string; assignmentMethod?: string; id: string; justificationText?: string; }" }]
-        },
-        {
             name: "update",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
-    sites: [
+    managedAppPolicy: [
         {
-            name: "add",
-            argNames: [{ name: "values", type: "any" }]
+            name: "targetApps",
+            argNames: [
+                { name: "apps", type: "any" },
+                { name: "appGroupType", type: "any" }
+            ]
+        }
+    ],
+    managedAppProtection: [
+        {
+            name: "targetApps",
+            argNames: [
+                { name: "apps", type: "any" },
+                { name: "appGroupType", type: "any" }
+            ]
         }
     ]
 }

@@ -45,6 +45,10 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "accessPackageResourceRoleScopes"
 		},
+		getApplicablePolicyRequirements: {
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.accessPackageAssignmentRequestRequirements[]"
+		},
 	},
 	accessPackages: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -62,6 +66,10 @@ export const Mapper: IMapper = {
 		},
 		target: {
 			returnType: "accessPackageSubject"
+		},
+		reprocess: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	accessPackageAssignments: {
@@ -103,6 +111,19 @@ export const Mapper: IMapper = {
 		},
 		requestor: {
 			returnType: "accessPackageSubject"
+		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		reprocess: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		resume: {
+			argNames: ["source", "type", "data"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	accessPackageAssignmentRequests: {
@@ -289,7 +310,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		generateDownloadUri: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.accessReviewHistoryInstance"
+		},
 	},
 	accessReviewHistoryInstances: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -310,6 +334,31 @@ export const Mapper: IMapper = {
 		stages: {
 			requestType: RequestType.Get,
 			returnType: "accessReviewStages"
+		},
+		acceptRecommendations: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		applyDecisions: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		batchRecordDecisions: {
+			argNames: ["decision", "justification", "principalId", "resourceId"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		resetDecisions: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		sendReminder: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		stop: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	accessReviewInstances: {
@@ -347,6 +396,10 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "accessReviewInstances"
 		},
+		stop: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	accessReviewScheduleDefinitions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -373,6 +426,10 @@ export const Mapper: IMapper = {
 		decisions: {
 			requestType: RequestType.Get,
 			returnType: "accessReviewInstanceDecisionItems"
+		},
+		stop: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	accessReviewStages: {
@@ -696,7 +753,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		createDownloadUrl: {
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.appLogCollectionDownloadDetails"
+		},
 	},
 	appLogCollectionRequests: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -750,7 +810,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		downloadApplePushNotificationCertificateSigningRequest: {
+			requestType: RequestType.Get,
+			returnType: "string"
+		},
 	},
 	application: {
 		properties: [
@@ -791,13 +854,46 @@ export const Mapper: IMapper = {
 		synchronization: {
 			returnType: "synchronization"
 		},
+		setVerifiedPublisher: {
+			argNames: ["verifiedPublisherId"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unsetVerifiedPublisher: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		addKey: {
+			argNames: ["keyCredential", "passwordCredential", "proof"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.keyCredential"
+		},
+		addPassword: {
+			argNames: ["passwordCredential"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.passwordCredential"
+		},
+		removeKey: {
+			argNames: ["keyId", "proof"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		removePassword: {
+			argNames: ["keyId"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	applicationTemplate: {
 		properties: [
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		instantiate: {
+			argNames: ["displayName", "serviceManagementReference"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.applicationServicePrincipal"
+		},
 	},
 	approval: {
 		properties: [
@@ -1104,7 +1200,11 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		resetPassword: {
+			argNames: ["newPassword"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.passwordResetResponse"
+		},
 	},
 	authenticationMethods: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1158,6 +1258,16 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "userRegistrationDetailss"
 		},
+		usersRegisteredByFeature: {
+			argNames: ["includedUserTypes", "includedUserRoles"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.userRegistrationFeatureSummary"
+		},
+		usersRegisteredByMethod: {
+			argNames: ["includedUserTypes", "includedUserRoles"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.userRegistrationMethodSummary"
+		},
 	},
 	authenticationStrengthPolicy: {
 		properties: [
@@ -1167,6 +1277,15 @@ export const Mapper: IMapper = {
 		combinationConfigurations: {
 			requestType: RequestType.Get,
 			returnType: "authenticationCombinationConfigurations"
+		},
+		updateAllowedCombinations: {
+			argNames: ["allowedCombinations"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.updateAllowedCombinationsResult"
+		},
+		usage: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.authenticationStrengthUsage"
 		},
 	},
 	authenticationStrengthPolicys: {
@@ -1326,6 +1445,11 @@ export const Mapper: IMapper = {
 		siteProtectionUnits: {
 			requestType: RequestType.Get,
 			returnType: "siteProtectionUnits"
+		},
+		enable: {
+			argNames: ["appOwnerTenantId"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.serviceStatus"
 		},
 	},
 	baseItem: {
@@ -1570,6 +1694,11 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "browserSites"
 		},
+		publish: {
+			argNames: ["revision", "sites", "sharedCookies"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.browserSiteList"
+		},
 	},
 	browserSiteLists: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1613,6 +1742,11 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "singleValueLegacyExtendedPropertys"
 		},
+		getSchedule: {
+			argNames: ["Schedules", "EndTime", "StartTime", "AvailabilityViewInterval"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.scheduleInformation[]"
+		},
 	},
 	calendars: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1645,7 +1779,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		accept: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.calendar"
+		},
 	},
 	call: {
 		properties: [
@@ -1667,6 +1804,80 @@ export const Mapper: IMapper = {
 		participants: {
 			requestType: RequestType.Get,
 			returnType: "participants"
+		},
+		redirect: {
+			argNames: ["targets", "timeout", "callbackUri"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		addLargeGalleryView: {
+			argNames: ["clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.addLargeGalleryViewOperation"
+		},
+		answer: {
+			argNames: ["callbackUri", "mediaConfig", "acceptedModalities", "participantCapacity", "callOptions"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		cancelMediaProcessing: {
+			argNames: ["clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.cancelMediaProcessingOperation"
+		},
+		changeScreenSharingRole: {
+			argNames: ["role"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		keepAlive: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		mute: {
+			argNames: ["clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.muteParticipantOperation"
+		},
+		playPrompt: {
+			argNames: ["prompts", "clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.playPromptOperation"
+		},
+		recordResponse: {
+			argNames: ["prompts", "bargeInAllowed", "initialSilenceTimeoutInSeconds", "maxSilenceTimeoutInSeconds", "maxRecordDurationInSeconds", "playBeep", "stopTones", "clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.recordOperation"
+		},
+		reject: {
+			argNames: ["reason", "callbackUri"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		sendDtmfTones: {
+			argNames: ["tones", "delayBetweenTonesMs", "clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.sendDtmfTonesOperation"
+		},
+		subscribeToTone: {
+			argNames: ["clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.subscribeToToneOperation"
+		},
+		transfer: {
+			argNames: ["transferTarget", "transferee"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unmute: {
+			argNames: ["clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.unmuteParticipantOperation"
+		},
+		updateRecordingStatus: {
+			argNames: ["status", "clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.updateRecordingStatusOperation"
 		},
 	},
 	calls: {
@@ -1797,6 +2008,32 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "teamsTabs"
 		},
+		archive: {
+			argNames: ["shouldSetSpoSiteReadOnlyForMembers"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unarchive: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		completeMigration: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		provisionEmail: {
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.provisionChannelEmailResult"
+		},
+		removeEmail: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		doesUserHaveAccess: {
+			argNames: ["userId", "tenantId", "userPrincipalName"],
+			requestType: RequestType.Get,
+			returnType: "boolean"
+		},
 	},
 	channels: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1833,6 +2070,31 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "teamsTabs"
 		},
+		sendActivityNotification: {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipient"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		hideForUser: {
+			argNames: ["user"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		markChatReadForUser: {
+			argNames: ["user"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		markChatUnreadForUser: {
+			argNames: ["user", "lastMessageReadDateTime"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unhideForUser: {
+			argNames: ["user"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	chats: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1849,6 +2111,24 @@ export const Mapper: IMapper = {
 		replies: {
 			requestType: RequestType.Get,
 			returnType: "chatMessages"
+		},
+		setReaction: {
+			argNames: ["reactionType"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		softDelete: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		undoSoftDelete: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unsetReaction: {
+			argNames: ["reactionType"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	chatMessages: {
@@ -1939,13 +2219,39 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "presences"
 		},
+		getPresencesByUserId: {
+			argNames: ["ids"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.presence[]"
+		},
 	},
 	cloudPC: {
 		properties: [
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		endGracePeriod: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		reboot: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		rename: {
+			argNames: ["displayName"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		restore: {
+			argNames: ["cloudPcSnapshotId"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		troubleshoot: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	cloudPCs: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1985,7 +2291,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		runHealthChecks: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	cloudPcOnPremisesConnections: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -1998,6 +2307,11 @@ export const Mapper: IMapper = {
 		assignments: {
 			requestType: RequestType.Get,
 			returnType: "cloudPcProvisioningPolicyAssignments"
+		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	cloudPcProvisioningPolicys: {
@@ -2024,6 +2338,11 @@ export const Mapper: IMapper = {
 		assignments: {
 			requestType: RequestType.Get,
 			returnType: "cloudPcUserSettingAssignments"
+		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	cloudPcUserSettings: {
@@ -2272,6 +2591,28 @@ export const Mapper: IMapper = {
 		update: {
 			argNames: ["values"],
 		},
+		publish: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unpublish: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		associateWithHubSites: {
+			argNames: ["hubSiteUrls", "propagateToExistingLists"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		copyToDefaultContentLocation: {
+			argNames: ["sourceFile", "destinationFileName"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		isPublished: {
+			requestType: RequestType.Get,
+			returnType: "boolean"
+		},
 	},
 	contentTypes: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2315,6 +2656,11 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "posts"
 		},
+		reply: {
+			argNames: ["Post"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	conversationThreads: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2347,7 +2693,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		resetToSystemDefault: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	crossTenantAccessPolicyConfigurationPartner: {
 		properties: [
@@ -2370,7 +2719,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		validateAuthenticationConfiguration: {
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.authenticationConfigurationValidation"
+		},
 	},
 	customAuthenticationExtensions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2555,7 +2907,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		undoDelete: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	deletedChats: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2717,6 +3072,10 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "windowsInformationProtectionPolicys"
 		},
+		syncMicrosoftStoreForBusinessApps: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	deviceCategory: {
 		properties: [
@@ -2785,6 +3144,16 @@ export const Mapper: IMapper = {
 		},
 		userStatusOverview: {
 			returnType: "deviceComplianceUserOverview"
+		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.deviceCompliancePolicyAssignment[]"
+		},
+		scheduleActionsForRules: {
+			argNames: ["deviceComplianceScheduledActionForRules"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	deviceCompliancePolicys: {
@@ -2897,6 +3266,16 @@ export const Mapper: IMapper = {
 		userStatusOverview: {
 			returnType: "deviceConfigurationUserOverview"
 		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.deviceConfigurationAssignment[]"
+		},
+		getOmaSettingPlainTextValue: {
+			argNames: ["secretReferenceValueId"],
+			requestType: RequestType.Get,
+			returnType: "string"
+		},
 	},
 	deviceConfigurations: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -2971,6 +3350,16 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "enrollmentConfigurationAssignments"
 		},
+		assign: {
+			argNames: ["enrollmentConfigurationAssignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		setPriority: {
+			argNames: ["priority"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	deviceEnrollmentConfigurations: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3021,7 +3410,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		createDownloadUrl: {
+			requestType: RequestType.Post,
+			returnType: "string"
+		},
 	},
 	deviceLogCollectionResponses: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3252,6 +3644,20 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "windowsInformationProtectionNetworkLearningSummarys"
 		},
+		verifyWindowsEnrollmentAutoDiscovery: {
+			argNames: ["domainName"],
+			requestType: RequestType.Get,
+			returnType: "boolean"
+		},
+		userExperienceAnalyticsSummarizeWorkFromAnywhereDevices: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.userExperienceAnalyticsWorkFromAnywhereDevicesSummary"
+		},
+		getEffectivePermissions: {
+			argNames: ["scope"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.rolePermission[]"
+		},
 	},
 	deviceManagementCachedReportConfiguration: {
 		properties: [
@@ -3265,7 +3671,11 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		sync: {
+			argNames: ["syncType"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	deviceManagementExchangeConnectors: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3285,7 +3695,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		terminate: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	deviceManagementPartners: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3298,6 +3711,101 @@ export const Mapper: IMapper = {
 		exportJobs: {
 			requestType: RequestType.Get,
 			returnType: "deviceManagementExportJobs"
+		},
+		retrieveDeviceAppInstallationStatusReport: {
+			argNames: ["name", "select", "search", "groupBy", "orderBy", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getCachedReport: {
+			argNames: ["id", "select", "groupBy", "orderBy", "search", "skip", "top"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getCompliancePolicyNonComplianceReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getCompliancePolicyNonComplianceSummaryReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getComplianceSettingNonComplianceReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getConfigurationPolicyNonComplianceReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getConfigurationPolicyNonComplianceSummaryReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getConfigurationSettingNonComplianceReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getDeviceManagementIntentPerSettingContributingProfiles: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getDeviceManagementIntentSettingsReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getDeviceNonComplianceReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getDevicesWithoutCompliancePolicyReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getHistoricalReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getNoncompliantDevicesAndSettingsReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getPolicyNonComplianceMetadata: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getPolicyNonComplianceReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getPolicyNonComplianceSummaryReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getReportFilters: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
+		},
+		getSettingNonComplianceReport: {
+			argNames: ["name", "select", "groupBy", "orderBy", "search", "skip", "top", "sessionId", "filter"],
+			requestType: RequestType.Post,
+			returnType: "any"
 		},
 	},
 	deviceManagementTroubleshootingEvent: {
@@ -3370,7 +3878,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		discover: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.directoryDefinition"
+		},
 	},
 	directoryDefinitions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3380,7 +3891,31 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		restore: {
+			argNames: ["autoReconcileProxyConflict"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.directoryObject"
+		},
+		checkMemberGroups: {
+			argNames: ["groupIds"],
+			requestType: RequestType.Post,
+			returnType: "Array<string>[]"
+		},
+		checkMemberObjects: {
+			argNames: ["ids"],
+			requestType: RequestType.Post,
+			returnType: "Array<string>[]"
+		},
+		getMemberGroups: {
+			argNames: ["securityEnabledOnly"],
+			requestType: RequestType.Post,
+			returnType: "Array<string>[]"
+		},
+		getMemberObjects: {
+			argNames: ["securityEnabledOnly"],
+			requestType: RequestType.Post,
+			returnType: "Array<string>[]"
+		},
 	},
 	directoryObjects: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3425,7 +3960,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		restore: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	documentSetVersions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3453,6 +3991,20 @@ export const Mapper: IMapper = {
 		verificationDnsRecords: {
 			requestType: RequestType.Get,
 			returnType: "domainDnsRecords"
+		},
+		forceDelete: {
+			argNames: ["disableUserAccounts"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		promote: {
+			requestType: RequestType.Post,
+			returnType: "boolean"
+		},
+		verify: {
+			argNames: ["forceTakeover"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.domain"
 		},
 	},
 	domainDnsCnameRecord: {
@@ -3527,6 +4079,19 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "driveItems"
 		},
+		search: {
+			argNames: ["q"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.driveItem[]"
+		},
+		recent: {
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.driveItem[]"
+		},
+		sharedWithMe: {
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.driveItem[]"
+		},
 	},
 	drives: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3568,6 +4133,82 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "driveItemVersions"
 		},
+		restore: {
+			argNames: ["parentReference", "name"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.driveItem"
+		},
+		copy: {
+			argNames: ["name", "parentReference"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.driveItem"
+		},
+		createUploadSession: {
+			argNames: ["item", "deferCommit"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.uploadSession"
+		},
+		permanentDelete: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		assignSensitivityLabel: {
+			argNames: ["sensitivityLabelId", "assignmentMethod", "justificationText"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		checkin: {
+			argNames: ["checkInAs", "comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		checkout: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		createLink: {
+			argNames: ["type", "scope", "expirationDateTime", "password", "message", "recipients", "retainInheritedPermissions", "sendNotification"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.permission"
+		},
+		follow: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.driveItem"
+		},
+		invite: {
+			argNames: ["requireSignIn", "roles", "sendInvitation", "message", "recipients", "retainInheritedPermissions", "expirationDateTime", "password"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.permission[]"
+		},
+		preview: {
+			argNames: ["page", "zoom"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.itemPreviewInfo"
+		},
+		unfollow: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		validatePermission: {
+			argNames: ["challengeToken", "password"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		delta: {
+			argNames: ["token"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.driveItem[]"
+		},
+		search: {
+			argNames: ["q"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.driveItem[]"
+		},
+		getActivitiesByInterval: {
+			argNames: ["startDateTime", "endDateTime", "interval"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.itemActivityStat[]"
+		},
 	},
 	driveItems: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3577,7 +4218,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		restoreVersion: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	driveItemVersions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3855,6 +4499,26 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "educationSubmissions"
 		},
+		publish: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationAssignment"
+		},
+		activate: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationAssignment"
+		},
+		deactivate: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationAssignment"
+		},
+		setUpFeedbackResourcesFolder: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationAssignment"
+		},
+		setUpResourcesFolder: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationAssignment"
+		},
 	},
 	educationAssignments: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -3971,6 +4635,22 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "educationModuleResources"
 		},
+		publish: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationModule"
+		},
+		setUpResourcesFolder: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationModule"
+		},
+		pin: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationModule"
+		},
+		unpin: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationModule"
+		},
 	},
 	educationModules: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4083,6 +4763,30 @@ export const Mapper: IMapper = {
 		submittedResources: {
 			requestType: RequestType.Get,
 			returnType: "educationSubmissionResources"
+		},
+		setUpResourcesFolder: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationSubmission"
+		},
+		excuse: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationSubmission"
+		},
+		reassign: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationSubmission"
+		},
+		_return: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationSubmission"
+		},
+		submit: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationSubmission"
+		},
+		unsubmit: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.educationSubmission"
 		},
 	},
 	educationSubmissions: {
@@ -4350,6 +5054,40 @@ export const Mapper: IMapper = {
 		singleValueExtendedProperties: {
 			requestType: RequestType.Get,
 			returnType: "singleValueLegacyExtendedPropertys"
+		},
+		cancel: {
+			argNames: ["Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		accept: {
+			argNames: ["SendResponse", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		decline: {
+			argNames: ["ProposedNewTime", "SendResponse", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		dismissReminder: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		forward: {
+			argNames: ["ToRecipients", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		snoozeReminder: {
+			argNames: ["NewReminderTime"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		tentativelyAccept: {
+			argNames: ["ProposedNewTime", "SendResponse", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	events: {
@@ -4660,6 +5398,10 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "permissions"
 		},
+		permanentDelete: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	fileStorageContainers: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4700,6 +5442,48 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "sets"
 		},
+		assignLicense: {
+			argNames: ["addLicenses", "removeLicenses"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.group"
+		},
+		retryServiceProvisioning: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		checkGrantedPermissionsForApp: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.resourceSpecificPermissionGrant[]"
+		},
+		validateProperties: {
+			argNames: ["displayName", "mailNickname", "onBehalfOfUserId"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		addFavorite: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		removeFavorite: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		resetUnseenCount: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		subscribeByMail: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unsubscribeByMail: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		renew: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	groups: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4709,7 +5493,16 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		addGroup: {
+			argNames: ["groupId"],
+			requestType: RequestType.Post,
+			returnType: "boolean"
+		},
+		removeGroup: {
+			argNames: ["groupId"],
+			requestType: RequestType.Post,
+			returnType: "boolean"
+		},
 	},
 	groupLifecyclePolicys: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -4919,7 +5712,11 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		uploadClientCertificate: {
+			argNames: ["pkcs12Value", "password"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.identityApiConnector"
+		},
 	},
 	identityApiConnectors: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5625,14 +6422,18 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "listItemVersions"
 		},
-		extractSensitivityLabel: {
-			argNames: ["values"],
-		},
-		setSensitivityLabel: {
-			argNames: ["values"],
-		},
 		update: {
 			argNames: ["values"],
+		},
+		createLink: {
+			argNames: ["type", "scope", "expirationDateTime", "password", "message", "recipients", "retainInheritedPermissions", "sendNotification"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.permission"
+		},
+		getActivitiesByInterval: {
+			argNames: ["startDateTime", "endDateTime", "interval"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.itemActivityStat[]"
 		},
 	},
 	listItems: {
@@ -5645,6 +6446,10 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		fields: {
 			returnType: "fieldValueSet"
+		},
+		restoreVersion: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	listItemVersions: {
@@ -5782,6 +6587,16 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "singleValueLegacyExtendedPropertys"
 		},
+		copy: {
+			argNames: ["DestinationId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.mailFolder"
+		},
+		move: {
+			argNames: ["DestinationId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.mailFolder"
+		},
 	},
 	mailFolders: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5876,7 +6691,14 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		targetApps: {
+			argNames: ["apps", "appGroupType"],
+		},
+		targetApps: {
+			argNames: ["apps"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	managedAppPolicys: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5893,7 +6715,14 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		targetApps: {
+			argNames: ["apps", "appGroupType"],
+		},
+		targetApps: {
+			argNames: ["apps"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	managedAppRegistration: {
 		properties: [
@@ -5960,6 +6789,83 @@ export const Mapper: IMapper = {
 		windowsProtectionState: {
 			returnType: "windowsProtectionState"
 		},
+		bypassActivationLock: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		cleanWindowsDevice: {
+			argNames: ["keepUserData"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		deleteUserFromSharedAppleDevice: {
+			argNames: ["userPrincipalName"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		disableLostMode: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		locateDevice: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		logoutSharedAppleDeviceActiveUser: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		rebootNow: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		recoverPasscode: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		remoteLock: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		requestRemoteAssistance: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		resetPasscode: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		retire: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		shutDown: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		syncDevice: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		updateWindowsDeviceAccount: {
+			argNames: ["updateWindowsDeviceAccountActionParameter"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		windowsDefenderScan: {
+			argNames: ["quickScan"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		windowsDefenderUpdateSignatures: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		wipe: {
+			argNames: ["keepEnrollmentData", "keepUserData", "macOsUnlockCode", "persistEsimDataPlan"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	managedDevices: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -5986,6 +6892,11 @@ export const Mapper: IMapper = {
 		},
 		userStatusSummary: {
 			returnType: "managedDeviceMobileAppConfigurationUserSummary"
+		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	managedDeviceMobileAppConfigurations: {
@@ -6061,6 +6972,11 @@ export const Mapper: IMapper = {
 		userStateSummary: {
 			requestType: RequestType.Get,
 			returnType: "userInstallStateSummarys"
+		},
+		assign: {
+			argNames: ["managedEBookAssignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	managedEBooks: {
@@ -6176,6 +7092,50 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "singleValueLegacyExtendedPropertys"
 		},
+		forward: {
+			argNames: ["ToRecipients", "Message", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		copy: {
+			argNames: ["DestinationId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.message"
+		},
+		move: {
+			argNames: ["DestinationId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.message"
+		},
+		createForward: {
+			argNames: ["ToRecipients", "Message", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.message"
+		},
+		createReply: {
+			argNames: ["Message", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.message"
+		},
+		createReplyAll: {
+			argNames: ["Message", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.message"
+		},
+		reply: {
+			argNames: ["Message", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		replyAll: {
+			argNames: ["Message", "Comment"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		send: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	messages: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6249,6 +7209,11 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "mobileAppCategorys"
 		},
+		assign: {
+			argNames: ["mobileAppAssignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	mobileApps: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6295,7 +7260,15 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		commit: {
+			argNames: ["fileEncryptionInfo"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		renewUpload: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	mobileAppContentFiles: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6434,6 +7407,11 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "onenoteSections"
 		},
+		copyNotebook: {
+			argNames: ["groupId", "renameAs", "notebookFolder", "siteCollectionId", "siteId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.onenoteOperation"
+		},
 	},
 	notebooks: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6446,6 +7424,10 @@ export const Mapper: IMapper = {
 		localizedNotificationMessages: {
 			requestType: RequestType.Get,
 			returnType: "localizedNotificationMessages"
+		},
+		sendTestMessage: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	notificationMessageTemplates: {
@@ -6650,6 +7632,20 @@ export const Mapper: IMapper = {
 		parentSection: {
 			returnType: "onenoteSection"
 		},
+		copyToSection: {
+			argNames: ["id", "groupId", "siteCollectionId", "siteId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.onenoteOperation"
+		},
+		onenotePatchContent: {
+			argNames: ["commands"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		preview: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.onenotePagePreview"
+		},
 	},
 	onenotePages: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6679,6 +7675,16 @@ export const Mapper: IMapper = {
 		parentSectionGroup: {
 			returnType: "sectionGroup"
 		},
+		copyToNotebook: {
+			argNames: ["id", "groupId", "renameAs", "siteCollectionId", "siteId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.onenoteOperation"
+		},
+		copyToSectionGroup: {
+			argNames: ["id", "groupId", "renameAs", "siteCollectionId", "siteId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.onenoteOperation"
+		},
 	},
 	onenoteSections: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6695,6 +7701,20 @@ export const Mapper: IMapper = {
 		transcripts: {
 			requestType: RequestType.Get,
 			returnType: "callTranscripts"
+		},
+		sendVirtualAppointmentReminderSms: {
+			argNames: ["remindBeforeTimeInMinutesType", "attendees"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		sendVirtualAppointmentSms: {
+			argNames: ["messageType", "attendees"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		getVirtualAppointmentJoinWebUrl: {
+			requestType: RequestType.Get,
+			returnType: "string"
 		},
 	},
 	onlineMeetings: {
@@ -6764,6 +7784,10 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "directoryObjects"
 		},
+		retryServiceProvisioning: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	organization: {
 		properties: [
@@ -6780,6 +7804,10 @@ export const Mapper: IMapper = {
 		extensions: {
 			requestType: RequestType.Get,
 			returnType: "extensions"
+		},
+		setMobileDeviceManagementAuthority: {
+			requestType: RequestType.Post,
+			returnType: "number"
 		},
 	},
 	organizationalBranding: {
@@ -6848,7 +7876,21 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		mute: {
+			argNames: ["clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.muteParticipantOperation"
+		},
+		startHoldMusic: {
+			argNames: ["customPrompt", "clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.startHoldMusicOperation"
+		},
+		stopHoldMusic: {
+			argNames: ["clientContext"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.stopHoldMusicOperation"
+		},
 	},
 	participants: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6943,6 +7985,11 @@ export const Mapper: IMapper = {
 		update: {
 			argNames: ["values"],
 		},
+		grant: {
+			argNames: ["roles", "recipients"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.permission[]"
+		},
 	},
 	permissions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -6989,7 +8036,14 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		disableSmsSignIn: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		enableSmsSignIn: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	phoneAuthenticationMethods: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7272,6 +8326,16 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "singleValueLegacyExtendedPropertys"
 		},
+		forward: {
+			argNames: ["Comment", "ToRecipients"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		reply: {
+			argNames: ["Post"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	posts: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7281,7 +8345,30 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		clearPresence: {
+			argNames: ["sessionId"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		clearUserPreferredPresence: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		setPresence: {
+			argNames: ["sessionId", "availability", "activity", "expirationDuration"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		setStatusMessage: {
+			argNames: ["statusMessage"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		setUserPreferredPresence: {
+			argNames: ["availability", "activity", "expirationDuration"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	presences: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7331,7 +8418,11 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		createUploadSession: {
+			argNames: ["properties"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.uploadSession"
+		},
 	},
 	printDocuments: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7348,6 +8439,24 @@ export const Mapper: IMapper = {
 		tasks: {
 			requestType: RequestType.Get,
 			returnType: "printTasks"
+		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		start: {
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.printJobStatus"
+		},
+		abort: {
+			argNames: ["reason"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		redirect: {
+			argNames: ["destinationPrinterId", "configuration"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.printJob"
 		},
 	},
 	printJobs: {
@@ -7469,6 +8578,10 @@ export const Mapper: IMapper = {
 		taskTriggers: {
 			requestType: RequestType.Get,
 			returnType: "printTaskTriggers"
+		},
+		restoreFactoryDefaults: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	printers: {
@@ -7610,6 +8723,10 @@ export const Mapper: IMapper = {
 		targetSchedule: {
 			returnType: "privilegedAccessGroupEligibilitySchedule"
 		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	privilegedAccessGroupAssignmentScheduleRequests: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7657,6 +8774,10 @@ export const Mapper: IMapper = {
 		},
 		targetSchedule: {
 			returnType: "privilegedAccessGroupEligibilitySchedule"
+		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	privilegedAccessGroupEligibilityScheduleRequests: {
@@ -7724,7 +8845,14 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		activate: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.protectionPolicyBase"
+		},
+		deactivate: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.protectionPolicyBase"
+		},
 	},
 	protectionPolicyBases: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7734,7 +8862,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		run: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.protectionRuleBase"
+		},
 	},
 	protectionUnitBase: {
 		properties: [
@@ -7846,7 +8977,14 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		beginOnboarding: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		disconnect: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	remoteAssistancePartners: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -7890,6 +9028,291 @@ export const Mapper: IMapper = {
 		},
 		security: {
 			returnType: "securityReportsRoot"
+		},
+		deviceConfigurationDeviceActivity: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		deviceConfigurationUserActivity: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		managedDeviceEnrollmentFailureDetails: {
+			argNames: ["skip", "top", "filter", "skipToken"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		managedDeviceEnrollmentTopFailures: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365ActivationCounts: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365ActivationsUserCounts: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365ActivationsUserDetail: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365ActiveUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365ActiveUserDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365GroupsActivityCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365GroupsActivityDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365GroupsActivityFileCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365GroupsActivityGroupCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365GroupsActivityStorage: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOffice365ServicesUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOneDriveActivityFileCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOneDriveActivityUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOneDriveActivityUserDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOneDriveUsageAccountCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOneDriveUsageAccountDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOneDriveUsageFileCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getOneDriveUsageStorage: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointActivityFileCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointActivityPages: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointActivityUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointActivityUserDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointSiteUsageDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointSiteUsageFileCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointSiteUsagePages: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointSiteUsageSiteCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSharePointSiteUsageStorage: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessActivityCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessActivityUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessActivityUserDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessDeviceUsageDistributionUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessDeviceUsageUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessDeviceUsageUserDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessOrganizerActivityCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessOrganizerActivityMinuteCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessOrganizerActivityUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessParticipantActivityCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessParticipantActivityMinuteCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessParticipantActivityUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessPeerToPeerActivityCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessPeerToPeerActivityMinuteCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getSkypeForBusinessPeerToPeerActivityUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerActivityCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerActivityUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerActivityUserDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerDeviceUsageDistributionUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerDeviceUsageUserCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerDeviceUsageUserDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerGroupsActivityCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerGroupsActivityDetail: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getYammerGroupsActivityGroupCounts: {
+			argNames: ["period"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.report"
+		},
+		getGroupArchivedPrintJobs: {
+			argNames: ["groupId", "startDateTime", "endDateTime"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.archivedPrintJob[]"
+		},
+		getPrinterArchivedPrintJobs: {
+			argNames: ["printerId", "startDateTime", "endDateTime"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.archivedPrintJob[]"
+		},
+		getUserArchivedPrintJobs: {
+			argNames: ["userId", "startDateTime", "endDateTime"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.archivedPrintJob[]"
 		},
 	},
 	request: {
@@ -7952,7 +9375,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		activate: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.restoreSessionBase"
+		},
 	},
 	restoreSessionBases: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -8191,13 +9617,27 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "timeOffs"
 		},
+		share: {
+			argNames: ["notifyTeam", "startDateTime", "endDateTime"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	scheduleChangeRequest: {
 		properties: [
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		decline: {
+			argNames: ["message"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		approve: {
+			argNames: ["message"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	schedulingGroup: {
 		properties: [
@@ -8263,6 +9703,11 @@ export const Mapper: IMapper = {
 		qnas: {
 			requestType: RequestType.Get,
 			returnType: "qnas"
+		},
+		query: {
+			argNames: ["requests"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.searchResponse[]"
 		},
 	},
 	sectionGroup: {
@@ -8358,13 +9803,29 @@ export const Mapper: IMapper = {
 		threatIntelligence: {
 			returnType: "threatIntelligence"
 		},
+		runHuntingQuery: {
+			argNames: ["query", "timespan"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.huntingQueryResults"
+		},
 	},
 	securityReportsRoot: {
 		properties: [
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		getAttackSimulationRepeatOffenders: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.attackSimulationRepeatOffender[]"
+		},
+		getAttackSimulationSimulationUserCoverage: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.attackSimulationSimulationUserCoverage[]"
+		},
+		getAttackSimulationTrainingUserCoverage: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.attackSimulationTrainingUserCoverage[]"
+		},
 	},
 	segment: {
 		properties: [
@@ -8430,7 +9891,15 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		activate: {
+			argNames: ["effectiveDateTime"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.serviceApp"
+		},
+		deactivate: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.serviceApp"
+		},
 	},
 	serviceApps: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -8453,7 +9922,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		incidentReport: {
+			requestType: RequestType.Get,
+			returnType: "any"
+		},
 	},
 	serviceHealthIssues: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -8532,6 +10004,31 @@ export const Mapper: IMapper = {
 		},
 		synchronization: {
 			returnType: "synchronization"
+		},
+		addKey: {
+			argNames: ["keyCredential", "passwordCredential", "proof"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.keyCredential"
+		},
+		addPassword: {
+			argNames: ["passwordCredential"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.passwordCredential"
+		},
+		removeKey: {
+			argNames: ["keyId", "proof"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		removePassword: {
+			argNames: ["keyId"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		addTokenSigningCertificate: {
+			argNames: ["displayName", "endDateTime"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.selfSignedCertificate"
 		},
 	},
 	servicePrincipalRiskDetection: {
@@ -8856,6 +10353,21 @@ export const Mapper: IMapper = {
 		onenote: {
 			returnType: "onenote"
 		},
+		getActivitiesByInterval: {
+			argNames: ["startDateTime", "endDateTime", "interval"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.itemActivityStat[]"
+		},
+		getApplicableContentTypesForList: {
+			argNames: ["listId"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.contentType[]"
+		},
+		getByPath: {
+			argNames: ["path"],
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.site"
+		},
 	},
 	sitePage: {
 		properties: [
@@ -8868,6 +10380,15 @@ export const Mapper: IMapper = {
 		webParts: {
 			requestType: RequestType.Get,
 			returnType: "webParts"
+		},
+		publish: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		getWebPartsByPosition: {
+			argNames: ["webPartIndex", "horizontalSectionId", "isInVerticalSection", "columnId"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.webPart[]"
 		},
 	},
 	siteProtectionRule: {
@@ -8907,15 +10428,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		site: {
 			returnType: "site"
-		},
-	},
-	sites: {
-		properties: [
-
-		],
-		query: { argNames: ["oData"], requestType: RequestType.OData },
-		add: {
-			argNames: ["values"],
 		},
 	},
 	skypeForBusinessUserConversationMember: {
@@ -9125,6 +10637,14 @@ export const Mapper: IMapper = {
 		team: {
 			returnType: "team"
 		},
+		getFinalAttachment: {
+			requestType: RequestType.Get,
+			returnType: "any"
+		},
+		getFinalReport: {
+			requestType: RequestType.Get,
+			returnType: "any"
+		},
 	},
 	subjectRightsRequests: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -9148,7 +10668,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		reauthorize: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	subscriptions: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -9176,6 +10699,11 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "synchronizationTemplates"
 		},
+		acquireAccessToken: {
+			argNames: ["credentials"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	synchronizationJob: {
 		properties: [
@@ -9187,6 +10715,29 @@ export const Mapper: IMapper = {
 		},
 		schema: {
 			returnType: "synchronizationSchema"
+		},
+		pause: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		provisionOnDemand: {
+			argNames: ["parameters"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.stringKeyStringValuePair"
+		},
+		restart: {
+			argNames: ["criteria"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		start: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		validateCredentials: {
+			argNames: ["applicationIdentifier", "templateId", "useSavedCredentials", "credentials"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	synchronizationJobs: {
@@ -9200,6 +10751,19 @@ export const Mapper: IMapper = {
 		directories: {
 			requestType: RequestType.Get,
 			returnType: "directoryDefinitions"
+		},
+		parseExpression: {
+			argNames: ["expression", "testInputObject", "targetAttributeDefinition"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.parseExpressionResponse"
+		},
+		filterOperators: {
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.filterOperatorSchema[]"
+		},
+		functions: {
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.attributeMappingFunctionSchema[]"
 		},
 	},
 	synchronizationTemplate: {
@@ -9247,6 +10811,16 @@ export const Mapper: IMapper = {
 		deploymentSummary: {
 			returnType: "managedAppPolicyDeploymentSummary"
 		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		targetApps: {
+			argNames: ["apps", "appGroupType"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	targetedManagedAppConfigurations: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -9269,6 +10843,16 @@ export const Mapper: IMapper = {
 		assignments: {
 			requestType: RequestType.Get,
 			returnType: "targetedManagedAppPolicyAssignments"
+		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		targetApps: {
+			argNames: ["apps", "appGroupType"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	task: {
@@ -9375,6 +10959,29 @@ export const Mapper: IMapper = {
 		schedule: {
 			returnType: "schedule"
 		},
+		archive: {
+			argNames: ["shouldSetSpoSiteReadOnlyForMembers"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unarchive: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		completeMigration: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		clone: {
+			argNames: ["displayName", "description", "mailNickname", "classification", "visibility", "partsToClone"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		sendActivityNotification: {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipient"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	teams: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -9423,6 +11030,11 @@ export const Mapper: IMapper = {
 		},
 		teamsAppDefinition: {
 			returnType: "teamsAppDefinition"
+		},
+		upgrade: {
+			argNames: ["consentedPermissionSet"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	teamsAppInstallations: {
@@ -9483,6 +11095,11 @@ export const Mapper: IMapper = {
 		},
 		teamsAppSettings: {
 			returnType: "teamsAppSettings"
+		},
+		sendActivityNotificationToRecipients: {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipients"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	teamworkBot: {
@@ -9574,6 +11191,16 @@ export const Mapper: IMapper = {
 		delegatedAdminRelationships: {
 			requestType: RequestType.Get,
 			returnType: "delegatedAdminRelationships"
+		},
+		findTenantInformationByDomainName: {
+			argNames: ["domainName"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.tenantInformation"
+		},
+		findTenantInformationByTenantId: {
+			argNames: ["tenantId"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.tenantInformation"
 		},
 	},
 	term: {
@@ -10035,6 +11662,10 @@ export const Mapper: IMapper = {
 		targetSchedule: {
 			returnType: "unifiedRoleAssignmentSchedule"
 		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	unifiedRoleAssignmentScheduleRequests: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -10091,6 +11722,10 @@ export const Mapper: IMapper = {
 		},
 		targetSchedule: {
 			returnType: "unifiedRoleEligibilitySchedule"
+		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	unifiedRoleEligibilityScheduleRequests: {
@@ -10440,6 +12075,79 @@ export const Mapper: IMapper = {
 		},
 		employeeExperience: {
 			returnType: "employeeExperienceUser"
+		},
+		assignLicense: {
+			argNames: ["addLicenses", "removeLicenses"],
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.user"
+		},
+		changePassword: {
+			argNames: ["currentPassword", "newPassword"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		reprocessLicenseAssignment: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.user"
+		},
+		retryServiceProvisioning: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		revokeSignInSessions: {
+			requestType: RequestType.Post,
+			returnType: "boolean"
+		},
+		findMeetingTimes: {
+			argNames: ["attendees", "locationConstraint", "timeConstraint", "meetingDuration", "maxCandidates", "isOrganizerOptional", "returnSuggestionReasons", "minimumAttendeePercentage"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.meetingTimeSuggestionsResult"
+		},
+		getMailTips: {
+			argNames: ["EmailAddresses", "MailTipsOptions"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.mailTips[]"
+		},
+		sendMail: {
+			argNames: ["Message", "SaveToSentItems"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		translateExchangeIds: {
+			argNames: ["InputIds", "TargetIdType", "SourceIdType"],
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.convertIdResult[]"
+		},
+		removeAllDevicesFromManagement: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		wipeManagedAppRegistrationsByDeviceTag: {
+			argNames: ["deviceTag"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		exportPersonalData: {
+			argNames: ["storageLocation"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		exportDeviceAndAppManagementData: {
+			argNames: ["skip", "top"],
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.deviceAndAppManagementData"
+		},
+		getManagedAppDiagnosticStatuses: {
+			requestType: RequestType.Get,
+			returnType: "ComplexTypes.managedAppDiagnosticStatus[]"
+		},
+		getManagedAppPolicies: {
+			requestType: RequestType.Get,
+			returnType: "EntityTypes.managedAppPolicy[]"
+		},
+		getManagedDevicesWithAppFailures: {
+			requestType: RequestType.Get,
+			returnType: "Array<string>[]"
 		},
 	},
 	users: {
@@ -10876,6 +12584,11 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "userScopeTeamsAppInstallations"
 		},
+		sendActivityNotification: {
+			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	verticalSection: {
 		properties: [
@@ -10934,6 +12647,14 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "virtualEventSessions"
 		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		publish: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	virtualEvents: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -10956,6 +12677,10 @@ export const Mapper: IMapper = {
 		sessions: {
 			requestType: RequestType.Get,
 			returnType: "virtualEventSessions"
+		},
+		cancel: {
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	virtualEventRegistrations: {
@@ -11071,7 +12796,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		syncLicenses: {
+			requestType: RequestType.Post,
+			returnType: "EntityTypes.vppToken"
+		},
 	},
 	vppTokens: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -11109,7 +12837,10 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		getPositionOfWebPart: {
+			requestType: RequestType.Post,
+			returnType: "ComplexTypes.webPartPosition"
+		},
 	},
 	webParts: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -11253,7 +12984,20 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		assignUserToDevice: {
+			argNames: ["userPrincipalName", "addressableUserName"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		unassignUserFromDevice: {
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
+		updateDeviceProperties: {
+			argNames: ["userPrincipalName", "addressableUserName", "groupTag", "displayName"],
+			requestType: RequestType.Post,
+			returnType: "void"
+		},
 	},
 	windowsAutopilotDeviceIdentitys: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
@@ -11303,6 +13047,11 @@ export const Mapper: IMapper = {
 		protectedAppLockerFiles: {
 			requestType: RequestType.Get,
 			returnType: "windowsInformationProtectionAppLockerFiles"
+		},
+		assign: {
+			argNames: ["assignments"],
+			requestType: RequestType.Post,
+			returnType: "void"
 		},
 	},
 	windowsInformationProtectionAppLearningSummary: {
