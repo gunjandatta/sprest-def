@@ -69,7 +69,6 @@ export const Mapper: IMapper = {
 		},
 		reprocess: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	accessPackageAssignments: {
@@ -114,16 +113,13 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		reprocess: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		resume: {
 			argNames: ["source", "type", "data"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	accessPackageAssignmentRequests: {
@@ -337,28 +333,22 @@ export const Mapper: IMapper = {
 		},
 		acceptRecommendations: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		applyDecisions: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		batchRecordDecisions: {
 			argNames: ["decision", "justification", "principalId", "resourceId"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		resetDecisions: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		sendReminder: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		stop: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	accessReviewInstances: {
@@ -398,7 +388,6 @@ export const Mapper: IMapper = {
 		},
 		stop: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	accessReviewScheduleDefinitions: {
@@ -429,7 +418,6 @@ export const Mapper: IMapper = {
 		},
 		stop: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	accessReviewStages: {
@@ -857,11 +845,9 @@ export const Mapper: IMapper = {
 		setVerifiedPublisher: {
 			argNames: ["verifiedPublisherId"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unsetVerifiedPublisher: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		addKey: {
 			argNames: ["keyCredential", "passwordCredential", "proof"],
@@ -876,12 +862,10 @@ export const Mapper: IMapper = {
 		removeKey: {
 			argNames: ["keyId", "proof"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		removePassword: {
 			argNames: ["keyId"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	applicationTemplate: {
@@ -1808,7 +1792,6 @@ export const Mapper: IMapper = {
 		redirect: {
 			argNames: ["targets", "timeout", "callbackUri"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		addLargeGalleryView: {
 			argNames: ["clientContext"],
@@ -1818,7 +1801,6 @@ export const Mapper: IMapper = {
 		answer: {
 			argNames: ["callbackUri", "mediaConfig", "acceptedModalities", "participantCapacity", "callOptions"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		cancelMediaProcessing: {
 			argNames: ["clientContext"],
@@ -1828,11 +1810,9 @@ export const Mapper: IMapper = {
 		changeScreenSharingRole: {
 			argNames: ["role"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		keepAlive: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		mute: {
 			argNames: ["clientContext"],
@@ -1852,7 +1832,6 @@ export const Mapper: IMapper = {
 		reject: {
 			argNames: ["reason", "callbackUri"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		sendDtmfTones: {
 			argNames: ["tones", "delayBetweenTonesMs", "clientContext"],
@@ -1867,7 +1846,6 @@ export const Mapper: IMapper = {
 		transfer: {
 			argNames: ["transferTarget", "transferee"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unmute: {
 			argNames: ["clientContext"],
@@ -2011,15 +1989,12 @@ export const Mapper: IMapper = {
 		archive: {
 			argNames: ["shouldSetSpoSiteReadOnlyForMembers"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unarchive: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		completeMigration: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		provisionEmail: {
 			requestType: RequestType.Post,
@@ -2027,7 +2002,6 @@ export const Mapper: IMapper = {
 		},
 		removeEmail: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		doesUserHaveAccess: {
 			argNames: ["userId", "tenantId", "userPrincipalName"],
@@ -2073,27 +2047,22 @@ export const Mapper: IMapper = {
 		sendActivityNotification: {
 			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipient"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		hideForUser: {
 			argNames: ["user"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		markChatReadForUser: {
 			argNames: ["user"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		markChatUnreadForUser: {
 			argNames: ["user", "lastMessageReadDateTime"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unhideForUser: {
 			argNames: ["user"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	chats: {
@@ -2115,20 +2084,16 @@ export const Mapper: IMapper = {
 		setReaction: {
 			argNames: ["reactionType"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		softDelete: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		undoSoftDelete: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unsetReaction: {
 			argNames: ["reactionType"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	chatMessages: {
@@ -2232,25 +2197,20 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		endGracePeriod: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		reboot: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		rename: {
 			argNames: ["displayName"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		restore: {
 			argNames: ["cloudPcSnapshotId"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		troubleshoot: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	cloudPCs: {
@@ -2293,7 +2253,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		runHealthChecks: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	cloudPcOnPremisesConnections: {
@@ -2311,7 +2270,6 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["assignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	cloudPcProvisioningPolicys: {
@@ -2342,7 +2300,6 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["assignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	cloudPcUserSettings: {
@@ -2593,21 +2550,17 @@ export const Mapper: IMapper = {
 		},
 		publish: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unpublish: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		associateWithHubSites: {
 			argNames: ["hubSiteUrls", "propagateToExistingLists"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		copyToDefaultContentLocation: {
 			argNames: ["sourceFile", "destinationFileName"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		isPublished: {
 			requestType: RequestType.Get,
@@ -2659,7 +2612,6 @@ export const Mapper: IMapper = {
 		reply: {
 			argNames: ["Post"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	conversationThreads: {
@@ -2695,7 +2647,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		resetToSystemDefault: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	crossTenantAccessPolicyConfigurationPartner: {
@@ -2909,7 +2860,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		undoDelete: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	deletedChats: {
@@ -3074,7 +3024,6 @@ export const Mapper: IMapper = {
 		},
 		syncMicrosoftStoreForBusinessApps: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	deviceCategory: {
@@ -3153,7 +3102,6 @@ export const Mapper: IMapper = {
 		scheduleActionsForRules: {
 			argNames: ["deviceComplianceScheduledActionForRules"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	deviceCompliancePolicys: {
@@ -3353,12 +3301,10 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["enrollmentConfigurationAssignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		setPriority: {
 			argNames: ["priority"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	deviceEnrollmentConfigurations: {
@@ -3674,7 +3620,6 @@ export const Mapper: IMapper = {
 		sync: {
 			argNames: ["syncType"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	deviceManagementExchangeConnectors: {
@@ -3697,7 +3642,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		terminate: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	deviceManagementPartners: {
@@ -3962,7 +3906,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		restore: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	documentSetVersions: {
@@ -3995,7 +3938,6 @@ export const Mapper: IMapper = {
 		forceDelete: {
 			argNames: ["disableUserAccounts"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		promote: {
 			requestType: RequestType.Post,
@@ -4150,21 +4092,17 @@ export const Mapper: IMapper = {
 		},
 		permanentDelete: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		assignSensitivityLabel: {
 			argNames: ["sensitivityLabelId", "assignmentMethod", "justificationText"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		checkin: {
 			argNames: ["checkInAs", "comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		checkout: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		createLink: {
 			argNames: ["type", "scope", "expirationDateTime", "password", "message", "recipients", "retainInheritedPermissions", "sendNotification"],
@@ -4187,12 +4125,10 @@ export const Mapper: IMapper = {
 		},
 		unfollow: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		validatePermission: {
 			argNames: ["challengeToken", "password"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		delta: {
 			argNames: ["token"],
@@ -4220,7 +4156,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		restoreVersion: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	driveItemVersions: {
@@ -5058,36 +4993,29 @@ export const Mapper: IMapper = {
 		cancel: {
 			argNames: ["Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		accept: {
 			argNames: ["SendResponse", "Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		decline: {
 			argNames: ["ProposedNewTime", "SendResponse", "Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		dismissReminder: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		forward: {
 			argNames: ["ToRecipients", "Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		snoozeReminder: {
 			argNames: ["NewReminderTime"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		tentativelyAccept: {
 			argNames: ["ProposedNewTime", "SendResponse", "Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	events: {
@@ -5400,7 +5328,6 @@ export const Mapper: IMapper = {
 		},
 		permanentDelete: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	fileStorageContainers: {
@@ -5449,7 +5376,6 @@ export const Mapper: IMapper = {
 		},
 		retryServiceProvisioning: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		checkGrantedPermissionsForApp: {
 			requestType: RequestType.Post,
@@ -5458,31 +5384,24 @@ export const Mapper: IMapper = {
 		validateProperties: {
 			argNames: ["displayName", "mailNickname", "onBehalfOfUserId"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		addFavorite: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		removeFavorite: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		resetUnseenCount: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		subscribeByMail: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unsubscribeByMail: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		renew: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	groups: {
@@ -6449,7 +6368,6 @@ export const Mapper: IMapper = {
 		},
 		restoreVersion: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	listItemVersions: {
@@ -6697,7 +6615,6 @@ export const Mapper: IMapper = {
 		targetApps: {
 			argNames: ["apps"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	managedAppPolicys: {
@@ -6721,7 +6638,6 @@ export const Mapper: IMapper = {
 		targetApps: {
 			argNames: ["apps"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	managedAppRegistration: {
@@ -6791,80 +6707,62 @@ export const Mapper: IMapper = {
 		},
 		bypassActivationLock: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		cleanWindowsDevice: {
 			argNames: ["keepUserData"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		deleteUserFromSharedAppleDevice: {
 			argNames: ["userPrincipalName"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		disableLostMode: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		locateDevice: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		logoutSharedAppleDeviceActiveUser: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		rebootNow: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		recoverPasscode: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		remoteLock: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		requestRemoteAssistance: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		resetPasscode: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		retire: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		shutDown: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		syncDevice: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		updateWindowsDeviceAccount: {
 			argNames: ["updateWindowsDeviceAccountActionParameter"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		windowsDefenderScan: {
 			argNames: ["quickScan"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		windowsDefenderUpdateSignatures: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		wipe: {
 			argNames: ["keepEnrollmentData", "keepUserData", "macOsUnlockCode", "persistEsimDataPlan"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	managedDevices: {
@@ -6896,7 +6794,6 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["assignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	managedDeviceMobileAppConfigurations: {
@@ -6976,7 +6873,6 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["managedEBookAssignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	managedEBooks: {
@@ -7095,7 +6991,6 @@ export const Mapper: IMapper = {
 		forward: {
 			argNames: ["ToRecipients", "Message", "Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		copy: {
 			argNames: ["DestinationId"],
@@ -7125,16 +7020,13 @@ export const Mapper: IMapper = {
 		reply: {
 			argNames: ["Message", "Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		replyAll: {
 			argNames: ["Message", "Comment"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		send: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	messages: {
@@ -7212,7 +7104,6 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["mobileAppAssignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	mobileApps: {
@@ -7263,11 +7154,9 @@ export const Mapper: IMapper = {
 		commit: {
 			argNames: ["fileEncryptionInfo"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		renewUpload: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	mobileAppContentFiles: {
@@ -7427,7 +7316,6 @@ export const Mapper: IMapper = {
 		},
 		sendTestMessage: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	notificationMessageTemplates: {
@@ -7640,7 +7528,6 @@ export const Mapper: IMapper = {
 		onenotePatchContent: {
 			argNames: ["commands"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		preview: {
 			requestType: RequestType.Get,
@@ -7705,12 +7592,10 @@ export const Mapper: IMapper = {
 		sendVirtualAppointmentReminderSms: {
 			argNames: ["remindBeforeTimeInMinutesType", "attendees"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		sendVirtualAppointmentSms: {
 			argNames: ["messageType", "attendees"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		getVirtualAppointmentJoinWebUrl: {
 			requestType: RequestType.Get,
@@ -7786,7 +7671,6 @@ export const Mapper: IMapper = {
 		},
 		retryServiceProvisioning: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	organization: {
@@ -8038,11 +7922,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		disableSmsSignIn: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		enableSmsSignIn: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	phoneAuthenticationMethods: {
@@ -8329,12 +8211,10 @@ export const Mapper: IMapper = {
 		forward: {
 			argNames: ["Comment", "ToRecipients"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		reply: {
 			argNames: ["Post"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	posts: {
@@ -8348,26 +8228,21 @@ export const Mapper: IMapper = {
 		clearPresence: {
 			argNames: ["sessionId"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		clearUserPreferredPresence: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		setPresence: {
 			argNames: ["sessionId", "availability", "activity", "expirationDuration"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		setStatusMessage: {
 			argNames: ["statusMessage"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		setUserPreferredPresence: {
 			argNames: ["availability", "activity", "expirationDuration"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	presences: {
@@ -8442,7 +8317,6 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		start: {
 			requestType: RequestType.Post,
@@ -8451,7 +8325,6 @@ export const Mapper: IMapper = {
 		abort: {
 			argNames: ["reason"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		redirect: {
 			argNames: ["destinationPrinterId", "configuration"],
@@ -8581,7 +8454,6 @@ export const Mapper: IMapper = {
 		},
 		restoreFactoryDefaults: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	printers: {
@@ -8725,7 +8597,6 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	privilegedAccessGroupAssignmentScheduleRequests: {
@@ -8777,7 +8648,6 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	privilegedAccessGroupEligibilityScheduleRequests: {
@@ -8979,11 +8849,9 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		beginOnboarding: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		disconnect: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	remoteAssistancePartners: {
@@ -9620,7 +9488,6 @@ export const Mapper: IMapper = {
 		share: {
 			argNames: ["notifyTeam", "startDateTime", "endDateTime"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	scheduleChangeRequest: {
@@ -9631,12 +9498,10 @@ export const Mapper: IMapper = {
 		decline: {
 			argNames: ["message"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		approve: {
 			argNames: ["message"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	schedulingGroup: {
@@ -10018,12 +9883,10 @@ export const Mapper: IMapper = {
 		removeKey: {
 			argNames: ["keyId", "proof"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		removePassword: {
 			argNames: ["keyId"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		addTokenSigningCertificate: {
 			argNames: ["displayName", "endDateTime"],
@@ -10383,7 +10246,6 @@ export const Mapper: IMapper = {
 		},
 		publish: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		getWebPartsByPosition: {
 			argNames: ["webPartIndex", "horizontalSectionId", "isInVerticalSection", "columnId"],
@@ -10670,7 +10532,6 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		reauthorize: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	subscriptions: {
@@ -10702,7 +10563,6 @@ export const Mapper: IMapper = {
 		acquireAccessToken: {
 			argNames: ["credentials"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	synchronizationJob: {
@@ -10718,7 +10578,6 @@ export const Mapper: IMapper = {
 		},
 		pause: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		provisionOnDemand: {
 			argNames: ["parameters"],
@@ -10728,16 +10587,13 @@ export const Mapper: IMapper = {
 		restart: {
 			argNames: ["criteria"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		start: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		validateCredentials: {
 			argNames: ["applicationIdentifier", "templateId", "useSavedCredentials", "credentials"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	synchronizationJobs: {
@@ -10814,12 +10670,10 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["assignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		targetApps: {
 			argNames: ["apps", "appGroupType"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	targetedManagedAppConfigurations: {
@@ -10847,12 +10701,10 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["assignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		targetApps: {
 			argNames: ["apps", "appGroupType"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	task: {
@@ -10962,25 +10814,20 @@ export const Mapper: IMapper = {
 		archive: {
 			argNames: ["shouldSetSpoSiteReadOnlyForMembers"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unarchive: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		completeMigration: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		clone: {
 			argNames: ["displayName", "description", "mailNickname", "classification", "visibility", "partsToClone"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		sendActivityNotification: {
 			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipient"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	teams: {
@@ -11034,7 +10881,6 @@ export const Mapper: IMapper = {
 		upgrade: {
 			argNames: ["consentedPermissionSet"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	teamsAppInstallations: {
@@ -11099,7 +10945,6 @@ export const Mapper: IMapper = {
 		sendActivityNotificationToRecipients: {
 			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters", "recipients"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	teamworkBot: {
@@ -11664,7 +11509,6 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	unifiedRoleAssignmentScheduleRequests: {
@@ -11725,7 +11569,6 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	unifiedRoleEligibilityScheduleRequests: {
@@ -12084,7 +11927,6 @@ export const Mapper: IMapper = {
 		changePassword: {
 			argNames: ["currentPassword", "newPassword"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		reprocessLicenseAssignment: {
 			requestType: RequestType.Post,
@@ -12092,7 +11934,6 @@ export const Mapper: IMapper = {
 		},
 		retryServiceProvisioning: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		revokeSignInSessions: {
 			requestType: RequestType.Post,
@@ -12111,7 +11952,6 @@ export const Mapper: IMapper = {
 		sendMail: {
 			argNames: ["Message", "SaveToSentItems"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		translateExchangeIds: {
 			argNames: ["InputIds", "TargetIdType", "SourceIdType"],
@@ -12120,17 +11960,14 @@ export const Mapper: IMapper = {
 		},
 		removeAllDevicesFromManagement: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		wipeManagedAppRegistrationsByDeviceTag: {
 			argNames: ["deviceTag"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		exportPersonalData: {
 			argNames: ["storageLocation"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		exportDeviceAndAppManagementData: {
 			argNames: ["skip", "top"],
@@ -12587,7 +12424,6 @@ export const Mapper: IMapper = {
 		sendActivityNotification: {
 			argNames: ["topic", "activityType", "chainId", "previewText", "teamsAppId", "templateParameters"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	verticalSection: {
@@ -12649,11 +12485,9 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		publish: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	virtualEvents: {
@@ -12680,7 +12514,6 @@ export const Mapper: IMapper = {
 		},
 		cancel: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	virtualEventRegistrations: {
@@ -12987,16 +12820,13 @@ export const Mapper: IMapper = {
 		assignUserToDevice: {
 			argNames: ["userPrincipalName", "addressableUserName"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		unassignUserFromDevice: {
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 		updateDeviceProperties: {
 			argNames: ["userPrincipalName", "addressableUserName", "groupTag", "displayName"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	windowsAutopilotDeviceIdentitys: {
@@ -13051,7 +12881,6 @@ export const Mapper: IMapper = {
 		assign: {
 			argNames: ["assignments"],
 			requestType: RequestType.Post,
-			returnType: "void"
 		},
 	},
 	windowsInformationProtectionAppLearningSummary: {

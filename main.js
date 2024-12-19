@@ -875,7 +875,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
             debugger;
             for (let i = 0; i < entityActions.length; i++) {
                 let entityAction = entityActions[i];
-                let returnType = entityAction.returnType ? getGraphType(entityAction.returnType) : "void";
+                let returnType = entityAction.returnType ? getGraphType(entityAction.returnType) : null;
                 let prevMatch = i > 0 && entityActions[i - 1].name == entityAction.name ? true : false;
 
                 // Parse the arguments
@@ -901,7 +901,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 }
 
                 // Add the method
-                let strMethod = `\t${entityAction.name}(${params.join(", ")}): IBaseExecution<${returnType}>;`;
+                let strMethod = `\t${entityAction.name}(${params.join(", ")}): IBaseExecution<${returnType || "void"}>;`;
                 methods.push(strMethod);
                 odataResults.push(strMethod);
             }
@@ -912,7 +912,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
         if (entityFunctions) {
             for (let i = 0; i < entityFunctions.length; i++) {
                 let entityFunction = entityFunctions[i];
-                let returnType = getGraphType(entityFunction.returnType);
+                let returnType = entityFunction.returnType ? getGraphType(entityFunction.returnType) : null;
                 let prevMatch = i > 0 && entityFunctions[i - 1].name == entityFunction.name ? true : false;
 
                 // Parse the arguments
@@ -938,7 +938,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 }
 
                 // Add the method
-                let strMethod = `\t${entityFunction.name}(${params.join(", ")}): ${returnType};`;
+                let strMethod = `\t${entityFunction.name}(${params.join(", ")}): ${returnType || "void"};`;
                 methods.push(strMethod);
                 odataResults.push(strMethod);
             }
