@@ -890,7 +890,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 }
 
                 // Add the method to the mapper and definition
-                let strMapper = `\t\t${entityAction.name}: {\n${params.length > 0 ? "\t\t\targNames: [\"" + params.join('", "') + "\"],\n" : ""}\t\t\trequestType: RequestType.Post,\n${returnType ? "\t\t\treturnType: \"" + returnType + "\"\n" : ""}\t\t},`;
+                let strMapper = `\t\t${entityAction.name}: {\n${params.length > 0 ? "\t\t\targNames: [\"" + params.join('", "') + "\"],\n" : ""}\t\t\trequestType: RequestType.PostWithArgsInBody,\n${returnType ? "\t\t\treturnType: \"" + returnType + "\"\n" : ""}\t\t},`;
                 let strMapperDef = `\t\t${entityAction.name}: IMapperMethod${params.length > 0 ? " & {\n\t\t\targNames: [\"" + params.join('", "') + "\"]\n\t\t}" : ""};`;
                 if (prevMatch) {
                     mapper[mapper.length - 1] = strMapper;
