@@ -107,7 +107,7 @@ function createDirectories(path, namespace) {
             // See if the directory doesn't exists
             if (!fs.existsSync(path)) {
                 // Create the directory
-                fs.mkdir(path, function (err) { });
+                fs.mkdirSync(path, function (err) { });
             }
         });
     } else {
@@ -117,7 +117,7 @@ function createDirectories(path, namespace) {
         // See if the directory doesn't exist
         if (!fs.existsSync(path)) {
             // Create the directory
-            fs.mkdir(path, function (err) { });
+            fs.mkdirSync(path, function (err) { });
         }
     }
 
@@ -834,7 +834,6 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                     methodString += `IBaseCollection<${returnTypeName}${!isComplexType ? ", " + baseType + returnTypeName + "OData & " + returnTypeName + "Props" : ""}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`
                 }
             } else {
-                if (method.name == "setSensitivityLabel") { debugger; }
                 methodString += `${returnTypeName == "void" ? "IBaseExecution" : "IBaseQuery"}<${returnTypeName}>${methodsType}${method.returnType2 && getGraphType(method.returnType2, true) ? " & " + getGraphType(method.returnType2, true) : ""};`
             };
             methods.push(methodString);

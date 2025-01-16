@@ -2323,6 +2323,8 @@ export const Mapper: IMapper = {
 		sourceColumn: {
 			returnType: "columnDefinition"
 		},
+		delete: {
+		},
 		update: {
 			argNames: ["values"],
 		},
@@ -2544,6 +2546,8 @@ export const Mapper: IMapper = {
 		columns: {
 			requestType: RequestType.Get,
 			returnType: "columnDefinitions"
+		},
+		delete: {
 		},
 		update: {
 			argNames: ["values"],
@@ -4074,6 +4078,8 @@ export const Mapper: IMapper = {
 		versions: {
 			requestType: RequestType.Get,
 			returnType: "driveItemVersions"
+		},
+		delete: {
 		},
 		setSensitivityLabel: {
 			argNames: ["actionSource", "assignmentMethod", "id", "justificationText"],
@@ -6315,6 +6321,8 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "subscriptions"
 		},
+		delete: {
+		},
 		update: {
 			argNames: ["values"],
 		},
@@ -6343,6 +6351,8 @@ export const Mapper: IMapper = {
 		versions: {
 			requestType: RequestType.Get,
 			returnType: "listItemVersions"
+		},
+		delete: {
 		},
 		update: {
 			argNames: ["values"],
@@ -7863,6 +7873,8 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+		delete: {
+		},
 		update: {
 			argNames: ["values"],
 		},

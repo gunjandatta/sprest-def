@@ -3761,10 +3761,12 @@ export interface columnDefinitionProps extends  entityProps {
 }
 export interface columnDefinitionMethods extends entityMethods {
 	sourceColumn(): IBaseQuery<columnDefinition> & columnDefinitionMethods;
+	delete(): IBaseExecution<void>;
 	update(values: any): IBaseExecution<void>;
 }
 export interface columnDefinitionOData extends entityOData {
 	sourceColumn: columnDefinition;
+	delete: void;
 	update(values: any): IBaseExecution<void>;
 }
 export interface columnDefinitionCollection extends IBaseCollection<columnDefinition, columnDefinitionOData & columnDefinitionProps> {
@@ -4127,6 +4129,7 @@ export interface contentTypeMethods extends entityMethods {
 	columnPositions(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
 	columns(): columnDefinitionCollection;
 	columns(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
+	delete(): IBaseExecution<void>;
 	update(values: any): IBaseExecution<void>;
 	publish(): IBaseExecution<void>;
 	unpublish(): IBaseExecution<void>;
@@ -4140,6 +4143,7 @@ export interface contentTypeOData extends entityOData {
 	columnLinks: IBaseResults<columnLink>;
 	columnPositions: IBaseResults<columnDefinition>;
 	columns: IBaseResults<columnDefinition>;
+	delete: void;
 	update(values: any): IBaseExecution<void>;
 	publish(): IBaseExecution<void>;
 	unpublish(): IBaseExecution<void>;
@@ -6265,6 +6269,7 @@ export interface driveItemMethods extends baseItemMethods {
 	thumbnails(id: string | number): IBaseQuery<thumbnailSet> & thumbnailSetMethods;
 	versions(): driveItemVersionCollection;
 	versions(id: string | number): IBaseQuery<driveItemVersion> & driveItemVersionMethods;
+	delete(): IBaseExecution<void>;
 	setSensitivityLabel(actionSource: string, assignmentMethod: string, id: string, justificationText: string): IBaseExecution<void>;
 	restore(parentReference, name): IBaseExecution<driveItem>;
 	copy(name, parentReference): IBaseExecution<driveItem>;
@@ -6295,6 +6300,7 @@ export interface driveItemOData extends baseItemOData {
 	subscriptions: IBaseResults<subscription>;
 	thumbnails: IBaseResults<thumbnailSet>;
 	versions: IBaseResults<driveItemVersion>;
+	delete: void;
 	setSensitivityLabel(actionSource: string, assignmentMethod: string, id: string, justificationText: string): IBaseExecution<void>;
 	restore(parentReference, name): IBaseExecution<driveItem>;
 	copy(name, parentReference): IBaseExecution<driveItem>;
@@ -9865,6 +9871,7 @@ export interface listMethods extends baseItemMethods {
 	operations(id: string | number): IBaseQuery<richLongRunningOperation> & richLongRunningOperationMethods;
 	subscriptions(): subscriptionCollection;
 	subscriptions(id: string | number): IBaseQuery<subscription> & subscriptionMethods;
+	delete(): IBaseExecution<void>;
 	update(values: any): IBaseExecution<void>;
 }
 export interface listOData extends baseItemOData {
@@ -9874,6 +9881,7 @@ export interface listOData extends baseItemOData {
 	items: IBaseResults<listItem>;
 	operations: IBaseResults<richLongRunningOperation>;
 	subscriptions: IBaseResults<subscription>;
+	delete: void;
 	update(values: any): IBaseExecution<void>;
 }
 export interface listCollection extends IBaseCollection<list, listOData & listProps> {
@@ -9895,6 +9903,7 @@ export interface listItemMethods extends baseItemMethods {
 	fields(): IBaseQuery<fieldValueSet> & fieldValueSetMethods;
 	versions(): listItemVersionCollection;
 	versions(id: string | number): IBaseQuery<listItemVersion> & listItemVersionMethods;
+	delete(): IBaseExecution<void>;
 	update(values: any): IBaseExecution<void>;
 	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
 	getActivitiesByInterval(): itemActivityStat[];
@@ -9906,6 +9915,7 @@ export interface listItemOData extends baseItemOData {
 	driveItem: driveItem;
 	fields: fieldValueSet;
 	versions: IBaseResults<listItemVersion>;
+	delete: void;
 	update(values: any): IBaseExecution<void>;
 	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
 	getActivitiesByInterval(): itemActivityStat[];
@@ -12454,10 +12464,12 @@ export interface permissionProps extends  entityProps {
 	shareId: string;
 }
 export interface permissionMethods extends entityMethods {
+	delete(): IBaseExecution<void>;
 	update(values: any): IBaseExecution<void>;
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionOData extends entityOData {
+	delete: void;
 	update(values: any): IBaseExecution<void>;
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }

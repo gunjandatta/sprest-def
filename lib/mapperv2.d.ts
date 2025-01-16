@@ -1459,6 +1459,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 		sourceColumn: IMapperMethod;
+		delete: IMapperMethod;
 		update: IMapperMethod & {
 			argNames: ["values"]
 		};
@@ -1601,6 +1602,7 @@ export interface IMapper {
 		columnLinks: IMapperMethod;
 		columnPositions: IMapperMethod;
 		columns: IMapperMethod;
+		delete: IMapperMethod;
 		update: IMapperMethod & {
 			argNames: ["values"]
 		};
@@ -2489,6 +2491,7 @@ export interface IMapper {
 		subscriptions: IMapperMethod;
 		thumbnails: IMapperMethod;
 		versions: IMapperMethod;
+		delete: IMapperMethod;
 		setSensitivityLabel: IMapperMethod & {
 			argNames: ["actionSource", "assignmentMethod", "id", "justificationText"]
 		};
@@ -3828,6 +3831,7 @@ export interface IMapper {
 		items: IMapperMethod;
 		operations: IMapperMethod;
 		subscriptions: IMapperMethod;
+		delete: IMapperMethod;
 		update: IMapperMethod & {
 			argNames: ["values"]
 		};
@@ -3844,6 +3848,7 @@ export interface IMapper {
 		driveItem: IMapperMethod;
 		fields: IMapperMethod;
 		versions: IMapperMethod;
+		delete: IMapperMethod;
 		update: IMapperMethod & {
 			argNames: ["values"]
 		};
@@ -4856,6 +4861,7 @@ export interface IMapper {
 	permission: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
+		delete: IMapperMethod;
 		update: IMapperMethod & {
 			argNames: ["values"]
 		};

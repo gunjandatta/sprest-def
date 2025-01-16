@@ -4,17 +4,26 @@
 module.exports = {
     columnDefinition: [
         {
+            name: "delete"
+        },
+        {
             name: "update",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
     contentType: [
         {
+            name: "delete"
+        },
+        {
             name: "update",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
     driveItem: [
+        {
+            name: "delete"
+        },
         {
             name: "setSensitivityLabel",
             argNames: [
@@ -27,17 +36,26 @@ module.exports = {
     ],
     list: [
         {
+            name: "delete"
+        },
+        {
             name: "update",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
     permission: [
         {
+            name: "delete"
+        },
+        {
             name: "update",
             argNames: [{ name: "values", type: "any" }]
         }
     ],
     listItem: [
+        {
+            name: "delete"
+        },
         {
             name: "update",
             argNames: [{ name: "values", type: "any" }]
