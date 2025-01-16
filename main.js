@@ -654,8 +654,8 @@ function processGraph(schemas) {
                 return null;
             }
 
-            // See if this is a collection
-            if (isCollection) {
+            // See if this is a collection, and ensure it's an array
+            if (isCollection && returnType.indexOf("Array") < 0) {
                 returnType += "[]";
             }
         }
@@ -797,8 +797,8 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 }
                 collectionInterface += `\n${collectionMethod.name}(${collectionMethodArgs.join(', ')}):IBaseExecution<${collectionMethod.returnType || "void"}>`;
             }
-            if(!containsAdd) {
-                collectionInterface+= `\nadd(values?: any): IBaseExecution<${name}>;`
+            if (!containsAdd) {
+                collectionInterface += `\nadd(values?: any): IBaseExecution<${name}>;`
             }
             collectionInterface += `\n}`;
         }

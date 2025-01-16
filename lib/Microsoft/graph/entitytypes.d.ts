@@ -940,7 +940,7 @@ export interface alertProps extends  entityProps {
 	incidentWebUrl: string;
 	lastActivityDateTime: any;
 	lastUpdateDateTime: any;
-	mitreTechniques: Array<string>[];
+	mitreTechniques: Array<string>;
 	productName: string;
 	providerAlertId: string;
 	recommendedActions: string;
@@ -948,7 +948,7 @@ export interface alertProps extends  entityProps {
 	serviceSource: EnumTypes.serviceSource;
 	severity: EnumTypes.alertSeverity;
 	status: EnumTypes.alertStatus;
-	systemTags: Array<string>[];
+	systemTags: Array<string>;
 	tenantId: string;
 	threatDisplayName: string;
 	threatFamilyName: string;
@@ -1313,7 +1313,7 @@ add(values?: any): IBaseExecution<appConsentRequest>;
 export interface appLogCollectionRequest extends appLogCollectionRequestProps, appLogCollectionRequestMethods { }
 export interface appLogCollectionRequestProps extends  entityProps {
 	completedDateTime: any;
-	customLogFolders: Array<string>[];
+	customLogFolders: Array<string>;
 	errorMessage: string;
 	status: EnumTypes.appLogUploadState;
 }
@@ -1446,7 +1446,7 @@ export interface applicationProps extends  directoryObjectProps {
 	disabledByMicrosoftStatus: string;
 	displayName: string;
 	groupMembershipClaims: string;
-	identifierUris: Array<string>[];
+	identifierUris: Array<string>;
 	info: ComplexTypes.informationalUrl;
 	isDeviceOnlyAuthSupported: boolean;
 	isFallbackPublicClient: boolean;
@@ -1467,7 +1467,7 @@ export interface applicationProps extends  directoryObjectProps {
 	servicePrincipalLockConfiguration: ComplexTypes.servicePrincipalLockConfiguration;
 	signInAudience: string;
 	spa: ComplexTypes.spaApplication;
-	tags: Array<string>[];
+	tags: Array<string>;
 	tokenEncryptionKeyId: any;
 	uniqueName: string;
 	verifiedPublisher: ComplexTypes.verifiedPublisher;
@@ -1519,14 +1519,14 @@ export interface applicationOData extends directoryObjectOData {
 **********************************************/
 export interface applicationTemplate extends applicationTemplateProps, applicationTemplateMethods { }
 export interface applicationTemplateProps extends  entityProps {
-	categories: Array<string>[];
+	categories: Array<string>;
 	description: string;
 	displayName: string;
 	homePageUrl: string;
 	logoUrl: string;
 	publisher: string;
-	supportedProvisioningTypes: Array<string>[];
-	supportedSingleSignOnModes: Array<string>[];
+	supportedProvisioningTypes: Array<string>;
+	supportedSingleSignOnModes: Array<string>;
 }
 export interface applicationTemplateMethods extends entityMethods {
 	instantiate(displayName, serviceManagementReference): IBaseExecution<ComplexTypes.applicationServicePrincipal>;
@@ -1584,7 +1584,7 @@ export interface articleProps extends  entityProps {
 	isFeatured: boolean;
 	lastUpdatedDateTime: any;
 	summary: ComplexTypes.formattedContent;
-	tags: Array<string>[];
+	tags: Array<string>;
 	title: string;
 }
 export interface articleMethods extends entityMethods {
@@ -1682,7 +1682,7 @@ export interface attachmentSession extends attachmentSessionProps, attachmentSes
 export interface attachmentSessionProps extends  entityProps {
 	content: any;
 	expirationDateTime: any;
-	nextExpectedRanges: Array<string>[];
+	nextExpectedRanges: Array<string>;
 }
 export interface attachmentSessionMethods extends entityMethods {
 
@@ -1801,9 +1801,9 @@ add(values?: any): IBaseExecution<attributeSet>;
 **********************************************/
 export interface audioRoutingGroup extends audioRoutingGroupProps, audioRoutingGroupMethods { }
 export interface audioRoutingGroupProps extends  entityProps {
-	receivers: Array<string>[];
+	receivers: Array<string>;
 	routingMode: EnumTypes.routingMode;
-	sources: Array<string>[];
+	sources: Array<string>;
 }
 export interface audioRoutingGroupMethods extends entityMethods {
 
@@ -2506,7 +2506,7 @@ export interface bookingAppointmentProps extends  entityProps {
 	serviceName: string;
 	serviceNotes: string;
 	smsNotificationsEnabled: boolean;
-	staffMemberIds: Array<string>[];
+	staffMemberIds: Array<string>;
 	startDateTime: ComplexTypes.dateTimeTimeZone;
 }
 export interface bookingAppointmentMethods extends entityMethods {
@@ -2586,7 +2586,7 @@ add(values?: any): IBaseExecution<bookingCurrency>;
 export interface bookingCustomQuestion extends bookingCustomQuestionProps, bookingCustomQuestionMethods { }
 export interface bookingCustomQuestionProps extends  entityProps {
 	answerInputType: EnumTypes.answerInputType;
-	answerOptions: Array<string>[];
+	answerOptions: Array<string>;
 	createdDateTime: any;
 	displayName: string;
 	lastUpdatedDateTime: any;
@@ -2661,7 +2661,7 @@ export interface bookingServiceProps extends  entityProps {
 	preBuffer: number;
 	schedulingPolicy: ComplexTypes.bookingSchedulingPolicy;
 	smsNotificationsEnabled: boolean;
-	staffMemberIds: Array<string>[];
+	staffMemberIds: Array<string>;
 	webUrl: string;
 }
 export interface bookingServiceMethods extends entityMethods {
@@ -2719,13 +2719,13 @@ export interface bookmark extends bookmarkProps, bookmarkMethods { }
 export interface bookmarkProps extends  searchAnswerProps {
 	availabilityEndDateTime: any;
 	availabilityStartDateTime: any;
-	categories: Array<string>[];
-	groupIds: Array<string>[];
+	categories: Array<string>;
+	groupIds: Array<string>;
 	isSuggested: boolean;
 	keywords: ComplexTypes.answerKeyword;
-	languageTags: Array<string>[];
+	languageTags: Array<string>;
 	platforms: EnumTypes.devicePlatformType[];
-	powerAppIds: Array<string>[];
+	powerAppIds: Array<string>;
 	state: EnumTypes.answerState;
 	targetedVariations: ComplexTypes.answerVariant[];
 }
@@ -4008,8 +4008,8 @@ export interface contactProps extends  outlookItemProps {
 	birthday: any;
 	businessAddress: ComplexTypes.physicalAddress;
 	businessHomePage: string;
-	businessPhones: Array<string>[];
-	children: Array<string>[];
+	businessPhones: Array<string>;
+	children: Array<string>;
 	companyName: string;
 	department: string;
 	displayName: string;
@@ -4018,8 +4018,8 @@ export interface contactProps extends  outlookItemProps {
 	generation: string;
 	givenName: string;
 	homeAddress: ComplexTypes.physicalAddress;
-	homePhones: Array<string>[];
-	imAddresses: Array<string>[];
+	homePhones: Array<string>;
+	imAddresses: Array<string>;
 	initials: string;
 	jobTitle: string;
 	manager: string;
@@ -4104,7 +4104,7 @@ add(values?: any): IBaseExecution<contentSharingSession>;
 **********************************************/
 export interface contentType extends contentTypeProps, contentTypeMethods { }
 export interface contentTypeProps extends  entityProps {
-	associatedHubsUrls: Array<string>[];
+	associatedHubsUrls: Array<string>;
 	description: string;
 	documentSet: ComplexTypes.documentSet;
 	documentTemplate: ComplexTypes.documentSetContent;
@@ -4179,7 +4179,7 @@ export interface conversationProps extends  entityProps {
 	lastDeliveredDateTime: any;
 	preview: string;
 	topic: string;
-	uniqueSenders: Array<string>[];
+	uniqueSenders: Array<string>;
 }
 export interface conversationMethods extends entityMethods {
 	threads(): conversationThreadCollection;
@@ -4197,7 +4197,7 @@ add(values?: any): IBaseExecution<conversation>;
 export interface conversationMember extends conversationMemberProps, conversationMemberMethods { }
 export interface conversationMemberProps extends  entityProps {
 	displayName: string;
-	roles: Array<string>[];
+	roles: Array<string>;
 	visibleHistoryStartDateTime: any;
 }
 export interface conversationMemberMethods extends entityMethods {
@@ -4221,7 +4221,7 @@ export interface conversationThreadProps extends  entityProps {
 	preview: string;
 	topic: string;
 	toRecipients: ComplexTypes.recipient[];
-	uniqueSenders: Array<string>[];
+	uniqueSenders: Array<string>;
 }
 export interface conversationThreadMethods extends entityMethods {
 	posts(): postCollection;
@@ -4240,7 +4240,7 @@ add(values?: any): IBaseExecution<conversationThread>;
 **********************************************/
 export interface countryNamedLocation extends countryNamedLocationProps, countryNamedLocationMethods { }
 export interface countryNamedLocationProps extends  namedLocationProps {
-	countriesAndRegions: Array<string>[];
+	countriesAndRegions: Array<string>;
 	countryLookupMethod: EnumTypes.countryLookupMethodType;
 	includeUnknownCountriesAndRegions: boolean;
 }
@@ -4255,7 +4255,7 @@ export interface countryNamedLocationOData extends namedLocationOData {
 **********************************************/
 export interface crossTenantAccessPolicy extends crossTenantAccessPolicyProps, crossTenantAccessPolicyMethods { }
 export interface crossTenantAccessPolicyProps extends  policyBaseProps {
-	allowedCloudEndpoints: Array<string>[];
+	allowedCloudEndpoints: Array<string>;
 }
 export interface crossTenantAccessPolicyMethods extends policyBaseMethods {
 	default(): IBaseQuery<crossTenantAccessPolicyConfigurationDefault> & crossTenantAccessPolicyConfigurationDefaultMethods;
@@ -4785,10 +4785,10 @@ export interface deviceProps extends  directoryObjectProps {
 	onPremisesSyncEnabled: boolean;
 	operatingSystem: string;
 	operatingSystemVersion: string;
-	physicalIds: Array<string>[];
+	physicalIds: Array<string>;
 	profileType: string;
 	registrationDateTime: any;
-	systemLabels: Array<string>[];
+	systemLabels: Array<string>;
 	trustType: string;
 }
 export interface deviceMethods extends directoryObjectMethods {
@@ -4815,7 +4815,7 @@ export interface deviceOData extends directoryObjectOData {
 **********************************************/
 export interface deviceAndAppManagementRoleAssignment extends deviceAndAppManagementRoleAssignmentProps, deviceAndAppManagementRoleAssignmentMethods { }
 export interface deviceAndAppManagementRoleAssignmentProps extends  roleAssignmentProps {
-	members: Array<string>[];
+	members: Array<string>;
 }
 export interface deviceAndAppManagementRoleAssignmentMethods extends roleAssignmentMethods {
 
@@ -4921,7 +4921,7 @@ export interface deviceComplianceActionItem extends deviceComplianceActionItemPr
 export interface deviceComplianceActionItemProps extends  entityProps {
 	actionType: EnumTypes.deviceComplianceActionType;
 	gracePeriodHours: number;
-	notificationMessageCCList: Array<string>[];
+	notificationMessageCCList: Array<string>;
 	notificationTemplateId: string;
 }
 export interface deviceComplianceActionItemMethods extends entityMethods {
@@ -5734,7 +5734,7 @@ export interface deviceManagementExportJobProps extends  entityProps {
 	localizationType: EnumTypes.deviceManagementExportJobLocalizationType;
 	reportName: string;
 	requestDateTime: any;
-	select: Array<string>[];
+	select: Array<string>;
 	snapshotId: string;
 	status: EnumTypes.deviceManagementReportStatus;
 	url: string;
@@ -5951,17 +5951,17 @@ export interface directoryObjectProps extends  entityProps {
 }
 export interface directoryObjectMethods extends entityMethods {
 	restore(autoReconcileProxyConflict): IBaseExecution<directoryObject>;
-	checkMemberGroups(groupIds): IBaseExecution<Array<string>[]>;
-	checkMemberObjects(ids): IBaseExecution<Array<string>[]>;
-	getMemberGroups(securityEnabledOnly): IBaseExecution<Array<string>[]>;
-	getMemberObjects(securityEnabledOnly): IBaseExecution<Array<string>[]>;
+	checkMemberGroups(groupIds): IBaseExecution<Array<string>>;
+	checkMemberObjects(ids): IBaseExecution<Array<string>>;
+	getMemberGroups(securityEnabledOnly): IBaseExecution<Array<string>>;
+	getMemberObjects(securityEnabledOnly): IBaseExecution<Array<string>>;
 }
 export interface directoryObjectOData extends entityOData {
 	restore(autoReconcileProxyConflict): IBaseExecution<directoryObject>;
-	checkMemberGroups(groupIds): IBaseExecution<Array<string>[]>;
-	checkMemberObjects(ids): IBaseExecution<Array<string>[]>;
-	getMemberGroups(securityEnabledOnly): IBaseExecution<Array<string>[]>;
-	getMemberObjects(securityEnabledOnly): IBaseExecution<Array<string>[]>;
+	checkMemberGroups(groupIds): IBaseExecution<Array<string>>;
+	checkMemberObjects(ids): IBaseExecution<Array<string>>;
+	getMemberGroups(securityEnabledOnly): IBaseExecution<Array<string>>;
+	getMemberObjects(securityEnabledOnly): IBaseExecution<Array<string>>;
 }
 export interface directoryObjectCollection extends IBaseCollection<directoryObject, directoryObjectOData & directoryObjectProps> {
 add(values?: any): IBaseExecution<directoryObject>;
@@ -6021,7 +6021,7 @@ export interface directoryRoleTemplateOData extends directoryObjectOData {
 export interface dispositionReviewStage extends dispositionReviewStageProps, dispositionReviewStageMethods { }
 export interface dispositionReviewStageProps   {
 	name: string;
-	reviewersEmailAddresses: Array<string>[];
+	reviewersEmailAddresses: Array<string>;
 	stageNumber: string;
 }
 export interface dispositionReviewStageMethods {
@@ -6067,7 +6067,7 @@ export interface domainProps extends  entityProps {
 	passwordNotificationWindowInDays: number;
 	passwordValidityPeriodInDays: number;
 	state: ComplexTypes.domainState;
-	supportedServices: Array<string>[];
+	supportedServices: Array<string>;
 }
 export interface domainMethods extends entityMethods {
 	domainNameReferences(): directoryObjectCollection;
@@ -7197,7 +7197,7 @@ export interface educationUserProps extends  entityProps {
 	accountEnabled: boolean;
 	assignedLicenses: ComplexTypes.assignedLicense[];
 	assignedPlans: ComplexTypes.assignedPlan[];
-	businessPhones: Array<string>[];
+	businessPhones: Array<string>;
 	createdBy: ComplexTypes.identitySet;
 	department: string;
 	displayName: string;
@@ -7346,7 +7346,7 @@ export interface endUserNotificationProps extends  entityProps {
 	notificationType: EnumTypes.endUserNotificationType;
 	source: EnumTypes.simulationContentSource;
 	status: EnumTypes.simulationContentStatus;
-	supportedLocales: Array<string>[];
+	supportedLocales: Array<string>;
 }
 export interface endUserNotificationMethods extends entityMethods {
 	details(): endUserNotificationDetailCollection;
@@ -7757,7 +7757,7 @@ export interface extensionPropertyProps extends  directoryObjectProps {
 	isMultiValued: boolean;
 	isSyncedFromOnPremises: boolean;
 	name: string;
-	targetObjects: Array<string>[];
+	targetObjects: Array<string>;
 }
 export interface extensionPropertyMethods extends directoryObjectMethods {
 
@@ -7939,7 +7939,7 @@ add(values?: any): IBaseExecution<featureRolloutPolicy>;
 **********************************************/
 export interface federatedIdentityCredential extends federatedIdentityCredentialProps, federatedIdentityCredentialMethods { }
 export interface federatedIdentityCredentialProps extends  entityProps {
-	audiences: Array<string>[];
+	audiences: Array<string>;
 	description: string;
 	issuer: string;
 	name: string;
@@ -7960,7 +7960,7 @@ add(values?: any): IBaseExecution<federatedIdentityCredential>;
 export interface fido2AuthenticationMethod extends fido2AuthenticationMethodProps, fido2AuthenticationMethodMethods { }
 export interface fido2AuthenticationMethodProps extends  authenticationMethodProps {
 	aaGuid: string;
-	attestationCertificates: Array<string>[];
+	attestationCertificates: Array<string>;
 	attestationLevel: EnumTypes.attestationLevel;
 	createdDateTime: any;
 	displayName: string;
@@ -7996,7 +7996,7 @@ export interface fido2AuthenticationMethodConfigurationOData extends authenticat
 **********************************************/
 export interface fido2CombinationConfiguration extends fido2CombinationConfigurationProps, fido2CombinationConfigurationMethods { }
 export interface fido2CombinationConfigurationProps extends  authenticationCombinationConfigurationProps {
-	allowedAAGUIDs: Array<string>[];
+	allowedAAGUIDs: Array<string>;
 }
 export interface fido2CombinationConfigurationMethods extends authenticationCombinationConfigurationMethods {
 
@@ -8288,17 +8288,17 @@ export interface groupSettingTemplateOData extends directoryObjectOData {
 **********************************************/
 export interface healthIssue extends healthIssueProps, healthIssueMethods { }
 export interface healthIssueProps extends  entityProps {
-	additionalInformation: Array<string>[];
+	additionalInformation: Array<string>;
 	createdDateTime: any;
 	description: string;
 	displayName: string;
-	domainNames: Array<string>[];
+	domainNames: Array<string>;
 	healthIssueType: EnumTypes.healthIssueType;
 	issueTypeId: string;
 	lastModifiedDateTime: any;
-	recommendations: Array<string>[];
-	recommendedActionCommands: Array<string>[];
-	sensorDNSNames: Array<string>[];
+	recommendations: Array<string>;
+	recommendedActionCommands: Array<string>;
+	sensorDNSNames: Array<string>;
 	severity: EnumTypes.healthIssueSeverity;
 	status: EnumTypes.healthIssueStatus;
 }
@@ -8810,7 +8810,7 @@ export interface incidentProps extends  entityProps {
 	classification: EnumTypes.alertClassification;
 	comments: ComplexTypes.alertComment[];
 	createdDateTime: any;
-	customTags: Array<string>[];
+	customTags: Array<string>;
 	description: string;
 	determination: EnumTypes.alertDetermination;
 	displayName: string;
@@ -8822,7 +8822,7 @@ export interface incidentProps extends  entityProps {
 	severity: EnumTypes.alertSeverity;
 	status: EnumTypes.incidentStatus;
 	summary: string;
-	systemTags: Array<string>[];
+	systemTags: Array<string>;
 	tenantId: string;
 }
 export interface incidentMethods extends entityMethods {
@@ -8924,13 +8924,13 @@ export interface insightsSettingsOData extends entityOData {
 **********************************************/
 export interface intelligenceProfile extends intelligenceProfileProps, intelligenceProfileMethods { }
 export interface intelligenceProfileProps extends  entityProps {
-	aliases: Array<string>[];
+	aliases: Array<string>;
 	countriesOrRegionsOfOrigin: ComplexTypes.intelligenceProfileCountryOrRegionOfOrigin[];
 	description: ComplexTypes.formattedContent;
 	firstActiveDateTime: any;
 	kind: EnumTypes.intelligenceProfileKind;
 	summary: ComplexTypes.formattedContent;
-	targets: Array<string>[];
+	targets: Array<string>;
 	title: string;
 	tradecraft: ComplexTypes.formattedContent;
 }
@@ -9141,7 +9141,7 @@ export interface iosGeneralDeviceConfigurationProps extends  deviceConfiguration
 	diagnosticDataBlockSubmissionModification: boolean;
 	documentsBlockManagedDocumentsInUnmanagedApps: boolean;
 	documentsBlockUnmanagedDocumentsInManagedApps: boolean;
-	emailInDomainSuffixes: Array<string>[];
+	emailInDomainSuffixes: Array<string>;
 	enterpriseAppBlockTrust: boolean;
 	enterpriseAppBlockTrustModification: boolean;
 	faceTimeBlocked: boolean;
@@ -9223,8 +9223,8 @@ export interface iosGeneralDeviceConfigurationProps extends  deviceConfiguration
 	safariBlockJavaScript: boolean;
 	safariBlockPopups: boolean;
 	safariCookieSettings: EnumTypes.webBrowserCookieSettings;
-	safariManagedDomains: Array<string>[];
-	safariPasswordAutoFillDomains: Array<string>[];
+	safariManagedDomains: Array<string>;
+	safariPasswordAutoFillDomains: Array<string>;
 	safariRequireFraudWarning: boolean;
 	screenCaptureBlocked: boolean;
 	siriBlocked: boolean;
@@ -9409,7 +9409,7 @@ export interface iosVppAppOData extends mobileAppOData {
 export interface iosVppEBook extends iosVppEBookProps, iosVppEBookMethods { }
 export interface iosVppEBookProps extends  managedEBookProps {
 	appleId: string;
-	genres: Array<string>[];
+	genres: Array<string>;
 	language: string;
 	seller: string;
 	totalLicenseCount: number;
@@ -9627,7 +9627,7 @@ export interface landingPageProps extends  entityProps {
 	locale: string;
 	source: EnumTypes.simulationContentSource;
 	status: EnumTypes.simulationContentStatus;
-	supportedLocales: Array<string>[];
+	supportedLocales: Array<string>;
 }
 export interface landingPageMethods extends entityMethods {
 	details(): landingPageDetailCollection;
@@ -9679,9 +9679,9 @@ export interface learningAssignmentOData extends learningCourseActivityOData {
 **********************************************/
 export interface learningContent extends learningContentProps, learningContentMethods { }
 export interface learningContentProps extends  entityProps {
-	additionalTags: Array<string>[];
+	additionalTags: Array<string>;
 	contentWebUrl: string;
-	contributors: Array<string>[];
+	contributors: Array<string>;
 	createdDateTime: any;
 	description: string;
 	duration: number;
@@ -9694,7 +9694,7 @@ export interface learningContentProps extends  entityProps {
 	lastModifiedDateTime: any;
 	level: EnumTypes.level;
 	numberOfPages: number;
-	skillTags: Array<string>[];
+	skillTags: Array<string>;
 	sourceName: string;
 	thumbnailWebUrl: string;
 	title: string;
@@ -10103,7 +10103,7 @@ export interface macOSGeneralDeviceConfiguration extends macOSGeneralDeviceConfi
 export interface macOSGeneralDeviceConfigurationProps extends  deviceConfigurationProps {
 	compliantAppListType: EnumTypes.appListType;
 	compliantAppsList: ComplexTypes.appListItem[];
-	emailInDomainSuffixes: Array<string>[];
+	emailInDomainSuffixes: Array<string>;
 	passwordBlockSimple: boolean;
 	passwordExpirationDays: number;
 	passwordMinimumCharacterSetCount: number;
@@ -10130,7 +10130,7 @@ export interface macOSLobAppProps extends  mobileLobAppProps {
 	childApps: ComplexTypes.macOSLobChildApp[];
 	ignoreVersionDetection: boolean;
 	installAsManaged: boolean;
-	md5Hash: Array<string>[];
+	md5Hash: Array<string>;
 	md5HashChunkSize: number;
 	minimumSupportedOperatingSystem: ComplexTypes.macOSMinimumOperatingSystem;
 	versionNumber: string;
@@ -10241,7 +10241,7 @@ export interface mailSearchFolderProps extends  mailFolderProps {
 	filterQuery: string;
 	includeNestedFolders: boolean;
 	isSupported: boolean;
-	sourceFolderIds: Array<string>[];
+	sourceFolderIds: Array<string>;
 }
 export interface mailSearchFolderMethods extends mailFolderMethods {
 
@@ -10666,7 +10666,7 @@ export interface managedDeviceMobileAppConfigurationProps extends  entityProps {
 	description: string;
 	displayName: string;
 	lastModifiedDateTime: any;
-	targetedMobileApps: Array<string>[];
+	targetedMobileApps: Array<string>;
 	version: number;
 }
 export interface managedDeviceMobileAppConfigurationMethods extends entityMethods {
@@ -11463,7 +11463,7 @@ export interface multiTenantOrganizationPartnerConfigurationTemplateOData extend
 **********************************************/
 export interface multiValueLegacyExtendedProperty extends multiValueLegacyExtendedPropertyProps, multiValueLegacyExtendedPropertyMethods { }
 export interface multiValueLegacyExtendedPropertyProps extends  entityProps {
-	value: Array<string>[];
+	value: Array<string>;
 }
 export interface multiValueLegacyExtendedPropertyMethods extends entityMethods {
 
@@ -11555,7 +11555,7 @@ export interface notificationMessageTemplateProps extends  entityProps {
 	defaultLocale: string;
 	displayName: string;
 	lastModifiedDateTime: any;
-	roleScopeTagIds: Array<string>[];
+	roleScopeTagIds: Array<string>;
 }
 export interface notificationMessageTemplateMethods extends entityMethods {
 	localizedNotificationMessages(): localizedNotificationMessageCollection;
@@ -11673,8 +11673,8 @@ export interface onInteractiveAuthFlowStartListenerOData extends authenticationE
 export interface onPremisesConditionalAccessSettings extends onPremisesConditionalAccessSettingsProps, onPremisesConditionalAccessSettingsMethods { }
 export interface onPremisesConditionalAccessSettingsProps extends  entityProps {
 	enabled: boolean;
-	excludedGroups: Array<any>[];
-	includedGroups: Array<any>[];
+	excludedGroups: Array<any>;
+	includedGroups: Array<any>;
 	overrideDefaultRule: boolean;
 }
 export interface onPremisesConditionalAccessSettingsMethods extends entityMethods {
@@ -11879,7 +11879,7 @@ export interface onenotePageProps extends  onenoteEntitySchemaObjectModelProps {
 	links: ComplexTypes.pageLinks;
 	order: number;
 	title: string;
-	userTags: Array<string>[];
+	userTags: Array<string>;
 }
 export interface onenotePageMethods extends onenoteEntitySchemaObjectModelMethods {
 	parentNotebook(): IBaseQuery<notebook> & notebookMethods;
@@ -12085,7 +12085,7 @@ export interface orgContactProps extends  directoryObjectProps {
 	onPremisesProvisioningErrors: ComplexTypes.onPremisesProvisioningError[];
 	onPremisesSyncEnabled: boolean;
 	phones: ComplexTypes.phone[];
-	proxyAddresses: Array<string>[];
+	proxyAddresses: Array<string>;
 	serviceProvisioningErrors: ComplexTypes.serviceProvisioningError[];
 	surname: string;
 }
@@ -12112,14 +12112,14 @@ export interface orgContactOData extends directoryObjectOData {
 export interface organization extends organizationProps, organizationMethods { }
 export interface organizationProps extends  directoryObjectProps {
 	assignedPlans: ComplexTypes.assignedPlan[];
-	businessPhones: Array<string>[];
+	businessPhones: Array<string>;
 	city: string;
 	country: string;
 	countryLetterCode: string;
 	createdDateTime: any;
 	defaultUsageLocation: string;
 	displayName: string;
-	marketingNotificationEmails: Array<string>[];
+	marketingNotificationEmails: Array<string>;
 	onPremisesLastSyncDateTime: any;
 	onPremisesSyncEnabled: boolean;
 	partnerTenantType: EnumTypes.partnerTenantType;
@@ -12127,11 +12127,11 @@ export interface organizationProps extends  directoryObjectProps {
 	preferredLanguage: string;
 	privacyProfile: ComplexTypes.privacyProfile;
 	provisionedPlans: ComplexTypes.provisionedPlan[];
-	securityComplianceNotificationMails: Array<string>[];
-	securityComplianceNotificationPhones: Array<string>[];
+	securityComplianceNotificationMails: Array<string>;
+	securityComplianceNotificationPhones: Array<string>;
 	state: string;
 	street: string;
-	technicalNotificationMails: Array<string>[];
+	technicalNotificationMails: Array<string>;
 	tenantType: string;
 	verifiedDomains: ComplexTypes.verifiedDomain[];
 	mobileDeviceManagementAuthority: EnumTypes.mdmAuthority;
@@ -12190,7 +12190,7 @@ export interface organizationalBrandingPropertiesProps extends  entityProps {
 	backgroundImageRelativeUrl: string;
 	bannerLogo: any;
 	bannerLogoRelativeUrl: string;
-	cdnList: Array<string>[];
+	cdnList: Array<string>;
 	contentCustomization: ComplexTypes.contentCustomization;
 	customAccountResetCredentialsUrl: string;
 	customCannotAccessYourAccountText: string;
@@ -12258,7 +12258,7 @@ add(values?: any): IBaseExecution<outlookCategory>;
 **********************************************/
 export interface outlookItem extends outlookItemProps, outlookItemMethods { }
 export interface outlookItemProps extends  entityProps {
-	categories: Array<string>[];
+	categories: Array<string>;
 	changeKey: string;
 	createdDateTime: any;
 	lastModifiedDateTime: any;
@@ -12410,7 +12410,7 @@ export interface payloadProps extends  entityProps {
 	language: string;
 	lastModifiedBy: ComplexTypes.emailIdentity;
 	lastModifiedDateTime: any;
-	payloadTags: Array<string>[];
+	payloadTags: Array<string>;
 	platform: EnumTypes.payloadDeliveryPlatform;
 	predictedCompromiseRate: number;
 	simulationAttackType: EnumTypes.simulationAttackType;
@@ -12460,7 +12460,7 @@ export interface permissionProps extends  entityProps {
 	inheritedFrom: ComplexTypes.itemReference;
 	invitation: ComplexTypes.sharingInvitation;
 	link: ComplexTypes.sharingLink;
-	roles: Array<string>[];
+	roles: Array<string>;
 	shareId: string;
 }
 export interface permissionMethods extends entityMethods {
@@ -12481,12 +12481,12 @@ add(values: { roles: string[], grantedToIdentities: { id: string, displayName?: 
 **********************************************/
 export interface permissionGrantConditionSet extends permissionGrantConditionSetProps, permissionGrantConditionSetMethods { }
 export interface permissionGrantConditionSetProps extends  entityProps {
-	clientApplicationIds: Array<string>[];
-	clientApplicationPublisherIds: Array<string>[];
+	clientApplicationIds: Array<string>;
+	clientApplicationPublisherIds: Array<string>;
 	clientApplicationsFromVerifiedPublisherOnly: boolean;
-	clientApplicationTenantIds: Array<string>[];
+	clientApplicationTenantIds: Array<string>;
 	permissionClassification: string;
-	permissions: Array<string>[];
+	permissions: Array<string>;
 	permissionType: EnumTypes.permissionType;
 	resourceApplication: string;
 }
@@ -13732,10 +13732,10 @@ export interface qna extends qnaProps, qnaMethods { }
 export interface qnaProps extends  searchAnswerProps {
 	availabilityEndDateTime: any;
 	availabilityStartDateTime: any;
-	groupIds: Array<string>[];
+	groupIds: Array<string>;
 	isSuggested: boolean;
 	keywords: ComplexTypes.answerKeyword;
-	languageTags: Array<string>[];
+	languageTags: Array<string>;
 	platforms: EnumTypes.devicePlatformType[];
 	state: EnumTypes.answerState;
 	targetedVariations: ComplexTypes.answerVariant[];
@@ -13838,7 +13838,7 @@ export interface relyingPartyDetailedSummaryProps extends  entityProps {
 	migrationValidationDetails: ComplexTypes.keyValuePair[];
 	relyingPartyId: string;
 	relyingPartyName: string;
-	replyUrls: Array<string>[];
+	replyUrls: Array<string>;
 	serviceId: string;
 	signInSuccessRate: number;
 	successfulSignInCount: number;
@@ -14400,7 +14400,7 @@ export interface roleAssignment extends roleAssignmentProps, roleAssignmentMetho
 export interface roleAssignmentProps extends  entityProps {
 	description: string;
 	displayName: string;
-	resourceScopes: Array<string>[];
+	resourceScopes: Array<string>;
 }
 export interface roleAssignmentMethods extends entityMethods {
 	roleDefinition(): IBaseQuery<roleDefinition> & roleDefinitionMethods;
@@ -14462,7 +14462,7 @@ export interface roomProps extends  placeProps {
 	isWheelChairAccessible: boolean;
 	label: string;
 	nickname: string;
-	tags: Array<string>[];
+	tags: Array<string>;
 	videoDeviceName: string;
 }
 export interface roomMethods extends placeMethods {
@@ -14574,7 +14574,7 @@ export interface scheduleProps extends  entityProps {
 	timeClockEnabled: boolean;
 	timeOffRequestsEnabled: boolean;
 	timeZone: string;
-	workforceIntegrationIds: Array<string>[];
+	workforceIntegrationIds: Array<string>;
 }
 export interface scheduleMethods extends entityMethods {
 	offerShiftRequests(): offerShiftRequestCollection;
@@ -14638,7 +14638,7 @@ export interface schedulingGroup extends schedulingGroupProps, schedulingGroupMe
 export interface schedulingGroupProps extends  changeTrackedEntityProps {
 	displayName: string;
 	isActive: boolean;
-	userIds: Array<string>[];
+	userIds: Array<string>;
 }
 export interface schedulingGroupMethods extends changeTrackedEntityMethods {
 
@@ -14672,7 +14672,7 @@ export interface schemaExtensionProps extends  entityProps {
 	owner: string;
 	properties: ComplexTypes.extensionSchemaProperty[];
 	status: string;
-	targetTypes: Array<string>[];
+	targetTypes: Array<string>;
 }
 export interface schemaExtensionMethods extends entityMethods {
 
@@ -14792,7 +14792,7 @@ export interface secureScoreProps extends  entityProps {
 	controlScores: ComplexTypes.controlScore[];
 	createdDateTime: any;
 	currentScore: number;
-	enabledServices: Array<string>[];
+	enabledServices: Array<string>;
 	licensedUserCount: number;
 	maxScore: number;
 	vendorInformation: ComplexTypes.securityVendorInformation;
@@ -14825,7 +14825,7 @@ export interface secureScoreControlProfileProps extends  entityProps {
 	remediation: string;
 	remediationImpact: string;
 	service: string;
-	threats: Array<string>[];
+	threats: Array<string>;
 	tier: string;
 	title: string;
 	userImpact: string;
@@ -15084,7 +15084,7 @@ export interface servicePrincipal extends servicePrincipalProps, servicePrincipa
 export interface servicePrincipalProps extends  directoryObjectProps {
 	accountEnabled: boolean;
 	addIns: ComplexTypes.addIn[];
-	alternativeNames: Array<string>[];
+	alternativeNames: Array<string>;
 	appDescription: string;
 	appDisplayName: string;
 	appId: string;
@@ -15102,18 +15102,18 @@ export interface servicePrincipalProps extends  directoryObjectProps {
 	loginUrl: string;
 	logoutUrl: string;
 	notes: string;
-	notificationEmailAddresses: Array<string>[];
+	notificationEmailAddresses: Array<string>;
 	oauth2PermissionScopes: ComplexTypes.permissionScope[];
 	passwordCredentials: ComplexTypes.passwordCredential[];
 	preferredSingleSignOnMode: string;
 	preferredTokenSigningKeyThumbprint: string;
-	replyUrls: Array<string>[];
+	replyUrls: Array<string>;
 	resourceSpecificApplicationPermissions: ComplexTypes.resourceSpecificPermission[];
 	samlSingleSignOnSettings: ComplexTypes.samlSingleSignOnSettings;
-	servicePrincipalNames: Array<string>[];
+	servicePrincipalNames: Array<string>;
 	servicePrincipalType: string;
 	signInAudience: string;
-	tags: Array<string>[];
+	tags: Array<string>;
 	tokenEncryptionKeyId: any;
 	verifiedPublisher: ComplexTypes.verifiedPublisher;
 }
@@ -15196,7 +15196,7 @@ export interface servicePrincipalRiskDetectionProps extends  entityProps {
 	detectedDateTime: any;
 	detectionTimingType: EnumTypes.riskDetectionTimingType;
 	ipAddress: string;
-	keyIds: Array<string>[];
+	keyIds: Array<string>;
 	lastUpdatedDateTime: any;
 	location: ComplexTypes.signInLocation;
 	requestId: string;
@@ -15245,9 +15245,9 @@ export interface serviceUpdateMessageProps extends  serviceAnnouncementBaseProps
 	category: EnumTypes.serviceUpdateCategory;
 	hasAttachments: boolean;
 	isMajorChange: boolean;
-	services: Array<string>[];
+	services: Array<string>;
 	severity: EnumTypes.serviceUpdateSeverity;
-	tags: Array<string>[];
+	tags: Array<string>;
 	viewPoint: ComplexTypes.serviceUpdateMessageViewpoint;
 }
 export interface serviceUpdateMessageMethods extends serviceAnnouncementBaseMethods {
@@ -15472,10 +15472,10 @@ export interface sharepointOData extends entityOData {
 **********************************************/
 export interface sharepointSettings extends sharepointSettingsProps, sharepointSettingsMethods { }
 export interface sharepointSettingsProps extends  entityProps {
-	allowedDomainGuidsForSyncApp: Array<any>[];
-	availableManagedPathsForSiteCreation: Array<string>[];
+	allowedDomainGuidsForSyncApp: Array<any>;
+	availableManagedPathsForSiteCreation: Array<string>;
 	deletedUserPersonalSiteRetentionPeriodInDays: number;
-	excludedFileExtensionsForSyncApp: Array<string>[];
+	excludedFileExtensionsForSyncApp: Array<string>;
 	idleSessionSignOut: ComplexTypes.idleSessionSignOut;
 	imageTaggingOption: EnumTypes.imageTaggingChoice;
 	isCommentingOnSitePagesEnabled: boolean;
@@ -15494,8 +15494,8 @@ export interface sharepointSettingsProps extends  entityProps {
 	isSyncButtonHiddenOnPersonalSite: boolean;
 	isUnmanagedSyncAppForTenantRestricted: boolean;
 	personalSiteDefaultStorageLimitInMB: number;
-	sharingAllowedDomainList: Array<string>[];
-	sharingBlockedDomainList: Array<string>[];
+	sharingAllowedDomainList: Array<string>;
+	sharingBlockedDomainList: Array<string>;
 	sharingCapability: EnumTypes.sharingCapabilities;
 	sharingDomainRestrictionMode: EnumTypes.sharingDomainRestrictionMode;
 	siteCreationDefaultManagedPath: string;
@@ -15560,7 +15560,7 @@ export interface signInProps extends  entityProps {
 	resourceId: string;
 	riskDetail: EnumTypes.riskDetail;
 	riskEventTypes: EnumTypes.riskEventType[];
-	riskEventTypes_v2: Array<string>[];
+	riskEventTypes_v2: Array<string>;
 	riskLevelAggregated: EnumTypes.riskLevel;
 	riskLevelDuringSignIn: EnumTypes.riskLevel;
 	riskState: EnumTypes.riskState;
@@ -16098,7 +16098,7 @@ export interface storageSettingsOData extends entityOData {
 export interface store extends storeProps, storeMethods { }
 export interface storeProps extends  entityProps {
 	defaultLanguageTag: string;
-	languageTags: Array<string>[];
+	languageTags: Array<string>;
 }
 export interface storeMethods extends entityMethods {
 	groups(): groupCollection;
@@ -16115,7 +16115,7 @@ export interface storeOData extends entityOData {
 **********************************************/
 export interface stsPolicy extends stsPolicyProps, stsPolicyMethods { }
 export interface stsPolicyProps extends  policyBaseProps {
-	definition: Array<string>[];
+	definition: Array<string>;
 	isOrganizationDefault: boolean;
 }
 export interface stsPolicyMethods extends policyBaseMethods {
@@ -16175,7 +16175,7 @@ export interface subjectRightsRequestProps extends  entityProps {
 	lastModifiedDateTime: any;
 	mailboxLocations: ComplexTypes.subjectRightsRequestMailboxLocation;
 	pauseAfterEstimate: boolean;
-	regulations: Array<string>[];
+	regulations: Array<string>;
 	siteLocations: ComplexTypes.subjectRightsRequestSiteLocation;
 	stages: ComplexTypes.subjectRightsRequestStageDetail[];
 	status: EnumTypes.subjectRightsRequestStatus;
@@ -16230,7 +16230,7 @@ export interface subscribedSkuProps extends  entityProps {
 	servicePlans: ComplexTypes.servicePlanInfo[];
 	skuId: any;
 	skuPartNumber: string;
-	subscriptionIds: Array<string>[];
+	subscriptionIds: Array<string>;
 }
 export interface subscribedSkuMethods extends entityMethods {
 
@@ -17283,7 +17283,7 @@ export interface todoTask extends todoTaskProps, todoTaskMethods { }
 export interface todoTaskProps extends  entityProps {
 	body: ComplexTypes.itemBody;
 	bodyLastModifiedDateTime: any;
-	categories: Array<string>[];
+	categories: Array<string>;
 	completedDateTime: ComplexTypes.dateTimeTimeZone;
 	createdDateTime: any;
 	dueDateTime: ComplexTypes.dateTimeTimeZone;
@@ -17389,8 +17389,8 @@ export interface trainingProps extends  entityProps {
 	lastModifiedBy: ComplexTypes.emailIdentity;
 	lastModifiedDateTime: any;
 	source: EnumTypes.simulationContentSource;
-	supportedLocales: Array<string>[];
-	tags: Array<string>[];
+	supportedLocales: Array<string>;
+	tags: Array<string>;
 	type: EnumTypes.trainingType;
 }
 export interface trainingMethods extends entityMethods {
@@ -17663,7 +17663,7 @@ export interface unifiedRoleDefinitionProps extends  entityProps {
 	displayName: string;
 	isBuiltIn: boolean;
 	isEnabled: boolean;
-	resourceScopes: Array<string>[];
+	resourceScopes: Array<string>;
 	rolePermissions: ComplexTypes.unifiedRolePermission[];
 	templateId: string;
 	version: string;
@@ -17826,7 +17826,7 @@ export interface unifiedRoleManagementPolicyAuthenticationContextRuleOData exten
 **********************************************/
 export interface unifiedRoleManagementPolicyEnablementRule extends unifiedRoleManagementPolicyEnablementRuleProps, unifiedRoleManagementPolicyEnablementRuleMethods { }
 export interface unifiedRoleManagementPolicyEnablementRuleProps extends  unifiedRoleManagementPolicyRuleProps {
-	enabledRules: Array<string>[];
+	enabledRules: Array<string>;
 }
 export interface unifiedRoleManagementPolicyEnablementRuleMethods extends unifiedRoleManagementPolicyRuleMethods {
 
@@ -17855,7 +17855,7 @@ export interface unifiedRoleManagementPolicyNotificationRule extends unifiedRole
 export interface unifiedRoleManagementPolicyNotificationRuleProps extends  unifiedRoleManagementPolicyRuleProps {
 	isDefaultRecipientsEnabled: boolean;
 	notificationLevel: string;
-	notificationRecipients: Array<string>[];
+	notificationRecipients: Array<string>;
 	notificationType: string;
 	recipientType: string;
 }
@@ -18016,7 +18016,7 @@ export interface userProps extends  directoryObjectProps {
 	assignedLicenses: ComplexTypes.assignedLicense[];
 	assignedPlans: ComplexTypes.assignedPlan[];
 	authorizationInfo: ComplexTypes.authorizationInfo;
-	businessPhones: Array<string>[];
+	businessPhones: Array<string>;
 	city: string;
 	companyName: string;
 	consentProvidedForMinor: string;
@@ -18036,7 +18036,7 @@ export interface userProps extends  directoryObjectProps {
 	faxNumber: string;
 	givenName: string;
 	identities: ComplexTypes.objectIdentity[];
-	imAddresses: Array<string>[];
+	imAddresses: Array<string>;
 	isManagementRestricted: boolean;
 	isResourceAccount: boolean;
 	jobTitle: string;
@@ -18057,14 +18057,14 @@ export interface userProps extends  directoryObjectProps {
 	onPremisesSecurityIdentifier: string;
 	onPremisesSyncEnabled: boolean;
 	onPremisesUserPrincipalName: string;
-	otherMails: Array<string>[];
+	otherMails: Array<string>;
 	passwordPolicies: string;
 	passwordProfile: ComplexTypes.passwordProfile;
 	postalCode: string;
 	preferredDataLocation: string;
 	preferredLanguage: string;
 	provisionedPlans: ComplexTypes.provisionedPlan[];
-	proxyAddresses: Array<string>[];
+	proxyAddresses: Array<string>;
 	securityIdentifier: string;
 	serviceProvisioningErrors: ComplexTypes.serviceProvisioningError[];
 	showInAddressList: boolean;
@@ -18081,13 +18081,13 @@ export interface userProps extends  directoryObjectProps {
 	aboutMe: string;
 	birthday: any;
 	hireDate: any;
-	interests: Array<string>[];
+	interests: Array<string>;
 	mySite: string;
-	pastProjects: Array<string>[];
+	pastProjects: Array<string>;
 	preferredName: string;
-	responsibilities: Array<string>[];
-	schools: Array<string>[];
-	skills: Array<string>[];
+	responsibilities: Array<string>;
+	schools: Array<string>;
+	skills: Array<string>;
 }
 export interface userMethods extends directoryObjectMethods {
 	appRoleAssignments(): appRoleAssignmentCollection;
@@ -18191,7 +18191,7 @@ export interface userMethods extends directoryObjectMethods {
 	exportDeviceAndAppManagementData(skip, top): ComplexTypes.deviceAndAppManagementData;
 	getManagedAppDiagnosticStatuses(): ComplexTypes.managedAppDiagnosticStatus[];
 	getManagedAppPolicies(): managedAppPolicy[];
-	getManagedDevicesWithAppFailures(): Array<string>[];
+	getManagedDevicesWithAppFailures(): Array<string>;
 }
 export interface userOData extends directoryObjectOData {
 	appRoleAssignments: IBaseResults<appRoleAssignment>;
@@ -18261,7 +18261,7 @@ export interface userOData extends directoryObjectOData {
 	exportDeviceAndAppManagementData(skip, top): ComplexTypes.deviceAndAppManagementData;
 	getManagedAppDiagnosticStatuses(): ComplexTypes.managedAppDiagnosticStatus[];
 	getManagedAppPolicies(): managedAppPolicy[];
-	getManagedDevicesWithAppFailures(): Array<string>[];
+	getManagedDevicesWithAppFailures(): Array<string>;
 }
 export interface userCollection extends IBaseCollection<user, userOData & userProps> {
 add(values?: any): IBaseExecution<user>;
@@ -18981,8 +18981,8 @@ export interface userRegistrationDetailsProps extends  entityProps {
 	isSsprRegistered: boolean;
 	isSystemPreferredAuthenticationMethodEnabled: boolean;
 	lastUpdatedDateTime: any;
-	methodsRegistered: Array<string>[];
-	systemPreferredAuthenticationMethods: Array<string>[];
+	methodsRegistered: Array<string>;
+	systemPreferredAuthenticationMethods: Array<string>;
 	userDisplayName: string;
 	userPreferredMethodForSecondaryAuthentication: EnumTypes.userDefaultAuthenticationMethod;
 	userPrincipalName: string;
@@ -19250,7 +19250,7 @@ export interface virtualEventRegistrationConfigurationOData extends entityOData 
 **********************************************/
 export interface virtualEventRegistrationCustomQuestion extends virtualEventRegistrationCustomQuestionProps, virtualEventRegistrationCustomQuestionMethods { }
 export interface virtualEventRegistrationCustomQuestionProps extends  virtualEventRegistrationQuestionBaseProps {
-	answerChoices: Array<string>[];
+	answerChoices: Array<string>;
 	answerInputType: EnumTypes.virtualEventRegistrationQuestionAnswerInputType;
 }
 export interface virtualEventRegistrationCustomQuestionMethods extends virtualEventRegistrationQuestionBaseMethods {
@@ -19425,7 +19425,7 @@ add(values?: any): IBaseExecution<vppToken>;
 export interface vulnerability extends vulnerabilityProps, vulnerabilityMethods { }
 export interface vulnerabilityProps extends  entityProps {
 	activeExploitsObserved: boolean;
-	commonWeaknessEnumerationIds: Array<string>[];
+	commonWeaknessEnumerationIds: Array<string>;
 	createdDateTime: any;
 	cvss2Summary: ComplexTypes.cvssSummary;
 	cvss3Summary: ComplexTypes.cvssSummary;
@@ -19638,11 +19638,11 @@ export interface windows10EndpointProtectionConfigurationProps extends  deviceCo
 	bitLockerEnableStorageCardEncryptionOnMobile: boolean;
 	bitLockerEncryptDevice: boolean;
 	bitLockerRemovableDrivePolicy: ComplexTypes.bitLockerRemovableDrivePolicy;
-	defenderAdditionalGuardedFolders: Array<string>[];
-	defenderAttackSurfaceReductionExcludedPaths: Array<string>[];
+	defenderAdditionalGuardedFolders: Array<string>;
+	defenderAttackSurfaceReductionExcludedPaths: Array<string>;
 	defenderExploitProtectionXml: any;
 	defenderExploitProtectionXmlFileName: string;
-	defenderGuardedFoldersAllowedAppPaths: Array<string>[];
+	defenderGuardedFoldersAllowedAppPaths: Array<string>;
 	defenderSecurityCenterBlockExploitProtectionOverride: boolean;
 	firewallBlockStatefulFTP: boolean;
 	firewallCertificateRevocationListCheckMethod: EnumTypes.firewallCertificateRevocationListCheckMethodType;
@@ -19701,7 +19701,7 @@ export interface windows10GeneralConfigurationProps extends  deviceConfiguration
 	antiTheftModeBlocked: boolean;
 	appsAllowTrustedAppsSideloading: EnumTypes.stateManagementSetting;
 	appsBlockWindowsStoreOriginatedApps: boolean;
-	bluetoothAllowedServices: Array<string>[];
+	bluetoothAllowedServices: Array<string>;
 	bluetoothBlockAdvertising: boolean;
 	bluetoothBlockDiscoverableMode: boolean;
 	bluetoothBlocked: boolean;
@@ -19718,10 +19718,10 @@ export interface windows10GeneralConfigurationProps extends  deviceConfiguration
 	defenderCloudBlockLevel: EnumTypes.defenderCloudBlockLevelType;
 	defenderDaysBeforeDeletingQuarantinedMalware: number;
 	defenderDetectedMalwareActions: ComplexTypes.defenderDetectedMalwareActions;
-	defenderFileExtensionsToExclude: Array<string>[];
-	defenderFilesAndFoldersToExclude: Array<string>[];
+	defenderFileExtensionsToExclude: Array<string>;
+	defenderFilesAndFoldersToExclude: Array<string>;
 	defenderMonitorFileActivity: EnumTypes.defenderMonitorFileActivity;
-	defenderProcessesToExclude: Array<string>[];
+	defenderProcessesToExclude: Array<string>;
 	defenderPromptForSampleSubmission: EnumTypes.defenderPromptForSampleSubmission;
 	defenderRequireBehaviorMonitoring: boolean;
 	defenderRequireCloudProtection: boolean;
@@ -19765,7 +19765,7 @@ export interface windows10GeneralConfigurationProps extends  deviceConfiguration
 	edgeDisableFirstRunPage: boolean;
 	edgeEnterpriseModeSiteListLocation: string;
 	edgeFirstRunUrl: string;
-	edgeHomepageUrls: Array<string>[];
+	edgeHomepageUrls: Array<string>;
 	edgeRequireSmartScreen: boolean;
 	edgeSearchEngine: ComplexTypes.edgeSearchEngineBase;
 	edgeSendIntranetTrafficToInternetExplorer: boolean;
@@ -20085,7 +20085,7 @@ export interface windowsAutopilotDeploymentProfileProps extends  entityProps {
 	managementServiceAppId: string;
 	outOfBoxExperienceSetting: ComplexTypes.outOfBoxExperienceSetting;
 	preprovisioningAllowed: boolean;
-	roleScopeTagIds: Array<string>[];
+	roleScopeTagIds: Array<string>;
 }
 export interface windowsAutopilotDeploymentProfileMethods extends entityMethods {
 	assignedDevices(): windowsAutopilotDeviceIdentityCollection;
@@ -21573,8 +21573,8 @@ export interface x509CertificateAuthenticationMethodConfigurationOData extends a
 **********************************************/
 export interface x509CertificateCombinationConfiguration extends x509CertificateCombinationConfigurationProps, x509CertificateCombinationConfigurationMethods { }
 export interface x509CertificateCombinationConfigurationProps extends  authenticationCombinationConfigurationProps {
-	allowedIssuerSkis: Array<string>[];
-	allowedPolicyOIDs: Array<string>[];
+	allowedIssuerSkis: Array<string>;
+	allowedPolicyOIDs: Array<string>;
 }
 export interface x509CertificateCombinationConfigurationMethods extends authenticationCombinationConfigurationMethods {
 

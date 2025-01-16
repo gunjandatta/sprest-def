@@ -64,7 +64,7 @@ export interface onDemandExecutionOnly  {
 **********************************************/
 export interface parameter  {
 	name: string;
-	values: Array<string>[];
+	values: Array<string>;
 	valueType: EnumTypes.valueType;
 }
 /*********************************************
@@ -285,7 +285,7 @@ export interface addIn  {
 **********************************************/
 export interface apiApplication  {
 	acceptMappedClaims: boolean;
-	knownClientApplications: Array<any>[];
+	knownClientApplications: Array<any>;
 	oauth2PermissionScopes: permissionScope[];
 	preAuthorizedApplications: preAuthorizedApplication[];
 	requestedAccessTokenVersion: number;
@@ -294,7 +294,7 @@ export interface apiApplication  {
 * appRole
 **********************************************/
 export interface appRole  {
-	allowedMemberTypes: Array<string>[];
+	allowedMemberTypes: Array<string>;
 	description: string;
 	displayName: string;
 	id: any;
@@ -347,7 +347,7 @@ export interface optionalClaims  {
 * parentalControlSettings
 **********************************************/
 export interface parentalControlSettings  {
-	countriesBlockedForMinors: Array<string>[];
+	countriesBlockedForMinors: Array<string>;
 	legalAgeGroupRule: string;
 }
 /*********************************************
@@ -366,7 +366,7 @@ export interface passwordCredential  {
 * publicClientApplication
 **********************************************/
 export interface publicClientApplication  {
-	redirectUris: Array<string>[];
+	redirectUris: Array<string>;
 }
 /*********************************************
 * requestSignatureVerification
@@ -396,7 +396,7 @@ export interface servicePrincipalLockConfiguration  {
 * spaApplication
 **********************************************/
 export interface spaApplication  {
-	redirectUris: Array<string>[];
+	redirectUris: Array<string>;
 }
 /*********************************************
 * verifiedPublisher
@@ -413,7 +413,7 @@ export interface webApplication  {
 	homePageUrl: string;
 	implicitGrantSettings: implicitGrantSettings;
 	logoutUrl: string;
-	redirectUris: Array<string>[];
+	redirectUris: Array<string>;
 	redirectUriSettings: redirectUriSettings[];
 }
 /*********************************************
@@ -427,7 +427,7 @@ export interface assignedLabel  {
 * assignedLicense
 **********************************************/
 export interface assignedLicense  {
-	disabledPlans: Array<any>[];
+	disabledPlans: Array<any>;
 	skuId: any;
 }
 /*********************************************
@@ -477,7 +477,7 @@ export interface assignedPlan  {
 * authorizationInfo
 **********************************************/
 export interface authorizationInfo  {
-	certificateUserIds: Array<string>[];
+	certificateUserIds: Array<string>;
 }
 /*********************************************
 * customSecurityAttributeValue
@@ -505,7 +505,7 @@ export interface objectIdentity  {
 **********************************************/
 export interface licenseAssignmentState  {
 	assignedByGroup: string;
-	disabledPlans: Array<any>[];
+	disabledPlans: Array<any>;
 	error: string;
 	lastUpdatedDateTime: any;
 	skuId: any;
@@ -581,8 +581,8 @@ export interface appIdentity  {
 **********************************************/
 export interface appliedConditionalAccessPolicy  {
 	displayName: string;
-	enforcedGrantControls: Array<string>[];
-	enforcedSessionControls: Array<string>[];
+	enforcedGrantControls: Array<string>;
+	enforcedSessionControls: Array<string>;
 	id: string;
 	result: EnumTypes.appliedConditionalAccessPolicyResult;
 }
@@ -852,7 +852,7 @@ export interface authenticationMethodsRegistrationCampaignIncludeTarget  {
 * fido2KeyRestrictions
 **********************************************/
 export interface fido2KeyRestrictions  {
-	aaGuids: Array<string>[];
+	aaGuids: Array<string>;
 	enforcementType: EnumTypes.fido2RestrictionEnforcementType;
 	isEnforced: boolean;
 }
@@ -874,7 +874,7 @@ export interface registrationEnforcement  {
 **********************************************/
 export interface updateAllowedCombinationsResult  {
 	additionalInformation: string;
-	conditionalAccessReferences: Array<string>[];
+	conditionalAccessReferences: Array<string>;
 	currentCombinations: EnumTypes.authenticationMethodModes[];
 	previousCombinations: EnumTypes.authenticationMethodModes[];
 }
@@ -947,11 +947,11 @@ export interface bookingCustomerInformation  {
 export interface bookingQuestionAnswer  {
 	answer: string;
 	answerInputType: EnumTypes.answerInputType;
-	answerOptions: Array<string>[];
+	answerOptions: Array<string>;
 	isRequired: boolean;
 	question: string;
 	questionId: string;
-	selectedOptions: Array<string>[];
+	selectedOptions: Array<string>;
 }
 /*********************************************
 * location
@@ -1092,7 +1092,7 @@ export interface cloudPcAuditActor  {
 	remoteUserId: string;
 	servicePrincipalName: string;
 	userId: string;
-	userPermissions: Array<string>[];
+	userPermissions: Array<string>;
 	userPrincipalName: string;
 	userRoleScopeTags: cloudPcUserRoleScopeTagInfo[];
 }
@@ -1345,13 +1345,13 @@ export interface subjectRightsRequestDetail  {
 * subjectRightsRequestEnumeratedMailboxLocation
 **********************************************/
 export interface subjectRightsRequestEnumeratedMailboxLocation  {
-	userPrincipalNames: Array<string>[];
+	userPrincipalNames: Array<string>;
 }
 /*********************************************
 * subjectRightsRequestEnumeratedSiteLocation
 **********************************************/
 export interface subjectRightsRequestEnumeratedSiteLocation  {
-	urls: Array<string>[];
+	urls: Array<string>;
 }
 /*********************************************
 * subjectRightsRequestHistory
@@ -1461,7 +1461,7 @@ export interface apiAuthenticationConfigurationBase  {
 * assignmentOrder
 **********************************************/
 export interface assignmentOrder  {
-	order: Array<string>[];
+	order: Array<string>;
 }
 /*********************************************
 * authenticationAttributeCollectionInputConfiguration
@@ -1711,8 +1711,8 @@ export interface azureADRegistrationPolicy  {
 * enumeratedDeviceRegistrationMembership
 **********************************************/
 export interface enumeratedDeviceRegistrationMembership  {
-	groups: Array<string>[];
-	users: Array<string>[];
+	groups: Array<string>;
+	users: Array<string>;
 }
 /*********************************************
 * localAdminPasswordSettings
@@ -1739,7 +1739,7 @@ export interface alternativeSecurityId  {
 **********************************************/
 export interface preAuthorizedApplication  {
 	appId: string;
-	delegatedPermissionIds: Array<string>[];
+	delegatedPermissionIds: Array<string>;
 }
 /*********************************************
 * appManagementConfiguration
@@ -1880,7 +1880,7 @@ export interface defaultUserRolePermissions  {
 	allowedToCreateTenants: boolean;
 	allowedToReadBitlockerKeysForOwnedDevice: boolean;
 	allowedToReadOtherUsers: boolean;
-	permissionGrantPoliciesAssigned: Array<string>[];
+	permissionGrantPoliciesAssigned: Array<string>;
 }
 /*********************************************
 * domainState
@@ -2004,7 +2004,7 @@ export interface onPremisesDirectorySynchronizationFeature  {
 * optionalClaim
 **********************************************/
 export interface optionalClaim  {
-	additionalProperties: Array<string>[];
+	additionalProperties: Array<string>;
 	essential: boolean;
 	name: string;
 	source: string;
@@ -2106,9 +2106,9 @@ export interface tenantInformation  {
 * unifiedRolePermission
 **********************************************/
 export interface unifiedRolePermission  {
-	allowedResourceActions: Array<string>[];
+	allowedResourceActions: Array<string>;
 	condition: string;
-	excludedResourceActions: Array<string>[];
+	excludedResourceActions: Array<string>;
 }
 /*********************************************
 * verifiedDomain
@@ -2180,7 +2180,7 @@ export interface educationAssignmentGroupRecipient  {
 * educationAssignmentIndividualRecipient
 **********************************************/
 export interface educationAssignmentIndividualRecipient  {
-	recipients: Array<string>[];
+	recipients: Array<string>;
 }
 /*********************************************
 * educationAssignmentPointsGrade
@@ -2397,7 +2397,7 @@ export interface artifactQuery  {
 * restorePointSearchResponse
 **********************************************/
 export interface restorePointSearchResponse  {
-	noResultProtectionUnitIds: Array<string>[];
+	noResultProtectionUnitIds: Array<string>;
 	searchResponseId: string;
 	searchResults: restorePointSearchResult[];
 }
@@ -2914,7 +2914,7 @@ export interface mailTipsError  {
 * messageRuleActions
 **********************************************/
 export interface messageRuleActions  {
-	assignCategories: Array<string>[];
+	assignCategories: Array<string>;
 	copyToFolder: string;
 	delete: boolean;
 	forwardAsAttachmentTo: recipient[];
@@ -2930,12 +2930,12 @@ export interface messageRuleActions  {
 * messageRulePredicates
 **********************************************/
 export interface messageRulePredicates  {
-	bodyContains: Array<string>[];
-	bodyOrSubjectContains: Array<string>[];
-	categories: Array<string>[];
+	bodyContains: Array<string>;
+	bodyOrSubjectContains: Array<string>;
+	categories: Array<string>;
 	fromAddresses: recipient[];
 	hasAttachments: boolean;
-	headerContains: Array<string>[];
+	headerContains: Array<string>;
 	importance: EnumTypes.importance;
 	isApprovalRequest: boolean;
 	isAutomaticForward: boolean;
@@ -2950,15 +2950,15 @@ export interface messageRulePredicates  {
 	isVoicemail: boolean;
 	messageActionFlag: EnumTypes.messageActionFlag;
 	notSentToMe: boolean;
-	recipientContains: Array<string>[];
-	senderContains: Array<string>[];
+	recipientContains: Array<string>;
+	senderContains: Array<string>;
 	sensitivity: EnumTypes.sensitivity;
 	sentCcMe: boolean;
 	sentOnlyToMe: boolean;
 	sentToAddresses: recipient[];
 	sentToMe: boolean;
 	sentToOrCcMe: boolean;
-	subjectContains: Array<string>[];
+	subjectContains: Array<string>;
 	withinSizeRange: sizeRange;
 }
 /*********************************************
@@ -2976,7 +2976,7 @@ export interface onlineMeetingInfo  {
 	joinUrl: string;
 	phones: phone[];
 	quickDial: string;
-	tollFreeNumbers: Array<string>[];
+	tollFreeNumbers: Array<string>;
 	tollNumber: string;
 }
 /*********************************************
@@ -3070,7 +3070,7 @@ export interface timeZoneInformation  {
 **********************************************/
 export interface uploadSession  {
 	expirationDateTime: any;
-	nextExpectedRanges: Array<string>[];
+	nextExpectedRanges: Array<string>;
 	uploadUrl: string;
 }
 /*********************************************
@@ -3153,7 +3153,7 @@ export interface calculatedColumn  {
 **********************************************/
 export interface choiceColumn  {
 	allowTextEntry: boolean;
-	choices: Array<string>[];
+	choices: Array<string>;
 	displayAs: string;
 }
 /*********************************************
@@ -3711,7 +3711,7 @@ export interface stringKeyAttributeMappingSourceValuePair  {
 * containerFilter
 **********************************************/
 export interface containerFilter  {
-	includedContainers: Array<string>[];
+	includedContainers: Array<string>;
 }
 /*********************************************
 * expressionInputObject
@@ -3727,7 +3727,7 @@ export interface objectDefinition  {
 	attributes: attributeDefinition[];
 	metadata: objectDefinitionMetadataEntry[];
 	name: string;
-	supportedApis: Array<string>[];
+	supportedApis: Array<string>;
 }
 /*********************************************
 * stringKeyObjectValuePair
@@ -3762,13 +3762,13 @@ export interface filterClause  {
 * filterOperand
 **********************************************/
 export interface filterOperand  {
-	values: Array<string>[];
+	values: Array<string>;
 }
 /*********************************************
 * groupFilter
 **********************************************/
 export interface groupFilter  {
-	includedGroups: Array<string>[];
+	includedGroups: Array<string>;
 }
 /*********************************************
 * objectDefinitionMetadataEntry
@@ -3802,7 +3802,7 @@ export interface objectMappingMetadataEntry  {
 **********************************************/
 export interface parseExpressionResponse  {
 	error: publicError;
-	evaluationResult: Array<string>[];
+	evaluationResult: Array<string>;
 	evaluationSucceeded: boolean;
 	parsedExpression: attributeMappingSource;
 	parsingSucceeded: boolean;
@@ -4080,8 +4080,8 @@ export interface accessReviewScheduleSettings  {
 * accessReviewStageSettings
 **********************************************/
 export interface accessReviewStageSettings  {
-	decisionsThatWillMoveToNextStage: Array<string>[];
-	dependsOn: Array<string>[];
+	decisionsThatWillMoveToNextStage: Array<string>;
+	dependsOn: Array<string>;
 	durationInDays: number;
 	fallbackReviewers: accessReviewReviewerScope[];
 	recommendationInsightSettings: accessReviewRecommendationInsightSetting[];
@@ -4187,10 +4187,10 @@ export interface conditionalAccessAllExternalTenants  {
 **********************************************/
 export interface conditionalAccessApplications  {
 	applicationFilter: conditionalAccessFilter;
-	excludeApplications: Array<string>[];
-	includeApplications: Array<string>[];
-	includeAuthenticationContextClassReferences: Array<string>[];
-	includeUserActions: Array<string>[];
+	excludeApplications: Array<string>;
+	includeApplications: Array<string>;
+	includeAuthenticationContextClassReferences: Array<string>;
+	includeUserActions: Array<string>;
 }
 /*********************************************
 * conditionalAccessFilter
@@ -4209,8 +4209,8 @@ export interface conditionalAccessAuthenticationFlows  {
 * conditionalAccessClientApplications
 **********************************************/
 export interface conditionalAccessClientApplications  {
-	excludeServicePrincipals: Array<string>[];
-	includeServicePrincipals: Array<string>[];
+	excludeServicePrincipals: Array<string>;
+	includeServicePrincipals: Array<string>;
 	servicePrincipalFilter: conditionalAccessFilter;
 }
 /*********************************************
@@ -4240,8 +4240,8 @@ export interface conditionalAccessDevices  {
 * conditionalAccessLocations
 **********************************************/
 export interface conditionalAccessLocations  {
-	excludeLocations: Array<string>[];
-	includeLocations: Array<string>[];
+	excludeLocations: Array<string>;
+	includeLocations: Array<string>;
 }
 /*********************************************
 * conditionalAccessPlatforms
@@ -4254,29 +4254,29 @@ export interface conditionalAccessPlatforms  {
 * conditionalAccessUsers
 **********************************************/
 export interface conditionalAccessUsers  {
-	excludeGroups: Array<string>[];
+	excludeGroups: Array<string>;
 	excludeGuestsOrExternalUsers: conditionalAccessGuestsOrExternalUsers;
-	excludeRoles: Array<string>[];
-	excludeUsers: Array<string>[];
-	includeGroups: Array<string>[];
+	excludeRoles: Array<string>;
+	excludeUsers: Array<string>;
+	includeGroups: Array<string>;
 	includeGuestsOrExternalUsers: conditionalAccessGuestsOrExternalUsers;
-	includeRoles: Array<string>[];
-	includeUsers: Array<string>[];
+	includeRoles: Array<string>;
+	includeUsers: Array<string>;
 }
 /*********************************************
 * conditionalAccessEnumeratedExternalTenants
 **********************************************/
 export interface conditionalAccessEnumeratedExternalTenants  {
-	members: Array<string>[];
+	members: Array<string>;
 }
 /*********************************************
 * conditionalAccessGrantControls
 **********************************************/
 export interface conditionalAccessGrantControls  {
 	builtInControls: EnumTypes.conditionalAccessGrantControl[];
-	customAuthenticationFactors: Array<string>[];
+	customAuthenticationFactors: Array<string>;
 	operator: string;
-	termsOfUse: Array<string>[];
+	termsOfUse: Array<string>;
 }
 /*********************************************
 * conditionalAccessGuestsOrExternalUsers
@@ -4341,14 +4341,14 @@ export interface iPv6CidrRange  {
 **********************************************/
 export interface riskServicePrincipalActivity  {
 	detail: EnumTypes.riskDetail;
-	riskEventTypes: Array<string>[];
+	riskEventTypes: Array<string>;
 }
 /*********************************************
 * riskUserActivity
 **********************************************/
 export interface riskUserActivity  {
 	detail: EnumTypes.riskDetail;
-	riskEventTypes: Array<string>[];
+	riskEventTypes: Array<string>;
 }
 /*********************************************
 * accessPackageAnswer
@@ -4954,7 +4954,7 @@ export interface auditActor  {
 	ipAddress: string;
 	servicePrincipalName: string;
 	userId: string;
-	userPermissions: Array<string>[];
+	userPermissions: Array<string>;
 	userPrincipalName: string;
 }
 /*********************************************
@@ -5249,7 +5249,7 @@ export interface sharedPCAccountManagerPolicy  {
 **********************************************/
 export interface windows10NetworkProxyServer  {
 	address: string;
-	exceptions: Array<string>[];
+	exceptions: Array<string>;
 	useForLocalAddresses: boolean;
 }
 /*********************************************
@@ -5744,7 +5744,7 @@ export interface windowsInformationProtectionProxiedDomainCollection  {
 **********************************************/
 export interface windowsInformationProtectionResourceCollection  {
 	displayName: string;
-	resources: Array<string>[];
+	resources: Array<string>;
 }
 /*********************************************
 * windowsInformationProtectionStoreApp
@@ -5756,8 +5756,8 @@ export interface windowsInformationProtectionStoreApp  {
 * resourceAction
 **********************************************/
 export interface resourceAction  {
-	allowedResourceActions: Array<string>[];
-	notAllowedResourceActions: Array<string>[];
+	allowedResourceActions: Array<string>;
+	notAllowedResourceActions: Array<string>;
 }
 /*********************************************
 * rolePermission
@@ -5850,7 +5850,7 @@ export interface bucketAggregationRange  {
 * collapseProperty
 **********************************************/
 export interface collapseProperty  {
-	fields: Array<string>[];
+	fields: Array<string>;
 	limit: number;
 }
 /*********************************************
@@ -5925,13 +5925,13 @@ export interface searchQuery  {
 * searchRequest
 **********************************************/
 export interface searchRequest  {
-	aggregationFilters: Array<string>[];
+	aggregationFilters: Array<string>;
 	aggregations: aggregationOption[];
 	collapseProperties: collapseProperty[];
-	contentSources: Array<string>[];
+	contentSources: Array<string>;
 	enableTopResults: boolean;
 	entityTypes: EnumTypes.entityType[];
-	fields: Array<string>[];
+	fields: Array<string>;
 	from: number;
 	query: searchQuery;
 	queryAlterationOptions: searchAlterationOptions;
@@ -5961,7 +5961,7 @@ export interface searchResponse  {
 	hitsContainers: searchHitsContainer[];
 	queryAlterationResponse: alterationResponse;
 	resultTemplates: resultTemplateDictionary;
-	searchTerms: Array<string>[];
+	searchTerms: Array<string>;
 }
 /*********************************************
 * plannerAppliedCategories
@@ -6291,8 +6291,8 @@ export interface ticketInfo  {
 **********************************************/
 export interface unifiedRoleManagementPolicyRuleTarget  {
 	caller: string;
-	enforcedSettings: Array<string>[];
-	inheritableSettings: Array<string>[];
+	enforcedSettings: Array<string>;
+	inheritableSettings: Array<string>;
 	level: string;
 	operations: EnumTypes.unifiedRoleManagementPolicyRuleTargetOperations[];
 }
@@ -6337,31 +6337,31 @@ export interface printDocumentUploadProperties  {
 * printerCapabilities
 **********************************************/
 export interface printerCapabilities  {
-	bottomMargins: Array<number>[];
+	bottomMargins: Array<number>;
 	collation: boolean;
 	colorModes: EnumTypes.printColorMode[];
-	contentTypes: Array<string>[];
+	contentTypes: Array<string>;
 	copiesPerJob: integerRange;
-	dpis: Array<number>[];
+	dpis: Array<number>;
 	duplexModes: EnumTypes.printDuplexMode[];
 	feedOrientations: EnumTypes.printerFeedOrientation[];
 	finishings: EnumTypes.printFinishing[];
-	inputBins: Array<string>[];
+	inputBins: Array<string>;
 	isColorPrintingSupported: boolean;
 	isPageRangeSupported: boolean;
-	leftMargins: Array<number>[];
-	mediaColors: Array<string>[];
-	mediaSizes: Array<string>[];
-	mediaTypes: Array<string>[];
+	leftMargins: Array<number>;
+	mediaColors: Array<string>;
+	mediaSizes: Array<string>;
+	mediaTypes: Array<string>;
 	multipageLayouts: EnumTypes.printMultipageLayout[];
 	orientations: EnumTypes.printOrientation[];
-	outputBins: Array<string>[];
-	pagesPerSheet: Array<number>[];
+	outputBins: Array<string>;
+	pagesPerSheet: Array<number>;
 	qualities: EnumTypes.printQuality[];
-	rightMargins: Array<number>[];
+	rightMargins: Array<number>;
 	scalings: EnumTypes.printScaling[];
 	supportsFitPdfToPage: boolean;
-	topMargins: Array<number>[];
+	topMargins: Array<number>;
 }
 /*********************************************
 * printerDefaults
@@ -6397,15 +6397,15 @@ export interface printerLocation  {
 	floorDescription: string;
 	latitude: number;
 	longitude: number;
-	organization: Array<string>[];
+	organization: Array<string>;
 	postalCode: string;
 	roomDescription: string;
 	roomName: string;
 	site: string;
 	stateOrProvince: string;
 	streetAddress: string;
-	subdivision: Array<string>[];
-	subunit: Array<string>[];
+	subdivision: Array<string>;
+	subunit: Array<string>;
 }
 /*********************************************
 * printerShareViewpoint
@@ -6512,7 +6512,7 @@ export interface accountTargetContent  {
 * addressBookAccountTargetContent
 **********************************************/
 export interface addressBookAccountTargetContent  {
-	accountTargetEmails: Array<string>[];
+	accountTargetEmails: Array<string>;
 }
 /*********************************************
 * assignedTrainingInfo
@@ -6811,7 +6811,7 @@ export interface alertDetection  {
 export interface alertHistoryState  {
 	appId: string;
 	assignedTo: string;
-	comments: Array<string>[];
+	comments: Array<string>;
 	feedback: EnumTypes.alertFeedback;
 	status: EnumTypes.alertStatus;
 	updatedDateTime: any;
@@ -7084,9 +7084,9 @@ export interface audioConferencing  {
 	conferenceId: string;
 	dialinUrl: string;
 	tollFreeNumber: string;
-	tollFreeNumbers: Array<string>[];
+	tollFreeNumbers: Array<string>;
 	tollNumber: string;
-	tollNumbers: Array<string>[];
+	tollNumbers: Array<string>;
 }
 /*********************************************
 * azureCommunicationServicesUserIdentity
@@ -7100,7 +7100,7 @@ export interface azureCommunicationServicesUserIdentity  {
 export interface broadcastMeetingCaptionSettings  {
 	isCaptionEnabled: boolean;
 	spokenLanguage: string;
-	translationLanguages: Array<string>[];
+	translationLanguages: Array<string>;
 }
 /*********************************************
 * callMediaState
@@ -7466,7 +7466,7 @@ export interface virtualEventPresenterInfo  {
 export interface virtualEventRegistrationQuestionAnswer  {
 	booleanValue: boolean;
 	displayName: string;
-	multiChoiceValues: Array<string>[];
+	multiChoiceValues: Array<string>;
 	questionId: string;
 	value: string;
 }
@@ -7517,7 +7517,7 @@ export interface resourceData  {
 * changeNotificationCollection
 **********************************************/
 export interface changeNotificationCollection  {
-	validationTokens: Array<string>[];
+	validationTokens: Array<string>;
 	value: changeNotification[];
 }
 /*********************************************
@@ -7741,7 +7741,7 @@ export interface chatMessagePolicyViolation  {
 export interface chatMessagePolicyViolationPolicyTip  {
 	complianceUrl: string;
 	generalText: string;
-	matchedConditionDescriptions: Array<string>[];
+	matchedConditionDescriptions: Array<string>;
 }
 /*********************************************
 * chatMessageReactionIdentitySet
@@ -7768,7 +7768,7 @@ export interface chatViewpoint  {
 * conversationMemberRoleUpdatedEventMessageDetail
 **********************************************/
 export interface conversationMemberRoleUpdatedEventMessageDetail  {
-	conversationMemberRoles: Array<string>[];
+	conversationMemberRoles: Array<string>;
 	conversationMemberUser: teamworkUserIdentity;
 	initiator: identitySet;
 }
@@ -8129,7 +8129,7 @@ export interface sensorDeploymentPackage  {
 **********************************************/
 export interface sensorSettings  {
 	description: string;
-	domainControllerDnsNames: Array<string>[];
+	domainControllerDnsNames: Array<string>;
 	isDelayedDeploymentEnabled: boolean;
 }
 /*********************************************
@@ -8145,11 +8145,11 @@ export interface alertComment  {
 **********************************************/
 export interface alertEvidence  {
 	createdDateTime: any;
-	detailedRoles: Array<string>[];
+	detailedRoles: Array<string>;
 	remediationStatus: EnumTypes.evidenceRemediationStatus;
 	remediationStatusDetails: string;
 	roles: EnumTypes.evidenceRole[];
-	tags: Array<string>[];
+	tags: Array<string>;
 	verdict: EnumTypes.evidenceVerdict;
 }
 /*********************************************
@@ -8178,10 +8178,10 @@ export interface analyzedMessageEvidence  {
 	recipientEmailAddress: string;
 	senderIp: string;
 	subject: string;
-	threatDetectionMethods: Array<string>[];
-	threats: Array<string>[];
+	threatDetectionMethods: Array<string>;
+	threats: Array<string>;
 	urlCount: number;
-	urls: Array<string>[];
+	urls: Array<string>;
 	urn: string;
 }
 /*********************************************
@@ -8266,8 +8266,8 @@ export interface userEvidence  {
 * containerEvidence
 **********************************************/
 export interface containerEvidence  {
-	args: Array<string>[];
-	command: Array<string>[];
+	args: Array<string>;
+	command: Array<string>;
 	containerId: string;
 	image: containerImageEvidence;
 	isPrivileged: boolean;
@@ -8313,7 +8313,7 @@ export interface deviceEvidence  {
 	firstSeenDateTime: any;
 	healthStatus: EnumTypes.deviceHealthStatus;
 	hostName: string;
-	ipInterfaces: Array<string>[];
+	ipInterfaces: Array<string>;
 	lastExternalIpAddress: string;
 	lastIpAddress: string;
 	loggedOnUsers: loggedOnUser[];
@@ -8506,8 +8506,8 @@ export interface ioTDeviceEvidence  {
 	model: string;
 	nics: nicEvidence[];
 	operatingSystem: string;
-	owners: Array<string>[];
-	protocols: Array<string>[];
+	owners: Array<string>;
+	protocols: Array<string>;
 	purdueLayer: string;
 	sensor: string;
 	serialNumber: string;
@@ -8522,7 +8522,7 @@ export interface ioTDeviceEvidence  {
 export interface nicEvidence  {
 	ipAddress: ipEvidence;
 	macAddress: string;
-	vlans: Array<string>[];
+	vlans: Array<string>;
 }
 /*********************************************
 * urlEvidence
@@ -8633,7 +8633,7 @@ export interface mailClusterEvidence  {
 	clusterBy: string;
 	clusterByValue: string;
 	emailCount: number;
-	networkMessageIds: Array<string>[];
+	networkMessageIds: Array<string>;
 	query: string;
 	urn: string;
 }
@@ -8703,10 +8703,10 @@ export interface registryValueEvidence  {
 **********************************************/
 export interface sasTokenEvidence  {
 	allowedIpAddresses: string;
-	allowedResourceTypes: Array<string>[];
-	allowedServices: Array<string>[];
+	allowedResourceTypes: Array<string>;
+	allowedServices: Array<string>;
 	expiryDateTime: any;
-	permissions: Array<string>[];
+	permissions: Array<string>;
 	protocol: string;
 	signatureHash: string;
 	signedWith: string;
@@ -8907,7 +8907,7 @@ export interface intelligenceProfileCountryOrRegionOfOrigin  {
 **********************************************/
 export interface sslCertificateEntity  {
 	address: physicalAddress;
-	alternateNames: Array<string>[];
+	alternateNames: Array<string>;
 	commonName: string;
 	email: string;
 	givenName: string;
@@ -9170,9 +9170,9 @@ export interface blob  {
 * answerKeyword
 **********************************************/
 export interface answerKeyword  {
-	keywords: Array<string>[];
+	keywords: Array<string>;
 	matchSimilarKeywords: boolean;
-	reservedKeywords: Array<string>[];
+	reservedKeywords: Array<string>;
 }
 /*********************************************
 * answerVariant
@@ -9208,7 +9208,7 @@ export interface urlToItemResolverBase  {
 * configuration
 **********************************************/
 export interface configuration  {
-	authorizedAppIds: Array<string>[];
+	authorizedAppIds: Array<string>;
 }
 /*********************************************
 * displayTemplate
@@ -9225,7 +9225,7 @@ export interface displayTemplate  {
 export interface propertyRule  {
 	operation: EnumTypes.ruleOperation;
 	property: string;
-	values: Array<string>[];
+	values: Array<string>;
 	valuesJoinedBy: EnumTypes.binaryOperator;
 }
 /*********************************************
@@ -9246,7 +9246,7 @@ export interface itemIdResolver  {
 * urlMatchInfo
 **********************************************/
 export interface urlMatchInfo  {
-	baseUrls: Array<string>[];
+	baseUrls: Array<string>;
 	urlPattern: string;
 }
 /*********************************************
@@ -9259,7 +9259,7 @@ export interface properties  {
 * property
 **********************************************/
 export interface property  {
-	aliases: Array<string>[];
+	aliases: Array<string>;
 	isQueryable: boolean;
 	isRefinable: boolean;
 	isRetrievable: boolean;

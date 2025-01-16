@@ -3847,22 +3847,22 @@ export const Mapper: IMapper = {
 		checkMemberGroups: {
 			argNames: ["groupIds"],
 			requestType: RequestType.PostWithArgsInBody,
-			returnType: "Array<string>[]"
+			returnType: "Array<string>"
 		},
 		checkMemberObjects: {
 			argNames: ["ids"],
 			requestType: RequestType.PostWithArgsInBody,
-			returnType: "Array<string>[]"
+			returnType: "Array<string>"
 		},
 		getMemberGroups: {
 			argNames: ["securityEnabledOnly"],
 			requestType: RequestType.PostWithArgsInBody,
-			returnType: "Array<string>[]"
+			returnType: "Array<string>"
 		},
 		getMemberObjects: {
 			argNames: ["securityEnabledOnly"],
 			requestType: RequestType.PostWithArgsInBody,
-			returnType: "Array<string>[]"
+			returnType: "Array<string>"
 		},
 	},
 	directoryObjects: {
@@ -11993,7 +11993,7 @@ export const Mapper: IMapper = {
 		},
 		getManagedDevicesWithAppFailures: {
 			requestType: RequestType.Get,
-			returnType: "Array<string>[]"
+			returnType: "Array<string>"
 		},
 	},
 	users: {
