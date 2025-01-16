@@ -3762,12 +3762,12 @@ export interface columnDefinitionProps extends  entityProps {
 export interface columnDefinitionMethods extends entityMethods {
 	sourceColumn(): IBaseQuery<columnDefinition> & columnDefinitionMethods;
 	delete(): IBaseExecution<void>;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 }
 export interface columnDefinitionOData extends entityOData {
 	sourceColumn: columnDefinition;
 	delete: void;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 }
 export interface columnDefinitionCollection extends IBaseCollection<columnDefinition, columnDefinitionOData & columnDefinitionProps> {
     add(values?: any): IBaseExecution<columnDefinition>;
@@ -4130,7 +4130,7 @@ export interface contentTypeMethods extends entityMethods {
 	columns(): columnDefinitionCollection;
 	columns(id: string | number): IBaseQuery<columnDefinition> & columnDefinitionMethods;
 	delete(): IBaseExecution<void>;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 	publish(): IBaseExecution<void>;
 	unpublish(): IBaseExecution<void>;
 	associateWithHubSites(hubSiteUrls, propagateToExistingLists): IBaseExecution<void>;
@@ -4144,7 +4144,7 @@ export interface contentTypeOData extends entityOData {
 	columnPositions: IBaseResults<columnDefinition>;
 	columns: IBaseResults<columnDefinition>;
 	delete: void;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 	publish(): IBaseExecution<void>;
 	unpublish(): IBaseExecution<void>;
 	associateWithHubSites(hubSiteUrls, propagateToExistingLists): IBaseExecution<void>;
@@ -9872,7 +9872,7 @@ export interface listMethods extends baseItemMethods {
 	subscriptions(): subscriptionCollection;
 	subscriptions(id: string | number): IBaseQuery<subscription> & subscriptionMethods;
 	delete(): IBaseExecution<void>;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 }
 export interface listOData extends baseItemOData {
 	columns: IBaseResults<columnDefinition>;
@@ -9882,7 +9882,7 @@ export interface listOData extends baseItemOData {
 	operations: IBaseResults<richLongRunningOperation>;
 	subscriptions: IBaseResults<subscription>;
 	delete: void;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 }
 export interface listCollection extends IBaseCollection<list, listOData & listProps> {
     add(values?: any): IBaseExecution<list>;
@@ -9904,7 +9904,7 @@ export interface listItemMethods extends baseItemMethods {
 	versions(): listItemVersionCollection;
 	versions(id: string | number): IBaseQuery<listItemVersion> & listItemVersionMethods;
 	delete(): IBaseExecution<void>;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
 	getActivitiesByInterval(): itemActivityStat[];
 	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
@@ -9916,7 +9916,7 @@ export interface listItemOData extends baseItemOData {
 	fields: fieldValueSet;
 	versions: IBaseResults<listItemVersion>;
 	delete: void;
-	update(values: any): IBaseExecution<void>;
+	update(values: { [key: string]: any }): IBaseExecution<void>;
 	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
 	getActivitiesByInterval(): itemActivityStat[];
 	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
@@ -12465,16 +12465,17 @@ export interface permissionProps extends  entityProps {
 }
 export interface permissionMethods extends entityMethods {
 	delete(): IBaseExecution<void>;
-	update(values: any): IBaseExecution<void>;
+	update(values: { roles: string[] }): IBaseExecution<void>;
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionOData extends entityOData {
 	delete: void;
-	update(values: any): IBaseExecution<void>;
+	update(values: { roles: string[] }): IBaseExecution<void>;
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionCollection extends IBaseCollection<permission, permissionOData & permissionProps> {
     add(values?: any): IBaseExecution<permission>;
+    add(values: { roles: string[], grantedToIdentities: { id: string, displayName?: string } }):IBaseExecution<void>
 }
 /*********************************************
 * permissionGrantConditionSet

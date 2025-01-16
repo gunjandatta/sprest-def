@@ -8,7 +8,7 @@ module.exports = {
         },
         {
             name: "update",
-            argNames: [{ name: "values", type: "any" }]
+            argNames: [{ name: "values", type: "{ [key: string]: any }" }]
         }
     ],
     contentType: [
@@ -17,7 +17,7 @@ module.exports = {
         },
         {
             name: "update",
-            argNames: [{ name: "values", type: "any" }]
+            argNames: [{ name: "values", type: "{ [key: string]: any }" }]
         }
     ],
     driveItem: [
@@ -40,7 +40,7 @@ module.exports = {
         },
         {
             name: "update",
-            argNames: [{ name: "values", type: "any" }]
+            argNames: [{ name: "values", type: "{ [key: string]: any }" }]
         }
     ],
     permission: [
@@ -49,7 +49,13 @@ module.exports = {
         },
         {
             name: "update",
-            argNames: [{ name: "values", type: "any" }]
+            argNames: [{ name: "values", type: "{ roles: string[] }" }]
+        }
+    ],
+    permissionCollection: [
+        {
+            name: "add",
+            argNames: [{ name: "values", type: "{ roles: string[], grantedToIdentities: { id: string, displayName?: string } }" }]
         }
     ],
     listItem: [
@@ -58,7 +64,7 @@ module.exports = {
         },
         {
             name: "update",
-            argNames: [{ name: "values", type: "any" }]
+            argNames: [{ name: "values", type: "{ [key: string]: any }" }]
         }
     ]
 }

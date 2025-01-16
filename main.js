@@ -754,12 +754,15 @@ ${props.join('\n')}
 
     // Parse the custom methods
     for (let name in customV2) {
+        // Skip collections
+        if (name.indexOf("Collection") > 0) { continue; }
+
         // See if it exists
         if (entities[name]) {
             // Append the methods
             entities[name].methods = entities[name].methods.concat(customV2[name]);
         }
-        else if (collections[name.replace("Collection", "")] == null) {
+        else {
             // Add the entry
             entities[name] = { props: [], methods: customV2[name] }
         }
@@ -781,8 +784,20 @@ ${props.join('\n')}
         if (collections["graph." + name] && baseType) {
             collectionInterface = `
 export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData & ${name}Props> {
-    add(values?: any): IBaseExecution<${name}>;
-}`;
+    add(values?: any): IBaseExecution<${name}>;`
+            // Parse the methods
+            let collectionMethods = customV2[name + "Collection"] || [];
+            for (let j = 0; j < collectionMethods.length; j++) {
+                let collectionMethod = collectionMethods[j];
+                let collectionMethodArgs = [];
+                for (let k = 0; k < collectionMethod.argNames.length; k++) {
+                    let argName = collectionMethod.argNames[k];
+                    collectionMethodArgs.push(argName.name + ": " + argName.type);
+                }
+                collectionInterface += `
+    ${collectionMethod.name}(${collectionMethodArgs.join(', ')}):IBaseExecution<${collectionMethod.returnType || "void"}>`;
+            }
+            collectionInterface += `\n}`;
         }
 
         // Get the base return type
