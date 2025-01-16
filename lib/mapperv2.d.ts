@@ -4872,6 +4872,7 @@ export interface IMapper {
 	permissions: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
+		add: IMapperMethod & { argNames: ["values"] }
 	},
 	permissionGrantConditionSet: {
 		properties?: Array<string>;

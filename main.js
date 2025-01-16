@@ -781,25 +781,43 @@ ${props.join('\n')}
 
         // See if a collection exists
         let collectionInterface = null;
+        let collectionMapper = "";
+        let collectionMapperDef = "";
         if (collections["graph." + name] && baseType) {
             let containsAdd = false;
             collectionInterface = `
 export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData & ${name}Props> {`
+
             // Parse the methods
             let collectionMethods = customV2[name + "Collection"] || [];
             for (let j = 0; j < collectionMethods.length; j++) {
+                // Get the method
                 let collectionMethod = collectionMethods[j];
                 containsAdd |= collectionMethod.name == "add";
+
+                // Parse the args
                 let collectionMethodArgs = [];
+                let collectionMethodArgNames = [];
                 for (let k = 0; k < collectionMethod.argNames.length; k++) {
                     let argName = collectionMethod.argNames[k];
                     collectionMethodArgs.push(argName.name + ": " + argName.type);
+                    collectionMethodArgNames.push(argName.name);
                 }
-                collectionInterface += `\n${collectionMethod.name}(${collectionMethodArgs.join(', ')}):IBaseExecution<${collectionMethod.returnType || "void"}>`;
+
+                // Add the method
+                collectionInterface += `\n\t${collectionMethod.name}(${collectionMethodArgs.join(', ')}):IBaseExecution<${collectionMethod.returnType || "void"}>`;
+
+                // Add the mapper information
+                collectionMapper += `${collectionMapper ? "\n" : ""}\t\t${collectionMethod.name}: { argNames: ["${collectionMethodArgNames.join('", "')}"], requestType: RequestType.PostWithArgsInBody ${collectionMethod.returnType ? ", returnType: " + collectionMethod.returnType : ""} },`;
+                collectionMapperDef += `${collectionMapperDef ? "\n" : ""}\t\t${collectionMethod.name}: IMapperMethod${collectionMethodArgs ? " & { argNames: [\"" + collectionMethodArgNames.join('", "') + "\"]" : ""} }`;
             }
+
+            // Ensure the add method is there by default
             if (!containsAdd) {
                 collectionInterface += `\nadd(values?: any): IBaseExecution<${name}>;`
             }
+
+            // Add a new line char
             collectionInterface += `\n}`;
         }
 
@@ -996,11 +1014,11 @@ ${mapperDef.join('\n')}
         if (collectionInterface && name != "site") {
             // Add the collection to the mapper
             contentMapper.push(`\t${name}s: {
-\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },
+\t\tquery: { argNames: ["oData"], requestType: RequestType.OData },${collectionMapper ? "\n" + collectionMapper : ""}
 \t},`)
             contentMapperDef.push(`\t${name}s: {
 \t\tproperties?: Array<string>;
-\t\tquery: IMapperMethod & { argNames: ["oData"] }
+\t\tquery: IMapperMethod & { argNames: ["oData"] }${collectionMapperDef ? "\n" + collectionMapperDef : ""}
 \t},`);
         }
     }
