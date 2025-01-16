@@ -782,20 +782,23 @@ ${props.join('\n')}
         // See if a collection exists
         let collectionInterface = null;
         if (collections["graph." + name] && baseType) {
+            let containsAdd = false;
             collectionInterface = `
-export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData & ${name}Props> {
-    add(values?: any): IBaseExecution<${name}>;`
+export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData & ${name}Props> {`
             // Parse the methods
             let collectionMethods = customV2[name + "Collection"] || [];
             for (let j = 0; j < collectionMethods.length; j++) {
                 let collectionMethod = collectionMethods[j];
+                containsAdd |= collectionMethod.name == "add";
                 let collectionMethodArgs = [];
                 for (let k = 0; k < collectionMethod.argNames.length; k++) {
                     let argName = collectionMethod.argNames[k];
                     collectionMethodArgs.push(argName.name + ": " + argName.type);
                 }
-                collectionInterface += `
-    ${collectionMethod.name}(${collectionMethodArgs.join(', ')}):IBaseExecution<${collectionMethod.returnType || "void"}>`;
+                collectionInterface += `\n${collectionMethod.name}(${collectionMethodArgs.join(', ')}):IBaseExecution<${collectionMethod.returnType || "void"}>`;
+            }
+            if(!containsAdd) {
+                collectionInterface+= `\nadd(values?: any): IBaseExecution<${name}>;`
             }
             collectionInterface += `\n}`;
         }

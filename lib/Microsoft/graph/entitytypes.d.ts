@@ -69,7 +69,7 @@ export interface accessPackageOData extends entityOData {
 	getApplicablePolicyRequirements(): IBaseExecution<ComplexTypes.accessPackageAssignmentRequestRequirements[]>;
 }
 export interface accessPackageCollection extends IBaseCollection<accessPackage, accessPackageOData & accessPackageProps> {
-    add(values?: any): IBaseExecution<accessPackage>;
+add(values?: any): IBaseExecution<accessPackage>;
 }
 /*********************************************
 * accessPackageAssignment
@@ -95,7 +95,7 @@ export interface accessPackageAssignmentOData extends entityOData {
 	reprocess(): IBaseExecution<void>;
 }
 export interface accessPackageAssignmentCollection extends IBaseCollection<accessPackageAssignment, accessPackageAssignmentOData & accessPackageAssignmentProps> {
-    add(values?: any): IBaseExecution<accessPackageAssignment>;
+add(values?: any): IBaseExecution<accessPackageAssignment>;
 }
 /*********************************************
 * accessPackageAssignmentPolicy
@@ -129,7 +129,7 @@ export interface accessPackageAssignmentPolicyOData extends entityOData {
 	questions: IBaseResults<accessPackageQuestion>;
 }
 export interface accessPackageAssignmentPolicyCollection extends IBaseCollection<accessPackageAssignmentPolicy, accessPackageAssignmentPolicyOData & accessPackageAssignmentPolicyProps> {
-    add(values?: any): IBaseExecution<accessPackageAssignmentPolicy>;
+add(values?: any): IBaseExecution<accessPackageAssignmentPolicy>;
 }
 /*********************************************
 * accessPackageAssignmentRequest
@@ -162,7 +162,7 @@ export interface accessPackageAssignmentRequestOData extends entityOData {
 	resume(source, type, data): IBaseExecution<void>;
 }
 export interface accessPackageAssignmentRequestCollection extends IBaseCollection<accessPackageAssignmentRequest, accessPackageAssignmentRequestOData & accessPackageAssignmentRequestProps> {
-    add(values?: any): IBaseExecution<accessPackageAssignmentRequest>;
+add(values?: any): IBaseExecution<accessPackageAssignmentRequest>;
 }
 /*********************************************
 * accessPackageAssignmentRequestWorkflowExtension
@@ -231,7 +231,7 @@ export interface accessPackageCatalogOData extends entityOData {
 	resourceScopes: IBaseResults<accessPackageResourceScope>;
 }
 export interface accessPackageCatalogCollection extends IBaseCollection<accessPackageCatalog, accessPackageCatalogOData & accessPackageCatalogProps> {
-    add(values?: any): IBaseExecution<accessPackageCatalog>;
+add(values?: any): IBaseExecution<accessPackageCatalog>;
 }
 /*********************************************
 * accessPackageMultipleChoiceQuestion
@@ -265,7 +265,7 @@ export interface accessPackageQuestionOData extends entityOData {
 
 }
 export interface accessPackageQuestionCollection extends IBaseCollection<accessPackageQuestion, accessPackageQuestionOData & accessPackageQuestionProps> {
-    add(values?: any): IBaseExecution<accessPackageQuestion>;
+add(values?: any): IBaseExecution<accessPackageQuestion>;
 }
 /*********************************************
 * accessPackageResource
@@ -293,7 +293,7 @@ export interface accessPackageResourceOData extends entityOData {
 	scopes: IBaseResults<accessPackageResourceScope>;
 }
 export interface accessPackageResourceCollection extends IBaseCollection<accessPackageResource, accessPackageResourceOData & accessPackageResourceProps> {
-    add(values?: any): IBaseExecution<accessPackageResource>;
+add(values?: any): IBaseExecution<accessPackageResource>;
 }
 /*********************************************
 * accessPackageResourceEnvironment
@@ -317,7 +317,7 @@ export interface accessPackageResourceEnvironmentOData extends entityOData {
 	resources: IBaseResults<accessPackageResource>;
 }
 export interface accessPackageResourceEnvironmentCollection extends IBaseCollection<accessPackageResourceEnvironment, accessPackageResourceEnvironmentOData & accessPackageResourceEnvironmentProps> {
-    add(values?: any): IBaseExecution<accessPackageResourceEnvironment>;
+add(values?: any): IBaseExecution<accessPackageResourceEnvironment>;
 }
 /*********************************************
 * accessPackageResourceRequest
@@ -337,7 +337,7 @@ export interface accessPackageResourceRequestOData extends entityOData {
 	resource: accessPackageResource;
 }
 export interface accessPackageResourceRequestCollection extends IBaseCollection<accessPackageResourceRequest, accessPackageResourceRequestOData & accessPackageResourceRequestProps> {
-    add(values?: any): IBaseExecution<accessPackageResourceRequest>;
+add(values?: any): IBaseExecution<accessPackageResourceRequest>;
 }
 /*********************************************
 * accessPackageResourceRole
@@ -356,7 +356,7 @@ export interface accessPackageResourceRoleOData extends entityOData {
 	resource: accessPackageResource;
 }
 export interface accessPackageResourceRoleCollection extends IBaseCollection<accessPackageResourceRole, accessPackageResourceRoleOData & accessPackageResourceRoleProps> {
-    add(values?: any): IBaseExecution<accessPackageResourceRole>;
+add(values?: any): IBaseExecution<accessPackageResourceRole>;
 }
 /*********************************************
 * accessPackageResourceRoleScope
@@ -374,7 +374,7 @@ export interface accessPackageResourceRoleScopeOData extends entityOData {
 	scope: accessPackageResourceScope;
 }
 export interface accessPackageResourceRoleScopeCollection extends IBaseCollection<accessPackageResourceRoleScope, accessPackageResourceRoleScopeOData & accessPackageResourceRoleScopeProps> {
-    add(values?: any): IBaseExecution<accessPackageResourceRoleScope>;
+add(values?: any): IBaseExecution<accessPackageResourceRoleScope>;
 }
 /*********************************************
 * accessPackageResourceScope
@@ -394,7 +394,7 @@ export interface accessPackageResourceScopeOData extends entityOData {
 	resource: accessPackageResource;
 }
 export interface accessPackageResourceScopeCollection extends IBaseCollection<accessPackageResourceScope, accessPackageResourceScopeOData & accessPackageResourceScopeProps> {
-    add(values?: any): IBaseExecution<accessPackageResourceScope>;
+add(values?: any): IBaseExecution<accessPackageResourceScope>;
 }
 /*********************************************
 * accessPackageSubject
@@ -451,7 +451,7 @@ export interface accessReviewHistoryDefinitionOData extends entityOData {
 	instances: IBaseResults<accessReviewHistoryInstance>;
 }
 export interface accessReviewHistoryDefinitionCollection extends IBaseCollection<accessReviewHistoryDefinition, accessReviewHistoryDefinitionOData & accessReviewHistoryDefinitionProps> {
-    add(values?: any): IBaseExecution<accessReviewHistoryDefinition>;
+add(values?: any): IBaseExecution<accessReviewHistoryDefinition>;
 }
 /*********************************************
 * accessReviewHistoryInstance
@@ -473,7 +473,7 @@ export interface accessReviewHistoryInstanceOData extends entityOData {
 	generateDownloadUri(): IBaseExecution<accessReviewHistoryInstance>;
 }
 export interface accessReviewHistoryInstanceCollection extends IBaseCollection<accessReviewHistoryInstance, accessReviewHistoryInstanceOData & accessReviewHistoryInstanceProps> {
-    add(values?: any): IBaseExecution<accessReviewHistoryInstance>;
+add(values?: any): IBaseExecution<accessReviewHistoryInstance>;
 }
 /*********************************************
 * accessReviewInstance
@@ -513,7 +513,7 @@ export interface accessReviewInstanceOData extends entityOData {
 	stop(): IBaseExecution<void>;
 }
 export interface accessReviewInstanceCollection extends IBaseCollection<accessReviewInstance, accessReviewInstanceOData & accessReviewInstanceProps> {
-    add(values?: any): IBaseExecution<accessReviewInstance>;
+add(values?: any): IBaseExecution<accessReviewInstance>;
 }
 /*********************************************
 * accessReviewInstanceDecisionItem
@@ -542,7 +542,7 @@ export interface accessReviewInstanceDecisionItemOData extends entityOData {
 	insights: IBaseResults<governanceInsight>;
 }
 export interface accessReviewInstanceDecisionItemCollection extends IBaseCollection<accessReviewInstanceDecisionItem, accessReviewInstanceDecisionItemOData & accessReviewInstanceDecisionItemProps> {
-    add(values?: any): IBaseExecution<accessReviewInstanceDecisionItem>;
+add(values?: any): IBaseExecution<accessReviewInstanceDecisionItem>;
 }
 /*********************************************
 * accessReviewReviewer
@@ -560,7 +560,7 @@ export interface accessReviewReviewerOData extends entityOData {
 
 }
 export interface accessReviewReviewerCollection extends IBaseCollection<accessReviewReviewer, accessReviewReviewerOData & accessReviewReviewerProps> {
-    add(values?: any): IBaseExecution<accessReviewReviewer>;
+add(values?: any): IBaseExecution<accessReviewReviewer>;
 }
 /*********************************************
 * accessReviewScheduleDefinition
@@ -592,7 +592,7 @@ export interface accessReviewScheduleDefinitionOData extends entityOData {
 	stop(): IBaseExecution<void>;
 }
 export interface accessReviewScheduleDefinitionCollection extends IBaseCollection<accessReviewScheduleDefinition, accessReviewScheduleDefinitionOData & accessReviewScheduleDefinitionProps> {
-    add(values?: any): IBaseExecution<accessReviewScheduleDefinition>;
+add(values?: any): IBaseExecution<accessReviewScheduleDefinition>;
 }
 /*********************************************
 * accessReviewSet
@@ -632,7 +632,7 @@ export interface accessReviewStageOData extends entityOData {
 	stop(): IBaseExecution<void>;
 }
 export interface accessReviewStageCollection extends IBaseCollection<accessReviewStage, accessReviewStageOData & accessReviewStageProps> {
-    add(values?: any): IBaseExecution<accessReviewStage>;
+add(values?: any): IBaseExecution<accessReviewStage>;
 }
 /*********************************************
 * acronym
@@ -662,7 +662,7 @@ export interface activityBasedTimeoutPolicyOData extends stsPolicyOData {
 
 }
 export interface activityBasedTimeoutPolicyCollection extends IBaseCollection<activityBasedTimeoutPolicy, activityBasedTimeoutPolicyOData & activityBasedTimeoutPolicyProps> {
-    add(values?: any): IBaseExecution<activityBasedTimeoutPolicy>;
+add(values?: any): IBaseExecution<activityBasedTimeoutPolicy>;
 }
 /*********************************************
 * activityHistoryItem
@@ -685,7 +685,7 @@ export interface activityHistoryItemOData extends entityOData {
 	activity: userActivity;
 }
 export interface activityHistoryItemCollection extends IBaseCollection<activityHistoryItem, activityHistoryItemOData & activityHistoryItemProps> {
-    add(values?: any): IBaseExecution<activityHistoryItem>;
+add(values?: any): IBaseExecution<activityHistoryItem>;
 }
 /*********************************************
 * addLargeGalleryViewOperation
@@ -794,7 +794,7 @@ export interface administrativeUnitOData extends directoryObjectOData {
 	extensions: IBaseResults<extension>;
 }
 export interface administrativeUnitCollection extends IBaseCollection<administrativeUnit, administrativeUnitOData & administrativeUnitProps> {
-    add(values?: any): IBaseExecution<administrativeUnit>;
+add(values?: any): IBaseExecution<administrativeUnit>;
 }
 /*********************************************
 * agreement
@@ -820,7 +820,7 @@ export interface agreementOData extends entityOData {
 	files: IBaseResults<agreementFileLocalization>;
 }
 export interface agreementCollection extends IBaseCollection<agreement, agreementOData & agreementProps> {
-    add(values?: any): IBaseExecution<agreement>;
+add(values?: any): IBaseExecution<agreement>;
 }
 /*********************************************
 * agreementAcceptance
@@ -848,7 +848,7 @@ export interface agreementAcceptanceOData extends entityOData {
 
 }
 export interface agreementAcceptanceCollection extends IBaseCollection<agreementAcceptance, agreementAcceptanceOData & agreementAcceptanceProps> {
-    add(values?: any): IBaseExecution<agreementAcceptance>;
+add(values?: any): IBaseExecution<agreementAcceptance>;
 }
 /*********************************************
 * agreementFile
@@ -879,7 +879,7 @@ export interface agreementFileLocalizationOData extends agreementFilePropertiesO
 	versions: IBaseResults<agreementFileVersion>;
 }
 export interface agreementFileLocalizationCollection extends IBaseCollection<agreementFileLocalization, agreementFileLocalizationOData & agreementFileLocalizationProps> {
-    add(values?: any): IBaseExecution<agreementFileLocalization>;
+add(values?: any): IBaseExecution<agreementFileLocalization>;
 }
 /*********************************************
 * agreementFileProperties
@@ -914,7 +914,7 @@ export interface agreementFileVersionOData extends agreementFilePropertiesOData 
 
 }
 export interface agreementFileVersionCollection extends IBaseCollection<agreementFileVersion, agreementFileVersionOData & agreementFileVersionProps> {
-    add(values?: any): IBaseExecution<agreementFileVersion>;
+add(values?: any): IBaseExecution<agreementFileVersion>;
 }
 /*********************************************
 * alert
@@ -961,7 +961,7 @@ export interface alertOData extends entityOData {
 
 }
 export interface alertCollection extends IBaseCollection<alert, alertOData & alertProps> {
-    add(values?: any): IBaseExecution<alert>;
+add(values?: any): IBaseExecution<alert>;
 }
 /*********************************************
 * allowedValue
@@ -977,7 +977,7 @@ export interface allowedValueOData extends entityOData {
 
 }
 export interface allowedValueCollection extends IBaseCollection<allowedValue, allowedValueOData & allowedValueProps> {
-    add(values?: any): IBaseExecution<allowedValue>;
+add(values?: any): IBaseExecution<allowedValue>;
 }
 /*********************************************
 * androidCompliancePolicy
@@ -1125,7 +1125,7 @@ export interface androidManagedAppProtectionOData extends targetedManagedAppProt
 	deploymentSummary: managedAppPolicyDeploymentSummary;
 }
 export interface androidManagedAppProtectionCollection extends IBaseCollection<androidManagedAppProtection, androidManagedAppProtectionOData & androidManagedAppProtectionProps> {
-    add(values?: any): IBaseExecution<androidManagedAppProtection>;
+add(values?: any): IBaseExecution<androidManagedAppProtection>;
 }
 /*********************************************
 * androidManagedAppRegistration
@@ -1305,7 +1305,7 @@ export interface appConsentRequestOData extends entityOData {
 	userConsentRequests: IBaseResults<userConsentRequest>;
 }
 export interface appConsentRequestCollection extends IBaseCollection<appConsentRequest, appConsentRequestOData & appConsentRequestProps> {
-    add(values?: any): IBaseExecution<appConsentRequest>;
+add(values?: any): IBaseExecution<appConsentRequest>;
 }
 /*********************************************
 * appLogCollectionRequest
@@ -1324,7 +1324,7 @@ export interface appLogCollectionRequestOData extends entityOData {
 	createDownloadUrl(): IBaseExecution<ComplexTypes.appLogCollectionDownloadDetails>;
 }
 export interface appLogCollectionRequestCollection extends IBaseCollection<appLogCollectionRequest, appLogCollectionRequestOData & appLogCollectionRequestProps> {
-    add(values?: any): IBaseExecution<appLogCollectionRequest>;
+add(values?: any): IBaseExecution<appLogCollectionRequest>;
 }
 /*********************************************
 * appManagementPolicy
@@ -1342,7 +1342,7 @@ export interface appManagementPolicyOData extends policyBaseOData {
 	appliesTo: IBaseResults<directoryObject>;
 }
 export interface appManagementPolicyCollection extends IBaseCollection<appManagementPolicy, appManagementPolicyOData & appManagementPolicyProps> {
-    add(values?: any): IBaseExecution<appManagementPolicy>;
+add(values?: any): IBaseExecution<appManagementPolicy>;
 }
 /*********************************************
 * appRoleAssignment
@@ -1364,7 +1364,7 @@ export interface appRoleAssignmentOData extends directoryObjectOData {
 
 }
 export interface appRoleAssignmentCollection extends IBaseCollection<appRoleAssignment, appRoleAssignmentOData & appRoleAssignmentProps> {
-    add(values?: any): IBaseExecution<appRoleAssignment>;
+add(values?: any): IBaseExecution<appRoleAssignment>;
 }
 /*********************************************
 * appScope
@@ -1549,7 +1549,7 @@ export interface approvalOData extends entityOData {
 	stages: IBaseResults<approvalStage>;
 }
 export interface approvalCollection extends IBaseCollection<approval, approvalOData & approvalProps> {
-    add(values?: any): IBaseExecution<approval>;
+add(values?: any): IBaseExecution<approval>;
 }
 /*********************************************
 * approvalStage
@@ -1571,7 +1571,7 @@ export interface approvalStageOData extends entityOData {
 
 }
 export interface approvalStageCollection extends IBaseCollection<approvalStage, approvalStageOData & approvalStageProps> {
-    add(values?: any): IBaseExecution<approvalStage>;
+add(values?: any): IBaseExecution<approvalStage>;
 }
 /*********************************************
 * article
@@ -1634,7 +1634,7 @@ export interface associatedTeamInfoOData extends teamInfoOData {
 
 }
 export interface associatedTeamInfoCollection extends IBaseCollection<associatedTeamInfo, associatedTeamInfoOData & associatedTeamInfoProps> {
-    add(values?: any): IBaseExecution<associatedTeamInfo>;
+add(values?: any): IBaseExecution<associatedTeamInfo>;
 }
 /*********************************************
 * attachment
@@ -1654,7 +1654,7 @@ export interface attachmentOData extends entityOData {
 
 }
 export interface attachmentCollection extends IBaseCollection<attachment, attachmentOData & attachmentProps> {
-    add(values?: any): IBaseExecution<attachment>;
+add(values?: any): IBaseExecution<attachment>;
 }
 /*********************************************
 * attachmentBase
@@ -1673,7 +1673,7 @@ export interface attachmentBaseOData extends entityOData {
 
 }
 export interface attachmentBaseCollection extends IBaseCollection<attachmentBase, attachmentBaseOData & attachmentBaseProps> {
-    add(values?: any): IBaseExecution<attachmentBase>;
+add(values?: any): IBaseExecution<attachmentBase>;
 }
 /*********************************************
 * attachmentSession
@@ -1691,7 +1691,7 @@ export interface attachmentSessionOData extends entityOData {
 
 }
 export interface attachmentSessionCollection extends IBaseCollection<attachmentSession, attachmentSessionOData & attachmentSessionProps> {
-    add(values?: any): IBaseExecution<attachmentSession>;
+add(values?: any): IBaseExecution<attachmentSession>;
 }
 /*********************************************
 * attackSimulationOperation
@@ -1709,7 +1709,7 @@ export interface attackSimulationOperationOData extends longRunningOperationODat
 
 }
 export interface attackSimulationOperationCollection extends IBaseCollection<attackSimulationOperation, attackSimulationOperationOData & attackSimulationOperationProps> {
-    add(values?: any): IBaseExecution<attackSimulationOperation>;
+add(values?: any): IBaseExecution<attackSimulationOperation>;
 }
 /*********************************************
 * attackSimulationRoot
@@ -1764,7 +1764,7 @@ export interface attendanceRecordOData extends entityOData {
 
 }
 export interface attendanceRecordCollection extends IBaseCollection<attendanceRecord, attendanceRecordOData & attendanceRecordProps> {
-    add(values?: any): IBaseExecution<attendanceRecord>;
+add(values?: any): IBaseExecution<attendanceRecord>;
 }
 /*********************************************
 * attributeMappingFunctionSchema
@@ -1794,7 +1794,7 @@ export interface attributeSetOData extends entityOData {
 
 }
 export interface attributeSetCollection extends IBaseCollection<attributeSet, attributeSetOData & attributeSetProps> {
-    add(values?: any): IBaseExecution<attributeSet>;
+add(values?: any): IBaseExecution<attributeSet>;
 }
 /*********************************************
 * audioRoutingGroup
@@ -1812,7 +1812,7 @@ export interface audioRoutingGroupOData extends entityOData {
 
 }
 export interface audioRoutingGroupCollection extends IBaseCollection<audioRoutingGroup, audioRoutingGroupOData & audioRoutingGroupProps> {
-    add(values?: any): IBaseExecution<audioRoutingGroup>;
+add(values?: any): IBaseExecution<audioRoutingGroup>;
 }
 /*********************************************
 * auditEvent
@@ -1838,7 +1838,7 @@ export interface auditEventOData extends entityOData {
 
 }
 export interface auditEventCollection extends IBaseCollection<auditEvent, auditEventOData & auditEventProps> {
-    add(values?: any): IBaseExecution<auditEvent>;
+add(values?: any): IBaseExecution<auditEvent>;
 }
 /*********************************************
 * auditLogRoot
@@ -1915,7 +1915,7 @@ export interface authenticationCombinationConfigurationOData extends entityOData
 
 }
 export interface authenticationCombinationConfigurationCollection extends IBaseCollection<authenticationCombinationConfiguration, authenticationCombinationConfigurationOData & authenticationCombinationConfigurationProps> {
-    add(values?: any): IBaseExecution<authenticationCombinationConfiguration>;
+add(values?: any): IBaseExecution<authenticationCombinationConfiguration>;
 }
 /*********************************************
 * authenticationConditionApplication
@@ -1946,7 +1946,7 @@ export interface authenticationContextClassReferenceOData extends entityOData {
 
 }
 export interface authenticationContextClassReferenceCollection extends IBaseCollection<authenticationContextClassReference, authenticationContextClassReferenceOData & authenticationContextClassReferenceProps> {
-    add(values?: any): IBaseExecution<authenticationContextClassReference>;
+add(values?: any): IBaseExecution<authenticationContextClassReference>;
 }
 /*********************************************
 * authenticationEventListener
@@ -1963,7 +1963,7 @@ export interface authenticationEventListenerOData extends entityOData {
 
 }
 export interface authenticationEventListenerCollection extends IBaseCollection<authenticationEventListener, authenticationEventListenerOData & authenticationEventListenerProps> {
-    add(values?: any): IBaseExecution<authenticationEventListener>;
+add(values?: any): IBaseExecution<authenticationEventListener>;
 }
 /*********************************************
 * authenticationEventsFlow
@@ -1981,7 +1981,7 @@ export interface authenticationEventsFlowOData extends entityOData {
 
 }
 export interface authenticationEventsFlowCollection extends IBaseCollection<authenticationEventsFlow, authenticationEventsFlowOData & authenticationEventsFlowProps> {
-    add(values?: any): IBaseExecution<authenticationEventsFlow>;
+add(values?: any): IBaseExecution<authenticationEventsFlow>;
 }
 /*********************************************
 * authenticationFlowsPolicy
@@ -2012,7 +2012,7 @@ export interface authenticationMethodOData extends entityOData {
 	resetPassword(newPassword): IBaseExecution<ComplexTypes.passwordResetResponse>;
 }
 export interface authenticationMethodCollection extends IBaseCollection<authenticationMethod, authenticationMethodOData & authenticationMethodProps> {
-    add(values?: any): IBaseExecution<authenticationMethod>;
+add(values?: any): IBaseExecution<authenticationMethod>;
 }
 /*********************************************
 * authenticationMethodConfiguration
@@ -2029,7 +2029,7 @@ export interface authenticationMethodConfigurationOData extends entityOData {
 
 }
 export interface authenticationMethodConfigurationCollection extends IBaseCollection<authenticationMethodConfiguration, authenticationMethodConfigurationOData & authenticationMethodConfigurationProps> {
-    add(values?: any): IBaseExecution<authenticationMethodConfiguration>;
+add(values?: any): IBaseExecution<authenticationMethodConfiguration>;
 }
 /*********************************************
 * authenticationMethodModeDetail
@@ -2046,7 +2046,7 @@ export interface authenticationMethodModeDetailOData extends entityOData {
 
 }
 export interface authenticationMethodModeDetailCollection extends IBaseCollection<authenticationMethodModeDetail, authenticationMethodModeDetailOData & authenticationMethodModeDetailProps> {
-    add(values?: any): IBaseExecution<authenticationMethodModeDetail>;
+add(values?: any): IBaseExecution<authenticationMethodModeDetail>;
 }
 /*********************************************
 * authenticationMethodTarget
@@ -2063,7 +2063,7 @@ export interface authenticationMethodTargetOData extends entityOData {
 
 }
 export interface authenticationMethodTargetCollection extends IBaseCollection<authenticationMethodTarget, authenticationMethodTargetOData & authenticationMethodTargetProps> {
-    add(values?: any): IBaseExecution<authenticationMethodTarget>;
+add(values?: any): IBaseExecution<authenticationMethodTarget>;
 }
 /*********************************************
 * authenticationMethodsPolicy
@@ -2132,7 +2132,7 @@ export interface authenticationStrengthPolicyOData extends entityOData {
 	usage(): ComplexTypes.authenticationStrengthUsage;
 }
 export interface authenticationStrengthPolicyCollection extends IBaseCollection<authenticationStrengthPolicy, authenticationStrengthPolicyOData & authenticationStrengthPolicyProps> {
-    add(values?: any): IBaseExecution<authenticationStrengthPolicy>;
+add(values?: any): IBaseExecution<authenticationStrengthPolicy>;
 }
 /*********************************************
 * authenticationStrengthRoot
@@ -2167,7 +2167,7 @@ export interface authoredNoteOData extends entityOData {
 
 }
 export interface authoredNoteCollection extends IBaseCollection<authoredNote, authoredNoteOData & authoredNoteProps> {
-    add(values?: any): IBaseExecution<authoredNote>;
+add(values?: any): IBaseExecution<authoredNote>;
 }
 /*********************************************
 * authorityTemplate
@@ -2254,7 +2254,7 @@ export interface b2xIdentityUserFlowOData extends identityUserFlowOData {
 	userFlowIdentityProviders: IBaseResults<identityProviderBase>;
 }
 export interface b2xIdentityUserFlowCollection extends IBaseCollection<b2xIdentityUserFlow, b2xIdentityUserFlowOData & b2xIdentityUserFlowProps> {
-    add(values?: any): IBaseExecution<b2xIdentityUserFlow>;
+add(values?: any): IBaseExecution<b2xIdentityUserFlow>;
 }
 /*********************************************
 * backupRestoreRoot
@@ -2343,7 +2343,7 @@ export interface baseItemOData extends entityOData {
 	lastModifiedByUser: user;
 }
 export interface baseItemCollection extends IBaseCollection<baseItem, baseItemOData & baseItemProps> {
-    add(values?: any): IBaseExecution<baseItem>;
+add(values?: any): IBaseExecution<baseItem>;
 }
 /*********************************************
 * baseItemVersion
@@ -2376,7 +2376,7 @@ export interface baseSitePageOData extends baseItemOData {
 
 }
 export interface baseSitePageCollection extends IBaseCollection<baseSitePage, baseSitePageOData & baseSitePageProps> {
-    add(values?: any): IBaseExecution<baseSitePage>;
+add(values?: any): IBaseExecution<baseSitePage>;
 }
 /*********************************************
 * billedReconciliation
@@ -2469,7 +2469,7 @@ export interface bitlockerRecoveryKeyOData extends entityOData {
 
 }
 export interface bitlockerRecoveryKeyCollection extends IBaseCollection<bitlockerRecoveryKey, bitlockerRecoveryKeyOData & bitlockerRecoveryKeyProps> {
-    add(values?: any): IBaseExecution<bitlockerRecoveryKey>;
+add(values?: any): IBaseExecution<bitlockerRecoveryKey>;
 }
 /*********************************************
 * bookingAppointment
@@ -2516,7 +2516,7 @@ export interface bookingAppointmentOData extends entityOData {
 
 }
 export interface bookingAppointmentCollection extends IBaseCollection<bookingAppointment, bookingAppointmentOData & bookingAppointmentProps> {
-    add(values?: any): IBaseExecution<bookingAppointment>;
+add(values?: any): IBaseExecution<bookingAppointment>;
 }
 /*********************************************
 * bookingBusiness
@@ -2562,7 +2562,7 @@ export interface bookingBusinessOData extends entityOData {
 	staffMembers: IBaseResults<bookingStaffMemberBase>;
 }
 export interface bookingBusinessCollection extends IBaseCollection<bookingBusiness, bookingBusinessOData & bookingBusinessProps> {
-    add(values?: any): IBaseExecution<bookingBusiness>;
+add(values?: any): IBaseExecution<bookingBusiness>;
 }
 /*********************************************
 * bookingCurrency
@@ -2578,7 +2578,7 @@ export interface bookingCurrencyOData extends entityOData {
 
 }
 export interface bookingCurrencyCollection extends IBaseCollection<bookingCurrency, bookingCurrencyOData & bookingCurrencyProps> {
-    add(values?: any): IBaseExecution<bookingCurrency>;
+add(values?: any): IBaseExecution<bookingCurrency>;
 }
 /*********************************************
 * bookingCustomQuestion
@@ -2598,7 +2598,7 @@ export interface bookingCustomQuestionOData extends entityOData {
 
 }
 export interface bookingCustomQuestionCollection extends IBaseCollection<bookingCustomQuestion, bookingCustomQuestionOData & bookingCustomQuestionProps> {
-    add(values?: any): IBaseExecution<bookingCustomQuestion>;
+add(values?: any): IBaseExecution<bookingCustomQuestion>;
 }
 /*********************************************
 * bookingCustomer
@@ -2632,7 +2632,7 @@ export interface bookingCustomerBaseOData extends entityOData {
 
 }
 export interface bookingCustomerBaseCollection extends IBaseCollection<bookingCustomerBase, bookingCustomerBaseOData & bookingCustomerBaseProps> {
-    add(values?: any): IBaseExecution<bookingCustomerBase>;
+add(values?: any): IBaseExecution<bookingCustomerBase>;
 }
 /*********************************************
 * bookingService
@@ -2671,7 +2671,7 @@ export interface bookingServiceOData extends entityOData {
 
 }
 export interface bookingServiceCollection extends IBaseCollection<bookingService, bookingServiceOData & bookingServiceProps> {
-    add(values?: any): IBaseExecution<bookingService>;
+add(values?: any): IBaseExecution<bookingService>;
 }
 /*********************************************
 * bookingStaffMember
@@ -2710,7 +2710,7 @@ export interface bookingStaffMemberBaseOData extends entityOData {
 
 }
 export interface bookingStaffMemberBaseCollection extends IBaseCollection<bookingStaffMemberBase, bookingStaffMemberBaseOData & bookingStaffMemberBaseProps> {
-    add(values?: any): IBaseExecution<bookingStaffMemberBase>;
+add(values?: any): IBaseExecution<bookingStaffMemberBase>;
 }
 /*********************************************
 * bookmark
@@ -2760,7 +2760,7 @@ export interface browserSharedCookieOData extends entityOData {
 
 }
 export interface browserSharedCookieCollection extends IBaseCollection<browserSharedCookie, browserSharedCookieOData & browserSharedCookieProps> {
-    add(values?: any): IBaseExecution<browserSharedCookie>;
+add(values?: any): IBaseExecution<browserSharedCookie>;
 }
 /*********************************************
 * browserSite
@@ -2787,7 +2787,7 @@ export interface browserSiteOData extends entityOData {
 
 }
 export interface browserSiteCollection extends IBaseCollection<browserSite, browserSiteOData & browserSiteProps> {
-    add(values?: any): IBaseExecution<browserSite>;
+add(values?: any): IBaseExecution<browserSite>;
 }
 /*********************************************
 * browserSiteList
@@ -2816,7 +2816,7 @@ export interface browserSiteListOData extends entityOData {
 	publish(revision, sites, sharedCookies): IBaseExecution<browserSiteList>;
 }
 export interface browserSiteListCollection extends IBaseCollection<browserSiteList, browserSiteListOData & browserSiteListProps> {
-    add(values?: any): IBaseExecution<browserSiteList>;
+add(values?: any): IBaseExecution<browserSiteList>;
 }
 /*********************************************
 * builtInIdentityProvider
@@ -2885,7 +2885,7 @@ export interface calendarOData extends entityOData {
 	getSchedule(Schedules, EndTime, StartTime, AvailabilityViewInterval): IBaseExecution<ComplexTypes.scheduleInformation[]>;
 }
 export interface calendarCollection extends IBaseCollection<calendar, calendarOData & calendarProps> {
-    add(values?: any): IBaseExecution<calendar>;
+add(values?: any): IBaseExecution<calendar>;
 }
 /*********************************************
 * calendarGroup
@@ -2904,7 +2904,7 @@ export interface calendarGroupOData extends entityOData {
 	calendars: IBaseResults<calendar>;
 }
 export interface calendarGroupCollection extends IBaseCollection<calendarGroup, calendarGroupOData & calendarGroupProps> {
-    add(values?: any): IBaseExecution<calendarGroup>;
+add(values?: any): IBaseExecution<calendarGroup>;
 }
 /*********************************************
 * calendarPermission
@@ -2924,7 +2924,7 @@ export interface calendarPermissionOData extends entityOData {
 
 }
 export interface calendarPermissionCollection extends IBaseCollection<calendarPermission, calendarPermissionOData & calendarPermissionProps> {
-    add(values?: any): IBaseExecution<calendarPermission>;
+add(values?: any): IBaseExecution<calendarPermission>;
 }
 /*********************************************
 * calendarSharingMessage
@@ -3015,7 +3015,7 @@ export interface callOData extends entityOData {
 	updateRecordingStatus(status, clientContext): IBaseExecution<updateRecordingStatusOperation>;
 }
 export interface callCollection extends IBaseCollection<call, callOData & callProps> {
-    add(values?: any): IBaseExecution<call>;
+add(values?: any): IBaseExecution<call>;
 }
 /*********************************************
 * callRecord
@@ -3065,7 +3065,7 @@ export interface callRecordingOData extends entityOData {
 
 }
 export interface callRecordingCollection extends IBaseCollection<callRecording, callRecordingOData & callRecordingProps> {
-    add(values?: any): IBaseExecution<callRecording>;
+add(values?: any): IBaseExecution<callRecording>;
 }
 /*********************************************
 * callTranscript
@@ -3089,7 +3089,7 @@ export interface callTranscriptOData extends entityOData {
 
 }
 export interface callTranscriptCollection extends IBaseCollection<callTranscript, callTranscriptOData & callTranscriptProps> {
-    add(values?: any): IBaseExecution<callTranscript>;
+add(values?: any): IBaseExecution<callTranscript>;
 }
 /*********************************************
 * cancelMediaProcessingOperation
@@ -3181,7 +3181,7 @@ export interface certificateBasedAuthConfigurationOData extends entityOData {
 
 }
 export interface certificateBasedAuthConfigurationCollection extends IBaseCollection<certificateBasedAuthConfiguration, certificateBasedAuthConfigurationOData & certificateBasedAuthConfigurationProps> {
-    add(values?: any): IBaseExecution<certificateBasedAuthConfiguration>;
+add(values?: any): IBaseExecution<certificateBasedAuthConfiguration>;
 }
 /*********************************************
 * changeTrackedEntity
@@ -3245,7 +3245,7 @@ export interface channelOData extends entityOData {
 	doesUserHaveAccess(userId, tenantId, userPrincipalName): boolean;
 }
 export interface channelCollection extends IBaseCollection<channel, channelOData & channelProps> {
-    add(values?: any): IBaseExecution<channel>;
+add(values?: any): IBaseExecution<channel>;
 }
 /*********************************************
 * chat
@@ -3296,7 +3296,7 @@ export interface chatOData extends entityOData {
 	unhideForUser(user): IBaseExecution<void>;
 }
 export interface chatCollection extends IBaseCollection<chat, chatOData & chatProps> {
-    add(values?: any): IBaseExecution<chat>;
+add(values?: any): IBaseExecution<chat>;
 }
 /*********************************************
 * chatMessage
@@ -3345,7 +3345,7 @@ export interface chatMessageOData extends entityOData {
 	unsetReaction(reactionType): IBaseExecution<void>;
 }
 export interface chatMessageCollection extends IBaseCollection<chatMessage, chatMessageOData & chatMessageProps> {
-    add(values?: any): IBaseExecution<chatMessage>;
+add(values?: any): IBaseExecution<chatMessage>;
 }
 /*********************************************
 * chatMessageHostedContent
@@ -3361,7 +3361,7 @@ export interface chatMessageHostedContentOData extends teamworkHostedContentODat
 
 }
 export interface chatMessageHostedContentCollection extends IBaseCollection<chatMessageHostedContent, chatMessageHostedContentOData & chatMessageHostedContentProps> {
-    add(values?: any): IBaseExecution<chatMessageHostedContent>;
+add(values?: any): IBaseExecution<chatMessageHostedContent>;
 }
 /*********************************************
 * chatMessageInfo
@@ -3398,7 +3398,7 @@ export interface checklistItemOData extends entityOData {
 
 }
 export interface checklistItemCollection extends IBaseCollection<checklistItem, checklistItemOData & checklistItemProps> {
-    add(values?: any): IBaseExecution<checklistItem>;
+add(values?: any): IBaseExecution<checklistItem>;
 }
 /*********************************************
 * citationTemplate
@@ -3428,7 +3428,7 @@ export interface claimsMappingPolicyOData extends stsPolicyOData {
 
 }
 export interface claimsMappingPolicyCollection extends IBaseCollection<claimsMappingPolicy, claimsMappingPolicyOData & claimsMappingPolicyProps> {
-    add(values?: any): IBaseExecution<claimsMappingPolicy>;
+add(values?: any): IBaseExecution<claimsMappingPolicy>;
 }
 /*********************************************
 * cloudClipboardItem
@@ -3447,7 +3447,7 @@ export interface cloudClipboardItemOData extends entityOData {
 
 }
 export interface cloudClipboardItemCollection extends IBaseCollection<cloudClipboardItem, cloudClipboardItemOData & cloudClipboardItemProps> {
-    add(values?: any): IBaseExecution<cloudClipboardItem>;
+add(values?: any): IBaseExecution<cloudClipboardItem>;
 }
 /*********************************************
 * cloudClipboardRoot
@@ -3523,7 +3523,7 @@ export interface cloudPCOData extends entityOData {
 	troubleshoot(): IBaseExecution<void>;
 }
 export interface cloudPCCollection extends IBaseCollection<cloudPC, cloudPCOData & cloudPCProps> {
-    add(values?: any): IBaseExecution<cloudPC>;
+add(values?: any): IBaseExecution<cloudPC>;
 }
 /*********************************************
 * cloudPcAuditEvent
@@ -3549,7 +3549,7 @@ export interface cloudPcAuditEventOData extends entityOData {
 
 }
 export interface cloudPcAuditEventCollection extends IBaseCollection<cloudPcAuditEvent, cloudPcAuditEventOData & cloudPcAuditEventProps> {
-    add(values?: any): IBaseExecution<cloudPcAuditEvent>;
+add(values?: any): IBaseExecution<cloudPcAuditEvent>;
 }
 /*********************************************
 * cloudPcDeviceImage
@@ -3574,7 +3574,7 @@ export interface cloudPcDeviceImageOData extends entityOData {
 
 }
 export interface cloudPcDeviceImageCollection extends IBaseCollection<cloudPcDeviceImage, cloudPcDeviceImageOData & cloudPcDeviceImageProps> {
-    add(values?: any): IBaseExecution<cloudPcDeviceImage>;
+add(values?: any): IBaseExecution<cloudPcDeviceImage>;
 }
 /*********************************************
 * cloudPcGalleryImage
@@ -3598,7 +3598,7 @@ export interface cloudPcGalleryImageOData extends entityOData {
 
 }
 export interface cloudPcGalleryImageCollection extends IBaseCollection<cloudPcGalleryImage, cloudPcGalleryImageOData & cloudPcGalleryImageProps> {
-    add(values?: any): IBaseExecution<cloudPcGalleryImage>;
+add(values?: any): IBaseExecution<cloudPcGalleryImage>;
 }
 /*********************************************
 * cloudPcOnPremisesConnection
@@ -3629,7 +3629,7 @@ export interface cloudPcOnPremisesConnectionOData extends entityOData {
 	runHealthChecks(): IBaseExecution<void>;
 }
 export interface cloudPcOnPremisesConnectionCollection extends IBaseCollection<cloudPcOnPremisesConnection, cloudPcOnPremisesConnectionOData & cloudPcOnPremisesConnectionProps> {
-    add(values?: any): IBaseExecution<cloudPcOnPremisesConnection>;
+add(values?: any): IBaseExecution<cloudPcOnPremisesConnection>;
 }
 /*********************************************
 * cloudPcProvisioningPolicy
@@ -3662,7 +3662,7 @@ export interface cloudPcProvisioningPolicyOData extends entityOData {
 	assign(assignments): IBaseExecution<void>;
 }
 export interface cloudPcProvisioningPolicyCollection extends IBaseCollection<cloudPcProvisioningPolicy, cloudPcProvisioningPolicyOData & cloudPcProvisioningPolicyProps> {
-    add(values?: any): IBaseExecution<cloudPcProvisioningPolicy>;
+add(values?: any): IBaseExecution<cloudPcProvisioningPolicy>;
 }
 /*********************************************
 * cloudPcProvisioningPolicyAssignment
@@ -3679,7 +3679,7 @@ export interface cloudPcProvisioningPolicyAssignmentOData extends entityOData {
 	assignedUsers: IBaseResults<user>;
 }
 export interface cloudPcProvisioningPolicyAssignmentCollection extends IBaseCollection<cloudPcProvisioningPolicyAssignment, cloudPcProvisioningPolicyAssignmentOData & cloudPcProvisioningPolicyAssignmentProps> {
-    add(values?: any): IBaseExecution<cloudPcProvisioningPolicyAssignment>;
+add(values?: any): IBaseExecution<cloudPcProvisioningPolicyAssignment>;
 }
 /*********************************************
 * cloudPcUserSetting
@@ -3703,7 +3703,7 @@ export interface cloudPcUserSettingOData extends entityOData {
 	assign(assignments): IBaseExecution<void>;
 }
 export interface cloudPcUserSettingCollection extends IBaseCollection<cloudPcUserSetting, cloudPcUserSettingOData & cloudPcUserSettingProps> {
-    add(values?: any): IBaseExecution<cloudPcUserSetting>;
+add(values?: any): IBaseExecution<cloudPcUserSetting>;
 }
 /*********************************************
 * cloudPcUserSettingAssignment
@@ -3720,7 +3720,7 @@ export interface cloudPcUserSettingAssignmentOData extends entityOData {
 
 }
 export interface cloudPcUserSettingAssignmentCollection extends IBaseCollection<cloudPcUserSettingAssignment, cloudPcUserSettingAssignmentOData & cloudPcUserSettingAssignmentProps> {
-    add(values?: any): IBaseExecution<cloudPcUserSettingAssignment>;
+add(values?: any): IBaseExecution<cloudPcUserSettingAssignment>;
 }
 /*********************************************
 * columnDefinition
@@ -3770,7 +3770,7 @@ export interface columnDefinitionOData extends entityOData {
 	update(values: { [key: string]: any }): IBaseExecution<void>;
 }
 export interface columnDefinitionCollection extends IBaseCollection<columnDefinition, columnDefinitionOData & columnDefinitionProps> {
-    add(values?: any): IBaseExecution<columnDefinition>;
+add(values?: any): IBaseExecution<columnDefinition>;
 }
 /*********************************************
 * columnLink
@@ -3786,7 +3786,7 @@ export interface columnLinkOData extends entityOData {
 
 }
 export interface columnLinkCollection extends IBaseCollection<columnLink, columnLinkOData & columnLinkProps> {
-    add(values?: any): IBaseExecution<columnLink>;
+add(values?: any): IBaseExecution<columnLink>;
 }
 /*********************************************
 * commsOperation
@@ -3804,7 +3804,7 @@ export interface commsOperationOData extends entityOData {
 
 }
 export interface commsOperationCollection extends IBaseCollection<commsOperation, commsOperationOData & commsOperationProps> {
-    add(values?: any): IBaseExecution<commsOperation>;
+add(values?: any): IBaseExecution<commsOperation>;
 }
 /*********************************************
 * community
@@ -3826,7 +3826,7 @@ export interface communityOData extends entityOData {
 	owners: IBaseResults<user>;
 }
 export interface communityCollection extends IBaseCollection<community, communityOData & communityProps> {
-    add(values?: any): IBaseExecution<community>;
+add(values?: any): IBaseExecution<community>;
 }
 /*********************************************
 * companySubscription
@@ -3853,7 +3853,7 @@ export interface companySubscriptionOData extends entityOData {
 
 }
 export interface companySubscriptionCollection extends IBaseCollection<companySubscription, companySubscriptionOData & companySubscriptionProps> {
-    add(values?: any): IBaseExecution<companySubscription>;
+add(values?: any): IBaseExecution<companySubscription>;
 }
 /*********************************************
 * compliance
@@ -3890,7 +3890,7 @@ export interface complianceManagementPartnerOData extends entityOData {
 
 }
 export interface complianceManagementPartnerCollection extends IBaseCollection<complianceManagementPartner, complianceManagementPartnerOData & complianceManagementPartnerProps> {
-    add(values?: any): IBaseExecution<complianceManagementPartner>;
+add(values?: any): IBaseExecution<complianceManagementPartner>;
 }
 /*********************************************
 * conditionalAccessPolicy
@@ -3914,7 +3914,7 @@ export interface conditionalAccessPolicyOData extends entityOData {
 
 }
 export interface conditionalAccessPolicyCollection extends IBaseCollection<conditionalAccessPolicy, conditionalAccessPolicyOData & conditionalAccessPolicyProps> {
-    add(values?: any): IBaseExecution<conditionalAccessPolicy>;
+add(values?: any): IBaseExecution<conditionalAccessPolicy>;
 }
 /*********************************************
 * conditionalAccessRoot
@@ -3958,7 +3958,7 @@ export interface conditionalAccessTemplateOData extends entityOData {
 
 }
 export interface conditionalAccessTemplateCollection extends IBaseCollection<conditionalAccessTemplate, conditionalAccessTemplateOData & conditionalAccessTemplateProps> {
-    add(values?: any): IBaseExecution<conditionalAccessTemplate>;
+add(values?: any): IBaseExecution<conditionalAccessTemplate>;
 }
 /*********************************************
 * connectedOrganization
@@ -3983,7 +3983,7 @@ export interface connectedOrganizationOData extends entityOData {
 	internalSponsors: IBaseResults<directoryObject>;
 }
 export interface connectedOrganizationCollection extends IBaseCollection<connectedOrganization, connectedOrganizationOData & connectedOrganizationProps> {
-    add(values?: any): IBaseExecution<connectedOrganization>;
+add(values?: any): IBaseExecution<connectedOrganization>;
 }
 /*********************************************
 * connectionOperation
@@ -4054,7 +4054,7 @@ export interface contactOData extends outlookItemOData {
 	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 export interface contactCollection extends IBaseCollection<contact, contactOData & contactProps> {
-    add(values?: any): IBaseExecution<contact>;
+add(values?: any): IBaseExecution<contact>;
 }
 /*********************************************
 * contactFolder
@@ -4081,7 +4081,7 @@ export interface contactFolderOData extends entityOData {
 	singleValueExtendedProperties: IBaseResults<singleValueLegacyExtendedProperty>;
 }
 export interface contactFolderCollection extends IBaseCollection<contactFolder, contactFolderOData & contactFolderProps> {
-    add(values?: any): IBaseExecution<contactFolder>;
+add(values?: any): IBaseExecution<contactFolder>;
 }
 /*********************************************
 * contentSharingSession
@@ -4097,7 +4097,7 @@ export interface contentSharingSessionOData extends entityOData {
 
 }
 export interface contentSharingSessionCollection extends IBaseCollection<contentSharingSession, contentSharingSessionOData & contentSharingSessionProps> {
-    add(values?: any): IBaseExecution<contentSharingSession>;
+add(values?: any): IBaseExecution<contentSharingSession>;
 }
 /*********************************************
 * contentType
@@ -4152,7 +4152,7 @@ export interface contentTypeOData extends entityOData {
 	isPublished(): boolean;
 }
 export interface contentTypeCollection extends IBaseCollection<contentType, contentTypeOData & contentTypeProps> {
-    add(values?: any): IBaseExecution<contentType>;
+add(values?: any): IBaseExecution<contentType>;
 }
 /*********************************************
 * contract
@@ -4189,7 +4189,7 @@ export interface conversationOData extends entityOData {
 	threads: IBaseResults<conversationThread>;
 }
 export interface conversationCollection extends IBaseCollection<conversation, conversationOData & conversationProps> {
-    add(values?: any): IBaseExecution<conversation>;
+add(values?: any): IBaseExecution<conversation>;
 }
 /*********************************************
 * conversationMember
@@ -4207,7 +4207,7 @@ export interface conversationMemberOData extends entityOData {
 
 }
 export interface conversationMemberCollection extends IBaseCollection<conversationMember, conversationMemberOData & conversationMemberProps> {
-    add(values?: any): IBaseExecution<conversationMember>;
+add(values?: any): IBaseExecution<conversationMember>;
 }
 /*********************************************
 * conversationThread
@@ -4233,7 +4233,7 @@ export interface conversationThreadOData extends entityOData {
 	reply(Post): IBaseExecution<void>;
 }
 export interface conversationThreadCollection extends IBaseCollection<conversationThread, conversationThreadOData & conversationThreadProps> {
-    add(values?: any): IBaseExecution<conversationThread>;
+add(values?: any): IBaseExecution<conversationThread>;
 }
 /*********************************************
 * countryNamedLocation
@@ -4340,7 +4340,7 @@ export interface customAuthenticationExtensionOData extends customCalloutExtensi
 	validateAuthenticationConfiguration(): IBaseExecution<ComplexTypes.authenticationConfigurationValidation>;
 }
 export interface customAuthenticationExtensionCollection extends IBaseCollection<customAuthenticationExtension, customAuthenticationExtensionOData & customAuthenticationExtensionProps> {
-    add(values?: any): IBaseExecution<customAuthenticationExtension>;
+add(values?: any): IBaseExecution<customAuthenticationExtension>;
 }
 /*********************************************
 * customCalloutExtension
@@ -4360,7 +4360,7 @@ export interface customCalloutExtensionOData extends entityOData {
 
 }
 export interface customCalloutExtensionCollection extends IBaseCollection<customCalloutExtension, customCalloutExtensionOData & customCalloutExtensionProps> {
-    add(values?: any): IBaseExecution<customCalloutExtension>;
+add(values?: any): IBaseExecution<customCalloutExtension>;
 }
 /*********************************************
 * customExtensionStageSetting
@@ -4376,7 +4376,7 @@ export interface customExtensionStageSettingOData extends entityOData {
 	customExtension: customCalloutExtension;
 }
 export interface customExtensionStageSettingCollection extends IBaseCollection<customExtensionStageSetting, customExtensionStageSettingOData & customExtensionStageSettingProps> {
-    add(values?: any): IBaseExecution<customExtensionStageSetting>;
+add(values?: any): IBaseExecution<customExtensionStageSetting>;
 }
 /*********************************************
 * customSecurityAttributeDefinition
@@ -4400,7 +4400,7 @@ export interface customSecurityAttributeDefinitionOData extends entityOData {
 	allowedValues: IBaseResults<allowedValue>;
 }
 export interface customSecurityAttributeDefinitionCollection extends IBaseCollection<customSecurityAttributeDefinition, customSecurityAttributeDefinitionOData & customSecurityAttributeDefinitionProps> {
-    add(values?: any): IBaseExecution<customSecurityAttributeDefinition>;
+add(values?: any): IBaseExecution<customSecurityAttributeDefinition>;
 }
 /*********************************************
 * customTaskExtension
@@ -4513,7 +4513,7 @@ export interface defaultManagedAppProtectionOData extends managedAppProtectionOD
 	deploymentSummary: managedAppPolicyDeploymentSummary;
 }
 export interface defaultManagedAppProtectionCollection extends IBaseCollection<defaultManagedAppProtection, defaultManagedAppProtectionOData & defaultManagedAppProtectionProps> {
-    add(values?: any): IBaseExecution<defaultManagedAppProtection>;
+add(values?: any): IBaseExecution<defaultManagedAppProtection>;
 }
 /*********************************************
 * delegatedAdminAccessAssignment
@@ -4533,7 +4533,7 @@ export interface delegatedAdminAccessAssignmentOData extends entityOData {
 
 }
 export interface delegatedAdminAccessAssignmentCollection extends IBaseCollection<delegatedAdminAccessAssignment, delegatedAdminAccessAssignmentOData & delegatedAdminAccessAssignmentProps> {
-    add(values?: any): IBaseExecution<delegatedAdminAccessAssignment>;
+add(values?: any): IBaseExecution<delegatedAdminAccessAssignment>;
 }
 /*********************************************
 * delegatedAdminCustomer
@@ -4551,7 +4551,7 @@ export interface delegatedAdminCustomerOData extends entityOData {
 	serviceManagementDetails: IBaseResults<delegatedAdminServiceManagementDetail>;
 }
 export interface delegatedAdminCustomerCollection extends IBaseCollection<delegatedAdminCustomer, delegatedAdminCustomerOData & delegatedAdminCustomerProps> {
-    add(values?: any): IBaseExecution<delegatedAdminCustomer>;
+add(values?: any): IBaseExecution<delegatedAdminCustomer>;
 }
 /*********************************************
 * delegatedAdminRelationship
@@ -4583,7 +4583,7 @@ export interface delegatedAdminRelationshipOData extends entityOData {
 	requests: IBaseResults<delegatedAdminRelationshipRequest>;
 }
 export interface delegatedAdminRelationshipCollection extends IBaseCollection<delegatedAdminRelationship, delegatedAdminRelationshipOData & delegatedAdminRelationshipProps> {
-    add(values?: any): IBaseExecution<delegatedAdminRelationship>;
+add(values?: any): IBaseExecution<delegatedAdminRelationship>;
 }
 /*********************************************
 * delegatedAdminRelationshipOperation
@@ -4603,7 +4603,7 @@ export interface delegatedAdminRelationshipOperationOData extends entityOData {
 
 }
 export interface delegatedAdminRelationshipOperationCollection extends IBaseCollection<delegatedAdminRelationshipOperation, delegatedAdminRelationshipOperationOData & delegatedAdminRelationshipOperationProps> {
-    add(values?: any): IBaseExecution<delegatedAdminRelationshipOperation>;
+add(values?: any): IBaseExecution<delegatedAdminRelationshipOperation>;
 }
 /*********************************************
 * delegatedAdminRelationshipRequest
@@ -4622,7 +4622,7 @@ export interface delegatedAdminRelationshipRequestOData extends entityOData {
 
 }
 export interface delegatedAdminRelationshipRequestCollection extends IBaseCollection<delegatedAdminRelationshipRequest, delegatedAdminRelationshipRequestOData & delegatedAdminRelationshipRequestProps> {
-    add(values?: any): IBaseExecution<delegatedAdminRelationshipRequest>;
+add(values?: any): IBaseExecution<delegatedAdminRelationshipRequest>;
 }
 /*********************************************
 * delegatedAdminServiceManagementDetail
@@ -4639,7 +4639,7 @@ export interface delegatedAdminServiceManagementDetailOData extends entityOData 
 
 }
 export interface delegatedAdminServiceManagementDetailCollection extends IBaseCollection<delegatedAdminServiceManagementDetail, delegatedAdminServiceManagementDetailOData & delegatedAdminServiceManagementDetailProps> {
-    add(values?: any): IBaseExecution<delegatedAdminServiceManagementDetail>;
+add(values?: any): IBaseExecution<delegatedAdminServiceManagementDetail>;
 }
 /*********************************************
 * delegatedPermissionClassification
@@ -4657,7 +4657,7 @@ export interface delegatedPermissionClassificationOData extends entityOData {
 
 }
 export interface delegatedPermissionClassificationCollection extends IBaseCollection<delegatedPermissionClassification, delegatedPermissionClassificationOData & delegatedPermissionClassificationProps> {
-    add(values?: any): IBaseExecution<delegatedPermissionClassification>;
+add(values?: any): IBaseExecution<delegatedPermissionClassification>;
 }
 /*********************************************
 * deletedChat
@@ -4673,7 +4673,7 @@ export interface deletedChatOData extends entityOData {
 	undoDelete(): IBaseExecution<void>;
 }
 export interface deletedChatCollection extends IBaseCollection<deletedChat, deletedChatOData & deletedChatProps> {
-    add(values?: any): IBaseExecution<deletedChat>;
+add(values?: any): IBaseExecution<deletedChat>;
 }
 /*********************************************
 * deletedItemContainer
@@ -4704,7 +4704,7 @@ export interface deletedTeamOData extends entityOData {
 	channels: IBaseResults<channel>;
 }
 export interface deletedTeamCollection extends IBaseCollection<deletedTeam, deletedTeamOData & deletedTeamProps> {
-    add(values?: any): IBaseExecution<deletedTeam>;
+add(values?: any): IBaseExecution<deletedTeam>;
 }
 /*********************************************
 * deltaParticipants
@@ -4753,7 +4753,7 @@ export interface detectedAppOData extends entityOData {
 	managedDevices: IBaseResults<managedDevice>;
 }
 export interface detectedAppCollection extends IBaseCollection<detectedApp, detectedAppOData & detectedAppProps> {
-    add(values?: any): IBaseExecution<detectedApp>;
+add(values?: any): IBaseExecution<detectedApp>;
 }
 /*********************************************
 * device
@@ -4824,7 +4824,7 @@ export interface deviceAndAppManagementRoleAssignmentOData extends roleAssignmen
 
 }
 export interface deviceAndAppManagementRoleAssignmentCollection extends IBaseCollection<deviceAndAppManagementRoleAssignment, deviceAndAppManagementRoleAssignmentOData & deviceAndAppManagementRoleAssignmentProps> {
-    add(values?: any): IBaseExecution<deviceAndAppManagementRoleAssignment>;
+add(values?: any): IBaseExecution<deviceAndAppManagementRoleAssignment>;
 }
 /*********************************************
 * deviceAndAppManagementRoleDefinition
@@ -4912,7 +4912,7 @@ export interface deviceCategoryOData extends entityOData {
 
 }
 export interface deviceCategoryCollection extends IBaseCollection<deviceCategory, deviceCategoryOData & deviceCategoryProps> {
-    add(values?: any): IBaseExecution<deviceCategory>;
+add(values?: any): IBaseExecution<deviceCategory>;
 }
 /*********************************************
 * deviceComplianceActionItem
@@ -4931,7 +4931,7 @@ export interface deviceComplianceActionItemOData extends entityOData {
 
 }
 export interface deviceComplianceActionItemCollection extends IBaseCollection<deviceComplianceActionItem, deviceComplianceActionItemOData & deviceComplianceActionItemProps> {
-    add(values?: any): IBaseExecution<deviceComplianceActionItem>;
+add(values?: any): IBaseExecution<deviceComplianceActionItem>;
 }
 /*********************************************
 * deviceComplianceDeviceOverview
@@ -4972,7 +4972,7 @@ export interface deviceComplianceDeviceStatusOData extends entityOData {
 
 }
 export interface deviceComplianceDeviceStatusCollection extends IBaseCollection<deviceComplianceDeviceStatus, deviceComplianceDeviceStatusOData & deviceComplianceDeviceStatusProps> {
-    add(values?: any): IBaseExecution<deviceComplianceDeviceStatus>;
+add(values?: any): IBaseExecution<deviceComplianceDeviceStatus>;
 }
 /*********************************************
 * deviceCompliancePolicy
@@ -5013,7 +5013,7 @@ export interface deviceCompliancePolicyOData extends entityOData {
 	scheduleActionsForRules(deviceComplianceScheduledActionForRules): IBaseExecution<void>;
 }
 export interface deviceCompliancePolicyCollection extends IBaseCollection<deviceCompliancePolicy, deviceCompliancePolicyOData & deviceCompliancePolicyProps> {
-    add(values?: any): IBaseExecution<deviceCompliancePolicy>;
+add(values?: any): IBaseExecution<deviceCompliancePolicy>;
 }
 /*********************************************
 * deviceCompliancePolicyAssignment
@@ -5029,7 +5029,7 @@ export interface deviceCompliancePolicyAssignmentOData extends entityOData {
 
 }
 export interface deviceCompliancePolicyAssignmentCollection extends IBaseCollection<deviceCompliancePolicyAssignment, deviceCompliancePolicyAssignmentOData & deviceCompliancePolicyAssignmentProps> {
-    add(values?: any): IBaseExecution<deviceCompliancePolicyAssignment>;
+add(values?: any): IBaseExecution<deviceCompliancePolicyAssignment>;
 }
 /*********************************************
 * deviceCompliancePolicyDeviceStateSummary
@@ -5076,7 +5076,7 @@ export interface deviceCompliancePolicySettingStateSummaryOData extends entityOD
 	deviceComplianceSettingStates: IBaseResults<deviceComplianceSettingState>;
 }
 export interface deviceCompliancePolicySettingStateSummaryCollection extends IBaseCollection<deviceCompliancePolicySettingStateSummary, deviceCompliancePolicySettingStateSummaryOData & deviceCompliancePolicySettingStateSummaryProps> {
-    add(values?: any): IBaseExecution<deviceCompliancePolicySettingStateSummary>;
+add(values?: any): IBaseExecution<deviceCompliancePolicySettingStateSummary>;
 }
 /*********************************************
 * deviceCompliancePolicyState
@@ -5097,7 +5097,7 @@ export interface deviceCompliancePolicyStateOData extends entityOData {
 
 }
 export interface deviceCompliancePolicyStateCollection extends IBaseCollection<deviceCompliancePolicyState, deviceCompliancePolicyStateOData & deviceCompliancePolicyStateProps> {
-    add(values?: any): IBaseExecution<deviceCompliancePolicyState>;
+add(values?: any): IBaseExecution<deviceCompliancePolicyState>;
 }
 /*********************************************
 * deviceComplianceScheduledActionForRule
@@ -5114,7 +5114,7 @@ export interface deviceComplianceScheduledActionForRuleOData extends entityOData
 	scheduledActionConfigurations: IBaseResults<deviceComplianceActionItem>;
 }
 export interface deviceComplianceScheduledActionForRuleCollection extends IBaseCollection<deviceComplianceScheduledActionForRule, deviceComplianceScheduledActionForRuleOData & deviceComplianceScheduledActionForRuleProps> {
-    add(values?: any): IBaseExecution<deviceComplianceScheduledActionForRule>;
+add(values?: any): IBaseExecution<deviceComplianceScheduledActionForRule>;
 }
 /*********************************************
 * deviceComplianceSettingState
@@ -5140,7 +5140,7 @@ export interface deviceComplianceSettingStateOData extends entityOData {
 
 }
 export interface deviceComplianceSettingStateCollection extends IBaseCollection<deviceComplianceSettingState, deviceComplianceSettingStateOData & deviceComplianceSettingStateProps> {
-    add(values?: any): IBaseExecution<deviceComplianceSettingState>;
+add(values?: any): IBaseExecution<deviceComplianceSettingState>;
 }
 /*********************************************
 * deviceComplianceUserOverview
@@ -5179,7 +5179,7 @@ export interface deviceComplianceUserStatusOData extends entityOData {
 
 }
 export interface deviceComplianceUserStatusCollection extends IBaseCollection<deviceComplianceUserStatus, deviceComplianceUserStatusOData & deviceComplianceUserStatusProps> {
-    add(values?: any): IBaseExecution<deviceComplianceUserStatus>;
+add(values?: any): IBaseExecution<deviceComplianceUserStatus>;
 }
 /*********************************************
 * deviceConfiguration
@@ -5217,7 +5217,7 @@ export interface deviceConfigurationOData extends entityOData {
 	getOmaSettingPlainTextValue(secretReferenceValueId): string;
 }
 export interface deviceConfigurationCollection extends IBaseCollection<deviceConfiguration, deviceConfigurationOData & deviceConfigurationProps> {
-    add(values?: any): IBaseExecution<deviceConfiguration>;
+add(values?: any): IBaseExecution<deviceConfiguration>;
 }
 /*********************************************
 * deviceConfigurationAssignment
@@ -5233,7 +5233,7 @@ export interface deviceConfigurationAssignmentOData extends entityOData {
 
 }
 export interface deviceConfigurationAssignmentCollection extends IBaseCollection<deviceConfigurationAssignment, deviceConfigurationAssignmentOData & deviceConfigurationAssignmentProps> {
-    add(values?: any): IBaseExecution<deviceConfigurationAssignment>;
+add(values?: any): IBaseExecution<deviceConfigurationAssignment>;
 }
 /*********************************************
 * deviceConfigurationDeviceOverview
@@ -5293,7 +5293,7 @@ export interface deviceConfigurationDeviceStatusOData extends entityOData {
 
 }
 export interface deviceConfigurationDeviceStatusCollection extends IBaseCollection<deviceConfigurationDeviceStatus, deviceConfigurationDeviceStatusOData & deviceConfigurationDeviceStatusProps> {
-    add(values?: any): IBaseExecution<deviceConfigurationDeviceStatus>;
+add(values?: any): IBaseExecution<deviceConfigurationDeviceStatus>;
 }
 /*********************************************
 * deviceConfigurationState
@@ -5314,7 +5314,7 @@ export interface deviceConfigurationStateOData extends entityOData {
 
 }
 export interface deviceConfigurationStateCollection extends IBaseCollection<deviceConfigurationState, deviceConfigurationStateOData & deviceConfigurationStateProps> {
-    add(values?: any): IBaseExecution<deviceConfigurationState>;
+add(values?: any): IBaseExecution<deviceConfigurationState>;
 }
 /*********************************************
 * deviceConfigurationUserOverview
@@ -5353,7 +5353,7 @@ export interface deviceConfigurationUserStatusOData extends entityOData {
 
 }
 export interface deviceConfigurationUserStatusCollection extends IBaseCollection<deviceConfigurationUserStatus, deviceConfigurationUserStatusOData & deviceConfigurationUserStatusProps> {
-    add(values?: any): IBaseExecution<deviceConfigurationUserStatus>;
+add(values?: any): IBaseExecution<deviceConfigurationUserStatus>;
 }
 /*********************************************
 * deviceEnrollmentConfiguration
@@ -5379,7 +5379,7 @@ export interface deviceEnrollmentConfigurationOData extends entityOData {
 	setPriority(priority): IBaseExecution<void>;
 }
 export interface deviceEnrollmentConfigurationCollection extends IBaseCollection<deviceEnrollmentConfiguration, deviceEnrollmentConfigurationOData & deviceEnrollmentConfigurationProps> {
-    add(values?: any): IBaseExecution<deviceEnrollmentConfiguration>;
+add(values?: any): IBaseExecution<deviceEnrollmentConfiguration>;
 }
 /*********************************************
 * deviceEnrollmentLimitConfiguration
@@ -5456,7 +5456,7 @@ export interface deviceInstallStateOData extends entityOData {
 
 }
 export interface deviceInstallStateCollection extends IBaseCollection<deviceInstallState, deviceInstallStateOData & deviceInstallStateProps> {
-    add(values?: any): IBaseExecution<deviceInstallState>;
+add(values?: any): IBaseExecution<deviceInstallState>;
 }
 /*********************************************
 * deviceLocalCredentialInfo
@@ -5475,7 +5475,7 @@ export interface deviceLocalCredentialInfoOData extends entityOData {
 
 }
 export interface deviceLocalCredentialInfoCollection extends IBaseCollection<deviceLocalCredentialInfo, deviceLocalCredentialInfoOData & deviceLocalCredentialInfoProps> {
-    add(values?: any): IBaseExecution<deviceLocalCredentialInfo>;
+add(values?: any): IBaseExecution<deviceLocalCredentialInfo>;
 }
 /*********************************************
 * deviceLogCollectionResponse
@@ -5498,7 +5498,7 @@ export interface deviceLogCollectionResponseOData extends entityOData {
 	createDownloadUrl(): IBaseExecution<string>;
 }
 export interface deviceLogCollectionResponseCollection extends IBaseCollection<deviceLogCollectionResponse, deviceLogCollectionResponseOData & deviceLogCollectionResponseProps> {
-    add(values?: any): IBaseExecution<deviceLogCollectionResponse>;
+add(values?: any): IBaseExecution<deviceLogCollectionResponse>;
 }
 /*********************************************
 * deviceManagement
@@ -5721,7 +5721,7 @@ export interface deviceManagementExchangeConnectorOData extends entityOData {
 	sync(syncType): IBaseExecution<void>;
 }
 export interface deviceManagementExchangeConnectorCollection extends IBaseCollection<deviceManagementExchangeConnector, deviceManagementExchangeConnectorOData & deviceManagementExchangeConnectorProps> {
-    add(values?: any): IBaseExecution<deviceManagementExchangeConnector>;
+add(values?: any): IBaseExecution<deviceManagementExchangeConnector>;
 }
 /*********************************************
 * deviceManagementExportJob
@@ -5746,7 +5746,7 @@ export interface deviceManagementExportJobOData extends entityOData {
 
 }
 export interface deviceManagementExportJobCollection extends IBaseCollection<deviceManagementExportJob, deviceManagementExportJobOData & deviceManagementExportJobProps> {
-    add(values?: any): IBaseExecution<deviceManagementExportJob>;
+add(values?: any): IBaseExecution<deviceManagementExportJob>;
 }
 /*********************************************
 * deviceManagementPartner
@@ -5770,7 +5770,7 @@ export interface deviceManagementPartnerOData extends entityOData {
 	terminate(): IBaseExecution<void>;
 }
 export interface deviceManagementPartnerCollection extends IBaseCollection<deviceManagementPartner, deviceManagementPartnerOData & deviceManagementPartnerProps> {
-    add(values?: any): IBaseExecution<deviceManagementPartner>;
+add(values?: any): IBaseExecution<deviceManagementPartner>;
 }
 /*********************************************
 * deviceManagementReports
@@ -5839,7 +5839,7 @@ export interface deviceManagementTroubleshootingEventOData extends entityOData {
 
 }
 export interface deviceManagementTroubleshootingEventCollection extends IBaseCollection<deviceManagementTroubleshootingEvent, deviceManagementTroubleshootingEventOData & deviceManagementTroubleshootingEventProps> {
-    add(values?: any): IBaseExecution<deviceManagementTroubleshootingEvent>;
+add(values?: any): IBaseExecution<deviceManagementTroubleshootingEvent>;
 }
 /*********************************************
 * deviceRegistrationPolicy
@@ -5919,7 +5919,7 @@ export interface directoryAuditOData extends entityOData {
 
 }
 export interface directoryAuditCollection extends IBaseCollection<directoryAudit, directoryAuditOData & directoryAuditProps> {
-    add(values?: any): IBaseExecution<directoryAudit>;
+add(values?: any): IBaseExecution<directoryAudit>;
 }
 /*********************************************
 * directoryDefinition
@@ -5940,7 +5940,7 @@ export interface directoryDefinitionOData extends entityOData {
 	discover(): IBaseExecution<directoryDefinition>;
 }
 export interface directoryDefinitionCollection extends IBaseCollection<directoryDefinition, directoryDefinitionOData & directoryDefinitionProps> {
-    add(values?: any): IBaseExecution<directoryDefinition>;
+add(values?: any): IBaseExecution<directoryDefinition>;
 }
 /*********************************************
 * directoryObject
@@ -5964,7 +5964,7 @@ export interface directoryObjectOData extends entityOData {
 	getMemberObjects(securityEnabledOnly): IBaseExecution<Array<string>[]>;
 }
 export interface directoryObjectCollection extends IBaseCollection<directoryObject, directoryObjectOData & directoryObjectProps> {
-    add(values?: any): IBaseExecution<directoryObject>;
+add(values?: any): IBaseExecution<directoryObject>;
 }
 /*********************************************
 * directoryObjectPartnerReference
@@ -6048,7 +6048,7 @@ export interface documentSetVersionOData extends listItemVersionOData {
 	restore(): IBaseExecution<void>;
 }
 export interface documentSetVersionCollection extends IBaseCollection<documentSetVersion, documentSetVersionOData & documentSetVersionProps> {
-    add(values?: any): IBaseExecution<documentSetVersion>;
+add(values?: any): IBaseExecution<documentSetVersion>;
 }
 /*********************************************
 * domain
@@ -6138,7 +6138,7 @@ export interface domainDnsRecordOData extends entityOData {
 
 }
 export interface domainDnsRecordCollection extends IBaseCollection<domainDnsRecord, domainDnsRecordOData & domainDnsRecordProps> {
-    add(values?: any): IBaseExecution<domainDnsRecord>;
+add(values?: any): IBaseExecution<domainDnsRecord>;
 }
 /*********************************************
 * domainDnsSrvRecord
@@ -6222,7 +6222,7 @@ export interface driveOData extends baseItemOData {
 	sharedWithMe(): driveItem[];
 }
 export interface driveCollection extends IBaseCollection<drive, driveOData & driveProps> {
-    add(values?: any): IBaseExecution<drive>;
+add(values?: any): IBaseExecution<drive>;
 }
 /*********************************************
 * driveItem
@@ -6322,7 +6322,7 @@ export interface driveItemOData extends baseItemOData {
 	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
 }
 export interface driveItemCollection extends IBaseCollection<driveItem, driveItemOData & driveItemProps> {
-    add(values?: any): IBaseExecution<driveItem>;
+add(values?: any): IBaseExecution<driveItem>;
 }
 /*********************************************
 * driveItemVersion
@@ -6339,7 +6339,7 @@ export interface driveItemVersionOData extends baseItemVersionOData {
 	restoreVersion(): IBaseExecution<void>;
 }
 export interface driveItemVersionCollection extends IBaseCollection<driveItemVersion, driveItemVersionOData & driveItemVersionProps> {
-    add(values?: any): IBaseExecution<driveItemVersion>;
+add(values?: any): IBaseExecution<driveItemVersion>;
 }
 /*********************************************
 * driveProtectionRule
@@ -6355,7 +6355,7 @@ export interface driveProtectionRuleOData extends protectionRuleBaseOData {
 
 }
 export interface driveProtectionRuleCollection extends IBaseCollection<driveProtectionRule, driveProtectionRuleOData & driveProtectionRuleProps> {
-    add(values?: any): IBaseExecution<driveProtectionRule>;
+add(values?: any): IBaseExecution<driveProtectionRule>;
 }
 /*********************************************
 * driveProtectionUnit
@@ -6373,7 +6373,7 @@ export interface driveProtectionUnitOData extends protectionUnitBaseOData {
 
 }
 export interface driveProtectionUnitCollection extends IBaseCollection<driveProtectionUnit, driveProtectionUnitOData & driveProtectionUnitProps> {
-    add(values?: any): IBaseExecution<driveProtectionUnit>;
+add(values?: any): IBaseExecution<driveProtectionUnit>;
 }
 /*********************************************
 * driveRestoreArtifact
@@ -6391,7 +6391,7 @@ export interface driveRestoreArtifactOData extends restoreArtifactBaseOData {
 
 }
 export interface driveRestoreArtifactCollection extends IBaseCollection<driveRestoreArtifact, driveRestoreArtifactOData & driveRestoreArtifactProps> {
-    add(values?: any): IBaseExecution<driveRestoreArtifact>;
+add(values?: any): IBaseExecution<driveRestoreArtifact>;
 }
 /*********************************************
 * eBookInstallSummary
@@ -6774,7 +6774,7 @@ export interface educationAssignmentOData extends entityOData {
 	setUpResourcesFolder(): IBaseExecution<educationAssignment>;
 }
 export interface educationAssignmentCollection extends IBaseCollection<educationAssignment, educationAssignmentOData & educationAssignmentProps> {
-    add(values?: any): IBaseExecution<educationAssignment>;
+add(values?: any): IBaseExecution<educationAssignment>;
 }
 /*********************************************
 * educationAssignmentDefaults
@@ -6807,7 +6807,7 @@ export interface educationAssignmentResourceOData extends entityOData {
 
 }
 export interface educationAssignmentResourceCollection extends IBaseCollection<educationAssignmentResource, educationAssignmentResourceOData & educationAssignmentResourceProps> {
-    add(values?: any): IBaseExecution<educationAssignmentResource>;
+add(values?: any): IBaseExecution<educationAssignmentResource>;
 }
 /*********************************************
 * educationAssignmentSettings
@@ -6837,7 +6837,7 @@ export interface educationCategoryOData extends entityOData {
 
 }
 export interface educationCategoryCollection extends IBaseCollection<educationCategory, educationCategoryOData & educationCategoryProps> {
-    add(values?: any): IBaseExecution<educationCategory>;
+add(values?: any): IBaseExecution<educationCategory>;
 }
 /*********************************************
 * educationClass
@@ -6886,7 +6886,7 @@ export interface educationClassOData extends entityOData {
 	teachers: IBaseResults<educationUser>;
 }
 export interface educationClassCollection extends IBaseCollection<educationClass, educationClassOData & educationClassProps> {
-    add(values?: any): IBaseExecution<educationClass>;
+add(values?: any): IBaseExecution<educationClass>;
 }
 /*********************************************
 * educationFeedbackOutcome
@@ -6931,7 +6931,7 @@ export interface educationGradingCategoryOData extends entityOData {
 
 }
 export interface educationGradingCategoryCollection extends IBaseCollection<educationGradingCategory, educationGradingCategoryOData & educationGradingCategoryProps> {
-    add(values?: any): IBaseExecution<educationGradingCategory>;
+add(values?: any): IBaseExecution<educationGradingCategory>;
 }
 /*********************************************
 * educationModule
@@ -6964,7 +6964,7 @@ export interface educationModuleOData extends entityOData {
 	unpin(): IBaseExecution<educationModule>;
 }
 export interface educationModuleCollection extends IBaseCollection<educationModule, educationModuleOData & educationModuleProps> {
-    add(values?: any): IBaseExecution<educationModule>;
+add(values?: any): IBaseExecution<educationModule>;
 }
 /*********************************************
 * educationModuleResource
@@ -6980,7 +6980,7 @@ export interface educationModuleResourceOData extends entityOData {
 
 }
 export interface educationModuleResourceCollection extends IBaseCollection<educationModuleResource, educationModuleResourceOData & educationModuleResourceProps> {
-    add(values?: any): IBaseExecution<educationModuleResource>;
+add(values?: any): IBaseExecution<educationModuleResource>;
 }
 /*********************************************
 * educationOrganization
@@ -7013,7 +7013,7 @@ export interface educationOutcomeOData extends entityOData {
 
 }
 export interface educationOutcomeCollection extends IBaseCollection<educationOutcome, educationOutcomeOData & educationOutcomeProps> {
-    add(values?: any): IBaseExecution<educationOutcome>;
+add(values?: any): IBaseExecution<educationOutcome>;
 }
 /*********************************************
 * educationPointsOutcome
@@ -7073,7 +7073,7 @@ export interface educationRubricOData extends entityOData {
 
 }
 export interface educationRubricCollection extends IBaseCollection<educationRubric, educationRubricOData & educationRubricProps> {
-    add(values?: any): IBaseExecution<educationRubric>;
+add(values?: any): IBaseExecution<educationRubric>;
 }
 /*********************************************
 * educationRubricOutcome
@@ -7121,7 +7121,7 @@ export interface educationSchoolOData extends educationOrganizationOData {
 	users: IBaseResults<educationUser>;
 }
 export interface educationSchoolCollection extends IBaseCollection<educationSchool, educationSchoolOData & educationSchoolProps> {
-    add(values?: any): IBaseExecution<educationSchool>;
+add(values?: any): IBaseExecution<educationSchool>;
 }
 /*********************************************
 * educationSubmission
@@ -7169,7 +7169,7 @@ export interface educationSubmissionOData extends entityOData {
 	unsubmit(): IBaseExecution<educationSubmission>;
 }
 export interface educationSubmissionCollection extends IBaseCollection<educationSubmission, educationSubmissionOData & educationSubmissionProps> {
-    add(values?: any): IBaseExecution<educationSubmission>;
+add(values?: any): IBaseExecution<educationSubmission>;
 }
 /*********************************************
 * educationSubmissionResource
@@ -7186,7 +7186,7 @@ export interface educationSubmissionResourceOData extends entityOData {
 
 }
 export interface educationSubmissionResourceCollection extends IBaseCollection<educationSubmissionResource, educationSubmissionResourceOData & educationSubmissionResourceProps> {
-    add(values?: any): IBaseExecution<educationSubmissionResource>;
+add(values?: any): IBaseExecution<educationSubmissionResource>;
 }
 /*********************************************
 * educationUser
@@ -7248,7 +7248,7 @@ export interface educationUserOData extends entityOData {
 	user: user;
 }
 export interface educationUserCollection extends IBaseCollection<educationUser, educationUserOData & educationUserProps> {
-    add(values?: any): IBaseExecution<educationUser>;
+add(values?: any): IBaseExecution<educationUser>;
 }
 /*********************************************
 * emailAuthenticationMethod
@@ -7264,7 +7264,7 @@ export interface emailAuthenticationMethodOData extends authenticationMethodODat
 
 }
 export interface emailAuthenticationMethodCollection extends IBaseCollection<emailAuthenticationMethod, emailAuthenticationMethodOData & emailAuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<emailAuthenticationMethod>;
+add(values?: any): IBaseExecution<emailAuthenticationMethod>;
 }
 /*********************************************
 * emailAuthenticationMethodConfiguration
@@ -7356,7 +7356,7 @@ export interface endUserNotificationOData extends entityOData {
 	details: IBaseResults<endUserNotificationDetail>;
 }
 export interface endUserNotificationCollection extends IBaseCollection<endUserNotification, endUserNotificationOData & endUserNotificationProps> {
-    add(values?: any): IBaseExecution<endUserNotification>;
+add(values?: any): IBaseExecution<endUserNotification>;
 }
 /*********************************************
 * endUserNotificationDetail
@@ -7377,7 +7377,7 @@ export interface endUserNotificationDetailOData extends entityOData {
 
 }
 export interface endUserNotificationDetailCollection extends IBaseCollection<endUserNotificationDetail, endUserNotificationDetailOData & endUserNotificationDetailProps> {
-    add(values?: any): IBaseExecution<endUserNotificationDetail>;
+add(values?: any): IBaseExecution<endUserNotificationDetail>;
 }
 /*********************************************
 * endpoint
@@ -7397,7 +7397,7 @@ export interface endpointOData extends directoryObjectOData {
 
 }
 export interface endpointCollection extends IBaseCollection<endpoint, endpointOData & endpointProps> {
-    add(values?: any): IBaseExecution<endpoint>;
+add(values?: any): IBaseExecution<endpoint>;
 }
 /*********************************************
 * engagementAsyncOperation
@@ -7414,7 +7414,7 @@ export interface engagementAsyncOperationOData extends longRunningOperationOData
 
 }
 export interface engagementAsyncOperationCollection extends IBaseCollection<engagementAsyncOperation, engagementAsyncOperationOData & engagementAsyncOperationProps> {
-    add(values?: any): IBaseExecution<engagementAsyncOperation>;
+add(values?: any): IBaseExecution<engagementAsyncOperation>;
 }
 /*********************************************
 * enrollmentConfigurationAssignment
@@ -7430,7 +7430,7 @@ export interface enrollmentConfigurationAssignmentOData extends entityOData {
 
 }
 export interface enrollmentConfigurationAssignmentCollection extends IBaseCollection<enrollmentConfigurationAssignment, enrollmentConfigurationAssignmentOData & enrollmentConfigurationAssignmentProps> {
-    add(values?: any): IBaseExecution<enrollmentConfigurationAssignment>;
+add(values?: any): IBaseExecution<enrollmentConfigurationAssignment>;
 }
 /*********************************************
 * enrollmentTroubleshootingEvent
@@ -7623,7 +7623,7 @@ export interface eventOData extends outlookItemOData {
 	tentativelyAccept(ProposedNewTime, SendResponse, Comment): IBaseExecution<void>;
 }
 export interface eventCollection extends IBaseCollection<event, eventOData & eventProps> {
-    add(values?: any): IBaseExecution<event>;
+add(values?: any): IBaseExecution<event>;
 }
 /*********************************************
 * eventMessage
@@ -7696,7 +7696,7 @@ export interface exchangeProtectionPolicyOData extends protectionPolicyBaseOData
 	mailboxProtectionUnits: IBaseResults<mailboxProtectionUnit>;
 }
 export interface exchangeProtectionPolicyCollection extends IBaseCollection<exchangeProtectionPolicy, exchangeProtectionPolicyOData & exchangeProtectionPolicyProps> {
-    add(values?: any): IBaseExecution<exchangeProtectionPolicy>;
+add(values?: any): IBaseExecution<exchangeProtectionPolicy>;
 }
 /*********************************************
 * exchangeRestoreSession
@@ -7716,7 +7716,7 @@ export interface exchangeRestoreSessionOData extends restoreSessionBaseOData {
 	mailboxRestoreArtifacts: IBaseResults<mailboxRestoreArtifact>;
 }
 export interface exchangeRestoreSessionCollection extends IBaseCollection<exchangeRestoreSession, exchangeRestoreSessionOData & exchangeRestoreSessionProps> {
-    add(values?: any): IBaseExecution<exchangeRestoreSession>;
+add(values?: any): IBaseExecution<exchangeRestoreSession>;
 }
 /*********************************************
 * exportSuccessOperation
@@ -7745,7 +7745,7 @@ export interface extensionOData extends entityOData {
 
 }
 export interface extensionCollection extends IBaseCollection<extension, extensionOData & extensionProps> {
-    add(values?: any): IBaseExecution<extension>;
+add(values?: any): IBaseExecution<extension>;
 }
 /*********************************************
 * extensionProperty
@@ -7766,7 +7766,7 @@ export interface extensionPropertyOData extends directoryObjectOData {
 
 }
 export interface extensionPropertyCollection extends IBaseCollection<extensionProperty, extensionPropertyOData & extensionPropertyProps> {
-    add(values?: any): IBaseExecution<extensionProperty>;
+add(values?: any): IBaseExecution<extensionProperty>;
 }
 /*********************************************
 * external
@@ -7851,7 +7851,7 @@ export interface externalDomainNameOData extends entityOData {
 
 }
 export interface externalDomainNameCollection extends IBaseCollection<externalDomainName, externalDomainNameOData & externalDomainNameProps> {
-    add(values?: any): IBaseExecution<externalDomainName>;
+add(values?: any): IBaseExecution<externalDomainName>;
 }
 /*********************************************
 * externalGroup
@@ -7932,7 +7932,7 @@ export interface featureRolloutPolicyOData extends entityOData {
 	appliesTo: IBaseResults<directoryObject>;
 }
 export interface featureRolloutPolicyCollection extends IBaseCollection<featureRolloutPolicy, featureRolloutPolicyOData & featureRolloutPolicyProps> {
-    add(values?: any): IBaseExecution<featureRolloutPolicy>;
+add(values?: any): IBaseExecution<featureRolloutPolicy>;
 }
 /*********************************************
 * federatedIdentityCredential
@@ -7952,7 +7952,7 @@ export interface federatedIdentityCredentialOData extends entityOData {
 
 }
 export interface federatedIdentityCredentialCollection extends IBaseCollection<federatedIdentityCredential, federatedIdentityCredentialOData & federatedIdentityCredentialProps> {
-    add(values?: any): IBaseExecution<federatedIdentityCredential>;
+add(values?: any): IBaseExecution<federatedIdentityCredential>;
 }
 /*********************************************
 * fido2AuthenticationMethod
@@ -7973,7 +7973,7 @@ export interface fido2AuthenticationMethodOData extends authenticationMethodODat
 
 }
 export interface fido2AuthenticationMethodCollection extends IBaseCollection<fido2AuthenticationMethod, fido2AuthenticationMethodOData & fido2AuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<fido2AuthenticationMethod>;
+add(values?: any): IBaseExecution<fido2AuthenticationMethod>;
 }
 /*********************************************
 * fido2AuthenticationMethodConfiguration
@@ -8139,7 +8139,7 @@ export interface fileStorageContainerOData extends entityOData {
 	permanentDelete(): IBaseExecution<void>;
 }
 export interface fileStorageContainerCollection extends IBaseCollection<fileStorageContainer, fileStorageContainerOData & fileStorageContainerProps> {
-    add(values?: any): IBaseExecution<fileStorageContainer>;
+add(values?: any): IBaseExecution<fileStorageContainer>;
 }
 /*********************************************
 * filterOperatorSchema
@@ -8170,7 +8170,7 @@ export interface governanceInsightOData extends entityOData {
 
 }
 export interface governanceInsightCollection extends IBaseCollection<governanceInsight, governanceInsightOData & governanceInsightProps> {
-    add(values?: any): IBaseExecution<governanceInsight>;
+add(values?: any): IBaseExecution<governanceInsight>;
 }
 /*********************************************
 * granularMailboxRestoreArtifact
@@ -8187,7 +8187,7 @@ export interface granularMailboxRestoreArtifactOData extends mailboxRestoreArtif
 
 }
 export interface granularMailboxRestoreArtifactCollection extends IBaseCollection<granularMailboxRestoreArtifact, granularMailboxRestoreArtifactOData & granularMailboxRestoreArtifactProps> {
-    add(values?: any): IBaseExecution<granularMailboxRestoreArtifact>;
+add(values?: any): IBaseExecution<granularMailboxRestoreArtifact>;
 }
 /*********************************************
 * group
@@ -8228,7 +8228,7 @@ export interface groupOData extends entityOData {
 	renew(): IBaseExecution<void>;
 }
 export interface groupCollection extends IBaseCollection<group, groupOData & groupProps> {
-    add(values?: any): IBaseExecution<group>;
+add(values?: any): IBaseExecution<group>;
 }
 /*********************************************
 * groupLifecyclePolicy
@@ -8248,7 +8248,7 @@ export interface groupLifecyclePolicyOData extends entityOData {
 	removeGroup(groupId): IBaseExecution<boolean>;
 }
 export interface groupLifecyclePolicyCollection extends IBaseCollection<groupLifecyclePolicy, groupLifecyclePolicyOData & groupLifecyclePolicyProps> {
-    add(values?: any): IBaseExecution<groupLifecyclePolicy>;
+add(values?: any): IBaseExecution<groupLifecyclePolicy>;
 }
 /*********************************************
 * groupSetting
@@ -8266,7 +8266,7 @@ export interface groupSettingOData extends entityOData {
 
 }
 export interface groupSettingCollection extends IBaseCollection<groupSetting, groupSettingOData & groupSettingProps> {
-    add(values?: any): IBaseExecution<groupSetting>;
+add(values?: any): IBaseExecution<groupSetting>;
 }
 /*********************************************
 * groupSettingTemplate
@@ -8322,7 +8322,7 @@ export interface homeRealmDiscoveryPolicyOData extends stsPolicyOData {
 
 }
 export interface homeRealmDiscoveryPolicyCollection extends IBaseCollection<homeRealmDiscoveryPolicy, homeRealmDiscoveryPolicyOData & homeRealmDiscoveryPolicyProps> {
-    add(values?: any): IBaseExecution<homeRealmDiscoveryPolicy>;
+add(values?: any): IBaseExecution<homeRealmDiscoveryPolicy>;
 }
 /*********************************************
 * horizontalSection
@@ -8340,7 +8340,7 @@ export interface horizontalSectionOData extends entityOData {
 	columns: IBaseResults<horizontalSectionColumn>;
 }
 export interface horizontalSectionCollection extends IBaseCollection<horizontalSection, horizontalSectionOData & horizontalSectionProps> {
-    add(values?: any): IBaseExecution<horizontalSection>;
+add(values?: any): IBaseExecution<horizontalSection>;
 }
 /*********************************************
 * horizontalSectionColumn
@@ -8357,7 +8357,7 @@ export interface horizontalSectionColumnOData extends entityOData {
 	webparts: IBaseResults<webPart>;
 }
 export interface horizontalSectionColumnCollection extends IBaseCollection<horizontalSectionColumn, horizontalSectionColumnOData & horizontalSectionColumnProps> {
-    add(values?: any): IBaseExecution<horizontalSectionColumn>;
+add(values?: any): IBaseExecution<horizontalSectionColumn>;
 }
 /*********************************************
 * host
@@ -8572,7 +8572,7 @@ export interface identityApiConnectorOData extends entityOData {
 	uploadClientCertificate(pkcs12Value, password): IBaseExecution<identityApiConnector>;
 }
 export interface identityApiConnectorCollection extends IBaseCollection<identityApiConnector, identityApiConnectorOData & identityApiConnectorProps> {
-    add(values?: any): IBaseExecution<identityApiConnector>;
+add(values?: any): IBaseExecution<identityApiConnector>;
 }
 /*********************************************
 * identityBuiltInUserFlowAttribute
@@ -8680,7 +8680,7 @@ export interface identityProviderOData extends entityOData {
 
 }
 export interface identityProviderCollection extends IBaseCollection<identityProvider, identityProviderOData & identityProviderProps> {
-    add(values?: any): IBaseExecution<identityProvider>;
+add(values?: any): IBaseExecution<identityProvider>;
 }
 /*********************************************
 * identityProviderBase
@@ -8696,7 +8696,7 @@ export interface identityProviderBaseOData extends entityOData {
 
 }
 export interface identityProviderBaseCollection extends IBaseCollection<identityProviderBase, identityProviderBaseOData & identityProviderBaseProps> {
-    add(values?: any): IBaseExecution<identityProviderBase>;
+add(values?: any): IBaseExecution<identityProviderBase>;
 }
 /*********************************************
 * identitySecurityDefaultsEnforcementPolicy
@@ -8742,7 +8742,7 @@ export interface identityUserFlowAttributeOData extends entityOData {
 
 }
 export interface identityUserFlowAttributeCollection extends IBaseCollection<identityUserFlowAttribute, identityUserFlowAttributeOData & identityUserFlowAttributeProps> {
-    add(values?: any): IBaseExecution<identityUserFlowAttribute>;
+add(values?: any): IBaseExecution<identityUserFlowAttribute>;
 }
 /*********************************************
 * identityUserFlowAttributeAssignment
@@ -8762,7 +8762,7 @@ export interface identityUserFlowAttributeAssignmentOData extends entityOData {
 	userAttribute: identityUserFlowAttribute;
 }
 export interface identityUserFlowAttributeAssignmentCollection extends IBaseCollection<identityUserFlowAttributeAssignment, identityUserFlowAttributeAssignmentOData & identityUserFlowAttributeAssignmentProps> {
-    add(values?: any): IBaseExecution<identityUserFlowAttributeAssignment>;
+add(values?: any): IBaseExecution<identityUserFlowAttributeAssignment>;
 }
 /*********************************************
 * importedWindowsAutopilotDeviceIdentity
@@ -8784,7 +8784,7 @@ export interface importedWindowsAutopilotDeviceIdentityOData extends entityOData
 
 }
 export interface importedWindowsAutopilotDeviceIdentityCollection extends IBaseCollection<importedWindowsAutopilotDeviceIdentity, importedWindowsAutopilotDeviceIdentityOData & importedWindowsAutopilotDeviceIdentityProps> {
-    add(values?: any): IBaseExecution<importedWindowsAutopilotDeviceIdentity>;
+add(values?: any): IBaseExecution<importedWindowsAutopilotDeviceIdentity>;
 }
 /*********************************************
 * importedWindowsAutopilotDeviceIdentityUpload
@@ -8874,7 +8874,7 @@ export interface inferenceClassificationOverrideOData extends entityOData {
 
 }
 export interface inferenceClassificationOverrideCollection extends IBaseCollection<inferenceClassificationOverride, inferenceClassificationOverrideOData & inferenceClassificationOverrideProps> {
-    add(values?: any): IBaseExecution<inferenceClassificationOverride>;
+add(values?: any): IBaseExecution<inferenceClassificationOverride>;
 }
 /*********************************************
 * informationProtection
@@ -8975,7 +8975,7 @@ export interface internalDomainFederationOData extends samlOrWsFedProviderOData 
 
 }
 export interface internalDomainFederationCollection extends IBaseCollection<internalDomainFederation, internalDomainFederationOData & internalDomainFederationProps> {
-    add(values?: any): IBaseExecution<internalDomainFederation>;
+add(values?: any): IBaseExecution<internalDomainFederation>;
 }
 /*********************************************
 * internetExplorerMode
@@ -9294,7 +9294,7 @@ export interface iosManagedAppProtectionOData extends targetedManagedAppProtecti
 	deploymentSummary: managedAppPolicyDeploymentSummary;
 }
 export interface iosManagedAppProtectionCollection extends IBaseCollection<iosManagedAppProtection, iosManagedAppProtectionOData & iosManagedAppProtectionProps> {
-    add(values?: any): IBaseExecution<iosManagedAppProtection>;
+add(values?: any): IBaseExecution<iosManagedAppProtection>;
 }
 /*********************************************
 * iosManagedAppRegistration
@@ -9379,7 +9379,7 @@ export interface iosUpdateDeviceStatusOData extends entityOData {
 
 }
 export interface iosUpdateDeviceStatusCollection extends IBaseCollection<iosUpdateDeviceStatus, iosUpdateDeviceStatusOData & iosUpdateDeviceStatusProps> {
-    add(values?: any): IBaseExecution<iosUpdateDeviceStatus>;
+add(values?: any): IBaseExecution<iosUpdateDeviceStatus>;
 }
 /*********************************************
 * iosVppApp
@@ -9496,7 +9496,7 @@ export interface itemActivityOData extends entityOData {
 	driveItem: driveItem;
 }
 export interface itemActivityCollection extends IBaseCollection<itemActivity, itemActivityOData & itemActivityProps> {
-    add(values?: any): IBaseExecution<itemActivity>;
+add(values?: any): IBaseExecution<itemActivity>;
 }
 /*********************************************
 * itemActivityStat
@@ -9521,7 +9521,7 @@ export interface itemActivityStatOData extends entityOData {
 	activities: IBaseResults<itemActivity>;
 }
 export interface itemActivityStatCollection extends IBaseCollection<itemActivityStat, itemActivityStatOData & itemActivityStatProps> {
-    add(values?: any): IBaseExecution<itemActivityStat>;
+add(values?: any): IBaseExecution<itemActivityStat>;
 }
 /*********************************************
 * itemAnalytics
@@ -9637,7 +9637,7 @@ export interface landingPageOData extends entityOData {
 	details: IBaseResults<landingPageDetail>;
 }
 export interface landingPageCollection extends IBaseCollection<landingPage, landingPageOData & landingPageProps> {
-    add(values?: any): IBaseExecution<landingPage>;
+add(values?: any): IBaseExecution<landingPage>;
 }
 /*********************************************
 * landingPageDetail
@@ -9655,7 +9655,7 @@ export interface landingPageDetailOData extends entityOData {
 
 }
 export interface landingPageDetailCollection extends IBaseCollection<landingPageDetail, landingPageDetailOData & landingPageDetailProps> {
-    add(values?: any): IBaseExecution<landingPageDetail>;
+add(values?: any): IBaseExecution<landingPageDetail>;
 }
 /*********************************************
 * learningAssignment
@@ -9706,7 +9706,7 @@ export interface learningContentOData extends entityOData {
 
 }
 export interface learningContentCollection extends IBaseCollection<learningContent, learningContentOData & learningContentProps> {
-    add(values?: any): IBaseExecution<learningContent>;
+add(values?: any): IBaseExecution<learningContent>;
 }
 /*********************************************
 * learningCourseActivity
@@ -9728,7 +9728,7 @@ export interface learningCourseActivityOData extends entityOData {
 
 }
 export interface learningCourseActivityCollection extends IBaseCollection<learningCourseActivity, learningCourseActivityOData & learningCourseActivityProps> {
-    add(values?: any): IBaseExecution<learningCourseActivity>;
+add(values?: any): IBaseExecution<learningCourseActivity>;
 }
 /*********************************************
 * learningProvider
@@ -9754,7 +9754,7 @@ export interface learningProviderOData extends entityOData {
 	learningCourseActivities: IBaseResults<learningCourseActivity>;
 }
 export interface learningProviderCollection extends IBaseCollection<learningProvider, learningProviderOData & learningProviderProps> {
-    add(values?: any): IBaseExecution<learningProvider>;
+add(values?: any): IBaseExecution<learningProvider>;
 }
 /*********************************************
 * learningSelfInitiatedCourse
@@ -9785,7 +9785,7 @@ export interface licenseDetailsOData extends entityOData {
 
 }
 export interface licenseDetailsCollection extends IBaseCollection<licenseDetails, licenseDetailsOData & licenseDetailsProps> {
-    add(values?: any): IBaseExecution<licenseDetails>;
+add(values?: any): IBaseExecution<licenseDetails>;
 }
 /*********************************************
 * lifecycleManagementSettings
@@ -9847,7 +9847,7 @@ export interface linkedResourceOData extends entityOData {
 
 }
 export interface linkedResourceCollection extends IBaseCollection<linkedResource, linkedResourceOData & linkedResourceProps> {
-    add(values?: any): IBaseExecution<linkedResource>;
+add(values?: any): IBaseExecution<linkedResource>;
 }
 /*********************************************
 * list
@@ -9885,7 +9885,7 @@ export interface listOData extends baseItemOData {
 	update(values: { [key: string]: any }): IBaseExecution<void>;
 }
 export interface listCollection extends IBaseCollection<list, listOData & listProps> {
-    add(values?: any): IBaseExecution<list>;
+add(values?: any): IBaseExecution<list>;
 }
 /*********************************************
 * listItem
@@ -9922,7 +9922,7 @@ export interface listItemOData extends baseItemOData {
 	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
 }
 export interface listItemCollection extends IBaseCollection<listItem, listItemOData & listItemProps> {
-    add(values?: any): IBaseExecution<listItem>;
+add(values?: any): IBaseExecution<listItem>;
 }
 /*********************************************
 * listItemVersion
@@ -9940,7 +9940,7 @@ export interface listItemVersionOData extends baseItemVersionOData {
 	restoreVersion(): IBaseExecution<void>;
 }
 export interface listItemVersionCollection extends IBaseCollection<listItemVersion, listItemVersionOData & listItemVersionProps> {
-    add(values?: any): IBaseExecution<listItemVersion>;
+add(values?: any): IBaseExecution<listItemVersion>;
 }
 /*********************************************
 * localizedNotificationMessage
@@ -9960,7 +9960,7 @@ export interface localizedNotificationMessageOData extends entityOData {
 
 }
 export interface localizedNotificationMessageCollection extends IBaseCollection<localizedNotificationMessage, localizedNotificationMessageOData & localizedNotificationMessageProps> {
-    add(values?: any): IBaseExecution<localizedNotificationMessage>;
+add(values?: any): IBaseExecution<localizedNotificationMessage>;
 }
 /*********************************************
 * loginPage
@@ -9985,7 +9985,7 @@ export interface loginPageOData extends entityOData {
 
 }
 export interface loginPageCollection extends IBaseCollection<loginPage, loginPageOData & loginPageProps> {
-    add(values?: any): IBaseExecution<loginPage>;
+add(values?: any): IBaseExecution<loginPage>;
 }
 /*********************************************
 * longRunningOperation
@@ -10005,7 +10005,7 @@ export interface longRunningOperationOData extends entityOData {
 
 }
 export interface longRunningOperationCollection extends IBaseCollection<longRunningOperation, longRunningOperationOData & longRunningOperationProps> {
-    add(values?: any): IBaseExecution<longRunningOperation>;
+add(values?: any): IBaseExecution<longRunningOperation>;
 }
 /*********************************************
 * m365AppsInstallationOptions
@@ -10231,7 +10231,7 @@ export interface mailFolderOData extends entityOData {
 	move(DestinationId): IBaseExecution<mailFolder>;
 }
 export interface mailFolderCollection extends IBaseCollection<mailFolder, mailFolderOData & mailFolderProps> {
-    add(values?: any): IBaseExecution<mailFolder>;
+add(values?: any): IBaseExecution<mailFolder>;
 }
 /*********************************************
 * mailSearchFolder
@@ -10263,7 +10263,7 @@ export interface mailboxProtectionRuleOData extends protectionRuleBaseOData {
 
 }
 export interface mailboxProtectionRuleCollection extends IBaseCollection<mailboxProtectionRule, mailboxProtectionRuleOData & mailboxProtectionRuleProps> {
-    add(values?: any): IBaseExecution<mailboxProtectionRule>;
+add(values?: any): IBaseExecution<mailboxProtectionRule>;
 }
 /*********************************************
 * mailboxProtectionUnit
@@ -10281,7 +10281,7 @@ export interface mailboxProtectionUnitOData extends protectionUnitBaseOData {
 
 }
 export interface mailboxProtectionUnitCollection extends IBaseCollection<mailboxProtectionUnit, mailboxProtectionUnitOData & mailboxProtectionUnitProps> {
-    add(values?: any): IBaseExecution<mailboxProtectionUnit>;
+add(values?: any): IBaseExecution<mailboxProtectionUnit>;
 }
 /*********************************************
 * mailboxRestoreArtifact
@@ -10298,7 +10298,7 @@ export interface mailboxRestoreArtifactOData extends restoreArtifactBaseOData {
 
 }
 export interface mailboxRestoreArtifactCollection extends IBaseCollection<mailboxRestoreArtifact, mailboxRestoreArtifactOData & mailboxRestoreArtifactProps> {
-    add(values?: any): IBaseExecution<mailboxRestoreArtifact>;
+add(values?: any): IBaseExecution<mailboxRestoreArtifact>;
 }
 /*********************************************
 * malwareStateForWindowsDevice
@@ -10319,7 +10319,7 @@ export interface malwareStateForWindowsDeviceOData extends entityOData {
 
 }
 export interface malwareStateForWindowsDeviceCollection extends IBaseCollection<malwareStateForWindowsDevice, malwareStateForWindowsDeviceOData & malwareStateForWindowsDeviceProps> {
-    add(values?: any): IBaseExecution<malwareStateForWindowsDevice>;
+add(values?: any): IBaseExecution<malwareStateForWindowsDevice>;
 }
 /*********************************************
 * managedAndroidLobApp
@@ -10396,7 +10396,7 @@ export interface managedAppOperationOData extends entityOData {
 
 }
 export interface managedAppOperationCollection extends IBaseCollection<managedAppOperation, managedAppOperationOData & managedAppOperationProps> {
-    add(values?: any): IBaseExecution<managedAppOperation>;
+add(values?: any): IBaseExecution<managedAppOperation>;
 }
 /*********************************************
 * managedAppPolicy
@@ -10416,7 +10416,7 @@ export interface managedAppPolicyOData extends entityOData {
 	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface managedAppPolicyCollection extends IBaseCollection<managedAppPolicy, managedAppPolicyOData & managedAppPolicyProps> {
-    add(values?: any): IBaseExecution<managedAppPolicy>;
+add(values?: any): IBaseExecution<managedAppPolicy>;
 }
 /*********************************************
 * managedAppPolicyDeploymentSummary
@@ -10506,7 +10506,7 @@ export interface managedAppRegistrationOData extends entityOData {
 	operations: IBaseResults<managedAppOperation>;
 }
 export interface managedAppRegistrationCollection extends IBaseCollection<managedAppRegistration, managedAppRegistrationOData & managedAppRegistrationProps> {
-    add(values?: any): IBaseExecution<managedAppRegistration>;
+add(values?: any): IBaseExecution<managedAppRegistration>;
 }
 /*********************************************
 * managedAppStatus
@@ -10523,7 +10523,7 @@ export interface managedAppStatusOData extends entityOData {
 
 }
 export interface managedAppStatusCollection extends IBaseCollection<managedAppStatus, managedAppStatusOData & managedAppStatusProps> {
-    add(values?: any): IBaseExecution<managedAppStatus>;
+add(values?: any): IBaseExecution<managedAppStatus>;
 }
 /*********************************************
 * managedAppStatusRaw
@@ -10655,7 +10655,7 @@ export interface managedDeviceOData extends entityOData {
 	wipe(keepEnrollmentData, keepUserData, macOsUnlockCode, persistEsimDataPlan): IBaseExecution<void>;
 }
 export interface managedDeviceCollection extends IBaseCollection<managedDevice, managedDeviceOData & managedDeviceProps> {
-    add(values?: any): IBaseExecution<managedDevice>;
+add(values?: any): IBaseExecution<managedDevice>;
 }
 /*********************************************
 * managedDeviceMobileAppConfiguration
@@ -10689,7 +10689,7 @@ export interface managedDeviceMobileAppConfigurationOData extends entityOData {
 	assign(assignments): IBaseExecution<void>;
 }
 export interface managedDeviceMobileAppConfigurationCollection extends IBaseCollection<managedDeviceMobileAppConfiguration, managedDeviceMobileAppConfigurationOData & managedDeviceMobileAppConfigurationProps> {
-    add(values?: any): IBaseExecution<managedDeviceMobileAppConfiguration>;
+add(values?: any): IBaseExecution<managedDeviceMobileAppConfiguration>;
 }
 /*********************************************
 * managedDeviceMobileAppConfigurationAssignment
@@ -10705,7 +10705,7 @@ export interface managedDeviceMobileAppConfigurationAssignmentOData extends enti
 
 }
 export interface managedDeviceMobileAppConfigurationAssignmentCollection extends IBaseCollection<managedDeviceMobileAppConfigurationAssignment, managedDeviceMobileAppConfigurationAssignmentOData & managedDeviceMobileAppConfigurationAssignmentProps> {
-    add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationAssignment>;
+add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationAssignment>;
 }
 /*********************************************
 * managedDeviceMobileAppConfigurationDeviceStatus
@@ -10727,7 +10727,7 @@ export interface managedDeviceMobileAppConfigurationDeviceStatusOData extends en
 
 }
 export interface managedDeviceMobileAppConfigurationDeviceStatusCollection extends IBaseCollection<managedDeviceMobileAppConfigurationDeviceStatus, managedDeviceMobileAppConfigurationDeviceStatusOData & managedDeviceMobileAppConfigurationDeviceStatusProps> {
-    add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationDeviceStatus>;
+add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationDeviceStatus>;
 }
 /*********************************************
 * managedDeviceMobileAppConfigurationDeviceSummary
@@ -10766,7 +10766,7 @@ export interface managedDeviceMobileAppConfigurationUserStatusOData extends enti
 
 }
 export interface managedDeviceMobileAppConfigurationUserStatusCollection extends IBaseCollection<managedDeviceMobileAppConfigurationUserStatus, managedDeviceMobileAppConfigurationUserStatusOData & managedDeviceMobileAppConfigurationUserStatusProps> {
-    add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationUserStatus>;
+add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationUserStatus>;
 }
 /*********************************************
 * managedDeviceMobileAppConfigurationUserSummary
@@ -10837,7 +10837,7 @@ export interface managedEBookOData extends entityOData {
 	assign(managedEBookAssignments): IBaseExecution<void>;
 }
 export interface managedEBookCollection extends IBaseCollection<managedEBook, managedEBookOData & managedEBookProps> {
-    add(values?: any): IBaseExecution<managedEBook>;
+add(values?: any): IBaseExecution<managedEBook>;
 }
 /*********************************************
 * managedEBookAssignment
@@ -10854,7 +10854,7 @@ export interface managedEBookAssignmentOData extends entityOData {
 
 }
 export interface managedEBookAssignmentCollection extends IBaseCollection<managedEBookAssignment, managedEBookAssignmentOData & managedEBookAssignmentProps> {
-    add(values?: any): IBaseExecution<managedEBookAssignment>;
+add(values?: any): IBaseExecution<managedEBookAssignment>;
 }
 /*********************************************
 * managedIOSLobApp
@@ -10905,7 +10905,7 @@ export interface managedMobileAppOData extends entityOData {
 
 }
 export interface managedMobileAppCollection extends IBaseCollection<managedMobileApp, managedMobileAppOData & managedMobileAppProps> {
-    add(values?: any): IBaseExecution<managedMobileApp>;
+add(values?: any): IBaseExecution<managedMobileApp>;
 }
 /*********************************************
 * managedMobileLobApp
@@ -10959,7 +10959,7 @@ export interface mdmWindowsInformationProtectionPolicyOData extends windowsInfor
 
 }
 export interface mdmWindowsInformationProtectionPolicyCollection extends IBaseCollection<mdmWindowsInformationProtectionPolicy, mdmWindowsInformationProtectionPolicyOData & mdmWindowsInformationProtectionPolicyProps> {
-    add(values?: any): IBaseExecution<mdmWindowsInformationProtectionPolicy>;
+add(values?: any): IBaseExecution<mdmWindowsInformationProtectionPolicy>;
 }
 /*********************************************
 * meetingAttendanceReport
@@ -10978,7 +10978,7 @@ export interface meetingAttendanceReportOData extends entityOData {
 	attendanceRecords: IBaseResults<attendanceRecord>;
 }
 export interface meetingAttendanceReportCollection extends IBaseCollection<meetingAttendanceReport, meetingAttendanceReportOData & meetingAttendanceReportProps> {
-    add(values?: any): IBaseExecution<meetingAttendanceReport>;
+add(values?: any): IBaseExecution<meetingAttendanceReport>;
 }
 /*********************************************
 * membershipOutlierInsight
@@ -11067,7 +11067,7 @@ export interface messageOData extends outlookItemOData {
 	send(): IBaseExecution<void>;
 }
 export interface messageCollection extends IBaseCollection<message, messageOData & messageProps> {
-    add(values?: any): IBaseExecution<message>;
+add(values?: any): IBaseExecution<message>;
 }
 /*********************************************
 * messageRule
@@ -11090,7 +11090,7 @@ export interface messageRuleOData extends entityOData {
 
 }
 export interface messageRuleCollection extends IBaseCollection<messageRule, messageRuleOData & messageRuleProps> {
-    add(values?: any): IBaseExecution<messageRule>;
+add(values?: any): IBaseExecution<messageRule>;
 }
 /*********************************************
 * microsoftAccountUserConversationMember
@@ -11122,7 +11122,7 @@ export interface microsoftAuthenticatorAuthenticationMethodOData extends authent
 	device: device;
 }
 export interface microsoftAuthenticatorAuthenticationMethodCollection extends IBaseCollection<microsoftAuthenticatorAuthenticationMethod, microsoftAuthenticatorAuthenticationMethodOData & microsoftAuthenticatorAuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<microsoftAuthenticatorAuthenticationMethod>;
+add(values?: any): IBaseExecution<microsoftAuthenticatorAuthenticationMethod>;
 }
 /*********************************************
 * microsoftAuthenticatorAuthenticationMethodConfiguration
@@ -11153,7 +11153,7 @@ export interface microsoftAuthenticatorAuthenticationMethodTargetOData extends a
 
 }
 export interface microsoftAuthenticatorAuthenticationMethodTargetCollection extends IBaseCollection<microsoftAuthenticatorAuthenticationMethodTarget, microsoftAuthenticatorAuthenticationMethodTargetOData & microsoftAuthenticatorAuthenticationMethodTargetProps> {
-    add(values?: any): IBaseExecution<microsoftAuthenticatorAuthenticationMethodTarget>;
+add(values?: any): IBaseExecution<microsoftAuthenticatorAuthenticationMethodTarget>;
 }
 /*********************************************
 * microsoftStoreForBusinessApp
@@ -11204,7 +11204,7 @@ export interface mobileAppOData extends entityOData {
 	assign(mobileAppAssignments): IBaseExecution<void>;
 }
 export interface mobileAppCollection extends IBaseCollection<mobileApp, mobileAppOData & mobileAppProps> {
-    add(values?: any): IBaseExecution<mobileApp>;
+add(values?: any): IBaseExecution<mobileApp>;
 }
 /*********************************************
 * mobileAppAssignment
@@ -11222,7 +11222,7 @@ export interface mobileAppAssignmentOData extends entityOData {
 
 }
 export interface mobileAppAssignmentCollection extends IBaseCollection<mobileAppAssignment, mobileAppAssignmentOData & mobileAppAssignmentProps> {
-    add(values?: any): IBaseExecution<mobileAppAssignment>;
+add(values?: any): IBaseExecution<mobileAppAssignment>;
 }
 /*********************************************
 * mobileAppCategory
@@ -11239,7 +11239,7 @@ export interface mobileAppCategoryOData extends entityOData {
 
 }
 export interface mobileAppCategoryCollection extends IBaseCollection<mobileAppCategory, mobileAppCategoryOData & mobileAppCategoryProps> {
-    add(values?: any): IBaseExecution<mobileAppCategory>;
+add(values?: any): IBaseExecution<mobileAppCategory>;
 }
 /*********************************************
 * mobileAppContent
@@ -11259,7 +11259,7 @@ export interface mobileAppContentOData extends entityOData {
 	files: IBaseResults<mobileAppContentFile>;
 }
 export interface mobileAppContentCollection extends IBaseCollection<mobileAppContent, mobileAppContentOData & mobileAppContentProps> {
-    add(values?: any): IBaseExecution<mobileAppContent>;
+add(values?: any): IBaseExecution<mobileAppContent>;
 }
 /*********************************************
 * mobileAppContentFile
@@ -11286,7 +11286,7 @@ export interface mobileAppContentFileOData extends entityOData {
 	renewUpload(): IBaseExecution<void>;
 }
 export interface mobileAppContentFileCollection extends IBaseCollection<mobileAppContentFile, mobileAppContentFileOData & mobileAppContentFileProps> {
-    add(values?: any): IBaseExecution<mobileAppContentFile>;
+add(values?: any): IBaseExecution<mobileAppContentFile>;
 }
 /*********************************************
 * mobileAppTroubleshootingEvent
@@ -11303,7 +11303,7 @@ export interface mobileAppTroubleshootingEventOData extends entityOData {
 	appLogCollectionRequests: IBaseResults<appLogCollectionRequest>;
 }
 export interface mobileAppTroubleshootingEventCollection extends IBaseCollection<mobileAppTroubleshootingEvent, mobileAppTroubleshootingEventOData & mobileAppTroubleshootingEventProps> {
-    add(values?: any): IBaseExecution<mobileAppTroubleshootingEvent>;
+add(values?: any): IBaseExecution<mobileAppTroubleshootingEvent>;
 }
 /*********************************************
 * mobileContainedApp
@@ -11319,7 +11319,7 @@ export interface mobileContainedAppOData extends entityOData {
 
 }
 export interface mobileContainedAppCollection extends IBaseCollection<mobileContainedApp, mobileContainedAppOData & mobileContainedAppProps> {
-    add(values?: any): IBaseExecution<mobileContainedApp>;
+add(values?: any): IBaseExecution<mobileContainedApp>;
 }
 /*********************************************
 * mobileLobApp
@@ -11365,7 +11365,7 @@ export interface mobileThreatDefenseConnectorOData extends entityOData {
 
 }
 export interface mobileThreatDefenseConnectorCollection extends IBaseCollection<mobileThreatDefenseConnector, mobileThreatDefenseConnectorOData & mobileThreatDefenseConnectorProps> {
-    add(values?: any): IBaseExecution<mobileThreatDefenseConnector>;
+add(values?: any): IBaseExecution<mobileThreatDefenseConnector>;
 }
 /*********************************************
 * multiTenantOrganization
@@ -11437,7 +11437,7 @@ export interface multiTenantOrganizationMemberOData extends directoryObjectOData
 
 }
 export interface multiTenantOrganizationMemberCollection extends IBaseCollection<multiTenantOrganizationMember, multiTenantOrganizationMemberOData & multiTenantOrganizationMemberProps> {
-    add(values?: any): IBaseExecution<multiTenantOrganizationMember>;
+add(values?: any): IBaseExecution<multiTenantOrganizationMember>;
 }
 /*********************************************
 * multiTenantOrganizationPartnerConfigurationTemplate
@@ -11472,7 +11472,7 @@ export interface multiValueLegacyExtendedPropertyOData extends entityOData {
 
 }
 export interface multiValueLegacyExtendedPropertyCollection extends IBaseCollection<multiValueLegacyExtendedProperty, multiValueLegacyExtendedPropertyOData & multiValueLegacyExtendedPropertyProps> {
-    add(values?: any): IBaseExecution<multiValueLegacyExtendedProperty>;
+add(values?: any): IBaseExecution<multiValueLegacyExtendedProperty>;
 }
 /*********************************************
 * muteParticipantOperation
@@ -11503,7 +11503,7 @@ export interface namedLocationOData extends entityOData {
 
 }
 export interface namedLocationCollection extends IBaseCollection<namedLocation, namedLocationOData & namedLocationProps> {
-    add(values?: any): IBaseExecution<namedLocation>;
+add(values?: any): IBaseExecution<namedLocation>;
 }
 /*********************************************
 * networkAdapter
@@ -11544,7 +11544,7 @@ export interface notebookOData extends onenoteEntityHierarchyModelOData {
 	copyNotebook(groupId, renameAs, notebookFolder, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
 }
 export interface notebookCollection extends IBaseCollection<notebook, notebookOData & notebookProps> {
-    add(values?: any): IBaseExecution<notebook>;
+add(values?: any): IBaseExecution<notebook>;
 }
 /*********************************************
 * notificationMessageTemplate
@@ -11567,7 +11567,7 @@ export interface notificationMessageTemplateOData extends entityOData {
 	sendTestMessage(): IBaseExecution<void>;
 }
 export interface notificationMessageTemplateCollection extends IBaseCollection<notificationMessageTemplate, notificationMessageTemplateOData & notificationMessageTemplateProps> {
-    add(values?: any): IBaseExecution<notificationMessageTemplate>;
+add(values?: any): IBaseExecution<notificationMessageTemplate>;
 }
 /*********************************************
 * oAuth2PermissionGrant
@@ -11587,7 +11587,7 @@ export interface oAuth2PermissionGrantOData extends entityOData {
 
 }
 export interface oAuth2PermissionGrantCollection extends IBaseCollection<oAuth2PermissionGrant, oAuth2PermissionGrantOData & oAuth2PermissionGrantProps> {
-    add(values?: any): IBaseExecution<oAuth2PermissionGrant>;
+add(values?: any): IBaseExecution<oAuth2PermissionGrant>;
 }
 /*********************************************
 * offerShiftRequest
@@ -11606,7 +11606,7 @@ export interface offerShiftRequestOData extends scheduleChangeRequestOData {
 
 }
 export interface offerShiftRequestCollection extends IBaseCollection<offerShiftRequest, offerShiftRequestOData & offerShiftRequestProps> {
-    add(values?: any): IBaseExecution<offerShiftRequest>;
+add(values?: any): IBaseExecution<offerShiftRequest>;
 }
 /*********************************************
 * officeGraphInsights
@@ -11698,7 +11698,7 @@ export interface onPremisesDirectorySynchronizationOData extends entityOData {
 
 }
 export interface onPremisesDirectorySynchronizationCollection extends IBaseCollection<onPremisesDirectorySynchronization, onPremisesDirectorySynchronizationOData & onPremisesDirectorySynchronizationProps> {
-    add(values?: any): IBaseExecution<onPremisesDirectorySynchronization>;
+add(values?: any): IBaseExecution<onPremisesDirectorySynchronization>;
 }
 /*********************************************
 * onTokenIssuanceStartCustomExtension
@@ -11757,7 +11757,7 @@ export interface oneDriveForBusinessProtectionPolicyOData extends protectionPoli
 	driveProtectionUnits: IBaseResults<driveProtectionUnit>;
 }
 export interface oneDriveForBusinessProtectionPolicyCollection extends IBaseCollection<oneDriveForBusinessProtectionPolicy, oneDriveForBusinessProtectionPolicyOData & oneDriveForBusinessProtectionPolicyProps> {
-    add(values?: any): IBaseExecution<oneDriveForBusinessProtectionPolicy>;
+add(values?: any): IBaseExecution<oneDriveForBusinessProtectionPolicy>;
 }
 /*********************************************
 * oneDriveForBusinessRestoreSession
@@ -11774,7 +11774,7 @@ export interface oneDriveForBusinessRestoreSessionOData extends restoreSessionBa
 	driveRestoreArtifacts: IBaseResults<driveRestoreArtifact>;
 }
 export interface oneDriveForBusinessRestoreSessionCollection extends IBaseCollection<oneDriveForBusinessRestoreSession, oneDriveForBusinessRestoreSessionOData & oneDriveForBusinessRestoreSessionProps> {
-    add(values?: any): IBaseExecution<oneDriveForBusinessRestoreSession>;
+add(values?: any): IBaseExecution<oneDriveForBusinessRestoreSession>;
 }
 /*********************************************
 * onenote
@@ -11864,7 +11864,7 @@ export interface onenoteOperationOData extends operationOData {
 
 }
 export interface onenoteOperationCollection extends IBaseCollection<onenoteOperation, onenoteOperationOData & onenoteOperationProps> {
-    add(values?: any): IBaseExecution<onenoteOperation>;
+add(values?: any): IBaseExecution<onenoteOperation>;
 }
 /*********************************************
 * onenotePage
@@ -11896,7 +11896,7 @@ export interface onenotePageOData extends onenoteEntitySchemaObjectModelOData {
 	preview(): ComplexTypes.onenotePagePreview;
 }
 export interface onenotePageCollection extends IBaseCollection<onenotePage, onenotePageOData & onenotePageProps> {
-    add(values?: any): IBaseExecution<onenotePage>;
+add(values?: any): IBaseExecution<onenotePage>;
 }
 /*********************************************
 * onenoteResource
@@ -11913,7 +11913,7 @@ export interface onenoteResourceOData extends onenoteEntityBaseModelOData {
 
 }
 export interface onenoteResourceCollection extends IBaseCollection<onenoteResource, onenoteResourceOData & onenoteResourceProps> {
-    add(values?: any): IBaseExecution<onenoteResource>;
+add(values?: any): IBaseExecution<onenoteResource>;
 }
 /*********************************************
 * onenoteSection
@@ -11940,7 +11940,7 @@ export interface onenoteSectionOData extends onenoteEntityHierarchyModelOData {
 	copyToSectionGroup(id, groupId, renameAs, siteCollectionId, siteId): IBaseExecution<onenoteOperation>;
 }
 export interface onenoteSectionCollection extends IBaseCollection<onenoteSection, onenoteSectionOData & onenoteSectionProps> {
-    add(values?: any): IBaseExecution<onenoteSection>;
+add(values?: any): IBaseExecution<onenoteSection>;
 }
 /*********************************************
 * onlineMeeting
@@ -11973,7 +11973,7 @@ export interface onlineMeetingOData extends onlineMeetingBaseOData {
 	getVirtualAppointmentJoinWebUrl(): string;
 }
 export interface onlineMeetingCollection extends IBaseCollection<onlineMeeting, onlineMeetingOData & onlineMeetingProps> {
-    add(values?: any): IBaseExecution<onlineMeeting>;
+add(values?: any): IBaseExecution<onlineMeeting>;
 }
 /*********************************************
 * onlineMeetingBase
@@ -12022,7 +12022,7 @@ export interface openShiftOData extends changeTrackedEntityOData {
 
 }
 export interface openShiftCollection extends IBaseCollection<openShift, openShiftOData & openShiftProps> {
-    add(values?: any): IBaseExecution<openShift>;
+add(values?: any): IBaseExecution<openShift>;
 }
 /*********************************************
 * openShiftChangeRequest
@@ -12038,7 +12038,7 @@ export interface openShiftChangeRequestOData extends scheduleChangeRequestOData 
 
 }
 export interface openShiftChangeRequestCollection extends IBaseCollection<openShiftChangeRequest, openShiftChangeRequestOData & openShiftChangeRequestProps> {
-    add(values?: any): IBaseExecution<openShiftChangeRequest>;
+add(values?: any): IBaseExecution<openShiftChangeRequest>;
 }
 /*********************************************
 * openTypeExtension
@@ -12178,7 +12178,7 @@ export interface organizationalBrandingLocalizationOData extends organizationalB
 
 }
 export interface organizationalBrandingLocalizationCollection extends IBaseCollection<organizationalBrandingLocalization, organizationalBrandingLocalizationOData & organizationalBrandingLocalizationProps> {
-    add(values?: any): IBaseExecution<organizationalBrandingLocalization>;
+add(values?: any): IBaseExecution<organizationalBrandingLocalization>;
 }
 /*********************************************
 * organizationalBrandingProperties
@@ -12251,7 +12251,7 @@ export interface outlookCategoryOData extends entityOData {
 
 }
 export interface outlookCategoryCollection extends IBaseCollection<outlookCategory, outlookCategoryOData & outlookCategoryProps> {
-    add(values?: any): IBaseExecution<outlookCategory>;
+add(values?: any): IBaseExecution<outlookCategory>;
 }
 /*********************************************
 * outlookItem
@@ -12301,7 +12301,7 @@ export interface participantOData extends participantBaseOData {
 	stopHoldMusic(clientContext): IBaseExecution<stopHoldMusicOperation>;
 }
 export interface participantCollection extends IBaseCollection<participant, participantOData & participantProps> {
-    add(values?: any): IBaseExecution<participant>;
+add(values?: any): IBaseExecution<participant>;
 }
 /*********************************************
 * participantBase
@@ -12389,7 +12389,7 @@ export interface passwordAuthenticationMethodOData extends authenticationMethodO
 
 }
 export interface passwordAuthenticationMethodCollection extends IBaseCollection<passwordAuthenticationMethod, passwordAuthenticationMethodOData & passwordAuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<passwordAuthenticationMethod>;
+add(values?: any): IBaseExecution<passwordAuthenticationMethod>;
 }
 /*********************************************
 * payload
@@ -12426,7 +12426,7 @@ export interface payloadOData extends entityOData {
 
 }
 export interface payloadCollection extends IBaseCollection<payload, payloadOData & payloadProps> {
-    add(values?: any): IBaseExecution<payload>;
+add(values?: any): IBaseExecution<payload>;
 }
 /*********************************************
 * peopleAdminSettings
@@ -12474,8 +12474,7 @@ export interface permissionOData extends entityOData {
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionCollection extends IBaseCollection<permission, permissionOData & permissionProps> {
-    add(values?: any): IBaseExecution<permission>;
-    add(values: { roles: string[], grantedToIdentities: { id: string, displayName?: string } }):IBaseExecution<void>
+add(values: { roles: string[], grantedToIdentities: { id: string, displayName?: string } }):IBaseExecution<void>
 }
 /*********************************************
 * permissionGrantConditionSet
@@ -12498,7 +12497,7 @@ export interface permissionGrantConditionSetOData extends entityOData {
 
 }
 export interface permissionGrantConditionSetCollection extends IBaseCollection<permissionGrantConditionSet, permissionGrantConditionSetOData & permissionGrantConditionSetProps> {
-    add(values?: any): IBaseExecution<permissionGrantConditionSet>;
+add(values?: any): IBaseExecution<permissionGrantConditionSet>;
 }
 /*********************************************
 * permissionGrantPolicy
@@ -12518,7 +12517,7 @@ export interface permissionGrantPolicyOData extends policyBaseOData {
 	includes: IBaseResults<permissionGrantConditionSet>;
 }
 export interface permissionGrantPolicyCollection extends IBaseCollection<permissionGrantPolicy, permissionGrantPolicyOData & permissionGrantPolicyProps> {
-    add(values?: any): IBaseExecution<permissionGrantPolicy>;
+add(values?: any): IBaseExecution<permissionGrantPolicy>;
 }
 /*********************************************
 * person
@@ -12552,7 +12551,7 @@ export interface personOData extends entityOData {
 
 }
 export interface personCollection extends IBaseCollection<person, personOData & personProps> {
-    add(values?: any): IBaseExecution<person>;
+add(values?: any): IBaseExecution<person>;
 }
 /*********************************************
 * phoneAuthenticationMethod
@@ -12572,7 +12571,7 @@ export interface phoneAuthenticationMethodOData extends authenticationMethodODat
 	enableSmsSignIn(): IBaseExecution<void>;
 }
 export interface phoneAuthenticationMethodCollection extends IBaseCollection<phoneAuthenticationMethod, phoneAuthenticationMethodOData & phoneAuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<phoneAuthenticationMethod>;
+add(values?: any): IBaseExecution<phoneAuthenticationMethod>;
 }
 /*********************************************
 * pinnedChatMessageInfo
@@ -12588,7 +12587,7 @@ export interface pinnedChatMessageInfoOData extends entityOData {
 	message: chatMessage;
 }
 export interface pinnedChatMessageInfoCollection extends IBaseCollection<pinnedChatMessageInfo, pinnedChatMessageInfoOData & pinnedChatMessageInfoProps> {
-    add(values?: any): IBaseExecution<pinnedChatMessageInfo>;
+add(values?: any): IBaseExecution<pinnedChatMessageInfo>;
 }
 /*********************************************
 * place
@@ -12657,7 +12656,7 @@ export interface plannerBucketOData extends entityOData {
 	tasks: IBaseResults<plannerTask>;
 }
 export interface plannerBucketCollection extends IBaseCollection<plannerBucket, plannerBucketOData & plannerBucketProps> {
-    add(values?: any): IBaseExecution<plannerBucket>;
+add(values?: any): IBaseExecution<plannerBucket>;
 }
 /*********************************************
 * plannerBucketTaskBoardTaskFormat
@@ -12710,7 +12709,7 @@ export interface plannerPlanOData extends entityOData {
 	tasks: IBaseResults<plannerTask>;
 }
 export interface plannerPlanCollection extends IBaseCollection<plannerPlan, plannerPlanOData & plannerPlanProps> {
-    add(values?: any): IBaseExecution<plannerPlan>;
+add(values?: any): IBaseExecution<plannerPlan>;
 }
 /*********************************************
 * plannerPlanDetails
@@ -12779,7 +12778,7 @@ export interface plannerTaskOData extends entityOData {
 	progressTaskBoardFormat: plannerProgressTaskBoardTaskFormat;
 }
 export interface plannerTaskCollection extends IBaseCollection<plannerTask, plannerTaskOData & plannerTaskProps> {
-    add(values?: any): IBaseExecution<plannerTask>;
+add(values?: any): IBaseExecution<plannerTask>;
 }
 /*********************************************
 * plannerTaskDetails
@@ -12956,7 +12955,7 @@ export interface postOData extends outlookItemOData {
 	reply(Post): IBaseExecution<void>;
 }
 export interface postCollection extends IBaseCollection<post, postOData & postProps> {
-    add(values?: any): IBaseExecution<post>;
+add(values?: any): IBaseExecution<post>;
 }
 /*********************************************
 * presence
@@ -12982,7 +12981,7 @@ export interface presenceOData extends entityOData {
 	setUserPreferredPresence(availability, activity, expirationDuration): IBaseExecution<void>;
 }
 export interface presenceCollection extends IBaseCollection<presence, presenceOData & presenceProps> {
-    add(values?: any): IBaseExecution<presence>;
+add(values?: any): IBaseExecution<presence>;
 }
 /*********************************************
 * print
@@ -13032,7 +13031,7 @@ export interface printConnectorOData extends entityOData {
 
 }
 export interface printConnectorCollection extends IBaseCollection<printConnector, printConnectorOData & printConnectorProps> {
-    add(values?: any): IBaseExecution<printConnector>;
+add(values?: any): IBaseExecution<printConnector>;
 }
 /*********************************************
 * printDocument
@@ -13050,7 +13049,7 @@ export interface printDocumentOData extends entityOData {
 	createUploadSession(properties): IBaseExecution<ComplexTypes.uploadSession>;
 }
 export interface printDocumentCollection extends IBaseCollection<printDocument, printDocumentOData & printDocumentProps> {
-    add(values?: any): IBaseExecution<printDocument>;
+add(values?: any): IBaseExecution<printDocument>;
 }
 /*********************************************
 * printJob
@@ -13084,7 +13083,7 @@ export interface printJobOData extends entityOData {
 	redirect(destinationPrinterId, configuration): IBaseExecution<printJob>;
 }
 export interface printJobCollection extends IBaseCollection<printJob, printJobOData & printJobProps> {
-    add(values?: any): IBaseExecution<printJob>;
+add(values?: any): IBaseExecution<printJob>;
 }
 /*********************************************
 * printOperation
@@ -13101,7 +13100,7 @@ export interface printOperationOData extends entityOData {
 
 }
 export interface printOperationCollection extends IBaseCollection<printOperation, printOperationOData & printOperationProps> {
-    add(values?: any): IBaseExecution<printOperation>;
+add(values?: any): IBaseExecution<printOperation>;
 }
 /*********************************************
 * printService
@@ -13118,7 +13117,7 @@ export interface printServiceOData extends entityOData {
 	endpoints: IBaseResults<printServiceEndpoint>;
 }
 export interface printServiceCollection extends IBaseCollection<printService, printServiceOData & printServiceProps> {
-    add(values?: any): IBaseExecution<printService>;
+add(values?: any): IBaseExecution<printService>;
 }
 /*********************************************
 * printServiceEndpoint
@@ -13135,7 +13134,7 @@ export interface printServiceEndpointOData extends entityOData {
 
 }
 export interface printServiceEndpointCollection extends IBaseCollection<printServiceEndpoint, printServiceEndpointOData & printServiceEndpointProps> {
-    add(values?: any): IBaseExecution<printServiceEndpoint>;
+add(values?: any): IBaseExecution<printServiceEndpoint>;
 }
 /*********************************************
 * printTask
@@ -13154,7 +13153,7 @@ export interface printTaskOData extends entityOData {
 	trigger: printTaskTrigger;
 }
 export interface printTaskCollection extends IBaseCollection<printTask, printTaskOData & printTaskProps> {
-    add(values?: any): IBaseExecution<printTask>;
+add(values?: any): IBaseExecution<printTask>;
 }
 /*********************************************
 * printTaskDefinition
@@ -13172,7 +13171,7 @@ export interface printTaskDefinitionOData extends entityOData {
 	tasks: IBaseResults<printTask>;
 }
 export interface printTaskDefinitionCollection extends IBaseCollection<printTaskDefinition, printTaskDefinitionOData & printTaskDefinitionProps> {
-    add(values?: any): IBaseExecution<printTaskDefinition>;
+add(values?: any): IBaseExecution<printTaskDefinition>;
 }
 /*********************************************
 * printTaskTrigger
@@ -13188,7 +13187,7 @@ export interface printTaskTriggerOData extends entityOData {
 	definition: printTaskDefinition;
 }
 export interface printTaskTriggerCollection extends IBaseCollection<printTaskTrigger, printTaskTriggerOData & printTaskTriggerProps> {
-    add(values?: any): IBaseExecution<printTaskTrigger>;
+add(values?: any): IBaseExecution<printTaskTrigger>;
 }
 /*********************************************
 * printUsage
@@ -13228,7 +13227,7 @@ export interface printUsageByPrinterOData extends printUsageOData {
 
 }
 export interface printUsageByPrinterCollection extends IBaseCollection<printUsageByPrinter, printUsageByPrinterOData & printUsageByPrinterProps> {
-    add(values?: any): IBaseExecution<printUsageByPrinter>;
+add(values?: any): IBaseExecution<printUsageByPrinter>;
 }
 /*********************************************
 * printUsageByUser
@@ -13244,7 +13243,7 @@ export interface printUsageByUserOData extends printUsageOData {
 
 }
 export interface printUsageByUserCollection extends IBaseCollection<printUsageByUser, printUsageByUserOData & printUsageByUserProps> {
-    add(values?: any): IBaseExecution<printUsageByUser>;
+add(values?: any): IBaseExecution<printUsageByUser>;
 }
 /*********************************************
 * printer
@@ -13272,7 +13271,7 @@ export interface printerOData extends printerBaseOData {
 	restoreFactoryDefaults(): IBaseExecution<void>;
 }
 export interface printerCollection extends IBaseCollection<printer, printerOData & printerProps> {
-    add(values?: any): IBaseExecution<printer>;
+add(values?: any): IBaseExecution<printer>;
 }
 /*********************************************
 * printerBase
@@ -13330,7 +13329,7 @@ export interface printerShareOData extends printerBaseOData {
 	printer: printer;
 }
 export interface printerShareCollection extends IBaseCollection<printerShare, printerShareOData & printerShareProps> {
-    add(values?: any): IBaseExecution<printerShare>;
+add(values?: any): IBaseExecution<printerShare>;
 }
 /*********************************************
 * privacy
@@ -13400,7 +13399,7 @@ export interface privilegedAccessGroupAssignmentScheduleOData extends privileged
 	principal: directoryObject;
 }
 export interface privilegedAccessGroupAssignmentScheduleCollection extends IBaseCollection<privilegedAccessGroupAssignmentSchedule, privilegedAccessGroupAssignmentScheduleOData & privilegedAccessGroupAssignmentScheduleProps> {
-    add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentSchedule>;
+add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentSchedule>;
 }
 /*********************************************
 * privilegedAccessGroupAssignmentScheduleInstance
@@ -13425,7 +13424,7 @@ export interface privilegedAccessGroupAssignmentScheduleInstanceOData extends pr
 	principal: directoryObject;
 }
 export interface privilegedAccessGroupAssignmentScheduleInstanceCollection extends IBaseCollection<privilegedAccessGroupAssignmentScheduleInstance, privilegedAccessGroupAssignmentScheduleInstanceOData & privilegedAccessGroupAssignmentScheduleInstanceProps> {
-    add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentScheduleInstance>;
+add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentScheduleInstance>;
 }
 /*********************************************
 * privilegedAccessGroupAssignmentScheduleRequest
@@ -13452,7 +13451,7 @@ export interface privilegedAccessGroupAssignmentScheduleRequestOData extends pri
 	cancel(): IBaseExecution<void>;
 }
 export interface privilegedAccessGroupAssignmentScheduleRequestCollection extends IBaseCollection<privilegedAccessGroupAssignmentScheduleRequest, privilegedAccessGroupAssignmentScheduleRequestOData & privilegedAccessGroupAssignmentScheduleRequestProps> {
-    add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentScheduleRequest>;
+add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentScheduleRequest>;
 }
 /*********************************************
 * privilegedAccessGroupEligibilitySchedule
@@ -13473,7 +13472,7 @@ export interface privilegedAccessGroupEligibilityScheduleOData extends privilege
 	principal: directoryObject;
 }
 export interface privilegedAccessGroupEligibilityScheduleCollection extends IBaseCollection<privilegedAccessGroupEligibilitySchedule, privilegedAccessGroupEligibilityScheduleOData & privilegedAccessGroupEligibilityScheduleProps> {
-    add(values?: any): IBaseExecution<privilegedAccessGroupEligibilitySchedule>;
+add(values?: any): IBaseExecution<privilegedAccessGroupEligibilitySchedule>;
 }
 /*********************************************
 * privilegedAccessGroupEligibilityScheduleInstance
@@ -13495,7 +13494,7 @@ export interface privilegedAccessGroupEligibilityScheduleInstanceOData extends p
 	principal: directoryObject;
 }
 export interface privilegedAccessGroupEligibilityScheduleInstanceCollection extends IBaseCollection<privilegedAccessGroupEligibilityScheduleInstance, privilegedAccessGroupEligibilityScheduleInstanceOData & privilegedAccessGroupEligibilityScheduleInstanceProps> {
-    add(values?: any): IBaseExecution<privilegedAccessGroupEligibilityScheduleInstance>;
+add(values?: any): IBaseExecution<privilegedAccessGroupEligibilityScheduleInstance>;
 }
 /*********************************************
 * privilegedAccessGroupEligibilityScheduleRequest
@@ -13520,7 +13519,7 @@ export interface privilegedAccessGroupEligibilityScheduleRequestOData extends pr
 	cancel(): IBaseExecution<void>;
 }
 export interface privilegedAccessGroupEligibilityScheduleRequestCollection extends IBaseCollection<privilegedAccessGroupEligibilityScheduleRequest, privilegedAccessGroupEligibilityScheduleRequestOData & privilegedAccessGroupEligibilityScheduleRequestProps> {
-    add(values?: any): IBaseExecution<privilegedAccessGroupEligibilityScheduleRequest>;
+add(values?: any): IBaseExecution<privilegedAccessGroupEligibilityScheduleRequest>;
 }
 /*********************************************
 * privilegedAccessRoot
@@ -13598,7 +13597,7 @@ export interface profileCardPropertyOData extends entityOData {
 
 }
 export interface profileCardPropertyCollection extends IBaseCollection<profileCardProperty, profileCardPropertyOData & profileCardPropertyProps> {
-    add(values?: any): IBaseExecution<profileCardProperty>;
+add(values?: any): IBaseExecution<profileCardProperty>;
 }
 /*********************************************
 * profilePhoto
@@ -13615,7 +13614,7 @@ export interface profilePhotoOData extends entityOData {
 
 }
 export interface profilePhotoCollection extends IBaseCollection<profilePhoto, profilePhotoOData & profilePhotoProps> {
-    add(values?: any): IBaseExecution<profilePhoto>;
+add(values?: any): IBaseExecution<profilePhoto>;
 }
 /*********************************************
 * pronounsSettings
@@ -13652,7 +13651,7 @@ export interface protectionPolicyBaseOData extends entityOData {
 	deactivate(): IBaseExecution<protectionPolicyBase>;
 }
 export interface protectionPolicyBaseCollection extends IBaseCollection<protectionPolicyBase, protectionPolicyBaseOData & protectionPolicyBaseProps> {
-    add(values?: any): IBaseExecution<protectionPolicyBase>;
+add(values?: any): IBaseExecution<protectionPolicyBase>;
 }
 /*********************************************
 * protectionRuleBase
@@ -13693,7 +13692,7 @@ export interface protectionUnitBaseOData extends entityOData {
 
 }
 export interface protectionUnitBaseCollection extends IBaseCollection<protectionUnitBase, protectionUnitBaseOData & protectionUnitBaseProps> {
-    add(values?: any): IBaseExecution<protectionUnitBase>;
+add(values?: any): IBaseExecution<protectionUnitBase>;
 }
 /*********************************************
 * provisioningObjectSummary
@@ -13724,7 +13723,7 @@ export interface provisioningObjectSummaryOData extends entityOData {
 
 }
 export interface provisioningObjectSummaryCollection extends IBaseCollection<provisioningObjectSummary, provisioningObjectSummaryOData & provisioningObjectSummaryProps> {
-    add(values?: any): IBaseExecution<provisioningObjectSummary>;
+add(values?: any): IBaseExecution<provisioningObjectSummary>;
 }
 /*********************************************
 * qna
@@ -13871,7 +13870,7 @@ export interface remoteAssistancePartnerOData extends entityOData {
 	disconnect(): IBaseExecution<void>;
 }
 export interface remoteAssistancePartnerCollection extends IBaseCollection<remoteAssistancePartner, remoteAssistancePartnerOData & remoteAssistancePartnerProps> {
-    add(values?: any): IBaseExecution<remoteAssistancePartner>;
+add(values?: any): IBaseExecution<remoteAssistancePartner>;
 }
 /*********************************************
 * remoteDesktopSecurityConfiguration
@@ -14106,7 +14105,7 @@ export interface resourceOperationOData extends entityOData {
 
 }
 export interface resourceOperationCollection extends IBaseCollection<resourceOperation, resourceOperationOData & resourceOperationProps> {
-    add(values?: any): IBaseExecution<resourceOperation>;
+add(values?: any): IBaseExecution<resourceOperation>;
 }
 /*********************************************
 * resourceSpecificPermissionGrant
@@ -14126,7 +14125,7 @@ export interface resourceSpecificPermissionGrantOData extends directoryObjectODa
 
 }
 export interface resourceSpecificPermissionGrantCollection extends IBaseCollection<resourceSpecificPermissionGrant, resourceSpecificPermissionGrantOData & resourceSpecificPermissionGrantProps> {
-    add(values?: any): IBaseExecution<resourceSpecificPermissionGrant>;
+add(values?: any): IBaseExecution<resourceSpecificPermissionGrant>;
 }
 /*********************************************
 * restoreArtifactBase
@@ -14161,7 +14160,7 @@ export interface restorePointOData extends entityOData {
 	protectionUnit: protectionUnitBase;
 }
 export interface restorePointCollection extends IBaseCollection<restorePoint, restorePointOData & restorePointProps> {
-    add(values?: any): IBaseExecution<restorePoint>;
+add(values?: any): IBaseExecution<restorePoint>;
 }
 /*********************************************
 * restoreSessionBase
@@ -14183,7 +14182,7 @@ export interface restoreSessionBaseOData extends entityOData {
 	activate(): IBaseExecution<restoreSessionBase>;
 }
 export interface restoreSessionBaseCollection extends IBaseCollection<restoreSessionBase, restoreSessionBaseOData & restoreSessionBaseProps> {
-    add(values?: any): IBaseExecution<restoreSessionBase>;
+add(values?: any): IBaseExecution<restoreSessionBase>;
 }
 /*********************************************
 * retentionEvent
@@ -14274,7 +14273,7 @@ export interface richLongRunningOperationOData extends longRunningOperationOData
 
 }
 export interface richLongRunningOperationCollection extends IBaseCollection<richLongRunningOperation, richLongRunningOperationOData & richLongRunningOperationProps> {
-    add(values?: any): IBaseExecution<richLongRunningOperation>;
+add(values?: any): IBaseExecution<richLongRunningOperation>;
 }
 /*********************************************
 * riskDetection
@@ -14308,7 +14307,7 @@ export interface riskDetectionOData extends entityOData {
 
 }
 export interface riskDetectionCollection extends IBaseCollection<riskDetection, riskDetectionOData & riskDetectionProps> {
-    add(values?: any): IBaseExecution<riskDetection>;
+add(values?: any): IBaseExecution<riskDetection>;
 }
 /*********************************************
 * riskyServicePrincipal
@@ -14333,7 +14332,7 @@ export interface riskyServicePrincipalOData extends entityOData {
 	history: IBaseResults<riskyServicePrincipalHistoryItem>;
 }
 export interface riskyServicePrincipalCollection extends IBaseCollection<riskyServicePrincipal, riskyServicePrincipalOData & riskyServicePrincipalProps> {
-    add(values?: any): IBaseExecution<riskyServicePrincipal>;
+add(values?: any): IBaseExecution<riskyServicePrincipal>;
 }
 /*********************************************
 * riskyServicePrincipalHistoryItem
@@ -14350,7 +14349,7 @@ export interface riskyServicePrincipalHistoryItemOData extends riskyServicePrinc
 
 }
 export interface riskyServicePrincipalHistoryItemCollection extends IBaseCollection<riskyServicePrincipalHistoryItem, riskyServicePrincipalHistoryItemOData & riskyServicePrincipalHistoryItemProps> {
-    add(values?: any): IBaseExecution<riskyServicePrincipalHistoryItem>;
+add(values?: any): IBaseExecution<riskyServicePrincipalHistoryItem>;
 }
 /*********************************************
 * riskyUser
@@ -14374,7 +14373,7 @@ export interface riskyUserOData extends entityOData {
 	history: IBaseResults<riskyUserHistoryItem>;
 }
 export interface riskyUserCollection extends IBaseCollection<riskyUser, riskyUserOData & riskyUserProps> {
-    add(values?: any): IBaseExecution<riskyUser>;
+add(values?: any): IBaseExecution<riskyUser>;
 }
 /*********************************************
 * riskyUserHistoryItem
@@ -14392,7 +14391,7 @@ export interface riskyUserHistoryItemOData extends riskyUserOData {
 
 }
 export interface riskyUserHistoryItemCollection extends IBaseCollection<riskyUserHistoryItem, riskyUserHistoryItemOData & riskyUserHistoryItemProps> {
-    add(values?: any): IBaseExecution<riskyUserHistoryItem>;
+add(values?: any): IBaseExecution<riskyUserHistoryItem>;
 }
 /*********************************************
 * roleAssignment
@@ -14410,7 +14409,7 @@ export interface roleAssignmentOData extends entityOData {
 	roleDefinition: roleDefinition;
 }
 export interface roleAssignmentCollection extends IBaseCollection<roleAssignment, roleAssignmentOData & roleAssignmentProps> {
-    add(values?: any): IBaseExecution<roleAssignment>;
+add(values?: any): IBaseExecution<roleAssignment>;
 }
 /*********************************************
 * roleDefinition
@@ -14430,7 +14429,7 @@ export interface roleDefinitionOData extends entityOData {
 	roleAssignments: IBaseResults<roleAssignment>;
 }
 export interface roleDefinitionCollection extends IBaseCollection<roleDefinition, roleDefinitionOData & roleDefinitionProps> {
-    add(values?: any): IBaseExecution<roleDefinition>;
+add(values?: any): IBaseExecution<roleDefinition>;
 }
 /*********************************************
 * roleManagement
@@ -14473,7 +14472,7 @@ export interface roomOData extends placeOData {
 
 }
 export interface roomCollection extends IBaseCollection<room, roomOData & roomProps> {
-    add(values?: any): IBaseExecution<room>;
+add(values?: any): IBaseExecution<room>;
 }
 /*********************************************
 * roomList
@@ -14648,7 +14647,7 @@ export interface schedulingGroupOData extends changeTrackedEntityOData {
 
 }
 export interface schedulingGroupCollection extends IBaseCollection<schedulingGroup, schedulingGroupOData & schedulingGroupProps> {
-    add(values?: any): IBaseExecution<schedulingGroup>;
+add(values?: any): IBaseExecution<schedulingGroup>;
 }
 /*********************************************
 * schema
@@ -14697,7 +14696,7 @@ export interface scopedRoleMembershipOData extends entityOData {
 
 }
 export interface scopedRoleMembershipCollection extends IBaseCollection<scopedRoleMembership, scopedRoleMembershipOData & scopedRoleMembershipProps> {
-    add(values?: any): IBaseExecution<scopedRoleMembership>;
+add(values?: any): IBaseExecution<scopedRoleMembership>;
 }
 /*********************************************
 * search
@@ -14780,7 +14779,7 @@ export interface sectionGroupOData extends onenoteEntityHierarchyModelOData {
 	sections: IBaseResults<onenoteSection>;
 }
 export interface sectionGroupCollection extends IBaseCollection<sectionGroup, sectionGroupOData & sectionGroupProps> {
-    add(values?: any): IBaseExecution<sectionGroup>;
+add(values?: any): IBaseExecution<sectionGroup>;
 }
 /*********************************************
 * secureScore
@@ -14805,7 +14804,7 @@ export interface secureScoreOData extends entityOData {
 
 }
 export interface secureScoreCollection extends IBaseCollection<secureScore, secureScoreOData & secureScoreProps> {
-    add(values?: any): IBaseExecution<secureScore>;
+add(values?: any): IBaseExecution<secureScore>;
 }
 /*********************************************
 * secureScoreControlProfile
@@ -14839,7 +14838,7 @@ export interface secureScoreControlProfileOData extends entityOData {
 
 }
 export interface secureScoreControlProfileCollection extends IBaseCollection<secureScoreControlProfile, secureScoreControlProfileOData & secureScoreControlProfileProps> {
-    add(values?: any): IBaseExecution<secureScoreControlProfile>;
+add(values?: any): IBaseExecution<secureScoreControlProfile>;
 }
 /*********************************************
 * security
@@ -14994,7 +14993,7 @@ export interface serviceAnnouncementAttachmentOData extends entityOData {
 
 }
 export interface serviceAnnouncementAttachmentCollection extends IBaseCollection<serviceAnnouncementAttachment, serviceAnnouncementAttachmentOData & serviceAnnouncementAttachmentProps> {
-    add(values?: any): IBaseExecution<serviceAnnouncementAttachment>;
+add(values?: any): IBaseExecution<serviceAnnouncementAttachment>;
 }
 /*********************************************
 * serviceAnnouncementBase
@@ -15034,7 +15033,7 @@ export interface serviceAppOData extends entityOData {
 	deactivate(): IBaseExecution<serviceApp>;
 }
 export interface serviceAppCollection extends IBaseCollection<serviceApp, serviceAppOData & serviceAppProps> {
-    add(values?: any): IBaseExecution<serviceApp>;
+add(values?: any): IBaseExecution<serviceApp>;
 }
 /*********************************************
 * serviceHealth
@@ -15052,7 +15051,7 @@ export interface serviceHealthOData extends entityOData {
 	issues: IBaseResults<serviceHealthIssue>;
 }
 export interface serviceHealthCollection extends IBaseCollection<serviceHealth, serviceHealthOData & serviceHealthProps> {
-    add(values?: any): IBaseExecution<serviceHealth>;
+add(values?: any): IBaseExecution<serviceHealth>;
 }
 /*********************************************
 * serviceHealthIssue
@@ -15076,7 +15075,7 @@ export interface serviceHealthIssueOData extends serviceAnnouncementBaseOData {
 	incidentReport(): any;
 }
 export interface serviceHealthIssueCollection extends IBaseCollection<serviceHealthIssue, serviceHealthIssueOData & serviceHealthIssueProps> {
-    add(values?: any): IBaseExecution<serviceHealthIssue>;
+add(values?: any): IBaseExecution<serviceHealthIssue>;
 }
 /*********************************************
 * servicePrincipal
@@ -15217,7 +15216,7 @@ export interface servicePrincipalRiskDetectionOData extends entityOData {
 
 }
 export interface servicePrincipalRiskDetectionCollection extends IBaseCollection<servicePrincipalRiskDetection, servicePrincipalRiskDetectionOData & servicePrincipalRiskDetectionProps> {
-    add(values?: any): IBaseExecution<servicePrincipalRiskDetection>;
+add(values?: any): IBaseExecution<servicePrincipalRiskDetection>;
 }
 /*********************************************
 * serviceStorageQuotaBreakdown
@@ -15233,7 +15232,7 @@ export interface serviceStorageQuotaBreakdownOData extends storageQuotaBreakdown
 
 }
 export interface serviceStorageQuotaBreakdownCollection extends IBaseCollection<serviceStorageQuotaBreakdown, serviceStorageQuotaBreakdownOData & serviceStorageQuotaBreakdownProps> {
-    add(values?: any): IBaseExecution<serviceStorageQuotaBreakdown>;
+add(values?: any): IBaseExecution<serviceStorageQuotaBreakdown>;
 }
 /*********************************************
 * serviceUpdateMessage
@@ -15259,7 +15258,7 @@ export interface serviceUpdateMessageOData extends serviceAnnouncementBaseOData 
 	attachments: IBaseResults<serviceAnnouncementAttachment>;
 }
 export interface serviceUpdateMessageCollection extends IBaseCollection<serviceUpdateMessage, serviceUpdateMessageOData & serviceUpdateMessageProps> {
-    add(values?: any): IBaseExecution<serviceUpdateMessage>;
+add(values?: any): IBaseExecution<serviceUpdateMessage>;
 }
 /*********************************************
 * session
@@ -15328,7 +15327,7 @@ export interface settingStateDeviceSummaryOData extends entityOData {
 
 }
 export interface settingStateDeviceSummaryCollection extends IBaseCollection<settingStateDeviceSummary, settingStateDeviceSummaryOData & settingStateDeviceSummaryProps> {
-    add(values?: any): IBaseExecution<settingStateDeviceSummary>;
+add(values?: any): IBaseExecution<settingStateDeviceSummary>;
 }
 /*********************************************
 * sharePointProtectionPolicy
@@ -15348,7 +15347,7 @@ export interface sharePointProtectionPolicyOData extends protectionPolicyBaseODa
 	siteProtectionUnits: IBaseResults<siteProtectionUnit>;
 }
 export interface sharePointProtectionPolicyCollection extends IBaseCollection<sharePointProtectionPolicy, sharePointProtectionPolicyOData & sharePointProtectionPolicyProps> {
-    add(values?: any): IBaseExecution<sharePointProtectionPolicy>;
+add(values?: any): IBaseExecution<sharePointProtectionPolicy>;
 }
 /*********************************************
 * sharePointRestoreSession
@@ -15365,7 +15364,7 @@ export interface sharePointRestoreSessionOData extends restoreSessionBaseOData {
 	siteRestoreArtifacts: IBaseResults<siteRestoreArtifact>;
 }
 export interface sharePointRestoreSessionCollection extends IBaseCollection<sharePointRestoreSession, sharePointRestoreSessionOData & sharePointRestoreSessionProps> {
-    add(values?: any): IBaseExecution<sharePointRestoreSession>;
+add(values?: any): IBaseExecution<sharePointRestoreSession>;
 }
 /*********************************************
 * sharedDriveItem
@@ -15412,7 +15411,7 @@ export interface sharedInsightOData extends entityOData {
 	resource: entity;
 }
 export interface sharedInsightCollection extends IBaseCollection<sharedInsight, sharedInsightOData & sharedInsightProps> {
-    add(values?: any): IBaseExecution<sharedInsight>;
+add(values?: any): IBaseExecution<sharedInsight>;
 }
 /*********************************************
 * sharedPCConfiguration
@@ -15453,7 +15452,7 @@ export interface sharedWithChannelTeamInfoOData extends teamInfoOData {
 	allowedMembers: IBaseResults<conversationMember>;
 }
 export interface sharedWithChannelTeamInfoCollection extends IBaseCollection<sharedWithChannelTeamInfo, sharedWithChannelTeamInfoOData & sharedWithChannelTeamInfoProps> {
-    add(values?: any): IBaseExecution<sharedWithChannelTeamInfo>;
+add(values?: any): IBaseExecution<sharedWithChannelTeamInfo>;
 }
 /*********************************************
 * sharepoint
@@ -15526,7 +15525,7 @@ export interface shiftOData extends changeTrackedEntityOData {
 
 }
 export interface shiftCollection extends IBaseCollection<shift, shiftOData & shiftProps> {
-    add(values?: any): IBaseExecution<shift>;
+add(values?: any): IBaseExecution<shift>;
 }
 /*********************************************
 * shiftPreferences
@@ -15577,7 +15576,7 @@ export interface signInOData extends entityOData {
 
 }
 export interface signInCollection extends IBaseCollection<signIn, signInOData & signInProps> {
-    add(values?: any): IBaseExecution<signIn>;
+add(values?: any): IBaseExecution<signIn>;
 }
 /*********************************************
 * simulation
@@ -15617,7 +15616,7 @@ export interface simulationOData extends entityOData {
 	payload: payload;
 }
 export interface simulationCollection extends IBaseCollection<simulation, simulationOData & simulationProps> {
-    add(values?: any): IBaseExecution<simulation>;
+add(values?: any): IBaseExecution<simulation>;
 }
 /*********************************************
 * simulationAutomation
@@ -15642,7 +15641,7 @@ export interface simulationAutomationOData extends entityOData {
 	runs: IBaseResults<simulationAutomationRun>;
 }
 export interface simulationAutomationCollection extends IBaseCollection<simulationAutomation, simulationAutomationOData & simulationAutomationProps> {
-    add(values?: any): IBaseExecution<simulationAutomation>;
+add(values?: any): IBaseExecution<simulationAutomation>;
 }
 /*********************************************
 * simulationAutomationRun
@@ -15661,7 +15660,7 @@ export interface simulationAutomationRunOData extends entityOData {
 
 }
 export interface simulationAutomationRunCollection extends IBaseCollection<simulationAutomationRun, simulationAutomationRunOData & simulationAutomationRunProps> {
-    add(values?: any): IBaseExecution<simulationAutomationRun>;
+add(values?: any): IBaseExecution<simulationAutomationRun>;
 }
 /*********************************************
 * singleValueLegacyExtendedProperty
@@ -15677,7 +15676,7 @@ export interface singleValueLegacyExtendedPropertyOData extends entityOData {
 
 }
 export interface singleValueLegacyExtendedPropertyCollection extends IBaseCollection<singleValueLegacyExtendedProperty, singleValueLegacyExtendedPropertyOData & singleValueLegacyExtendedPropertyProps> {
-    add(values?: any): IBaseExecution<singleValueLegacyExtendedProperty>;
+add(values?: any): IBaseExecution<singleValueLegacyExtendedProperty>;
 }
 /*********************************************
 * site
@@ -15745,7 +15744,7 @@ export interface siteOData extends baseItemOData {
 	getByPath(path): site;
 }
 export interface siteCollection extends IBaseCollection<site, siteOData & siteProps> {
-    add(values?: any): IBaseExecution<site>;
+add(values?: any): IBaseExecution<site>;
 }
 /*********************************************
 * sitePage
@@ -15786,7 +15785,7 @@ export interface siteProtectionRuleOData extends protectionRuleBaseOData {
 
 }
 export interface siteProtectionRuleCollection extends IBaseCollection<siteProtectionRule, siteProtectionRuleOData & siteProtectionRuleProps> {
-    add(values?: any): IBaseExecution<siteProtectionRule>;
+add(values?: any): IBaseExecution<siteProtectionRule>;
 }
 /*********************************************
 * siteProtectionUnit
@@ -15804,7 +15803,7 @@ export interface siteProtectionUnitOData extends protectionUnitBaseOData {
 
 }
 export interface siteProtectionUnitCollection extends IBaseCollection<siteProtectionUnit, siteProtectionUnitOData & siteProtectionUnitProps> {
-    add(values?: any): IBaseExecution<siteProtectionUnit>;
+add(values?: any): IBaseExecution<siteProtectionUnit>;
 }
 /*********************************************
 * siteRestoreArtifact
@@ -15822,7 +15821,7 @@ export interface siteRestoreArtifactOData extends restoreArtifactBaseOData {
 
 }
 export interface siteRestoreArtifactCollection extends IBaseCollection<siteRestoreArtifact, siteRestoreArtifactOData & siteRestoreArtifactProps> {
-    add(values?: any): IBaseExecution<siteRestoreArtifact>;
+add(values?: any): IBaseExecution<siteRestoreArtifact>;
 }
 /*********************************************
 * siteSource
@@ -15892,7 +15891,7 @@ export interface smsAuthenticationMethodTargetOData extends authenticationMethod
 
 }
 export interface smsAuthenticationMethodTargetCollection extends IBaseCollection<smsAuthenticationMethodTarget, smsAuthenticationMethodTargetOData & smsAuthenticationMethodTargetProps> {
-    add(values?: any): IBaseExecution<smsAuthenticationMethodTarget>;
+add(values?: any): IBaseExecution<smsAuthenticationMethodTarget>;
 }
 /*********************************************
 * socialIdentityProvider
@@ -15923,7 +15922,7 @@ export interface softwareOathAuthenticationMethodOData extends authenticationMet
 
 }
 export interface softwareOathAuthenticationMethodCollection extends IBaseCollection<softwareOathAuthenticationMethod, softwareOathAuthenticationMethodOData & softwareOathAuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<softwareOathAuthenticationMethod>;
+add(values?: any): IBaseExecution<softwareOathAuthenticationMethod>;
 }
 /*********************************************
 * softwareOathAuthenticationMethodConfiguration
@@ -16202,7 +16201,7 @@ export interface subjectRightsRequestOData extends entityOData {
 	getFinalReport(): any;
 }
 export interface subjectRightsRequestCollection extends IBaseCollection<subjectRightsRequest, subjectRightsRequestOData & subjectRightsRequestProps> {
-    add(values?: any): IBaseExecution<subjectRightsRequest>;
+add(values?: any): IBaseExecution<subjectRightsRequest>;
 }
 /*********************************************
 * subscribeToToneOperation
@@ -16266,7 +16265,7 @@ export interface subscriptionOData extends entityOData {
 	reauthorize(): IBaseExecution<void>;
 }
 export interface subscriptionCollection extends IBaseCollection<subscription, subscriptionOData & subscriptionProps> {
-    add(values?: any): IBaseExecution<subscription>;
+add(values?: any): IBaseExecution<subscription>;
 }
 /*********************************************
 * swapShiftsChangeRequest
@@ -16282,7 +16281,7 @@ export interface swapShiftsChangeRequestOData extends offerShiftRequestOData {
 
 }
 export interface swapShiftsChangeRequestCollection extends IBaseCollection<swapShiftsChangeRequest, swapShiftsChangeRequestOData & swapShiftsChangeRequestProps> {
-    add(values?: any): IBaseExecution<swapShiftsChangeRequest>;
+add(values?: any): IBaseExecution<swapShiftsChangeRequest>;
 }
 /*********************************************
 * synchronization
@@ -16332,7 +16331,7 @@ export interface synchronizationJobOData extends entityOData {
 	validateCredentials(applicationIdentifier, templateId, useSavedCredentials, credentials): IBaseExecution<void>;
 }
 export interface synchronizationJobCollection extends IBaseCollection<synchronizationJob, synchronizationJobOData & synchronizationJobProps> {
-    add(values?: any): IBaseExecution<synchronizationJob>;
+add(values?: any): IBaseExecution<synchronizationJob>;
 }
 /*********************************************
 * synchronizationSchema
@@ -16374,7 +16373,7 @@ export interface synchronizationTemplateOData extends entityOData {
 	schema: synchronizationSchema;
 }
 export interface synchronizationTemplateCollection extends IBaseCollection<synchronizationTemplate, synchronizationTemplateOData & synchronizationTemplateProps> {
-    add(values?: any): IBaseExecution<synchronizationTemplate>;
+add(values?: any): IBaseExecution<synchronizationTemplate>;
 }
 /*********************************************
 * tag
@@ -16406,7 +16405,7 @@ export interface targetDeviceGroupOData extends entityOData {
 
 }
 export interface targetDeviceGroupCollection extends IBaseCollection<targetDeviceGroup, targetDeviceGroupOData & targetDeviceGroupProps> {
-    add(values?: any): IBaseExecution<targetDeviceGroup>;
+add(values?: any): IBaseExecution<targetDeviceGroup>;
 }
 /*********************************************
 * targetedManagedAppConfiguration
@@ -16433,7 +16432,7 @@ export interface targetedManagedAppConfigurationOData extends managedAppConfigur
 	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface targetedManagedAppConfigurationCollection extends IBaseCollection<targetedManagedAppConfiguration, targetedManagedAppConfigurationOData & targetedManagedAppConfigurationProps> {
-    add(values?: any): IBaseExecution<targetedManagedAppConfiguration>;
+add(values?: any): IBaseExecution<targetedManagedAppConfiguration>;
 }
 /*********************************************
 * targetedManagedAppPolicyAssignment
@@ -16449,7 +16448,7 @@ export interface targetedManagedAppPolicyAssignmentOData extends entityOData {
 
 }
 export interface targetedManagedAppPolicyAssignmentCollection extends IBaseCollection<targetedManagedAppPolicyAssignment, targetedManagedAppPolicyAssignmentOData & targetedManagedAppPolicyAssignmentProps> {
-    add(values?: any): IBaseExecution<targetedManagedAppPolicyAssignment>;
+add(values?: any): IBaseExecution<targetedManagedAppPolicyAssignment>;
 }
 /*********************************************
 * targetedManagedAppProtection
@@ -16636,7 +16635,7 @@ export interface teamOData extends entityOData {
 	sendActivityNotification(topic, activityType, chainId, previewText, teamsAppId, templateParameters, recipient): IBaseExecution<void>;
 }
 export interface teamCollection extends IBaseCollection<team, teamOData & teamProps> {
-    add(values?: any): IBaseExecution<team>;
+add(values?: any): IBaseExecution<team>;
 }
 /*********************************************
 * teamInfo
@@ -16669,7 +16668,7 @@ export interface teamsAppOData extends entityOData {
 	appDefinitions: IBaseResults<teamsAppDefinition>;
 }
 export interface teamsAppCollection extends IBaseCollection<teamsApp, teamsAppOData & teamsAppProps> {
-    add(values?: any): IBaseExecution<teamsApp>;
+add(values?: any): IBaseExecution<teamsApp>;
 }
 /*********************************************
 * teamsAppDefinition
@@ -16693,7 +16692,7 @@ export interface teamsAppDefinitionOData extends entityOData {
 	bot: teamworkBot;
 }
 export interface teamsAppDefinitionCollection extends IBaseCollection<teamsAppDefinition, teamsAppDefinitionOData & teamsAppDefinitionProps> {
-    add(values?: any): IBaseExecution<teamsAppDefinition>;
+add(values?: any): IBaseExecution<teamsAppDefinition>;
 }
 /*********************************************
 * teamsAppInstallation
@@ -16713,7 +16712,7 @@ export interface teamsAppInstallationOData extends entityOData {
 	upgrade(consentedPermissionSet): IBaseExecution<void>;
 }
 export interface teamsAppInstallationCollection extends IBaseCollection<teamsAppInstallation, teamsAppInstallationOData & teamsAppInstallationProps> {
-    add(values?: any): IBaseExecution<teamsAppInstallation>;
+add(values?: any): IBaseExecution<teamsAppInstallation>;
 }
 /*********************************************
 * teamsAppSettings
@@ -16750,7 +16749,7 @@ export interface teamsAsyncOperationOData extends entityOData {
 
 }
 export interface teamsAsyncOperationCollection extends IBaseCollection<teamsAsyncOperation, teamsAsyncOperationOData & teamsAsyncOperationProps> {
-    add(values?: any): IBaseExecution<teamsAsyncOperation>;
+add(values?: any): IBaseExecution<teamsAsyncOperation>;
 }
 /*********************************************
 * teamsTab
@@ -16768,7 +16767,7 @@ export interface teamsTabOData extends entityOData {
 	teamsApp: teamsApp;
 }
 export interface teamsTabCollection extends IBaseCollection<teamsTab, teamsTabOData & teamsTabProps> {
-    add(values?: any): IBaseExecution<teamsTab>;
+add(values?: any): IBaseExecution<teamsTab>;
 }
 /*********************************************
 * teamsTemplate
@@ -16854,7 +16853,7 @@ export interface teamworkTagOData extends entityOData {
 	members: IBaseResults<teamworkTagMember>;
 }
 export interface teamworkTagCollection extends IBaseCollection<teamworkTag, teamworkTagOData & teamworkTagProps> {
-    add(values?: any): IBaseExecution<teamworkTag>;
+add(values?: any): IBaseExecution<teamworkTag>;
 }
 /*********************************************
 * teamworkTagMember
@@ -16872,7 +16871,7 @@ export interface teamworkTagMemberOData extends entityOData {
 
 }
 export interface teamworkTagMemberCollection extends IBaseCollection<teamworkTagMember, teamworkTagMemberOData & teamworkTagMemberProps> {
-    add(values?: any): IBaseExecution<teamworkTagMember>;
+add(values?: any): IBaseExecution<teamworkTagMember>;
 }
 /*********************************************
 * telecomExpenseManagementPartner
@@ -16892,7 +16891,7 @@ export interface telecomExpenseManagementPartnerOData extends entityOData {
 
 }
 export interface telecomExpenseManagementPartnerCollection extends IBaseCollection<telecomExpenseManagementPartner, telecomExpenseManagementPartnerOData & telecomExpenseManagementPartnerProps> {
-    add(values?: any): IBaseExecution<telecomExpenseManagementPartner>;
+add(values?: any): IBaseExecution<telecomExpenseManagementPartner>;
 }
 /*********************************************
 * temporaryAccessPassAuthenticationMethod
@@ -16914,7 +16913,7 @@ export interface temporaryAccessPassAuthenticationMethodOData extends authentica
 
 }
 export interface temporaryAccessPassAuthenticationMethodCollection extends IBaseCollection<temporaryAccessPassAuthenticationMethod, temporaryAccessPassAuthenticationMethodOData & temporaryAccessPassAuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<temporaryAccessPassAuthenticationMethod>;
+add(values?: any): IBaseExecution<temporaryAccessPassAuthenticationMethod>;
 }
 /*********************************************
 * temporaryAccessPassAuthenticationMethodConfiguration
@@ -17020,7 +17019,7 @@ export interface termsAndConditionsOData extends entityOData {
 	assignments: IBaseResults<termsAndConditionsAssignment>;
 }
 export interface termsAndConditionsCollection extends IBaseCollection<termsAndConditions, termsAndConditionsOData & termsAndConditionsProps> {
-    add(values?: any): IBaseExecution<termsAndConditions>;
+add(values?: any): IBaseExecution<termsAndConditions>;
 }
 /*********************************************
 * termsAndConditionsAcceptanceStatus
@@ -17039,7 +17038,7 @@ export interface termsAndConditionsAcceptanceStatusOData extends entityOData {
 	termsAndConditions: termsAndConditions;
 }
 export interface termsAndConditionsAcceptanceStatusCollection extends IBaseCollection<termsAndConditionsAcceptanceStatus, termsAndConditionsAcceptanceStatusOData & termsAndConditionsAcceptanceStatusProps> {
-    add(values?: any): IBaseExecution<termsAndConditionsAcceptanceStatus>;
+add(values?: any): IBaseExecution<termsAndConditionsAcceptanceStatus>;
 }
 /*********************************************
 * termsAndConditionsAssignment
@@ -17055,7 +17054,7 @@ export interface termsAndConditionsAssignmentOData extends entityOData {
 
 }
 export interface termsAndConditionsAssignmentCollection extends IBaseCollection<termsAndConditionsAssignment, termsAndConditionsAssignmentOData & termsAndConditionsAssignmentProps> {
-    add(values?: any): IBaseExecution<termsAndConditionsAssignment>;
+add(values?: any): IBaseExecution<termsAndConditionsAssignment>;
 }
 /*********************************************
 * termsOfUseContainer
@@ -17108,7 +17107,7 @@ export interface threatAssessmentRequestOData extends entityOData {
 	results: IBaseResults<threatAssessmentResult>;
 }
 export interface threatAssessmentRequestCollection extends IBaseCollection<threatAssessmentRequest, threatAssessmentRequestOData & threatAssessmentRequestProps> {
-    add(values?: any): IBaseExecution<threatAssessmentRequest>;
+add(values?: any): IBaseExecution<threatAssessmentRequest>;
 }
 /*********************************************
 * threatAssessmentResult
@@ -17126,7 +17125,7 @@ export interface threatAssessmentResultOData extends entityOData {
 
 }
 export interface threatAssessmentResultCollection extends IBaseCollection<threatAssessmentResult, threatAssessmentResultOData & threatAssessmentResultProps> {
-    add(values?: any): IBaseExecution<threatAssessmentResult>;
+add(values?: any): IBaseExecution<threatAssessmentResult>;
 }
 /*********************************************
 * threatIntelligence
@@ -17207,7 +17206,7 @@ export interface thumbnailSetOData extends entityOData {
 
 }
 export interface thumbnailSetCollection extends IBaseCollection<thumbnailSet, thumbnailSetOData & thumbnailSetProps> {
-    add(values?: any): IBaseExecution<thumbnailSet>;
+add(values?: any): IBaseExecution<thumbnailSet>;
 }
 /*********************************************
 * timeOff
@@ -17225,7 +17224,7 @@ export interface timeOffOData extends changeTrackedEntityOData {
 
 }
 export interface timeOffCollection extends IBaseCollection<timeOff, timeOffOData & timeOffProps> {
-    add(values?: any): IBaseExecution<timeOff>;
+add(values?: any): IBaseExecution<timeOff>;
 }
 /*********************************************
 * timeOffReason
@@ -17243,7 +17242,7 @@ export interface timeOffReasonOData extends changeTrackedEntityOData {
 
 }
 export interface timeOffReasonCollection extends IBaseCollection<timeOffReason, timeOffReasonOData & timeOffReasonProps> {
-    add(values?: any): IBaseExecution<timeOffReason>;
+add(values?: any): IBaseExecution<timeOffReason>;
 }
 /*********************************************
 * timeOffRequest
@@ -17261,7 +17260,7 @@ export interface timeOffRequestOData extends scheduleChangeRequestOData {
 
 }
 export interface timeOffRequestCollection extends IBaseCollection<timeOffRequest, timeOffRequestOData & timeOffRequestProps> {
-    add(values?: any): IBaseExecution<timeOffRequest>;
+add(values?: any): IBaseExecution<timeOffRequest>;
 }
 /*********************************************
 * todo
@@ -17318,7 +17317,7 @@ export interface todoTaskOData extends entityOData {
 	linkedResources: IBaseResults<linkedResource>;
 }
 export interface todoTaskCollection extends IBaseCollection<todoTask, todoTaskOData & todoTaskProps> {
-    add(values?: any): IBaseExecution<todoTask>;
+add(values?: any): IBaseExecution<todoTask>;
 }
 /*********************************************
 * todoTaskList
@@ -17341,7 +17340,7 @@ export interface todoTaskListOData extends entityOData {
 	tasks: IBaseResults<todoTask>;
 }
 export interface todoTaskListCollection extends IBaseCollection<todoTaskList, todoTaskListOData & todoTaskListProps> {
-    add(values?: any): IBaseExecution<todoTaskList>;
+add(values?: any): IBaseExecution<todoTaskList>;
 }
 /*********************************************
 * tokenIssuancePolicy
@@ -17357,7 +17356,7 @@ export interface tokenIssuancePolicyOData extends stsPolicyOData {
 
 }
 export interface tokenIssuancePolicyCollection extends IBaseCollection<tokenIssuancePolicy, tokenIssuancePolicyOData & tokenIssuancePolicyProps> {
-    add(values?: any): IBaseExecution<tokenIssuancePolicy>;
+add(values?: any): IBaseExecution<tokenIssuancePolicy>;
 }
 /*********************************************
 * tokenLifetimePolicy
@@ -17373,7 +17372,7 @@ export interface tokenLifetimePolicyOData extends stsPolicyOData {
 
 }
 export interface tokenLifetimePolicyCollection extends IBaseCollection<tokenLifetimePolicy, tokenLifetimePolicyOData & tokenLifetimePolicyProps> {
-    add(values?: any): IBaseExecution<tokenLifetimePolicy>;
+add(values?: any): IBaseExecution<tokenLifetimePolicy>;
 }
 /*********************************************
 * training
@@ -17402,7 +17401,7 @@ export interface trainingOData extends entityOData {
 	languageDetails: IBaseResults<trainingLanguageDetail>;
 }
 export interface trainingCollection extends IBaseCollection<training, trainingOData & trainingProps> {
-    add(values?: any): IBaseExecution<training>;
+add(values?: any): IBaseExecution<training>;
 }
 /*********************************************
 * trainingLanguageDetail
@@ -17426,7 +17425,7 @@ export interface trainingLanguageDetailOData extends entityOData {
 
 }
 export interface trainingLanguageDetailCollection extends IBaseCollection<trainingLanguageDetail, trainingLanguageDetailOData & trainingLanguageDetailProps> {
-    add(values?: any): IBaseExecution<trainingLanguageDetail>;
+add(values?: any): IBaseExecution<trainingLanguageDetail>;
 }
 /*********************************************
 * trending
@@ -17445,7 +17444,7 @@ export interface trendingOData extends entityOData {
 	resource: entity;
 }
 export interface trendingCollection extends IBaseCollection<trending, trendingOData & trendingProps> {
-    add(values?: any): IBaseExecution<trending>;
+add(values?: any): IBaseExecution<trending>;
 }
 /*********************************************
 * triggerTypesRoot
@@ -17534,7 +17533,7 @@ export interface unifiedRbacResourceActionOData extends entityOData {
 
 }
 export interface unifiedRbacResourceActionCollection extends IBaseCollection<unifiedRbacResourceAction, unifiedRbacResourceActionOData & unifiedRbacResourceActionProps> {
-    add(values?: any): IBaseExecution<unifiedRbacResourceAction>;
+add(values?: any): IBaseExecution<unifiedRbacResourceAction>;
 }
 /*********************************************
 * unifiedRbacResourceNamespace
@@ -17551,7 +17550,7 @@ export interface unifiedRbacResourceNamespaceOData extends entityOData {
 	resourceActions: IBaseResults<unifiedRbacResourceAction>;
 }
 export interface unifiedRbacResourceNamespaceCollection extends IBaseCollection<unifiedRbacResourceNamespace, unifiedRbacResourceNamespaceOData & unifiedRbacResourceNamespaceProps> {
-    add(values?: any): IBaseExecution<unifiedRbacResourceNamespace>;
+add(values?: any): IBaseExecution<unifiedRbacResourceNamespace>;
 }
 /*********************************************
 * unifiedRoleAssignment
@@ -17577,7 +17576,7 @@ export interface unifiedRoleAssignmentOData extends entityOData {
 	roleDefinition: unifiedRoleDefinition;
 }
 export interface unifiedRoleAssignmentCollection extends IBaseCollection<unifiedRoleAssignment, unifiedRoleAssignmentOData & unifiedRoleAssignmentProps> {
-    add(values?: any): IBaseExecution<unifiedRoleAssignment>;
+add(values?: any): IBaseExecution<unifiedRoleAssignment>;
 }
 /*********************************************
 * unifiedRoleAssignmentSchedule
@@ -17595,7 +17594,7 @@ export interface unifiedRoleAssignmentScheduleOData extends unifiedRoleScheduleB
 	activatedUsing: unifiedRoleEligibilitySchedule;
 }
 export interface unifiedRoleAssignmentScheduleCollection extends IBaseCollection<unifiedRoleAssignmentSchedule, unifiedRoleAssignmentScheduleOData & unifiedRoleAssignmentScheduleProps> {
-    add(values?: any): IBaseExecution<unifiedRoleAssignmentSchedule>;
+add(values?: any): IBaseExecution<unifiedRoleAssignmentSchedule>;
 }
 /*********************************************
 * unifiedRoleAssignmentScheduleInstance
@@ -17616,7 +17615,7 @@ export interface unifiedRoleAssignmentScheduleInstanceOData extends unifiedRoleS
 	activatedUsing: unifiedRoleEligibilityScheduleInstance;
 }
 export interface unifiedRoleAssignmentScheduleInstanceCollection extends IBaseCollection<unifiedRoleAssignmentScheduleInstance, unifiedRoleAssignmentScheduleInstanceOData & unifiedRoleAssignmentScheduleInstanceProps> {
-    add(values?: any): IBaseExecution<unifiedRoleAssignmentScheduleInstance>;
+add(values?: any): IBaseExecution<unifiedRoleAssignmentScheduleInstance>;
 }
 /*********************************************
 * unifiedRoleAssignmentScheduleRequest
@@ -17653,7 +17652,7 @@ export interface unifiedRoleAssignmentScheduleRequestOData extends requestOData 
 	cancel(): IBaseExecution<void>;
 }
 export interface unifiedRoleAssignmentScheduleRequestCollection extends IBaseCollection<unifiedRoleAssignmentScheduleRequest, unifiedRoleAssignmentScheduleRequestOData & unifiedRoleAssignmentScheduleRequestProps> {
-    add(values?: any): IBaseExecution<unifiedRoleAssignmentScheduleRequest>;
+add(values?: any): IBaseExecution<unifiedRoleAssignmentScheduleRequest>;
 }
 /*********************************************
 * unifiedRoleDefinition
@@ -17677,7 +17676,7 @@ export interface unifiedRoleDefinitionOData extends entityOData {
 	inheritsPermissionsFrom: IBaseResults<unifiedRoleDefinition>;
 }
 export interface unifiedRoleDefinitionCollection extends IBaseCollection<unifiedRoleDefinition, unifiedRoleDefinitionOData & unifiedRoleDefinitionProps> {
-    add(values?: any): IBaseExecution<unifiedRoleDefinition>;
+add(values?: any): IBaseExecution<unifiedRoleDefinition>;
 }
 /*********************************************
 * unifiedRoleEligibilitySchedule
@@ -17694,7 +17693,7 @@ export interface unifiedRoleEligibilityScheduleOData extends unifiedRoleSchedule
 
 }
 export interface unifiedRoleEligibilityScheduleCollection extends IBaseCollection<unifiedRoleEligibilitySchedule, unifiedRoleEligibilityScheduleOData & unifiedRoleEligibilityScheduleProps> {
-    add(values?: any): IBaseExecution<unifiedRoleEligibilitySchedule>;
+add(values?: any): IBaseExecution<unifiedRoleEligibilitySchedule>;
 }
 /*********************************************
 * unifiedRoleEligibilityScheduleInstance
@@ -17713,7 +17712,7 @@ export interface unifiedRoleEligibilityScheduleInstanceOData extends unifiedRole
 
 }
 export interface unifiedRoleEligibilityScheduleInstanceCollection extends IBaseCollection<unifiedRoleEligibilityScheduleInstance, unifiedRoleEligibilityScheduleInstanceOData & unifiedRoleEligibilityScheduleInstanceProps> {
-    add(values?: any): IBaseExecution<unifiedRoleEligibilityScheduleInstance>;
+add(values?: any): IBaseExecution<unifiedRoleEligibilityScheduleInstance>;
 }
 /*********************************************
 * unifiedRoleEligibilityScheduleRequest
@@ -17748,7 +17747,7 @@ export interface unifiedRoleEligibilityScheduleRequestOData extends requestOData
 	cancel(): IBaseExecution<void>;
 }
 export interface unifiedRoleEligibilityScheduleRequestCollection extends IBaseCollection<unifiedRoleEligibilityScheduleRequest, unifiedRoleEligibilityScheduleRequestOData & unifiedRoleEligibilityScheduleRequestProps> {
-    add(values?: any): IBaseExecution<unifiedRoleEligibilityScheduleRequest>;
+add(values?: any): IBaseExecution<unifiedRoleEligibilityScheduleRequest>;
 }
 /*********************************************
 * unifiedRoleManagementPolicy
@@ -17774,7 +17773,7 @@ export interface unifiedRoleManagementPolicyOData extends entityOData {
 	rules: IBaseResults<unifiedRoleManagementPolicyRule>;
 }
 export interface unifiedRoleManagementPolicyCollection extends IBaseCollection<unifiedRoleManagementPolicy, unifiedRoleManagementPolicyOData & unifiedRoleManagementPolicyProps> {
-    add(values?: any): IBaseExecution<unifiedRoleManagementPolicy>;
+add(values?: any): IBaseExecution<unifiedRoleManagementPolicy>;
 }
 /*********************************************
 * unifiedRoleManagementPolicyApprovalRule
@@ -17806,7 +17805,7 @@ export interface unifiedRoleManagementPolicyAssignmentOData extends entityOData 
 	policy: unifiedRoleManagementPolicy;
 }
 export interface unifiedRoleManagementPolicyAssignmentCollection extends IBaseCollection<unifiedRoleManagementPolicyAssignment, unifiedRoleManagementPolicyAssignmentOData & unifiedRoleManagementPolicyAssignmentProps> {
-    add(values?: any): IBaseExecution<unifiedRoleManagementPolicyAssignment>;
+add(values?: any): IBaseExecution<unifiedRoleManagementPolicyAssignment>;
 }
 /*********************************************
 * unifiedRoleManagementPolicyAuthenticationContextRule
@@ -17880,7 +17879,7 @@ export interface unifiedRoleManagementPolicyRuleOData extends entityOData {
 
 }
 export interface unifiedRoleManagementPolicyRuleCollection extends IBaseCollection<unifiedRoleManagementPolicyRule, unifiedRoleManagementPolicyRuleOData & unifiedRoleManagementPolicyRuleProps> {
-    add(values?: any): IBaseExecution<unifiedRoleManagementPolicyRule>;
+add(values?: any): IBaseExecution<unifiedRoleManagementPolicyRule>;
 }
 /*********************************************
 * unifiedRoleScheduleBase
@@ -18004,7 +18003,7 @@ export interface usedInsightOData extends entityOData {
 	resource: entity;
 }
 export interface usedInsightCollection extends IBaseCollection<usedInsight, usedInsightOData & usedInsightProps> {
-    add(values?: any): IBaseExecution<usedInsight>;
+add(values?: any): IBaseExecution<usedInsight>;
 }
 /*********************************************
 * user
@@ -18265,7 +18264,7 @@ export interface userOData extends directoryObjectOData {
 	getManagedDevicesWithAppFailures(): Array<string>[];
 }
 export interface userCollection extends IBaseCollection<user, userOData & userProps> {
-    add(values?: any): IBaseExecution<user>;
+add(values?: any): IBaseExecution<user>;
 }
 /*********************************************
 * userActivity
@@ -18294,7 +18293,7 @@ export interface userActivityOData extends entityOData {
 	historyItems: IBaseResults<activityHistoryItem>;
 }
 export interface userActivityCollection extends IBaseCollection<userActivity, userActivityOData & userActivityProps> {
-    add(values?: any): IBaseExecution<userActivity>;
+add(values?: any): IBaseExecution<userActivity>;
 }
 /*********************************************
 * userConsentRequest
@@ -18310,7 +18309,7 @@ export interface userConsentRequestOData extends requestOData {
 	approval: approval;
 }
 export interface userConsentRequestCollection extends IBaseCollection<userConsentRequest, userConsentRequestOData & userConsentRequestProps> {
-    add(values?: any): IBaseExecution<userConsentRequest>;
+add(values?: any): IBaseExecution<userConsentRequest>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
@@ -18333,7 +18332,7 @@ export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetai
 
 }
 export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsCollection extends IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsOData & userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
@@ -18356,7 +18355,7 @@ export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDevic
 
 }
 export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdCollection extends IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdOData & userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
@@ -18380,7 +18379,7 @@ export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersionOData 
 
 }
 export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollection extends IBaseCollection<userExperienceAnalyticsAppHealthAppPerformanceByOSVersion, userExperienceAnalyticsAppHealthAppPerformanceByOSVersionOData & userExperienceAnalyticsAppHealthAppPerformanceByOSVersionProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformanceByOSVersion>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformanceByOSVersion>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthApplicationPerformance
@@ -18404,7 +18403,7 @@ export interface userExperienceAnalyticsAppHealthApplicationPerformanceOData ext
 
 }
 export interface userExperienceAnalyticsAppHealthApplicationPerformanceCollection extends IBaseCollection<userExperienceAnalyticsAppHealthApplicationPerformance, userExperienceAnalyticsAppHealthApplicationPerformanceOData & userExperienceAnalyticsAppHealthApplicationPerformanceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthApplicationPerformance>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthApplicationPerformance>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthDeviceModelPerformance
@@ -18425,7 +18424,7 @@ export interface userExperienceAnalyticsAppHealthDeviceModelPerformanceOData ext
 
 }
 export interface userExperienceAnalyticsAppHealthDeviceModelPerformanceCollection extends IBaseCollection<userExperienceAnalyticsAppHealthDeviceModelPerformance, userExperienceAnalyticsAppHealthDeviceModelPerformanceOData & userExperienceAnalyticsAppHealthDeviceModelPerformanceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDeviceModelPerformance>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDeviceModelPerformance>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthDevicePerformance
@@ -18451,7 +18450,7 @@ export interface userExperienceAnalyticsAppHealthDevicePerformanceOData extends 
 
 }
 export interface userExperienceAnalyticsAppHealthDevicePerformanceCollection extends IBaseCollection<userExperienceAnalyticsAppHealthDevicePerformance, userExperienceAnalyticsAppHealthDevicePerformanceOData & userExperienceAnalyticsAppHealthDevicePerformanceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDevicePerformance>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDevicePerformance>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthDevicePerformanceDetails
@@ -18473,7 +18472,7 @@ export interface userExperienceAnalyticsAppHealthDevicePerformanceDetailsOData e
 
 }
 export interface userExperienceAnalyticsAppHealthDevicePerformanceDetailsCollection extends IBaseCollection<userExperienceAnalyticsAppHealthDevicePerformanceDetails, userExperienceAnalyticsAppHealthDevicePerformanceDetailsOData & userExperienceAnalyticsAppHealthDevicePerformanceDetailsProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDevicePerformanceDetails>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDevicePerformanceDetails>;
 }
 /*********************************************
 * userExperienceAnalyticsAppHealthOSVersionPerformance
@@ -18493,7 +18492,7 @@ export interface userExperienceAnalyticsAppHealthOSVersionPerformanceOData exten
 
 }
 export interface userExperienceAnalyticsAppHealthOSVersionPerformanceCollection extends IBaseCollection<userExperienceAnalyticsAppHealthOSVersionPerformance, userExperienceAnalyticsAppHealthOSVersionPerformanceOData & userExperienceAnalyticsAppHealthOSVersionPerformanceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthOSVersionPerformance>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthOSVersionPerformance>;
 }
 /*********************************************
 * userExperienceAnalyticsBaseline
@@ -18523,7 +18522,7 @@ export interface userExperienceAnalyticsBaselineOData extends entityOData {
 	workFromAnywhereMetrics: userExperienceAnalyticsCategory;
 }
 export interface userExperienceAnalyticsBaselineCollection extends IBaseCollection<userExperienceAnalyticsBaseline, userExperienceAnalyticsBaselineOData & userExperienceAnalyticsBaselineProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsBaseline>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsBaseline>;
 }
 /*********************************************
 * userExperienceAnalyticsCategory
@@ -18540,7 +18539,7 @@ export interface userExperienceAnalyticsCategoryOData extends entityOData {
 	metricValues: IBaseResults<userExperienceAnalyticsMetric>;
 }
 export interface userExperienceAnalyticsCategoryCollection extends IBaseCollection<userExperienceAnalyticsCategory, userExperienceAnalyticsCategoryOData & userExperienceAnalyticsCategoryProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsCategory>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsCategory>;
 }
 /*********************************************
 * userExperienceAnalyticsDevicePerformance
@@ -18575,7 +18574,7 @@ export interface userExperienceAnalyticsDevicePerformanceOData extends entityODa
 
 }
 export interface userExperienceAnalyticsDevicePerformanceCollection extends IBaseCollection<userExperienceAnalyticsDevicePerformance, userExperienceAnalyticsDevicePerformanceOData & userExperienceAnalyticsDevicePerformanceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsDevicePerformance>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsDevicePerformance>;
 }
 /*********************************************
 * userExperienceAnalyticsDeviceScores
@@ -18599,7 +18598,7 @@ export interface userExperienceAnalyticsDeviceScoresOData extends entityOData {
 
 }
 export interface userExperienceAnalyticsDeviceScoresCollection extends IBaseCollection<userExperienceAnalyticsDeviceScores, userExperienceAnalyticsDeviceScoresOData & userExperienceAnalyticsDeviceScoresProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceScores>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceScores>;
 }
 /*********************************************
 * userExperienceAnalyticsDeviceStartupHistory
@@ -18630,7 +18629,7 @@ export interface userExperienceAnalyticsDeviceStartupHistoryOData extends entity
 
 }
 export interface userExperienceAnalyticsDeviceStartupHistoryCollection extends IBaseCollection<userExperienceAnalyticsDeviceStartupHistory, userExperienceAnalyticsDeviceStartupHistoryOData & userExperienceAnalyticsDeviceStartupHistoryProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupHistory>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupHistory>;
 }
 /*********************************************
 * userExperienceAnalyticsDeviceStartupProcess
@@ -18650,7 +18649,7 @@ export interface userExperienceAnalyticsDeviceStartupProcessOData extends entity
 
 }
 export interface userExperienceAnalyticsDeviceStartupProcessCollection extends IBaseCollection<userExperienceAnalyticsDeviceStartupProcess, userExperienceAnalyticsDeviceStartupProcessOData & userExperienceAnalyticsDeviceStartupProcessProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupProcess>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupProcess>;
 }
 /*********************************************
 * userExperienceAnalyticsDeviceStartupProcessPerformance
@@ -18671,7 +18670,7 @@ export interface userExperienceAnalyticsDeviceStartupProcessPerformanceOData ext
 
 }
 export interface userExperienceAnalyticsDeviceStartupProcessPerformanceCollection extends IBaseCollection<userExperienceAnalyticsDeviceStartupProcessPerformance, userExperienceAnalyticsDeviceStartupProcessPerformanceOData & userExperienceAnalyticsDeviceStartupProcessPerformanceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupProcessPerformance>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupProcessPerformance>;
 }
 /*********************************************
 * userExperienceAnalyticsMetric
@@ -18688,7 +18687,7 @@ export interface userExperienceAnalyticsMetricOData extends entityOData {
 
 }
 export interface userExperienceAnalyticsMetricCollection extends IBaseCollection<userExperienceAnalyticsMetric, userExperienceAnalyticsMetricOData & userExperienceAnalyticsMetricProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsMetric>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsMetric>;
 }
 /*********************************************
 * userExperienceAnalyticsMetricHistory
@@ -18706,7 +18705,7 @@ export interface userExperienceAnalyticsMetricHistoryOData extends entityOData {
 
 }
 export interface userExperienceAnalyticsMetricHistoryCollection extends IBaseCollection<userExperienceAnalyticsMetricHistory, userExperienceAnalyticsMetricHistoryOData & userExperienceAnalyticsMetricHistoryProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsMetricHistory>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsMetricHistory>;
 }
 /*********************************************
 * userExperienceAnalyticsModelScores
@@ -18730,7 +18729,7 @@ export interface userExperienceAnalyticsModelScoresOData extends entityOData {
 
 }
 export interface userExperienceAnalyticsModelScoresCollection extends IBaseCollection<userExperienceAnalyticsModelScores, userExperienceAnalyticsModelScoresOData & userExperienceAnalyticsModelScoresProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsModelScores>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsModelScores>;
 }
 /*********************************************
 * userExperienceAnalyticsOverview
@@ -18759,7 +18758,7 @@ export interface userExperienceAnalyticsScoreHistoryOData extends entityOData {
 
 }
 export interface userExperienceAnalyticsScoreHistoryCollection extends IBaseCollection<userExperienceAnalyticsScoreHistory, userExperienceAnalyticsScoreHistoryOData & userExperienceAnalyticsScoreHistoryProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsScoreHistory>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsScoreHistory>;
 }
 /*********************************************
 * userExperienceAnalyticsWorkFromAnywhereDevice
@@ -18808,7 +18807,7 @@ export interface userExperienceAnalyticsWorkFromAnywhereDeviceOData extends enti
 
 }
 export interface userExperienceAnalyticsWorkFromAnywhereDeviceCollection extends IBaseCollection<userExperienceAnalyticsWorkFromAnywhereDevice, userExperienceAnalyticsWorkFromAnywhereDeviceOData & userExperienceAnalyticsWorkFromAnywhereDeviceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereDevice>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereDevice>;
 }
 /*********************************************
 * userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
@@ -18848,7 +18847,7 @@ export interface userExperienceAnalyticsWorkFromAnywhereMetricOData extends enti
 	metricDevices: IBaseResults<userExperienceAnalyticsWorkFromAnywhereDevice>;
 }
 export interface userExperienceAnalyticsWorkFromAnywhereMetricCollection extends IBaseCollection<userExperienceAnalyticsWorkFromAnywhereMetric, userExperienceAnalyticsWorkFromAnywhereMetricOData & userExperienceAnalyticsWorkFromAnywhereMetricProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereMetric>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereMetric>;
 }
 /*********************************************
 * userExperienceAnalyticsWorkFromAnywhereModelPerformance
@@ -18872,7 +18871,7 @@ export interface userExperienceAnalyticsWorkFromAnywhereModelPerformanceOData ex
 
 }
 export interface userExperienceAnalyticsWorkFromAnywhereModelPerformanceCollection extends IBaseCollection<userExperienceAnalyticsWorkFromAnywhereModelPerformance, userExperienceAnalyticsWorkFromAnywhereModelPerformanceOData & userExperienceAnalyticsWorkFromAnywhereModelPerformanceProps> {
-    add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereModelPerformance>;
+add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereModelPerformance>;
 }
 /*********************************************
 * userFlowLanguageConfiguration
@@ -18893,7 +18892,7 @@ export interface userFlowLanguageConfigurationOData extends entityOData {
 	overridesPages: IBaseResults<userFlowLanguagePage>;
 }
 export interface userFlowLanguageConfigurationCollection extends IBaseCollection<userFlowLanguageConfiguration, userFlowLanguageConfigurationOData & userFlowLanguageConfigurationProps> {
-    add(values?: any): IBaseExecution<userFlowLanguageConfiguration>;
+add(values?: any): IBaseExecution<userFlowLanguageConfiguration>;
 }
 /*********************************************
 * userFlowLanguagePage
@@ -18909,7 +18908,7 @@ export interface userFlowLanguagePageOData extends entityOData {
 
 }
 export interface userFlowLanguagePageCollection extends IBaseCollection<userFlowLanguagePage, userFlowLanguagePageOData & userFlowLanguagePageProps> {
-    add(values?: any): IBaseExecution<userFlowLanguagePage>;
+add(values?: any): IBaseExecution<userFlowLanguagePage>;
 }
 /*********************************************
 * userInsightsSettings
@@ -18942,7 +18941,7 @@ export interface userInstallStateSummaryOData extends entityOData {
 	deviceStates: IBaseResults<deviceInstallState>;
 }
 export interface userInstallStateSummaryCollection extends IBaseCollection<userInstallStateSummary, userInstallStateSummaryOData & userInstallStateSummaryProps> {
-    add(values?: any): IBaseExecution<userInstallStateSummary>;
+add(values?: any): IBaseExecution<userInstallStateSummary>;
 }
 /*********************************************
 * userProcessingResult
@@ -18996,7 +18995,7 @@ export interface userRegistrationDetailsOData extends entityOData {
 
 }
 export interface userRegistrationDetailsCollection extends IBaseCollection<userRegistrationDetails, userRegistrationDetailsOData & userRegistrationDetailsProps> {
-    add(values?: any): IBaseExecution<userRegistrationDetails>;
+add(values?: any): IBaseExecution<userRegistrationDetails>;
 }
 /*********************************************
 * userScopeTeamsAppInstallation
@@ -19012,7 +19011,7 @@ export interface userScopeTeamsAppInstallationOData extends teamsAppInstallation
 	chat: chat;
 }
 export interface userScopeTeamsAppInstallationCollection extends IBaseCollection<userScopeTeamsAppInstallation, userScopeTeamsAppInstallationOData & userScopeTeamsAppInstallationProps> {
-    add(values?: any): IBaseExecution<userScopeTeamsAppInstallation>;
+add(values?: any): IBaseExecution<userScopeTeamsAppInstallation>;
 }
 /*********************************************
 * userSettings
@@ -19183,7 +19182,7 @@ export interface virtualEventOData extends entityOData {
 	publish(): IBaseExecution<void>;
 }
 export interface virtualEventCollection extends IBaseCollection<virtualEvent, virtualEventOData & virtualEventProps> {
-    add(values?: any): IBaseExecution<virtualEvent>;
+add(values?: any): IBaseExecution<virtualEvent>;
 }
 /*********************************************
 * virtualEventPresenter
@@ -19201,7 +19200,7 @@ export interface virtualEventPresenterOData extends entityOData {
 
 }
 export interface virtualEventPresenterCollection extends IBaseCollection<virtualEventPresenter, virtualEventPresenterOData & virtualEventPresenterProps> {
-    add(values?: any): IBaseExecution<virtualEventPresenter>;
+add(values?: any): IBaseExecution<virtualEventPresenter>;
 }
 /*********************************************
 * virtualEventRegistration
@@ -19229,7 +19228,7 @@ export interface virtualEventRegistrationOData extends entityOData {
 	cancel(): IBaseExecution<void>;
 }
 export interface virtualEventRegistrationCollection extends IBaseCollection<virtualEventRegistration, virtualEventRegistrationOData & virtualEventRegistrationProps> {
-    add(values?: any): IBaseExecution<virtualEventRegistration>;
+add(values?: any): IBaseExecution<virtualEventRegistration>;
 }
 /*********************************************
 * virtualEventRegistrationConfiguration
@@ -19288,7 +19287,7 @@ export interface virtualEventRegistrationQuestionBaseOData extends entityOData {
 
 }
 export interface virtualEventRegistrationQuestionBaseCollection extends IBaseCollection<virtualEventRegistrationQuestionBase, virtualEventRegistrationQuestionBaseOData & virtualEventRegistrationQuestionBaseProps> {
-    add(values?: any): IBaseExecution<virtualEventRegistrationQuestionBase>;
+add(values?: any): IBaseExecution<virtualEventRegistrationQuestionBase>;
 }
 /*********************************************
 * virtualEventSession
@@ -19305,7 +19304,7 @@ export interface virtualEventSessionOData extends onlineMeetingBaseOData {
 
 }
 export interface virtualEventSessionCollection extends IBaseCollection<virtualEventSession, virtualEventSessionOData & virtualEventSessionProps> {
-    add(values?: any): IBaseExecution<virtualEventSession>;
+add(values?: any): IBaseExecution<virtualEventSession>;
 }
 /*********************************************
 * virtualEventTownhall
@@ -19324,7 +19323,7 @@ export interface virtualEventTownhallOData extends virtualEventOData {
 
 }
 export interface virtualEventTownhallCollection extends IBaseCollection<virtualEventTownhall, virtualEventTownhallOData & virtualEventTownhallProps> {
-    add(values?: any): IBaseExecution<virtualEventTownhall>;
+add(values?: any): IBaseExecution<virtualEventTownhall>;
 }
 /*********************************************
 * virtualEventWebinar
@@ -19344,7 +19343,7 @@ export interface virtualEventWebinarOData extends virtualEventOData {
 	registrations: IBaseResults<virtualEventRegistration>;
 }
 export interface virtualEventWebinarCollection extends IBaseCollection<virtualEventWebinar, virtualEventWebinarOData & virtualEventWebinarProps> {
-    add(values?: any): IBaseExecution<virtualEventWebinar>;
+add(values?: any): IBaseExecution<virtualEventWebinar>;
 }
 /*********************************************
 * virtualEventWebinarRegistrationConfiguration
@@ -19418,7 +19417,7 @@ export interface vppTokenOData extends entityOData {
 	syncLicenses(): IBaseExecution<vppToken>;
 }
 export interface vppTokenCollection extends IBaseCollection<vppToken, vppTokenOData & vppTokenProps> {
-    add(values?: any): IBaseExecution<vppToken>;
+add(values?: any): IBaseExecution<vppToken>;
 }
 /*********************************************
 * vulnerability
@@ -19492,7 +19491,7 @@ export interface webPartOData extends entityOData {
 	getPositionOfWebPart(): IBaseExecution<ComplexTypes.webPartPosition>;
 }
 export interface webPartCollection extends IBaseCollection<webPart, webPartOData & webPartProps> {
-    add(values?: any): IBaseExecution<webPart>;
+add(values?: any): IBaseExecution<webPart>;
 }
 /*********************************************
 * whoisBaseRecord
@@ -20141,7 +20140,7 @@ export interface windowsAutopilotDeviceIdentityOData extends entityOData {
 	updateDeviceProperties(userPrincipalName, addressableUserName, groupTag, displayName): IBaseExecution<void>;
 }
 export interface windowsAutopilotDeviceIdentityCollection extends IBaseCollection<windowsAutopilotDeviceIdentity, windowsAutopilotDeviceIdentityOData & windowsAutopilotDeviceIdentityProps> {
-    add(values?: any): IBaseExecution<windowsAutopilotDeviceIdentity>;
+add(values?: any): IBaseExecution<windowsAutopilotDeviceIdentity>;
 }
 /*********************************************
 * windowsDefenderAdvancedThreatProtectionConfiguration
@@ -20180,7 +20179,7 @@ export interface windowsDeviceMalwareStateOData extends entityOData {
 
 }
 export interface windowsDeviceMalwareStateCollection extends IBaseCollection<windowsDeviceMalwareState, windowsDeviceMalwareStateOData & windowsDeviceMalwareStateProps> {
-    add(values?: any): IBaseExecution<windowsDeviceMalwareState>;
+add(values?: any): IBaseExecution<windowsDeviceMalwareState>;
 }
 /*********************************************
 * windowsHelloForBusinessAuthenticationMethod
@@ -20198,7 +20197,7 @@ export interface windowsHelloForBusinessAuthenticationMethodOData extends authen
 	device: device;
 }
 export interface windowsHelloForBusinessAuthenticationMethodCollection extends IBaseCollection<windowsHelloForBusinessAuthenticationMethod, windowsHelloForBusinessAuthenticationMethodOData & windowsHelloForBusinessAuthenticationMethodProps> {
-    add(values?: any): IBaseExecution<windowsHelloForBusinessAuthenticationMethod>;
+add(values?: any): IBaseExecution<windowsHelloForBusinessAuthenticationMethod>;
 }
 /*********************************************
 * windowsInformationProtection
@@ -20259,7 +20258,7 @@ export interface windowsInformationProtectionAppLearningSummaryOData extends ent
 
 }
 export interface windowsInformationProtectionAppLearningSummaryCollection extends IBaseCollection<windowsInformationProtectionAppLearningSummary, windowsInformationProtectionAppLearningSummaryOData & windowsInformationProtectionAppLearningSummaryProps> {
-    add(values?: any): IBaseExecution<windowsInformationProtectionAppLearningSummary>;
+add(values?: any): IBaseExecution<windowsInformationProtectionAppLearningSummary>;
 }
 /*********************************************
 * windowsInformationProtectionAppLockerFile
@@ -20278,7 +20277,7 @@ export interface windowsInformationProtectionAppLockerFileOData extends entityOD
 
 }
 export interface windowsInformationProtectionAppLockerFileCollection extends IBaseCollection<windowsInformationProtectionAppLockerFile, windowsInformationProtectionAppLockerFileOData & windowsInformationProtectionAppLockerFileProps> {
-    add(values?: any): IBaseExecution<windowsInformationProtectionAppLockerFile>;
+add(values?: any): IBaseExecution<windowsInformationProtectionAppLockerFile>;
 }
 /*********************************************
 * windowsInformationProtectionNetworkLearningSummary
@@ -20295,7 +20294,7 @@ export interface windowsInformationProtectionNetworkLearningSummaryOData extends
 
 }
 export interface windowsInformationProtectionNetworkLearningSummaryCollection extends IBaseCollection<windowsInformationProtectionNetworkLearningSummary, windowsInformationProtectionNetworkLearningSummaryOData & windowsInformationProtectionNetworkLearningSummaryProps> {
-    add(values?: any): IBaseExecution<windowsInformationProtectionNetworkLearningSummary>;
+add(values?: any): IBaseExecution<windowsInformationProtectionNetworkLearningSummary>;
 }
 /*********************************************
 * windowsInformationProtectionPolicy
@@ -20322,7 +20321,7 @@ export interface windowsInformationProtectionPolicyOData extends windowsInformat
 
 }
 export interface windowsInformationProtectionPolicyCollection extends IBaseCollection<windowsInformationProtectionPolicy, windowsInformationProtectionPolicyOData & windowsInformationProtectionPolicyProps> {
-    add(values?: any): IBaseExecution<windowsInformationProtectionPolicy>;
+add(values?: any): IBaseExecution<windowsInformationProtectionPolicy>;
 }
 /*********************************************
 * windowsMalwareInformation
@@ -20343,7 +20342,7 @@ export interface windowsMalwareInformationOData extends entityOData {
 	deviceMalwareStates: IBaseResults<malwareStateForWindowsDevice>;
 }
 export interface windowsMalwareInformationCollection extends IBaseCollection<windowsMalwareInformation, windowsMalwareInformationOData & windowsMalwareInformationProps> {
-    add(values?: any): IBaseExecution<windowsMalwareInformation>;
+add(values?: any): IBaseExecution<windowsMalwareInformation>;
 }
 /*********************************************
 * windowsMicrosoftEdgeApp
@@ -20502,7 +20501,7 @@ export interface windowsSettingOData extends entityOData {
 	instances: IBaseResults<windowsSettingInstance>;
 }
 export interface windowsSettingCollection extends IBaseCollection<windowsSetting, windowsSettingOData & windowsSettingProps> {
-    add(values?: any): IBaseExecution<windowsSetting>;
+add(values?: any): IBaseExecution<windowsSetting>;
 }
 /*********************************************
 * windowsSettingInstance
@@ -20521,7 +20520,7 @@ export interface windowsSettingInstanceOData extends entityOData {
 
 }
 export interface windowsSettingInstanceCollection extends IBaseCollection<windowsSettingInstance, windowsSettingInstanceOData & windowsSettingInstanceProps> {
-    add(values?: any): IBaseExecution<windowsSettingInstance>;
+add(values?: any): IBaseExecution<windowsSettingInstance>;
 }
 /*********************************************
 * windowsUniversalAppX
@@ -20692,7 +20691,7 @@ export interface workbookChartOData extends entityOData {
 	worksheet: workbookWorksheet;
 }
 export interface workbookChartCollection extends IBaseCollection<workbookChart, workbookChartOData & workbookChartProps> {
-    add(values?: any): IBaseExecution<workbookChart>;
+add(values?: any): IBaseExecution<workbookChart>;
 }
 /*********************************************
 * workbookChartAreaFormat
@@ -20939,7 +20938,7 @@ export interface workbookChartPointOData extends entityOData {
 	format: workbookChartPointFormat;
 }
 export interface workbookChartPointCollection extends IBaseCollection<workbookChartPoint, workbookChartPointOData & workbookChartPointProps> {
-    add(values?: any): IBaseExecution<workbookChartPoint>;
+add(values?: any): IBaseExecution<workbookChartPoint>;
 }
 /*********************************************
 * workbookChartPointFormat
@@ -20971,7 +20970,7 @@ export interface workbookChartSeriesOData extends entityOData {
 	points: IBaseResults<workbookChartPoint>;
 }
 export interface workbookChartSeriesCollection extends IBaseCollection<workbookChartSeries, workbookChartSeriesOData & workbookChartSeriesProps> {
-    add(values?: any): IBaseExecution<workbookChartSeries>;
+add(values?: any): IBaseExecution<workbookChartSeries>;
 }
 /*********************************************
 * workbookChartSeriesFormat
@@ -21034,7 +21033,7 @@ export interface workbookCommentOData extends entityOData {
 	replies: IBaseResults<workbookCommentReply>;
 }
 export interface workbookCommentCollection extends IBaseCollection<workbookComment, workbookCommentOData & workbookCommentProps> {
-    add(values?: any): IBaseExecution<workbookComment>;
+add(values?: any): IBaseExecution<workbookComment>;
 }
 /*********************************************
 * workbookCommentReply
@@ -21051,7 +21050,7 @@ export interface workbookCommentReplyOData extends entityOData {
 
 }
 export interface workbookCommentReplyCollection extends IBaseCollection<workbookCommentReply, workbookCommentReplyOData & workbookCommentReplyProps> {
-    add(values?: any): IBaseExecution<workbookCommentReply>;
+add(values?: any): IBaseExecution<workbookCommentReply>;
 }
 /*********************************************
 * workbookFilter
@@ -21126,7 +21125,7 @@ export interface workbookNamedItemOData extends entityOData {
 	worksheet: workbookWorksheet;
 }
 export interface workbookNamedItemCollection extends IBaseCollection<workbookNamedItem, workbookNamedItemOData & workbookNamedItemProps> {
-    add(values?: any): IBaseExecution<workbookNamedItem>;
+add(values?: any): IBaseExecution<workbookNamedItem>;
 }
 /*********************************************
 * workbookOperation
@@ -21144,7 +21143,7 @@ export interface workbookOperationOData extends entityOData {
 
 }
 export interface workbookOperationCollection extends IBaseCollection<workbookOperation, workbookOperationOData & workbookOperationProps> {
-    add(values?: any): IBaseExecution<workbookOperation>;
+add(values?: any): IBaseExecution<workbookOperation>;
 }
 /*********************************************
 * workbookPivotTable
@@ -21160,7 +21159,7 @@ export interface workbookPivotTableOData extends entityOData {
 	worksheet: workbookWorksheet;
 }
 export interface workbookPivotTableCollection extends IBaseCollection<workbookPivotTable, workbookPivotTableOData & workbookPivotTableProps> {
-    add(values?: any): IBaseExecution<workbookPivotTable>;
+add(values?: any): IBaseExecution<workbookPivotTable>;
 }
 /*********************************************
 * workbookRange
@@ -21212,7 +21211,7 @@ export interface workbookRangeBorderOData extends entityOData {
 
 }
 export interface workbookRangeBorderCollection extends IBaseCollection<workbookRangeBorder, workbookRangeBorderOData & workbookRangeBorderProps> {
-    add(values?: any): IBaseExecution<workbookRangeBorder>;
+add(values?: any): IBaseExecution<workbookRangeBorder>;
 }
 /*********************************************
 * workbookRangeFill
@@ -21307,7 +21306,7 @@ export interface workbookRangeViewOData extends entityOData {
 	rows: IBaseResults<workbookRangeView>;
 }
 export interface workbookRangeViewCollection extends IBaseCollection<workbookRangeView, workbookRangeViewOData & workbookRangeViewProps> {
-    add(values?: any): IBaseExecution<workbookRangeView>;
+add(values?: any): IBaseExecution<workbookRangeView>;
 }
 /*********************************************
 * workbookTable
@@ -21340,7 +21339,7 @@ export interface workbookTableOData extends entityOData {
 	worksheet: workbookWorksheet;
 }
 export interface workbookTableCollection extends IBaseCollection<workbookTable, workbookTableOData & workbookTableProps> {
-    add(values?: any): IBaseExecution<workbookTable>;
+add(values?: any): IBaseExecution<workbookTable>;
 }
 /*********************************************
 * workbookTableColumn
@@ -21358,7 +21357,7 @@ export interface workbookTableColumnOData extends entityOData {
 	filter: workbookFilter;
 }
 export interface workbookTableColumnCollection extends IBaseCollection<workbookTableColumn, workbookTableColumnOData & workbookTableColumnProps> {
-    add(values?: any): IBaseExecution<workbookTableColumn>;
+add(values?: any): IBaseExecution<workbookTableColumn>;
 }
 /*********************************************
 * workbookTableRow
@@ -21375,7 +21374,7 @@ export interface workbookTableRowOData extends entityOData {
 
 }
 export interface workbookTableRowCollection extends IBaseCollection<workbookTableRow, workbookTableRowOData & workbookTableRowProps> {
-    add(values?: any): IBaseExecution<workbookTableRow>;
+add(values?: any): IBaseExecution<workbookTableRow>;
 }
 /*********************************************
 * workbookTableSort
@@ -21420,7 +21419,7 @@ export interface workbookWorksheetOData extends entityOData {
 	tables: IBaseResults<workbookTable>;
 }
 export interface workbookWorksheetCollection extends IBaseCollection<workbookWorksheet, workbookWorksheetOData & workbookWorksheetProps> {
-    add(values?: any): IBaseExecution<workbookWorksheet>;
+add(values?: any): IBaseExecution<workbookWorksheet>;
 }
 /*********************************************
 * workbookWorksheetProtection
@@ -21539,7 +21538,7 @@ export interface workforceIntegrationOData extends changeTrackedEntityOData {
 
 }
 export interface workforceIntegrationCollection extends IBaseCollection<workforceIntegration, workforceIntegrationOData & workforceIntegrationProps> {
-    add(values?: any): IBaseExecution<workforceIntegration>;
+add(values?: any): IBaseExecution<workforceIntegration>;
 }
 /*********************************************
 * workingTimeSchedule
