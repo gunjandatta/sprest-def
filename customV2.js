@@ -49,13 +49,13 @@ module.exports = {
         },
         {
             name: "update",
-            argNames: [{ name: "values", type: "{ roles: string[] }" }]
+            argNames: [{ name: "values", type: "{ roles: string[], grantedToIdentities?: [{ application: { id: string, displayName?: string } }] }" }]
         }
     ],
     permissionCollection: [
         {
             name: "add",
-            argNames: [{ name: "values", type: "{ roles: string[], grantedToIdentities: { application: { id: string, displayName?: string } } }" }]
+            argNames: [{ name: "values", type: "{ roles: string[], grantedToIdentities: [{ application: { id: string, displayName?: string } }] }" }]
         }
     ],
     listItem: [

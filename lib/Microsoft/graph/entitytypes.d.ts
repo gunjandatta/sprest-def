@@ -12465,16 +12465,16 @@ export interface permissionProps extends  entityProps {
 }
 export interface permissionMethods extends entityMethods {
 	delete(): IBaseExecution<void>;
-	update(values: { roles: string[] }): IBaseExecution<void>;
+	update(values: { roles: string[], grantedToIdentities?: [{ application: { id: string, displayName?: string } }] }): IBaseExecution<void>;
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionOData extends entityOData {
 	delete: void;
-	update(values: { roles: string[] }): IBaseExecution<void>;
+	update(values: { roles: string[], grantedToIdentities?: [{ application: { id: string, displayName?: string } }] }): IBaseExecution<void>;
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionCollection extends IBaseCollection<permission, permissionOData & permissionProps> {
-	add(values: { roles: string[], grantedToIdentities: { application: { id: string, displayName?: string } } }):IBaseExecution<void>
+	add(values: { roles: string[], grantedToIdentities: [{ application: { id: string, displayName?: string } }] }):IBaseExecution<void>
 }
 /*********************************************
 * permissionGrantConditionSet
