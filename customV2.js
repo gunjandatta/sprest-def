@@ -55,7 +55,7 @@ module.exports = {
     permissionCollection: [
         {
             name: "add",
-            argNames: [{ name: "values", type: "{ roles: string[], grantedToIdentities: { id: string, displayName?: string } }" }]
+            argNames: [{ name: "values", type: "{ roles: string[], grantedToIdentities: { application: { id: string, displayName?: string } } }" }]
         }
     ],
     listItem: [

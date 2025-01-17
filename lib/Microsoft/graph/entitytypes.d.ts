@@ -12474,7 +12474,7 @@ export interface permissionOData extends entityOData {
 	grant(roles, recipients): IBaseExecution<permission[]>;
 }
 export interface permissionCollection extends IBaseCollection<permission, permissionOData & permissionProps> {
-	add(values: { roles: string[], grantedToIdentities: { id: string, displayName?: string } }):IBaseExecution<void>
+	add(values: { roles: string[], grantedToIdentities: { application: { id: string, displayName?: string } } }):IBaseExecution<void>
 }
 /*********************************************
 * permissionGrantConditionSet
