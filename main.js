@@ -808,7 +808,7 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
                 collectionInterface += `\n\t${collectionMethod.name}(${collectionMethodArgs.join(', ')}):IBaseExecution<${collectionMethod.returnType || "void"}>`;
 
                 // Add the mapper information
-                collectionMapper += `${collectionMapper ? "\n" : ""}\t\t${collectionMethod.name}: { argNames: ["${collectionMethodArgNames.join('", "')}"], requestType: RequestType.PostWithArgsInBody ${collectionMethod.returnType ? ", returnType: " + collectionMethod.returnType : ""} },`;
+                collectionMapper += `${collectionMapper ? "\n" : ""}\t\t${collectionMethod.name}: { argNames: ["${collectionMethodArgNames.join('", "')}"], requestType: RequestType.PostBodyNoArgs ${collectionMethod.returnType ? ", returnType: " + collectionMethod.returnType : ""} },`;
                 collectionMapperDef += `${collectionMapperDef ? "\n" : ""}\t\t${collectionMethod.name}: IMapperMethod${collectionMethodArgs ? " & { argNames: [\"" + collectionMethodArgNames.join('", "') + "\"]" : ""} }`;
             }
 
