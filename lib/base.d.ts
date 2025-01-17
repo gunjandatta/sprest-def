@@ -192,6 +192,9 @@ export interface IODataQuery {
     /** The number of results to skip. */
     Skip?: number;
 
+    /** The number of results to skip for a previous run. */
+    SkipToken?: number;
+
     /** The max number of results to return. */
     Top?: number;
 }
