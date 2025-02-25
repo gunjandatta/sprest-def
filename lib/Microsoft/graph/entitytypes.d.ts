@@ -6274,6 +6274,7 @@ export interface driveItemProps extends  baseItemProps {
 	remoteItem: ComplexTypes.remoteItem;
 	root: ComplexTypes.root;
 	searchResult: ComplexTypes.searchResult;
+	sensitivityLabel: ComplexTypes.identity;
 	shared: ComplexTypes.shared;
 	sharepointIds: ComplexTypes.sharepointIds;
 	size: number;

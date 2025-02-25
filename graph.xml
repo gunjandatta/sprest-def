@@ -33345,6 +33345,7 @@
                 <Property Name="remoteItem" Type="graph.remoteItem" />
                 <Property Name="root" Type="graph.root" />
                 <Property Name="searchResult" Type="graph.searchResult" />
+                <Property Name="sensitivityLabel" Type="graph.identity" />
                 <Property Name="shared" Type="graph.shared" />
                 <Property Name="sharepointIds" Type="graph.sharepointIds" />
                 <Property Name="size" Type="Edm.Int64" />
