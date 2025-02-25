@@ -23,6 +23,7 @@ module.exports = {
     drive: [
         {
             name: "getFolder",
+            returnType: "driveItem",
             argNames: [
                 { name: "folderUrl", type: "string" }
             ]

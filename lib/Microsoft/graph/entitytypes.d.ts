@@ -6231,7 +6231,7 @@ export interface driveMethods extends baseItemMethods {
 	root(): IBaseQuery<driveItem> & driveItemMethods;
 	special(): driveItemCollection;
 	special(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
-	getFolder(folderUrl: string): IBaseExecution<void>;
+	getFolder(folderUrl: string): IBaseQuery<driveItem> & driveItemMethods;
 	search(q): driveItem[];
 	recent(): driveItem[];
 	sharedWithMe(): driveItem[];
@@ -6243,7 +6243,7 @@ export interface driveOData extends baseItemOData {
 	list: list;
 	root: driveItem;
 	special: IBaseResults<driveItem>;
-	getFolder(folderUrl: string): IBaseExecution<void>;
+	getFolder(folderUrl: string): IBaseQuery<driveItem> & driveItemMethods;
 	search(q): driveItem[];
 	recent(): driveItem[];
 	sharedWithMe(): driveItem[];

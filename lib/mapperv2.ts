@@ -4043,6 +4043,7 @@ export const Mapper: IMapper = {
 		},
 		getFolder: {
 			argNames: ["folderUrl"],
+			returnType: "driveItem"
 		},
 		search: {
 			argNames: ["q"],
