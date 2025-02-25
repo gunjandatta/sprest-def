@@ -93,7 +93,9 @@ export interface SiteMoveServiceMethods {
 	pauseCrawling(originalCPSDeleteReason?: number): Base.IBaseExecution<any>;
 	processStorageMetricsChanges(): Base.IBaseExecution<any>;
 	releaseSystemSiteLock(lockRequestor?: string): Base.IBaseExecution<number>;
+	removeSiteMapEntry(): Base.IBaseExecution<any>;
 	resumeCrawling(originalCPSDeleteReason?: number): Base.IBaseExecution<any>;
+	setSiteMoveState(state?: number): Base.IBaseExecution<any>;
 	sourceCleanupAfterMove(isDeleted?: boolean): Base.IBaseExecution<any>;
 	unlockSiteOnFailure(originalLockFlags?: number): Base.IBaseExecution<any>;
 }

@@ -49,6 +49,7 @@ export interface SPClassificationPublishConfig {
 	ContentType?: string;
 	Kind?: string;
 	ModelClassification?: string;
+	ModelId?: string;
 	RetentionLabel?: Microsoft.Office.Server.ContentCenter.SPRetentionLabelConfig;
 	SensitivityLabel?: Microsoft.Office.Server.ContentCenter.SPSensitivityLabelConfig;
 }

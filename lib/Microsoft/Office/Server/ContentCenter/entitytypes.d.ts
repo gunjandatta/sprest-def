@@ -139,6 +139,7 @@ export interface SPMachineLearningHubOData extends Base.IBaseResult, SPMachineLe
 **********************************************/
 export interface SPMachineLearningHubMethods {
 	checkAIBuilderAccess(environmentName?: string, isTestEnvironment?: boolean, userId?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
+	getAutofillColumnSettings(docLibId?: any): Base.IBaseExecution<string>;
 	getByContentTypeId(contentTypeId?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo>;
 	getCDSMetadata(environmentName?: string, isTestEnvironment?: boolean): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.CDSMetadata>;
 	getColumnLLMInfo(docLibId?: any, columnId?: any): Base.IBaseExecution<SP.Utilities.LLMColumnInfo>;
@@ -150,10 +151,12 @@ export interface SPMachineLearningHubMethods {
 	getRetentionLabels(): Base.IBaseCollection<SP.CompliancePolicy.ComplianceTag>;
 	getSyntexPoweredColumnPrompts(docLibId?: any): Base.IBaseExecution<string>;
 	invokeDataverseQuery(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
+	setAutofillColumnSettings(docLibId?: any, autofillColumnSettings?: string): Base.IBaseExecution<any>;
 	setColumnLLMInfo(docLibId?: any, columnId?: any, autofillPrompt?: string, isEnabled?: boolean): Base.IBaseExecution<any>;
 	setMachineLearningFlags(docLibId?: any, machineLearningFlags?: number): Base.IBaseExecution<any>;
 	setSyntexPoweredColumnPrompts(docLibId?: any, syntexPoweredColumnPrompts?: string): Base.IBaseExecution<any>;
 	verifyModelUrls(urls?: Array<string>): Base.IBaseExecution<any>;
+	verifyModelUrlsAndGrantPAC(urls?: Array<string>): Base.IBaseExecution<string>;
 }
 
 /*********************************************

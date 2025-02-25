@@ -336,6 +336,7 @@ export interface SitePropertiesProps {
 	GroupOwnerLoginName?: string;
 	HasHolds?: boolean;
 	HidePeoplePreviewingFiles?: boolean;
+	HidePeopleWhoHaveListsOpen?: boolean;
 	HubSiteId?: any;
 	IBMode?: string;
 	IBSegments?: { results: Array<any> };
@@ -531,6 +532,7 @@ export interface SPDataGovernanceInsightRestApiClientOData extends Microsoft.Onl
 **********************************************/
 export interface SPDataGovernanceInsightRestApiClientMethods {
 	createDataAccessGovernanceReport(reportEntity?: number, workload?: number, reportType?: number, fileSensitivityLabelName?: string, fileSensitivityLabelGUID?: string, name?: string, template?: Array<number>, privacy?: string, siteSensitivityLabelGUID?: Array<any>, countOfUsersMoreThan?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightMetadata>;
+	createDataAccessGovernanceReportV2(reportEntity?: number, workload?: number, reportType?: number, fileSensitivityLabelName?: string, fileSensitivityLabelGUID?: string, name?: string, template?: Array<number>, privacy?: string, siteSensitivityLabelGUID?: Array<any>, countOfUsersMoreThan?: number, userIDList?: Array<any>): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightMetadata>;
 	exportSPODataAccessGovernanceInsight(reportId?: any): Base.IBaseExecution<string>;
 	getSPODataAccessGovernanceInsight(reportEntity?: number, workLoad?: number): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightResponse>;
 	getSPODataAccessGovernanceInsightById(reportId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceInsightResponse>;
@@ -680,6 +682,81 @@ export interface SPOContentSecurityPolicyConfigurationMethods {
 	add(source?: string): Base.IBaseExecution<any>;
 	remove(source?: string): Base.IBaseExecution<any>;
 	updateScriptSources(added?: Array<string>, removed?: Array<string>): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* ISPOCopilotAgentInsightsRestApiClient
+**********************************************/
+export interface ISPOCopilotAgentInsightsRestApiClient extends Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBaseCollections, SPOCopilotAgentInsightsRestApiClientCollections, SPOCopilotAgentInsightsRestApiClientMethods, Base.IBaseQuery<SPOCopilotAgentInsightsRestApiClient, ISPOCopilotAgentInsightsRestApiClientQuery> {
+
+}
+
+/*********************************************
+* ISPOCopilotAgentInsightsRestApiClientCollection
+**********************************************/
+export interface ISPOCopilotAgentInsightsRestApiClientCollection extends Base.IBaseResults<SPOCopilotAgentInsightsRestApiClient> {
+	done?: (resolve: (value?: Array<SPOCopilotAgentInsightsRestApiClient>) => void) => void;
+}
+
+/*********************************************
+* ISPOCopilotAgentInsightsRestApiClientQueryCollection
+**********************************************/
+export interface ISPOCopilotAgentInsightsRestApiClientQueryCollection extends Base.IBaseResults<SPOCopilotAgentInsightsRestApiClientOData> {
+	done?: (resolve: (value?: Array<SPOCopilotAgentInsightsRestApiClientOData>) => void) => void;
+}
+
+/*********************************************
+* ISPOCopilotAgentInsightsRestApiClientQuery
+**********************************************/
+export interface ISPOCopilotAgentInsightsRestApiClientQuery extends SPOCopilotAgentInsightsRestApiClientOData, SPOCopilotAgentInsightsRestApiClientMethods {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsRestApiClient
+**********************************************/
+export interface SPOCopilotAgentInsightsRestApiClient extends Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBase, Base.IBaseResult, SPOCopilotAgentInsightsRestApiClientProps, SPOCopilotAgentInsightsRestApiClientCollections, SPOCopilotAgentInsightsRestApiClientMethods {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsRestApiClientProps
+**********************************************/
+export interface SPOCopilotAgentInsightsRestApiClientProps {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsRestApiClientPropMethods
+**********************************************/
+export interface SPOCopilotAgentInsightsRestApiClientPropMethods {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsRestApiClientCollections
+**********************************************/
+export interface SPOCopilotAgentInsightsRestApiClientCollections extends SPOCopilotAgentInsightsRestApiClientPropMethods {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsRestApiClientOData
+**********************************************/
+export interface SPOCopilotAgentInsightsRestApiClientOData extends Microsoft.Online.SharePoint.TenantAdministration.SPDataGovernanceRestApiClientBase, Base.IBaseResult, SPOCopilotAgentInsightsRestApiClientProps, SPOCopilotAgentInsightsRestApiClientMethods {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsRestApiClientMethods
+**********************************************/
+export interface SPOCopilotAgentInsightsRestApiClientMethods {
+	createCopilotAgentInsightsReport(reportPeriod?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOCopilotAgentInsightsReportMetadata>;
+	getAllCopilotAgentInsightsReportsMetadata(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SPOCopilotAgentInsightsReportMetadata>;
+	getCopilotAgentInsightsFullReportContent(reportId?: any, reportSubType?: string, isFullDetails?: boolean): Base.IBaseExecution<string>;
+	getCopilotAgentsOnSitesTopDetails(reportId?: any, isFullDetails?: boolean): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SPOCopilotAgentInsightsCopilotAgentsOnSitesDetails>;
+	getSiteDistributionsTopDetails(reportId?: any, isFullDetails?: boolean): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SPOCopilotAgentInsightsSiteDistribution>;
+	getTopSitesDetails(reportId?: any, isFullDetails?: boolean): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SPOCopilotAgentInsightsTopSitesDetails>;
 }
 
 /*********************************************
@@ -1038,6 +1115,20 @@ export interface SPSyntexManagementUtilitiesCollections {
 }
 
 /*********************************************
+* SPSyntexOCRBackfillTrigger
+**********************************************/
+export interface SPSyntexOCRBackfillTrigger {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SPSyntexOCRBackfillTriggerCollections
+**********************************************/
+export interface SPSyntexOCRBackfillTriggerCollections {
+
+}
+
+/*********************************************
 * TenantAdminEndpoints
 **********************************************/
 export interface TenantAdminEndpoints {
@@ -1264,6 +1355,7 @@ export interface TenantProps {
 	CoreRequestFilesLinkExpirationInDays?: number;
 	CoreSharingCapability?: number;
 	CustomizedExternalSharingServiceUrl?: string;
+	DataverseUsageConsentEnabled?: boolean;
 	DefaultContentCenterSite?: Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker;
 	DefaultLinkPermission?: number;
 	DefaultODBMode?: string;
@@ -1276,6 +1368,7 @@ export interface TenantProps {
 	DisableAddToOneDrive?: boolean;
 	DisableBackToClassic?: boolean;
 	DisableCustomAppAuthentication?: boolean;
+	DisabledAdaptiveCardExtensionIds?: { results: Array<any> };
 	DisabledModernListTemplateIds?: { results: Array<any> };
 	DisableDocumentLibraryDefaultLabeling?: boolean;
 	DisabledWebPartIds?: { results: Array<any> };
@@ -1289,6 +1382,7 @@ export interface TenantProps {
 	DisplayNamesOfFileViewersInSpo?: boolean;
 	DisplayStartASiteOption?: boolean;
 	DocumentUnderstandingEnabled?: boolean;
+	DocumentUnderstandingEnabledInContentCenter?: number;
 	DocumentUnderstandingSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
 	DocumentUnderstandingSiteList?: { results: Array<any> };
 	DocumentUnderstandingSiteListFileName?: string;
@@ -1311,7 +1405,6 @@ export interface TenantProps {
 	EnableSensitivityLabelForPDF?: boolean;
 	EnableSiteArchive?: boolean;
 	EnableTenantRestrictionsInsights?: boolean;
-	EnableVersionExpirationSetting?: boolean;
 	ESignatureAppList?: { results: Array<string> };
 	ESignatureEnabled?: boolean;
 	ESignatureSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
@@ -1423,6 +1516,7 @@ export interface TenantProps {
 	OwnerAnonymousNotification?: boolean;
 	PermissiveBrowserFileHandlingOverride?: boolean;
 	PrebuiltEnabled?: boolean;
+	PrebuiltEnabledInContentCenter?: number;
 	PrebuiltSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };
 	PrebuiltSiteList?: { results: Array<any> };
 	PrebuiltSiteListFileName?: string;
@@ -1555,21 +1649,32 @@ export interface TenantMethods {
 	deletePolicyDefinition(itemId?: number): Base.IBaseExecution<any>;
 	deleteRecentAdminActionReport(reportId?: number): Base.IBaseExecution<any>;
 	disableCollaborationInsightsDataCollection(): Base.IBaseExecution<any>;
+	downloadHighVolumeComponentImpactedAssetsReport(category?: number, documentKey?: string): Base.IBaseExecution<any>;
 	downloadRansomwareImpactedAssetsReport(driveId?: string, fileName?: string, reportNameType?: number): Base.IBaseExecution<any>;
 	downloadSharingInsights(queryMode?: number, insightsType?: number): Base.IBaseExecution<string>;
 	downloadSPOContainers(active?: boolean): Base.IBaseExecution<any>;
 	enableCollaborationInsightsDataCollection(): Base.IBaseExecution<any>;
 	ensureBrandCenterFeature(): Base.IBaseExecution<any>;
+	executeTranspilerRequest(payload?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.CopilotTranspilerPayload): Base.IBaseExecution<Microsoft.SharePoint.Administration.TenantAdmin.Copilot.CopilotTranspilerResponse>;
 	exportAdminListToCSV(viewXml?: string, listName?: string): Base.IBaseExecution<string>;
 	exportCSVFile(timeZoneId?: number): Base.IBaseExecution<string>;
 	exportToCSV(viewXml?: string, timeZoneId?: number, columnsInfo?: Array<Microsoft.Online.SharePoint.TenantAdministration.columnsInfo>, listName?: string): Base.IBaseExecution<string>;
 	exportUnlicensedOneDriveForBusinessListToCSV(): Base.IBaseExecution<string>;
 	getAdminListViews(): Base.IBaseCollection<SP.View, SP.ViewOData, Base.IBaseExecution & SP.ViewCollectionMethods> & Base.IBaseExecution & SP.ViewCollectionMethods;
+	getAllDeletedPersonalSitesPropertiesAllVersions(startIndex?: number): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.DeletedSiteProperties>;
 	getBillingPolicyIdForApp(applicationId?: any): Base.IBaseExecution<string>;
 	getBrandCenterConfiguration(): Base.IBaseExecution<SP.BrandCenterConfiguration>;
 	getBrandFontPackages(): Base.IBaseCollection<SP.FontPackage> & SP.FontPackageCollectionMethods;
 	getCollaborationInsightsData(): Base.IBaseExecution<Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsData>;
 	getCollaborationInsightsOverview(): Base.IBaseExecution<Microsoft.SharePoint.Administration.TenantAdmin.CollaborationInsightsOverview>;
+	getContentManagementAssessmentResults(): Base.IBaseExecution<Microsoft.SharePoint.Administration.TenantAdmin.ContentManagementAssessmentResults>;
+	getContentSecurityPolicy(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOContentSecurityPolicyConfiguration>;
+	getCopilotPromoOptInStatus(): Base.IBaseExecution<boolean>;
+	getDeletedPersonalSitePropertiesAllVersions(url?: string): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.DeletedSiteProperties>;
+	getDeletedSiteProperties(startIndex?: number): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.DeletedSiteProperties>;
+	getDeletedSitePropertiesByUrl(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.DeletedSiteProperties>;
+	getDeletedSitePropertiesFromSharePoint(startIndex?: string): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.DeletedSiteProperties>;
+	getFileSensitivityLabelInfo(fileUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.FileSensitivityLabelInfo>;
 	getFileVersionBatchDeleteJobProgress(siteUrl?: string): Base.IBaseExecution<string>;
 	getFileVersionBatchDeleteJobProgressForLibrary(siteUrl?: string, listParams?: Microsoft.Online.SharePoint.TenantAdministration.SPOListParameters): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SPOFileVersionBatchDeleteJobProgress>;
 	getFileVersionExpirationReportJobProgress(siteUrl?: string, reportUrl?: string): Base.IBaseExecution<string>;
@@ -1588,12 +1693,19 @@ export interface TenantMethods {
 	getRansomwareActivitiesOverview(eventId?: string): Base.IBaseExecution<Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRansomwareActivitiesOverview>;
 	getRansomwareEvents(parameters?: SP.RenderListDataParameters): Base.IBaseExecution<any>;
 	getRansomwareEventsOverview(): Base.IBaseExecution<Microsoft.SharePoint.Administration.TenantAdmin.TenantAdminRansomwareEventsOverview>;
-	getSharePointSettingData(): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SettingDataProperty>;
+	getRootSiteUrl(): Base.IBaseExecution<string>;
+	getSharePointSettingData(category?: number): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SettingDataProperty>;
 	getSharePointSiteSharingInsights(queryMode?: number): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SharePointSiteSharingInsights>;
 	getSiteAdministrators(siteId?: any): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteAdministratorsInfo>;
+	getSiteAuthorizationCodeForMigration(endpointUrl?: string): Base.IBaseExecution<string>;
+	getSiteByUrl(url?: string): Base.IBaseQuery<SP.Site, SP.SiteOData> & SP.SiteCollections & SP.SiteMethods;
 	getSiteCohortsSummary(view?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteCohortsSummary>;
 	getSiteHealthStatus(sourceUrl?: string): Base.IBaseExecution<SP.Publishing.PortalHealthStatus>;
+	getSiteProperties(startIndex?: number, includeDetail?: boolean): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	getSitePropertiesByFilter(filter?: string, startIndex?: number, includeDetail?: boolean): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	getSitePropertiesByUrl(url?: string, includeDetail?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties>;
+	getSitePropertiesFromSharePoint(startIndex?: string, includeDetail?: boolean): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
+	getSitePropertiesFromSharePointByFilter(filter?: string, startIndex?: string, includeDetail?: boolean): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	getSitePropertiesFromSharePointByFilters(speFilter?: Microsoft.Online.SharePoint.TenantAdministration.SPOSitePropertiesEnumerableFilter): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SiteProperties> & Microsoft.Online.SharePoint.TenantAdministration.SitePropertiesCollectionMethods;
 	getSitesByState(states?: Array<number>): Base.IBaseCollection<SP.ListItem, SP.ListItemOData, Base.IBaseExecution & SP.ListItemCollectionMethods> & Base.IBaseExecution & SP.ListItemCollectionMethods;
 	getSiteSecondaryAdministrators(secondaryAdministratorsFieldsData?: Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsFieldsData): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.SecondaryAdministratorsInfo>;
@@ -1626,13 +1738,13 @@ export interface TenantMethods {
 	getTenantAllOrCompatibleIBSegments(segments?: Array<any>): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.IBSegmentInfo>;
 	getTenantSendFromAddress(): Base.IBaseExecution<string>;
 	getTenantSiteCreationSource(): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SiteCreationSource>;
-	getTopFilesSharingInsights(queryMode?: number): Base.IBaseCollection<Microsoft.Online.SharePoint.TenantAdministration.TopFilesSharingInsights>;
 	getTrackViewFeatureAlwaysVisible(): Base.IBaseExecution<boolean>;
 	getVersionPolicyForDocLibsJobProgress(siteUrl?: string): Base.IBaseExecution<string>;
 	getViewByDisplayName(viewName?: string, listName?: string): Base.IBaseQuery<SP.View, SP.ViewOData> & SP.ViewCollections & SP.ViewMethods;
 	getVivaConnectionsLicense(): Base.IBaseExecution<SP.VivaConnectionsLicense>;
 	grantHubSiteRightsById(hubSiteId?: any, principals?: Array<string>, grantedRights?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	hasValidEducationLicense(): Base.IBaseExecution<boolean>;
+	isRequestContentManagementAssessmentEligible(): Base.IBaseExecution<boolean>;
 	isSyntexRepositoryTermsOfServiceAccepted(): Base.IBaseExecution<boolean>;
 	newFileVersionBatchDeleteJob(siteUrl?: string, batchDeleteParams?: SP.FileVersionBatchDeleteParameters): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	newFileVersionBatchDeleteJobForLibrary(siteUrl?: string, listParams?: Microsoft.Online.SharePoint.TenantAdministration.SPOListParameters, batchDeleteParams?: SP.FileVersionBatchDeleteParameters): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
@@ -1679,6 +1791,7 @@ export interface TenantMethods {
 	renderRecentAdminActionReport(parameters?: SP.RenderListDataParameters, overrideParameters?: SP.RenderListDataOverrideParameters): Base.IBaseExecution<any>;
 	renderRecentAdminActions(parameters?: SP.RenderListDataParameters, overrideParameters?: SP.RenderListDataOverrideParameters, isAutoRefresh?: boolean): Base.IBaseExecution<any>;
 	reorderTargetedSites(siteIds?: Array<any>): Base.IBaseCollection<SP.TargetedSiteDetails>;
+	requestContentManagementAssessment(): Base.IBaseExecution<any>;
 	restoreContainer(containerId?: string): Base.IBaseExecution<any>;
 	restoreDeletedSite(siteUrl?: string): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	restoreDeletedSiteById(siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
@@ -1687,6 +1800,7 @@ export interface TenantMethods {
 	restoreSPODeletedContainerByContainerSiteUrl(containerSiteUrl?: string): Base.IBaseExecution<boolean>;
 	revokeHubSiteRightsById(hubSiteId?: any, principals?: Array<string>): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.HubSiteProperties>;
 	sendEmail(siteUrl?: string, activityEventJson?: string): Base.IBaseExecution<boolean>;
+	setCopilotPromoOptInStatus(copilotPromoOptInEnabled?: boolean): Base.IBaseExecution<any>;
 	setDefaultView(viewId?: string, listName?: string): Base.IBaseExecution<any>;
 	setFileVersionPolicy(isAutoTrimEnabled?: boolean, majorVersionLimit?: number, expireVersionsAfterDays?: number): Base.IBaseExecution<any>;
 	setFileVersionPolicyForLibrary(siteUrl?: string, listParams?: Microsoft.Online.SharePoint.TenantAdministration.SPOListParameters, versionPolicyParams?: Microsoft.Online.SharePoint.TenantAdministration.SPOFileVersionPolicySettings): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
@@ -1714,6 +1828,7 @@ export interface TenantMethods {
 	swapSiteWithSmartGestureOption(sourceUrl?: string, targetUrl?: string, archiveUrl?: string, includeSmartGestures?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	swapSiteWithSmartGestureOptionForce(sourceUrl?: string, targetUrl?: string, archiveUrl?: string, includeSmartGestures?: boolean, force?: boolean): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
 	unarchiveSiteById(siteId?: any): Base.IBaseExecution<Microsoft.Online.SharePoint.TenantAdministration.SpoOperation>;
+	unlockSensitivityLabelEncryptedFile(fileUrl?: string, justificationText?: string): Base.IBaseExecution<any>;
 	unregisterHubSite(siteUrl?: string): Base.IBaseExecution<any>;
 	update(): Base.IBaseExecution<any>;
 	updateFileSearchVisibility(url?: string, isHidden?: boolean): Base.IBaseExecution<boolean>;
@@ -1774,5 +1889,43 @@ export interface SpoOperation {
 * SpoOperationCollections
 **********************************************/
 export interface SpoOperationCollections {
+
+}
+
+/*********************************************
+* DeletedSiteProperties
+**********************************************/
+export interface DeletedSiteProperties {
+	ArchiveStatus?: string;
+	DaysRemaining?: number;
+	DeletionTime?: any;
+	SiteId?: any;
+	Status?: string;
+	StorageMaximumLevel?: number;
+	Url?: string;
+	UserCodeMaximumLevel?: number;
+}
+
+/*********************************************
+* DeletedSitePropertiesCollections
+**********************************************/
+export interface DeletedSitePropertiesCollections {
+
+}
+
+/*********************************************
+* FileSensitivityLabelInfo
+**********************************************/
+export interface FileSensitivityLabelInfo {
+	DisplayName?: string;
+	LabelId?: string;
+	ParentLabelId?: string;
+	ProtectionEnabled?: boolean;
+}
+
+/*********************************************
+* FileSensitivityLabelInfoCollections
+**********************************************/
+export interface FileSensitivityLabelInfoCollections {
 
 }

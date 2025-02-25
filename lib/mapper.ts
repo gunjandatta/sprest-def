@@ -66,6 +66,10 @@ export const Mapper: IMapper = {
 		argNames: [ "environmentName", "isTestEnvironment", "userId" ],
 		},
 
+		getAutofillColumnSettings: {
+		argNames: [ "docLibId" ],
+		},
+
 		getByContentTypeId: {
 		argNames: [ "contentTypeId" ],
 		},
@@ -110,6 +114,10 @@ export const Mapper: IMapper = {
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+		setAutofillColumnSettings: {
+		argNames: [ "docLibId", "autofillColumnSettings" ],
+		},
+
 		setColumnLLMInfo: {
 		argNames: [ "docLibId", "columnId", "autofillPrompt", "isEnabled" ],
 		},
@@ -123,6 +131,10 @@ export const Mapper: IMapper = {
 		},
 
 		verifyModelUrls: {
+		argNames: [ "urls" ],
+		},
+
+		verifyModelUrlsAndGrantPAC: {
 		argNames: [ "urls" ],
 		},
 
@@ -952,6 +964,10 @@ export const Mapper: IMapper = {
 		argNames: [ "url" ],
 		},
 
+		getJobsCountByParentIdAndState: {
+		argNames: [ "parentId", "state" ],
+		},
+
 		getSiteRenameReport: {
 		argNames: [ "state" ],
 		},
@@ -965,6 +981,9 @@ export const Mapper: IMapper = {
 		},
 
 		get: {
+		},
+
+		getV2: {
 		},
 
 		getWarningMessages: {
@@ -1120,6 +1139,10 @@ export const Mapper: IMapper = {
 		argNames: [ "reportEntity", "workload", "reportType", "fileSensitivityLabelName", "fileSensitivityLabelGUID", "name", "template", "privacy", "siteSensitivityLabelGUID", "countOfUsersMoreThan" ],
 		},
 
+		createDataAccessGovernanceReportV2: {
+		argNames: [ "reportEntity", "workload", "reportType", "fileSensitivityLabelName", "fileSensitivityLabelGUID", "name", "template", "privacy", "siteSensitivityLabelGUID", "countOfUsersMoreThan", "userIDList" ],
+		},
+
 		exportSPODataAccessGovernanceInsight: {
 		argNames: [ "reportId" ],
 		},
@@ -1164,6 +1187,32 @@ export const Mapper: IMapper = {
 
 		updateScriptSources: {
 		argNames: [ "added", "removed" ],
+		},
+
+	},
+
+	"Microsoft.Online.SharePoint.TenantAdministration.SPOCopilotAgentInsightsRestApiClient": {
+		createCopilotAgentInsightsReport: {
+		argNames: [ "reportPeriod" ],
+		},
+
+		getAllCopilotAgentInsightsReportsMetadata: {
+		},
+
+		getCopilotAgentInsightsFullReportContent: {
+		argNames: [ "reportId", "reportSubType", "isFullDetails" ],
+		},
+
+		getCopilotAgentsOnSitesTopDetails: {
+		argNames: [ "reportId", "isFullDetails" ],
+		},
+
+		getSiteDistributionsTopDetails: {
+		argNames: [ "reportId", "isFullDetails" ],
+		},
+
+		getTopSitesDetails: {
+		argNames: [ "reportId", "isFullDetails" ],
 		},
 
 	},
@@ -1387,6 +1436,10 @@ export const Mapper: IMapper = {
 		disableCollaborationInsightsDataCollection: {
 		},
 
+		downloadHighVolumeComponentImpactedAssetsReport: {
+		argNames: [ "category", "documentKey" ],
+		},
+
 		downloadRansomwareImpactedAssetsReport: {
 		argNames: [ "driveId", "fileName", "reportNameType" ],
 		},
@@ -1403,6 +1456,10 @@ export const Mapper: IMapper = {
 		},
 
 		ensureBrandCenterFeature: {
+		},
+
+		executeTranspilerRequest: {
+		argNames: [ "payload" ],
 		},
 
 		exportAdminListToCSV: {
@@ -1423,6 +1480,10 @@ export const Mapper: IMapper = {
 		getAdminListViews: {
 		},
 
+		getAllDeletedPersonalSitesPropertiesAllVersions: {
+		argNames: [ "startIndex" ],
+		},
+
 		getBillingPolicyIdForApp: {
 		argNames: [ "applicationId" ],
 		},
@@ -1437,6 +1498,35 @@ export const Mapper: IMapper = {
 		},
 
 		getCollaborationInsightsOverview: {
+		},
+
+		getContentManagementAssessmentResults: {
+		},
+
+		getContentSecurityPolicy: {
+		},
+
+		getCopilotPromoOptInStatus: {
+		},
+
+		getDeletedPersonalSitePropertiesAllVersions: {
+		argNames: [ "url" ],
+		},
+
+		getDeletedSiteProperties: {
+		argNames: [ "startIndex" ],
+		},
+
+		getDeletedSitePropertiesByUrl: {
+		argNames: [ "siteUrl" ],
+		},
+
+		getDeletedSitePropertiesFromSharePoint: {
+		argNames: [ "startIndex" ],
+		},
+
+		getFileSensitivityLabelInfo: {
+		argNames: [ "fileUrl" ],
 		},
 
 		getFileVersionBatchDeleteJobProgress: {
@@ -1502,6 +1592,9 @@ export const Mapper: IMapper = {
 		},
 
 		getRansomwareEventsOverview: {
+		},
+
+		getRootSiteUrl: {
 		},
 
 		getSPHSiteUrl: {
@@ -1576,6 +1669,7 @@ export const Mapper: IMapper = {
 		},
 
 		getSharePointSettingData: {
+		argNames: [ "category" ],
 		},
 
 		getSharePointSiteSharingInsights: {
@@ -1586,6 +1680,14 @@ export const Mapper: IMapper = {
 		argNames: [ "siteId" ],
 		},
 
+		getSiteAuthorizationCodeForMigration: {
+		argNames: [ "endpointUrl" ],
+		},
+
+		getSiteByUrl: {
+		argNames: [ "url" ],
+		},
+
 		getSiteCohortsSummary: {
 		argNames: [ "view" ],
 		},
@@ -1594,8 +1696,24 @@ export const Mapper: IMapper = {
 		argNames: [ "sourceUrl" ],
 		},
 
+		getSiteProperties: {
+		argNames: [ "startIndex", "includeDetail" ],
+		},
+
+		getSitePropertiesByFilter: {
+		argNames: [ "filter", "startIndex", "includeDetail" ],
+		},
+
 		getSitePropertiesByUrl: {
 		argNames: [ "url", "includeDetail" ],
+		},
+
+		getSitePropertiesFromSharePoint: {
+		argNames: [ "startIndex", "includeDetail" ],
+		},
+
+		getSitePropertiesFromSharePointByFilter: {
+		argNames: [ "filter", "startIndex", "includeDetail" ],
 		},
 
 		getSitePropertiesFromSharePointByFilters: {
@@ -1642,10 +1760,6 @@ export const Mapper: IMapper = {
 		getTenantSiteCreationSource: {
 		},
 
-		getTopFilesSharingInsights: {
-		argNames: [ "queryMode" ],
-		},
-
 		getTrackViewFeatureAlwaysVisible: {
 		},
 
@@ -1665,6 +1779,9 @@ export const Mapper: IMapper = {
 		},
 
 		hasValidEducationLicense: {
+		},
+
+		isRequestContentManagementAssessmentEligible: {
 		},
 
 		isSyntexRepositoryTermsOfServiceAccepted: {
@@ -1849,6 +1966,9 @@ export const Mapper: IMapper = {
 		argNames: [ "siteIds" ],
 		},
 
+		requestContentManagementAssessment: {
+		},
+
 		restoreContainer: {
 		argNames: [ "containerId" ],
 		},
@@ -1879,6 +1999,10 @@ export const Mapper: IMapper = {
 
 		sendEmail: {
 		argNames: [ "siteUrl", "activityEventJson" ],
+		},
+
+		setCopilotPromoOptInStatus: {
+		argNames: [ "copilotPromoOptInEnabled" ],
 		},
 
 		setDefaultView: {
@@ -1986,6 +2110,10 @@ export const Mapper: IMapper = {
 
 		unarchiveSiteById: {
 		argNames: [ "siteId" ],
+		},
+
+		unlockSensitivityLabelEncryptedFile: {
+		argNames: [ "fileUrl", "justificationText" ],
 		},
 
 		unregisterHubSite: {
@@ -2356,8 +2484,15 @@ export const Mapper: IMapper = {
 		argNames: [ "lockRequestor" ],
 		},
 
+		removeSiteMapEntry: {
+		},
+
 		resumeCrawling: {
 		argNames: [ "originalCPSDeleteReason" ],
+		},
+
+		setSiteMoveState: {
+		argNames: [ "state" ],
 		},
 
 		sourceCleanupAfterMove: {
@@ -4561,6 +4696,10 @@ export const Mapper: IMapper = {
 		argNames: [ "themeId" ],
 		},
 
+		deleteTenantTheme: {
+		argNames: [ "themeId" ],
+		},
+
 		ensureBrandColorsListFeature: {
 		},
 
@@ -4569,6 +4708,10 @@ export const Mapper: IMapper = {
 
 		getFontStream: {
 		argNames: [ "fontFileUrl" ],
+		},
+
+		getSiteThemeById: {
+		argNames: [ "id" ],
 		},
 
 		getSiteThemes: {
@@ -5068,6 +5211,9 @@ export const Mapper: IMapper = {
 		configuration: {
 		},
 
+		configuredVivaConnectionsURL: {
+		},
+
 		dashboardContent: {
 		argNames: [ "overrideLanguageCode" ],
 		},
@@ -5086,10 +5232,18 @@ export const Mapper: IMapper = {
 		getTargetedSitesAsEditor: {
 		},
 
+		likeNewsPost: {
+		argNames: [ "pageUrl", "listId", "listItemUniqueId" ],
+		},
+
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 		setDashboardPersonalization: {
 		argNames: [ "isEnabled" ],
+		},
+
+		unlikeNewsPost: {
+		argNames: [ "pageUrl", "listId", "listItemUniqueId" ],
 		},
 
 		vivaConnections: {
@@ -5115,7 +5269,7 @@ export const Mapper: IMapper = {
 		},
 
 		saveDashboard: {
-		argNames: [ "employeeExperienceDashboardData", "mySiteUrl" ],
+		argNames: [ "employeeExperienceDashboardData", "userCards", "mySiteUrl" ],
 		},
 
 		setAnnouncementState: {
@@ -6299,6 +6453,10 @@ export const Mapper: IMapper = {
 		argNames: [ "createItemRequestPayload" ],
 		},
 
+		createListForm: {
+		argNames: [ "parameters" ],
+		},
+
 		createMappedView: {
 		argNames: [ "appViewCreationInfo", "visualizationTarget" ],
 		},
@@ -6334,6 +6492,7 @@ export const Mapper: IMapper = {
 		},
 
 		getAllRules: {
+		argNames: [ "includeQuicksteps", "includeAutomaticRules" ],
 		},
 
 		getAsyncActionConfig: {
@@ -6398,6 +6557,10 @@ export const Mapper: IMapper = {
 
 		getItemsByQuery: {
 		argNames: [ "camlQuery" ],
+		},
+
+		getListForms: {
+		argNames: [ "bSanitize" ],
 		},
 
 		getListItemChangesSinceToken: {
@@ -6650,10 +6813,6 @@ export const Mapper: IMapper = {
 		archive: {
 		},
 
-		attachImage: {
-		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
-		},
-
 		breakRoleInheritance: {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -6675,6 +6834,10 @@ export const Mapper: IMapper = {
 
 		getUserEffectivePermissions: {
 		argNames: [ "userName" ],
+		},
+
+		getVersionById: {
+		argNames: [ "versionId" ],
 		},
 
 		getVersions: {
@@ -7151,6 +7314,9 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.CampaignPublication": {
+		amplify: {
+		},
+
 		approveApprovalRequest: {
 		argNames: [ "comment" ],
 		},
@@ -7207,6 +7373,7 @@ export const Mapper: IMapper = {
 		},
 
 		extendSessionCoAuth: {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: {
@@ -7237,6 +7404,9 @@ export const Mapper: IMapper = {
 		argNames: [ "pageMoveParams" ],
 		},
 
+		prepare: {
+		},
+
 		promoteToNews: {
 		},
 
@@ -7244,7 +7414,7 @@ export const Mapper: IMapper = {
 		},
 
 		publishAsBot: {
-		argNames: [ "tenantId", "channelIds", "message" ],
+		argNames: [ "tenantId", "channelIds", "content", "title", "headline" ],
 		},
 
 		publishCoAuth: {
@@ -7260,6 +7430,10 @@ export const Mapper: IMapper = {
 
 		resetEndpoint: {
 		argNames: [ "requestParam" ],
+		},
+
+		restoreByLabel: {
+		argNames: [ "versionlabel" ],
 		},
 
 		sPSiteValidator: {
@@ -7297,7 +7471,7 @@ export const Mapper: IMapper = {
 		},
 
 		saveStreams: {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublication: {
@@ -7371,6 +7545,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.FeedVideoPage": {
+		amplify: {
+		argNames: [ "request" ],
+		},
+
 		boostNews: {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -7406,6 +7584,7 @@ export const Mapper: IMapper = {
 		},
 
 		extendSessionCoAuth: {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: {
@@ -7436,6 +7615,10 @@ export const Mapper: IMapper = {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: {
 		argNames: [ "sitePage" ],
 		},
@@ -7463,11 +7646,19 @@ export const Mapper: IMapper = {
 		},
 
 		saveStreams: {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: {
@@ -7653,6 +7844,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.RepostPage": {
+		amplify: {
+		argNames: [ "request" ],
+		},
+
 		boostNews: {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -7688,6 +7883,7 @@ export const Mapper: IMapper = {
 		},
 
 		extendSessionCoAuth: {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: {
@@ -7718,6 +7914,10 @@ export const Mapper: IMapper = {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: {
 		argNames: [ "sitePage" ],
 		},
@@ -7745,11 +7945,19 @@ export const Mapper: IMapper = {
 		},
 
 		saveStreams: {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: {
@@ -7784,7 +7992,7 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.RichSharing": {
 		sharePageByEmail: {
-		argNames: [ "url", "message", "recipientEmails", "pageContent", "subject", "ccEmails", "bccEmails" ],
+		argNames: [ "url", "message", "recipientEmails", "pageContent", "subject", "ccEmails", "bccEmails", "pageItemId", "scenarioTag", "emailSize" ],
 		},
 
 		shareSiteByEmail: {
@@ -7824,6 +8032,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.SitePage": {
+		amplify: {
+		argNames: [ "request" ],
+		},
+
 		boostNews: {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -7859,6 +8071,7 @@ export const Mapper: IMapper = {
 		},
 
 		extendSessionCoAuth: {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: {
@@ -7891,6 +8104,10 @@ export const Mapper: IMapper = {
 
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+		restoreByLabel: {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: {
 		argNames: [ "sitePage" ],
 		},
@@ -7918,11 +8135,19 @@ export const Mapper: IMapper = {
 		},
 
 		saveStreams: {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: {
@@ -8020,6 +8245,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.SitePage3D": {
+		amplify: {
+		argNames: [ "request" ],
+		},
+
 		boostNews: {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -8055,6 +8284,7 @@ export const Mapper: IMapper = {
 		},
 
 		extendSessionCoAuth: {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: {
@@ -8085,6 +8315,10 @@ export const Mapper: IMapper = {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: {
 		argNames: [ "sitePage" ],
 		},
@@ -8112,11 +8346,19 @@ export const Mapper: IMapper = {
 		},
 
 		saveStreams: {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: {
@@ -8180,6 +8422,10 @@ export const Mapper: IMapper = {
 		},
 
 		enableCategories: {
+		},
+
+		getOrCreateAssetFolder: {
+		argNames: [ "pageName", "createFolderIfNeeded", "subFolderName", "pageId" ],
 		},
 
 		pagesInLib: {
@@ -8257,6 +8503,10 @@ export const Mapper: IMapper = {
 	},
 
 	"SP.Publishing.TopicSitePage": {
+		amplify: {
+		argNames: [ "request" ],
+		},
+
 		boostNews: {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -8292,6 +8542,7 @@ export const Mapper: IMapper = {
 		},
 
 		extendSessionCoAuth: {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: {
@@ -8322,6 +8573,10 @@ export const Mapper: IMapper = {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: {
 		argNames: [ "sitePage" ],
 		},
@@ -8349,11 +8604,19 @@ export const Mapper: IMapper = {
 		},
 
 		saveStreams: {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: {
@@ -8863,6 +9126,10 @@ export const Mapper: IMapper = {
 		},
 
 		getHubSiteJoinApprovalCorrelationId: {
+		},
+
+		getMigrationJobProgress: {
+		argNames: [ "jobId", "nextToken" ],
 		},
 
 		getMigrationJobStatus: {
@@ -9658,10 +9925,6 @@ export const Mapper: IMapper = {
 		},
 
 		dispose: {
-		},
-
-		loadUserProfile: {
-		argNames: [ "email" ],
 		},
 
 		readCache: {
@@ -10817,10 +11080,6 @@ export const Mapper: IMapper = {
 		archive: {
 		},
 
-		attachImage: {
-		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
-		},
-
 		breakRoleInheritance: {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -10842,6 +11101,10 @@ export const Mapper: IMapper = {
 
 		getUserEffectivePermissions: {
 		argNames: [ "userName" ],
+		},
+
+		getVersionById: {
+		argNames: [ "versionId" ],
 		},
 
 		getVersions: {

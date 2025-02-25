@@ -1,5 +1,2 @@
 ###### Missing Properties
-
-The targetApps action needs to add this property:
-
-<Parameter Name="appGroupType" Type="graph.targetedManagedAppGroupType" />
+# Add any missing properties here, that require a manual update

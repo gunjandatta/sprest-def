@@ -6,6 +6,7 @@ import { SP } from "../../../";
 * ConnectionsConfigurationAndData
 **********************************************/
 export interface ConnectionsConfigurationAndData {
+	IsConfigured?: boolean;
 	SpotlightConfiguration?: Microsoft.SharePoint.EmployeeEngagement.SpotlightConfiguration;
 	SpotlightNews?: { results: Array<Microsoft.SharePoint.EmployeeEngagement.SpotlightNews> };
 }

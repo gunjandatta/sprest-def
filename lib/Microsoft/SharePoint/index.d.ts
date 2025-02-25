@@ -56,6 +56,8 @@ import * as ListHome from "./ListHome";
 export { ListHome }
 import * as Marketplace from "./Marketplace";
 export { Marketplace }
+import * as MicroService from "./MicroService";
+export { MicroService }
 import * as MultiGeo from "./MultiGeo";
 export { MultiGeo }
 import * as Navigation from "./Navigation";

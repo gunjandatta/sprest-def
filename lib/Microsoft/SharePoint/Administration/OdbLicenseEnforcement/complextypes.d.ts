@@ -4,6 +4,7 @@ import { Base } from "../../../../";
 * UnlicensedOdbLicenseEnforcementWarningContext
 **********************************************/
 export interface UnlicensedOdbLicenseEnforcementWarningContext {
+	GeneratedOn?: any;
 	WarningStatus?: number;
 	WarningStatusEffectiveUntil?: any;
 }
@@ -19,6 +20,8 @@ export interface UnlicensedOdbLicenseEnforcementWarningContextCollections {
 * UnlicensedOdbTenantMetrics
 **********************************************/
 export interface UnlicensedOdbTenantMetrics {
+	billableCount?: number;
+	billableSizeBytes?: number;
 	complianceHoldCount?: number;
 	complianceHoldSizeBytes?: number;
 	count?: number;

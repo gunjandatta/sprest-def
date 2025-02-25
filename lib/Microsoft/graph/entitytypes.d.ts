@@ -1439,6 +1439,7 @@ export interface applicationProps extends  directoryObjectProps {
 	appId: string;
 	applicationTemplateId: string;
 	appRoles: ComplexTypes.appRole[];
+	authenticationBehaviors: ComplexTypes.authenticationBehaviors;
 	certification: ComplexTypes.certification;
 	createdDateTime: any;
 	defaultRedirectUri: string;
@@ -3188,15 +3189,16 @@ add(values?: any): IBaseExecution<certificateBasedAuthConfiguration>;
 **********************************************/
 export interface changeTrackedEntity extends changeTrackedEntityProps, changeTrackedEntityMethods { }
 export interface changeTrackedEntityProps extends  entityProps {
+	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	lastModifiedBy: ComplexTypes.identitySet;
 	lastModifiedDateTime: any;
 }
 export interface changeTrackedEntityMethods extends entityMethods {
-
+	stageForDeletion(): IBaseExecution<void>;
 }
 export interface changeTrackedEntityOData extends entityOData {
-
+	stageForDeletion(): IBaseExecution<void>;
 }
 /*********************************************
 * channel
@@ -3215,6 +3217,8 @@ export interface channelProps extends  entityProps {
 	webUrl: string;
 }
 export interface channelMethods extends entityMethods {
+	allMembers(): conversationMemberCollection;
+	allMembers(id: string | number): IBaseQuery<conversationMember> & conversationMemberMethods;
 	filesFolder(): IBaseQuery<driveItem> & driveItemMethods;
 	members(): conversationMemberCollection;
 	members(id: string | number): IBaseQuery<conversationMember> & conversationMemberMethods;
@@ -3232,6 +3236,7 @@ export interface channelMethods extends entityMethods {
 	doesUserHaveAccess(userId, tenantId, userPrincipalName): boolean;
 }
 export interface channelOData extends entityOData {
+	allMembers: IBaseResults<conversationMember>;
 	filesFolder: driveItem;
 	members: IBaseResults<conversationMember>;
 	messages: IBaseResults<chatMessage>;
@@ -3254,6 +3259,7 @@ export interface chat extends chatProps, chatMethods { }
 export interface chatProps extends  entityProps {
 	chatType: EnumTypes.chatType;
 	createdDateTime: any;
+	isHiddenForAllMembers: boolean;
 	lastUpdatedDateTime: any;
 	onlineMeetingInfo: ComplexTypes.teamworkOnlineMeetingInfo;
 	tenantId: string;
@@ -3637,6 +3643,7 @@ add(values?: any): IBaseExecution<cloudPcOnPremisesConnection>;
 export interface cloudPcProvisioningPolicy extends cloudPcProvisioningPolicyProps, cloudPcProvisioningPolicyMethods { }
 export interface cloudPcProvisioningPolicyProps extends  entityProps {
 	alternateResourceUrl: string;
+	autopatch: ComplexTypes.cloudPcProvisioningPolicyAutopatch;
 	cloudPcGroupDisplayName: string;
 	cloudPcNamingTemplate: string;
 	description: string;
@@ -4486,6 +4493,24 @@ export interface dataSourceContainerMethods extends entityMethods {
 }
 export interface dataSourceContainerOData extends entityOData {
 
+}
+/*********************************************
+* dayNote
+**********************************************/
+export interface dayNote extends dayNoteProps, dayNoteMethods { }
+export interface dayNoteProps extends  changeTrackedEntityProps {
+	dayNoteDate: any;
+	draftDayNote: ComplexTypes.itemBody;
+	sharedDayNote: ComplexTypes.itemBody;
+}
+export interface dayNoteMethods extends changeTrackedEntityMethods {
+
+}
+export interface dayNoteOData extends changeTrackedEntityOData {
+
+}
+export interface dayNoteCollection extends IBaseCollection<dayNote, dayNoteOData & dayNoteProps> {
+add(values?: any): IBaseExecution<dayNote>;
 }
 /*********************************************
 * defaultManagedAppProtection
@@ -6279,6 +6304,7 @@ export interface driveItemMethods extends baseItemMethods {
 	checkin(checkInAs, comment): IBaseExecution<void>;
 	checkout(): IBaseExecution<void>;
 	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
+	discardCheckout(): IBaseExecution<void>;
 	follow(): IBaseExecution<driveItem>;
 	invite(requireSignIn, roles, sendInvitation, message, recipients, retainInheritedPermissions, expirationDateTime, password): IBaseExecution<permission[]>;
 	preview(page, zoom): IBaseExecution<ComplexTypes.itemPreviewInfo>;
@@ -6310,6 +6336,7 @@ export interface driveItemOData extends baseItemOData {
 	checkin(checkInAs, comment): IBaseExecution<void>;
 	checkout(): IBaseExecution<void>;
 	createLink(type, scope, expirationDateTime, password, message, recipients, retainInheritedPermissions, sendNotification): IBaseExecution<permission>;
+	discardCheckout(): IBaseExecution<void>;
 	follow(): IBaseExecution<driveItem>;
 	invite(requireSignIn, roles, sendInvitation, message, recipients, retainInheritedPermissions, expirationDateTime, password): IBaseExecution<permission[]>;
 	preview(page, zoom): IBaseExecution<ComplexTypes.itemPreviewInfo>;
@@ -8109,9 +8136,12 @@ export interface fileStorageProps extends  entityProps {
 export interface fileStorageMethods extends entityMethods {
 	containers(): fileStorageContainerCollection;
 	containers(id: string | number): IBaseQuery<fileStorageContainer> & fileStorageContainerMethods;
+	deletedContainers(): fileStorageContainerCollection;
+	deletedContainers(id: string | number): IBaseQuery<fileStorageContainer> & fileStorageContainerMethods;
 }
 export interface fileStorageOData extends entityOData {
 	containers: IBaseResults<fileStorageContainer>;
+	deletedContainers: IBaseResults<fileStorageContainer>;
 }
 /*********************************************
 * fileStorageContainer
@@ -8123,6 +8153,7 @@ export interface fileStorageContainerProps extends  entityProps {
 	customProperties: ComplexTypes.fileStorageContainerCustomPropertyDictionary;
 	description: string;
 	displayName: string;
+	lockState: EnumTypes.siteLockState;
 	settings: ComplexTypes.fileStorageContainerSettings;
 	status: EnumTypes.fileStorageContainerStatus;
 	viewpoint: ComplexTypes.fileStorageContainerViewpoint;
@@ -8131,12 +8162,20 @@ export interface fileStorageContainerMethods extends entityMethods {
 	drive(): IBaseQuery<drive> & driveMethods;
 	permissions(): permissionCollection;
 	permissions(id: string | number): IBaseQuery<permission> & permissionMethods;
+	recycleBin(): IBaseQuery<recycleBin> & recycleBinMethods;
+	restore(): IBaseExecution<fileStorageContainer>;
+	lock(lockState): IBaseExecution<void>;
 	permanentDelete(): IBaseExecution<void>;
+	unlock(): IBaseExecution<void>;
 }
 export interface fileStorageContainerOData extends entityOData {
 	drive: drive;
 	permissions: IBaseResults<permission>;
+	recycleBin: recycleBin;
+	restore(): IBaseExecution<fileStorageContainer>;
+	lock(lockState): IBaseExecution<void>;
 	permanentDelete(): IBaseExecution<void>;
+	unlock(): IBaseExecution<void>;
 }
 export interface fileStorageContainerCollection extends IBaseCollection<fileStorageContainer, fileStorageContainerOData & fileStorageContainerProps> {
 add(values?: any): IBaseExecution<fileStorageContainer>;
@@ -8964,6 +9003,7 @@ export interface internalDomainFederationProps extends  samlOrWsFedProviderProps
 	federatedIdpMfaBehavior: EnumTypes.federatedIdpMfaBehavior;
 	isSignedAuthenticationRequestRequired: boolean;
 	nextSigningCertificate: string;
+	passwordResetUri: string;
 	promptLoginBehavior: EnumTypes.promptLoginBehavior;
 	signingCertificateUpdateStatus: ComplexTypes.signingCertificateUpdateStatus;
 	signOutUri: string;
@@ -10410,10 +10450,10 @@ export interface managedAppPolicyProps extends  entityProps {
 	version: string;
 }
 export interface managedAppPolicyMethods extends entityMethods {
-	targetApps(apps, appGroupType): IBaseExecution<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 export interface managedAppPolicyOData extends entityOData {
-	targetApps(apps, appGroupType): IBaseExecution<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 export interface managedAppPolicyCollection extends IBaseCollection<managedAppPolicy, managedAppPolicyOData & managedAppPolicyProps> {
 add(values?: any): IBaseExecution<managedAppPolicy>;
@@ -10469,10 +10509,10 @@ export interface managedAppProtectionProps extends  managedAppPolicyProps {
 	simplePinBlocked: boolean;
 }
 export interface managedAppProtectionMethods extends managedAppPolicyMethods {
-	targetApps(apps, appGroupType): IBaseExecution<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 export interface managedAppProtectionOData extends managedAppPolicyOData {
-	targetApps(apps, appGroupType): IBaseExecution<void>;
+	targetApps(apps): IBaseExecution<void>;
 }
 /*********************************************
 * managedAppRegistration
@@ -11953,6 +11993,7 @@ export interface onlineMeetingProps extends  onlineMeetingBaseProps {
 	endDateTime: any;
 	externalId: string;
 	isBroadcast: boolean;
+	meetingTemplateId: string;
 	participants: ComplexTypes.meetingParticipants;
 	startDateTime: any;
 }
@@ -11982,12 +12023,20 @@ export interface onlineMeetingBase extends onlineMeetingBaseProps, onlineMeeting
 export interface onlineMeetingBaseProps extends  entityProps {
 	allowAttendeeToEnableCamera: boolean;
 	allowAttendeeToEnableMic: boolean;
+	allowBreakoutRooms: boolean;
+	allowedLobbyAdmitters: EnumTypes.allowedLobbyAdmitterRoles;
 	allowedPresenters: EnumTypes.onlineMeetingPresenters;
+	allowLiveShare: EnumTypes.meetingLiveShareOptions;
 	allowMeetingChat: EnumTypes.meetingChatMode;
 	allowParticipantsToChangeName: boolean;
+	allowPowerPointSharing: boolean;
+	allowRecording: boolean;
 	allowTeamworkReactions: boolean;
+	allowTranscription: boolean;
+	allowWhiteboard: boolean;
 	audioConferencing: ComplexTypes.audioConferencing;
 	chatInfo: ComplexTypes.chatInfo;
+	chatRestrictions: ComplexTypes.chatRestrictions;
 	isEntryExitAnnounced: boolean;
 	joinInformation: ComplexTypes.itemBody;
 	joinMeetingIdSettings: ComplexTypes.joinMeetingIdSettings;
@@ -12012,6 +12061,7 @@ export interface onlineMeetingBaseOData extends entityOData {
 export interface openShift extends openShiftProps, openShiftMethods { }
 export interface openShiftProps extends  changeTrackedEntityProps {
 	draftOpenShift: ComplexTypes.openShiftItem;
+	isStagedForDeletion: boolean;
 	schedulingGroupId: string;
 	sharedOpenShift: ComplexTypes.openShiftItem;
 }
@@ -13799,6 +13849,38 @@ export interface recordOperationOData extends commsOperationOData {
 
 }
 /*********************************************
+* recycleBin
+**********************************************/
+export interface recycleBin extends recycleBinProps, recycleBinMethods { }
+export interface recycleBinProps extends  baseItemProps {
+	settings: ComplexTypes.recycleBinSettings;
+}
+export interface recycleBinMethods extends baseItemMethods {
+	items(): recycleBinItemCollection;
+	items(id: string | number): IBaseQuery<recycleBinItem> & recycleBinItemMethods;
+}
+export interface recycleBinOData extends baseItemOData {
+	items: IBaseResults<recycleBinItem>;
+}
+/*********************************************
+* recycleBinItem
+**********************************************/
+export interface recycleBinItem extends recycleBinItemProps, recycleBinItemMethods { }
+export interface recycleBinItemProps extends  baseItemProps {
+	deletedDateTime: any;
+	deletedFromLocation: string;
+	size: number;
+}
+export interface recycleBinItemMethods extends baseItemMethods {
+
+}
+export interface recycleBinItemOData extends baseItemOData {
+
+}
+export interface recycleBinItemCollection extends IBaseCollection<recycleBinItem, recycleBinItemOData & recycleBinItemProps> {
+add(values?: any): IBaseExecution<recycleBinItem>;
+}
+/*********************************************
 * referenceAttachment
 **********************************************/
 export interface referenceAttachment extends referenceAttachmentProps, referenceAttachmentMethods { }
@@ -14566,17 +14648,22 @@ export interface samlOrWsFedProviderOData extends identityProviderBaseOData {
 export interface schedule extends scheduleProps, scheduleMethods { }
 export interface scheduleProps extends  entityProps {
 	enabled: boolean;
+	isActivitiesIncludedWhenCopyingShiftsEnabled: boolean;
 	offerShiftRequestsEnabled: boolean;
 	openShiftsEnabled: boolean;
 	provisionStatus: EnumTypes.operationStatus;
 	provisionStatusCode: string;
+	startDayOfWeek: EnumTypes.dayOfWeek;
 	swapShiftsRequestsEnabled: boolean;
 	timeClockEnabled: boolean;
+	timeClockSettings: ComplexTypes.timeClockSettings;
 	timeOffRequestsEnabled: boolean;
 	timeZone: string;
 	workforceIntegrationIds: Array<string>;
 }
 export interface scheduleMethods extends entityMethods {
+	dayNotes(): dayNoteCollection;
+	dayNotes(id: string | number): IBaseQuery<dayNote> & dayNoteMethods;
 	offerShiftRequests(): offerShiftRequestCollection;
 	offerShiftRequests(id: string | number): IBaseQuery<offerShiftRequest> & offerShiftRequestMethods;
 	openShiftChangeRequests(): openShiftChangeRequestCollection;
@@ -14589,6 +14676,8 @@ export interface scheduleMethods extends entityMethods {
 	shifts(id: string | number): IBaseQuery<shift> & shiftMethods;
 	swapShiftsChangeRequests(): swapShiftsChangeRequestCollection;
 	swapShiftsChangeRequests(id: string | number): IBaseQuery<swapShiftsChangeRequest> & swapShiftsChangeRequestMethods;
+	timeCards(): timeCardCollection;
+	timeCards(id: string | number): IBaseQuery<timeCard> & timeCardMethods;
 	timeOffReasons(): timeOffReasonCollection;
 	timeOffReasons(id: string | number): IBaseQuery<timeOffReason> & timeOffReasonMethods;
 	timeOffRequests(): timeOffRequestCollection;
@@ -14598,12 +14687,14 @@ export interface scheduleMethods extends entityMethods {
 	share(notifyTeam, startDateTime, endDateTime): IBaseExecution<void>;
 }
 export interface scheduleOData extends entityOData {
+	dayNotes: IBaseResults<dayNote>;
 	offerShiftRequests: IBaseResults<offerShiftRequest>;
 	openShiftChangeRequests: IBaseResults<openShiftChangeRequest>;
 	openShifts: IBaseResults<openShift>;
 	schedulingGroups: IBaseResults<schedulingGroup>;
 	shifts: IBaseResults<shift>;
 	swapShiftsChangeRequests: IBaseResults<swapShiftsChangeRequest>;
+	timeCards: IBaseResults<timeCard>;
 	timeOffReasons: IBaseResults<timeOffReason>;
 	timeOffRequests: IBaseResults<timeOffRequest>;
 	timesOff: IBaseResults<timeOff>;
@@ -14636,6 +14727,7 @@ export interface scheduleChangeRequestOData extends changeTrackedEntityOData {
 **********************************************/
 export interface schedulingGroup extends schedulingGroupProps, schedulingGroupMethods { }
 export interface schedulingGroupProps extends  changeTrackedEntityProps {
+	code: string;
 	displayName: string;
 	isActive: boolean;
 	userIds: Array<string>;
@@ -15514,6 +15606,7 @@ export interface sharepointSettingsOData extends entityOData {
 export interface shift extends shiftProps, shiftMethods { }
 export interface shiftProps extends  changeTrackedEntityProps {
 	draftShift: ComplexTypes.shiftItem;
+	isStagedForDeletion: boolean;
 	schedulingGroupId: string;
 	sharedShift: ComplexTypes.shiftItem;
 	userId: string;
@@ -17209,11 +17302,41 @@ export interface thumbnailSetCollection extends IBaseCollection<thumbnailSet, th
 add(values?: any): IBaseExecution<thumbnailSet>;
 }
 /*********************************************
+* timeCard
+**********************************************/
+export interface timeCard extends timeCardProps, timeCardMethods { }
+export interface timeCardProps extends  changeTrackedEntityProps {
+	breaks: ComplexTypes.timeCardBreak[];
+	clockInEvent: ComplexTypes.timeCardEvent;
+	clockOutEvent: ComplexTypes.timeCardEvent;
+	confirmedBy: EnumTypes.confirmedBy;
+	notes: ComplexTypes.itemBody;
+	originalEntry: ComplexTypes.timeCardEntry;
+	state: EnumTypes.timeCardState;
+	userId: string;
+}
+export interface timeCardMethods extends changeTrackedEntityMethods {
+	clockOut(isAtApprovedLocation, notes): IBaseExecution<timeCard>;
+	confirm(): IBaseExecution<timeCard>;
+	endBreak(isAtApprovedLocation, notes): IBaseExecution<timeCard>;
+	startBreak(isAtApprovedLocation, notes): IBaseExecution<timeCard>;
+}
+export interface timeCardOData extends changeTrackedEntityOData {
+	clockOut(isAtApprovedLocation, notes): IBaseExecution<timeCard>;
+	confirm(): IBaseExecution<timeCard>;
+	endBreak(isAtApprovedLocation, notes): IBaseExecution<timeCard>;
+	startBreak(isAtApprovedLocation, notes): IBaseExecution<timeCard>;
+}
+export interface timeCardCollection extends IBaseCollection<timeCard, timeCardOData & timeCardProps> {
+add(values?: any): IBaseExecution<timeCard>;
+}
+/*********************************************
 * timeOff
 **********************************************/
 export interface timeOff extends timeOffProps, timeOffMethods { }
 export interface timeOffProps extends  changeTrackedEntityProps {
 	draftTimeOff: ComplexTypes.timeOffItem;
+	isStagedForDeletion: boolean;
 	sharedTimeOff: ComplexTypes.timeOffItem;
 	userId: string;
 }
@@ -17231,6 +17354,7 @@ add(values?: any): IBaseExecution<timeOff>;
 **********************************************/
 export interface timeOffReason extends timeOffReasonProps, timeOffReasonMethods { }
 export interface timeOffReasonProps extends  changeTrackedEntityProps {
+	code: string;
 	displayName: string;
 	iconType: EnumTypes.timeOffReasonIconType;
 	isActive: boolean;
@@ -19163,6 +19287,7 @@ export interface virtualEventProps extends  entityProps {
 	description: ComplexTypes.itemBody;
 	displayName: string;
 	endDateTime: ComplexTypes.dateTimeTimeZone;
+	externalEventInformation: ComplexTypes.virtualEventExternalInformation[];
 	settings: ComplexTypes.virtualEventSettings;
 	startDateTime: ComplexTypes.dateTimeTimeZone;
 	status: EnumTypes.virtualEventStatus;
@@ -19174,12 +19299,14 @@ export interface virtualEventMethods extends entityMethods {
 	sessions(id: string | number): IBaseQuery<virtualEventSession> & virtualEventSessionMethods;
 	cancel(): IBaseExecution<void>;
 	publish(): IBaseExecution<void>;
+	setExternalEventInformation(externalEventId): IBaseExecution<void>;
 }
 export interface virtualEventOData extends entityOData {
 	presenters: IBaseResults<virtualEventPresenter>;
 	sessions: IBaseResults<virtualEventSession>;
 	cancel(): IBaseExecution<void>;
 	publish(): IBaseExecution<void>;
+	setExternalEventInformation(externalEventId): IBaseExecution<void>;
 }
 export interface virtualEventCollection extends IBaseCollection<virtualEvent, virtualEventOData & virtualEventProps> {
 add(values?: any): IBaseExecution<virtualEvent>;
@@ -19209,6 +19336,7 @@ export interface virtualEventRegistration extends virtualEventRegistrationProps,
 export interface virtualEventRegistrationProps extends  entityProps {
 	cancelationDateTime: any;
 	email: string;
+	externalRegistrationInformation: ComplexTypes.virtualEventExternalRegistrationInformation;
 	firstName: string;
 	lastName: string;
 	preferredLanguage: string;
@@ -21526,6 +21654,7 @@ export interface workforceIntegration extends workforceIntegrationProps, workfor
 export interface workforceIntegrationProps extends  changeTrackedEntityProps {
 	apiVersion: number;
 	displayName: string;
+	eligibilityFilteringEnabledEntities: EnumTypes.eligibilityFilteringEnabledEntities;
 	encryption: ComplexTypes.workforceIntegrationEncryption;
 	isActive: boolean;
 	supportedEntities: EnumTypes.workforceIntegrationSupportedEntities;
@@ -21560,6 +21689,7 @@ export interface x509CertificateAuthenticationMethodConfiguration extends x509Ce
 export interface x509CertificateAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
 	authenticationModeConfiguration: ComplexTypes.x509CertificateAuthenticationModeConfiguration;
 	certificateUserBindings: ComplexTypes.x509CertificateUserBinding[];
+	crlValidationConfiguration: ComplexTypes.x509CertificateCRLValidationConfiguration;
 }
 export interface x509CertificateAuthenticationMethodConfigurationMethods extends authenticationMethodConfigurationMethods {
 	includeTargets(): authenticationMethodTargetCollection;

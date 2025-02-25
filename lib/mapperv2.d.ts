@@ -1225,11 +1225,12 @@ export interface IMapper {
 	changeTrackedEntity: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
-
+		stageForDeletion: IMapperMethod;
 	},
 	channel: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
+		allMembers: IMapperMethod;
 		filesFolder: IMapperMethod;
 		members: IMapperMethod;
 		messages: IMapperMethod;
@@ -1743,6 +1744,15 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 
+	},
+	dayNote: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] };
+
+	},
+	dayNotes: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
 	},
 	defaultManagedAppProtection: {
 		properties?: Array<string>;
@@ -2515,6 +2525,7 @@ export interface IMapper {
 		createLink: IMapperMethod & {
 			argNames: ["type", "scope", "expirationDateTime", "password", "message", "recipients", "retainInheritedPermissions", "sendNotification"]
 		};
+		discardCheckout: IMapperMethod;
 		follow: IMapperMethod;
 		invite: IMapperMethod & {
 			argNames: ["requireSignIn", "roles", "sendInvitation", "message", "recipients", "retainInheritedPermissions", "expirationDateTime", "password"]
@@ -3215,13 +3226,20 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 		containers: IMapperMethod;
+		deletedContainers: IMapperMethod;
 	},
 	fileStorageContainer: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 		drive: IMapperMethod;
 		permissions: IMapperMethod;
+		recycleBin: IMapperMethod;
+		restore: IMapperMethod;
+		lock: IMapperMethod & {
+			argNames: ["lockState"]
+		};
 		permanentDelete: IMapperMethod;
+		unlock: IMapperMethod;
 	},
 	fileStorageContainers: {
 		properties?: Array<string>;
@@ -4048,7 +4066,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 		targetApps: IMapperMethod & {
-			argNames: ["apps", "appGroupType"]
+			argNames: ["apps"]
 		};
 	},
 	managedAppPolicys: {
@@ -4064,7 +4082,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 		targetApps: IMapperMethod & {
-			argNames: ["apps", "appGroupType"]
+			argNames: ["apps"]
 		};
 	},
 	managedAppRegistration: {
@@ -5422,6 +5440,20 @@ export interface IMapper {
 		query: IMapperMethod & { argNames: ["oData"] };
 
 	},
+	recycleBin: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] };
+		items: IMapperMethod;
+	},
+	recycleBinItem: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] };
+
+	},
+	recycleBinItems: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	referenceAttachment: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
@@ -5813,12 +5845,14 @@ export interface IMapper {
 	schedule: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
+		dayNotes: IMapperMethod;
 		offerShiftRequests: IMapperMethod;
 		openShiftChangeRequests: IMapperMethod;
 		openShifts: IMapperMethod;
 		schedulingGroups: IMapperMethod;
 		shifts: IMapperMethod;
 		swapShiftsChangeRequests: IMapperMethod;
+		timeCards: IMapperMethod;
 		timeOffReasons: IMapperMethod;
 		timeOffRequests: IMapperMethod;
 		timesOff: IMapperMethod;
@@ -6841,6 +6875,24 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
 	},
+	timeCard: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] };
+		clockOut: IMapperMethod & {
+			argNames: ["isAtApprovedLocation", "notes"]
+		};
+		confirm: IMapperMethod;
+		endBreak: IMapperMethod & {
+			argNames: ["isAtApprovedLocation", "notes"]
+		};
+		startBreak: IMapperMethod & {
+			argNames: ["isAtApprovedLocation", "notes"]
+		};
+	},
+	timeCards: {
+		properties?: Array<string>;
+		query: IMapperMethod & { argNames: ["oData"] }
+	},
 	timeOff: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
@@ -7610,6 +7662,9 @@ export interface IMapper {
 		sessions: IMapperMethod;
 		cancel: IMapperMethod;
 		publish: IMapperMethod;
+		setExternalEventInformation: IMapperMethod & {
+			argNames: ["externalEventId"]
+		};
 	},
 	virtualEvents: {
 		properties?: Array<string>;

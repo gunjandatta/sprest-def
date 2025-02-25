@@ -291,6 +291,7 @@ export interface ConfigurationData {
 	BridgeAbsolutePath?: SP.ResourcePath;
 	IsCustomizedThemeEnabled?: boolean;
 	IsPersonalizationEnabled?: boolean;
+	IsVivaHomeFeedReplaceFlightEnabled?: boolean;
 	IsVivaHomeOptedOut?: boolean;
 	NavConfig?: SP.HomeSiteNavConfiguration;
 	SiteId?: any;
@@ -708,6 +709,24 @@ export interface AgreementMetaDataCollections {
 }
 
 /*********************************************
+* AgreementPermissionsData
+**********************************************/
+export interface AgreementPermissionsData {
+	CanCreateAgreement?: boolean;
+	CanCreateTemplate?: boolean;
+	CanImportAgreement?: boolean;
+	CanUploadSignedVersion?: boolean;
+	IsWorkspaceOwner?: boolean;
+}
+
+/*********************************************
+* AgreementPermissionsDataCollections
+**********************************************/
+export interface AgreementPermissionsDataCollections {
+
+}
+
+/*********************************************
 * AgreementReportBaseData
 **********************************************/
 export interface AgreementReportBaseData {
@@ -762,6 +781,89 @@ export interface AgreementSearchParameters {
 * AgreementSearchParametersCollections
 **********************************************/
 export interface AgreementSearchParametersCollections {
+
+}
+
+/*********************************************
+* AgreementsSolutionEnabledSitesResponse
+**********************************************/
+export interface AgreementsSolutionEnabledSitesResponse {
+	Sites?: { results: Array<SP.SPAgreementsSite> };
+	SkipToken?: string;
+}
+
+/*********************************************
+* AgreementsSolutionEnabledSitesResponseCollections
+**********************************************/
+export interface AgreementsSolutionEnabledSitesResponseCollections {
+
+}
+
+/*********************************************
+* SPAgreementsSite
+**********************************************/
+export interface SPAgreementsSite {
+	Description?: string;
+	GroupId?: string;
+	LastModifiedDateTime?: any;
+	ResourceVisualization?: SP.ResourceVisualization;
+	SharePointIds?: SP.SharePointIds;
+	Template?: SP.SiteTemplate;
+	Title?: string;
+	WebUrl?: string;
+}
+
+/*********************************************
+* SPAgreementsSiteCollections
+**********************************************/
+export interface SPAgreementsSiteCollections {
+
+}
+
+/*********************************************
+* ResourceVisualization
+**********************************************/
+export interface ResourceVisualization {
+	Acronym?: string;
+	Color?: string;
+	PreviewImageUrl?: string;
+}
+
+/*********************************************
+* ResourceVisualizationCollections
+**********************************************/
+export interface ResourceVisualizationCollections {
+
+}
+
+/*********************************************
+* SharePointIds
+**********************************************/
+export interface SharePointIds {
+	HubSiteId?: string;
+	SiteId?: string;
+	SiteUrl?: string;
+	WebId?: string;
+}
+
+/*********************************************
+* SharePointIdsCollections
+**********************************************/
+export interface SharePointIdsCollections {
+
+}
+
+/*********************************************
+* SiteTemplate
+**********************************************/
+export interface SiteTemplate {
+	Name?: string;
+}
+
+/*********************************************
+* SiteTemplateCollections
+**********************************************/
+export interface SiteTemplateCollections {
 
 }
 
@@ -1040,11 +1142,24 @@ export interface CreateAgreementFolderInfoCollections {
 }
 
 /*********************************************
+* CreateHVCSItemApprovalRequestParameters
+**********************************************/
+export interface CreateHVCSItemApprovalRequestParameters {
+	approvalConfig?: string;
+}
+
+/*********************************************
+* CreateHVCSItemApprovalRequestParametersCollections
+**********************************************/
+export interface CreateHVCSItemApprovalRequestParametersCollections {
+
+}
+
+/*********************************************
 * CreateReviewRequestDTO
 **********************************************/
 export interface CreateReviewRequestDTO {
 	DocumentUri?: string;
-	Reviewer?: string;
 }
 
 /*********************************************
@@ -1403,22 +1518,6 @@ export interface RequestedTranslationCollections {
 }
 
 /*********************************************
-* ResourceVisualization
-**********************************************/
-export interface ResourceVisualization {
-	Acronym?: string;
-	Color?: string;
-	PreviewImageUrl?: string;
-}
-
-/*********************************************
-* ResourceVisualizationCollections
-**********************************************/
-export interface ResourceVisualizationCollections {
-
-}
-
-/*********************************************
 * ReviewConfigurationPayload
 **********************************************/
 export interface ReviewConfigurationPayload {
@@ -1473,6 +1572,7 @@ export interface ReviewDeletionConfigurationResponseCollections {
 **********************************************/
 export interface ReviewWorkFlowResponseDTO {
 	Action?: string;
+	Comments?: string;
 	Status?: string;
 }
 
@@ -1523,23 +1623,6 @@ export interface SharedWithUser {
 * SharedWithUserCollections
 **********************************************/
 export interface SharedWithUserCollections {
-
-}
-
-/*********************************************
-* SharePointIds
-**********************************************/
-export interface SharePointIds {
-	HubSiteId?: string;
-	SiteId?: string;
-	SiteUrl?: string;
-	WebId?: string;
-}
-
-/*********************************************
-* SharePointIdsCollections
-**********************************************/
-export interface SharePointIdsCollections {
 
 }
 
@@ -1629,20 +1712,6 @@ export interface SharingLinkInfoCollections {
 }
 
 /*********************************************
-* SiteTemplate
-**********************************************/
-export interface SiteTemplate {
-	Name?: string;
-}
-
-/*********************************************
-* SiteTemplateCollections
-**********************************************/
-export interface SiteTemplateCollections {
-
-}
-
-/*********************************************
 * SmartTemplateContentType
 **********************************************/
 export interface SmartTemplateContentType {
@@ -1655,27 +1724,6 @@ export interface SmartTemplateContentType {
 * SmartTemplateContentTypeCollections
 **********************************************/
 export interface SmartTemplateContentTypeCollections {
-
-}
-
-/*********************************************
-* SPAgreementsSite
-**********************************************/
-export interface SPAgreementsSite {
-	Description?: string;
-	GroupId?: string;
-	LastModifiedDateTime?: any;
-	ResourceVisualization?: SP.ResourceVisualization;
-	SharePointIds?: SP.SharePointIds;
-	Template?: SP.SiteTemplate;
-	Title?: string;
-	WebUrl?: string;
-}
-
-/*********************************************
-* SPAgreementsSiteCollections
-**********************************************/
-export interface SPAgreementsSiteCollections {
 
 }
 
@@ -2549,10 +2597,10 @@ export interface ListCollectionPositionCollections {
 * GroupCreationInformation
 **********************************************/
 export interface GroupCreationInformation {
+	Description?: string;
 	AllowMembersEditMembership?: boolean;
 	AllowRequestToJoinLeave?: boolean;
 	AutoAcceptRequestToJoinLeave?: boolean;
-	Description?: string;
 	OnlyAllowMembersViewMembership?: boolean;
 	Title?: string;
 }
@@ -2706,6 +2754,21 @@ export interface ListDataValidationExceptionValue {
 * ListDataValidationExceptionValueCollections
 **********************************************/
 export interface ListDataValidationExceptionValueCollections {
+
+}
+
+/*********************************************
+* ListForm
+**********************************************/
+export interface ListForm {
+	Id?: string;
+	SchemaJSON?: string;
+}
+
+/*********************************************
+* ListFormCollections
+**********************************************/
+export interface ListFormCollections {
 
 }
 
@@ -2938,6 +3001,21 @@ export interface MediaServiceUpdateParameters {
 * MediaServiceUpdateParametersCollections
 **********************************************/
 export interface MediaServiceUpdateParametersCollections {
+
+}
+
+/*********************************************
+* MigrationJobProgress
+**********************************************/
+export interface MigrationJobProgress {
+	Logs?: { results: Array<string> };
+	NextToken?: string;
+}
+
+/*********************************************
+* MigrationJobProgressCollections
+**********************************************/
+export interface MigrationJobProgressCollections {
 
 }
 
@@ -3451,6 +3529,7 @@ export interface ViewCreationInformation {
 	baseViewId?: number;
 	CalendarViewStyles?: string;
 	ColumnWidth?: string;
+	CustomFormatter?: string;
 	Paged?: boolean;
 	PersonalView?: boolean;
 	Query?: string;
@@ -3784,6 +3863,7 @@ export interface UpdateAgreementESignConfigPayload {
 	AgreementUrl?: string;
 	DocumentId?: string;
 	eSignStatus?: string;
+	MoveStateToInESign?: boolean;
 	RequestorEmail?: string;
 	SignersEmail?: { results: Array<string> };
 }
@@ -3918,6 +3998,7 @@ export interface SiteThemesCollections {
 **********************************************/
 export interface ThemeData {
 	id?: number;
+	isThemesV2?: boolean;
 	isVisible?: boolean;
 	name?: string;
 	source?: number;

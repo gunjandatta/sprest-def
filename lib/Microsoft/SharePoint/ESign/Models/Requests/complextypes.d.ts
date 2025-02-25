@@ -71,6 +71,7 @@ export interface CreateAgreementModelV2 {
 	agreementId?: any;
 	agreementSource?: string;
 	documents?: string;
+	documentSource?: string;
 	expirationDateTime?: any;
 	formFieldSets?: string;
 	locale?: string;
@@ -123,6 +124,21 @@ export interface DeclineAgreementModel {
 * DeclineAgreementModelCollections
 **********************************************/
 export interface DeclineAgreementModelCollections {
+
+}
+
+/*********************************************
+* InitializeAgreementModel
+**********************************************/
+export interface InitializeAgreementModel {
+	agreementId?: any;
+	documents?: string;
+}
+
+/*********************************************
+* InitializeAgreementModelCollections
+**********************************************/
+export interface InitializeAgreementModelCollections {
 
 }
 

@@ -1960,13 +1960,19 @@ export const Mapper: IMapper = {
 
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
-
+		stageForDeletion: {
+			requestType: RequestType.PostWithArgsInBody,
+		},
 	},
 	channel: {
 		properties: [
-			"members|conversationMembers|/[Name]|conversationMember", "messages|chatMessages|/[Name]|chatMessage", "sharedWithTeams|sharedWithChannelTeamInfos|/[Name]|sharedWithChannelTeamInfo", "tabs|teamsTabs|/[Name]|teamsTab"
+			"allMembers|conversationMembers|/[Name]|conversationMember", "members|conversationMembers|/[Name]|conversationMember", "messages|chatMessages|/[Name]|chatMessage", "sharedWithTeams|sharedWithChannelTeamInfos|/[Name]|sharedWithChannelTeamInfo", "tabs|teamsTabs|/[Name]|teamsTab"
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+		allMembers: {
+			requestType: RequestType.Get,
+			returnType: "conversationMembers"
+		},
 		filesFolder: {
 			returnType: "driveItem"
 		},
@@ -2756,6 +2762,16 @@ export const Mapper: IMapper = {
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
+	},
+	dayNote: {
+		properties: [
+
+		],
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+	dayNotes: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
 	defaultManagedAppProtection: {
 		properties: [
@@ -4118,6 +4134,9 @@ export const Mapper: IMapper = {
 			requestType: RequestType.PostWithArgsInBody,
 			returnType: "EntityTypes.permission"
 		},
+		discardCheckout: {
+			requestType: RequestType.PostWithArgsInBody,
+		},
 		follow: {
 			requestType: RequestType.PostWithArgsInBody,
 			returnType: "EntityTypes.driveItem"
@@ -5315,10 +5334,14 @@ export const Mapper: IMapper = {
 	},
 	fileStorage: {
 		properties: [
-			"containers|fileStorageContainers|/[Name]|fileStorageContainer"
+			"containers|fileStorageContainers|/[Name]|fileStorageContainer", "deletedContainers|fileStorageContainers|/[Name]|fileStorageContainer"
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		containers: {
+			requestType: RequestType.Get,
+			returnType: "fileStorageContainers"
+		},
+		deletedContainers: {
 			requestType: RequestType.Get,
 			returnType: "fileStorageContainers"
 		},
@@ -5335,7 +5358,21 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "permissions"
 		},
+		recycleBin: {
+			returnType: "recycleBin"
+		},
+		restore: {
+			requestType: RequestType.PostWithArgsInBody,
+			returnType: "EntityTypes.fileStorageContainer"
+		},
+		lock: {
+			argNames: ["lockState"],
+			requestType: RequestType.PostWithArgsInBody,
+		},
 		permanentDelete: {
+			requestType: RequestType.PostWithArgsInBody,
+		},
+		unlock: {
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},
@@ -6623,7 +6660,7 @@ export const Mapper: IMapper = {
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetApps: {
-			argNames: ["apps", "appGroupType"],
+			argNames: ["apps"],
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},
@@ -6643,7 +6680,7 @@ export const Mapper: IMapper = {
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetApps: {
-			argNames: ["apps", "appGroupType"],
+			argNames: ["apps"],
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},
@@ -8823,6 +8860,26 @@ export const Mapper: IMapper = {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 
 	},
+	recycleBin: {
+		properties: [
+			"items|recycleBinItems|/[Name]|recycleBinItem"
+		],
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+		items: {
+			requestType: RequestType.Get,
+			returnType: "recycleBinItems"
+		},
+	},
+	recycleBinItem: {
+		properties: [
+
+		],
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+
+	},
+	recycleBinItems: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	referenceAttachment: {
 		properties: [
 
@@ -9456,9 +9513,13 @@ export const Mapper: IMapper = {
 	},
 	schedule: {
 		properties: [
-			"offerShiftRequests|offerShiftRequests|/[Name]|offerShiftRequest", "openShiftChangeRequests|openShiftChangeRequests|/[Name]|openShiftChangeRequest", "openShifts|openShifts|/[Name]|openShift", "schedulingGroups|schedulingGroups|/[Name]|schedulingGroup", "shifts|shifts|/[Name]|shift", "swapShiftsChangeRequests|swapShiftsChangeRequests|/[Name]|swapShiftsChangeRequest", "timeOffReasons|timeOffReasons|/[Name]|timeOffReason", "timeOffRequests|timeOffRequests|/[Name]|timeOffRequest", "timesOff|timeOffs|/[Name]|timeOff"
+			"dayNotes|dayNotes|/[Name]|dayNote", "offerShiftRequests|offerShiftRequests|/[Name]|offerShiftRequest", "openShiftChangeRequests|openShiftChangeRequests|/[Name]|openShiftChangeRequest", "openShifts|openShifts|/[Name]|openShift", "schedulingGroups|schedulingGroups|/[Name]|schedulingGroup", "shifts|shifts|/[Name]|shift", "swapShiftsChangeRequests|swapShiftsChangeRequests|/[Name]|swapShiftsChangeRequest", "timeCards|timeCards|/[Name]|timeCard", "timeOffReasons|timeOffReasons|/[Name]|timeOffReason", "timeOffRequests|timeOffRequests|/[Name]|timeOffRequest", "timesOff|timeOffs|/[Name]|timeOff"
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+		dayNotes: {
+			requestType: RequestType.Get,
+			returnType: "dayNotes"
+		},
 		offerShiftRequests: {
 			requestType: RequestType.Get,
 			returnType: "offerShiftRequests"
@@ -9482,6 +9543,10 @@ export const Mapper: IMapper = {
 		swapShiftsChangeRequests: {
 			requestType: RequestType.Get,
 			returnType: "swapShiftsChangeRequests"
+		},
+		timeCards: {
+			requestType: RequestType.Get,
+			returnType: "timeCards"
 		},
 		timeOffReasons: {
 			requestType: RequestType.Get,
@@ -11242,6 +11307,34 @@ export const Mapper: IMapper = {
 	thumbnailSets: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 	},
+	timeCard: {
+		properties: [
+
+		],
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+		clockOut: {
+			argNames: ["isAtApprovedLocation", "notes"],
+			requestType: RequestType.PostWithArgsInBody,
+			returnType: "EntityTypes.timeCard"
+		},
+		confirm: {
+			requestType: RequestType.PostWithArgsInBody,
+			returnType: "EntityTypes.timeCard"
+		},
+		endBreak: {
+			argNames: ["isAtApprovedLocation", "notes"],
+			requestType: RequestType.PostWithArgsInBody,
+			returnType: "EntityTypes.timeCard"
+		},
+		startBreak: {
+			argNames: ["isAtApprovedLocation", "notes"],
+			requestType: RequestType.PostWithArgsInBody,
+			returnType: "EntityTypes.timeCard"
+		},
+	},
+	timeCards: {
+		query: { argNames: ["oData"], requestType: RequestType.OData },
+	},
 	timeOff: {
 		properties: [
 
@@ -12497,6 +12590,10 @@ export const Mapper: IMapper = {
 			requestType: RequestType.PostWithArgsInBody,
 		},
 		publish: {
+			requestType: RequestType.PostWithArgsInBody,
+		},
+		setExternalEventInformation: {
+			argNames: ["externalEventId"],
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},

@@ -70,6 +70,10 @@ export interface IMapper {
 		argNames: [ "environmentName", "isTestEnvironment", "userId" ],
 		},
 
+		getAutofillColumnSettings: IMapperMethod & {
+		argNames: [ "docLibId" ],
+		},
+
 		getByContentTypeId: IMapperMethod & {
 		argNames: [ "contentTypeId" ],
 		},
@@ -114,6 +118,10 @@ export interface IMapper {
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		setAutofillColumnSettings: IMapperMethod & {
+		argNames: [ "docLibId", "autofillColumnSettings" ],
+		},
+
 		setColumnLLMInfo: IMapperMethod & {
 		argNames: [ "docLibId", "columnId", "autofillPrompt", "isEnabled" ],
 		},
@@ -127,6 +135,10 @@ export interface IMapper {
 		},
 
 		verifyModelUrls: IMapperMethod & {
+		argNames: [ "urls" ],
+		},
+
+		verifyModelUrlsAndGrantPAC: IMapperMethod & {
 		argNames: [ "urls" ],
 		},
 
@@ -997,6 +1009,10 @@ export interface IMapper {
 		argNames: [ "url" ],
 		},
 
+		getJobsCountByParentIdAndState: IMapperMethod & {
+		argNames: [ "parentId", "state" ],
+		},
+
 		getSiteRenameReport: IMapperMethod & {
 		argNames: [ "state" ],
 		},
@@ -1011,6 +1027,9 @@ export interface IMapper {
 		},
 
 		get: IMapperMethod & {
+		},
+
+		getV2: IMapperMethod & {
 		},
 
 		getWarningMessages: IMapperMethod & {
@@ -1176,6 +1195,10 @@ export interface IMapper {
 		argNames: [ "reportEntity", "workload", "reportType", "fileSensitivityLabelName", "fileSensitivityLabelGUID", "name", "template", "privacy", "siteSensitivityLabelGUID", "countOfUsersMoreThan" ],
 		},
 
+		createDataAccessGovernanceReportV2: IMapperMethod & {
+		argNames: [ "reportEntity", "workload", "reportType", "fileSensitivityLabelName", "fileSensitivityLabelGUID", "name", "template", "privacy", "siteSensitivityLabelGUID", "countOfUsersMoreThan", "userIDList" ],
+		},
+
 		exportSPODataAccessGovernanceInsight: IMapperMethod & {
 		argNames: [ "reportId" ],
 		},
@@ -1222,6 +1245,33 @@ export interface IMapper {
 
 		updateScriptSources: IMapperMethod & {
 		argNames: [ "added", "removed" ],
+		},
+
+	}
+
+	"Microsoft.Online.SharePoint.TenantAdministration.SPOCopilotAgentInsightsRestApiClient": {
+		properties?: Array<string>;
+		createCopilotAgentInsightsReport: IMapperMethod & {
+		argNames: [ "reportPeriod" ],
+		},
+
+		getAllCopilotAgentInsightsReportsMetadata: IMapperMethod & {
+		},
+
+		getCopilotAgentInsightsFullReportContent: IMapperMethod & {
+		argNames: [ "reportId", "reportSubType", "isFullDetails" ],
+		},
+
+		getCopilotAgentsOnSitesTopDetails: IMapperMethod & {
+		argNames: [ "reportId", "isFullDetails" ],
+		},
+
+		getSiteDistributionsTopDetails: IMapperMethod & {
+		argNames: [ "reportId", "isFullDetails" ],
+		},
+
+		getTopSitesDetails: IMapperMethod & {
+		argNames: [ "reportId", "isFullDetails" ],
 		},
 
 	}
@@ -1452,6 +1502,10 @@ export interface IMapper {
 		disableCollaborationInsightsDataCollection: IMapperMethod & {
 		},
 
+		downloadHighVolumeComponentImpactedAssetsReport: IMapperMethod & {
+		argNames: [ "category", "documentKey" ],
+		},
+
 		downloadRansomwareImpactedAssetsReport: IMapperMethod & {
 		argNames: [ "driveId", "fileName", "reportNameType" ],
 		},
@@ -1468,6 +1522,10 @@ export interface IMapper {
 		},
 
 		ensureBrandCenterFeature: IMapperMethod & {
+		},
+
+		executeTranspilerRequest: IMapperMethod & {
+		argNames: [ "payload" ],
 		},
 
 		exportAdminListToCSV: IMapperMethod & {
@@ -1488,6 +1546,10 @@ export interface IMapper {
 		getAdminListViews: IMapperMethod & {
 		},
 
+		getAllDeletedPersonalSitesPropertiesAllVersions: IMapperMethod & {
+		argNames: [ "startIndex" ],
+		},
+
 		getBillingPolicyIdForApp: IMapperMethod & {
 		argNames: [ "applicationId" ],
 		},
@@ -1502,6 +1564,35 @@ export interface IMapper {
 		},
 
 		getCollaborationInsightsOverview: IMapperMethod & {
+		},
+
+		getContentManagementAssessmentResults: IMapperMethod & {
+		},
+
+		getContentSecurityPolicy: IMapperMethod & {
+		},
+
+		getCopilotPromoOptInStatus: IMapperMethod & {
+		},
+
+		getDeletedPersonalSitePropertiesAllVersions: IMapperMethod & {
+		argNames: [ "url" ],
+		},
+
+		getDeletedSiteProperties: IMapperMethod & {
+		argNames: [ "startIndex" ],
+		},
+
+		getDeletedSitePropertiesByUrl: IMapperMethod & {
+		argNames: [ "siteUrl" ],
+		},
+
+		getDeletedSitePropertiesFromSharePoint: IMapperMethod & {
+		argNames: [ "startIndex" ],
+		},
+
+		getFileSensitivityLabelInfo: IMapperMethod & {
+		argNames: [ "fileUrl" ],
 		},
 
 		getFileVersionBatchDeleteJobProgress: IMapperMethod & {
@@ -1567,6 +1658,9 @@ export interface IMapper {
 		},
 
 		getRansomwareEventsOverview: IMapperMethod & {
+		},
+
+		getRootSiteUrl: IMapperMethod & {
 		},
 
 		getSPHSiteUrl: IMapperMethod & {
@@ -1641,6 +1735,7 @@ export interface IMapper {
 		},
 
 		getSharePointSettingData: IMapperMethod & {
+		argNames: [ "category" ],
 		},
 
 		getSharePointSiteSharingInsights: IMapperMethod & {
@@ -1651,6 +1746,14 @@ export interface IMapper {
 		argNames: [ "siteId" ],
 		},
 
+		getSiteAuthorizationCodeForMigration: IMapperMethod & {
+		argNames: [ "endpointUrl" ],
+		},
+
+		getSiteByUrl: IMapperMethod & {
+		argNames: [ "url" ],
+		},
+
 		getSiteCohortsSummary: IMapperMethod & {
 		argNames: [ "view" ],
 		},
@@ -1659,8 +1762,24 @@ export interface IMapper {
 		argNames: [ "sourceUrl" ],
 		},
 
+		getSiteProperties: IMapperMethod & {
+		argNames: [ "startIndex", "includeDetail" ],
+		},
+
+		getSitePropertiesByFilter: IMapperMethod & {
+		argNames: [ "filter", "startIndex", "includeDetail" ],
+		},
+
 		getSitePropertiesByUrl: IMapperMethod & {
 		argNames: [ "url", "includeDetail" ],
+		},
+
+		getSitePropertiesFromSharePoint: IMapperMethod & {
+		argNames: [ "startIndex", "includeDetail" ],
+		},
+
+		getSitePropertiesFromSharePointByFilter: IMapperMethod & {
+		argNames: [ "filter", "startIndex", "includeDetail" ],
 		},
 
 		getSitePropertiesFromSharePointByFilters: IMapperMethod & {
@@ -1707,10 +1826,6 @@ export interface IMapper {
 		getTenantSiteCreationSource: IMapperMethod & {
 		},
 
-		getTopFilesSharingInsights: IMapperMethod & {
-		argNames: [ "queryMode" ],
-		},
-
 		getTrackViewFeatureAlwaysVisible: IMapperMethod & {
 		},
 
@@ -1730,6 +1845,9 @@ export interface IMapper {
 		},
 
 		hasValidEducationLicense: IMapperMethod & {
+		},
+
+		isRequestContentManagementAssessmentEligible: IMapperMethod & {
 		},
 
 		isSyntexRepositoryTermsOfServiceAccepted: IMapperMethod & {
@@ -1914,6 +2032,9 @@ export interface IMapper {
 		argNames: [ "siteIds" ],
 		},
 
+		requestContentManagementAssessment: IMapperMethod & {
+		},
+
 		restoreContainer: IMapperMethod & {
 		argNames: [ "containerId" ],
 		},
@@ -1944,6 +2065,10 @@ export interface IMapper {
 
 		sendEmail: IMapperMethod & {
 		argNames: [ "siteUrl", "activityEventJson" ],
+		},
+
+		setCopilotPromoOptInStatus: IMapperMethod & {
+		argNames: [ "copilotPromoOptInEnabled" ],
 		},
 
 		setDefaultView: IMapperMethod & {
@@ -2051,6 +2176,10 @@ export interface IMapper {
 
 		unarchiveSiteById: IMapperMethod & {
 		argNames: [ "siteId" ],
+		},
+
+		unlockSensitivityLabelEncryptedFile: IMapperMethod & {
+		argNames: [ "fileUrl", "justificationText" ],
 		},
 
 		unregisterHubSite: IMapperMethod & {
@@ -2428,8 +2557,15 @@ export interface IMapper {
 		argNames: [ "lockRequestor" ],
 		},
 
+		removeSiteMapEntry: IMapperMethod & {
+		},
+
 		resumeCrawling: IMapperMethod & {
 		argNames: [ "originalCPSDeleteReason" ],
+		},
+
+		setSiteMoveState: IMapperMethod & {
+		argNames: [ "state" ],
 		},
 
 		sourceCleanupAfterMove: IMapperMethod & {
@@ -4741,6 +4877,10 @@ export interface IMapper {
 		argNames: [ "themeId" ],
 		},
 
+		deleteTenantTheme: IMapperMethod & {
+		argNames: [ "themeId" ],
+		},
+
 		ensureBrandColorsListFeature: IMapperMethod & {
 		},
 
@@ -4749,6 +4889,10 @@ export interface IMapper {
 
 		getFontStream: IMapperMethod & {
 		argNames: [ "fontFileUrl" ],
+		},
+
+		getSiteThemeById: IMapperMethod & {
+		argNames: [ "id" ],
 		},
 
 		getSiteThemes: IMapperMethod & {
@@ -5270,6 +5414,9 @@ export interface IMapper {
 		configuration: IMapperMethod & {
 		},
 
+		configuredVivaConnectionsURL: IMapperMethod & {
+		},
+
 		dashboardContent: IMapperMethod & {
 		argNames: [ "overrideLanguageCode" ],
 		},
@@ -5288,10 +5435,18 @@ export interface IMapper {
 		getTargetedSitesAsEditor: IMapperMethod & {
 		},
 
+		likeNewsPost: IMapperMethod & {
+		argNames: [ "pageUrl", "listId", "listItemUniqueId" ],
+		},
+
 		query: IMapperMethod & { argNames: ["oData"] },
 
 		setDashboardPersonalization: IMapperMethod & {
 		argNames: [ "isEnabled" ],
+		},
+
+		unlikeNewsPost: IMapperMethod & {
+		argNames: [ "pageUrl", "listId", "listItemUniqueId" ],
 		},
 
 		vivaConnections: IMapperMethod & {
@@ -5318,7 +5473,7 @@ export interface IMapper {
 		},
 
 		saveDashboard: IMapperMethod & {
-		argNames: [ "employeeExperienceDashboardData", "mySiteUrl" ],
+		argNames: [ "employeeExperienceDashboardData", "userCards", "mySiteUrl" ],
 		},
 
 		setAnnouncementState: IMapperMethod & {
@@ -6521,6 +6676,10 @@ export interface IMapper {
 		argNames: [ "createItemRequestPayload" ],
 		},
 
+		createListForm: IMapperMethod & {
+		argNames: [ "parameters" ],
+		},
+
 		createMappedView: IMapperMethod & {
 		argNames: [ "appViewCreationInfo", "visualizationTarget" ],
 		},
@@ -6555,6 +6714,7 @@ export interface IMapper {
 		},
 
 		getAllRules: IMapperMethod & {
+		argNames: [ "includeQuicksteps", "includeAutomaticRules" ],
 		},
 
 		getAsyncActionConfig: IMapperMethod & {
@@ -6619,6 +6779,10 @@ export interface IMapper {
 
 		getItemsByQuery: IMapperMethod & {
 		argNames: [ "camlQuery" ],
+		},
+
+		getListForms: IMapperMethod & {
+		argNames: [ "bSanitize" ],
 		},
 
 		getListItemChangesSinceToken: IMapperMethod & {
@@ -6873,10 +7037,6 @@ export interface IMapper {
 		archive: IMapperMethod & {
 		},
 
-		attachImage: IMapperMethod & {
-		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
-		},
-
 		breakRoleInheritance: IMapperMethod & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -6897,6 +7057,10 @@ export interface IMapper {
 
 		getUserEffectivePermissions: IMapperMethod & {
 		argNames: [ "userName" ],
+		},
+
+		getVersionById: IMapperMethod & {
+		argNames: [ "versionId" ],
 		},
 
 		getVersions: IMapperMethod & {
@@ -7395,6 +7559,9 @@ export interface IMapper {
 
 	"SP.Publishing.CampaignPublication": {
 		properties?: Array<string>;
+		amplify: IMapperMethod & {
+		},
+
 		approveApprovalRequest: IMapperMethod & {
 		argNames: [ "comment" ],
 		},
@@ -7450,6 +7617,7 @@ export interface IMapper {
 		},
 
 		extendSessionCoAuth: IMapperMethod & {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: IMapperMethod & {
@@ -7480,6 +7648,9 @@ export interface IMapper {
 		argNames: [ "pageMoveParams" ],
 		},
 
+		prepare: IMapperMethod & {
+		},
+
 		promoteToNews: IMapperMethod & {
 		},
 
@@ -7487,7 +7658,7 @@ export interface IMapper {
 		},
 
 		publishAsBot: IMapperMethod & {
-		argNames: [ "tenantId", "channelIds", "message" ],
+		argNames: [ "tenantId", "channelIds", "content", "title", "headline" ],
 		},
 
 		publishCoAuth: IMapperMethod & {
@@ -7503,6 +7674,10 @@ export interface IMapper {
 
 		resetEndpoint: IMapperMethod & {
 		argNames: [ "requestParam" ],
+		},
+
+		restoreByLabel: IMapperMethod & {
+		argNames: [ "versionlabel" ],
 		},
 
 		sPSiteValidator: IMapperMethod & {
@@ -7540,7 +7715,7 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublication: IMapperMethod & {
@@ -7617,6 +7792,10 @@ export interface IMapper {
 
 	"SP.Publishing.FeedVideoPage": {
 		properties?: Array<string>;
+		amplify: IMapperMethod & {
+		argNames: [ "request" ],
+		},
+
 		boostNews: IMapperMethod & {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -7652,6 +7831,7 @@ export interface IMapper {
 		},
 
 		extendSessionCoAuth: IMapperMethod & {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: IMapperMethod & {
@@ -7682,6 +7862,10 @@ export interface IMapper {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: IMapperMethod & {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
@@ -7709,11 +7893,19 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: IMapperMethod & {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: IMapperMethod & {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
@@ -7911,6 +8103,10 @@ export interface IMapper {
 
 	"SP.Publishing.RepostPage": {
 		properties?: Array<string>;
+		amplify: IMapperMethod & {
+		argNames: [ "request" ],
+		},
+
 		boostNews: IMapperMethod & {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -7946,6 +8142,7 @@ export interface IMapper {
 		},
 
 		extendSessionCoAuth: IMapperMethod & {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: IMapperMethod & {
@@ -7976,6 +8173,10 @@ export interface IMapper {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: IMapperMethod & {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
@@ -8003,11 +8204,19 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: IMapperMethod & {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: IMapperMethod & {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
@@ -8044,7 +8253,7 @@ export interface IMapper {
 	"SP.Publishing.RichSharing": {
 		properties?: Array<string>;
 		sharePageByEmail: IMapperMethod & {
-		argNames: [ "url", "message", "recipientEmails", "pageContent", "subject", "ccEmails", "bccEmails" ],
+		argNames: [ "url", "message", "recipientEmails", "pageContent", "subject", "ccEmails", "bccEmails", "pageItemId", "scenarioTag", "emailSize" ],
 		},
 
 		shareSiteByEmail: IMapperMethod & {
@@ -8087,6 +8296,10 @@ export interface IMapper {
 
 	"SP.Publishing.SitePage": {
 		properties?: Array<string>;
+		amplify: IMapperMethod & {
+		argNames: [ "request" ],
+		},
+
 		boostNews: IMapperMethod & {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -8122,6 +8335,7 @@ export interface IMapper {
 		},
 
 		extendSessionCoAuth: IMapperMethod & {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: IMapperMethod & {
@@ -8154,6 +8368,10 @@ export interface IMapper {
 
 		query: IMapperMethod & { argNames: ["oData"] },
 
+		restoreByLabel: IMapperMethod & {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
@@ -8181,11 +8399,19 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: IMapperMethod & {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: IMapperMethod & {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
@@ -8285,6 +8511,10 @@ export interface IMapper {
 
 	"SP.Publishing.SitePage3D": {
 		properties?: Array<string>;
+		amplify: IMapperMethod & {
+		argNames: [ "request" ],
+		},
+
 		boostNews: IMapperMethod & {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -8320,6 +8550,7 @@ export interface IMapper {
 		},
 
 		extendSessionCoAuth: IMapperMethod & {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: IMapperMethod & {
@@ -8350,6 +8581,10 @@ export interface IMapper {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: IMapperMethod & {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
@@ -8377,11 +8612,19 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: IMapperMethod & {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: IMapperMethod & {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
@@ -8448,6 +8691,10 @@ export interface IMapper {
 		},
 
 		enableCategories: IMapperMethod & {
+		},
+
+		getOrCreateAssetFolder: IMapperMethod & {
+		argNames: [ "pageName", "createFolderIfNeeded", "subFolderName", "pageId" ],
 		},
 
 		pagesInLib: IMapperMethod & {
@@ -8529,6 +8776,10 @@ export interface IMapper {
 
 	"SP.Publishing.TopicSitePage": {
 		properties?: Array<string>;
+		amplify: IMapperMethod & {
+		argNames: [ "request" ],
+		},
+
 		boostNews: IMapperMethod & {
 		argNames: [ "SitePageBoost" ],
 		},
@@ -8564,6 +8815,7 @@ export interface IMapper {
 		},
 
 		extendSessionCoAuth: IMapperMethod & {
+		argNames: [ "authoringMetadata" ],
 		},
 
 		getDependencyMetadata: IMapperMethod & {
@@ -8594,6 +8846,10 @@ export interface IMapper {
 		argNames: [ "pageStream" ],
 		},
 
+		restoreByLabel: IMapperMethod & {
+		argNames: [ "versionlabel" ],
+		},
+
 		saveDraft: IMapperMethod & {
 		argNames: [ "sitePage" ],
 		},
@@ -8621,11 +8877,19 @@ export interface IMapper {
 		},
 
 		saveStreams: IMapperMethod & {
-		argNames: [ "contentStream", "sharedLockId" ],
+		argNames: [ "contentStream", "sharedLockId", "scenario" ],
 		},
 
 		schedulePublish: IMapperMethod & {
 		argNames: [ "sitePage" ],
+		},
+
+		sendTestEmail: IMapperMethod & {
+		argNames: [ "transpileContent", "subject", "sensitivityLabelId" ],
+		},
+
+		sendTestTeamsMessage: IMapperMethod & {
+		argNames: [ "audienceId", "transpileContent" ],
 		},
 
 		sharePagePreviewByEmail: IMapperMethod & {
@@ -9156,6 +9420,10 @@ export interface IMapper {
 		},
 
 		getHubSiteJoinApprovalCorrelationId: IMapperMethod & {
+		},
+
+		getMigrationJobProgress: IMapperMethod & {
+		argNames: [ "jobId", "nextToken" ],
 		},
 
 		getMigrationJobStatus: IMapperMethod & {
@@ -9973,10 +10241,6 @@ export interface IMapper {
 		},
 
 		dispose: IMapperMethod & {
-		},
-
-		loadUserProfile: IMapperMethod & {
-		argNames: [ "email" ],
 		},
 
 		readCache: IMapperMethod & {
@@ -11156,10 +11420,6 @@ export interface IMapper {
 		archive: IMapperMethod & {
 		},
 
-		attachImage: IMapperMethod & {
-		argNames: [ "imageStream", "imageName", "fieldInternalName" ],
-		},
-
 		breakRoleInheritance: IMapperMethod & {
 		argNames: [ "copyRoleAssignments", "clearSubscopes" ],
 		},
@@ -11180,6 +11440,10 @@ export interface IMapper {
 
 		getUserEffectivePermissions: IMapperMethod & {
 		argNames: [ "userName" ],
+		},
+
+		getVersionById: IMapperMethod & {
+		argNames: [ "versionId" ],
 		},
 
 		getVersions: IMapperMethod & {

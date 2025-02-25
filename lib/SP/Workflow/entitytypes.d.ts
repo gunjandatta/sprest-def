@@ -232,12 +232,12 @@ export interface SPWorkflowTaskMethods {
 	resetRoleInheritance(): Base.IBaseExecution<any>;
 	addThumbnailFieldData(imageStream?: any, imageName?: string, fieldInternalName?: string, lockId?: string): Base.IBaseExecution<SP.SPImageItem>;
 	archive(): Base.IBaseExecution<any>;
-	attachImage(imageStream?: any, imageName?: string, fieldInternalName?: string): Base.IBaseExecution<SP.SPImageItem>;
 	delete(): Base.IBaseExecution<any>;
 	deleteWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getComments(): Base.IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
+	getVersionById(versionId?: number): Base.IBaseQuery<SP.ListItemVersion, SP.ListItemVersionOData> & SP.ListItemVersionCollections & SP.ListItemVersionMethods;
 	getVersions(getVersionsParams?: SP.GetListItemVersionsParameters): Base.IBaseCollection<SP.ListItemVersion, SP.ListItemVersionOData, Base.IBaseExecution & SP.ListItemVersionCollectionMethods> & Base.IBaseExecution & SP.ListItemVersionCollectionMethods;
 	getWOPIFrameUrl(action?: number): Base.IBaseExecution<string>;
 	mediaServiceUpdate(parameters?: SP.MediaServiceUpdateParameters): Base.IBaseExecution<any>;

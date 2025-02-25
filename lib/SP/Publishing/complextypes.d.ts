@@ -20,6 +20,36 @@ export interface AcronymInformationCollections {
 }
 
 /*********************************************
+* AmplifyRequestEndpoint
+**********************************************/
+export interface AmplifyRequestEndpoint {
+	Data?: string;
+	EndpointType?: number;
+}
+
+/*********************************************
+* AmplifyRequestEndpointCollections
+**********************************************/
+export interface AmplifyRequestEndpointCollections {
+
+}
+
+/*********************************************
+* AmplifyRequestParams
+**********************************************/
+export interface AmplifyRequestParams {
+	Endpoints?: { results: Array<SP.Publishing.AmplifyRequestEndpoint> };
+	UseNewPublishingStack?: boolean;
+}
+
+/*********************************************
+* AmplifyRequestParamsCollections
+**********************************************/
+export interface AmplifyRequestParamsCollections {
+
+}
+
+/*********************************************
 * AnnouncementAuthor
 **********************************************/
 export interface AnnouncementAuthor {
@@ -91,7 +121,11 @@ export interface IconCollections {
 * SitePageAuthoringMetadata
 **********************************************/
 export interface SitePageAuthoringMetadata {
+	ClientOperation?: number;
 	FluidContainerCustomId?: any;
+	IsSingleUserSession?: boolean;
+	RestoredFrom?: string;
+	RestoreTo?: string;
 	SequenceId?: number;
 	SessionId?: any;
 }
@@ -692,12 +726,29 @@ export interface PrePublishValidationsErrorCodesForVivaEngage {
 	DestinationName?: string;
 	DestinationType?: number;
 	ErrorCodes?: { results: Array<number> };
+	NumberOfImageAttachments?: number;
+	VivaEngageDestinationV2?: SP.Publishing.VivaEngageDestinationV2;
 }
 
 /*********************************************
 * PrePublishValidationsErrorCodesForVivaEngageCollections
 **********************************************/
 export interface PrePublishValidationsErrorCodesForVivaEngageCollections {
+
+}
+
+/*********************************************
+* VivaEngageDestinationV2
+**********************************************/
+export interface VivaEngageDestinationV2 {
+	DestinationName?: string;
+	DestinationType?: number;
+}
+
+/*********************************************
+* VivaEngageDestinationV2Collections
+**********************************************/
+export interface VivaEngageDestinationV2Collections {
 
 }
 
@@ -710,6 +761,7 @@ export interface PrePublishValidationsResponse {
 	PrePublishValidationsErrorCodesForSharePointSites?: { results: Array<SP.Publishing.PrePublishValidationsErrorCodesForSharePointSite> };
 	PrePublishValidationsErrorCodesForTeams?: { results: Array<SP.Publishing.PrePublishValidationsErrorCodesForTeams> };
 	PrePublishValidationsErrorCodesForVivaEngage?: SP.Publishing.PrePublishValidationsErrorCodesForVivaEngage;
+	PrePublishValidationsErrorCodesForVivaEngageV2?: { results: Array<SP.Publishing.PrePublishValidationsErrorCodesForVivaEngage> };
 }
 
 /*********************************************
@@ -883,6 +935,7 @@ export interface PublishingStatusResponse {
 	SharePointPublishingStatus?: { results: Array<SP.Publishing.SharePointPublishingStatusResponse> };
 	TeamsPublishingStatus?: { results: Array<SP.Publishing.TeamsPublishingStatusResponse> };
 	VivaEngagePublishingStatus?: SP.Publishing.VivaEngagePublishingStatus;
+	VivaEngageV2PublishingStatus?: { results: Array<SP.Publishing.VivaEngagePublishingStatus> };
 	YammerPublishingStatus?: { results: Array<SP.KeyValue> };
 }
 
@@ -899,6 +952,7 @@ export interface PublishingStatusResponseCollections {
 export interface SharePointPublishingStatusResponse {
 	SiteId?: string;
 	Status?: SP.Publishing.SharePointPublishingStatus;
+	WebId?: string;
 }
 
 /*********************************************

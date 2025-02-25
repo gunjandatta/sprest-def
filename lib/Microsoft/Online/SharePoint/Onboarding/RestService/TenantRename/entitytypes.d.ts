@@ -44,6 +44,7 @@ export interface TenantRenameJob {
 	SuspendedSitesCount?: number;
 	TotalSitesCount?: number;
 	TriggeredBy?: string;
+	UseGetSpoTenantRenameStatusV2?: boolean;
 }
 
 /*********************************************
@@ -59,5 +60,6 @@ export interface TenantRenameJobCollections extends TenantRenameJobCollectionMet
 export interface TenantRenameJobCollectionMethods {
 	cancel(): Base.IBaseExecution<any>;
 	get(): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
+	getV2(): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.TenantRename.TenantRenameJob>;
 	getWarningMessages(): Base.IBaseExecution<Array<string>>;
 }

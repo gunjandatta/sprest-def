@@ -448,6 +448,7 @@ export interface SettingDataProperty {
 	AvailableInGraph?: boolean;
 	AvailableInPowerShell?: boolean;
 	AvailableInSharePointAdminCenter?: boolean;
+	Category?: number;
 	Description?: string;
 	SettingName?: string;
 	SettingValue?: string;
@@ -956,7 +957,9 @@ export interface SPDataGovernanceInsightMetadataCollections {
 **********************************************/
 export interface SPDataGovernanceInsightResponse {
 	CountOfSitesInReport?: number;
+	CountOfSitesInReportUserPermissions?: number;
 	CountOfSitesInTenant?: number;
+	CountOfSitesInTenantUserPermissions?: number;
 	CreatedDateTime?: string;
 	EEEUType?: string;
 	LabelId?: any;
@@ -970,6 +973,7 @@ export interface SPDataGovernanceInsightResponse {
 	ReportId?: any;
 	ReportNameEEEU?: string;
 	ReportNameSitePermissions?: string;
+	ReportNameUserPermissions?: string;
 	ReportStartTimeEEEU?: string;
 	ReportStartTimeSharingLink?: string;
 	ReportType?: string;
@@ -982,6 +986,7 @@ export interface SPDataGovernanceInsightResponse {
 	TemplatesEEEU?: { results: Array<string> };
 	TemplatesSitePermissions?: { results: Array<string> };
 	TriggeredDateTime?: string;
+	UserID?: any;
 	UserLimit?: number;
 	Version?: string;
 	Workload?: string;
@@ -1120,6 +1125,83 @@ export interface SPOContentSecurityPolicyEntry {
 * SPOContentSecurityPolicyEntryCollections
 **********************************************/
 export interface SPOContentSecurityPolicyEntryCollections {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsCopilotAgentsOnSitesDetails
+**********************************************/
+export interface SPOCopilotAgentInsightsCopilotAgentsOnSitesDetails {
+	CopilotName?: string;
+	ExternalSharing?: string;
+	RestrictSiteAccessEnabled?: string;
+	RestrictSiteDiscoveryEnabled?: string;
+	Sensitivity?: string;
+	SiteName?: string;
+	SiteOwner?: string;
+	Template?: string;
+	URL?: string;
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsCopilotAgentsOnSitesDetailsCollections
+**********************************************/
+export interface SPOCopilotAgentInsightsCopilotAgentsOnSitesDetailsCollections {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsReportMetadata
+**********************************************/
+export interface SPOCopilotAgentInsightsReportMetadata {
+	CreatedDateTimeInUtc?: string;
+	Id?: any;
+	ReportPeriodInDays?: number;
+	Status?: number;
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsReportMetadataCollections
+**********************************************/
+export interface SPOCopilotAgentInsightsReportMetadataCollections {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsSiteDistribution
+**********************************************/
+export interface SPOCopilotAgentInsightsSiteDistribution {
+	CopilotAgents?: number;
+	Sites?: number;
+	Template?: string;
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsSiteDistributionCollections
+**********************************************/
+export interface SPOCopilotAgentInsightsSiteDistributionCollections {
+
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsTopSitesDetails
+**********************************************/
+export interface SPOCopilotAgentInsightsTopSitesDetails {
+	CopilotAgents?: number;
+	ExternalSharing?: string;
+	RestrictSiteAccessEnabled?: string;
+	RestrictSiteDiscoveryEnabled?: string;
+	Sensitivity?: string;
+	SiteName?: string;
+	SiteOwner?: string;
+	Template?: string;
+	URL?: string;
+}
+
+/*********************************************
+* SPOCopilotAgentInsightsTopSitesDetailsCollections
+**********************************************/
+export interface SPOCopilotAgentInsightsTopSitesDetailsCollections {
 
 }
 

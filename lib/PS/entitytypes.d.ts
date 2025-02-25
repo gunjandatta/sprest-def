@@ -81,6 +81,7 @@ export interface AssignmentProps {
 	StartVarianceMilliseconds?: number;
 	StartVarianceTimeSpan?: any;
 	Stop?: any;
+	TimephasedAssignmentModCounter?: number;
 	WorkContourType?: number;
 	WorkVariance?: string;
 	WorkVarianceMilliseconds?: number;

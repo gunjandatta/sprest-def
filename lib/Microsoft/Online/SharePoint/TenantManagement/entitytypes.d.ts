@@ -253,7 +253,6 @@ export interface Office365TenantProps {
 	EnableGuestSignInAcceleration?: boolean;
 	EnablePromotedFileHandlers?: boolean;
 	EnableRestrictedAccessControl?: boolean;
-	EnableVersionExpirationSetting?: boolean;
 	ESignatureAppList?: { results: Array<string> };
 	ESignatureEnabled?: boolean;
 	ESignatureSiteInfoList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SiteInfoForSitePicker> };

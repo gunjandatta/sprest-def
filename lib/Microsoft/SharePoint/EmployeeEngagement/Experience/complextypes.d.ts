@@ -9,7 +9,6 @@ export interface DashboardContent {
 	DashboardFormFactor?: string;
 	DashboardId?: string;
 	LastModifiedDate?: any;
-	UserACECards?: string;
 }
 
 /*********************************************
@@ -63,5 +62,20 @@ export interface AnnouncementState {
 * AnnouncementStateCollections
 **********************************************/
 export interface AnnouncementStateCollections {
+
+}
+
+/*********************************************
+* DashboardPersonalizationData
+**********************************************/
+export interface DashboardPersonalizationData {
+	PersonalizedOrder?: Microsoft.SharePoint.EmployeeEngagement.Experience.DashboardContent;
+	UserCards?: string;
+}
+
+/*********************************************
+* DashboardPersonalizationDataCollections
+**********************************************/
+export interface DashboardPersonalizationDataCollections {
 
 }

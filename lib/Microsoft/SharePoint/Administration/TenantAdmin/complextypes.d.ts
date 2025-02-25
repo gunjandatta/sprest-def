@@ -250,6 +250,62 @@ export interface CollaborationInsightsOverviewCollections {
 }
 
 /*********************************************
+* ContentManagementAssessmentPolicyReportDetails
+**********************************************/
+export interface ContentManagementAssessmentPolicyReportDetails {
+
+}
+
+/*********************************************
+* ContentManagementAssessmentPolicyReportDetailsCollections
+**********************************************/
+export interface ContentManagementAssessmentPolicyReportDetailsCollections {
+
+}
+
+/*********************************************
+* ContentManagementAssessmentResults
+**********************************************/
+export interface ContentManagementAssessmentResults {
+	requestedTime?: any;
+	siteLifecycleManagementPolicyExecutionId?: number;
+	siteLifecycleManagementPolicyId?: any;
+	siteLifecycleManagementPolicySyncState?: number;
+	siteLifecycleManagementPolicyReportDetails?: Microsoft.SharePoint.Administration.TenantAdmin.ContentManagementAssessmentPolicyReportDetails;
+	sitePermissionsReportDefinitionId?: string;
+	sitePermissionsReportDetails?: Microsoft.SharePoint.Administration.TenantAdmin.SitePermissionsReportDetails;
+	sitePermissionsReportId?: string;
+	sitePermissionsReportQueuedTime?: any;
+	sitePermissionsReportSyncState?: number;
+	timerJobLatestExecutionTime?: any;
+	totalCountOfSitesInTenant?: string;
+}
+
+/*********************************************
+* ContentManagementAssessmentResultsCollections
+**********************************************/
+export interface ContentManagementAssessmentResultsCollections {
+
+}
+
+/*********************************************
+* SitePermissionsReportDetails
+**********************************************/
+export interface SitePermissionsReportDetails {
+	anyoneLinksSiteCount?: number;
+	externallySharedSiteCount?: number;
+	oversharedSiteCount?: number;
+	uniqueSiteCount?: number;
+}
+
+/*********************************************
+* SitePermissionsReportDetailsCollections
+**********************************************/
+export interface SitePermissionsReportDetailsCollections {
+
+}
+
+/*********************************************
 * GroupSitesActivityDetail
 **********************************************/
 export interface GroupSitesActivityDetail {

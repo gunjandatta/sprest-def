@@ -3810,6 +3810,7 @@ export interface SitePagesItemProps {
 	OData__SPHiddenHighlightsMetadata?: string;
 	OData__SPHideListEditorMetadataId?: number;
 	_SPHideListEditorMetadataStringId?: string;
+	OData__SourceDynamicSectionId?: string;
 	ID?: number;
 	Created?: any;
 	AuthorId?: number;
@@ -4481,13 +4482,12 @@ export interface TasksListItemMethods {
 }
 
 /*********************************************
-* TestersListItem
+* TestListItem
 **********************************************/
-export interface TestersListItem {
+export interface TestListItem {
 	ContentTypeId?: string;
 	Title?: string;
 	OData__ModerationComments?: string;
-	LinkTitle?: string;
 	File_x0020_Type?: string;
 	OData__ColorHex?: string;
 	OData__ColorTag?: string;
@@ -4508,6 +4508,83 @@ export interface TestersListItem {
 	OData__ModerationStatus?: number;
 	Edit?: string;
 	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
+	LinkTitle2?: string;
+	SelectTitle?: string;
+	InstanceID?: number;
+	Order?: number;
+	GUID?: any;
+	WorkflowInstanceID?: any;
+	FileRef?: string;
+	FileDirRef?: string;
+	Last_x0020_Modified?: any;
+	Created_x0020_Date?: any;
+	FSObjType?: number;
+	PermMask?: string;
+	PrincipalCount?: string;
+	FileLeafRef?: string;
+	UniqueId?: any;
+	HTML_x0020_File_x0020_Type?: string;
+	OData__EditMenuTableStart?: string;
+	OData__EditMenuTableStart2?: string;
+	OData__EditMenuTableEnd?: string;
+	LinkFilenameNoMenu?: string;
+	LinkFilename?: string;
+	LinkFilename2?: string;
+	DocIcon?: string;
+	ServerUrl?: string;
+	EncodedAbsUrl?: string;
+	BaseName?: string;
+	OData__Level?: number;
+	OData__IsCurrentVersion?: boolean;
+	OData__IsRecord?: string;
+	AppAuthorId?: number;
+	AppEditorId?: number;
+}
+
+/*********************************************
+* TestListItemCollections
+**********************************************/
+export interface TestListItemCollections {
+
+}
+
+/*********************************************
+* TestListItemOData
+**********************************************/
+export interface TestListItemOData extends Base.IBaseResult, TestListItem {
+	Author: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+	Editor: SP.Data.UserInfoItem & SP.Data.UserInfoItemCollections;
+}
+
+/*********************************************
+* TestersListItem
+**********************************************/
+export interface TestersListItem {
+	ContentTypeId?: string;
+	Title?: string;
+	OData__ModerationComments?: string;
+	File_x0020_Type?: string;
+	OData__ColorHex?: string;
+	OData__ColorTag?: string;
+	OData__Emoji?: string;
+	ComplianceAssetId?: string;
+	ID?: number;
+	Modified?: any;
+	Created?: any;
+	AuthorId?: number;
+	EditorId?: number;
+	OData__HasCopyDestinations?: boolean;
+	OData__CopySource?: string;
+	owshiddenversion?: number;
+	WorkflowVersion?: number;
+	OData__UIVersion?: number;
+	OData__UIVersionString?: string;
+	Attachments?: boolean;
+	OData__ModerationStatus?: number;
+	Edit?: string;
+	LinkTitleNoMenu?: string;
+	LinkTitle?: string;
 	LinkTitle2?: string;
 	SelectTitle?: string;
 	InstanceID?: number;

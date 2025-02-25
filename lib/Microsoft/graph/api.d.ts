@@ -56,6 +56,12 @@ export interface applications extends IBaseExecution<EntityTypes.application> {
 	owners: () => IBaseExecution<EntityTypes.directoryObject[]>;
 }
 /*********************************************
+* appRoleAssignments
+**********************************************/
+export interface appRoleAssignments extends IBaseExecution<EntityTypes.appRoleAssignment> {
+
+}
+/*********************************************
 * certificateBasedAuthConfiguration
 **********************************************/
 export interface certificateBasedAuthConfiguration extends IBaseExecution<EntityTypes.certificateBasedAuthConfiguration> {

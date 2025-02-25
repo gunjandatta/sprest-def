@@ -448,6 +448,7 @@ export interface CrossGeoTenantBYOKCollections {
 **********************************************/
 export interface CrossGeoTenantCompatibility {
 	AbsCredentialsCount?: number;
+	BackupRestoreCompatibleDBSchemaVersion?: string;
 	DbExtensionSchemaNames?: { results: Array<string> };
 	DbExtensionSchemaVersions?: { results: Array<string> };
 	DBSchemaSHA512Hash?: string;

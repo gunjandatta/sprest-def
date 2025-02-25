@@ -303,6 +303,14 @@ export interface appRole  {
 	value: string;
 }
 /*********************************************
+* authenticationBehaviors
+**********************************************/
+export interface authenticationBehaviors  {
+	blockAzureADGraphAccess: boolean;
+	removeUnverifiedEmailClaim: boolean;
+	requireClientServicePrincipal: boolean;
+}
+/*********************************************
 * certification
 **********************************************/
 export interface certification  {
@@ -898,6 +906,13 @@ export interface x509CertificateRule  {
 	x509CertificateRuleType: EnumTypes.x509CertificateRuleType;
 }
 /*********************************************
+* x509CertificateCRLValidationConfiguration
+**********************************************/
+export interface x509CertificateCRLValidationConfiguration  {
+	exemptedCertificateAuthoritiesSubjectKeyIdentifiers: Array<string>;
+	state: EnumTypes.x509CertificateCRLValidationConfigurationState;
+}
+/*********************************************
 * x509CertificateUserBinding
 **********************************************/
 export interface x509CertificateUserBinding  {
@@ -1161,6 +1176,12 @@ export interface cloudPcOnPremisesConnectionStatusDetail  {
 	endDateTime: any;
 	healthChecks: cloudPcOnPremisesConnectionHealthCheck[];
 	startDateTime: any;
+}
+/*********************************************
+* cloudPcProvisioningPolicyAutopatch
+**********************************************/
+export interface cloudPcProvisioningPolicyAutopatch  {
+	autopatchGroupId: string;
 }
 /*********************************************
 * cloudPcRestorePointSetting
@@ -3447,6 +3468,12 @@ export interface reactionsFacet  {
 	commentCount: number;
 	likeCount: number;
 	shareCount: number;
+}
+/*********************************************
+* recycleBinSettings
+**********************************************/
+export interface recycleBinSettings  {
+	retentionPeriodOverrideDays: number;
 }
 /*********************************************
 * renameAction
@@ -7140,6 +7167,12 @@ export interface chatInfo  {
 	threadId: string;
 }
 /*********************************************
+* chatRestrictions
+**********************************************/
+export interface chatRestrictions  {
+	allowTextOnly: boolean;
+}
+/*********************************************
 * commsNotification
 **********************************************/
 export interface commsNotification  {
@@ -7441,6 +7474,20 @@ export interface tokenMeetingInfo  {
 export interface toneInfo  {
 	sequenceId: number;
 	tone: EnumTypes.tone;
+}
+/*********************************************
+* virtualEventExternalInformation
+**********************************************/
+export interface virtualEventExternalInformation  {
+	applicationId: string;
+	externalEventId: string;
+}
+/*********************************************
+* virtualEventExternalRegistrationInformation
+**********************************************/
+export interface virtualEventExternalRegistrationInformation  {
+	referrer: string;
+	registrationId: string;
 }
 /*********************************************
 * virtualEventPresenterDetails
@@ -8048,6 +8095,37 @@ export interface shiftAvailability  {
 export interface timeRange  {
 	endTime: any;
 	startTime: any;
+}
+/*********************************************
+* timeCardBreak
+**********************************************/
+export interface timeCardBreak  {
+	breakId: string;
+	end: timeCardEvent;
+	notes: itemBody;
+	start: timeCardEvent;
+}
+/*********************************************
+* timeCardEvent
+**********************************************/
+export interface timeCardEvent  {
+	dateTime: any;
+	isAtApprovedLocation: boolean;
+	notes: itemBody;
+}
+/*********************************************
+* timeCardEntry
+**********************************************/
+export interface timeCardEntry  {
+	breaks: timeCardBreak[];
+	clockInEvent: timeCardEvent;
+	clockOutEvent: timeCardEvent;
+}
+/*********************************************
+* timeClockSettings
+**********************************************/
+export interface timeClockSettings  {
+	approvedLocation: geoCoordinates;
 }
 /*********************************************
 * timeOffItem

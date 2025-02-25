@@ -47,5 +47,21 @@ export interface SiteRenameJobCollectionMethods {
 	getJobsByParentId(parentId?: any): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob>>;
 	getJobsByParentIdAndState(parentId?: any, state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob>>;
 	getJobsBySiteUrl(url?: string): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob>>;
+	getJobsCountByParentIdAndState(parentId?: any, state?: number): Base.IBaseExecution<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJobsForTenantRename>;
 	getSiteRenameReport(state?: number): Base.IBaseExecution<Array<Microsoft.Online.SharePoint.Onboarding.RestService.Service.SiteRenameJob>>;
+}
+
+/*********************************************
+* SiteRenameJobsForTenantRename
+**********************************************/
+export interface SiteRenameJobsForTenantRename {
+	NextLink?: string;
+	SiteRenameJobsCountByParentIdAndState?: number;
+}
+
+/*********************************************
+* SiteRenameJobsForTenantRenameCollections
+**********************************************/
+export interface SiteRenameJobsForTenantRenameCollections {
+
 }

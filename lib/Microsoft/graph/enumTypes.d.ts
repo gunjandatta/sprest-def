@@ -407,6 +407,13 @@ export type x509CertificateAuthenticationMode = {
 	unknownFutureValue: 2;
 }
 
+/** x509CertificateCRLValidationConfigurationState types */
+export type x509CertificateCRLValidationConfigurationState = {
+	disabled: 0;
+	enabled: 1;
+	unknownFutureValue: 2;
+}
+
 /** x509CertificateRuleType types */
 export type x509CertificateRuleType = {
 	issuerSubject: 0;
@@ -1818,6 +1825,15 @@ export type siteArchiveStatus = {
 	fullyArchived: 1;
 	reactivating: 2;
 	unknownFutureValue: 3;
+}
+
+/** siteLockState types */
+export type siteLockState = {
+	unlocked: 0;
+	lockedReadOnly: 1;
+	lockedNoAccess: 2;
+	lockedNoAdditions: 3;
+	unknownFutureValue: 4;
 }
 
 /** titleAreaLayoutType types */
@@ -3628,6 +3644,7 @@ export type managedDeviceOwnerType = {
 	unknown: 0;
 	company: 1;
 	personal: 2;
+	unknownFutureValue: 3;
 }
 
 /** managedDevicePartnerReportedHealthState types */
@@ -5976,6 +5993,13 @@ export type userAccountSecurityType = {
 	unknownFutureValue: 127;
 }
 
+/** allowedLobbyAdmitterRoles types */
+export type allowedLobbyAdmitterRoles = {
+	organizerAndCoOrganizersAndPresenters: 0;
+	organizerAndCoOrganizers: 1;
+	unknownFutureValue: 2;
+}
+
 /** broadcastMeetingAudience types */
 export type broadcastMeetingAudience = {
 	roleIsAttendee: 0;
@@ -6045,6 +6069,13 @@ export type meetingAudience = {
 export type meetingChatHistoryDefaultMode = {
 	none: 0;
 	all: 1;
+	unknownFutureValue: 2;
+}
+
+/** meetingLiveShareOptions types */
+export type meetingLiveShareOptions = {
+	enabled: 0;
+	disabled: 1;
 	unknownFutureValue: 2;
 }
 
@@ -6440,6 +6471,23 @@ export type teamworkUserIdentityType = {
 	emailUser: 8;
 }
 
+/** confirmedBy types */
+export type confirmedBy = {
+	none: 0;
+	user: 1;
+	manager: 2;
+	unknownFutureValue: 1024;
+}
+
+/** eligibilityFilteringEnabledEntities types */
+export type eligibilityFilteringEnabledEntities = {
+	none: 0;
+	swapRequest: 1;
+	offerShiftRequest: 2;
+	unknownFutureValue: 4;
+	timeOffReason: 8;
+}
+
 /** scheduleChangeRequestActor types */
 export type scheduleChangeRequestActor = {
 	sender: 0;
@@ -6472,6 +6520,14 @@ export type scheduleEntityTheme = {
 	darkPink: 10;
 	darkYellow: 11;
 	unknownFutureValue: 12;
+}
+
+/** timeCardState types */
+export type timeCardState = {
+	clockedIn: 0;
+	onBreak: 1;
+	clockedOut: 2;
+	unknownFutureValue: 3;
 }
 
 /** timeOffReasonIconType types */
@@ -6516,6 +6572,10 @@ export type workforceIntegrationSupportedEntities = {
 	openShiftRequest: 32;
 	offerShiftRequest: 64;
 	unknownFutureValue: 1024;
+	timeCard: 2048;
+	timeOffReason: 4096;
+	timeOff: 8192;
+	timeOffRequest: 16384;
 }
 
 /** mailDestinationRoutingReason types */

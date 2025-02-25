@@ -409,6 +409,13 @@ export const x509CertificateAuthenticationMode: GraphTypes.x509CertificateAuthen
 	unknownFutureValue: 2,
 }
 
+/** x509CertificateCRLValidationConfigurationState types */
+export const x509CertificateCRLValidationConfigurationState: GraphTypes.x509CertificateCRLValidationConfigurationState = {
+	disabled: 0,
+	enabled: 1,
+	unknownFutureValue: 2,
+}
+
 /** x509CertificateRuleType types */
 export const x509CertificateRuleType: GraphTypes.x509CertificateRuleType = {
 	issuerSubject: 0,
@@ -1820,6 +1827,15 @@ export const siteArchiveStatus: GraphTypes.siteArchiveStatus = {
 	fullyArchived: 1,
 	reactivating: 2,
 	unknownFutureValue: 3,
+}
+
+/** siteLockState types */
+export const siteLockState: GraphTypes.siteLockState = {
+	unlocked: 0,
+	lockedReadOnly: 1,
+	lockedNoAccess: 2,
+	lockedNoAdditions: 3,
+	unknownFutureValue: 4,
 }
 
 /** titleAreaLayoutType types */
@@ -3630,6 +3646,7 @@ export const managedDeviceOwnerType: GraphTypes.managedDeviceOwnerType = {
 	unknown: 0,
 	company: 1,
 	personal: 2,
+	unknownFutureValue: 3,
 }
 
 /** managedDevicePartnerReportedHealthState types */
@@ -5978,6 +5995,13 @@ export const userAccountSecurityType: GraphTypes.userAccountSecurityType = {
 	unknownFutureValue: 127,
 }
 
+/** allowedLobbyAdmitterRoles types */
+export const allowedLobbyAdmitterRoles: GraphTypes.allowedLobbyAdmitterRoles = {
+	organizerAndCoOrganizersAndPresenters: 0,
+	organizerAndCoOrganizers: 1,
+	unknownFutureValue: 2,
+}
+
 /** broadcastMeetingAudience types */
 export const broadcastMeetingAudience: GraphTypes.broadcastMeetingAudience = {
 	roleIsAttendee: 0,
@@ -6047,6 +6071,13 @@ export const meetingAudience: GraphTypes.meetingAudience = {
 export const meetingChatHistoryDefaultMode: GraphTypes.meetingChatHistoryDefaultMode = {
 	none: 0,
 	all: 1,
+	unknownFutureValue: 2,
+}
+
+/** meetingLiveShareOptions types */
+export const meetingLiveShareOptions: GraphTypes.meetingLiveShareOptions = {
+	enabled: 0,
+	disabled: 1,
 	unknownFutureValue: 2,
 }
 
@@ -6442,6 +6473,23 @@ export const teamworkUserIdentityType: GraphTypes.teamworkUserIdentityType = {
 	emailUser: 8,
 }
 
+/** confirmedBy types */
+export const confirmedBy: GraphTypes.confirmedBy = {
+	none: 0,
+	user: 1,
+	manager: 2,
+	unknownFutureValue: 1024,
+}
+
+/** eligibilityFilteringEnabledEntities types */
+export const eligibilityFilteringEnabledEntities: GraphTypes.eligibilityFilteringEnabledEntities = {
+	none: 0,
+	swapRequest: 1,
+	offerShiftRequest: 2,
+	unknownFutureValue: 4,
+	timeOffReason: 8,
+}
+
 /** scheduleChangeRequestActor types */
 export const scheduleChangeRequestActor: GraphTypes.scheduleChangeRequestActor = {
 	sender: 0,
@@ -6474,6 +6522,14 @@ export const scheduleEntityTheme: GraphTypes.scheduleEntityTheme = {
 	darkPink: 10,
 	darkYellow: 11,
 	unknownFutureValue: 12,
+}
+
+/** timeCardState types */
+export const timeCardState: GraphTypes.timeCardState = {
+	clockedIn: 0,
+	onBreak: 1,
+	clockedOut: 2,
+	unknownFutureValue: 3,
 }
 
 /** timeOffReasonIconType types */
@@ -6518,6 +6574,10 @@ export const workforceIntegrationSupportedEntities: GraphTypes.workforceIntegrat
 	openShiftRequest: 32,
 	offerShiftRequest: 64,
 	unknownFutureValue: 1024,
+	timeCard: 2048,
+	timeOffReason: 4096,
+	timeOff: 8192,
+	timeOffRequest: 16384,
 }
 
 /** mailDestinationRoutingReason types */

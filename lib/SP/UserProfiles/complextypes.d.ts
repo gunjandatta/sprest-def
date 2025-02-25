@@ -108,6 +108,7 @@ export interface PersonalCacheItem {
 	CacheName?: string;
 	CacheValue?: string;
 	CacheValueHash?: string;
+	CacheValueHtml?: string;
 	CacheVersion?: string;
 	ContainerUrl?: string;
 	ListItemId?: number;
