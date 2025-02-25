@@ -47138,10 +47138,12 @@
             <Action Name="targetApps" IsBound="true">
                 <Parameter Name="bindingParameter" Type="graph.managedAppPolicy" />
                 <Parameter Name="apps" Type="Collection(graph.managedMobileApp)" />
+                <Parameter Name="appGroupType" Type="graph.targetedManagedAppGroupType" />
             </Action>
             <Action Name="targetApps" IsBound="true">
                 <Parameter Name="bindingParameter" Type="graph.managedAppProtection" />
                 <Parameter Name="apps" Type="Collection(graph.managedMobileApp)" />
+                <Parameter Name="appGroupType" Type="graph.targetedManagedAppGroupType" />
             </Action>
             <Function Name="getUserIdsWithFlaggedAppRegistration" IsBound="true">
                 <Parameter Name="bindingParameter" Type="Collection(graph.managedAppRegistration)" />

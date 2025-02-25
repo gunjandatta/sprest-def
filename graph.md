@@ -1,2 +1,3 @@
 ###### Missing Properties
-# Add any missing properties here, that require a manual update
+# Action for targetApps binding to graph.managedAppPolicy
+## Add missing parameter <Parameter Name="appGroupType" Type="graph.targetedManagedAppGroupType" />

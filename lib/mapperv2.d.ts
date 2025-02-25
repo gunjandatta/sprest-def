@@ -2479,6 +2479,9 @@ export interface IMapper {
 		list: IMapperMethod;
 		root: IMapperMethod;
 		special: IMapperMethod;
+		getFolder: IMapperMethod & {
+			argNames: ["folderUrl"]
+		};
 		search: IMapperMethod & {
 			argNames: ["q"]
 		};
@@ -4066,7 +4069,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 		targetApps: IMapperMethod & {
-			argNames: ["apps"]
+			argNames: ["apps", "appGroupType"]
 		};
 	},
 	managedAppPolicys: {
@@ -4082,7 +4085,7 @@ export interface IMapper {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] };
 		targetApps: IMapperMethod & {
-			argNames: ["apps"]
+			argNames: ["apps", "appGroupType"]
 		};
 	},
 	managedAppRegistration: {

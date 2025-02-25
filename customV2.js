@@ -20,6 +20,14 @@ module.exports = {
             argNames: [{ name: "values", type: "{ [key: string]: any }" }]
         }
     ],
+    drive: [
+        {
+            name: "getFolder",
+            argNames: [
+                { name: "folderUrl", type: "string" }
+            ]
+        }
+    ],
     driveItem: [
         {
             name: "delete"

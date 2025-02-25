@@ -6231,6 +6231,7 @@ export interface driveMethods extends baseItemMethods {
 	root(): IBaseQuery<driveItem> & driveItemMethods;
 	special(): driveItemCollection;
 	special(id: string | number): IBaseQuery<driveItem> & driveItemMethods;
+	getFolder(folderUrl: string): IBaseExecution<void>;
 	search(q): driveItem[];
 	recent(): driveItem[];
 	sharedWithMe(): driveItem[];
@@ -6242,6 +6243,7 @@ export interface driveOData extends baseItemOData {
 	list: list;
 	root: driveItem;
 	special: IBaseResults<driveItem>;
+	getFolder(folderUrl: string): IBaseExecution<void>;
 	search(q): driveItem[];
 	recent(): driveItem[];
 	sharedWithMe(): driveItem[];
@@ -10450,10 +10452,10 @@ export interface managedAppPolicyProps extends  entityProps {
 	version: string;
 }
 export interface managedAppPolicyMethods extends entityMethods {
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface managedAppPolicyOData extends entityOData {
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface managedAppPolicyCollection extends IBaseCollection<managedAppPolicy, managedAppPolicyOData & managedAppPolicyProps> {
 add(values?: any): IBaseExecution<managedAppPolicy>;
@@ -10509,10 +10511,10 @@ export interface managedAppProtectionProps extends  managedAppPolicyProps {
 	simplePinBlocked: boolean;
 }
 export interface managedAppProtectionMethods extends managedAppPolicyMethods {
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 export interface managedAppProtectionOData extends managedAppPolicyOData {
-	targetApps(apps): IBaseExecution<void>;
+	targetApps(apps, appGroupType): IBaseExecution<void>;
 }
 /*********************************************
 * managedAppRegistration

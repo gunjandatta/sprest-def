@@ -4041,6 +4041,9 @@ export const Mapper: IMapper = {
 			requestType: RequestType.Get,
 			returnType: "driveItems"
 		},
+		getFolder: {
+			argNames: ["folderUrl"],
+		},
 		search: {
 			argNames: ["q"],
 			requestType: RequestType.Get,
@@ -6660,7 +6663,7 @@ export const Mapper: IMapper = {
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetApps: {
-			argNames: ["apps"],
+			argNames: ["apps", "appGroupType"],
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},
@@ -6680,7 +6683,7 @@ export const Mapper: IMapper = {
 		],
 		query: { argNames: ["oData"], requestType: RequestType.OData },
 		targetApps: {
-			argNames: ["apps"],
+			argNames: ["apps", "appGroupType"],
 			requestType: RequestType.PostWithArgsInBody,
 		},
 	},
