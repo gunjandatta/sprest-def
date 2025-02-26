@@ -5,7 +5,7 @@ import * as EnumTypes from "./enumTypes.d";
 * _case
 **********************************************/
 export interface _case extends _caseProps, _caseMethods { }
-export interface _caseProps extends  entityProps {
+export interface _caseProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -23,7 +23,7 @@ export interface _caseOData extends entityOData {
 * aadUserConversationMember
 **********************************************/
 export interface aadUserConversationMember extends aadUserConversationMemberProps, aadUserConversationMemberMethods { }
-export interface aadUserConversationMemberProps extends  conversationMemberProps {
+export interface aadUserConversationMemberProps extends conversationMemberProps {
 	email: string;
 	tenantId: string;
 	userId: string;
@@ -38,7 +38,7 @@ export interface aadUserConversationMemberOData extends conversationMemberOData 
 * accessPackage
 **********************************************/
 export interface accessPackage extends accessPackageProps, accessPackageMethods { }
-export interface accessPackageProps extends  entityProps {
+export interface accessPackageProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -75,7 +75,7 @@ add(values?: any): IBaseExecution<accessPackage>;
 * accessPackageAssignment
 **********************************************/
 export interface accessPackageAssignment extends accessPackageAssignmentProps, accessPackageAssignmentMethods { }
-export interface accessPackageAssignmentProps extends  entityProps {
+export interface accessPackageAssignmentProps extends entityProps {
 	customExtensionCalloutInstances: ComplexTypes.customExtensionCalloutInstance[];
 	expiredDateTime: any;
 	schedule: ComplexTypes.entitlementManagementSchedule;
@@ -101,7 +101,7 @@ add(values?: any): IBaseExecution<accessPackageAssignment>;
 * accessPackageAssignmentPolicy
 **********************************************/
 export interface accessPackageAssignmentPolicy extends accessPackageAssignmentPolicyProps, accessPackageAssignmentPolicyMethods { }
-export interface accessPackageAssignmentPolicyProps extends  entityProps {
+export interface accessPackageAssignmentPolicyProps extends entityProps {
 	allowedTargetScope: EnumTypes.allowedTargetScope;
 	automaticRequestSettings: ComplexTypes.accessPackageAutomaticRequestSettings;
 	createdDateTime: any;
@@ -135,7 +135,7 @@ add(values?: any): IBaseExecution<accessPackageAssignmentPolicy>;
 * accessPackageAssignmentRequest
 **********************************************/
 export interface accessPackageAssignmentRequest extends accessPackageAssignmentRequestProps, accessPackageAssignmentRequestMethods { }
-export interface accessPackageAssignmentRequestProps extends  entityProps {
+export interface accessPackageAssignmentRequestProps extends entityProps {
 	answers: ComplexTypes.accessPackageAnswer[];
 	completedDateTime: any;
 	createdDateTime: any;
@@ -168,7 +168,7 @@ add(values?: any): IBaseExecution<accessPackageAssignmentRequest>;
 * accessPackageAssignmentRequestWorkflowExtension
 **********************************************/
 export interface accessPackageAssignmentRequestWorkflowExtension extends accessPackageAssignmentRequestWorkflowExtensionProps, accessPackageAssignmentRequestWorkflowExtensionMethods { }
-export interface accessPackageAssignmentRequestWorkflowExtensionProps extends  customCalloutExtensionProps {
+export interface accessPackageAssignmentRequestWorkflowExtensionProps extends customCalloutExtensionProps {
 	callbackConfiguration: ComplexTypes.customExtensionCallbackConfiguration;
 	createdBy: string;
 	createdDateTime: any;
@@ -185,7 +185,7 @@ export interface accessPackageAssignmentRequestWorkflowExtensionOData extends cu
 * accessPackageAssignmentWorkflowExtension
 **********************************************/
 export interface accessPackageAssignmentWorkflowExtension extends accessPackageAssignmentWorkflowExtensionProps, accessPackageAssignmentWorkflowExtensionMethods { }
-export interface accessPackageAssignmentWorkflowExtensionProps extends  customCalloutExtensionProps {
+export interface accessPackageAssignmentWorkflowExtensionProps extends customCalloutExtensionProps {
 	callbackConfiguration: ComplexTypes.customExtensionCallbackConfiguration;
 	createdBy: string;
 	createdDateTime: any;
@@ -202,7 +202,7 @@ export interface accessPackageAssignmentWorkflowExtensionOData extends customCal
 * accessPackageCatalog
 **********************************************/
 export interface accessPackageCatalog extends accessPackageCatalogProps, accessPackageCatalogMethods { }
-export interface accessPackageCatalogProps extends  entityProps {
+export interface accessPackageCatalogProps extends entityProps {
 	catalogType: EnumTypes.accessPackageCatalogType;
 	createdDateTime: any;
 	description: string;
@@ -237,7 +237,7 @@ add(values?: any): IBaseExecution<accessPackageCatalog>;
 * accessPackageMultipleChoiceQuestion
 **********************************************/
 export interface accessPackageMultipleChoiceQuestion extends accessPackageMultipleChoiceQuestionProps, accessPackageMultipleChoiceQuestionMethods { }
-export interface accessPackageMultipleChoiceQuestionProps extends  accessPackageQuestionProps {
+export interface accessPackageMultipleChoiceQuestionProps extends accessPackageQuestionProps {
 	choices: ComplexTypes.accessPackageAnswerChoice[];
 	isMultipleSelectionAllowed: boolean;
 }
@@ -251,7 +251,7 @@ export interface accessPackageMultipleChoiceQuestionOData extends accessPackageQ
 * accessPackageQuestion
 **********************************************/
 export interface accessPackageQuestion extends accessPackageQuestionProps, accessPackageQuestionMethods { }
-export interface accessPackageQuestionProps extends  entityProps {
+export interface accessPackageQuestionProps extends entityProps {
 	isAnswerEditable: boolean;
 	isRequired: boolean;
 	localizations: ComplexTypes.accessPackageLocalizedText[];
@@ -271,7 +271,7 @@ add(values?: any): IBaseExecution<accessPackageQuestion>;
 * accessPackageResource
 **********************************************/
 export interface accessPackageResource extends accessPackageResourceProps, accessPackageResourceMethods { }
-export interface accessPackageResourceProps extends  entityProps {
+export interface accessPackageResourceProps extends entityProps {
 	attributes: ComplexTypes.accessPackageResourceAttribute[];
 	createdDateTime: any;
 	description: string;
@@ -299,7 +299,7 @@ add(values?: any): IBaseExecution<accessPackageResource>;
 * accessPackageResourceEnvironment
 **********************************************/
 export interface accessPackageResourceEnvironment extends accessPackageResourceEnvironmentProps, accessPackageResourceEnvironmentMethods { }
-export interface accessPackageResourceEnvironmentProps extends  entityProps {
+export interface accessPackageResourceEnvironmentProps extends entityProps {
 	connectionInfo: ComplexTypes.connectionInfo;
 	createdDateTime: any;
 	description: string;
@@ -323,7 +323,7 @@ add(values?: any): IBaseExecution<accessPackageResourceEnvironment>;
 * accessPackageResourceRequest
 **********************************************/
 export interface accessPackageResourceRequest extends accessPackageResourceRequestProps, accessPackageResourceRequestMethods { }
-export interface accessPackageResourceRequestProps extends  entityProps {
+export interface accessPackageResourceRequestProps extends entityProps {
 	createdDateTime: any;
 	requestType: EnumTypes.accessPackageRequestType;
 	state: EnumTypes.accessPackageRequestState;
@@ -343,7 +343,7 @@ add(values?: any): IBaseExecution<accessPackageResourceRequest>;
 * accessPackageResourceRole
 **********************************************/
 export interface accessPackageResourceRole extends accessPackageResourceRoleProps, accessPackageResourceRoleMethods { }
-export interface accessPackageResourceRoleProps extends  entityProps {
+export interface accessPackageResourceRoleProps extends entityProps {
 	description: string;
 	displayName: string;
 	originId: string;
@@ -362,7 +362,7 @@ add(values?: any): IBaseExecution<accessPackageResourceRole>;
 * accessPackageResourceRoleScope
 **********************************************/
 export interface accessPackageResourceRoleScope extends accessPackageResourceRoleScopeProps, accessPackageResourceRoleScopeMethods { }
-export interface accessPackageResourceRoleScopeProps extends  entityProps {
+export interface accessPackageResourceRoleScopeProps extends entityProps {
 	createdDateTime: any;
 }
 export interface accessPackageResourceRoleScopeMethods extends entityMethods {
@@ -380,7 +380,7 @@ add(values?: any): IBaseExecution<accessPackageResourceRoleScope>;
 * accessPackageResourceScope
 **********************************************/
 export interface accessPackageResourceScope extends accessPackageResourceScopeProps, accessPackageResourceScopeMethods { }
-export interface accessPackageResourceScopeProps extends  entityProps {
+export interface accessPackageResourceScopeProps extends entityProps {
 	description: string;
 	displayName: string;
 	isRootScope: boolean;
@@ -400,7 +400,7 @@ add(values?: any): IBaseExecution<accessPackageResourceScope>;
 * accessPackageSubject
 **********************************************/
 export interface accessPackageSubject extends accessPackageSubjectProps, accessPackageSubjectMethods { }
-export interface accessPackageSubjectProps extends  entityProps {
+export interface accessPackageSubjectProps extends entityProps {
 	displayName: string;
 	email: string;
 	objectId: string;
@@ -418,7 +418,7 @@ export interface accessPackageSubjectOData extends entityOData {
 * accessPackageTextInputQuestion
 **********************************************/
 export interface accessPackageTextInputQuestion extends accessPackageTextInputQuestionProps, accessPackageTextInputQuestionMethods { }
-export interface accessPackageTextInputQuestionProps extends  accessPackageQuestionProps {
+export interface accessPackageTextInputQuestionProps extends accessPackageQuestionProps {
 	isSingleLineQuestion: boolean;
 	regexPattern: string;
 }
@@ -432,7 +432,7 @@ export interface accessPackageTextInputQuestionOData extends accessPackageQuesti
 * accessReviewHistoryDefinition
 **********************************************/
 export interface accessReviewHistoryDefinition extends accessReviewHistoryDefinitionProps, accessReviewHistoryDefinitionMethods { }
-export interface accessReviewHistoryDefinitionProps extends  entityProps {
+export interface accessReviewHistoryDefinitionProps extends entityProps {
 	createdBy: ComplexTypes.userIdentity;
 	createdDateTime: any;
 	decisions: EnumTypes.accessReviewHistoryDecisionFilter[];
@@ -457,7 +457,7 @@ add(values?: any): IBaseExecution<accessReviewHistoryDefinition>;
 * accessReviewHistoryInstance
 **********************************************/
 export interface accessReviewHistoryInstance extends accessReviewHistoryInstanceProps, accessReviewHistoryInstanceMethods { }
-export interface accessReviewHistoryInstanceProps extends  entityProps {
+export interface accessReviewHistoryInstanceProps extends entityProps {
 	downloadUri: string;
 	expirationDateTime: any;
 	fulfilledDateTime: any;
@@ -479,7 +479,7 @@ add(values?: any): IBaseExecution<accessReviewHistoryInstance>;
 * accessReviewInstance
 **********************************************/
 export interface accessReviewInstance extends accessReviewInstanceProps, accessReviewInstanceMethods { }
-export interface accessReviewInstanceProps extends  entityProps {
+export interface accessReviewInstanceProps extends entityProps {
 	endDateTime: any;
 	fallbackReviewers: ComplexTypes.accessReviewReviewerScope[];
 	reviewers: ComplexTypes.accessReviewReviewerScope[];
@@ -519,7 +519,7 @@ add(values?: any): IBaseExecution<accessReviewInstance>;
 * accessReviewInstanceDecisionItem
 **********************************************/
 export interface accessReviewInstanceDecisionItem extends accessReviewInstanceDecisionItemProps, accessReviewInstanceDecisionItemMethods { }
-export interface accessReviewInstanceDecisionItemProps extends  entityProps {
+export interface accessReviewInstanceDecisionItemProps extends entityProps {
 	accessReviewId: string;
 	appliedBy: ComplexTypes.userIdentity;
 	appliedDateTime: any;
@@ -548,7 +548,7 @@ add(values?: any): IBaseExecution<accessReviewInstanceDecisionItem>;
 * accessReviewReviewer
 **********************************************/
 export interface accessReviewReviewer extends accessReviewReviewerProps, accessReviewReviewerMethods { }
-export interface accessReviewReviewerProps extends  entityProps {
+export interface accessReviewReviewerProps extends entityProps {
 	createdDateTime: any;
 	displayName: string;
 	userPrincipalName: string;
@@ -566,7 +566,7 @@ add(values?: any): IBaseExecution<accessReviewReviewer>;
 * accessReviewScheduleDefinition
 **********************************************/
 export interface accessReviewScheduleDefinition extends accessReviewScheduleDefinitionProps, accessReviewScheduleDefinitionMethods { }
-export interface accessReviewScheduleDefinitionProps extends  entityProps {
+export interface accessReviewScheduleDefinitionProps extends entityProps {
 	additionalNotificationRecipients: ComplexTypes.accessReviewNotificationRecipientItem[];
 	createdBy: ComplexTypes.userIdentity;
 	createdDateTime: any;
@@ -598,7 +598,7 @@ add(values?: any): IBaseExecution<accessReviewScheduleDefinition>;
 * accessReviewSet
 **********************************************/
 export interface accessReviewSet extends accessReviewSetProps, accessReviewSetMethods { }
-export interface accessReviewSetProps extends  entityProps {
+export interface accessReviewSetProps extends entityProps {
 
 }
 export interface accessReviewSetMethods extends entityMethods {
@@ -615,7 +615,7 @@ export interface accessReviewSetOData extends entityOData {
 * accessReviewStage
 **********************************************/
 export interface accessReviewStage extends accessReviewStageProps, accessReviewStageMethods { }
-export interface accessReviewStageProps extends  entityProps {
+export interface accessReviewStageProps extends entityProps {
 	endDateTime: any;
 	fallbackReviewers: ComplexTypes.accessReviewReviewerScope[];
 	reviewers: ComplexTypes.accessReviewReviewerScope[];
@@ -638,7 +638,7 @@ add(values?: any): IBaseExecution<accessReviewStage>;
 * acronym
 **********************************************/
 export interface acronym extends acronymProps, acronymMethods { }
-export interface acronymProps extends  searchAnswerProps {
+export interface acronymProps extends searchAnswerProps {
 	standsFor: string;
 	state: EnumTypes.answerState;
 }
@@ -652,7 +652,7 @@ export interface acronymOData extends searchAnswerOData {
 * activityBasedTimeoutPolicy
 **********************************************/
 export interface activityBasedTimeoutPolicy extends activityBasedTimeoutPolicyProps, activityBasedTimeoutPolicyMethods { }
-export interface activityBasedTimeoutPolicyProps extends  stsPolicyProps {
+export interface activityBasedTimeoutPolicyProps extends stsPolicyProps {
 
 }
 export interface activityBasedTimeoutPolicyMethods extends stsPolicyMethods {
@@ -668,7 +668,7 @@ add(values?: any): IBaseExecution<activityBasedTimeoutPolicy>;
 * activityHistoryItem
 **********************************************/
 export interface activityHistoryItem extends activityHistoryItemProps, activityHistoryItemMethods { }
-export interface activityHistoryItemProps extends  entityProps {
+export interface activityHistoryItemProps extends entityProps {
 	activeDurationSeconds: number;
 	createdDateTime: any;
 	expirationDateTime: any;
@@ -691,7 +691,7 @@ add(values?: any): IBaseExecution<activityHistoryItem>;
 * addLargeGalleryViewOperation
 **********************************************/
 export interface addLargeGalleryViewOperation extends addLargeGalleryViewOperationProps, addLargeGalleryViewOperationMethods { }
-export interface addLargeGalleryViewOperationProps extends  commsOperationProps {
+export interface addLargeGalleryViewOperationProps extends commsOperationProps {
 
 }
 export interface addLargeGalleryViewOperationMethods extends commsOperationMethods {
@@ -704,7 +704,7 @@ export interface addLargeGalleryViewOperationOData extends commsOperationOData {
 * admin
 **********************************************/
 export interface admin extends adminProps, adminMethods { }
-export interface adminProps   {
+export interface adminProps {
 
 }
 export interface adminMethods {
@@ -727,7 +727,7 @@ export interface adminOData {
 * adminConsentRequestPolicy
 **********************************************/
 export interface adminConsentRequestPolicy extends adminConsentRequestPolicyProps, adminConsentRequestPolicyMethods { }
-export interface adminConsentRequestPolicyProps extends  entityProps {
+export interface adminConsentRequestPolicyProps extends entityProps {
 	isEnabled: boolean;
 	notifyReviewers: boolean;
 	remindersEnabled: boolean;
@@ -745,7 +745,7 @@ export interface adminConsentRequestPolicyOData extends entityOData {
 * adminMicrosoft365Apps
 **********************************************/
 export interface adminMicrosoft365Apps extends adminMicrosoft365AppsProps, adminMicrosoft365AppsMethods { }
-export interface adminMicrosoft365AppsProps extends  entityProps {
+export interface adminMicrosoft365AppsProps extends entityProps {
 
 }
 export interface adminMicrosoft365AppsMethods extends entityMethods {
@@ -758,7 +758,7 @@ export interface adminMicrosoft365AppsOData extends entityOData {
 * adminReportSettings
 **********************************************/
 export interface adminReportSettings extends adminReportSettingsProps, adminReportSettingsMethods { }
-export interface adminReportSettingsProps extends  entityProps {
+export interface adminReportSettingsProps extends entityProps {
 	displayConcealedNames: boolean;
 }
 export interface adminReportSettingsMethods extends entityMethods {
@@ -771,7 +771,7 @@ export interface adminReportSettingsOData extends entityOData {
 * administrativeUnit
 **********************************************/
 export interface administrativeUnit extends administrativeUnitProps, administrativeUnitMethods { }
-export interface administrativeUnitProps extends  directoryObjectProps {
+export interface administrativeUnitProps extends directoryObjectProps {
 	description: string;
 	displayName: string;
 	isMemberManagementRestricted: boolean;
@@ -800,7 +800,7 @@ add(values?: any): IBaseExecution<administrativeUnit>;
 * agreement
 **********************************************/
 export interface agreement extends agreementProps, agreementMethods { }
-export interface agreementProps extends  entityProps {
+export interface agreementProps extends entityProps {
 	displayName: string;
 	isPerDeviceAcceptanceRequired: boolean;
 	isViewingBeforeAcceptanceRequired: boolean;
@@ -826,7 +826,7 @@ add(values?: any): IBaseExecution<agreement>;
 * agreementAcceptance
 **********************************************/
 export interface agreementAcceptance extends agreementAcceptanceProps, agreementAcceptanceMethods { }
-export interface agreementAcceptanceProps extends  entityProps {
+export interface agreementAcceptanceProps extends entityProps {
 	agreementFileId: string;
 	agreementId: string;
 	deviceDisplayName: string;
@@ -854,7 +854,7 @@ add(values?: any): IBaseExecution<agreementAcceptance>;
 * agreementFile
 **********************************************/
 export interface agreementFile extends agreementFileProps, agreementFileMethods { }
-export interface agreementFileProps extends  agreementFilePropertiesProps {
+export interface agreementFileProps extends agreementFilePropertiesProps {
 
 }
 export interface agreementFileMethods extends agreementFilePropertiesMethods {
@@ -868,7 +868,7 @@ export interface agreementFileOData extends agreementFilePropertiesOData {
 * agreementFileLocalization
 **********************************************/
 export interface agreementFileLocalization extends agreementFileLocalizationProps, agreementFileLocalizationMethods { }
-export interface agreementFileLocalizationProps extends  agreementFilePropertiesProps {
+export interface agreementFileLocalizationProps extends agreementFilePropertiesProps {
 
 }
 export interface agreementFileLocalizationMethods extends agreementFilePropertiesMethods {
@@ -885,7 +885,7 @@ add(values?: any): IBaseExecution<agreementFileLocalization>;
 * agreementFileProperties
 **********************************************/
 export interface agreementFileProperties extends agreementFilePropertiesProps, agreementFilePropertiesMethods { }
-export interface agreementFilePropertiesProps extends  entityProps {
+export interface agreementFilePropertiesProps extends entityProps {
 	createdDateTime: any;
 	displayName: string;
 	fileData: ComplexTypes.agreementFileData;
@@ -904,7 +904,7 @@ export interface agreementFilePropertiesOData extends entityOData {
 * agreementFileVersion
 **********************************************/
 export interface agreementFileVersion extends agreementFileVersionProps, agreementFileVersionMethods { }
-export interface agreementFileVersionProps extends  agreementFilePropertiesProps {
+export interface agreementFileVersionProps extends agreementFilePropertiesProps {
 
 }
 export interface agreementFileVersionMethods extends agreementFilePropertiesMethods {
@@ -920,7 +920,7 @@ add(values?: any): IBaseExecution<agreementFileVersion>;
 * alert
 **********************************************/
 export interface alert extends alertProps, alertMethods { }
-export interface alertProps extends  entityProps {
+export interface alertProps extends entityProps {
 	actorDisplayName: string;
 	additionalData: ComplexTypes.dictionary;
 	alertPolicyId: string;
@@ -967,7 +967,7 @@ add(values?: any): IBaseExecution<alert>;
 * allowedValue
 **********************************************/
 export interface allowedValue extends allowedValueProps, allowedValueMethods { }
-export interface allowedValueProps extends  entityProps {
+export interface allowedValueProps extends entityProps {
 	isActive: boolean;
 }
 export interface allowedValueMethods extends entityMethods {
@@ -983,7 +983,7 @@ add(values?: any): IBaseExecution<allowedValue>;
 * androidCompliancePolicy
 **********************************************/
 export interface androidCompliancePolicy extends androidCompliancePolicyProps, androidCompliancePolicyMethods { }
-export interface androidCompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface androidCompliancePolicyProps extends deviceCompliancePolicyProps {
 	deviceThreatProtectionEnabled: boolean;
 	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
 	minAndroidSecurityPatchLevel: string;
@@ -1016,7 +1016,7 @@ export interface androidCompliancePolicyOData extends deviceCompliancePolicyODat
 * androidCustomConfiguration
 **********************************************/
 export interface androidCustomConfiguration extends androidCustomConfigurationProps, androidCustomConfigurationMethods { }
-export interface androidCustomConfigurationProps extends  deviceConfigurationProps {
+export interface androidCustomConfigurationProps extends deviceConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface androidCustomConfigurationMethods extends deviceConfigurationMethods {
@@ -1029,7 +1029,7 @@ export interface androidCustomConfigurationOData extends deviceConfigurationODat
 * androidGeneralDeviceConfiguration
 **********************************************/
 export interface androidGeneralDeviceConfiguration extends androidGeneralDeviceConfigurationProps, androidGeneralDeviceConfigurationMethods { }
-export interface androidGeneralDeviceConfigurationProps extends  deviceConfigurationProps {
+export interface androidGeneralDeviceConfigurationProps extends deviceConfigurationProps {
 	appsBlockClipboardSharing: boolean;
 	appsBlockCopyPaste: boolean;
 	appsBlockYouTube: boolean;
@@ -1089,7 +1089,7 @@ export interface androidGeneralDeviceConfigurationOData extends deviceConfigurat
 * androidLobApp
 **********************************************/
 export interface androidLobApp extends androidLobAppProps, androidLobAppMethods { }
-export interface androidLobAppProps extends  mobileLobAppProps {
+export interface androidLobAppProps extends mobileLobAppProps {
 	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
 	packageId: string;
 	versionCode: string;
@@ -1105,7 +1105,7 @@ export interface androidLobAppOData extends mobileLobAppOData {
 * androidManagedAppProtection
 **********************************************/
 export interface androidManagedAppProtection extends androidManagedAppProtectionProps, androidManagedAppProtectionMethods { }
-export interface androidManagedAppProtectionProps extends  targetedManagedAppProtectionProps {
+export interface androidManagedAppProtectionProps extends targetedManagedAppProtectionProps {
 	customBrowserDisplayName: string;
 	customBrowserPackageId: string;
 	deployedAppCount: number;
@@ -1131,7 +1131,7 @@ add(values?: any): IBaseExecution<androidManagedAppProtection>;
 * androidManagedAppRegistration
 **********************************************/
 export interface androidManagedAppRegistration extends androidManagedAppRegistrationProps, androidManagedAppRegistrationMethods { }
-export interface androidManagedAppRegistrationProps extends  managedAppRegistrationProps {
+export interface androidManagedAppRegistrationProps extends managedAppRegistrationProps {
 
 }
 export interface androidManagedAppRegistrationMethods extends managedAppRegistrationMethods {
@@ -1144,7 +1144,7 @@ export interface androidManagedAppRegistrationOData extends managedAppRegistrati
 * androidStoreApp
 **********************************************/
 export interface androidStoreApp extends androidStoreAppProps, androidStoreAppMethods { }
-export interface androidStoreAppProps extends  mobileAppProps {
+export interface androidStoreAppProps extends mobileAppProps {
 	appStoreUrl: string;
 	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
 	packageId: string;
@@ -1159,7 +1159,7 @@ export interface androidStoreAppOData extends mobileAppOData {
 * androidWorkProfileCompliancePolicy
 **********************************************/
 export interface androidWorkProfileCompliancePolicy extends androidWorkProfileCompliancePolicyProps, androidWorkProfileCompliancePolicyMethods { }
-export interface androidWorkProfileCompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface androidWorkProfileCompliancePolicyProps extends deviceCompliancePolicyProps {
 	deviceThreatProtectionEnabled: boolean;
 	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
 	minAndroidSecurityPatchLevel: string;
@@ -1192,7 +1192,7 @@ export interface androidWorkProfileCompliancePolicyOData extends deviceComplianc
 * androidWorkProfileCustomConfiguration
 **********************************************/
 export interface androidWorkProfileCustomConfiguration extends androidWorkProfileCustomConfigurationProps, androidWorkProfileCustomConfigurationMethods { }
-export interface androidWorkProfileCustomConfigurationProps extends  deviceConfigurationProps {
+export interface androidWorkProfileCustomConfigurationProps extends deviceConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface androidWorkProfileCustomConfigurationMethods extends deviceConfigurationMethods {
@@ -1205,7 +1205,7 @@ export interface androidWorkProfileCustomConfigurationOData extends deviceConfig
 * androidWorkProfileGeneralDeviceConfiguration
 **********************************************/
 export interface androidWorkProfileGeneralDeviceConfiguration extends androidWorkProfileGeneralDeviceConfigurationProps, androidWorkProfileGeneralDeviceConfigurationMethods { }
-export interface androidWorkProfileGeneralDeviceConfigurationProps extends  deviceConfigurationProps {
+export interface androidWorkProfileGeneralDeviceConfigurationProps extends deviceConfigurationProps {
 	passwordBlockFingerprintUnlock: boolean;
 	passwordBlockTrustAgents: boolean;
 	passwordExpirationDays: number;
@@ -1251,7 +1251,7 @@ export interface androidWorkProfileGeneralDeviceConfigurationOData extends devic
 * anonymousGuestConversationMember
 **********************************************/
 export interface anonymousGuestConversationMember extends anonymousGuestConversationMemberProps, anonymousGuestConversationMemberMethods { }
-export interface anonymousGuestConversationMemberProps extends  conversationMemberProps {
+export interface anonymousGuestConversationMemberProps extends conversationMemberProps {
 	anonymousGuestId: string;
 }
 export interface anonymousGuestConversationMemberMethods extends conversationMemberMethods {
@@ -1264,7 +1264,7 @@ export interface anonymousGuestConversationMemberOData extends conversationMembe
 * appCatalogs
 **********************************************/
 export interface appCatalogs extends appCatalogsProps, appCatalogsMethods { }
-export interface appCatalogsProps extends  entityProps {
+export interface appCatalogsProps extends entityProps {
 
 }
 export interface appCatalogsMethods extends entityMethods {
@@ -1278,7 +1278,7 @@ export interface appCatalogsOData extends entityOData {
 * appConsentApprovalRoute
 **********************************************/
 export interface appConsentApprovalRoute extends appConsentApprovalRouteProps, appConsentApprovalRouteMethods { }
-export interface appConsentApprovalRouteProps extends  entityProps {
+export interface appConsentApprovalRouteProps extends entityProps {
 
 }
 export interface appConsentApprovalRouteMethods extends entityMethods {
@@ -1292,7 +1292,7 @@ export interface appConsentApprovalRouteOData extends entityOData {
 * appConsentRequest
 **********************************************/
 export interface appConsentRequest extends appConsentRequestProps, appConsentRequestMethods { }
-export interface appConsentRequestProps extends  entityProps {
+export interface appConsentRequestProps extends entityProps {
 	appDisplayName: string;
 	appId: string;
 	pendingScopes: ComplexTypes.appConsentRequestScope[];
@@ -1311,7 +1311,7 @@ add(values?: any): IBaseExecution<appConsentRequest>;
 * appLogCollectionRequest
 **********************************************/
 export interface appLogCollectionRequest extends appLogCollectionRequestProps, appLogCollectionRequestMethods { }
-export interface appLogCollectionRequestProps extends  entityProps {
+export interface appLogCollectionRequestProps extends entityProps {
 	completedDateTime: any;
 	customLogFolders: Array<string>;
 	errorMessage: string;
@@ -1330,7 +1330,7 @@ add(values?: any): IBaseExecution<appLogCollectionRequest>;
 * appManagementPolicy
 **********************************************/
 export interface appManagementPolicy extends appManagementPolicyProps, appManagementPolicyMethods { }
-export interface appManagementPolicyProps extends  policyBaseProps {
+export interface appManagementPolicyProps extends policyBaseProps {
 	isEnabled: boolean;
 	restrictions: ComplexTypes.customAppManagementConfiguration;
 }
@@ -1348,7 +1348,7 @@ add(values?: any): IBaseExecution<appManagementPolicy>;
 * appRoleAssignment
 **********************************************/
 export interface appRoleAssignment extends appRoleAssignmentProps, appRoleAssignmentMethods { }
-export interface appRoleAssignmentProps extends  directoryObjectProps {
+export interface appRoleAssignmentProps extends directoryObjectProps {
 	appRoleId: any;
 	createdDateTime: any;
 	principalDisplayName: string;
@@ -1370,7 +1370,7 @@ add(values?: any): IBaseExecution<appRoleAssignment>;
 * appScope
 **********************************************/
 export interface appScope extends appScopeProps, appScopeMethods { }
-export interface appScopeProps extends  entityProps {
+export interface appScopeProps extends entityProps {
 	displayName: string;
 	type: string;
 }
@@ -1384,7 +1384,7 @@ export interface appScopeOData extends entityOData {
 * appleDeviceFeaturesConfigurationBase
 **********************************************/
 export interface appleDeviceFeaturesConfigurationBase extends appleDeviceFeaturesConfigurationBaseProps, appleDeviceFeaturesConfigurationBaseMethods { }
-export interface appleDeviceFeaturesConfigurationBaseProps extends  deviceConfigurationProps {
+export interface appleDeviceFeaturesConfigurationBaseProps extends deviceConfigurationProps {
 
 }
 export interface appleDeviceFeaturesConfigurationBaseMethods extends deviceConfigurationMethods {
@@ -1397,7 +1397,7 @@ export interface appleDeviceFeaturesConfigurationBaseOData extends deviceConfigu
 * appleManagedIdentityProvider
 **********************************************/
 export interface appleManagedIdentityProvider extends appleManagedIdentityProviderProps, appleManagedIdentityProviderMethods { }
-export interface appleManagedIdentityProviderProps extends  identityProviderBaseProps {
+export interface appleManagedIdentityProviderProps extends identityProviderBaseProps {
 	certificateData: string;
 	developerId: string;
 	keyId: string;
@@ -1413,7 +1413,7 @@ export interface appleManagedIdentityProviderOData extends identityProviderBaseO
 * applePushNotificationCertificate
 **********************************************/
 export interface applePushNotificationCertificate extends applePushNotificationCertificateProps, applePushNotificationCertificateMethods { }
-export interface applePushNotificationCertificateProps extends  entityProps {
+export interface applePushNotificationCertificateProps extends entityProps {
 	appleIdentifier: string;
 	certificate: string;
 	certificateSerialNumber: string;
@@ -1433,7 +1433,7 @@ export interface applePushNotificationCertificateOData extends entityOData {
 * application
 **********************************************/
 export interface application extends applicationProps, applicationMethods { }
-export interface applicationProps extends  directoryObjectProps {
+export interface applicationProps extends directoryObjectProps {
 	addIns: ComplexTypes.addIn[];
 	api: ComplexTypes.apiApplication;
 	appId: string;
@@ -1519,7 +1519,7 @@ export interface applicationOData extends directoryObjectOData {
 * applicationTemplate
 **********************************************/
 export interface applicationTemplate extends applicationTemplateProps, applicationTemplateMethods { }
-export interface applicationTemplateProps extends  entityProps {
+export interface applicationTemplateProps extends entityProps {
 	categories: Array<string>;
 	description: string;
 	displayName: string;
@@ -1539,7 +1539,7 @@ export interface applicationTemplateOData extends entityOData {
 * approval
 **********************************************/
 export interface approval extends approvalProps, approvalMethods { }
-export interface approvalProps extends  entityProps {
+export interface approvalProps extends entityProps {
 
 }
 export interface approvalMethods extends entityMethods {
@@ -1556,7 +1556,7 @@ add(values?: any): IBaseExecution<approval>;
 * approvalStage
 **********************************************/
 export interface approvalStage extends approvalStageProps, approvalStageMethods { }
-export interface approvalStageProps extends  entityProps {
+export interface approvalStageProps extends entityProps {
 	assignedToMe: boolean;
 	displayName: string;
 	justification: string;
@@ -1578,7 +1578,7 @@ add(values?: any): IBaseExecution<approvalStage>;
 * article
 **********************************************/
 export interface article extends articleProps, articleMethods { }
-export interface articleProps extends  entityProps {
+export interface articleProps extends entityProps {
 	body: ComplexTypes.formattedContent;
 	createdDateTime: any;
 	imageUrl: string;
@@ -1599,7 +1599,7 @@ export interface articleOData extends entityOData {
 * articleIndicator
 **********************************************/
 export interface articleIndicator extends articleIndicatorProps, articleIndicatorMethods { }
-export interface articleIndicatorProps extends  indicatorProps {
+export interface articleIndicatorProps extends indicatorProps {
 
 }
 export interface articleIndicatorMethods extends indicatorMethods {
@@ -1612,7 +1612,7 @@ export interface articleIndicatorOData extends indicatorOData {
 * artifact
 **********************************************/
 export interface artifact extends artifactProps, artifactMethods { }
-export interface artifactProps extends  entityProps {
+export interface artifactProps extends entityProps {
 
 }
 export interface artifactMethods extends entityMethods {
@@ -1625,7 +1625,7 @@ export interface artifactOData extends entityOData {
 * associatedTeamInfo
 **********************************************/
 export interface associatedTeamInfo extends associatedTeamInfoProps, associatedTeamInfoMethods { }
-export interface associatedTeamInfoProps extends  teamInfoProps {
+export interface associatedTeamInfoProps extends teamInfoProps {
 
 }
 export interface associatedTeamInfoMethods extends teamInfoMethods {
@@ -1641,7 +1641,7 @@ add(values?: any): IBaseExecution<associatedTeamInfo>;
 * attachment
 **********************************************/
 export interface attachment extends attachmentProps, attachmentMethods { }
-export interface attachmentProps extends  entityProps {
+export interface attachmentProps extends entityProps {
 	contentType: string;
 	isInline: boolean;
 	lastModifiedDateTime: any;
@@ -1661,7 +1661,7 @@ add(values?: any): IBaseExecution<attachment>;
 * attachmentBase
 **********************************************/
 export interface attachmentBase extends attachmentBaseProps, attachmentBaseMethods { }
-export interface attachmentBaseProps extends  entityProps {
+export interface attachmentBaseProps extends entityProps {
 	contentType: string;
 	lastModifiedDateTime: any;
 	name: string;
@@ -1680,7 +1680,7 @@ add(values?: any): IBaseExecution<attachmentBase>;
 * attachmentSession
 **********************************************/
 export interface attachmentSession extends attachmentSessionProps, attachmentSessionMethods { }
-export interface attachmentSessionProps extends  entityProps {
+export interface attachmentSessionProps extends entityProps {
 	content: any;
 	expirationDateTime: any;
 	nextExpectedRanges: Array<string>;
@@ -1698,7 +1698,7 @@ add(values?: any): IBaseExecution<attachmentSession>;
 * attackSimulationOperation
 **********************************************/
 export interface attackSimulationOperation extends attackSimulationOperationProps, attackSimulationOperationMethods { }
-export interface attackSimulationOperationProps extends  longRunningOperationProps {
+export interface attackSimulationOperationProps extends longRunningOperationProps {
 	percentageCompleted: number;
 	tenantId: string;
 	type: EnumTypes.attackSimulationOperationType;
@@ -1716,7 +1716,7 @@ add(values?: any): IBaseExecution<attackSimulationOperation>;
 * attackSimulationRoot
 **********************************************/
 export interface attackSimulationRoot extends attackSimulationRootProps, attackSimulationRootMethods { }
-export interface attackSimulationRootProps extends  entityProps {
+export interface attackSimulationRootProps extends entityProps {
 
 }
 export interface attackSimulationRootMethods extends entityMethods {
@@ -1751,7 +1751,7 @@ export interface attackSimulationRootOData extends entityOData {
 * attendanceRecord
 **********************************************/
 export interface attendanceRecord extends attendanceRecordProps, attendanceRecordMethods { }
-export interface attendanceRecordProps extends  entityProps {
+export interface attendanceRecordProps extends entityProps {
 	attendanceIntervals: ComplexTypes.attendanceInterval[];
 	emailAddress: string;
 	identity: ComplexTypes.identity;
@@ -1771,7 +1771,7 @@ add(values?: any): IBaseExecution<attendanceRecord>;
 * attributeMappingFunctionSchema
 **********************************************/
 export interface attributeMappingFunctionSchema extends attributeMappingFunctionSchemaProps, attributeMappingFunctionSchemaMethods { }
-export interface attributeMappingFunctionSchemaProps extends  entityProps {
+export interface attributeMappingFunctionSchemaProps extends entityProps {
 	parameters: ComplexTypes.attributeMappingParameterSchema[];
 }
 export interface attributeMappingFunctionSchemaMethods extends entityMethods {
@@ -1784,7 +1784,7 @@ export interface attributeMappingFunctionSchemaOData extends entityOData {
 * attributeSet
 **********************************************/
 export interface attributeSet extends attributeSetProps, attributeSetMethods { }
-export interface attributeSetProps extends  entityProps {
+export interface attributeSetProps extends entityProps {
 	description: string;
 	maxAttributesPerSet: number;
 }
@@ -1801,7 +1801,7 @@ add(values?: any): IBaseExecution<attributeSet>;
 * audioRoutingGroup
 **********************************************/
 export interface audioRoutingGroup extends audioRoutingGroupProps, audioRoutingGroupMethods { }
-export interface audioRoutingGroupProps extends  entityProps {
+export interface audioRoutingGroupProps extends entityProps {
 	receivers: Array<string>;
 	routingMode: EnumTypes.routingMode;
 	sources: Array<string>;
@@ -1819,7 +1819,7 @@ add(values?: any): IBaseExecution<audioRoutingGroup>;
 * auditEvent
 **********************************************/
 export interface auditEvent extends auditEventProps, auditEventMethods { }
-export interface auditEventProps extends  entityProps {
+export interface auditEventProps extends entityProps {
 	activity: string;
 	activityDateTime: any;
 	activityOperationType: string;
@@ -1845,7 +1845,7 @@ add(values?: any): IBaseExecution<auditEvent>;
 * auditLogRoot
 **********************************************/
 export interface auditLogRoot extends auditLogRootProps, auditLogRootMethods { }
-export interface auditLogRootProps   {
+export interface auditLogRootProps {
 
 }
 export interface auditLogRootMethods {
@@ -1865,7 +1865,7 @@ export interface auditLogRootOData {
 * authentication
 **********************************************/
 export interface authentication extends authenticationProps, authenticationMethods { }
-export interface authenticationProps extends  entityProps {
+export interface authenticationProps extends entityProps {
 
 }
 export interface authenticationMethods extends entityMethods {
@@ -1906,7 +1906,7 @@ export interface authenticationOData extends entityOData {
 * authenticationCombinationConfiguration
 **********************************************/
 export interface authenticationCombinationConfiguration extends authenticationCombinationConfigurationProps, authenticationCombinationConfigurationMethods { }
-export interface authenticationCombinationConfigurationProps extends  entityProps {
+export interface authenticationCombinationConfigurationProps extends entityProps {
 	appliesToCombinations: EnumTypes.authenticationMethodModes[];
 }
 export interface authenticationCombinationConfigurationMethods extends entityMethods {
@@ -1922,7 +1922,7 @@ add(values?: any): IBaseExecution<authenticationCombinationConfiguration>;
 * authenticationConditionApplication
 **********************************************/
 export interface authenticationConditionApplication extends authenticationConditionApplicationProps, authenticationConditionApplicationMethods { }
-export interface authenticationConditionApplicationProps   {
+export interface authenticationConditionApplicationProps {
 	appId: string;
 }
 export interface authenticationConditionApplicationMethods {
@@ -1935,7 +1935,7 @@ export interface authenticationConditionApplicationOData {
 * authenticationContextClassReference
 **********************************************/
 export interface authenticationContextClassReference extends authenticationContextClassReferenceProps, authenticationContextClassReferenceMethods { }
-export interface authenticationContextClassReferenceProps extends  entityProps {
+export interface authenticationContextClassReferenceProps extends entityProps {
 	description: string;
 	displayName: string;
 	isAvailable: boolean;
@@ -1953,7 +1953,7 @@ add(values?: any): IBaseExecution<authenticationContextClassReference>;
 * authenticationEventListener
 **********************************************/
 export interface authenticationEventListener extends authenticationEventListenerProps, authenticationEventListenerMethods { }
-export interface authenticationEventListenerProps extends  entityProps {
+export interface authenticationEventListenerProps extends entityProps {
 	authenticationEventsFlowId: string;
 	conditions: ComplexTypes.authenticationConditions;
 }
@@ -1970,7 +1970,7 @@ add(values?: any): IBaseExecution<authenticationEventListener>;
 * authenticationEventsFlow
 **********************************************/
 export interface authenticationEventsFlow extends authenticationEventsFlowProps, authenticationEventsFlowMethods { }
-export interface authenticationEventsFlowProps extends  entityProps {
+export interface authenticationEventsFlowProps extends entityProps {
 	conditions: ComplexTypes.authenticationConditions;
 	description: string;
 	displayName: string;
@@ -1988,7 +1988,7 @@ add(values?: any): IBaseExecution<authenticationEventsFlow>;
 * authenticationFlowsPolicy
 **********************************************/
 export interface authenticationFlowsPolicy extends authenticationFlowsPolicyProps, authenticationFlowsPolicyMethods { }
-export interface authenticationFlowsPolicyProps extends  entityProps {
+export interface authenticationFlowsPolicyProps extends entityProps {
 	description: string;
 	displayName: string;
 	selfServiceSignUp: ComplexTypes.selfServiceSignUpAuthenticationFlowConfiguration;
@@ -2003,7 +2003,7 @@ export interface authenticationFlowsPolicyOData extends entityOData {
 * authenticationMethod
 **********************************************/
 export interface authenticationMethod extends authenticationMethodProps, authenticationMethodMethods { }
-export interface authenticationMethodProps extends  entityProps {
+export interface authenticationMethodProps extends entityProps {
 
 }
 export interface authenticationMethodMethods extends entityMethods {
@@ -2019,7 +2019,7 @@ add(values?: any): IBaseExecution<authenticationMethod>;
 * authenticationMethodConfiguration
 **********************************************/
 export interface authenticationMethodConfiguration extends authenticationMethodConfigurationProps, authenticationMethodConfigurationMethods { }
-export interface authenticationMethodConfigurationProps extends  entityProps {
+export interface authenticationMethodConfigurationProps extends entityProps {
 	excludeTargets: ComplexTypes.excludeTarget[];
 	state: EnumTypes.authenticationMethodState;
 }
@@ -2036,7 +2036,7 @@ add(values?: any): IBaseExecution<authenticationMethodConfiguration>;
 * authenticationMethodModeDetail
 **********************************************/
 export interface authenticationMethodModeDetail extends authenticationMethodModeDetailProps, authenticationMethodModeDetailMethods { }
-export interface authenticationMethodModeDetailProps extends  entityProps {
+export interface authenticationMethodModeDetailProps extends entityProps {
 	authenticationMethod: EnumTypes.baseAuthenticationMethod;
 	displayName: string;
 }
@@ -2053,7 +2053,7 @@ add(values?: any): IBaseExecution<authenticationMethodModeDetail>;
 * authenticationMethodTarget
 **********************************************/
 export interface authenticationMethodTarget extends authenticationMethodTargetProps, authenticationMethodTargetMethods { }
-export interface authenticationMethodTargetProps extends  entityProps {
+export interface authenticationMethodTargetProps extends entityProps {
 	isRegistrationRequired: boolean;
 	targetType: EnumTypes.authenticationMethodTargetType;
 }
@@ -2070,7 +2070,7 @@ add(values?: any): IBaseExecution<authenticationMethodTarget>;
 * authenticationMethodsPolicy
 **********************************************/
 export interface authenticationMethodsPolicy extends authenticationMethodsPolicyProps, authenticationMethodsPolicyMethods { }
-export interface authenticationMethodsPolicyProps extends  entityProps {
+export interface authenticationMethodsPolicyProps extends entityProps {
 	description: string;
 	displayName: string;
 	lastModifiedDateTime: any;
@@ -2090,7 +2090,7 @@ export interface authenticationMethodsPolicyOData extends entityOData {
 * authenticationMethodsRoot
 **********************************************/
 export interface authenticationMethodsRoot extends authenticationMethodsRootProps, authenticationMethodsRootMethods { }
-export interface authenticationMethodsRootProps extends  entityProps {
+export interface authenticationMethodsRootProps extends entityProps {
 
 }
 export interface authenticationMethodsRootMethods extends entityMethods {
@@ -2112,7 +2112,7 @@ export interface authenticationMethodsRootOData extends entityOData {
 * authenticationStrengthPolicy
 **********************************************/
 export interface authenticationStrengthPolicy extends authenticationStrengthPolicyProps, authenticationStrengthPolicyMethods { }
-export interface authenticationStrengthPolicyProps extends  entityProps {
+export interface authenticationStrengthPolicyProps extends entityProps {
 	allowedCombinations: EnumTypes.authenticationMethodModes[];
 	createdDateTime: any;
 	description: string;
@@ -2139,7 +2139,7 @@ add(values?: any): IBaseExecution<authenticationStrengthPolicy>;
 * authenticationStrengthRoot
 **********************************************/
 export interface authenticationStrengthRoot extends authenticationStrengthRootProps, authenticationStrengthRootMethods { }
-export interface authenticationStrengthRootProps extends  entityProps {
+export interface authenticationStrengthRootProps extends entityProps {
 	combinations: EnumTypes.authenticationMethodModes[];
 }
 export interface authenticationStrengthRootMethods extends entityMethods {
@@ -2156,7 +2156,7 @@ export interface authenticationStrengthRootOData extends entityOData {
 * authoredNote
 **********************************************/
 export interface authoredNote extends authoredNoteProps, authoredNoteMethods { }
-export interface authoredNoteProps extends  entityProps {
+export interface authoredNoteProps extends entityProps {
 	author: ComplexTypes.identity;
 	content: ComplexTypes.itemBody;
 	createdDateTime: any;
@@ -2174,7 +2174,7 @@ add(values?: any): IBaseExecution<authoredNote>;
 * authorityTemplate
 **********************************************/
 export interface authorityTemplate extends authorityTemplateProps, authorityTemplateMethods { }
-export interface authorityTemplateProps extends  filePlanDescriptorTemplateProps {
+export interface authorityTemplateProps extends filePlanDescriptorTemplateProps {
 
 }
 export interface authorityTemplateMethods extends filePlanDescriptorTemplateMethods {
@@ -2187,7 +2187,7 @@ export interface authorityTemplateOData extends filePlanDescriptorTemplateOData 
 * authorizationPolicy
 **********************************************/
 export interface authorizationPolicy extends authorizationPolicyProps, authorizationPolicyMethods { }
-export interface authorizationPolicyProps extends  policyBaseProps {
+export interface authorizationPolicyProps extends policyBaseProps {
 	allowedToSignUpEmailBasedSubscriptions: boolean;
 	allowedToUseSSPR: boolean;
 	allowEmailVerifiedUsersToJoinOrganization: boolean;
@@ -2207,7 +2207,7 @@ export interface authorizationPolicyOData extends policyBaseOData {
 * azureCommunicationServicesUserConversationMember
 **********************************************/
 export interface azureCommunicationServicesUserConversationMember extends azureCommunicationServicesUserConversationMemberProps, azureCommunicationServicesUserConversationMemberMethods { }
-export interface azureCommunicationServicesUserConversationMemberProps extends  conversationMemberProps {
+export interface azureCommunicationServicesUserConversationMemberProps extends conversationMemberProps {
 	azureCommunicationServicesId: string;
 }
 export interface azureCommunicationServicesUserConversationMemberMethods extends conversationMemberMethods {
@@ -2220,7 +2220,7 @@ export interface azureCommunicationServicesUserConversationMemberOData extends c
 * azureUsage
 **********************************************/
 export interface azureUsage extends azureUsageProps, azureUsageMethods { }
-export interface azureUsageProps extends  entityProps {
+export interface azureUsageProps extends entityProps {
 
 }
 export interface azureUsageMethods extends entityMethods {
@@ -2235,7 +2235,7 @@ export interface azureUsageOData extends entityOData {
 * b2xIdentityUserFlow
 **********************************************/
 export interface b2xIdentityUserFlow extends b2xIdentityUserFlowProps, b2xIdentityUserFlowMethods { }
-export interface b2xIdentityUserFlowProps extends  identityUserFlowProps {
+export interface b2xIdentityUserFlowProps extends identityUserFlowProps {
 	apiConnectorConfiguration: ComplexTypes.userFlowApiConnectorConfiguration;
 }
 export interface b2xIdentityUserFlowMethods extends identityUserFlowMethods {
@@ -2261,7 +2261,7 @@ add(values?: any): IBaseExecution<b2xIdentityUserFlow>;
 * backupRestoreRoot
 **********************************************/
 export interface backupRestoreRoot extends backupRestoreRootProps, backupRestoreRootMethods { }
-export interface backupRestoreRootProps extends  entityProps {
+export interface backupRestoreRootProps extends entityProps {
 	serviceStatus: ComplexTypes.serviceStatus;
 }
 export interface backupRestoreRootMethods extends entityMethods {
@@ -2325,7 +2325,7 @@ export interface backupRestoreRootOData extends entityOData {
 * baseItem
 **********************************************/
 export interface baseItem extends baseItemProps, baseItemMethods { }
-export interface baseItemProps extends ComplexTypes.itemReference , entityProps {
+export interface baseItemProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	description: string;
@@ -2333,6 +2333,7 @@ export interface baseItemProps extends ComplexTypes.itemReference , entityProps 
 	lastModifiedBy: ComplexTypes.identitySet;
 	lastModifiedDateTime: any;
 	name: string;
+	parentReference: ComplexTypes.itemReference;
 	webUrl: string;
 }
 export interface baseItemMethods extends entityMethods {
@@ -2350,7 +2351,7 @@ add(values?: any): IBaseExecution<baseItem>;
 * baseItemVersion
 **********************************************/
 export interface baseItemVersion extends baseItemVersionProps, baseItemVersionMethods { }
-export interface baseItemVersionProps extends  entityProps {
+export interface baseItemVersionProps extends entityProps {
 	lastModifiedBy: ComplexTypes.identitySet;
 	lastModifiedDateTime: any;
 	publication: ComplexTypes.publicationFacet;
@@ -2365,7 +2366,7 @@ export interface baseItemVersionOData extends entityOData {
 * baseSitePage
 **********************************************/
 export interface baseSitePage extends baseSitePageProps, baseSitePageMethods { }
-export interface baseSitePageProps extends  baseItemProps {
+export interface baseSitePageProps extends baseItemProps {
 	pageLayout: EnumTypes.pageLayoutType;
 	publishingState: ComplexTypes.publicationFacet;
 	title: string;
@@ -2383,7 +2384,7 @@ add(values?: any): IBaseExecution<baseSitePage>;
 * billedReconciliation
 **********************************************/
 export interface billedReconciliation extends billedReconciliationProps, billedReconciliationMethods { }
-export interface billedReconciliationProps extends  entityProps {
+export interface billedReconciliationProps extends entityProps {
 
 }
 export interface billedReconciliationMethods extends entityMethods {
@@ -2396,7 +2397,7 @@ export interface billedReconciliationOData extends entityOData {
 * billedUsage
 **********************************************/
 export interface billedUsage extends billedUsageProps, billedUsageMethods { }
-export interface billedUsageProps extends  entityProps {
+export interface billedUsageProps extends entityProps {
 
 }
 export interface billedUsageMethods extends entityMethods {
@@ -2409,7 +2410,7 @@ export interface billedUsageOData extends entityOData {
 * billing
 **********************************************/
 export interface billing extends billingProps, billingMethods { }
-export interface billingProps extends  entityProps {
+export interface billingProps extends entityProps {
 
 }
 export interface billingMethods extends entityMethods {
@@ -2430,7 +2431,7 @@ export interface billingOData extends entityOData {
 * billingReconciliation
 **********************************************/
 export interface billingReconciliation extends billingReconciliationProps, billingReconciliationMethods { }
-export interface billingReconciliationProps extends  entityProps {
+export interface billingReconciliationProps extends entityProps {
 
 }
 export interface billingReconciliationMethods extends entityMethods {
@@ -2443,7 +2444,7 @@ export interface billingReconciliationOData extends entityOData {
 * bitlocker
 **********************************************/
 export interface bitlocker extends bitlockerProps, bitlockerMethods { }
-export interface bitlockerProps extends  entityProps {
+export interface bitlockerProps extends entityProps {
 
 }
 export interface bitlockerMethods extends entityMethods {
@@ -2457,7 +2458,7 @@ export interface bitlockerOData extends entityOData {
 * bitlockerRecoveryKey
 **********************************************/
 export interface bitlockerRecoveryKey extends bitlockerRecoveryKeyProps, bitlockerRecoveryKeyMethods { }
-export interface bitlockerRecoveryKeyProps extends  entityProps {
+export interface bitlockerRecoveryKeyProps extends entityProps {
 	createdDateTime: any;
 	deviceId: string;
 	key: string;
@@ -2476,7 +2477,7 @@ add(values?: any): IBaseExecution<bitlockerRecoveryKey>;
 * bookingAppointment
 **********************************************/
 export interface bookingAppointment extends bookingAppointmentProps, bookingAppointmentMethods { }
-export interface bookingAppointmentProps extends  entityProps {
+export interface bookingAppointmentProps extends entityProps {
 	additionalInformation: string;
 	anonymousJoinWebUrl: string;
 	appointmentLabel: string;
@@ -2523,7 +2524,7 @@ add(values?: any): IBaseExecution<bookingAppointment>;
 * bookingBusiness
 **********************************************/
 export interface bookingBusiness extends bookingBusinessProps, bookingBusinessMethods { }
-export interface bookingBusinessProps extends  entityProps {
+export interface bookingBusinessProps extends entityProps {
 	address: ComplexTypes.physicalAddress;
 	bookingPageSettings: ComplexTypes.bookingPageSettings;
 	businessHours: ComplexTypes.bookingWorkHours[];
@@ -2569,7 +2570,7 @@ add(values?: any): IBaseExecution<bookingBusiness>;
 * bookingCurrency
 **********************************************/
 export interface bookingCurrency extends bookingCurrencyProps, bookingCurrencyMethods { }
-export interface bookingCurrencyProps extends  entityProps {
+export interface bookingCurrencyProps extends entityProps {
 	symbol: string;
 }
 export interface bookingCurrencyMethods extends entityMethods {
@@ -2585,7 +2586,7 @@ add(values?: any): IBaseExecution<bookingCurrency>;
 * bookingCustomQuestion
 **********************************************/
 export interface bookingCustomQuestion extends bookingCustomQuestionProps, bookingCustomQuestionMethods { }
-export interface bookingCustomQuestionProps extends  entityProps {
+export interface bookingCustomQuestionProps extends entityProps {
 	answerInputType: EnumTypes.answerInputType;
 	answerOptions: Array<string>;
 	createdDateTime: any;
@@ -2605,7 +2606,7 @@ add(values?: any): IBaseExecution<bookingCustomQuestion>;
 * bookingCustomer
 **********************************************/
 export interface bookingCustomer extends bookingCustomerProps, bookingCustomerMethods { }
-export interface bookingCustomerProps extends  bookingCustomerBaseProps {
+export interface bookingCustomerProps extends bookingCustomerBaseProps {
 	addresses: ComplexTypes.physicalAddress[];
 	createdDateTime: any;
 	displayName: string;
@@ -2623,7 +2624,7 @@ export interface bookingCustomerOData extends bookingCustomerBaseOData {
 * bookingCustomerBase
 **********************************************/
 export interface bookingCustomerBase extends bookingCustomerBaseProps, bookingCustomerBaseMethods { }
-export interface bookingCustomerBaseProps extends  entityProps {
+export interface bookingCustomerBaseProps extends entityProps {
 
 }
 export interface bookingCustomerBaseMethods extends entityMethods {
@@ -2639,7 +2640,7 @@ add(values?: any): IBaseExecution<bookingCustomerBase>;
 * bookingService
 **********************************************/
 export interface bookingService extends bookingServiceProps, bookingServiceMethods { }
-export interface bookingServiceProps extends  entityProps {
+export interface bookingServiceProps extends entityProps {
 	additionalInformation: string;
 	createdDateTime: any;
 	customQuestions: ComplexTypes.bookingQuestionAssignment[];
@@ -2678,7 +2679,7 @@ add(values?: any): IBaseExecution<bookingService>;
 * bookingStaffMember
 **********************************************/
 export interface bookingStaffMember extends bookingStaffMemberProps, bookingStaffMemberMethods { }
-export interface bookingStaffMemberProps extends  bookingStaffMemberBaseProps {
+export interface bookingStaffMemberProps extends bookingStaffMemberBaseProps {
 	availabilityIsAffectedByPersonalCalendar: boolean;
 	createdDateTime: any;
 	displayName: string;
@@ -2701,7 +2702,7 @@ export interface bookingStaffMemberOData extends bookingStaffMemberBaseOData {
 * bookingStaffMemberBase
 **********************************************/
 export interface bookingStaffMemberBase extends bookingStaffMemberBaseProps, bookingStaffMemberBaseMethods { }
-export interface bookingStaffMemberBaseProps extends  entityProps {
+export interface bookingStaffMemberBaseProps extends entityProps {
 
 }
 export interface bookingStaffMemberBaseMethods extends entityMethods {
@@ -2717,7 +2718,7 @@ add(values?: any): IBaseExecution<bookingStaffMemberBase>;
 * bookmark
 **********************************************/
 export interface bookmark extends bookmarkProps, bookmarkMethods { }
-export interface bookmarkProps extends  searchAnswerProps {
+export interface bookmarkProps extends searchAnswerProps {
 	availabilityEndDateTime: any;
 	availabilityStartDateTime: any;
 	categories: Array<string>;
@@ -2740,7 +2741,7 @@ export interface bookmarkOData extends searchAnswerOData {
 * browserSharedCookie
 **********************************************/
 export interface browserSharedCookie extends browserSharedCookieProps, browserSharedCookieMethods { }
-export interface browserSharedCookieProps extends  entityProps {
+export interface browserSharedCookieProps extends entityProps {
 	comment: string;
 	createdDateTime: any;
 	deletedDateTime: any;
@@ -2767,7 +2768,7 @@ add(values?: any): IBaseExecution<browserSharedCookie>;
 * browserSite
 **********************************************/
 export interface browserSite extends browserSiteProps, browserSiteMethods { }
-export interface browserSiteProps extends  entityProps {
+export interface browserSiteProps extends entityProps {
 	allowRedirect: boolean;
 	comment: string;
 	compatibilityMode: EnumTypes.browserSiteCompatibilityMode;
@@ -2794,7 +2795,7 @@ add(values?: any): IBaseExecution<browserSite>;
 * browserSiteList
 **********************************************/
 export interface browserSiteList extends browserSiteListProps, browserSiteListMethods { }
-export interface browserSiteListProps extends  entityProps {
+export interface browserSiteListProps extends entityProps {
 	description: string;
 	displayName: string;
 	lastModifiedBy: ComplexTypes.identitySet;
@@ -2823,7 +2824,7 @@ add(values?: any): IBaseExecution<browserSiteList>;
 * builtInIdentityProvider
 **********************************************/
 export interface builtInIdentityProvider extends builtInIdentityProviderProps, builtInIdentityProviderMethods { }
-export interface builtInIdentityProviderProps extends  identityProviderBaseProps {
+export interface builtInIdentityProviderProps extends identityProviderBaseProps {
 	identityProviderType: string;
 }
 export interface builtInIdentityProviderMethods extends identityProviderBaseMethods {
@@ -2836,7 +2837,7 @@ export interface builtInIdentityProviderOData extends identityProviderBaseOData 
 * bulkUpload
 **********************************************/
 export interface bulkUpload extends bulkUploadProps, bulkUploadMethods { }
-export interface bulkUploadProps extends  entityProps {
+export interface bulkUploadProps extends entityProps {
 
 }
 export interface bulkUploadMethods extends entityMethods {
@@ -2849,7 +2850,7 @@ export interface bulkUploadOData extends entityOData {
 * calendar
 **********************************************/
 export interface calendar extends calendarProps, calendarMethods { }
-export interface calendarProps extends  entityProps {
+export interface calendarProps extends entityProps {
 	allowedOnlineMeetingProviders: EnumTypes.onlineMeetingProviderType[];
 	canEdit: boolean;
 	canShare: boolean;
@@ -2892,7 +2893,7 @@ add(values?: any): IBaseExecution<calendar>;
 * calendarGroup
 **********************************************/
 export interface calendarGroup extends calendarGroupProps, calendarGroupMethods { }
-export interface calendarGroupProps extends  entityProps {
+export interface calendarGroupProps extends entityProps {
 	changeKey: string;
 	classId: any;
 	name: string;
@@ -2911,7 +2912,7 @@ add(values?: any): IBaseExecution<calendarGroup>;
 * calendarPermission
 **********************************************/
 export interface calendarPermission extends calendarPermissionProps, calendarPermissionMethods { }
-export interface calendarPermissionProps extends  entityProps {
+export interface calendarPermissionProps extends entityProps {
 	allowedRoles: EnumTypes.calendarRoleType[];
 	emailAddress: ComplexTypes.emailAddress;
 	isInsideOrganization: boolean;
@@ -2931,7 +2932,7 @@ add(values?: any): IBaseExecution<calendarPermission>;
 * calendarSharingMessage
 **********************************************/
 export interface calendarSharingMessage extends calendarSharingMessageProps, calendarSharingMessageMethods { }
-export interface calendarSharingMessageProps extends  messageProps {
+export interface calendarSharingMessageProps extends messageProps {
 	canAccept: boolean;
 	sharingMessageAction: ComplexTypes.calendarSharingMessageAction;
 	sharingMessageActions: ComplexTypes.calendarSharingMessageAction[];
@@ -2947,7 +2948,7 @@ export interface calendarSharingMessageOData extends messageOData {
 * call
 **********************************************/
 export interface call extends callProps, callMethods { }
-export interface callProps extends  entityProps {
+export interface callProps extends entityProps {
 	callbackUri: string;
 	callChainId: string;
 	callOptions: ComplexTypes.callOptions;
@@ -3022,7 +3023,7 @@ add(values?: any): IBaseExecution<call>;
 * callRecord
 **********************************************/
 export interface callRecord extends callRecordProps, callRecordMethods { }
-export interface callRecordProps extends  entityProps {
+export interface callRecordProps extends entityProps {
 	endDateTime: any;
 	joinWebUrl: string;
 	lastModifiedDateTime: any;
@@ -3049,7 +3050,7 @@ export interface callRecordOData extends entityOData {
 * callRecording
 **********************************************/
 export interface callRecording extends callRecordingProps, callRecordingMethods { }
-export interface callRecordingProps extends  entityProps {
+export interface callRecordingProps extends entityProps {
 	callId: string;
 	content: any;
 	contentCorrelationId: string;
@@ -3072,7 +3073,7 @@ add(values?: any): IBaseExecution<callRecording>;
 * callTranscript
 **********************************************/
 export interface callTranscript extends callTranscriptProps, callTranscriptMethods { }
-export interface callTranscriptProps extends  entityProps {
+export interface callTranscriptProps extends entityProps {
 	callId: string;
 	content: any;
 	contentCorrelationId: string;
@@ -3096,7 +3097,7 @@ add(values?: any): IBaseExecution<callTranscript>;
 * cancelMediaProcessingOperation
 **********************************************/
 export interface cancelMediaProcessingOperation extends cancelMediaProcessingOperationProps, cancelMediaProcessingOperationMethods { }
-export interface cancelMediaProcessingOperationProps extends  commsOperationProps {
+export interface cancelMediaProcessingOperationProps extends commsOperationProps {
 
 }
 export interface cancelMediaProcessingOperationMethods extends commsOperationMethods {
@@ -3109,7 +3110,7 @@ export interface cancelMediaProcessingOperationOData extends commsOperationOData
 * canvasLayout
 **********************************************/
 export interface canvasLayout extends canvasLayoutProps, canvasLayoutMethods { }
-export interface canvasLayoutProps extends  entityProps {
+export interface canvasLayoutProps extends entityProps {
 
 }
 export interface canvasLayoutMethods extends entityMethods {
@@ -3125,7 +3126,7 @@ export interface canvasLayoutOData extends entityOData {
 * caseOperation
 **********************************************/
 export interface caseOperation extends caseOperationProps, caseOperationMethods { }
-export interface caseOperationProps extends  entityProps {
+export interface caseOperationProps extends entityProps {
 	action: EnumTypes.caseAction;
 	completedDateTime: any;
 	createdBy: ComplexTypes.identitySet;
@@ -3144,7 +3145,7 @@ export interface caseOperationOData extends entityOData {
 * casesRoot
 **********************************************/
 export interface casesRoot extends casesRootProps, casesRootMethods { }
-export interface casesRootProps extends  entityProps {
+export interface casesRootProps extends entityProps {
 
 }
 export interface casesRootMethods extends entityMethods {
@@ -3158,7 +3159,7 @@ export interface casesRootOData extends entityOData {
 * categoryTemplate
 **********************************************/
 export interface categoryTemplate extends categoryTemplateProps, categoryTemplateMethods { }
-export interface categoryTemplateProps extends  filePlanDescriptorTemplateProps {
+export interface categoryTemplateProps extends filePlanDescriptorTemplateProps {
 
 }
 export interface categoryTemplateMethods extends filePlanDescriptorTemplateMethods {
@@ -3172,7 +3173,7 @@ export interface categoryTemplateOData extends filePlanDescriptorTemplateOData {
 * certificateBasedAuthConfiguration
 **********************************************/
 export interface certificateBasedAuthConfiguration extends certificateBasedAuthConfigurationProps, certificateBasedAuthConfigurationMethods { }
-export interface certificateBasedAuthConfigurationProps extends  entityProps {
+export interface certificateBasedAuthConfigurationProps extends entityProps {
 	certificateAuthorities: ComplexTypes.certificateAuthority[];
 }
 export interface certificateBasedAuthConfigurationMethods extends entityMethods {
@@ -3188,7 +3189,7 @@ add(values?: any): IBaseExecution<certificateBasedAuthConfiguration>;
 * changeTrackedEntity
 **********************************************/
 export interface changeTrackedEntity extends changeTrackedEntityProps, changeTrackedEntityMethods { }
-export interface changeTrackedEntityProps extends  entityProps {
+export interface changeTrackedEntityProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	lastModifiedBy: ComplexTypes.identitySet;
@@ -3204,7 +3205,7 @@ export interface changeTrackedEntityOData extends entityOData {
 * channel
 **********************************************/
 export interface channel extends channelProps, channelMethods { }
-export interface channelProps extends  entityProps {
+export interface channelProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -3256,7 +3257,7 @@ add(values?: any): IBaseExecution<channel>;
 * chat
 **********************************************/
 export interface chat extends chatProps, chatMethods { }
-export interface chatProps extends  entityProps {
+export interface chatProps extends entityProps {
 	chatType: EnumTypes.chatType;
 	createdDateTime: any;
 	isHiddenForAllMembers: boolean;
@@ -3308,7 +3309,7 @@ add(values?: any): IBaseExecution<chat>;
 * chatMessage
 **********************************************/
 export interface chatMessage extends chatMessageProps, chatMessageMethods { }
-export interface chatMessageProps extends  entityProps {
+export interface chatMessageProps extends entityProps {
 	attachments: ComplexTypes.chatMessageAttachment[];
 	body: ComplexTypes.itemBody;
 	channelIdentity: ComplexTypes.channelIdentity;
@@ -3357,7 +3358,7 @@ add(values?: any): IBaseExecution<chatMessage>;
 * chatMessageHostedContent
 **********************************************/
 export interface chatMessageHostedContent extends chatMessageHostedContentProps, chatMessageHostedContentMethods { }
-export interface chatMessageHostedContentProps extends  teamworkHostedContentProps {
+export interface chatMessageHostedContentProps extends teamworkHostedContentProps {
 
 }
 export interface chatMessageHostedContentMethods extends teamworkHostedContentMethods {
@@ -3373,7 +3374,7 @@ add(values?: any): IBaseExecution<chatMessageHostedContent>;
 * chatMessageInfo
 **********************************************/
 export interface chatMessageInfo extends chatMessageInfoProps, chatMessageInfoMethods { }
-export interface chatMessageInfoProps extends  entityProps {
+export interface chatMessageInfoProps extends entityProps {
 	body: ComplexTypes.itemBody;
 	createdDateTime: any;
 	eventDetail: ComplexTypes.eventMessageDetail;
@@ -3391,7 +3392,7 @@ export interface chatMessageInfoOData extends entityOData {
 * checklistItem
 **********************************************/
 export interface checklistItem extends checklistItemProps, checklistItemMethods { }
-export interface checklistItemProps extends  entityProps {
+export interface checklistItemProps extends entityProps {
 	checkedDateTime: any;
 	createdDateTime: any;
 	displayName: string;
@@ -3410,7 +3411,7 @@ add(values?: any): IBaseExecution<checklistItem>;
 * citationTemplate
 **********************************************/
 export interface citationTemplate extends citationTemplateProps, citationTemplateMethods { }
-export interface citationTemplateProps extends  filePlanDescriptorTemplateProps {
+export interface citationTemplateProps extends filePlanDescriptorTemplateProps {
 	citationJurisdiction: string;
 	citationUrl: string;
 }
@@ -3424,7 +3425,7 @@ export interface citationTemplateOData extends filePlanDescriptorTemplateOData {
 * claimsMappingPolicy
 **********************************************/
 export interface claimsMappingPolicy extends claimsMappingPolicyProps, claimsMappingPolicyMethods { }
-export interface claimsMappingPolicyProps extends  stsPolicyProps {
+export interface claimsMappingPolicyProps extends stsPolicyProps {
 
 }
 export interface claimsMappingPolicyMethods extends stsPolicyMethods {
@@ -3440,7 +3441,7 @@ add(values?: any): IBaseExecution<claimsMappingPolicy>;
 * cloudClipboardItem
 **********************************************/
 export interface cloudClipboardItem extends cloudClipboardItemProps, cloudClipboardItemMethods { }
-export interface cloudClipboardItemProps extends  entityProps {
+export interface cloudClipboardItemProps extends entityProps {
 	createdDateTime: any;
 	expirationDateTime: any;
 	lastModifiedDateTime: any;
@@ -3459,7 +3460,7 @@ add(values?: any): IBaseExecution<cloudClipboardItem>;
 * cloudClipboardRoot
 **********************************************/
 export interface cloudClipboardRoot extends cloudClipboardRootProps, cloudClipboardRootMethods { }
-export interface cloudClipboardRootProps extends  entityProps {
+export interface cloudClipboardRootProps extends entityProps {
 
 }
 export interface cloudClipboardRootMethods extends entityMethods {
@@ -3473,7 +3474,7 @@ export interface cloudClipboardRootOData extends entityOData {
 * cloudCommunications
 **********************************************/
 export interface cloudCommunications extends cloudCommunicationsProps, cloudCommunicationsMethods { }
-export interface cloudCommunicationsProps   {
+export interface cloudCommunicationsProps {
 
 }
 export interface cloudCommunicationsMethods {
@@ -3498,7 +3499,7 @@ export interface cloudCommunicationsOData {
 * cloudPC
 **********************************************/
 export interface cloudPC extends cloudPCProps, cloudPCMethods { }
-export interface cloudPCProps extends  entityProps {
+export interface cloudPCProps extends entityProps {
 	aadDeviceId: string;
 	displayName: string;
 	gracePeriodEndDateTime: any;
@@ -3535,7 +3536,7 @@ add(values?: any): IBaseExecution<cloudPC>;
 * cloudPcAuditEvent
 **********************************************/
 export interface cloudPcAuditEvent extends cloudPcAuditEventProps, cloudPcAuditEventMethods { }
-export interface cloudPcAuditEventProps extends  entityProps {
+export interface cloudPcAuditEventProps extends entityProps {
 	activity: string;
 	activityDateTime: any;
 	activityOperationType: EnumTypes.cloudPcAuditActivityOperationType;
@@ -3561,7 +3562,7 @@ add(values?: any): IBaseExecution<cloudPcAuditEvent>;
 * cloudPcDeviceImage
 **********************************************/
 export interface cloudPcDeviceImage extends cloudPcDeviceImageProps, cloudPcDeviceImageMethods { }
-export interface cloudPcDeviceImageProps extends  entityProps {
+export interface cloudPcDeviceImageProps extends entityProps {
 	displayName: string;
 	errorCode: EnumTypes.cloudPcDeviceImageErrorCode;
 	expirationDate: any;
@@ -3586,7 +3587,7 @@ add(values?: any): IBaseExecution<cloudPcDeviceImage>;
 * cloudPcGalleryImage
 **********************************************/
 export interface cloudPcGalleryImage extends cloudPcGalleryImageProps, cloudPcGalleryImageMethods { }
-export interface cloudPcGalleryImageProps extends  entityProps {
+export interface cloudPcGalleryImageProps extends entityProps {
 	displayName: string;
 	endDate: any;
 	expirationDate: any;
@@ -3610,7 +3611,7 @@ add(values?: any): IBaseExecution<cloudPcGalleryImage>;
 * cloudPcOnPremisesConnection
 **********************************************/
 export interface cloudPcOnPremisesConnection extends cloudPcOnPremisesConnectionProps, cloudPcOnPremisesConnectionMethods { }
-export interface cloudPcOnPremisesConnectionProps extends  entityProps {
+export interface cloudPcOnPremisesConnectionProps extends entityProps {
 	adDomainName: string;
 	adDomainPassword: string;
 	adDomainUsername: string;
@@ -3641,7 +3642,7 @@ add(values?: any): IBaseExecution<cloudPcOnPremisesConnection>;
 * cloudPcProvisioningPolicy
 **********************************************/
 export interface cloudPcProvisioningPolicy extends cloudPcProvisioningPolicyProps, cloudPcProvisioningPolicyMethods { }
-export interface cloudPcProvisioningPolicyProps extends  entityProps {
+export interface cloudPcProvisioningPolicyProps extends entityProps {
 	alternateResourceUrl: string;
 	autopatch: ComplexTypes.cloudPcProvisioningPolicyAutopatch;
 	cloudPcGroupDisplayName: string;
@@ -3675,7 +3676,7 @@ add(values?: any): IBaseExecution<cloudPcProvisioningPolicy>;
 * cloudPcProvisioningPolicyAssignment
 **********************************************/
 export interface cloudPcProvisioningPolicyAssignment extends cloudPcProvisioningPolicyAssignmentProps, cloudPcProvisioningPolicyAssignmentMethods { }
-export interface cloudPcProvisioningPolicyAssignmentProps extends  entityProps {
+export interface cloudPcProvisioningPolicyAssignmentProps extends entityProps {
 	target: ComplexTypes.cloudPcManagementAssignmentTarget;
 }
 export interface cloudPcProvisioningPolicyAssignmentMethods extends entityMethods {
@@ -3692,7 +3693,7 @@ add(values?: any): IBaseExecution<cloudPcProvisioningPolicyAssignment>;
 * cloudPcUserSetting
 **********************************************/
 export interface cloudPcUserSetting extends cloudPcUserSettingProps, cloudPcUserSettingMethods { }
-export interface cloudPcUserSettingProps extends  entityProps {
+export interface cloudPcUserSettingProps extends entityProps {
 	createdDateTime: any;
 	displayName: string;
 	lastModifiedDateTime: any;
@@ -3716,7 +3717,7 @@ add(values?: any): IBaseExecution<cloudPcUserSetting>;
 * cloudPcUserSettingAssignment
 **********************************************/
 export interface cloudPcUserSettingAssignment extends cloudPcUserSettingAssignmentProps, cloudPcUserSettingAssignmentMethods { }
-export interface cloudPcUserSettingAssignmentProps extends  entityProps {
+export interface cloudPcUserSettingAssignmentProps extends entityProps {
 	createdDateTime: any;
 	target: ComplexTypes.cloudPcManagementAssignmentTarget;
 }
@@ -3733,7 +3734,7 @@ add(values?: any): IBaseExecution<cloudPcUserSettingAssignment>;
 * columnDefinition
 **********************************************/
 export interface columnDefinition extends columnDefinitionProps, columnDefinitionMethods { }
-export interface columnDefinitionProps extends  entityProps {
+export interface columnDefinitionProps extends entityProps {
 	boolean: ComplexTypes.booleanColumn;
 	calculated: ComplexTypes.calculatedColumn;
 	choice: ComplexTypes.choiceColumn;
@@ -3783,7 +3784,7 @@ add(values?: any): IBaseExecution<columnDefinition>;
 * columnLink
 **********************************************/
 export interface columnLink extends columnLinkProps, columnLinkMethods { }
-export interface columnLinkProps extends  entityProps {
+export interface columnLinkProps extends entityProps {
 	name: string;
 }
 export interface columnLinkMethods extends entityMethods {
@@ -3799,7 +3800,7 @@ add(values?: any): IBaseExecution<columnLink>;
 * commsOperation
 **********************************************/
 export interface commsOperation extends commsOperationProps, commsOperationMethods { }
-export interface commsOperationProps extends  entityProps {
+export interface commsOperationProps extends entityProps {
 	clientContext: string;
 	resultInfo: ComplexTypes.resultInfo;
 	status: EnumTypes.operationStatus;
@@ -3817,7 +3818,7 @@ add(values?: any): IBaseExecution<commsOperation>;
 * community
 **********************************************/
 export interface community extends communityProps, communityMethods { }
-export interface communityProps extends  entityProps {
+export interface communityProps extends entityProps {
 	description: string;
 	displayName: string;
 	groupId: string;
@@ -3839,7 +3840,7 @@ add(values?: any): IBaseExecution<community>;
 * companySubscription
 **********************************************/
 export interface companySubscription extends companySubscriptionProps, companySubscriptionMethods { }
-export interface companySubscriptionProps extends  entityProps {
+export interface companySubscriptionProps extends entityProps {
 	commerceSubscriptionId: string;
 	createdDateTime: any;
 	isTrial: boolean;
@@ -3866,7 +3867,7 @@ add(values?: any): IBaseExecution<companySubscription>;
 * compliance
 **********************************************/
 export interface compliance extends complianceProps, complianceMethods { }
-export interface complianceProps   {
+export interface complianceProps {
 
 }
 export interface complianceMethods {
@@ -3879,7 +3880,7 @@ export interface complianceOData {
 * complianceManagementPartner
 **********************************************/
 export interface complianceManagementPartner extends complianceManagementPartnerProps, complianceManagementPartnerMethods { }
-export interface complianceManagementPartnerProps extends  entityProps {
+export interface complianceManagementPartnerProps extends entityProps {
 	androidEnrollmentAssignments: ComplexTypes.complianceManagementPartnerAssignment[];
 	androidOnboarded: boolean;
 	displayName: string;
@@ -3903,7 +3904,7 @@ add(values?: any): IBaseExecution<complianceManagementPartner>;
 * conditionalAccessPolicy
 **********************************************/
 export interface conditionalAccessPolicy extends conditionalAccessPolicyProps, conditionalAccessPolicyMethods { }
-export interface conditionalAccessPolicyProps extends  entityProps {
+export interface conditionalAccessPolicyProps extends entityProps {
 	conditions: ComplexTypes.conditionalAccessConditionSet;
 	createdDateTime: any;
 	description: string;
@@ -3927,7 +3928,7 @@ add(values?: any): IBaseExecution<conditionalAccessPolicy>;
 * conditionalAccessRoot
 **********************************************/
 export interface conditionalAccessRoot extends conditionalAccessRootProps, conditionalAccessRootMethods { }
-export interface conditionalAccessRootProps extends  entityProps {
+export interface conditionalAccessRootProps extends entityProps {
 
 }
 export interface conditionalAccessRootMethods extends entityMethods {
@@ -3952,7 +3953,7 @@ export interface conditionalAccessRootOData extends entityOData {
 * conditionalAccessTemplate
 **********************************************/
 export interface conditionalAccessTemplate extends conditionalAccessTemplateProps, conditionalAccessTemplateMethods { }
-export interface conditionalAccessTemplateProps extends  entityProps {
+export interface conditionalAccessTemplateProps extends entityProps {
 	description: string;
 	details: ComplexTypes.conditionalAccessPolicyDetail;
 	name: string;
@@ -3971,7 +3972,7 @@ add(values?: any): IBaseExecution<conditionalAccessTemplate>;
 * connectedOrganization
 **********************************************/
 export interface connectedOrganization extends connectedOrganizationProps, connectedOrganizationMethods { }
-export interface connectedOrganizationProps extends  entityProps {
+export interface connectedOrganizationProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -3996,7 +3997,7 @@ add(values?: any): IBaseExecution<connectedOrganization>;
 * connectionOperation
 **********************************************/
 export interface connectionOperation extends connectionOperationProps, connectionOperationMethods { }
-export interface connectionOperationProps extends  entityProps {
+export interface connectionOperationProps extends entityProps {
 	error: ComplexTypes.publicError;
 	status: EnumTypes.connectionOperationStatus;
 }
@@ -4010,7 +4011,7 @@ export interface connectionOperationOData extends entityOData {
 * contact
 **********************************************/
 export interface contact extends contactProps, contactMethods { }
-export interface contactProps extends  outlookItemProps {
+export interface contactProps extends outlookItemProps {
 	assistantName: string;
 	birthday: any;
 	businessAddress: ComplexTypes.physicalAddress;
@@ -4067,7 +4068,7 @@ add(values?: any): IBaseExecution<contact>;
 * contactFolder
 **********************************************/
 export interface contactFolder extends contactFolderProps, contactFolderMethods { }
-export interface contactFolderProps extends  entityProps {
+export interface contactFolderProps extends entityProps {
 	displayName: string;
 	parentFolderId: string;
 }
@@ -4094,7 +4095,7 @@ add(values?: any): IBaseExecution<contactFolder>;
 * contentSharingSession
 **********************************************/
 export interface contentSharingSession extends contentSharingSessionProps, contentSharingSessionMethods { }
-export interface contentSharingSessionProps extends  entityProps {
+export interface contentSharingSessionProps extends entityProps {
 
 }
 export interface contentSharingSessionMethods extends entityMethods {
@@ -4110,7 +4111,7 @@ add(values?: any): IBaseExecution<contentSharingSession>;
 * contentType
 **********************************************/
 export interface contentType extends contentTypeProps, contentTypeMethods { }
-export interface contentTypeProps extends  entityProps {
+export interface contentTypeProps extends entityProps {
 	associatedHubsUrls: Array<string>;
 	description: string;
 	documentSet: ComplexTypes.documentSet;
@@ -4165,7 +4166,7 @@ add(values?: any): IBaseExecution<contentType>;
 * contract
 **********************************************/
 export interface contract extends contractProps, contractMethods { }
-export interface contractProps extends  directoryObjectProps {
+export interface contractProps extends directoryObjectProps {
 	contractType: string;
 	customerId: any;
 	defaultDomainName: string;
@@ -4181,7 +4182,7 @@ export interface contractOData extends directoryObjectOData {
 * conversation
 **********************************************/
 export interface conversation extends conversationProps, conversationMethods { }
-export interface conversationProps extends  entityProps {
+export interface conversationProps extends entityProps {
 	hasAttachments: boolean;
 	lastDeliveredDateTime: any;
 	preview: string;
@@ -4202,7 +4203,7 @@ add(values?: any): IBaseExecution<conversation>;
 * conversationMember
 **********************************************/
 export interface conversationMember extends conversationMemberProps, conversationMemberMethods { }
-export interface conversationMemberProps extends  entityProps {
+export interface conversationMemberProps extends entityProps {
 	displayName: string;
 	roles: Array<string>;
 	visibleHistoryStartDateTime: any;
@@ -4220,7 +4221,7 @@ add(values?: any): IBaseExecution<conversationMember>;
 * conversationThread
 **********************************************/
 export interface conversationThread extends conversationThreadProps, conversationThreadMethods { }
-export interface conversationThreadProps extends  entityProps {
+export interface conversationThreadProps extends entityProps {
 	ccRecipients: ComplexTypes.recipient[];
 	hasAttachments: boolean;
 	isLocked: boolean;
@@ -4246,7 +4247,7 @@ add(values?: any): IBaseExecution<conversationThread>;
 * countryNamedLocation
 **********************************************/
 export interface countryNamedLocation extends countryNamedLocationProps, countryNamedLocationMethods { }
-export interface countryNamedLocationProps extends  namedLocationProps {
+export interface countryNamedLocationProps extends namedLocationProps {
 	countriesAndRegions: Array<string>;
 	countryLookupMethod: EnumTypes.countryLookupMethodType;
 	includeUnknownCountriesAndRegions: boolean;
@@ -4261,7 +4262,7 @@ export interface countryNamedLocationOData extends namedLocationOData {
 * crossTenantAccessPolicy
 **********************************************/
 export interface crossTenantAccessPolicy extends crossTenantAccessPolicyProps, crossTenantAccessPolicyMethods { }
-export interface crossTenantAccessPolicyProps extends  policyBaseProps {
+export interface crossTenantAccessPolicyProps extends policyBaseProps {
 	allowedCloudEndpoints: Array<string>;
 }
 export interface crossTenantAccessPolicyMethods extends policyBaseMethods {
@@ -4279,7 +4280,7 @@ export interface crossTenantAccessPolicyOData extends policyBaseOData {
 * crossTenantAccessPolicyConfigurationDefault
 **********************************************/
 export interface crossTenantAccessPolicyConfigurationDefault extends crossTenantAccessPolicyConfigurationDefaultProps, crossTenantAccessPolicyConfigurationDefaultMethods { }
-export interface crossTenantAccessPolicyConfigurationDefaultProps extends  entityProps {
+export interface crossTenantAccessPolicyConfigurationDefaultProps extends entityProps {
 	automaticUserConsentSettings: ComplexTypes.inboundOutboundPolicyConfiguration;
 	b2bCollaborationInbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
 	b2bCollaborationOutbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
@@ -4300,7 +4301,7 @@ export interface crossTenantAccessPolicyConfigurationDefaultOData extends entity
 * crossTenantAccessPolicyConfigurationPartner
 **********************************************/
 export interface crossTenantAccessPolicyConfigurationPartner extends crossTenantAccessPolicyConfigurationPartnerProps, crossTenantAccessPolicyConfigurationPartnerMethods { }
-export interface crossTenantAccessPolicyConfigurationPartnerProps   {
+export interface crossTenantAccessPolicyConfigurationPartnerProps {
 	automaticUserConsentSettings: ComplexTypes.inboundOutboundPolicyConfiguration;
 	b2bCollaborationInbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
 	b2bCollaborationOutbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
@@ -4322,7 +4323,7 @@ export interface crossTenantAccessPolicyConfigurationPartnerOData {
 * crossTenantIdentitySyncPolicyPartner
 **********************************************/
 export interface crossTenantIdentitySyncPolicyPartner extends crossTenantIdentitySyncPolicyPartnerProps, crossTenantIdentitySyncPolicyPartnerMethods { }
-export interface crossTenantIdentitySyncPolicyPartnerProps   {
+export interface crossTenantIdentitySyncPolicyPartnerProps {
 	displayName: string;
 	tenantId: string;
 	userSyncInbound: ComplexTypes.crossTenantUserSyncInbound;
@@ -4337,7 +4338,7 @@ export interface crossTenantIdentitySyncPolicyPartnerOData {
 * customAuthenticationExtension
 **********************************************/
 export interface customAuthenticationExtension extends customAuthenticationExtensionProps, customAuthenticationExtensionMethods { }
-export interface customAuthenticationExtensionProps extends  customCalloutExtensionProps {
+export interface customAuthenticationExtensionProps extends customCalloutExtensionProps {
 
 }
 export interface customAuthenticationExtensionMethods extends customCalloutExtensionMethods {
@@ -4353,7 +4354,7 @@ add(values?: any): IBaseExecution<customAuthenticationExtension>;
 * customCalloutExtension
 **********************************************/
 export interface customCalloutExtension extends customCalloutExtensionProps, customCalloutExtensionMethods { }
-export interface customCalloutExtensionProps extends  entityProps {
+export interface customCalloutExtensionProps extends entityProps {
 	authenticationConfiguration: ComplexTypes.customExtensionAuthenticationConfiguration;
 	clientConfiguration: ComplexTypes.customExtensionClientConfiguration;
 	description: string;
@@ -4373,7 +4374,7 @@ add(values?: any): IBaseExecution<customCalloutExtension>;
 * customExtensionStageSetting
 **********************************************/
 export interface customExtensionStageSetting extends customExtensionStageSettingProps, customExtensionStageSettingMethods { }
-export interface customExtensionStageSettingProps extends  entityProps {
+export interface customExtensionStageSettingProps extends entityProps {
 	stage: EnumTypes.accessPackageCustomExtensionStage;
 }
 export interface customExtensionStageSettingMethods extends entityMethods {
@@ -4389,7 +4390,7 @@ add(values?: any): IBaseExecution<customExtensionStageSetting>;
 * customSecurityAttributeDefinition
 **********************************************/
 export interface customSecurityAttributeDefinition extends customSecurityAttributeDefinitionProps, customSecurityAttributeDefinitionMethods { }
-export interface customSecurityAttributeDefinitionProps extends  entityProps {
+export interface customSecurityAttributeDefinitionProps extends entityProps {
 	attributeSet: string;
 	description: string;
 	isCollection: boolean;
@@ -4413,7 +4414,7 @@ add(values?: any): IBaseExecution<customSecurityAttributeDefinition>;
 * customTaskExtension
 **********************************************/
 export interface customTaskExtension extends customTaskExtensionProps, customTaskExtensionMethods { }
-export interface customTaskExtensionProps extends  customCalloutExtensionProps {
+export interface customTaskExtensionProps extends customCalloutExtensionProps {
 	callbackConfiguration: ComplexTypes.customExtensionCallbackConfiguration;
 	createdDateTime: any;
 	lastModifiedDateTime: any;
@@ -4430,7 +4431,7 @@ export interface customTaskExtensionOData extends customCalloutExtensionOData {
 * dataPolicyOperation
 **********************************************/
 export interface dataPolicyOperation extends dataPolicyOperationProps, dataPolicyOperationMethods { }
-export interface dataPolicyOperationProps extends  entityProps {
+export interface dataPolicyOperationProps extends entityProps {
 	completedDateTime: any;
 	progress: number;
 	status: EnumTypes.dataPolicyOperationStatus;
@@ -4448,7 +4449,7 @@ export interface dataPolicyOperationOData extends entityOData {
 * dataSet
 **********************************************/
 export interface dataSet extends dataSetProps, dataSetMethods { }
-export interface dataSetProps extends  entityProps {
+export interface dataSetProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	description: string;
@@ -4464,7 +4465,7 @@ export interface dataSetOData extends entityOData {
 * dataSource
 **********************************************/
 export interface dataSource extends dataSourceProps, dataSourceMethods { }
-export interface dataSourceProps extends  entityProps {
+export interface dataSourceProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	displayName: string;
@@ -4480,7 +4481,7 @@ export interface dataSourceOData extends entityOData {
 * dataSourceContainer
 **********************************************/
 export interface dataSourceContainer extends dataSourceContainerProps, dataSourceContainerMethods { }
-export interface dataSourceContainerProps extends  entityProps {
+export interface dataSourceContainerProps extends entityProps {
 	createdDateTime: any;
 	displayName: string;
 	holdStatus: EnumTypes.dataSourceHoldStatus;
@@ -4498,7 +4499,7 @@ export interface dataSourceContainerOData extends entityOData {
 * dayNote
 **********************************************/
 export interface dayNote extends dayNoteProps, dayNoteMethods { }
-export interface dayNoteProps extends  changeTrackedEntityProps {
+export interface dayNoteProps extends changeTrackedEntityProps {
 	dayNoteDate: any;
 	draftDayNote: ComplexTypes.itemBody;
 	sharedDayNote: ComplexTypes.itemBody;
@@ -4516,7 +4517,7 @@ add(values?: any): IBaseExecution<dayNote>;
 * defaultManagedAppProtection
 **********************************************/
 export interface defaultManagedAppProtection extends defaultManagedAppProtectionProps, defaultManagedAppProtectionMethods { }
-export interface defaultManagedAppProtectionProps extends  managedAppProtectionProps {
+export interface defaultManagedAppProtectionProps extends managedAppProtectionProps {
 	appDataEncryptionType: EnumTypes.managedAppDataEncryptionType;
 	customSettings: ComplexTypes.keyValuePair[];
 	deployedAppCount: number;
@@ -4544,7 +4545,7 @@ add(values?: any): IBaseExecution<defaultManagedAppProtection>;
 * delegatedAdminAccessAssignment
 **********************************************/
 export interface delegatedAdminAccessAssignment extends delegatedAdminAccessAssignmentProps, delegatedAdminAccessAssignmentMethods { }
-export interface delegatedAdminAccessAssignmentProps extends  entityProps {
+export interface delegatedAdminAccessAssignmentProps extends entityProps {
 	accessContainer: ComplexTypes.delegatedAdminAccessContainer;
 	accessDetails: ComplexTypes.delegatedAdminAccessDetails;
 	createdDateTime: any;
@@ -4564,7 +4565,7 @@ add(values?: any): IBaseExecution<delegatedAdminAccessAssignment>;
 * delegatedAdminCustomer
 **********************************************/
 export interface delegatedAdminCustomer extends delegatedAdminCustomerProps, delegatedAdminCustomerMethods { }
-export interface delegatedAdminCustomerProps extends  entityProps {
+export interface delegatedAdminCustomerProps extends entityProps {
 	displayName: string;
 	tenantId: string;
 }
@@ -4582,7 +4583,7 @@ add(values?: any): IBaseExecution<delegatedAdminCustomer>;
 * delegatedAdminRelationship
 **********************************************/
 export interface delegatedAdminRelationship extends delegatedAdminRelationshipProps, delegatedAdminRelationshipMethods { }
-export interface delegatedAdminRelationshipProps extends  entityProps {
+export interface delegatedAdminRelationshipProps extends entityProps {
 	accessDetails: ComplexTypes.delegatedAdminAccessDetails;
 	activatedDateTime: any;
 	autoExtendDuration: number;
@@ -4614,7 +4615,7 @@ add(values?: any): IBaseExecution<delegatedAdminRelationship>;
 * delegatedAdminRelationshipOperation
 **********************************************/
 export interface delegatedAdminRelationshipOperation extends delegatedAdminRelationshipOperationProps, delegatedAdminRelationshipOperationMethods { }
-export interface delegatedAdminRelationshipOperationProps extends  entityProps {
+export interface delegatedAdminRelationshipOperationProps extends entityProps {
 	createdDateTime: any;
 	data: string;
 	lastModifiedDateTime: any;
@@ -4634,7 +4635,7 @@ add(values?: any): IBaseExecution<delegatedAdminRelationshipOperation>;
 * delegatedAdminRelationshipRequest
 **********************************************/
 export interface delegatedAdminRelationshipRequest extends delegatedAdminRelationshipRequestProps, delegatedAdminRelationshipRequestMethods { }
-export interface delegatedAdminRelationshipRequestProps extends  entityProps {
+export interface delegatedAdminRelationshipRequestProps extends entityProps {
 	action: EnumTypes.delegatedAdminRelationshipRequestAction;
 	createdDateTime: any;
 	lastModifiedDateTime: any;
@@ -4653,7 +4654,7 @@ add(values?: any): IBaseExecution<delegatedAdminRelationshipRequest>;
 * delegatedAdminServiceManagementDetail
 **********************************************/
 export interface delegatedAdminServiceManagementDetail extends delegatedAdminServiceManagementDetailProps, delegatedAdminServiceManagementDetailMethods { }
-export interface delegatedAdminServiceManagementDetailProps extends  entityProps {
+export interface delegatedAdminServiceManagementDetailProps extends entityProps {
 	serviceManagementUrl: string;
 	serviceName: string;
 }
@@ -4670,7 +4671,7 @@ add(values?: any): IBaseExecution<delegatedAdminServiceManagementDetail>;
 * delegatedPermissionClassification
 **********************************************/
 export interface delegatedPermissionClassification extends delegatedPermissionClassificationProps, delegatedPermissionClassificationMethods { }
-export interface delegatedPermissionClassificationProps extends  entityProps {
+export interface delegatedPermissionClassificationProps extends entityProps {
 	classification: EnumTypes.permissionClassificationType;
 	permissionId: string;
 	permissionName: string;
@@ -4688,7 +4689,7 @@ add(values?: any): IBaseExecution<delegatedPermissionClassification>;
 * deletedChat
 **********************************************/
 export interface deletedChat extends deletedChatProps, deletedChatMethods { }
-export interface deletedChatProps extends  entityProps {
+export interface deletedChatProps extends entityProps {
 
 }
 export interface deletedChatMethods extends entityMethods {
@@ -4704,7 +4705,7 @@ add(values?: any): IBaseExecution<deletedChat>;
 * deletedItemContainer
 **********************************************/
 export interface deletedItemContainer extends deletedItemContainerProps, deletedItemContainerMethods { }
-export interface deletedItemContainerProps extends  entityProps {
+export interface deletedItemContainerProps extends entityProps {
 
 }
 export interface deletedItemContainerMethods extends entityMethods {
@@ -4718,7 +4719,7 @@ export interface deletedItemContainerOData extends entityOData {
 * deletedTeam
 **********************************************/
 export interface deletedTeam extends deletedTeamProps, deletedTeamMethods { }
-export interface deletedTeamProps extends  entityProps {
+export interface deletedTeamProps extends entityProps {
 
 }
 export interface deletedTeamMethods extends entityMethods {
@@ -4735,7 +4736,7 @@ add(values?: any): IBaseExecution<deletedTeam>;
 * deltaParticipants
 **********************************************/
 export interface deltaParticipants extends deltaParticipantsProps, deltaParticipantsMethods { }
-export interface deltaParticipantsProps extends  entityProps {
+export interface deltaParticipantsProps extends entityProps {
 	sequenceNumber: number;
 }
 export interface deltaParticipantsMethods extends entityMethods {
@@ -4749,7 +4750,7 @@ export interface deltaParticipantsOData extends entityOData {
 * departmentTemplate
 **********************************************/
 export interface departmentTemplate extends departmentTemplateProps, departmentTemplateMethods { }
-export interface departmentTemplateProps extends  filePlanDescriptorTemplateProps {
+export interface departmentTemplateProps extends filePlanDescriptorTemplateProps {
 
 }
 export interface departmentTemplateMethods extends filePlanDescriptorTemplateMethods {
@@ -4762,7 +4763,7 @@ export interface departmentTemplateOData extends filePlanDescriptorTemplateOData
 * detectedApp
 **********************************************/
 export interface detectedApp extends detectedAppProps, detectedAppMethods { }
-export interface detectedAppProps extends  entityProps {
+export interface detectedAppProps extends entityProps {
 	deviceCount: number;
 	displayName: string;
 	platform: EnumTypes.detectedAppPlatformType;
@@ -4784,7 +4785,7 @@ add(values?: any): IBaseExecution<detectedApp>;
 * device
 **********************************************/
 export interface device extends deviceProps, deviceMethods { }
-export interface deviceProps extends  directoryObjectProps {
+export interface deviceProps extends directoryObjectProps {
 	accountEnabled: boolean;
 	alternativeSecurityIds: ComplexTypes.alternativeSecurityId[];
 	approximateLastSignInDateTime: any;
@@ -4839,7 +4840,7 @@ export interface deviceOData extends directoryObjectOData {
 * deviceAndAppManagementRoleAssignment
 **********************************************/
 export interface deviceAndAppManagementRoleAssignment extends deviceAndAppManagementRoleAssignmentProps, deviceAndAppManagementRoleAssignmentMethods { }
-export interface deviceAndAppManagementRoleAssignmentProps extends  roleAssignmentProps {
+export interface deviceAndAppManagementRoleAssignmentProps extends roleAssignmentProps {
 	members: Array<string>;
 }
 export interface deviceAndAppManagementRoleAssignmentMethods extends roleAssignmentMethods {
@@ -4855,7 +4856,7 @@ add(values?: any): IBaseExecution<deviceAndAppManagementRoleAssignment>;
 * deviceAndAppManagementRoleDefinition
 **********************************************/
 export interface deviceAndAppManagementRoleDefinition extends deviceAndAppManagementRoleDefinitionProps, deviceAndAppManagementRoleDefinitionMethods { }
-export interface deviceAndAppManagementRoleDefinitionProps extends  roleDefinitionProps {
+export interface deviceAndAppManagementRoleDefinitionProps extends roleDefinitionProps {
 
 }
 export interface deviceAndAppManagementRoleDefinitionMethods extends roleDefinitionMethods {
@@ -4868,7 +4869,7 @@ export interface deviceAndAppManagementRoleDefinitionOData extends roleDefinitio
 * deviceAppManagement
 **********************************************/
 export interface deviceAppManagement extends deviceAppManagementProps, deviceAppManagementMethods { }
-export interface deviceAppManagementProps extends  entityProps {
+export interface deviceAppManagementProps extends entityProps {
 	isEnabledForMicrosoftStoreForBusiness: boolean;
 	microsoftStoreForBusinessLanguage: string;
 	microsoftStoreForBusinessLastCompletedApplicationSyncTime: any;
@@ -4926,7 +4927,7 @@ export interface deviceAppManagementOData extends entityOData {
 * deviceCategory
 **********************************************/
 export interface deviceCategory extends deviceCategoryProps, deviceCategoryMethods { }
-export interface deviceCategoryProps extends  entityProps {
+export interface deviceCategoryProps extends entityProps {
 	description: string;
 	displayName: string;
 }
@@ -4943,7 +4944,7 @@ add(values?: any): IBaseExecution<deviceCategory>;
 * deviceComplianceActionItem
 **********************************************/
 export interface deviceComplianceActionItem extends deviceComplianceActionItemProps, deviceComplianceActionItemMethods { }
-export interface deviceComplianceActionItemProps extends  entityProps {
+export interface deviceComplianceActionItemProps extends entityProps {
 	actionType: EnumTypes.deviceComplianceActionType;
 	gracePeriodHours: number;
 	notificationMessageCCList: Array<string>;
@@ -4962,7 +4963,7 @@ add(values?: any): IBaseExecution<deviceComplianceActionItem>;
 * deviceComplianceDeviceOverview
 **********************************************/
 export interface deviceComplianceDeviceOverview extends deviceComplianceDeviceOverviewProps, deviceComplianceDeviceOverviewMethods { }
-export interface deviceComplianceDeviceOverviewProps extends  entityProps {
+export interface deviceComplianceDeviceOverviewProps extends entityProps {
 	configurationVersion: number;
 	errorCount: number;
 	failedCount: number;
@@ -4981,7 +4982,7 @@ export interface deviceComplianceDeviceOverviewOData extends entityOData {
 * deviceComplianceDeviceStatus
 **********************************************/
 export interface deviceComplianceDeviceStatus extends deviceComplianceDeviceStatusProps, deviceComplianceDeviceStatusMethods { }
-export interface deviceComplianceDeviceStatusProps extends  entityProps {
+export interface deviceComplianceDeviceStatusProps extends entityProps {
 	complianceGracePeriodExpirationDateTime: any;
 	deviceDisplayName: string;
 	deviceModel: string;
@@ -5003,7 +5004,7 @@ add(values?: any): IBaseExecution<deviceComplianceDeviceStatus>;
 * deviceCompliancePolicy
 **********************************************/
 export interface deviceCompliancePolicy extends deviceCompliancePolicyProps, deviceCompliancePolicyMethods { }
-export interface deviceCompliancePolicyProps extends  entityProps {
+export interface deviceCompliancePolicyProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -5044,7 +5045,7 @@ add(values?: any): IBaseExecution<deviceCompliancePolicy>;
 * deviceCompliancePolicyAssignment
 **********************************************/
 export interface deviceCompliancePolicyAssignment extends deviceCompliancePolicyAssignmentProps, deviceCompliancePolicyAssignmentMethods { }
-export interface deviceCompliancePolicyAssignmentProps extends  entityProps {
+export interface deviceCompliancePolicyAssignmentProps extends entityProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface deviceCompliancePolicyAssignmentMethods extends entityMethods {
@@ -5060,7 +5061,7 @@ add(values?: any): IBaseExecution<deviceCompliancePolicyAssignment>;
 * deviceCompliancePolicyDeviceStateSummary
 **********************************************/
 export interface deviceCompliancePolicyDeviceStateSummary extends deviceCompliancePolicyDeviceStateSummaryProps, deviceCompliancePolicyDeviceStateSummaryMethods { }
-export interface deviceCompliancePolicyDeviceStateSummaryProps extends  entityProps {
+export interface deviceCompliancePolicyDeviceStateSummaryProps extends entityProps {
 	compliantDeviceCount: number;
 	configManagerCount: number;
 	conflictDeviceCount: number;
@@ -5081,7 +5082,7 @@ export interface deviceCompliancePolicyDeviceStateSummaryOData extends entityODa
 * deviceCompliancePolicySettingStateSummary
 **********************************************/
 export interface deviceCompliancePolicySettingStateSummary extends deviceCompliancePolicySettingStateSummaryProps, deviceCompliancePolicySettingStateSummaryMethods { }
-export interface deviceCompliancePolicySettingStateSummaryProps extends  entityProps {
+export interface deviceCompliancePolicySettingStateSummaryProps extends entityProps {
 	compliantDeviceCount: number;
 	conflictDeviceCount: number;
 	errorDeviceCount: number;
@@ -5107,7 +5108,7 @@ add(values?: any): IBaseExecution<deviceCompliancePolicySettingStateSummary>;
 * deviceCompliancePolicyState
 **********************************************/
 export interface deviceCompliancePolicyState extends deviceCompliancePolicyStateProps, deviceCompliancePolicyStateMethods { }
-export interface deviceCompliancePolicyStateProps extends  entityProps {
+export interface deviceCompliancePolicyStateProps extends entityProps {
 	displayName: string;
 	platformType: EnumTypes.policyPlatformType;
 	settingCount: number;
@@ -5128,7 +5129,7 @@ add(values?: any): IBaseExecution<deviceCompliancePolicyState>;
 * deviceComplianceScheduledActionForRule
 **********************************************/
 export interface deviceComplianceScheduledActionForRule extends deviceComplianceScheduledActionForRuleProps, deviceComplianceScheduledActionForRuleMethods { }
-export interface deviceComplianceScheduledActionForRuleProps extends  entityProps {
+export interface deviceComplianceScheduledActionForRuleProps extends entityProps {
 	ruleName: string;
 }
 export interface deviceComplianceScheduledActionForRuleMethods extends entityMethods {
@@ -5145,7 +5146,7 @@ add(values?: any): IBaseExecution<deviceComplianceScheduledActionForRule>;
 * deviceComplianceSettingState
 **********************************************/
 export interface deviceComplianceSettingState extends deviceComplianceSettingStateProps, deviceComplianceSettingStateMethods { }
-export interface deviceComplianceSettingStateProps extends  entityProps {
+export interface deviceComplianceSettingStateProps extends entityProps {
 	complianceGracePeriodExpirationDateTime: any;
 	deviceId: string;
 	deviceModel: string;
@@ -5171,7 +5172,7 @@ add(values?: any): IBaseExecution<deviceComplianceSettingState>;
 * deviceComplianceUserOverview
 **********************************************/
 export interface deviceComplianceUserOverview extends deviceComplianceUserOverviewProps, deviceComplianceUserOverviewMethods { }
-export interface deviceComplianceUserOverviewProps extends  entityProps {
+export interface deviceComplianceUserOverviewProps extends entityProps {
 	configurationVersion: number;
 	errorCount: number;
 	failedCount: number;
@@ -5190,7 +5191,7 @@ export interface deviceComplianceUserOverviewOData extends entityOData {
 * deviceComplianceUserStatus
 **********************************************/
 export interface deviceComplianceUserStatus extends deviceComplianceUserStatusProps, deviceComplianceUserStatusMethods { }
-export interface deviceComplianceUserStatusProps extends  entityProps {
+export interface deviceComplianceUserStatusProps extends entityProps {
 	devicesCount: number;
 	lastReportedDateTime: any;
 	status: EnumTypes.complianceStatus;
@@ -5210,7 +5211,7 @@ add(values?: any): IBaseExecution<deviceComplianceUserStatus>;
 * deviceConfiguration
 **********************************************/
 export interface deviceConfiguration extends deviceConfigurationProps, deviceConfigurationMethods { }
-export interface deviceConfigurationProps extends  entityProps {
+export interface deviceConfigurationProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -5248,7 +5249,7 @@ add(values?: any): IBaseExecution<deviceConfiguration>;
 * deviceConfigurationAssignment
 **********************************************/
 export interface deviceConfigurationAssignment extends deviceConfigurationAssignmentProps, deviceConfigurationAssignmentMethods { }
-export interface deviceConfigurationAssignmentProps extends  entityProps {
+export interface deviceConfigurationAssignmentProps extends entityProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface deviceConfigurationAssignmentMethods extends entityMethods {
@@ -5264,7 +5265,7 @@ add(values?: any): IBaseExecution<deviceConfigurationAssignment>;
 * deviceConfigurationDeviceOverview
 **********************************************/
 export interface deviceConfigurationDeviceOverview extends deviceConfigurationDeviceOverviewProps, deviceConfigurationDeviceOverviewMethods { }
-export interface deviceConfigurationDeviceOverviewProps extends  entityProps {
+export interface deviceConfigurationDeviceOverviewProps extends entityProps {
 	configurationVersion: number;
 	errorCount: number;
 	failedCount: number;
@@ -5283,7 +5284,7 @@ export interface deviceConfigurationDeviceOverviewOData extends entityOData {
 * deviceConfigurationDeviceStateSummary
 **********************************************/
 export interface deviceConfigurationDeviceStateSummary extends deviceConfigurationDeviceStateSummaryProps, deviceConfigurationDeviceStateSummaryMethods { }
-export interface deviceConfigurationDeviceStateSummaryProps extends  entityProps {
+export interface deviceConfigurationDeviceStateSummaryProps extends entityProps {
 	compliantDeviceCount: number;
 	conflictDeviceCount: number;
 	errorDeviceCount: number;
@@ -5302,7 +5303,7 @@ export interface deviceConfigurationDeviceStateSummaryOData extends entityOData 
 * deviceConfigurationDeviceStatus
 **********************************************/
 export interface deviceConfigurationDeviceStatus extends deviceConfigurationDeviceStatusProps, deviceConfigurationDeviceStatusMethods { }
-export interface deviceConfigurationDeviceStatusProps extends  entityProps {
+export interface deviceConfigurationDeviceStatusProps extends entityProps {
 	complianceGracePeriodExpirationDateTime: any;
 	deviceDisplayName: string;
 	deviceModel: string;
@@ -5324,7 +5325,7 @@ add(values?: any): IBaseExecution<deviceConfigurationDeviceStatus>;
 * deviceConfigurationState
 **********************************************/
 export interface deviceConfigurationState extends deviceConfigurationStateProps, deviceConfigurationStateMethods { }
-export interface deviceConfigurationStateProps extends  entityProps {
+export interface deviceConfigurationStateProps extends entityProps {
 	displayName: string;
 	platformType: EnumTypes.policyPlatformType;
 	settingCount: number;
@@ -5345,7 +5346,7 @@ add(values?: any): IBaseExecution<deviceConfigurationState>;
 * deviceConfigurationUserOverview
 **********************************************/
 export interface deviceConfigurationUserOverview extends deviceConfigurationUserOverviewProps, deviceConfigurationUserOverviewMethods { }
-export interface deviceConfigurationUserOverviewProps extends  entityProps {
+export interface deviceConfigurationUserOverviewProps extends entityProps {
 	configurationVersion: number;
 	errorCount: number;
 	failedCount: number;
@@ -5364,7 +5365,7 @@ export interface deviceConfigurationUserOverviewOData extends entityOData {
 * deviceConfigurationUserStatus
 **********************************************/
 export interface deviceConfigurationUserStatus extends deviceConfigurationUserStatusProps, deviceConfigurationUserStatusMethods { }
-export interface deviceConfigurationUserStatusProps extends  entityProps {
+export interface deviceConfigurationUserStatusProps extends entityProps {
 	devicesCount: number;
 	lastReportedDateTime: any;
 	status: EnumTypes.complianceStatus;
@@ -5384,7 +5385,7 @@ add(values?: any): IBaseExecution<deviceConfigurationUserStatus>;
 * deviceEnrollmentConfiguration
 **********************************************/
 export interface deviceEnrollmentConfiguration extends deviceEnrollmentConfigurationProps, deviceEnrollmentConfigurationMethods { }
-export interface deviceEnrollmentConfigurationProps extends  entityProps {
+export interface deviceEnrollmentConfigurationProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -5410,7 +5411,7 @@ add(values?: any): IBaseExecution<deviceEnrollmentConfiguration>;
 * deviceEnrollmentLimitConfiguration
 **********************************************/
 export interface deviceEnrollmentLimitConfiguration extends deviceEnrollmentLimitConfigurationProps, deviceEnrollmentLimitConfigurationMethods { }
-export interface deviceEnrollmentLimitConfigurationProps extends  deviceEnrollmentConfigurationProps {
+export interface deviceEnrollmentLimitConfigurationProps extends deviceEnrollmentConfigurationProps {
 	limit: number;
 }
 export interface deviceEnrollmentLimitConfigurationMethods extends deviceEnrollmentConfigurationMethods {
@@ -5423,7 +5424,7 @@ export interface deviceEnrollmentLimitConfigurationOData extends deviceEnrollmen
 * deviceEnrollmentPlatformRestrictionsConfiguration
 **********************************************/
 export interface deviceEnrollmentPlatformRestrictionsConfiguration extends deviceEnrollmentPlatformRestrictionsConfigurationProps, deviceEnrollmentPlatformRestrictionsConfigurationMethods { }
-export interface deviceEnrollmentPlatformRestrictionsConfigurationProps extends  deviceEnrollmentConfigurationProps {
+export interface deviceEnrollmentPlatformRestrictionsConfigurationProps extends deviceEnrollmentConfigurationProps {
 	androidRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
 	iosRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
 	macOSRestriction: ComplexTypes.deviceEnrollmentPlatformRestriction;
@@ -5440,7 +5441,7 @@ export interface deviceEnrollmentPlatformRestrictionsConfigurationOData extends 
 * deviceEnrollmentWindowsHelloForBusinessConfiguration
 **********************************************/
 export interface deviceEnrollmentWindowsHelloForBusinessConfiguration extends deviceEnrollmentWindowsHelloForBusinessConfigurationProps, deviceEnrollmentWindowsHelloForBusinessConfigurationMethods { }
-export interface deviceEnrollmentWindowsHelloForBusinessConfigurationProps extends  deviceEnrollmentConfigurationProps {
+export interface deviceEnrollmentWindowsHelloForBusinessConfigurationProps extends deviceEnrollmentConfigurationProps {
 	enhancedBiometricsState: EnumTypes.enablement;
 	pinExpirationInDays: number;
 	pinLowercaseCharactersUsage: EnumTypes.windowsHelloForBusinessPinUsage;
@@ -5464,7 +5465,7 @@ export interface deviceEnrollmentWindowsHelloForBusinessConfigurationOData exten
 * deviceInstallState
 **********************************************/
 export interface deviceInstallState extends deviceInstallStateProps, deviceInstallStateMethods { }
-export interface deviceInstallStateProps extends  entityProps {
+export interface deviceInstallStateProps extends entityProps {
 	deviceId: string;
 	deviceName: string;
 	errorCode: string;
@@ -5487,7 +5488,7 @@ add(values?: any): IBaseExecution<deviceInstallState>;
 * deviceLocalCredentialInfo
 **********************************************/
 export interface deviceLocalCredentialInfo extends deviceLocalCredentialInfoProps, deviceLocalCredentialInfoMethods { }
-export interface deviceLocalCredentialInfoProps extends  entityProps {
+export interface deviceLocalCredentialInfoProps extends entityProps {
 	credentials: ComplexTypes.deviceLocalCredential[];
 	deviceName: string;
 	lastBackupDateTime: any;
@@ -5506,7 +5507,7 @@ add(values?: any): IBaseExecution<deviceLocalCredentialInfo>;
 * deviceLogCollectionResponse
 **********************************************/
 export interface deviceLogCollectionResponse extends deviceLogCollectionResponseProps, deviceLogCollectionResponseMethods { }
-export interface deviceLogCollectionResponseProps extends  entityProps {
+export interface deviceLogCollectionResponseProps extends entityProps {
 	enrolledByUser: string;
 	expirationDateTimeUTC: any;
 	initiatedByUserPrincipalName: string;
@@ -5529,7 +5530,7 @@ add(values?: any): IBaseExecution<deviceLogCollectionResponse>;
 * deviceManagement
 **********************************************/
 export interface deviceManagement extends deviceManagementProps, deviceManagementMethods { }
-export interface deviceManagementProps extends  entityProps {
+export interface deviceManagementProps extends entityProps {
 	intuneAccountId: any;
 	settings: ComplexTypes.deviceManagementSettings;
 	intuneBrand: ComplexTypes.intuneBrand;
@@ -5715,7 +5716,7 @@ export interface deviceManagementOData extends entityOData {
 * deviceManagementCachedReportConfiguration
 **********************************************/
 export interface deviceManagementCachedReportConfiguration extends deviceManagementCachedReportConfigurationProps, deviceManagementCachedReportConfigurationMethods { }
-export interface deviceManagementCachedReportConfigurationProps extends  entityProps {
+export interface deviceManagementCachedReportConfigurationProps extends entityProps {
 
 }
 export interface deviceManagementCachedReportConfigurationMethods extends entityMethods {
@@ -5728,7 +5729,7 @@ export interface deviceManagementCachedReportConfigurationOData extends entityOD
 * deviceManagementExchangeConnector
 **********************************************/
 export interface deviceManagementExchangeConnector extends deviceManagementExchangeConnectorProps, deviceManagementExchangeConnectorMethods { }
-export interface deviceManagementExchangeConnectorProps extends  entityProps {
+export interface deviceManagementExchangeConnectorProps extends entityProps {
 	connectorServerName: string;
 	exchangeAlias: string;
 	exchangeConnectorType: EnumTypes.deviceManagementExchangeConnectorType;
@@ -5752,7 +5753,7 @@ add(values?: any): IBaseExecution<deviceManagementExchangeConnector>;
 * deviceManagementExportJob
 **********************************************/
 export interface deviceManagementExportJob extends deviceManagementExportJobProps, deviceManagementExportJobMethods { }
-export interface deviceManagementExportJobProps extends  entityProps {
+export interface deviceManagementExportJobProps extends entityProps {
 	expirationDateTime: any;
 	filter: string;
 	format: EnumTypes.deviceManagementReportFileFormat;
@@ -5777,7 +5778,7 @@ add(values?: any): IBaseExecution<deviceManagementExportJob>;
 * deviceManagementPartner
 **********************************************/
 export interface deviceManagementPartner extends deviceManagementPartnerProps, deviceManagementPartnerMethods { }
-export interface deviceManagementPartnerProps extends  entityProps {
+export interface deviceManagementPartnerProps extends entityProps {
 	displayName: string;
 	groupsRequiringPartnerEnrollment: ComplexTypes.deviceManagementPartnerAssignment[];
 	isConfigured: boolean;
@@ -5801,7 +5802,7 @@ add(values?: any): IBaseExecution<deviceManagementPartner>;
 * deviceManagementReports
 **********************************************/
 export interface deviceManagementReports extends deviceManagementReportsProps, deviceManagementReportsMethods { }
-export interface deviceManagementReportsProps extends  entityProps {
+export interface deviceManagementReportsProps extends entityProps {
 
 }
 export interface deviceManagementReportsMethods extends entityMethods {
@@ -5853,7 +5854,7 @@ export interface deviceManagementReportsOData extends entityOData {
 * deviceManagementTroubleshootingEvent
 **********************************************/
 export interface deviceManagementTroubleshootingEvent extends deviceManagementTroubleshootingEventProps, deviceManagementTroubleshootingEventMethods { }
-export interface deviceManagementTroubleshootingEventProps extends  entityProps {
+export interface deviceManagementTroubleshootingEventProps extends entityProps {
 	correlationId: string;
 	eventDateTime: any;
 }
@@ -5870,7 +5871,7 @@ add(values?: any): IBaseExecution<deviceManagementTroubleshootingEvent>;
 * deviceRegistrationPolicy
 **********************************************/
 export interface deviceRegistrationPolicy extends deviceRegistrationPolicyProps, deviceRegistrationPolicyMethods { }
-export interface deviceRegistrationPolicyProps extends  entityProps {
+export interface deviceRegistrationPolicyProps extends entityProps {
 	azureADJoin: ComplexTypes.azureADJoinPolicy;
 	azureADRegistration: ComplexTypes.azureADRegistrationPolicy;
 	description: string;
@@ -5889,7 +5890,7 @@ export interface deviceRegistrationPolicyOData extends entityOData {
 * directory
 **********************************************/
 export interface directory extends directoryProps, directoryMethods { }
-export interface directoryProps extends  entityProps {
+export interface directoryProps extends entityProps {
 
 }
 export interface directoryMethods extends entityMethods {
@@ -5924,7 +5925,7 @@ export interface directoryOData extends entityOData {
 * directoryAudit
 **********************************************/
 export interface directoryAudit extends directoryAuditProps, directoryAuditMethods { }
-export interface directoryAuditProps extends  entityProps {
+export interface directoryAuditProps extends entityProps {
 	activityDateTime: any;
 	activityDisplayName: string;
 	additionalDetails: ComplexTypes.keyValue[];
@@ -5950,7 +5951,7 @@ add(values?: any): IBaseExecution<directoryAudit>;
 * directoryDefinition
 **********************************************/
 export interface directoryDefinition extends directoryDefinitionProps, directoryDefinitionMethods { }
-export interface directoryDefinitionProps extends  entityProps {
+export interface directoryDefinitionProps extends entityProps {
 	discoverabilities: EnumTypes.directoryDefinitionDiscoverabilities;
 	discoveryDateTime: any;
 	name: string;
@@ -5971,7 +5972,7 @@ add(values?: any): IBaseExecution<directoryDefinition>;
 * directoryObject
 **********************************************/
 export interface directoryObject extends directoryObjectProps, directoryObjectMethods { }
-export interface directoryObjectProps extends  entityProps {
+export interface directoryObjectProps extends entityProps {
 	deletedDateTime: any;
 }
 export interface directoryObjectMethods extends entityMethods {
@@ -5995,7 +5996,7 @@ add(values?: any): IBaseExecution<directoryObject>;
 * directoryObjectPartnerReference
 **********************************************/
 export interface directoryObjectPartnerReference extends directoryObjectPartnerReferenceProps, directoryObjectPartnerReferenceMethods { }
-export interface directoryObjectPartnerReferenceProps extends  directoryObjectProps {
+export interface directoryObjectPartnerReferenceProps extends directoryObjectProps {
 	description: string;
 	displayName: string;
 	externalPartnerTenantId: any;
@@ -6011,7 +6012,7 @@ export interface directoryObjectPartnerReferenceOData extends directoryObjectODa
 * directoryRole
 **********************************************/
 export interface directoryRole extends directoryRoleProps, directoryRoleMethods { }
-export interface directoryRoleProps extends  directoryObjectProps {
+export interface directoryRoleProps extends directoryObjectProps {
 	description: string;
 	displayName: string;
 	roleTemplateId: string;
@@ -6030,7 +6031,7 @@ export interface directoryRoleOData extends directoryObjectOData {
 * directoryRoleTemplate
 **********************************************/
 export interface directoryRoleTemplate extends directoryRoleTemplateProps, directoryRoleTemplateMethods { }
-export interface directoryRoleTemplateProps extends  directoryObjectProps {
+export interface directoryRoleTemplateProps extends directoryObjectProps {
 	description: string;
 	displayName: string;
 }
@@ -6044,7 +6045,7 @@ export interface directoryRoleTemplateOData extends directoryObjectOData {
 * dispositionReviewStage
 **********************************************/
 export interface dispositionReviewStage extends dispositionReviewStageProps, dispositionReviewStageMethods { }
-export interface dispositionReviewStageProps   {
+export interface dispositionReviewStageProps {
 	name: string;
 	reviewersEmailAddresses: Array<string>;
 	stageNumber: string;
@@ -6059,7 +6060,7 @@ export interface dispositionReviewStageOData {
 * documentSetVersion
 **********************************************/
 export interface documentSetVersion extends documentSetVersionProps, documentSetVersionMethods { }
-export interface documentSetVersionProps extends  listItemVersionProps {
+export interface documentSetVersionProps extends listItemVersionProps {
 	comment: string;
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
@@ -6079,7 +6080,7 @@ add(values?: any): IBaseExecution<documentSetVersion>;
 * domain
 **********************************************/
 export interface domain extends domainProps, domainMethods { }
-export interface domainProps extends  entityProps {
+export interface domainProps extends entityProps {
 	authenticationType: string;
 	availabilityStatus: string;
 	isAdminManaged: boolean;
@@ -6122,7 +6123,7 @@ export interface domainOData extends entityOData {
 * domainDnsCnameRecord
 **********************************************/
 export interface domainDnsCnameRecord extends domainDnsCnameRecordProps, domainDnsCnameRecordMethods { }
-export interface domainDnsCnameRecordProps extends  domainDnsRecordProps {
+export interface domainDnsCnameRecordProps extends domainDnsRecordProps {
 	canonicalName: string;
 }
 export interface domainDnsCnameRecordMethods extends domainDnsRecordMethods {
@@ -6135,7 +6136,7 @@ export interface domainDnsCnameRecordOData extends domainDnsRecordOData {
 * domainDnsMxRecord
 **********************************************/
 export interface domainDnsMxRecord extends domainDnsMxRecordProps, domainDnsMxRecordMethods { }
-export interface domainDnsMxRecordProps extends  domainDnsRecordProps {
+export interface domainDnsMxRecordProps extends domainDnsRecordProps {
 	mailExchange: string;
 	preference: number;
 }
@@ -6149,7 +6150,7 @@ export interface domainDnsMxRecordOData extends domainDnsRecordOData {
 * domainDnsRecord
 **********************************************/
 export interface domainDnsRecord extends domainDnsRecordProps, domainDnsRecordMethods { }
-export interface domainDnsRecordProps extends  entityProps {
+export interface domainDnsRecordProps extends entityProps {
 	isOptional: boolean;
 	label: string;
 	recordType: string;
@@ -6169,7 +6170,7 @@ add(values?: any): IBaseExecution<domainDnsRecord>;
 * domainDnsSrvRecord
 **********************************************/
 export interface domainDnsSrvRecord extends domainDnsSrvRecordProps, domainDnsSrvRecordMethods { }
-export interface domainDnsSrvRecordProps extends  domainDnsRecordProps {
+export interface domainDnsSrvRecordProps extends domainDnsRecordProps {
 	nameTarget: string;
 	port: number;
 	priority: number;
@@ -6187,7 +6188,7 @@ export interface domainDnsSrvRecordOData extends domainDnsRecordOData {
 * domainDnsTxtRecord
 **********************************************/
 export interface domainDnsTxtRecord extends domainDnsTxtRecordProps, domainDnsTxtRecordMethods { }
-export interface domainDnsTxtRecordProps extends  domainDnsRecordProps {
+export interface domainDnsTxtRecordProps extends domainDnsRecordProps {
 	text: string;
 }
 export interface domainDnsTxtRecordMethods extends domainDnsRecordMethods {
@@ -6200,7 +6201,7 @@ export interface domainDnsTxtRecordOData extends domainDnsRecordOData {
 * domainDnsUnavailableRecord
 **********************************************/
 export interface domainDnsUnavailableRecord extends domainDnsUnavailableRecordProps, domainDnsUnavailableRecordMethods { }
-export interface domainDnsUnavailableRecordProps extends  domainDnsRecordProps {
+export interface domainDnsUnavailableRecordProps extends domainDnsRecordProps {
 	description: string;
 }
 export interface domainDnsUnavailableRecordMethods extends domainDnsRecordMethods {
@@ -6213,7 +6214,7 @@ export interface domainDnsUnavailableRecordOData extends domainDnsRecordOData {
 * drive
 **********************************************/
 export interface drive extends driveProps, driveMethods { }
-export interface driveProps extends  baseItemProps {
+export interface driveProps extends baseItemProps {
 	driveType: string;
 	owner: ComplexTypes.identitySet;
 	quota: ComplexTypes.quota;
@@ -6255,7 +6256,7 @@ add(values?: any): IBaseExecution<drive>;
 * driveItem
 **********************************************/
 export interface driveItem extends driveItemProps, driveItemMethods { }
-export interface driveItemProps extends  baseItemProps {
+export interface driveItemProps extends baseItemProps {
 	audio: ComplexTypes.audio;
 	bundle: ComplexTypes.bundle;
 	content: any;
@@ -6358,7 +6359,7 @@ add(values?: any): IBaseExecution<driveItem>;
 * driveItemVersion
 **********************************************/
 export interface driveItemVersion extends driveItemVersionProps, driveItemVersionMethods { }
-export interface driveItemVersionProps extends  baseItemVersionProps {
+export interface driveItemVersionProps extends baseItemVersionProps {
 	content: any;
 	size: number;
 }
@@ -6375,7 +6376,7 @@ add(values?: any): IBaseExecution<driveItemVersion>;
 * driveProtectionRule
 **********************************************/
 export interface driveProtectionRule extends driveProtectionRuleProps, driveProtectionRuleMethods { }
-export interface driveProtectionRuleProps extends  protectionRuleBaseProps {
+export interface driveProtectionRuleProps extends protectionRuleBaseProps {
 	driveExpression: string;
 }
 export interface driveProtectionRuleMethods extends protectionRuleBaseMethods {
@@ -6391,7 +6392,7 @@ add(values?: any): IBaseExecution<driveProtectionRule>;
 * driveProtectionUnit
 **********************************************/
 export interface driveProtectionUnit extends driveProtectionUnitProps, driveProtectionUnitMethods { }
-export interface driveProtectionUnitProps extends  protectionUnitBaseProps {
+export interface driveProtectionUnitProps extends protectionUnitBaseProps {
 	directoryObjectId: string;
 	displayName: string;
 	email: string;
@@ -6409,7 +6410,7 @@ add(values?: any): IBaseExecution<driveProtectionUnit>;
 * driveRestoreArtifact
 **********************************************/
 export interface driveRestoreArtifact extends driveRestoreArtifactProps, driveRestoreArtifactMethods { }
-export interface driveRestoreArtifactProps extends  restoreArtifactBaseProps {
+export interface driveRestoreArtifactProps extends restoreArtifactBaseProps {
 	restoredSiteId: string;
 	restoredSiteName: string;
 	restoredSiteWebUrl: string;
@@ -6427,7 +6428,7 @@ add(values?: any): IBaseExecution<driveRestoreArtifact>;
 * eBookInstallSummary
 **********************************************/
 export interface eBookInstallSummary extends eBookInstallSummaryProps, eBookInstallSummaryMethods { }
-export interface eBookInstallSummaryProps extends  entityProps {
+export interface eBookInstallSummaryProps extends entityProps {
 	failedDeviceCount: number;
 	failedUserCount: number;
 	installedDeviceCount: number;
@@ -6445,7 +6446,7 @@ export interface eBookInstallSummaryOData extends entityOData {
 * edge
 **********************************************/
 export interface edge extends edgeProps, edgeMethods { }
-export interface edgeProps extends  entityProps {
+export interface edgeProps extends entityProps {
 
 }
 export interface edgeMethods extends entityMethods {
@@ -6458,7 +6459,7 @@ export interface edgeOData extends entityOData {
 * ediscoveryAddToReviewSetOperation
 **********************************************/
 export interface ediscoveryAddToReviewSetOperation extends ediscoveryAddToReviewSetOperationProps, ediscoveryAddToReviewSetOperationMethods { }
-export interface ediscoveryAddToReviewSetOperationProps extends  caseOperationProps {
+export interface ediscoveryAddToReviewSetOperationProps extends caseOperationProps {
 
 }
 export interface ediscoveryAddToReviewSetOperationMethods extends caseOperationMethods {
@@ -6473,7 +6474,7 @@ export interface ediscoveryAddToReviewSetOperationOData extends caseOperationODa
 * ediscoveryCase
 **********************************************/
 export interface ediscoveryCase extends ediscoveryCaseProps, ediscoveryCaseMethods { }
-export interface ediscoveryCaseProps   {
+export interface ediscoveryCaseProps {
 	closedBy: ComplexTypes.identitySet;
 	closedDateTime: any;
 	externalId: string;
@@ -6506,7 +6507,7 @@ export interface ediscoveryCaseOData {
 * ediscoveryCaseSettings
 **********************************************/
 export interface ediscoveryCaseSettings extends ediscoveryCaseSettingsProps, ediscoveryCaseSettingsMethods { }
-export interface ediscoveryCaseSettingsProps extends  entityProps {
+export interface ediscoveryCaseSettingsProps extends entityProps {
 	ocr: ComplexTypes.ocrSettings;
 	redundancyDetection: ComplexTypes.redundancyDetectionSettings;
 	topicModeling: ComplexTypes.topicModelingSettings;
@@ -6521,7 +6522,7 @@ export interface ediscoveryCaseSettingsOData extends entityOData {
 * ediscoveryCustodian
 **********************************************/
 export interface ediscoveryCustodian extends ediscoveryCustodianProps, ediscoveryCustodianMethods { }
-export interface ediscoveryCustodianProps extends  dataSourceContainerProps {
+export interface ediscoveryCustodianProps extends dataSourceContainerProps {
 	acknowledgedDateTime: any;
 	email: string;
 }
@@ -6544,7 +6545,7 @@ export interface ediscoveryCustodianOData extends dataSourceContainerOData {
 * ediscoveryEstimateOperation
 **********************************************/
 export interface ediscoveryEstimateOperation extends ediscoveryEstimateOperationProps, ediscoveryEstimateOperationMethods { }
-export interface ediscoveryEstimateOperationProps extends  caseOperationProps {
+export interface ediscoveryEstimateOperationProps extends caseOperationProps {
 	indexedItemCount: number;
 	indexedItemsSize: number;
 	mailboxCount: number;
@@ -6562,7 +6563,7 @@ export interface ediscoveryEstimateOperationOData extends caseOperationOData {
 * ediscoveryExportOperation
 **********************************************/
 export interface ediscoveryExportOperation extends ediscoveryExportOperationProps, ediscoveryExportOperationMethods { }
-export interface ediscoveryExportOperationProps extends  caseOperationProps {
+export interface ediscoveryExportOperationProps extends caseOperationProps {
 	description: string;
 	exportFileMetadata: ComplexTypes.exportFileMetadata[];
 	exportOptions: EnumTypes.exportOptions;
@@ -6581,7 +6582,7 @@ export interface ediscoveryExportOperationOData extends caseOperationOData {
 * ediscoveryHoldOperation
 **********************************************/
 export interface ediscoveryHoldOperation extends ediscoveryHoldOperationProps, ediscoveryHoldOperationMethods { }
-export interface ediscoveryHoldOperationProps extends  caseOperationProps {
+export interface ediscoveryHoldOperationProps extends caseOperationProps {
 
 }
 export interface ediscoveryHoldOperationMethods extends caseOperationMethods {
@@ -6594,7 +6595,7 @@ export interface ediscoveryHoldOperationOData extends caseOperationOData {
 * ediscoveryIndexOperation
 **********************************************/
 export interface ediscoveryIndexOperation extends ediscoveryIndexOperationProps, ediscoveryIndexOperationMethods { }
-export interface ediscoveryIndexOperationProps extends  caseOperationProps {
+export interface ediscoveryIndexOperationProps extends caseOperationProps {
 
 }
 export interface ediscoveryIndexOperationMethods extends caseOperationMethods {
@@ -6607,7 +6608,7 @@ export interface ediscoveryIndexOperationOData extends caseOperationOData {
 * ediscoveryNoncustodialDataSource
 **********************************************/
 export interface ediscoveryNoncustodialDataSource extends ediscoveryNoncustodialDataSourceProps, ediscoveryNoncustodialDataSourceMethods { }
-export interface ediscoveryNoncustodialDataSourceProps extends  dataSourceContainerProps {
+export interface ediscoveryNoncustodialDataSourceProps extends dataSourceContainerProps {
 
 }
 export interface ediscoveryNoncustodialDataSourceMethods extends dataSourceContainerMethods {
@@ -6622,7 +6623,7 @@ export interface ediscoveryNoncustodialDataSourceOData extends dataSourceContain
 * ediscoveryPurgeDataOperation
 **********************************************/
 export interface ediscoveryPurgeDataOperation extends ediscoveryPurgeDataOperationProps, ediscoveryPurgeDataOperationMethods { }
-export interface ediscoveryPurgeDataOperationProps extends  caseOperationProps {
+export interface ediscoveryPurgeDataOperationProps extends caseOperationProps {
 
 }
 export interface ediscoveryPurgeDataOperationMethods extends caseOperationMethods {
@@ -6635,7 +6636,7 @@ export interface ediscoveryPurgeDataOperationOData extends caseOperationOData {
 * ediscoveryReviewSet
 **********************************************/
 export interface ediscoveryReviewSet extends ediscoveryReviewSetProps, ediscoveryReviewSetMethods { }
-export interface ediscoveryReviewSetProps extends  dataSetProps {
+export interface ediscoveryReviewSetProps extends dataSetProps {
 
 }
 export interface ediscoveryReviewSetMethods extends dataSetMethods {
@@ -6649,7 +6650,7 @@ export interface ediscoveryReviewSetOData extends dataSetOData {
 * ediscoveryReviewSetQuery
 **********************************************/
 export interface ediscoveryReviewSetQuery extends ediscoveryReviewSetQueryProps, ediscoveryReviewSetQueryMethods { }
-export interface ediscoveryReviewSetQueryProps extends  searchProps {
+export interface ediscoveryReviewSetQueryProps extends searchProps {
 
 }
 export interface ediscoveryReviewSetQueryMethods extends searchMethods {
@@ -6662,7 +6663,7 @@ export interface ediscoveryReviewSetQueryOData extends searchOData {
 * ediscoveryReviewTag
 **********************************************/
 export interface ediscoveryReviewTag extends ediscoveryReviewTagProps, ediscoveryReviewTagMethods { }
-export interface ediscoveryReviewTagProps extends  tagProps {
+export interface ediscoveryReviewTagProps extends tagProps {
 	childSelectability: EnumTypes.childSelectability;
 }
 export interface ediscoveryReviewTagMethods extends tagMethods {
@@ -6678,7 +6679,7 @@ export interface ediscoveryReviewTagOData extends tagOData {
 * ediscoverySearch
 **********************************************/
 export interface ediscoverySearch extends ediscoverySearchProps, ediscoverySearchMethods { }
-export interface ediscoverySearchProps extends  searchProps {
+export interface ediscoverySearchProps extends searchProps {
 	dataSourceScopes: EnumTypes.dataSourceScopes;
 }
 export interface ediscoverySearchMethods extends searchMethods {
@@ -6702,7 +6703,7 @@ export interface ediscoverySearchOData extends searchOData {
 * ediscoverySearchExportOperation
 **********************************************/
 export interface ediscoverySearchExportOperation extends ediscoverySearchExportOperationProps, ediscoverySearchExportOperationMethods { }
-export interface ediscoverySearchExportOperationProps extends  caseOperationProps {
+export interface ediscoverySearchExportOperationProps extends caseOperationProps {
 	additionalOptions: EnumTypes.additionalOptions;
 	description: string;
 	displayName: string;
@@ -6722,7 +6723,7 @@ export interface ediscoverySearchExportOperationOData extends caseOperationOData
 * ediscoveryTagOperation
 **********************************************/
 export interface ediscoveryTagOperation extends ediscoveryTagOperationProps, ediscoveryTagOperationMethods { }
-export interface ediscoveryTagOperationProps extends  caseOperationProps {
+export interface ediscoveryTagOperationProps extends caseOperationProps {
 
 }
 export interface ediscoveryTagOperationMethods extends caseOperationMethods {
@@ -6735,7 +6736,7 @@ export interface ediscoveryTagOperationOData extends caseOperationOData {
 * editionUpgradeConfiguration
 **********************************************/
 export interface editionUpgradeConfiguration extends editionUpgradeConfigurationProps, editionUpgradeConfigurationMethods { }
-export interface editionUpgradeConfigurationProps extends  deviceConfigurationProps {
+export interface editionUpgradeConfigurationProps extends deviceConfigurationProps {
 	license: string;
 	licenseType: EnumTypes.editionUpgradeLicenseType;
 	productKey: string;
@@ -6751,7 +6752,7 @@ export interface editionUpgradeConfigurationOData extends deviceConfigurationODa
 * educationAssignment
 **********************************************/
 export interface educationAssignment extends educationAssignmentProps, educationAssignmentMethods { }
-export interface educationAssignmentProps extends  entityProps {
+export interface educationAssignmentProps extends entityProps {
 	addedStudentAction: EnumTypes.educationAddedStudentAction;
 	addToCalendarAction: EnumTypes.educationAddToCalendarOptions;
 	allowLateSubmissions: boolean;
@@ -6810,7 +6811,7 @@ add(values?: any): IBaseExecution<educationAssignment>;
 * educationAssignmentDefaults
 **********************************************/
 export interface educationAssignmentDefaults extends educationAssignmentDefaultsProps, educationAssignmentDefaultsMethods { }
-export interface educationAssignmentDefaultsProps extends  entityProps {
+export interface educationAssignmentDefaultsProps extends entityProps {
 	addedStudentAction: EnumTypes.educationAddedStudentAction;
 	addToCalendarAction: EnumTypes.educationAddToCalendarOptions;
 	dueTime: any;
@@ -6826,7 +6827,7 @@ export interface educationAssignmentDefaultsOData extends entityOData {
 * educationAssignmentResource
 **********************************************/
 export interface educationAssignmentResource extends educationAssignmentResourceProps, educationAssignmentResourceMethods { }
-export interface educationAssignmentResourceProps extends  entityProps {
+export interface educationAssignmentResourceProps extends entityProps {
 	distributeForStudentWork: boolean;
 	resource: ComplexTypes.educationResource;
 }
@@ -6843,7 +6844,7 @@ add(values?: any): IBaseExecution<educationAssignmentResource>;
 * educationAssignmentSettings
 **********************************************/
 export interface educationAssignmentSettings extends educationAssignmentSettingsProps, educationAssignmentSettingsMethods { }
-export interface educationAssignmentSettingsProps extends  entityProps {
+export interface educationAssignmentSettingsProps extends entityProps {
 	submissionAnimationDisabled: boolean;
 }
 export interface educationAssignmentSettingsMethods extends entityMethods {
@@ -6857,7 +6858,7 @@ export interface educationAssignmentSettingsOData extends entityOData {
 * educationCategory
 **********************************************/
 export interface educationCategory extends educationCategoryProps, educationCategoryMethods { }
-export interface educationCategoryProps extends  entityProps {
+export interface educationCategoryProps extends entityProps {
 	displayName: string;
 }
 export interface educationCategoryMethods extends entityMethods {
@@ -6873,7 +6874,7 @@ add(values?: any): IBaseExecution<educationCategory>;
 * educationClass
 **********************************************/
 export interface educationClass extends educationClassProps, educationClassMethods { }
-export interface educationClassProps extends  entityProps {
+export interface educationClassProps extends entityProps {
 	classCode: string;
 	course: ComplexTypes.educationCourse;
 	createdBy: ComplexTypes.identitySet;
@@ -6922,7 +6923,7 @@ add(values?: any): IBaseExecution<educationClass>;
 * educationFeedbackOutcome
 **********************************************/
 export interface educationFeedbackOutcome extends educationFeedbackOutcomeProps, educationFeedbackOutcomeMethods { }
-export interface educationFeedbackOutcomeProps extends  educationOutcomeProps {
+export interface educationFeedbackOutcomeProps extends educationOutcomeProps {
 	feedback: ComplexTypes.educationFeedback;
 	publishedFeedback: ComplexTypes.educationFeedback;
 }
@@ -6936,7 +6937,7 @@ export interface educationFeedbackOutcomeOData extends educationOutcomeOData {
 * educationFeedbackResourceOutcome
 **********************************************/
 export interface educationFeedbackResourceOutcome extends educationFeedbackResourceOutcomeProps, educationFeedbackResourceOutcomeMethods { }
-export interface educationFeedbackResourceOutcomeProps extends  educationOutcomeProps {
+export interface educationFeedbackResourceOutcomeProps extends educationOutcomeProps {
 	feedbackResource: ComplexTypes.educationResource;
 	resourceStatus: EnumTypes.educationFeedbackResourceOutcomeStatus;
 }
@@ -6950,7 +6951,7 @@ export interface educationFeedbackResourceOutcomeOData extends educationOutcomeO
 * educationGradingCategory
 **********************************************/
 export interface educationGradingCategory extends educationGradingCategoryProps, educationGradingCategoryMethods { }
-export interface educationGradingCategoryProps extends  entityProps {
+export interface educationGradingCategoryProps extends entityProps {
 	displayName: string;
 	percentageWeight: number;
 }
@@ -6967,7 +6968,7 @@ add(values?: any): IBaseExecution<educationGradingCategory>;
 * educationModule
 **********************************************/
 export interface educationModule extends educationModuleProps, educationModuleMethods { }
-export interface educationModuleProps extends  entityProps {
+export interface educationModuleProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	description: string;
@@ -7000,7 +7001,7 @@ add(values?: any): IBaseExecution<educationModule>;
 * educationModuleResource
 **********************************************/
 export interface educationModuleResource extends educationModuleResourceProps, educationModuleResourceMethods { }
-export interface educationModuleResourceProps extends  entityProps {
+export interface educationModuleResourceProps extends entityProps {
 	resource: ComplexTypes.educationResource;
 }
 export interface educationModuleResourceMethods extends entityMethods {
@@ -7016,7 +7017,7 @@ add(values?: any): IBaseExecution<educationModuleResource>;
 * educationOrganization
 **********************************************/
 export interface educationOrganization extends educationOrganizationProps, educationOrganizationMethods { }
-export interface educationOrganizationProps extends  entityProps {
+export interface educationOrganizationProps extends entityProps {
 	description: string;
 	displayName: string;
 	externalSource: EnumTypes.educationExternalSource;
@@ -7032,7 +7033,7 @@ export interface educationOrganizationOData extends entityOData {
 * educationOutcome
 **********************************************/
 export interface educationOutcome extends educationOutcomeProps, educationOutcomeMethods { }
-export interface educationOutcomeProps extends  entityProps {
+export interface educationOutcomeProps extends entityProps {
 	lastModifiedBy: ComplexTypes.identitySet;
 	lastModifiedDateTime: any;
 }
@@ -7049,7 +7050,7 @@ add(values?: any): IBaseExecution<educationOutcome>;
 * educationPointsOutcome
 **********************************************/
 export interface educationPointsOutcome extends educationPointsOutcomeProps, educationPointsOutcomeMethods { }
-export interface educationPointsOutcomeProps extends  educationOutcomeProps {
+export interface educationPointsOutcomeProps extends educationOutcomeProps {
 	points: ComplexTypes.educationAssignmentPointsGrade;
 	publishedPoints: ComplexTypes.educationAssignmentPointsGrade;
 }
@@ -7063,7 +7064,7 @@ export interface educationPointsOutcomeOData extends educationOutcomeOData {
 * educationRoot
 **********************************************/
 export interface educationRoot extends educationRootProps, educationRootMethods { }
-export interface educationRootProps   {
+export interface educationRootProps {
 
 }
 export interface educationRootMethods {
@@ -7085,7 +7086,7 @@ export interface educationRootOData {
 * educationRubric
 **********************************************/
 export interface educationRubric extends educationRubricProps, educationRubricMethods { }
-export interface educationRubricProps extends  entityProps {
+export interface educationRubricProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	description: ComplexTypes.educationItemBody;
@@ -7109,7 +7110,7 @@ add(values?: any): IBaseExecution<educationRubric>;
 * educationRubricOutcome
 **********************************************/
 export interface educationRubricOutcome extends educationRubricOutcomeProps, educationRubricOutcomeMethods { }
-export interface educationRubricOutcomeProps extends  educationOutcomeProps {
+export interface educationRubricOutcomeProps extends educationOutcomeProps {
 	publishedRubricQualityFeedback: ComplexTypes.rubricQualityFeedbackModel[];
 	publishedRubricQualitySelectedLevels: ComplexTypes.rubricQualitySelectedColumnModel[];
 	rubricQualityFeedback: ComplexTypes.rubricQualityFeedbackModel[];
@@ -7125,7 +7126,7 @@ export interface educationRubricOutcomeOData extends educationOutcomeOData {
 * educationSchool
 **********************************************/
 export interface educationSchool extends educationSchoolProps, educationSchoolMethods { }
-export interface educationSchoolProps extends  educationOrganizationProps {
+export interface educationSchoolProps extends educationOrganizationProps {
 	address: ComplexTypes.physicalAddress;
 	createdBy: ComplexTypes.identitySet;
 	externalId: string;
@@ -7157,7 +7158,7 @@ add(values?: any): IBaseExecution<educationSchool>;
 * educationSubmission
 **********************************************/
 export interface educationSubmission extends educationSubmissionProps, educationSubmissionMethods { }
-export interface educationSubmissionProps extends  entityProps {
+export interface educationSubmissionProps extends entityProps {
 	excusedBy: ComplexTypes.identitySet;
 	excusedDateTime: any;
 	reassignedBy: ComplexTypes.identitySet;
@@ -7205,7 +7206,7 @@ add(values?: any): IBaseExecution<educationSubmission>;
 * educationSubmissionResource
 **********************************************/
 export interface educationSubmissionResource extends educationSubmissionResourceProps, educationSubmissionResourceMethods { }
-export interface educationSubmissionResourceProps extends  entityProps {
+export interface educationSubmissionResourceProps extends entityProps {
 	assignmentResourceUrl: string;
 	resource: ComplexTypes.educationResource;
 }
@@ -7222,7 +7223,7 @@ add(values?: any): IBaseExecution<educationSubmissionResource>;
 * educationUser
 **********************************************/
 export interface educationUser extends educationUserProps, educationUserMethods { }
-export interface educationUserProps extends  entityProps {
+export interface educationUserProps extends entityProps {
 	relatedContacts: ComplexTypes.relatedContact[];
 	accountEnabled: boolean;
 	assignedLicenses: ComplexTypes.assignedLicense[];
@@ -7284,7 +7285,7 @@ add(values?: any): IBaseExecution<educationUser>;
 * emailAuthenticationMethod
 **********************************************/
 export interface emailAuthenticationMethod extends emailAuthenticationMethodProps, emailAuthenticationMethodMethods { }
-export interface emailAuthenticationMethodProps extends  authenticationMethodProps {
+export interface emailAuthenticationMethodProps extends authenticationMethodProps {
 	emailAddress: string;
 }
 export interface emailAuthenticationMethodMethods extends authenticationMethodMethods {
@@ -7300,7 +7301,7 @@ add(values?: any): IBaseExecution<emailAuthenticationMethod>;
 * emailAuthenticationMethodConfiguration
 **********************************************/
 export interface emailAuthenticationMethodConfiguration extends emailAuthenticationMethodConfigurationProps, emailAuthenticationMethodConfigurationMethods { }
-export interface emailAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface emailAuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 	allowExternalIdToUseEmailOtp: EnumTypes.externalEmailOtpState;
 }
 export interface emailAuthenticationMethodConfigurationMethods extends authenticationMethodConfigurationMethods {
@@ -7314,7 +7315,7 @@ export interface emailAuthenticationMethodConfigurationOData extends authenticat
 * emailFileAssessmentRequest
 **********************************************/
 export interface emailFileAssessmentRequest extends emailFileAssessmentRequestProps, emailFileAssessmentRequestMethods { }
-export interface emailFileAssessmentRequestProps extends  threatAssessmentRequestProps {
+export interface emailFileAssessmentRequestProps extends threatAssessmentRequestProps {
 	contentData: string;
 	destinationRoutingReason: EnumTypes.mailDestinationRoutingReason;
 	recipientEmail: string;
@@ -7329,7 +7330,7 @@ export interface emailFileAssessmentRequestOData extends threatAssessmentRequest
 * employeeExperience
 **********************************************/
 export interface employeeExperience extends employeeExperienceProps, employeeExperienceMethods { }
-export interface employeeExperienceProps   {
+export interface employeeExperienceProps {
 
 }
 export interface employeeExperienceMethods {
@@ -7352,7 +7353,7 @@ export interface employeeExperienceOData {
 * employeeExperienceUser
 **********************************************/
 export interface employeeExperienceUser extends employeeExperienceUserProps, employeeExperienceUserMethods { }
-export interface employeeExperienceUserProps extends  entityProps {
+export interface employeeExperienceUserProps extends entityProps {
 
 }
 export interface employeeExperienceUserMethods extends entityMethods {
@@ -7366,7 +7367,7 @@ export interface employeeExperienceUserOData extends entityOData {
 * endUserNotification
 **********************************************/
 export interface endUserNotification extends endUserNotificationProps, endUserNotificationMethods { }
-export interface endUserNotificationProps extends  entityProps {
+export interface endUserNotificationProps extends entityProps {
 	createdBy: ComplexTypes.emailIdentity;
 	createdDateTime: any;
 	description: string;
@@ -7392,7 +7393,7 @@ add(values?: any): IBaseExecution<endUserNotification>;
 * endUserNotificationDetail
 **********************************************/
 export interface endUserNotificationDetail extends endUserNotificationDetailProps, endUserNotificationDetailMethods { }
-export interface endUserNotificationDetailProps extends  entityProps {
+export interface endUserNotificationDetailProps extends entityProps {
 	emailContent: string;
 	isDefaultLangauge: boolean;
 	language: string;
@@ -7413,7 +7414,7 @@ add(values?: any): IBaseExecution<endUserNotificationDetail>;
 * endpoint
 **********************************************/
 export interface endpoint extends endpointProps, endpointMethods { }
-export interface endpointProps extends  directoryObjectProps {
+export interface endpointProps extends directoryObjectProps {
 	capability: string;
 	providerId: string;
 	providerName: string;
@@ -7433,7 +7434,7 @@ add(values?: any): IBaseExecution<endpoint>;
 * engagementAsyncOperation
 **********************************************/
 export interface engagementAsyncOperation extends engagementAsyncOperationProps, engagementAsyncOperationMethods { }
-export interface engagementAsyncOperationProps extends  longRunningOperationProps {
+export interface engagementAsyncOperationProps extends longRunningOperationProps {
 	operationType: EnumTypes.engagementAsyncOperationType;
 	resourceId: string;
 }
@@ -7450,7 +7451,7 @@ add(values?: any): IBaseExecution<engagementAsyncOperation>;
 * enrollmentConfigurationAssignment
 **********************************************/
 export interface enrollmentConfigurationAssignment extends enrollmentConfigurationAssignmentProps, enrollmentConfigurationAssignmentMethods { }
-export interface enrollmentConfigurationAssignmentProps extends  entityProps {
+export interface enrollmentConfigurationAssignmentProps extends entityProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface enrollmentConfigurationAssignmentMethods extends entityMethods {
@@ -7466,7 +7467,7 @@ add(values?: any): IBaseExecution<enrollmentConfigurationAssignment>;
 * enrollmentTroubleshootingEvent
 **********************************************/
 export interface enrollmentTroubleshootingEvent extends enrollmentTroubleshootingEventProps, enrollmentTroubleshootingEventMethods { }
-export interface enrollmentTroubleshootingEventProps extends  deviceManagementTroubleshootingEventProps {
+export interface enrollmentTroubleshootingEventProps extends deviceManagementTroubleshootingEventProps {
 	deviceId: string;
 	enrollmentType: EnumTypes.deviceEnrollmentType;
 	failureCategory: EnumTypes.deviceEnrollmentFailureReason;
@@ -7486,7 +7487,7 @@ export interface enrollmentTroubleshootingEventOData extends deviceManagementTro
 * enterpriseCodeSigningCertificate
 **********************************************/
 export interface enterpriseCodeSigningCertificate extends enterpriseCodeSigningCertificateProps, enterpriseCodeSigningCertificateMethods { }
-export interface enterpriseCodeSigningCertificateProps extends  entityProps {
+export interface enterpriseCodeSigningCertificateProps extends entityProps {
 	content: any;
 	expirationDateTime: any;
 	issuer: string;
@@ -7506,7 +7507,7 @@ export interface enterpriseCodeSigningCertificateOData extends entityOData {
 * entitlementManagement
 **********************************************/
 export interface entitlementManagement extends entitlementManagementProps, entitlementManagementMethods { }
-export interface entitlementManagementProps extends  entityProps {
+export interface entitlementManagementProps extends entityProps {
 
 }
 export interface entitlementManagementMethods extends entityMethods {
@@ -7552,7 +7553,7 @@ export interface entitlementManagementOData extends entityOData {
 * entitlementManagementSettings
 **********************************************/
 export interface entitlementManagementSettings extends entitlementManagementSettingsProps, entitlementManagementSettingsMethods { }
-export interface entitlementManagementSettingsProps extends  entityProps {
+export interface entitlementManagementSettingsProps extends entityProps {
 	durationUntilExternalUserDeletedAfterBlocked: number;
 	externalUserLifecycleAction: EnumTypes.accessPackageExternalUserLifecycleAction;
 }
@@ -7566,7 +7567,7 @@ export interface entitlementManagementSettingsOData extends entityOData {
 * entity
 **********************************************/
 export interface entity extends entityProps, entityMethods { }
-export interface entityProps   {
+export interface entityProps {
 	id: string;
 }
 export interface entityMethods {
@@ -7579,7 +7580,7 @@ export interface entityOData {
 * event
 **********************************************/
 export interface event extends eventProps, eventMethods { }
-export interface eventProps extends  outlookItemProps {
+export interface eventProps extends outlookItemProps {
 	allowNewTimeProposals: boolean;
 	attendees: ComplexTypes.attendee[];
 	body: ComplexTypes.itemBody;
@@ -7659,7 +7660,7 @@ add(values?: any): IBaseExecution<event>;
 * eventMessage
 **********************************************/
 export interface eventMessage extends eventMessageProps, eventMessageMethods { }
-export interface eventMessageProps extends  messageProps {
+export interface eventMessageProps extends messageProps {
 	endDateTime: ComplexTypes.dateTimeTimeZone;
 	isAllDay: boolean;
 	isDelegated: boolean;
@@ -7680,7 +7681,7 @@ export interface eventMessageOData extends messageOData {
 * eventMessageRequest
 **********************************************/
 export interface eventMessageRequest extends eventMessageRequestProps, eventMessageRequestMethods { }
-export interface eventMessageRequestProps extends  eventMessageProps {
+export interface eventMessageRequestProps extends eventMessageProps {
 	allowNewTimeProposals: boolean;
 	meetingRequestType: EnumTypes.meetingRequestType;
 	previousEndDateTime: ComplexTypes.dateTimeTimeZone;
@@ -7698,7 +7699,7 @@ export interface eventMessageRequestOData extends eventMessageOData {
 * eventMessageResponse
 **********************************************/
 export interface eventMessageResponse extends eventMessageResponseProps, eventMessageResponseMethods { }
-export interface eventMessageResponseProps extends  eventMessageProps {
+export interface eventMessageResponseProps extends eventMessageProps {
 	proposedNewTime: ComplexTypes.timeSlot;
 	responseType: EnumTypes.responseType;
 }
@@ -7712,7 +7713,7 @@ export interface eventMessageResponseOData extends eventMessageOData {
 * exchangeProtectionPolicy
 **********************************************/
 export interface exchangeProtectionPolicy extends exchangeProtectionPolicyProps, exchangeProtectionPolicyMethods { }
-export interface exchangeProtectionPolicyProps extends  protectionPolicyBaseProps {
+export interface exchangeProtectionPolicyProps extends protectionPolicyBaseProps {
 
 }
 export interface exchangeProtectionPolicyMethods extends protectionPolicyBaseMethods {
@@ -7732,7 +7733,7 @@ add(values?: any): IBaseExecution<exchangeProtectionPolicy>;
 * exchangeRestoreSession
 **********************************************/
 export interface exchangeRestoreSession extends exchangeRestoreSessionProps, exchangeRestoreSessionMethods { }
-export interface exchangeRestoreSessionProps extends  restoreSessionBaseProps {
+export interface exchangeRestoreSessionProps extends restoreSessionBaseProps {
 
 }
 export interface exchangeRestoreSessionMethods extends restoreSessionBaseMethods {
@@ -7752,7 +7753,7 @@ add(values?: any): IBaseExecution<exchangeRestoreSession>;
 * exportSuccessOperation
 **********************************************/
 export interface exportSuccessOperation extends exportSuccessOperationProps, exportSuccessOperationMethods { }
-export interface exportSuccessOperationProps extends  operationProps {
+export interface exportSuccessOperationProps extends operationProps {
 
 }
 export interface exportSuccessOperationMethods extends operationMethods {
@@ -7765,7 +7766,7 @@ export interface exportSuccessOperationOData extends operationOData {
 * extension
 **********************************************/
 export interface extension extends extensionProps, extensionMethods { }
-export interface extensionProps extends  entityProps {
+export interface extensionProps extends entityProps {
 
 }
 export interface extensionMethods extends entityMethods {
@@ -7781,7 +7782,7 @@ add(values?: any): IBaseExecution<extension>;
 * extensionProperty
 **********************************************/
 export interface extensionProperty extends extensionPropertyProps, extensionPropertyMethods { }
-export interface extensionPropertyProps extends  directoryObjectProps {
+export interface extensionPropertyProps extends directoryObjectProps {
 	appDisplayName: string;
 	dataType: string;
 	isMultiValued: boolean;
@@ -7802,7 +7803,7 @@ add(values?: any): IBaseExecution<extensionProperty>;
 * external
 **********************************************/
 export interface external extends externalProps, externalMethods { }
-export interface externalProps   {
+export interface externalProps {
 
 }
 export interface externalMethods {
@@ -7816,7 +7817,7 @@ export interface externalOData {
 * externalActivity
 **********************************************/
 export interface externalActivity extends externalActivityProps, externalActivityMethods { }
-export interface externalActivityProps extends  entityProps {
+export interface externalActivityProps extends entityProps {
 	startDateTime: any;
 	type: EnumTypes.externalActivityType;
 }
@@ -7830,7 +7831,7 @@ export interface externalActivityOData extends entityOData {
 * externalActivityResult
 **********************************************/
 export interface externalActivityResult extends externalActivityResultProps, externalActivityResultMethods { }
-export interface externalActivityResultProps extends  externalActivityProps {
+export interface externalActivityResultProps extends externalActivityProps {
 	error: ComplexTypes.publicError;
 }
 export interface externalActivityResultMethods extends externalActivityMethods {
@@ -7843,7 +7844,7 @@ export interface externalActivityResultOData extends externalActivityOData {
 * externalConnection
 **********************************************/
 export interface externalConnection extends externalConnectionProps, externalConnectionMethods { }
-export interface externalConnectionProps extends  entityProps {
+export interface externalConnectionProps extends entityProps {
 	activitySettings: ComplexTypes.activitySettings;
 	configuration: ComplexTypes.configuration;
 	connectorId: string;
@@ -7871,7 +7872,7 @@ export interface externalConnectionOData extends entityOData {
 * externalDomainName
 **********************************************/
 export interface externalDomainName extends externalDomainNameProps, externalDomainNameMethods { }
-export interface externalDomainNameProps extends  entityProps {
+export interface externalDomainNameProps extends entityProps {
 
 }
 export interface externalDomainNameMethods extends entityMethods {
@@ -7887,7 +7888,7 @@ add(values?: any): IBaseExecution<externalDomainName>;
 * externalGroup
 **********************************************/
 export interface externalGroup extends externalGroupProps, externalGroupMethods { }
-export interface externalGroupProps extends  entityProps {
+export interface externalGroupProps extends entityProps {
 	description: string;
 	displayName: string;
 }
@@ -7902,7 +7903,7 @@ export interface externalGroupOData extends entityOData {
 * externalItem
 **********************************************/
 export interface externalItem extends externalItemProps, externalItemMethods { }
-export interface externalItemProps extends  entityProps {
+export interface externalItemProps extends entityProps {
 	acl: ComplexTypes.acl[];
 	content: ComplexTypes.externalItemContent;
 	properties: ComplexTypes.properties;
@@ -7918,7 +7919,7 @@ export interface externalItemOData extends entityOData {
 * externalUsersSelfServiceSignUpEventsFlow
 **********************************************/
 export interface externalUsersSelfServiceSignUpEventsFlow extends externalUsersSelfServiceSignUpEventsFlowProps, externalUsersSelfServiceSignUpEventsFlowMethods { }
-export interface externalUsersSelfServiceSignUpEventsFlowProps extends  authenticationEventsFlowProps {
+export interface externalUsersSelfServiceSignUpEventsFlowProps extends authenticationEventsFlowProps {
 	onAttributeCollection: ComplexTypes.onAttributeCollectionHandler;
 	onAuthenticationMethodLoadStart: ComplexTypes.onAuthenticationMethodLoadStartHandler;
 	onInteractiveAuthFlowStart: ComplexTypes.onInteractiveAuthFlowStartHandler;
@@ -7934,7 +7935,7 @@ export interface externalUsersSelfServiceSignUpEventsFlowOData extends authentic
 * failedOperation
 **********************************************/
 export interface failedOperation extends failedOperationProps, failedOperationMethods { }
-export interface failedOperationProps extends  operationProps {
+export interface failedOperationProps extends operationProps {
 	error: ComplexTypes.publicError;
 }
 export interface failedOperationMethods extends operationMethods {
@@ -7947,7 +7948,7 @@ export interface failedOperationOData extends operationOData {
 * featureRolloutPolicy
 **********************************************/
 export interface featureRolloutPolicy extends featureRolloutPolicyProps, featureRolloutPolicyMethods { }
-export interface featureRolloutPolicyProps extends  entityProps {
+export interface featureRolloutPolicyProps extends entityProps {
 	description: string;
 	displayName: string;
 	feature: EnumTypes.stagedFeatureName;
@@ -7968,7 +7969,7 @@ add(values?: any): IBaseExecution<featureRolloutPolicy>;
 * federatedIdentityCredential
 **********************************************/
 export interface federatedIdentityCredential extends federatedIdentityCredentialProps, federatedIdentityCredentialMethods { }
-export interface federatedIdentityCredentialProps extends  entityProps {
+export interface federatedIdentityCredentialProps extends entityProps {
 	audiences: Array<string>;
 	description: string;
 	issuer: string;
@@ -7988,7 +7989,7 @@ add(values?: any): IBaseExecution<federatedIdentityCredential>;
 * fido2AuthenticationMethod
 **********************************************/
 export interface fido2AuthenticationMethod extends fido2AuthenticationMethodProps, fido2AuthenticationMethodMethods { }
-export interface fido2AuthenticationMethodProps extends  authenticationMethodProps {
+export interface fido2AuthenticationMethodProps extends authenticationMethodProps {
 	aaGuid: string;
 	attestationCertificates: Array<string>;
 	attestationLevel: EnumTypes.attestationLevel;
@@ -8009,7 +8010,7 @@ add(values?: any): IBaseExecution<fido2AuthenticationMethod>;
 * fido2AuthenticationMethodConfiguration
 **********************************************/
 export interface fido2AuthenticationMethodConfiguration extends fido2AuthenticationMethodConfigurationProps, fido2AuthenticationMethodConfigurationMethods { }
-export interface fido2AuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface fido2AuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 	isAttestationEnforced: boolean;
 	isSelfServiceRegistrationAllowed: boolean;
 	keyRestrictions: ComplexTypes.fido2KeyRestrictions;
@@ -8025,7 +8026,7 @@ export interface fido2AuthenticationMethodConfigurationOData extends authenticat
 * fido2CombinationConfiguration
 **********************************************/
 export interface fido2CombinationConfiguration extends fido2CombinationConfigurationProps, fido2CombinationConfigurationMethods { }
-export interface fido2CombinationConfigurationProps extends  authenticationCombinationConfigurationProps {
+export interface fido2CombinationConfigurationProps extends authenticationCombinationConfigurationProps {
 	allowedAAGUIDs: Array<string>;
 }
 export interface fido2CombinationConfigurationMethods extends authenticationCombinationConfigurationMethods {
@@ -8038,7 +8039,7 @@ export interface fido2CombinationConfigurationOData extends authenticationCombin
 * fieldValueSet
 **********************************************/
 export interface fieldValueSet extends fieldValueSetProps, fieldValueSetMethods { }
-export interface fieldValueSetProps extends  entityProps {
+export interface fieldValueSetProps extends entityProps {
 
 }
 export interface fieldValueSetMethods extends entityMethods {
@@ -8051,7 +8052,7 @@ export interface fieldValueSetOData extends entityOData {
 * fileAssessmentRequest
 **********************************************/
 export interface fileAssessmentRequest extends fileAssessmentRequestProps, fileAssessmentRequestMethods { }
-export interface fileAssessmentRequestProps extends  threatAssessmentRequestProps {
+export interface fileAssessmentRequestProps extends threatAssessmentRequestProps {
 	contentData: string;
 	fileName: string;
 }
@@ -8065,7 +8066,7 @@ export interface fileAssessmentRequestOData extends threatAssessmentRequestOData
 * fileAttachment
 **********************************************/
 export interface fileAttachment extends fileAttachmentProps, fileAttachmentMethods { }
-export interface fileAttachmentProps extends  attachmentProps {
+export interface fileAttachmentProps extends attachmentProps {
 	contentBytes: any;
 	contentId: string;
 	contentLocation: string;
@@ -8080,7 +8081,7 @@ export interface fileAttachmentOData extends attachmentOData {
 * filePlanDescriptor
 **********************************************/
 export interface filePlanDescriptor extends filePlanDescriptorProps, filePlanDescriptorMethods { }
-export interface filePlanDescriptorProps extends  entityProps {
+export interface filePlanDescriptorProps extends entityProps {
 	authority: ComplexTypes.filePlanAuthority;
 	category: ComplexTypes.filePlanAppliedCategory;
 	citation: ComplexTypes.filePlanCitation;
@@ -8105,7 +8106,7 @@ export interface filePlanDescriptorOData extends entityOData {
 * filePlanDescriptorTemplate
 **********************************************/
 export interface filePlanDescriptorTemplate extends filePlanDescriptorTemplateProps, filePlanDescriptorTemplateMethods { }
-export interface filePlanDescriptorTemplateProps extends  entityProps {
+export interface filePlanDescriptorTemplateProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	displayName: string;
@@ -8120,7 +8121,7 @@ export interface filePlanDescriptorTemplateOData extends entityOData {
 * filePlanReferenceTemplate
 **********************************************/
 export interface filePlanReferenceTemplate extends filePlanReferenceTemplateProps, filePlanReferenceTemplateMethods { }
-export interface filePlanReferenceTemplateProps extends  filePlanDescriptorTemplateProps {
+export interface filePlanReferenceTemplateProps extends filePlanDescriptorTemplateProps {
 
 }
 export interface filePlanReferenceTemplateMethods extends filePlanDescriptorTemplateMethods {
@@ -8133,7 +8134,7 @@ export interface filePlanReferenceTemplateOData extends filePlanDescriptorTempla
 * fileStorage
 **********************************************/
 export interface fileStorage extends fileStorageProps, fileStorageMethods { }
-export interface fileStorageProps extends  entityProps {
+export interface fileStorageProps extends entityProps {
 
 }
 export interface fileStorageMethods extends entityMethods {
@@ -8150,7 +8151,7 @@ export interface fileStorageOData extends entityOData {
 * fileStorageContainer
 **********************************************/
 export interface fileStorageContainer extends fileStorageContainerProps, fileStorageContainerMethods { }
-export interface fileStorageContainerProps extends  entityProps {
+export interface fileStorageContainerProps extends entityProps {
 	containerTypeId: any;
 	createdDateTime: any;
 	customProperties: ComplexTypes.fileStorageContainerCustomPropertyDictionary;
@@ -8187,7 +8188,7 @@ add(values?: any): IBaseExecution<fileStorageContainer>;
 * filterOperatorSchema
 **********************************************/
 export interface filterOperatorSchema extends filterOperatorSchemaProps, filterOperatorSchemaMethods { }
-export interface filterOperatorSchemaProps extends  entityProps {
+export interface filterOperatorSchemaProps extends entityProps {
 	arity: EnumTypes.scopeOperatorType;
 	multivaluedComparisonType: EnumTypes.scopeOperatorMultiValuedComparisonType;
 	supportedAttributeTypes: EnumTypes.attributeType[];
@@ -8202,7 +8203,7 @@ export interface filterOperatorSchemaOData extends entityOData {
 * governanceInsight
 **********************************************/
 export interface governanceInsight extends governanceInsightProps, governanceInsightMethods { }
-export interface governanceInsightProps extends  entityProps {
+export interface governanceInsightProps extends entityProps {
 	insightCreatedDateTime: any;
 }
 export interface governanceInsightMethods extends entityMethods {
@@ -8218,7 +8219,7 @@ add(values?: any): IBaseExecution<governanceInsight>;
 * granularMailboxRestoreArtifact
 **********************************************/
 export interface granularMailboxRestoreArtifact extends granularMailboxRestoreArtifactProps, granularMailboxRestoreArtifactMethods { }
-export interface granularMailboxRestoreArtifactProps extends  mailboxRestoreArtifactProps {
+export interface granularMailboxRestoreArtifactProps extends mailboxRestoreArtifactProps {
 	artifactCount: number;
 	searchResponseId: string;
 }
@@ -8235,7 +8236,7 @@ add(values?: any): IBaseExecution<granularMailboxRestoreArtifact>;
 * group
 **********************************************/
 export interface group extends groupProps, groupMethods { }
-export interface groupProps extends  entityProps {
+export interface groupProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -8276,7 +8277,7 @@ add(values?: any): IBaseExecution<group>;
 * groupLifecyclePolicy
 **********************************************/
 export interface groupLifecyclePolicy extends groupLifecyclePolicyProps, groupLifecyclePolicyMethods { }
-export interface groupLifecyclePolicyProps extends  entityProps {
+export interface groupLifecyclePolicyProps extends entityProps {
 	alternateNotificationEmails: string;
 	groupLifetimeInDays: number;
 	managedGroupTypes: string;
@@ -8296,7 +8297,7 @@ add(values?: any): IBaseExecution<groupLifecyclePolicy>;
 * groupSetting
 **********************************************/
 export interface groupSetting extends groupSettingProps, groupSettingMethods { }
-export interface groupSettingProps extends  entityProps {
+export interface groupSettingProps extends entityProps {
 	displayName: string;
 	templateId: string;
 	values: ComplexTypes.settingValue[];
@@ -8314,7 +8315,7 @@ add(values?: any): IBaseExecution<groupSetting>;
 * groupSettingTemplate
 **********************************************/
 export interface groupSettingTemplate extends groupSettingTemplateProps, groupSettingTemplateMethods { }
-export interface groupSettingTemplateProps extends  directoryObjectProps {
+export interface groupSettingTemplateProps extends directoryObjectProps {
 	description: string;
 	displayName: string;
 	values: ComplexTypes.settingTemplateValue[];
@@ -8329,7 +8330,7 @@ export interface groupSettingTemplateOData extends directoryObjectOData {
 * healthIssue
 **********************************************/
 export interface healthIssue extends healthIssueProps, healthIssueMethods { }
-export interface healthIssueProps extends  entityProps {
+export interface healthIssueProps extends entityProps {
 	additionalInformation: Array<string>;
 	createdDateTime: any;
 	description: string;
@@ -8354,7 +8355,7 @@ export interface healthIssueOData extends entityOData {
 * homeRealmDiscoveryPolicy
 **********************************************/
 export interface homeRealmDiscoveryPolicy extends homeRealmDiscoveryPolicyProps, homeRealmDiscoveryPolicyMethods { }
-export interface homeRealmDiscoveryPolicyProps extends  stsPolicyProps {
+export interface homeRealmDiscoveryPolicyProps extends stsPolicyProps {
 
 }
 export interface homeRealmDiscoveryPolicyMethods extends stsPolicyMethods {
@@ -8370,7 +8371,7 @@ add(values?: any): IBaseExecution<homeRealmDiscoveryPolicy>;
 * horizontalSection
 **********************************************/
 export interface horizontalSection extends horizontalSectionProps, horizontalSectionMethods { }
-export interface horizontalSectionProps extends  entityProps {
+export interface horizontalSectionProps extends entityProps {
 	emphasis: EnumTypes.sectionEmphasisType;
 	layout: EnumTypes.horizontalSectionLayoutType;
 }
@@ -8388,7 +8389,7 @@ add(values?: any): IBaseExecution<horizontalSection>;
 * horizontalSectionColumn
 **********************************************/
 export interface horizontalSectionColumn extends horizontalSectionColumnProps, horizontalSectionColumnMethods { }
-export interface horizontalSectionColumnProps extends  entityProps {
+export interface horizontalSectionColumnProps extends entityProps {
 	width: number;
 }
 export interface horizontalSectionColumnMethods extends entityMethods {
@@ -8405,7 +8406,7 @@ add(values?: any): IBaseExecution<horizontalSectionColumn>;
 * host
 **********************************************/
 export interface host extends hostProps, hostMethods { }
-export interface hostProps extends  artifactProps {
+export interface hostProps extends artifactProps {
 	firstSeenDateTime: any;
 	lastSeenDateTime: any;
 }
@@ -8454,7 +8455,7 @@ export interface hostOData extends artifactOData {
 * hostComponent
 **********************************************/
 export interface hostComponent extends hostComponentProps, hostComponentMethods { }
-export interface hostComponentProps extends  artifactProps {
+export interface hostComponentProps extends artifactProps {
 	category: string;
 	firstSeenDateTime: any;
 	lastSeenDateTime: any;
@@ -8471,7 +8472,7 @@ export interface hostComponentOData extends artifactOData {
 * hostCookie
 **********************************************/
 export interface hostCookie extends hostCookieProps, hostCookieMethods { }
-export interface hostCookieProps extends  artifactProps {
+export interface hostCookieProps extends artifactProps {
 	domain: string;
 	firstSeenDateTime: any;
 	lastSeenDateTime: any;
@@ -8487,7 +8488,7 @@ export interface hostCookieOData extends artifactOData {
 * hostPair
 **********************************************/
 export interface hostPair extends hostPairProps, hostPairMethods { }
-export interface hostPairProps extends  entityProps {
+export interface hostPairProps extends entityProps {
 	firstSeenDateTime: any;
 	lastSeenDateTime: any;
 	linkKind: string;
@@ -8504,7 +8505,7 @@ export interface hostPairOData extends entityOData {
 * hostPort
 **********************************************/
 export interface hostPort extends hostPortProps, hostPortMethods { }
-export interface hostPortProps extends  entityProps {
+export interface hostPortProps extends entityProps {
 	banners: ComplexTypes.hostPortBanner[];
 	firstSeenDateTime: any;
 	lastScanDateTime: any;
@@ -8527,7 +8528,7 @@ export interface hostPortOData extends entityOData {
 * hostReputation
 **********************************************/
 export interface hostReputation extends hostReputationProps, hostReputationMethods { }
-export interface hostReputationProps extends  entityProps {
+export interface hostReputationProps extends entityProps {
 	classification: EnumTypes.hostReputationClassification;
 	rules: ComplexTypes.hostReputationRule[];
 	score: number;
@@ -8542,7 +8543,7 @@ export interface hostReputationOData extends entityOData {
 * hostSslCertificate
 **********************************************/
 export interface hostSslCertificate extends hostSslCertificateProps, hostSslCertificateMethods { }
-export interface hostSslCertificateProps extends  artifactProps {
+export interface hostSslCertificateProps extends artifactProps {
 	firstSeenDateTime: any;
 	lastSeenDateTime: any;
 	ports: ComplexTypes.hostSslCertificatePort[];
@@ -8559,7 +8560,7 @@ export interface hostSslCertificateOData extends artifactOData {
 * hostTracker
 **********************************************/
 export interface hostTracker extends hostTrackerProps, hostTrackerMethods { }
-export interface hostTrackerProps extends  artifactProps {
+export interface hostTrackerProps extends artifactProps {
 	firstSeenDateTime: any;
 	kind: string;
 	lastSeenDateTime: any;
@@ -8575,7 +8576,7 @@ export interface hostTrackerOData extends artifactOData {
 * hostname
 **********************************************/
 export interface hostname extends hostnameProps, hostnameMethods { }
-export interface hostnameProps extends  hostProps {
+export interface hostnameProps extends hostProps {
 	registrant: string;
 	registrar: string;
 }
@@ -8589,7 +8590,7 @@ export interface hostnameOData extends hostOData {
 * identity
 **********************************************/
 export interface identity extends identityProps, identityMethods { }
-export interface identityProps extends  entityProps {
+export interface identityProps extends entityProps {
 	type: EnumTypes.identityType;
 }
 export interface identityMethods extends entityMethods {
@@ -8602,7 +8603,7 @@ export interface identityOData extends entityOData {
 * identityApiConnector
 **********************************************/
 export interface identityApiConnector extends identityApiConnectorProps, identityApiConnectorMethods { }
-export interface identityApiConnectorProps extends  entityProps {
+export interface identityApiConnectorProps extends entityProps {
 	authenticationConfiguration: ComplexTypes.apiAuthenticationConfigurationBase;
 	displayName: string;
 	targetUrl: string;
@@ -8620,7 +8621,7 @@ add(values?: any): IBaseExecution<identityApiConnector>;
 * identityBuiltInUserFlowAttribute
 **********************************************/
 export interface identityBuiltInUserFlowAttribute extends identityBuiltInUserFlowAttributeProps, identityBuiltInUserFlowAttributeMethods { }
-export interface identityBuiltInUserFlowAttributeProps extends  identityUserFlowAttributeProps {
+export interface identityBuiltInUserFlowAttributeProps extends identityUserFlowAttributeProps {
 
 }
 export interface identityBuiltInUserFlowAttributeMethods extends identityUserFlowAttributeMethods {
@@ -8633,7 +8634,7 @@ export interface identityBuiltInUserFlowAttributeOData extends identityUserFlowA
 * identityContainer
 **********************************************/
 export interface identityContainer extends identityContainerProps, identityContainerMethods { }
-export interface identityContainerProps extends  entityProps {
+export interface identityContainerProps extends entityProps {
 
 }
 export interface identityContainerMethods extends entityMethods {
@@ -8650,7 +8651,7 @@ export interface identityContainerOData extends entityOData {
 * identityCustomUserFlowAttribute
 **********************************************/
 export interface identityCustomUserFlowAttribute extends identityCustomUserFlowAttributeProps, identityCustomUserFlowAttributeMethods { }
-export interface identityCustomUserFlowAttributeProps extends  identityUserFlowAttributeProps {
+export interface identityCustomUserFlowAttributeProps extends identityUserFlowAttributeProps {
 
 }
 export interface identityCustomUserFlowAttributeMethods extends identityUserFlowAttributeMethods {
@@ -8663,7 +8664,7 @@ export interface identityCustomUserFlowAttributeOData extends identityUserFlowAt
 * identityGovernance
 **********************************************/
 export interface identityGovernance extends identityGovernanceProps, identityGovernanceMethods { }
-export interface identityGovernanceProps   {
+export interface identityGovernanceProps {
 
 }
 export interface identityGovernanceMethods {
@@ -8686,7 +8687,7 @@ export interface identityGovernanceOData {
 * identityProtectionRoot
 **********************************************/
 export interface identityProtectionRoot extends identityProtectionRootProps, identityProtectionRootMethods { }
-export interface identityProtectionRootProps   {
+export interface identityProtectionRootProps {
 
 }
 export interface identityProtectionRootMethods {
@@ -8709,7 +8710,7 @@ export interface identityProtectionRootOData {
 * identityProvider
 **********************************************/
 export interface identityProvider extends identityProviderProps, identityProviderMethods { }
-export interface identityProviderProps extends  entityProps {
+export interface identityProviderProps extends entityProps {
 	clientId: string;
 	clientSecret: string;
 	name: string;
@@ -8728,7 +8729,7 @@ add(values?: any): IBaseExecution<identityProvider>;
 * identityProviderBase
 **********************************************/
 export interface identityProviderBase extends identityProviderBaseProps, identityProviderBaseMethods { }
-export interface identityProviderBaseProps extends  entityProps {
+export interface identityProviderBaseProps extends entityProps {
 	displayName: string;
 }
 export interface identityProviderBaseMethods extends entityMethods {
@@ -8744,7 +8745,7 @@ add(values?: any): IBaseExecution<identityProviderBase>;
 * identitySecurityDefaultsEnforcementPolicy
 **********************************************/
 export interface identitySecurityDefaultsEnforcementPolicy extends identitySecurityDefaultsEnforcementPolicyProps, identitySecurityDefaultsEnforcementPolicyMethods { }
-export interface identitySecurityDefaultsEnforcementPolicyProps extends  policyBaseProps {
+export interface identitySecurityDefaultsEnforcementPolicyProps extends policyBaseProps {
 	isEnabled: boolean;
 }
 export interface identitySecurityDefaultsEnforcementPolicyMethods extends policyBaseMethods {
@@ -8757,7 +8758,7 @@ export interface identitySecurityDefaultsEnforcementPolicyOData extends policyBa
 * identityUserFlow
 **********************************************/
 export interface identityUserFlow extends identityUserFlowProps, identityUserFlowMethods { }
-export interface identityUserFlowProps extends  entityProps {
+export interface identityUserFlowProps extends entityProps {
 	userFlowType: EnumTypes.userFlowType;
 	userFlowTypeVersion: any;
 }
@@ -8771,7 +8772,7 @@ export interface identityUserFlowOData extends entityOData {
 * identityUserFlowAttribute
 **********************************************/
 export interface identityUserFlowAttribute extends identityUserFlowAttributeProps, identityUserFlowAttributeMethods { }
-export interface identityUserFlowAttributeProps extends  entityProps {
+export interface identityUserFlowAttributeProps extends entityProps {
 	dataType: EnumTypes.identityUserFlowAttributeDataType;
 	description: string;
 	displayName: string;
@@ -8790,7 +8791,7 @@ add(values?: any): IBaseExecution<identityUserFlowAttribute>;
 * identityUserFlowAttributeAssignment
 **********************************************/
 export interface identityUserFlowAttributeAssignment extends identityUserFlowAttributeAssignmentProps, identityUserFlowAttributeAssignmentMethods { }
-export interface identityUserFlowAttributeAssignmentProps extends  entityProps {
+export interface identityUserFlowAttributeAssignmentProps extends entityProps {
 	displayName: string;
 	isOptional: boolean;
 	requiresVerification: boolean;
@@ -8810,7 +8811,7 @@ add(values?: any): IBaseExecution<identityUserFlowAttributeAssignment>;
 * importedWindowsAutopilotDeviceIdentity
 **********************************************/
 export interface importedWindowsAutopilotDeviceIdentity extends importedWindowsAutopilotDeviceIdentityProps, importedWindowsAutopilotDeviceIdentityMethods { }
-export interface importedWindowsAutopilotDeviceIdentityProps extends  entityProps {
+export interface importedWindowsAutopilotDeviceIdentityProps extends entityProps {
 	assignedUserPrincipalName: string;
 	groupTag: string;
 	hardwareIdentifier: any;
@@ -8832,7 +8833,7 @@ add(values?: any): IBaseExecution<importedWindowsAutopilotDeviceIdentity>;
 * importedWindowsAutopilotDeviceIdentityUpload
 **********************************************/
 export interface importedWindowsAutopilotDeviceIdentityUpload extends importedWindowsAutopilotDeviceIdentityUploadProps, importedWindowsAutopilotDeviceIdentityUploadMethods { }
-export interface importedWindowsAutopilotDeviceIdentityUploadProps extends  entityProps {
+export interface importedWindowsAutopilotDeviceIdentityUploadProps extends entityProps {
 	createdDateTimeUtc: any;
 	status: EnumTypes.importedWindowsAutopilotDeviceIdentityUploadStatus;
 }
@@ -8847,7 +8848,7 @@ export interface importedWindowsAutopilotDeviceIdentityUploadOData extends entit
 * incident
 **********************************************/
 export interface incident extends incidentProps, incidentMethods { }
-export interface incidentProps extends  entityProps {
+export interface incidentProps extends entityProps {
 	assignedTo: string;
 	classification: EnumTypes.alertClassification;
 	comments: ComplexTypes.alertComment[];
@@ -8878,7 +8879,7 @@ export interface incidentOData extends entityOData {
 * indicator
 **********************************************/
 export interface indicator extends indicatorProps, indicatorMethods { }
-export interface indicatorProps extends  entityProps {
+export interface indicatorProps extends entityProps {
 	source: EnumTypes.indicatorSource;
 }
 export interface indicatorMethods extends entityMethods {
@@ -8891,7 +8892,7 @@ export interface indicatorOData extends entityOData {
 * inferenceClassification
 **********************************************/
 export interface inferenceClassification extends inferenceClassificationProps, inferenceClassificationMethods { }
-export interface inferenceClassificationProps extends  entityProps {
+export interface inferenceClassificationProps extends entityProps {
 
 }
 export interface inferenceClassificationMethods extends entityMethods {
@@ -8905,7 +8906,7 @@ export interface inferenceClassificationOData extends entityOData {
 * inferenceClassificationOverride
 **********************************************/
 export interface inferenceClassificationOverride extends inferenceClassificationOverrideProps, inferenceClassificationOverrideMethods { }
-export interface inferenceClassificationOverrideProps extends  entityProps {
+export interface inferenceClassificationOverrideProps extends entityProps {
 	classifyAs: EnumTypes.inferenceClassificationType;
 	senderEmailAddress: ComplexTypes.emailAddress;
 }
@@ -8922,7 +8923,7 @@ add(values?: any): IBaseExecution<inferenceClassificationOverride>;
 * informationProtection
 **********************************************/
 export interface informationProtection extends informationProtectionProps, informationProtectionMethods { }
-export interface informationProtectionProps   {
+export interface informationProtectionProps {
 
 }
 export interface informationProtectionMethods {
@@ -8938,7 +8939,7 @@ export interface informationProtectionOData {
 * insights
 **********************************************/
 export interface insights extends insightsProps, insightsMethods { }
-export interface insightsProps extends  entityProps {
+export interface insightsProps extends entityProps {
 
 }
 export interface insightsMethods extends entityMethods {
@@ -8951,7 +8952,7 @@ export interface insightsOData extends entityOData {
 * insightsSettings
 **********************************************/
 export interface insightsSettings extends insightsSettingsProps, insightsSettingsMethods { }
-export interface insightsSettingsProps extends  entityProps {
+export interface insightsSettingsProps extends entityProps {
 	disabledForGroup: string;
 	isEnabledInOrganization: boolean;
 }
@@ -8965,7 +8966,7 @@ export interface insightsSettingsOData extends entityOData {
 * intelligenceProfile
 **********************************************/
 export interface intelligenceProfile extends intelligenceProfileProps, intelligenceProfileMethods { }
-export interface intelligenceProfileProps extends  entityProps {
+export interface intelligenceProfileProps extends entityProps {
 	aliases: Array<string>;
 	countriesOrRegionsOfOrigin: ComplexTypes.intelligenceProfileCountryOrRegionOfOrigin[];
 	description: ComplexTypes.formattedContent;
@@ -8987,7 +8988,7 @@ export interface intelligenceProfileOData extends entityOData {
 * intelligenceProfileIndicator
 **********************************************/
 export interface intelligenceProfileIndicator extends intelligenceProfileIndicatorProps, intelligenceProfileIndicatorMethods { }
-export interface intelligenceProfileIndicatorProps extends  indicatorProps {
+export interface intelligenceProfileIndicatorProps extends indicatorProps {
 	firstSeenDateTime: any;
 	lastSeenDateTime: any;
 }
@@ -9001,7 +9002,7 @@ export interface intelligenceProfileIndicatorOData extends indicatorOData {
 * internalDomainFederation
 **********************************************/
 export interface internalDomainFederation extends internalDomainFederationProps, internalDomainFederationMethods { }
-export interface internalDomainFederationProps extends  samlOrWsFedProviderProps {
+export interface internalDomainFederationProps extends samlOrWsFedProviderProps {
 	activeSignInUri: string;
 	federatedIdpMfaBehavior: EnumTypes.federatedIdpMfaBehavior;
 	isSignedAuthenticationRequestRequired: boolean;
@@ -9024,7 +9025,7 @@ add(values?: any): IBaseExecution<internalDomainFederation>;
 * internetExplorerMode
 **********************************************/
 export interface internetExplorerMode extends internetExplorerModeProps, internetExplorerModeMethods { }
-export interface internetExplorerModeProps extends  entityProps {
+export interface internetExplorerModeProps extends entityProps {
 
 }
 export interface internetExplorerModeMethods extends entityMethods {
@@ -9038,7 +9039,7 @@ export interface internetExplorerModeOData extends entityOData {
 * invitation
 **********************************************/
 export interface invitation extends invitationProps, invitationMethods { }
-export interface invitationProps extends  entityProps {
+export interface invitationProps extends entityProps {
 	invitedUserDisplayName: string;
 	invitedUserEmailAddress: string;
 	invitedUserMessageInfo: ComplexTypes.invitedUserMessageInfo;
@@ -9062,7 +9063,7 @@ export interface invitationOData extends entityOData {
 * inviteParticipantsOperation
 **********************************************/
 export interface inviteParticipantsOperation extends inviteParticipantsOperationProps, inviteParticipantsOperationMethods { }
-export interface inviteParticipantsOperationProps extends  commsOperationProps {
+export interface inviteParticipantsOperationProps extends commsOperationProps {
 	participants: ComplexTypes.invitationParticipantInfo[];
 }
 export interface inviteParticipantsOperationMethods extends commsOperationMethods {
@@ -9075,7 +9076,7 @@ export interface inviteParticipantsOperationOData extends commsOperationOData {
 * iosCertificateProfile
 **********************************************/
 export interface iosCertificateProfile extends iosCertificateProfileProps, iosCertificateProfileMethods { }
-export interface iosCertificateProfileProps extends  deviceConfigurationProps {
+export interface iosCertificateProfileProps extends deviceConfigurationProps {
 
 }
 export interface iosCertificateProfileMethods extends deviceConfigurationMethods {
@@ -9088,7 +9089,7 @@ export interface iosCertificateProfileOData extends deviceConfigurationOData {
 * iosCompliancePolicy
 **********************************************/
 export interface iosCompliancePolicy extends iosCompliancePolicyProps, iosCompliancePolicyMethods { }
-export interface iosCompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface iosCompliancePolicyProps extends deviceCompliancePolicyProps {
 	deviceThreatProtectionEnabled: boolean;
 	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
 	managedEmailProfileRequired: boolean;
@@ -9114,7 +9115,7 @@ export interface iosCompliancePolicyOData extends deviceCompliancePolicyOData {
 * iosCustomConfiguration
 **********************************************/
 export interface iosCustomConfiguration extends iosCustomConfigurationProps, iosCustomConfigurationMethods { }
-export interface iosCustomConfigurationProps extends  deviceConfigurationProps {
+export interface iosCustomConfigurationProps extends deviceConfigurationProps {
 	payload: any;
 	payloadFileName: string;
 	payloadName: string;
@@ -9129,7 +9130,7 @@ export interface iosCustomConfigurationOData extends deviceConfigurationOData {
 * iosDeviceFeaturesConfiguration
 **********************************************/
 export interface iosDeviceFeaturesConfiguration extends iosDeviceFeaturesConfigurationProps, iosDeviceFeaturesConfigurationMethods { }
-export interface iosDeviceFeaturesConfigurationProps extends  appleDeviceFeaturesConfigurationBaseProps {
+export interface iosDeviceFeaturesConfigurationProps extends appleDeviceFeaturesConfigurationBaseProps {
 	assetTagTemplate: string;
 	homeScreenDockIcons: ComplexTypes.iosHomeScreenItem[];
 	homeScreenPages: ComplexTypes.iosHomeScreenPage[];
@@ -9146,7 +9147,7 @@ export interface iosDeviceFeaturesConfigurationOData extends appleDeviceFeatures
 * iosGeneralDeviceConfiguration
 **********************************************/
 export interface iosGeneralDeviceConfiguration extends iosGeneralDeviceConfigurationProps, iosGeneralDeviceConfigurationMethods { }
-export interface iosGeneralDeviceConfigurationProps extends  deviceConfigurationProps {
+export interface iosGeneralDeviceConfigurationProps extends deviceConfigurationProps {
 	accountBlockModification: boolean;
 	activationLockAllowWhenSupervised: boolean;
 	airDropBlocked: boolean;
@@ -9289,7 +9290,7 @@ export interface iosGeneralDeviceConfigurationOData extends deviceConfigurationO
 * iosLobApp
 **********************************************/
 export interface iosLobApp extends iosLobAppProps, iosLobAppMethods { }
-export interface iosLobAppProps extends  mobileLobAppProps {
+export interface iosLobAppProps extends mobileLobAppProps {
 	applicableDeviceType: ComplexTypes.iosDeviceType;
 	buildNumber: string;
 	bundleId: string;
@@ -9307,7 +9308,7 @@ export interface iosLobAppOData extends mobileLobAppOData {
 * iosLobAppProvisioningConfigurationAssignment
 **********************************************/
 export interface iosLobAppProvisioningConfigurationAssignment extends iosLobAppProvisioningConfigurationAssignmentProps, iosLobAppProvisioningConfigurationAssignmentMethods { }
-export interface iosLobAppProvisioningConfigurationAssignmentProps extends  entityProps {
+export interface iosLobAppProvisioningConfigurationAssignmentProps extends entityProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface iosLobAppProvisioningConfigurationAssignmentMethods extends entityMethods {
@@ -9320,7 +9321,7 @@ export interface iosLobAppProvisioningConfigurationAssignmentOData extends entit
 * iosManagedAppProtection
 **********************************************/
 export interface iosManagedAppProtection extends iosManagedAppProtectionProps, iosManagedAppProtectionMethods { }
-export interface iosManagedAppProtectionProps extends  targetedManagedAppProtectionProps {
+export interface iosManagedAppProtectionProps extends targetedManagedAppProtectionProps {
 	appDataEncryptionType: EnumTypes.managedAppDataEncryptionType;
 	customBrowserProtocol: string;
 	deployedAppCount: number;
@@ -9343,7 +9344,7 @@ add(values?: any): IBaseExecution<iosManagedAppProtection>;
 * iosManagedAppRegistration
 **********************************************/
 export interface iosManagedAppRegistration extends iosManagedAppRegistrationProps, iosManagedAppRegistrationMethods { }
-export interface iosManagedAppRegistrationProps extends  managedAppRegistrationProps {
+export interface iosManagedAppRegistrationProps extends managedAppRegistrationProps {
 
 }
 export interface iosManagedAppRegistrationMethods extends managedAppRegistrationMethods {
@@ -9356,7 +9357,7 @@ export interface iosManagedAppRegistrationOData extends managedAppRegistrationOD
 * iosMobileAppConfiguration
 **********************************************/
 export interface iosMobileAppConfiguration extends iosMobileAppConfigurationProps, iosMobileAppConfigurationMethods { }
-export interface iosMobileAppConfigurationProps extends  managedDeviceMobileAppConfigurationProps {
+export interface iosMobileAppConfigurationProps extends managedDeviceMobileAppConfigurationProps {
 	encodedSettingXml: any;
 	settings: ComplexTypes.appConfigurationSettingItem[];
 }
@@ -9370,7 +9371,7 @@ export interface iosMobileAppConfigurationOData extends managedDeviceMobileAppCo
 * iosStoreApp
 **********************************************/
 export interface iosStoreApp extends iosStoreAppProps, iosStoreAppMethods { }
-export interface iosStoreAppProps extends  mobileAppProps {
+export interface iosStoreAppProps extends mobileAppProps {
 	applicableDeviceType: ComplexTypes.iosDeviceType;
 	appStoreUrl: string;
 	bundleId: string;
@@ -9386,7 +9387,7 @@ export interface iosStoreAppOData extends mobileAppOData {
 * iosUpdateConfiguration
 **********************************************/
 export interface iosUpdateConfiguration extends iosUpdateConfigurationProps, iosUpdateConfigurationMethods { }
-export interface iosUpdateConfigurationProps extends  deviceConfigurationProps {
+export interface iosUpdateConfigurationProps extends deviceConfigurationProps {
 	activeHoursEnd: any;
 	activeHoursStart: any;
 	scheduledInstallDays: EnumTypes.dayOfWeek[];
@@ -9402,7 +9403,7 @@ export interface iosUpdateConfigurationOData extends deviceConfigurationOData {
 * iosUpdateDeviceStatus
 **********************************************/
 export interface iosUpdateDeviceStatus extends iosUpdateDeviceStatusProps, iosUpdateDeviceStatusMethods { }
-export interface iosUpdateDeviceStatusProps extends  entityProps {
+export interface iosUpdateDeviceStatusProps extends entityProps {
 	complianceGracePeriodExpirationDateTime: any;
 	deviceDisplayName: string;
 	deviceId: string;
@@ -9428,7 +9429,7 @@ add(values?: any): IBaseExecution<iosUpdateDeviceStatus>;
 * iosVppApp
 **********************************************/
 export interface iosVppApp extends iosVppAppProps, iosVppAppMethods { }
-export interface iosVppAppProps extends  mobileAppProps {
+export interface iosVppAppProps extends mobileAppProps {
 	applicableDeviceType: ComplexTypes.iosDeviceType;
 	appStoreUrl: string;
 	bundleId: string;
@@ -9450,7 +9451,7 @@ export interface iosVppAppOData extends mobileAppOData {
 * iosVppEBook
 **********************************************/
 export interface iosVppEBook extends iosVppEBookProps, iosVppEBookMethods { }
-export interface iosVppEBookProps extends  managedEBookProps {
+export interface iosVppEBookProps extends managedEBookProps {
 	appleId: string;
 	genres: Array<string>;
 	language: string;
@@ -9470,7 +9471,7 @@ export interface iosVppEBookOData extends managedEBookOData {
 * iosVppEBookAssignment
 **********************************************/
 export interface iosVppEBookAssignment extends iosVppEBookAssignmentProps, iosVppEBookAssignmentMethods { }
-export interface iosVppEBookAssignmentProps extends  managedEBookAssignmentProps {
+export interface iosVppEBookAssignmentProps extends managedEBookAssignmentProps {
 
 }
 export interface iosVppEBookAssignmentMethods extends managedEBookAssignmentMethods {
@@ -9483,7 +9484,7 @@ export interface iosVppEBookAssignmentOData extends managedEBookAssignmentOData 
 * iosiPadOSWebClip
 **********************************************/
 export interface iosiPadOSWebClip extends iosiPadOSWebClipProps, iosiPadOSWebClipMethods { }
-export interface iosiPadOSWebClipProps extends  mobileAppProps {
+export interface iosiPadOSWebClipProps extends mobileAppProps {
 	appUrl: string;
 	useManagedBrowser: boolean;
 }
@@ -9497,7 +9498,7 @@ export interface iosiPadOSWebClipOData extends mobileAppOData {
 * ipAddress
 **********************************************/
 export interface ipAddress extends ipAddressProps, ipAddressMethods { }
-export interface ipAddressProps extends  hostProps {
+export interface ipAddressProps extends hostProps {
 	autonomousSystem: ComplexTypes.autonomousSystem;
 	countryOrRegion: string;
 	hostingProvider: string;
@@ -9513,7 +9514,7 @@ export interface ipAddressOData extends hostOData {
 * ipNamedLocation
 **********************************************/
 export interface ipNamedLocation extends ipNamedLocationProps, ipNamedLocationMethods { }
-export interface ipNamedLocationProps extends  namedLocationProps {
+export interface ipNamedLocationProps extends namedLocationProps {
 	ipRanges: ComplexTypes.ipRange[];
 	isTrusted: boolean;
 }
@@ -9527,7 +9528,7 @@ export interface ipNamedLocationOData extends namedLocationOData {
 * itemActivity
 **********************************************/
 export interface itemActivity extends itemActivityProps, itemActivityMethods { }
-export interface itemActivityProps extends  entityProps {
+export interface itemActivityProps extends entityProps {
 	access: ComplexTypes.accessAction;
 	activityDateTime: any;
 	actor: ComplexTypes.identitySet;
@@ -9545,7 +9546,7 @@ add(values?: any): IBaseExecution<itemActivity>;
 * itemActivityStat
 **********************************************/
 export interface itemActivityStat extends itemActivityStatProps, itemActivityStatMethods { }
-export interface itemActivityStatProps extends  entityProps {
+export interface itemActivityStatProps extends entityProps {
 	access: ComplexTypes.itemActionStat;
 	create: ComplexTypes.itemActionStat;
 	delete: ComplexTypes.itemActionStat;
@@ -9570,7 +9571,7 @@ add(values?: any): IBaseExecution<itemActivityStat>;
 * itemAnalytics
 **********************************************/
 export interface itemAnalytics extends itemAnalyticsProps, itemAnalyticsMethods { }
-export interface itemAnalyticsProps extends  entityProps {
+export interface itemAnalyticsProps extends entityProps {
 
 }
 export interface itemAnalyticsMethods extends entityMethods {
@@ -9588,7 +9589,7 @@ export interface itemAnalyticsOData extends entityOData {
 * itemAttachment
 **********************************************/
 export interface itemAttachment extends itemAttachmentProps, itemAttachmentMethods { }
-export interface itemAttachmentProps extends  attachmentProps {
+export interface itemAttachmentProps extends attachmentProps {
 
 }
 export interface itemAttachmentMethods extends attachmentMethods {
@@ -9601,7 +9602,7 @@ export interface itemAttachmentOData extends attachmentOData {
 * itemInsights
 **********************************************/
 export interface itemInsights extends itemInsightsProps, itemInsightsMethods { }
-export interface itemInsightsProps extends  officeGraphInsightsProps {
+export interface itemInsightsProps extends officeGraphInsightsProps {
 
 }
 export interface itemInsightsMethods extends officeGraphInsightsMethods {
@@ -9614,7 +9615,7 @@ export interface itemInsightsOData extends officeGraphInsightsOData {
 * itemRetentionLabel
 **********************************************/
 export interface itemRetentionLabel extends itemRetentionLabelProps, itemRetentionLabelMethods { }
-export interface itemRetentionLabelProps extends  entityProps {
+export interface itemRetentionLabelProps extends entityProps {
 	isLabelAppliedExplicitly: boolean;
 	labelAppliedBy: ComplexTypes.identitySet;
 	labelAppliedDateTime: any;
@@ -9631,7 +9632,7 @@ export interface itemRetentionLabelOData extends entityOData {
 * labelsRoot
 **********************************************/
 export interface labelsRoot extends labelsRootProps, labelsRootMethods { }
-export interface labelsRootProps extends  entityProps {
+export interface labelsRootProps extends entityProps {
 
 }
 export interface labelsRootMethods extends entityMethods {
@@ -9660,7 +9661,7 @@ export interface labelsRootOData extends entityOData {
 * landingPage
 **********************************************/
 export interface landingPage extends landingPageProps, landingPageMethods { }
-export interface landingPageProps extends  entityProps {
+export interface landingPageProps extends entityProps {
 	createdBy: ComplexTypes.emailIdentity;
 	createdDateTime: any;
 	description: string;
@@ -9686,7 +9687,7 @@ add(values?: any): IBaseExecution<landingPage>;
 * landingPageDetail
 **********************************************/
 export interface landingPageDetail extends landingPageDetailProps, landingPageDetailMethods { }
-export interface landingPageDetailProps extends  entityProps {
+export interface landingPageDetailProps extends entityProps {
 	content: string;
 	isDefaultLangauge: boolean;
 	language: string;
@@ -9704,7 +9705,7 @@ add(values?: any): IBaseExecution<landingPageDetail>;
 * learningAssignment
 **********************************************/
 export interface learningAssignment extends learningAssignmentProps, learningAssignmentMethods { }
-export interface learningAssignmentProps extends  learningCourseActivityProps {
+export interface learningAssignmentProps extends learningCourseActivityProps {
 	assignedDateTime: any;
 	assignerUserId: string;
 	assignmentType: EnumTypes.assignmentType;
@@ -9721,7 +9722,7 @@ export interface learningAssignmentOData extends learningCourseActivityOData {
 * learningContent
 **********************************************/
 export interface learningContent extends learningContentProps, learningContentMethods { }
-export interface learningContentProps extends  entityProps {
+export interface learningContentProps extends entityProps {
 	additionalTags: Array<string>;
 	contentWebUrl: string;
 	contributors: Array<string>;
@@ -9755,7 +9756,7 @@ add(values?: any): IBaseExecution<learningContent>;
 * learningCourseActivity
 **********************************************/
 export interface learningCourseActivity extends learningCourseActivityProps, learningCourseActivityMethods { }
-export interface learningCourseActivityProps extends  entityProps {
+export interface learningCourseActivityProps extends entityProps {
 	completedDateTime: any;
 	completionPercentage: number;
 	externalcourseActivityId: string;
@@ -9777,7 +9778,7 @@ add(values?: any): IBaseExecution<learningCourseActivity>;
 * learningProvider
 **********************************************/
 export interface learningProvider extends learningProviderProps, learningProviderMethods { }
-export interface learningProviderProps extends  entityProps {
+export interface learningProviderProps extends entityProps {
 	displayName: string;
 	isCourseActivitySyncEnabled: boolean;
 	loginWebUrl: string;
@@ -9803,7 +9804,7 @@ add(values?: any): IBaseExecution<learningProvider>;
 * learningSelfInitiatedCourse
 **********************************************/
 export interface learningSelfInitiatedCourse extends learningSelfInitiatedCourseProps, learningSelfInitiatedCourseMethods { }
-export interface learningSelfInitiatedCourseProps extends  learningCourseActivityProps {
+export interface learningSelfInitiatedCourseProps extends learningCourseActivityProps {
 	startedDateTime: any;
 }
 export interface learningSelfInitiatedCourseMethods extends learningCourseActivityMethods {
@@ -9816,7 +9817,7 @@ export interface learningSelfInitiatedCourseOData extends learningCourseActivity
 * licenseDetails
 **********************************************/
 export interface licenseDetails extends licenseDetailsProps, licenseDetailsMethods { }
-export interface licenseDetailsProps extends  entityProps {
+export interface licenseDetailsProps extends entityProps {
 	servicePlans: ComplexTypes.servicePlanInfo[];
 	skuId: any;
 	skuPartNumber: string;
@@ -9834,7 +9835,7 @@ add(values?: any): IBaseExecution<licenseDetails>;
 * lifecycleManagementSettings
 **********************************************/
 export interface lifecycleManagementSettings extends lifecycleManagementSettingsProps, lifecycleManagementSettingsMethods { }
-export interface lifecycleManagementSettingsProps extends  entityProps {
+export interface lifecycleManagementSettingsProps extends entityProps {
 	emailSettings: ComplexTypes.emailSettings;
 	workflowScheduleIntervalInHours: number;
 }
@@ -9848,7 +9849,7 @@ export interface lifecycleManagementSettingsOData extends entityOData {
 * lifecycleWorkflowsContainer
 **********************************************/
 export interface lifecycleWorkflowsContainer extends lifecycleWorkflowsContainerProps, lifecycleWorkflowsContainerMethods { }
-export interface lifecycleWorkflowsContainerProps extends  entityProps {
+export interface lifecycleWorkflowsContainerProps extends entityProps {
 
 }
 export interface lifecycleWorkflowsContainerMethods extends entityMethods {
@@ -9877,7 +9878,7 @@ export interface lifecycleWorkflowsContainerOData extends entityOData {
 * linkedResource
 **********************************************/
 export interface linkedResource extends linkedResourceProps, linkedResourceMethods { }
-export interface linkedResourceProps extends  entityProps {
+export interface linkedResourceProps extends entityProps {
 	applicationName: string;
 	displayName: string;
 	externalId: string;
@@ -9896,7 +9897,7 @@ add(values?: any): IBaseExecution<linkedResource>;
 * list
 **********************************************/
 export interface list extends listProps, listMethods { }
-export interface listProps extends  baseItemProps {
+export interface listProps extends baseItemProps {
 	displayName: string;
 	list: ComplexTypes.listInfo;
 	sharepointIds: ComplexTypes.sharepointIds;
@@ -9934,7 +9935,7 @@ add(values?: any): IBaseExecution<list>;
 * listItem
 **********************************************/
 export interface listItem extends listItemProps, listItemMethods { }
-export interface listItemProps extends  baseItemProps {
+export interface listItemProps extends baseItemProps {
 	contentType: ComplexTypes.contentTypeInfo;
 	sharepointIds: ComplexTypes.sharepointIds;
 }
@@ -9971,7 +9972,7 @@ add(values?: any): IBaseExecution<listItem>;
 * listItemVersion
 **********************************************/
 export interface listItemVersion extends listItemVersionProps, listItemVersionMethods { }
-export interface listItemVersionProps extends  baseItemVersionProps {
+export interface listItemVersionProps extends baseItemVersionProps {
 
 }
 export interface listItemVersionMethods extends baseItemVersionMethods {
@@ -9989,7 +9990,7 @@ add(values?: any): IBaseExecution<listItemVersion>;
 * localizedNotificationMessage
 **********************************************/
 export interface localizedNotificationMessage extends localizedNotificationMessageProps, localizedNotificationMessageMethods { }
-export interface localizedNotificationMessageProps extends  entityProps {
+export interface localizedNotificationMessageProps extends entityProps {
 	isDefault: boolean;
 	lastModifiedDateTime: any;
 	locale: string;
@@ -10009,7 +10010,7 @@ add(values?: any): IBaseExecution<localizedNotificationMessage>;
 * loginPage
 **********************************************/
 export interface loginPage extends loginPageProps, loginPageMethods { }
-export interface loginPageProps extends  entityProps {
+export interface loginPageProps extends entityProps {
 	content: string;
 	createdBy: ComplexTypes.emailIdentity;
 	createdDateTime: any;
@@ -10034,7 +10035,7 @@ add(values?: any): IBaseExecution<loginPage>;
 * longRunningOperation
 **********************************************/
 export interface longRunningOperation extends longRunningOperationProps, longRunningOperationMethods { }
-export interface longRunningOperationProps extends  entityProps {
+export interface longRunningOperationProps extends entityProps {
 	createdDateTime: any;
 	lastActionDateTime: any;
 	resourceLocation: string;
@@ -10054,7 +10055,7 @@ add(values?: any): IBaseExecution<longRunningOperation>;
 * m365AppsInstallationOptions
 **********************************************/
 export interface m365AppsInstallationOptions extends m365AppsInstallationOptionsProps, m365AppsInstallationOptionsMethods { }
-export interface m365AppsInstallationOptionsProps extends  entityProps {
+export interface m365AppsInstallationOptionsProps extends entityProps {
 	appsForMac: ComplexTypes.appsInstallationOptionsForMac;
 	appsForWindows: ComplexTypes.appsInstallationOptionsForWindows;
 	updateChannel: EnumTypes.appsUpdateChannelType;
@@ -10069,7 +10070,7 @@ export interface m365AppsInstallationOptionsOData extends entityOData {
 * macOSCompliancePolicy
 **********************************************/
 export interface macOSCompliancePolicy extends macOSCompliancePolicyProps, macOSCompliancePolicyMethods { }
-export interface macOSCompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface macOSCompliancePolicyProps extends deviceCompliancePolicyProps {
 	deviceThreatProtectionEnabled: boolean;
 	deviceThreatProtectionRequiredSecurityLevel: EnumTypes.deviceThreatProtectionLevel;
 	firewallBlockAllIncoming: boolean;
@@ -10098,7 +10099,7 @@ export interface macOSCompliancePolicyOData extends deviceCompliancePolicyOData 
 * macOSCustomConfiguration
 **********************************************/
 export interface macOSCustomConfiguration extends macOSCustomConfigurationProps, macOSCustomConfigurationMethods { }
-export interface macOSCustomConfigurationProps extends  deviceConfigurationProps {
+export interface macOSCustomConfigurationProps extends deviceConfigurationProps {
 	payload: any;
 	payloadFileName: string;
 	payloadName: string;
@@ -10113,7 +10114,7 @@ export interface macOSCustomConfigurationOData extends deviceConfigurationOData 
 * macOSDeviceFeaturesConfiguration
 **********************************************/
 export interface macOSDeviceFeaturesConfiguration extends macOSDeviceFeaturesConfigurationProps, macOSDeviceFeaturesConfigurationMethods { }
-export interface macOSDeviceFeaturesConfigurationProps extends  appleDeviceFeaturesConfigurationBaseProps {
+export interface macOSDeviceFeaturesConfigurationProps extends appleDeviceFeaturesConfigurationBaseProps {
 
 }
 export interface macOSDeviceFeaturesConfigurationMethods extends appleDeviceFeaturesConfigurationBaseMethods {
@@ -10126,7 +10127,7 @@ export interface macOSDeviceFeaturesConfigurationOData extends appleDeviceFeatur
 * macOSDmgApp
 **********************************************/
 export interface macOSDmgApp extends macOSDmgAppProps, macOSDmgAppMethods { }
-export interface macOSDmgAppProps extends  mobileLobAppProps {
+export interface macOSDmgAppProps extends mobileLobAppProps {
 	ignoreVersionDetection: boolean;
 	includedApps: ComplexTypes.macOSIncludedApp[];
 	minimumSupportedOperatingSystem: ComplexTypes.macOSMinimumOperatingSystem;
@@ -10143,7 +10144,7 @@ export interface macOSDmgAppOData extends mobileLobAppOData {
 * macOSGeneralDeviceConfiguration
 **********************************************/
 export interface macOSGeneralDeviceConfiguration extends macOSGeneralDeviceConfigurationProps, macOSGeneralDeviceConfigurationMethods { }
-export interface macOSGeneralDeviceConfigurationProps extends  deviceConfigurationProps {
+export interface macOSGeneralDeviceConfigurationProps extends deviceConfigurationProps {
 	compliantAppListType: EnumTypes.appListType;
 	compliantAppsList: ComplexTypes.appListItem[];
 	emailInDomainSuffixes: Array<string>;
@@ -10167,7 +10168,7 @@ export interface macOSGeneralDeviceConfigurationOData extends deviceConfiguratio
 * macOSLobApp
 **********************************************/
 export interface macOSLobApp extends macOSLobAppProps, macOSLobAppMethods { }
-export interface macOSLobAppProps extends  mobileLobAppProps {
+export interface macOSLobAppProps extends mobileLobAppProps {
 	buildNumber: string;
 	bundleId: string;
 	childApps: ComplexTypes.macOSLobChildApp[];
@@ -10188,7 +10189,7 @@ export interface macOSLobAppOData extends mobileLobAppOData {
 * macOSMicrosoftDefenderApp
 **********************************************/
 export interface macOSMicrosoftDefenderApp extends macOSMicrosoftDefenderAppProps, macOSMicrosoftDefenderAppMethods { }
-export interface macOSMicrosoftDefenderAppProps extends  mobileAppProps {
+export interface macOSMicrosoftDefenderAppProps extends mobileAppProps {
 
 }
 export interface macOSMicrosoftDefenderAppMethods extends mobileAppMethods {
@@ -10201,7 +10202,7 @@ export interface macOSMicrosoftDefenderAppOData extends mobileAppOData {
 * macOSMicrosoftEdgeApp
 **********************************************/
 export interface macOSMicrosoftEdgeApp extends macOSMicrosoftEdgeAppProps, macOSMicrosoftEdgeAppMethods { }
-export interface macOSMicrosoftEdgeAppProps extends  mobileAppProps {
+export interface macOSMicrosoftEdgeAppProps extends mobileAppProps {
 	channel: EnumTypes.microsoftEdgeChannel;
 }
 export interface macOSMicrosoftEdgeAppMethods extends mobileAppMethods {
@@ -10214,7 +10215,7 @@ export interface macOSMicrosoftEdgeAppOData extends mobileAppOData {
 * macOSOfficeSuiteApp
 **********************************************/
 export interface macOSOfficeSuiteApp extends macOSOfficeSuiteAppProps, macOSOfficeSuiteAppMethods { }
-export interface macOSOfficeSuiteAppProps extends  mobileAppProps {
+export interface macOSOfficeSuiteAppProps extends mobileAppProps {
 
 }
 export interface macOSOfficeSuiteAppMethods extends mobileAppMethods {
@@ -10227,7 +10228,7 @@ export interface macOSOfficeSuiteAppOData extends mobileAppOData {
 * mailAssessmentRequest
 **********************************************/
 export interface mailAssessmentRequest extends mailAssessmentRequestProps, mailAssessmentRequestMethods { }
-export interface mailAssessmentRequestProps extends  threatAssessmentRequestProps {
+export interface mailAssessmentRequestProps extends threatAssessmentRequestProps {
 	destinationRoutingReason: EnumTypes.mailDestinationRoutingReason;
 	messageUri: string;
 	recipientEmail: string;
@@ -10242,7 +10243,7 @@ export interface mailAssessmentRequestOData extends threatAssessmentRequestOData
 * mailFolder
 **********************************************/
 export interface mailFolder extends mailFolderProps, mailFolderMethods { }
-export interface mailFolderProps extends  entityProps {
+export interface mailFolderProps extends entityProps {
 	childFolderCount: number;
 	displayName: string;
 	isHidden: boolean;
@@ -10280,7 +10281,7 @@ add(values?: any): IBaseExecution<mailFolder>;
 * mailSearchFolder
 **********************************************/
 export interface mailSearchFolder extends mailSearchFolderProps, mailSearchFolderMethods { }
-export interface mailSearchFolderProps extends  mailFolderProps {
+export interface mailSearchFolderProps extends mailFolderProps {
 	filterQuery: string;
 	includeNestedFolders: boolean;
 	isSupported: boolean;
@@ -10296,7 +10297,7 @@ export interface mailSearchFolderOData extends mailFolderOData {
 * mailboxProtectionRule
 **********************************************/
 export interface mailboxProtectionRule extends mailboxProtectionRuleProps, mailboxProtectionRuleMethods { }
-export interface mailboxProtectionRuleProps extends  protectionRuleBaseProps {
+export interface mailboxProtectionRuleProps extends protectionRuleBaseProps {
 	mailboxExpression: string;
 }
 export interface mailboxProtectionRuleMethods extends protectionRuleBaseMethods {
@@ -10312,7 +10313,7 @@ add(values?: any): IBaseExecution<mailboxProtectionRule>;
 * mailboxProtectionUnit
 **********************************************/
 export interface mailboxProtectionUnit extends mailboxProtectionUnitProps, mailboxProtectionUnitMethods { }
-export interface mailboxProtectionUnitProps extends  protectionUnitBaseProps {
+export interface mailboxProtectionUnitProps extends protectionUnitBaseProps {
 	directoryObjectId: string;
 	displayName: string;
 	email: string;
@@ -10330,7 +10331,7 @@ add(values?: any): IBaseExecution<mailboxProtectionUnit>;
 * mailboxRestoreArtifact
 **********************************************/
 export interface mailboxRestoreArtifact extends mailboxRestoreArtifactProps, mailboxRestoreArtifactMethods { }
-export interface mailboxRestoreArtifactProps extends  restoreArtifactBaseProps {
+export interface mailboxRestoreArtifactProps extends restoreArtifactBaseProps {
 	restoredFolderId: string;
 	restoredFolderName: string;
 }
@@ -10347,7 +10348,7 @@ add(values?: any): IBaseExecution<mailboxRestoreArtifact>;
 * malwareStateForWindowsDevice
 **********************************************/
 export interface malwareStateForWindowsDevice extends malwareStateForWindowsDeviceProps, malwareStateForWindowsDeviceMethods { }
-export interface malwareStateForWindowsDeviceProps extends  entityProps {
+export interface malwareStateForWindowsDeviceProps extends entityProps {
 	detectionCount: number;
 	deviceName: string;
 	executionState: EnumTypes.windowsMalwareExecutionState;
@@ -10368,7 +10369,7 @@ add(values?: any): IBaseExecution<malwareStateForWindowsDevice>;
 * managedAndroidLobApp
 **********************************************/
 export interface managedAndroidLobApp extends managedAndroidLobAppProps, managedAndroidLobAppMethods { }
-export interface managedAndroidLobAppProps extends  managedMobileLobAppProps {
+export interface managedAndroidLobAppProps extends managedMobileLobAppProps {
 	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
 	packageId: string;
 	versionCode: string;
@@ -10384,7 +10385,7 @@ export interface managedAndroidLobAppOData extends managedMobileLobAppOData {
 * managedAndroidStoreApp
 **********************************************/
 export interface managedAndroidStoreApp extends managedAndroidStoreAppProps, managedAndroidStoreAppMethods { }
-export interface managedAndroidStoreAppProps extends  managedAppProps {
+export interface managedAndroidStoreAppProps extends managedAppProps {
 	appStoreUrl: string;
 	minimumSupportedOperatingSystem: ComplexTypes.androidMinimumOperatingSystem;
 	packageId: string;
@@ -10399,7 +10400,7 @@ export interface managedAndroidStoreAppOData extends managedAppOData {
 * managedApp
 **********************************************/
 export interface managedApp extends managedAppProps, managedAppMethods { }
-export interface managedAppProps extends  mobileAppProps {
+export interface managedAppProps extends mobileAppProps {
 	appAvailability: EnumTypes.managedAppAvailability;
 	version: string;
 }
@@ -10413,7 +10414,7 @@ export interface managedAppOData extends mobileAppOData {
 * managedAppConfiguration
 **********************************************/
 export interface managedAppConfiguration extends managedAppConfigurationProps, managedAppConfigurationMethods { }
-export interface managedAppConfigurationProps extends  managedAppPolicyProps {
+export interface managedAppConfigurationProps extends managedAppPolicyProps {
 	customSettings: ComplexTypes.keyValuePair[];
 }
 export interface managedAppConfigurationMethods extends managedAppPolicyMethods {
@@ -10426,7 +10427,7 @@ export interface managedAppConfigurationOData extends managedAppPolicyOData {
 * managedAppOperation
 **********************************************/
 export interface managedAppOperation extends managedAppOperationProps, managedAppOperationMethods { }
-export interface managedAppOperationProps extends  entityProps {
+export interface managedAppOperationProps extends entityProps {
 	displayName: string;
 	lastModifiedDateTime: any;
 	state: string;
@@ -10445,7 +10446,7 @@ add(values?: any): IBaseExecution<managedAppOperation>;
 * managedAppPolicy
 **********************************************/
 export interface managedAppPolicy extends managedAppPolicyProps, managedAppPolicyMethods { }
-export interface managedAppPolicyProps extends  entityProps {
+export interface managedAppPolicyProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -10465,7 +10466,7 @@ add(values?: any): IBaseExecution<managedAppPolicy>;
 * managedAppPolicyDeploymentSummary
 **********************************************/
 export interface managedAppPolicyDeploymentSummary extends managedAppPolicyDeploymentSummaryProps, managedAppPolicyDeploymentSummaryMethods { }
-export interface managedAppPolicyDeploymentSummaryProps extends  entityProps {
+export interface managedAppPolicyDeploymentSummaryProps extends entityProps {
 	configurationDeployedUserCount: number;
 	configurationDeploymentSummaryPerApp: ComplexTypes.managedAppPolicyDeploymentSummaryPerApp[];
 	displayName: string;
@@ -10482,7 +10483,7 @@ export interface managedAppPolicyDeploymentSummaryOData extends entityOData {
 * managedAppProtection
 **********************************************/
 export interface managedAppProtection extends managedAppProtectionProps, managedAppProtectionMethods { }
-export interface managedAppProtectionProps extends  managedAppPolicyProps {
+export interface managedAppProtectionProps extends managedAppPolicyProps {
 	allowedDataStorageLocations: EnumTypes.managedAppDataStorageLocation[];
 	allowedInboundDataTransferSources: EnumTypes.managedAppDataTransferLevel;
 	allowedOutboundClipboardSharingLevel: EnumTypes.managedAppClipboardSharingLevel;
@@ -10521,7 +10522,7 @@ export interface managedAppProtectionOData extends managedAppPolicyOData {
 * managedAppRegistration
 **********************************************/
 export interface managedAppRegistration extends managedAppRegistrationProps, managedAppRegistrationMethods { }
-export interface managedAppRegistrationProps extends  entityProps {
+export interface managedAppRegistrationProps extends entityProps {
 	appIdentifier: ComplexTypes.mobileAppIdentifier;
 	applicationVersion: string;
 	createdDateTime: any;
@@ -10555,7 +10556,7 @@ add(values?: any): IBaseExecution<managedAppRegistration>;
 * managedAppStatus
 **********************************************/
 export interface managedAppStatus extends managedAppStatusProps, managedAppStatusMethods { }
-export interface managedAppStatusProps extends  entityProps {
+export interface managedAppStatusProps extends entityProps {
 	displayName: string;
 	version: string;
 }
@@ -10572,7 +10573,7 @@ add(values?: any): IBaseExecution<managedAppStatus>;
 * managedAppStatusRaw
 **********************************************/
 export interface managedAppStatusRaw extends managedAppStatusRawProps, managedAppStatusRawMethods { }
-export interface managedAppStatusRawProps extends  managedAppStatusProps {
+export interface managedAppStatusRawProps extends managedAppStatusProps {
 	content: ComplexTypes.Json;
 }
 export interface managedAppStatusRawMethods extends managedAppStatusMethods {
@@ -10585,7 +10586,7 @@ export interface managedAppStatusRawOData extends managedAppStatusOData {
 * managedDevice
 **********************************************/
 export interface managedDevice extends managedDeviceProps, managedDeviceMethods { }
-export interface managedDeviceProps extends  entityProps {
+export interface managedDeviceProps extends entityProps {
 	activationLockBypassCode: string;
 	androidSecurityPatchLevel: string;
 	azureADDeviceId: string;
@@ -10704,7 +10705,7 @@ add(values?: any): IBaseExecution<managedDevice>;
 * managedDeviceMobileAppConfiguration
 **********************************************/
 export interface managedDeviceMobileAppConfiguration extends managedDeviceMobileAppConfigurationProps, managedDeviceMobileAppConfigurationMethods { }
-export interface managedDeviceMobileAppConfigurationProps extends  entityProps {
+export interface managedDeviceMobileAppConfigurationProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -10738,7 +10739,7 @@ add(values?: any): IBaseExecution<managedDeviceMobileAppConfiguration>;
 * managedDeviceMobileAppConfigurationAssignment
 **********************************************/
 export interface managedDeviceMobileAppConfigurationAssignment extends managedDeviceMobileAppConfigurationAssignmentProps, managedDeviceMobileAppConfigurationAssignmentMethods { }
-export interface managedDeviceMobileAppConfigurationAssignmentProps extends  entityProps {
+export interface managedDeviceMobileAppConfigurationAssignmentProps extends entityProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface managedDeviceMobileAppConfigurationAssignmentMethods extends entityMethods {
@@ -10754,7 +10755,7 @@ add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationAssignment>
 * managedDeviceMobileAppConfigurationDeviceStatus
 **********************************************/
 export interface managedDeviceMobileAppConfigurationDeviceStatus extends managedDeviceMobileAppConfigurationDeviceStatusProps, managedDeviceMobileAppConfigurationDeviceStatusMethods { }
-export interface managedDeviceMobileAppConfigurationDeviceStatusProps extends  entityProps {
+export interface managedDeviceMobileAppConfigurationDeviceStatusProps extends entityProps {
 	complianceGracePeriodExpirationDateTime: any;
 	deviceDisplayName: string;
 	deviceModel: string;
@@ -10776,7 +10777,7 @@ add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationDeviceStatu
 * managedDeviceMobileAppConfigurationDeviceSummary
 **********************************************/
 export interface managedDeviceMobileAppConfigurationDeviceSummary extends managedDeviceMobileAppConfigurationDeviceSummaryProps, managedDeviceMobileAppConfigurationDeviceSummaryMethods { }
-export interface managedDeviceMobileAppConfigurationDeviceSummaryProps extends  entityProps {
+export interface managedDeviceMobileAppConfigurationDeviceSummaryProps extends entityProps {
 	configurationVersion: number;
 	errorCount: number;
 	failedCount: number;
@@ -10795,7 +10796,7 @@ export interface managedDeviceMobileAppConfigurationDeviceSummaryOData extends e
 * managedDeviceMobileAppConfigurationUserStatus
 **********************************************/
 export interface managedDeviceMobileAppConfigurationUserStatus extends managedDeviceMobileAppConfigurationUserStatusProps, managedDeviceMobileAppConfigurationUserStatusMethods { }
-export interface managedDeviceMobileAppConfigurationUserStatusProps extends  entityProps {
+export interface managedDeviceMobileAppConfigurationUserStatusProps extends entityProps {
 	devicesCount: number;
 	lastReportedDateTime: any;
 	status: EnumTypes.complianceStatus;
@@ -10815,7 +10816,7 @@ add(values?: any): IBaseExecution<managedDeviceMobileAppConfigurationUserStatus>
 * managedDeviceMobileAppConfigurationUserSummary
 **********************************************/
 export interface managedDeviceMobileAppConfigurationUserSummary extends managedDeviceMobileAppConfigurationUserSummaryProps, managedDeviceMobileAppConfigurationUserSummaryMethods { }
-export interface managedDeviceMobileAppConfigurationUserSummaryProps extends  entityProps {
+export interface managedDeviceMobileAppConfigurationUserSummaryProps extends entityProps {
 	configurationVersion: number;
 	errorCount: number;
 	failedCount: number;
@@ -10834,7 +10835,7 @@ export interface managedDeviceMobileAppConfigurationUserSummaryOData extends ent
 * managedDeviceOverview
 **********************************************/
 export interface managedDeviceOverview extends managedDeviceOverviewProps, managedDeviceOverviewMethods { }
-export interface managedDeviceOverviewProps extends  entityProps {
+export interface managedDeviceOverviewProps extends entityProps {
 	deviceExchangeAccessStateSummary: ComplexTypes.deviceExchangeAccessStateSummary;
 	deviceOperatingSystemSummary: ComplexTypes.deviceOperatingSystemSummary;
 	dualEnrolledDeviceCount: number;
@@ -10851,7 +10852,7 @@ export interface managedDeviceOverviewOData extends entityOData {
 * managedEBook
 **********************************************/
 export interface managedEBook extends managedEBookProps, managedEBookMethods { }
-export interface managedEBookProps extends  entityProps {
+export interface managedEBookProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -10886,7 +10887,7 @@ add(values?: any): IBaseExecution<managedEBook>;
 * managedEBookAssignment
 **********************************************/
 export interface managedEBookAssignment extends managedEBookAssignmentProps, managedEBookAssignmentMethods { }
-export interface managedEBookAssignmentProps extends  entityProps {
+export interface managedEBookAssignmentProps extends entityProps {
 	installIntent: EnumTypes.installIntent;
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
@@ -10903,7 +10904,7 @@ add(values?: any): IBaseExecution<managedEBookAssignment>;
 * managedIOSLobApp
 **********************************************/
 export interface managedIOSLobApp extends managedIOSLobAppProps, managedIOSLobAppMethods { }
-export interface managedIOSLobAppProps extends  managedMobileLobAppProps {
+export interface managedIOSLobAppProps extends managedMobileLobAppProps {
 	applicableDeviceType: ComplexTypes.iosDeviceType;
 	buildNumber: string;
 	bundleId: string;
@@ -10921,7 +10922,7 @@ export interface managedIOSLobAppOData extends managedMobileLobAppOData {
 * managedIOSStoreApp
 **********************************************/
 export interface managedIOSStoreApp extends managedIOSStoreAppProps, managedIOSStoreAppMethods { }
-export interface managedIOSStoreAppProps extends  managedAppProps {
+export interface managedIOSStoreAppProps extends managedAppProps {
 	applicableDeviceType: ComplexTypes.iosDeviceType;
 	appStoreUrl: string;
 	bundleId: string;
@@ -10937,7 +10938,7 @@ export interface managedIOSStoreAppOData extends managedAppOData {
 * managedMobileApp
 **********************************************/
 export interface managedMobileApp extends managedMobileAppProps, managedMobileAppMethods { }
-export interface managedMobileAppProps extends  entityProps {
+export interface managedMobileAppProps extends entityProps {
 	mobileAppIdentifier: ComplexTypes.mobileAppIdentifier;
 	version: string;
 }
@@ -10954,7 +10955,7 @@ add(values?: any): IBaseExecution<managedMobileApp>;
 * managedMobileLobApp
 **********************************************/
 export interface managedMobileLobApp extends managedMobileLobAppProps, managedMobileLobAppMethods { }
-export interface managedMobileLobAppProps extends  managedAppProps {
+export interface managedMobileLobAppProps extends managedAppProps {
 	committedContentVersion: string;
 	fileName: string;
 	size: number;
@@ -10970,7 +10971,7 @@ export interface managedMobileLobAppOData extends managedAppOData {
 * manifest
 **********************************************/
 export interface manifest extends manifestProps, manifestMethods { }
-export interface manifestProps extends  entityProps {
+export interface manifestProps extends entityProps {
 	blobCount: number;
 	blobs: ComplexTypes.blob[];
 	createdDateTime: any;
@@ -10992,7 +10993,7 @@ export interface manifestOData extends entityOData {
 * mdmWindowsInformationProtectionPolicy
 **********************************************/
 export interface mdmWindowsInformationProtectionPolicy extends mdmWindowsInformationProtectionPolicyProps, mdmWindowsInformationProtectionPolicyMethods { }
-export interface mdmWindowsInformationProtectionPolicyProps extends  windowsInformationProtectionProps {
+export interface mdmWindowsInformationProtectionPolicyProps extends windowsInformationProtectionProps {
 
 }
 export interface mdmWindowsInformationProtectionPolicyMethods extends windowsInformationProtectionMethods {
@@ -11008,7 +11009,7 @@ add(values?: any): IBaseExecution<mdmWindowsInformationProtectionPolicy>;
 * meetingAttendanceReport
 **********************************************/
 export interface meetingAttendanceReport extends meetingAttendanceReportProps, meetingAttendanceReportMethods { }
-export interface meetingAttendanceReportProps extends  entityProps {
+export interface meetingAttendanceReportProps extends entityProps {
 	meetingEndDateTime: any;
 	meetingStartDateTime: any;
 	totalParticipantCount: number;
@@ -11027,7 +11028,7 @@ add(values?: any): IBaseExecution<meetingAttendanceReport>;
 * membershipOutlierInsight
 **********************************************/
 export interface membershipOutlierInsight extends membershipOutlierInsightProps, membershipOutlierInsightMethods { }
-export interface membershipOutlierInsightProps extends  governanceInsightProps {
+export interface membershipOutlierInsightProps extends governanceInsightProps {
 	containerId: string;
 	memberId: string;
 	outlierContainerType: EnumTypes.outlierContainerType;
@@ -11047,7 +11048,7 @@ export interface membershipOutlierInsightOData extends governanceInsightOData {
 * message
 **********************************************/
 export interface message extends messageProps, messageMethods { }
-export interface messageProps extends  outlookItemProps {
+export interface messageProps extends outlookItemProps {
 	bccRecipients: ComplexTypes.recipient[];
 	body: ComplexTypes.itemBody;
 	bodyPreview: string;
@@ -11116,7 +11117,7 @@ add(values?: any): IBaseExecution<message>;
 * messageRule
 **********************************************/
 export interface messageRule extends messageRuleProps, messageRuleMethods { }
-export interface messageRuleProps extends  entityProps {
+export interface messageRuleProps extends entityProps {
 	actions: ComplexTypes.messageRuleActions;
 	conditions: ComplexTypes.messageRulePredicates;
 	displayName: string;
@@ -11139,7 +11140,7 @@ add(values?: any): IBaseExecution<messageRule>;
 * microsoftAccountUserConversationMember
 **********************************************/
 export interface microsoftAccountUserConversationMember extends microsoftAccountUserConversationMemberProps, microsoftAccountUserConversationMemberMethods { }
-export interface microsoftAccountUserConversationMemberProps extends  conversationMemberProps {
+export interface microsoftAccountUserConversationMemberProps extends conversationMemberProps {
 	userId: string;
 }
 export interface microsoftAccountUserConversationMemberMethods extends conversationMemberMethods {
@@ -11152,7 +11153,7 @@ export interface microsoftAccountUserConversationMemberOData extends conversatio
 * microsoftAuthenticatorAuthenticationMethod
 **********************************************/
 export interface microsoftAuthenticatorAuthenticationMethod extends microsoftAuthenticatorAuthenticationMethodProps, microsoftAuthenticatorAuthenticationMethodMethods { }
-export interface microsoftAuthenticatorAuthenticationMethodProps extends  authenticationMethodProps {
+export interface microsoftAuthenticatorAuthenticationMethodProps extends authenticationMethodProps {
 	createdDateTime: any;
 	deviceTag: string;
 	displayName: string;
@@ -11171,7 +11172,7 @@ add(values?: any): IBaseExecution<microsoftAuthenticatorAuthenticationMethod>;
 * microsoftAuthenticatorAuthenticationMethodConfiguration
 **********************************************/
 export interface microsoftAuthenticatorAuthenticationMethodConfiguration extends microsoftAuthenticatorAuthenticationMethodConfigurationProps, microsoftAuthenticatorAuthenticationMethodConfigurationMethods { }
-export interface microsoftAuthenticatorAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface microsoftAuthenticatorAuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 	featureSettings: ComplexTypes.microsoftAuthenticatorFeatureSettings;
 	isSoftwareOathEnabled: boolean;
 }
@@ -11186,7 +11187,7 @@ export interface microsoftAuthenticatorAuthenticationMethodConfigurationOData ex
 * microsoftAuthenticatorAuthenticationMethodTarget
 **********************************************/
 export interface microsoftAuthenticatorAuthenticationMethodTarget extends microsoftAuthenticatorAuthenticationMethodTargetProps, microsoftAuthenticatorAuthenticationMethodTargetMethods { }
-export interface microsoftAuthenticatorAuthenticationMethodTargetProps extends  authenticationMethodTargetProps {
+export interface microsoftAuthenticatorAuthenticationMethodTargetProps extends authenticationMethodTargetProps {
 	authenticationMode: EnumTypes.microsoftAuthenticatorAuthenticationMode;
 }
 export interface microsoftAuthenticatorAuthenticationMethodTargetMethods extends authenticationMethodTargetMethods {
@@ -11202,7 +11203,7 @@ add(values?: any): IBaseExecution<microsoftAuthenticatorAuthenticationMethodTarg
 * microsoftStoreForBusinessApp
 **********************************************/
 export interface microsoftStoreForBusinessApp extends microsoftStoreForBusinessAppProps, microsoftStoreForBusinessAppMethods { }
-export interface microsoftStoreForBusinessAppProps extends  mobileAppProps {
+export interface microsoftStoreForBusinessAppProps extends mobileAppProps {
 	licenseType: EnumTypes.microsoftStoreForBusinessLicenseType;
 	packageIdentityName: string;
 	productKey: string;
@@ -11219,7 +11220,7 @@ export interface microsoftStoreForBusinessAppOData extends mobileAppOData {
 * mobileApp
 **********************************************/
 export interface mobileApp extends mobileAppProps, mobileAppMethods { }
-export interface mobileAppProps extends  entityProps {
+export interface mobileAppProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	developer: string;
@@ -11253,7 +11254,7 @@ add(values?: any): IBaseExecution<mobileApp>;
 * mobileAppAssignment
 **********************************************/
 export interface mobileAppAssignment extends mobileAppAssignmentProps, mobileAppAssignmentMethods { }
-export interface mobileAppAssignmentProps extends  entityProps {
+export interface mobileAppAssignmentProps extends entityProps {
 	intent: EnumTypes.installIntent;
 	settings: ComplexTypes.mobileAppAssignmentSettings;
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
@@ -11271,7 +11272,7 @@ add(values?: any): IBaseExecution<mobileAppAssignment>;
 * mobileAppCategory
 **********************************************/
 export interface mobileAppCategory extends mobileAppCategoryProps, mobileAppCategoryMethods { }
-export interface mobileAppCategoryProps extends  entityProps {
+export interface mobileAppCategoryProps extends entityProps {
 	displayName: string;
 	lastModifiedDateTime: any;
 }
@@ -11288,7 +11289,7 @@ add(values?: any): IBaseExecution<mobileAppCategory>;
 * mobileAppContent
 **********************************************/
 export interface mobileAppContent extends mobileAppContentProps, mobileAppContentMethods { }
-export interface mobileAppContentProps extends  entityProps {
+export interface mobileAppContentProps extends entityProps {
 
 }
 export interface mobileAppContentMethods extends entityMethods {
@@ -11308,7 +11309,7 @@ add(values?: any): IBaseExecution<mobileAppContent>;
 * mobileAppContentFile
 **********************************************/
 export interface mobileAppContentFile extends mobileAppContentFileProps, mobileAppContentFileMethods { }
-export interface mobileAppContentFileProps extends  entityProps {
+export interface mobileAppContentFileProps extends entityProps {
 	azureStorageUri: string;
 	azureStorageUriExpirationDateTime: any;
 	createdDateTime: any;
@@ -11335,7 +11336,7 @@ add(values?: any): IBaseExecution<mobileAppContentFile>;
 * mobileAppTroubleshootingEvent
 **********************************************/
 export interface mobileAppTroubleshootingEvent extends mobileAppTroubleshootingEventProps, mobileAppTroubleshootingEventMethods { }
-export interface mobileAppTroubleshootingEventProps extends  entityProps {
+export interface mobileAppTroubleshootingEventProps extends entityProps {
 
 }
 export interface mobileAppTroubleshootingEventMethods extends entityMethods {
@@ -11352,7 +11353,7 @@ add(values?: any): IBaseExecution<mobileAppTroubleshootingEvent>;
 * mobileContainedApp
 **********************************************/
 export interface mobileContainedApp extends mobileContainedAppProps, mobileContainedAppMethods { }
-export interface mobileContainedAppProps extends  entityProps {
+export interface mobileContainedAppProps extends entityProps {
 
 }
 export interface mobileContainedAppMethods extends entityMethods {
@@ -11368,7 +11369,7 @@ add(values?: any): IBaseExecution<mobileContainedApp>;
 * mobileLobApp
 **********************************************/
 export interface mobileLobApp extends mobileLobAppProps, mobileLobAppMethods { }
-export interface mobileLobAppProps extends  mobileAppProps {
+export interface mobileLobAppProps extends mobileAppProps {
 	committedContentVersion: string;
 	fileName: string;
 	size: number;
@@ -11384,7 +11385,7 @@ export interface mobileLobAppOData extends mobileAppOData {
 * mobileThreatDefenseConnector
 **********************************************/
 export interface mobileThreatDefenseConnector extends mobileThreatDefenseConnectorProps, mobileThreatDefenseConnectorMethods { }
-export interface mobileThreatDefenseConnectorProps extends  entityProps {
+export interface mobileThreatDefenseConnectorProps extends entityProps {
 	allowPartnerToCollectIOSApplicationMetadata: boolean;
 	allowPartnerToCollectIOSPersonalApplicationMetadata: boolean;
 	androidDeviceBlockedOnMissingPartnerData: boolean;
@@ -11414,7 +11415,7 @@ add(values?: any): IBaseExecution<mobileThreatDefenseConnector>;
 * multiTenantOrganization
 **********************************************/
 export interface multiTenantOrganization extends multiTenantOrganizationProps, multiTenantOrganizationMethods { }
-export interface multiTenantOrganizationProps extends  entityProps {
+export interface multiTenantOrganizationProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	displayName: string;
@@ -11433,7 +11434,7 @@ export interface multiTenantOrganizationOData extends entityOData {
 * multiTenantOrganizationIdentitySyncPolicyTemplate
 **********************************************/
 export interface multiTenantOrganizationIdentitySyncPolicyTemplate extends multiTenantOrganizationIdentitySyncPolicyTemplateProps, multiTenantOrganizationIdentitySyncPolicyTemplateMethods { }
-export interface multiTenantOrganizationIdentitySyncPolicyTemplateProps extends  entityProps {
+export interface multiTenantOrganizationIdentitySyncPolicyTemplateProps extends entityProps {
 	templateApplicationLevel: EnumTypes.templateApplicationLevel;
 	userSyncInbound: ComplexTypes.crossTenantUserSyncInbound;
 }
@@ -11447,7 +11448,7 @@ export interface multiTenantOrganizationIdentitySyncPolicyTemplateOData extends 
 * multiTenantOrganizationJoinRequestRecord
 **********************************************/
 export interface multiTenantOrganizationJoinRequestRecord extends multiTenantOrganizationJoinRequestRecordProps, multiTenantOrganizationJoinRequestRecordMethods { }
-export interface multiTenantOrganizationJoinRequestRecordProps extends  entityProps {
+export interface multiTenantOrganizationJoinRequestRecordProps extends entityProps {
 	addedByTenantId: string;
 	memberState: EnumTypes.multiTenantOrganizationMemberState;
 	role: EnumTypes.multiTenantOrganizationMemberRole;
@@ -11463,7 +11464,7 @@ export interface multiTenantOrganizationJoinRequestRecordOData extends entityODa
 * multiTenantOrganizationMember
 **********************************************/
 export interface multiTenantOrganizationMember extends multiTenantOrganizationMemberProps, multiTenantOrganizationMemberMethods { }
-export interface multiTenantOrganizationMemberProps extends  directoryObjectProps {
+export interface multiTenantOrganizationMemberProps extends directoryObjectProps {
 	addedByTenantId: any;
 	addedDateTime: any;
 	displayName: string;
@@ -11486,7 +11487,7 @@ add(values?: any): IBaseExecution<multiTenantOrganizationMember>;
 * multiTenantOrganizationPartnerConfigurationTemplate
 **********************************************/
 export interface multiTenantOrganizationPartnerConfigurationTemplate extends multiTenantOrganizationPartnerConfigurationTemplateProps, multiTenantOrganizationPartnerConfigurationTemplateMethods { }
-export interface multiTenantOrganizationPartnerConfigurationTemplateProps extends  entityProps {
+export interface multiTenantOrganizationPartnerConfigurationTemplateProps extends entityProps {
 	automaticUserConsentSettings: ComplexTypes.inboundOutboundPolicyConfiguration;
 	b2bCollaborationInbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
 	b2bCollaborationOutbound: ComplexTypes.crossTenantAccessPolicyB2BSetting;
@@ -11505,7 +11506,7 @@ export interface multiTenantOrganizationPartnerConfigurationTemplateOData extend
 * multiValueLegacyExtendedProperty
 **********************************************/
 export interface multiValueLegacyExtendedProperty extends multiValueLegacyExtendedPropertyProps, multiValueLegacyExtendedPropertyMethods { }
-export interface multiValueLegacyExtendedPropertyProps extends  entityProps {
+export interface multiValueLegacyExtendedPropertyProps extends entityProps {
 	value: Array<string>;
 }
 export interface multiValueLegacyExtendedPropertyMethods extends entityMethods {
@@ -11521,7 +11522,7 @@ add(values?: any): IBaseExecution<multiValueLegacyExtendedProperty>;
 * muteParticipantOperation
 **********************************************/
 export interface muteParticipantOperation extends muteParticipantOperationProps, muteParticipantOperationMethods { }
-export interface muteParticipantOperationProps extends  commsOperationProps {
+export interface muteParticipantOperationProps extends commsOperationProps {
 
 }
 export interface muteParticipantOperationMethods extends commsOperationMethods {
@@ -11534,7 +11535,7 @@ export interface muteParticipantOperationOData extends commsOperationOData {
 * namedLocation
 **********************************************/
 export interface namedLocation extends namedLocationProps, namedLocationMethods { }
-export interface namedLocationProps extends  entityProps {
+export interface namedLocationProps extends entityProps {
 	createdDateTime: any;
 	displayName: string;
 	modifiedDateTime: any;
@@ -11552,7 +11553,7 @@ add(values?: any): IBaseExecution<namedLocation>;
 * networkAdapter
 **********************************************/
 export interface networkAdapter extends networkAdapterProps, networkAdapterMethods { }
-export interface networkAdapterProps extends  entityProps {
+export interface networkAdapterProps extends entityProps {
 	isEnabled: boolean;
 	name: string;
 }
@@ -11566,7 +11567,7 @@ export interface networkAdapterOData extends entityOData {
 * notebook
 **********************************************/
 export interface notebook extends notebookProps, notebookMethods { }
-export interface notebookProps extends  onenoteEntityHierarchyModelProps {
+export interface notebookProps extends onenoteEntityHierarchyModelProps {
 	isDefault: boolean;
 	isShared: boolean;
 	links: ComplexTypes.notebookLinks;
@@ -11593,7 +11594,7 @@ add(values?: any): IBaseExecution<notebook>;
 * notificationMessageTemplate
 **********************************************/
 export interface notificationMessageTemplate extends notificationMessageTemplateProps, notificationMessageTemplateMethods { }
-export interface notificationMessageTemplateProps extends  entityProps {
+export interface notificationMessageTemplateProps extends entityProps {
 	brandingOptions: EnumTypes.notificationTemplateBrandingOptions;
 	defaultLocale: string;
 	displayName: string;
@@ -11616,7 +11617,7 @@ add(values?: any): IBaseExecution<notificationMessageTemplate>;
 * oAuth2PermissionGrant
 **********************************************/
 export interface oAuth2PermissionGrant extends oAuth2PermissionGrantProps, oAuth2PermissionGrantMethods { }
-export interface oAuth2PermissionGrantProps extends  entityProps {
+export interface oAuth2PermissionGrantProps extends entityProps {
 	clientId: string;
 	consentType: string;
 	principalId: string;
@@ -11636,7 +11637,7 @@ add(values?: any): IBaseExecution<oAuth2PermissionGrant>;
 * offerShiftRequest
 **********************************************/
 export interface offerShiftRequest extends offerShiftRequestProps, offerShiftRequestMethods { }
-export interface offerShiftRequestProps extends  scheduleChangeRequestProps {
+export interface offerShiftRequestProps extends scheduleChangeRequestProps {
 	recipientActionDateTime: any;
 	recipientActionMessage: string;
 	recipientUserId: string;
@@ -11655,7 +11656,7 @@ add(values?: any): IBaseExecution<offerShiftRequest>;
 * officeGraphInsights
 **********************************************/
 export interface officeGraphInsights extends officeGraphInsightsProps, officeGraphInsightsMethods { }
-export interface officeGraphInsightsProps extends  entityProps {
+export interface officeGraphInsightsProps extends entityProps {
 
 }
 export interface officeGraphInsightsMethods extends entityMethods {
@@ -11675,7 +11676,7 @@ export interface officeGraphInsightsOData extends entityOData {
 * onAttributeCollectionListener
 **********************************************/
 export interface onAttributeCollectionListener extends onAttributeCollectionListenerProps, onAttributeCollectionListenerMethods { }
-export interface onAttributeCollectionListenerProps extends  authenticationEventListenerProps {
+export interface onAttributeCollectionListenerProps extends authenticationEventListenerProps {
 	handler: ComplexTypes.onAttributeCollectionHandler;
 }
 export interface onAttributeCollectionListenerMethods extends authenticationEventListenerMethods {
@@ -11688,7 +11689,7 @@ export interface onAttributeCollectionListenerOData extends authenticationEventL
 * onAuthenticationMethodLoadStartListener
 **********************************************/
 export interface onAuthenticationMethodLoadStartListener extends onAuthenticationMethodLoadStartListenerProps, onAuthenticationMethodLoadStartListenerMethods { }
-export interface onAuthenticationMethodLoadStartListenerProps extends  authenticationEventListenerProps {
+export interface onAuthenticationMethodLoadStartListenerProps extends authenticationEventListenerProps {
 	handler: ComplexTypes.onAuthenticationMethodLoadStartHandler;
 }
 export interface onAuthenticationMethodLoadStartListenerMethods extends authenticationEventListenerMethods {
@@ -11701,7 +11702,7 @@ export interface onAuthenticationMethodLoadStartListenerOData extends authentica
 * onInteractiveAuthFlowStartListener
 **********************************************/
 export interface onInteractiveAuthFlowStartListener extends onInteractiveAuthFlowStartListenerProps, onInteractiveAuthFlowStartListenerMethods { }
-export interface onInteractiveAuthFlowStartListenerProps extends  authenticationEventListenerProps {
+export interface onInteractiveAuthFlowStartListenerProps extends authenticationEventListenerProps {
 	handler: ComplexTypes.onInteractiveAuthFlowStartHandler;
 }
 export interface onInteractiveAuthFlowStartListenerMethods extends authenticationEventListenerMethods {
@@ -11714,7 +11715,7 @@ export interface onInteractiveAuthFlowStartListenerOData extends authenticationE
 * onPremisesConditionalAccessSettings
 **********************************************/
 export interface onPremisesConditionalAccessSettings extends onPremisesConditionalAccessSettingsProps, onPremisesConditionalAccessSettingsMethods { }
-export interface onPremisesConditionalAccessSettingsProps extends  entityProps {
+export interface onPremisesConditionalAccessSettingsProps extends entityProps {
 	enabled: boolean;
 	excludedGroups: Array<any>;
 	includedGroups: Array<any>;
@@ -11730,7 +11731,7 @@ export interface onPremisesConditionalAccessSettingsOData extends entityOData {
 * onPremisesDirectorySynchronization
 **********************************************/
 export interface onPremisesDirectorySynchronization extends onPremisesDirectorySynchronizationProps, onPremisesDirectorySynchronizationMethods { }
-export interface onPremisesDirectorySynchronizationProps extends  entityProps {
+export interface onPremisesDirectorySynchronizationProps extends entityProps {
 	configuration: ComplexTypes.onPremisesDirectorySynchronizationConfiguration;
 	features: ComplexTypes.onPremisesDirectorySynchronizationFeature;
 }
@@ -11747,7 +11748,7 @@ add(values?: any): IBaseExecution<onPremisesDirectorySynchronization>;
 * onTokenIssuanceStartCustomExtension
 **********************************************/
 export interface onTokenIssuanceStartCustomExtension extends onTokenIssuanceStartCustomExtensionProps, onTokenIssuanceStartCustomExtensionMethods { }
-export interface onTokenIssuanceStartCustomExtensionProps extends  customAuthenticationExtensionProps {
+export interface onTokenIssuanceStartCustomExtensionProps extends customAuthenticationExtensionProps {
 	claimsForTokenConfiguration: ComplexTypes.onTokenIssuanceStartReturnClaim[];
 }
 export interface onTokenIssuanceStartCustomExtensionMethods extends customAuthenticationExtensionMethods {
@@ -11760,7 +11761,7 @@ export interface onTokenIssuanceStartCustomExtensionOData extends customAuthenti
 * onTokenIssuanceStartListener
 **********************************************/
 export interface onTokenIssuanceStartListener extends onTokenIssuanceStartListenerProps, onTokenIssuanceStartListenerMethods { }
-export interface onTokenIssuanceStartListenerProps extends  authenticationEventListenerProps {
+export interface onTokenIssuanceStartListenerProps extends authenticationEventListenerProps {
 	handler: ComplexTypes.onTokenIssuanceStartHandler;
 }
 export interface onTokenIssuanceStartListenerMethods extends authenticationEventListenerMethods {
@@ -11773,7 +11774,7 @@ export interface onTokenIssuanceStartListenerOData extends authenticationEventLi
 * onUserCreateStartListener
 **********************************************/
 export interface onUserCreateStartListener extends onUserCreateStartListenerProps, onUserCreateStartListenerMethods { }
-export interface onUserCreateStartListenerProps extends  authenticationEventListenerProps {
+export interface onUserCreateStartListenerProps extends authenticationEventListenerProps {
 	handler: ComplexTypes.onUserCreateStartHandler;
 }
 export interface onUserCreateStartListenerMethods extends authenticationEventListenerMethods {
@@ -11786,7 +11787,7 @@ export interface onUserCreateStartListenerOData extends authenticationEventListe
 * oneDriveForBusinessProtectionPolicy
 **********************************************/
 export interface oneDriveForBusinessProtectionPolicy extends oneDriveForBusinessProtectionPolicyProps, oneDriveForBusinessProtectionPolicyMethods { }
-export interface oneDriveForBusinessProtectionPolicyProps extends  protectionPolicyBaseProps {
+export interface oneDriveForBusinessProtectionPolicyProps extends protectionPolicyBaseProps {
 
 }
 export interface oneDriveForBusinessProtectionPolicyMethods extends protectionPolicyBaseMethods {
@@ -11806,7 +11807,7 @@ add(values?: any): IBaseExecution<oneDriveForBusinessProtectionPolicy>;
 * oneDriveForBusinessRestoreSession
 **********************************************/
 export interface oneDriveForBusinessRestoreSession extends oneDriveForBusinessRestoreSessionProps, oneDriveForBusinessRestoreSessionMethods { }
-export interface oneDriveForBusinessRestoreSessionProps extends  restoreSessionBaseProps {
+export interface oneDriveForBusinessRestoreSessionProps extends restoreSessionBaseProps {
 
 }
 export interface oneDriveForBusinessRestoreSessionMethods extends restoreSessionBaseMethods {
@@ -11823,7 +11824,7 @@ add(values?: any): IBaseExecution<oneDriveForBusinessRestoreSession>;
 * onenote
 **********************************************/
 export interface onenote extends onenoteProps, onenoteMethods { }
-export interface onenoteProps extends  entityProps {
+export interface onenoteProps extends entityProps {
 
 }
 export interface onenoteMethods extends entityMethods {
@@ -11852,7 +11853,7 @@ export interface onenoteOData extends entityOData {
 * onenoteEntityBaseModel
 **********************************************/
 export interface onenoteEntityBaseModel extends onenoteEntityBaseModelProps, onenoteEntityBaseModelMethods { }
-export interface onenoteEntityBaseModelProps extends  entityProps {
+export interface onenoteEntityBaseModelProps extends entityProps {
 	self: string;
 }
 export interface onenoteEntityBaseModelMethods extends entityMethods {
@@ -11865,7 +11866,7 @@ export interface onenoteEntityBaseModelOData extends entityOData {
 * onenoteEntityHierarchyModel
 **********************************************/
 export interface onenoteEntityHierarchyModel extends onenoteEntityHierarchyModelProps, onenoteEntityHierarchyModelMethods { }
-export interface onenoteEntityHierarchyModelProps extends  onenoteEntitySchemaObjectModelProps {
+export interface onenoteEntityHierarchyModelProps extends onenoteEntitySchemaObjectModelProps {
 	createdBy: ComplexTypes.identitySet;
 	displayName: string;
 	lastModifiedBy: ComplexTypes.identitySet;
@@ -11881,7 +11882,7 @@ export interface onenoteEntityHierarchyModelOData extends onenoteEntitySchemaObj
 * onenoteEntitySchemaObjectModel
 **********************************************/
 export interface onenoteEntitySchemaObjectModel extends onenoteEntitySchemaObjectModelProps, onenoteEntitySchemaObjectModelMethods { }
-export interface onenoteEntitySchemaObjectModelProps extends  onenoteEntityBaseModelProps {
+export interface onenoteEntitySchemaObjectModelProps extends onenoteEntityBaseModelProps {
 	createdDateTime: any;
 }
 export interface onenoteEntitySchemaObjectModelMethods extends onenoteEntityBaseModelMethods {
@@ -11894,7 +11895,7 @@ export interface onenoteEntitySchemaObjectModelOData extends onenoteEntityBaseMo
 * onenoteOperation
 **********************************************/
 export interface onenoteOperation extends onenoteOperationProps, onenoteOperationMethods { }
-export interface onenoteOperationProps extends  operationProps {
+export interface onenoteOperationProps extends operationProps {
 	error: ComplexTypes.onenoteOperationError;
 	percentComplete: string;
 	resourceId: string;
@@ -11913,7 +11914,7 @@ add(values?: any): IBaseExecution<onenoteOperation>;
 * onenotePage
 **********************************************/
 export interface onenotePage extends onenotePageProps, onenotePageMethods { }
-export interface onenotePageProps extends  onenoteEntitySchemaObjectModelProps {
+export interface onenotePageProps extends onenoteEntitySchemaObjectModelProps {
 	content: any;
 	contentUrl: string;
 	createdByAppId: string;
@@ -11945,7 +11946,7 @@ add(values?: any): IBaseExecution<onenotePage>;
 * onenoteResource
 **********************************************/
 export interface onenoteResource extends onenoteResourceProps, onenoteResourceMethods { }
-export interface onenoteResourceProps extends  onenoteEntityBaseModelProps {
+export interface onenoteResourceProps extends onenoteEntityBaseModelProps {
 	content: any;
 	contentUrl: string;
 }
@@ -11962,7 +11963,7 @@ add(values?: any): IBaseExecution<onenoteResource>;
 * onenoteSection
 **********************************************/
 export interface onenoteSection extends onenoteSectionProps, onenoteSectionMethods { }
-export interface onenoteSectionProps extends  onenoteEntityHierarchyModelProps {
+export interface onenoteSectionProps extends onenoteEntityHierarchyModelProps {
 	isDefault: boolean;
 	links: ComplexTypes.sectionLinks;
 	pagesUrl: string;
@@ -11989,7 +11990,7 @@ add(values?: any): IBaseExecution<onenoteSection>;
 * onlineMeeting
 **********************************************/
 export interface onlineMeeting extends onlineMeetingProps, onlineMeetingMethods { }
-export interface onlineMeetingProps extends  onlineMeetingBaseProps {
+export interface onlineMeetingProps extends onlineMeetingBaseProps {
 	attendeeReport: any;
 	broadcastSettings: ComplexTypes.broadcastMeetingSettings;
 	creationDateTime: any;
@@ -12023,7 +12024,7 @@ add(values?: any): IBaseExecution<onlineMeeting>;
 * onlineMeetingBase
 **********************************************/
 export interface onlineMeetingBase extends onlineMeetingBaseProps, onlineMeetingBaseMethods { }
-export interface onlineMeetingBaseProps extends  entityProps {
+export interface onlineMeetingBaseProps extends entityProps {
 	allowAttendeeToEnableCamera: boolean;
 	allowAttendeeToEnableMic: boolean;
 	allowBreakoutRooms: boolean;
@@ -12062,7 +12063,7 @@ export interface onlineMeetingBaseOData extends entityOData {
 * openShift
 **********************************************/
 export interface openShift extends openShiftProps, openShiftMethods { }
-export interface openShiftProps extends  changeTrackedEntityProps {
+export interface openShiftProps extends changeTrackedEntityProps {
 	draftOpenShift: ComplexTypes.openShiftItem;
 	isStagedForDeletion: boolean;
 	schedulingGroupId: string;
@@ -12081,7 +12082,7 @@ add(values?: any): IBaseExecution<openShift>;
 * openShiftChangeRequest
 **********************************************/
 export interface openShiftChangeRequest extends openShiftChangeRequestProps, openShiftChangeRequestMethods { }
-export interface openShiftChangeRequestProps extends  scheduleChangeRequestProps {
+export interface openShiftChangeRequestProps extends scheduleChangeRequestProps {
 	openShiftId: string;
 }
 export interface openShiftChangeRequestMethods extends scheduleChangeRequestMethods {
@@ -12097,7 +12098,7 @@ add(values?: any): IBaseExecution<openShiftChangeRequest>;
 * openTypeExtension
 **********************************************/
 export interface openTypeExtension extends openTypeExtensionProps, openTypeExtensionMethods { }
-export interface openTypeExtensionProps extends  extensionProps {
+export interface openTypeExtensionProps extends extensionProps {
 	extensionName: string;
 }
 export interface openTypeExtensionMethods extends extensionMethods {
@@ -12110,7 +12111,7 @@ export interface openTypeExtensionOData extends extensionOData {
 * operation
 **********************************************/
 export interface operation extends operationProps, operationMethods { }
-export interface operationProps extends  entityProps {
+export interface operationProps extends entityProps {
 	createdDateTime: any;
 	lastActionDateTime: any;
 	status: EnumTypes.longRunningOperationStatus;
@@ -12125,7 +12126,7 @@ export interface operationOData extends entityOData {
 * orgContact
 **********************************************/
 export interface orgContact extends orgContactProps, orgContactMethods { }
-export interface orgContactProps extends  directoryObjectProps {
+export interface orgContactProps extends directoryObjectProps {
 	addresses: ComplexTypes.physicalOfficeAddress[];
 	companyName: string;
 	department: string;
@@ -12163,7 +12164,7 @@ export interface orgContactOData extends directoryObjectOData {
 * organization
 **********************************************/
 export interface organization extends organizationProps, organizationMethods { }
-export interface organizationProps extends  directoryObjectProps {
+export interface organizationProps extends directoryObjectProps {
 	assignedPlans: ComplexTypes.assignedPlan[];
 	businessPhones: Array<string>;
 	city: string;
@@ -12207,7 +12208,7 @@ export interface organizationOData extends directoryObjectOData {
 * organizationalBranding
 **********************************************/
 export interface organizationalBranding extends organizationalBrandingProps, organizationalBrandingMethods { }
-export interface organizationalBrandingProps extends  organizationalBrandingPropertiesProps {
+export interface organizationalBrandingProps extends organizationalBrandingPropertiesProps {
 
 }
 export interface organizationalBrandingMethods extends organizationalBrandingPropertiesMethods {
@@ -12221,7 +12222,7 @@ export interface organizationalBrandingOData extends organizationalBrandingPrope
 * organizationalBrandingLocalization
 **********************************************/
 export interface organizationalBrandingLocalization extends organizationalBrandingLocalizationProps, organizationalBrandingLocalizationMethods { }
-export interface organizationalBrandingLocalizationProps extends  organizationalBrandingPropertiesProps {
+export interface organizationalBrandingLocalizationProps extends organizationalBrandingPropertiesProps {
 
 }
 export interface organizationalBrandingLocalizationMethods extends organizationalBrandingPropertiesMethods {
@@ -12237,7 +12238,7 @@ add(values?: any): IBaseExecution<organizationalBrandingLocalization>;
 * organizationalBrandingProperties
 **********************************************/
 export interface organizationalBrandingProperties extends organizationalBrandingPropertiesProps, organizationalBrandingPropertiesMethods { }
-export interface organizationalBrandingPropertiesProps extends  entityProps {
+export interface organizationalBrandingPropertiesProps extends entityProps {
 	backgroundColor: string;
 	backgroundImage: any;
 	backgroundImageRelativeUrl: string;
@@ -12280,7 +12281,7 @@ export interface organizationalBrandingPropertiesOData extends entityOData {
 * organizer
 **********************************************/
 export interface organizer extends organizerProps, organizerMethods { }
-export interface organizerProps extends  participantBaseProps {
+export interface organizerProps extends participantBaseProps {
 
 }
 export interface organizerMethods extends participantBaseMethods {
@@ -12293,7 +12294,7 @@ export interface organizerOData extends participantBaseOData {
 * outlookCategory
 **********************************************/
 export interface outlookCategory extends outlookCategoryProps, outlookCategoryMethods { }
-export interface outlookCategoryProps extends  entityProps {
+export interface outlookCategoryProps extends entityProps {
 	color: EnumTypes.categoryColor;
 	displayName: string;
 }
@@ -12310,7 +12311,7 @@ add(values?: any): IBaseExecution<outlookCategory>;
 * outlookItem
 **********************************************/
 export interface outlookItem extends outlookItemProps, outlookItemMethods { }
-export interface outlookItemProps extends  entityProps {
+export interface outlookItemProps extends entityProps {
 	categories: Array<string>;
 	changeKey: string;
 	createdDateTime: any;
@@ -12326,7 +12327,7 @@ export interface outlookItemOData extends entityOData {
 * outlookUser
 **********************************************/
 export interface outlookUser extends outlookUserProps, outlookUserMethods { }
-export interface outlookUserProps extends  entityProps {
+export interface outlookUserProps extends entityProps {
 
 }
 export interface outlookUserMethods extends entityMethods {
@@ -12340,7 +12341,7 @@ export interface outlookUserOData extends entityOData {
 * participant
 **********************************************/
 export interface participant extends participantProps, participantMethods { }
-export interface participantProps extends  participantBaseProps {
+export interface participantProps extends participantBaseProps {
 
 }
 export interface participantMethods extends participantBaseMethods {
@@ -12360,7 +12361,7 @@ add(values?: any): IBaseExecution<participant>;
 * participantBase
 **********************************************/
 export interface participantBase extends participantBaseProps, participantBaseMethods { }
-export interface participantBaseProps extends  entityProps {
+export interface participantBaseProps extends entityProps {
 	administrativeUnitInfos: ComplexTypes.administrativeUnitInfo[];
 	identity: ComplexTypes.communicationsIdentitySet;
 }
@@ -12374,7 +12375,7 @@ export interface participantBaseOData extends entityOData {
 * participantJoiningNotification
 **********************************************/
 export interface participantJoiningNotification extends participantJoiningNotificationProps, participantJoiningNotificationMethods { }
-export interface participantJoiningNotificationProps extends  entityProps {
+export interface participantJoiningNotificationProps extends entityProps {
 
 }
 export interface participantJoiningNotificationMethods extends entityMethods {
@@ -12387,7 +12388,7 @@ export interface participantJoiningNotificationOData extends entityOData {
 * participantLeftNotification
 **********************************************/
 export interface participantLeftNotification extends participantLeftNotificationProps, participantLeftNotificationMethods { }
-export interface participantLeftNotificationProps extends  entityProps {
+export interface participantLeftNotificationProps extends entityProps {
 	participantId: string;
 }
 export interface participantLeftNotificationMethods extends entityMethods {
@@ -12400,7 +12401,7 @@ export interface participantLeftNotificationOData extends entityOData {
 * partners
 **********************************************/
 export interface partners extends partnersProps, partnersMethods { }
-export interface partnersProps extends  entityProps {
+export interface partnersProps extends entityProps {
 
 }
 export interface partnersMethods extends entityMethods {
@@ -12413,7 +12414,7 @@ export interface partnersOData extends entityOData {
 * passiveDnsRecord
 **********************************************/
 export interface passiveDnsRecord extends passiveDnsRecordProps, passiveDnsRecordMethods { }
-export interface passiveDnsRecordProps extends  artifactProps {
+export interface passiveDnsRecordProps extends artifactProps {
 	collectedDateTime: any;
 	firstSeenDateTime: any;
 	lastSeenDateTime: any;
@@ -12431,7 +12432,7 @@ export interface passiveDnsRecordOData extends artifactOData {
 * passwordAuthenticationMethod
 **********************************************/
 export interface passwordAuthenticationMethod extends passwordAuthenticationMethodProps, passwordAuthenticationMethodMethods { }
-export interface passwordAuthenticationMethodProps extends  authenticationMethodProps {
+export interface passwordAuthenticationMethodProps extends authenticationMethodProps {
 	createdDateTime: any;
 	password: string;
 }
@@ -12448,7 +12449,7 @@ add(values?: any): IBaseExecution<passwordAuthenticationMethod>;
 * payload
 **********************************************/
 export interface payload extends payloadProps, payloadMethods { }
-export interface payloadProps extends  entityProps {
+export interface payloadProps extends entityProps {
 	brand: EnumTypes.payloadBrand;
 	complexity: EnumTypes.payloadComplexity;
 	createdBy: ComplexTypes.emailIdentity;
@@ -12485,7 +12486,7 @@ add(values?: any): IBaseExecution<payload>;
 * peopleAdminSettings
 **********************************************/
 export interface peopleAdminSettings extends peopleAdminSettingsProps, peopleAdminSettingsMethods { }
-export interface peopleAdminSettingsProps extends  entityProps {
+export interface peopleAdminSettingsProps extends entityProps {
 
 }
 export interface peopleAdminSettingsMethods extends entityMethods {
@@ -12503,7 +12504,7 @@ export interface peopleAdminSettingsOData extends entityOData {
 * permission
 **********************************************/
 export interface permission extends permissionProps, permissionMethods { }
-export interface permissionProps extends  entityProps {
+export interface permissionProps extends entityProps {
 	expirationDateTime: any;
 	grantedTo: ComplexTypes.identitySet;
 	grantedToIdentities: ComplexTypes.identitySet[];
@@ -12533,7 +12534,7 @@ export interface permissionCollection extends IBaseCollection<permission, permis
 * permissionGrantConditionSet
 **********************************************/
 export interface permissionGrantConditionSet extends permissionGrantConditionSetProps, permissionGrantConditionSetMethods { }
-export interface permissionGrantConditionSetProps extends  entityProps {
+export interface permissionGrantConditionSetProps extends entityProps {
 	clientApplicationIds: Array<string>;
 	clientApplicationPublisherIds: Array<string>;
 	clientApplicationsFromVerifiedPublisherOnly: boolean;
@@ -12556,7 +12557,7 @@ add(values?: any): IBaseExecution<permissionGrantConditionSet>;
 * permissionGrantPolicy
 **********************************************/
 export interface permissionGrantPolicy extends permissionGrantPolicyProps, permissionGrantPolicyMethods { }
-export interface permissionGrantPolicyProps extends  policyBaseProps {
+export interface permissionGrantPolicyProps extends policyBaseProps {
 
 }
 export interface permissionGrantPolicyMethods extends policyBaseMethods {
@@ -12576,7 +12577,7 @@ add(values?: any): IBaseExecution<permissionGrantPolicy>;
 * person
 **********************************************/
 export interface person extends personProps, personMethods { }
-export interface personProps extends  entityProps {
+export interface personProps extends entityProps {
 	birthday: string;
 	companyName: string;
 	department: string;
@@ -12610,7 +12611,7 @@ add(values?: any): IBaseExecution<person>;
 * phoneAuthenticationMethod
 **********************************************/
 export interface phoneAuthenticationMethod extends phoneAuthenticationMethodProps, phoneAuthenticationMethodMethods { }
-export interface phoneAuthenticationMethodProps extends  authenticationMethodProps {
+export interface phoneAuthenticationMethodProps extends authenticationMethodProps {
 	phoneNumber: string;
 	phoneType: EnumTypes.authenticationPhoneType;
 	smsSignInState: EnumTypes.authenticationMethodSignInState;
@@ -12630,7 +12631,7 @@ add(values?: any): IBaseExecution<phoneAuthenticationMethod>;
 * pinnedChatMessageInfo
 **********************************************/
 export interface pinnedChatMessageInfo extends pinnedChatMessageInfoProps, pinnedChatMessageInfoMethods { }
-export interface pinnedChatMessageInfoProps extends  entityProps {
+export interface pinnedChatMessageInfoProps extends entityProps {
 
 }
 export interface pinnedChatMessageInfoMethods extends entityMethods {
@@ -12646,7 +12647,7 @@ add(values?: any): IBaseExecution<pinnedChatMessageInfo>;
 * place
 **********************************************/
 export interface place extends placeProps, placeMethods { }
-export interface placeProps extends  entityProps {
+export interface placeProps extends entityProps {
 	address: ComplexTypes.physicalAddress;
 	displayName: string;
 	geoCoordinates: ComplexTypes.outlookGeoCoordinates;
@@ -12662,7 +12663,7 @@ export interface placeOData extends entityOData {
 * planner
 **********************************************/
 export interface planner extends plannerProps, plannerMethods { }
-export interface plannerProps extends  entityProps {
+export interface plannerProps extends entityProps {
 
 }
 export interface plannerMethods extends entityMethods {
@@ -12682,7 +12683,7 @@ export interface plannerOData extends entityOData {
 * plannerAssignedToTaskBoardTaskFormat
 **********************************************/
 export interface plannerAssignedToTaskBoardTaskFormat extends plannerAssignedToTaskBoardTaskFormatProps, plannerAssignedToTaskBoardTaskFormatMethods { }
-export interface plannerAssignedToTaskBoardTaskFormatProps extends  entityProps {
+export interface plannerAssignedToTaskBoardTaskFormatProps extends entityProps {
 	orderHintsByAssignee: ComplexTypes.plannerOrderHintsByAssignee;
 	unassignedOrderHint: string;
 }
@@ -12696,7 +12697,7 @@ export interface plannerAssignedToTaskBoardTaskFormatOData extends entityOData {
 * plannerBucket
 **********************************************/
 export interface plannerBucket extends plannerBucketProps, plannerBucketMethods { }
-export interface plannerBucketProps extends  entityProps {
+export interface plannerBucketProps extends entityProps {
 	name: string;
 	orderHint: string;
 	planId: string;
@@ -12715,7 +12716,7 @@ add(values?: any): IBaseExecution<plannerBucket>;
 * plannerBucketTaskBoardTaskFormat
 **********************************************/
 export interface plannerBucketTaskBoardTaskFormat extends plannerBucketTaskBoardTaskFormatProps, plannerBucketTaskBoardTaskFormatMethods { }
-export interface plannerBucketTaskBoardTaskFormatProps extends  entityProps {
+export interface plannerBucketTaskBoardTaskFormatProps extends entityProps {
 	orderHint: string;
 }
 export interface plannerBucketTaskBoardTaskFormatMethods extends entityMethods {
@@ -12728,7 +12729,7 @@ export interface plannerBucketTaskBoardTaskFormatOData extends entityOData {
 * plannerGroup
 **********************************************/
 export interface plannerGroup extends plannerGroupProps, plannerGroupMethods { }
-export interface plannerGroupProps extends  entityProps {
+export interface plannerGroupProps extends entityProps {
 
 }
 export interface plannerGroupMethods extends entityMethods {
@@ -12742,7 +12743,7 @@ export interface plannerGroupOData extends entityOData {
 * plannerPlan
 **********************************************/
 export interface plannerPlan extends plannerPlanProps, plannerPlanMethods { }
-export interface plannerPlanProps extends  entityProps {
+export interface plannerPlanProps extends entityProps {
 	container: ComplexTypes.plannerPlanContainer;
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
@@ -12768,7 +12769,7 @@ add(values?: any): IBaseExecution<plannerPlan>;
 * plannerPlanDetails
 **********************************************/
 export interface plannerPlanDetails extends plannerPlanDetailsProps, plannerPlanDetailsMethods { }
-export interface plannerPlanDetailsProps extends  entityProps {
+export interface plannerPlanDetailsProps extends entityProps {
 	categoryDescriptions: ComplexTypes.plannerCategoryDescriptions;
 	sharedWith: ComplexTypes.plannerUserIds;
 }
@@ -12782,7 +12783,7 @@ export interface plannerPlanDetailsOData extends entityOData {
 * plannerProgressTaskBoardTaskFormat
 **********************************************/
 export interface plannerProgressTaskBoardTaskFormat extends plannerProgressTaskBoardTaskFormatProps, plannerProgressTaskBoardTaskFormatMethods { }
-export interface plannerProgressTaskBoardTaskFormatProps extends  entityProps {
+export interface plannerProgressTaskBoardTaskFormatProps extends entityProps {
 	orderHint: string;
 }
 export interface plannerProgressTaskBoardTaskFormatMethods extends entityMethods {
@@ -12795,7 +12796,7 @@ export interface plannerProgressTaskBoardTaskFormatOData extends entityOData {
 * plannerTask
 **********************************************/
 export interface plannerTask extends plannerTaskProps, plannerTaskMethods { }
-export interface plannerTaskProps extends  entityProps {
+export interface plannerTaskProps extends entityProps {
 	activeChecklistItemCount: number;
 	appliedCategories: ComplexTypes.plannerAppliedCategories;
 	assigneePriority: string;
@@ -12837,7 +12838,7 @@ add(values?: any): IBaseExecution<plannerTask>;
 * plannerTaskDetails
 **********************************************/
 export interface plannerTaskDetails extends plannerTaskDetailsProps, plannerTaskDetailsMethods { }
-export interface plannerTaskDetailsProps extends  entityProps {
+export interface plannerTaskDetailsProps extends entityProps {
 	checklist: ComplexTypes.plannerChecklistItems;
 	description: string;
 	previewType: EnumTypes.plannerPreviewType;
@@ -12853,7 +12854,7 @@ export interface plannerTaskDetailsOData extends entityOData {
 * plannerUser
 **********************************************/
 export interface plannerUser extends plannerUserProps, plannerUserMethods { }
-export interface plannerUserProps extends  entityProps {
+export interface plannerUserProps extends entityProps {
 
 }
 export interface plannerUserMethods extends entityMethods {
@@ -12870,7 +12871,7 @@ export interface plannerUserOData extends entityOData {
 * playPromptOperation
 **********************************************/
 export interface playPromptOperation extends playPromptOperationProps, playPromptOperationMethods { }
-export interface playPromptOperationProps extends  commsOperationProps {
+export interface playPromptOperationProps extends commsOperationProps {
 
 }
 export interface playPromptOperationMethods extends commsOperationMethods {
@@ -12883,7 +12884,7 @@ export interface playPromptOperationOData extends commsOperationOData {
 * policyBase
 **********************************************/
 export interface policyBase extends policyBaseProps, policyBaseMethods { }
-export interface policyBaseProps extends  directoryObjectProps {
+export interface policyBaseProps extends directoryObjectProps {
 	description: string;
 	displayName: string;
 }
@@ -12897,7 +12898,7 @@ export interface policyBaseOData extends directoryObjectOData {
 * policyRoot
 **********************************************/
 export interface policyRoot extends policyRootProps, policyRootMethods { }
-export interface policyRootProps extends  entityProps {
+export interface policyRootProps extends entityProps {
 
 }
 export interface policyRootMethods extends entityMethods {
@@ -12960,7 +12961,7 @@ export interface policyRootOData extends entityOData {
 * policyTemplate
 **********************************************/
 export interface policyTemplate extends policyTemplateProps, policyTemplateMethods { }
-export interface policyTemplateProps extends  entityProps {
+export interface policyTemplateProps extends entityProps {
 
 }
 export interface policyTemplateMethods extends entityMethods {
@@ -12975,7 +12976,7 @@ export interface policyTemplateOData extends entityOData {
 * post
 **********************************************/
 export interface post extends postProps, postMethods { }
-export interface postProps extends  outlookItemProps {
+export interface postProps extends outlookItemProps {
 	body: ComplexTypes.itemBody;
 	conversationId: string;
 	conversationThreadId: string;
@@ -13014,7 +13015,7 @@ add(values?: any): IBaseExecution<post>;
 * presence
 **********************************************/
 export interface presence extends presenceProps, presenceMethods { }
-export interface presenceProps extends  entityProps {
+export interface presenceProps extends entityProps {
 	activity: string;
 	availability: string;
 	statusMessage: ComplexTypes.presenceStatusMessage;
@@ -13040,7 +13041,7 @@ add(values?: any): IBaseExecution<presence>;
 * print
 **********************************************/
 export interface print extends printProps, printMethods { }
-export interface printProps   {
+export interface printProps {
 	settings: ComplexTypes.printSettings;
 }
 export interface printMethods {
@@ -13069,7 +13070,7 @@ export interface printOData {
 * printConnector
 **********************************************/
 export interface printConnector extends printConnectorProps, printConnectorMethods { }
-export interface printConnectorProps extends  entityProps {
+export interface printConnectorProps extends entityProps {
 	appVersion: string;
 	displayName: string;
 	fullyQualifiedDomainName: string;
@@ -13090,7 +13091,7 @@ add(values?: any): IBaseExecution<printConnector>;
 * printDocument
 **********************************************/
 export interface printDocument extends printDocumentProps, printDocumentMethods { }
-export interface printDocumentProps extends  entityProps {
+export interface printDocumentProps extends entityProps {
 	contentType: string;
 	displayName: string;
 	size: number;
@@ -13108,7 +13109,7 @@ add(values?: any): IBaseExecution<printDocument>;
 * printJob
 **********************************************/
 export interface printJob extends printJobProps, printJobMethods { }
-export interface printJobProps extends  entityProps {
+export interface printJobProps extends entityProps {
 	configuration: ComplexTypes.printJobConfiguration;
 	createdBy: ComplexTypes.userIdentity;
 	createdDateTime: any;
@@ -13142,7 +13143,7 @@ add(values?: any): IBaseExecution<printJob>;
 * printOperation
 **********************************************/
 export interface printOperation extends printOperationProps, printOperationMethods { }
-export interface printOperationProps extends  entityProps {
+export interface printOperationProps extends entityProps {
 	createdDateTime: any;
 	status: ComplexTypes.printOperationStatus;
 }
@@ -13159,7 +13160,7 @@ add(values?: any): IBaseExecution<printOperation>;
 * printService
 **********************************************/
 export interface printService extends printServiceProps, printServiceMethods { }
-export interface printServiceProps extends  entityProps {
+export interface printServiceProps extends entityProps {
 
 }
 export interface printServiceMethods extends entityMethods {
@@ -13176,7 +13177,7 @@ add(values?: any): IBaseExecution<printService>;
 * printServiceEndpoint
 **********************************************/
 export interface printServiceEndpoint extends printServiceEndpointProps, printServiceEndpointMethods { }
-export interface printServiceEndpointProps extends  entityProps {
+export interface printServiceEndpointProps extends entityProps {
 	displayName: string;
 	uri: string;
 }
@@ -13193,7 +13194,7 @@ add(values?: any): IBaseExecution<printServiceEndpoint>;
 * printTask
 **********************************************/
 export interface printTask extends printTaskProps, printTaskMethods { }
-export interface printTaskProps extends  entityProps {
+export interface printTaskProps extends entityProps {
 	parentUrl: string;
 	status: ComplexTypes.printTaskStatus;
 }
@@ -13212,7 +13213,7 @@ add(values?: any): IBaseExecution<printTask>;
 * printTaskDefinition
 **********************************************/
 export interface printTaskDefinition extends printTaskDefinitionProps, printTaskDefinitionMethods { }
-export interface printTaskDefinitionProps extends  entityProps {
+export interface printTaskDefinitionProps extends entityProps {
 	createdBy: ComplexTypes.appIdentity;
 	displayName: string;
 }
@@ -13230,7 +13231,7 @@ add(values?: any): IBaseExecution<printTaskDefinition>;
 * printTaskTrigger
 **********************************************/
 export interface printTaskTrigger extends printTaskTriggerProps, printTaskTriggerMethods { }
-export interface printTaskTriggerProps extends  entityProps {
+export interface printTaskTriggerProps extends entityProps {
 	event: EnumTypes.printEvent;
 }
 export interface printTaskTriggerMethods extends entityMethods {
@@ -13246,7 +13247,7 @@ add(values?: any): IBaseExecution<printTaskTrigger>;
 * printUsage
 **********************************************/
 export interface printUsage extends printUsageProps, printUsageMethods { }
-export interface printUsageProps extends  entityProps {
+export interface printUsageProps extends entityProps {
 	blackAndWhitePageCount: number;
 	colorPageCount: number;
 	completedBlackAndWhiteJobCount: number;
@@ -13269,7 +13270,7 @@ export interface printUsageOData extends entityOData {
 * printUsageByPrinter
 **********************************************/
 export interface printUsageByPrinter extends printUsageByPrinterProps, printUsageByPrinterMethods { }
-export interface printUsageByPrinterProps extends  printUsageProps {
+export interface printUsageByPrinterProps extends printUsageProps {
 	printerId: string;
 	printerName: string;
 }
@@ -13286,7 +13287,7 @@ add(values?: any): IBaseExecution<printUsageByPrinter>;
 * printUsageByUser
 **********************************************/
 export interface printUsageByUser extends printUsageByUserProps, printUsageByUserMethods { }
-export interface printUsageByUserProps extends  printUsageProps {
+export interface printUsageByUserProps extends printUsageProps {
 	userPrincipalName: string;
 }
 export interface printUsageByUserMethods extends printUsageMethods {
@@ -13302,7 +13303,7 @@ add(values?: any): IBaseExecution<printUsageByUser>;
 * printer
 **********************************************/
 export interface printer extends printerProps, printerMethods { }
-export interface printerProps extends  printerBaseProps {
+export interface printerProps extends printerBaseProps {
 	hasPhysicalDevice: boolean;
 	isShared: boolean;
 	lastSeenDateTime: any;
@@ -13330,7 +13331,7 @@ add(values?: any): IBaseExecution<printer>;
 * printerBase
 **********************************************/
 export interface printerBase extends printerBaseProps, printerBaseMethods { }
-export interface printerBaseProps extends  entityProps {
+export interface printerBaseProps extends entityProps {
 	capabilities: ComplexTypes.printerCapabilities;
 	defaults: ComplexTypes.printerDefaults;
 	displayName: string;
@@ -13351,7 +13352,7 @@ export interface printerBaseOData extends entityOData {
 * printerCreateOperation
 **********************************************/
 export interface printerCreateOperation extends printerCreateOperationProps, printerCreateOperationMethods { }
-export interface printerCreateOperationProps extends  printOperationProps {
+export interface printerCreateOperationProps extends printOperationProps {
 	certificate: string;
 }
 export interface printerCreateOperationMethods extends printOperationMethods {
@@ -13364,7 +13365,7 @@ export interface printerCreateOperationOData extends printOperationOData {
 * printerShare
 **********************************************/
 export interface printerShare extends printerShareProps, printerShareMethods { }
-export interface printerShareProps extends  printerBaseProps {
+export interface printerShareProps extends printerBaseProps {
 	allowAllUsers: boolean;
 	createdDateTime: any;
 	viewPoint: ComplexTypes.printerShareViewpoint;
@@ -13388,7 +13389,7 @@ add(values?: any): IBaseExecution<printerShare>;
 * privacy
 **********************************************/
 export interface privacy extends privacyProps, privacyMethods { }
-export interface privacyProps   {
+export interface privacyProps {
 
 }
 export interface privacyMethods {
@@ -13402,7 +13403,7 @@ export interface privacyOData {
 * privilegedAccessGroup
 **********************************************/
 export interface privilegedAccessGroup extends privilegedAccessGroupProps, privilegedAccessGroupMethods { }
-export interface privilegedAccessGroupProps extends  entityProps {
+export interface privilegedAccessGroupProps extends entityProps {
 
 }
 export interface privilegedAccessGroupMethods extends entityMethods {
@@ -13434,7 +13435,7 @@ export interface privilegedAccessGroupOData extends entityOData {
 * privilegedAccessGroupAssignmentSchedule
 **********************************************/
 export interface privilegedAccessGroupAssignmentSchedule extends privilegedAccessGroupAssignmentScheduleProps, privilegedAccessGroupAssignmentScheduleMethods { }
-export interface privilegedAccessGroupAssignmentScheduleProps extends  privilegedAccessScheduleProps {
+export interface privilegedAccessGroupAssignmentScheduleProps extends privilegedAccessScheduleProps {
 	accessId: EnumTypes.privilegedAccessGroupRelationships;
 	assignmentType: EnumTypes.privilegedAccessGroupAssignmentType;
 	groupId: string;
@@ -13458,7 +13459,7 @@ add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentSchedule>;
 * privilegedAccessGroupAssignmentScheduleInstance
 **********************************************/
 export interface privilegedAccessGroupAssignmentScheduleInstance extends privilegedAccessGroupAssignmentScheduleInstanceProps, privilegedAccessGroupAssignmentScheduleInstanceMethods { }
-export interface privilegedAccessGroupAssignmentScheduleInstanceProps extends  privilegedAccessScheduleInstanceProps {
+export interface privilegedAccessGroupAssignmentScheduleInstanceProps extends privilegedAccessScheduleInstanceProps {
 	accessId: EnumTypes.privilegedAccessGroupRelationships;
 	assignmentScheduleId: string;
 	assignmentType: EnumTypes.privilegedAccessGroupAssignmentType;
@@ -13483,7 +13484,7 @@ add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentScheduleInstanc
 * privilegedAccessGroupAssignmentScheduleRequest
 **********************************************/
 export interface privilegedAccessGroupAssignmentScheduleRequest extends privilegedAccessGroupAssignmentScheduleRequestProps, privilegedAccessGroupAssignmentScheduleRequestMethods { }
-export interface privilegedAccessGroupAssignmentScheduleRequestProps extends  privilegedAccessScheduleRequestProps {
+export interface privilegedAccessGroupAssignmentScheduleRequestProps extends privilegedAccessScheduleRequestProps {
 	accessId: EnumTypes.privilegedAccessGroupRelationships;
 	groupId: string;
 	principalId: string;
@@ -13510,7 +13511,7 @@ add(values?: any): IBaseExecution<privilegedAccessGroupAssignmentScheduleRequest
 * privilegedAccessGroupEligibilitySchedule
 **********************************************/
 export interface privilegedAccessGroupEligibilitySchedule extends privilegedAccessGroupEligibilityScheduleProps, privilegedAccessGroupEligibilityScheduleMethods { }
-export interface privilegedAccessGroupEligibilityScheduleProps extends  privilegedAccessScheduleProps {
+export interface privilegedAccessGroupEligibilityScheduleProps extends privilegedAccessScheduleProps {
 	accessId: EnumTypes.privilegedAccessGroupRelationships;
 	groupId: string;
 	memberType: EnumTypes.privilegedAccessGroupMemberType;
@@ -13531,7 +13532,7 @@ add(values?: any): IBaseExecution<privilegedAccessGroupEligibilitySchedule>;
 * privilegedAccessGroupEligibilityScheduleInstance
 **********************************************/
 export interface privilegedAccessGroupEligibilityScheduleInstance extends privilegedAccessGroupEligibilityScheduleInstanceProps, privilegedAccessGroupEligibilityScheduleInstanceMethods { }
-export interface privilegedAccessGroupEligibilityScheduleInstanceProps extends  privilegedAccessScheduleInstanceProps {
+export interface privilegedAccessGroupEligibilityScheduleInstanceProps extends privilegedAccessScheduleInstanceProps {
 	accessId: EnumTypes.privilegedAccessGroupRelationships;
 	eligibilityScheduleId: string;
 	groupId: string;
@@ -13553,7 +13554,7 @@ add(values?: any): IBaseExecution<privilegedAccessGroupEligibilityScheduleInstan
 * privilegedAccessGroupEligibilityScheduleRequest
 **********************************************/
 export interface privilegedAccessGroupEligibilityScheduleRequest extends privilegedAccessGroupEligibilityScheduleRequestProps, privilegedAccessGroupEligibilityScheduleRequestMethods { }
-export interface privilegedAccessGroupEligibilityScheduleRequestProps extends  privilegedAccessScheduleRequestProps {
+export interface privilegedAccessGroupEligibilityScheduleRequestProps extends privilegedAccessScheduleRequestProps {
 	accessId: EnumTypes.privilegedAccessGroupRelationships;
 	groupId: string;
 	principalId: string;
@@ -13578,7 +13579,7 @@ add(values?: any): IBaseExecution<privilegedAccessGroupEligibilityScheduleReques
 * privilegedAccessRoot
 **********************************************/
 export interface privilegedAccessRoot extends privilegedAccessRootProps, privilegedAccessRootMethods { }
-export interface privilegedAccessRootProps extends  entityProps {
+export interface privilegedAccessRootProps extends entityProps {
 
 }
 export interface privilegedAccessRootMethods extends entityMethods {
@@ -13591,7 +13592,7 @@ export interface privilegedAccessRootOData extends entityOData {
 * privilegedAccessSchedule
 **********************************************/
 export interface privilegedAccessSchedule extends privilegedAccessScheduleProps, privilegedAccessScheduleMethods { }
-export interface privilegedAccessScheduleProps extends  entityProps {
+export interface privilegedAccessScheduleProps extends entityProps {
 	createdDateTime: any;
 	createdUsing: string;
 	modifiedDateTime: any;
@@ -13608,7 +13609,7 @@ export interface privilegedAccessScheduleOData extends entityOData {
 * privilegedAccessScheduleInstance
 **********************************************/
 export interface privilegedAccessScheduleInstance extends privilegedAccessScheduleInstanceProps, privilegedAccessScheduleInstanceMethods { }
-export interface privilegedAccessScheduleInstanceProps extends  entityProps {
+export interface privilegedAccessScheduleInstanceProps extends entityProps {
 	endDateTime: any;
 	startDateTime: any;
 }
@@ -13622,7 +13623,7 @@ export interface privilegedAccessScheduleInstanceOData extends entityOData {
 * privilegedAccessScheduleRequest
 **********************************************/
 export interface privilegedAccessScheduleRequest extends privilegedAccessScheduleRequestProps, privilegedAccessScheduleRequestMethods { }
-export interface privilegedAccessScheduleRequestProps extends  requestProps {
+export interface privilegedAccessScheduleRequestProps extends requestProps {
 	action: EnumTypes.scheduleRequestActions;
 	isValidationOnly: boolean;
 	justification: string;
@@ -13639,7 +13640,7 @@ export interface privilegedAccessScheduleRequestOData extends requestOData {
 * profileCardProperty
 **********************************************/
 export interface profileCardProperty extends profileCardPropertyProps, profileCardPropertyMethods { }
-export interface profileCardPropertyProps extends  entityProps {
+export interface profileCardPropertyProps extends entityProps {
 	annotations: ComplexTypes.profileCardAnnotation[];
 	directoryPropertyName: string;
 }
@@ -13656,7 +13657,7 @@ add(values?: any): IBaseExecution<profileCardProperty>;
 * profilePhoto
 **********************************************/
 export interface profilePhoto extends profilePhotoProps, profilePhotoMethods { }
-export interface profilePhotoProps extends  entityProps {
+export interface profilePhotoProps extends entityProps {
 	height: number;
 	width: number;
 }
@@ -13673,7 +13674,7 @@ add(values?: any): IBaseExecution<profilePhoto>;
 * pronounsSettings
 **********************************************/
 export interface pronounsSettings extends pronounsSettingsProps, pronounsSettingsMethods { }
-export interface pronounsSettingsProps extends  entityProps {
+export interface pronounsSettingsProps extends entityProps {
 	isEnabledInOrganization: boolean;
 }
 export interface pronounsSettingsMethods extends entityMethods {
@@ -13686,7 +13687,7 @@ export interface pronounsSettingsOData extends entityOData {
 * protectionPolicyBase
 **********************************************/
 export interface protectionPolicyBase extends protectionPolicyBaseProps, protectionPolicyBaseMethods { }
-export interface protectionPolicyBaseProps extends  entityProps {
+export interface protectionPolicyBaseProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	displayName: string;
@@ -13710,7 +13711,7 @@ add(values?: any): IBaseExecution<protectionPolicyBase>;
 * protectionRuleBase
 **********************************************/
 export interface protectionRuleBase extends protectionRuleBaseProps, protectionRuleBaseMethods { }
-export interface protectionRuleBaseProps extends  entityProps {
+export interface protectionRuleBaseProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	error: ComplexTypes.publicError;
@@ -13729,7 +13730,7 @@ export interface protectionRuleBaseOData extends entityOData {
 * protectionUnitBase
 **********************************************/
 export interface protectionUnitBase extends protectionUnitBaseProps, protectionUnitBaseMethods { }
-export interface protectionUnitBaseProps extends  entityProps {
+export interface protectionUnitBaseProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	error: ComplexTypes.publicError;
@@ -13751,7 +13752,7 @@ add(values?: any): IBaseExecution<protectionUnitBase>;
 * provisioningObjectSummary
 **********************************************/
 export interface provisioningObjectSummary extends provisioningObjectSummaryProps, provisioningObjectSummaryMethods { }
-export interface provisioningObjectSummaryProps extends  entityProps {
+export interface provisioningObjectSummaryProps extends entityProps {
 	activityDateTime: any;
 	changeId: string;
 	cycleId: string;
@@ -13782,7 +13783,7 @@ add(values?: any): IBaseExecution<provisioningObjectSummary>;
 * qna
 **********************************************/
 export interface qna extends qnaProps, qnaMethods { }
-export interface qnaProps extends  searchAnswerProps {
+export interface qnaProps extends searchAnswerProps {
 	availabilityEndDateTime: any;
 	availabilityStartDateTime: any;
 	groupIds: Array<string>;
@@ -13803,7 +13804,7 @@ export interface qnaOData extends searchAnswerOData {
 * rbacApplication
 **********************************************/
 export interface rbacApplication extends rbacApplicationProps, rbacApplicationMethods { }
-export interface rbacApplicationProps extends  entityProps {
+export interface rbacApplicationProps extends entityProps {
 
 }
 export interface rbacApplicationMethods extends entityMethods {
@@ -13841,7 +13842,7 @@ export interface rbacApplicationOData extends entityOData {
 * recordOperation
 **********************************************/
 export interface recordOperation extends recordOperationProps, recordOperationMethods { }
-export interface recordOperationProps extends  commsOperationProps {
+export interface recordOperationProps extends commsOperationProps {
 	recordingAccessToken: string;
 	recordingLocation: string;
 }
@@ -13855,7 +13856,7 @@ export interface recordOperationOData extends commsOperationOData {
 * recycleBin
 **********************************************/
 export interface recycleBin extends recycleBinProps, recycleBinMethods { }
-export interface recycleBinProps extends  baseItemProps {
+export interface recycleBinProps extends baseItemProps {
 	settings: ComplexTypes.recycleBinSettings;
 }
 export interface recycleBinMethods extends baseItemMethods {
@@ -13869,7 +13870,7 @@ export interface recycleBinOData extends baseItemOData {
 * recycleBinItem
 **********************************************/
 export interface recycleBinItem extends recycleBinItemProps, recycleBinItemMethods { }
-export interface recycleBinItemProps extends  baseItemProps {
+export interface recycleBinItemProps extends baseItemProps {
 	deletedDateTime: any;
 	deletedFromLocation: string;
 	size: number;
@@ -13887,7 +13888,7 @@ add(values?: any): IBaseExecution<recycleBinItem>;
 * referenceAttachment
 **********************************************/
 export interface referenceAttachment extends referenceAttachmentProps, referenceAttachmentMethods { }
-export interface referenceAttachmentProps extends  attachmentProps {
+export interface referenceAttachmentProps extends attachmentProps {
 
 }
 export interface referenceAttachmentMethods extends attachmentMethods {
@@ -13900,7 +13901,7 @@ export interface referenceAttachmentOData extends attachmentOData {
 * relation
 **********************************************/
 export interface relation extends relationProps, relationMethods { }
-export interface relationProps extends  entityProps {
+export interface relationProps extends entityProps {
 	relationship: EnumTypes.relationType;
 }
 export interface relationMethods extends entityMethods {
@@ -13917,7 +13918,7 @@ export interface relationOData extends entityOData {
 * relyingPartyDetailedSummary
 **********************************************/
 export interface relyingPartyDetailedSummary extends relyingPartyDetailedSummaryProps, relyingPartyDetailedSummaryMethods { }
-export interface relyingPartyDetailedSummaryProps extends  entityProps {
+export interface relyingPartyDetailedSummaryProps extends entityProps {
 	failedSignInCount: number;
 	migrationStatus: EnumTypes.migrationStatus;
 	migrationValidationDetails: ComplexTypes.keyValuePair[];
@@ -13940,7 +13941,7 @@ export interface relyingPartyDetailedSummaryOData extends entityOData {
 * remoteAssistancePartner
 **********************************************/
 export interface remoteAssistancePartner extends remoteAssistancePartnerProps, remoteAssistancePartnerMethods { }
-export interface remoteAssistancePartnerProps extends  entityProps {
+export interface remoteAssistancePartnerProps extends entityProps {
 	displayName: string;
 	lastConnectionDateTime: any;
 	onboardingStatus: EnumTypes.remoteAssistanceOnboardingStatus;
@@ -13961,7 +13962,7 @@ add(values?: any): IBaseExecution<remoteAssistancePartner>;
 * remoteDesktopSecurityConfiguration
 **********************************************/
 export interface remoteDesktopSecurityConfiguration extends remoteDesktopSecurityConfigurationProps, remoteDesktopSecurityConfigurationMethods { }
-export interface remoteDesktopSecurityConfigurationProps extends  entityProps {
+export interface remoteDesktopSecurityConfigurationProps extends entityProps {
 	isRemoteDesktopProtocolEnabled: boolean;
 }
 export interface remoteDesktopSecurityConfigurationMethods extends entityMethods {
@@ -13975,7 +13976,7 @@ export interface remoteDesktopSecurityConfigurationOData extends entityOData {
 * reportRoot
 **********************************************/
 export interface reportRoot extends reportRootProps, reportRootMethods { }
-export interface reportRootProps   {
+export interface reportRootProps {
 
 }
 export interface reportRootMethods {
@@ -14146,7 +14147,7 @@ export interface reportRootOData {
 * request
 **********************************************/
 export interface request extends requestProps, requestMethods { }
-export interface requestProps extends  entityProps {
+export interface requestProps extends entityProps {
 	approvalId: string;
 	completedDateTime: any;
 	createdBy: ComplexTypes.identitySet;
@@ -14164,7 +14165,7 @@ export interface requestOData extends entityOData {
 * resellerDelegatedAdminRelationship
 **********************************************/
 export interface resellerDelegatedAdminRelationship extends resellerDelegatedAdminRelationshipProps, resellerDelegatedAdminRelationshipMethods { }
-export interface resellerDelegatedAdminRelationshipProps extends  delegatedAdminRelationshipProps {
+export interface resellerDelegatedAdminRelationshipProps extends delegatedAdminRelationshipProps {
 	indirectProviderTenantId: string;
 	isPartnerConsentPending: boolean;
 }
@@ -14178,7 +14179,7 @@ export interface resellerDelegatedAdminRelationshipOData extends delegatedAdminR
 * resourceOperation
 **********************************************/
 export interface resourceOperation extends resourceOperationProps, resourceOperationMethods { }
-export interface resourceOperationProps extends  entityProps {
+export interface resourceOperationProps extends entityProps {
 	actionName: string;
 	description: string;
 	resourceName: string;
@@ -14196,7 +14197,7 @@ add(values?: any): IBaseExecution<resourceOperation>;
 * resourceSpecificPermissionGrant
 **********************************************/
 export interface resourceSpecificPermissionGrant extends resourceSpecificPermissionGrantProps, resourceSpecificPermissionGrantMethods { }
-export interface resourceSpecificPermissionGrantProps extends  directoryObjectProps {
+export interface resourceSpecificPermissionGrantProps extends directoryObjectProps {
 	clientAppId: string;
 	clientId: string;
 	permission: string;
@@ -14216,7 +14217,7 @@ add(values?: any): IBaseExecution<resourceSpecificPermissionGrant>;
 * restoreArtifactBase
 **********************************************/
 export interface restoreArtifactBase extends restoreArtifactBaseProps, restoreArtifactBaseMethods { }
-export interface restoreArtifactBaseProps extends  entityProps {
+export interface restoreArtifactBaseProps extends entityProps {
 	completionDateTime: any;
 	destinationType: EnumTypes.destinationType;
 	error: ComplexTypes.publicError;
@@ -14233,7 +14234,7 @@ export interface restoreArtifactBaseOData extends entityOData {
 * restorePoint
 **********************************************/
 export interface restorePoint extends restorePointProps, restorePointMethods { }
-export interface restorePointProps extends  entityProps {
+export interface restorePointProps extends entityProps {
 	expirationDateTime: any;
 	protectionDateTime: any;
 	tags: EnumTypes.restorePointTags;
@@ -14251,7 +14252,7 @@ add(values?: any): IBaseExecution<restorePoint>;
 * restoreSessionBase
 **********************************************/
 export interface restoreSessionBase extends restoreSessionBaseProps, restoreSessionBaseMethods { }
-export interface restoreSessionBaseProps extends  entityProps {
+export interface restoreSessionBaseProps extends entityProps {
 	completedDateTime: any;
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
@@ -14273,7 +14274,7 @@ add(values?: any): IBaseExecution<restoreSessionBase>;
 * retentionEvent
 **********************************************/
 export interface retentionEvent extends retentionEventProps, retentionEventMethods { }
-export interface retentionEventProps extends  entityProps {
+export interface retentionEventProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	description: string;
@@ -14296,7 +14297,7 @@ export interface retentionEventOData extends entityOData {
 * retentionEventType
 **********************************************/
 export interface retentionEventType extends retentionEventTypeProps, retentionEventTypeMethods { }
-export interface retentionEventTypeProps extends  entityProps {
+export interface retentionEventTypeProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
 	description: string;
@@ -14314,7 +14315,7 @@ export interface retentionEventTypeOData extends entityOData {
 * retentionLabel
 **********************************************/
 export interface retentionLabel extends retentionLabelProps, retentionLabelMethods { }
-export interface retentionLabelProps extends  entityProps {
+export interface retentionLabelProps extends entityProps {
 	actionAfterRetentionPeriod: EnumTypes.actionAfterRetentionPeriod;
 	behaviorDuringRetentionPeriod: EnumTypes.behaviorDuringRetentionPeriod;
 	createdBy: ComplexTypes.identitySet;
@@ -14345,7 +14346,7 @@ export interface retentionLabelOData extends entityOData {
 * richLongRunningOperation
 **********************************************/
 export interface richLongRunningOperation extends richLongRunningOperationProps, richLongRunningOperationMethods { }
-export interface richLongRunningOperationProps extends  longRunningOperationProps {
+export interface richLongRunningOperationProps extends longRunningOperationProps {
 	error: ComplexTypes.publicError;
 	percentageComplete: number;
 	resourceId: string;
@@ -14364,7 +14365,7 @@ add(values?: any): IBaseExecution<richLongRunningOperation>;
 * riskDetection
 **********************************************/
 export interface riskDetection extends riskDetectionProps, riskDetectionMethods { }
-export interface riskDetectionProps extends  entityProps {
+export interface riskDetectionProps extends entityProps {
 	activity: EnumTypes.activityType;
 	activityDateTime: any;
 	additionalInfo: string;
@@ -14398,7 +14399,7 @@ add(values?: any): IBaseExecution<riskDetection>;
 * riskyServicePrincipal
 **********************************************/
 export interface riskyServicePrincipal extends riskyServicePrincipalProps, riskyServicePrincipalMethods { }
-export interface riskyServicePrincipalProps extends  entityProps {
+export interface riskyServicePrincipalProps extends entityProps {
 	appId: string;
 	displayName: string;
 	isEnabled: boolean;
@@ -14423,7 +14424,7 @@ add(values?: any): IBaseExecution<riskyServicePrincipal>;
 * riskyServicePrincipalHistoryItem
 **********************************************/
 export interface riskyServicePrincipalHistoryItem extends riskyServicePrincipalHistoryItemProps, riskyServicePrincipalHistoryItemMethods { }
-export interface riskyServicePrincipalHistoryItemProps extends  riskyServicePrincipalProps {
+export interface riskyServicePrincipalHistoryItemProps extends riskyServicePrincipalProps {
 	activity: ComplexTypes.riskServicePrincipalActivity;
 	initiatedBy: string;
 }
@@ -14440,7 +14441,7 @@ add(values?: any): IBaseExecution<riskyServicePrincipalHistoryItem>;
 * riskyUser
 **********************************************/
 export interface riskyUser extends riskyUserProps, riskyUserMethods { }
-export interface riskyUserProps extends  entityProps {
+export interface riskyUserProps extends entityProps {
 	isDeleted: boolean;
 	isProcessing: boolean;
 	riskDetail: EnumTypes.riskDetail;
@@ -14464,7 +14465,7 @@ add(values?: any): IBaseExecution<riskyUser>;
 * riskyUserHistoryItem
 **********************************************/
 export interface riskyUserHistoryItem extends riskyUserHistoryItemProps, riskyUserHistoryItemMethods { }
-export interface riskyUserHistoryItemProps extends  riskyUserProps {
+export interface riskyUserHistoryItemProps extends riskyUserProps {
 	activity: ComplexTypes.riskUserActivity;
 	initiatedBy: string;
 	userId: string;
@@ -14482,7 +14483,7 @@ add(values?: any): IBaseExecution<riskyUserHistoryItem>;
 * roleAssignment
 **********************************************/
 export interface roleAssignment extends roleAssignmentProps, roleAssignmentMethods { }
-export interface roleAssignmentProps extends  entityProps {
+export interface roleAssignmentProps extends entityProps {
 	description: string;
 	displayName: string;
 	resourceScopes: Array<string>;
@@ -14500,7 +14501,7 @@ add(values?: any): IBaseExecution<roleAssignment>;
 * roleDefinition
 **********************************************/
 export interface roleDefinition extends roleDefinitionProps, roleDefinitionMethods { }
-export interface roleDefinitionProps extends  entityProps {
+export interface roleDefinitionProps extends entityProps {
 	description: string;
 	displayName: string;
 	isBuiltIn: boolean;
@@ -14520,7 +14521,7 @@ add(values?: any): IBaseExecution<roleDefinition>;
 * roleManagement
 **********************************************/
 export interface roleManagement extends roleManagementProps, roleManagementMethods { }
-export interface roleManagementProps   {
+export interface roleManagementProps {
 
 }
 export interface roleManagementMethods {
@@ -14535,7 +14536,7 @@ export interface roleManagementOData {
 * room
 **********************************************/
 export interface room extends roomProps, roomMethods { }
-export interface roomProps extends  placeProps {
+export interface roomProps extends placeProps {
 	audioDeviceName: string;
 	bookingType: EnumTypes.bookingType;
 	building: string;
@@ -14563,7 +14564,7 @@ add(values?: any): IBaseExecution<room>;
 * roomList
 **********************************************/
 export interface roomList extends roomListProps, roomListMethods { }
-export interface roomListProps extends  placeProps {
+export interface roomListProps extends placeProps {
 	emailAddress: string;
 }
 export interface roomListMethods extends placeMethods {
@@ -14577,7 +14578,7 @@ export interface roomListOData extends placeOData {
 * run
 **********************************************/
 export interface run extends runProps, runMethods { }
-export interface runProps extends  entityProps {
+export interface runProps extends entityProps {
 	completedDateTime: any;
 	failedTasksCount: number;
 	failedUsersCount: number;
@@ -14605,7 +14606,7 @@ export interface runOData extends entityOData {
 * runningOperation
 **********************************************/
 export interface runningOperation extends runningOperationProps, runningOperationMethods { }
-export interface runningOperationProps extends  operationProps {
+export interface runningOperationProps extends operationProps {
 
 }
 export interface runningOperationMethods extends operationMethods {
@@ -14618,7 +14619,7 @@ export interface runningOperationOData extends operationOData {
 * samlOrWsFedExternalDomainFederation
 **********************************************/
 export interface samlOrWsFedExternalDomainFederation extends samlOrWsFedExternalDomainFederationProps, samlOrWsFedExternalDomainFederationMethods { }
-export interface samlOrWsFedExternalDomainFederationProps extends  samlOrWsFedProviderProps {
+export interface samlOrWsFedExternalDomainFederationProps extends samlOrWsFedProviderProps {
 
 }
 export interface samlOrWsFedExternalDomainFederationMethods extends samlOrWsFedProviderMethods {
@@ -14632,7 +14633,7 @@ export interface samlOrWsFedExternalDomainFederationOData extends samlOrWsFedPro
 * samlOrWsFedProvider
 **********************************************/
 export interface samlOrWsFedProvider extends samlOrWsFedProviderProps, samlOrWsFedProviderMethods { }
-export interface samlOrWsFedProviderProps extends  identityProviderBaseProps {
+export interface samlOrWsFedProviderProps extends identityProviderBaseProps {
 	issuerUri: string;
 	metadataExchangeUri: string;
 	passiveSignInUri: string;
@@ -14649,7 +14650,7 @@ export interface samlOrWsFedProviderOData extends identityProviderBaseOData {
 * schedule
 **********************************************/
 export interface schedule extends scheduleProps, scheduleMethods { }
-export interface scheduleProps extends  entityProps {
+export interface scheduleProps extends entityProps {
 	enabled: boolean;
 	isActivitiesIncludedWhenCopyingShiftsEnabled: boolean;
 	offerShiftRequestsEnabled: boolean;
@@ -14707,7 +14708,7 @@ export interface scheduleOData extends entityOData {
 * scheduleChangeRequest
 **********************************************/
 export interface scheduleChangeRequest extends scheduleChangeRequestProps, scheduleChangeRequestMethods { }
-export interface scheduleChangeRequestProps extends  changeTrackedEntityProps {
+export interface scheduleChangeRequestProps extends changeTrackedEntityProps {
 	assignedTo: EnumTypes.scheduleChangeRequestActor;
 	managerActionDateTime: any;
 	managerActionMessage: string;
@@ -14729,7 +14730,7 @@ export interface scheduleChangeRequestOData extends changeTrackedEntityOData {
 * schedulingGroup
 **********************************************/
 export interface schedulingGroup extends schedulingGroupProps, schedulingGroupMethods { }
-export interface schedulingGroupProps extends  changeTrackedEntityProps {
+export interface schedulingGroupProps extends changeTrackedEntityProps {
 	code: string;
 	displayName: string;
 	isActive: boolean;
@@ -14748,7 +14749,7 @@ add(values?: any): IBaseExecution<schedulingGroup>;
 * schema
 **********************************************/
 export interface schema extends schemaProps, schemaMethods { }
-export interface schemaProps extends  entityProps {
+export interface schemaProps extends entityProps {
 	baseType: string;
 	properties: ComplexTypes.property[];
 }
@@ -14762,7 +14763,7 @@ export interface schemaOData extends entityOData {
 * schemaExtension
 **********************************************/
 export interface schemaExtension extends schemaExtensionProps, schemaExtensionMethods { }
-export interface schemaExtensionProps extends  entityProps {
+export interface schemaExtensionProps extends entityProps {
 	description: string;
 	owner: string;
 	properties: ComplexTypes.extensionSchemaProperty[];
@@ -14779,7 +14780,7 @@ export interface schemaExtensionOData extends entityOData {
 * scopedRoleMembership
 **********************************************/
 export interface scopedRoleMembership extends scopedRoleMembershipProps, scopedRoleMembershipMethods { }
-export interface scopedRoleMembershipProps extends  entityProps {
+export interface scopedRoleMembershipProps extends entityProps {
 	administrativeUnitId: string;
 	roleId: string;
 	roleMemberInfo: ComplexTypes.identity;
@@ -14797,7 +14798,7 @@ add(values?: any): IBaseExecution<scopedRoleMembership>;
 * search
 **********************************************/
 export interface search extends searchProps, searchMethods { }
-export interface searchProps extends  entityProps {
+export interface searchProps extends entityProps {
 	contentQuery: string;
 	createdBy: ComplexTypes.identitySet;
 	createdDateTime: any;
@@ -14816,7 +14817,7 @@ export interface searchOData extends entityOData {
 * searchAnswer
 **********************************************/
 export interface searchAnswer extends searchAnswerProps, searchAnswerMethods { }
-export interface searchAnswerProps extends  entityProps {
+export interface searchAnswerProps extends entityProps {
 	description: string;
 	displayName: string;
 	lastModifiedBy: ComplexTypes.identitySet;
@@ -14833,7 +14834,7 @@ export interface searchAnswerOData extends entityOData {
 * searchEntity
 **********************************************/
 export interface searchEntity extends searchEntityProps, searchEntityMethods { }
-export interface searchEntityProps extends  entityProps {
+export interface searchEntityProps extends entityProps {
 
 }
 export interface searchEntityMethods extends entityMethods {
@@ -14855,7 +14856,7 @@ export interface searchEntityOData extends entityOData {
 * sectionGroup
 **********************************************/
 export interface sectionGroup extends sectionGroupProps, sectionGroupMethods { }
-export interface sectionGroupProps extends  onenoteEntityHierarchyModelProps {
+export interface sectionGroupProps extends onenoteEntityHierarchyModelProps {
 	sectionGroupsUrl: string;
 	sectionsUrl: string;
 }
@@ -14880,7 +14881,7 @@ add(values?: any): IBaseExecution<sectionGroup>;
 * secureScore
 **********************************************/
 export interface secureScore extends secureScoreProps, secureScoreMethods { }
-export interface secureScoreProps extends  entityProps {
+export interface secureScoreProps extends entityProps {
 	activeUserCount: number;
 	averageComparativeScores: ComplexTypes.averageComparativeScore[];
 	azureTenantId: string;
@@ -14905,7 +14906,7 @@ add(values?: any): IBaseExecution<secureScore>;
 * secureScoreControlProfile
 **********************************************/
 export interface secureScoreControlProfile extends secureScoreControlProfileProps, secureScoreControlProfileMethods { }
-export interface secureScoreControlProfileProps extends  entityProps {
+export interface secureScoreControlProfileProps extends entityProps {
 	actionType: string;
 	actionUrl: string;
 	azureTenantId: string;
@@ -14939,7 +14940,7 @@ add(values?: any): IBaseExecution<secureScoreControlProfile>;
 * security
 **********************************************/
 export interface security extends securityProps, securityMethods { }
-export interface securityProps   {
+export interface securityProps {
 
 }
 export interface securityMethods {
@@ -14984,7 +14985,7 @@ export interface securityOData {
 * securityReportsRoot
 **********************************************/
 export interface securityReportsRoot extends securityReportsRootProps, securityReportsRootMethods { }
-export interface securityReportsRootProps extends  entityProps {
+export interface securityReportsRootProps extends entityProps {
 
 }
 export interface securityReportsRootMethods extends entityMethods {
@@ -15001,7 +15002,7 @@ export interface securityReportsRootOData extends entityOData {
 * segment
 **********************************************/
 export interface segment extends segmentProps, segmentMethods { }
-export interface segmentProps extends  entityProps {
+export interface segmentProps extends entityProps {
 	callee: ComplexTypes.endpoint;
 	caller: ComplexTypes.endpoint;
 	endDateTime: any;
@@ -15019,7 +15020,7 @@ export interface segmentOData extends entityOData {
 * sendDtmfTonesOperation
 **********************************************/
 export interface sendDtmfTonesOperation extends sendDtmfTonesOperationProps, sendDtmfTonesOperationMethods { }
-export interface sendDtmfTonesOperationProps extends  commsOperationProps {
+export interface sendDtmfTonesOperationProps extends commsOperationProps {
 	completionReason: EnumTypes.sendDtmfCompletionReason;
 }
 export interface sendDtmfTonesOperationMethods extends commsOperationMethods {
@@ -15032,7 +15033,7 @@ export interface sendDtmfTonesOperationOData extends commsOperationOData {
 * sensor
 **********************************************/
 export interface sensor extends sensorProps, sensorMethods { }
-export interface sensorProps extends  entityProps {
+export interface sensorProps extends entityProps {
 	createdDateTime: any;
 	deploymentStatus: EnumTypes.deploymentStatus;
 	displayName: string;
@@ -15054,7 +15055,7 @@ export interface sensorOData extends entityOData {
 * serviceAnnouncement
 **********************************************/
 export interface serviceAnnouncement extends serviceAnnouncementProps, serviceAnnouncementMethods { }
-export interface serviceAnnouncementProps extends  entityProps {
+export interface serviceAnnouncementProps extends entityProps {
 
 }
 export interface serviceAnnouncementMethods extends entityMethods {
@@ -15074,7 +15075,7 @@ export interface serviceAnnouncementOData extends entityOData {
 * serviceAnnouncementAttachment
 **********************************************/
 export interface serviceAnnouncementAttachment extends serviceAnnouncementAttachmentProps, serviceAnnouncementAttachmentMethods { }
-export interface serviceAnnouncementAttachmentProps extends  entityProps {
+export interface serviceAnnouncementAttachmentProps extends entityProps {
 	content: any;
 	contentType: string;
 	lastModifiedDateTime: any;
@@ -15094,7 +15095,7 @@ add(values?: any): IBaseExecution<serviceAnnouncementAttachment>;
 * serviceAnnouncementBase
 **********************************************/
 export interface serviceAnnouncementBase extends serviceAnnouncementBaseProps, serviceAnnouncementBaseMethods { }
-export interface serviceAnnouncementBaseProps extends  entityProps {
+export interface serviceAnnouncementBaseProps extends entityProps {
 	details: ComplexTypes.keyValuePair[];
 	endDateTime: any;
 	lastModifiedDateTime: any;
@@ -15111,7 +15112,7 @@ export interface serviceAnnouncementBaseOData extends entityOData {
 * serviceApp
 **********************************************/
 export interface serviceApp extends serviceAppProps, serviceAppMethods { }
-export interface serviceAppProps extends  entityProps {
+export interface serviceAppProps extends entityProps {
 	application: ComplexTypes.identity;
 	effectiveDateTime: any;
 	lastModifiedBy: ComplexTypes.identitySet;
@@ -15134,7 +15135,7 @@ add(values?: any): IBaseExecution<serviceApp>;
 * serviceHealth
 **********************************************/
 export interface serviceHealth extends serviceHealthProps, serviceHealthMethods { }
-export interface serviceHealthProps extends  entityProps {
+export interface serviceHealthProps extends entityProps {
 	service: string;
 	status: EnumTypes.serviceHealthStatus;
 }
@@ -15152,7 +15153,7 @@ add(values?: any): IBaseExecution<serviceHealth>;
 * serviceHealthIssue
 **********************************************/
 export interface serviceHealthIssue extends serviceHealthIssueProps, serviceHealthIssueMethods { }
-export interface serviceHealthIssueProps extends  serviceAnnouncementBaseProps {
+export interface serviceHealthIssueProps extends serviceAnnouncementBaseProps {
 	classification: EnumTypes.serviceHealthClassificationType;
 	feature: string;
 	featureGroup: string;
@@ -15176,7 +15177,7 @@ add(values?: any): IBaseExecution<serviceHealthIssue>;
 * servicePrincipal
 **********************************************/
 export interface servicePrincipal extends servicePrincipalProps, servicePrincipalMethods { }
-export interface servicePrincipalProps extends  directoryObjectProps {
+export interface servicePrincipalProps extends directoryObjectProps {
 	accountEnabled: boolean;
 	addIns: ComplexTypes.addIn[];
 	alternativeNames: Array<string>;
@@ -15282,7 +15283,7 @@ export interface servicePrincipalOData extends directoryObjectOData {
 * servicePrincipalRiskDetection
 **********************************************/
 export interface servicePrincipalRiskDetection extends servicePrincipalRiskDetectionProps, servicePrincipalRiskDetectionMethods { }
-export interface servicePrincipalRiskDetectionProps extends  entityProps {
+export interface servicePrincipalRiskDetectionProps extends entityProps {
 	activity: EnumTypes.activityType;
 	activityDateTime: any;
 	additionalInfo: string;
@@ -15317,7 +15318,7 @@ add(values?: any): IBaseExecution<servicePrincipalRiskDetection>;
 * serviceStorageQuotaBreakdown
 **********************************************/
 export interface serviceStorageQuotaBreakdown extends serviceStorageQuotaBreakdownProps, serviceStorageQuotaBreakdownMethods { }
-export interface serviceStorageQuotaBreakdownProps extends  storageQuotaBreakdownProps {
+export interface serviceStorageQuotaBreakdownProps extends storageQuotaBreakdownProps {
 
 }
 export interface serviceStorageQuotaBreakdownMethods extends storageQuotaBreakdownMethods {
@@ -15333,7 +15334,7 @@ add(values?: any): IBaseExecution<serviceStorageQuotaBreakdown>;
 * serviceUpdateMessage
 **********************************************/
 export interface serviceUpdateMessage extends serviceUpdateMessageProps, serviceUpdateMessageMethods { }
-export interface serviceUpdateMessageProps extends  serviceAnnouncementBaseProps {
+export interface serviceUpdateMessageProps extends serviceAnnouncementBaseProps {
 	actionRequiredByDateTime: any;
 	attachmentsArchive: any;
 	body: ComplexTypes.itemBody;
@@ -15359,7 +15360,7 @@ add(values?: any): IBaseExecution<serviceUpdateMessage>;
 * session
 **********************************************/
 export interface session extends sessionProps, sessionMethods { }
-export interface sessionProps extends  entityProps {
+export interface sessionProps extends entityProps {
 	callee: ComplexTypes.endpoint;
 	caller: ComplexTypes.endpoint;
 	endDateTime: any;
@@ -15379,7 +15380,7 @@ export interface sessionOData extends entityOData {
 * set
 **********************************************/
 export interface set extends setProps, setMethods { }
-export interface setProps extends  entityProps {
+export interface setProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	localizedNames: ComplexTypes.localizedName[];
@@ -15404,7 +15405,7 @@ export interface setOData extends entityOData {
 * settingStateDeviceSummary
 **********************************************/
 export interface settingStateDeviceSummary extends settingStateDeviceSummaryProps, settingStateDeviceSummaryMethods { }
-export interface settingStateDeviceSummaryProps extends  entityProps {
+export interface settingStateDeviceSummaryProps extends entityProps {
 	compliantDeviceCount: number;
 	conflictDeviceCount: number;
 	errorDeviceCount: number;
@@ -15428,7 +15429,7 @@ add(values?: any): IBaseExecution<settingStateDeviceSummary>;
 * sharePointProtectionPolicy
 **********************************************/
 export interface sharePointProtectionPolicy extends sharePointProtectionPolicyProps, sharePointProtectionPolicyMethods { }
-export interface sharePointProtectionPolicyProps extends  protectionPolicyBaseProps {
+export interface sharePointProtectionPolicyProps extends protectionPolicyBaseProps {
 
 }
 export interface sharePointProtectionPolicyMethods extends protectionPolicyBaseMethods {
@@ -15448,7 +15449,7 @@ add(values?: any): IBaseExecution<sharePointProtectionPolicy>;
 * sharePointRestoreSession
 **********************************************/
 export interface sharePointRestoreSession extends sharePointRestoreSessionProps, sharePointRestoreSessionMethods { }
-export interface sharePointRestoreSessionProps extends  restoreSessionBaseProps {
+export interface sharePointRestoreSessionProps extends restoreSessionBaseProps {
 
 }
 export interface sharePointRestoreSessionMethods extends restoreSessionBaseMethods {
@@ -15465,7 +15466,7 @@ add(values?: any): IBaseExecution<sharePointRestoreSession>;
 * sharedDriveItem
 **********************************************/
 export interface sharedDriveItem extends sharedDriveItemProps, sharedDriveItemMethods { }
-export interface sharedDriveItemProps extends  baseItemProps {
+export interface sharedDriveItemProps extends baseItemProps {
 	owner: ComplexTypes.identitySet;
 }
 export interface sharedDriveItemMethods extends baseItemMethods {
@@ -15491,7 +15492,7 @@ export interface sharedDriveItemOData extends baseItemOData {
 * sharedInsight
 **********************************************/
 export interface sharedInsight extends sharedInsightProps, sharedInsightMethods { }
-export interface sharedInsightProps extends  entityProps {
+export interface sharedInsightProps extends entityProps {
 	lastShared: ComplexTypes.sharingDetail;
 	resourceReference: ComplexTypes.resourceReference;
 	resourceVisualization: ComplexTypes.resourceVisualization;
@@ -15512,7 +15513,7 @@ add(values?: any): IBaseExecution<sharedInsight>;
 * sharedPCConfiguration
 **********************************************/
 export interface sharedPCConfiguration extends sharedPCConfigurationProps, sharedPCConfigurationMethods { }
-export interface sharedPCConfigurationProps extends  deviceConfigurationProps {
+export interface sharedPCConfigurationProps extends deviceConfigurationProps {
 	accountManagerPolicy: ComplexTypes.sharedPCAccountManagerPolicy;
 	allowedAccounts: EnumTypes.sharedPCAllowedAccountType;
 	allowLocalStorage: boolean;
@@ -15536,7 +15537,7 @@ export interface sharedPCConfigurationOData extends deviceConfigurationOData {
 * sharedWithChannelTeamInfo
 **********************************************/
 export interface sharedWithChannelTeamInfo extends sharedWithChannelTeamInfoProps, sharedWithChannelTeamInfoMethods { }
-export interface sharedWithChannelTeamInfoProps extends  teamInfoProps {
+export interface sharedWithChannelTeamInfoProps extends teamInfoProps {
 	isHostTeam: boolean;
 }
 export interface sharedWithChannelTeamInfoMethods extends teamInfoMethods {
@@ -15553,7 +15554,7 @@ add(values?: any): IBaseExecution<sharedWithChannelTeamInfo>;
 * sharepoint
 **********************************************/
 export interface sharepoint extends sharepointProps, sharepointMethods { }
-export interface sharepointProps extends  entityProps {
+export interface sharepointProps extends entityProps {
 
 }
 export interface sharepointMethods extends entityMethods {
@@ -15566,7 +15567,7 @@ export interface sharepointOData extends entityOData {
 * sharepointSettings
 **********************************************/
 export interface sharepointSettings extends sharepointSettingsProps, sharepointSettingsMethods { }
-export interface sharepointSettingsProps extends  entityProps {
+export interface sharepointSettingsProps extends entityProps {
 	allowedDomainGuidsForSyncApp: Array<any>;
 	availableManagedPathsForSiteCreation: Array<string>;
 	deletedUserPersonalSiteRetentionPeriodInDays: number;
@@ -15607,7 +15608,7 @@ export interface sharepointSettingsOData extends entityOData {
 * shift
 **********************************************/
 export interface shift extends shiftProps, shiftMethods { }
-export interface shiftProps extends  changeTrackedEntityProps {
+export interface shiftProps extends changeTrackedEntityProps {
 	draftShift: ComplexTypes.shiftItem;
 	isStagedForDeletion: boolean;
 	schedulingGroupId: string;
@@ -15627,7 +15628,7 @@ add(values?: any): IBaseExecution<shift>;
 * shiftPreferences
 **********************************************/
 export interface shiftPreferences extends shiftPreferencesProps, shiftPreferencesMethods { }
-export interface shiftPreferencesProps extends  changeTrackedEntityProps {
+export interface shiftPreferencesProps extends changeTrackedEntityProps {
 	availability: ComplexTypes.shiftAvailability[];
 }
 export interface shiftPreferencesMethods extends changeTrackedEntityMethods {
@@ -15640,7 +15641,7 @@ export interface shiftPreferencesOData extends changeTrackedEntityOData {
 * signIn
 **********************************************/
 export interface signIn extends signInProps, signInMethods { }
-export interface signInProps extends  entityProps {
+export interface signInProps extends entityProps {
 	appDisplayName: string;
 	appId: string;
 	appliedConditionalAccessPolicies: ComplexTypes.appliedConditionalAccessPolicy[];
@@ -15678,7 +15679,7 @@ add(values?: any): IBaseExecution<signIn>;
 * simulation
 **********************************************/
 export interface simulation extends simulationProps, simulationMethods { }
-export interface simulationProps extends  entityProps {
+export interface simulationProps extends entityProps {
 	attackTechnique: EnumTypes.simulationAttackTechnique;
 	attackType: EnumTypes.simulationAttackType;
 	automationId: string;
@@ -15718,7 +15719,7 @@ add(values?: any): IBaseExecution<simulation>;
 * simulationAutomation
 **********************************************/
 export interface simulationAutomation extends simulationAutomationProps, simulationAutomationMethods { }
-export interface simulationAutomationProps extends  entityProps {
+export interface simulationAutomationProps extends entityProps {
 	createdBy: ComplexTypes.emailIdentity;
 	createdDateTime: any;
 	description: string;
@@ -15743,7 +15744,7 @@ add(values?: any): IBaseExecution<simulationAutomation>;
 * simulationAutomationRun
 **********************************************/
 export interface simulationAutomationRun extends simulationAutomationRunProps, simulationAutomationRunMethods { }
-export interface simulationAutomationRunProps extends  entityProps {
+export interface simulationAutomationRunProps extends entityProps {
 	endDateTime: any;
 	simulationId: string;
 	startDateTime: any;
@@ -15762,7 +15763,7 @@ add(values?: any): IBaseExecution<simulationAutomationRun>;
 * singleValueLegacyExtendedProperty
 **********************************************/
 export interface singleValueLegacyExtendedProperty extends singleValueLegacyExtendedPropertyProps, singleValueLegacyExtendedPropertyMethods { }
-export interface singleValueLegacyExtendedPropertyProps extends  entityProps {
+export interface singleValueLegacyExtendedPropertyProps extends entityProps {
 	value: string;
 }
 export interface singleValueLegacyExtendedPropertyMethods extends entityMethods {
@@ -15778,7 +15779,7 @@ add(values?: any): IBaseExecution<singleValueLegacyExtendedProperty>;
 * site
 **********************************************/
 export interface site extends siteProps, siteMethods { }
-export interface siteProps extends  baseItemProps {
+export interface siteProps extends baseItemProps {
 	displayName: string;
 	error: ComplexTypes.publicError;
 	isPersonalSite: boolean;
@@ -15846,7 +15847,7 @@ add(values?: any): IBaseExecution<site>;
 * sitePage
 **********************************************/
 export interface sitePage extends sitePageProps, sitePageMethods { }
-export interface sitePageProps extends  baseSitePageProps {
+export interface sitePageProps extends baseSitePageProps {
 	promotionKind: EnumTypes.pagePromotionType;
 	reactions: ComplexTypes.reactionsFacet;
 	showComments: boolean;
@@ -15871,7 +15872,7 @@ export interface sitePageOData extends baseSitePageOData {
 * siteProtectionRule
 **********************************************/
 export interface siteProtectionRule extends siteProtectionRuleProps, siteProtectionRuleMethods { }
-export interface siteProtectionRuleProps extends  protectionRuleBaseProps {
+export interface siteProtectionRuleProps extends protectionRuleBaseProps {
 	siteExpression: string;
 }
 export interface siteProtectionRuleMethods extends protectionRuleBaseMethods {
@@ -15887,7 +15888,7 @@ add(values?: any): IBaseExecution<siteProtectionRule>;
 * siteProtectionUnit
 **********************************************/
 export interface siteProtectionUnit extends siteProtectionUnitProps, siteProtectionUnitMethods { }
-export interface siteProtectionUnitProps extends  protectionUnitBaseProps {
+export interface siteProtectionUnitProps extends protectionUnitBaseProps {
 	siteId: string;
 	siteName: string;
 	siteWebUrl: string;
@@ -15905,7 +15906,7 @@ add(values?: any): IBaseExecution<siteProtectionUnit>;
 * siteRestoreArtifact
 **********************************************/
 export interface siteRestoreArtifact extends siteRestoreArtifactProps, siteRestoreArtifactMethods { }
-export interface siteRestoreArtifactProps extends  restoreArtifactBaseProps {
+export interface siteRestoreArtifactProps extends restoreArtifactBaseProps {
 	restoredSiteId: string;
 	restoredSiteName: string;
 	restoredSiteWebUrl: string;
@@ -15923,7 +15924,7 @@ add(values?: any): IBaseExecution<siteRestoreArtifact>;
 * siteSource
 **********************************************/
 export interface siteSource extends siteSourceProps, siteSourceMethods { }
-export interface siteSourceProps extends  dataSourceProps {
+export interface siteSourceProps extends dataSourceProps {
 
 }
 export interface siteSourceMethods extends dataSourceMethods {
@@ -15936,7 +15937,7 @@ export interface siteSourceOData extends dataSourceOData {
 * skypeForBusinessUserConversationMember
 **********************************************/
 export interface skypeForBusinessUserConversationMember extends skypeForBusinessUserConversationMemberProps, skypeForBusinessUserConversationMemberMethods { }
-export interface skypeForBusinessUserConversationMemberProps extends  conversationMemberProps {
+export interface skypeForBusinessUserConversationMemberProps extends conversationMemberProps {
 	tenantId: string;
 	userId: string;
 }
@@ -15950,7 +15951,7 @@ export interface skypeForBusinessUserConversationMemberOData extends conversatio
 * skypeUserConversationMember
 **********************************************/
 export interface skypeUserConversationMember extends skypeUserConversationMemberProps, skypeUserConversationMemberMethods { }
-export interface skypeUserConversationMemberProps extends  conversationMemberProps {
+export interface skypeUserConversationMemberProps extends conversationMemberProps {
 	skypeId: string;
 }
 export interface skypeUserConversationMemberMethods extends conversationMemberMethods {
@@ -15963,7 +15964,7 @@ export interface skypeUserConversationMemberOData extends conversationMemberODat
 * smsAuthenticationMethodConfiguration
 **********************************************/
 export interface smsAuthenticationMethodConfiguration extends smsAuthenticationMethodConfigurationProps, smsAuthenticationMethodConfigurationMethods { }
-export interface smsAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface smsAuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 
 }
 export interface smsAuthenticationMethodConfigurationMethods extends authenticationMethodConfigurationMethods {
@@ -15977,7 +15978,7 @@ export interface smsAuthenticationMethodConfigurationOData extends authenticatio
 * smsAuthenticationMethodTarget
 **********************************************/
 export interface smsAuthenticationMethodTarget extends smsAuthenticationMethodTargetProps, smsAuthenticationMethodTargetMethods { }
-export interface smsAuthenticationMethodTargetProps extends  authenticationMethodTargetProps {
+export interface smsAuthenticationMethodTargetProps extends authenticationMethodTargetProps {
 	isUsableForSignIn: boolean;
 }
 export interface smsAuthenticationMethodTargetMethods extends authenticationMethodTargetMethods {
@@ -15993,7 +15994,7 @@ add(values?: any): IBaseExecution<smsAuthenticationMethodTarget>;
 * socialIdentityProvider
 **********************************************/
 export interface socialIdentityProvider extends socialIdentityProviderProps, socialIdentityProviderMethods { }
-export interface socialIdentityProviderProps extends  identityProviderBaseProps {
+export interface socialIdentityProviderProps extends identityProviderBaseProps {
 	clientId: string;
 	clientSecret: string;
 	identityProviderType: string;
@@ -16008,7 +16009,7 @@ export interface socialIdentityProviderOData extends identityProviderBaseOData {
 * softwareOathAuthenticationMethod
 **********************************************/
 export interface softwareOathAuthenticationMethod extends softwareOathAuthenticationMethodProps, softwareOathAuthenticationMethodMethods { }
-export interface softwareOathAuthenticationMethodProps extends  authenticationMethodProps {
+export interface softwareOathAuthenticationMethodProps extends authenticationMethodProps {
 	secretKey: string;
 }
 export interface softwareOathAuthenticationMethodMethods extends authenticationMethodMethods {
@@ -16024,7 +16025,7 @@ add(values?: any): IBaseExecution<softwareOathAuthenticationMethod>;
 * softwareOathAuthenticationMethodConfiguration
 **********************************************/
 export interface softwareOathAuthenticationMethodConfiguration extends softwareOathAuthenticationMethodConfigurationProps, softwareOathAuthenticationMethodConfigurationMethods { }
-export interface softwareOathAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface softwareOathAuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 
 }
 export interface softwareOathAuthenticationMethodConfigurationMethods extends authenticationMethodConfigurationMethods {
@@ -16038,7 +16039,7 @@ export interface softwareOathAuthenticationMethodConfigurationOData extends auth
 * softwareUpdateStatusSummary
 **********************************************/
 export interface softwareUpdateStatusSummary extends softwareUpdateStatusSummaryProps, softwareUpdateStatusSummaryMethods { }
-export interface softwareUpdateStatusSummaryProps extends  entityProps {
+export interface softwareUpdateStatusSummaryProps extends entityProps {
 	compliantDeviceCount: number;
 	compliantUserCount: number;
 	conflictDeviceCount: number;
@@ -16065,7 +16066,7 @@ export interface softwareUpdateStatusSummaryOData extends entityOData {
 * solutionsRoot
 **********************************************/
 export interface solutionsRoot extends solutionsRootProps, solutionsRootMethods { }
-export interface solutionsRootProps   {
+export interface solutionsRootProps {
 
 }
 export interface solutionsRootMethods {
@@ -16086,7 +16087,7 @@ export interface solutionsRootOData {
 * sslCertificate
 **********************************************/
 export interface sslCertificate extends sslCertificateProps, sslCertificateMethods { }
-export interface sslCertificateProps extends  artifactProps {
+export interface sslCertificateProps extends artifactProps {
 	expirationDateTime: any;
 	fingerprint: string;
 	firstSeenDateTime: any;
@@ -16108,7 +16109,7 @@ export interface sslCertificateOData extends artifactOData {
 * standardWebPart
 **********************************************/
 export interface standardWebPart extends standardWebPartProps, standardWebPartMethods { }
-export interface standardWebPartProps extends  webPartProps {
+export interface standardWebPartProps extends webPartProps {
 	containerTextWebPartId: string;
 	data: ComplexTypes.webPartData;
 	webPartType: string;
@@ -16123,7 +16124,7 @@ export interface standardWebPartOData extends webPartOData {
 * startHoldMusicOperation
 **********************************************/
 export interface startHoldMusicOperation extends startHoldMusicOperationProps, startHoldMusicOperationMethods { }
-export interface startHoldMusicOperationProps extends  commsOperationProps {
+export interface startHoldMusicOperationProps extends commsOperationProps {
 
 }
 export interface startHoldMusicOperationMethods extends commsOperationMethods {
@@ -16136,7 +16137,7 @@ export interface startHoldMusicOperationOData extends commsOperationOData {
 * stopHoldMusicOperation
 **********************************************/
 export interface stopHoldMusicOperation extends stopHoldMusicOperationProps, stopHoldMusicOperationMethods { }
-export interface stopHoldMusicOperationProps extends  commsOperationProps {
+export interface stopHoldMusicOperationProps extends commsOperationProps {
 
 }
 export interface stopHoldMusicOperationMethods extends commsOperationMethods {
@@ -16149,7 +16150,7 @@ export interface stopHoldMusicOperationOData extends commsOperationOData {
 * storage
 **********************************************/
 export interface storage extends storageProps, storageMethods { }
-export interface storageProps   {
+export interface storageProps {
 
 }
 export interface storageMethods {
@@ -16164,7 +16165,7 @@ export interface storageOData {
 * storageQuotaBreakdown
 **********************************************/
 export interface storageQuotaBreakdown extends storageQuotaBreakdownProps, storageQuotaBreakdownMethods { }
-export interface storageQuotaBreakdownProps extends  entityProps {
+export interface storageQuotaBreakdownProps extends entityProps {
 	displayName: string;
 	manageWebUrl: string;
 	used: number;
@@ -16179,7 +16180,7 @@ export interface storageQuotaBreakdownOData extends entityOData {
 * storageSettings
 **********************************************/
 export interface storageSettings extends storageSettingsProps, storageSettingsMethods { }
-export interface storageSettingsProps extends  entityProps {
+export interface storageSettingsProps extends entityProps {
 
 }
 export interface storageSettingsMethods extends entityMethods {
@@ -16192,7 +16193,7 @@ export interface storageSettingsOData extends entityOData {
 * store
 **********************************************/
 export interface store extends storeProps, storeMethods { }
-export interface storeProps extends  entityProps {
+export interface storeProps extends entityProps {
 	defaultLanguageTag: string;
 	languageTags: Array<string>;
 }
@@ -16210,7 +16211,7 @@ export interface storeOData extends entityOData {
 * stsPolicy
 **********************************************/
 export interface stsPolicy extends stsPolicyProps, stsPolicyMethods { }
-export interface stsPolicyProps extends  policyBaseProps {
+export interface stsPolicyProps extends policyBaseProps {
 	definition: Array<string>;
 	isOrganizationDefault: boolean;
 }
@@ -16225,7 +16226,7 @@ export interface stsPolicyOData extends policyBaseOData {
 * subcategoryTemplate
 **********************************************/
 export interface subcategoryTemplate extends subcategoryTemplateProps, subcategoryTemplateMethods { }
-export interface subcategoryTemplateProps extends  filePlanDescriptorTemplateProps {
+export interface subcategoryTemplateProps extends filePlanDescriptorTemplateProps {
 
 }
 export interface subcategoryTemplateMethods extends filePlanDescriptorTemplateMethods {
@@ -16238,7 +16239,7 @@ export interface subcategoryTemplateOData extends filePlanDescriptorTemplateODat
 * subdomain
 **********************************************/
 export interface subdomain extends subdomainProps, subdomainMethods { }
-export interface subdomainProps extends  entityProps {
+export interface subdomainProps extends entityProps {
 	firstSeenDateTime: any;
 }
 export interface subdomainMethods extends entityMethods {
@@ -16251,7 +16252,7 @@ export interface subdomainOData extends entityOData {
 * subjectRightsRequest
 **********************************************/
 export interface subjectRightsRequest extends subjectRightsRequestProps, subjectRightsRequestMethods { }
-export interface subjectRightsRequestProps extends  entityProps {
+export interface subjectRightsRequestProps extends entityProps {
 	assignedTo: ComplexTypes.identity;
 	closedDateTime: any;
 	contentQuery: string;
@@ -16303,7 +16304,7 @@ add(values?: any): IBaseExecution<subjectRightsRequest>;
 * subscribeToToneOperation
 **********************************************/
 export interface subscribeToToneOperation extends subscribeToToneOperationProps, subscribeToToneOperationMethods { }
-export interface subscribeToToneOperationProps extends  commsOperationProps {
+export interface subscribeToToneOperationProps extends commsOperationProps {
 
 }
 export interface subscribeToToneOperationMethods extends commsOperationMethods {
@@ -16316,7 +16317,7 @@ export interface subscribeToToneOperationOData extends commsOperationOData {
 * subscribedSku
 **********************************************/
 export interface subscribedSku extends subscribedSkuProps, subscribedSkuMethods { }
-export interface subscribedSkuProps extends  entityProps {
+export interface subscribedSkuProps extends entityProps {
 	accountId: string;
 	accountName: string;
 	appliesTo: string;
@@ -16338,7 +16339,7 @@ export interface subscribedSkuOData extends entityOData {
 * subscription
 **********************************************/
 export interface subscription extends subscriptionProps, subscriptionMethods { }
-export interface subscriptionProps extends  entityProps {
+export interface subscriptionProps extends entityProps {
 	applicationId: string;
 	changeType: string;
 	clientState: string;
@@ -16367,7 +16368,7 @@ add(values?: any): IBaseExecution<subscription>;
 * swapShiftsChangeRequest
 **********************************************/
 export interface swapShiftsChangeRequest extends swapShiftsChangeRequestProps, swapShiftsChangeRequestMethods { }
-export interface swapShiftsChangeRequestProps extends  offerShiftRequestProps {
+export interface swapShiftsChangeRequestProps extends offerShiftRequestProps {
 	recipientShiftId: string;
 }
 export interface swapShiftsChangeRequestMethods extends offerShiftRequestMethods {
@@ -16383,7 +16384,7 @@ add(values?: any): IBaseExecution<swapShiftsChangeRequest>;
 * synchronization
 **********************************************/
 export interface synchronization extends synchronizationProps, synchronizationMethods { }
-export interface synchronizationProps extends  entityProps {
+export interface synchronizationProps extends entityProps {
 	secrets: ComplexTypes.synchronizationSecretKeyStringValuePair[];
 }
 export interface synchronizationMethods extends entityMethods {
@@ -16402,7 +16403,7 @@ export interface synchronizationOData extends entityOData {
 * synchronizationJob
 **********************************************/
 export interface synchronizationJob extends synchronizationJobProps, synchronizationJobMethods { }
-export interface synchronizationJobProps extends  entityProps {
+export interface synchronizationJobProps extends entityProps {
 	schedule: ComplexTypes.synchronizationSchedule;
 	status: ComplexTypes.synchronizationStatus;
 	synchronizationJobSettings: ComplexTypes.keyValuePair[];
@@ -16433,7 +16434,7 @@ add(values?: any): IBaseExecution<synchronizationJob>;
 * synchronizationSchema
 **********************************************/
 export interface synchronizationSchema extends synchronizationSchemaProps, synchronizationSchemaMethods { }
-export interface synchronizationSchemaProps extends  entityProps {
+export interface synchronizationSchemaProps extends entityProps {
 	synchronizationRules: ComplexTypes.synchronizationRule[];
 	version: string;
 }
@@ -16454,7 +16455,7 @@ export interface synchronizationSchemaOData extends entityOData {
 * synchronizationTemplate
 **********************************************/
 export interface synchronizationTemplate extends synchronizationTemplateProps, synchronizationTemplateMethods { }
-export interface synchronizationTemplateProps extends  entityProps {
+export interface synchronizationTemplateProps extends entityProps {
 	applicationId: any;
 	default: boolean;
 	description: string;
@@ -16475,7 +16476,7 @@ add(values?: any): IBaseExecution<synchronizationTemplate>;
 * tag
 **********************************************/
 export interface tag extends tagProps, tagMethods { }
-export interface tagProps extends  entityProps {
+export interface tagProps extends entityProps {
 	createdBy: ComplexTypes.identitySet;
 	description: string;
 	displayName: string;
@@ -16491,7 +16492,7 @@ export interface tagOData extends entityOData {
 * targetDeviceGroup
 **********************************************/
 export interface targetDeviceGroup extends targetDeviceGroupProps, targetDeviceGroupMethods { }
-export interface targetDeviceGroupProps extends  entityProps {
+export interface targetDeviceGroupProps extends entityProps {
 	displayName: string;
 }
 export interface targetDeviceGroupMethods extends entityMethods {
@@ -16507,7 +16508,7 @@ add(values?: any): IBaseExecution<targetDeviceGroup>;
 * targetedManagedAppConfiguration
 **********************************************/
 export interface targetedManagedAppConfiguration extends targetedManagedAppConfigurationProps, targetedManagedAppConfigurationMethods { }
-export interface targetedManagedAppConfigurationProps extends  managedAppConfigurationProps {
+export interface targetedManagedAppConfigurationProps extends managedAppConfigurationProps {
 	deployedAppCount: number;
 	isAssigned: boolean;
 }
@@ -16534,7 +16535,7 @@ add(values?: any): IBaseExecution<targetedManagedAppConfiguration>;
 * targetedManagedAppPolicyAssignment
 **********************************************/
 export interface targetedManagedAppPolicyAssignment extends targetedManagedAppPolicyAssignmentProps, targetedManagedAppPolicyAssignmentMethods { }
-export interface targetedManagedAppPolicyAssignmentProps extends  entityProps {
+export interface targetedManagedAppPolicyAssignmentProps extends entityProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface targetedManagedAppPolicyAssignmentMethods extends entityMethods {
@@ -16550,7 +16551,7 @@ add(values?: any): IBaseExecution<targetedManagedAppPolicyAssignment>;
 * targetedManagedAppProtection
 **********************************************/
 export interface targetedManagedAppProtection extends targetedManagedAppProtectionProps, targetedManagedAppProtectionMethods { }
-export interface targetedManagedAppProtectionProps extends  managedAppProtectionProps {
+export interface targetedManagedAppProtectionProps extends managedAppProtectionProps {
 	isAssigned: boolean;
 }
 export interface targetedManagedAppProtectionMethods extends managedAppProtectionMethods {
@@ -16568,7 +16569,7 @@ export interface targetedManagedAppProtectionOData extends managedAppProtectionO
 * task
 **********************************************/
 export interface task extends taskProps, taskMethods { }
-export interface taskProps extends  entityProps {
+export interface taskProps extends entityProps {
 	arguments: ComplexTypes.keyValuePair[];
 	category: EnumTypes.lifecycleTaskCategory;
 	continueOnError: boolean;
@@ -16589,7 +16590,7 @@ export interface taskOData extends entityOData {
 * taskDefinition
 **********************************************/
 export interface taskDefinition extends taskDefinitionProps, taskDefinitionMethods { }
-export interface taskDefinitionProps extends  entityProps {
+export interface taskDefinitionProps extends entityProps {
 	category: EnumTypes.lifecycleTaskCategory;
 	continueOnError: boolean;
 	description: string;
@@ -16607,7 +16608,7 @@ export interface taskDefinitionOData extends entityOData {
 * taskFileAttachment
 **********************************************/
 export interface taskFileAttachment extends taskFileAttachmentProps, taskFileAttachmentMethods { }
-export interface taskFileAttachmentProps extends  attachmentBaseProps {
+export interface taskFileAttachmentProps extends attachmentBaseProps {
 	contentBytes: any;
 }
 export interface taskFileAttachmentMethods extends attachmentBaseMethods {
@@ -16620,7 +16621,7 @@ export interface taskFileAttachmentOData extends attachmentBaseOData {
 * taskProcessingResult
 **********************************************/
 export interface taskProcessingResult extends taskProcessingResultProps, taskProcessingResultMethods { }
-export interface taskProcessingResultProps extends  entityProps {
+export interface taskProcessingResultProps extends entityProps {
 	completedDateTime: any;
 	createdDateTime: any;
 	failureReason: string;
@@ -16639,7 +16640,7 @@ export interface taskProcessingResultOData extends entityOData {
 * taskReport
 **********************************************/
 export interface taskReport extends taskReportProps, taskReportMethods { }
-export interface taskReportProps extends  entityProps {
+export interface taskReportProps extends entityProps {
 	completedDateTime: any;
 	failedUsersCount: number;
 	lastUpdatedDateTime: any;
@@ -16665,7 +16666,7 @@ export interface taskReportOData extends entityOData {
 * team
 **********************************************/
 export interface team extends teamProps, teamMethods { }
-export interface teamProps extends  entityProps {
+export interface teamProps extends entityProps {
 	classification: string;
 	createdDateTime: any;
 	description: string;
@@ -16737,7 +16738,7 @@ add(values?: any): IBaseExecution<team>;
 * teamInfo
 **********************************************/
 export interface teamInfo extends teamInfoProps, teamInfoMethods { }
-export interface teamInfoProps extends  entityProps {
+export interface teamInfoProps extends entityProps {
 	displayName: string;
 	tenantId: string;
 }
@@ -16751,7 +16752,7 @@ export interface teamInfoOData extends entityOData {
 * teamsApp
 **********************************************/
 export interface teamsApp extends teamsAppProps, teamsAppMethods { }
-export interface teamsAppProps extends  entityProps {
+export interface teamsAppProps extends entityProps {
 	displayName: string;
 	distributionMethod: EnumTypes.teamsAppDistributionMethod;
 	externalId: string;
@@ -16770,7 +16771,7 @@ add(values?: any): IBaseExecution<teamsApp>;
 * teamsAppDefinition
 **********************************************/
 export interface teamsAppDefinition extends teamsAppDefinitionProps, teamsAppDefinitionMethods { }
-export interface teamsAppDefinitionProps extends  entityProps {
+export interface teamsAppDefinitionProps extends entityProps {
 	authorization: ComplexTypes.teamsAppAuthorization;
 	createdBy: ComplexTypes.identitySet;
 	description: string;
@@ -16794,7 +16795,7 @@ add(values?: any): IBaseExecution<teamsAppDefinition>;
 * teamsAppInstallation
 **********************************************/
 export interface teamsAppInstallation extends teamsAppInstallationProps, teamsAppInstallationMethods { }
-export interface teamsAppInstallationProps extends  entityProps {
+export interface teamsAppInstallationProps extends entityProps {
 	consentedPermissionSet: ComplexTypes.teamsAppPermissionSet;
 }
 export interface teamsAppInstallationMethods extends entityMethods {
@@ -16814,7 +16815,7 @@ add(values?: any): IBaseExecution<teamsAppInstallation>;
 * teamsAppSettings
 **********************************************/
 export interface teamsAppSettings extends teamsAppSettingsProps, teamsAppSettingsMethods { }
-export interface teamsAppSettingsProps extends  entityProps {
+export interface teamsAppSettingsProps extends entityProps {
 	allowUserRequestsForAppAccess: boolean;
 	isUserPersonalScopeResourceSpecificConsentEnabled: boolean;
 }
@@ -16828,7 +16829,7 @@ export interface teamsAppSettingsOData extends entityOData {
 * teamsAsyncOperation
 **********************************************/
 export interface teamsAsyncOperation extends teamsAsyncOperationProps, teamsAsyncOperationMethods { }
-export interface teamsAsyncOperationProps extends  entityProps {
+export interface teamsAsyncOperationProps extends entityProps {
 	attemptsCount: number;
 	createdDateTime: any;
 	error: ComplexTypes.operationError;
@@ -16851,7 +16852,7 @@ add(values?: any): IBaseExecution<teamsAsyncOperation>;
 * teamsTab
 **********************************************/
 export interface teamsTab extends teamsTabProps, teamsTabMethods { }
-export interface teamsTabProps extends  entityProps {
+export interface teamsTabProps extends entityProps {
 	configuration: ComplexTypes.teamsTabConfiguration;
 	displayName: string;
 	webUrl: string;
@@ -16869,7 +16870,7 @@ add(values?: any): IBaseExecution<teamsTab>;
 * teamsTemplate
 **********************************************/
 export interface teamsTemplate extends teamsTemplateProps, teamsTemplateMethods { }
-export interface teamsTemplateProps extends  entityProps {
+export interface teamsTemplateProps extends entityProps {
 
 }
 export interface teamsTemplateMethods extends entityMethods {
@@ -16882,7 +16883,7 @@ export interface teamsTemplateOData extends entityOData {
 * teamwork
 **********************************************/
 export interface teamwork extends teamworkProps, teamworkMethods { }
-export interface teamworkProps extends  entityProps {
+export interface teamworkProps extends entityProps {
 	isTeamsEnabled: boolean;
 	region: string;
 }
@@ -16907,7 +16908,7 @@ export interface teamworkOData extends entityOData {
 * teamworkBot
 **********************************************/
 export interface teamworkBot extends teamworkBotProps, teamworkBotMethods { }
-export interface teamworkBotProps extends  entityProps {
+export interface teamworkBotProps extends entityProps {
 
 }
 export interface teamworkBotMethods extends entityMethods {
@@ -16920,7 +16921,7 @@ export interface teamworkBotOData extends entityOData {
 * teamworkHostedContent
 **********************************************/
 export interface teamworkHostedContent extends teamworkHostedContentProps, teamworkHostedContentMethods { }
-export interface teamworkHostedContentProps extends  entityProps {
+export interface teamworkHostedContentProps extends entityProps {
 	contentBytes: any;
 	contentType: string;
 }
@@ -16934,7 +16935,7 @@ export interface teamworkHostedContentOData extends entityOData {
 * teamworkTag
 **********************************************/
 export interface teamworkTag extends teamworkTagProps, teamworkTagMethods { }
-export interface teamworkTagProps extends  entityProps {
+export interface teamworkTagProps extends entityProps {
 	description: string;
 	displayName: string;
 	memberCount: number;
@@ -16955,7 +16956,7 @@ add(values?: any): IBaseExecution<teamworkTag>;
 * teamworkTagMember
 **********************************************/
 export interface teamworkTagMember extends teamworkTagMemberProps, teamworkTagMemberMethods { }
-export interface teamworkTagMemberProps extends  entityProps {
+export interface teamworkTagMemberProps extends entityProps {
 	displayName: string;
 	tenantId: string;
 	userId: string;
@@ -16973,7 +16974,7 @@ add(values?: any): IBaseExecution<teamworkTagMember>;
 * telecomExpenseManagementPartner
 **********************************************/
 export interface telecomExpenseManagementPartner extends telecomExpenseManagementPartnerProps, telecomExpenseManagementPartnerMethods { }
-export interface telecomExpenseManagementPartnerProps extends  entityProps {
+export interface telecomExpenseManagementPartnerProps extends entityProps {
 	appAuthorized: boolean;
 	displayName: string;
 	enabled: boolean;
@@ -16993,7 +16994,7 @@ add(values?: any): IBaseExecution<telecomExpenseManagementPartner>;
 * temporaryAccessPassAuthenticationMethod
 **********************************************/
 export interface temporaryAccessPassAuthenticationMethod extends temporaryAccessPassAuthenticationMethodProps, temporaryAccessPassAuthenticationMethodMethods { }
-export interface temporaryAccessPassAuthenticationMethodProps extends  authenticationMethodProps {
+export interface temporaryAccessPassAuthenticationMethodProps extends authenticationMethodProps {
 	createdDateTime: any;
 	isUsable: boolean;
 	isUsableOnce: boolean;
@@ -17015,7 +17016,7 @@ add(values?: any): IBaseExecution<temporaryAccessPassAuthenticationMethod>;
 * temporaryAccessPassAuthenticationMethodConfiguration
 **********************************************/
 export interface temporaryAccessPassAuthenticationMethodConfiguration extends temporaryAccessPassAuthenticationMethodConfigurationProps, temporaryAccessPassAuthenticationMethodConfigurationMethods { }
-export interface temporaryAccessPassAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface temporaryAccessPassAuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 	defaultLength: number;
 	defaultLifetimeInMinutes: number;
 	isUsableOnce: boolean;
@@ -17033,7 +17034,7 @@ export interface temporaryAccessPassAuthenticationMethodConfigurationOData exten
 * tenantAppManagementPolicy
 **********************************************/
 export interface tenantAppManagementPolicy extends tenantAppManagementPolicyProps, tenantAppManagementPolicyMethods { }
-export interface tenantAppManagementPolicyProps extends  policyBaseProps {
+export interface tenantAppManagementPolicyProps extends policyBaseProps {
 	applicationRestrictions: ComplexTypes.appManagementApplicationConfiguration;
 	isEnabled: boolean;
 	servicePrincipalRestrictions: ComplexTypes.appManagementServicePrincipalConfiguration;
@@ -17048,7 +17049,7 @@ export interface tenantAppManagementPolicyOData extends policyBaseOData {
 * tenantRelationship
 **********************************************/
 export interface tenantRelationship extends tenantRelationshipProps, tenantRelationshipMethods { }
-export interface tenantRelationshipProps   {
+export interface tenantRelationshipProps {
 
 }
 export interface tenantRelationshipMethods {
@@ -17071,7 +17072,7 @@ export interface tenantRelationshipOData {
 * term
 **********************************************/
 export interface term extends termProps, termMethods { }
-export interface termProps extends  entityProps {
+export interface termProps extends entityProps {
 	createdDateTime: any;
 	descriptions: ComplexTypes.localizedDescription[];
 	labels: ComplexTypes.localizedLabel[];
@@ -17094,7 +17095,7 @@ export interface termOData extends entityOData {
 * termsAndConditions
 **********************************************/
 export interface termsAndConditions extends termsAndConditionsProps, termsAndConditionsMethods { }
-export interface termsAndConditionsProps extends  entityProps {
+export interface termsAndConditionsProps extends entityProps {
 	acceptanceStatement: string;
 	bodyText: string;
 	createdDateTime: any;
@@ -17121,7 +17122,7 @@ add(values?: any): IBaseExecution<termsAndConditions>;
 * termsAndConditionsAcceptanceStatus
 **********************************************/
 export interface termsAndConditionsAcceptanceStatus extends termsAndConditionsAcceptanceStatusProps, termsAndConditionsAcceptanceStatusMethods { }
-export interface termsAndConditionsAcceptanceStatusProps extends  entityProps {
+export interface termsAndConditionsAcceptanceStatusProps extends entityProps {
 	acceptedDateTime: any;
 	acceptedVersion: number;
 	userDisplayName: string;
@@ -17140,7 +17141,7 @@ add(values?: any): IBaseExecution<termsAndConditionsAcceptanceStatus>;
 * termsAndConditionsAssignment
 **********************************************/
 export interface termsAndConditionsAssignment extends termsAndConditionsAssignmentProps, termsAndConditionsAssignmentMethods { }
-export interface termsAndConditionsAssignmentProps extends  entityProps {
+export interface termsAndConditionsAssignmentProps extends entityProps {
 	target: ComplexTypes.deviceAndAppManagementAssignmentTarget;
 }
 export interface termsAndConditionsAssignmentMethods extends entityMethods {
@@ -17156,7 +17157,7 @@ add(values?: any): IBaseExecution<termsAndConditionsAssignment>;
 * termsOfUseContainer
 **********************************************/
 export interface termsOfUseContainer extends termsOfUseContainerProps, termsOfUseContainerMethods { }
-export interface termsOfUseContainerProps extends  entityProps {
+export interface termsOfUseContainerProps extends entityProps {
 
 }
 export interface termsOfUseContainerMethods extends entityMethods {
@@ -17173,7 +17174,7 @@ export interface termsOfUseContainerOData extends entityOData {
 * textWebPart
 **********************************************/
 export interface textWebPart extends textWebPartProps, textWebPartMethods { }
-export interface textWebPartProps extends  webPartProps {
+export interface textWebPartProps extends webPartProps {
 	innerHtml: string;
 }
 export interface textWebPartMethods extends webPartMethods {
@@ -17186,7 +17187,7 @@ export interface textWebPartOData extends webPartOData {
 * threatAssessmentRequest
 **********************************************/
 export interface threatAssessmentRequest extends threatAssessmentRequestProps, threatAssessmentRequestMethods { }
-export interface threatAssessmentRequestProps extends  entityProps {
+export interface threatAssessmentRequestProps extends entityProps {
 	category: EnumTypes.threatCategory;
 	contentType: EnumTypes.threatAssessmentContentType;
 	createdBy: ComplexTypes.identitySet;
@@ -17209,7 +17210,7 @@ add(values?: any): IBaseExecution<threatAssessmentRequest>;
 * threatAssessmentResult
 **********************************************/
 export interface threatAssessmentResult extends threatAssessmentResultProps, threatAssessmentResultMethods { }
-export interface threatAssessmentResultProps extends  entityProps {
+export interface threatAssessmentResultProps extends entityProps {
 	createdDateTime: any;
 	message: string;
 	resultType: EnumTypes.threatAssessmentResultType;
@@ -17227,7 +17228,7 @@ add(values?: any): IBaseExecution<threatAssessmentResult>;
 * threatIntelligence
 **********************************************/
 export interface threatIntelligence extends threatIntelligenceProps, threatIntelligenceMethods { }
-export interface threatIntelligenceProps extends  entityProps {
+export interface threatIntelligenceProps extends entityProps {
 
 }
 export interface threatIntelligenceMethods extends entityMethods {
@@ -17289,7 +17290,7 @@ export interface threatIntelligenceOData extends entityOData {
 * thumbnailSet
 **********************************************/
 export interface thumbnailSet extends thumbnailSetProps, thumbnailSetMethods { }
-export interface thumbnailSetProps extends  entityProps {
+export interface thumbnailSetProps extends entityProps {
 	large: ComplexTypes.thumbnail;
 	medium: ComplexTypes.thumbnail;
 	small: ComplexTypes.thumbnail;
@@ -17308,7 +17309,7 @@ add(values?: any): IBaseExecution<thumbnailSet>;
 * timeCard
 **********************************************/
 export interface timeCard extends timeCardProps, timeCardMethods { }
-export interface timeCardProps extends  changeTrackedEntityProps {
+export interface timeCardProps extends changeTrackedEntityProps {
 	breaks: ComplexTypes.timeCardBreak[];
 	clockInEvent: ComplexTypes.timeCardEvent;
 	clockOutEvent: ComplexTypes.timeCardEvent;
@@ -17337,7 +17338,7 @@ add(values?: any): IBaseExecution<timeCard>;
 * timeOff
 **********************************************/
 export interface timeOff extends timeOffProps, timeOffMethods { }
-export interface timeOffProps extends  changeTrackedEntityProps {
+export interface timeOffProps extends changeTrackedEntityProps {
 	draftTimeOff: ComplexTypes.timeOffItem;
 	isStagedForDeletion: boolean;
 	sharedTimeOff: ComplexTypes.timeOffItem;
@@ -17356,7 +17357,7 @@ add(values?: any): IBaseExecution<timeOff>;
 * timeOffReason
 **********************************************/
 export interface timeOffReason extends timeOffReasonProps, timeOffReasonMethods { }
-export interface timeOffReasonProps extends  changeTrackedEntityProps {
+export interface timeOffReasonProps extends changeTrackedEntityProps {
 	code: string;
 	displayName: string;
 	iconType: EnumTypes.timeOffReasonIconType;
@@ -17375,7 +17376,7 @@ add(values?: any): IBaseExecution<timeOffReason>;
 * timeOffRequest
 **********************************************/
 export interface timeOffRequest extends timeOffRequestProps, timeOffRequestMethods { }
-export interface timeOffRequestProps extends  scheduleChangeRequestProps {
+export interface timeOffRequestProps extends scheduleChangeRequestProps {
 	endDateTime: any;
 	startDateTime: any;
 	timeOffReasonId: string;
@@ -17393,7 +17394,7 @@ add(values?: any): IBaseExecution<timeOffRequest>;
 * todo
 **********************************************/
 export interface todo extends todoProps, todoMethods { }
-export interface todoProps extends  entityProps {
+export interface todoProps extends entityProps {
 
 }
 export interface todoMethods extends entityMethods {
@@ -17407,7 +17408,7 @@ export interface todoOData extends entityOData {
 * todoTask
 **********************************************/
 export interface todoTask extends todoTaskProps, todoTaskMethods { }
-export interface todoTaskProps extends  entityProps {
+export interface todoTaskProps extends entityProps {
 	body: ComplexTypes.itemBody;
 	bodyLastModifiedDateTime: any;
 	categories: Array<string>;
@@ -17450,7 +17451,7 @@ add(values?: any): IBaseExecution<todoTask>;
 * todoTaskList
 **********************************************/
 export interface todoTaskList extends todoTaskListProps, todoTaskListMethods { }
-export interface todoTaskListProps extends  entityProps {
+export interface todoTaskListProps extends entityProps {
 	displayName: string;
 	isOwner: boolean;
 	isShared: boolean;
@@ -17473,7 +17474,7 @@ add(values?: any): IBaseExecution<todoTaskList>;
 * tokenIssuancePolicy
 **********************************************/
 export interface tokenIssuancePolicy extends tokenIssuancePolicyProps, tokenIssuancePolicyMethods { }
-export interface tokenIssuancePolicyProps extends  stsPolicyProps {
+export interface tokenIssuancePolicyProps extends stsPolicyProps {
 
 }
 export interface tokenIssuancePolicyMethods extends stsPolicyMethods {
@@ -17489,7 +17490,7 @@ add(values?: any): IBaseExecution<tokenIssuancePolicy>;
 * tokenLifetimePolicy
 **********************************************/
 export interface tokenLifetimePolicy extends tokenLifetimePolicyProps, tokenLifetimePolicyMethods { }
-export interface tokenLifetimePolicyProps extends  stsPolicyProps {
+export interface tokenLifetimePolicyProps extends stsPolicyProps {
 
 }
 export interface tokenLifetimePolicyMethods extends stsPolicyMethods {
@@ -17505,7 +17506,7 @@ add(values?: any): IBaseExecution<tokenLifetimePolicy>;
 * training
 **********************************************/
 export interface training extends trainingProps, trainingMethods { }
-export interface trainingProps extends  entityProps {
+export interface trainingProps extends entityProps {
 	availabilityStatus: EnumTypes.trainingAvailabilityStatus;
 	createdBy: ComplexTypes.emailIdentity;
 	createdDateTime: any;
@@ -17534,7 +17535,7 @@ add(values?: any): IBaseExecution<training>;
 * trainingLanguageDetail
 **********************************************/
 export interface trainingLanguageDetail extends trainingLanguageDetailProps, trainingLanguageDetailMethods { }
-export interface trainingLanguageDetailProps extends  entityProps {
+export interface trainingLanguageDetailProps extends entityProps {
 	content: string;
 	createdBy: ComplexTypes.emailIdentity;
 	createdDateTime: any;
@@ -17558,7 +17559,7 @@ add(values?: any): IBaseExecution<trainingLanguageDetail>;
 * trending
 **********************************************/
 export interface trending extends trendingProps, trendingMethods { }
-export interface trendingProps extends  entityProps {
+export interface trendingProps extends entityProps {
 	lastModifiedDateTime: any;
 	resourceReference: ComplexTypes.resourceReference;
 	resourceVisualization: ComplexTypes.resourceVisualization;
@@ -17577,7 +17578,7 @@ add(values?: any): IBaseExecution<trending>;
 * triggerTypesRoot
 **********************************************/
 export interface triggerTypesRoot extends triggerTypesRootProps, triggerTypesRootMethods { }
-export interface triggerTypesRootProps extends  entityProps {
+export interface triggerTypesRootProps extends entityProps {
 
 }
 export interface triggerTypesRootMethods extends entityMethods {
@@ -17591,7 +17592,7 @@ export interface triggerTypesRootOData extends entityOData {
 * triggersRoot
 **********************************************/
 export interface triggersRoot extends triggersRootProps, triggersRootMethods { }
-export interface triggersRootProps extends  entityProps {
+export interface triggersRootProps extends entityProps {
 
 }
 export interface triggersRootMethods extends entityMethods {
@@ -17605,7 +17606,7 @@ export interface triggersRootOData extends entityOData {
 * unbilledUsage
 **********************************************/
 export interface unbilledUsage extends unbilledUsageProps, unbilledUsageMethods { }
-export interface unbilledUsageProps extends  entityProps {
+export interface unbilledUsageProps extends entityProps {
 
 }
 export interface unbilledUsageMethods extends entityMethods {
@@ -17618,7 +17619,7 @@ export interface unbilledUsageOData extends entityOData {
 * unclassifiedArtifact
 **********************************************/
 export interface unclassifiedArtifact extends unclassifiedArtifactProps, unclassifiedArtifactMethods { }
-export interface unclassifiedArtifactProps extends  artifactProps {
+export interface unclassifiedArtifactProps extends artifactProps {
 	kind: string;
 	value: string;
 }
@@ -17632,7 +17633,7 @@ export interface unclassifiedArtifactOData extends artifactOData {
 * unifiedGroupSource
 **********************************************/
 export interface unifiedGroupSource extends unifiedGroupSourceProps, unifiedGroupSourceMethods { }
-export interface unifiedGroupSourceProps extends  dataSourceProps {
+export interface unifiedGroupSourceProps extends dataSourceProps {
 	includedSources: EnumTypes.sourceType;
 }
 export interface unifiedGroupSourceMethods extends dataSourceMethods {
@@ -17645,7 +17646,7 @@ export interface unifiedGroupSourceOData extends dataSourceOData {
 * unifiedRbacResourceAction
 **********************************************/
 export interface unifiedRbacResourceAction extends unifiedRbacResourceActionProps, unifiedRbacResourceActionMethods { }
-export interface unifiedRbacResourceActionProps extends  entityProps {
+export interface unifiedRbacResourceActionProps extends entityProps {
 	actionVerb: string;
 	authenticationContextId: string;
 	description: string;
@@ -17666,7 +17667,7 @@ add(values?: any): IBaseExecution<unifiedRbacResourceAction>;
 * unifiedRbacResourceNamespace
 **********************************************/
 export interface unifiedRbacResourceNamespace extends unifiedRbacResourceNamespaceProps, unifiedRbacResourceNamespaceMethods { }
-export interface unifiedRbacResourceNamespaceProps extends  entityProps {
+export interface unifiedRbacResourceNamespaceProps extends entityProps {
 	name: string;
 }
 export interface unifiedRbacResourceNamespaceMethods extends entityMethods {
@@ -17683,7 +17684,7 @@ add(values?: any): IBaseExecution<unifiedRbacResourceNamespace>;
 * unifiedRoleAssignment
 **********************************************/
 export interface unifiedRoleAssignment extends unifiedRoleAssignmentProps, unifiedRoleAssignmentMethods { }
-export interface unifiedRoleAssignmentProps extends  entityProps {
+export interface unifiedRoleAssignmentProps extends entityProps {
 	appScopeId: string;
 	condition: string;
 	directoryScopeId: string;
@@ -17709,7 +17710,7 @@ add(values?: any): IBaseExecution<unifiedRoleAssignment>;
 * unifiedRoleAssignmentSchedule
 **********************************************/
 export interface unifiedRoleAssignmentSchedule extends unifiedRoleAssignmentScheduleProps, unifiedRoleAssignmentScheduleMethods { }
-export interface unifiedRoleAssignmentScheduleProps extends  unifiedRoleScheduleBaseProps {
+export interface unifiedRoleAssignmentScheduleProps extends unifiedRoleScheduleBaseProps {
 	assignmentType: string;
 	memberType: string;
 	scheduleInfo: ComplexTypes.requestSchedule;
@@ -17727,7 +17728,7 @@ add(values?: any): IBaseExecution<unifiedRoleAssignmentSchedule>;
 * unifiedRoleAssignmentScheduleInstance
 **********************************************/
 export interface unifiedRoleAssignmentScheduleInstance extends unifiedRoleAssignmentScheduleInstanceProps, unifiedRoleAssignmentScheduleInstanceMethods { }
-export interface unifiedRoleAssignmentScheduleInstanceProps extends  unifiedRoleScheduleInstanceBaseProps {
+export interface unifiedRoleAssignmentScheduleInstanceProps extends unifiedRoleScheduleInstanceBaseProps {
 	assignmentType: string;
 	endDateTime: any;
 	memberType: string;
@@ -17748,7 +17749,7 @@ add(values?: any): IBaseExecution<unifiedRoleAssignmentScheduleInstance>;
 * unifiedRoleAssignmentScheduleRequest
 **********************************************/
 export interface unifiedRoleAssignmentScheduleRequest extends unifiedRoleAssignmentScheduleRequestProps, unifiedRoleAssignmentScheduleRequestMethods { }
-export interface unifiedRoleAssignmentScheduleRequestProps extends  requestProps {
+export interface unifiedRoleAssignmentScheduleRequestProps extends requestProps {
 	action: EnumTypes.unifiedRoleScheduleRequestActions;
 	appScopeId: string;
 	directoryScopeId: string;
@@ -17785,7 +17786,7 @@ add(values?: any): IBaseExecution<unifiedRoleAssignmentScheduleRequest>;
 * unifiedRoleDefinition
 **********************************************/
 export interface unifiedRoleDefinition extends unifiedRoleDefinitionProps, unifiedRoleDefinitionMethods { }
-export interface unifiedRoleDefinitionProps extends  entityProps {
+export interface unifiedRoleDefinitionProps extends entityProps {
 	description: string;
 	displayName: string;
 	isBuiltIn: boolean;
@@ -17809,7 +17810,7 @@ add(values?: any): IBaseExecution<unifiedRoleDefinition>;
 * unifiedRoleEligibilitySchedule
 **********************************************/
 export interface unifiedRoleEligibilitySchedule extends unifiedRoleEligibilityScheduleProps, unifiedRoleEligibilityScheduleMethods { }
-export interface unifiedRoleEligibilityScheduleProps extends  unifiedRoleScheduleBaseProps {
+export interface unifiedRoleEligibilityScheduleProps extends unifiedRoleScheduleBaseProps {
 	memberType: string;
 	scheduleInfo: ComplexTypes.requestSchedule;
 }
@@ -17826,7 +17827,7 @@ add(values?: any): IBaseExecution<unifiedRoleEligibilitySchedule>;
 * unifiedRoleEligibilityScheduleInstance
 **********************************************/
 export interface unifiedRoleEligibilityScheduleInstance extends unifiedRoleEligibilityScheduleInstanceProps, unifiedRoleEligibilityScheduleInstanceMethods { }
-export interface unifiedRoleEligibilityScheduleInstanceProps extends  unifiedRoleScheduleInstanceBaseProps {
+export interface unifiedRoleEligibilityScheduleInstanceProps extends unifiedRoleScheduleInstanceBaseProps {
 	endDateTime: any;
 	memberType: string;
 	roleEligibilityScheduleId: string;
@@ -17845,7 +17846,7 @@ add(values?: any): IBaseExecution<unifiedRoleEligibilityScheduleInstance>;
 * unifiedRoleEligibilityScheduleRequest
 **********************************************/
 export interface unifiedRoleEligibilityScheduleRequest extends unifiedRoleEligibilityScheduleRequestProps, unifiedRoleEligibilityScheduleRequestMethods { }
-export interface unifiedRoleEligibilityScheduleRequestProps extends  requestProps {
+export interface unifiedRoleEligibilityScheduleRequestProps extends requestProps {
 	action: EnumTypes.unifiedRoleScheduleRequestActions;
 	appScopeId: string;
 	directoryScopeId: string;
@@ -17880,7 +17881,7 @@ add(values?: any): IBaseExecution<unifiedRoleEligibilityScheduleRequest>;
 * unifiedRoleManagementPolicy
 **********************************************/
 export interface unifiedRoleManagementPolicy extends unifiedRoleManagementPolicyProps, unifiedRoleManagementPolicyMethods { }
-export interface unifiedRoleManagementPolicyProps extends  entityProps {
+export interface unifiedRoleManagementPolicyProps extends entityProps {
 	description: string;
 	displayName: string;
 	isOrganizationDefault: boolean;
@@ -17906,7 +17907,7 @@ add(values?: any): IBaseExecution<unifiedRoleManagementPolicy>;
 * unifiedRoleManagementPolicyApprovalRule
 **********************************************/
 export interface unifiedRoleManagementPolicyApprovalRule extends unifiedRoleManagementPolicyApprovalRuleProps, unifiedRoleManagementPolicyApprovalRuleMethods { }
-export interface unifiedRoleManagementPolicyApprovalRuleProps extends  unifiedRoleManagementPolicyRuleProps {
+export interface unifiedRoleManagementPolicyApprovalRuleProps extends unifiedRoleManagementPolicyRuleProps {
 	setting: ComplexTypes.approvalSettings;
 }
 export interface unifiedRoleManagementPolicyApprovalRuleMethods extends unifiedRoleManagementPolicyRuleMethods {
@@ -17919,7 +17920,7 @@ export interface unifiedRoleManagementPolicyApprovalRuleOData extends unifiedRol
 * unifiedRoleManagementPolicyAssignment
 **********************************************/
 export interface unifiedRoleManagementPolicyAssignment extends unifiedRoleManagementPolicyAssignmentProps, unifiedRoleManagementPolicyAssignmentMethods { }
-export interface unifiedRoleManagementPolicyAssignmentProps extends  entityProps {
+export interface unifiedRoleManagementPolicyAssignmentProps extends entityProps {
 	policyId: string;
 	roleDefinitionId: string;
 	scopeId: string;
@@ -17938,7 +17939,7 @@ add(values?: any): IBaseExecution<unifiedRoleManagementPolicyAssignment>;
 * unifiedRoleManagementPolicyAuthenticationContextRule
 **********************************************/
 export interface unifiedRoleManagementPolicyAuthenticationContextRule extends unifiedRoleManagementPolicyAuthenticationContextRuleProps, unifiedRoleManagementPolicyAuthenticationContextRuleMethods { }
-export interface unifiedRoleManagementPolicyAuthenticationContextRuleProps extends  unifiedRoleManagementPolicyRuleProps {
+export interface unifiedRoleManagementPolicyAuthenticationContextRuleProps extends unifiedRoleManagementPolicyRuleProps {
 	claimValue: string;
 	isEnabled: boolean;
 }
@@ -17952,7 +17953,7 @@ export interface unifiedRoleManagementPolicyAuthenticationContextRuleOData exten
 * unifiedRoleManagementPolicyEnablementRule
 **********************************************/
 export interface unifiedRoleManagementPolicyEnablementRule extends unifiedRoleManagementPolicyEnablementRuleProps, unifiedRoleManagementPolicyEnablementRuleMethods { }
-export interface unifiedRoleManagementPolicyEnablementRuleProps extends  unifiedRoleManagementPolicyRuleProps {
+export interface unifiedRoleManagementPolicyEnablementRuleProps extends unifiedRoleManagementPolicyRuleProps {
 	enabledRules: Array<string>;
 }
 export interface unifiedRoleManagementPolicyEnablementRuleMethods extends unifiedRoleManagementPolicyRuleMethods {
@@ -17965,7 +17966,7 @@ export interface unifiedRoleManagementPolicyEnablementRuleOData extends unifiedR
 * unifiedRoleManagementPolicyExpirationRule
 **********************************************/
 export interface unifiedRoleManagementPolicyExpirationRule extends unifiedRoleManagementPolicyExpirationRuleProps, unifiedRoleManagementPolicyExpirationRuleMethods { }
-export interface unifiedRoleManagementPolicyExpirationRuleProps extends  unifiedRoleManagementPolicyRuleProps {
+export interface unifiedRoleManagementPolicyExpirationRuleProps extends unifiedRoleManagementPolicyRuleProps {
 	isExpirationRequired: boolean;
 	maximumDuration: number;
 }
@@ -17979,7 +17980,7 @@ export interface unifiedRoleManagementPolicyExpirationRuleOData extends unifiedR
 * unifiedRoleManagementPolicyNotificationRule
 **********************************************/
 export interface unifiedRoleManagementPolicyNotificationRule extends unifiedRoleManagementPolicyNotificationRuleProps, unifiedRoleManagementPolicyNotificationRuleMethods { }
-export interface unifiedRoleManagementPolicyNotificationRuleProps extends  unifiedRoleManagementPolicyRuleProps {
+export interface unifiedRoleManagementPolicyNotificationRuleProps extends unifiedRoleManagementPolicyRuleProps {
 	isDefaultRecipientsEnabled: boolean;
 	notificationLevel: string;
 	notificationRecipients: Array<string>;
@@ -17996,7 +17997,7 @@ export interface unifiedRoleManagementPolicyNotificationRuleOData extends unifie
 * unifiedRoleManagementPolicyRule
 **********************************************/
 export interface unifiedRoleManagementPolicyRule extends unifiedRoleManagementPolicyRuleProps, unifiedRoleManagementPolicyRuleMethods { }
-export interface unifiedRoleManagementPolicyRuleProps extends  entityProps {
+export interface unifiedRoleManagementPolicyRuleProps extends entityProps {
 	target: ComplexTypes.unifiedRoleManagementPolicyRuleTarget;
 }
 export interface unifiedRoleManagementPolicyRuleMethods extends entityMethods {
@@ -18012,7 +18013,7 @@ add(values?: any): IBaseExecution<unifiedRoleManagementPolicyRule>;
 * unifiedRoleScheduleBase
 **********************************************/
 export interface unifiedRoleScheduleBase extends unifiedRoleScheduleBaseProps, unifiedRoleScheduleBaseMethods { }
-export interface unifiedRoleScheduleBaseProps extends  entityProps {
+export interface unifiedRoleScheduleBaseProps extends entityProps {
 	appScopeId: string;
 	createdDateTime: any;
 	createdUsing: string;
@@ -18038,7 +18039,7 @@ export interface unifiedRoleScheduleBaseOData extends entityOData {
 * unifiedRoleScheduleInstanceBase
 **********************************************/
 export interface unifiedRoleScheduleInstanceBase extends unifiedRoleScheduleInstanceBaseProps, unifiedRoleScheduleInstanceBaseMethods { }
-export interface unifiedRoleScheduleInstanceBaseProps extends  entityProps {
+export interface unifiedRoleScheduleInstanceBaseProps extends entityProps {
 	appScopeId: string;
 	directoryScopeId: string;
 	principalId: string;
@@ -18060,7 +18061,7 @@ export interface unifiedRoleScheduleInstanceBaseOData extends entityOData {
 * unifiedStorageQuota
 **********************************************/
 export interface unifiedStorageQuota extends unifiedStorageQuotaProps, unifiedStorageQuotaMethods { }
-export interface unifiedStorageQuotaProps extends  entityProps {
+export interface unifiedStorageQuotaProps extends entityProps {
 	deleted: number;
 	manageWebUrl: string;
 	remaining: number;
@@ -18079,7 +18080,7 @@ export interface unifiedStorageQuotaOData extends entityOData {
 * unmuteParticipantOperation
 **********************************************/
 export interface unmuteParticipantOperation extends unmuteParticipantOperationProps, unmuteParticipantOperationMethods { }
-export interface unmuteParticipantOperationProps extends  commsOperationProps {
+export interface unmuteParticipantOperationProps extends commsOperationProps {
 
 }
 export interface unmuteParticipantOperationMethods extends commsOperationMethods {
@@ -18092,7 +18093,7 @@ export interface unmuteParticipantOperationOData extends commsOperationOData {
 * updateRecordingStatusOperation
 **********************************************/
 export interface updateRecordingStatusOperation extends updateRecordingStatusOperationProps, updateRecordingStatusOperationMethods { }
-export interface updateRecordingStatusOperationProps extends  commsOperationProps {
+export interface updateRecordingStatusOperationProps extends commsOperationProps {
 
 }
 export interface updateRecordingStatusOperationMethods extends commsOperationMethods {
@@ -18105,7 +18106,7 @@ export interface updateRecordingStatusOperationOData extends commsOperationOData
 * urlAssessmentRequest
 **********************************************/
 export interface urlAssessmentRequest extends urlAssessmentRequestProps, urlAssessmentRequestMethods { }
-export interface urlAssessmentRequestProps extends  threatAssessmentRequestProps {
+export interface urlAssessmentRequestProps extends threatAssessmentRequestProps {
 	url: string;
 }
 export interface urlAssessmentRequestMethods extends threatAssessmentRequestMethods {
@@ -18118,7 +18119,7 @@ export interface urlAssessmentRequestOData extends threatAssessmentRequestOData 
 * usedInsight
 **********************************************/
 export interface usedInsight extends usedInsightProps, usedInsightMethods { }
-export interface usedInsightProps extends  entityProps {
+export interface usedInsightProps extends entityProps {
 	lastUsed: ComplexTypes.usageDetails;
 	resourceReference: ComplexTypes.resourceReference;
 	resourceVisualization: ComplexTypes.resourceVisualization;
@@ -18136,7 +18137,7 @@ add(values?: any): IBaseExecution<usedInsight>;
 * user
 **********************************************/
 export interface user extends userProps, userMethods { }
-export interface userProps extends  directoryObjectProps {
+export interface userProps extends directoryObjectProps {
 	signInActivity: ComplexTypes.signInActivity;
 	accountEnabled: boolean;
 	ageGroup: string;
@@ -18397,7 +18398,7 @@ add(values?: any): IBaseExecution<user>;
 * userActivity
 **********************************************/
 export interface userActivity extends userActivityProps, userActivityMethods { }
-export interface userActivityProps extends  entityProps {
+export interface userActivityProps extends entityProps {
 	activationUrl: string;
 	activitySourceHost: string;
 	appActivityId: string;
@@ -18426,7 +18427,7 @@ add(values?: any): IBaseExecution<userActivity>;
 * userConsentRequest
 **********************************************/
 export interface userConsentRequest extends userConsentRequestProps, userConsentRequestMethods { }
-export interface userConsentRequestProps extends  requestProps {
+export interface userConsentRequestProps extends requestProps {
 	reason: string;
 }
 export interface userConsentRequestMethods extends requestMethods {
@@ -18442,7 +18443,7 @@ add(values?: any): IBaseExecution<userConsentRequest>;
 * userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
 **********************************************/
 export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails extends userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsProps, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsMethods { }
-export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsProps extends entityProps {
 	appCrashCount: number;
 	appDisplayName: string;
 	appName: string;
@@ -18465,7 +18466,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformance
 * userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
 **********************************************/
 export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId extends userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdProps, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdMethods { }
-export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdProps extends entityProps {
 	appCrashCount: number;
 	appDisplayName: string;
 	appName: string;
@@ -18488,7 +18489,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformance
 * userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
 **********************************************/
 export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersion extends userExperienceAnalyticsAppHealthAppPerformanceByOSVersionProps, userExperienceAnalyticsAppHealthAppPerformanceByOSVersionMethods { }
-export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersionProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthAppPerformanceByOSVersionProps extends entityProps {
 	activeDeviceCount: number;
 	appCrashCount: number;
 	appDisplayName: string;
@@ -18512,7 +18513,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthAppPerformance
 * userExperienceAnalyticsAppHealthApplicationPerformance
 **********************************************/
 export interface userExperienceAnalyticsAppHealthApplicationPerformance extends userExperienceAnalyticsAppHealthApplicationPerformanceProps, userExperienceAnalyticsAppHealthApplicationPerformanceMethods { }
-export interface userExperienceAnalyticsAppHealthApplicationPerformanceProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthApplicationPerformanceProps extends entityProps {
 	activeDeviceCount: number;
 	appCrashCount: number;
 	appDisplayName: string;
@@ -18536,7 +18537,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthApplicationPer
 * userExperienceAnalyticsAppHealthDeviceModelPerformance
 **********************************************/
 export interface userExperienceAnalyticsAppHealthDeviceModelPerformance extends userExperienceAnalyticsAppHealthDeviceModelPerformanceProps, userExperienceAnalyticsAppHealthDeviceModelPerformanceMethods { }
-export interface userExperienceAnalyticsAppHealthDeviceModelPerformanceProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthDeviceModelPerformanceProps extends entityProps {
 	activeDeviceCount: number;
 	deviceManufacturer: string;
 	deviceModel: string;
@@ -18557,7 +18558,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDeviceModelPer
 * userExperienceAnalyticsAppHealthDevicePerformance
 **********************************************/
 export interface userExperienceAnalyticsAppHealthDevicePerformance extends userExperienceAnalyticsAppHealthDevicePerformanceProps, userExperienceAnalyticsAppHealthDevicePerformanceMethods { }
-export interface userExperienceAnalyticsAppHealthDevicePerformanceProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthDevicePerformanceProps extends entityProps {
 	appCrashCount: number;
 	appHangCount: number;
 	crashedAppCount: number;
@@ -18583,7 +18584,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDevicePerforma
 * userExperienceAnalyticsAppHealthDevicePerformanceDetails
 **********************************************/
 export interface userExperienceAnalyticsAppHealthDevicePerformanceDetails extends userExperienceAnalyticsAppHealthDevicePerformanceDetailsProps, userExperienceAnalyticsAppHealthDevicePerformanceDetailsMethods { }
-export interface userExperienceAnalyticsAppHealthDevicePerformanceDetailsProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthDevicePerformanceDetailsProps extends entityProps {
 	appDisplayName: string;
 	appPublisher: string;
 	appVersion: string;
@@ -18605,7 +18606,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthDevicePerforma
 * userExperienceAnalyticsAppHealthOSVersionPerformance
 **********************************************/
 export interface userExperienceAnalyticsAppHealthOSVersionPerformance extends userExperienceAnalyticsAppHealthOSVersionPerformanceProps, userExperienceAnalyticsAppHealthOSVersionPerformanceMethods { }
-export interface userExperienceAnalyticsAppHealthOSVersionPerformanceProps extends  entityProps {
+export interface userExperienceAnalyticsAppHealthOSVersionPerformanceProps extends entityProps {
 	activeDeviceCount: number;
 	meanTimeToFailureInMinutes: number;
 	osBuildNumber: string;
@@ -18625,7 +18626,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsAppHealthOSVersionPerfo
 * userExperienceAnalyticsBaseline
 **********************************************/
 export interface userExperienceAnalyticsBaseline extends userExperienceAnalyticsBaselineProps, userExperienceAnalyticsBaselineMethods { }
-export interface userExperienceAnalyticsBaselineProps extends  entityProps {
+export interface userExperienceAnalyticsBaselineProps extends entityProps {
 	createdDateTime: any;
 	displayName: string;
 	isBuiltIn: boolean;
@@ -18655,7 +18656,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsBaseline>;
 * userExperienceAnalyticsCategory
 **********************************************/
 export interface userExperienceAnalyticsCategory extends userExperienceAnalyticsCategoryProps, userExperienceAnalyticsCategoryMethods { }
-export interface userExperienceAnalyticsCategoryProps extends  entityProps {
+export interface userExperienceAnalyticsCategoryProps extends entityProps {
 	insights: ComplexTypes.userExperienceAnalyticsInsight[];
 }
 export interface userExperienceAnalyticsCategoryMethods extends entityMethods {
@@ -18672,7 +18673,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsCategory>;
 * userExperienceAnalyticsDevicePerformance
 **********************************************/
 export interface userExperienceAnalyticsDevicePerformance extends userExperienceAnalyticsDevicePerformanceProps, userExperienceAnalyticsDevicePerformanceMethods { }
-export interface userExperienceAnalyticsDevicePerformanceProps extends  entityProps {
+export interface userExperienceAnalyticsDevicePerformanceProps extends entityProps {
 	averageBlueScreens: number;
 	averageRestarts: number;
 	blueScreenCount: number;
@@ -18707,7 +18708,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsDevicePerformance>;
 * userExperienceAnalyticsDeviceScores
 **********************************************/
 export interface userExperienceAnalyticsDeviceScores extends userExperienceAnalyticsDeviceScoresProps, userExperienceAnalyticsDeviceScoresMethods { }
-export interface userExperienceAnalyticsDeviceScoresProps extends  entityProps {
+export interface userExperienceAnalyticsDeviceScoresProps extends entityProps {
 	appReliabilityScore: number;
 	batteryHealthScore: number;
 	deviceName: string;
@@ -18731,7 +18732,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceScores>;
 * userExperienceAnalyticsDeviceStartupHistory
 **********************************************/
 export interface userExperienceAnalyticsDeviceStartupHistory extends userExperienceAnalyticsDeviceStartupHistoryProps, userExperienceAnalyticsDeviceStartupHistoryMethods { }
-export interface userExperienceAnalyticsDeviceStartupHistoryProps extends  entityProps {
+export interface userExperienceAnalyticsDeviceStartupHistoryProps extends entityProps {
 	coreBootTimeInMs: number;
 	coreLoginTimeInMs: number;
 	deviceId: string;
@@ -18762,7 +18763,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupHistory>;
 * userExperienceAnalyticsDeviceStartupProcess
 **********************************************/
 export interface userExperienceAnalyticsDeviceStartupProcess extends userExperienceAnalyticsDeviceStartupProcessProps, userExperienceAnalyticsDeviceStartupProcessMethods { }
-export interface userExperienceAnalyticsDeviceStartupProcessProps extends  entityProps {
+export interface userExperienceAnalyticsDeviceStartupProcessProps extends entityProps {
 	managedDeviceId: string;
 	processName: string;
 	productName: string;
@@ -18782,7 +18783,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupProcess>;
 * userExperienceAnalyticsDeviceStartupProcessPerformance
 **********************************************/
 export interface userExperienceAnalyticsDeviceStartupProcessPerformance extends userExperienceAnalyticsDeviceStartupProcessPerformanceProps, userExperienceAnalyticsDeviceStartupProcessPerformanceMethods { }
-export interface userExperienceAnalyticsDeviceStartupProcessPerformanceProps extends  entityProps {
+export interface userExperienceAnalyticsDeviceStartupProcessPerformanceProps extends entityProps {
 	deviceCount: number;
 	medianImpactInMs: number;
 	processName: string;
@@ -18803,7 +18804,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsDeviceStartupProcessPer
 * userExperienceAnalyticsMetric
 **********************************************/
 export interface userExperienceAnalyticsMetric extends userExperienceAnalyticsMetricProps, userExperienceAnalyticsMetricMethods { }
-export interface userExperienceAnalyticsMetricProps extends  entityProps {
+export interface userExperienceAnalyticsMetricProps extends entityProps {
 	unit: string;
 	value: number;
 }
@@ -18820,7 +18821,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsMetric>;
 * userExperienceAnalyticsMetricHistory
 **********************************************/
 export interface userExperienceAnalyticsMetricHistory extends userExperienceAnalyticsMetricHistoryProps, userExperienceAnalyticsMetricHistoryMethods { }
-export interface userExperienceAnalyticsMetricHistoryProps extends  entityProps {
+export interface userExperienceAnalyticsMetricHistoryProps extends entityProps {
 	deviceId: string;
 	metricDateTime: any;
 	metricType: string;
@@ -18838,7 +18839,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsMetricHistory>;
 * userExperienceAnalyticsModelScores
 **********************************************/
 export interface userExperienceAnalyticsModelScores extends userExperienceAnalyticsModelScoresProps, userExperienceAnalyticsModelScoresMethods { }
-export interface userExperienceAnalyticsModelScoresProps extends  entityProps {
+export interface userExperienceAnalyticsModelScoresProps extends entityProps {
 	appReliabilityScore: number;
 	batteryHealthScore: number;
 	endpointAnalyticsScore: number;
@@ -18862,7 +18863,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsModelScores>;
 * userExperienceAnalyticsOverview
 **********************************************/
 export interface userExperienceAnalyticsOverview extends userExperienceAnalyticsOverviewProps, userExperienceAnalyticsOverviewMethods { }
-export interface userExperienceAnalyticsOverviewProps extends  entityProps {
+export interface userExperienceAnalyticsOverviewProps extends entityProps {
 	insights: ComplexTypes.userExperienceAnalyticsInsight[];
 }
 export interface userExperienceAnalyticsOverviewMethods extends entityMethods {
@@ -18875,7 +18876,7 @@ export interface userExperienceAnalyticsOverviewOData extends entityOData {
 * userExperienceAnalyticsScoreHistory
 **********************************************/
 export interface userExperienceAnalyticsScoreHistory extends userExperienceAnalyticsScoreHistoryProps, userExperienceAnalyticsScoreHistoryMethods { }
-export interface userExperienceAnalyticsScoreHistoryProps extends  entityProps {
+export interface userExperienceAnalyticsScoreHistoryProps extends entityProps {
 	startupDateTime: any;
 }
 export interface userExperienceAnalyticsScoreHistoryMethods extends entityMethods {
@@ -18891,7 +18892,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsScoreHistory>;
 * userExperienceAnalyticsWorkFromAnywhereDevice
 **********************************************/
 export interface userExperienceAnalyticsWorkFromAnywhereDevice extends userExperienceAnalyticsWorkFromAnywhereDeviceProps, userExperienceAnalyticsWorkFromAnywhereDeviceMethods { }
-export interface userExperienceAnalyticsWorkFromAnywhereDeviceProps extends  entityProps {
+export interface userExperienceAnalyticsWorkFromAnywhereDeviceProps extends entityProps {
 	autoPilotProfileAssigned: boolean;
 	autoPilotRegistered: boolean;
 	azureAdDeviceId: string;
@@ -18940,7 +18941,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereDevice>
 * userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
 **********************************************/
 export interface userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric extends userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricProps, userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricMethods { }
-export interface userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricProps extends  entityProps {
+export interface userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricProps extends entityProps {
 	osCheckFailedPercentage: number;
 	processor64BitCheckFailedPercentage: number;
 	processorCoreCountCheckFailedPercentage: number;
@@ -18963,7 +18964,7 @@ export interface userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricO
 * userExperienceAnalyticsWorkFromAnywhereMetric
 **********************************************/
 export interface userExperienceAnalyticsWorkFromAnywhereMetric extends userExperienceAnalyticsWorkFromAnywhereMetricProps, userExperienceAnalyticsWorkFromAnywhereMetricMethods { }
-export interface userExperienceAnalyticsWorkFromAnywhereMetricProps extends  entityProps {
+export interface userExperienceAnalyticsWorkFromAnywhereMetricProps extends entityProps {
 
 }
 export interface userExperienceAnalyticsWorkFromAnywhereMetricMethods extends entityMethods {
@@ -18980,7 +18981,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereMetric>
 * userExperienceAnalyticsWorkFromAnywhereModelPerformance
 **********************************************/
 export interface userExperienceAnalyticsWorkFromAnywhereModelPerformance extends userExperienceAnalyticsWorkFromAnywhereModelPerformanceProps, userExperienceAnalyticsWorkFromAnywhereModelPerformanceMethods { }
-export interface userExperienceAnalyticsWorkFromAnywhereModelPerformanceProps extends  entityProps {
+export interface userExperienceAnalyticsWorkFromAnywhereModelPerformanceProps extends entityProps {
 	cloudIdentityScore: number;
 	cloudManagementScore: number;
 	cloudProvisioningScore: number;
@@ -19004,7 +19005,7 @@ add(values?: any): IBaseExecution<userExperienceAnalyticsWorkFromAnywhereModelPe
 * userFlowLanguageConfiguration
 **********************************************/
 export interface userFlowLanguageConfiguration extends userFlowLanguageConfigurationProps, userFlowLanguageConfigurationMethods { }
-export interface userFlowLanguageConfigurationProps extends  entityProps {
+export interface userFlowLanguageConfigurationProps extends entityProps {
 	displayName: string;
 	isEnabled: boolean;
 }
@@ -19025,7 +19026,7 @@ add(values?: any): IBaseExecution<userFlowLanguageConfiguration>;
 * userFlowLanguagePage
 **********************************************/
 export interface userFlowLanguagePage extends userFlowLanguagePageProps, userFlowLanguagePageMethods { }
-export interface userFlowLanguagePageProps extends  entityProps {
+export interface userFlowLanguagePageProps extends entityProps {
 
 }
 export interface userFlowLanguagePageMethods extends entityMethods {
@@ -19041,7 +19042,7 @@ add(values?: any): IBaseExecution<userFlowLanguagePage>;
 * userInsightsSettings
 **********************************************/
 export interface userInsightsSettings extends userInsightsSettingsProps, userInsightsSettingsMethods { }
-export interface userInsightsSettingsProps extends  entityProps {
+export interface userInsightsSettingsProps extends entityProps {
 	isEnabled: boolean;
 }
 export interface userInsightsSettingsMethods extends entityMethods {
@@ -19054,7 +19055,7 @@ export interface userInsightsSettingsOData extends entityOData {
 * userInstallStateSummary
 **********************************************/
 export interface userInstallStateSummary extends userInstallStateSummaryProps, userInstallStateSummaryMethods { }
-export interface userInstallStateSummaryProps extends  entityProps {
+export interface userInstallStateSummaryProps extends entityProps {
 	failedDeviceCount: number;
 	installedDeviceCount: number;
 	notInstalledDeviceCount: number;
@@ -19074,7 +19075,7 @@ add(values?: any): IBaseExecution<userInstallStateSummary>;
 * userProcessingResult
 **********************************************/
 export interface userProcessingResult extends userProcessingResultProps, userProcessingResultMethods { }
-export interface userProcessingResultProps extends  entityProps {
+export interface userProcessingResultProps extends entityProps {
 	completedDateTime: any;
 	failedTasksCount: number;
 	processingStatus: EnumTypes.lifecycleWorkflowProcessingStatus;
@@ -19098,7 +19099,7 @@ export interface userProcessingResultOData extends entityOData {
 * userRegistrationDetails
 **********************************************/
 export interface userRegistrationDetails extends userRegistrationDetailsProps, userRegistrationDetailsMethods { }
-export interface userRegistrationDetailsProps extends  entityProps {
+export interface userRegistrationDetailsProps extends entityProps {
 	isAdmin: boolean;
 	isMfaCapable: boolean;
 	isMfaRegistered: boolean;
@@ -19128,7 +19129,7 @@ add(values?: any): IBaseExecution<userRegistrationDetails>;
 * userScopeTeamsAppInstallation
 **********************************************/
 export interface userScopeTeamsAppInstallation extends userScopeTeamsAppInstallationProps, userScopeTeamsAppInstallationMethods { }
-export interface userScopeTeamsAppInstallationProps extends  teamsAppInstallationProps {
+export interface userScopeTeamsAppInstallationProps extends teamsAppInstallationProps {
 
 }
 export interface userScopeTeamsAppInstallationMethods extends teamsAppInstallationMethods {
@@ -19144,7 +19145,7 @@ add(values?: any): IBaseExecution<userScopeTeamsAppInstallation>;
 * userSettings
 **********************************************/
 export interface userSettings extends userSettingsProps, userSettingsMethods { }
-export interface userSettingsProps extends  entityProps {
+export interface userSettingsProps extends entityProps {
 	contributionToContentDiscoveryAsOrganizationDisabled: boolean;
 	contributionToContentDiscoveryDisabled: boolean;
 }
@@ -19165,7 +19166,7 @@ export interface userSettingsOData extends entityOData {
 * userSignInInsight
 **********************************************/
 export interface userSignInInsight extends userSignInInsightProps, userSignInInsightMethods { }
-export interface userSignInInsightProps extends  governanceInsightProps {
+export interface userSignInInsightProps extends governanceInsightProps {
 	lastSignInDateTime: any;
 }
 export interface userSignInInsightMethods extends governanceInsightMethods {
@@ -19178,7 +19179,7 @@ export interface userSignInInsightOData extends governanceInsightOData {
 * userSolutionRoot
 **********************************************/
 export interface userSolutionRoot extends userSolutionRootProps, userSolutionRootMethods { }
-export interface userSolutionRootProps extends  entityProps {
+export interface userSolutionRootProps extends entityProps {
 
 }
 export interface userSolutionRootMethods extends entityMethods {
@@ -19191,7 +19192,7 @@ export interface userSolutionRootOData extends entityOData {
 * userSource
 **********************************************/
 export interface userSource extends userSourceProps, userSourceMethods { }
-export interface userSourceProps extends  dataSourceProps {
+export interface userSourceProps extends dataSourceProps {
 	email: string;
 	includedSources: EnumTypes.sourceType;
 	siteWebUrl: string;
@@ -19206,7 +19207,7 @@ export interface userSourceOData extends dataSourceOData {
 * userStorage
 **********************************************/
 export interface userStorage extends userStorageProps, userStorageMethods { }
-export interface userStorageProps extends  entityProps {
+export interface userStorageProps extends entityProps {
 
 }
 export interface userStorageMethods extends entityMethods {
@@ -19219,7 +19220,7 @@ export interface userStorageOData extends entityOData {
 * userTeamwork
 **********************************************/
 export interface userTeamwork extends userTeamworkProps, userTeamworkMethods { }
-export interface userTeamworkProps extends  entityProps {
+export interface userTeamworkProps extends entityProps {
 	locale: string;
 	region: string;
 }
@@ -19239,7 +19240,7 @@ export interface userTeamworkOData extends entityOData {
 * verticalSection
 **********************************************/
 export interface verticalSection extends verticalSectionProps, verticalSectionMethods { }
-export interface verticalSectionProps extends  entityProps {
+export interface verticalSectionProps extends entityProps {
 	emphasis: EnumTypes.sectionEmphasisType;
 }
 export interface verticalSectionMethods extends entityMethods {
@@ -19253,7 +19254,7 @@ export interface verticalSectionOData extends entityOData {
 * virtualEndpoint
 **********************************************/
 export interface virtualEndpoint extends virtualEndpointProps, virtualEndpointMethods { }
-export interface virtualEndpointProps extends  entityProps {
+export interface virtualEndpointProps extends entityProps {
 
 }
 export interface virtualEndpointMethods extends entityMethods {
@@ -19285,7 +19286,7 @@ export interface virtualEndpointOData extends entityOData {
 * virtualEvent
 **********************************************/
 export interface virtualEvent extends virtualEventProps, virtualEventMethods { }
-export interface virtualEventProps extends  entityProps {
+export interface virtualEventProps extends entityProps {
 	createdBy: ComplexTypes.communicationsIdentitySet;
 	description: ComplexTypes.itemBody;
 	displayName: string;
@@ -19318,7 +19319,7 @@ add(values?: any): IBaseExecution<virtualEvent>;
 * virtualEventPresenter
 **********************************************/
 export interface virtualEventPresenter extends virtualEventPresenterProps, virtualEventPresenterMethods { }
-export interface virtualEventPresenterProps extends  entityProps {
+export interface virtualEventPresenterProps extends entityProps {
 	email: string;
 	identity: ComplexTypes.identity;
 	presenterDetails: ComplexTypes.virtualEventPresenterDetails;
@@ -19336,7 +19337,7 @@ add(values?: any): IBaseExecution<virtualEventPresenter>;
 * virtualEventRegistration
 **********************************************/
 export interface virtualEventRegistration extends virtualEventRegistrationProps, virtualEventRegistrationMethods { }
-export interface virtualEventRegistrationProps extends  entityProps {
+export interface virtualEventRegistrationProps extends entityProps {
 	cancelationDateTime: any;
 	email: string;
 	externalRegistrationInformation: ComplexTypes.virtualEventExternalRegistrationInformation;
@@ -19365,7 +19366,7 @@ add(values?: any): IBaseExecution<virtualEventRegistration>;
 * virtualEventRegistrationConfiguration
 **********************************************/
 export interface virtualEventRegistrationConfiguration extends virtualEventRegistrationConfigurationProps, virtualEventRegistrationConfigurationMethods { }
-export interface virtualEventRegistrationConfigurationProps extends  entityProps {
+export interface virtualEventRegistrationConfigurationProps extends entityProps {
 	capacity: number;
 	registrationWebUrl: string;
 }
@@ -19380,7 +19381,7 @@ export interface virtualEventRegistrationConfigurationOData extends entityOData 
 * virtualEventRegistrationCustomQuestion
 **********************************************/
 export interface virtualEventRegistrationCustomQuestion extends virtualEventRegistrationCustomQuestionProps, virtualEventRegistrationCustomQuestionMethods { }
-export interface virtualEventRegistrationCustomQuestionProps extends  virtualEventRegistrationQuestionBaseProps {
+export interface virtualEventRegistrationCustomQuestionProps extends virtualEventRegistrationQuestionBaseProps {
 	answerChoices: Array<string>;
 	answerInputType: EnumTypes.virtualEventRegistrationQuestionAnswerInputType;
 }
@@ -19394,7 +19395,7 @@ export interface virtualEventRegistrationCustomQuestionOData extends virtualEven
 * virtualEventRegistrationPredefinedQuestion
 **********************************************/
 export interface virtualEventRegistrationPredefinedQuestion extends virtualEventRegistrationPredefinedQuestionProps, virtualEventRegistrationPredefinedQuestionMethods { }
-export interface virtualEventRegistrationPredefinedQuestionProps extends  virtualEventRegistrationQuestionBaseProps {
+export interface virtualEventRegistrationPredefinedQuestionProps extends virtualEventRegistrationQuestionBaseProps {
 	label: EnumTypes.virtualEventRegistrationPredefinedQuestionLabel;
 }
 export interface virtualEventRegistrationPredefinedQuestionMethods extends virtualEventRegistrationQuestionBaseMethods {
@@ -19407,7 +19408,7 @@ export interface virtualEventRegistrationPredefinedQuestionOData extends virtual
 * virtualEventRegistrationQuestionBase
 **********************************************/
 export interface virtualEventRegistrationQuestionBase extends virtualEventRegistrationQuestionBaseProps, virtualEventRegistrationQuestionBaseMethods { }
-export interface virtualEventRegistrationQuestionBaseProps extends  entityProps {
+export interface virtualEventRegistrationQuestionBaseProps extends entityProps {
 	displayName: string;
 	isRequired: boolean;
 }
@@ -19424,7 +19425,7 @@ add(values?: any): IBaseExecution<virtualEventRegistrationQuestionBase>;
 * virtualEventSession
 **********************************************/
 export interface virtualEventSession extends virtualEventSessionProps, virtualEventSessionMethods { }
-export interface virtualEventSessionProps extends  onlineMeetingBaseProps {
+export interface virtualEventSessionProps extends onlineMeetingBaseProps {
 	endDateTime: ComplexTypes.dateTimeTimeZone;
 	startDateTime: ComplexTypes.dateTimeTimeZone;
 }
@@ -19441,7 +19442,7 @@ add(values?: any): IBaseExecution<virtualEventSession>;
 * virtualEventTownhall
 **********************************************/
 export interface virtualEventTownhall extends virtualEventTownhallProps, virtualEventTownhallMethods { }
-export interface virtualEventTownhallProps extends  virtualEventProps {
+export interface virtualEventTownhallProps extends virtualEventProps {
 	audience: EnumTypes.meetingAudience;
 	coOrganizers: ComplexTypes.communicationsUserIdentity[];
 	invitedAttendees: ComplexTypes.identity[];
@@ -19460,7 +19461,7 @@ add(values?: any): IBaseExecution<virtualEventTownhall>;
 * virtualEventWebinar
 **********************************************/
 export interface virtualEventWebinar extends virtualEventWebinarProps, virtualEventWebinarMethods { }
-export interface virtualEventWebinarProps extends  virtualEventProps {
+export interface virtualEventWebinarProps extends virtualEventProps {
 	audience: EnumTypes.meetingAudience;
 	coOrganizers: ComplexTypes.communicationsUserIdentity[];
 }
@@ -19480,7 +19481,7 @@ add(values?: any): IBaseExecution<virtualEventWebinar>;
 * virtualEventWebinarRegistrationConfiguration
 **********************************************/
 export interface virtualEventWebinarRegistrationConfiguration extends virtualEventWebinarRegistrationConfigurationProps, virtualEventWebinarRegistrationConfigurationMethods { }
-export interface virtualEventWebinarRegistrationConfigurationProps extends  virtualEventRegistrationConfigurationProps {
+export interface virtualEventWebinarRegistrationConfigurationProps extends virtualEventRegistrationConfigurationProps {
 	isManualApprovalEnabled: boolean;
 	isWaitlistEnabled: boolean;
 }
@@ -19494,7 +19495,7 @@ export interface virtualEventWebinarRegistrationConfigurationOData extends virtu
 * virtualEventsRoot
 **********************************************/
 export interface virtualEventsRoot extends virtualEventsRootProps, virtualEventsRootMethods { }
-export interface virtualEventsRootProps extends  entityProps {
+export interface virtualEventsRootProps extends entityProps {
 
 }
 export interface virtualEventsRootMethods extends entityMethods {
@@ -19514,7 +19515,7 @@ export interface virtualEventsRootOData extends entityOData {
 * voiceAuthenticationMethodConfiguration
 **********************************************/
 export interface voiceAuthenticationMethodConfiguration extends voiceAuthenticationMethodConfigurationProps, voiceAuthenticationMethodConfigurationMethods { }
-export interface voiceAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface voiceAuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 	isOfficePhoneAllowed: boolean;
 }
 export interface voiceAuthenticationMethodConfigurationMethods extends authenticationMethodConfigurationMethods {
@@ -19528,7 +19529,7 @@ export interface voiceAuthenticationMethodConfigurationOData extends authenticat
 * vppToken
 **********************************************/
 export interface vppToken extends vppTokenProps, vppTokenMethods { }
-export interface vppTokenProps extends  entityProps {
+export interface vppTokenProps extends entityProps {
 	appleId: string;
 	automaticallyUpdateApps: boolean;
 	countryOrRegion: string;
@@ -19554,7 +19555,7 @@ add(values?: any): IBaseExecution<vppToken>;
 * vulnerability
 **********************************************/
 export interface vulnerability extends vulnerabilityProps, vulnerabilityMethods { }
-export interface vulnerabilityProps extends  entityProps {
+export interface vulnerabilityProps extends entityProps {
 	activeExploitsObserved: boolean;
 	commonWeaknessEnumerationIds: Array<string>;
 	createdDateTime: any;
@@ -19585,7 +19586,7 @@ export interface vulnerabilityOData extends entityOData {
 * vulnerabilityComponent
 **********************************************/
 export interface vulnerabilityComponent extends vulnerabilityComponentProps, vulnerabilityComponentMethods { }
-export interface vulnerabilityComponentProps extends  entityProps {
+export interface vulnerabilityComponentProps extends entityProps {
 	name: string;
 }
 export interface vulnerabilityComponentMethods extends entityMethods {
@@ -19598,7 +19599,7 @@ export interface vulnerabilityComponentOData extends entityOData {
 * webApp
 **********************************************/
 export interface webApp extends webAppProps, webAppMethods { }
-export interface webAppProps extends  mobileAppProps {
+export interface webAppProps extends mobileAppProps {
 	appUrl: string;
 	useManagedBrowser: boolean;
 }
@@ -19612,7 +19613,7 @@ export interface webAppOData extends mobileAppOData {
 * webPart
 **********************************************/
 export interface webPart extends webPartProps, webPartMethods { }
-export interface webPartProps extends  entityProps {
+export interface webPartProps extends entityProps {
 
 }
 export interface webPartMethods extends entityMethods {
@@ -19628,7 +19629,7 @@ add(values?: any): IBaseExecution<webPart>;
 * whoisBaseRecord
 **********************************************/
 export interface whoisBaseRecord extends whoisBaseRecordProps, whoisBaseRecordMethods { }
-export interface whoisBaseRecordProps extends  entityProps {
+export interface whoisBaseRecordProps extends entityProps {
 	abuse: ComplexTypes.whoisContact;
 	admin: ComplexTypes.whoisContact;
 	billing: ComplexTypes.whoisContact;
@@ -19657,7 +19658,7 @@ export interface whoisBaseRecordOData extends entityOData {
 * whoisHistoryRecord
 **********************************************/
 export interface whoisHistoryRecord extends whoisHistoryRecordProps, whoisHistoryRecordMethods { }
-export interface whoisHistoryRecordProps extends  whoisBaseRecordProps {
+export interface whoisHistoryRecordProps extends whoisBaseRecordProps {
 
 }
 export interface whoisHistoryRecordMethods extends whoisBaseRecordMethods {
@@ -19670,7 +19671,7 @@ export interface whoisHistoryRecordOData extends whoisBaseRecordOData {
 * whoisRecord
 **********************************************/
 export interface whoisRecord extends whoisRecordProps, whoisRecordMethods { }
-export interface whoisRecordProps extends  whoisBaseRecordProps {
+export interface whoisRecordProps extends whoisBaseRecordProps {
 
 }
 export interface whoisRecordMethods extends whoisBaseRecordMethods {
@@ -19684,7 +19685,7 @@ export interface whoisRecordOData extends whoisBaseRecordOData {
 * win32LobApp
 **********************************************/
 export interface win32LobApp extends win32LobAppProps, win32LobAppMethods { }
-export interface win32LobAppProps extends  mobileLobAppProps {
+export interface win32LobAppProps extends mobileLobAppProps {
 	applicableArchitectures: EnumTypes.windowsArchitecture;
 	installCommandLine: string;
 	installExperience: ComplexTypes.win32LobAppInstallExperience;
@@ -19709,7 +19710,7 @@ export interface win32LobAppOData extends mobileLobAppOData {
 * windows10CompliancePolicy
 **********************************************/
 export interface windows10CompliancePolicy extends windows10CompliancePolicyProps, windows10CompliancePolicyMethods { }
-export interface windows10CompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface windows10CompliancePolicyProps extends deviceCompliancePolicyProps {
 	bitLockerEnabled: boolean;
 	codeIntegrityEnabled: boolean;
 	earlyLaunchAntiMalwareDriverEnabled: boolean;
@@ -19740,7 +19741,7 @@ export interface windows10CompliancePolicyOData extends deviceCompliancePolicyOD
 * windows10CustomConfiguration
 **********************************************/
 export interface windows10CustomConfiguration extends windows10CustomConfigurationProps, windows10CustomConfigurationMethods { }
-export interface windows10CustomConfigurationProps extends  deviceConfigurationProps {
+export interface windows10CustomConfigurationProps extends deviceConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface windows10CustomConfigurationMethods extends deviceConfigurationMethods {
@@ -19753,7 +19754,7 @@ export interface windows10CustomConfigurationOData extends deviceConfigurationOD
 * windows10EndpointProtectionConfiguration
 **********************************************/
 export interface windows10EndpointProtectionConfiguration extends windows10EndpointProtectionConfigurationProps, windows10EndpointProtectionConfigurationMethods { }
-export interface windows10EndpointProtectionConfigurationProps extends  deviceConfigurationProps {
+export interface windows10EndpointProtectionConfigurationProps extends deviceConfigurationProps {
 	applicationGuardAllowPersistence: boolean;
 	applicationGuardAllowPrintToLocalPrinters: boolean;
 	applicationGuardAllowPrintToNetworkPrinters: boolean;
@@ -19801,7 +19802,7 @@ export interface windows10EndpointProtectionConfigurationOData extends deviceCon
 * windows10EnrollmentCompletionPageConfiguration
 **********************************************/
 export interface windows10EnrollmentCompletionPageConfiguration extends windows10EnrollmentCompletionPageConfigurationProps, windows10EnrollmentCompletionPageConfigurationMethods { }
-export interface windows10EnrollmentCompletionPageConfigurationProps extends  deviceEnrollmentConfigurationProps {
+export interface windows10EnrollmentCompletionPageConfigurationProps extends deviceEnrollmentConfigurationProps {
 	allowNonBlockingAppInstallation: boolean;
 }
 export interface windows10EnrollmentCompletionPageConfigurationMethods extends deviceEnrollmentConfigurationMethods {
@@ -19814,7 +19815,7 @@ export interface windows10EnrollmentCompletionPageConfigurationOData extends dev
 * windows10EnterpriseModernAppManagementConfiguration
 **********************************************/
 export interface windows10EnterpriseModernAppManagementConfiguration extends windows10EnterpriseModernAppManagementConfigurationProps, windows10EnterpriseModernAppManagementConfigurationMethods { }
-export interface windows10EnterpriseModernAppManagementConfigurationProps extends  deviceConfigurationProps {
+export interface windows10EnterpriseModernAppManagementConfigurationProps extends deviceConfigurationProps {
 	uninstallBuiltInApps: boolean;
 }
 export interface windows10EnterpriseModernAppManagementConfigurationMethods extends deviceConfigurationMethods {
@@ -19827,7 +19828,7 @@ export interface windows10EnterpriseModernAppManagementConfigurationOData extend
 * windows10GeneralConfiguration
 **********************************************/
 export interface windows10GeneralConfiguration extends windows10GeneralConfigurationProps, windows10GeneralConfigurationMethods { }
-export interface windows10GeneralConfigurationProps extends  deviceConfigurationProps {
+export interface windows10GeneralConfigurationProps extends deviceConfigurationProps {
 	accountsBlockAddingNonMicrosoftAccountEmail: boolean;
 	antiTheftModeBlocked: boolean;
 	appsAllowTrustedAppsSideloading: EnumTypes.stateManagementSetting;
@@ -20040,7 +20041,7 @@ export interface windows10GeneralConfigurationOData extends deviceConfigurationO
 * windows10MobileCompliancePolicy
 **********************************************/
 export interface windows10MobileCompliancePolicy extends windows10MobileCompliancePolicyProps, windows10MobileCompliancePolicyMethods { }
-export interface windows10MobileCompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface windows10MobileCompliancePolicyProps extends deviceCompliancePolicyProps {
 	bitLockerEnabled: boolean;
 	codeIntegrityEnabled: boolean;
 	earlyLaunchAntiMalwareDriverEnabled: boolean;
@@ -20068,7 +20069,7 @@ export interface windows10MobileCompliancePolicyOData extends deviceCompliancePo
 * windows10SecureAssessmentConfiguration
 **********************************************/
 export interface windows10SecureAssessmentConfiguration extends windows10SecureAssessmentConfigurationProps, windows10SecureAssessmentConfigurationMethods { }
-export interface windows10SecureAssessmentConfigurationProps extends  deviceConfigurationProps {
+export interface windows10SecureAssessmentConfigurationProps extends deviceConfigurationProps {
 	allowPrinting: boolean;
 	allowScreenCapture: boolean;
 	allowTextSuggestion: boolean;
@@ -20085,7 +20086,7 @@ export interface windows10SecureAssessmentConfigurationOData extends deviceConfi
 * windows10TeamGeneralConfiguration
 **********************************************/
 export interface windows10TeamGeneralConfiguration extends windows10TeamGeneralConfigurationProps, windows10TeamGeneralConfigurationMethods { }
-export interface windows10TeamGeneralConfigurationProps extends  deviceConfigurationProps {
+export interface windows10TeamGeneralConfigurationProps extends deviceConfigurationProps {
 	azureOperationalInsightsBlockTelemetry: boolean;
 	azureOperationalInsightsWorkspaceId: string;
 	azureOperationalInsightsWorkspaceKey: string;
@@ -20117,7 +20118,7 @@ export interface windows10TeamGeneralConfigurationOData extends deviceConfigurat
 * windows81CompliancePolicy
 **********************************************/
 export interface windows81CompliancePolicy extends windows81CompliancePolicyProps, windows81CompliancePolicyMethods { }
-export interface windows81CompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface windows81CompliancePolicyProps extends deviceCompliancePolicyProps {
 	osMaximumVersion: string;
 	osMinimumVersion: string;
 	passwordBlockSimple: boolean;
@@ -20140,7 +20141,7 @@ export interface windows81CompliancePolicyOData extends deviceCompliancePolicyOD
 * windows81GeneralConfiguration
 **********************************************/
 export interface windows81GeneralConfiguration extends windows81GeneralConfigurationProps, windows81GeneralConfigurationMethods { }
-export interface windows81GeneralConfigurationProps extends  deviceConfigurationProps {
+export interface windows81GeneralConfigurationProps extends deviceConfigurationProps {
 	accountsBlockAddingNonMicrosoftAccountEmail: boolean;
 	applyOnlyToWindows81: boolean;
 	browserBlockAutofill: boolean;
@@ -20185,7 +20186,7 @@ export interface windows81GeneralConfigurationOData extends deviceConfigurationO
 * windowsAppX
 **********************************************/
 export interface windowsAppX extends windowsAppXProps, windowsAppXMethods { }
-export interface windowsAppXProps extends  mobileLobAppProps {
+export interface windowsAppXProps extends mobileLobAppProps {
 	applicableArchitectures: EnumTypes.windowsArchitecture;
 	identityName: string;
 	identityPublisherHash: string;
@@ -20204,7 +20205,7 @@ export interface windowsAppXOData extends mobileLobAppOData {
 * windowsAutopilotDeploymentProfile
 **********************************************/
 export interface windowsAutopilotDeploymentProfile extends windowsAutopilotDeploymentProfileProps, windowsAutopilotDeploymentProfileMethods { }
-export interface windowsAutopilotDeploymentProfileProps extends  entityProps {
+export interface windowsAutopilotDeploymentProfileProps extends entityProps {
 	createdDateTime: any;
 	description: string;
 	deviceNameTemplate: string;
@@ -20229,7 +20230,7 @@ export interface windowsAutopilotDeploymentProfileOData extends entityOData {
 * windowsAutopilotDeploymentProfileAssignment
 **********************************************/
 export interface windowsAutopilotDeploymentProfileAssignment extends windowsAutopilotDeploymentProfileAssignmentProps, windowsAutopilotDeploymentProfileAssignmentMethods { }
-export interface windowsAutopilotDeploymentProfileAssignmentProps extends  entityProps {
+export interface windowsAutopilotDeploymentProfileAssignmentProps extends entityProps {
 
 }
 export interface windowsAutopilotDeploymentProfileAssignmentMethods extends entityMethods {
@@ -20242,7 +20243,7 @@ export interface windowsAutopilotDeploymentProfileAssignmentOData extends entity
 * windowsAutopilotDeviceIdentity
 **********************************************/
 export interface windowsAutopilotDeviceIdentity extends windowsAutopilotDeviceIdentityProps, windowsAutopilotDeviceIdentityMethods { }
-export interface windowsAutopilotDeviceIdentityProps extends  entityProps {
+export interface windowsAutopilotDeviceIdentityProps extends entityProps {
 	addressableUserName: string;
 	azureActiveDirectoryDeviceId: string;
 	displayName: string;
@@ -20277,7 +20278,7 @@ add(values?: any): IBaseExecution<windowsAutopilotDeviceIdentity>;
 * windowsDefenderAdvancedThreatProtectionConfiguration
 **********************************************/
 export interface windowsDefenderAdvancedThreatProtectionConfiguration extends windowsDefenderAdvancedThreatProtectionConfigurationProps, windowsDefenderAdvancedThreatProtectionConfigurationMethods { }
-export interface windowsDefenderAdvancedThreatProtectionConfigurationProps extends  deviceConfigurationProps {
+export interface windowsDefenderAdvancedThreatProtectionConfigurationProps extends deviceConfigurationProps {
 	allowSampleSharing: boolean;
 	enableExpeditedTelemetryReporting: boolean;
 }
@@ -20291,7 +20292,7 @@ export interface windowsDefenderAdvancedThreatProtectionConfigurationOData exten
 * windowsDeviceMalwareState
 **********************************************/
 export interface windowsDeviceMalwareState extends windowsDeviceMalwareStateProps, windowsDeviceMalwareStateMethods { }
-export interface windowsDeviceMalwareStateProps extends  entityProps {
+export interface windowsDeviceMalwareStateProps extends entityProps {
 	additionalInformationUrl: string;
 	category: EnumTypes.windowsMalwareCategory;
 	detectionCount: number;
@@ -20316,7 +20317,7 @@ add(values?: any): IBaseExecution<windowsDeviceMalwareState>;
 * windowsHelloForBusinessAuthenticationMethod
 **********************************************/
 export interface windowsHelloForBusinessAuthenticationMethod extends windowsHelloForBusinessAuthenticationMethodProps, windowsHelloForBusinessAuthenticationMethodMethods { }
-export interface windowsHelloForBusinessAuthenticationMethodProps extends  authenticationMethodProps {
+export interface windowsHelloForBusinessAuthenticationMethodProps extends authenticationMethodProps {
 	createdDateTime: any;
 	displayName: string;
 	keyStrength: EnumTypes.authenticationMethodKeyStrength;
@@ -20334,7 +20335,7 @@ add(values?: any): IBaseExecution<windowsHelloForBusinessAuthenticationMethod>;
 * windowsInformationProtection
 **********************************************/
 export interface windowsInformationProtection extends windowsInformationProtectionProps, windowsInformationProtectionMethods { }
-export interface windowsInformationProtectionProps extends  managedAppPolicyProps {
+export interface windowsInformationProtectionProps extends managedAppPolicyProps {
 	azureRightsManagementServicesAllowed: boolean;
 	dataRecoveryCertificate: ComplexTypes.windowsInformationProtectionDataRecoveryCertificate;
 	enforcementLevel: EnumTypes.windowsInformationProtectionEnforcementLevel;
@@ -20377,7 +20378,7 @@ export interface windowsInformationProtectionOData extends managedAppPolicyOData
 * windowsInformationProtectionAppLearningSummary
 **********************************************/
 export interface windowsInformationProtectionAppLearningSummary extends windowsInformationProtectionAppLearningSummaryProps, windowsInformationProtectionAppLearningSummaryMethods { }
-export interface windowsInformationProtectionAppLearningSummaryProps extends  entityProps {
+export interface windowsInformationProtectionAppLearningSummaryProps extends entityProps {
 	applicationName: string;
 	applicationType: EnumTypes.applicationType;
 	deviceCount: number;
@@ -20395,7 +20396,7 @@ add(values?: any): IBaseExecution<windowsInformationProtectionAppLearningSummary
 * windowsInformationProtectionAppLockerFile
 **********************************************/
 export interface windowsInformationProtectionAppLockerFile extends windowsInformationProtectionAppLockerFileProps, windowsInformationProtectionAppLockerFileMethods { }
-export interface windowsInformationProtectionAppLockerFileProps extends  entityProps {
+export interface windowsInformationProtectionAppLockerFileProps extends entityProps {
 	displayName: string;
 	file: any;
 	fileHash: string;
@@ -20414,7 +20415,7 @@ add(values?: any): IBaseExecution<windowsInformationProtectionAppLockerFile>;
 * windowsInformationProtectionNetworkLearningSummary
 **********************************************/
 export interface windowsInformationProtectionNetworkLearningSummary extends windowsInformationProtectionNetworkLearningSummaryProps, windowsInformationProtectionNetworkLearningSummaryMethods { }
-export interface windowsInformationProtectionNetworkLearningSummaryProps extends  entityProps {
+export interface windowsInformationProtectionNetworkLearningSummaryProps extends entityProps {
 	deviceCount: number;
 	url: string;
 }
@@ -20431,7 +20432,7 @@ add(values?: any): IBaseExecution<windowsInformationProtectionNetworkLearningSum
 * windowsInformationProtectionPolicy
 **********************************************/
 export interface windowsInformationProtectionPolicy extends windowsInformationProtectionPolicyProps, windowsInformationProtectionPolicyMethods { }
-export interface windowsInformationProtectionPolicyProps extends  windowsInformationProtectionProps {
+export interface windowsInformationProtectionPolicyProps extends windowsInformationProtectionProps {
 	daysWithoutContactBeforeUnenroll: number;
 	mdmEnrollmentUrl: string;
 	minutesOfInactivityBeforeDeviceLock: number;
@@ -20458,7 +20459,7 @@ add(values?: any): IBaseExecution<windowsInformationProtectionPolicy>;
 * windowsMalwareInformation
 **********************************************/
 export interface windowsMalwareInformation extends windowsMalwareInformationProps, windowsMalwareInformationMethods { }
-export interface windowsMalwareInformationProps extends  entityProps {
+export interface windowsMalwareInformationProps extends entityProps {
 	additionalInformationUrl: string;
 	category: EnumTypes.windowsMalwareCategory;
 	displayName: string;
@@ -20479,7 +20480,7 @@ add(values?: any): IBaseExecution<windowsMalwareInformation>;
 * windowsMicrosoftEdgeApp
 **********************************************/
 export interface windowsMicrosoftEdgeApp extends windowsMicrosoftEdgeAppProps, windowsMicrosoftEdgeAppMethods { }
-export interface windowsMicrosoftEdgeAppProps extends  mobileAppProps {
+export interface windowsMicrosoftEdgeAppProps extends mobileAppProps {
 	channel: EnumTypes.microsoftEdgeChannel;
 	displayLanguageLocale: string;
 }
@@ -20493,7 +20494,7 @@ export interface windowsMicrosoftEdgeAppOData extends mobileAppOData {
 * windowsMobileMSI
 **********************************************/
 export interface windowsMobileMSI extends windowsMobileMSIProps, windowsMobileMSIMethods { }
-export interface windowsMobileMSIProps extends  mobileLobAppProps {
+export interface windowsMobileMSIProps extends mobileLobAppProps {
 	commandLine: string;
 	ignoreVersionDetection: boolean;
 	productCode: string;
@@ -20509,7 +20510,7 @@ export interface windowsMobileMSIOData extends mobileLobAppOData {
 * windowsPhone81CompliancePolicy
 **********************************************/
 export interface windowsPhone81CompliancePolicy extends windowsPhone81CompliancePolicyProps, windowsPhone81CompliancePolicyMethods { }
-export interface windowsPhone81CompliancePolicyProps extends  deviceCompliancePolicyProps {
+export interface windowsPhone81CompliancePolicyProps extends deviceCompliancePolicyProps {
 	osMaximumVersion: string;
 	osMinimumVersion: string;
 	passwordBlockSimple: boolean;
@@ -20532,7 +20533,7 @@ export interface windowsPhone81CompliancePolicyOData extends deviceCompliancePol
 * windowsPhone81CustomConfiguration
 **********************************************/
 export interface windowsPhone81CustomConfiguration extends windowsPhone81CustomConfigurationProps, windowsPhone81CustomConfigurationMethods { }
-export interface windowsPhone81CustomConfigurationProps extends  deviceConfigurationProps {
+export interface windowsPhone81CustomConfigurationProps extends deviceConfigurationProps {
 	omaSettings: ComplexTypes.omaSetting[];
 }
 export interface windowsPhone81CustomConfigurationMethods extends deviceConfigurationMethods {
@@ -20545,7 +20546,7 @@ export interface windowsPhone81CustomConfigurationOData extends deviceConfigurat
 * windowsPhone81GeneralConfiguration
 **********************************************/
 export interface windowsPhone81GeneralConfiguration extends windowsPhone81GeneralConfigurationProps, windowsPhone81GeneralConfigurationMethods { }
-export interface windowsPhone81GeneralConfigurationProps extends  deviceConfigurationProps {
+export interface windowsPhone81GeneralConfigurationProps extends deviceConfigurationProps {
 	applyOnlyToWindowsPhone81: boolean;
 	appsBlockCopyPaste: boolean;
 	bluetoothBlocked: boolean;
@@ -20586,7 +20587,7 @@ export interface windowsPhone81GeneralConfigurationOData extends deviceConfigura
 * windowsProtectionState
 **********************************************/
 export interface windowsProtectionState extends windowsProtectionStateProps, windowsProtectionStateMethods { }
-export interface windowsProtectionStateProps extends  entityProps {
+export interface windowsProtectionStateProps extends entityProps {
 	antiMalwareVersion: string;
 	deviceState: EnumTypes.windowsDeviceHealthState;
 	engineVersion: string;
@@ -20619,7 +20620,7 @@ export interface windowsProtectionStateOData extends entityOData {
 * windowsSetting
 **********************************************/
 export interface windowsSetting extends windowsSettingProps, windowsSettingMethods { }
-export interface windowsSettingProps extends  entityProps {
+export interface windowsSettingProps extends entityProps {
 	payloadType: string;
 	settingType: EnumTypes.windowsSettingType;
 	windowsDeviceId: string;
@@ -20638,7 +20639,7 @@ add(values?: any): IBaseExecution<windowsSetting>;
 * windowsSettingInstance
 **********************************************/
 export interface windowsSettingInstance extends windowsSettingInstanceProps, windowsSettingInstanceMethods { }
-export interface windowsSettingInstanceProps extends  entityProps {
+export interface windowsSettingInstanceProps extends entityProps {
 	createdDateTime: any;
 	expirationDateTime: any;
 	lastModifiedDateTime: any;
@@ -20657,7 +20658,7 @@ add(values?: any): IBaseExecution<windowsSettingInstance>;
 * windowsUniversalAppX
 **********************************************/
 export interface windowsUniversalAppX extends windowsUniversalAppXProps, windowsUniversalAppXMethods { }
-export interface windowsUniversalAppXProps extends  mobileLobAppProps {
+export interface windowsUniversalAppXProps extends mobileLobAppProps {
 	applicableArchitectures: EnumTypes.windowsArchitecture;
 	applicableDeviceTypes: EnumTypes.windowsDeviceType;
 	identityName: string;
@@ -20678,7 +20679,7 @@ export interface windowsUniversalAppXOData extends mobileLobAppOData {
 * windowsUniversalAppXContainedApp
 **********************************************/
 export interface windowsUniversalAppXContainedApp extends windowsUniversalAppXContainedAppProps, windowsUniversalAppXContainedAppMethods { }
-export interface windowsUniversalAppXContainedAppProps extends  mobileContainedAppProps {
+export interface windowsUniversalAppXContainedAppProps extends mobileContainedAppProps {
 	appUserModelId: string;
 }
 export interface windowsUniversalAppXContainedAppMethods extends mobileContainedAppMethods {
@@ -20691,7 +20692,7 @@ export interface windowsUniversalAppXContainedAppOData extends mobileContainedAp
 * windowsUpdateForBusinessConfiguration
 **********************************************/
 export interface windowsUpdateForBusinessConfiguration extends windowsUpdateForBusinessConfigurationProps, windowsUpdateForBusinessConfigurationMethods { }
-export interface windowsUpdateForBusinessConfigurationProps extends  deviceConfigurationProps {
+export interface windowsUpdateForBusinessConfigurationProps extends deviceConfigurationProps {
 	allowWindows11Upgrade: boolean;
 	automaticUpdateMode: EnumTypes.automaticUpdateMode;
 	autoRestartNotificationDismissal: EnumTypes.autoRestartNotificationDismissalMethod;
@@ -20739,7 +20740,7 @@ export interface windowsUpdateForBusinessConfigurationOData extends deviceConfig
 * windowsWebApp
 **********************************************/
 export interface windowsWebApp extends windowsWebAppProps, windowsWebAppMethods { }
-export interface windowsWebAppProps extends  mobileAppProps {
+export interface windowsWebAppProps extends mobileAppProps {
 	appUrl: string;
 }
 export interface windowsWebAppMethods extends mobileAppMethods {
@@ -20752,7 +20753,7 @@ export interface windowsWebAppOData extends mobileAppOData {
 * workbook
 **********************************************/
 export interface workbook extends workbookProps, workbookMethods { }
-export interface workbookProps extends  entityProps {
+export interface workbookProps extends entityProps {
 
 }
 export interface workbookMethods extends entityMethods {
@@ -20782,7 +20783,7 @@ export interface workbookOData extends entityOData {
 * workbookApplication
 **********************************************/
 export interface workbookApplication extends workbookApplicationProps, workbookApplicationMethods { }
-export interface workbookApplicationProps extends  entityProps {
+export interface workbookApplicationProps extends entityProps {
 	calculationMode: string;
 }
 export interface workbookApplicationMethods extends entityMethods {
@@ -20795,7 +20796,7 @@ export interface workbookApplicationOData extends entityOData {
 * workbookChart
 **********************************************/
 export interface workbookChart extends workbookChartProps, workbookChartMethods { }
-export interface workbookChartProps extends  entityProps {
+export interface workbookChartProps extends entityProps {
 	height: number;
 	left: number;
 	name: string;
@@ -20828,7 +20829,7 @@ add(values?: any): IBaseExecution<workbookChart>;
 * workbookChartAreaFormat
 **********************************************/
 export interface workbookChartAreaFormat extends workbookChartAreaFormatProps, workbookChartAreaFormatMethods { }
-export interface workbookChartAreaFormatProps extends  entityProps {
+export interface workbookChartAreaFormatProps extends entityProps {
 
 }
 export interface workbookChartAreaFormatMethods extends entityMethods {
@@ -20843,7 +20844,7 @@ export interface workbookChartAreaFormatOData extends entityOData {
 * workbookChartAxes
 **********************************************/
 export interface workbookChartAxes extends workbookChartAxesProps, workbookChartAxesMethods { }
-export interface workbookChartAxesProps extends  entityProps {
+export interface workbookChartAxesProps extends entityProps {
 
 }
 export interface workbookChartAxesMethods extends entityMethods {
@@ -20860,7 +20861,7 @@ export interface workbookChartAxesOData extends entityOData {
 * workbookChartAxis
 **********************************************/
 export interface workbookChartAxis extends workbookChartAxisProps, workbookChartAxisMethods { }
-export interface workbookChartAxisProps extends  entityProps {
+export interface workbookChartAxisProps extends entityProps {
 	majorUnit: ComplexTypes.Json;
 	maximum: ComplexTypes.Json;
 	minimum: ComplexTypes.Json;
@@ -20882,7 +20883,7 @@ export interface workbookChartAxisOData extends entityOData {
 * workbookChartAxisFormat
 **********************************************/
 export interface workbookChartAxisFormat extends workbookChartAxisFormatProps, workbookChartAxisFormatMethods { }
-export interface workbookChartAxisFormatProps extends  entityProps {
+export interface workbookChartAxisFormatProps extends entityProps {
 
 }
 export interface workbookChartAxisFormatMethods extends entityMethods {
@@ -20897,7 +20898,7 @@ export interface workbookChartAxisFormatOData extends entityOData {
 * workbookChartAxisTitle
 **********************************************/
 export interface workbookChartAxisTitle extends workbookChartAxisTitleProps, workbookChartAxisTitleMethods { }
-export interface workbookChartAxisTitleProps extends  entityProps {
+export interface workbookChartAxisTitleProps extends entityProps {
 	text: string;
 	visible: boolean;
 }
@@ -20911,7 +20912,7 @@ export interface workbookChartAxisTitleOData extends entityOData {
 * workbookChartAxisTitleFormat
 **********************************************/
 export interface workbookChartAxisTitleFormat extends workbookChartAxisTitleFormatProps, workbookChartAxisTitleFormatMethods { }
-export interface workbookChartAxisTitleFormatProps extends  entityProps {
+export interface workbookChartAxisTitleFormatProps extends entityProps {
 
 }
 export interface workbookChartAxisTitleFormatMethods extends entityMethods {
@@ -20924,7 +20925,7 @@ export interface workbookChartAxisTitleFormatOData extends entityOData {
 * workbookChartDataLabelFormat
 **********************************************/
 export interface workbookChartDataLabelFormat extends workbookChartDataLabelFormatProps, workbookChartDataLabelFormatMethods { }
-export interface workbookChartDataLabelFormatProps extends  entityProps {
+export interface workbookChartDataLabelFormatProps extends entityProps {
 
 }
 export interface workbookChartDataLabelFormatMethods extends entityMethods {
@@ -20939,7 +20940,7 @@ export interface workbookChartDataLabelFormatOData extends entityOData {
 * workbookChartDataLabels
 **********************************************/
 export interface workbookChartDataLabels extends workbookChartDataLabelsProps, workbookChartDataLabelsMethods { }
-export interface workbookChartDataLabelsProps extends  entityProps {
+export interface workbookChartDataLabelsProps extends entityProps {
 	position: string;
 	separator: string;
 	showBubbleSize: boolean;
@@ -20959,7 +20960,7 @@ export interface workbookChartDataLabelsOData extends entityOData {
 * workbookChartFill
 **********************************************/
 export interface workbookChartFill extends workbookChartFillProps, workbookChartFillMethods { }
-export interface workbookChartFillProps extends  entityProps {
+export interface workbookChartFillProps extends entityProps {
 
 }
 export interface workbookChartFillMethods extends entityMethods {
@@ -20972,7 +20973,7 @@ export interface workbookChartFillOData extends entityOData {
 * workbookChartFont
 **********************************************/
 export interface workbookChartFont extends workbookChartFontProps, workbookChartFontMethods { }
-export interface workbookChartFontProps extends  entityProps {
+export interface workbookChartFontProps extends entityProps {
 	bold: boolean;
 	color: string;
 	italic: boolean;
@@ -20990,7 +20991,7 @@ export interface workbookChartFontOData extends entityOData {
 * workbookChartGridlines
 **********************************************/
 export interface workbookChartGridlines extends workbookChartGridlinesProps, workbookChartGridlinesMethods { }
-export interface workbookChartGridlinesProps extends  entityProps {
+export interface workbookChartGridlinesProps extends entityProps {
 	visible: boolean;
 }
 export interface workbookChartGridlinesMethods extends entityMethods {
@@ -21003,7 +21004,7 @@ export interface workbookChartGridlinesOData extends entityOData {
 * workbookChartGridlinesFormat
 **********************************************/
 export interface workbookChartGridlinesFormat extends workbookChartGridlinesFormatProps, workbookChartGridlinesFormatMethods { }
-export interface workbookChartGridlinesFormatProps extends  entityProps {
+export interface workbookChartGridlinesFormatProps extends entityProps {
 
 }
 export interface workbookChartGridlinesFormatMethods extends entityMethods {
@@ -21016,7 +21017,7 @@ export interface workbookChartGridlinesFormatOData extends entityOData {
 * workbookChartLegend
 **********************************************/
 export interface workbookChartLegend extends workbookChartLegendProps, workbookChartLegendMethods { }
-export interface workbookChartLegendProps extends  entityProps {
+export interface workbookChartLegendProps extends entityProps {
 	overlay: boolean;
 	position: string;
 	visible: boolean;
@@ -21031,7 +21032,7 @@ export interface workbookChartLegendOData extends entityOData {
 * workbookChartLegendFormat
 **********************************************/
 export interface workbookChartLegendFormat extends workbookChartLegendFormatProps, workbookChartLegendFormatMethods { }
-export interface workbookChartLegendFormatProps extends  entityProps {
+export interface workbookChartLegendFormatProps extends entityProps {
 
 }
 export interface workbookChartLegendFormatMethods extends entityMethods {
@@ -21046,7 +21047,7 @@ export interface workbookChartLegendFormatOData extends entityOData {
 * workbookChartLineFormat
 **********************************************/
 export interface workbookChartLineFormat extends workbookChartLineFormatProps, workbookChartLineFormatMethods { }
-export interface workbookChartLineFormatProps extends  entityProps {
+export interface workbookChartLineFormatProps extends entityProps {
 	color: string;
 }
 export interface workbookChartLineFormatMethods extends entityMethods {
@@ -21059,7 +21060,7 @@ export interface workbookChartLineFormatOData extends entityOData {
 * workbookChartPoint
 **********************************************/
 export interface workbookChartPoint extends workbookChartPointProps, workbookChartPointMethods { }
-export interface workbookChartPointProps extends  entityProps {
+export interface workbookChartPointProps extends entityProps {
 	value: ComplexTypes.Json;
 }
 export interface workbookChartPointMethods extends entityMethods {
@@ -21075,7 +21076,7 @@ add(values?: any): IBaseExecution<workbookChartPoint>;
 * workbookChartPointFormat
 **********************************************/
 export interface workbookChartPointFormat extends workbookChartPointFormatProps, workbookChartPointFormatMethods { }
-export interface workbookChartPointFormatProps extends  entityProps {
+export interface workbookChartPointFormatProps extends entityProps {
 
 }
 export interface workbookChartPointFormatMethods extends entityMethods {
@@ -21088,7 +21089,7 @@ export interface workbookChartPointFormatOData extends entityOData {
 * workbookChartSeries
 **********************************************/
 export interface workbookChartSeries extends workbookChartSeriesProps, workbookChartSeriesMethods { }
-export interface workbookChartSeriesProps extends  entityProps {
+export interface workbookChartSeriesProps extends entityProps {
 	name: string;
 }
 export interface workbookChartSeriesMethods extends entityMethods {
@@ -21107,7 +21108,7 @@ add(values?: any): IBaseExecution<workbookChartSeries>;
 * workbookChartSeriesFormat
 **********************************************/
 export interface workbookChartSeriesFormat extends workbookChartSeriesFormatProps, workbookChartSeriesFormatMethods { }
-export interface workbookChartSeriesFormatProps extends  entityProps {
+export interface workbookChartSeriesFormatProps extends entityProps {
 
 }
 export interface workbookChartSeriesFormatMethods extends entityMethods {
@@ -21122,7 +21123,7 @@ export interface workbookChartSeriesFormatOData extends entityOData {
 * workbookChartTitle
 **********************************************/
 export interface workbookChartTitle extends workbookChartTitleProps, workbookChartTitleMethods { }
-export interface workbookChartTitleProps extends  entityProps {
+export interface workbookChartTitleProps extends entityProps {
 	overlay: boolean;
 	text: string;
 	visible: boolean;
@@ -21137,7 +21138,7 @@ export interface workbookChartTitleOData extends entityOData {
 * workbookChartTitleFormat
 **********************************************/
 export interface workbookChartTitleFormat extends workbookChartTitleFormatProps, workbookChartTitleFormatMethods { }
-export interface workbookChartTitleFormatProps extends  entityProps {
+export interface workbookChartTitleFormatProps extends entityProps {
 
 }
 export interface workbookChartTitleFormatMethods extends entityMethods {
@@ -21152,7 +21153,7 @@ export interface workbookChartTitleFormatOData extends entityOData {
 * workbookComment
 **********************************************/
 export interface workbookComment extends workbookCommentProps, workbookCommentMethods { }
-export interface workbookCommentProps extends  entityProps {
+export interface workbookCommentProps extends entityProps {
 	content: string;
 	contentType: string;
 }
@@ -21170,7 +21171,7 @@ add(values?: any): IBaseExecution<workbookComment>;
 * workbookCommentReply
 **********************************************/
 export interface workbookCommentReply extends workbookCommentReplyProps, workbookCommentReplyMethods { }
-export interface workbookCommentReplyProps extends  entityProps {
+export interface workbookCommentReplyProps extends entityProps {
 	content: string;
 	contentType: string;
 }
@@ -21187,7 +21188,7 @@ add(values?: any): IBaseExecution<workbookCommentReply>;
 * workbookFilter
 **********************************************/
 export interface workbookFilter extends workbookFilterProps, workbookFilterMethods { }
-export interface workbookFilterProps extends  entityProps {
+export interface workbookFilterProps extends entityProps {
 	criteria: ComplexTypes.workbookFilterCriteria;
 }
 export interface workbookFilterMethods extends entityMethods {
@@ -21200,7 +21201,7 @@ export interface workbookFilterOData extends entityOData {
 * workbookFormatProtection
 **********************************************/
 export interface workbookFormatProtection extends workbookFormatProtectionProps, workbookFormatProtectionMethods { }
-export interface workbookFormatProtectionProps extends  entityProps {
+export interface workbookFormatProtectionProps extends entityProps {
 	formulaHidden: boolean;
 	locked: boolean;
 }
@@ -21214,7 +21215,7 @@ export interface workbookFormatProtectionOData extends entityOData {
 * workbookFunctionResult
 **********************************************/
 export interface workbookFunctionResult extends workbookFunctionResultProps, workbookFunctionResultMethods { }
-export interface workbookFunctionResultProps extends  entityProps {
+export interface workbookFunctionResultProps extends entityProps {
 	error: string;
 	value: ComplexTypes.Json;
 }
@@ -21228,7 +21229,7 @@ export interface workbookFunctionResultOData extends entityOData {
 * workbookFunctions
 **********************************************/
 export interface workbookFunctions extends workbookFunctionsProps, workbookFunctionsMethods { }
-export interface workbookFunctionsProps extends  entityProps {
+export interface workbookFunctionsProps extends entityProps {
 
 }
 export interface workbookFunctionsMethods extends entityMethods {
@@ -21241,7 +21242,7 @@ export interface workbookFunctionsOData extends entityOData {
 * workbookNamedItem
 **********************************************/
 export interface workbookNamedItem extends workbookNamedItemProps, workbookNamedItemMethods { }
-export interface workbookNamedItemProps extends  entityProps {
+export interface workbookNamedItemProps extends entityProps {
 	comment: string;
 	name: string;
 	scope: string;
@@ -21262,7 +21263,7 @@ add(values?: any): IBaseExecution<workbookNamedItem>;
 * workbookOperation
 **********************************************/
 export interface workbookOperation extends workbookOperationProps, workbookOperationMethods { }
-export interface workbookOperationProps extends  entityProps {
+export interface workbookOperationProps extends entityProps {
 	error: ComplexTypes.workbookOperationError;
 	resourceLocation: string;
 	status: EnumTypes.workbookOperationStatus;
@@ -21280,7 +21281,7 @@ add(values?: any): IBaseExecution<workbookOperation>;
 * workbookPivotTable
 **********************************************/
 export interface workbookPivotTable extends workbookPivotTableProps, workbookPivotTableMethods { }
-export interface workbookPivotTableProps extends  entityProps {
+export interface workbookPivotTableProps extends entityProps {
 	name: string;
 }
 export interface workbookPivotTableMethods extends entityMethods {
@@ -21296,7 +21297,7 @@ add(values?: any): IBaseExecution<workbookPivotTable>;
 * workbookRange
 **********************************************/
 export interface workbookRange extends workbookRangeProps, workbookRangeMethods { }
-export interface workbookRangeProps extends  entityProps {
+export interface workbookRangeProps extends entityProps {
 	address: string;
 	addressLocal: string;
 	cellCount: number;
@@ -21329,7 +21330,7 @@ export interface workbookRangeOData extends entityOData {
 * workbookRangeBorder
 **********************************************/
 export interface workbookRangeBorder extends workbookRangeBorderProps, workbookRangeBorderMethods { }
-export interface workbookRangeBorderProps extends  entityProps {
+export interface workbookRangeBorderProps extends entityProps {
 	color: string;
 	sideIndex: string;
 	style: string;
@@ -21348,7 +21349,7 @@ add(values?: any): IBaseExecution<workbookRangeBorder>;
 * workbookRangeFill
 **********************************************/
 export interface workbookRangeFill extends workbookRangeFillProps, workbookRangeFillMethods { }
-export interface workbookRangeFillProps extends  entityProps {
+export interface workbookRangeFillProps extends entityProps {
 	color: string;
 }
 export interface workbookRangeFillMethods extends entityMethods {
@@ -21361,7 +21362,7 @@ export interface workbookRangeFillOData extends entityOData {
 * workbookRangeFont
 **********************************************/
 export interface workbookRangeFont extends workbookRangeFontProps, workbookRangeFontMethods { }
-export interface workbookRangeFontProps extends  entityProps {
+export interface workbookRangeFontProps extends entityProps {
 	bold: boolean;
 	color: string;
 	italic: boolean;
@@ -21379,7 +21380,7 @@ export interface workbookRangeFontOData extends entityOData {
 * workbookRangeFormat
 **********************************************/
 export interface workbookRangeFormat extends workbookRangeFormatProps, workbookRangeFormatMethods { }
-export interface workbookRangeFormatProps extends  entityProps {
+export interface workbookRangeFormatProps extends entityProps {
 	columnWidth: number;
 	horizontalAlignment: string;
 	rowHeight: number;
@@ -21403,7 +21404,7 @@ export interface workbookRangeFormatOData extends entityOData {
 * workbookRangeSort
 **********************************************/
 export interface workbookRangeSort extends workbookRangeSortProps, workbookRangeSortMethods { }
-export interface workbookRangeSortProps extends  entityProps {
+export interface workbookRangeSortProps extends entityProps {
 
 }
 export interface workbookRangeSortMethods extends entityMethods {
@@ -21416,7 +21417,7 @@ export interface workbookRangeSortOData extends entityOData {
 * workbookRangeView
 **********************************************/
 export interface workbookRangeView extends workbookRangeViewProps, workbookRangeViewMethods { }
-export interface workbookRangeViewProps extends  entityProps {
+export interface workbookRangeViewProps extends entityProps {
 	cellAddresses: ComplexTypes.Json;
 	columnCount: number;
 	formulas: ComplexTypes.Json;
@@ -21443,7 +21444,7 @@ add(values?: any): IBaseExecution<workbookRangeView>;
 * workbookTable
 **********************************************/
 export interface workbookTable extends workbookTableProps, workbookTableMethods { }
-export interface workbookTableProps extends  entityProps {
+export interface workbookTableProps extends entityProps {
 	highlightFirstColumn: boolean;
 	highlightLastColumn: boolean;
 	legacyId: string;
@@ -21476,7 +21477,7 @@ add(values?: any): IBaseExecution<workbookTable>;
 * workbookTableColumn
 **********************************************/
 export interface workbookTableColumn extends workbookTableColumnProps, workbookTableColumnMethods { }
-export interface workbookTableColumnProps extends  entityProps {
+export interface workbookTableColumnProps extends entityProps {
 	index: number;
 	name: string;
 	values: ComplexTypes.Json;
@@ -21494,7 +21495,7 @@ add(values?: any): IBaseExecution<workbookTableColumn>;
 * workbookTableRow
 **********************************************/
 export interface workbookTableRow extends workbookTableRowProps, workbookTableRowMethods { }
-export interface workbookTableRowProps extends  entityProps {
+export interface workbookTableRowProps extends entityProps {
 	index: number;
 	values: ComplexTypes.Json;
 }
@@ -21511,7 +21512,7 @@ add(values?: any): IBaseExecution<workbookTableRow>;
 * workbookTableSort
 **********************************************/
 export interface workbookTableSort extends workbookTableSortProps, workbookTableSortMethods { }
-export interface workbookTableSortProps extends  entityProps {
+export interface workbookTableSortProps extends entityProps {
 	fields: ComplexTypes.workbookSortField[];
 	matchCase: boolean;
 	method: string;
@@ -21526,7 +21527,7 @@ export interface workbookTableSortOData extends entityOData {
 * workbookWorksheet
 **********************************************/
 export interface workbookWorksheet extends workbookWorksheetProps, workbookWorksheetMethods { }
-export interface workbookWorksheetProps extends  entityProps {
+export interface workbookWorksheetProps extends entityProps {
 	name: string;
 	position: number;
 	visibility: string;
@@ -21556,7 +21557,7 @@ add(values?: any): IBaseExecution<workbookWorksheet>;
 * workbookWorksheetProtection
 **********************************************/
 export interface workbookWorksheetProtection extends workbookWorksheetProtectionProps, workbookWorksheetProtectionMethods { }
-export interface workbookWorksheetProtectionProps extends  entityProps {
+export interface workbookWorksheetProtectionProps extends entityProps {
 	options: ComplexTypes.workbookWorksheetProtectionOptions;
 	protected: boolean;
 }
@@ -21570,7 +21571,7 @@ export interface workbookWorksheetProtectionOData extends entityOData {
 * workflow
 **********************************************/
 export interface workflow extends workflowProps, workflowMethods { }
-export interface workflowProps extends  workflowBaseProps {
+export interface workflowProps extends workflowBaseProps {
 	deletedDateTime: any;
 	id: string;
 	nextScheduleRunDateTime: any;
@@ -21599,7 +21600,7 @@ export interface workflowOData extends workflowBaseOData {
 * workflowBase
 **********************************************/
 export interface workflowBase extends workflowBaseProps, workflowBaseMethods { }
-export interface workflowBaseProps   {
+export interface workflowBaseProps {
 	category: EnumTypes.lifecycleWorkflowCategory;
 	createdDateTime: any;
 	description: string;
@@ -21624,7 +21625,7 @@ export interface workflowBaseOData {
 * workflowTemplate
 **********************************************/
 export interface workflowTemplate extends workflowTemplateProps, workflowTemplateMethods { }
-export interface workflowTemplateProps extends  entityProps {
+export interface workflowTemplateProps extends entityProps {
 	category: EnumTypes.lifecycleWorkflowCategory;
 	description: string;
 	displayName: string;
@@ -21641,7 +21642,7 @@ export interface workflowTemplateOData extends entityOData {
 * workflowVersion
 **********************************************/
 export interface workflowVersion extends workflowVersionProps, workflowVersionMethods { }
-export interface workflowVersionProps extends  workflowBaseProps {
+export interface workflowVersionProps extends workflowBaseProps {
 	versionNumber: number;
 }
 export interface workflowVersionMethods extends workflowBaseMethods {
@@ -21654,7 +21655,7 @@ export interface workflowVersionOData extends workflowBaseOData {
 * workforceIntegration
 **********************************************/
 export interface workforceIntegration extends workforceIntegrationProps, workforceIntegrationMethods { }
-export interface workforceIntegrationProps extends  changeTrackedEntityProps {
+export interface workforceIntegrationProps extends changeTrackedEntityProps {
 	apiVersion: number;
 	displayName: string;
 	eligibilityFilteringEnabledEntities: EnumTypes.eligibilityFilteringEnabledEntities;
@@ -21676,7 +21677,7 @@ add(values?: any): IBaseExecution<workforceIntegration>;
 * workingTimeSchedule
 **********************************************/
 export interface workingTimeSchedule extends workingTimeScheduleProps, workingTimeScheduleMethods { }
-export interface workingTimeScheduleProps extends  entityProps {
+export interface workingTimeScheduleProps extends entityProps {
 
 }
 export interface workingTimeScheduleMethods extends entityMethods {
@@ -21689,7 +21690,7 @@ export interface workingTimeScheduleOData extends entityOData {
 * x509CertificateAuthenticationMethodConfiguration
 **********************************************/
 export interface x509CertificateAuthenticationMethodConfiguration extends x509CertificateAuthenticationMethodConfigurationProps, x509CertificateAuthenticationMethodConfigurationMethods { }
-export interface x509CertificateAuthenticationMethodConfigurationProps extends  authenticationMethodConfigurationProps {
+export interface x509CertificateAuthenticationMethodConfigurationProps extends authenticationMethodConfigurationProps {
 	authenticationModeConfiguration: ComplexTypes.x509CertificateAuthenticationModeConfiguration;
 	certificateUserBindings: ComplexTypes.x509CertificateUserBinding[];
 	crlValidationConfiguration: ComplexTypes.x509CertificateCRLValidationConfiguration;
@@ -21705,7 +21706,7 @@ export interface x509CertificateAuthenticationMethodConfigurationOData extends a
 * x509CertificateCombinationConfiguration
 **********************************************/
 export interface x509CertificateCombinationConfiguration extends x509CertificateCombinationConfigurationProps, x509CertificateCombinationConfigurationMethods { }
-export interface x509CertificateCombinationConfigurationProps extends  authenticationCombinationConfigurationProps {
+export interface x509CertificateCombinationConfigurationProps extends authenticationCombinationConfigurationProps {
 	allowedIssuerSkis: Array<string>;
 	allowedPolicyOIDs: Array<string>;
 }

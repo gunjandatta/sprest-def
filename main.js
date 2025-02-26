@@ -829,13 +829,16 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
         let props = [];
         let parentReference = null;
         for (let prop of entity.props) {
+            /* Comment out for now. Not sure if we need to set this as a reference or not
             if (prop.name == "parentReference") {
                 // Set the parent reference
                 parentReference = getGraphType(prop.returnType);
             } else {
                 // Add the property
                 props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
-            }
+            }*/
+            // Add the property
+            props.push("\t" + prop.name + ": " + getGraphType(prop.returnType) + ";");
         }
 
         // Parse the methods
@@ -980,11 +983,15 @@ export interface ${name}Collection extends IBaseCollection<${name}, ${name}OData
         }
 
         // Add the endpoint
+        /**
+         * Commented out for now. Not sure if we need to use the parent reference or not
+         * export interface ${name}Props${parentReference || baseReturnType ? " extends" : ""} ${parentReference ? parentReference : ""} ${parentReference && baseReturnType ? ", " : ""}${baseReturnType ? baseReturnType + "Props" : ""} {
+         */
         content.push(`/*********************************************
 * ${name}
 **********************************************/
 export interface ${name} extends ${name}Props, ${name}Methods { }
-export interface ${name}Props${parentReference || baseReturnType ? " extends" : ""} ${parentReference ? parentReference : ""} ${parentReference && baseReturnType ? ", " : ""}${baseReturnType ? baseReturnType + "Props" : ""} {
+export interface ${name}Props${baseReturnType ? " extends " + baseReturnType + "Props" : ""} {
 ${props.join('\n')}
 }
 export interface ${name}Methods${baseReturnType ? " extends " + baseReturnType + "Methods" : ""} {
