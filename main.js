@@ -1285,7 +1285,8 @@ function processREST(schemas) {
                     apiImports.push('import { ' + lib + ' } from ".";');
 
                     // Add the endpoint
-                    api.push('\t' + endpoint.Name + ': ' + endpoint.ReturnType + ';');
+                    let needsQuotes = endpoint.Name.indexOf('.') > 0 ? true : false;
+                    api.push('\t' + (needsQuotes ? '"' : '') + endpoint.Name + (needsQuotes ? '"' : '') + ': ' + endpoint.ReturnType + ';');
                 }
 
                 // End the interface

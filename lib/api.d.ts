@@ -40,7 +40,7 @@ export interface SP_API {
 	sitelinkingmanager: Microsoft.SharePoint.Portal.ISiteLinkingManager;
 	sphomeservice: Microsoft.SharePoint.Portal.ISharePointHomeServiceContextBuilder;
 	SPHSite: SP.ISPHSite;
-	SPOInternalUseOnly.TenantSharingRestrictions: Microsoft.SharePoint.Sharing.Internal.ISharingRestrictions;
+	"SPOInternalUseOnly.TenantSharingRestrictions": Microsoft.SharePoint.Sharing.Internal.ISharingRestrictions;
 	spsitemanager: Microsoft.SharePoint.Portal.ISPSiteManager;
 	StructuralNavigationCache: SP.Publishing.Navigation.IStructuralNavigationCacheWrapper;
 	thememanager: SP.Utilities.IThemeManager;
