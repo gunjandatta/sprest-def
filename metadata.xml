@@ -12433,8 +12433,8 @@
                     <Parameter Name="this" Type="SP.Publishing.SitePageService" />
                     <Parameter Name="pageName" Type="Edm.String" />
                     <Parameter Name="imageFileName" Type="Edm.String" />
-                    <Parameter Name="imageStream" Type="Edm.Stream" />
                     <Parameter Name="pageId" Type="Edm.Int32" Nullable="false" />
+                    <Parameter Name="imageStream" Type="Edm.Stream" />
                 </FunctionImport>
                 <FunctionImport Name="AddImageFromExternalUrl" ReturnType="SP.File"
                     IsBindable="true" EntitySet="Files12">

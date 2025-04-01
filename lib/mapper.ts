@@ -8402,7 +8402,7 @@ export const Mapper: IMapper = {
 
 	"SP.Publishing.SitePageService": {
 		addImage: {
-		argNames: [ "pageName", "imageFileName", "imageStream", "pageId" ],
+		argNames: [ "pageName", "imageFileName", "pageId", "imageStream" ],
 		},
 
 		addImageFromExternalUrl: {

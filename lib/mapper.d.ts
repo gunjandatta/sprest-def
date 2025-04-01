@@ -8671,7 +8671,7 @@ export interface IMapper {
 	"SP.Publishing.SitePageService": {
 		properties?: Array<string>;
 		addImage: IMapperMethod & {
-		argNames: [ "pageName", "imageFileName", "imageStream", "pageId" ],
+		argNames: [ "pageName", "imageFileName", "pageId", "imageStream" ],
 		},
 
 		addImageFromExternalUrl: IMapperMethod & {

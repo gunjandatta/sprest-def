@@ -1932,7 +1932,7 @@ export interface SitePageServiceOData extends Base.IBaseResult, SitePageServiceP
 * SitePageServiceMethods
 **********************************************/
 export interface SitePageServiceMethods {
-	addImage(pageName?: string, imageFileName?: string, imageStream?: any, pageId?: number): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
+	addImage(pageName?: string, imageFileName?: string, pageId?: number, imageStream?: any): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	addImageFromExternalUrl(pageName?: string, imageFileName?: string, externalUrl?: string, subFolderName?: string, pageId?: number): Base.IBaseQuery<SP.File, SP.FileOData> & SP.FileCollections & SP.FileMethods;
 	canCreatePage(): Base.IBaseExecution<boolean>;
 	canCreatePromotedPage(): Base.IBaseExecution<boolean>;
