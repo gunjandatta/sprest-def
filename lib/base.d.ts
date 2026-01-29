@@ -22,7 +22,7 @@ export interface IBaseExecution<Type = any, Result = Type> {
      * @param resolve - The method to be executed after the request completes.
      * @param createFl - Flag to execute the request as part of a new change set.
      */
-    batch(createFl: (value?: Result) => void, appendFl?: boolean): Type;
+    batch(resolve: (value?: Result) => void, createFl?: boolean): Type;
 
     /**
      * Method to execute the request.
