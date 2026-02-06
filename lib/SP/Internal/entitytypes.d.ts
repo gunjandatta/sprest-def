@@ -55,3 +55,17 @@ export interface ApprovalsManager {
 export interface ApprovalsManagerCollections {
 
 }
+
+/*********************************************
+* PowerPlatformEnvironments
+**********************************************/
+export interface PowerPlatformEnvironments {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* PowerPlatformEnvironmentsCollections
+**********************************************/
+export interface PowerPlatformEnvironmentsCollections {
+
+}

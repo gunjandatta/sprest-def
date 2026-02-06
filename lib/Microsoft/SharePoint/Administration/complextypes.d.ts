@@ -76,6 +76,57 @@ export interface CustomFontsResourceCollections {
 }
 
 /*********************************************
+* FileRequestBrandingAssetConfig
+**********************************************/
+export interface FileRequestBrandingAssetConfig {
+	AssetLibraryRelativeUrl?: string;
+	AssetLibraryUrl?: string;
+	BrandedProfiles?: { results: Array<Microsoft.SharePoint.Administration.FileRequestBrandingProfile> };
+}
+
+/*********************************************
+* FileRequestBrandingAssetConfigCollections
+**********************************************/
+export interface FileRequestBrandingAssetConfigCollections {
+
+}
+
+/*********************************************
+* FileRequestBrandingProfile
+**********************************************/
+export interface FileRequestBrandingProfile {
+	BackgroundFileId?: any;
+	BackgroundFileName?: string;
+	BackgroundFileUrl?: string;
+	LogoFileId?: any;
+	LogoFileName?: string;
+	LogoFileUrl?: string;
+	ProfileType?: number;
+}
+
+/*********************************************
+* FileRequestBrandingProfileCollections
+**********************************************/
+export interface FileRequestBrandingProfileCollections {
+
+}
+
+/*********************************************
+* FileRequestBrandingCdnInfo
+**********************************************/
+export interface FileRequestBrandingCdnInfo {
+	BackgroundFilePublicCdnUrl?: string;
+	LogoFilePublicCdnUrl?: string;
+}
+
+/*********************************************
+* FileRequestBrandingCdnInfoCollections
+**********************************************/
+export interface FileRequestBrandingCdnInfoCollections {
+
+}
+
+/*********************************************
 * UsageEntry
 **********************************************/
 export interface UsageEntry {

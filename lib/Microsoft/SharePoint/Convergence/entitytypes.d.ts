@@ -1,6 +1,76 @@
 import { Base } from "../../../";
 
 /*********************************************
+* IAddNoLiveBlobsInOdcServiceStateApi
+**********************************************/
+export interface IAddNoLiveBlobsInOdcServiceStateApi extends AddNoLiveBlobsInOdcServiceStateApiCollections, AddNoLiveBlobsInOdcServiceStateApiMethods, Base.IBaseQuery<AddNoLiveBlobsInOdcServiceStateApi, IAddNoLiveBlobsInOdcServiceStateApiQuery> {
+
+}
+
+/*********************************************
+* IAddNoLiveBlobsInOdcServiceStateApiCollection
+**********************************************/
+export interface IAddNoLiveBlobsInOdcServiceStateApiCollection extends Base.IBaseResults<AddNoLiveBlobsInOdcServiceStateApi> {
+	done?: (resolve: (value?: Array<AddNoLiveBlobsInOdcServiceStateApi>) => void) => void;
+}
+
+/*********************************************
+* IAddNoLiveBlobsInOdcServiceStateApiQueryCollection
+**********************************************/
+export interface IAddNoLiveBlobsInOdcServiceStateApiQueryCollection extends Base.IBaseResults<AddNoLiveBlobsInOdcServiceStateApiOData> {
+	done?: (resolve: (value?: Array<AddNoLiveBlobsInOdcServiceStateApiOData>) => void) => void;
+}
+
+/*********************************************
+* IAddNoLiveBlobsInOdcServiceStateApiQuery
+**********************************************/
+export interface IAddNoLiveBlobsInOdcServiceStateApiQuery extends AddNoLiveBlobsInOdcServiceStateApiOData, AddNoLiveBlobsInOdcServiceStateApiMethods {
+
+}
+
+/*********************************************
+* AddNoLiveBlobsInOdcServiceStateApi
+**********************************************/
+export interface AddNoLiveBlobsInOdcServiceStateApi extends Base.IBaseResult, AddNoLiveBlobsInOdcServiceStateApiProps, AddNoLiveBlobsInOdcServiceStateApiCollections, AddNoLiveBlobsInOdcServiceStateApiMethods {
+
+}
+
+/*********************************************
+* AddNoLiveBlobsInOdcServiceStateApiProps
+**********************************************/
+export interface AddNoLiveBlobsInOdcServiceStateApiProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* AddNoLiveBlobsInOdcServiceStateApiPropMethods
+**********************************************/
+export interface AddNoLiveBlobsInOdcServiceStateApiPropMethods {
+
+}
+
+/*********************************************
+* AddNoLiveBlobsInOdcServiceStateApiCollections
+**********************************************/
+export interface AddNoLiveBlobsInOdcServiceStateApiCollections extends AddNoLiveBlobsInOdcServiceStateApiPropMethods {
+
+}
+
+/*********************************************
+* AddNoLiveBlobsInOdcServiceStateApiOData
+**********************************************/
+export interface AddNoLiveBlobsInOdcServiceStateApiOData extends Base.IBaseResult, AddNoLiveBlobsInOdcServiceStateApiProps, AddNoLiveBlobsInOdcServiceStateApiMethods {
+
+}
+
+/*********************************************
+* AddNoLiveBlobsInOdcServiceStateApiMethods
+**********************************************/
+export interface AddNoLiveBlobsInOdcServiceStateApiMethods {
+	addState(): Base.IBaseExecution<any>;
+}
+
+/*********************************************
 * IConsumerPermissions
 **********************************************/
 export interface IConsumerPermissions extends ConsumerPermissionsCollections, ConsumerPermissionsMethods, Base.IBaseQuery<ConsumerPermissions, IConsumerPermissionsQuery> {

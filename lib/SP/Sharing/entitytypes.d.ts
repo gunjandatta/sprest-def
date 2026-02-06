@@ -97,10 +97,12 @@ export interface SharingInformation {
 	fileExtension?: string;
 	hasUniquePermissions?: boolean;
 	isConsumerFiles?: boolean;
+	isMultiTenantOrganization?: boolean;
 	isPremium?: boolean;
 	isStubFile?: boolean;
 	itemUniqueId?: any;
 	itemUrl?: string;
+	listId?: any;
 	microserviceShareUiUrl?: string;
 	outlookEndpointHostUrl?: string;
 	permissionsInformation?: SP.Sharing.PermissionCollection;

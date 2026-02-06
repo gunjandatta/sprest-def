@@ -218,9 +218,11 @@ export interface ShareLinkSettingsCollections {
 * InheritedFrom
 **********************************************/
 export interface InheritedFrom {
+	directUrl?: string;
 	driveId?: string;
 	driveType?: string;
 	id?: string;
+	itemType?: string;
 	name?: string;
 	path?: string;
 	shareId?: string;
@@ -251,6 +253,25 @@ export interface SharePointIds {
 * SharePointIdsCollections
 **********************************************/
 export interface SharePointIdsCollections {
+
+}
+
+/*********************************************
+* ItemSharingSettings
+**********************************************/
+export interface ItemSharingSettings {
+	blockSharingPushDown?: boolean;
+	itemId?: string;
+	itemMembersCanShare?: boolean;
+	itemName?: string;
+	itemType?: number;
+	parentId?: string;
+}
+
+/*********************************************
+* ItemSharingSettingsCollections
+**********************************************/
+export interface ItemSharingSettingsCollections {
 
 }
 
@@ -288,6 +309,91 @@ export interface LinkParametersCollections {
 }
 
 /*********************************************
+* MainAccessInformation
+**********************************************/
+export interface MainAccessInformation {
+	defaultMainLinkRole?: number;
+	mainLink?: SP.Sharing.MainLinkInfo;
+	sharingSettings?: SP.Sharing.ItemSharingSettings;
+}
+
+/*********************************************
+* MainAccessInformationCollections
+**********************************************/
+export interface MainAccessInformationCollections {
+
+}
+
+/*********************************************
+* MainLinkInfo
+**********************************************/
+export interface MainLinkInfo {
+	accessors?: { results: Array<SP.Sharing.Principal> };
+	audience?: number;
+	role?: number;
+	shareId?: any;
+	url?: string;
+}
+
+/*********************************************
+* MainLinkInfoCollections
+**********************************************/
+export interface MainLinkInfoCollections {
+
+}
+
+/*********************************************
+* MainLinkAbilities
+**********************************************/
+export interface MainLinkAbilities {
+	canGetLink?: SP.Sharing.SharingAbilityStatus;
+	canManageLink?: SP.Sharing.SharingAbilityStatus;
+	canResetLink?: SP.Sharing.SharingAbilityStatus;
+	mainLinkAudienceAbilities?: SP.Sharing.MainLinkAudienceAbilities;
+	mainLinkRoleAbilities?: SP.Sharing.MainLinkRoleAbilities;
+}
+
+/*********************************************
+* MainLinkAbilitiesCollections
+**********************************************/
+export interface MainLinkAbilitiesCollections {
+
+}
+
+/*********************************************
+* MainLinkAudienceAbilities
+**********************************************/
+export interface MainLinkAudienceAbilities {
+	anyoneLinkAvailable?: SP.Sharing.SharingAbilityStatus;
+	onlyPeopleAddedLinkAvailable?: SP.Sharing.SharingAbilityStatus;
+	organizationLinkAvailable?: SP.Sharing.SharingAbilityStatus;
+}
+
+/*********************************************
+* MainLinkAudienceAbilitiesCollections
+**********************************************/
+export interface MainLinkAudienceAbilitiesCollections {
+
+}
+
+/*********************************************
+* MainLinkRoleAbilities
+**********************************************/
+export interface MainLinkRoleAbilities {
+	commentRoleAvailable?: SP.Sharing.SharingAbilityStatus;
+	editRoleAvailable?: SP.Sharing.SharingAbilityStatus;
+	restrictedViewRoleAvailable?: SP.Sharing.SharingAbilityStatus;
+	viewRoleAvailable?: SP.Sharing.SharingAbilityStatus;
+}
+
+/*********************************************
+* MainLinkRoleAbilitiesCollections
+**********************************************/
+export interface MainLinkRoleAbilitiesCollections {
+
+}
+
+/*********************************************
 * OversharedWebInfo
 **********************************************/
 export interface OversharedWebInfo {
@@ -309,6 +415,7 @@ export interface PermissionCollection {
 	appConsentPrincipals?: { results: Array<SP.Sharing.PrincipalInfo> };
 	hasInheritedLinks?: boolean;
 	links?: { results: Array<SP.Sharing.LinkInfo> };
+	mainAccess?: SP.Sharing.MainAccessInformation;
 	principals?: { results: Array<SP.Sharing.PrincipalInfo> };
 	siteAdmins?: { results: Array<SP.Sharing.PrincipalInfo> };
 	totalNumberOfPrincipals?: number;
@@ -325,6 +432,7 @@ export interface PermissionCollectionCollections {
 * PrincipalInfo
 **********************************************/
 export interface PrincipalInfo {
+	canBeModified?: SP.Sharing.SharingAbilityStatus;
 	ExpirationDateTimeOnACE?: any;
 	inheritedFrom?: SP.Sharing.InheritedFrom;
 	isInherited?: boolean;
@@ -493,8 +601,10 @@ export interface SharingAbilities {
 	anyoneLinkAbilities?: SP.Sharing.SharingLinkAbilities;
 	canStopSharing?: boolean;
 	directSharingAbilities?: SP.Sharing.DirectSharingAbilities;
+	mainLinkAbilities?: SP.Sharing.MainLinkAbilities;
 	organizationLinkAbilities?: SP.Sharing.SharingLinkAbilities;
 	peopleSharingLinkAbilities?: SP.Sharing.SharingLinkAbilities;
+	sharingSettingsAbilities?: SP.Sharing.SharingSettingsAbilities;
 }
 
 /*********************************************
@@ -548,6 +658,7 @@ export interface SharingLinkAbilitiesCollections {
 **********************************************/
 export interface SharingLinkExpirationAbilityStatus {
 	defaultExpirationInDays?: number;
+	maxExpirationInDays?: number;
 }
 
 /*********************************************
@@ -568,6 +679,23 @@ export interface SharingLinkPasswordAbilityStatus {
 * SharingLinkPasswordAbilityStatusCollections
 **********************************************/
 export interface SharingLinkPasswordAbilityStatusCollections {
+
+}
+
+/*********************************************
+* SharingSettingsAbilities
+**********************************************/
+export interface SharingSettingsAbilities {
+	canGetBlockSharingPushDown?: SP.Sharing.SharingAbilityStatus;
+	canGetItemMembersCanShare?: SP.Sharing.SharingAbilityStatus;
+	canManageBlockSharingPushDown?: SP.Sharing.SharingAbilityStatus;
+	canManageItemMembersCanShare?: SP.Sharing.SharingAbilityStatus;
+}
+
+/*********************************************
+* SharingSettingsAbilitiesCollections
+**********************************************/
+export interface SharingSettingsAbilitiesCollections {
 
 }
 
@@ -594,6 +722,7 @@ export interface SharingInformationRequest {
 	maxLinkMembersToReturn?: number;
 	maxPrincipalsToReturn?: number;
 	populateInheritedLinks?: boolean;
+	populateMainLinkTree?: boolean;
 }
 
 /*********************************************
@@ -723,7 +852,6 @@ export interface SiteSharingReportStatusCollections {
 **********************************************/
 export interface UniqueAccessGroupInfo {
 	enabled?: boolean;
-	creationDate?: any;
 	groupId?: any;
 }
 

@@ -21,6 +21,27 @@ export interface TokenResponseCollections {
 }
 
 /*********************************************
+* TokenResponseOData
+**********************************************/
+export interface TokenResponseOData extends Base.IBaseResult, TokenResponse {
+	accessTokenOptionalClaim: SP.OAuth.AccessTokenOptionalClaim & SP.OAuth.AccessTokenOptionalClaimCollections;
+}
+
+/*********************************************
+* AccessTokenOptionalClaim
+**********************************************/
+export interface AccessTokenOptionalClaim {
+	Acrs?: string;
+}
+
+/*********************************************
+* AccessTokenOptionalClaimCollections
+**********************************************/
+export interface AccessTokenOptionalClaimCollections {
+
+}
+
+/*********************************************
 * INativeClient
 **********************************************/
 export interface INativeClient extends NativeClientCollections, NativeClientMethods, Base.IBaseQuery<NativeClient, INativeClientQuery> {
@@ -157,7 +178,7 @@ export interface TokenOData extends Base.IBaseResult, TokenProps, TokenMethods {
 * TokenMethods
 **********************************************/
 export interface TokenMethods {
-	acquire(resource?: string, tokenType?: string): Base.IBaseExecution<SP.OAuth.TokenResponse>;
+	acquire(resource?: string, tokenType?: string): Base.IBaseQuery<SP.OAuth.TokenResponse, SP.OAuth.TokenResponseOData> & SP.OAuth.TokenResponseCollections;
 }
 
 /*********************************************

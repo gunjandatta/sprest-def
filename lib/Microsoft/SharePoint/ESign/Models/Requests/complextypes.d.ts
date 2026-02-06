@@ -143,6 +143,23 @@ export interface InitializeAgreementModelCollections {
 }
 
 /*********************************************
+* InitializeWriteBackModel
+**********************************************/
+export interface InitializeWriteBackModel {
+	documents?: string;
+	providerName?: string;
+	scheduledCleanUp?: number;
+	selectedLocation?: string;
+}
+
+/*********************************************
+* InitializeWriteBackModelCollections
+**********************************************/
+export interface InitializeWriteBackModelCollections {
+
+}
+
+/*********************************************
 * SignAgreementModel
 **********************************************/
 export interface SignAgreementModel {
@@ -171,5 +188,37 @@ export interface UpdateAuditTrailEntryModel {
 * UpdateAuditTrailEntryModelCollections
 **********************************************/
 export interface UpdateAuditTrailEntryModelCollections {
+
+}
+
+/*********************************************
+* UpdateWriteBackFileModel
+**********************************************/
+export interface UpdateWriteBackFileModel {
+	fileName?: string;
+	listItemId?: string;
+	url?: string;
+	workItemId?: string;
+}
+
+/*********************************************
+* UpdateWriteBackFileModelCollections
+**********************************************/
+export interface UpdateWriteBackFileModelCollections {
+
+}
+
+/*********************************************
+* WriteBackLocationModel
+**********************************************/
+export interface WriteBackLocationModel {
+	title?: string;
+	uri?: string;
+}
+
+/*********************************************
+* WriteBackLocationModelCollections
+**********************************************/
+export interface WriteBackLocationModelCollections {
 
 }

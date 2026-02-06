@@ -2,6 +2,20 @@ import { Base } from "../../";
 import { SP } from "../../";
 
 /*********************************************
+* MicroServiceWorkItemAuthCryptoProvider
+**********************************************/
+export interface MicroServiceWorkItemAuthCryptoProvider {
+
+}
+
+/*********************************************
+* MicroServiceWorkItemAuthCryptoProviderCollections
+**********************************************/
+export interface MicroServiceWorkItemAuthCryptoProviderCollections {
+
+}
+
+/*********************************************
 * MicroServiceWorkItemProperties
 **********************************************/
 export interface MicroServiceWorkItemProperties {

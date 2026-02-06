@@ -20,6 +20,183 @@ export interface AcronymInformationCollections {
 }
 
 /*********************************************
+* AmplifiedChannels
+**********************************************/
+export interface AmplifiedChannels {
+	WasAmplifiedToEmail?: boolean;
+	WasAmplifiedToSharePoint?: boolean;
+	WasAmplifiedToTeams?: boolean;
+	WasAmplifiedToVivaEngage?: boolean;
+}
+
+/*********************************************
+* AmplifiedChannelsCollections
+**********************************************/
+export interface AmplifiedChannelsCollections {
+
+}
+
+/*********************************************
+* AmplifyPublishingHistoryResult
+**********************************************/
+export interface AmplifyPublishingHistoryResult {
+	AmplifyId?: any;
+	PageId?: number;
+	PublicationMetadata?: string;
+	publishingStatusResponse?: SP.Publishing.PublishingStatusResponse;
+	TimestampUTC?: any;
+}
+
+/*********************************************
+* AmplifyPublishingHistoryResultCollections
+**********************************************/
+export interface AmplifyPublishingHistoryResultCollections {
+
+}
+
+/*********************************************
+* PublishingStatusResponse
+**********************************************/
+export interface PublishingStatusResponse {
+	EmailPublishingStatus?: SP.Publishing.EmailPublishingStatus;
+	Errors?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyResult> };
+	LastTriedAt?: any;
+	PrePublishValidationErrorCode?: number;
+	PublishingStatus?: number;
+	SharePointPublishingStatus?: { results: Array<SP.Publishing.SharePointPublishingStatusResponse> };
+	TeamsPublishingStatus?: { results: Array<SP.Publishing.TeamsPublishingStatusResponse> };
+	VivaEngagePublishingStatus?: SP.Publishing.VivaEngagePublishingStatus;
+	VivaEngageV2PublishingStatus?: { results: Array<SP.Publishing.VivaEngagePublishingStatus> };
+	YammerPublishingStatus?: { results: Array<SP.KeyValue> };
+}
+
+/*********************************************
+* PublishingStatusResponseCollections
+**********************************************/
+export interface PublishingStatusResponseCollections {
+
+}
+
+/*********************************************
+* EmailPublishingStatus
+**********************************************/
+export interface EmailPublishingStatus {
+	DestinationURL?: string;
+	ErrorCode?: number;
+	Errors?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyResult> };
+	Status?: number;
+}
+
+/*********************************************
+* EmailPublishingStatusCollections
+**********************************************/
+export interface EmailPublishingStatusCollections {
+
+}
+
+/*********************************************
+* SharePointPublishingStatusResponse
+**********************************************/
+export interface SharePointPublishingStatusResponse {
+	SiteId?: string;
+	Status?: SP.Publishing.SharePointPublishingStatus;
+	WebId?: string;
+}
+
+/*********************************************
+* SharePointPublishingStatusResponseCollections
+**********************************************/
+export interface SharePointPublishingStatusResponseCollections {
+
+}
+
+/*********************************************
+* SharePointPublishingStatus
+**********************************************/
+export interface SharePointPublishingStatus {
+	DestinationPageId?: string;
+	DestinationPageUniqueId?: string;
+	DestinationPageURL?: string;
+	DestinationPageVersion?: string;
+	ErrorCode?: number;
+	Errors?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyResult> };
+	Status?: number;
+}
+
+/*********************************************
+* SharePointPublishingStatusCollections
+**********************************************/
+export interface SharePointPublishingStatusCollections {
+
+}
+
+/*********************************************
+* TeamsPublishingStatusResponse
+**********************************************/
+export interface TeamsPublishingStatusResponse {
+	AudienceId?: string;
+	Status?: SP.Publishing.TeamsPublishingStatus;
+}
+
+/*********************************************
+* TeamsPublishingStatusResponseCollections
+**********************************************/
+export interface TeamsPublishingStatusResponseCollections {
+
+}
+
+/*********************************************
+* TeamsPublishingStatus
+**********************************************/
+export interface TeamsPublishingStatus {
+	AudienceId?: string;
+	ErrorCode?: number;
+	ErrorMessage?: string;
+	Errors?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyResult> };
+	HttpStatusCode?: number;
+	Status?: number;
+}
+
+/*********************************************
+* TeamsPublishingStatusCollections
+**********************************************/
+export interface TeamsPublishingStatusCollections {
+
+}
+
+/*********************************************
+* VivaEngagePublishingStatus
+**********************************************/
+export interface VivaEngagePublishingStatus {
+	DestinationId?: string;
+	ErrorCode?: number;
+	ErrorMessage?: string;
+	Errors?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyResult> };
+	Status?: number;
+}
+
+/*********************************************
+* VivaEngagePublishingStatusCollections
+**********************************************/
+export interface VivaEngagePublishingStatusCollections {
+
+}
+
+/*********************************************
+* AmplifyPublishingHistory
+**********************************************/
+export interface AmplifyPublishingHistory {
+	results?: { results: Array<SP.Publishing.AmplifyPublishingHistoryResult> };
+}
+
+/*********************************************
+* AmplifyPublishingHistoryCollections
+**********************************************/
+export interface AmplifyPublishingHistoryCollections {
+
+}
+
+/*********************************************
 * AmplifyRequestEndpoint
 **********************************************/
 export interface AmplifyRequestEndpoint {
@@ -211,6 +388,7 @@ export interface SitePageFieldsData {
 	HideListEditorMetadata?: string;
 	LayoutWebpartsContent?: string;
 	Modified?: any;
+	PublicationMetadata?: string;
 	PublishStartDate?: any;
 	TeamsTranspileContent?: string;
 	Title?: string;
@@ -272,7 +450,6 @@ export interface CampaignPublicationFieldsData {
 	EndpointTeams?: string;
 	EndpointVivaEngage?: string;
 	EndpointYammer?: string;
-	PublicationMetadata?: string;
 	PublicationStatus?: number;
 }
 
@@ -339,6 +516,7 @@ export interface CopyToParams {
 	DestinationWebUrl?: string;
 	ScenarioID?: number;
 	ScenarioPayload?: string;
+	ShouldAddFallbackLinkForVideoForAmplify?: boolean;
 	SitePageFlags?: string;
 }
 
@@ -375,22 +553,6 @@ export interface DateTimeCustomProperty {
 * DateTimeCustomPropertyCollections
 **********************************************/
 export interface DateTimeCustomPropertyCollections {
-
-}
-
-/*********************************************
-* EmailPublishingStatus
-**********************************************/
-export interface EmailPublishingStatus {
-	DestinationURL?: string;
-	ErrorCode?: number;
-	Status?: number;
-}
-
-/*********************************************
-* EmailPublishingStatusCollections
-**********************************************/
-export interface EmailPublishingStatusCollections {
 
 }
 
@@ -433,6 +595,24 @@ export interface FeedVideoPageFieldsData {
 * FeedVideoPageFieldsDataCollections
 **********************************************/
 export interface FeedVideoPageFieldsDataCollections {
+
+}
+
+/*********************************************
+* GettyImage
+**********************************************/
+export interface GettyImage {
+	ImageId?: string;
+	ImageUrl?: string;
+	InsertionISOTimestamp?: string;
+	PrimaryId?: string;
+	SecondaryId?: string;
+}
+
+/*********************************************
+* GettyImageCollections
+**********************************************/
+export interface GettyImageCollections {
 
 }
 
@@ -925,110 +1105,6 @@ export interface PropertyValueCollections {
 }
 
 /*********************************************
-* PublishingStatusResponse
-**********************************************/
-export interface PublishingStatusResponse {
-	EmailPublishingStatus?: SP.Publishing.EmailPublishingStatus;
-	LastTriedAt?: any;
-	PrePublishValidationErrorCode?: number;
-	PublishingStatus?: number;
-	SharePointPublishingStatus?: { results: Array<SP.Publishing.SharePointPublishingStatusResponse> };
-	TeamsPublishingStatus?: { results: Array<SP.Publishing.TeamsPublishingStatusResponse> };
-	VivaEngagePublishingStatus?: SP.Publishing.VivaEngagePublishingStatus;
-	VivaEngageV2PublishingStatus?: { results: Array<SP.Publishing.VivaEngagePublishingStatus> };
-	YammerPublishingStatus?: { results: Array<SP.KeyValue> };
-}
-
-/*********************************************
-* PublishingStatusResponseCollections
-**********************************************/
-export interface PublishingStatusResponseCollections {
-
-}
-
-/*********************************************
-* SharePointPublishingStatusResponse
-**********************************************/
-export interface SharePointPublishingStatusResponse {
-	SiteId?: string;
-	Status?: SP.Publishing.SharePointPublishingStatus;
-	WebId?: string;
-}
-
-/*********************************************
-* SharePointPublishingStatusResponseCollections
-**********************************************/
-export interface SharePointPublishingStatusResponseCollections {
-
-}
-
-/*********************************************
-* SharePointPublishingStatus
-**********************************************/
-export interface SharePointPublishingStatus {
-	DestinationPageURL?: string;
-	ErrorCode?: number;
-	Status?: number;
-}
-
-/*********************************************
-* SharePointPublishingStatusCollections
-**********************************************/
-export interface SharePointPublishingStatusCollections {
-
-}
-
-/*********************************************
-* TeamsPublishingStatusResponse
-**********************************************/
-export interface TeamsPublishingStatusResponse {
-	AudienceId?: string;
-	Status?: SP.Publishing.TeamsPublishingStatus;
-}
-
-/*********************************************
-* TeamsPublishingStatusResponseCollections
-**********************************************/
-export interface TeamsPublishingStatusResponseCollections {
-
-}
-
-/*********************************************
-* TeamsPublishingStatus
-**********************************************/
-export interface TeamsPublishingStatus {
-	AudienceId?: string;
-	ErrorCode?: number;
-	ErrorMessage?: string;
-	HttpStatusCode?: number;
-	Status?: number;
-}
-
-/*********************************************
-* TeamsPublishingStatusCollections
-**********************************************/
-export interface TeamsPublishingStatusCollections {
-
-}
-
-/*********************************************
-* VivaEngagePublishingStatus
-**********************************************/
-export interface VivaEngagePublishingStatus {
-	DestinationId?: string;
-	ErrorCode?: number;
-	ErrorMessage?: string;
-	Status?: number;
-}
-
-/*********************************************
-* VivaEngagePublishingStatusCollections
-**********************************************/
-export interface VivaEngagePublishingStatusCollections {
-
-}
-
-/*********************************************
 * PublishPublicationResponse
 **********************************************/
 export interface PublishPublicationResponse {
@@ -1121,6 +1197,29 @@ export interface SendTestTeamsMessageResponse {
 * SendTestTeamsMessageResponseCollections
 **********************************************/
 export interface SendTestTeamsMessageResponseCollections {
+
+}
+
+/*********************************************
+* SharePageByEmailData
+**********************************************/
+export interface SharePageByEmailData {
+	BccEmails?: { results: Array<string> };
+	CcEmails?: { results: Array<string> };
+	EmailSize?: string;
+	Message?: string;
+	PageContent?: string;
+	PageItemId?: number;
+	RecipientEmails?: { results: Array<string> };
+	ScenarioTag?: string;
+	Subject?: string;
+	Url?: string;
+}
+
+/*********************************************
+* SharePageByEmailDataCollections
+**********************************************/
+export interface SharePageByEmailDataCollections {
 
 }
 
@@ -1273,6 +1372,7 @@ export interface SiteSharingEmailContextCollections {
 export interface StartCoAuthMetaData {
 	AuthoringSchemaFeatureVersions?: { results: Array<SP.Publishing.AuthoringSchemaFeatureVersion> };
 	ForceCheckin?: boolean;
+	ForceFlushOpStream?: boolean;
 	IsUserConsentProvidedForModerationStatus?: boolean;
 }
 
@@ -1419,6 +1519,22 @@ export interface CampaignPublicationLoadMailDraftParam {
 * CampaignPublicationLoadMailDraftParamCollections
 **********************************************/
 export interface CampaignPublicationLoadMailDraftParamCollections {
+
+}
+
+/*********************************************
+* MissingSharePointDestinationWebIdRepairItem
+**********************************************/
+export interface MissingSharePointDestinationWebIdRepairItem {
+	SiteId?: string;
+	SiteUrl?: string;
+	WebId?: string;
+}
+
+/*********************************************
+* MissingSharePointDestinationWebIdRepairItemCollections
+**********************************************/
+export interface MissingSharePointDestinationWebIdRepairItemCollections {
 
 }
 

@@ -88,6 +88,8 @@ export interface MigrationTaskEntityData {
 	CustomAzureStorageAccount?: string;
 	DateCreated?: any;
 	DateModified?: any;
+	DeltaSyncDateTimeFilter?: any;
+	DeltaSyncEnabled?: boolean;
 	EnableIncremental?: boolean;
 	EnableUserMappings?: boolean;
 	Encrypted?: boolean;
@@ -105,6 +107,7 @@ export interface MigrationTaskEntityData {
 	ScanOnly?: boolean;
 	ScheduledTimeUtc?: any;
 	ScheduledType?: number;
+	SettingsUpdateTime?: any;
 	SkipListWithAudienceEnabled?: boolean;
 	SourceListName?: string;
 	SourceListRelativePath?: string;

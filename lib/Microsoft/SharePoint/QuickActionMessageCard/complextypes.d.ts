@@ -10,6 +10,7 @@ export interface AutoInvokeAction {
 	hideCardOnInvoke?: string;
 	target?: string;
 	type?: string;
+	url?: string;
 }
 
 /*********************************************
@@ -193,6 +194,7 @@ export interface SPAccessRequestRefreshStatusBodyCollections {
 export interface SPAccessRequestRefreshStatus {
 	hasprofilepicture?: boolean;
 	isAutoInvoke?: boolean;
+	replyMessage?: string;
 	roletype?: string;
 	signature?: string;
 	status?: number;

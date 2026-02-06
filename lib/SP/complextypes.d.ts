@@ -285,10 +285,69 @@ export interface KnowledgeHubSiteReferenceCollections {
 }
 
 /*********************************************
+* AppSettingsInTeams
+**********************************************/
+export interface AppSettingsInTeams {
+	DesktopSettings?: SP.DesktopSettings;
+	MobileSettings?: SP.MobileSettings;
+}
+
+/*********************************************
+* AppSettingsInTeamsCollections
+**********************************************/
+export interface AppSettingsInTeamsCollections {
+
+}
+
+/*********************************************
+* DesktopSettings
+**********************************************/
+export interface DesktopSettings {
+	IsVivaHomeOptedOut?: boolean;
+}
+
+/*********************************************
+* DesktopSettingsCollections
+**********************************************/
+export interface DesktopSettingsCollections {
+
+}
+
+/*********************************************
+* MobileSettings
+**********************************************/
+export interface MobileSettings {
+	tabs?: { results: Array<SP.TabItem> };
+}
+
+/*********************************************
+* MobileSettingsCollections
+**********************************************/
+export interface MobileSettingsCollections {
+
+}
+
+/*********************************************
+* TabItem
+**********************************************/
+export interface TabItem {
+	name?: string;
+}
+
+/*********************************************
+* TabItemCollections
+**********************************************/
+export interface TabItemCollections {
+
+}
+
+/*********************************************
 * ConfigurationData
 **********************************************/
 export interface ConfigurationData {
+	AppSettings?: SP.MobileSettings;
 	BridgeAbsolutePath?: SP.ResourcePath;
+	HomeSiteTitle?: string;
 	IsCustomizedThemeEnabled?: boolean;
 	IsPersonalizationEnabled?: boolean;
 	IsVivaHomeFeedReplaceFlightEnabled?: boolean;
@@ -318,6 +377,26 @@ export interface ResourcePath {
 * ResourcePathCollections
 **********************************************/
 export interface ResourcePathCollections {
+
+}
+
+/*********************************************
+* VivaHomeTitleRegion
+**********************************************/
+export interface VivaHomeTitleRegion {
+	ImageUrl?: string;
+	ListId?: any;
+	SiteId?: any;
+	TranslateX?: number;
+	TranslateY?: number;
+	UniqueId?: any;
+	WebId?: any;
+}
+
+/*********************************************
+* VivaHomeTitleRegionCollections
+**********************************************/
+export interface VivaHomeTitleRegionCollections {
 
 }
 
@@ -364,26 +443,6 @@ export interface PivotItem {
 * PivotItemCollections
 **********************************************/
 export interface PivotItemCollections {
-
-}
-
-/*********************************************
-* VivaHomeTitleRegion
-**********************************************/
-export interface VivaHomeTitleRegion {
-	ImageUrl?: string;
-	ListId?: any;
-	SiteId?: any;
-	TranslateX?: number;
-	TranslateY?: number;
-	UniqueId?: any;
-	WebId?: any;
-}
-
-/*********************************************
-* VivaHomeTitleRegionCollections
-**********************************************/
-export interface VivaHomeTitleRegionCollections {
 
 }
 
@@ -443,6 +502,29 @@ export interface BrandCenterConfigurationCollections {
 }
 
 /*********************************************
+* ApprovalsCreateRequestParameters
+**********************************************/
+export interface ApprovalsCreateRequestParameters {
+	approvers?: string;
+	awaitAll?: boolean;
+	details?: string;
+	itemId?: string;
+	itemUrlType?: number;
+	listId?: string;
+	markDocAsFinal?: boolean;
+	title?: string;
+	url?: string;
+	version?: string;
+}
+
+/*********************************************
+* ApprovalsCreateRequestParametersCollections
+**********************************************/
+export interface ApprovalsCreateRequestParametersCollections {
+
+}
+
+/*********************************************
 * FieldLookupValue
 **********************************************/
 export interface FieldLookupValue {
@@ -454,6 +536,29 @@ export interface FieldLookupValue {
 * FieldLookupValueCollections
 **********************************************/
 export interface FieldLookupValueCollections {
+
+}
+
+/*********************************************
+* SemanticSearchCrawlerEnqueueItem
+**********************************************/
+export interface SemanticSearchCrawlerEnqueueItem {
+	AssociateSiteId?: any;
+	ItemId?: number;
+	ItemUniqueId?: any;
+	ItemUrl?: string;
+	ListId?: any;
+	SecondsInDB?: number;
+	SemanticSearchServiceEndPointJson?: string;
+	SourceAction?: number;
+	VroomId?: string;
+	WorkItemId?: any;
+}
+
+/*********************************************
+* SemanticSearchCrawlerEnqueueItemCollections
+**********************************************/
+export interface SemanticSearchCrawlerEnqueueItemCollections {
 
 }
 
@@ -497,6 +602,221 @@ export interface AccessRequestResponse {
 * AccessRequestResponseCollections
 **********************************************/
 export interface AccessRequestResponseCollections {
+
+}
+
+/*********************************************
+* CardElement
+**********************************************/
+export interface CardElement {
+	id?: string;
+	isVisible?: boolean;
+	separator?: boolean;
+	spacing?: string;
+	type?: string;
+}
+
+/*********************************************
+* CardElementCollections
+**********************************************/
+export interface CardElementCollections {
+
+}
+
+/*********************************************
+* AdaptiveCardAction
+**********************************************/
+export interface AdaptiveCardAction {
+	isPrimary?: boolean;
+	title?: string;
+}
+
+/*********************************************
+* AdaptiveCardActionCollections
+**********************************************/
+export interface AdaptiveCardActionCollections {
+
+}
+
+/*********************************************
+* ActionHttp
+**********************************************/
+export interface ActionHttp {
+	body?: string;
+	headers?: { results: Array<Microsoft.SharePoint.QuickActionMessageCard.Header> };
+	method?: string;
+	url?: string;
+}
+
+/*********************************************
+* ActionHttpCollections
+**********************************************/
+export interface ActionHttpCollections {
+
+}
+
+/*********************************************
+* ActionOpenUrl
+**********************************************/
+export interface ActionOpenUrl {
+	url?: string;
+}
+
+/*********************************************
+* ActionOpenUrlCollections
+**********************************************/
+export interface ActionOpenUrlCollections {
+
+}
+
+/*********************************************
+* ActionSet
+**********************************************/
+export interface ActionSet {
+	actions?: { results: Array<SP.AdaptiveCardAction> };
+	horizontalAlignment?: string;
+}
+
+/*********************************************
+* ActionSetCollections
+**********************************************/
+export interface ActionSetCollections {
+
+}
+
+/*********************************************
+* ActionShowCard
+**********************************************/
+export interface ActionShowCard {
+	card?: SP.AdaptiveCard;
+}
+
+/*********************************************
+* ActionShowCardCollections
+**********************************************/
+export interface ActionShowCardCollections {
+
+}
+
+/*********************************************
+* AdaptiveCard
+**********************************************/
+export interface AdaptiveCard {
+	autoInvokeAction?: Microsoft.SharePoint.QuickActionMessageCard.AutoInvokeAction;
+	autoInvokeOptions?: Microsoft.SharePoint.QuickActionMessageCard.AutoInvokeOptions;
+	body?: { results: Array<SP.CardElement> };
+	correlationId?: string;
+	hideOriginalBody?: boolean;
+	originator?: string;
+	padding?: SP.Padding;
+	rtl?: boolean;
+	type?: string;
+	version?: string;
+}
+
+/*********************************************
+* AdaptiveCardCollections
+**********************************************/
+export interface AdaptiveCardCollections {
+
+}
+
+/*********************************************
+* Padding
+**********************************************/
+export interface Padding {
+	bottom?: string;
+	left?: string;
+	right?: string;
+	top?: string;
+}
+
+/*********************************************
+* PaddingCollections
+**********************************************/
+export interface PaddingCollections {
+
+}
+
+/*********************************************
+* ActionSubmit
+**********************************************/
+export interface ActionSubmit {
+	data?: { results: Array<SP.KeyValue> };
+}
+
+/*********************************************
+* ActionSubmitCollections
+**********************************************/
+export interface ActionSubmitCollections {
+
+}
+
+/*********************************************
+* ActionToggleVisibility
+**********************************************/
+export interface ActionToggleVisibility {
+	targetElements?: { results: Array<string> };
+}
+
+/*********************************************
+* ActionToggleVisibilityCollections
+**********************************************/
+export interface ActionToggleVisibilityCollections {
+
+}
+
+/*********************************************
+* Container
+**********************************************/
+export interface Container {
+	backgroundImage?: string;
+	items?: { results: Array<SP.CardElement> };
+	padding?: SP.Padding;
+	selectAction?: SP.AdaptiveCardAction;
+	style?: string;
+	verticalContentAlignment?: string;
+}
+
+/*********************************************
+* ContainerCollections
+**********************************************/
+export interface ContainerCollections {
+
+}
+
+/*********************************************
+* AdaptiveCardColumn
+**********************************************/
+export interface AdaptiveCardColumn {
+	width?: string;
+}
+
+/*********************************************
+* AdaptiveCardColumnCollections
+**********************************************/
+export interface AdaptiveCardColumnCollections {
+
+}
+
+/*********************************************
+* AdaptiveCardImage
+**********************************************/
+export interface AdaptiveCardImage {
+	altText?: string;
+	backgroundColor?: string;
+	height?: string;
+	horizontalAlignment?: string;
+	size?: string;
+	style?: string;
+	url?: string;
+	width?: string;
+}
+
+/*********************************************
+* AdaptiveCardImageCollections
+**********************************************/
+export interface AdaptiveCardImageCollections {
 
 }
 
@@ -644,6 +964,21 @@ export interface AgreementESignStatusUpdatedPayloadCollections {
 }
 
 /*********************************************
+* AgreementImportData
+**********************************************/
+export interface AgreementImportData {
+	ExtractionPending?: number;
+	UserConfirmationPending?: number;
+}
+
+/*********************************************
+* AgreementImportDataCollections
+**********************************************/
+export interface AgreementImportDataCollections {
+
+}
+
+/*********************************************
 * AgreementLocationData
 **********************************************/
 export interface AgreementLocationData {
@@ -664,6 +999,7 @@ export interface AgreementLocationDataCollections {
 **********************************************/
 export interface AgreementLocation {
 	CategoryLabel?: string;
+	FolderId?: number;
 	LibraryId?: any;
 	SiteId?: any;
 	WebId?: any;
@@ -712,6 +1048,7 @@ export interface AgreementMetaDataCollections {
 * AgreementPermissionsData
 **********************************************/
 export interface AgreementPermissionsData {
+	CanAddAmendment?: boolean;
 	CanCreateAgreement?: boolean;
 	CanCreateTemplate?: boolean;
 	CanImportAgreement?: boolean;
@@ -803,6 +1140,7 @@ export interface AgreementsSolutionEnabledSitesResponseCollections {
 * SPAgreementsSite
 **********************************************/
 export interface SPAgreementsSite {
+	CreatedDateTime?: any;
 	Description?: string;
 	GroupId?: string;
 	LastModifiedDateTime?: any;
@@ -868,6 +1206,92 @@ export interface SiteTemplateCollections {
 }
 
 /*********************************************
+* AgreementsSolutionFileContext
+**********************************************/
+export interface AgreementsSolutionFileContext {
+	CategoryId?: string;
+	CategoryTermSetId?: string;
+	CheckOutType?: number;
+	CurrentVersion?: string;
+	DoesUserHaveEditPermissionOnParent?: boolean;
+	EffectiveBasePermissions?: SP.EffectiveBasePermissions;
+	FieldLibrary?: SP.LibraryDetails;
+	FileProperties?: { results: Array<SP.KeyValue> };
+	FileRelativePath?: string;
+	FolderPathFullUrl?: string;
+	IsAgreementsSolutionFile?: boolean;
+	LastPublishedVersion?: string;
+	ListId?: string;
+	ListItemId?: string;
+	ListItemProperties?: { results: Array<SP.KeyValue> };
+	ListItemUniqueId?: string;
+	ModernTemplateLibrary?: SP.LibraryDetails;
+	ParentLibrary?: SP.LibraryDetails;
+	SiteId?: string;
+	SnippetLibrary?: SP.LibraryDetails;
+	TargetLibrary?: SP.DestinationLibraryInfo;
+	WebId?: string;
+	WebServerRelativeUrl?: string;
+	WebUrl?: string;
+}
+
+/*********************************************
+* AgreementsSolutionFileContextCollections
+**********************************************/
+export interface AgreementsSolutionFileContextCollections {
+
+}
+
+/*********************************************
+* EffectiveBasePermissions
+**********************************************/
+export interface EffectiveBasePermissions {
+	High?: string;
+	Low?: string;
+}
+
+/*********************************************
+* EffectiveBasePermissionsCollections
+**********************************************/
+export interface EffectiveBasePermissionsCollections {
+
+}
+
+/*********************************************
+* LibraryDetails
+**********************************************/
+export interface LibraryDetails {
+	BaseTemplateType?: number;
+	IsApprovalsEnabled?: boolean;
+	ListId?: string;
+	ListItemEntityTypeFullName?: string;
+	ListName?: string;
+}
+
+/*********************************************
+* LibraryDetailsCollections
+**********************************************/
+export interface LibraryDetailsCollections {
+
+}
+
+/*********************************************
+* DestinationLibraryInfo
+**********************************************/
+export interface DestinationLibraryInfo {
+	LibraryId?: string;
+	SiteId?: string;
+	WebId?: string;
+}
+
+/*********************************************
+* DestinationLibraryInfoCollections
+**********************************************/
+export interface DestinationLibraryInfoCollections {
+
+}
+
+/*********************************************
 * AgreementSummaryData
 **********************************************/
 export interface AgreementSummaryData {
@@ -887,25 +1311,16 @@ export interface AgreementSummaryDataCollections {
 }
 
 /*********************************************
-* ApprovalsCreateRequestParameters
+* AgreementWorkFlowResponse
 **********************************************/
-export interface ApprovalsCreateRequestParameters {
-	approvers?: string;
-	awaitAll?: boolean;
-	details?: string;
-	itemId?: string;
-	itemUrlType?: number;
-	listId?: string;
-	markDocAsFinal?: boolean;
-	title?: string;
-	url?: string;
-	version?: string;
+export interface AgreementWorkFlowResponse {
+	NextWorkFlow?: string;
 }
 
 /*********************************************
-* ApprovalsCreateRequestParametersCollections
+* AgreementWorkFlowResponseCollections
 **********************************************/
-export interface ApprovalsCreateRequestParametersCollections {
+export interface AgreementWorkFlowResponseCollections {
 
 }
 
@@ -918,6 +1333,7 @@ export interface ApprovalsProperties {
 	ApproversFixed?: boolean;
 	ApproverSourceType?: number;
 	ApproverSourceValue?: string;
+	NotificationsEnabled?: boolean;
 	ProvisioningError?: string;
 	ProvisioningStatus?: number;
 }
@@ -926,6 +1342,20 @@ export interface ApprovalsProperties {
 * ApprovalsPropertiesCollections
 **********************************************/
 export interface ApprovalsPropertiesCollections {
+
+}
+
+/*********************************************
+* BaseRequestParams
+**********************************************/
+export interface BaseRequestParams {
+	Top?: number;
+}
+
+/*********************************************
+* BaseRequestParamsCollections
+**********************************************/
+export interface BaseRequestParamsCollections {
 
 }
 
@@ -973,6 +1403,39 @@ export interface CAFieldValue {
 * CAFieldValueCollections
 **********************************************/
 export interface CAFieldValueCollections {
+
+}
+
+/*********************************************
+* CoAuthConfiguration
+**********************************************/
+export interface CoAuthConfiguration {
+	SourceSessionId?: any;
+	UpdateDate?: any;
+	UpdateReason?: number;
+}
+
+/*********************************************
+* CoAuthConfigurationCollections
+**********************************************/
+export interface CoAuthConfigurationCollections {
+
+}
+
+/*********************************************
+* ColumnSet
+**********************************************/
+export interface ColumnSet {
+	columns?: { results: Array<SP.AdaptiveCardColumn> };
+	horizontalAlignment?: string;
+	padding?: SP.Padding;
+	selectAction?: SP.AdaptiveCardAction;
+}
+
+/*********************************************
+* ColumnSetCollections
+**********************************************/
+export interface ColumnSetCollections {
 
 }
 
@@ -1170,6 +1633,23 @@ export interface CreateReviewRequestDTOCollections {
 }
 
 /*********************************************
+* CreateTemplateResponse
+**********************************************/
+export interface CreateTemplateResponse {
+	ServerRelativeUrl?: string;
+	Title?: string;
+	UniqueID?: string;
+	Url?: string;
+}
+
+/*********************************************
+* CreateTemplateResponseCollections
+**********************************************/
+export interface CreateTemplateResponseCollections {
+
+}
+
+/*********************************************
 * CurrencyInformationCollection
 **********************************************/
 export interface CurrencyInformationCollection {
@@ -1237,9 +1717,11 @@ export interface DocumentGenerationInfo {
 	ConditionalFieldsToBeDeleted?: { results: Array<string> };
 	ContentAssemblyFormAnswers?: { results: Array<SP.ContentAssemblyFormAnswer> };
 	CopyFieldsFromExistingDocument?: boolean;
+	DocumentLocation?: SP.DocumentLocation;
 	FileName?: string;
 	FolderUrl?: string;
 	Format?: number;
+	IsAssociatedWithDocForms?: boolean;
 	IsTempFile?: boolean;
 	TempFileUrl?: string;
 	UpdateFolderPermissions?: boolean;
@@ -1249,6 +1731,23 @@ export interface DocumentGenerationInfo {
 * DocumentGenerationInfoCollections
 **********************************************/
 export interface DocumentGenerationInfoCollections {
+
+}
+
+/*********************************************
+* DocumentLocation
+**********************************************/
+export interface DocumentLocation {
+	FolderId?: number;
+	LibraryId?: any;
+	SiteId?: any;
+	WebId?: any;
+}
+
+/*********************************************
+* DocumentLocationCollections
+**********************************************/
+export interface DocumentLocationCollections {
 
 }
 
@@ -1267,6 +1766,37 @@ export interface EncryptionOptionCollections {
 }
 
 /*********************************************
+* ExceptionDetails
+**********************************************/
+export interface ExceptionDetails {
+	ErrorCode?: string;
+	IsExpectedException?: boolean;
+	Message?: string;
+	StackTrace?: string;
+}
+
+/*********************************************
+* ExceptionDetailsCollections
+**********************************************/
+export interface ExceptionDetailsCollections {
+
+}
+
+/*********************************************
+* FavoritedItemsParams
+**********************************************/
+export interface FavoritedItemsParams {
+
+}
+
+/*********************************************
+* FavoritedItemsParamsCollections
+**********************************************/
+export interface FavoritedItemsParamsCollections {
+
+}
+
+/*********************************************
 * FieldValuesWithUrl
 **********************************************/
 export interface FieldValuesWithUrl {
@@ -1278,6 +1808,65 @@ export interface FieldValuesWithUrl {
 * FieldValuesWithUrlCollections
 **********************************************/
 export interface FieldValuesWithUrlCollections {
+
+}
+
+/*********************************************
+* FollowedSitesParams
+**********************************************/
+export interface FollowedSitesParams {
+
+}
+
+/*********************************************
+* FollowedSitesParamsCollections
+**********************************************/
+export interface FollowedSitesParamsCollections {
+
+}
+
+/*********************************************
+* FontOption
+**********************************************/
+export interface FontOption {
+	fontFace?: string;
+	fontFamilyKey?: string;
+	fontVariantWeight?: string;
+}
+
+/*********************************************
+* FontOptionCollections
+**********************************************/
+export interface FontOptionCollections {
+
+}
+
+/*********************************************
+* GetNextAgreementWorkFlowRequest
+**********************************************/
+export interface GetNextAgreementWorkFlowRequest {
+	CurrentState?: number;
+	DocumentUri?: string;
+}
+
+/*********************************************
+* GetNextAgreementWorkFlowRequestCollections
+**********************************************/
+export interface GetNextAgreementWorkFlowRequestCollections {
+
+}
+
+/*********************************************
+* GetReviewConfigRequestDTO
+**********************************************/
+export interface GetReviewConfigRequestDTO {
+	DocumentUri?: string;
+}
+
+/*********************************************
+* GetReviewConfigRequestDTOCollections
+**********************************************/
+export interface GetReviewConfigRequestDTOCollections {
 
 }
 
@@ -1331,6 +1920,73 @@ export interface IngestionTaskKeyCollections {
 }
 
 /*********************************************
+* InputChoiceSet
+**********************************************/
+export interface InputChoiceSet {
+	choices?: { results: Array<SP.InputChoice> };
+	isMultiSelect?: boolean;
+	isRequired?: boolean;
+	style?: string;
+	value?: string;
+}
+
+/*********************************************
+* InputChoiceSetCollections
+**********************************************/
+export interface InputChoiceSetCollections {
+
+}
+
+/*********************************************
+* InputChoice
+**********************************************/
+export interface InputChoice {
+	isSelected?: boolean;
+	title?: string;
+	value?: string;
+}
+
+/*********************************************
+* InputChoiceCollections
+**********************************************/
+export interface InputChoiceCollections {
+
+}
+
+/*********************************************
+* InputText
+**********************************************/
+export interface InputText {
+	isMultiline?: boolean;
+	isRequired?: boolean;
+	maxLength?: number;
+	placeholder?: string;
+	style?: string;
+}
+
+/*********************************************
+* InputTextCollections
+**********************************************/
+export interface InputTextCollections {
+
+}
+
+/*********************************************
+* InsertFieldResponse
+**********************************************/
+export interface InsertFieldResponse {
+	FailedInsertions?: { results: Array<Microsoft.SharePoint.Agreements.Models.FieldItemInsertionDetails> };
+	SuccessfulInsertions?: { results: Array<Microsoft.SharePoint.Agreements.Models.FieldItemInsertionDetails> };
+}
+
+/*********************************************
+* InsertFieldResponseCollections
+**********************************************/
+export interface InsertFieldResponseCollections {
+
+}
+
+/*********************************************
 * ItemOrderUpdateValue
 **********************************************/
 export interface ItemOrderUpdateValue {
@@ -1362,6 +2018,55 @@ export interface LockFileDataCollections {
 }
 
 /*********************************************
+* MainLinkDetails
+**********************************************/
+export interface MainLinkDetails {
+	Audience?: number;
+	Role?: number;
+}
+
+/*********************************************
+* MainLinkDetailsCollections
+**********************************************/
+export interface MainLinkDetailsCollections {
+
+}
+
+/*********************************************
+* ManageChannelCapabilitiesRequest
+**********************************************/
+export interface ManageChannelCapabilitiesRequest {
+	ChannelCapabilities?: SP.SPTeamChannelCapabilities;
+	SiteId?: any;
+	TeamsChannelType?: number;
+}
+
+/*********************************************
+* ManageChannelCapabilitiesRequestCollections
+**********************************************/
+export interface ManageChannelCapabilitiesRequestCollections {
+
+}
+
+/*********************************************
+* SPTeamChannelCapabilities
+**********************************************/
+export interface SPTeamChannelCapabilities {
+	HasOwningTeamAccess?: boolean;
+	IsB2BCollabEnabled?: boolean;
+	IsB2BDirectConnectEnabled?: boolean;
+	IsNextGenerationChannel?: boolean;
+	SiteMembershipIndicator?: number;
+}
+
+/*********************************************
+* SPTeamChannelCapabilitiesCollections
+**********************************************/
+export interface SPTeamChannelCapabilitiesCollections {
+
+}
+
+/*********************************************
 * MultiGeoCopyParameters
 **********************************************/
 export interface MultiGeoCopyParameters {
@@ -1374,6 +2079,81 @@ export interface MultiGeoCopyParameters {
 * MultiGeoCopyParametersCollections
 **********************************************/
 export interface MultiGeoCopyParametersCollections {
+
+}
+
+/*********************************************
+* NgspRequestParams
+**********************************************/
+export interface NgspRequestParams {
+	FavoritedItems?: SP.FavoritedItemsParams;
+	FollowedSites?: SP.FollowedSitesParams;
+	OwnedByMe?: SP.OwnedByMeParams;
+	RecentFiles?: SP.RecentFilesParams;
+	RecentSites?: SP.RecentSitesParams;
+	SuggestedSites?: SP.SuggestedSitesParams;
+}
+
+/*********************************************
+* NgspRequestParamsCollections
+**********************************************/
+export interface NgspRequestParamsCollections {
+
+}
+
+/*********************************************
+* OwnedByMeParams
+**********************************************/
+export interface OwnedByMeParams {
+
+}
+
+/*********************************************
+* OwnedByMeParamsCollections
+**********************************************/
+export interface OwnedByMeParamsCollections {
+
+}
+
+/*********************************************
+* RecentFilesParams
+**********************************************/
+export interface RecentFilesParams {
+
+}
+
+/*********************************************
+* RecentFilesParamsCollections
+**********************************************/
+export interface RecentFilesParamsCollections {
+
+}
+
+/*********************************************
+* RecentSitesParams
+**********************************************/
+export interface RecentSitesParams {
+
+}
+
+/*********************************************
+* RecentSitesParamsCollections
+**********************************************/
+export interface RecentSitesParamsCollections {
+
+}
+
+/*********************************************
+* SuggestedSitesParams
+**********************************************/
+export interface SuggestedSitesParams {
+
+}
+
+/*********************************************
+* SuggestedSitesParamsCollections
+**********************************************/
+export interface SuggestedSitesParamsCollections {
 
 }
 
@@ -1399,11 +2179,29 @@ export interface PlaceholderCollections {
 }
 
 /*********************************************
+* PowerPlatformEnvironment
+**********************************************/
+export interface PowerPlatformEnvironment {
+	IsProvisioned?: boolean;
+	Name?: string;
+}
+
+/*********************************************
+* PowerPlatformEnvironmentCollections
+**********************************************/
+export interface PowerPlatformEnvironmentCollections {
+
+}
+
+/*********************************************
 * PublishModernTemplatePayload
 **********************************************/
 export interface PublishModernTemplatePayload {
 	DisableSearchAndApprovals?: boolean;
+	DocumentLocation?: SP.DocumentLocation;
+	IsAssociatedWithDocForms?: boolean;
 	Placeholders?: { results: Array<SP.PlaceholderV2> };
+	ProcessConditionalFields?: boolean;
 	Snippets?: { results: Array<SP.Snippet> };
 	Url?: string;
 }
@@ -1514,6 +2312,39 @@ export interface RequestedTranslation {
 * RequestedTranslationCollections
 **********************************************/
 export interface RequestedTranslationCollections {
+
+}
+
+/*********************************************
+* RestrictAccessControlUpdate
+**********************************************/
+export interface RestrictAccessControlUpdate {
+	AllowSharingOutsideRAC?: boolean;
+	IsPolicyEnabledAtSite?: boolean;
+	IsPolicyEnabledAtTenant?: boolean;
+	Justification?: string;
+	RestrictedAccessControlGroups?: { results: Array<string> };
+}
+
+/*********************************************
+* RestrictAccessControlUpdateCollections
+**********************************************/
+export interface RestrictAccessControlUpdateCollections {
+
+}
+
+/*********************************************
+* RestrictContentOrgWidePolicyUpdate
+**********************************************/
+export interface RestrictContentOrgWidePolicyUpdate {
+	IsPolicyEnabled?: boolean;
+	Justification?: string;
+}
+
+/*********************************************
+* RestrictContentOrgWidePolicyUpdateCollections
+**********************************************/
+export interface RestrictContentOrgWidePolicyUpdateCollections {
 
 }
 
@@ -1639,12 +2470,14 @@ export interface SharingLinkData {
 	IsAnonymous?: boolean;
 	IsCreateOnlyLink?: boolean;
 	IsFormsLink?: boolean;
+	IsMainLink?: boolean;
 	IsManageListLink?: boolean;
 	IsOriginatedFromSharingFlow?: boolean;
 	IsReviewLink?: boolean;
 	IsSharingLink?: boolean;
 	IsWritable?: boolean;
 	LinkKind?: number;
+	LinkScope?: number;
 	ObjectType?: number;
 	ObjectUniqueId?: any;
 	RequiresPassword?: boolean;
@@ -1682,14 +2515,18 @@ export interface SharingLinkInfo {
 	IsEditLink?: boolean;
 	IsEphemeral?: boolean;
 	IsFormsLink?: boolean;
+	IsMainLink?: boolean;
 	IsManageListLink?: boolean;
 	IsReviewLink?: boolean;
 	IsUnhealthy?: boolean;
 	LastModified?: string;
 	LastModifiedBy?: SP.Sharing.Principal;
 	LimitUseToApplication?: boolean;
+	LinkAclState?: number;
 	LinkKind?: number;
+	MainLinkDetails?: SP.MainLinkDetails;
 	MeetingId?: string;
+	MustAlwaysUseLink?: boolean;
 	PasswordLastModified?: string;
 	PasswordLastModifiedBy?: SP.Sharing.Principal;
 	RedeemedUsers?: { results: Array<SP.Sharing.LinkInvitation> };
@@ -1724,6 +2561,20 @@ export interface SmartTemplateContentType {
 * SmartTemplateContentTypeCollections
 **********************************************/
 export interface SmartTemplateContentTypeCollections {
+
+}
+
+/*********************************************
+* SPAgreementResults
+**********************************************/
+export interface SPAgreementResults {
+	Results?: { results: Array<SP.KeyValue> };
+}
+
+/*********************************************
+* SPAgreementResultsCollections
+**********************************************/
+export interface SPAgreementResultsCollections {
 
 }
 
@@ -2002,6 +2853,24 @@ export interface ChangeTokenCollections {
 }
 
 /*********************************************
+* ChannelCapabilities
+**********************************************/
+export interface ChannelCapabilities {
+	HasOwningTeamAccess?: boolean;
+	IsB2BCollabEnabled?: boolean;
+	IsB2BDirectConnectEnabled?: boolean;
+	IsNextGenerationChannel?: boolean;
+	SiteMembershipIndicator?: number;
+}
+
+/*********************************************
+* ChannelCapabilitiesCollections
+**********************************************/
+export interface ChannelCapabilitiesCollections {
+
+}
+
+/*********************************************
 * ClassificationResult
 **********************************************/
 export interface ClassificationResult {
@@ -2141,7 +3010,9 @@ export interface CopyMigrationOptions {
 	IgnoreVersionHistory?: boolean;
 	IncludeItemPermissions?: boolean;
 	IsMoveMode?: boolean;
+	MergeEmailNotifications?: boolean;
 	MoveAndShareFileInfo?: SP.SPMoveAndShareFileInfo;
+	MoveAndShareItems?: boolean;
 	MoveButKeepSource?: boolean;
 	NameConflictBehavior?: number;
 	SameWebCopyMoveOptimization?: boolean;
@@ -2459,14 +3330,32 @@ export interface FileDeleteParametersCollections {
 export interface FileVersionBatchDeleteParameters {
 	BatchDeleteMode?: number;
 	DeleteOlderThanDays?: number;
+	FileTypeSelections?: SP.VersionPolicySelectionParameters;
 	MajorVersionLimit?: number;
 	MajorWithMinorVersionsLimit?: number;
+	SyncListPolicy?: boolean;
 }
 
 /*********************************************
 * FileVersionBatchDeleteParametersCollections
 **********************************************/
 export interface FileVersionBatchDeleteParametersCollections {
+
+}
+
+/*********************************************
+* VersionPolicySelectionParameters
+**********************************************/
+export interface VersionPolicySelectionParameters {
+	FileTypesSelected?: { results: Array<string> };
+	SelectAllFileTypes?: boolean;
+	SelectDefault?: boolean;
+}
+
+/*********************************************
+* VersionPolicySelectionParametersCollections
+**********************************************/
+export interface VersionPolicySelectionParametersCollections {
 
 }
 
@@ -2598,11 +3487,11 @@ export interface ListCollectionPositionCollections {
 **********************************************/
 export interface GroupCreationInformation {
 	Description?: string;
+	Title?: string;
 	AllowMembersEditMembership?: boolean;
 	AllowRequestToJoinLeave?: boolean;
 	AutoAcceptRequestToJoinLeave?: boolean;
 	OnlyAllowMembersViewMembership?: boolean;
-	Title?: string;
 }
 
 /*********************************************
@@ -2691,6 +3580,22 @@ export interface SPInvitationCreationResultCollections {
 }
 
 /*********************************************
+* LabelAccessControlData
+**********************************************/
+export interface LabelAccessControlData {
+	ErrorDetails?: SP.ExceptionDetails;
+	HasAccessToLabel?: boolean;
+	PrincipalName?: string;
+}
+
+/*********************************************
+* LabelAccessControlDataCollections
+**********************************************/
+export interface LabelAccessControlDataCollections {
+
+}
+
+/*********************************************
 * Language
 **********************************************/
 export interface Language {
@@ -2761,6 +3666,7 @@ export interface ListDataValidationExceptionValueCollections {
 * ListForm
 **********************************************/
 export interface ListForm {
+	HasSourceField?: boolean;
 	Id?: string;
 	SchemaJSON?: string;
 }
@@ -2956,13 +3862,18 @@ export interface MachineLearningSampleMetaCollections {
 * MediaServiceUpdateParameters
 **********************************************/
 export interface MediaServiceUpdateParameters {
+	AgreementClauses?: string;
+	AgreementResults?: SP.SPAgreementResults;
 	AIPLabelExtractionStatus?: number;
 	ChiSquareDistribution?: string;
 	ClassificationResult?: SP.ClassificationResult;
 	ContentVersion?: number;
+	DigitalSignatureProvider?: string;
 	Entropy?: string;
 	ETag?: string;
 	FieldValues?: { results: Array<SP.KeyValue> };
+	GeneratedSnippetShortInstructions?: string;
+	HasDigitalSignature?: string;
 	IsLowPriorityRequest?: boolean;
 	IsMediaServiceRequest?: boolean;
 	MachineLearningSampleMeta?: SP.MachineLearningSampleMeta;
@@ -2992,6 +3903,7 @@ export interface MediaServiceUpdateParameters {
 	SensitivityLabel?: string;
 	SensitivityLabelAssignmentMethod?: number;
 	SkipSearchReindex?: boolean;
+	TranslatedLang?: string;
 	VirusInfo?: string;
 	VirusStatus?: string;
 	XTenantLabelInfo?: string;
@@ -3703,6 +4615,79 @@ export interface XmlSchemaFieldCreationInformationCollections {
 }
 
 /*********************************************
+* SyntexCustomModelDeploymentModelInfo
+**********************************************/
+export interface SyntexCustomModelDeploymentModelInfo {
+	Format?: string;
+	Name?: string;
+	SourceAccount?: string;
+	Version?: string;
+}
+
+/*********************************************
+* SyntexCustomModelDeploymentModelInfoCollections
+**********************************************/
+export interface SyntexCustomModelDeploymentModelInfoCollections {
+
+}
+
+/*********************************************
+* SyntexCustomModelDeploymentProperties
+**********************************************/
+export interface SyntexCustomModelDeploymentProperties {
+	Capabilities?: { results: Array<SP.KeyValue> };
+	Model?: SP.SyntexCustomModelDeploymentModelInfo;
+}
+
+/*********************************************
+* SyntexCustomModelDeploymentPropertiesCollections
+**********************************************/
+export interface SyntexCustomModelDeploymentPropertiesCollections {
+
+}
+
+/*********************************************
+* SyntexCustomModelSetting
+**********************************************/
+export interface SyntexCustomModelSetting {
+	AnalyzerId?: string;
+	AzureResourceId?: string;
+	DeploymentName?: string;
+	DeploymentProperties?: SP.SyntexCustomModelDeploymentProperties;
+	Endpoint?: string;
+	EndpointType?: number;
+	IsDisabled?: boolean;
+	TaskType?: number;
+	UniqueId?: string;
+	UniqueName?: string;
+	Updated?: any;
+}
+
+/*********************************************
+* SyntexCustomModelSettingCollections
+**********************************************/
+export interface SyntexCustomModelSettingCollections {
+
+}
+
+/*********************************************
+* SyntexCustomModelWrapper
+**********************************************/
+export interface SyntexCustomModelWrapper {
+	Capability?: number;
+	Enabled?: boolean;
+	Id?: string;
+	Setting?: SP.SyntexCustomModelSetting;
+}
+
+/*********************************************
+* SyntexCustomModelWrapperCollections
+**********************************************/
+export interface SyntexCustomModelWrapperCollections {
+
+}
+
+/*********************************************
 * SystemSiteLockExpirationResult
 **********************************************/
 export interface SystemSiteLockExpirationResult {
@@ -3762,6 +4747,25 @@ export interface TemporaryFolderFileInfo {
 * TemporaryFolderFileInfoCollections
 **********************************************/
 export interface TemporaryFolderFileInfoCollections {
+
+}
+
+/*********************************************
+* TextBlock
+**********************************************/
+export interface TextBlock {
+	color?: string;
+	horizontalAlignment?: string;
+	size?: string;
+	text?: string;
+	weight?: string;
+	wrap?: boolean;
+}
+
+/*********************************************
+* TextBlockCollections
+**********************************************/
+export interface TextBlockCollections {
 
 }
 
@@ -3980,6 +4984,27 @@ export interface UpdateUploadedAgreementMetadataPayloadCollections {
 }
 
 /*********************************************
+* UploadDocumentInfo
+**********************************************/
+export interface UploadDocumentInfo {
+	AgreementLibraryId?: string;
+	FileItemId?: number;
+	FileName?: string;
+	FileServerRedirectedEmbedUrl?: string;
+	FileServerRelativeUrl?: string;
+	FileUniqueId?: string;
+	FolderItemId?: number;
+	FolderServerRelativeUrl?: string;
+}
+
+/*********************************************
+* UploadDocumentInfoCollections
+**********************************************/
+export interface UploadDocumentInfoCollections {
+
+}
+
+/*********************************************
 * SiteThemes
 **********************************************/
 export interface SiteThemes {
@@ -3997,6 +5022,7 @@ export interface SiteThemesCollections {
 * ThemeData
 **********************************************/
 export interface ThemeData {
+	editable?: boolean;
 	id?: number;
 	isThemesV2?: boolean;
 	isVisible?: boolean;

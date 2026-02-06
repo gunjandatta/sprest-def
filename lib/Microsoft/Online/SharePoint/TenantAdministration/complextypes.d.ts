@@ -236,21 +236,6 @@ export interface MailFromAddressCollections {
 }
 
 /*********************************************
-* MessagesFieldsData
-**********************************************/
-export interface MessagesFieldsData {
-	bearToken?: string;
-	environment?: string;
-}
-
-/*********************************************
-* MessagesFieldsDataCollections
-**********************************************/
-export interface MessagesFieldsDataCollections {
-
-}
-
-/*********************************************
 * MobileNotificationIsEnabledForSharepoint
 **********************************************/
 export interface MobileNotificationIsEnabledForSharepoint {
@@ -262,6 +247,23 @@ export interface MobileNotificationIsEnabledForSharepoint {
 * MobileNotificationIsEnabledForSharepointCollections
 **********************************************/
 export interface MobileNotificationIsEnabledForSharepointCollections {
+
+}
+
+/*********************************************
+* MonthlyUsage
+**********************************************/
+export interface MonthlyUsage {
+	CreatedDate?: string;
+	PromotionGranted?: number;
+	PromotionRemaining?: number;
+	PromotionUsed?: number;
+}
+
+/*********************************************
+* MonthlyUsageCollections
+**********************************************/
+export interface MonthlyUsageCollections {
 
 }
 
@@ -458,6 +460,24 @@ export interface SettingDataProperty {
 * SettingDataPropertyCollections
 **********************************************/
 export interface SettingDataPropertyCollections {
+
+}
+
+/*********************************************
+* SharePointEmbeddedClientLogProperties
+**********************************************/
+export interface SharePointEmbeddedClientLogProperties {
+	Identifier?: string;
+	LogMessage?: string;
+	LogType?: number;
+	Operation?: number;
+	OperationStatus?: number;
+}
+
+/*********************************************
+* SharePointEmbeddedClientLogPropertiesCollections
+**********************************************/
+export interface SharePointEmbeddedClientLogPropertiesCollections {
 
 }
 
@@ -673,6 +693,8 @@ export interface SPOSitePropertiesEnumerableFilter {
 	GroupIdDefined?: number;
 	IncludeDetail?: boolean;
 	IncludePersonalSite?: number;
+	IncludeSystemUserSite?: boolean;
+	IsAuthoritative?: boolean;
 	StartIndex?: string;
 	Template?: string;
 }
@@ -765,10 +787,28 @@ export interface SmtpServerCollections {
 }
 
 /*********************************************
+* SPAuditDataCollectionResponse
+**********************************************/
+export interface SPAuditDataCollectionResponse {
+	DataCollectionStatus?: number;
+	OptInDateTime?: any;
+	OptOutDateTime?: any;
+	ReportEntity?: number;
+}
+
+/*********************************************
+* SPAuditDataCollectionResponseCollections
+**********************************************/
+export interface SPAuditDataCollectionResponseCollections {
+
+}
+
+/*********************************************
 * SPContainerApplicationProperties
 **********************************************/
 export interface SPContainerApplicationProperties {
 	ContainerTypeId?: any;
+	IsGovernableByAdmin?: boolean;
 	OwningApplicationId?: any;
 	OwningApplicationName?: string;
 }
@@ -800,33 +840,47 @@ export interface SPContainerCollectionCollections {
 **********************************************/
 export interface SPContainerProperties {
 	AllowEditing?: boolean;
+	ArchivedBy?: string;
+	ArchiveStatus?: number;
 	AuthenticationContextName?: string;
 	BlockDownloadPolicy?: boolean;
+	ClearRestrictedAccessControl?: boolean;
 	ConditionalAccessPolicy?: number;
 	ContainerApiUrl?: string;
 	ContainerId?: string;
 	ContainerName?: string;
+	ContainerRedirectUrl?: string;
 	ContainerSiteUrl?: string;
 	ContainerTypeId?: any;
 	CreatedBy?: string;
 	CreatedOn?: any;
 	Description?: string;
+	EnableRestrictedAccessControl?: boolean;
 	ExcludeBlockDownloadPolicyContainerOwners?: boolean;
+	LastArchivedDateTime?: any;
 	LimitedAccessFileType?: number;
 	Managers?: { results: Array<string> };
+	NewPrincipalOwnerIdentifier?: string;
 	Owners?: { results: Array<string> };
 	OwnersCount?: number;
+	OwnershipType?: string;
 	OwningApplicationId?: any;
 	OwningApplicationName?: string;
+	PrincipalOwnerIdentifier?: string;
 	Readers?: { results: Array<string> };
 	ReadOnlyForBlockDownloadPolicy?: boolean;
 	ReadOnlyForUnmanagedDevices?: boolean;
+	RestrictContentOrgWideSearch?: boolean;
+	RestrictedAccessControlGroups?: { results: Array<any> };
+	RestrictedAccessControlGroupsToAdd?: { results: Array<any> };
+	RestrictedAccessControlGroupsToRemove?: { results: Array<any> };
 	SensitivityLabel?: string;
 	SharingAllowedDomainList?: string;
 	SharingBlockedDomainList?: string;
 	SharingDomainRestrictionMode?: number;
 	Status?: string;
 	StorageUsed?: number;
+	TransferFromPrincipalOwnerIdentifier?: string;
 	Writers?: { results: Array<string> };
 }
 
@@ -841,12 +895,14 @@ export interface SPContainerPropertiesCollections {
 * SPContainerFilterOrder
 **********************************************/
 export interface SPContainerFilterOrder {
+	ArchiveStatus?: number;
 	CreatedBeforeDays?: number;
 	DeletedBeforeDays?: number;
 	FilteringApplicationId?: string;
 	FilteringApplicationName?: string;
 	FilteringContainerTypeId?: string;
 	FilteringField?: number;
+	FilteringSensitivityLabels?: { results: Array<string> };
 	OpticalCharacterRecognitionEnabled?: boolean;
 	OwnersCount?: number;
 	OwnershipType?: number;
@@ -891,18 +947,42 @@ export interface SPContainerSortOrderCollections {
 }
 
 /*********************************************
+* SPContainerTypeBillingProperties
+**********************************************/
+export interface SPContainerTypeBillingProperties {
+	AzureSubscriptionId?: any;
+	BillingPolicyId?: any;
+	Region?: string;
+	ResourceGroup?: string;
+}
+
+/*********************************************
+* SPContainerTypeBillingPropertiesCollections
+**********************************************/
+export interface SPContainerTypeBillingPropertiesCollections {
+
+}
+
+/*********************************************
 * SPContainerTypeConfigurationProperties
 **********************************************/
 export interface SPContainerTypeConfigurationProperties {
+	AnonymousLinkExpirationInDays?: number;
 	ApplicationRedirectUrl?: string;
 	Classification?: number;
 	ContainerTypeId?: any;
 	ContainerTypeName?: string;
+	CopilotEmbeddedChatHosts?: { results: Array<string> };
+	IsArchiveEnabled?: number;
 	IsDiscoverablilityDisabled?: number;
 	IsMoveDisabled?: number;
 	IsRenameDisabled?: number;
 	IsSharingRestricted?: number;
+	OverrideTenantWhoCanShareAnonymousAllowList?: number;
+	OverrideTenantWhoCanShareAuthenticatedGuestAllowList?: number;
 	OwningAppId?: any;
+	WhoCanShareAnonymousAllowList?: { results: Array<any> };
+	WhoCanShareAuthenticatedGuestAllowList?: { results: Array<any> };
 }
 
 /*********************************************
@@ -918,11 +998,15 @@ export interface SPContainerTypeConfigurationPropertiesCollections {
 export interface SPContainerTypeProperties {
 	ApplicationRedirectUrl?: string;
 	AzureSubscriptionId?: any;
+	BillingProperties?: Microsoft.Online.SharePoint.TenantAdministration.SPContainerTypeBillingProperties;
 	ContainerTypeId?: any;
 	CreationDate?: string;
 	DisplayName?: string;
 	ExpiryDate?: string;
+	IsArchiveEnabled?: number;
 	IsBillingProfileRequired?: boolean;
+	IsGovernableByAdmin?: boolean;
+	IsGovernableByAdminNullable?: number;
 	OwningAppId?: any;
 	OwningTenantId?: any;
 	Region?: string;
@@ -934,6 +1018,69 @@ export interface SPContainerTypeProperties {
 * SPContainerTypePropertiesCollections
 **********************************************/
 export interface SPContainerTypePropertiesCollections {
+
+}
+
+/*********************************************
+* SPContainerTypeStatus
+**********************************************/
+export interface SPContainerTypeStatus {
+	BillingClassification?: number;
+	ContainerTypeId?: any;
+	IsActiveBillingProfile?: boolean;
+	IsArchivable?: boolean;
+}
+
+/*********************************************
+* SPContainerTypeStatusCollections
+**********************************************/
+export interface SPContainerTypeStatusCollections {
+
+}
+
+/*********************************************
+* SPDataGovernanceInsightCreateParameters
+**********************************************/
+export interface SPDataGovernanceInsightCreateParameters {
+	CountOfUsersMoreThan?: number;
+	FileSensitivityLabelGUID?: string;
+	FileSensitivityLabelName?: string;
+	Name?: string;
+	Privacy?: string;
+	ReportEntity?: number;
+	ReportType?: number;
+	SiteSensitivityLabelGUID?: { results: Array<any> };
+	Template?: { results: Array<number> };
+	UserEmailList?: { results: Array<string> };
+	UserIDList?: { results: Array<any> };
+	Workload?: number;
+}
+
+/*********************************************
+* SPDataGovernanceInsightCreateParametersCollections
+**********************************************/
+export interface SPDataGovernanceInsightCreateParametersCollections {
+
+}
+
+/*********************************************
+* SPDataGovernanceInsightExportedReport
+**********************************************/
+export interface SPDataGovernanceInsightExportedReport {
+	CreatedDateTime?: string;
+	LabelName?: string;
+	ReportContent?: string;
+	ReportEntity?: string;
+	ReportNameEEEU?: string;
+	ReportNameSitePermissions?: string;
+	ReportNameUserPermissions?: string;
+	SharingLinkType?: string;
+}
+
+/*********************************************
+* SPDataGovernanceInsightExportedReportCollections
+**********************************************/
+export interface SPDataGovernanceInsightExportedReportCollections {
 
 }
 
@@ -953,6 +1100,22 @@ export interface SPDataGovernanceInsightMetadataCollections {
 }
 
 /*********************************************
+* SPDataGovernanceInsightQueryParameters
+**********************************************/
+export interface SPDataGovernanceInsightQueryParameters {
+	IncludeWorkload?: boolean;
+	ReportEntity?: number;
+	Workload?: number;
+}
+
+/*********************************************
+* SPDataGovernanceInsightQueryParametersCollections
+**********************************************/
+export interface SPDataGovernanceInsightQueryParametersCollections {
+
+}
+
+/*********************************************
 * SPDataGovernanceInsightResponse
 **********************************************/
 export interface SPDataGovernanceInsightResponse {
@@ -962,6 +1125,7 @@ export interface SPDataGovernanceInsightResponse {
 	CountOfSitesInTenantUserPermissions?: number;
 	CreatedDateTime?: string;
 	EEEUType?: string;
+	InvalidUserEntries?: { results: Array<string> };
 	LabelId?: any;
 	LabelName?: string;
 	PrivacyEEEU?: { results: Array<string> };
@@ -986,8 +1150,11 @@ export interface SPDataGovernanceInsightResponse {
 	TemplatesEEEU?: { results: Array<string> };
 	TemplatesSitePermissions?: { results: Array<string> };
 	TriggeredDateTime?: string;
+	UserEmailList?: { results: Array<string> };
 	UserID?: any;
+	UserIDList?: { results: Array<any> };
 	UserLimit?: number;
+	Variation?: string;
 	Version?: string;
 	Workload?: string;
 }
@@ -996,6 +1163,21 @@ export interface SPDataGovernanceInsightResponse {
 * SPDataGovernanceInsightResponseCollections
 **********************************************/
 export interface SPDataGovernanceInsightResponseCollections {
+
+}
+
+/*********************************************
+* SPDataGovernanceOptInParameters
+**********************************************/
+export interface SPDataGovernanceOptInParameters {
+	OptInStatus?: boolean;
+	ReportEntity?: number;
+}
+
+/*********************************************
+* SPDataGovernanceOptInParametersCollections
+**********************************************/
+export interface SPDataGovernanceOptInParametersCollections {
 
 }
 
@@ -1113,6 +1295,22 @@ export interface SPOAppBillingPropertiesCollections {
 }
 
 /*********************************************
+* SPOContainerQueryParams
+**********************************************/
+export interface SPOContainerQueryParams {
+	FilterByColumnsList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SPContainerFilterOrder> };
+	OrderByColumnsList?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SPContainerSortOrder> };
+	PagingToken?: string;
+}
+
+/*********************************************
+* SPOContainerQueryParamsCollections
+**********************************************/
+export interface SPOContainerQueryParamsCollections {
+
+}
+
+/*********************************************
 * SPOContentSecurityPolicyEntry
 **********************************************/
 export interface SPOContentSecurityPolicyEntry {
@@ -1132,7 +1330,9 @@ export interface SPOContentSecurityPolicyEntryCollections {
 * SPOCopilotAgentInsightsCopilotAgentsOnSitesDetails
 **********************************************/
 export interface SPOCopilotAgentInsightsCopilotAgentsOnSitesDetails {
+	AgentCreatedDate?: string;
 	CopilotName?: string;
+	CreatedBy?: string;
 	ExternalSharing?: string;
 	RestrictSiteAccessEnabled?: string;
 	RestrictSiteDiscoveryEnabled?: string;
@@ -1206,6 +1406,22 @@ export interface SPOCopilotAgentInsightsTopSitesDetailsCollections {
 }
 
 /*********************************************
+* SPOCopilotPromoUsage
+**********************************************/
+export interface SPOCopilotPromoUsage {
+	IsCopilotPromoEligible?: boolean;
+	IsCopilotPromoStatusEnabled?: boolean;
+	MonthlyUsage?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.MonthlyUsage> };
+}
+
+/*********************************************
+* SPOCopilotPromoUsageCollections
+**********************************************/
+export interface SPOCopilotPromoUsageCollections {
+
+}
+
+/*********************************************
 * SPOFileVersionBatchDeleteJobProgress
 **********************************************/
 export interface SPOFileVersionBatchDeleteJobProgress {
@@ -1214,12 +1430,17 @@ export interface SPOFileVersionBatchDeleteJobProgress {
 	DeleteOlderThan?: any;
 	ErrorMessage?: string;
 	FilesProcessed?: number;
+	FileTypeSelections?: string;
 	LastProcessTimeInUTC?: any;
+	ListsProcessed?: number;
+	ListsSynced?: number;
+	ListSyncFailed?: number;
 	MajorVersionLimit?: number;
 	MajorWithMinorVersionsLimit?: number;
 	RequestTimeInUTC?: any;
 	Status?: string;
 	StorageReleasedInBytes?: number;
+	SyncListPolicy?: boolean;
 	Url?: string;
 	VersionsDeleted?: number;
 	VersionsFailed?: number;
@@ -1252,15 +1473,36 @@ export interface SPOFileVersionExpirationReportJobProgressCollections {
 }
 
 /*********************************************
+* SPOFileVersionFileTypePolicySettings
+**********************************************/
+export interface SPOFileVersionFileTypePolicySettings {
+	EnableAutoExpirationVersionTrim?: boolean;
+	ExpireVersionsAfter?: any;
+	Extensions?: { results: Array<string> };
+	MajorVersionLimit?: number;
+	MajorWithMinorVersionsLimit?: number;
+	Name?: string;
+}
+
+/*********************************************
+* SPOFileVersionFileTypePolicySettingsCollections
+**********************************************/
+export interface SPOFileVersionFileTypePolicySettingsCollections {
+
+}
+
+/*********************************************
 * SPOFileVersionPolicySettings
 **********************************************/
 export interface SPOFileVersionPolicySettings {
 	EnableAutoExpirationVersionTrim?: boolean;
 	ExpireVersionsAfterDays?: number;
+	FileTypesForVersionExpiration?: { results: Array<string> };
 	MajorVersionLimit?: number;
 	MajorWithMinorVersionsLimit?: number;
 	MinorVersionsEnabled?: boolean;
 	VersioningEnabled?: boolean;
+	VersionPolicyFileTypeOverride?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SPOFileVersionFileTypePolicySettings> };
 }
 
 /*********************************************
@@ -1302,6 +1544,69 @@ export interface SPOListParametersCollections {
 }
 
 /*********************************************
+* SPOM365AgentInsightsM365AgentsOnSitesDetails
+**********************************************/
+export interface SPOM365AgentInsightsM365AgentsOnSitesDetails {
+	AgentID?: string;
+	AgentName?: string;
+	AgentType?: string;
+	AgentVersion?: string;
+	ExternalSharing?: string;
+	RequestVolume?: number;
+	RestrictSiteAccessEnabled?: string;
+	RestrictSiteDiscoveryEnabled?: string;
+	Sensitivity?: string;
+	SiteID?: string;
+	SiteName?: string;
+	SiteOwner?: string;
+	SiteType?: string;
+	SiteURL?: string;
+	TotalAgents?: number;
+	TotalRequestVolume?: number;
+}
+
+/*********************************************
+* SPOM365AgentInsightsM365AgentsOnSitesDetailsCollections
+**********************************************/
+export interface SPOM365AgentInsightsM365AgentsOnSitesDetailsCollections {
+
+}
+
+/*********************************************
+* SPOM365AgentInsightsReportMetadata
+**********************************************/
+export interface SPOM365AgentInsightsReportMetadata {
+	CreatedDateTimeInUtc?: string;
+	Id?: any;
+	ReportPeriodInDays?: number;
+	Status?: number;
+}
+
+/*********************************************
+* SPOM365AgentInsightsReportMetadataCollections
+**********************************************/
+export interface SPOM365AgentInsightsReportMetadataCollections {
+
+}
+
+/*********************************************
+* SPOM365AgentInsightsSiteDistributionDetails
+**********************************************/
+export interface SPOM365AgentInsightsSiteDistributionDetails {
+	Agents?: number;
+	RequestVolume?: number;
+	Sites?: number;
+	Template?: string;
+}
+
+/*********************************************
+* SPOM365AgentInsightsSiteDistributionDetailsCollections
+**********************************************/
+export interface SPOM365AgentInsightsSiteDistributionDetailsCollections {
+
+}
+
+/*********************************************
 * SPORestrictedContentDiscoverabilitySiteDetails
 **********************************************/
 export interface SPORestrictedContentDiscoverabilitySiteDetails {
@@ -1316,6 +1621,79 @@ export interface SPORestrictedContentDiscoverabilitySiteDetails {
 * SPORestrictedContentDiscoverabilitySiteDetailsCollections
 **********************************************/
 export interface SPORestrictedContentDiscoverabilitySiteDetailsCollections {
+
+}
+
+/*********************************************
+* SPOServicePrioritizationAppRegistrations
+**********************************************/
+export interface SPOServicePrioritizationAppRegistrations {
+	Registrations?: { results: Array<Microsoft.Online.SharePoint.TenantAdministration.SPOServicePrioritizationAppRegistration> };
+}
+
+/*********************************************
+* SPOServicePrioritizationAppRegistrationsCollections
+**********************************************/
+export interface SPOServicePrioritizationAppRegistrationsCollections {
+
+}
+
+/*********************************************
+* SPOServicePrioritizationAppRegistration
+**********************************************/
+export interface SPOServicePrioritizationAppRegistration {
+	AppId?: string;
+	Enabled?: boolean;
+	PolicyId?: string;
+	QuotaMultiplier?: number;
+}
+
+/*********************************************
+* SPOServicePrioritizationAppRegistrationCollections
+**********************************************/
+export interface SPOServicePrioritizationAppRegistrationCollections {
+
+}
+
+/*********************************************
+* SPOServicePrioritizationBillingPayload
+**********************************************/
+export interface SPOServicePrioritizationBillingPayload {
+	AzureRegion?: string;
+	AzureSubscription?: string;
+	Feature?: string;
+	FriendlyName?: string;
+	IdentityId?: string;
+	IdentityType?: string;
+	PolicyId?: string;
+	ResourceGroup?: string;
+	Scope?: string;
+	Service?: string;
+	Tags?: string;
+}
+
+/*********************************************
+* SPOServicePrioritizationBillingPayloadCollections
+**********************************************/
+export interface SPOServicePrioritizationBillingPayloadCollections {
+
+}
+
+/*********************************************
+* SPOServicePrioritizationPolicyFromTenantStore
+**********************************************/
+export interface SPOServicePrioritizationPolicyFromTenantStore {
+	AzureRegion?: string;
+	AzureSubscriptionId?: any;
+	FriendlyName?: string;
+	PolicyId?: any;
+	ResourceGroup?: string;
+}
+
+/*********************************************
+* SPOServicePrioritizationPolicyFromTenantStoreCollections
+**********************************************/
+export interface SPOServicePrioritizationPolicyFromTenantStoreCollections {
 
 }
 
@@ -1381,8 +1759,10 @@ export interface SPSyntexApplicationProperties {
 	ApplicationName?: string;
 	Applications?: { results: Array<any> };
 	AppOnlyPermissions?: { results: Array<string> };
+	CopilotEmbeddedChatHosts?: { results: Array<string> };
 	DelegatedPermissions?: { results: Array<string> };
 	OverrideTenantSharingCapability?: boolean;
+	OverrideTenantSharingCapabilityNullable?: number;
 	OwningApplicationId?: any;
 	OwningApplicationName?: string;
 	SharingCapability?: number;
@@ -1435,6 +1815,7 @@ export interface SyntexCheckManagementAllowedResponseCollections {
 export interface SyntexFeatureScopeSettingsValues {
 	Enabled?: boolean;
 	FileName?: string;
+	SiteScopingMode?: number;
 }
 
 /*********************************************

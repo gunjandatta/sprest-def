@@ -70,6 +70,7 @@ export interface DocumentCrawlLogOData extends Base.IBaseResult, DocumentCrawlLo
 export interface DocumentCrawlLogMethods {
 	getCrawledUrls(getCountOnly?: boolean, maxRows?: number, queryString?: string, isLike?: boolean, contentSourceID?: number, errorLevel?: number, errorID?: number, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
 	getUnsuccesfulCrawledUrls(displayUrl?: string, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
+	getUnsuccesfulCrawledUrlsForEdiscovery(displayUrl?: string, startDateTime?: any, endDateTime?: any): Base.IBaseExecution<SP.SimpleDataTable>;
 }
 
 /*********************************************
@@ -142,6 +143,76 @@ export interface SiteContentProcessingInfoProviderMethods {
 	getAzureContainerToken(): Base.IBaseExecution<string>;
 	notifyContentProcessingStatus(webId?: any, listId?: any, uniqueId?: any, properties?: Array<SP.KeyValue>): Base.IBaseExecution<any>;
 	reportContentProcessingStatus(webId?: any, listId?: any, uniqueId?: any, azureContainerTokenUri?: string, encryptionKey?: any, priority?: number, errorCode?: number, errorDescription?: string): Base.IBaseExecution<any>;
+}
+
+/*********************************************
+* ISiteProvisioningInfoProvider
+**********************************************/
+export interface ISiteProvisioningInfoProvider extends SiteProvisioningInfoProviderCollections, SiteProvisioningInfoProviderMethods, Base.IBaseQuery<SiteProvisioningInfoProvider, ISiteProvisioningInfoProviderQuery> {
+
+}
+
+/*********************************************
+* ISiteProvisioningInfoProviderCollection
+**********************************************/
+export interface ISiteProvisioningInfoProviderCollection extends Base.IBaseResults<SiteProvisioningInfoProvider> {
+	done?: (resolve: (value?: Array<SiteProvisioningInfoProvider>) => void) => void;
+}
+
+/*********************************************
+* ISiteProvisioningInfoProviderQueryCollection
+**********************************************/
+export interface ISiteProvisioningInfoProviderQueryCollection extends Base.IBaseResults<SiteProvisioningInfoProviderOData> {
+	done?: (resolve: (value?: Array<SiteProvisioningInfoProviderOData>) => void) => void;
+}
+
+/*********************************************
+* ISiteProvisioningInfoProviderQuery
+**********************************************/
+export interface ISiteProvisioningInfoProviderQuery extends SiteProvisioningInfoProviderOData, SiteProvisioningInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteProvisioningInfoProvider
+**********************************************/
+export interface SiteProvisioningInfoProvider extends Base.IBaseResult, SiteProvisioningInfoProviderProps, SiteProvisioningInfoProviderCollections, SiteProvisioningInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteProvisioningInfoProviderProps
+**********************************************/
+export interface SiteProvisioningInfoProviderProps {
+	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SiteProvisioningInfoProviderPropMethods
+**********************************************/
+export interface SiteProvisioningInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* SiteProvisioningInfoProviderCollections
+**********************************************/
+export interface SiteProvisioningInfoProviderCollections extends SiteProvisioningInfoProviderPropMethods {
+
+}
+
+/*********************************************
+* SiteProvisioningInfoProviderOData
+**********************************************/
+export interface SiteProvisioningInfoProviderOData extends Base.IBaseResult, SiteProvisioningInfoProviderProps, SiteProvisioningInfoProviderMethods {
+
+}
+
+/*********************************************
+* SiteProvisioningInfoProviderMethods
+**********************************************/
+export interface SiteProvisioningInfoProviderMethods {
+	checkSiteIngestionStatus(siteId?: any): Base.IBaseExecution<boolean>;
 }
 
 /*********************************************

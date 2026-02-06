@@ -6,8 +6,8 @@ import { SP } from "../../../../../";
 * AdaptiveCardConfig
 **********************************************/
 export interface AdaptiveCardConfig {
-	Data?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.BaseRawDataSources;
-	FeatureName?: string;
+	data?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.BaseRawDataSources;
+	featureName?: string;
 }
 
 /*********************************************
@@ -22,12 +22,27 @@ export interface AdaptiveCardConfigCollections {
 **********************************************/
 export interface BaseRawDataSources {
 	DisplayMessage?: string;
+	Metadata?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.BaseMetadata;
 }
 
 /*********************************************
 * BaseRawDataSourcesCollections
 **********************************************/
 export interface BaseRawDataSourcesCollections {
+
+}
+
+/*********************************************
+* BaseMetadata
+**********************************************/
+export interface BaseMetadata {
+
+}
+
+/*********************************************
+* BaseMetadataCollections
+**********************************************/
+export interface BaseMetadataCollections {
 
 }
 
@@ -65,9 +80,9 @@ export interface TranspilerStatementCollections {
 * CopilotTranspilerResponse
 **********************************************/
 export interface CopilotTranspilerResponse {
-	Data?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.TranspilerResponse;
-	ErrorMessage?: string;
-	IsEligible?: boolean;
+	data?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.TranspilerResponse;
+	errorMessage?: string;
+	isEligible?: boolean;
 }
 
 /*********************************************
@@ -81,13 +96,57 @@ export interface CopilotTranspilerResponseCollections {
 * TranspilerResponse
 **********************************************/
 export interface TranspilerResponse {
-	Config?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.AdaptiveCardConfig;
-	SchemaVersion?: string;
+	config?: Microsoft.SharePoint.Administration.TenantAdmin.Copilot.AdaptiveCardConfig;
+	schemaVersion?: string;
 }
 
 /*********************************************
 * TranspilerResponseCollections
 **********************************************/
 export interface TranspilerResponseCollections {
+
+}
+
+/*********************************************
+* ReportDetails
+**********************************************/
+export interface ReportDetails {
+	Headers?: { results: Array<string> };
+	ReportDownloadUrl?: string;
+	ReportRows?: { results: Array<Microsoft.SharePoint.Administration.TenantAdmin.Copilot.ReportRow> };
+}
+
+/*********************************************
+* ReportDetailsCollections
+**********************************************/
+export interface ReportDetailsCollections {
+
+}
+
+/*********************************************
+* ReportRow
+**********************************************/
+export interface ReportRow {
+	Row?: { results: Array<string> };
+}
+
+/*********************************************
+* ReportRowCollections
+**********************************************/
+export interface ReportRowCollections {
+
+}
+
+/*********************************************
+* ReportMetadata
+**********************************************/
+export interface ReportMetadata {
+	ReportMetadataDetails?: { results: Array<SP.KeyValue> };
+}
+
+/*********************************************
+* ReportMetadataCollections
+**********************************************/
+export interface ReportMetadataCollections {
 
 }

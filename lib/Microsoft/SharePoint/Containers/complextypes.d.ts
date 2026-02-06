@@ -21,15 +21,19 @@ export interface SPActiveContainerCollectionCollections {
 **********************************************/
 export interface SPActiveContainerProperties {
 	ApplicationName?: string;
+	ArchivedBy?: string;
+	ArchiveStatus?: string;
 	ContainerApiUrl?: string;
 	ContainerId?: string;
 	ContainerName?: string;
+	ContainerRedirectUrl?: string;
 	ContainerSiteUrl?: string;
 	ContainerTypeId?: any;
 	CreatedBy?: string;
 	CreatedOn?: string;
 	DeletedOn?: string;
 	Description?: string;
+	LastArchivedDateTime?: string;
 	OpticalCharacterRecognitionEnabled?: boolean;
 	Owners?: { results: Array<Microsoft.SharePoint.Containers.SPActiveContainerMemberProperties> };
 	OwnersCount?: number;

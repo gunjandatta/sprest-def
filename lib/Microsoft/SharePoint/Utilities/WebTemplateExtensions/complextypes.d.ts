@@ -25,6 +25,7 @@ export interface SiteDesignCreationInfo {
 	DesignType?: number;
 	ExpandedPreviewImages?: { results: Array<Microsoft.SharePoint.Utilities.WebTemplateExtensions.SiteDesignImage> };
 	InternalName?: string;
+	IsCreationOnly?: boolean;
 	IsDefault?: boolean;
 	IsOutOfBoxTemplate?: boolean;
 	IsTenantAdminOnly?: boolean;
@@ -39,6 +40,7 @@ export interface SiteDesignCreationInfo {
 	RequiresYammerConnected?: boolean;
 	SiteScriptIds?: { results: Array<any> };
 	SupportedWebTemplates?: { results: Array<string> };
+	SupportedWebTemplateSubtypes?: { results: Array<string> };
 	TargetPlatforms?: { results: Array<string> };
 	TeamChannels?: { results: Array<string> };
 	TeamImageAltText?: string;

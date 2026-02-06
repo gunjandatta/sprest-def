@@ -178,6 +178,43 @@ export interface AuditSearchRequestStatusCollections {
 }
 
 /*********************************************
+* AuthoritativeResourceProperties
+**********************************************/
+export interface AuthoritativeResourceProperties {
+	IsAuthoritativeSetBy?: string;
+	IsAuthoritativeSetByUpn?: string;
+	IsAuthoritativeSetByUserId?: string;
+	IsAuthoritativeSetDate?: any;
+	SiteId?: any;
+	SiteTitle?: string;
+	SiteUrl?: string;
+}
+
+/*********************************************
+* AuthoritativeResourcePropertiesCollections
+**********************************************/
+export interface AuthoritativeResourcePropertiesCollections {
+
+}
+
+/*********************************************
+* BulkInsertOperationResult
+**********************************************/
+export interface BulkInsertOperationResult {
+	AuthoritativeResourceProperties?: Microsoft.SharePoint.Administration.TenantAdmin.AuthoritativeResourceProperties;
+	ErrorMessage?: string;
+	IsSuccess?: boolean;
+	SiteId?: any;
+}
+
+/*********************************************
+* BulkInsertOperationResultCollections
+**********************************************/
+export interface BulkInsertOperationResultCollections {
+
+}
+
+/*********************************************
 * CollaborationInsightsData
 **********************************************/
 export interface CollaborationInsightsData {
@@ -250,10 +287,27 @@ export interface CollaborationInsightsOverviewCollections {
 }
 
 /*********************************************
+* ContentManagementAssessmentOperationResult
+**********************************************/
+export interface ContentManagementAssessmentOperationResult {
+	dataAccessGovernanceErrorMessage?: string;
+	siteLifecycleManagementErrorMessage?: string;
+}
+
+/*********************************************
+* ContentManagementAssessmentOperationResultCollections
+**********************************************/
+export interface ContentManagementAssessmentOperationResultCollections {
+
+}
+
+/*********************************************
 * ContentManagementAssessmentPolicyReportDetails
 **********************************************/
 export interface ContentManagementAssessmentPolicyReportDetails {
-
+	totalImpactedSites?: number;
+	totalInactiveSites?: number;
+	totalOwnerlessSites?: number;
 }
 
 /*********************************************
@@ -267,17 +321,20 @@ export interface ContentManagementAssessmentPolicyReportDetailsCollections {
 * ContentManagementAssessmentResults
 **********************************************/
 export interface ContentManagementAssessmentResults {
+	lastUpdatedTime?: any;
 	requestedTime?: any;
+	siteLifecycleManagementImpactedFileUrl?: string;
 	siteLifecycleManagementPolicyExecutionId?: number;
 	siteLifecycleManagementPolicyId?: any;
-	siteLifecycleManagementPolicySyncState?: number;
-	siteLifecycleManagementPolicyReportDetails?: Microsoft.SharePoint.Administration.TenantAdmin.ContentManagementAssessmentPolicyReportDetails;
+	siteLifecycleManagementPolicyLastUpdatedTime?: any;
+	siteLifecycleManagementPolicyResultState?: number;
+	siteLifecycleManagementReportDetails?: Microsoft.SharePoint.Administration.TenantAdmin.ContentManagementAssessmentPolicyReportDetails;
 	sitePermissionsReportDefinitionId?: string;
 	sitePermissionsReportDetails?: Microsoft.SharePoint.Administration.TenantAdmin.SitePermissionsReportDetails;
 	sitePermissionsReportId?: string;
+	sitePermissionsReportLastUpdatedTime?: any;
 	sitePermissionsReportQueuedTime?: any;
-	sitePermissionsReportSyncState?: number;
-	timerJobLatestExecutionTime?: any;
+	sitePermissionsReportResultState?: number;
 	totalCountOfSitesInTenant?: string;
 }
 
@@ -293,8 +350,9 @@ export interface ContentManagementAssessmentResultsCollections {
 **********************************************/
 export interface SitePermissionsReportDetails {
 	anyoneLinksSiteCount?: number;
-	externallySharedSiteCount?: number;
-	oversharedSiteCount?: number;
+	eeeuPermissionSiteCount?: number;
+	reportTotalSiteCount?: number;
+	uniquePermissionSiteCount?: number;
 	uniqueSiteCount?: number;
 }
 
@@ -342,6 +400,26 @@ export interface InactiveSitePolicyResourceStorage {
 * InactiveSitePolicyResourceStorageCollections
 **********************************************/
 export interface InactiveSitePolicyResourceStorageCollections {
+
+}
+
+/*********************************************
+* InsightsQueueItem
+**********************************************/
+export interface InsightsQueueItem {
+	insightsCompletionTime?: any;
+	insightsScenario?: number;
+	itemId?: number;
+	reportCreationTime?: any;
+	reportDataFileName?: string;
+	reportId?: string;
+	status?: number;
+}
+
+/*********************************************
+* InsightsQueueItemCollections
+**********************************************/
+export interface InsightsQueueItemCollections {
 
 }
 
@@ -471,6 +549,25 @@ export interface RecentAdminActionReportCollections {
 }
 
 /*********************************************
+* SiteOwnerData
+**********************************************/
+export interface SiteOwnerData {
+	department?: string;
+	jobTitle?: string;
+	preferredDataLocation?: string;
+	preferredLanguage?: string;
+	userPrincipalName?: string;
+	userType?: number;
+}
+
+/*********************************************
+* SiteOwnerDataCollections
+**********************************************/
+export interface SiteOwnerDataCollections {
+
+}
+
+/*********************************************
 * SPContentEventsCustomEmailProperty
 **********************************************/
 export interface SPContentEventsCustomEmailProperty {
@@ -569,6 +666,7 @@ export interface TenantAdminPolicyReport {
 	policyVersion?: number;
 	reportCreationTime?: any;
 	reportUpdationTime?: any;
+	usersToExclude?: string;
 }
 
 /*********************************************

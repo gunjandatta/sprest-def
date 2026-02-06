@@ -39,6 +39,7 @@ export interface DefaultContentCenterSiteInfoCollections {
 * SPMachineLearningEnabled
 **********************************************/
 export interface SPMachineLearningEnabled {
+	IsCopilotLicenseEnabled?: boolean;
 	IsSyntexPAYGEnabled?: boolean;
 	MachineLearningCaptureEnabled?: boolean;
 	MachineLearningExperienceEnabled?: boolean;
@@ -111,6 +112,8 @@ export interface SPMachineLearningHubPropMethods {
 * SPMachineLearningHubCollections
 **********************************************/
 export interface SPMachineLearningHubCollections extends SPMachineLearningHubPropMethods {
+	AgreementWorkItems(): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollectionMethods;
+	AgreementWorkItems(id: string | number): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollections;
 	Models(): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollectionMethods;
 	Models(id: string | number): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelMethods;
 	Publications(): Base.IBaseCollection<Microsoft.Office.Server.ContentCenter.SPMachineLearningPublication> & Microsoft.Office.Server.ContentCenter.SPMachineLearningPublicationCollectionMethods;
@@ -125,6 +128,7 @@ export interface SPMachineLearningHubCollections extends SPMachineLearningHubPro
 * SPMachineLearningHubOData
 **********************************************/
 export interface SPMachineLearningHubOData extends Base.IBaseResult, SPMachineLearningHubProps, SPMachineLearningHubMethods {
+	AgreementWorkItems: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollectionMethods;
 	DefaultContentCenter: Microsoft.Office.Server.ContentCenter.DefaultContentCenterSiteInfo & Microsoft.Office.Server.ContentCenter.DefaultContentCenterSiteInfoCollections;
 	MachineLearningEnabled: Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabled & Microsoft.Office.Server.ContentCenter.SPMachineLearningEnabledCollections;
 	Models: Base.IBaseResults<Microsoft.Office.Server.ContentCenter.SPMachineLearningModel> & Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollectionMethods;
@@ -140,6 +144,9 @@ export interface SPMachineLearningHubOData extends Base.IBaseResult, SPMachineLe
 export interface SPMachineLearningHubMethods {
 	checkAIBuilderAccess(environmentName?: string, isTestEnvironment?: boolean, userId?: string): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	getAutofillColumnSettings(docLibId?: any): Base.IBaseExecution<string>;
+	getAutofillCustomModelDefaultParameters(customModelId?: string, keepTokenCountLimit?: boolean): Base.IBaseExecution<string>;
+	getAutofillCustomModels(): Base.IBaseCollection<SP.SyntexCustomModelWrapper>;
+	getAutofillCustomModelSettings(): Base.IBaseCollection<SP.SyntexCustomModelSetting>;
 	getByContentTypeId(contentTypeId?: string): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.SyntexModelsLandingInfo>;
 	getCDSMetadata(environmentName?: string, isTestEnvironment?: boolean): Base.IBaseExecution<Microsoft.Office.Server.ContentCenter.CDSMetadata>;
 	getColumnLLMInfo(docLibId?: any, columnId?: any): Base.IBaseExecution<SP.Utilities.LLMColumnInfo>;
@@ -152,11 +159,44 @@ export interface SPMachineLearningHubMethods {
 	getSyntexPoweredColumnPrompts(docLibId?: any): Base.IBaseExecution<string>;
 	invokeDataverseQuery(): Base.IBaseExecution<SP.FlowSynchronizationResult>;
 	setAutofillColumnSettings(docLibId?: any, autofillColumnSettings?: string): Base.IBaseExecution<any>;
-	setColumnLLMInfo(docLibId?: any, columnId?: any, autofillPrompt?: string, isEnabled?: boolean): Base.IBaseExecution<any>;
+	setColumnLLMInfo(docLibId?: any, columnId?: any, autofillPrompt?: string, isEnabled?: boolean, customModelId?: string, customParametersJson?: string, analyzeImageWithVision?: boolean, analyzeImageDetailLevel?: string, autofillColumnType?: string): Base.IBaseExecution<any>;
 	setMachineLearningFlags(docLibId?: any, machineLearningFlags?: number): Base.IBaseExecution<any>;
 	setSyntexPoweredColumnPrompts(docLibId?: any, syntexPoweredColumnPrompts?: string): Base.IBaseExecution<any>;
 	verifyModelUrls(urls?: Array<string>): Base.IBaseExecution<any>;
 	verifyModelUrlsAndGrantPAC(urls?: Array<string>): Base.IBaseExecution<string>;
+}
+
+/*********************************************
+* SPMachineLearningWorkItem
+**********************************************/
+export interface SPMachineLearningWorkItem {
+	Created?: any;
+	DeliverDate?: any;
+	ErrorMessage?: string;
+	ID?: any;
+	Status?: string;
+	StatusCode?: number;
+	TargetServerRelativeUrl?: string;
+	TargetSiteId?: any;
+	TargetSiteUrl?: string;
+	TargetUniqueId?: any;
+	TargetWebId?: any;
+	TargetWebServerRelativeUrl?: string;
+	Type?: any;
+}
+
+/*********************************************
+* SPMachineLearningWorkItemCollections
+**********************************************/
+export interface SPMachineLearningWorkItemCollections extends SPMachineLearningWorkItemCollectionMethods {
+
+}
+
+/*********************************************
+* SPMachineLearningWorkItemCollectionMethods
+**********************************************/
+export interface SPMachineLearningWorkItemCollectionMethods {
+	getByIdentifier(identifier?: string): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollections;
 }
 
 /*********************************************
@@ -518,39 +558,6 @@ export interface SyntexContextCollections {
 }
 
 /*********************************************
-* SPMachineLearningWorkItem
-**********************************************/
-export interface SPMachineLearningWorkItem {
-	Created?: any;
-	DeliverDate?: any;
-	ErrorMessage?: string;
-	ID?: any;
-	Status?: string;
-	StatusCode?: number;
-	TargetServerRelativeUrl?: string;
-	TargetSiteId?: any;
-	TargetSiteUrl?: string;
-	TargetUniqueId?: any;
-	TargetWebId?: any;
-	TargetWebServerRelativeUrl?: string;
-	Type?: any;
-}
-
-/*********************************************
-* SPMachineLearningWorkItemCollections
-**********************************************/
-export interface SPMachineLearningWorkItemCollections extends SPMachineLearningWorkItemCollectionMethods {
-
-}
-
-/*********************************************
-* SPMachineLearningWorkItemCollectionMethods
-**********************************************/
-export interface SPMachineLearningWorkItemCollectionMethods {
-	getByIdentifier(identifier?: string): Base.IBaseQuery<Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItem> & Microsoft.Office.Server.ContentCenter.SPMachineLearningWorkItemCollections;
-}
-
-/*********************************************
 * SPMachineLearningModelEntityData
 **********************************************/
 export interface SPMachineLearningModelEntityData {
@@ -643,6 +650,7 @@ export interface SPMachineLearningSampleEntityDataCollections {
 export interface SPMachineLearningWorkItemEntityData {
 	ExtraPropertyList?: string;
 	IsFolder?: boolean;
+	ParentJobId?: any;
 	ProfileName?: string;
 	TargetServerRelativeUrl?: string;
 	TargetSiteId?: any;

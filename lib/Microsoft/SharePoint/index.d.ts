@@ -16,8 +16,6 @@ import * as AuthPolicy from "./AuthPolicy";
 export { AuthPolicy }
 import * as BrandCenter from "./BrandCenter";
 export { BrandCenter }
-import * as CampaignAnalytics from "./CampaignAnalytics";
-export { CampaignAnalytics }
 import * as Campaigns from "./Campaigns";
 export { Campaigns }
 import * as Client from "./Client";
@@ -28,16 +26,22 @@ import * as Comments from "./Comments";
 export { Comments }
 import * as Containers from "./Containers";
 export { Containers }
+import * as ContentSolution from "./ContentSolution";
+export { ContentSolution }
 import * as Convergence from "./Convergence";
 export { Convergence }
 import * as Copilot from "./Copilot";
 export { Copilot }
 import * as Deployment from "./Deployment";
 export { Deployment }
+import * as DynamicContent from "./DynamicContent";
+export { DynamicContent }
 import * as EmployeeEngagement from "./EmployeeEngagement";
 export { EmployeeEngagement }
 import * as ESign from "./ESign";
 export { ESign }
+import * as FilePublish from "./FilePublish";
+export { FilePublish }
 import * as Flighting from "./Flighting";
 export { Flighting }
 import * as IdentityModel from "./IdentityModel";
@@ -48,6 +52,8 @@ import * as Internal from "./Internal";
 export { Internal }
 import * as IR from "./IR";
 export { IR }
+import * as KnowledgeSite from "./KnowledgeSite";
+export { KnowledgeSite }
 import * as LargeOperation from "./LargeOperation";
 export { LargeOperation }
 import * as Likes from "./Likes";
@@ -84,6 +90,8 @@ import * as SectionDesignIdeas from "./SectionDesignIdeas";
 export { SectionDesignIdeas }
 import * as Sharing from "./Sharing";
 export { Sharing }
+import * as SiteManager from "./SiteManager";
+export { SiteManager }
 import * as SmartCache from "./SmartCache";
 export { SmartCache }
 import * as SPStart from "./SPStart";

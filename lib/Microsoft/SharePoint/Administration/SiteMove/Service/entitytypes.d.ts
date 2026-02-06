@@ -1,6 +1,5 @@
 import { Base } from "../../../../../";
 import { SP } from "../../../../../";
-import { Microsoft } from "../../../../../";
 
 /*********************************************
 * ISiteMoveService
@@ -70,103 +69,49 @@ export interface SiteMoveServiceOData extends Base.IBaseResult, SiteMoveServiceP
 **********************************************/
 export interface SiteMoveServiceMethods {
 	acquireSystemSiteLock(lockRequestor?: string, lockType?: any, leaseDurationInMinutes?: number): Base.IBaseExecution<SP.SystemSiteLockExpirationResult>;
+	areAnyTablesTooLarge(threshold?: number): Base.IBaseExecution<string>;
+	checkSPSiteContentDatabase(siteId?: any): Base.IBaseExecution<boolean>;
 	clearSiteRelocationMarker(): Base.IBaseExecution<any>;
+	commitSessionToken(): Base.IBaseExecution<any>;
 	extendSystemSiteLockExpiration(leaseDurationInMinute?: number): Base.IBaseExecution<SP.SystemSiteLockExpirationResult>;
 	getCPSChangeToken(): Base.IBaseExecution<number>;
 	getCPSSiteDeleteReason(): Base.IBaseExecution<number>;
 	getDatabaseProperties(): Base.IBaseExecution<string>;
+	getDataChunk(tableName?: string, schemaName?: string): Base.IBaseExecution<string>;
 	getDataChunks(): Base.IBaseExecution<string>;
+	getDataChunksIterator(): Base.IBaseExecution<string>;
 	getDataReader(sqlCommandText?: string): Base.IBaseExecution<string>;
+	getDBActivities(): Base.IBaseExecution<string>;
 	getEventCacheDataChunk(lastCopiedId?: number, searchChangeToken?: number): Base.IBaseExecution<string>;
 	getEventCacheExColumns(): Base.IBaseExecution<string>;
 	getEventCacheExDataChunk(lastCopiedId?: number): Base.IBaseExecution<string>;
 	getEventCacheIds(lastCopiedId?: number): Base.IBaseExecution<string>;
+	getFarmProperties(): Base.IBaseExecution<string>;
 	getMarker(): Base.IBaseExecution<string>;
 	getScalarValue(sqlCommandText?: string): Base.IBaseExecution<number>;
-	getServiceInfo(): Base.IBaseExecution<Microsoft.SharePoint.Administration.SiteMove.Service.SiteMoveServiceInfo>;
+	getServiceVersion(): Base.IBaseExecution<number>;
+	getSiteMoveState(): Base.IBaseExecution<string>;
 	getSiteProperties(): Base.IBaseExecution<string>;
+	getSiteRelocationCompatibleSchemaVersion(): Base.IBaseExecution<string>;
+	getSPDeletedSiteRelocationStatus(checkLockTime?: boolean): Base.IBaseExecution<string>;
 	getTenantWorkflows(): Base.IBaseCollection<string>;
 	getValidationChunks(): Base.IBaseExecution<string>;
+	getWorkItem(): Base.IBaseExecution<string>;
 	isDbReadOnly(): Base.IBaseExecution<boolean>;
 	isSystemSiteLocked(lockRequestor?: string): Base.IBaseExecution<boolean>;
 	lockSite(): Base.IBaseExecution<number>;
 	pauseCrawling(originalCPSDeleteReason?: number): Base.IBaseExecution<any>;
 	processStorageMetricsChanges(): Base.IBaseExecution<any>;
+	pulseHeartbeat(): Base.IBaseExecution<any>;
 	releaseSystemSiteLock(lockRequestor?: string): Base.IBaseExecution<number>;
 	removeSiteMapEntry(): Base.IBaseExecution<any>;
+	removeSiteMapEntry_ClearCache(sitePath?: string): Base.IBaseExecution<any>;
 	resumeCrawling(originalCPSDeleteReason?: number): Base.IBaseExecution<any>;
 	setSiteMoveState(state?: number): Base.IBaseExecution<any>;
 	sourceCleanupAfterMove(isDeleted?: boolean): Base.IBaseExecution<any>;
+	startLockableSession(): Base.IBaseExecution<any>;
+	startSnapshotIsolation(): Base.IBaseExecution<any>;
+	stopSessionToken(): Base.IBaseExecution<any>;
 	unlockSiteOnFailure(originalLockFlags?: number): Base.IBaseExecution<any>;
-}
-
-/*********************************************
-* ISiteRelocationJobManagementService
-**********************************************/
-export interface ISiteRelocationJobManagementService extends SiteRelocationJobManagementServiceCollections, SiteRelocationJobManagementServiceMethods, Base.IBaseQuery<SiteRelocationJobManagementService, ISiteRelocationJobManagementServiceQuery> {
-
-}
-
-/*********************************************
-* ISiteRelocationJobManagementServiceCollection
-**********************************************/
-export interface ISiteRelocationJobManagementServiceCollection extends Base.IBaseResults<SiteRelocationJobManagementService> {
-	done?: (resolve: (value?: Array<SiteRelocationJobManagementService>) => void) => void;
-}
-
-/*********************************************
-* ISiteRelocationJobManagementServiceQueryCollection
-**********************************************/
-export interface ISiteRelocationJobManagementServiceQueryCollection extends Base.IBaseResults<SiteRelocationJobManagementServiceOData> {
-	done?: (resolve: (value?: Array<SiteRelocationJobManagementServiceOData>) => void) => void;
-}
-
-/*********************************************
-* ISiteRelocationJobManagementServiceQuery
-**********************************************/
-export interface ISiteRelocationJobManagementServiceQuery extends SiteRelocationJobManagementServiceOData, SiteRelocationJobManagementServiceMethods {
-
-}
-
-/*********************************************
-* SiteRelocationJobManagementService
-**********************************************/
-export interface SiteRelocationJobManagementService extends Base.IBaseResult, SiteRelocationJobManagementServiceProps, SiteRelocationJobManagementServiceCollections, SiteRelocationJobManagementServiceMethods {
-
-}
-
-/*********************************************
-* SiteRelocationJobManagementServiceProps
-**********************************************/
-export interface SiteRelocationJobManagementServiceProps {
-	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
-}
-
-/*********************************************
-* SiteRelocationJobManagementServicePropMethods
-**********************************************/
-export interface SiteRelocationJobManagementServicePropMethods {
-
-}
-
-/*********************************************
-* SiteRelocationJobManagementServiceCollections
-**********************************************/
-export interface SiteRelocationJobManagementServiceCollections extends SiteRelocationJobManagementServicePropMethods {
-
-}
-
-/*********************************************
-* SiteRelocationJobManagementServiceOData
-**********************************************/
-export interface SiteRelocationJobManagementServiceOData extends Base.IBaseResult, SiteRelocationJobManagementServiceProps, SiteRelocationJobManagementServiceMethods {
-
-}
-
-/*********************************************
-* SiteRelocationJobManagementServiceMethods
-**********************************************/
-export interface SiteRelocationJobManagementServiceMethods {
-	enqueueSiteRelocationJob(siteId?: any, siteSubscriptionId?: any, siteUrl?: string, sourceDatabaseId?: any, targetDatabaseId?: any, siteMoveFlags?: number, preferredStartTimeInUtc?: any): Base.IBaseExecution<any>;
-	getServiceInfo(): Base.IBaseExecution<Microsoft.SharePoint.Administration.SiteMove.Service.SiteRelocationJobManagementServiceInfo>;
+	updateAbsBlobDates(): Base.IBaseExecution<any>;
 }

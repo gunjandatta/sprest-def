@@ -1,15 +1,18 @@
-import { SP } from ".";
 import { Microsoft } from ".";
+import { SP } from ".";
 import { MS } from ".";
 
 /** SP */
 export interface SP_API {
+	AddNoLiveBlobsInOdcServiceStateApi: Microsoft.SharePoint.Convergence.IAddNoLiveBlobsInOdcServiceStateApi;
 	Announcements: SP.Publishing.IAnnouncementsController;
 	Apps: Microsoft.AppServices.IAppCollection;
 	BrandCenter: SP.IBrandCenter;
 	ComponentContextInfo: Microsoft.SharePoint.Internal.ClientSideComponent.ComponentContextInfo;
 	ConsumerPermissions: Microsoft.SharePoint.Convergence.IConsumerPermissions;
+	contentSolution: SP.ContentSolution;
 	contextinfo: SP.ContextWebInformation;
+	DynamicContentUpdate: SP.IDynamicContentUpdateService;
 	EE: SP.IEmployeeEngagement;
 	EmployeeExperience: SP.IEmployeeExperienceController;
 	files: MS.FileServices.FileSystemItemCollections;
@@ -27,6 +30,7 @@ export interface SP_API {
 	MigrationCompleteStateApi: Microsoft.SharePoint.Convergence.IMigrationCompleteStateApi;
 	models: Microsoft.Office.Server.ContentCenter.SPMachineLearningModelCollections;
 	MultiGeoProxy: Microsoft.SharePoint.MultiGeo.ISPMultiGeoProxy;
+	OdcMetadataCleanedUpApi: Microsoft.SharePoint.Convergence.IOdcMetadataCleanedUpApi;
 	OrgNews: SP.IOrganizationNews;
 	OrgNewsSite: Microsoft.SharePoint.OrgNewsSite.IOrgNewsSiteApi;
 	outofboxfontpackages: SP.FontPackageCollections;
@@ -38,8 +42,10 @@ export interface SP_API {
 	sitefontpackages: SP.FontPackageCollections;
 	SiteIconManager: Microsoft.SharePoint.Portal.ISiteIconManager;
 	sitelinkingmanager: Microsoft.SharePoint.Portal.ISiteLinkingManager;
+	SiteManager: Microsoft.SharePoint.SiteManager.ISiteManagerService;
 	sphomeservice: Microsoft.SharePoint.Portal.ISharePointHomeServiceContextBuilder;
 	SPHSite: SP.ISPHSite;
+	"SPOInternalUseOnly.FileVirusStatusUpdate": SP.IFileUrlVirusStatusUpdate;
 	"SPOInternalUseOnly.TenantSharingRestrictions": Microsoft.SharePoint.Sharing.Internal.ISharingRestrictions;
 	spsitemanager: Microsoft.SharePoint.Portal.ISPSiteManager;
 	StructuralNavigationCache: SP.Publishing.Navigation.IStructuralNavigationCacheWrapper;

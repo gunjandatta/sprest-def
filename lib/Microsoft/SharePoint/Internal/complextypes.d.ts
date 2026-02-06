@@ -8,7 +8,9 @@ export interface BaseGptRequestOptions {
 	FrequencyPenalty?: number;
 	MaxTokens?: number;
 	PresencePenalty?: number;
+	Stop?: string;
 	Temperature?: number;
+	TopP?: number;
 }
 
 /*********************************************
@@ -40,8 +42,6 @@ export interface BaseGptResponseCollections {
 **********************************************/
 export interface ChatGptRequestOptions {
 	Messages?: { results: Array<Microsoft.SharePoint.Internal.MessageEntry> };
-	Stop?: string;
-	TopP?: number;
 }
 
 /*********************************************
@@ -56,6 +56,7 @@ export interface ChatGptRequestOptionsCollections {
 **********************************************/
 export interface MessageEntry {
 	Content?: string;
+	ContentParts?: { results: Array<Microsoft.SharePoint.Internal.ContentPart> };
 	Role?: string;
 }
 
@@ -63,6 +64,20 @@ export interface MessageEntry {
 * MessageEntryCollections
 **********************************************/
 export interface MessageEntryCollections {
+
+}
+
+/*********************************************
+* ContentPart
+**********************************************/
+export interface ContentPart {
+	ContentType?: string;
+}
+
+/*********************************************
+* ContentPartCollections
+**********************************************/
+export interface ContentPartCollections {
 
 }
 
@@ -110,6 +125,38 @@ export interface GptResponseUsage {
 * GptResponseUsageCollections
 **********************************************/
 export interface GptResponseUsageCollections {
+
+}
+
+/*********************************************
+* GptAsyncExecuteResponse
+**********************************************/
+export interface GptAsyncExecuteResponse {
+	RequestMetadata?: string;
+	Response?: Microsoft.SharePoint.Internal.ChatGptResponse;
+	Status?: string;
+}
+
+/*********************************************
+* GptAsyncExecuteResponseCollections
+**********************************************/
+export interface GptAsyncExecuteResponseCollections {
+
+}
+
+/*********************************************
+* GptAsyncSubmitResponse
+**********************************************/
+export interface GptAsyncSubmitResponse {
+	ErrorMessage?: string;
+	FailureReason?: string;
+	Status?: string;
+}
+
+/*********************************************
+* GptAsyncSubmitResponseCollections
+**********************************************/
+export interface GptAsyncSubmitResponseCollections {
 
 }
 
@@ -205,11 +252,44 @@ export interface GptResponseCollections {
 }
 
 /*********************************************
+* ImageContentPart
+**********************************************/
+export interface ImageContentPart {
+	ImageUrl?: Microsoft.SharePoint.Internal.ImageUrl;
+}
+
+/*********************************************
+* ImageContentPartCollections
+**********************************************/
+export interface ImageContentPartCollections {
+
+}
+
+/*********************************************
+* ImageUrl
+**********************************************/
+export interface ImageUrl {
+	Detail?: string;
+	Url?: string;
+}
+
+/*********************************************
+* ImageUrlCollections
+**********************************************/
+export interface ImageUrlCollections {
+
+}
+
+/*********************************************
 * LogActivityExtraProperties
 **********************************************/
 export interface LogActivityExtraProperties {
 	CampaignMetadata?: string;
+	IsWebWelcomePage?: boolean;
 	LinkUrlClicked?: string;
+	SPOWebPartInstanceId?: string;
+	SPOWebPartManifestId?: string;
+	SPOWebPartSubComponentId?: string;
 }
 
 /*********************************************
@@ -249,5 +329,19 @@ export interface TrackedItemUpdatesRequest {
 * TrackedItemUpdatesRequestCollections
 **********************************************/
 export interface TrackedItemUpdatesRequestCollections {
+
+}
+
+/*********************************************
+* TextContentPart
+**********************************************/
+export interface TextContentPart {
+	Text?: string;
+}
+
+/*********************************************
+* TextContentPartCollections
+**********************************************/
+export interface TextContentPartCollections {
 
 }

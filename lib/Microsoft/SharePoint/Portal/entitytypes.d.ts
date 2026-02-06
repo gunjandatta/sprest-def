@@ -162,6 +162,8 @@ export interface GroupSiteManagerMethods {
 	createGroup(displayName?: string, alias?: string, isPublic?: boolean, ownerPrincipalNames?: Array<string>, description?: string, creationOptions?: Array<string>): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	createGroupEx(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
 	createGroupForSite(displayName?: string, alias?: string, isPublic?: boolean, optionalParams?: Microsoft.SharePoint.Portal.GroupCreationParams): Base.IBaseExecution<Microsoft.SharePoint.Portal.GroupSiteInfo>;
+	createTeamsForGroup(groupId?: string, teamTemplate?: string): Base.IBaseExecution<string>;
+	createTeamsNavLink(teamsLinkUrl?: string, siteUrl?: string): Base.IBaseExecution<any>;
 	delete(siteUrl?: string): Base.IBaseExecution<any>;
 	ensureTeamForGroup(siteUrl?: string, teamTemplate?: string): Base.IBaseExecution<string>;
 	ensureTeamForGroupEx(siteUrl?: string, teamTemplate?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.EnsureTeamForGroupExResponse>;
@@ -464,12 +466,14 @@ export interface SPSiteManagerOData extends Base.IBaseResult, SPSiteManagerProps
 **********************************************/
 export interface SPSiteManagerMethods {
 	archiveTeamChannelSite(siteId?: any, archive?: boolean): Base.IBaseExecution<any>;
+	archiveTeamConnectedSite(SiteId?: any, IsArchive?: boolean, ModernGroupMemberMove?: Microsoft.SharePoint.Portal.GroupMoveOperation, AllTenantUserMove?: Microsoft.SharePoint.Portal.GroupMoveOperation): Base.IBaseExecution<any>;
 	areSegmentsCompatible(segments?: Array<any>): Base.IBaseExecution<boolean>;
 	canCreateHubJoinedSite(hubSiteId?: any): Base.IBaseExecution<boolean>;
 	create(request?: Microsoft.SharePoint.Portal.SPSiteCreationRequest): Base.IBaseExecution<Microsoft.SharePoint.Portal.SPSiteCreationResponse>;
 	delete(siteId?: any): Base.IBaseExecution<any>;
 	getCompatibleSegments(segments?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.Portal.IBSegmentInfo>;
 	getIBSegmentLabels(IBSegments?: Array<any>): Base.IBaseCollection<Microsoft.SharePoint.Portal.IBSegmentInfo>;
+	getProperty(propertyName?: string): Base.IBaseExecution<string>;
 	getTeamChannelSiteOwner(siteId?: any): Base.IBaseExecution<Microsoft.SharePoint.Portal.GetTeamChannelSiteOwnerResponse>;
 	landingSiteUrlFromName(siteName?: string): Base.IBaseExecution<Microsoft.SharePoint.Portal.VivaSiteRequestInfo>;
 	restoreTeamsChannelSite(siteId?: any, relatedGroupId?: any): Base.IBaseExecution<any>;

@@ -7,6 +7,7 @@ import { SP } from "../../../";
 **********************************************/
 export interface ActionFacet {
 	addToOneDrive?: Microsoft.SharePoint.Activities.AddToOneDriveFacet;
+	archive?: Microsoft.SharePoint.Activities.ArchiveFacet;
 	checkin?: Microsoft.SharePoint.Activities.CheckinFacet;
 	checkout?: Microsoft.SharePoint.Activities.CheckoutFacet;
 	comment?: Microsoft.SharePoint.Activities.GetCommentFacet;
@@ -17,6 +18,7 @@ export interface ActionFacet {
 	mention?: Microsoft.SharePoint.Activities.GetMentionFacet;
 	move?: Microsoft.SharePoint.Activities.MoveFacet;
 	pointInTimeRestore?: Microsoft.SharePoint.Activities.PointInTimeRestoreFacet;
+	reactivate?: Microsoft.SharePoint.Activities.ReactivateFacet;
 	rename?: Microsoft.SharePoint.Activities.RenameFacet;
 	restore?: Microsoft.SharePoint.Activities.RestoreFacet;
 	restoreVersion?: Microsoft.SharePoint.Activities.RestoreVersionFacet;
@@ -48,6 +50,20 @@ export interface AddToOneDriveFacet {
 * AddToOneDriveFacetCollections
 **********************************************/
 export interface AddToOneDriveFacetCollections {
+
+}
+
+/*********************************************
+* ArchiveFacet
+**********************************************/
+export interface ArchiveFacet {
+
+}
+
+/*********************************************
+* ArchiveFacetCollections
+**********************************************/
+export interface ArchiveFacetCollections {
 
 }
 
@@ -232,6 +248,20 @@ export interface PointInTimeRestoreFacet {
 * PointInTimeRestoreFacetCollections
 **********************************************/
 export interface PointInTimeRestoreFacetCollections {
+
+}
+
+/*********************************************
+* ReactivateFacet
+**********************************************/
+export interface ReactivateFacet {
+
+}
+
+/*********************************************
+* ReactivateFacetCollections
+**********************************************/
+export interface ReactivateFacetCollections {
 
 }
 

@@ -57,6 +57,11 @@ export interface JsonThemeCollections {
 * LLMColumnInfo
 **********************************************/
 export interface LLMColumnInfo {
+	AnalyzeImageDetailLevel?: string;
+	AnalyzeImageWithVision?: boolean;
+	AutofillColumnType?: string;
+	CustomModelId?: string;
+	CustomParametersJson?: string;
 	IsEnabled?: boolean;
 	Prompt?: string;
 }

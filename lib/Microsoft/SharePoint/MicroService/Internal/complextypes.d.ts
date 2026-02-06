@@ -6,6 +6,7 @@ import { Base } from "../../../../";
 export interface PacInfo {
 	Endpoint?: string;
 	IsAppOnly?: boolean;
+	Scenario?: string;
 	Token?: string;
 	Version?: number;
 }

@@ -9,6 +9,7 @@ export interface ConnectionsConfigurationAndData {
 	IsConfigured?: boolean;
 	SpotlightConfiguration?: Microsoft.SharePoint.EmployeeEngagement.SpotlightConfiguration;
 	SpotlightNews?: { results: Array<Microsoft.SharePoint.EmployeeEngagement.SpotlightNews> };
+	TitleRegion?: SP.VivaHomeTitleRegion;
 }
 
 /*********************************************
@@ -107,6 +108,26 @@ export interface DashboardConfiguration {
 * DashboardConfigurationCollections
 **********************************************/
 export interface DashboardConfigurationCollections {
+
+}
+
+/*********************************************
+* SitePage
+**********************************************/
+export interface SitePage {
+	AbsoluteUrl?: string;
+	BannerImageUrl?: string;
+	BannerThumbnailUrl?: string;
+	Description?: string;
+	ID?: string;
+	Title?: string;
+	UniqueId?: string;
+}
+
+/*********************************************
+* SitePageCollections
+**********************************************/
+export interface SitePageCollections {
 
 }
 

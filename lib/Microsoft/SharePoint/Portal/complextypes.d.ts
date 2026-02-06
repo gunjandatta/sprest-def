@@ -323,6 +323,21 @@ export interface VivaSiteRequestInfoCollections {
 }
 
 /*********************************************
+* GroupMoveOperation
+**********************************************/
+export interface GroupMoveOperation {
+	SourceGroup?: string;
+	TargetGroup?: string;
+}
+
+/*********************************************
+* GroupMoveOperationCollections
+**********************************************/
+export interface GroupMoveOperationCollections {
+
+}
+
+/*********************************************
 * SPSiteCreationResponse
 **********************************************/
 export interface SPSiteCreationResponse {
@@ -344,6 +359,7 @@ export interface SPSiteCreationResponseCollections {
 export interface SPSiteCreationRequest {
 	AdditionalSiteFeatureIds?: { results: Array<any> };
 	AdditionalWebFeatureIds?: { results: Array<any> };
+	ChannelCapabilities?: SP.SPTeamChannelCapabilities;
 	ChannelGroupId?: any;
 	Classification?: string;
 	Description?: string;

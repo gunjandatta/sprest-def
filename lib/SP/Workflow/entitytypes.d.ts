@@ -231,9 +231,12 @@ export interface SPWorkflowTaskMethods {
 	breakRoleInheritance(copyRoleAssignments?: boolean, clearSubscopes?: boolean): Base.IBaseExecution<any>;
 	resetRoleInheritance(): Base.IBaseExecution<any>;
 	addThumbnailFieldData(imageStream?: any, imageName?: string, fieldInternalName?: string, lockId?: string): Base.IBaseExecution<SP.SPImageItem>;
-	archive(): Base.IBaseExecution<any>;
+	archive(): Base.IBaseExecution<string>;
 	delete(): Base.IBaseExecution<any>;
 	deleteWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
+	doEntitiesHaveAccessToLabel(peoplePickerInput?: string): Base.IBaseCollection<SP.LabelAccessControlData>;
+	folderArchiveProgress(): Base.IBaseExecution<string>;
+	folderUnarchiveProgress(): Base.IBaseExecution<string>;
 	getChanges(query?: SP.ChangeQuery): Base.IBaseCollection<SP.Change>;
 	getComments(): Base.IBaseCollection<Microsoft.SharePoint.Comments.comment, Microsoft.SharePoint.Comments.commentOData, Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods> & Base.IBaseExecution & Microsoft.SharePoint.Comments.commentCollectionMethods;
 	// getUserEffectivePermissions(userName?: string): Base.IBaseExecution<SP.BasePermissions>;
@@ -246,6 +249,7 @@ export interface SPWorkflowTaskMethods {
 	parseAndSetFieldValue(fieldName?: string, value?: string): Base.IBaseExecution<any>;
 	recycle(): Base.IBaseExecution<any>;
 	recycleWithParameters(parameters?: SP.ListItemDeleteParameters): Base.IBaseExecution<any>;
+	renderListItemDataAsStream(options?: number): Base.IBaseExecution<any>;
 	setCommentsDisabled(value?: boolean): Base.IBaseExecution<any>;
 	setComplianceTag(complianceTag?: string, isTagPolicyHold?: boolean, isTagPolicyRecord?: boolean, isEventBasedTag?: boolean, isTagSuperLock?: boolean, isUnlockedAsDefault?: boolean): Base.IBaseExecution<any>;
 	setComplianceTagWithExplicitMetasUpdate(complianceTag?: string, complianceFlags?: number, complianceTagWrittenTime?: any, userEmailAddress?: string): Base.IBaseExecution<any>;
@@ -254,7 +258,7 @@ export interface SPWorkflowTaskMethods {
 	setComplianceTagWithNoHold(complianceTag?: string): Base.IBaseExecution<any>;
 	setComplianceTagWithRecord(complianceTag?: string): Base.IBaseExecution<any>;
 	systemUpdate(): Base.IBaseExecution<any>;
-	unarchive(): Base.IBaseExecution<any>;
+	unarchive(): Base.IBaseExecution<string>;
 	// update(): Base.IBaseExecution<any>;
 	updateEx(parameters?: SP.ListItemUpdateParameters): Base.IBaseExecution<any>;
 	updateOverwriteVersion(): Base.IBaseExecution<any>;

@@ -68,7 +68,6 @@ export interface DirectorySessionOData extends Base.IBaseResult, DirectorySessio
 * DirectorySessionMethods
 **********************************************/
 export interface DirectorySessionMethods {
-	getGraphUser(principalName?: string): Base.IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
 	getSharePointDataForUser(userId?: any): Base.IBaseQuery<SP.Directory.User, SP.Directory.UserOData> & SP.Directory.UserCollections & SP.Directory.UserMethods;
 	group(groupId?: any, alias?: string): Base.IBaseQuery<SP.Directory.Group, SP.Directory.GroupOData> & SP.Directory.GroupCollections & SP.Directory.GroupMethods;
 	joinGroup(groupId?: any): Base.IBaseExecution<number>;
@@ -239,6 +238,7 @@ export interface UserProps {
 	principalName?: string;
 	responsibilities?: { results: Array<string> };
 	schools?: { results: Array<string> };
+	serviceInfo?: { results: Array<string> };
 	sharePointAddTopicHighlightFirstRun?: boolean;
 	sharePointContentBarViewsTeachingBubble?: boolean;
 	sharePointConversationsLinkFirstRun?: boolean;

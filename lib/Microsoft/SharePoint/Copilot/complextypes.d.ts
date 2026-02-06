@@ -21,8 +21,10 @@ export interface CopilotFileCollectionQueryResultCollections {
 **********************************************/
 export interface CopilotFileMetadata {
 	ContainerUrl?: string;
+	CreatedBy?: Microsoft.SharePoint.Copilot.UserIdentity;
 	FileName?: string;
 	FileUrl?: string;
+	LastModifiedBy?: Microsoft.SharePoint.Copilot.UserIdentity;
 	ListId?: any;
 	ListItemId?: string;
 	SiteId?: any;
@@ -36,6 +38,22 @@ export interface CopilotFileMetadata {
 * CopilotFileMetadataCollections
 **********************************************/
 export interface CopilotFileMetadataCollections {
+
+}
+
+/*********************************************
+* UserIdentity
+**********************************************/
+export interface UserIdentity {
+	DisplayName?: string;
+	Email?: string;
+	LoginName?: string;
+}
+
+/*********************************************
+* UserIdentityCollections
+**********************************************/
+export interface UserIdentityCollections {
 
 }
 

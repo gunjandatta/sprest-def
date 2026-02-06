@@ -690,6 +690,7 @@ export interface MigrationTaskProps {
 	ActionId?: number;
 	ClientName?: string;
 	DebugCommand?: string;
+	DeltaSyncQualified?: boolean;
 	Duration?: any;
 	ErrorCode?: number;
 	ErrorMessage?: string;

@@ -77,7 +77,6 @@ export interface EntityMethods {
 	getFinderView(methodInstanceName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
 	getIdentifierCount(): Base.IBaseExecution<number>;
 	getIdentifiers(): Base.IBaseCollection<SP.BusinessData.EntityIdentifier>;
-	getLobSystem(): Base.IBaseExecution<SP.BusinessData.LobSystem>;
 	getSpecificFinderView(specificFinderName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
 	getUpdaterView(updaterName?: string): Base.IBaseQuery<SP.BusinessData.EntityView, SP.BusinessData.EntityViewOData> & SP.BusinessData.EntityViewCollections & SP.BusinessData.EntityViewMethods;
 }
@@ -203,76 +202,6 @@ export interface LobSystemInstance {
 **********************************************/
 export interface LobSystemInstanceCollections {
 
-}
-
-/*********************************************
-* ILobSystem
-**********************************************/
-export interface ILobSystem extends LobSystemCollections, LobSystemMethods, Base.IBaseQuery<LobSystem, ILobSystemQuery> {
-
-}
-
-/*********************************************
-* ILobSystemCollection
-**********************************************/
-export interface ILobSystemCollection extends Base.IBaseResults<LobSystem> {
-	done?: (resolve: (value?: Array<LobSystem>) => void) => void;
-}
-
-/*********************************************
-* ILobSystemQueryCollection
-**********************************************/
-export interface ILobSystemQueryCollection extends Base.IBaseResults<LobSystemOData> {
-	done?: (resolve: (value?: Array<LobSystemOData>) => void) => void;
-}
-
-/*********************************************
-* ILobSystemQuery
-**********************************************/
-export interface ILobSystemQuery extends LobSystemOData, LobSystemMethods {
-
-}
-
-/*********************************************
-* LobSystem
-**********************************************/
-export interface LobSystem extends Base.IBaseResult, LobSystemProps, LobSystemCollections, LobSystemMethods {
-
-}
-
-/*********************************************
-* LobSystemProps
-**********************************************/
-export interface LobSystemProps {
-	Name?: string;
-}
-
-/*********************************************
-* LobSystemPropMethods
-**********************************************/
-export interface LobSystemPropMethods {
-
-}
-
-/*********************************************
-* LobSystemCollections
-**********************************************/
-export interface LobSystemCollections extends LobSystemPropMethods {
-
-}
-
-/*********************************************
-* LobSystemOData
-**********************************************/
-export interface LobSystemOData extends Base.IBaseResult, LobSystemProps, LobSystemMethods {
-
-}
-
-/*********************************************
-* LobSystemMethods
-**********************************************/
-export interface LobSystemMethods {
-	getLobSystemInstances(): Base.IBaseCollection<SP.BusinessData.LobSystemInstance>;
 }
 
 /*********************************************

@@ -71,7 +71,7 @@ export interface SPTenantIBInsightsReportManagerMethods {
 	createReport(): Base.IBaseExecution<Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata>;
 	getAllReportsMetadata(): Base.IBaseCollection<Microsoft.SharePoint.Insights.SPTenantIBInsightsReportMetadata>;
 	getReport(reportId?: any, siteType?: string): Base.IBaseExecution<Microsoft.SharePoint.Insights.SPTenantIBInsightsReport>;
-	getReportData(reportId?: any, siteType?: string, section?: string): Base.IBaseCollection<string>;
+	getReportData(reportId?: any, siteType?: string, section?: string, isFullDetails?: string): Base.IBaseCollection<string>;
 }
 
 /*********************************************

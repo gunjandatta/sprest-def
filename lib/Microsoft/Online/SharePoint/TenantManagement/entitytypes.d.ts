@@ -186,6 +186,7 @@ export interface Office365TenantProps {
 	AllowEditing?: boolean;
 	AllowEveryoneExceptExternalUsersClaimInPrivateSite?: boolean;
 	AllowGuestUserShareToUsersNotInSiteCollection?: boolean;
+	AllowLegacyBrowserAuthProtocolsEnabledSetting?: boolean;
 	AllowLimitedAccessOnUnmanagedDevices?: boolean;
 	AllowOverrideForBlockUserInfoVisibility?: boolean;
 	AllowSelectSecurityGroupsInSPSitesList?: { results: Array<string> };
@@ -193,6 +194,7 @@ export interface Office365TenantProps {
 	AllowSharingOutsideRestrictedAccessControlGroups?: boolean;
 	AllowWebPropertyBagUpdateWhenDenyAddAndCustomizePagesIsEnabled?: boolean;
 	AnyoneLinkTrackUsers?: boolean;
+	AppAccessInformationBarriersAllowList?: { results: Array<any> };
 	AppBypassInformationBarriers?: boolean;
 	ApplyAppEnforcedRestrictionsToAdHocRecipients?: boolean;
 	AppOnlyBypassPeoplePickerPolicies?: boolean;
@@ -296,6 +298,8 @@ export interface Office365TenantProps {
 	MajorVersionLimit?: number;
 	MarkAllFilesAsSensitiveByDefault?: boolean;
 	MassDeleteNotificationDisabled?: boolean;
+	MassDeleteNotificationDisabledForODB?: boolean;
+	MassDeleteNotificationDisabledForSPO?: boolean;
 	MediaTranscription?: number;
 	MediaTranscriptionAutomaticFeatures?: number;
 	MobileFriendlyUrlEnabled?: boolean;
@@ -397,7 +401,7 @@ export interface Office365TenantMethods {
 	addPublicCdnOrigin(origin?: string): Base.IBaseExecution<any>;
 	addSdnProvider(identifier?: string, license?: string): Base.IBaseExecution<any>;
 	addTenantCdnOrigin(cdnType?: number, originUrl?: string): Base.IBaseExecution<any>;
-	addTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
+	addTenantTheme(name?: string, themeJson?: string, shouldParseColorPair?: boolean): Base.IBaseExecution<boolean>;
 	addToOrgAssetsLibAndCdn(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number, defaultOriginAdded?: boolean): Base.IBaseExecution<any>;
 	addToOrgAssetsWithConfig(cdnType?: number, libUrl?: SP.ResourcePath, thumbnailUrl?: SP.ResourcePath, orgAssetType?: number, defaultOriginAdded?: boolean, configParam?: Microsoft.SharePoint.BrandCenter.OrgAssetsLibraryConfigParam): Base.IBaseExecution<any>;
 	createTenantCdnDefaultOrigins(cdnType?: number): Base.IBaseExecution<any>;
@@ -440,7 +444,7 @@ export interface Office365TenantMethods {
 	setTenantCdnEnabled(cdnType?: number, isEnabled?: boolean): Base.IBaseExecution<any>;
 	setTenantCdnPolicy(cdnType?: number, policy?: number, policyValue?: string): Base.IBaseExecution<any>;
 	syncAadB2BManagementPolicy(): Base.IBaseExecution<any>;
-	updateTenantTheme(name?: string, themeJson?: string): Base.IBaseExecution<boolean>;
+	updateTenantTheme(name?: string, themeJson?: string, shouldParseColorPair?: boolean): Base.IBaseExecution<boolean>;
 	uploadCustomFontsAndCatalogLib(customFontFiles?: Array<Microsoft.SharePoint.Administration.CustomFontsResource>, libUrl?: SP.ResourcePath): Base.IBaseExecution<boolean>;
 }
 
@@ -478,6 +482,8 @@ export interface SPOUserSessionRevocationResultCollections {
 * ThemeProperties
 **********************************************/
 export interface ThemeProperties {
+	ColorPairsJson?: string;
+	Editable?: boolean;
 	IsInverted?: boolean;
 	Name?: string;
 	Palette?: { results: Array<SP.KeyValue> };

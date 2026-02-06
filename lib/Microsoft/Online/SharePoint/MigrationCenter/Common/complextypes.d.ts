@@ -138,6 +138,8 @@ export interface MigrationTaskSettings {
 	CustomAzureStorageAccount?: string;
 	DateCreated?: any;
 	DateModified?: any;
+	DeltaSyncDateTimeFilter?: any;
+	DeltaSyncEnabled?: boolean;
 	EnableIncremental?: boolean;
 	EnableUserMappings?: boolean;
 	Encrypted?: boolean;
@@ -152,6 +154,7 @@ export interface MigrationTaskSettings {
 	PreserveUserPermissionForOnPrem?: boolean;
 	ReplaceInvalidChars?: boolean;
 	ScanOnly?: boolean;
+	SettingsUpdateTime?: any;
 	SkipListWithAudienceEnabled?: boolean;
 	StartMigrationAutomaticallyWhenNoScanIssue?: boolean;
 	Tags?: { results: Array<string> };

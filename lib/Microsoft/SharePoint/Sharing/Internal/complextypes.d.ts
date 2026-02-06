@@ -44,3 +44,17 @@ export interface CExternalSharingThrottling {
 export interface CExternalSharingThrottlingCollections {
 
 }
+
+/*********************************************
+* SPSharingWorkItemAuthCryptoProvider
+**********************************************/
+export interface SPSharingWorkItemAuthCryptoProvider {
+
+}
+
+/*********************************************
+* SPSharingWorkItemAuthCryptoProviderCollections
+**********************************************/
+export interface SPSharingWorkItemAuthCryptoProviderCollections {
+
+}

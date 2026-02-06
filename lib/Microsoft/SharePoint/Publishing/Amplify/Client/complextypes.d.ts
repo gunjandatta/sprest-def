@@ -1,5 +1,33 @@
 import { Base } from "../../../../../";
 import { Microsoft } from "../../../../../";
+import { SP } from "../../../../../";
+
+/*********************************************
+* ClientAmplifyResult
+**********************************************/
+export interface ClientAmplifyResult {
+	canvasElement?: string;
+	code?: string;
+	endpoint?: Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyEndpointInfo;
+	eventId?: string;
+	expected?: boolean;
+	extraProperties?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyExtraProperty> };
+	internalDescription?: string;
+	origin?: string;
+	stage?: string;
+	statusIndicative?: boolean;
+	step?: string;
+	timestampUTC?: string;
+	upstreamErrorCode?: string;
+	upstreamHttpStatusCode?: number;
+}
+
+/*********************************************
+* ClientAmplifyResultCollections
+**********************************************/
+export interface ClientAmplifyResultCollections {
+
+}
 
 /*********************************************
 * ClientAmplifyEndpointInfo
@@ -7,6 +35,7 @@ import { Microsoft } from "../../../../../";
 export interface ClientAmplifyEndpointInfo {
 	endpointSubType?: string;
 	endpointType?: string;
+	extraProperties?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyExtraProperty> };
 	href?: string;
 	id?: string;
 	name?: string;
@@ -51,26 +80,15 @@ export interface ClientAmplifyResultsCollections {
 }
 
 /*********************************************
-* ClientAmplifyResult
+* ClientAmplifyAnywhereResults
 **********************************************/
-export interface ClientAmplifyResult {
-	canvasElement?: string;
-	code?: string;
-	endpoint?: Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyEndpointInfo;
-	eventId?: string;
-	extraProperties?: { results: Array<Microsoft.SharePoint.Publishing.Amplify.Client.ClientAmplifyExtraProperty> };
-	internalDescription?: string;
-	origin?: string;
-	stage?: string;
-	step?: string;
-	timestampUTC?: string;
-	upstreamErrorCode?: string;
-	upstreamHttpStatusCode?: number;
+export interface ClientAmplifyAnywhereResults {
+	publishingStatusResponse?: SP.Publishing.PublishingStatusResponse;
 }
 
 /*********************************************
-* ClientAmplifyResultCollections
+* ClientAmplifyAnywhereResultsCollections
 **********************************************/
-export interface ClientAmplifyResultCollections {
+export interface ClientAmplifyAnywhereResultsCollections {
 
 }

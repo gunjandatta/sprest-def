@@ -20,6 +20,8 @@ export interface UnlicensedOdbLicenseEnforcementWarningContextCollections {
 * UnlicensedOdbTenantMetrics
 **********************************************/
 export interface UnlicensedOdbTenantMetrics {
+	adminLockedCount?: number;
+	adminLockedSizeBytes?: number;
 	billableCount?: number;
 	billableSizeBytes?: number;
 	complianceHoldCount?: number;
@@ -35,6 +37,8 @@ export interface UnlicensedOdbTenantMetrics {
 	retentionPeriodCount?: number;
 	retentionPeriodSizeBytes?: number;
 	sizeBytes?: number;
+	unknownCount?: number;
+	unknownSizeBytes?: number;
 }
 
 /*********************************************
