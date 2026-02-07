@@ -6628,17 +6628,73 @@ export interface SemanticSearchItemCollectionCollections {
 }
 
 /*********************************************
+* ISensitivityLabelCollection
+**********************************************/
+export interface ISensitivityLabelCollection extends SensitivityLabelCollectionCollections, SensitivityLabelCollectionMethods, Base.IBaseQuery<SensitivityLabelCollection, ISensitivityLabelCollectionQuery> {
+
+}
+
+/*********************************************
+* ISensitivityLabelCollectionCollection
+**********************************************/
+export interface ISensitivityLabelCollectionCollection extends Base.IBaseResults<SensitivityLabelCollection> {
+	done?: (resolve: (value?: Array<SensitivityLabelCollection>) => void) => void;
+}
+
+/*********************************************
+* ISensitivityLabelCollectionQueryCollection
+**********************************************/
+export interface ISensitivityLabelCollectionQueryCollection extends Base.IBaseResults<SensitivityLabelCollectionOData> {
+	done?: (resolve: (value?: Array<SensitivityLabelCollectionOData>) => void) => void;
+}
+
+/*********************************************
+* ISensitivityLabelCollectionQuery
+**********************************************/
+export interface ISensitivityLabelCollectionQuery extends SensitivityLabelCollectionOData, SensitivityLabelCollectionMethods {
+
+}
+
+/*********************************************
 * SensitivityLabelCollection
 **********************************************/
-export interface SensitivityLabelCollection {
+export interface SensitivityLabelCollection extends Base.IBaseResult, SensitivityLabelCollectionProps, SensitivityLabelCollectionCollections, SensitivityLabelCollectionMethods {
+
+}
+
+/*********************************************
+* SensitivityLabelCollectionProps
+**********************************************/
+export interface SensitivityLabelCollectionProps {
 	Id4a81de82eeb94d6080ea5bf63e27023a?: string;
+}
+
+/*********************************************
+* SensitivityLabelCollectionPropMethods
+**********************************************/
+export interface SensitivityLabelCollectionPropMethods {
+
 }
 
 /*********************************************
 * SensitivityLabelCollectionCollections
 **********************************************/
-export interface SensitivityLabelCollectionCollections {
+export interface SensitivityLabelCollectionCollections extends SensitivityLabelCollectionPropMethods {
 
+}
+
+/*********************************************
+* SensitivityLabelCollectionOData
+**********************************************/
+export interface SensitivityLabelCollectionOData extends Base.IBaseResult, SensitivityLabelCollectionProps, SensitivityLabelCollectionMethods {
+
+}
+
+/*********************************************
+* SensitivityLabelCollectionMethods
+**********************************************/
+export interface SensitivityLabelCollectionMethods {
+	getSensitivityLabelAsStream(expand?: string, filter?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

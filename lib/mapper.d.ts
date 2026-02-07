@@ -10022,6 +10022,14 @@ export interface IMapper {
 
 	}
 
+	"SP.SensitivityLabelCollection": {
+		properties?: Array<string>;
+		getSensitivityLabelAsStream: IMapperMethod & {
+		argNames: [ "expand", "filter" ],
+		},
+
+	}
+
 	"SP.Site": {
 		properties?: Array<string>;
 		cancelDeleteFileVersions: IMapperMethod & {

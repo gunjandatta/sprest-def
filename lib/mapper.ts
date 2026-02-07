@@ -9724,6 +9724,13 @@ export const Mapper: IMapper = {
 
 	},
 
+	"SP.SensitivityLabelCollection": {
+		getSensitivityLabelAsStream: {
+		argNames: [ "expand", "filter" ],
+		},
+
+	},
+
 	"SP.Site": {
 		cancelDeleteFileVersions: {
 		},
