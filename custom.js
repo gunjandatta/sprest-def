@@ -428,7 +428,7 @@ module.exports = {
     // Sensitivity Label Collection
     "SP.SensitivityLabelCollection": [
         {
-            name: "getSensitivityLabelAsStream",
+            name: "getSensitivityLabelsAsStream",
             returnType: "any",
             params: [
                 { $: { Name: "expand", Type: "string" } },

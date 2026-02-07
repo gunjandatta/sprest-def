@@ -6694,7 +6694,7 @@ export interface SensitivityLabelCollectionOData extends Base.IBaseResult, Sensi
 * SensitivityLabelCollectionMethods
 **********************************************/
 export interface SensitivityLabelCollectionMethods {
-	getSensitivityLabelAsStream(expand?: string, filter?: string): Base.IBaseExecution<any>;
+	getSensitivityLabelsAsStream(expand?: string, filter?: string): Base.IBaseExecution<any>;
 }
 
 /*********************************************

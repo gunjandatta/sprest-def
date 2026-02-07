@@ -10024,7 +10024,7 @@ export interface IMapper {
 
 	"SP.SensitivityLabelCollection": {
 		properties?: Array<string>;
-		getSensitivityLabelAsStream: IMapperMethod & {
+		getSensitivityLabelsAsStream: IMapperMethod & {
 		argNames: [ "expand", "filter" ],
 		},
 
