@@ -425,6 +425,18 @@ module.exports = {
         }
     ],
 
+    // Sensitivity Label Collection
+    "SP.SensitivityLabelCollection": [
+        {
+            name: "getSensitivityLabelAsStream",
+            returnType: "any",
+            params: [
+                { $: { Name: "expand", Type: "string" } },
+                { $: { Name: "filter", Type: "string" } }
+            ]
+        }
+    ],
+
     // Site
     "SP.Site": [
         {
