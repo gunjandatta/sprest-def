@@ -52,6 +52,27 @@ module.exports = {
             argNames: [{ name: "values", type: "{ [key: string]: any }" }]
         }
     ],
+    listCollection: [
+        {
+            name: "add",
+            argNames: [{ name: "values", type: "{ [key: string]: any }" }]
+        }
+    ],
+    listItem: [
+        {
+            name: "delete"
+        },
+        {
+            name: "update",
+            argNames: [{ name: "values", type: "{ [key: string]: any }" }]
+        }
+    ],
+    listItemCollection: [
+        {
+            name: "add",
+            argNames: [{ name: "fields", type: "{ [key: string]: any }" }]
+        }
+    ],
     permission: [
         {
             name: "delete"
@@ -65,15 +86,6 @@ module.exports = {
         {
             name: "add",
             argNames: [{ name: "values", type: "{ roles: string[], grantedToIdentities: [{ application: { id: string, displayName?: string } }] }" }]
-        }
-    ],
-    listItem: [
-        {
-            name: "delete"
-        },
-        {
-            name: "update",
-            argNames: [{ name: "values", type: "{ [key: string]: any }" }]
         }
     ]
 }

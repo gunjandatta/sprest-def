@@ -3860,6 +3860,7 @@ export interface IMapper {
 	lists: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
+		add: IMapperMethod & { argNames: ["values"] }
 	},
 	listItem: {
 		properties?: Array<string>;
@@ -3883,6 +3884,7 @@ export interface IMapper {
 	listItems: {
 		properties?: Array<string>;
 		query: IMapperMethod & { argNames: ["oData"] }
+		add: IMapperMethod & { argNames: ["fields"] }
 	},
 	listItemVersion: {
 		properties?: Array<string>;

@@ -9929,7 +9929,7 @@ export interface listOData extends baseItemOData {
 	update(values: { [key: string]: any }): IBaseExecution<void>;
 }
 export interface listCollection extends IBaseCollection<list, listOData & listProps> {
-add(values?: any): IBaseExecution<list>;
+	add(values: { [key: string]: any }):IBaseExecution<void>
 }
 /*********************************************
 * listItem
@@ -9966,7 +9966,7 @@ export interface listItemOData extends baseItemOData {
 	getActivitiesByInterval(startDateTime, endDateTime, interval): itemActivityStat[];
 }
 export interface listItemCollection extends IBaseCollection<listItem, listItemOData & listItemProps> {
-add(values?: any): IBaseExecution<listItem>;
+	add(fields: { [key: string]: any }):IBaseExecution<void>
 }
 /*********************************************
 * listItemVersion

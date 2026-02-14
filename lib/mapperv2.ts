@@ -6370,6 +6370,7 @@ export const Mapper: IMapper = {
 	},
 	lists: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+		add: { argNames: ["values"], requestType: RequestType.PostBodyNoArgs  },
 	},
 	listItem: {
 		properties: [
@@ -6411,6 +6412,7 @@ export const Mapper: IMapper = {
 	},
 	listItems: {
 		query: { argNames: ["oData"], requestType: RequestType.OData },
+		add: { argNames: ["fields"], requestType: RequestType.PostBodyNoArgs  },
 	},
 	listItemVersion: {
 		properties: [
