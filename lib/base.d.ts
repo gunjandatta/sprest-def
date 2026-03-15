@@ -158,6 +158,7 @@ export interface IMethodInfo {
     replaceEndpointFl?: boolean;
     requestMethod?: string;
     requestType?: number;
+    returnProp?: string;
     returnType?: string;
 }
 
