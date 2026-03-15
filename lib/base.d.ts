@@ -139,6 +139,7 @@ export interface IMapperMethod {
     replaceEndpointFl?: boolean;
     requestType?: number;
     requestMethod?: string;
+    returnProp?: string;
     returnType?: string;
 }
 
