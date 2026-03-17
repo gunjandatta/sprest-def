@@ -68,6 +68,9 @@ export interface IBaseExecution<Type = any, Result = Type> {
      * Method to get the request information.
      */
     getInfo(): IRequestInfo;
+
+    /** Stops any long running jobs for batch or query requests. */
+    stop();
 }
 
 /**
