@@ -185,6 +185,9 @@ export interface IODataQuery {
      */
     GetAllItems?: boolean;
 
+    /** Time in ms to wait between calls to avoid throttling. */
+    GetAllItemsWaitTime?: number;
+
     /** The order by fields. */
     OrderBy?: Array<string>;
 
