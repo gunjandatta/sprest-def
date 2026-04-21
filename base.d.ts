@@ -156,6 +156,7 @@ export interface IMethodInfo {
     argValues?: Array<any>;
     data?: any;
     getAllItemsFl?: boolean;
+    getAllItemsWaitTime?: number;
     inheritMetadataType?: boolean;
     metadataType?: string;
     name?: string;
