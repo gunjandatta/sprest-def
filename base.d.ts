@@ -156,7 +156,6 @@ export interface IMethodInfo {
     argValues?: Array<any>;
     data?: any;
     getAllItemsFl?: boolean;
-    getAllItemsWaitTime?: number;
     inheritMetadataType?: boolean;
     metadataType?: string;
     name?: string;
@@ -185,9 +184,6 @@ export interface IODataQuery {
      * Use this flag to get past the 5000 limit.
      */
     GetAllItems?: boolean;
-
-    /** Time in ms to wait between calls to avoid throttling. */
-    GetAllItemsWaitTime?: number;
 
     /** The order by fields. */
     OrderBy?: Array<string>;
