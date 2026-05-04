@@ -97,6 +97,11 @@ export interface IBaseResult {
     /** Gets the request digest value. */
     getRequestDigest(): string;
 
+    /**
+     * If present, the rate limit information to prevent throttling
+     */
+    rateLimit?: IRateLimit;
+
     /** The response */
     response: string;
 
@@ -202,6 +207,20 @@ export interface IODataQuery {
 
     /** The max number of results to return. */
     Top?: number;
+}
+
+/**
+ * Rate Limit
+ */
+export interface IRateLimit {
+    // The rate limit policy information
+    limit: string;
+
+    // The total resource units left before you get throttled
+    remaining: number;
+
+    // The number of seconds to wait before making the next request
+    reset: number;
 }
 
 /**
